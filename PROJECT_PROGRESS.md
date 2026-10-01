@@ -127,18 +127,40 @@ physical validation **APPLICABLE — EVIDENCE_UNAVAILABLE** — no experimental 
 - User-owned: authors/affiliations/CRediT/funding/conflicts, AI-use declaration, repository
   DOI + licence, final journal, JCR verification, independent expert review.
 
-## ⚠ Push caveat
+## Push status — **PUSHED**
 
-Local branch `arena/01a0f67f-le` is at `d8a3ce8`; `origin/arena/01a0f67f-le` is at `b482751`.
-The final commit **is committed locally but not pushed**: the GitHub integration token expired
-mid-session (`gh api` → "Bad credentials"; git push → HTTP 401). Nothing is lost — the commit and
-the full workspace are in the sandbox snapshot. Re-run once GitHub is reconnected:
+`origin/arena/01a0f67f-le` = `5648946` = local `HEAD`, working tree clean.
+(The token expired mid-session; after the user reconnected GitHub the branch was pushed as
+`b482751..5648946`.)
+
+## Restoring this workspace after a snapshot reset — learned the hard way
+
+A workspace restore rolls `.git` back to the clone state and drops git-ignored directories and
+system-installed Python packages. The file contents survive. Recovery procedure:
 
 ```sh
-cd /home/user/le && git push origin arena/01a0f67f-le
+cd /home/user/le
+# 1. Python packages (installed outside /home/user, so they are not snapshotted):
+pip3 install --break-system-packages numpy==2.3.5 scipy==1.17.1 matplotlib==3.10.9 \
+                                     python-docx==1.1.2 openpyxl==3.1.5
+# 2. Paths the frozen scripts expect (symlinks are not snapshotted either):
+sh bootstrap_paths.sh
+# 3. Re-linearise onto the remote branch and commit the restored working tree:
+git fetch origin && git add -A && git reset --soft origin/arena/01a0f67f-le
+git commit -m "<message>" && git push origin arena/01a0f67f-le
+# 4. Regenerate the two git-ignored directories (dropped by the restore):
+cd PAPER_PROJECT && python3 00_Project_Control/make_packages.py final      # packages/ (≈3 s)
+#    baseline_provided/ (snapshot of the delivered outputs, needed only by tools/compare_rerun.py):
+cd /home/user/le && mkdir -p /tmp/lz && git cat-file -p origin/main:le.zip > /tmp/lz/le.zip \
+  && unzip -q -o /tmp/lz/le.zip -d /tmp/lz/x && mkdir -p baseline_provided \
+  && cp -a /tmp/lz/x/PAPER_PROJECT/{09_Raw_Data,10_Processed_Data,11_Figures,12_Tables,13_Manuscript} baseline_provided/ \
+  && cp -a /tmp/lz/x/PAPER_PROJECT/07_Tests/TEST_RESULTS.json baseline_provided/
 ```
+
+`packages/` and `baseline_provided/` are **git-ignored on purpose** (63 MB of regenerable
+archives; 32 MB already published in `le.zip` on `main`) — both are rebuilt by the commands above.
 
 ## Next action
 
-Push `d8a3ce8` after reconnecting GitHub in Arena; then the branch holds the complete, re-verified
-project with `PROJECT_STATE_FINAL.md` and the eight archives.
+None outstanding from the task list. Remaining items are user-owned (authors, declarations,
+repository DOI/licence, final journal, JCR check, independent expert review).
