@@ -1,0 +1,9 @@
+{
+  "source": "B03 suppliedPDFTables1\u20132,PDFpages10\u201311",
+  "doi": "10.1016/j.ijheatmasstransfer.2007.10.021",
+  "rows": 64,
+  "source_pdf_sha256": "96f4248a61c5d4cfb4e41c58c684404c01015fec39b6308ce157358e67997ff2",
+  "processing": "Manual/source-assisted table transcription with rendered-page visual checking; NOT numerical reproduction",
+  "precision": "5printeddecimals; sourceepsilonreferschieflytoboundarydiagnostic; acceptancecriterionnotfrozen",
+  "redistribution": "Localresearchreferenceextraction; excludedfromcheckpointpendingrightsreview"
+}

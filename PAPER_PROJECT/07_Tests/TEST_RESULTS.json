@@ -1,0 +1,216 @@
+{
+ "label": "PAPER_PROJECT verification suite v2",
+ "date": "2026-10-01",
+ "cases": [
+  {
+   "case": "U0_plane_strain_block_vs_6x6_Voigt",
+   "status": "PASS",
+   "rel_err_Q": 0.0,
+   "rel_err_beta": 1.4739447055687242e-16,
+   "criterion": "<=1e-12 vs independent assembly of the monoclinic 13-constant 6x6 matrix (plane strain eps22=g12=g23=0)",
+   "note": "Only the entries C11,C13,C15,C33,C35,C55 (Q) and C11..C35,C12,C23,C25 (beta) enter; C22,C44,C46,C66 do not."
+  },
+  {
+   "case": "U1_rotate_Q_beta_vs_independent_3D",
+   "status": "PASS",
+   "fixed_rel_err_Q": 0.0,
+   "fixed_rel_err_beta": 1.5755938491582135e-16,
+   "shipped_rel_err_Q": 0.0,
+   "shipped_rel_err_beta": 0.00167773981397438,
+   "criterion": "<=1e-12 over 27 angles (incl. 37, 11.3, 123.4 deg)",
+   "note": "Test power: the SHIPPED rotate_Q_beta fails this test at the 1e-3 level in beta (only C23p cross-term sign)."
+  },
+  {
+   "case": "U1b_test_power_shipped_fails",
+   "status": "PASS",
+   "shipped_beta_err": 0.00167773981397438,
+   "criterion": "test must be able to fail: shipped beta error > 1e-4"
+  },
+  {
+   "case": "U3_material_admissibility",
+   "status": "PASS",
+   "Q_mandel_eig_min_GPa": 126.62919010503222,
+   "K_eig_min": 11.715559610452997,
+   "K_eig_max": 14.504440389547003,
+   "delta": 0.0010782009223322998,
+   "note": "K eigenvalues are 11.72/14.50 W/mK (handoff documents state 11.36/14.86 \u2014 documentation error); stiffness SPD and rotation-invariant spectrum in Mandel form"
+  },
+  {
+   "case": "U4_bromwich_identity",
+   "status": "PASS",
+   "max_err_t_le_12": 6.337395041675397e-09,
+   "plan": "{'T': 20.0, 'gamma': 0.9, 'K': 26, 'n_solves': 27, 'eps': 1e-10, 't0': 2.5, 'tw': 1.2, 'alias': 1.522997974471263e-08, 't_valid_max': 14.5, 'growth_at_12': 49020.80113638175}",
+   "criterion": "H=1 must return the Gaussian: <=1e-6"
+  },
+  {
+   "case": "U5_bromwich_damped_oscillator_vs_ODE",
+   "status": "PASS",
+   "rel_err": 4.976783145840806e-09,
+   "criterion": "<=1e-6 vs DOP853 time integration (z=0.02, w0=2)"
+  },
+  {
+   "case": "U6_bromwich_parameter_independence",
+   "status": "PASS",
+   "rel_diff_T20g0p9_vs_T32g0p6": 4.682570189275669e-09,
+   "criterion": "<=1e-6 between (T=20,gamma=0.9) and (T=32,gamma=0.6)"
+  },
+  {
+   "case": "U7_ref1d_spectral_steady_closed_form",
+   "status": "PASS",
+   "rel_err": 4.969088515771538e-10,
+   "sigma_exact_Pa_per_K": -1234746.0535908495,
+   "criterion": "1-D Chebyshev reference at s->0 vs closed-form steady Lame solution <=1e-6"
+  },
+  {
+   "case": "U8_bromwich_vs_time_domain_Crank_Nicolson",
+   "status": "PASS",
+   "rel_err": 6.532193948532909e-07,
+   "peak_Pa_per_K": -985689.3764034857,
+   "criterion": "Laplace-domain 1-D spectral + Bromwich vs time-domain CN heat solve + closed-form Lame stress (quasi-static, uncoupled) <=1e-6 over 0<=t<=9"
+  },
+  {
+   "case": "V0_metric_consistency_linear_field",
+   "status": "FAIL",
+   "chi1_errs_48_96_192": "[0.01668623219132792, 0.004177783115160594, 0.0010446010651126159]",
+   "chi2_errs_48_96_192": "[0.019586849836125353, 0.005027908399043213, 0.001261040978100425]",
+   "criterion": "96x48 interior error <5e-3 (handoff criterion), 2nd order expected"
+  },
+  {
+   "case": "V1_stencil_dispersion",
+   "status": "PASS",
+   "d2_symbol_err_kh0p4": -0.013262425036063563,
+   "criterion": "|err|<2% at kh=0.4 (handoff criterion)"
+  },
+  {
+   "case": "V3_rotation_covariance_all_grid_aligned_phi_FIXED",
+   "status": "PASS",
+   "max_rel_err": 6.452700984660496e-14,
+   "max_theta": 5.10702591327572e-15,
+   "max_u": 6.452700984660496e-14,
+   "max_wall_hoop": 2.1714745065335717e-14,
+   "per_phi_worst": "{15: '4.4e-14', 30: '6.0e-14', 45: '3.2e-14', 60: '4.0e-14', 75: '3.6e-14', 90: '6.3e-14', 105: '5.5e-14', 120: '5.0e-14', 135: '4.7e-14', 150: '4.0e-14', 165: '6.5e-14'}",
+   "criterion": "<=1e-8 for theta, u (each normalised by its own max) and wall hoop stress, at complex s, phi=15..165 deg step 15 (exact lattice rotations of the 48-point grid)"
+  },
+  {
+   "case": "V3p_test_power_shipped_rotation",
+   "status": "PASS",
+   "shipped_phi45_hoop": 0.002999690909305527,
+   "shipped_phi45_u": 0.002629776401479041,
+   "shipped_phi45_theta": 6.001452041356557e-07,
+   "shipped_phi90_worst": 6.268428613852337e-14,
+   "criterion": "the corrected test must detect the shipped bug at phi=45 (hoop >1e-4) while 90 deg stays blind (<1e-8)"
+  },
+  {
+   "case": "V4_uncoupled_null_beta0",
+   "status": "PASS",
+   "max_abs_hoop_Pa": 0.0,
+   "backward_err": 5.974403560745729e-17,
+   "criterion": "beta=0 -> u,sigma = 0 (<1e-6 Pa) at complex s"
+  },
+  {
+   "case": "V5_tau_to_zero",
+   "status": "PASS",
+   "rel_diff": 4.2008930602807683e-07,
+   "criterion": "CV(tau=1e-6 t_th) vs Fourier at complex s <=1e-4"
+  },
+  {
+   "case": "V12_conjugate_symmetry",
+   "status": "PASS",
+   "rel_err": 1.698314660101103e-15,
+   "criterion": "H(conj s) = conj H(s) for the real system (needed by the one-sided Bromwich sum) <=1e-10"
+  },
+  {
+   "case": "V6_steady_log_law",
+   "status": "PASS",
+   "max_abs_err_48_96_192": "[7.27999180387684e-05, 1.5365055767158076e-05, 3.6164004739713818e-06]",
+   "criterion": "<=0.01 at 96x48 (handoff criterion); ratio of successive errors ~4 expected"
+  },
+  {
+   "case": "V7_static_uniform_theta_annulus",
+   "status": "PASS",
+   "rel_err_48_96_192": "[0.016880767949530154, 0.004239529801282995, 0.0010591865724793384]",
+   "sigma_exact": -3179904.953001158,
+   "criterion": "<=1.5% at 96x48 vs closed form (handoff criterion)"
+  },
+  {
+   "case": "V8_steady_thermal_gradient_load",
+   "status": "PASS",
+   "rel_err_48_96_192_384": "['+0.0063', '+0.0016', '+0.0004', '+0.0008']",
+   "observed_order_48_to_96": 1.9675283417378677,
+   "sigma_exact": -1234746.0535908495,
+   "criterion": "steady log-profile thermal-gradient elasticity (clamped R=80a) vs closed form: |err(192x96)|<0.5%, order>1.5 (NEW: gradient-load path was absent from handoff V0-V7)"
+  },
+  {
+   "case": "V9a_weighted_spectral_error_vs_1D",
+   "status": "PASS",
+   "weighted_errs": "{'FOURIER0': ['1.29e-02', '3.12e-03', '7.62e-04'], 'CV5': ['1.34e-02', '3.24e-03', '7.93e-04'], 'CV20': ['1.46e-02', '3.54e-03', '8.68e-04'], 'MCV320': ['1.46e-02', '3.55e-03', '8.71e-04']}",
+   "worst_192": 0.0008712698489962431,
+   "min_order_48_96": 2.040793659162131,
+   "criterion": "isotropic circle, inertia+coupling ON, Fourier/CV5/CV20/MCV3-20: pulse-weighted spectral error at 192x96 <1%, order>1.5"
+  },
+  {
+   "case": "V9d_time_domain_peak_and_series_vs_1D",
+   "status": "PASS",
+   "peak_errs": "{'FOURIER0': ['+0.0121', '+0.0029', '+0.0007'], 'CV5': ['+0.0121', '+0.0029', '+0.0007'], 'CV20': ['+0.0132', '+0.0030', '+0.0007'], 'MCV320': ['+0.0135', '+0.0031', '+0.0008']}",
+   "series_errs": "{'FOURIER0': ['0.0127', '0.0030', '0.0007'], 'CV5': ['0.0131', '0.0031', '0.0008'], 'CV20': ['0.0150', '0.0035', '0.0009'], 'MCV320': ['0.0150', '0.0036', '0.0009']}",
+   "worst_peak_192": 0.0007554460804142712,
+   "worst_series_192": 0.0008635894262719382,
+   "min_order_peak_48_96": 2.074617052416121,
+   "criterion": "wall hoop series (t<=6) and peak, 2-D + Bromwich vs 1-D spectral + Bromwich: |peak err(192x96)|<1%, series err<1.5%, order>1.5"
+  },
+  {
+   "case": "V9e_thermal_memory_deviation_D_accuracy",
+   "status": "PASS",
+   "detail": "{'CV5': {'D_1d': '3.2504e-03', 'D_2d': ['3.5857e-03', '3.3345e-03', '3.2722e-03'], 'rel_err': ['+0.103', '+0.026', '+0.007']}, 'CV20': {'D_1d': '8.9931e-03', 'D_2d': ['1.0967e-02', '9.4575e-03', '9.1100e-03'], 'rel_err': ['+0.219', '+0.052', '+0.013']}}",
+   "worst_rel_err_192": 0.012998607775645632,
+   "criterion": "D=max_t|sig_CV-sig_F|/max|sig_F| (t<=6), 2-D vs 1-D reference: |rel err(192x96)|<=20% (D is a small difference of two nearly equal series)"
+  },
+  {
+   "case": "V9b_dynamic_a50nm_vs_1D_time_domain",
+   "status": "PASS",
+   "peak_rel_err_96x48": 0.0027435482505742204,
+   "criterion": "a=50 nm, CV, 96x48, inertia+coupling ON: |peak err|<3% (grid error expected ~1%)"
+  },
+  {
+   "case": "V9c_inertia_off_switch",
+   "status": "PASS",
+   "peak_rel_err_96x48": 0.002856533823756005,
+   "criterion": "inertia_scale=0 reproduces the 1-D quasi-static (inertia=False) reference peak to grid accuracy (<3%)"
+  },
+  {
+   "case": "V11_single_pulse_isotropic_circle_vs_time_domain",
+   "status": "PASS",
+   "peak_rel_err_48_96_192": "['+0.0116', '+0.0027', '+0.0007']",
+   "series_max_err_192": 0.0007092278288747796,
+   "order_48_96": 2.0766318319713055,
+   "order_96_192": 2.0451058001284252,
+   "reference_peak_Pa_per_K": 985689.4485743708,
+   "criterion": "2-D mapped FD + Bromwich (inertia off, uncoupled, isotropic circle) vs independent time-domain reference: |peak err(192x96)|<0.5%, order>1.5"
+  },
+  {
+   "case": "V3c_nonaligned_37deg_EXPLORATORY",
+   "status": "INFO",
+   "rel_diff": "{'48x24': 0.00015450198561745435, '96x48': 4.031557781056748e-06}",
+   "note": "phi=37 deg is not a lattice rotation of the grid: invariance holds only to discretisation order; exploratory, no pass/fail"
+  },
+  {
+   "case": "V3d_peak_stress_invariance_T1_quantity",
+   "status": "PASS",
+   "rel_spread_phi_0_45_105": 3.648971557918331e-15,
+   "criterion": "peak |hoop| of the anisotropic circle identical for grid-aligned phi (pre-registered T1: <=1e-8), single-pulse pipeline, 48x24"
+  },
+  {
+   "case": "V0b_metric_consistency_production_grids",
+   "status": "PASS",
+   "errors": "{'R48': {'chi1': '2.93e-03', 'chi2': '3.58e-03'}, 'M': {'chi1': '1.18e-03', 'chi2': '1.48e-03'}, 'R192': {'chi1': '1.04e-03', 'chi2': '1.26e-03'}, 'T144': {'chi1': '7.74e-04', 'chi2': '9.75e-04'}, 'T48': {'chi1': '4.18e-03', 'chi2': '5.03e-03'}}",
+   "worst_production_grids": 0.003575961642985348,
+   "criterion": "same criterion as V0 (<=5e-3 linear-field metric consistency) on the grids that carry absolute-stress claims (R48, M, R192, T144); T48 (96x48) is informational",
+   "note": "added after run 4 because V0 on the handoff grid family (96x48, chi=2: 5.03e-3) missed the criterion by 0.6%; the error is angular-resolution dominated (96x96: 1.5e-3); T48 is used only for circle thermal-memory runs and relative ablation comparisons"
+  }
+ ],
+ "status": "COMPLETE",
+ "cpu_seconds": 1209.717505893,
+ "wall_seconds": 1210.40966796875,
+ "n_pass": 26,
+ "n_fail": 1
+}

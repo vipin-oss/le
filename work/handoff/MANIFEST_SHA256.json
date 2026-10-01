@@ -1,0 +1,1219 @@
+{
+  "built": "2026-09-30T16:59:08",
+  "note": "Clean work-only handoff archive. START_HERE.md orients a new AI/researcher.",
+  "file_count": 303,
+  "files": {
+    "START_HERE.md": {
+      "sha256": "f5e1cf2f7b98ab958c35c68c2dd531914b5da0b455aecf763ad163eb191e503d",
+      "size": 8906
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/ANALYTICAL_SOURCE_CHECKS.md": {
+      "sha256": "9e225e8b481a6d80d2376e7242344fa58edbd0fe7c5856aaa50a083ab07d1832",
+      "size": 7315
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/BENCHMARK_CASES.json": {
+      "sha256": "0b62b70659c0e76f59fcfa8f1055071ace46f62b8feec2f2fef3577a7369b886",
+      "size": 6282
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/BUILD_SOURCE_REVIEW_ARTIFACTS.py": {
+      "sha256": "7320f569e5c0264a466d62cbbd9eb9c7732b07c9ae028f653efe623e573c36a1",
+      "size": 23483
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/EVIDENCE_LOG.md": {
+      "sha256": "d027723248f7f1faf57e09422b40d6afd2376e2934011a89cc8dbd538cdc28ef",
+      "size": 3985
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/FULL_SOURCE_REVIEW.md": {
+      "sha256": "75c375719b0282ba902d92a87f0b4173904f9a15184ba2de03c0ad9070515a7c",
+      "size": 16923
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/MODEL_OPERATORS.csv": {
+      "sha256": "3f7ab72167dbe545aa137504cfc753345a4799d6a064745d3c4d1967378c0678",
+      "size": 2322
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/MODEL_OPERATORS.json": {
+      "sha256": "5fba51de0068a5833dadde7ecfaba3d1ee4bc544bb708246cbb2a9fecc6d984c",
+      "size": 4283
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/PACKAGE_INVENTORY.csv": {
+      "sha256": "371e96315a1d26694d86fdaa19855ac4204b1a8beb6212d2805406874ff536a1",
+      "size": 683
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/PACKAGE_INVENTORY.json": {
+      "sha256": "13f0699fb3f500f9eeb6b2e627fd00ac12d63e498a372a8b35d982f33c2adc0e",
+      "size": 901
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/PDF_MANIFEST.json": {
+      "sha256": "133c4e1a2e1a6fc1d79707edb091ab292f797d676f77f94d1146c428051723b1",
+      "size": 2976
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/RECOVERY_FULL_SOURCE_REVIEW_01.zip": {
+      "sha256": "7ff1ba7fa8836e6d05ba6020b44fe867e7bd772dccea9c8fdb3f46fde000a02b",
+      "size": 235139
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/RECOVERY_MANIFEST.json": {
+      "sha256": "a7caf42d97ca5469a8c4acb179d533bba92d5f54ebb07ab0e8afc6a9f3e07b2b",
+      "size": 11872
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/REFERENCE_EXCERPTS_LOCAL/B03_PRINTED_REFERENCE_VALUES.csv": {
+      "sha256": "55af3e3568398bbc4cf89178189db300b4e7237b8cad4a30ed9255aa59d8ba53",
+      "size": 10600
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/REFERENCE_EXCERPTS_LOCAL/REFERENCE_DATA_ORIGIN.json": {
+      "sha256": "5e7dd437a57e4d5fb8263c642ac97bc392cb0f800c4171378c618858d1734df4",
+      "size": 561
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/RENDERED_CHECKS/B01_MGN2_EQ36_37.png": {
+      "sha256": "7010dec5fd49c714bd48a46538e5f8406d3d056fc1e50cf7cf24632500566090",
+      "size": 66986
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/RENDERED_CHECKS/B01_OPERATOR_TABLE.png": {
+      "sha256": "e4a8d652d12992e68edb5cdd96799a672ae612c0b613b3c5f6d5fd5f7dffb000",
+      "size": 118218
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/RENDERED_CHECKS/B01_SOLUTIONS_MATERIAL_TABLE.png": {
+      "sha256": "1a4648efbd4286c11105e37b9324c276f4e02763aebaaf9a21e991d60bbdf1d3",
+      "size": 146189
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/RENDERED_CHECKS/B02_CYLINDER_CASE.png": {
+      "sha256": "39f0f9db15f5dcd9136917f374cf807d2f169e3ffb1c5a85511fabd1e0426eeb",
+      "size": 392274
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/RENDERED_CHECKS/B02_NONDIM_IC.png": {
+      "sha256": "5fa60060b61cffcbd915a416ebe0f044aa8a2308a406a0bcb19c5bbe93b3f1da",
+      "size": 325168
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/RENDERED_CHECKS/B03_REFERENCE_TABLE_1.png": {
+      "sha256": "3bced9c7ee1cca9ba6c3e941576bc8ece678407b3706963ed2afab5523d63150",
+      "size": 222452
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/RENDERED_CHECKS/B03_REFERENCE_TABLE_2.png": {
+      "sha256": "950cef38f691236973c55853c53f42e278be79ee46eadbf9fc6793fd9a30cfd8",
+      "size": 452357
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/SEARCH_LOG.md": {
+      "sha256": "ee43c884755253096414a08e2d8bfc1b995154657d8ae4d3d9a5f7a69b125dc2",
+      "size": 2963
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/SOURCE_BENCHMARK_READINESS.xlsx": {
+      "sha256": "ee0b9c60f6feac18f5c2a60a0f51759a8845980dc1a69d2028a2d2d4dff37af4",
+      "size": 18109
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/SOURCE_ISSUES.json": {
+      "sha256": "0e5151e31dae1940bd727ad8f4162ec516e36d58d59e57be8676594c0ddf2377",
+      "size": 2781
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/SOURCE_MANIFEST.json": {
+      "sha256": "f9df757bb3bda31f7bd9518d537f388aaf333f094cd88d770b37150bebcccf50",
+      "size": 650
+    },
+    "BENCHMARK_SOURCE_REVIEW/ALIT_01/SOURCE_RIGHTS.md": {
+      "sha256": "c4b6253dc033c67e12b0a4fae87a3c88560483c4190edd501d14d12e3e5e6d49",
+      "size": 1103
+    },
+    "CHANGELOG.md": {
+      "sha256": "0f60c0d1c04356db850f0659a517e027ecf2f6ef673ca0a89e6723ca41727b79",
+      "size": 3270
+    },
+    "CODE_REVIEW/FEM4_PACKAGE/CODE_OVERVIEW.md": {
+      "sha256": "80e9cb7abfe7b47c81de620d223a6458923482b238f8b21cdce2e795a4c9e8c3",
+      "size": 15196
+    },
+    "CODE_REVIEW/FEM4_PACKAGE/EQUATION_TO_CODE_MAP.csv": {
+      "sha256": "9f5796f485118825d486dd4ad064d51ec092469a342169b9419cf059763be9f8",
+      "size": 3123
+    },
+    "CODE_REVIEW/FEM4_PACKAGE/PACKAGE_INVENTORY.csv": {
+      "sha256": "10451ab585ef168f5a48078e7888c481995f6556e99118c631f2e4ef165a7daf",
+      "size": 20170
+    },
+    "CODE_REVIEW/FEM4_PACKAGE/SOURCE_FUNCTION_INDEX.csv": {
+      "sha256": "0ca0720911a59cbd869e748f02b615a9848d4e0ecac22934079a2a16a50f739e",
+      "size": 17410
+    },
+    "CODE_REVIEW/FEM4_PACKAGE/SOURCE_MANIFEST.json": {
+      "sha256": "544ed83431291842125d7d03607c0a48346406a01035b2687710a0b87ef1deb8",
+      "size": 495
+    },
+    "CODE_REVIEW/FEM4_PACKAGE/STATIC_INSPECTION_RESULTS.json": {
+      "sha256": "7d2711caa67bf281ed0aac18a359ab85cc4e68bae733b0211421407e43c3b993",
+      "size": 4116
+    },
+    "COMPUTE_STATUS.md": {
+      "sha256": "8460dc3826bb255b7b148e8de3a477e95b2c2b2d9339d8064fe6473c8cced496",
+      "size": 2477
+    },
+    "CURRENT_PROJECT_STATE.md": {
+      "sha256": "0e703ca1e144ee650cf8b604e8f948bdecb6d35dcea95d261a93b89aaa996144",
+      "size": 3407
+    },
+    "DECISION_LOG.md": {
+      "sha256": "130ef7f0ddd8c478efd54fbe5ac05c792241452c5ede666ca154406bba351389",
+      "size": 9968
+    },
+    "HEAT_MODEL_EXPLORATION/HEAT_MODEL_OPTIONS.md": {
+      "sha256": "0430d8ce581a7f3a0eaebe809bb8d9baa207498908094fa7ee2a1b4803406f40",
+      "size": 13105
+    },
+    "HEAT_MODEL_EXPLORATION/SEARCH_LOG.md": {
+      "sha256": "b76faa540525598109d9d937066ec1f5bf3f9a58ae127c8591976e365453dd3c",
+      "size": 4955
+    },
+    "HEAT_MODEL_EXPLORATION/THERMOELASTIC_DIRECTION_NOTE.md": {
+      "sha256": "498f5e827e1893a61d17dc169022be409a2c697c909ebd336fdf138e69703600",
+      "size": 11691
+    },
+    "MASTER_PROMPT.md": {
+      "sha256": "c18fd5258ebb3df27943aefab1ee5eca419389249ef0108f38e19d4ff942dac0",
+      "size": 51462
+    },
+    "MASTER_PROMPT_DATE": {
+      "sha256": "024e4f5d5de2e8f4ec6b042ad279f248b44456440e95c1c8a7f1531a127f6fa9",
+      "size": 42
+    },
+    "MASTER_PROMPT_VERSION": {
+      "sha256": "ee50b98bb28008fd58feca48930310f26f7b32b070d916597dbaac0c2208095f",
+      "size": 5
+    },
+    "PILOT_HUANG_2025_01/AUTHORIZATION.md": {
+      "sha256": "7cb41cc07d4c57678ef8fd063831b438fa1c323a745fa9eecfe2d963599fd203",
+      "size": 572
+    },
+    "PILOT_HUANG_2025_01/CORRECTIVE_DIAGNOSTIC_01.json": {
+      "sha256": "0cbd3bcbe0f6b01801e095ea3ebaf8edd536894deef854a2ef30e65deacfc0ba",
+      "size": 732
+    },
+    "PILOT_HUANG_2025_01/EQUATION_TO_CODE_MAP.md": {
+      "sha256": "fd7b40ae0ff0ae61f668190be67806bd907b4eaf3cd2c45d38330a77224738d8",
+      "size": 2579
+    },
+    "PILOT_HUANG_2025_01/EVIDENCE_LOG.md": {
+      "sha256": "4cf11e46878b6ea2c9d3b5ef5365fd2f93daa86d98a534adf9945ea9594f80e9",
+      "size": 3924
+    },
+    "PILOT_HUANG_2025_01/FINAL_ARTIFACT_QC.json": {
+      "sha256": "ce568aaf1dce94f9a5da8b59000f099c0423a5a47d15aa0ec7869274491d8f1e",
+      "size": 379
+    },
+    "PILOT_HUANG_2025_01/PILOT_ACCEPTANCE_STATUS.md": {
+      "sha256": "e47ac2f5370bd8a4a4ea6fb34ba88f31afb14089f1f322e8e4fabe67765eedcd",
+      "size": 2249
+    },
+    "PILOT_HUANG_2025_01/PILOT_CHANGELOG.md": {
+      "sha256": "c99945e1ee10ace4ce624b3afcd98e655f83d5c426997240afb74c22ea256ec7",
+      "size": 1253
+    },
+    "PILOT_HUANG_2025_01/PILOT_PLAN_FROZEN.md": {
+      "sha256": "5bff72489a9c8e248e4714afc38c4e56a3cf037861e786679f782e8c058f9508",
+      "size": 8558
+    },
+    "PILOT_HUANG_2025_01/PILOT_REPORT.html": {
+      "sha256": "befd859d4027aec2f7f9a9f954fc923a7949c175b6e076397633539ac71bc74a",
+      "size": 214039
+    },
+    "PILOT_HUANG_2025_01/PILOT_REPORT.md": {
+      "sha256": "035ada600c0b0020cd63de101eaff81bd6ff48aa2fce747f219955a0d2dda93e",
+      "size": 7752
+    },
+    "PILOT_HUANG_2025_01/PILOT_REPORT_FINAL.html": {
+      "sha256": "be0172445f017e12dcaea803dcae5a835250d7032edbe1e15fd90a8d87f4c1ad",
+      "size": 353345
+    },
+    "PILOT_HUANG_2025_01/PILOT_REPORT_FINAL.md": {
+      "sha256": "fff0f45b9e931fc8b4c3a29ffc25011cc4da36133de4b86565c58a2d91b96a62",
+      "size": 1483
+    },
+    "PILOT_HUANG_2025_01/PILOT_RESULTS.xlsx": {
+      "sha256": "996a18f98618d099605be172cbb998f29437f31b3f0695b81b3626bcf6e06ac3",
+      "size": 19762
+    },
+    "PILOT_HUANG_2025_01/PLAN_FREEZE_RECORD.json": {
+      "sha256": "3302f5a668344abfff857d21fd0d580848e6685ba8a04bf4402f96ea6973f1af",
+      "size": 609
+    },
+    "PILOT_HUANG_2025_01/README.md": {
+      "sha256": "1fd22b17ebe763393cab5395f77d52332a45fc780817c256e4922704af73a885",
+      "size": 3479
+    },
+    "PILOT_HUANG_2025_01/RECOVERY_MANIFEST.json": {
+      "sha256": "34fdb842592f73571645d0133420612b238f240715cc6a39765fb380e0d5eeaf",
+      "size": 256
+    },
+    "PILOT_HUANG_2025_01/build_pilot_report.py": {
+      "sha256": "c3f60762be9eb0f2c0310025c5c15c7962c031b226b18554270f6a723482e48a",
+      "size": 18153
+    },
+    "PILOT_HUANG_2025_01/case_input.json": {
+      "sha256": "ebb34449fc084aeb6ac91cfdd41ba555e581ef01f5da2f2878180badf2997482",
+      "size": 2758
+    },
+    "PILOT_HUANG_2025_01/data/BASIC_CHECKS.json": {
+      "sha256": "ab7e21e8ff869b86abf39e9a1c45a99af54d2a29223c1b02febca0c6f37d7e62",
+      "size": 1264
+    },
+    "PILOT_HUANG_2025_01/data/DIAGNOSTIC_SUMMARY.json": {
+      "sha256": "7784ab624c2248c8ae9e6a94b8bb8cc010bd0d0bce7e0f1f88a1a019050dabaa",
+      "size": 4907
+    },
+    "PILOT_HUANG_2025_01/data/EXECUTED_PROBE_VALUES.csv": {
+      "sha256": "e8736478e04fa545a4f706619a79410f74b843ebd4e6d5329ff51f6a98b5e4ef",
+      "size": 5681
+    },
+    "PILOT_HUANG_2025_01/data/EXISTING_PROBE_METHOD_COMPARISON.csv": {
+      "sha256": "81646242b68ea67533704df1fcdf5cab1689bb43e03b8e7b857bb304c99de25f",
+      "size": 882
+    },
+    "PILOT_HUANG_2025_01/data/FINAL_COMPARISON_SUMMARY.json": {
+      "sha256": "a5b7bb07f38260efaca1b4e0f46062bcc1f2ffa9f399336eaa37310ea15e665f",
+      "size": 1727
+    },
+    "PILOT_HUANG_2025_01/data/FVM_CV_6400_POST_RESULT_DIAGNOSTIC.json": {
+      "sha256": "f85cdeb382447add34c1249d8a3e14ff5bfa33e3bc592ae9d5baf035f8d34d48",
+      "size": 1442
+    },
+    "PILOT_HUANG_2025_01/data/FVM_CV_N1600.npz": {
+      "sha256": "2253af44492aecd8b178ab36be59cab4a1207574f0a7535342f9c070a6db2853",
+      "size": 27920
+    },
+    "PILOT_HUANG_2025_01/data/FVM_CV_N3200.npz": {
+      "sha256": "963f19228a226e0b6d270838ec40e805da0207a5eb06fc5a821fda8c1be7c544",
+      "size": 52977
+    },
+    "PILOT_HUANG_2025_01/data/FVM_CV_N6400.npz": {
+      "sha256": "9af4470848130a6f6409708bc654af31e8bbddb8fcd638eb4cd13e1dfa386169",
+      "size": 102093
+    },
+    "PILOT_HUANG_2025_01/data/FVM_CV_N800.npz": {
+      "sha256": "898a17cf1232917b5b1136f1cc0043085a412d1046f5bc5f3977381565702267",
+      "size": 15256
+    },
+    "PILOT_HUANG_2025_01/data/FVM_MCV3_N1600.npz": {
+      "sha256": "90b8fded87ba9622022106ce6a9d9b947f47a70f5827b0f4340c62dddaeca586",
+      "size": 28192
+    },
+    "PILOT_HUANG_2025_01/data/FVM_MCV3_N3200.npz": {
+      "sha256": "cde73a2539a417666c7ae02a6be205a38597dd261eec6a712ffedf66bea7f50a",
+      "size": 53740
+    },
+    "PILOT_HUANG_2025_01/data/FVM_MCV3_N800.npz": {
+      "sha256": "5a59bfbe8aaa986b88059f785b51e4c503b9fcb0a780a2af11bcf908a7a9100b",
+      "size": 15397
+    },
+    "PILOT_HUANG_2025_01/data/FVM_RUNS_AND_REFINEMENT.json": {
+      "sha256": "048a72706fc5e1e79de825a94b64a44ac6c8071398d6a51f98297a7329e8ff46",
+      "size": 7712
+    },
+    "PILOT_HUANG_2025_01/data/INVERSION_PROBES.json": {
+      "sha256": "73b06298993d5d1600ce7c5beb32e3ac6acfacee3d492276f8894e740b15374d",
+      "size": 13492
+    },
+    "PILOT_HUANG_2025_01/data/INVERSION_PROBES_PARTIAL_CHECKPOINT.json": {
+      "sha256": "03cdf5844d21a4344996b91d7b87aa44150b2daf05a63da4e5df24e7bbf42409",
+      "size": 11315
+    },
+    "PILOT_HUANG_2025_01/data/LAPLACE_RESIDUALS.json": {
+      "sha256": "3798abfce0cdda570081d572fec73d1e36f03c42ff641e5f9880c7f87f83c6eb",
+      "size": 13047
+    },
+    "PILOT_HUANG_2025_01/data/LIMITING_CASES.json": {
+      "sha256": "c79a27c5057f8bd2b1ba76bac57e4a093fa35880cb806ef2fe8f82cdd4bc66d9",
+      "size": 2868
+    },
+    "PILOT_HUANG_2025_01/data/SOURCE_FIGURE5_COMPARISON.json": {
+      "sha256": "99192691d0ee0e47ee3967a8a4f22cd98fe38d7b1636e2cf992dc4c52719cc7f",
+      "size": 5505
+    },
+    "PILOT_HUANG_2025_01/data/SOURCE_FIGURE5_COMPARISON_POINTS.csv": {
+      "sha256": "45316069099dee6dfacb253e228c65310cfba25be2588a63ad1e604cfedeaf94",
+      "size": 52894
+    },
+    "PILOT_HUANG_2025_01/figures/EXECUTED_DIAGNOSTIC_PROFILES.png": {
+      "sha256": "d3b4c657041e6cbcd76f6b0473394e256ed75106a14aa32b735009a198402c8c",
+      "size": 157500
+    },
+    "PILOT_HUANG_2025_01/figures/EXECUTED_DIAGNOSTIC_PROFILES.svg": {
+      "sha256": "bd325fcbfbbe52503e075bac1ce786f5032fae50fa0d7d9b443e6083bbcd68d4",
+      "size": 97421
+    },
+    "PILOT_HUANG_2025_01/figures/SOURCE_CASE_COMPARISON.png": {
+      "sha256": "5c56d89d1947e63c3c029972d52180e16ac3b78de3ee044d97e028be59177cd5",
+      "size": 260318
+    },
+    "PILOT_HUANG_2025_01/figures/SOURCE_CASE_COMPARISON.svg": {
+      "sha256": "3186ee997758e2ffe49bb92ca08d6e7f3e7b6c611babb1e44b2ebf850befb9ad",
+      "size": 490300
+    },
+    "PILOT_HUANG_2025_01/logs/CPU_LEDGER.json": {
+      "sha256": "e0f175cbc0e74e00583ba2afbc620389d10c364a0144523d8901ffe57008a9ad",
+      "size": 12322
+    },
+    "PILOT_HUANG_2025_01/logs/P01_BASIC_CHECKS.json": {
+      "sha256": "261730436b2cd90a2eaeca248ec611c853416c05ce1107d51930d178e35beaf3",
+      "size": 1137
+    },
+    "PILOT_HUANG_2025_01/logs/P02B_CV_POST_RESULT_6400.json": {
+      "sha256": "a5f0ce7d884b60db9b5d977b586d95d6caf58a81f5fbcac435e2137a73cfcfbb",
+      "size": 1414
+    },
+    "PILOT_HUANG_2025_01/logs/P02_FINITE_VOLUME.json": {
+      "sha256": "baa189a8ccf9f9e4472acee253ae048182377664fc08c43d158f0124f2ce14cf",
+      "size": 1290
+    },
+    "PILOT_HUANG_2025_01/logs/P03B_INVERSION_PROBES_ENDPOINT_CORRECTED.json": {
+      "sha256": "52f5b3059a57fe42899fb2191c00c7c7553ad18be0e07967552ed4465956ac3c",
+      "size": 1442
+    },
+    "PILOT_HUANG_2025_01/logs/P03_ERROR.txt": {
+      "sha256": "948e15b0e20a54a224a1af554fb6ffd198b46288a7f3eb8dbbebe939cbc1ae48",
+      "size": 1457
+    },
+    "PILOT_HUANG_2025_01/logs/P03_INVERSION_PROBES.json": {
+      "sha256": "1e158ee3a7ee18a7921b4d25f05f2f9969904bbe4745b3e9e4919a838d62f53d",
+      "size": 1289
+    },
+    "PILOT_HUANG_2025_01/logs/P04_EXISTING_DATA_DIAGNOSTIC_SUMMARY.json": {
+      "sha256": "a5ea7ea9b47fcd10fb8aa15b75ba72f39c754ffb552db7738390ed8c6aa347d8",
+      "size": 1458
+    },
+    "PILOT_HUANG_2025_01/logs/P05_REPORT_EXISTING_RESULTS_ONLY.json": {
+      "sha256": "945bf224065a4da4d6a7be35ec1ff1c143390ab1401f8bbb92c499c7300af4e0",
+      "size": 1500
+    },
+    "PILOT_HUANG_2025_01/logs/P06C_FINAL_COMPARISON_FIGURE_FROM_EXISTING.json": {
+      "sha256": "8dfc0e1ff0505c66493e74531ff11c7f6d697fc733bf5f2a3d0004449bab9f8e",
+      "size": 1619
+    },
+    "PILOT_HUANG_2025_01/logs/P06_ERROR.txt": {
+      "sha256": "2ee538163f34ea9a8cfb0c9dce4027b0d95d17ab9b8fe8e13b4e111fb5c60658",
+      "size": 2739
+    },
+    "PILOT_HUANG_2025_01/prepare_reference.py": {
+      "sha256": "ef5ba77937d054e2d2bfd53e73e9a30d480dda470234dc93f90ad7c3c5de6f3c",
+      "size": 3651
+    },
+    "PILOT_HUANG_2025_01/requirements.txt": {
+      "sha256": "a4f1fa913367ce868483803331a644a49395daf187b08d4ec0b2714b103ac760",
+      "size": 92
+    },
+    "PILOT_HUANG_2025_01/run_basic_checks.py": {
+      "sha256": "868b8080809f40fe125e475de68b5542b4e860b2488f1d8b3df1968aaad85d5e",
+      "size": 3372
+    },
+    "PILOT_HUANG_2025_01/run_fvm.py": {
+      "sha256": "80de17b17e7454f1af16b6349b3fa5559c8038fd509dd0c86b0718852e9ed34d",
+      "size": 2235
+    },
+    "PILOT_HUANG_2025_01/run_fvm_extension.py": {
+      "sha256": "fe79b1e80a9e8a5fb005d2713a56acbcc0e9912158cd179f65d24ddcd0c02677",
+      "size": 1601
+    },
+    "PILOT_HUANG_2025_01/run_inverse_probes.py": {
+      "sha256": "552040106beac7fa2163c68899747dce525ba5a7fb7b269f833a979c539d4ed5",
+      "size": 2022
+    },
+    "PILOT_HUANG_2025_01/run_source_and_limiting_cases.py": {
+      "sha256": "4ad8dd4d1cd62e10e1f363ac234b8655c3b6aae8657388adc90e6c192ba4f25e",
+      "size": 5080
+    },
+    "PILOT_HUANG_2025_01/src/common.py": {
+      "sha256": "3a1e51e8fae90086805776244792c9c54a0c774c5efef04fd59877ac5c019caf",
+      "size": 2368
+    },
+    "PILOT_HUANG_2025_01/src/fvm.py": {
+      "sha256": "92affc4c15fb6d63be909c31afd62b4b3c688745ee6f2c5346a0bb4e9759bf4b",
+      "size": 2615
+    },
+    "PILOT_HUANG_2025_01/src/physics.py": {
+      "sha256": "633d3ed851ee6a997a9fa9249d9ed639b94ab9b566943880926021654cd58785",
+      "size": 5492
+    },
+    "PILOT_HUANG_2025_01/summarize_existing_diagnostics.py": {
+      "sha256": "42796c39ffd03c17775d41538eae6aec5c7de95c2717133bfbcb10d18dbe2662",
+      "size": 2631
+    },
+    "PILOT_HUANG_2025_01/versions/v01_before_endpoint_fix/common.py": {
+      "sha256": "8cdc8aa8da576dbc700238bab98df9641d675cc3f7808e2e76d108b241f76aea",
+      "size": 2231
+    },
+    "PILOT_HUANG_2025_01/versions/v01_before_endpoint_fix/fvm.py": {
+      "sha256": "92affc4c15fb6d63be909c31afd62b4b3c688745ee6f2c5346a0bb4e9759bf4b",
+      "size": 2615
+    },
+    "PILOT_HUANG_2025_01/versions/v01_before_endpoint_fix/physics.py": {
+      "sha256": "129a662f4c0b92eb386bc9cc0e9fcaf04ab7ef61cd291ed2b6cde982075dada1",
+      "size": 5288
+    },
+    "PILOT_HUANG_2025_01/versions/v01_before_endpoint_fix/run_basic_checks.py": {
+      "sha256": "868b8080809f40fe125e475de68b5542b4e860b2488f1d8b3df1968aaad85d5e",
+      "size": 3372
+    },
+    "PILOT_HUANG_2025_01/versions/v01_before_endpoint_fix/run_fvm.py": {
+      "sha256": "80de17b17e7454f1af16b6349b3fa5559c8038fd509dd0c86b0718852e9ed34d",
+      "size": 2235
+    },
+    "PILOT_HUANG_2025_01/versions/v01_before_endpoint_fix/run_inverse_probes.py": {
+      "sha256": "40b27957c969780b51b362a5c07e8e800365eefdadfc9dbcaec1b479aae786c5",
+      "size": 1853
+    },
+    "PRE_EXECUTION_REVIEW/ARTIFACT_BUILD_ENVIRONMENT.json": {
+      "sha256": "7d985249ea3ec29d1b5b2ddda700c8556de81542f5852966fb2afca75809e41a",
+      "size": 353
+    },
+    "PRE_EXECUTION_REVIEW/BUILD_REVIEW_ARTIFACTS.py": {
+      "sha256": "d4a5acfbce4f1c187959a0ed7ceefaa6a1be50470a35b6c5f096b6be1a2b29ef",
+      "size": 28748
+    },
+    "PRE_EXECUTION_REVIEW/EVIDENCE_LOG.md": {
+      "sha256": "dfaf0e6f8800767809691cf5dc24583a4fb32c0f8594f9595e42e806c46657d9",
+      "size": 4761
+    },
+    "PRE_EXECUTION_REVIEW/JOURNAL_BENCHMARK_SCREENING.md": {
+      "sha256": "27f28a4cb1aadefeffd9d568879139c7c8eba18fb7272cdfb700f23ae81c4539",
+      "size": 19256
+    },
+    "PRE_EXECUTION_REVIEW/JOURNAL_SCREEN.json": {
+      "sha256": "be7c034b7cbc78b7e9fd49f68a710c313f7a5ac17c6aca531e840c82127d7205",
+      "size": 2882
+    },
+    "PRE_EXECUTION_REVIEW/OPEN_ACCESS_LOCATION_CHECKS.json": {
+      "sha256": "1d1f22df2d47a77876657d1c91610c544828f57e5ee41af48c4b0462b4015ca7",
+      "size": 4775
+    },
+    "PRE_EXECUTION_REVIEW/PDF_REQUEST_LIST.md": {
+      "sha256": "f8047e4a5274de2acae4b766a3dd84c2d452214779b6b80efe173bd2ad351316",
+      "size": 1913
+    },
+    "PRE_EXECUTION_REVIEW/PRE_EXECUTION_SCREEN.xlsx": {
+      "sha256": "5077c7bbdd3e71241eb8a68d7891b550365dc8d8d42d1cbbad73de827363124d",
+      "size": 18526
+    },
+    "PRE_EXECUTION_REVIEW/RECOVERY_MANIFEST.json": {
+      "sha256": "6b3c99eb3dcee13f445d824ba8e357383a68626404780be9b1d89973296bd3f0",
+      "size": 8415
+    },
+    "PRE_EXECUTION_REVIEW/RECOVERY_PRE_EXECUTION_REVIEW_01.zip": {
+      "sha256": "bc0cbc1325e8081dde08ee7cdbd217bc05089d376d3687088a6c932004256461",
+      "size": 174016
+    },
+    "PRE_EXECUTION_REVIEW/REFERENCE_SCREEN.json": {
+      "sha256": "91a9ce1c13b7546c932ff920b1daa51936328c629cfb97c3c6271f52522bcb69",
+      "size": 6720
+    },
+    "PRE_EXECUTION_REVIEW/SEARCH_LOG.md": {
+      "sha256": "93c47ad02493737d9087b8e0304913575eb3d9fd07f738004d2f07c54e1b80c5",
+      "size": 6754
+    },
+    "PRE_EXECUTION_REVIEW/SOURCES/KLIMM_2023_SOURCE.json": {
+      "sha256": "59bc6df8b9481d10205e7cd2bf54a316c8235d05b7fe078c133b0c521ba53552",
+      "size": 338
+    },
+    "PRE_EXECUTION_REVIEW/SOURCES/SUPPLEMENT_RETRIEVAL.json": {
+      "sha256": "8ae9dc1dd9e27971172f33e0df8b316080520b3b9744e4168d5ef0bfdcabceb4",
+      "size": 434
+    },
+    "PRE_EXECUTION_REVIEW/SOURCES/VISUAL_CHECK_KLIMM_P2.png": {
+      "sha256": "c49b421e4084866f4fd5a7e1a456bd4203c76973ea8744613a7ef6d7e458d526",
+      "size": 304226
+    },
+    "PRE_EXECUTION_REVIEW/SOURCES/VISUAL_CHECK_KLIMM_P3.png": {
+      "sha256": "d8672ba2547d796e6b2a00a8aa97111df689527fefa92d9acda1c3c380d54066",
+      "size": 241659
+    },
+    "PROJECT_CONTROL/MASTER_PROMPT_PROVENANCE.json": {
+      "sha256": "47f575d2cedebac5f6ebab40f23995f5a9e736fff9e331b311a99cdfa90af44b",
+      "size": 1194
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/ASSUMPTIONS.md": {
+      "sha256": "3f635222804b0046a4f8e2ac9449fdbb99f828dd31cfdcd11bf6ea10acec7e7a",
+      "size": 1942
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/JOURNAL_SCREENING.md": {
+      "sha256": "97f3efb7da504f1323425b933cbd040fbc1fde3986109a8b5f5ee3af5d66629d",
+      "size": 3462
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/MANUSCRIPT_DRAFT.md": {
+      "sha256": "acd5cbb736d4f74eecad3ff268c6303814a39a08e1a090c4321758594fa599e9",
+      "size": 11735
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/MATHEMATICAL_FORMULATION.md": {
+      "sha256": "3c2ea58f48e742ef93d6be5450f465aeab9a54de303f301f109f2da57ba46bfb",
+      "size": 4814
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/NUMERICAL_METHOD_SELECTION.md": {
+      "sha256": "eb930f5e5b33d5d6afd1c078a21e9a27d992da83ffa001442077e87412a3658c",
+      "size": 3176
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/PARAMETER_TABLE.md": {
+      "sha256": "1104da2c0469b11c8f09cf9bdfb18d4a569fbfeae0abf6815089d1363f4ce2b1",
+      "size": 4241
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/PHYSICAL_VALIDATION_PLAN.md": {
+      "sha256": "48a82693f672999324b5f484865fa10a1a346100993805bb04ac26e6f8238b7b",
+      "size": 1878
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/PRIOR_WORK_COMPARISON_R2.md": {
+      "sha256": "97e93334e7aa9d48858e3292143eb9ceeb2a67d52a9003cae03e136dbe5d4a07",
+      "size": 5652
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/PROBLEM_DEFINITION.md": {
+      "sha256": "3850b8fd890a7a6a321ac9f41bfc48219fadcc3d10fc442202b2edffcc6fe8dc",
+      "size": 5266
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/PROJECT_STATE_PHASE_08.md": {
+      "sha256": "38addc3daa4d803a73405420bcf211eec0fa128d4fa28d2078af008f886aba0c",
+      "size": 3841
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/PROJECT_STATE_PHASE_09.md": {
+      "sha256": "332e680f2055608084c58b2800f06827b8528d3feba59650f51e103a7de69775",
+      "size": 1053
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/PROJECT_STATE_PHASE_10.md": {
+      "sha256": "15ffca899a72181f83b4e8f776fe77973feff0646b51c1338df3a5a3481abaf8",
+      "size": 1068
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/PROJECT_STATE_PHASE_11.md": {
+      "sha256": "158f9665b415c6fc8d77ed9edaf45670efe279172d20a8745ea5251befaaf6f4",
+      "size": 1138
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/PROJECT_STATE_PHASE_12.md": {
+      "sha256": "27b7f9516dab8f1e3ae23c541ea3e31444a72e344fa950b5150ebe8f3df9230a",
+      "size": 1052
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/PROJECT_STATE_PHASE_13.md": {
+      "sha256": "087aadf3054378ea5c41eba455c88c2831f2483833f4b14fffe0cbc61ce48409",
+      "size": 2385
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/SCIENTIFIC_ACCEPTANCE_PLAN.md": {
+      "sha256": "efa6555389ede575ea6a759e7e41f5c154a5d0d5ecf5ecf2d3a3c64abbe66d8d",
+      "size": 5038
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/SEARCH_LOG.md": {
+      "sha256": "c244548e7c51cbcebff6c5b8cbda52fc6536f8492a9ac3cafa054040ebbb5413",
+      "size": 7436
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/SELF_AUDIT_CHECKLIST.md": {
+      "sha256": "69579ec6813c3dfb63eb809e0e2d5da44f51f768cac0ff26cbb1247ead705c22",
+      "size": 2101
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/SUBMISSION_PACKAGE/README.md": {
+      "sha256": "c7b8881a21470a52c15a8970aa8c6ffa8dd3be3470ff2a4856726e2ad83b0383",
+      "size": 2060
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/SUBMISSION_PACKAGE/cover_letter.md": {
+      "sha256": "d2fd3d495212156da6e4657230d5a1981384e193d99b3ec736c7cd8ad2383fda",
+      "size": 2379
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/SUBMISSION_PACKAGE/declarations.md": {
+      "sha256": "cc934216865d73805ad987dadb1f8514def815c89d10c54d8c00674dfe08b078",
+      "size": 1225
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/SUBMISSION_PACKAGE/manuscript_IJHMT.md": {
+      "sha256": "3ddc7637a5340aacc0aff0ed67a110567c8bc49a721ff8ba7573fe46ff342cd3",
+      "size": 16490
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/SUBMISSION_PACKAGE/title_page.md": {
+      "sha256": "02ca067b8855fec96aced637a7d98e610fd99db1f6a900601d9d197d1bc7b6d9",
+      "size": 1009
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/VERIFICATION_PLAN.md": {
+      "sha256": "5b27e80866ca6941983f9891f8fc628d79062f7aaa530e690d108ae6c3cbc6a1",
+      "size": 3489
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/analyze_production.py": {
+      "sha256": "afa325fa11adaaada9fb0926c35c3f2796bfcf23804acaf10fcea384866aa032",
+      "size": 7097
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/ANALYSIS.json": {
+      "sha256": "65b32d58bb5ed40706c59bea277afd82506c2b4320ad5d0f5f0610fb88d1b807",
+      "size": 3026
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/ANALYSIS_EXPLORATORY_SCALING.json": {
+      "sha256": "4d79fba93c80495f725275483a79b8541d7b5eca0f34beeab1e7a6e6837ad1b4",
+      "size": 2092
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/ANALYSIS_TABLE.md": {
+      "sha256": "202f832289d60baa8e56be906e4c0710e00e7468a0ffed90e9dabe5b6dc25adb",
+      "size": 1138
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/CODE_FREEZE.json": {
+      "sha256": "740e2a19e7308065a28a515b9d86b0a738a7aa3593e17bae5531e573f08eb2d9",
+      "size": 908
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/ENVIRONMENT.json": {
+      "sha256": "abf379a35ce10fab916a94d2684086c65cf6636efb903979d9baa435bd2fc6ee",
+      "size": 183
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/NUMBERS_AUDIT.csv": {
+      "sha256": "ac7c26b21568d890173dda63e19215904050fdeba8cc055af03bc732adccd8f3",
+      "size": 945
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi000.json": {
+      "sha256": "0d57cdd460f276198dfb923f870c3b4afe879529671dfb2092192a4ae55a53c7",
+      "size": 777
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi000.npz": {
+      "sha256": "5605a34bb288146f2c910c2422fff3f61a6aa61a4dab5de6a9e89d85c451731e",
+      "size": 45418
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi015.json": {
+      "sha256": "bf9be8ef3e6648723039ceb6077ecfea6e73466b19ca5c6476c39c5e223a7648",
+      "size": 781
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi015.npz": {
+      "sha256": "2ec2169751067dc61c856a05aa7780cf1e759a2aeec7e1e8e0cbd6c821dbaac5",
+      "size": 45590
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi030.json": {
+      "sha256": "89e1b70d32055fead7b6ed903a7dae87bde1995b6777d45b5c003b9af4631424",
+      "size": 779
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi030.npz": {
+      "sha256": "f6e7c71dca2d04a7a50731b50cb88420bf26a8acfa2309bc4dc49a9b54cb8188",
+      "size": 45293
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi045.json": {
+      "sha256": "3b1fdbe439f2286bfc5bad44fcd1d7b815748bfe53ec834b5f51c4673d29e232",
+      "size": 783
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi045.npz": {
+      "sha256": "637fa610717360c90e001cbcc6e7004ba374578f5f4663e40f2c12940caf3105",
+      "size": 45523
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi060.json": {
+      "sha256": "4060083422d2be33677e95df87a0a23ba080969f058ab00d478fd18e39e59395",
+      "size": 778
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi060.npz": {
+      "sha256": "cb0788b502d845c99ce6770b08c6553975eb950eac9959c929cd1689744ebf1b",
+      "size": 45399
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi075.json": {
+      "sha256": "3b344c94113a6692f7afec318f11fd52b40e226aacc605acc7c04bec2e4877a8",
+      "size": 781
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi075.npz": {
+      "sha256": "47274dd369a74f371675d55e8e1a122e02bf90dba59abdd0b446562052e0b137",
+      "size": 45481
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi090.json": {
+      "sha256": "03de9af589a526a72ea704c7ac57e5482c7f0b90c514e3822c2efd10b4b41e1c",
+      "size": 780
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi090.npz": {
+      "sha256": "5d712d2312c723204cfca5f59d55f69b5ce5f473dfbf524fa82af8cd7a791309",
+      "size": 45310
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi105.json": {
+      "sha256": "35e1e62c24a7b703cfa910c7342624cbdce9ff8afceb43bf916be119bc1524ab",
+      "size": 783
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi105.npz": {
+      "sha256": "edead0ec734ede31690987e73241a42e68dba833d1957f44fa31d1fd238ffcfc",
+      "size": 45448
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi120.json": {
+      "sha256": "1f9792dda919d453fd6e9915c115e8fb6db78dc96375f8704e718a34b29c504e",
+      "size": 788
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi120.npz": {
+      "sha256": "4be099590e2626f7dd6a1425467687b396ecdb5f3c6ceaef6be5b626b6956f28",
+      "size": 45264
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi135.json": {
+      "sha256": "6e57ec7c350c880649d1597f83e1a2ecd2f6b83ead4cf873c8acedbe10b0019f",
+      "size": 784
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi135.npz": {
+      "sha256": "b966136ef92fbb21604e3c0168478d2ebc4da5ac946aeb19d38c9ff27573e73f",
+      "size": 45268
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi150.json": {
+      "sha256": "8931c9014c04e71f825f458e97d21f8d3819deee76145021e83b4eed9ae05f88",
+      "size": 781
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi150.npz": {
+      "sha256": "1d4fcdfcabf388efa85046fe8b6feaf07e3cb821105bd6e6e7c71892fd23b18f",
+      "size": 45377
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi165.json": {
+      "sha256": "d70b9c3613b110e9a3cdb226426686acf128a5bb2c499e771f7915f3daa5ee7e",
+      "size": 779
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi1_phi165.npz": {
+      "sha256": "bab2ef391d7e5cbae0d369539753ac9dea55442e095d815718fc93c8f33689cb",
+      "size": 45325
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi000.json": {
+      "sha256": "371e1b0f8effe2101d60c38c079ab2cc03519241161b8762371d7bc558aa54b2",
+      "size": 779
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi000.npz": {
+      "sha256": "05d0b9e7592c974a3a152de3ae96651db8563d4b376644df562194c4cf4c61a0",
+      "size": 45431
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi015.json": {
+      "sha256": "d71cd31772aac5bd9005510113f1c9e7b0992d91beb8498aa8ca13a06b11d295",
+      "size": 784
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi015.npz": {
+      "sha256": "c498dfa09788fcf67a7ce4eb7471ff67bd7d8b59522237e7ca0b87f98df57aa6",
+      "size": 45587
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi030.json": {
+      "sha256": "c57b9d0f5daea0a93a0f0a2d71e8cf93150a7e2b42aae5e34a3ea5b8402dd1a9",
+      "size": 777
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi030.npz": {
+      "sha256": "d0a491ea4102e9e1c0d7e304695a272b97524973f91094ddfcb0ea11c7d1b62f",
+      "size": 45438
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi045.json": {
+      "sha256": "a2a03c988bf252b5ce77d93ab3669fa5b44be24024b8cf0a7d16b71886d94c47",
+      "size": 769
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi045.npz": {
+      "sha256": "a9324444e56c50dc0f4fbc91d0901a000f403be62dc0428889780e49a1e76d7b",
+      "size": 45558
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi060.json": {
+      "sha256": "ef8db65aeb7605da62c407d51b982f164b8e88bd912b54b0af6b32c136e9dcc2",
+      "size": 784
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi060.npz": {
+      "sha256": "bbce2c85356363b79ca6880676f90dc928c49154339696221ea2f269e5d0b3bc",
+      "size": 45479
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi075.json": {
+      "sha256": "1bea4bb0b57e8e71eee5824f3bfc9c1434d99882ade8b7875fc4bc62921a1aad",
+      "size": 780
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi075.npz": {
+      "sha256": "0b219223c7d3b4465d39986e04adf1abed40732115e3ebd1a9f6b93023f9c760",
+      "size": 45353
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi090.json": {
+      "sha256": "61e52551129c73f796f51e56b833cdd12c95defeeb00af4875a0c572efff0272",
+      "size": 782
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi090.npz": {
+      "sha256": "1cbc5289c61752f780a2776e3d1090e5051b012d9fc740dbb13ac7457a90909c",
+      "size": 45378
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi105.json": {
+      "sha256": "acec1df45760d076952dd81cf5984982aeb54e73c53691f02eee184058a701fd",
+      "size": 780
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi105.npz": {
+      "sha256": "1cbc491c4a8daf02962e2a92e0583a18c24c374de2c4265c6dface3f5e2691bf",
+      "size": 45338
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi120.json": {
+      "sha256": "6a7530bfdf8419799a8aa269539681786bdce4370b38e8d259f1213c528d16fe",
+      "size": 779
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi120.npz": {
+      "sha256": "2c94d40b7e826287ef9285706a3d3bffe781befb973402f1811d9e6ad49400eb",
+      "size": 45561
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi135.json": {
+      "sha256": "89c0b820fdfed12c0719e948d50831dc9e2219961bceb9c4638261b160e84b5c",
+      "size": 779
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi135.npz": {
+      "sha256": "42565c63a9ec871766ce916067c7dc77984df53e3bc3ecf688b754b6e1d87330",
+      "size": 45443
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi150.json": {
+      "sha256": "6f4d81f47238ae7c91fabae1c5da36b842f5e24c67acecbf40869a9afdaa427f",
+      "size": 775
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi150.npz": {
+      "sha256": "ee93722a29d956dae74304b5175c1b73b6a373873ce42615f6f18376c38c8c72",
+      "size": 45471
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi165.json": {
+      "sha256": "25b706d4fea1183521c37734fff243a33a104ad94a718269a33089283f918a90",
+      "size": 781
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/A_chi2_phi165.npz": {
+      "sha256": "3becf6930c5699daf5e3e280b8029fc04beb21738a8bb7933a2cb4bd76c5e7bd",
+      "size": 45636
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_CV_tau1_a10.json": {
+      "sha256": "6712f088b14cee90dc95da97764888f1f8fe1697e8f4630ebc6ce57e61a12293",
+      "size": 773
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_CV_tau1_a10.npz": {
+      "sha256": "9cdb5158dd26d9da1f38f93bcaea8a29fb2290e97735621ab47b9002929f018b",
+      "size": 45429
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_CV_tau20_a10.json": {
+      "sha256": "819e8bf58b2750f878fafac1789230eae110db84384b6b00835c9034e90ec6fa",
+      "size": 774
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_CV_tau20_a10.npz": {
+      "sha256": "57b2396d12ec8ecc3915f2c1b7bd2172c4aea8aa59aca5d5cb1ec77b43b3816d",
+      "size": 45444
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_CV_tau20_a20.json": {
+      "sha256": "2364038ab66d2bdd55f5e31c703095fef414e876bc74a0f23bca6cdcaead7e0d",
+      "size": 773
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_CV_tau20_a20.npz": {
+      "sha256": "90a39c3cd04ebafaa783e761c7b1aba7613631b7256c9c8810bb440e7e092f61",
+      "size": 45350
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_CV_tau20_a5.json": {
+      "sha256": "f3d81f84dd44eaf7a87aa22a0cee7152d5f9aac262e22bc0d70dd020abc90d96",
+      "size": 775
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_CV_tau20_a5.npz": {
+      "sha256": "5e63a3ff96a00456290ce7364116ba8454916790cdb43b3d00cd37b4e8be2afc",
+      "size": 44858
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_CV_tau20_a50.json": {
+      "sha256": "a87569018ff190e13a0f8b9574b0430ce198c465b1b86e0e41a7320a4be1f0c6",
+      "size": 777
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_CV_tau20_a50.npz": {
+      "sha256": "42ceb506a50de7f8ebfae4ec3762beaf5051d378da0da7ac50cc3ec85d65cf6c",
+      "size": 45222
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_CV_tau5_a10.json": {
+      "sha256": "1610c9aad47050799c2af402c32d83c68a2fe5baaba9ae886ef3df47f575ec2a",
+      "size": 776
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_CV_tau5_a10.npz": {
+      "sha256": "bb2522cb71a9f539c8d581dd97023123d82231e68cf7c224df89f881c3d40c9c",
+      "size": 45400
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_F_tau0_a20.json": {
+      "sha256": "834200b195b491a92afb73edfd7f30b3fcf195decdbc19134ccacc5c1a226ce1",
+      "size": 775
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_F_tau0_a20.npz": {
+      "sha256": "cd43646cd2666c61a78044633a42e2e7c3b49748e2d20e2039f71a824928abf9",
+      "size": 45214
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_F_tau0_a5.json": {
+      "sha256": "11b921b6a7d0ea718343f84221ea2de25df8ee5b3503b44007ea12895960c900",
+      "size": 777
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_F_tau0_a5.npz": {
+      "sha256": "24af4d094a1a734ea14f26e7059ac54fcfeae90190e751197119cf0b5de00fe8",
+      "size": 45269
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_F_tau0_a50.json": {
+      "sha256": "a1649e77d7b572b3a74e4e617b7f392cfa124c6a2399e300a74a871875cc6a4b",
+      "size": 773
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_F_tau0_a50.npz": {
+      "sha256": "8c8fe6d0332c9445e64cf461059d8fcd4edf997ea9f379a53413ccf257fcdd56",
+      "size": 45133
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_MCV3_tau20_a10.json": {
+      "sha256": "18de3ea763fc5158e800e6644b0bc3ec78069109569b046655b64142e1dcbb3e",
+      "size": 781
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_MCV3_tau20_a10.npz": {
+      "sha256": "de9d2cba99b1a5d2618623e074e512c4b8f27b2ddaca20452c1210eb49aa976e",
+      "size": 45254
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_MCV3_tau5_a10.json": {
+      "sha256": "81645f76af64ef03ce5d263381e42d18fec5a90443d12588af7fd87665c1366c",
+      "size": 781
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/B_MCV3_tau5_a10.npz": {
+      "sha256": "569860f616b14d7644f8b80c774a27eb848f95d31f523b59904fa1e024b81008",
+      "size": 45428
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/C_CV_tau20_coupling_off.json": {
+      "sha256": "fb037be4b9df1b097a87327373115735010556104ee74a934b9f6befcfa5ef80",
+      "size": 787
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/C_CV_tau20_coupling_off.npz": {
+      "sha256": "9a61796ed8d8555ba9993c2945db8fcf321a9862ecb9622fafd2290b9c1a68c2",
+      "size": 37733
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/D_iso_circle.json": {
+      "sha256": "e0248cd48c31641c52ca3e5f0607e71692af358114a5de268b2375bb7f8c911b",
+      "size": 797
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/D_iso_circle.npz": {
+      "sha256": "091bc317b0bf3860d7bade5505000df8c67fde88b7234500bde47afba90aa182",
+      "size": 34626
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/D_iso_ellipse.json": {
+      "sha256": "de924e0623c43492c5e50b1ed934524df2760febbde48cb27fe1590618b9940e",
+      "size": 782
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/D_iso_ellipse.npz": {
+      "sha256": "1c63c801a023d6618c32c4d67e36cae605181e6995da826ffe2ad6919a933b95",
+      "size": 42785
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/PRODUCTION_SUMMARY.json": {
+      "sha256": "835824008c217b4633b871b62a91d754f6baf34601d8016a6544b7615dad4996",
+      "size": 34913
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/S_circle_eta002.json": {
+      "sha256": "1d38e57a0412c72cfbc161440b0a031ea40a73f18c41b0774fb2378ca60aee95",
+      "size": 782
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/S_circle_eta002.npz": {
+      "sha256": "529af4ee4d9612ead23f3e2a8feb180ad0fd69ca9528daa94950b39ade733872",
+      "size": 45329
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/S_circle_eta01.json": {
+      "sha256": "44bcf13d93b4bda5b92c677c3c65b2c13a74a94045d67d74d15b17824da8ef10",
+      "size": 770
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/S_circle_eta01.npz": {
+      "sha256": "2322b707ea187a24c73c4e1f1a3d57da94cf016b431c09d678d5913a886a8158",
+      "size": 45308
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/S_ellipse_eta002.json": {
+      "sha256": "d2bc7a0d30948add62879d621c7290864bac8ce0ba7c6c74010a1f3abd69b199",
+      "size": 795
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/S_ellipse_eta002.npz": {
+      "sha256": "64fab9d5bb16b2d215d2f850fa3c983d7c9c6efbcd79cf423c2d4e507960a900",
+      "size": 45538
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/S_ellipse_eta01.json": {
+      "sha256": "db38ca9b8612875c0f4f1efdcd2c1133788c37362de8b48f6dc06e1215797ba7",
+      "size": 794
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/S_ellipse_eta01.npz": {
+      "sha256": "2a2b830b9d1add9abacaa0b12e2fcca6f0157b3901bab75398f9c472c891bc97",
+      "size": 45500
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/Spot_chi2_phi030_192.json": {
+      "sha256": "c02240414bda9f3bcac8990125047d0ad4e9b80d611b2ea366817029adfb45e4",
+      "size": 786
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/Spot_chi2_phi030_192.npz": {
+      "sha256": "ca66a73f3c6acff8767a20fb2cb06c394f47a7f11c82e578456d4ef8a106c5aa",
+      "size": 97990
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/Spot_chi2_phi090_192.json": {
+      "sha256": "afa8ce7d5f39903ea77b213117e4208e1d933bfd324c9702943cb2e9ada4f725",
+      "size": 790
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/Spot_chi2_phi090_192.npz": {
+      "sha256": "c3f318e179c4e09d290002a628122e67bc99b9a6ce255756229c7ad824e12af8",
+      "size": 97687
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/PROD/T3_probe_theta_r2a.npz": {
+      "sha256": "62e8ff6a2f6832d89a12aaede3e1e5e9540f724a25878b407860b4e70919f4ee",
+      "size": 70517
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/SUPP_D_lambda.csv": {
+      "sha256": "26544ff1f0b3cb911d6ba5e46f45361cc3aa31c42a86874354d56e36d6d17ef5",
+      "size": 242
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/SUPP_cp_worked_example.csv": {
+      "sha256": "9aef2b9c4fc18873bb6be7637ba190c67de9b227a671d57e86788ae960b1a319",
+      "size": 308
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/SUPP_phi_sweep.csv": {
+      "sha256": "70b764e94c577217ffdb10b497b7d7b2fbbe655b9866516f8a07bea12561f730",
+      "size": 662
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/SUPP_verification.csv": {
+      "sha256": "c01aafd171e01895bcb5281acd2c946eb606fe6068570b2c7281c1d9e93901c8",
+      "size": 935
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/data/VERIFY.json": {
+      "sha256": "861faca6dcb6e39265b12eb38a668613f306a8f2d83bd7760d40ee7a967abba8",
+      "size": 4325
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/figures/FIGURE_CAPTIONS.md": {
+      "sha256": "0b3a2ae99bf58dd9a6bac94a1d9e072b7f42e7b346078a4650e5384c40b49e4a",
+      "size": 1477
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/figures/fig1_sigma_phi.png": {
+      "sha256": "078e0c9297803cae7b8c173606e88e90425a45fa20e86413cd44ac4ba74742fb",
+      "size": 48075
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/figures/fig2_D_lambda.png": {
+      "sha256": "ceb1ad81a43eca95a5ca66bbcbb216aaa7568ab95a1a551738f41669902d3701",
+      "size": 38629
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/figures/fig3_series.png": {
+      "sha256": "3a9c068391a0623ac3457704e5935d07233ce1045a978c027129361ec1aeb615",
+      "size": 124021
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/figures/fig4_angular.png": {
+      "sha256": "b09d44d4a5050290f6bacd3fde180f60ec35309ab665bcb0febc93ce6d24382f",
+      "size": 115617
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/figures/fig5_scaling.png": {
+      "sha256": "32ec6f2f179595091a8229c3d7d4b7ae132d32927e817eb29008c95626c63507",
+      "size": 64080
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/logs/PLAN_FREEZE.json": {
+      "sha256": "7eab30ae9f47e056c7cc6d135705ba66a0b479bc21ec2fca92b272a128ab603c",
+      "size": 981
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/logs/production_v1.log": {
+      "sha256": "ec249bb9f17f407b5d5d78d6b12aacff21ee7e2f729d3eb804778ebaf1d57229",
+      "size": 529
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/logs/production_v2.log": {
+      "sha256": "baaa846515d8899632728ee971029dea28abf3d2f5a0db0696b9a696f2b18f84",
+      "size": 3374
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/logs/verify_rerun_v3.log": {
+      "sha256": "02bd25af61239a41ecd71f0eec110859557cf3cd558f12f09fb7d9f3a52c431e",
+      "size": 1495
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/run_production.py": {
+      "sha256": "8ce4db7c0430955ee8f65cf31235962c73e16b2906e1ec436642f7d02e509022",
+      "size": 8262
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/run_verify.py": {
+      "sha256": "116e0c743ae75df304ce3785a964396ba1a967ca42b384e617463c18ad6dc155",
+      "size": 11233
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/src/cg_grid.py": {
+      "sha256": "d8b34b32c656c09dedc23e22f5658c4b5881dc15cf404f617b7e532e6358d05e",
+      "size": 5380
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/src/cg_model.py": {
+      "sha256": "da178f1c0f9e974fc9702d0a0d42b08d8938aa7ad00fe8e7a4bdd6dfff99b991",
+      "size": 5558
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/src/cg_ops.py": {
+      "sha256": "f8855a5b43b2e8506938011bf1f3321276cf4e691daed6786f3c852477d853f5",
+      "size": 11810
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/src/cg_solver.py": {
+      "sha256": "4715f3179f55f56d8fb9300e6a83b6caff370b0725c4ea5f52719fc151ea39e4",
+      "size": 7549
+    },
+    "PROJECT_CRYSTAL_GEOMETRY_01/src/cg_transient.py": {
+      "sha256": "41cd9ed6d67f21c0bf789caf2c32636181c781d56afca128b4d6b6f728ee1555",
+      "size": 1161
+    },
+    "PROJECT_STATE_FULL_SOURCE_REVIEW_01.md": {
+      "sha256": "6f761bd63f65c7bf5236b65a340a01e2a5ada1444309bb84e3f3f67c4cdb8840",
+      "size": 11400
+    },
+    "PROJECT_STATE_PILOT_HUANG_2025_01.md": {
+      "sha256": "4a28edbdbaf8bc2f03bea09ca0705b5e7b90342ed7ddc392f14ea13bdb4061c2",
+      "size": 7975
+    },
+    "PROJECT_STATE_PRE_EXECUTION_REVIEW_01.md": {
+      "sha256": "632688fcd66e13547f166d8149e9586ee1816b2f35e54b57bd4568dfaf327e42",
+      "size": 10433
+    },
+    "REJECTED_IDEAS.md": {
+      "sha256": "02dcfbce99553738fe3332076bd41148e587a8effdac1279fa5970999043c6a9",
+      "size": 2263
+    },
+    "REPRODUCIBILITY_STATUS.md": {
+      "sha256": "de9a690c065a5baff473c66ba8c85698f15ca5912d0555297ebc1a96cb89a402",
+      "size": 3519
+    },
+    "RESEARCH_READING/CROSSREF_METADATA_VERIFICATION.json": {
+      "sha256": "c53647a19f0c727cdce46a1e8bd1dc69824a1a16ed7d1daad7c7dbeb42d8ce5e",
+      "size": 57171
+    },
+    "RESEARCH_READING/EVIDENCE_LOG.md": {
+      "sha256": "7b960ca1f03a19d448a2a0f3abad9114de21a2d80c9685065701c7a8207b559f",
+      "size": 3348
+    },
+    "RESEARCH_READING/EXTRACTED_UNPUBLISHED/FEM_!_Paper.txt": {
+      "sha256": "f36a667661d8f1f49e1e70c778b6c3dadaccacd41d0571fd3d4236996d153289",
+      "size": 163179
+    },
+    "RESEARCH_READING/EXTRACTED_UNPUBLISHED/FEM_2_Paper.txt": {
+      "sha256": "fbc8e4853559dcdb6b154451651e4a395090fd3a151395633908ba97e804088b",
+      "size": 67401
+    },
+    "RESEARCH_READING/EXTRACTED_UNPUBLISHED/FEM_3_Paper.txt": {
+      "sha256": "96fb81f910599f1c04d1c829dd2de80baee271f3e6a39eb0750b58b04d7e17ce",
+      "size": 90305
+    },
+    "RESEARCH_READING/EXTRACTED_UNPUBLISHED/FEM_4_Paper.txt": {
+      "sha256": "b022874de8ddecc08816790d202fd6b0d1810ec970eb917025ce97ab897dd61c",
+      "size": 136494
+    },
+    "RESEARCH_READING/EXTRACTED_UNPUBLISHED/FEM_5_Paper.txt": {
+      "sha256": "2b16492623cddc2b3cdfbba290a5bcca93dd91c98977c00902b96d43a47597cc",
+      "size": 103022
+    },
+    "RESEARCH_READING/EXTRACTED_UNPUBLISHED/GK_heat_Paper.txt": {
+      "sha256": "940a5888ed0de0a327bcfa395ba7e0c89f420821fd03d56359ccded30e9eff1d",
+      "size": 141444
+    },
+    "RESEARCH_READING/EXTRACTED_UNPUBLISHED/Quasi_crystal_Paper.txt": {
+      "sha256": "604baca5ebccd373acf35442293a1885897834674530d9dfc4dca9128e685e02",
+      "size": 108804
+    },
+    "RESEARCH_READING/PROJECT_STATE_READING_01.md": {
+      "sha256": "c341bcaced96ee09d560dc8219ffef752bfd42e52b746e6dd94d26c44017d709",
+      "size": 7486
+    },
+    "RESEARCH_READING/PROJECT_STATE_READING_02.md": {
+      "sha256": "13990ed7772d1d505df54b4c90e29ebeb54f1ac4faccea13e82e000a89b76403",
+      "size": 10082
+    },
+    "RESEARCH_READING/PROJECT_STATE_READING_03.md": {
+      "sha256": "a151260c724bab72d03c38085411f74424a4d27719a9ab1bb9dbef95e27c88fb",
+      "size": 6351
+    },
+    "RESEARCH_READING/PUBLISHED_FULLTEXT_RETRIEVAL.json": {
+      "sha256": "f800a7ca2d7bd2c0dc6e74a742b5fb358cc76196d57b83df56f0161f9c0d59ec",
+      "size": 7592
+    },
+    "RESEARCH_READING/PUBLISHED_PAPERS_INVENTORY.csv": {
+      "sha256": "87008211f128118498d51406a7ff0c08c5253fdd3c6ef98eb7ac252daf36ae75",
+      "size": 19427
+    },
+    "RESEARCH_READING/PUBLISHED_PAPERS_INVENTORY.json": {
+      "sha256": "dc255e0d7fe379272d1df4e136244f225db12b76d8223c077d958d9ce5fd390d",
+      "size": 34176
+    },
+    "RESEARCH_READING/PUBLISHED_READING_EXTRACTS.json": {
+      "sha256": "fbd51c436161eaff4a299a240e65e1d79523c4eba595fdebbb20576860dc2941",
+      "size": 137316
+    },
+    "RESEARCH_READING/PUBLISHED_WORKBOOK_CONTENTS.json": {
+      "sha256": "d578099afa35c89b3ef10ed0a742b74b7d250ff58b2015593e36dc4868be3a8b",
+      "size": 67632
+    },
+    "RESEARCH_READING/READING_REPORT.md": {
+      "sha256": "51055bfe85cffbafaae73ba9d094b987c49eb88b969a2576bc3f5fcdb228b506",
+      "size": 20312
+    },
+    "RESEARCH_READING/READING_STATUS.csv": {
+      "sha256": "9ee4d6fd7dfaf5976cf05e1f5d9623ff9d8d43931d53f6dbf0c05a628e72efa7",
+      "size": 16671
+    },
+    "RESEARCH_READING/SEARCH_LOG.md": {
+      "sha256": "b9ac5508f031bcaaaa48a12f3fd3c52029422372a4f9e9568765b6be395e13b0",
+      "size": 3208
+    },
+    "RESEARCH_READING/SOURCE_MANIFEST.json": {
+      "sha256": "1546830b30e6c840f6d5a5a1d36d79e595d01a4b6bf15af1bb402df22d102114",
+      "size": 1093
+    },
+    "RESEARCH_READING/UNPUBLISHED_PACKAGE_INVENTORY.csv": {
+      "sha256": "56ab94182a779f3052fee3ee77c37888d4fbf499251ba944d969fa513f9a0ead",
+      "size": 324
+    },
+    "RESEARCH_READING/UNPUBLISHED_READING_EXTRACTS.json": {
+      "sha256": "8ce8d0e538e8a655a29e6be55bcef9c8cecae033f2daf40e1dbf11c0adf94ef6",
+      "size": 113563
+    },
+    "RESEARCH_READING/inspect_published_sources.py": {
+      "sha256": "b1bcaff04880a4dedbdee98120183b8214f90aaac6ac492f1ae680320929f021",
+      "size": 4504
+    },
+    "VALIDATION_STATUS.md": {
+      "sha256": "52861038aa56cd26f1469a39c9a03f12d6b62da616561bed8bb1e0fe2f5ded85",
+      "size": 2442
+    }
+  }
+}

@@ -1,0 +1,31 @@
+[PASS] U0_plane_strain_block_vs_6x6_Voigt: rel_err_Q=0.0 rel_err_beta=1.4739447055687242e-16 criterion=<=1e-12 vs independent assembly of the monoclinic 13-constant 6x6 matrix (plane strain eps22=g12=g23=0)
+[PASS] U1_rotate_Q_beta_vs_independent_3D: fixed_rel_err_Q=0.0 fixed_rel_err_beta=1.5755938491582135e-16 shipped_rel_err_Q=0.0 shipped_rel_err_beta=0.00167773981397438 criterion=<=1e-12 over 27 angles (incl. 37, 11.3, 123.4 deg)
+[PASS] U1b_test_power_shipped_fails: shipped_beta_err=0.00167773981397438 criterion=test must be able to fail: shipped beta error > 1e-4
+[FAIL] U3_material_admissibility: Q_eig_min_GPa=88.50746307556109 K_eig_min=11.715559610452997 K_eig_max=14.504440389547003 delta=0.0010782009223322998
+[PASS] U4_bromwich_identity: max_err_t_le_12=6.337395041675397e-09 plan={'T': 20.0, 'gamma': 0.9, 'K': 26, 'n_solves': 27, 'eps': 1e-10, 't0': 2.5, 'tw': 1.2, 'alias': 1.522997974471263e-08, 't_valid_max': 14.5, 'growth_at_12': 49020.80113638175} criterion=H=1 must return the Gaussian: <=1e-6
+[PASS] U5_bromwich_damped_oscillator_vs_ODE: rel_err=4.976783145840806e-09 criterion=<=1e-6 vs DOP853 time integration (z=0.02, w0=2)
+[PASS] U6_bromwich_parameter_independence: rel_diff_T20g0p9_vs_T32g0p6=4.682570189275669e-09 criterion=<=1e-6 between (T=20,gamma=0.9) and (T=32,gamma=0.6)
+[PASS] U7_ref1d_spectral_steady_closed_form: rel_err=4.969088515771538e-10 sigma_exact_Pa_per_K=-1234746.0535908495 criterion=1-D Chebyshev reference at s->0 vs closed-form steady Lame solution <=1e-6
+[PASS] U8_bromwich_vs_time_domain_Crank_Nicolson: rel_err=6.532193948532909e-07 peak_Pa_per_K=-985689.3764034857 criterion=Laplace-domain 1-D spectral + Bromwich vs time-domain CN heat solve + closed-form Lame stress (quasi-static, uncoupled) <=1e-6 over 0<=t<=9
+[PASS] V0_metric_consistency_linear_field: chi1_errs_48_96_192=[0.016301581208974625, 0.004083694117343661, 0.0010213280920119416] chi2_errs_48_96_192=[0.01865744799612168, 0.004813539984945159, 0.001214606915773686] criterion=96x48 interior error <5e-3 (handoff criterion), 2nd order expected
+[PASS] V1_stencil_dispersion: d2_symbol_err_kh0p4=-0.013262425036063563 criterion=|err|<2% at kh=0.4 (handoff criterion)
+[PASS] V3_rotation_covariance_all_grid_aligned_phi_FIXED: max_rel_err=1.1668443988810395e-13 per_phi={15: '8.2e-14', 30: '7.1e-14', 45: '1.1e-13', 60: '8.1e-14', 75: '5.1e-14', 90: '1.2e-13', 105: '7.4e-14', 120: '8.4e-14', 135: '7.9e-14', 150: '6.2e-14', 165: '9.0e-14'} criterion=<=1e-8, field covariance at complex s (theta, u rotated), phi=15..165 deg step 15 (all exact lattice rotations of the 48-point grid)
+[FAIL] V3p_test_power_shipped_rotation: shipped_phi45=5.906275684995707e-07 shipped_phi90=1.1668443988810395e-13 criterion=test must detect the shipped bug at phi=45 (>1e-6) while 90 deg stays blind (~0)
+[PASS] V4_uncoupled_null_beta0: max_abs_hoop_Pa=0.0 backward_err=1.142000176672518e-16 criterion=beta=0 -> u,sigma = 0 (<1e-6 Pa) at complex s
+[PASS] V5_tau_to_zero: rel_diff=2.79516521014589e-07 criterion=CV(tau=1e-6 t_th) vs Fourier at complex s <=1e-4
+[PASS] V12_conjugate_symmetry: rel_err=8.83221056727354e-14 criterion=H(conj s) = conj H(s) for the real system (needed by the one-sided Bromwich sum) <=1e-10
+[PASS] V6_steady_log_law: max_abs_err_48_96_192=[6.234330897425533e-05, 9.501777534892675e-06, 1.6324541964873873e-06] criterion=<=0.01 at 96x48 (handoff criterion); ratio of successive errors ~4 expected
+[PASS] V7_static_uniform_theta_annulus: rel_err_48_96_192=[0.02160956267969807, 0.0067629555056929235, 0.0018999473705733655] sigma_exact=-3179904.953001158 criterion=<=1.5% at 96x48 vs closed form (handoff criterion)
+[PASS] V8_steady_thermal_gradient_load: rel_err_48_96_192_384=['-0.0290', '-0.0087', '-0.0024', '+0.0001'] observed_order_48_to_96=1.7281792584562297 sigma_exact=-1234746.0535908495 criterion=steady log-profile thermal-gradient elasticity (clamped R=80a) vs closed form: |err(192x96)|<0.5%, order>1.5 (NEW: gradient-load path was absent from handoff V0-V7)
+   V9 FOURIER [0.13117739058695635, 0.03878863027203951, 0.01060163901026946]
+   V9 CV [0.8444630199218797, 0.23557018250237066, 0.060717809115368754]
+   V9 MCV3 [0.6783051260857806, 0.1911157944134737, 0.04963781830575867]
+[FAIL] V9_dynamic_coupled_transfer_vs_1D_spectral: errs={'FOURIER': ['1.31e-01', '3.88e-02', '1.06e-02'], 'CV': ['8.44e-01', '2.36e-01', '6.07e-02'], 'MCV3': ['6.78e-01', '1.91e-01', '4.96e-02']} worst_rel_err_96x48=0.23557018250237066 worst_rel_err_192x96=0.060717809115368754 min_observed_order_48_to_96=1.757813345459641 criterion=isotropic circle, inertia+coupling ON, complex s_k (gamma=0.9, 5 frequencies), Fourier/CV/MCV3: |err(192x96)|<0.5%, order>1.5
+[FAIL] V9b_dynamic_a50nm_vs_1D_spectral: rel_err_96x48=0.03955518844231725 criterion=a=50 nm, CV, 96x48: <3% (grid error expected ~1%)
+[FAIL] V9c_inertia_off_switch: rel_err_96x48=0.22261028328699914 criterion=inertia_scale=0 reproduces the 1-D quasi-static reference to grid accuracy (<3%)
+   V11 {'grid': '48x24', 'peak_rel_err': -0.04012188455854616, 'series_max_rel_err': 0.04395366585459329, 'wall_pulse_err': 6.337471067996692e-09}
+   V11 {'grid': '96x48', 'peak_rel_err': -0.011982900720771284, 'series_max_rel_err': 0.013095938698240099, 'wall_pulse_err': 6.337471067996692e-09}
+   V11 {'grid': '192x96', 'peak_rel_err': -0.0033084382491063813, 'series_max_rel_err': 0.0036065882942137384, 'wall_pulse_err': 6.337471067996692e-09}
+[PASS] V11_single_pulse_isotropic_circle_vs_time_domain: peak_rel_err_48_96_192=['-0.0401', '-0.0120', '-0.0033'] series_max_err_192=0.0036065882942137384 order_48_96=1.7434121861376308 order_96_192=1.8567549285011566 reference_peak_Pa_per_K=985689.4485743708 criterion=2-D mapped FD + Bromwich (inertia off, uncoupled, isotropic circle) vs independent time-domain reference: |peak err(192x96)|<0.5%, order>1.5
+[INFO] V3c_nonaligned_37deg_EXPLORATORY: rel_diff={'48x24': 1.4369178482164551e-05, '96x48': 4.162017526584007e-06}
+TESTS DONE: 18 PASS, 5 FAIL, cpu 397s wall 397s

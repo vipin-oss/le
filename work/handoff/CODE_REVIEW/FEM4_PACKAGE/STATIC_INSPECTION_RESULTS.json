@@ -1,0 +1,100 @@
+{
+  "inspection_date": "2026-09-30",
+  "files": 226,
+  "matlab_files_total": 113,
+  "matlab_core_files": 89,
+  "python_figure_scripts": 3,
+  "regression_summary_entries_from_source": 20,
+  "runtime_matlab_path": null,
+  "runtime_octave_path": null,
+  "scientific_execution_status": "NOT_RUN",
+  "python_syntax_only": [
+    {
+      "path": "program/paper_figures/gen_fixed_figures.py",
+      "status": "AST_PARSE_SUCCESS \u2014 NOT_EXECUTED"
+    },
+    {
+      "path": "program/paper_figures/gen_lambda_refined_figure.py",
+      "status": "AST_PARSE_SUCCESS \u2014 NOT_EXECUTED"
+    },
+    {
+      "path": "program/paper_figures/gen_meshconv_figure.py",
+      "status": "AST_PARSE_SUCCESS \u2014 NOT_EXECUTED"
+    }
+  ],
+  "section6_master_dataset_present": false,
+  "documentation_references_not_found": [
+    "FINAL_CALCULATION_REFERENCES.bib",
+    "MASTER_CALCULATION_AUDIT.md",
+    "assembly_Kuu.m"
+  ],
+  "frozen_csv_spot_checks": [
+    {
+      "csv": "CONDITIONING_TRUE_GEOMETRY_RESULTS.csv",
+      "byte_identical": true,
+      "output_sha256": "cb07886e5a159b8159f7f2fb82db2602905c4a4948625c3145f6061f93a79e87",
+      "figure_copy_sha256": "cb07886e5a159b8159f7f2fb82db2602905c4a4948625c3145f6061f93a79e87"
+    },
+    {
+      "csv": "actuator_response.csv",
+      "byte_identical": true,
+      "output_sha256": "090bc9345cd33c484d9187d26d6072f25d2eb5bc1a660e7f5fd12daf5c391421",
+      "figure_copy_sha256": "090bc9345cd33c484d9187d26d6072f25d2eb5bc1a660e7f5fd12daf5c391421"
+    },
+    {
+      "csv": "aspect_ratio_study.csv",
+      "byte_identical": true,
+      "output_sha256": "8476ff1d8b2c8b51260003a26ec5f79fdb680f8a23a690945d71e1d60bf094df",
+      "figure_copy_sha256": "8476ff1d8b2c8b51260003a26ec5f79fdb680f8a23a690945d71e1d60bf094df"
+    },
+    {
+      "csv": "boundary_condition_study.csv",
+      "byte_identical": true,
+      "output_sha256": "d7bdcba9655e5639500b98fd40b674444fe2ec5b742c9345ce4548e573db1c07",
+      "figure_copy_sha256": "d7bdcba9655e5639500b98fd40b674444fe2ec5b742c9345ce4548e573db1c07"
+    },
+    {
+      "csv": "conditioning_reconciliation.csv",
+      "byte_identical": true,
+      "output_sha256": "f54ab43b42282d848d1e5a7d8ced1aa9e0ddd5ec695ca3ba6e80b10b71142095",
+      "figure_copy_sha256": "f54ab43b42282d848d1e5a7d8ced1aa9e0ddd5ec695ca3ba6e80b10b71142095"
+    },
+    {
+      "csv": "convergence_study.csv",
+      "byte_identical": true,
+      "output_sha256": "530418599ffe767544e45f2a4ae1f2cd07b054fd79dcba2ced6a7549943573f1",
+      "figure_copy_sha256": "530418599ffe767544e45f2a4ae1f2cd07b054fd79dcba2ced6a7549943573f1"
+    },
+    {
+      "csv": "field_export.csv",
+      "byte_identical": true,
+      "output_sha256": "00fd4d32850d882d1f4e2508df991a07a99a1eefe704248f5e1cf4e3f08b82da",
+      "figure_copy_sha256": "00fd4d32850d882d1f4e2508df991a07a99a1eefe704248f5e1cf4e3f08b82da"
+    },
+    {
+      "csv": "hcrit_study.csv",
+      "byte_identical": true,
+      "output_sha256": "cc9d80dda7f67d3bbfe45852627386a32decd25c82b7ffbcb7791a00d73f259a",
+      "figure_copy_sha256": "cc9d80dda7f67d3bbfe45852627386a32decd25c82b7ffbcb7791a00d73f259a"
+    },
+    {
+      "csv": "lambda_study.csv",
+      "byte_identical": true,
+      "output_sha256": "d8a8aeab69d111d0cf9fbbb37aca3fc197bd187b2e6efb4c9ea5813bc43ed077",
+      "figure_copy_sha256": "d8a8aeab69d111d0cf9fbbb37aca3fc197bd187b2e6efb4c9ea5813bc43ed077"
+    },
+    {
+      "csv": "lambda_study_refined.csv",
+      "byte_identical": true,
+      "output_sha256": "7941a5b1e1e65a38305719ae748d3083838c446c48cd29af252fbcc960321aaf",
+      "figure_copy_sha256": "7941a5b1e1e65a38305719ae748d3083838c446c48cd29af252fbcc960321aaf"
+    },
+    {
+      "csv": "tier2_benchmark.csv",
+      "byte_identical": true,
+      "output_sha256": "6864bd96193c826cd48cbd0c6b33e083aabaf0b94c66e885068b9e932010585a",
+      "figure_copy_sha256": "6864bd96193c826cd48cbd0c6b33e083aabaf0b94c66e885068b9e932010585a"
+    }
+  ],
+  "static_hcrit_gradient_assignment_note": "hcrit_study.m lines 99: a4=a5=0.5*D0; therefore constitutive_D D11=2*(a4+a5)=2*D0, contrary to inline comment. Static algebra check only; optional FEM branch not executed."
+}

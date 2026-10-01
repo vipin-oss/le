@@ -1,0 +1,11 @@
+{
+  "date_local": "2026-09-30",
+  "frozen_utc": "2026-09-30T09:27:49.875760+00:00",
+  "plan_version": "1.0",
+  "plan_sha256": "5bff72489a9c8e248e4714afc38c4e56a3cf037861e786679f782e8c058f9508",
+  "input_sha256": "ebb34449fc084aeb6ac91cfdd41ba555e581ef01f5da2f2878180badf2997482",
+  "source_pdf_sha256": "54e3dde5a7e8a1a705b0acf188d3f9f1a4d8971a2d70c94d88d7c3f845ab8196",
+  "reference_digitization_sha256": "09cd1efacfa7edcbca3200d41ba1491460837acc50b282726bc5ac6b4f0a22dd",
+  "source_images_and_extraction_done_before_solver_results": true,
+  "numerical_solver_status_at_freeze": "NOT_IMPLEMENTED / NOT_RUN"
+}

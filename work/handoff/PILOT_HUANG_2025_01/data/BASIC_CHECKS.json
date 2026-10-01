@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "label": "PILOT \u2014 NOT FINAL VALIDATION",
+  "parameters_derived": {
+    "gamma": 5518000.0,
+    "beta2": 4.010362694300518,
+    "b": 0.041885336787564766,
+    "g": 1.6191100763047437,
+    "eps_coupling": 0.01691043329785223
+  },
+  "normalization_scales": {
+    "theta": 1.0,
+    "sigma": 0.041885336787564766,
+    "u": 0.0006266565891472867
+  },
+  "front_positions_derived": {
+    "slow": 0.05997887374169364,
+    "fast": 0.3001056684978647,
+    "speeds": [
+      0.999647895694894,
+      5.0017611416310785
+    ]
+  },
+  "maxima": {
+    "momentum_residual": 2.6396351990983696e-16,
+    "energy_residual": 1.1137631442661483e-15,
+    "constitutive_residual": 2.9540196538163037e-16,
+    "matrix_mode_scaled_difference": 4.918097147295644e-14,
+    "root_swap_scaled_difference": 0.0
+  },
+  "case_count": 40,
+  "MP_probe_not_a_reference_measurement": {
+    "CV": {
+      "theta": 0.8170404480984801,
+      "sigma": -0.03712761698506384,
+      "u": 8.718596492699932e-05
+    },
+    "MCV3": {
+      "theta": 0.7830868148320418,
+      "sigma": -0.0363678151015258,
+      "u": 8.738788572377654e-05
+    }
+  },
+  "limited_scope": "Constitutive/PDE/BC/representation implementation checks; no physical validation or source-curve agreement yet"
+}

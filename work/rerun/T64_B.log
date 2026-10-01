@@ -1,0 +1,4 @@
+[  11s] ellipse phi=90       QUASI-STATIC elasticity, DFT window T=   8 t_th (pulse-train mean=0.266):  peak|hoop| = 1136909.6 Pa/K
+[  84s] ellipse phi=90       QUASI-STATIC elasticity, DFT window T=  64 t_th (pulse-train mean=0.033):  peak|hoop| = 1032625.7 Pa/K
+[  94s] ellipse phi=150      QUASI-STATIC elasticity, DFT window T=   8 t_th (pulse-train mean=0.266):  peak|hoop| = 1669382.7 Pa/K
+[ 165s] ellipse phi=150      QUASI-STATIC elasticity, DFT window T=  64 t_th (pulse-train mean=0.033):  peak|hoop| = 1464726.9 Pa/K

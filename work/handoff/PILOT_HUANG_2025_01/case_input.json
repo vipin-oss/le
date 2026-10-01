@@ -1,0 +1,41 @@
+{
+  "case_id": "HUANG_2025_FIG5_CV_MCV3_REFERENCE_PILOT_01",
+  "date_local": "2026-09-30",
+  "label": "PILOT — NOT FINAL VALIDATION",
+  "authorization": "User: ok do it, in direct response to the single bounded CV+MCV3 reference-pilot proposal",
+  "source_doi": "10.1007/s10483-025-3280-7",
+  "source_pdf": "/home/user/RESEARCH_PROJECT_INPUT/LITERATURE/USER_SUPPLIED_BENCHMARKS/ALIT_01/s10483-025-3280-7 (1).pdf",
+  "source_case": "Table 2, Eqs. 44–66, Figure 5",
+  "models": ["CV", "MCV3"],
+  "material_parameters_SI": {
+    "lambda_Pa": "77.6e9",
+    "mu_Pa": "38.6e9",
+    "alpha_per_K": "1.78e-5",
+    "rho_kg_m3": "8945",
+    "cE_J_kg_K": "381",
+    "T0_K": "293"
+  },
+  "parameter_origin": "Source-reported literature/model inputs; not new measurements or fitted parameters",
+  "alpha_disposition": "Source Table 2 m/K-style header is interpreted as 1/K required by source stress-coupling equation. Numeric value unchanged; documented before implementation.",
+  "geometry": "One-dimensional semi-infinite longitudinal continuum x>=0",
+  "boundary_conditions": "sigma(0,t)=0; theta(0,t)=H(t) in source nondimensionalization; u,theta decay as x->infinity",
+  "initial_history": "Causal zero prehistory: u,v,strain,temperature increment and all internal heat-flux channels zero before the boundary step. This is the compatible-history reconstruction assumption underlying source Laplace formulas, not an explicitly complete IC list printed by the authors.",
+  "source_nondimensional_parameters": {"tau": 0.04, "time": 0.06},
+  "physical_k": "Not tabulated/guessed; not needed for source nondimensional combinations. No SI space/time/tau predictions.",
+  "calibration": "NONE — no parameters may be tuned to obtain agreement",
+  "numerics": {
+    "domain_length_FVM": 1.0,
+    "FVM_cells": [800, 1600, 3200],
+    "FVM_CFL": 0.45,
+    "FVM_method": "Characteristic finite-volume MC-limited MUSCL, SSPRK2 transport, exact relaxation Strang splitting",
+    "Laplace_primary": "mpmath de Hoog",
+    "Laplace_probe_degrees": [32, 48, 64],
+    "Laplace_independent_algorithm": "mpmath Cohen at degree 80 (shares same transform implementation; not a fully independent PDE solver)",
+    "Laplace_curve_degree": 64,
+    "probes": [0.0, 0.02, 0.04, 0.08, 0.10, 0.15, 0.20, 0.24, 0.28, 0.32, 0.40, 0.60, 0.90, 1.0],
+    "curve_grid": "0 to 0.5 by0.005, plus0.55 to1.0 by0.05",
+    "front_exclusion_halfwidth": 0.008
+  },
+  "budget": {"max_aggregate_CPU_seconds": 1800, "max_generated_bytes": 50000000, "GPU": "NONE", "preprocessing_CPU_safety_reserve": 10},
+  "scope_exclusions": ["beta-Ga2O3", "elliptical/circular new-material production", "other 10 source laws", "physical validation", "new tensor model", "manuscript", "final research/journal selection"]
+}

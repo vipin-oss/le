@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-30",
+  "purpose": "Document/artifact building and source processing; NOT scientific simulation",
+  "python": "3.13.14",
+  "platform": "Linux-6.1.158+-x86_64-with-glibc2.41",
+  "matlab_path": null,
+  "octave_path": null,
+  "openpyxl": "3.1.5",
+  "requests": "2.33.0",
+  "PyMuPDF": "1.28.2",
+  "scipy": "1.17.1",
+  "sympy": "1.14.0"
+}

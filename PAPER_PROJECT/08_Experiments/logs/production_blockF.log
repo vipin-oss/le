@@ -1,0 +1,10 @@
+[light] F_tw0.3_circ: sig_interp=-8.990404e+05 nodal=-8.990403e+05 t*=2.480 wall_err=7.3e-09 back=7.0e-25 (66s) [1 new, elapsed 66s]
+[light] F_tw0.3_ell_phi090: sig_interp=-9.779363e+05 nodal=-9.777613e+05 t*=2.490 wall_err=7.3e-09 back=8.6e-25 (64s) [2 new, elapsed 131s]
+[light] F_tw0.3_ell_phi150: sig_interp=-1.255159e+06 nodal=-1.242762e+06 t*=2.500 wall_err=7.3e-09 back=7.8e-25 (65s) [3 new, elapsed 196s]
+[light] F_tw0.6_circ: sig_interp=-8.569832e+05 nodal=-8.569525e+05 t*=2.470 wall_err=1.5e-08 back=7.0e-25 (34s) [4 new, elapsed 229s]
+[light] F_tw0.6_ell_phi090: sig_interp=-9.487915e+05 nodal=-9.480276e+05 t*=2.490 wall_err=1.5e-08 back=8.6e-25 (33s) [5 new, elapsed 262s]
+[light] F_tw0.6_ell_phi150: sig_interp=-1.253536e+06 nodal=-1.241196e+06 t*=2.510 wall_err=1.5e-08 back=7.8e-25 (33s) [6 new, elapsed 295s]
+[light] F_tw2.4_circ: sig_interp=-8.579294e+05 nodal=-8.577120e+05 t*=2.490 wall_err=3.2e-01 back=7.0e-25 (11s) [7 new, elapsed 306s]
+[light] F_tw2.4_ell_phi090: sig_interp=-9.886067e+05 nodal=-9.835506e+05 t*=2.550 wall_err=3.2e-01 back=8.6e-25 (10s) [8 new, elapsed 317s]
+[light] F_tw2.4_ell_phi150: sig_interp=-1.364904e+06 nodal=-1.353654e+06 t*=2.620 wall_err=3.2e-01 back=7.8e-25 (10s) [9 new, elapsed 327s]
+PRODUCTION light DONE: 9 new runs, cpu 325s wall 327s

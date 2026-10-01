@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Vipin_Research_Papers_06-Aug_2026.xlsx",
+    "path": "RESEARCH_PROJECT_INPUT/LITERATURE/Vipin_Research_Papers_06-Aug_2026.xlsx",
+    "source_url": "https://raw.githubusercontent.com/vipin-oss/BFS-FEM-MATLAB/main/Vipin_Research_Papers_06-Aug_2026.xlsx",
+    "bytes": 20650,
+    "sha256": "1e1689b1d2ac4cfbc4b38bd8ba244fd35151a0474c793d53e61a975cf1e63124",
+    "retrieved_utc": "2026-09-30T05:39:40.206438+00:00",
+    "repository": "vipin-oss/BFS-FEM-MATLAB",
+    "branch": "main",
+    "git_blob_sha_at_retrieval": "3b696355e16af284d9c99f52442ecbc766d0140b"
+  },
+  {
+    "name": "FEM_Total.zip",
+    "path": "RESEARCH_PROJECT_INPUT/PREVIOUS_PROJECTS/FEM_Total.zip",
+    "source_url": "https://raw.githubusercontent.com/vipin-oss/BFS-FEM-MATLAB/main/FEM_Total.zip",
+    "bytes": 14684600,
+    "sha256": "0df9542222772b24b3a2cd0d3960b2a1caeeda75b40b14a42632e82371b6fcb2",
+    "retrieved_utc": "2026-09-30T05:39:40.696718+00:00",
+    "repository": "vipin-oss/BFS-FEM-MATLAB",
+    "branch": "main",
+    "git_blob_sha_at_retrieval": "6bd37586283fb31e316a7059682622467c953810"
+  }
+]

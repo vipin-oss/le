@@ -1,99 +1,101 @@
-# PROJECT PROGRESS — `vipin-oss/le`
+# PROJECT_PROGRESS — `vipin-oss/le`
 
-Session branch: `arena/01a0f67f-le` (branched from `main` @ `10a9e2f24f1942a13c7ac57908b41e4f7c7bd09e`)
-Last updated: 2026-10-01 (session local time)
+Branch: `arena/01a0f67f-le` · updated 2026-10-01 · source archive: `le.zip` (52,189,612 B,
+sha256 `5e780e1fd6292690c1b56ad378dc35c9737e52cd873e4f18e610cfdf45bb0363`)
+
+Full audit: **[`docs/PHASE1_AUDIT.md`](docs/PHASE1_AUDIT.md)**.
 
 ---
 
-## PHASE 1 — REPOSITORY AUDIT — **COMPLETE**
+## What this project is
 
-### Verdict
-
-**The repository is empty. There is no prior work to continue, and the referenced
-`le.zip` does not exist anywhere in this environment.**
-
-### Evidence gathered (all checks run 2026-10-01)
-
-| Check | Command / method | Result |
-|---|---|---|
-| Working tree contents | `find . -type f` (excluding `.git`) | **1 file**: `README.md` (5 bytes, content `# le`) |
-| Commit history | `git log --oneline --all` | **1 commit**: `10a9e2f Initial commit` (README only) |
-| Branches (local) | `git branch -a` | `main`, `arena/01a0f67f-le` — both at `10a9e2f` |
-| Branches (remote) | `git ls-remote origin`, `gh api .../branches` | **1 branch**: `main` @ `10a9e2f` |
-| Pull requests | `gh api repos/vipin-oss/le/pulls` | **none** |
-| Issues | `gh api repos/vipin-oss/le/issues` | **none** |
-| Releases / tags | `gh api repos/vipin-oss/le/releases` | **none** |
-| Repo events | `gh api repos/vipin-oss/le/events` | `[]` |
-| Wiki | clone of `le.wiki.git` | **repository not found** (no wiki content) |
-| Gists (owner) | `gh api users/vipin-oss/gists` | 403 — not accessible to the integration |
-| Dangling/unreachable git objects | `git fsck --lost-found --dangling` | **none** (no orphaned blobs from a lost commit) |
-| Stashes | `git stash list` | none |
-| Git notes / reflog | `git notes list`, `git reflog --all` | only clone + branch creation entries |
-| `le.zip` on disk | `find / -xdev -iname '*.zip'` | **not present**; the only archive on the filesystem is the OS file `/var/backups/alternatives.tar.0` |
-| Other uploads in workspace | `ls -la /home/user`, `/tmp`, `/mnt`, `/media`, `/srv`, `/data`, `/uploads`, `/app` | **empty / none exist**; `/tmp/arena-workspace` is empty |
-| Upstream repo metadata | `gh api repos/vipin-oss/le` | created 2026-10-01T07:51:51Z, pushed 2026-10-01T08:05:23Z, `size: 0`, `language: null`, 0 forks, 0 stars |
-
-### Interpretation
-
-- The clone is **not** truncated or partially fetched — `git remote -v` points at
-  `https://github.com/vipin-oss/le.git`, the remote HEAD equals our HEAD, and the
-  GitHub API confirms the remote itself contains exactly one file.
-- The session branch `arena/01a0f67f-le` was created from `main` at the same commit and
-  the working tree is clean, so **no earlier agent session left any artifact here**.
-- `le.zip` was named in the task brief but was **not delivered** to this sandbox
-  (no attachment landed in the workspace). Nothing in this repository can substitute
-  for it, because the repository has no content at all.
-
-### Related context (informational, not part of this project)
-
-The owner `vipin-oss` has two other public repositories:
-- `vipin-oss/BFS-FEM-MATLAB` (TeX/MATLAB, contains many research-package `.zip` archives,
-  including a `workspace-<uuid>.zip` export — i.e. the user's pattern is to upload
-  workspace archives as attachments)
-- `vipin-oss/AcademicOS` (Python)
-
-Neither is a dependency of `le`; `le` has no submodule, subtree, or reference to them.
-
-### Environment inventory (for planning later phases)
-
-- Python 3.11.2, pip 23.0.1 — **numpy/scipy/matplotlib/sympy/pandas are NOT installed**;
-  PyPI **is reachable** (verified by downloading a wheel), so they can be installed on demand.
-- **MATLAB: not installed. Octave: not installed.** (Relevant if the project expects MATLAB scripts.)
-- LaTeX (`pdflatex`, `latex`): **not installed** (relevant if a manuscript is expected).
-- gcc/g++ 12.2, make, git, gh, curl available. 2 CPUs, ~3 GB RAM, ~20 GB free disk.
+`PAPER_PROJECT` — *"verified continuum study of cavity thermoelasticity in monoclinic β-Ga₂O₃"*,
+run under **MASTER_PROMPT v2.1** (90 sections). Transient coupled thermoelasticity around a
+circular vs equal-area elliptical cavity (χ = 2) in the a–c plane of monoclinic β-Ga₂O₃;
+Fourier / Lord–Shulman / two-relaxation-time conduction; frequency-domain mapped-grid FD solver +
+**Bromwich inversion** for the single-pulse response; target journal IJHMT (user-owned).
+`work/handoff/` = read-only input baseline (verified 303/303), `work/rerun/` = prior review area.
 
 ---
 
 ## Completed phases
-- PHASE 1 (Repository audit) — complete, documented above and in `docs/PHASE1_AUDIT.md`.
+
+| Phase | Status |
+|---|---|
+| **PHASE 1 — Repository audit** | **COMPLETE** (this file + `docs/PHASE1_AUDIT.md`) |
+| Phase 0 (intake) | PARTIAL — done upstream; user profile info deliberately not invented |
+| Phases 1–6 | deliberately NOT re-opened upstream (superseded by 04_Theory / 05_Numerical_Method) |
+| Phases 7–12 | PASS upstream — verification (26 PASS/1 FAIL), R1–R9, convergence, gate, 150 production runs, analysis |
+| Phase 13 | PARTIAL upstream — manuscript + audits + reproduction test (11 PASS) done; **final packaging not done** |
 
 ## Current phase
-- **BLOCKED** — cannot enter PHASE 2 (consistency check) or PHASE 3 (continue pending work)
-  because there is no existing code, model, data, or results to check or continue.
 
-## Files created
-- `PROJECT_PROGRESS.md` (this file)
-- `docs/PHASE1_AUDIT.md` (detailed audit log)
+**PHASE 2 (consistency check) → then finish the Phase-13 tail (final packaging).**
 
-## Files modified
-- none (existing `README.md` left untouched)
+## Files created / modified in this session
 
-## Tests performed
-- None applicable — no code exists to test.
+| File | Action |
+|---|---|
+| `docs/PHASE1_AUDIT.md` | created — full Phase-1 audit of the real project (replaces the earlier "empty repo" audit) |
+| `PROJECT_PROGRESS.md` | created/rewritten — this record |
+| `.gitignore` | created — excludes `work/handoff.zip` (redundant with verified `work/handoff/`), `PAPER_PROJECT/packages/` (regenerable via `make_packages.py`), `__pycache__/` |
+| `PAPER_PROJECT/**`, `work/**` | **added unmodified** — extracted verbatim from `le.zip` |
 
-## Validation status
-- **Not started / not applicable.** Nothing has been computed or reproduced.
+## Tests performed (this session, all read-only)
+
+| Test | Result |
+|---|---|
+| `le.zip` integrity (`git hash-object` vs blob id `297f5dcb`) | PASS — byte-exact |
+| Handoff baseline vs `work/handoff/MANIFEST_SHA256.json` | **303 OK / 0 missing / 0 mismatch** |
+| Production run count | 150 json + 150 npz (= 141 gate + 9 block F) PASS |
+| `TEST_RESULTS.json` vs TEST_REPORT/VALIDATION_STATUS | 26 PASS / 1 FAIL, 28 cases PASS |
+| Reproduction test record | 11 PASS / 0 FAIL PASS |
+| `MANUSCRIPT_STATS.json` vs IJHMT limits (≤250-word abstract, ≤85-char highlights) | 231 words; 78/84/70/76/77 PASS |
+| `amp_best` (manuscript 28.7% modulation) vs `ANALYSIS_V2.json` | 0.287495 PASS |
+| Figure / table counts | 8 png / 5 csv PASS |
+| Abstract "0.08% at the finest grid" vs `TEST_RESULTS.json` | consistent (V9d worst-law 192×96 = 0.08%; V11 = 0.07%) |
+| `CODE_FREEZE_v2_gate.json` vs current files | 10 match / **5 mismatch** — all expected (documented block-F + P12-D001 additive changes) |
+| `CODE_FREEZE_v2_blockF.json` vs current files | 21 match / **3 mismatch** — `13_Manuscript/{build_manuscript,ms_results,ms_static}.py` edited after the last freeze, no addendum |
+
+## Validation status (inherited)
+
+- **Verification:** VERIFIED for the quantities/grids listed in `07_Tests/TEST_REPORT.md` and
+  `03_Validation/VALIDATION_RESULTS.md`; grid uncertainty quantified (u_num = 1.31 pp on the
+  28.7% ellipse modulation). Independent references: 1-D Chebyshev (Laplace domain) and
+  Crank–Nicolson (time domain) — no shared code with the 2-D solver.
+- **Physical validation:** **APPLICABLE — EVIDENCE_UNAVAILABLE.** No experimental data exist;
+  every claim is restricted accordingly in the manuscript.
+- **Not yet done by me:** no re-computation yet (numpy/scipy/matplotlib/python-docx/openpyxl are
+  not installed in this sandbox; PyPI is reachable). Phase 4 validation will install them and
+  re-run the reproduction test (`08_Experiments/reproduce.py`).
 
 ## Unresolved issues
-1. **BLOCKER:** `le.zip` was not delivered to the sandbox. Without it (or an equivalent
-   description of the project) there is nothing to audit, verify, or continue.
-2. The repository name `le` and its one-line README (`# le`) carry no information about the
-   intended subject (equations, physics, numerical method, or manuscript).
-3. No MATLAB/Octave and no LaTeX toolchain in the sandbox; a Python scientific stack would
-   need to be installed first if the work is computational.
+
+1. **Pending deliverables:** `packages/PACKAGE_PHASE_07…13.zip`, `PROJECT_STATE_FINAL.md`,
+   `packages/RESEARCH_PROJECT_FINAL.zip` — none exist yet.
+2. **P7-D002** (periodic-DFT synthesis → Bromwich inversion) is explicitly
+   **FLAGGED FOR USER CONFIRMATION** and has not been confirmed.
+3. Post-freeze edits to 3 manuscript builder scripts are undocumented (no freeze addendum).
+4. 15 scripts hard-code `/home/user/PAPER_PROJECT` and `/home/user/work/handoff`, which do not
+   exist in this checkout → must be resolved (symlink, not patching frozen files) before any run.
+5. Sandbox has Python 3.11.2 and no scientific stack; recorded environment is Python 3.13.14 /
+   numpy 2.3.5 / scipy 1.17.1 / matplotlib 3.10.9 → reproduction is allowed to differ bitwise
+   (MP §75) but the version gap must be stated.
+6. §74 items belonging to the non-re-opened phases (`RESEARCH_PROFILE.md`,
+   `SCIENTIFIC_ACCEPTANCE_PLAN.md`, `NOVELTY_MATRIX.xlsx`) are absent — user decision, not to be
+   invented.
+7. User-owned open items: authors/affiliations/CRediT/funding/conflicts, AI-use declaration,
+   repository DOI + licence, final journal, JCR verification, independent expert review.
 
 ## Exact next action
-- **Ask the user to re-attach `le.zip`** (or provide an alternative source: a URL, another
-  branch/repo, or a written description of the project, its governing equations, and what
-  "pending work" means here). Do not invent or scaffold project content before that, since
-  fabricating a project would violate the "do not invent missing information" constraint.
+
+1. Create the compatibility symlinks `/home/user/PAPER_PROJECT → /home/user/le/PAPER_PROJECT`
+   and `/home/user/work → /home/user/le/work` so the frozen scripts run unchanged (no file edits,
+   so all code-freeze hashes stay valid).
+2. Install the Python stack and run the **reproduction test** `08_Experiments/reproduce.py`
+   (Phase 2/4) to confirm the delivered results reproduce in this environment.
+3. Fix/document the 3 post-freeze manuscript-script changes (add `CODE_FREEZE_v2_final.json`
+   addendum rather than reverting — the edits are the CORRECTIONS_LOG corrections).
+4. Build the pending deliverables: `PROJECT_STATE_FINAL.md`, `PACKAGE_PHASE_07…13.zip`,
+   `RESEARCH_PROJECT_FINAL.zip`; update `README.md`, `CHANGELOG.md`, `DECISION_LOG.md`.
+5. Report the P7-D002 flag and the user-owned open items to the user.

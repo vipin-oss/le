@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/importlib/metadata/__init__.py", line 407, in from_name
+    return next(iter(cls.discover(name=name)))
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/PILOT_HUANG_2025_01/run_source_and_limiting_cases.py", line 60, in <module>
+    stage.finish('RUN_SUCCESS',{'source_comparison_status':max((c['compatibility'] for c in comp),key=lambda s:['UNASSESSED','PARTIAL','MOSTLY_COMPATIBLE','COMPATIBLE_WITHIN_FIGURE_UNCERTAINTY'].index(s)) if comp else 'UNASSESSED'})
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PILOT_HUANG_2025_01/src/common.py", line 20, in finish
+    record={'stage':self.name,'status':status,'CPU_seconds':cpu_self(),'wall_seconds':time.perf_counter()-self.wall0,'max_RSS_kB':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'code_version':{str(p.relative_to(ROOT)):sha(p) for p in list((ROOT/'src').glob('*.py'))+list(ROOT.glob('run_*.py'))},'input_sha256':sha(ROOT/'case_input.json'),'plan_sha256':sha(ROOT/'PILOT_PLAN_FROZEN.md'),'source_pdf_sha256':sha(INPUT['source_pdf']),'python':platform.python_version(),'environment':{p:version(p) for p in ['numpy','scipy','mpmath','matplotlib','PyMuPDF']},'threads':{'OPENBLAS_NUM_THREADS':os.environ.get('OPENBLAS_NUM_THREADS'),'OMP_NUM_THREADS':os.environ.get('OMP_NUM_THREADS')},'label':'PILOT — NOT FINAL VALIDATION'}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ~~~~~~~^^^
+  File "/usr/local/lib/python3.13/importlib/metadata/__init__.py", line 987, in version
+    return distribution(distribution_name).version
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/importlib/metadata/__init__.py", line 960, in distribution
+    return Distribution.from_name(distribution_name)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/importlib/metadata/__init__.py", line 409, in from_name
+    raise PackageNotFoundError(name)
+importlib.metadata.PackageNotFoundError: No package metadata was found for PyMuPDF

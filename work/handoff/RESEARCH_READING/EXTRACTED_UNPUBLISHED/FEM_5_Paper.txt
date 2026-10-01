@@ -1,0 +1,1783 @@
+
+--- PAGE 1 ---
+Coupled Piezoelectric–Pyroelectric Open-Circuit Voltage
+
+                            in a
+
+    Plane-Strain Tetragonal BaTiO3 Microcantilever:
+ Effect of the Plane-Strain Thermal-Stress Reduction on
+
+                 Polarity and Magnitude
+
+
+                                   Vipin Gupta
+
+            Department of Mathematics, Gurugram University, Gurugram, Haryana, India
+
+            Haryana State Research Fund, Sanction Order No.  14/66-2025 SPD/HSHEC/HSRF,
+
+                                         Session 2025–2026
+
+
+
+                                      Abstract
+
+          Pyroelectric crystals are necessarily also piezoelectric, so a spatially non-uniform temper-
+      ature field drives both a direct pyroelectric response and an indirect piezoelectric response
+     mediated by thermal strain. We present a variational finite-element model, based on a single
+      electric-enthalpy potential and a conforming C1 Bogner–Fox–Schmit element, for the open-
+       circuit voltage of a plane-strain tetragonal BaTiO3 microcantilever under a steady through-
+      thickness temperature difference. For a tetragonal crystal, the plane-strain thermal-stress vec-
+      tor must be obtained by contracting the full three-dimensional thermal-expansion and elastic
+      tensors before the plane-strain constraint is imposed; a simplified reduction that omits the con-
+      strained transverse thermal expansion under-predicts the resulting thermal-stress components
+     by 35–58% and, for the present geometry and loading, reverses the sign of the piezoelectric-
+      thermal contribution to the open-circuit voltage. We also distinguish the fixed-strain (primary)
+      pyroelectric coefficient required by the strain-based constitutive law from the free (total) co-
+       efficient ordinarily reported from bulk measurements, taking the primary coefficient from a
+       first-principles calculation and the anisotropic thermal-expansion coefficients from regression
+       of single-crystal diffraction data. On a mesh-converged discretization, the pyroelectric-only,
+       piezoelectric-plus-pyroelectric, and piezoelectric-plus-thermal open-circuit voltages are approx-
+      imately −3.4 V, −1.5 V, and +0.19 V for a 10 µm × 1 µm specimen under a 10 K temperature
+       difference. The polarity of the piezoelectric-thermal voltage is robust to the propagated un-
+      certainty of the thermal-expansion regression at one standard deviation, reversing only beyond
+      approximately two standard deviations on the transverse coefficient, while the pyroelectric-only
+      voltage is sensitive to the uncertain clamped-versus-free classification of the transverse dielectric
+      constant. We did not identify an experimental full-device voltage measurement for direct com-
+      parison. An optional flexoelectric extension is retained in the formulation but excluded from
+      the quantitative results, since neither an effective flexoelectric tensor nor an internal length
+       scale is presently available for this material.
+
+Keywords:  pyroelectricity; piezoelectricity; barium titanate; thermal expansion; finite element
+
+method; Bogner–Fox–Schmit element; plane strain.
+
+
+
+                                          1
+
+--- PAGE 2 ---
+1  Introduction
+
+Pyroelectric materials convert a change in temperature directly into an electrical response through
+
+the temperature dependence of their spontaneous polarization, a property exploited in infrared
+
+detectors, thermal imaging, and thermal energy-harvesting devices that convert ambient or waste-
+
+heat temperature fluctuations into electrical power [Lang, 2005, Whatmore, 1986, Lubomirsky
+
+and Stafsudd, 2012]. A microcantilever is a natural geometry for such a device:  it is compliant
+
+enough that a modest thermal gradient across its thickness produces a mechanically significant
+
+bending response, and cantilever geometries of this kind are widely used as piezoelectric energy-
+
+harvesting test structures, so a model that couples pyroelectric and piezoelectric response in this
+
+geometry addresses both a materials-science question (how the two mechanisms combine) and a
+
+device-engineering one (what open-circuit voltage a given specimen and thermal load can deliver).
+
+Because every pyroelectric crystal class is necessarily also piezoelectric – pyroelectricity requires a
+
+unique polar axis, a symmetry restriction that is a subset of the non-centrosymmetry piezoelectricity
+
+requires – a spatially non-uniform temperature field in a real pyroelectric device drives both the
+
+pyroelectric coefficient directly and, through the resulting non-uniform thermal strain, an indirect
+
+piezoelectric contribution. Separating and quantifying these two contributions, together with any
+
+constraint-induced amplification or cancellation from a specific device geometry, requires a fully
+
+coupled thermo-piezo-electromechanical boundary-value treatment rather than an estimate based
+
+on either mechanism in isolation. The open-circuit voltage is the natural quantity to compute
+
+and report for this purpose:  it is the maximum potential difference the specimen can sustain
+
+under a given thermal load without drawing current, is directly comparable across specimens and
+
+mechanisms independent of any external load resistance, and is the quantity a static or quasi-static
+
+electrostatic voltmeter measurement would access most directly.
+
+  A conventional treatment of such a device often estimates the two contributions separately:
+
+the pyroelectric voltage from a one-dimensional, purely electrical argument, and the piezoelectric
+
+contribution, if considered at all, from a simplified thermal-stress estimate that does not track the
+
+full anisotropy of the crystal’s thermal-expansion tensor. Section 5 shows quantitatively that this
+
+simplification is not conservative: for the clamped-cantilever geometry considered here, it does not
+
+merely change the piezoelectric-thermal voltage’s magnitude but can invert its sign, so a model
+
+that is only qualitatively aware of the coupling is insufficient to predict even the polarity of the
+
+device response.  Thermodynamically coupled formulations that incorporate temperature as an
+
+independent field alongside strain and electric field – thermopiezoelectricity – were developed by
+
+Mindlin and by Nowacki [Mindlin, 1972, Nowacki, 1975] and remain the appropriate starting point
+
+for a device model, such as the present one, in which a prescribed temperature field is the load.
+   Barium titanate (BaTiO3) is a natural test material for such a study:  its room-temperature
+tetragonal phase has a complete, independently measured set of elastic, piezoelectric, and dielectric
+
+constants [Zgonik et al., 1994, Berlincourt and Jaffe, 1958], and its sequence of ferroelectric phase
+
+transitions and associated symmetry changes were established in classical single-crystal studies
+
+[Merz, 1949, Kay and Vousden, 1949] and rationalized thermodynamically by Devonshire’s phe-
+
+nomenological theory [Devonshire, 1949, 1951]. It is also thermally anisotropic: the a- and c-axis
+
+lattice parameters of the tetragonal cell respond to temperature with opposite sign, confirmed by
+
+modern variable-temperature diffraction [Nakatani et al., 2016] and consistent with independent
+
+thermal-expansion measurements on related barium titanate-based ceramics [Han et al., 2015, He,
+
+
+                                          2
+
+--- PAGE 3 ---
+2004].  Propagating this anisotropic expansion into a mechanical boundary-value problem uses
+
+standard thermoelastic formalism [Boley and Weiner, 1997, Nowacki, 1975], but its plane-strain
+
+specialization for a tetragonal crystal is not entirely routine: a reduction that discards the con-
+
+strained transverse thermal expansion before forming the full three-dimensional thermal-stress con-
+
+traction misstates the thermal forcing available to drive both the mechanical and the electrical
+
+response, as developed in Section 2.3. This is precisely the kind of modeling shortcut that a purely
+
+one-dimensional or isotropic treatment of the thermal-expansion tensor would not expose, since
+
+the transverse component only enters through the off-diagonal elastic constants that couple the
+
+in-plane directions.
+
+  A second material-science point concerns the pyroelectric coefficient itself. Pyroelectricity de-
+
+composes into a primary contribution at fixed strain and a secondary contribution arising from
+
+thermal expansion acting through the piezoelectric effect in a mechanically free sample; their sum
+
+is the total (free) coefficient ordinarily reported from bulk measurements [Lang, 2005, Tagantsev,
+
+1991, Lubomirsky and Stafsudd, 2012]. A strain-based electric-enthalpy formulation, in which
+
+electric displacement is written as a function of total strain, field, and temperature, requires the
+
+primary coefficient: the secondary contribution is already generated self-consistently by the piezo-
+
+electric term acting on the solved strain field, so using the total coefficient would double-count it.
+
+This distinction is easy to overlook in a coupled model, because the total coefficient is the one most
+
+commonly tabulated for ceramics, while the primary coefficient required by the constitutive law is
+
+only available from a more specialized measurement or calculation. A recent first-principles study
+of tetragonal BaTiO3 reports primary, secondary, and total pyroelectric coefficients from one inter-
+nally consistent calculation [Eklund and Karttunen, 2023], providing a directly traceable primary
+
+coefficient in place of an inherited ceramic total coefficient measured under different conditions.
+
+    Flexoelectricity, the coupling of polarization to strain gradient rather than to strain itself, is
+
+symmetry-allowed in every dielectric – unlike piezoelectricity, it does not require a non-centrosymmetric
+
+crystal class – and has been widely studied as a size-dependent mechanism that persists where piezo-
+
+electricity vanishes and typically strengthens as the relevant length scale shrinks toward the inter-
+
+nal material length scale, making it particularly relevant to the thin, high-curvature bending fields
+
+present in microcantilever geometries [Tagantsev, 1986, Cross, 2006, Zubko et al., 2013], including
+
+in barium titanate itself [Ma and Cross, 2006] and in microcantilever geometries directly analogous
+
+to the one considered here [Huang et al., 2011, Mao et al., 2016, Abdollahi et al., 2014]. A physi-
+
+cally consistent flexoelectric strain-gradient term requires an internal material length scale, whose
+
+theoretical basis rests on the strain-gradient continuum theories of Toupin and Mindlin [Toupin,
+
+1962, Mindlin, 1964, Mindlin and Eshel, 1968]. No experimentally justified length scale or effective
+flexoelectric tensor is presently available for the tetragonal BaTiO3 system considered here; the
+flexoelectric extension is retained in the governing formulation for completeness but excluded from
+
+the quantitative results, with the supporting mesh-convergence evidence reported in Section 6.
+
+  A coupled problem of this kind admits no simple closed-form solution once realistic boundary
+
+conditions are imposed:  the clamped-cantilever constraint makes the strain field spatially non-
+
+uniform in a way that a one-dimensional or lumped-parameter model cannot capture, and it is ex-
+
+actly this non-uniform strain, generated self-consistently with the electrical response, that this study
+
+shows to control the sign of the piezoelectric-thermal contribution. The finite-element method is
+
+the standard tool for such coupled-field boundary-value problems [Zienkiewicz et al., 2005, Hughes,
+
+
+
+                                          3
+
+--- PAGE 4 ---
+2000, Belytschko et al., 2000], and its dedicated piezoelectric formulation dates to Allik and Hughes
+
+[Allik and Hughes, 1970], with subsequent two- and three-dimensional device-level implementations
+
+[Lerch, 1990, Tzou and Tseng, 1990] and a review by Benjeddou [Benjeddou, 2000]; general FEM
+
+procedures for coupled-field and multiphysics problems are standard in the computational mechan-
+
+ics literature [Bathe, 1996]. A strain-gradient (flexoelectric) term, even when switched off in the
+calculations reported here, requires a mechanical interpolation with C1 continuity of displacement
+
+across element boundaries, provided here by the classical Bogner–Fox–Schmit (BFS) rectangular
+element [Bogner et al., 1965] rather than a mixed or penalty-based C0 formulation, which would
+
+introduce additional interface unknowns not otherwise required by this problem.
+
+   Taken together, these observations identify a specific gap: existing thermopiezoelectric formu-
+lations provide the governing equations, and existing BaTiO3 characterizations provide elastic,
+piezoelectric, dielectric, thermal-expansion, and pyroelectric data from independent sources, but
+
+the two have not previously been combined, for this material and geometry, with (i) the full three-
+
+dimensional thermal-stress contraction correctly reduced to plane strain, and (ii) the thermody-
+
+namically consistent primary pyroelectric coefficient rather than an inherited total coefficient. The
+
+present study addresses this gap directly, using a verified finite-element implementation to quantify
+
+the sensitivity of the resulting open-circuit voltage, including its polarity, to both material-input
+
+choices.
+
+   This paper (i) derives the plane-strain thermal-stress vector for a tetragonal crystal from the
+
+full three-dimensional thermal-expansion contraction and shows that an earlier, simplified reduction
+
+not only under-predicts its magnitude but can reverse the sign of the resulting open-circuit voltage;
+
+(ii) uses the fixed-strain (primary) pyroelectric coefficient required by the constitutive law, sourced
+
+from a first-principles calculation, in place of a total (free) coefficient inherited from an unrelated
+
+ceramic measurement; (iii) sources the anisotropic thermal-expansion coefficients from single-crystal
+
+diffraction data, with the fitting uncertainty reported and propagated; (iv) verifies the finite-element
+
+implementation against analytical and algebraic identities; (v) reports mesh-converged open-circuit
+
+voltages for three physically distinct cases together with a sensitivity analysis; and (vi) states,
+
+without resolving, the limitation that the elastic, thermal-expansion, and pyroelectric inputs come
+
+from more than one independent source.
+
+
+2  Mathematical Formulation
+
+2.1  Physical assumptions and kinematics
+
+The body occupies the plane-strain domain Ω= {(x, z) : 0 ≤x ≤L, 0 ≤z ≤h}, representing
+tetragonal 4mm BaTiO3 poled along z. Displacement, electric potential, and temperature incre-
+ment are u(x, z) = (u, 0, w), ϕ(x, z), θ = T −T0, with Ei = −ϕ,i and small-strain kinematics
+εij = 2(ui,j1   + uj,i). Plane strain imposes εyy = εxy = εyz = 0 and ∂y(·) ≡0, leaving active strains
+εxx = u,x, εzz = w,z, γxz = u,z +w,x (engineering shear). In Voigt notation [Nye, 1985, IEEE, 1987],
+the active plane-strain mechanical vector is ε = [εxx, εzz, γxz]⊤with the shear component carrying
+the customary engineering factor of two relative to the tensorial shear strain εxz = γxz/2; this factor
+must be tracked consistently through every contraction with a fourth-rank tensor written in reduced
+
+(two-index) Voigt form, since it enters linearly in the strain vector but must not be reintroduced
+
+a second time in the reduced stiffness or coupling matrices, which are already defined so that the
+
+
+                                          4
+
+--- PAGE 5 ---
+ordinary matrix product Cε or e⊤ε reproduces the correct tensorial contraction.  Explicitly, the
+reduced index map used throughout is 11 →1, 33 →2, 13 →3 (dropping the identically-zero 22,
+12, 23 rows/columns of the tetragonal 4mm tensors under plane strain), so that the active 3 × 3
+stiffness and 3 × 2 piezoelectric blocks used in (9) are
+
+             ⎡C11  C13   0 ⎤       ⎡ 0   e31 ⎤                                                                                                         [︄             ]︄                                                                     κ11   0
+          C = ⎢⎣C13  C33   0 ⎥⎦,     e = ⎢⎣ 0   e33 ⎥⎦,    κ =   0   κ33   ,             (1)
+                    0    0   C44              e15   0
+
+extracted directly from the full 6 × 6 and 3 × 6 tetragonal 4mm tensors reported by Zgonik et al.
+
+[1994] by deleting the rows/columns associated with the identically-zero plane-strain components,
+
+not by any independent re-derivation of the tetragonal symmetry itself.
+
+
+2.2  Constitutive relations
+
+The constitutive framework follows from a single electric enthalpy density per unit volume,
+
+             H(ε, E, θ) = 2Cijklεijεkl1          −ekijεijEk −12κijEiEj −βijεijθ −piEiθ,             (2)
+
+with βij := Cijklαkl the thermal-stress coefficient and αij the linear thermal-expansion tensor.
+Total strain ε, field E, and temperature increment θ are the independent variables, consistent
+
+with the electric-enthalpy (rather than internal-energy or Gibbs) representation standard in the
+
+piezoelectric literature [Tiersten, 1969, Yang, 2005]; this choice fixes every sign and coefficient that
+
+follows. Differentiating,
+
+          ∂H
+          σij =           = Cijkl(εkl −αklθ) −ekijEk,    Di = −∂H = eiklεkl + κijEj + piθ,      (3)
+                ∂εij                                   ∂Ei
+
+where βijθ = Cijklαklθ has been folded into the elastic term as an eigenstrain correction in σij,
+giving the familiar thermoelastic form in which the material only feels the elastic part of the total
+strain, and the overall minus sign in Di = −∂H/∂Ei turns each of the three negative terms in H
+positive. Because ε is the independent mechanical variable in (2), the coefficient pi in (3) is, by
+construction, the fixed-strain (primary) pyroelectric coefficient; a free (total) coefficient belongs to
+a different potential, obtained from H by a Legendre transform H∗= H −σijεij that exchanges ε
+for σ, and its substitution into (3) would double-count the strain-mediated (secondary) pyroelectric
+contribution already generated by the eiklεkl term acting on the self-consistently solved strain
+field. This distinction, and its numerical consequence, is central to the material input described in
+
+Section 4.
+
+
+2.3  Plane-strain reduction of the thermal-stress vector
+
+For tetragonal 4mm symmetry, αxx = αyy = α1, αzz = α3, and the full three-dimensional normal-
+stress block is
+
+ ⎧σxx ⎫  ⎡C11  C12  C13 ⎤ ⎧εxx ⎫ ⎧βxx ⎫   ⎧βxx ⎫  ⎡C11  C12  C13 ⎤ ⎧α1 ⎫
+ ⎪  ⎪          ⎪  ⎪ ⎪  ⎪   ⎪  ⎪          ⎪ ⎪ ⎨  ⎬          ⎨  ⎬ ⎨  ⎬   ⎨  ⎬          ⎨ ⎬
+     σyy  = ⎢⎣C12  C11  C13 ⎥⎦   εyy  −   βyy   θ,       βyy  = ⎢⎣C12  C11  C13 ⎥⎦  α1    .   (4)
+ ⎪ ⎩ σzz ⎪⎭    C13  C13  C33 ⎪⎩ εzz ⎪⎭ ⎪⎩ βzz ⎪⎭   ⎪⎩ βzz ⎪⎭    C13  C13  C33 ⎪⎩α3 ⎪⎭
+
+
+                                          5
+
+--- PAGE 6 ---
+Plane strain sets the total strain εyy, not the thermal eigenstrain α1θ, to zero; the y-direction
+thermal expansion therefore still contributes to σxx and σzz through the off-diagonal C12 and C13
+terms in (4). The correctly reduced thermal-stress vector retained in the mechanical weak form is
+
+therefore
+                   βPS = [︁(C11+C12)α1 + C13α3,  2C13α1 + C33α3,  0]︁⊤,                   (5)
+
+obtained by extracting the xx and zz components of (4) after forming the full three-dimensional
+
+contraction. A simplified reduction that instead applies the already-reduced two-component plane-
+strain stiffness directly to [α1, α3, 0]⊤omits the C12α1 contribution to βxx and the second C13α1
+contribution to βzz, and is not used here. With the material inputs of Section 4, (5) evaluates to
+βPS = [6.7167, 4.1903, 0]⊤×106 Pa K−1. Relative to the simplified reduction evaluated at the same
+thermal-expansion coefficients – [4.3623, 1.7705, 0]⊤×106 Pa K−1, obtained by applying the already-
+reduced two-component stiffness directly to [α1, α3]⊤– the simplified reduction underestimates βxx
+by 35.05% and βzz by 57.75% relative to the full three-dimensional contraction (Table 1).
+
+
+Table 1: Plane-strain thermal-stress vector: simplified reduction versus the full three-dimensional
+contraction, both evaluated at the same thermal-expansion coefficients (α1 = +21.8 × 10−6 K−1,
+α3 = −4.3 × 10−6 K−1).
+Component   Simplified (Pa K−1)   Full 3D contraction, Eq. (5) (Pa K−1)  Underestimation
+βxx                 4.3623 × 106                          6.7167 × 106          35.05%
+βzz                 1.7705 × 106                          4.1903 × 106          57.75%
+
+
+
+2.4  Coupled higher-order (flexoelectric) formulation
+
+An effective flexoelectric term, Dµi = µijklηjkl with ηjkl = εjk,l the strain-gradient tensor, and an
+accompanying Mindlin Form-II-type strain-gradient elastic stiffness A = C44ℓ2I with ℓan internal
+material length scale, are present in the general formulation and are implemented reciprocally (i.e.,
+as cross-derivatives of a single enthalpy augmented with 12Ajklmnoηjklηmno −µkjklηjklEk terms,
+consistent with the strain-gradient continuum theories of Toupin, Mindlin, and Koiter [Toupin,
+
+1962, Mindlin, 1964, Mindlin and Eshel, 1968] and their subsequent length-scale-identification and
+
+engineering formulations [Fleck and Hutchinson, 1997, Lam et al., 2003, Askes and Aifantis, 2011]).
+
+This extension is retained for generality and to document a reciprocal implementation consistent
+
+with recent flexoelectric finite-element frameworks [Mao et al., 2016, Mao and Purohit, 2014, Ab-
+
+dollahi et al., 2014], but it is not exercised in the results reported here: neither an independently
+measured effective flexoelectric tensor µijkl – of the kind reported from first-principles or atomistic
+calculations for other perovskite and crystalline dielectrics [Maranganti and Sharma, 2009, Hong
+
+and Vanderbilt, 2011, Stengel, 2013] – nor a physically justified internal length scale ℓ, of the kind
+
+measured directly in flexoelectric barium titanate and related ceramics [Ma and Cross, 2006, Huang
+et al., 2011], is presently available for the specific single-crystal tetragonal BaTiO3 material system
+considered here, and mesh studies of the flexoelectric-active configuration do not converge at any
+
+of the mesh densities used for the non-flexoelectric cases (Section 6).
+
+
+
+
+
+                                          6
+
+--- PAGE 7 ---
+     (a)                                                                                                                                          P(e)c(ibed tempe(atu(e field θ(z)                   (b)
+
+
+                                                                                                                                                         Ani)ot(opic                                                                                                                                                                                                                        t e(mal                                                                                                                                                                expan)ion                                        top elect(ode                                           z=                                                                                              :                                                                  floating                                                                        equipotential,
+                                                  ∫ D_z dx                                    =                                                  0                                                         (open ci(cuit)                                                                                                 →PS θ                                                                                                                                                             plane-strain                                                                                                                                                       thermal                                                                                                                                                                                    stress                                                                                                                                                                    σth = −β
+
+
+                                                                                                                                                          Finite-element solve of (u, w, φ):
+                                                                                                                                  clamped cantilever, C 1 interpolation
+
+
+                                                                   poling P s 00 z                     θ(z)=ΔT                                                                                                                     z/h                                                                                                                                            Mechanical                                                                                                                                                             deformation                                                                                                                                                       and                         plane )t(ain, pe( unit dept                                                                              ΔT = 10 K                                                                                                                                                             reciprocal                                                                                                                                                                             piezoelectric                                                                                                                                                                           coupling      fixed
+    clamp     x = 0            BaTiO 3 (tet(agonal 4mm)                                       f(ee end
+
+                                                                                                                                                  Open-circuit constraint: φ top tied, net charge Q = 0
+
+                                      bottom electrode z=0 : φ = 0 (g(ound)
+
+                                                                                                                                                 V = φ  top − φ bottom
+
+
+                                                                                                                                               Open-circuit voltage for the pyroelectric, piezoelectric,
+                                                                                                                          and combined cases (flexoelectric case excluded)
+
+
+Figure 1: Model configuration and mechanism chain.  (a) Specimen geometry (L = 10 µm×h =
+1 µm, E = −∇ϕ): clamped root, poling direction, prescribed thermal gradient, grounded bottom
+electrode, and open-circuit top electrode. (b) Mechanism chain from the prescribed temperature
+field, through anisotropic thermal expansion and the plane-strain thermal stress, to the result-
+ing mechanical deformation, piezoelectric charge, and open-circuit voltage. The clamp at x = 0
+converts a spatially uniform thermal-expansion tendency into a spatially non-uniform strain field;
+without this constraint, a free specimen under the same temperature profile would expand without
+generating a piezoelectric contribution to the voltage. The open-circuit condition at the top elec-
+trode allows the specimen to accumulate a static potential difference rather than driving a steady
+current.
+
+
+2.5  Boundary conditions
+
+The cantilever is clamped at x = 0 (all mechanical degrees of freedom zero) and traction-free
+
+elsewhere. The bottom face (z = 0) is a grounded electrode, ϕ = 0; the top face (z = h) is
+
+a single floating equipotential surface with zero net charge (open circuit), enforced as a discrete
+
+weak statement of total charge balance across all top-face electrical degrees of freedom, not as
+
+a pointwise condition on the reconstructed field. A steady, linear through-thickness temperature
+
+field is prescribed, θ(z) = ∆T z/h.  Figure 1 summarizes the specimen configuration, boundary
+
+conditions, and the mechanism chain implemented by the solver, from the prescribed temperature
+
+field through the corrected constitutive and coupling blocks to the reported open-circuit voltage.
+
+
+3  Variational and Finite Element Formulation
+
+3.1  Weak formulation
+
+Stationarity of  ∫︁ ΩH dA with respect to admissible variations δu, δϕ (with δεij = 2(δui,j1   + δuj,i),
+δEi = −δϕ,i) gives
+                                             ∫︂                ∫︂
+                           δ  H dA =       (︁ σij δεij −Di δEi )︁ dA = 0,                          (6)
+                        Ω        Ω
+
+using (3).  Substituting δEi = −δϕ,i turns the second term into ∇δϕ · D, giving the coupled
+virtual-work statement
+
+                               ∫︂
+                                           (︁ δε⊤σ + ∇δϕ · D )︁ dA = 0     for all admissible δu, δϕ.                 (7)
+                Ω
+
+
+
+                                          7
+
+--- PAGE 8 ---
+Interpolating u ≈Nuqu, ϕ ≈Nϕqϕ over each Bogner–Fox–Schmit element (Section 3.2) gives
+ε ≈Bεqu, E ≈−Bϕqϕ. Substituting these, together with (3) in matrix form (σ = Cε−e⊤E−βPSθ,
+D = eε + κE + p θ), into (7) gives the monolithic block system
+
+                                                  [︄              ]︄{︄  }︄   {︄  }︄                          Kuu  Kuϕ    qu      fu
+                               =           ,                               (8)
+                      K⊤uϕ  −Kϕϕ    qϕ      fϕ
+
+with
+
+                        ∫︂                                             ∫︂                                              ∫︂
+      Kuu =   B⊤ε CBε dA,      Kuϕ =   B⊤ε e⊤Bϕ dA,      Kϕϕ =   B⊤ϕκBϕ dA,
+             Ω                       Ω                       Ω
+                        ∫︂                                                 ∫︂
+         fu =   B⊤ε βPS θ dA,         fϕ = −  B⊤ϕp θ dA.                                    (9)
+             Ω                        Ω
+
+The electrical block’s minus sign follows from E = −Bϕqϕ; the resulting system is symmetric
+indefinite, as expected of a Hessian whose mechanical block is positive definite (elastic strain energy)
+
+and whose dielectric energy is positive (electrical block negative semi-definite). The symmetry
+Kϕu = K⊤uϕ is not assumed but follows from, and is verified numerically against (Section 5.4),
+the fact that both off-diagonal blocks are cross-derivatives, ∂2H/∂ε ∂E and ∂2H/∂E ∂ε, of the
+
+same scalar potential (2), and mixed partial derivatives of a smooth scalar function commute by
+Schwarz’s theorem regardless of the specific numerical values of ekij.
+
+
+3.2  Finite-element interpolation
+
+The mechanical fields are interpolated with the 16-function Bogner–Fox–Schmit (BFS) basis [Bogner
+et al., 1965]. On the reference element ξ, η ∈[−1, 1], each mechanical component (u or w) is rep-
+
+resented by a tensor-product cubic Hermite interpolation,
+
+
+                                 4
+                   u(ξ, η) = ∑︂ [︂ H0(ξaξ)H0(ηaη) ua + H1(ξaξ)H0(ηaη) ua,ξ
+                          a=1
+                                                                                                                                               ]︂                   + H0(ξaξ)H1(ηaη) ua,η + H1(ξaξ)H1(ηaη) ua,ξη  ,              (10)
+
+where the sum runs over the four corner nodes a, H0, H1 are the standard cubic Hermite shape
+functions satisfying H0(±1) = {1, 0}, H′0(±1) = 0, H1(±1) = 0, H′1(±1) = {1, 0}, explicitly
+
+                  H0(s) = 4(21  −3s + s3),    H1(s) = 14(1 −s −s2 + s3),                 (11)
+
+and each node therefore carries the value, the two first partial derivatives, and the mixed second
+
+partial derivative of the interpolated field – four degrees of freedom per node per mechanical com-
+
+ponent, i.e. eight per node for the coupled (u, w) pair.  This construction guarantees that both
+the value and the first derivative of u (and hence the strain εxx = u,x) are continuous across
+inter-element boundaries, which is the C1 continuity a strain-gradient (flexoelectric or Mindlin)
+term requires to remain mesh-independent, since ηjkl = εjk,l involves a further spatial derivative
+of strain and would otherwise be discontinuous, and hence mesh-dependent in the wrong sense,
+at element boundaries under a merely C0 mechanical interpolation. The electric potential and
+prescribed temperature use a standard four-node bilinear (C0) basis, consistent with the fact that
+
+
+
+                                          8
+
+--- PAGE 9 ---
+no gradient of ϕ beyond first order, and no gradient of θ at all, appears in (2).
+
+
+3.3  Strain-displacement and electrical B-operators
+
+With nodal mechanical unknowns ordered qu = (ua, ua,ξ, ua,η, ua,ξη, wa, wa,ξ, wa,η, wa,ξη)4a=1 ∈R32, the
+active plane-strain strain vector ε = (εxx, εzz, γxz)⊤= Bεqu has Bε ∈R3×32 built row-by-row from
+(10) and its Jacobian-scaled derivatives N,x = J−1x  N,ξ, N,z = J−1z  N,η:
+
+                               (Bε)1, 0:15 = N⊤,x,   (Bε)1, 16:31 = 0;
+                               (Bε)2, 0:15 = 0,   (Bε)2, 16:31 = N⊤,z ;
+                               (Bε)3, 0:15 = N⊤,z ,   (Bε)3, 16:31 = N⊤,x,                          (12)
+
+i.e. row 1 (εxx = u,x) is supported only on the u-block of DOFs, row 2 (εzz = w,z) only on the
+w-block, and row 3 (engineering shear γxz = u,z + w,x) on both, exactly mirroring the kinematic
+definitions of Section 2. The electrical field vector is E = −Bϕqϕ with Bϕ = (Nϕ,x, Nϕ,z)⊤built from
+the four-node bilinear basis, Bϕ ∈R2×4. On the physically thin Case-A/D/E element (hz ≪hx),
+|N,x| ∼106 m−1 while |N,z| ∼107 m−1, reflecting the 10:1 in-plane aspect ratio of the 10 µm×1 µm
+specimen and explaining why the diagonal congruence equilibration of Section 3.5 is necessary before
+
+the reduced system is solved with a direct sparse solver.
+
+
+3.4  Element matrices and Gauss–Legendre quadrature
+
+Every element integral in (9) is evaluated on the reference square [−1, 1]2 using an nq × nq = 4 × 4
+Gauss–Legendre rule [Abramowitz and Stegun, 1965, Gautschi, 2004],
+
+
+                                                    16
+                                                  ∫︂
+                                f dx dz = ∑︂ f(ξg, ηg) wg JxJz,                           (13)
+                                Ωe          g=1
+
+with the four one-dimensional abscissae and weights
+
+
+                      ξg ∈{±0.86114, ±0.33998},    wg ∈{0.34785, 0.65215}                (14)
+
+
+(two-dimensional weights are the tensor product of the one-dimensional pair, e.g. the corner weight
+is 0.12100); this rule is exact for the degree-4 polynomial content of B⊤ε CBε given the cubic Hermite
+derivatives entering Bε, and is therefore not an approximation of the element integral, only of the
+(here, polynomial and hence irrelevant) round-off in evaluating it. Explicitly,
+
+
+            16                                                           16
+  Kuu = ∑︂ wgJxJz Bε(ξg, ηg)⊤C Bε(ξg, ηg) ∈R32×32,  Kuϕ = ∑︂ wgJxJz B⊤ε e⊤Bϕ ∈R32×4,
+         g=1                                                g=1
+
+            16                                                           16
+  Kϕϕ = ∑︂ wgJxJz B⊤ϕκBϕ ∈R4×4,                    fu = ∑︂ wgJxJz B⊤ε βPS θg ∈R32,   (15)
+         g=1                                                g=1
+
+with fϕ = −∑︁g wgJxJz B⊤ϕp θg ∈R4 (Eq. (9); note fϕ contains no e εth term, consistent with
+the total-strain form of (3)). The representative entry magnitude of Kuu is set by C ∼1011 Pa,
+Bε ∼106–107 m−1, and JxJz ∼8.7 × 10−15 m2 on the finest (80 × 40) mesh – large raw magnitudes
+
+
+
+                                          9
+
+--- PAGE 10 ---
+that motivate the assembly and equilibration procedure described next.
+
+
+3.5  Assembly and numerical implementation
+
+Each 32 + 4 element block is scattered into the global sparse system by the standard element
+
+connectivity map [Bathe, 1996]. The resulting reduced algebraic system is solved after an exact
+diagonal congruence scaling (K →S−1KS−1, q →Sq, f →S−1f, for a diagonal matrix S), an
+
+exact change of variables that leaves the physical solution unchanged, to control the otherwise very
+
+large condition number arising from mixing value-, slope-, and electrical-type degrees of freedom of
+
+very different physical magnitude (typically metres, radians, and volts) in a single solution vector,
+
+not because the physics is ill-posed.
+
+
+4  Material parameters and model configuration
+
+Table 2 lists every material parameter used in the calculations, its source, temperature, crystal-
+
+lographic phase, and a confidence label: SOURCE denotes a directly transcribed literature value;
+
+RANGE denotes a value whose clamped- versus-free classification is not fully settled (see the
+
+dielectric-identity discussion below); DIRECT REGRESSION denotes a value obtained by this
+
+work’s own fit to independently published raw data. No parameter combines data from more than
+
+the three literature families listed; where inputs originate from different sources, this is stated
+
+explicitly rather than implied.
+
+
+Table 2: Material parameters used in the model. All values are for tetragonal 4mm BaTiO3 poled
+along z unless noted.
+
+Parameter    Value           Unit        Source                             T           Confidence
+
+C11            2.22 × 1011     Pa         Zgonik et al. [1994]                RT      SOURCE
+C12            1.08 × 1011     Pa         Zgonik et al. [1994]                RT      SOURCE
+C13            1.11 × 1011     Pa         Zgonik et al. [1994]                RT      SOURCE
+C33            1.51 × 1011     Pa         Zgonik et al. [1994]                RT      SOURCE
+C44            6.10 × 1010     Pa         Zgonik et al. [1994]                RT      SOURCE
+e15           +34.2       C m−2      Zgonik et al. [1994]                RT      SOURCE
+e31           −0.7        C m−2      Zgonik et al. [1994]                RT      SOURCE
+e33           +6.7        C m−2      Zgonik et al. [1994]                RT      SOURCE
+κ11            1.9479 × 10−8   F m−1      Zgonik et al. [1994]                RT      RANGE (see note below)
+κ33            4.9583 × 10−10  F m−1      Zgonik et al. [1994]                RT      RANGE (see note below)
+α1           +21.8 × 10−6    K−1        Nakatani et al. [2016], Table 1             298–343 K  DIRECT REGRESSION
+α3           −4.3 × 10−6    K−1        Nakatani et al. [2016], Table 1             298–343 K  DIRECT REGRESSION; weaker precision (Section 6)
+p3 (primary)  −3.41 × 10−4   C m−2K−1  Eklund and Karttunen [2023], SI Table S3  300 K     SOURCE, directly tabulated DFT-PBE0
+µijkl         10−6 (effective)  C m−1      not independently measured               –           excluded from the reported calculations (Section 6)
+ℓ             0         m          model choice                            –           excluded from the reported calculations (Section 6)
+
+
+   The thermal-expansion coefficients α1, α3 were obtained in this work by ordinary least-squares
+regression of the directly reported tetragonal-phase lattice parameters a(T), c(T) of Nakatani et al.
+
+[2016], listed in Table 3, at T = 298, 303, 323, 343 K (all below the 413 K tetragonal-to-cubic
+
+transition of that specimen).
+   For each axis ℓ∈{a, c}, an ordinary least-squares fit ℓ(T) = ℓ0 + sℓT was applied to the four
+data points of Table 3, with αℓ= sℓ/¯ℓthe linear thermal-expansion coefficient evaluated about the
+fitted mean axis length ¯ℓ. The a-axis fit gives sa = +8.690×10−5 Å K−1 (standard error 6.57×10−6,
+R2 = 0.989 – a tight, unambiguous fit), i.e. α1 = αa = +21.757 × 10−6 K−1. The c-axis fit gives
+sc = −1.754 × 10−5 Å K−1 (standard error 1.32 × 10−5, R2 = 0.470 – a much weaker fit, since the
+total c(T) variation over this 45 K window, ∆c ≈−0.001 Å, is only a few times the scatter between
+adjacent points), i.e. α3 = αc = −4.344 × 10−6 K−1. Both are rounded to two significant figures
+
+
+                                          10
+
+--- PAGE 11 ---
+Table 3: Tetragonal-phase lattice parameters of BaTiO3 directly reported by Nakatani et al. [2016],
+Table 1, used as the raw regression data for α1 and α3.
+                            T (K)   a (Å)    c (Å)
+
+                                   298  3.9925  4.0373
+                                   303  3.9925  4.0371
+                                   323  3.9946  4.0375
+                                   343  3.9962  4.0363
+
+
+for the model, α1 = +21.8 × 10−6 K−1, α3 = −4.3 × 10−6 K−1, consistent with the precision the
+weaker c-axis fit actually supports. The fit reproduces the sign behavior – a-axis expansion, c-axis
+
+contraction with increasing temperature – established for this phase since the earliest single-crystal
+structural work on BaTiO3. The c-axis regression’s weak R2 ≈0.47 reflects the small magnitude
+of the c(T) change relative to measurement resolution close to room temperature; the fitted value
+
+is retained rather than replaced by a value obtained closer to the phase transition, where the local
+
+slope is known to steepen and would not represent a room-temperature coefficient. This limitation
+
+is stated explicitly and is not resolved by extending the fitting window toward the transition, and
+
+its numerical consequence for the reported voltages is propagated explicitly in Section 5.7.
+   The primary pyroelectric coefficient p3 = −3.41 × 10−4 C m−2K−1 is taken directly, without
+recalculation, from the Supporting Information of Eklund and Karttunen [2023] (Table S3), which
+reports 300 K DFT-PBE0 values of p(1) = −341, p(2) = +72, and p(1) + p(2) = −269 (all in
+µC m−2K−1) for tetragonal BaTiO3; p(1) is the fixed-cell primary coefficient required by (3) (Sec-
+tion 2). As a diagnostic only, evaluating the secondary-pyroelectric identity p(2) = 2e31α1 + e33α3
+with the present e31, e33 [Zgonik et al., 1994] and α1, α3 [Nakatani et al., 2016] gives −59 µC m−2K−1,
+opposite in sign to the +72 reported by Eklund and Karttunen [2023]. This discrepancy is expected
+
+rather than corrected: the cited secondary coefficient is computed from that work’s own 0 K density-
+
+functional elastic and piezoelectric tensors and its own quasi-harmonic thermal-expansion values,
+
+not from the room-temperature experimental tensors of Zgonik et al. [1994] used elsewhere in this
+
+model. No coefficient was adjusted to remove this tension, and it is discussed further in Section 5.7.
+
+
+Dielectric-constant clamped/free consistency.  The stress–charge form of (3) requires the
+clamped (constant-strain) permittivity κS.  The thermodynamic identity relating it to the free
+
+(constant-stress) permittivity, obtained by imposing σ = 0 in (3) and substituting the resulting
+
+strain into the D-equation, is
+                                     εT −εS = e C−1e⊤,                                   (16)
+
+which for the present tensors gives e215/C44 = 2165.58 ε0 (shear channel) and e⊤3C−1N e3 = 76.42 ε0
+(normal channel, with e3 = (e31, e31, e33) and CN the 3 × 3 normal-stiffness block).  Reading
+the tabulated κr11 = 2200 as clamped implies a free value εT11 = 4365.6 ε0, roughly twice the
+range typically reported for room-temperature tetragonal BaTiO3; reading it as free instead implies
+εS11 = 34.4 ε0, several times below that range. The (e15, C44, κ11) triple is therefore not fully self-
+consistent under either reading, and the least-damaging interpretation is that the tabulated κr11
+is closer to a free value than to the clamped value assumed by (3); by contrast κr33 = 56 read as
+clamped implies εT33 = 132.4 ε0, inside the normally reported range, and is internally consistent as
+labeled. Re-solving with κr11 = 34.4 ε0 moves Case A from −1.499598 V to −1.507099 V (magnitude
+
+
+                                          11
+
+--- PAGE 12 ---
+larger by 0.50%) and Case E from +0.193212 V to +0.191803 V (magnitude smaller by 0.73%);
+Case D is unchanged to 0.0%, since it does not couple to κ11. We report these as signed before/after
+voltages rather than a signed percentage, since the standard (Vnew −Vold)/Vold convention is sign-
+ambiguous for a negative baseline (exactly the pitfall noted for the βPS percentages above) and this
+is a disclosed provenance inconsistency in a transverse-shear-only channel, not a result-invalidating
+one. κ33 enters VD linearly (VD ∝1/κ33): moving κr33 from 56 to 66 moves VD from −3.438647 V to
+−2.917640 V, a 15.15% reduction in magnitude; because κ33 is itself RANGE-status, this sensitivity
+is disclosed here rather than bounded by an independent measurement.
+
+
+5  Numerical Verification, Simulation Setup, and Results
+
+5.1  Reference response
+
+Three non-flexoelectric cases isolate and combine the piezoelectric and pyroelectric mechanisms on
+a common 10 µm × 1 µm specimen under a 10 K through-thickness temperature difference: Case D
+
+(pyroelectric coupling only), Case A (piezoelectric and pyroelectric coupling together), and Case E
+
+(piezoelectric coupling with the same thermal loading, pyroelectric coupling switched off).
+
+
+Analytical benchmark for Case D.  Switching off u, w and their coupling in (8) reduces the
+electrical block to a one-dimensional problem in z alone: Dz = κ33Ez + p3θ = 0 (Gauss’s law, no
+free charge, uniform in x) gives Ez = −p3θ/κ33, and integrating through the thickness with the
+prescribed θ(z) = ∆T z/h gives the closed form
+
+             1D                   ∫︂h          p3 ∫︂h        p3¯θh      ∆T          V pyro = ϕ(h) −ϕ(0) = −   Ez dz =        θ dz =         ,       ¯θ =       .         (17)
+                                            0          κ33  0         κ33           2
+
+Substituting these values p3 = −3.41 × 10−4 C m−2K−1, ¯θ = 5 K, h = 1.0 × 10−6 m, and κ33 =
+4.95834517752 × 10−10 F m−1 (= 56 ε0, with ε0 = 8.854187817 × 10−12 F m−1) gives
+
+                   p3¯θh = (−3.41 × 10−4)(5)(1.0 × 10−6) = −1.705 × 10−9 C m−1,
+                 1D       −1.705 × 10−9
+             V pyro =              = −3.438647248 V,                         (18)                       4.95834517752 × 10−10
+
+which matches the discretized Case D voltage of Table 4 to 1.5 × 10−13 relative error (Table 6)
+– the dimensional identity (C m−2K−1)(K)(m)/(F m−1) = V confirms Eq. (18) is unit-consistent
+
+independently of the numerical agreement.  This closed form has no dependence on u, w at all,
+
+which is the origin of Case D’s exact mesh-invariance noted in Section 5.2.
+
+   Table 4 reports the mesh-converged open-circuit voltage for each.
+
+   The high-precision values in Table 4 are retained for reproducibility only; the mesh- and
+
+material-supported physical precision is two significant figures, reflected in the “Reported” col-
+
+umn. Figure 2 visualizes these voltages together with the mechanism-decomposition evidence that
+
+Case A is not the arithmetic sum of Cases D and E, and Figure 3 shows the solved finite-element
+
+fields for Case A over the physical domain, recovered from the finite-element basis at real (x, z)
+
+points rather than schematically illustrated.
+
+
+
+
+
+                                          12
+
+--- PAGE 13 ---
+Table 4: Production open-circuit voltages, 80 × 40 mesh (29,889 full degrees of freedom). Final-
+step relative change: D ≈0 (mechanically decoupled from the thermal load), A = −0.031%,
+E = +0.045%; independently estimated discretization uncertainty (Section 5.2) ±0.091% (A),
+±0.146% (E).
+
+Case  Active mechanisms              V  (full precision, V)    Reported  Status
+
+D      pyroelectric only                  −3.438647248137982   ≈−3.4 V  mesh-converged; exact 1D identity
+A      piezoelectric + pyroelectric        −1.4995979976791265   ≈−1.5 V  mesh-converged
+E      piezoelectric + thermal (no pyro)   +0.193211761047954  ≈+0.19 V  mesh-converged
+
+
+
+          (a)                                      +0.1932 V                                (b)                    +0.1909
+                                                                       +0.0000 V  80−40)  0                                                                               0
+ me(                             )                                                                                          me(        V                                                                                                                         shareD + VoneE ≠ linearV A : thesolvemechanismsfor (u, φ).
+   −1                                                                   −1    Same 16x8 mesh for all four points
+                                                                                                                                          (VE read from the p = 0 sweep run).  (fine(t                                                                                                                                                (16−8
+ [V]                                   -1.4996 V                                               [V]                                                                              -1.5095
+  voltage −2                                                                                                                                                                                                  voltage −2
+
+   −3                                                                   −3  nominal
+                                                                                                                                                                -3.2477
+                  -3.4386 V                                                                                           -3.4386
+           D pyro only       A piezo+pyro      E piezo-thermal       0 zero temp.                     V_D              V_E           V_D + V_E           V_A
+                                                                                                                       (pyro)           (piezo-thermal)                           (piezo+pyro)
+                                                                                                                                                                                          (solved)
+
+
+Figure 2: Production voltages and mechanism decomposition. (a) Nominal open-circuit voltages
+at the converged 80 × 40 mesh for Cases D, A, E and the zero-temperature null. (b) Mechanism
+decomposition on a common 16 × 8 mesh, showing that these cases do not combine additively
+(VD + VE̸ = VA): Case D is solved with a mechanically decoupled system matrix, so the two solves
+are not linear combinations of one another even though each case is individually linear in its applied
+load.
+
+
+5.2  Mesh convergence
+
+Table 5 summarizes the six-level mesh study (8×4 to 80×40) for each case. Cases A and E satisfy
+
+a final-step relative-change criterion of 0.1%; Case D is mechanically decoupled from the thermal
+
+load (e = 0) and is invariant to round-off across all six levels.
+
+
+           Table 5: Mesh convergence, relative change from the previous mesh level.
+
+                Mesh (ndof)            Case D    Case A    Case E
+
+                  8 × 4 (405)              baseline    baseline    baseline
+                  16 × 8 (1377)    −2.6 × 10−14%  −1.122%  +2.417%
+                  32 × 16 (5049)   +1.2 × 10−12%  −0.444%  +0.859%
+                  48 × 24 (11025)  +2.3 × 10−12%  −0.124%  +0.209%
+                  64 × 32 (19305)  +3.3 × 10−12%  −0.056%  +0.086%
+                  80 × 40 (29889)  −2.2 × 10−11%  −0.031%  +0.045%
+
+
+   Case D is, as expected, mesh-independent to round-off because its electrical response is me-
+
+chanically decoupled (e = 0 in this case); Cases A and E converge monotonically, with the final
+step below the adopted 0.1% criterion in both. For a solution converging as V (h) = V∞+ Chp, the
+
+
+
+
+
+                                          13
+
+--- PAGE 14 ---
+Figure 3: Solved finite-element fields of Case A (48 × 24 mesh), evaluated at the actual nodal basis
+at physical (x, z) points. (a) Electric potential, showing a smooth variation from the grounded base
+to the single floating value enforced at the top electrode, consistent with the open-circuit constraint
+of Figure 1. (b) Vertical electric field, whose spatial pattern is dominated by the imposed through-
+thickness temperature gradient and is comparatively uniform along x. (c) Longitudinal strain εxx,
+which is concentrated near the clamped root, where the bending-induced strain gradient is largest,
+consistent with beam theory for a cantilever under distributed thermal loading. (d) Displacement
+magnitude |u|, growing monotonically from the clamp to the free end, consistent with the expected
+cantilever bending profile.
+
+
+observed order on three consecutive geometric-doubling levels h, 2h, 4h is
+
+                                   V (4h) −V (2h)
+                                     pobs = log2⃓⃓⃓⃓  V (2h) −V         ,                              (19)                                                                                                                                  (h)⃓⃓⃓⃓
+
+which, applied to the 8 × 4 →16 × 8 →32 × 16 and 16 × 8 →32 × 16 →64 × 32 triplets,
+gives pobs = 1.355, 1.307 (Case A) and 1.458, 1.526 (Case E) – below the BFS element’s nominal
+asymptotic rate, and reported as observed rather than assumed (Section 6). Figure 4 shows this
+
+refinement sequence directly, together with the independent Richardson-based error estimate that
+
+supports the discretization-uncertainty band quoted above.
+
+
+
+
+
+                                          14
+
+--- PAGE 15 ---
+          (a)                                                                         10 2    (b)                                         CaseCase D:A: |final-step|final-step rel.rel. change|change| [%][%]
+                                                                                                                                                            Case E: |final-step rel. change| [%]
+     0                                                                                 10 0                                                      Richardson-based error est. |V−V ∞ |/|V ∞ | [%]
+ [V]
+V                                                                                  10 −2
+
+
+                                                                                                            −4  voltage −1                                                                                                                                                                         scale) 10
+                                                                                           (lo
+   −2                                                                                    [%] 10 −6
+
+                                                                                      10 −8   open-circuit
+   −3                                      Case                                      D
+                                             Case                                          A                                    10 −10
+                                             Case E
+                                                                                     10 −12
+                       10 3
+                          number of full DOFs (log)                                                           10 4                          8x4        16x8        32x16       48x24       64x32       80x40
+                                                                                                  mesh level
+
+
+Figure 4: Mesh-convergence study for Cases D, A and E over six h-refinement levels (8 × 4 to
+80 × 40). (a) Voltage vs. full DOF. (b) Final-step relative change (bars) and the Richardson-based
+per-level error estimate |V −V∞|/|V∞| (diamonds); the two are distinct convergence measures and
+are shown separately. Case D is invariant to round-offacross all levels because its electrical response
+does not depend on the mechanical solve.
+
+
+                                                                                      6
+                                                                         affine line through solved p=0 and p=1
+      0.0    (a)                                                (slope -1.700384 V per unit p 3 scale)                (b)                                ax |residual| = 5.66e-15 V (machine precision)
+                                                                 solved points (Case A, fixed K, 16x8 mesh)        5
+
+    −0.5                                                                               4
+ [V]                                                          V]
+                                                                                                              −15  3    −1.0
+                                                                                           [10  voltage                                                                                   2
+    −1.5
+                                                                                                                                                                                                                                                   residual  1
+    −2.0
+                                                                                      0   open-circuit                                                                                                                                                                               affine
+    −2.5
+                                                                          −1
+
+    −3.0
+                                                                          −2
+
+            0.00     0.25     0.50     0.75     1.00     1.25     1.50     1.75     2.00             0.00     0.25     0.50     0.75     1.00     1.25     1.50     1.75     2.00
+                                p 3 scale factor                                                        p 3 scale factor
+
+
+Figure 5: Pyroelectric-coefficient sensitivity at fixed stiffness (Case A, 16 × 8 mesh).  (a) Solved
+voltages vs. p3 scale factor, with the affine line through the p = 0 and p = 1 solutions. (b) Affine
+residual on a scaled axis. The affine dependence follows from the linear algebra of the fixed stiffness
+matrix K (Section 5) rather than from a distinct physical effect.
+
+
+5.3  Pyroelectric-coefficient sensitivity
+
+For Case A on the 16 × 8 mesh, the open-circuit voltage was recomputed at p-scale factors of
+0, 0.5, 1, 1.5, 2 relative to this p3, with all other inputs (including the stiffness matrix K) held fixed.
+The response is affine in the scale factor to within 5.7 × 10−15 V (the maximum affine-fit residual),
+with slope −1.7003844944 V per unit scale factor. This is a property of the linear algebraic system
+
+for fixed K, not an empirical observation requiring further justification; parameters that enter K
+
+itself, such as an activated flexoelectric coupling, are not expected to show this affine behavior and
+
+are not claimed to. Figure 5 shows the solved points, the affine line through them, and the residual
+
+on a scale that makes the machine-precision affinity visually explicit.
+
+
+5.4  Numerical verification
+
+Table 6 summarizes the 13-row verification suite executed against the final material inputs: 11 rows
+
+are pass/fail checks against a stated tolerance (all pass), and 2 rows are informational reference
+
+
+
+                                          15
+
+--- PAGE 16 ---
+values used elsewhere in this paper (the non-additivity of Cases A, D, E, and the exact 1D analytical
+
+voltage) rather than pass/fail checks in their own right.  All 11 checks are satisfied within their
+stated tolerances (tightest: 10−12 absolute; the variational energy identity is satisfied to 3.5×10−10
+against a 10−7 tolerance). These checks establish that the discretization correctly implements the
+
+stated governing equations, boundary conditions, and algebraic structure; they do not, and are
+
+not claimed to, constitute an external or experimental validation of the material inputs or of the
+
+predicted device voltage.
+
+   Four of these checks are derived explicitly below, since they test specific aspects of the formula-
+
+tion rather than only confirming numerical convergence. The exact 1D pyroelectric identity for Case
+D follows by switching offu, w and their coupling: with Dz = p3θ uniform in x and θ(z) = ∆T z/h
+                                                                dx = 0 gives thelinear, Gauss’s law Dz,z = 0 combined with the open-circuit constraint ∫︁L0 Dz
+closed form V = ϕ(h) −ϕ(0) = p3¯θh/κ33, ¯θ = ∆T/2; Table 6 confirms agreement to 1.5 × 10−13
+relative error at the finest mesh. The coupled-block reciprocity Kϕu = K⊤uϕ is a mathematical
+necessity of (2) (Schwarz’s theorem), not an assumption; its confirmation to 1.3 × 10−17 rules out
+
+the coupling blocks being assembled from independently transcribed formulas rather than as literal
+transposes of one another. The p3-affinity check exploits the linearity of q = K−1f in any parame-
+ter entering f alone; a machine-precision affine residual confirms p3 enters fϕ exactly once, linearly,
+with no unintended nonlinear step active. The stationary-potential/integrated-enthalpy identity
+compares the solved enthalpy against an independent quadrature of 12q⊤Kq −q⊤f; because this
+involves cancellation of similarly-sized numbers, its 3.5×10−10 residual is reported against a looser
+10−7 tolerance than the other, non-cancellation-sensitive checks.
+
+
+Table 6: Numerical verification: eleven checks against the stated governing equations, boundary
+conditions, and algebraic structure of the discretization, and two reference values used elsewhere in
+the paper.
+
+Check                                        Purpose                              Residual   Tolerance
+
+BFS partition of unity                               basis-function consistency               exact 0  < 10−13
+BFS exact linear-field recovery                      basis-function consistency            2.1 × 10−17  < 10−11
+Coupled-block reciprocity, Kϕu = K⊤uϕ               variational consistency               1.3 × 10−17  < 10−12
+Case D vs. exact 1D pyroelectric identity, 16 × 8    analytical agreement                 1.3 × 10−16  < 10−10
+Case D vs. exact 1D pyroelectric identity, 80 × 40   analytical agreement                 1.5 × 10−13  < 10−10
+Zero-temperature null                                 null-limit consistency                   exact 0  < 10−13
+Zero-α null (Case E)                                   null-limit consistency                   exact 0  < 10−13
+Zero-p null (Case D)                                   null-limit consistency                   exact 0  < 10−12
+Zero-p: Case A ≡Case E                             null-limit consistency                   exact 0  < 10−10
+p3-affinity at fixed K (max. residual)                 linearity of the algebraic system   5.7 × 10−15 V  < 10−9
+Stationary-potential/integrated-enthalpy identity    variational consistency               3.5 × 10−10  < 10−7
+
+Superposition: VA̸ = VD + VE (−1.7383 V)          reference value, discussed in Section 5.8
+Analytic 1D identity voltage (−3.438647248 V)     reference value, Eq. (18)
+
+
+
+
+
+                                          16
+
+--- PAGE 17 ---
+5.5  Energy audit
+
+The discrete electric enthalpy at the solved state of Case A (80×40 mesh) decomposes exactly into
+
+the five active terms of (2) integrated over the domain,
+
+          Π = 4.6528 × 10−8 −7.4376 × 10−9 −1.9149 × 10−8
+
+                                      1                                                              −eε·E⏟⏟      ⏞                     ⏞ elastic,⏟⏟                                      2 ε⊤Cε                                  ⏞ ⏞   −12 E⊤κE⏟⏟      ⏞ ⏞
+                  −7.3907 × 10−8 + 3.4024 × 10−8 = −1.9941 × 10−8 J m−1,             (20)
+                     ⏞    −βPSθ·ε⏟⏟      ⏞ ⏞    −pθ·E⏟⏟      ⏞
+
+(strain-gradient and flexoelectric terms both exactly zero, since A = 0, µ = 0 in every case), which
+agrees with an independent quadrature of the discrete potential, 2q⊤Kq1    −q⊤f = −1.99411 ×
+10−8 J m−1, to a relative consistency error of 3.5 × 10−10 – this is the stationary-potential iden-
+
+tity of Table 6. This decomposition confirms that the assembled system correctly represents the
+
+stationarity condition of the electric-enthalpy functional; it is a check on the internal consistency
+
+of the discretization, not a diagnosis of which physical mechanism controls the magnitude of the
+
+solved voltage, which follows instead from the coupled field solution discussed in Section 5.8.
+
+
+5.6 A rough estimate for Case E
+
+A one-dimensional estimate for the piezoelectric-thermal voltage, analogous to (17) but with p3
+replaced by the free-sample combination e31α1 + e33α3, gives
+        V piezo-th1D   ≈(e31α1 + e33α3)¯θh = (−4.407 × 10−5)(5)(1.0 × 10−6) = −0.444 V,      (21)                            κ33              4.95834517752 × 10−10
+
+opposite in sign to the converged Case E value of +0.193 V (Table 4). The two calculations are
+
+not in conflict: Eq. (21) assumes a spatially uniform strain response appropriate to a free, uncon-
+
+strained sample, whereas Case E solves the actual clamped-cantilever boundary-value problem, in
+
+which the strain field is generated self-consistently through the plane-strain thermal-stress vector
+
+of Section 2.3. The comparison illustrates that a free-sample estimate does not carry over to a
+
+mechanically constrained geometry, and that the full coupled solution is required.
+
+
+5.7  Discussion
+
+The three cases isolate distinct physical origins of the open-circuit voltage. Case D reflects the pyro-
+electric response alone and matches the exact one-dimensional identity V = p3¯θh/κ33 to 1.5×10−13
+relative error, confirming that the discretization, sign convention, and open-circuit constraint are
+
+correctly implemented; this agreement is a property of the numerical implementation and is inde-
+pendent of whether p3 itself is the physically correct primary coefficient for BaTiO3, a distinction
+discussed further below. Case E isolates the piezoelectric-thermal response: the clamp at x = 0
+
+prevents the free thermal expansion that would otherwise occur, generating a non-uniform strain
+
+field that, through the piezoelectric coupling, produces a voltage of opposite sign and substantially
+
+smaller magnitude than the pyroelectric case.  Case A, combining both mechanisms in a single
+
+coupled solve, does not equal the sum of Cases D and E, because Case D is computed with the
+
+piezoelectric coupling switched offentirely (a different stiffness matrix), not because the underlying
+
+system is nonlinear; for fixed material properties the system is linear in the applied thermal load,
+
+
+                                          17
+
+--- PAGE 18 ---
+and this is confirmed directly by the exact affine dependence of Case A on the p3 scale factor
+(Section 5).
+
+  A simplified reduction that omits the constrained transverse thermal-expansion contribution
+underestimates βxx by 35.05% and βzz by 57.75% relative to the full three-dimensional thermal-
+stress contraction of Section 2.3, evaluated at the same thermal-expansion coefficients. Because
+βPS enters both the mechanical load vector and, through the strain field it generates, the piezo-
+electric contribution to the electrical response, this difference is not a minor detail: it alters every
+
+reported voltage in Cases A and E (Case D is thermally decoupled from the mechanical solve and
+
+is unaffected), and, as the following paragraph shows, changes the sign, not only the magnitude, of
+
+Case E.
+
+
+The central qualitative result of this work   is that the polarity of the piezoelectric-thermal
+
+open-circuit voltage is a discriminator between the two constitutive reductions, not merely a matter
+of degree. On a common 48 × 24 mesh, solving with the simplified (uncorrected) βPS gives VA =
+−1.909285 V and VE = −0.215422 V, whereas the corrected reduction gives VA = −1.500906 V
+and VE = +0.192957 V – a rigid shift of +0.4084 V common to both cases (Case D, which does
+not depend on βPS, is unchanged to 0.000 × 100). The corrected, converged (80 × 40) value is
+VE = +0.193211761 V (Table 4). A measurement of the sign of VE for a physical device of
+this configuration would therefore directly test which thermal-stress reduction is closer to correct,
+
+independently of any uncertainty in the absolute magnitude of the material inputs.
+
+
+Robustness of this polarity to thermal-expansion uncertainty.  Because VE’s sign depends
+on βPS, and βPS depends on the regression-derived α1, α3 (Section 4), it is necessary to check
+whether the reported +0.19 V polarity survives the α regression’s own uncertainty rather than
+being an artifact of the particular fitted values. Treating α1, α3 as independent (their regressions
+use disjoint data, a(T) and c(T)) and propagating linearly through the mesh-converged solver
+
+response,
+
+                                     ∂VE    ∂VE
+          VE(α1 + δ1, α3 + δ3) ≈VE(α1, α3) +     δ1 +      δ3,      δi = ni SE(αi),        (22)
+                                        ∂α1     ∂α3
+
+with the regression standard errors SE(α1) = 1.6459 × 10−6 K−1 and SE(α3) = 3.2611 × 10−6 K−1
+evaluated jointly through the 80 × 40 model (i.e. by direct re-solution at the perturbed α, not by a
+linearized derivative alone, so (22) is used only to state the propagation logic) gives a ±1σ (ni = ±1)
+envelope for Case E of [+0.0621, +0.3243] V – the polarity is robust at one standard deviation.
+Case A’s joint ±2σ envelope, [−1.7619, −1.2373] V, does not change sign at all. Case E’s polarity
+flips only beyond approximately −2σ on α3 alone (α3 at −2σ alone gives VE = −0.018778 V; the
+joint −2σ point gives −0.069057 V); by contrast, the single negative point encountered in an earlier,
+coarser 3×3 sensitivity grid (α1×0.5, α3×1.5, giving VE = −0.0432 V) lies at approximately −6.6σ
+on α1 alone and should not be read as evidence against the reported polarity’s robustness – it is far
+outside the region a 1–2σ uncertainty band would occupy. Figures 6–8 visualize this earlier, coarser
+3 × 3 grid directly as discrete solved points (never as an interpolated surface, since only nine points
+
+were actually solved): Figure 6 renders Cases E and A as 3D stems over the grid, Figure 7 gives
+
+the same data as annotated heatmaps alongside Case D’s alpha-invariance, and Figure 8 isolates
+
+the sign/polarity evidence for Case E specifically.
+
+
+                                          18
+
+--- PAGE 19 ---
+    (a)                                                                        (b)
+
+
+
+                                                                                                                                                                          0.0
+                                                                          0.4
+                                                                                                                                                     −0.2
+                                                                                                                                                   −0.4                                                                          0.3
+                                                                                                                                                   −0.6
+                                                                        [V]
+                                                                           0.2 V                                                                          −0.8
+                                                                                                                                                   −1.0
+                                                                         0.1                                                                                 −1.2
+                                                                                                                                                  −1.4
+                                                                         0.0                                                                                −1.6
+
+                                                   −2                                                                   −2
+
+                                                −3                                                                   −3
+
+    10                                       −4                              10                                       −4
+           15                                                                              15                                          −5 [ppm/K]                                                                                                              −5 [ppm/K]                  20                                      3                                            20
+       α1        25               −6 α                    α1        25               −6 α3               [ppm/K]       30                                                       [ppm/K]       30
+
+
+Figure 6: Thermal-expansion 3 × 3 grid rendered as discrete 3D stems (one bar per solved point;
+no interpolation between points), with a zero-reference plane.  (a) Case E (piezoelectric-thermal
+only) takes both positive and negative values over the sampled grid.  (b) Case A (piezoelec-
+tric+pyroelectric) remains negative at every sampled point but its magnitude is α-sensitive.
+
+
+
+                                                                                                                                                            0.4
+         (a)                                                    1.5                       (b)                                                                −3.30   (c)
+     1.5       -1.7371           -1.5707           -1.4044                                     1.5       -0.0432         +0.1231         +0.2894           0.3
+                                                                                                                                                               0.2                 −3.35  ppm/K)                                                                1.0                                  ppm/K)
+ -4.3                                                                0.5                      -4.3                                                                0.1                 −3.40
+ (x  1       -1.6672           -1.5009           -1.3346            0.0  [V]V        (x  1      +0.0266         +0.1930         +0.3593           0.0  [V]V          [V]V −3.45
+  factor                                                        −0.5                               factor                                                        −0.1
+ scale                                                                                                                                   scale                                                        −0.2               −3.50
+α3 0.5       -1.5974           -1.4311           -1.2648          −1.0     α3 0.5      +0.0965         +0.2628         +0.4291          −0.3               −3.55
+                                                           −1.5
+                                                                                                                                        −0.4               −3.60
+                 0.5             1               1.5                                                  0.5             1               1.5                                      0    1    2    3    4    5    6    7    8
+            α 1 scale factor (x +21.8 ppm/K)                                   α 1 scale factor (x +21.8 ppm/K)                                               scenario index (9 alpha pairs)
+
+
+Figure 7: Alternative view of the same discrete 3 × 3 thermal-expansion grid, not a continuous
+response surface. (a) Case A: annotated heatmap, one-signed but magnitude sensitive. (b) Case E:
+annotated heatmap, spanning both signs. Every cell states the solved voltage at its true (α1, α3)
+grid location.  (c) Case D across all nine sampled points, shown as a flat band confirming its
+independence of α.
+
+
+   The tension between the secondary-pyroelectric identity evaluated with the present room-
+temperature experimental tensors (−59 µC m−2K−1) and the value reported directly from first-
+principles calculation (+72 µC m−2K−1, Eklund and Karttunen, 2023) is not resolved in this work
+
+and is not expected to be resolved by adjusting either dataset to match the other.  The two
+
+secondary coefficients are computed from materially different inputs – one from room-temperature
+
+single-crystal measurements assembled from two independent diffraction and scattering studies, the
+
+other from a single internally consistent 0 K density-functional calculation with its own thermal-
+
+expansion and elastic/piezoelectric tensors – and a difference, including in sign, between the two
+
+is a legitimate outcome of that difference in provenance rather than evidence that one dataset is
+
+in error. This tension motivates future work sourcing a single, temperature-matched, single-crystal
+
+dataset spanning all required properties (Section 6), but does not by itself invalidate the use of the
+
+directly tabulated primary coefficient in the present model, since the primary coefficient carries no
+
+such cross-dataset dependency.
+
+
+
+                                          19
+
+--- PAGE 20 ---
+                                                                                                                                                                                                                                                                                              1.5|0.5
+   (a)                                                         0.4   (b)                                                            0.4   (c)
+
+                                                                                                                                                                                                                                                                                              1.5|1.0
+                negative
+                   (1/9)
+                                                                0.3                                                                    0.3                                                                               1.5|1.5
+                                                                                                                                                                                                                                                            1.0|0.5
+
+                                                        [V] 0.2                                                            [V] 0.2                                             1.0|1.0
+                   V                     V
+
+                                                                                                                                                                                                                                                            1.0|1.5
+                                                                0.1                                                                    0.1           0.5|0.5
+                           positive
+                            (8/9)
+                                                                                                                                                                                                                          0.5|1.0
+                                                                0.0                                                                    0.0
+
+                                                                                                                                                                                                                          0.5|1.5                                nominal (α 1 x1.0, α 3 x1.0)
+                                                                                                  +0.0266   -0.0432   +0.0965   +0.1231   +0.1930   +0.2628   +0.2894   +0.3593   +0.4291          10       15α 1 [ppm/K]20 (9 solved25 g id points)30       35
+
+
+Figure 8: Sign of Case E over the discrete 3×3 grid. (a) Counts of positive/negative/zero outcomes
+among the nine sampled points.  (b) The nine solved values sorted by magnitude, with a zero
+reference line. (c) The nominal α pair highlighted among the nine.
+
+
+   The reported voltages are model predictions verified against internal analytical and algebraic
+
+identities; we did not identify an experimentally measured open-circuit voltage for a device of this
+
+geometry for direct comparison.
+
+
+5.8  Physical interpretation of the coupled response
+
+We state here, in physical rather than purely numerical terms, why each case takes the sign and
+
+order of magnitude that it does. Case D isolates the direct pyroelectric mechanism: the prescribed
+temperature gradient θ(z) = ∆T z/h acts through the primary coefficient p3 alone, with no me-
+chanical solve contributing to the electrical response at all (the piezoelectric block is switched off),
+
+so the resulting voltage is simply the integrated pyroelectric charge divided by the clamped capac-
+itance of the specimen, exactly the closed-form identity V = p3¯θh/κ33 that Section 5.4 confirms
+to 1.5 × 10−13 relative accuracy.  Its magnitude is large, relative to the other two cases, simply
+because p3 is itself the largest dimensional coefficient among the three mechanisms considered once
+converted to consistent SI units, and because this mechanism requires no strain to be generated
+
+at all – unlike Cases A and E, it does not compete with the mechanical stiffness of the clamped
+
+structure for a share of the applied thermal energy.
+
+   Case E isolates the purely mechanical route to an electrical response: the same temperature
+
+field, now with the pyroelectric coefficient set to zero, produces a non-uniform thermal eigenstrain
+αijθ that the clamp at x = 0 prevents the specimen from relieving by free expansion. This constraint
+generates genuine elastic strain – most concentrated near the root, exactly where Figure 3(c) shows
+εxx peaking – which then drives an electrical response through the converse-to-direct piezoelectric
+coupling Dz = e31εxx + e33εzz integrated over the specimen and balanced against the open-circuit
+condition. Because this mechanism requires the thermal eigenstrain to first be converted to elastic
+
+strain by a mechanical constraint, and only then converted to charge by the piezoelectric tensor, it is
+a two-step, indirect process, and it is unsurprising that its magnitude (≈0.19 V) is roughly an order
+of magnitude smaller than the single-step direct pyroelectric mechanism of Case D (≈−3.4 V).
+What is not self-evident, and is this paper’s central result, is that mechanism’s sign: because βPS
+is a specific, sign-carrying linear combination of α1 and α3 (Section 2.3, Eq. (5)), and because
+that combination mixes the (positive) a-axis and (negative) c-axis thermal expansion coefficients
+
+
+
+                                          20
+
+--- PAGE 21 ---
+through elastic constants of comparable magnitude, the sign of Case E’s voltage is not fixed by
+
+physical intuition alone – it must be computed from the full three-dimensional contraction, and,
+
+as shown above, an incomplete contraction can invert this sign, not merely change its size. An
+
+incomplete plane-strain reduction can therefore invert a polarity that would otherwise be treated
+
+as a robust, experimentally checkable prediction.
+
+   Case A, finally, combines both mechanisms in a single coupled solve rather than by superposition
+(Section 5), and its magnitude (≈−1.5 V) sits between the pure pyroelectric value and zero precisely
+
+because the mechanically generated (Case-E-like) contribution has the opposite sign to the dominant
+pyroelectric contribution once the corrected βPS is used: the piezoelectric term partially cancels,
+rather than reinforces, the pyroelectric term for this specimen and loading. This cancellation is itself
+
+a physically meaningful, testable prediction, distinguishable in principle from a device in which the
+
+two mechanisms reinforce one another, and it follows directly and only from the corrected sign of
+βPS established in Section 2.3.
+
+
+6  Limitations
+
+ 1. We did not identify an experimental full-device open-circuit-voltage measurement for direct
+
+   comparison with Cases A, D, or E; the reported values are computational predictions, veri-
+
+    fied internally against analytical and algebraic identities, but not compared against externally
+
+   measured device data.
+
+ 2. The elastic, piezoelectric, and dielectric constants [Zgonik et al., 1994], the thermal-expansion
+
+    coefficients [Nakatani et al., 2016], and the primary pyroelectric coefficient [Eklund and Kart-
+
+   tunen, 2023] originate from three independent sources; while each is individually a primary,
+    directly traceable measurement or calculation for tetragonal single-crystal BaTiO3, the combi-
+   nation has not been validated as a single internally consistent dataset from one experiment.
+
+ 3. The α3 (c-axis) thermal-expansion regression has a coefficient of determination of only ≈0.47
+    over the four fitted points nearest room temperature; the reported value is retained at two
+
+    significant figures to reflect this. Within the propagated regression uncertainty (Section 5.7),
+   the Case E polarity is robust at ±1σ and the Case A magnitude is robust at ±2σ; a higher-
+
+    precision, dedicated near-room-temperature measurement would still narrow this uncertainty.
+
+ 4. The dielectric constants κ11, κ33 are transcribed without an independently verified clamped-
+    versus-free classification; Section 4 shows the (e15, C44, κ11) triple is not fully self-consistent
+   under either reading, with a ±0.5–0.7% sensitivity in Cases A/E and a substantially larger
+    sensitivity in the Case D voltage to κ33’s uncertain range: the −3.4 V value should not be
+   read as carrying the same robustness as the polarity result of Item 3. A dedicated, phase- and
+
+   frequency-matched dielectric measurement would resolve this.
+
+ 5. The model represents the cantilever in plane strain, per unit out-of-plane depth, which is an
+
+    idealization adopted because it removes one spatial dimension while retaining the anisotropic
+
+    in-plane elastic and thermal-expansion coupling that is central to this study. The reported
+
+    voltages apply to this plane-strain idealization and may differ for a finite-width cantilever,
+
+   whose lateral surfaces permit mechanical constraints (and stress relaxation) that plane strain
+
+
+
+                                          21
+
+--- PAGE 22 ---
+    excludes; extending the model to finite width would require re-solving the corresponding three-
+
+   dimensional boundary-value problem.
+
+ 6. The flexoelectric extension to the model is implemented reciprocally but is not used to gener-
+
+    ate quantitative predictions: no independently measured effective flexoelectric tensor and no
+
+    physically justified strain-gradient length scale are presently available for this material. Mesh
+
+    studies of the flexoelectric-active configurations (Cases B and C) solve stably and converge
+   monotonically at all six densities studied, but their final-step relative changes, −1.4976% (B)
+   and −2.1761% (C), remain one to two orders of magnitude above the 0.1% criterion satisfied by
+
+   the non-flexoelectric cases; the flexoelectric results are therefore reported as exploratory only,
+
+   and no quantitative claim in this paper rests on them.
+
+ 7. Discretization uncertainty for Cases A and E is estimated independently of the final-step cri-
+
+    terion in Table 5, from the observed convergence order on the geometric mesh subsequence
+   8 × 4 →16 × 8 →32 × 16 →64 × 32: the two successive-triplet order estimates are 1.355
+
+   and 1.307 (Case A) and 1.458 and 1.526 (Case E), giving an estimated discretization error
+   band of ±0.091% (A) and ±0.146% (E) at the 80 × 40 mesh, with an estimator-to-estimator
+
+   spread of 0.174% and 0.275% respectively. These are observed rates on the meshes studied,
+
+   not a claim about the element’s theoretical asymptotic order; a nonlinear least-squares fit of
+  V∞+ Chp was also attempted but returned its initial guess for p regardless of the seed value
+    tested (p0 ∈{2, 3, 4, 6}), indicating it is not usefully constrained by six data points spanning
+    less than one order of magnitude in h, and its output is not used here.
+
+ 8. The reported voltages apply to the specific geometry and boundary conditions modeled here,
+
+   and should not be extrapolated to other device configurations without re-solving the coupled
+
+   system.
+
+
+7  Conclusions
+
+ 1. The plane-strain thermal-stress vector for a tetragonal material must be derived from the full
+
+    three-dimensional thermal-expansion contraction before the plane-strain constraint is applied; a
+
+    simplified reduction that skips this step underestimates the resulting thermal-stress components
+   by 35.05% (βxx) and 57.75% (βzz) for the present BaTiO3 parameters.
+
+ 2. The consequence for this specimen and loading is that the simplified reduction reverses the sign
+    of the piezoelectric-thermal open-circuit voltage (VE: −0.22 V with the simplified reduction,
+   +0.19 V with the full contraction) – the polarity, not only the magnitude, distinguishes which
+
+    reduction was used.
+
+ 3. The pyroelectric coefficient entering a strain-based electric-enthalpy formulation must be the
+
+    fixed-strain (primary) coefficient, not the free (total) coefficient ordinarily reported from bulk
+
+   measurements; using a directly tabulated first-principles primary coefficient in place of an in-
+
+    herited ceramic total coefficient changes the computed voltages substantially.
+
+ 4. On a mesh-converged 80×40 discretization, the pyroelectric-only, piezoelectric-plus-pyroelectric,
+   and piezoelectric-plus-thermal open-circuit voltages for a 10 µm × 1 µm BaTiO3 cantilever in
+
+
+                                          22
+
+--- PAGE 23 ---
+   plane strain under a 10 K temperature difference are approximately −3.4 V, −1.5 V, and
+
+   +0.19 V, respectively. The polarity of the piezoelectric-thermal voltage is robust to the propa-
+
+   gated thermal-expansion uncertainty at one standard deviation, but the pyroelectric-only mag-
+
+   nitude depends on the uncertain clamped-versus-free classification of the transverse dielectric
+
+   constant (Section 6) and should not be read as equally robust.
+
+ 5. The material inputs are assembled from three independent sources (elastic and dielectric con-
+
+    stants, thermal-expansion coefficients, and the primary pyroelectric coefficient) rather than one
+
+    internally consistent experiment, and a resulting tension between a room-temperature-tensor-
+
+   based and a first-principles secondary-pyroelectric coefficient is reported rather than reconciled.
+
+ 6. An experimental measurement of the open-circuit voltage, and in particular of the sign of the
+
+    piezoelectric-thermal contribution, would provide a direct test of the plane-strain thermal-stress
+
+    reduction proposed here.
+
+
+8  Data and code availability
+
+The implementation, material-parameter ledger, and all result data underlying this paper are avail-
+able at https://github.com/vipin-oss/BFS-FEM-MATLAB, together with the scripts used to gen-
+erate every table and figure. The computational environment (Python 3.13.14, numpy 2.3.5, scipy
+
+1.17.1, matplotlib 3.10.9) is specified in the repository. The repository includes a suite of 17 au-
+
+tomated tests, a superset of the 13 checks reported in Table 6: the additional tests cover routine
+
+software behavior (input handling, file output) rather than physical or mathematical identities, and
+
+are not separately discussed here. No experimental data were used in this work; every material
+
+input is a literature value with its source and confidence status stated in Table 2.
+
+
+Acknowledgments
+
+The author acknowledges support from the Haryana State Research Fund, Sanction Order No.
+
+14/66-2025 SPD/HSHEC/HSRF, Session 2025–2026.
+
+
+References
+
+A. Abdollahi, C. Peco, D. Millán, M. Arroyo, and  I. Arias.  Computational evaluation of the
+
+   flexoelectric effect in dielectric solids.  Journal of Applied Physics, 116(9):093502, 2014.  doi:
+
+  10.1063/1.4893974.
+
+M. Abramowitz and I. A. Stegun. Handbook of Mathematical Functions. Dover, New York, 1965.
+
+H. Allik and T. J. R. Hughes.  Finite element method for piezoelectric vibration.  International
+
+  Journal for Numerical Methods in Engineering, 2:151–157, 1970.
+
+H. Askes and E. C. Aifantis. Gradient elasticity in statics and dynamics: An overview of formu-
+
+   lations, length scale identification procedures, finite element implementations and new results.
+
+  International Journal of Solids and Structures, 48:1962–1990, 2011.
+
+
+
+                                          23
+
+--- PAGE 24 ---
+K.-J. Bathe. Finite Element Procedures. Prentice Hall, Englewood Cliffs, NJ, 1996.
+
+T. Belytschko, W. K. Liu, and B. Moran. Nonlinear Finite Elements for Continua and Structures.
+
+  Wiley, Chichester, 2000.
+
+A. Benjeddou. Advances in piezoelectric finite element modeling of adaptive structural elements:
+
+  a survey. Computers and Structures, 76:347–363, 2000.
+
+D. Berlincourt and H. Jaffe. Elastic and piezoelectric coefficients of single-crystal barium titanate.
+
+  Physical Review, 111(1):143–148, 1958. doi: 10.1103/PhysRev.111.143.
+
+F. K. Bogner, R. L. Fox, and L. A. Schmit. The generation of inter-element-compatible stiffness
+
+  and mass matrices by the use of interpolation formulas.  In Proceedings of the Conference on
+
+  Matrix Methods in Structural Mechanics, pages 397–443, Wright-Patterson Air Force Base, Ohio,
+
+  1965. AFFDL-TR-66-80.
+
+B. A. Boley and J. H. Weiner. Theory of Thermal Stresses. Dover, New York, 1997. Reprint of
+
+  1960 Wiley edition.
+
+L. E. Cross. Flexoelectric effects: Charge separation in insulating solids subjected to elastic strain
+
+  gradients. Journal of Materials Science, 41:53–63, 2006.
+
+A. F. Devonshire. Theory of barium titanate: Part I. Philosophical Magazine, 40:1040–1063, 1949.
+
+A. F. Devonshire. Theory of barium titanate: Part II. Philosophical Magazine, 42:1065–1079, 1951.
+
+Kim Eklund and Antti J. Karttunen. Pyroelectric effect in tetragonal ferroelectrics BaTiO3 and
+
+ KNbO3 studied with density functional theory. The Journal of Physical Chemistry C, 127(44):
+
+  21806–21815, 2023. doi: 10.1021/acs.jpcc.3c05513.
+
+N. A. Fleck and J. W. Hutchinson. Strain gradient plasticity. Advances in Applied Mechanics, 33:
+
+  295–361, 1997.
+
+Walter Gautschi.  Orthogonal Polynomials: Computation and Approximation.  Numerical Math-
+
+  ematics and Scientific Computation. Oxford University Press, Oxford, 2004. Gauss–Legendre
+
+  quadrature reference.
+
+M. Han, Y. Rong, Q. Li, X. Xing, and L. Kang. Thermal expansion of nano-sized BaTiO3. Crys-
+  tEngComm, 17:1944–1951, 2015.
+
+Y. He. Heat capacity, thermal conductivity, and thermal expansion of barium titanate-based ce-
+
+  ramics. Thermochimica Acta, 419:135–141, 2004.
+
+J. Hong and D. Vanderbilt.  First-principles theory and calculation of flexoelectricity.  Physical
+
+  Review B, 84:180101, 2011.
+
+W. Huang, K. Kim, S. Zhang, F.-G. Yuan, and X. Jiang. Scaling effect of flexoelectric (ba,sr)TiO3
+  microcantilevers. Physica Status Solidi RRL, 5:350–352, 2011.
+
+T. J. R. Hughes. The Finite Element Method: Linear Static and Dynamic Finite Element Analysis.
+
+  Dover, New York, 2000. Reprint of 1987 Prentice-Hall edition.
+
+
+                                          24
+
+--- PAGE 25 ---
+IEEE. IEEE standard on piezoelectricity. ANSI/IEEE Std 176-1987, 1987. Reaffirmed.
+
+H. F. Kay and P. Vousden. Symmetry changes in barium titanate at low temperatures and their
+
+  relation to its ferroelectric properties. Philosophical Magazine, 40:1019–1040, 1949.
+
+D. C. C. Lam, F. Yang, A. C. M. Chong, J. Wang, and P. Tong. Experiments and theory in strain
+
+  gradient elasticity. Journal of the Mechanics and Physics of Solids, 51:1477–1508, 2003.
+
+S. B. Lang. Pyroelectricity: from ancient curiosity to modern imaging tool. Physics Today, 58(8):
+
+  31–36, 2005.
+
+R. Lerch. Simulation of piezoelectric devices by two- and three-dimensional finite elements. IEEE
+
+  Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 37:233–247, 1990.
+
+I. Lubomirsky and O. Stafsudd. Invited Review Article: Practical guide for pyroelectric measure-
+
+  ments. Review of Scientific Instruments, 83:051101, 2012.
+
+W. Ma and L. E. Cross. Flexoelectricity of barium titanate. Applied Physics Letters, 88:232902,
+
+  2006.
+
+S. Mao and P. K. Purohit. Insights into flexoelectric solids from strain-gradient elasticity. Journal
+
+  of Applied Mechanics, 81:081004, 2014.
+
+S. Mao, P. K. Purohit, and N. Aravas. Mixed finite-element formulations in piezoelectricity and
+
+   flexoelectricity. Proceedings of the Royal Society A, 472:20150879, 2016. doi: 10.1098/rspa.2015.
+
+  0879.
+
+R. Maranganti and P. Sharma. Atomistic determination of flexoelectric properties of crystalline
+
+   dielectrics. Physical Review B, 80:054109, 2009.
+
+W. J. Merz. The electric and optical behavior of BaTiO3 single-domain crystals. Physical Review,
+  76:1221–1225, 1949.
+
+R. D. Mindlin. Micro-structure in linear elasticity. Archive for Rational Mechanics and Analysis,
+
+  16:51–78, 1964.
+
+R. D. Mindlin.  Elasticity, piezoelectricity and crystal lattice dynamics. Journal of Elasticity, 2:
+
+  217–282, 1972.
+
+R. D. Mindlin and N. N. Eshel. On first strain-gradient theories in linear elasticity. International
+
+  Journal of Solids and Structures, 4:109–124, 1968.
+
+Tomotaka Nakatani, Akira Yoshiasa, Akihiko Nakatsuka, Tatsuya Hiratoko, Tsutomu Mashimo,
+
+  Maki Okube, and Satoshi Sasaki. Variable-temperature single-crystal x-ray diffraction study of
+
+  tetragonal and cubic perovskite-type barium titanate phases. Acta Crystallographica Section B,
+
+  72:151–159, 2016. doi: 10.1107/S2052520615022544.
+
+W. Nowacki. Dynamic Problems of Thermoelasticity. Noordhoff, Leyden, 1975.
+
+J. F. Nye. Physical Properties of Crystals: Their Representation by Tensors and Matrices. Oxford
+
+  University Press, Oxford, 1985.
+
+
+                                          25
+
+--- PAGE 26 ---
+M. Stengel. Flexoelectricity from density-functional perturbation theory. Physical Review B, 88:
+
+  174106, 2013.
+
+A. K. Tagantsev. Piezoelectricity and flexoelectricity in crystalline dielectrics. Physical Review B,
+
+  34(8):5883–5889, 1986. doi: 10.1103/PhysRevB.34.5883.
+
+A. K. Tagantsev. Electric polarization in crystals and its response to thermal and elastic pertur-
+
+  bations. Phase Transitions, 35:119–203, 1991.
+
+H. F. Tiersten. Linear Piezoelectric Plate Vibrations. Plenum Press, New York, 1969.
+
+R. A. Toupin. Elastic materials with couple-stress. Archive for Rational Mechanics and Analysis,
+
+  11:385–414, 1962.
+
+H. S. Tzou and C. I. Tseng. Distributed piezoelectric sensor/actuator design for dynamic measure-
+
+  ment/control of distributed parameter systems: A piezoelectric finite element approach. Journal
+
+  of Sound and Vibration, 138:17–34, 1990.
+
+R. W. Whatmore.  Pyroelectric devices and materials.  Reports on Progress in Physics, 49(12):
+
+  1335–1386, 1986.
+
+J. Yang. An Introduction to the Theory of Piezoelectricity. Springer, New York, 2005.
+
+M. Zgonik, P. Bernasconi, M. Duelli, R. Schlesser, P. Günter, M. H. Garrett, D. Rytz, Y. Zhu,
+  and X. Wu.  Dielectric, elastic, piezoelectric, electro-optic, and elasto-optic tensors of BaTiO3
+   crystals. Physical Review B, 50(9):5941–5949, 1994. doi: 10.1103/PhysRevB.50.5941.
+
+O. C. Zienkiewicz, R. L. Taylor, and J. Z. Zhu. The Finite Element Method: Its Basis and Funda-
+
+  mentals. Elsevier Butterworth-Heinemann, Oxford, 6 edition, 2005.
+
+P. Zubko, G. Catalan, and A. K. Tagantsev.  Flexoelectric effect in solids.  Annual Review of
+
+  Materials Research, 43:387–421, 2013. doi: 10.1146/annurev-matsci-071312-121634.
+
+
+
+
+
+                                          26

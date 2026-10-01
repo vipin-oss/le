@@ -1,0 +1,4 @@
+[  10s] iso circle           QUASI-STATIC elasticity, DFT window T=   8 t_th (pulse-train mean=0.266):  peak|hoop| = 1063018.1 Pa/K
+[  85s] iso circle           QUASI-STATIC elasticity, DFT window T=  64 t_th (pulse-train mean=0.033):  peak|hoop| = 1005271.9 Pa/K
+[  95s] aniso circle phi=0   QUASI-STATIC elasticity, DFT window T=   8 t_th (pulse-train mean=0.266):  peak|hoop| = 967184.3 Pa/K
+[ 170s] aniso circle phi=0   QUASI-STATIC elasticity, DFT window T=  64 t_th (pulse-train mean=0.033):  peak|hoop| = 897535.3 Pa/K

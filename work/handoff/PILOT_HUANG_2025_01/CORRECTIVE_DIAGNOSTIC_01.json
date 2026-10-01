@@ -1,0 +1,11 @@
+{
+  "date_local": "2026-09-30",
+  "kind": "POST-IMPLEMENTATION DIAGNOSTIC CORRECTION \u2014 criteria/source inputs unchanged",
+  "inversion_issue": "deHoog quotient-difference routine divides0/0 for identicallyzero sigma transform atx0. SourceEq66 sigma(0,s)=0 independently checked; use analytic zero only atthis specified endpoint. No values elsewhere clipped/replaced.",
+  "mesh_issue": "InitialCV1600->3200off-fronttheta/sigmachangeexceedsfrozen3e-3threshold. AddCV6400diagnosticmesh, keepinitialruns/results andoriginalcriterion. This extension ispost-result,notprespecified.",
+  "extra_cells": 6400,
+  "budget_unchanged": true,
+  "input_unchanged": true,
+  "source_parameters_unchanged": true,
+  "source_PDE_unchanged": true
+}

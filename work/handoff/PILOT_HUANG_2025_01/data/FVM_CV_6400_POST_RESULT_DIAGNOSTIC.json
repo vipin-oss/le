@@ -1,0 +1,48 @@
+{
+  "run_id": "P02B_CV_N6400",
+  "model": "CV",
+  "cells": 6400,
+  "steps": 4269,
+  "dt": 1.4054813773717497e-05,
+  "boundary": {
+    "theta_left": 1.0,
+    "sigma_left": -6.938893903907228e-18
+  },
+  "metrics": [
+    {
+      "model": "CV",
+      "field": "theta",
+      "coarse_cells": 3200,
+      "fine_cells": 6400,
+      "scaled_offfront_max_change": 0.0001899021341486562,
+      "scaled_global_L1_change": 0.00023616539097320592,
+      "criterion": 0.003,
+      "point_refinement_pass": true,
+      "analysis_kind": "POST_RESULT_DIAGNOSTIC \u2014 original mask/criterion/source unchanged"
+    },
+    {
+      "model": "CV",
+      "field": "sigma",
+      "coarse_cells": 3200,
+      "fine_cells": 6400,
+      "scaled_offfront_max_change": 0.00019779364372314367,
+      "scaled_global_L1_change": 0.0005437270723202877,
+      "criterion": 0.003,
+      "point_refinement_pass": true,
+      "analysis_kind": "POST_RESULT_DIAGNOSTIC \u2014 original mask/criterion/source unchanged"
+    },
+    {
+      "model": "CV",
+      "field": "u",
+      "coarse_cells": 3200,
+      "fine_cells": 6400,
+      "scaled_offfront_max_change": 3.538745561756148e-06,
+      "scaled_global_L1_change": 5.382863462055159e-06,
+      "criterion": 0.003,
+      "point_refinement_pass": true,
+      "analysis_kind": "POST_RESULT_DIAGNOSTIC \u2014 original mask/criterion/source unchanged"
+    }
+  ],
+  "status": "PASS",
+  "label": "PILOT \u2014 NOT FINAL VALIDATION"
+}

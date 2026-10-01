@@ -1,0 +1,14 @@
+{
+  "frozen": "2026-09-30T15:55:43",
+  "files": {
+    "src/cg_model.py": "da178f1c0f9e974fc9702d0a0d42b08d8938aa7ad00fe8e7a4bdd6dfff99b991",
+    "src/cg_grid.py": "d8b34b32c656c09dedc23e22f5658c4b5881dc15cf404f617b7e532e6358d05e",
+    "src/cg_ops.py": "f8855a5b43b2e8506938011bf1f3321276cf4e691daed6786f3c852477d853f5",
+    "src/cg_solver.py": "4715f3179f55f56d8fb9300e6a83b6caff370b0725c4ea5f52719fc151ea39e4",
+    "src/cg_transient.py": "41cd9ed6d67f21c0bf789caf2c32636181c781d56afca128b4d6b6f728ee1555",
+    "run_verify.py": "116e0c743ae75df304ce3785a964396ba1a967ca42b384e617463c18ad6dc155",
+    "run_production.py": "8ce4db7c0430955ee8f65cf31235962c73e16b2906e1ec436642f7d02e509022",
+    "analyze_production.py": "15921c4dd20b43797c8ff70a865841e4a44fa647741c20686640b1aec1658e02"
+  },
+  "note": "CODE_FREEZE post-verification pre-final-submission; any change requires CHANGELOG entry + V-suite re-run"
+}

@@ -1,0 +1,7 @@
+ANALYTIC quasi-static infinite-domain wall hoop per K: -(2*mu*beta/(lam+2mu)) = 984599.4 Pa/K  (beta=1.5905e+06, lam=1.280e+11, mu=1.040e+11)
+handoff stored D_iso_circle sig_max: -1053602.3736119375
+dynamic, as handoff (96x48, T=8, eta=.05)     peak|hoop|=   1053667.4 Pa/K  ratio to analytic=1.0701  max time-hist dev from analytic (t<=6)=0.1054  [14s]
+QUASI-STATIC 96x48                            peak|hoop|=   1063063.9 Pa/K  ratio to analytic=1.0797  max time-hist dev from analytic (t<=6)=0.0807  [14s]
+QUASI-STATIC 192x96                           peak|hoop|=   1054538.5 Pa/K  ratio to analytic=1.0710  max time-hist dev from analytic (t<=6)=0.0712  [110s]
+dynamic, T=16 window                          peak|hoop|=   1020773.0 Pa/K  ratio to analytic=1.0367  max time-hist dev from analytic (t<=6)=0.0611  [26s]
+dynamic, eta=0.2                              peak|hoop|=   1063030.5 Pa/K  ratio to analytic=1.0797  max time-hist dev from analytic (t<=6)=0.0996  [13s]

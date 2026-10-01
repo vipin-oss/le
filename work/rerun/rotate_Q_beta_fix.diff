@@ -1,0 +1,11 @@
+--- fixed_src/cg_model.py.orig	2026-10-01 04:48:29.954442850 +0000
++++ fixed_src/cg_model.py	2026-10-01 04:48:29.966442850 +0000
+@@ -69,7 +69,7 @@
+     a2 = alpha_crys[1]
+     C12, C23, C25 = Cij_GPa['C12']*GPa, Cij_GPa['C23']*GPa, Cij_GPa['C25']*GPa
+     C12p = c*c*C12 + s*s*C23 + 2*c*(-s)*C25
+-    C23p = s*s*C12 + c*c*C23 + 2*s*(-c)*C25
++    C23p = s*s*C12 + c*c*C23 + 2*s*c*C25      # FIX: cross-term sign (was 2*s*(-c)*C25); S' = R S R^T => S'_33 = s^2 S11 + 2sc S13 + c^2 S33
+     C25p = c*s*(C12 - C23) + (c*c - s*s)*C25
+     betar += np.array([C12p, C23p, C25p]) * a2
+     return Qr, betar

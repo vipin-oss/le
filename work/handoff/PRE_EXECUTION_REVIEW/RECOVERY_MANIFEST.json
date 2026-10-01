@@ -1,0 +1,242 @@
+{
+  "date": "2026-09-30",
+  "kind": "Notes/control checkpoint \u2014 NOT offline-complete input/source or final research archive",
+  "excluded": "Original inputs/code/manuscript archives, third-party PDFs/images and full extracted text",
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 845,
+      "sha256": "a3ea50079385a15478205c0c3d9aacb7e1b363157f46c61b35132adf359e7246"
+    },
+    {
+      "path": "CODE_REVIEW/FEM4_PACKAGE/CODE_OVERVIEW.md",
+      "bytes": 15196,
+      "sha256": "80e9cb7abfe7b47c81de620d223a6458923482b238f8b21cdce2e795a4c9e8c3"
+    },
+    {
+      "path": "CODE_REVIEW/FEM4_PACKAGE/EQUATION_TO_CODE_MAP.csv",
+      "bytes": 3123,
+      "sha256": "9f5796f485118825d486dd4ad064d51ec092469a342169b9419cf059763be9f8"
+    },
+    {
+      "path": "CODE_REVIEW/FEM4_PACKAGE/PACKAGE_INVENTORY.csv",
+      "bytes": 20170,
+      "sha256": "10451ab585ef168f5a48078e7888c481995f6556e99118c631f2e4ef165a7daf"
+    },
+    {
+      "path": "CODE_REVIEW/FEM4_PACKAGE/SOURCE_FUNCTION_INDEX.csv",
+      "bytes": 17410,
+      "sha256": "0ca0720911a59cbd869e748f02b615a9848d4e0ecac22934079a2a16a50f739e"
+    },
+    {
+      "path": "CODE_REVIEW/FEM4_PACKAGE/SOURCE_MANIFEST.json",
+      "bytes": 495,
+      "sha256": "544ed83431291842125d7d03607c0a48346406a01035b2687710a0b87ef1deb8"
+    },
+    {
+      "path": "CODE_REVIEW/FEM4_PACKAGE/STATIC_INSPECTION_RESULTS.json",
+      "bytes": 4116,
+      "sha256": "7d2711caa67bf281ed0aac18a359ab85cc4e68bae733b0211421407e43c3b993"
+    },
+    {
+      "path": "COMPUTE_STATUS.md",
+      "bytes": 1290,
+      "sha256": "817db6f999436e7d1f056fc484ee8e91f6e7175eadff690e85b69774d587f8c8"
+    },
+    {
+      "path": "CURRENT_PROJECT_STATE.md",
+      "bytes": 289,
+      "sha256": "435d07ded8912df7043b07db9f009c6475df2a64017e20b8527a3291ae3bc2ff"
+    },
+    {
+      "path": "DECISION_LOG.md",
+      "bytes": 1729,
+      "sha256": "4bc7fb0f38021d1a62f0435b8c695d17662db8ed5f5cbb1d1166c5f8b32cdc57"
+    },
+    {
+      "path": "HEAT_MODEL_EXPLORATION/HEAT_MODEL_OPTIONS.md",
+      "bytes": 13105,
+      "sha256": "0430d8ce581a7f3a0eaebe809bb8d9baa207498908094fa7ee2a1b4803406f40"
+    },
+    {
+      "path": "HEAT_MODEL_EXPLORATION/SEARCH_LOG.md",
+      "bytes": 4955,
+      "sha256": "b76faa540525598109d9d937066ec1f5bf3f9a58ae127c8591976e365453dd3c"
+    },
+    {
+      "path": "HEAT_MODEL_EXPLORATION/THERMOELASTIC_DIRECTION_NOTE.md",
+      "bytes": 11691,
+      "sha256": "498f5e827e1893a61d17dc169022be409a2c697c909ebd336fdf138e69703600"
+    },
+    {
+      "path": "MASTER_PROMPT.md",
+      "bytes": 51462,
+      "sha256": "c18fd5258ebb3df27943aefab1ee5eca419389249ef0108f38e19d4ff942dac0"
+    },
+    {
+      "path": "MASTER_PROMPT_DATE",
+      "bytes": 42,
+      "sha256": "024e4f5d5de2e8f4ec6b042ad279f248b44456440e95c1c8a7f1531a127f6fa9"
+    },
+    {
+      "path": "MASTER_PROMPT_VERSION",
+      "bytes": 5,
+      "sha256": "ee50b98bb28008fd58feca48930310f26f7b32b070d916597dbaac0c2208095f"
+    },
+    {
+      "path": "PRE_EXECUTION_REVIEW/ARTIFACT_BUILD_ENVIRONMENT.json",
+      "bytes": 353,
+      "sha256": "7d985249ea3ec29d1b5b2ddda700c8556de81542f5852966fb2afca75809e41a"
+    },
+    {
+      "path": "PRE_EXECUTION_REVIEW/BUILD_REVIEW_ARTIFACTS.py",
+      "bytes": 28748,
+      "sha256": "d4a5acfbce4f1c187959a0ed7ceefaa6a1be50470a35b6c5f096b6be1a2b29ef"
+    },
+    {
+      "path": "PRE_EXECUTION_REVIEW/EVIDENCE_LOG.md",
+      "bytes": 4761,
+      "sha256": "dfaf0e6f8800767809691cf5dc24583a4fb32c0f8594f9595e42e806c46657d9"
+    },
+    {
+      "path": "PRE_EXECUTION_REVIEW/JOURNAL_BENCHMARK_SCREENING.md",
+      "bytes": 19256,
+      "sha256": "27f28a4cb1aadefeffd9d568879139c7c8eba18fb7272cdfb700f23ae81c4539"
+    },
+    {
+      "path": "PRE_EXECUTION_REVIEW/JOURNAL_SCREEN.json",
+      "bytes": 2882,
+      "sha256": "be7c034b7cbc78b7e9fd49f68a710c313f7a5ac17c6aca531e840c82127d7205"
+    },
+    {
+      "path": "PRE_EXECUTION_REVIEW/OPEN_ACCESS_LOCATION_CHECKS.json",
+      "bytes": 4775,
+      "sha256": "1d1f22df2d47a77876657d1c91610c544828f57e5ee41af48c4b0462b4015ca7"
+    },
+    {
+      "path": "PRE_EXECUTION_REVIEW/PRE_EXECUTION_SCREEN.xlsx",
+      "bytes": 18526,
+      "sha256": "5077c7bbdd3e71241eb8a68d7891b550365dc8d8d42d1cbbad73de827363124d"
+    },
+    {
+      "path": "PRE_EXECUTION_REVIEW/REFERENCE_SCREEN.json",
+      "bytes": 6720,
+      "sha256": "91a9ce1c13b7546c932ff920b1daa51936328c629cfb97c3c6271f52522bcb69"
+    },
+    {
+      "path": "PRE_EXECUTION_REVIEW/SEARCH_LOG.md",
+      "bytes": 6754,
+      "sha256": "93c47ad02493737d9087b8e0304913575eb3d9fd07f738004d2f07c54e1b80c5"
+    },
+    {
+      "path": "PRE_EXECUTION_REVIEW/SOURCES/KLIMM_2023_SOURCE.json",
+      "bytes": 338,
+      "sha256": "59bc6df8b9481d10205e7cd2bf54a316c8235d05b7fe078c133b0c521ba53552"
+    },
+    {
+      "path": "PRE_EXECUTION_REVIEW/SOURCES/SUPPLEMENT_RETRIEVAL.json",
+      "bytes": 434,
+      "sha256": "8ae9dc1dd9e27971172f33e0df8b316080520b3b9744e4168d5ef0bfdcabceb4"
+    },
+    {
+      "path": "PROJECT_CONTROL/MASTER_PROMPT_PROVENANCE.json",
+      "bytes": 1194,
+      "sha256": "47f575d2cedebac5f6ebab40f23995f5a9e736fff9e331b311a99cdfa90af44b"
+    },
+    {
+      "path": "PROJECT_STATE_PRE_EXECUTION_REVIEW_01.md",
+      "bytes": 10433,
+      "sha256": "632688fcd66e13547f166d8149e9586ee1816b2f35e54b57bd4568dfaf327e42"
+    },
+    {
+      "path": "REJECTED_IDEAS.md",
+      "bytes": 1045,
+      "sha256": "8ab86cee342fca6b17e3527ec0c60033273bf2e356ee803c9ae2a1398f377fbe"
+    },
+    {
+      "path": "REPRODUCIBILITY_STATUS.md",
+      "bytes": 1024,
+      "sha256": "94511f7219b7f28ecae8ea619a50d49571b094fa8b4ba783301d286d49f1dcc3"
+    },
+    {
+      "path": "RESEARCH_PROFILE.md",
+      "bytes": 1575,
+      "sha256": "9dc74501d7631d997013dfa24870cd7ed86ce361386c08ff6b79e015ca9ab4e9"
+    },
+    {
+      "path": "RESEARCH_READING/CROSSREF_METADATA_VERIFICATION.json",
+      "bytes": 57171,
+      "sha256": "c53647a19f0c727cdce46a1e8bd1dc69824a1a16ed7d1daad7c7dbeb42d8ce5e"
+    },
+    {
+      "path": "RESEARCH_READING/EVIDENCE_LOG.md",
+      "bytes": 3348,
+      "sha256": "7b960ca1f03a19d448a2a0f3abad9114de21a2d80c9685065701c7a8207b559f"
+    },
+    {
+      "path": "RESEARCH_READING/PROJECT_STATE_READING_01.md",
+      "bytes": 7486,
+      "sha256": "c341bcaced96ee09d560dc8219ffef752bfd42e52b746e6dd94d26c44017d709"
+    },
+    {
+      "path": "RESEARCH_READING/PROJECT_STATE_READING_02.md",
+      "bytes": 10082,
+      "sha256": "13990ed7772d1d505df54b4c90e29ebeb54f1ac4faccea13e82e000a89b76403"
+    },
+    {
+      "path": "RESEARCH_READING/PROJECT_STATE_READING_03.md",
+      "bytes": 6351,
+      "sha256": "a151260c724bab72d03c38085411f74424a4d27719a9ab1bb9dbef95e27c88fb"
+    },
+    {
+      "path": "RESEARCH_READING/PUBLISHED_FULLTEXT_RETRIEVAL.json",
+      "bytes": 7592,
+      "sha256": "f800a7ca2d7bd2c0dc6e74a742b5fb358cc76196d57b83df56f0161f9c0d59ec"
+    },
+    {
+      "path": "RESEARCH_READING/PUBLISHED_PAPERS_INVENTORY.csv",
+      "bytes": 19427,
+      "sha256": "87008211f128118498d51406a7ff0c08c5253fdd3c6ef98eb7ac252daf36ae75"
+    },
+    {
+      "path": "RESEARCH_READING/PUBLISHED_PAPERS_INVENTORY.json",
+      "bytes": 34176,
+      "sha256": "dc255e0d7fe379272d1df4e136244f225db12b76d8223c077d958d9ce5fd390d"
+    },
+    {
+      "path": "RESEARCH_READING/PUBLISHED_WORKBOOK_CONTENTS.json",
+      "bytes": 67632,
+      "sha256": "d578099afa35c89b3ef10ed0a742b74b7d250ff58b2015593e36dc4868be3a8b"
+    },
+    {
+      "path": "RESEARCH_READING/READING_REPORT.md",
+      "bytes": 20312,
+      "sha256": "51055bfe85cffbafaae73ba9d094b987c49eb88b969a2576bc3f5fcdb228b506"
+    },
+    {
+      "path": "RESEARCH_READING/READING_STATUS.csv",
+      "bytes": 16671,
+      "sha256": "9ee4d6fd7dfaf5976cf05e1f5d9623ff9d8d43931d53f6dbf0c05a628e72efa7"
+    },
+    {
+      "path": "RESEARCH_READING/SEARCH_LOG.md",
+      "bytes": 3208,
+      "sha256": "b9ac5508f031bcaaaa48a12f3fd3c52029422372a4f9e9568765b6be395e13b0"
+    },
+    {
+      "path": "RESEARCH_READING/SOURCE_MANIFEST.json",
+      "bytes": 1093,
+      "sha256": "1546830b30e6c840f6d5a5a1d36d79e595d01a4b6bf15af1bb402df22d102114"
+    },
+    {
+      "path": "RESEARCH_READING/UNPUBLISHED_PACKAGE_INVENTORY.csv",
+      "bytes": 324,
+      "sha256": "56ab94182a779f3052fee3ee77c37888d4fbf499251ba944d969fa513f9a0ead"
+    },
+    {
+      "path": "VALIDATION_STATUS.md",
+      "bytes": 1484,
+      "sha256": "ec9bb5608104269771497b9164478ad12428e2a376c81dc3624acffe12ebef29"
+    }
+  ]
+}
