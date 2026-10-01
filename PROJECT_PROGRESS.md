@@ -101,6 +101,41 @@ physical validation **APPLICABLE — EVIDENCE_UNAVAILABLE** — no experimental 
 
 ---
 
+## Manuscript PDF (2026-10-01)
+
+`PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf` — 16 pages, A4, single column, 1.26 MB,
+built from the **same** `manuscript_IJHMT.md` that produces the `.docx` (no content change).
+
+Why a custom converter: the sandbox has no LaTeX, pandoc, LibreOffice, wkhtmltopdf or WeasyPrint
+(audited 2026-10-01), so `tools/md_to_pdf.py` typesets the markdown directly with **reportlab**
+5.0.1:
+
+- DejaVu Serif regular/bold/italic/bold-italic (from matplotlib's `mpl-data/fonts/ttf`) so all
+  Greek letters, superscripts, `≤`, `≈`, `°`, `×`, `—` render; `≲` is taken from STIX General
+  because DejaVu Serif lacks it;
+- the three display equations are rendered by matplotlib mathtext and numbered (1)–(3);
+- `κ̄, σ̂, C̄, s̄` are drawn as PIL composite glyphs, because reportlab gives a combining mark its
+  own advance and would print "κ" followed by a floating dash;
+- the eight figures are embedded with their captions (kept on one page) and the tables are ruled
+  journal tables with wrapped cells and column widths measured from the real font metrics;
+- `_{…}`, `^{…}` and bare `N_r`, `t_w`, `γ_B` become real sub/superscripts;
+  identifiers such as `MASTER_PROMPT` and `CODE_FREEZE_v2_gate.json` are left alone;
+- running title + page number on every page after the first.
+
+Rebuild / verify:
+
+```sh
+pip3 install --break-system-packages reportlab pymupdf
+python3 tools/md_to_pdf.py        # writes the PDF
+python3 tools/verify_pdf.py       # independent check (output saved as PDF_VERIFICATION.txt)
+```
+
+`tools/verify_pdf.py` result — **ALL CHECKS PASSED**: 160 text units (all paragraphs, headings,
+captions, 67 table rows, 26 references) reproduced in order, 0 missing; 0 blocks outside the 2 cm
+text column; 8 figures each with its caption on the same page; 3 display equations.
+
+---
+
 ## Files created / modified
 
 | File | Action |
@@ -116,6 +151,10 @@ physical validation **APPLICABLE — EVIDENCE_UNAVAILABLE** — no experimental 
 | `PAPER_PROJECT/06_Source_Code/CODE_FREEZE_v2_final.json` | created |
 | `PAPER_PROJECT/13_Manuscript/ms_results.py` | 1-line portability edit (R-D002) |
 | `PAPER_PROJECT/README.md`, `DECISION_LOG.md`, `CHANGELOG.md` | updated |
+| `PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf` | **created** — manuscript PDF (see above) |
+| `PAPER_PROJECT/13_Manuscript/PDF_VERIFICATION.txt` | created — output of `tools/verify_pdf.py` |
+| `tools/md_to_pdf.py` | created — markdown → PDF typesetter (reportlab) |
+| `tools/verify_pdf.py` | created — PDF/manuscript fidelity check |
 | regenerated data/docs | TEST_RESULTS.json, TEST_REPORT.md, 09_Raw_Data (production 300, convergence 40), ANALYSIS_V2.json, ANALYSIS_V2_TABLES.md, PRODUCTION_PROVENANCE.csv, CONVERGENCE_*.json, VALIDATION_RESULTS.md, CONVERGENCE_REPORT.md, STABILITY_REPORT.md, 11_Figures, 12_Tables, 13_Manuscript, CENTRAL_STORY.md, CORRECTIONS_LOG.md, phase states 07–13 |
 
 ## Remaining limitations

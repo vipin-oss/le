@@ -1,0 +1,10 @@
+pdf : /home/user/le/PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf  (16 pages, 1257640 bytes)
+md  : /home/user/le/PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.md
+
+[1] text fidelity : PASS — 160 units (67 table rows), 0 missing
+[2] margins       : PASS — 0 block(s) outside the 2 cm text column
+[3] figures       : 8 on pages [3, 6, 7, 8, 9, 10, 11, 12]
+[4] equations     : 3 on pages [2, 4, 5]
+[5] figure/caption: PASS — 0 figure(s) without a caption on the same page
+
+RESULT: ALL CHECKS PASSED
