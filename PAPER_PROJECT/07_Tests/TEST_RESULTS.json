@@ -209,8 +209,8 @@
   }
  ],
  "status": "COMPLETE",
- "cpu_seconds": 1209.717505893,
- "wall_seconds": 1210.40966796875,
+ "cpu_seconds": 1177.7481808920002,
+ "wall_seconds": 1179.5981090068817,
  "n_pass": 26,
  "n_fail": 1
 }

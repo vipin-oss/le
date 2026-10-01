@@ -15,3 +15,7 @@ PAPER_PROJECT/packages/
 
 __pycache__/
 *.py[cod]
+
+# Safety snapshot of the outputs as delivered in le.zip (kept for comparison; the
+# same bytes are recoverable from le.zip on GitHub `main`).
+baseline_provided/
