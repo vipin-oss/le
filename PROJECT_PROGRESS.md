@@ -130,6 +130,17 @@ python3 tools/md_to_pdf.py        # writes the PDF
 python3 tools/verify_pdf.py       # independent check (output saved as PDF_VERIFICATION.txt)
 ```
 
+Public download link (the repository is public, so this works for anyone):
+
+- <https://raw.githubusercontent.com/vipin-oss/le/arena/01a0f67f-le/PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf>
+- <https://github.com/vipin-oss/le/raw/arena/01a0f67f-le/PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf>
+- preview page: <https://github.com/vipin-oss/le/blob/arena/01a0f67f-le/PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf>
+
+After the branch is merged into `main`, replace `arena/01a0f67f-le` with `main` in the URL for a
+permanent link. (A GitHub *release* asset would be the stablest option, but `uploads.github.com`
+is blocked from this sandbox, so the release could not be created here — the repository currently
+has no releases and no tags.)
+
 `tools/verify_pdf.py` result — **ALL CHECKS PASSED**: 160 text units (all paragraphs, headings,
 captions, 67 table rows, 26 references) reproduced in order, 0 missing; 0 blocks outside the 2 cm
 text column; 8 figures each with its caption on the same page; 3 display equations.
@@ -187,7 +198,15 @@ sh bootstrap_paths.sh
 # 3. Re-linearise onto the remote branch and commit the restored working tree:
 git fetch origin && git add -A && git reset --soft origin/arena/01a0f67f-le
 git commit -m "<message>" && git push origin arena/01a0f67f-le
-# 4. Regenerate the two git-ignored directories (dropped by the restore):
+# 4. Binary files can be corrupted by the restore itself (seen 2026-10-01: the manuscript PDF
+#    came back 1,315,314 bytes with zlib/font-stream errors instead of 1,257,640). Anything
+#    already committed is safe on GitHub — pull it back and re-verify:
+#      git checkout HEAD -- PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf
+#      md5sum PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf   # 1e7cef3a5a09475b788ca1e7967a01fa
+#      python3 tools/verify_pdf.py
+#    (Inspect the tree with `git status` first: it re-hashes every file whose mtime changed.)
+
+# 5. Regenerate the two git-ignored directories (dropped by the restore):
 cd PAPER_PROJECT && python3 00_Project_Control/make_packages.py final      # packages/ (≈3 s)
 #    baseline_provided/ (snapshot of the delivered outputs, needed only by tools/compare_rerun.py):
 cd /home/user/le && mkdir -p /tmp/lz && git cat-file -p origin/main:le.zip > /tmp/lz/le.zip \
