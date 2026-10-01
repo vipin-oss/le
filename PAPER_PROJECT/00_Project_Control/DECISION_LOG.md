@@ -55,6 +55,46 @@ The handoff's decisions D001–D018 stay in `/home/user/work/handoff/DECISION_LO
 - T4: amplitude quoted from the extrapolated six-orientation sweep (28.7%) with grid-M twelve-orientation value (29.9%) and u_num = 1.31 percentage points; status RESOLVABLE against max(5 u_num, 2%) = 6.56%.
 - `analyze_v2.py`: probe-deviation bug (axis order) found and fixed before the final run; numerics summary evaluates the wall-pulse error for t ≤ 6 (the t_w = 2.4 runs of block F carry the n = −1 alias for t > 8, QoI unaffected).
 
+## P7-D002 — USER CONFIRMED (2026-10-01, continuation session)
+- The user was asked explicitly and chose to **confirm** P7-D002: the single-pulse Bromwich
+  inversion on Re s = 0.9/t_th (replacing the periodic-pulse-train DFT synthesis) stands, and the
+  undamped model stands. The flag is resolved; no results change.
+
+## R-D001 (2026-10-01, continuation session) — full re-run on different hardware
+- Re-ran, from the frozen source, the whole chain: verification suite + supplement, production
+  (150/150 runs), convergence C2/C3/C4, analysis, provenance, figures, supplement, manuscript and
+  the reproduction test. Environment: Python 3.11.2 (recorded: 3.13.14) with the identical
+  numpy 2.3.5 / scipy 1.17.1 / matplotlib 3.10.9 / python-docx 1.1.2 / openpyxl 3.1.5.
+- Result: every scientific quantity is bit-identical (150/150 runs, max QoI relative difference
+  0.0; 669 analysis leaves within 1e-9; 8 figures and 5 tables byte-identical; manuscript
+  byte-identical). Only CPU/wall timings differ (1–8%). Full record: `RERUN_COMPARISON.md`.
+- Delivered outputs were snapshotted to `baseline_provided/` before anything was overwritten.
+
+## R-D002 (2026-10-01) — one-line portability edit to `13_Manuscript/ms_results.py`
+- Cause: one f-string (the "Model scope" paragraph) nests single quotes inside a single-quoted
+  f-string. That is PEP 701 syntax, legal only on Python ≥ 3.12, so the file cannot be imported
+  on Python 3.11 (`SyntaxError: f-string: unmatched '['`); `build_manuscript.py` failed.
+- Fix: inner `v['peak_change_R80_to_R160']` / `v['D_change_R80_to_R160']` / `CR.get('C3', {})`
+  changed to double quotes only. No expression, number, formula or scientific content changed.
+- Proof that it is cosmetic: the manuscript rebuilt with the edited file is byte-identical
+  (md5 590301281df9ca130a6ec9ae5fecb2c8) to the delivered manuscript.
+- Rationale for editing instead of changing environment: the recorded environment is Python
+  3.13.14, where the original file is valid; CPython 3.13 could not be installed in this sandbox
+  (no build headers, no package repository access). The edit makes the file valid on 3.11–3.13.
+
+## R-D003 (2026-10-01) — code-freeze addendum
+- `CODE_FREEZE_v2_blockF.json` was stale: `13_Manuscript/{build_manuscript,ms_results,ms_static}.py`
+  had been edited after it (they implement the CORRECTIONS_LOG corrections) with no addendum.
+- `06_Source_Code/CODE_FREEZE_v2_final.json` now records the current state of all 24 frozen files
+  including those three and the R-D002 edit. Earlier freezes (`_v2_gate`, `_v2_blockF`) are kept
+  unchanged for provenance.
+
+## R-D004 (2026-10-01) — path bootstrap instead of patching frozen files
+- 15 scripts hard-code `/home/user/PAPER_PROJECT` and `/home/user/work/handoff`; three of them
+  (`run_tests.py`, `analyze_v2.py`, `make_figures.py`) are inside `CODE_FREEZE_v2_blockF.json`, so
+  they were NOT edited. `bootstrap_paths.sh` (repository root) recreates the two paths as symlinks;
+  all frozen SHA-256 hashes still verify.
+
 ## P13-D001 (2026-10-01) — Manuscript and packaging decisions
 - Working target IJHMT (handoff D017; user-owned); abstract 231 words (limit 250, official guide); highlights ≤ 85 characters; AI-use declaration is a TEMPLATE for the authors; authors/CRediT/funding/conflicts left as placeholders; no repository DOI invented.
 - Statements in the handoff manuscript about expansion consistency, MFP, K eigenvalues, reference metadata were corrected (CORRECTIONS_LOG).

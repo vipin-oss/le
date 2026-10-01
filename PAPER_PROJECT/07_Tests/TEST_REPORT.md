@@ -1,6 +1,6 @@
 # TEST_REPORT — Phase 7/8 verification suite v2 (2026-10-01)
 
-Script: `07_Tests/run_tests.py` · results: `07_Tests/TEST_RESULTS.json` · status COMPLETE · **26 PASS, 1 FAIL** · CPU 1210 s, wall 1210 s (2 vCPU).
+Script: `07_Tests/run_tests.py` · results: `07_Tests/TEST_RESULTS.json` · status COMPLETE · **26 PASS, 1 FAIL** · CPU 1178 s, wall 1180 s (2 vCPU).
 Grid family for all 2-D tests: radial clustering γ = 5 (production). Solver: `HarmonicSolver` with `refine = 2`. These are **verification** tests (Track A): exact/closed-form or independent 1-D references of the same mathematical model. Physical validation: APPLICABLE — EVIDENCE_UNAVAILABLE.
 
 Run history (kept in `07_Tests/logs/`): run 1 (stock solver, γ = 3.5): 18 PASS / 5 FAIL — U3 (test bug: Voigt-form eigenvalues are not rotation invariant), V3p (units-mixed normalisation), V9/V9b/V9c (unweighted high-frequency metric); run 2 aborted by the OOM killer; run 3 (refined solver, γ = 3.5) partial; **run 4 (this report): refined solver, γ = 5.** Test definitions were corrected before the final run; no criterion was loosened to obtain a PASS (criteria changes are listed in the DECISION_LOG P7-D004).

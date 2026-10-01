@@ -1,6 +1,6 @@
 # REPRODUCTION_TEST_REPORT (MASTER_PROMPT §75)
 
-Date 2026-10-01 07:39:06 · environment: Python 3.13.14, numpy 2.3.5 · wall 38 s (2 vCPU) · script `08_Experiments/reproduce.py`
+Date 2026-10-01 13:00:22 · environment: Python 3.11.2, numpy 2.3.5 · wall 39 s (2 vCPU) · script `08_Experiments/reproduce.py`
 Scope: one verification case, one convergence/error study, one principal result, one principal figure, one table — re-computed from the frozen code and compared with stored outputs.
 
 | item | expected / stored | recomputed | rel. difference | tolerance | status | note |
@@ -15,6 +15,6 @@ Scope: one verification case, one convergence/error study, one principal result,
 | principal result: nodal peak | -959287.0616127604 | -959287.0616127604 | 0.00e+00 | 1e-09 | PASS |  |
 | analysis script re-run (exit code 0) | 0 | 0 | 0.00e+00 | 0 | PASS |  |
 | table phi_sweep_ellipse.csv: sha256 before vs after regeneration from the stored raw data | 9675e0d3b0ca6f8261cf441986335de4bd225fdcea0c694c3c275a07deb45f52 | 9675e0d3b0ca6f8261cf441986335de4bd225fdcea0c694c3c275a07deb45f52 | 0.00e+00 | 0 | PASS | byte-identical required |
-| principal figure fig2 regenerated (exit code 0) | 0 | 0 | 0.00e+00 | 0 | PASS | wrote /home/user/PAPER_PROJECT/11_Figures/fig2_phi_sweep.png |
+| principal figure fig2 regenerated (exit code 0) | 0 | 0 | 0.00e+00 | 0 | PASS | wrote /home/user/le/PAPER_PROJECT/11_Figures/fig2_phi_sweep.png |
 
 Overall: 11 PASS, 0 FAIL.
