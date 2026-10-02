@@ -1,5 +1,5 @@
 Bromwich inversion gives a verified single-pulse thermoelastic cavity response
-Circular-cavity peak wall stress is orientation-invariant to round-off in beta-Ga2O3
-Ellipse converts crystal orientation into a 29% peak-stress modulation
-Thermal memory shifts the peak wall stress by under 1.4% for tau up to 20 ps
-Verified continuum study: no validation; stress scale uncertain via expansion
+Circular-cavity peak wall stress is orientation-invariant to round-off
+Ellipse turns crystal orientation into a 28.7% peak-stress modulation
+Thermal memory shifts the peak wall stress by under 1.4% for τ up to 20 ps
+Verified, not validated: expansion data set the absolute stress scale

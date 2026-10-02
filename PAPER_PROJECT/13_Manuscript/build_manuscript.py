@@ -31,25 +31,33 @@ driver_txt = short_driver
 dmax_all = max([r['D'] for r in dyn] or [float('nan')]); d10max = max([r['D'] for r in dyn if r['a_nm'] >= 10] or [float('nan')]); pkmax = max([abs(r['peak_shift']) for r in dyn + qs] or [float('nan')])
 e1r = EAB.get('E1_alpha_cheng298', {}).get('mean_over_baseline')
 
-abstract = (f"Thermal stresses around cavities in low-symmetry crystals depend on how crystal orientation, cavity shape and heat-conduction law interact, "
-            f"but transient studies treat isotropic or highly symmetric media. We study monoclinic β-Ga\u2082O\u2083 with a circular and an equal-area elliptical cavity (axis ratio 2) "
-            f"under a Gaussian wall-temperature pulse in plane strain, with Fourier and Lord–Shulman conduction. The single-pulse response is obtained from a frequency-domain "
-            f"finite-difference solver by Bromwich inversion on a shifted contour and verified against exact and independent solutions (peak error {pc(abs(R.N['v9d_worst192']) if R.N['v9d_worst192'] is not None else None, 2)} at the finest grid, second order); "
-            f"a periodic synthesis would return a pulse-train steady state instead. The peak wall stress of the circle is orientation-invariant to round-off and equals {mp(g(CIRC, 'radial_interp', 'f_ext'), 3)} MPa/K. "
-            f"The ellipse converts crystal orientation into a peak-stress modulation of {pc(amp_best, 0)} (numerical uncertainty {100*T4.get('u_num', float('nan')):.1f} percentage points), resulting from competing expansion and stiffness anisotropy. "
-            f"Thermal memory (relaxation time up to 20 ps) changes the circular-cavity wall-stress history by at most {pc(dmax_all, 1)} ({pc(d10max, 1)} for cavities of 10 nm and larger) and the peak by at most {pc(pkmax, 1)}; the size dependence is a quasi-static collapse in the memory number plus an elastic-inertia correction of order \u03b5\u00b2. Thermoelastic feedback stays below the bound 5\u03b4. "
-            f"Results are properties of a verified continuum model: relaxation times are hypothetical, the expansion data are uncertain by more than an order of magnitude, continuum validity at 5–50 nm is not established, and there is no experimental validation.")
+abstract = (f"Thermal stresses around cavities in low-symmetry crystals depend on crystal orientation, cavity shape and "
+            f"heat-conduction law, yet transient studies treat isotropic or highly symmetric media. We study monoclinic "
+            f"\u03b2-Ga\u2082O\u2083 with a circular and an equal-area elliptical cavity (axis ratio 2) under a Gaussian wall-temperature "
+            f"pulse in plane strain, with Fourier and Lord\u2013Shulman conduction as the primary models and a two-relaxation-time "
+            f"kernel as an exploratory variant. The response of a quiescent medium to one pulse is obtained from a "
+            f"frequency-domain finite-difference solver by Bromwich inversion on a shifted contour and verified against exact "
+            f"and independent solutions (peak error {pc(abs(R.N['v9d_worst192']) if R.N['v9d_worst192'] is not None else None, 2)} at the finest grid, second order). The peak wall "
+            f"stress of the circle is orientation-invariant to round-off and equals {mp(g(CIRC, 'radial_interp', 'f_ext'), 3)} MPa/K. The ellipse converts "
+            f"crystal orientation into a peak-stress modulation of {pc(amp_best, 1)} on the extrapolated sweep ({pc(a12.get('amplitude'), 1)} on the "
+            f"production grid), numerical uncertainty {100*T4.get('u_num', float('nan')):.1f} percentage points; ablations attribute it to competing expansion and "
+            f"stiffness anisotropy, conductivity anisotropy being minor. Thermal memory (hypothetical relaxation times to 20 ps) "
+            f"changes the circular-cavity wall-stress history by at most {pc(dmax_all, 1)} ({pc(d10max, 1)} at 10 nm and larger) and the peak by at most "
+            f"{pc(pkmax, 1)}; the residual size dependence is a quasi-static collapse in the memory number plus an O(\u03b5\u00b2) inertia "
+            f"correction. Thermoelastic feedback stays below the bound 5\u03b4. Results are properties of a verified continuum model: "
+            f"no experimental validation exists, relaxation times are hypothetical, the expansion data are uncertain by more than "
+            f"an order of magnitude, and continuum validity at 5\u201350 nm is not established.")
 n_abs = len(abstract.split())
 highlights = ['Bromwich inversion gives a verified single-pulse thermoelastic cavity response',
-              'Circular-cavity peak wall stress is orientation-invariant to round-off in beta-Ga2O3',
-              f"Ellipse converts crystal orientation into a {pc(amp_best, 0)} peak-stress modulation",
-              f"Thermal memory shifts the peak wall stress by under {pc(pkmax, 1)} for tau up to 20 ps",
-              'Verified continuum study: no validation; stress scale uncertain via expansion']
+              'Circular-cavity peak wall stress is orientation-invariant to round-off',
+              f'Ellipse turns crystal orientation into a {pc(amp_best, 1)} peak-stress modulation',
+              f'Thermal memory shifts the peak wall stress by under {pc(pkmax, 1)} for \u03c4 up to 20 ps',
+              'Verified, not validated: expansion data set the absolute stress scale']
 hl_ok = [(h, len(h)) for h in highlights]
 
 # ---------------------------------------------------------------- assemble blocks
 blocks = [('title', 'Orientation-dependent wall stress around circular and elliptical cavities in monoclinic β-Ga\u2082O\u2083 under a transient thermal pulse: a verified continuum study with thermal-memory and mechanism ablations'),
-          ('authors', '[Authors, affiliations and corresponding author: to be completed by the authors]'),
+          ('authors', '[AUTHOR INPUT REQUIRED: author names, affiliations, ORCID iDs and corresponding author]'),
           ('h1', 'Abstract'), ('p', abstract),
           ('p', '**Keywords:** thermoelasticity; cavity; monoclinic crystal; β-Ga\u2082O\u2083; Lord–Shulman theory; Bromwich inversion'),
           ('h1', 'Highlights'), ('bullets', highlights)]
@@ -60,20 +68,33 @@ blocks.insert(idx, ('fig', os.path.join(ROOT, '11_Figures', 'fig1_setup.png'), '
 blocks += [('p', 'Software and AI assistance (Methods disclosure): the finite-difference solver of the preliminary analysis was reviewed, corrected where noted, extended and verified with the help of an AI agent (Section 4 lists the tests; code, tests and raw data are in the data package). All numbers in this paper are produced by the analysis scripts from stored raw outputs.')]
 blocks += R.verification() + R.results() + R.discussion() + R.conclusions()
 blocks += [('h1', 'Declarations'),
-           ('p', '**CRediT authorship contribution statement:** [to be completed by the authors].'),
-           ('p', '**Declaration of competing interest:** [to be completed by the authors].'),
-           ('p', '**Funding:** [to be completed by the authors].'),
-           ('p', '**Data availability:** the Python source code, verification suite, per-run raw outputs (npz/json, including the frequency-domain transfer values), analysis and figure scripts, and the production matrix are provided in the project data package (SHA-256 code freeze `CODE_FREEZE_v2_gate.json`). [The authors must deposit the package in a public repository with a licence and insert its DOI.]'),
+           ('p', '**CRediT authorship contribution statement:** [AUTHOR INPUT REQUIRED].'),
+           ('p', '**Declaration of competing interest:** [AUTHOR INPUT REQUIRED].'),
+           ('p', '**Funding:** [AUTHOR INPUT REQUIRED: name the grant, or state that no funding was received].'),
+           ('p', '**Data availability:** the Python source code, verification suite, per-run raw outputs (npz/json, including the frequency-domain transfer values), analysis and figure scripts, and the production matrix are provided in the project data package (SHA-256 code freeze `CODE_FREEZE_v2_gate.json`). to be deposited at [PUBLIC REPOSITORY/DOI TO BE INSERTED].'),
            ('p', '**Declaration of Generative AI and AI-assisted technologies in the writing process.** [TEMPLATE — to be reviewed, edited and confirmed by the authors; Elsevier requires this statement above the references.] During the preparation of this work the author(s) used an AI agent (Arena.ai Agent Mode; the underlying models are provided by the service) to review and extend the numerical code and the verification suite, to run and analyse the simulations, and to draft the text and the figures. After using this tool the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the publication.')]
 blocks += [('h1', 'References'), ('refs', [r['text'] for r in refs])]
 blocks += [('h1', 'Appendix A. Nomenclature'),
+           ('p', 'The symbols used in this paper are listed in Table 8.'),
            ('table', ['Symbol', 'Meaning', 'Unit'],
             [['a', 'cavity radius (circle) / reference length', 'm'], ['χ', 'ellipse aspect parameter (semi-axes a√χ, a/√χ)', '—'], ['φ', 'rotation of the crystal about the b-axis', 'deg'],
              ['Q, C_{ij}', 'plane-strain stiffness block, stiffness constants', 'Pa'], ['β = Cα', 'thermal-stress vector', 'Pa/K'], ['K', 'conductivity tensor (a–c block)', 'W/(m K)'],
              ['ρ, c_{p}', 'density, specific heat', 'kg/m³, J/(kg K)'], ['τ', 'relaxation time', 's'], ['κ̄, t_{th}', 'thermal diffusivity, a²/κ̄', 'm²/s, s'],
              ['Λ = τ/t_{th}', 'memory number', '—'], ['ε = κ̄/(c_{ref}a)', 'elastic number', '—'], ['δ', 'thermoelastic coupling number', '—'],
              ['s, γ_{B}, T', 'Laplace variable, Bromwich abscissa and period', '1/s, 1/t_{th}, t_{th}'], ['σ̂', 'peak wall hoop stress per kelvin', 'Pa/K'],
-             ['A_{φ}', 'orientation modulation (max − min)/mean', '—'], ['D', 'thermal-memory deviation', '—']], 'Nomenclature.', [1.3, 3.9, 1.3])]
+             ['A_{φ}', 'orientation modulation (max − min)/mean', '—'], ['D', 'thermal-memory deviation', '—'],
+             ['θ, T_{0}', 'temperature rise; reference temperature (293 K)', 'K, K'],
+             ['u', 'displacement in the a–c plane', 'm'],
+             ['ϵ', 'small-strain tensor (Voigt ϵ_{11}, ϵ_{33}, γ_{13})', '—'],
+             ['σ', 'stress tensor', 'Pa'],
+             ['α', 'thermal-expansion vector', '1/K'],
+             ['R', 'outer radius of the finite domain (R = 80a)', 'm'],
+             ['p(t), t_{0}, t_{w}', 'wall-temperature pulse, its centre and width', 'K, t_{th}, t_{th}'],
+             ['F(t)', 'radial integral of θ in Eq. (2)', 'K m²'],
+             ['λ, μ, m, γ_{T}', 'Lamé constants of the isotropic control; m = λ + 2μ; γ_{T} = (3λ + 2μ)α', 'Pa, Pa, Pa, Pa/K'],
+             ['C̄ = C_{33}', 'stiffness scale of the feedback number δ', 'Pa'],
+             ['g(s)', 'conduction kernel: 1 (Fourier); 1/(1 + sτ) (CV); two-term (MCV3, exploratory)', '—'],
+             ['N_{r} × N_{θ}', 'grid size (radial × angular)', '—']], 'Nomenclature.', [1.3, 3.9, 1.3])]
 
 # ---- resolve @@fig:key@@ / @@tab:key@@ placeholders by order of appearance
 fn = tn = 0; num = {}
