@@ -45,6 +45,7 @@ Counts: manuscript **9 sections, 41 subsections, 84 numbered equations, 8 figure
 | Cross-reference check | `python3 tools/check_crossrefs.py` | every “Section x.y”, “Table n”, “Fig. n”, “Eq. (n)” resolves |
 | Structural guard | `python3 tools/renumber_crossrefs.py` | **ALL EDITS IN PLACE — 12 edits verified** |
 | Bibliography | `python3 tools/refs_to_bib.py` | 54 references, 0 unparsed |
+| LaTeX commands defined | `python3 tools/check_tex_commands.py` | every `\command` in both `.tex` files is provided by LaTeX, `elsarticle` or a package the preamble loads; no spacing command glued to the following text |
 | Verification suite (science, unchanged) | `python3 PAPER_PROJECT/07_Tests/run_tests.py` | **25 PASS, 1 FAIL** — the single failure is `V0_metric_consistency_linear_field`, the known and disclosed marginal case: the handoff-style 96×48 grid with χ = 2 gives 5.03×10⁻³ against the handoff criterion ≤5×10⁻³, while the production grids give ≤3.6×10⁻³. Table 5 of the manuscript reports exactly this, so the suite result and the manuscript agree. No source file was modified by this pass. |
 
 What the static audit covers (no TeX engine exists in this environment, so compilation is
@@ -75,6 +76,13 @@ and the 22 carried numbers.
    reference list is now cited in full.
 8. **Audit and verifier thresholds** were hard-coded to the 3-equation/8-table version; they now
    follow the built manuscript and accept a companion.
+9. **`\qquad c_k` was emitted as `\qquadc_k`** in one companion equation — a string
+   concatenation with no separating space, i.e. an undefined control word that would have broken
+   compilation. Fixed at source; `tools/check_tex_commands.py` now fails on that class of error
+   (unknown command, or a spacing command glued to the text after it).
+10. **The submission package did not carry the submission artefacts** — `make_packages.py`
+   collected only `.docx/.md/.xlsx/.txt/.json/.py/.png` from `13_Manuscript`; it now also ships
+   the `.tex`, `.bib` and `.pdf` deliverables (PACKAGE_PHASE_13: 519 files).
 
 ### 0.4 What changed and what did not
 

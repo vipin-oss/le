@@ -336,7 +336,7 @@ $$ \hat\sigma=\max_{\eta}\ \max_{0\leq t\leq 6t_{th}}\left|\sigma_{\theta\theta}
 
 with (t_x, t_y) the unit tangent of the wall. Taking the maximum over grid nodes quantises it and biases it low by an amount of order (Δη)², which is not negligible on the coarse grids; the manuscript therefore also evaluates the maximum of the trigonometric interpolant
 
-$$ \sigma_{\theta\theta}(\eta,t)=\sum_k c_k(t)\,\exp(ik\eta),\qquadc_k=\frac{1}{N_\theta}\sum_j\sigma_{\theta\theta}(\eta_j,t)\,\exp(-ik\eta_j), \qquad (25) $$
+$$ \sigma_{\theta\theta}(\eta,t)=\sum_k c_k(t)\,\exp(ik\eta),\qquad c_k=\frac{1}{N_\theta}\sum_j\sigma_{\theta\theta}(\eta_j,t)\,\exp(-ik\eta_j), \qquad (25) $$
 
 and reports both. On the finest radial grid of the circle study the two differ by 0.024% (853664.7 against 853867.3 Pa K⁻¹), and refining the angular direction from 48 to 192 intervals changes the interpolated peak by 0.109% — the node-based and interpolant-based peaks are the same number to within the grid uncertainty, and the interpolant is used wherever a difference of a few tenths of a per cent matters.
 

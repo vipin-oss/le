@@ -36,7 +36,8 @@ def collect(n):
     if n >= 9: fl += files_under('09_Raw_Data/convergence', ('.json',)) + files_under('09_Raw_Data/convergence_gamma3p5', ('.json',))
     if n >= 11: fl += files_under('09_Raw_Data/production', ('.json',))
     if n >= 12: fl += files_under('11_Figures') + files_under('12_Tables')
-    if n >= 13: fl += files_under('13_Manuscript', ('.docx', '.md', '.xlsx', '.txt', '.json', '.py', '.png')) + files_under('09_Raw_Data', ('.npz',))
+    if n >= 13: fl += files_under('13_Manuscript', ('.docx', '.md', '.xlsx', '.txt', '.json', '.py', '.png',
+                                              '.tex', '.bib', '.pdf')) + files_under('09_Raw_Data', ('.npz',))
     return sorted(set(f for f in fl if os.path.isfile(f) and '/packages/' not in f))
 def build(zname, fl, note):
     man = {f[len(ROOT) + 1:]: hashlib.sha256(open(f, 'rb').read()).hexdigest() for f in fl}

@@ -59,7 +59,7 @@ The three in-plane monoclinic couplings are small but not negligible in the acco
 \subsection{Thermal expansion, and what $\alpha_{5}$ = 0 removes}
 \label{sec:1.3}
 
-The expansion tensor is diagonal in the crystal frame with components $\alpha$\_a = 1.54$\times$1$0^{-6}$ $K^{-1}$, $\alpha$\_b = 3.37$\times$1$0^{-6}$ $K^{-1}$ and $\alpha$\_c = 3.15$\times$1$0^{-6}$ $K^{-1}$ \cite{orlandi2015}. The thermal shear $\alpha_{5}$ = 2$\varepsilon_{13}$^th is \textbf{not} available in the source data and is set to zero. This is a limitation, not an approximation that has been verified: it removes the only mechanism that would generate an in-plane thermal shear at $\varphi$ = 0, and it is carried through every number in this document. Its consequence is quantified in Section~\ref{sec:10}, where the alternative expansion set of \cite{cheng2018} changes the absolute stress scale by a factor of about 16.
+The expansion tensor is diagonal in the crystal frame with components $\alpha$\_a = 1.54$\times$1$0^{-6}$ $K^{-1}$, $\alpha$\_b = 3.37$\times$1$0^{-6}$ $K^{-1}$ and $\alpha$\_c = 3.15$\times$1$0^{-6}$ $K^{-1}$ \cite{orlandi2015}. The thermal shear $\alpha_{5}$ = 2$\varepsilon_{13}$^{th} is \textbf{not} available in the source data and is set to zero. This is a limitation, not an approximation that has been verified: it removes the only mechanism that would generate an in-plane thermal shear at $\varphi$ = 0, and it is carried through every number in this document. Its consequence is quantified in Section~\ref{sec:10}, where the alternative expansion set of \cite{cheng2018} changes the absolute stress scale by a factor of about 16.
 
 The a- and c-axis expansions differ by a factor 2.05, so the expansion tensor is not isotropic in the plane of the calculation; this is the seed of the orientation dependence that the manuscript measures.
 
@@ -542,7 +542,7 @@ The primary observable is the maximum over the wall and over the window of the m
 with ($t_{x}$, $t_{y}$) the unit tangent of the wall. Taking the maximum over grid nodes quantises it and biases it low by an amount of order ($\Delta \eta )^{2}$, which is not negligible on the coarse grids; the manuscript therefore also evaluates the maximum of the trigonometric interpolant
 
 \begin{equation}
-\sigma_{\theta\theta}(\eta,t)=\sum_k c_k(t)\,\exp(ik\eta),\qquadc_k=\frac{1}{N_\theta}\sum_j\sigma_{\theta\theta}(\eta_j,t)\,\exp(-ik\eta_j), 
+\sigma_{\theta\theta}(\eta,t)=\sum_k c_k(t)\,\exp(ik\eta),\qquad c_k=\frac{1}{N_\theta}\sum_j\sigma_{\theta\theta}(\eta_j,t)\,\exp(-ik\eta_j), 
 \label{eq:25}
 \end{equation}
 

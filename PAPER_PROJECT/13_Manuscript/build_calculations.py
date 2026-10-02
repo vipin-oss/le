@@ -702,7 +702,7 @@ para('with (t_x, t_y) the unit tangent of the wall. Taking the maximum over grid
      'quantises it and biases it low by an amount of order (Δη)², which is not '
      'negligible on the coarse grids; the manuscript therefore also evaluates the maximum of '
      'the trigonometric interpolant')
-eq(r'\sigma_{\theta\theta}(\eta,t)=\sum_k c_k(t)\,\exp(ik\eta),\qquad'
+eq(r'\sigma_{\theta\theta}(\eta,t)=\sum_k c_k(t)\,\exp(ik\eta),\qquad '
    r'c_k=\frac{1}{N_\theta}\sum_j\sigma_{\theta\theta}(\eta_j,t)\,\exp(-ik\eta_j),')
 _fn = D['circle_peak']['radial_nodal']['f'][-1]
 _fi = D['circle_peak']['radial_interp']['f'][-1]

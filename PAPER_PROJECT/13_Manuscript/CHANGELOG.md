@@ -75,7 +75,9 @@ primary / two-relaxation-time exploratory split. No simulation was run for this 
 | `tools/verify_pdf.py` | companion mode; generalised composite-glyph tolerance |
 | `tools/check_crossrefs.py` (new) | validates every “Section x.y”, “Table n”, “Fig. n”, “Eq. (n)” against the built manuscript |
 | `tools/renumber_crossrefs.py` | retired from a one-off migration to an idempotent guard |
+| `tools/check_tex_commands.py` (new) | every `\\command` in the two `.tex` files must be provided by LaTeX, `elsarticle` or a loaded package; also catches a spacing command glued to the text after it (the `\\qquadc_k` class of error) |
 | `.gitignore` | `13_Manuscript/equations/` (regenerated mathtext images) no longer tracked |
+| `00_Project_Control/make_packages.py` | the submission package now also ships the `.tex`, `.bib` and `.pdf` deliverables |
 
 ### 0.6 Deliverables as they now stand
 
