@@ -17,7 +17,7 @@ ROOT = _pp_root(os.path.dirname(os.path.abspath(__file__)))
 files = sorted([os.path.join(ROOT, '06_Source_Code', 'src', f) for f in os.listdir(os.path.join(ROOT, '06_Source_Code', 'src')) if f.endswith('.py')] +
                [os.path.join(ROOT, '08_Experiments', f) for f in ('production_matrix.py', 'run_production_v2.py', 'run_convergence.py', 'run_convergence_dirs.py', 'analyze_v2.py', 'make_figures.py', 'reproduce.py', 'make_provenance.py')] +
                [os.path.join(ROOT, '07_Tests', f) for f in ('run_tests.py', 'run_tests_supplement.py', 'make_test_report.py')] +
-               [os.path.join(ROOT, '13_Manuscript', f) for f in ('build_manuscript.py', 'ms_static.py', 'ms_results.py', 'docbuilder.py', 'build_supplement.py')])
+               [os.path.join(ROOT, '13_Manuscript', f) for f in ('build_manuscript.py', 'ms_static.py', 'ms_derivation.py', 'ms_numerics.py', 'ms_results.py', 'docbuilder.py', 'build_supplement.py', 'build_calculations.py')])
 out = dict(date=time.strftime('%Y-%m-%dT%H:%M:%S'), label=sys.argv[1] if len(sys.argv) > 1 else 'freeze',
            python=sys.version.split()[0], numpy=numpy.__version__, scipy=scipy.__version__, matplotlib=matplotlib.__version__,
            platform=platform.platform(), files={os.path.relpath(f, ROOT): hashlib.sha256(open(f, 'rb').read()).hexdigest() for f in files if os.path.exists(f)})

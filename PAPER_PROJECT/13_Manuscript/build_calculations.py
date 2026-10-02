@@ -846,7 +846,35 @@ para('The companion inherits the provenance of the manuscript. The source code i
                                         'CODE_FREEZE_v2_gate.json'))).get('files', {})),
         len(json.load(open(os.path.join(ROOT, 'PAPER_PROJECT', '06_Source_Code',
                                         'CODE_FREEZE_v2_final.json'))).get('files', {})),
-        D['numerics']['n_runs'] * 2))
+        D['numerics']['n_runs']))
+
+
+def _frz(label):
+    import hashlib as _hl
+    _p = os.path.join(ROOT, 'PAPER_PROJECT', '06_Source_Code', 'CODE_FREEZE_%s.json' % label)
+    try:
+        _f = json.load(open(_p))['files']
+    except (OSError, ValueError, KeyError):
+        return 0, 0, 0
+    _s = sum(1 for r, h in _f.items()
+             if os.path.exists(os.path.join(ROOT, 'PAPER_PROJECT', r))
+             and _hl.sha256(open(os.path.join(ROOT, 'PAPER_PROJECT', r), 'rb').read()).hexdigest() == h)
+    return len(_f), _s, len(_f) - _s
+
+
+N_FRZ, N_FRZ_SAME, N_FRZ_DIFF = _frz('v2_gate')
+para('Both freezes were taken on 2026-10-01. %d of the %d entries of the gate freeze are '
+     'byte-identical in the code as submitted; %d entries (the pipeline driver, the test runner '
+     'and four experiment and analysis scripts) have been edited since, so the digests recorded '
+     'for them no longer describe it. The pipeline was therefore re-run end to end with the code '
+     'as submitted, and it reproduces the archived results exactly: the %d production runs agree '
+     'with the archived quantities of interest to zero relative difference, every leaf of '
+     'ANALYSIS_V2.json agrees within 10\u207b\u2079, the eight figures and five tables are '
+     'byte-identical, and only wall-clock timings differ '
+     '(PAPER_PROJECT/15_Audits/RERUN_COMPARISON.md). '
+     'CODE_FREEZE_submission_2026_10_02.json records the digests of the code as submitted; '
+     'regenerate it after any further edit to the code.'
+     % (N_FRZ_SAME, N_FRZ, N_FRZ_DIFF, D['numerics']['n_runs']))
 bullets([
     'python3 PAPER_PROJECT/13_Manuscript/build_calculations.py — rebuilds this '
     'document from the frozen source and the processed data;',

@@ -77,6 +77,34 @@ def _sha16(path):
 
 FREEZE_GATE = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_gate.json'))
 FREEZE_BLOCKF = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_blockF.json'))
+FREEZE_SUB = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_submission_2026_10_02.json'))
+
+
+def _freeze_match(label):
+    """(n_files, n_byte_identical, n_differ) of the entries of CODE_FREEZE_<label>.json
+    against the files as they stand now.  Recorded so Section 9.1 can state, without
+    over-claiming, exactly how much of the frozen code is still byte-identical."""
+    import hashlib, json as _json
+    p = os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_%s.json' % label)
+    try:
+        old = _json.load(open(p))['files']
+    except (OSError, ValueError, KeyError):
+        return (0, 0, 0)
+    same = diff = 0
+    for rel, h in old.items():
+        f = os.path.join(ROOT, rel)
+        if not os.path.exists(f):
+            diff += 1
+            continue
+        cur = hashlib.sha256(open(f, 'rb').read()).hexdigest()
+        same += 1 if cur == h else 0
+        diff += 0 if cur == h else 1
+    return (len(old), same, diff)
+
+
+N_FRZ, N_FRZ_SAME, N_FRZ_DIFF = _freeze_match('v2_gate')
+N_SUB = len(__import__('json').load(open(os.path.join(ROOT, '06_Source_Code',
+                                                      'CODE_FREEZE_submission_2026_10_02.json')))['files'])
 MODEL_SHA = _sha16(os.path.join(ROOT, '06_Source_Code', 'src', 'cg_model.py'))
 N_PROD = len(glob.glob(os.path.join(ROOT, '09_Raw_Data', 'production', '*.npz')))
 N_RAW = sum(len(glob.glob(os.path.join(ROOT, d, '**', '*'), recursive=True)) - len(glob.glob(os.path.join(ROOT, d, '**', '*' + os.sep), recursive=True)) for d in ('09_Raw_Data',))
@@ -247,6 +275,19 @@ blocks += [('h1', '9. Code, data and reproducibility'),
                  f"configuration, the environment and a digest of its own output in "
                  f"`10_Processed_Data/PRODUCTION_PROVENANCE.csv`, so each number in this paper can be traced to the run "
                  f"that produced it and to the code state that produced the run."),
+           ('p', f"**State of the frozen code at submission.** Both manifests were taken on 2026-10-01. "
+                 f"{N_FRZ_SAME} of the {N_FRZ} entries of `CODE_FREEZE_v2_gate.json` -- the seven solver modules and "
+                 f"the two convergence drivers -- are byte-identical in the working copy submitted here, but "
+                 f"{N_FRZ_DIFF} entries (`cg_pipeline.py`, the test runner and four experiment and analysis scripts) "
+                 f"have been edited since the freeze, so the digests recorded for them no longer describe the code. "
+                 f"The pipeline was therefore re-run end to end with the code as it now stands and compared with the "
+                 f"archived results (`15_Audits/RERUN_COMPARISON.md`): all {N_PROD} production runs agree with the "
+                 f"archived quantities of interest to zero relative difference, every leaf of `ANALYSIS_V2.json` "
+                 f"agrees within 10⁻⁹, and the eight figures and five tables are byte-identical; only wall-clock "
+                 f"timings differ. A refreshed manifest, `CODE_FREEZE_submission_2026_10_02.json` "
+                 f"({FREEZE_SUB}, {N_SUB} files), records the digests of every solver, driver and "
+                 f"manuscript-generation script as submitted, is the one to deposit with the data package, and must "
+                 f"be regenerated after any further edit to the code."),
            ('h2', '9.2 Data package'),
            ('p', f"The package contains the frozen source (06_Source_Code), the test suite and its machine-readable "
                  f"results (07_Tests), the experiment drivers (08_Experiments), the per-run raw outputs "

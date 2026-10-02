@@ -64,6 +64,15 @@ uncertainty, the hypothetical status of the relaxation time, the α₅ = 0 limit
 APPLICABLE — EVIDENCE_UNAVAILABLE physical-validation label, or the Fourier + Lord–Shulman
 primary / two-relaxation-time exploratory split. No simulation was run for this pass.
 
+One provenance item is new. The two code-freeze manifests were taken on 2026-10-01, and six of
+the fifteen files they cover have been edited since (portability and reporting edits), so their
+recorded digests no longer describe the code; the seven solver modules and the two convergence
+drivers are still byte-identical. Section 9.1 of the manuscript and Section 11 of the companion
+now say so, cite the end-to-end re-run that reproduces the archived results exactly
+(`15_Audits/RERUN_COMPARISON.md`), and point at the refreshed manifest
+`CODE_FREEZE_submission_2026_10_02.json` (27 files) as the one to deposit. No result was
+recomputed for this: the re-run predates the restructure and is unchanged by it.
+
 ### 0.5 Tooling
 
 | Tool | Change |
@@ -78,18 +87,21 @@ primary / two-relaxation-time exploratory split. No simulation was run for this 
 | `tools/check_tex_commands.py` (new) | every `\\command` in the two `.tex` files must be provided by LaTeX, `elsarticle` or a loaded package; also catches a spacing command glued to the text after it (the `\\qquadc_k` class of error) |
 | `.gitignore` | `13_Manuscript/equations/` (regenerated mathtext images) no longer tracked |
 | `00_Project_Control/make_packages.py` | the submission package now also ships the `.tex`, `.bib` and `.pdf` deliverables |
+| `06_Source_Code/make_code_freeze.py` | the frozen-file list now also covers the three manuscript scripts added by the restructure (`ms_derivation.py`, `ms_numerics.py`, `build_calculations.py`), so the manifest describes everything that generates the submission text |
 
 ### 0.6 Deliverables as they now stand
 
 | File | What it is | Size |
 |---|---|---|
-| `FINAL_REVISED_MANUSCRIPT.tex` | elsarticle source, 9 sections / 41 subsections / 84 equations / 8 figures / 11 tables | 100,828 B |
+| `FINAL_REVISED_MANUSCRIPT.tex` | elsarticle source, 9 sections / 41 subsections / 84 equations / 8 figures / 11 tables | 101,960 B |
 | `FINAL_REVISED_REFERENCES.bib` | 54 BibTeX entries, all Crossref-verified, 0 unparsed | 20,377 B |
-| `FINAL_REVISED_MANUSCRIPT.pdf` | 32-page preprint PDF (byte size varies: PDF metadata carries a timestamp) | ≈ 2.4 MB |
-| `FINAL_REVISED_CALCULATIONS.tex` | companion calculation document | 47,355 B |
+| `FINAL_REVISED_MANUSCRIPT.pdf` | 33-page preprint PDF (byte size varies: PDF metadata carries a timestamp) | ≈ 2.4 MB |
+| `FINAL_REVISED_CALCULATIONS.tex` | companion calculation document | 48,209 B |
 | `FINAL_REVISED_CALCULATIONS.pdf` | 13-page PDF of the companion | ≈ 0.6 MB |
-| `manuscript_IJHMT.md` / `.docx` | single source of truth and its Office rendering | 97,832 B / 2,685,210 B |
+| `manuscript_IJHMT.md` / `.docx` | single source of truth and its Office rendering | 98,956 B / 2,685,645 B |
 | `MANUSCRIPT_STATS.json` | structure counts and editorial limits | — |
+| `06_Source_Code/CODE_FREEZE_submission_2026_10_02.json` | refreshed code freeze: SHA-256 of the 27 solver, driver and manuscript scripts as submitted | 3,047 B |
+| `15_Audits/RERUN_COMPARISON.md` | end-to-end re-run of the pipeline with the current code against the delivered results | — |
 
 ---
 

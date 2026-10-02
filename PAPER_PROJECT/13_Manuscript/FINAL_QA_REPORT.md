@@ -19,19 +19,20 @@ and mechanism ablations*
 
 | File | Size | md5 | Notes |
 |---|---|---|---|
-| `FINAL_REVISED_MANUSCRIPT.tex` | 100,828 B | `0cb8451411ecea7a3f3501b20a937e13` | elsarticle source, generated from `manuscript_IJHMT.md` |
+| `FINAL_REVISED_MANUSCRIPT.tex` | 101,960 B | `d230ab898ebaebd29b09ad657aeea02c` | elsarticle source, generated from `manuscript_IJHMT.md` |
 | `FINAL_REVISED_REFERENCES.bib` | 20,377 B | `7f75d8ce2ff039243d9fb33c9742f7dd` | 54 entries, Crossref-verified, 0 unparsed |
 | `FINAL_REVISED_MANUSCRIPT.pdf` | 32 pp | (varies: PDF metadata carries a timestamp) | preprint PDF of the manuscript |
-| `FINAL_REVISED_CALCULATIONS.tex` | 47,355 B | `9bdde39973131a57414b54ee98936228` | companion calculation document |
+| `FINAL_REVISED_CALCULATIONS.tex` | 48,209 B | `006b0420d67b1adcc66313a1b588aa5b` | companion calculation document |
 | `FINAL_REVISED_CALCULATIONS.pdf` | 13 pp | (varies) | preprint PDF of the companion |
-| `calculations_IJHMT.md` | 39,761 B | `31c0e4ea1f94e493f14a1506594224ea` | source of truth for the companion |
-| `manuscript_IJHMT.md` | 97,832 B | `9e6afe14e81e2359cee0beedaf050ef8` | single source of truth |
-| `manuscript_IJHMT.docx` | 2,685,210 B | `34274c415bc68adb4ba793a3d285d791` | regenerated from the same build |
+| `calculations_IJHMT.md` | 40,603 B | `4f32348140efc1d66d8a1579416724d7` | source of truth for the companion |
+| `manuscript_IJHMT.md` | 98,956 B | `011c3afe366ec11cda0cc9f43af479b5` | single source of truth |
+| `manuscript_IJHMT.docx` | 2,685,645 B | `bdb34a926d1f8138ba0d1d4de5aa1394` |
+| `06_Source_Code/CODE_FREEZE_submission_2026_10_02.json` | 3,047 B | `0cd36ab36eb3446935986c45fc41d62e` | refreshed code freeze: SHA-256 of all 27 solver, driver and manuscript scripts as submitted | regenerated from the same build |
 
 Counts: manuscript **9 sections, 41 subsections, 84 numbered equations, 8 figures, 11 tables,
 54 references**, abstract **248 words** (limit 250), **5 highlights** of 69–78 characters
-(limit 85), body ≈ **9.5k words**. Companion **11 sections, 37 subsections, 29 equations,
-9 tables**, ≈ **4.9k words**.
+(limit 85), body ≈ **9.7k words**. Companion **11 sections, 37 subsections, 29 equations,
+9 tables**, ≈ **5.0k words**.
 
 ### 0.2 Gates — all exit 0 = pass
 
@@ -40,8 +41,8 @@ Counts: manuscript **9 sections, 41 subsections, 84 numbered equations, 8 figure
 | Static audit of the manuscript `.tex` | `python3 tools/audit_tex.py` | **70 checks passed** |
 | Static audit of the companion `.tex` | `python3 tools/audit_tex.py -t …/FINAL_REVISED_CALCULATIONS.tex -m …/calculations_IJHMT.md -c` | **54 checks passed** |
 | Markdown → LaTeX unit tests | `python3 tools/test_md_to_tex.py` | **26 tests passed** |
-| Manuscript PDF fidelity | `python3 tools/verify_pdf.py` | **5 checks passed** (316 text units, 0 missing; 8 figures; 79 equation images) |
-| Companion PDF fidelity | `python3 tools/verify_pdf.py -p …/calculations_IJHMT.pdf -m …/calculations_IJHMT.md -r … -c` | **5 checks passed** (182 units, 0 missing) |
+| Manuscript PDF fidelity | `python3 tools/verify_pdf.py` | **5 checks passed** (317 text units, 0 missing; 8 figures; 79 equation images) |
+| Companion PDF fidelity | `python3 tools/verify_pdf.py -p …/calculations_IJHMT.pdf -m …/calculations_IJHMT.md -r … -c` | **5 checks passed** (183 units, 0 missing) |
 | Cross-reference check | `python3 tools/check_crossrefs.py` | every “Section x.y”, “Table n”, “Fig. n”, “Eq. (n)” resolves |
 | Structural guard | `python3 tools/renumber_crossrefs.py` | **ALL EDITS IN PLACE — 12 edits verified** |
 | Bibliography | `python3 tools/refs_to_bib.py` | 54 references, 0 unparsed |
@@ -83,6 +84,20 @@ and the 22 carried numbers.
 10. **The submission package did not carry the submission artefacts** — `make_packages.py`
    collected only `.docx/.md/.xlsx/.txt/.json/.py/.png` from `13_Manuscript`; it now also ships
    the `.tex`, `.bib` and `.pdf` deliverables (PACKAGE_PHASE_13: 519 files).
+11. **The frozen code digests no longer describe the code.** Both freeze manifests were taken
+   on 2026-10-01; comparing them file by file with the code as submitted shows that only 9 of
+   the 15 entries of `CODE_FREEZE_v2_gate.json` (the seven solver modules and the two
+   convergence drivers) are still byte-identical — `cg_pipeline.py`, `run_tests.py`,
+   `analyze_v2.py`, `make_figures.py`, `production_matrix.py` and `run_production_v2.py` have
+   been edited since, so §9.1 as it stood implied more than the repository can support.
+   Fixed by disclosing the state in §9.1 and in §11 of the companion (with the evidence
+   that the pipeline was re-run end to end afterwards and reproduces the archived results
+   exactly — `15_Audits/RERUN_COMPARISON.md` — only wall-clock timings differ), and by taking
+   a refreshed manifest, `CODE_FREEZE_submission_2026_10_02.json` (27 files), which is the one
+   to deposit. Regenerating it after any further edit is now an author action (A11).
+12. **The companion said “300 production runs” where the manuscript says 150** — the builder
+   multiplied the run count by two (150 `.npz` + 150 `.json` files in `09_Raw_Data/production`).
+   Corrected at source; a number+phrase scan now reports the same counts in both documents.
 
 ### 0.4 What changed and what did not
 

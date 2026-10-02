@@ -160,6 +160,9 @@ cover letter or in responses to reviewers.
 [ ] A8  figure formats/resolution acceptable to the journal
 [ ] A9  supplementary material (full verification table) prepared
 [ ] A10 cover letter written
+[ ] A11 re-run `python3 PAPER_PROJECT/06_Source_Code/make_code_freeze.py <label>` and deposit the
+        refreshed manifest with the data package (the 2026-10-01 manifests no longer describe
+        six edited files; see manuscript §9.1 and 15_Audits/RERUN_COMPARISON.md)
 [ ] B   decisions B1–B7 taken
 [ ]     every [AUTHOR INPUT REQUIRED] and [PUBLIC REPOSITORY/DOI TO BE INSERTED] gone
 [ ]     numbers in the text re-checked against the data package by the authors

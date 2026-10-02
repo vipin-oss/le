@@ -616,7 +616,7 @@ Software and AI assistance (Methods disclosure): the finite-difference solver of
 
 ## 5. Verification and numerical uncertainty
 
-Verification is separated from validation: every comparison below is against an exact solution or an independent implementation of the same mathematical model (a 1-D axisymmetric Chebyshev solver in the Laplace domain and a time-domain Crank–Nicolson heat solver with the closed-form Lamé stress); none is a comparison with measurements. The suite has 28 tests (26 passed, 1 failed, 1 exploratory; the failure is discussed below). The suite is summarised in Table 5, and the rotation-invariance, axisymmetric and inversion tests are illustrated in Fig. 2.
+Verification is separated from validation: every comparison below is against an exact solution or an independent implementation of the same mathematical model (a 1-D axisymmetric Chebyshev solver in the Laplace domain and a time-domain Crank–Nicolson heat solver with the closed-form Lamé stress); none is a comparison with measurements. The suite has 27 tests (25 passed, 1 failed, 1 exploratory; the failure is discussed below). The suite is summarised in Table 5, and the rotation-invariance, axisymmetric and inversion tests are illustrated in Fig. 2.
 
 
 ### 5.1 Component and reference tests
@@ -634,7 +634,7 @@ Verification is separated from validation: every comparison below is against an 
 | Single pulse, isotropic circle (quasi-static, uncoupled): peak | time-domain reference | 1.16%, 0.27%, 0.07% (48×24, 96×48, 192×96), orders 2.08, 2.05 |
 | Dynamic coupled problem (inertia + feedback): wall-hoop peak, Fourier / CV / MCV3 | 1-D spectral + same inversion | 1.21%, 0.29%, 0.07% (Fourier; 48×24, 96×48, 192×96); worst of the four conduction laws at 192×96: 0.08% |
 | Quasi-static switch; a = 50 nm (echo-dominated) | 1-D reference | 0.29%; 0.27% (96×48) |
-| Metric consistency (linear field) | ≤ 5×10^{−3} | production grids ≤ 3.6e-03; the handoff-style 96×48 grid with χ = 2 gives 5.03×10^{−3} (reported failure of this criterion, angular-resolution dominated) |
+| Metric consistency (linear field) | ≤ 5×10^{−3} | production grids ≤ n/a; the handoff-style 96×48 grid with χ = 2 gives 5.03×10^{−3} (reported failure of this criterion, angular-resolution dominated) |
 
 
 ![Fig. 2](../11_Figures/fig4_verification.png)
@@ -826,6 +826,8 @@ Natural extensions are prescribed heat-flux loading, interior-stress and wall-he
 ### 9.1 Code and provenance
 
 The solver, the test suite, the experiment drivers and the analysis scripts are frozen: SHA-256 digests of every file are recorded in `CODE_FREEZE_v2_gate.json` (feab48880c3c1359 for the file itself) and `CODE_FREEZE_v2_blockF.json` (9345b5d402e02f16), and the material model alone is identified by `cg_model.py` (f15578152b6374c1). Every production run records the code version, a checksum of its input configuration, the environment and a digest of its own output in `10_Processed_Data/PRODUCTION_PROVENANCE.csv`, so each number in this paper can be traced to the run that produced it and to the code state that produced the run.
+
+**State of the frozen code at submission.** Both manifests were taken on 2026-10-01. 9 of the 15 entries of `CODE_FREEZE_v2_gate.json` -- the seven solver modules and the two convergence drivers -- are byte-identical in the working copy submitted here, but 6 entries (`cg_pipeline.py`, the test runner and four experiment and analysis scripts) have been edited since the freeze, so the digests recorded for them no longer describe the code. The pipeline was therefore re-run end to end with the code as it now stands and compared with the archived results (`15_Audits/RERUN_COMPARISON.md`): all 150 production runs agree with the archived quantities of interest to zero relative difference, every leaf of `ANALYSIS_V2.json` agrees within 10⁻⁹, and the eight figures and five tables are byte-identical; only wall-clock timings differ. A refreshed manifest, `CODE_FREEZE_submission_2026_10_02.json` (e9995d7355b982d8, 27 files), records the digests of every solver, driver and manuscript-generation script as submitted, is the one to deposit with the data package, and must be regenerated after any further edit to the code.
 
 
 ### 9.2 Data package
