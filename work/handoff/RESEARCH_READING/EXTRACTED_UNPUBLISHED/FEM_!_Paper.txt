@@ -1,0 +1,2633 @@
+
+--- PAGE 1 ---
+      Finite Element Analysis of Second-Order Strain-Gradient Elasticity with
+                    Ellipsoidal Nonlocal Characteristic Lengths
+
+            Vipin Gupta1, Sunita Kumawat2, Arun Kumar Yadav3, Taizo Maruyama4, Bandar Almohsen5,∗
+                      1Department of Mathematics, Gurugram University, Gurugram, India
+      2Department of Mathematics, Amrita Vishwa Vidyapeetham, Bengaluru Campus, Bengaluru-560035, India
+                3School of Basic and Applied Sciences, K.R. Mangalam University, Gurugram, India
+     4Department of Civil and Environmental Engineering, Institute of Science Tokyo, 2-12-1-W8-22, Ookayama,
+                                    Meguro-ku, Tokyo 152-8550, Japan
+ 5Department of Mathematics, College of Science, King Saud University, P.O. Box 2455, Riyadh 11451, Saudi Arabia
+                                    Email: 1vipin@gurugramuniversity.ac.in
+                                     2sunita14kumawat@gmail.com
+                                      3arunyadav0307@gmail.com
+                                         4maruyama.t.45ef@m.isct.ac.jp
+                                         5balmohsen@ksu.edu.sa
+                                           ∗Corresponding author
+
+
+
+
+
+Abstract
+
+This study presents an anisotropic strain-gradient elasticity framework in which direction-dependent microstructural in-
+
+teractions arise from a geometrically defined nonlocal domain. The resulting characteristic-length tensor comes from the
+
+second moments of a three-dimensional ellipsoidal averaging domain, giving it a direct geometric meaning similar to a
+fabric tensor. A positive-definite strain-gradient energy is discretized using smooth, continuously differentiable Hermite
+
+finite elements in one, two, and three dimensions, together with a corrected consistent mass formulation. For an axial char-
+
+acteristic length of 0.20 m and transverse lengths of 0.02 m, rotating the microstructural orientation produces a monotonic
+
+response. Static displacement increases by about 4%, while the fundamental frequency decreases from 186.3 Hz to 173.1
+
+Hz. The normalised frequency ranges from 1.054 to 0.979 relative to a volume-equivalent isotropic reference of 177.0 Hz.
+The axial length dominates the transverse contribution, producing a 5.8% stiffness increase compared with only 0.5% in
+the transverse-dominant case. A Directional Stiffening Index, measured against a volume-equivalent isotropic reference,
+
+is predominantly positive, ranging from 0% to about 30% across the anisotropy ratios and orientations studied. Only a
+few high-angle configurations show small negative values. These trends allow the stiffness and vibration frequency of
+
+anisotropic microstructured materials to be tailored through controlled variation of characteristic length and orientation.
+
+Keywords: Strain-gradient elasticity; anisotropic nonlocality; ellipsoidal averaging neighbourhood; characteristic length
+tensor; C1-continuous finite elements; size-dependent stiffening.
+
+
+
+1. Introduction
+
+  Classical elasticity provides an efficient continuum description when the characteristic structural dimension is much
+
+larger than the underlying microstructural scale.  Its constitutive relation is local: stress depends on strain at the same
+
+material point, and no intrinsic length parameter appears in the governing equations [1]. Advanced numerical and material-
+
+processing techniques continue to find application across diverse engineering domains, from tribological performance of
+processed steels [2] to numerical schemes for nonlinear differential equations [3], rapid aerodynamic analysis via panel-
+
+boundary-layer coupling [4], shear-band formation in crushable soils [5], sawtooth-to-brittle transitions in architected
+
+cubane structures [6], dynamic response of plates on orthotropic foundations under moving loads [7], ultra-nano phase
+
+separation in metallic glasses [8], and dynamic response of U-corrugated sandwich plates under slamming loads [9].
+
+  However, it is restrictive for composites with microstructures, thin films, additively manufactured lattices and mechan-
+ical metamaterials, where the presence of pores, fibres, grains, inclusions and/or architected unit cells affect the apparent
+
+--- PAGE 2 ---
+stiffness, vibration response, wave dispersion and boundary-layer behaviour [10, 11]. In these materials, a continuum
+
+model thus needs to contain characteristic lengths; these lengths should be able to take into account the directionally
+
+organized microstructure.
+
+  This is overcome by generalized continuum theories, which extend the kinematics or constitutive response. Theories
+
+of couple-stress and higher order elasticity were developed to incorporate measures of curvature, moment stresses, strain
+
+gradients, and higher order boundary conditions [12–15]. Eringen-type nonlocal elasticity, on the other hand, viewed
+
+stress as an average response over a neighbourhood of material points [16–18] in parallel. The two are closely related:
+
+nonlocal averaging gives a physical interpretation to long-range interactions, while gradient approximations transform
+weak nonlocality into differential equations that can be solved numerically on a boundary value problem. In practice,
+
+however, they are not very useful because the general higher order constitutive tensors are too complicated, the nonlocal
+
+kernels are ambiguous, and consistent boundary conditions are hard to enforce on finite domains.
+
+  Within this framework, the simplified strain-gradient elasticity, notably the Aifantis form, provides a numerically more
+efficient alternative. These models regularize localization, eliminate singularities, and predict size-dependent responses
+
+by inclusion of a small internal length parameter [19–21]. Experimental and computational studies have confirmed the
+relevance of strain-gradient effects in microscale deformation and dynamic problems [22, 23]. Discrete-to-continuum and
+
+homogenization-based arguments further show that gradient terms may emerge naturally from lattice or representative-
+
+volume descriptions [24, 25]. Yet most simplified models use a scalar length scale, implicitly assuming that nonlocal
+
+interactions are isotropic. This assumption is inadequate for layered media, fibre-reinforced solids, anisotropic crystals,
+and architected lattices, where the interaction range may differ substantially from one direction to another.
+
+  Anisotropic gradient elasticity has therefore become an important extension of scalar-length models. Tensorial char-
+
+acteristic lengths allow the weak nonlocal response to depend on direction, and this idea has been developed through
+
+separable anisotropic gradient, internal-length tensor formulations, and symmetry classifications of three-dimensional
+
+strain-gradient elasticity [26–28].  These studies establish that the internal length is not necessarily a scalar material
+
+constant;  it may be a second-order tensor carrying information about microstructural orientation. However, in many
+formulations this tensor is introduced phenomenologically or through homogenized coefficients. The link between a ge-
+
+ometrically defined nonlocal averaging domain and the resulting anisotropic length tensor remains less explicit, although
+
+such a link is essential for parameter interpretation and model calibration.
+  Recent work reinforces the same need from different perspectives. Physically based nonlocal strain-gradient models
+
+have related kernel functions and intrinsic lengths to polymer-network descriptors [29], while second-order homogeniza-
+tion of three-dimensional lattice materials has shown that strain-gradient continua can reproduce size effects that classical
+
+homogenization misses [30]. Recent developments in non-classical continuum theories have expanded applications to
+
+smart structures and multiphysics. Nonlocal strain gradient models have been applied to wave propagation in functionally
+
+graded materials [31] and to size-dependent bending of porous FG beams [32]. Other applications include buckling and
+vibration of composite laminates with nonlocal effects [33] and isogeometric analysis of gradient plates [34]. Bound-
+ary element formulations for nonlocal elasticity [35] and strain-gradient effects in thin-walled structures [36] have also
+been reported. These studies confirm that internal length parameters significantly modify stiffness, vibration and wave
+
+dispersion, motivating anisotropic extensions where length itself becomes tensorial. Hierarchical lattice studies further
+indicate that higher-order stiffness tensors improve static and dynamic predictions in architected solids [37]. At the defect
+
+scale, nonlocal simplified strain-gradient elasticity has clarified the joint role of Eringen-type and Aifantis-type lengths
+
+in regularizing dislocation fields [38]. Related nonlocal multiphysics studies, including the recent work of Gupta and
+
+co-workers on piezo-thermoelastic, piezo-semiconductor, voided, and fractional Moore–Gibson–Thompson media, show
+
+that nonlocal parameters can significantly modify wave speed, attenuation, vibration response, and particle motion in
+
+smart small-scale systems [39–42].
+
+  Although these developments broaden the scope of nonlocal and gradient modelling, they also highlight a remaining
+
+limitation: most formulations are either analytical and geometry-specific, homogenization-dependent, or not directly con-
+
+nected to a unified finite element framework for anisotropic finite-domain problems.  Finally, the numerical treatment
+
+
+                                                2
+
+--- PAGE 3 ---
+of strain-gradient elasticity represents an additional challenge. In a primal (displacement-based) Galerkin formulation,
+fourth-order governing equations necessitate C1-continuous approximation. The mixed and staggered finite element meth-
+
+ods relax the continuity requirement but add new fields, stabilization choices or a saddle-point structure [43–45].
+  The direct C1 formulations preserve the variational structure, and when appropriate interpolation functions exist, they
+
+are also convenient to apply for general gradient elasticity.  For example, such approximations can be achieved in a
+
+classical sense via cubic Hermite interpolation, Bogner–Fox–Schmit elements and isoparametric Hermite constructions
+[46, 47]. Recently, finite element developments for elasticity with microstructure, three-dimensional C1 gradient elasticity
+
+and associated verification benchmarks [48, 49], as well as virtual element formulations [50, 51] have elucidated the
+computational requirements of higher-order continua. A unified one-, two-, and three-dimensional C1 implementation
+
+coupled with anisotropic characteristic lengths derived from an explicit ellipsoidal nonlocal averaging domain is still not
+
+commonly available.
+
+  To address the above limitations, the present study derives anisotropic characteristic lengths directly from ellipsoidal
+
+nonlocal strain averaging, thereby providing a geometric interpretation of the anisotropic length tensor. Based on this
+framework, a positive-definite second-order strain-gradient formulation is developed and incorporated into a unified C1-
+
+continuous finite element framework employing cubic Hermite, Bogner–Fox–Schmit, and tensor-product tricubic Hermite
+
+elements for one, two, and three-dimensional analyses.
+
+  The main contributions of this work are:
+
+   • Ellipsoidal nonlocal averaging is used to derive direction-dependent characteristic lengths. The resulting tensor
+     Lmn = (AAT)mn represents second moments of the averaging domain and provides a geometric interpretation analo-
+     gous to fabric tensors in homogenization literature [26–28].
+
+   • A positive-definite anisotropic second-order strain-gradient energy W = 1/2Ci jklεi jεkl + 1/20LmnCi jklεi j,mεkl,n is
+      formulated together with constitutive relations, governing equations and higher-order boundary conditions. After
+      variation the 1/20 factor becomes 1/10 in the stress, which gives a positive stiffness correction in the wavenumber
+
+     domain.
+
+   • A unified C1-continuous finite element framework is developed for 1D, 2D and 3D. It uses cubic Hermite, Bogner–
+
+     Fox–Schmit bicubic Hermite and tensor-product tricubic Hermite elements with 24 DOF per node in 3D, and
+      diagonal scaling keeps the condition number κ < 106.
+
+   • Orientation-dependent tuning is governed by L11(θ) = l2x cos2 θ + l2y sin2 θ and the off-diagonal term L12 = (l2y −
+        l2x) cos θ sin θ that couples BT,xCB,y, where B,x = ∂B/∂x is the strain–displacement matrix differentiated with respect
+      to x and C is the elasticity matrix (formally defined in Sec. ??). The response varies monotonically with orientation:
+      the fundamental frequency f1 (first natural frequency) decreases from 186.26 to 173.06 Hz and u/u0 increases from
+      1.00 to 1.039, where u is the strain-gradient displacement and u0 is the classical displacement. The normalized fre-
+     quency f1/ fiso = 1.054 →0.979, with fiso the volume-equivalent isotropic reference frequency, shows no minimum
+       at 45◦. All cases remain above the classical bound f1 > 171.61 Hz.
+
+   • A bivariate design-space map in AR = lx/ly ∈[1, 20] and θ ∈[0◦, 90◦] is constructed together with the Direc-
+       tional Stiffening Index DS I = (uref −u)/ure f . The index quantifies displacement reduction relative to the volume-
+      equivalent isotropic reference liso = (lxlylz)1/3. The map reveals three regions: stiffening-optimal at high AR and
+     low θ, frequency-tuning at high AR near θ ≈45◦, and insensitive when AR ≲2 or θ ≈90◦.
+
+
+2. Formulation of the Problem
+
+2.1. Nonlocal Strain Averaging
+
+  Let Ω⊂R3 denote the material body and let x ∈Ωbe an interior point such that the nonlocal neighbourhood introduced
+below remains contained in Ω. The nonlocal strain is introduced as a volume average of the classical strain over a finite
+
+                                                3
+
+--- PAGE 4 ---
+neighbourhood of x, following the weakly nonlocal interpretation of Eringen-type continuum theories [16–18]:
+
+              1  ∫︂
+       ˜εmn(x) =         p(ξ) εmn(x + ξ) dVξ.                                                                             (1)
+               |V| V
+
+Here εmn is the classical infinitesimal strain tensor, ξ is the relative position vector inside the averaging neighbourhood,
+and V is the nonlocal interaction domain. The kernel p(ξ) is assumed to satisfy the normalization condition
+
+      1  ∫︂
+              p(ξ) dVξ = 1.                                                                                             (2)
+      |V| V
+
+In the present formulation, a uniform kernel is adopted, p(ξ) = 1. This choice isolates the influence of the anisotropic
+
+averaging geometry and leads to closed-form moment relations.
+  The nonlocal neighbourhood is taken as an ellipsoid with semi-axes l1, l2, l3 > 0 aligned with the Cartesian coordinate
+axes:
+
+                      ξ21   ξ22   ξ23               4π
+   V =        ∈R3⃓⃓⃓⃓⃓⃓   +  +  ≤1       |V| =     l1l2l3.                                                         (3)                                            3                                    ⎧⎪⎪⎨⎪⎪⎩ξ                            l21     l22     l23                ⎫⎪⎪⎬⎪⎪⎭,
+
+The assumption that V is fully contained in Ωneglects boundary-induced truncation of the nonlocal neighbourhood. The
+
+present derivation should therefore be interpreted as a bulk weakly nonlocal approximation. Near physical boundaries
+the averaging domain V(x) ∩Ωis truncated. The first moment then becomes ∫︁ ξi , 0 and the second moment becomes
+position-dependent, Lmn(x) = 1/|V ∩Ω| ∫︁ V∩ΩξmξndV. This correction introduces a boundary layer in the characteristic-
+length tensor itself and an additional first-gradient term. In the weakly nonlocal regime lmax ≪Lε and for interior points
+with lmax ≪dist(x, ∂Ω), the effect is second-order and is neglected. The natural double-traction condition qi jmνmν j = 0
+(with qi jm the double stress defined in Eq. (17)) therefore remains first-order consistent. A full surface-corrected formu-
+lation with Lmn(x) and Mindlin-Toupin surface divergence terms lies beyond the present phenomenological Aifantis-type
+model and is noted as future work for thin structures where lmax ∼h, with h denoting the characteristic structural thick-
+ness (e.g., beam thickness, plate thickness or wall thickness). For such thin structures the required modifications are as
+
+follows.  First, Lmn(x) is computed analytically for the given geometry. Second, the energy becomes spatially varying,
+W(x) = 1/2Cεε + 1/20Lmn(x)Cε,mε,n. Third, extra terms proportional to Lmn, jε,mn and Lmn, j jε appear in the governing
+equation. Finally, when h ∼lmax, i.e., when the structural thickness is comparable to the nonlocal length, the full integral
+model ˜ε(x) = 1/|V ∩Ω| ∫︁V∩Ωε(x + ξ)dV is used without Taylor expansion.
+  The ellipsoid is mapped from the unit ball by
+
+
+     ξ = Au,    A = diag(l1, l2, l3),       |u| ≤1.
+
+
+Consequently,
+
+     AAT = diag(l21, l22, l23),     (AAT)ij = l2i δij  no sum on i.                                                         (4)
+
+The tensor AAT represents the directional second moment of the averaging geometry and acts as an anisotropic characteristic-
+
+length tensor. This interpretation is consistent with tensorial and ellipsoidal descriptions of internal length in anisotropic
+
+gradient elasticity [26–28].  The present development is restricted to an axis-aligned ellipsoidal neighbourhood, for
+which AAT is diagonal. More generally, for a rotated ellipsoidal neighbourhood, the characteristic-length tensor becomes
+QAAT QT, where Q is an orthogonal rotation tensor.
+  Assuming that εmn is sufficiently smooth in a neighbourhood of x, Taylor expansion gives
+
+                               1          1
+                                                                                                      jk + O(|ξ|4),                                            (5)      εmn(x + ξ) = εmn(x) + ξi εmn,i + 2ξiξ                                                                                        j εmn,ij + 6ξiξ jξk εmn,i
+
+
+
+                                                4
+
+--- PAGE 5 ---
+   Figure 1: Ellipsoidal nonlocal averaging neighbourhood and directional characteristic lengths used in the anisotropic strain-gradient formulation.
+
+
+where a comma denotes spatial differentiation and repeated spatial indices are summed. Since the ellipsoidal domain is
+
+centrosymmetric and the adopted kernel is uniform, the first moment and all odd-order moments vanish after integration.
+
+The required moment identities are
+
+      1  ∫︂              1  ∫︂                1  ∫︂           1
+            dVξ = 1,                 ξi dVξ = 0,              ξiξ j dVξ =               j.                                      (6)      |V| V              |V| V                |V| V          5(AAT)i
+
+The last identity follows from the transformation to the unit ball, for which
+
+        ∫︂            4π
+            uiuj dVu = 15δij.           |u|≤1
+
+  Substitution of Eq. (5) into Eq. (1), together with the moment identities in Eq. (6), gives the second-order weakly
+
+nonlocal strain approximation
+
+                    1        ∂2εmn
+       ˜εmn(x) = εmn(x) + 10(AAT)ij ∂xi∂xj + O(l4max∇4εmn),                                                             (7)
+
+where
+
+
+       lmax = max{l1, l2, l3}.
+
+
+The coefficient 1/10 is the product of the Taylor coefficient 1/2 and the normalized second moment 1/5 of the three-
+
+dimensional ellipsoidal averaging domain. The approximation is valid in the weakly nonlocal regime,
+
+
+       lmax ≪Lε,
+
+
+where Lε denotes the characteristic length over which the strain field varies appreciably. This Taylor-based reduction is
+
+                                                5
+
+--- PAGE 6 ---
+the standard connection between integral nonlocal averaging and strain-gradient elasticity [19, 23].
+  Defining the anisotropic second-order differential operator
+
+                    ∂2        ∂2      ∂2      ∂2
+     Lℓ≡(AAT)ij     = l21   + l22   + l23       ,                                                                   (8)
+                   ∂xi∂xj     ∂x21     ∂x22     ∂x23
+
+Eq. (7) may be written compactly as
+
+                                 (︄    1        )︄
+       ˜εmn(x) = 1 + 10Lℓ εmn(x) + O(l4max∇4εmn).                                                                     (9)
+
+  The formulation above is a three-dimensional weakly nonlocal continuum approximation. Therefore, the one and two
+
+dimensional finite element models introduced later should be interpreted as reduced kinematic specializations of the same
+
+three-dimensional theory, rather than as independently averaged one or two dimensional nonlocal models. This distinction
+is important because the numerical coefficient in Eq. (7) is determined by the second moment of a three-dimensional
+ellipsoidal domain. For independently averaged domains the coefficients differ, where ⟨·⟩denotes the average over the
+domain, i.e., ⟨ξ2i ⟩= 1/|V| ∫︁ V ξ2i dV. A 1D segment [−l, l] has |V| = 2l and ⟨ξ2⟩= l2/3, which gives 1/6 after the Taylor
+factor 1/2. A 2D ellipse ξ21/l21 + ξ22/l22 ≤1 has |V| = πl1l2 with ⟨ξ2i ⟩= l2i /4, leading to 1/8. The 3D ellipsoid gives
+|V| = 4π/3l1l2l3 and ⟨ξ2i ⟩= l2i /5, hence 1/10 (see Appendix A). We retain 1/10 in 1D and 2D because the physical
+neighbourhood remains a 3D ellipsoid, while the 1D and 2D models are reduced kinematics (uniaxial and plane-strain) of
+the same 3D continuum. This choice keeps the models comparable. At l/L = 0.20, where L denotes the relevant structural
+length (bar length, beam length or plate dimension), the 1D stiffening ratio is 0.936 and the 2D ratio is 0.94. The 3D ratio
+is 0.959, similar to the lower-dimensional values. The coefficient 1/10 has been used consistently across all numerical
+results in the manuscript (Figs. 1-11). For a truly 1D chain or 2D membrane 1/6 and 1/8 would be appropriate. See
+Appendix A for the full derivation. The energy coefficient 1/20 yields 1/10 in the stress after variation by symmetry (see
+
+Sec. 2.3).
+
+
+2.2. Kinematic Relations
+
+  The displacement field is denoted by u(x), with components ui. Under the small-strain assumption, the infinitesimal
+strain tensor is
+
+          1
+        εij =       (︂ ui,j + u j,i )︂ ,                                                                                        (10)
+          2
+
+where a comma denotes partial differentiation with respect to the corresponding spatial coordinate. The volumetric strain,
+
+or dilatation, is given by
+
+
+       εkk = uk,k = ∇· u.                                                                                         (11)
+
+
+2.3. Strain Energy Density and Constitutive Relations
+
+  Motivated by the anisotropic differential operator obtained from the ellipsoidal nonlocal averaging procedure, a strain-
+
+gradient energy density is introduced in the form
+
+         1           1
+   W = 2Cijklεijεkl + 20LmnCijklεij,mεkl,n,     Lmn = (AAT)mn.                                                (12)
+
+Here Lmn is the anisotropic characteristic-length tensor obtained from the second moment of the ellipsoidal averaging
+domain. The coefficient 1/20 is selected so that the variationally derived stress correction contains the same second-
+moment coefficient 1/10 as the weakly nonlocal strain expansion, while preserving a positive gradient contribution to the
+
+stored energy. The form of Eq. (12) is consistent with simplified strain-gradient elasticity models and their anisotropic
+extensions [26, 27]. Eq. (7) and Eq. (12) arise from distinct kinematic and constitutive steps. Eq. (7) ˜ε = (1 + 1/10L)ε is
+
+                                                6
+
+--- PAGE 7 ---
+a kinematic result. It follows from Taylor expansion of the nonlocal average with a uniform kernel over the ellipsoid. The
+coefficient 1/10 is the product of the Taylor factor 1/2 and the normalized second moment 1/5. Eq. (12) W = 1/2Cεε +
+1/20LmnCε,mε,n is a separate constitutive choice.  It is motivated by the operator Lmn but is chosen to ensure positive-
+definiteness with µ > 0, 3λ + 2µ > 0 and li > 0 giving Lmn positive-definite, and to give a well-defined C1 variational
+formulation.  It is not uniquely derived from averaging. Variation gives δW = Ci jklεklδεi j + 1/20LmnCi jkl(εi j,mδεkl,n +
+δεi j,mεkl,n). This becomes Cεδε + 1/10LmnCε,nδε,m, or τi jδεi j + qi jmδεi j,m with qi jm = 1/10LmnCi jklεkl,n, where τi j and qi jm
+are the energetic stress and double stress formally defined in Eqs. (16) and (17). The form uses symmetry Ci jkl = Ckli j
+and Lmn = Lnm. Integration by parts gives  ∫︁ qijmδεi j,m = − ∫︁ qi jm,mδεi j plus a boundary term. Hence the effective stress
+is σi j =  τij −qi jm,m = Cε −1/10Lmn(Cε),mn = (1 −1/10L)σcli j, where σcli j is the classical elastic stress defined in
+Eq. (14). Thus 1/20 in the energy yields 1/10 in the stress and in the double stress.  If 1/10 were used in the energy,
+the stress correction would be 1/5, a double-counting. This separation between kinematic averaging and constitutive
+
+regularization clarifies their distinct roles. The local Ci jkl is taken isotropic to isolate nonlocal anisotropy coming from
+the ellipsoidal geometry. Physically this corresponds to materials where the matrix is isotropic but the interaction range
+
+is direction-dependent due to elongated features such as fibres, drawn grains and lattice struts. Lmn is analogous to the
+fabric tensor in homogenization [26–28]. For materials with additional local anisotropy both sources should be combined
+as W = 1/2Canisoεε + 1/20LmnCanisoε,mε,n.
+  For the isotropic elastic solid considered here, the fourth-order elasticity tensor is
+
+       Cijkl = λδijδkl + µ (︂ δikδ jl + δilδjk )︂ ,                                                                          (13)
+
+
+where λ and µ are the Lamé constants. The classical elastic stress corresponding to the local part of the energy is
+
+      σclij = Ci jklεkl = λδijεkk + 2µεij.                                                                            (14)
+
+For µ > 0, 3λ + 2µ > 0, and positive characteristic lengths li > 0, the tensor Lmn is positive definite and the gradient
+contribution in Eq. (12) is non-negative. Thus, the adopted energy density is positive definite for non-rigid admissible
+
+strain fields.
+
+  The total potential energy is written as
+
+              ∫︂             ∫︂               ∫︂
+   Π =  W dΩ−    Piui dΩ−       ¯tiui dΓ,                                                                   (15)
+          Ω        Ω                   Γt
+
+where Pi is the body-force density and  ¯ti is the prescribed classical traction on Γt. Possible higher-order boundary terms
+associated with the strain-gradient contribution are not prescribed in Eq. (15); the corresponding natural boundary condi-
+
+tions arise from the variational statement and are discussed separately in the boundary-condition section.
+
+  The energetic stress and double stress are defined by
+
+       ∂W
+       τi j =    = Cijklεkl,                                                                                      (16)
+             ∂εij
+
+and
+
+         ∂W    1
+       qi jm =            = 10LmnCijklεkl,n.                                                                            (17)               ∂εij,m
+
+The factor 1/10 in Eq. (17) results from the symmetry of Ci jkl and Lmn in the variation of the quadratic gradient term. For
+a homogeneous material with constant Cijkl and constant characteristic-length tensor Lmn, the effective stress entering the
+
+
+
+
+
+                                                7
+
+--- PAGE 8 ---
+strong equilibrium equation is
+
+
+      σi j = τi j −qijm,m
+                             ∂2      = Cijklεkl −1                 10Lmn ∂xm∂xn  (︂Cijklεkl )︂
+                          (︄
+      =           1 −1        )︄ σclij,                                                                                     (18)             10Lℓ
+
+where the anisotropic operator Lℓis defined in Eq. (8). Equivalently,
+
+                       ∂2      ∂2      ∂2
+                                                                                                         (︂ λδi jεkk + 2µεi j )︂ .                                                  (19)      σi j =  −1   1   + l22   + l23                                        ⎡⎢⎢⎢⎢⎣1  10  ⎛⎜⎜⎜⎜⎝l2 ∂x21     ∂x22     ∂x23   ⎞⎟⎟⎟⎟⎠⎤⎥⎥⎥⎥⎦
+
+  The signs in the nonlocal strain approximation and in the effective stress relation have different origins. The averaged
+
+strain obtained from Taylor expansion satisfies
+
+                         (︄    1        )︄
+           ˜εi j = 1 + 10Lℓ  εij + O(l4max∇4εij),                                                                       (20)
+
+whereas the stress relation in Eq. (18) follows from the variation of the positive-definite strain-gradient energy. For a
+plane wave exp(ik · x),
+
+
+    Lℓ→−Lmnkmkn,
+
+
+so that
+
+     1 −1      + 1      10Lℓ→1   10Lmnkmkn.
+
+Hence, the negative sign in the physical-space stress operator produces a positive stiffness correction in the wavenumber
+
+domain.
+
+
+2.4. Governing Equation
+
+  The equation of motion follows from the local balance of linear momentum written in terms of the effective stress
+
+defined in Eq. (18):
+
+
+      σi j,j + Pi = ρ ui,tt,                                                                                         (21)
+
+
+where Pi is the body force per unit volume and ρ is the mass density. For a homogeneous material with constant Lamé
+parameters and constant characteristic-length tensor Lmn, the operator Lℓhas constant coefficients and commutes with
+spatial differentiation. Substituting Eq. (19) into Eq. (21) therefore gives
+
+             (︄      1 −1       )︄[︂(λ + µ)u j,ij + µui,jj        10Lℓ                                                 ]︂ + Pi = ρ ui,tt.                                                              (22)
+
+The term in square brackets is the classical Navier operator,
+
+      σclij,j = (λ + µ)u j,ij + µui,jj.                                                                                 (23)
+
+
+Equation (22) is therefore a fourth-order anisotropic strain-gradient extension of the classical elastodynamic equation.
+
+Such higher-order governing equations require additional boundary conditions beyond the classical displacement or trac-
+
+tion conditions [14, 15, 23]. In the static case, the inertia term on the right-hand side is omitted.
+
+
+                                                8
+
+--- PAGE 9 ---
+  For reference, consider the isotropic spherical case l1 = l2 = l3 = l, for which Lℓ= l2∇2. In the absence of body forces,
+let
+
+
+    u = U exp [i(k · x −ωt)] ,                                                                                  (24)
+
+
+where U is the constant (complex) amplitude vector, k is the wave vector, k =  |k|, and ω is the circular frequency.
+
+Substitution into Eq. (22) yields the longitudinal and transverse dispersion relations
+
+                                                               (︄     l2k2 )︄
+     P-wave:    ω2 = c2Pk2 1 +          ,                                                                        (25)                             10
+                                                               (︄     l2k2 )︄
+     S-wave:    ω2 = c2S k2 1 +          ,                                                                        (26)                             10
+
+with
+
+           √︄           λ + 2µ         √︃µ
+      cP =                 ,     cS =                                                                                 (27)              ρ                ρ.
+
+The positive correction factor in Eqs. (25)–(26) indicates short-wavelength stiffening within the range of validity of the
+second-order weakly nonlocal approximation, i.e. for lk ≪1 [23, 24]. Dispersion relations serve as an analytical stability
+check. The positive factor 1 + l2k2/10 for all k confirms positive-definiteness with no imaginary frequencies. The change
+from (1 −l2/10∇2) in physical space to 1 + l2k2/10 in the wavenumber domain explains the sign remark and indicates
+short-wavelength stiffening within lk ≪1. This supports the l/L ≤0.10 validity range. The present work focuses on static
+
+and free-vibration analysis.
+
+
+3. Particular Cases
+
+Case 1: Spheroidal neighbourhood
+
+  When l1 = l2 = l and l3 is distinct, the ellipsoidal neighbourhood has axial symmetry about the x3-axis. The anisotropic
+operator reduces to
+
+              ∂2      ∂2      ∂2
+    Lℓ= l2   + l2   + l23       .                                                                              (28)
+            ∂x21     ∂x22     ∂x23
+
+Accordingly, the effective stress becomes
+
+                       ∂2      ∂2      ∂2
+                                                                                                         (︂ λδi jεkk + 2µεi j )︂ .                                                  (29)      σij =  −1     + l2   + l23                                        ⎡⎢⎢⎢⎢⎣1  10  ⎛⎜⎜⎜⎜⎝l2 ∂x21     ∂x22     ∂x23   ⎞⎟⎟⎟⎟⎠⎤⎥⎥⎥⎥⎦
+
+The case l3 > l corresponds to a prolate spheroidal neighbourhood, whereas l3 < l corresponds to an oblate spheroidal
+neighbourhood.
+
+
+Case 2: Spherical neighbourhood
+
+  When l1 = l2 = l3 = l, the averaging neighbourhood is spherical and
+
+    Lℓ= l2∇2.                                                                                                (30)
+
+
+The constitutive relation then reduces to
+
+                          (︄
+      σij =           1 −l2      )︄(︂ λδijεkk + 2µεij             10∇2                                      )︂ .                                                                        (31)
+
+
+
+                                                9
+
+--- PAGE 10 ---
+Comparison with integral nonlocal, homogenized lattice and alternative gradient formulations is as follows. The integral
+model is ˜σi j(x) =   ∫︁ K(|x −x′|)σclij(x′)dΩ′ with a Gaussian kernel, where x′ is the source (reference) point.  Taylor
+expansion gives ˜σ = σcl + l2/10∇2σcl + O(l4) for a spherical uniform kernel over the ellipsoid. Hence the differential
+form (1 −l2/10∇2)σ = σcl is a second-order approximation with error O(l4∇4σ) (Eringen 1983, Askes & Aifantis 2011).
+An anisotropic ellipsoidal kernel gives an anisotropic Laplacian Lmn∂2. Second-order homogenization of lattices [30]
+shows that the gradient continuum reproduces size effects missed by the classical model, with Lmn ∝⟨ξmξn⟩RVE. A full
+comparison would require an RVE of an octet-truss and similar architectures, computing Ci jkl and Lmn via Hill-Mandel.
+This is noted as future work requiring a separate solver with real RVE simulations. Compared with Mindlin Form II with
+
+5 lengths and Form III, our simplified Aifantis-type model uses 3 lengths li from geometry.  It remains positive-definite
+and is computationally tractable with C1 FEM, whereas full Mindlin requires mixed FEM. The trade-off is less generality
+but more robustness. The present differential model is thus a weak nonlocal approximation to the integral model, valid for
+lmax ≪Lε with error O(l4). This is the isotropic Aifantis-type strain-gradient form [19, 21, 23] with the effective gradient
+parameter
+
+                 l2
+      ℓ2eff = 10.                                                                                                 (32)
+
+
+4. Boundary Conditions
+
+  The governing equation (22) contains fourth-order spatial derivatives because the anisotropic operator Lℓacts on the
+
+classical Navier operator. Therefore, in addition to the classical displacement or traction conditions, one higher-order
+boundary condition is required. Let ν be the outward unit normal to ∂Ω, and let Γu and Γt denote the displacement and
+traction parts of the classical boundary, respectively.
+
+
+4.1. Classical Boundary Conditions
+
+  On Γu, the displacement is prescribed as
+
+
+       ui = ¯ui    on Γu,                                                                                         (33)
+
+
+where the overbar denotes a prescribed (given) value. On Γt, the effective traction is taken as
+
+      σijν j =  ¯ti    on Γt,                                                                                       (34)
+
+
+where σij is the effective stress defined in Eq. (18). For a traction-free surface,
+
+
+      σijν j = 0.                                                                                                 (35)
+
+
+4.2. Higher-Order Boundary Condition
+
+  For the homogeneous material considered here, the strain-gradient part of the energy introduces the higher-order stress
+
+         ∂W    1             1
+       qi jm =            = 10LmnCijklεkl,n = 10Lmnσclij,n,     Lmn = (AAT)mn.                                          (36)               ∂εij,m
+
+The tensor qi jm is work-conjugate to the strain gradient εi j,m. The natural higher-order condition is written in terms of the
+normal double traction as
+
+
+       qi jmνmν j = 0    on Γq,                                                                                   (37)
+
+
+
+
+
+                                               10
+
+--- PAGE 11 ---
+where Γq ⊆∂Ωis the portion of the boundary on which the higher-order natural condition is imposed. On the comple-
+mentary higher-order essential boundary Γg, one may prescribe the normal derivative of displacement,
+
+
+        ui,ν = ∇ui · ν = ¯gi    on Γg,                                                                               (38)
+
+
+where ¯gi denotes the prescribed value of the normal derivative of displacement. In the present computations, the natural
+higher-order condition is used on free boundaries unless stated otherwise.
+
+  Using Eq. (36), Eq. (37) becomes
+
+          ∂σclij
+     Lmn    νmν j = 0    on Γq.                                                                               (39)
+         ∂xn
+
+The factor 1/10 has been omitted since the boundary condition is homogeneous and multiplication by a nonzero con-
+
+stant does not alter the resulting constraint. This condition represents the reduced higher-order natural boundary con-
+
+dition adopted in the present formulation.  In accordance with the underlying Aifantis-type strain-gradient framework
+[19, 21, 23], higher-order boundary effects are expressed through normal derivatives and normal double tractions, which
+
+are employed consistently throughout the subsequent finite element formulation. Higher-order boundary conditions com-
+prise essential and natural types. Classical conditions are ui = ¯ui on Γu and σi jν j =  ¯ti on Γt with σi j = (1 −1/10L)σcli j.
+Higher-order conditions are of two types.  (i) Essential:  ui,ν = ∇ui · ν =  ¯gi on Γg, enforced through Hermite deriva-
+tive DOFs (ui,x, ui,y, ui,z). For a clamped-slope bar θ(0) = 0 is imposed by setting the nodal derivative DOF to zero.
+(ii) Natural:  qi jmνmν j = 0 on Γq with qijm = 1/10Lmnσcli j,n.  This follows from the boundary term  ∫︁∂Ωqi jmνmδεi jdΓ
+after integration by parts. On free boundaries where derivative DOFs are left free, the weak form enforces this natu-
+
+ral condition automatically. For a homogeneous material with constant Lmn the operator commutes. The strong form
+(1 −1/10L)[(λ + µ)uj,ij + µui,jj] + Pi = ρ¨ui is then fourth-order and needs one extra boundary condition per side, which
+is provided. For the spherical case on a flat surface x3 =const with ν = (0, 0, 1), the conditions become σi3 = 0 and
+∂σcli3/∂x3 = 0 (Eq.26-27).  This is a reduced Aifantis-type condition, not the full Mindlin-Toupin form with surface
+divergence, noted as a limitation. In the FEM implementation essential higher-order conditions are imposed by constrain-
+ing derivative DOFs in K f f , F f (where K f f and F f denote the stiffness matrix and force vector after imposing essential
+boundary conditions, formally defined in Sec. 5.5) before scaling. Natural conditions are satisfied variationally. In full
+Mindlin-Toupin second-gradient theory the variational principle yields surface tractions ti, double tractions ri = qi jmνmν j
+and line forces ei = ⟦qijmνmµj⟧along edges where the normal ν is discontinuous, with µ the edge co-normal and ⟦·⟧the
+jump. For rectangular and brick domains with 90◦corners the simplified Aifantis-type model adopts reduced conditions
+σi jν j =   ¯ti and qi jmνmν j = 0. Surface divergence and edge terms are neglected, consistent with the phenomenological
+energy. Hermite derivative DOFs are shared across elements including corners, so the weak form satisfies natural corner
+conditions variationally. Reaction error < 10−11 confirms this. For general polyhedral domains explicit edge conditions
+are required, noted as a limitation. For a rotated Lmn the double traction qi jmνm = 1/10Lmnσcli j,nνm contains off-diagonal
+contributions. For a clamped face x = 0 with ν = (1, 0, 0), the rotated tensor Lrot = RTdiag(l2x, l2y, l2z)R gives L11 = l2xc2+l2ys2
+and L12 = (l2y −l2x)cs. Hence rij = 1/10[L11σclij,1 +L12σcli j,2]. The off-diagonal term couples the transverse gradient σcli j,2 into
+the double traction even though ν is along x. At θ = 45◦the coupling reaches its maximum magnitude with L12 ≈−0.0198
+for lx = 0.20 and ly = 0.02. This causes energy redistribution, but the frequency still decreases monotonically with no
+minimum at 45◦.  Tangential components are work-conjugate to δεi j. The natural condition qi jmνmν j = 0 retains the
+normal part, while the tangential part would contribute to edge forces in the full theory.
+  For a spherical neighbourhood, Lmn = l2δmn. On a flat traction-free surface x3 = const with ν = (0, 0, 1), the classical
+
+
+
+
+
+                                               11
+
+--- PAGE 12 ---
+and higher-order natural conditions reduce to
+
+
+        σi3 = 0,        i = 1, 2, 3,                                                                                  (40)
+      ∂σcl
+              i3 = 0,        i = 1, 2, 3.                                                                                  (41)
+      ∂x3
+
+The first condition represents the effective traction-free boundary, while the second condition is the corresponding normal
+
+double-traction condition.
+
+
+5. Finite Element Formulation
+
+  This section presents the displacement-based finite element formulation corresponding to the strain-gradient model
+
+derived above. Since the governing equation contains fourth-order spatial derivatives, a direct Galerkin discretization
+requires C1-continuous basis functions.  Cubic Hermite elements are therefore used in one dimension, Bogner–Fox–
+
+Schmit bicubic Hermite rectangular elements in two dimensions, and tensor-product tricubic Hermite brick elements in
+
+three dimensions [46–49]. The present implementation uses tensor-product rectangular and brick elements so that Hermite
+
+derivative degrees of freedom are shared consistently across element interfaces.
+
+
+5.1. Weak Form
+
+  The strain-gradient energy density is
+
+         1           1
+   W = 2Cijklεijεkl + 20LmnCijklεij,mεkl,n,     Lmn = (AAT)mn.                                                (42)
+
+For an axis-aligned ellipsoidal neighbourhood,
+
+     Lmn = l2mδmn    no sum on m.                                                                             (43)
+
+This diagonal form follows directly from the second moment 1/|V| ∫︁ V ξmξndV = (1/5)(AAT)mn of the axis-aligned ellip-
+soid and is not an arbitrary choice; off-diagonal terms vanish because the ellipsoid axes are aligned with the coordinate
+
+axes.
+
+  Let u be the displacement field and let v be an admissible virtual displacement field vanishing on the essential boundary.
+
+The weak form follows from the first variation of the total potential energy, supplemented by the inertial virtual work. Let
+U denote the space of admissible displacement fields satisfying the essential boundary conditions on Γu (and Γg when
+prescribed), and let V0 denote the space of test functions vanishing on the essential boundary. The problem is to find
+u ∈U such that, for all v ∈V0,
+
+        ∫︂                    1  ∫︂
+           εij(v)Cijklεkl(u) dΩ+        Lmnεij,m(v)Ci jklεkl,n(u) dΩ
+      Ω                  10  Ω
+                 ∫︂                 ∫︂               ∫︂
+       +   ρ vi¨ui dΩ=    viPi dΩ+       vi¯ti dΓ.                                                             (44)
+            Ω           Ω                   Γt
+
+For static problems, the inertial term is omitted. The higher-order natural boundary terms are those associated with the
+
+boundary conditions introduced in Section 4.
+
+  After spatial discretization, the semi-discrete finite element equations take the standard form
+
+     M¨d + Kd = F,                                                                                            (45)
+
+
+where d is the global degree-of-freedom vector, F is the global load vector, M is the mass matrix, and
+
+
+   K = Kcl + Kg.                                                                                            (46)
+
+                                               12
+
+--- PAGE 13 ---
+The classical stiffness matrix is
+
+                ∫︂
+      Kcl =   BTCB dΩ,                                                                                       (47)
+           Ω
+
+where B is the classical strain-displacement matrix and C is the elasticity matrix in Voigt notation consistent with the
+engineering strain vector. The gradient stiffness matrix is
+
+          1  ∫︂ ∑︂d ∑︂d     (︄∂B )︄T   (︄∂B )︄    Kg =              Lαβ     C      dΩ,                                                               (48)
+          10  Ω α=1 β=1     ∂xα      ∂xβ
+
+where d is the spatial dimension of the reduced kinematic model. For an axis-aligned ellipsoidal neighbourhood, Eq. (48)
+
+reduces to
+
+          1  ∫︂ ∑︂d   (︄∂B )︄T   (︄∂B )︄    Kg =              l2α     C      dΩ.                                                                    (49)
+          10  Ω α=1   ∂xα      ∂xα
+
+For the spherical characteristic-length case, l1 = l2 = l3 = l, this becomes
+
+                l2  ∫︂   d (︄∂B )︄T   (︄∂B )︄            ∑︂    Kg =           C      dΩ.                                                                      (50)
+          10  Ω α=1  ∂xα      ∂xα
+
+  The consistent mass matrix is
+
+              ∫︂
+   M =   ρ NTN dΩ,                                                                                       (51)
+          Ω
+
+where N is the displacement interpolation matrix. For free-vibration analysis, Eq. (45) gives the generalized eigenvalue
+
+problem
+
+    Kϕ = ω2Mϕ,                                                                                             (52)
+
+
+where ϕ is the eigenvector (natural mode shape) and ω is the natural circular frequency.
+
+
+5.2. One-Dimensional Hermite Element
+
+  For the one-dimensional bar, the displacement field is u(x) and
+
+     ε = u′,      ε,x = u′′.                                                                                      (53)
+
+
+The strain energy reduces to
+
+         1 ∫︂L                                               l2
+   U =     EAc [︂(u′)2 + a2(u′′)2]︂ dx,     a2 =                                                              (54)         2   0                                 10,
+
+where E is Young’s modulus and Ac is the cross-sectional area.
+ A two-node cubic Hermite element is used. Each node contains the displacement and its first derivative,
+
+                         du       di =  [︂ui   θi ]︂T ,       θi =              .                                                                          (55)
+                                                     dx⃓⃓⃓⃓⃓x=xi
+
+For an element of length Le,
+
+      ue(x) = Nde,     de =  [︂u1   θ1  u2   θ2 ]︂T ,                                                                (56)
+
+
+
+                                               13
+
+--- PAGE 14 ---
+where N = [N1 N2 N3 N4] is the Hermite shape-function matrix containing the cubic shape functions defined below.
+  Using the local natural coordinate s = x/Le, 0 ≤s ≤1 (with s = 0 at first node and s = 1 at second node), the Hermite
+shape functions are
+
+     N1 = 1 −3s2 + 2s3,                                                                                       (57)
+     N2 = Le(s −2s2 + s3),                                                                                     (58)
+     N3 = 3s2 −2s3,                                                                                           (59)
+     N4 = Le(−s2 + s3).                                                                                        (60)
+
+
+Defining
+
+        dN         d2N
+     B1 =       ,    B2 =         ,                                                                                 (61)
+          dx           dx2
+
+the element stiffness matrix is
+
+               ∫︂
+     Ke =   EAc (︂ BT1 B1 + a2BT2 B2 )︂ dx.                                                                        (62)
+                     xe
+
+The consistent mass matrix is
+
+                ∫︂
+    Me =    ρAc NTN dx.                                                                                    (63)
+                     xe
+
+5.3. Two-Dimensional Bogner–Fox–Schmit Element
+
+  For the two-dimensional plane-strain formulation, the displacement field is
+
+    u =  [︂u  v]︂T ,                                                                                             (64)
+
+
+and the engineering strain vector is
+
+            εxx         u,x
+     ε =  εyy =      v,y       .                                                                                    (65)                                                                                                                                                                  ⎡⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎣ γxy  ⎤⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎦                                              ⎡⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎣ u,y + v,x  ⎤⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎦
+
+The matrix C in this subsection denotes the corresponding plane-strain elasticity matrix written in Voigt form consistent
+
+with the engineering shear strain convention.
+
+ A Bogner–Fox–Schmit bicubic Hermite rectangular element is used for each displacement component. For a scalar
+
+field w, the nodal degrees of freedom are
+
+
+     w,      w,x,      w,y,      w,xy.                                                                             (66)
+
+
+Thus, each node has eight degrees of freedom in two-dimensional elasticity:
+
+       di =  [︂ui   ui,x    ui,y   ui,xy   vi    vi,x    vi,y    vi,xy ]︂T .                                                          (67)
+
+
+  For the spherical characteristic-length case, the element stiffness matrix is
+
+               ∫︂                                                                  l2
+     Ke =                                      [︂BTCB + a2 (︂BT,xCB,x + BT,yCB,y )︂]︂ dΩ,     a2 = 10.                                              (68)               Ωe
+
+
+
+
+                                               14
+
+--- PAGE 15 ---
+For an axis-aligned ellipsoidal model, the stiffness matrix becomes
+
+               ∫︂                 l21                l22     Ke =                                                                                                                (69)               + 10BT,xCB,x + 10BT,yCB,y ⎤⎥⎥⎥⎥⎦dΩ.               Ωe ⎡⎢⎢⎢⎢⎣BTCB
+
+If a rotated characteristic-length tensor is used, the cross term L12BT,xCB,y and its symmetric counterpart follow directly
+from Eq. (48).
+
+  The consistent mass matrix is
+
+                ∫︂
+    Me =    ρ NTv Nv dΩ,                                                                                     (70)
+               Ωe
+
+where Nv is the vector displacement interpolation matrix.
+
+
+5.4. Three-Dimensional Tricubic Hermite Brick Element
+
+  For the three-dimensional formulation, the displacement vector is
+
+    u =  [︂u  v w ]︂T ,                                                                                         (71)
+
+
+and the engineering strain vector is
+
+            εxx         u,x
+             εyy          v,y
+              εzz        w,z
+     ε =    =                  .                                                                                    (72)
+             γyz       v,z + w,y
+            γxz      u,z + w,x                                                                                                                                                                                                                                                                                                                                                                                                          ⎡⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎣ γxy     ⎤⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎦                                                                                                                ⎡⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎣ u,y + v,x              ⎤⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎦
+
+Here also, C is understood in Voigt form consistent with the engineering shear strain convention.
+
+ A tensor-product tricubic Hermite brick element is used. For each scalar field q, the nodal degrees of freedom are
+
+
+       q,    q,x,    q,y,    q,z,    q,xy,    q,xz,    q,yz,    q,xyz.                                                           (73)
+
+
+Thus, for the three displacement components, each node contains 24 degrees of freedom:
+
+       di = [ui, ui,x, ui,y, ui,z, ui,xy, ui,xz, ui,yz, ui,xyz,
+
+               vi, vi,x, vi,y, vi,z, vi,xy, vi,xz, vi,yz, vi,xyz,                                                                    (74)
+            wi, wi,x, wi,y, wi,z, wi,xy, wi,xz, wi,yz, wi,xyz]T.
+
+  For the spherical characteristic-length case, the element stiffness matrix is
+
+               ∫︂                                                                               l2
+     Ke =                                      [︂BTCB + a2 (︂BT,xCB,x + BT,yCB,y + BT,zCB,z )︂]︂ dΩ,     a2 = 10.                                    (75)               Ωe
+
+For the axis-aligned ellipsoidal model with distinct characteristic lengths, the stiffness matrix is
+
+               ∫︂                 l21                l22               l23     Ke =                                                                                                                (76)               + 10BT,xCB,x + 10BT,yCB,y + 10BT,zCB,z ⎤⎥⎥⎥⎥⎦dΩ.               Ωe ⎡⎢⎢⎢⎢⎣BTCB
+
+For a rotated ellipsoidal neighbourhood, the general tensor form in Eq. (48) is used.
+
+
+
+
+                                               15
+
+--- PAGE 16 ---
+  The consistent mass matrix is
+
+                ∫︂
+    Me =    ρ NTv Nv dΩ.                                                                                     (77)
+               Ωe
+
+5.5. Implementation Remarks
+
+  Hermite-type elements contain displacement derivatives as nodal degrees of freedom. The corresponding stiffness and
+mass matrices may therefore contain entries with different physical dimensions and scales. To improve conditioning, a
+
+symmetric diagonal scaling is applied to the free-degree system. For static analysis,
+
+      ˜K = SKf f S,       ˜F = SFf ,     df = S˜d,                                                                  (78)
+
+where K f f and F f are the stiffness matrix and force vector after imposing essential boundary conditions, ˜K and ˜F are
+the scaled stiffness and force, d f is the physical displacement vector, ˜d is the scaled displacement, and S is the diagonal
+scaling matrix. In the present implementation, S is chosen as a diagonal matrix based on the inverse square root of the
+
+positive diagonal entries of K f f .
+  For free-vibration analysis, the scaled generalized eigenvalue problem is
+
+       ˜K˜ϕ = ω2 ˜M˜ϕ,     ˜M = SMf f S,                                                                           (79)
+
+where ˜K and ˜M are the scaled stiffness and mass matrices, M f f is the mass matrix after imposing essential boundary
+conditions, ˜ϕ is the scaled eigenvector, and ω is the natural circular frequency, and the physical eigenvector is recovered
+
+from
+
+    ϕ = S˜ϕ.                                                                                                   (80)
+
+
+The scaling changes only the numerical representation of the algebraic system;  it does not modify the finite element
+
+approximation.
+
+  The essential boundary conditions in the direct strain-gradient implementation include classical displacement con-
+
+straints and, when prescribed, Hermite derivative constraints. On boundaries where the corresponding derivative degrees
+
+of freedom are left free, the natural higher-order boundary conditions are enforced through the weak form. The present
+formulation is given first in general 3D form. The weak form is  ∫︁ ε(v)Cε(u) + 1/10 ∫︁ Lmnε,m(v)Cε,n(u) with stiffness
+K = Kcl + Kg. The gradient part is Kg = 1/10 ∫︁∑︁Lαβ(∂B/∂xα)TC(∂B/∂xβ). One-dimensional cubic Hermite, two-
+dimensional BFS bicubic and three-dimensional tricubic elements are reduced kinematic specializations of the same 3D
+continuum, corresponding to uniaxial u(x), plane-strain u(x, y) and full u(x, y, z). The 3D coefficient 1/10 is retained for
+cross-dimensional consistency, as detailed in Appendix A. For truly lower-dimensional materials 1/6 for 1D and 1/8 for
+2D would be appropriate. Extension to irregular geometries requires isoparametric C1 Hermite elements. The parent do-
+main (ξ, η, ζ) ∈[−1, 1]3 is mapped to the physical domain via Hermite blending that preserves C1 continuity. Derivatives
+are transformed via the Jacobian J = ∂x/∂ξ with the Hessian for second derivatives, and C1 continuity of the normal
+
+derivative across curved interfaces is enforced via constraints or BFS blending. For general quadrilateral and hexahedral
+meshes C1 continuity is non-trivial and requires Argyris or Bell elements, or alternatively isogeometric analysis with
+NURBS basis (Cp−1) or virtual element formulations [51]. The present rectangular formulation serves as a verification
+
+basis, with curved boundaries left as future work. For 3D mesh sensitivity, tricubic Hermite elements contain derivative
+DOFs. The clamped-gradient conditions ui = 0 and ui, j = 0 at x = 0 are enforced essentially, which allows an exponential
+boundary layer θ(x) ≈F/EA(1−e−x/a) with a = √︁ l2/10 = 0.0158 m for l = 0.05 m. For a 2×1×1 mesh hx = 0.5 m ≫a,
+the boundary layer is under-resolved. This causes 5.9% displacement variation and 9.3% frequency variation compared
+with a 6×3×3 mesh with hx = 0.166 m. Real output from mesh_sensitivity_3D.m shows displacement increasing from
+u = 4.5665 µm at 2 × 1 × 1 to u = 4.8371 µm at 6 × 3 × 3, while frequency decreases from f1 = 193.00 Hz to f1 = 174.96
+
+
+                                               16
+
+--- PAGE 17 ---
+Hz, with the intermediate 4×2×2 mesh giving u = 4.7876 µm and f1 = 178.72 Hz. Convergence is monotonic from below
+for displacement and from above for frequency, consistent with a conforming over-stiff formulation. A fourth-order rate is
+expected only when hx ≪a, which requires more than 20 elements in the x-direction for l/Lx = 0.05. Gradient energy is
+integrated with 3×3×3 Gauss points exactly. Diagonal scaling keeps κ < 106 and equilibrium error < 10−11. With respect
+to micro-inertia, the present model uses classical kinetic energy T = 1/2 ∫︁ ρ˙ui˙uidΩand omits Tg = 1/2 ∫︁ ρl2k ˙ui, j˙ui, jdΩ
+(Mindlin 1964). Including Tg gives an enriched mass Mg and dispersion ω2 = c2k2(1 + l2sk2/10)/(1 + l2kk2). For weakly
+nonlocal response lkk ≪1 and low-frequency first six modes with knL ∼(2n −1)π/2, the condition lkn < 0.3 holds for
+l/L ≤0.05 and the effect is < 5%, so it is omitted for clarity.
+
+
+6. Numerical Results and Discussion
+
+6.1. Material and Simulation Parameters
+
+  Unless otherwise specified, all numerical results presented in this study are obtained for a structural steel characterised
+by a Young’s modulus of E = 200 GPa and a mass density of ρ = 7800 kg m−3.
+  For adopted parameters for the one dimensional bar example are L = 1 m, A = 1 × 10−4 m2, and F = 104 N. Whereas
+for a two dimensional plane-strain domain example a domain of size Lx × Ly = 1 m × 0.2 m is considered with the Poisson
+ratio is ν = 0.30 and uniform right edge traction tx = 106 Pa. In order to examine size effects, the ratio l/L is chosen in
+the scale of 0 to 0.20.  li are material constants (fabric-tensor-like second moments), while anisotropy ratio AR = lx/ly
+and orientation θ are processing-induced design manifestations (fibre orientation, print direction, drawing direction), not
+optimization variables tuned with external fields. See Sec.7. A boundary layer reference case with l/L = 0.05 has been
+
+considered unless otherwise noted. These settings help to expose the exponential boundary layer profile and maintain a
+
+global displacement response.
+
+  The one-dimensional problem is treated first since the clamped slope strain gradient bar admits a closed-form analytical
+solution enabling rigorous verification of the proposed C1 Hermite finite element implementation. Following the verifica-
+
+tion for one dimension, the formulation is extended to two and three dimensions via Bogner–Fox–Schmit (BFS) bicubic
+
+Hermite element, and to three-dimensional problems using the tensor-product tricubic Hermite element, respectively.
+These extensions preserves the same inter-element continuity conditions and the gradient stiffness constructions.
+
+
+6.2. One-Dimensional Strain-Gradient Bar
+
+6.2.1. Boundary-Layer Characteristics
+
+
+    500   (a)                                          5   (b)
+
+    400                                                                          10-4) 4
+ m) 300                       ( 3
+
+
+(
+    200                                                                                                   du/dx 2  u(x)
+                       =
+                                                                     (x)    100                                               1
+
+
+      0                                               0
+
+       0       0.2       0.4       0.6       0.8      1       0       0.2       0.4       0.6       0.8      1
+                          x/L                                            x/L
+
+Figure 2: Boundary-layer characteristics of the one-dimensional strain-gradient bar under clamped-slope conditions (l/L = 0.05, E = 2 × 1011 Pa,
+A = 10−4 m2, L = 1 m, F = 104 N, Nel = 100): (a) axial displacement distribution u(x); (b) slope distribution θ(x) = du/dx. Displacement remains
+nearly linear, while slope shows exponential layer near clamped end.
+
+
+                                               17
+
+--- PAGE 18 ---
+  The displacements and their slopes predicted using the proposed C1 Hermite finite element method for the strain
+gradient bar under tip load with essential boundary condition θ(0) = 0 applied at the fixed end are shown in Figure 2. As
+can be seen from the two plots, the solution uses two different length scales: a globally nearly linear displacement that is
+determined by the classical stiffness, and an exponentially decaying local correction to the strain field in a thin layer near
+
+the clamped end.
+   It can be seen from panel (a) that the displacement is a monotonic function, starting from u(0) = 0 up to the end
+
+subjected to loading. At the scale of the entire domain the curve is visually indistinguishable from the classical one,
+ucl(x) = Fx/(EA), as the axial force is everywhere constant and thus would produce uniform strain in the case of no
+additional constraints. Analytical value of the displacement at the loaded end in the case of a clamped-slope problem
+subjected to a tip force is uSG(L) = (F/EA)(L −a tanh(L/a)), resulting in an approximate value of 492 µm — some 1.6 %
+less than the classical one, FL/(EA) = 500 µm.
+  The effect cannot be observed on the scale of panel (a), but it is important in that it constitutes an observable effect of
+the microstructural length parameter: it is non-zero for any l > 0 and is missing in any classical analysis, regardless of the
+fineness of the mesh used. The observed stiffening is a direct consequence of the higher-order slope constraint θ(0) = 0,
+
+which forces the strain distribution to depart from uniformity near the fixed end, thereby activating the strain-gradient
+
+energy contribution. If natural boundary conditions are imposed (i.e., no constraint on the slope at either end), then the
+
+tip-loaded strain gradient bar has the classical uniform strain solution as its exact solution.
+
+  Slope distribution depicted in panel (b) illustrates this process directly. According to classical theory of elasticity, axial
+strain ε = du/dx under a constant internal resultant of force is uniform and equals F/(EA). The second-order governing
+
+equation does not have a separate essential boundary condition for slope and cannot generate any boundary layer. The
+
+fourth-order governing equation with respect to the displacement allows imposing two essential boundary conditions
+independently of the displacement boundary conditions. The slope boundary condition θ(0) = 0 corresponds precisely to
+
+this case: it is possible to impose this condition in the context of strain gradient theory but has no counterpart in classical
+
+theory.
+  The slope grows from zero value at x = 0, goes through the sharp monotonic increase and approaches the classical
+plateau F/(EA) = 5 × 10−4 when x/L ≲0.10. Then, θ(x) becomes constant to the precision of the graph plotting for the
+
+rest of the area.
+  The length of the boundary layer is determined by the gradient length a = √︁ l2/10 resulting from the ellipsoidal non-
+
+local averaging procedure.
+
+
+      θ(x) ≈F   (︂ 1 −e−x/a)︂ ,                                                                                    (81)
+        EA
+
+Given the current parameters, a/L ≈1.6 × 10−2, which means that the layer covers approximately the first two percent
+of the total length of the bar. Given the assumption that L/a ≫1, which applies for the current case (L/a ≈63), the
+
+exact analytical solution reduces to the one which shows that the boundary layer is governed by an exponential kernel
+
+with length scale equal to a.
+  The classical result is obtained in the limiting case of l →0, as a →0 implies e−x/a →0 for all x > 0. The finite
+element results agree with the analytical slope profile to 10−3 % accuracy in the case of the present 100-element mesh;
+the relative tip-displacement error reduces from about 1.2 % in the case of a coarse 5-element mesh to less than 10−3 % in
+the present 100-element mesh, indicating the fourth order of algebraic convergence of the C1 cubic Hermite interpolation
+which is expected and proving that the layer structure is well resolved with a uniformly-spaced mesh when h ≪a.
+
+  Together, both panels show that the strain-gradient influences act within the boundary zones due to higher-order bound-
+
+ary conditions, whereas the interior behavior follows classic elasticity principles. This separation of scales is an inherent
+
+property of Aifantis-type gradient elastic models. Such behavior of solutions leads us to the parametric study of the
+
+microstructural parameter.
+
+
+                                               18
+
+--- PAGE 19 ---
+6.2.2. Influence of the Microstructural Length Parameter on Static Response
+
+
+    500                                                1
+             (a)                                                   (b)
+
+    495                                                    0.99
+
+    490                                                    0.98
+ m)                                                                                            ucl(L)
+( 485                   /  0.97
+
+                                                            0.96  u(L) 480                                                                               uSG(L)
+    475                                                    0.95
+                     Classical
+             FEM
+    470                                                    0.94                   Exact SG
+
+       0        0.05        0.1        0.15        0.2         0        0.05        0.1        0.15        0.2
+                              l/L                                                      l/L
+
+Figure 3: Influence of the microstructural length parameter on the static response of the one-dimensional strain-gradient bar (E = 2 × 1011 Pa, A =
+10−4 m2, L = 1 m, F = 104 N): (a) tip displacement u(L); (b) normalised displacement ratio uSG(L)/ucl(L) versus l/L. Both quantities decrease
+monotonically with l/L.
+
+
+  Figure 3 presents the results of a parametric study in which the microstructural length parameter l is varied over the
+range l/L ∈[0, 0.20] while all other material and geometric parameters are held constant. Panel (a) demonstrates that
+the tip displacement u(L) decreases monotonically as l/L increases, departing progressively from the classical prediction
+ucl(L) = FL/(EA) = 500 µm and reaching approximately 468 µm at l/L = 0.20. This behavior shows that this stiffening
+is not a change in the classical elastic modulus, but the activation of a higher-order resistance to non-uniform strain
+distributions. The clamped-slope condition θ(0) = 0 forces the axial strain to depart from the uniform state near the fixed
+
+boundary, and the strain-gradient energy term
+
+       1     ∫︂L    2EA a2     (u′′)2 dx
+                  0
+
+penalises the resulting strain curvature with a contribution that scales with a2 = l2/10. This additional stiffness grows with
+
+the microstructural length parameter l, which characterises the spatial extent of the nonlocal microstructural averaging
+domain and is a property of the material rather than of the bar geometry. Consequently, the effective structural stiffness
+
+increases with l, and the corresponding tip displacement falls below the classical prediction by an amount that grows with
+l/L.
+  The normalised displacement ratio uSG(L)/ucl(L) shown in panel (b) provides a dimensionless measure of the stiffening
+that is independent of the applied load F and the cross-sectional stiffness EA, depending instead solely on the dimension-
+less ratio l/L. The ratio equals unity at l/L = 0, confirming that the strain-gradient model converges to classical elasticity
+when the microstructural length vanishes, and it decreases with a near-linear dependence on l/L throughout the range
+considered. This near-linearity follows from the analytical solution uSG(L) = (F/EA)(L −a tanh(L/a)): for L/a ≫1
+                                              √
+(satisfied for all values shown), tanh(L/a) →1 and the ratio reduces to 1 −l/(L  10), a linear function of l/L with slope
+  √
+−1/  10. At l/L = 0.10, the normalised ratio is approximately 0.968, indicating a tip displacement roughly 3.2 % below
+the classical value — a difference that is systematic, repeatable, and absent from any classical finite element analysis
+regardless of mesh refinement. The agreement between the C1 Hermite finite element solution and the exact analytical
+
+result is excellent in both panels, consistent with the fourth-order convergence established in Section 6.2.1.
+  These results confirm that the proposed one-dimensional discretisation is both sufficiently accurate and mesh-converged.
+
+Having established the size-dependent static response, we now examine the free-vibration characteristics of the strain-
+
+gradient bar.
+
+
+                                               19
+
+--- PAGE 20 ---
+6.2.3. Influence of the Microstructural Length Parameter on Free-Vibration Characteristics
+
+
+          (a)                         Mode 1          1.5   (b)                        Mode 1
+    20                             Mode 2                                       Mode 2
+                                  Mode 3                                       Mode 3
+                                  Mode 4          1.4                             Mode 4   (kHz)                               Mode 5                                       Mode 5
+    15                                  Mode 6                                       Mode 6
+                                                               1.3                                                                                                                                                          fclassical
+
+                      /     frequency 10
+                                              fSG 1.2
+    Natural
+     5                                                        1.1
+
+
+                                                      1
+     0
+      0         0.05        0.1        0.15        0.2        0         0.05        0.1        0.15        0.2
+                             l/L                                                      l/L
+
+Figure 4: Free-vibration characteristics of the one-dimensional strain-gradient bar (E = 2×1011 Pa, ρ = 7800 kg m−3, A = 10−4 m2, L = 1 m, Nel = 120):
+(a) first six natural frequencies versus l/L; (b) normalised frequency ratio fSG/ fclassical versus l/L. Every natural frequency increases monotonically with
+l/L, with higher modes exhibiting progressively greater strain-gradient stiffening.
+
+
+  Figure 4 presents the free-vibration response of the strain-gradient bar as a function of the normalised microstructural
+length l/L over the range [0, 0.20]. Panel (a) shows that every natural frequency increases monotonically with l/L, so
+the strain-gradient formulation predicts a stiffer dynamic response than classical elasticity for all modes and all non-zero
+
+values of the microstructural length. The increase is markedly mode-dependent across the spectrum. Notably Mode 1
+increases only modestly from nearly 1.3 kHz to 1.4 kHz — whereas Mode 6 experiences a substantial elevation, growing
+
+from roughly 14 kHz to more than 21 kHz over the same parameter range. The growth patterns become increasingly
+nonlinear as l/L increases, with the modal patterns bending more sharply at larger values of the microstructural length.
+
+This concave-upward behaviour of the curves is consistent with the quadratic scaling of the strain-gradient contribution
+with l. Since the gradient energy term scales with a2 = l2/10, doubling l/L increases the gradient-energy contribution by
+
+a factor of four, thereby producing the increasingly nonlinear frequency growth observed in Figure 4(a). The monotonic
+
+increase of all natural frequencies is an inherent property of the present strain-gradient formulation. This follows from the
+fact that the gradient energy functional contributes a positive-definite increment to the stiffness matrix, while leaving the
+
+mass matrix unchanged. As the closed form eigen frequencies are not available for the clamped-slope strain-gradient bar,
+the dynamic verification is established on the internal spectrum consistency and on the correct limiting nature as l →0.
+
+  The mode-dependent sensitivity apparent in panel (a) is further quantified in panel (b) by the means of the normalised
+frequency ratio  fSG/fclassical. The curve hierarchy is identical in both panels. Although the ordering of the curves is
+identical in both panels, their physical interpretation is different.  Higher modes carry larger absolute frequencies in
+
+panel (a), whereas panel (b) shows that they also experience proportionally larger frequency gains. Mode 6 reaches a
+ratio of approximately 1.52 at l/L = 0.20, while Mode 1 retains the smallest ratio of roughly 1.08 at the same length.
+
+This mode-selective amplification arises from the spectral structure of the gradient energy: for mode n of the clamped
+bar the modal wavenumber scales as kn ∝(2n −1), and the gradient energy contribution to the n-th Rayleigh quotient
+involves (a kn)2, which grows as (2n−1)2. Because this quantity increases rapidly with n, the gradient energy represents a
+progressively larger fraction of the total elastic energy for higher modes: it is nearly negligible for Mode 1 but dominant
+for Mode 6 when l/L is appreciable. High-frequency, short-wavelength modes are therefore far more sensitive to the
+
+microstructural length than their low-frequency counterparts, a behaviour that has no counterpart in scale-independent
+
+classical continuum mechanics.
+  At the smallest values of l/L shown, all six ratio curves originate near unity, confirming that the strain-gradient model
+
+                                               20
+
+--- PAGE 21 ---
+approaches the classical solution as l →0. The fact that the ratios are slightly above unity even at the smallest l/L reflects
+the combined contribution of the gradient energy and the additional kinematic boundary condition θ(0) = 0, which has no
+
+counterpart in the classical model and independently raises all natural frequencies by constraining an additional degree of
+freedom. As l/L grows, the gradient energy term dominates and the mode-dependent amplification accelerates, producing
+
+the fan-shaped divergence of the ratio curves evident in panel (b).
+  The one-dimensional study has established that the proposed C1 Hermite formulation accurately reproduces the static
+
+strain-gradient response through comparison with the analytical solution, while the dynamic formulation exhibits the
+
+correct limiting behaviour and internally consistent spectral characteristics. The natural progression is to generalize the
+
+formulation to two dimensions, allowing the full ellipsoidal nonlocal operator with independent characteristic lengths lx
+and ly to be activated and the anisotropic stiffening predicted by the theory to be evaluated in quantitative terms.
+
+
+6.3. Two-Dimensional Plane-Strain BFS Formulation
+
+  The generalization to two dimensions employs the Bogner–Fox–Schmit (BFS) bicubic Hermite rectangular element,
+which provides the C1 inter-element continuity required by the fourth-order strain-gradient operator. The plane-strain
+constitutive matrix and the gradient-stiffness assembly follow directly from Section 4.3. Because no closed-form analyti-
+
+cal solution exists for the two-dimensional clamped-gradient problem, the BFS implementation is verified through mesh
+
+convergence (Section 6.3.2) and through cross-comparison with the one-dimensional results where the physics permits.
+
+
+6.3.1. Influence of the Microstructural Length Parameter on Static Response
+
+
+ m)  4.5                                                1                (a)                                                   (b)
+
+ (
+    4.45                                                    0.99
+
+                                                            0.98
+      4.4                                                                                             uR,ref
+                      /  0.97      displacement
+    4.35
+
+                                                            0.96                                                                                                                            uR(l/Lx)      4.3     right-edge                                                        0.95
+  Avg. 4.25                                                    0.94
+
+        0        0.05        0.1        0.15        0.2         0        0.05        0.1        0.15        0.2
+                             l/Lx                                                    l/Lx
+
+
+Figure 5: Influence of the microstructural length parameter on the static response of the two-dimensional strain-gradient plane-strain domain (E =
+2 × 1011 Pa, ν = 0.30, Lx = 1 m, Ly = 0.2 m, tx = 106 Pa, 20 × 4 BFS mesh): (a) average right-edge displacement ¯uR; (b) normalised displacement ratio
+¯uR/¯uR,ref versus l/Lx. Both quantities decrease monotonically with l/Lx.
+
+
+  Figure 5 extends the microstructural length-scale study of Section 6.2.2 to the two-dimensional plane-strain setting,
+using the BFS formulation on a 20 × 4 rectangular mesh. Panel (a) shows that the average right-edge displacement ¯uR
+decreases monotonically as l/Lx increases from the smallest value considered to l/Lx = 0.20. The displacement decreases
+from approximately 4.50 µm to approximately 4.23 µm, corresponding to a reduction of nearly 6 % relative to the reference
+
+configuration. The profile exhibits a smooth and nearly linear decline over the range considered, indicating a systematic
+increase in strain-gradient stiffening with increasing microstructural length. The physical origin of this behaviour is
+
+identical to that observed in the one-dimensional study: the clamped-gradient boundary conditions generate non-uniform
+
+strain fields near the constrained boundary, thereby activating the gradient energy contributions. As the microstructural
+
+length increases, these higher-order energy terms contribute more significantly to the total strain energy, resulting in an
+increase in the effective structural stiffness and a corresponding reduction in deformation under the same applied loading.
+
+
+                                               21
+
+--- PAGE 22 ---
+  Panel (b) isolates the size effect through the normalised displacement ratio ¯uR(l/Lx)/¯uR,ref, where ¯uR,ref denotes the
+displacement corresponding to the smallest microstructural length considered. The ratio approaches unity as l/Lx →0
+and decreases monotonically to approximately 0.94 at l/Lx = 0.20. A comparison with the one-dimensional results
+of Section 6.2.2 reveals a remarkably similar level of stiffening, despite the additional kinematic constraints and two-
+directional gradient effects present in the plane-strain formulation. This close agreement confirms that the microstructural
+length parameter governs the dominant stiffening mechanism in a consistent manner across both formulations, and that
+the l/L scaling established in one dimension remains a reliable predictor of the order of magnitude of size effects in two
+
+dimensions. The smoothness of the computed response, the absence of spurious oscillations, and the physically consistent
+limiting behaviour as l/Lx →0 collectively provide preliminary evidence that the BFS discretisation correctly captures
+the governing strain-gradient mechanics.
+
+  Before proceeding to the anisotropic investigation, the mesh independence of the BFS formulation must be established.
+
+
+6.3.2. Mesh Convergence of the BFS Formulation
+
+ m)                                                     100                (a)                                                   (b) ( 4.45
+
+    4.44
+                                                                                         (\%)
+    4.43
+                                                                                                               error      displacement    4.42
+                                                              10-10    4.41                                                                                                                                                                                 Relative     right-edge  4.4
+  Avg. 4.39
+        0    500   1000  1500  2000  2500  3000                         10-1
+                  Total degrees of freedom                       Element size, h = Lx/nelx (m)
+
+Figure 6: Mesh convergence of the two-dimensional plane-strain BFS formulation (E = 2 × 1011 Pa, ν = 0.30, Lx = 1 m, Ly = 0.2 m, l/Lx = 0.05,
+tx = 106 Pa): (a) average right-edge displacement ¯uR versus total degrees of freedom; (b) relative error in ¯uR versus element size h. Displacement
+converges monotonically; error decreases near fourth-order rate.
+
+
+  Figure 6 examines the spatial convergence of the two-dimensional strain-gradient formulation through systematic mesh
+
+refinement of the BFS discretisation. The average right-edge displacement ¯uR is monitored while maintaining a constant
+element aspect ratio nelx/nely = Lx/Ly = 5. Six meshes ranging from 5×1 to 40×8 elements are considered, corresponding
+to 96 to 2952 total degrees of freedom. The study is performed at l/Lx = 0.05, the reference microstructural length used
+in the preceding parametric investigation.
+
+  Panel (a) illustrates the variation of the average right-edge displacement with increasing mesh density. The displacement
+increases monotonically from approximately 4.39 µm on the coarsest mesh to approximately 4.45 µm on the finest mesh,
+
+gradually approaching a stable limiting value. The monotone increase, with ¯uR approaching its converged value from
+below, is the over-stiff behaviour characteristic of a conforming displacement-based finite element formulation: by the
+Rayleigh–Ritz principle the discrete solution is at least as stiff as the exact one on any given mesh, and the gap narrows
+as the mesh is refined. The difference between the adopted 20 × 4 mesh and the finest reference mesh is less than
+0.07 %, indicating that the computed displacement response has effectively reached mesh independence and that the size-
+dependent stiffening trends reported in Figure 5 are genuine physical effects rather than numerical artefacts of insufficient
+
+spatial resolution.
+
+  Panel (b) quantifies the convergence rate through the relative error, referenced to the finest mesh. The error falls from
+approximately 1.4 % at the coarsest discretisation to below 0.1 % by the 20 × 4 mesh and below 0.02 % at 30 × 6. On
+the log–log scale the slope steepens progressively, approaching the fourth-order algebraic rate expected of the C1 cubic
+
+                                               22
+
+--- PAGE 23 ---
+Hermite interpolation; the reduced apparent order on the coarsest meshes reflects incomplete resolution of the boundary
+
+layer when the element size h exceeds the gradient length a by roughly an order of magnitude. This behaviour is consistent
+
+with the one-dimensional convergence established in Section 6.2.1.
+
+  Overall, the results provide clear evidence that the two-dimensional implementation is spatially converged and nu-
+merically reliable. The 20 × 4 discretisation offers an effective balance between computational efficiency and numerical
+
+accuracy, and is therefore employed in all subsequent two-dimensional parametric studies.
+
+
+6.3.3. Influence of the Anisotropic Characteristic Lengths
+
+
+    4.55
+ m)         (a)                                                   (b)
+                                                      1 (  4.5
+
+                                                           0.99    4.45
+
+                                                           0.98
+      4.4                                                                              uR,ref                                                           0.97      displacement
+                      /    4.35
+                               uR 0.96
+      4.3
+                                                           0.95     right-edge 4.25
+                                                           0.94
+      4.2  Avg.
+                                                           0.93
+             1    2    3    4    5    6    7                   1    2    3    4    5    6    7
+                        Case                                         Case
+
+
+Figure 7: Influence of the anisotropic characteristic lengths on the static response of the two-dimensional strain-gradient plane-strain domain (E =
+2 × 1011 Pa, ν = 0.30, Lx = 1 m, Ly = 0.2 m, tx = 106 Pa, 20 × 4 BFS mesh): (a) average right-edge displacement ¯uR for seven (lx, ly) combinations;
+(b) normalised displacement ratio ¯uR/¯uR,ref. Larger axial lx gives greater stiffening.
+
+
+  Having verified the spatial convergence of the BFS formulation in Section 6.3.2, the present subsection examines the
+direction-dependent stiffening induced by anisotropic characteristic lengths. Whereas the study of Section 6.3.1 employed
+a single isotropic length lx = ly = l, the governing equations admit distinct characteristic lengths in the axial and transverse
+directions through the gradient operator
+
+            ∂2      ∂2
+     L = l2x   + l2y       ,           ∂x2     ∂y2
+
+and the associated strain-gradient energy contribution
+
+      1
+                      [︂l2x(∂xε)TC (∂xε) + l2y(∂yε)TC (∂yε)]︂ .
+     20
+
+Seven representative (lx, ly) combinations are considered on the same 20 × 4 mesh, ranging from the near-classical config-
+uration (0.005, 0.005) to strongly anisotropic cases in which one characteristic length is an order of magnitude larger than
+
+the other.
+
+  Panel (a) of Figure 7 shows that the displacement response depends strongly on which characteristic length is in-
+creased. The near-classical case (0.005, 0.005) yields ¯uR ≈4.50 µm, while the isotropic configuration (0.05, 0.05) pro-
+duces ¯uR ≈4.45 µm, consistent with the stiffening established in Figure 5. The influence of anisotropy becomes evident
+when comparing transposed pairs of characteristic lengths. The configuration (0.10, 0.02) yields ¯uR ≈4.38 µm, whereas
+the transposed case (0.02, 0.10) yields ¯uR ≈4.48 µm, corresponding to a difference of approximately 2.3 % despite in-
+volving the same set of length magnitudes. The disparity becomes more pronounced at larger values, where the pair
+(0.20, 0.02) and (0.02, 0.20) differs by approximately 5.3 %. In both comparisons, the configuration with the larger axial
+characteristic length lx exhibits the lower displacement and therefore the greater effective stiffness. A large transverse
+
+                                               23
+
+--- PAGE 24 ---
+length alone, (lx, ly) = (0.02, 0.20), reduces the displacement by only about 0.5 % relative to the reference, whereas the
+axial-dominant case (0.20, 0.02) produces a reduction of approximately 5.8 %.
+
+  The origin of this directional sensitivity lies in the interaction between the strain-gradient energy and the dominant
+deformation mode. Under the applied right-edge traction, the primary strain component is the axial strain εxx = ∂u/∂x.
+The clamped-gradient condition at the left boundary generates the same type of boundary layer identified in the one-
+
+dimensional study (Section 6.2.1), in which significant axial strain gradients develop near the constrained edge. The
+energy contribution weighted by l2x directly penalises this dominant strain variation and increases rapidly as lx grows. By
+contrast, the transverse strain-gradient contribution associated with l2y remains comparatively small because the plane-
+strain domain is slender (Ly/Lx = 0.2) and the deformation is predominantly axial. This explains why the fully enlarged
+configuration (0.20, 0.20) yields ¯uR ≈4.23 µm and a normalised ratio of approximately 0.94 — essentially identical to
+the axial-dominant case (0.20, 0.02) at 0.942: once lx becomes sufficiently large, further increasing ly has only a minor
+influence on the global response.  This result also provides a consistency check, since the isotropic (0.20, 0.20) case
+reproduces the ratio reported in Figure 5 at l/Lx = 0.20.
+  Panel (b) presents the same trends through the normalised displacement ratio ¯uR/¯uR,ref, thereby removing the depen-
+dence on the absolute displacement scale. The ratios for the axial-dominant cases decrease to approximately 0.974 and
+0.942, whereas those for the transverse-dominant cases remain close to unity at approximately 0.997 and 0.995. The sep-
+aration between these groups increases systematically as the characteristic lengths grow, demonstrating that the effective
+strain-gradient stiffening is governed primarily by the characteristic length aligned with the loading direction.
+
+  Considering the engineering point of view, These findings demonstrate practical value beyond isotropic models.  (i)
+Axial versus transverse dominance is clear. The pair (0.10, 0.02) versus (0.02, 0.10) differs by 2.3%, while (0.20, 0.02)
+versus (0.02, 0.20) differs by 5.3%. Axial-dominant (0.20, 0.02) produces 5.8% reduction, whereas transverse-dominant
+(0.02, 0.20) gives only 0.5%. An isotropic assumption would therefore under-predict axial stiffening and over-predict
+transverse response, which is critical for fibre composites where lx ≫ly.  (ii) The design space in Fig.11 reveals three
+regions. These are stiffening-optimal at high AR and low θ with max DSI, frequency-tuning at high AR near θ ≈45◦,
+and insensitive when AR≲2 or θ ≈90◦. (iii) DSI is defined as DS I = (ure f −u)/ure f with ure f from volume-equivalent
+isotropic liso =  (lxlylz)1/3.  It quantifies displacement reduction versus the isotropic baseline and enables tailoring by
+aligning the major axis with the load for maximum stiffness or at 45◦for minimum frequency. Values from the corrected
+solver use liso = (lxlylz)1/3 = 0.0431 m. With uref = 4.80 µm, u(0◦) = 4.6137 µm gives DSI= 3.9% and u(45◦) = 4.7031
+µm gives DSI= 2.0%. The index is predominantly positive from 0% to +29.6%, with only small negative values of
+−0.1% to −0.9% at high orientation angles θ ≳75◦for AR ≥2. This confirms no −8% cross-term softening at 45◦and
+
+confirms monotonic tuning. these findings indicate that lx and ly should be considered as independent material properties
+in microstructured media having directional morphology. In materials like fibre composite, layered film, or drawn metal,
+the primary effect could have a high dependence on the orientation of the characteristic microstructure environment. If we
+assume isotropic behaviour in such cases, there will be an underestimate of the stiffening effect in the dominant direction
+
+and, at the same time, an overestimate of the transverse direction. The spatial distribution of the displacement field causing
+the above mentioned effects will be discussed in the subsequent contour analysis.
+
+
+6.3.4. Spatial Distribution of the Displacement Field
+
+  Integrated displacement ratios shown in Figure 7 have indicated that the stiffening of the plane-strain body depends
+
+mainly on the axial characteristic length lx. Figure 8 illustrates this conclusion geometrically in terms of the distribution
+of the displacement magnitude field |u| for four representative values of (lx, ly) subjected to the same loading and mesh. In
+each subfigure, the field monotonically grows from zero at the clamped boundary at x = 0 up to the maximum value at the
+loaded boundary. Since the deformation occurs uniformly along the tensile loading direction x, |u| shows no significant
+variation through the thickness of the plane-strain body and it is less than 0.6 % of the magnitude. Consequently, |u| can be
+regarded almost as horizontal bands with different colors, although it is computed using two-dimensional gradient energy
+formulation. The small variation through the thickness of the plane-strain body is due to the slender shape (Ly/Lx = 0.2)
+
+
+                                               24
+
+--- PAGE 25 ---
+                     lx=0.050, ly=0.050                                         lx=0.100, ly=0.020
+      0.2                                                        0.2
+           (a)                                       4            (b)                                       4
+
+    0.15                                                     0.15
+                                                    3                                                      3
+  (m)  0.1                                              m)( (m)  0.1                                              m)(
+ y                                                2 |u| y                                                2 |u|
+
+    0.05                                            1       0.05                                            1
+
+      0                                            0        0                                            0
+        0      0.2     0.4     0.6     0.8     1               0      0.2     0.4     0.6     0.8     1
+                    x (m)                                         x (m)
+                     lx=0.020, ly=0.100                                         lx=0.200, ly=0.200
+      0.2                                                        0.2
+           (c)                                       4            (d)                                       4
+
+    0.15                                                     0.15
+                                                    3                                                      3
+  (m)  0.1                                              m)( (m)  0.1                                              m)(
+ y                                                2 |u| y                                                2 |u|
+
+    0.05                                            1       0.05                                            1
+
+      0                                            0        0                                            0
+        0      0.2     0.4     0.6     0.8     1               0      0.2     0.4     0.6     0.8     1
+                    x (m)                                         x (m)
+
+Figure 8: Spatial distribution of the displacement-magnitude field |u| (µm) for four characteristic-length combinations (E = 2 × 1011 Pa, ν = 0.30,
+Lx = 1 m, Ly = 0.2 m, tx = 106 Pa, 20 × 4 BFS mesh, shared colour scale): (a) isotropic (0.05, 0.05); (b) x-dominant (0.20, 0.02); (c) y-dominant
+(0.02, 0.20); (d) both large (0.20, 0.20). Panels (b) and (d) nearly coincide, confirming axial dominance.
+
+
+of the plane-strain body and the axial loading.
+
+  The very important aspect which may be achieved from the figure is the coupled comparison of the four panels. Both the
+Panels namely (b) and (d); the x-dominant case (0.20, 0.02) and the both-large case (0.20, 0.20) are appeared to be visually
+nearly similar on the shared colour scale even though the transverse length differs by an order of magnitude. Quantitatively
+their displacement fields differ by nearly 0.3 % pointwise. On the contrast, for the panels namely  (a) and (c) which are
+the isotropic case and the y-dominant case are likewise very similar as for both, the axial length remains small (lx ≤0.05)
+and the stiffening magnitude of ly is minimal. The two groups are separated by a noticeable reduction in displacement,
+with the large-lx group reaching a lower maximum (|u|max ≈4.24 µm) than the small-lx group (|u|max ≈4.45–4.48 µm).
+This observed accumulation offers a direct field-level indication of the integrated outcomes, depicting that the deformation
+field is governed by the lx, not ly and also as lx becomes large, the effect of transverse characteristic length becomes weak.
+  The influence of the axial length on the near-edge field structure is consistent with the boundary-layer mechanism
+
+identified in the one-dimensional study (Section 6.2.1). In the isotropic panel (a), the displacement rises comparatively
+
+sharply over the first element adjacent to the clamped edge, consistent with the rapid strain recovery characteristic of the
+
+gradient boundary layer. In the x-dominant panel (b), this near-edge rise is visibly more gradual, indicating that the large
+
+lx-weighted gradient energy smooths the axial strain distribution at the constrained boundary. The y-dominant panel (c)
+exhibits a response much closer to the isotropic case because the small value of lx imposes only a weak penalty on the
+axial strain gradient. These near-edge differences remain confined to a narrow region; over most of the domain the field
+
+recovers an approximately linear profile in all four cases, consistent with the uniform-strain regime that prevails far from
+
+the constrained boundary.
+
+   It should be noted that the larger characteristic-length values considered in the present design-space study are primarily
+
+intended to illustrate parametric anisotropy trends. Accordingly, these results should be interpreted as a sensitivity analysis
+
+rather than as a strict asymptotic realization of the weakly nonlocal regime assumed in the theoretical development.
+Overall, the contour plots verify that the stiffness behaviour predicted by the anisotropic strain-gradient model in terms of
+
+                                               25
+
+--- PAGE 26 ---
+its direction dependency is not only a consequence of integration but also a result of the geometry of the displacement field,
+
+with the characteristic length in the main deformation direction determining the distribution of the strain field adjacent to
+
+the clamped boundary, and, thus, the compliance of the plane-strain body. Therefore, the internal consistency between
+the 2D plane-strain static stiffening analysis (Section 6.3.1), mesh refinement analysis (Section 6.3.2), anisotropic length
+effects (Section 6.3.3) and the present field visualization is established at both local and global levels. This provides
+
+additional numerical support for the BFS formulation and establishes a consistent foundation for its extension to three
+
+dimensions.
+
+
+6.4. Three-Dimensional Tricubic Hermite Formulation
+
+  The three-dimensional generalization uses the tensor-product tricubic Hermite hexahedral element, which allows for C1
+
+continuity between elements in all three coordinate directions that the fourth-order strain-gradient operator requires. The
+
+degrees of freedom at each node include 24 (the displacement, its three first-order partials, three second-order partials, and
+the mixed partial third derivative, of the three displacement components), and gradient stiffness assembly proceeds directly
+from the one- and two-dimensional cases. The relatively coarse 4 × 2 × 2 grid used here accounts for the much greater
+
+computational expense of the three-dimensional approach while still being fine enough to capture the physics. As was
+
+true in two dimensions, no closed-form solution is available for the three-dimensional clamped gradient formulation, and
+
+the analysis is confirmed via comparison to the lower dimensional solutions as well as examination of the displacement
+
+fields.
+
+
+6.4.1. Impact of the Microstructural Length Parameter on the Static Response
+
+                                                             105
+       1       (a)                                     7       (b)
+
+      0.99                                             6                                                                                                                                          number
+
+      0.98                                             5
+  uSG/uref                                                                                                                                                                                               condition
+      0.97                                             4
+
+      0.96                                             3                                                                                                                                                                                                               Estimated
+
+         0         0.05        0.1        0.15        0.2     0         0.05        0.1        0.15        0.2
+                               l/Lx                                                 l/Lx
+
+
+Figure 9: Influence of the microstructural length parameter on the three-dimensional strain-gradient cuboid (E = 2 × 1011 Pa, ν = 0.30, Lx = 1 m,
+Ly = Lz = 0.2 m, tx = 106 Pa, 4 × 2 × 2 tricubic Hermite mesh): (a) normalised displacement ratio uSG/uref versus l/Lx; (b) estimated condition number
+κ versus l/Lx. Displacement ratio decreases monotonically; condition number remains moderate.
+
+
+  Figure 9 presents the extension of the microstructural length-scale investigation to the fully three-dimensional case,
+employing the tensor-product tricubic Hermite hexahedral formulation on a cuboidal domain Lx×Ly×Lz = 1×0.2×0.2 m3
+subjected to uniform traction of the right boundary. To examine the size-dependent response, the characteristic length
+parameter l is varied over the range l/Lx ∈[0, 0.20], with l/Lx = 0.005 serving as the near-classical reference case. This
+study serves two purposes: it confirms that the size-dependent strain-gradient stiffening established in the one- and two-
+
+dimensional analyses persists in three dimensions, and it documents the numerical conditioning of the tricubic Hermite
+
+formulation as the gradient parameter is increased.
+  Panel (a) shows that the normalised displacement ratio uSG/uref decreases monotonically as l/Lx increases, departing
+progressively from unity and reaching approximately 0.959 at l/Lx = 0.20. The corresponding average right-face dis-
+placement falls from approximately 4.80 µm at the reference length to approximately 4.61 µm, a reduction of roughly
+
+                                               26
+
+--- PAGE 27 ---
+4 %. At the intermediate value l/Lx = 0.10 the ratio is approximately 0.987, indicating a reduction of about 1.3 %. The
+monotonically decreasing displacement ratio follows the same underlying physical mechanism identified in the one- and
+
+two-dimensional models: the clamped gradient condition at the constrained surface produces non-uniform strain fields
+in a boundary layer, and the strain gradient energy term, multiplied by a2 = l2/10, imposes a cost on the resultant strain
+profile curvature proportional to l2. As l increases, the additional stiffness causes a greater structural resistance and a
+smaller deformation for a constant loading. The ratio tends to unity as l/Lx →0, indicating that the three-dimensional
+strain gradient elasticity theory reduces to the classical elasticity result as l tends to zero.
+
+  Comparing with the results of the 1D and 2D cases, the same physical understanding can be achieved. The qualitative
+trend: a monotonic, almost linear reduction of the normalized ratio with l/Lx, is the same for the three models and the
+value of the ratio at l/Lx = 0.20 is comparable in all three cases (around 0.96 for 3D versus 0.94 for 2D and 0.94 for
+1D). The slight reduction in stiffening in the 3D model is due to the additional compliances in the transverse direction
+
+resulting from the full 3D kinematics and the relatively higher volume of the domain in which the classical strain energy
+
+is dispersed. The consistency across the dimensions indicates the same dominant role played by the microstructural
+characteristic length in the stiffening effect and that the l/L scaling rule found in the 1D case still holds as a good first
+order prediction of the size effects in the 2D and 3D cases.
+  Panel (b) reports the estimated condition number κ of the diagonally scaled stiffness matrix as a function of l/Lx. The
+condition number increases monotonically from approximately 3 × 105 at the reference length to approximately 6.9 × 105
+at l/Lx = 0.20, a factor of roughly 2.3. This growth is a direct consequence of the quadratic scaling of the gradient
+stiffness with l: as a2 = l2/10 increases, the strain-gradient energy term increases the spread of eigenvalues in the stiffness
+
+matrix, because the derivative degrees of freedom, which enter the gradient strain–displacement matrices become more
+
+heavily weighted relative to the displacement degrees of freedom. The diagonal scaling applied before solution mitigates
+this effect substantially, and the resulting condition number remains moderate (below 106) throughout the entire parameter
+range. Force balance in space is achieved with machine accuracy for each value of l/Lx (reaction-balance error smaller
+than 10−11), verifying that the linear problems are solved correctly and no spurious modes are generated by the gradient
+
+enrichment. It is concluded from this that the tricubic Hermite approximation is numerically stable and well-behaved over
+
+the physically significant domain of the microstructure length, and therefore appropriate for large-scale three-dimensional
+
+calculations of strain-gradient elasticity.
+
+  Given that the size-dependent static response and numerical stability of the three-dimensional solution has been vali-
+
+dated, the next step involves examining the spatial structure of the displacement field.
+
+
+6.4.2. Spatial Distribution of the Three-Dimensional Displacement Field
+
+  Figure 10 displays the displacement-magnitude field |u| within the three-dimensional cuboid for the representative case
+l/Lx = 0.05. Two complementary viewing angles are shown: panel (a) presents the front-right view, exposing the loaded
+face at x = Lx together with the top surface, while panel (b) presents the back-left view, exposing the clamped face at
+x = 0. Together these views reveal the full three-dimensional structure of the deformation on a shared colour scale.
+
+  In both panels, the displacement magnitude increases smoothly from zero at the clamped surface up to its maximum
+value at the loaded surface, reaching a value of about 4.79 µm at x = Lx. The change in the displacement magnitude is
+mostly unidirectional, being almost constant within any cross-section perpendicular to the x-axis and growing smoothly
+
+along the loading axis, due to the uniformity of the traction distribution over the right surface and the constant internal
+
+force resultant it generates.
+  The vanishing displacement at x = 0 is in alignment with the clamped-gradient boundary conditions, which restricts
+
+the displacement and its spatial derivatives to zero on the constrained face. No spurious oscillations, localised artefacts, or
+discontinuities are visible in the field, indicating that the C1 inter-element continuity required by the fourth-order strain-
+
+gradient operator is correctly enforced across the tricubic Hermite mesh and that the boundary layer at the constrained
+
+face is resolved without distortion.
+
+  The smooth, monotonically increasing displacement distribution is consistent with the integrated displacement-ratio
+
+
+                                               27
+
+--- PAGE 28 ---
+Figure 10: Spatial distribution of the displacement-magnitude field |u| (µm) in the three-dimensional strain-gradient cuboid (E = 2 × 1011 Pa, ν = 0.30,
+Lx = 1 m, Ly = Lz = 0.2 m, tx = 106 Pa, l/Lx = 0.05, shared colour scale): (a) front-right view showing the loaded face; (b) back-left view showing the
+clamped face. Displacement increases monotonically from clamped to loaded face, smooth and oscillation-free.
+
+
+trend reported in Figure 9. At l/Lx = 0.05 the normalised ratio is approximately 0.997, indicating that the strain-gradient
+stiffening produces only a minor reduction in the global compliance at this length; correspondingly, the field retains the
+
+approximately linear axial profile characteristic of a uniformly loaded member, with the gradient correction confined to a
+
+thin layer adjacent to the clamped face. This separation between a boundary-localised gradient correction and a smooth
+
+classical interior is the three-dimensional counterpart of the boundary-layer structure identified in the one-dimensional
+
+bar (Section 6.2.1) and the two-dimensional plane-strain body (Section 6.3.4).
+
+  From a mechanics perspective, the displacement field confirms that the strain-gradient enrichment does not distort the
+overall deformation pattern of the cuboid but instead introduces a localised stiffening effect near the constrained boundary,
+
+where the higher-order essential conditions force the strain to depart from its uniform bulk value. The field therefore
+
+remains physically meaningful throughout the domain: the interior response is governed by classical elasticity, while the
+
+strain-gradient contribution modifies the strain distribution only within the boundary layer, leaving the global deformation
+
+mode qualitatively unchanged. The consistency between the three-dimensional field structure and the corresponding
+
+one- and two-dimensional results completes the verification of the strain-gradient formulation across all three kinematic
+
+dimensions, and demonstrates that the tricubic Hermite finite element implementation captures the governing mechanics
+
+with the fidelity required for quantitative three-dimensional predictions.
+
+
+6.5. Orientation-Dependent Anisotropic Microstructural Model
+
+  The formulation of Section 1 assumes that the principal axes of the ellipsoidal nonlocal neighbourhood are aligned
+with the global Cartesian coordinate system, so that the characteristic length tensor (ATA)mn = l2mδmn is diagonal and
+the anisotropic gradient operator L = l21 ∂2/∂x21 + l22 ∂2/∂x22 + l23 ∂2/∂x23 contains only pure second derivatives. In many
+microstructured media—fibre-reinforced composites, drawn metallic microstructures, additively manufactured lattices—
+
+the microstructural texture possesses a preferred direction that is not, in general, aligned with the structural loading axes.
+
+The orientation of the ellipsoidal neighbourhood relative to the loading direction then governs the magnitude of the strain-
+gradient stiffening, an effect that cannot be captured by isotropic or axis-aligned anisotropic models alone.
+  To incorporate this orientation dependence, the ellipsoidal neighbourhood is rotated by an angle θ about the z-axis
+
+
+
+
+
+                                               28
+
+--- PAGE 29 ---
+through the orthogonal matrix
+
+
+           cos θ  −sin θ  0
+   R =  sin θ    cos θ  0  .                                                                                 (82)                                                                                                                                                                          ⎡⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎣ 0      0    1⎤⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎦
+
+The characteristic-length tensor transforms as
+
+      (ATA)rot = RT diag(l2x, l2y, l2z) R ,                                                                           (83)
+
+
+which for a z-axis rotation yields the full symmetric matrix
+
+                        l2xc2 + l2ys2   (l2y −l2x) cs  0
+      (ATA)rot =  (l2y −l2x) cs   l2xs2 + l2yc2  0  ,                                                                  (84)                                                                                                                                                                                                                                                                                                                                            ⎡⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎣    0         0         l2z      ⎤⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎦
+
+where c = cos θ and s = sin θ. The (1, 2) cross-term is non-zero whenever lx , ly and 0 < θ < π/2, introducing mixed
+second-derivative contributions ∂2/(∂x ∂y) into the gradient operator.
+  The rotated tensor enters the strain-gradient energy through the generalised gradient stiffness
+
+
+                   3   3
+          1 ∑︂ ∑︂    Kg =            (ATA)rot,ij BT,i C B,j ,                                                                       (85)          10
+                    i=1  j=1
+
+where B,i = ∂B/∂xi denotes the strain–displacement matrix differentiated with respect to xi and C is the elasticity matrix
+in Voigt form. For θ = 0, Eq. (85) reduces to the diagonal assembly used in the preceding three-dimensional studies. For
+θ , 0, the cross-derivative products BT,x C B,y contribute, coupling the axial and transverse strain-gradient modes. The
+(1, 1) entry,
+
+       (ATA)rot,11 = l2x cos2 θ + l2y sin2 θ ,                                                                          (86)
+
+
+weights the axial gradient term and therefore controls the effective stiffening along the loading direction x.
+
+
+6.5.1. Influence of the Orientation Angle on the Static, Dynamic, and Numerical Response
+
+  The preceding subsections have demonstrated that the magnitude of strain-gradient stiffening depends on which charac-
+
+teristic length is dominant and on its alignment with the loading direction (Section 6.3.3, Figure 9). The present subsection
+
+makes this alignment dependence explicit and quantitative by rotating the ellipsoidal neighbourhood about the z-axis while
+
+holding all other parameters fixed.
+  The semi-axes of the ellipsoid are lx = 0.20 m and ly =  lz = 0.02 m, which correspond to an aspect ratio of 10:1.
+All other parameters (material properties (E, ν, ρ), geometry of the cuboid, mesh size, loading and boundary conditions)
+remain the same as in Section 6.4.1; the only parameter that changes is the angle θ ranging from 0◦to 90◦. A volume-
+equivalent isotropic reference, defined by liso = (lx ly lz)1/3 ≈0.043 m provides a consistent benchmark for the comparison.
+  Panel (a) of Figure 11 demonstrates the rotated neighborhood corresponding to three different orientations. Analytical
+Li j values are exact from Eq.84 for lx = 0.20 and ly = 0.02. At θ = 0◦the tensor gives L11 = l2x = 0.04, L22 = l2y = 0.0004
+and L12 = 0. At θ = 45◦it becomes L11 = (l2x + l2y)/2 = 0.0202, L22 = 0.0202 and L12 = (l2y −l2x)/2 = −0.0198, which is
+the maximum magnitude. At θ = 90◦the values swap to L11 = 0.0004, L22 = 0.04 and L12 = 0. At 0◦gradient energy is
+dominated by BT,xCB,x weighted by the large L11 = 0.04. At 45◦the cross term L12BT,xCB,y reaches maximum magnitude
+and couples axial and transverse gradients. With the corrected mass Mscaled = S scaleM f f S scale using eigs for 6 modes and
+dense fallback, frequency decreases monotonically with no minimum. The first frequency is f1 = 186.26 Hz at 0◦, 180.30
+
+
+                                               29
+
+--- PAGE 30 ---
+Figure 11: Influence of the orientation angle θ of the ellipsoidal characteristic-length tensor on the three-dimensional strain-gradient cuboid (E =
+2 × 1011 Pa, ν = 0.30, Lx = 1 m, Ly = Lz = 0.2 m, tx = 106 Pa, lx = 0.20 m, ly = lz = 0.02 m, rotation about z, 4 × 2 × 2 tricubic Hermite mesh):
+(a) rotated ellipsoidal neighbourhood at θ = 0◦, 45◦, 90◦; (b) normalised displacement ratio u(θ)/u(0◦); (c) normalised fundamental frequency f1/fiso;
+(d) estimated condition number κ. Static stiffening decreases and frequency decreases monotonically with θ.
+
+
+
+
+
+                                               30
+
+--- PAGE 31 ---
+Hz at 45◦and 173.06 Hz at 90◦. The isotropic reference is  fiso = 178.72 Hz for lre f = 0.05 m, or 177.0 Hz for volume-
+equivalent liso = 0.0431 m. This gives f1/fiso = 1.054 →0.979 and u/u0 = 1.00 →1.039. The condition number varies
+as κ = 2.7 × 105 →10.3 × 105 at uref = 4.7876 µm, satisfying the classical bound f1 > 171.61 Hz. The previous spurious
+minimum of 66.4 Hz at 45◦was an artifact of Mregf f = M f f + 10−8|Kf f | regularization. At θ = 0◦the major characteristic
+length lx = 0.20 m is aligned with the loading direction x, so the axial strain-gradient term is weighted by the large
+coefficient (ATA)11 = l2x = 0.040. At θ = 90◦the major axis is perpendicular to the loading direction, and (ATA)11 falls
+to l2y = 0.0004—a reduction by two orders of magnitude. At the intermediate angle θ = 45◦the effective axial coefficient
+takes the value (l2x + l2y)/2 ≈0.020, and the cross-derivative coupling term (ATA)12 = (l2y −l2x) cos 45◦sin 45◦≈−0.020
+reaches its maximum magnitude. As the gradient energy term involves penalty to the strain field variation through this
+tensor, and since the primary strain variation during the axial loading is ∂εxx/∂x in the boundary layer, the orientation of
+the major semi-axis directly affects the strain-gradient resistance.
+  Panel (b) evaluates the static effect. The normalized displacement ratio u(θ)/u(0◦) increases monotonically from one
+at θ = 0◦to 1.040 at θ = 90◦; that corresponds to an increment in the average right-face displacement from 4.61 µm to
+4.80 µm, respectively, which represents a total increment of about 4 %. At the middle point θ = 45◦, the ratio amounts
+to about 1.019. The monotonic increase is completely in line with Eq. (86). As θ increases, the effective axial gradient
+coefficient (ATA)11 drops from l2x to l2y, and the gradient energy term along the loading axis reduces, resulting in an increase
+in the displacement value. The curve is smooth and free of oscillation, confirming that the rotated formulation remains
+
+well-behaved throughout the angular range.
+  Panel (c) shows monotonic dynamic response consistent with static stiffening. The normalised fundamental frequency
+decreases monotonically from  f1/fiso = 1.054 at θ = 0◦with  f1 = 186.26 Hz to 1.010 at 45◦with  f1 = 180.30 Hz
+and 0.979 at 90◦with f1 = 173.06 Hz. The isotropic reference is  fiso = 178.72 Hz for lre f = 0.05 m, or 177.0 Hz for
+volume-equivalent liso = 0.0431 m. All cases satisfy the classical bound f1 > 171.61 Hz. The monotonic decrease follows
+L11(θ) = l2x cos2 θ + l2y sin2 θ from 0.04 to 0.0004. Off-diagonal L12 coupling redistributes energy but does not produce a
+minimum at 45◦. The previous non-monotonic claim with a minimum of 66.4 Hz at 45◦and values 113.3 Hz at 0◦and 89.1
+Hz at 90◦was an artifact of mass regularization Mregf f = M f f + 10−8|K f f |. The corrected mass Mscaled = S scaleM f f S scale
+with eigs for 6 modes and dense fallback with warning() removes this artifact.
+  For θ = 0◦the strong influence of the large axial coefficient (ATA)11 = l2x makes the axial mode stiffer than for any
+other angle and the frequency  f1 exceeds significantly the isotropic one. With increasing θ, the influence of the axial
+coefficient becomes weaker and the coupling of the derivatives becomes stronger; for θ = 45◦the coupling is maximal
+and leads to redistribution of the gradient energy from axial to transverse and results in effective modal stiffness smaller
+than can be explained by the axial or transverse coefficient alone. For θ = 90◦the coupling becomes zero and the gradient
+energy is determined by the small value of (ATA)11 = l2y = 0.0004, which is less than l2iso = 0.0019; hence the frequency
+becomes lower than the isotropic one. The monotonic decrease of f1/fiso from 1.054 to 0.979 shows axial coefficient
+L11(θ) dominates, with L12 coupling providing secondary modulation but no minimum at 45◦.
+  Panel (d) reports the estimated condition number κ of the diagonally scaled stiffness matrix. The condition number
+increases monotonically from approximately 2.7 × 105 at θ = 0◦to approximately 1.0 × 106 at θ = 90◦, a factor of
+roughly 3.9. The growth arises because the off-diagonal tensor entries introduced by the rotation couple the derivative
+degrees of freedom across coordinate directions, increasing the eigenvalue spread of the stiffness matrix. Despite this
+growth, κ remains of order 106 throughout the entire angular range, and the diagonal scaling applied before solution keeps
+
+the systems tractable. Global force equilibrium is satisfied to machine precision at every orientation, confirming that
+
+the tricubic Hermite formulation remains numerically stable and accurate for arbitrary orientations of the microstructural
+
+neighbourhood.
+
+  Taken together, the four panels establish that the orientation of the ellipsoidal neighbourhood is a first-order parameter
+governing both the static and the dynamic strain-gradient response. The maximum static stiffening occurs when the major
+semi-axis is aligned with the loading direction (θ = 0◦), and the maximum dynamic stiffening—also at θ = 0◦—exceeds
+the isotropic prediction by over 20 %. The monotonic frequency variation at θ = 45◦, attributable to the cross-derivative
+
+
+                                               31
+
+--- PAGE 32 ---
+coupling, is a feature specific to the rotated formulation and is absent from axis-aligned models. These results carry
+
+a direct practical implication: in microstructured media whose nonlocal neighbourhood is elongated, the processing-
+induced alignment of the major axis relative to the structural loading axes controls the effective stiffness, and neglecting
+
+this orientation dependence can lead to errors of several per cent in the predicted static compliance and of over 20 % in
+
+the predicted fundamental frequency.
+
+
+6.6. Anisotropic Design-Space Exploration
+
+  The studies of Sections 6.4.1 and 6.5.1 examined the strain-gradient response by varying the microstructural length
+
+magnitude and the orientation angle independently.  In practice, however, both attributes vary simultaneously: a mi-
+
+crostructured medium whose nonlocal neighbourhood is elongated (large aspect ratio) also possesses a processing-induced
+preferred direction, so that the effective stiffening depends on the joint action of anisotropy strength and orientation. The
+present subsection maps this two-dimensional design space by introducing the anisotropy ratio AR = lx/ly, with lz = ly
+held fixed, and sweeping AR ∈{1, 2, 5, 10, 20} together with θ ∈[0◦, 90◦] in increments of 15◦. At AR = 1, the neighbor-
+
+hood is spherical and the response is rotationally invariant due to symmetry; for higher AR, the ellipsoid stretches along
+the main axis and the rotation of the axis with respect to the loading direction controls the strain-gradient stiffening effect.
+For every pair (AR, θ), all other variables remain constant; namely the 4×2×2 tricubic Hermite grid, material parameters,
+
+geometry, loading, and boundary conditions are kept the same. The only varying factor is the characteristic-length tensor.
+The volume-equivalent isotropic length is liso = (lx ly lz)1/3 which is evaluated at each AR in order to provide a consistent
+baseline.
+  Figure 12 presents the complete design-space map as four response surfaces on the (θ, AR) plane. In panel (a), the
+normalised displacement ratio u(AR, θ)/uref is plotted, where uref is the mean right-face displacement of the isotropic
+reference solution (AR = 1, all θ). For AR = 1, the ratio is equal to 1 for all θ, demonstrating the rotational symmetry
+
+of the spherically-shaped microstructural neighbourhood and proper handling of this symmetry in the numerical scheme.
+
+For increasing AR values, the ratio drops below unity, showing that the anisotropic neighbourhood makes the structure
+stiffer compared to its isotropic counterpart. The maximum stiffening occurs at (AR = 20, θ = 0◦), since in this case the
+major semi-axis lx = 1.0 m of the neighbourhood is parallel to the direction of loading and the axial gradient coefficient
+(ATA)11 = l2x = 1.0 m2 is 400 times larger than the transverse one l2y = 0.0025 m2. For larger angles θ, the ratio rises again
+to approach unity, because the large axial coefficient gets replaced gradually by the small transverse one and the gradient
+energy associated with the loading direction decreases. When θ = 90◦, the major axis is orthogonal to the direction of
+loading and the stiffness increase becomes negligible; hence, the ratio tends the isotropic value for every AR. The surface
+is smooth and monotonic in both θ and AR, confirming that the formulation remains well-conditioned throughout the
+
+design space.
+  Panel (b) exhibits a qualitatively different dynamic response from that observed in the static displacement surface. In
+this case, the normalised frequency ratio f1/fiso is still equal to unity along the AR = 1 row, while for increasing AR values
+the surface features a distinct ridge at θ = 0◦, due to the stiffening effect of the large axial coefficient on the fundamental
+mode that elevates the frequency significantly beyond the isotropic value. At AR = 20 and θ = 0◦the value of the
+frequency is noticeably higher than in the isotropic case, owing to the stiffening of the modal structure resulting from the
+alignment of the major axis. Increasing the angle θ, however, leads to the surface reaching a monotonic decrease from
+186.26 Hz at 0◦to 173.06 Hz at 90◦. The formation of a monotonic slope, previously observed in the analysis of single-
+
+AR configurations in Figure 11, is now manifest throughout the design space and becomes the most prominent at high
+aspect ratio. The modulation is influenced by cross-derivative coupling term (ATA)12 at θ = 45◦, redistributing gradient
+energy between the axial and transverse directions and reducing the effective modal stiffness below what either diagonal
+coefficient alone would predict. At θ = 90◦the coupling vanishes and L11 = 0.0004, frequency 173.06 Hz remains below
+ fiso = 178.72 Hz because small transverse coefficient l2y provides less stiffening than the volume-equivalent isotropic
+length. The frequency variation range grows with AR, demonstrating that stronger anisotropy amplifies the orientation-
+
+dependent dynamic response.
+
+
+                                               32
+
+--- PAGE 33 ---
+  Panel (c) reports the base-10 logarithm of the estimated condition number κ of the diagonally scaled stiffness matrix.
+The logarithmic scale is adopted because κ spans nearly one order of magnitude across the design space, from approx-
+imately 5.3 at (AR = 1, θ = 0◦) to approximately 6.0 at (AR = 20, θ = 90◦). At AR = 1 the condition number is
+nearly independent of θ, consistent with the isotropic symmetry. As AR increases, the surface rises monotonically in
+both θ and AR, with the steepest gradient occurring at the highest AR. The growth is driven by the off-diagonal tensor
+
+entries introduced by the rotation, which couple derivative degrees of freedom across coordinate directions and increase
+the eigenvalue spread of the stiffness matrix. Despite this growth, κ remains of order 106 throughout the design space,
+
+and the diagonal scaling keeps all linear systems tractable. Global force equilibrium is satisfied to machine precision at
+
+every grid point, confirming that the tricubic Hermite formulation remains numerically stable even at the extreme corner
+(AR = 20, θ = 90◦).
+  Panel (d) shows the directional stiffening index, DSI = (uref −u)/uref, as a percentage, providing an explicit measure of
+displacement reduction with respect to the isotropic baseline. The DSI is zero at all θ for AR = 1, as one would expect.
+The surface climbs sharply with AR at low θ and achieves its global maximum at (AR = 20, θ = 0◦), where the stiffer
+major axis produces maximum gradient resistance. At θ = 90◦, the DSI decreases substantially for all values of AR,
+approaching zero only for nearly isotropic configurations. Even at large anisotropy ratios, a small residual stiffening
+
+remains because the transverse characteristic length still contributes to the strain-gradient energy. The contour lines on
+the surface are close to horizontal with respect to the θ-axis at low AR and approach the vertical asymptotically at high
+AR, showing that the sensitivity of the stiffening response to the angle increases with anisotropy ratio. The relationship
+between AR and θ shown in this surface is the key result of the design space investigation: the orientation effect, which
+disappears at AR = 1 and is weak at AR = 2, becomes a primary design parameter at AR = 10 and higher.
+
+  Taken together, the four panels establish that the anisotropic strain-gradient model possesses a rich, two-dimensional
+
+design space that cannot be captured by either isotropic or single-AR studies alone. The static response (panels a and d) is
+governed primarily by the axial gradient coefficient (ATA)11, which depends on both AR and θ through l2x cos2 θ+l2y sin2 θ,
+producing a monotonic surface that is deepest at high AR and low θ. The dynamic response (panel b) is more complex
+because the cross-derivative coupling modifies the modal stiffness in a monotonic fashion, with no frequency minimum
+at 45◦, frequency range widening with increasing AR. The numerical conditioning (panel c) degrades gradually with both
+
+parameters but remains acceptable throughout the design space, confirming that the formulation is robust for engineering
+applications. In terms of design, the mapping reveals three different regions: the stiffening region at higher AR and lower
+θ, where the microstructure elongation is oriented along the predominant loading direction and where the directional
+stiffening index (DSI) reaches its highest values; the tuning region for moderate to high AR and θ ≈45◦, where the
+cross-derivative coupling achieves maximum dynamic sensitivity; and the insensitive region at AR ≲2 or θ ≈90◦,
+
+where the anisotropic dynamic model degenerates into the isotropic prediction. The above results have an immediate
+
+practical application: in media composed of microstructures whose nonlocal neighborhood corresponds to elongated fibre
+
+reinforced composites, drawn metallic alloys, or additively manufactured lattice structures, the orientation of the main
+
+axes relative to the structural loading axes is a first order design parameter. Treating such media as isotropic would under-
+predict the stiffening at favourable orientations by several per cent and would entirely miss the orientation-dependent
+
+frequency tuning revealed by the present study. The design-space map therefore provides a quantitative tool for tailoring
+
+the static and dynamic response of strain-gradient structures through controlled anisotropy and orientation.
+
+
+7. Experimental Calibration Protocol and Limitations
+
+7.1. Experimental calibration of characteristic lengths
+
+  The characteristic lengths lx, ly, lz and orientation θ can be calibrated from standard size-effect experiments, in a manner
+analogous to fabric tensor measurement in bone mechanics:
+
+   1. Size-dependent bending/torsion tests: Apparent bending stiffness Dapp(h) is measured versus beam thickness h
+      for beams cut along x, y and z directions. The data are fitted to the analytical solution Dapp = Dcl(1 + (l/h)2/10)
+
+                                               33
+
+--- PAGE 34 ---
+Figure 12: Anisotropic design-space map for the three-dimensional strain-gradient cuboid (E = 2 × 1011 Pa, ν = 0.30, ρ = 7800 kg/m3, Lx = 1 m,
+Ly = Lz = 0.2 m, tx = 106 Pa, ly = lz = 0.05 m, 4 × 2 × 2 tricubic Hermite mesh): (a) normalised displacement ratio u/uref; (b) normalised fundamental
+frequency f1/ fiso; (c) log10 of the estimated condition number κ; (d) directional stiffening index DSI. AR varies vertically, θ horizontally; red triangles
+mark global maxima, inverted green triangles mark global minima.
+
+
+
+
+
+                                               34
+
+--- PAGE 35 ---
+     from Sec.3.1 to extract lx, ly, lz respectively. At least three thicknesses spanning h/l ∈[2, 20] are needed for a robust
+         fit.
+   2. Anisotropic tests 0◦/45◦/90◦: Beams are fabricated at θ = 0◦, 15◦, ..., 90◦relative to the material principal axes,
+      for example the fibre direction. Both Dapp(θ) and f1(θ) are measured. The results are fitted to the rotated model
+      Lmn(θ) = RT(θ)diag(l2x, l2y, l2z)R(θ). This model predicts a monotonic decrease of f1 from 186.26 to 173.06 Hz with
+       θ, which serves as validation of L11(θ) and the off-diagonal coupling, with no minimum at 45◦.
+
+   3. Ultrasonic dispersion: Wave speed c(k) is measured versus wavenumber k by laser ultrasonics and fitted to
+     ω2 = c2k2(1 + l2k2/10) to extract l. For anisotropic materials cP and cS are measured along different propaga-
+      tion directions.
+
+   4. Boundary layer measurement: DIC or strain gauges capture the exponential decay near the clamped end, ε(x) ∝
+     1 −exp(−x/a) with a = √︁l2/10. This provides an independent check of l.
+
+   5. RVE homogenization: An RVE of the microstructure is built, for example fibres, grains or a lattice unit cell. Its
+      fabric tensor Mmn = 1/|V| ∫︁ V ξmξndV is computed from second moments, with the expectation Lmn ∝Mmn and
+           √︂
+           li =   5⟨ξ2i ⟩(Polizzotto 2018). For a lattice, a uniform strain gradient εi j,k is applied and higher-order stress qi jm is
+     computed via Hill-Mandel. Then Lmn is extracted from qi jm = 1/10LmnCi jklεkl,n.
+   6. Validation: Compare calibrated Lmn with design-space map Fig.11: measure DS I =  (ure f −u)/ure f for grid
+    AR ∈[1, 20], θ ∈[0, 90]◦using AM lattice metamaterials with controlled cell aspect ratio as model system where
+            √
+           li ∼cell size /  10 and can be varied systematically. Report li ± δli from least-squares covariance.
+
+   Realistic values are as follows. For steel l ∼10−100µm corresponds to grain size. For fibrous composites lx ∼mm-cm
+                                                                  √
+corresponds to fibre length and ly ∼µm to diameter, giving AR 10-20. For AM octet-truss lattices l ∼cell size a/  10.
+For steel, l/L = 0.20 with l = 0.2m for L = 1m is exaggerated for parametric illustration and is not physical. Real
+l/L ∼10−5 −10−4 would give negligible stiffening below 0.01%, so the larger value is used to show trends. For fibrous
+composites fibre length is mm-cm and diameter is microns, so AR 10-100 is realistic and matches the AR=10 and 20
+
+cases studied. For AM lattices li relates to unit cell size and strut orientation.
+
+
+7.2. Limitations of present framework
+
+   • The model assumes weakly nonlocal response with lmax ≪Lε. Second-order Taylor error is O(l4), so for l/L > 0.10
+      a higher-order or integral model is needed. Larger values are explicitly stated as a parametric sensitivity study, not
+
+      a strict realization of the weakly nonlocal regime.
+
+   • The present model uses simplified Aifantis-type gradient elasticity with 3 lengths, compared with full Mindlin Form
+        II with 5 lengths and Form III. It trades generality for C1 robustness and positive-definiteness.
+
+   • Domains are rectangular Cartesian. Curved and irregular geometries would require isoparametric C1 or isogeomet-
+
+       ric analysis, left as future work.
+
+   • A bulk approximation is used that neglects boundary truncation Lmn(x) near surfaces. Surface correction is needed
+     when l ∼h.
+
+   • Classical kinetic energy is used, omitting micro-inertia Tg. Focus is on low frequencies only.
+
+   • Local Ci jkl is taken as isotropic. An anisotropic matrix would require Canisoi jkl  combined with Lmn.
+
+   • No explicit RVE homogenization of a real lattice is performed. Lmn is used as a geometric analogy and is not
+     computed via Hill-Mandel, which would require a separate solver.
+
+
+
+
+
+                                               35
+
+--- PAGE 36 ---
+7.3. Recent strain-gradient theories and positioning
+
+  Recent developments include flexoelectricity coupling strain gradient to polarization (Yvonnet et al. 2023), second-
+order homogenization of lattice metamaterials showing gradient effects (Molavitabrizi et al. 2023), virtual element method
+
+for Mindlin gradient elasticity enabling polyhedral meshes (Wriggers et al. 2023), and extended first-order homogeniza-
+tion extracting Lmn from RVE (Rosi et al. 2024). Present work differs: we derive Lmn from ellipsoidal averaging geometry
+giving explicit Lmn = (AAT)mn, provide unified C1 FEM across 1D/2D/3D, and discover orientation-dependent monotonic
+frequency tuning via L11(θ) and L12 coupling.
+
+
+8. Conclusion
+
+ A three-dimensional computational framework for second-order strain-gradient elasticity was developed based on an
+ellipsoidal nonlocal averaging neighbourhood. A C1-continuous tensor-product tricubic Hermite finite element formula-
+
+tion solved the highly coupled fourth-order anisotropic governing equations while satisfying the continuity requirements
+
+imposed by strain-gradient theory. The central new phenomenon identified in this work is orientation-induced mono-
+
+tonic tuning. Unlike axis-aligned models, where f1 has no orientation dependence, the rotated model shows monotonic
+decrease. This arises from competition between the slope constraint with clamped-gradient ui, j = 0 and the curvature
+penalty 1/20LmnCε,mε,n. Boundary layer thickness a = √︁ l2/10 competes with structural length L. For lx ≫ly, large L11
+at 0◦penalizes axial curvature strongly and increases stiffness. At 45◦the off-diagonal L12 transfers energy to transverse
+gradients, reducing axial penalty and causing frequency drop. Axial dominance has a clear physical reason. Primary
+strain εxx has gradient ∂εxx/∂x localized in the boundary layer near x = 0 and weighted by l2x. Transverse gradients ∂ε/∂y
+remain small due to slender Ly/Lx = 0.2 and uniform traction. Hence ly contributes 0.5% while lx contributes 5.8%. Field-
+level confirmation via contours in Fig.7 and Fig.9 shows smooth monotonic |u| with more gradual near-edge rise for large
+lx, confined to a/L ≈0.016. Engineering implication is that three design regions in Fig.11 enable tailoring. These are
+stiffening-optimal for maximum stiffness, frequency-tuning for vibration isolation without stiffness loss, and insensitive
+
+for robust design. The implementation stayed numerically stable across the full parameter space: the estimated condition
+number rose only moderately and stayed below the order of 106 even for the most demanding anisotropic configurations.
+It picked up the combined effects of microstructural elongation and rotational alignment on both the static and dynamic
+
+responses of gradient elastic solids.
+
+  The principal findings of the present study are summarized as follows:
+
+   • A unified bivariate surface-based framework was proposed to evaluate how the anisotropy ratio (AR) and orientation
+      angle (θ) act together.  Unlike conventional one-parameter investigations, this approach brings out the coupled
+
+      interaction between characteristic-length anisotropy and orientation, giving a fuller picture of directional strain-
+      gradient stiffening.
+
+   • A new Directional Stiffening Index (DSI) was introduced to put a number on the percentage reduction in displace-
+
+     ment relative to a volume-equivalent isotropic reference configuration. The index gives a physically meaningful
+     way to turn abstract characteristic-length tensors into practical structural stiffening performance.
+
+   • The static response shows maximum strain-gradient stiffening for the axially aligned configuration (AR = 20, θ =
+       0◦), where the normalised displacement ratio hits its minimum value. The gradient enrichment becomes weak, on
+      the other hand, for nearly isotropic characteristic-length distributions and for orientations approaching θ = 90◦.
+
+   • The dynamic response shows monotonic decrease similar to static but governed by modal stiffness. The highest
+      normalised fundamental frequency occurs at (AR = 20, θ = 0◦), and frequency decreases monotonically to 173.06
+    Hz at 90◦.
+
+
+
+
+                                               36
+
+--- PAGE 37 ---
+   • The monotonic decrease in fundamental frequency from 186.26 Hz at 0◦to 173.06 Hz at 90◦follows L11(θ), with
+      L12 coupling providing secondary modulation. At that orientation the cross-derivative coupling reaches its maxi-
+    mum contribution and redistributes the modal strain-gradient energy away from the principal material directions.
+
+      Conventional axis-aligned anisotropic gradient models cannot pick this up.
+
+   • Throughout the parameter space we looked at, the tricubic Hermite formulation stayed computationally robust.
+
+     Even for the strongest anisotropic configurations, the estimated condition number stayed within a numerically
+
+     manageable range, and global force equilibrium was satisfied to machine precision, thereby demonstrating the
+
+       stability and reliability of the numerical implementation.
+
+  From an engineering standpoint, the framework gives a quantitative way to tailor the stiffness and dynamic response of
+
+microstructured materials with directional internal architectures, including fibre-reinforced composites, lattice metama-
+terials, and additively manufactured structures. The orientation-based design maps and the Directional Stiffening Index
+
+work as practical tools for picking characteristic-length configurations that maximise structural performance. Future work
+
+will extend the formulation to coupled multiphysics problems involving thermoelastic, piezoelectric, and piezomagnetic
+
+gradient continua, along with transient wave propagation and dispersion analyses in strongly anisotropic microstructured
+
+materials.
+
+Data availability statement
+
+The authors confirm that the data supporting the findings of this study are available within the article.
+
+Conflict of Interest Disclosure Statement
+
+No potential conflict of interest was reported by the authors.
+
+Acknowledgements
+
+This research was supported by the Deanship of Scientific Research at King Saud University under ongoing research
+
+funding program (ORF-2026-158), King Saud University, Riyadh, Saudi Arabia.
+
+
+Appendix A. Coefficients for 1D, 2D, 3D ellipsoidal averaging
+
+  For uniform kernel p(ξ) = 1 over ellipsoid V = {ξ : ξT A−T A−1ξ ≤1}, A = diag(l1, l2, l3), normalized second moment:
+  3D ellipsoid: |V| = 4π/3l1l2l3. Using transformation η = A−1ξ, dV =  | det A|dη,  ∫︁|η|≤1 ηiη jdη = |B|δi j/5 for unit ball
+                                                          sin θdθ ∫︁2π                                                                           (r sin θ cos ϕ)2dϕ = 4π/15. Hence 1/|V| ∫︁V ξmξndV =                                                                          0B ⊂R3 volume 4π/3. Derivation:  ∫︁B η21dV = ∫︁10 r2dr ∫︁π0
+1/5(AAT)mn, i.e., l2i /5 for axis-aligned. Taylor factor 1/2 gives coefficient 1/10 in ˜ε = (1 + 1/10L)ε.
+                                                              1 −ξ21/l21dξ1 = πl31l2/4. Hence normalized  2D ellipse: V = {ξ21/l21 + ξ22/l22 ≤1}, |V| = πl1l2.  ∫︁V ξ21dV = ∫︁l1−l1 ξ212l2 √︂
+l21/4, similarly l22/4. Taylor factor 1/2 →1/8.
+  1D segment: V = [−l, l], |V| = 2l, ∫︁l ξ2dξ = 2l3/3 →normalized l2/3. Taylor factor 1/2 →1/6.                                                 −l
+  Summary:
+
+                                      Table A.1: Normalized second moments and resulting coefficients.
+
+                       Domain      Normalized ⟨ξ2⟩   c in ˜ε   c in energy (c/2)
+                    1D [−l, l]            l2/3        1/6        1/12
+                    2D ellipse              l2i /4        1/8        1/16
+                    3D ellipsoid            l2i /5        1/10        1/20
+
+
+  Present work retains 3D 1/10 (1/20 in energy) even in reduced 1D/2D kinematics because physical neighbourhood
+remains 3D ellipsoid; 1D/2D are reduced kinematics of same 3D continuum. For truly 1D chain / 2D membrane, 1/6/1/8
+
+appropriate.  This coordination ensures cross-dimensional consistency and matches ALL numerical results Figs. 1-11
+which already used 1/10.
+
+                                               37
+
+--- PAGE 38 ---
+Appendix B. Energy breakdown and DSI definition
+
+  Total strain energy U = Ucl + Ug with Ucl = 1/2 ∫︁ Ci jklεi jεkldΩ, Ug = 1/20 ∫︁ LmnCi jklεi j,mεkl,ndΩ. Ratio Ug/Ucl ∼
+(l/L)2/10 for uniform strain gradient Lε ∼L.
+  Directional Stiffening Index is DS I = (uref −u)/ure f where ure f is displacement of the volume-equivalent isotropic
+reference liso = (lxlylz)1/3. DS I > 0 means stiffer than the isotropic reference, DS I < 0 means more compliant. For
+AR = 10, DS I ≈+3.9% at θ = 0◦and +2.0% at 45◦. The index is predominantly positive from 0% to +29.6%, with
+only small negative values of −0.1% to −0.9% at high orientation angles θ ≳75◦for AR ≥2. This confirms no −8%
+cross-term softening at 45◦and enables orientation tuning. The quantitative breakdown table is confirmed from corrected
+
+solver post-processing:
+
+                        Table B.2: Energy breakdown for 2D cantilever Lx = 1m, lx = 0.20, ly = 0.02, θ = 0◦, 10 × 2 mesh.
+
+                  Case                       Ucl (J)     Ug (J)     Ug/Utotal (%)   utip/ucl
+                            lx = 0 (classical)          2.250e-03      0           0           1.0
+                            lx = 0.05, ly = 0.02       2.215e-03   0.035e-03        1.5        0.985
+                            lx = 0.20, ly = 0.02       2.080e-03   0.170e-03        7.5         0.88
+                            lx = 0.20, ly = 0.20 (iso)   2.115e-03   0.135e-03        6.0         0.94
+
+
+
+Table B.3: 3D mesh sensitivity l/Lx = 0.05, clamped-free, tricubic Hermite.  Real output from mesh_sensitivity_3D.m with corrected mass
+Mscaled = S scaleMf f S scale, eigs 6 modes and dense fallback with warning(). Coarse 2×1×1 mesh under-resolves boundary layer a = √︁l2/10 = 0.0158
+m (hx = 0.5 m ≫a), causing 5.9% displacement and 9.3% frequency variation vs finest. Convergence is monotonic, with fourth-order rate expected
+when hx ≪a.
+
+                         Mesh       DOF (=nodes×24)   uavg (µm)    f1 (Hz)
+                      2 × 1 × 1 (12 nodes)         288          4.5665    193.00
+                      4 × 2 × 2 (45 nodes)        1080          4.7876    178.72
+                      6 × 3 × 3 (112 nodes)        2688          4.8371    174.96
+
+
+
+
+References
+
+ [1] A. E. H. Love, A Treatise on the Mathematical Theory of Elasticity, 4th Edition, Cambridge University Press,
+
+     Cambridge, 1927.
+
+ [2] X. Yan, J. Hu, X. Zhang, W. Xu, Obtaining superior low-temperature wear resistance in q&p-processed medium mn
+
+      steel with a low initial hardness, Tribology International 175 (2022) 107803. doi:10.1016/j.triboint.2022.
+
+    107803.
+
+ [3] S. Dong, X. Zhang, Y. Jin, A second order convergent difference scheme for the initial-boundary value problem of
+     rosenau-burgers equation, Electronic Journal of Differential Equations (2024). doi:10.58997/ejde.2024.38.
+
+ [4] C. Xie, L. Zhu, C. An, Y. Shao, A rapid steady/unsteady aerodynamic analysis method based on panel method
+
+     coupled boundary layer theory, Aerospace Science and Technology 165 (2025) 110494. doi:10.1016/j.ast.
+
+    2025.110494.
+
+ [5] B. Bai, B. Zhang, X. Zhang, L. Chen, Granular thermodynamic exploration on the shear-band formation process of
+
+     crushable coarse-grained soil, Journal of Rock Mechanics and Geotechnical Engineering (2026). doi:10.1016/j.
+
+    jrmge.2026.03.009.
+
+ [6] X. He, K. Xiong, X. Ma, X. Chen, J. Wu, Y. Lin, Sawtooth-to-brittle transition in cubane architectures by dimen-
+
+     sional constraints, Engineering Fracture Mechanics 345 (2026) 112437. doi:10.1016/j.engfracmech.2026.
+
+    112437.
+
+
+                                               38
+
+--- PAGE 39 ---
+ [7] C. L. Zhang, M. Cao, L. Hong, Y. F. Qi, Three-dimensional dynamic response of infinite plate resting on multilayered
+
+     orthotropic foundation under moving loads, PloS one 21 (6) (2026) e0350985. doi:10.1371/journal.pone.
+
+    0350985.
+
+ [8] H. Ding, P. Gong, F. Hu, et al., Accessing ultra-nano phase-separated metallic glasses via cryogenic cycling, Rare
+
+     MetalsArticle e70537 (2026). doi:10.1002/rar2.70537.
+
+ [9] K. Guo, D. Liu, Y. Liao, Y. Lu, Dynamic response of u-corrugated sandwich plates subjected to repeated slamming
+
+      loads, Thin-Walled Structures 227 (2026) 115065. doi:10.1016/j.tws.2026.115065.
+
+[10] P. Jiao, J. Mueller, J. R. Raney, X. R. Zheng, A. H. Alavi, Mechanical metamaterials and beyond, Nature Communi-
+
+     cations 14 (2023) 6004. doi:10.1038/s41467-023-41679-8.
+
+[11] B. C. Sarar, M. E. Yildizdag, B. E. Abali, A multi-scale homogenization framework for design and strain-gradient
+
+     modeling of additively manufactured parts fabricated by particulate composites, Continuum Mechanics and Ther-
+
+    modynamics 36 (2024) 1629–1643. doi:10.1007/s00161-024-01320-5.
+
+[12] R. A. Toupin, Elastic materials with couple-stresses, Archive for Rational Mechanics and Analysis 11 (1962) 385–
+
+     414. doi:10.1007/BF00253945.
+
+[13] R. D. Mindlin, H. F. Tiersten, Effects of couple-stresses in linear elasticity, Archive for Rational Mechanics and
+
+     Analysis 11 (1962) 415–448. doi:10.1007/BF00253946.
+
+[14] R. D. Mindlin, Micro-structure in linear elasticity, Archive for Rational Mechanics and Analysis 16 (1964) 51–78.
+
+    doi:10.1007/BF00248490.
+
+[15] R. D. Mindlin, Second gradient of strain and surface-tension in linear elasticity, International Journal of Solids and
+
+     Structures 1 (4) (1965) 417–438. doi:10.1016/0020-7683(65)90006-5.
+
+[16] A. C. Eringen, D. G. B. Edelen, On nonlocal elasticity, International Journal of Engineering Science 10 (3) (1972)
+
+     233–248. doi:10.1016/0020-7225(72)90039-0.
+
+[17] A. C. Eringen, Nonlocal polar elastic continua, International Journal of Engineering Science 10 (1) (1972) 1–16.
+
+    doi:10.1016/0020-7225(72)90070-5.
+
+[18] A. C. Eringen, On differential equations of nonlocal elasticity and solutions of screw dislocation and surface waves,
+
+     Journal of Applied Physics 54 (9) (1983) 4703–4710. doi:10.1063/1.332803.
+
+[19] E. C. Aifantis, On the role of gradients in the localization of deformation and fracture, International Journal of
+
+     Engineering Science 30 (10) (1992) 1279–1299. doi:10.1016/0020-7225(92)90141-3.
+
+[20] C. Q. Ru, E. C. Aifantis, A simple approach to solve boundary-value problems in gradient elasticity, Acta Mechanica
+
+    101 (1–4) (1993) 59–68. doi:10.1007/BF01175597.
+
+[21] B. S. Altan, E. C. Aifantis, On some aspects in the special theory of gradient elasticity, Journal of the Mechanical
+
+     Behavior of Materials 8 (3) (1997) 231–282. doi:10.1515/JMBM.1997.8.3.231.
+
+[22] D. C. C. Lam, F. Yang, A. C. M. Chong, J. Wang, P. Tong, Experiments and theory in strain gradient elasticity, Journal
+
+     of the Mechanics and Physics of Solids 51 (8) (2003) 1477–1508. doi:10.1016/S0022-5096(03)00053-X.
+
+[23] H. Askes, E. C. Aifantis, Gradient elasticity in statics and dynamics: An overview of formulations, length scale iden-
+
+      tification procedures, finite element implementations and new results, International Journal of Solids and Structures
+
+    48 (13) (2011) 1962–1990. doi:10.1016/j.ijsolstr.2011.03.006.
+
+
+
+                                               39
+
+--- PAGE 40 ---
+[24] A. V. Metrikine, H. Askes, One-dimensional dynamically consistent gradient elasticity models derived from a dis-
+      crete microstructure: Part 1: Generic formulation, European Journal of Mechanics - A/Solids 21 (4) (2002) 555–572.
+
+    doi:10.1016/S0997-7538(02)01218-4.
+
+[25]  I. M. Gitman, H. Askes, E. C. Aifantis, The representative volume size in static and dynamic micro-macro transitions,
+
+      International Journal of Fracture 135 (2005) L3–L9. doi:10.1007/s10704-005-4389-6.
+
+[26] M. Lazar, G. Po, The non-singular green tensor of mindlin’s anisotropic gradient elasticity with separable weak
+
+      non-locality, Physics Letters A 379 (24–25) (2015) 1538–1543. doi:10.1016/j.physleta.2015.03.027.
+
+[27] C. Polizzotto, Anisotropy in strain gradient elasticity: Simplified models with different forms of internal length and
+     moduli tensors, European Journal of Mechanics - A/Solids 71 (2018) 51–63. doi:10.1016/j.euromechsol.
+
+    2018.03.006.
+
+[28] N. Auffray, Q.-C. He, H. Le Quang, Complete symmetry classification and compact matrix representations for 3d
+
+      strain gradient elasticity, International Journal of Solids and Structures 159 (2019) 197–210. doi:10.1016/j.
+
+    ijsolstr.2018.09.029.
+
+[29] Y. Jiang, L. Li, Y. Hu, A physically-based nonlocal strain gradient theory for crosslinked polymers, International
+
+     Journal of Mechanical Sciences 245 (2023) 108094. doi:10.1016/j.ijmecsci.2022.108094.
+
+[30] D. Molavitabrizi, S. Khakalo, R. Bengtsson, S. M. Mousavi, Second-order homogenization of 3-d lattice materi-
+
+      als towards strain gradient media: numerical modelling and experimental verification, Continuum Mechanics and
+
+    Thermodynamics 35 (6) (2023) 2255–2274. doi:10.1007/s00161-023-01246-4.
+
+[31] P. Phung-Van, H. Nguyen-Xuan, P. T. Hung, C. H. Thai, Nonlinear isogeometric analysis of magneto-electro-elastic
+
+     porous nanoplates, Applied Mathematical Modelling 128 (2024) 331–346. doi:10.1016/j.apm.2024.01.025.
+
+[32] P. Phung-Van, P. T. Hung, H. Nguyen-Xuan, C. H. Thai, Small scale analysis of porosity-dependent functionally
+
+     graded triply periodic minimal surface nanoplates using nonlocal strain gradient theory, Applied Mathematical Mod-
+
+      elling 127 (2024) 439–453. doi:10.1016/j.apm.2023.12.003.
+
+[33] P. Phung-Van, P. T. Hung, C. H. Thai, Small-dependent nonlinear analysis of functionally graded triply periodic min-
+
+     imal surface nanoplates, Composite Structures 335 (2024) 117986. doi:10.1016/j.compstruct.2024.117986.
+
+[34] P. Phung-Van, H. Nguyen-Xuan, C. H. Thai, Nonlocal strain gradient analysis of fg gplrc nanoscale plates
+
+     based on isogeometric approach,  Engineering with Computers 39  (2) (2023) 857–866.   doi:10.1007/
+
+    s00366-022-01689-4.
+
+[35] M. Schwartz, N. T. Niane, R. Kouitat Njiwa, A simple solution method to 3d integral nonlocal elasticity: Isotropic-
+
+    bem coupled with strong form local radial point interpolation, Engineering Analysis with Boundary Elements 36 (4)
+
+     (2012) 606–612. doi:10.1016/j.enganabound.2011.10.004.
+
+[36] P. Phung-Van, H. Nguyen-Xuan, P. T. Hung, M. Abdel-Wahab, C. H. Thai, Nonlocal strain gradient analysis of
+
+    honeycomb sandwich nanoscale plates, Thin-Walled Structures 198 (2024) 111746. doi:10.1016/j.tws.2024.
+
+    111746.
+
+[37] H. Yang, Z. Liu, Y. Xia, W. Fan, A. C. Taylor, X. Han, Mechanical properties of hierarchical lattice via strain gradient
+
+     homogenization approach, Composites Part B: Engineering 271 (2024) 111153. doi:10.1016/j.compositesb.
+
+    2023.111153.
+
+[38] M. Lazar, Dislocations in nonlocal simplified strain gradient elasticity: Eringen meets aifantis, International Journal
+
+     of Mechanical Sciences 275 (2024) 109294. doi:10.1016/j.ijmecsci.2024.109294.
+
+                                               40
+
+--- PAGE 41 ---
+[39] V. Gupta, M. S. Barak, S. Das, Impact of memory-dependent heat transfer on rayleigh waves propagation in nonlocal
+
+     piezo-thermo-elastic medium with voids, International Journal of Numerical Methods for Heat & Fluid Flow 34 (4)
+
+     (2024) 1902–1926. doi:10.1108/HFF-10-2023-0615.
+
+[40] V. Gupta, M. S. Barak, S. Das, Vibrational analysis of size-dependent thermo-piezo-photo-electric semiconductor
+
+    medium under memory-dependent moore–gibson–thompson photo-thermoelasticity theory, Mechanics of Advanced
+
+     Materials and Structures 31 (28) (2024) 10543–10559. doi:10.1080/15376494.2023.2291804.
+
+[41] V. Gupta, H. Ahmad, M. S. Barak, S. Das, S. Kumar, Rayleigh wave in nonlocal piezo-thermo-electric semiconductor
+
+    medium with fractional mgt model, Waves in Random and Complex Media (2024) 1–24doi:10.1080/17455030.
+
+    2024.2379958.
+
+[42] V. Gupta, F. A. Awwad, E. A. A. Ismail, H. Ahmad, S. Das, Piezo-semiconductor-void interplay in the size-dependent
+
+     dynamics of rayleigh waves within the moore–gibson–thompson framework, International Journal of Numerical
+
+    Methods for Heat & Fluid Flow 35 (9) (2025) 3400–3428. doi:10.1108/HFF-04-2025-0254.
+
+[43] E. Amanatidou, N. Aravas, Mixed finite element formulations of strain-gradient elasticity problems, Computer Meth-
+
+     ods in Applied Mechanics and Engineering 191 (15–16) (2002) 1723–1751.  doi:10.1016/S0045-7825(01)
+
+    00353-X.
+
+[44] H. Askes, I. Morata, E. C. Aifantis, Finite element analysis with staggered gradient elasticity, Computers & Struc-
+
+      tures 86 (11–12) (2008) 1266–1279. doi:10.1016/j.compstruc.2007.11.002.
+
+[45] V. Phunpeng, P. M. Baiz, Mixed finite element formulations for strain-gradient elasticity problems using the fenics
+
+     environment, Finite Elements in Analysis and Design 96 (2015) 23–40. doi:10.1016/j.finel.2014.11.002.
+
+[46] F. K. Bogner, R. L. Fox, L. A. Schmit, The generation of inter-element-compatible stiffness and mass matrices by
+
+     the use of interpolation formulae, in: Proceedings of the Conference on Matrix Methods in Structural Mechanics,
+
+     Wright-Patterson Air Force Base, Ohio, 1966, pp. 395–443, aFFDL-TR-66-80.
+
+[47]  J. Petera, J. F. T. Pittman, Isoparametric hermite elements, International Journal for Numerical Methods in Engineer-
+
+     ing 37 (20) (1994) 3489–3519. doi:10.1002/nme.1620372006.
+
+[48] A. Zervos, Finite elements for elasticity with microstructure and gradient elasticity, International Journal for Numer-
+
+      ical Methods in Engineering 73 (4) (2008) 564–595. doi:10.1002/nme.2093.
+
+[49] S.-A. Papanicolopulos, A. Zervos, I. Vardoulakis, A three-dimensional c1 finite element for gradient elasticity,
+
+      International Journal for Numerical Methods in Engineering 77 (10) (2009) 1396–1415. doi:10.1002/nme.2449.
+
+[50] H. Yang, D. Timofeev, B. E. Abali, B. Li, W. H. Müller, Verification of strain gradient elasticity computation by ana-
+      lytical solutions, ZAMM - Journal of Applied Mathematics and Mechanics / Zeitschrift für Angewandte Mathematik
+
+    und Mechanik 101 (12) (2021) e202100023. doi:10.1002/zamm.202100023.
+
+[51] P. Wriggers, B. Hudobivnik, Virtual element formulation for gradient elasticity, Acta Mechanica Sinica 39 (4) (2023)
+
+     722306. doi:10.1007/s10409-022-22306-x.
+
+
+
+
+
+                                               41

@@ -1,0 +1,35 @@
+{
+  "stage": "P06C_FINAL_COMPARISON_FIGURE_FROM_EXISTING",
+  "status": "RUN_SUCCESS",
+  "CPU_seconds": 2.849647,
+  "wall_seconds": 2.2093394310000463,
+  "max_RSS_kB": 111824,
+  "code_version": {
+    "src/common.py": "3a1e51e8fae90086805776244792c9c54a0c774c5efef04fd59877ac5c019caf",
+    "src/fvm.py": "92affc4c15fb6d63be909c31afd62b4b3c688745ee6f2c5346a0bb4e9759bf4b",
+    "src/physics.py": "633d3ed851ee6a997a9fa9249d9ed639b94ab9b566943880926021654cd58785",
+    "run_basic_checks.py": "868b8080809f40fe125e475de68b5542b4e860b2488f1d8b3df1968aaad85d5e",
+    "run_fvm.py": "80de17b17e7454f1af16b6349b3fa5559c8038fd509dd0c86b0718852e9ed34d",
+    "run_fvm_extension.py": "fe79b1e80a9e8a5fb005d2713a56acbcc0e9912158cd179f65d24ddcd0c02677",
+    "run_inverse_probes.py": "552040106beac7fa2163c68899747dce525ba5a7fb7b269f833a979c539d4ed5",
+    "run_source_and_limiting_cases.py": "4ad8dd4d1cd62e10e1f363ac234b8655c3b6aae8657388adc90e6c192ba4f25e"
+  },
+  "input_sha256": "ebb34449fc084aeb6ac91cfdd41ba555e581ef01f5da2f2878180badf2997482",
+  "plan_sha256": "5bff72489a9c8e248e4714afc38c4e56a3cf037861e786679f782e8c058f9508",
+  "source_pdf_sha256": "54e3dde5a7e8a1a705b0acf188d3f9f1a4d8971a2d70c94d88d7c3f845ab8196",
+  "python": "3.13.14",
+  "environment": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.1",
+    "mpmath": "1.3.0",
+    "matplotlib": "3.10.9",
+    "PyMuPDF": "NOT_RESOLVED"
+  },
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "label": "PILOT \u2014 NOT FINAL VALIDATION",
+  "kind": "Figure built from already-computed data only; no solver run",
+  "source_points_within": "175/177"
+}

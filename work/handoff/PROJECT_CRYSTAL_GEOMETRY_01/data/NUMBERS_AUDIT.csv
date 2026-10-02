@@ -1,0 +1,13 @@
+manuscript_claim,source,value
+6.3e-14 rotation covariance,data/VERIFY.json V3_rotation_covariance_90deg.max_rel_err,6.264673828982356e-14
+9.5e-6 log-law,data/VERIFY.json V6.max_abs_err,9.501777534892675e-06
+0.68% V7,data/VERIFY.json V7.rel_err,0.006762955505692484
+1.09e-7 V5,data/VERIFY.json V5.rel_diff,1.0880500566880826e-07
+0.30% circle scatter,data/ANALYSIS.json T1_circle_scatter_rel,0.0030359804474584923
+36.6% ellipse amp,data/ANALYSIS.json T4_ellipse_amp_rel,0.365550816606385
+32.7% ellipse amp 192,data/ANALYSIS.json T4_grid_spotchecks.amp_rel,0.327
+78% collapse residual,data/ANALYSIS.json T2_collapse_residual_max,0.7802433632868369
+2.2e-4 feedback,data/ANALYSIS.json T3_probe_theta_r2a.rel_dev,0.0002174425123443723
+delta=1.08e-3,data/ANALYSIS.json delta_est,0.0010782020918147053
+m2/m0 0.309,data/ANALYSIS.json H5_m2_over_m0.ellipse_aniso,0.3085104926561316
+4.0e-10 pair identity,data/ANALYSIS.json T1_90deg_pair_0_90_rel,4.04e-10

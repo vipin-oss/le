@@ -1,0 +1,7 @@
+model,field,FV_cells,scaled_offfront_probe_max_difference,x_worst,criterion_frozen,probe_only_diagnostic_pass,scope
+CV,theta,6400,6.283029201359369e-07,0.28,0.003,True,"POST_FAILURE_DIAGNOSTIC — selected probes, NOT full-profile acceptance"
+CV,sigma,6400,1.3521805661438984e-06,0.08,0.003,True,"POST_FAILURE_DIAGNOSTIC — selected probes, NOT full-profile acceptance"
+CV,u,6400,1.904548093783388e-06,0.02,0.003,True,"POST_FAILURE_DIAGNOSTIC — selected probes, NOT full-profile acceptance"
+MCV3,theta,3200,3.08469111376386e-06,0.2,0.003,True,"POST_FAILURE_DIAGNOSTIC — selected probes, NOT full-profile acceptance"
+MCV3,sigma,3200,8.024539206678693e-06,0.08,0.003,True,"POST_FAILURE_DIAGNOSTIC — selected probes, NOT full-profile acceptance"
+MCV3,u,3200,7.843910131745931e-06,0.04,0.003,True,"POST_FAILURE_DIAGNOSTIC — selected probes, NOT full-profile acceptance"

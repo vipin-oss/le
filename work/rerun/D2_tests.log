@@ -1,0 +1,8 @@
+[  25s] a=10 nm tau= 5.0 ps  T_WIN= 8 t_th : D=7.3359e-03   (quasi-static value 1.9975e-03)
+[  55s] a=10 nm tau= 5.0 ps  T_WIN=10 t_th : D=2.6039e-03   (quasi-static value 1.9975e-03)
+[  91s] a=10 nm tau= 5.0 ps  T_WIN=12 t_th : D=3.6794e-03   (quasi-static value 1.9975e-03)
+[ 146s] a=10 nm tau= 5.0 ps  T_WIN=20 t_th : D=3.4432e-03   (quasi-static value 1.9975e-03)
+[ 233s] a=10 nm tau= 5.0 ps  T_WIN=32 t_th : D=3.2438e-03   (quasi-static value 1.9975e-03)
+[ 255s] a=20 nm tau=20.0 ps  T_WIN= 8 t_th : D=2.1056e-03   (quasi-static value 1.9975e-03)
+[ 285s] a=20 nm tau=20.0 ps  T_WIN=12 t_th : D=2.0375e-03   (quasi-static value 1.9975e-03)
+[ 369s] a=20 nm tau=20.0 ps  T_WIN=32 t_th : D=2.0107e-03   (quasi-static value 1.9975e-03)

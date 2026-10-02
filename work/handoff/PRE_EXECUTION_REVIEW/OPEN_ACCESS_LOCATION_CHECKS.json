@@ -1,0 +1,153 @@
+[
+  {
+    "doi": "10.1007/s10483-025-3280-7",
+    "status": 200,
+    "title": "New insights on generalized heat conduction and thermoelastic coupling models",
+    "open_access": {
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "any_repository_has_fulltext": false
+    },
+    "best_oa_location": null,
+    "locations": [
+      {
+        "id": "doi:10.1007/s10483-025-3280-7",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1007/s10483-025-3280-7",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S144595962",
+          "display_name": "Applied Mathematics and Mechanics",
+          "issn_l": "0253-4827",
+          "issn": [
+            "0253-4827",
+            "1573-2754"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "jufo-1",
+            "norway-1"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Applied Mathematics and Mechanics",
+        "raw_type": "journal-article"
+      }
+    ]
+  },
+  {
+    "doi": "10.1016/j.ijmecsci.2007.04.004",
+    "status": 200,
+    "title": "A unified generalized thermoelasticity; solution for cylinders and spheres",
+    "open_access": {
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "any_repository_has_fulltext": false
+    },
+    "best_oa_location": null,
+    "locations": [
+      {
+        "id": "doi:10.1016/j.ijmecsci.2007.04.004",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1016/j.ijmecsci.2007.04.004",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S72716621",
+          "display_name": "International Journal of Mechanical Sciences",
+          "issn_l": "0020-7403",
+          "issn": [
+            "0020-7403",
+            "1879-2162"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "International Journal of Mechanical Sciences",
+        "raw_type": "journal-article"
+      }
+    ]
+  },
+  {
+    "doi": "10.1016/j.ijheatmasstransfer.2007.10.021",
+    "status": 200,
+    "title": "Transient heat conduction in a medium with two circular cavities: Semi-analytical solution",
+    "open_access": {
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "any_repository_has_fulltext": false
+    },
+    "best_oa_location": null,
+    "locations": [
+      {
+        "id": "doi:10.1016/j.ijheatmasstransfer.2007.10.021",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1016/j.ijheatmasstransfer.2007.10.021",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S90999920",
+          "display_name": "International Journal of Heat and Mass Transfer",
+          "issn_l": "0017-9310",
+          "issn": [
+            "0017-9310",
+            "1879-2189"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "International Journal of Heat and Mass Transfer",
+        "raw_type": "journal-article"
+      }
+    ]
+  }
+]

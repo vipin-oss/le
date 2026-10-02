@@ -1,0 +1,89 @@
+"""ms_static.py — static manuscript sections (introduction, model, method). Numbers that are properties of the model are computed from
+the code constants; nothing here depends on production results."""
+import os, sys
+sys.dont_write_bytecode = True
+def _pp_root(_start):
+    """walk up from _start to the PAPER_PROJECT directory (path-independent replacement
+    for the hard-coded '/home/user/PAPER_PROJECT' that used to be here)."""
+    _p = os.path.abspath(_start)
+    while True:
+        if os.path.basename(_p) == 'PAPER_PROJECT':
+            return _p
+        _q = os.path.dirname(_p)
+        if _q == _p:
+            break
+        _p = _q
+    return os.environ.get('PAPER_PROJECT_ROOT', '/home/user/PAPER_PROJECT')
+ROOT = _pp_root(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, '06_Source_Code', 'src'))
+import numpy as np
+import cg_pipeline as cp
+import cg_model as M
+
+K = M.K_ac; kappa = cp.KAPPA; c_ref = cp.C_REF; delta = cp.delta_feedback()
+def t_th_ps(a_nm): return (a_nm * 1e-9) ** 2 / kappa * 1e12
+def Lam(tau_ps, a_nm): return tau_ps * 1e-12 * kappa / (a_nm * 1e-9) ** 2
+def eps(a_nm): return kappa / (c_ref * a_nm * 1e-9)
+def echo(a_nm, R=80.0): return 2 * (R - 1) * eps(a_nm)
+KEV = np.linalg.eigvalsh(K)
+
+
+def intro():
+    return [
+        ('h1', '1. Introduction'),
+        ('p', 'Classical analyses of thermal stresses around holes and cavities in uniform heat flow are given in [1,2], and anisotropic plates with elliptic boundaries have been treated by complex-variable (Stroh-type) methods under steady conditions [3]. Transient cavity problems with a finite heat-wave speed have been solved for a fibre-reinforced anisotropic medium with a circular hole [4], for spherical cavities [5], for an orthotropic cylindrical cavity [7], and hole-shape effects have been studied in perforated composite plates [6]; boundary-element methods treat holes in general anisotropic discs and planes [8,9]; coated elliptic holes in uniform heat flow have been analysed by complex-variable methods [48] and dual-phase-lag boundary-element formulations for anisotropic media have been developed [49]. The generalized-thermoelasticity studies [4,5,7] concern isotropic or highly symmetric (fibre-reinforced, orthotropic) media and circular or spherical geometry, whereas the studies of general anisotropy and non-circular holes [3,8,9] are steady or quasi-static with Fourier conduction. Within the bounded literature search described in the data package we found no study that combines a low-symmetry crystal, a non-circular cavity, a systematic crystal-orientation sweep and a thermal-memory parameter in a transient coupled analysis (this is a statement about our search, not a claim of priority).'),
+        ('p', 'Coupled thermoelasticity [10] and its generalizations to a finite heat-wave speed are the framework for transient problems: the Lord–Shulman theory with one relaxation time [11] and its extension to anisotropic media with a uniqueness theorem [12]; dual-phase-lag formulations [13], and later classifications of generalized heat-conduction and thermoelastic-coupling models [14,23]. Monoclinic β-Ga\u2082O\u2083 is an ultra-wide-band-gap semiconductor whose elastic [15], thermal-conductivity [16] and thermal-expansion [17,18] tensors are all strongly anisotropic; its room-temperature elastic constants are well characterised [15] and its conductivity tensor has an off-diagonal component in the a\u2013c plane [16], so that crystal orientation, cavity shape and heat-conduction law can interact. The device context and the growth of bulk single crystals of the material are reviewed in [50,51]. Whether this interaction is large enough to matter, and which observable is sensitive to it, is the question addressed here.'),
+        ('p', 'We study the transient coupled thermoelastic response of a circular and of an equal-area elliptical cavity (axis ratio 2) in a monoclinic crystal loaded in plane strain in the a\u2013c plane by a Gaussian wall-temperature pulse. Two conduction laws are treated as primary models — Fourier and Cattaneo–Vernotte (Lord–Shulman) — and a two-relaxation-time kernel is carried along as an exploratory sensitivity variant only (Section 2.5). The study is a **verified continuum parametric study**: the numerical results are verified against exact and independent solutions and their numerical uncertainty is quantified, but they are not compared with experiments, which are not available; the relaxation times are hypothetical and the continuum description is not claimed to hold at the nanometre scale (Section 7).'),
+        ('p', 'The contributions are: (i) a verified time-domain method that returns the response of a quiescent medium to a single pulse from a frequency-domain solver by Bromwich inversion on a shifted contour, with the verification chain and the numerical uncertainty reported; (ii) the orientation dependence of the peak wall stress for a circular and an elliptical cavity, including an ablation that separates the contributions of stiffness, thermal-expansion and conductivity anisotropy; (iii) an analytical scaling identity and a local-response result for the circular cavity that explain why thermal memory has a bounded, small effect on the wall stress and what the residual dependence on the cavity size is; (iv) a bound on the thermoelastic feedback. Section 2 states the governing equations and the constitutive framework, Section 3 the analytical results, Section 4 the numerical method, Section 5 the verification, Section 6 the results, and Section 7 the discussion, the limitations and the scope of what can be claimed from them. Section 8 concludes and Section 9 gives the code, the data package and the reproduction procedure.'),
+    ]
+
+
+def model():
+    ev = KEV
+    return [
+        ('h1', '2. Model and parameters'),
+        ('h2', '2.1 Governing equations'),
+        ('p', 'Linear, small-strain thermoelasticity in plane strain is considered in the a\u2013c plane of a monoclinic crystal, with the unique axis b normal to the plane and coordinates (x_{1}, x_{3}) along the crystal a and c axes at zero rotation. With temperature rise \u03b8 above the reference temperature T_{0} = 293 K, displacement u = (u_{1}, u_{3}) and Voigt strain \u03f5 = (\u03f5_{11}, \u03f5_{33}, \u03b3_{13}), the constitutive law is \u03c3 = Q\u03f5 \u2212 \u03b2\u03b8 (Biot [10]); Q is the 3\u00d73 plane-strain block of the stiffness (only C_{11}, C_{13}, C_{15}, C_{33}, C_{35}, C_{55} enter) and \u03b2 = C\u03b1 the thermal-stress vector, which also involves C_{12}, C_{23}, C_{25} through the b-axis expansion. The crystal is rotated by \u03c6 about b: the rank-four stiffness and the rank-two conductivity and expansion tensors are rotated by the same angle, and the rotation is cross-checked against an independent three-dimensional rank-four implementation (Section 5.1). Momentum balance and the heat equation with one relaxation time \u03c4 (Cattaneo–Vernotte flux law with energy balance, i.e. the Lord–Shulman equation [11,12]) read'),
+        ('eq', r'\nabla\cdot\boldsymbol{\sigma}=\rho\,\ddot{\mathbf{u}},\qquad \nabla\cdot(\mathbf{K}\nabla\theta)=\left(1+\tau\,\partial_t\right)\left(\rho c_p\,\dot\theta+T_0\,\boldsymbol{\beta}:\dot{\boldsymbol{\epsilon}}\right)', '', 'governing'),
+        ('p', 'In the Laplace domain (variable s) the heat equation becomes \u2207\u00b7(K g(s) \u2207\u03b8) = s(\u03c1c_{p}\u03b8 + T_{0}\u03b2:\u03f5) with g = 1 for Fourier conduction and g = 1/(1 + s\u03c4) for the relaxation-time law; these two are the primary conduction models of the study. A two-relaxation-time kernel g = \u00bd/(1 + \u00bds\u03c4) + \u00bd/(1 + 2s\u03c4) is used as an exploratory sensitivity kernel only (it is positive real, hence passive, but is not derived from a free energy) and is labelled exploratory wherever it appears. The medium is quiescent before the pulse (u = \u03b8 = 0 and \u2202u/\u2202t = 0 for t < 0). The cavity wall is traction-free and held at the prescribed temperature \u03b8 = p(t) = exp(\u2212((t \u2212 t_{0})/t_{w})\u00b2) with t_{0} = 2.5 t_{th} and t_{w} = 1.2 t_{th}; the outer boundary at R = 80a is clamped (u = 0) and cold (\u03b8 = 0). The cavity is a circle of radius a or an ellipse of semi-axes a\u221a\u03c7 and a/\u221a\u03c7 (equal area, \u03c7 = 2) whose major axis is parallel to the crystal a-axis at rotation \u03c6 = 0 (Fig. 1). The quantities of interest are defined in Section 2.9 and their discrete forms in Section 4.7.'),
+        ('h2', '2.2 Dimensionless groups'),
+        ('p', f'The thermal time is t_{{th}} = a\u00b2/\u03ba\u0304 with \u03ba\u0304 = (det K)^{{1/2}}/(\u03c1c_{{p}}) = {kappa*1e6:.3f}\u00d710^{{\u22126}} m\u00b2/s (t_{{th}} = {t_th_ps(10):.1f} ps at a = 10 nm). The memory number is \u039b = \u03c4/t_{{th}} = \u03c4\u03ba\u0304/a\u00b2 (\u039b = {Lam(1,10):.3f}, {Lam(5,10):.3f}, {Lam(20,10):.3f} for \u03c4 = 1, 5, 20 ps at 10 nm); the elastic number is \u03b5 = \u03ba\u0304/(c_{{ref}}a) with c_{{ref}} = (C_{{33}}/\u03c1)^{{1/2}} = {c_ref:.0f} m/s (\u03b5 = {eps(10):.4f} at 10 nm); the feedback number is \u03b4 = T_{{0}}\u03b2\u00b7\u03b2/(\u03c1c_{{p}}C\u0304) = {delta*1e3:.3f}\u00d710^{{\u22123}}, where C\u0304 = C_{{33}} is the stiffness scale of the plane-strain block. With the outer boundary at R = 80a the first return of the longitudinal wave to the wall occurs at t_{{echo}} = 2(R/a \u2212 1)\u03b5 t_{{th}} = {echo(5):.1f}, {echo(10):.2f}, {echo(20):.2f} and {echo(50):.2f} t_{{th}} for a = 5, 10, 20, 50 nm. All stresses are reported per kelvin of wall-temperature amplitude (MPa/K).'),
+        ('h2', '2.3 Material parameters'),
+        ('p', 'The parameters of the study, their values and their status (literature, assumed, hypothetical or design) are collected in @@tab:params@@.'),
+        ('table', ['Parameter', 'Value', 'Class', 'Source'],
+         [['C_{ij} (13 constants)', 'C11 242.8, C22 343.8, C33 347.4, C44 47.8, C55 88.6, C66 104.0, C12 128.0, C13 160.0, C23 70.9, C15 −1.62, C25 0.36, C35 0.97, C46 5.59 GPa', 'literature', 'Adachi et al. [15] (values checked against the paper)'],
+          ['K (a–c block)', f'[[12.13, −0.992], [−0.992, 14.09]] W/(m K); eigenvalues {KEV[0]:.2f}, {KEV[1]:.2f}', 'literature', 'Klimm et al. [16]'],
+          ['α (a, b, c)', '(1.54, 3.37, 3.15)×10^{−6} 1/K; α_{5} = 0', 'literature (secondary-quoted); uncertain', 'Orlandi et al. [17]; at 298 K the synchrotron data [18] give values ≈10× smaller'],
+          ['ρ', '5880 kg/m³', 'literature', 'compilations; Klimm et al. [16] use 5.961 g/cm³ at 20 °C'],
+          ['c_{p}', '560 J/(kg K)', 'assumed', 'reported values 485–537 J/(kg K) [19]; enters only t_{th}, \u03b4 and the dimensional labels'],
+          ['τ', '1, 5, 20 ps (Λ = 0.04–0.8 at 10 nm)', 'hypothetical (sensitivity-only)', 'order-of-magnitude estimates (κ ≈ 15 W/(m K), ρc_{p} = 3.3 MJ/(m³ K), v ≈ 4 km/s): gray τ = 3κ/(ρc_{p}v²) ≈ 0.9 ps; phonons with the longest mean free path (≈ 0.7 µm [20]) τ ≈ 0.2 ns'],
+          ['R/a, pulse', '80; t_{0} = 2.5, t_{w} = 1.2 t_{th}', 'design', 'pre-registered'],
+          ['a', '5–50 nm (10 nm reference)', 'design', 'continuum validity not established (Section 7)']],
+         'Parameters of the study and their status (MASTER_PROMPT classification: literature / assumed / hypothetical / design).', [1.1, 2.7, 1.1, 1.9], 'params'),
+        ('h2', '2.4 Quantities of interest'),
+        ('p', 'The primary observable is the peak of the absolute wall hoop stress |\u03c3_{\u03b8\u03b8}| over the wall and over 0 \u2264 t \u2264 6 t_{th} (the window ends before the first elastic echo for a \u2264 10 nm). Two versions are reported: the nodal maximum over the wall nodes and the maximum of the spectrally (trigonometrically) interpolated wall profile; the latter removes the nodal quantisation of the angular maximum, which is of order (\u0394\u03d1)\u00b2 and not negligible on coarse grids. The orientation modulation of the ellipse is A_{\u03c6} = (max_{\u03c6}\u03c3\u0302 \u2212 min_{\u03c6}\u03c3\u0302)/mean_{\u03c6}\u03c3\u0302. The thermal-memory deviation is D = max|\u03c3_{CV} \u2212 \u03c3_{F}|/max|\u03c3_{F}| over the wall and 0 \u2264 t \u2264 6 t_{th} for the same grid and the same inversion plan.'),
+    ]
+
+
+def analytic():
+    return [
+        ('h2', '2.5 Two analytical results'),
+        ('p', '**Scaling.** For \u03c1 \u2192 0 (quasi-static elasticity) and \u03b4 \u2192 0 (no thermoelastic feedback) the temperature problem in the variables (r/a, t/t_{th}) depends only on \u039b, the geometry, the crystal orientation and R/a, and the stress per unit wall temperature is a linear functional of \u03b8 with no further length scale. The thermal-memory deviation D therefore depends on \u039b alone (\u201ccollapse\u201d), and any dependence on the cavity size at fixed \u039b measures elastic inertia (\u03b5) or feedback (\u03b4).'),
+        ('p', '**Local response of the isotropic circle.** For an isotropic body in quasi-static plane strain with a free wall and a clamped outer boundary, with Lam\u00e9 constants \u03bb, \u03bc, m = \u03bb + 2\u03bc and \u03b3_{T} = (3\u03bb + 2\u03bc)\u03b1, the wall hoop stress is'),
+        ('eq', r'\sigma_{\theta\theta}(a,t)=-\,2\mu\,g_T\,p(t)\;-\;\frac{2(\lambda+m)\,g_T\,F(t)}{R^{2}+(\lambda+m)\,a^{2}/(2\mu)},\qquad g_T=\frac{\gamma_T}{m},\quad F(t)=\int_a^R r\,\theta(r,t)\,dr', '', 'local2'),
+        ('p', 'with F \u2272 a\u00b2, so the second (far-field) term is of order (a/R)\u00b2 \u2248 10^{\u22123} of the first: the peak wall stress is, to 0.1%, the local constraint response \u22122\u03bc g_{T} p(t) (0.985 MPa/K for the Lam\u00e9 constants of the isotropic control), whatever the heat-conduction law in the bulk. The expression follows from the radial equilibrium equation integrated once and the two boundary conditions; it is used here as an independent reference (Section 5) and as the basis of the interpretation in Section 6.'),
+    ]
+
+
+def method():
+    return [
+        ('h1', '3. Numerical method'),
+        ('h2', '3.1 Spatial discretisation and frequency-domain solver'),
+        ('p', 'A body-fitted mapped polar grid with exponential radial clustering towards the cavity (parameter \u03b3 = 5) and a uniform periodic parametric angle is used; first derivatives are second-order finite differences with analytic metrics (one-sided at the two boundaries), and the heat and momentum operators are assembled in conservative flux form. For a complex frequency the system A(s) = A_{0} \u2212 s\u00b2A_{in} + sA_{d} + g(s)A_{lap} is solved by sparse LU with row equilibration and two steps of iterative refinement; the refinement lowers the forward-error floor of the stress from about 10^{\u22128} to 10^{\u221214}. Grids are labelled N_{r}\u00d7N_{\u03b8}: R48 = 48\u00d796, T48 = 96\u00d748, M = 96\u00d796 (production), R192 = 192\u00d796 and T144 = 96\u00d7144.'),
+        ('h2', '3.2 Single-pulse response by Bromwich inversion'),
+        ('p', 'The time-domain response of the quiescent medium to one pulse is obtained from the transfer function H(s) (unit wall amplitude) evaluated on the vertical line Re s = \u03b3_{B} > 0 and inverted with the trapezoidal Bromwich sum [21,22]. With the two-sided Laplace transform of the pulse, P(s) = \u221a\u03c0 t_{w} exp((s t_{w}/2)\u00b2 \u2212 s t_{0}), and Y = H P,'),
+        ('eq', r'y(t)=\frac{e^{\gamma_B t}}{T}\left[Y(\gamma_B)+2\,\mathrm{Re}\sum_{k=1}^{K}Y(\gamma_B+i\omega_k)\,e^{i\omega_k t}\right],\qquad \omega_k=\frac{2\pi k}{T}', '', 'brom'),
+        ('p', 'with T = 20 t_{th}, \u03b3_{B} = 0.9/t_{th}: the alias error is e^{\u2212\u03b3_{B}T} = 1.5\u00d710^{\u22128}, the Gaussian spectrum is truncated at 10^{\u221210} (K = 26, i.e. 27 solves per run), and the result is valid for 0 \u2264 t \u2264 14.5 t_{th}. The real symmetry H(s\u0304) = conj H(s) of the undamped real system is used. Because the evaluation line lies at distance \u03b3_{B} from the resonances of the finite undamped domain, no artificial damping is needed. The reconstruction of the wall temperature returns the Gaussian to better than 10^{\u22128} (10^{\u221210} for t \u2264 6 t_{th}), a check carried out in every run. A periodic discrete-Fourier synthesis over a window of a few thermal times must not be used for this purpose: it returns the periodic steady state of a pulse train (here with a mean wall temperature of 0.27 of the peak, which builds a steady temperature profile out to the outer boundary and raises the clamped-boundary stress), not the single-pulse response.'),
+        ('h2', '3.3 Numerical uncertainty'),
+        ('p', 'Grid convergence is assessed with two refinement families at fixed other direction: radial (R48, M, R192; N_{\u03b8} = 96) and angular (T48, M, T144; N_{r} = 96). For each orientation the observed order is obtained from the three levels, the Richardson-extrapolated value is formed with the observed order bounded to [1, 3], and the extrapolated value is M + (radial correction) + (angular correction). The numerical uncertainty of the orientation modulation is the largest of the differences between the amplitude on grid M and the amplitudes on R192, T144 and the extrapolated values. The radial clustering parameter was chosen from a mesh-direction study (Section 5.2).'),
+    ]

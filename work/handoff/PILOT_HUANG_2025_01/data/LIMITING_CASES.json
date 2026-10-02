@@ -1,0 +1,98 @@
+{
+  "label": "PILOT \u2014 NOT FINAL VALIDATION",
+  "checks": [
+    {
+      "check": "CV tau->0 heat-operator M/N->1 at s=0.001",
+      "value": 1.00000000001,
+      "expected": 1.0,
+      "abs_error": 1.000000082740371e-11,
+      "scope": "ANALYTIC_LIMIT"
+    },
+    {
+      "check": "CV tau->0 heat-operator M/N->1 at s=1e-06",
+      "value": 1.00000000000001,
+      "expected": 1.0,
+      "abs_error": 9.992007221626409e-15,
+      "scope": "ANALYTIC_LIMIT"
+    },
+    {
+      "check": "CV tau->0 heat-operator M/N->1 at s=1e-09",
+      "value": 1.0,
+      "expected": 1.0,
+      "abs_error": 0.0,
+      "scope": "ANALYTIC_LIMIT"
+    },
+    {
+      "check": "MCV3 tau->0 heat-operator M/N->1 at s=0.001",
+      "value": 1.00000000002,
+      "expected": 1.0,
+      "abs_error": 2.000000165480742e-11,
+      "scope": "ANALYTIC_LIMIT"
+    },
+    {
+      "check": "MCV3 tau->0 heat-operator M/N->1 at s=1e-06",
+      "value": 1.00000000000002,
+      "expected": 1.0,
+      "abs_error": 1.9984014443252818e-14,
+      "scope": "ANALYTIC_LIMIT"
+    },
+    {
+      "check": "MCV3 tau->0 heat-operator M/N->1 at s=1e-09",
+      "value": 1.0,
+      "expected": 1.0,
+      "abs_error": 0.0,
+      "scope": "ANALYTIC_LIMIT"
+    },
+    {
+      "check": "Source-stated thermal wavefront speed nu=1/sqrt(tau)",
+      "value": 5.0,
+      "derived_fast_speed": 5.0017611416310785,
+      "rel_error": 0.00035222832621570885,
+      "scope": "LIMITING_CASE"
+    },
+    {
+      "check": "Source-stated thermal front x=nu*t",
+      "value": 0.3,
+      "derived_fast_front": 0.3001056684978647,
+      "abs_error": 0.00010566849786469712,
+      "scope": "LIMITING_CASE"
+    },
+    {
+      "check": "Elastic/front slow position ~1*t (source stress plot ~0.06)",
+      "value": 0.06,
+      "derived_slow_front": 0.05997887374169364,
+      "abs_error": 2.1126258306358725e-05,
+      "scope": "LIMITING_CASE"
+    },
+    {
+      "check": "CV alpha=0 uncoupled thermal transform at s=10+5j,x=0.1",
+      "value_theta": 0.06119405666630365,
+      "expected_theta": 0.06119405666630364,
+      "abs_error": 6.938893903907228e-18,
+      "u_sigma_max": 0.0,
+      "scope": "LIMITING_CASE"
+    },
+    {
+      "check": "MCV3 alpha=0 uncoupled thermal transform at s=10+5j,x=0.1",
+      "value_theta": 0.05893668814106976,
+      "expected_theta": 0.058936688141069754,
+      "abs_error": 6.938893903907228e-18,
+      "u_sigma_max": 0.0,
+      "scope": "LIMITING_CASE"
+    },
+    {
+      "check": "CV tail theta*(0.95)",
+      "value": 2.133332004450309e-88,
+      "expected~0": true,
+      "scope": "LIMITING_CASE",
+      "note": "finite tail expected ~0 behind fronts at t=.06"
+    },
+    {
+      "check": "MCV3 tail theta*(0.95)",
+      "value": 1.6947330550714875e-88,
+      "expected~0": true,
+      "scope": "LIMITING_CASE",
+      "note": "finite tail expected ~0 behind fronts at t=.06"
+    }
+  ]
+}

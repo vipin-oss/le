@@ -1,0 +1,191 @@
+{
+  "label": "PILOT \u2014 NOT FINAL VALIDATION",
+  "method": "Independent computed deHoog64 vs pre-digitized source-figure points with frozen graphical+numerical envelope. Source points are input references, not our results or experiments.",
+  "comparison": [
+    {
+      "model": "CV",
+      "field": "sigma",
+      "points_used": 30,
+      "points_excluded_near_front": 1,
+      "within_envelope": 29,
+      "outside_envelope": 1,
+      "max_abs_error": 0.04920617420066152,
+      "x_of_max_error": 0.8022969647251846,
+      "mean_scaled_error": 0.08107351498889205,
+      "coverage_x": [
+        0.060705496308449555,
+        0.8022969647251846
+      ],
+      "compatibility": "MOSTLY_COMPATIBLE"
+    },
+    {
+      "model": "CV",
+      "field": "theta",
+      "points_used": 39,
+      "points_excluded_near_front": 3,
+      "within_envelope": 38,
+      "outside_envelope": 1,
+      "max_abs_error": 0.7880091098372325,
+      "x_of_max_error": 0.007364975450081833,
+      "mean_scaled_error": 0.04233185805377694,
+      "coverage_x": [
+        0.007364975450081833,
+        0.2888707037643208
+      ],
+      "compatibility": "MOSTLY_COMPATIBLE"
+    },
+    {
+      "model": "CV",
+      "field": "u",
+      "points_used": 6,
+      "points_excluded_near_front": 0,
+      "within_envelope": 6,
+      "outside_envelope": 0,
+      "max_abs_error": 0.00031459313932076765,
+      "x_of_max_error": 0.007352941176470588,
+      "mean_scaled_error": 0.30325488601646394,
+      "coverage_x": [
+        0.007352941176470588,
+        0.22957516339869283
+      ],
+      "compatibility": "COMPATIBLE_WITHIN_FIGURE_UNCERTAINTY"
+    },
+    {
+      "model": "MCV3",
+      "field": "sigma",
+      "points_used": 33,
+      "points_excluded_near_front": 1,
+      "within_envelope": 33,
+      "outside_envelope": 0,
+      "max_abs_error": 0.0008389223466348517,
+      "x_of_max_error": 0.14602132895816244,
+      "mean_scaled_error": 0.028577922302439916,
+      "coverage_x": [
+        0.07383100902379,
+        0.29696472518457756
+      ],
+      "compatibility": "COMPATIBLE_WITHIN_FIGURE_UNCERTAINTY"
+    },
+    {
+      "model": "MCV3",
+      "field": "theta",
+      "points_used": 36,
+      "points_excluded_near_front": 3,
+      "within_envelope": 36,
+      "outside_envelope": 0,
+      "max_abs_error": 0.0046298567301212845,
+      "x_of_max_error": 0.09247135842880524,
+      "mean_scaled_error": 0.0029166131026424503,
+      "coverage_x": [
+        0.020458265139116204,
+        0.2888707037643208
+      ],
+      "compatibility": "COMPATIBLE_WITHIN_FIGURE_UNCERTAINTY"
+    },
+    {
+      "model": "MCV3",
+      "field": "u",
+      "points_used": 33,
+      "points_excluded_near_front": 3,
+      "within_envelope": 33,
+      "outside_envelope": 0,
+      "max_abs_error": 2.2235459518789247e-05,
+      "x_of_max_error": 0.04656862745098039,
+      "mean_scaled_error": 0.012752774168041797,
+      "coverage_x": [
+        0.01388888888888889,
+        0.28839869281045755
+      ],
+      "compatibility": "COMPATIBLE_WITHIN_FIGURE_UNCERTAINTY"
+    }
+  ],
+  "provenance": {
+    "source_id": "B01",
+    "doi": "10.1007/s10483-025-3280-7",
+    "pdf_page": 12,
+    "figure": "5",
+    "source_sha256": "54e3dde5a7e8a1a705b0acf188d3f9f1a4d8971a2d70c94d88d7c3f845ab8196",
+    "method": "Raster colour mask, known axis endpoints, median pixels; 4-pixel column sampling; colour tolerance25 fixed before solver output",
+    "uncertainty": "Conservative representation bounds: at least2pixels y and2pixels x, propagated with source local slope; not statistical CI; source solver uncertainty unknown",
+    "panels": [
+      {
+        "field": "theta",
+        "filename": "embedded_2.png",
+        "width": 614,
+        "height": 456,
+        "frame": [
+          1.5,
+          612.5,
+          1.5,
+          455.0
+        ],
+        "x_range": [
+          0,
+          1
+        ],
+        "y_range": [
+          0.0,
+          1.0
+        ],
+        "delta_x_two_pixels": 0.0032733224222585926,
+        "delta_y_two_pixels": 0.004410143329658214,
+        "origin": "GRAPHICAL_REFERENCE_DIGITIZATION \u2014 not original raw solver data/experiment"
+      },
+      {
+        "field": "sigma",
+        "filename": "embedded_1.png",
+        "width": 614,
+        "height": 458,
+        "frame": [
+          2.0,
+          611.5,
+          1.5,
+          455.0
+        ],
+        "x_range": [
+          0,
+          1
+        ],
+        "y_range": [
+          -0.05,
+          0.01
+        ],
+        "delta_x_two_pixels": 0.003281378178835111,
+        "delta_y_two_pixels": 0.00026460859977949283,
+        "origin": "GRAPHICAL_REFERENCE_DIGITIZATION \u2014 not original raw solver data/experiment"
+      },
+      {
+        "field": "u",
+        "filename": "embedded_0.png",
+        "width": 615,
+        "height": 459,
+        "frame": [
+          1.5,
+          613.5,
+          2.0,
+          456.5
+        ],
+        "x_range": [
+          0,
+          1
+        ],
+        "y_range": [
+          -0.0006,
+          0.0002
+        ],
+        "delta_x_two_pixels": 0.0032679738562091504,
+        "delta_y_two_pixels": 3.52035203520352e-06,
+        "origin": "GRAPHICAL_REFERENCE_DIGITIZATION \u2014 not original raw solver data/experiment"
+      }
+    ],
+    "counts": {
+      "CV_theta": 42,
+      "CV_sigma": 31,
+      "CV_u": 6,
+      "MCV3_theta": 39,
+      "MCV3_sigma": 34,
+      "MCV3_u": 36
+    },
+    "redistribution": "Private reference extraction; not included in public/final recovery archive pending rights review"
+  }
+}

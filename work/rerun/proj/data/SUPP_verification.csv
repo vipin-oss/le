@@ -1,0 +1,10 @@
+case,status,key_metrics
+V0_metric_consistency,PASS,"{""linear_rel_errs"": ""[(0.0031603133854591903, 0.004083694117343661), (0.003162238899633074, 0.004813539984945159)]""}"
+V1_stencil_dispersion,PASS,"{""kh"": [0.2, 0.4, 0.8], ""d2_symbol_rel_err"": [-0.0033288920620815343, -0.013262425036063563, -0.05220846670989199]}"
+V2_grid_convergence,PARTIAL,{}
+V3_rotation_covariance_90deg,PASS,"{""max_rel_err"": 6.264673828982356e-14}"
+V3b_rotation_covariance_37deg_EXPLORATORY,PASS,"{""interp_rel_errs"": [0.002638981889307969, 0.0025259757898765303]}"
+V4_uncoupled_null,PASS,"{""max_abs_hoop"": 0.0}"
+V5_tau_to_zero,PASS,"{""rel_diff"": 1.0880500566880826e-07}"
+V6_steady_log_law,PASS,"{""max_abs_err"": 9.501777534892675e-06, ""back"": 2.163383102541237e-16}"
+V7_static_uniform_theta_annulus,PASS,"{""sigma_theta_a_numeric"": -3201410.508710636, ""sigma_theta_a_exact"": -3179904.953001158, ""rel_err"": 0.006762955505692484}"

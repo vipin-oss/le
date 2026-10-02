@@ -1,0 +1,26 @@
+{
+ "date": "2026-10-01T06:40:11",
+ "label": "v2_gate",
+ "python": "3.13.14",
+ "numpy": "2.3.5",
+ "scipy": "1.17.1",
+ "matplotlib": "3.10.9",
+ "platform": "Linux-6.1.158+-x86_64-with-glibc2.41",
+ "files": {
+  "06_Source_Code/src/cg_bromwich.py": "3a97b3ac98bb2c2ad5c4fa0877155ed260b54f12026e261007113eaac801a3a1",
+  "06_Source_Code/src/cg_grid.py": "d8b34b32c656c09dedc23e22f5658c4b5881dc15cf404f617b7e532e6358d05e",
+  "06_Source_Code/src/cg_model.py": "f15578152b6374c1890886b062788b67b71105566749cd40fa24403eda89ddf1",
+  "06_Source_Code/src/cg_ops.py": "f8855a5b43b2e8506938011bf1f3321276cf4e691daed6786f3c852477d853f5",
+  "06_Source_Code/src/cg_pipeline.py": "47a9f71233b3c9a01c70f5d8521b4e37ee040b449edc119c8cfa076b528b6f15",
+  "06_Source_Code/src/cg_ref1d.py": "80256c7f5e7ecf884898fc1bcce1cf3cf03e873d3be11f7fbd126486c55b7822",
+  "06_Source_Code/src/cg_solver.py": "e6b0b773cf0da46a234a8105eed97991ea9703a6ad1332cbab1aa370246eaf0d",
+  "06_Source_Code/src/cg_transient.py": "41cd9ed6d67f21c0bf789caf2c32636181c781d56afca128b4d6b6f728ee1555",
+  "07_Tests/run_tests.py": "387ae5d5c39a4c210586222b7cc8f9ef3082293aff0c1f4c83d593f095c866ab",
+  "08_Experiments/analyze_v2.py": "23ff0a5706fe81ac8e6be085d03424d03273538e5f400bbcf67fefaff337e546",
+  "08_Experiments/make_figures.py": "119a02b8b611002acd4c5e2004a721790f4315b70543f1ce862e93ea67807e14",
+  "08_Experiments/production_matrix.py": "c715dfee7c9036124c51c8e6d5b2c78a2da25b7d9a7b52911388ed1e0fc53a2c",
+  "08_Experiments/run_convergence.py": "a7063d4a9fd5af3c1a34546462516497192785cac2583aec500912e33b82c2da",
+  "08_Experiments/run_convergence_dirs.py": "984f10194edb8a9174f221f4ab0148c63f56e030eefe58f98bbdefd3d8502899",
+  "08_Experiments/run_production_v2.py": "5f364b663c2c10e1a329380e3518ff1ffc1e88ef920f065e499a8b781121a242"
+ }
+}

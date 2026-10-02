@@ -1,0 +1,186 @@
+{
+ "orlandi_2015": {
+  "doi": "10.7567/apex.8.111101",
+  "title": "Thermal expansion coefficients of \u03b2-Ga\n                    <sub>2</sub>\n                    O\n                    <sub>3</sub>\n                    single crystals",
+  "authors": "Orlandi, Fabio; Mezzadri, Francesco; Calestani, Gianluca; Boschi, Francesco; Fornari, Roberto",
+  "journal": "Applied Physics Express",
+  "year": 2015,
+  "volume": "8",
+  "issue": "11",
+  "pages": "111101"
+ },
+ "jts_bem_2026": {
+  "doi": "10.1080/01495739.2025.2566326",
+  "title": "Boundary element analysis of thermal stresses on voids/holes in an infinite/semi-infinite anisotropic plane",
+  "authors": "Shiah, Y. C.; Liu, Tsung-Lun",
+  "journal": "Journal of Thermal Stresses",
+  "year": 2025,
+  "volume": "49",
+  "issue": "1",
+  "pages": "129-145"
+ },
+ "symmetry_2022": {
+  "doi": "10.3390/sym14112387",
+  "title": "Thermal Conductivity Study of an Orthotropic Medium Containing a Cylindrical Cavity",
+  "authors": "Abbas, Ibrahim; Marin, Marin; Hobiny, Aatef; Vlase, Sorin",
+  "journal": "Symmetry",
+  "year": 2022,
+  "volume": "14",
+  "issue": "11",
+  "pages": "2387"
+ },
+ "dhaliwal_sherief_1980": [
+  {
+   "doi": "10.1090/qam/575828",
+   "title": "Generalized thermoelasticity for anisotropic media",
+   "authors": "Dhaliwal, Ranjit S.; Sherief, Hani H.",
+   "journal": "Quarterly of Applied Mathematics",
+   "year": 1980,
+   "volume": "38",
+   "issue": "1",
+   "pages": "1-8"
+  },
+  {
+   "doi": "10.1090/qam/872828",
+   "title": "On uniqueness and stability in generalized thermoelasticity",
+   "authors": "Sherief, Hany H.",
+   "journal": "Quarterly of Applied Mathematics",
+   "year": 1987,
+   "volume": "44",
+   "issue": "4",
+   "pages": "773-778"
+  }
+ ],
+ "cheng_2018_expansion": [
+  {
+   "doi": "10.1063/1.5054265",
+   "title": "Thermal expansion of single-crystalline\n                    <i>\u03b2</i>\n                    -Ga2O3 from RT to 1200\u2009K studied by synchrotron-based high resolution x-ray diffraction",
+   "authors": "Cheng, Zongzhe; Hanke, Michael; Galazka, Zbigniew; Trampert, Achim",
+   "journal": "Applied Physics Letters",
+   "year": 2018,
+   "volume": "113",
+   "issue": "18",
+   "pages": "182102"
+  },
+  {
+   "doi": "10.1063/1.4998804",
+   "title": "Phase formation and strain relaxation of Ga2O3 on c-plane and a-plane sapphire substrates as studied by synchrotron-based x-ray diffraction",
+   "authors": "Cheng, Zongzhe; Hanke, Michael; Vogt, Patrick; Bierwagen, Oliver; Trampert, Achim",
+   "journal": "Applied Physics Letters",
+   "year": 2017,
+   "volume": "111",
+   "issue": "16",
+   "pages": "162104"
+  }
+ ],
+ "handwerg_2016": [
+  {
+   "doi": "10.1088/0268-1242/31/12/125006",
+   "title": "Temperature-dependent thermal conductivity and diffusivity of a Mg-doped insulating\n                    <i>\u03b2</i>\n                    -Ga\n                    <sub>2</sub>\n                    O\n                    <sub>3</sub>\n                    single crystal along [100], [010] and [001]",
+   "authors": "Handwerg, M; Mitdank, R; Galazka, Z; Fischer, S F",
+   "journal": "Semiconductor Science and Technology",
+   "year": 2016,
+   "volume": "31",
+   "issue": "12",
+   "pages": "125006"
+  },
+  {
+   "doi": "10.1088/0268-1242/30/2/024006",
+   "title": "Temperature-dependent thermal conductivity in Mg-doped and undoped<i>\u03b2</i>-Ga<sub>2</sub>O<sub>3</sub>bulk-crystals",
+   "authors": "Handwerg, M; Mitdank, R; Galazka, Z; Fischer, S F",
+   "journal": "Semiconductor Science and Technology",
+   "year": 2015,
+   "volume": "30",
+   "issue": "2",
+   "pages": "024006"
+  }
+ ],
+ "biot_1956": [
+  {
+   "doi": "10.1063/1.1722351",
+   "title": "Thermoelasticity and Irreversible Thermodynamics",
+   "authors": "Biot, M. A.",
+   "journal": "Journal of Applied Physics",
+   "year": 1956,
+   "volume": "27",
+   "issue": "3",
+   "pages": "240-253"
+  },
+  {
+   "doi": "10.1512/iumj.1974.23.23026",
+   "title": "Non-Linear Thermoelasticity, Irreversible Thermodynamics and Elastic Instability",
+   "authors": "Biot, M.",
+   "journal": "Indiana University Mathematics Journal",
+   "year": 1973,
+   "volume": "23",
+   "issue": "4",
+   "pages": "309-335"
+  }
+ ],
+ "bem_discs_2022": [
+  {
+   "doi": "10.3390/ma15051828",
+   "title": "Boundary Element and Sensitivity Analysis of Anisotropic Thermoelastic Metal and Alloy Discs with Holes",
+   "authors": "Fahmy, Mohamed Abdelsabour; Alsulami, Mohammed Owaidh",
+   "journal": "Materials",
+   "year": 2022,
+   "volume": "15",
+   "issue": "5",
+   "pages": "1828"
+  },
+  {
+   "doi": "10.1515/math-2025-0243",
+   "title": "A new boundary element sensitivity analysis for\u00a0generalized thermoelastic three-phase-lag model of\u00a0anisotropic materials",
+   "authors": "Fahmy, Mohamed Abdelsabour; Toujani, Moncef",
+   "journal": "Open Mathematics",
+   "year": 2026,
+   "volume": "24",
+   "issue": "1",
+   "pages": "20250243"
+  }
+ ],
+ "cattaneo_1958": [
+  {
+   "doi": "10.1017/cbo9780511693229.006",
+   "title": "De la Propagation de la Chaleur Dans Une Sph\u00e8re Solide",
+   "authors": "",
+   "journal": "Th\u00e9orie Analytique de la Chaleur",
+   "year": 2009,
+   "volume": null,
+   "issue": null,
+   "pages": "340-368"
+  },
+  {
+   "doi": "10.70675/0415e1d8z8a85z470cz80c0zd4c066adc55e",
+   "title": "Impact de la v\u00e9g\u00e9talisation sur l\u2019\u00eelot de chaleur urbain et la pollution d\u2019ozone : quantification par une approche de mod\u00e9lisation \u00e0 l\u2019\u00e9chelle d\u2019un quartier",
+   "authors": "Le Mentec, Sonia",
+   "journal": "",
+   "year": null,
+   "volume": null,
+   "issue": null,
+   "pages": null
+  }
+ ],
+ "stroh_1958": [
+  {
+   "doi": "10.1080/14786435808565804",
+   "title": "Dislocations and Cracks in Anisotropic Elasticity",
+   "authors": "Stroh, A. N.",
+   "journal": "Philosophical Magazine",
+   "year": 1958,
+   "volume": "3",
+   "issue": "30",
+   "pages": "625-646"
+  },
+  {
+   "doi": "10.1016/0043-1648(59)90018-3",
+   "title": "Dislocations and cracks in anisotropic elasticity",
+   "authors": "",
+   "journal": "Wear",
+   "year": 1959,
+   "volume": "2",
+   "issue": "3",
+   "pages": "240"
+  }
+ ]
+}

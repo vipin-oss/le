@@ -1,0 +1,122 @@
+[
+  {
+    "model": "CV",
+    "M_s": "1+tau*s",
+    "N_s": "1",
+    "DC_k_times_N_over_M": "k",
+    "note": "CV parent",
+    "source_location": "B01 Eq5/Table1",
+    "origin_status": "SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS",
+    "solver_status": "NOT_RUN"
+  },
+  {
+    "model": "MCV1",
+    "M_s": "1+2*tau*s",
+    "N_s": "1+tau*s",
+    "DC_k_times_N_over_M": "k",
+    "note": "First-order phase-lag kernel; restricted family related to MCV2 by consistent k/tau reparameterization",
+    "source_location": "B01 Eq13/Table1",
+    "origin_status": "SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS",
+    "solver_status": "NOT_RUN"
+  },
+  {
+    "model": "MCV2",
+    "M_s": "1+tau*s",
+    "N_s": "2+tau*s",
+    "DC_k_times_N_over_M": "2*k",
+    "note": "Effective DC differs from CV at the same unit k",
+    "source_location": "B01 Eq18/Table1",
+    "origin_status": "SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS",
+    "solver_status": "NOT_RUN"
+  },
+  {
+    "model": "MCV3",
+    "M_s": "1+3*tau*s+tau^2*s^2",
+    "N_s": "1+tau*s",
+    "DC_k_times_N_over_M": "k",
+    "note": "Proposed first modified source-case candidate; not final project/model approval",
+    "source_location": "B01 Eq21/Table1",
+    "origin_status": "SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS",
+    "solver_status": "NOT_RUN"
+  },
+  {
+    "model": "MCV4",
+    "M_s": "1+3*tau*s+tau^2*s^2",
+    "N_s": "2+tau*s",
+    "DC_k_times_N_over_M": "2*k",
+    "note": "Match total DC conductivity before interpreting mechanism controls",
+    "source_location": "B01 Eq24/Table1",
+    "origin_status": "SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS",
+    "solver_status": "NOT_RUN"
+  },
+  {
+    "model": "MCV5",
+    "M_s": "(1+tau*s)^2",
+    "N_s": "2*(1+tau*s)",
+    "DC_k_times_N_over_M": "2*k",
+    "note": "Equal-unit/compatible-history kernel reduces to CV with conductivity2k",
+    "source_location": "B01 Eq28/Table1",
+    "origin_status": "SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS",
+    "solver_status": "NOT_RUN"
+  },
+  {
+    "model": "MCV6",
+    "M_s": "1+3*tau*s+tau^2*s^2",
+    "N_s": "1+2*tau*s",
+    "DC_k_times_N_over_M": "k",
+    "note": "Distinct equal-unit numerator from MCV3; admissibility/new-material scope not audited",
+    "source_location": "B01 Eq31/Table1",
+    "origin_status": "SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS",
+    "solver_status": "NOT_RUN"
+  },
+  {
+    "model": "GN",
+    "M_s": "tau*s",
+    "N_s": "1+tau*s",
+    "DC_k_times_N_over_M": "DC pole",
+    "note": "TypeIII structure; k*=k/tau in the source parameterization",
+    "source_location": "B01 Eq8/Table1",
+    "origin_status": "SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS",
+    "solver_status": "NOT_RUN"
+  },
+  {
+    "model": "MGN1",
+    "M_s": "2*tau*s+tau^2*s^2",
+    "N_s": "1+tau*s",
+    "DC_k_times_N_over_M": "DC pole",
+    "note": "Not finite static Fourier conductance",
+    "source_location": "B01 Eq34/Table1",
+    "origin_status": "SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS",
+    "solver_status": "NOT_RUN"
+  },
+  {
+    "model": "MGN2",
+    "M_s": "tau*s+tau^2*s^2",
+    "N_s": "1+2*tau*s",
+    "DC_k_times_N_over_M": "DC pole",
+    "note": "Eq36 internal mismatch; independently derived equal law matchesEq37/Table1; do not silently implement a correction",
+    "source_location": "B01 Eq35\u201337/Table1",
+    "origin_status": "SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS",
+    "solver_status": "NOT_RUN"
+  },
+  {
+    "model": "MGN3",
+    "M_s": "2*tau*s*(1+tau*s)",
+    "N_s": "(1+tau*s)^2",
+    "DC_k_times_N_over_M": "DC pole",
+    "note": "Equal-unit/compatible-history kernel reduces to GN with k/2",
+    "source_location": "B01 Eq40/Table1",
+    "origin_status": "SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS",
+    "solver_status": "NOT_RUN"
+  },
+  {
+    "model": "MGN4",
+    "M_s": "tau*s+tau^2*s^2",
+    "N_s": "1+3*tau*s+tau^2*s^2",
+    "DC_k_times_N_over_M": "DC pole",
+    "note": "Source Table1 transcribed; complete derivation/admissibility audit not done",
+    "source_location": "B01 Eq43/Table1",
+    "origin_status": "SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS",
+    "solver_status": "NOT_RUN"
+  }
+]

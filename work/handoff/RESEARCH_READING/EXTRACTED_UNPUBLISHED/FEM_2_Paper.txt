@@ -1,0 +1,1286 @@
+
+--- PAGE 1 ---
+ A C1-continuous Bogner–Fox–Schmit finite element framework for
+    Mindlin Form-II strain-gradient elasticity with anisotropic
+     ellipsoidal microstructures: boundary-layer mechanics and
+                     size-dependent responses
+
+Eman Ghareeb Rezk1, Sunita kumawat2, Khaled Lotfy3, Arun Kumar Yadav4, Vipin Gupta5,∗
+ 1Mathematical Science Department, College of Science, Princess Nourah bint Abdulrahman
+                    University, P.O.Box 84428, Riyadh 11671, Saudi Arabia
+   2Department of Mathematics, Amrita Vishwa Vidyapeetham, Bengaluru Campus, India
+   3Department of Mathematics, Faculty of Science, P.O. Box 44519, Zagazig University,
+                                      Zagazig, Egypt
+     4School of Basic and Applied Sciences, K.R. Mangalam University, Gurugram, India
+              5 Department of Mathematics, Gurugram University, Gurugram, India.
+                               Email:1egrezk@pnu.edu.sa
+                           2sunita14kumawat@gmail.com
+                              3khlotfy_1@yahoo.com )
+                             4arunyadav0307@gmail.com
+                              5,∗vipin@gurugramuniversity.ac.in
+                                ∗Corresponding author
+
+
+
+
+
+Abstract
+
+This paper develops a displacement-based finite element framework for Mindlin Form-II strain-
+gradient elasticity and uses it to study anisotropic size-dependent behavior. The formulation
+combines a C1-continuous Bogner–Fox–Schmit (BFS) element with an orientation-dependent
+characteristic-length tensor derived from a three-dimensional ellipsoidal microstructure, and
+captures the combined effect of microstructural aspect ratio and orientation under simple
+shear.  Accuracy is checked against a closed-form analytical benchmark.  Parametric analy-
+ses over aspect ratio and orientation angle then examine the displacement field, Cauchy stress,
+higher-order double stress, boundary-layer thickness, and strain-gradient energy. Both param-
+eters strongly affect the non-classical response: higher-order stresses rise and boundary layers
+thicken with increasing anisotropy.  Three-dimensional response surfaces, design maps, and
+energy-partition diagrams trace the transition from classical elasticity to gradient-dominated
+behavior and show mechanical energy shifting from the classical strain field into the higher-order
+gradient term. The framework is suited to architected and cellular materials with anisotropic
+microstructures, and to size-dependent analysis of composites, lattice materials, and MEMS
+components.
+Keywords: Strain-gradient elasticity; Mindlin Form-II theory; Bogner–Fox–Schmit finite el-
+ement; Anisotropic microstructure; Boundary-layer mechanics; Gradient energy; Size effect;
+Architected materials.
+
+
+1. Introduction
+
+  Microstructured materials, architected metamaterials, and micro-electro-mechanical systems
+(MEMS) appear throughout modern structural engineering.  Classical continuum mechanics,
+
+--- PAGE 2 ---
+however, struggles to describe their behavior at small scales. Cauchy elasticity assumes that
+stress at a point depends only on the local strain at that same point, an assumption that carries
+no intrinsic length scale. The governing equations are therefore scale-invariant [1].
+  At the macroscopic scale this simplification works well, because the structural dimensions
+are much larger than the material microstructure. At the micro- and nano-scales it breaks
+down. Experiments show that smaller components get stiffer as their size approaches the mi-
+crostructural length scale, the so-called “smaller is stiffer” effect [2–4]. In printed composites,
+micro-cantilevers, and thin adhesive layers, steep deformation gradients appear near interfaces
+[5, 6]. Classical Cauchy elasticity cannot distinguish uniform straining from these sharp gra-
+dients.  It therefore underpredicts stiffness and misses the boundary layers that form near
+constrained surfaces. Higher-order continuum theories address these limitations by accounting
+for non-local microstructural interactions [7, 8].
+  Several such theories have been developed.  Toupin [9], Mindlin [10, 11], and Koiter [12]
+introduced couple stresses and strain gradients into the internal potential energy. Green and
+Rivlin [13], Eringen and Suhubi [14], and Capriz [15] proposed complementary generalized
+continuum frameworks. Germain’s method of virtual power [16] later gave a systematic way to
+derive balance laws involving higher-order stresses and edge interactions [17, 18].
+  Mindlin’s Form-II strain-gradient elasticity is a general framework in which the strain-energy
+density splits into two parts: a classical strain-energy term and a higher-order gradient-energy
+term. The state depends on both the strain tensor and the strain-gradient tensor, and the
+response is governed by the Lamé constants and five independent microstructural length-scale
+parameters [19–21]. Later work simplified and extended these ideas. Aifantis and co-workers
+[22] developed gradient elasticity models that remove stress singularities near cracks and dis-
+locations.  Fleck, Hutchinson, and co-workers [23–25] and Gurtin, Anand, and Gudmundson
+[26–28] reformulated strain-gradient plasticity to capture size-dependent strengthening in micro-
+indentation, torsion, and bending of metals. More recently, additive manufacturing and archi-
+tected metamaterials have renewed interest in higher-order elasticity [29–31].  Abali, Müller,
+and dell’Isola [32], Auffray et al.  [33], and Shekarchizadeh et al.  [34] have established varia-
+tional principles and exact benchmark solutions for Form-II strain-gradient elasticity, showing
+that higher-order boundary-layer stiffening comes from the thermodynamic balance between
+Cauchy stresses and hyper-stresses.
+  Implementing strain-gradient elasticity in the finite element method is demanding [35, 36].
+The strain-gradient tensor leads to fourth-order equilibrium equations, so a conforming dis-
+cretization requires C1-continuity of the displacement field across element boundaries [37, 38].
+Standard C0 Lagrangian elements do not satisfy this requirement; their second derivatives are
+discontinuous at interfaces, which causes locking or strong mesh dependence [39].
+ Two main strategies address this problem. Mixed finite element methods treat displacements,
+displacement gradients, and Lagrange multipliers as independent C0 variables. They avoid C1
+continuity but increase the global system size, often to ten or more degrees of freedom per
+node, and create saddle-point conditioning problems. Isogeometric analysis based on NURBS
+or B-splines achieves the required smoothness over complex domains, but it is computationally
+intensive and needs specialized integration schemes [40–43]. An alternative is the Bogner–Fox–
+Schmit (BFS) bicubic rectangular element. It keeps displacements, first derivatives, and mixed
+second derivatives as nodal degrees of freedom [44, 45], which gives exact inter-element slope
+continuity within a compact matrix formulation.  It is an efficient C1-conforming choice for
+fourth-order gradient elasticity problems.
+  Most numerical studies of strain-gradient elasticity have assumed isotropic characteristic-
+length tensors.  In Eringen’s differential nonlocal elasticity, the characteristic-length tensor
+comes from volume averaging over a centrosymmetric microstructural neighborhood.  For a
+
+
+
+                                         2
+
+--- PAGE 3 ---
+spherical domain it reduces to a diagonal tensor with a single intrinsic length scale [46–48].
+Real architected solids, 3D-printed composites, and biological tissues, however, have anisotropic
+morphologies with different directional aspect ratios and orientations [49]. Yildizdag and co-
+workers [50] recently examined planar flexure and rigid bar pull-out in gradient elasticity and
+showed that microstructural orientation strongly affects localized stress transfer. No direct C1-
+conforming finite element study has yet examined how microstructural aspect ratio and in-plane
+orientation together shape the macroscopic deformation field. In particular, how anisotropic
+ellipsoidal microstructures drive the displacement profile, Cauchy-stress redistribution, double-
+stress localization, boundary-layer penetration, and the split of energy between classical and
+gradient terms is not well characterized.
+ The present study develops a C1-conforming finite element framework for anisotropic size-
+dependent solids under simple shear. We derive an orientation-dependent characteristic-length
+tensor from a general three-dimensional ellipsoidal averaging domain and build it into the com-
+plete Mindlin Form-II strain-gradient elasticity formulation. The resulting fourth-order bound-
+ary value problem is discretized with the Bogner–Fox–Schmit element, keeping displacements,
+displacement gradients, and mixed second derivatives as nodal degrees of freedom. The for-
+mulation therefore evaluates exact higher-order strain gradients without mixed-variable spaces,
+penalty parameters, or external stabilization. Higher-order Dirichlet boundary conditions and
+lateral periodic constraints are enforced through an exact symmetric row-column elimination
+scheme that preserves global matrix symmetry and keeps the linear systems well-conditioned.
+ The paper first verifies the BFS implementation against the closed-form analytical bench-
+mark of Shekarchizadeh et al.  [34] for Case 1 displacement-controlled simple shear, with L2
+error norms below 10−7. We then run a parametric study over microstructural orientation an-
+gles and aspect ratios. Rotating an elongated ellipsoidal microstructure toward the boundary
+normal strengthens non-local interactions: classical Cauchy shear stress is redistributed away
+from the upper constraint, and steep compensating higher-order double-stress gradients appear
+near the clamped boundaries. We collect these results into three-dimensional orientation–
+aspect-ratio maps and boundary-layer thickness contours, which mark where microstructural
+boundary layers take over the macroscopic response. An exact thermodynamic energy-partition
+analysis using Gauss-Legendre stiffness kernels shows that strongly anisotropic microstructures
+can store up to 40% of the input work in higher-order micro-curvature fields. The results map
+how microstructural orientation and aspect ratio set the size-dependent response and where
+interfacial stress concentration peaks, for architected and cellular materials and for MEMS
+devices.
+
+
+2. Mathematical formulation
+
+ The present formulation is based on Mindlin Form-II strain-gradient elasticity for small de-
+formations. The displacement field is denoted by ui and the infinitesimal strain tensor and its
+first spatial gradient are
+
+                          1                     1
+                               εij =   (ui,j + uj,i) ,       εij,k =   (ui,jk + uj,ik) .                     (1)
+                          2                     2
+
+The strain-energy density combines the classical and the strain-gradient contributions,
+
+                              1           1
+             W = 2Cijklεijεkl + 2Dijklmnεij,mεkl,n,                          (2)
+
+with the Cauchy stress and the higher-order double stress
+
+                                  σij = Cijklεkl,     τijm = Dijklmnεkl,n.                          (3)
+
+                                         3
+
+--- PAGE 4 ---
+For the proposed anisotropic ellipsoidal microstructure, the sixth-order strain-gradient modulus
+is written in the separable form
+                                     Dijklmn = Cijklg2mn,                                    (4)
+where g2mn is a second-order characteristic-length tensor representing the normalized second
+moment of a three-dimensional ellipsoidal nonlocal averaging domain. For an ellipsoid with
+principal semi-axes a1, a2, a3, this tensor reduces in its principal frame to
+
+                            ⎡a21  0   0 ⎤                                     1
+                                 g2p =    0  a22  0                                     (5)                                     5 ⎣        ⎦.
+                                        0   0  a23
+
+The derivation of Eq. (5) from the ellipsoidal second moment, including the volume normaliza-
+tion and the parametrization integrals, is given in Appendix A.
+  For the two-dimensional plane-strain problems considered in the numerical study, the in-plane
+projection of g2p is rotated by an angle α about the global x-axis. The resulting orientation-
+dependent characteristic-length tensor is
+
+                         1 [︃a21 cos2 α + a22 sin2 α  (a21 −a22) sin α cos α ]︃                  g2(α) =                                                                        ,                 (6)
+                         5  (a21 −a22) sin α cos α  a21 sin2 α + a22 cos2 α
+
+or equivalently, using the aspect ratio AR = a1/a2,
+
+                           a22 [︃AR2 cos2 α + sin2 α  (AR2 −1) sin α cos α ]︃                g2(α) =                                                                              .                (7)
+                        5  (AR2 −1) sin α cos α  AR2 sin2 α + cos2 α
+
+The component most relevant to the transverse boundary layers of a horizontally constrained
+specimen is the boundary-normal component
+
+                              a21 sin2 α + a22 cos2 α            √︂
+                     g222(α) =                                ,     ℓn(α) =   g222(α),                   (8)
+                                   5
+
+which controls the through-thickness strain-gradient response reported in Sections 5.3–??.
+ The numerical formulation is written in engineering plane-strain notation. The displacement
+and strain vectors are
+                             ⎡ εxx ⎤  ⎡   u,x  ⎤                                     [︃u ]︃
+                  u =        ,    ε =  εyy            v,y                              (9)                              v       ⎣  ⎦= ⎣      ⎦,
+                                                γxy       u,y + v,x
+
+and the strain-gradient vector is ordered as
+
+                        ⎡ εxx,x ⎤  ⎡   u,xx  ⎤
+                                               εyy,x            v,xy
+                                             γxy,x       u,xy + v,xx
+                    ∇ε =     =                      .                           (10)
+                                               εxx,y           u,xy
+                                                εyy,y            v,yy                                                                                                                                                                          ⎢⎢⎢⎢⎢⎢⎣                    ⎥⎥⎥⎥⎥⎥⎦              ⎢⎢⎢⎢⎢⎢⎣                                             ⎥⎥⎥⎥⎥⎥⎦
+                                              γxy,y       u,yy + v,xy
+
+For an isotropic plane-strain solid,
+
+          ⎡λ + 2µ   λ    0 ⎤
+                                     Eν            E
+      C =    λ   λ + 2µ  0      λ =                µ =                 (11)          ⎣              ⎦,         (1 + ν)(1 −2ν),         2(1 + ν).
+                  0       0   µ
+
+
+                                         4
+
+--- PAGE 5 ---
+With the strain-gradient ordering of Eq. (10), the ellipsoidal higher-order matrix used in the
+main anisotropic simulations is the 6 × 6 block matrix
+
+                                                     [︃g211 C  g212 C]︃
+                                       Dell =                         .                               (12)
+                                            g221 C  g222 C
+
+The benchmark verification problem of Shekarchizadeh et al. [34] uses, instead of Eq. (12), the
+full isotropic Mindlin Form-II higher-order matrix DM defined by the benchmark coefficients
+c3, . . . , c7.  The explicit form of DM and its entries are listed in  Appendix D, where the
+distinction between Dell and DM is made explicit.
+ The effective stress and the static equilibrium equation are
+
+                                                  ˆ︁σij = σij −τijk,k,       σij,j −τijk,kj + bi = 0.                     (13)
+The associated weak form and natural boundary terms are introduced in Section 3; their detailed
+integration-by-parts derivation is provided in Appendix B.
+
+
+3. Variational formulation
+
+  Because the strain-gradient energy depends on second derivatives of the displacement field,
+a conforming displacement formulation requires the admissible displacement components to
+belong to H2(Ω):
+                                         u, v ∈H2(Ω).                                   (14)
+
+The principle of virtual work for this setting is
+
+                                      δWint = δWext,                                   (15)
+
+with the internal virtual work
+
+                                                       ∫︂                      ∫︂
+                          δWint =   (δε)Tσ dΩ+   (δ∇ε)Tτ dΩ,                       (16)
+                               Ω            Ω
+
+and the external virtual work
+
+                             ∫︂                      ∫︂                      ∫︂                            ∫︂
+         δWext =   (δu)Tb dΩ+    (δu)T¯t dΓ +    [D(δu)]T ¯q dΓ +     (δu)T¯r ds,      (17)
+                 Ω                  Γt                 Γq                    ∂Γr
+
+where D(·) = nj(·),j denotes the outward normal derivative.  Substituting the constitutive
+relations gives the matrix weak form
+
+                                     ∫︂                         ∫︂
+                      (δε)TC ε dΩ+  (δ∇ε)TD ∇ε dΩ= δWext.                    (18)
+                     Ω              Ω
+
+In the benchmark verification, D = DM, while in the anisotropic ellipsoidal simulations, D =
+Dell as defined in Eq. (12).
+  For the straight rectangular boundaries used in the finite-element simulations, the natural
+higher-order quantities are
+
+                Qi = τijknjnk,     Mil = τijknkPjl,     Pjl = δjl −njnl,               (19)
+
+
+
+
+
+                                         5
+
+--- PAGE 6 ---
+and the natural boundary conditions read
+
+                                                                                               l Mil = ¯ti,                                 (20)                                                       ˆ︁σijnj −∇S
+                                         Qi = ¯qi,                                 (21)
+                                              Milνl = ¯ri,                                 (22)
+
+where ∇Sl  is the surface derivative and νl is the outward co-normal along an edge. The essen-
+tial boundary conditions are prescribed displacement and prescribed normal derivative on the
+corresponding parts of the boundary.
+  It is important to emphasize that the variational formulation in Eqs. (18)–(22) is common to
+both numerical experiments performed in this work, but the boundary data are not the same. In
+the benchmark verification step (Section 5.1), the geometry, material constants, higher-order
+coefficients, and higher-order boundary conditions are imposed according to the benchmark
+problem of Shekarchizadeh et al. [34].  In the subsequent anisotropic parametric study, the
+benchmark coefficients are not used and the response is computed using Dell together with
+the simple-shear and lateral-periodicity boundary constraints defined for the present ellipsoidal
+microstructure problem.
+
+
+4. Bogner–Fox–Schmit finite element formulation
+
+ The weak form of Eq. (18) contains second derivatives of the displacement field. A conforming
+displacement-based discretization therefore requires C1 continuity. The present work uses the
+Bogner–Fox–Schmit (BFS) rectangular element, which is based on tensor-product cubic Hermite
+interpolation and provides the required inter-element slope continuity.
+ A rectangular element Ωe of side lengths hx and hy, centred at (xc, yc), is mapped from the
+parent coordinates (ξ, η) ∈[−1, 1]2 by
+
+                             hx               hy           hxhy
+                  x = xc +    ξ,    y = yc +    η,     Je =         .                   (23)
+                             2               2             4
+
+At each of the four corner nodes, the BFS degrees of freedom for the two in-plane displacement
+components are
+
+               dA = [︁uA  u,xA  u,yA  u,xyA  vA  v,xA  v,yA  v,xyA ]︁T .                (24)
+
+A four-node BFS element therefore has 32 degrees of freedom. The displacement approximation
+is written compactly as
+                                     ue = Ne de.                                     (25)
+
+The one-dimensional cubic Hermite functions, the scalar BFS row NwA used to build Ne, and
+the scaling factors hx/2, hy/2, and hxhy/4 that convert physical derivative degrees of freedom
+into parent-coordinate Hermite data are detailed in Appendix C.
+  Using the engineering strain and strain-gradient vectors of Eqs. (9)–(10), the element-level
+fields are
+                           ε = B de,   ∇ε = Bg de,                             (26)
+
+
+
+
+
+                                         6
+
+--- PAGE 7 ---
+with nodal blocks
+
+                                    ⎡NwA,xx   0 ⎤
+                                             0   NwA,xy                  ⎡NwA,x   0 ⎤                                   NwA,xy NwA,xx              BA =   0  NwA,y      BgA =                            .                 (27)                  ⎣         ⎦,        NwA,xy   0                  NwA,y NwA,x                                             0   NwA,yy                                                                                                                                                                                                                                                         ⎢⎢⎢⎢⎢⎢⎣                                                            ⎥⎥⎥⎥⎥⎥⎦
+                                   NwA,yy NwA,xy
+
+The strain-gradient block in Eq. (27) follows the ordering of Eq. (10); a component-wise deriva-
+tion is provided in Appendix C. Because the engineering shear strain γxy = u,y + v,x is used,
+no factor 1/2 appears in the shear rows of B and Bg.
+ The element stiffness matrix is the sum of the classical and the strain-gradient contributions,
+
+                                                            ∫︂                                      ∫︂
+         Ke = Kec + Keg,    Kec =   BTC B dΩ,    Keg =   BTg D Bg dΩ,         (28)
+                                           Ωe                          Ωe
+
+with dimensions
+
+          B ∈R3×32,   C ∈R3×3,    Bg ∈R6×32,  D ∈R6×6.              (29)
+
+A 4 × 4 tensor-product Gauss quadrature is used for the parent-domain integration.  The
+assembled system is
+                 Kd = F,    Kffdf = Ff −Kfp¯dp,                         (30)
+
+where the second equation denotes the reduced system after applying the prescribed displace-
+ment and derivative degrees of freedom.
+
+
+5. Numerical verification and simulation setup
+
+ The numerical study has two parts.  First, the BFS implementation is checked against the
+closed-form strain-gradient elasticity benchmark of Shekarchizadeh et al. [34], using that bench-
+mark’s geometry, isotropic constants, full Mindlin Form-II higher-order matrix DM, and bound-
+ary conditions.  Second, the verified implementation is applied to the anisotropic ellipsoidal
+problem proposed here, which uses the separable ellipsoidal matrix Dell defined in Eq. (12)
+with simple-shear and lateral-periodicity constraints. The two boundary-value problems differ
+in both constitutive data and boundary specification, so the benchmark results do not carry
+over to the anisotropic simulations.
+  All stress, strain, and energy quantities are evaluated directly from the solved finite element
+displacement vector using the exact C1-continuous BFS shape-function derivatives. No finite-
+difference estimates, curve fitting, data smoothing, or interpolation replacements enter the
+post-processing; the Gauss–Legendre quadrature used in the global stiffness assembly is reused
+unchanged for every derived field.
+
+5.1. Validation of the BFS finite-element solver
+ The benchmark of Shekarchizadeh et al. [34] provides a closed-form analytical solution for
+displacement-controlled simple shear in two-dimensional Mindlin Form-II strain-gradient elas-
+ticity. Following Case 1, a uniform horizontal displacement Utop = 0.05 mm is prescribed along
+the upper boundary of a rectangular strip with L = 1.5 mm and H = 0.5 mm. The material
+parameters are E = 400 MPa and ν = 0.49, a nearly incompressible isotropic solid. The higher-
+order coefficients c3, . . . , c7 and the assembly of DM are listed in Appendix Appendix D. Only
+
+
+                                         7
+
+--- PAGE 8 ---
+                              1
+
+
+                                   0.9
+
+
+                                   0.8
+
+
+                                   0.7
+
+
+                                   0.6
+
+
+                                   0.5
+
+
+                                   0.4
+
+
+                                   0.3
+
+
+                                   0.2
+
+
+                                   0.1
+
+
+                              0
+                                0       0.1      0.2      0.3      0.4      0.5      0.6      0.7      0.8      0.9      1
+
+
+
+Figure 1: Normalized horizontal displacement profiles u(y)/Utop along y/H: BFS formulation (symbols) versus
+the analytical benchmark solution of Shekarchizadeh et al. [34] (solid lines). The classical elasticity solution
+(ℓ= 0) is included for reference.
+
+     ℓ      L2 error    L∞error    Relative error (%)             Observation
+ 0.1 mm  6.48 × 10−8  1.01 × 10−7      2.02 × 10−4     Agreement with analytical solution.
+ 0.2 mm  5.64 × 10−9  8.42 × 10−9      1.68 × 10−5     Boundary layer accurately resolved.
+ 0.3 mm  1.23 × 10−9  1.83 × 10−9      3.66 × 10−6       Consistent size-effect prediction.
+
+
+Table 1: Validation against the analytical benchmark solution of Shekarchizadeh et al. [34] for the displacement-
+controlled simple-shear problem. All results correspond to a 32 × 32 mesh.
+
+
+the boundary-value problem is swapped to the benchmark case for this step; the governing
+framework is unchanged, and all subsequent simulations return to Dell.
+  Predictions are compared with the analytical solution for three characteristic length scales,
+ℓ= 0.1, 0.2, and 0.3 mm. The profiles are in Fig. 1, the error measures in Table 1.
+  In the classical limit (ℓ= 0) the displacement varies linearly across the height — the conven-
+tional Couette solution. A finite characteristic length bends the profile away from linear, and
+the bending grows with ℓ. The BFS symbols lie on the analytical curves over the entire domain
+for all three length scales. Larger ℓalso drives boundary layers at the constrained surfaces,
+where the strain-gradient term pulls shear deformation inward from the boundaries.
+  For all three length scales the L2 error norm stays between 6.48 × 10−8 and 1.23 × 10−9,
+and the L∞norm (the maximum absolute discrepancy at any node) between 1.01 × 10−7 and
+1.83 × 10−9. The relative error drops monotonically with increasing ℓ, from 2.02 × 10−4% at
+ℓ= 0.1 mm to 3.66 × 10−6% at ℓ= 0.3 mm.
+
+5.2. Reference setup for the anisotropic ellipsoidal simulations
+  With the implementation verified, all subsequent simulations use the anisotropic ellipsoidal
+problem on the nondimensional square domain
+
+              Ω= [0, L] × [0, H],   L = H = 1,                         (31)
+
+
+                                         8
+
+--- PAGE 9 ---
+                              1
+
+
+                                   0.9
+
+
+                                   0.8
+
+
+                                   0.7
+
+
+                                   0.6
+
+
+                                   0.5
+
+
+                                   0.4
+
+
+                                   0.3
+
+
+                                   0.2
+
+
+                                   0.1
+
+
+                              0
+                                0       0.1      0.2      0.3      0.4      0.5      0.6      0.7      0.8      0.9      1
+
+
+Figure 2: Orientation-dependent normalized displacement profiles for α = 0◦, 15◦, 30◦, 45◦, 60◦, and 90◦, with
+AR = 5.
+
+
+  with
+
+                 E = 1.0,    ν = 0.30,     a2 = 1.0.                        (32)
+
+ The aspect ratio AR = a1/a2 and the orientation angle α are varied per study. The horizontal
+boundaries carry displacement-controlled simple shear, u(x, H) = Utop, v(x, H) = 0, u(x, 0) =
+0, v(x, 0) = 0; the lateral boundaries are tied periodically by equating the corresponding BFS
+displacement and derivative degrees of freedom. The higher-order matrix in all anisotropic
+simulations is Dell; DM is not used beyond Section 5.1. The reference shear γ0 = Utop/H
+normalizes all strain, Cauchy-stress, and double-stress quantities. This setup isolates the role
+of the ellipsoidal length tensor.
+ The central mechanism in every subsection below is the same: the boundary-normal compo-
+nent of the orientation-dependent characteristic-length tensor,
+
+                                         a21 sin2 α + a22 cos2 α
+                                g222(α) =                                ,                            (33)
+                                            5
+  grows when the major semi-axis a1 rotates toward the boundary normal (increasing α), and
+grows quadratically with the aspect ratio AR = a1/a2. A larger g222 penalizes transverse strain
+gradients more heavily, which is what drives every result that follows.
+
+5.3. Orientation-dependent displacement response
+ The aspect ratio is fixed at AR = a1/a2 = 5, with E = 1, ν = 0.30, and L = H = 1. Only
+the in-plane orientation angle is varied: α = 0◦, 15◦, 30◦, 45◦, 60◦, and 90◦. This separates the
+orientation effect from changes in stiffness, geometry, or aspect ratio. The normalized profiles
+u(y)/Utop along y/H are in Fig. 2.
+  At small α the profile stays close to linear shear; as α grows the distribution bends fur-
+ther away from linear. The mechanism is Eq. (33): rotating the major semi-axis toward the
+boundary normal raises g222, which penalizes sharp transverse gradients and redistributes shear
+
+
+                                         9
+
+--- PAGE 10 ---
+                              1
+
+
+                                   0.9
+
+
+                                   0.8
+
+
+                                   0.7
+
+
+                                   0.6
+
+
+                                   0.5
+
+
+                                   0.4
+
+
+                                   0.3
+
+
+                                   0.2
+
+
+                                   0.1
+
+
+                              0
+                                0           0.2          0.4          0.6          0.8         1           1.2          1.4
+
+
+Figure 3: Normalized engineering shear-strain profiles γxy/γ0 along y/H for α = 0◦, 15◦, 30◦, 45◦, 60◦, and
+90◦, with AR = a1/a2 = 5. All remaining parameters are identical to Fig. 2.
+
+deformation toward the interior. Near α = 45◦the off-diagonal terms g212 = g221 peak, adding
+coupling between the principal directions of the ellipsoid and the global axes. The displacement
+response thus depends on both the magnitude and the orientation of the characteristic-length
+tensor, not just the former.
+
+5.4. Orientation-dependent engineering shear-strain response
+  Taking the first spatial derivative of the displacement field gives the engineering shear strain
+γxy = u,y +v,x, evaluated directly from the C1 BFS interpolation. Being a derivative, it is more
+sensitive than the displacement to how the length tensor redistributes deformation through the
+thickness. Figure 3 shows γxy/γ0, with γ0 = Utop/H, for the same parameters as Fig. 2.
+  γxy/γ0 is non-uniform through the thickness, concentrated near the lower boundary and ta-
+pering toward the upper one. Both the magnitude and the shape of the profile shift with α.
+This is the derivative view of the curvature already seen in the displacement profiles: the same
+g222-driven redistribution, now expressed as a strain gradient rather than a displacement curva-
+ture. The smoothness of the profiles comes from the C1 interpolation, which gives continuous
+first derivatives across element boundaries.
+
+5.5. Orientation-dependent Cauchy shear-stress response
+ The Cauchy shear stress follows from the constitutive relation σxy = µ(u,y + v,x), again
+evaluated from the exact BFS derivatives. The field is normalized by the classical homogeneous
+shear stress µγ0, so a material without microstructural effects would give unity across the height.
+ The stress redistributes across the height: it drops near the upper boundary (y/H = 1) and
+piles up near the lower one (y/H = 0). From 0◦to 90◦the peak rises monotonically, always near
+the lower boundary. Because σxy = µγxy, this is a direct readout of the strain redistribution in
+Fig. 3; the underlying cause is the same g222 growth. Changing only the orientation thus shifts
+the internal stress distribution and its peak while E and ν stay fixed.
+  But the Cauchy stress is only the lower-order part of the force balance in a strain-gradient
+continuum. The compensating higher-order forces are next.
+
+
+                                        10
+
+--- PAGE 11 ---
+                              1
+
+
+                                   0.9
+
+
+                                   0.8
+
+
+                                   0.7
+
+
+                                   0.6
+
+
+                                   0.5
+
+
+                                   0.4
+
+
+                                   0.3
+
+
+                                   0.2
+
+
+                                   0.1
+
+
+                              0
+                                0           0.2          0.4          0.6          0.8         1           1.2          1.4
+
+
+      Figure 4: Normalized Cauchy shear stress σxy/(µγ0) along y/H for α ∈[0◦, 90◦] at fixed AR = 5.
+
+
+5.6. Orientation-dependent higher-order double stress response
+ The double stress tensor τ  is the thermodynamic dual to the strain-gradient tensor ∇ε.
+Under simple shear the relevant mode is the transverse gradient of the engineering shear strain,
+γxy,y = u,yy + v,xy, conjugate to the double shear stress τxyy. It is evaluated from the exact C1
+BFS second derivatives:  τxyy = D66 γxy,y = g222(α) µ (u,yy + v,xy). The field is normalized by
+µγ0a2.
+  τxyy  is localized at both boundaries and decays rapidly to zero in the core.  This is what
+balances the strong-form equilibrium along the mid-span, σxy,y −τxyy,yy = 0: wherever the
+Cauchy stress has a steep gradient near a constraint, the double stress develops a compensating
+one. From 0◦to 90◦the boundary peaks grow, again tracking g222, and the boundary layer
+stiffens.
+
+5.7. Orientation–aspect-ratio design map of the higher-order double stress
+  Both α and AR set the boundary-layer intensity, so this subsection maps their combined
+effect on the peak double shear stress max |τxyy|. Across 42 analyses the peak is extracted from
+the solved displacement vector and normalized by µγ0a2.
+  Figure 6 spans seven angles α ∈{0◦, 15◦, 30◦, 45◦, 60◦, 75◦, 90◦} and six aspect ratios AR ∈
+{1, 2, 3, 5, 7, 10}. Two edges of the surface are flat at 0.4227: the isotropic limit (AR = 1,
+all angles) and the horizontal-alignment edge (α = 0◦, all aspect ratios), since g222(0) = a22/5
+regardless of AR. Away from those edges the peak climbs steeply. It reaches 7.7536 at (AR =
+10, α = 90◦) — about 18 times the isotropic value. Because τxyy scales with g222(α) (Eq. (33)),
+aligning an elongated domain with the boundary normal maximizes the non-local interaction
+volume resisting transverse gradients, and the peak tracks that volume.
+ The chart is a direct tuning tool. Low AR or α ≈0◦keeps higher-order stress small — the
+regime for flexible substrates where interfacial compliance matters. High AR with α ≈90◦
+maximizes boundary-layer stiffening — the regime for laminated joints or cellular struts that
+need to resist localized shear.
+
+
+
+
+                                        11
+
+--- PAGE 12 ---
+                              1
+
+
+                                   0.9
+
+
+                                   0.8
+
+
+                                   0.7
+
+
+                                   0.6
+
+
+                                   0.5
+
+
+                                   0.4
+
+
+                                   0.3
+
+
+                                   0.2
+
+
+                                   0.1
+
+
+                              0
+                                      -3           -2.5          -2           -1.5          -1           -0.5         0           0.5
+
+
+Figure 5: Normalized higher-order double shear stress τxyy/(µγ0a2) along y/H for α ∈[0◦, 90◦] at fixed AR = 5.
+
+
+5.8. Two-dimensional boundary-layer field
+ The mid-span profiles show localization, but the full planar domain shows how morphology
+sets the boundary layer’s transverse extent. The double shear stress τxyy = g222(α) µ (u,yy +v,xy)
+is evaluated across the complete grid and normalized by µγ0a2.
+  At AR = 1 (Panel a) τxyy is near zero across the bulk with a minor perturbation at the top
+boundary. At AR = 3 (Panel b) and AR = 5 (Panel c) the stress intensifies along the upper
+constraint, and the contour lines on the projected plane tighten. At AR = 10 (Panel d) the
+peak reaches 4.6271 near y = 1. Setting α = 45◦peaks the in-plane cross-coupling in g2(α), so
+an elongated domain at 45◦to the shear plane generates a large non-local interaction volume
+along the shearing gradient. The boundary layer stiffens, steep higher-order gradients develop
+at the clamped interface, and the bulk interior stays quiet.
+  Since interfacial failure in laminates, thin bonds, and printed lattices starts at clamped edges
+under concentrated shear, the aspect ratio is a knob for thickening or thinning the boundary
+layer that buffers the physical edge.
+
+5.9. Boundary-layer thickness surface
+ The boundary-layer thickness δ is the distance from the upper interface (y = H) to where
+τxyy has dropped to 1% of its boundary peak:
+
+                                        {︃     |τxyy(y)|         }︃       δ
+                          δ = min  y :         ≤0.01   ,            .                      (34)
+                            max |τxyy|        H
+  Linear interpolation locates only the sub-element threshold crossing between nodes; the finite
+element solution is unaltered.
+  At AR = 1, δ/H is flat at 0.1534 across all angles — spherical symmetry. Along α = 0◦it
+barely moves with aspect ratio. But for AR > 1, rotating toward α = 90◦opens the boundary
+layer up sharply, reaching δ/H ≈0.98 at (AR = 10, α = 90◦).
+  At that corner r = √︁g222(90◦) ≈0.45 H — nearly half the specimen height. The upper and
+lower boundary layers meet in the core, τxyy stays elevated throughout, and the 1% crossing is
+
+
+                                        12
+
+--- PAGE 13 ---
+Figure 6: Design map: combined influence of aspect ratio AR ∈[1, 10] and orientation α ∈[0◦, 90◦] on the
+normalized peak max |τxyy|/(µγ0a2). The surface represents the continuous parameter space; circular symbols
+denote the 42 discrete finite element solutions.
+
+
+pushed almost to the far boundary. Whether higher-order stiffening stays confined to a thin
+band or fills the whole specimen is therefore set by the same AR–α pair, through Eq. (33).
+
+5.10. Polar design phase diagram
+ The design space can be summarized compactly by mapping AR and α into a polar domain,
+
+                X = AR cos α,    Y = AR sin α,                          (35)
+
+  which avoids the distortion of plotting angular and radial quantities on a Cartesian grid. This
+is a re-plotting of already-computed results, not a new model. Spline interpolation is used only
+to render smooth contours.
+ The extracted curves divide the map into five regimes:  (i) Classical response,  (ii) Weak
+gradient effect, (iii) Moderate gradient shielding, (iv) Strong gradient shielding, (v) Gradient-
+dominated. They mark qualitative changes in the boundary layer, not thermodynamic phase
+transitions.
+  Near the horizontal axis (Y  small: α ≈0◦or AR ≈1) the material sits in the Classical
+or Weak gradient regimes — δ/H < 0.3168, bulk deforms as Cauchy shear. Moving up and
+right (Y > X) contracts the classical zone and opens the shielding regimes, where δ/H ∈
+[0.5230, 0.8776] and the boundary layer buffers the interface. At the top of the map (X ≈0,
+Y →10: AR ≥8, α ≈90◦) the Gradient-dominated regime takes over: δ/H ≥0.8776, higher-
+order stiffening fills the specimen. The same g222 growth drives all of these transitions.
+
+5.11. Energy partition and microstructural shielding
+ The final question is where the input work goes. The classical and gradient energies,
+
+
+                                        13
+
+--- PAGE 14 ---
+Figure 7: Three-dimensional surface maps and bottom contour projections of τxyy/(µγ0a2) at fixed α = 45◦for
+(a) AR = 1, (b) AR = 3, (c) AR = 5, and (d) AR = 10. The wireframe is the BFS mesh; all panels share an
+identical color scale and vertical axis range.
+
+
+                       1 ∫︂                    1 ∫︂
+                  Uc =    εTC ε dΩ,    Ug =     (∇ε)TDell ∇ε dΩ,                (36)
+                       2  Ω                   2  Ω
+  are computed with the same Gauss–Legendre integration and BFS derivatives as the stiffness
+assembly. The plotted fractions are Ψc = Uc/(Uc + Ug) and Ψg = Ug/(Uc + Ug).
+  At AR = 1 (Panel a) the split is Ψc = 97.7% / Ψg = 2.3% — nearly classical, with the
+nearly circular profile of a spherical domain. At AR = 3 (Panel b) and AR = 5 (Panel c) the
+gradient fraction grows to 7.7% and 14.4%, peaking as α approaches the boundary normal. At
+AR = 10 (Panel d) Ψg reaches 34.9%, leaving Ψc = 65.1%. The cause is again g222(α), which
+rises quadratically with AR: the expanding boundary layer resists classical shear, so more of
+the input work goes into micro-curvature.
+  In the gradient-dominated regime (AR ≥5, α ≈90◦) over a third of the input energy by-
+passes the classical interface and is absorbed through higher-order micro-curvature. For bonds,
+laminates, and printed lattices under cyclic or impact shear, that shielding is directly relevant
+to damage tolerance — classical mechanics would put all the work into the interface and predict
+earlier fatigue.
+
+
+
+
+
+                                        14
+
+--- PAGE 15 ---
+Figure 8: Normalized boundary-layer thickness δ/H as a function of α ∈[0◦, 90◦] and AR ∈[1, 10]. Circular
+markers indicate the 100 discrete finite element solutions.
+
+
+6. Conclusions
+
+  This work combined Mindlin Form-II strain-gradient elasticity with a C1-continuous Bogner–
+Fox–Schmit finite element formulation to study how anisotropic ellipsoidal microstructures
+affect the response of size-dependent solids under simple shear. The model uses an orientation-
+dependent characteristic-length tensor, which lets the microstructural aspect ratio and orien-
+tation be varied independently. The implementation was first checked against an established
+analytical benchmark, with close quantitative agreement. The main findings follow.
+
+   • The BFS formulation reproduces the analytical benchmark solution and retains the con-
+     tinuous second-order derivatives that strain-gradient elasticity requires. It ran stably over
+     the full parameter range without artificial stabilization.
+
+   • Increasing the orientation angle α raises the boundary-normal characteristic length g222(α).
+     Aligning the ellipsoid with the boundary normal strengthens the higher-order non-local in-
+      teractions, produces larger double shear stresses, and thickens the strain-gradient bound-
+     ary layers at the constrained interfaces.
+
+   • The aspect ratio controls the spatial distribution of the higher-order internal forces.
+     Highly elongated microstructures concentrate stress at the boundaries and amplify the
+      non-classical effects throughout the domain.
+
+   • The three-dimensional response surfaces and design maps trace the transition from clas-
+       sical Cauchy elasticity to gradient-dominated behaviour, showing how aspect ratio and
+      orientation act together.
+
+
+
+                                        15
+
+--- PAGE 16 ---
+Figure 9: Polar design phase diagram: δ/H as a function of X = AR cos α and Y = AR sin α.  Solid black
+curves are transition boundaries from the finite element dataset, dividing the space into five regimes. Circular
+markers indicate the 100 discrete solutions.
+
+
+   • The energy-partition analysis shows stored mechanical energy shifting from the classical
+      strain term into the higher-order gradient term as anisotropy increases — up to about
+    35% in the gradient term at (AR = 10, α = 90◦).
+
+   • The boundary-layer thickness surface, polar phase diagram, and energy-partition maps
+      give a direct way to read off the parameter regimes that correspond to weak, moderate,
+     and strong strain-gradient shielding.
+
+ The formulation is an efficient tool for anisotropic size-dependent solids and makes the link
+between microstructural morphology and the higher-order mechanical fields explicit. It is suited
+to structural design problems where boundary-layer behaviour and non-classical stress distri-
+butions matter — architected materials, lattice structures, and composite systems being the
+natural cases.
+
+
+Appendix A. Derivation of the ellipsoidal characteristic-length tensor
+
+ The characteristic-length tensor is defined as the normalized second moment of the ellipsoidal
+averaging domain,
+                                     1   ∫︂∫︂∫︂
+                                   g2ij =               ξiξj dV.                            (A.1)
+                                           |Ωe|     Ωe
+
+                                        16
+
+--- PAGE 17 ---
+Figure 10: Polar energy spectrum: percentage of total internal strain energy in the classical contribution (Ψc,
+inner blue) and the gradient contribution (Ψg, outer yellow) as a function of α ∈[0◦, 360◦] for (a) AR = 1,
+(b) AR = 3, (c) AR = 5, and (d) AR = 10. Solid black curves denote the thermodynamic interface between
+the two storage mechanisms.
+
+
+For an ellipsoid aligned with its principal axes,
+
+                                       ξ21    ξ22    ξ23                       +  +   ≤1.                               (A.2)
+                                      a21   a22   a23
+
+A convenient parametrization is
+
+                  ξ1 = a1r sin ϑ cos φ,     ξ2 = a2r sin ϑ sin φ,     ξ3 = a3r cos ϑ,          (A.3)
+
+with 0 ≤r ≤1, 0 ≤ϑ ≤π, 0 ≤φ ≤2π. The Jacobian and volume are
+
+                                               4π
+                     J = a1a2a3r2 sin ϑ,     |Ωe| =    a1a2a3.                    (A.4)
+                                                   3
+
+
+
+
+
+                                        17
+
+--- PAGE 18 ---
+The diagonal moments follow from
+
+                 1  ∫︂1∫︂π∫︂2π
+            g211 =                a21r2 sin2 ϑ cos2 φ · a1a2a3r2 sin ϑ dφ dϑ dr
+                    |Ωe|  0  0   0
+                 1         (︃∫︂1     )︃(︃∫︂π         )︃(︃∫︂2π           )︃   a21
+         =     a31a2a3      r4 dr        sin3 ϑ dϑ         cos2 φ dφ =     .       (A.5)
+                    |Ωe|             0              0                   0               5
+
+By the same argument,
+
+                               a22            a23
+                         g222 =     ,     g233 =     ,     g2ij = 0    (i̸ = j),                  (A.6)
+                           5           5
+
+because all cross moments vanish over the symmetric ellipsoid. Hence,
+
+                                    1
+                                 g2p =   diag(a21, a22, a23).                             (A.7)
+                                    5
+
+The in-plane rotated tensor follows from g2(α) = R(α) g2p RT(α) with
+
+                                                  [︃cos α  −sin α ]︃
+                          R(α) =                           ,                            (A.8)
+                                               sin α   cos α
+
+which gives Eq. (6) of the main text.
+
+
+Appendix B. Weak-form derivation
+
+  Starting from the internal virtual work,
+
+                                                       ∫︂                      ∫︂
+                          δWint =    σijδεij dΩ+    τijkδεij,k dΩ,                      (B.1)
+                               Ω            Ω
+
+and using δεij = (δui,j + δuj,i)/2 with the symmetry of the stress measures,
+
+                                                       ∫︂                       ∫︂
+                          δWint =    σijδui,j dΩ+    τijkδui,jk dΩ.                     (B.2)
+                               Ω            Ω
+
+Integrating the first term once and the second term twice by parts gives the interior contribution
+
+                                                        ∫︂
+                   −    (σij,j −τijk,kj) δui dΩ                            (B.3)
+                                Ω
+
+together with boundary terms. Since δui is arbitrary in Ω, the strong form σij,j −τijk,kj +bi = 0
+follows. Defining the effective stress
+
+                                                                            ˆ︁σij = σij −τijk,k,                                (B.4)
+the same equation can be written as ˆ︁σij,j + bi = 0. The remaining boundary terms identify theclassical traction, the double traction, and the edge resultant used in Eq. (19). For the straight
+rectangular boundaries used in the simulations, these quantities reduce to
+
+                Qi = τijknjnk,     Mil = τijknkPjl,     Pjl = δjl −njnl.              (B.5)
+
+
+
+
+
+                                        18
+
+--- PAGE 19 ---
+Appendix C. BFS interpolation and strain-gradient matrix
+
+ The one-dimensional cubic Hermite functions on [−1, 1] are
+
+                     2 −3s + s3                      1 −s −s2 + s3
+               L1(s) =                   ,              D1(s) =                         ,            (C.1)
+                          4                                 4
+                     2 + 3s −s3                 −1 −s + s2 + s3
+               L2(s) =                   ,              D2(s) =                            .          (C.2)
+                          4                                 4
+
+For a node A = (a, b) in parent coordinates, the scalar BFS row is
+
+                                                                                                    ,                        (C.3)                   NwA = [︂ N A(0) N A(x) N A(y) N A(xy) ]︂
+
+with
+
+                         (0)                                                 (x)   hx
+         N A = La(ξ)Lb(η),           NA =   Da(ξ)Lb(η),            (C.4)                                                      2
+                         (y)   hy                                       (xy)   hxhy
+        N A =   La(ξ)Db(η),         NA  =     Da(ξ)Db(η).          (C.5)                     2                                  4
+
+The scaling factors hx/2, hy/2, and hxhy/4 convert the physical derivative degrees of freedom
+into the parent-coordinate Hermite interpolation data.
+  For the engineering strain vector, the nodal strain–displacement block is
+
+                           ⎡NwA,x   0 ⎤
+                       BA =   0  NwA,y                                (C.6)                           ⎣         ⎦.
+                           NwA,y NwA,x
+
+For the engineering strain-gradient vector ordering used in Eq. (10), the corresponding nodal
+block is
+                           ⎡NwA,xx   0 ⎤
+                                   0   NwA,xy
+                           NwA,xy NwA,xx                          BgA =                            .                            (C.7)
+                           NwA,xy   0
+                                   0   NwA,yy                                                                                                                                                                                            ⎢⎢⎢⎢⎢⎢⎣                                                            ⎥⎥⎥⎥⎥⎥⎦
+                           NwA,yy NwA,xy
+
+No factor 1/2 appears in the shear-gradient rows because the engineering shear strain γxy =
+u,y + v,x is used throughout the paper.
+
+
+Appendix D. Benchmark Mindlin Form-II higher-order matrix
+
+ The benchmark verification of Section 5.1 uses the full isotropic Mindlin Form-II higher-order
+matrix associated with the coefficients c3, c4, c5, c6, c7 of Shekarchizadeh et al. [34]. The corre-
+sponding coefficients used in the present study are listed in Table D.2. With the engineering
+strain-gradient ordering of Eq. (10), the full matrix is
+
+                     ⎡D11  D12   0    0    0   D16 ⎤
+                             D12  D22   0    0    0   D26
+                               0    0   D33  D34  D35   0
+               DM =                                                        ,                   (D.1)
+                               0    0   D34  D44  D45   0
+                               0    0   D35  D45  D55   0                                                                                                                                                  ⎢⎢⎢⎢⎢⎢⎣                                                                                                                                              ⎥⎥⎥⎥⎥⎥⎦
+                             D16  D26   0    0    0   D66
+
+                                        19
+
+--- PAGE 20 ---
+Table D.2:  Benchmark higher-order material  coefficients used  for the  verification  of Section 5.1  (after
+Shekarchizadeh et al. [34]).
+
+                 ℓ(mm)   c3 (N)   c4 (N)   c5 (N)   c6 (N)   c7 (N)
+
+                            0.1      0.59     0.59     0.18   −0.23    0.18
+                            0.2      2.35     2.35     0.74   −0.91    0.74
+                            0.3      5.29     5.29     1.66   −2.04    1.66
+
+
+with non-zero entries
+
+  D11 = 4c3 + c4 + 4c5 + 2c6 + 4c7,  D12 = 2c3 + c4,                 D16 = c3 + 2c5,  (D.2)
+
+  D22 = c4 + 2c6,                 D26 = c3 + 2c7,                 D33 = c5 + c6 + c7,
+                                                                                    (D.3)
+
+  D34 = c3 + 2c7,                 D35 = c3 + 2c5,                 D44 = c4 + 2c6,  (D.4)
+
+  D45 = 2c3 + c4,                 D55 = 4c3 + c4 + 4c5 + 2c6 + 4c7,  D66 = c5 + c6 + c7.
+                                                                                    (D.5)
+
+This matrix is used only for the benchmark validation in Section 5.1. The anisotropic ellipsoidal
+simulations of Sections 5.3–?? use the ellipsoidal matrix Dell from Eq. (12).
+
+
+Appendix E. Ref
+
+References
+
+ [1] P. Chadwick, Continuum Mechanics: Concise Theory and Problems, Dover Publications,
+    Mineola, NY, 1999.
+
+ [2] N. A. Fleck, G. M. Muller, M. F. Ashby, J. W. Hutchinson, Strain gradient plasticity:
+    theory and experiment, Acta Metallurgica et Materialia 42 (2) (1994) 475–487.  doi:
+    10.1016/0956-7151(94)90502-9.
+
+ [3] J. S. Stolken, A. G. Evans, A microbend test method for measuring the plasticity length
+     scale, Acta Materialia 46 (14) (1998) 5109–5115. doi:10.1016/S1359-6454(98)00153-0.
+
+ [4] W. D. Nix, H. Gao, Indentation size effects in crystalline materials: A law for strain
+     gradient plasticity, Journal of the Mechanics and Physics of Solids 46 (3) (1998) 411–425.
+    doi:10.1016/S0022-5096(97)00086-0.
+
+ [5] J. N. Reddy, Nonlocal theories for bending, buckling and vibration of beams, International
+    Journal of Engineering Science 45 (2-8) (2007) 288–307. doi:10.1016/j.ijengsci.2007.
+    04.004.
+
+ [6] S. Papargyri-Beskou, K. G. Tsepoura, D. Polyzos, D. E. Beskos, Bending and stability
+     analysis of gradient elastic beams, International Journal of Solids and Structures 40 (2)
+    (2003) 385–400. doi:10.1016/S0020-7683(02)00522-X.
+
+ [7] S. Forest, D. K. Trinh, Generalized continua and non-homogeneous boundary conditions in
+    homogenisation methods, ZAMM - Journal of Applied Mathematics and Mechanics 91 (2)
+    (2010) 90–109. doi:10.1002/zamm.201000109.
+
+
+
+
+                                        20
+
+--- PAGE 21 ---
+ [8] H. Yang, D. Timofeev, I. Giorgio, W. H. Müller, Effective strain gradient continuum model
+     of metamaterials and size effects analysis, Continuum Mechanics and Thermodynamics 35
+    (2023) 775–797. doi:10.1007/s00161-020-00910-3.
+
+ [9] R. A. Toupin, Elastic materials with couple-stresses, Archive for Rational Mechanics and
+    Analysis 11 (1) (1962) 385–414. doi:10.1007/BF00253945.
+
+[10] R. D. Mindlin, Micro-structure in linear elasticity, Archive for Rational Mechanics and
+    Analysis 16 (1) (1964) 51–78. doi:10.1007/BF00248490.
+
+[11] R. D. Mindlin, N. N. Eshel, On first strain-gradient theories in linear elasticity, Interna-
+     tional Journal of Solids and Structures 4 (1) (1968) 109–124. doi:10.1016/0020-7683(68)
+    90036-X.
+
+[12] W. T. Koiter, Couple-stresses in the theory of elasticity, I and II, Proceedings of the
+     Koninklijke Nederlandse Akademie van Wetenschappen, Series B 67 (1964) 17–44.
+
+[13] A. E. Green, R. S. Rivlin, Multipolar continuum mechanics, Archive for Rational Mechan-
+      ics and Analysis 17 (2) (1964) 113–147. doi:10.1007/BF00253051.
+
+[14] A. C. Eringen, E. S. Suhubi, Nonlinear theory of simple micro-elastic solids—I, Interna-
+     tional Journal of Engineering Science 2 (2) (1964) 189–203. doi:10.1016/0020-7225(64)
+    90004-7.
+
+[15] G. Capriz, Continua with Microstructure, Springer, New York, 2013.
+
+[16] P. Germain, The method of virtual power in continuum mechanics. Part 2: microstructure,
+   SIAM Journal on Applied Mathematics 25 (3) (1973) 556–575. doi:10.1137/0125053.
+
+[17] W. Noll, E. G. Virga, On edge interactions and surface tension, Archive for Rational
+    Mechanics and Analysis 111 (1) (1990) 1–31. doi:10.1007/BF00375698.
+
+[18] J. E. Dunn, J. Serrin, On the thermomechanics of interstitial working, Archive for Rational
+    Mechanics and Analysis 88 (2) (1985) 95–133. doi:10.1007/BF00250907.
+
+[19] R. D. Mindlin, Second gradient of strain and surface-tension in linear elasticity, Interna-
+     tional Journal of Solids and Structures 1 (4) (1965) 417–438. doi:10.1016/0020-7683(65)
+    90006-5.
+
+[20] B. E. Abali, E. Barchiesi, I. Giorgio, Form II of Mindlin’s second strain gradient theory
+     of elasticity with a simplification: For materials and structures from nano- to macro-
+     scales, European Journal of Mechanics - A/Solids 72 (2018) 407–423. doi:10.1016/j.
+    euromechsol.2018.06.003.
+
+[21] F. dell’Isola, G. Sciarra, S. Vidoli, Generalized Hooke’s law for isotropic second gradient
+     materials, Proceedings of the Royal Society A: Mathematical, Physical and Engineering
+     Sciences 465 (2107) (2009) 2177–2196. doi:10.1098/rspa.2008.0530.
+
+[22] H. Askes, E. C. Aifantis, Gradient elasticity in statics and dynamics: An overview of
+     formulations, length scale identification procedures, finite element implementations and
+    new results, International Journal of Solids and Structures 48 (13) (2011) 1962–1990.
+    doi:10.1016/j.ijsolstr.2011.03.006.
+
+[23] N. A. Fleck, J. W. Hutchinson, Strain gradient plasticity, Advances in Applied Mechanics
+    33 (1997) 295–361. doi:10.1016/S0065-2156(08)70388-0.
+
+                                        21
+
+--- PAGE 22 ---
+[24] N. A. Fleck, J. W. Hutchinson, A reformulation of strain gradient plasticity, Journal of the
+    Mechanics and Physics of Solids 49 (10) (2001) 2245–2271. doi:10.1016/S0022-5096(01)
+    00049-7.
+
+[25] H. Gao, Y. Huang, W. D. Nix, J. W. Hutchinson, Mechanism-based strain gradient
+     plasticity—I. Theory, Journal of the Mechanics and Physics of Solids 47 (6) (1999) 1239–
+     1263. doi:10.1016/S0022-5096(98)00103-3.
+
+[26] M. E. Gurtin, On the plasticity of single crystals: free energy, microforces, plastic-strain
+     gradients, Journal of the Mechanics and Physics of Solids 48 (5) (2000) 989–1036. doi:
+    10.1016/S0022-5096(99)00059-9.
+
+[27] M. E. Gurtin, L. Anand, A theory of strain-gradient plasticity for isotropic, plastically
+     irrotational materials. Part I: Small deformations, Journal of the Mechanics and Physics
+     of Solids 53 (7) (2005) 1597–1623. doi:10.1016/j.jmps.2005.02.002.
+
+[28] P. Gudmundson, A unified treatment of strain gradient plasticity, Journal of the Mechanics
+    and Physics of Solids 52 (6) (2004) 1379–1406. doi:10.1016/j.jmps.2003.11.002.
+
+[29] N. Shekarchizadeh, B. E. Abali, Studying the higher-order inertia in the second-order
+    theory of elasticity for modeling metamaterials, European Journal of Mechanics - A/Solids
+    103 (2024) 581–590. doi:10.1016/j.euromechsol.2023.105190.
+
+[30] M. R. Delfani, M. Karami, Anti-plane elastic field of a cylindrical inhomogeneity within
+      first strain-gradient theory:  exact solution vs. extended equivalent inclusion method,
+    Archive of Applied Mechanics 95 (2) (2025) 48. doi:10.1007/s00419-025-02757-z.
+
+[31] F. dell’Isola, P. Seppecher, J. J. Alibert, T. Lekszycki, R. Grygoruk, M. Pawlikowski,
+    D. Steigmann,  I. Giorgio, U. Andreaus, E. Turco,  et  al., Pantographic metamateri-
+      als:  an example of mathematically driven design and of  its technological challenges,
+    Continuum Mechanics and Thermodynamics 31 (4) (2019) 851–884.  doi:10.1007/
+    s00161-018-0689-8.
+
+[32] B. E. Abali, W. H. Müller, F. dell’Isola, Theory and computation of higher gradient
+     elasticity theories based on action principles, Archive of Applied Mechanics 87 (9) (2017)
+    1495–1510. doi:10.1007/s00419-017-1266-5.
+
+[33] N. Auffray, F. dell’Isola, V. A. Eremeyev, A. Madeo, G. Rosi, Analytical continuum
+    mechanics à la Hamilton–Piola least action principle for second gradient continua and
+     capillary fluids, Mathematics and Mechanics of Solids 20 (4) (2015) 375–417.  doi:
+    10.1177/1081286513497616.
+
+[34] N. Shekarchizadeh, B. E. Abali, A. M. Bersani, A benchmark strain gradient elasticity
+     solution in two-dimensions for verifying computational approaches by means of the finite
+    element method, Mathematics and Mechanics of Solids 27 (10) (2022) 2218–2238. doi:
+    10.1177/10812865221114336.
+
+[35] P. G. Ciarlet, The Finite Element Method for Elliptic Problems, Society for Industrial and
+    Applied Mathematics, 1978. doi:10.1137/1.9780898719208.
+
+[36] O. C. Zienkiewicz, R. L. Taylor,  J. Z. Zhu, The Finite Element Method:  Its Basis
+    and Fundamentals, 6th Edition, Butterworth-Heinemann, Oxford, 2013. doi:10.1016/
+    C2009-0-24909-9.
+
+
+                                        22
+
+--- PAGE 23 ---
+[37] F. Feyel, J. L. Chaboche, FE2 multiscale approach for modelling the elastoviscoplastic be-
+    haviour of long fibre SiC/Ti composite materials, Computer Methods in Applied Mechanics
+    and Engineering 183 (3-4) (2000) 309–330. doi:10.1016/S0045-7825(99)00224-8.
+
+[38] R. H. J. Peerlings, M. G. D. Geers, R. de Borst, W. A. M. Brekelmans, A critical compar-
+     ison of nonlocal and gradient-enhanced softening continua, International Journal of Solids
+    and Structures 38 (44-45) (2001) 7723–7746. doi:10.1016/S0020-7683(01)00087-7.
+
+[39] M. E. Yildizdag, A. Arbind, J. N. Reddy, A non-classical finite element model for planar
+     flexure of gradient elastic beams, International Journal of Solids and Structures 193-194
+    (2020) 213–221. doi:10.1016/j.ijsolstr.2020.02.019.
+
+[40] T. J. R. Hughes, J. A. Cottrell, Y. Bazilevs, Isogeometric analysis: CAD, finite elements,
+   NURBS, exact geometry and mesh refinement, Computer Methods in Applied Mechanics
+    and Engineering 194 (39-41) (2005) 4135–4195. doi:10.1016/j.cma.2004.10.008.
+
+[41] P. Fischer, M. Klassen, J. Mergheim, P. Steinmann, R. Müller, Isogeometric analysis of
+   2D gradient elasticity, Computational Mechanics 47 (3) (2011) 325–334. doi:10.1007/
+    s00466-010-0544-2.
+
+[42] J. Niiranen, S. Khakalo, V. Balobanov, A. H. Niemi, Variational formulation and iso-
+    geometric analysis for fourth-order boundary value problems of gradient-elastic bar and
+    planar beam models, Computer Methods in Applied Mechanics and Engineering 308 (2016)
+    151–181. doi:10.1016/j.cma.2016.05.011.
+
+[43] S. Khakalo, J. Niiranen, Isogeometric analysis of higher-order gradient elasticity by user
+    elements of a commercial finite element software, Computer Methods in Applied Mechanics
+    and Engineering 331 (2018) 309–326. doi:10.1016/j.cma.2017.11.009.
+
+[44] F. K. Bogner, R. L. Fox, L. A. Schmit, The generation of inter-element-compatible stiffness
+    and mass matrices by the use of interpolation formulas, in: Proceedings of the Conference
+    on Matrix Methods in Structural Mechanics, Wright-Patterson Air Force Base, Dayton,
+   OH, 1965, pp. 397–443.
+
+[45] S. Pech, W. Danzberg, S. M. Holzer, A C1-continuous finite element formulation for gradi-
+     ent elasticity in 2D, Computer Methods in Applied Mechanics and Engineering 313 (2017)
+    744–758. doi:10.1016/j.cma.2016.10.024.
+
+[46] A. C. Eringen, D. G. B. Edelen, On nonlocal elasticity, International Journal of Engineering
+     Science 10 (3) (1972) 233–248. doi:10.1016/0020-7225(72)90039-0.
+
+[47] A. C. Eringen, On differential equations of nonlocal elasticity and solutions of screw
+     dislocation and surface waves, Journal of Applied Physics 54 (9) (1983) 4703–4710.
+    doi:10.1063/1.332803.
+
+[48] T. Lesičar, Z. Tonković, J. Sorić, Two-scale computational approach using strain gradient
+    theory at microlevel, International Journal of Mechanical Sciences 126 (2017) 67–78. doi:
+    10.1016/j.ijmecsci.2017.02.017.
+
+[49] M. Sarhil, L. Scheunemann, J. Schröder, P. Neff, Size-effects of metamaterial beams
+    subjected to pure bending:  on boundary conditions and parameter identification in
+    the relaxed micromorphic model, Computational Mechanics 72 (5) (2023) 1091–1113.
+    doi:10.1007/s00466-023-02332-9.
+
+
+                                        23
+
+--- PAGE 24 ---
+[50] N. Rezaei, M. E. Yildizdag, E. Turco, A. Misra, L. Placidi, Strain-gradient finite elasticity
+     solutions to rigid bar pull-out test, Continuum Mechanics and Thermodynamics 36 (3)
+    (2024) 607–617. doi:10.1007/s00161-024-01285-5.
+
+
+
+
+
+                                        24

@@ -1,0 +1,58 @@
+[
+  {
+    "issue_id": "Q01",
+    "source": "B01Eq36/37",
+    "observation": "Equal-parameter substitution inEq36 does not giveEq37/Table1MGN2",
+    "evidence": "Native text + renderedPDFp7 + manual eliminationEq35",
+    "disposition": "ACTION_REQUIRED beforeMGN2; no silent source/code change; CV/MCV3 scope avoids this branch",
+    "check_type": "ANALYTICALLY_CHECKED \u2014 LIMITED_SOURCE_CONSISTENCY"
+  },
+  {
+    "issue_id": "Q02",
+    "source": "B01Table1/Eq28/40",
+    "observation": "RestrictedMCV5 andMGN3 reduce to parent kernels with changedk",
+    "evidence": "Commonfactor cancellation forcompatible causal histories",
+    "disposition": "Do not count everylabel asnew independent physics or claim first discovery; arbitrary extraICs/unequalparameters outside identity",
+    "check_type": "ANALYTICALLY_CHECKED \u2014 RESTRICTED_KERNEL_IDENTITY"
+  },
+  {
+    "issue_id": "Q03",
+    "source": "B01Table1",
+    "observation": "MCV2/4/5 haveDC2k,notk;GN/MGNhaveDCpole",
+    "evidence": "DirectN(0)/M(0)transferlimit",
+    "disposition": "Reproduce sourceinputs faithfully; matchedstaticconductivity controls separate andlogged",
+    "check_type": "ANALYTICALLY_CHECKED \u2014 NORMALIZATION"
+  },
+  {
+    "issue_id": "Q04",
+    "source": "B01Table2/Eq46",
+    "observation": "m/K-stylealpha header inconsistent withstress-coupling coefficientdimension",
+    "evidence": "RenderedPDFp11,stress-law dimensional requirement",
+    "disposition": "Proposedsame numeric1.78e-5 interpreted1/K; recordbeforecode; noinputaltered",
+    "check_type": "ANALYTICALLY_CHECKED \u2014 UNIT_DISPOSITION_PENDING"
+  },
+  {
+    "issue_id": "Q05",
+    "source": "B01Eq53/Fig4",
+    "observation": "Physicalk/inversiondetails nottabulated; Fig4comparisonsettings notfullystated",
+    "evidence": "Fullsource sections/tables inspected",
+    "disposition": "DimensionlessFig5possible usingg cancellation; noSIwave claim; Ref52optional forFig4audit",
+    "check_type": "SOURCE_INSPECTED \u2014 RECONSTRUCTION_BOUNDARY"
+  },
+  {
+    "issue_id": "Q06",
+    "source": "B01/B02",
+    "observation": "CommonCV/LSlaw butdifferentgeometry,BCs,scales;GL/GNII notdirectrecentcase",
+    "evidence": "Constitutive/energy equations andBCsections",
+    "disposition": "Separatecase configurations; no directcurve overlay bylabel",
+    "check_type": "ANALYTICALLY_CHECKED \u2014 CASE_COMPATIBILITY"
+  },
+  {
+    "issue_id": "Q07",
+    "source": "B03",
+    "observation": "Unbounded,temperature-increment table withsource BCdiagnostic/5decimalprinting",
+    "evidence": "SourceSec2,6,7 andrenderedTables1/2",
+    "disposition": "Nofinitecoldsteadyboundarysubstitution ornegativeKelvin interpretation; referencevalues notexperimental/newresults",
+    "check_type": "SOURCE_INSPECTED \u2014 SCOPE/UNCERTAINTY"
+  }
+]

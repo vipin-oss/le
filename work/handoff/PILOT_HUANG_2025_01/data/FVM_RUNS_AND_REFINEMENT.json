@@ -1,0 +1,297 @@
+{
+  "runs": [
+    {
+      "run_id": "P02_CV_N800",
+      "model": "CV",
+      "cells": 800,
+      "dx": 0.00125,
+      "dt": 0.00011235955056179774,
+      "steps": 534,
+      "boundary": {
+        "theta_left": 1.0,
+        "sigma_left": -6.938893903907228e-18
+      },
+      "speeds": [
+        -5.001761141631079,
+        -0.9996478956948935,
+        0.999647895694894,
+        5.0017611416310785
+      ],
+      "tau_channels": [
+        0.04
+      ],
+      "weights": [
+        1.0
+      ],
+      "wall_seconds": 0.11841336500037869,
+      "origin": "ACTUALLY_EXECUTED_PILOT_NUMERICAL_RESULT",
+      "finite": true
+    },
+    {
+      "run_id": "P02_CV_N1600",
+      "model": "CV",
+      "cells": 1600,
+      "dx": 0.000625,
+      "dt": 5.617977528089887e-05,
+      "steps": 1068,
+      "boundary": {
+        "theta_left": 1.0,
+        "sigma_left": 0.0
+      },
+      "speeds": [
+        -5.001761141631079,
+        -0.9996478956948935,
+        0.999647895694894,
+        5.0017611416310785
+      ],
+      "tau_channels": [
+        0.04
+      ],
+      "weights": [
+        1.0
+      ],
+      "wall_seconds": 0.36139054100021895,
+      "origin": "ACTUALLY_EXECUTED_PILOT_NUMERICAL_RESULT",
+      "finite": true
+    },
+    {
+      "run_id": "P02_CV_N3200",
+      "model": "CV",
+      "cells": 3200,
+      "dx": 0.0003125,
+      "dt": 2.8103044496487117e-05,
+      "steps": 2135,
+      "boundary": {
+        "theta_left": 1.0000000000000002,
+        "sigma_left": -6.938893903907228e-18
+      },
+      "speeds": [
+        -5.001761141631079,
+        -0.9996478956948935,
+        0.999647895694894,
+        5.0017611416310785
+      ],
+      "tau_channels": [
+        0.04
+      ],
+      "weights": [
+        1.0
+      ],
+      "wall_seconds": 2.7276265079999575,
+      "origin": "ACTUALLY_EXECUTED_PILOT_NUMERICAL_RESULT",
+      "finite": true
+    },
+    {
+      "run_id": "P02_MCV3_N800",
+      "model": "MCV3",
+      "cells": 800,
+      "dx": 0.00125,
+      "dt": 0.00011235955056179774,
+      "steps": 534,
+      "boundary": {
+        "theta_left": 1.0,
+        "sigma_left": 0.0
+      },
+      "speeds": [
+        -5.0017611416310785,
+        -0.9996478956948939,
+        0.0,
+        0.9996478956948937,
+        5.001761141631078
+      ],
+      "tau_channels": [
+        0.1047213595499958,
+        0.015278640450004204
+      ],
+      "weights": [
+        0.7236067977499789,
+        0.276393202250021
+      ],
+      "wall_seconds": 0.13409568699898955,
+      "origin": "ACTUALLY_EXECUTED_PILOT_NUMERICAL_RESULT",
+      "finite": true
+    },
+    {
+      "run_id": "P02_MCV3_N1600",
+      "model": "MCV3",
+      "cells": 1600,
+      "dx": 0.000625,
+      "dt": 5.617977528089887e-05,
+      "steps": 1068,
+      "boundary": {
+        "theta_left": 1.0,
+        "sigma_left": 0.0
+      },
+      "speeds": [
+        -5.0017611416310785,
+        -0.9996478956948939,
+        0.0,
+        0.9996478956948937,
+        5.001761141631078
+      ],
+      "tau_channels": [
+        0.1047213595499958,
+        0.015278640450004204
+      ],
+      "weights": [
+        0.7236067977499789,
+        0.276393202250021
+      ],
+      "wall_seconds": 0.8381634159995883,
+      "origin": "ACTUALLY_EXECUTED_PILOT_NUMERICAL_RESULT",
+      "finite": true
+    },
+    {
+      "run_id": "P02_MCV3_N3200",
+      "model": "MCV3",
+      "cells": 3200,
+      "dx": 0.0003125,
+      "dt": 2.8103044496487117e-05,
+      "steps": 2135,
+      "boundary": {
+        "theta_left": 1.0,
+        "sigma_left": -6.938893903907228e-18
+      },
+      "speeds": [
+        -5.0017611416310785,
+        -0.9996478956948939,
+        0.0,
+        0.9996478956948937,
+        5.001761141631078
+      ],
+      "tau_channels": [
+        0.1047213595499958,
+        0.015278640450004204
+      ],
+      "weights": [
+        0.7236067977499789,
+        0.276393202250021
+      ],
+      "wall_seconds": 3.462430139999924,
+      "origin": "ACTUALLY_EXECUTED_PILOT_NUMERICAL_RESULT",
+      "finite": true
+    }
+  ],
+  "refinement": [
+    {
+      "model": "CV",
+      "field": "theta",
+      "coarse_cells": 800,
+      "fine_cells": 1600,
+      "scaled_offfront_max_change": 0.017625971340476554,
+      "scaled_global_L1_change": 0.0006066915858530593,
+      "scope": "PILOT \u2014 NOT FINAL VALIDATION"
+    },
+    {
+      "model": "CV",
+      "field": "sigma",
+      "coarse_cells": 800,
+      "fine_cells": 1600,
+      "scaled_offfront_max_change": 0.01834843515079568,
+      "scaled_global_L1_change": 0.0015055302423598348,
+      "scope": "PILOT \u2014 NOT FINAL VALIDATION"
+    },
+    {
+      "model": "CV",
+      "field": "u",
+      "coarse_cells": 800,
+      "fine_cells": 1600,
+      "scaled_offfront_max_change": 4.980107305288494e-05,
+      "scaled_global_L1_change": 4.3240232561228006e-05,
+      "scope": "PILOT \u2014 NOT FINAL VALIDATION"
+    },
+    {
+      "model": "CV",
+      "field": "theta",
+      "coarse_cells": 1600,
+      "fine_cells": 3200,
+      "scaled_offfront_max_change": 0.004469232223437758,
+      "scaled_global_L1_change": 0.0003760575185161494,
+      "scope": "PILOT \u2014 NOT FINAL VALIDATION"
+    },
+    {
+      "model": "CV",
+      "field": "sigma",
+      "coarse_cells": 1600,
+      "fine_cells": 3200,
+      "scaled_offfront_max_change": 0.00465380161893001,
+      "scaled_global_L1_change": 0.0008956846342799026,
+      "scope": "PILOT \u2014 NOT FINAL VALIDATION"
+    },
+    {
+      "model": "CV",
+      "field": "u",
+      "coarse_cells": 1600,
+      "fine_cells": 3200,
+      "scaled_offfront_max_change": 1.0739681823063088e-05,
+      "scaled_global_L1_change": 1.488728967101558e-05,
+      "scope": "PILOT \u2014 NOT FINAL VALIDATION"
+    },
+    {
+      "model": "MCV3",
+      "field": "theta",
+      "coarse_cells": 800,
+      "fine_cells": 1600,
+      "scaled_offfront_max_change": 0.008102970313107083,
+      "scaled_global_L1_change": 0.0002824034225602165,
+      "scope": "PILOT \u2014 NOT FINAL VALIDATION"
+    },
+    {
+      "model": "MCV3",
+      "field": "sigma",
+      "coarse_cells": 800,
+      "fine_cells": 1600,
+      "scaled_offfront_max_change": 0.008426460770602995,
+      "scaled_global_L1_change": 0.0011719250071993603,
+      "scope": "PILOT \u2014 NOT FINAL VALIDATION"
+    },
+    {
+      "model": "MCV3",
+      "field": "u",
+      "coarse_cells": 800,
+      "fine_cells": 1600,
+      "scaled_offfront_max_change": 5.521968240153706e-05,
+      "scaled_global_L1_change": 4.450373990798792e-05,
+      "scope": "PILOT \u2014 NOT FINAL VALIDATION"
+    },
+    {
+      "model": "MCV3",
+      "field": "theta",
+      "coarse_cells": 1600,
+      "fine_cells": 3200,
+      "scaled_offfront_max_change": 0.002083024456639493,
+      "scaled_global_L1_change": 0.00017629516744338856,
+      "scope": "PILOT \u2014 NOT FINAL VALIDATION"
+    },
+    {
+      "model": "MCV3",
+      "field": "sigma",
+      "coarse_cells": 1600,
+      "fine_cells": 3200,
+      "scaled_offfront_max_change": 0.002167128398536672,
+      "scaled_global_L1_change": 0.0006891874255103967,
+      "scope": "PILOT \u2014 NOT FINAL VALIDATION"
+    },
+    {
+      "model": "MCV3",
+      "field": "u",
+      "coarse_cells": 1600,
+      "fine_cells": 3200,
+      "scaled_offfront_max_change": 1.6592606893906247e-05,
+      "scaled_global_L1_change": 1.5205066840063982e-05,
+      "scope": "PILOT \u2014 NOT FINAL VALIDATION"
+    }
+  ],
+  "front_exclusion": {
+    "slow": 0.05997887374169364,
+    "fast": 0.3001056684978647,
+    "speeds": [
+      0.999647895694894,
+      5.0017611416310785
+    ]
+  },
+  "no_parameter_fitting": true,
+  "status": "RUN_SUCCESS",
+  "label": "PILOT \u2014 NOT FINAL VALIDATION",
+  "acceptance": "Independent-method comparison not yet executed; report refinement metrics without declaring physical validation"
+}

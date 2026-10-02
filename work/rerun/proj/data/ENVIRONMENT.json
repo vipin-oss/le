@@ -1,0 +1,8 @@
+{
+  "python": "3.13.14",
+  "platform": "Linux-6.1.158+-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "scipy": "1.17.1",
+  "matplotlib": "3.10.9",
+  "recorded": "2026-09-30T15:55:43"
+}

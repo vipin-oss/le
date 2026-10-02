@@ -1,0 +1,380 @@
+[
+ {
+  "n": 1,
+  "key": "florence1959",
+  "text": "Florence, A.L., Goodier, J.N. Thermal Stress at Spherical Cavities and Circular Holes in Uniform Heat Flow. Journal of Applied Mechanics, 26(2), 293-294 (1959). https://doi.org/10.1115/1.4011999",
+  "doi": "10.1115/1.4011999",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 2,
+  "key": "florence1960",
+  "text": "Florence, A.L., Goodier, J.N. Thermal Stresses Due to Disturbance of Uniform Heat Flow by an Insulated Ovaloid Hole. Journal of Applied Mechanics, 27(4), 635-639 (1960). https://doi.org/10.1115/1.3644074",
+  "doi": "10.1115/1.3644074",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 3,
+  "key": "chao2001",
+  "text": "Chao, C.K., Gao, B. Mixed boundary-value problems of two-dimensional anisotropic thermoelasticity with elliptic boundaries. International Journal of Solids and Structures, 38(34-35), 5975-5994 (2001). https://doi.org/10.1016/s0020-7683(00)00403-0",
+  "doi": "10.1016/s0020-7683(00)00403-0",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 4,
+  "key": "abbas2015",
+  "text": "Abbas, I.A. A Dual Phase Lag Model on Thermoelastic Interaction in an Infinite Fiber-Reinforced Anisotropic Medium with a Circular Hole. Mechanics Based Design of Structures and Machines, 43(4), 501-513 (2015). https://doi.org/10.1080/15397734.2015.1029589",
+  "doi": "10.1080/15397734.2015.1029589",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 5,
+  "key": "karmakar2016",
+  "text": "Karmakar, R., Sur, A., Kanoria, M. Generalized thermoelastic problem of an infinite body with a spherical cavity under dual-phase-lags. Journal of Applied Mechanics and Technical Physics, 57(4), 652-665 (2016). https://doi.org/10.1134/s002189441604009x",
+  "doi": "10.1134/s002189441604009x",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 6,
+  "key": "jafari2019",
+  "text": "Jafari, M. Effect of hole geometry on the thermal stress analysis of perforated composite plate under uniform heat flux. Journal of Composite Materials, 53(8), 1079-1095 (2019). https://doi.org/10.1177/0021998318795279",
+  "doi": "10.1177/0021998318795279",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 7,
+  "key": "abbas2022",
+  "text": "Abbas, I., Marin, M., Hobiny, A., Vlase, S. Thermal Conductivity Study of an Orthotropic Medium Containing a Cylindrical Cavity. Symmetry, 14(11), 2387 (2022). https://doi.org/10.3390/sym14112387",
+  "doi": "10.3390/sym14112387",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 8,
+  "key": "fahmy2022",
+  "text": "Fahmy, M.A., Alsulami, M.O. Boundary Element and Sensitivity Analysis of Anisotropic Thermoelastic Metal and Alloy Discs with Holes. Materials, 15(5), 1828 (2022). https://doi.org/10.3390/ma15051828",
+  "doi": "10.3390/ma15051828",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 9,
+  "key": "shiah2026",
+  "text": "Shiah, Y.C., Liu, T.L. Boundary element analysis of thermal stresses on voids/holes in an infinite/semi-infinite anisotropic plane. Journal of Thermal Stresses, 49(1), 129-145 (2026). https://doi.org/10.1080/01495739.2025.2566326",
+  "doi": "10.1080/01495739.2025.2566326",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 10,
+  "key": "biot1956",
+  "text": "Biot, M.A. Thermoelasticity and Irreversible Thermodynamics. Journal of Applied Physics, 27(3), 240-253 (1956). https://doi.org/10.1063/1.1722351",
+  "doi": "10.1063/1.1722351",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 11,
+  "key": "lord1967",
+  "text": "Lord, H.W., Shulman, Y. A generalized dynamical theory of thermoelasticity. Journal of the Mechanics and Physics of Solids, 15(5), 299-309 (1967). https://doi.org/10.1016/0022-5096(67)90024-5",
+  "doi": "10.1016/0022-5096(67)90024-5",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 12,
+  "key": "dhaliwal1980",
+  "text": "Dhaliwal, R.S., Sherief, H.H. Generalized thermoelasticity for anisotropic media. Quarterly of Applied Mathematics, 38(1), 1-8 (1980). https://doi.org/10.1090/qam/575828",
+  "doi": "10.1090/qam/575828",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 13,
+  "key": "tzou1995",
+  "text": "Tzou, D.Y. A Unified Field Approach for Heat Conduction From Macro- to Micro-Scales. Journal of Heat Transfer, 117(1), 8-16 (1995). https://doi.org/10.1115/1.2822329",
+  "doi": "10.1115/1.2822329",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 14,
+  "key": "chandra1998",
+  "text": "Chandrasekharaiah, D.S. Hyperbolic Thermoelasticity: A Review of Recent Literature. Applied Mechanics Reviews, 51(12), 705-729 (1998). https://doi.org/10.1115/1.3098984",
+  "doi": "10.1115/1.3098984",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 15,
+  "key": "adachi2018",
+  "text": "Adachi, K., Ogi, H., Takeuchi, N., Nakamura, N., Watanabe, H., Ito, T., et al. Unusual elasticity of monoclinic β-Ga2O3. Journal of Applied Physics, 124(8), 085102 (2018). https://doi.org/10.1063/1.5047017",
+  "doi": "10.1063/1.5047017",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 16,
+  "key": "klimm2023",
+  "text": "Klimm, D., Amgalan, B., Ganschow, S., Kwasniewski, A., Galazka, Z., Bickermann, M. The Thermal Conductivity Tensor of β-Ga2O3 from 300 to 1275 K. Crystal Research and Technology, 58(2), 2200204 (2023). https://doi.org/10.1002/crat.202200204",
+  "doi": "10.1002/crat.202200204",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 17,
+  "key": "orlandi2015",
+  "text": "Orlandi, F., Mezzadri, F., Calestani, G., Boschi, F., Fornari, R. Thermal expansion coefficients of β-Ga2O3 single crystals. Applied Physics Express, 8(11), 111101 (2015). https://doi.org/10.7567/apex.8.111101",
+  "doi": "10.7567/apex.8.111101",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 18,
+  "key": "cheng2018",
+  "text": "Cheng, Z., Hanke, M., Galazka, Z., Trampert, A. Thermal expansion of single-crystalline β-Ga2O3 from RT to 1200 K studied by synchrotron-based high resolution x-ray diffraction. Applied Physics Letters, 113(18), 182102 (2018). https://doi.org/10.1063/1.5054265",
+  "doi": "10.1063/1.5054265",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 19,
+  "key": "handwerg2016",
+  "text": "Handwerg, M., Mitdank, R., Galazka, Z., Fischer, S.F. Temperature-dependent thermal conductivity and diffusivity of a Mg-doped insulating β-Ga2O3 single crystal along [100], [010] and [001]. Semiconductor Science and Technology, 31(12), 125006 (2016). https://doi.org/10.1088/0268-1242/31/12/125006",
+  "doi": "10.1088/0268-1242/31/12/125006",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 20,
+  "key": "yang2023",
+  "text": "Yang, J., Xu, Y., Wang, X., Zhang, X., He, Y., Sun, H. Lattice thermal conductivity of β-, α- and κ- Ga2O3: a first-principles computational study. Applied Physics Express, 17(1), 011001 (2023). https://doi.org/10.35848/1882-0786/ad0ba8",
+  "doi": "10.35848/1882-0786/ad0ba8",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 21,
+  "key": "durbin1974",
+  "text": "Durbin, F. Numerical Inversion of Laplace Transforms: An Efficient Improvement to Dubner and Abate's Method. The Computer Journal, 17(4), 371-376 (1974). https://doi.org/10.1093/comjnl/17.4.371",
+  "doi": "10.1093/comjnl/17.4.371",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 22,
+  "key": "crump1976",
+  "text": "Crump, K.S. Numerical Inversion of Laplace Transforms Using a Fourier Series Approximation. Journal of the ACM, 23(1), 89-96 (1976). https://doi.org/10.1145/321921.321931",
+  "doi": "10.1145/321921.321931",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 23,
+  "key": "huang2025",
+  "text": "Huang, Y., Yan, L., Wu, H., Yu, Y. New insights on generalized heat conduction and thermoelastic coupling models. Applied Mathematics and Mechanics, 46(8), 1533-1550 (2025). https://doi.org/10.1007/s10483-025-3280-7",
+  "doi": "10.1007/s10483-025-3280-7",
+  "level": "METADATA VERIFIED (Crossref 2026-10-01)"
+ },
+ {
+  "n": 24,
+  "key": "greenlindsay1972",
+  "text": "Green, A.E., Lindsay, K.A. Thermoelasticity. Journal of Elasticity, 2(1), 1-7 (1972). https://doi.org/10.1007/BF00045689",
+  "doi": "10.1007/BF00045689",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 25,
+  "key": "greennaghdi1993",
+  "text": "Green, A.E., Naghdi, P.M. Thermoelasticity without energy dissipation. Journal of Elasticity, 31(3), 189-208 (1993). https://doi.org/10.1007/BF00044969",
+  "doi": "10.1007/BF00044969",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 26,
+  "key": "hetnarski1993",
+  "text": "Hetnarski, R.B., Ignaczak, J. GENERALIZED THERMOELASTICITY: CLOSED-FORM SOLUTIONS. Journal of Thermal Stresses, 16(4), 473-498 (1993). https://doi.org/10.1080/01495739308946241",
+  "doi": "10.1080/01495739308946241",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 27,
+  "key": "ignaczak2010",
+  "text": "Ignaczak, J., Ostoja-Starzewski, M. Thermoelasticity with Finite Wave Speeds. Oxford University Press (2009). https://doi.org/10.1093/acprof:oso/9780199541645.001.0001",
+  "doi": "10.1093/acprof:oso/9780199541645.001.0001",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 28,
+  "key": "straughan2011",
+  "text": "Straughan, B. Heat Waves. Springer, Applied Mathematical Sciences (2011). https://doi.org/10.1007/978-1-4614-0493-4",
+  "doi": "10.1007/978-1-4614-0493-4",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 29,
+  "key": "hetnarski2019",
+  "text": "Hetnarski, R.B., Eslami, M.R. Thermal Stresses—Advanced Theory and Applications. Springer, Solid Mechanics and Its Applications (2019). https://doi.org/10.1007/978-3-030-10436-8",
+  "doi": "10.1007/978-3-030-10436-8",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 30,
+  "key": "eslami2013",
+  "text": "Eslami, M.R., Hetnarski, R.B., Ignaczak, J., Noda, N., Sumi, N., Tanigawa, Y. Theory of Elasticity and Thermal Stresses. Springer, Solid Mechanics and Its Applications (2013). https://doi.org/10.1007/978-94-007-6356-2",
+  "doi": "10.1007/978-94-007-6356-2",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 31,
+  "key": "chandra1986",
+  "text": "Chandrasekharaiah, D.S. Thermoelasticity with Second Sound: A Review. Applied Mechanics Reviews, 39(3), 355-376 (1986). https://doi.org/10.1115/1.3143705",
+  "doi": "10.1115/1.3143705",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 32,
+  "key": "josephpreziosi1989",
+  "text": "Joseph, D.D., Preziosi, L. Heat waves. Reviews of Modern Physics, 61(1), 41-73 (1989). https://doi.org/10.1103/RevModPhys.61.41",
+  "doi": "10.1103/RevModPhys.61.41",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 33,
+  "key": "kaminski1990",
+  "text": "Kaminski, W. Hyperbolic Heat Conduction Equation for Materials With a Nonhomogeneous Inner Structure. Journal of Heat Transfer, 112(3), 555-560 (1990). https://doi.org/10.1115/1.2910422",
+  "doi": "10.1115/1.2910422",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 34,
+  "key": "roychoudhuri2007",
+  "text": "Roy Choudhuri, S.K. On A Thermoelastic Three-Phase-Lag Model. Journal of Thermal Stresses, 30(3), 231-238 (2007). https://doi.org/10.1080/01495730601130919",
+  "doi": "10.1080/01495730601130919",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 35,
+  "key": "chen2001",
+  "text": "Chen, G. Ballistic-Diffusive Heat-Conduction Equations. Physical Review Letters, 86(11), 2297-2300 (2001). https://doi.org/10.1103/PhysRevLett.86.2297",
+  "doi": "10.1103/PhysRevLett.86.2297",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 36,
+  "key": "majumdar1993",
+  "text": "Majumdar, A. Microscale Heat Conduction in Dielectric Thin Films. Journal of Heat Transfer, 115(1), 7-16 (1993). https://doi.org/10.1115/1.2910673",
+  "doi": "10.1115/1.2910673",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 37,
+  "key": "tzou2014",
+  "text": "Tzou, D.Y. Macro- to Microscale Heat Transfer. Wiley (2014). https://doi.org/10.1002/9781118818275",
+  "doi": "10.1002/9781118818275",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 38,
+  "key": "prevost1983",
+  "text": "Prevost, J.H., Tao, D. Finite Element Analysis of Dynamic Coupled Thermoelasticity Problems With Relaxation Times. Journal of Applied Mechanics, 50(4), 817-822 (1983). https://doi.org/10.1115/1.3167151",
+  "doi": "10.1115/1.3167151",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 39,
+  "key": "narayanan1982",
+  "text": "Narayanan, G.V., Beskos, D.E. Numerical operational methods for time-dependent linear problems. International Journal for Numerical Methods in Engineering, 18(12), 1829-1854 (1982). https://doi.org/10.1002/nme.1620181207",
+  "doi": "10.1002/nme.1620181207",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 40,
+  "key": "davies1979",
+  "text": "Davies, B., Martin, B. Numerical inversion of the laplace transform: a survey and comparison of methods. Journal of Computational Physics, 33(1), 1-32 (1979). https://doi.org/10.1016/0021-9991(79)90025-1",
+  "doi": "10.1016/0021-9991(79)90025-1",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 41,
+  "key": "weeks1966",
+  "text": "Weeks, W.T. Numerical Inversion of Laplace Transforms Using Laguerre Functions. Journal of the ACM, 13(3), 419-429 (1966). https://doi.org/10.1145/321341.321351",
+  "doi": "10.1145/321341.321351",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 42,
+  "key": "talbot1979",
+  "text": "Talbot, A. The Accurate Numerical Inversion of Laplace Transforms. IMA Journal of Applied Mathematics, 23(1), 97-120 (1979). https://doi.org/10.1093/imamat/23.1.97",
+  "doi": "10.1093/imamat/23.1.97",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 43,
+  "key": "abate2006",
+  "text": "Abate, J., Whitt, W. A Unified Framework for Numerically Inverting Laplace Transforms. INFORMS Journal on Computing, 18(4), 408-421 (2006). https://doi.org/10.1287/ijoc.1050.0137",
+  "doi": "10.1287/ijoc.1050.0137",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 44,
+  "key": "dehoog1982",
+  "text": "de Hoog, F.R., Knight, J.H., Stokes, A.N. An Improved Method for Numerical Inversion of Laplace Transforms. SIAM Journal on Scientific and Statistical Computing, 3(3), 357-366 (1982). https://doi.org/10.1137/0903022",
+  "doi": "10.1137/0903022",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 45,
+  "key": "ting1996",
+  "text": "Ting, T.T.C. Anisotropic Elasticity. Oxford University Press (1996). https://doi.org/10.1093/oso/9780195074475.001.0001",
+  "doi": "10.1093/oso/9780195074475.001.0001",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 46,
+  "key": "hwu2010",
+  "text": "Hwu, C. Anisotropic Elastic Plates. Springer (2010). https://doi.org/10.1007/978-1-4419-5915-7",
+  "doi": "10.1007/978-1-4419-5915-7",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 47,
+  "key": "stroh1958",
+  "text": "Stroh, A.N. Dislocations and Cracks in Anisotropic Elasticity. Philosophical Magazine, 3(30), 625-646 (1958). https://doi.org/10.1080/14786435808565804",
+  "doi": "10.1080/14786435808565804",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 48,
+  "key": "chen2008",
+  "text": "Chen, F.M., Chao, C.K. Stress Analysis of an Infinite Plate with a Coated Elliptic Hole Under a Remote Uniform Heat Flow. Journal of Thermal Stresses, 31(7), 599-613 (2008). https://doi.org/10.1080/01495730801978547",
+  "doi": "10.1080/01495730801978547",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 49,
+  "key": "fahmy2018",
+  "text": "Fahmy, M.A. Boundary Element Algorithm for Modeling and Simulation of Dual-Phase Lag Bioheat Transfer and Biomechanics of Anisotropic Soft Tissues. International Journal of Applied Mechanics, 10(10), 1850108 (2018). https://doi.org/10.1142/S1758825118501089",
+  "doi": "10.1142/S1758825118501089",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 50,
+  "key": "pearton2018",
+  "text": "Pearton, S.J., Yang, J., Cary, P.H., Ren, F., Kim, J., Tadjer, M.J., et al. A review of Ga2O3 materials, processing, and devices. Applied Physics Reviews, 5(1), 011301 (2018). https://doi.org/10.1063/1.5006941",
+  "doi": "10.1063/1.5006941",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 51,
+  "key": "galazka2022",
+  "text": "Galazka, Z. Growth of bulk β-Ga2O3 single crystals by the Czochralski method. Journal of Applied Physics, 131(3), 031103 (2022). https://doi.org/10.1063/5.0076962",
+  "doi": "10.1063/5.0076962",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 52,
+  "key": "richardson1927",
+  "text": "Richardson, L.F., Gaunt, J.A. VIII. The deferred approach to the limit. Philosophical Transactions of the Royal Society of London Series A, 226, 299-361 (1927). https://doi.org/10.1098/rsta.1927.0008",
+  "doi": "10.1098/rsta.1927.0008",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 53,
+  "key": "oberkampf2010",
+  "text": "Oberkampf, W.L., Roy, C.J. Verification and Validation in Scientific Computing. Cambridge University Press (2010). https://doi.org/10.1017/CBO9780511760396",
+  "doi": "10.1017/CBO9780511760396",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 54,
+  "key": "pelletier2000",
+  "text": "Pelletier, D., Roache, P.J. Verification and Validation of Computational Heat Transfer. In Handbook of Numerical Heat Transfer, 417-442 (2000). https://doi.org/10.1002/9780470172599.ch13",
+  "doi": "10.1002/9780470172599.ch13",
+  "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ }
+]

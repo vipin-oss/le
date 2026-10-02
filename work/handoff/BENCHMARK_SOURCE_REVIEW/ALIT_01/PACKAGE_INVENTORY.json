@@ -1,0 +1,20 @@
+[
+  {
+    "archive_path": "1-s2.0-S0020740307000665-main.pdf",
+    "bytes": 398483,
+    "sha256": "cee6463ce710bd2122152b7e3d23a24e544e7b4e461772e4eb939aa85f1ab1e4",
+    "extracted_path": "/home/user/RESEARCH_PROJECT_INPUT/LITERATURE/USER_SUPPLIED_BENCHMARKS/ALIT_01/1-s2.0-S0020740307000665-main.pdf"
+  },
+  {
+    "archive_path": "1-s2.0-S0017931007006618-main.pdf",
+    "bytes": 364986,
+    "sha256": "96f4248a61c5d4cfb4e41c58c684404c01015fec39b6308ce157358e67997ff2",
+    "extracted_path": "/home/user/RESEARCH_PROJECT_INPUT/LITERATURE/USER_SUPPLIED_BENCHMARKS/ALIT_01/1-s2.0-S0017931007006618-main.pdf"
+  },
+  {
+    "archive_path": "s10483-025-3280-7 (1).pdf",
+    "bytes": 781149,
+    "sha256": "54e3dde5a7e8a1a705b0acf188d3f9f1a4d8971a2d70c94d88d7c3f845ab8196",
+    "extracted_path": "/home/user/RESEARCH_PROJECT_INPUT/LITERATURE/USER_SUPPLIED_BENCHMARKS/ALIT_01/s10483-025-3280-7 (1).pdf"
+  }
+]

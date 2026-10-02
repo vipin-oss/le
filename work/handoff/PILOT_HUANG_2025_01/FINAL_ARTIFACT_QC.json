@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-30",
+  "CPU_measured_seconds": 50.340502,
+  "CPU_budget_accounted_including_setup_reserve": 60.340502,
+  "pilot_bytes_including_checkpoint": 2332785,
+  "source_parameters_and_frozen_criteria_unchanged": true,
+  "scientific_status": "BLOCKED \u2014 inversioncrosscheckfailed; nofurther solver",
+  "document_file_QC": "RUN_SUCCESS \u2014 NOT scientific PASS"
+}

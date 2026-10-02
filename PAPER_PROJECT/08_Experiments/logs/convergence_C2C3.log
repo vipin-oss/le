@@ -1,0 +1,16 @@
+[C2_ell_phi090_T20_g0p9] sig_nodal=-9.592871e+05 sig_interp=-9.616543e+05 t*=2.510 th*=339.4 wall_err=6.3e-09 back=8.6e-25 (19s)
+[C2_ell_phi090_T32_g0.6] sig_nodal=-9.592871e+05 sig_interp=-9.616543e+05 t*=2.510 th*=159.4 wall_err=8.9e-10 back=1.4e-24 (28s)
+C2 32.0 0.6 {'sig_interp': -961654.330723399, 'rel_diff_sig': 2.852707902779324e-10, 'series_max_rel_diff': 4.1180446878148786e-10, 'n_solves': 42, 'wall_pulse_err': 8.897114460427106e-10}
+[C2_ell_phi090_T16_g1.1] sig_nodal=-9.592871e+05 sig_interp=-9.616543e+05 t*=2.510 th*=159.4 wall_err=7.9e-06 back=6.9e-25 (15s)
+C2 16.0 1.1 {'sig_interp': -961654.3306622012, 'rel_diff_sig': 3.4890882161825676e-10, 'series_max_rel_diff': 7.152724716009738e-10, 'n_solves': 22, 'wall_pulse_err': 7.948244164719383e-06}
+[C3_a10_R80_F] sig_nodal=-8.525963e+05 sig_interp=-8.527076e+05 t*=2.480 th*=37.0 wall_err=6.3e-09 back=7.0e-25 (18s)
+[C3_a10_R80_CV20] sig_nodal=-8.571318e+05 sig_interp=-8.572214e+05 t*=2.500 th*=37.0 wall_err=6.3e-09 back=4.2e-25 (18s)
+[C3_a10_R160_F] sig_nodal=-8.550643e+05 sig_interp=-8.551709e+05 t*=2.480 th*=217.0 wall_err=6.3e-09 back=9.9e-25 (38s)
+[C3_a10_R160_CV20] sig_nodal=-8.594104e+05 sig_interp=-8.594929e+05 t*=2.490 th*=217.0 wall_err=6.3e-09 back=5.2e-25 (38s)
+C3 10 {'R80a': {'sig_F': -852707.6078968743, 'sig_CV': -857221.3549491134, 'D_t_le_6': 0.015694806840125936, 'D_t_le_12': 0.015694806840125936, 'echo_roundtrip_t_th': 8.137621720103018, 'epsilon': np.float64(0.05150393493736088), 'Lambda_CV': np.float64(0.7917656391100175)}, 'R160a': {'sig_F': -855170.857792466, 'sig_CV': -859492.9079132013, 'D_t_le_6': 0.014847007703902588, 'D_t_le_12': 0.014847007703902588, 'echo_roundtrip_t_th': 16.37825131008076, 'epsilon': np.float64(0.05150393493736088), 'Lambda_CV': np.float64(0.7917656391100175)}, 'peak_change_R80_to_R160': 0.0028887392029572946, 'D_change_R80_to_R160': -0.05401781269813612}
+[C3_a50_R80_F] sig_nodal=-8.539142e+05 sig_interp=-8.540385e+05 t*=2.510 th*=217.0 wall_err=6.3e-09 back=3.6e-24 (18s)
+[C3_a50_R80_CV20] sig_nodal=-8.539502e+05 sig_interp=-8.540745e+05 t*=2.510 th*=217.0 wall_err=6.3e-09 back=3.3e-24 (18s)
+[C3_a50_R160_F] sig_nodal=-8.554407e+05 sig_interp=-8.555569e+05 t*=2.510 th*=217.0 wall_err=6.3e-09 back=4.4e-24 (38s)
+[C3_a50_R160_CV20] sig_nodal=-8.554858e+05 sig_interp=-8.556021e+05 t*=2.510 th*=217.0 wall_err=6.3e-09 back=3.9e-24 (38s)
+C3 50 {'R80a': {'sig_F': -854038.5490009096, 'sig_CV': -854074.4992631883, 'D_t_le_6': 0.0002933994026634247, 'D_t_le_12': 0.0002933994026634247, 'echo_roundtrip_t_th': 1.6275243440206035, 'epsilon': np.float64(0.010300786987472174), 'Lambda_CV': np.float64(0.031670625564400694)}, 'R160a': {'sig_F': -855556.9157444809, 'sig_CV': -855602.0952515651, 'D_t_le_6': 0.00028270842270519296, 'D_t_le_12': 0.00028270842270519296, 'echo_roundtrip_t_th': 3.2756502620161516, 'epsilon': np.float64(0.010300786987472174), 'Lambda_CV': np.float64(0.031670625564400694)}, 'peak_change_R80_to_R160': 0.001777866754782448, 'D_change_R80_to_R160': -0.03643831535163683}
+CONVERGENCE C2/C3 DONE cpu 283s wall 286s

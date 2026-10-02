@@ -1,0 +1,19 @@
+# VALIDATION_RESULTS — Phase 8 (2026-10-01)
+
+**Scope statement (MASTER_PROMPT §12–14, §38).** Everything below is *verification* (Track A): comparison of the code with exact or independent numerical solutions of the SAME mathematical model. No experiment, measured physical quantity or physical benchmark was compared. **Physical validation: APPLICABLE — EVIDENCE_UNAVAILABLE** (no transient cavity measurements for β-Ga₂O₃ are known; the user directive D012 accepts limiting-case and source-case verification, which is what is reported). Validated scope: none (no physical-validation claim is made).
+
+Source-case pilot (Huang et al. 2025 benchmark family; handoff `PILOT_HUANG_2025_01/`): **PILOT — NOT FINAL VALIDATION**, 175/177 digitised points within the envelope (handoff-recorded); NOT re-executed here (the private digitisation `reference_local/` is not in the package); its code is independent of the cavity solver, so it supports confidence in the operator family only.
+
+| ID | Quantity compared | Reference | Test | Result | Status |
+|---|---|---|---|---|---|
+| R1 | steady log temperature profile (ω→0, β=0, isotropic circle, clamped R=80a) | closed form ln(R/r)/ln(R/a) | V6_steady_log_law | max /θ error/ (48/96/192) = [7.27999180387684e-05, 1.5365055767158076e-05, 3.6164004739713818e-06] | PASS |
+| R2 | static uniform-θ annulus hoop stress (isotropic) | closed form (Lamé) | V7_static_uniform_theta_annulus | rel. error (48/96/192) = [0.016880767949530154, 0.004239529801282995, 0.0010591865724793384] | PASS |
+| R3 | steady thermal-gradient load, wall hoop stress (isotropic, clamped R=80a) | closed form Lamé + log profile (−1,234,746 Pa/K) | V8_steady_thermal_gradient_load | rel. error (48/96/192/384) = ['+0.0063', '+0.0016', '+0.0004', '+0.0008']; order 1.9675283417378677 | PASS |
+| R4 | 1-D Chebyshev reference (steady) vs closed form | closed form | U7_ref1d_spectral_steady_closed_form | rel. error = 4.969088515771538e-10 | PASS |
+| R5 | Laplace-domain 1-D reference + Bromwich vs time-domain Crank–Nicolson heat solve + Lamé stress | independent time integration | U8_bromwich_vs_time_domain_Crank_Nicolson | rel. error = 6.532193948532909e-07 | PASS |
+| R6 | single-pulse isotropic circle (2-D mapped FD + Bromwich, inertia off, uncoupled) vs time-domain reference | independent time-domain 1-D solution | V11_single_pulse_isotropic_circle_vs_time_domain | peak error (48/96/192) = ['+0.0116', '+0.0027', '+0.0007']; orders 2.0766318319713055, 2.0451058001284252 | PASS |
+| R7 | dynamic coupled problem (inertia + feedback ON), Fourier/CV/MCV3: pulse-weighted spectral error | independent 1-D Chebyshev spectral solution | V9a_weighted_spectral_error_vs_1D | {'FOURIER0': ['1.29e-02', '3.12e-03', '7.62e-04'], 'CV5': ['1.34e-02', '3.24e-03', '7.93e-04'], 'CV20': ['1.46e-02', '3.54e-03', '8.68e-04'], 'MCV320': ['1.46e-02', '3.55e-03', '8.71e-04']} | PASS |
+| R8 | dynamic coupled wall-hoop series and peak (t≤6) | independent 1-D spectral + same Bromwich plan | V9d_time_domain_peak_and_series_vs_1D | peak errors {'FOURIER0': ['+0.0121', '+0.0029', '+0.0007'], 'CV5': ['+0.0121', '+0.0029', '+0.0007'], 'CV20': ['+0.0132', '+0.0030', '+0.0007'], 'MCV320': ['+0.0135', '+0.0031', '+0.0008']} | PASS |
+| R9 | thermal-memory deviation D accuracy (CV5, CV20 vs Fourier) | 1-D reference D | V9e_thermal_memory_deviation_D_accuracy | {'CV5': {'D_1d': '3.2504e-03', 'D_2d': ['3.5857e-03', '3.3345e-03', '3.2722e-03'], 'rel_err': ['+0.103', '+0.026', '+0.007']}, 'CV20': {'D_1d': '8.9931e-03', 'D_2d': ['1.0967e-02', '9.4575e-03', '9.1100e-03'], 'rel_err': ['+0.219', '+0.052', '+0.013']}} | PASS |
+
+Numerical uncertainty note (§38): the 2-D comparisons are preliminary until the grid study of Phase 9 (`05_Numerical_Method/CONVERGENCE_REPORT.md`) has been applied; the isotropic-circle errors above are the grid errors of the production discretisation for that case.

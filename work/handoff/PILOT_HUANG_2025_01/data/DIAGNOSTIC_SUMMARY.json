@@ -1,0 +1,130 @@
+{
+  "label": "PILOT \u2014 NOT FINAL VALIDATION",
+  "overall_status": "BLOCKED after two pilot iterations did not meet frozen inversion cross-check",
+  "primary_dehoog_probe_refinement": "PASS on specified off-front probes",
+  "independent_time_solver_probe_comparison": [
+    {
+      "model": "CV",
+      "field": "theta",
+      "FV_cells": 6400,
+      "scaled_offfront_probe_max_difference": 6.283029201359369e-07,
+      "x_worst": 0.28,
+      "criterion_frozen": 0.003,
+      "probe_only_diagnostic_pass": true,
+      "scope": "POST_FAILURE_DIAGNOSTIC \u2014 selected probes, NOT full-profile acceptance"
+    },
+    {
+      "model": "CV",
+      "field": "sigma",
+      "FV_cells": 6400,
+      "scaled_offfront_probe_max_difference": 1.3521805661438984e-06,
+      "x_worst": 0.08,
+      "criterion_frozen": 0.003,
+      "probe_only_diagnostic_pass": true,
+      "scope": "POST_FAILURE_DIAGNOSTIC \u2014 selected probes, NOT full-profile acceptance"
+    },
+    {
+      "model": "CV",
+      "field": "u",
+      "FV_cells": 6400,
+      "scaled_offfront_probe_max_difference": 1.904548093783388e-06,
+      "x_worst": 0.02,
+      "criterion_frozen": 0.003,
+      "probe_only_diagnostic_pass": true,
+      "scope": "POST_FAILURE_DIAGNOSTIC \u2014 selected probes, NOT full-profile acceptance"
+    },
+    {
+      "model": "MCV3",
+      "field": "theta",
+      "FV_cells": 3200,
+      "scaled_offfront_probe_max_difference": 3.08469111376386e-06,
+      "x_worst": 0.2,
+      "criterion_frozen": 0.003,
+      "probe_only_diagnostic_pass": true,
+      "scope": "POST_FAILURE_DIAGNOSTIC \u2014 selected probes, NOT full-profile acceptance"
+    },
+    {
+      "model": "MCV3",
+      "field": "sigma",
+      "FV_cells": 3200,
+      "scaled_offfront_probe_max_difference": 8.024539206678693e-06,
+      "x_worst": 0.08,
+      "criterion_frozen": 0.003,
+      "probe_only_diagnostic_pass": true,
+      "scope": "POST_FAILURE_DIAGNOSTIC \u2014 selected probes, NOT full-profile acceptance"
+    },
+    {
+      "model": "MCV3",
+      "field": "u",
+      "FV_cells": 3200,
+      "scaled_offfront_probe_max_difference": 7.843910131745931e-06,
+      "x_worst": 0.04,
+      "criterion_frozen": 0.003,
+      "probe_only_diagnostic_pass": true,
+      "scope": "POST_FAILURE_DIAGNOSTIC \u2014 selected probes, NOT full-profile acceptance"
+    }
+  ],
+  "Cohen_failure_examples": [
+    {
+      "model": "CV",
+      "field": "theta",
+      "x_worst": 0.15,
+      "dehoog64": 0.7278738308968512,
+      "cohen80": 397200410.456477,
+      "scaled_difference": 397200409.7286032,
+      "root_cause": "NOT_ESTABLISHED; unsuitable/unstable inversion for these delayed/oscillatory responses is a hypothesis, not proven"
+    },
+    {
+      "model": "CV",
+      "field": "sigma",
+      "x_worst": 0.15,
+      "dehoog64": -0.03273641383240167,
+      "cohen80": -17346722.441095375,
+      "scaled_difference": 414147855.5213381,
+      "root_cause": "NOT_ESTABLISHED; unsuitable/unstable inversion for these delayed/oscillatory responses is a hypothesis, not proven"
+    },
+    {
+      "model": "CV",
+      "field": "u",
+      "x_worst": 0.15,
+      "dehoog64": 5.515678354801754e-05,
+      "cohen80": 821.4537001788897,
+      "scaled_difference": 1310851.3646044743,
+      "root_cause": "NOT_ESTABLISHED; unsuitable/unstable inversion for these delayed/oscillatory responses is a hypothesis, not proven"
+    },
+    {
+      "model": "MCV3",
+      "field": "theta",
+      "x_worst": 0.15,
+      "dehoog64": 0.6539241995025938,
+      "cohen80": 277371775.7708777,
+      "scaled_difference": 277371775.1169535,
+      "root_cause": "NOT_ESTABLISHED; unsuitable/unstable inversion for these delayed/oscillatory responses is a hypothesis, not proven"
+    },
+    {
+      "model": "MCV3",
+      "field": "sigma",
+      "x_worst": 0.15,
+      "dehoog64": -0.029912240814310643,
+      "cohen80": -12125113.262732213,
+      "scaled_difference": 289483484.263633,
+      "root_cause": "NOT_ESTABLISHED; unsuitable/unstable inversion for these delayed/oscillatory responses is a hypothesis, not proven"
+    },
+    {
+      "model": "MCV3",
+      "field": "u",
+      "x_worst": 0.15,
+      "dehoog64": 4.958261028582782e-05,
+      "cohen80": 563.5714368636677,
+      "scaled_difference": 899330.5058005191,
+      "root_cause": "NOT_ESTABLISHED; unsuitable/unstable inversion for these delayed/oscillatory responses is a hypothesis, not proven"
+    }
+  ],
+  "source_graphical_comparison": "NOT_EXECUTED: prerequisite numerical inversion gate unresolved",
+  "full_profile_Laplace_FV_comparison": "NOT_EXECUTED",
+  "physical_validation": "NOT_RUN",
+  "source_parameters_changed": false,
+  "criteria_changed": false,
+  "code_changes": "Analytic zero-stress endpoint handling; CV6400 post-result numerical refinement, both logged",
+  "next_action": "STOP solver runs; require user decision/authorization for diagnostic-only follow-up or logged method-plan revision"
+}

@@ -1,0 +1,2347 @@
+
+--- PAGE 1 ---
+ Fourier Resonance–Induced Structural Non-Identifiability in the
+                 Guyer–Krumhansl Model
+
+                                 V. Gupta∗
+
+           Department of Mathematics, Gurugram University, Gurugram, Haryana, India
+
+
+
+
+
+Abstract
+
+The Guyer–Krumhansl equation models room-temperature heat conduction in heteroge-
+neous media with three coefficients – diffusivity α, flux relaxation time τq and nonlocal
+coefficient κ2 – routinely obtained by fitting heat pulse experiments.  Its solutions co-
+incide with Fourier solutions at B = κ2/(ατq) = 1; this cancellation is established, but
+its consequence for coefficient recoverability has not been quantified in the literature
+considered here. This study analyses the rear-face parameter-to-observable map using
+Fisher information, profile likelihood, Monte Carlo recovery and Bayesian model selection.
+At B = 1 the response is independent of τq for any position, time or excitation, with
+∂T/∂τq = −α ∂T/∂κ2 exactly; the Fisher matrix is singular and (τq, κ2) is structurally
+non-identifiable. Away from resonance the degeneracy broadens into a configuration-
+dependent band, B ∈[0.628, 1.804] at a 20% standard-error criterion; at B = 1 specifically
+the Bayesian information criterion selects the Fourier model over Guyer–Krumhansl even
+for Guyer–Krumhansl data, while α and B remain determined to 1% and 4–10%: the
+degeneracy affects the (τq, κ2) split alone. Of twelve audited published calibrations, eight
+lie inside the band and eleven report no uncertainty; two published evaluations of the
+same basalt specimens differ in τq by factors of 1.51–3.50; the refined evaluation reports
+R2 > 0.99. The forward operator was validated against three published reference figures
+without fitting, at normalised errors of 0.384%, 0.382% and 0.483%. Guyer–Krumhansl
+estimates are best reported in the (α, B) parameterisation, and campaigns targeting
+τq should be designed away from resonance. No experimental validation of the inverse
+conclusions is claimed.
+
+Keywords:  Guyer–Krumhansl equation, structural identifiability, inverse problem,
+non-Fourier heat conduction, Fisher information, heat pulse experiment
+
+
+1. Introduction
+
+1.1. Heat conduction beyond Fourier’s law
+    Fourier’s law – an instantaneous, local response of flux to temperature gradient –
+is accurate whenever the characteristic length and time scales of the process are large
+compared with the mean free paths and scattering times of the energy carriers. Where
+that separation of scales fails, measured thermal responses depart from the diffusive
+prediction. Such departures are established at low temperatures in dielectric crystals,
+where second sound and ballistic propagation have been observed, and at the short
+
+
+   ∗Corresponding author.
+    Email address: vipin@gurugramuniversity.ac.in (V. Gupta)
+
+--- PAGE 2 ---
+times and small dimensions encountered in micro and nanoscale devices [1, 2]. Memory-
+dependent and nonlocal generalisations of Fourier’s law of this kind are also incorporated
+as the thermal constitutive law in coupled thermoelastic and piezothermoelastic wave
+problems [3, 4, 5, 6], a distinct application in which the coupling of interest is to elastic or
+piezoelectric deformation rather than to the heat-pulse inverse problem addressed below.
+They also occur at room temperature in macroscopic specimens whose internal structure is
+strongly heterogeneous: heat pulse measurements on rocks, metal foams, layered capacitors
+and composites produce rear-face temperature histories that a single diffusivity cannot
+reproduce, in samples several millimetres thick under ordinary laboratory conditions [7, 8].
+   The practical consequence is that a growing class of thermal characterisation problems
+cannot be closed with one transport coefficient. Once a non-Fourier constitutive law is
+adopted, the measurement problem changes character: the experiment must determine
+two or three coefficients rather than one, and the question of whether the available data
+can determine them separately becomes as important as the question of whether the model
+can fit the data. That question is the subject of this paper.
+
+1.2. The Guyer–Krumhansl equation and its parameters
+   Among the generalisations of Fourier’s law, the Guyer–Krumhansl (GK) equation
+occupies a distinctive position. It was derived by Guyer and Krumhansl from the linearised
+phonon Boltzmann equation for dielectric crystals [9, 10], and it augments the flux equation
+with two independent coefficients: a relaxation time τq associated with momentum-
+destroying resistive scattering, and a nonlocal coefficient κ2 associated with momentum-
+conserving normal scattering, which correlates the heat flux over a finite spatial range.
+The same structure has since been recovered from Boltzmann transport theory and
+from nonlinear phonon hydrodynamics, extended to non-constant material parameters,
+nanoscale boundary conditions and nonlocal vectorial internal-variable formulations, and
+implemented in dedicated meshless, two-dimensional and device-scale solvers [11, 12, 13, 14].
+Within non-equilibrium thermodynamics the same equation arises from internal variable
+arguments without recourse to kinetic theory [15, 16], which is what licenses its application
+to heterogeneous media far from the dielectric-crystal setting in which it was first obtained;
+the closely related ballistic-conductive and hyperbolic extended-variable systems, their
+operational-method solutions, and their admissibility conditions have been examined in
+comparable detail [17, 18, 19].
+   The GK equation is not the only generalisation in use. The Maxwell–Cattaneo–Vernotte
+(MCV) equation, which retains relaxation and discards nonlocality, remains widely applied
+[20, 21], as does the dual-phase-lag model [22]. The Nyíri equation [23] retains nonlocality
+and discards relaxation. The MCV and Nyíri equations are exact special cases of the GK
+formulation obtained by constraining its coefficients and are included in the like-for-like
+comparison in section 8. The dual-phase-lag model is not included in that comparison.
+
+1.3. Experimental evidence and the calibration problem
+   The experimental case for GK behaviour at room temperature rests on heat pulse
+measurements in which the rear-face temperature history of a millimetre-scale specimen
+is recorded after a short front-face pulse [7, 8, 24]. Fitting the GK solution to such a
+record yields estimates of α, τq and κ2 simultaneously, underlying the standard laser flash
+method, for which analytical solutions and size-effect studies across specimen thickness
+are available [25, 24, 26].
+   The literature contains a substantial number of such calibrations, and their reported
+coefficient pairs vary considerably even among nominally similar specimens: independent
+
+
+                                      2
+
+--- PAGE 3 ---
+evaluations of the same basalt samples have produced relaxation times differing by factors
+of several [26]. This scatter is usually discussed as experimental variability. One purpose
+of the present paper is to show that a large part of it is structural: for a wide range of
+parameter combinations, the data used in these calibrations cannot separate τq from κ2 at
+all, so the individual values reported are not determined by the measurement even when
+the fit is excellent. Nanoscale studies – phonon Boltzmann solvers, peridynamic multiscale
+formulations, physics-informed networks, quasi-ballistic surface-phonon measurements,
+and ultrafast electron diffuse scattering – extract effective GK-type coefficients by the
+same logic and inherit whatever identifiability the underlying measurement possesses
+[27, 28, 29, 30].
+
+1.4. Inverse problems and parameter identifiability
+   Estimating transport coefficients from temperature histories is an inverse heat conduc-
+tion problem, a class known to be ill-posed and studied intensively since Beck’s foundational
+work [31]. The modern literature offers many solution strategies – Tikhonov and asymptoti-
+cal regularisation, physics-informed neural networks, sequential and decoupled frameworks,
+and analyses of non-uniqueness in the conduction inverse problem itself [32, 33, 34] –
+addressing stability: how to obtain a usable estimate despite noise amplification.
+  A logically prior question is identifiability: whether the parameters are determined
+by the model-plus-observation structure at all, irrespective of noise and of the estimator
+used. Structural identifiability asks whether two distinct parameter vectors can produce
+identical model output; practical identifiability asks whether finite noisy data constrain the
+parameters to a bounded region. The distinction and its diagnostics are standard in systems
+biology and dynamical modelling – profile likelihood, Fisher-information conditioning, and
+Fisher-based optimal experimental design [35, 36, 37, 38, 39, 40, 41, 42, 43, 44] – but have
+not been applied to the GK coefficient pair. The literature screened for this study contains
+no structural identifiability analysis of (τq, κ2), no Fisher-information conditioning study
+of the GK inverse problem, and no quantification of the parameter region in which the
+pair fails to separate. That is the gap the present work addresses.
+
+1.5. The resonance condition and the present contribution
+   The GK equation possesses a distinguished parameter combination. When κ2 = ατq,
+its solutions coincide exactly with those of Fourier’s law for the same boundary data. This
+cancellation is known and has been reported repeatedly: it appears in the analytical flash
+solution of Kovács [25], in the room-temperature experiments of Ván and co-workers [8],
+in the thermodynamic analyses of Fülöp and co-workers, who describe it variously as a
+hierarchical resonance of the coupled system [45] and as the Fourier solutions being covered
+by the Guyer–Krumhansl solutions [46], and in numerical studies of generalised heat
+equations [47, 48]. Fehér and Kovács even restrict their fits to 1 ≤B < 3 in recognition
+of the difficulty [26]. No priority is claimed for the cancellation itself.  It is labelled
+throughout by the dimensionless resonance number B = κ2/(ατq), so that B = 1 denotes
+the resonance.
+   What has not been established is the inverse-problem consequence of that cancellation,
+and this is the contribution of the present paper. The following results are established.
+
+   1. An exact sensitivity identity, ∂T/∂τq = −α ∂T/∂κ2, holding pointwise on the reso-
+     nance ray. The Jacobian of the rear-face observable with respect to (τq, κ2) therefore
+     has rank one and the Fisher matrix is exactly singular, so the pair is structurally
+
+
+
+                                      3
+
+--- PAGE 4 ---
+      non-identifiable at B = 1. The identity is proved symbolically and verified numeri-
+       cally.
+   2. A quantitative map of practical non-identifiability away from the exact resonance.
+      Inverting the Fisher standard error gives the band B ∈[0.628, 1.804] within which
+       τq cannot be recovered to better than 20%, a range spanning nearly a factor of three.
+   3. Confirmation by three methodologically independent routes: Fisher conditioning,
+      profile likelihood, and a 200-trial Monte Carlo study, which agree throughout the
+     regime where the asymptotic approximation is valid.
+   4. A model-selection consequence: the Bayesian information criterion selects the Fourier
+     model over the GK model at B = 1 even when the data are generated by the GK
+     model itself, recovering the rank deficiency without using any derivative information.
+   5. An audit of twelve literature-reported calibrations placed in B-space, of which eight
+       fall inside the ill-conditioned band.
+
+   The scope of the result is bounded as follows. It concerns the (τq, κ2) split only: the
+diffusivity α and the resonance number B remain well determined across the whole range,
+including exactly at B = 1, so the data are not uninformative and the GK parameters
+are not unidentifiable in general. The forward operator is validated against published
+reference solutions [25], which is external validation of the forward operator and not of
+the inverse conclusions. No experimental validation is claimed anywhere in this paper.
+
+1.6. Organisation
+   Section 2 fixes notation and derives the Laplace-domain propagation relation. Section 3
+establishes the structural result analytically. Section 4 sets out the numerical methodology,
+the three independent solvers and the estimation algorithm.  Section 5 validates the
+forward operator against published reference solutions, and section 6 certifies the numerics.
+Section 7 presents the Fisher, profile-likelihood and Monte Carlo analyses, section 8 the
+model comparison, and section 9 the audit of published calibrations. Section 11 discusses
+design implications and section 13 concludes.
+
+
+2. Guyer–Krumhansl Model and Dimensionless Formulation
+
+   This section fixes notation and derives the Laplace-domain propagation relation under-
+lying the identifiability analysis of section 3. The formulation is the one dimensional laser
+flash problem solved analytically by Kovács [25], which serves as the validation anchor in
+section 5. No mechanical, electrical or diffusive field is introduced, and no constitutive
+term beyond those in (1) and (2) appears anywhere in the paper.
+
+2.1. Governing equations
+   Consider a homogeneous slab of thickness L occupying 0 ≤x ≤L, with temperature
+T(x, t) and heat flux q(x, t). In the absence of internal sources, the balance of internal
+energy for a rigid conductor at constant density is
+
+                             ∂T   ∂q
+                                 ρc  +  = 0,                                  (1)
+                                    ∂t   ∂x
+
+where ρ is the mass density and c the specific heat, so that ρc is the volumetric heat
+capacity. Equation (1) is the standard one dimensional energy balance and is not specific
+to any constitutive law.
+
+
+                                      4
+
+--- PAGE 5 ---
+   The constitutive relation is the Guyer–Krumhansl equation, written in the flux form
+used by the anchor [25] and originating in the linearised phonon Boltzmann treatment of
+Guyer and Krumhansl [9, 10],
+
+                           ∂q       ∂T      ∂2q
+                                 τq  + q + λ   −κ2   = 0,                           (2)
+                             ∂t       ∂x     ∂x2
+
+in which λ is the thermal conductivity, τq is the relaxation time of the heat flux, and κ2 is
+the coefficient of the second spatial gradient of the flux. The thermal diffusivity is
+
+                                  λ
+                            α = ρc.                                       (3)
+
+   Three remarks on the physical content of the coefficients are needed, because the
+identifiability question is a question about these three numbers. The relaxation time τq
+measures the delay with which the flux responds to an imposed temperature gradient;
+setting τq = 0 and κ2 = 0 returns Fourier’s law. The coefficient κ2 carries the dimension of
+a squared length and introduces spatial nonlocality, so that the flux at a point depends on
+the flux in a neighbourhood rather than on the local gradient alone. In a kinetic reading
+of the model for dielectric crystals, κ2 is associated with the phonon mean free path
+[10]; in the non equilibrium thermodynamic derivation with internal variables the same
+equation follows from the second law without committing to a carrier mechanism [15],
+and this second reading is the one appropriate to the room temperature measurements on
+heterogeneous specimens that motivate the present study [8, 24]. The distinction matters
+for interpretation but not for the mathematics below, which depends only on (α, τq, κ2)
+being positive constants.
+
+Notation convention.. Sources differ in how the nonlocal coefficient is written, and the
+conversions must be stated rather than assumed. The anchor [25] writes the temperature
+form of the model with a coefficient κ2 multiplying ∂t∂xxT, and defines the dimensionless
+group ˆκ = κ/L; the symbol κ2 in (2) is that same quantity, with dimension m2. Some
+experimental papers report instead a length ℓor a dimensionless ratio, and those are not
+interchangeable with κ2 without an explicit conversion. Where published calibrations are
+used in section 9, the quantity actually tabulated by the original authors is reported as
+such, and any conversion is flagged. No parameter from one source is silently identified
+with a similarly named parameter from another.
+
+2.2. Reduction to a single equation
+    Eliminating T between (1) and (2) gives a single equation for the flux. Differentiating
+(2) with respect to t and using the x-derivative of (1), ρc ∂t∂xT = −∂xxq, to replace ∂t∂xT
+yields, after division by ρc,
+
+                            ∂2q   ∂q     ∂2q       ∂3q
+                                τq   +  = α   + κ2                                 (4)                               ∂t2   ∂t     ∂x2      ∂t ∂x2.
+
+The same elimination performed on T rather than q produces an equation of identical
+form in T [25]. The two representations are not interchangeable once boundary data are
+imposed, and this is the first of two points that must be made explicit.
+
+Remark 1 (Flux representation is required for flux boundary data). The laser flash
+experiment prescribes the heat flux at the irradiated face. The temperature representation
+of the Guyer–Krumhansl system is convenient only when the boundary data are of Dirichlet
+
+
+                                      5
+
+--- PAGE 6 ---
+type in T; with a prescribed flux the boundary condition is not expressible in T alone
+without introducing time derivatives of the boundary temperature. The flux representation
+(4) is therefore used throughout, and T is recovered afterwards by integrating (1) in time
+[25, 47].
+
+Remark 2 (The initial time derivative is derived, not imposed). Equation (4) is second
+order in time, so a well posed initial value problem requires both q(x, 0) and ∂tq(x, 0).
+These cannot be prescribed independently: given q(x, 0) and T(x, 0), the constitutive
+relation (2) evaluated at t = 0 determines
+
+                   ∂q                ∂T           ∂2q
+                      τq    (x, 0) = −q(x, 0) −λ    (x, 0) + κ2         0).                 (5)                    ∂t                 ∂x          ∂x2(x,
+
+For the quiescent initial state used here, T(x, 0) = T0 and q(x, 0) = 0 give ∂tq(x, 0) = 0.
+Imposing a value inconsistent with (5) would violate the constitutive law at the initial
+instant.
+
+2.3. Geometry, boundary and initial conditions
+   Figure 1 defines the problem: the one-dimensional slab, the pulsed flux at the front
+face, the adiabatic rear face, the observable rear-face history, and the governing system
+with its conditions.
+
+
+      (a)                                                      (b)
+                                                                   Guyer--Krumhansl system
+
+
+
+                                                                                Single equation (T-form)
+
+
+                                                                          Conditions
+
+                                 specimen
+
+
+                                                                    Resonance number
+
+
+
+
+
+Figure 1: Problem definition. (a) The specimen is a one-dimensional slab of thickness L. The heat pulse
+q0(t) is applied at x = 0, the rear face x = L is adiabatic, q(L, t) = 0, and the observable is the rear-face
+history T(L, t). The geometry is genuinely one-dimensional; no lateral or curvilinear dimension enters the
+model. (b) The Guyer–Krumhansl system, its single-equation T-form, the initial and boundary conditions,
+the pulse shape, and the resonance number B = κ2/(ατq) at which the Fourier solution is recovered
+exactly.
+
+
+   The excitation and boundary conditions are those of the validated anchor problem [25]
+and are reproduced without modification. The irradiated face x = 0 receives a pulse of
+finite duration tp,
+
+                  ⎧        [︄       (︄2πt )︄]︄
+                  ⎪⎪⎨qmax  1 −cos             ,  0 < t ≤tp,                       q(0, t) =                      tp                                      (6)
+                  ⎪⎪⎩0,                            t > tp,
+
+
+                                      6
+
+--- PAGE 7 ---
+where qmax is the amplitude. The rear face is adiabatic for all time,
+
+                                     q(L, t) = 0,                                     (7)
+
+and the slab starts in equilibrium with its surroundings,
+
+                                               ∂q
+                   T(x, 0) = T0,     q(x, 0) = 0,        (x, 0) = 0,                   (8)
+                                                   ∂t
+the last of these following from (5) as required by remark 2 rather than being imposed.
+Cooling at the boundaries is neglected, as in the anchor [25]. The observable is the rear
+face temperature history T(L, t), which is the quantity recorded in a flash experiment and
+the only data used in the inverse problem of section 7.
+
+2.4. Nondimensionalisation
+   The scaling is that of the anchor [25], reproduced here in full so that every coefficient
+can be checked. Introduce
+                    αt        x         T −T0            q                                ˆt =              ˆx =          ˆT =                ,        ˆq =     ,                (9)                    L2,        L,          Tend −T0                 ¯q0
+in which the time averaged pulse flux and the adiabatic end temperature are
+                      1 ∫︂tp                                                ¯q0tp
+                                ¯q0 =        q(0, t) dt = qmax,     Tend = T0 +                     (10)                              tp  0                               ρcL.
+
+The value ¯q0 = qmax follows because the cosine in (6) integrates to zero over a full period.
+Tend is the temperature the insulated slab reaches once the deposited energy ¯q0tp per unit
+area has spread uniformly, so ˆT →1 as ˆt →∞. The material parameters scale as
+                              αtp          ατq           κ2
+                     ˆτ∆=       ,         ˆτq =       ,       ˆκ2 =                         (11)                          L2          L2           L2,
+where ˆτ∆is the dimensionless pulse length. Substituting (9) and (11) into (1) and (2) and
+dropping the hats gives the dimensionless system
+
+                                   ∂T   ∂q
+                                     τ∆   +  = 0,                        (12)
+                                            ∂t   ∂x
+                          ∂q        ∂T      ∂2q
+                                τq  + q + τ∆   −κ2   = 0,                        (13)
+                            ∂t        ∂x     ∂x2
+on 0 ≤x ≤1, with
+               ⎧       (︃2πt )︃
+
+                  q(0, t) =               ⎪⎪⎨1 −cos  τ∆    ,  0 < t ≤τ∆,      q(1, t) = 0,             (14)
+               ⎪⎪⎩0,                  t > τ∆,
+
+and T(x, 0) = q(x, 0) = ∂tq(x, 0) = 0. Eliminating T as in section 2.2 gives the dimension-
+less counterpart of (4),
+                             ∂2q   ∂q   ∂2q       ∂3q
+                                 τq   +  =   + κ2                                (15)                               ∂t2   ∂t   ∂x2      ∂t ∂x2.
+   Two consequences of (11) are used later and are recorded here. First, the scaling sets
+the dimensionless diffusivity identically to unity, so α is absorbed into the time variable
+and cannot be read offfrom the shape of a dimensionless curve; it is recovered only through
+the physical time axis. Second, the dimensionless parameters ˆτq and ˆκ2 both depend on
+L, so a single specimen thickness fixes them jointly. Table 1 collects the symbols, their
+dimensions and their scaled counterparts.
+
+                                      7
+
+--- PAGE 8 ---
+Table 1: Model parameters, dimensions and scaled counterparts. The dimensionless diffusivity is unity by
+construction of (9).
+
+
+       Symbol  Meaning              Dimension  Dimensionless form
+
+       T         temperature         K            (T −T0)/(Tend −T0)
+         q         heat flux        W m−2         q/¯q0
+       x          position           m          x/L
+            t         time                           s            αt/L2
+      L          slab thickness        m           1
+         ρc        volumetric heat capacity   J m−3 K−1    not applicable
+       λ         thermal conductivity   W m−1 K−1   not applicable
+       α         thermal diffusivity       m2 s−1       1
+           τq          flux relaxation time          s            ατq/L2
+         κ2         nonlocal coefficient       m2          κ2/L2
+           tp         pulse duration                s        τ∆= αtp/L2
+     B         Fourier-resonance number  1        B (invariant)
+         s         Laplace variable            s−1           conjugate to ˆt
+        m(s)      propagation factor       m−1          conjugate to ˆx
+
+
+2.5. The Fourier-resonance number
+   The ratio that organises the whole analysis is
+
+                                           κ2
+                       B =       .                                   (16)
+                                          ατq
+
+It is dimensionless: [κ2] = m2, [α] = m2 s−1 and [τq] = s, so the quotient has dimension
+m2/(m2 s−1 · s) = 1.  Written in the scaled variables of (11), and recalling that the
+dimensionless diffusivity is unity,
+
+                                             ˆκ2     κ2/L2    κ2
+                    =     =   = B,                          (17)
+                           1 · ˆτq   ατq/L2   ατq
+
+so B takes the same value in dimensional and dimensionless variables. The slab thickness
+cancels identically. This scale invariance is used in section 10: within the present one
+dimensional model, changing the specimen thickness does not move B, and multiple
+thicknesses of one material share a single value of it.
+   The quantity B measures the size of the nonlocal contribution relative to the relaxation
+contribution. It is not introduced here for the first time: the ratio κ2/(ατq) is the quantity
+Fehér and Kovács restrict to the interval 1 ≤B < 3 when fitting heat pulse data [26], and
+the condition κ2/τq = α appears in the anchor [25]. The symbol B is adopted here for
+compactness.
+
+2.6. Laplace-domain formulation
+   Let ˆf(x, s) = ∫︁∞0  f(x, t) e−st dt denote the Laplace transform. Applying it to (12) and
+(13) with the homogeneous initial conditions (8) gives
+
+                                 τ∆s ˆT + ˆq ′ = 0,                         (18)
+                              τqs ˆq + ˆq + τ∆ˆT ′ −κ2 ˆq ′′ = 0,                         (19)
+
+
+
+                                      8
+
+--- PAGE 9 ---
+where a prime denotes ∂/∂x. Differentiating (18) gives τ∆s ˆT ′ = −ˆq ′′, that is τ∆ˆT ′ = −ˆq ′′/s.
+Substituting into (19),
+
+                                                                      ′′
+                (1 + τqs) ˆq −ˆq −κ2 ˆq ′′ = 0  ⇐⇒        ˆq ′′ = m2(s) ˆq,            (20)
+                            s
+with the propagation factor
+                                        s (1 + τqs)
+                              m2(s) =                  .                              (21)
+                               α + κ2s
+Equation (21) is written with α retained explicitly, so that it holds in both the dimensional
+and the dimensionless reading; in the scaling of (11) one sets α = 1. The square root
+         √︂m(s) =  m2(s) is taken with the principal branch, Re m > 0, which is the branch that
+keeps the solution bounded as the slab thickness grows and is the one required for the
+inversion contour used in section 4. Since τq, κ2, α > 0, the zeros and poles of m2 lie on
+the negative real axis at s = −1/τq and s = −α/κ2 respectively, so the principal branch is
+analytic in the right half plane.
+    Solving (20) with the transformed boundary conditions ˆq(0, s) = ˆQ0(s) and ˆq(1, s) = 0
+gives ˆq(x, s) = ˆQ0(s) sinh[m(1 −x)] / sinh m, and recovering the temperature from (18)
+through ˆT = −ˆq ′/(τ∆s) yields
+                   m ˆQ0(s) cosh[m (1 −x)]                              ˆT(x, s) =                                       ,                       (22)
+                                 τ∆s sinh m
+
+and, at the observed rear face x = 1,
+                       m ˆQ0(s)                                       ˆT(1, s) =                                          (23)                                 τ∆s sinh m.
+
+The transform of the pulse (14) is
+
+                              ω2 (1 −e−sτ∆)         2π
+                            ˆQ0(s) =                       ,   ω =      .                      (24)
+                                  s (s2 + ω2)          τ∆
+
+The factor 1−e−sτ∆vanishes at s = ±iω, so the apparent poles of (24) there are removable
+and ˆQ0 is analytic on the imaginary axis. This is not merely a formal observation: section 4
+shows that a numerical inversion which separates the two factors reintroduces those poles
+and fails at a predictable time.
+   Equations (21) to (23) are the objects the rest of the paper analyses. The parameters
+τq and κ2 enter the observable (23) only through m(s), and ˆQ0 depends on neither. This
+structure is what makes the resonance analysis of section 3 exact and independent of the
+pulse shape.
+
+2.7. Fourier, MCV and Nyíri limits
+   Each competing model used in section 8 is an exact special case of (21), obtained by
+constraining the parameters rather than by changing the solver. Taking limits directly in
+(21):
+                  Fourier (τq →0, κ2 →0) :    m2(s) →s                        (25)                                                   α,
+            MCV (κ2 →0, τq > 0) :    m2(s) →s (1 + τqs) ,              (26)
+                                            α
+                                                          s
+                     Nyíri (τq →0, κ2 > 0) :    m2(s) →                          (27)                                         α + κ2s.
+
+
+                                      9
+
+--- PAGE 10 ---
+Equation (25) is the transform of the diffusion equation, for which the response is governed
+by α alone. Equation (26) is the Maxwell–Cattaneo–Vernotte limit: the extra factor
+(1 + τqs) is quadratic in s, corresponding to the hyperbolic equation τq∂ttT + ∂tT = α∂xxT
+                                    √︂and to a finite propagation speed   α/τq, so this limit produces a travelling front rather
+than a diffusive rise. Equation (27) retains the nonlocal term alone [23]; it is included in the
+model comparison because it isolates the mechanism that MCV omits, and it is retained
+for that reason only. Each limit is dimensionally consistent, since [m2] = m−2 in every case.
+The Maxwell–Cattaneo–Vernotte and Nyíri forms therefore test the two mechanisms of
+the Guyer–Krumhansl model separately, which is what makes the comparison in section 8
+a like for like one. Models requiring a variable absent from (21) are excluded from that
+comparison, as explained there.
+
+2.8. The resonance condition
+    Setting B = 1 in (16) gives
+
+                  B = 1 ⇐⇒   κ2 = ατq,                           (28)
+
+which is the Fourier resonance condition. Its derivation history and priority in the Guyer–
+Krumhansl literature are reviewed in section 1.5 and are not repeated here; the coincidence
+itself is not a result of the present work. Its consequences for the recoverability of τq and
+κ2 from a measured temperature history are derived in section 3, and no part of that
+derivation is anticipated here.
+
+2.9. Parameterisation
+   The forward model is defined by the parameter vector
+
+                            θ = (α, τq, κ2),                                (29)
+
+which is the set an evaluation procedure is normally asked to return. For the analysis it is
+convenient to use the equivalent set
+
+                      (α, τq, κ2) ↦−→(α, τq, B),     κ2 = α τq B,                 (30)
+
+the inverse transformation being immediate from (16). The map is a smooth bijection
+on the positive octant α, τq, κ2 > 0, with Jacobian determinant ∂κ2/∂B = ατq̸ = 0, so
+no information is created or destroyed by the change of variables. Its usefulness is that
+the resonance (28) becomes the single coordinate hyperplane B = 1 rather than a curved
+surface in (τq, κ2) space, which makes the degeneracy analysed in section 3 explicit in the
+coordinates themselves. A change of variables of this kind is a standard device and is not
+presented as a contribution; what section 7 reports is the quantitative behaviour of the
+estimation problem in these coordinates.
+
+2.10. Correspondence with the validation anchor
+   Because section 5 reproduces published figures, the correspondence between the present
+notation and that of the anchor must be exact. Table A.1 states it. The dimensionless
+system (12)–(15) is the anchor’s system, the scaling (9)–(11) is the anchor’s scaling, and
+the boundary and initial conditions (14) are the anchor’s conditions. The anchor solves
+the problem by eigenfunction expansion; the present work solves the same problem in
+the Laplace domain and by finite differences, as described in section 4, which is why (21)
+does not appear in the anchor even though the problem it describes is the same. The
+
+                                      10
+
+--- PAGE 11 ---
+governing equation (4) is linear and constant-coefficient, so an eigenfunction solution
+exists for any fixed parameter set and is exactly what the anchor computes; the choice
+made here is not dictated by any difficulty of the forward problem itself. It is dictated
+by the inverse problem: the identifiability analysis of sections 3 and 7 and the model
+comparison of section 8 require the solution and its analytic derivatives with respect to
+(α, τq, κ2) at a large number of parameter combinations, whereas an eigenfunction series
+has eigenvalues defined only implicitly, by a transcendental characteristic equation in
+those same parameters, and differentiating the series term by term with respect to them
+is correspondingly indirect. The Laplace-domain transfer function (21) is a closed-form
+rational function of (α, τq, κ2) and differentiates in closed form at the same cost as the
+solution itself (section 4.4), which is what the repeated evaluation underlying sections 7
+and 8 requires. Equation numbers are not cross referenced between the two documents,
+because the version of record and the open preprint of the anchor number their equations
+differently; statements are attributed to the source as a whole.
+
+
+3. Analytical Structural Identifiability
+
+   The consequence of the resonance condition (28) for the inverse problem is derived
+below. The result is exact and is obtained analytically from the formulation of section 2;
+the numerical work reported later confirms it but plays no part in establishing it.
+
+3.1. Definition of structural identifiability
+Definition 1 (Structural identifiability). Let M(θ) denote the map from a parameter
+vector θ to the noise free observable, here the rear face temperature history. A component
+or combination of θ is structurally identifiable if M(θ1) = M(θ2) for all times implies
+that the component agrees in θ1 and θ2. Structural non-identifiability is a property of the
+model and the observation operator alone: it cannot be removed by reducing noise or by
+sampling more densely.
+
+    Practical identifiability, which concerns estimation to a stated precision from finite
+noisy data, is a separate matter and is treated in section 7. The two are kept distinct
+throughout.
+
+3.2. Cancellation on the resonance ray
+Proposition 1 (Fourier-equivalence of the propagation factor). For α, τq > 0, the condition
+B = 1 is equivalent to κ2 = ατq, and under it the propagation factor (21) reduces identically
+to that of the Fourier equation:
+
+                           s (1 + τqs)   s (1 + τqs)    s
+                      m2(s)⃓⃓⃓ B=1 = α + ατqs = α (1 + τqs) = α,     for all s.            (31)
+
+Proof. Substituting κ2 = ατq into the denominator of (21) gives α + κ2s = α(1 + τqs).
+Since τq > 0, the factor (1 + τqs) is not identically zero and cancels against the identical
+factor in the numerator, leaving s/α. The cancellation is algebraic and holds for every s
+in the domain of analyticity, not asymptotically or approximately.
+
+   The single factor (1 + τqs) carries the entire dependence of m2 on the relaxation
+time. When it cancels, τq disappears from the propagation factor, and with it from every
+quantity built on the propagation factor. Comparison with (25) shows that (31) is exactly
+the Fourier propagation factor, which is the analytical content of the known resonance
+[45, 25, 46].
+
+                                      11
+
+--- PAGE 12 ---
+3.3. Independence of the observable from the relaxation time
+Proposition 2 (Structural non-identifiability of (τq, κ2)). Consider the Guyer–Krumhansl
+system of section 2 with κ2 = ατq, α fixed. Then:
+
+   1. the temperature response T(x, t) is independent of τq at every position x ∈[0, 1] and
+     every time t, for any pulse ˆQ0(s);
+   2. consequently the one parameter family {(α, τq, ατq)  : τq > 0} produces identical
+      observations, so τq and κ2 are not separately structurally identifiable in the sense of
+      definition 1;
+   3. the parameter sensitivities are exactly anti-parallel,
+
+                              ∂T      ∂T
+                         = −α ∂κ2,                             (32)                                       ∂τq
+
+     so the sensitivity matrix with respect to (τq, κ2) has rank one, the associated Fisher
+     information matrix is singular, and the correlation between the two parameters is
+     −1.
+
+Proof. (i) By (22), the parameters τq and κ2 enter ˆT(x, s) only through m(s), since ˆQ0
+depends on the pulse alone and τ∆and s are independent of them. By proposition 1,
+m2|B=1 = s/α, hence m|B=1 = √︂ s/α on the principal branch, which contains no τq.
+Therefore
+                                      ˆQ0(s) √︂ s/α cosh [︂√︂ s/α (1 −x)]︂
+                       ˆT(x,    =                                                    ,                 (33)                                                                  s)⃓⃓⃓ B=1                     √︂                                 τ∆s sinh  s/α
+
+which is manifestly free of τq, so ∂ˆT/∂τq|B=1 ≡0 for all s and all x ∈[0, 1]. The Laplace
+transform is injective on continuous functions, so the same holds for T(x, t) at every t.
+    (ii) Immediate from (i): varying τq while holding κ2 = ατq traces the stated one
+parameter family, along which the observable is constant. The map M is therefore not
+injective.
+     (iii) Write ˆT = G(m) with G(m) = ˆQ0m cosh[m(1−x)]/(τ∆s sinh m). By the chain rule
+∂ˆT/∂p = G′(m) ∂m/∂p for p ∈{τq, κ2}, so wherever G′(m)̸ = 0 the ratio of sensitivities
+depends only on m:
+                                  ∂ˆT/∂τq   ∂m/∂τq
+                        = ∂m/∂κ2.                              (34)                                ∂ˆT/∂κ2
+
+Differentiating (21),
+
+             ∂m         s2       ∂m     m s
+              =              = −                             (35)                     ∂τq  2m (α + κ2s),    ∂κ2     2 (α + κ2s),
+
+whence the ratio (34) equals −s/m2 in general. Substituting m2 = s/α from proposition 1
+gives the value −α, independent of s and of x. Because the ratio is the same constant
+at every s, it is the same constant at every t after inversion, which is (32). Stacking the
+sensitivities evaluated at the observation times into a matrix J = [ ∂T/∂τq  ∂T/∂κ2 ],
+the two columns satisfy J:,1 = −αJ:,2, so rank J = 1 and J (1, α)⊤= 0. The Fisher
+information matrix for independent Gaussian errors of variance σ2 is F = J⊤J/σ2, which
+inherits the rank deficiency, so det F = 0 and the implied correlation is −1.
+
+
+
+
+                                      12
+
+--- PAGE 13 ---
+   Three features of proposition 2 deserve emphasis. First, it holds for any pulse: ˆQ0(s)
+cancels from the ratio (34), so no choice of excitation waveform restores identifiability.
+Second, it holds at every interior position, not only at the rear face, so moving or adding
+thermometers within the slab does not help. Third, the null direction (1, α) in the (τq, κ2)
+plane is precisely the tangent to the ray κ2 = ατq, confirming that the flat direction of the
+likelihood is the resonance ray itself.
+
+3.4. Identifiable parameter combinations
+    proposition 2 is a statement about the pair (τq, κ2) and must not be read more broadly.
+The diffusivity α is unaffected: by (33) the response at resonance is exactly a Fourier
+response with diffusivity α, and a Fourier response determines α from the physical time
+axis. Likewise the combination B remains meaningful, since the statement B = 1 is itself
+an identified fact about the data. In the parameterisation (30) the degeneracy is confined
+to a single coordinate:
+
+               ∂T       ∂T     ∂T  B=1 ∂T    ∂T
+                =   + αB    =    + α   = 0,               (36)
+                     B     ∂τq      ∂κ2      ∂τq    ∂κ2                                   ∂τq⃓⃓⃓⃓⃓α,
+
+by (32), while the derivatives with respect to α and B are not annihilated. The information
+the data carry is therefore carried by (α, B), and it is the split of that information into
+τq and κ2 separately that fails. The correct conclusion is not that Guyer–Krumhansl
+parameters cannot be identified, but that the identifiable content of a temperature record
+depends on where the material sits relative to the resonance. Section 7 quantifies this for
+finite noisy data and shows that α and B remain well determined even at B = 1.
+
+3.5. Independent verification
+   The proof above is analytic. It was checked independently in three ways, each of which
+confirms rather than establishes it. Symbolic computer algebra applied to (21) and (22)
+reproduces m2|B=1 = s/α, returns identically zero for ∂ˆT/∂τq on the ray at arbitrary x,
+and simplifies the sensitivity ratio at resonance to exactly −α; the general off resonance
+ratio is returned as −s/m2, in agreement with (34) and (35).  Evaluation in 50 digit
+arithmetic along the ray, with τq varied over five orders of magnitude, leaves the computed
+response invariant to a spread below 10−30, whereas a control at B = 1.05 separates by
+order 10−2, so the collapse is a property of the ray and not of the arithmetic. Finally,
+an independent finite difference solver that never forms a Laplace transform reproduces
+the same invariance. Details of the numerical framework are given in section 4 and its
+certification in section 6. The collapse is exhibited directly in fig. 2: three responses whose
+relaxation times differ by two orders of magnitude are indistinguishable on the resonance
+ray, while the same three separate at B = 1.05.
+
+Remark 3 (Relation to prior work). The coincidence of Guyer–Krumhansl and Fourier
+solutions at κ2 = ατq, reviewed in section 1.5, is used here as a starting point, not offered as
+a finding. What proposition 2 adds is the inverse problem statement: that the coincidence
+implies an exact rank deficiency of the sensitivity matrix with the explicit null direction
+(1, α), hence a singular Fisher information matrix and the structural non-identifiability of
+the pair (τq, κ2) from any temperature observation, at any noise level and any sampling
+density.
+
+
+
+
+                                      13
+
+--- PAGE 14 ---
+       (a)                                      (b)                                             (c)
+
+
+
+
+
+Figure 2: Structural degeneracy of the (τq, κ2) pair in the observable. (a) Rear-face temperature history
+computed along the resonance ray κ2 = ατq, with τq varied over a factor of 100; the three solutions are
+graphically indistinguishable. (b) The same sweep at the off-resonance value B = 1.05. (c) Spread of ˆT
+across the τq sweep for both conditions on a logarithmic ordinate: 1.156 × 10−11 on the resonance ray
+against 2.595 × 10−2 at the off-resonance condition, a ratio of 2.24 × 109.
+
+
+4. Numerical Methodology
+
+   Three independent solvers of the system of section 2 are used. Their agreement is
+treated as numerical cross-checking, not as validation; external validation is the separate
+exercise of section 5. Every numerical setting reported below was fixed by the convergence
+and stability study of section 6 and is stated with its justification.
+
+4.1. Solver A: Laplace inversion by convolution
+   The primary solver evaluates (23) numerically. A direct inversion of (23) is not used,
+for a reason that is a result of this work and is documented in section 6. The transform
+factorises as
+                                                m(s)
+                       ˆT(1, s) = ˆK(s) ˆQ0(s),     ˆK(s) =                               (37)                                         τ∆s sinh m(s),
+into a material kernel ˆK and the pulse transform ˆQ0 of (24). As noted after (24), ˆQ0 has
+removable singularities at s = ±iω. The kernel ˆK has none. Accordingly the kernel alone
+is inverted numerically and the temperature is recovered by the exact convolution
+
+                           ∫︂min(t, τ∆)                                  (︃2πu )︃
+           T(1, t) =           k(t −u) q0(u) du,     q0(u) = 1 −cos            ,        (38)
+                           0                                        τ∆
+
+k being the inverse transform of ˆK. The integrand is analytic on the short support [0, τ∆],
+so a fixed order Gauss–Legendre rule converges rapidly; 32 nodes are used, at which the
+quadrature is converged to better than 10−13 (doubling to 64 nodes changes the result by
+at most that amount).
+   The kernel is inverted by the fixed Talbot rule [49, 50], which evaluates ˆK at the nodes
+
+                                        kπ      2M
+                    sk = r θk (cot θk + i) ,     θk =      ,     r =       .                (39)
+                       M            5t
+
+
+
+                                      14
+
+--- PAGE 15 ---
+The number of nodes is M = 41. Two constraints fix this choice. The value must be
+odd: at θ = π/2, attainable only when M is even, the node lies on the imaginary axis,
+and section 6 shows that an even M places a quadrature node exactly on the removable
+pulse pole at a predictable time. The value must also be moderate, because the rule loses
+accuracy to round off for large M; the accuracy plateau extends to about M ≈81 and
+degrades beyond it. Two further implementation details are required to avoid overflow,
+since Re m becomes large on the contour: 1/ sinh m is evaluated as 2e−m/(1 −e−2m), and
+coth m as (1 + e−2m)/(1 −e−2m).
+
+4.2. Solver B: staggered-grid finite differences
+   The second solver integrates (12) and (13) directly in the time domain, with no Laplace
+transform, so it shares no code path and no approximation with Solver A. Temperatures
+are stored at Nx cell centres and fluxes at the Nx + 1 cell faces, which places the boundary
+conditions (14) exactly on grid points and yields second order accurate centred differences
+for both ∂xq and ∂xxq. The resulting system of ordinary differential equations is stiff,
+and is integrated with a backward differentiation formula at relative tolerance 10−10 and
+absolute tolerance 10−12. Production runs use Nx = 400, for which section 6 reports a
+spatial discretisation error of order 10−6.
+
+4.3. Solver C: arbitrary-precision reference
+   The third solver evaluates the same transform in arbitrary precision arithmetic at
+50 significant digits, and serves only as a ground truth for certifying the other two at
+selected probe points. Its inversion degree must be at least 24: at lower degree it returns
+a converged looking but incorrect value, an error of about 2.5% having been observed at
+degree 10 near the end of the pulse.
+
+4.4. Analytic sensitivities
+   All statistical quantities require the derivatives of the predicted temperature with
+respect to the parameters. Finite differencing the time domain solver is avoided, because
+differencing at the solver noise floor contaminates the Jacobian and produces a spurious
+discrepancy between the Fisher and Monte Carlo uncertainty estimates. The sensitivities to
+τq and κ2, the parameters whose identifiability is at issue, are instead obtained analytically
+in the Laplace domain. Differentiating (37) through m and using (35),
+
+        ∂ˆK        1                        ∂ˆK   ∂ˆK ∂m
+       =            (1 −m coth m) ,     =              ,    p ∈{τq, κ2},    (40)
+     ∂m   τ∆s sinh m                  ∂p  ∂m ∂p
+
+and these are inverted and convolved by exactly the procedure of (38). Because α rescales
+the time axis and the pulse length rather than entering the kernel as a parameter, its
+sensitivity is obtained by a central difference in α alone. The analytic derivatives were
+verified against central differences of the forward solver, agreeing to a maximum relative
+deviation of 5.3 × 10−7.
+
+4.5. Estimation and statistical procedures
+   Parameters are estimated by Levenberg–Marquardt minimisation of the sum of squared
+residuals, carried out in logarithmic parameters so that positivity is enforced automatically
+and the scaling of the three parameters is comparable, with the analytic Jacobian of
+section 4.4. Synthetic observations are generated by adding independent Gaussian noise
+
+
+                                      15
+
+--- PAGE 16 ---
+of standard deviation σ = η (Tmax −Tmin) to the noise free response, with η = 2% unless
+stated otherwise.
+   Four diagnostics are used, and are reported together because each fails in a different
+way near a degeneracy. The Fisher information matrix for independent Gaussian errors
+is F = J⊤J/σ2, with J the analytic sensitivity matrix in log parameters. Asymptotic
+standard errors are the square roots of the diagonal of F −1, and the condition number of
+F measures the conditioning of the estimation problem. This is the standard construction
+underlying Fisher-based experimental design [43, 51, 40], and the way the matrix is
+approximated is known to affect the resulting design [42]. The Fisher analysis is local
+and assumes a quadratic log likelihood, so it is checked against a Monte Carlo study, in
+which the estimator is applied to repeated noise realisations and the empirical spread
+of the estimates recorded.  Profile likelihood [35, 36], computed by fixing τq on a grid
+and re optimising the remaining parameters, gives a confidence interval valid without
+the quadratic assumption, using the χ2(1) threshold of 3.841 at the 95% level; workflows
+automating this diagnostic are now available [37, 38]. Model selection uses the Bayesian
+information criterion [52], BIC = n ln(SSE/n) + k ln n, applied to candidate models that
+are exact special cases of the same transfer function (21) so that solver, protocol and
+convergence criteria are identical across models.
+   Because the estimation problem is poorly conditioned near resonance, the dependence
+of the result on the optimiser starting point is itself studied: starts are drawn from log
+normal perturbations of the true parameters at several widths, and the spread of the
+recovered values is recorded separately from the spread induced by measurement noise.
+
+4.6. Solution algorithm
+   The forward evaluation, the sensitivity evaluation and the identifiability diagnostics
+are organised into the single procedure summarised in Algorithm S1 in the Supplementary
+Material. The structure is dictated by two requirements established in section 6: the
+material kernel must be inverted separately from the pulse transform, because the split
+form fails at even Talbot node counts, and the sensitivities must be obtained analytically
+rather than by finite differences, because differencing at the solver noise floor corrupts the
+Fisher matrix.
+   Three features of the procedure are dictated by numerical requirements rather than by
+convenience, and are justified below.
+   Kernel-only inversion (line 4). The pulse transform ˆQ0 has removable singularities
+on the imaginary axis. When the full product is inverted on a Talbot contour with an
+even number of nodes, a quadrature node coincides with one of these singularities and
+the computed temperature diverges by up to ten orders of magnitude at a predictable
+instant.  Inverting the kernel separately from the pulse factor removes this pulse-pole
+collision failure mode, and the parity dependence is documented in fig. 5. Talbot’s method
+itself [49] and its modern refinements [50] are well established; the interaction with a
+pulse transform carrying removable poles is what required care here. Earlier treatments of
+Laplace inversion for inverse conduction [53] and analyses of inversion stability [54, 55]
+informed the choice of contour.
+   Analytic sensitivities (line 11). Because m2(s) is a rational function of s with polynomial
+dependence on the parameters, each sensitivity can be inverted on the same contour at
+the same cost as the solution itself. Finite-difference Jacobians formed at the solver noise
+floor yield a systematic discrepancy between the Fisher and Monte Carlo uncertainty
+estimates; with analytic sensitivities the two estimates agree, as reported in fig. 7(d). The
+
+
+                                      16
+
+--- PAGE 17 ---
+influence of the Fisher-matrix approximation on the resulting inference is documented in
+the estimation literature [42].
+    Profiling rather than linearised intervals (line 16). Near the resonance the log-likelihood
+ceases to be quadratic in τq, so an asymptotic standard error is no longer a meaningful
+summary. Profile likelihood is the standard remedy [35, 36] and is what reveals that the
+admissible interval is unbounded at B = 1 rather than merely large.
+
+
+5. External Validation of the Forward Operator
+
+   External validation of the forward operator against an independently published solution
+is reported here. The anchor is the analytical laser flash solution of the Guyer–Krumhansl
+equation published by Kovács [25], which solves exactly the problem set out in section 2
+by eigenfunction expansion, independently of the methods of section 4.
+
+5.1. Categories of evidence
+  Two categories are kept strictly separate throughout this paper. Agreement between
+independent implementations of the same equations is numerical cross-checking, not
+external validation. Agreement between the present implementation and results published
+by another author is external validation. The present section reports the second; the first
+is reported in section 6.
+  A third distinction is equally important. What is validated here is the forward operator:
+the ability of the present implementation to compute the temperature response of the
+Guyer–Krumhansl system given the parameters. This validation makes no statement
+about the inverse problem. The identifiability results of sections 3 and 7 are established
+analytically and verified by the separate means described there, not by this reproduction.
+No experimental validation of the inverse conclusions is claimed anywhere in this paper.
+
+5.2. Reproduction protocol
+   Published figures were extracted from the anchor at native resolution (4000 × 1908
+pixels) and digitised by two independent passes, one taking the intensity weighted centroid
+of the plotted curve band and one taking the midpoint of its envelope. The disagreement
+between the passes, combined with the curve half width, defines a digitisation noise floor
+
+                              √︃
+                       σd =   (∆AB)2 + median(half width)2,                    (41)
+
+where ∆AB is the pointwise difference between the two passes. All comparisons are reported
+against σd, because a reproduction cannot meaningfully be shown to agree with a published
+curve to better than the precision with which that curve can be read.
+   The parameters were taken exactly as printed in the anchor, with no parameter fitted,
+tuned or adjusted at any point. The digitisation mask was refined during the extraction,
+since an initial legend mask clipped the upper curve band; correcting the mask boundary
+improved the agreement between the two independent passes by a factor of about twenty
+five, and the corrected extraction is used throughout. The reproduction parameters and
+the resulting metrics are collected together in table 2 in section 5.3.
+
+
+
+
+
+                                      17
+
+--- PAGE 18 ---
+5.3. Reproduction accuracy
+   The first reference case is presented in fig. 3 and the second in fig. 4; the reproduction
+parameters and the resulting metrics are collected together in table 2. The three reference
+cases are three figures of a single published study [25], not three independent publications.
+For the two solution figures the reproduction error falls below the digitisation noise floor,
+the great majority of residuals lying within ±2σd; the residual is therefore dominated by
+the precision with which the published curves can be read rather than by any discrepancy
+with the present implementation.
+
+
+
+       (a)                                      (b)                                             (c)
+
+
+
+
+
+Figure 3: External validation of the forward operator against the first reference case, the resonance
+condition B = 1. (a) Digitised benchmark solution read from the published figure, overlaid with the
+present convolution solution evaluated at the literature parameters with no fitting. (b) Residual ˆTnum−ˆTref
+against the digitisation floor ±2σd, where σd is the standard deviation attributable to reading the published
+curve. (c) Empirical cumulative distribution of |residual|/σd, with the bound 2σd marked. Verified metrics:
+NRMSE = 0.384%, RMSE = 3.84 × 10−3, n = 729 comparison points, and 99.9% of residuals within
+±2σd. External validation of the forward operator only; not validation of the inverse conclusions and not
+experimental validation.
+
+   The convergence figure of the anchor, which shows the eigenfunction expansion trun-
+cated at successively larger numbers of terms, is reproduced with a pooled normalised
+error of 0.483%. One entry requires comment. The N = 40 curve of that figure is nearly
+converged and spans a temperature range of only about 0.034, so normalising its error by
+its own range gives 8.19% while the absolute error, 2.7 × 10−3, is comparable to the other
+curves. Normalised against the full range of the figure the same residual is 0.162%. Both
+numbers appear in the N=40 rows of table 2; the large value is an artefact of normalising
+by a small range, not a failure of reproduction.
+   The residuals show a low amplitude sawtooth of about one pixel, consistent with pixel
+quantisation of the source image, and the largest pointwise deviations occur where the
+published curve rises steeply, where a small horizontal digitisation error maps to a large
+vertical one. Neither feature indicates a model discrepancy.
+
+5.4. Scope established by the reproduction
+   The forward framework reproduces three published figures of an independently authored
+analytical solution, using the published parameters without adjustment, to within the
+precision with which those figures can be read. The forward operator underlying every
+
+                                      18
+
+--- PAGE 19 ---
+       (a)                                      (b)                                             (c)
+
+
+
+
+
+Figure 4: External validation of the forward operator against the second reference case, the over-diffusive
+condition, using the same three-panel construction and the identical unmodified solver as fig. 3. Panels
+are as in fig. 3: (a) digitised benchmark solution and present convolution solution, (b) residual against
+the digitisation floor ±2σd, (c) empirical cumulative distribution of the scaled residual. Verified metrics:
+NRMSE = 0.382%, RMSE = 2.88 × 10−3, n = 743, and 99.5% of residuals within ±2σd. The three
+reference cases used in this work are three figures of the single published study [25], not three independent
+publications.
+
+
+
+
+
+Table 2: External validation of the forward operator against the published figures of the anchor [25]. The
+reproduction parameters (dimensionless throughout, with τ∆= 0.04 in every case; no value was fitted) and
+the resulting metrics are collected together. σd is the digitisation noise floor (41); a ratio RMSE/σd < 1
+means the reproduction error lies below the precision with which the published curve can be read. These
+figures are reproductions for validation, not original results.
+
+
+Anchor fig.              Regime    τq   κ2  Series terms / time span Points RMSE NRMSE   Emax      σd RMSE/σd
+
+Fig. 3                         resonance  0.02  0.02       N = 40; t ∈[0, 1]     729  0.00384    0.384 %  0.01189  0.00593         0.65
+Fig. 5                         over-diffusive  0.02  0.20       N = 10; t ∈[0, 2]     743  0.00288    0.382 %  0.02496  0.00603         0.48
+Fig. 2                      convergence  0.02  0.02   N = 1, 3, 10, 40; t ∈[0, 1]    1999  0.00819    0.483 %  0.05813   —     —
+  N=40 subset, own range                                                      109  0.00275     8.19 %  0.01044   —     —
+  N=40 subset, full range                                                       109  0.00275    0.162 %  0.01044   —     —
+
+Entries marked — are not applicable: the pooled convergence figure reports curves at several truncation
+levels rather than a single digitised trace, so a digitisation standard deviation σd is not defined for its row;
+               the N=40 breakdown of the same figure is likewise reported without σd.
+
+
+
+
+
+                                      19
+
+--- PAGE 20 ---
+subsequent computation in this paper is therefore externally validated. The inverse problem
+is not validated by this exercise, and is not claimed to be.
+
+
+6. Numerical Certification
+
+   The numerical framework of section 4 resolves the quantities reported in this paper far
+above its own error floor, as established below. The agreement between solvers reported
+here is numerical cross-checking, not external validation.
+
+6.1. Failure mode of the Laplace inversion
+   The most consequential result of the certification concerns the numerical Laplace
+inversion, for which a direct implementation of the transform admits a parity-dependent
+failure mode that is not signalled by any convergence diagnostic.
+   The effect is quantified in fig. 5.  If the transform (23) is inverted by applying the
+fixed Talbot rule to the material kernel and handling the pulse factor 1 −e−sτ∆by the
+second shift theorem, the computed solution is catastrophically wrong at one isolated time,
+while remaining accurate everywhere else. The cause is exact and predictable. The pulse
+
+
+       (a)                                       (b)                                               (c)
+
+
+
+
+
+Figure 5: Certification of the numerical Laplace inversion. (a) Absolute error against time for the split
+formulation at even node count M = 40 and odd node count M = 41, and for the adopted convolution
+formulation, with the predicted pole-collision instant t∗= Mτ∆/10 marked. (b) Absolute error at t = t∗
+for six node counts, comparing the split and convolution formulations; the connecting segments indicate
+the discrepancy at each M. (c) Ratio of the split to the convolution error, separating even from odd node
+counts. The split formulation fails by up to 9.7 × 1010 at even M, whereas the convolution formulation
+remains at O(10−6) throughout. The failure is a property of the numerical inversion and not of the
+physics: the exact solution is regular at t∗. The convolution formulation with M = 41 is used throughout
+this work.
+
+transform (24) has removable singularities at s = ±iω, ω = 2π/τ∆, which are cancelled
+by the zeros of 1 −e−sτ∆. Splitting the two factors and inverting ω2/[s(s2 + ω2)] alone
+reinstates genuine poles at s = ±iω. The Talbot contour (39) meets the imaginary axis
+only at θ = π/2, which is a quadrature node exactly when M is even, and there s = irπ/2.
+Setting rπ/2 = ω with r = 2M/(5t) gives the failure time
+
+                    M τ∆
+                            t∗=          .                                  (42)
+                                        10
+
+                                      20
+
+--- PAGE 21 ---
+This prediction was tested directly. For τ∆= 0.04 and even M ∈{20, 40, 60, 64} the error
+at t∗is of order 109 to 1011, while at 0.98 t∗and 1.02 t∗it remains of order 10−4; for odd
+M = 41 no such spike occurs at any time. The two remedies are therefore to use an odd
+number of nodes, which removes the node from the imaginary axis, and better, to avoid
+the splitting altogether. The convolution formulation (38) adopted in section 4.1 does the
+latter: it inverts only the kernel ˆK, so the removable pulse singularities at s = ±iω do not
+enter the numerical inversion.
+  Two points follow.  First, this is a property of the numerical inversion, not of the
+physics: the exact solution is perfectly regular at t∗, and nothing physical happens there.
+Second, the usual remedy of increasing the number of quadrature nodes is not merely
+ineffective here but actively harmful, since t∗scales with M and simply moves the failure
+to a later time while round off grows. With the convolution formulation the accuracy
+plateau extends across M ∈[25, 81], degrading beyond M ≈91 through round off; M = 41
+is used throughout.
+
+6.2. Spatial convergence and arithmetic precision
+   Figure 6 collects the convergence evidence. Panels (a) and (b) quantify the spatial
+discretisation error and its observed order, panel (c) the agreement between the truncated
+eigenfunction series and the convolution solution, and panel (d) the correspondence between
+the sampling and asymptotic uncertainty estimates. All four are internal verification of
+the present implementation; external validation is reported separately in section 5.
+   With the corrected formulation the certification results are as follows. Against the
+arbitrary precision reference of section 4.3, the convolution solver agrees to between 10−11
+and 10−13 at times away from the steep rise, and to about 10−7 against the independent
+finite difference solver across the whole record, the latter being limited by the finite
+difference discretisation rather than by the inversion. Increasing the Gauss–Legendre order
+from 32 to 64 changes the result by at most 10−13, so the convolution quadrature is fully
+converged.
+   The finite-difference solver converges at the expected second order in space. Measured
+against a Richardson reference the observed order is 2.00 and the spatial error at the
+production resolution Nx = 400 is 2.6×10−6; measured against the independent Nx = 3200
+solution of fig. 6(a) the corresponding error is 1.00 × 10−5 and the per-interval orders
+are 2.00, 2.02, 2.07 and 2.32. The two figures differ because they use different reference
+solutions, both retained as independent checks.
+   The temporal error at relative tolerance 10−10 is of order 10−9. Repeating the arbitrary
+precision evaluation at 15, 30 and 50 digits changes the result by no more than 8.9 × 10−16,
+confirming that double precision is sufficient and that none of the reported quantities is
+limited by round off.
+   The eigenfunction series used by the anchor converges as O(N −2) in the supremum
+norm over the full record, the ratio of successive errors tending to 4.0; the worst-case error
+occurs near the early-time rise, where at N = 40 the truncation error is 3.1 × 10−3, and
+N ≥80 is required to reach 7.8 × 10−4. Away from that rise the series is converged far
+below these values (Fig. 6c). This matters only for reproducing the anchor’s own truncated
+curves in section 5, not for the present solvers.
+
+6.3. Limiting cases and physical admissibility
+   The limits of section 2.7 were checked numerically.  Setting κ2 = ατq reproduces
+the analytical Fourier solution to 2.6 × 10−6, an independent numerical confirmation of
+
+
+                                      21
+
+--- PAGE 22 ---
+   (a)                                                          (b)
+
+
+
+
+
+    (c)                                                          (d)
+
+
+
+
+
+Figure 6: Numerical verification of the solver and characterisation of the inverse procedure, assembled
+from four complementary lines of evidence. (a) Finite-difference spatial error against the grid resolution
+Nx on logarithmic axes, measured against the Nx = 3200 reference solution, with a second-order reference
+slope. (b) Observed convergence order p for each successive refinement interval: 2.00, 2.02, 2.07 and 2.32,
+against the theoretical value p = 2. These four values originate from the documented Windows verification
+run and are recorded there, and reproduced here, to four significant figures; a machine-readable subset of
+the same refinement ladder (Nx = 100 to 400), independently regenerable from the supplied pipeline, gives
+orders of 2.02 and 2.07 for its two intervals, confirming the same near-second-order behaviour without
+reproducing the four-value ladder digit for digit. (c) Agreement between the truncated eigenfunction
+series and the convolution solution, computed on the later-time window t ∈[0.05, 1] where the series has
+converged, descending to the double-precision floor 4.82 × 10−11. (d) Monte Carlo robust-scale estimate
+of the sampling spread of τq from 200 trials against the asymptotic Fisher-information estimate at each
+resonance number. Panels (a)–(c) verify the numerical convergence of the present implementation and
+are internal cross-checking rather than external validation; panel (d) characterises the behaviour of the
+inverse procedure on controlled synthetic data. No panel constitutes external or experimental validation.
+
+
+
+
+
+                                      22
+
+--- PAGE 23 ---
+     (a)                                                        (b)
+
+
+
+
+
+                                                                (d)
+      (c)
+
+
+
+
+
+Figure 7: Structural and practical non-identifiability of the (τq, κ2) split at the resonance condition. (a)
+Null direction of the Fisher matrix: the analytic degeneracy ray κ2 = ατq (B = 1) along which the
+observable is invariant, the off-resonance ray at B = 1.05, and the reference configuration, with the exact
+identity ∂T/∂τq = −α ∂T/∂κ2 annotated. (b) Condition number of the Fisher matrix against B on a
+logarithmic ordinate, attaining 7.50 × 1016 at B = 1, together with the correlation deficit 1 −|ρτqκ2|
+on the right-hand axis, which collapses to 3.3 × 10−16 at the same point. (c) Profile likelihood in τq at
+each computed resonance number, with the 95% threshold from the χ21 distribution; the B = 0.9 curve is
+multimodal because the re-optimisation at fixed τq reaches different local minima at adjacent grid nodes,
+and no interval is read from it. (d) Monte Carlo estimate of s.e.(τq) from 200 trials against the asymptotic
+Fisher-information estimate, at each computed resonance number.
+
+
+
+
+
+                                      23
+
+--- PAGE 24 ---
+       (a)                                     (b)                                            (c)
+
+
+
+                                                                                            8
+
+
+                                                                                            6
+
+
+                                                                                            4
+
+
+                                                                                            2
+
+
+                                                                                            0
+
+
+
+
+Figure 8: Practical identifiability as a function of the resonance number. (a) Fisher standard errors of τq,
+κ2, α and B against B on a logarithmic ordinate. The shaded regions are the verified bands within which
+s.e.(τq) exceeds 10, 20, 50 and 100%; the 20% band is B ∈[0.628, 1.804]. (b) The same standard errors
+for α and B on a linear ordinate, showing that both remain small and nearly flat through resonance, α to
+approximately 1% and B to between 4 and 10%. (c) Map of log10 s.e. for all four parameters against B,
+with the resonance column marked. Standard errors are asymptotic and correspond to the configuration
+of section 7.1.
+
+proposition 1. Letting τq, κ2 →0 likewise recovers the Fourier solution to 2.6 × 10−6. The
+computed temperature remains non negative throughout in every case tested, in agreement
+with the anchor and in contrast to the negative temperature artefacts reported for dual
+phase lag models [56], and the long time limit satisfies T(1, t →∞) = 1.00000000 as
+required by the normalisation (10).
+
+6.4. Error budget
+   The numerical error budget and its scope are itemised in the Supplementary Material
+(Section S3). The total numerical error of the framework is of order 10−6, whereas the
+digitisation noise floor of the external validation exercise is 6 × 10−3, three orders of
+magnitude larger. The external validation of section 5 is therefore digitisation limited, not
+solver limited: the agreement reported there is as close as the published figures permit.
+
+
+7. Practical Identifiability
+
+    section 3 established an exact degeneracy at the single point B = 1. A point degeneracy
+would be of limited practical interest if the estimation problem recovered quickly on either
+side of it. It does not: the degeneracy extends into a wide neighbourhood within which τq
+cannot be estimated to any useful precision. The quantities that remain determined in
+that neighbourhood are identified below.
+
+7.1. Reference configuration
+    All results in this section are for one stated configuration: τq = 0.03, τ∆= 0.04, 80
+observation times uniformly spaced on t ∈[0.02, 1.2], independent Gaussian noise of 2%
+of the temperature range, estimation in log parameters with the analytic Jacobian of
+section 4.4. Working units are L = 1, α = 1, tp = 0.04. The numerical values of the band
+boundaries reported below depend on this configuration and are not universal constants.
+Only the singularity at B = 1 is configuration independent, because it is structural.
+
+                                      24
+
+--- PAGE 25 ---
+7.2. Fisher-information conditioning
+   Figure 7 assembles the diagnostics of the same structural result, and fig. 8 maps the
+standard errors and conditioning across B. The Fisher conditioning, the profile likelihood
+and the Monte Carlo study are methodologically independent: the first uses analytic
+derivatives at a point, the second re-optimises the objective along a fixed direction, and
+the third samples the estimator itself. Their agreement indicates that the degeneracy
+is a property of the parameter-to-observable map rather than an artefact of any single
+statistical construction. The claim remains confined to the (τq, κ2) split, since α and B
+stay identifiable throughout.
+   Table 3 and fig. 8 report the Fisher analysis as a function of B. The behaviour is a
+smooth deterioration towards the resonance rather than an isolated pathology. Far from
+resonance the problem is well conditioned: at B = 0.10 the condition number of the Fisher
+matrix is 3.6 × 102 and the standard error on τq is 2.05%. As B →1 the condition number
+rises by fourteen orders of magnitude, the estimator correlation between τq and κ2 tends
+to +1, and the standard error on τq diverges. At B = 1 the Fisher matrix is numerically
+singular, as proposition 2 requires.
+   The mechanism is the progressive alignment of the two sensitivity directions. Away from
+resonance the response retains a component that distinguishes a change in relaxation from
+a change in nonlocality, since the factor (1 + τqs) in the numerator of (21) and the factor
+(α + κ2s) in its denominator act on different regions of the transform variable. As B →1
+these two factors approach proportionality and cancel in the limit, so a perturbation in τq
+becomes reproducible by a compensating perturbation in κ2. The observable consequence
+is that the rise portion of the rear-face history, which carries most of the information about
+the relaxation mechanism, becomes insensitive to the split while remaining fully sensitive
+to α. This is why the diffusivity and the resonance number stay well determined while the
+individual coefficients do not.
+   Two correlation coefficients occur in this problem, with opposite signs. The coefficient
+tabulated in table 3, and plotted in fig. 7(b), is the estimator correlation
+
+                                                 /︂√︂                                ρτqκ2 = [F −1]12   [F −1]11[F −1]22
+
+obtained from the inverse Fisher matrix, which is the correlation of the sampling distribution
+of the estimates and tends to +1 at resonance: an overestimate of τq is compensated
+by an overestimate of κ2 along the ray κ2 = ατq. The coefficient −1 of proposition 2 is
+the normalised off-diagonal of the Fisher matrix itself, F12/√F11F22, which follows from
+the anti-parallel sensitivities (32). Both express the same rank-one degeneracy with null
+direction (1, α); the sign difference is a property of inverting a singular two-by-two block
+and not a discrepancy.
+   The Monte Carlo results in the same table are consistent with the Fisher predictions
+where the latter are valid. At B = 0.50 the Fisher standard error on τq is 12.4% against
+a Monte Carlo value of 12.4%; at B = 0.90, 98.8% against 103.9%; at B = 1.28, 45.6%
+against 48.9%; at B = 2.41, 13.7% against 13.3%; at B = 5.0, 8.1% against 7.2%. The two
+estimates agree throughout the range in which the asymptotic approximation is meaningful,
+which supports the use of the Fisher standard error as a summary statistic outside the
+immediate neighbourhood of the resonance. The agreement is contingent on analytic
+sensitivities: Jacobians formed by differencing the forward solver at its own noise floor
+produce a spurious discrepancy between the two estimates, which is why the analytic route
+of section 4.4 is used throughout.
+
+
+                                      25
+
+--- PAGE 26 ---
+   Near resonance the two diverge for a well understood reason: the log likelihood ceases to
+be quadratic, so the asymptotic Fisher standard error is no longer a meaningful summary,
+and the Monte Carlo sampling distribution acquires heavy tails for which a standard
+deviation is dominated by a few realisations. In that regime the percentile ranges of table 3
+are the informative statistic, and the tabulated Monte Carlo spread is summarised robustly
+by the interquartile range divided by 1.349. At B = 0.90 the central 90% of Monte Carlo
+estimates of τq spans a factor of about 65; at B = 1.00 the estimates are unbounded, as
+they must be.
+
+Table 3: Practical identifiability as a function of B for the configuration of section 7.1: τq = 0.03, τ∆= 0.04,
+80 points on t ∈[0.02, 1.2], 2% noise, log-parameters, analytic Jacobians. Fisher standard errors are
+asymptotic; Monte Carlo uses 200 noise realisations started at the true parameters, summarised by the
+interquartile range divided by 1.349 because the sampling distribution is heavy tailed near resonance.
+Percentile ranges are stated as multiples of the true value. The numerical boundaries are configuration
+dependent; the singularity at B = 1 is not.
+
+
+                                   Fisher analysis                    Monte Carlo
+
+         B     cond(F)   corr(τq, κ2)          s.e. τq     s.e. α     s.e. B  MC scale τq     τq 5–95%
+
+              0.10     3.6 × 102       +0.767        2.05 %   0.75 %   9.02 %      —     —
+              0.30     4.8 × 102       +0.926        5.83 %   0.86 %   9.56 %      —     —
+              0.50     9.3 × 102       +0.974      12.37 %   0.94 %   9.56 %         12.4 %     0.84–1.23
+              0.70     2.7 × 103       +0.993      27.06 %   0.99 %   9.34 %      —     —
+              0.90     2.5 × 104       +0.999      98.75 %   1.04 %   9.03 %        103.9 %     0.09–5.88
+              0.98     6.4 × 105       +1.000      526.6 %   1.05 %   8.90 %      —     —
+           1.00   7.5 × 1016     singular   divergent   0.94 %   3.94 %   unbounded   unbounded
+              1.02     6.5 × 105       +1.000      542.5 %   1.06 %   8.83 %      —     —
+              1.10     2.7 × 104       +0.999      114.7 %   1.08 %   8.69 %      —     —
+              1.28     3.5 × 103       +0.996      45.64 %   1.11 %   8.39 %         48.9 %     0.35–1.85
+              1.50     1.2 × 103       +0.987      28.49 %   1.14 %   8.03 %      —     —
+              2.00     3.2 × 102       +0.957      17.19 %   1.20 %   7.33 %      —     —
+              2.41     1.8 × 102       +0.927      13.73 %   1.25 %   6.88 %         13.3 %     0.79–1.20
+              3.00     9.8 × 101       +0.882      11.17 %   1.31 %   6.40 %      —     —
+              5.00     3.6 × 101       +0.757        8.12 %   1.49 %   5.68 %          7.2 %     0.88–1.12
+
+
+
+7.3. Profile likelihood
+   The Fisher analysis assumes a quadratic log likelihood, which fails precisely where the
+problem is most interesting. Profile likelihood does not make that assumption. Fixing τq
+on a grid and re-optimising α and κ2 at each node gives the intervals of fig. 9, obtained at
+the χ2(1, 0.95) = 3.841 threshold.
+   The interval widths track the conditioning. At B = 5.0 the 95% interval for τq spans
+a factor of 1.26, and at B = 0.50 a factor of 1.41. At B = 1.28, the value of the refined
+basalt calibrations, it spans a factor of 3.55, from 0.79 to 2.82 times the true value. At
+B = 1.00 the profile remains below the threshold across the entire grid, a factor of 398
+from 0.05 to 19.95 times the true value, so the interval is bounded only by the grid and is
+unbounded in fact, as proposition 2 requires.
+   The row at B = 0.90 is reported separately because it is not a clean profile. The
+re-optimisation over (α, κ2) at fixed τq converges to different local minima at adjacent
+grid nodes, so the computed curve is not unimodal and its lowest point falls at 0.08 times
+the true relaxation time rather than near it. A width factor read off such a curve would
+not be a confidence interval, and none is quoted here. The failure is itself diagnostic: at
+B = 0.90 the objective in the (τq, κ2) plane is already flat enough, over more than an order
+of magnitude in τq, that a two-start local optimiser does not reliably locate the conditional
+optimum. The corresponding Fisher and Monte Carlo standard errors at this condition,
+
+
+                                      26
+
+--- PAGE 27 ---
+          (a)                                                          (b)
+
+
+                                                                                         40
+
+
+                                                                                         30
+
+
+                                                                                         20
+
+
+                                                                                         10
+
+
+                                                                                         0
+
+
+
+
+
+Figure 9: Profile likelihood over the parameter plane (B, τq). (a) Three-dimensional profile-likelihood
+surface of ∆SSE/σ2 over the 265 computed points, five values of B by 53 values of τq. The resonance
+number is drawn on its true numerical axis, the black curves mark the five computed rows, and no value is
+interpolated in B; the surface is clipped at 40 for display only. (b) The same data as a contour map with
+the 95% threshold χ21 = 3.841 marked. The admissible interval in τq widens without bound as B →1:
+the width factor is 1.41 at B = 0.5, 3.55 at B = 1.28 and 1.26 at B = 5, while at B = 1 the profile stays
+below the threshold across the whole grid. The row at B = 0.9 is multimodal, because the re-optimisation
+at fixed τq reaches different local minima at adjacent nodes, and no interval is quoted from it.
+
+
+98.8% and 103.9%, are obtained without re-optimisation and are unaffected. The profile
+rows at the remaining four conditions are unimodal and are the ones used in the argument.
+   The factor of 3.55 at B = 1.28 is the conditioning of a real calibration, and it brackets
+the factor of 1.51 to 3.50 by which two published evaluations of the same basalt specimens
+disagree, as discussed in section 9.4.
+
+7.4. Width of the ill-conditioned band
+    Inverting the Fisher standard error as a function of B gives the region within which τq
+cannot be recovered to a stated precision:
+
+                               s.e.(τq) > 10% :  B ∈[0.441, 3.464],                     (43)
+                               s.e.(τq) > 20% :  B ∈[0.628, 1.804],                     (44)
+                               s.e.(τq) > 50% :  B ∈[0.817, 1.252],                     (45)
+                             s.e.(τq) > 100% :  B ∈[0.901, 1.116].                     (46)
+
+The exact degeneracy at a point therefore expands into a band of substantial width.
+At the 20% criterion the relaxation time is not usefully recoverable anywhere in B ∈
+[0.628, 1.804], a range spanning nearly a factor of three. These boundaries are properties
+of the configuration of section 7.1; the singularity at their centre is not.
+
+7.5. Well-determined parameter combinations
+   The preceding results are negative statements about τq and κ2 individually. They are
+not statements about the informativeness of the data, and it would be wrong to conclude
+that a measurement near resonance is worthless. Table 3 also reports the standard errors
+of α and of B in the parameterisation (30). Across the whole range, including exactly at
+
+                                      27
+
+--- PAGE 28 ---
+B = 1, the diffusivity is determined to about 1% and the resonance number to between 4%
+and 10%. The information content of the record is essentially undiminished near resonance;
+what fails is the resolution of a well determined combination into its two components.
+   This is the constructive form of the result. Reporting (α, B), with τq and κ2 quoted
+jointly rather than as independent point estimates, is well posed everywhere. Reporting τq
+and κ2 as separate material constants is not well posed for a material whose B lies in the
+band (44). The recommendation of section 10 follows directly.
+
+7.6. Optimiser dependence
+   Because the objective develops a long flat valley near resonance, the estimate may
+depend on where the optimiser is started; this dependence is real but, in the tests reported
+in the Supplementary Material (Section S4), smaller than the effect of measurement noise
+itself, motivating multi-start or global search strategies in poorly conditioned regimes.
+
+
+8. Model Selection
+
+   The identifiability result can be reached by a second, statistically independent route.
+If at B = 1 the Guyer–Krumhansl response is observationally a Fourier response, then a
+model selection criterion applied to Guyer–Krumhansl data at resonance should prefer the
+Fourier model, because the two extra parameters purchase no improvement in fit while
+incurring a complexity penalty. That prediction is tested below.
+
+8.1. Candidate models and protocol
+   The four candidates are exact special cases of the single transfer function (21), obtained
+by constraining parameters as derived in section 2.7: Fourier (τq = 0, κ2 = 0, k = 1
+parameter), the Maxwell–Cattaneo–Vernotte model (κ2 = 0, k = 2), the Nyíri model
+(τq = 0, k = 2) and the full Guyer–Krumhansl model (k = 3). Because all four share one
+transfer function, they also share the solver, the estimation procedure, the convergence
+criteria and the noise model; no model receives individual tuning. This is what makes the
+comparison like for like.
+   The Maxwell–Cattaneo–Vernotte and Nyíri models are included because they isolate
+the two mechanisms of the Guyer–Krumhansl equation separately, so the comparison tests
+which mechanism the data require rather than merely whether more parameters fit better.
+Models requiring a state variable absent from (21), such as those introducing a thermal
+displacement, are excluded: they cannot be expressed as constraints on (21) and including
+them would break the like for like protocol. This exclusion is stated rather than passed
+over silently.
+    Selection uses the Bayesian information criterion of section 4.5, averaged over 15 noise
+realisations at each condition, with data generated by the full Guyer–Krumhansl model
+at 2% noise. The Bayesian information criterion is used in preference to the Akaike
+information criterion because its stronger parsimony penalty gives the more conservative
+demonstration that the rank deficiency of proposition 2 is recoverable from a selection
+statistic alone, without reference to any derivative or Fisher-matrix information.
+
+8.2. Information-criterion scores
+   The outcome is reported in table 4 and fig. 10. Away from resonance the Guyer–
+Krumhansl model is selected decisively, and increasingly so as B moves away from unity:
+at B = 5.0 the Fourier model is penalised by 267 BIC units. At B = 1.00 the ordering
+
+
+                                      28
+
+--- PAGE 29 ---
+reverses and the Fourier model is selected, with the Guyer–Krumhansl model penalised by
+6.64 units despite the data having been generated by the Guyer–Krumhansl model itself.
+   The reversal is the expected behaviour of the criterion rather than a limitation of it.
+
+
+       (a)                                        (b)                                               (c)
+
+
+
+
+
+Figure 10: Like-for-like model comparison over the four nested candidates, each an exact special case
+of the single transfer function: the Fourier model (k = 1 parameter), the Maxwell–Cattaneo–Vernotte
+model (k = 2), the Nyíri model (k = 2) and the Guyer–Krumhansl model (k = 3). The criterion ∆BIC is
+referenced to the best-scoring model at each condition, so lower values indicate stronger support and the
+selected model scores zero. (a) ∆BIC by data-generating condition on a logarithmic ordinate; exact zeros
+are annotated explicitly because a logarithmic axis cannot represent zero. (b) Trend of the evidence with B.
+(c) Signed difference δ = ∆BICGK −∆BICFourier, plotted as sign(δ) log10(1+|δ|) so that all four conditions
+remain visible across three orders of magnitude, with the exact values printed. A positive value indicates
+that the Fourier model is preferred even though the data were generated by the Guyer–Krumhansl model,
+which occurs at B = 1. Synthetic data at 2% noise, 15 realisations per condition, identical estimation
+protocol for every candidate.
+
+   At resonance the two models make identical predictions, by proposition 1, so the
+additional parameters reduce the residual only by fitting noise and the parsimony penalty
+rejects them. The rank deficiency of proposition 2 is thereby recovered by a route that
+uses no derivative information and no Fisher matrix.
+   The Maxwell–Cattaneo–Vernotte model is rejected everywhere by a wide margin, 237
+to 349 BIC units, consistent with the finding of Fehér and Kovács that this model cannot
+describe such experiments [26]. The Nyíri model, which retains the nonlocal term and
+discards relaxation, performs far better than the Maxwell–Cattaneo–Vernotte model and
+is only marginally worse than the full model near resonance. The ordering indicates that
+near B = 1 the data do not require the relaxation mechanism.
+
+8.3. Statistical scope of the selection result
+   The Bayesian information criterion measures statistical parsimony under the specified
+data generating process, noise model and observation design.  It is used here as an
+identifiability diagnostic and not as evidence about which constitutive theory is physically
+correct. That the criterion prefers Fourier at B = 1 is a statement about what the data can
+distinguish, not a statement that the material obeys Fourier’s law. This distinction matters
+when interpreting model selection applied to real measurements: a Fourier preference for
+a specimen near resonance is uninformative about the underlying transport physics.
+
+
+                                      29
+
+--- PAGE 30 ---
+Table 4: Bayesian information criterion differences relative to the best model at each condition, averaged
+over 15 noise realisations. Data generated by the Guyer–Krumhansl model at 2% noise; all four candidates
+are special cases of (21) fitted with an identical protocol. Lower is better; 0.00 marks the selected model.
+The values are those of the reference calculation used for the present analysis. Four of the sixteen tabulated
+entries – MCV and GK at B = 1.00 (236.58 and 6.64) and MCV at B = 1.28 and B = 5.00 (253.21 and
+349.25) – are reproduced by independent re-evaluation with the production convolution solver during
+cross-platform validation as 240.31 and 6.59 at B = 1.00 and as 253.63 and 349.26 at B = 1.28 and
+B = 5.00 respectively; the remaining twelve of sixteen entries agree to the digits shown. The differences
+arise in the two- and three-parameter fits at κ2 →0, where the two implementations of (21) differ by
+O(10−12) and the Levenberg–Marquardt iteration amplifies that difference into the reported sum of
+squares. No model ranking, selection or conclusion is affected.
+
+
+               True B  Fourier MCV  Nyíri GK  Selected
+
+                    1.00     0.00  236.58     4.03   6.64  Fourier
+                       1.28     23.14  253.21     1.38  0.00 GK
+                       2.41    166.73  302.12    44.21  0.00 GK
+                       5.00    267.00  349.25  105.29  0.00 GK
+
+
+9. Implications for Published Calibrations
+
+   The preceding sections are statements about a model. The location of published
+Guyer–Krumhansl calibrations relative to the identified ill-conditioned regime is evaluated
+below, together with the consequences for the interpretation of the reported values.
+
+9.1. Scope of the calibration audit
+   The interpretation of the aggregate calibration statistics requires consideration of
+the admissible B-domain used in the source literature.  Fehér and Kovács state that
+their evaluation is restricted to the domain 1 ≤B < 3, and identify its lower limit with
+the Fourier case [26]. Their evaluation procedure therefore constrains B to an interval
+whose lower boundary is the exact degeneracy analysed in section 3. Values of B close
+to unity in the literature are in part a consequence of that admissible domain and of the
+physical expectation, well supported by the measurements, that these materials behave
+over diffusively. They reflect a structural property of the estimation problem, not an
+incidental or coincidental property of the materials. The restriction is well motivated:
+bounding a nonlinear search improves its stability, and the domain reflects the observed
+regime.
+
+9.2. Audited calibrations
+   Table 5 lists all twelve Guyer–Krumhansl heat pulse calibrations reported in [8, 26, 7]
+for which the published parameters are sufficient to recompute B from (16); no case
+meeting this criterion was excluded, and no broader literature search beyond these three
+sources was undertaken. Every cell is flagged as reported by the original authors (R) or
+calculated in the present study (C). Where the underlying parameters are tabulated, B
+was recomputed from (16); the recomputed values agree with the authors’ own reported
+values to within 0.016 in every case where both exist, the largest deviation being for basalt
+at 3.84 mm. For the six basalt entries both the parameters and the resulting B were read
+directly from Tables 1 and 2 of [26], which report the earlier and the refined evaluations
+side by side.
+   Eight of the twelve calibrations have B inside the band (44) within which the relaxation
+time carries a standard error exceeding 20% under the tested configuration, as shown in
+
+
+                                      30
+
+--- PAGE 31 ---
+Table 5: Audited Guyer–Krumhansl calibrations. R denotes a value reported by the original authors; C
+denotes a value calculated in the present study from the reported parameters using (16). The band is
+(44), within which s.e.(τq) > 20% for the configuration of section 7.1. Eleven of the twelve sources report
+no parameter uncertainty; case 12 is the exception.
+
+#   Source             Material                  α         τq         κ2  B                 In
+                                                [10−6 m2 s−1]            [s]   [10−6 m2]                 band?
+
+ 1  Ván et al. [8]         Capacitor 3.9 mm             2.13 R   0.954 R     see note   2.23 R              no
+ 2  Ván et al. [8]         Limestone 1.7 mm            2.950 R   0.991 R     see note   2.17 R              no
+ 3  Ván et al. [8]       Foam 5.1 mm                2.373 R   0.402 R     see note   3.04 R              no
+ 4  Ván et al. [8]          Leucocratic 1.75 mm           4.77 R    1.32 R     see note   1.77 R             yes
+
+ 5    earlier eval.           Basalt 1.86 mm                0.55 R   0.738 R     0.509 R   1.243 R / 1.254 C    yes
+ 6    earlier eval.           Basalt 2.75 mm              0.604 R   0.955 R     0.670 R   1.171 R / 1.162 C    yes
+ 7    earlier eval.           Basalt 3.84 mm                0.68 R   0.664 R     0.480 R   1.060 R / 1.063 C    yes
+
+ 8   Fehér & Kovács [26]   Basalt 1.86 mm                0.61 R   0.211 R     0.168 R   1.295 R / 1.305 C    yes
+ 9   Fehér & Kovács [26]   Basalt 2.75 mm                0.61 R   0.344 R     0.268 R   1.272 R / 1.277 C    yes
+10   Fehér & Kovács [26]   Basalt 3.84 mm                0.68 R   1.000 R     0.650 R   0.940 R / 0.956 C    yes
+11   Fehér & Kovács [26]  Foam 5.2 mm                  3.01 R   0.304 R     2.203 R   2.395 R / 2.408 C     no
+
+12   Both et al. [7]         Capacitor 3.9 mm            1.958 R    0.51 R       1.53 R   1.532 C            yes
+      reported standard errors: ±0.004, ±0.01, ±0.03 respectively; R2 = 0.9996
+
+Aggregate: 8 of 12 inside the band (44) (all six basalt evaluations, the leucocratic rock at B = 1.77
+and the Both et al. capacitor at B = 1.53); 4 of 12 outside. Uncertainties: eleven of the twelve report
+no parameter uncertainty. Case 12 [7] is the exception and reports standard errors from nonlinear
+regression (0.2 % on α, 2.0 % on τq and on κ2, R2 = 0.9996); those errors are discussed in section 9.3.
+Note (cases 1–4): the authors tabulate a length scale rather than κ2, and the reported dimensionless
+parameter could not be reproduced from it (limestone: 0.22 C against 2.17 R). The authors’ reported
+values are used and the inconsistency is flagged, not reconciled. Cases 5–7 were verified against
+Table 1 of [26], which tabulates the earlier values alongside the refined ones; the corresponding B
+values are given in its Table 2.
+
+
+
+
+          (a)                                                                       (b)
+
+
+
+                 12. capacitor 3.9 mm
+               11. metal foam 5.2 mm                                                    Both et al. 2016       1
+                   10. basalt 3.84 mm
+                       9. basalt 2.75 mm
+                       8. basalt 1.86 mm                                       Feher-Kovacs 2021 (earlier)                3
+                       7. basalt 3.84 mm
+                       6. basalt 2.75 mm
+                       5. basalt 1.86 mm                                          Van et al. 2017                    4
+                 4. leucocratic 1.75 mm
+                  3. metal foam 5.1 mm
+                    2. limestone 1.7 mm                                              Feher-Kovacs 2021                    4
+                    1. capacitor 3.9 mm
+
+                                       0.5      1        1.5      2        2.5      3        3.5          0    1    2    3    4    5
+
+
+
+
+
+Figure 11: Literature-reported Guyer–Krumhansl calibrations placed in B-space. (a) The twelve audited
+calibrations against the verified ill-conditioned band B ∈[0.628, 1.804], within which s.e.(τq) exceeds 20%,
+and against the range 1 ≤B < 3 adopted by Fehér and Kovács. Calibrations falling inside the band
+are drawn as blue circles and those outside as vermilion squares; eight of the twelve lie inside. Only one
+calibration reports parameter uncertainties and only that case carries an error bar. The remaining eleven
+source studies do not report uncertainties and none has been synthesised for them. (b) Provenance of the
+twelve calibrations across the three source studies.
+
+
+                                      31
+
+--- PAGE 32 ---
+fig. 11(a): all six basalt evaluations, which cluster at B = 0.94 to 1.31, the leucocratic
+rock at B = 1.77, which falls just inside the upper edge, and the capacitor evaluation
+of Both et al. at B = 1.53. The remaining four, comprising the two metal foams, the
+limestone and the capacitor as evaluated by Ván et al., lie outside it at B = 2.17 to 3.04.
+The ill-conditioned band is therefore not a hypothetical construct: it contains a majority
+of the published calibrations of this model, so the identifiability structure bears directly
+on values already in circulation as material properties.
+  A discrepancy arises because Ván et al. [8] use a different nondimensionalisation from
+the one adopted here, scaling time by the pulse length rather than by L2/α, and report
+a dimensionless group  ˆb = ˆℓ2/(ˆτˆα) which is algebraically identical to B. Combining
+their dimensionless table with their dimensional table does not reproduce their ˆb: for
+limestone that route gives 0.22 against a reported 2.17. Evaluated consistently within their
+dimensionless table alone, however, ˆℓ2/(ˆτˆα) returns 1.99, 3.03 and 1.78 against reported
+values of 2.17, 3.04 and 1.77 for limestone, metal foam and leucocratic rock, agreeing to
+0.01 for the latter two. The residual mismatch is traceable to the tabulated ˆα for limestone
+and leucocratic rock, which differ from αGKtp/L2 computed from their own dimensional
+table by factors of 9.1 and 10.0 respectively, while the capacitor and metal foam entries
+agree to four significant figures. This is consistent with a units slip confined to two rows
+of the published table. The authors’ reported B values are used here unchanged, and the
+two affected rows are flagged rather than silently recomputed.
+   Eleven of the twelve calibrations report no parameter uncertainty, correlation or
+confidence interval. The parameters are presented as point estimates of material properties,
+and the present analysis indicates that for eight of the twelve the relaxation time component
+of that estimate is weakly constrained by the measurement used to obtain it, under the
+observation design tested here. The single exception is treated separately in section 9.3.
+
+9.3. Calibration with reported uncertainties
+   Both et al. [7] are the exception in the audited set. For the layered capacitor they
+report standard errors from a nonlinear regression on 2250 data points: α = [1.958 ±
+0.004]×10−6 m2 s−1, τq = [0.51±0.01] s and κ2 = [1.53±0.03]×10−6 m2, with R2 = 0.9996.
+These correspond to relative standard errors of 0.2 % on α and 2.0 % on both τq and κ2,
+and place the specimen at B = 1.53, inside the band (44).
+   The apparent discrepancy arises because the two results refer to different experimental
+configurations. The band (44) is stated for the configuration of section 7.1, namely 80
+observations at 2 % noise, whereas the cited regression uses 2250 points at substantially
+lower noise. Repeating the Fisher calculation at B = 1.532 with 2250 observations and 1 %
+noise returns a standard error of 2.55 % on τq, against the 2.0 % reported. The agreement
+of these two independently obtained figures is a check on the present framework against a
+real published dataset, and it illustrates concretely why the band is described throughout
+as configuration dependent rather than universal.
+   Two qualifications are needed. The reported standard errors are asymptotic regression
+errors computed, as the authors state, assuming exact L and tp; section 7 shows that such
+errors track Monte Carlo spread well away from resonance but understate it close to it.
+And the specimen sits at B = 1.53, near the upper edge of the band rather than at its
+centre; the same measurement precision at B ≈1 would not produce a comparable result,
+since the degeneracy there is exact.
+
+
+
+
+                                      32
+
+--- PAGE 33 ---
+9.4. Same-specimen discrepancy
+   An independent consistency check is available because three basalt specimens were each
+evaluated twice by different procedures. The two evaluations of the identical specimens
+return relaxation times differing by factors of 1.51 to 3.50, all six fits lying at B = 0.94 to
+1.31, with the refined evaluation reporting R2 > 0.99 for all three [26]; a directly comparable
+R2 for the earlier evaluation is not tabulated in the source and is not independently verified
+here. This spread is the signature of a flat direction in the objective function:  it falls
+within the central 90% Monte Carlo ranges for τq of section 7, which span factors of
+several to several tens near B = 1. The two evaluations differ in more than one respect
+(pulse modelling, smoothing and fitting), so the discrepancy is not attributed uniquely
+to the identifiability structure, though its magnitude is quantitatively consistent with it.
+Per-specimen values of the two evaluations are tabulated in the Supplementary Material
+(Section S5).
+
+
+10. Implications for Measurement Design
+
+   The analysis converts into a design criterion. Inverting the Fisher standard error of
+section 7 gives, for each target precision on τq, the region of B in which that target is
+attainable:
+
+                          s.e.(τq) ≤10% :  B ≤0.441 or B ≥3.464,                  (47)
+                          s.e.(τq) ≤20% :  B ≤0.628 or B ≥1.804,                  (48)
+                          s.e.(τq) ≤30% :  B ≤0.723 or B ≥1.468,                  (49)
+                          s.e.(τq) ≤50% :  B ≤0.817 or B ≥1.252.                  (50)
+
+These boundaries hold for the configuration of section 7.1 and are not universal constants.
+They should be recomputed for any materially different observation design. The qualitative
+structure, an excluded interval centred on B = 1 whose width grows as the precision target
+tightens, is universal, because it follows from the structural result of section 3.
+
+10.1. Adjustable and fixed design variables
+  B is composed of material properties and is not a free instrument setting. The available
+levers are correspondingly limited, and one commonly assumed lever does not exist.
+
+Material selection.. The most effective lever is the choice of specimen. The audited
+calibrations of section 9 indicate that metal foams, at B ≈2.4 to 3.0, and the limestone
+and capacitor samples at B ≈2.2, are far better conditioned for relaxation time estimation
+than basalt at B ≈0.94 to 1.31 or the leucocratic rock at B = 1.77. A preliminary
+estimate of B should therefore precede any campaign whose objective is to report τq.
+
+Operating temperature.. The three coefficients α, τq and κ2 are all temperature dependent,
+so B shifts with operating temperature. This provides a genuine, if material specific,
+means of moving a specimen away from resonance.
+
+Specimen thickness does not move B.. By (17), B is invariant under the scaling (11): the
+thickness cancels identically, and within the present one dimensional model all thicknesses
+of a given material share one value of B. This is confirmed by the audited data, where
+three basalt specimens of 1.86, 2.75 and 3.84 mm yield the same B to three significant
+figures from a single parameter set. Varying the thickness therefore cannot be used to
+escape the ill-conditioned band.
+
+                                      33
+
+--- PAGE 34 ---
+Multiple thicknesses as independent records.. What multiple thicknesses do provide is
+additional independent observations of the same material, which reduces the variance of a
+joint inversion in the ordinary way. This is a replication benefit, not a change in B, and
+it does not remove the structural degeneracy: at exactly B = 1 every record, at every
+thickness, is a Fourier record, so no number of them separates τq from κ2.
+
+Sampling and noise.. Denser sampling during the rise, where the sensitivity to τq  is
+concentrated, and lower noise both reduce the standard error roughly in proportion to
+the usual factors, and so shift the band boundaries modestly inward. Neither removes the
+singularity, which is independent of noise level and sampling density by definition 1.
+
+10.2. Recommended reporting practice
+   The single most useful change to reporting practice is inexpensive: report B alongside
+every fitted (τq, κ2) pair.  It is computed directly from the fitted parameters by (16),
+requires no additional measurement, and directly indicates whether the reported relaxation
+time is supported by the data or lies on a flat valley. Where B falls inside the band, the
+parameters should be reported in the (α, B) form of (30), with an interval rather than
+a point estimate for τq. Table 6 summarises the admissible B for each target precision
+together with the material classes of the audited set that satisfy it.
+
+Table 6: Measurement design criterion. Admissible B for a target standard error on τq, for the configuration
+of section 7.1. These are not universal constants and should be recomputed for a different design. Thickness
+is not a lever: B is invariant under (17).
+
+Target s.e.(τq)  Admissible B        Example material class
+
+≤10%       B ≤0.441 or B ≥3.464  none of the audited set
+≤20%       B ≤0.628 or B ≥1.804  metal foams, capacitor, limestone
+≤30%       B ≤0.723 or B ≥1.468  the above, plus leucocratic rock
+≤50%       B ≤0.817 or B ≥1.252  the above, plus basalt at 1.86 and 2.75 mm
+
+
+
+11. Discussion
+
+   The principal finding is that a coincidence between two constitutive models, already
+known at the level of their solutions, has a consequence at the level of the inverse
+problem that does not follow from it automatically and that changes how published
+Guyer–Krumhansl coefficients should be read. The following subsections separate what
+was already established from what the present analysis adds, relate the structural and
+practical statements, and set out the consequences for calibration practice.
+
+11.1. Established cancellation and its inverse-problem consequence
+   The Fourier resonance itself is established [25, 45, 46, 26]; no priority is claimed for
+it here. What this paper adds is the inverse-problem consequence: that two models
+coincide on a surface in parameter space is a statement about solutions, whereas the
+coincidence rendering a parameter pair unrecoverable from any temperature observation is
+a statement about the parameter-to-observable map, and the second does not follow from
+the first without the sensitivity analysis of section 3. The specific additions are the exact
+anti-parallel sensitivity relation (32) with its null direction (1, α), the consequent rank
+deficiency and Fisher singularity, the quantified width of the surrounding ill-conditioned
+
+                                      34
+
+--- PAGE 35 ---
+region, the identification of (α, B) as the combination the data determine, and the resulting
+implications for calibration practice, model selection and measurement design.
+
+11.2. Structural and practical identifiability
+   The two notions behave differently and the distinction carries the argument. The
+structural result is exact, holds at a single point, and is independent of noise, sampling and
+estimator; the practical result is approximate, holds over a finite region, and depends on
+all three. Neither alone would be sufficient: a point singularity in a three-parameter space
+would be a measure zero curiosity, while large standard errors without the exact result
+could always be attributed to an inadequate optimiser. It is the combination – an exact
+degeneracy at B = 1 broadening continuously into the band (44) – that makes the finding
+relevant to real calibrations, eight of the twelve audited here lying inside that band.
+
+11.3. Reparameterisation rather than abandonment
+   The results are not an argument against the Guyer–Krumhansl model: it reproduces
+the measurements well, and the diffusivity and resonance number are recovered to about
+1% and about 4%, respectively, even at the singularity itself (Table 3). What fails is
+a specific act of interpretation – quoting τq and κ2 as independent material constants
+when the observation constrains only a combination of them. The remedy is to report the
+combination the data determine, which is why section 2.9 introduces (30) as a device of
+the analysis rather than as a discovery.
+
+11.4. Model-selection evidence
+   The Bayesian information criterion reaches the same conclusion by a route using
+neither derivatives nor a Fisher matrix:  selecting the Fourier model at B = 1 from
+Guyer–Krumhansl-generated data is the rank deficiency expressed statistically, since the
+criterion cannot distinguish the additional parameters from the Fourier limit under the
+resonance condition. For experimentalists this is a caution rather than a diagnostic: a
+model comparison performed near resonance favours the simpler model regardless of the
+underlying physics, so a Fourier preference in that regime is evidence about the design,
+not the material.
+
+11.5. Implications for published calibrations
+   The appropriate inference from the audited calibrations is about precision rather than
+correctness. The reported basalt relaxation times are not shown to be wrong; they are
+shown to be weakly constrained by the measurements from which they were obtained,
+whereas the reported diffusivities are well constrained throughout. This is consistent with,
+though not established as caused solely by, the identified degeneracy, since the two basalt
+evaluations also differ in pulse model, smoothing and fitting procedure.
+   The single calibration reporting uncertainties provides a check in the opposite direction:
+Both et al. [7] quote 2.0 % on τq at B = 1.53, and the present framework, evaluated at their
+sampling density and noise level, returns 2.55 %. Two independently obtained estimates
+agreeing at this level support the Fisher construction used throughout and show that
+a specimen inside the band can still yield a precise relaxation time given a sufficiently
+informative measurement – the band identifies where precision is expensive, not where it
+is unattainable.
+
+
+
+
+
+                                      35
+
+--- PAGE 36 ---
+11.6. Conditions under which the pair is separable
+   Separation requires the material to sit away from resonance, by a distance set by
+the target precision: for the design of section 7.1, a 20% standard error on τq requires
+B ≤0.628 or B ≥1.804, and a 10% error requires B ≤0.441 or B ≥3.464 – satisfied
+by no specimen in the audited set. Two levers act on this condition: specimen selection,
+since B is a material property (the metal foams of the audited set, at B ≈2.4–3.0, are the
+best-conditioned available), and measurement quality, which shifts the band boundaries
+without moving B (the capacitor calibration of Both et al. [7] attains 2.0% at B = 1.53,
+inside the reference 20% band, using 2250 low-noise observations). Specimen thickness is
+not a lever, since B is invariant under (17). The practical criterion is therefore to estimate
+B from a preliminary fit before committing to a relaxation-time measurement.
+
+11.7. Regime of validity
+   The analysis concerns the Guyer–Krumhansl equation as an effective continuum
+description of heterogeneous media at room temperature, with coefficients constrained
+by the second law rather than derived from a carrier model [15, 8] – the regime of the
+audited calibrations. Conclusions are not extended to the phonon-hydrodynamic regime in
+dielectric crystals at low temperature, where the coefficients have a kinetic interpretation
+obtainable independently of a flash-experiment fit and the inverse problem examined here
+does not arise in the same form.
+
+
+12. Scope and Limitations
+
+One-dimensional formulation.. The analysis is carried out for the one dimensional slab
+of section 2. The cancellation of proposition 1 is a property of the propagation factor
+m2(s), which arises in the same form in geometries that separate, so the structural result is
+expected to persist there; a treatment of genuinely multi dimensional geometries, including
+lateral losses and finite beam profiles, has not been carried out and is not claimed.
+
+Inverse experiments are synthetic.. The identifiability results are established on synthetic
+data. This is necessary rather than incidental: demonstrating that two parameter sets are
+indistinguishable requires knowing the parameter values that generated the data, which no
+experiment provides. The synthetic study is anchored to reality by using physical basalt
+parameters, by auditing published calibrations in section 9, and by the two evaluations
+of the same basalt specimens reporting the flat-direction signature (section 9.4), which
+is real data behaving as the analysis predicts. It remains a limitation that the inverse
+conclusions have not been tested against a controlled experiment with independently
+known parameters.
+
+The band is configuration dependent.. The numerical boundaries (43)–(46) and the design
+criterion (47)–(50) hold for the configuration of section 7.1. They are not physical constants
+and would move under a different sampling scheme, noise level, or pulse length. Only the
+singularity at B = 1 is universal.
+
+Forward validation is not inverse validation.. section 5 validates the forward operator
+against published figures. It does not validate the inverse problem, and is not offered as
+doing so. The inverse results rest on the analytical proof of section 3 together with the
+numerical certification of section 6 and the independent statistical route of section 8.
+
+
+
+                                      36
+
+--- PAGE 37 ---
+Dependence on the pulse and boundary model.. The structural result is independent of the
+excitation, since ˆQ0(s) cancels from the sensitivity ratio (34). The width of the practically
+ill-conditioned band is not:  it depends on the pulse shape and duration through the
+information content of the record. Boundary cooling, neglected here as in the anchor,
+would modify the observable and hence the band boundaries, though not the degeneracy.
+
+Unverified bibliographic and calibration items.. For the four samples of Ván et al. the
+reported dimensionless parameter could not be reproduced from the tabulated length
+scale, as recorded in section 9.2; the discrepancy is flagged and not reconciled. The three
+earlier basalt evaluations were verified against Table 1 of [26], which reproduces them;
+they were not traced further back to the measurement report in which they originally
+appeared. Sections 4 and 5 of the version of record of the anchor are behind a paywall,
+and the equations used here were transcribed from the open preprint; the version of record
+is Volume 127, Part A, and its equation numbering differs from the preprint, which is why
+no equation numbers of the anchor are cited in section 2.10.
+
+Raw experimental data unavailable.. The published heat pulse time series underlying the
+audited calibrations are not available, so the re-analysis of section 9 necessarily works
+from tabulated fitted values rather than from the measurements themselves. A direct
+re-inversion of the original records, with uncertainty quantification, would be a stronger
+test and is not possible with the published material.
+
+Literature screening was not performed on an authenticated citation index.. Access to
+Scopus and Web of Science was not available. The screening reported in section 1 used
+open bibliographic sources with validated positive controls, covered title and abstract
+records rather than full text, and achieved abstract coverage of about 60% of the retrieved
+corpus. Statements about the absence of prior work are therefore statements about the
+screened corpus and not absolute priority claims. An authenticated index search remains
+outstanding.
+
+Local optima in the profile computation.. The profile likelihood  is computed by re-
+optimising the remaining parameters at each node of a fixed τq grid with a two-start local
+method. At B = 0.90 this procedure does not return a unimodal profile, as recorded in
+section 7.3, so no confidence interval is quoted at that condition. A global search at each
+node would resolve it. The conclusions rest on the four conditions at which the profile is
+unimodal, on the Fisher analysis and on the Monte Carlo study, none of which requires
+re-optimisation at fixed τq.
+
+Numerical implementation history.. The certified solver yields a smaller optimiser-initialisation
+effect than an earlier implementation. The certified result is used throughout the analysis.
+An earlier discrepancy between Fisher and Monte Carlo uncertainty estimates was traced
+to finite-difference Jacobians; the results reported in section 7 use analytic sensitivities
+and show agreement where the asymptotic approximation is valid. The section 7 reports
+agreement between the two where the asymptotic approximation is valid.
+
+
+13. Conclusions
+
+   The parameter-to-observable map of the one-dimensional Guyer–Krumhansl heat pulse
+problem has been analysed as an inverse problem, using a Laplace-domain convolution solver
+with analytic sensitivities, cross-checked against an independent finite-difference scheme
+
+
+                                      37
+
+--- PAGE 38 ---
+and an arbitrary-precision reference, and externally validated against three published
+figures of an independently authored analytical solution at normalised errors of 0.384%,
+0.382% and 0.483% with no parameter fitting.
+   Three findings follow. First, at the Fourier resonance B = κ2/(ατq) = 1, a condition
+established in the existing literature and not claimed here, the response is independent of
+the relaxation time at every position and time and for any excitation; the sensitivities satisfy
+∂T/∂τq = −α ∂T/∂κ2 exactly, so the sensitivity matrix has rank one with null direction
+(1, α), the Fisher matrix is singular, and τq and κ2 are structurally non-identifiable from
+any temperature record at any noise level or sampling density. Second, the degeneracy
+is not confined to that point:  for the tested configuration the relaxation time carries
+a standard error above 20% throughout B ∈[0.628, 1.804] and above 50% throughout
+B ∈[0.817, 1.252]; at B = 1 specifically, within this ill-conditioned region, the Bayesian
+information criterion selects the Fourier model over the Guyer–Krumhansl model even
+for Guyer–Krumhansl data, while away from resonance the Guyer–Krumhansl model is
+selected decisively at every tested condition, including B = 1.28 inside the 20% band.
+Third, the record nevertheless remains informative: the diffusivity is recovered to about
+1% and the resonance number to between 4% and 10% across the whole range including
+exactly at resonance, so what fails is the resolution of a determined combination into two
+coefficients rather than the determination of the transport behaviour.
+   The contribution is therefore a statement about estimation rather than constitutive
+modelling: a coincidence already known at the level of solutions is shown to impose
+an exact rank deficiency on the inverse problem, with the neighbourhood in which that
+deficiency dominates finite-noise estimation quantified. The practical consequence is
+concrete: of twelve audited published calibrations, eight lie inside the band and eleven
+report no parameter uncertainty, and two independent evaluations of the same three basalt
+specimens return relaxation times differing by factors of 1.51 to 3.50, with the refined
+evaluation reporting R2 > 0.99; this is consistent with, though not attributable solely to,
+the identified structure. Guyer–Krumhansl coefficients are best reported in the (α, B)
+parameterisation, and campaigns targeting the relaxation time should select specimens
+away from resonance, since specimen thickness leaves B invariant.
+   The analysis is confined to the one-dimensional slab and to synthetic inverse experiments;
+the band boundaries are properties of the stated observation design and only the singularity
+at their centre is universal. No experimental validation of the inverse conclusions is
+claimed. The most useful extension is a controlled heat pulse experiment on a specimen of
+independently determined B, which would test the predicted precision directly and, for
+a specimen placed away from resonance, establish whether the relaxation and nonlocal
+coefficients can be separated in practice at the precision the present analysis predicts.
+
+
+CRediT authorship contribution statement
+
+   V. Gupta: Conceptualization, Methodology, Software, Formal analysis, Validation,
+Writing – original draft, Writing – review & editing.
+
+
+Declaration of competing interest
+
+   The author declares that he has no known competing financial interests or personal
+relationships that could have appeared to influence the work reported in this paper.
+
+
+
+
+                                      38
+
+--- PAGE 39 ---
+Data availability
+
+   The numerical implementation, figure-generation scripts, and the verified numerical
+results underlying the figures and tables in this paper are available from the corresponding
+author upon reasonable request.
+
+
+Appendix A. Notation Correspondence with the Validation Anchor
+
+   Table A.1 lists the correspondence between the notation used here and that of the
+validation anchor [25], referenced from sections 2.10 and 5.
+
+Table A.1: Correspondence between the present notation and that of the validation anchor [25]. Symbols
+are matched by the quantity they denote, not by appearance.
+
+
+Present  Anchor  Quantity                   Conversion
+
+α       α         thermal diffusivity λ/(ρc)         identical
+τq           τq         relaxation time of the heat flux   identical
+κ2        κ2          coefficient of ∂t∂xxT, dimension   identical
+                m2
+τ∆           ˆτ∆        dimensionless pulse length       αtp/L2
+ˆτq                ˆτq         scaled relaxation time          ατq/L2
+ˆκ2            ˆκ2         scaled nonlocal coefficient        κ2/L2; the anchor also writes ˆκ = κ/L
+B         κ2/(ατq)  Fourier-resonance number; the B = κ2/(ατq)
+                    anchor states the resonance as
+                     κ2/τq = α
+m(s)      not used  Laplace propagation factor; the  introduced here
+                     anchor uses an eigenfunction ex-
+                     pansion
+
+
+
+
+
+                                      39
+
+--- PAGE 40 ---
+References
+
+ [1] S. Sobolev, Non-Fourier heat conduction: Discrete vs continuum approaches, Me-
+     chanics Research Communications 149 (2025) 104512. doi:10.1016/j.mechrescom.
+    2025.104512.
+
+ [2] A. J. Moghadam, Characterizing the thermal penetration depth of non-Fourier heat
+    conduction in an infinite medium, International Communications in Heat and Mass
+    Transfer 161 (2025) 108522. doi:10.1016/j.icheatmasstransfer.2024.108522.
+
+ [3] V. Gupta, M. S. Barak, S. Das, Impact of memory-dependent heat transfer on
+    Rayleigh waves propagation in nonlocal piezo-thermo-elastic medium with voids,
+     International Journal of Numerical Methods for Heat & Fluid Flow 34 (4) (2024)
+    1902–1926. doi:10.1108/HFF-10-2023-0615.
+
+ [4] V. Gupta, M. S. Barak, Photo-thermo-piezo-elastic waves in semiconductor medium
+     subject to distinct two temperature models with higher order memory dependencies,
+     International Journal of Numerical Methods for Heat & Fluid Flow 34 (1) (2024)
+    84–108. doi:10.1108/HFF-07-2023-0380.
+
+ [5] V. Gupta, R. Kumar, R. Kumar, M. S. Barak, Energy analysis at the interface of
+     piezo/thermoelastic half spaces, International Journal of Numerical Methods for Heat
+   & Fluid Flow 33 (2023) 2250–2277. doi:10.1108/HFF-11-2022-0654.
+
+ [6] V. Gupta, R. Kumar, M. Kumar, V. Pathania, M. S. Barak, Reflection/transmission
+     of plane waves at the interface of an ideal fluid and nonlocal piezothermoelastic
+    medium, International Journal of Numerical Methods for Heat & Fluid Flow 33 (2)
+    (2023) 912–937. doi:10.1108/HFF-04-2022-0259.
+
+ [7] S. Both, B. Czél, T. Fülöp, G. Gróf, Á. Gyenis, R. Kovács, P. Ván, J. Verhás, Deviation
+    from the Fourier law in room-temperature heat pulse experiments, Journal of Non-
+    Equilibrium Thermodynamics 41 (1) (2016) 41–48. doi:10.1515/jnet-2015-0035.
+
+ [8] P. Ván, A. Berezovski, T. Fülöp, G. Gróf, R. Kovács, Á. Lovas, J. Verhás, Guyer–
+    Krumhansl-type heat conduction at room temperature, EPL 118 (5) (2017) 50005.
+    doi:10.1209/0295-5075/118/50005.
+
+ [9] R. A. Guyer, J. A. Krumhansl, Solution of the linearized phonon Boltzmann equation,
+     Physical Review 148 (2) (1966) 766–778. doi:10.1103/PhysRev.148.766.
+
+[10] R. A. Guyer, J. A. Krumhansl, Thermal conductivity, second sound and phonon
+    hydrodynamic phenomena in nonmetallic crystals, Physical Review 148 (2) (1966)
+    778–788. doi:10.1103/PhysRev.148.778.
+
+[11] M. Xu, The modified Guyer-Krumhansl equations derived from the linear Boltzmann
+    transport equation, ASME Journal of Heat and Mass Transfer 146 (2024) 102501.
+    doi:10.1115/1.4065818.
+
+[12] M. Di Domenico, D. Jou, Nonlinear phonon hydrodynamics: A guyerkrumhansl
+    equation for the conjugate of the heat flux, Zeitschrift fur angewandte Mathematik
+    und Physik 76 (2025) 235. doi:10.1007/s00033-025-02630-7.
+
+
+
+                                      40
+
+--- PAGE 41 ---
+[13] L. Restuccia, D. Jou, Non-local vectorial internal variables and generalized Guyer-
+    Krumhansl evolution equations for the heat flux, Entropy 25 (2023) 1259. doi:
+    10.3390/e25091259.
+
+[14] R. Kovacs, Interplay of time scales and material nonlinearities in non-Fourier heat
+     conduction, Continuum Mechanics and Thermodynamics 38 (2026) 46. doi:10.1007/
+    s00161-026-01477-1.
+
+[15] P. Ván, Weakly nonlocal irreversible thermodynamics: The Guyer–Krumhansl and
+    the Cahn–Hilliard equations, Physics Letters A 290 (1–2) (2001) 88–92. doi:10.
+    1016/S0375-9601(01)00657-0.
+
+[16] M. Szucs, M. Pavelka, R. Kovacs, T. Fulop, P. Van, M. Grmela, A case study of
+    non-Fourier heat conduction using internal variables and generic, Journal of Non-
+    Equilibrium Thermodynamics 47 (2021) 31–60. doi:10.1515/jnet-2021-0022.
+
+[17] S. A. Rukolaine, Hyperbolicity of the ballistic-conductive model of heat conduction:
+    the reverse side of the coin, Zeitschrift fur angewandte Mathematik und Physik 75
+    (2024) 50. doi:10.1007/s00033-023-02176-6.
+
+[18] K. Zhukovsky, Exact solution of guyerkrumhansl type heat equation by operational
+    method, International Journal of Heat and Mass Transfer 96 (2016) 132–144. doi:
+    10.1016/j.ijheatmasstransfer.2016.01.005.
+
+[19] K. Zhukovsky, Violation of the maximum principle and negative solutions for pulse
+    propagation in guyerkrumhansl model, International Journal of Heat and Mass
+    Transfer 98 (2016) 523–529. doi:10.1016/j.ijheatmasstransfer.2016.03.021.
+
+[20] D. Maillet, A review of the models using the Cattaneo and Vernotte hyperbolic heat
+    equation and their experimental validation, International Journal of Thermal Sciences
+    139 (2019) 424–432. doi:10.1016/j.ijthermalsci.2019.02.021.
+
+[21] R. Kovacs, P. Rogolino, Numerical treatment of nonlinear Fourier and Maxwell-
+    Cattaneo-Vernotte heat transport equations, International Journal of Heat and Mass
+    Transfer 150 (2020) 119281. doi:10.1016/j.ijheatmasstransfer.2019.119281.
+
+[22] A. van der Merwe, N. van Rensburg, R. Sieberhagen, Comparing the dual phase
+     lag, Cattaneo-Vernotte and Fourier heat conduction models using modal analysis,
+    Applied Mathematics and Computation 396 (2021) 125934. doi:10.1016/j.amc.
+    2020.125934.
+
+[23] B. Nyíri, On the entropy current, Journal of Non-Equilibrium Thermodynamics 16 (2)
+    (1991) 179–186. doi:10.1515/jnet.1991.16.2.179.
+
+[24] A. Fehér, N. Lukács, L. Somlai, T. Fodor, M. Szücs, T. Fülöp, P. Ván, R. Kovács,
+     Size effects and beyond-Fourier heat conduction in room-temperature experiments,
+    Journal of Non-Equilibrium Thermodynamics 46 (4) (2021) 403–411. doi:10.1515/
+    jnet-2021-0033.
+
+[25] R. Kovács, Analytic solution of Guyer–Krumhansl equation for laser flash experiments,
+     International Journal of Heat and Mass Transfer 127 (Part A) (2018) 631–636.
+    doi:10.1016/j.ijheatmasstransfer.2018.06.082.
+
+
+                                      41
+
+--- PAGE 42 ---
+[26] A. Fehér, R. Kovács, On the evaluation of non-Fourier effects in heat pulse experiments,
+     International Journal of Engineering Science 169 (2021) 103577. doi:10.1016/j.
+    ijengsci.2021.103577.
+
+[27] S. Saurav, S. Mazumder, Anisotropic Fourier heat conduction and phonon Boltzmann
+     transport equation based simulation of time domain thermo-reflectance experiments,
+     International Journal of Heat and Mass Transfer 228 (2024) 125698. doi:10.1016/j.
+    ijheatmasstransfer.2024.125698.
+
+[28] J. Zheng, F. Li, H. Huang, T-phpinn: Physics-informed neural networks for solving
+    2d non-Fourier heat conduction equations, International Journal of Heat and Mass
+    Transfer 235 (2024) 126216. doi:10.1016/j.ijheatmasstransfer.2024.126216.
+
+[29] S. Li, R. E. Mohan, J. Wang, H.-S. Chu, S. Shin, Quasi-ballistic heat conduction of
+    long-range surface phonon polaritons coupled to thermal reservoirs, ACS Nano 19
+    (2025) 21020–21029. doi:10.1021/acsnano.5c04594.
+
+[30] L. Kremeyer, T. L. Britt, B. J. Siwick, S. C. Huberman, Ultrafast electron diffuse
+     scattering as a tool for studying phonon transport: Phonon hydrodynamics and second
+    sound oscillations, Structural Dynamics 11 (2024) 024101. doi:10.1063/4.0000224.
+
+[31] H. Najafi, K. Woodbury, K. Dowding, Special issue: First james v. beck memorial
+    symposium on inverse problems, parameter estimation, and heat conduction, ASME
+    Journal of Heat and Mass Transfer 146 (2024) 090301. doi:10.1115/1.4066037.
+
+[32] H. Long, Y. Zhang, Stochastic asymptotical regularization for nonlinear ill-posed
+    problems, Inverse Problems 41 (2025) 065017. doi:10.1088/1361-6420/addffc.
+
+[33] Y. Shang, H. Ban, D. Liu, Simultaneous identification of boundary heat flux and
+    thermal conductivity in inverse heat conduction problems using physics-informed
+     neural networks, Thermal Science and Engineering Progress 65 (2025) 103905. doi:
+    10.1016/j.tsep.2025.103905.
+
+[34] V. T. Borukhov, G. M. Zayats, The inverse problem of heat conduction in the case of
+     non-uniqueness: A functional identification approach, Journal of Inverse and Ill-posed
+    Problems (2024). doi:10.1515/jiip-2022-0056.
+
+[35] A. Raue, C. Kreutz, T. Maiwald, J. Bachmann, M. Schilling, U. Klingmuller, J. Tim-
+    mer, Structural and practical identifiability analysis of partially observed dynamical
+    models by exploiting the profile likelihood, Bioinformatics 25 (2009) 1923–1929.
+    doi:10.1093/bioinformatics/btp358.
+
+[36] M. J. Simpson, O. J. Maclaren, Profile-wise analysis: A profile likelihood-based
+    workflow for identifiability analysis, estimation, and prediction with mechanistic
+    mathematical models, PLOS Computational Biology 19 (2023) e1011515. doi:10.
+    1371/journal.pcbi.1011515.
+
+[37]  I. Borisov, A. Demin, E. Metelkin, Likelihoodprofiler.jl: Unified profile-likelihood
+    workflows for identifiability and confidence intervals, Journal of Open Source Software
+    11 (2026) 9501. doi:10.21105/joss.09501.
+
+
+
+
+                                      42
+
+--- PAGE 43 ---
+[38] M. J. Simpson, R. E. Baker, Parameter identifiability, parameter estimation, and
+    model prediction for differential equation models, SIAM Review 68 (2026) 153–171.
+    doi:10.1137/24m1667968.
+
+[39] M. Binns, A. Usai, C. Theodoropoulos, Identifiability methods for biological sys-
+    tems: Determining subsets of parameters through sensitivity analysis, penalty-based
+     optimisation, profile likelihood and lasso model reduction, Computers & Chemical
+    Engineering 186 (2024) 108683. doi:10.1016/j.compchemeng.2024.108683.
+
+[40] Y. Liu, P. K. Maini, R. E. Baker, Optimal experiment design for practical parameter
+     identifiability and model discrimination, Mathematical Biosciences 399 (2026) 109710.
+    doi:10.1016/j.mbs.2026.109710.
+
+[41] Y. Jung, I. Lee, Optimal design of experiments for optimization-based model calibra-
+     tion using Fisher information matrix, Reliability Engineering & System Safety 216
+    (2021) 107968. doi:10.1016/j.ress.2021.107968.
+
+[42] E. A. Stromberg, J. Nyberg, A. C. Hooker, The effect of Fisher information ma-
+     trix approximation methods in population optimal design calculations, Journal
+     of Pharmacokinetics and Pharmacodynamics 43 (2016) 609–619.  doi:10.1007/
+    s10928-016-9499-4.
+
+[43] T. B. Neilsen, M. K. Transtrum, D. F. Van Komen, D. P. Knobles, Optimal experi-
+    mental design for machine learning using the Fisher information matrix, The Journal
+     of the Acoustical Society of America 144 (2018) 1730–1730. doi:10.1121/1.5067675.
+
+[44] C. Wang, Y. Heng, J. Luo, X. Wang, A fast Bayesian parallel solution framework for
+     large-scale parameter estimation of 3d inverse heat transfer problems, International
+    Communications in Heat and Mass Transfer 155 (2024) 107409. doi:10.1016/j.
+    icheatmasstransfer.2024.107409.
+
+[45] P. Ván, R. Kovács, T. Fülöp, Thermodynamic hierarchies of evolution equations,
+    Proceedings of the Estonian Academy of Sciences 64 (3S) (2015) 389–395. doi:
+    10.3176/proc.2015.3S.09.
+
+[46] T. Fülöp, R. Kovács, Á. Lovas, Á. Rieth, T. Fodor, M. Szücs, P. Ván, G. Gróf,
+    Emergence of non-Fourier hierarchies, Entropy 20 (11) (2018) 832. doi:10.3390/
+    e20110832.
+
+[47] R. Kovács, P. Ván, Generalized heat conduction in heat pulse experiments, Inter-
+     national Journal of Heat and Mass Transfer 83 (2015) 613–620. doi:10.1016/j.
+    ijheatmasstransfer.2014.12.045.
+
+[48] Á. Rieth, R. Kovács, T. Fülöp, Implicit numerical schemes for generalized heat
+    conduction equations, International Journal of Heat and Mass Transfer 126 (2018)
+    1177–1182. doi:10.1016/j.ijheatmasstransfer.2018.06.067.
+
+[49] A. Talbot, The accurate numerical inversion of Laplace transforms, IMA Journal of
+    Applied Mathematics 23 (1979) 97–120. doi:10.1093/imamat/23.1.97.
+
+[50] B. Dingfelder,  J. A. C. Weideman, An improved Talbot method for numeri-
+     cal Laplace transform inversion, Numerical Algorithms 68 (2014) 167–183. doi:
+    10.1007/s11075-014-9895-z.
+
+                                      43
+
+--- PAGE 44 ---
+[51] H. Chhajer, R. Roy, Rationalised experiment design for parameter estimation
+    with sensitivity clustering,  Scientific Reports 14 (2024) 25864.  doi:10.1038/
+    s41598-024-75539-2.
+
+[52] D. L. Weakliem, A critique of the Bayesian information criterion for model se-
+     lection,  Sociological Methods & Research 27 (1999) 359–397.  doi:10.1177/
+    0049124199027003002.
+
+[53] K. C. Woo, L. C. Chow, Inverse heat conduction by direct inverse Laplace transform,
+    Numerical Heat Transfer 4 (1981) 499–504. doi:10.1080/01495728108961807.
+
+[54] V. V. Kryzhniy, Numerical inversion of the Laplace transform: analysis via regularized
+     analytic continuation, Inverse Problems 22 (2006) 579–597. doi:10.1088/0266-5611/
+    22/2/012.
+
+[55] V. Zakian, Numerical inversion of Laplace transform, Electronics Letters 5 (1969)
+    120–121. doi:10.1049/el:19690090.
+
+[56] S. A. Rukolaine, Unphysical effects of the dual-phase-lag model of heat conduction,
+     International Journal of Heat and Mass Transfer 78 (2014) 58–63. doi:10.1016/j.
+    ijheatmasstransfer.2014.06.066.
+
+
+
+
+
+                                      44

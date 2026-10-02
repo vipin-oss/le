@@ -1,0 +1,13 @@
+model,M_s,N_s,DC_k_times_N_over_M,note,source_location,origin_status,solver_status
+CV,1+tau*s,1,k,CV parent,B01 Eq5/Table1,SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS,NOT_RUN
+MCV1,1+2*tau*s,1+tau*s,k,First-order phase-lag kernel; restricted family related to MCV2 by consistent k/tau reparameterization,B01 Eq13/Table1,SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS,NOT_RUN
+MCV2,1+tau*s,2+tau*s,2*k,Effective DC differs from CV at the same unit k,B01 Eq18/Table1,SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS,NOT_RUN
+MCV3,1+3*tau*s+tau^2*s^2,1+tau*s,k,Proposed first modified source-case candidate; not final project/model approval,B01 Eq21/Table1,SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS,NOT_RUN
+MCV4,1+3*tau*s+tau^2*s^2,2+tau*s,2*k,Match total DC conductivity before interpreting mechanism controls,B01 Eq24/Table1,SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS,NOT_RUN
+MCV5,(1+tau*s)^2,2*(1+tau*s),2*k,Equal-unit/compatible-history kernel reduces to CV with conductivity2k,B01 Eq28/Table1,SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS,NOT_RUN
+MCV6,1+3*tau*s+tau^2*s^2,1+2*tau*s,k,Distinct equal-unit numerator from MCV3; admissibility/new-material scope not audited,B01 Eq31/Table1,SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS,NOT_RUN
+GN,tau*s,1+tau*s,DC pole,TypeIII structure; k*=k/tau in the source parameterization,B01 Eq8/Table1,SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS,NOT_RUN
+MGN1,2*tau*s+tau^2*s^2,1+tau*s,DC pole,Not finite static Fourier conductance,B01 Eq34/Table1,SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS,NOT_RUN
+MGN2,tau*s+tau^2*s^2,1+2*tau*s,DC pole,Eq36 internal mismatch; independently derived equal law matchesEq37/Table1; do not silently implement a correction,B01 Eq35–37/Table1,SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS,NOT_RUN
+MGN3,2*tau*s*(1+tau*s),(1+tau*s)^2,DC pole,Equal-unit/compatible-history kernel reduces to GN with k/2,B01 Eq40/Table1,SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS,NOT_RUN
+MGN4,tau*s+tau^2*s^2,1+3*tau*s+tau^2*s^2,DC pole,Source Table1 transcribed; complete derivation/admissibility audit not done,B01 Eq43/Table1,SOURCE_FORMULA_TRANSCRIPTION + STATED_MANUAL_ALGEBRA_CHECKS,NOT_RUN

@@ -1,0 +1,1840 @@
+[
+  {
+    "paper_id": "1",
+    "doi_user_supplied": "10.2478/IJAME-2022-0055",
+    "checked_utc": "2026-09-30T05:41:28.130110+00:00",
+    "http_status": 200,
+    "metadata_status": "METADATA_VERIFIED_CROSSREF",
+    "crossref_title": [
+      "Generalized Plane Waves in a Rotating Thermoelastic Double Porous Solid"
+    ],
+    "crossref_journal": [
+      "International Journal of Applied Mechanics and Engineering"
+    ],
+    "crossref_doi": "10.2478/ijame-2022-0055",
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          12,
+          1
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2022,
+          12,
+          3
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2022,
+          12,
+          1
+        ]
+      ]
+    },
+    "volume": "27",
+    "issue": "4",
+    "page": "138-154",
+    "article_number": null,
+    "url": "https://doi.org/10.2478/ijame-2022-0055",
+    "resource": {
+      "primary": {
+        "URL": "https://www.ijame-poland.com/Generalized-Plane-Waves-in-a-Rotating-Thermoelastic-Double-Porous-Solid,166644,0,2.html"
+      }
+    },
+    "links": [
+      {
+        "URL": "https://www.ijame-poland.com/pdf-166644-89837",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://www.ijame-poland.com/pdf-166644-89837",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "abstract": "<jats:p>The propagation of plane waves in a rotating homogeneous, isotropic, thermoelastic solid with double porosity following Lord-Shulman’s theory of thermoelasticity has been investigated. It is assumed that the medium rotates about an axis normal to the surface with a uniform angular velocity. There may exist five coupled waves that evolved due to the longitudinal, transverse disturbance, voids of type-I and type-II, and temperature change in the medium. The secular equation for the model under consideration has been derived with the help of formal solutions and boundary conditions. The amplitude of displacements, temperature change and volume fraction fields for voids of type-I and type-II have also been computed analytically. Finally, numerical computations have been carried out for magnesium crystal material to understand the behavior of amplitude of phase velocity, penetration depth, specific loss, displacement components, temperature change, and volume fraction field due to type-I and type-II voids corresponding to the different rotation rates. Various graphs have been plotted to support the analytical findings. The study may be used in the development of rotation sensors, material design and thermal efficiency.</jats:p>",
+    "relation": {},
+    "update_to": null,
+    "authors": [
+      {
+        "given": "Vijayata",
+        "family": "Pathania",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "M.S.",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper_id": "2",
+    "doi_user_supplied": "10.1038/s41598-023-44339-5",
+    "checked_utc": "2026-09-30T05:41:28.131529+00:00",
+    "http_status": 200,
+    "metadata_status": "METADATA_VERIFIED_CROSSREF",
+    "crossref_title": [
+      "Behavior of higher-order MDD on energy ratios at the interface of thermoelastic and piezothermoelastic mediums"
+    ],
+    "crossref_journal": [
+      "Scientific Reports"
+    ],
+    "crossref_doi": "10.1038/s41598-023-44339-5",
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          10,
+          11
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2023,
+          10,
+          11
+        ]
+      ]
+    },
+    "published_print": null,
+    "volume": "13",
+    "issue": "1",
+    "page": null,
+    "article_number": "17170",
+    "url": "https://doi.org/10.1038/s41598-023-44339-5",
+    "resource": {
+      "primary": {
+        "URL": "https://www.nature.com/articles/s41598-023-44339-5"
+      }
+    },
+    "links": [
+      {
+        "URL": "https://www.nature.com/articles/s41598-023-44339-5.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://www.nature.com/articles/s41598-023-44339-5",
+        "content-type": "text/html",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://www.nature.com/articles/s41598-023-44339-5.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "abstract": "<jats:title>Abstract</jats:title><jats:p>This paper investigates the intricate energy distribution patterns emerging at an orthotropic piezothermoelastic half-space interface by considering the influence of a higher-order three-phase lags heat conduction law, accompanied by memory-dependent derivatives (referred to as HPS) within the underlying thermoelastic half-space (referred to as TS). This study explores the amplitude and energy ratios of reflected and transmitted waves. These waves span various incident types, including longitudinal, thermal, and transversal, as they propagate through the TS and interact at the interface. Upon encountering the interface, an intriguing dynamic unfolds: three waves experience reflection within the TS medium, while four waves undergo transmission into the HPS medium. A graphical representation effectively illustrates the impact of higher-order time differential parameters and memory to offer comprehensive insights. This visual representation reveals the nuanced fluctuations of energy ratios with the incidence angle. The model astutely captures diverse scenarios, showcasing its ability to interpret complex interface dynamics.</jats:p>",
+    "relation": {},
+    "update_to": null,
+    "authors": [
+      {
+        "given": "M. S.",
+        "family": "Barak",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Hijaz",
+        "family": "Ahmad",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajneesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Fuad A.",
+        "family": "Awwad",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Emad A. A.",
+        "family": "Ismail",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper_id": "3",
+    "doi_user_supplied": "10.1007/s40010-023-00850-y",
+    "checked_utc": "2026-09-30T05:41:28.132408+00:00",
+    "http_status": 200,
+    "metadata_status": "METADATA_VERIFIED_CROSSREF",
+    "crossref_title": [
+      "Analysis of Waves at Boundary Surfaces at Distinct Media with Nonlocal Dual-Phase-Lag"
+    ],
+    "crossref_journal": [
+      "Proceedings of the National Academy of Sciences, India Section A: Physical Sciences"
+    ],
+    "crossref_doi": "10.1007/s40010-023-00850-y",
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          9,
+          27
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2023,
+          9,
+          27
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2023,
+          12
+        ]
+      ]
+    },
+    "volume": "93",
+    "issue": "4",
+    "page": "573-585",
+    "article_number": null,
+    "url": "https://doi.org/10.1007/s40010-023-00850-y",
+    "resource": {
+      "primary": {
+        "URL": "https://link.springer.com/10.1007/s40010-023-00850-y"
+      }
+    },
+    "links": [
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s40010-023-00850-y.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/article/10.1007/s40010-023-00850-y/fulltext.html",
+        "content-type": "text/html",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s40010-023-00850-y.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "abstract": null,
+    "relation": {},
+    "update_to": null,
+    "authors": [
+      {
+        "given": "Rajesh",
+        "family": "Kumar",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vijayata",
+        "family": "Pathania",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajneesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9947-000X",
+        "authenticated-orcid": false,
+        "given": "M. S.",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper_id": "4",
+    "doi_user_supplied": "10.1088/1402-4896/acfced",
+    "checked_utc": "2026-09-30T05:41:28.137621+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "5",
+    "doi_user_supplied": "10.1108/hff-04-2023-0208",
+    "checked_utc": "2026-09-30T05:41:28.147638+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "6",
+    "doi_user_supplied": "10.1108/hff-11-2022-0654",
+    "checked_utc": "2026-09-30T05:41:28.357228+00:00",
+    "http_status": 200,
+    "metadata_status": "METADATA_VERIFIED_CROSSREF",
+    "crossref_title": [
+      "Energy analysis at the interface of piezo/thermoelastic half spaces"
+    ],
+    "crossref_journal": [
+      "International Journal of Numerical Methods for Heat &amp; Fluid Flow"
+    ],
+    "crossref_doi": "10.1108/hff-11-2022-0654",
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          2,
+          9
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2023,
+          2,
+          9
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2023,
+          5,
+          4
+        ]
+      ]
+    },
+    "volume": "33",
+    "issue": "6",
+    "page": "2250-2277",
+    "article_number": null,
+    "url": "https://doi.org/10.1108/hff-11-2022-0654",
+    "resource": {
+      "primary": {
+        "URL": "http://www.emerald.com/hff/article/33/6/2250-2277/213615"
+      }
+    },
+    "links": [
+      {
+        "URL": "https://www.emerald.com/insight/content/doi/10.1108/HFF-11-2022-0654/full/xml",
+        "content-type": "application/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://www.emerald.com/insight/content/doi/10.1108/HFF-11-2022-0654/full/html",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "abstract": "<jats:sec>\n<jats:title content-type=\"abstract-subheading\">Purpose</jats:title>\n<jats:p>This paper aims to study the energy ratios of plane waves on an interface of nonlocal thermoelastic halfspace (NTS) and nonlocal orthotropic piezothermoelastic half-space (NOPS).</jats:p>\n</jats:sec>\n<jats:sec>\n<jats:title content-type=\"abstract-subheading\">Design/methodology/approach</jats:title>\n<jats:p>The memory-dependent derivatives (MDDs) approach with a hyperbolic two-temperature (HTT), three-phase lag theory is used here to study how the energy ratios change at the interface with the angle of incidence.</jats:p>\n</jats:sec>\n<jats:sec>\n<jats:title content-type=\"abstract-subheading\">Findings</jats:title>\n<jats:p>Plane waves that travel through NTS and hit the interface as a longitudinal wave, a thermal wave, or a transversal wave send four waves into the NOPS medium and three waves back into the NTS medium. The amplitude ratios of the different waves that are reflected and transmitted are used to calculate the energy ratios of the waves. It is observed that these ratios are affected by the HTT, nonlocal and MDD parameters.</jats:p>\n</jats:sec>\n<jats:sec>\n<jats:title content-type=\"abstract-subheading\">Research limitations/implications</jats:title>\n<jats:p>The energy ratios correspond to four distinct models; nonlocal HTT with memory, nonlocal HTT without memory, local HTT with memory and nonlocal classical-two-temperature with memory concerning the angle of incidence from 0 degree to 90 degree.</jats:p>\n</jats:sec>\n<jats:sec>\n<jats:title content-type=\"abstract-subheading\">Practical implications</jats:title>\n<jats:p>This model applies to several fields, including earthquake engineering, soil dynamics, high-energy particle physics, nuclear fusion, aeronautics and other fields where nonlocality, MDD and conductive temperature play an important role.</jats:p>\n</jats:sec>\n<jats:sec>\n<jats:title content-type=\"abstract-subheading\">Originality/value</jats:title>\n<jats:p>The authors produced the submitted document entirely on their initiative, with equal contributions from all of them.</jats:p>\n</jats:sec>",
+    "relation": {},
+    "update_to": null,
+    "authors": [
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajneesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "M.S.",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper_id": "7",
+    "doi_user_supplied": "10.1108/mmms-10-2022-0209",
+    "checked_utc": "2026-09-30T05:41:28.360527+00:00",
+    "http_status": 200,
+    "metadata_status": "METADATA_VERIFIED_CROSSREF",
+    "crossref_title": [
+      "The effect of memory and stiffness on energy ratios at the interface of distinct media"
+    ],
+    "crossref_journal": [
+      "Multidiscipline Modeling in Materials and Structures"
+    ],
+    "crossref_doi": "10.1108/mmms-10-2022-0209",
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          3,
+          15
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2023,
+          3,
+          15
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2023,
+          4,
+          20
+        ]
+      ]
+    },
+    "volume": "19",
+    "issue": "3",
+    "page": "464-492",
+    "article_number": null,
+    "url": "https://doi.org/10.1108/mmms-10-2022-0209",
+    "resource": {
+      "primary": {
+        "URL": "http://www.emerald.com/mmms/article/19/3/464-492/298600"
+      }
+    },
+    "links": [
+      {
+        "URL": "https://www.emerald.com/insight/content/doi/10.1108/MMMS-10-2022-0209/full/xml",
+        "content-type": "application/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://www.emerald.com/insight/content/doi/10.1108/MMMS-10-2022-0209/full/html",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "abstract": "<jats:sec><jats:title content-type=\"abstract-subheading\">Purpose</jats:title><jats:p>This paper aims to study the energy ratios of plane waves on an imperfect interface of elastic half-space (EHS) and orthotropic piezothermoelastic half-space (OPHS).</jats:p></jats:sec><jats:sec><jats:title content-type=\"abstract-subheading\">Design/methodology/approach</jats:title><jats:p>The dual-phase lag (DPL) theory with memory-dependent derivatives is employed to study the variation of energy ratios at the imperfect interface.</jats:p></jats:sec><jats:sec><jats:title content-type=\"abstract-subheading\">Findings</jats:title><jats:p>A plane longitudinal wave (P) or transversal wave (SV) propagates through EHS and strikes at the interface. As a result, two waves are reflected, and four waves are transmitted, as shown in Figure 2. The amplitude ratios are determined by imperfect boundaries having normal stiffness and transverse stiffness. The variation of energy ratios is computed numerically for a particular model of graphite (EHS)/cadmium selenide (OPHS) and depicted graphically against the angle of incidence to consider the effect of stiffness parameters, memory and kernel functions.</jats:p></jats:sec><jats:sec><jats:title content-type=\"abstract-subheading\">Research limitations/implications</jats:title><jats:p>The energy distribution of incident P or SV waves among various reflected and transmitted waves, as well as the interaction of waves for imperfect interface (IIF), normal stiffness interface (NSIF), transverse stiffness interface (TSIF), and welded contact interface (WCIF), are important factors to consider when studying seismic wave behavior.</jats:p></jats:sec><jats:sec><jats:title content-type=\"abstract-subheading\">Practical implications</jats:title><jats:p>The present model may be used in various disciplines, such as high-energy particle physics, earthquake engineering, nuclear fusion, aeronautics, soil dynamics and other areas where memory-dependent derivative and phase delays are significant.</jats:p></jats:sec><jats:sec><jats:title content-type=\"abstract-subheading\">Originality/value</jats:title><jats:p>In a variety of technical and geophysical scenarios, wave propagation in an elastic/piezothermoelastic medium with varying magnetic fields, initial stress, temperature, porosity, etc., gives important information regarding the presence of new and modified waves.</jats:p></jats:sec>",
+    "relation": {},
+    "update_to": null,
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-9947-000X",
+        "authenticated-orcid": false,
+        "given": "M.S.",
+        "family": "Barak",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajneesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5238-1963",
+        "authenticated-orcid": false,
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper_id": "8",
+    "doi_user_supplied": "10.1007/s00419-023-02364-w",
+    "checked_utc": "2026-09-30T05:41:28.363910+00:00",
+    "http_status": 200,
+    "metadata_status": "METADATA_VERIFIED_CROSSREF",
+    "crossref_title": [
+      "Double porous thermoelastic waves in a homogeneous, isotropic solid with inviscid liquid"
+    ],
+    "crossref_journal": [
+      "Archive of Applied Mechanics"
+    ],
+    "crossref_doi": "10.1007/s00419-023-02364-w",
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          1,
+          25
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2023,
+          1,
+          25
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2023,
+          5
+        ]
+      ]
+    },
+    "volume": "93",
+    "issue": "5",
+    "page": "1943-1962",
+    "article_number": null,
+    "url": "https://doi.org/10.1007/s00419-023-02364-w",
+    "resource": {
+      "primary": {
+        "URL": "https://link.springer.com/10.1007/s00419-023-02364-w"
+      }
+    },
+    "links": [
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s00419-023-02364-w.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/article/10.1007/s00419-023-02364-w/fulltext.html",
+        "content-type": "text/html",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s00419-023-02364-w.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "abstract": null,
+    "relation": {},
+    "update_to": null,
+    "authors": [
+      {
+        "given": "Vijayata",
+        "family": "Pathania",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9947-000X",
+        "authenticated-orcid": false,
+        "given": "M. S.",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper_id": "9",
+    "doi_user_supplied": "10.1007/s12648-022-02568-w",
+    "checked_utc": "2026-09-30T05:41:28.374443+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "10",
+    "doi_user_supplied": "10.1108/hff-04-2022-0259",
+    "checked_utc": "2026-09-30T05:41:28.378653+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "11",
+    "doi_user_supplied": "10.1080/01495739.2023.2253879",
+    "checked_utc": "2026-09-30T05:41:28.588518+00:00",
+    "http_status": 200,
+    "metadata_status": "METADATA_VERIFIED_CROSSREF",
+    "crossref_title": [
+      "Energy transfer at the interface of monoclinic piezothermoelastic and thermoelastic half spaces with MDD"
+    ],
+    "crossref_journal": [
+      "Journal of Thermal Stresses"
+    ],
+    "crossref_doi": "10.1080/01495739.2023.2253879",
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          10,
+          11
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2023,
+          10,
+          11
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2024,
+          2
+        ]
+      ]
+    },
+    "volume": "47",
+    "issue": "2",
+    "page": "189-216",
+    "article_number": null,
+    "url": "https://doi.org/10.1080/01495739.2023.2253879",
+    "resource": {
+      "primary": {
+        "URL": "https://www.tandfonline.com/doi/full/10.1080/01495739.2023.2253879"
+      }
+    },
+    "links": [
+      {
+        "URL": "https://www.tandfonline.com/doi/pdf/10.1080/01495739.2023.2253879",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "abstract": null,
+    "relation": {},
+    "update_to": null,
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-9947-000X",
+        "authenticated-orcid": false,
+        "given": "M. S.",
+        "family": "Barak",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Indira Gandhi University, Rewari, India"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Rajesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Indira Gandhi University, Rewari, India"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Rajneesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Kurukshetra University, Kurukshetra, India"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Indira Gandhi University, Rewari, India"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper_id": "12",
+    "doi_user_supplied": "10.1080/15376494.2023.2291804",
+    "checked_utc": "2026-09-30T05:41:28.591696+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "13",
+    "doi_user_supplied": "10.1080/15376494.2023.2238201",
+    "checked_utc": "2026-09-30T05:41:28.595169+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "14",
+    "doi_user_supplied": "10.1088/1402-4896/ad4829",
+    "checked_utc": "2026-09-30T05:41:28.598407+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "15",
+    "doi_user_supplied": "10.1007/s44198-024-00187-z",
+    "checked_utc": "2026-09-30T05:41:28.601039+00:00",
+    "http_status": 200,
+    "metadata_status": "METADATA_VERIFIED_CROSSREF",
+    "crossref_title": [
+      "Response of Moisture and Temperature Diffusivity on an Orthotropic Hygro-thermo-piezo-elastic Medium"
+    ],
+    "crossref_journal": [
+      "Journal of Nonlinear Mathematical Physics"
+    ],
+    "crossref_doi": "10.1007/s44198-024-00187-z",
+    "published": {
+      "date-parts": [
+        [
+          2024,
+          5,
+          2
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2024,
+          5,
+          2
+        ]
+      ]
+    },
+    "published_print": null,
+    "volume": "31",
+    "issue": "1",
+    "page": null,
+    "article_number": "26",
+    "url": "https://doi.org/10.1007/s44198-024-00187-z",
+    "resource": {
+      "primary": {
+        "URL": "https://link.springer.com/10.1007/s44198-024-00187-z"
+      }
+    },
+    "links": [
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s44198-024-00187-z.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/article/10.1007/s44198-024-00187-z/fulltext.html",
+        "content-type": "text/html",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s44198-024-00187-z.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "abstract": "<jats:title>Abstract</jats:title>\n          <jats:p>This research explores the complex interaction between piezoelectric waves and heat-moisture diffusion within a semi-infinite piezoelectric material under hygro-thermal conditions. By employing a two-dimensional Cartesian framework, novel governing equations for a thermo-piezoelectrically orthotropic medium influenced by moisture effects are developed. Accurate representations for key parameters are obtained by utilizing normal mode analysis. The investigation examines the influence of critical factors like moisture content, diffusivity, and temperature diffusivity on the spatial distribution of various physical fields. Additionally, a particular scenario of significance is highlighted. These results have the potential to improve sensor, actuator, and energy-harvesting device performance and dependability.</jats:p>",
+    "relation": {},
+    "update_to": null,
+    "authors": [
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "M. S.",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Hijaz",
+        "family": "Ahmad",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Soumik",
+        "family": "Das",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Bandar",
+        "family": "Almohsen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper_id": "16",
+    "doi_user_supplied": "10.59441/ijame/174992",
+    "checked_utc": "2026-09-30T05:41:28.811302+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "17",
+    "doi_user_supplied": "10.1108/hff-10-2023-0615",
+    "checked_utc": "2026-09-30T05:41:28.813698+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "18",
+    "doi_user_supplied": "10.1007/s11043-023-09657-1",
+    "checked_utc": "2026-09-30T05:41:28.821936+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "19",
+    "doi_user_supplied": "10.1088/1402-4896/ad1972",
+    "checked_utc": "2026-09-30T05:41:28.824856+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "20",
+    "doi_user_supplied": "10.22055/jacm.2023.44488.4221",
+    "checked_utc": "2026-09-30T05:41:28.829852+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "21",
+    "doi_user_supplied": "10.1108/hff-07-2023-0380",
+    "checked_utc": "2026-09-30T05:41:29.023159+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "22",
+    "doi_user_supplied": "10.1080/15376494.2023.2217420",
+    "checked_utc": "2026-09-30T05:41:29.029982+00:00",
+    "http_status": 200,
+    "metadata_status": "METADATA_VERIFIED_CROSSREF",
+    "crossref_title": [
+      "Quasi-P wave through orthotropic piezo-thermoelastic materials subject to higher order fractional and memory-dependent derivatives"
+    ],
+    "crossref_journal": [
+      "Mechanics of Advanced Materials and Structures"
+    ],
+    "crossref_doi": "10.1080/15376494.2023.2217420",
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          6
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2023,
+          6
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2024,
+          11,
+          16
+        ]
+      ]
+    },
+    "volume": "31",
+    "issue": "22",
+    "page": "5532-5546",
+    "article_number": null,
+    "url": "https://doi.org/10.1080/15376494.2023.2217420",
+    "resource": {
+      "primary": {
+        "URL": "https://www.tandfonline.com/doi/full/10.1080/15376494.2023.2217420"
+      }
+    },
+    "links": [
+      {
+        "URL": "https://www.tandfonline.com/doi/pdf/10.1080/15376494.2023.2217420",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "abstract": null,
+    "relation": {},
+    "update_to": null,
+    "authors": [
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Indira Gandhi University, Meerpur, Rewari, Haryana, India"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9947-000X",
+        "authenticated-orcid": false,
+        "given": "M. S.",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Indira Gandhi University, Meerpur, Rewari, Haryana, India"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper_id": "23",
+    "doi_user_supplied": "10.1080/15376494.2023.2211065",
+    "checked_utc": "2026-09-30T05:41:29.035273+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "24",
+    "doi_user_supplied": "10.1088/1402-4896/ad6ae7",
+    "checked_utc": "2026-09-30T05:41:29.039335+00:00",
+    "http_status": 200,
+    "metadata_status": "METADATA_VERIFIED_CROSSREF",
+    "crossref_title": [
+      "Three-phase-lag analysis of transversely isotropic double porous thermoelastic waves with liquid medium"
+    ],
+    "crossref_journal": [
+      "Physica Scripta"
+    ],
+    "crossref_doi": "10.1088/1402-4896/ad6ae7",
+    "published": {
+      "date-parts": [
+        [
+          2024,
+          8,
+          20
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2024,
+          8,
+          20
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2024,
+          9,
+          1
+        ]
+      ]
+    },
+    "volume": "99",
+    "issue": "9",
+    "page": "095958",
+    "article_number": null,
+    "url": "https://doi.org/10.1088/1402-4896/ad6ae7",
+    "resource": {
+      "primary": {
+        "URL": "https://iopscience.iop.org/article/10.1088/1402-4896/ad6ae7"
+      }
+    },
+    "links": [
+      {
+        "URL": "https://iopscience.iop.org/article/10.1088/1402-4896/ad6ae7",
+        "content-type": "text/html",
+        "content-version": "am",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://iopscience.iop.org/article/10.1088/1402-4896/ad6ae7/pdf",
+        "content-type": "application/pdf",
+        "content-version": "am",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://iopscience.iop.org/article/10.1088/1402-4896/ad6ae7",
+        "content-type": "text/html",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://iopscience.iop.org/article/10.1088/1402-4896/ad6ae7/pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://iopscience.iop.org/article/10.1088/1402-4896/ad6ae7/pdf",
+        "content-type": "application/pdf",
+        "content-version": "am",
+        "intended-application": "syndication"
+      },
+      {
+        "URL": "https://iopscience.iop.org/article/10.1088/1402-4896/ad6ae7/pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "syndication"
+      },
+      {
+        "URL": "https://iopscience.iop.org/article/10.1088/1402-4896/ad6ae7/pdf",
+        "content-type": "application/pdf",
+        "content-version": "am",
+        "intended-application": "similarity-checking"
+      },
+      {
+        "URL": "https://iopscience.iop.org/article/10.1088/1402-4896/ad6ae7/pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>This manuscript presents a mathematical framework for a double porous, thermoelastic solid half-space with transverse isotropy in contact with an inviscid liquid half-space. The analysis takes into account the three-phase-lag model within thermoelasticity theory. To gain deeper insights, we formulate the governing equations in a two-dimensional representation and subsequently employ normal mode analysis for their rigorous solution. The governing equations are influenced by both types of voids, anisotropy, thermal effect, and inviscid liquid. It has been discovered that thermoelastic half-space exhibits five coupled longitudinal waves, and in the liquid half-space, there is one mechanical wave. Secular equations are obtained by using thermal and mechanical conditions, resulting in a compact representation of phase velocity, specific loss, penetrating depth, and attenuation coefficient. Analytical presentations have been made to showcase the effects of anisotropy, voids, and liquid on various wave parameters. These effects are compared by illustrating the results graphically using the MATLAB software, allowing for a visual understanding of the comparative outcomes. This study has practical applications in engineering, materials science, geophysics, and environmental studies, contributing to advancements in various industries and scientific fields.</jats:p>",
+    "relation": {},
+    "update_to": null,
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-3842-0759",
+        "authenticated-orcid": true,
+        "given": "Vijayata",
+        "family": "Pathania",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "M S",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5238-1963",
+        "authenticated-orcid": true,
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper_id": "25",
+    "doi_user_supplied": "10.1016/j.soildyn.2024.108919",
+    "checked_utc": "2026-09-30T05:41:29.041504+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "26",
+    "doi_user_supplied": "10.1080/17455030.2024.2379958",
+    "checked_utc": "2026-09-30T05:41:29.233114+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "27",
+    "doi_user_supplied": "10.1088/1402-4896/ad97eb",
+    "checked_utc": "2026-09-30T05:41:29.252317+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "28",
+    "doi_user_supplied": "10.1016/j.euromechsol.2024.105565",
+    "checked_utc": "2026-09-30T05:41:29.256808+00:00",
+    "http_status": 200,
+    "metadata_status": "METADATA_VERIFIED_CROSSREF",
+    "crossref_title": [
+      "Fractional and memory effects on wave reflection in pre-stressed microstructured solids with dual porosity"
+    ],
+    "crossref_journal": [
+      "European Journal of Mechanics - A/Solids"
+    ],
+    "crossref_doi": "10.1016/j.euromechsol.2024.105565",
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          5
+        ]
+      ]
+    },
+    "published_online": null,
+    "published_print": {
+      "date-parts": [
+        [
+          2025,
+          5
+        ]
+      ]
+    },
+    "volume": "111",
+    "issue": null,
+    "page": "105565",
+    "article_number": "105565",
+    "url": "https://doi.org/10.1016/j.euromechsol.2024.105565",
+    "resource": {
+      "primary": {
+        "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0997753824003450"
+      }
+    },
+    "links": [
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0997753824003450?httpAccept=text/xml",
+        "content-type": "text/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0997753824003450?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "abstract": null,
+    "relation": {},
+    "update_to": null,
+    "authors": [
+      {
+        "given": "Soumik",
+        "family": "Das",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rachaita",
+        "family": "Dutta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Abhinav",
+        "family": "Singhal",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "M.S.",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Bandar",
+        "family": "Almohsen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper_id": "29",
+    "doi_user_supplied": "10.1016/j.compstruct.2025.118997",
+    "checked_utc": "2026-09-30T05:41:29.265898+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "30",
+    "doi_user_supplied": "10.1016/j.euromechsol.2025.105666",
+    "checked_utc": "2026-09-30T05:41:29.270930+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "31",
+    "doi_user_supplied": "10.1108/hff-10-2024-0804",
+    "checked_utc": "2026-09-30T05:41:29.444158+00:00",
+    "http_status": 200,
+    "metadata_status": "METADATA_VERIFIED_CROSSREF",
+    "crossref_title": [
+      "Complex wave interactions in graded piezomagnetic materials: a gravity and flexomagnetic perspective"
+    ],
+    "crossref_journal": [
+      "International Journal of Numerical Methods for Heat &amp; Fluid Flow"
+    ],
+    "crossref_doi": "10.1108/hff-10-2024-0804",
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          4,
+          15
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2025,
+          4,
+          15
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2025,
+          4,
+          28
+        ]
+      ]
+    },
+    "volume": "35",
+    "issue": "4",
+    "page": "1459-1483",
+    "article_number": null,
+    "url": "https://doi.org/10.1108/hff-10-2024-0804",
+    "resource": {
+      "primary": {
+        "URL": "https://www.emerald.com/hff/article/35/4/1459/1240152/Complex-wave-interactions-in-graded-piezomagnetic"
+      }
+    },
+    "links": [
+      {
+        "URL": "https://www.emerald.com/insight/content/doi/10.1108/HFF-10-2024-0804/full/xml",
+        "content-type": "application/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://www.emerald.com/hff/article-pdf/35/4/1459/10373276/hff-10-2024-0804.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "syndication"
+      },
+      {
+        "URL": "https://www.emerald.com/hff/article-pdf/35/4/1459/10373276/hff-10-2024-0804.pdf",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "abstract": "<jats:sec>\n                    <jats:title>Purpose</jats:title>\n                    <jats:p>This paper aims to analyze the reflection characteristics of coupled waves in a functionally graded piezomagnetic medium, considering gravitational effects. The objective is to understand how flexomagnetism, strain gradients and gravity influence wave behaviors.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Design/methodology/approach</jats:title>\n                    <jats:p>The study incorporates flexomagnetic effects, gravity and micro-inertia into the constitutive and governing equations to develop a comprehensive model for wave propagation. A secular equation for wave motion is derived, and the behavior of five distinct reflected coupled waves is analyzed, specifically focusing on their energy ratios. Numerical solutions validate energy conservation, and graphs illustrate wave behavior variations with incidence angle.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Findings</jats:title>\n                    <jats:p>Results demonstrate that gravity and functional grading significantly impact energy distribution in wave reflections, altering the dynamics of wave dispersion and energy ratios. Functional grading and gravitational effects introduce complexity in wave reflection, providing insights into energy redistribution.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Originality/value</jats:title>\n                    <jats:p>This study offers a novel approach by integrating flexomagnetism, strain gradients and gravitational effects into wave propagation models for functionally graded piezomagnetic materials, providing unique insights into wave reflection and energy distribution under complex conditions.</jats:p>\n                  </jats:sec>",
+    "relation": {},
+    "update_to": null,
+    "authors": [
+      {
+        "given": "Sayantan",
+        "family": "Guha",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Shiksha ‘O’ Anusandhan University Department of Computer Science and Engineering, Centre for Data Science, Institute of Technical Education and Research, , Bhubaneswar,",
+            "place": [
+              "India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Gurugram University Department of Mathematics, , Gurugram,",
+            "place": [
+              "India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Mahargha",
+        "family": "Biswas",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Shiksha ‘O’ Anusandhan University Centre for Artificial Intelligence and Machine Learning, Institute of Technical Education and Research, , Bhubaneswar,",
+            "place": [
+              "India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "A.K.",
+        "family": "Singh",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Indian Institute of Technology (ISM) Department of Mathematics and Computing, , Dhanbad,",
+            "place": [
+              "India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "M.S.",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Indira Gandhi University Meerpur Department of Mathematics, , Meerpur,",
+            "place": [
+              "India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper_id": "32",
+    "doi_user_supplied": "10.47974/jios-1608",
+    "checked_utc": "2026-09-30T05:41:29.465287+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "33",
+    "doi_user_supplied": "10.1080/01495739.2024.2441967",
+    "checked_utc": "2026-09-30T05:41:29.475924+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "34",
+    "doi_user_supplied": "10.1108/hff-04-2025-0254",
+    "checked_utc": "2026-09-30T05:41:29.482093+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "35",
+    "doi_user_supplied": "10.1108/hff-06-2025-0411",
+    "checked_utc": "2026-09-30T05:41:29.484625+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "36",
+    "doi_user_supplied": "10.1080/15376494.2024.2440131",
+    "checked_utc": "2026-09-30T05:41:29.672389+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "37",
+    "doi_user_supplied": "10.1080/15376494.2025.2516213",
+    "checked_utc": "2026-09-30T05:41:29.674759+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "38",
+    "doi_user_supplied": "10.1016/j.euromechsol.2025.105786",
+    "checked_utc": "2026-09-30T05:41:29.692154+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "39",
+    "doi_user_supplied": "10.1016/j.apm.2025.116393",
+    "checked_utc": "2026-09-30T05:41:29.695391+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "40",
+    "doi_user_supplied": "10.1038/s41598-025-34351-2",
+    "checked_utc": "2026-09-30T05:41:29.697106+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "41",
+    "doi_user_supplied": "10.1080/15376494.2024.2440131",
+    "checked_utc": "2026-09-30T05:41:29.887246+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "42",
+    "doi_user_supplied": "10.1016/j.apm.2026.116904",
+    "checked_utc": "2026-09-30T05:41:29.889588+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "43",
+    "doi_user_supplied": "10.1142/s0219455426420150",
+    "checked_utc": "2026-09-30T05:41:29.908170+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "44",
+    "doi_user_supplied": "10.1007/s10999-026-09892-7",
+    "checked_utc": "2026-09-30T05:41:29.910758+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "45",
+    "doi_user_supplied": "10.1007/s00161-026-01472-6",
+    "checked_utc": "2026-09-30T05:41:29.914534+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "46",
+    "doi_user_supplied": "10.1038/s41598-026-46812-3",
+    "checked_utc": "2026-09-30T05:41:30.100223+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "47",
+    "doi_user_supplied": "10.1016/j.jppr.2026.116904",
+    "checked_utc": "2026-09-30T05:41:30.110449+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  },
+  {
+    "paper_id": "48",
+    "doi_user_supplied": "10.1108/hff-11-2025-0930",
+    "checked_utc": "2026-09-30T05:41:30.120163+00:00",
+    "http_status": 429,
+    "metadata_status": "REQUIRES_VERIFICATION"
+  }
+]

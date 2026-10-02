@@ -1,0 +1,2942 @@
+{
+  "Vipin Research Papers": [
+    [
+      {
+        "coordinate": "A1",
+        "value": "Sr. No."
+      },
+      {
+        "coordinate": "B1",
+        "value": "Title of the Paper"
+      },
+      {
+        "coordinate": "C1",
+        "value": "Authors"
+      },
+      {
+        "coordinate": "D1",
+        "value": "Journal Name"
+      },
+      {
+        "coordinate": "E1",
+        "value": "Vol."
+      },
+      {
+        "coordinate": "F1",
+        "value": "Issue"
+      },
+      {
+        "coordinate": "G1",
+        "value": "Page No."
+      },
+      {
+        "coordinate": "H1",
+        "value": "Indexing"
+      },
+      {
+        "coordinate": "I1",
+        "value": "Impact Factor"
+      },
+      {
+        "coordinate": "J1",
+        "value": "Year of Publication"
+      },
+      {
+        "coordinate": "K1",
+        "value": "ISSN"
+      },
+      {
+        "coordinate": "L1",
+        "value": "URL Link to Website of the Journal"
+      },
+      {
+        "coordinate": "M1",
+        "value": "Link to Article"
+      },
+      {
+        "coordinate": "N1",
+        "value": "Affiliation"
+      }
+    ],
+    [
+      {
+        "coordinate": "A2",
+        "value": "1"
+      },
+      {
+        "coordinate": "B2",
+        "value": "Generalized plane waves in a rotating thermoelastic double porous solid"
+      },
+      {
+        "coordinate": "C2",
+        "value": "Pathania, Vijayata; Kumar, Rajesh; Gupta, Vipin; Barak, MS"
+      },
+      {
+        "coordinate": "D2",
+        "value": "International Journal of Applied Mechanics and Engineering"
+      },
+      {
+        "coordinate": "E2",
+        "value": "27"
+      },
+      {
+        "coordinate": "F2",
+        "value": "4"
+      },
+      {
+        "coordinate": "G2",
+        "value": "138-154"
+      },
+      {
+        "coordinate": "H2",
+        "value": "WOS"
+      },
+      {
+        "coordinate": "I2",
+        "value": "-"
+      },
+      {
+        "coordinate": "J2",
+        "value": "2022"
+      },
+      {
+        "coordinate": "K2",
+        "value": "2353-9003"
+      },
+      {
+        "coordinate": "L2",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.2478/IJAME-2022-0055"
+      },
+      {
+        "coordinate": "M2",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1AcpSriIgtsNRiDMtz_IZHqRhzptgbl70/view?usp=sharing"
+      },
+      {
+        "coordinate": "N2",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A3",
+        "value": "2"
+      },
+      {
+        "coordinate": "B3",
+        "value": "Behavior of higher-order MDD on energy ratios at the interface of thermoelastic and piezothermoelastic mediums"
+      },
+      {
+        "coordinate": "C3",
+        "value": "Barak, MS; Ahmad, Hijaz; Kumar, Rajesh; Kumar, Rajneesh; Gupta, Vipin; Awwad, Fuad A; Ismail, Emad AA"
+      },
+      {
+        "coordinate": "D3",
+        "value": "Scientific Reports"
+      },
+      {
+        "coordinate": "E3",
+        "value": "13"
+      },
+      {
+        "coordinate": "F3",
+        "value": "1"
+      },
+      {
+        "coordinate": "G3",
+        "value": "17170"
+      },
+      {
+        "coordinate": "H3",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I3",
+        "value": "4.9"
+      },
+      {
+        "coordinate": "J3",
+        "value": "2023"
+      },
+      {
+        "coordinate": "K3",
+        "value": "2045-2322"
+      },
+      {
+        "coordinate": "L3",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1038/s41598-023-44339-5"
+      },
+      {
+        "coordinate": "M3",
+        "value": "Link",
+        "hyperlink": "https://mjl.clarivate.com/search-results?issn=2045-2322&hide_exact_match_fl=true&utm_source=mjl&utm_medium=share-by-link&utm_campaign=search-results-share-this-journal"
+      },
+      {
+        "coordinate": "N3",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A4",
+        "value": "3"
+      },
+      {
+        "coordinate": "B4",
+        "value": "Analysis of waves at boundary surfaces at distinct media with nonlocal dual-phase-lag"
+      },
+      {
+        "coordinate": "C4",
+        "value": "Kumar, Rajesh; Gupta, Vipin; Pathania, Vijayata; Kumar, Rajneesh; Barak, MS"
+      },
+      {
+        "coordinate": "D4",
+        "value": "Proceedings of the National Academy of Sciences, India Section A: Physical Sciences"
+      },
+      {
+        "coordinate": "E4",
+        "value": "93"
+      },
+      {
+        "coordinate": "F4",
+        "value": "4"
+      },
+      {
+        "coordinate": "G4",
+        "value": "573-585"
+      },
+      {
+        "coordinate": "H4",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I4",
+        "value": "1.3"
+      },
+      {
+        "coordinate": "J4",
+        "value": "2023"
+      },
+      {
+        "coordinate": "K4",
+        "value": "2250-1762"
+      },
+      {
+        "coordinate": "L4",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1007/s40010-023-00850-y"
+      },
+      {
+        "coordinate": "M4",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1ktmA6eHsJQlJi0uky92yRjbydBWJ58jg/view?usp=sharing"
+      },
+      {
+        "coordinate": "N4",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A5",
+        "value": "4"
+      },
+      {
+        "coordinate": "B5",
+        "value": "Energy ratio response at the interface of elastic and dual-porous thermoelastic half-spaces"
+      },
+      {
+        "coordinate": "C5",
+        "value": "Kumar, Rajesh; Gupta, Vipin; Pathania, Vijayata; Barak, MS"
+      },
+      {
+        "coordinate": "D5",
+        "value": "Physica Scripta"
+      },
+      {
+        "coordinate": "E5",
+        "value": "98"
+      },
+      {
+        "coordinate": "F5",
+        "value": "11"
+      },
+      {
+        "coordinate": "G5",
+        "value": "115211"
+      },
+      {
+        "coordinate": "H5",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I5",
+        "value": "2.6"
+      },
+      {
+        "coordinate": "J5",
+        "value": "2023"
+      },
+      {
+        "coordinate": "K5",
+        "value": "1402-4896"
+      },
+      {
+        "coordinate": "L5",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1088/1402-4896/acfced"
+      },
+      {
+        "coordinate": "M5",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1Tp_AtifugZ_sEv31g-iOZ0KxR_w_WCN2/view?usp=sharing"
+      },
+      {
+        "coordinate": "N5",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A6",
+        "value": "5"
+      },
+      {
+        "coordinate": "B6",
+        "value": "Reflection at the free surface of the orthotropic piezo-hygro-thermo-elastic medium"
+      },
+      {
+        "coordinate": "C6",
+        "value": "Yadav, Anand Kumar; Barak, MS; Gupta, Vipin"
+      },
+      {
+        "coordinate": "D6",
+        "value": "International Journal of Numerical Methods for Heat & Fluid Flow"
+      },
+      {
+        "coordinate": "E6",
+        "value": "33"
+      },
+      {
+        "coordinate": "F6",
+        "value": "10"
+      },
+      {
+        "coordinate": "G6",
+        "value": "3535-3560"
+      },
+      {
+        "coordinate": "H6",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I6",
+        "value": "5.3"
+      },
+      {
+        "coordinate": "J6",
+        "value": "2023"
+      },
+      {
+        "coordinate": "K6",
+        "value": "1758-6585"
+      },
+      {
+        "coordinate": "L6",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1108/hff-04-2023-0208"
+      },
+      {
+        "coordinate": "M6",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1zDT_uLYWMX1qK8QpKESVtJePxNP8_XQP/view?usp=sharing"
+      },
+      {
+        "coordinate": "N6",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A7",
+        "value": "6"
+      },
+      {
+        "coordinate": "B7",
+        "value": "Energy analysis at the interface of piezo/thermoelastic half spaces"
+      },
+      {
+        "coordinate": "C7",
+        "value": "Gupta, Vipin; Kumar, Rajesh; Kumar, Rajneesh; Barak, MS"
+      },
+      {
+        "coordinate": "D7",
+        "value": "International Journal of Numerical Methods for Heat & Fluid Flow"
+      },
+      {
+        "coordinate": "E7",
+        "value": "33"
+      },
+      {
+        "coordinate": "F7",
+        "value": "6"
+      },
+      {
+        "coordinate": "G7",
+        "value": "2250-2277"
+      },
+      {
+        "coordinate": "H7",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I7",
+        "value": "5.3"
+      },
+      {
+        "coordinate": "J7",
+        "value": "2023"
+      },
+      {
+        "coordinate": "K7",
+        "value": "1758-6585"
+      },
+      {
+        "coordinate": "L7",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1108/hff-11-2022-0654"
+      },
+      {
+        "coordinate": "M7",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/10iUSykUvJxmGcyS_Kk22ezHd4j3gwisR/view?usp=sharing"
+      },
+      {
+        "coordinate": "N7",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A8",
+        "value": "7"
+      },
+      {
+        "coordinate": "B8",
+        "value": "The effect of memory and stiffness on energy ratios at the interface of distinct media"
+      },
+      {
+        "coordinate": "C8",
+        "value": "Barak, MS; Kumar, Rajesh; Kumar, Rajneesh; Gupta, Vipin"
+      },
+      {
+        "coordinate": "D8",
+        "value": "Multidiscipline Modeling in Materials and Structures"
+      },
+      {
+        "coordinate": "E8",
+        "value": "19"
+      },
+      {
+        "coordinate": "F8",
+        "value": "3"
+      },
+      {
+        "coordinate": "G8",
+        "value": "464-492"
+      },
+      {
+        "coordinate": "H8",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I8",
+        "value": "3.4"
+      },
+      {
+        "coordinate": "J8",
+        "value": "2023"
+      },
+      {
+        "coordinate": "K8",
+        "value": "1573-6113"
+      },
+      {
+        "coordinate": "L8",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1108/mmms-10-2022-0209"
+      },
+      {
+        "coordinate": "M8",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1WCaQFxO4xBWG5h70u0r38-u0ukkk8QDN/view?usp=sharing"
+      },
+      {
+        "coordinate": "N8",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A9",
+        "value": "8"
+      },
+      {
+        "coordinate": "B9",
+        "value": "Double porous thermoelastic waves in a homogeneous, isotropic solid with inviscid liquid"
+      },
+      {
+        "coordinate": "C9",
+        "value": "Pathania, Vijayata; Kumar, Rajesh; Gupta, Vipin; Barak, MS"
+      },
+      {
+        "coordinate": "D9",
+        "value": "Archive of Applied Mechanics"
+      },
+      {
+        "coordinate": "E9",
+        "value": "93"
+      },
+      {
+        "coordinate": "F9",
+        "value": "5"
+      },
+      {
+        "coordinate": "G9",
+        "value": "1943-1962"
+      },
+      {
+        "coordinate": "H9",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I9",
+        "value": "3.1"
+      },
+      {
+        "coordinate": "J9",
+        "value": "2023"
+      },
+      {
+        "coordinate": "K9",
+        "value": "1432-0681"
+      },
+      {
+        "coordinate": "L9",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1007/s00419-023-02364-w"
+      },
+      {
+        "coordinate": "M9",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1EbXdGrYF6b4siQQWZFUeNtbDRLQ4GccP/view?usp=sharing"
+      },
+      {
+        "coordinate": "N9",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A10",
+        "value": "9"
+      },
+      {
+        "coordinate": "B10",
+        "value": "Energy analysis at the boundary interface of elastic and piezothermoelastic half-spaces"
+      },
+      {
+        "coordinate": "C10",
+        "value": "Barak, MS; Kumar, Rajesh; Kumar, Rajneesh; Gupta, Vipin"
+      },
+      {
+        "coordinate": "D10",
+        "value": "Indian Journal of Physics"
+      },
+      {
+        "coordinate": "E10",
+        "value": "97"
+      },
+      {
+        "coordinate": "F10",
+        "value": "8"
+      },
+      {
+        "coordinate": "G10",
+        "value": "2369-2383"
+      },
+      {
+        "coordinate": "H10",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I10",
+        "value": "1.7"
+      },
+      {
+        "coordinate": "J10",
+        "value": "2023"
+      },
+      {
+        "coordinate": "K10",
+        "value": "0974-9845"
+      },
+      {
+        "coordinate": "L10",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1007/s12648-022-02568-w"
+      },
+      {
+        "coordinate": "M10",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1b5Y97Zct1S_Lwqsb-0P5-rsec37vrI1V/view?usp=sharing"
+      },
+      {
+        "coordinate": "N10",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A11",
+        "value": "10"
+      },
+      {
+        "coordinate": "B11",
+        "value": "Reflection/transmission of plane waves at the interface of an ideal fluid and nonlocal piezothermoelastic medium"
+      },
+      {
+        "coordinate": "C11",
+        "value": "Gupta, Vipin; Kumar, Rajesh; Kumar, Manjeet; Pathania, Vijayata; Barak, MS"
+      },
+      {
+        "coordinate": "D11",
+        "value": "International Journal of Numerical Methods for Heat & Fluid Flow"
+      },
+      {
+        "coordinate": "E11",
+        "value": "33"
+      },
+      {
+        "coordinate": "F11",
+        "value": "2"
+      },
+      {
+        "coordinate": "G11",
+        "value": "912-937"
+      },
+      {
+        "coordinate": "H11",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I11",
+        "value": "5.3"
+      },
+      {
+        "coordinate": "J11",
+        "value": "2023"
+      },
+      {
+        "coordinate": "K11",
+        "value": "1758-6585"
+      },
+      {
+        "coordinate": "L11",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1108/hff-04-2022-0259"
+      },
+      {
+        "coordinate": "M11",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1pAOunofXy19t5kEMhRfFecsB2mvTgHL_/view?usp=sharing"
+      },
+      {
+        "coordinate": "N11",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A12",
+        "value": "11"
+      },
+      {
+        "coordinate": "B12",
+        "value": "Energy transfer at the interface of monoclinic piezothermoelastic and thermoelastic half spaces with MDD"
+      },
+      {
+        "coordinate": "C12",
+        "value": "Barak, MS; Kumar, Rajesh; Kumar, Rajneesh; Gupta, Vipin"
+      },
+      {
+        "coordinate": "D12",
+        "value": "Journal of Thermal Stresses"
+      },
+      {
+        "coordinate": "E12",
+        "value": "-"
+      },
+      {
+        "coordinate": "F12",
+        "value": "-"
+      },
+      {
+        "coordinate": "G12",
+        "value": "-"
+      },
+      {
+        "coordinate": "H12",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I12",
+        "value": "2.4"
+      },
+      {
+        "coordinate": "J12",
+        "value": "2023"
+      },
+      {
+        "coordinate": "K12",
+        "value": "1521-074X"
+      },
+      {
+        "coordinate": "L12",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1080/01495739.2023.2253879"
+      },
+      {
+        "coordinate": "M12",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1pwNgWVMIKumTTg-Y2MQfmVtA0TLYdvHA/view?usp=sharing"
+      },
+      {
+        "coordinate": "N12",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A13",
+        "value": "12"
+      },
+      {
+        "coordinate": "B13",
+        "value": "Vibrational analysis of size-dependent thermo-piezo-photo-electric semiconductor medium under memory-dependent Moore Gibson Thompson photo-thermoelasticity theory"
+      },
+      {
+        "coordinate": "C13",
+        "value": "Gupta, Vipin; Barak, MS; Das, Soumik"
+      },
+      {
+        "coordinate": "D13",
+        "value": "Mechanics of Advanced Materials and Structures"
+      },
+      {
+        "coordinate": "E13",
+        "value": "31"
+      },
+      {
+        "coordinate": "F13",
+        "value": "28"
+      },
+      {
+        "coordinate": "G13",
+        "value": "10543-10559"
+      },
+      {
+        "coordinate": "H13",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I13",
+        "value": "3.6"
+      },
+      {
+        "coordinate": "J13",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K13",
+        "value": "1537-6494"
+      },
+      {
+        "coordinate": "L13",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1080/15376494.2023.2291804"
+      },
+      {
+        "coordinate": "M13",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1ktmA6eHsJQlJi0uky92yRjbydBWJ58jg/view?usp=sharing"
+      },
+      {
+        "coordinate": "N13",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A14",
+        "value": "13"
+      },
+      {
+        "coordinate": "B14",
+        "value": "Fractional and MDD analysis of piezo-photo-thermo-elastic waves in semiconductor medium"
+      },
+      {
+        "coordinate": "C14",
+        "value": "Gupta, Vipin; Barak, MS"
+      },
+      {
+        "coordinate": "D14",
+        "value": "Mechanics of Advanced Materials and Structures"
+      },
+      {
+        "coordinate": "E14",
+        "value": "31"
+      },
+      {
+        "coordinate": "F14",
+        "value": "25"
+      },
+      {
+        "coordinate": "G14",
+        "value": "6787-6802"
+      },
+      {
+        "coordinate": "H14",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I14",
+        "value": "3.6"
+      },
+      {
+        "coordinate": "J14",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K14",
+        "value": "1537-6494"
+      },
+      {
+        "coordinate": "L14",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1080/15376494.2023.2238201"
+      },
+      {
+        "coordinate": "M14",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1ctPE9z-n0EN0IB-K50AvnLlb382Kg5wn/view?usp=sharing"
+      },
+      {
+        "coordinate": "N14",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A15",
+        "value": "14"
+      },
+      {
+        "coordinate": "B15",
+        "value": "Size-dependent effect on the interaction of surface waves in micropolar thermoelastic medium with dual pore connectivity"
+      },
+      {
+        "coordinate": "C15",
+        "value": "Das, Soumik; Dutta, Rachaita; Craciun, Eduard-Marius; Sur, Abhik; Barak, MS; Gupta, Vipin"
+      },
+      {
+        "coordinate": "D15",
+        "value": "Physica Scripta"
+      },
+      {
+        "coordinate": "E15",
+        "value": "99"
+      },
+      {
+        "coordinate": "F15",
+        "value": "6"
+      },
+      {
+        "coordinate": "G15",
+        "value": "065232"
+      },
+      {
+        "coordinate": "H15",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I15",
+        "value": "2.6"
+      },
+      {
+        "coordinate": "J15",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K15",
+        "value": "1402-4896"
+      },
+      {
+        "coordinate": "L15",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1088/1402-4896/ad4829"
+      },
+      {
+        "coordinate": "M15",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/13LcFsYcC1eYen1S5BJXmHpLRl-2SgxTt/view?usp=sharing"
+      },
+      {
+        "coordinate": "N15",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A16",
+        "value": "15"
+      },
+      {
+        "coordinate": "B16",
+        "value": "Response of Moisture and Temperature Diffusivity on an Orthotropic Hygro-thermo-piezo-elastic Medium"
+      },
+      {
+        "coordinate": "C16",
+        "value": "Gupta, Vipin; Barak, MS; Ahmad, Hijaz; Das, Soumik; Almohsen, Bandar"
+      },
+      {
+        "coordinate": "D16",
+        "value": "Journal of Nonlinear Mathematical Physics"
+      },
+      {
+        "coordinate": "E16",
+        "value": "31"
+      },
+      {
+        "coordinate": "F16",
+        "value": "1"
+      },
+      {
+        "coordinate": "G16",
+        "value": "-"
+      },
+      {
+        "coordinate": "H16",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I16",
+        "value": "2.0"
+      },
+      {
+        "coordinate": "J16",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K16",
+        "value": "1776-0852"
+      },
+      {
+        "coordinate": "L16",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1007/s44198-024-00187-z"
+      },
+      {
+        "coordinate": "M16",
+        "value": "Link",
+        "hyperlink": "https://link.springer.com/content/pdf/10.1007/s44198-024-00187-z.pdf"
+      },
+      {
+        "coordinate": "N16",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A17",
+        "value": "16"
+      },
+      {
+        "coordinate": "B17",
+        "value": "Response of stiffness and viscosity on the energy ratios at piezo-visco-thermo-elastic medium"
+      },
+      {
+        "coordinate": "C17",
+        "value": "Kumar, Sandeep, Kumari, Neelam, Gupta, Vipin, Barak, M.S."
+      },
+      {
+        "coordinate": "D17",
+        "value": "International Journal of Applied Mechanics and Engineering"
+      },
+      {
+        "coordinate": "E17",
+        "value": "29"
+      },
+      {
+        "coordinate": "F17",
+        "value": "1"
+      },
+      {
+        "coordinate": "G17",
+        "value": "54-72"
+      },
+      {
+        "coordinate": "H17",
+        "value": "WOS"
+      },
+      {
+        "coordinate": "I17",
+        "value": "-"
+      },
+      {
+        "coordinate": "J17",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K17",
+        "value": "2353-9003"
+      },
+      {
+        "coordinate": "L17",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.59441/ijame/174992"
+      },
+      {
+        "coordinate": "M17",
+        "value": "Link",
+        "hyperlink": "https://zbc.uz.zgora.pl/Content/78855/Volume29_Issue1_paper_04%20IJAME-02511.pdf"
+      },
+      {
+        "coordinate": "N17",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A18",
+        "value": "17"
+      },
+      {
+        "coordinate": "B18",
+        "value": "Impact of memory-dependent heat transfer on Rayleigh waves propagation in nonlocal piezo-thermo-elastic medium with voids"
+      },
+      {
+        "coordinate": "C18",
+        "value": "Gupta, Vipin; MS, Barak; Das, Soumik"
+      },
+      {
+        "coordinate": "D18",
+        "value": "International Journal of Numerical Methods for Heat & Fluid Flow"
+      },
+      {
+        "coordinate": "E18",
+        "value": "34"
+      },
+      {
+        "coordinate": "F18",
+        "value": "4"
+      },
+      {
+        "coordinate": "G18",
+        "value": "1902-1926"
+      },
+      {
+        "coordinate": "H18",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I18",
+        "value": "5.3"
+      },
+      {
+        "coordinate": "J18",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K18",
+        "value": "1758-6585"
+      },
+      {
+        "coordinate": "L18",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1108/hff-10-2023-0615"
+      },
+      {
+        "coordinate": "M18",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/19AHuai_FkMWOUmXGdUFrTyna0zCi4iaR/view?usp=sharing"
+      },
+      {
+        "coordinate": "N18",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A19",
+        "value": "18"
+      },
+      {
+        "coordinate": "B19",
+        "value": "The effect of viscosity and hyperbolic two-temperature on energy ratios in elastic and piezoviscothermoelastic half-spaces"
+      },
+      {
+        "coordinate": "C19",
+        "value": "Kumar, Sandeep; Barak, MS; Kumari, Neelam; Gupta, Vipin; Ahmad, Hijaz"
+      },
+      {
+        "coordinate": "D19",
+        "value": "Mechanics of Time-Dependent Materials"
+      },
+      {
+        "coordinate": "E19",
+        "value": "28"
+      },
+      {
+        "coordinate": "F19",
+        "value": "3"
+      },
+      {
+        "coordinate": "G19",
+        "value": "937-957"
+      },
+      {
+        "coordinate": "H19",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I19",
+        "value": "4.5"
+      },
+      {
+        "coordinate": "J19",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K19",
+        "value": "1573-2738"
+      },
+      {
+        "coordinate": "L19",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1007/s11043-023-09657-1"
+      },
+      {
+        "coordinate": "M19",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/19ap-zwQE9_7Q0-rIKXbX5w40Klzdo4Ag/view?usp=sharing"
+      },
+      {
+        "coordinate": "N19",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A20",
+        "value": "19"
+      },
+      {
+        "coordinate": "B20",
+        "value": "Reflection of quasi plasma wave in photo-piezo semiconductor medium with distinct higher order fractional derivative two temperature models"
+      },
+      {
+        "coordinate": "C20",
+        "value": "Gupta, Vipin; Barak, MS; Ahmad, Hijaz"
+      },
+      {
+        "coordinate": "D20",
+        "value": "Physica Scripta"
+      },
+      {
+        "coordinate": "E20",
+        "value": "99"
+      },
+      {
+        "coordinate": "F20",
+        "value": "2"
+      },
+      {
+        "coordinate": "G20",
+        "value": "025515"
+      },
+      {
+        "coordinate": "H20",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I20",
+        "value": "2.6"
+      },
+      {
+        "coordinate": "J20",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K20",
+        "value": "1402-4896"
+      },
+      {
+        "coordinate": "L20",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1088/1402-4896/ad1972"
+      },
+      {
+        "coordinate": "M20",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1cSZPwfGs7-NeO1am6Oe5huiQYkgzU5g7/view?usp=sharing"
+      },
+      {
+        "coordinate": "N20",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A21",
+        "value": "20"
+      },
+      {
+        "coordinate": "B21",
+        "value": "Thermoelastic modeling with dual porosity interacting with an inviscid liquid"
+      },
+      {
+        "coordinate": "C21",
+        "value": "Kumar, Rajesh; Pathania, Vijayata; Gupta, Vipin; Barak, MS; Ahmad, Hijaz"
+      },
+      {
+        "coordinate": "D21",
+        "value": "Journal of Applied and Computational Mechanics"
+      },
+      {
+        "coordinate": "E21",
+        "value": "10"
+      },
+      {
+        "coordinate": "F21",
+        "value": "1"
+      },
+      {
+        "coordinate": "G21",
+        "value": "111-124"
+      },
+      {
+        "coordinate": "H21",
+        "value": "Scopus"
+      },
+      {
+        "coordinate": "I21",
+        "value": "3.5"
+      },
+      {
+        "coordinate": "J21",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K21",
+        "value": "2383-4536"
+      },
+      {
+        "coordinate": "L21",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.22055/jacm.2023.44488.4221"
+      },
+      {
+        "coordinate": "M21",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/15P68N39hch7w-eBNi_TgskfBeN5mcfK8/view?usp=sharing"
+      },
+      {
+        "coordinate": "N21",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A22",
+        "value": "21"
+      },
+      {
+        "coordinate": "B22",
+        "value": "Photo-thermo-piezo-elastic waves in semiconductor medium subject to distinct two temperature models with higher order memory dependencies"
+      },
+      {
+        "coordinate": "C22",
+        "value": "Gupta, Vipin; Barak, MS"
+      },
+      {
+        "coordinate": "D22",
+        "value": "International Journal of Numerical Methods for Heat & Fluid Flow"
+      },
+      {
+        "coordinate": "E22",
+        "value": "34"
+      },
+      {
+        "coordinate": "F22",
+        "value": "1"
+      },
+      {
+        "coordinate": "G22",
+        "value": "84-108"
+      },
+      {
+        "coordinate": "H22",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I22",
+        "value": "5.3"
+      },
+      {
+        "coordinate": "J22",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K22",
+        "value": "1758-6585"
+      },
+      {
+        "coordinate": "L22",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1108/hff-07-2023-0380"
+      },
+      {
+        "coordinate": "M22",
+        "value": "Link",
+        "hyperlink": "https://mjl.clarivate.com/search-results?issn=0961-5539&hide_exact_match_fl=true&utm_source=mjl&utm_medium=share-by-link&utm_campaign=search-results-share-this-journal"
+      },
+      {
+        "coordinate": "N22",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A23",
+        "value": "22"
+      },
+      {
+        "coordinate": "B23",
+        "value": "Quasi-P wave through orthotropic piezo-thermoelastic materials subject to higher order fractional and memory-dependent derivatives"
+      },
+      {
+        "coordinate": "C23",
+        "value": "Gupta, Vipin; Barak, MS"
+      },
+      {
+        "coordinate": "D23",
+        "value": "Mechanics of Advanced Materials and Structures"
+      },
+      {
+        "coordinate": "E23",
+        "value": "31"
+      },
+      {
+        "coordinate": "F23",
+        "value": "22"
+      },
+      {
+        "coordinate": "G23",
+        "value": "5532-5546"
+      },
+      {
+        "coordinate": "H23",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I23",
+        "value": "3.6"
+      },
+      {
+        "coordinate": "J23",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K23",
+        "value": "1537-6494"
+      },
+      {
+        "coordinate": "L23",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1080/15376494.2023.2217420"
+      },
+      {
+        "coordinate": "M23",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1ISCkNzLeZPi8kXc992OYtQRT1pYK_pxj/view?usp=sharing"
+      },
+      {
+        "coordinate": "N23",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A24",
+        "value": "23"
+      },
+      {
+        "coordinate": "B24",
+        "value": "Memory-dependent and fractional order analysis of the initially stressed piezo-thermoelastic medium"
+      },
+      {
+        "coordinate": "C24",
+        "value": "Barak, MS; Gupta, Vipin"
+      },
+      {
+        "coordinate": "D24",
+        "value": "Mechanics of Advanced Materials and Structures"
+      },
+      {
+        "coordinate": "E24",
+        "value": "31"
+      },
+      {
+        "coordinate": "F24",
+        "value": "20"
+      },
+      {
+        "coordinate": "G24",
+        "value": "5013-5027"
+      },
+      {
+        "coordinate": "H24",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I24",
+        "value": "3.6"
+      },
+      {
+        "coordinate": "J24",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K24",
+        "value": "1537-6494"
+      },
+      {
+        "coordinate": "L24",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1080/15376494.2023.2211065"
+      },
+      {
+        "coordinate": "M24",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1y1gO6Ln2cQaxCssTtBy0QHrRohkSsWKh/view?usp=sharing"
+      },
+      {
+        "coordinate": "N24",
+        "value": "Other"
+      }
+    ],
+    [
+      {
+        "coordinate": "A25",
+        "value": "24"
+      },
+      {
+        "coordinate": "B25",
+        "value": "Three-phase-lag analysis of transversely isotropic double porous thermoelastic waves with liquid medium"
+      },
+      {
+        "coordinate": "C25",
+        "value": "Pathania, Vijayata; Kumar, Rajesh; Barak, MS; Gupta, Vipin"
+      },
+      {
+        "coordinate": "D25",
+        "value": "Physica Scripta"
+      },
+      {
+        "coordinate": "E25",
+        "value": "99"
+      },
+      {
+        "coordinate": "F25",
+        "value": "9"
+      },
+      {
+        "coordinate": "G25",
+        "value": "095958"
+      },
+      {
+        "coordinate": "H25",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I25",
+        "value": "2.6"
+      },
+      {
+        "coordinate": "J25",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K25",
+        "value": "1402-4896"
+      },
+      {
+        "coordinate": "L25",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1088/1402-4896/ad6ae7"
+      },
+      {
+        "coordinate": "M25",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1zlZ8pOZ_GxBr8HTk4s0JfpDLBLNn4nb3/view?usp=sharing"
+      },
+      {
+        "coordinate": "N25",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A26",
+        "value": "25"
+      },
+      {
+        "coordinate": "B26",
+        "value": "Comparative analysis of double and single porosity effects on SH-wave induced vibrations in periodic porous lattices"
+      },
+      {
+        "coordinate": "C26",
+        "value": "Dutta, Rachaita; Das, Soumik; Ahmad, Hijaz; Meghana, AR; Gupta, Vipin"
+      },
+      {
+        "coordinate": "D26",
+        "value": "Soil Dynamics and Earthquake Engineering"
+      },
+      {
+        "coordinate": "E26",
+        "value": "186"
+      },
+      {
+        "coordinate": "F26",
+        "value": "-"
+      },
+      {
+        "coordinate": "G26",
+        "value": "108919"
+      },
+      {
+        "coordinate": "H26",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I26",
+        "value": "5.1"
+      },
+      {
+        "coordinate": "J26",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K26",
+        "value": "1879-341X"
+      },
+      {
+        "coordinate": "L26",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1016/j.soildyn.2024.108919"
+      },
+      {
+        "coordinate": "M26",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1pHMqcGf3Uem1mE3LYU7UWwdEy5c1Jau5/view?usp=sharing"
+      },
+      {
+        "coordinate": "N26",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A27",
+        "value": "26"
+      },
+      {
+        "coordinate": "B27",
+        "value": "Rayleigh wave in nonlocal piezo-thermo-electric semiconductor medium with fractional MGT model"
+      },
+      {
+        "coordinate": "C27",
+        "value": "Gupta, Vipin; Ahmad, Hijaz; Barak, MS; Das, Soumik"
+      },
+      {
+        "coordinate": "D27",
+        "value": "Waves in Random and Complex Media"
+      },
+      {
+        "coordinate": "E27",
+        "value": "-"
+      },
+      {
+        "coordinate": "F27",
+        "value": "-"
+      },
+      {
+        "coordinate": "G27",
+        "value": "1-24"
+      },
+      {
+        "coordinate": "H27",
+        "value": "Scopus"
+      },
+      {
+        "coordinate": "I27",
+        "value": "3.1"
+      },
+      {
+        "coordinate": "J27",
+        "value": "2024"
+      },
+      {
+        "coordinate": "K27",
+        "value": "1745-5030"
+      },
+      {
+        "coordinate": "L27",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1080/17455030.2024.2379958"
+      },
+      {
+        "coordinate": "M27",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1gKf4qdUjPSUKnel5dP2kuUkQ-c1qL_xh/view?usp=sharing"
+      },
+      {
+        "coordinate": "N27",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A28",
+        "value": "27"
+      },
+      {
+        "coordinate": "B28",
+        "value": "Rheology-dependent surface wave characteristics in an advanced geomaterial flexoelectric plate with viscoelastic coating"
+      },
+      {
+        "coordinate": "C28",
+        "value": "Singhal, Abhinav; Tiwari, Rakhi; Gupta, Vipin; Dutta, Rachaita; Ahmad, Hijaz; Das, Soumik"
+      },
+      {
+        "coordinate": "D28",
+        "value": "Physica Scripta"
+      },
+      {
+        "coordinate": "E28",
+        "value": "100"
+      },
+      {
+        "coordinate": "F28",
+        "value": "1"
+      },
+      {
+        "coordinate": "G28",
+        "value": "015232"
+      },
+      {
+        "coordinate": "H28",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I28",
+        "value": "2.6"
+      },
+      {
+        "coordinate": "J28",
+        "value": "2025"
+      },
+      {
+        "coordinate": "K28",
+        "value": "1402-4896"
+      },
+      {
+        "coordinate": "L28",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1088/1402-4896/ad97eb"
+      },
+      {
+        "coordinate": "M28",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1OsHF2vXoEwQVpzP1fU-OAzEe-oDHnlVA/view?usp=sharing"
+      },
+      {
+        "coordinate": "N28",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A29",
+        "value": "28"
+      },
+      {
+        "coordinate": "B29",
+        "value": "Fractional and memory effects on wave reflection in pre-stressed microstructured solids with dual porosity"
+      },
+      {
+        "coordinate": "C29",
+        "value": "Das, Soumik; Dutta, Rachaita; Gupta, Vipin; Singhal, Abhinav; Barak, MS; Almohsen, Bandar"
+      },
+      {
+        "coordinate": "D29",
+        "value": "European Journal of Mechanics - A/Solids"
+      },
+      {
+        "coordinate": "E29",
+        "value": "111"
+      },
+      {
+        "coordinate": "F29",
+        "value": "-"
+      },
+      {
+        "coordinate": "G29",
+        "value": "105565"
+      },
+      {
+        "coordinate": "H29",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I29",
+        "value": "4.7"
+      },
+      {
+        "coordinate": "J29",
+        "value": "2025"
+      },
+      {
+        "coordinate": "K29",
+        "value": "1873-7285"
+      },
+      {
+        "coordinate": "L29",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1016/j.euromechsol.2024.105565"
+      },
+      {
+        "coordinate": "M29",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1E8C00YzI0D2I5_6PjKq1nLwREJeq9XgL/view?usp=sharing"
+      },
+      {
+        "coordinate": "N29",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A30",
+        "value": "29"
+      },
+      {
+        "coordinate": "B30",
+        "value": "Effects of layer imperfections and material gradation on circumferential shear horizontal waves in cylindrical piezoelectric composite structure"
+      },
+      {
+        "coordinate": "C30",
+        "value": "Gupta, Vipin; Kumawat, Sunita; Vishwakarma, Sumit Kumar; Barak, MS; Das, Soumik"
+      },
+      {
+        "coordinate": "D30",
+        "value": "Composite Structures"
+      },
+      {
+        "coordinate": "E30",
+        "value": "359"
+      },
+      {
+        "coordinate": "F30",
+        "value": "-"
+      },
+      {
+        "coordinate": "G30",
+        "value": "118997"
+      },
+      {
+        "coordinate": "H30",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I30",
+        "value": "7.8"
+      },
+      {
+        "coordinate": "J30",
+        "value": "2025"
+      },
+      {
+        "coordinate": "K30",
+        "value": "1879-1085"
+      },
+      {
+        "coordinate": "L30",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1016/j.compstruct.2025.118997"
+      },
+      {
+        "coordinate": "M30",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/11n3K8zZc3Gj3W0AxA3AJTC-1QmGDODqZ/view?usp=sharing"
+      },
+      {
+        "coordinate": "N30",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A31",
+        "value": "30"
+      },
+      {
+        "coordinate": "B31",
+        "value": "Shear Waves Induced Vibration in a Size-dependent Loosely-bonded Viscoelastic–Flexoelectric Material Structure Subjected to Fractional Derivative"
+      },
+      {
+        "coordinate": "C31",
+        "value": "Meghana, AR; Dutta, Rachaita; Gupta, Vipin; Das, Soumik; Singhal, Abhinav; Sur, Abhik; Almohsen, Bandar"
+      },
+      {
+        "coordinate": "D31",
+        "value": "European Journal of Mechanics - A/Solids"
+      },
+      {
+        "coordinate": "E31",
+        "value": "112"
+      },
+      {
+        "coordinate": "F31",
+        "value": "-"
+      },
+      {
+        "coordinate": "G31",
+        "value": "105666"
+      },
+      {
+        "coordinate": "H31",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I31",
+        "value": "4.7"
+      },
+      {
+        "coordinate": "J31",
+        "value": "2025"
+      },
+      {
+        "coordinate": "K31",
+        "value": "1873-7285"
+      },
+      {
+        "coordinate": "L31",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1016/j.euromechsol.2025.105666"
+      },
+      {
+        "coordinate": "M31",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1GzKthF5__90M0XY7c4fGFaiMeVMjaRoD/view?usp=sharing"
+      },
+      {
+        "coordinate": "N31",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A32",
+        "value": "31"
+      },
+      {
+        "coordinate": "B32",
+        "value": "Complex wave interactions in graded piezomagnetic materials: a gravity and flexomagnetic perspective"
+      },
+      {
+        "coordinate": "C32",
+        "value": "Guha, Sayantan; Gupta, Vipin; Biswas, Mahargha; Singh, AK; Barak, MS"
+      },
+      {
+        "coordinate": "D32",
+        "value": "International Journal of Numerical Methods for Heat & Fluid Flow"
+      },
+      {
+        "coordinate": "E32",
+        "value": "35"
+      },
+      {
+        "coordinate": "F32",
+        "value": "4"
+      },
+      {
+        "coordinate": "G32",
+        "value": "1459-1483"
+      },
+      {
+        "coordinate": "H32",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I32",
+        "value": "5.3"
+      },
+      {
+        "coordinate": "J32",
+        "value": "2025"
+      },
+      {
+        "coordinate": "K32",
+        "value": "1758-6585"
+      },
+      {
+        "coordinate": "L32",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1108/hff-10-2024-0804"
+      },
+      {
+        "coordinate": "M32",
+        "value": "Link",
+        "hyperlink": "https://mjl.clarivate.com/search-results?issn=0961-5539&hide_exact_match_fl=true&utm_source=mjl&utm_medium=share-by-link&utm_campaign=search-results-share-this-journal"
+      },
+      {
+        "coordinate": "N32",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A33",
+        "value": "32"
+      },
+      {
+        "coordinate": "B33",
+        "value": "Response of memory to the imperfect fluid–double porous non–local thermoelastic solid interface"
+      },
+      {
+        "coordinate": "C33",
+        "value": "Kumar, Rajesh; Gupta, Vipin; Pathania, Vijayata; Barak, MS"
+      },
+      {
+        "coordinate": "D33",
+        "value": "Journal of Information & Optimization Sciences"
+      },
+      {
+        "coordinate": "E33",
+        "value": "46"
+      },
+      {
+        "coordinate": "F33",
+        "value": "5"
+      },
+      {
+        "coordinate": "G33",
+        "value": "1479-1503"
+      },
+      {
+        "coordinate": "H33",
+        "value": "WOS"
+      },
+      {
+        "coordinate": "I33",
+        "value": "0.4"
+      },
+      {
+        "coordinate": "J33",
+        "value": "2025"
+      },
+      {
+        "coordinate": "K33",
+        "value": "2169-0103"
+      },
+      {
+        "coordinate": "L33",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.47974/jios-1608"
+      },
+      {
+        "coordinate": "M33",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1-ZF7eGaVlyCaE6hvbMcP7Ivm8nXVSCuh/view?usp=sharing"
+      },
+      {
+        "coordinate": "N33",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A34",
+        "value": "33"
+      },
+      {
+        "coordinate": "B34",
+        "value": "Response of double porous deformation on an initially stressed thermoelastic medium"
+      },
+      {
+        "coordinate": "C34",
+        "value": "Kumar, Rajesh; Gupta, Vipin; Barak, MS; Ahmad, Hijaz; Almohsen, Bandar; Pathania, Vijayata"
+      },
+      {
+        "coordinate": "D34",
+        "value": "Journal of Thermal Stresses"
+      },
+      {
+        "coordinate": "E34",
+        "value": "48"
+      },
+      {
+        "coordinate": "F34",
+        "value": "6"
+      },
+      {
+        "coordinate": "G34",
+        "value": "638-659"
+      },
+      {
+        "coordinate": "H34",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I34",
+        "value": "2.4"
+      },
+      {
+        "coordinate": "J34",
+        "value": "2025"
+      },
+      {
+        "coordinate": "K34",
+        "value": "1521-074X"
+      },
+      {
+        "coordinate": "L34",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1080/01495739.2024.2441967"
+      },
+      {
+        "coordinate": "M34",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1hbErIqUcp-VGX6L_THsI49Nn2LFnngEt/view?usp=sharing"
+      },
+      {
+        "coordinate": "N34",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A35",
+        "value": "34"
+      },
+      {
+        "coordinate": "B35",
+        "value": "Piezo-semiconductor-void interplay in the size-dependent dynamics of Rayleigh waves within the Moore– Gibson–Thompson framework"
+      },
+      {
+        "coordinate": "C35",
+        "value": "Gupta, Vipin; Awwad, Fuad A; Ismail, Emad AA; Ahmad, Hijaz; Das, Soumik"
+      },
+      {
+        "coordinate": "D35",
+        "value": "International Journal of Numerical Methods for Heat & Fluid Flow"
+      },
+      {
+        "coordinate": "E35",
+        "value": "35"
+      },
+      {
+        "coordinate": "F35",
+        "value": "9"
+      },
+      {
+        "coordinate": "G35",
+        "value": "3400-3428"
+      },
+      {
+        "coordinate": "H35",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I35",
+        "value": "5.3"
+      },
+      {
+        "coordinate": "J35",
+        "value": "2025"
+      },
+      {
+        "coordinate": "K35",
+        "value": "1758-6585"
+      },
+      {
+        "coordinate": "L35",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1108/hff-04-2025-0254"
+      },
+      {
+        "coordinate": "M35",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1Gf5Q863WbNQH6UoqqCEn0CVnCngv8s4O/view?usp=sharing"
+      },
+      {
+        "coordinate": "N35",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A36",
+        "value": "35"
+      },
+      {
+        "coordinate": "B36",
+        "value": "Coupled thermo-mechanical dynamics of rotating nano-beams with spatiotemporal nonlocality and higher-order memory-driven heat transfer"
+      },
+      {
+        "coordinate": "C36",
+        "value": "Sur, Abhik; Das, Soumik; Gupta, Vipin; Craciun, Eduard-Marius"
+      },
+      {
+        "coordinate": "D36",
+        "value": "International Journal of Numerical Methods for Heat & Fluid Flow"
+      },
+      {
+        "coordinate": "E36",
+        "value": "-"
+      },
+      {
+        "coordinate": "F36",
+        "value": "-"
+      },
+      {
+        "coordinate": "G36",
+        "value": "-"
+      },
+      {
+        "coordinate": "H36",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I36",
+        "value": "5.3"
+      },
+      {
+        "coordinate": "J36",
+        "value": "2025"
+      },
+      {
+        "coordinate": "K36",
+        "value": "1758-6585"
+      },
+      {
+        "coordinate": "L36",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1108/hff-06-2025-0411"
+      },
+      {
+        "coordinate": "M36",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/19QXZBcZRQsQKQ7jFps3u9YQutGO2MtSh/view?usp=sharing"
+      },
+      {
+        "coordinate": "N36",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A37",
+        "value": "36"
+      },
+      {
+        "coordinate": "B37",
+        "value": "Size-dependent analysis of surface wave in irregular fractured porous seabed subjected to fractional-order derivative"
+      },
+      {
+        "coordinate": "C37",
+        "value": "AR, Meghana; Dutta, Rachaita; Gupta, Vipin; Singhal, Abhinav; Craciun, Eduard-Marius; Das, Soumik"
+      },
+      {
+        "coordinate": "D37",
+        "value": "Mechanics of Advanced Materials and Structures"
+      },
+      {
+        "coordinate": "E37",
+        "value": "33"
+      },
+      {
+        "coordinate": "F37",
+        "value": "1"
+      },
+      {
+        "coordinate": "G37",
+        "value": "-"
+      },
+      {
+        "coordinate": "H37",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I37",
+        "value": "3.6"
+      },
+      {
+        "coordinate": "J37",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K37",
+        "value": "1537-6494"
+      },
+      {
+        "coordinate": "L37",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1080/15376494.2024.2440131"
+      },
+      {
+        "coordinate": "M37",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/11a3hDSdD9Ar6VUSZbNiNmLpKphVGyDt-/view?usp=sharing"
+      },
+      {
+        "coordinate": "N37",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A38",
+        "value": "37"
+      },
+      {
+        "coordinate": "B38",
+        "value": "Hydro-thermo-electromechanical response in a size-dependent porous piezoelectric medium under memory- dependent MGT theory"
+      },
+      {
+        "coordinate": "C38",
+        "value": "Das, Soumik; Sur, Abhik; Gupta, Vipin; Dutta, Rachaita; Singhal, Abhinav; Kumar, Pulkit"
+      },
+      {
+        "coordinate": "D38",
+        "value": "Mechanics of Advanced Materials and Structures"
+      },
+      {
+        "coordinate": "E38",
+        "value": "33"
+      },
+      {
+        "coordinate": "F38",
+        "value": "1"
+      },
+      {
+        "coordinate": "G38",
+        "value": "-"
+      },
+      {
+        "coordinate": "H38",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I38",
+        "value": "3.6"
+      },
+      {
+        "coordinate": "J38",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K38",
+        "value": "1537-6494"
+      },
+      {
+        "coordinate": "L38",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1080/15376494.2025.2516213"
+      },
+      {
+        "coordinate": "M38",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/13-y48vtkaaSl8CJZY49FRFIVD5nzkfHz/view?usp=sharing"
+      },
+      {
+        "coordinate": "N38",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A39",
+        "value": "38"
+      },
+      {
+        "coordinate": "B39",
+        "value": "Acoustic wave behavior in rotating functionally graded piezomagnetic media with impedance boundaries"
+      },
+      {
+        "coordinate": "C39",
+        "value": "S. Guha , V. Gupta, M. Biswas, M. Mahanty, B.P. Sarangi, A. Haty, S. Nain"
+      },
+      {
+        "coordinate": "D39",
+        "value": "European Journal of Mechanics - A/Solids"
+      },
+      {
+        "coordinate": "E39",
+        "value": "115"
+      },
+      {
+        "coordinate": "F39",
+        "value": "-"
+      },
+      {
+        "coordinate": "G39",
+        "value": "105786"
+      },
+      {
+        "coordinate": "H39",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I39",
+        "value": "4.7"
+      },
+      {
+        "coordinate": "J39",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K39",
+        "value": "1873-7285"
+      },
+      {
+        "coordinate": "L39",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1016/j.euromechsol.2025.105786"
+      },
+      {
+        "coordinate": "M39",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1yTIdNTZi_UX1ZiDi021cxqzJXllgRqPF/view?usp=sharing"
+      },
+      {
+        "coordinate": "N39",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A40",
+        "value": "39"
+      },
+      {
+        "coordinate": "B40",
+        "value": "Modeling SH-wave dynamics in a size-dependent poroelastic-flexomagnetic layered waveguide structure with parabolic interfacial discontinuity"
+      },
+      {
+        "coordinate": "C40",
+        "value": "Gupta, Vipin; Das, Soumik; Marin, Marin; Almohsen, Bandar; Dutta Rachaita"
+      },
+      {
+        "coordinate": "D40",
+        "value": "Applied Mathematical Modelling"
+      },
+      {
+        "coordinate": "E40",
+        "value": "150"
+      },
+      {
+        "coordinate": "F40",
+        "value": "-"
+      },
+      {
+        "coordinate": "G40",
+        "value": "116393"
+      },
+      {
+        "coordinate": "H40",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I40",
+        "value": "5.5"
+      },
+      {
+        "coordinate": "J40",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K40",
+        "value": "1872-8480"
+      },
+      {
+        "coordinate": "L40",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1016/j.apm.2025.116393"
+      },
+      {
+        "coordinate": "M40",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1zRHtQ1DQiGsyC9GUFTjTDiBcI70koMqV/view?usp=sharing"
+      },
+      {
+        "coordinate": "N40",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A41",
+        "value": "40"
+      },
+      {
+        "coordinate": "B41",
+        "value": "Frictional moving load-induced dynamic response of a porous piezoelectric micro/nano plate with superficial parabolic discontinuity"
+      },
+      {
+        "coordinate": "C41",
+        "value": "Meghana, AR; Das, Soumik; Dutta, Rachaita; Gupta, Vipin; Yaylacı, Murat; Almalki, Faisal Muteb K; Ghatasheh, Mohammad; Flah, Aymen"
+      },
+      {
+        "coordinate": "D41",
+        "value": "Scientific Reports"
+      },
+      {
+        "coordinate": "E41",
+        "value": "16"
+      },
+      {
+        "coordinate": "F41",
+        "value": "-"
+      },
+      {
+        "coordinate": "G41",
+        "value": "18073"
+      },
+      {
+        "coordinate": "H41",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I41",
+        "value": "4.9"
+      },
+      {
+        "coordinate": "J41",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K41",
+        "value": "2045-2322"
+      },
+      {
+        "coordinate": "L41",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1038/s41598-025-34351-2"
+      },
+      {
+        "coordinate": "M41",
+        "value": "Link",
+        "hyperlink": "https://www.nature.com/articles/s41598-025-34351-2"
+      },
+      {
+        "coordinate": "N41",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A42",
+        "value": "41"
+      },
+      {
+        "coordinate": "B42",
+        "value": "Size-dependent analysis of surface wave in irregular fractured porous seabed subjected to fractional-order derivative"
+      },
+      {
+        "coordinate": "C42",
+        "value": "AR, Meghana; Dutta, Rachaita; Gupta, Vipin; Singhal, Abhinav; Craciun, Eduard-Marius; Das, Soumik"
+      },
+      {
+        "coordinate": "D42",
+        "value": "Mechanics of Advanced Materials and Structures"
+      },
+      {
+        "coordinate": "E42",
+        "value": "33"
+      },
+      {
+        "coordinate": "F42",
+        "value": "1"
+      },
+      {
+        "coordinate": "G42",
+        "value": "2440131"
+      },
+      {
+        "coordinate": "H42",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I42",
+        "value": "3.6"
+      },
+      {
+        "coordinate": "J42",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K42",
+        "value": "1537-6494"
+      },
+      {
+        "coordinate": "L42",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1080/15376494.2024.2440131"
+      },
+      {
+        "coordinate": "M42",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1X6AbnHBWscPwhavyI74WJVpzT6kw2Kow/view?usp=sharing"
+      },
+      {
+        "coordinate": "N42",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A43",
+        "value": "42"
+      },
+      {
+        "coordinate": "B43",
+        "value": "Dynamic response of a loosely bonded viscoelastic/porous piezoelectric bilayer microplate to a frictional moving load over a parabolic discontinuity"
+      },
+      {
+        "coordinate": "C43",
+        "value": "Meghana, AR; Marin, Marin; Dutta, Rachaita; Gupta, Vipin; Sur, Abhik; Yaylacı, Murat; Das, Soumik"
+      },
+      {
+        "coordinate": "D43",
+        "value": "Applied Mathematical Modelling"
+      },
+      {
+        "coordinate": "E43",
+        "value": "157"
+      },
+      {
+        "coordinate": "F43",
+        "value": "-"
+      },
+      {
+        "coordinate": "G43",
+        "value": "116904"
+      },
+      {
+        "coordinate": "H43",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I43",
+        "value": "5.5"
+      },
+      {
+        "coordinate": "J43",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K43",
+        "value": "1872-8480"
+      },
+      {
+        "coordinate": "L43",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1016/j.apm.2026.116904"
+      },
+      {
+        "coordinate": "M43",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1rkr9frn-vLC06DKGrmtseUMClaB9deAM/view?usp=sharing"
+      },
+      {
+        "coordinate": "N43",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A44",
+        "value": "43"
+      },
+      {
+        "coordinate": "B44",
+        "value": "On the wave propagation and dynamic response of a spherical cavity in piezoelectric microstructures via Rabotnov kernel-based Moore-Gibson-Thompson thermoelasticity theory"
+      },
+      {
+        "coordinate": "C44",
+        "value": "Sur, Abhik; Gupta, Vipin; Singhal, Abhinav; Yaylaci, Murat; Das, Soumik"
+      },
+      {
+        "coordinate": "D44",
+        "value": "International Journal of Structural Stability and Dynamics"
+      },
+      {
+        "coordinate": "E44",
+        "value": "-"
+      },
+      {
+        "coordinate": "F44",
+        "value": "-"
+      },
+      {
+        "coordinate": "G44",
+        "value": "-"
+      },
+      {
+        "coordinate": "H44",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I44",
+        "value": "3.8"
+      },
+      {
+        "coordinate": "J44",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K44",
+        "value": "1793-6764"
+      },
+      {
+        "coordinate": "L44",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1142/s0219455426420150"
+      },
+      {
+        "coordinate": "M44",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/15r-siIXhjLwqIy0PRwJrFNd5F45Vi7dZ/view?usp=sharing"
+      },
+      {
+        "coordinate": "N44",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A45",
+        "value": "44"
+      },
+      {
+        "coordinate": "B45",
+        "value": "Klein–Gordon nonlocal dynamics of porous piezo-thermoelastic medium with surface irregularity under fractional-order modified LS model: S. Das et al"
+      },
+      {
+        "coordinate": "C45",
+        "value": "Das, Soumik; Gupta, Vipin; Dutta, Rachaita; Singhal, Abhinav; Peng, Wei; Sur, Abhik"
+      },
+      {
+        "coordinate": "D45",
+        "value": "International Journal of Mechanics and Materials in Design"
+      },
+      {
+        "coordinate": "E45",
+        "value": "22"
+      },
+      {
+        "coordinate": "F45",
+        "value": "2"
+      },
+      {
+        "coordinate": "G45",
+        "value": "77"
+      },
+      {
+        "coordinate": "H45",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I45",
+        "value": "4.7"
+      },
+      {
+        "coordinate": "J45",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K45",
+        "value": "1573-8841"
+      },
+      {
+        "coordinate": "L45",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1007/s10999-026-09892-7"
+      },
+      {
+        "coordinate": "M45",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/18wSq9Vy_VRuJNc_pS1pua2obYZ-_QyJo/view?usp=sharing"
+      },
+      {
+        "coordinate": "N45",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A46",
+        "value": "45"
+      },
+      {
+        "coordinate": "B46",
+        "value": "Heat map analysis of wave dynamics in nonlocal Kelvin–Voigt piezo-semiconductors under memory-dependent heat flux"
+      },
+      {
+        "coordinate": "C46",
+        "value": "Gupta, Vipin; Hussain, Syed Modassir; Yaylacı, Murat; Das, Soumik"
+      },
+      {
+        "coordinate": "D46",
+        "value": "Continuum Mechanics and Thermodynamics"
+      },
+      {
+        "coordinate": "E46",
+        "value": "38"
+      },
+      {
+        "coordinate": "F46",
+        "value": "-"
+      },
+      {
+        "coordinate": "G46",
+        "value": "41"
+      },
+      {
+        "coordinate": "H46",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I46",
+        "value": "3.0"
+      },
+      {
+        "coordinate": "J46",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K46",
+        "value": "1432-0959"
+      },
+      {
+        "coordinate": "L46",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1007/s00161-026-01472-6"
+      },
+      {
+        "coordinate": "M46",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1oU1s2Iyrg5hny2dtbU1Drr1kEewk_8ak/view?usp=sharing"
+      },
+      {
+        "coordinate": "N46",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A47",
+        "value": "46"
+      },
+      {
+        "coordinate": "B47",
+        "value": "Dynamic response of tri-layered functionally graded-viscoelastic-piezomagnetic cylindrical tunnel excited by circumferential shear horizontal waves"
+      },
+      {
+        "coordinate": "C47",
+        "value": "Gupta, Vipin; Flah, Aymen; Yaylacı, Murat; Sur, Abhik; Pergl, Ivo; Ghatasheh, Mohammad; Das, Soumik"
+      },
+      {
+        "coordinate": "D47",
+        "value": "Scientific Reports"
+      },
+      {
+        "coordinate": "E47",
+        "value": "16"
+      },
+      {
+        "coordinate": "F47",
+        "value": "1"
+      },
+      {
+        "coordinate": "G47",
+        "value": "18073"
+      },
+      {
+        "coordinate": "H47",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I47",
+        "value": "4.9"
+      },
+      {
+        "coordinate": "J47",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K47",
+        "value": "2045-2322"
+      },
+      {
+        "coordinate": "L47",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1038/s41598-026-46812-3"
+      },
+      {
+        "coordinate": "M47",
+        "value": "Link",
+        "hyperlink": "https://www.nature.com/articles/s41598-026-46812-3"
+      },
+      {
+        "coordinate": "N47",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A48",
+        "value": "47"
+      },
+      {
+        "coordinate": "B48",
+        "value": "Fractal geometry-based Klein-Gordon model for heat and mass transfer in a cylindrical cavity with variable thermal conductivity"
+      },
+      {
+        "coordinate": "C48",
+        "value": "Sur, Abhik; Das, Soumik; Gupta, Vipin; Peng, Wei; Ahmad, Hijaz; Radwan, Taha"
+      },
+      {
+        "coordinate": "D48",
+        "value": "Propulsion and Power Research"
+      },
+      {
+        "coordinate": "E48",
+        "value": "-"
+      },
+      {
+        "coordinate": "F48",
+        "value": "-"
+      },
+      {
+        "coordinate": "G48",
+        "value": "-"
+      },
+      {
+        "coordinate": "H48",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I48",
+        "value": "6.7"
+      },
+      {
+        "coordinate": "J48",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K48",
+        "value": "2212-540X"
+      },
+      {
+        "coordinate": "L48",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1016/j.jppr.2026.116904"
+      },
+      {
+        "coordinate": "M48",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1C_7oWqaQ_AyD6ZGgzgp9BPlHtO6jhy-M/view?usp=sharing"
+      },
+      {
+        "coordinate": "N48",
+        "value": "Gurugram University"
+      }
+    ],
+    [
+      {
+        "coordinate": "A49",
+        "value": "48"
+      },
+      {
+        "coordinate": "B49",
+        "value": "Dispersion and damping characteristics of Rayleigh-type waves in KG nonlocal fractional piezo-thermo-electric semiconductor medium"
+      },
+      {
+        "coordinate": "C49",
+        "value": "Aldandani, Mohammed; Das, Soumik; Yadav, Arun Kumar; Yaylacı, Murat; Gupta, Vipin"
+      },
+      {
+        "coordinate": "D49",
+        "value": "International Journal of Numerical Methods for Heat & Fluid Flow"
+      },
+      {
+        "coordinate": "E49",
+        "value": "36"
+      },
+      {
+        "coordinate": "F49",
+        "value": "8"
+      },
+      {
+        "coordinate": "G49",
+        "value": "3021-3047"
+      },
+      {
+        "coordinate": "H49",
+        "value": "SCI"
+      },
+      {
+        "coordinate": "I49",
+        "value": "5.3"
+      },
+      {
+        "coordinate": "J49",
+        "value": "2026"
+      },
+      {
+        "coordinate": "K49",
+        "value": "1758-6585"
+      },
+      {
+        "coordinate": "L49",
+        "value": "Link",
+        "hyperlink": "https://doi.org/10.1108/hff-11-2025-0930"
+      },
+      {
+        "coordinate": "M49",
+        "value": "Link",
+        "hyperlink": "https://drive.google.com/file/d/1T8oBy28gem04VocBCc03c8Em9c3OtNH8/view?usp=sharing"
+      },
+      {
+        "coordinate": "N49",
+        "value": "Gurugram University"
+      }
+    ]
+  ]
+}

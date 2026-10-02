@@ -1,0 +1,63 @@
+# Latestrecoverystate — Huangreferencepilot01
+
+Date:30September2026(Asia/Calcutta). Canonicalmaster:/home/user/MASTER_PROMPT.md,FINALMASTERPROMPTv2.1,sections0–90. Priorstate:PROJECT_STATE_FULL_SOURCE_REVIEW_01.md. Latestmainreport:PILOT_HUANG_2025_01/PILOT_REPORT.html/.md.
+
+## Authorization/scope
+User`okdoit`followedonesingleexplicitproposal:boundedPhase0A2Huang2025CV+MCV3sourcecasepilot,0.5CPU-hour/noGPU/50MB. Planfrozenbeforeoutputs. ThisdoesNOTapprovefinalresearchdirection,newmaterial/tensor/ellipsemodel,largeproduction,journal,manuscriptorsubmission.
+
+Overallpilotstatus:**BLOCKED**:aftertwopilotiterations,frozenCohen80/deHoog64cross-checknotmet. NoadditionalsolverrunsafterSTOP;postprocessingexistingdataonly. NumericalevidencePARTIAL;physicalvalidationNOT_RUN.
+
+## Research/intakecontext
+Useraim:recentheatmodel,coupledthermoelasticresponse,BOTHmaterial/crystalandgeometric-symmetryeffects. Provisionalbeta-Ga2O3circular/ellipticalcavityideaunapproved,novelty/significanceunconfirmed. Copper-sourcebenchmarknotnewmaterialchoice. Userhardware/softwarelicences/preferredruntime/experimentaccess/deadlineunknown. WorkspacePythonavailable,MATLAB/Octaveunavailable;donotassumeusermachine.
+
+Priorinputreading:48publishedbibliographyentries/47distinctsuppliedDOIstrings(notverifiedpublicationcount),8representativepublishedPDFs+8unpublishedPDFssectionread,FEM4static2Delectromechanical/gradientMATLABsourcesource-walkednotexecuted. Originalsources/FEM4unchanged. Bothpublished/unpublishedcorpusrequiredforfutureoverlap. ID36/41duplicateandID47DOIcorrectionrecorded;paper_springeruserauthorshipunconfirmed.
+
+## Sourcesandfixedcase
+Useralit.zipcontainedexact3requestedPDFs:B01Huang2025DOI10.1007/s10483-025-3280-7(18pp);B02Bagri/Eslami2007DOI10.1016/j.ijmecsci.2007.04.004(11pp);B03Gordeliy2008DOI10.1016/j.ijheatmasstransfer.2007.10.021(15pp). Relevantfullsourceformulation/BC/material/casesread. Sourceaccessresolved;wholeproof/admissibility/latestcorrectionversionnotcertified.
+
+B01sourcecaseONLY:t*=.06,tau*=.04,1Dsemi-infiniteheatedfreeend(thetaH,sigma0)andundisturbedfarfield. Sourcecopperlambda77.6GPa,mu38.6GPa,alpha1.78e-5interpreted1/Kfromstressdimensions,rho8945,cE381,T0293. Zerocausalprehistory/compatibleheat-memoryrecorded;sourceequationsnotmodified. knotguessed:dimensionlessg=gamma/(rho*cE),SIspace/time/tauconversionnotclaimed. No parameterfitting.
+
+SourcePDEs:rho*u_tt=(lambda+2mu)u_xx-gamma*theta_x; sigma=(lambda+2mu)u_x-gamma*theta; k*N*theta_xx=M*(gamma*T0*u_xt+rho*cE*theta_t). Mactsboththermalandstrainrateenergyterms. CVM=1+taus,N1;MCV3M=1+3taus+tau^2s^2,N=1+taus. SourceEq66coded;positive-decayingroots. MCV3time-domainusesindependentlyderivedequivalenttwoCVchannelscompatiblezerohistories—notnewlaw.
+
+Source-reviewcautionsretained:MCV5/MGN3restrictedkernelreductionsandDCnormalization;MGN2Eq36doesnotreduceEq37;alphaheaderunitmismatch;newtensor/scalarratioextensionunapproved;B02LScommonlawbutdifferentcurvedBCs/scales;B03heat-onlytablesnotstress/physicalvalidation. Thoseothercasesnotruninpilot.
+
+## Frozenplan/criteria
+PILOT_HUANG_2025_01/PILOT_PLAN_FROZEN.md,case_input.json,PLAN_FREEZE_RECORD.json hold immutablev1plan/input/source/referencehashbeforeoutputs. Fixedoff-frontmaskhalfwidth.008atderivedslow/fastfronts;scalesStheta1,Ssigma=b,Su=bt/beta2;notrelativepercentagenearzero.
+- PDE/BC/constitutive/rootchecks1e-10;independentmatrixtransform1e-9.
+- deHoog48/64probechange2e-5;Cohen80/deHoog64difference5e-5.
+- FVMofffront/refinement3e-3;globalL1report;fullprofilecomparison/sourcegraphcompatibilitypendinggate.
+No thresholds/masks/sourceparametersloosened. CV6400extensionpost-resultandlogged;initial800/1600/3200evidencepreserved.
+
+## Implementation/methodsactuallyexecuted
+Python3.13.14;numpy2.3.5;scipy1.17.1;mpmath1.3.0;matplotlib3.10.9;PyMuPDF1.28.2;openpyxl3.1.5. Numericthreads1.
+- Closedtwo-modeLaplaceformula,Eqs63–66andseparatespatialmatrixeigensolution.
+- Independentfirst-ordercharacteristicfinite-volumePDE:MC-limitedMUSCL/SSPRK2transport,exactrelaxationStrang,CFL.45. DomainL1causallyunreachedbyt.06.
+- deHoog32/48/64andCohen80probes. Cohensharesclosedtransformroutine,notindependentPDEimplementation.
+- FirstdeHoogzero-stressendpoint0/0fixedonlyatsource-knownsigma(0)=0;nointerior/tailclipping. v01/code/errorpreserved.
+
+## Actualevidence / failures
+Iteration1:40basicchecksPASS;6FVMrunscomplete,CVrefinementpointcriterionFAIL;inversionabortonidenticallyzerotransformsigmaatx0.
+Iteration2:analyticendpointfix+post-resultCV6400,criteriasourceunchanged. CVlatestrefinementPASS;deHoogprobe48/64PASS. **Cohen80crosscheckFAIL**allsixmodel/QoIcombinations. STOPunder§77.
+
+Basicmomentummax2.640e-16,energymax1.114e-15,stresslawmax2.954e-16,matrixtransformdifference4.918e-14,rootswap0at40samples. Limitedscope—notglobaltheorem/physicalvalidation.
+Derivedcoupledfrontsslow.0599788737,fast.3001056685;notfittedtopaperfrontlabels.
+PrimarydeHoog48/64off-frontprobechanges<=2.776e-16source-scaledafterfloatoutput. Notfullprofileconvergenceproof.
+Post-failureexistingdataonly:deHoog64/FVM(CV6400,MCV33200)off-frontprobes agree withscaledmax<=8.025e-6. Diagnosticprobecomparison,notfullprofileacceptance.
+Atx*.15,CVtheta:deHoog64=.7278738308968512versusCohen80=397200410.456477. CauseNOT_ESTABLISHED;algorithm/precision/implementationneedsdiagnosis. Do notinterpretCohenfailedoutputasphysicalpredictionorconcludephysicalmodelinvalidfromit.
+PublishedFigure5quantitativecomparisonandfullprofileLaplace/FVMacceptanceNOT_EXECUTED:prerequisitegatefailed. Referencefigurewasdigitizedbeforeoutputs,private/excludedfromrecovery;notexperimental. No physicalvalidation/newmaterial/ellipse/manuscriptproduction.
+
+## Compute/provenance
+Measuredstagetotalthroughreport=50.340502CPU-seconds,peakrecordedRSS=91.96MiB,folderbeforecheckpoint=1380930bytes. Budget1800CPU-seconds/noGPU/50MB;10ssetupreserveallowance,notobservedruntime. logsrecordactualstatus,CPU/wall/RSS,codehash,input/source/environment. Failedattemptcostsincluded. Unusedbudgetdoesnotauthorizenewsolveraftertwostoppediterations.
+
+## Approval / unresolvedgates
+Pilotpermissiononly,newprojectdirection/material/geometry/tensorlaw,formalSCIENTIFIC_ACCEPTANCE_PLAN,currentgap/closest-five/significance,journalandproductionunapproved. PhysicalvalidationNOT_RUN;newmaterialmatchedtransient/stressdataunestablished,notautomaticallyNOT_APPLICABLE. EarlierSCImago2025Q1/publisherSCIEjournalchecksarehistoricalmetadata,notcurrentJCR/finalfitguarantee.
+
+## Exactnextaction — STOP/userdecision
+Do notrunsolversautomatically. Presentblocker/failures/partialpasses. Useroptions:(1)authorizediagnostic-onlyfollow-uptolocalizeCohenfailure/testjustifiedalternative;(2)explicitlyauthorizealoggedpost-resultmethod-planrevisionusingadequatelyverifieddeHoog+independentPDEevidence/replacement,thenfullprofile/sourcecomparison;(3)pause. Neverdropfailedcriterionwithoutloggeddecisionorlabelamendedpost-resulttestprespecified. No sourceparameterfittingtoforceagreement.
+
+## Files/recovery
+PILOT_REPORT.html/.md;PILOT_RESULTS.xlsx;PILOT_ACCEPTANCE_STATUS.md;AUTHORIZATION.md;PILOT_PLAN_FROZEN.md;case_input.json;PLAN_FREEZE_RECORD.json;CORRECTIVE_DIAGNOSTIC_01.json;PILOT_CHANGELOG.md;EVIDENCE_LOG.md;EQUATION_TO_CODE_MAP.md;README.md;requirements.txt;src/;run_*.py;summarize_existing_diagnostics.py;build_pilot_report.py;data/actualNPZ/JSON/CSV;logs/;versions/v01_before_endpoint_fix/;figures/owncomputeddiagnostics.
+
+RECOVERY_PILOT_HUANG_2025_01.zip:cumulativeownpilotoutputs/code/control/priornotes,NOTfinal/offline-completeliteraturearchive. ProtectedPDFs/sourceimages/figure-derivedreferencetableexcluded;sourceinputURI/hashrecorded. A fresh-environmentreproductiontestnotperformed. Archivednumericalrunsnottooverwrite;newdiagnostic/reproductionrequiresfreshversion/runIDs/authorization.
+
+OriginalsourcePDFs/FEM4codeunchanged;allrawinputsremainRESEARCH_PROJECT_INPUT/. LatestrootCURRENT_PROJECT_STATE.mdpointshere. No completedformalPhase0A2deepinvestigationorfullresearchprojectclaimed.

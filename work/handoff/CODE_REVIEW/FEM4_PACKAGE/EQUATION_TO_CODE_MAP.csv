@@ -1,0 +1,23 @@
+equation_or_component,source_path_relative_to_core,function,scope,inspection_status
+Plane-strain elastic Voigt matrix C,constitutive/constitutive_C.m,constitutive_C,3x3; epsV uses engineering shear,STATIC_SOURCE_WALKTHROUGH
+Five-invariant gradient Voigt matrix D,constitutive/constitutive_D.m,constitutive_D,6x6; declared etaV component order,STATIC_SOURCE_WALKTHROUGH
+Piezoelectric reduction eV,constitutive/piezoelectric_e.m,piezoelectric_e,2x3; displacement/electric coupling,STATIC_SOURCE_WALKTHROUGH
+Reduced flexoelectric muV,constitutive/flexoelectric_mu.m,flexoelectric_mu,2x6; half factors on doubled-shear slots,STATIC_SOURCE_WALKTHROUGH
+Dielectric kappa,constitutive/dielectric_kappa.m,dielectric_kappa,2x2 diagonal,STATIC_SOURCE_WALKTHROUGH
+Cubic Hermite basis and first/second derivatives,fem/hermite_cubic.m,hermite_cubic,"1D basis on [-1,1]",STATIC_SOURCE_WALKTHROUGH
+Tensor-product BFS interpolation,fem/bfs_shape_functions.m,bfs_shape_functions,4 per-node basis entries per displacement component,STATIC_SOURCE_WALKTHROUGH
+Physical derivative chain rules,fem/bfs_shape_derivatives.m,bfs_shape_derivatives,"Nx,Ny,Nxx,Nyy,Nxy",STATIC_SOURCE_WALKTHROUGH
+epsV=Be*q_u,fem/B_e_matrix.m,B_e_matrix,3x32,STATIC_SOURCE_WALKTHROUGH
+etaV=Beta*q_u,fem/B_eta_matrix.m,B_eta_matrix,6x32,STATIC_SOURCE_WALKTHROUGH
+grad(phi)=Bphi*q_phi; E=-grad(phi),fem/B_phi_matrix.m,B_phi_matrix,2x4; bilinear C0 potential,STATIC_SOURCE_WALKTHROUGH
+Kuu=integral(Be^T*C*Be+Beta^T*D*Beta),fem/element_stiffness.m,element_stiffness,32x32; 4x4 Gauss,STATIC_SOURCE_WALKTHROUGH
+Kup=integral((Be^T*eV^T+Beta^T*muV^T)*Bphi),fem/element_coupling.m,element_coupling,32x4; positive coupling block in chosen convention,STATIC_SOURCE_WALKTHROUGH
+Kpp=integral(Bphi^T*kappa*Bphi),fem/element_electrical.m,element_electrical,4x4; appears with minus sign in saddle matrix,STATIC_SOURCE_WALKTHROUGH
+Sparse global block assembly,fem/assembly.m,assembly,8*nnode mechanical plus nnode electrical unknowns,STATIC_SOURCE_WALKTHROUGH
+"Kr*q_free=f_free-K_free,fixed*q_fixed",fem/apply_boundary_conditions.m,apply_boundary_conditions,Symmetric elimination and nonzero BC handling,STATIC_SOURCE_WALKTHROUGH
+q=T*qbar; Kbar=T*K*T; fbar=T*f,scaling/dof_scaling_vector.m,dof_scaling_vector,Value/slope/twist/electric scales,STATIC_SOURCE_WALKTHROUGH
+[Kuu Kup; Kup^T -Kpp]*q=[F;-Q],fem/solve_system.m,solve_system,Linear constrained/scaled backslash solve,STATIC_SOURCE_WALKTHROUGH
+P=F^T*q_u; W_qs=P/2,verification/verify_energy_balance.m,verify_energy_balance,Energy identities for stated open-circuit conditions,INSPECTED_TEST — NOT_RUN
+Rate=log(e1/e2)/log(2) from supplied norms,benchmarks/benchmark_tier1.m,benchmark_tier1,Default(false) recalculates quoted rates only,SOURCE_REPORTED_INPUT — NOT_RUN
+Power-law fit to four supplied hcrit roots,studies/hcrit_study.m,hcrit_study,Default false fits roots; optional FEM branch separate,SOURCE_REPORTED_INPUT — NOT_RUN
+"a4=a5=0.5*D0 => D11=2*D0, not commented D0",studies/hcrit_study.m,set_gradient,Optional FEM branch lines 96–100; original unchanged,ANALYTICALLY_CHECKED_STATIC_ALGEBRA

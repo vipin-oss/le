@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/user/PROJECT_CRYSTAL_GEOMETRY_01/run_production.py", line 130, in <module>
+    record(run_config(tag, 'FOURIER', 0.0, chi, phi, A0))
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PROJECT_CRYSTAL_GEOMETRY_01/run_production.py", line 111, in run_config
+    (os.path.join(DATA, tag + '.json')).write_text(json.dumps(q, indent=2, default=str))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'write_text'

@@ -1,0 +1,1619 @@
+
+--- PAGE 1 ---
+   Surface waves in a two-dimensional hexagonal
+piezoelectric thermoelastic quasicrystal half-space: a
+   semi-analytical study of inertial, diffusive, and
+          telegraph-type phason dynamics
+
+                                  Vipin Gupta
+                               Gurugram University
+               Corresponding author: Vipin Gupta, vipin@gurugramuniversity.ac.in
+
+
+
+                                     Abstract
+
+    Surface-wave propagation in a two-dimensional (2D) hexagonal quasicrystal half-space is anal-
+    ysed within a linear piezoelectric–thermoelastic formulation that treats the phonon and phason
+    degrees of freedom on equal footing. The active sagittal problem couples the phonon displace-
+   ments (ux, uz), the phason displacements (wx, wz), and the temperature increment θ; in the
+    studied configuration (propagation along a two-fold axis, periodic direction inert) the electric
+    potential decouples exactly and enters only as a passive output. Three phason dynamic models
+    are compared: an inertial model (A, ρw ¨w = div H), a diffusive model (B, Dw ˙w = div H),
+   and a telegraph-type model (C, ρw ¨w + Dw ˙w = div H), with Lord–Shulman thermal relax-
+    ation. The surface-wave problem is reduced, without spatial discretisation of the half-space,
+    to a 5 × 5 boundary matrix B(ω, k) assembled from the five decaying depth roots of a tenth-
+    degree matrix pencil M(ω, k, p) = A0 +pA1 +p2A2; the secular condition is monitored through
+    the scale-explicit indicator r = σmin(B)/∥B∥. After verification against classical elastic limits,
+    symbolic identities, and the model limits C→A and C→B, the production sweeps show: (i) at
+    baseline friction the phason-dominated branch of model A (V ∗≈0.3107, phason participa-
+    tion Pw ≈0.99) is separated by ∆AC ≈0.33 from the phonon–Rayleigh branches of models
+  B and C (V ∗≈0.4663), whereas B and C are mutually indistinguishable over 95 of 121 grid
+    points within a benchmarked numerical-resolution floor ε∆= 1.13×10−8; (ii) when the phason
+    friction D∗w is controlled, the B–C difference becomes resolvable (up to 5.0 × 10−3 relative) in
+    a region of the (Ω, D∗w) plane that slides with D∗w, while at the baseline D∗w the two models
+    remain indistinguishable almost everywhere; (iii) thermal relaxation (sweep in τ0∗ ) produces a
+   weak but resolvable effect, max ∆T = 7.9 × 10−5, at the largest relaxation time; (iv) clamping
+    the phason at the surface changes the model-C wave speed by at most 8.1 × 10−6 relative, and
+    destroys the model-A surface branch altogether. Physically, the results indicate that the pha-
+    son dynamic class controls which surface branch exists — inertial phasons carry a distinct slow
+    surface mode, whereas dissipative phasons are slaved to the phonon–Rayleigh branch — while
+    the diffusive/telegraph distinction is observable only when the phason friction is low (or the
+    frequency high) relative to the phason inertia. The findings are statements about the declared
+    composite/surrogate parameter set, bounded by the numerical resolution floor; no experimen-
+     tal validation is claimed, and no claim beyond the investigated parameter ranges is made.
+    All computations are nondimensional, deterministic, and reproducible from the accompanying
+    reproducibility package.
+
+   Keywords: quasicrystal; phason dynamics; surface waves; Rayleigh waves; piezoelectricity;
+   Lord–Shulman thermoelasticity; telegraph equation; semi-analytical method
+   Mathematics Subject Classification (2020): 74J15; 74F05; 74F15; 52C23
+
+
+                                        1
+
+--- PAGE 2 ---
+Nomenclature (principal symbols)
+
+  ui           phonon displacement             wi               phason displacement
+   εij           phonon strain                      wij = ∂jwi        phason displacement gradient
+  σij           phonon stress                    Hij               phason pseudo-stress
+  θ = T −T0    temperature increment              τ0               Lord–Shulman relaxation time
+  ρ, ρw         phonon, phason inertia        Dw               phason friction
+  k, p            surface, depth wavenumbers     ω                  angular frequency
+  k0, v0, ω0      reference scales                         (·)∗               nondimensional quantity
+ Ω= ω/ω0     nondimensional frequency        V ∗= Ω/k∗        nondimensional phase speed
+  B(ω, k)       5 × 5 surface matrix               r = σmin(B)/∥B∥   secular indicator
+ δ∗= 1/|Im p|   penetration depth             Pw               phason participation
+  ε∆             resolution floor                 Ωc = D∗w/ρ∗w       phason crossover frequency
+
+1  Introduction
+
+1.1  Quasicrystals and the phason degree of freedom
+
+Quasicrystals are solids with long-range orientational order, sharp diffraction, and rotational sym-
+metries — fivefold, eightfold, tenfold, twelvefold — forbidden to periodic crystals; their discovery
+[1] and the recognition that such order can be thermodynamically stable under a quasiperiodic
+(projection) structure [2] opened a branch of condensed-matter physics in which elasticity itself
+is richer than in crystals.  In the standard description, a quasicrystal is obtained by projecting
+a periodic structure in higher-dimensional space onto physical space [3, 4]. Displacements of the
+physical-space (parallel) component of the higher-dimensional displacement field are the conven-
+tional phonon displacements u; displacements of the complementary (perpendicular) component
+correspond to local rearrangements of the quasiperiodic structure and are described by the phason
+field w [5, 6, 7]. Because phasons are not rigid translations of matter but re-tunings of which lo-
+cal configurations are occupied, they couple to the phonon field only through the phonon–phason
+coupling constants and possess their own stiffness (phason elasticity) and their own balance law.
+The elasticity theory of quasicrystals — phason strain measures, phason pseudo-stresses, and the
+symmetry classification of the associated property tensors — was developed systematically in the
+foundational papers [5, 7, 6, 8] and consolidated in the symmetry-group treatment of Ding et al.
+[9] and the monographs and reviews of Fan [10] and Fan and Mai [11]. This framework matters
+for the present work because it fixes the structure of the equations of motion that any surface-
+wave analysis of a quasicrystal must respect: in particular, for two-dimensional (2D) hexagonal
+quasicrystals the phason field is a vector in the quasiperiodic plane, and the phason pseudo-stress
+tensor is in general not symmetric in the shear components it couples to (Section 2.2).
+
+1.2  Phason dynamics: diffusive, inertial, and telegraph descriptions
+
+The dynamics of the phason field is less settled than its statics. Hydrodynamic analyses of qua-
+sicrystal elasticity identify the phason as a slow, dissipative degree of freedom whose free relaxation
+is diffusive rather than propagating [8, 7]; consistent with this, experiments on icosahedral phases
+observe phason fluctuations and phason-assisted diffusion on laboratory time scales [12, 13]. A
+purely diffusive law, however, cannot be correct at all frequencies: on time scales short compared
+with the local rearrangement time, or in an idealised conservative treatment, the phason field can
+also be endowed with inertia, and elastic-wave analyses of quasicrystals determine phonon/phason
+wave parameters in both pictures [14]. The wave-telegraph model of Agiasofitou and Lazar [15]
+
+
+
+                                          2
+
+--- PAGE 3 ---
+unifies the two extremes: the phason balance law ρw ¨w +Dw ˙w = div H contains the elastodynamic
+(inertial) model as the limit Dw →0 and the elasto-hydrodynamic (diffusive) model as the limit
+ρw →0, with a crossover frequency ωc = Dw/ρw set by the competition between phason iner-
+tia and phason friction. The same authors and collaborators have developed the dynamic defect
+theory of quasicrystals in this setting — equations of motion of quasicrystal dislocations [16] and
+the Green-tensor machinery of the underlying generalized elasticity [17] — and, more recently, the
+constitutive framework of piezoelectric quasicrystals, in which the phonon and phason fields couple
+also to the electric field [18]. Which dynamical class is appropriate for a given frequency band is
+therefore an empirical or constitutive question that a model cannot settle a priori; what a complete
+formulation can do — and what is done here — is to carry all three classes in one framework, verify
+the limits exactly, and quantify, with an explicit numerical-resolution floor, where the classes are
+observationally distinguishable in a surface wave.
+
+1.3  Surface waves in anisotropic, piezoelectric, and thermoelastic media
+
+Surface acoustic waves are among the most sensitive probes of near-surface material behaviour,
+and their classical theory provides the machinery used here. For anisotropic elastic half-spaces the
+surface-wave problem reduces to the condition that a boundary matrix assembled from the decaying
+partial waves be singular; the equivalent surface-impedance formalism of Barnett and Lothe [19]
+makes this reduction explicit and underlies all modern anisotropic Rayleigh-wave computations.
+Piezoelectricity enriches the problem:  in crystals of suitable symmetry, electroacoustic surface
+waves exist that are guided by the electromechanical coupling itself — the Bleustein–Gulyaev
+waves [20, 21] — and piezoelectric boundary conditions (electrically open or shorted surfaces) shift
+surface-wave speeds measurably.  Thermoelasticity, finally, modifies surface waves through two
+channels: the classical coupled theory, in which Fourier’s law implies infinite thermal-signal speed,
+and generalized theories with finite propagation speeds, of which the one-relaxation-time theory
+of Lord and Shulman [22] is the most widely used; the two-relaxation-time theory of Green and
+Lindsay [23], the subsequent reviews [24, 25], and the monograph treatment of thermoelasticity
+with finite wave speeds [26] establish the framework and its scope. For heat-conducting trans-
+versely isotropic media, the theory of thermoelastic surface waves was worked out by Chadwick
+and Seet [27], showing that the thermal field perturbs the classical Rayleigh wave by an amount
+controlled by the ratio of the thermal-relaxation scale to the wave time scale — precisely the
+competition quantified numerically in this paper. Semi-analytical surface-matrix formulations of
+this kind require no discretisation of the half-space; they are therefore particularly suited to sys-
+tematic parameter studies and to exact limit verification, which is the mode of operation adopted
+throughout.
+
+1.4  Waves in quasicrystals: what is known
+
+For quasicrystals, the available surface- and guided-wave literature concerns, almost exclusively,
+one-dimensional (1D) hexagonal quasicrystals — structures quasiperiodic along one axis only,
+whose plane problems involve a single phason component. This cluster includes Rayleigh waves
+in functionally graded 1D hexagonal half-spaces [38]; Rayleigh and Love waves in layered 1D
+hexagonal (piezo)quasicrystal half-spaces with imperfect interfaces [39, 40]; guided waves in multi-
+layered 1D hexagonal and piezoelectric quasicrystal plates and nanoplates [41, 42, 43]; Love-wave
+interaction with interfacial cracks in 1D hexagonal quasicrystal coating–substrate systems [44];
+anti-plane dynamic fracture and scattering problems [45, 46, 35]; and nonlocal bending and vi-
+bration of 1D hexagonal quasicrystal nanoplates [47]. These works are valuable precedents for
+
+
+                                          3
+
+--- PAGE 4 ---
+technique, and several of them are piezoelectric [40, 43]; one recent dynamic study adds gener-
+alized thermoelasticity to a piezoelectric quasicrystal rod [37].  For 2D hexagonal quasicrystals
+— the class that includes the technologically studied decagonal phase — the literature is strong
+on statics and quasi-statics:  general 3D thermoelastic solutions [29]; fundamental solutions in
+half-spaces with phonon- and phason-traction-free surfaces [30]; thermoelastic fracture [31, 32];
+piezoelectric (thermo-electric) response [33] and its fracture applications [34]; and meshless ther-
+moelastic analysis of decagonal quasicrystals under thermal shock [36]. The 1D and 2D hexagonal
+formulations are not interchangeable: for Laue class 10 (point group 6/mmm) the sagittal problem
+carries two phason components (wx, wz), the independent constants number NC = 5, NK = 4,
+NR = 4 [29], the phason pseudo-stress satisfies Hxz̸ = Hzx unless K3 = K6 accidentally, and the
+phason-traction-free surface releases two phason boundary rows rather than one. Results obtained
+for 1D hexagonal structures therefore cannot be transplanted into the 2D setting; they motivate
+it.
+
+1.5  Gap, research questions, and contributions
+
+To the best of our knowledge, within the literature surveyed for this work, a surface-wave treatment
+of the 2D hexagonal class that (a) uses the full 2D constitutive structure including the phason-stress
+asymmetry, (b) couples Lord–Shulman thermoelasticity and the (passive, in this configuration)
+piezoelectric response, and (c) compares inertial, diffusive, and telegraph-type phason dynamics
+on a common, quantitatively resolved footing does not appear. The present paper addresses this
+gap with one central question: how, and how observably, does the dynamical class of the phason
+field control surface-wave propagation in a 2D hexagonal piezoelectric thermoelastic quasicrystal
+half-space?  This decomposes into four research questions: RQ1 (do the three phason dynamic
+models support the same surface branch at baseline parameters?); RQ2 (where in the frequency–
+friction plane do the diffusive and telegraph descriptions separate, and is the operator crossover
+Ωc = D∗w/ρ∗w visible in the surface response?); RQ3 (how large is the Lord–Shulman relaxation
+effect on the surface wave within the swept relaxation times?); RQ4 (how do phason boundary
+conditions — free versus clamped — affect the surface branches of the different models?).
+   The contributions are:
+
+   1. a complete 2D hexagonal piezoelectric thermoelastic quasicrystal surface-wave formulation
+     (Configuration I: sagittal fields (ux, uz, wx, wz, θ), decoupled electric potential), preserving
+     the phason-stress asymmetry Hxz̸ = Hzx;
+
+   2. a unified semi-analytical surface-matrix treatment of the three phason dynamic classes —
+       inertial, diffusive, telegraph-type — defined by the wave-telegraph unification of Agiasofitou
+     and Lazar [15]; spatially discretised methods such as the finite element method are outside
+     the scope of this work;
+
+   3. an explicit matrix-polynomial/depth-root formulation (M = A0 + pA1 + p2A2, tenth degree
+      in p) with a scale-explicit secular indicator r = σmin(B)/∥B∥and recorded conditioning;
+
+   4. independent model-limit verification linking model C to models A and B on the full produc-
+      tion grid, using branch-identity-verified continuation;
+
+   5. a quantitative, resolution-aware analysis of phason-dynamics, thermal-relaxation, and phason-
+     boundary-condition effects, in which effects at or below the benchmarked numerical resolution
+      are reported as indistinguishable rather than as zero or as significant;
+
+
+
+                                          4
+
+--- PAGE 5 ---
+   6. a deterministic, archived, reproducible numerical workflow (classical limiting-case verifica-
+      tion, symbolic polynomial verification, model-limit verification, and a two-path consistency
+      check; raw data and figure-generation code in the accompanying reproducibility package).
+
+   The paper is organised as follows.  Section 2 fixes the material model; Section 3 formulates
+the surface-wave problem; Section 4 records the nondimensionalisation and parameters; Section 5
+reports the verification and benchmark suite; Section 6 presents the production results against
+RQ1–RQ4; Section 7 discusses the physical meaning of the findings, their modelling implications,
+and their limits; Section 8 concludes.
+
+2  Mathematical model
+
+2.1  Geometry and kinematics
+
+A homogeneous quasicrystal half-space occupies z > 0 with a traction-free surface at z = 0 (Fig. 1).
+Configuration I is studied: waves propagate along x, decay along z, and the structure is periodic
+along y; all fields are y-independent (∂/∂y = 0) and the anti-plane phonon displacement vanishes
+(uy = 0). The active fields are the sagittal phonon displacements ux, uz, the sagittal phason
+displacements wx, wz, and the temperature increment θ = T −T0 about the reference temperature
+T0. Under these restrictions the electric potential decouples exactly from the active eigenproblem:
+nonzero prescribed electrical data would produce only a passive out-of-plane electric response (of
+the form Dy = e31(εxx + εzz)) that does not feed back into the mechanical–thermal problem;
+with zero electrical data the potential is identically zero. This decoupling is an exact algebraic
+consequence of the stated geometry and fails for other cuts — it is a documented reduction, not a
+general property.
+    Strains are εxx = ∂xux, εzz = ∂zuz, 2εxz = ∂zux + ∂xuz; the phason fields enter through the
+first gradients wx,x, wz,z, wx,z, wz,x.
+
+2.2  Constitutive structure of the 2D hexagonal quasicrystal
+
+For Laue class 10 (point group 6/mmm) the independent constants number NC = 5, NK = 4,
+NR = 4 [29, 9]. In Configuration I the plane constitutive equations are
+
+                      σxx = C11εxx + C12εzz + R1wx,x + R2wz,z −β1θ,                      (1)
+                        σzz = C12εxx + C11εzz + R2wx,x + R1wz,z −β1θ,                      (2)
+                       σxz = C66 (︁ ∂zux + ∂xuz )︁ + R6 (︁ ∂zwx + ∂xwz )︁ ,                          (3)
+
+for the phonon stresses, and
+
+                    Hxx = R1εxx + R2εzz + K1wx,x + K2wz,z,                            (4)
+                     Hzz = R2εxx + R1εzz + K2wx,x + K1wz,z,                            (5)
+                    Hxz = R6 (︁ ∂zux + ∂xuz )︁ + K3 ∂zwx + K6 ∂xwz,                       (6)
+                    Hzx = R6 (︁ ∂zux + ∂xuz )︁ + K6 ∂zwx + K3 ∂xwz,                       (7)
+
+for the phason pseudo-stresses. The hexagonal symmetry relations used throughout [29, 28] are
+
+            C66 = 12 (C11 −C12),    K6 = K1 −K2 −K3,    R6 = 12 (R1 −R2).           (8)
+
+The phason stress is not symmetric: Hxz̸ = Hzx unless K3 = K6. This asymmetry is a genuine
+feature of the 2D hexagonal constitutive structure (6)–(7) (it reflects the fact that the phason
+
+
+                                          5
+
+--- PAGE 6 ---
+                                                   propagation x     ei(kx     t)
+
+
+
+     free surface:    zz =  xz = 0, Hxz = Hzz = 0 (free phason),  = 0 (isothermal)
+
+                                                                                                      z = 0
+     quasicrystal half-space z > 0 (2D hex., Laue 10)
+
+
+                                                                                                                                                * = 1/|Im p|
+
+
+
+ z
+      depth                                                            active fields: u = (ux, uz) phonon, w = (wx, wz) phason,
+                                                                                                       : decoupled, passive output (  / y = 0, uy = 0)
+                                                               thermal: Lord--Shulman  0; piezoelectric: passive in this cut
+                                                        phason operator   : A   w  2 | B    i Dw | C   w  2    i Dw
+
+                         y (periodic direction, out of plane)
+
+
+Figure 1: Configuration-I schematic: quasicrystal half-space z > 0 with free surface z = 0 and the baseline
+boundary conditions stated at the surface; the sagittal surface wave ∝ei(kx−ωt)  is drawn at successive
+depths to indicate exponential localisation with penetration depth δ∗= 1/|Im p| (double arrow); coordinate
+triad (x, y, z) with y the periodic direction; the field box lists the active fields (ux, uz, wx, wz, θ), the passive
+decoupled potential φ, the Lord–Shulman time τ0 (piezoelectricity passive in this cut), and the three phason
+operators ΛA,B,C. Conceptual schematic, not a computed result.
+
+
+pseudo-stress is the conjugate of a displacement gradient, not of a symmetric strain); it is preserved
+exactly in the matrix formulation (Section 3) and must not be symmetrised; symmetrising it would
+silently alter the sagittal problem.
+
+2.3  Piezoelectric and thermal coupling
+
+The piezoelectric constants of the studied class [33, 18] couple the active sagittal fields, in this
+configuration, only to the passive out-of-plane electric displacement; the electric potential therefore
+does not appear in the active system (Section 2.1). Thermal coupling enters the phonon stresses
+through −β1θ and the heat conduction through k11.
+
+2.4  Phason dynamic models A, B, C
+
+The phason balance law ∂xHxx + ∂zHxz = L[w] is studied with three dynamic operators L:
+
+   • Model A (inertial): ρw ¨w = div H — phasons treated as an inertia-carrying field;
+
+   • Model B (diffusive): Dw ˙w = div H — hydrodynamic dissipative relaxation, Dw the
+     phason friction;
+
+   • Model C (telegraph-type): ρw ¨w + Dw ˙w = div H — the wave-telegraph interpolation
+       [15].
+
+In the harmonic regime these correspond to the phason operators ΛA = −ρwω2, ΛB = −iωDw,
+ΛC = −ρwω2 −iωDw. The phonon momentum balance is div σ = ρ ¨u in all three models. This
+
+
+                                          6
+
+--- PAGE 7 ---
+Table 1: The three phason dynamic models studied:  balance law, harmonic phason operator, degree
+of det M in ω, limiting relation within model C, and the surface branch found at baseline parameters
+(Section 6.1).
+
+  Model        Phason balance law  Λ              degω det M   Baseline surface branch
+ A (inertial)    ρw ¨w = div H        −ρwω2          10          phason-dominated, V ∗≈0.311
+ B (diffusive)  Dw ˙w = div H       −iωDw          8           phonon–Rayleigh, V ∗≈0.466
+ C (telegraph)  ρw ¨w + Dw ˙w = div H  −ρwω2 −iωDw   10          phonon–Rayleigh at baseline
+
+
+three-class taxonomy is not introduced here: it is the wave-telegraph unification of Agiasofitou and
+Lazar [15], in which the elastodynamic wave-type model (attributed there to Ding et al., 1993) and
+the elasto-hydrodynamic (diffusive) model [8] are recovered as asymptotic cases of the telegraph
+model for extreme values of the phason friction. The present contribution is the surface-wave
+boundary-value problem built on this taxonomy for the 2D hexagonal class. Model C contains A
+as the limit Dw →0 and B as the limit ρw →0; both limits are verified numerically in Section 5.3.
+Table 1 summarises the three models.
+
+2.5  Lord–Shulman thermoelasticity
+
+Heat conduction obeys the Lord–Shulman law with a single relaxation time τ0 [22]:
+
+              k11 (︁ ∂xxθ + ∂zzθ )︁ = ρce (︁˙θ + τ0¨θ)︁ + T0β1 [︂(︁ ˙εxx + ˙εzz )︁ + τ0 (︁ ¨εxx + ¨εzz )︁]︂ .            (9)
+
+The nondimensional role of ce is fixed by the thermal-row normalisation (c∗e ≡1; the dimensional
+value is a declared surrogate, Section 4). Two documented modelling assumptions accompany this
+transcription.  First, the phason strain does not enter the heat equation:  in the 2D hexagonal
+constitutive framework [29, 33, 32] the temperature couples to the phonon stresses σij but not
+to the phason pseudo-stresses Hij, and the entropy side of the Lord–Shulman energy balance is
+inherited unchanged — an assumption of the adopted literature framework, not a derived result.
+Second, in the limit τ0 →0 equation (9) reduces to classical coupled thermoelasticity.
+
+3  Surface-wave formulation
+
+3.1  Harmonic plane-wave ansatz
+
+All fields take the form exp[i(kx+pz−ωt)] with real wavenumber k > 0, complex depth wavenumber
+p, and real frequency ω > 0. For the half-space z > 0 the decay condition as z →+∞is
+
+                                Im p > 0.                                       (10)
+
+Roots that are nearly real (|Im p| below the admissibility tolerance) are excluded and flagged —
+never silently reclassified as admissible.
+
+3.2  Matrix polynomial
+
+Substitution into the field equations yields the 5 × 5 matrix pencil in the state vector a =
+(ux, uz, wx, wz, θ):
+                   M(ω, k, p) a = 0,  M = A0 + pA1 + p2A2.                      (11)
+
+
+                                          7
+
+--- PAGE 8 ---
+The entries follow uniquely from Section 2; in particular the coupling entries that carry the phason-
+stress asymmetry satisfy the identity
+
+                             A1(3, 4) = A1(4, 3) = −(K2 + K6) k                          (12)
+
+(indices 1-based). Verified structural properties (symbolic computation, Section 5.2): det M has
+degree 10 in p for all three models; degree 10, 8, 10 in ω for models A, B, C respectively; the static
+determinant factorises as
+
+                                              410478057
+           det M(ω = 0) = c (k2 + p2)5,     c =                  (nondimensional),        (13)
+                                           25600000000000
+
+and
+                       det(A2) = (︁ C11K1 −R21 )︁(︁ C66K3 −R26 )︁ k11 > 0,                     (14)
+
+so the ten depth roots are generically non-degenerate.
+
+3.3  Decaying roots
+
+For each (ω, k) the ten roots pj are computed in closed form from the quadratic-in-p2 block
+structure (depth-root computation with Newton polishing and per-root residual flags) and the five
+admissible roots with Im pj > 0 are retained. Grazing roots (nearly real) are counted separately
+and flagged. At every reported production branch point the root count was nad = 5, ngrazing = 0
+(Section 5.2, Fig. 3).
+
+3.4  Surface boundary conditions
+
+At z = 0 the half-space carries the outward normal n = −ez. The baseline (free-surface) conditions
+are
+                        σzz = 0,     σxz = 0,    Hxz = 0,    Hzz = 0,                    (15)
+
+supplemented by one thermal condition:  isothermal (θ = 0) for the production baseline; the
+insulated alternative (∂zθ = 0) is implemented but not swept in the production studies. The
+clamped-phason variant replaces the two phason-traction rows by wx = 0, wz = 0. The two phason
+boundary options constrain physically different things: the free condition Hxz = Hzz = 0 leaves
+the surface value of the phason field undetermined — the quasiperiodic structure may re-arrange
+at the free surface at no phason-stress cost — whereas the clamped condition wx = wz = 0 pins
+the quasiperiodic structure at the surface and forces the phason field to adjust in a boundary layer
+of thickness δ∗into the material. The taxonomy of these boundary conditions (prescribed traction
+versus prescribed displacement for each of the phonon, phason, and thermal fields) follows [10, 9].
+A phason-traction-free surface is not merely a convenient idealisation: it is the condition used for
+the free surface of a 2D hexagonal quasicrystal half-space in [30], where the phonon traction and
+both phason tractions vanish. The 1D hexagonal variant in which only Hzz is released (e.g. [38]) is
+not transferred to the 2D setting, where the phason field carries two independent components. The
+prescribed normal load follows the convention tz = −σzz = P0, i.e. σzz = −P0; the eigenproblem
+uses P0 = 0. In every case there are five boundary conditions for the five admissible depth roots,
+so the half-space problem is determined for each of the three models.
+
+
+
+
+
+                                          8
+
+--- PAGE 9 ---
+3.5  Surface determinant and singular-value criterion
+
+Assembling the five admissible partial waves into the 5 × 5 boundary matrix B(ω, k) (rows in the
+order of Section 3.4), a surface wave exists when B is singular:
+
+                                       det B(ω, k) = 0.                                    (16)
+
+The numerical indicator is
+                                           σmin (︁ B(ω, k))︁
+                                   r(ω, k) =                        ,                                (17)
+                                        ∥B(ω, k)∥
+minimised over k at fixed ω. The normalisation by ∥B∥is recorded rather than assumed to be
+innocuous: r is not invariant under arbitrary row rescalings, and no such invariance is claimed
+anywhere in this work; the system is solved in nondimensional variables, and the conditioning
+κ(B) (up to ∼5 × 108 at some points) and the per-point residual floors (10−11–5.6 × 10−6) are
+stored with every result.
+
+3.6  Numerical root tracking
+
+The surface-wave speed  is reported as V ∗= Ω/k∗(nondimensional phase speed; Section 4).
+Branches are tracked by continuation with (i) a global scan with sub-scans at the bulk-grazing
+wavenumbers kg = Ω/vc, vc ∈{√︁C∗11, √︁C∗66, √︁K∗3}; (ii) a continuation-preferred selection with a
+staleness guard; (iii) rejection of quasi-static degenerate minima (V ∗< 0.15, whereas every phys-
+ical branch of this system has V ∗≥0.29) — points lacking a physical candidate are reported as
+degenerate-only and never substituted; (iv) branch-identity-verified seeds for model-limit sweeps
+(the seed must match the corresponding limit model’s tracked branch; Section 5.3); and (v) a
+branch-jump diagnostic that fails the sweep on any unexplained change of V ∗exceeding 5% be-
+tween neighbours. An independent two-path consistency check (the production ω →k∗route
+versus the alternate k∗→ω route) precedes any production sweep.
+
+4  Nondimensionalization and parameters
+
+Lengths are scaled by k−10  with the declared reference scale k0 = 2π×106 m−1 (reference wavelength
+1 µm; k0 is a scale, never a working wavenumber — the working wavenumber is the solved k),
+velocities by v0 = √︁C11/ρ, frequencies by ω0 = v0k0, displacements by U0 = β1T0/(C11k0)
+with W0 = U0, temperature by T0, and stresses by C11. Starred symbols denote nondimensional
+quantities; Ω= ω/ω0, k∗= k/k0, V ∗= Ω/k∗, p∗= p/k0.
+   The computed scales for the accepted parameter set (Table 2) are
+
+   v0 = 6917.1446 m/s,    ω0 = 4.34617 × 1010 rad/s,    U0 = W0 = 4.2636 × 10−10 m.   (18)
+
+The nondimensional baseline is
+   C∗11 = 1, C∗12 = 0.5, C∗66 = 0.25;  K∗1 = 0.25, K∗2 = K∗3 = 0.1, K∗6 = 0.05;
+   R∗1 = 0.05, R∗2 = 0.025, R∗6 = 0.0125;  ρ∗= ρ∗w = 1, β∗1 = 1, c∗e = 1;
+    k∗11 = 2.6077 × 10−3,   τ0∗ = 4.3462 × 10−3,  T0β∗1 = 2.3047 × 10−3,  D∗w = 11467.5.    (19)
+
+Table 3 collects the controlling nondimensional groups and the ranges actually swept in this work.
+The friction value defines the phason crossover frequency ωc = Dw/ρw (from model C’s dynamic
+operator), i.e.
+    Ωc = D∗w/ρ∗w = 11467.5,     ωc ≈4.984 × 1014 rad/s,     fc = ωc/2π ≈79.32 THz,     (20)
+
+
+                                          9
+
+--- PAGE 10 ---
+Table 2: Dimensional parameter set (provenance as recorded; the set is composite and partly surrogate —
+see Section 7.9).
+
+
+  Group           Values                                           Status
+
+  Phonon elastic   C11 = 200, C12 = 100, C13 = 100, C33 = 150,  composite literature table [33,
+                   C44 = 50, C66 = 50 GPa                               31]; C66 = (C11 −C12)/2
+   Phason elastic   K1 = 50, K2 = 20, K3 = 20, K4 = 20, K6 =  same table; K6 derived
+                   10 GPa
+   Coupling       R1 = 10, R2 = 5, R3 = 5, R4 = 3, R6 = 2.5 GPa   same table; R6 derived
+   Piezoelectric      e31 = −0.160, e33 = −0.347, e15 = −0.138; e′31 =  same  table  (passive  in  this
+                    −0.350, e′15 = −0.160 C/m2                        configuration)
+   Dielectric         ξ11 = 82.6, ξ33 = 90.3 pF/m                   same  table  (passive  in  this
+                                                                          configuration)
+   Thermal         β1 = 1.798, β3 = 1.383 MPa/K; k11 = k33 =   k11: declared choice 6; [31] re-
+                   6 W/(m K); T0 = 298 K; ce = 500 J/(kg K)         ports 5.3 — discrepancy gen-
+                                                                      uine and unresolved (see text).
+                                                                                     ce:   surrogate,  from  cp ≈
+                                                                25 J/(mol K)  [36] with  de-
+                                                                          clared M ≈50 g/mol
+   Inertia          ρ = 4180 kg/m3; ρw = ρ                           surrogate (decagonal-QC data
+                                                                                   [36, 14]); ρw = ρ declared —
+                                                             no independent phason mass
+                                                                        density in the literature
+   Phason friction  Dw = 2.0833 × 1018, from Dw = 1/Cw, Cw =   literature-derived
+                      4.8 × 10−19 m3 s/kg [14]
+   Relaxation        τ0 swept 10−13–10−11  s in design;  production   declared  computational  pa-
+                   study uses τ0∗ values                             rameter
+
+and the telegraph relaxation scale τtel∗ = 1.744×10−4, i.e. τtel = 2/ωc ≈4.013×10−15 s. Ωc appears
+in the results only as a reference line (Section 6.2); it is not presented as a validated transition.
+   The parameter set is a composite/surrogate set: no single fully characterised 2D hexagonal
+quasicrystal specimen provides all of these constants experimentally. All conclusions are therefore
+statements about the model with these parameters, not about a specific material. The thermal
+conductivity illustrates the point: the adopted k11 = 6 W/(m K) differs from the 5.3 W/(m K)
+tabulated in [31]; the discrepancy is genuine, unresolved in the source literature, and declared —
+k11 enters only the thermal row of the formulation.
+
+5  Verification and benchmarks
+
+All verifications were executed as automated steps on the final implementation, before and along-
+side the production studies; the complete records ship with the reproducibility package.
+
+5.1  Classical elastic and Rayleigh benchmark
+
+With phason and thermal fields frozen out, the decoupled elastic limits are exact: vP /v0 = 1 and
+vS/v0 = 1/2 to machine precision (nondimensionally, √︁C∗11/ρ∗= 1, √︁C∗66/ρ∗= 1/2). For the
+classical Poisson ratio ν = 1/3 implied by C∗12 = 0.5, the decoupled Rayleigh ratio computed by
+the production machinery is
+
+              vR/vS = 0.932525905921  versus the analytic  0.932525905931,            (21)
+
+
+                                          10
+
+--- PAGE 11 ---
+      Table 3: Controlling nondimensional groups and swept ranges (baseline values from (19)).
+
+
+      Group                            Baseline       Swept range (where applicable)
+
+       Frequency Ω∗          —             10−3–103 (121 pts, Studies 1, 3); 10−3–
+                                                        102 (61 pts, Study 2)
+      Phason friction D∗w               11467.5        10−2–104 (61 values, Study 2)
+       Relaxation time τ0∗                4.3462 × 10−3   {10−5, 10−4, 4.3462 × 10−3, 10−2, 10−1}
+                                                     (Study 3)
+      Phason crossover Ωc = D∗w/ρ∗w     11467.5         reference   line  only  (no   transition
+                                                        claimed)
+       Thermoelastic coupling T0β∗1      2.3047 × 10−3   fixed (baseline)
+       Resolution floor ε∆(absolute V )   1.13 × 10−8    benchmarked, fixed
+
+
+a relative discrepancy of 1.1 × 10−11 (Fig. 2). In the fully coupled quasi-static limit with a free
+phason surface, the models B and C give V ∗/vS = 0.9326028 (e.g. 0.93260276 at Ω= 10−5), i.e.
++7.7 × 10−5 above the decoupled analytic Rayleigh value — the phason surface compliance effect;
+model A gives V ∗/vS = 0.62145378 at the same limit, its distinct phason-dominated branch.
+   What Fig. 2 establishes, and what it rules out:  the production machinery reproduces the
+classical theory exactly wherever classical theory applies, so every deviation reported later is at-
+tributable to the quasicrystal couplings rather than to the formulation or the root tracking. The
+spread between the three model markers in the coupled column is the first visible signature of the
+central result of this paper: with a free phason surface, the inertial phason (model A) does not
+follow the phonon–Rayleigh branch at all.
+
+5.2  Structural and symbolic verification
+
+Symbolic verification (exact rational arithmetic): degp det M = 10 for models A, B, C; degω det M =
+10, 8, 10 for A, B, C (model B loses the phason-inertia terms, reducing the frequency degree by
+two); det M(ω = 0) = 25600000000000(k2+p2)5410478057             for all three models; det A2 > 0 with the factorisation
+(14). The nondimensional arithmetic of Section 4 is reproduced exactly (c∗e ≡1 by construction).
+In the production diagnostics along the physical solved branches, every reported branch point car-
+ries five admissible decaying roots and zero grazing roots (nad = 5, ngrazing = 0 across all accepted
+sweeps). The companion depth-root diagnostic of the pencil M(Ω∗, k∗, p) at the fixed reference
+wavenumber k∗= 2Ω∗is illustrated in Fig. 3, where models B and C display five admissible de-
+caying roots (nad = 5, ngrazing = 0) while model A exhibits its documented near-grazing behavior
+with four admissible decaying roots and two grazing roots (nad = 4, ngrazing = 2); per-point branch
+residuals 9.7 × 10−9–3.2 × 10−5 are recorded.
+    Fig. 3 answers the structural question behind the depth pencil: at all three decades of frequency,
+models B and C split cleanly into five decaying and five excluded roots (nad = 5), while model
+A exhibits four decaying roots and two grazing roots at this reference scan (on the actual solved
+physical branch tracked by continuation, model A maintains nad = 5). What does not change
+along the accepted physical branches — the count nad = 5 — is what licenses the uniform 5 × 5
+surface formulation; what changes across the models is the geometric arrangement of the admissible
+cluster, reflecting the different balance of phason inertia and friction encoded in each model.
+
+5.3  Model-limit verification (C →A and C →B)
+
+On the full Study-1 grid (Ω= 10−3–103, 121 logarithmic points; Fig. 2):
+
+
+                                          11
+
+--- PAGE 12 ---
+      a                              b
+                                                 100
+      1.1                                                                                  C(D w* 10 14)  A [gate]
+           1 (exact)                              10 2                                 C( w* 10 8)  B [gate]
+      1.0                                                                                  C(D w=10*       8)  A [evidence]
+                                                                                                                                                   6                                             0.9326028     10 4                                    target 10
+      0.9             0.932525906                                                             10 16 clip
+                       *  10 6   ratio
+                                                 |/Vrecord)      0.8                                   0.934208 (excl.
+                       *                                            10 8
+                V
+      0.7             |     10     velocity                                       10
+      0.6                                                       12                                      0.62145378         10                    0.5 (exact)
+      0.5                                    10 14       roundoff-dominated
+                  decoupled Rayleigh 0.932525905931
+      0.4                                           10 16              vP/v0   vS/v0   vR/vS   vR/vS A (cpl.)B/C (cpl.)                                                10 3  10 2  10 1   100   101   102   103
+                       num.   ana.                                                                     *
+
+
+Figure 2:  Verification.  (a) Classical-limit benchmarks:  nondimensional bulk speeds vP /v0 = 1 and
+vS/v0 = 0.5 (exact), the decoupled Rayleigh ratio computed by the production machinery (0.932525906)
+against the analytic value 0.932525905931 (dashed line; relative error 1.1 × 10−11), the coupled quasi-
+static free-phason ratios 0.62145378 (model A) and 0.9326028 (models B/C), and the excluded exploratory
+coarse-scan record 0.934208 (open marker; Section 5.1).  (b) Model-limit reproduction on the full grid:
+C(D∗w →10−14)→A and C(ρ∗w →10−8)→B gates (121/121 within 10−6; maxima 1.11 × 10−9, 3.27 × 10−9)
+and the frozen 10−8 evidence curve (dash-dot) leaving the target below Ω∗≈0.32 with the non-uniform
+singular-limit envelope ∼Ωc/Ω∗; the shaded band marks the roundoff-dominated region at the 10−16 clip,
+and the deep dips of the gate curves into that band are double-precision cancellation, not solver failure.
+
+
+
+
+
+                                          12
+
+--- PAGE 13 ---
+      a          A,     * = 0.1          b           A,     * = 10           c          A,     * = 1000
+                                                                                2000
+        4                                   40
+                                                                                1000
+        2                                   20
+
+        0                                    0                                    0      Im\,p
+        2                                   20
+                   admissible                                                        1000
+                  excluded        4                                   40
+                  grazing
+                                                                                2000
+              4     2    0     2     4            40    20    0     20    40            2000        0        2000
+
+      d          B,     * = 0.1          e           B,     * = 10                f          B,     * = 1000
+
+       75                                  750                                 7500
+       50                                  500                                 5000
+       25                                  250                                 2500
+
+        0                                    0                                    0    Im\,p
+       25                                  250                                 2500
+       50                                  500                                 5000
+       75                                  750                                 7500
+
+                 50       0       50                  500      0       500                 5000      0      5000
+
+      g          C,     * = 0.1         h          C,     * = 10                  i          C,     * = 1000
+
+       75                                  750                                 7500
+       50                                  500                                 5000
+       25                                  250                                 2500
+
+        0                                    0                                    0    Im\,p
+       25                                  250                                 2500
+       50                                  500                                 5000
+       75                                  750                                 7500
+
+                 50       0       50                  500      0       500                 5000     0      5000
+                        Re\,p                                Re\,p                                Re\,p
+
+Figure 3: Depth-root structure of the pencil M(Ω∗, k∗, p) at the reference wavenumber k∗= 2Ω∗; rows:
+models A, B, C; columns: Ω∗= 0.1, 10, 1000; panels (a)–(i). Circles: admissible decaying roots (Im p > 0;
+five per panel for models B and C, four per panel for model A at this reference scan); crosses: excluded
+roots; open squares: grazing (nearly real) roots, appearing in model A (ngrazing = 2) where they accompany
+the documented near-grazing behavior (V ∗< √︁K∗3) off the solved branch. (On the actual physical solved
+branch of each model, nad = 5 and ngrazing = 0 hold uniformly.)  Admissible residuals ≤6.0 × 10−17;
+excluded roots carry no accepted residual by construction; the mirror symmetry about Im p = 0 reflects the
+real-coefficient depth problem.
+
+
+
+
+
+                                          13
+
+--- PAGE 14 ---
+   • C(D∗w →10−14×baseline) →A: max |∆V |/V = 1.11 × 10−9, all 121/121 points within the
+      frozen 10−6 target.
+
+   • C(ρ∗w →10−8×baseline) →B: max |∆V |/V = 3.27 × 10−9, 121/121.
+   • Evidence curve C(D∗w = 10−8×baseline) →A (frozen design perturbation, retained but
+     not gated): meets 10−6 for Ω≥0.3162 (71/121 points). Below that crossover the deviation
+     grows smoothly with the singular-limit envelope ∼Ωc/Ω(here Ωc = 1.1467×10−4), reaching
+      3.1 × 10−2 at Ω= 10−3. This is genuine perturbation physics — the Dw →0 limit is not
+     uniform in Ω— not a numerical failure.
+
+The limit sweeps are tracked downward from the top of the grid with branch-identity-verified
+seeds: at the seed frequency the continuation start must be the local minimum of r that connects
+continuously (in model space) to the corresponding limit model’s tracked branch, accepted within
+a 10−2 relative branch-match tolerance, otherwise the sweep fails outright.  This protocol was
+introduced after a wrong-branch seeding artefact was identified at Ω= 103 (the seedless global
+minimum can sit on the phonon branch, V ∗≈0.467, while the intended phason branch is a narrow
+near-grazing minimum at V ∗≈0.3107); with the fix, the seed is verified at V ∗= 0.31072662
+(deviation 7.6 × 10−11 from A), the maximum neighbour-to-neighbour relative change along the
+whole evidence curve is 5.4 × 10−3, and a branch-jump diagnostic reports no discontinuities on
+any of the six tracked sweeps. The isolated dips of the gate curves into the shaded 10−16 band of
+Fig. 2(b) are double-precision cancellation between nearly equal speeds (the limit is reproduced to
+∼10−9), classified as numerical roundoff and retained without smoothing.
+  A two-path consistency check (production ω →k∗route versus the independent k∗→ω route)
+passes 15/15 anchors with worst relative difference 1.04 × 10−9 ≤10−8 before any physics sweep.
+    Fig. 2 is the numerical certificate that model C is a genuine interpolation rather than a third
+unrelated theory: as the friction is removed C reproduces the inertial model, as the phason inertia
+is removed it reproduces the diffusive model, over the whole grid and to parts per billion. The
+dashed evidence curve adds the physically instructive failure mode of the opposite kind: at any
+finite residual friction the C→A limit is non-uniform in frequency, because the ratio Ω/Ωc — the
+competition parameter of Section 7.4 — grows without bound as Ω→0 at fixed small Dw. The
+curve is therefore kept in the paper:  it documents exactly where the formal limit must be used
+with care, and it is the reason the production statements of Section 6 always carry their Ωranges.
+
+5.4  Boundary-condition and thermal checks
+
+The boundary-matrix construction is exercised by the production boundary-condition study (Sec-
+tion 6.6): model C clamped-versus-free differs by at most 8.1 × 10−6 relative in V ∗, a small but
+resolvable effect; model A shows no comparable clamped branch at all (Section 6.6) — recorded as
+a structural finding, not plotted as a difference. The isothermal/insulated thermal boundary op-
+tions are implemented; a production isothermal-versus-insulated sweep is not part of the accepted
+studies, and no thermal-boundary-condition effect size is claimed (not established by the present
+study). Thermal relaxation is instead probed through the τ∗0 sweep (Section 6.5).
+
+6  Results
+
+Numerical resolution (benchmark, refinement-based, recorded in the reproducibility package):
+branch-position uncertainty uV ≤1.13 × 10−9; the model-difference threshold is fixed as ε∆=
+10 max uV = 1.13 × 10−8 in absolute V  units. Relative differences such as ∆BC = |VB −VC|/VC
+
+
+                                          14
+
+--- PAGE 15 ---
+are compared against the corresponding relative floor ε∆/V C∗ ≈2.42×10−8; this is mathematically
+identical to the absolute statement |VB −VC| < ε∆. Differences below the floor are reported as
+“indistinguishable within numerical resolution” — never as exactly zero, never as significant.
+
+6.1  Baseline A/B/C surface-wave response (RQ1)
+
+The first question is whether the three phason dynamic classes even support the same surface
+wave. Over Ω= 10−3–103 (121 points, free phason, isothermal; Figs. 4–5):
+
+   • Model A tracks a single phason-dominated branch, VA∗ ≈0.31073 across the whole range
+     (0.31072689 at Ω= 10−3 to 0.31072662 at Ω= 103), with phason amplitude participation
+    Pw ≈0.991 and penetration depth δ∗= 19.9 at Ω= 0.1 shrinking as 1/Ω(Fig. 11).
+
+   • Models B and C track the phonon–Rayleigh branch, V ∗≈0.46630 →0.46626 over the
+      grid, with Pw between 1.7 × 10−13 (Ω= 0.1) and 1.8 × 10−5 (Ω= 103) — phonon-dominated
+      at every reported point — and δ∗≈12.9 →1.3 × 10−3 (Fig. 11).
+
+   • The B–C relative difference satisfies ∆BC ≤9.5 × 10−6 (maximum at Ω= 103), and 95
+     of 121 grid points lie below the resolution floor ε∆/V C∗ ≈2.42 × 10−8 (equivalently
+     |VB −VC| < ε∆).1 B and C are therefore indistinguishable at baseline over most of the swept
+     range within numerical resolution.
+
+   • The A–C difference is large, ∆AC ≈0.334: model A is separated from B/C by a different
+     branch (phason-dominated versus phonon–Rayleigh), not by a small perturbation effect.
+
+    Fig. 4(a) shows two flat-to-slightly-decreasing curves that never approach each other. What
+is plotted is the phase speed of the same boundary-value problem solved under three phason
+laws; what changes between the models is which local minimum of r the branch tracker follows,
+and that choice is physical, not numerical: the model-A minimum is a narrow phason resonance
+(Section 6.3), while the B/C minimum is the classical Rayleigh minimum modified by phason
+compliance (Fig. 2). Both branches lie below the bulk-shear line v∗S/v0 = 0.5, as a surface branch
+must.  Panel (b) zooms into the B–C pair in absolute units: the separation is invisible on the
+scale of (a), stays below the absolute floor ε∆over most of the band, and only lifts to 4.4 × 10−6
+at the top — the visual form of “indistinguishable at baseline”. Panel (c) states the mechanism:
+Pw ≈0.99 for A makes its mode a phason-carried wave, whereas Pw ≤1.8 × 10−5 for B/C makes
+theirs phonon-carried waves dressed by a slaved phason shadow. The near-flatness of V ∗(Ω∗)
+means the reported effects are branch-selection effects at essentially fixed frequency — dispersion
+plays no significant role inside the swept band.
+    Fig. 5 converts the same result into difference language and makes the resolution logic explicit.
+The constant ∆AC ≈0.334 is a branch-identity statement, not a parameter-sensitivity statement:
+it does not shrink at any frequency in the band because the two models are on different modes.
+The ∆BC curve, by contrast, wanders about the resolution floor — at most 9.5 × 10−6 relative,
+at 95/121 points below 2.42 × 10−8 — which is the quantitative form of the claim “diffusive and
+telegraph phasons are observationally the same surface wave at baseline friction”. Panel (b) makes
+the resolution logic dimensionless: ∆BC divided by the floor is below unity (indistinguishable) up
+to Ω∗≈6 and reaches ∼4×102 at the top of the band — resolvable, but still a perturbation. The
+
+   1For completeness: comparing ∆BC directly against the numeric value 1.13 × 10−8 treated as a dimensionless
+threshold — a comparison that omits the 1/VC∗ conversion and is dimensionally inconsistent — would give 91/121;
+no conclusion depends on this reading.
+
+
+
+                                          15
+
+--- PAGE 16 ---
+          a                     b                        c
+     6 × 10 1                         10 4   max 4.4 × 10 6 abs.
+                                                                         (9.5 × 10 6 rel.)               100
+                  vS* /v0 = 0.5                          5                                    10                  Pw      3                                                                10
+ *          1                         10 6                                        6 /k 4 × 10                                                       10 *                                  VC|
+                                    10 7                                        9 =                                                            10                                                                                                                                                                                                                                                                                                                                     participation *          1                         |VB V 3 × 10                                          8                                    10                                         12                                                                10
+                     model                       A                                                                                                           model                                                                                                 A                                                                                                                                                      phason                                    10 9                            |VB                                                                                            VC| 10 15                     model                       B                                                                                                           model                                                                                               B
+                     model C                                                            floor                                model C
+     2 × 10 1         2                 10 10         2                                        2               10      100     102           10      100     102           10      100     102
+                                         *                                                *                                                *
+
+
+Figure 4:  Baseline surface response (free phason, isothermal).  (a) V ∗= Ω∗/k∗versus Ω∗for models
+A (solid), B (dashed), C (dash-dot) with the bulk-shear reference v∗S/v0 = 0.5: model A on the phason-
+dominated branch (V ∗≈0.311), B and C on the phonon–Rayleigh branch (V ∗≈0.466).  (b) Absolute
+B–C separation |VB −VC| against the absolute resolution floor ε∆= 1.13 × 10−8 (shaded sub-floor region:
+indistinguishable); the separation grows to 4.4 × 10−6 absolute (9.5 × 10−6 relative) at the top of the band.
+(c) Phason participation Pw: ≈0.99 for A (phason-carried mode) versus ≤1.8 × 10−5 for B/C (phonon-
+carried modes) — the mode-character counterpart of the branch split in (a).
+
+
+
+
+        a                     b                        c
+     10 4                            103                            100
+                         floor   /V                     = floor
+     10 5                            102
+
+     10 6                            101
+                                                                                                                strongly separated                                                                floor   BC 10 7             /  100                           AC 10 1      (  1.4 × 107 × floor)
+                                     BC
+     10 8                         10 1
+
+     10 9                      below floor:  10 2
+                                        indistinguishable
+                                                                                                               AC
+     10 10         2                  10 3         2                  10 2         2             10      100     102           10      100     102           10      100     102
+                                      *                                                *                                                *
+
+
+Figure 5: Baseline model differences and the resolution logic.  (a) Relative ∆BC with the relative floor
+ε∆/V ≈2.42 × 10−8; the shaded sub-floor region is indistinguishable within numerical resolution (95/121
+points).  (b) The same data divided by the floor: values below unity are indistinguishable, values above
+unity resolvable; the curve crosses unity only above Ω∗≈6. (c) ∆AC ≈0.334, i.e. ∼1.4 × 107 times the
+floor: models A and C differ by branch identity, not by a small perturbation.
+
+
+
+
+                                          16
+
+--- PAGE 17 ---
+honest reading of the residual structure above the floor at the top of the band is that the diffu-
+sive/telegraph difference grows with Ω(as Ω/Ωc grows, Section 7.4) and would become resolvable
+at higher Ωor lower D∗w — which is exactly what the controlled-friction study of Section 6.4 finds.
+    Interpretation for RQ1: at the baseline friction D∗w = 11467.5 (Ωc = 11467.5 ≫Ωmax = 103),
+the telegraph model C operates deep inside its inertia-suppressed, friction-dominated regime on the
+whole swept grid, and its surface branch is numerically indistinguishable from the purely diffusive
+model B. The inertial model A, by contrast, supports a genuinely different — phason-dominated
+and slower — surface branch. The dynamical class of the phason field thus matters qualitatively
+(A versus B/C) but not, at baseline friction within the swept range, quantitatively between B and
+C.
+
+6.2  Phason dynamics and the crossover (RQ2)
+
+The operator crossover of model C, |ρwΩ2| ∼|DwΩ| at Ωc = D∗w/ρ∗w, is a property of the phason
+dynamic operator. It must not be confused with an observable crossover in ∆BC: the production
+data show no resolvable ∆BC feature at Ωc for the baseline friction (Section 6.1). The curves
+Ωc(D∗w) = D∗w/ρ∗w are drawn on Figs. 7 as reference lines only; the present computations do not
+establish them as transitions of any observable.
+
+6.3  Diffusive/inertial/telegraph limits (RQ1, RQ2)
+
+Section 5.3 established the formal limits C→A (D∗w →10−14) and C→B (ρ∗w →10−8) on the
+full grid to ≤3.3 × 10−9, with the frozen 10−8 evidence curve quantifying where the Dw →0
+limit ceases to be uniform (Ω≲0.316 at that perturbation; envelope ∼Ωc/Ω). The model-C
+family therefore genuinely contains both dynamical classes, and which limit is approached at a
+given frequency is controlled by Ω/Ωc — but, per Section 6.1, at the baseline friction this control
+parameter is small over the entire production range, which is exactly why B and C coincide there.
+
+6.4  Effect of D∗w (RQ2)
+
+If the baseline insensitivity of ∆BC is caused by large friction, reducing the friction should expose
+the diffusive/telegraph difference. A 61 × 61 map over Ω= 10−3–102 and D∗w = 10−2–104 (models
+B and C; all 3721 points resolved and physical, VB∗ ≥0.4650, VC∗ ≥0.4663; Figs. 6, 7):
+   • ∆BC (relative) ranges from 0 to 5.0×10−3; 2377/3721 points lie above the per-point relative
+      resolution floor.
+
+   • The resolvable region slides with D∗w: at D∗w = 10−2–100, ∆BC (maximum ≈5.0 × 10−3)
+     exceeds the floor over essentially the whole frequency range (from Ω≈10−3 and Ω≈
+      4.6 × 10−3 respectively); at D∗w = 102 only for Ω≥0.46 (maximum 9.9 × 10−4); at D∗w = 104
+      (baseline scale) ∆BC ≤1.25 × 10−7 — indistinguishable except at the very top of the range
+    (Ω≥46).
+
+    Fig. 6 displays the mechanism directly. In panel (a) the wave speeds change only marginally:
+the B/C branch moves by at most ∼10−3 across four decades of friction, so the friction does
+not restructure the surface wave — it changes which description of the phason field the wave
+sees; the relaxation shoulder of the C branch slides toward higher Ω∗as D∗w increases. Panel (b)
+is where the physics of RQ2 lives: the ∆BC curves are ordered by D∗w and slide systematically
+along the frequency axis. The ordering is the signature of the competition parameter Ω/Ωc: for a
+fixed frequency, lowering D∗w raises Ω/Ωc, and the telegraph model’s inertial term −ρwω2 becomes
+
+
+                                          17
+
+--- PAGE 18 ---
+         a                     b                        c
+     0.4675                         10 2                         10 2
+
+     0.4670                         10 4                         10 4
+
+                                   10 6                         10 6     0.4665
+ *                                  BC                                BC
+ V                               10 8                         10 8     0.4660
+               B dashed / C dash-dot                                 Dw=1e-02*
+                 Dw=1e-02*                 10 10                  Dw=1e+00*      10 10                  Dw=1e-02*     0.4655
+                 Dw=1e+00*                                        Dw=1e+02*                             Dw=1e+00*
+                 Dw=1e+02*                            12                  Dw=1e+04*             12                  Dw=1e+02*                                  10                                                               10                                                                                         Dw=1e+04*                                                                                                   floor     0.4650       Dw=1e+04*
+              10 2      100       102        10 2      100       102        10 5  10 2   101    104
+                                        *                                                *              =   * /  c =   * w/D*  w*
+
+Figure 6: Controlled-friction study (Study 2). (a) V ∗(Ω∗) for models B (dashed) and C (dash-dot) at D∗w =
+10−2, 100, 102, 104 (colours): the relaxation shoulder of the C branch shifts systematically toward higher Ω∗
+as D∗w increases, while the B–C offset shrinks.  (b) ∆BC(Ω∗) at the same frictions with the resolution
+floor: the resolvable window opens toward lower frequency as D∗w decreases (maximum ≈5.0 × 10−3 at
+D∗w = 1; ≤1.25 × 10−7 at D∗w = 104). (c) The same differences plotted against the competition coordinate
+χ = Ω∗/Ωc = Ω∗ρ∗w/D∗w: the four frictions collapse onto a single master curve, showing that χ organises
+the diffusive/telegraph separation; the low-χ scatter at or below the floor is the indistinguishable regime.
+All curves are raw 61-point grid slices; no interpolation.
+
+
+comparable to its friction term −iωDw, separating it from the purely diffusive model. Panel (c)
+sharpens this: plotted against the single coordinate χ = Ω∗/Ωc, the four friction levels collapse onto
+one master curve — the B–C separation is a function of the inertia/friction ratio, not of friction
+alone. That the largest difference is still only ≈5×10−3 relative — resolvable, but small — is itself
+a result: even at D∗w = 1, four decades below baseline, the surface wave remains overwhelmingly
+a phonon–Rayleigh wave, and the phason dynamics modifies it perturbatively.
+   The 3D surfaces of Fig. 7(a,b) exist to establish what the friction does not do: even over four
+decades of D∗w and five decades of Ω∗, both VB∗ and VC∗ form gently sloped sheets confined to a
+narrow band below the classical Rayleigh ratio, and the two surfaces are visually identical at the
+plotted z-range (which spans exactly the data, without exaggeration). The surface wave is robust
+to the phason dynamics class in its speed; the distinguishing information is in the small difference
+between the sheets, which panel (c) makes explicit.
+    Fig. 7(c) is the compact answer to RQ2.  Reading the surface against the resolution floor
+(log10 ∆≈−7.6), the resolvable region is a plateau–front–skirt structure anchored at low friction:
+at D∗w ≤100 essentially the whole frequency axis is resolvable, at D∗w = 102 only Ω∗≳0.46,
+and at the baseline D∗w ≈104 the surface sits in the noisy skirt at the −16 clip, i.e. in the region
+where ∆BC is numerically zero and B/C are indistinguishable. Two cautions belong to the reading
+of this figure. First, the front between plateau and skirt is a resolution boundary, not a material
+transition: it is where the model difference crosses the numerical floor, and the floor is a property of
+the solver, not of the quasicrystal. Second, the dashed Ωc curve on the base plane runs diagonally;
+the data show the resolvable plateau opening before (to the left of and below) that line, so the
+surface-wave separability is not organised by the bare operator crossover — consistent with the
+branch-perturbation reading of Section 7.4 rather than with a mode-transition reading. No phase
+transition is claimed at any curve in this figure.
+
+
+                                          18
+
+--- PAGE 19 ---
+   a                           b                               c
+
+
+
+                                                   0.466400                                             0.467500                                                   2.00
+
+                                                   0.465933*B                                           0.467067*C                                                 6.67 BC
+                   V                 V                                                                            log10                                                   0.465467                                             0.466633                                                 11.33
+
+
+                                                  0.465000                                             0.466200                                                 16.00
+
+                                                4                                                4                                                4
+                                              3                                                3                                                3
+                                            2                                                2                                                2      3
+          2                                                                                                             2                                                                                                                                             1 D*w               1                        0                                          1 D*w      3   2   1                        0 1 D*w      3                                                                                                                 1                        0
+                  0                   1                            0                   1                            0                   1                                      log10                                                                                  log10                                                                                                                               log10           log10  *    1    2        2                                                            log10  *    1    2        2                                                                                                             log10  *    1    2        2
+
+Figure 7:  Three-dimensional representation of the full Study-2 grid (61 × 61 computed points; no in-
+terpolation; contours projected onto the base plane): (a) VB(Ω∗,∗   D∗w) and (b) VC(Ω∗,∗   D∗w) surfaces, with
+z-axes spanning exactly the data ranges [0.4650, 0.4664] and [0.4662, 0.4674] (no vertical exaggeration) —
+both surfaces are gently sloped phonon–Rayleigh sheets with the S-shaped relaxation ridge of the C family;
+(c) log10 ∆BC(Ω∗, D∗w): the resolvable plateau (upper, ≳−3) at low D∗w and the resolution-indistinguishable
+skirt at the −16 clip, where ∆BC is numerically zero, are separated by a smooth front sliding with D∗w. The
+dashed base curve is the operator crossover Ωc = D∗w/ρ∗w, drawn as a reference line only — no observable
+transition is claimed at it.
+
+
+   This is the quantitative answer to RQ2: the choice between diffusive and telegraph phason
+dynamics is observable in the surface wave only when the friction is low enough (or the frequency
+high enough) relative to ρw; at the baseline friction the two descriptions are numerically indistin-
+guishable over the swept band, and the paper claims exactly that — neither a null result nor an
+amplified difference.
+
+6.5  Thermal relaxation (RQ3)
+
+Sweeping τ0∗ ∈{10−5, 10−4, 4.3462 × 10−3, 10−2, 10−1} over the Study-1 grid (isothermal surface;
+Figs. 8, 9): the maximum relative change of V ∗against the τ0∗ -reference is max ∆T = 7.9 × 10−5,
+attained at the largest relaxation time — small, but approximately three orders of magnitude
+above the resolution floor, hence a weak, resolvable thermal-relaxation effect. Near the baseline
+τ 0∗ = 4.3462 × 10−3 the effect is at or below the floor. The honest summary for RQ3: within
+the swept parameter range the Lord–Shulman relaxation modifies the surface wave weakly; it is
+not negligible at large τ0∗ , and it is not significant near baseline. A thermal boundary-condition
+comparison (isothermal versus insulated) was not run in the accepted studies; no such effect size
+is claimed.
+    Fig. 8 shows an effect that is present but minor, and its structure is as informative as its
+size. The oscillation of each ∆T (Ω∗) curve about zero (Section 5 records 17–30 sign reversals
+per curve) indicates an interference-type mechanism: the thermal field perturbs the surface wave
+in phase at some frequencies and out of phase at others, rather than monotonically stiffening or
+softening it. The ordering by τ0∗ — the largest relaxation time producing the largest deviation
+— identifies the relaxation time, not the coupling strength, as the controlling knob within this
+family of parameters; panel (b) confirms the control variable directly:  for τ∗0 Ω∗≳10−2 all five
+curves merge onto a single relaxation-controlled branch, while at small τ0∗ Ω∗they scatter about the
+floor — the merged branch is the Lord–Shulman modification acting on the thermal propagator,
+the scatter is the sub-floor regime. Physically this is expected: the thermoelastic coupling enters
+
+
+
+                                          19
+
+--- PAGE 20 ---
+        a                                b
+
+
+                              0                                       * =1e-05                                                                              0* =1e-05
+                                                                                                                                                       * =0.0001     10 5           0                                       * =0.0001                            10 5           0
+
+                              0                                       * =0.0043462 (ref.)                                                                  0* =0.0043462 (ref.,  T  0)
+     10 7           0* =0.01                              10 7           0* =0.01
+                              0                                       * =0.1                                                                                 0* =0.1
+     10 9          floor                                10 9          floor
+ T                        T
+     10 11                                      10 11
+
+     10 13                                      10 13
+
+     10 15                                      10 15
+
+         10 3  10 2  10 1  100   101   102   103          10 7   10 5   10 3   10 1    101
+                                                *                                                                      *   *
+                                                                                             0
+
+Figure  8:   Thermal-relaxation  sensitivity (model C, isothermal;  Study  3).   (a) ∆T =  |V (τ0∗ ) −
+V (τ ref)|/V∗      (τ ref)∗   versus Ω∗for the five swept τ 0∗ (viridis ramp); the reference τ0∗ = 4.3462 × 10−3 gives
+∆T ≡0 by construction (dotted line at the display clip) and is not an independent physical signal. (b) The
+same data against the combination τ0∗ Ω∗: for τ0∗ Ω∗≳10−2 the curves merge onto a common relaxation-
+controlled branch, while at small τ0∗ Ω∗they scatter about the floor; the sharp dips are interference nodes
+where ∆T changes sign. Maximum ∆T = 7.9 × 10−5 at τ0∗ = 10−1, three orders of magnitude above the
+floor.
+
+through T0β∗1 ≈2.3 × 10−3, already a small nondimensional number, and the relaxation modifies
+the thermal response only where τ0∗ Ω∗is of order unity; at baseline τ0∗ that condition is met only
+at the top of the band, where the effect is correspondingly at or below the floor.
+    Fig. 9 compresses the same sweep into a map; its message is that the thermal-relaxation effect
+is confined to a corner of parameter space — large τ0∗ and large Ω∗— exactly where τ 0∗ Ω∗≳1.
+Everywhere else the thermal channel is a negligible perturbation of the surface branch, which is
+why the production baseline can be (and is) treated as essentially isothermal-wave physics.
+
+6.6  Free versus clamped phason boundary (RQ4)
+
+Replacing the free-phason rows (Hxz = Hzz = 0) by clamped rows (wx = wz = 0) over the Study-1
+grid (Fig. 10):
+
+   • Model C: ∆V/V ≤8.1 × 10−6 (growing monotonically with Ωfrom ∼10−9 at Ω= 10−3
+      to 8.06 × 10−6 at Ω= 103) — a small but clearly resolvable boundary effect on a phonon-
+     dominated branch whose phason participation is tiny: clamping the phason acts only through
+     the phonon–phason coupling terms.
+
+   • Model A: clamping the phason destroys its surface branch. The computation finds only
+      quasi-static V ∗→0 degenerate minima where the clamped phason rows are trivially singular;
+     no comparable finite-speed clamped branch exists. This is reported as a structural result —
+     the clamped model-A case is excluded from the difference plot rather than represented by an
+      artefact. Physically it is consistent with the branch being phason-dominated (Pw ≈0.99):
+     suppressing the phason at the surface removes the very degree of freedom that carries the
+
+
+
+                                          20
+
+--- PAGE 21 ---
+              0.1
+                                                                          6
+
+             0.01                                                                          8
+
+                                              T
+ *0 0.0043462                                                              10 log10
+                                                                          12          0.0001
+
+                                                                          14
+           1e-05
+                                                                          16
+             3        2        1        0        1        2        3
+                                              log10   *
+
+Figure 9: Thermal map log10 ∆T (Ω∗, τ0∗ ) over the five swept relaxation times (rows) and 121 frequencies
+(columns); every cell is a computed value (white dots mark a subset of the actual samples), no interpolation.
+The dark middle row is the reference relaxation time (∆T ≡0, display clip); the resolvable band occupies
+large τ 0∗ and large Ω∗, i.e. τ0∗ Ω∗≳1, consistent with Fig. 8(b).
+
+
+     wave. (The clamped-branch penetration diagnostic still varies strongly, 0.644–0.885 relative,
+      in the recorded raw data.)
+
+    Fig. 10 and the model-A structural finding together answer RQ4, and the asymmetry between
+the two models is the physical content.  Panel (b) shows that the penetration depth of the C
+branch responds to clamping at the same order and with the same monotone Ω∗growth as the
+speed: the boundary condition perturbs the near-surface structure of the phonon branch weakly
+but consistently. For model C the phason boundary condition is a boundary-layer perturbation:
+the wave is carried by the phonon field, the phason field merely follows it, so pinning the phason
+at the surface changes the wave speed by at most 8.1 × 10−6 relative, growing with frequency as
+the coupling terms gain weight. For model A the same boundary operation is catastrophic because
+it removes the carrier: a branch with Pw ≈0.99 is, at the surface, almost pure phason motion,
+and a clamped phason cannot propagate. The monotonic growth of the model-C curve with Ω∗
+(no plateau, no saturation inside the band) indicates that the phason boundary sensitivity of the
+phonon branch is still increasing at Ω∗= 103; its extrapolated size at much higher frequency is
+not established by this study.
+    Fig. 11 completes the branch characterisation: panel (a) shows all three branches localising at
+the surface with the classical 1/Ω∗envelope, and panel (b) verifies the envelope quantitatively —
+Ω∗δ∗is flat at ≈1.99 (A) and ≈1.29 (B/C) over the whole band — so every reported mode is a
+genuine surface wave at every reported frequency. The ordering — the phason-dominated A branch
+penetrating deeper than the phonon–Rayleigh branches at the same Ω∗— is consistent with its
+slower speed and softer restoring channel; in dimensional terms the A branch probes deeper into
+the material, which matters for any surface-sensitive measurement interpretation.
+
+
+
+
+
+                                          21
+
+--- PAGE 22 ---
+           a                                b
+         10 4                                       10 4
+         10 5                                                            5                                                    10
+                  6           free) 10
+                            *fr  10 6     vs      7         10
+                            *fr|/      7                  8                                       10         10
+
+                  9                     *                                                          cl  10 8                  (clamped 10
+                    |
+
+                 10         V|/V 10                                                    10 9
+  | 10 11                                       model C         10                                                     * change, model C                                                                        floor     10                                          floor
+         10 12     3       2       1                                             3       2       1              10   10   10    100   101   102   103       10   10   10    100   101   102   103
+                                                       *                                                                        *
+   Model A: clamping the phason removes the carrier of its surface mode -- no finite-speed clamped branch exists (degenerate minima not plotted).
+
+Figure 10: Phason boundary condition, clamped (wx = wz = 0) versus free (Hxz = Hzz = 0), model C.
+(a) |∆V |/V growing monotonically from ∼10−9 at Ω∗= 10−3 to 8.1 × 10−6 at Ω∗= 103 (sub-floor region
+shaded). (b) The corresponding relative change of the dominant penetration depth, of comparable magni-
+tude and likewise growing with Ω∗: the boundary condition perturbs the near-surface structure consistently
+with the speed change. Model A is not plotted: clamping removes the phason carrier of its surface mode
+and no finite-speed clamped branch exists (degenerate minima excluded; Sections 6.6, 7.6).
+
+
+
+
+       a                                b
+
+                                                model A
+       103                                                model B  4 × 100            *   *                    *         *                                                                                         const         1/
+                                                model C
+       102                                     3 × 100
+
+  p|
+       101                         *  2 × 100
+    1/|Im                      *       100 =
+
+ *
+     10 1                                                      100
+     10 2                                                                                          model A
+                                                                                                     model B
+                                             6 × 10 1                                     model C           3     10
+         10 3  10 2  10 1  100   101   102   103       10 3  10 2  10 1  100   101   102   103
+                                               *                                                                        *
+
+
+Figure 11: Surface localisation. (a) Dominant penetration depth δ∗= 1/|Im p| versus Ω∗per model (121
+production points each); model A penetrates deeper than B/C at equal Ω∗, consistent with its slower, softer
+channel. (b) The product Ω∗δ∗is approximately constant (≈1.99 for A, ≈1.29 for B/C) across six decades,
+confirming the classical 1/Ω∗localisation of all three branches; δ∗is depth localisation, not attenuation.
+
+
+
+
+
+                                          22
+
+--- PAGE 23 ---
+7  Discussion
+
+7.1  What controls the surface branch: dynamical class, not parameters
+
+The organising result of this study is that in a 2D hexagonal piezoelectric thermoelastic quasicrys-
+tal half-space the dynamical class of the phason field — inertial, diffusive, or telegraph-type —
+decides which surface branch the free surface supports, while every continuous parameter explored
+(frequency over six decades, friction over four decades, relaxation time over four decades, phason
+boundary condition) modifies that branch only perturbatively. Model A’s branch (V ∗≈0.311,
+Pw ≈0.991) and the B/C branch (V ∗≈0.466, phonon-dominated) are not two states of one
+mode connected by parameter variation; within the investigated ranges they are distinct modes
+selected by the structure of the phason balance law. The modelling implication is direct: before
+any quantitative surface-wave computation on a quasicrystal, the phason dynamic law must be
+fixed — it is a branch-selection decision, not a refinement.
+
+7.2  Physical meaning of the inertial (model A) branch
+
+Why does phason inertia create a distinct surface mode? In model A the phason field carries kinetic
+energy 12ρw|˙w|2, so surface-localised phason oscillation can balance the phason stiffness K3 against
+inertia, in the same way that phonon inertia balances C66 in a Rayleigh wave. The resulting branch
+sits at V ∗≈ √︁K∗3 = 0.316 scaled down by coupling — the computed 0.31072662 is 1.7% below
+√︁K∗3, and the documented near-grazing degeneracy of the branch (the V ∗< √︁K∗3 requirement for
+five roots, Section 3.6) is the surface-wave expression of that phason-shear threshold. The branch is
+almost pure phason (Pw ≈0.99) because the phonon–phason coupling R∗6 = 0.0125 is weak relative
+to the phason channel. A caution attaches to this interpretation: ρw = ρ is a declared surrogate
+identification (no independent phason mass density exists in the literature), so the existence of the
+branch is a property of the model class, while its speed inherits the surrogate inertia scale.
+
+7.3  Physical meaning of the diffusive (model B) branch: slaved phasons
+
+In model B the phason field has no independent dynamics: its balance law is first order in time, so at
+frequency ω the phason responds with amplitude slaved to the phonon strain through a dissipative
+propagator ∝(iωDw)−1. The computed participation numbers are the quantitative form of this
+slaving: Pw between 1.7 × 10−13 and 1.8 × 10−5 across the band — the phason follows the phonon
+field as a small, dissipatively lagging shadow. The surface wave is therefore the classical Rayleigh
+wave dressed by phason compliance: the quasi-static verification value 0.9326028 vS exceeds the
+decoupled Rayleigh ratio by 7.7 × 10−5 precisely by this dressing. No independent phason inertia
+exists in the model, so no phason branch exists — a negative result that follows structurally from
+the degree count (degω det M = 8 versus 10).
+
+7.4  Model C, the ratio Ω/Ωc, and what the maps show
+Model C contains both mechanisms with the competition parameter Ω/Ωc, Ωc = D∗w/ρ∗w. The
+production data give a consistent, bounded reading:  (i) at baseline Ωc = 11467.5, the whole
+band has Ω/Ωc ≤8.7 × 10−2, the inertial term is negligible, and C is numerically the same
+as B (Section 6.1); (ii) in the controlled-friction study the ∆BC difference grows as the friction
+decreases, reaching 5.0 × 10−3 at D∗w = 1, i.e. the difference is a smooth perturbative function
+of Ω/Ωc; (iii) the resolvable wedge of Fig. 7 opens at frequencies below the bare Ωc line, because
+surface-wave separability depends on how the phason propagator modifies the branch minimum,
+
+
+                                          23
+
+--- PAGE 24 ---
+not on the bulk phason operator alone. The distinction that must be preserved in any summary of
+this study is therefore between the operator crossover Ωc (a model property, drawn as a reference
+line) and the resolution boundary of the ∆BC wedge (a property of the solver’s floor); the baseline
+window contains neither an operator crossover nor a claimed material transition.
+
+7.5 Why the thermal effect is small
+
+Three parameter-set facts, each verifiable from Table 2 and (19), explain the magnitude max ∆T =
+7.9 × 10−5:  (i) the thermoelastic coupling group T0β∗1 = 2.3 × 10−3 is intrinsically small, so the
+thermal channel is a weak perturbation of the elastic problem before relaxation is even considered;
+(ii) the relaxation acts through τ0∗ Ω∗, and at baseline τ0∗ = 4.3 × 10−3 this product reaches unity
+only at Ω∗≈230; (iii) the Lord–Shulman modification of the thermal propagator is itself significant
+only for τ0∗ Ω∗≳1. All three conditions coincide only in the upper corner of the swept (Ω∗, τ0∗ )
+plane, which is exactly where Fig. 9 places the resolvable band. This explanation is a property of
+the declared parameter set, not a universal statement: a material with stronger β1, larger T0, or a
+relaxation time near the wave period would show a correspondingly larger thermal effect. What
+is universal within this formulation is the mechanism: thermal relaxation enters the surface wave
+through the product τ0∗ Ω∗and the coupling group, and nowhere else.
+
+7.6  Phason boundary conditions: what free and clamped constrain
+
+The free condition Hxz = Hzz = 0 is the natural condition for a surface at which the quasiperiodic
+structure may re-arrange without phason-stress cost; it is the condition adopted for 2D hexagonal
+half-spaces in the literature [30]. The clamped condition wx = wz = 0 pins the quasiperiodic tiling
+at the surface — physically, a surface at which atomic re-arrangements are inhibited (for instance by
+a coherent epitaxial overlayer or by pinning sites). The two boundary conditions therefore bracket
+the range of physical surface preparations. The asymmetric response of the models is the physically
+interesting content: the phonon-dominated branch (C) is nearly indifferent (≤8.1×10−6) because
+its surface energy is carried by phonon traction, while the phason-dominated branch (A) cannot
+exist at all under clamping — its carrier is removed at the boundary. The model-A clamped
+degeneracy must not be reinterpreted as a finite-speed branch at another speed: the recorded
+data contain only quasi-static degenerate minima, and the penetration diagnostic of those minima
+(0.644–0.885 relative variation) characterises a degenerate set, not a wave.
+
+7.7  Penetration structure and near-surface character
+All reported branches decay as e−z/δ∗with δ∗∝1/Ω∗(Fig. 11), so the surface character of the
+modes is robust across the band. Two features have modelling consequences. First, the A branch’s
+larger δ∗means a phason-dominated surface mode probes a deeper layer of material than the
+phonon–Rayleigh mode at the same frequency; a surface measurement sensitive to a depth d
+would couple preferentially to the A branch at Ω∗≲1/δ∗target. Second, the monotone shrinkage
+of δ∗with Ω∗means that at the top of the band all branches are confined to a surface layer of
+nondimensional thickness ∼10−3; the homogeneous half-space assumption of this study is then a
+statement about that thin layer only, and any near-surface grading, coating, or damage within it
+would affect the reported speeds — such effects are outside the present homogeneous formulation
+and are flagged here rather than estimated.
+
+
+
+
+
+                                          24
+
+--- PAGE 25 ---
+7.8  Relation to the 1D hexagonal surface-wave literature
+
+The 1D hexagonal studies (Section 1.4) share the surface-matrix methodology and several physical
+messages with this work: phason coupling lowers the surface speed relative to the decoupled elas-
+tic value, and piezoelectricity adds an electrical branch structure in suitable configurations. Two
+differences are structural rather than numerical and prevent transplanting their results. (i) Field
+content: the 1D sagittal problem carries one phason component, the 2D hexagonal problem carries
+two plus the shear asymmetry Hxz̸ = Hzx — which enters the depth polynomial through the iden-
+tity (12) and modifies the fifth boundary row. (ii) Surface condition: the 1D free surface releases a
+single phason traction, the 2D surface releases two; the clamped-phason study of Section 6.6 (which
+destroys the model-A branch) has no 1D analogue in the surveyed literature. Within the surveyed
+literature this is the first surface-wave analysis of the 2D hexagonal class that carries all three
+phason dynamic models; the comparison to 1D results is qualitative, because the formulations are
+different.
+
+7.9  Limitations
+
+The limitations are stated explicitly:
+
+   1. Surrogate/composite parameters. The parameter set is a composite literature table with
+      declared surrogates (ρ = 4180 kg/m3, ce = 500 J/(kg K)); ρw = ρ is a declared identification;
+      k11 = 6 W/(m K) conflicts with 5.3 in the same source (unresolved, declared). No single
+      fully characterised 2D hexagonal quasicrystal specimen underlies the set; results are model
+      statements, not material predictions.
+
+   2. No experimental validation. Nothing in this paper is experimentally calibrated or veri-
+       fied; in particular, no observability in any specific experiment is claimed.
+
+   3. Semi-analytical homogeneous half-space. No layering, grading, imperfection, or finite-
+     depth effects; no independent discretisation-based cross-check (the method of this paper is
+      semi-analytical by design; verification rests on the classical limits, symbolic identities, and
+     two-path consistency of Section 5).
+
+   4. Configuration-I restriction.  y-independence, uy = 0, exact decoupling of the electric
+      potential; other cuts invalidate the decoupling.
+
+   5. 2D hexagonal scope. Conclusions do not extend to 1D hexagonal or icosahedral quasicrys-
+       tals, whose constitutive structures differ.
+
+   6. Numerical resolution. A/B/C differences at or below ε∆= 1.13 × 10−8 are indistinguish-
+      able, not zero; the resolution floor is benchmarked, not asserted.
+
+   7. Model-A clamped degeneracy. No comparable clamped branch exists for model A; no
+       finite clamped speed is reported for it.
+
+   8. Reference-line interpretation. Ωc = D∗w/ρ∗w in Figs. 7 is a reference line, not a validated
+      transition.
+
+   9. Singular model limits. The Dw →0 limit is non-uniform in Ω(Section 5.3); limit state-
+     ments carry their verified Ωranges.
+
+  10. Parameter ranges. All statements hold within the swept ranges of Table 3; extrapolation
+     beyond them is not supported by this study.
+
+
+                                          25
+
+--- PAGE 26 ---
+8  Conclusions
+
+   1. Formulation. A complete semi-analytical surface-wave formulation for 2D hexagonal piezo-
+      electric thermoelastic quasicrystals (Laue class 10) has been established and verified. Physical
+     meaning: the sagittal problem is a five-field boundary-value problem whose depth structure
+       is a tenth-degree matrix pencil preserving the phason-stress asymmetry Hxz̸ = Hzx. Mod-
+      elling implication:  the formulation provides an exact, discretisation-free baseline against
+     which layered, graded, or discretised treatments of this material class can be checked.
+
+   2. Verification.  Classical limits are reproduced to machine precision (vP /v0 = 1, vS/v0 =
+      1/2; Rayleigh ratio to 1.1 × 10−11), symbolic identities hold exactly, and the model limits
+   C→A and C→B are verified on the full grid (≤3.3 × 10−9) with branch-identity-verified
+      continuation.  Physical meaning: model C genuinely interpolates between the inertial and
+      diffusive classes; the retained 10−8 evidence curve quantifies the smooth non-uniformity of
+     the singular Dw →0 limit below Ω≈0.32. Modelling implication: telegraph-type phason
+     models can be used safely as one-parameter families, with the limit statements carrying their
+      verified Ωranges.
+
+   3. Branch selection at baseline (RQ1). At baseline friction (D∗w = 11467.5, Ωc ≫Ωmax),
+     model A supports a phason-dominated branch at V ∗≈0.311 (Pw ≈0.99), while models B
+     and C both support the phonon–Rayleigh branch at V ∗≈0.466, mutually indistinguishable
+      over 95/121 grid points within the benchmarked floor. Physical meaning:  inertial phasons
+      carry their own surface mode; dissipative phasons are slaved to the phonon field. Modelling
+      implication: the choice of phason dynamic law is a branch-selection decision that must be
+    made before quantitative work; diffusive versus telegraph is not such a decision at baseline
+       friction.
+
+   4. Controlled friction (RQ2). At D∗w ≤100 the B–C difference reaches 5.0 × 10−3 relative
+     and exceeds the floor over nearly the whole band; at baseline D∗w the two models agree to
+    ≤1.25 × 10−7 across the map. The operator crossover Ωc = D∗w/ρ∗w is a reference line; no
+      transition in the surface-wave data is claimed at it. Physical meaning: the diffusive/telegraph
+      distinction is a perturbative effect controlled by Ω/Ωc, not a mode transition.  Modelling
+      implication:  friction values and frequency bands must be stated together when comparing
+     phason dynamic models; a difference observed at low friction must not be extrapolated to
+     high friction.
+
+   5. Thermal relaxation (RQ3). Lord–Shulman relaxation produces a weak, resolvable surface-
+     wave effect (max ∆T = 7.9×10−5 at the largest swept τ 0∗ , three orders above the floor); near
+      baseline τ0∗ the effect is at or below the floor.  Physical meaning: thermal relaxation acts
+     through τ0∗ Ω∗and the small coupling group T0β∗1, so it matters only in the upper corner of
+     the swept plane. Modelling implication: within this parameter set, surface-wave predictions
+      are robust to the choice of τ0∗ near baseline; a thermally refined treatment pays off only at
+      large τ 0∗ Ω∗.
+
+   6. Phason boundary conditions (RQ4). Clamping the phason changes the model-C speed
+     by at most 8.1 × 10−6 relative and destroys the model-A surface branch entirely. Physical
+     meaning: the phonon branch stores its surface energy in phonon traction, the phason branch
+      in phason motion — pinning the phason removes the latter’s carrier. Modelling implication:
+     phason boundary conditions are a secondary parameter for phonon-dominated waves but a
+
+
+
+                                          26
+
+--- PAGE 27 ---
+      first-order modelling decision whenever a phason-dominated branch is possible (low friction
+      or inertial phason models).
+
+These conclusions hold for the declared parameter set and are bounded by the numerical-resolution
+floor and the stated limitations (Section 7.9); in particular, they are not extended to specific mate-
+rials, layered structures, other propagation configurations, or experimentally measured quantities.
+
+Data and code availability
+
+The numerical results were generated using the semi-analytical surface-wave implementation de-
+scribed in this work.
+
+Declarations
+
+Funding:  [FUNDING INFORMATION TO BE  INSERTED].  Conflict  of  interest:
+[CONFLICT-OF-INTEREST STATEMENT TO BE INSERTED]. Author contributions: [TO
+BE INSERTED]. No human or animal subjects are involved.
+
+References
+
+  [1] Shechtman, D., Blech,  I., Gratias, D., Cahn, J.W.:  Metallic phase with long-range orientational
+     order and no translational symmetry. Phys. Rev. Lett. 53, 1951–1953 (1984). DOI 10.1103/Phys-
+     RevLett.53.1951
+
+  [2] Levine, D., Steinhardt, P.J.: Quasicrystals: a new class of ordered structures. Phys. Rev. Lett. 53,
+     2477–2480 (1984). DOI 10.1103/PhysRevLett.53.2477
+
+  [3] Janot, C.: Quasicrystals: A Primer, 2nd edn. Oxford University Press, Oxford (1994)
+
+  [4] Steurer, W., Deloudi, S.: Crystallography of Quasicrystals: Concepts, Methods and Structures. Springer
+     Series in Materials Science, vol. 126. Springer, Berlin/Heidelberg (2009). DOI 10.1007/978-3-540-68292-
+     9
+
+  [5] Bak, P.: Symmetry, stability, and elastic properties of icosahedral incommensurate crystals. Phys. Rev.
+   B 32, 5764–5772 (1985). DOI 10.1103/PhysRevB.32.5764
+
+  [6] Levin, D., Lubensky, T.C., Ostlund, S., Ramaswamy, S., Steinhardt, P.J., Toner, J.: Elasticity and
+     dislocations in pentagonal and icosahedral quasicrystals. Phys. Rev. Lett. 54, 1520–1523 (1985). DOI
+     10.1103/PhysRevLett.54.1520
+
+  [7] Socolar, J.E.S., Lubensky, T.C., Steinhardt, P.J.: Phonons, phasons, and dislocations in quasicrystals.
+     Phys. Rev. B 34, 3345–3360 (1986). DOI 10.1103/PhysRevB.34.3345
+
+  [8] Lubensky, T.C., Ramaswamy, S., Toner, J.: Hydrodynamics of icosahedral quasicrystals. Phys. Rev.
+   B 32, 7444–7452 (1985). DOI 10.1103/PhysRevB.32.7444
+
+  [9] Ding, D.H., Hu, C.Z., Wang, R.H.: Symmetry groups, physical property tensors, elasticity and dislo-
+     cations in quasicrystals. Rep. Prog. Phys. 63, 1–39 (2000). DOI 10.1088/0034-4885/63/1/201
+
+[10] Fan,  T.:  Mathematical Theory  of  Elasticity  of  Quasicrystals and  Its  Applications.  Springer,
+     Berlin/Heidelberg (2011). DOI 10.1007/978-3-642-14643-5
+
+
+
+
+                                          27
+
+--- PAGE 28 ---
+[11] Fan, T.Y., Mai, Y.W.: Elasticity theory, fracture mechanics, and some relevant thermal properties of
+     quasi-crystalline materials. Appl. Mech. Rev. 57, 325–343 (2004)
+
+[12] de Boissieu, M.: Phonons, phasons and atomic dynamics in quasicrystals. Chem. Soc. Rev. 41 (2012)
+     [page range not independently verified in this audit]
+
+[13] Francoual, S., et al.: Phason fluctuations and the dynamical structuration of a quasicrystal. Phys. Rev.
+     Lett. 91, 225502 (2003). As cited in [15]
+
+[14] Chellappan, V., Gopalakrishnan, S., Mani, V.: Wave propagation of phonon and phason displacement
+    modes in quasicrystals: determination of wave parameters. J. Appl. Phys. 117, 054905 (2015). DOI
+    10.1063/1.4907212
+
+[15] Agiasofitou, E.C., Lazar, M.: The elastodynamic model of wave-telegraph type for quasicrystals. Int.
+     J. Solids Struct. 51, 923–929 (2014). DOI 10.1016/j.ijsolstr.2013.11.016
+
+[16] Agiasofitou, E., Lazar, M.: On the equations of motion of dislocations in quasicrystals. Mech. Res.
+   Commun. 57, 27–33 (2014)
+
+[17] Lazar, M., Agiasofitou, E.: Fundamentals in generalized elasticity and dislocation theory of quasicrys-
+      tals: Green tensor, dislocation key-formulas and dislocation loops. Philos. Mag. 94, 4080–4101 (2014)
+
+[18] Agiasofitou, E., Lazar, M.: On the constitutive modelling of piezoelectric quasicrystals. Crystals 13,
+    1652 (2023). DOI 10.3390/cryst13121652
+
+[19] Barnett, D.M., Lothe, J.: Free surface (Rayleigh) waves in anisotropic elastic half-spaces: the surface
+    impedance method. Proc. R. Soc. Lond. A 402, 135–152 (1985)
+
+[20] Bleustein, J.L.: A new surface wave in piezoelectric materials. Appl. Phys. Lett. 13, 412 (1968). DOI
+    10.1063/1.1652495
+
+[21] Gulyaev, Y.V.: Electroacoustic surface waves in solids. Sov. Phys. JETP 9, 37 (1969)
+
+[22] Lord, H.W., Shulman, Y.: A generalized dynamical theory of thermoelasticity. J. Mech. Phys. Solids
+    15, 299–309 (1967). DOI 10.1016/0022-5096(67)90024-5
+
+[23] Green, A.E., Lindsay, K.A.: Thermoelasticity. J. Elasticity 2, 1–7 (1972)
+
+[24] Chandrasekharaiah, D.S.:  Thermoelasticity with second sound — a review. Appl. Mech. Rev. 39,
+    355–376 (1986). DOI 10.1115/1.3143705
+
+[25] Chandrasekharaiah, D.S.: Hyperbolic thermoelasticity: a review of recent literature. Appl. Mech. Rev.
+    51, 705–729 (1998)
+
+[26] Ignaczak, J., Ostoja-Starzewski, M.: Thermoelasticity with Finite Wave Speeds. Oxford University
+     Press, Oxford (2009)
+
+[27] Chadwick, P., Seet, L.T.C.: Wave propagation in a transversely isotropic heat-conducting elastic
+     material. Mathematika 17(2) (1970). DOI 10.1112/S002557930000293X
+
+[28] Yang, W.G., Ding, D.H., Hu, C.Z., Wang, R.H.: Phys. Rev. B 49, 12656 (1994). As cited in the
+     reference list of [33] for the symmetry relations of its eq. (7); the relations are re-derived independently
+     in the present formulation
+
+[29] Yang, L., Zhang, L., Song, F., Gao, Y.: General solutions for three-dimensional thermoelasticity of
+    two-dimensional hexagonal quasicrystals and an application. J. Therm. Stresses 37, 363–379 (2014).
+   DOI 10.1080/01495739.2013.869149
+
+
+
+                                         28
+
+--- PAGE 29 ---
+[30] Wang,  T.,  Li,  X.Y., Zhang,  X.,  M¨uller,  R.:  Fundamental solutions  in a  half space  of two-
+    dimensional hexagonal quasicrystal and their applications. J. Appl. Phys. 117, 154904 (2015). DOI
+    10.1063/1.4918535
+
+[31] Li, X.-Y., Wang, Y.-W., Li, P.-D., Kang, G.-Z., M¨uller, R.: Three-dimensional fundamental thermo-
+     elastic field in an infinite space of two-dimensional hexagonal quasi-crystal with a penny-shaped/half-
+      infinite plane crack. Theor. Appl. Fract. Mech. 88, 18–30 (2017). DOI 10.1016/j.tafmec.2016.11.005
+
+[32] Li, Y., Tang, S., Ren, J., Yan, S., Zhao, M.: Thermoelastic fracture of two-dimensional hexagonal
+     quasicrystal media weakened by a penny-shaped crack subjected to uniformly antisymmetric heat
+     fluxes. Int. J. Heat Mass Transf. 235, 126202 (2024). DOI 10.1016/j.ijheatmasstransfer.2024.126202
+
+[33] Wang, W., Li, C., Zhou, Y.-T.: Thermo-electric response in 2D hexagonal QC exhibiting piezoelectric
+      effect. Z. Angew. Math. Mech. 101, e201900212 (2021). DOI 10.1002/zamm.201900212
+
+[34] Li, Y., Tang, S., Ren, J., Yan, S., Zhao, M.:  Analytical solutions to Mode I penny-shaped crack
+    problems in two-dimensional hexagonal quasicrystals with piezoelectric effect. Eur. J. Mech. A/Solids
+    108, 105425 (2024). DOI 10.1016/j.euromechsol.2024.105425
+
+[35] Zhou, Y.B., Li, X.F.: Fracture analysis of an infinite 1D hexagonal piezoelectric quasicrystal plate
+    with a penny-shaped dielectric crack. Eur. J. Mech. A/Solids 76, 224–234 (2019)
+
+[36] Hosseini, S.M., Bavi, O., Bavi, H., Eslami, M.R.: A novel meshless method based on a local integral
+    equation (LIE) for two-dimensional thermoelasticity of decagonal quasicrystals subjected to thermal
+     shock. Appl. Math. Model. 66, 275–295 (2019). DOI 10.1016/j.apm.2018.09.024
+
+[37] Li, Y., Zhou, Y.: Dynamic response of a piezoelectric quasicrystal rod with the generalized thermoe-
+      lasticity. Acta Mech. 235, 323–335 (2024). DOI 10.1007/s00707-023-03747-4
+
+[38] Zhang, B., Tu, H., Li, L., Yu, J., Dai, J.: Rayleigh waves propagating in the functionally graded one-
+    dimensional hexagonal quasicrystal half-space. Crystals 13, 1205 (2023). DOI 10.3390/cryst13081205
+
+[39] Zhang, B., Tu, H., Chen, W., Yu, J., Elmaimouni, L.: A coupled Legendre–Laguerre polynomial
+    method with analytical integration for the Rayleigh waves in a quasicrystal layered half-space with
+    an imperfect interface. Appl. Math. Mech.-Engl. Ed. 45, 1539–1556 (2024). DOI 10.1007/s10483-024-
+    3145-8
+
+[40] Zhang, B., Tu, H., Li, L., Han, H., Yu, J., Elmaimouni, L., Yang, X.: Rayleigh and Love waves in
+    1-D hexagonal piezoelectric quasicrystal layered half-space structures with an imperfect interface. Z.
+    Angew. Math. Mech. (2025). DOI 10.1002/zamm.70114
+
+[41] Zhang, B., Yu, J., Zhang, X., Wang, X.: Guided waves in the multilayered one-dimensional hexagonal
+     quasi-crystal plates. Acta Mech. Solida Sin. 34, 91–103 (2021)
+
+[42] Zhang, B., Yu, J.G., Zhang, X.M., Elmaimouni, L.: Guided wave propagating in a 1-D hexagonal
+     piezoelectric quasi-crystal plate. Acta Mech. (2021). DOI 10.1007/s00707-020-02811-7
+
+[43] Feng, X., Ke, L., Gao, Y.: Love wave propagation in one-dimensional piezoelectric quasicrystal multi-
+     layered nanoplates with surface effects. Appl. Math. Mech.-Engl. Ed. 45, 619–632 (2024)
+
+[44] Ma,    Y.,   Zhou,    Y.,   Yang,    J.,   Zhang,    X.,   Wang,    X.,   Ding,    S.:      Inter-
+     face   crack   behaviors   disturbed   by   Love   waves   in   a  1D   hexagonal   quasicrys-
+     tal   coating–substrate   structure.   Z.   Angew.   Math.   Phys.   74,    61   (2023).  DOI
+    10.1007/s00033-023-01947-5
+
+[45] Yang, J., Wang, X., Ding, S., et al.: Scattering of SH wave by a crack in a functionally graded one-
+    dimensional hexagonal piezoelectric quasicrystal. Z. Angew. Math. Mech. 103(2), e202200071 (2022).
+   DOI 10.1002/zamm.202200071
+
+
+                                         29
+
+--- PAGE 30 ---
+[46] Li,  S., Ding,  S., Ma, Y., et  al.: SH wave scattering by a circular arc-shaped nano-hole located
+     within the half-plane boundary of one-dimensional hexagonal quasicrystals. Acta Mech. (2025). DOI
+    10.1007/s00707-025-04361-2
+
+[47] Wang, H.T., Guo, J.H.: Nonlocal bending, vibration and buckling of one-dimensional hexagonal qua-
+     sicrystal layered nanoplates with imperfect interfaces. Struct. Eng. Mech. 89, 557–570 (2024)
+
+
+
+
+
+                                         30

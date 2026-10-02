@@ -1,0 +1,30 @@
+=== cg_model.py
+72c72
+<     C23p = s*s*C12 + c*c*C23 + 2*s*(-c)*C25
+---
+>     C23p = s*s*C12 + c*c*C23 + 2*s*c*C25      # FIX (2026-10-01): cross-term sign (was 2*s*(-c)*C25); S'=R S R^T => S'_33 = s^2 S11 + 2sc S13 + c^2 S33
+=== cg_solver.py
+17c17
+<     def __init__(self, grid, K2, Q, beta, rho, cp, T0, model='CV', tau=0.0, outer_theta_value=0.0, energy_coupling=True):
+---
+>     def __init__(self, grid, K2, Q, beta, rho, cp, T0, model='CV', tau=0.0, outer_theta_value=0.0, energy_coupling=True, inertia_scale=1.0, refine=2):
+24a25
+>         self.refine = int(refine)     # iterative-refinement steps after the LU solve (added 2026-10-01; 0 = original behaviour)
+48c49,50
+<         Ain = sparse.vstack([
+---
+>         # inertia_scale (added 2026-10-01): 1.0 = full elastodynamics (default, unchanged); 0.0 = quasi-static elasticity (ablation)
+>         Ain = (sparse.vstack([
+51c53
+<             Z3]).tocsr()
+---
+>             Z3]).tocsr()) * float(inertia_scale)
+120a123,126
+>         # iterative refinement (added 2026-10-01, P7-D003): the stock LU solve has a forward-error floor ~1e-8 in u/sigma
+>         # (diagnostic: 07_Tests/diagnostics/diag_covariance_floor.py); 1-2 refinement steps reduce it to ~1e-14.
+>         for _ in range(self.refine):
+>             U = U + lu.solve(self.rhs - A @ U)
+=== cg_grid.py
+=== cg_ops.py
+=== cg_transient.py
+=== new files: cg_bromwich.py cg_ref1d.py cg_pipeline.py

@@ -1,0 +1,71 @@
+{
+  "status": "EXPLORATORY (post-hoc; not pre-registered)",
+  "conclusion": "NO simple collapse found: D~Lambda (3.7x spread), D~Lambda*eps (3.3x), D~Lambda*eps^2 (33x) across the 6-point matrix in the linear-response band D<=0.025. Supports the confirmatory NOT-SUPPORTED finding: a two-parameter (Lambda,eps) map is required; larger matrices would be needed to fit a general response surface.",
+  "ratio_spreads": {
+    "D_over_Lam": 3.6648148148148145,
+    "D_over_LamEps": 2.5194569625957626,
+    "D_over_LamEps2": 10.276109460659697
+  },
+  "points": [
+    {
+      "Lambda": 0.0317,
+      "eps": 0.010300760667413887,
+      "D": 0.000339,
+      "tau_ps": 20,
+      "a_nm": 50,
+      "D_over_Lam": 0.010694006309148265,
+      "D_over_LamEps": 1.0381763691470278,
+      "D_over_LamEps2": 100.78637905172036
+    },
+    {
+      "Lambda": 0.0396,
+      "eps": 0.05150380333706942,
+      "D": 0.00154,
+      "tau_ps": 1,
+      "a_nm": 10,
+      "D_over_Lam": 0.03888888888888888,
+      "D_over_LamEps": 0.7550682933914308,
+      "D_over_LamEps2": 14.660437569044086
+    },
+    {
+      "Lambda": 0.1979,
+      "eps": 0.05150380333706942,
+      "D": 0.00736,
+      "tau_ps": 5,
+      "a_nm": 10,
+      "D_over_Lam": 0.03719050025265286,
+      "D_over_LamEps": 0.7220923085865645,
+      "D_over_LamEps2": 14.020174468685203
+    },
+    {
+      "Lambda": 0.1979,
+      "eps": 0.02575190166853471,
+      "D": 0.0021,
+      "tau_ps": 20,
+      "a_nm": 20,
+      "D_over_Lam": 0.010611419909044972,
+      "D_over_LamEps": 0.4120635456608112,
+      "D_over_LamEps2": 16.00128607839072
+    },
+    {
+      "Lambda": 0.7918,
+      "eps": 0.05150380333706942,
+      "D": 0.0206,
+      "tau_ps": 20,
+      "a_nm": 10,
+      "D_over_Lam": 0.026016670876483964,
+      "D_over_LamEps": 0.505140770016856,
+      "D_over_LamEps2": 9.807834320718705
+    },
+    {
+      "Lambda": 3.167,
+      "eps": 0.10300760667413884,
+      "D": 0.1031,
+      "tau_ps": 20,
+      "a_nm": 5,
+      "D_over_Lam": 0.03255446795074203,
+      "D_over_LamEps": 0.31603945574356473,
+      "D_over_LamEps2": 3.068117646334072
+    }
+  ]
+}

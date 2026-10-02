@@ -1,0 +1,18 @@
+[   24s] baseline (as handoff: T=8, eta=0.05, inertia on)     | a=10nm tau=5ps  (Lam=0.198) | D_full=7.3359e-03  D(t<=6)=7.3359e-03  max|sig_F|=9.65593e+05
+[   49s] baseline (as handoff: T=8, eta=0.05, inertia on)     | a=20nm tau=20ps (Lam=0.198) | D_full=2.1056e-03  D(t<=6)=2.1056e-03  max|sig_F|=9.64328e+05
+[   73s] QUASI-STATIC (inertia switched off)                  | a=10nm tau=5ps  (Lam=0.198) | D_full=1.9975e-03  D(t<=6)=1.9975e-03  max|sig_F|=9.67224e+05
+[   97s] QUASI-STATIC (inertia switched off)                  | a=20nm tau=20ps (Lam=0.198) | D_full=1.9975e-03  D(t<=6)=1.9975e-03  max|sig_F|=9.67224e+05
+[  143s] longer DFT window T=16                               | a=10nm tau=5ps  (Lam=0.198) | D_full=4.4577e-03  D(t<=6)=4.4577e-03  max|sig_F|=9.20679e+05
+[  193s] longer DFT window T=16                               | a=20nm tau=20ps (Lam=0.198) | D_full=1.8765e-03  D(t<=6)=1.8765e-03  max|sig_F|=9.24430e+05
+[  218s] more damping eta_d=0.20                              | a=10nm tau=5ps  (Lam=0.198) | D_full=4.8180e-03  D(t<=6)=4.8180e-03  max|sig_F|=9.71326e+05
+[  243s] more damping eta_d=0.20                              | a=20nm tau=20ps (Lam=0.198) | D_full=1.6793e-03  D(t<=6)=1.6793e-03  max|sig_F|=9.65622e+05
+[  269s] less damping eta_d=0.02                              | a=10nm tau=5ps  (Lam=0.198) | D_full=7.6562e-03  D(t<=6)=7.6562e-03  max|sig_F|=9.63417e+05
+[  293s] less damping eta_d=0.02                              | a=20nm tau=20ps (Lam=0.198) | D_full=2.6117e-03  D(t<=6)=2.6117e-03  max|sig_F|=9.65989e+05
+
+==== SUMMARY: D at equal Lambda=0.198 ====
+stored handoff values: a=10/tau=5 -> 7.358e-3 ; a=20/tau=20 -> 2.102e-3  (ratio 3.50)
+baseline (as handoff: T=8, eta=0.05, inertia on)    : D10=7.336e-03  D20=2.106e-03  ratio D10/D20=3.48
+QUASI-STATIC (inertia switched off)                 : D10=1.998e-03  D20=1.998e-03  ratio D10/D20=1.00
+longer DFT window T=16                              : D10=4.458e-03  D20=1.877e-03  ratio D10/D20=2.38
+more damping eta_d=0.20                             : D10=4.818e-03  D20=1.679e-03  ratio D10/D20=2.87
+less damping eta_d=0.02                             : D10=7.656e-03  D20=2.612e-03  ratio D10/D20=2.93

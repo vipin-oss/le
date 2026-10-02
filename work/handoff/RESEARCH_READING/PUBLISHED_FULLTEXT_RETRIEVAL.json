@@ -1,0 +1,118 @@
+[
+  {
+    "paper_id": "1",
+    "title_user_supplied": "Generalized plane waves in a rotating thermoelastic double porous solid",
+    "checked_utc": "2026-09-30T05:41:30.335782+00:00",
+    "fulltext_status": "FULLTEXT_DOWNLOADED",
+    "source_url": "https://drive.google.com/uc?export=download&id=1AcpSriIgtsNRiDMtz_IZHqRhzptgbl70",
+    "local_path": "RESEARCH_PROJECT_INPUT/LITERATURE/Accessible_Published_Fulltexts/P01.pdf",
+    "bytes": 511313,
+    "sha256": "a012391655b767765aa3087c3b793c503857c4134f2d9671cd12aa91b6bb3b11",
+    "reading_status": "SECTION_LEVEL_INITIAL_READING_COMPLETED",
+    "reading_scope": "Abstract/front matter, selected method/comparison passages, conclusions/limitations as available. Not an equation-by-equation audit."
+  },
+  {
+    "paper_id": "2",
+    "title_user_supplied": "Behavior of higher-order MDD on energy ratios at the interface of thermoelastic and piezothermoelastic mediums",
+    "checked_utc": "2026-09-30T05:41:30.336810+00:00",
+    "fulltext_status": "FULLTEXT_DOWNLOADED",
+    "source_url": "https://www.nature.com/articles/s41598-023-44339-5.pdf",
+    "local_path": "RESEARCH_PROJECT_INPUT/LITERATURE/Accessible_Published_Fulltexts/P02.pdf",
+    "bytes": 2533158,
+    "sha256": "f022b289debdd00c3549c665adca6f1fec790c177fd6469d9adcf9f542d7b81b",
+    "reading_status": "SECTION_LEVEL_INITIAL_READING_COMPLETED",
+    "reading_scope": "Abstract/front matter, selected method/comparison passages, conclusions/limitations as available. Not an equation-by-equation audit."
+  },
+  {
+    "paper_id": "10",
+    "title_user_supplied": "Reflection/transmission of plane waves at the interface of an ideal fluid and nonlocal piezothermoelastic medium",
+    "checked_utc": "2026-09-30T05:41:30.337946+00:00",
+    "fulltext_status": "NOT_RETRIEVED",
+    "last_http_status": 404,
+    "last_content_type": "text/html; charset=utf-8",
+    "last_response_head": "<html lang=\"en\" dir=ltr><meta charset=utf-8><meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"><title>Error 404 (Not Found)!!1</",
+    "reading_status": "FULLTEXT_ACCESS_UNRESOLVED"
+  },
+  {
+    "paper_id": "21",
+    "title_user_supplied": "Photo-thermo-piezo-elastic waves in semiconductor medium subject to distinct two temperature models with higher order memory dependencies",
+    "checked_utc": "2026-09-30T05:41:30.708468+00:00",
+    "fulltext_status": "NOT_RETRIEVED",
+    "last_http_status": 200,
+    "last_content_type": "text/html; charset=UTF-8",
+    "last_response_head": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n  <base href=\"/\"/>\n  <meta charset=\"UTF-8\"/>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\n",
+    "reading_status": "FULLTEXT_ACCESS_UNRESOLVED"
+  },
+  {
+    "paper_id": "25",
+    "title_user_supplied": "Comparative analysis of double and single porosity effects on SH-wave induced vibrations in periodic porous lattices",
+    "checked_utc": "2026-09-30T05:41:30.883033+00:00",
+    "fulltext_status": "FULLTEXT_DOWNLOADED",
+    "source_url": "https://drive.google.com/uc?export=download&id=1pHMqcGf3Uem1mE3LYU7UWwdEy5c1Jau5",
+    "local_path": "RESEARCH_PROJECT_INPUT/LITERATURE/Accessible_Published_Fulltexts/P25.pdf",
+    "bytes": 3993278,
+    "sha256": "e9a7fd41d224d66361bdde815e062d42720e7c1059d6350ff749f3b5815411a7",
+    "reading_status": "SECTION_LEVEL_INITIAL_READING_COMPLETED",
+    "reading_scope": "Abstract/front matter, selected method/comparison passages, conclusions/limitations as available. Not an equation-by-equation audit."
+  },
+  {
+    "paper_id": "29",
+    "title_user_supplied": "Effects of layer imperfections and material gradation on circumferential shear horizontal waves in cylindrical piezoelectric composite structure",
+    "checked_utc": "2026-09-30T05:41:31.727448+00:00",
+    "fulltext_status": "FULLTEXT_DOWNLOADED",
+    "source_url": "https://drive.google.com/uc?export=download&id=11n3K8zZc3Gj3W0AxA3AJTC-1QmGDODqZ",
+    "local_path": "RESEARCH_PROJECT_INPUT/LITERATURE/Accessible_Published_Fulltexts/P29.pdf",
+    "bytes": 2054234,
+    "sha256": "80047ea913c0a69b3e1cba6d6edf10cb75eefea208ab5035e9e4a0a574e2b85e",
+    "reading_status": "SECTION_LEVEL_INITIAL_READING_COMPLETED",
+    "reading_scope": "Abstract/front matter, selected method/comparison passages, conclusions/limitations as available. Not an equation-by-equation audit."
+  },
+  {
+    "paper_id": "35",
+    "title_user_supplied": "Coupled thermo-mechanical dynamics of rotating nano-beams with spatiotemporal nonlocality and higher-order memory-driven heat transfer",
+    "checked_utc": "2026-09-30T05:41:32.796642+00:00",
+    "fulltext_status": "FULLTEXT_DOWNLOADED",
+    "source_url": "https://drive.google.com/uc?export=download&id=19QXZBcZRQsQKQ7jFps3u9YQutGO2MtSh",
+    "local_path": "RESEARCH_PROJECT_INPUT/LITERATURE/Accessible_Published_Fulltexts/P35.pdf",
+    "bytes": 1269648,
+    "sha256": "f63517fcbe1713b6c4fac62d6aa5f6a2f678e8d39bf0f382b4f8c79d20a27149",
+    "reading_status": "SECTION_LEVEL_INITIAL_READING_COMPLETED",
+    "reading_scope": "Abstract/front matter, selected method/comparison passages, conclusions/limitations as available. Not an equation-by-equation audit."
+  },
+  {
+    "paper_id": "38",
+    "title_user_supplied": "Acoustic wave behavior in rotating functionally graded piezomagnetic media with impedance boundaries",
+    "checked_utc": "2026-09-30T05:41:33.670899+00:00",
+    "fulltext_status": "FULLTEXT_DOWNLOADED",
+    "source_url": "https://drive.google.com/uc?export=download&id=1yTIdNTZi_UX1ZiDi021cxqzJXllgRqPF",
+    "local_path": "RESEARCH_PROJECT_INPUT/LITERATURE/Accessible_Published_Fulltexts/P38.pdf",
+    "bytes": 1750541,
+    "sha256": "327d827f85c4974e983594432cbf1e4cb0b93645b1d3f16579b9dedd90068d84",
+    "reading_status": "SECTION_LEVEL_INITIAL_READING_COMPLETED",
+    "reading_scope": "Abstract/front matter, selected method/comparison passages, conclusions/limitations as available. Not an equation-by-equation audit."
+  },
+  {
+    "paper_id": "45",
+    "title_user_supplied": "Heat map analysis of wave dynamics in nonlocal Kelvin–Voigt piezo-semiconductors under memory-dependent heat flux",
+    "checked_utc": "2026-09-30T05:41:34.702584+00:00",
+    "fulltext_status": "FULLTEXT_DOWNLOADED",
+    "source_url": "https://drive.google.com/uc?export=download&id=1oU1s2Iyrg5hny2dtbU1Drr1kEewk_8ak",
+    "local_path": "RESEARCH_PROJECT_INPUT/LITERATURE/Accessible_Published_Fulltexts/P45.pdf",
+    "bytes": 1925576,
+    "sha256": "ff64f5caee3f27c2ca05842985956bd76a763bb9c054a0cfd7c792d1b028c7a1",
+    "reading_status": "SECTION_LEVEL_INITIAL_READING_COMPLETED",
+    "reading_scope": "Abstract/front matter, selected method/comparison passages, conclusions/limitations as available. Not an equation-by-equation audit."
+  },
+  {
+    "paper_id": "47",
+    "title_user_supplied": "Fractal geometry-based Klein-Gordon model for heat and mass transfer in a cylindrical cavity with variable thermal conductivity",
+    "checked_utc": "2026-09-30T05:41:35.257008+00:00",
+    "fulltext_status": "FULLTEXT_DOWNLOADED",
+    "source_url": "https://drive.google.com/uc?export=download&id=1C_7oWqaQ_AyD6ZGgzgp9BPlHtO6jhy-M",
+    "local_path": "RESEARCH_PROJECT_INPUT/LITERATURE/Accessible_Published_Fulltexts/P47.pdf",
+    "bytes": 3959226,
+    "sha256": "9ba137431610d0709bc6511f652ba12d66fc1bb1cb38b1eef9259de4e60d3e96",
+    "reading_status": "SECTION_LEVEL_INITIAL_READING_COMPLETED",
+    "reading_scope": "Abstract/front matter, selected method/comparison passages, conclusions/limitations as available. Not an equation-by-equation audit."
+  }
+]

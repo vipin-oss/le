@@ -1,0 +1,2278 @@
+
+--- PAGE 1 ---
+ A conforming C1 Bogner–Fox–Schmit finite element
+
+  formulation for coupled piezoelectric–flexoelectric
+
+continuum media with Mindlin Form-II strain-gradient
+
+                          elasticity
+
+
+                                   Vipin Gupta
+
+            Department of Mathematics, Gurugram University, Gurugram, Haryana, India
+
+    Haryana State Research Fund, Sanction Order No. 14/66-2025 SPD/HSHEC/HSRF, Session 2025–2026.
+
+
+
+                                      Abstract
+
+          Flexoelectricity couples electric polarization to strain gradients and, unlike piezoelectricity, is
+      permitted by symmetry in every dielectric, so it becomes a candidate transduction mechanism pre-
+       cisely at sub-micrometre scales. The governing equations of a coupled piezoelectric–flexoelectric
+       solid with Mindlin Form-II strain-gradient elasticity form a fourth-order electromechanical sys-
+     tem whose conforming discretization requires C1 continuity and whose raw stiffness matrix spans
+     some twenty orders of magnitude. This paper develops a conforming Bogner–Fox–Schmit finite
+      element formulation for this coupled problem in plane strain, adopting a shear-free flexoelectric
+       specialization and applying a complete non-dimensionalization as a symmetric congruence that
+      improves the conditioning by more than twenty orders of magnitude without altering the physical
+      solution. The two-mesh rates computed from the source-reported Shekarchizadeh norms are
+      3.9998, 2.9963 and 1.9995, consistent with the theoretical orders 4, 3 and 2; the adopted PZT-5H
+      constants reproduce the IEEE Std 176 analytical chain (k31 = 0.3887 against the tabulated 0.39,
+      Eopen = 71.38 GPa, Timoshenko tip deflection 5.65×10−14 m) and the electromechanical energy
+       identities to a relative residual of order 10−12. Studies of a barium titanate cantilever reveal a
+       self-stiffening saturation of the open-circuit potential, a critical thickness scaling hcrit ∝ℓ0.90
+      obtained by an empirical power-law fit to four source-reported critical-thickness roots, and an
+      energy conversion ratio that decreases with slenderness in the reduced model, traced to the
+      absence of the transverse bending coupling rather than to any computational defect. The results
+      delineate which size-dependent responses the shear-free model captures and which require the
+        full flexoelectric tensor.
+
+
+Keywords: flexoelectricity; piezoelectricity; strain-gradient elasticity; Mindlin Form-II; Bogner–
+Fox–Schmit finite element; C1 continuity; electromechanical coupling; size effect.
+
+
+1  Introduction
+
+Electromechanical coupling in dielectric solids underpins a wide range of sensors, actuators, and
+energy-conversion devices. In classical piezoelectricity, electric polarization is coupled directly to
+
+strain. The constitutive framework developed for piezoelectric ceramics has long provided the basis
+
+for modelling piezoelectric transducers and structures IEEE Standard on Piezoelectricity [1988], Jaffe
+
+
+                                          1
+
+--- PAGE 2 ---
+et al. [1971], Tiersten [1969], and distributed-parameter models of piezoelectric beams and plates
+
+remain widely used in structural sensing and energy harvesting Erturk and Inman [2011], Preumont
+
+[2011]. This framework, however, has two limitations that become important at small length scales.
+Piezoelectricity requires a non-centrosymmetric material symmetry, and the classical constitutive
+
+equations contain no intrinsic material length scale. Consequently, the electromechanical response of
+
+a linear piezoelectric solid does not acquire an additional size dependence unless a length-dependent
+mechanism is introduced.
+
+    Flexoelectricity provides such a mechanism by coupling electric polarization to strain gradients.
+
+Unlike piezoelectricity, flexoelectricity is permitted by symmetry in dielectric materials more gener-
+ally Sharma et al. [2010], Tagantsev [1986]. Because strain gradients increase as the characteristic
+structural dimension decreases, flexoelectric effects can become important in thin films, nanowires,
+and micro- and nano-scale components Wang et al. [2019], Zubko et al. [2013]. Early theoretical
+estimates suggested relatively small flexoelectric coefficients, but subsequent measurements in
+relaxor ferroelectrics and PZT ceramics reported coefficients in the µC/m range Cross [2006],
+Ma and Cross [2001]. Experiments on polymer films and ferroelectric thin films provided further
+evidence of strain-gradient-induced polarization and its role in nanoscale electromechanical be-
+haviour Baskaran et al. [2011], Catalan et al. [2011]. Atomistic calculations subsequently provided
+
+estimates of flexoelectric coefficients and clarified their tensorial structure Maranganti and Sharma
+[2009]. Continuum and atomistic studies also showed that flexoelectricity can produce appreciable
+size-dependent electromechanical behaviour in nanostructures and composite systems Majdoub
+et al. [2008], Zhu et al. [2006]. These developments established flexoelectricity as an important
+size-dependent electromechanical mechanism.
+
+   The mechanical framework needed to describe strain-gradient effects has a long history. Couple-
+stress and generalized continuum theories introduced higher-order mechanical measures into the
+elastic energy Koiter [1964], Mindlin and Tiersten [1962], Toupin [1962]. Mindlin subsequently
+developed higher-order elasticity theories involving material length scales Mindlin [1964, 1965],
+and the first strain-gradient formulation of Mindlin and Eshel provided a systematic constitutive
+
+framework for isotropic materials Mindlin and Eshel [1968]. Germain placed generalized continuum
+
+theories on a variational footing through the method of virtual power Germain [1973]. Experimental
+studies later demonstrated the mechanical significance of internal length scales in bending and
+
+torsion Lam et al. [2003], while simplified gradient and couple-stress theories extended the approach
+
+to a range of engineering problems Aifantis [1992], Altan and Aifantis [1997], Ru and Aifantis [1993],
+Yang et al. [2002]. Broader discussions of gradient elasticity, including constitutive formulations,
+length-scale identification, and finite element implementation, are available in the literature Askes
+and Aifantis [2011], dell’Isola et al. [2009].
+   The constitutive description of flexoelectricity introduces an additional tensorial structure. For
+
+cubic crystals, the flexoelectric tensor can be described by three independent coefficients associated
+with longitudinal, transverse, and shear contributions, whereas isotropic symmetry imposes an
+
+additional relation between these coefficients Le Quang and He [2011], Shu et al. [2011]. Continuum
+formulations have incorporated flexoelectric coupling together with surface effects Shen and Hu
+[2010], and beam and plate models have been developed to study size-dependent piezoelectric and
+
+flexoelectric responses Liang et al. [2014], Yan and Jiang [2013]. The potential of flexoelectricity for
+nanoscale energy conversion and harvesting has also been investigated Deng et al. [2014], Moura
+and Erturk [2017]. Reviews of the subject have highlighted the generality of the effect while also
+
+
+                                          2
+
+--- PAGE 3 ---
+identifying unresolved issues in its constitutive description and computational treatment Gupta
+et al. [2025], Wang et al. [2019], Yudin and Tagantsev [2013], Zubko et al. [2013].
+
+   These constitutive developments have created a corresponding challenge for numerical methods.
+Because strain-gradient elasticity introduces higher-order mechanical derivatives, conforming dis-
+placement approximations require continuity beyond the C0 level. Early finite element treatments
+of flexoelectricity therefore employed smooth meshfree approximations Abdollahi et al. [2014,
+
+2015]. Isogeometric formulations subsequently provided a natural route to the required smoothness
+and were extended to topology optimisation, sensitivity analysis, uncertainty quantification, and
+
+immersed spline formulations Codony et al. [2019], Ghasemi et al. [2017, 2018], Hamdia et al. [2018],
+Nanthakumar et al. [2017]. The mathematical and computational structure of flexoelectricity,
+
+including the relation between direct and converse formulations, was further examined by Codony et
+al. Codony et al. [2021]. For strain-gradient elasticity without electromechanical coupling, several
+C1, mixed, and higher-order finite element formulations are available Adini and Clough [1961],
+Amanatidou and Aravas [2002], Bogner et al. [1966], Engel et al. [2002], Papanicolopulos et al.
+[2009], Petera and Pittman [1994], Shu et al. [1999], Zervos [2008], Zervos et al. [2009], together
+with isogeometric formulations of gradient elasticity Fischer et al. [2011], Rudraraju et al. [2014].
+A benchmark two-dimensional strain-gradient solution specifically intended for computational
+verification was reported by Shekarchizadeh, Abali, and Bersani Shekarchizadeh et al. [2022].
+   Despite these developments, the fully coupled piezoelectric–flexoelectric problem presents two
+
+practical numerical issues that need to be addressed together. The discrete system combines elastic,
+strain-gradient, coupling, and dielectric contributions with markedly different characteristic scales.
+
+For slender structures, the derivative-related mechanical degrees of freedom introduce an additional
+
+disparity, making the resulting saddle-point system severely ill-conditioned in its unscaled form. A
+suitable scaling strategy is therefore needed to improve numerical conditioning without changing
+the underlying physical solution. At the same time, an energy-based measure of electromechanical
+conversion requires careful distinction between the dead-load product, the stored internal energy,
+and the quasi-static work. These issues are not independent numerical details: they arise directly
+
+from the higher-order coupled formulation and must remain consistent with its variational structure.
+   The present work develops a conforming C1 Bogner–Fox–Schmit finite element formulation for
+coupled piezoelectric–flexoelectric solids with Mindlin Form-II strain-gradient elasticity in plane
+strain. The model adopts a reduced flexoelectric specialization in which the shear coefficient is set
+
+to zero, and this specialization is stated explicitly so that the resulting predictions are distinguished
+
+from those of the full flexoelectric tensor. The formulation is written from the electric enthalpy and
+
+discretized using bicubic Hermite interpolation for the mechanical field and a bilinear approximation
+for the electric potential. A consistent non-dimensionalization is introduced at the discrete level
+as a symmetric congruence transformation to improve the conditioning of the coupled system
+while preserving its symmetric saddle-point structure. The formulation is examined through a
+strain-gradient benchmark, an independent piezoelectric analytical check, electromechanical energy
+identities, and numerical studies of a barium titanate cantilever. Particular attention is given to
+the flexoelectric figure of merit, slenderness, higher-order boundary conditions, and the critical
+thickness at which strain-gradient effects become significant. The resulting analysis also makes
+explicit which size-dependent responses are captured by the adopted shear-free model and which
+depend on the omitted transverse flexoelectric coupling.
+   The main contributions of this work are as follows:
+
+
+                                          3
+
+--- PAGE 4 ---
+  (i) a conforming C1 Bogner–Fox–Schmit  finite element formulation  of the  fully coupled
+     piezoelectric–flexoelectric boundary-value problem with Mindlin Form-II strain-gradient
+      elasticity in plane strain, assembled from the electric enthalpy with the complete higher-order
+     boundary-operator hierarchy (traction, double traction, corner forces) and a mixed C1–C0
+     mechanical–electrical element architecture;
+
+ (ii) a complete non-dimensionalization, implemented as a symmetric congruence transformation,
+     that removes both the electromechanical and the derivative-degree-of-freedom disparities and
+
+     reduces the condition number of the constrained saddle system by more than twenty orders of
+    magnitude while leaving the physical solution invariant to a relative residual of 3.5 × 10−13;
+
+(iii) a verification chain comprising the published strain-gradient benchmark rates, the IEEE Std 176
+     piezoelectric identities for PZT-5H, the corner-moment check of the reduced flexoelectric
+     actuator, the electromechanical energy identities, and a documented mesh-convergence study
+      of the coupled problem;
+
+(iv) quantitative studies of a barium titanate nanocantilever that delineate which size-dependent
+     responses the shear-free specialization captures—self-stiffening saturation of the open-circuit
+     potential, clamp-layer sensing, near-linear critical-thickness scaling—and which it does not,
+     notably the slenderness-growing energy conversion of the full flexoelectric tensor.
+
+
+2  Mathematical formulation
+
+2.1  Geometry and plane-strain assumptions
+
+The reference configuration is a bounded two-dimensional domain Ω⊂R2 with piecewise-smooth
+boundary Γ, referred to Cartesian coordinates x = [x1, x2]T ≡[x, y]T. Plane strain is assumed
+throughout,
+                                                          ∂(·)
+                                  u3(x1, x2) ≡0,      = 0,                                 (1)
+                                              ∂x3
+so that every field is a function of (x, y) only and the out-of-plane strain components vanish,
+ε13 = ε23 = ε33 = 0. The in-plane displacement field is required to lie in the second-order Sobolev
+space,
+                          u = [u, v]T ∈[H2(Ω)]2,                                    (2)
+
+because the strain-gradient energy contains second derivatives of u. Thus, the displacement field
+
+and its weak derivatives up to second order must be square-integrable for the corresponding energy
+to remain finite. This regularity requirement is the root of the C1-continuity condition that governs
+the finite element discretisation developed in Section 3.
+
+
+2.2  Kinematics: strain and strain-gradient measures
+
+The infinitesimal strain tensor and Mindlin’s Form-II strain-gradient tensor, defined as the gradient
+of the strain Mindlin and Eshel [1968], are
+
+                           εij = 21 (ui,j + uj,i) ,      ηijk = εij,k = 12 (ui,jk + uj,ik) ,                    (3)
+
+with i, j, k ∈{1, 2} and (·),i denoting differentiation with respect to xi. The strain-gradient tensor
+inherits minor symmetry in its first two indices, ηijk = ηjik, so that of its eight Cartesian components
+
+
+                                          4
+
+--- PAGE 5 ---
+only six are independent. Expanding the independent components explicitly gives
+                   η111 = u,xx,     η112 = u,xy,     η121 = η211 = 12(u,xy + v,xx),
+                                                                                                 (4)
+                   η122 = η212 = 12(u,yy + v,xy),     η221 = v,xy,     η222 = v,yy,
+where the coincident pairs (η121, η211) and (η122, η212) follow directly from the minor symmetry.
+
+
+2.3  Voigt representation and energy conjugacy
+
+In the plane-strain setting, the engineering strain vector and the energy-conjugate strain-gradient
+vector are
+                                    ⎡   ⎤  ⎡       ⎤                                                             η111           u,xx
+                                                             η112           u,xy
+               ⎡ ε11 ⎤  ⎡   u,x  ⎤
+                                                             η221            v,xy
+             εV = ⎢⎣ ε22 ⎥⎦= ⎢⎣   v,y    ⎥⎦,    ηV =   η222  =      v,yy         ,              (5)
+                        2ε12       u,y + v,x
+                                                          2η121       u,xy + v,xx                                                                                                                                                                                                                                                                                                                                                                             ⎢⎢⎢⎢⎢⎢⎢⎢⎢⎣                                 ⎥⎥⎥⎥⎥⎥⎥⎥⎥⎦                    ⎢⎢⎢⎢⎢⎢⎢⎢⎢⎣                                                                    ⎥⎥⎥⎥⎥⎥⎥⎥⎥⎦
+                                                          2η122       u,yy + v,xy
+
+with the conjugate double-stress vector
+
+                   hV = [ h111, h112, h221, h222, h121, h122 ]T.                         (6)
+
+The factors of two placed on the shear-gradient slots (η121, η122) are dictated by the energy-conjugacy
+requirement
+                                          hijk δηijk  != hTV δηV,                                    (7)
+
+which, together with the corresponding minor symmetry of the double stress, hijk = hjik, makes
+the tensor and Voigt contractions identical without introducing additional numerical factors.
+
+
+2.4  Electric field
+
+The electric potential ϕ ∈H1(Ω) is the single electrical unknown, and the quasi-static electric field
+is its negative gradient,
+                                      Ei = −ϕ,i,                                          (8)
+
+so that ∇× E = 0 identically. Quasi-electrostatics is assumed throughout, so magnetic induction
+and electromagnetic wave effects are neglected and the electric field is determined from the scalar
+potential at each mechanical state.
+
+
+2.5  Mindlin Form-II strain-gradient elasticity
+
+For an isotropic centrosymmetric material the strain-gradient energy density is parameterised by
+the five Mindlin–Eshel moduli a1, . . . , a5 Mindlin [1964], Mindlin and Eshel [1968]:
+
+                       Wgrad = a1 ηiikηkjj + a2 ηijjηikk + a3 ηiikηjjk
+                                                                                                 (9)
+                    + a4 ηijkηijk + a5 ηijkηkji.
+
+Each invariant is quadratic in the six independent components of (4). Denoting A = η111, B = η112,
+C = η121, D = η122, E = η221, F = η222, a term-by-term expansion gives
+
+                        I1 = ηiikηkjj = (A + E)(A + D) + (B + F)(C + F),
+                        I2 = ηijjηikk = (A + D)2 + (C + F)2,                                 (10)
+                        I3 = ηiikηjjk = (A + E)2 + (B + F)2,
+
+
+                                          5
+
+--- PAGE 6 ---
+and the two fully contracted invariants
+
+                         I4 = ηijkηijk = A2 + B2 + 2C2 + 2D2 + E2 + F 2,
+                                                                                            (11)
+                         I5 = ηijkηkji = A2 + 2BC + C2 + 2DE + D2 + F 2.
+
+Writing Wgrad as the quadratic form 12ηTVDVoigtηV and collecting monomials, the symmetric 6 × 6
+strain-gradient matrix assembled from the five moduli is
+
+                            ⎡ D11   0   D13   0     0   D16 ⎤
+                                        0   D22   0   D24  D25   0
+                                    D13   0   D33   0     0   D36
+                                DVoigt =                                                              ,                             (12)
+                                        0   D24   0   D44  D45   0
+                                        0   D25   0   D45  D55   0                                                                                                                                                                                                                                                             ⎢⎢⎢⎢⎢⎢⎢⎢⎣                                                                                                                                                                                                                ⎥⎥⎥⎥⎥⎥⎥⎥⎦
+                                    D16   0   D36   0     0   D66
+
+with, abbreviating S = a1 + a2 + a3 + a4 + a5, the eighteen non-zero entries
+
+                         D11 = D44 = 2S,
+
+                         D22 = D33 = 2(a3 + a4),
+                         D55 = D66 = 12a2 + a4 + 12a5,
+                                                                                            (13)
+                         D13 = D31 = D24 = D42 = a1 + 2a3,
+                         D16 = D61 = D45 = D54 = 12a1 + a2,
+                         D25 = D52 = D36 = D63 = 12a1 + a5.
+
+2.6  Electric enthalpy density
+
+The electric enthalpy density per unit volume, adopted here as the thermodynamic potential for the
+coupled electromechanical formulation Abdollahi et al. [2014], Mindlin and Eshel [1968], Sharma
+et al. [2010], Toupin [1962], is
+
+                             1            1
+              H = 2Cijklεijεkl + 2Dijkpqrηijkηpqr                                                                                            (14)
+                  −1        −ekijEkεij −µlijkElηijk,                               2κijEiEj
+
+where Cijkl (Pa), Dijkpqr (N), κij (F/m), ekij (C/m2), and µlijk (C/m) are the elastic, strain-
+gradient, permittivity, piezoelectric, and flexoelectric tensors. The negative signs of the dielectric,
+piezoelectric, and flexoelectric terms fix the meaning of the constitutive derivatives that follow.
+Substituting Ei = −ϕ,i exposes the sign structure in the potential form,
+
+                          1         1             H =  VCεV +   VDVoigtηV −1       (∇ϕ)                        2εT      2ηT         2(∇ϕ)Tκ                          (15)
+                 + (∇ϕ)TeVεV + (∇ϕ)TµVηV,
+
+in which the coupling terms reverse sign relative to (14) because the minus in E = −∇ϕ multiplies
+the minus in the coupling terms.
+
+
+
+
+
+                                          6
+
+--- PAGE 7 ---
+2.7  Constitutive relations
+
+The Cauchy stress, the double stress, and the electric displacement follow by differentiating the
+enthalpy with respect to its arguments:
+
+                       ∂H
+                                    σij =   = Cijklεkl + ekijϕ,k,
+                                        ∂εij
+                                                                                            (16)
+                        ∂H
+                                 hijk =    = Dijkpqrηpqr + µlijkϕ,l,
+                                       ∂ηijk
+
+and
+                      Di = −∂H = −κijϕ,j + eijkεjk + µijklηjkl.                       (17)
+                             ∂Ei
+In the plane-strain Voigt convention the stress components read
+
+                                σ11 = C11u,x + C12v,y + e31ϕ,y,
+
+                                σ22 = C12u,x + C11v,y + e33ϕ,y,                             (18)
+
+                                σ12 = C33(u,y + v,x) + e15ϕ,x,
+
+                               E(1 −ν)            Eν             E
+with the plane-strain moduli C11 =                C12 =              and C33 =                                    (1 + ν)(1 −2ν),       (1 + ν)(1 −2ν),           2(1 + ν).
+
+2.8  Reduced piezoelectric coupling
+
+The two-dimensional plane-strain reduction of the piezoelectric tensor has the non-zero components
+
+                           e211 = e31,     e222 = e33,     e112 = e121 = e15,                     (19)
+
+with all other ekij = 0. These are the standard components entering the polarization and stress of
+a transversely isotropic piezoelectric in the (x, y) plane IEEE Standard on Piezoelectricity [1988],
+Tiersten [1969].
+
+
+2.9  Reduced flexoelectric specialization
+
+The reduced flexoelectric constitutive specialization adopted in the present model retains the
+longitudinal and transverse components and sets the shear components to zero,
+
+                       µ1111 = µ2222 = µ11,     µ1122 = µ2211 = µ12 + 2µ44,
+                                                                                            (20)
+                                  all other µlijk = 0,
+
+together with the isotropic consistency relation
+
+                                      µ11 = µ12 + 2µ44.                                    (21)
+
+Two remarks place this specialization in context. First, the full isotropic (or cubic) flexoelectric tensor
+possesses three independent components: the longitudinal coefficient µ1111 = µ11, the transverse
+coefficient µ1122 = µ12, and the shear-bending components µ1212 = µ1221 = µ2112 = µ2121 = µ44
+Le Quang and He [2011], Shu et al. [2011]. Setting µ44 = 0 collapses that tensor to (20) with
+µ1122 = µ12 = µ11 whenever the consistency relation (21) holds, as it does for the benchmark values
+µ11 = µ12 = 1.0 µC/m used below. The neglect of the shear coefficient follows the practice of
+Abdollahi et al. Abdollahi et al. [2014], who retain only the longitudinal and transverse coefficients
+
+
+                                          7
+
+--- PAGE 8 ---
+because the shear coefficient is poorly characterised experimentally. Second, the specialization (20)
+omits the transverse bending component µ2112 of the full tensor. The consequences of this omission
+for the size-dependent response are examined quantitatively in Section 5; it must not be conflated
+with the full-tensor physics.
+
+
+2.10  Governing equations
+
+Stationarity of the total electromechanical potential with respect to independent variations of u
+and ϕ yields the mechanical equilibrium equation and Gauss’s law,
+
+                                σij,j −hijk,jk + fi = 0  in Ω,      Di,i = 0  in Ω,                    (22)
+
+where fi is the body force and the negative sign of the double divergence hijk,jk is the signature of
+the strain-gradient contribution Germain [1973], Mindlin and Eshel [1968]. Because hijk contains
+second derivatives of u, the mechanical equation is of fourth order in the displacement. The electrical
+equation is of second order in ϕ and couples to the mechanical field through the piezoelectric and
+flexoelectric polarization.
+
+    Substituting the constitutive relations and expanding the double divergence term by term gives
+the explicit two-dimensional system. Introducing the coefficient combinations
+
+                       S = a1 + a2 + a3 + a4 + a5,
+                      α = 2a1 + 2a25  + 2a3 + 3a4 + 2a5,5                               (23)
+                         β = 12a2 + a4 + 12a5,
+
+and
+                            γ = 2a1 + 2a23  + 2a3 + a4 + 32a5,                            (24)
+
+the two mechanical equilibrium equations read
+
+                  C11u,xx + C33u,yy + (C12 + C33)v,xy
+
+             −2S u,xxxx −α u,xxyy −β u,yyyy −γ (v,xxxy + v,xyyy)                    (25)
+
+            + (e15 + e31)ϕ,xy −µ11ϕ,xxx −(µ12 + 2µ44)ϕ,xyy + fx = 0,
+
+                 C33v,xx + C11v,yy + (C12 + C33)u,xy
+
+           −β v,xxxx −α v,xxyy −2S v,yyyy −γ (u,xxxy + u,xyyy)                     (26)
+
+            + e15ϕ,xx + e33ϕ,yy −(µ12 + 2µ44)ϕ,xxy −µ11ϕ,yyy + fy = 0,
+
+The electric displacement components follow from (17) and (20):
+
+                   D1 = −κ11ϕ,x + e15(u,y + v,x) + µ11u,xx
+                  + 12(µ12 + 2µ44)(u,yy + v,xy),
+                                                                                            (27)
+                   D2 = −κ22ϕ,y + e31u,x + e33v,y
+                  + 12(µ12 + 2µ44)(u,xy + v,xx) + µ11v,yy,
+
+and Gauss’s law D1,x + D2,y = 0 becomes
+
+                  −(κ11ϕ,xx + κ22ϕ,yy) + (e15 + e31)u,xy + e15v,xx + e33v,yy
+
+             + µ11u,xxx + (µ12 + 2µ44)u,xyy                                        (28)
+
+             + (µ12 + 2µ44)v,xxy + µ11v,yyy = 0.
+
+
+                                          8
+
+--- PAGE 9 ---
+The factors of one half in (27) originate from the shear-gradient slots of (5), and their cancellation
+in (28) restores the full coefficient µ12 + 2µ44 on the mixed third derivatives. The system (25)–(28)
+is the complete fourth-order electromechanical boundary-value problem treated in this work.
+
+
+2.11  Boundary conditions
+
+Integration by parts of the weak form, with the boundary virtual gradient decomposed into normal
+and tangential parts,
+
+                             ∂δui     ∂δui      ∂          ∂
+                         δui,j = nj   + τj         ,     = nj∂j,   = τj∂j,                 (29)
+                        ∂n      ∂s     ∂n         ∂s
+
+produces four conjugate boundary pairs Mindlin [1964], Mindlin and Tiersten [1962], Toupin [1962].
+The generalized traction, conjugate to ui, is
+                                          ti = (σij −hijk,k) nj −∂ (hijknkτj) ,                          (30)
+                                            ∂s
+
+the double traction, conjugate to the normal derivative ∂nui, is
+
+                                                   ri = hijknjnk,                                     (31)
+
+and the corner force, conjugate to ui at the finitely many corner points xk where the tangent or
+the double stress is discontinuous, is
+
+
+                                                   (k)
+                          F i                        =  [︁[︁hijknkτj ]︁]︁xk.                                  (32)
+
+The electrical pair is
+                          Dini = −¯ω  on Γq,    ϕ = ¯ϕ  on Γϕ,                         (33)
+
+so that an open circuit corresponds to the homogeneous Neumann condition Dini = 0 on Γq. The
+kinematic complements ui = ¯ui and ∂nui = ¯wi complete the boundary-value problem. The complete
+hierarchy—traction, double traction, and corner forces—is characteristic of strain-gradient theories.
+The corner terms arise because the tangential boundary operator is integrated by parts along Γ,
+and they vanish identically in classical elasticity, for which hijk ≡0.
+
+
+2.12  Boundary conditions of the cantilever problem
+
+The reference problem studied in Section 5 is a 2 µm × 100 nm cantilever. At the clamped edge
+x = 0 all eight mechanical degrees of freedom are constrained,
+
+               u = v = u,x = v,x = u,y = v,y = u,xy = v,xy = 0  on x = 0,                (34)
+
+which suppresses both the displacement and its first derivatives. This is the strong (essential)
+
+clamping appropriate to a rigidly bonded root. The remaining boundary of the beam is mechanically
+free, so that the generalized traction (30), the double traction (31), and the corner forces (32) all
+vanish there,
+                                                               (k)
+                                  ti = 0,      ri = 0,   F i  = 0  on Γ \ {x = 0}.                    (35)
+
+Electrically, the beam is left open-circuited,
+
+                           Dini = 0  on the entire boundary,                           (36)
+
+
+                                          9
+
+--- PAGE 10 ---
+and a transverse end load with resultant F = 1.0 nN is applied along the free end edge x = L. In
+
+the finite element implementation, this load is distributed over the nodes of the free end so that its
+resultant is F. For the actuator study the electrical condition is replaced by prescribed potentials
+on the upper and lower faces, ϕ = V0 on y = h and ϕ = 0 on y = 0, with no mechanical load. These
+conditions are chosen so that the sensor and actuator responses can be compared with the classical
+bending references directly.
+
+
+2.13  Energy formulation and the conversion ratio
+
+Because the system is driven by dead loads, the external work product must be distinguished from
+the stored energy. With the discrete displacement and potential assembled in q = [qu; qϕ] and the
+applied loads in F, the stored internal (enthalpy) energy is
+
+                Uint = 12qTuKuuqu −12qTϕKϕϕqϕ + qTuKuϕqϕ = Umech −Uelec + Ucoup,           (37)
+
+where
+
+                                         1 ∫︂   (︂                                )︂                         Umech = 2    εTVCεV + ηTVDVoigtηV  dΩ,
+                               Ω                                                    (38)
+                                         1 ∫︂                                 Uelec = 2   (∇ϕ)Tκ ∇ϕ dΩ
+                               Ω
+
+are the mechanical and dielectric energies and Ucoup is the electromechanical coupling energy. At
+equilibrium, Euler’s theorem for a homogeneous quadratic functional yields the dead-load product
+
+                           P = FTq = 2Uint,                                   (39)
+
+while for an open circuit the electrical row of the saddle system implies Ucoup = 2Uelec, hence
+
+                            Uint = Umech + Uelec,    Wqs = 2FTq1   = Uint,                      (40)
+
+where Wqs is the work performed under quasi-static proportional loading from zero to the final
+load. The electromechanical energy conversion ratio is defined on the dead-load product,
+
+                                                        Uelec
+                                ηEM =           ,                                     (41)
+                                  F vtip
+
+with F vtip the tip load times the tip deflection; under this definition ηEM ≤  12, because the
+dielectric energy can never exceed half the dead-load work. These distinctions are used consistently
+throughout the numerical studies and prevent any ambiguity in the factor of two between work
+and stored energy.
+
+
+3  Variational and finite element formulation
+
+3.1  Weak formulation
+
+The boundary-value problem of Sections 2.10 and 2.11 admits the variational statement from which
+the discretization of this section is built. Let
+
+                  V = {u ∈[H2(Ω)]2 : ui = ¯ui, ∂nui = ¯wi on Γu},
+                                                                                            (42)
+                  S = {ϕ ∈H1(Ω) : ϕ = ¯ϕ on Γϕ},
+
+
+                                          10
+
+--- PAGE 11 ---
+with V0 and S0 the corresponding spaces carrying homogeneous essential data, and introduce the
+bilinear forms
+                                                        ∫︂   [︂                                                          ]︂                     auu(u, δu) =   (δεV)TC εV + (δηV)TDVoigt ηV dΩ,
+                             Ω
+                                                        ∫︂   [︂                                                      ]︂                      auϕ(ϕ, δu) =    (δεV)TeTV∇ϕ + (δηV)TµTV∇ϕ dΩ,
+                             Ω                                                       (43)
+                                                        ∫︂                                              ]︂                     aϕu(u, δϕ) =   (∇δϕ)T[︂ eV εV + µV ηV dΩ,
+                             Ω
+                                                        ∫︂
+                      aϕϕ(ϕ, δϕ) =   (∇δϕ)Tκ ∇ϕ dΩ,
+                             Ω
+together with the load functionals
+
+                                                            ∫︂                     ∫︂
+                       Lmech(δu) =    fi δui dΩ+         ¯ti δui ds
+                               Ω               Γt
+                                                               ∫︂    ∂δui              (k)
+                     +        ¯ri     ds + ∑︂ ¯Fi   δui(xk),                     (44)
+                                             Γr   ∂n        k
+                                                               ∫︂
+                           Lelec(δϕ) = −      ¯ω δϕ ds.
+                                              Γq
+
+The weak problem consists in finding (u, ϕ) ∈V × S such that
+
+                             auu(u, δu) + auϕ(ϕ, δu) = Lmech(δu),
+                                                                                            (45)
+                             aϕu(u, δϕ) −aϕϕ(ϕ, δϕ) = Lelec(δϕ),
+
+for all (δu, δϕ) ∈V0 × S0. The forms (43) follow from the first variation of the enthalpy functional
+∫︁ ΩH dΩwith Ei = −ϕ,i, the strain-gradient term being integrated by parts twice; the minus sign in
+front of aϕϕ is inherited from the negative dielectric density in (14), and the boundary operators (30)–
+(32) arise from the same integrations by parts, so that the weak and strong statements are equivalent
+for smooth fields. The coupling forms satisfy the adjointness relation auϕ(φ, w) = aϕu(w, φ), which
+is the origin of the symmetry of the off-diagonal blocks in the discrete system (54) below.
+
+
+3.2  Requirements on the approximation
+
+The fourth-order mechanical operators in (25)–(26) demand, for a conforming Galerkin approxima-
+tion, a displacement field whose first derivatives are continuous across element boundaries. The
+weak form contains second derivatives of the test and trial functions, so a conforming space must
+lie in H2(Ω). Classical C0 elements, whose interpolation is continuous but whose derivatives are
+not, cannot represent the double stress consistently without auxiliary or mixed variables. Two
+established routes exist: the mixed or discontinuous treatments reviewed in the introduction
+Amanatidou and Aravas [2002], Engel et al. [2002], Zervos [2008], and directly C1-continuous
+elements. The present work follows the second route with the Bogner–Fox–Schmit (BFS) rectangle
+Bogner et al. [1966], whose bicubic Hermite interpolation guarantees interelement continuity of
+both the field and its first derivatives on structured rectangular meshes, the natural discretisation
+for the cantilever and plate geometries studied here.
+
+
+
+
+
+                                          11
+
+--- PAGE 12 ---
+3.3  Bicubic Hermite interpolation and BFS shape functions
+
+On the parent element (ξ, η) ∈[−1, 1]2, mapped affinely to a rectangle of half-widths a, b through
+x = xc + aξ, y = yc + bη, the four canonical one-dimensional cubic Hermite functions are
+
+                            2 −3ζ + ζ3              1 −ζ −ζ2 + ζ3
+                   H01(ζ) =                   ,    H11(ζ) =                         ,
+                                4                        4                                                                                            (46)
+                            2 + 3ζ −ζ3           −1 −ζ + ζ2 + ζ3
+                   H02(ζ) =                   ,    H12(ζ) =                            ,
+                                4                         4
+
+with H0i interpolating the nodal value and H1i the nodal derivative at ζ = ∓1. For each displacement
+component w ∈{u, v} the four tensor-product shape functions at node I = (i, j) are
+
+                   NwI,1 = H0iH0j,  NwI,2 = aH1iH0j,
+                                                                                            (47)
+                   NwI,3 = bH0iH1j, NwI,4 = abH1iH1j,
+
+where the scaling factors a, b, and ab convert parent-coordinate derivatives to physical ones, so
+that the interpolated field is
+
+                                                                                                                                                   ]︂                                (︂∂w )︂                                             (︂∂w )︂                                                     (︂∂2w )︂                                                                                                                               .             (48)            wh = ∑︂ [︂ wI NwI,1 +                                                             I,2 +                                                                                I,3 +                                                                                                     I,4                             ∂x INw    ∂y INw    ∂x∂y INw
+                               I
+
+Each node consequently carries the eight mechanical degrees of freedom
+
+                         qIu = [ u, u,x, u,y, u,xy, v, v,x, v,y, v,xy ]T,                       (49)
+
+so that a four-node element has 32 mechanical degrees of freedom. The electric potential is
+interpolated by the standard bilinear Lagrange functions
+
+                       NIϕ(ξ, η) = 4(11  + ξIξ)(1 + ηIη),                             (50)
+
+with one degree of freedom per node, giving the 36-degree-of-freedom architecture 32+4 per element.
+Sharing the nodal values and first derivatives across elements makes the global displacement field
+C1, hence uh ∈H2(Ω), while the potential is globally C0, as required by the second-order electrical
+equation. Figure 1 collects that architecture with the cantilever on which it is exercised.
+
+    Figure 1 investigates the boundary-value problem solved throughout Section 5 and the discrete
+space used to approximate it.
+   Panel (a) is the plane-strain barium titanate sensor of Section 2.12 and Table 4:  length
+L = 2 µm, thickness h = 100 nm (L/h = 20), and a downward tip resultant F = 1 nN at x = L.
+Two intrinsic lengths decide why this geometry is the right test. The elastic strain-gradient length
+ℓelastic = 0.2726 nm lies two orders of magnitude below h, so the mechanical response is expected to
+be classical bending with only a thin higher-order correction at the root. The flexoelectric length
+fflexo = 25.92 nm is comparable to h, so the electrical response is expected to feel the specimen
+size. Plane strain is not a plotting convenience: u3 ≡0 reduces the unknown fields to u, v and
+ϕ, which is precisely the setting of (25)–(28). The eight essential constraints at x = 0 are the H2
+clamp (34): because the strain-gradient energy contains second derivatives, a rigidly bonded root
+must suppress both the displacement and its first derivatives. The complementary faces carry the
+natural traction, double-traction and corner statements (30)–(32), all homogeneous except for the
+prescribed tip resultant. Electrically the sensor is an open circuit, Dini = 0 on the entire boundary
+(36). The root mark ϕ = 0 is a potential pin that removes the additive gauge of a pure Neumann
+
+
+                                          12
+
+--- PAGE 13 ---
+                                                                  (b)
+
+
+      (a)
+                                                                               4                                         3
+
+
+
+
+
+                                                                               1                                         2
+
+
+
+
+
+Figure 1: Barium titanate cantilever and four-node Bogner–Fox–Schmit element. (a) Plane-strain
+sensor of length L = 2 µm and thickness h = 100 nm (L/h = 20), with tip load F = 1 nN, essential
+clamp at x = 0, potential pin ϕ = 0 at the root, and open-circuit condition Dini = 0. (b) BFS
+rectangle with 36 degrees of freedom: eight mechanical unknowns [u, u,x, u,y, u,xy, v, v,x, v,y, v,xy] at
+each node (C1) and a bilinear potential ϕ (C0).
+
+
+problem; it does not alter E = −∇ϕ. The pair (mechanical clamp, electrical open circuit) is the
+mixed essential/natural structure of the saddle system (56).
+   Panel (b) is the discrete counterpart of that regularity. The mechanical operators in (25)–(26)
+are fourth order, so a conforming Galerkin space must be C1 and lie in H2(Ω). Each BFS node
+therefore carries the value, the two first derivatives and the mixed derivative of each displacement
+component—the eight mechanical unknowns of (49).  Four nodes give 32 mechanical degrees
+of freedom. Gauss’s law (28) is only second order in ϕ, so a bilinear C0 interpolation with one
+
+potential unknown per node is conforming and adds four electrical degrees of freedom. The resulting
+36-degree-of-freedom rectangle is the minimal structured architecture compatible with u ∈[H2(Ω)]2
+and ϕ ∈H1(Ω). The derivative unknowns are the traces that make the double stress hijk and the
+strain-gradient energy well defined across element edges; they are not an optional enrichment. The
+mixed mechanical–electrical layout is forced by the enthalpy (14), whose stationarity produces the
+indefinite block structure of (54).
+   The scientific content of the figure is therefore architectural rather than numerical: every later
+field, energy and condition number is the response of this C1–C0 element on this mixed cantilever.
+The element is the discrete image of panel (a), not an arbitrary upgrade of a C0 plate element.
+
+
+3.4  Discrete operators and element matrices
+
+The discrete strain, strain-gradient, and field operators satisfy εV = Beqeu, ηV = Bηqeu, and
+∇ϕ = Bϕqeϕ. The strain operator Be ∈R3×32 has the per-node block
+
+                           ⎡ ∂NuI   0 ⎤                                           ∂x
+                           BIe =   0   ∂Nv∂y                                                                                ⎢⎢⎣ ∂NuI   ∂NvII ⎥⎥⎦∈R3×8,                               (51)
+                                              ∂y    ∂x
+
+
+                                          13
+
+--- PAGE 14 ---
+whose three rows correspond to ε11 = u,x, ε22 = v,y, and γ12 = u,y + v,x. The strain-gradient
+operator Bη ∈R6×32 has the per-node block
+
+                          ⎡ ∂2NuI     ⎤                                      0                                              ∂x2
+                                      ∂2NuI                                      0                                           ∂x∂y
+                                              ∂2NvI                                 0
+                          BIη =         ∂2Nv∂x∂yI  ∈R6×8,                              (52)                                 0                                                       ∂y2
+                                      ∂2NuI   ∂2NvI
+                                           ∂x∂y    ∂x2                                                                                                                                                                                                                                                                                                                                                      ⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎣ ∂2NuI   ∂2NvI    ⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎦
+                                               ∂y2    ∂x∂y
+
+with rows corresponding to η111, η112, η221, η222, 2η121, 2η122 in that order, and the field operator is
+
+                                  [︄∂Nϕ ]︄
+                    Bϕ =  ∂Nϕ∂x  ∈R2×4,   E = −Bϕqeϕ.                         (53)
+                                        ∂y
+
+Assembling the discrete enthalpy yields the element system
+
+                                                 [︄ Keuu  Keuϕ ]︄[︄ qeu ]︄     [︄ Feu  ]︄                              =              ,                            (54)
+                        Keϕu −Keϕϕ   qeϕ    −Qeϕ
+
+with
+                                                 ∫︂    (︂                                  )︂                Keuu =    BTe CBe + BTη DVoigtBη dΩ∈R32×32,
+                                Ωe
+                                                 ∫︂    (︂                      )︂                Keuϕ =    BTe eTV + BTη µTV Bϕ dΩ∈R32×4,                         (55)
+                                Ωe
+                                                 ∫︂
+                Keϕϕ =   BTϕκ Bϕ dΩ∈R4×4,
+                                Ωe
+and Keϕu = (Keuϕ)T exactly for constant coupling matrices. The global assembly produces the
+symmetric indefinite saddle system
+
+                                                 [︄                ]︄[︄    ]︄     [︄       ]︄                         Kuu  Kuϕ   qu     Fu
+                              =              ,                            (56)
+                         Kϕu −Kϕϕ   qϕ    −Qϕ
+
+whose negative dielectric block is the structural signature of the enthalpy (as opposed to energy)
+formulation.
+
+
+3.5  Numerical integration
+
+Each integrand in (55) is a product of two shape-function derivatives. The bicubic Hermite
+functions have degree three in each variable, so first derivatives have degree at most three and
+second derivatives degree at most three as well. The binding integrands BTη DVoigtBη and BTe CBe
+therefore have degree at most six in each of ξ and η. A Gauss–Legendre rule with n points per
+direction integrates polynomials of degree up to 2n −1 exactly, and
+
+                            2n −1 = 2 · 4 −1 = 7 ≥6,                               (57)
+
+so the 4 × 4 tensor-product rule integrates every element integral to machine precision, limited only
+by round-off rather than by quadrature error.
+
+
+                                          14
+
+--- PAGE 15 ---
+3.6  Non-dimensionalization and scaling
+In SI units the mechanical, coupling, and dielectric blocks of (56) scale as C0 ∼1011, √C0κ0 ∼101,
+and κ0 ∼10−8, respectively, so the assembled system spans roughly nineteen orders of magnitude.
+The bicubic twist degrees of freedom (u,xy, v,xy) widen this disparity further on slender meshes.
+The system is therefore formulated and solved in non-dimensional variables. With the primary
+reference scales L0, u0, C0, and κ0, the derived scales are
+
+                                u0           u0          C0u0
+                              ε0 =      ,     η0 =      ,     σ0 =          ,
+                             L0         L20          L0
+                                                                                            (58)
+                                √︃ C0           ϕ0
+                          ϕ0 = u0         ,    E0 =      ,
+                                    κ0          L0
+
+in which the potential scale ϕ0 = u0 √︁ C0/κ0 balances the elastic and dielectric energy densities.
+The substitution
+                         x            u            ϕ
+                                          ¯x =      ,               ¯u =     ,             ¯ϕ =     ,
+                          L0               u0             ϕ0
+                 C                 DVoigt       κ
+                            ¯C =      ,      DVoigt¯  =            ,       ¯κ =     ,                      (59)
+                         C0              C0L20           κ0
+                           eV            µV
+                               ¯eV = √C0κ0 ,     ¯µV = L0 √C0κ0 .
+leaves (25)–(28) structurally invariant with barred coefficients.  In the discrete system this is
+equivalent to the symmetric congruence transformation
+
+                             ¯K = diag(T) K diag(T),    q = T¯q,                          (60)
+
+with the per-node scaling T assigning [u0, u0/L0, u0/L0, u0/L20] to the displacement, slope, and
+twist degrees of freedom and ϕ0 to the potential. A congruence preserves symmetry, inertia, and
+the saddle-point structure, and it changes the numerical representation only. The physical solution
+q recovered from ¯q satisfies the original system to within round-off, as confirmed in Section 5.7.
+
+
+3.7  Solution and recovery
+
+The element matrices of (55) are evaluated with the 4×4 Gauss rule, assembled over the structured
+mesh, and constrained by the essential boundary conditions of Section 2.12. The constrained
+system is scaled through (60) and solved by a direct method for the symmetric indefinite saddle
+system Benzi et al. [2005], Golub and Van Loan [2013]. The physical fields are then recovered
+from the scaled solution, and all reported quantities—displacements, potential, energies, and the
+conversion ratio—are computed from the recovered physical solution rather than from the scaled
+representation.
+
+
+4  Numerical verification and simulation setup
+
+The credibility of the formulation is assessed through four complementary lines of evidence: conver-
+gence against an analytical strain-gradient benchmark, analytical checks of the electromechanical
+chain, verification of the energy identities, and confirmation that the scaling does not alter the
+physical solution. Throughout this section, quantities reproduced from published error norms are
+identified as such, quantities computed independently from first principles are labelled computed,
+and quantities whose raw data are unavailable are labelled source-reported.
+
+
+                                          15
+
+--- PAGE 16 ---
+4.1  Benchmark convergence in strain-gradient elasticity
+
+The simple-shear plate benchmark of Shekarchizadeh et al. Shekarchizadeh et al. [2022] was used,
+with plate dimensions L = 1.5 mm, H = 0.5 mm, internal length ℓ= 0.3 mm, and the moduli
+a1 = a2 = a3 = 0, a4 = a5 = 12µshearℓ2 with
+
+                         E
+                                  µshear =      = 134.228188 MPa                          (61)
+                                     2(1 + ν)
+
+with E = 400 MPa and ν = 0.49. The mesh is halved from 24 × 8 to 48 × 16, and the convergence
+rates are obtained from the reported error norms through r = ln(e1/e2)/ ln(h1/h2) = ln(e1/e2)/ ln 2.
+The computed rates,
+
+                        rL2 = 3.9998,    rH1 = 2.9963,    rG = 1.9995,                    (62)
+
+reproduce the theoretical rates p + 1 = 4, p = 3, and 2 of the bicubic (p = 3) C1 element in
+the L2, H1, and strain-gradient energy norms, the largest relative deviation being 0.13% (in the
+H1 rate). The error-norm values themselves are taken from the published benchmark data. The
+
+analytical reference solution required to recompute them from scratch is not available here, so only
+
+the rates are claimed as reproduced. As a further check, the free-edge displacement converges under
+successive refinement (12 × 4, 24 × 8, 48 × 16) with a successive-difference Richardson point-value
+rate of 1.82. This is a functional rather than an error-norm rate and is reported separately from
+the benchmark rates.
+
+
+4.2  Analytical electromechanical checks
+
+Piezoelectric chain. For a PZT-5H cantilever of length L = 100 µm, thickness h = 10 µm, and
+tip load F = 1.0 µN, the electromechanical coupling factor is evaluated from the IEEE definition
+k231 = d231/(sE11εT33) = e231/(EεT33) IEEE Standard on Piezoelectricity [1988], Preumont [2011]. With
+|e31| = 16.6 C/m2, E = 60.6 GPa, and εT33 = 30.1 nF/m this gives
+
+                                 275.56
+                           k231 =     = 0.1511  (k31 = 0.3887),                                 1824.06
+                                                                                            (63)
+                                  k231                         β2 =     = 0.1312,
+                               1 + k231
+
+and the open-circuit modulus and Timoshenko tip deflection
+
+                   E
+                   Eopen =     = 71.38 GPa,     wtimo = wbend + wshear
+                         1 −k231                                                         (64)
+               = 5.6475 × 10−14 m,
+
+with
+
+                             FL3
+                            wbend =     = 5.6035 × 10−14 m,
+                                    3EopenI                                                                                            (65)
+                        FL
+                               wshear =    = 4.4044 × 10−16 m,
+                           κsGA
+
+I = bh3/12, the shear correction factor κs = 5/6, the shear modulus G = Eopen/[2(1 + ν)], and
+b = 1 m per unit width Timoshenko [1921]. The value k31 = 0.3887 matches the tabulated PZT-5H
+
+
+                                          16
+
+--- PAGE 17 ---
+         (a)                         (b)                          (c)    10−3
+                                                                                           109.20
+                                                     k31                          analytic
+    10−4
+
+
+
+
+ e
+
+    10−5
+                                                                                          91.15
+                                                 Eopen                     BFS                  L 2
+    10−6             H 1                                        computed
+             G                                       IEEE
+
+        31.25           62.5            0.975 1.000 1.025         0     50    100
+                 h (μm)                    value / IEEE                                |wtip| (nm)
+
+
+Figure 2: Verification of the discrete formulation. (a) Quoted error norms e versus element size h
+on the Shekarchizadeh simple-shear plate, at the two published meshes only, in the L2, H1 and
+strain-gradient energy norms. Continuous O(hp) reference curves are not drawn. (b) Computed
+PZT-5H values of k31 and Eopen, each divided by the corresponding IEEE Std 176 tabulated
+constant. (c) Reduced-model actuator tip deflection |wtip|: analytical corner-moment value (67)
+and the BFS solution.
+
+
+coupling factor 0.39 IEEE Standard on Piezoelectricity [1988], and the open-circuit compliance
+sD11 = sE11(1 −k231) = 14.01 × 10−12 m2/N matches the tabulated value 14.0 × 10−12 m2/N.
+    Converse-flexoelectric corner-moment chain. Under a uniform transverse field ϕ = V0y/h, the
+reduced flexoelectric model of (20) produces constant double stresses whose double divergence
+vanishes, so that actuation is driven by the corner (edge) moment
+
+                            (µ12 + 2µ44)V0
+          M =         = 5.0 × 10−7 N    (V0 = 1 V),                  (66)
+                               2
+
+and the analytical tip deflection of the L = 2 µm, h = 100 nm cantilever,
+
+                     ML2
+                            wtip =    = 1.092 × 10−7 m = 109.2 nm,                       (67)
+                              2˜EI
+
+with ˜E = E/(1 −ν2) = 109.89 GPa the plane-strain bending modulus (= C11 −C212/C11; beam
+bending in plane strain is governed by the reduced modulus, not by the full plane-strain stiffness
+C11) and I = h3/12. The finite element result is 91.15 nm, 16.5% below this analytical value.
+The check therefore verifies the sign, the order of magnitude and the corner-moment mechanism
+of the converse response: the residual reflects the difference between the idealized uniform-field
+corner-moment analysis of (67) and the discrete electrode boundary-value problem, in which the
+potential is imposed node by node and the field is non-uniform near the clamp and the free edges.
+
+These three independent checks—benchmark rates, the IEEE PZT-5H chain, and the reduced-model
+actuator—are collected in Figure 2 and in Tables 1–2.
+   Figure 2 investigates three independent links in the discrete chain. The panels are not a single
+validation sequence: panel (a) tests the H2 approximation property on a pure strain-gradient
+problem, panel (b) tests the piezoelectric constitutive reduction against a handbook standard, and
+panel (c) tests the coupled solver on the reduced actuator.
+
+
+                                          17
+
+--- PAGE 18 ---
+   Panel (a) and Table 1 use the two published Shekarchizadeh meshes 24 × 8 and 48 × 16, with
+element sizes h = 62.5 µm and h = 31.25 µm obtained from the plate length L = 1.5 mm of
+Table 4. The plotted objects are the two source-reported (h, e) pairs in each of the L2, H1 and
+strain-gradient energy norms, joined by the chord between them. Continuous O(hp) guides are
+not drawn: with two meshes a reference slope would be an illustration, not additional data. The
+source-reported L2 errors 4.7610 × 10−6 and 2.9760 × 10−7 give the computed rate rL2 = 3.9998
+against the theoretical p + 1 = 4. The H1 errors 4.2180 × 10−5 and 5.2860 × 10−6 give rH1 = 2.9963
+against p = 3. The gradient-energy errors 1.6290×10−3 and 4.0740×10−4 give rG = 1.9995 against
+the order 2. The largest relative departure from theory is 0.13% and occurs in H1; the L2 and
+gradient-energy rates deviate by less than 0.03%. The decrease 4 →3 →2 is the expected loss of
+one order per additional derivative in the norm, and it is exactly the pattern of a bicubic (p = 3) C1
+
+element. Only the rates computed from the quoted norms are claimed here; the analytical reference
+
+solution required to recompute the norms from scratch is not available. The free-edge displacement
+under successive refinement 12 × 4, 24 × 8, 48 × 16 converges to the Richardson-extrapolated value
+u∗= 1.6988 × 10−9 m with a successive-difference point-value rate of 1.82. That number is a
+functional rate of the present solver, not an error-norm rate, and is reported separately from (62).
+The check therefore confirms that the discrete H2 space attains the expected approximation order
+on a pure strain-gradient problem, before any electromechanical coupling is introduced.
+   Panel (b) and Table 2 are an independent constitutive check of the piezoelectric chain, not
+a comparison with another computational study. The IEEE definition k231 = e231/(EεT33) and
+the open-circuit modulus Eopen = E/(1 −k231) test whether the adopted PZT-5H constants, the
+plane-strain reduction (19), and the conversion from e31 to the coupling factor are internally
+consistent. The computed k31 = 0.3887 differs from the IEEE Std 176 tabulated factor 0.39 by
+0.33%; Eopen = 71.38 GPa differs from 1/sD11 = 71.4 GPa by 0.03%. Those identities enter Kuϕ
+and Kϕϕ directly, so the agreement shows that the electromechanical blocks of the discrete system
+recover the handbook constants. IEEE Std 176 is a tabulated standard, not a competing paper.
+The comparison is not an experimental validation of the flexoelectric cantilever, and it does not
+involve the flexoelectric tensor.
+   Panel (c) tests the discrete solver on the reduced-model actuator of (67). With µ44 = 0 a
+uniform transverse field produces a constant double stress whose double divergence vanishes, so
+actuation is a corner moment M = 5.0 × 10−7 N. The analytical tip deflection of the L = 2 µm,
+h = 100 nm strip is 109.2 nm. The BFS solution is 91.15 nm, 16.5% below that value. The panel
+is therefore a sign-and-magnitude check of the corner-moment mechanism, not a quantitative
+reproduction: the residual measures the difference between the idealized uniform-field analysis and
+the discrete electrode boundary-value problem, not a failure of the element, not an experiment,
+and not a reproduction of a full-tensor actuator. The literature value 307.37 pm quoted in Table 7
+belongs to a different constitutive model and geometry and is not a target of this panel.
+   Taken together, the three panels establish that the element of Figure 1(b) is a verified C1
+
+approximation, that the piezoelectric reduction is handbook-consistent, and that the coupled solver
+reproduces the analytical reduced-model actuator to within a few percent.
+
+
+
+
+
+                                          18
+
+--- PAGE 19 ---
+Table 1: Benchmark convergence of the bicubic C1 element on the simple-shear benchmark of
+Shekarchizadeh et al. [2022]. Rates are computed from the reported error norms; the norm values
+themselves are source-reported.
+
+Norm                        e1 (24 × 8)              e2 (48 × 16)         Computed rate           Theoretical
+
+L2                        4.7610 × 10−6           2.9760 × 10−7               3.9998                  4
+H1                       4.2180 × 10−5           5.2860 × 10−6               2.9963                  3
+Gradient energy           1.6290 × 10−3           4.0740 × 10−4               1.9995                  2
+
+
+Table 2: Analytical verification of the electromechanical chain. Tabulated reference values from
+IEEE Standard on Piezoelectricity [1988]; open-circuit modulus relation from Preumont [2011];
+Timoshenko shear correction from Timoshenko [1921].
+
+Quantity          Expression                      Computed         Reference
+
+Coupling factor    k231 = e231/(EεT33)                0.1511 (k31 = 0.3887)    0.39 IEEE Standard on Piezoelectric-
+                                                                                         ity [1988]
+Reduced fraction   β2 = k231/(1 + k231)                     0.1312     —
+Open-circuit      E/(1 −k231)                          71.38 GPa        1/sD11 = 71.4 GPa IEEE Standard on
+modulus                                                                          Piezoelectricity [1988]
+Bending          FL3/(3EopenI)                   5.6035 × 10−14 m   —
+deflection
+Shear deflection   FL/(κsGA)                      4.4044 × 10−16 m   —
+Timoshenko       wbend + wshear                    5.6475 × 10−14 m   —
+deflection
+Corner moment    (µ12 + 2µ44)V0/2                     5.0 × 10−7 N    —
+Actuator        ML2/(2˜EI)                  109.2 nm (FEM 91.15 nm) —
+deflection
+
+
+4.3  Independent constitutive checks
+
+Three constitutive quantities were also checked by independent routes. The 6 × 6 strain-gradient
+matrix (13) was reconstructed from the five invariants (9)–(11) by a finite-difference Hessian of the
+invariant energy, with a maximum discrepancy of 2.2 × 10−16 against the closed form. The identity
+12ηTVDVoigtηV = Wgrad was confirmed symbolically. The strong-form coefficients of (25)–(28) were
+recomputed by directional finite differences of the double divergence and reproduce every coefficient
+to within 1.8 × 10−15. These checks establish that the constitutive chain from the enthalpy (14) to
+the governing equations is internally consistent.
+
+
+4.4  Energy identities
+
+For the coupled open-circuit solutions of Section 5, the identities of Section 2.13 hold with an
+absolute dead-load residual |P −2Uint| of order 10−37, an absolute coupling residual |Ucoup −2Uelec|
+of order 10−41, and a relative quasi-static residual |Wqs −(Umech +Uelec)|/|Wqs| of order 10−12. The
+absolute residuals are small because the stored energies themselves are of order 10−25 J; the relative
+residual of order 10−12 is the meaningful measure and is not claimed to be IEEE-754 round-off. The
+element-level dielectric energy computed by Gauss integration agrees with the assembled-matrix
+form to 6.5 × 10−16, confirming that the energy evaluation is consistent with the discrete system.
+
+
+
+
+                                          19
+
+--- PAGE 20 ---
+4.5  Critical-thickness verification
+
+The critical thickness hcrit at which strain-gradient stiffening changes the sensor voltage by 5% is
+defined through
+
+                         f(h)                                              −0.05 = 0,                       (68)                                 =⃓⃓Vcoupled(h) −Vpure(h)⃓⃓⃓⃓                                                      Vpure(h)⃓⃓
+where Vcoupled is the open-circuit voltage with the strain-gradient modulus active and Vpure the
+voltage with DVoigt = 0. Regressing the four quoted roots (hcrit, ℓ) = (6.9353, 0.25), (12.9840, 0.50),
+(18.8471, 0.75) and (24.0201, 1.00) µm in the form hcrit/ℓref = A(ℓ/ℓref)p with ℓref = 1 µm gives
+
+               A = 24.2011,    p = 0.8998,    R2 = 0.99984,                     (69)
+
+computed here by normal-equations least squares on the four (ln ℓ, ln hcrit) pairs; R2 is the coefficient
+of determination of that log–log regression.
+
+
+4.6  Scaling invariance
+
+The physical-solution invariance of the congruence (60) is verified by substituting the recovered
+physical solution into the raw, unscaled system: the relative residual ∥Kq −f∥/∥f∥on the free
+degrees of freedom is 3.5 × 10−13. This confirms that the reported improvement in conditioning
+arises from the numerical scaling rather than from any change in the underlying physical problem,
+and that the reported fields are recovered physical quantities (Section 5.7).
+
+
+4.7  Reference problem and parameters
+
+The reference problem is a barium titanate cantilever of length L = 2 µm and thickness h = 100 nm
+(L/h = 20), subject to a tip load F = 1.0 nN under open-circuit conditions; the actuator and
+piezoelectric verification problems use the geometries listed in Table 4, and all material constants
+are collected in Table 3.
+
+   The flexoelectric figure of merit and the characteristic length scales of the baseline material are
+                             √D0κ0                       Λ =     = 1.0517 × 10−2,
+                                      µ0
+                                    √︃ D0                                               (70)                                            ℓelastic =    = 0.2726 nm,
+                                   C0
+                                      µ0
+                                          fflexo = √C0κ0 = 25.92 nm,
+
+with D0 = 2(a4 + a5) = 1.0 × 10−8 N, C0 = C11, κ0 = κ22, and µ0 = µ11. Two observations follow
+from these scales. First, the material strain-gradient length ℓelastic is two orders of magnitude below
+the beam thickness, so classical bending dominates the mechanical response at L/h = 20. The
+strain-gradient stiffening, while present, is a correction. Second, the flexoelectric length fflexo is
+comparable to the thickness, indicating that the flexoelectric response is sensitive to the geometry
+in exactly the size regime studied here.
+    All coupled solves use structured meshes of BFS rectangles. The 16 × 2 baseline mesh carries
+the boundary-condition and figure-of-merit studies, the 60 × 12 mesh the field exports and the
+slenderness sweep, and the 20 × 2 mesh the actuator benchmark; the mesh-convergence behaviour
+that justifies these choices is documented in Section 4.8.
+
+
+                                          20
+
+--- PAGE 21 ---
+                  Table 3: Material constants used in the numerical studies.
+
+Quantity                    Symbol               Value
+
+Barium titanate (flexoelectric benchmark; Abdollahi et al. [2014])
+Young’s modulus          E                    100 GPa
+Poisson ratio                   ν                       0.30
+Plane-strain moduli             C11, C12, C33          C11 = 134.615385, C12 = 57.692308,
+                                                   C33 = 38.461538 GPa
+Permittivity                     κ11 = κ22               11.06 nF/m
+Flexoelectric moduli             µ11 = µ12               1.0 µC/m
+Shear flexoelectric modulus      µ44                   0
+Strain-gradient moduli           a4 = a5                 0.25 × 10−8 N (a1=a2=a3=0)
+Strain-gradient modulus       D0 = 2(a4 + a5)         1.0 × 10−8 N
+
+PZT-5H (piezoelectric analytical chain; IEEE Standard on Piezoelectricity [1988])
+Young’s modulus, Poisson ratio  E, ν                    60.6 GPa, 0.31
+Plane-strain moduli             C11, C12, C33          C11 = 83.997589, C12 = 37.738047,
+                                                   C33 = 23.129771 GPa
+Piezoelectric constants            e31, e33, e15            −16.6, 18.6, 12.7 C/m2
+Permittivity                     κ22                     30.1 nF/m
+
+Shekarchizadeh benchmark Shekarchizadeh et al. [2022]
+Young’s modulus, Poisson ratio  E, ν                  400 MPa, 0.49
+Shear modulus                     µshear                 134.228188 MPa
+
+
+
+
+
+            Table 4: Geometric and loading parameters of the reference problems.
+
+Problem                Parameter        Symbol  Value
+
+Coupled cantilever        length, thickness     L, h   2 µm, 100 nm
+(sensor) Abdollahi et al.
+[2014]
+                             tip load           F     1.0 nN
+                               electrical condition  —    open circuit (Dini = 0)
+Coupled cantilever        actuation voltage      V0     1.0 V
+(actuator) Ghasemi et al.
+[2017]
+                               electrical condition  —   ϕ = V0 (top), ϕ = 0 (bottom)
+PZT-5H cantilever IEEE  length, thickness     L, h   100 µm, 10 µm
+Standard on
+Piezoelectricity [1988],
+Preumont [2011]
+                             tip load, width      F, b    1.0 µN, 1 m
+Simple-shear plate        dimensions       L × H   1.5 × 0.5 mm
+Shekarchizadeh et al.
+[2022]
+                            internal length          ℓ     0.3 mm
+
+
+
+
+
+                                          21
+
+--- PAGE 22 ---
+4.8  Mesh convergence of the coupled problem
+
+The approximation property examined in Figure 2(a) is a two-mesh, source-reported check on a
+pure strain-gradient plate; it does not by itself certify the resolution of the coupled clamp layer.
+Figure 3 therefore documents the mesh convergence of the two observables on which the results of
+Section 5 rest: a benchmark point value and the baseline sensor response.
+
+    Panel (a) shows the convergence of the simple-shear free-edge displacement under the refinement
+12 × 4, 24 × 8, 48 × 16. The successive differences give the Richardson point-value rate p = 1.82
+towards the extrapolated value u∗= 1.6988 × 10−9 m. That number is a functional rate of the
+present solver, not an error-norm rate, and is reported separately from the quoted rates of Table 1.
+   Panel (b) shows the tip deflection of the coupled baseline sensor under three refinement paths.
+Combined refinement raises vtip monotonically from 2.52 × 10−16 m (8 × 1) through 2.69 × 10−16 m
+(16 × 2) and 2.77 × 10−16 m (32 × 4) to 2.80 × 10−16 m (64 × 8), the last step changing the value
+by 1.1%. Through-thickness refinement at Nx = 16 plateaus at 2.75 × 10−16 m (a 0.05% change
+from Ny = 8 to Ny = 12), longitudinal refinement at Ny = 2 saturates near 2.73 × 10−16 m, and
+the 60 × 12 mesh of the slenderness sweep reproduces the finest combined value to 0.03%. The
+converged deflection is therefore vtip ≈2.80 × 10−16 m, and the 16 × 2 baseline mesh carries a
+discretization offset of about 4% that is common to all solves on that mesh.
+   The electrical clamp-layer quantities converge more slowly, because the retained flexoelectric
+source D1 = µ11u,xx is concentrated in a through-thickness layer at the root. At L/h = 20 the
+dielectric energy falls monotonically with Ny, from 2.37×10−27 J (16×2) to 9.2×10−28 J (Ny ≥8),
+and the peak potential decreases from 2.96 × 10−10 V on the baseline mesh to 1.90 × 10−10 V on
+the 60 × 12 export mesh. The conversion ratio computed on an Ny = 12 mesh changes by 2–4%
+when Ny is reduced to 8 up to L/h = 30, and the change grows to 11% at L/h = 40 and 23%
+at L/h = 60 (h = 33 nm), where the through-thickness resolution of the clamp layer becomes
+the controlling discretization factor. These numbers are the resolution caveat attached to the
+slender-range exponent of Section 5.4: ηEM is mesh-converged at L/h = 20 but only bracketed at
+the largest slenderness, which is why the exponent is quoted with a confidence interval and is not
+offered as a mesh-converged universal constant.
+
+
+4.9  Reproducibility
+
+All model-based numerical results reported in this work are generated from the formulation of
+
+Sections 2–3 using the inputs listed in Tables 3–4. Published benchmark norms and source-reported
+quantities are not used as computational inputs and are identified explicitly wherever they are
+discussed.
+
+
+5  Numerical results and discussion
+
+5.1  Baseline response
+
+Unless stated otherwise, the studies of this section use the reference problem of Section 4.7: the
+fully clamped, open-circuit barium titanate cantilever of Table 4 under the tip load F = 1.0 nN.
+On the 16 × 2 baseline mesh, which carries the boundary-condition and figure-of-merit studies, the
+computed tip deflection is 2.69 × 10−16 m and the open-circuit potential reaches a peak magnitude
+
+
+
+                                          22
+
+--- PAGE 23 ---
+                                                      3.0
+           (a)  computed |uh −u *|                        (b)       Euler--Bernoulli FL 3/(3̃EI)=2.912
+     10−12        guide, p=1.82
+                                                      2.9
+
+   (m)                                             m) 2.8
+ *|
+                                                      2.7                                                                                                                                  (10−16  −u
+  |uh                                                                                    vtip
+                                                      2.6
+
+                                                                                     combined 8×1→64×8
+                                                      2.5                            Nx-refinement, Ny =2
+                                       u * =1.6988×10−9 m                                       Ny-refinement, Nx =16
+     10−13                                                                      60×12 study mesh
+                                                      2.4
+      3×101 4×101   6×101       102             102               103
+                          h (μm)                          degrees of freedom Ndof
+
+
+Figure 3: Mesh convergence. (a) Simple-shear benchmark: absolute deviation of the computed
+free-edge displacement from the Richardson-extrapolated value u∗= 1.6988×10−9 m versus element
+size h (log–log) on the meshes 12×4, 24×8, 48×16; the fitted successive-difference rate is p = 1.82.
+(b) Coupled sensor cantilever (L/h = 20):  tip deflection vtip versus degrees of freedom under
+combined refinement (8 × 1 →64 × 8), Nx-refinement at Ny = 2, and Ny-refinement at Nx = 16;
+the open circle is the 60 × 12 study mesh and the dash-dotted line the Euler–Bernoulli reference
+FL3/(3˜EI) = 2.912 × 10−16 m.
+
+
+of 2.96 × 10−10 V at the clamped root. On the converged 60 × 12 mesh of Section 4.8, used for
+the field exports and the slenderness sweep, the corresponding values are 2.80 × 10−16 m and
+1.90 × 10−10 V.
+   The converged deflection lies 3.8% below the Euler–Bernoulli reference FL3/(3˜EI) = 2.912 ×
+10−16 m evaluated with the plane-strain bending modulus ˜E = E/(1 −ν2) = 109.89 GPa (equiva-
+lently C11 −C212/C11). The offset is physical: the converse flexoelectric coupling raises the effective
+bending stiffness at this coupling level—the same self-stiffening that produces the saturation peak of
+
+Section 5.3—and the fully clamped root kinematics suppress the relief of the clamp boundary layer
+(Section 5.5). The 16×2 value lies a further 4% below the converged one, a discretization component
+common to every solve on that mesh and therefore absent from the fixed-mesh comparisons of
+Sections 5.3 and 5.5. The clamp-layer potential is the more delicate quantity: through-thickness
+resolution controls it (Section 4.8), so its value is always quoted together with the mesh on which
+it was computed. The small induced potential is the flexoelectric sensor response of the reduced
+model, in which the leading bending polarization is absent by construction (Section 2.9).
+
+
+5.2  Spatial field distributions
+
+Figure 4 investigates the baseline open-circuit solution of the L = 2 µm, h = 100 nm cantilever
+under F = 1 nN. The four panels are one solve: panels (a)–(c) are planar maps of u, v and ϕ, and
+panel (d) is the same nodal ϕ drawn as a surface. No second calculation is introduced.
+    In panel (a) the axial displacement u is antisymmetric about the mid-plane y = h/2. Upper
+
+fibres shorten and lower fibres extend, which is the kinematic signature of bending under a downward
+tip load in the sign convention of (3). The associated membrane strain is ε11 = u,x, so the through-
+
+
+                                          23
+
+--- PAGE 24 ---
+Figure 4: Coupled fields of the baseline barium titanate cantilever (L = 2 µm, h = 100 nm, F = 1 nN,
+open circuit). (a) Axial displacement u. (b) Transverse displacement v. (c) Electric potential ϕ,
+with the peak at the clamped root. (d) Three-dimensional view of the same nodal field ϕ(x, y).
+
+
+thickness oddness of u is equivalent to a bending strain that changes sign across the mid-plane.
+Away from the root the field varies smoothly along x and nearly linearly through the thickness, as
+expected of a slender beam at L/h = 20. At x = 0 the essential conditions (34) force u and its
+first derivatives to vanish, so the strongest axial variation lies in a thin root layer supported by
+ℓelastic = 0.2726 nm ≪h. The global pattern is therefore classical bending; the local pattern at the
+root is the higher-order correction.
+   In panel (b) the transverse displacement v increases from the clamp to the free end and is
+essentially uniform through the thickness.  That is the Euler–Bernoulli cubic of a tip-loaded
+cantilever, now recovered as a field of the two-dimensional C1 solution.  The computed tip
+value is 2.69 × 10−16 m, 7.7% below the classical reference FL3/(3˜EI) = 2.912 × 10−16 m with
+˜E = E/(1 −ν2) = 109.89 GPa. The offset is the converse-flexoelectric self-stiffening already noted
+in Section 5.1, enhanced by the fully clamped root kinematics; Section 5.5 separates the two
+contributions. Jointly, panels (a) and (b) say that the mechanical solution is a bending state: odd
+u, even v, maximum deflection at x = L, and a thin mechanical layer at x = 0.
+   Panel (c) is not a classical piezoelectric beam voltage. In the reduced specialization (20) the
+
+
+
+                                          24
+
+--- PAGE 25 ---
+leading bending polarization D2 = µ2112u,xy is absent, and the retained source is the longitudinal
+contribution D1 = µ11u,xx in (27). That source is strongest where the axial curvature changes most
+rapidly, which for a tip-loaded cantilever is the clamped root. The peak of ϕ therefore sits at the
+clamp, with magnitude 2.96×10−10 V on the 16×2 baseline mesh and 1.90×10−10 V on the 60×12
+export mesh used in panels (c)–(d), and the field decays toward the free end. The open-circuit
+condition Dini = 0 (36) leaves that polarization uncompensated by surface charge, so the potential
+is the electrostatic image of the clamp-layer source rather than a uniform through-thickness drop.
+The smallness of max |ϕ| is the electrical signature of the missing transverse coupling, not a failure
+to resolve the layer.
+   Panel (d) displays the same nodal ϕ as a surface ϕ(x, y). It adds no new unknown. What it
+adds is the simultaneous view of the decay along x/L and the variation through y/h, which the
+planar map in panel (c) can show only as colour. The surface is localized at the clamped root and
+is otherwise low, which is the three-dimensional statement of the same localization. The figure is
+not offered as a proof of a formal boundary-layer asymptotic; it shows that the discrete solution of
+Figure 1 resolves a higher-order electrical layer associated with the double stress and the reduced
+flexoelectric source.
+   The electric displacement itself is not a fifth panel. Because Di depends on ∇ϕ, on the strain
+and on the strain gradient, its maxima need not coincide with those of ϕ, and the present export
+does not display |D|.
+
+   Read together, the four panels close the chain that the formulation is built to capture: bending
+(u, v) produces strain and strain gradient; the reduced flexoelectric law converts the longitudinal
+gradient into polarization; Gauss’s law (28) with Dini = 0 converts that polarization into a potential
+concentrated at the clamp. That is the main scientific takeaway of the figure. The subsequent
+studies ask how the same chain changes when µ0, L/h, the root data, or the internal length are
+varied.
+
+
+5.3  Dependence on the flexoelectric figure of merit
+
+Figure 5 investigates how the open-circuit potential of the baseline cantilever depends on a single
+material parameter, the flexoelectric coefficient µ0, through the figure of merit Λ = √D0κ0/µ0
+in (70). Table 5 records the same sweep. Both panels use the same ten values of µ0; no second
+independent parameter is varied.  All ten solves use the same 16 × 2 mesh as the baseline of
+Section 5.1, so the sweep is directly comparable with the baseline potential quoted there.
+   Panel (a) is non-monotonic on every mesh studied. Over µ0 = 2.51 × 10−8 to 2.51 × 10−6 C/m
+(Λ = 0.419 down to 4.19×10−3), max |ϕ| on the baseline 16×2 mesh first rises, reaches 2.94×10−10 V
+at µ0 ≈9.0 × 10−7 C/m (Λ ≈1.17 × 10−2), and then falls. Three regimes can be read from that
+curve.
+    In the weak-coupling regime, Λ is comparatively large and µ0 is small. Increasing µ0 strengthens
+the direct flexoelectric term −µlijkElηijk in the enthalpy (14) and the corresponding source D1 =
+µ11u,xx in (27). The mechanical field is still close to the classical cantilever of Figure 4(a)–(b), so
+the strain gradient at the clamp is only weakly affected. The open-circuit potential therefore grows
+with µ0.
+   Near Λ ≈1.17 × 10−2 the baseline curve attains its maximum within the sampled range. The
+maximum is a balance, not the solution of an optimization problem: it is the point at which the
+
+
+
+                                          25
+
+--- PAGE 26 ---
+           Table 5: Summary of the parameter studies (reduced model, computed).
+
+Study         Range          Key computed result                                   Trend
+
+Figure of merit Λ = 0.419 →      peak max |ϕ| = 2.94 × 10−10 V at Λ ≈1.17 × 10−2 (16 × 2);  non-monotonic
+                 4.19 × 10−3        2.46 × 10−10 V at Λ ≈3.24 × 10−2 (60 × 12 refined)         on all meshes
+                                                                                                                 (self-stiffening)
+Slenderness    L/h = 5 →60    ηEM = 3.93 × 10−3 →9.75 × 10−4; p = −1.12 ± 0.13          decreasing
+                              (L/h ≥20)
+Boundary      3 variants            vtip ≈2.7 × 10−16 m; max |ϕ| varies by ≈40%             weak
+conditions                                                                                    mechanical,
+                                                                                     moderate
+                                                                                                               electrical
+Critical      ℓ= 0.25 →1 µm   independent fit hcrit = 24.20 ℓ0.90 (log–log R2 = 0.99984) on   near-linear
+thickness                           four source-reported roots
+Conditioning   Nx = 4 →32      raw 4.7 × 1029 →4.6 × 1034; scaled 7.6 × 106 →1.0 × 1011     full scaling
+                                                                                  mandatory
+
+
+     3.5
+         (a)                        16×2 (baseline)           (b)
+     3.0                             32×4             10−3
+                                       60×12 (refined)
+ V) 2.5
+
+     2.0                                                                                                                                     (V⋅m/C)  (10−10
+
+
+                                                10−4   max|ϕ| 1.51.0                                                                                                                                          max|ϕ|/μ0
+                                                                                           16×2 (baseline)
+     0.5                                                                                  32×4
+                                                                                              60×12 (refined)
+     0.0
+             10−2            10−1                        10−2            10−1
+                                                    Λ                Λ=√D0κ0 /μ0
+
+
+Figure 5: Open-circuit potential under variation of the flexoelectric coefficient µ0 through the figure
+of merit Λ = √D0κ0/µ0. (a) Peak potential max |ϕ| versus Λ. (b) Normalized potential max |ϕ|/µ0
+versus Λ. Both panels show the same ten-point µ0 sweep computed on the baseline 16 × 2 mesh
+and on refined 32 × 4 and 60 × 12 meshes; the rise–maximum–fall shape is present on all three.
+The dotted line marks the sampled maximum of the refined 60 × 12 sweep; the dash-dotted line,
+the baseline figure of merit Λ = 1.0517 × 10−2.
+
+
+incremental gain from the direct coupling is cancelled by the incremental loss of strain gradient
+from the converse coupling. The sampled peak 2.94 × 10−10 V lies at µ0 ≈9.0 × 10−7 C/m, next to
+but not exactly at the baseline coefficient µ0 = 1.0 × 10−6 C/m, whose potential 2.96 × 10−10 V
+was quoted in Section 5.1; the 0.6% difference between the two values reflects the placement of the
+sweep grid relative to the smooth maximum, not a change of mesh or model, and it is consistent
+with the baseline figure of merit Λ = 1.0517 × 10−2 lying next to the recorded maximum.
+    In the strong-coupling regime, further increase of µ0 (further decrease of Λ) lowers max |ϕ|. The
+same coefficient now dominates the converse term in the double stress hijk (16), feeds back into the
+fourth-order equilibrium (25)–(26), and raises the effective bending stiffness. The strain gradient
+
+
+
+                                          26
+
+--- PAGE 27 ---
+that drives the direct effect is reduced, and the potential falls. The mechanism is a property of the
+coupled reduced model of the kind discussed for beams by Abdollahi et al. Abdollahi et al. [2014];
+it is not a limitation of the linear solver, and it is not a change of constitutive specialization.
+
+   Because the clamp-layer potential is the quantity most sensitive to through-thickness resolution
+(Section 4.8), the entire sweep was repeated on refined 32 × 4 and 60 × 12 meshes with the same
+
+ten-point grid, boundary conditions, DOF scaling and observable; all three curves appear in Figure 5.
+The rise–maximum–fall shape is robust: every mesh produces a single interior maximum, and
+no refinement turns the response monotone. The quantitative details carry the resolution caveat.
+The sampled peak moves from 2.94 × 10−10 V at Λ ≈1.17 × 10−2 (16 × 2) to 3.01 × 10−10 V at
+Λ ≈1.94 × 10−2 (32 × 4) and 2.46 × 10−10 V at Λ ≈3.24 × 10−2 (60 × 12); the 60 × 12 maximum
+is flat, the adjacent sample Λ ≈1.94 × 10−2 lying within 0.2% of it. Relative to the baseline mesh,
+the flank values change by larger factors: at Λ = 0.419 the refined potential is 2.5 times the baseline
+value, and at Λ = 4.19 × 10−3 it is 0.45 of it, so the baseline curve is steeper on both flanks than
+
+the refined curves. The sweep machinery is internally consistent with the field export of Section 5.1:
+at the baseline coefficient µ0 = 1.0 × 10−6 C/m the refined 60 × 12 sweep reproduces the exported
+peak potential, 1.9009 × 10−10 V against 1.90 × 10−10 V.
+   Panel (b) isolates the same competition after dividing out µ0. If the mechanics were frozen,
+max |ϕ|/µ0 would be independent of µ0 and the panel would be a horizontal line. Instead, on all
+three meshes the ratio depends only weakly on Λ at large Λ—the weakly coupled regime in which
+the potential grows essentially linearly with µ0—and falls steadily as Λ decreases below a few times
+10−2. The fall is the normalized statement of the fall-off in panel (a): each additional increment of
+µ0 buys less potential because the clamp-layer gradient is being suppressed by the converse coupling.
+The baseline barium titanate constants of Table 3 therefore operate in the near-peak region of this
+model on all three meshes (within about 25% of the sampled maximum at Λ0 = 1.0517 × 10−2),
+and increasing µ0 further is counterproductive for open-circuit voltage, which is the design content
+of Figure 5 for the shear-free specialization.
+
+
+5.4  Slenderness dependence of the energy conversion ratio
+
+Figure 6 investigates the slenderness dependence of the conversion ratio (41) in the reduced model.
+Table 5 collects the computed sweep L/h = 5 to 60. The ratio is not a monotone function of
+slenderness, and that fact is the constitutive content of the figure rather than a numerical defect.
+   Panel (a) has three parts. From L/h = 5 to L/h = 10 the ratio rises from 3.93 × 10−3 to
+4.95 × 10−3, a relative increase of about 26%. From L/h = 10 to L/h = 60 it falls to 9.75 × 10−4, a
+relative drop of about 80% from the recorded maximum and about 75% from the stocky value at
+L/h = 5. A power-law fit over the slender range L/h ≥20 gives p = −1.12 ± 0.13 (95% confidence
+interval). The dashed reference 2.79 × 10−5(L/h)1.94 is the source-reported full-tensor law. It is
+
+not a fit to the present points, and it is not reproduced by the present solver. The two curves have
+opposite slope in the slender range: the present data decrease, the source-reported law increases.
+   That opposition is the constitutive content of Section 2.9. In a bending beam the full isotropic
+tensor produces a uniform transverse polarization D2 = µ2112 u,xy̸ = 0 whose divergence is the
+classical flexoelectric source and which strengthens as L/h increases. The shear-free model sets
+µ44 = 0 and therefore omits that transverse bending contribution. The retained source is the
+longitudinal term D1 = µ11u,xx in (27), which is antisymmetric through the thickness and whose
+
+
+
+                                          27
+
+--- PAGE 28 ---
+Figure 6: Conversion ratio ηEM = Uelec/(Fvtip) of the reduced model. (a) ηEM versus slenderness
+L/h at the available resolutions Ny = 8, 12, 16, with the slender-range fit and the source-reported
+reference 2.79 × 10−5(L/h)1.94.  (b) ηEM versus Ny at L/h = 20, 40, 60.  (c) Computed triples
+(L/h, Ny, ηEM) only; no interpolating surface is introduced.
+
+
+volume divergence vanishes to leading order. What remains is the clamp-layer response already
+
+seen in Figure 4(c). As the beam becomes more slender that layer occupies a smaller fraction of the
+volume, while Fvtip grows with the classical flexibility, so ηEM = Uelec/(Fvtip) falls. The purpose
+of the figure is not to declare that the reduced model fails; it is to show exactly which slenderness
+physics the specialization (20) captures and which it does not.
+   The qualitative decrease is robust. The numerical value of p is not. Section 4.8 records that
+reducing Ny from 12 to 8 changes ηEM by 2–4% up to L/h = 30, by 11% at L/h = 40, and by 23%
+at L/h = 60 (h = 33 nm). The slender-range exponent therefore carries a resolution caveat, which
+
+is why it is quoted with a confidence interval and why it is not offered as a material constant or as
+a mesh-converged universal asymptotic exponent.
+   Panel (b) makes that caveat visible. At L/h = 20 the values of ηEM at the available Ny lie on
+top of one another, so the baseline geometry of Figure 4 is through-thickness converged for this
+ratio. At L/h = 40 and L/h = 60 the ratio continues to change as Ny is increased, including the
+additional meshes Ny = 24 and Ny = 32 that exist only at L/h = 40. The thinnest beams are
+the most sensitive because the flexoelectric layer then spans only a fraction of the element height.
+Panel (c) plots the computed triples (L/h, Ny, ηEM) and nothing else. The markers are the same
+points as in panels (a) and (b); no interpolant and no filled surface is introduced. The panel exists
+so that the sparsity of the ( L/h, Ny ) grid is not hidden.
+  A diagnostic computation in which the omitted transverse component is re-activated (not part
+of the adopted model) restores quadratic growth, with an exponent p ≈+2.0 in the weak-coupling
+regime, close to the source-reported +1.94. That diagnostic is evidence for the causal chain written
+above. It is not a prediction of the adopted model, it does not replace (20), and it is not used as
+an input to any other figure. The curves in Figure 6 remain those of the shear-free specialization.
+   The main scientific takeaway is therefore constitutive, not computational: the shear-free model
+
+
+                                          28
+
+--- PAGE 29 ---
+Figure 7: Energy partition of the open-circuit cantilever. (a) Umech, Wqs, Ucoup and Uelec versus
+L/h. (b) Ratio Uelec/Umech versus L/h. (c) Classical strain energy, strain-gradient energy and Uelec
+versus Ny at L/h = 40. (d) Element-wise log10 Uelec at L/h = 40.
+
+
+captures a clamp-layer conversion ratio that decreases with slenderness, and it does not capture
+the full-tensor growth 2.79 × 10−5(L/h)1.94. The energy identities that underlie ηEM are unpacked
+in Figure 7.
+   Figure 7 investigates the energy budget that underlies the conversion ratio of Figure 6. It does
+not introduce a new physical mechanism; it shows how ηEM is assembled from the four energies of
+Section 2.13 and where those energies live in the mesh.
+   Panel (a) plots Umech, Wqs, Ucoup and Uelec against L/h. Dead-load work and stored energy
+are related by P = 2Uint and Wqs = Uint (39)–(40). On an open circuit the electrical row of the
+saddle system further implies Ucoup = 2Uelec, so Uint = Umech + Uelec. Consequently Wqs must track
+Umech to leading order, because Uelec is a small correction on that scale, while Ucoup lies a factor of
+two above Uelec. Those alignments are the identities already verified in Section 4.4: the dead-load
+residual is of order 10−37, the coupling residual of order 10−41, and the relative quasi-static residual
+of order 10−12. They are not a coincidence of the plot. All four curves rise with L/h, as they must
+for a tip-loaded strip that becomes more flexible. The smallness of Uelec relative to Umech is the
+energetic statement of the weak reduced-model sensor response already seen in Figure 4(c).
+   Panel (b) reduces the same data to the ratio Uelec/Umech. The ratio rises from L/h = 5 to
+
+
+
+                                          29
+
+--- PAGE 30 ---
+L/h = 10 and then falls, which is the same non-monotone pattern as ηEM in Figure 6(a). The
+correspondence is required by the definitions. Both quantities measure the dielectric energy against a
+mechanical scale: ηEM = Uelec/(Fvtip) uses the dead-load product, while Uelec/Umech uses the stored
+mechanical energy. On an open circuit those scales differ by a factor involving Wqs ≈Umech, so the
+two curves must share the same rise–fall. The fall for L/h ≥10 is again the clamp-layer weakening
+of the reduced model: Uelec grows more slowly than the mechanical energy of a lengthening beam.
+    Panel (c) holds L/h = 40 fixed and splits Umech into its classical strain part and its strain-gradient
+part, plotted with Uelec against Ny = 8, 12, 16, 24, 32. The classical contribution is essentially flat,
+so the global bending energy is already resolved on the coarsest through-thickness mesh. The
+strain-gradient and dielectric contributions continue to change as Ny increases, which is why ηEM
+at L/h = 40 is not mesh-idle in Figure 6(b) and why Section 4.8 quotes an 11% variation when Ny
+is reduced from 12 to 8. Strain-gradient energy remains larger than Uelec on every mesh shown,
+but both live in the same through-thickness layer. The panel therefore separates a converged bulk
+energy from an under-resolved layer energy.
+   Panel (d) locates that layer. The element-wise map of log10 Uelec at L/h = 40 concentrates
+the dielectric energy at the clamped root and is low elsewhere. That topography is the spatial
+counterpart of the reduced source D1 = µ11u,xx and of the potential peak in Figure 4(c)–(d). The
+conversion ratio of Figure 6 is therefore not a bulk beam property in this model: it is the energy
+of a flexoelectric clamp layer, normalized by the work of the tip load. Refining Ny changes the
+resolution of that layer, which is why the slender-range exponent in Figure 6(a) must be read with
+
+the caveat of Section 4.8. The four panels together recover the open-circuit identities of Section 4.4
+in a form that can be inspected: Wqs ≈Umech, Ucoup = 2Uelec, a non-monotone ratio that matches
+ηEM, a layer energy that is not mesh-idle at L/h = 40, and a spatial map that places that energy
+at the clamp. No additional mechanism is required to connect Figure 7 to Figure 6; the former is
+
+the energy budget of the latter. That budget is what permits the slenderness discussion to be read
+as a statement about stored dielectric energy, not merely about a plotted ratio.
+
+
+5.5  Boundary-condition sensitivity
+
+Figure 8 investigates the sensitivity of the baseline cantilever of Figure 1(a) to the higher-order
+essential data at the root. Table 5 records the same comparison. The first case is the full clamp
+(34) of all eight mechanical degrees of freedom. The second is the displacement-only constraint
+u = v = 0. The third keeps u = v = 0 and adds the slope u,x = 0. The three cases differ only in
+those root data; the load, the material, the geometry and the open-circuit condition are unchanged.
+    Panel (a) reports vtip = 2.69×10−16, 2.87×10−16 and 2.73×10−16 m. Relative to the full clamp
+the displacement-only tip deflection is larger by about 7%, and the slope-augmented case is larger by
+about 1.5%. All three values lie below the Euler–Bernoulli reference FL3/(3˜EI) = 2.912 × 10−16 m
+(with ˜E = E/(1−ν2) = 109.89 GPa) drawn on the panel, by 7.7%, 6.2% and 1.3% respectively. The
+
+offsets therefore order with the severity of the root constraint: the displacement-only case, which is
+the standard essential condition of the two-dimensional cantilever, comes closest to the classical
+value, and each additional higher-order constraint removes kinematic relief of the clamp layer and
+stiffens the coupled response further. The mechanical response is therefore weakly sensitive to
+the higher-order root data at L/h = 20. Global bending stiffness is an integral quantity and is
+controlled by ˜E and L3/I, which do not change among the three cases.
+
+
+
+                                          30
+
+--- PAGE 31 ---
+         (a)                                       (b)
+     3.0                                             3.0
+
+
+     2.5                                             2.5
+                                             V)
+ m)
+     2.0                                             2.0
+                                                                                                                               (10−10   (10−16     1.5                                             1.5
+   vtip                                                                                                                                              max|ϕ|
+     1.0                                             1.0
+
+
+     0.5                                             0.5
+
+
+     0.0                                             0.0
+                full        u=v=0            +u,x                    full        u=v=0            +u,x
+
+
+Figure 8: Three discrete essential end conditions on the baseline cantilever: full clamp; displacement-
+only constraint u = v = 0; and the same with u,x = 0. (a) Tip deflection vtip and the Euler–Bernoulli
+reference. (b) Peak potential max |ϕ|.
+
+
+   Panel (b) reports max |ϕ| = 2.96×10−10, 2.10×10−10 and 2.14×10−10 V. The displacement-only
+potential is about 29% below the full-clamp value; the slope-augmented case is about 28% below.
+
+The spread between the largest and the smallest is about 40%, which is the figure quoted in Table 5.
+The electrical response is therefore substantially more sensitive than the tip deflection.
+   That split is consistent with the boundary structure (30)–(32). The tip deflection integrates the
+
+curvature along the beam. The open-circuit potential is generated in the clamp layer by the reduced
+source D1 = µ11u,xx, so it feels the local strain gradient and the double traction ri = hijknjnk.
+Relaxing the slope and twist constraints changes that layer—and therefore ϕ—much more than it
+changes vtip. The displacement-only case is a restriction of the kinematic field. It is not a Mindlin
+simple support, which would also involve the double-traction operator (31). The two must not be
+conflated. The practical implication is the same as the modelling one: any flexoelectric voltage
+reported for a C1 cantilever should state which of the eight root degrees of freedom were set to zero,
+because a 7% change in tip deflection can accompany a 40% change in max |ϕ|. That split is the
+main scientific takeaway of Figure 8: the mechanical observable is an integral quantity, while the
+electrical observable is a clamp-layer quantity, so they do not inherit the same boundary-condition
+sensitivity.
+
+
+5.6  Critical-thickness scaling
+
+Figure 9 investigates the thickness at which strain-gradient stiffening changes the sensor voltage
+by 5%, as defined by the root of (68). The quantity hcrit is not a mechanical yield thickness
+and it is not a breakdown field; it is the h at which |Vcoupled −Vpure|/|Vpure| = 0.05 when the
+strain-gradient modulus is switched from DVoigt to zero. Table 5 records the independent fit to the
+four source-reported roots.
+   Panel (a) contains four source-reported points and two power laws. For ℓ= 0.25, 0.50, 0.75
+and 1.00 µm the roots are hcrit = 6.9353, 12.9840, 18.8471 and 24.0201 µm. The sequence is
+monotone: doubling ℓfrom 0.25 to 0.50 µm raises hcrit by a factor 12.9840/6.9353 ≈1.87; doubling
+
+
+
+                                          31
+
+--- PAGE 32 ---
+                 (a)                                                (b)
+
+
+
+
+
+Figure 9: Critical thickness hcrit at which strain-gradient stiffening changes the sensor voltage by
+5%. (a) The four source-reported roots, the independent power-law fit (69), and the source-reported
+companion fit. (b) Relative residual of the independent fit (69).
+
+
+again from 0.50 to 1.00 µm raises it by 24.0201/12.9840 ≈1.85. A two-parameter fit of those four
+roots, (69), gives A = 24.2011, p = 0.8998 and R2 = 0.99984, or hcrit/ℓref = 24.20 (ℓ/ℓref)0.90 with
+ℓref = 1 µm. The source-reported companion 23.76 (ℓ/ℓ0)0.90 in Table 7 has the same exponent
+and an amplitude 1.8% lower. The two lines are therefore indistinguishable at the scale of the
+plot; the independent fit is the one used in the discussion. The four roots themselves are not
+independently reproduced by the present solver: they are inherited as source-reported data from
+the companion full-resolution campaign of this project, in which the roots of (68) were converged
+by Brent root-finding on multimesh sequences from 40 × 4 to 200 × 20; the per-mesh raw data of
+that campaign are not reproduced in this work, and A, p and R2 in (69) are computed from those
+four pairs by normal-equations least squares. The source-reported table lists hcrit against ℓonly.
+The optional FEM root-finder in the present code (not used for the four published values) holds
+the baseline length L = 2 µm fixed while h varies, so L/h is not held constant.
+  An exponent of 0.8998 is close to unity, so hcrit grows almost linearly with the internal length.
+At ℓ= 0.5 µm the 5% threshold is h ≈13 µm; at ℓ= 1 µm it is h ≈24 µm. At leading order the
+strain-gradient stiffening enters the sensor voltage through a ratio controlled by ℓ/h alone; p = 0.90
+is the small departure from that self-similarity produced by the boundary layers already visible in
+Figure 4. The practical reading is direct: as the internal length increases, the thickness required
+before strain-gradient effects become a 5% correction also increases.
+   Panel (b) plots the relative residual of the independent fit (69) at the four roots. The residuals
+
+remain within about 1% and change sign, so the power law is an accurate description of these four
+points and is not a one-sided bias. Four source-reported roots do not make a universal law. The
+relation is an empirical scaling of those four points for the present 5% criterion and the present
+interval ℓ∈[0.25, 1] µm. It should not be extrapolated to other constitutive specializations, nor to
+a different voltage-change threshold, without recomputing the roots of (68). Within that scope it
+supplies a compact design estimate of the thickness below which a strain-gradient description is
+
+required for the sensor voltage, and it is consistent in exponent with the source-reported companion
+of Table 7. The amplitude difference of 1.8% between A = 24.20 and the source-reported 23.76
+
+
+                                          32
+
+--- PAGE 33 ---
+                 (a)                                                (b)
+
+
+
+
+
+Figure 10: Condition number κ of the constrained coupled system for the square-element refinement
+study (Table 6). (a) κ versus Nx for scaling strategies A (raw), B (electromechanical), C (derivative-
+DOF) and D (combined). (b) The same κ values versus strategy, one curve per Nx.
+
+
+Table 6: Conditioning of the constrained coupled system for the square-element refinement study
+(Nx = 4, 8, 16, 32 with Ny = 2; beam L = 2 µm with thickness 2L/Nx, i.e., square elements of side
+L/Nx) under four scaling strategies. Entries are the condition number κ.
+
+                A                B                C               D
+Mesh
+                        raw                     electromech.               DOF-scaled                combined
+
+4 × 2                 4.71 × 1029                5.12 × 1029                1.19 × 1021                7.56 × 106
+8 × 2                 8.14 × 1030                8.69 × 1030                3.09 × 1021                1.30 × 108
+16 × 2                3.31 × 1032                4.64 × 1032                7.96 × 1021                2.13 × 109
+32 × 2                4.57 × 1034                1.14 × 1035                2.73 × 1022                1.03 × 1011
+
+
+is smaller than the residual scatter of panel (b). The main scientific takeaway is a compact
+design estimate, not a universal law: the independent fit to the four source-reported roots is
+hcrit/ℓref = 24.20 (ℓ/ℓref)0.90, so the thickness below which a strain-gradient description is required
+for the sensor voltage grows nearly linearly with the internal length.
+
+
+5.7  Conditioning and scaling
+
+Figure 10 investigates the conditioning of the constrained saddle system for the square-element
+refinement study of Table 6 under the four scalings. Strategy A is the raw SI system. Strategy B
+scales the material blocks by C−1/20   and κ−1/20     . Strategy C scales only the derivative degrees of
+freedom. Strategy D is the combined congruence (60). The four meshes are Nx = 4, 8, 16, 32 with
+Ny = 2, the thickness being co-refined as 2L/Nx so that the elements remain square.
+   Panel (a) plots κ against Nx. On the raw system (A) the condition number grows from
+4.71 × 1029 on a 4 × 2 mesh to 4.57 × 1034 on a 32 × 2 mesh, a factor of about 105 under three
+uniform refinements. Two disparities act at once. The electromechanical ratio C0/κ0 = 1.22 × 1019
+separates the blocks of (56). The h−4 inflation of the BFS twist unknowns (u,xy, v,xy) separates
+the derivative degrees of freedom from the displacements, and that second disparity grows under
+
+
+
+                                          33
+
+--- PAGE 34 ---
+refinement.
+    Strategy B removes only the material disparity. Its condition numbers are 5.12×1029, 8.69×1030,
+4.64 × 1032 and 1.14 × 1035. They track A at every Nx and are slightly larger on the finest mesh.
+Balancing C0 against κ0 therefore leaves the twist disparity untouched and does not make the
+system computable.
+    Strategy C does the complementary reduction. Its condition numbers are 1.19×1021, 3.09×1021,
+7.96 × 1021 and 2.73 × 1022. Relative to A this is a drop of eight to twelve orders of magnitude,
+but κ remains of order 1021–1022 because the electromechanical blocks are still unbalanced. C is
+necessary and not sufficient.
+   Only the combined map D, which is the congruence (60), attacks both sources. Its condition
+numbers are 7.56 × 106, 1.30 × 108, 2.13 × 109 and 1.03 × 1011. Relative to A on the finest mesh
+this is a reduction of about twenty-three orders of magnitude, from 4.57 × 1034 to 1.03 × 1011.
+D still grows with Nx, as a well-posed higher-order discrete operator must, but it grows from a
+computable baseline.
+   Panel (b) is Table 6 read by columns: one curve per Nx, plotted against the discrete strategy
+labels A–D. For every mesh the curve is almost flat from A to B, drops from B to C, and drops
+
+again, more steeply, from C to D. The figure therefore answers the same question twice: B is almost
+useless, C is incomplete, and D is the strategy that makes the element of Figure 1(b) solvable.
+
+  A congruence changes the numerical representation, not the physical unknown. Substituting the
+recovered physical solution into the unscaled system gives the residual ∥Kq −f∥/∥f∥= 3.5 × 10−13
+(Section 4.6). The improvement in κ is therefore a property of the scaling, not a modification of the
+continuum problem and not a modification of any result in Figures 4–9. Without the derivative-
+degree-of-freedom part of D the twist components would be indistinguishable from round-off on
+slender meshes, which is why the full scaling is mandatory for this element Golub and Van Loan
+[2013], van der Sluis [1969]. The main scientific takeaway of Figure 10 is therefore that the C1
+architecture of Figure 1(b) becomes computable only when both disparities are removed together,
+and that this computability is a property of the representation rather than of the continuum
+solution.
+
+
+5.8  Comparison with published results
+
+Table 7 collects the comparisons with published work. Three quantities could not be reproduced
+
+from first principles because their raw data are not available, and are therefore reported as structural
+comparisons. The converse-flexoelectric tip deflection of 307.37 pm quoted for the Ghasemi actuator
+
+corresponds to classical transverse flexoelectric bending of a beam with the full isotropic flexoelectric
+tensor, whereas the reduced model produces the corner-moment response (67). The sensor voltage
+law V ∝h−1.0002 and the energy-conversion law ηEM = 2.79×10−5(L/h)1.94 quoted for the Abdollahi
+configurations likewise depend on the full tensor and on data not supplied here. These comparisons
+are quantitative but are not presented as reproductions. The quantities reproduced here are the
+convergence rates (reproduced from reported norms), the PZT-5H constitutive identities, and the
+critical-thickness regression on the four source-reported roots.
+
+
+
+
+
+                                          34
+
+--- PAGE 35 ---
+Table 7: Comparison with published results. “Computed” denotes values obtained from the present
+
+formulation; “source-reported” denotes values quoted from the cited literature whose raw data are
+not available here.
+
+Quantity         Present work                                     Literature       Comp.      Class
+
+Benchmark rates  3.9998, 2.9963, 1.9995                                4, 3, 2         ≤0.13%   computed from
+                                                                                                 reported norms
+k31, Eopen,        0.3887, 71.38 GPa, 5.65 × 10−14 m                k31 = 0.39       matched   computed
+wtimo
+Flexoelectric     109.2 nm (anal.), 91.15 nm (FEM)               307.37 pm         structural   source-
+actuator                                                 Ghasemi et al.                reported
+                                                                       [2017]
+ηEM exponent    −1.12 ± 0.13                                +1.94             opposite    source-
+                                                                                         sign        reported
+Sensor voltage   computed model V (h)                     V ∝h−1.0002      structural   source-
+law                                                            Abdollahi et al.               reported
+                                                                       [2014]
+hcrit law           24.20(ℓ/ℓref)0.90                                    23.76(ℓ/ℓ0)0.90    1.8%      computed /
+                                                                                                    source-
+                                                                                               reported
+
+
+5.9  Physical interpretation of the reduced constitutive model
+
+The two central observations of this study—the saturation of the potential and the negative slender-
+ness exponent of the conversion ratio—share a single physical origin: the shear-free specialization
+(20) removes the transverse bending polarization of the full flexoelectric tensor. In the full tensor the
+bending strain gradient u,xy polarizes the beam uniformly through its thickness, and the resulting
+surface charge is the classical flexoelectric response that grows with slenderness. In the reduced
+tensor only the longitudinal polarization D1 = µ11u,xx survives. It is antisymmetric through the
+thickness, and its volume divergence vanishes in a tip-loaded beam. The residual response is confined
+
+to a boundary layer near the clamp, whose contribution to the stored dielectric energy decreases as
+the beam becomes more slender. The same specialization underlies the corner-moment actuator
+mechanism (67): with µ44 = 0 and a uniform transverse field the double stress is constant, so
+actuation occurs only through the corner forces. These consequences are properties of the adopted
+model, not of the discretisation. They delimit, quantitatively, the size-dependent phenomena that
+a shear-free flexoelectric model can and cannot resolve.
+
+
+5.10  Limitations and model scope
+
+The present formulation is restricted to plane strain on structured rectangular meshes, which is the
+
+natural setting of the BFS element and of the benchmark configurations studied. General geometries
+require either isoparametric Hermite mappings Petera and Pittman [1994] or the immersed and
+isogeometric alternatives Codony et al. [2019], Fischer et al. [2011]. The constitutive model retains
+a single flexoelectric coefficient pair with µ44 = 0, so the quantitative predictions are those of the
+shear-free limit, and the clamp-layer electrical quantities (peak potential, conversion ratio at large
+slenderness) carry the through-thickness resolution caveats quantified in Section 4.8 and in the
+refined figure-of-merit sweep of Section 5.3. Extending the formulation to the full three-parameter
+isotropic tensor is a natural continuation, and the conditioning and energy machinery developed
+
+
+                                          35
+
+--- PAGE 36 ---
+here carries over unchanged.  Finally, the raw benchmark data underlying the source-reported
+comparisons remain the only quantities that cannot be recomputed from the material presented.
+
+
+6  Conclusions
+
+A conforming C1 Bogner–Fox–Schmit finite element formulation has been developed for coupled
+piezoelectric–flexoelectric solids with Mindlin Form-II strain-gradient elasticity in plane strain.
+The formulation spans the complete chain from the electric enthalpy and the five Mindlin–Eshel
+invariants to the explicit fourth-order electromechanical strong form, the boundary operators
+including the double traction and corner forces, and the symmetric indefinite saddle system of the
+discretisation.
+
+   The constitutive model adopts a reduced flexoelectric specialization in which the shear coefficient
+is set to zero, following the established practice for barium titanate benchmarks, and states this
+specialization explicitly. The discretisation uses the bicubic Hermite interpolation of the BFS
+element, which provides exactly the C1 continuity demanded by the fourth-order mechanical
+operators, with 4 × 4 Gauss–Legendre integration that is exact for every integrand.
+  A complete non-dimensionalization of the field variables, applied as a symmetric congruence
+transformation, reduces the condition number of the constrained coupled system by more than
+twenty orders of magnitude on slender meshes while leaving the physical solution invariant to
+within a relative residual of 3.5 × 10−13. The energy bookkeeping distinguishes the dead-load
+product P = 2Uint from the quasi-static work Wqs = 12P, and the conversion ratio is defined on the
+dead-load product consistently.
+   The two-mesh rates computed from the source-reported Shekarchizadeh norms are 3.9998, 2.9963
+and 1.9995, consistent with the theoretical orders of the bicubic element; the adopted PZT-5H
+constants reproduce the IEEE Std 176 analytical chain (k31 = 0.3887 against the tabulated 0.39,
+Eopen = 71.38 GPa, tip deflection 5.65 × 10−14 m) and the electromechanical energy identities to a
+relative residual of order 10−12.
+
+   The size-dependent response of the barium titanate cantilever exhibits a self-stiffening saturation
+of the open-circuit potential at Λ of order 10−2; the rise–maximum–fall non-monotonicity persists
+under through-thickness refinement from 16 × 2 to 60 × 12 elements, while the quantitative peak
+values carry the resolution caveats of Section 4.8. The same studies yield a near-linear critical-
+thickness law hcrit ≈24 ℓfitted to four source-reported roots, and an energy conversion ratio that
+decreases with slenderness in the reduced model. The last observation is traced to the absence of
+the transverse bending polarization in the shear-free specialization, and it demarcates the physical
+regime in which the full flexoelectric tensor is required.
+
+   The practical significance of the work is twofold. For device analysis, the formulation provides a
+
+verified and numerically tractable computational basis for piezoelectric–flexoelectric cantilever and
+plate problems, with the critical thickness law supplying a direct design rule. For model selection,
+the work quantifies precisely which size-dependent phenomena are captured by the shear-free limit
+and which are not, so that the constitutive specialization can be chosen deliberately rather than
+implicitly.
+
+  A natural extension is the incorporation of the full three-parameter isotropic flexoelectric tensor,
+for which the discretisation, the conditioning treatment, and the energy machinery developed here
+carry over unchanged. The diagnostic transverse-coupling study reported in this work already
+
+
+                                          36
+
+--- PAGE 37 ---
+indicates the qualitative effect of such an extension on the slenderness scaling.
+
+
+7  Data and code availability
+
+The numerical results reported in this work were computed with the finite element formulation of
+Sections 2–3; the material and geometric inputs are tabulated in Tables 3 and 4. Raw numerical
+
+data underlying the cited benchmark comparisons that could not be reproduced here are identified
+as source-reported in the text and in Table 7.
+
+
+Declaration of competing interest
+
+The author declares that there is no known competing financial interest or personal relationship
+that could have appeared to influence the work reported in this paper.
+
+
+Acknowledgments
+
+This work was supported by the Haryana State Research Fund, Sanction Order No. 14/66-2025
+SPD/HSHEC/HSRF, Session 2025–2026.
+
+
+References
+
+A. Abdollahi, C. Peco, D. Mill´an, M. Arroyo, and I. Arias. Computational evaluation of the
+   flexoelectric effect in dielectric solids.  Journal of Applied Physics, 116:093502, 2014.  doi:
+  10.1063/1.4893974.
+
+A. Abdollahi, D. Mill´an, C. Peco, M. Arroyo, and I. Arias. Revisiting pyramid compression to
+  quantify flexoelectricity: A three-dimensional simulation study. Physical Review B, 91:104103,
+  2015. doi: 10.1103/PhysRevB.91.104103.
+
+A. Adini and R. W. Clough. Analysis of plate bending by the finite element method. Technical
+  report, University of California, Berkeley, 1961. NSF Report G.7337.
+
+E. C. Aifantis. On the role of gradients in the localization of deformation and fracture. International
+  Journal of Engineering Science, 30:1279–1299, 1992. doi: 10.1016/0020-7225(92)90141-3.
+
+B. S. Altan and E. C. Aifantis. On some aspects in the special theory of gradient elasticity. Journal
+  of Mechanical Behavior of Materials, 8:231–282, 1997. doi: 10.1515/jmbm.1997.8.3.231.
+
+E. Amanatidou and N. Aravas. Mixed finite element formulations of strain-gradient elasticity
+  problems. Computer Methods in Applied Mechanics and Engineering, 191:1723–1751, 2002. doi:
+  10.1016/S0045-7825(01)00353-X.
+
+H. Askes and E. C. Aifantis. Gradient elasticity in statics and dynamics: An overview of formulations,
+  length scale identification procedures, finite element implementations and new results. Interna-
+  tional Journal of Solids and Structures, 48:1962–1990, 2011. doi: 10.1016/j.ijsolstr.2011.03.006.
+
+
+
+
+                                          37
+
+--- PAGE 38 ---
+S. Baskaran, X. He, Q. Chen, and J. Y. Fu. Experimental studies on the direct flexoelectric
+   effect in α-phase polyvinylidene fluoride films. Applied Physics Letters, 98:242901, 2011. doi:
+  10.1063/1.3599520.
+
+M. Benzi, G. H. Golub, and J. Liesen. Numerical solution of saddle point problems. Acta Numerica,
+  14:1–137, 2005. doi: 10.1017/S0962492904000212.
+
+F. K. Bogner, R. L. Fox, and L. A. Schmit. The generation of inter-element-compatible stiffness
+  and mass matrices by the use of interpolation formulas. In Proceedings of the Conference on
+  Matrix Methods in Structural Mechanics, pages 397–444, Wright-Patterson Air Force Base, Ohio,
+  1966.
+
+G. Catalan, A. Lubk, A. H. G. Vlooswijk, E. Snoeck, C. Magen, A. Janssens, G. Rispens, G. Rijnders,
+  D. H. A. Blank, and B. Noheda. Flexoelectric rotation of polarization in ferroelectric thin films.
+  Nature Materials, 10:963–967, 2011. doi: 10.1038/nmat3141.
+
+D. Codony, O. Marco, S. Fern´andez-M´endez, and I. Arias. An immersed boundary hierarchical
+  B-spline method for flexoelectricity. Computer Methods in Applied Mechanics and Engineering,
+  354:750–782, 2019. doi: 10.1016/j.cma.2019.05.036.
+
+D. Codony, A. Mocci, J. Barcel´o-Mercader, and I. Arias. Mathematical and computational modeling
+  of flexoelectricity. Journal of Applied Physics, 130:231102, 2021. doi: 10.1063/5.0067852.
+
+L. E. Cross. Flexoelectric effects: Charge separation in insulating solids subjected to elastic strain
+  gradients. Journal of Materials Science, 41:53–63, 2006. doi: 10.1007/s10853-005-5916-6.
+
+F. dell’Isola, G. Sciarra, and S. Vidoli. Generalized Hooke’s law for isotropic second gradient
+
+  materials. Proceedings of the Royal Society A, 465:2177–2196, 2009. doi: 10.1098/rspa.2008.0530.
+
+Q. Deng, M. Kammoun, A. Erturk, and P. Sharma. Nanoscale flexoelectric energy harvesting.
+  International Journal of Solids and Structures, 51:3218–3225, 2014. doi: 10.1016/j.ijsolstr.2014.
+  05.018.
+
+G. Engel, K. Garikipati, T. J. R. Hughes, M. G. Larson, L. Mazzei, and R. L. Taylor. Continu-
+  ous/discontinuous finite element approximations of fourth-order elliptic problems in structural
+  and continuum mechanics with applications to thin beams and plates, and strain gradient elas-
+   ticity. Computer Methods in Applied Mechanics and Engineering, 191:3669–3750, 2002.  doi:
+  10.1016/S0045-7825(02)00286-4.
+
+A. Erturk and D. J. Inman.  Piezoelectric Energy Harvesting.  Wiley, Chichester, 2011.  doi:
+  10.1002/9781119991151.
+
+P. Fischer, M. Klassen, J. Mergheim, P. Steinmann, and R. M¨uller. Isogeometric analysis of 2D
+
+  gradient elasticity. Computational Mechanics, 47:325–334, 2011. doi: 10.1007/s00466-010-0543-8.
+
+P. Germain. The method of virtual power in continuum mechanics. Part 2: Microstructure. SIAM
+  Journal on Applied Mathematics, 25:556–575, 1973. doi: 10.1137/0125053.
+
+H. Ghasemi, H. S. Park, and T. Rabczuk. A level-set based IGA formulation for topology
+
+  optimization of flexoelectric materials. Computer Methods in Applied Mechanics and Engineering,
+  313:239–258, 2017. doi: 10.1016/j.cma.2016.09.029.
+
+
+                                          38
+
+--- PAGE 39 ---
+H. Ghasemi, H. S. Park, and T. Rabczuk. A multi-material level set-based topology optimization
+
+   of flexoelectric composites. Computer Methods in Applied Mechanics and Engineering, 332:47–62,
+  2018. doi: 10.1016/j.cma.2017.12.005.
+
+G. H. Golub and C. F. Van Loan. Matrix Computations. Johns Hopkins University Press, Baltimore,
+  4 edition, 2013. doi: 10.56021/9781421407944.
+
+Madhur Gupta, Ajay D. Pingale, and Shailesh I. Kundalwal. Continuum and computational
+  modeling of flexoelectricity in nanomaterials: A review. Journal of Applied Physics, 138(19),
+  2025. doi: 10.1063/5.0299912.
+
+K. M. Hamdia, H. Ghasemi, X. Zhuang, N. Alajlan, and T. Rabczuk.  Sensitivity and uncer-
+  tainty analysis for flexoelectric nanostructures. Computer Methods in Applied Mechanics and
+  Engineering, 337:95–109, 2018. doi: 10.1016/j.cma.2018.03.016.
+
+IEEE Standard on Piezoelectricity. IEEE std 176-1987. Technical report, The Institute of Electrical
+  and Electronics Engineers, New York, 1988. ANSI/IEEE Std 176-1987.
+
+B. Jaffe, W. R. Cook, Jr., and H. Jaffe. Piezoelectric Ceramics. Academic Press, London, 1971.
+
+W. T. Koiter. Couple-stresses in the theory of elasticity. Proceedings of the Koninklijke Nederlandse
+  Akademie van Wetenschappen B, 67:17–44, 1964.
+
+D. C. C. Lam, F. Yang, A. C. M. Chong, J. Wang, and P. Tong. Experiments and theory in strain
+  gradient elasticity. Journal of the Mechanics and Physics of Solids, 51:1477–1508, 2003. doi:
+  10.1016/S0022-5096(03)00053-X.
+
+H. Le Quang and Q.-C. He. The number and types of all possible rotational symmetries for
+
+   flexoelectric tensors. Proceedings of the Royal Society A, 467:2369–2386, 2011. doi: 10.1098/rspa.
+  2010.0521.
+
+X. Liang, S. Hu, and S. Shen. Effects of surface and flexoelectricity on a piezoelectric nanobeam.
+  Smart Materials and Structures, 23:035020, 2014. doi: 10.1088/0964-1726/23/3/035020.
+
+W. Ma and L. E. Cross.  Observation of the flexoelectric effect in relaxor Pb(Mg1/3Nb2/3)O3
+  ceramics. Applied Physics Letters, 78:2920–2921, 2001. doi: 10.1063/1.1356444.
+
+M. S. Majdoub, P. Sharma, and T. C¸a˘gin. Enhanced size-dependent piezoelectricity and elasticity
+  in nanostructures due to the flexoelectric effect.  Physical Review B, 77:125424, 2008.  doi:
+  10.1103/PhysRevB.77.125424.
+
+R. Maranganti and P. Sharma. Atomistic determination of flexoelectric properties of crystalline
+   dielectrics. Physical Review B, 80:054109, 2009. doi: 10.1103/PhysRevB.80.054109.
+
+R. D. Mindlin. Micro-structure in linear elasticity. Archive for Rational Mechanics and Analysis,
+  16:51–78, 1964. doi: 10.1007/BF00248490.
+
+R. D. Mindlin. Second gradient of strain and surface-tension in linear elasticity. International
+  Journal of Solids and Structures, 1:417–438, 1965. doi: 10.1016/0020-7683(65)90006-5.
+
+
+
+
+                                          39
+
+--- PAGE 40 ---
+R. D. Mindlin and N. N. Eshel. On first strain-gradient theories in linear elasticity. International
+  Journal of Solids and Structures, 4:109–124, 1968. doi: 10.1016/0020-7683(68)90036-X.
+
+R. D. Mindlin and H. F. Tiersten. Effects of couple-stresses in linear elasticity. Archive for Rational
+  Mechanics and Analysis, 11:415–448, 1962. doi: 10.1007/BF00253946.
+
+A. G. Moura and A. Erturk. Electroelastodynamics of flexoelectric energy conversion and harvesting
+  in elastic dielectrics. Journal of Applied Physics, 121:064110, 2017. doi: 10.1063/1.4976069.
+
+S. S. Nanthakumar, X. Zhuang, H. S. Park, and T. Rabczuk. Topology optimization of flexoelectric
+  structures. Journal of the Mechanics and Physics of Solids, 105:217–234, 2017. doi: 10.1016/j.
+  jmps.2017.05.010.
+
+S.-A. Papanicolopulos, A. Zervos, and I. Vardoulakis. A three-dimensional C1 finite element for
+  gradient elasticity. International Journal for Numerical Methods in Engineering, 77:1396–1415,
+  2009. doi: 10.1002/nme.2449.
+
+J. Petera and J. F. T. Pittman.  Isoparametric Hermite elements.  International Journal for
+  Numerical Methods in Engineering, 37:3489–3519, 1994. doi: 10.1002/nme.1620372006.
+
+A. Preumont. Vibration Control of Active Structures: An Introduction. Springer, Berlin, 3 edition,
+  2011. doi: 10.1007/978-94-007-2033-6.
+
+C. Q. Ru and E. C. Aifantis. A simple approach to solve boundary-value problems in gradient
+   elasticity. Acta Mechanica, 101:59–68, 1993. doi: 10.1007/BF01175597.
+
+S. Rudraraju, A. Van der Ven, and K. Garikipati. Three-dimensional isogeometric solutions to
+
+  general boundary value problems of Toupin’s gradient elasticity theory at finite strains. Computer
+  Methods in Applied Mechanics and Engineering, 278:705–728, 2014. doi: 10.1016/j.cma.2014.06.
+  015.
+
+N. D. Sharma, C. M. Landis, and P. Sharma. Piezoelectric thin-film superlattices without using
+  piezoelectric materials. Journal of Applied Physics, 108:024304, 2010. doi: 10.1063/1.3443404.
+
+N. Shekarchizadeh, B. E. Abali, and A. M. Bersani. A benchmark strain gradient elasticity solution
+
+  in two-dimensions for verifying computational approaches by means of the finite element method.
+  Mathematics and Mechanics of Solids, 27:2218–2238, 2022. doi: 10.1177/10812865221114336.
+
+S. Shen and S. Hu. A theory of flexoelectricity with surface effect for elastic dielectrics. Journal of
+  the Mechanics and Physics of Solids, 58:665–677, 2010. doi: 10.1016/j.jmps.2010.03.001.
+
+J. Y. Shu, W. E. King, and N. A. Fleck.  Finite elements for materials with strain gradient
+   effects. International Journal for Numerical Methods in Engineering, 44:373–391, 1999. doi:
+  10.1002/(SICI)1097-0207(19990130)44:3⟨373::AID-NME508⟩3.0.CO;2-7.
+
+L. Shu, X. Wei, T. Pang, X. Yao, and C. Wang. Symmetry of flexoelectric coefficients in crystalline
+  medium. Journal of Applied Physics, 110:104106, 2011. doi: 10.1063/1.3662196.
+
+A. K. Tagantsev. Piezoelectricity and flexoelectricity in crystalline dielectrics. Physical Review B,
+  34:5883–5889, 1986. doi: 10.1103/PhysRevB.34.5883.
+
+
+                                          40
+
+--- PAGE 41 ---
+H. F. Tiersten.  Linear Piezoelectric Plate Vibrations. Plenum Press, New York, 1969.  doi:
+  10.1007/978-1-4899-6453-3.
+
+S. P. Timoshenko. On the correction for shear of the differential equation for transverse vibrations
+  of prismatic bars. Philosophical Magazine, 41:744–746, 1921. doi: 10.1080/14786442108636264.
+
+R. A. Toupin. Elastic materials with couple-stresses. Archive for Rational Mechanics and Analysis,
+  11:385–414, 1962. doi: 10.1007/BF00253945.
+
+A. van der Sluis. Condition numbers and equilibration of matrices. Numerische Mathematik, 14:
+  14–23, 1969. doi: 10.1007/BF02165096.
+
+B. Wang, Y. Gu, S. Zhang, and L.-Q. Chen. Flexoelectricity in solids: Progress, challenges, and
+
+  perspectives. Progress in Materials Science, 106:100570, 2019. doi: 10.1016/j.pmatsci.2019.05.003.
+
+Z. Yan and L. Y. Jiang. Flexoelectric effect on the electroelastic responses of bending piezoelectric
+  nanobeams. Journal of Applied Physics, 113:194102, 2013. doi: 10.1063/1.4804949.
+
+F. Yang, A. C. M. Chong, D. C. C. Lam, and P. Tong. Couple stress based strain gradient
+  theory for elasticity. International Journal of Solids and Structures, 39:2731–2743, 2002. doi:
+  10.1016/S0020-7683(02)00152-X.
+
+P. V. Yudin and A. K. Tagantsev. Fundamentals of flexoelectricity in solids. Nanotechnology, 24:
+  432001, 2013. doi: 10.1088/0957-4484/24/43/432001.
+
+A. Zervos. Finite elements for elasticity with microstructure and gradient elasticity. International
+  Journal for Numerical Methods in Engineering, 73:564–595, 2008. doi: 10.1002/nme.2093.
+
+A. Zervos, S.-A. Papanicolopulos, and I. Vardoulakis. Two finite-element discretizations for
+  gradient elasticity. Journal of Engineering Mechanics, 135:203–213, 2009. doi: 10.1061/(ASCE)
+  0733-9399(2009)135:3(203).
+
+W. Zhu, J. Y. Fu, N. Li, and L. Cross. Piezoelectric composite based on the enhanced flexoelectric
+   effects. Applied Physics Letters, 89:192904, 2006. doi: 10.1063/1.2382740.
+
+P. Zubko, G. Catalan, and A. K. Tagantsev.  Flexoelectric effect in solids. Annual Review of
+  Materials Research, 43:387–421, 2013. doi: 10.1146/annurev-matsci-071312-121634.
+
+
+
+
+
+                                          41

@@ -1,0 +1,109 @@
+{
+  "T1_circle_scatter_rel": 0.0030359804474584923,
+  "T1_field_covariance_V3": 6.26e-14,
+  "T1_status": "PASS",
+  "T4_ellipse_amp_rel": 0.365550816606385,
+  "T4_noise_rel": 0.0030359804474584923,
+  "T4_threshold_rel": 0.02,
+  "T4_status": "RESOLVABLE",
+  "T2_D_points": [
+    {
+      "lam": 0.031670399999999994,
+      "D": 0.0003389095741827053,
+      "tau_ps": 20.0,
+      "a_nm": 50,
+      "tags": [
+        "B_CV_tau20_a50",
+        "B_F_tau0_a50"
+      ]
+    },
+    {
+      "lam": 0.039588,
+      "D": 0.0015422040455827799,
+      "tau_ps": 1.0,
+      "a_nm": 10,
+      "tags": [
+        "B_CV_tau1_a10",
+        "A_chi1_phi000"
+      ]
+    },
+    {
+      "lam": 0.19793999999999995,
+      "D": 0.007358007036974995,
+      "tau_ps": 5.0,
+      "a_nm": 10,
+      "tags": [
+        "B_CV_tau5_a10",
+        "A_chi1_phi000"
+      ]
+    },
+    {
+      "lam": 0.19793999999999995,
+      "D": 0.0021020169236488214,
+      "tau_ps": 20.0,
+      "a_nm": 20,
+      "tags": [
+        "B_CV_tau20_a20",
+        "B_F_tau0_a20"
+      ]
+    },
+    {
+      "lam": 0.7917599999999998,
+      "D": 0.020582902149998073,
+      "tau_ps": 20.0,
+      "a_nm": 10,
+      "tags": [
+        "B_CV_tau20_a10",
+        "A_chi1_phi000"
+      ]
+    },
+    {
+      "lam": 3.167039999999999,
+      "D": 0.10305691854868136,
+      "tau_ps": 20.0,
+      "a_nm": 5,
+      "tags": [
+        "B_CV_tau20_a5",
+        "B_F_tau0_a5"
+      ]
+    }
+  ],
+  "T2_monotone": false,
+  "T2_collapse_residual_max": 0.7802433632868369,
+  "T2_status": "NOT-SUPPORTED",
+  "delta_est": 0.0010782020918147053,
+  "T3_wall_dev_abs": 1.1102230246251565e-16,
+  "T3_bound_5delta": 0.0053910104590735265,
+  "T3_status": "WITHIN-BOUND",
+  "H5_m2_over_m0": {
+    "circle_aniso": 0.08494377808202298,
+    "ellipse_aniso": 0.3085104926561316,
+    "circle_iso": 5.19017219864864e-11,
+    "ellipse_iso": 0.20365226242852558
+  },
+  "T3_probe_theta_r2a": {
+    "rel_dev": 0.0002174425123443723,
+    "bound_5delta": 0.0053910104590735265,
+    "status": "WITHIN-BOUND",
+    "note": "cavity-wall value is Dirichlet-prescribed (degenerate); probe = theta field at r~2a, CV tau=20ps a=10nm"
+  },
+  "T1_90deg_pair_rel_max": 0.00158,
+  "T1_90deg_pair_0_90_rel": 4.04e-10,
+  "T1_note": "field covariance machine-class (V3 6.3e-14; 0/90 pair 4e-10). Peak-value scatter <=0.3% = argmax sampling on flat peak (single-sample artifact), not covariance failure.",
+  "eta_d_sensitivity": {
+    "circle_rel_spread": 0.0004,
+    "ellipse_rel_spread": 0.002,
+    "range": [
+      0.02,
+      0.1
+    ],
+    "status": "ROBUST"
+  },
+  "T4_grid_spotchecks_192x96": {
+    "phi30": -1516600.0,
+    "phi90": -1091400.0,
+    "amp_rel": 0.327,
+    "note": "96x48 amp 0.366; conclusion RESOLVABLE robust to grid (33-37% >> 2%)"
+  },
+  "T2_note": "pure-Lambda collapse REFUTED at 25% level (equal-Lambda different-epsilon pair differs 3.5x); D increases with Lambda within each size family; two-parameter (Lambda, epsilon) structure is the finding. H3 strong form NOT-SUPPORTED as registered; reported honestly."
+}

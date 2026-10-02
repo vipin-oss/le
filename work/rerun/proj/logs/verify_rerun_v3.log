@@ -1,0 +1,12 @@
+[PASS] V0_metric_consistency: linear_rel_errs=[(0.0031603133854591903, 0.004083694117343661), (0.003162238899633074, 0.004813539984945159)] note=2nd-order mapped FD consistency on linear field
+[PASS] V1_stencil_dispersion: note=3-point symbol: |err|<2% for kh<=0.4 (production wall modes m<=8 at Nt=48 -> kh<=0.53)
+V2 ('CV', 0.3, 1.0, 45.0) med-fine rel 0.3182602526292272
+V2 ('CV', 0.3, 2.0, 30.0) med-fine rel 0.5265498983509789
+[PARTIAL] V2_grid_convergence: criterion=|s_fine - s_med| <= 2% of s_fine (96x48 production grid) note=if PARTIAL: claims use documented grid uncertainty or production at 192x96 for confirmatory only
+[FAIL] V3_rotation_covariance_90deg: max_rel_err=0.08297611933228949 criterion=<=1e-8 (machine-precision class; discrete circle automorphism)
+[FAIL] V3b_rotation_covariance_37deg_EXPLORATORY: note=wall-hoop covariance with linear angle interpolation; O(h)+interp expected
+[PASS] V4_uncoupled_null: max_abs_hoop=0.0 criterion=u,sigma exactly 0 when beta=0 (no mechanical load)
+[FAIL] V5_tau_to_zero: rel_diff=1.4062818656633147 criterion=<=1e-3 (tau=1e-6 t_th)
+[PASS] V6_steady_log_law: max_abs_err=9.501780550480454e-06 criterion=<=0.01 of range (theta: 0..1) back=2.785664919610733e-32
+[PASS] V7_static_uniform_theta_annulus: sigma_theta_a_numeric=-3203792.426527943 sigma_theta_a_exact=-3179904.953001158 rel_err=0.007512008654296546 criterion=<=1.5% vs closed form (isotropic plane strain, uniform theta, free cavity, fixed outer)
+VERIFY DONE cpu 383.594075153
