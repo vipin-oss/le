@@ -1,7 +1,19 @@
 """build_supplement.py — SUPPLEMENTARY_TABLES.xlsx (openpyxl) from the analysis outputs/tables; and cover_letter.md."""
 import os, sys, json, csv, glob
 sys.dont_write_bytecode = True
-ROOT = '/home/user/PAPER_PROJECT'; MS = os.path.join(ROOT, '13_Manuscript')
+def _pp_root(_start):
+    """walk up from _start to the PAPER_PROJECT directory (path-independent replacement
+    for the hard-coded '/home/user/PAPER_PROJECT' that used to be here)."""
+    _p = os.path.abspath(_start)
+    while True:
+        if os.path.basename(_p) == 'PAPER_PROJECT':
+            return _p
+        _q = os.path.dirname(_p)
+        if _q == _p:
+            break
+        _p = _q
+    return os.environ.get('PAPER_PROJECT_ROOT', '/home/user/PAPER_PROJECT')
+ROOT = _pp_root(os.path.dirname(os.path.abspath(__file__))); MS = os.path.join(ROOT, '13_Manuscript')
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 def J(p):

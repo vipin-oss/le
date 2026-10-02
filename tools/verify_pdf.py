@@ -34,7 +34,8 @@ ROOT = os.path.dirname(HERE)
 DEFAULT_PDF = os.path.join(ROOT, 'PAPER_PROJECT', '13_Manuscript', 'manuscript_IJHMT.pdf')
 DEFAULT_MD = os.path.join(ROOT, 'PAPER_PROJECT', '13_Manuscript', 'manuscript_IJHMT.md')
 RUNNING_TITLE = 'Cavity thermoelasticity in monoclinic beta-Ga2O3 — verified continuum study'
-COMBINING_RE = re.compile('[κσCs][̄̂]')   # rendered as composite glyph images
+COMBINING_RE = re.compile('.[\u0302\u0303\u0304\u0306\u0307]')   # base + combining mark:
+#   md_to_pdf draws these as one raster glyph, so neither base nor mark is PDF text
 
 
 def norm(t):
@@ -110,6 +111,9 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('-p', '--pdf', default=DEFAULT_PDF)
     ap.add_argument('-m', '--md', default=DEFAULT_MD)
+    ap.add_argument('-r', '--running-title', default=RUNNING_TITLE)
+    ap.add_argument('-c', '--companion', action='store_true',
+                    help='verify a companion document: no figures, fewer equations')
     a = ap.parse_args()
 
     doc = pymupdf.open(a.pdf)
@@ -118,8 +122,10 @@ def main():
     print('md  : %s' % a.md)
 
     # ---------------------------------------------------------------- 1. text fidelity
-    pdf_text = '\n'.join(p.get_text() for p in doc).replace(RUNNING_TITLE, ' ')
-    hay = re.sub(r'\s+', '', pdf_text).replace('•', '').replace('|', '').replace('_', '')
+    pdf_text = '\n'.join(p.get_text() for p in doc).replace(a.running_title, ' ')
+    # braces: the PDF keeps them when they are not part of a _{...} group, and norm() drops
+    # them on the markdown side, so drop them here too
+    hay = (re.sub(r'\s+', '', pdf_text).replace('\u2022', '').replace('|', '').replace('_', '').replace('{', '').replace('}', ''))
     pos, bad, n_unit, n_rows = 0, 0, 0, 0
     for kind, txt in split_units(md):
         n = norm(txt)
@@ -168,12 +174,16 @@ def main():
             h = im['bbox'][3] - im['bbox'][1]
             if w > 150 and h > 100 and not caps:
                 orphan.append(i + 1)
-    print('[3] figures       : %d on pages %s' % (len(figs), figs))
+    print('[3] figures       : %d on pages %s (expected %d)'
+          % (len(figs), figs, 0 if a.companion else 8))
     print('[4] equations     : %d on pages %s' % (len(eqs), eqs))
     print('[5] figure/caption: %s — %d figure(s) without a caption on the same page'
           % ('PASS' if not orphan else 'FAIL', len(orphan)))
 
-    ok = (bad == 0) and not over and len(figs) == 8 and len(eqs) == 3 and not orphan
+    if a.companion:
+        ok = (bad == 0) and not over and len(figs) == 0 and len(eqs) >= 20 and not orphan
+    else:
+        ok = (bad == 0) and not over and len(figs) == 8 and len(eqs) >= 75 and not orphan
     print('\nRESULT: %s' % ('ALL CHECKS PASSED' if ok else 'PROBLEMS FOUND (see above)'))
     return 0 if ok else 1
 

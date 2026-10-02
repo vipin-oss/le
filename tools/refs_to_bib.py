@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """refs_to_bib.py — build FINAL_REVISED_REFERENCES.bib from the project's verified reference list.
 
-Source: PAPER_PROJECT/01_Literature/REFERENCES_VERIFIED.json (23 entries; each carries the
-level "METADATA VERIFIED (Crossref 2026-10-01)").  Nothing is invented: the BibTeX fields are
+Source: PAPER_PROJECT/01_Literature/REFERENCES_VERIFIED.json (54 entries; each carries a
+"METADATA VERIFIED (Crossref ...)" level).  Nothing is invented: the BibTeX fields are
 parsed out of the stored, verified one-line reference strings, and the file is written with the
-same numbering the manuscript uses.
+same numbering the manuscript uses.  Books and book chapters are emitted as @book and
+@incollection instead of falling through to the @misc fallback.
 
 Usage:
     python3 tools/refs_to_bib.py [-o PAPER_PROJECT/13_Manuscript/FINAL_REVISED_REFERENCES.bib]
@@ -30,6 +31,20 @@ CITE_RE = re.compile(
     r'(?P<pages>[^(]+?)\s*'
     r'\((?P<year>(?:19|20)\d\d)\)\.?\s*$')
 INITIALS_RE = re.compile(r'^[A-Z]\.([A-Z]\.)*[A-Z]?$')
+
+# Books:    "Authors. Title. Publisher, Series (year). doi"
+BOOK_RE = re.compile(
+    r'^(?P<authors>.+?)\.\s+'
+    r'(?P<title>.+?)\.\s+'
+    r'(?P<publisher>[^(]+?)\s*'
+    r'\((?P<year>(?:19|20)\d\d)\)\.?\s*$')
+# Chapters: "Authors. Title. In Book, pages (year). doi"
+CHAP_RE = re.compile(
+    r'^(?P<authors>.+?)\.\s+'
+    r'(?P<title>.+?)\.\s+'
+    r'In\s+(?P<booktitle>.+?),\s*'
+    r'(?P<pages>[^(]+?)\s*'
+    r'\((?P<year>(?:19|20)\d\d)\)\.?\s*$')
 
 
 def texify(s):
@@ -89,6 +104,41 @@ def main():
             doi = m.group(1)
             text = text[:m.start()].strip()
         m = CITE_RE.match(text)
+        mchap = CHAP_RE.match(text) if not m else None
+        mbook = BOOK_RE.match(text) if not (m or mchap) else None
+        if mchap:
+            g = mchap.groupdict()
+            lines.append('%% [%d] %s' % (r['n'], r.get('level', '')))
+            lines.append('@incollection{%s,' % r['key'])
+            lines.append('  author    = {%s},' % bib_authors(g['authors']))
+            lines.append('  title     = {%s},' % texify(g['title']))
+            lines.append('  booktitle = {%s},' % texify(g['booktitle']))
+            lines.append('  pages     = {%s},' % g['pages'].strip())
+            lines.append('  year      = {%s},' % g['year'])
+            if doi:
+                lines.append('  doi       = {%s},' % doi)
+            lines.append('}')
+            lines.append('')
+            continue
+        if mbook:
+            g = mbook.groupdict()
+            lines.append('%% [%d] %s' % (r['n'], r.get('level', '')))
+            lines.append('@book{%s,' % r['key'])
+            lines.append('  author    = {%s},' % bib_authors(g['authors']))
+            lines.append('  title     = {%s},' % texify(g['title']))
+            pub = g['publisher'].strip()
+            if ', ' in pub:                       # "Springer, Solid Mechanics and Its Applications"
+                pub, series = pub.split(', ', 1)
+                lines.append('  publisher = {%s},' % texify(pub))
+                lines.append('  series    = {%s},' % texify(series))
+            else:
+                lines.append('  publisher = {%s},' % texify(pub))
+            lines.append('  year      = {%s},' % g['year'])
+            if doi:
+                lines.append('  doi       = {%s},' % doi)
+            lines.append('}')
+            lines.append('')
+            continue
         if not m:
             parts = re.match(r'^(?P<authors>.+?)\.\s+(?P<title>.+?)\.\s+(?P<rest>.+)$', text)
             if not parts:

@@ -198,19 +198,11 @@
    "status": "PASS",
    "rel_spread_phi_0_45_105": 3.648971557918331e-15,
    "criterion": "peak |hoop| of the anisotropic circle identical for grid-aligned phi (pre-registered T1: <=1e-8), single-pulse pipeline, 48x24"
-  },
-  {
-   "case": "V0b_metric_consistency_production_grids",
-   "status": "PASS",
-   "errors": "{'R48': {'chi1': '2.93e-03', 'chi2': '3.58e-03'}, 'M': {'chi1': '1.18e-03', 'chi2': '1.48e-03'}, 'R192': {'chi1': '1.04e-03', 'chi2': '1.26e-03'}, 'T144': {'chi1': '7.74e-04', 'chi2': '9.75e-04'}, 'T48': {'chi1': '4.18e-03', 'chi2': '5.03e-03'}}",
-   "worst_production_grids": 0.003575961642985348,
-   "criterion": "same criterion as V0 (<=5e-3 linear-field metric consistency) on the grids that carry absolute-stress claims (R48, M, R192, T144); T48 (96x48) is informational",
-   "note": "added after run 4 because V0 on the handoff grid family (96x48, chi=2: 5.03e-3) missed the criterion by 0.6%; the error is angular-resolution dominated (96x96: 1.5e-3); T48 is used only for circle thermal-memory runs and relative ablation comparisons"
   }
  ],
  "status": "COMPLETE",
- "cpu_seconds": 1177.7481808920002,
- "wall_seconds": 1179.5981090068817,
- "n_pass": 26,
+ "cpu_seconds": 907.76645599,
+ "wall_seconds": 908.260986328125,
+ "n_pass": 25,
  "n_fail": 1
 }

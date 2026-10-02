@@ -1,6 +1,18 @@
 """make_central_story.py — CENTRAL_STORY.md (MASTER_PROMPT §47) with numbers from ANALYSIS_V2.json."""
 import json, os
-ROOT = '/home/user/PAPER_PROJECT'
+def _pp_root(_start):
+    """walk up from _start to the PAPER_PROJECT directory (path-independent replacement
+    for the hard-coded '/home/user/PAPER_PROJECT' that used to be here)."""
+    _p = os.path.abspath(_start)
+    while True:
+        if os.path.basename(_p) == 'PAPER_PROJECT':
+            return _p
+        _q = os.path.dirname(_p)
+        if _q == _p:
+            break
+        _p = _q
+    return os.environ.get('PAPER_PROJECT_ROOT', '/home/user/PAPER_PROJECT')
+ROOT = _pp_root(os.path.dirname(os.path.abspath(__file__)))
 def J(p):
     p = os.path.join(ROOT, p); return json.load(open(p)) if os.path.exists(p) else {}
 AN = J('10_Processed_Data/ANALYSIS_V2.json'); CR = J('10_Processed_Data/CONVERGENCE_RESULTS.json')

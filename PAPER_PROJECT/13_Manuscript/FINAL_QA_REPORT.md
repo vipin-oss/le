@@ -4,6 +4,92 @@
 monoclinic β-Ga₂O₃ under a transient thermal pulse: a verified continuum study with thermal-memory
 and mechanism ablations*
 **Target:** International Journal of Heat and Mass Transfer (Elsevier, `elsarticle`)
+**Branch / dates:** `arena/01a0f67f-le` · 2026-10-01 (publication readiness) and 2026-10-02
+(format restructure + calculation companion)
+
+> §0 below is the QA of the **current** version (9 sections / 41 subsections / 84 equations /
+> 8 figures / 11 tables / 54 references + companion). §1 ff. record the 2026-10-01 pass on the
+> previous (7-section) version; their counts are those of that version.
+
+---
+
+## 0. QA of the restructured version and of the companion (2026-10-02)
+
+### 0.1 What was produced
+
+| File | Size | md5 | Notes |
+|---|---|---|---|
+| `FINAL_REVISED_MANUSCRIPT.tex` | 100,828 B | `0cb8451411ecea7a3f3501b20a937e13` | elsarticle source, generated from `manuscript_IJHMT.md` |
+| `FINAL_REVISED_REFERENCES.bib` | 20,377 B | `7f75d8ce2ff039243d9fb33c9742f7dd` | 54 entries, Crossref-verified, 0 unparsed |
+| `FINAL_REVISED_MANUSCRIPT.pdf` | 32 pp | (varies: PDF metadata carries a timestamp) | preprint PDF of the manuscript |
+| `FINAL_REVISED_CALCULATIONS.tex` | 47,355 B | `9bdde39973131a57414b54ee98936228` | companion calculation document |
+| `FINAL_REVISED_CALCULATIONS.pdf` | 13 pp | (varies) | preprint PDF of the companion |
+| `calculations_IJHMT.md` | 39,761 B | `31c0e4ea1f94e493f14a1506594224ea` | source of truth for the companion |
+| `manuscript_IJHMT.md` | 97,832 B | `9e6afe14e81e2359cee0beedaf050ef8` | single source of truth |
+| `manuscript_IJHMT.docx` | 2,685,210 B | `34274c415bc68adb4ba793a3d285d791` | regenerated from the same build |
+
+Counts: manuscript **9 sections, 41 subsections, 84 numbered equations, 8 figures, 11 tables,
+54 references**, abstract **248 words** (limit 250), **5 highlights** of 69–78 characters
+(limit 85), body ≈ **9.5k words**. Companion **11 sections, 37 subsections, 29 equations,
+9 tables**, ≈ **4.9k words**.
+
+### 0.2 Gates — all exit 0 = pass
+
+| Gate | Command | Result |
+|---|---|---|
+| Static audit of the manuscript `.tex` | `python3 tools/audit_tex.py` | **70 checks passed** |
+| Static audit of the companion `.tex` | `python3 tools/audit_tex.py -t …/FINAL_REVISED_CALCULATIONS.tex -m …/calculations_IJHMT.md -c` | **54 checks passed** |
+| Markdown → LaTeX unit tests | `python3 tools/test_md_to_tex.py` | **26 tests passed** |
+| Manuscript PDF fidelity | `python3 tools/verify_pdf.py` | **5 checks passed** (316 text units, 0 missing; 8 figures; 79 equation images) |
+| Companion PDF fidelity | `python3 tools/verify_pdf.py -p …/calculations_IJHMT.pdf -m …/calculations_IJHMT.md -r … -c` | **5 checks passed** (182 units, 0 missing) |
+| Cross-reference check | `python3 tools/check_crossrefs.py` | every “Section x.y”, “Table n”, “Fig. n”, “Eq. (n)” resolves |
+| Structural guard | `python3 tools/renumber_crossrefs.py` | **ALL EDITS IN PLACE — 12 edits verified** |
+| Bibliography | `python3 tools/refs_to_bib.py` | 54 references, 0 unparsed |
+| Verification suite (science, unchanged) | `python3 PAPER_PROJECT/07_Tests/run_tests.py` | **25 PASS, 1 FAIL** — the single failure is `V0_metric_consistency_linear_field`, the known and disclosed marginal case: the handoff-style 96×48 grid with χ = 2 gives 5.03×10⁻³ against the handoff criterion ≤5×10⁻³, while the production grids give ≤3.6×10⁻³. Table 5 of the manuscript reports exactly this, so the suite result and the manuscript agree. No source file was modified by this pass. |
+
+What the static audit covers (no TeX engine exists in this environment, so compilation is
+**not** covered — see §4 of this report): ASCII-only output, no control characters, balanced
+braces and environments, every `\cite` key present and every entry cited, no leftover numeric
+citations, every `\ref`/`\eqref` resolving, no hard-coded equation numbers, all 8 figure files
+present, table column counts consistent, booktabs rules paired, editorial limits, required
+content (placeholders, primary/exploratory labelling, validation status, AI and data statements)
+and the 22 carried numbers.
+
+### 0.3 Defects found and fixed during this pass
+
+1. **Stale cross-references after renumbering** — 14 hard-coded pointers (tables, sections) were
+   re-pointed; `check_crossrefs.py` now fails the build if any does not resolve.
+2. **Double-escaped unicode** (`\\uXXXX`) in two builder modules rendered as literal `\u2026`;
+   285 + 94 occurrences corrected.
+3. **mathtext-incompatible LaTeX** in display equations (`\ge`, `\le`, `\begin{aligned}`,
+   `\begin{bmatrix}`, `\underbrace`, `\tfrac`): 7 equations were re-cast (three aligned
+   systems became nine single-line equations). A lint pass now renders every equation before the
+   build.
+4. **Non-ASCII output** (`‖ ′ ℬ 𝒜 𝒟`, combining marks) eliminated by converter mappings and by
+   wording fixes; both `.tex` files are pure ASCII.
+5. **Literal `{{…}}`** leaking from f-string escaping into three paragraphs; corrected at source.
+6. **Path-like tokens** (`09_Raw_Data`, `CODE_FREEZE_v2_gate.json`) were being turned into
+   mathematics by the converter; paths are now protected.
+7. **Five references were uncited** (`chen2008`, `fahmy2018`, `galazka2022`, `hetnarski1993`,
+   `pearton2018`, plus `straughan2011`): citation sentences added at the natural places; the
+   reference list is now cited in full.
+8. **Audit and verifier thresholds** were hard-coded to the 3-equation/8-table version; they now
+   follow the built manuscript and accept a companion.
+
+### 0.4 What changed and what did not
+
+Changed: section structure and numbering, the number of displayed equations (3 → 84 by writing
+out steps that were previously prose), table count (8 → 11), reference list (23 → 54 verified
+entries, all cited), and the addition of the companion document. **Not changed:** any number,
+result, parameter, figure, limitation or label. No simulation was run.
+
+---
+
+
+**Manuscript:** *Orientation-dependent wall stress around circular and elliptical cavities in
+monoclinic β-Ga₂O₃ under a transient thermal pulse: a verified continuum study with thermal-memory
+and mechanism ablations*
+**Target:** International Journal of Heat and Mass Transfer (Elsevier, `elsarticle`)
 **Branch / date:** `arena/01a0f67f-le` · 2026-10-01
 **Scope of this revision:** publication readiness — editorial completeness, labelling, cross-
 references, nomenclature, submission format. **Not** a re-run of the science: no number, result,

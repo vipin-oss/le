@@ -10,11 +10,25 @@ import numpy as np
 import production_matrix as pm
 import cg_pipeline as cp
 
+def _repo_root(_start):
+    """walk up from _start to the checkout that holds PAPER_PROJECT (path-independent
+    replacement for the hard-coded '/home/user/work/...' literals)."""
+    _p = os.path.abspath(_start)
+    while True:
+        if os.path.isdir(os.path.join(_p, 'PAPER_PROJECT')):
+            return _p
+        _q = os.path.dirname(_p)
+        if _q == _p:
+            raise RuntimeError('PAPER_PROJECT not found above %s' % _start)
+        _p = _q
+
+
 PROD = os.environ.get('PROD_DIR', os.path.join(ROOT, '09_Raw_Data', 'production'))
 OUTJ = os.path.join(ROOT, '10_Processed_Data', 'ANALYSIS_V2.json')
 OUTM = os.path.join(ROOT, '10_Processed_Data', 'ANALYSIS_V2_TABLES.md')
 TAB = os.path.join(ROOT, '12_Tables'); os.makedirs(TAB, exist_ok=True)
-SHIPPED = '/home/user/work/handoff/PROJECT_CRYSTAL_GEOMETRY_01/data/PROD'
+SHIPPED = os.path.join(_repo_root(__file__), 'work', 'handoff',
+                      'PROJECT_CRYSTAL_GEOMETRY_01', 'data', 'PROD')
 A = {}; L = []
 def log(s=''):
     print(s); L.append(s)

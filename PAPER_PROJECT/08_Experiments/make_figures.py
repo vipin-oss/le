@@ -14,9 +14,23 @@ from matplotlib.patches import Ellipse, Circle, FancyArrowPatch
 import production_matrix as pm
 import cg_pipeline as cp
 
+def _repo_root(_start):
+    """walk up from _start to the checkout that holds PAPER_PROJECT (path-independent
+    replacement for the hard-coded '/home/user/work/...' literals)."""
+    _p = os.path.abspath(_start)
+    while True:
+        if os.path.isdir(os.path.join(_p, 'PAPER_PROJECT')):
+            return _p
+        _q = os.path.dirname(_p)
+        if _q == _p:
+            raise RuntimeError('PAPER_PROJECT not found above %s' % _start)
+        _p = _q
+
+
 PROD = os.path.join(ROOT, '09_Raw_Data', 'production'); CONV = os.path.join(ROOT, '09_Raw_Data', 'convergence')
 FIG = os.path.join(ROOT, '11_Figures'); os.makedirs(FIG, exist_ok=True)
-SHIPPED = '/home/user/work/handoff/PROJECT_CRYSTAL_GEOMETRY_01/data/PROD'
+SHIPPED = os.path.join(_repo_root(__file__), 'work', 'handoff',
+                      'PROJECT_CRYSTAL_GEOMETRY_01', 'data', 'PROD')
 AN = json.load(open(os.path.join(ROOT, '10_Processed_Data', 'ANALYSIS_V2.json'))) if os.path.exists(os.path.join(ROOT, '10_Processed_Data', 'ANALYSIS_V2.json')) else {}
 plt.rcParams.update({'font.size': 9, 'axes.grid': True, 'grid.alpha': 0.25, 'figure.dpi': 140, 'savefig.dpi': 200,
                      'axes.spines.top': False, 'axes.spines.right': False, 'legend.frameon': False})

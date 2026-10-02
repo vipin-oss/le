@@ -101,12 +101,14 @@ by the authors (it should name the editor if one is known, state the novelty cla
 | # | Decision | Current state in the files |
 |---|---|---|
 | B1 | `preprint` (1-column, 12 pt) vs `review` (double-spaced) vs `5p` | source uses `preprint,12pt` |
-| B2 | Keep the exploratory two-relaxation-time (MCV3) kernel in the main text, or move it to supplementary material | kept, labelled **exploratory** wherever it appears (introduction, §2.1, §5.4, Table 7) |
-| B3 | Keep the nomenclature as Appendix A, or move it into the main text | Appendix A, as Table 8 |
-| B4 | Reference style | `elsarticle-num` (numbers in order of first citation). Note that this renumbers the citations relative to the fixed `[1]`–`[23]` numbering used in the `.md`/PDF: the mapping key ↔ number is preserved, only the printed numbers change |
+| B2 | Keep the exploratory two-relaxation-time (MCV3) kernel in the main text, or move it to supplementary material | kept, labelled **exploratory** wherever it appears (§1.3, §2.5, §6.4, Table 9) |
+| B3 | Keep the nomenclature as Appendix A, or move it into the main text | Appendix A, as Table 11 |
+| B4 | Reference style | `elsarticle-num` (numbers in order of first citation). Note that this renumbers the citations relative to the fixed `[1]`–`[54]` numbering used in the `.md`/PDF: the mapping key ↔ number is preserved, only the printed numbers change |
 | B5 | Whether the abstract should carry the ablation numbers or only the headline modulation | abstract carries 28.7 % (extrapolated) and 29.9 % (grid) and states that ablations attribute the modulation to expansion and stiffness anisotropy |
-| B6 | Whether to report the 298 K-like expansion sensitivity in the abstract | currently not in the abstract (it is in §5.5 and Table 6) |
+| B6 | Whether to report the 298 K-like expansion sensitivity in the abstract | currently not in the abstract (it is in §6.5 and Table 9) |
 | B7 | Where to state the licence of the deposited data package | in Data availability, next to the DOI |
+| B8 | Whether the calculation companion (`FINAL_REVISED_CALCULATIONS.tex`) is submitted as supplementary material, as an appendix, or hosted with the code | provided as a separate document; not yet attached to any submission route |
+| B9 | Whether the 9-section / 84-equation expansion stays as-is for the target journal, or is compressed for a shorter article-type | kept as-is (32-page preprint; ≈ 15–18 pp in the journal's two-column layout) |
 
 ---
 

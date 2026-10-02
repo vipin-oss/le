@@ -58,6 +58,7 @@ FONTS = {
     'STIX':      'STIXGeneral.ttf',      # only for the few glyphs DejaVu Serif lacks (e.g. ≲)
 }
 RUNNING_TITLE = 'Cavity thermoelasticity in monoclinic beta-Ga2O3 — verified continuum study'
+RT = RUNNING_TITLE          # active running title (overridden by --running-title)
 
 
 def register_fonts():
@@ -246,7 +247,10 @@ def make_styles():
 
 
 # ----------------------------------------------------------------------------- document build
-def build(md_path, pdf_path, tmpdir):
+def build(md_path, pdf_path, tmpdir, running_title=None):
+    global RT
+    if running_title:
+        RT = running_title
     register_fonts()
     S = make_styles()
     text = open(md_path, encoding='utf-8').read()
@@ -445,7 +449,7 @@ def build(md_path, pdf_path, tmpdir):
         if canv.getPageNumber() > 1:          # no running title on the title page
             canv.setFont('DJV-I', 7.6)
             canv.setFillColor(colors.HexColor('#555555'))
-            canv.drawString(doc.leftMargin, A4[1] - 1.45 * cm, RUNNING_TITLE)
+            canv.drawString(doc.leftMargin, A4[1] - 1.45 * cm, RT)
             canv.setStrokeColor(colors.HexColor('#999999'))
             canv.setLineWidth(0.4)
             canv.line(doc.leftMargin, A4[1] - 1.62 * cm, A4[0] - doc.rightMargin,
@@ -464,9 +468,14 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('-i', '--input', default=DEFAULT_IN)
     ap.add_argument('-o', '--output', default=DEFAULT_OUT)
+    ap.add_argument('-r', '--running-title', default=None,
+                    help='page-header title (default: the running title of the manuscript)')
     args = ap.parse_args()
+    global RT
+    if args.running_title:
+        RT = args.running_title
     with tempfile.TemporaryDirectory() as tmp:
-        out = build(args.input, args.output, tmp)
+        out = build(args.input, args.output, tmp, running_title=RT)
     print('wrote', out, os.path.getsize(out), 'bytes')
 
 

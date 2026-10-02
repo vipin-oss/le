@@ -1,6 +1,18 @@
 """make_validation_results.py — VALIDATION_RESULTS.md (Phase 8) and VALIDATION_STATUS.md from the verification test results."""
 import json, os
-ROOT = '/home/user/PAPER_PROJECT'
+def _pp_root(_start):
+    """walk up from _start to the PAPER_PROJECT directory (path-independent replacement
+    for the hard-coded '/home/user/PAPER_PROJECT' that used to be here)."""
+    _p = os.path.abspath(_start)
+    while True:
+        if os.path.basename(_p) == 'PAPER_PROJECT':
+            return _p
+        _q = os.path.dirname(_p)
+        if _q == _p:
+            break
+        _p = _q
+    return os.environ.get('PAPER_PROJECT_ROOT', '/home/user/PAPER_PROJECT')
+ROOT = _pp_root(os.path.dirname(os.path.abspath(__file__)))
 R = {c['case']: c for c in json.load(open(os.path.join(ROOT, '07_Tests', 'TEST_RESULTS.json')))['cases']}
 def g(case, key, default='n/a'): return R.get(case, {}).get(key, default)
 def st(case): return R.get(case, {}).get('status', 'NOT_RUN')

@@ -1,4 +1,96 @@
-# CHANGELOG — publication-readiness repair
+# CHANGELOG — BFS-FEM3 restructure and calculation companion
+
+**Paper:** *Orientation-dependent wall stress around circular and elliptical cavities in monoclinic
+β-Ga₂O₃ under a transient thermal pulse: a verified continuum study with thermal-memory and
+mechanism ablations*
+**Target journal:** International Journal of Heat and Mass Transfer (Elsevier, `elsarticle`)
+**Branch:** `arena/01a0f67f-le` · **Dates:** 2026-10-01 (readiness pass, §1 ff. below) and
+2026-10-02 (this restructure, §0)
+
+> The entries below §0 record the 2026-10-01 publication-readiness pass. Their section numbers
+> (`§2.1`, `§5.4`, `Table 7`, …) are the numbers of **that** version; the current numbering is
+> given in §0. Nothing in either pass changes a number, a result, the physical model, the
+> geometry, the boundary or initial conditions, the material parameters, or a limitation.
+
+---
+
+## 0. Restructure to the requested format, and the calculation companion (2026-10-02)
+
+### 0.1 What the format asked for, and what was delivered
+
+| Requested (BFS-FEM3 reference: 9 sections / 36 subsections / 93 equations / 8 figures / 5 tables / 54 references) | Delivered |
+|---|---|
+| ~9 sections | **9 sections**, 41 subsections |
+| displayed equations throughout | **84** numbered equations (was 3) |
+| 8 figures | **8** figures (unchanged) |
+| tables | **11** tables (was 8) |
+| ~54 references | **54** Crossref-verified references, all cited |
+| ~15 printed pages | 32-page single-column preprint (≈ 15–18 pp two-column) |
+| **a separate calculation file** | **`FINAL_REVISED_CALCULATIONS.tex`** — 11 sections, 37 subsections, 29 equations, 9 tables, ~4.9k words |
+
+### 0.2 Section structure
+
+| § | Title | § | Title |
+|---|---|---|---|
+| 1 | Introduction (1.1–1.4) | 6 | Results (6.1–6.5) |
+| 2 | Governing equations and constitutive framework (2.1–2.9) | 7 | Discussion and limitations (7.1–7.3) |
+| 3 | Analytical results (3.1–3.5) | 8 | Conclusions |
+| 4 | Numerical method (4.1–4.8) | 9 | Code, data and reproducibility (9.1–9.3) |
+| 5 | Verification and numerical uncertainty (5.1–5.4) | A | Nomenclature |
+
+Sections 2–4 were expanded into their constituent steps (plane-strain reduction, crystal
+rotation, conduction kernels, boundary and initial conditions, dimensionless groups, material
+parameters, quantities of interest, grid, operators, boundary treatment, frequency-domain system,
+Bromwich inversion, QoI definitions, numerical uncertainty); §5–§7 were renumbered; §9 is new.
+
+### 0.3 The calculation companion
+
+`FINAL_REVISED_CALCULATIONS.tex` (built by `build_calculations.py` → `calculations_IJHMT.md`) is
+the worked arithmetic behind the manuscript. It computes every number **live** from the frozen
+source (`PAPER_PROJECT/06_Source_Code/src/`) or reads it from
+`PAPER_PROJECT/10_Processed_Data/ANALYSIS_V2.json`: term-by-term construction of β, the rotation
+worked at φ = 30°, the closed-form circular cavity, the three dimensionless groups, the
+grid metrics and contravariant coefficients, the Bromwich contour arithmetic (K, alias error,
+round-off growth), the peak-extraction and modulation formulae, a step-by-step Richardson
+extrapolation, the ablation arithmetic, and the reproduction commands. It runs no simulation and
+adds no result. It carries the same declarations (author placeholder, competing interest, funding,
+data availability, generative-AI statement) and the same limitation statements as the manuscript.
+
+### 0.4 What was *not* changed
+
+No number, result, parameter, figure, limitation or label was altered: not the peak stresses, the
+modulation amplitudes, the memory deviations, the verification results, the >10× expansion
+uncertainty, the hypothetical status of the relaxation time, the α₅ = 0 limitation, the
+APPLICABLE — EVIDENCE_UNAVAILABLE physical-validation label, or the Fourier + Lord–Shulman
+primary / two-relaxation-time exploratory split. No simulation was run for this pass.
+
+### 0.5 Tooling
+
+| Tool | Change |
+|---|---|
+| `build_manuscript.py` | rebuilt: one central section map (`SEC_MAP`) numbers every heading and aborts on an unmapped one; `@@eq:/@@tab:/@@fig:` placeholders are resolved by order of appearance and fail loudly if unresolved |
+| `build_calculations.py` (new) | builds the companion document from the frozen source and the data package |
+| `tools/md_to_tex.py` | multi-digit `Eq. (n)` → `\eqref`; new `--companion` preamble; portable `\Vert`, prime and file-path handling; ASCII-only output |
+| `tools/audit_tex.py` | 70 static checks on the manuscript `.tex`, 54 on the companion (`-c`); counts follow the expanded manuscript instead of being hard-coded |
+| `tools/verify_pdf.py` | companion mode; generalised composite-glyph tolerance |
+| `tools/check_crossrefs.py` (new) | validates every “Section x.y”, “Table n”, “Fig. n”, “Eq. (n)” against the built manuscript |
+| `tools/renumber_crossrefs.py` | retired from a one-off migration to an idempotent guard |
+| `.gitignore` | `13_Manuscript/equations/` (regenerated mathtext images) no longer tracked |
+
+### 0.6 Deliverables as they now stand
+
+| File | What it is | Size |
+|---|---|---|
+| `FINAL_REVISED_MANUSCRIPT.tex` | elsarticle source, 9 sections / 41 subsections / 84 equations / 8 figures / 11 tables | 100,828 B |
+| `FINAL_REVISED_REFERENCES.bib` | 54 BibTeX entries, all Crossref-verified, 0 unparsed | 20,377 B |
+| `FINAL_REVISED_MANUSCRIPT.pdf` | 32-page preprint PDF (byte size varies: PDF metadata carries a timestamp) | ≈ 2.4 MB |
+| `FINAL_REVISED_CALCULATIONS.tex` | companion calculation document | 47,355 B |
+| `FINAL_REVISED_CALCULATIONS.pdf` | 13-page PDF of the companion | ≈ 0.6 MB |
+| `manuscript_IJHMT.md` / `.docx` | single source of truth and its Office rendering | 97,832 B / 2,685,210 B |
+| `MANUSCRIPT_STATS.json` | structure counts and editorial limits | — |
+
+---
+
 
 **Paper:** *Orientation-dependent wall stress around circular and elliptical cavities in monoclinic
 β-Ga₂O₃ under a transient thermal pulse: a verified continuum study with thermal-memory and

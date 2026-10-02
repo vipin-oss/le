@@ -1,7 +1,19 @@
 """make_phase_states.py — PROJECT_STATE_PHASE_07 … 13 (MASTER_PROMPT §65), plus VALIDATION_STATUS / COMPUTE_STATUS / REPRODUCIBILITY_STATUS.
 Numbers are read from the JSON outputs at generation time."""
 import json, os, glob, time
-ROOT = '/home/user/PAPER_PROJECT'; CTL = os.path.join(ROOT, '00_Project_Control')
+def _pp_root(_start):
+    """walk up from _start to the PAPER_PROJECT directory (path-independent replacement
+    for the hard-coded '/home/user/PAPER_PROJECT' that used to be here)."""
+    _p = os.path.abspath(_start)
+    while True:
+        if os.path.basename(_p) == 'PAPER_PROJECT':
+            return _p
+        _q = os.path.dirname(_p)
+        if _q == _p:
+            break
+        _p = _q
+    return os.environ.get('PAPER_PROJECT_ROOT', '/home/user/PAPER_PROJECT')
+ROOT = _pp_root(os.path.dirname(os.path.abspath(__file__))); CTL = os.path.join(ROOT, '00_Project_Control')
 def J(p, default=None):
     p = os.path.join(ROOT, p)
     return json.load(open(p)) if os.path.exists(p) else (default if default is not None else {})

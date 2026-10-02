@@ -25,8 +25,22 @@ from cg_solver import HarmonicSolver
 from cg_bromwich import BromwichPlan
 from cg_model import rho, cp_ESTIMATED, T0, GPa, K_ac, alpha_crys
 
+def _repo_root(_start):
+    """walk up from _start to the checkout that holds PAPER_PROJECT (path-independent
+    replacement for the hard-coded '/home/user/work/...' literals)."""
+    _p = os.path.abspath(_start)
+    while True:
+        if os.path.isdir(os.path.join(_p, 'PAPER_PROJECT')):
+            return _p
+        _q = os.path.dirname(_p)
+        if _q == _p:
+            raise RuntimeError('PAPER_PROJECT not found above %s' % _start)
+        _p = _q
+
+
 GAM = cp.GAMMA_DEFAULT
-HANDOFF_MODEL = '/home/user/work/handoff/PROJECT_CRYSTAL_GEOMETRY_01/src/cg_model.py'
+HANDOFF_MODEL = os.path.join(_repo_root(__file__), 'work', 'handoff',
+                            'PROJECT_CRYSTAL_GEOMETRY_01', 'src', 'cg_model.py')
 RES = dict(label='PAPER_PROJECT verification suite v2', date='2026-10-01', cases=[], status='RUNNING')
 CPU0 = time.process_time()
 WALL0 = time.time()

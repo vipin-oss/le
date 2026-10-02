@@ -1,7 +1,19 @@
 """make_code_freeze.py — record SHA-256 of code, scripts and environment (MASTER_PROMPT §45, §83). Run at the production gate."""
 import hashlib, json, os, platform, sys, time
 import numpy, scipy, matplotlib
-ROOT = '/home/user/PAPER_PROJECT'
+def _pp_root(_start):
+    """walk up from _start to the PAPER_PROJECT directory (path-independent replacement
+    for the hard-coded '/home/user/PAPER_PROJECT' that used to be here)."""
+    _p = os.path.abspath(_start)
+    while True:
+        if os.path.basename(_p) == 'PAPER_PROJECT':
+            return _p
+        _q = os.path.dirname(_p)
+        if _q == _p:
+            break
+        _p = _q
+    return os.environ.get('PAPER_PROJECT_ROOT', '/home/user/PAPER_PROJECT')
+ROOT = _pp_root(os.path.dirname(os.path.abspath(__file__)))
 files = sorted([os.path.join(ROOT, '06_Source_Code', 'src', f) for f in os.listdir(os.path.join(ROOT, '06_Source_Code', 'src')) if f.endswith('.py')] +
                [os.path.join(ROOT, '08_Experiments', f) for f in ('production_matrix.py', 'run_production_v2.py', 'run_convergence.py', 'run_convergence_dirs.py', 'analyze_v2.py', 'make_figures.py', 'reproduce.py', 'make_provenance.py')] +
                [os.path.join(ROOT, '07_Tests', f) for f in ('run_tests.py', 'run_tests_supplement.py', 'make_test_report.py')] +

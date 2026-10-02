@@ -4,7 +4,19 @@ Mathematically identical solutions; differences show the forward-error floor of 
 import sys, os, time
 sys.dont_write_bytecode = True
 os.environ.setdefault('OPENBLAS_NUM_THREADS', '1')
-SRC = '/home/user/PAPER_PROJECT/06_Source_Code/src'; sys.path.insert(0, SRC)
+def _pp_root(_start):
+    """walk up from _start to the PAPER_PROJECT directory (path-independent replacement
+    for the hard-coded '/home/user/PAPER_PROJECT' that used to be here)."""
+    _p = os.path.abspath(_start)
+    while True:
+        if os.path.basename(_p) == 'PAPER_PROJECT':
+            return _p
+        _q = os.path.dirname(_p)
+        if _q == _p:
+            break
+        _p = _q
+    return os.environ.get('PAPER_PROJECT_ROOT', '/home/user/PAPER_PROJECT')
+SRC = os.path.join(_pp_root(os.path.dirname(os.path.abspath(__file__))), '06_Source_Code', 'src'); sys.path.insert(0, SRC)
 import numpy as np
 from scipy import sparse
 from scipy.sparse.linalg import splu

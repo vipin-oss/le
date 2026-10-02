@@ -10,6 +10,7 @@ Exit status 0 means every check passed.
 
 Usage:  python3 tools/audit_tex.py
 """
+import argparse
 import os
 import re
 import sys
@@ -34,6 +35,17 @@ def warn(cond, msg):
 
 
 def main():
+    global TEX, BIB, MD
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('-t', '--tex', default=TEX)
+    ap.add_argument('-b', '--bib', default=BIB)
+    ap.add_argument('-m', '--md', default=MD)
+    ap.add_argument('-c', '--companion', action='store_true',
+                    help='audit a companion document: no abstract, highlights, figures or '
+                         'carried-number list are expected')
+    a = ap.parse_args()
+    TEX, BIB, MD = a.tex, a.bib, a.md
+    COMP = a.companion
     if not os.path.exists(TEX):
         print('MISSING', TEX)
         return 1
@@ -66,7 +78,7 @@ def main():
         check(b == e, 'environment %-12s begin/end %d/%d' % (env, b, e))
 
     # ---------------------------------------------------------------- 3. citations
-    keys = set(re.findall(r'@article\{\s*([^,]+),', bib))
+    keys = set(re.findall(r'@(?:article|book|incollection|inbook|misc|phdthesis|inproceedings)\s*\{\s*([^,]+),', bib))
     cited = set()
     for c in re.findall(r'\\cite\{([^}]*)\}', body):
         cited |= {k.strip() for k in c.split(',') if k.strip()}
@@ -74,9 +86,13 @@ def main():
     check(cited <= keys, 'every \\cite key exists in the bib (missing: %s)'
           % sorted(cited - keys))
     uncited = sorted(keys - cited)
-    check(not uncited, 'every bib entry is cited (uncited: %s)' % uncited)
+    if not COMP:
+        check(not uncited, 'every bib entry is cited (uncited: %s)' % uncited)
     check(not re.search(r'\\cite\{\s*\}', body), 'no empty \\cite')
-    check(not re.search(r'\[\d+(?:,\s*\d+)*\]', body.replace('%', '')),
+    nomath = re.sub(r'\\begin\{equation\*?\}.*?\\end\{equation\*?\}', ' ', body, flags=re.S)
+    nomath = re.sub(r'\$\$?[^$]*\$\$?', ' ', nomath)          # $...$ and $$...$$
+    nomath = nomath.replace('%', '')
+    check(not re.search(r'\[\d+(?:,\s*\d+)*\]', nomath),
           'no leftover numeric citations such as [3] or [1,2]')
 
     # ---------------------------------------------------------------- 4. cross references
@@ -85,7 +101,8 @@ def main():
     check(refs <= labels, 'every \\ref resolves (missing labels: %s)' % sorted(refs - labels))
     unused = sorted(l for l in labels - refs
                     if not l.startswith('sec:') and not l.startswith('eq:'))
-    check(not unused, 'every figure/table is referenced in the text (unused: %s)' % unused)
+    if not COMP:
+        check(not unused, 'every figure/table is referenced in the text (unused: %s)' % unused)
     warn(True, 'equations not referenced in the text: %s'
          % sorted(l for l in labels - refs if l.startswith('eq:')))
     check(not re.search(r'\\(?:ref|eqref)\{\s*\}', body), 'no empty \\ref')
@@ -94,14 +111,18 @@ def main():
     # ---------------------------------------------------------------- 5. graphics
     figs = re.findall(r'\\includegraphics(?:\[[^\]]*\])?\{([^}]*)\}', body)
     missing = [f for f in figs if not os.path.exists(os.path.normpath(os.path.join(MS, f)))]
-    check(len(figs) == 8, '8 figures included (%d)' % len(figs))
+    if not COMP:
+        check(len(figs) == 8, '8 figures included (%d)' % len(figs))
     check(not missing, 'every figure file exists (missing: %s)' % missing)
-    check(len(re.findall(r'\\caption\{', body)) == 16,
-          '16 captions (8 figures + 8 tables): %d' % len(re.findall(r'\\caption\{', body)))
+    n_cap = len(re.findall(r'\\caption\{', body))
+    n_floats = len(re.findall(r'\\label\{fig:', body)) + len(re.findall(r'\\label\{tab:', body))
+    check(n_cap == n_floats, 'one caption per float (%d captions, %d floats)' % (n_cap, n_floats))
     figlabels = sorted(int(x) for x in re.findall(r'\\label\{fig:(\d+)\}', body))
-    check(figlabels == list(range(1, 9)), 'figures numbered 1..8 (%s)' % figlabels)
-    tablabels = sorted(x for x in re.findall(r'\\label\{tab:(\d+)\}', body))
-    check(tablabels == [str(i) for i in range(1, 9)], 'tables numbered 1..8 (%s)' % tablabels)
+    if not COMP:
+        check(figlabels == list(range(1, 9)), 'figures numbered 1..8 (%s)' % figlabels)
+    tablabels = sorted(int(x) for x in re.findall(r'\\label\{tab:(\d+)\}', body))
+    check(tablabels == list(range(1, len(tablabels) + 1)),
+          'tables numbered 1..%d (%s)' % (len(tablabels), tablabels))
 
     # ---------------------------------------------------------------- 6. tables
     for m in re.finditer(r'\\begin\{(tabular|tabularx)\}(\{\\textwidth\})?\{([a-zA-Z]+)\}'
@@ -118,7 +139,8 @@ def main():
 
     # ---------------------------------------------------------------- 7. editorial limits
     ab = re.search(r'\\begin\{abstract\}\n(.*?)\n\\end\{abstract\}', body, flags=re.S)
-    check(bool(ab), 'abstract present')
+    if not COMP:
+        check(bool(ab), 'abstract present')
     if ab:
         txt = re.sub(r'\$[^$]*\$', 'x', ab.group(1))
         txt = re.sub(r'\\[a-zA-Z]+', ' ', txt)
@@ -126,9 +148,10 @@ def main():
         check(n <= 250, 'abstract %d words (limit 250)' % n)
     hlb = re.search(r'\\begin\{highlights\}\n(.*?)\\end\{highlights\}', body, flags=re.S)
     hl = re.findall(r'\\item (.*)', hlb.group(1)) if hlb else []
-    check(3 <= len(hl) <= 5, 'highlights: %d items (3-5)' % len(hl))
-    long = [h for h in hl if len(h) > 85]
-    check(not long, 'highlights <= 85 characters (%d too long)' % len(long))
+    if not COMP:
+        check(3 <= len(hl) <= 5, 'highlights: %d items (3-5)' % len(hl))
+        long = [h for h in hl if len(h) > 85]
+        check(not long, 'highlights <= 85 characters (%d too long)' % len(long))
 
     # ---------------------------------------------------------------- 8. required content
     must = {
@@ -147,23 +170,39 @@ def main():
         'bib call': '\\bibliography{FINAL_REVISED_REFERENCES}',
     }
     for k, v in must.items():
+        if COMP and k in ('verification label', 'repository placeholder'):
+            continue
         check(v in body, 'required content: %s' % k)
-    check(body.count('\\begin{equation}') == 3, '3 numbered equations')
-    check(body.count('\\section{') + body.count('\\section*{') >= 7, 'sections present')
+    n_eq = body.count('\\begin{equation}')
+    md_eq = len(re.findall(r'\$\$.*?\\qquad \(\d+\)\s*\$\$', md, flags=re.S))
+    if COMP:
+        check(n_eq >= 20, 'at least 20 numbered equations (%d)' % n_eq)
+        check(n_eq == md_eq, 'equation count matches the .md (%d vs %d)' % (n_eq, md_eq))
+        check(body.count('\\section{') >= 5, 'sections present')
+    else:
+        check(n_eq >= 80, 'at least 80 numbered equations (%d)' % n_eq)
+        check(n_eq == md_eq, 'equation count matches the .md (%d vs %d)' % (n_eq, md_eq))
+        check(body.count('\\section{') + body.count('\\section*{') >= 7, 'sections present')
 
     # ---------------------------------------------------------------- 9. numbers carried over
     numbers = ['0.854', '28.7', '29.9', '0.966', '1.322', '6.4', '1.4', '1.078',
                '2.0213e-03', '5.291e-03', '6.19e-04', '5.39e-03', '3.959', '25.3',
                '7686', '0.0515', '0.040', '0.198', '0.792', '1.16', '0.08', '2.6']
     miss = [x for x in numbers if x not in body]
-    check(not miss, 'carried numbers present (missing: %s)' % miss)
+    if not COMP:
+        check(not miss, 'carried numbers present (missing: %s)' % miss)
 
     # ---------------------------------------------------------------- 10. agreement with the .md
-    for tok in ('0.854', '28.7', '29.9', '1.078', '2.0213e-03'):
-        check(tok in md, 'number %s also present in the master .md' % tok)
-    check(body.count('\\begin{table}') == md.count('**Table '),
-          'table count matches the .md (%d vs %d)'
-          % (body.count('\\begin{table}'), md.count('**Table ')))
+    if COMP:
+        check(body.count('\\begin{table}') == md.count('**Table C'),
+              'table count matches the .md (%d vs %d)'
+              % (body.count('\\begin{table}'), md.count('**Table C')))
+    else:
+        for tok in ('0.854', '28.7', '29.9', '1.078', '2.0213e-03'):
+            check(tok in md, 'number %s also present in the master .md' % tok)
+        check(body.count('\\begin{table}') == md.count('**Table '),
+              'table count matches the .md (%d vs %d)'
+              % (body.count('\\begin{table}'), md.count('**Table ')))
 
     # ---------------------------------------------------------------- report
     print('AUDIT', os.path.relpath(TEX, ROOT))

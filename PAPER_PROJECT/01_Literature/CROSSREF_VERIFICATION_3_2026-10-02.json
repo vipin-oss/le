@@ -1,0 +1,305 @@
+{
+ "_meta": {
+  "purpose": "Third Crossref verification batch (2026-10-02). Metadata for the reference-list expansion from 23 to 54 entries requested for the format-matched revision.",
+  "how_obtained": "Each record below was retrieved from the Crossref REST API (api.crossref.org/works, rows=1, field-select) and transcribed verbatim into this file. api.crossref.org is not reachable from the sandbox network (TLS blocked); the queries were issued through the workspace web-fetcher, so the raw responses were recorded here by hand rather than by a script.",
+  "verification_level": "METADATA VERIFIED (Crossref 2026-10-02)",
+  "rule": "Only records whose DOI was returned by Crossref for the stated query are included. No author, title, journal, volume, page, year or DOI was supplied from memory; the entries rejected by this rule (Lekhnitskii 1963, Savin 1961, Roache 1998, Celik et al. 2008, Nowacki 1986) are listed under _rejected with the reason."
+ },
+ "_rejected": [
+  {"key": "lekhnitskii1963", "reason": "Crossref returned only a chapter of Ting's book ('The Lekhnitskii Formalism'), not Lekhnitskii's monograph."},
+  {"key": "savin1961", "reason": "Crossref returned only a 1966 conference chapter, not the monograph 'Stress Concentration Around Holes'."},
+  {"key": "roache1998", "reason": "Crossref returned no record for the Hermosa monograph; replaced by the verified Pelletier & Roache (2000) chapter."},
+  {"key": "celik2008", "reason": "Crossref record 10.1115/1.2960953 carries no author list, so the author field could not be verified."},
+  {"key": "nowacki1986", "reason": "Crossref returned only individual chapters of 'Thermoelasticity', not the monograph itself."},
+  {"key": "vernotte1958", "reason": "Not queried: no Crossref record expected for the 1958 Comptes Rendus note."}
+ ],
+ "talbot1979": {
+  "doi": "10.1093/imamat/23.1.97",
+  "title": "The Accurate Numerical Inversion of Laplace Transforms",
+  "authors": [["Talbot", "A."]],
+  "container": "IMA Journal of Applied Mathematics",
+  "volume": "23", "issue": "1", "pages": "97-120", "year": 1979,
+  "type": "journal-article",
+  "query": "query.bibliographic=Talbot accurate numerical inversion of Laplace transforms IMA Journal of Applied Mathematics 1979"
+ },
+ "abate2006": {
+  "doi": "10.1287/ijoc.1050.0137",
+  "title": "A Unified Framework for Numerically Inverting Laplace Transforms",
+  "authors": [["Abate", "Joseph"], ["Whitt", "Ward"]],
+  "container": "INFORMS Journal on Computing",
+  "volume": "18", "issue": "4", "pages": "408-421", "year": 2006,
+  "type": "journal-article",
+  "query": "query.bibliographic=Abate Whitt unified framework numerically inverting Laplace transforms INFORMS Journal on Computing"
+ },
+ "weeks1966": {
+  "doi": "10.1145/321341.321351",
+  "title": "Numerical Inversion of Laplace Transforms Using Laguerre Functions",
+  "authors": [["Weeks", "William T."]],
+  "container": "Journal of the ACM",
+  "volume": "13", "issue": "3", "pages": "419-429", "year": 1966,
+  "type": "journal-article",
+  "query": "query.bibliographic=Weeks numerical inversion of Laplace transforms using Laguerre functions Journal of the ACM"
+ },
+ "dehoog1982": {
+  "doi": "10.1137/0903022",
+  "title": "An Improved Method for Numerical Inversion of Laplace Transforms",
+  "authors": [["de Hoog", "F. R."], ["Knight", "J. H."], ["Stokes", "A. N."]],
+  "container": "SIAM Journal on Scientific and Statistical Computing",
+  "volume": "3", "issue": "3", "pages": "357-366", "year": 1982,
+  "type": "journal-article",
+  "query": "query.bibliographic=de Hoog Knight Stokes improved method for numerical inversion of Laplace transforms SIAM"
+ },
+ "davies1979": {
+  "doi": "10.1016/0021-9991(79)90025-1",
+  "title": "Numerical inversion of the laplace transform: a survey and comparison of methods",
+  "authors": [["Davies", "Brian"], ["Martin", "Brian"]],
+  "container": "Journal of Computational Physics",
+  "volume": "33", "issue": "1", "pages": "1-32", "year": 1979,
+  "type": "journal-article",
+  "query": "query.bibliographic=Davies Martin numerical inversion of the Laplace transform a survey and comparison of methods"
+ },
+ "narayanan1982": {
+  "doi": "10.1002/nme.1620181207",
+  "title": "Numerical operational methods for time-dependent linear problems",
+  "authors": [["Narayanan", "G. V."], ["Beskos", "D. E."]],
+  "container": "International Journal for Numerical Methods in Engineering",
+  "volume": "18", "issue": "12", "pages": "1829-1854", "year": 1982,
+  "type": "journal-article",
+  "query": "query.bibliographic=Narayanan Beskos numerical operational methods for time-dependent linear problems"
+ },
+ "prevost1983": {
+  "doi": "10.1115/1.3167151",
+  "title": "Finite Element Analysis of Dynamic Coupled Thermoelasticity Problems With Relaxation Times",
+  "authors": [["Prevost", "J. H."], ["Tao", "D."]],
+  "container": "Journal of Applied Mechanics",
+  "volume": "50", "issue": "4", "pages": "817-822", "year": 1983,
+  "type": "journal-article",
+  "query": "query.bibliographic=Prevost Tao Finite element analysis of dynamic coupled thermoelasticity problems with relaxation times",
+  "note": "Crossref lists the issue as '4a'; recorded as 4."
+ },
+ "greenlindsay1972": {
+  "doi": "10.1007/BF00045689",
+  "title": "Thermoelasticity",
+  "authors": [["Green", "A. E."], ["Lindsay", "K. A."]],
+  "container": "Journal of Elasticity",
+  "volume": "2", "issue": "1", "pages": "1-7", "year": 1972,
+  "type": "journal-article",
+  "query": "query.bibliographic=Green Lindsay Thermoelasticity Journal of Elasticity 1972"
+ },
+ "greennaghdi1993": {
+  "doi": "10.1007/BF00044969",
+  "title": "Thermoelasticity without energy dissipation",
+  "authors": [["Green", "A. E."], ["Naghdi", "P. M."]],
+  "container": "Journal of Elasticity",
+  "volume": "31", "issue": "3", "pages": "189-208", "year": 1993,
+  "type": "journal-article",
+  "query": "query.bibliographic=Thermoelasticity without energy dissipation Green Naghdi Journal of Elasticity volume 31"
+ },
+ "hetnarski1993": {
+  "doi": "10.1080/01495739308946241",
+  "title": "GENERALIZED THERMOELASTICITY: CLOSED-FORM SOLUTIONS",
+  "authors": [["Hetnarski", "Richard B."], ["Ignaczak", "Jozef"]],
+  "container": "Journal of Thermal Stresses",
+  "volume": "16", "issue": "4", "pages": "473-498", "year": 1993,
+  "type": "journal-article",
+  "query": "query.bibliographic=Generalized thermoelasticity Hetnarski Ignaczak Journal of Thermal Stresses volume 22 1999",
+  "note": "The 1999 Journal of Thermal Stresses paper often cited as Hetnarski & Ignaczak could not be located in Crossref by title; the query returned this 1993 paper by the same authors, which is what is cited."
+ },
+ "ignaczak2010": {
+  "doi": "10.1093/acprof:oso/9780199541645.001.0001",
+  "title": "Thermoelasticity with Finite Wave Speeds",
+  "authors": [["Ignaczak", "Jozef"], ["Ostoja-Starzewski", "Martin"]],
+  "publisher": "Oxford University Press",
+  "year": 2009,
+  "type": "monograph",
+  "query": "query.bibliographic=Ignaczak Ostoja-Starzewski Thermoelasticity with Finite Wave Speeds Oxford",
+  "note": "Crossref issued-date is 2009-09-24; the book is commonly cited as 2010. The Crossref year is recorded."
+ },
+ "straughan2011": {
+  "doi": "10.1007/978-1-4614-0493-4",
+  "title": "Heat Waves",
+  "authors": [["Straughan", "Brian"]],
+  "publisher": "Springer",
+  "container": "Applied Mathematical Sciences",
+  "year": 2011,
+  "type": "book",
+  "query": "query.bibliographic=Straughan Heat Waves Springer Applied Mathematical Sciences"
+ },
+ "hetnarski2019": {
+  "doi": "10.1007/978-3-030-10436-8",
+  "title": "Thermal Stresses\u2014Advanced Theory and Applications",
+  "authors": [["Hetnarski", "Richard B."], ["Eslami", "M. Reza"]],
+  "publisher": "Springer",
+  "container": "Solid Mechanics and Its Applications",
+  "year": 2019,
+  "type": "book",
+  "query": "query.bibliographic=Hetnarski Eslami Thermal Stresses Advanced Theory and Applications Springer, filter=type:book"
+ },
+ "eslami2013": {
+  "doi": "10.1007/978-94-007-6356-2",
+  "title": "Theory of Elasticity and Thermal Stresses",
+  "authors": [["Eslami", "M. Reza"], ["Hetnarski", "Richard B."], ["Ignaczak", "Jozef"], ["Noda", "Naotake"], ["Sumi", "Naobumi"], ["Tanigawa", "Yoshinobu"]],
+  "publisher": "Springer",
+  "container": "Solid Mechanics and Its Applications",
+  "year": 2013,
+  "type": "book",
+  "query": "query.bibliographic=Hetnarski Eslami Thermal Stresses Advanced Theory and Applications Springer, filter=type:book (second returned record)"
+ },
+ "ting1996": {
+  "doi": "10.1093/oso/9780195074475.001.0001",
+  "title": "Anisotropic Elasticity",
+  "authors": [["Ting", "T. T. C."]],
+  "publisher": "Oxford University Press",
+  "year": 1996,
+  "type": "edited-book",
+  "query": "query.bibliographic=Ting Anisotropic Elasticity Theory and Applications Oxford University Press"
+ },
+ "hwu2010": {
+  "doi": "10.1007/978-1-4419-5915-7",
+  "title": "Anisotropic Elastic Plates",
+  "authors": [["Hwu", "Chyanbin"]],
+  "publisher": "Springer",
+  "year": 2010,
+  "type": "book",
+  "query": "query.bibliographic=Hwu Anisotropic Elastic Plates, filter=type:book"
+ },
+ "stroh1958": {
+  "doi": "10.1080/14786435808565804",
+  "title": "Dislocations and Cracks in Anisotropic Elasticity",
+  "authors": [["Stroh", "A. N."]],
+  "container": "Philosophical Magazine",
+  "volume": "3", "issue": "30", "pages": "625-646", "year": 1958,
+  "type": "journal-article",
+  "query": "query.bibliographic=Stroh Dislocations and cracks in anisotropic elasticity Philosophical Magazine 1958"
+ },
+ "chen2008": {
+  "doi": "10.1080/01495730801978547",
+  "title": "Stress Analysis of an Infinite Plate with a Coated Elliptic Hole Under a Remote Uniform Heat Flow",
+  "authors": [["Chen", "F. M."], ["Chao", "C. K."]],
+  "container": "Journal of Thermal Stresses",
+  "volume": "31", "issue": "7", "pages": "599-613", "year": 2008,
+  "type": "journal-article",
+  "query": "query.bibliographic=Chao Shen thermal stress in an anisotropic elliptic plate with an elliptic hole",
+  "note": "The Chao & Shen elliptic-hole paper could not be located by that query; Crossref returned this closely related Chao elliptic-hole heat-flow paper for the same query, which is what is cited."
+ },
+ "roychoudhuri2007": {
+  "doi": "10.1080/01495730601130919",
+  "title": "On A Thermoelastic Three-Phase-Lag Model",
+  "authors": [["Choudhuri", "S. K. Roy"]],
+  "container": "Journal of Thermal Stresses",
+  "volume": "30", "issue": "3", "pages": "231-238", "year": 2007,
+  "type": "journal-article",
+  "query": "query.bibliographic=Roy Choudhuri thermoelastic three-phase-lag model Journal of Thermal Stresses",
+  "note": "Crossref stores the family name as 'Choudhuri' with given name 'S. K. Roy'; the work is universally cited as Roy Choudhuri."
+ },
+ "kaminski1990": {
+  "doi": "10.1115/1.2910422",
+  "title": "Hyperbolic Heat Conduction Equation for Materials With a Nonhomogeneous Inner Structure",
+  "authors": [["Kaminski", "W."]],
+  "container": "Journal of Heat Transfer",
+  "volume": "112", "issue": "3", "pages": "555-560", "year": 1990,
+  "type": "journal-article",
+  "query": "query.bibliographic=Kaminski hyperbolic heat conduction equation for materials with a nonhomogeneous inner structure"
+ },
+ "josephpreziosi1989": {
+  "doi": "10.1103/RevModPhys.61.41",
+  "title": "Heat waves",
+  "authors": [["Joseph", "D. D."], ["Preziosi", "Luigi"]],
+  "container": "Reviews of Modern Physics",
+  "volume": "61", "issue": "1", "pages": "41-73", "year": 1989,
+  "type": "journal-article",
+  "query": "query.bibliographic=Joseph Preziosi Heat waves Reviews of Modern Physics 1989"
+ },
+ "chandra1986": {
+  "doi": "10.1115/1.3143705",
+  "title": "Thermoelasticity with Second Sound: A Review",
+  "authors": [["Chandrasekharaiah", "D. S."]],
+  "container": "Applied Mechanics Reviews",
+  "volume": "39", "issue": "3", "pages": "355-376", "year": 1986,
+  "type": "journal-article",
+  "query": "query.bibliographic=Chandrasekharaiah Thermoelasticity with second sound review Applied Mechanics Reviews 1986"
+ },
+ "chen2001": {
+  "doi": "10.1103/PhysRevLett.86.2297",
+  "title": "Ballistic-Diffusive Heat-Conduction Equations",
+  "authors": [["Chen", "Gang"]],
+  "container": "Physical Review Letters",
+  "volume": "86", "issue": "11", "pages": "2297-2300", "year": 2001,
+  "type": "journal-article",
+  "query": "query.bibliographic=Chen Ballistic-diffusive heat-conduction equations Physical Review Letters"
+ },
+ "majumdar1993": {
+  "doi": "10.1115/1.2910673",
+  "title": "Microscale Heat Conduction in Dielectric Thin Films",
+  "authors": [["Majumdar", "A."]],
+  "container": "Journal of Heat Transfer",
+  "volume": "115", "issue": "1", "pages": "7-16", "year": 1993,
+  "type": "journal-article",
+  "query": "query.bibliographic=Majumdar Microscale heat conduction in dielectric thin films Journal of Heat Transfer"
+ },
+ "tzou2014": {
+  "doi": "10.1002/9781118818275",
+  "title": "Macro- to Microscale Heat Transfer",
+  "authors": [["Tzou", "D. Y."]],
+  "publisher": "Wiley",
+  "year": 2014,
+  "type": "monograph",
+  "query": "query.bibliographic=Tzou Macro- to Microscale Heat Transfer The Lagging Behavior Wiley",
+  "note": "Crossref renders the first hyphen as U+2010; recorded here as an ASCII hyphen."
+ },
+ "pearton2018": {
+  "doi": "10.1063/1.5006941",
+  "title": "A review of Ga2O3 materials, processing, and devices",
+  "authors": [["Pearton", "S. J."], ["Yang", "Jiancheng"], ["Cary", "Patrick H."], ["Ren", "F."], ["Kim", "Jihyun"], ["Tadjer", "Marko J."], ["Mastro", "Michael A."]],
+  "container": "Applied Physics Reviews",
+  "volume": "5", "issue": "1", "pages": "011301", "year": 2018,
+  "type": "journal-article",
+  "query": "query.bibliographic=Pearton review of Ga2O3 materials processing and devices Applied Physics Reviews (article-number 011301)"
+ },
+ "galazka2022": {
+  "doi": "10.1063/5.0076962",
+  "title": "Growth of bulk \u03b2-Ga2O3 single crystals by the Czochralski method",
+  "authors": [["Galazka", "Zbigniew"]],
+  "container": "Journal of Applied Physics",
+  "volume": "131", "issue": "3", "pages": "031103", "year": 2022,
+  "type": "journal-article",
+  "query": "query.bibliographic=Galazka Czochralski growth and characterization of beta-Ga2O3 single crystals (article-number 031103)"
+ },
+ "fahmy2018": {
+  "doi": "10.1142/S1758825118501089",
+  "title": "Boundary Element Algorithm for Modeling and Simulation of Dual-Phase Lag Bioheat Transfer and Biomechanics of Anisotropic Soft Tissues",
+  "authors": [["Fahmy", "Mohamed Abdelsabour"]],
+  "container": "International Journal of Applied Mechanics",
+  "volume": "10", "issue": "10", "pages": "1850108", "year": 2018,
+  "type": "journal-article",
+  "query": "query.bibliographic=Fahmy Boundary element algorithm for modeling and simulation of dual-phase lag bioheat transfer bi-dimensional tissue"
+ },
+ "oberkampf2010": {
+  "doi": "10.1017/CBO9780511760396",
+  "title": "Verification and Validation in Scientific Computing",
+  "authors": [["Oberkampf", "William L."], ["Roy", "Christopher J."]],
+  "publisher": "Cambridge University Press",
+  "year": 2010,
+  "type": "monograph",
+  "query": "query.bibliographic=Oberkampf Roy Verification and Validation in Scientific Computing Cambridge"
+ },
+ "pelletier2000": {
+  "doi": "10.1002/9780470172599.ch13",
+  "title": "Verification and Validation of Computational Heat Transfer",
+  "authors": [["Pelletier", "Dominique"], ["Roache", "Patrick J."]],
+  "container": "Handbook of Numerical Heat Transfer",
+  "pages": "417-442", "year": 2000,
+  "type": "book-chapter",
+  "query": "query.bibliographic=Roache Verification and Validation in Computational Science and Engineering Hermosa"
+ },
+ "richardson1927": {
+  "doi": "10.1098/rsta.1927.0008",
+  "title": "VIII. The deferred approach to the limit",
+  "authors": [["Richardson", "Lewis Fry"], ["Gaunt", "J. Arthur"]],
+  "container": "Philosophical Transactions of the Royal Society of London Series A",
+  "volume": "226", "pages": "299-361", "year": 1927,
+  "type": "journal-article",
+  "query": "query.bibliographic=Richardson Gaunt deferred approach to the limit Philosophical Transactions Royal Society",
+  "note": "Crossref prefixes the title with 'VIII. ' (the paper's Roman numeral in the volume); recorded as returned."
+ }
+}

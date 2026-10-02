@@ -2,7 +2,19 @@
 Packages are RECONSTRUCTED at the end of the session from the final versions of the files that belong to phases <= N (the per-phase states were not
 snapshotted when the phases ended); each zip contains a MANIFEST.json with SHA-256 per file.  Raw .npz data only in PACKAGE_PHASE_13 / FINAL."""
 import os, sys, zipfile, hashlib, json, time
-ROOT = '/home/user/PAPER_PROJECT'; PK = os.path.join(ROOT, 'packages'); os.makedirs(PK, exist_ok=True)
+def _pp_root(_start):
+    """walk up from _start to the PAPER_PROJECT directory (path-independent replacement
+    for the hard-coded '/home/user/PAPER_PROJECT' that used to be here)."""
+    _p = os.path.abspath(_start)
+    while True:
+        if os.path.basename(_p) == 'PAPER_PROJECT':
+            return _p
+        _q = os.path.dirname(_p)
+        if _q == _p:
+            break
+        _p = _q
+    return os.environ.get('PAPER_PROJECT_ROOT', '/home/user/PAPER_PROJECT')
+ROOT = _pp_root(os.path.dirname(os.path.abspath(__file__))); PK = os.path.join(ROOT, 'packages'); os.makedirs(PK, exist_ok=True)
 def files_under(rel, exts=None, skip=('__pycache__', '_claims', 'equations')):
     out = []
     for r, ds, fs in os.walk(os.path.join(ROOT, rel)):

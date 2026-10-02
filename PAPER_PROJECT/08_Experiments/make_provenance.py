@@ -1,7 +1,19 @@
 """make_provenance.py — run-level provenance table (MASTER_PROMPT §45): RUN_ID, code version, input checksum, reference-data version, environment, output location."""
 import os, sys, json, glob, hashlib, csv, platform
 sys.dont_write_bytecode = True
-ROOT = '/home/user/PAPER_PROJECT'
+def _pp_root(_start):
+    """walk up from _start to the PAPER_PROJECT directory (path-independent replacement
+    for the hard-coded '/home/user/PAPER_PROJECT' that used to be here)."""
+    _p = os.path.abspath(_start)
+    while True:
+        if os.path.basename(_p) == 'PAPER_PROJECT':
+            return _p
+        _q = os.path.dirname(_p)
+        if _q == _p:
+            break
+        _p = _q
+    return os.environ.get('PAPER_PROJECT_ROOT', '/home/user/PAPER_PROJECT')
+ROOT = _pp_root(os.path.dirname(os.path.abspath(__file__)))
 def sha(path): return hashlib.sha256(open(path, 'rb').read()).hexdigest()
 freeze = os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_gate.json'); freeze_f = os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_blockF.json')
 code_v = sha(freeze)[:16]; code_vf = sha(freeze_f)[:16] if os.path.exists(freeze_f) else ''
