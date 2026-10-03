@@ -3,6 +3,7 @@
 ## Repository history (this is real git history, not a reconstruction)
 
 ```
+2026-10-03 3489ea3 Phase 11: correct the interpreter note (3.13.14 is a real release, 2026-06-10); provenance CSV authoritative
 2026-10-03 a8e7554 Phase 11: builder sidecar re-emit
 2026-10-03 e8719b6 Phase 11: packing restores all generated index files, re-emits the checksum sidecar last
 2026-10-03 e01caf8 Phase 11: packer-generated docs exempt from worktree gate; sidecar preserved after packing

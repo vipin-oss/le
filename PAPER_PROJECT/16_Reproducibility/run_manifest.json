@@ -55,15 +55,14 @@
   },
   "connection_audit": {
    "command": "python tools/connection_audit.py",
-   "exit_code": 1,
+   "exit_code": 0,
    "output_tail": [
-    "  FAIL  1 file(s) differ from HEAD: ['PAPER_PROJECT/00_Project_Control/make_reproducibility_archive.py']",
-    "RESULT: 1 check(s) FAILED",
-    "  info  branch is on GitHub at a8e7554ddba6, 45 commit(s) ahead of main \u2014 open a PR when ready",
-    "  ok    upstream configured: origin/arena/01a10176-le",
+    "NOTES (1):",
+    "RESULT: all connection checks passed",
     "  info  commit identity: vipin-oss <271452828+vipin-oss@users.noreply.github.com>",
     "  ok    GitHub reachable over the network; refs/heads/main = 18368e991967 as fetched",
-    "========================================================================"
+    "========================================================================",
+    "  - local branch differs from origin/arena/01a10176-le (3489ea37ea76 vs a8e7554ddba6) \u2014 push the local commit"
    ]
   },
   "check_tex_commands_manuscript": {
@@ -98,10 +97,10 @@
     "  ok    test-suite sentence in the manuscript matches TEST_RESULTS.json (28, 27, 0, 1)",
     "  ok    TEST_RESULTS.json status COMPLETE (28 cases)",
     "D) git state",
-    "SUMMARY: 0 check(s) failed, 3 note(s)",
+    "  ok    working tree clean",
+    "SUMMARY: 0 check(s) failed, 2 note(s)",
     "  note  7 of the 9 headline constants are also quoted in the companion; the rest belong to the results tables and appear in the manuscript alone by design",
     "  note  6 author-input placeholders remain (identity, funding, repository, CRediT, competing interest)",
-    "  note  2 path(s) uncommitted at audit time (they are committed at the end of the phase)",
     "wrote final_consistency.json"
    ]
   },

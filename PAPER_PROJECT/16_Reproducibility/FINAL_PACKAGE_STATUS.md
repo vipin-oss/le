@@ -1,6 +1,6 @@
 # FINAL_PACKAGE_STATUS
 
-Overall status: **REPRODUCIBLE, WORK IN PROGRESS - see the failing gates below**
+Overall status: **READY WITH DOCUMENTED GAPS**
 
 | section | status | detail |
 |---|---|---|
@@ -22,7 +22,7 @@ Overall status: **REPRODUCIBLE, WORK IN PROGRESS - see the failing gates below**
 | gate | exit code |
 |---|---|
 | audit_tex | 0 |
-| connection_audit | 1 |
+| connection_audit | 0 |
 | check_tex_commands_manuscript | 0 |
 | check_tex_commands_calculations | 0 |
 | check_crossrefs_manuscript | 0 |
