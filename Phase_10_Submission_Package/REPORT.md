@@ -45,9 +45,15 @@ renditions. Now:
 ## 3. The deposit object refreshed
 
 `00_Project_Control/make_packages.py final` re-run so the package matches the tree as it now is:
-`RESEARCH_PROJECT_FINAL.zip`, 604 files, ~46.6 MB uncompressed, `MANIFEST.json` with a SHA-256
-per file, and it verified to contain `13_Manuscript/figures/` (8 vector PDFs), the 03j freeze and
-the cover letter. This remains the object to upload for the DOI.
+`RESEARCH_PROJECT_FINAL.zip`, 603 files / 43,645,185 B (~46.6 MB unpacked), with `MANIFEST.json`
+carrying a SHA-256 per file, verified to contain `13_Manuscript/figures/` (8 vector PDFs), the 03j
+freeze and the cover letter. This remains the object to upload for the DOI, and it is now
+*reproducible* rather than a snapshot: entries and the manifest are written through `ZipInfo` with a
+fixed stamp, fixed permissions and explicit compression, and no build clock lives inside the archive,
+so its bytes are a pure function of the tracked tree - rebuilding across an mtime churn of the whole
+manuscript and analysis tree returns `sha256 de9cfb1a4369c444...` unchanged, and the archive's own
+manifest re-hashes 603/603 with no CRC error. `DEPOSIT_PACKAGE_SHA256.txt` records that hash, the
+command to reproduce it, and the superseded values with the reason each differs.
 
 ## Gates after the phase
 
@@ -61,7 +67,7 @@ PASSED, `tools/verify_pdf.py` ALL CHECKS PASSED for the manuscript and (`-c`) th
 ## 4. Downloadable bundle (this phase's deliverable for the authors)
 
 `verification/make_upload_bundle.py` builds `Phase_10_Submission_Package/IJHMT_submission_bundle.zip`
-(2.62 MB, 29 entries): the two `.tex` sources, the `.bib`, the eight vector figures under
+(2.62 MB; 29 entries, every one of them hashed in `MANIFEST.json` except the manifest itself): the two `.tex` sources, the `.bib`, the eight vector figures under
 `MANUSCRIPT/figures/`, the Markdown sources of truth, the rendered preview PDFs,
 `highlights.txt`, the supplementary workbook, the cover letter in .md/.docx/.pdf, the submission
 checklist and author-input list, the deposit manifest

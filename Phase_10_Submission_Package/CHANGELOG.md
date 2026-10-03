@@ -14,9 +14,9 @@
   bolded.
 - `compile_check.sh`: author-side TeX Live compile + log triage into `COMPILE_CHECK.txt`, with a
   no-engine path that prints the commands and the headless static gates.
-- Deposit package rebuilt: `RESEARCH_PROJECT_FINAL.zip` 604 files / ~46.6 MB with MANIFEST.json,
+- Deposit package rebuilt: `RESEARCH_PROJECT_FINAL.zip` 603 files / 43,645,185 B (~46.6 MB unpacked) with MANIFEST.json,
   now containing the figure set, the 03j freeze and the cover letter.
 - No builder or frozen source touched: the code freeze remains `submission_2026_10_03j` and the
   Markdown, .docx and preview PDFs were not rebuilt; only the two `.tex` files changed.
 
-- `verification/make_upload_bundle.py` + `IJHMT_submission_bundle.zip` (2.62 MB, 29 entries, MANIFEST.json with per-file SHA-256, deterministic rebuild, CRC-clean and hash-verified after building) - the upload set plus provenance in one downloadable file; the ~43.6 MB deposit package stays gitignored and is rebuilt with `make_packages.py final`.
+- `verification/make_upload_bundle.py` + `IJHMT_submission_bundle.zip` (2.62 MB, 29 entries, MANIFEST.json with a per-file SHA-256 for all 28 content files, deterministic rebuild, CRC-clean and hash-verified after building) - the upload set plus provenance in one downloadable file; the ~43.6 MB deposit package stays gitignored and is rebuilt with `make_packages.py final`.

@@ -161,9 +161,15 @@ def main():
             zi.external_attr = 0o644 << 16
             z.writestr(zi, data)
             manifest.append({'path': arc, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()})
+        # the provenance README is part of the upload set, so it belongs in the
+        # manifest too: every entry in the archive except MANIFEST.json itself is hashed
+        rd = README.encode()
         zi = zipfile.ZipInfo('PROVENANCE/README.txt', date_time=(NOW.year, NOW.month, NOW.day, 0, 0, 0))
         zi.compress_type = zipfile.ZIP_DEFLATED
-        z.writestr(zi, README)
+        zi.external_attr = 0o644 << 16
+        z.writestr(zi, rd)
+        manifest.append({'path': 'PROVENANCE/README.txt', 'bytes': len(rd),
+                         'sha256': hashlib.sha256(rd).hexdigest()})
         zi = zipfile.ZipInfo('MANIFEST.json', date_time=(NOW.year, NOW.month, NOW.day, 0, 0, 0))
         zi.compress_type = zipfile.ZIP_DEFLATED
         z.writestr(zi, json.dumps({'generated': NOW.isoformat(), 'files': manifest}, indent=1) + '\n')

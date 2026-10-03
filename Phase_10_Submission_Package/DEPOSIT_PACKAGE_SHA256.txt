@@ -32,7 +32,7 @@ Contents (603 files)
 
 What to deposit where
   Editorial Manager (EM-ID)   Phase_10_Submission_Package/IJHMT_submission_bundle.zip  (committed file)
-                              sha256 0fa61fd9c6fec4c36bba2d1a5a9e0899cf669e935d98d01c78f99c9d4314363a
+                              sha256 7c50cadd6483437a91eea967207b7ca5dcdb0cf508b976c0b08cfb7c1ff43d38
                               manuscript + calculations .tex, FINAL_REVISED_REFERENCES.bib, figures/,
                               highlights.txt, SUPPLEMENTARY_TABLES.xlsx, PDF previews, cover letter,
                               checklist - nothing an editor has no business seeing
