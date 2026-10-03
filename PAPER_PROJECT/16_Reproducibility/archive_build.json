@@ -1,14 +1,14 @@
 {
  "built": "2026-10-04",
  "archive": "PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip",
- "git_commit": "6ad7affd02e5fe91dc4a23378af0dff705a67af9",
+ "git_commit": "628509cefcadad7a433dbdd2b18ba99cdb7c5779",
  "git_branch": "arena/01a10176-le",
- "files": 1276,
- "bytes_uncompressed": 66327979,
+ "files": 1278,
+ "bytes_uncompressed": 66507717,
  "sections": {
   "01_PROGRAM": {
    "files": 389,
-   "bytes": 10209238
+   "bytes": 10234982
   },
   "02_OVERLEAF": {
    "files": 14,
@@ -19,8 +19,8 @@
    "bytes": 35340175
   },
   "04_REPRODUCTION": {
-   "files": 10,
-   "bytes": 70127
+   "files": 11,
+   "bytes": 74198
   },
   "05_DERIVATIONS": {
    "files": 9,
@@ -32,15 +32,15 @@
   },
   "07_DOCUMENTATION": {
    "files": 145,
-   "bytes": 6371694
+   "bytes": 6432972
   },
   "08_FINAL_OUTPUTS": {
    "files": 38,
-   "bytes": 9921896
+   "bytes": 9922113
   },
   "09_ARCHIVE_METADATA": {
-   "files": 25,
-   "bytes": 436321
+   "files": 26,
+   "bytes": 524749
   }
  },
  "excluded_patterns": [
@@ -60,5 +60,5 @@
   "le.zip"
  ],
  "code_freeze": "submission_2026_10_03j",
- "python_for_gates": "/usr/bin/python3"
+ "python_for_gates": "/home/user/.venv-repro/bin/python"
 }

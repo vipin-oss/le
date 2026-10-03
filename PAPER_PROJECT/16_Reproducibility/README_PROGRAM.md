@@ -8,7 +8,7 @@ are archive-relative, so every command shown can be run from the extracted archi
 ## Language and version
 
 - Language: Python 3 only (no compilation step, no C/Fortran extensions).
-- Interpreter used to verify this archive: `Python 3.11.2` (/usr/bin/python3).
+- Interpreter used to verify this archive: `Python 3.11.2` (/home/user/.venv-repro/bin/python).
 - The project status note `07_DOCUMENTATION/program_control/COMPUTE_STATUS.md` and
   `REPRODUCIBILITY_STATUS.md` record the run environment as "Python 3.13.14, numpy 2.3.5,
   scipy 1.17.1"; `10_Processed_Data/PRODUCTION_PROVENANCE.csv` records the environment of every
@@ -79,7 +79,10 @@ python3 01_PROGRAM/experiments/make_figures.py           # data -> the eight fig
 python3 01_PROGRAM/experiments/make_provenance.py        # data -> PRODUCTION_PROVENANCE.csv
 python3 01_PROGRAM/tests/run_tests.py                     # verification suite (~20 min)
 python3 01_PROGRAM/experiments/reproduce.py                # reproduction test vs stored outputs
-python3 01_PROGRAM/builders/build_manuscript.py -c         # rebuild manuscript, self-check only
+python3 tools/connection_audit.py                    # read-only: re-hashes the 27 frozen files
+python3 tools/verify_pdf.py                            # manuscript preview PDF vs .md, read-only
+python3 PAPER_PROJECT/13_Manuscript/build_manuscript.py  # full rebuild of .md/.docx/PDF, no options;
+#   it aborts before writing if the code-freeze manifest is not current
 ```
 Full recomputation (hours of compute, 150+ runs) starts at `RUN_ORDER.md` step 3 and is optional:
 every result in the manuscript is reproducible from the stored raw data with the four commands
@@ -156,6 +159,14 @@ Production grid/case definitions actually used (`production_matrix.py`): `GRIDS 
 
 | gate | exit code | tail of output |
 |---|---|---|
+| audit_tex | 0 | ok    table count matches the .md (11 vs 11); RESULT: ALL CHECKS PASSED |
+| connection_audit | 1 | ; RESULT: 1 check(s) FAILED |
+| check_tex_commands_manuscript | 0 | ; RESULT: ALL COMMANDS DEFINED |
+| check_tex_commands_calculations | 0 | ; RESULT: ALL COMMANDS DEFINED |
+| check_crossrefs_manuscript | 0 | equations  : 0 | tables: [] | figures: []; all cross-references resolve |
+| final_consistency | 0 | note  14 path(s) uncommitted at audit time (they are committed at the ; wrote final_consistency.json |
+| verify_pdf_manuscript | 0 | ; RESULT: ALL CHECKS PASSED |
+| verify_pdf_companion | 0 | ; RESULT: ALL CHECKS PASSED |
 
 Transcript with the full tails: `09_ARCHIVE_METADATA/VERIFICATION_GATES.txt`.
 

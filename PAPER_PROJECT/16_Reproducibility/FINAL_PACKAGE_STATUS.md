@@ -12,7 +12,7 @@ Overall status: **REPRODUCIBLE, WORK IN PROGRESS - see the failing gates below**
 | Manuscript source | COMPLETE | `02_OVERLEAF/`: .tex (single file), companion .tex, .bib with 55 entries, 8 vector figures, highlights; every cited key resolves |
 | Manuscript compilation | NOT AVAILABLE IN THIS ENVIRONMENT | no TeX engine in the packaging sandbox; static verification passed (figures, citations, commands, cross-references); the four compile commands and the log triage script ship with it |
 | Validation | PARTIAL BY DESIGN | verification suite shipped with its one reported failure; physical validation status is EVIDENCE_UNAVAILABLE and the paper says so - see `06_VALIDATION/VALIDATION_INDEX.md` |
-| Reproduction test | NOT RE-RUN DURING PACKAGING | historical report shipped (11 PASS / 0 FAIL at 2026-10-01, same tolerances) in `04_REPRODUCTION/REPRODUCTION_TEST_REPORT.md` |
+| Reproduction test | PASS | 5 steps, 18 files compared |
 | Documentation / audit trail | COMPLETE | 138 files: program status documents, ten phase reports, corrections log, audits, repository-level notes |
 | Versioning | COMPLETE for the repository era | git history exported to `07_DOCUMENTATION/` + twelve code-freeze manifests; pre-2026-10-01 version control: HISTORICAL CHANGELOG NOT AVAILABLE (documents exist instead, and are shipped) |
 | Integrity | COMPLETE | 1228 files hashed (SHA256SUMS.txt + file_manifest_sha256.csv); the archive is byte-deterministic from the tree |
@@ -21,7 +21,14 @@ Overall status: **REPRODUCIBLE, WORK IN PROGRESS - see the failing gates below**
 
 | gate | exit code |
 |---|---|
-| not run | --no-gates was passed |
+| audit_tex | 0 |
+| connection_audit | 1 |
+| check_tex_commands_manuscript | 0 |
+| check_tex_commands_calculations | 0 |
+| check_crossrefs_manuscript | 0 |
+| final_consistency | 0 |
+| verify_pdf_manuscript | 0 |
+| verify_pdf_companion | 0 |
 
 ## Missing items, and the recommended action for each
 

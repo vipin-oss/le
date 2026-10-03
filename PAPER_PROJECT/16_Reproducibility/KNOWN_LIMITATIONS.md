@@ -44,4 +44,4 @@ so their presence is deliberate and tracked, not an oversight.
 - **`reportlab`/`python-docx` versions used for the .docx/.pdf previews are not pinned anywhere in
   the repository**, so a different version can render slightly different page breaks in the preview
   PDFs. The `.md` and `.tex` sources are the authoritative text; the PDFs are previews.
-- Reproduction status recorded by this build: see `09_ARCHIVE_METADATA/FINAL_PACKAGE_STATUS.md` for what was and was not run
+- Reproduction status recorded by this build: PASS (5 steps reported)

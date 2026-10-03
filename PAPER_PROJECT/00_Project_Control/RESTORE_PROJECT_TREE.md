@@ -29,7 +29,9 @@ success. If the manifest and the archive disagree, the hash check fails loudly i
 - **You do not get** a git checkout (no `.git`), nor the files the project never tracked: the 600-dpi PNG
   and TIFF renditions and the generated archives under `PAPER_PROJECT/packages/`. Each is one command away
   (`RUN_ORDER.md` steps 5 and 8); a restored tree missing them is expected, not broken.
-- **Then verify, don't assume.** `python3 PAPER_PROJECT/13_Manuscript/build_manuscript.py -c` re-hashes the
-  27 frozen files against `CODE_FREEZE_submission_2026_10_03j.json` and aborts on any difference. Run it
-  after a restore and after any edit — it is the mechanism that turns "the code looks the same" into a
-  checked statement.
+- **Then verify, don't assume.** `python3 tools/connection_audit.py` (read-only) re-hashes the 27 frozen
+  files against `CODE_FREEZE_submission_2026_10_03j.json` and fails on any difference. Run it after a
+  restore and after any edit — it is the mechanism that turns "the code looks the same" into a checked
+  statement. The manuscript builders apply the same rule from the other side: they abort *before writing*
+  when the deposited manifest is not current, which is why a restored tree cannot quietly rebuild a
+  manuscript from modified code. Neither script takes a `-c` flag; the builders take no options at all.

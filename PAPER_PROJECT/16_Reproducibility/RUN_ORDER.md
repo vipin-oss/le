@@ -75,8 +75,26 @@ python3 ../01_PROGRAM_builders_placeholder 2>/dev/null || python3 build_manuscri
 
 python3 build_calculations.py
 python3 build_supplement.py
-python3 build_manuscript.py -c   # -c = self-check only: verifies the code freeze, rebuilds nothing
 ```
+
+These three scripts take no options: each regenerates its document from the data and aborts before
+writing if the deposited code-freeze manifest is no longer current (the guard was tested by
+corrupting one entry). To check the freeze without touching anything, run the read-only
+`python3 tools/connection_audit.py` from the archive root instead.
+The preview PDFs are a separate, documented step - the builders write `.md`/`.docx`, and
+`tools/md_to_pdf.py` renders the PDF with the running title baked into the header:
+
+```bash
+python3 tools/md_to_pdf.py -i PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.md \
+  -o PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf
+python3 tools/md_to_pdf.py -i PAPER_PROJECT/13_Manuscript/calculations_IJHMT.md \
+  -o PAPER_PROJECT/13_Manuscript/calculations_IJHMT.pdf
+```
+
+`reportlab` is not in the pinned requirements file (its version is NOT DOCUMENTED; the
+sandbox that verified this archive had 5.0.1), so a different version can shift page breaks
+- that is why `verify_pdf.py` compares text content, not bytes, and why the `.md` sources are
+authoritative while the PDFs are previews.
 
 Writers of the manuscript are `13_Manuscript/ms_*.py` (section modules) + `docbuilder.py`
 (`.md` -> `.docx`/`.pdf`) + `tools/md_to_tex.py` (`.md` -> `.tex`). They read only `03_DATA/` and
@@ -89,7 +107,9 @@ python3 01_PROGRAM/experiments/reproduce.py      # -> 07_Tests/REPRODUCTION_TEST
 
 python3 tools/audit_tex.py
 python3 tools/connection_audit.py
-python3 tools/verify_pdf.py -c
+python3 tools/verify_pdf.py   # manuscript: no -c
+python3 tools/verify_pdf.py -p PAPER_PROJECT/13_Manuscript/calculations_IJHMT.pdf \
+  -m PAPER_PROJECT/13_Manuscript/calculations_IJHMT.md -c        # no -r here, on purpose: the companion footer is the manuscript running title
 
 python3 Phase_08_Final_Audit/verification/final_consistency.py
 ```

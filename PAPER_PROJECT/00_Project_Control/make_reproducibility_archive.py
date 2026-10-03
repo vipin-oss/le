@@ -435,9 +435,16 @@ def main():
              [pyexe, 'tools/check_crossrefs.py', '-i',
               'PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.tex'], 120),
             ('final_consistency', [pyexe, 'Phase_08_Final_Audit/verification/final_consistency.py'], 600),
-            ('verify_pdf', [pyexe, 'tools/verify_pdf.py', '-c'], 300),
-            ('build_manuscript_selfcheck',
-             [pyexe, 'PAPER_PROJECT/13_Manuscript/build_manuscript.py', '-c'], 600),
+            # verify_pdf takes -c to mean "this is the companion document"; the manuscript run must NOT
+            # pass it, or the figure count is checked against zero. Both runs are read-only.
+            ('verify_pdf_manuscript', [pyexe, 'tools/verify_pdf.py'], 300),
+            # the companion is checked WITHOUT -r on purpose: its footer carries the manuscript's running
+            # title (it was rendered with md_to_pdf's default header), so the default exclusion is the right
+            # one - passing the companion's own title misaligns check [1] and reports 4 false "missing"
+            # units, which is the trap FINAL_QA_REPORT.md now documents
+            ('verify_pdf_companion',
+             [pyexe, 'tools/verify_pdf.py', '-p', 'PAPER_PROJECT/13_Manuscript/calculations_IJHMT.pdf',
+              '-m', 'PAPER_PROJECT/13_Manuscript/calculations_IJHMT.md', '-c'], 300),
         ]
         for name, cmd, to in gate_cmds:
             rc, out = sh(cmd, timeout=to)
@@ -761,7 +768,10 @@ def readme_program(params, gates, prov_fields, prov_rows, pyexe, frozen, freeze_
     A('python3 01_PROGRAM/experiments/make_provenance.py        # data -> PRODUCTION_PROVENANCE.csv')
     A('python3 01_PROGRAM/tests/run_tests.py                     # verification suite (~20 min)')
     A('python3 01_PROGRAM/experiments/reproduce.py                # reproduction test vs stored outputs')
-    A('python3 01_PROGRAM/builders/build_manuscript.py -c         # rebuild manuscript, self-check only')
+    A('python3 tools/connection_audit.py                    # read-only: re-hashes the 27 frozen files')
+    A('python3 tools/verify_pdf.py                            # manuscript preview PDF vs .md, read-only')
+    A('python3 PAPER_PROJECT/13_Manuscript/build_manuscript.py  # full rebuild of .md/.docx/PDF, no options;')
+    A('#   it aborts before writing if the code-freeze manifest is not current')
     A('```')
     A('Full recomputation (hours of compute, 150+ runs) starts at `RUN_ORDER.md` step 3 and is optional:')
     A('every result in the manuscript is reproducible from the stored raw data with the four commands')
@@ -876,8 +886,21 @@ def run_order(figs_src):
     A('')
     A('```bash\ncd PAPER_PROJECT/13_Manuscript')
     A('\npython3 ../01_PROGRAM_builders_placeholder 2>/dev/null || python3 build_manuscript.py')
-    A('\npython3 build_calculations.py\npython3 build_supplement.py\npython3 build_manuscript.py -c   '
-      '# -c = self-check only: verifies the code freeze, rebuilds nothing\n```\n')
+    A('\npython3 build_calculations.py\npython3 build_supplement.py\n```\n')
+    A('These three scripts take no options: each regenerates its document from the data and aborts before')
+    A('writing if the deposited code-freeze manifest is no longer current (the guard was tested by')
+    A('corrupting one entry). To check the freeze without touching anything, run the read-only')
+    A('`python3 tools/connection_audit.py` from the archive root instead.')
+    A('The preview PDFs are a separate, documented step - the builders write `.md`/`.docx`, and')
+    A('`tools/md_to_pdf.py` renders the PDF with the running title baked into the header:\n')
+    A('```bash\npython3 tools/md_to_pdf.py -i PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.md \\')
+    A('  -o PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf\n'
+      'python3 tools/md_to_pdf.py -i PAPER_PROJECT/13_Manuscript/calculations_IJHMT.md \\')
+    A('  -o PAPER_PROJECT/13_Manuscript/calculations_IJHMT.pdf\n```\n')
+    A('`reportlab` is not in the pinned requirements file (its version is NOT DOCUMENTED; the')
+    A('sandbox that verified this archive had 5.0.1), so a different version can shift page breaks')
+    A('- that is why `verify_pdf.py` compares text content, not bytes, and why the `.md` sources are')
+    A('authoritative while the PDFs are previews.\n')
     A('Writers of the manuscript are `13_Manuscript/ms_*.py` (section modules) + `docbuilder.py`')
     A('(`.md` -> `.docx`/`.pdf`) + `tools/md_to_tex.py` (`.md` -> `.tex`). They read only `03_DATA/` and')
     A('`01_PROGRAM/`; they never hand-type a number, which is why a data change propagates.')
@@ -885,7 +908,11 @@ def run_order(figs_src):
     A('## 7. Reproduction test and the QA gates')
     A('')
     A('```bash\npython3 01_PROGRAM/experiments/reproduce.py      # -> 07_Tests/REPRODUCTION_TEST_REPORT.md')
-    A('\npython3 tools/audit_tex.py\npython3 tools/connection_audit.py\npython3 tools/verify_pdf.py -c')
+    A('\npython3 tools/audit_tex.py\npython3 tools/connection_audit.py\npython3 tools/verify_pdf.py'
+      '   # manuscript: no -c')
+    A('python3 tools/verify_pdf.py -p PAPER_PROJECT/13_Manuscript/calculations_IJHMT.pdf \\')
+    A('  -m PAPER_PROJECT/13_Manuscript/calculations_IJHMT.md -c        # no -r here, on purpose: the '
+      'companion footer is the manuscript running title')
     A('\npython3 Phase_08_Final_Audit/verification/final_consistency.py\n```\n')
     A('## 8. Packages')
     A('')

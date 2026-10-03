@@ -3,6 +3,7 @@
 ## Repository history (this is real git history, not a reconstruction)
 
 ```
+2026-10-03 628509c Phase 11 (new): the complete reproducibility archive - builder, manifests, reproduction driver, restorer
 2026-10-03 6ad7aff Phase 10: sidecar re-recorded against the current tree, with the reproduction recipe
 2026-10-03 a6b2a4f Phase 10: add the author fill-in form to the repo and to the upload bundle
 2026-10-03 a64d525 Phase 10: de-stale the author-input list against what Phases 9-10 actually delivered

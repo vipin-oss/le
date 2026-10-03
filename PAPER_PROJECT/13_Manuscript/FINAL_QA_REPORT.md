@@ -51,7 +51,7 @@ Counts: manuscript **9 sections, 41 subsections, 84 numbered equations, 8 figure
 | Static audit of the companion `.tex` | `python3 tools/audit_tex.py -t …/FINAL_REVISED_CALCULATIONS.tex -m …/calculations_IJHMT.md -c` | **54 checks passed** |
 | Markdown → LaTeX unit tests | `python3 tools/test_md_to_tex.py` | **26 tests passed** |
 | Manuscript PDF fidelity | `python3 tools/verify_pdf.py` | **5 checks passed** (317 text units, 0 missing; 8 figures; 79 equation images) |
-| Companion PDF fidelity | `python3 tools/verify_pdf.py -p …/calculations_IJHMT.pdf -m …/calculations_IJHMT.md -r … -c` | **5 checks passed** (183 units, 0 missing) |
+| Companion PDF fidelity | `python3 tools/verify_pdf.py -p …/calculations_IJHMT.pdf -m …/calculations_IJHMT.md -c` — deliberately **no `-r`**: the companion carries the *manuscript's* running title in its footer, so the default is the correct exclusion and passing the companion's own title misaligns check [1] (4 false "missing" units) | **5 checks passed** (183 units, 0 missing) |
 | Cross-reference check | `python3 tools/check_crossrefs.py` | every “Section x.y”, “Table n”, “Fig. n”, “Eq. (n)” resolves |
 | Structural guard | `python3 tools/renumber_crossrefs.py` | **ALL EDITS IN PLACE — 12 edits verified** |
 | Bibliography | `python3 tools/refs_to_bib.py` | 54 references, 0 unparsed |
