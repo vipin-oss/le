@@ -48,3 +48,11 @@ no "novel/breakthrough/comprehensive/robust" language; after any `.py` change re
 `tools/check_tex_commands.py`, `tools/check_crossrefs.py`, `tools/test_md_to_tex.py`) plus
 `tools/verify_pdf.py` on both PDFs; commit and push at the end of each phase (this repo has twice lost local-only
 commits when the sandbox was rebuilt).
+
+| Phase | Scope | Status | Artifacts |
+|---|---|---|---|
+| 9 | Closeout: artwork resolution + deposit package (items Phase 8 had left as "not doable here") | **DONE 2026-10-03** - 600-dpi PNG/TIFF + vector PDF figures via a wrapper around the frozen generator (originals byte-identical), packages built (RESEARCH_PROJECT_FINAL.zip, 610 files), connection_audit green; no rebuild, freeze still 2026-10-03j | `Phase_09_Closeout/` (REPORT.md, CHANGELOG.md, manifest.txt, verification/) |
+
+The programme is complete; what remains is author-supplied content listed in
+`PAPER_PROJECT/13_Manuscript/AUTHOR_INPUT_REQUIRED.md` and `Phase_06_Restructuring/AUTHOR_FILLIN.md`,
+plus a real `pdflatex` compile of the two `.tex` files.
