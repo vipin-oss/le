@@ -50,8 +50,15 @@ reader can see what was actually checked, not only that something was checked.
    | SUMMARY: 0 check(s) failed, 3 note(s)
    |   note  7 of the 9 headline constants are also quoted in the companion; the rest belong to the results tables and appear in the manuscript alone by design
    |   note  6 author-input placeholders remain (identity, funding, repository, CRediT, competing interest)
-   |   note  12 path(s) uncommitted at audit time (they are committed at the end of the phase)
+   |   note  16 path(s) uncommitted at audit time (they are committed at the end of the phase)
    | wrote final_consistency.json
+
+== verify_code_freeze
+   command: python PAPER_PROJECT/06_Source_Code/verify_code_freeze.py
+   exit code: 0
+   | manifest : 06_Source_Code/CODE_FREEZE_submission_2026_10_03j.json  (label submission_2026_10_03j, dated 2026-10-03T17:02:41)
+   | entries  : 27   identical: 27   differing: 0   missing: 0
+   | RESULT: FROZEN CODE CONFIRMED - every listed file is byte-identical
 
 == verify_pdf_manuscript
    command: python tools/verify_pdf.py

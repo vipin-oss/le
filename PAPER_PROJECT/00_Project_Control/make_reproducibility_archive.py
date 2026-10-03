@@ -381,6 +381,10 @@ def main():
     ap.add_argument('--repro-template', action='store_true')
     ap.add_argument('--no-gates', action='store_true')
     ap.add_argument('--python-exe', default='')
+    ap.add_argument('--keep-tree', action='store_true',
+                    help='leave the regenerated index documents in the working tree (default: restore them '
+                         'to HEAD after packing, so the repository stays clean and the gate transcript '
+                         'inside the archive describes the committed state rather than a half-written one)')
     a = ap.parse_args()
 
     if a.repro_template:
@@ -436,6 +440,7 @@ def main():
              [pyexe, 'tools/check_crossrefs.py', '-i',
               'PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.tex'], 120),
             ('final_consistency', [pyexe, 'Phase_08_Final_Audit/verification/final_consistency.py'], 600),
+            ('verify_code_freeze', [pyexe, 'PAPER_PROJECT/06_Source_Code/verify_code_freeze.py'], 300),
             # verify_pdf takes -c to mean "this is the companion document"; the manuscript run must NOT
             # pass it, or the figure count is checked against zero. Both runs are read-only.
             ('verify_pdf_manuscript', [pyexe, 'tools/verify_pdf.py'], 300),
@@ -449,6 +454,11 @@ def main():
         ]
         for name, cmd, to in gate_cmds:
             rc, out = sh(cmd, timeout=to)
+            # final_consistency.py writes its own timestamped transcript; restoring it keeps the archive a
+            # pure function of the tracked tree instead of a function of when it was packed
+            fc = 'Phase_08_Final_Audit/verification/final_consistency.json'
+            if name == 'final_consistency':
+                git('checkout', '--', fc)
             gates[name] = {'command': ' '.join(os.path.basename(c) if i == 0 else c
                                                for i, c in enumerate(cmd)),
                            'exit_code': rc,
@@ -540,6 +550,7 @@ def main():
               'REPRODUCTION_SUMMARY.json': '04_REPRODUCTION',
               'REPRODUCTION_TEST_REPORT_2026-10-04.md': '04_REPRODUCTION',
               'ENVIRONMENT_OBSERVED.txt': '04_REPRODUCTION',
+              'CLEAN_ROOM_TEST.txt': '09_ARCHIVE_METADATA',
               'VERIFICATION_GATES.txt': '04_REPRODUCTION',
               'REPRODUCE_FROM_SCRATCH.md': '01_PROGRAM',
               'README_OVERLEAF.md': '02_OVERLEAF',
@@ -722,6 +733,14 @@ def main():
           f'({ab["bytes_uncompressed"]/1e6:.2f} MB unpacked)')
     print('sections:', json.dumps({k: v['files'] for k, v in ab['sections'].items()}, indent=0))
     print('audit:', json.dumps(audit['summary']))
+    if not a.keep_tree:
+        # the generated documents were just written into PAPER_PROJECT/16_Reproducibility/; the zip holds
+        # them, and the working tree is returned to HEAD so that (a) the repository stays clean and (b) a
+        # later build's gate transcript describes a committed state. `git add` them (or --keep-tree) when
+        # the regenerated copies should be committed - the builder never commits by itself.
+        git('checkout', '--', os.path.relpath(GEN, ROOT))
+        for extra in ('Phase_08_Final_Audit/verification/final_consistency.json',):
+            git('checkout', '--', extra)
     print('zip sha256    :', zsha)
     print('content sha256:', content_sha)
     return 0

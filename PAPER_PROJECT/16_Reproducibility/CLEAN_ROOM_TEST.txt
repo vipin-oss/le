@@ -1,0 +1,57 @@
+CLEAN-ROOM TEST OF THIS ARCHIVE
+================================
+Run 2026-10-04 in the sandbox that packaged it, against the zip produced by the immediately preceding
+build. The transcript is embedded in this archive, so the byte-for-byte artefacts compared below come
+from the build one step earlier; the only difference between the two archives is this file. Stating it
+is cheaper than pretending a file can contain the result of a test of itself.
+
+Environment
+  Python 3.11.2 venv, numpy 2.3.5, scipy 1.17.1, matplotlib 3.10.9, PyMuPDF 1.28.2, openpyxl 3.1.5,
+  python-docx, Pillow, reportlab, mpmath 1.3.0 - installed for this run from
+  01_PROGRAM/environment/requirements_pinned_from_handoff.txt plus the two unpinned extras the manuscript
+  builders import. No TeX engine (none installable: the sandbox user has no package-manager access), so
+  the LaTeX compile is NOT tested here and says so in 02_OVERLEAF/README_OVERLEAF.md.
+  Isolation: extracted into a fresh directory outside the repository; the repository's own paths were then
+  re-pointed at the extracted tree with `sh bootstrap_paths.sh`, so nothing in the run could read a file
+  from the working copy by accident.
+
+1. Unpack and verify
+   unzip                                                       -> 1252 files
+   sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt            -> 1250 OK, 0 failures
+   (1250 of 1252: the manifest and its CSV companion cannot hash themselves, as SHA256SUMS.txt states)
+
+2. Rebuild a runnable tree from the archive
+   python3 01_PROGRAM/restore_project_tree.py --into <fresh> -> 1229 files restored, 0 hash mismatches
+   no .git present in the restored tree - by design
+
+3. Freeze check inside the restored tree
+   python3 PAPER_PROJECT/06_Source_Code/verify_code_freeze.py
+     manifest : 06_Source_Code/CODE_FREEZE_submission_2026_10_03j.json
+     entries  : 27   identical: 27   differing: 0   missing: 0
+     RESULT: FROZEN CODE CONFIRMED - every listed file is byte-identical          exit 0
+
+4. Run the analysis->figure->reproduction pipeline from the restored data only
+   analyze_v2.py        exit 0     raw data -> ANALYSIS_V2.json + ANALYSIS_V2_TABLES.md
+   make_provenance.py   exit 0     -> PRODUCTION_PROVENANCE.csv
+   make_figures.py      exit 0     -> all eight figures rewritten in the restored tree
+   reproduce.py         exit 0     Overall: 11 PASS, 0 FAIL   (tolerances 1e-9 / 1e-12, its own defaults)
+
+5. Compare what the run produced with what the archive shipped
+   ANALYSIS_V2.json, ANALYSIS_V2_TABLES.md, PRODUCTION_PROVENANCE.csv, 11_Figures/fig1..fig7 (8 files)
+   -> 11 of 11 byte-identical, 0 differing
+   (byte-identical, not "close": the pipeline is deterministic - no RNG anywhere, and the drivers pin
+   OPENBLAS_NUM_THREADS=1, which is why an exact comparison is the right test to run)
+
+6. Document gates inside the restored tree
+   tools/verify_pdf.py    -> RESULT: ALL CHECKS PASSED     (manuscript PDF against its .md)
+   tools/audit_tex.py     -> RESULT: ALL CHECKS PASSED
+   tools/connection_audit.py -> needs a git repository (it reports worktree-vs-HEAD), so it is expected to
+                             fail in a restored tree; verify_code_freeze.py in step 3 is the git-free
+                             substitute, and both are recorded in 09_ARCHIVE_METADATA/VERIFICATION_GATES.txt
+                             from the repository run, where connection_audit does pass.
+
+VERDICT:  PASS
+  install -> restore -> verify integrity -> re-run the workflow -> regenerate key data and figures ->
+  compare against shipped outputs: all green, every artifact byte-identical. The only untested link is the
+  LaTeX compile, and that is an environment limit of the packaging sandbox, not a claim about the source:
+  02_OVERLEAF/README_OVERLEAF.md lists the four commands and the static checks already done instead.

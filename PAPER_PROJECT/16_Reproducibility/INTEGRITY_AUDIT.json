@@ -88,10 +88,10 @@
     "01_PROGRAM/control/make_reproducibility_archive.py": [
      22,
      93,
-     802,
-     805,
-     1774,
-     1778
+     809,
+     812,
+     1781,
+     1785
     ],
     "01_PROGRAM/control/bootstrap_paths.sh": [
      7,
@@ -202,6 +202,11 @@
     "08_FINAL_OUTPUTS/manuscript/manuscript_IJHMT.pdf"
    ],
    "ok": true
+  },
+  "no_file_shadowed_by_directory": {
+   "shadowed": [],
+   "ok": true,
+   "note": "each archive path must be a plain file; a name that is also a prefix of another path would extract as a folder"
   }
  },
  "summary": {
@@ -214,7 +219,8 @@
   "provenance_manifest_present": "ok",
   "required_key_files": "ok",
   "required_folders": "ok",
-  "final_versions_are_consistent": "ok"
+  "final_versions_are_consistent": "ok",
+  "no_file_shadowed_by_directory": "ok"
  },
- "files": 1247
+ "files": 1248
 }

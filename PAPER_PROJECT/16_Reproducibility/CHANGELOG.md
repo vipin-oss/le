@@ -3,6 +3,7 @@
 ## Repository history (this is real git history, not a reconstruction)
 
 ```
+2026-10-03 2877ac1 Phase 11: generated docs, manifest ordering, file/dir shadow check; clean-room fixes
 2026-10-03 031ba76 Phase 11: sidecar for the archive checksums; invariant content-level checksum
 2026-10-03 3017658 Phase 11: verified companion-check invocation, md_to_pdf step documented, content-level checksum
 2026-10-03 628509c Phase 11 (new): the complete reproducibility archive - builder, manifests, reproduction driver, restorer

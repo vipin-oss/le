@@ -96,8 +96,10 @@ def main():
         return 0 if not bad else 1
     print(f'restored {n} files into {dest} ({skip} documentation-only entries skipped, {bad} hash mismatches)')
     if not bad:
-        print('next: cd %s && sh bootstrap_paths.sh && python3 tools/connection_audit.py'
-              '   # read-only: proves the frozen code in the restored tree is intact' % dest)
+        print('next: cd %s && sh bootstrap_paths.sh && python3 '
+              'PAPER_PROJECT/06_Source_Code/verify_code_freeze.py' % dest)
+        print('      (read-only freeze check that needs no git; tools/connection_audit.py does the same')
+        print('       plus git checks, so it only works in a real checkout)')
     return 0 if not bad else 1
 
 

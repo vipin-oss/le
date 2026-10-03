@@ -29,7 +29,11 @@ success. If the manifest and the archive disagree, the hash check fails loudly i
 - **You do not get** a git checkout (no `.git`), nor the files the project never tracked: the 600-dpi PNG
   and TIFF renditions and the generated archives under `PAPER_PROJECT/packages/`. Each is one command away
   (`RUN_ORDER.md` steps 5 and 8); a restored tree missing them is expected, not broken.
-- **Then verify, don't assume.** `python3 tools/connection_audit.py` (read-only) re-hashes the 27 frozen
+- **Then verify, don't assume.** `python3 PAPER_PROJECT/06_Source_Code/verify_code_freeze.py` re-hashes the
+  27 frozen files against `CODE_FREEZE_submission_2026_10_03j.json` and exits non-zero on any difference.
+  It is used instead of `tools/connection_audit.py` here because that tool also inspects git state and a
+  restored tree has no `.git`; inside a real checkout either works, and the archive records both.
+  Old wording kept for the record: `python3 tools/connection_audit.py` (read-only) re-hashes the 27 frozen
   files against `CODE_FREEZE_submission_2026_10_03j.json` and fails on any difference. Run it after a
   restore and after any edit — it is the mechanism that turns "the code looks the same" into a checked
   statement. The manuscript builders apply the same rule from the other side: they abort *before writing*
