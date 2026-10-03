@@ -14,21 +14,24 @@ its builders from data; see `PAPER_PROJECT/README.md` build rules).
 | 3 | Mathematical audit (rotations, Voigt, plane strain, Cattaneo–Fourier limits, Bromwich derivation, units) | complete (audit green: 22 PASS, 3 INFO, 0 FAIL; documents rebuilt and gated) | `Phase_03_Mathematical_Audit/` |
 
 | 4 | Figures + tables regenerated from verified data | complete (T1/T2/T3 PASS; guard-ordering and truncated-artefact defects found and fixed) | `Phase_04_Figures_Tables/` |
-| 5 | Literature audit + introduction repositioning | **NEXT** | `Phase_05_Literature/` |
-| 6 | Restructuring (title/abstract/keywords/sections/limitations/back matter/declarations) | pending | `Phase_06_Restructuring/` |
+| 5 | Literature audit + introduction repositioning | complete (55 refs; claim-citation matrix clean; classical pair unverifiable here -> open for authors) | `Phase_05_Literature/` |
+| 6 | Restructuring (title/abstract/keywords/sections/limitations/back matter/declarations) | **NEXT** | `Phase_06_Restructuring/` |
 | 7 | Language + style + internal-language strip + duplication | pending | `Phase_07_Language/` |
 | 8 | Final audit, consistency, compile, submission checklist, cover letter | pending - inherits: the suite re-run after
 the Phase 3 code change, the CV/MCV3 order-of-agreement wording, and refreshing the historical counts in
 `13_Manuscript/CHANGELOG.md`, `FINAL_QA_REPORT.md`, `JOURNAL_FIT.md` | `Phase_08_Final_Audit/` |
 
-**Open findings ledger:** the current one is `Phase_04_Figures_Tables/FINDINGS_LEDGER.json` (6 items: 5 closed, 1 advanced -
-the unpinned plotting environment). `Phase_03_Mathematical_Audit/FINDINGS_LEDGER.json` (16 findings, 2 open incl. the
+**Open findings ledger:** the current one is `Phase_05_Literature/FINDINGS_LEDGER.json` (7 items: 6 closed, 1 open - the
+Cattaneo/Vernotte originals, which need library catalogue access, not computation). `Phase_04_Figures_Tables/FINDINGS_LEDGER.json`
+(6 items) and the earlier ledgers stay as their phases' records. `Phase_03_Mathematical_Audit/FINDINGS_LEDGER.json` (16 findings, 2 open incl. the
 unresolved `alpha_5`) and `Phase_02_Verification/FINDINGS_LEDGER.json` (43 findings) stay as their phases' records. `Phase_02_Verification/FINDINGS_LEDGER.json` (43 findings) stays as that phase's record. `Phase_01_Audit/FINDINGS.json` is the frozen record of what was raised.
 Each later phase writes its own ledger with the newly closed findings and their evidence.
 
 **Author-owned, cannot be done by the agent (do not fabricate):** author names/affiliations/ORCIDs, funding
 numbers, repository DOI, independent expert review of the formulation, final journal formatting choices, LaTeX
 compilation on a machine with TeTeX/TeX Live (no engine in this sandbox).
+
+**Network note (Phase 5):** the sandbox shell has no network, but the agent web-fetch path does, so `api.crossref.org` can be queried directly - reference verification is possible in-session; still never invent a DOI.
 
 **Sandbox set-up needed in every new session (the workspace can be rebuilt without warning):**
 `python3 -m venv /home/user/.venv-q1 && /home/user/.venv-q1/bin/pip install numpy scipy matplotlib python-docx openpyxl reportlab pymupdf`

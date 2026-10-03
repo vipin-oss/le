@@ -106,7 +106,8 @@ def sec2_kinematics():
               f'c_{{ref}} = (C_{{33}}/\u03c1)^{{1/2}} = {C_REF:.0f} m/s. The second law is satisfied in the form'),
         E(r'-\frac{\mathbf{q}\cdot\nabla\theta}{T_0}\geq 0', 'entropy'),
         ('p', 'which the Cattaneo\u2013Vernotte law meets for every \u03c4 > 0 because it is a positive-real (passive) '
-              'kernel; the two-relaxation-time kernel of Section 2.5 is positive-real for the same reason but is not derived '
+              'kernel [55], a restriction stated there for a memory kernel rather than for a single relaxation time; the '
+              'two-relaxation-time kernel of Section 2.5 is positive-real for the same reason but is not derived '
               'from a free energy, which is why it is carried as an exploratory variant only. Theories with two relaxation '
               'times [24,25,26] and the reviews of hyperbolic and generalized conduction [14,23,27,28,31,32] locate the '
               'single-relaxation-time law used here within that literature.')

@@ -90,7 +90,7 @@ FREEZE_BLOCKF = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_bloc
 # The manifest to deposit, and the one it supersedes.  Regenerate the deposited one with
 # `python3 PAPER_PROJECT/06_Source_Code/make_code_freeze.py submission_2026_10_03` after ANY
 # edit to a frozen file, otherwise Section 9.1 would quote digests that no longer describe the code.
-SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03c', 'submission_2026_10_03b'
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03d', 'submission_2026_10_03c'
 FREEZE_SUB = _sha16(os.path.join(ROOT, '06_Source_Code', f'CODE_FREEZE_{SUB_FREEZE}.json'))
 
 

@@ -100,42 +100,42 @@
  {
   "n": 15,
   "key": "adachi2018",
-  "text": "Adachi, K., Ogi, H., Takeuchi, N., Nakamura, N., Watanabe, H., Ito, T., et al. Unusual elasticity of monoclinic β-Ga2O3. Journal of Applied Physics, 124(8), 085102 (2018). https://doi.org/10.1063/1.5047017",
+  "text": "Adachi, K., Ogi, H., Takeuchi, N., Nakamura, N., Watanabe, H., Ito, T., et al. Unusual elasticity of monoclinic \u03b2-Ga2O3. Journal of Applied Physics, 124(8), 085102 (2018). https://doi.org/10.1063/1.5047017",
   "doi": "10.1063/1.5047017",
   "level": "METADATA VERIFIED (Crossref 2026-10-01)"
  },
  {
   "n": 16,
   "key": "klimm2023",
-  "text": "Klimm, D., Amgalan, B., Ganschow, S., Kwasniewski, A., Galazka, Z., Bickermann, M. The Thermal Conductivity Tensor of β-Ga2O3 from 300 to 1275 K. Crystal Research and Technology, 58(2), 2200204 (2023). https://doi.org/10.1002/crat.202200204",
+  "text": "Klimm, D., Amgalan, B., Ganschow, S., Kwasniewski, A., Galazka, Z., Bickermann, M. The Thermal Conductivity Tensor of \u03b2-Ga2O3 from 300 to 1275 K. Crystal Research and Technology, 58(2), 2200204 (2023). https://doi.org/10.1002/crat.202200204",
   "doi": "10.1002/crat.202200204",
   "level": "METADATA VERIFIED (Crossref 2026-10-01)"
  },
  {
   "n": 17,
   "key": "orlandi2015",
-  "text": "Orlandi, F., Mezzadri, F., Calestani, G., Boschi, F., Fornari, R. Thermal expansion coefficients of β-Ga2O3 single crystals. Applied Physics Express, 8(11), 111101 (2015). https://doi.org/10.7567/apex.8.111101",
+  "text": "Orlandi, F., Mezzadri, F., Calestani, G., Boschi, F., Fornari, R. Thermal expansion coefficients of \u03b2-Ga2O3 single crystals. Applied Physics Express, 8(11), 111101 (2015). https://doi.org/10.7567/apex.8.111101",
   "doi": "10.7567/apex.8.111101",
   "level": "METADATA VERIFIED (Crossref 2026-10-01)"
  },
  {
   "n": 18,
   "key": "cheng2018",
-  "text": "Cheng, Z., Hanke, M., Galazka, Z., Trampert, A. Thermal expansion of single-crystalline β-Ga2O3 from RT to 1200 K studied by synchrotron-based high resolution x-ray diffraction. Applied Physics Letters, 113(18), 182102 (2018). https://doi.org/10.1063/1.5054265",
+  "text": "Cheng, Z., Hanke, M., Galazka, Z., Trampert, A. Thermal expansion of single-crystalline \u03b2-Ga2O3 from RT to 1200 K studied by synchrotron-based high resolution x-ray diffraction. Applied Physics Letters, 113(18), 182102 (2018). https://doi.org/10.1063/1.5054265",
   "doi": "10.1063/1.5054265",
   "level": "METADATA VERIFIED (Crossref 2026-10-01)"
  },
  {
   "n": 19,
   "key": "handwerg2016",
-  "text": "Handwerg, M., Mitdank, R., Galazka, Z., Fischer, S.F. Temperature-dependent thermal conductivity and diffusivity of a Mg-doped insulating β-Ga2O3 single crystal along [100], [010] and [001]. Semiconductor Science and Technology, 31(12), 125006 (2016). https://doi.org/10.1088/0268-1242/31/12/125006",
+  "text": "Handwerg, M., Mitdank, R., Galazka, Z., Fischer, S.F. Temperature-dependent thermal conductivity and diffusivity of a Mg-doped insulating \u03b2-Ga2O3 single crystal along [100], [010] and [001]. Semiconductor Science and Technology, 31(12), 125006 (2016). https://doi.org/10.1088/0268-1242/31/12/125006",
   "doi": "10.1088/0268-1242/31/12/125006",
   "level": "METADATA VERIFIED (Crossref 2026-10-01)"
  },
  {
   "n": 20,
   "key": "yang2023",
-  "text": "Yang, J., Xu, Y., Wang, X., Zhang, X., He, Y., Sun, H. Lattice thermal conductivity of β-, α- and κ- Ga2O3: a first-principles computational study. Applied Physics Express, 17(1), 011001 (2023). https://doi.org/10.35848/1882-0786/ad0ba8",
+  "text": "Yang, J., Xu, Y., Wang, X., Zhang, X., He, Y., Sun, H. Lattice thermal conductivity of \u03b2-, \u03b1- and \u03ba- Ga2O3: a first-principles computational study. Applied Physics Express, 17(1), 011001 (2023). https://doi.org/10.35848/1882-0786/ad0ba8",
   "doi": "10.35848/1882-0786/ad0ba8",
   "level": "METADATA VERIFIED (Crossref 2026-10-01)"
  },
@@ -198,7 +198,7 @@
  {
   "n": 29,
   "key": "hetnarski2019",
-  "text": "Hetnarski, R.B., Eslami, M.R. Thermal Stresses—Advanced Theory and Applications. Springer, Solid Mechanics and Its Applications (2019). https://doi.org/10.1007/978-3-030-10436-8",
+  "text": "Hetnarski, R.B., Eslami, M.R. Thermal Stresses\u2014Advanced Theory and Applications. Springer, Solid Mechanics and Its Applications (2019). https://doi.org/10.1007/978-3-030-10436-8",
   "doi": "10.1007/978-3-030-10436-8",
   "level": "METADATA VERIFIED (Crossref 2026-10-02)"
  },
@@ -352,7 +352,7 @@
  {
   "n": 51,
   "key": "galazka2022",
-  "text": "Galazka, Z. Growth of bulk β-Ga2O3 single crystals by the Czochralski method. Journal of Applied Physics, 131(3), 031103 (2022). https://doi.org/10.1063/5.0076962",
+  "text": "Galazka, Z. Growth of bulk \u03b2-Ga2O3 single crystals by the Czochralski method. Journal of Applied Physics, 131(3), 031103 (2022). https://doi.org/10.1063/5.0076962",
   "doi": "10.1063/5.0076962",
   "level": "METADATA VERIFIED (Crossref 2026-10-02)"
  },
@@ -376,5 +376,12 @@
   "text": "Pelletier, D., Roache, P.J. Verification and Validation of Computational Heat Transfer. In Handbook of Numerical Heat Transfer, 417-442 (2000). https://doi.org/10.1002/9780470172599.ch13",
   "doi": "10.1002/9780470172599.ch13",
   "level": "METADATA VERIFIED (Crossref 2026-10-02)"
+ },
+ {
+  "n": 55,
+  "key": "gurtin1968",
+  "text": "Gurtin, M.E., Pipkin, A.C. A general theory of heat conduction with finite wave speeds. Archive for Rational Mechanics and Analysis, 31(2), 113-126 (1968). https://doi.org/10.1007/BF00281373",
+  "doi": "10.1007/BF00281373",
+  "level": "METADATA VERIFIED (Crossref 2026-10-03, Phase 5 audit; query 'Gurtin Pipkin general theory heat conduction memory', fields title/authors/journal/volume/pages/year as returned by Crossref; full text not read)"
  }
 ]

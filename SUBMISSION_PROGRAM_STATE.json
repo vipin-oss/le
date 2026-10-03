@@ -79,13 +79,25 @@
     {
       "phase": 5,
       "name": "Literature",
-      "status": "next",
-      "note": "Crossref API unreachable from the sandbox: verify via web search + 01_Literature/CROSSREF_VERIFICATION_*.json; never invent a DOI"
+      "status": "complete (2026-10-03): references verified/extended (54->55), claim-citation matrix clean, freeze 03d",
+      "note": "Crossref API unreachable from the sandbox: verify via web search + 01_Literature/CROSSREF_VERIFICATION_*.json; never invent a DOI",
+      "deliverables": [
+        "Phase_05_Literature/REPORT.md",
+        "Phase_05_Literature/FINDINGS_LEDGER.json",
+        "Phase_05_Literature/CHANGELOG.md",
+        "Phase_05_Literature/SEARCH_NOTES.md",
+        "Phase_05_Literature/manifest.txt",
+        "Phase_05_Literature/verification/{patch_phase5.py,lit_B_claims_matrix.py,claims_matrix.json}"
+      ],
+      "carried_to_later_phases": [
+        "P5-1 (Cattaneo 1948 / Vernotte 1958 pagination) -> authors",
+        "thematic vs sequential numbering of the reference list -> Phase 6"
+      ]
     },
     {
       "phase": 6,
       "name": "Restructuring",
-      "status": "pending",
+      "status": "next",
       "note": "A3 author fields are author-owned; A4 AI declaration split; A7 remaining hits at ms ~695/707/759/780/806/818; A12 Limitations section; A14 artifact counts"
     },
     {
@@ -100,7 +112,7 @@
       "status": "pending"
     }
   ],
-  "findings_ledger": "Phase_04_Figures_Tables/FINDINGS_LEDGER.json (6 items: 5 closed, 1 advanced) is the current ledger; it also closes Phase 3 items P3-15 and, with a corrected diagnosis, P3-8. Phase_03_Mathematical_Audit/FINDINGS_LEDGER.json (16 items) and Phase_02_Verification/FINDINGS_LEDGER.json (43 items) remain their phases' records",
+  "findings_ledger": "Phase_05_Literature/FINDINGS_LEDGER.json (7 items: 6 closed, 1 open for the authors) is the current ledger; Phase_04_Figures_Tables (6), Phase_03_Mathematical_Audit (16) and Phase_02_Verification (43) remain their phases' records",
   "author_owned_blocking": [
     "author block",
     "affiliations/ORCID",

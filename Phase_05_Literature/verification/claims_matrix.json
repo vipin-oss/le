@@ -1,0 +1,14 @@
+{
+  "citations_found": 139,
+  "distinct_references_cited": 55,
+  "references_total_in_list": 55,
+  "uncited_entries": [],
+  "sentences_with_strong_verbs_over_metadata_only_citation_in_framing_or_theory_sections": 0,
+  "verification_levels": {
+    "METADATA VERIFIED (Crossref 2026-10-01)": 23,
+    "METADATA VERIFIED (Crossref 2026-10-02)": 31,
+    "METADATA VERIFIED (Crossref 2026-10-03, Phase 5 audit; query 'Gurtin Pipkin general theory heat conduction memory', fields title/authors/journal/volume/pages/year as returned by Crossref; full text not read)": 1
+  },
+  "flagged": [],
+  "note": "\"metadata_only\" means the project record for that entry is Crossref metadata; the full text was not read here (only Klimm 2023 open access and Adachi 2018 values were checked against full/open text). A flag is a prompt to soften the wording or to read the source - not an assertion that the citation is wrong."
+}

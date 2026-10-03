@@ -1,0 +1,35 @@
+Phase 5 - literature audit and introduction repositioning: manifest
+branch arena/01a10176-le; baseline = 4c000a5 (Phase 4 record); working tree at the phase close.
+sha256 of each file as it stands in the tree; recompute with: sha256sum <path>.
+
+99249b2cf356926b  PAPER_PROJECT/01_Literature/REFERENCES_VERIFIED.json
+93cf73846087221f  PAPER_PROJECT/13_Manuscript/FINAL_REVISED_CALCULATIONS.pdf
+ae9fff51c7d23284  PAPER_PROJECT/13_Manuscript/FINAL_REVISED_CALCULATIONS.tex
+91ea6a3c63798684  PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.pdf
+84a7f915af56b905  PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.tex
+f1d164083a14f403  PAPER_PROJECT/13_Manuscript/FINAL_REVISED_REFERENCES.bib
+9857691f60deed07  PAPER_PROJECT/13_Manuscript/MANUSCRIPT_STATS.json
+9f40f85ccfaffb89  PAPER_PROJECT/13_Manuscript/build_calculations.py
+6a8130eddb8392fa  PAPER_PROJECT/13_Manuscript/build_manuscript.py
+012f4d1197f53c3a  PAPER_PROJECT/13_Manuscript/calculations_IJHMT.md
+93cf73846087221f  PAPER_PROJECT/13_Manuscript/calculations_IJHMT.pdf
+00946c08bde88fa0  PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.docx
+e2371af5bde73929  PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.md
+91ea6a3c63798684  PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf
+63e1e1ea28e4a96f  PAPER_PROJECT/13_Manuscript/ms_derivation.py
+446d665389c1357d  PAPER_PROJECT/13_Manuscript/ms_static.py
+0c1c8130243c7d30  Phase_05_Literature/CHANGELOG.md
+10aa2b4d07f12db9  Phase_05_Literature/FINDINGS_LEDGER.json
+d72e9dcb3fb991ff  Phase_05_Literature/REPORT.md
+caed0f5440abec39  Phase_05_Literature/SEARCH_NOTES.md
+5985c091a83031e8  Phase_05_Literature/verification/claims_matrix.json
+b7bfdef2b471241d  Phase_05_Literature/verification/lit_B_claims_matrix.py
+ab65c4cd11077896  Phase_05_Literature/verification/patch_phase5.py
+
+Phase deliverables:
+  Phase_05_Literature/REPORT.md, FINDINGS_LEDGER.json, CHANGELOG.md, SEARCH_NOTES.md
+  Phase_05_Literature/verification/patch_phase5.py (idempotent edits)
+  Phase_05_Literature/verification/lit_B_claims_matrix.py + claims_matrix.json
+  PAPER_PROJECT/06_Source_Code/CODE_FREEZE_submission_2026_10_03d.json (27 files; earlier manifests untouched)
+
+23 files listed.

@@ -1,0 +1,79 @@
+{
+  "phase": "5 - Literature audit and introduction repositioning",
+  "date": "2026-10-03",
+  "branch": "arena/01a10176-le",
+  "verification": "verification/lit_B_claims_matrix.py (writes verification/claims_matrix.json); queries and raw outcomes in SEARCH_NOTES.md",
+  "summary": {"citations_in_manuscript": 139, "list_entries": 55, "orphan_entries": 0, "over_claimed_citations_in_framing_or_theory_sections": 0},
+  "items": [
+    {
+      "id": "P5-1",
+      "severity": "moderate",
+      "category": "references / provenance limit",
+      "location": "manuscript Sections 1.2, 1.3, 2.2 (Cattaneo-Vernotte attribution)",
+      "evidence": "No DOI-bearing record identifies the 1948 and 1958 originals with reliable pagination: Crossref returns only a 2011 Springer chapter carrying Cattaneo's title on one page (10.1007/978-3-642-11051-1_5), nothing for Vernotte 1958, and secondary sources disagree on the venue (Treccani: Modena, Atti del Seminario mat. e fis., III [1948-49]; elsewhere Milan Rendiconti, pp. 29-36).",
+      "action": "Not added - the project rule is no reference without verification and no invented DOI. The framework is instead anchored on the DOI-verified [11] (Lord-Shulman), [12] (anisotropic extension with uniqueness) and now [55] (Gurtin-Pipkin); the law keeps its attribution by name in the body. If the authors can obtain the originals' pagination from a library catalogue, two entries can be appended and these three mentions cited directly; this is a library task, not a computing task.",
+      "target_phase": "authors",
+      "status": "open"
+    },
+    {
+      "id": "P5-2",
+      "severity": "minor",
+      "category": "unsupported-at-source-level claim",
+      "location": "companion Section 2.1 (Re g > 0 for both kernels), manuscript Section 2.2",
+      "evidence": "A13 had flagged the passivity claim as supported by reviews only. The restriction is stated for a memory kernel in the general theory of heat conduction with finite wave speeds.",
+      "action": "Added DOI-verified reference [55] Gurtin & Pipkin 1968 (Crossref 2026-10-03, ARMA 31(2) 113-126) at the sentence that uses the property, with wording that states what that source does and does not say ('a restriction stated there for a memory kernel rather than for a single relaxation time'); the companion now points to the same reference instead of leaving the claim bare.",
+      "target_phase": "5",
+      "status": "closed"
+    },
+    {
+      "id": "P5-3",
+      "severity": "info",
+      "category": "audit result that reversed itself",
+      "location": "manuscript Section 5 (Richardson extrapolation)",
+      "evidence": "B19 recorded 'no methodological ref for observed-order Richardson'. Checked in the generated text: the sentence reads 'extrapolation of Eq. (…) goes back to Richardson and Gaunt [52]', and [52] is in the DOI-verified list.",
+      "action": "No addition made. A second, verified candidate (Ferziger & Peric, doi 10.1007/978-3-642-56026-2) was found and deliberately not added: it would repeat a citation that already exists, and B19 asked for at most two additions.",
+      "target_phase": "5",
+      "status": "closed"
+    },
+    {
+      "id": "P5-4",
+      "severity": "moderate",
+      "category": "citation integrity sweep",
+      "location": "both documents, all 139 citation instances",
+      "evidence": "lit_B_claims_matrix.py: 55 of 55 list entries are cited (0 orphans); 0 sentences in Sections 1-3 assert with a strong verb on a citation whose record here is metadata-only.",
+      "action": "No softening needed on those grounds, and none was invented. The verification-level mix is stated plainly: 23 entries metadata-verified 2026-10-01, 31 on 2026-10-02, 1 today; the only works whose full text was read in this environment are Klimm et al. (open access) and the Adachi et al. values.",
+      "target_phase": "5",
+      "status": "closed"
+    },
+    {
+      "id": "P5-5",
+      "severity": "minor",
+      "category": "introduction repositioning",
+      "location": "manuscript Section 1.2, 1.1",
+      "evidence": "The introduction previously grouped the memory-kernel literature only through the reviews [13,14,23]; and the gap statement in 1.1 needed to stay a search statement rather than a priority claim.",
+      "action": "1.2 now names the primary theory ('the general theory of heat conduction with a memory kernel and finite wave speeds is due to Gurtin and Pipkin [55]') beside the Lord-Shulman and anisotropic-extension citations; 1.1's bounded-search sentence is left intact word for word ('Within the bounded literature search described in the data package we found no study that combines … this is a statement about our search, not a claim of priority'), so no broad 'no previous study exists' claim was introduced or strengthened.",
+      "target_phase": "5",
+      "status": "closed"
+    },
+    {
+      "id": "P5-6",
+      "severity": "minor",
+      "category": "freeze bookkeeping",
+      "location": "06_Source_Code/CODE_FREEZE_submission_2026_10_03d.json",
+      "evidence": "Three builder files changed (ms_static, ms_derivation, build_calculations), so the manifest quoted by both documents had to move; the guard aborted the first rebuild exactly as intended (2 of 27 entries differed).",
+      "action": "Added CODE_FREEZE_submission_2026_10_03d.json as the current manifest (non-destructive: 03c, 03b, 10_03, 10_02 and the gate manifest are byte-unchanged); both documents now quote 03d with its digest, and the companion's supersession list names 03c, 03b, 10_03 and 10_02. Regenerated after the last builder edit, before the last document build (the Phase 4 rule).",
+      "target_phase": "5",
+      "status": "closed"
+    },
+    {
+      "id": "P5-7",
+      "severity": "info",
+      "category": "environment note",
+      "location": "SUBMISSION_PROGRAM_STATE.md/.json; Phase_05_Literature/SEARCH_NOTES.md",
+      "evidence": "The programme state says the Crossref API is unreachable from the sandbox. The shell indeed has no network, but the agent's web-fetch path does, and every verification here went through it against api.crossref.org.",
+      "action": "Recorded in SEARCH_NOTES.md; the programme-state note now distinguishes shell from fetch path. No DOI was copied from memory; each was read from the returned record.",
+      "target_phase": "5",
+      "status": "closed"
+    }
+  ]
+}
