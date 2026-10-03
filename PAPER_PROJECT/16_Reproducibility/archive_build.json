@@ -1,14 +1,14 @@
 {
  "built": "2026-10-04",
  "archive": "PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip",
- "git_commit": "628509cefcadad7a433dbdd2b18ba99cdb7c5779",
+ "git_commit": "3017658b662dac9cec0fe964bef5df201378b741",
  "git_branch": "arena/01a10176-le",
  "files": 1278,
- "bytes_uncompressed": 66507717,
+ "bytes_uncompressed": 66510684,
  "sections": {
   "01_PROGRAM": {
    "files": 389,
-   "bytes": 10234982
+   "bytes": 10237671
   },
   "02_OVERLEAF": {
    "files": 14,
@@ -20,7 +20,7 @@
   },
   "04_REPRODUCTION": {
    "files": 11,
-   "bytes": 74198
+   "bytes": 74197
   },
   "05_DERIVATIONS": {
    "files": 9,
@@ -32,7 +32,7 @@
   },
   "07_DOCUMENTATION": {
    "files": 145,
-   "bytes": 6432972
+   "bytes": 6433112
   },
   "08_FINAL_OUTPUTS": {
    "files": 38,
@@ -40,7 +40,7 @@
   },
   "09_ARCHIVE_METADATA": {
    "files": 26,
-   "bytes": 524749
+   "bytes": 524888
   }
  },
  "excluded_patterns": [
@@ -56,9 +56,12 @@
   "~"
  ],
  "excluded_named_files": [
+  "ARCHIVE_CHECKSUMS.txt",
   "handoff.zip",
   "le.zip"
  ],
  "code_freeze": "submission_2026_10_03j",
- "python_for_gates": "/home/user/.venv-repro/bin/python"
+ "python_for_gates": "/home/user/.venv-repro/bin/python",
+ "content_checksum_sha256_of_SHA256SUMS": "ae22c3686a39edca140bfdc92bb8339745250c8f602bf8e2172bc9316a046d47",
+ "zip_sha256": "f5f72416a04776f9efac5606acb29723eaadd1adc824132657490754c18eb395"
 }

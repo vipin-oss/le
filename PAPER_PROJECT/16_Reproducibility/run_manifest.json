@@ -100,7 +100,7 @@
     "SUMMARY: 0 check(s) failed, 3 note(s)",
     "  note  7 of the 9 headline constants are also quoted in the companion; the rest belong to the results tables and appear in the manuscript alone by design",
     "  note  6 author-input placeholders remain (identity, funding, repository, CRediT, competing interest)",
-    "  note  14 path(s) uncommitted at audit time (they are committed at the end of the phase)",
+    "  note  1 path(s) uncommitted at audit time (they are committed at the end of the phase)",
     "wrote final_consistency.json"
    ]
   },

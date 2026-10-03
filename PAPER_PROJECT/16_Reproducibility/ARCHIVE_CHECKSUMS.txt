@@ -1,0 +1,23 @@
+REPRODUCIBILITY ARCHIVE - CHECKSUM RECORD
+=======================================
+built            2026-10-04 from commit 3017658b662dac9cec0fe964bef5df201378b741 (branch arena/01a10176-le)
+archive          PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip in PAPER_PROJECT/packages/ (gitignored: generated archives are
+                 built on demand from the repository, the same convention as make_packages.py)
+zip sha256       f5f72416a04776f9efac5606acb29723eaadd1adc824132657490754c18eb395
+size             59188155 bytes, 1280 files
+
+Content checksum - the one to actually compare
+  sha256 of 09_ARCHIVE_METADATA/SHA256SUMS.txt as it appears inside the archive:
+    ae22c3686a39edca140bfdc92bb8339745250c8f602bf8e2172bc9316a046d47
+  Why this exists: the zip-level sha also covers archive_build.json, which records the commit
+  the build ran from, so rebuilding at a later commit changes the zip hash even when every
+  archived file is byte-identical. The content checksum is invariant across such a rebuild;
+  the zip hash answers "did I receive the exact file", the content checksum answers "is this
+  the same package". Both are checkable without trusting this document, by running
+  `sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt` inside the extracted archive.
+
+Reproduce
+  python3 PAPER_PROJECT/00_Project_Control/make_reproducibility_archive.py \
+      --repro PAPER_PROJECT/16_Reproducibility/REPRODUCTION_SUMMARY.json
+  (deterministic: fixed entry stamps, sorted order, no build clock inside the archive; the
+   only field that moves between rebuilds is archive_build.json git_commit, by design)

@@ -299,7 +299,7 @@ DIR_SRC = {
 
 EXCLUDE_PARTS = ('__pycache__', '.pytest_cache', '.ipynb_checkpoints', 'packages', '.venv')
 EXCLUDE_SUFFIX = ('.pyc', '.pyo', '.DS_Store', '.swp', '~')
-EXCLUDE_NAMES = {'le.zip', 'handoff.zip'}
+EXCLUDE_NAMES = {'le.zip', 'handoff.zip', 'ARCHIVE_CHECKSUMS.txt'}
 GENERATED_NAMES = {'README_PROGRAM.md', 'README_OVERLEAF.md', 'README_DATA.md', 'DATA_DICTIONARY.md',
                    'REPRODUCE_FROM_SCRATCH.md', 'RUN_ORDER.md', 'run_manifest.json',
                    'parameter_manifest.json', 'FIGURE_PROVENANCE.md', 'PROJECT_OVERVIEW.md',
@@ -644,6 +644,7 @@ def main():
     payload['09_ARCHIVE_METADATA/SHA256SUMS.txt'] = sp
     payload['09_ARCHIVE_METADATA/file_manifest_sha256.csv'] = mp
 
+    content_sha = sha256_file(sp)          # sha of SHA256SUMS.txt = invariant content checksum
     ab = {'built': BUILD_DATE, 'archive': ARCHIVE_NAME + '.zip',
           'git_commit': git('rev-parse', 'HEAD'), 'git_branch': git('rev-parse', '--abbrev-ref', 'HEAD'),
           'files': len(payload),
@@ -668,10 +669,45 @@ def main():
 
     out_zip = os.path.join(a.out, ARCHIVE_NAME + '.zip')
     n = build_zip(payload, out_zip)
+    zsha = sha256_file(out_zip)
+    ab['content_checksum_sha256_of_SHA256SUMS'] = content_sha
+    ab['zip_sha256'] = zsha
+    open(ap_json, 'w', encoding='utf-8').write(json.dumps(ab, indent=1) + '\n')
+    # written after the zip exists and deliberately NOT inside it (a file cannot record the hash of the
+    # archive that contains it); it lives in the repository next to the builder
+    side = []
+    side.append('REPRODUCIBILITY ARCHIVE - CHECKSUM RECORD')
+    side.append('=======================================')
+    side.append('built            %s from commit %s (branch %s)'
+                % (BUILD_DATE, git('rev-parse', 'HEAD'), git('rev-parse', '--abbrev-ref', 'HEAD')))
+    side.append('archive          %s.zip in PAPER_PROJECT/packages/ (gitignored: generated archives are'
+                % ARCHIVE_NAME)
+    side.append('                 built on demand from the repository, the same convention as make_packages.py)')
+    side.append('zip sha256       %s' % zsha)
+    side.append('size             %d bytes, %d files' % (n, len(payload)))
+    side.append('')
+    side.append('Content checksum - the one to actually compare')
+    side.append('  sha256 of 09_ARCHIVE_METADATA/SHA256SUMS.txt as it appears inside the archive:')
+    side.append('    %s' % content_sha)
+    side.append('  Why this exists: the zip-level sha also covers archive_build.json, which records the commit')
+    side.append('  the build ran from, so rebuilding at a later commit changes the zip hash even when every')
+    side.append('  archived file is byte-identical. The content checksum is invariant across such a rebuild;')
+    side.append('  the zip hash answers "did I receive the exact file", the content checksum answers "is this')
+    side.append('  the same package". Both are checkable without trusting this document, by running')
+    side.append('  `sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt` inside the extracted archive.')
+    side.append('')
+    side.append('Reproduce')
+    side.append('  python3 PAPER_PROJECT/00_Project_Control/make_reproducibility_archive.py \\')
+    side.append('      --repro PAPER_PROJECT/16_Reproducibility/REPRODUCTION_SUMMARY.json')
+    side.append('  (deterministic: fixed entry stamps, sorted order, no build clock inside the archive; the')
+    side.append('   only field that moves between rebuilds is archive_build.json git_commit, by design)')
+    open(os.path.join(GEN, 'ARCHIVE_CHECKSUMS.txt'), 'w', encoding='utf-8').write('\n'.join(side) + '\n')
     print(f'{ARCHIVE_NAME}.zip: {len(payload)} files, {n/1e6:.2f} MB '
           f'({ab["bytes_uncompressed"]/1e6:.2f} MB unpacked)')
     print('sections:', json.dumps({k: v['files'] for k, v in ab['sections'].items()}, indent=0))
     print('audit:', json.dumps(audit['summary']))
+    print('zip sha256    :', zsha)
+    print('content sha256:', content_sha)
     return 0
 
 
