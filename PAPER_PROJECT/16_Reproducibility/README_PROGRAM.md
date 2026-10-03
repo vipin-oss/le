@@ -12,9 +12,15 @@ are archive-relative, so every command shown can be run from the extracted archi
 - The project status note `07_DOCUMENTATION/program_control/COMPUTE_STATUS.md` and
   `REPRODUCIBILITY_STATUS.md` record the run environment as "Python 3.13.14, numpy 2.3.5,
   scipy 1.17.1"; `10_Processed_Data/PRODUCTION_PROVENANCE.csv` records the environment of every
-  production run as `Python 3.11.2`. 3.13.14 is not a released CPython version, so the
-  provenance CSV is taken as authoritative for how the stored results were produced; no claim in
-  the paper depends on the distinction, and nothing here was changed to hide it.
+  production run as `Python 3.11.2`. The two records disagree; both are reproduced here as written.
+  `PROVENANCE.csv` names the interpreter each run actually executed under, so it is treated as
+  authoritative for how the stored numbers were produced, while the status note describes the
+  environment the work is targeted at (3.13.14 is a real CPython maintenance release, dated
+  2026-06-10). No claim in the paper depends on the distinction: the reproduction test in
+  `04_REPRODUCTION/REPRODUCTION_SUMMARY.json` regenerated every checked artifact byte-identically
+  under 3.11.2 in this sandbox, where 3.13 could not be installed (no package-manager access).
+  If the Methods section cites an interpreter, cite the one the deposited run used (3.11.2),
+  or re-run under 3.13.14 and regenerate the provenance CSV, which this archive rebuilds for you.
 - Third-party packages: the pinned set the project shipped with, verbatim from
   `01_PROGRAM/environment/requirements_pinned_from_handoff.txt` (also at
   `work/handoff/PILOT_HUANG_2025_01/requirements.txt`):
@@ -159,15 +165,15 @@ Production grid/case definitions actually used (`production_matrix.py`): `GRIDS 
 
 | gate | exit code | tail of output |
 |---|---|---|
-| audit_tex | 0 | ok    table count matches the .md (11 vs 11); RESULT: ALL CHECKS PASSED |
-| connection_audit | 1 | ; RESULT: 1 check(s) FAILED |
-| check_tex_commands_manuscript | 0 | ; RESULT: ALL COMMANDS DEFINED |
-| check_tex_commands_calculations | 0 | ; RESULT: ALL COMMANDS DEFINED |
+| audit_tex | 0 | ok    number 2.0213e-03 also present in the master .md; ok    table count matches the .md (11 vs 11) |
+| connection_audit | 1 | ok    GitHub reachable over the network; refs/heads/main = 18368e99196; ====================================================================== |
+| check_tex_commands_manuscript | 0 | RESULT: ALL COMMANDS DEFINED; PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.tex 0 command(s)  |
+| check_tex_commands_calculations | 0 | RESULT: ALL COMMANDS DEFINED; PAPER_PROJECT/13_Manuscript/FINAL_REVISED_CALCULATIONS.tex 0 command(s |
 | check_crossrefs_manuscript | 0 | equations  : 0 | tables: [] | figures: []; all cross-references resolve |
-| final_consistency | 0 | note  16 path(s) uncommitted at audit time (they are committed at the ; wrote final_consistency.json |
-| verify_code_freeze | 0 | entries  : 27   identical: 27   differing: 0   missing: 0; RESULT: FROZEN CODE CONFIRMED - every listed file is byte-identical |
-| verify_pdf_manuscript | 0 | ; RESULT: ALL CHECKS PASSED |
-| verify_pdf_companion | 0 | ; RESULT: ALL CHECKS PASSED |
+| final_consistency | 0 | note  2 path(s) uncommitted at audit time (they are committed at the e; wrote final_consistency.json |
+| verify_code_freeze | 0 | manifest : 06_Source_Code/CODE_FREEZE_submission_2026_10_03j.json  (la; entries  : 27   identical: 27   differing: 0   missing: 0 |
+| verify_pdf_manuscript | 0 | [4] equations     : 79 on pages [3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5; [5] figure/caption: PASS — 0 figure(s) without a caption on the same p |
+| verify_pdf_companion | 0 | [4] equations     : 28 on pages [2, 3, 3, 4, 4, 4, 4, 4, 5, 5, 6, 6, 7; [5] figure/caption: PASS — 0 figure(s) without a caption on the same p |
 
 Transcript with the full tails: `09_ARCHIVE_METADATA/VERIFICATION_GATES.txt`.
 

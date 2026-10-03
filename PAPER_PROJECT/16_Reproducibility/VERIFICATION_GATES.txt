@@ -5,36 +5,35 @@ reader can see what was actually checked, not only that something was checked.
 == audit_tex
    command: python tools/audit_tex.py
    exit code: 0
+   | RESULT: ALL CHECKS PASSED
    |   ok    number 28.7 also present in the master .md
    |   ok    number 29.9 also present in the master .md
    |   ok    number 1.078 also present in the master .md
    |   ok    number 2.0213e-03 also present in the master .md
    |   ok    table count matches the .md (11 vs 11)
-   | RESULT: ALL CHECKS PASSED
 
 == connection_audit
    command: python tools/connection_audit.py
    exit code: 1
+   |   FAIL  1 file(s) differ from HEAD: ['PAPER_PROJECT/00_Project_Control/make_reproducibility_archive.py']
+   | RESULT: 1 check(s) FAILED
+   |   info  branch is on GitHub at a8e7554ddba6, 45 commit(s) ahead of main — open a PR when ready
+   |   ok    upstream configured: origin/arena/01a10176-le
    |   info  commit identity: vipin-oss <271452828+vipin-oss@users.noreply.github.com>
    |   ok    GitHub reachable over the network; refs/heads/main = 18368e991967 as fetched
-   | 
    | ========================================================================
-   | 
-   | RESULT: 1 check(s) FAILED
 
 == check_tex_commands_manuscript
    command: python tools/check_tex_commands.py --tex PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.tex
    exit code: 0
-   | PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.tex 0 command(s) unknown, 0 spacing glue
-   | 
    | RESULT: ALL COMMANDS DEFINED
+   | PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.tex 0 command(s) unknown, 0 spacing glue
 
 == check_tex_commands_calculations
    command: python tools/check_tex_commands.py --tex PAPER_PROJECT/13_Manuscript/FINAL_REVISED_CALCULATIONS.tex
    exit code: 0
-   | PAPER_PROJECT/13_Manuscript/FINAL_REVISED_CALCULATIONS.tex 0 command(s) unknown, 0 spacing glue
-   | 
    | RESULT: ALL COMMANDS DEFINED
+   | PAPER_PROJECT/13_Manuscript/FINAL_REVISED_CALCULATIONS.tex 0 command(s) unknown, 0 spacing glue
 
 == check_crossrefs_manuscript
    command: python tools/check_crossrefs.py -i PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.tex
@@ -46,37 +45,39 @@ reader can see what was actually checked, not only that something was checked.
 == final_consistency
    command: python Phase_08_Final_Audit/verification/final_consistency.py
    exit code: 0
-   | 
+   |   ok    test-suite sentence in the manuscript matches TEST_RESULTS.json (28, 27, 0, 1)
+   |   ok    TEST_RESULTS.json status COMPLETE (28 cases)
+   | D) git state
    | SUMMARY: 0 check(s) failed, 3 note(s)
    |   note  7 of the 9 headline constants are also quoted in the companion; the rest belong to the results tables and appear in the manuscript alone by design
    |   note  6 author-input placeholders remain (identity, funding, repository, CRediT, competing interest)
-   |   note  16 path(s) uncommitted at audit time (they are committed at the end of the phase)
+   |   note  2 path(s) uncommitted at audit time (they are committed at the end of the phase)
    | wrote final_consistency.json
 
 == verify_code_freeze
    command: python PAPER_PROJECT/06_Source_Code/verify_code_freeze.py
    exit code: 0
+   | RESULT: FROZEN CODE CONFIRMED - every listed file is byte-identical
    | manifest : 06_Source_Code/CODE_FREEZE_submission_2026_10_03j.json  (label submission_2026_10_03j, dated 2026-10-03T17:02:41)
    | entries  : 27   identical: 27   differing: 0   missing: 0
-   | RESULT: FROZEN CODE CONFIRMED - every listed file is byte-identical
 
 == verify_pdf_manuscript
    command: python tools/verify_pdf.py
    exit code: 0
+   | RESULT: ALL CHECKS PASSED
+   | [1] text fidelity : PASS — 325 units (107 table rows), 0 missing, 0 out-of-order
    | [2] margins       : PASS — 0 block(s) outside the 2 cm text column
    | [3] figures       : 8 on pages [3, 20, 21, 23, 23, 24, 25, 26] (expected 8)
    | [4] equations     : 79 on pages [3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 10, 10, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 12, 13, 14, 14, 14, 14, 14, 14, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 16, 17, 17, 17, 18, 18, 18, 18, 19, 19, 19]
    | [5] figure/caption: PASS — 0 figure(s) without a caption on the same page
-   | 
-   | RESULT: ALL CHECKS PASSED
 
 == verify_pdf_companion
    command: python tools/verify_pdf.py -p PAPER_PROJECT/13_Manuscript/calculations_IJHMT.pdf -m PAPER_PROJECT/13_Manuscript/calculations_IJHMT.md -c
    exit code: 0
+   | RESULT: ALL CHECKS PASSED
+   | [1] text fidelity : PASS — 183 units (31 table rows), 0 missing, 0 out-of-order
    | [2] margins       : PASS — 0 block(s) outside the 2 cm text column
    | [3] figures       : 0 on pages [] (expected 0)
    | [4] equations     : 28 on pages [2, 3, 3, 4, 4, 4, 4, 4, 5, 5, 6, 6, 7, 7, 7, 7, 8, 8, 8, 9, 9, 9, 10, 10, 10, 11, 11, 11]
    | [5] figure/caption: PASS — 0 figure(s) without a caption on the same page
-   | 
-   | RESULT: ALL CHECKS PASSED
 

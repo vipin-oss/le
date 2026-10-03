@@ -3,6 +3,11 @@
 ## Repository history (this is real git history, not a reconstruction)
 
 ```
+2026-10-03 a8e7554 Phase 11: builder sidecar re-emit
+2026-10-03 e8719b6 Phase 11: packing restores all generated index files, re-emits the checksum sidecar last
+2026-10-03 e01caf8 Phase 11: packer-generated docs exempt from worktree gate; sidecar preserved after packing
+2026-10-03 53903e6 Phase 11: gate transcript keeps every failure line
+2026-10-03 89dd777 Phase 11: clean-room test transcript, git-free freeze verifier, deterministic packing
 2026-10-03 2877ac1 Phase 11: generated docs, manifest ordering, file/dir shadow check; clean-room fixes
 2026-10-03 031ba76 Phase 11: sidecar for the archive checksums; invariant content-level checksum
 2026-10-03 3017658 Phase 11: verified companion-check invocation, md_to_pdf step documented, content-level checksum
