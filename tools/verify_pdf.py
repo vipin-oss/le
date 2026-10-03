@@ -11,6 +11,10 @@ independent check that nothing was dropped or reordered on the way:
      equations must be present as images.
 
 Tolerated differences, by design:
+  * a unit that is present in the PDF but out of the strict reading order (a paragraph that
+    straddles a page break) is counted as 'out-of-order', not as missing — only text that is
+    nowhere in the PDF is a failure, and a MISSING report now says after how many characters
+    the PDF stops agreeing with the markdown, which is what makes such a line debuggable;
   * display equations are images (their LaTeX is not PDF text);
   * κ̄, σ̂, C̄, s̄ are drawn as composite glyph images, so the base letter is not text;
   * bullets are drawn as '•', table rules are drawn as lines;
@@ -107,6 +111,19 @@ def split_units(md):
     return units
 
 
+def prefix_match(needle, hay):
+    """length of the longest prefix of `needle` that occurs anywhere in `hay` (diagnosis of a
+    MISSING unit: monotone in the prefix length, so a binary search is enough)."""
+    lo, hi = 0, len(needle)
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        if needle[:mid] in hay:
+            lo = mid
+        else:
+            hi = mid - 1
+    return lo
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('-p', '--pdf', default=DEFAULT_PDF)
@@ -126,7 +143,7 @@ def main():
     # braces: the PDF keeps them when they are not part of a _{...} group, and norm() drops
     # them on the markdown side, so drop them here too
     hay = (re.sub(r'\s+', '', pdf_text).replace('\u2022', '').replace('|', '').replace('_', '').replace('{', '').replace('}', ''))
-    pos, bad, n_unit, n_rows = 0, 0, 0, 0
+    pos, bad, order, n_unit, n_rows = 0, 0, 0, 0, 0
     for kind, txt in split_units(md):
         n = norm(txt)
         if len(n) < 3:
@@ -135,12 +152,26 @@ def main():
         n_rows += (kind == 'tab')
         s, e = fuzzy_find(n, hay, pos)
         if s < 0:
+            # A unit that is simply out of order (a paragraph that straddles a page break, where
+            # the footer line number is tolerated but the block order on the page is not always the
+            # reading order) is not a dropped paragraph: look for it from the start of the stream.
+            s2, e2 = fuzzy_find(n, hay, 0)
+            if s2 >= 0:
+                order += 1
+                pos = max(pos, e2)
+                continue
+            k = prefix_match(n, hay)
+            i = hay.find(n[:k]) if k else -1
             bad += 1
             print('   MISSING (%s): %s' % (kind, n[:90]))
+            print('             PDF agrees on the first %d of %d chars, then:' % (k, len(n)))
+            print('             md  after : ...%s' % n[k:k + 64])
+            if i >= 0:
+                print('             pdf after : ...%s' % hay[i + k:i + k + 64])
         else:
             pos = e
-    print('\n[1] text fidelity : %s — %d units (%d table rows), %d missing'
-          % ('PASS' if bad == 0 else 'FAIL', n_unit, n_rows, bad))
+    print('\n[1] text fidelity : %s — %d units (%d table rows), %d missing, %d out-of-order'
+          % ('PASS' if bad == 0 else 'FAIL', n_unit, n_rows, bad, order))
 
     # ---------------------------------------------------------------- 2. margins
     lm = 2.0 / 2.54 * 72
@@ -148,8 +179,8 @@ def main():
     for i, p in enumerate(doc):
         rm = p.rect.width - lm
         for b in p.get_text('blocks'):
-            if b[4] and RUNNING_TITLE in b[4] and b[1] < 1.9 / 2.54 * 72:
-                continue                                    # running title
+            if b[4] and a.running_title in b[4] and b[1] < 1.9 / 2.54 * 72:
+                continue                                    # running title (the one actually passed in)
             if b[0] < lm - 1.5 or b[2] > rm + 1.5:
                 over.append((i + 1, [round(v, 1) for v in b[:4]]))
     print('[2] margins       : %s — %d block(s) outside the 2 cm text column'

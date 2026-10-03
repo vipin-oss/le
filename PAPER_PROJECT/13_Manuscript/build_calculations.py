@@ -863,6 +863,12 @@ def _frz(label):
 
 
 N_FRZ, N_FRZ_SAME, N_FRZ_DIFF = _frz('v2_gate')
+N_SUB, N_SUB_SAME, N_SUB_DIFF = _frz('submission_2026_10_03')
+N_PREV, N_PREV_SAME, N_PREV_DIFF = _frz('submission_2026_10_02')
+if N_SUB_DIFF:
+    raise SystemExit('CODE_FREEZE_submission_2026_10_03.json no longer describes the code '
+                     '(%d of %d entries differ); regenerate it before rebuilding this document'
+                     % (N_SUB_DIFF, N_SUB))
 para('Both freezes were taken on 2026-10-01. %d of the %d entries of the gate freeze are '
      'byte-identical in the code as submitted; %d entries (the pipeline driver, the test runner '
      'and four experiment and analysis scripts) have been edited since, so the digests recorded '
@@ -872,9 +878,12 @@ para('Both freezes were taken on 2026-10-01. %d of the %d entries of the gate fr
      'ANALYSIS_V2.json agrees within 10\u207b\u2079, the eight figures and five tables are '
      'byte-identical, and only wall-clock timings differ '
      '(PAPER_PROJECT/15_Audits/RERUN_COMPARISON.md). '
-     'CODE_FREEZE_submission_2026_10_02.json records the digests of the code as submitted; '
-     'regenerate it after any further edit to the code.'
-     % (N_FRZ_SAME, N_FRZ, N_FRZ_DIFF, D['numerics']['n_runs']))
+     'CODE_FREEZE_submission_2026_10_03.json (%d files, all %d byte-identical to the code as '
+     'submitted) is the refreshed manifest, the one to deposit with the data package; it supersedes '
+     'CODE_FREEZE_submission_2026_10_02.json, of whose %d entries %d (the two manuscript builders) '
+     'had gone stale when they were edited during the restructure of 2026-10-02. The manifest is '
+     'regenerated after any further edit to the code, and both builders abort if it is not current.'
+     % (N_FRZ_SAME, N_FRZ, N_FRZ_DIFF, D['numerics']['n_runs'], N_SUB, N_SUB_SAME, N_PREV, N_PREV_DIFF))
 bullets([
     'python3 PAPER_PROJECT/13_Manuscript/build_calculations.py — rebuilds this '
     'document from the frozen source and the processed data;',

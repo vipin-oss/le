@@ -14,6 +14,46 @@ mechanism ablations*
 
 ---
 
+## Provenance pass of 2026-10-03 (branch `arena/01a10176-le`) — the code freeze made current again
+
+An audit of how the paper and the git repository `vipin-oss/le` are connected
+(`docs/GIT_CONNECTION_AUDIT_2026-10-03.md`; repeatable with `python3 tools/connection_audit.py`) found one
+provenance defect and repaired it. No result, figure, table, parameter, limitation or label changed;
+no simulation was run.
+
+* **What was wrong.** `CODE_FREEZE_submission_2026_10_02.json` was written at 2026-10-02T07:04:07, but
+  `build_manuscript.py` and `build_calculations.py` were edited later the same day (§0.5 above), so 2 of
+  its 27 digests no longer described the code. Every other entry — all eight solver modules, every
+  `08_Experiments` driver and every `07_Tests` runner — matched byte-for-byte, and
+  `CODE_FREEZE_v2_gate.json` matched 9 of 15 exactly as §9.1 states, so the numbers in the paper are
+  unaffected; only the deposit record was stale.
+* **What was done.** `CODE_FREEZE_submission_2026_10_03.json` was generated (27/27 entries identical to
+  the code in the repository; 3,047 B; md5 `58d7ec343b2d8d50dc4a1d6a89b3f992`; sha256[:16]
+  `dbc39e01f9cb4d40`) in the same environment as the 2026-10-02 record (Python 3.11.2, numpy 2.4.6,
+  scipy 1.17.1, matplotlib 3.11.2). The 2026-10-02 file is kept unchanged as history.
+* **Manuscript text.** §9.1 and companion §11 now name the 2026-10-03 manifest as the one to deposit and
+  say what superseded it. That is the whole text change: one paragraph per document.
+* **Guard.** Both builders recompute the match between the deposited manifest and the code at build time
+  and abort if it is not current (verified by corrupting one entry: `exit 1`, message names the
+  regeneration command). The manifest therefore cannot silently go stale again before a rebuild.
+* **Tooling.** `tools/verify_pdf.py` honours `--running-title` in its margin check and reports how far a
+  `MISSING` unit matches before diverging, counting out-of-order units separately; `tools/connection_audit.py`
+  is new (git-side integrity: worktree vs HEAD vs `origin/main` by blob SHA, `le.zip` coverage, handoff
+  manifest, manuscript references, remote reachability).
+* **Deliverables as they now stand** (supersede the §0.6 sizes): `manuscript_IJHMT.md` 99,288 B,
+  `manuscript_IJHMT.docx` 2,685,766 B, `FINAL_REVISED_MANUSCRIPT.tex` 102,293 B,
+  `FINAL_REVISED_MANUSCRIPT.pdf` / `manuscript_IJHMT.pdf` 2,347,478 B (33 pages — the “32-page” figure
+  in §0.1 and §0.6 was a record error; the PDF has been 33 pages since the 2026-10-02 build),
+  `calculations_IJHMT.md` 40,926 B, `FINAL_REVISED_CALCULATIONS.tex` 48,537 B,
+  `FINAL_REVISED_CALCULATIONS.pdf` / `calculations_IJHMT.pdf` 517,444 B (13 pages).
+  Counts are unchanged: 9 sections, 41 subsections, 84 equations, 8 figures, 11 tables, 54 references.
+* **Gates re-run after the rebuild, all exit 0:** `audit_tex.py` 70 checks, `audit_tex.py -c` on the
+  companion 54 checks, `test_md_to_tex.py` 26 tests, `check_tex_commands.py` both files, `check_crossrefs.py`,
+  `renumber_crossrefs.py` 12 edits in place, `verify_pdf.py` (317 units, 0 missing, 0 out-of-order) and the
+  companion run (183 units, 0 missing).
+
+---
+
 ## 0. Restructure to the requested format, and the calculation companion (2026-10-02)
 
 ### 0.1 What the format asked for, and what was delivered
@@ -25,7 +65,7 @@ mechanism ablations*
 | 8 figures | **8** figures (unchanged) |
 | tables | **11** tables (was 8) |
 | ~54 references | **54** Crossref-verified references, all cited |
-| ~15 printed pages | 32-page single-column preprint (≈ 15–18 pp two-column) |
+| ~15 printed pages | 33-page single-column preprint (≈ 15–18 pp two-column) |
 | **a separate calculation file** | **`FINAL_REVISED_CALCULATIONS.tex`** — 11 sections, 37 subsections, 29 equations, 9 tables, ~4.9k words |
 
 ### 0.2 Section structure
@@ -89,7 +129,7 @@ recomputed for this: the re-run predates the restructure and is unchanged by it.
 | `00_Project_Control/make_packages.py` | the submission package now also ships the `.tex`, `.bib` and `.pdf` deliverables |
 | `06_Source_Code/make_code_freeze.py` | the frozen-file list now also covers the three manuscript scripts added by the restructure (`ms_derivation.py`, `ms_numerics.py`, `build_calculations.py`), so the manifest describes everything that generates the submission text |
 
-### 0.6 Deliverables as they now stand
+### 0.6 Deliverables as they now stand *(sizes superseded by the 2026-10-03 pass at the top of this file)*
 
 | File | What it is | Size |
 |---|---|---|

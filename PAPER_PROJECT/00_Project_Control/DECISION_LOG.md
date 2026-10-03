@@ -99,3 +99,16 @@ The handoff's decisions D001–D018 stay in `/home/user/work/handoff/DECISION_LO
 - Working target IJHMT (handoff D017; user-owned); abstract 231 words (limit 250, official guide); highlights ≤ 85 characters; AI-use declaration is a TEMPLATE for the authors; authors/CRediT/funding/conflicts left as placeholders; no repository DOI invented.
 - Statements in the handoff manuscript about expansion consistency, MFP, K eigenvalues, reference metadata were corrected (CORRECTIONS_LOG).
 - Cumulative packages PACKAGE_PHASE_07…13 are reconstructed at the end of the session (the per-phase snapshots were not taken when the phases ended) — stated in each MANIFEST.
+
+## P13-D002 (2026-10-03) — deposited code-freeze manifest regenerated, nothing else in the freeze touched
+- Previous: `CODE_FREEZE_submission_2026_10_02.json` was recorded as "the one to deposit with the data
+  package", and the rule in §9.1 was "regenerate it after any further edit to the code".
+- New: the 2026-10-03 manifest is the deposited one; the 2026-10-02 file is left byte-unchanged as history
+  (its size and md5 are quoted in `13_Manuscript/FINAL_QA_REPORT.md`), and both manuscript builders now
+  abort if the deposited manifest does not describe the code, so the record cannot silently go stale again.
+- Reason: two entries of the 2026-10-02 manifest (the two manuscript builders, edited after the freeze during
+  the restructure) no longer described the code. Regenerating *in place* would have falsified a record that is
+  cited elsewhere; adding a new manifest keeps both statements true.
+- Affected equations / code / results: none. Solver, tests, experiments, data, figures and tables untouched;
+  the only manuscript text change is the provenance paragraph in §9.1 (and §11 of the companion).
+  Revalidation: not applicable — no number changed.

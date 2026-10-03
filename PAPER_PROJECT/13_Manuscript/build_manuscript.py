@@ -77,7 +77,11 @@ def _sha16(path):
 
 FREEZE_GATE = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_gate.json'))
 FREEZE_BLOCKF = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_blockF.json'))
-FREEZE_SUB = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_submission_2026_10_02.json'))
+# The manifest to deposit, and the one it supersedes.  Regenerate the deposited one with
+# `python3 PAPER_PROJECT/06_Source_Code/make_code_freeze.py submission_2026_10_03` after ANY
+# edit to a frozen file, otherwise Section 9.1 would quote digests that no longer describe the code.
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03', 'submission_2026_10_02'
+FREEZE_SUB = _sha16(os.path.join(ROOT, '06_Source_Code', f'CODE_FREEZE_{SUB_FREEZE}.json'))
 
 
 def _freeze_match(label):
@@ -103,8 +107,13 @@ def _freeze_match(label):
 
 
 N_FRZ, N_FRZ_SAME, N_FRZ_DIFF = _freeze_match('v2_gate')
-N_SUB = len(__import__('json').load(open(os.path.join(ROOT, '06_Source_Code',
-                                                      'CODE_FREEZE_submission_2026_10_02.json')))['files'])
+N_SUB, N_SUB_SAME, N_SUB_DIFF = _freeze_match(SUB_FREEZE)
+N_PREV, N_PREV_SAME, N_PREV_DIFF = _freeze_match(PREV_FREEZE)
+if N_SUB_DIFF:
+    raise SystemExit(f"CODE_FREEZE_{SUB_FREEZE}.json no longer describes the code "
+                     f"({N_SUB_DIFF} of {N_SUB} entries differ); regenerate it with "
+                     f"python3 {os.path.join(ROOT, '06_Source_Code', 'make_code_freeze.py')} "
+                     f"{SUB_FREEZE} before rebuilding the manuscript")
 MODEL_SHA = _sha16(os.path.join(ROOT, '06_Source_Code', 'src', 'cg_model.py'))
 N_PROD = len(glob.glob(os.path.join(ROOT, '09_Raw_Data', 'production', '*.npz')))
 N_RAW = sum(len(glob.glob(os.path.join(ROOT, d, '**', '*'), recursive=True)) - len(glob.glob(os.path.join(ROOT, d, '**', '*' + os.sep), recursive=True)) for d in ('09_Raw_Data',))
@@ -284,10 +293,14 @@ blocks += [('h1', '9. Code, data and reproducibility'),
                  f"archived results (`15_Audits/RERUN_COMPARISON.md`): all {N_PROD} production runs agree with the "
                  f"archived quantities of interest to zero relative difference, every leaf of `ANALYSIS_V2.json` "
                  f"agrees within 10⁻⁹, and the eight figures and five tables are byte-identical; only wall-clock "
-                 f"timings differ. A refreshed manifest, `CODE_FREEZE_submission_2026_10_02.json` "
-                 f"({FREEZE_SUB}, {N_SUB} files), records the digests of every solver, driver and "
-                 f"manuscript-generation script as submitted, is the one to deposit with the data package, and must "
-                 f"be regenerated after any further edit to the code."),
+                 f"timings differ. A refreshed manifest, `CODE_FREEZE_{SUB_FREEZE}.json` "
+                 f"({FREEZE_SUB}, {N_SUB} files, all {N_SUB_SAME} byte-identical to the code as submitted) records "
+                 f"the digests of every solver, driver and manuscript-generation script; it is the one to deposit "
+                 f"with the data package and supersedes `CODE_FREEZE_{PREV_FREEZE}.json`, of whose {N_PREV} entries "
+                 f"{N_PREV_DIFF} (the two manuscript builders, `build_manuscript.py` and `build_calculations.py`) "
+                 f"had gone stale when those scripts were edited during the restructure of 2026-10-02. The "
+                 f"manifest must be regenerated after any further edit to the code, and the build aborts if it is "
+                 f"not current."),
            ('h2', '9.2 Data package'),
            ('p', f"The package contains the frozen source (06_Source_Code), the test suite and its machine-readable "
                  f"results (07_Tests), the experiment drivers (08_Experiments), the per-run raw outputs "

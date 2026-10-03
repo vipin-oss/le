@@ -19,15 +19,16 @@ and mechanism ablations*
 
 | File | Size | md5 | Notes |
 |---|---|---|---|
-| `FINAL_REVISED_MANUSCRIPT.tex` | 101,960 B | `d230ab898ebaebd29b09ad657aeea02c` | elsarticle source, generated from `manuscript_IJHMT.md` |
+| `FINAL_REVISED_MANUSCRIPT.tex` | 102,293 B | `8fd22b993ab28ad778d731dc90b2ebfa` | elsarticle source, generated from `manuscript_IJHMT.md` (size/md5 are of the 2026-10-03 rebuild, see §0.5) |
 | `FINAL_REVISED_REFERENCES.bib` | 20,377 B | `7f75d8ce2ff039243d9fb33c9742f7dd` | 54 entries, Crossref-verified, 0 unparsed |
-| `FINAL_REVISED_MANUSCRIPT.pdf` | 32 pp | (varies: PDF metadata carries a timestamp) | preprint PDF of the manuscript |
-| `FINAL_REVISED_CALCULATIONS.tex` | 48,209 B | `006b0420d67b1adcc66313a1b588aa5b` | companion calculation document |
+| `FINAL_REVISED_MANUSCRIPT.pdf` | 33 pp | (varies: PDF metadata carries a timestamp) | preprint PDF of the manuscript (33 pages numbered 1–33; the row said 32 pp until 2026-10-03) |
+| `FINAL_REVISED_CALCULATIONS.tex` | 48,537 B | `416f1036100d457505f8583919a99c3f` | companion calculation document |
 | `FINAL_REVISED_CALCULATIONS.pdf` | 13 pp | (varies) | preprint PDF of the companion |
-| `calculations_IJHMT.md` | 40,603 B | `4f32348140efc1d66d8a1579416724d7` | source of truth for the companion |
-| `manuscript_IJHMT.md` | 98,956 B | `011c3afe366ec11cda0cc9f43af479b5` | single source of truth |
-| `manuscript_IJHMT.docx` | 2,685,645 B | `bdb34a926d1f8138ba0d1d4de5aa1394` |
-| `06_Source_Code/CODE_FREEZE_submission_2026_10_02.json` | 3,047 B | `0cd36ab36eb3446935986c45fc41d62e` | refreshed code freeze: SHA-256 of all 27 solver, driver and manuscript scripts as submitted | regenerated from the same build |
+| `calculations_IJHMT.md` | 40,926 B | `683d0f01b5452aa4a8526f82125a499b` | source of truth for the companion |
+| `manuscript_IJHMT.md` | 99,288 B | `f93775b9e4387f56f8225d7385be30c7` | single source of truth |
+| `manuscript_IJHMT.docx` | 2,685,766 B | `7d4bc417c52a89960db449842883c6a9` |
+| `06_Source_Code/CODE_FREEZE_submission_2026_10_02.json` | 3,047 B | `0cd36ab36eb3446935986c45fc41d62e` | code freeze as refreshed on 2026-10-02: **25 of its 27 entries** still described the code; the two manuscript builders were edited later that day | superseded, kept for history |
+| `06_Source_Code/CODE_FREEZE_submission_2026_10_03.json` | 3,047 B | `58d7ec343b2d8d50dc4a1d6a89b3f992` | **the manifest to deposit** — regenerated 2026-10-03, 27/27 entries byte-identical to the code in this repository (sha256[:16] `dbc39e01f9cb4d40`, which is the digest quoted in §9.1) | built from the same state as the .tex/.pdf above |
 
 Counts: manuscript **9 sections, 41 subsections, 84 numbered equations, 8 figures, 11 tables,
 54 references**, abstract **248 words** (limit 250), **5 highlights** of 69–78 characters
@@ -117,6 +118,43 @@ and mechanism ablations*
 **Scope of this revision:** publication readiness — editorial completeness, labelling, cross-
 references, nomenclature, submission format. **Not** a re-run of the science: no number, result,
 parameter, boundary condition or limitation was changed (see `CHANGELOG.md` §4).
+
+---
+
+### 0.5 Provenance pass of 2026-10-03 — code-freeze repair (branch `arena/01a10176-le`)
+
+An audit of the connection between the paper and the git repository (`docs/GIT_CONNECTION_AUDIT_2026-10-03.md`,
+`python3 tools/connection_audit.py`) recomputed every code-freeze manifest against the committed files:
+
+* `CODE_FREEZE_v2_gate.json` — 9 of 15 byte-identical, and the 6 that differ are exactly the files §9.1
+  of the manuscript names: **the claim in the paper checks out**;
+* `CODE_FREEZE_submission_2026_10_02.json` — 25 of 27, with `13_Manuscript/build_manuscript.py` and
+  `13_Manuscript/build_calculations.py` stale: both were edited *after* the manifest was written
+  (07:04 on 2026-10-02) in the same restructure pass. No solver, experiment or test file was affected,
+  so **no number, figure or result in the paper changed**; only the provenance record was out of date.
+
+What this pass did:
+
+1. Regenerated the deposited manifest as `CODE_FREEZE_submission_2026_10_03.json` (27/27 matching, same
+   environment as the 2026-10-02 record: Python 3.11.2, numpy 2.4.6, scipy 1.17.1, matplotlib 3.11.2).
+   The 2026-10-02 file is kept untouched as history.
+2. Pointed §9.1 of the manuscript and §11 of the companion at the new manifest and stated plainly that it
+   supersedes the old one and why. This is the only text change: the two `.md` sources differ from the
+   committed versions by **one paragraph each**, and the rebuilt `.tex` differ by two lines.
+3. Made the drift impossible to repeat: `build_manuscript.py` and `build_calculations.py` now abort if the
+   deposited manifest does not describe the code as it stands (guard tested by corrupting one entry:
+   exit 1, with the regeneration command in the message).
+4. `tools/verify_pdf.py`: the margin check now honours `--running-title` instead of the hard-coded
+   manuscript title, and a `MISSING` report says after how many characters the PDF stops agreeing with the
+   markdown (out-of-order units are counted separately, not as missing).
+5. Rebuilt `.md`, `.docx`, both `.tex` and all four PDFs, and re-ran every gate: static audits (70 / 54),
+   26 conversion tests, 12 structural-guard edits, cross-references, and both PDF fidelity checks
+   (317 units / 0 missing / 0 out-of-order; 183 units / 0 missing). Page counts unchanged (33 and 13);
+   PDF bytes differ only in the embedded timestamp, as before. The two PDF names of each document are
+   byte-identical pairs, and the row "32 pp" in §0.1 was corrected to 33 pp — the PDF has been 33 pages
+   (footer numbers 1–33) since the 2026-10-02 build.
+
+Nothing in `07_Tests`, `08_Experiments`, `09_Raw_Data`–`12_Tables` was touched; no simulation was run.
 
 ---
 

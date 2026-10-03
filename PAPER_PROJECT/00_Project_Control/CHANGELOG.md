@@ -36,3 +36,20 @@
   output-identical). No equation, BC, IC, parameter or solver change.
 - Not re-run: `09_Raw_Data/convergence_gamma3p5/` (partial γ = 3.5 study — no regenerator script
   exists in the package); pilot re-run (reference data absent, as before).
+
+## 2026-10-03 — provenance pass (repository `vipin-oss/le`, branch `arena/01a10176-le`)
+- Audited the git connection of the paper to this repository (`docs/GIT_CONNECTION_AUDIT_2026-10-03.md`,
+  `python3 tools/connection_audit.py`): worktree, HEAD and `origin/main` agree at blob level for all
+  tracked files, `le.zip` is fully accounted for (committed or explicitly ignored), the read-only handoff
+  baseline verifies 303/303 SHA-256, and the manuscript/companion PDF + .tex pass every static gate.
+- Recomputed all four code-freeze manifests against the committed code: `v2_gate` 9/15 (exactly the six
+  files the manuscript names — the paper's statement is confirmed), `v2_blockF` and `v2_final` historical,
+  `submission_2026_10_02` 25/27 with the two manuscript builders stale.
+- New: `06_Source_Code/CODE_FREEZE_submission_2026_10_03.json` (27/27 matching) — the manifest to deposit.
+  The 2026-10-02 manifest is unchanged and kept as history.
+- `13_Manuscript`: §9.1 and companion §11 now cite the 2026-10-03 manifest; both builders abort if the
+  deposited manifest does not describe the code; `.md/.docx/.tex/.pdf` rebuilt (one paragraph changed per
+  document, page counts unchanged, PDF bytes differ only in the embedded timestamp). No scientific content,
+  no data and no source code under `06_Source_Code/src/` was modified.
+- Tooling: `tools/verify_pdf.py` (running-title in the margin check, divergence report, out-of-order
+  units counted separately) and `tools/connection_audit.py` (new).
