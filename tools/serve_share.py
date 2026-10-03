@@ -33,7 +33,6 @@ class RangeHandler(SimpleHTTPRequestHandler):
             self.send_header('Content-Type', self.guess_type(path))
             self.send_header('Content-Length', str(length))
             self.send_header('Content-Range', f'bytes {start}-{end}/{os.path.getsize(path)}')
-            self.send_header('Accept-Ranges', 'bytes')
             self.send_header('Last-Modified', self.date_time_string(os.stat(path).st_mtime))
             self.end_headers()
             if length < 1024 * 1024:
