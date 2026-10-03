@@ -2,48 +2,49 @@ DEPOSIT PACKAGE - CHECKSUM OF RECORD
 =====================================
 
 Object
-  PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip        (gitignored: PAPER_PROJECT/packages/ is
-                                                            excluded by the project's convention, so
-                                                            the archive is built on demand, not stored)
-  43645275 bytes | sha256 
+  PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip   (gitignored by the project's own convention, so
+  the archive is built on demand from the repository rather than stored in it)
 
-Reproducible - not a snapshot in time
-  The archive is a pure function of the tracked tree: entries and MANIFEST.json are written with a
-  fixed timestamp, an explicit compression type and fixed permissions, and the manifest records
-  generated_from_commit instead of a build clock. So anyone who checks out the commit below and runs
-  the command below gets exactly the sha256 above - the property a data-respository deposit needs,
-  because the file the curator hashes must be the file the deposit record names.
+  43645185 bytes
+  sha256  de9cfb1a4369c444ca7e6b11690b6b43b3f0530b527dc911c0f5c88210f1061e
 
-Built from
-  commit   03921eed7b77a4ba1d2ca96f4daf1bc28533ad40  (Phase 10, branch arena/01a10176-le)
-  code     PAPER_PROJECT/00_Project_Control/make_packages.py
-  contents 603 files: 00_Project_Control .. 14_Documentation plus 15_Audits, all raw per-run .npz /
-           .json outputs, both convergence families, the production runs, every figure and table
-           rendition, both manuscript source trees, the .bib, the preview PDFs, the supplementary
-           workbook, and 13_Manuscript/figures/ (the eight vector PDFs the .tex files load)
-  manifest MANIFEST.json at the archive root: SHA-256 of all 603 files plus the commit above -
-           re-verified inside this build (603/603, no mismatch, CRC clean)
-  built    2026-10-03 (build clock lives here, in the sidecar, not in the archive)
+How to reproduce it (this is the point of the numbers above)
+  git checkout <any commit carrying this tree>
+  python3 PAPER_PROJECT/00_Project_Control/make_packages.py final        # stdlib only
+  sha256sum PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip             # = the value above
 
-Rebuild it yourself
-  git checkout 03921eed7b77a4ba1d2ca96f4daf1bc28533ad40
-  python3 PAPER_PROJECT/00_Project_Control/make_packages.py final
-  sha256sum PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip   # = the value above
-  # needs only the standard library; the manuscript builders additionally need PyMuPDF/python-docx/
-  # openpyxl, but the packaging step does not, so the deposit object is reproducible without them
+  The builder is deterministic by construction: every entry and MANIFEST.json is written through
+  ZipInfo with a fixed timestamp, an explicit compression type and fixed permissions, and nothing
+  in the archive records a build clock. So the bytes are a pure function of the tracked files -
+  verified here by rebuilding across an mtime churn of the whole manuscript and analysis tree
+  (same sha256 de9cfb1a4369c444...), and verified inside the archive by re-hashing all 603 entries against
+  its own manifest (0 mismatches, no bad file).
+  A previous revision embedded git HEAD in the manifest; that made the hash depend on which commit
+  you happened to be standing on even when the packaged bytes were identical, which is why it was
+  removed. Provenance belongs in this sidecar, next to the archive, not inside it.
+
+Contents (603 files)
+  00_Project_Control .. 14_Documentation plus 15_Audits; all raw per-run .npz / .json outputs; both
+  convergence families and the production runs; every figure and table rendition; the frozen code
+  (FREEZE_PY manifest inside 08_Experiments, sha256 of the builder 0f3c5150be64fd34...); both manuscript
+  source trees, the .bib, the preview PDFs, the supplementary workbook, and 13_Manuscript/figures/
+  (the eight vector PDFs the .tex files load). Build date: 2026-10-03.
 
 What to deposit where
-  Editorial Manager (EM-ID):   Phase_10_Submission_Package/IJHMT_submission_bundle.zip   (committed)
-                               sha256   (committed next to it, 2.62 MB)
-                               manuscript + calcs .tex, FINAL_REVISED_REFERENCES.bib, figures/,
-                               highlights.txt, SUPPLEMENTARY_TABLES.xlsx, PDF previews, cover letter,
-                               checklist - nothing an editor has no business seeing
-  Data / code repository:      this archive - the object a reviewer can re-run, and what a repository
-                               (Zenodo, via the Figshare link in the Data availability statement)
- mints a DOI for
+  Editorial Manager (EM-ID)   Phase_10_Submission_Package/IJHMT_submission_bundle.zip  (committed file)
+                              sha256 0fa61fd9c6fec4c36bba2d1a5a9e0899cf669e935d98d01c78f99c9d4314363a
+                              manuscript + calculations .tex, FINAL_REVISED_REFERENCES.bib, figures/,
+                              highlights.txt, SUPPLEMENTARY_TABLES.xlsx, PDF previews, cover letter,
+                              checklist - nothing an editor has no business seeing
+  Data / code repository      this archive - the object a reviewer can re-run and the one a repository
+  (Zenodo, through the         mints a DOI for, matching the Data availability statement
+   Figshare link in the
+   Data availability
+   statement)
 
-Earlier recorded values, superseded
-  9fc543900dfa45bc...  built from commit e52fec42 with per-entry mtimes and a live manifest clock,
-  5b0ee097f98d0f43...  built from the commit before the downloadable bundle was added
-  Both are legitimate builds of the same content but are not reproducible, which is why the builder was
-  fixed; the value at the top of this file is the one to cite.
+Superseded values, with the reason
+  9fc543900dfa45bc...  built from commit e52fec42 (per-entry mtimes + live manifest clock still in place)
+  bfeae56992d81bd0...  first deterministic build, but with the commit sha embedded - depended on HEAD
+  5b0ee097f98d0f43...  built before the downloadable submission bundle was added to the tree
+  None of them is wrong; they are simply not reproducible from the tree alone, which the value at the
+  top of this file is.
