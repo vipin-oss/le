@@ -109,7 +109,7 @@
    "target_phase": 4,
    "status": "closed",
    "closed_in_phase": "Phase 2",
-   "closure_evidence": "re-scoped finding (see REPORT.md sec. 4: the number was consistent, the subset was unstated); abstract now reads \"its peak by at most 1.4 % (0.5 % among dynamic runs)\"; Table 10 keeps per-row values"
+   "closure_evidence": "re-scoped finding (see REPORT.md sec. 4 and the corrigendum: the number was consistent, the subset was unstated); abstract now reads \"the peak (dynamic and quasi-static variants) by at most 1.4 % (1.0 % among dynamic runs)\"; Table 10 keeps per-row values"
   },
   {
    "id": "A10",

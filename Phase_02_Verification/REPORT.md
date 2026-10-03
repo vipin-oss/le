@@ -54,13 +54,21 @@ is gone. §5.2 no longer reads 1.37 as both a shape factor and an orientation fa
 * **A9 was mis-stated in its evidence, not in its conclusion.** The 1.4 % figure is *not* "the quasi-static extreme
   presented as the general bound": the generator computes `max |peak_shift|` over the dynamic **and** quasi-static
   rows, and the abstract said "the peak" for the memory study as a whole. The fix that was actually needed (and is
-  now made) is to name the subset: the dynamic runs alone give 0.5 %.
+  now made) is to name the subset: the dynamic runs alone give 1.0 % (worst row `B_CV_tau20_a5`, 0.958 %).
 * **A2's `n/a` was a symptom of a dead link, not a typo:** `ms_results.py` looked up a test case named
   `V0b_metric_consistency_production_grids` that `run_tests.py` never emitted, so the value was permanently None.
   The row is now built from the fields the suite really records, and the guard prevents any future dead lookup
   from shipping.
 * **A13 stays open** (reference additions) — Crossref API unreachable from this sandbox; deferred to Phase 5 with
   web-search verification.
+
+### Corrigendum added after re-checking the data (2026-10-03, end of Phase 2)
+The Phase 1 audit recorded the dynamic-only peak-shift bound as **0.53 %**; the correct value from
+`ANALYSIS_V2.json → T2_H3.dynamic` is **0.958 %** (row `B_CV_tau20_a5`, a = 5 nm, τ = 20 ps) — 0.529 % is the
+*a = 10 nm* row. The manuscript text generated in this phase says 1.0 %, which is right; the 0.5 % figure that
+appeared in the first draft of this report was wrong and is corrected here. Nothing else in the finding changed:
+the abstract's 1.4 % is the maximum over dynamic + quasi-static rows (1.427 %, row `B_CV_tau20_a5_QS`), and both
+numbers are now stated with their subset.
 
 ## 5. Left for later phases (do not repeat this phase)
 
