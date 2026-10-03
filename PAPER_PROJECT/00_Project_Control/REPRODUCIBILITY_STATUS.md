@@ -1,3 +1,9 @@
+> **Updated 2026-10-03 (submission programme, Phase 8).** The manifest to deposit is
+> `06_Source_Code/CODE_FREEZE_submission_2026_10_03j.json` (27 files); the
+> `CODE_FREEZE_submission_2026_10_03.json` named below is kept as history, as are the
+> 2026-10-02 and 10_03a-i freezes. Every entry of the current manifest was re-hashed and
+> matches the code as committed (`Phase_08_Final_Audit/verification/final_consistency.py`).
+
 # REPRODUCIBILITY_STATUS (2026-10-01)
 - Source: `06_Source_Code/` (hashes in `CODE_FREEZE_v2_gate.json`, which is historical; the manifest
   describing the code as committed is `CODE_FREEZE_submission_2026_10_03.json`, 27/27 byte-identical — see

@@ -51,18 +51,22 @@ funding. Do not leave it blank.
 
 ### A5. Data availability — deposit and DOI
 The text states that the code, verification suite, raw outputs, analysis scripts and the
-production matrix are in the project data package (SHA-256 code freeze
-`CODE_FREEZE_v2_gate.json`), **to be deposited at `[PUBLIC REPOSITORY/DOI TO BE INSERTED]`.**
-The authors must deposit the package in a public repository under a licence and replace the
-placeholder with the repository URL and DOI.
+production matrix are in the project data package, whose contents are fixed by the SHA-256 code
+freeze `06_Source_Code/CODE_FREEZE_submission_2026_10_03j.json` (27 files) — the archived
+`CODE_FREEZE_v2_gate.json` is named alongside it as history — **to be deposited at
+`[PUBLIC REPOSITORY/DOI TO BE INSERTED]`.** Deposit the package under a licence and replace the
+placeholder with the repository URL and DOI. `tools/connection_audit.py` re-derives the manifest
+from the repository, so the placeholder is the only thing missing.
 
 ### A6. Declaration on generative AI and AI-assisted technologies
-A **template** is included above the references, as Elsevier requires. It discloses the use of an
-AI agent (Arena.ai Agent Mode) for reviewing and extending the numerical code and the verification
-suite, for running and analysing the simulations, and for drafting the text and figures — and it
-states that the authors reviewed and edited the content and take full responsibility for it.
-**The authors must read it, edit it so that it matches what actually happened, and confirm it.**
-Do not submit a disclosure you have not checked.
+The declaration above the references now follows Elsevier's own wording and covers only the
+**writing** process (drafting and revising the text and captions, and checking internal
+consistency), with the statement that the authors reviewed and edited the content and take full
+responsibility. The **research**-process use — reviewing and extending the numerical code and its
+verification suite, and running the simulations — is disclosed in the numerical-methods section,
+as the policy directs; the two are deliberately kept apart. The template marker has been removed,
+so the text reads as final: **the authors must still read it, confirm that it matches what
+happened, and edit anything that does not.** Do not submit a disclosure you have not checked.
 
 ### A7. Compile the LaTeX source
 No TeX engine exists in the environment where this revision was produced, so
@@ -86,13 +90,20 @@ regenerate them as TIFF/EPS/PDF from the scripts in the data package.
 
 ### A9. Supplementary material
 Table 2 is captioned “Summary of the verification suite (full table: supplementary material)”.
-The **full** verification table must be supplied as supplementary material, together with the
-extended data (per-run npz/json outputs), or the caption must be changed.
+The full tables are supplied: `13_Manuscript/SUPPLEMENTARY_TABLES.xlsx` carries eight sheets
+(README, Verification, PhiSweep_ellipse, Convergence_6phi, D_lambda_eps, Ablations, Parameters,
+Production_runs), built by `13_Manuscript/build_supplement.py` from the same analysis outputs as
+the manuscript, so the caption is satisfied. Supply the workbook as the supplementary file and
+check that the journal's submission system preserves its sheet order; the per-run npz/json
+outputs belong to the data package, not to the supplementary file.
 
 ### A10. Cover letter
-Not part of this revision. A draft exists at `13_Manuscript/cover_letter.md` and must be updated
-by the authors (it should name the editor if one is known, state the novelty claim honestly as
-“verified continuum study, not experimentally validated”, and list suggested reviewers).
+A complete draft is at `13_Manuscript/cover_letter.md`, refreshed on 2026-10-03 so that its
+figures match the manuscript (55 numbered references, the 28.7% modulation, the 2026-10-03j
+freeze, the 28-case suite, the Cattaneo/Vernotte citation note). It already states the position
+honestly — a verified continuum study, not experimentally validated — and carries bracketed
+fields the authors must complete: the editor's name if known, suggested reviewers, the
+corresponding author, and confirmation of the declarations. Nothing has been sent.
 
 ---
 

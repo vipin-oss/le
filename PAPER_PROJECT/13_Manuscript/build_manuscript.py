@@ -90,7 +90,7 @@ FREEZE_BLOCKF = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_bloc
 # The manifest to deposit, and the one it supersedes.  Regenerate the deposited one with
 # `python3 PAPER_PROJECT/06_Source_Code/make_code_freeze.py submission_2026_10_03` after ANY
 # edit to a frozen file, otherwise Section 9.1 would quote digests that no longer describe the code.
-SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03i', 'submission_2026_10_03h'
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03j', 'submission_2026_10_03i'
 FREEZE_SUB = _sha16(os.path.join(ROOT, '06_Source_Code', f'CODE_FREEZE_{SUB_FREEZE}.json'))
 
 
@@ -321,8 +321,8 @@ blocks += [('h1', '9. Code, data and reproducibility'),
                  f"`10_Processed_Data/PRODUCTION_PROVENANCE.csv`, so each number in this paper can be traced to the run "
                  f"that produced it and to the code state that produced the run."),
            ('p', f"**Code state.** The two archived manifests date from 2026-10-01; since they were "
-                 f"taken, {N_FRZ_DIFF} of the {N_FRZ} entries of `CODE_FREEZE_v2_gate.json` ({FRZ_DIFF_NAMES}) have been "
-                 f"edited, so the "
+                 f"taken, {N_FRZ_SAME} of the {N_FRZ} entries of `CODE_FREEZE_v2_gate.json` are byte-identical and the "
+                 f"remaining {N_FRZ_DIFF} ({FRZ_DIFF_NAMES}) have been edited, so the "
                  f"digests recorded for them no longer describe the code. The pipeline was re-run end to end with the code "
                  f"as it now stands and compared with the archived results (`15_Audits/RERUN_COMPARISON.md`): every "
                  f"production run reproduces its archived quantity of interest to zero relative difference and only "

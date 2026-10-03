@@ -1,0 +1,23 @@
+{
+ "fails": [],
+ "notes": [
+  "7 of the 9 headline constants are also quoted in the companion; the rest belong to the results tables and appear in the manuscript alone by design",
+  "6 author-input placeholders remain (identity, funding, repository, CRediT, competing interest)",
+  "15 path(s) uncommitted at audit time (they are committed at the end of the phase)"
+ ],
+ "counts": {
+  "references": 55,
+  "abstract_words": 249,
+  "highlights": 5,
+  "keywords": 6,
+  "body_words": 10514,
+  "ms_eq": 84,
+  "ms_figs": 8,
+  "ms_tables": 11,
+  "tests": 28,
+  "test_status": {
+   "PASS": 27,
+   "INFO": 1
+  }
+ }
+}

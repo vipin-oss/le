@@ -1,3 +1,11 @@
+> **Historical record — superseded.** This report documents the 2026-10-01/02 QA pass
+> (54 references, 248-word abstract, `CODE_FREEZE_submission_2026_10_03.json` as the
+> deposit manifest). Since then the submission programme ran Phases 1-8: the manuscript
+> now has 55 references numbered in order of first appearance, a 249-word abstract, an
+> Elsevier back-matter order, reworded declarations, and the deposit manifest is
+> `CODE_FREEZE_submission_2026_10_03j.json`. The current audit is
+> `Phase_08_Final_Audit/FINAL_AUDIT.md`; this file is kept unchanged as history.
+
 # FINAL QA REPORT
 
 **Manuscript:** *Orientation-dependent wall stress around circular and elliptical cavities in

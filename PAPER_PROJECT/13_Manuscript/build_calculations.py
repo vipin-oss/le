@@ -876,7 +876,7 @@ def _frz(label):
     return len(_f), _s, len(_f) - _s
 
 
-SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03i', 'submission_2026_10_03h'
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03j', 'submission_2026_10_03i'
 
 N_FRZ, N_FRZ_SAME, N_FRZ_DIFF = _frz('v2_gate')
 N_SUB, N_SUB_SAME, N_SUB_DIFF = _frz(SUB_FREEZE)

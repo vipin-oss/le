@@ -210,7 +210,11 @@ for name in ("manuscript_IJHMT.pdf", "FINAL_REVISED_MANUSCRIPT.pdf", "calculatio
 
 head("E2) code-freeze manifests vs the committed code")
 SC = os.path.join(ROOT, "PAPER_PROJECT", "06_Source_Code")
-deposited = "submission_2026_10_03"
+deposited = "submission_2026_10_03"  # floor: the oldest submission manifest; the loop below takes the newest
+_subs = sorted(fn for fn in os.listdir(SC)
+              if fn.startswith("CODE_FREEZE_submission_") and fn.endswith(".json"))
+if _subs:
+    deposited = _subs[-1][len("CODE_FREEZE_"):-len(".json")]
 for fn in sorted(os.listdir(SC)):
     if not (fn.startswith("CODE_FREEZE") and fn.endswith(".json")):
         continue
@@ -245,12 +249,12 @@ for fn in sorted(os.listdir(SC)):
             for label, path, rx in (("manuscript \u00a79.1", msmd,
                                      r"(\d+) of the (\d+) entries of `CODE_FREEZE_v2_gate\.json`"),
                                     ("companion \u00a711", compmd,
-                                     r"(\d+) of the (\d+) entries of the gate freeze")):
+                                     r"(\d+) of the (\d+) entries of the (?:gate freeze|archived manifest)")):
                 if not os.path.isfile(path):
                     continue
                 m = re.search(rx, open(path, encoding="utf-8").read())
                 if not m:
-                    fail("%s: the gate-freeze statement could not be found to verify" % label)
+                    fail("%s: the archived-manifest statement could not be found to verify" % label)
                 elif (int(m.group(1)), int(m.group(2))) == (same, len(files)):
                     ok("%s states %s of %s byte-identical — recomputed and confirmed"
                        % (label, m.group(1), m.group(2)))

@@ -213,8 +213,8 @@
   }
  ],
  "status": "COMPLETE",
- "cpu_seconds": 1201.4951674590002,
- "wall_seconds": 1202.471241235733,
+ "cpu_seconds": 956.1823064189999,
+ "wall_seconds": 956.8266429901123,
  "n_pass": 27,
  "n_fail": 0
 }
