@@ -753,11 +753,13 @@ def main():
         # make a later build's gate transcript describe a committed state. The checksum sidecar is NOT
         # restored - it is the record of the archive that was just built, and it is the one file here meant
         # to be committed after packing. `--keep-tree` keeps the documents too, for review or a commit.
-        for name in docmap:
-            fp = os.path.join(GEN, name)
-            if os.path.isfile(fp):
-                git('checkout', '--', os.path.relpath(fp, ROOT))
+        sc = os.path.join(GEN, 'ARCHIVE_CHECKSUMS.txt')
+        keep = open(sc, encoding='utf-8').read() if os.path.isfile(sc) else None
+        git('checkout', '--', os.path.relpath(GEN, ROOT))
         git('checkout', '--', 'Phase_08_Final_Audit/verification/final_consistency.json')
+        if keep is not None:                       # re-emit the sidecar the checkout just reverted
+            with open(sc, 'w', encoding='utf-8') as fh:
+                fh.write(keep)
     print('zip sha256    :', zsha)
     print('content sha256:', content_sha)
     return 0
