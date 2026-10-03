@@ -1,0 +1,443 @@
+{
+ "phase": "1",
+ "date": "2026-10-03",
+ "manuscript_sha256": "9bd135c9f6abebb704f8b99b084b715dcf5b36f6e51cd8303e5ebbe2600ef8bb",
+ "counts": {
+  "A": 15,
+  "B": 22,
+  "C": 6,
+  "total": 43
+ },
+ "findings": [
+  {
+   "id": "A1",
+   "severity": "A",
+   "category": "test-suite / submission blocker",
+   "location": "07_Tests/run_tests.py:197-208; ms:619,637",
+   "evidence": "V0 \"1 failed\": criterion is max error at the non-production 96x48 grid (chi=2 -> 5.028e-3 vs 5e-3, 0.56% over); errors are 4th-order-clean on refinement (chi=1: 1.669e-2/4.178e-3/1.045e-3; chi=2: 1.959e-2/5.028e-3/1.261e-3) and pass at production grids; ms:619 promises discussion \"below\" that does not exist and Table 5 contains a broken cell.",
+   "action": "Re-specify V0 pass criterion = observed order >=1.9 for both chi AND error<5e-3 at the production grid; report the 96x48 exceedance as information; add V0b order assertion; re-run suite; regenerate Table 5 and the count sentence; keep the 2026-10-01 FAIL record unchanged as history.",
+   "target_phase": 2,
+   "status": "open"
+  },
+  {
+   "id": "A2",
+   "severity": "A",
+   "category": "template artifact",
+   "location": "ms:637 (Table 5)",
+   "evidence": "literal \"production grids <= n/a\" in a results table",
+   "action": "Fill with the real value from the data; builder guard rejecting n/a / ?? / empty cells.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "A3",
+   "severity": "A",
+   "category": "placeholders",
+   "location": "ms:3,845,847,849,851,853",
+   "evidence": "[AUTHOR INPUT REQUIRED] x5 + \"[PUBLIC REPOSITORY/DOI TO BE INSERTED]\" + \"[TEMPLATE - to be reviewed...]\"; no author identity exists anywhere in the project.",
+   "action": "Cannot be fixed by the agent (would be fabrication). Draft every non-identity field (data/code availability text, AI declaration, CRediT skeleton) and hand the authors a fill-in list; state it in remaining-limitations + checklist.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "A4",
+   "severity": "A",
+   "category": "AI disclosure / Elsevier policy",
+   "location": "ms:853, 614",
+   "evidence": "Elsevier: writing-process AI goes in the \"Declaration of Generative AI and AI-assisted technologies in the writing process\" before the references; research-process AI belongs in Methods. Current declaration mixes code/simulation analysis and names platform internals; ms:614 narrates \"with the help of an AI agent\".",
+   "action": "Split into Methods sentence + Elsevier-worded declaration (tool, reason, author responsibility); drop platform-detail sentence and template wrapper; never imply AI worked independently; authors retain responsibility for every number.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "A5",
+   "severity": "A",
+   "category": "over-claim",
+   "location": "ms:546,553",
+   "evidence": "\"valid for 0<=t<=14.5 t_th\" stated unconditionally, but ANALYSIS_V2.numerics.max_wall_pulse_error_full_window_0_12 = 0.3196 for the t_w=2.4 block-F runs (n=-1 alias e^{gamma T}p(t-T) for t>8); QoI window t<=6 unaffected (1.0e-10).",
+   "action": "Qualify: bound holds for the baseline pulse t_w=1.2; widest pulse of the sensitivity test has alias entry at t>8 outside the t<=6 observation window; report both measured errors.",
+   "target_phase": 2,
+   "status": "open"
+  },
+  {
+   "id": "A6",
+   "severity": "A",
+   "category": "duplicate prose",
+   "location": "ms:546,548,553,555",
+   "evidence": "same alias/truncation/validity argument twice; DFT-of-pulse-train warning twice",
+   "action": "Merge into one plan paragraph + one \"why not a DFT\" paragraph; every number once.",
+   "target_phase": 7,
+   "status": "open"
+  },
+  {
+   "id": "A7",
+   "severity": "A",
+   "category": "internal language",
+   "location": "ms:190,391,555,614,642,695,707,712,759,780,806,818,828-830",
+   "evidence": "20+ hits: \"frozen criterion/threshold/bound\", \"earlier internal analysis\", \"preliminary\", \"working copy\", \"build aborts\", \"AI agent\", internal test codes in prose.",
+   "action": "Rewrite as publication prose; keep the facts (sign error found+fixed, pre-declared tolerances, superseded synthesis); move digests/manifest bookkeeping to the reproducibility section and supplementary.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "A8",
+   "severity": "A",
+   "category": "uncertainty vs claims",
+   "location": "ms:8 (abstract), 741-750 (Table 9)",
+   "evidence": "attribution claim rests on 96x48 (T48) ablations while headline numbers are M/extrapolated; ms:741 compares M-grid 29.9% with T48 baseline 29.0% in one sentence.",
+   "action": "Rerun E-baseline+E1-E4 at grid M (24-30 runs, ~22 min measured 55 s/run at M) via production_matrix.py with a new variant label; regenerate ANALYSIS_V2, Table 9, abstract; report any change in ranking honestly; every modulation number states its grid.",
+   "target_phase": 2,
+   "status": "open"
+  },
+  {
+   "id": "A9",
+   "severity": "A",
+   "category": "number vs data",
+   "location": "ms:8, highlights, 759",
+   "evidence": "\"peak changes by at most 1.4%\" is the quasi-static row B_CV_tau20_a5_QS (1.4265%); dynamic max is 0.53%.",
+   "action": "Quote dynamic and quasi-static bounds separately or define \"peak\" once and label the attaining row; keep abstract/highlights/section/table consistent.",
+   "target_phase": 4,
+   "status": "open"
+  },
+  {
+   "id": "A10",
+   "severity": "A",
+   "category": "number vs data",
+   "location": "ms:707,716,793",
+   "evidence": "\"1.37 times the circle peak on average\" conflates mean/ext=1.396 (M), extrapolated ratio 1.373, extremes ratio 1.369; \"1.53 times that of the isotropic circle\" = ellipse_M_over_circle_T48 (96x96 vs 96x48, cross-grid).",
+   "action": "Define S_c, A_phi, R_shape once in section 2.9 with numerator/denominator/grid; recompute R_shape at matched grids from stored npz (no re-solve); remove \"on average\".",
+   "target_phase": 2,
+   "status": "open"
+  },
+  {
+   "id": "A11",
+   "severity": "A",
+   "category": "figures vs claims",
+   "location": "ms:642,712; make_figures.py:90-96,125-129",
+   "evidence": "Fig 2(a)/Fig 5(b) compare \"this work\" with the authors superseded buggy analysis; Fig 2 in-panel text \"frozen criterion 10^-8\".",
+   "action": "Move the superseded-vs-corrected comparison to supplementary; main-text panels carry verification order/invariance and the orientation sweep with band; figure label becomes \"tolerance 1e-8 (pre-declared)\".",
+   "target_phase": 4,
+   "status": "open"
+  },
+  {
+   "id": "A12",
+   "severity": "A",
+   "category": "structure",
+   "location": "headings; ms:795-822,687",
+   "evidence": "no standalone Limitations section; limitations inside Discussion; \"verified not validated\" inside section 5.3.",
+   "action": "Split into Discussion / Limitations and scope of validity / Conclusions; keep all content.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "A13",
+   "severity": "A",
+   "category": "references",
+   "location": "ms:50,83,218,103",
+   "evidence": "Cattaneo (1948) and Vernotte (1958) named but never cited; passivity claim supported by reviews only.",
+   "action": "Add classical sources after DOI verification (Crossref API unreachable here: use web search + 01_Literature/CROSSREF_VERIFICATION_*.json); renumber mechanically; no reference added without verification.",
+   "target_phase": 5,
+   "status": "open"
+  },
+  {
+   "id": "A14",
+   "severity": "A",
+   "category": "reproducibility statement",
+   "location": "ms:830",
+   "evidence": "\"the eight figures and five tables are byte-identical\" vs 11 article tables / 5 CSVs; digest + build-abort bookkeeping in the article body.",
+   "action": "State the exact artifact classes (8 PNG figures, 5 CSV tables, 11 generated article tables); move digests to supplementary; drop build-internals sentence.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "A15",
+   "severity": "A",
+   "category": "compile verification",
+   "location": "FINAL_REVISED_MANUSCRIPT.tex",
+   "evidence": "No LaTeX engine in the sandbox and the release-binary host is unreachable (HTTP 000) -> compilation cannot be verified; only static audits run.",
+   "action": "UNRESOLVED by design: keep static gates (70+54 checks, 26 conversion tests, ref/cite/graphic resolution); give authors a latexmk recipe; never claim compilation.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "B1",
+   "severity": "B",
+   "category": "abstract",
+   "location": "ms:8",
+   "evidence": "248 words, method-heavy, findings buried",
+   "action": "Rebuild ~200 words: gap/approach/4 quantified findings/2 boundaries/significance.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "B2",
+   "severity": "B",
+   "category": "highlights",
+   "location": "highlights.txt",
+   "evidence": "item 1 is a method claim, item 5 a caveat",
+   "action": "Result-oriented 5 x <=85 chars; keep \"verified, not validated\" as scope.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "B3",
+   "severity": "B",
+   "category": "title",
+   "location": "ms:1",
+   "evidence": "24 words, two-colon subtitle, \"mechanism ablations\" jargon",
+   "action": "3-5 alternatives; keep \"verified\"; no novelty inflation.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "B4",
+   "severity": "B",
+   "category": "keywords",
+   "location": "ms:10",
+   "evidence": "missing non-Fourier heat conduction / generalized thermoelasticity / V&V / Richardson",
+   "action": "6-8 keywords.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "B5",
+   "severity": "B",
+   "category": "table redundancy",
+   "location": "ms:143 vs 271-282",
+   "evidence": "Tables 1 and 4 both list C_ij values",
+   "action": "Merge/reduce; mechanical renumbering via the builder.",
+   "target_phase": 4,
+   "status": "open"
+  },
+  {
+   "id": "B6",
+   "severity": "B",
+   "category": "figure naming",
+   "location": "make_figures.py save names",
+   "evidence": "file numbers do not match article figure numbers (7 of 8 mismatched)",
+   "action": "Rename fig1..fig8 to manuscript order; regenerate; audit asserts 1:1 mapping.",
+   "target_phase": 4,
+   "status": "open"
+  },
+  {
+   "id": "B7",
+   "severity": "B",
+   "category": "figure quality",
+   "location": "make_figures.py:35 etc.",
+   "evidence": "font.size 9, dpi 200, legends 6.6-7.5 pt",
+   "action": "600 dpi, >=7 pt min at final width, dash+marker colour-blind safety, units in every axis label, panel letters, per-panel grid/tau/Lambda in captions.",
+   "target_phase": 4,
+   "status": "open"
+  },
+  {
+   "id": "B8",
+   "severity": "B",
+   "category": "number formatting",
+   "location": "ms:695,707,780,793",
+   "evidence": "mixed sci/10^{...}, 3 s.f. vs 1 s.f. percentages, 1.31% vs 1.3 pp",
+   "action": "One rule per quantity kind, enforced in builder helpers.",
+   "target_phase": 4,
+   "status": "open"
+  },
+  {
+   "id": "B9",
+   "severity": "B",
+   "category": "internal labels in prose",
+   "location": "ms:695,707,759,780",
+   "evidence": "\"(T1: PASS)\", \"(T4)\", \"WITHIN-BOUND\"",
+   "action": "Pre-declared tolerance + measured value in text; T-codes in supplementary only.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "B10",
+   "severity": "B",
+   "category": "verification narrative",
+   "location": "ms:619,625-637",
+   "evidence": "no statement of which tests carry handoff-calibrated absolute thresholds",
+   "action": "One paragraph: V0/V1/V6/V7 thresholds at 96x48 vs production grid; order is the correctness criterion.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "B11",
+   "severity": "B",
+   "category": "dimensionless groups",
+   "location": "ms:759; 12_Tables/D_lambda_eps.csv",
+   "evidence": "strong use but under-connected; 400-word paragraph with 8 claims",
+   "action": "Define each group controlling which claim; split the paragraph.",
+   "target_phase": 7,
+   "status": "open"
+  },
+  {
+   "id": "B12",
+   "severity": "B",
+   "category": "significance",
+   "location": "ms:669-680,759; isotropic.* closed form",
+   "evidence": "circular closed form (far-field term 0.11%) under-sold as the mechanism for invariance",
+   "action": "Rewrite section 3.3 as prediction/verification/why-insensitive/how-it-motivates-the-ellipse.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "B13",
+   "severity": "B",
+   "category": "metric definition",
+   "location": "ms:287,707",
+   "evidence": "28.7% is peak-to-trough over mean, not half-amplitude",
+   "action": "Define A_phi formula once + state extremes about the mean.",
+   "target_phase": 4,
+   "status": "open"
+  },
+  {
+   "id": "B14",
+   "severity": "B",
+   "category": "MCV3 justification",
+   "location": "ms:220",
+   "evidence": "why a weighted two-pole kernel is a sensible probe not explained (only \"positive real\")",
+   "action": "One sentence on the spectrum it brackets (tau/2..2tau); keep all hedging.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "B15",
+   "severity": "B",
+   "category": "scope clarity",
+   "location": "sections 6.3/6.4",
+   "evidence": "no explicit \"different geometry AND different conduction law per block\" statement; orientation x memory not computed",
+   "action": "Add scope sentence + computed-where matrix from PRODUCTION_PROVENANCE.csv; declare the gap in Limitations.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "B16",
+   "severity": "B",
+   "category": "over-claim",
+   "location": "ms:8,741-750",
+   "evidence": "\"ablations attribute it to...\" stronger than 4 single-parameter runs at one grid",
+   "action": "After M rerun: \"consistent with\"; note non-additivity (C_iso 0.042 vs 0.039) as evidence.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "B17",
+   "severity": "B",
+   "category": "nanoscale framing",
+   "location": "ms:8,669-680,801",
+   "evidence": "absolute MPa/K values presented without the scale caveat in abstract/section headers",
+   "action": "Lead section 6 with the linear-scaling caveat; \"model value per kelvin of wall pulse\" wherever absolute stresses are headlined.",
+   "target_phase": 6,
+   "status": "open"
+  },
+  {
+   "id": "B18",
+   "severity": "B",
+   "category": "result interpretation",
+   "location": "ms:682,759",
+   "evidence": "a>=20 nm rows mix echo return with the O(eps^2) inertia argument",
+   "action": "Quote a<=10 nm subset for the pure inertia claim; state echo contamination + the R=160a 3.6-5.4% check.",
+   "target_phase": 4,
+   "status": "open"
+  },
+  {
+   "id": "B19",
+   "severity": "B",
+   "category": "references",
+   "location": "ms:669-680,103",
+   "evidence": "no methodological ref for observed-order Richardson; no constitutive-theory ref for passivity",
+   "action": "At most 2 additions, DOI-verified; no padding.",
+   "target_phase": 5,
+   "status": "open"
+  },
+  {
+   "id": "B20",
+   "severity": "B",
+   "category": "supplementary",
+   "location": "ms:625 caption; SUPPLEMENTARY_TABLES.xlsx",
+   "evidence": "no Supplementary-material block listing S1..S5",
+   "action": "Add generated block + list (full test table, per-run provenance, convergence data, superseded-vs-corrected figure, reproduction log).",
+   "target_phase": 4,
+   "status": "open"
+  },
+  {
+   "id": "B21",
+   "severity": "B",
+   "category": "references",
+   "location": "54 entries",
+   "evidence": "per-citation claim support not yet audited",
+   "action": "claim<->citation matrix for the 12 load-bearing citations via web search; soften unsupported claims rather than leaving the citation.",
+   "target_phase": 5,
+   "status": "open"
+  },
+  {
+   "id": "B22",
+   "severity": "B",
+   "category": "negative results",
+   "location": "ms:759",
+   "evidence": "the failed pre-registered collapse reads as embarrassment",
+   "action": "Reframe as a finding (collapse holds quasi-statically to <1e-12, broken by O(eps^2) at the 25% level).",
+   "target_phase": 7,
+   "status": "open"
+  },
+  {
+   "id": "C1",
+   "severity": "C",
+   "category": "test record naming",
+   "location": "TEST_RESULTS.json",
+   "evidence": "no U2; V-block order V5->V12->V6...; \"_EXPLORATORY\" in case name",
+   "action": "Sort/relabel in the supplementary table only; historical logs untouched.",
+   "target_phase": 4,
+   "status": "open"
+  },
+  {
+   "id": "C2",
+   "severity": "C",
+   "category": "repetition",
+   "location": "ms 4x + highlights",
+   "evidence": "\"verified, not validated\" five times",
+   "action": "Keep twice in text + highlights.",
+   "target_phase": 7,
+   "status": "open"
+  },
+  {
+   "id": "C3",
+   "severity": "C",
+   "category": "nomenclature",
+   "location": "Table 11",
+   "evidence": "symbols eta_j, vartheta, sigma-hat, A_phi, u_num, R_shape need entries",
+   "action": "Builder-side check that every symbol in prose appears in the nomenclature.",
+   "target_phase": 4,
+   "status": "open"
+  },
+  {
+   "id": "C4",
+   "severity": "C",
+   "category": "prose",
+   "location": "several sections",
+   "evidence": "sentences >45 words, \"which is why/so that\" chains",
+   "action": "Language pass + sentence-length report as a gate.",
+   "target_phase": 7,
+   "status": "open"
+  },
+  {
+   "id": "C5",
+   "severity": "C",
+   "category": "cover letter",
+   "location": "cover_letter.md, JOURNAL_FIT.md",
+   "evidence": "must match final framing",
+   "action": "Regenerate in Phase 8 (deliverable 12).",
+   "target_phase": 8,
+   "status": "open"
+  },
+  {
+   "id": "C6",
+   "severity": "C",
+   "category": "docs",
+   "location": "PROJECT_PROGRESS.md, README",
+   "evidence": "start-here points at gitignored packages/",
+   "action": "Add regeneration pointer; no scientific change.",
+   "target_phase": 8,
+   "status": "open"
+  }
+ ]
+}

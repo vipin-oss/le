@@ -1,0 +1,69 @@
+{
+ "program": "8-phase Q1 submission preparation programme",
+ "created": "2026-10-03",
+ "branch": "arena/01a10176-le",
+ "phases": [
+  {
+   "phase": 1,
+   "name": "Audit",
+   "status": "done",
+   "date": "2026-10-03",
+   "artifacts": "Phase_01_Audit/",
+   "findings_open": 43,
+   "manuscript_edited": false,
+   "headline": "15 class-A / 22 class-B / 6 class-C findings; no scientific error found that changes a number; two findings (A8, A10) need production-resolution reruns in Phase 2"
+  },
+  {
+   "phase": 2,
+   "name": "Verification",
+   "status": "next",
+   "plan": [
+    "Re-specify V0 pass criterion (order + production grid) and add V0b order assertion in 07_Tests/run_tests.py; keep the 2026-10-01 FAIL record as history; re-run suite; regenerate Table 5 + count sentence; write REPRODUCIBILITY_REPORT.md + VERIFICATION_REPORT.md",
+    "Regenerate code freeze (submission_2026-10-03b) after the .py edit",
+    "Rerun E-ablations + baseline at grid M (~22 min, 2 CPU) to replace the T48-only attribution evidence",
+    "Recompute matched-grid ellipse/circle ratios from stored npz (no re-solve); update ANALYSIS_V2.json + tables",
+    "Fix A5 by qualifying the Bromwich validity window with the measured 0.3196 full-window error for t_w=2.4"
+   ]
+  },
+  {
+   "phase": 3,
+   "name": "Mathematical audit",
+   "status": "pending"
+  },
+  {
+   "phase": 4,
+   "name": "Figures and tables",
+   "status": "pending"
+  },
+  {
+   "phase": 5,
+   "name": "Literature",
+   "status": "pending"
+  },
+  {
+   "phase": 6,
+   "name": "Restructuring",
+   "status": "pending"
+  },
+  {
+   "phase": 7,
+   "name": "Language",
+   "status": "pending"
+  },
+  {
+   "phase": 8,
+   "name": "Final audit",
+   "status": "pending"
+  }
+ ],
+ "author_owned_blocking": [
+  "author block",
+  "affiliations/ORCID",
+  "funding",
+  "competing interests",
+  "repository DOI",
+  "independent expert review",
+  "LaTeX compile on a TeX machine"
+ ],
+ "do_not_fabricate": true
+}
