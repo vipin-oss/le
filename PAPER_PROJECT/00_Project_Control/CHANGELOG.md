@@ -53,3 +53,11 @@
   no data and no source code under `06_Source_Code/src/` was modified.
 - Tooling: `tools/verify_pdf.py` (running-title in the margin check, divergence report, out-of-order
   units counted separately) and `tools/connection_audit.py` (new).
+
+## 2026-10-03 — download artifact published (branch `arena/01a10176-le`)
+- Built `PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip` (`make_packages.py final`: 523 files + `MANIFEST.json`,
+  37,946,120 B) and recomputed all 523 manifest entries from the archive: 0 mismatches.
+- Published it as `dist/RESEARCH_PROJECT_FINAL_2026-10-03.zip` (+ `.sha256`, + `dist/README.md`) on this branch,
+  with release notes under tag `final-2026-10-03`, so the package has a direct download link. Release-asset
+  upload was not possible from the sandbox (`uploads.github.com` unreachable), hence the `dist/` copy.
+  `packages/` itself stays gitignored and regenerable; `main` and every scientific file are untouched.
