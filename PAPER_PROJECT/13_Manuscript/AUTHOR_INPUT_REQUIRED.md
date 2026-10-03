@@ -6,6 +6,12 @@ invented on the authors' behalf. Items are grouped as **blocking** (the submissi
 without them), **decisions** (judgement calls the authors should make) and **open scientific
 items** (things that are genuinely unknown and are already disclosed in the paper).
 
+**Status at 2026-10-03, after Phases 9-10.** A1-A6 and A7 are still yours to supply; A8, A9 and A10 are
+already prepared and need only a confirmation against the journal's guide for authors. The downloadable
+upload set is `Phase_10_Submission_Package/IJHMT_submission_bundle.zip`, and the fill-in form for A1-A5
+is `Phase_10_Submission_Package/AUTHOR_INPUT_FORM.md` - answering those five items is all that stands
+between this tree and an Editorial Manager submission.
+
 Every placeholder in the deliverables uses one of two exact tokens:
 
 * `[AUTHOR INPUT REQUIRED: …]`
@@ -109,7 +115,10 @@ figures match the manuscript (55 numbered references, the 28.7% modulation, the 
 freeze, the 28-case suite, the Cattaneo/Vernotte citation note). It already states the position
 honestly — a verified continuum study, not experimentally validated — and carries bracketed
 fields the authors must complete: the editor's name if known, suggested reviewers, the
-corresponding author, and confirmation of the declarations. Nothing has been sent.
+corresponding author, and confirmation of the declarations. Phase 10 added the upload formats -
+`Phase_10_Submission_Package/cover_letter.docx` and `.pdf`, both regenerated from the `.md` by
+`verification/make_cover_letter_package.py`, so there is no second prose copy to keep in sync - and the
+letter ships in the bundle under `COVER_LETTER/`. Nothing has been sent.
 
 ---
 
@@ -173,10 +182,12 @@ cover letter or in responses to reviewers.
 [ ] A4  funding statement written
 [ ] A5  data package deposited; DOI inserted in Data availability
 [ ] A6  AI declaration reviewed, edited and confirmed by the authors
-[ ] A7  .tex compiled cleanly with pdflatex + bibtex; log checked
-[ ] A8  figure formats/resolution acceptable to the journal
-[ ] A9  supplementary material (full verification table) prepared
-[ ] A10 cover letter written
+[ ] A7  .tex compiled cleanly with pdflatex + bibtex (compile_check.sh does both), log checked
+[ ] A8  figure format picked from what already exists (vector PDF in the bundle; 600-dpi PNG and
+        600-dpi LZW TIFF via 11_Figures/export_submission_figures.py)
+[ ] A9  supplementary workbook accepted as-is or re-exported as PDF (SUPPLEMENTARY_TABLES.xlsx,
+        8 sheets including the full Verification table, already in the bundle)
+[ ] A10 cover letter's bracketed fields filled in, then re-render .docx/.pdf from the .md
 [ ] A11 re-run `python3 PAPER_PROJECT/06_Source_Code/make_code_freeze.py <label>` and deposit the
         refreshed manifest with the data package (the 2026-10-01 manifests no longer describe
         six edited files; see manuscript §9.1 and 15_Audits/RERUN_COMPARISON.md)

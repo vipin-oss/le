@@ -18,6 +18,7 @@ reader will want:
       COVER_LETTER/cover_letter.md|docx|pdf           the letter in text + upload formats
       CHECKLIST/SUBMISSION_CHECKLIST.md              what is machine-checked vs author-blocked
       CHECKLIST/AUTHOR_INPUT_REQUIRED.md             the author-input list
+      CHECKLIST/AUTHOR_INPUT_FORM.md                   the five answers still needed, as blanks to fill
       PROVENANCE/CODE_FREEZE_submission_2026_10_03j.json   the deposit manifest
       PROVENANCE/README.txt                          how each file was produced and verified
       MANIFEST.json                                  sha256 + byte size for every file above
@@ -55,6 +56,7 @@ FILES = [
     ('COVER_LETTER/cover_letter.pdf', os.path.join(ROOT, 'Phase_10_Submission_Package', 'cover_letter.pdf')),
     ('CHECKLIST/SUBMISSION_CHECKLIST.md', os.path.join(ROOT, 'Phase_08_Final_Audit', 'SUBMISSION_CHECKLIST.md')),
     ('CHECKLIST/AUTHOR_INPUT_REQUIRED.md', os.path.join(MS, 'AUTHOR_INPUT_REQUIRED.md')),
+    ('CHECKLIST/AUTHOR_INPUT_FORM.md', os.path.join(ROOT, 'Phase_10_Submission_Package', 'AUTHOR_INPUT_FORM.md')),
     ('PROVENANCE/CODE_FREEZE_submission_2026_10_03j.json',
      os.path.join(ROOT, 'PAPER_PROJECT', '06_Source_Code', 'CODE_FREEZE_submission_2026_10_03j.json')),
 ]
@@ -93,7 +95,8 @@ Author-owned fields still bracketed
   COVER_LETTER/*, and the same placeholders inside the .tex/.md: author names,
   affiliations, ORCID iDs, corresponding author, funding, competing interest, CRediT
   statement, and the public repository DOI for the data package. See
-  CHECKLIST/AUTHOR_INPUT_REQUIRED.md. Nothing here invents those values.
+  CHECKLIST/AUTHOR_INPUT_REQUIRED.md, and the same five items are set out as blanks to fill in
+  CHECKLIST/AUTHOR_INPUT_FORM.md. Nothing here invents those values.
 
 Verification record
   CHECKLIST/SUBMISSION_CHECKLIST.md lists what passed the machine checks:
