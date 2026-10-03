@@ -374,6 +374,20 @@ def build_zip(payload, out_zip):
     return os.path.getsize(out_zip)
 
 
+def _tail(out, n=6):
+    """Lines to keep from a gate's output: every FAIL/NOTE/RESULT line (so a failure can never be hidden by
+    the tail) followed by the last lines of the run, de-duplicated, capped."""
+    all_lines = [l for l in out.splitlines() if l.strip()]
+    marks = [l for l in all_lines if 'FAIL' in l or 'MISSING' in l or 'MISMATCH' in l
+             or 'NOTE' in l or 'RESULT' in l or 'CHECKS PASSED' in l]
+    keep, seen = [], set()
+    for l in marks + all_lines[-n:]:
+        if l not in seen:
+            seen.add(l)
+            keep.append(l)
+    return keep[-16:]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--out', default=os.path.join(PP, 'packages'))
@@ -462,7 +476,7 @@ def main():
             gates[name] = {'command': ' '.join(os.path.basename(c) if i == 0 else c
                                                for i, c in enumerate(cmd)),
                            'exit_code': rc,
-                           'output_tail': out.splitlines()[-6:] if out else []}
+                           'output_tail': _tail(out)}
 
     # ---- extraction -------------------------------------------------------------------------------
     src_dir = os.path.join(PP, '06_Source_Code', 'src')
