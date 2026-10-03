@@ -8,7 +8,7 @@
   "T2": "PASS (320 of 320 table cells traced)",
   "T3": "PASS (587 of 587 prose and caption numbers traced)"
  },
- "note": "Same schema as Phases 2 and 3. This ledger also closes two Phase 3 items (P3-15 and, with a corrected diagnosis, P3-8). Phase 6 (part 1): Q1-conformance restructuring applied in the builders, all gates green. Phase 6 (part 2): back matter, Data availability, companion PDF; freeze 2026-10-03f; P6-5 closed as reviewed-conformant. Phase 6 complete (parts 1-3): numbered style, back matter, Data availability, AI disclosure; freeze 2026-10-03g. Phase 7 complete: language/style/internal-vocabulary/duplication pass, freeze 2026-10-03i, all gates green. Phase 8 complete: final consistency audit green, legacy records superseded, cover letter and submission checklist filed; freeze 2026-10-03j. Phase 9 closeout: submission-grade artwork + deposit package; no document or freeze change.",
+ "note": "Same schema as Phases 2 and 3. This ledger also closes two Phase 3 items (P3-15 and, with a corrected diagnosis, P3-8). Phase 6 (part 1): Q1-conformance restructuring applied in the builders, all gates green. Phase 6 (part 2): back matter, Data availability, companion PDF; freeze 2026-10-03f; P6-5 closed as reviewed-conformant. Phase 6 complete (parts 1-3): numbered style, back matter, Data availability, AI disclosure; freeze 2026-10-03g. Phase 7 complete: language/style/internal-vocabulary/duplication pass, freeze 2026-10-03i, all gates green. Phase 8 complete: final consistency audit green, legacy records superseded, cover letter and submission checklist filed; freeze 2026-10-03j. Phase 9 closeout: submission-grade artwork + deposit package; no document or freeze change. Phase 10: portable LaTeX artwork + uploadable cover letter + refreshed deposit package; freeze unchanged at 2026-10-03j.",
  "items": [
   {
    "id": "P4-1",
@@ -258,6 +258,27 @@
    "severity": "medium",
    "status": "closed",
    "resolution": "00_Project_Control/make_packages.py final run: PACKAGE_PHASE_09-13 + RESEARCH_PROJECT_FINAL.zip (610 files, 52.2 MB, MANIFEST.json SHA-256 per file) - the object to deposit for the Data availability DOI; connection_audit package check now passes"
+  },
+  {
+   "id": "P10-1",
+   "title": "LaTeX figure paths were not portable and pointed at 200-dpi PNGs",
+   "severity": "medium",
+   "status": "closed",
+   "resolution": "13_Manuscript/figures/ holds the eight vector renditions; md_to_tex emits \\graphicspath + extensionless includes so the .tex + figures/ + .bib compile standalone; fallback to the PNG paths when the folder is absent was exercised, and audit_tex now resolves graphicspath like LaTeX does"
+  },
+  {
+   "id": "P10-2",
+   "title": "the cover letter had no uploadable rendering; the compile had no author-side harness",
+   "severity": "medium",
+   "status": "closed",
+   "resolution": "make_cover_letter_package.py renders cover_letter.docx/.pdf from the Markdown at run time (no prose copy to drift, author-input brackets bolded); compile_check.sh compiles both .tex files under TeX Live and writes COMPILE_CHECK.txt with undefined-citation/reference and overfull counters, and prints the exact manual commands plus the headless gates when no engine exists"
+  },
+  {
+   "id": "P10-3",
+   "title": "deposit package was stale after the figure-set change",
+   "severity": "low",
+   "status": "closed",
+   "resolution": "re-run make_packages.py final: RESEARCH_PROJECT_FINAL.zip, 604 files / ~46.6 MB, MANIFEST.json sha256 per file, verified to include 13_Manuscript/figures/, CODE_FREEZE_submission_2026_10_03j.json and cover_letter.md"
   }
  ]
 }

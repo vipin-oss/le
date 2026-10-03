@@ -1,0 +1,7 @@
+CHANGELOG.md
+REPORT.md
+compile_check.sh
+cover_letter.docx
+cover_letter.pdf
+verification/make_cover_letter_package.py
+verification/make_tex_figure_set.py

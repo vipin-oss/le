@@ -56,3 +56,5 @@ commits when the sandbox was rebuilt).
 The programme is complete; what remains is author-supplied content listed in
 `PAPER_PROJECT/13_Manuscript/AUTHOR_INPUT_REQUIRED.md` and `Phase_06_Restructuring/AUTHOR_FILLIN.md`,
 plus a real `pdflatex` compile of the two `.tex` files.
+
+| 10 | Submission package: portable LaTeX artwork, uploadable cover letter, author-side compile check | **DONE 2026-10-03** - `13_Manuscript/figures/` (8 vector PDFs) + `\graphicspath` so the .tex compiles standalone (PNG fallback tested); `cover_letter.docx/.pdf`; `compile_check.sh` for TeX Live; deposit package rebuilt (604 files, MANIFEST.json). Freeze still `submission_2026_10_03j`; all gates green | `Phase_10_Submission_Package/` (REPORT.md, CHANGELOG.md, manifest.txt, compile_check.sh, verification/) |

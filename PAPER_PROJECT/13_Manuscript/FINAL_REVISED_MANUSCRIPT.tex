@@ -8,6 +8,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{graphicx}
+\graphicspath{{figures/}}   % 13_Manuscript/figures - vector renditions; see figures/README.txt
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \bibliographystyle{elsarticle-num}
 
@@ -79,7 +80,7 @@ The class is the kinematic plane strain: the fields are independent of $x_{2}$ a
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\textwidth]{../11_Figures/fig1_setup.png}
+\includegraphics[width=0.95\textwidth]{fig1_setup}
 \caption{Problem set-up: (a) circular and (b) equal-area elliptical cavity in the a--c plane of the crystal (crystal rotated by $\varphi$); (c) wall-temperature pulse and quantity-of-interest window.}
 \label{fig:1}
 \end{figure}
@@ -859,7 +860,7 @@ Metric consistency of the mapped grid (linear field) & order $\geq$ 1.9 and $\le
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\textwidth]{../11_Figures/fig4_verification.png}
+\includegraphics[width=0.95\textwidth]{fig4_verification}
 \caption{(a) Rotation invariance of the circular-cavity peak stress: earlier analysis (rotation-tensor sign error) versus this work; (b) errors of the axisymmetric verification tests versus mesh size; (c) wall-temperature reconstruction by the Bromwich inversion.}
 \label{fig:2}
 \end{figure}
@@ -873,7 +874,7 @@ The sharp tip of the ellipse (radius of curvature 0.35a at the ends of the major
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.80\textwidth]{../11_Figures/fig6a_mesh.png}
+\includegraphics[width=0.80\textwidth]{fig6a_mesh}
 \caption{Mesh-direction study for the ellipse at $\varphi$ = 30$^{\circ}$: peak wall stress for different meshes and radial clusterings $\gamma$ (labels: $N_{r}\times$N\_$\theta$).}
 \label{fig:3}
 \end{figure}
@@ -935,7 +936,7 @@ The stress follows the wall temperature near the peak: at the peak node the rati
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\textwidth]{../11_Figures/fig3_wall_profiles.png}
+\includegraphics[width=0.95\textwidth]{fig3_wall_profiles}
 \caption{Wall hoop stress of the circular and elliptical cavity. (a) Distribution around the wall at the time of the peak (grid R192, interpolated). (b) Time history at the peak node compared with the wall temperature p(t).}
 \label{fig:4}
 \end{figure}
@@ -947,7 +948,7 @@ For the equal-area ellipse the peak wall stress depends strongly on the crystal 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\textwidth]{../11_Figures/fig2_phi_sweep.png}
+\includegraphics[width=0.95\textwidth]{fig2_phi_sweep}
 \caption{Peak wall hoop stress per kelvin versus crystal rotation $\varphi$. (a) Ellipse on the three radial grids and Richardson-extrapolated; circle (horizontal lines, three grids). (b) Same orientations: a superseded version of the analysis (periodic-pulse synthesis, rotation-tensor sign error, coarser wall mesh) compared with this work, kept to show what the recomputation changed.}
 \label{fig:5}
 \end{figure}
@@ -974,7 +975,7 @@ $t_{w}$ ($t_{th}$) & circle (MPa/K) & ellipse $\varphi$=90$^{\circ}$ (MPa/K) & e
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\textwidth]{../11_Figures/fig7_pulse_width.png}
+\includegraphics[width=0.95\textwidth]{fig7_pulse_width}
 \caption{Pulse-width test of the local-response interpretation (96$\times$48). (a) Peak wall stress of the circle and of the ellipse at the baseline minimum and maximum orientations; (b) two-point orientation modulation.}
 \label{fig:6}
 \end{figure}
@@ -1010,7 +1011,7 @@ expansion set of the 298 K-like data \cite{cheng2018} (grid 96$\times$48) & 29.9
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.80\textwidth]{../11_Figures/fig6b_ablation.png}
+\includegraphics[width=0.80\textwidth]{fig6b_ablation}
 \caption{Orientation modulation of the ellipse peak stress for the baseline and with one anisotropic tensor made isotropic, and for the 298 K-like expansion set (96$\times$48, six orientations).}
 \label{fig:7}
 \end{figure}
@@ -1042,7 +1043,7 @@ a (nm) & $\tau$ (ps) & $\Lambda$ & $\varepsilon$ & D (dynamic) & D (quasi-static
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\textwidth]{../11_Figures/fig5_memory.png}
+\includegraphics[width=0.95\textwidth]{fig5_memory}
 \caption{Thermal-memory deviation. (a) D versus $\Lambda$ for dynamic (markers by cavity size) and quasi-static (crosses) runs; (b) wall hoop stress at the peak node for Fourier and CV ($\tau$ = 20 ps) conduction and their difference.}
 \label{fig:8}
 \end{figure}

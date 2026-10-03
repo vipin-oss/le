@@ -351,9 +351,13 @@ def main():
                 frac = 0.95 if w / h > 2.2 else (0.80 if w / h > 1.3 else 0.62)
             except Exception:
                 pass
+            vec = os.path.splitext(os.path.basename(path))[0]
+            target = path
+            if os.path.exists(os.path.join(MS, 'figures', vec + '.pdf')):
+                target = vec          # resolved through \graphicspath{{figures/}}
             pending_fig = ['\\begin{figure}[htbp]',
                            '\\centering',
-                           '\\includegraphics[width=%.2f\\textwidth]{%s}' % (frac, path)]
+                           '\\includegraphics[width=%.2f\\textwidth]{%s}' % (frac, target)]
             i += 1
             continue
 
@@ -482,6 +486,7 @@ def main():
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{graphicx}
+\graphicspath{{figures/}}   %% 13_Manuscript/figures - vector renditions; see figures/README.txt
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \bibliographystyle{elsarticle-num}
 
@@ -508,6 +513,7 @@ def main():
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{graphicx}
+\graphicspath{{figures/}}   %% 13_Manuscript/figures - vector renditions; see figures/README.txt
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \bibliographystyle{elsarticle-num}
 

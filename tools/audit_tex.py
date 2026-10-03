@@ -110,10 +110,29 @@ def main():
 
     # ---------------------------------------------------------------- 5. graphics
     figs = re.findall(r'\\includegraphics(?:\[[^\]]*\])?\{([^}]*)\}', body)
-    missing = [f for f in figs if not os.path.exists(os.path.normpath(os.path.join(MS, f)))]
+    # \graphicspath dirs are searched by LaTeX itself, so the checker must too: an
+    # extensionless \includegraphics{fig1_setup} is resolved against figures/ (+ the dirs
+    # listed in the preamble) before it is called missing.
+    gp = re.search(r'\\graphicspath\{(.*)\}', body)
+    gdirs = [d.strip() for d in (re.findall(r'\{([^{}]*)\}', gp.group(1)) if gp else [])]
+
+    def fig_ok(f):
+        exts = ('', '.pdf', '.png', '.jpg', '.jpeg', '.eps')
+        for d in [''] + list(gdirs):
+            for e in exts:
+                if os.path.exists(os.path.normpath(os.path.join(MS, d, f + e))):
+                    return True
+        return False
+
+    missing = [f for f in figs if not fig_ok(f)]
+    n_vec = sum(1 for f in figs if not os.path.splitext(f)[1]
+                and os.path.exists(os.path.join(MS, 'figures', f + '.pdf')))
+    print('  info  %d of %d figures resolve from 13_Manuscript/figures/ (vector PDF set)' % (n_vec, len(figs)))
     if not COMP:
         check(len(figs) == 8, '8 figures included (%d)' % len(figs))
     check(not missing, 'every figure file exists (missing: %s)' % missing)
+    check(n_vec in (0, len(figs)),
+          'figures resolve consistently (mixed vector and PNG paths: %d of %d)' % (n_vec, len(figs)))
     n_cap = len(re.findall(r'\\caption\{', body))
     n_floats = len(re.findall(r'\\label\{fig:', body)) + len(re.findall(r'\\label\{tab:', body))
     check(n_cap == n_floats, 'one caption per float (%d captions, %d floats)' % (n_cap, n_floats))
