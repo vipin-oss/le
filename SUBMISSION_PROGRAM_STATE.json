@@ -1,83 +1,105 @@
 {
- "program": "8-phase Q1 submission preparation programme",
- "updated": "2026-10-03",
- "branch": "arena/01a10176-le",
- "phases": [
-  {
-   "phase": 1,
-   "name": "Audit",
-   "status": "done",
-   "date": "2026-10-03",
-   "artifacts": "Phase_01_Audit/",
-   "findings_raised": 43,
-   "manuscript_edited": false
-  },
-  {
-   "phase": 2,
-   "name": "Verification",
-   "status": "done",
-   "date": "2026-10-03",
-   "artifacts": "Phase_02_Verification/",
-   "findings_closed": [
-    "A1",
-    "A2",
-    "A5",
-    "A8",
-    "A9",
-    "A10"
-   ],
-   "headline": "suite 28 cases 27 PASS/0 FAIL; ablations re-run at production grid (24 runs) confirming the attribution; matched-grid shape ratios; Bromwich window qualified; 1 ulp cross-environment re-solve; freeze submission_2026_10_03b (27/27)",
-   "handed_to_phase4": "Table 9 caption note on the six- vs 12-orientation subsets (drafted in Phase_02_Verification/REPORT.md sec. 5)"
-  },
-  {
-   "phase": 3,
-   "name": "Mathematical audit",
-   "status": "next",
-   "plan": [
-    "Re-derive independently from cg_model.py/cg_ops.py/cg_grid.py/cg_bromwich.py: the Voigt/Mandel map (engineering-shear factor 2 on rows 4-6), the monoclinic C15/C25/C35/C46 sign convention and the rotation of Q and beta, the plane-strain elimination, the mapped-grid metric identities (the linear-field test is V0/V0b), the Cattaneo->Fourier and Lord-Shulman limits, the Bromwich truncation/alias estimates now that the validity is stated per pulse width, and the closed-form local-response result used in Sec. 3.3 (0.9846 vs 0.9857 MPa/K)",
-    "Check every equation number/citation of a formula in the text against the .tex (84 equations) and the companion (29); verify units of every quoted quantity (MPa/K per kelvin pulse; t in t_th; tau in ps; a in nm)",
-    "Correct only genuine errors, in the builder that emits the text (ms_derivation.py / ms_numerics.py), never in the generated .md; regenerate the freeze and rebuild if any .py changes"
-   ]
-  },
-  {
-   "phase": 4,
-   "name": "Figures and tables",
-   "status": "pending"
-  },
-  {
-   "phase": 5,
-   "name": "Literature",
-   "status": "pending",
-   "note": "Crossref API unreachable from the sandbox: verify via web search + 01_Literature/CROSSREF_VERIFICATION_*.json; never invent a DOI"
-  },
-  {
-   "phase": 6,
-   "name": "Restructuring",
-   "status": "pending",
-   "note": "A3 author fields are author-owned; A4 AI declaration split; A7 remaining hits at ms ~695/707/759/780/806/818; A12 Limitations section; A14 artifact counts"
-  },
-  {
-   "phase": 7,
-   "name": "Language",
-   "status": "pending",
-   "note": "A6 duplicate Sec. 4.6 prose; B8/B9 formatting and internal test labels; TEST_REPORT.md wording if it becomes supplementary"
-  },
-  {
-   "phase": 8,
-   "name": "Final audit",
-   "status": "pending"
-  }
- ],
- "findings_ledger": "Phase_02_Verification/FINDINGS_LEDGER.json (36 open, 6 closed, 1 unresolvable-in-sandbox)",
- "author_owned_blocking": [
-  "author block",
-  "affiliations/ORCID",
-  "funding",
-  "competing interests",
-  "repository DOI",
-  "independent expert review",
-  "LaTeX compile on a TeX machine"
- ],
- "do_not_fabricate": true,
- "environment_note": "sandbox has no scientific python by default: python3 -m venv /home/user/.venv-q1 && pip install numpy scipy matplotlib python-docx openpyxl reportlab pymupdf; then sh bootstrap_paths.sh (work/ and PAPER_PROJECT/ symlinks are lost whenever the sandbox is rebuilt, and .git has reverted three times - commit AND push at the end of every phase)"
+  "program": "8-phase Q1 submission preparation programme",
+  "updated": "2026-10-03",
+  "branch": "arena/01a10176-le",
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Audit",
+      "status": "done",
+      "date": "2026-10-03",
+      "artifacts": "Phase_01_Audit/",
+      "findings_raised": 43,
+      "manuscript_edited": false
+    },
+    {
+      "phase": 2,
+      "name": "Verification",
+      "status": "done",
+      "date": "2026-10-03",
+      "artifacts": "Phase_02_Verification/",
+      "findings_closed": [
+        "A1",
+        "A2",
+        "A5",
+        "A8",
+        "A9",
+        "A10"
+      ],
+      "headline": "suite 28 cases 27 PASS/0 FAIL; ablations re-run at production grid (24 runs) confirming the attribution; matched-grid shape ratios; Bromwich window qualified; 1 ulp cross-environment re-solve; freeze submission_2026_10_03b (27/27)",
+      "handed_to_phase4": "Table 9 caption note on the six- vs 12-orientation subsets (drafted in Phase_02_Verification/REPORT.md sec. 5)"
+    },
+    {
+      "phase": 3,
+      "name": "Mathematical audit",
+      "status": "complete (2026-10-03): audit harness 22 PASS / 3 INFO / 0 FAIL; documents rebuilt and gated",
+      "plan": [
+        "Re-derive independently from cg_model.py/cg_ops.py/cg_grid.py/cg_bromwich.py: the Voigt/Mandel map (engineering-shear factor 2 on rows 4-6), the monoclinic C15/C25/C35/C46 sign convention and the rotation of Q and beta, the plane-strain elimination, the mapped-grid metric identities (the linear-field test is V0/V0b), the Cattaneo->Fourier and Lord-Shulman limits, the Bromwich truncation/alias estimates now that the validity is stated per pulse width, and the closed-form local-response result used in Sec. 3.3 (0.9846 vs 0.9857 MPa/K)",
+        "Check every equation number/citation of a formula in the text against the .tex (84 equations) and the companion (29); verify units of every quoted quantity (MPa/K per kelvin pulse; t in t_th; tau in ps; a in nm)",
+        "Correct only genuine errors, in the builder that emits the text (ms_derivation.py / ms_numerics.py), never in the generated .md; regenerate the freeze and rebuild if any .py changes"
+      ],
+      "deliverables": [
+        "Phase_03_Mathematical_Audit/REPORT.md",
+        "Phase_03_Mathematical_Audit/FINDINGS_LEDGER.json",
+        "Phase_03_Mathematical_Audit/CHANGELOG.md",
+        "Phase_03_Mathematical_Audit/manifest.txt",
+        "Phase_03_Mathematical_Audit/verification/audit_phase3.py + AUDIT_phase3.json + audit_phase3.log",
+        "PAPER_PROJECT/06_Source_Code/CODE_FREEZE_submission_2026_10_03c.json"
+      ],
+      "carried_to_later_phases": [
+        "P3-11 (state the order at which CV and MCV3 are matched) -> Phase 4",
+        "P3-15 (verification suite re-run after the code change) -> Phase 8 freeze record",
+        "P3-13 (alpha_5 unresolved) -> authors",
+        "P3-10 (one-sided metric probe shows O(1) first row) -> record only, no fix"
+      ],
+      "deliberate_non_changes": [
+        "C1b probe rows",
+        "C_bar = C33 is not a bulk modulus",
+        "uniform-theta patch test is structural, not evidence",
+        "run_tests.py hard-coded date 2026-10-01",
+        "historical document counts (Phase 8)",
+        "no number changed to improve an appearance"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "Figures and tables",
+      "status": "next"
+    },
+    {
+      "phase": 5,
+      "name": "Literature",
+      "status": "pending",
+      "note": "Crossref API unreachable from the sandbox: verify via web search + 01_Literature/CROSSREF_VERIFICATION_*.json; never invent a DOI"
+    },
+    {
+      "phase": 6,
+      "name": "Restructuring",
+      "status": "pending",
+      "note": "A3 author fields are author-owned; A4 AI declaration split; A7 remaining hits at ms ~695/707/759/780/806/818; A12 Limitations section; A14 artifact counts"
+    },
+    {
+      "phase": 7,
+      "name": "Language",
+      "status": "pending",
+      "note": "A6 duplicate Sec. 4.6 prose; B8/B9 formatting and internal test labels; TEST_REPORT.md wording if it becomes supplementary"
+    },
+    {
+      "phase": 8,
+      "name": "Final audit",
+      "status": "pending"
+    }
+  ],
+  "findings_ledger": "Phase_03_Mathematical_Audit/FINDINGS_LEDGER.json (16 items: 12 closed, 2 advanced, 2 open) supersedes the Phase 2 ledger as the current one; Phase_02_Verification/FINDINGS_LEDGER.json remains the record of that phase (43 findings: 6 closed, 1 unresolvable in this sandbox, 36 open as raised)",
+  "author_owned_blocking": [
+    "author block",
+    "affiliations/ORCID",
+    "funding",
+    "competing interests",
+    "repository DOI",
+    "independent expert review",
+    "LaTeX compile on a TeX machine"
+  ],
+  "do_not_fabricate": true,
+  "environment_note": "sandbox has no scientific python by default: python3 -m venv /home/user/.venv-q1 && pip install numpy scipy matplotlib python-docx openpyxl reportlab pymupdf sympy; then sh bootstrap_paths.sh (work/ and PAPER_PROJECT/ symlinks are lost whenever the sandbox is rebuilt, and .git has reverted three times - commit AND push at the end of every phase)"
 }

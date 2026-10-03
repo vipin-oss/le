@@ -151,9 +151,40 @@
    "observed_order_48_to_96": 1.9675283417378677,
    "sigma_exact": -1234746.0535908495,
    "criterion": "steady log-profile thermal-gradient elasticity (clamped R=80a) vs closed form: |err(192x96)|<0.5%, order>1.5 (NEW: gradient-load path was absent from handoff V0-V7)"
+  },
+  {
+   "case": "V9a_weighted_spectral_error_vs_1D",
+   "status": "PASS",
+   "weighted_errs": "{'FOURIER0': ['1.29e-02', '3.12e-03', '7.62e-04'], 'CV5': ['1.34e-02', '3.24e-03', '7.93e-04'], 'CV20': ['1.46e-02', '3.54e-03', '8.68e-04'], 'MCV320': ['1.46e-02', '3.55e-03', '8.71e-04']}",
+   "worst_192": 0.0008712698489962431,
+   "min_order_48_96": 2.040793659162131,
+   "criterion": "isotropic circle, inertia+coupling ON, Fourier/CV5/CV20/MCV3-20: pulse-weighted spectral error at 192x96 <1%, order>1.5"
+  },
+  {
+   "case": "V9d_time_domain_peak_and_series_vs_1D",
+   "status": "PASS",
+   "peak_errs": "{'FOURIER0': ['+0.0121', '+0.0029', '+0.0007'], 'CV5': ['+0.0121', '+0.0029', '+0.0007'], 'CV20': ['+0.0132', '+0.0030', '+0.0007'], 'MCV320': ['+0.0135', '+0.0031', '+0.0008']}",
+   "series_errs": "{'FOURIER0': ['0.0127', '0.0030', '0.0007'], 'CV5': ['0.0131', '0.0031', '0.0008'], 'CV20': ['0.0150', '0.0035', '0.0009'], 'MCV320': ['0.0150', '0.0036', '0.0009']}",
+   "worst_peak_192": 0.0007554460804142712,
+   "worst_series_192": 0.0008635894262719382,
+   "min_order_peak_48_96": 2.074617052416121,
+   "criterion": "wall hoop series (t<=6) and peak, 2-D + Bromwich vs 1-D spectral + Bromwich: |peak err(192x96)|<1%, series err<1.5%, order>1.5"
+  },
+  {
+   "case": "V9e_thermal_memory_deviation_D_accuracy",
+   "status": "PASS",
+   "detail": "{'CV5': {'D_1d': '3.2504e-03', 'D_2d': ['3.5857e-03', '3.3345e-03', '3.2722e-03'], 'rel_err': ['+0.103', '+0.026', '+0.007']}, 'CV20': {'D_1d': '8.9931e-03', 'D_2d': ['1.0967e-02', '9.4575e-03', '9.1100e-03'], 'rel_err': ['+0.219', '+0.052', '+0.013']}}",
+   "worst_rel_err_192": 0.012998607775645632,
+   "criterion": "D=max_t|sig_CV-sig_F|/max|sig_F| (t<=6), 2-D vs 1-D reference: |rel err(192x96)|<=20% (D is a small difference of two nearly equal series)"
+  },
+  {
+   "case": "V9b_dynamic_a50nm_vs_1D_time_domain",
+   "status": "PASS",
+   "peak_rel_err_96x48": 0.0027435482505742204,
+   "criterion": "a=50 nm, CV, 96x48, inertia+coupling ON: |peak err|<3% (grid error expected ~1%)"
   }
  ],
  "status": "RUNNING",
- "cpu_seconds": 97.632582168,
- "wall_seconds": 97.72653794288635
+ "cpu_seconds": 748.38895827,
+ "wall_seconds": 748.8693804740906
 }

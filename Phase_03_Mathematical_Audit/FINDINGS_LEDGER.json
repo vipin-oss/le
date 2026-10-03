@@ -1,0 +1,174 @@
+{
+  "phase": "3 - Mathematical audit",
+  "date": "2026-10-03",
+  "branch": "arena/01a10176-le",
+  "harness": "verification/audit_phase3.py",
+  "harness_result": {"PASS": 22, "FAIL": 0, "INFO": 3, "checks": 25},
+  "note": "Schema as in Phase 2. status: closed = corrected and gated in this phase; advanced = partially handled, work named for a later phase; open = needs a decision the audit cannot make. This file was re-created after a sandbox reset deleted the directory; every 'evidence' string below is a value the current harness prints.",
+  "items": [
+    {
+      "id": "P3-1",
+      "severity": "moderate",
+      "category": "ambiguity in a printed quantity",
+      "location": "manuscript Section 2.2 (delta), builder ms_static.py",
+      "evidence": "A6: weighted triple spread over the 72-orientation lattice 2.0e-15 (invariant); the 1-norm instance is what is printed (1.078201e-03); the beta:beta form is a factor 1.5926 larger",
+      "action": "the norm convention is now stated where the number is used, with the invariance stated as the reason the contraction is the meaningful object",
+      "target_phase": "3",
+      "status": "closed"
+    },
+    {
+      "id": "P3-2",
+      "severity": "moderate",
+      "category": "unstated modelling assumption",
+      "location": "manuscript Section 2.1",
+      "evidence": "A2/A7: the block couples shear to normals through C15 = -1.62 GPa and C35 = 0.97 GPa, and the reduced description is a plane-strain choice, not a consequence of the material class; the isotropic control is matched by mean (13.110) with the conductivity anisotropy 23.80% apart",
+      "action": "a paragraph names the plane-strain class and states what it excludes",
+      "target_phase": "3",
+      "status": "closed"
+    },
+    {
+      "id": "P3-3",
+      "severity": "moderate",
+      "category": "unsourced number",
+      "location": "Section 4.4 (manuscript) and 2.6/4.6 (companion), DFT comparison",
+      "evidence": "C7: 0.27 of the peak was typed; t_w sqrt(pi)/T = 0.10635 is what the shipped plan gives",
+      "action": "the builder computes it from the plan (TRAIN_MEAN_OVER_PEAK) and both documents print 0.106; the accompanying explanation was rephrased so it says what the mean does to the answer",
+      "target_phase": "3",
+      "status": "closed"
+    },
+    {
+      "id": "P3-4",
+      "severity": "moderate",
+      "category": "hard-coded limit in code, mirrored in prose",
+      "location": "cg_bromwich.py BromwichPlan.t_valid_max; Section 4.4/4.6 and companion 4.1",
+      "evidence": "C2: the bound was T - 5.5; it is T - (t0 + 2.5 t_w), i.e. 14.5 t_th at t_w = 1.2 (unchanged) and 11.5 t_th at t_w = 2.4 (was over-allowed by 3 t_th); C3: amplified backward image 1.06e-14 and 9.22e-09 at those two limits",
+      "action": "computed in the code, stated as a rule with both numbers in the documents; no stored run changed",
+      "target_phase": "3",
+      "status": "closed"
+    },
+    {
+      "id": "P3-5",
+      "severity": "minor",
+      "category": "typographical / rendering",
+      "location": "Eq. (33); c_ref sentence in Section 2.3",
+      "evidence": "A4: c_ref = 7686.5 m/s; mathtext has no left-vert/right-vert macro so the printed norm was malformed",
+      "action": "Eq. (33) prints the norm with the macros that render; the c_ref wording corrected",
+      "target_phase": "3",
+      "status": "closed"
+    },
+    {
+      "id": "P3-6",
+      "severity": "moderate",
+      "category": "internal vocabulary in the archival record",
+      "location": "Table 4 caption and provenance, Sections 6.1/6.2/6.4, ablation caption, highlights, Section 9.1, companion 2.6/5.x/10.3",
+      "evidence": "C7 scan: frozen criterion, frozen threshold, frozen bound, earlier internal analysis, MASTER_PROMPT, pre-registered - all absent from both documents after the rebuild",
+      "action": "reworded as statements of fact with their provenance (as first written, fixed before the runs, the tolerance in the test brief); the Section 9.1 list of files that drifted from the gate manifest is now computed from the manifests, and the cover letter was aligned",
+      "target_phase": "3",
+      "status": "closed",
+      "note": "This is a wording instruction, not a redaction: the sign error, the superseded synthesis, the recomputation and Fig. 2(b) as its evidence all remain in the body"
+    },
+    {
+      "id": "P3-7",
+      "severity": "moderate",
+      "category": "disclosure policy",
+      "location": "Declaration of Generative AI (both documents), numerical-methods section, cover letter",
+      "evidence": "journal policy covers the writing process in that declaration and puts code/simulation use in the methods; the single statement had mixed them",
+      "action": "split: writing use in the declaration before the references, code and simulation use in the methods, with an explicit statement that no AI tool produced or selected a reported number and that AI is not an author or a cited source; cover letter names both uses and flags the wording for author confirmation",
+      "target_phase": "3",
+      "status": "closed"
+    },
+    {
+      "id": "P3-8",
+      "severity": "moderate",
+      "category": "build integrity",
+      "location": "build_manuscript.py",
+      "evidence": "the n/a incident of 14:39: a build ran while run_tests.py was rewriting TEST_RESULTS.json, so a table row printed n/a; afterwards the new guard correctly refused to rebuild over it. The suspicion that the builder resolved its paths from the wrong directory was tested and is false (ROOT resolves correctly from any working directory; PAPER_PROJECT in the home directory is a symlink to the repository copy)",
+      "action": "the abstract and highlights are checked for n/a at build time and the build aborts with the cause; the ordering rule (never build while the suite writes) is recorded in REPORT 7",
+      "target_phase": "3",
+      "status": "closed"
+    },
+    {
+      "id": "P3-9",
+      "severity": "minor",
+      "category": "reproducibility bookkeeping",
+      "location": "06_Source_Code/CODE_FREEZE_submission_2026_10_03c.json; both documents quote it",
+      "evidence": "27 entries, all byte-identical to the code as submitted; the manifest was regenerated after every builder edit and last of all",
+      "action": "new manifest added non-destructively; 2026-10-03b, 2026-10-03 and 2026-10-02 kept unchanged, and the supersession chain is stated in companion 10.3",
+      "target_phase": "3",
+      "status": "closed"
+    },
+    {
+      "id": "P3-10",
+      "severity": "info",
+      "category": "probe artefact, not a scheme defect",
+      "location": "Section 5.x refinement probe at the wall rows",
+      "evidence": "C5/B5: interior rows converge at order 2 (2.1e-04 metric discrepancy) while the first row shows an O(1) discrepancy of the finite-difference metrics against the analytic ones; the one-sided stencils used there are themselves exact on quadratics with error (h^2/3) f-prime-prime-prime",
+      "action": "no change to the code or the acceptance criteria; the finding and its cause are recorded here and in REPORT 7 so that a reader reproducing the probe is not misled",
+      "target_phase": "3",
+      "status": "open",
+      "note": "kept open on purpose: it is a record, not a defect to fix"
+    },
+    {
+      "id": "P3-11",
+      "severity": "minor",
+      "category": "statement precision",
+      "location": "companion kernel-comparison paragraph (CV against MCV3)",
+      "evidence": "B1: CV = 1 - s tau + (s tau)^2, MCV3 = 1 - 5/4 s tau + 5/2 (s tau)^2; the second-order coefficients differ (1 against 5/2) so the forms are matched at first order only, while tau_eff = 5/4 tau holds at leading order",
+      "action": "any sentence that could be read as claiming agreement beyond the leading term must name the order; the companion's wording is to be checked and, if needed, tightened",
+      "target_phase": "4",
+      "status": "advanced"
+    },
+    {
+      "id": "P3-12",
+      "severity": "moderate",
+      "category": "round-trip claim vs measured tails",
+      "location": "Section 4.4 (unity-transfer reconstruction)",
+      "evidence": "C4: 3.6e-11 on 1 <= t <= 6 t_th, 6.9e-08 over the whole valid window",
+      "action": "the text's two thresholds are accurate on the core window; the tail limit is the truncation of the evaluation line, and the sentence now says so",
+      "target_phase": "3",
+      "status": "closed"
+    },
+    {
+      "id": "P3-13",
+      "severity": "major",
+      "category": "unresolved model input",
+      "location": "alpha_5 (thermal expansion component), Sections 2.1 and 6.x limitations",
+      "evidence": "A3: with alpha_5 = 0, beta_13 = 1.7739e+03 Pa/K; a value of the size of alpha_1 would add 1.4e+05 Pa/K, 8.6 % of the largest component of beta",
+      "action": "stated as a limitation with the sensitivity computed; closable only by an author decision (keep as limitation, add a bounded sensitivity run, or soften one sentence)",
+      "target_phase": "author decision",
+      "status": "open",
+      "note": "A3 in the program ledger"
+    },
+    {
+      "id": "P3-14",
+      "severity": "info",
+      "category": "reference-frame of a printed modulus",
+      "location": "Section 2.3 (C_bar)",
+      "evidence": "A8: C_bar = C33 = 347.4 GPa is 89.3 % above the Voigt bulk average 183.53 GPa of the full 6x6",
+      "action": "no change: the text uses C33 as the nondimensionalisation reference and never calls it the bulk modulus; checked that no sentence implies otherwise",
+      "target_phase": "3",
+      "status": "closed",
+      "note": "recorded so that a later reader does not mistake C_bar for a bulk modulus"
+    },
+    {
+      "id": "P3-15",
+      "severity": "moderate",
+      "category": "verification re-run after a code edit",
+      "location": "07_Tests/run_tests.py (28 cases)",
+      "evidence": "the completed pre-reset run with the same code change gave 27 PASS, 0 FAIL, 1 INFO (the exploratory non-aligned case); two further runs were interrupted by sandbox resets",
+      "action": "re-run in progress as verification/suite_rerun_20261003b.log; the result belongs to the Phase 8 freeze record, and this phase does not claim it before its own log says so",
+      "target_phase": "8",
+      "status": "advanced"
+    },
+    {
+      "id": "P3-16",
+      "severity": "major",
+      "category": "sign convention in the rotation of the reduced block",
+      "location": "cg_model.rotate_Q_beta, manuscript Sections 2.1/6.x, Fig. 2(b)",
+      "evidence": "A9: the rotated C23-prime at 45 deg differs by 0.72 % between the fixed and the pre-2026-10-01 convention (9.9810e+10 against 9.9090e+10 Pa); reduce-then-rotate and rotate-then-reduce commute only for the fixed code",
+      "action": "the correction, its date and Fig. 2(b) as its evidence stay in the body; the covariance test in the suite is what pins it",
+      "target_phase": "3",
+      "status": "closed"
+    }
+  ]
+}

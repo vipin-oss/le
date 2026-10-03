@@ -1,0 +1,48 @@
+Phase 3 - mathematical audit: manifest of changed and added files
+branch arena/01a10176-le; baseline of the phase = ca05217 (Phase 2 tip); recorded at 6d622428d8daf728c9815c802bc15d73188a480e
+digests are sha256 of the file as it stands in the working tree at the time the phase was closed;
+recompute with: sha256sum <path>.  Generated documents are listed with their builders, because a
+regeneration from the builders is what makes them reproducible.
+
+07fe9821dcba6b47  PAPER_PROJECT/06_Source_Code/CODE_FREEZE_submission_2026_10_03c.json
+a8cdda049c95c665  PAPER_PROJECT/06_Source_Code/src/cg_bromwich.py
+00ceda7212bbdd91  PAPER_PROJECT/07_Tests/TEST_RESULTS.json
+8e0f4162bf0744f9  PAPER_PROJECT/13_Manuscript/FINAL_REVISED_CALCULATIONS.pdf
+17a7b8ce95c04768  PAPER_PROJECT/13_Manuscript/FINAL_REVISED_CALCULATIONS.tex
+2d8cba7eafd382cc  PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.pdf
+613278b4fc6ddddc  PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.tex
+f67fca2952bb7200  PAPER_PROJECT/13_Manuscript/MANUSCRIPT_STATS.json
+9eda43f40a4c9dea  PAPER_PROJECT/13_Manuscript/SUPPLEMENTARY_TABLES.xlsx
+bf7c7cfeb82bb2bb  PAPER_PROJECT/13_Manuscript/build_calculations.py
+ed0961a32b0cee10  PAPER_PROJECT/13_Manuscript/build_manuscript.py
+283b000c6d7f8bf8  PAPER_PROJECT/13_Manuscript/calculations_IJHMT.md
+8e0f4162bf0744f9  PAPER_PROJECT/13_Manuscript/calculations_IJHMT.pdf
+360537e05af7f5fa  PAPER_PROJECT/13_Manuscript/cover_letter.md
+0cd06af1490ab0a5  PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.docx
+3960c294d282dce4  PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.md
+2d8cba7eafd382cc  PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf
+8a910680ed351e0e  PAPER_PROJECT/13_Manuscript/ms_derivation.py
+352743ca6b531d61  PAPER_PROJECT/13_Manuscript/ms_numerics.py
+738fe934060bf626  PAPER_PROJECT/13_Manuscript/ms_results.py
+0953e1ac990a7093  PAPER_PROJECT/13_Manuscript/ms_static.py
+92b6407ca8e32c72  Phase_03_Mathematical_Audit/verification/AUDIT_phase3.json
+8d44467ab4ee3f68  Phase_03_Mathematical_Audit/verification/audit_phase3.log
+dfe57f6ef9041e12  Phase_03_Mathematical_Audit/verification/audit_phase3.py
+2648293b8fe9d5ea  Phase_03_Mathematical_Audit/verification/fix_audit_b2_b6.py
+685bb9d27d0c297a  Phase_03_Mathematical_Audit/verification/fix_audit_phase3.py
+be846859c31d0c5c  Phase_03_Mathematical_Audit/verification/patch_phase3_batch1.py
+dc58938655b06334  Phase_03_Mathematical_Audit/verification/patch_phase3_batch2.py
+1f8c2d9392952d88  Phase_03_Mathematical_Audit/verification/suite_rerun_20261003.log
+
+Phase deliverables:
+  Phase_03_Mathematical_Audit/REPORT.md
+  Phase_03_Mathematical_Audit/FINDINGS_LEDGER.json
+  Phase_03_Mathematical_Audit/CHANGELOG.md
+  Phase_03_Mathematical_Audit/verification/audit_phase3.py (25 checks, re-created after a sandbox reset)
+  Phase_03_Mathematical_Audit/verification/AUDIT_phase3.json
+  Phase_03_Mathematical_Audit/verification/audit_phase3.log
+  Phase_03_Mathematical_Audit/verification/patch_phase3_batch1.py, patch_phase3_batch2.py (idempotent replay)
+  Phase_03_Mathematical_Audit/verification/suite_rerun_20261003.log, suite_rerun_20261003b.log
+  PAPER_PROJECT/06_Source_Code/CODE_FREEZE_submission_2026_10_03c.json (27 files, all byte-identical)
+
+29 files listed.
