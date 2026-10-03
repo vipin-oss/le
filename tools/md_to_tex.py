@@ -33,6 +33,10 @@ MS = os.path.join(ROOT, 'PAPER_PROJECT', '13_Manuscript')
 DEFAULT_IN = os.path.join(MS, 'manuscript_IJHMT.md')
 DEFAULT_OUT = os.path.join(MS, 'FINAL_REVISED_MANUSCRIPT.tex')
 REFS = os.path.join(ROOT, 'PAPER_PROJECT', '01_Literature', 'REFERENCES_VERIFIED.json')
+_ORDERED = os.path.join(ROOT, 'PAPER_PROJECT', '13_Manuscript', 'REFERENCES_ORDERED.json')
+if os.path.exists(_ORDERED):      # the manuscript prints its list in order of first citation; the .tex
+    REFS = _ORDERED               # \cite mapping must use the same numbering or the two disagree
+
 
 # ------------------------------------------------------------------ unicode -> LaTeX tables
 GREEK = {

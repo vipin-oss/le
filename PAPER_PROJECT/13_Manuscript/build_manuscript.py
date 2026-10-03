@@ -90,7 +90,7 @@ FREEZE_BLOCKF = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_bloc
 # The manifest to deposit, and the one it supersedes.  Regenerate the deposited one with
 # `python3 PAPER_PROJECT/06_Source_Code/make_code_freeze.py submission_2026_10_03` after ANY
 # edit to a frozen file, otherwise Section 9.1 would quote digests that no longer describe the code.
-SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03d', 'submission_2026_10_03c'
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03e', 'submission_2026_10_03d'
 FREEZE_SUB = _sha16(os.path.join(ROOT, '06_Source_Code', f'CODE_FREEZE_{SUB_FREEZE}.json'))
 
 
@@ -453,6 +453,107 @@ def _no_placeholder_tables(path, doc):
         raise SystemExit(f'{doc}: placeholder cells in generated tables ({len(bad)} line(s)):\n'
                          + '\n'.join(bad[:8]) + '\nFix the builder or the data; do not ship the placeholder.')
 
+
+
+# ------------------------------------------------------------------ Elsevier numbered style: sequential citations
+_CITE = re.compile(r'\[(\d{1,2}(?:\s*[,;-]\s*\d{1,2})*)\]')
+
+
+def _cite_nums(text):
+    out = []
+    for part in re.split(r'[,;]', text):
+        part = part.strip()
+        if '-' in part:
+            lo, hi = part.split('-')
+            if lo.isdigit() and hi.isdigit():
+                out.extend(range(int(lo), int(hi) + 1))
+        elif part.isdigit():
+            out.append(int(part))
+        else:
+            return None
+    if not out or any(n < 1 or n > len(refs) for n in out):
+        return None
+    return out
+
+
+def _flatten(v):
+    if isinstance(v, str):
+        return [v]
+    if isinstance(v, (list, tuple)):
+        out = []
+        for x in v:
+            out.extend(_flatten(x))
+        return out
+    return []
+
+
+def _sequentialise(blocks):
+    """Renumber [n] citations to order of first appearance and reorder the printed list to match.
+
+    Only prose/table blocks are scanned for first appearances (the reference list itself is not a citation); a
+    bracket group counts only when every number is a valid reference index, so grid sizes and percentages in
+    square brackets are left alone. The mapping is written for tools/md_to_tex.py and for the companion
+    builder, which point at the same numbers.
+    """
+    order = []
+    for blk in blocks:
+        if blk[0] == 'refs':
+            continue
+        for txt in _flatten(blk[1:]):
+            if isinstance(txt, str):
+                for m in _CITE.finditer(txt):
+                    for n in (_cite_nums(m.group(1)) or []):
+                        if n not in order:
+                            order.append(n)
+    for n in range(1, len(refs) + 1):
+        if n not in order:
+            order.append(n)                      # uncited entries keep their relative order at the end
+    new_of = {old: i + 1 for i, old in enumerate(order)}
+
+    def remap(txt):
+        def sub(m):
+            ns = _cite_nums(m.group(1))
+            if not ns:
+                return m.group(0)
+            return '[' + ','.join(str(new_of[n]) for n in ns) + ']'
+        return _CITE.sub(sub, txt)
+
+    ordered = [dict(refs[old - 1], n=i + 1) for i, old in enumerate(order)]
+    def deep(v):
+        if isinstance(v, str):
+            return remap(v)
+        if isinstance(v, (list, tuple)):
+            return type(v)(deep(x) for x in v)
+        return v
+
+    def remap_blk(blk):
+        if blk[0] == 'refs':
+            return ('refs', [x['text'] for x in ordered])
+        return tuple([blk[0]] + [deep(x) for x in blk[1:]])
+    out = [remap_blk(b) for b in blocks]
+    json.dump({'old_to_new': {str(k): v for k, v in new_of.items()},
+               'order': order, 'n_refs': len(refs)},
+              open(os.path.join(MS, 'REF_ORDER.json'), 'w'), indent=1)
+    json.dump(ordered, open(os.path.join(MS, 'REFERENCES_ORDERED.json'), 'w'), indent=1)
+    return out, sum(1 for old, new in new_of.items() if old != new)
+
+
+_blocks_pre = blocks
+blocks, n_moved = _sequentialise(blocks)
+print('sequential citation numbering: %d of %d entries changed number' % (n_moved, len(refs)))
+
+# ------------------------------------------------------------------ back matter order (Elsevier)
+_i_app = next(i for i, b in enumerate(blocks) if b[0] == 'h1' and b[1].startswith('Appendix A'))
+_i_ref = next(i for i, b in enumerate(blocks) if b[0] == 'h1' and b[1] == 'References')
+if _i_app > _i_ref:                               # text, declarations, appendix, references
+    _i_end = _i_app + 1
+    while _i_end < len(blocks) and not (blocks[_i_end][0] == 'h1'):
+        _i_end += 1
+    blk = blocks[_i_app:_i_end]
+    blocks = blocks[:_i_app] + blocks[_i_end:]
+    _i_ref = next(i for i, b in enumerate(blocks) if b[0] == 'h1' and b[1] == 'References')
+    blocks = blocks[:_i_ref] + blk + blocks[_i_ref:]
+    print('back matter: Appendix A moved before the References (Elsevier order)')
 
 # The placeholder guard must see the text being generated, not the file the previous build left on disk:
 # guarding after the write can only reject a build that is already clean, and guarding before it clobbers the

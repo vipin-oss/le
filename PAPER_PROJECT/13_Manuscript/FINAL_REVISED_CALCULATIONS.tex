@@ -37,9 +37,9 @@ The crystallographic axes of monoclinic $\beta$-Ga$_2$O$_3$ are a, b, c with the
 \subsection{The thirteen independent stiffness constants}
 \label{sec:1.2}
 
-Monoclinic symmetry (point group 2/m, unique axis b) leaves thirteen independent constants. The values used here are the literature values transcribed in PARAMETER\_TABLE.md \cite{adachi2018,klimm2023} and are reproduced unchanged in Table C1; the two constants that do not enter the plane-strain block ($C_{44}$, $C_{46}$) are listed for completeness because they couple the out-of-plane shear components that the plane-strain ansatz excludes.
+Monoclinic symmetry (point group 2/m, unique axis b) leaves thirteen independent constants. The values used here are the literature values transcribed in PARAMETER\_TABLE.md \cite{gurtin1968,tzou1995} and are reproduced unchanged in Table C1; the two constants that do not enter the plane-strain block ($C_{44}$, $C_{46}$) are listed for completeness because they couple the out-of-plane shear components that the plane-strain ansatz excludes.
 
-\textbf{Table C1.} Independent stiffness constants of monoclinic $\beta$-Ga$_2$O$_3$ (GPa), literature values \cite{adachi2018}. $C_{15}$, $C_{25}$, $C_{35}$, $C_{46}$ are the monoclinic couplings that a higher-symmetry crystal would not have.
+\textbf{Table C1.} Independent stiffness constants of monoclinic $\beta$-Ga$_2$O$_3$ (GPa), literature values \cite{gurtin1968}. $C_{15}$, $C_{25}$, $C_{35}$, $C_{46}$ are the monoclinic couplings that a higher-symmetry crystal would not have.
 
 \begin{table}[htbp]
 \centering
@@ -59,7 +59,7 @@ The three in-plane monoclinic couplings are small but not negligible in the acco
 \subsection{Thermal expansion, and what $\alpha_{5}$ = 0 removes}
 \label{sec:1.3}
 
-The expansion tensor is diagonal in the crystal frame with components $\alpha$\_a = 1.54$\times$1$0^{-6}$ $K^{-1}$, $\alpha$\_b = 3.37$\times$1$0^{-6}$ $K^{-1}$ and $\alpha$\_c = 3.15$\times$1$0^{-6}$ $K^{-1}$ \cite{orlandi2015}. The thermal shear $\alpha_{5}$ = 2$\varepsilon_{13}$^{th} is \textbf{not} available in the source data and is set to zero. This is a limitation, not an approximation that has been verified: it removes the only mechanism that would generate an in-plane thermal shear at $\varphi$ = 0, and it is carried through every number in this document. Its consequence is quantified in Section~\ref{sec:10}, where the alternative expansion set of \cite{cheng2018} changes the absolute stress scale by a factor of about 16.
+The expansion tensor is diagonal in the crystal frame with components $\alpha$\_a = 1.54$\times$1$0^{-6}$ $K^{-1}$, $\alpha$\_b = 3.37$\times$1$0^{-6}$ $K^{-1}$ and $\alpha$\_c = 3.15$\times$1$0^{-6}$ $K^{-1}$ \cite{chandra1998}. The thermal shear $\alpha_{5}$ = 2$\varepsilon_{13}$^{th} is \textbf{not} available in the source data and is set to zero. This is a limitation, not an approximation that has been verified: it removes the only mechanism that would generate an in-plane thermal shear at $\varphi$ = 0, and it is carried through every number in this document. Its consequence is quantified in Section~\ref{sec:10}, where the alternative expansion set of \cite{huang2025} changes the absolute stress scale by a factor of about 16.
 
 The a- and c-axis expansions differ by a factor 2.05, so the expansion tensor is not isotropic in the plane of the calculation; this is the seed of the orientation dependence that the manuscript measures.
 
@@ -68,7 +68,7 @@ The a- and c-axis expansions differ by a factor 2.05, so the expansion tensor is
 
 The in-plane conductivity block is
 
-\textbf{Table C2.} In-plane conductivity block K (W $m^{-1}$ $K^{-1}$), axes ordered (a, c) \cite{klimm2023}. The off-diagonal term is what makes the conduction tensor non-diagonal in the crystal frame.
+\textbf{Table C2.} In-plane conductivity block K (W $m^{-1}$ $K^{-1}$), axes ordered (a, c) \cite{tzou1995}. The off-diagonal term is what makes the conduction tensor non-diagonal in the crystal frame.
 
 \begin{table}[htbp]
 \centering
@@ -484,7 +484,7 @@ Two relaxation times (MCV3) & average of two CV kernels with $\tau$/2 and 2$\tau
 
 The three kernels differ only in that scalar factor, which is why the whole model family is implemented as one assembly with g($\omega$) as a parameter.
 
-Both non-Fourier kernels are positive-real (passive) for real $\omega$, which is the property that keeps the response physically admissible (the same restriction is stated for a memory kernel in the general theory of heat conduction with finite wave speeds, manuscript reference \cite{gurtin1968}); the companion does not claim that either is the correct description of $\beta$-Ga$_2$O$_3$, and the relaxation time is treated as a hypothetical parameter throughout.
+Both non-Fourier kernels are positive-real (passive) for real $\omega$, which is the property that keeps the response physically admissible (the same restriction is stated for a memory kernel in the general theory of heat conduction with finite wave speeds, manuscript reference 15); the companion does not claim that either is the correct description of $\beta$-Ga$_2$O$_3$, and the relaxation time is treated as a hypothetical parameter throughout.
 
 \subsection{Boundary rows, scaling and the solve}
 \label{sec:7.3}
@@ -633,7 +633,7 @@ baseline (all anisotropy) & 0.2901 & 1.1707 & 1.0000 \\
 isotropic conductivity (K $\to$ $k_{iso}$ I) & 0.2722 & 1.1613 & 0.9920 \\
 isotropic stiffness (Q $\to$ $Q_{iso}$) & 0.4559 & 1.4869 & 1.2702 \\
 isotropic expansion ($\alpha$ $\to$ mean) & 0.2078 & 1.1973 & 1.0228 \\
-alternative expansion set \cite{cheng2018} & 0.2991 & 0.0737 & 0.0630 \\
+alternative expansion set \cite{huang2025} & 0.2991 & 0.0737 & 0.0630 \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -643,7 +643,7 @@ Read the table in two columns at a time. The modulation A\_$\varphi$ collapses t
 \subsection{The expansion data: the dominant uncertainty}
 \label{sec:10.2}
 
-The last row is the one that matters for the absolute magnitude of every stress quoted in the manuscript. Replacing the reference expansion set with the alternative set of \cite{cheng2018} divides the mean peak wall stress by 15.88 --- a factor of about 15.9 --- while changing the modulation only from 0.2901 to 0.2991. The two effects are therefore separable: the \emph{shape} of the orientation dependence is robust to which expansion set is used, while the \emph{scale} is not. This is why the manuscript reports the modulation dimensionlessly and the stress per kelvin, and why it states the >10$\times$ uncertainty in the absolute stress scale prominently rather than in a footnote.
+The last row is the one that matters for the absolute magnitude of every stress quoted in the manuscript. Replacing the reference expansion set with the alternative set of \cite{huang2025} divides the mean peak wall stress by 15.88 --- a factor of about 15.9 --- while changing the modulation only from 0.2901 to 0.2991. The two effects are therefore separable: the \emph{shape} of the orientation dependence is robust to which expansion set is used, while the \emph{scale} is not. This is why the manuscript reports the modulation dimensionlessly and the stress per kelvin, and why it states the >10$\times$ uncertainty in the absolute stress scale prominently rather than in a footnote.
 
 \section{Reproduction}
 \label{sec:11}
@@ -653,7 +653,7 @@ The last row is the one that matters for the absolute magnitude of every stress 
 
 The companion inherits the provenance of the manuscript. The source code is frozen under PAPER\_PROJECT/06\_Source\_Code/CODE\_FREEZE\_v2\_gate.json (gate freeze, 15 files) and CODE\_FREEZE\_v2\_final.json (24 files), each entry carrying a SHA-256 of the file; the raw output of the 175 production runs and the convergence families is in PAPER\_PROJECT/09\_Raw\_Data/production/; the processed numbers quoted here are in PAPER\_PROJECT/10\_Processed\_Data/ANALYSIS\_V2.json. Regenerating this document is a single command:
 
-Both archived manifests were taken on 2026-10-01. 8 of the 15 entries of the gate freeze are byte-identical in the code as submitted; 7 entries (cg\_bromwich.py, cg\_pipeline.py, run\_tests.py, analyze\_v2.py, make\_figures.py, production\_matrix.py and run\_production\_v2.py) have been edited since, so the digests recorded for them no longer describe it. The pipeline was therefore re-run end to end with the code as submitted, and it reproduces the archived results exactly: the production runs agree with the archived quantities of interest to zero relative difference, every leaf of ANALYSIS\_V2.json agrees within 1$0^{-9}$, the eight figures and the five archived CSV tables are byte-identical, and only wall-clock timings differ (PAPER\_PROJECT/15\_Audits/RERUN\_COMPARISON.md). The verification pass of 2026-10-03 added an ablation set at the production grid (24 runs), re-ran the analysis layer over all 175 stored runs with no pre-existing quantity changed, and re-solved one production job in a different Python/NumPy build, where it reproduced its stored peak wall stress to 2.7$\times$1$0^{-16}$ relative. The mathematical audit that followed re-derived the constitutive algebra and every printed analytical identity symbolically and re-checked the discretisation, kernel and inversion conventions against the shipped code; it corrected two typographical statements in the model description, made the plane-strain class and the norm convention of $\delta$ explicit, and replaced the hard-coded validity window of the inversion by the bound it was an instance of (t $\leq$ T $-$ ($t_{0}$ + 2.$5t_{w}$): 14.5 $t_{th}$ for the baseline $t_{w}$ = 1.2 $t_{th}$, 11.5 $t_{th}$ for $t_{w}$ = 2.4 $t_{th}$). No stored run and no reported value changed. CODE\_FREEZE\_submission\_2026\_10\_03d.json (27 files, all 27 byte-identical to the code as submitted) is the refreshed manifest, the one to deposit with the data package; it supersedes CODE\_FREEZE\_submission\_2026\_10\_03c.json (taken the same day, before this change, 23 of whose 27 entries still match), CODE\_FREEZE\_submission\_2026\_10\_03b.json, CODE\_FREEZE\_submission\_2026\_10\_03.json and CODE\_FREEZE\_submission\_2026\_10\_02.json, all kept unchanged as history.
+Both archived manifests were taken on 2026-10-01. 8 of the 15 entries of the gate freeze are byte-identical in the code as submitted; 7 entries (cg\_bromwich.py, cg\_pipeline.py, run\_tests.py, analyze\_v2.py, make\_figures.py, production\_matrix.py and run\_production\_v2.py) have been edited since, so the digests recorded for them no longer describe it. The pipeline was therefore re-run end to end with the code as submitted, and it reproduces the archived results exactly: the production runs agree with the archived quantities of interest to zero relative difference, every leaf of ANALYSIS\_V2.json agrees within 1$0^{-9}$, the eight figures and the five archived CSV tables are byte-identical, and only wall-clock timings differ (PAPER\_PROJECT/15\_Audits/RERUN\_COMPARISON.md). The verification pass of 2026-10-03 added an ablation set at the production grid (24 runs), re-ran the analysis layer over all 175 stored runs with no pre-existing quantity changed, and re-solved one production job in a different Python/NumPy build, where it reproduced its stored peak wall stress to 2.7$\times$1$0^{-16}$ relative. The mathematical audit that followed re-derived the constitutive algebra and every printed analytical identity symbolically and re-checked the discretisation, kernel and inversion conventions against the shipped code; it corrected two typographical statements in the model description, made the plane-strain class and the norm convention of $\delta$ explicit, and replaced the hard-coded validity window of the inversion by the bound it was an instance of (t $\leq$ T $-$ ($t_{0}$ + 2.$5t_{w}$): 14.5 $t_{th}$ for the baseline $t_{w}$ = 1.2 $t_{th}$, 11.5 $t_{th}$ for $t_{w}$ = 2.4 $t_{th}$). No stored run and no reported value changed. CODE\_FREEZE\_submission\_2026\_10\_03e.json (27 files, all 27 byte-identical to the code as submitted) is the refreshed manifest, the one to deposit with the data package; it supersedes CODE\_FREEZE\_submission\_2026\_10\_03d.json (taken the same day, before this change, 25 of whose 27 entries still match), CODE\_FREEZE\_submission\_2026\_10\_03c.json, CODE\_FREEZE\_submission\_2026\_10\_03b.json, CODE\_FREEZE\_submission\_2026\_10\_03.json and CODE\_FREEZE\_submission\_2026\_10\_02.json, all kept unchanged as history.
 
 \begin{itemize}
 \item python3 PAPER\_PROJECT/13\_Manuscript/build\_calculations.py --- rebuilds this document from the frozen source and the processed data;

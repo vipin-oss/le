@@ -24,12 +24,12 @@ Thermal stresses around cavities in low-symmetry crystals depend on crystal orie
 
 ### 1.1 Cavities, thermal stress and crystal anisotropy
 
-Classical analyses of thermal stresses around holes and cavities in uniform heat flow are given in [1,2], and anisotropic plates with elliptic boundaries have been treated by complex-variable (Stroh-type) methods under steady conditions [3]. Transient cavity problems with a finite heat-wave speed have been solved for a fibre-reinforced anisotropic medium with a circular hole [4], for spherical cavities [5], for an orthotropic cylindrical cavity [7], and hole-shape effects have been studied in perforated composite plates [6]; boundary-element methods treat holes in general anisotropic discs and planes [8,9]; coated elliptic holes in uniform heat flow have been analysed by complex-variable methods [48] and dual-phase-lag boundary-element formulations for anisotropic media have been developed [49]. The generalized-thermoelasticity studies [4,5,7] concern isotropic or highly symmetric (fibre-reinforced, orthotropic) media and circular or spherical geometry, whereas the studies of general anisotropy and non-circular holes [3,8,9] are steady or quasi-static with Fourier conduction. Within the bounded literature search described in the data package we found no study that combines a low-symmetry crystal, a non-circular cavity, a systematic crystal-orientation sweep and a thermal-memory parameter in a transient coupled analysis (this is a statement about our search, not a claim of priority).
+Classical analyses of thermal stresses around holes and cavities in uniform heat flow are given in [1,2], and anisotropic plates with elliptic boundaries have been treated by complex-variable (Stroh-type) methods under steady conditions [3]. Transient cavity problems with a finite heat-wave speed have been solved for a fibre-reinforced anisotropic medium with a circular hole [4], for spherical cavities [5], for an orthotropic cylindrical cavity [6], and hole-shape effects have been studied in perforated composite plates [7]; boundary-element methods treat holes in general anisotropic discs and planes [8,9]; coated elliptic holes in uniform heat flow have been analysed by complex-variable methods [10] and dual-phase-lag boundary-element formulations for anisotropic media have been developed [11]. The generalized-thermoelasticity studies [4,5,6] concern isotropic or highly symmetric (fibre-reinforced, orthotropic) media and circular or spherical geometry, whereas the studies of general anisotropy and non-circular holes [3,8,9] are steady or quasi-static with Fourier conduction. Within the bounded literature search described in the data package we found no study that combines a low-symmetry crystal, a non-circular cavity, a systematic crystal-orientation sweep and a thermal-memory parameter in a transient coupled analysis (this is a statement about our search, not a claim of priority).
 
 
 ### 1.2 Transient loading, thermal memory and non-Fourier conduction
 
-Coupled thermoelasticity [10] and its generalizations to a finite heat-wave speed are the framework for transient problems: the Lord–Shulman theory with one relaxation time [11] and its extension to anisotropic media with a uniqueness theorem [12]; the general theory of heat conduction with a memory kernel and finite wave speeds is due to Gurtin and Pipkin [55]; dual-phase-lag formulations [13], and later classifications of generalized heat-conduction and thermoelastic-coupling models [14,23]. Monoclinic β-Ga₂O₃ is an ultra-wide-band-gap semiconductor whose elastic [15], thermal-conductivity [16] and thermal-expansion [17,18] tensors are all strongly anisotropic; its room-temperature elastic constants are well characterised [15] and its conductivity tensor has an off-diagonal component in the a–c plane [16], so that crystal orientation, cavity shape and heat-conduction law can interact. The device context and the growth of bulk single crystals of the material are reviewed in [50,51]. Whether this interaction is large enough to matter, and which observable is sensitive to it, is the question addressed here.
+Coupled thermoelasticity [12] and its generalizations to a finite heat-wave speed are the framework for transient problems: the Lord–Shulman theory with one relaxation time [13] and its extension to anisotropic media with a uniqueness theorem [14]; the general theory of heat conduction with a memory kernel and finite wave speeds is due to Gurtin and Pipkin [15]; dual-phase-lag formulations [16], and later classifications of generalized heat-conduction and thermoelastic-coupling models [17,18]. Monoclinic β-Ga₂O₃ is an ultra-wide-band-gap semiconductor whose elastic [19], thermal-conductivity [20] and thermal-expansion [21,22] tensors are all strongly anisotropic; its room-temperature elastic constants are well characterised [19] and its conductivity tensor has an off-diagonal component in the a–c plane [20], so that crystal orientation, cavity shape and heat-conduction law can interact. The device context and the growth of bulk single crystals of the material are reviewed in [23,24]. Whether this interaction is large enough to matter, and which observable is sensitive to it, is the question addressed here.
 
 
 ### 1.3 Scope of the study and what is claimed
@@ -47,7 +47,7 @@ The contributions are: (i) a verified time-domain method that returns the respon
 
 ### 2.1 Governing equations
 
-Linear, small-strain thermoelasticity in plane strain is considered in the a–c plane of a monoclinic crystal, with the unique axis b normal to the plane and coordinates (x_{1}, x_{3}) along the crystal a and c axes at zero rotation. With temperature rise θ above the reference temperature T_{0} = 293 K, displacement u = (u_{1}, u_{3}) and Voigt strain ϵ = (ϵ_{11}, ϵ_{33}, γ_{13}), the constitutive law is σ = Qϵ − βθ (Biot [10]); Q is the 3×3 plane-strain block of the stiffness (only C_{11}, C_{13}, C_{15}, C_{33}, C_{35}, C_{55} enter) and β = Cα the thermal-stress vector, which also involves C_{12}, C_{23}, C_{25} through the b-axis expansion. The crystal is rotated by φ about b: the rank-four stiffness and the rank-two conductivity and expansion tensors are rotated by the same angle, and the rotation is cross-checked against an independent three-dimensional rank-four implementation (Section 5.1). Momentum balance and the heat equation with one relaxation time τ (Cattaneo–Vernotte flux law with energy balance, i.e. the Lord–Shulman equation [11,12]) read
+Linear, small-strain thermoelasticity in plane strain is considered in the a–c plane of a monoclinic crystal, with the unique axis b normal to the plane and coordinates (x_{1}, x_{3}) along the crystal a and c axes at zero rotation. With temperature rise θ above the reference temperature T_{0} = 293 K, displacement u = (u_{1}, u_{3}) and Voigt strain ϵ = (ϵ_{11}, ϵ_{33}, γ_{13}), the constitutive law is σ = Qϵ − βθ (Biot [12]); Q is the 3×3 plane-strain block of the stiffness (only C_{11}, C_{13}, C_{15}, C_{33}, C_{35}, C_{55} enter) and β = Cα the thermal-stress vector, which also involves C_{12}, C_{23}, C_{25} through the b-axis expansion. The crystal is rotated by φ about b: the rank-four stiffness and the rank-two conductivity and expansion tensors are rotated by the same angle, and the rotation is cross-checked against an independent three-dimensional rank-four implementation (Section 5.1). Momentum balance and the heat equation with one relaxation time τ (Cattaneo–Vernotte flux law with energy balance, i.e. the Lord–Shulman equation [13,14]) read
 
 
 $$ \nabla\cdot\boldsymbol{\sigma}=\rho\,\ddot{\mathbf{u}},\qquad \nabla\cdot(\mathbf{K}\nabla\theta)=\left(1+\tau\,\partial_t\right)\left(\rho c_p\,\dot\theta+T_0\,\boldsymbol{\beta}:\dot{\boldsymbol{\epsilon}}\right) \qquad (1) $$
@@ -82,7 +82,7 @@ $$ \frac{\partial\sigma_{11}}{\partial x_1}+\frac{\partial\sigma_{13}}{\partial 
 
 $$ \rho c_p\,\dot\theta+T_0\,\boldsymbol{\beta}:\dot{\boldsymbol{\epsilon}}=-\nabla\cdot\mathbf{q} \qquad (5) $$
 
-where q is the heat-flux vector and the coupling term T_{0}β:ϵ̇ is the rate at which mechanical work is converted into heat (the Thomson term of linear thermoelasticity [10]). With the Cattaneo–Vernotte flux law with a single relaxation time τ,
+where q is the heat-flux vector and the coupling term T_{0}β:ϵ̇ is the rate at which mechanical work is converted into heat (the Thomson term of linear thermoelasticity [12]). With the Cattaneo–Vernotte flux law with a single relaxation time τ,
 
 
 $$ \mathbf{q}+\tau\,\frac{\partial\mathbf{q}}{\partial t}=-\mathbf{K}\nabla\theta \qquad (6) $$
@@ -102,7 +102,7 @@ For the parameters of Table 4, κ̄ = 3.959×10^{−6} m²/s, so that v_{T} = �
 
 $$ -\frac{\mathbf{q}\cdot\nabla\theta}{T_0}\geq 0 \qquad (9) $$
 
-which the Cattaneo–Vernotte law meets for every τ > 0 because it is a positive-real (passive) kernel [55], a restriction stated there for a memory kernel rather than for a single relaxation time; the two-relaxation-time kernel of Section 2.5 is positive-real for the same reason but is not derived from a free energy, which is why it is carried as an exploratory variant only. Theories with two relaxation times [24,25,26] and the reviews of hyperbolic and generalized conduction [14,23,27,28,31,32] locate the single-relaxation-time law used here within that literature.
+which the Cattaneo–Vernotte law meets for every τ > 0 because it is a positive-real (passive) kernel [15], a restriction stated there for a memory kernel rather than for a single relaxation time; the two-relaxation-time kernel of Section 2.5 is positive-real for the same reason but is not derived from a free energy, which is why it is carried as an exploratory variant only. Theories with two relaxation times [25,26,27] and the reviews of hyperbolic and generalized conduction [17,18,28,29,30,31] locate the single-relaxation-time law used here within that literature.
 
 
 ### 2.3 Plane-strain reduction of the monoclinic law
@@ -112,7 +112,7 @@ Monoclinic β-Ga₂O₃ has point group 2/m with the twofold axis along the crys
 
 $$ \sigma_I=\sum_{J=1}^{6}C_{IJ}\left(\epsilon_J-\alpha_J\theta\right),\qquad \beta_I=\sum_{J=1}^{6}C_{IJ}\alpha_J \qquad (10) $$
 
-with I = 1, …, 6 (Voigt conventions and the Stroh and Lekhnitskii formalisms for such media are described in [45,46,47]). Plane strain in the a–c plane imposes ϵ_{22} = ϵ_{23} = ϵ_{12} = 0, so the six-dimensional law collapses onto the three in-plane components and
+with I = 1, …, 6 (Voigt conventions and the Stroh and Lekhnitskii formalisms for such media are described in [32,33,34]). Plane strain in the a–c plane imposes ϵ_{22} = ϵ_{23} = ϵ_{12} = 0, so the six-dimensional law collapses onto the three in-plane components and
 
 
 $$ \sigma_{11}=C_{11}\epsilon_{11}+C_{13}\epsilon_{33}+C_{15}\gamma_{13}-\beta_1\theta \qquad (11) $$
@@ -142,7 +142,7 @@ $$ \sigma_{22}=C_{12}\epsilon_{11}+C_{23}\epsilon_{33}+C_{25}\gamma_{13}-\beta_2
 and does no work because ϵ_{22} = 0 by construction. Table 2 collects the numerical values of the reduced block and of the thermal-stress vector.
 
 
-**Table 1.** Independent stiffness constants of monoclinic β-Ga₂O₃ used in this study (GPa; literature values [15] transcribed and checked against the source).
+**Table 1.** Independent stiffness constants of monoclinic β-Ga₂O₃ used in this study (GPa; literature values [19] transcribed and checked against the source).
 
 | C_{11} | C_{22} | C_{33} | C_{44} | C_{55} | C_{66} | C_{12} | C_{13} | C_{23} | C_{15} | C_{25} | C_{35} | C_{46} |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -224,7 +224,7 @@ the last with τ_{a} = τ/2 and τ_{b} = 2τ, i.e. an effective relaxation time 
 
 $$ g(s)=1-s\tau_{\mathrm{eff}}+O\left((s\tau)^2\right) \qquad (28) $$
 
-shows that the leading effect of thermal memory is a frequency-dependent reduction of the effective conductivity; in the time domain the same statement is that the flux lags the gradient. The physical motivation for such laws comes from heat conduction at small scales [33,35,36,37], the two-relaxation-time form is the two-term version of the multi-phase-lag kernels [34], and general presentations of the theories are given in [27,29,30].
+shows that the leading effect of thermal memory is a frequency-dependent reduction of the effective conductivity; in the time domain the same statement is that the flux lags the gradient. The physical motivation for such laws comes from heat conduction at small scales [35,36,37,38], the two-relaxation-time form is the two-term version of the multi-phase-lag kernels [39], and general presentations of the theories are given in [28,40,41].
 
 
 ### 2.6 Boundary and initial conditions
@@ -274,12 +274,12 @@ The parameters of the study, their values and their status (literature, assumed,
 
 | Parameter | Value | Class | Source |
 |---|---|---|---|
-| C_{ij} (13 constants) | C11 242.8, C22 343.8, C33 347.4, C44 47.8, C55 88.6, C66 104.0, C12 128.0, C13 160.0, C23 70.9, C15 −1.62, C25 0.36, C35 0.97, C46 5.59 GPa | literature | Adachi et al. [15] (values checked against the paper) |
-| K (a–c block) | [[12.13, −0.992], [−0.992, 14.09]] W/(m K); eigenvalues 11.72, 14.50 | literature | Klimm et al. [16] |
-| α (a, b, c) | (1.54, 3.37, 3.15)×10^{−6} 1/K; α_{5} = 0 | literature (secondary-quoted); uncertain | Orlandi et al. [17]; at 298 K the synchrotron data [18] give values ≈10× smaller |
-| ρ | 5880 kg/m³ | literature | compilations; Klimm et al. [16] use 5.961 g/cm³ at 20 °C |
-| c_{p} | 560 J/(kg K) | assumed | reported values 485–537 J/(kg K) [19]; enters only t_{th}, δ and the dimensional labels |
-| τ | 1, 5, 20 ps (Λ = 0.04–0.8 at 10 nm) | hypothetical (sensitivity-only) | order-of-magnitude estimates (κ ≈ 15 W/(m K), ρc_{p} = 3.3 MJ/(m³ K), v ≈ 4 km/s): gray τ = 3κ/(ρc_{p}v²) ≈ 0.9 ps; phonons with the longest mean free path (≈ 0.7 µm [20]) τ ≈ 0.2 ns |
+| C_{ij} (13 constants) | C11 242.8, C22 343.8, C33 347.4, C44 47.8, C55 88.6, C66 104.0, C12 128.0, C13 160.0, C23 70.9, C15 −1.62, C25 0.36, C35 0.97, C46 5.59 GPa | literature | Adachi et al. [19] (values checked against the paper) |
+| K (a–c block) | [[12.13, −0.992], [−0.992, 14.09]] W/(m K); eigenvalues 11.72, 14.50 | literature | Klimm et al. [20] |
+| α (a, b, c) | (1.54, 3.37, 3.15)×10^{−6} 1/K; α_{5} = 0 | literature (secondary-quoted); uncertain | Orlandi et al. [21]; at 298 K the synchrotron data [22] give values ≈10× smaller |
+| ρ | 5880 kg/m³ | literature | compilations; Klimm et al. [20] use 5.961 g/cm³ at 20 °C |
+| c_{p} | 560 J/(kg K) | assumed | reported values 485–537 J/(kg K) [42]; enters only t_{th}, δ and the dimensional labels |
+| τ | 1, 5, 20 ps (Λ = 0.04–0.8 at 10 nm) | hypothetical (sensitivity-only) | order-of-magnitude estimates (κ ≈ 15 W/(m K), ρc_{p} = 3.3 MJ/(m³ K), v ≈ 4 km/s): gray τ = 3κ/(ρc_{p}v²) ≈ 0.9 ps; phonons with the longest mean free path (≈ 0.7 µm [43]) τ ≈ 0.2 ns |
 | R/a, pulse | 80; t_{0} = 2.5, t_{w} = 1.2 t_{th} | design | fixed in the design note before the production runs |
 | a | 5–50 nm (10 nm reference) | design | continuum validity not established (Section 7) |
 
@@ -530,12 +530,12 @@ so that iω = s/t_{th} and ω² = −s²/t_{th}² as required by Eq. (25). Two s
 
 $$ \mathbf{U}^{(k+1)}=\mathbf{U}^{(k)}+\mathbf{A}^{-1}\left(\mathbf{f}-\mathbf{A}\mathbf{U}^{(k)}\right),\qquad \eta=\frac{\|\mathbf{f}-\mathbf{A}\mathbf{U}\|_{\infty}}{\left(\|\mathbf{A}\|_{\infty}\|\mathbf{U}\|_{\infty}\right)} \qquad (72) $$
 
-with the backward error η recorded for every solve (frequency-domain formulations of dynamic coupled thermoelasticity with relaxation times go back to [38] and are reviewed in [39]): refinement lowers the floor of the wall stress from about 10^{−8} to 10^{−14} relative, which matters because the quantities of interest in Section 6 are differences of nearly equal stresses.
+with the backward error η recorded for every solve (frequency-domain formulations of dynamic coupled thermoelasticity with relaxation times go back to [44] and are reviewed in [45]): refinement lowers the floor of the wall stress from about 10^{−8} to 10^{−14} relative, which matters because the quantities of interest in Section 6 are differences of nearly equal stresses.
 
 
 ### 4.6 Single-pulse response by Bromwich inversion
 
-The time-domain response of the quiescent medium to one pulse is obtained from the transfer function H(s) (unit wall amplitude) evaluated on the vertical line Re s = γ_{B} > 0 and inverted with the trapezoidal Bromwich sum [21,22]. With the two-sided Laplace transform of the pulse, P(s) = √π t_{w} exp((s t_{w}/2)² − s t_{0}), and Y = H P,
+The time-domain response of the quiescent medium to one pulse is obtained from the transfer function H(s) (unit wall amplitude) evaluated on the vertical line Re s = γ_{B} > 0 and inverted with the trapezoidal Bromwich sum [46,47]. With the two-sided Laplace transform of the pulse, P(s) = √π t_{w} exp((s t_{w}/2)² − s t_{0}), and Y = H P,
 
 
 $$ P(s)=\int_{-\infty}^{\infty}p(t)\,e^{-st}\,\mathrm{d}t=\sqrt{\pi}\,t_w\exp\left[\left(\frac{st_w}{2}\right)^2-s\,t_0\right],\qquad Y(s)=H(s)P(s) \qquad (73) $$
@@ -561,7 +561,7 @@ Peaks in time are located on the sampled history and refined by the three-point 
 
 $$ t_\star=t_i+\frac{\Delta t}{2}\,\frac{y_{i-1}-y_{i+1}}{y_{i-1}-2y_i+y_{i+1}},\qquad y_\star=y_i-\frac{1}{4}\left(y_{i-1}-y_{i+1}\right)\frac{t_\star-t_i}{\Delta t} \qquad (76) $$
 
-which removes the sampling bias of the peak time and amplitude at negligible cost. The alternative inversion algorithms surveyed in [40,41,42,43,44] were not needed here: the Gaussian spectrum decays fast enough for the plain trapezoidal sum on a shifted contour to reach the tolerance above.
+which removes the sampling bias of the peak time and amplitude at negligible cost. The alternative inversion algorithms surveyed in [48,49,50,51,52] were not needed here: the Gaussian spectrum decays fast enough for the plain trapezoidal sum on a shifted contour to reach the tolerance above.
 
 
 ### 4.7 Definitions of the quantities of interest
@@ -589,14 +589,14 @@ the latter evaluated on the same grid and with the same inversion plan for the t
 
 ### 4.8 Numerical uncertainty
 
-Grid convergence is assessed with two refinement families at fixed other direction: radial (R48, M, R192; N_{θ} = 96) and angular (T48, M, T144; N_{r} = 96). For each orientation the observed order is obtained from the three levels, the Richardson-extrapolated value is formed with the observed order bounded to [1, 3], and the extrapolated value is M + (radial correction) + (angular correction). The numerical uncertainty of the orientation modulation is the largest of the differences between the amplitude on grid M and the amplitudes on R192, T144 and the extrapolated values. The radial clustering parameter was chosen from a mesh-direction study (Section 5.2).
+Grid convergence is assessed with two refinement families at fixed other direction: radial (R48, M, R192; N_{θ} = 96) and angular (T48, M, T144; N_{r} = 96). For each orientation the observed order is obtained from the three levels, the Richardson-extrapolated value is formed with the observed order bounded to [1,3], and the extrapolated value is M + (radial correction) + (angular correction). The numerical uncertainty of the orientation modulation is the largest of the differences between the amplitude on grid M and the amplitudes on R192, T144 and the extrapolated values. The radial clustering parameter was chosen from a mesh-direction study (Section 5.2).
 
 Grid convergence is assessed on two refinement families that vary one direction at a time: radial (R48 = 48×96, M = 96×96, R192 = 192×96) and angular (T48 = 96×48, M = 96×96, T144 = 96×144). For three values f_{1}, f_{2}, f_{3} on meshes with N_{1} < N_{2} < N_{3} directions, the observed order p solves
 
 
 $$ \frac{f_1-f_2}{f_2-f_3}=\frac{N_1^{-p}-N_2^{-p}}{N_2^{-p}-N_3^{-p}} \qquad (81) $$
 
-(a root is sought numerically; if the differences are not monotone the order is undefined and no extrapolation is made). The order is then clipped to the interval [1, 3] — below 1 the observed convergence is not trustworthy, above 3 it is not credible for a second-order scheme — and the error model
+(a root is sought numerically; if the differences are not monotone the order is undefined and no extrapolation is made). The order is then clipped to the interval [1,3] — below 1 the observed convergence is not trustworthy, above 3 it is not credible for a second-order scheme — and the error model
 
 
 $$ f(N)=f_\infty+c\,N^{-p},\qquad c=\frac{f_2-f_3}{N_2^{-p}-N_3^{-p}},\qquad f_\infty=f_3-c\,N_3^{-p} \qquad (82) $$
@@ -611,7 +611,7 @@ which assumes the two error components are additive — an assumption, not a res
 
 $$ u_{\mathrm{num}}=\max\left(|A_\phi(M)-A_\phi(R192)|,\;|A_\phi(M)-A_\phi(T144)|,\;|A_\phi(M)-A_\phi(\mathrm{ext})|\right) \qquad (84) $$
 
-i.e. the largest of the differences between the production value and the finer or extrapolated estimates, and the detection criterion for the modulation, fixed before the production runs, is A_{φ} > max(5u_{num}, 2%). Following the extrapolation of Eq. (82) goes back to Richardson and Gaunt [52], and in the standard terminology of the verification literature [53,54], these are solution-verification quantities: they bound the discretisation error of the computed solution of the stated model, and say nothing about model error.
+i.e. the largest of the differences between the production value and the finer or extrapolated estimates, and the detection criterion for the modulation, fixed before the production runs, is A_{φ} > max(5u_{num}, 2%). Following the extrapolation of Eq. (82) goes back to Richardson and Gaunt [53], and in the standard terminology of the verification literature [54,55], these are solution-verification quantities: they bound the discretisation error of the computed solution of the stated model, and say nothing about model error.
 
 Software and AI assistance (Methods disclosure): the finite-difference solver of the preliminary analysis was reviewed, corrected where noted, extended and verified with the assistance of generative-AI coding tools; this is the research-process use referred to in the declaration before the references (Section 5 lists the tests; code, tests and raw data are in the data package). All numbers in this paper are produced by the analysis scripts from stored raw outputs.
 
@@ -686,7 +686,7 @@ Because the model is undamped and the outer boundary is finite, elastic echoes a
 
 ### 5.4 What the verification covers and what it does not
 
-The tests of Sections 5.1-5.3 are code-verification and solution-verification tests in the usual sense [53]: they compare the implementation with exact solutions of the same equations (patch tests, steady and 1-D reference solutions, the closed form of Section 3.3) and with independent implementations of the same model (an independent three-dimensional tensor rotation, a 1-D spectral solver, a time-domain Crank-Nicolson integration), and they quantify the discretisation error by grid refinement. What they do not do is check the model itself. The constitutive law, the plane-strain reduction, the relaxation-time kernel, the parameter values of Table 4 and the continuum description at 5-50 nm are inputs, not outputs, of the verification: an error in any of them would leave every test above passing. No comparison with measurements is made anywhere in this paper, so the study is verified and not validated; the physical status of the model is discussed in Section 7.2.
+The tests of Sections 5.1-5.3 are code-verification and solution-verification tests in the usual sense [54]: they compare the implementation with exact solutions of the same equations (patch tests, steady and 1-D reference solutions, the closed form of Section 3.3) and with independent implementations of the same model (an independent three-dimensional tensor rotation, a 1-D spectral solver, a time-domain Crank-Nicolson integration), and they quantify the discretisation error by grid refinement. What they do not do is check the model itself. The constitutive law, the plane-strain reduction, the relaxation-time kernel, the parameter values of Table 4 and the continuum description at 5-50 nm are inputs, not outputs, of the verification: an error in any of them would leave every test above passing. No comparison with measurements is made anywhere in this paper, so the study is verified and not validated; the physical status of the model is discussed in Section 7.2.
 
 
 ## 6. Results
@@ -735,7 +735,7 @@ Is the modulation a local effect? If the heated layer were thin compared with th
 
 ### 6.3 Which anisotropy drives the modulation
 
-To separate the contributions of the three anisotropic tensors the ellipse sweep was repeated with one tensor at a time made isotropic (stiffness from the same Lamé constants as the isotropic control; conductivity equal to the mean eigenvalue; expansion equal to the mean of the three axes) (Table 9, Fig. Fig. 7), and with an expansion set representing the 298 K measurements [18] (α = (0.10, 0.20, 0.20)×10^{−6} 1/K, a sensitivity-only set constructed from the abstract-level statement that α_{b} and α_{c} are about twice α_{a}). The ablations are exploratory and use the 96×48 grid (six orientations; the angular error common to all variants cancels in the comparison).
+To separate the contributions of the three anisotropic tensors the ellipse sweep was repeated with one tensor at a time made isotropic (stiffness from the same Lamé constants as the isotropic control; conductivity equal to the mean eigenvalue; expansion equal to the mean of the three axes) (Table 9, Fig. Fig. 7), and with an expansion set representing the 298 K measurements [22] (α = (0.10, 0.20, 0.20)×10^{−6} 1/K, a sensitivity-only set constructed from the abstract-level statement that α_{b} and α_{c} are about twice α_{a}). The ablations are exploratory and use the 96×48 grid (six orientations; the angular error common to all variants cancels in the comparison).
 
 Removing the expansion anisotropy lowers the modulation to 70% of the baseline, removing the stiffness anisotropy changes it to 152% of the baseline, and removing the conductivity anisotropy changes it to 94%. The orientation modulation therefore results from the competition of the expansion and stiffness anisotropies — the expansion anisotropy alone (isotropic stiffness) would give a larger modulation than the full crystal, the stiffness anisotropy partially compensates it — while the conductivity anisotropy is a minor modifier.
 
@@ -752,8 +752,8 @@ Removing the expansion anisotropy lowers the modulation to 70% of the baseline, 
 | isotropic stiffness (grid 96×48) | 45.6% | 1.4869 | 1.270 |
 | isotropic expansion (mean α) | 21.0% | 1.2113 | 1.023 |
 | isotropic expansion (mean α) (grid 96×48) | 20.8% | 1.1973 | 1.023 |
-| expansion set of the 298 K-like data [18] | 31.0% | 0.0746 | 0.063 |
-| expansion set of the 298 K-like data [18] (grid 96×48) | 29.9% | 0.0737 | 0.063 |
+| expansion set of the 298 K-like data [22] | 31.0% | 0.0746 | 0.063 |
+| expansion set of the 298 K-like data [22] (grid 96×48) | 29.9% | 0.0737 | 0.063 |
 
 
 ![Fig. 7](../11_Figures/fig6b_ablation.png)
@@ -805,8 +805,8 @@ Stress per kelvin is proportional to the thermal-stress vector β = Cα. With th
 ### 7.2 Limitations
 
 - **No physical validation.** No transient cavity measurements for β-Ga₂O₃ are known to us; the study is verified, not validated (APPLICABLE — EVIDENCE_UNAVAILABLE).
-- **Continuum validity.** Fourier and Cattaneo–Vernotte conduction are continuum models. In β-Ga₂O₃ the gray mean free path is of the order of 3 nm, but heat-carrying phonons with mean free paths up to about 0.7–1 µm exist [20]; cavities of 5–50 nm are therefore outside the demonstrated range of validity of these laws. The dimensionless results (Λ, ε, φ, χ) should be read as properties of the continuum model.
-- **Parameters.** The relaxation times are hypothetical (order-of-magnitude estimates: gray ≈ 0.9 ps, longest-mean-free-path phonons ≈ 0.2 ns); c_{p} is assumed (485–540 J/(kg K) reported [19], 560 used) and enters only the time scale; the thermal-expansion coefficients are uncertain by more than an order of magnitude at 298 K [17,18]; α_{5} is set to zero; the b-axis expansion enters through C_{12}, C_{23}, C_{25}.
+- **Continuum validity.** Fourier and Cattaneo–Vernotte conduction are continuum models. In β-Ga₂O₃ the gray mean free path is of the order of 3 nm, but heat-carrying phonons with mean free paths up to about 0.7–1 µm exist [43]; cavities of 5–50 nm are therefore outside the demonstrated range of validity of these laws. The dimensionless results (Λ, ε, φ, χ) should be read as properties of the continuum model.
+- **Parameters.** The relaxation times are hypothetical (order-of-magnitude estimates: gray ≈ 0.9 ps, longest-mean-free-path phonons ≈ 0.2 ns); c_{p} is assumed (485–540 J/(kg K) reported [42], 560 used) and enters only the time scale; the thermal-expansion coefficients are uncertain by more than an order of magnitude at 298 K [21,22]; α_{5} is set to zero; the b-axis expansion enters through C_{12}, C_{23}, C_{25}.
 - **Scope of the runs.** Thermal-memory (relaxation-time) runs and the feedback test were made for the circular cavity; the elliptical cavity was run with Fourier conduction; the mechanism ablations are exploratory.
 - **Model scope.** Linear, small-strain, plane strain in the a–c plane; temperature-independent properties; prescribed (Dirichlet) wall temperature; finite undamped domain (R = 80a) with a clamped cold boundary, so elastic echoes are model features for a ≥ 20 nm and the QoI window t ≤ 6 t_{th} is echo-free only for a ≤ 10 nm (doubling R changed the peak by ≤ 0.3% and D by ≤ 5.4%); no thermal boundary resistance, no surface or size effects on the elastic constants.
 - **Numerics.** The sharp ends of the ellipse converge slowly: the extrapolation corrections of Table 7 and u_{num} quantify this; a 192×192 grid could not be run within the 2 GB memory of the environment. The mechanism ablations use the 96×48 grid and are exploratory.
@@ -834,7 +834,7 @@ Natural extensions are prescribed heat-flux loading, interior-stress and wall-he
 
 The solver, the test suite, the experiment drivers and the analysis scripts are frozen: SHA-256 digests of every file are recorded in `CODE_FREEZE_v2_gate.json` (feab48880c3c1359 for the file itself) and `CODE_FREEZE_v2_blockF.json` (9345b5d402e02f16), and the material model alone is identified by `cg_model.py` (f15578152b6374c1). Every production run records the code version, a checksum of its input configuration, the environment and a digest of its own output in `10_Processed_Data/PRODUCTION_PROVENANCE.csv`, so each number in this paper can be traced to the run that produced it and to the code state that produced the run.
 
-**Code state and re-checks.** The two archived manifests date from 2026-10-01; since they were taken, 7 of the 15 entries of `CODE_FREEZE_v2_gate.json` (cg_bromwich.py, cg_pipeline.py, run_tests.py, analyze_v2.py, make_figures.py, production_matrix.py and run_production_v2.py) have been edited, so the digests recorded for them no longer describe the code. The pipeline was re-run end to end with the code as it now stands and compared with the archived results (`15_Audits/RERUN_COMPARISON.md`): every production run reproduces its archived quantity of interest to zero relative difference and only wall-clock timings differ. On 2026-10-03 the analysis layer was re-run over all 175 stored runs: every pre-existing quantity of `ANALYSIS_V2.json` came out identical (the only value that moves is the number of runs audited), the eight figures and the five archived CSV tables are byte-identical to the archived files, and one further CSV (the ablation set at the production grid) is added. A full production job re-solved in a different build — Python 3.11.2 with NumPy 2.4.6 instead of 3.13.14/2.3.5 — reproduces its stored peak wall stress to 2.7×10⁻¹⁶ relative, i.e. one unit in the last place; the reconstruction of the wall temperature stays within 1.0×10⁻¹⁰ of the imposed pulse over the reported window for every run. Two refreshed manifests record the current code: `CODE_FREEZE_submission_2026_10_03c.json` (27 files, taken before this verification pass) and `CODE_FREEZE_submission_2026_10_03d.json` (3ac7eef65f134e72, 27 files, all 27 byte-identical to the code as submitted); the second is the one to deposit with the data package, and the earlier manifests are kept unchanged as history.
+**Code state and re-checks.** The two archived manifests date from 2026-10-01; since they were taken, 7 of the 15 entries of `CODE_FREEZE_v2_gate.json` (cg_bromwich.py, cg_pipeline.py, run_tests.py, analyze_v2.py, make_figures.py, production_matrix.py and run_production_v2.py) have been edited, so the digests recorded for them no longer describe the code. The pipeline was re-run end to end with the code as it now stands and compared with the archived results (`15_Audits/RERUN_COMPARISON.md`): every production run reproduces its archived quantity of interest to zero relative difference and only wall-clock timings differ. On 2026-10-03 the analysis layer was re-run over all 175 stored runs: every pre-existing quantity of `ANALYSIS_V2.json` came out identical (the only value that moves is the number of runs audited), the eight figures and the five archived CSV tables are byte-identical to the archived files, and one further CSV (the ablation set at the production grid) is added. A full production job re-solved in a different build — Python 3.11.2 with NumPy 2.4.6 instead of 3.13.14/2.3.5 — reproduces its stored peak wall stress to 2.7×10⁻¹⁶ relative, i.e. one unit in the last place; the reconstruction of the wall temperature stays within 1.0×10⁻¹⁰ of the imposed pulse over the reported window for every run. Two refreshed manifests record the current code: `CODE_FREEZE_submission_2026_10_03d.json` (27 files, taken before this verification pass) and `CODE_FREEZE_submission_2026_10_03e.json` (3226904bc1dd1559, 27 files, all 27 byte-identical to the code as submitted); the second is the one to deposit with the data package, and the earlier manifests are kept unchanged as history.
 
 
 ### 9.2 Data package
@@ -858,65 +858,6 @@ The package contains the frozen source (06_Source_Code), the test suite and its 
 **Data availability:** the Python source code, verification suite, per-run raw outputs (npz/json, including the frequency-domain transfer values), analysis and figure scripts, and the production matrix are provided in the project data package (SHA-256 code freeze `CODE_FREEZE_v2_gate.json`). to be deposited at [PUBLIC REPOSITORY/DOI TO BE INSERTED].
 
 **Declaration of Generative AI and AI-assisted technologies in the writing process.** [TEMPLATE — to be reviewed, edited and confirmed by the authors; Elsevier requires this statement above the references.] During the preparation of this work the author(s) used a generative-AI assistant (Arena.ai Agent Mode; the underlying models are provided by the service) for the writing process: drafting and revising the text and the figure captions, and checking the internal consistency of the manuscript, the calculation companion and the tables. After using this tool the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the publication. The same class of tool was also used in the research process — reviewing and extending the numerical code and the verification suite, and running the simulations — which the journal policy places in the methods rather than in this declaration; the numerical-methods section of the manuscript records that use. No AI tool generated a physical result, no AI tool was used to produce or select any number reported here, and no AI tool is an author or is cited as a source.
-
-
-## References
-
-[1] Florence, A.L., Goodier, J.N. Thermal Stress at Spherical Cavities and Circular Holes in Uniform Heat Flow. Journal of Applied Mechanics, 26(2), 293-294 (1959). https://doi.org/10.1115/1.4011999
-[2] Florence, A.L., Goodier, J.N. Thermal Stresses Due to Disturbance of Uniform Heat Flow by an Insulated Ovaloid Hole. Journal of Applied Mechanics, 27(4), 635-639 (1960). https://doi.org/10.1115/1.3644074
-[3] Chao, C.K., Gao, B. Mixed boundary-value problems of two-dimensional anisotropic thermoelasticity with elliptic boundaries. International Journal of Solids and Structures, 38(34-35), 5975-5994 (2001). https://doi.org/10.1016/s0020-7683(00)00403-0
-[4] Abbas, I.A. A Dual Phase Lag Model on Thermoelastic Interaction in an Infinite Fiber-Reinforced Anisotropic Medium with a Circular Hole. Mechanics Based Design of Structures and Machines, 43(4), 501-513 (2015). https://doi.org/10.1080/15397734.2015.1029589
-[5] Karmakar, R., Sur, A., Kanoria, M. Generalized thermoelastic problem of an infinite body with a spherical cavity under dual-phase-lags. Journal of Applied Mechanics and Technical Physics, 57(4), 652-665 (2016). https://doi.org/10.1134/s002189441604009x
-[6] Jafari, M. Effect of hole geometry on the thermal stress analysis of perforated composite plate under uniform heat flux. Journal of Composite Materials, 53(8), 1079-1095 (2019). https://doi.org/10.1177/0021998318795279
-[7] Abbas, I., Marin, M., Hobiny, A., Vlase, S. Thermal Conductivity Study of an Orthotropic Medium Containing a Cylindrical Cavity. Symmetry, 14(11), 2387 (2022). https://doi.org/10.3390/sym14112387
-[8] Fahmy, M.A., Alsulami, M.O. Boundary Element and Sensitivity Analysis of Anisotropic Thermoelastic Metal and Alloy Discs with Holes. Materials, 15(5), 1828 (2022). https://doi.org/10.3390/ma15051828
-[9] Shiah, Y.C., Liu, T.L. Boundary element analysis of thermal stresses on voids/holes in an infinite/semi-infinite anisotropic plane. Journal of Thermal Stresses, 49(1), 129-145 (2026). https://doi.org/10.1080/01495739.2025.2566326
-[10] Biot, M.A. Thermoelasticity and Irreversible Thermodynamics. Journal of Applied Physics, 27(3), 240-253 (1956). https://doi.org/10.1063/1.1722351
-[11] Lord, H.W., Shulman, Y. A generalized dynamical theory of thermoelasticity. Journal of the Mechanics and Physics of Solids, 15(5), 299-309 (1967). https://doi.org/10.1016/0022-5096(67)90024-5
-[12] Dhaliwal, R.S., Sherief, H.H. Generalized thermoelasticity for anisotropic media. Quarterly of Applied Mathematics, 38(1), 1-8 (1980). https://doi.org/10.1090/qam/575828
-[13] Tzou, D.Y. A Unified Field Approach for Heat Conduction From Macro- to Micro-Scales. Journal of Heat Transfer, 117(1), 8-16 (1995). https://doi.org/10.1115/1.2822329
-[14] Chandrasekharaiah, D.S. Hyperbolic Thermoelasticity: A Review of Recent Literature. Applied Mechanics Reviews, 51(12), 705-729 (1998). https://doi.org/10.1115/1.3098984
-[15] Adachi, K., Ogi, H., Takeuchi, N., Nakamura, N., Watanabe, H., Ito, T., et al. Unusual elasticity of monoclinic β-Ga2O3. Journal of Applied Physics, 124(8), 085102 (2018). https://doi.org/10.1063/1.5047017
-[16] Klimm, D., Amgalan, B., Ganschow, S., Kwasniewski, A., Galazka, Z., Bickermann, M. The Thermal Conductivity Tensor of β-Ga2O3 from 300 to 1275 K. Crystal Research and Technology, 58(2), 2200204 (2023). https://doi.org/10.1002/crat.202200204
-[17] Orlandi, F., Mezzadri, F., Calestani, G., Boschi, F., Fornari, R. Thermal expansion coefficients of β-Ga2O3 single crystals. Applied Physics Express, 8(11), 111101 (2015). https://doi.org/10.7567/apex.8.111101
-[18] Cheng, Z., Hanke, M., Galazka, Z., Trampert, A. Thermal expansion of single-crystalline β-Ga2O3 from RT to 1200 K studied by synchrotron-based high resolution x-ray diffraction. Applied Physics Letters, 113(18), 182102 (2018). https://doi.org/10.1063/1.5054265
-[19] Handwerg, M., Mitdank, R., Galazka, Z., Fischer, S.F. Temperature-dependent thermal conductivity and diffusivity of a Mg-doped insulating β-Ga2O3 single crystal along [100], [010] and [001]. Semiconductor Science and Technology, 31(12), 125006 (2016). https://doi.org/10.1088/0268-1242/31/12/125006
-[20] Yang, J., Xu, Y., Wang, X., Zhang, X., He, Y., Sun, H. Lattice thermal conductivity of β-, α- and κ- Ga2O3: a first-principles computational study. Applied Physics Express, 17(1), 011001 (2023). https://doi.org/10.35848/1882-0786/ad0ba8
-[21] Durbin, F. Numerical Inversion of Laplace Transforms: An Efficient Improvement to Dubner and Abate's Method. The Computer Journal, 17(4), 371-376 (1974). https://doi.org/10.1093/comjnl/17.4.371
-[22] Crump, K.S. Numerical Inversion of Laplace Transforms Using a Fourier Series Approximation. Journal of the ACM, 23(1), 89-96 (1976). https://doi.org/10.1145/321921.321931
-[23] Huang, Y., Yan, L., Wu, H., Yu, Y. New insights on generalized heat conduction and thermoelastic coupling models. Applied Mathematics and Mechanics, 46(8), 1533-1550 (2025). https://doi.org/10.1007/s10483-025-3280-7
-[24] Green, A.E., Lindsay, K.A. Thermoelasticity. Journal of Elasticity, 2(1), 1-7 (1972). https://doi.org/10.1007/BF00045689
-[25] Green, A.E., Naghdi, P.M. Thermoelasticity without energy dissipation. Journal of Elasticity, 31(3), 189-208 (1993). https://doi.org/10.1007/BF00044969
-[26] Hetnarski, R.B., Ignaczak, J. GENERALIZED THERMOELASTICITY: CLOSED-FORM SOLUTIONS. Journal of Thermal Stresses, 16(4), 473-498 (1993). https://doi.org/10.1080/01495739308946241
-[27] Ignaczak, J., Ostoja-Starzewski, M. Thermoelasticity with Finite Wave Speeds. Oxford University Press (2009). https://doi.org/10.1093/acprof:oso/9780199541645.001.0001
-[28] Straughan, B. Heat Waves. Springer, Applied Mathematical Sciences (2011). https://doi.org/10.1007/978-1-4614-0493-4
-[29] Hetnarski, R.B., Eslami, M.R. Thermal Stresses—Advanced Theory and Applications. Springer, Solid Mechanics and Its Applications (2019). https://doi.org/10.1007/978-3-030-10436-8
-[30] Eslami, M.R., Hetnarski, R.B., Ignaczak, J., Noda, N., Sumi, N., Tanigawa, Y. Theory of Elasticity and Thermal Stresses. Springer, Solid Mechanics and Its Applications (2013). https://doi.org/10.1007/978-94-007-6356-2
-[31] Chandrasekharaiah, D.S. Thermoelasticity with Second Sound: A Review. Applied Mechanics Reviews, 39(3), 355-376 (1986). https://doi.org/10.1115/1.3143705
-[32] Joseph, D.D., Preziosi, L. Heat waves. Reviews of Modern Physics, 61(1), 41-73 (1989). https://doi.org/10.1103/RevModPhys.61.41
-[33] Kaminski, W. Hyperbolic Heat Conduction Equation for Materials With a Nonhomogeneous Inner Structure. Journal of Heat Transfer, 112(3), 555-560 (1990). https://doi.org/10.1115/1.2910422
-[34] Roy Choudhuri, S.K. On A Thermoelastic Three-Phase-Lag Model. Journal of Thermal Stresses, 30(3), 231-238 (2007). https://doi.org/10.1080/01495730601130919
-[35] Chen, G. Ballistic-Diffusive Heat-Conduction Equations. Physical Review Letters, 86(11), 2297-2300 (2001). https://doi.org/10.1103/PhysRevLett.86.2297
-[36] Majumdar, A. Microscale Heat Conduction in Dielectric Thin Films. Journal of Heat Transfer, 115(1), 7-16 (1993). https://doi.org/10.1115/1.2910673
-[37] Tzou, D.Y. Macro- to Microscale Heat Transfer. Wiley (2014). https://doi.org/10.1002/9781118818275
-[38] Prevost, J.H., Tao, D. Finite Element Analysis of Dynamic Coupled Thermoelasticity Problems With Relaxation Times. Journal of Applied Mechanics, 50(4), 817-822 (1983). https://doi.org/10.1115/1.3167151
-[39] Narayanan, G.V., Beskos, D.E. Numerical operational methods for time-dependent linear problems. International Journal for Numerical Methods in Engineering, 18(12), 1829-1854 (1982). https://doi.org/10.1002/nme.1620181207
-[40] Davies, B., Martin, B. Numerical inversion of the laplace transform: a survey and comparison of methods. Journal of Computational Physics, 33(1), 1-32 (1979). https://doi.org/10.1016/0021-9991(79)90025-1
-[41] Weeks, W.T. Numerical Inversion of Laplace Transforms Using Laguerre Functions. Journal of the ACM, 13(3), 419-429 (1966). https://doi.org/10.1145/321341.321351
-[42] Talbot, A. The Accurate Numerical Inversion of Laplace Transforms. IMA Journal of Applied Mathematics, 23(1), 97-120 (1979). https://doi.org/10.1093/imamat/23.1.97
-[43] Abate, J., Whitt, W. A Unified Framework for Numerically Inverting Laplace Transforms. INFORMS Journal on Computing, 18(4), 408-421 (2006). https://doi.org/10.1287/ijoc.1050.0137
-[44] de Hoog, F.R., Knight, J.H., Stokes, A.N. An Improved Method for Numerical Inversion of Laplace Transforms. SIAM Journal on Scientific and Statistical Computing, 3(3), 357-366 (1982). https://doi.org/10.1137/0903022
-[45] Ting, T.T.C. Anisotropic Elasticity. Oxford University Press (1996). https://doi.org/10.1093/oso/9780195074475.001.0001
-[46] Hwu, C. Anisotropic Elastic Plates. Springer (2010). https://doi.org/10.1007/978-1-4419-5915-7
-[47] Stroh, A.N. Dislocations and Cracks in Anisotropic Elasticity. Philosophical Magazine, 3(30), 625-646 (1958). https://doi.org/10.1080/14786435808565804
-[48] Chen, F.M., Chao, C.K. Stress Analysis of an Infinite Plate with a Coated Elliptic Hole Under a Remote Uniform Heat Flow. Journal of Thermal Stresses, 31(7), 599-613 (2008). https://doi.org/10.1080/01495730801978547
-[49] Fahmy, M.A. Boundary Element Algorithm for Modeling and Simulation of Dual-Phase Lag Bioheat Transfer and Biomechanics of Anisotropic Soft Tissues. International Journal of Applied Mechanics, 10(10), 1850108 (2018). https://doi.org/10.1142/S1758825118501089
-[50] Pearton, S.J., Yang, J., Cary, P.H., Ren, F., Kim, J., Tadjer, M.J., et al. A review of Ga2O3 materials, processing, and devices. Applied Physics Reviews, 5(1), 011301 (2018). https://doi.org/10.1063/1.5006941
-[51] Galazka, Z. Growth of bulk β-Ga2O3 single crystals by the Czochralski method. Journal of Applied Physics, 131(3), 031103 (2022). https://doi.org/10.1063/5.0076962
-[52] Richardson, L.F., Gaunt, J.A. VIII. The deferred approach to the limit. Philosophical Transactions of the Royal Society of London Series A, 226, 299-361 (1927). https://doi.org/10.1098/rsta.1927.0008
-[53] Oberkampf, W.L., Roy, C.J. Verification and Validation in Scientific Computing. Cambridge University Press (2010). https://doi.org/10.1017/CBO9780511760396
-[54] Pelletier, D., Roache, P.J. Verification and Validation of Computational Heat Transfer. In Handbook of Numerical Heat Transfer, 417-442 (2000). https://doi.org/10.1002/9780470172599.ch13
-[55] Gurtin, M.E., Pipkin, A.C. A general theory of heat conduction with finite wave speeds. Archive for Rational Mechanics and Analysis, 31(2), 113-126 (1968). https://doi.org/10.1007/BF00281373
 
 
 ## Appendix A. Nomenclature
@@ -970,3 +911,62 @@ The symbols used in this paper are listed in Table 11.
 | N_{r} × N_{θ} | grid size (radial × angular) | — |
 | ω, g(ω) | angular frequency, conduction kernel | 1/s, — |
 | η | backward error of the linear solve | — |
+
+
+## References
+
+[1] Florence, A.L., Goodier, J.N. Thermal Stress at Spherical Cavities and Circular Holes in Uniform Heat Flow. Journal of Applied Mechanics, 26(2), 293-294 (1959). https://doi.org/10.1115/1.4011999
+[2] Florence, A.L., Goodier, J.N. Thermal Stresses Due to Disturbance of Uniform Heat Flow by an Insulated Ovaloid Hole. Journal of Applied Mechanics, 27(4), 635-639 (1960). https://doi.org/10.1115/1.3644074
+[3] Chao, C.K., Gao, B. Mixed boundary-value problems of two-dimensional anisotropic thermoelasticity with elliptic boundaries. International Journal of Solids and Structures, 38(34-35), 5975-5994 (2001). https://doi.org/10.1016/s0020-7683(00)00403-0
+[4] Abbas, I.A. A Dual Phase Lag Model on Thermoelastic Interaction in an Infinite Fiber-Reinforced Anisotropic Medium with a Circular Hole. Mechanics Based Design of Structures and Machines, 43(4), 501-513 (2015). https://doi.org/10.1080/15397734.2015.1029589
+[5] Karmakar, R., Sur, A., Kanoria, M. Generalized thermoelastic problem of an infinite body with a spherical cavity under dual-phase-lags. Journal of Applied Mechanics and Technical Physics, 57(4), 652-665 (2016). https://doi.org/10.1134/s002189441604009x
+[6] Abbas, I., Marin, M., Hobiny, A., Vlase, S. Thermal Conductivity Study of an Orthotropic Medium Containing a Cylindrical Cavity. Symmetry, 14(11), 2387 (2022). https://doi.org/10.3390/sym14112387
+[7] Jafari, M. Effect of hole geometry on the thermal stress analysis of perforated composite plate under uniform heat flux. Journal of Composite Materials, 53(8), 1079-1095 (2019). https://doi.org/10.1177/0021998318795279
+[8] Fahmy, M.A., Alsulami, M.O. Boundary Element and Sensitivity Analysis of Anisotropic Thermoelastic Metal and Alloy Discs with Holes. Materials, 15(5), 1828 (2022). https://doi.org/10.3390/ma15051828
+[9] Shiah, Y.C., Liu, T.L. Boundary element analysis of thermal stresses on voids/holes in an infinite/semi-infinite anisotropic plane. Journal of Thermal Stresses, 49(1), 129-145 (2026). https://doi.org/10.1080/01495739.2025.2566326
+[10] Chen, F.M., Chao, C.K. Stress Analysis of an Infinite Plate with a Coated Elliptic Hole Under a Remote Uniform Heat Flow. Journal of Thermal Stresses, 31(7), 599-613 (2008). https://doi.org/10.1080/01495730801978547
+[11] Fahmy, M.A. Boundary Element Algorithm for Modeling and Simulation of Dual-Phase Lag Bioheat Transfer and Biomechanics of Anisotropic Soft Tissues. International Journal of Applied Mechanics, 10(10), 1850108 (2018). https://doi.org/10.1142/S1758825118501089
+[12] Biot, M.A. Thermoelasticity and Irreversible Thermodynamics. Journal of Applied Physics, 27(3), 240-253 (1956). https://doi.org/10.1063/1.1722351
+[13] Lord, H.W., Shulman, Y. A generalized dynamical theory of thermoelasticity. Journal of the Mechanics and Physics of Solids, 15(5), 299-309 (1967). https://doi.org/10.1016/0022-5096(67)90024-5
+[14] Dhaliwal, R.S., Sherief, H.H. Generalized thermoelasticity for anisotropic media. Quarterly of Applied Mathematics, 38(1), 1-8 (1980). https://doi.org/10.1090/qam/575828
+[15] Gurtin, M.E., Pipkin, A.C. A general theory of heat conduction with finite wave speeds. Archive for Rational Mechanics and Analysis, 31(2), 113-126 (1968). https://doi.org/10.1007/BF00281373
+[16] Tzou, D.Y. A Unified Field Approach for Heat Conduction From Macro- to Micro-Scales. Journal of Heat Transfer, 117(1), 8-16 (1995). https://doi.org/10.1115/1.2822329
+[17] Chandrasekharaiah, D.S. Hyperbolic Thermoelasticity: A Review of Recent Literature. Applied Mechanics Reviews, 51(12), 705-729 (1998). https://doi.org/10.1115/1.3098984
+[18] Huang, Y., Yan, L., Wu, H., Yu, Y. New insights on generalized heat conduction and thermoelastic coupling models. Applied Mathematics and Mechanics, 46(8), 1533-1550 (2025). https://doi.org/10.1007/s10483-025-3280-7
+[19] Adachi, K., Ogi, H., Takeuchi, N., Nakamura, N., Watanabe, H., Ito, T., et al. Unusual elasticity of monoclinic β-Ga2O3. Journal of Applied Physics, 124(8), 085102 (2018). https://doi.org/10.1063/1.5047017
+[20] Klimm, D., Amgalan, B., Ganschow, S., Kwasniewski, A., Galazka, Z., Bickermann, M. The Thermal Conductivity Tensor of β-Ga2O3 from 300 to 1275 K. Crystal Research and Technology, 58(2), 2200204 (2023). https://doi.org/10.1002/crat.202200204
+[21] Orlandi, F., Mezzadri, F., Calestani, G., Boschi, F., Fornari, R. Thermal expansion coefficients of β-Ga2O3 single crystals. Applied Physics Express, 8(11), 111101 (2015). https://doi.org/10.7567/apex.8.111101
+[22] Cheng, Z., Hanke, M., Galazka, Z., Trampert, A. Thermal expansion of single-crystalline β-Ga2O3 from RT to 1200 K studied by synchrotron-based high resolution x-ray diffraction. Applied Physics Letters, 113(18), 182102 (2018). https://doi.org/10.1063/1.5054265
+[23] Pearton, S.J., Yang, J., Cary, P.H., Ren, F., Kim, J., Tadjer, M.J., et al. A review of Ga2O3 materials, processing, and devices. Applied Physics Reviews, 5(1), 011301 (2018). https://doi.org/10.1063/1.5006941
+[24] Galazka, Z. Growth of bulk β-Ga2O3 single crystals by the Czochralski method. Journal of Applied Physics, 131(3), 031103 (2022). https://doi.org/10.1063/5.0076962
+[25] Green, A.E., Lindsay, K.A. Thermoelasticity. Journal of Elasticity, 2(1), 1-7 (1972). https://doi.org/10.1007/BF00045689
+[26] Green, A.E., Naghdi, P.M. Thermoelasticity without energy dissipation. Journal of Elasticity, 31(3), 189-208 (1993). https://doi.org/10.1007/BF00044969
+[27] Hetnarski, R.B., Ignaczak, J. GENERALIZED THERMOELASTICITY: CLOSED-FORM SOLUTIONS. Journal of Thermal Stresses, 16(4), 473-498 (1993). https://doi.org/10.1080/01495739308946241
+[28] Ignaczak, J., Ostoja-Starzewski, M. Thermoelasticity with Finite Wave Speeds. Oxford University Press (2009). https://doi.org/10.1093/acprof:oso/9780199541645.001.0001
+[29] Straughan, B. Heat Waves. Springer, Applied Mathematical Sciences (2011). https://doi.org/10.1007/978-1-4614-0493-4
+[30] Chandrasekharaiah, D.S. Thermoelasticity with Second Sound: A Review. Applied Mechanics Reviews, 39(3), 355-376 (1986). https://doi.org/10.1115/1.3143705
+[31] Joseph, D.D., Preziosi, L. Heat waves. Reviews of Modern Physics, 61(1), 41-73 (1989). https://doi.org/10.1103/RevModPhys.61.41
+[32] Ting, T.T.C. Anisotropic Elasticity. Oxford University Press (1996). https://doi.org/10.1093/oso/9780195074475.001.0001
+[33] Hwu, C. Anisotropic Elastic Plates. Springer (2010). https://doi.org/10.1007/978-1-4419-5915-7
+[34] Stroh, A.N. Dislocations and Cracks in Anisotropic Elasticity. Philosophical Magazine, 3(30), 625-646 (1958). https://doi.org/10.1080/14786435808565804
+[35] Kaminski, W. Hyperbolic Heat Conduction Equation for Materials With a Nonhomogeneous Inner Structure. Journal of Heat Transfer, 112(3), 555-560 (1990). https://doi.org/10.1115/1.2910422
+[36] Chen, G. Ballistic-Diffusive Heat-Conduction Equations. Physical Review Letters, 86(11), 2297-2300 (2001). https://doi.org/10.1103/PhysRevLett.86.2297
+[37] Majumdar, A. Microscale Heat Conduction in Dielectric Thin Films. Journal of Heat Transfer, 115(1), 7-16 (1993). https://doi.org/10.1115/1.2910673
+[38] Tzou, D.Y. Macro- to Microscale Heat Transfer. Wiley (2014). https://doi.org/10.1002/9781118818275
+[39] Roy Choudhuri, S.K. On A Thermoelastic Three-Phase-Lag Model. Journal of Thermal Stresses, 30(3), 231-238 (2007). https://doi.org/10.1080/01495730601130919
+[40] Hetnarski, R.B., Eslami, M.R. Thermal Stresses—Advanced Theory and Applications. Springer, Solid Mechanics and Its Applications (2019). https://doi.org/10.1007/978-3-030-10436-8
+[41] Eslami, M.R., Hetnarski, R.B., Ignaczak, J., Noda, N., Sumi, N., Tanigawa, Y. Theory of Elasticity and Thermal Stresses. Springer, Solid Mechanics and Its Applications (2013). https://doi.org/10.1007/978-94-007-6356-2
+[42] Handwerg, M., Mitdank, R., Galazka, Z., Fischer, S.F. Temperature-dependent thermal conductivity and diffusivity of a Mg-doped insulating β-Ga2O3 single crystal along [100], [010] and [001]. Semiconductor Science and Technology, 31(12), 125006 (2016). https://doi.org/10.1088/0268-1242/31/12/125006
+[43] Yang, J., Xu, Y., Wang, X., Zhang, X., He, Y., Sun, H. Lattice thermal conductivity of β-, α- and κ- Ga2O3: a first-principles computational study. Applied Physics Express, 17(1), 011001 (2023). https://doi.org/10.35848/1882-0786/ad0ba8
+[44] Prevost, J.H., Tao, D. Finite Element Analysis of Dynamic Coupled Thermoelasticity Problems With Relaxation Times. Journal of Applied Mechanics, 50(4), 817-822 (1983). https://doi.org/10.1115/1.3167151
+[45] Narayanan, G.V., Beskos, D.E. Numerical operational methods for time-dependent linear problems. International Journal for Numerical Methods in Engineering, 18(12), 1829-1854 (1982). https://doi.org/10.1002/nme.1620181207
+[46] Durbin, F. Numerical Inversion of Laplace Transforms: An Efficient Improvement to Dubner and Abate's Method. The Computer Journal, 17(4), 371-376 (1974). https://doi.org/10.1093/comjnl/17.4.371
+[47] Crump, K.S. Numerical Inversion of Laplace Transforms Using a Fourier Series Approximation. Journal of the ACM, 23(1), 89-96 (1976). https://doi.org/10.1145/321921.321931
+[48] Davies, B., Martin, B. Numerical inversion of the laplace transform: a survey and comparison of methods. Journal of Computational Physics, 33(1), 1-32 (1979). https://doi.org/10.1016/0021-9991(79)90025-1
+[49] Weeks, W.T. Numerical Inversion of Laplace Transforms Using Laguerre Functions. Journal of the ACM, 13(3), 419-429 (1966). https://doi.org/10.1145/321341.321351
+[50] Talbot, A. The Accurate Numerical Inversion of Laplace Transforms. IMA Journal of Applied Mathematics, 23(1), 97-120 (1979). https://doi.org/10.1093/imamat/23.1.97
+[51] Abate, J., Whitt, W. A Unified Framework for Numerically Inverting Laplace Transforms. INFORMS Journal on Computing, 18(4), 408-421 (2006). https://doi.org/10.1287/ijoc.1050.0137
+[52] de Hoog, F.R., Knight, J.H., Stokes, A.N. An Improved Method for Numerical Inversion of Laplace Transforms. SIAM Journal on Scientific and Statistical Computing, 3(3), 357-366 (1982). https://doi.org/10.1137/0903022
+[53] Richardson, L.F., Gaunt, J.A. VIII. The deferred approach to the limit. Philosophical Transactions of the Royal Society of London Series A, 226, 299-361 (1927). https://doi.org/10.1098/rsta.1927.0008
+[54] Oberkampf, W.L., Roy, C.J. Verification and Validation in Scientific Computing. Cambridge University Press (2010). https://doi.org/10.1017/CBO9780511760396
+[55] Pelletier, D., Roache, P.J. Verification and Validation of Computational Heat Transfer. In Handbook of Numerical Heat Transfer, 417-442 (2000). https://doi.org/10.1002/9780470172599.ch13

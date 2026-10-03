@@ -57,6 +57,18 @@ def h2(title):
     _emit('\n### %d.%d %s\n' % (_state['sec'], _state['sub'], title))
 
 
+
+# The manuscript numbers its references by order of first citation (Elsevier numbered style); a pointer written
+# here as [55] must follow the same mapping, so it is read from the file the manuscript builder wrote.
+try:
+    _RO = json.load(open(os.path.join(HERE, 'REF_ORDER.json')))['old_to_new']
+except (OSError, ValueError, KeyError):
+    _RO = {}   # fall back to the numbers as written
+
+
+def _msref(n):
+    return _RO.get(str(n), n)
+
 def para(text):
     _state['words'] += len(text.split())
     _emit(text + '\n')
@@ -622,9 +634,9 @@ table(['Law', 'kernel', 'status in this study'],
       'ωτ → 0, so the Fourier case is the limit of the other two.')
 para('The three kernels differ only in that scalar factor, which is why the whole model '
      'family is implemented as one assembly with g(ω) as a parameter.')
-para('Both non-Fourier kernels are positive-real (passive) for real ω, which is the '
+para(f'Both non-Fourier kernels are positive-real (passive) for real ω, which is the '
      'property that keeps the response physically admissible (the same restriction is stated for a memory '
-     'kernel in the general theory of heat conduction with finite wave speeds, manuscript reference [55]); '
+     f'kernel in the general theory of heat conduction with finite wave speeds, manuscript reference [{_msref(55)}]); '
      'the companion does not claim '
      'that either is the correct description of β-Ga₂O₃, and the relaxation time is '
      'treated as a hypothetical parameter throughout.')
@@ -864,7 +876,7 @@ def _frz(label):
     return len(_f), _s, len(_f) - _s
 
 
-SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03d', 'submission_2026_10_03c'
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03e', 'submission_2026_10_03d'
 
 N_FRZ, N_FRZ_SAME, N_FRZ_DIFF = _frz('v2_gate')
 N_SUB, N_SUB_SAME, N_SUB_DIFF = _frz(SUB_FREEZE)
@@ -917,7 +929,8 @@ para('Both archived manifests were taken on 2026-10-01. %d of the %d entries of 
      'changed. CODE_FREEZE_%s.json (%d files, all %d byte-identical to the code as submitted) '
      'is the refreshed manifest, the one to deposit with the data package; it supersedes '
      'CODE_FREEZE_%s.json (taken the same day, before this change, %d of whose %d entries '
-     'still match), CODE_FREEZE_submission_2026_10_03b.json, CODE_FREEZE_submission_2026_10_03.json and '
+     'still match), CODE_FREEZE_submission_2026_10_03c.json, CODE_FREEZE_submission_2026_10_03b.json, '
+     'CODE_FREEZE_submission_2026_10_03.json and '
      'CODE_FREEZE_submission_2026_10_02.json, all '
      'kept unchanged as history.'
      % (N_FRZ_SAME, N_FRZ, N_FRZ_DIFF, FRZ_DIFF_NAMES, SUB_FREEZE, N_SUB, N_SUB_SAME, PREV_FREEZE, N_MID_SAME, N_MID))
