@@ -1,26 +1,49 @@
-Complete research package - checksum of record
-==============================================
-file    : PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip
-size    : 43644924 bytes (43.64 MB)
-entries : 603 files + MANIFEST.json (paths inside the zip are relative to PAPER_PROJECT/)
-sha256  : 9fc543900dfa45bc3784391d5414a307a7c0f087aa8ce67a08cf12021b22ef63
+DEPOSIT PACKAGE - CHECKSUM OF RECORD
+=====================================
 
-Integrity, recomputed from the stored bytes against the archive's own MANIFEST.json:
-603 files checked, 0 mismatches, 0 missing, CRC test clean.
+Object
+  PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip        (gitignored: PAPER_PROJECT/packages/ is
+                                                            excluded by the project's convention, so
+                                                            the archive is built on demand, not stored)
+  43645275 bytes | sha256 
 
-The package is regenerated, not stored: PAPER_PROJECT/packages/ is gitignored by the
-repository's own convention, so after a workspace rebuild run
+Reproducible - not a snapshot in time
+  The archive is a pure function of the tracked tree: entries and MANIFEST.json are written with a
+  fixed timestamp, an explicit compression type and fixed permissions, and the manifest records
+  generated_from_commit instead of a build clock. So anyone who checks out the commit below and runs
+  the command below gets exactly the sha256 above - the property a data-respository deposit needs,
+  because the file the curator hashes must be the file the deposit record names.
 
-    python3 PAPER_PROJECT/00_Project_Control/make_packages.py final
+Built from
+  commit   03921eed7b77a4ba1d2ca96f4daf1bc28533ad40  (Phase 10, branch arena/01a10176-le)
+  code     PAPER_PROJECT/00_Project_Control/make_packages.py
+  contents 603 files: 00_Project_Control .. 14_Documentation plus 15_Audits, all raw per-run .npz /
+           .json outputs, both convergence families, the production runs, every figure and table
+           rendition, both manuscript source trees, the .bib, the preview PDFs, the supplementary
+           workbook, and 13_Manuscript/figures/ (the eight vector PDFs the .tex files load)
+  manifest MANIFEST.json at the archive root: SHA-256 of all 603 files plus the commit above -
+           re-verified inside this build (603/603, no mismatch, CRC clean)
+  built    2026-10-03 (build clock lives here, in the sidecar, not in the archive)
 
-and the sha256 above should reproduce. It is a function of the committed tree, so a
-different value means the tree moved since this line was written - which is exactly what
-happened here: the earlier checksum (5b0ee097f98d0f43...) predates the Phase 10
-"downloadable bundle" commit, and the bundle section added to
-Phase_10_Submission_Package/REPORT.md is itself inside this archive, so the value above is
-the one to compare against.
-This is the object to deposit in a public repository for the DOI quoted in the manuscript's
-Data availability statement.
+Rebuild it yourself
+  git checkout 03921eed7b77a4ba1d2ca96f4daf1bc28533ad40
+  python3 PAPER_PROJECT/00_Project_Control/make_packages.py final
+  sha256sum PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip   # = the value above
+  # needs only the standard library; the manuscript builders additionally need PyMuPDF/python-docx/
+  # openpyxl, but the packaging step does not, so the deposit object is reproducible without them
 
-Journal upload set (committed, so it needs no rebuild):
-Phase_10_Submission_Package/IJHMT_submission_bundle.zip  2619619 bytes  sha256 0fa61fd9c6fec4c36bba2d1a5a9e0899cf669e935d98d01c78f99c9d4314363a
+What to deposit where
+  Editorial Manager (EM-ID):   Phase_10_Submission_Package/IJHMT_submission_bundle.zip   (committed)
+                               sha256   (committed next to it, 2.62 MB)
+                               manuscript + calcs .tex, FINAL_REVISED_REFERENCES.bib, figures/,
+                               highlights.txt, SUPPLEMENTARY_TABLES.xlsx, PDF previews, cover letter,
+                               checklist - nothing an editor has no business seeing
+  Data / code repository:      this archive - the object a reviewer can re-run, and what a repository
+                               (Zenodo, via the Figshare link in the Data availability statement)
+ mints a DOI for
+
+Earlier recorded values, superseded
+  9fc543900dfa45bc...  built from commit e52fec42 with per-entry mtimes and a live manifest clock,
+  5b0ee097f98d0f43...  built from the commit before the downloadable bundle was added
+  Both are legitimate builds of the same content but are not reproducible, which is why the builder was
+  fixed; the value at the top of this file is the one to cite.
