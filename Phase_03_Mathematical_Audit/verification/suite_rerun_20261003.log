@@ -19,3 +19,4 @@
 [PASS] V7_static_uniform_theta_annulus: rel_err_48_96_192=[0.016880767949530154, 0.004239529801282995, 0.0010591865724793384] sigma_exact=-3179904.953001158 criterion=<=1.5% at 96x48 vs closed form (handoff criterion)
 [PASS] V8_steady_thermal_gradient_load: rel_err_48_96_192_384=['+0.0063', '+0.0016', '+0.0004', '+0.0008'] observed_order_48_to_96=1.9675283417378677 sigma_exact=-1234746.0535908495 criterion=steady log-profile thermal-gradient elasticity (clamped R=80a) vs closed form: |err(192x96)|<0.5%, order>1.5 (NEW: gradient-load path was absent from handoff V0-V7)
    V9 grid (48, 24) done (10s)
+   V9 grid (96, 48) done (91s)

@@ -368,7 +368,7 @@ bullets([
        g((c30 ** 2 - s30 ** 2) * C['C25'], 4), g(C25p, 4)),
 ])
 para('The cross term −2c_φ s_φ C₂₅ = %s GPa is small compared with C₁₂ and C₂₃, but '
-     'it is the term whose sign was wrong in the earlier internal analysis, and the manuscript '
+     'it is the term whose sign was wrong in the analysis as first written, and the manuscript '
      'records the correction.' % g(-2 * c30 * s30 * C['C25'], 3))
 
 h2('The rotated expansion tensor and the induced thermal shear')
@@ -513,8 +513,8 @@ para('The transit time a/v_T is the time a thermal wave needs to cross the cavit
 h2('The feedback bound')
 para('The manuscript bounds the thermoelastic feedback — the effect of the deformation on '
      'the temperature field through the T₀β:ε̇ coupling — by comparing the '
-     'temperature change it can produce with the applied temperature change. The pre-'
-     'registered criterion is |Δθ|/|θ| ≤ 5δ, with the factor five a margin '
+     'temperature change it can produce with the applied temperature change. The criterion, fixed '
+     'before the runs were made, is |Δθ|/|θ| ≤ 5δ, with the factor five a margin '
      'chosen before the runs rather than fitted to them. With δ = %s, 5δ = %s, '
      'i.e. a feedback of at most about half a per cent. The criterion is then checked '
      'numerically by switching the coupling off (manuscript Section 6.4), which is the '
@@ -786,7 +786,7 @@ h2('Uncertainty budget')
 para('Two uncertainties are tracked and never added in quadrature, because they are of '
      'different kinds. The numerical uncertainty u_num = %s (relative) comes from the grid: '
      'it is the largest residual spread of the convergence families after extrapolation, and '
-     'the pre-registered resolvability threshold was %s. The parameter uncertainty is '
+     'the resolvability threshold fixed before the runs was %s. The parameter uncertainty is '
      'separate and larger: it comes from the spread of the published thermal-expansion data '
      'and is quantified in Section 10. The manuscript keeps them apart throughout, because '
      'the first is a property of the discretisation and can be reduced by computing, while '

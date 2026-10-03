@@ -139,7 +139,7 @@ With c_φ = 0.866025 and s_φ = 0.5:
 - C′₂₃ = 0.2500×128.0 + 0.7500×70.9 + 2×0.5×0.8660×0.36 = 32.0000 + 53.1750 + 0.3118 = 85.4868 GPa;
 - C′₂₅ = 0.4330×(128.0 − 70.9) + 0.5000×0.36 = 24.7250 + 0.1800 = 24.9050 GPa.
 
-The cross term −2c_φ s_φ C₂₅ = -0.312 GPa is small compared with C₁₂ and C₂₃, but it is the term whose sign was wrong in the earlier internal analysis, and the manuscript records the correction.
+The cross term −2c_φ s_φ C₂₅ = -0.312 GPa is small compared with C₁₂ and C₂₃, but it is the term whose sign was wrong in the analysis as first written, and the manuscript records the correction.
 
 ### 3.3 The rotated expansion tensor and the induced thermal shear
 
@@ -228,7 +228,7 @@ The transit time a/v_T is the time a thermal wave needs to cross the cavity radi
 
 ### 5.3 The feedback bound
 
-The manuscript bounds the thermoelastic feedback — the effect of the deformation on the temperature field through the T₀β:ε̇ coupling — by comparing the temperature change it can produce with the applied temperature change. The pre-registered criterion is |Δθ|/|θ| ≤ 5δ, with the factor five a margin chosen before the runs rather than fitted to them. With δ = 1.078e-03, 5δ = 5.391e-03, i.e. a feedback of at most about half a per cent. The criterion is then checked numerically by switching the coupling off (manuscript Section 6.4), which is the ablation that turns a bound into a measured effect.
+The manuscript bounds the thermoelastic feedback — the effect of the deformation on the temperature field through the T₀β:ε̇ coupling — by comparing the temperature change it can produce with the applied temperature change. The criterion, fixed before the runs were made, is |Δθ|/|θ| ≤ 5δ, with the factor five a margin chosen before the runs rather than fitted to them. With δ = 1.078e-03, 5δ = 5.391e-03, i.e. a feedback of at most about half a per cent. The criterion is then checked numerically by switching the coupling off (manuscript Section 6.4), which is the ablation that turns a bound into a measured effect.
 
 ## 6. Spatial discretisation
 
@@ -378,7 +378,7 @@ so the correction applied to the finest grid is -2861.3 Pa K⁻¹ (-0.191% relat
 
 ### 9.5 Uncertainty budget
 
-Two uncertainties are tracked and never added in quadrature, because they are of different kinds. The numerical uncertainty u_num = 0.0131 (relative) comes from the grid: it is the largest residual spread of the convergence families after extrapolation, and the pre-registered resolvability threshold was 0.0656. The parameter uncertainty is separate and larger: it comes from the spread of the published thermal-expansion data and is quantified in Section 10. The manuscript keeps them apart throughout, because the first is a property of the discretisation and can be reduced by computing, while the second is a property of the material data and cannot.
+Two uncertainties are tracked and never added in quadrature, because they are of different kinds. The numerical uncertainty u_num = 0.0131 (relative) comes from the grid: it is the largest residual spread of the convergence families after extrapolation, and the resolvability threshold fixed before the runs was 0.0656. The parameter uncertainty is separate and larger: it comes from the spread of the published thermal-expansion data and is quantified in Section 10. The manuscript keeps them apart throughout, because the first is a property of the discretisation and can be reduced by computing, while the second is a property of the material data and cannot.
 
 ## 10. Ablations: what each ingredient contributes
 

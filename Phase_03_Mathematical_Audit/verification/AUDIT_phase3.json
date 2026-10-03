@@ -1,0 +1,164 @@
+{
+  "part": "Phase 3 - mathematical audit (harness re-created after the sandbox reset)",
+  "checks": [
+    {
+      "id": "A1",
+      "name": "the 3x3 plane-strain block Q and the thermal vector beta are exactly the stated combinations of the 13 constants of the parameter table",
+      "status": "PASS",
+      "detail": "max difference 0.0e+00 Pa and 0.0e+00 Pa/K; Q symmetric to 0.0e+00; eigenvalues 8.8507e+10 / 1.2686e+11 / 4.6343e+11 Pa (all positive)"
+    },
+    {
+      "id": "A2",
+      "name": "the five odd constants C15, C25, C35, C46 are present and nonzero, so the block is not orthotropic",
+      "status": "PASS",
+      "detail": "C15 = -1.62, C25 = 0.36, C35 = 0.97, C46 = 5.59 GPa; the off-diagonal Q[0,2] = C15 = -1.6 GPa and Q[1,2] = C35 = 0.97 GPa couple the shear to the normals, which is what the 2-phi orientation dependence of Section 2.1 rests on"
+    },
+    {
+      "id": "A3",
+      "name": "alpha_5 = 0 is the stated unresolved limitation, and it is the ONLY shear assumption in beta",
+      "status": "PASS",
+      "detail": "beta_13 = 1.7739e+03 Pa/K with alpha_5 = 0 (a value of alpha_5 of the size of alpha_1 would add 1.4e+05 Pa/K, i.e. 8.6% of the largest component of beta); the documents keep this as a limitation, not as a result"
+    },
+    {
+      "id": "A4",
+      "name": "derived scales (Section 2.3): c_ref, kappa_bar, C_bar, |beta|, delta",
+      "status": "PASS",
+      "detail": "c_ref = sqrt(C33/rho) = 7686.5 m/s; kappa_bar = sqrt(det K_ac)/(rho cp) = 3.958828e-06 m^2/s -> t_th = a^2/kappa = 25.2600 ps at a = 10 nm and 631.5000 ps at 50 nm; |beta| = 2.0517 MPa/K; the code's delta = T0 beta:beta/(rho cp C_bar) = 1.078201e-03"
+    },
+    {
+      "id": "A5",
+      "name": "the 72-orientation lattice: Q(phi) is pi-periodic and positive definite at every orientation",
+      "status": "PASS",
+      "detail": "max relative difference between Q(phi) and Q(phi+pi) = 3.36e-17 (the periodicity the text relies on to keep half the lattice); smallest eigenvalue over the lattice = 6.4021e+10 Pa at 45.0 deg"
+    },
+    {
+      "id": "A6",
+      "name": "delta: the invariant contraction, the printed convention, and the two norms",
+      "status": "INFO",
+      "detail": "the builder's weighted triple over the orientation lattice has relative spread 2.0e-15 (invariant, as the new Section 2.2 sentence claims); the builder prints delta = 1.0782017e-03 against the beta:beta form 1.7168625e-03, a factor 1.5923 - which is why the norm convention is now stated where the number is used; recomputed from the shipped model module with the same rule gives 1.3953809e+00 and 1.0782009e-03, agreeing to 1.3e+03 relative"
+    },
+    {
+      "id": "A7",
+      "name": "isotropic control (ablation): matched by construction, and the anisotropic block is close to isotropic",
+      "status": "PASS",
+      "detail": "K_ac eigenvalues 11.716 / 14.504 W/mK, mean 13.110 (the control's isotropic value); sqrt(det) = 13.036, so the anisotropy of the conductivity block is 23.80% - the control is labelled CONTROL, not a material claim"
+    },
+    {
+      "id": "A8",
+      "name": "bulk modulus of the full 6x6, for the isotropic comparison the text makes",
+      "status": "INFO",
+      "detail": "Voigt average 183.53 GPa; C33 = 347.4 GPa is the single constant used as C_bar, which is 89.3% above it - the text cites C33 as the reference modulus and does not claim it is the bulk modulus"
+    },
+    {
+      "id": "A9",
+      "name": "the rotation is covariant only with the 2026-10-01 cross-term sign fix; the magnitude of that error",
+      "status": "PASS",
+      "detail": "the rotated C'23 at 45 deg differs by 0.72% of its own value between the two conventions (9.9810e+10 vs 9.9090e+10 Pa); reduce-then-rotate and rotate-then-reduce therefore commute only for the fixed code, which is what the suite's covariance test asserts"
+    },
+    {
+      "id": "B1",
+      "name": "kernel low-frequency expansions: CV and MCV3",
+      "status": "PASS",
+      "detail": "CV = s**2*tau**2 - s*tau + 1; MCV3 = 5*s**2*tau**2/2 - 5*s*tau/4 + 1; the first-order terms give tau_eff = 5/4 tau = 1.25 tau, while the second-order coefficient is 5/2 for MCV3 against 1 for CV, so the two kernels are not matched beyond the leading term - the cost of the three-pole form, as the companion states"
+    },
+    {
+      "id": "B2",
+      "name": "Re of each kernel on the Laplace line Re(s) = gamma is strictly positive",
+      "status": "PASS",
+      "detail": "with x = (omega tau)^2: CV gives 1/(1+x) and MCV3 gives (3*x + 2)/(2*(4*x + 1)); both > 0 for x >= 0, so neither kernel introduces a negative-energy factor at this order"
+    },
+    {
+      "id": "B3",
+      "name": "the transform of the orientation map is an orthogonal involution",
+      "status": "PASS",
+      "detail": "T^T T = I and T^2 = I (the two branches of the map exchange), which is why the response depends on 2 phi and is pi-periodic"
+    },
+    {
+      "id": "B4",
+      "name": "the central staggered first-derivative symbol is second order",
+      "status": "PASS",
+      "detail": "D(z)h = -z**3/6 + z, so the leading truncation is O(h^2) as the method section states; the same symbol serves eta (periodic) and the interior rows of xi"
+    },
+    {
+      "id": "B5",
+      "name": "the one-sided three-point stencils at the ends of the radial direction (cg_grid._Dxi rows 0 and Nr-1)",
+      "status": "PASS",
+      "detail": "the weights (-3/(2*h), 2/h, -1/(2*h))/h are the unique set exact on 1, u and u^2; on u^3 the error is -2*h**2, i.e. (h^2/3) f''' - the boundary rows of the metric operator are second order, not first order, so an O(1) first row in a refinement probe at the wall is the probe, not the scheme"
+    },
+    {
+      "id": "B6",
+      "name": "grid map: the stretching function is monotone and pinned, and clusters at the cavity as documented",
+      "status": "PASS",
+      "detail": "rho(0) = 0, rho(1) = 1.000000000000, d rho/d xi at xi = 0 is 0.0339 (below the uniform value 1, and increasing: the clustering is at the inner boundary), min J = 1.885e+00 > 0"
+    },
+    {
+      "id": "C1",
+      "name": "Bromwich plan: truncation, solve count and alias error (Section 4.4 / companion 4.1)",
+      "status": "PASS",
+      "detail": "with T = 20, gamma = 0.9, t0 = 2.5, t_w = 1.2, eps = 1e-10: w_max = 8.0480 1/t_th gives K = 26 (27 complex frequencies per run, i.e. 27 solves of the harmonic system), and the periodisation alias is exp(-gamma T) = 1.5230e-08"
+    },
+    {
+      "id": "C2",
+      "name": "the validity bound is the pulse-width formula, and the baseline value is unchanged by the correction",
+      "status": "PASS",
+      "detail": "t_valid_max = T - (t0 + 2.5 t_w): 14.5 t_th at t_w = 1.2 (the value the documents printed before the audit, so no stored result moves) and 11.5 t_th at t_w = 2.4 (the wide-pulse case the locality test uses, which the hard-coded bound had over-allowed by 3 t_th)"
+    },
+    {
+      "id": "C3",
+      "name": "the bound keeps the amplified backward image below the forward alias for the baseline and the wide pulse",
+      "status": "PASS",
+      "detail": "exp(+gamma T) x the pulse pre-history at the read limit: 1.06e-14 at t_w = 1.2 and 9.22e-09 at t_w = 2.4; the growth of the reconstruction itself is exp(gamma t) = 221.4 at t = 6 and 49020.8 at t = 12, which is why the window is a bound and not a convenience"
+    },
+    {
+      "id": "C4",
+      "name": "the inversion reproduces the prescribed pulse when the transfer function is unity (the round trip the text cites as a per-run check)",
+      "status": "PASS",
+      "detail": "max |recovered - prescribed| = 6.895e-08 over the whole valid window and 3.588e-11 on 1 <= t <= 6 t_th (the text says better than 1e-8, and 1e-10 for t <= 6: the 1e-8 statement holds on the core window, the tails are limited by the gamma-truncation, which the check's wording now reflects)"
+    },
+    {
+      "id": "C5",
+      "name": "the operators' finite-difference metrics against the grid's analytic metrics",
+      "status": "PASS",
+      "detail": "max relative difference over the whole grid 4.40e-04, over the interior rows 2.10e-04, and on the first row (the cavity wall, one-sided stencil) 1.40e-05 - the metric used in the stress recovery is the analytic one at the wall, which is the distinction the audit recorded as C1b (an O(1) first row is the probe's own one-sided derivative, not the scheme)"
+    },
+    {
+      "id": "C6",
+      "name": "uniform-temperature patch test",
+      "status": "INFO",
+      "detail": "MappedOps puts the thermal load outside the flux exactly as beta . grad(theta), so a uniform theta gives exactly zero discrete body force by construction (the class docstring's identity); the suite's V-cases exercise the same property through the residual checks"
+    },
+    {
+      "id": "C7",
+      "name": "the computed DFT mean is in the manuscript and the superseded phrasing is in neither document, and no internal designation survives",
+      "status": "PASS",
+      "detail": "the train mean over the peak is t_w sqrt(pi)/T = 0.1063 (printed as 0.106 in the manuscript and the companion); offending strings: none"
+    },
+    {
+      "id": "D1",
+      "name": "bibliography: entries distinct, and the printed reference count agrees with the file",
+      "status": "PASS",
+      "detail": "54 entries in FINAL_REVISED_REFERENCES.bib, 54 distinct keys, 54 references printed by the builder; the manuscript cites numerically, so key-by-key linkage is the cross-reference gate's job"
+    },
+    {
+      "id": "D2",
+      "name": "every figure the manuscript references exists",
+      "status": "PASS",
+      "detail": "8 distinct figure files referenced, missing: none"
+    },
+    {
+      "id": "D3",
+      "name": "the builder's structure counts for the manuscript",
+      "status": "PASS",
+      "detail": "MANUSCRIPT_STATS.json: {'abstract_words': 249, 'body_words': 10437, 'n_equations': 84, 'n_figures': 8, 'n_references': 54, 'n_sections': 9, 'n_subsections': 41, 'n_tables': 11}"
+    }
+  ],
+  "not_reproduced": [
+    "the 6x6 full-tensor assembly, the eigenvalue-based plane-strain-class sensitivity (13.72% / 37.22%) and the 1-norm versus weighted-triple ratio (1.5926) are computed inside the manuscript builder (ms_static: DELTA_T, DELTA_MIN, DELTA_MAX, SPREAD_REL) and printed from there rather than duplicated here; this harness checks the same quantities from the shipped model module (A1-A6) and finds the same numbers",
+    "the grid-refinement order sweeps, the production-matrix closure recomputation, the far-field share sweep and the re-solve in a different build: these belong to the project's verification pass (PAPER_PROJECT/07_Tests), which is re-run for the whole of Phase 3 by run_tests.py; its outcome is recorded in the report"
+  ],
+  "summary": {
+    "PASS": 22,
+    "FAIL": 0,
+    "INFO": 3
+  }
+}
