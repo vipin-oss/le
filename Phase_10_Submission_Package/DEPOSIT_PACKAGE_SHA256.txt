@@ -3,11 +3,10 @@ Complete research package - checksum of record
 file    : PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip
 size    : 43644924 bytes (43.64 MB)
 entries : 603 files + MANIFEST.json (paths inside the zip are relative to PAPER_PROJECT/)
-sha256  : 5b0ee097f98d0f43cab27b6ac5345c0552b75d32e548f36c51df32e6d2c5f717
+sha256  : 9fc543900dfa45bc3784391d5414a307a7c0f087aa8ce67a08cf12021b22ef63
 
-Integrity, checked on 2026-10-03 right after the build: the archive passes a CRC test, and all
-603 SHA-256 values in its own MANIFEST.json were recomputed from the stored bytes -
-0 mismatches, 0 declared files missing, 0 zip entries outside the manifest.
+Integrity, recomputed from the stored bytes against the archive's own MANIFEST.json:
+603 files checked, 0 mismatches, 0 missing, CRC test clean.
 
 The package is regenerated, not stored: PAPER_PROJECT/packages/ is gitignored by the
 repository's own convention, so after a workspace rebuild run
@@ -15,6 +14,13 @@ repository's own convention, so after a workspace rebuild run
     python3 PAPER_PROJECT/00_Project_Control/make_packages.py final
 
 and the sha256 above should reproduce. It is a function of the committed tree, so a
-different value means the tree moved - which is the point of recording it here.
-This is the object to deposit in a public repository for the DOI quoted in the
-manuscript's Data availability statement.
+different value means the tree moved since this line was written - which is exactly what
+happened here: the earlier checksum (5b0ee097f98d0f43...) predates the Phase 10
+"downloadable bundle" commit, and the bundle section added to
+Phase_10_Submission_Package/REPORT.md is itself inside this archive, so the value above is
+the one to compare against.
+This is the object to deposit in a public repository for the DOI quoted in the manuscript's
+Data availability statement.
+
+Journal upload set (committed, so it needs no rebuild):
+Phase_10_Submission_Package/IJHMT_submission_bundle.zip  2619619 bytes  sha256 0fa61fd9c6fec4c36bba2d1a5a9e0899cf669e935d98d01c78f99c9d4314363a
