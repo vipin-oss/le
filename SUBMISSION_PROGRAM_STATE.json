@@ -64,12 +64,22 @@
     {
       "phase": 4,
       "name": "Figures and tables",
-      "status": "next"
+      "status": "complete (2026-10-03): figures regenerated and provenance-checked, T1/T2/T3 PASS; two defects found and fixed",
+      "deliverables": [
+        "Phase_04_Figures_Tables/REPORT.md",
+        "Phase_04_Figures_Tables/FINDINGS_LEDGER.json",
+        "Phase_04_Figures_Tables/CHANGELOG.md",
+        "Phase_04_Figures_Tables/manifest.txt",
+        "Phase_04_Figures_Tables/verification/audit_phase4.py + phase4_tables.json + figure_render_diff.json"
+      ],
+      "carried_to_later_phases": [
+        "P4-4 (pin the plotting environment in the reproducibility note) -> Phase 8"
+      ]
     },
     {
       "phase": 5,
       "name": "Literature",
-      "status": "pending",
+      "status": "next",
       "note": "Crossref API unreachable from the sandbox: verify via web search + 01_Literature/CROSSREF_VERIFICATION_*.json; never invent a DOI"
     },
     {
@@ -90,7 +100,7 @@
       "status": "pending"
     }
   ],
-  "findings_ledger": "Phase_03_Mathematical_Audit/FINDINGS_LEDGER.json (16 items: 12 closed, 2 advanced, 2 open) supersedes the Phase 2 ledger as the current one; Phase_02_Verification/FINDINGS_LEDGER.json remains the record of that phase (43 findings: 6 closed, 1 unresolvable in this sandbox, 36 open as raised)",
+  "findings_ledger": "Phase_04_Figures_Tables/FINDINGS_LEDGER.json (6 items: 5 closed, 1 advanced) is the current ledger; it also closes Phase 3 items P3-15 and, with a corrected diagnosis, P3-8. Phase_03_Mathematical_Audit/FINDINGS_LEDGER.json (16 items) and Phase_02_Verification/FINDINGS_LEDGER.json (43 items) remain their phases' records",
   "author_owned_blocking": [
     "author block",
     "affiliations/ORCID",

@@ -182,9 +182,39 @@
    "status": "PASS",
    "peak_rel_err_96x48": 0.0027435482505742204,
    "criterion": "a=50 nm, CV, 96x48, inertia+coupling ON: |peak err|<3% (grid error expected ~1%)"
+  },
+  {
+   "case": "V9c_inertia_off_switch",
+   "status": "PASS",
+   "peak_rel_err_96x48": 0.002856533823756005,
+   "criterion": "inertia_scale=0 reproduces the 1-D quasi-static (inertia=False) reference peak to grid accuracy (<3%)"
+  },
+  {
+   "case": "V11_single_pulse_isotropic_circle_vs_time_domain",
+   "status": "PASS",
+   "peak_rel_err_48_96_192": "['+0.0116', '+0.0027', '+0.0007']",
+   "series_max_err_192": 0.0007092278288747796,
+   "order_48_96": 2.0766318319713055,
+   "order_96_192": 2.0451058001284252,
+   "reference_peak_Pa_per_K": 985689.4485743708,
+   "criterion": "2-D mapped FD + Bromwich (inertia off, uncoupled, isotropic circle) vs independent time-domain reference: |peak err(192x96)|<0.5%, order>1.5"
+  },
+  {
+   "case": "V3c_nonaligned_37deg_EXPLORATORY",
+   "status": "INFO",
+   "rel_diff": "{'48x24': 0.00015450198561745435, '96x48': 4.031557781056748e-06}",
+   "note": "phi=37 deg is not a lattice rotation of the grid: invariance holds only to discretisation order; exploratory, no pass/fail"
+  },
+  {
+   "case": "V3d_peak_stress_invariance_T1_quantity",
+   "status": "PASS",
+   "rel_spread_phi_0_45_105": 3.648971557918331e-15,
+   "criterion": "peak |hoop| of the anisotropic circle identical for grid-aligned phi (pre-registered T1: <=1e-8), single-pulse pipeline, 48x24"
   }
  ],
- "status": "RUNNING",
- "cpu_seconds": 748.38895827,
- "wall_seconds": 748.8693804740906
+ "status": "COMPLETE",
+ "cpu_seconds": 1201.4951674590002,
+ "wall_seconds": 1202.471241235733,
+ "n_pass": 27,
+ "n_fail": 0
 }

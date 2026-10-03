@@ -1,0 +1,70 @@
+{
+  "phase": "4 - Figures and tables regenerated from verified data",
+  "date": "2026-10-03",
+  "branch": "arena/01a10176-le",
+  "harness": "verification/audit_phase4.py",
+  "harness_result": {"T1": "PASS", "T2": "PASS (320 of 320 table cells traced)", "T3": "PASS (587 of 587 prose and caption numbers traced)"},
+  "note": "Same schema as Phases 2 and 3. This ledger also closes two Phase 3 items (P3-15 and, with a corrected diagnosis, P3-8).",
+  "items": [
+    {
+      "id": "P4-1",
+      "severity": "moderate",
+      "category": "reproducibility bookkeeping",
+      "location": "manuscript Section 9.1 / companion 10.3; PAPER_PROJECT/06_Source_Code/CODE_FREEZE_submission_2026_10_03c.json",
+      "evidence": "the documents quoted a manifest digest taken before the last build, so the string in the text did not match the manifest on disk (0c07510d378ce67f recorded, 07fe9821dcba6b47 then 6beb28158e7f671a as the manifest moved)",
+      "action": "rebuilt in the correct order - freeze regenerated first, documents after - so the manuscript now quotes 6beb28158e7f671a, the digest of the manifest as it stands; the ordering rule is stated in the phase changelog and in REPORT section 6",
+      "target_phase": "4",
+      "status": "closed"
+    },
+    {
+      "id": "P4-2",
+      "severity": "major",
+      "category": "committed artefact captured mid-run",
+      "location": "PAPER_PROJECT/07_Tests/TEST_RESULTS.json",
+      "evidence": "the committed file held 24 of 28 cases, all PASS, with the exploratory case and two reported quantities missing (a sandbox reset interrupted the suite between case writes and the partial file was committed)",
+      "action": "suite re-run to completion on the code as it now stands: TESTS DONE 27 PASS, 0 FAIL, 28 cases with one exploratory INFO, wall 1202 s (Phase_04_Figures_Tables/suite_rerun_20261003c.log); both documents rebuilt from the completed artefact; this closes Phase 3 item P3-15",
+      "target_phase": "4",
+      "status": "closed"
+    },
+    {
+      "id": "P4-3",
+      "severity": "major",
+      "category": "build-integrity defect in the guard added in Phase 3",
+      "location": "13_Manuscript/build_manuscript.py, 13_Manuscript/build_calculations.py",
+      "evidence": "the manuscript builder ran the placeholder guard on the file left on disk before rendering the new Markdown into it, so a clean previous file licensed a dirty build and a dirty previous file blocked a clean one; the companion builder guarded after writing, so an abort left the bad file in place. This is the mechanism behind the n/a episode recorded in Phase 3, whose diagnosis was incomplete",
+      "action": "manuscript: render to a temporary file, guard that, then atomically replace - a failing build leaves the last good document untouched; companion: restore the previous bytes before re-raising. Phase 3 REPORT section 7 carries an amendment pointing here",
+      "target_phase": "4",
+      "status": "closed"
+    },
+    {
+      "id": "P4-4",
+      "severity": "minor",
+      "category": "reproducibility gap (rendering environment unpinned)",
+      "location": "PAPER_PROJECT/11_Figures/*.png; reproducibility note",
+      "evidence": "verification/figure_render_diff.json: all eight figures regenerate from unchanged inputs, and differ from the committed binaries only by 1-16 px of raster extent under matplotlib 3.11.2; the version that produced the committed files is not recorded anywhere",
+      "action": "the submitted binaries are kept as generated with the frozen documents; the reproducibility note must record the plotting environment (or the figures must ship as data plus script with a stated version) - carried to Phase 8",
+      "target_phase": "8",
+      "status": "advanced"
+    },
+    {
+      "id": "P4-5",
+      "severity": "info",
+      "category": "positive result of the provenance sweep",
+      "location": "both documents, all tables, captions and prose",
+      "evidence": "T2: 320 of 320 numeric table cells match a stored artefact or a constant the builder computes; T3: 587 of 587 prose and caption numbers do; T1: the generated documents and the highlights are byte-reproducible and the supplementary workbook is cell-reproducible",
+      "action": "no change needed; the check is kept in verification/ so that any later edit of a builder can be re-proved in one run",
+      "target_phase": "4",
+      "status": "closed"
+    },
+    {
+      "id": "P4-6",
+      "severity": "info",
+      "category": "deliberate non-change",
+      "location": "Table 5, coarse-grid exceedance; V3c exploratory case; Fig. 2(b)",
+      "evidence": "the exceedance (5.028e-03 against the inherited 5e-03) stays reported; the exploratory case stays in the record as INFO; Fig. 2(b), the evidence for the rotation sign correction, keeps its caption and its number, which T3 traces to the stored source",
+      "action": "nothing suppressed, nothing softened",
+      "target_phase": "4",
+      "status": "closed"
+    }
+  ]
+}

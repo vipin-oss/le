@@ -1,5 +1,5 @@
 {
- "date": "2026-10-03T14:56:56",
+ "date": "2026-10-03T15:42:15",
  "label": "submission_2026_10_03c",
  "python": "3.11.2",
  "numpy": "2.4.6",
@@ -26,8 +26,8 @@
   "08_Experiments/run_convergence.py": "a7063d4a9fd5af3c1a34546462516497192785cac2583aec500912e33b82c2da",
   "08_Experiments/run_convergence_dirs.py": "984f10194edb8a9174f221f4ab0148c63f56e030eefe58f98bbdefd3d8502899",
   "08_Experiments/run_production_v2.py": "b2f1d3bd26c2162944ab1c46e7c2e57236c22bcfae32ba08c8c0939f79b7b932",
-  "13_Manuscript/build_calculations.py": "bf7c7cfeb82bb2bb1bc09005a42148db0413494bdd7de385d3232e76b80c62d5",
-  "13_Manuscript/build_manuscript.py": "ed0961a32b0cee1037a8f8636052275446a3d212954ebfa193a74690129601da",
+  "13_Manuscript/build_calculations.py": "1bdd4badf4a7fe1d93890f3bf803a6ed1a0e117e955b072e1a9542b979ceb791",
+  "13_Manuscript/build_manuscript.py": "af4ad361194dda5f8e9568071bdac9573750751923448f88339ca1fc3e638856",
   "13_Manuscript/build_supplement.py": "5523b4698065c0fea217068c5247be2a611400a2cedc43a68959eeebda2ea56f",
   "13_Manuscript/docbuilder.py": "d41b74070f70b31b71e77fc75e699a338ab292ca1f122d1395a73fda97c0aea1",
   "13_Manuscript/ms_derivation.py": "8a910680ed351e0e5e19de1ba3afc048445f356e64afcb60609f95fd9ac28249",

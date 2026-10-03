@@ -968,6 +968,7 @@ para('**Declaration of Generative AI and AI-assisted technologies in the writing
 
 # ----------------------------------------------------------------- write
 out_md = os.path.join(HERE, 'calculations_IJHMT.md')
+_prev_md = open(out_md, 'rb').read() if os.path.exists(out_md) else None
 with open(out_md, 'w', encoding='utf-8') as fh:
     fh.write('\n'.join(OUT).replace('\n\n\n', '\n\n') + '\n')
 
@@ -993,4 +994,12 @@ print('  %d sections, %d subsections, %d equations, %d tables, ~%d words'
       % (_state['sec'], sum(1 for l in OUT if l.lstrip().startswith('### ')),
          _state['eq'], _state['tab'], _state['words']))
 
-_no_placeholder_tables(out_md, 'companion calculations')
+try:
+    _no_placeholder_tables(out_md, 'companion calculations')
+except SystemExit:
+    # The placeholder guard sees the file only after it has been written, so a build that would
+    # ship a hole must not leave that file behind: put the last good build back.
+    if _prev_md is not None:
+        open(out_md, 'wb').write(_prev_md)
+        print('companion restored to the last good build; fix the builder or the data, then rebuild')
+    raise

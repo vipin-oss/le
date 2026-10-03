@@ -154,6 +154,23 @@ Manuscript and companion are both generated, so every correction went into a bui
 - **Nothing was re-tuned.** No reported value was changed to improve an appearance; the only numerical
   change in the code path (C2) leaves the baseline identical by construction.
 
+### Amendment (Phase 4)
+
+Two points in this section were overtaken by Phase 4, recorded here rather than by rewriting the text above.
+
+1. The `n/a` episode had a second cause. Beyond building while the suite was writing, the submission guard in
+   `build_manuscript.py` ran on the file left on disk **before** rendering the new Markdown, and the companion
+   builder guarded **after** writing. A clean previous file therefore licensed a dirty build (which is how the
+   good document got overwritten), and a dirty previous file blocked a clean one. Both builders were corrected
+   in Phase 4 (`Phase_04_Figures_Tables/CHANGELOG.md` 3, ledger item P4-3); the diagnosis above, which stops
+   at the ordering rule, was incomplete.
+2. The suite outcome quoted above ("the completed run ... 27 PASS, 0 FAIL, 1 INFO") was a record whose log had
+   been deleted by the reset. Phase 4 re-ran the suite to completion on this code: `TESTS DONE: 27 PASS,
+   0 FAIL` over 28 cases, one exploratory INFO, wall 1202 s, in
+   `Phase_04_Figures_Tables/suite_rerun_20261003c.log`. P3-15 is closed. The `TEST_RESULTS.json` that had been
+   committed in the meantime was a 24-case mid-run capture, which is what produced the `n/a` cells on rebuild
+   (P4-2).
+
 ## 8. Verification status
 
 `PAPER_PROJECT/07_Tests/run_tests.py` (28 cases) is being re-run with the Phase-3 code change present, in the

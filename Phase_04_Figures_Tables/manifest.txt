@@ -1,0 +1,33 @@
+Phase 4 - figures and tables regenerated from verified data: manifest
+branch arena/01a10176-le; baseline = 33ea8f6 (Phase 3 record); working tree at the phase close.
+sha256 of each file as it stands in the tree; recompute with: sha256sum <path>.
+
+6beb28158e7f671a  PAPER_PROJECT/06_Source_Code/CODE_FREEZE_submission_2026_10_03c.json
+94a58c86bc631ddc  PAPER_PROJECT/07_Tests/TEST_RESULTS.json
+a9b2e529d643572c  PAPER_PROJECT/13_Manuscript/FINAL_REVISED_CALCULATIONS.pdf
+88e7cf582794fee1  PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.pdf
+2cf8f86883c73091  PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.tex
+2eeecb38da9795eb  PAPER_PROJECT/13_Manuscript/SUPPLEMENTARY_TABLES.xlsx
+1bdd4badf4a7fe1d  PAPER_PROJECT/13_Manuscript/build_calculations.py
+af4ad361194dda5f  PAPER_PROJECT/13_Manuscript/build_manuscript.py
+a9b2e529d643572c  PAPER_PROJECT/13_Manuscript/calculations_IJHMT.pdf
+b197d1edfaa488f8  PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.docx
+21eacaaaefe77ac5  PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.md
+88e7cf582794fee1  PAPER_PROJECT/13_Manuscript/manuscript_IJHMT.pdf
+ae2ca5b65ed2bc9a  Phase_03_Mathematical_Audit/REPORT.md
+cae27ad93d51fc4b  Phase_04_Figures_Tables/CHANGELOG.md
+04c03280c944f33c  Phase_04_Figures_Tables/FINDINGS_LEDGER.json
+b271b10596608f22  Phase_04_Figures_Tables/REPORT.md
+43612ed1aa82e12c  Phase_04_Figures_Tables/figure_rerun.log
+4b001a30a64fdb5c  Phase_04_Figures_Tables/suite_rerun_20261003c.log
+9891f6d3252d7ff0  Phase_04_Figures_Tables/verification/audit_phase4.py
+a40745a9bb0cc9d5  Phase_04_Figures_Tables/verification/figure_render_diff.json
+3d11b83978d4d474  Phase_04_Figures_Tables/verification/phase4_tables.json
+
+Verification artefacts of this phase:
+  Phase_04_Figures_Tables/REPORT.md, FINDINGS_LEDGER.json, CHANGELOG.md
+  Phase_04_Figures_Tables/verification/audit_phase4.py + phase4_tables.json + figure_render_diff.json
+  Phase_04_Figures_Tables/figure_rerun.log (8 figures regenerated), suite_rerun_20261003c.log (28 cases, 27 PASS)
+  PAPER_PROJECT/06_Source_Code/CODE_FREEZE_submission_2026_10_03c.json (regenerated before the final build)
+
+21 files listed.

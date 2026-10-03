@@ -454,10 +454,14 @@ def _no_placeholder_tables(path, doc):
                          + '\n'.join(bad[:8]) + '\nFix the builder or the data; do not ship the placeholder.')
 
 
+# The placeholder guard must see the text being generated, not the file the previous build left on disk:
+# guarding after the write can only reject a build that is already clean, and guarding before it clobbers the
+# last good document with a bad one.  Render to a temporary file, guard it, then move it into place.
+_pend = os.path.join(MS, '.manuscript_IJHMT.pending.md')
+db.build_md(blocks, _pend)
+_no_placeholder_tables(_pend, 'manuscript')
+os.replace(_pend, os.path.join(MS, 'manuscript_IJHMT.md'))
 db.build_docx(blocks, os.path.join(MS, 'manuscript_IJHMT.docx'))
-
-_no_placeholder_tables(os.path.join(MS, 'manuscript_IJHMT.md'), 'manuscript')
-db.build_md(blocks, os.path.join(MS, 'manuscript_IJHMT.md'))
 open(os.path.join(MS, 'highlights.txt'), 'w').write('\n'.join(highlights) + '\n')
 n_words = sum(len(re.findall(r'\w+', b[1])) for b in blocks if b[0] == 'p')
 n_sec = sum(1 for b in blocks if b[0] == 'h1' and re.match(r'^\d+\. ', b[1]))
