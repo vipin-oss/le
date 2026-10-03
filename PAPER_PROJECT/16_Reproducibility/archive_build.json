@@ -1,0 +1,64 @@
+{
+ "built": "2026-10-04",
+ "archive": "PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip",
+ "git_commit": "6ad7affd02e5fe91dc4a23378af0dff705a67af9",
+ "git_branch": "arena/01a10176-le",
+ "files": 1276,
+ "bytes_uncompressed": 66327979,
+ "sections": {
+  "01_PROGRAM": {
+   "files": 389,
+   "bytes": 10209238
+  },
+  "02_OVERLEAF": {
+   "files": 14,
+   "bytes": 392179
+  },
+  "03_DATA": {
+   "files": 438,
+   "bytes": 35340175
+  },
+  "04_REPRODUCTION": {
+   "files": 10,
+   "bytes": 70127
+  },
+  "05_DERIVATIONS": {
+   "files": 9,
+   "bytes": 80618
+  },
+  "06_VALIDATION": {
+   "files": 206,
+   "bytes": 3505731
+  },
+  "07_DOCUMENTATION": {
+   "files": 145,
+   "bytes": 6371694
+  },
+  "08_FINAL_OUTPUTS": {
+   "files": 38,
+   "bytes": 9921896
+  },
+  "09_ARCHIVE_METADATA": {
+   "files": 25,
+   "bytes": 436321
+  }
+ },
+ "excluded_patterns": [
+  "__pycache__",
+  ".pytest_cache",
+  ".ipynb_checkpoints",
+  "packages",
+  ".venv",
+  ".pyc",
+  ".pyo",
+  ".DS_Store",
+  ".swp",
+  "~"
+ ],
+ "excluded_named_files": [
+  "handoff.zip",
+  "le.zip"
+ ],
+ "code_freeze": "submission_2026_10_03j",
+ "python_for_gates": "/usr/bin/python3"
+}

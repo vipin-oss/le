@@ -1,0 +1,427 @@
+{
+ "generated": "2026-10-04",
+ "generated_by": "PAPER_PROJECT/00_Project_Control/make_reproducibility_archive.py",
+ "rule": "values transcribed from source by AST literal extraction; a string ending in \"[see source]\" is an expression whose value is computed at run time, recorded as source text so it cannot be misquoted",
+ "code_freeze": "submission_2026_10_03j",
+ "python": "Python 3.11.2",
+ "modules": {
+  "cg_bromwich.py": {
+   "constants": {},
+   "defaults": {
+    "BromwichPlan.__init__": {
+     "line": 30,
+     "kwargs": {
+      "T": 20.0,
+      "gamma": 0.9,
+      "t0": 2.5,
+      "tw": 1.2,
+      "eps": 1e-10
+     }
+    }
+   }
+  },
+  "cg_grid.py": {
+   "constants": {},
+   "defaults": {
+    "Grid.__init__": {
+     "line": 11,
+     "kwargs": {
+      "a": 1.0,
+      "chi": 1.0,
+      "R": 80.0,
+      "Nr": 96,
+      "Nt": 48,
+      "gamma": 3.5
+     }
+    }
+   }
+  },
+  "cg_model.py": {
+   "constants": {
+    "Cij_GPa": {
+     "line": 8,
+     "value": "dict(C11=242.8, C22=343.8, C33=347.4, C44=47.8, C55=88.6, C66=104.0,\n               C12=128.0, C13=160.0, C23=70.9, C15=-1.62, C25=0.36, C35=0.97, C46=5.59)"
+    },
+    "K_ac": {
+     "line": 10,
+     "value": "np.array([[12.13, -0.992], [-0.992, 14.09]])"
+    },
+    "alpha_crys": {
+     "line": 11,
+     "value": "np.array([1.54e-6, 3.37e-6, 3.15e-6])"
+    },
+    "rho": {
+     "line": 12,
+     "value": 5880.0
+    },
+    "cp_ESTIMATED": {
+     "line": 13,
+     "value": 560.0
+    },
+    "T0": {
+     "line": 14,
+     "value": 293.0
+    },
+    "GPa": {
+     "line": 16,
+     "value": 1000000000.0
+    }
+   },
+   "defaults": {}
+  },
+  "cg_ops.py": {
+   "constants": {},
+   "defaults": {
+    "MappedOps.stress_first": {
+     "line": 201,
+     "kwargs": {
+      "beta": null
+     }
+    }
+   }
+  },
+  "cg_pipeline.py": {
+   "constants": {
+    "A0": {
+     "line": 14,
+     "value": 1e-08
+    },
+    "DV": {
+     "line": 15,
+     "value": "derived()"
+    },
+    "KAPPA": {
+     "line": 16,
+     "value": "DV['kappa']"
+    },
+    "C_REF": {
+     "line": 17,
+     "value": "DV['c_ref']"
+    },
+    "T_QOI": {
+     "line": 20,
+     "value": 6.0
+    },
+    "PHIS": {
+     "line": 22,
+     "value": "list(range(0, 180, 15))"
+    },
+    "PLAN_DEFAULT": {
+     "line": 23,
+     "value": "dict(T=20.0, gamma=0.9)"
+    },
+    "GAMMA_DEFAULT": {
+     "line": 24,
+     "value": 5.0
+    },
+    "T_STORE": {
+     "line": 25,
+     "value": "np.arange(0.0, 12.0 + 1e-9, 0.05)"
+    },
+    "T_FINE": {
+     "line": 26,
+     "value": "np.arange(0.0, T_QOI + 1e-9, 0.01)"
+    },
+    "ALPHA_SETS": {
+     "line": 65,
+     "value": "{\n    'baseline_orlandi2015': (1.54e-6, 3.37e-6, 3.15e-6),         # PARAMETER_TABLE (secondary-quoted values of Orlandi et al. 2015)\n    'cheng2018_298K_like': (0.10e-6, 0.20e-6, 0.20e-6),          # SENSITIVITY-ONLY: abstract-level statement (alpha_a ~0.10e-6 at 298 K, alpha_b,c ~ 2 alpha_a)\n    'isotropic_mean': (float(np.mean((1.54e-6, 3.37e-6, 3.15e-6))),) * 3,\n}"
+    }
+   },
+   "defaults": {
+    "material_variant": {
+     "line": 70,
+     "kwargs": {
+      "coupled": true
+     }
+    },
+    "material": {
+     "line": 88,
+     "kwargs": {
+      "iso": false,
+      "coupled": true,
+      "variant": null
+     }
+    },
+    "build": {
+     "line": 104,
+     "kwargs": {
+      "iso": false,
+      "coupled": true,
+      "energy_coupling": true,
+      "inertia_scale": 1.0,
+      "Nr": 96,
+      "Nt": 48,
+      "Rfac": 80.0,
+      "gamma_grid": "GAMMA_DEFAULT",
+      "variant": null
+     }
+    },
+    "transfer_set": {
+     "line": 113,
+     "kwargs": {
+      "probe_fracs": [
+       1.5,
+       2.0,
+       3.0
+      ],
+      "a": null
+     }
+    },
+    "angular_upsample": {
+     "line": 135,
+     "kwargs": {
+      "factor": 16,
+      "axis": 0
+     }
+    },
+    "qoi_from_series": {
+     "line": 143,
+     "kwargs": {
+      "t_qoi": "T_QOI"
+     }
+    },
+    "run_config": {
+     "line": 160,
+     "kwargs": {
+      "outdir": null,
+      "plan_kw": null,
+      "iso": false,
+      "coupled": true,
+      "energy_coupling": true,
+      "inertia_scale": 1.0,
+      "Nr": 96,
+      "Nt": 48,
+      "Rfac": 80.0,
+      "save": true,
+      "quiet": false,
+      "variant": null,
+      "gamma_grid": "GAMMA_DEFAULT",
+      "pulse": null
+     }
+    }
+   }
+  },
+  "cg_ref1d.py": {
+   "constants": {},
+   "defaults": {
+    "transfer_1d": {
+     "line": 45,
+     "kwargs": {
+      "model": "FOURIER",
+      "tau": 0.0,
+      "N": 120,
+      "coupling": true,
+      "inertia": true
+     }
+    },
+    "qs_single_pulse_reference": {
+     "line": 87,
+     "kwargs": {
+      "t0": 2.5,
+      "tw": 1.2,
+      "tstart": -7.0,
+      "tmax": 9.0,
+      "dt": 0.002,
+      "N": 1600
+     }
+    }
+   }
+  },
+  "cg_solver.py": {
+   "constants": {},
+   "defaults": {
+    "HarmonicSolver.__init__": {
+     "line": 17,
+     "kwargs": {
+      "model": "CV",
+      "tau": 0.0,
+      "outer_theta_value": 0.0,
+      "energy_coupling": true,
+      "inertia_scale": 1.0,
+      "refine": 2
+     }
+    },
+    "HarmonicSolver.stress_wall": {
+     "line": 106,
+     "kwargs": {
+      "w": null
+     }
+    }
+   }
+  },
+  "cg_transient.py": {
+   "constants": {},
+   "defaults": {}
+  },
+  "08_Experiments/production_matrix.py": {
+   "constants": {
+    "HERE": {
+     "line": 11,
+     "value": "os.path.dirname(os.path.abspath(__file__))"
+    },
+    "GRIDS": {
+     "line": 16,
+     "value": {
+      "R48": [
+       48,
+       96
+      ],
+      "T48": [
+       96,
+       48
+      ],
+      "M": [
+       96,
+       96
+      ],
+      "R192": [
+       192,
+       96
+      ],
+      "T144": [
+       96,
+       144
+      ]
+     }
+    },
+    "COST": {
+     "line": 17,
+     "value": {
+      "R48": "light",
+      "T48": "light",
+      "M": "medium",
+      "R192": "heavy",
+      "T144": "heavy"
+     }
+    },
+    "PHIS6": {
+     "line": 19,
+     "value": [
+      0,
+      30,
+      60,
+      90,
+      120,
+      150
+     ]
+    },
+    "LAMBDAS_B2": {
+     "line": 20,
+     "value": [
+      0.05,
+      0.2,
+      0.8,
+      3.2
+     ]
+    },
+    "E_VARIANTS": {
+     "line": 21,
+     "value": "[('E1_alpha_cheng298', dict(alpha='cheng2018_298K_like')), ('E2_alpha_iso', dict(alpha='isotropic_mean')),\n              ('E3_K_iso', dict(K='iso')), ('E4_C_iso', dict(C='iso'))]"
+    },
+    "B_DEF": {
+     "line": 24,
+     "value": [
+      [
+       "B_CV_tau1_a10",
+       "CV",
+       1.0,
+       10
+      ],
+      [
+       "B_CV_tau5_a10",
+       "CV",
+       5.0,
+       10
+      ],
+      [
+       "B_CV_tau20_a10",
+       "CV",
+       20.0,
+       10
+      ],
+      [
+       "B_CV_tau20_a5",
+       "CV",
+       20.0,
+       5
+      ],
+      [
+       "B_CV_tau20_a20",
+       "CV",
+       20.0,
+       20
+      ],
+      [
+       "B_CV_tau20_a50",
+       "CV",
+       20.0,
+       50
+      ],
+      [
+       "B_F_tau0_a5",
+       "FOURIER",
+       0.0,
+       5
+      ],
+      [
+       "B_F_tau0_a20",
+       "FOURIER",
+       0.0,
+       20
+      ],
+      [
+       "B_F_tau0_a50",
+       "FOURIER",
+       0.0,
+       50
+      ],
+      [
+       "B_MCV3_tau5_a10",
+       "MCV3",
+       5.0,
+       10
+      ],
+      [
+       "B_MCV3_tau20_a10",
+       "MCV3",
+       20.0,
+       10
+      ]
+     ]
+    },
+    "F_TW": {
+     "line": 28,
+     "value": [
+      0.3,
+      0.6,
+      2.4
+     ]
+    },
+    "BM_DEF": {
+     "line": 29,
+     "value": [
+      [
+       "BM_CV_tau5_a10",
+       "CV",
+       5.0,
+       10
+      ],
+      [
+       "BM_CV_tau20_a20",
+       "CV",
+       20.0,
+       20
+      ],
+      [
+       "BM_F_tau0_a20",
+       "FOURIER",
+       0.0,
+       20
+      ]
+     ]
+    }
+   },
+   "defaults": {}
+  }
+ }
+}

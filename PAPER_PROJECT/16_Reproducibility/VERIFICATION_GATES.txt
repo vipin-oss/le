@@ -1,0 +1,4 @@
+Verification gates run while building this archive (2026-10-04) using /usr/bin/python3
+These are the same gates the submission programme runs; the transcript is stored so a
+reader can see what was actually checked, not only that something was checked.
+

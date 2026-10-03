@@ -1,0 +1,219 @@
+{
+ "checks": {
+  "figures_referenced_exist": {
+   "expected": 8,
+   "missing": [],
+   "ok": true
+  },
+  "citations_resolve": {
+   "cited": 55,
+   "bib_entries": 55,
+   "missing": [],
+   "ok": true
+  },
+  "code_data_dependencies_present": {
+   "checked": 9,
+   "missing": [],
+   "ok": true,
+   "cross_reference_points_at_another_path": {
+    "06_Source_Code/PARAMETER_TABLE.md": [
+     "work/handoff/PROJECT_CRYSTAL_GEOMETRY_01/PARAMETER_TABLE.md",
+     "work/rerun/proj/PARAMETER_TABLE.md"
+    ]
+   },
+   "note": "a missing entry means the code references a file the project does not track (generated raster renditions, packages/, _claims job dirs) - see 01_PROGRAM/RESTORE_PROJECT_TREE.md"
+  },
+  "absolute_local_paths_in_code": {
+   "files": 59,
+   "detail": {
+    "01_PROGRAM/experiments/analyze_v2.py": [
+     15
+    ],
+    "01_PROGRAM/experiments/make_figures.py": [
+     19
+    ],
+    "01_PROGRAM/experiments/make_provenance.py": [
+     6,
+     15
+    ],
+    "01_PROGRAM/tests/diagnostics/diag_covariance_floor.py": [
+     9,
+     18
+    ],
+    "04_REPRODUCTION/run_tests.py": [
+     32
+    ],
+    "01_PROGRAM/builders/build_supplement.py": [
+     6,
+     15
+    ],
+    "01_PROGRAM/builders/ms_derivation.py": [
+     30
+    ],
+    "01_PROGRAM/builders/ms_numerics.py": [
+     25
+    ],
+    "01_PROGRAM/builders/ms_results.py": [
+     7,
+     16
+    ],
+    "01_PROGRAM/builders/ms_static.py": [
+     7,
+     16
+    ],
+    "01_PROGRAM/utilities/_fmt.py": [
+     4
+    ],
+    "01_PROGRAM/utilities/fix_hardcoded_root.py": [
+     4,
+     6,
+     18,
+     27,
+     32,
+     33
+    ],
+    "01_PROGRAM/control/make_central_story.py": [
+     5,
+     14
+    ],
+    "01_PROGRAM/control/make_packages.py": [
+     7,
+     16
+    ],
+    "01_PROGRAM/control/make_phase_states.py": [
+     6,
+     15,
+     36
+    ],
+    "01_PROGRAM/control/make_reproducibility_archive.py": [
+     22,
+     92,
+     743,
+     746,
+     1695,
+     1699
+    ],
+    "01_PROGRAM/control/bootstrap_paths.sh": [
+     7,
+     18,
+     19,
+     21,
+     22,
+     23
+    ],
+    "01_PROGRAM/freeze/make_code_freeze.py": [
+     6,
+     15
+    ],
+    "01_PROGRAM/handoff_baseline/BENCHMARK_SOURCE_REVIEW/ALIT_01/BUILD_SOURCE_REVIEW_ARTIFACTS.py": [
+     11
+    ],
+    "01_PROGRAM/handoff_baseline/BENCHMARK_SOURCE_REVIEW/ALIT_01/PACKAGE_INVENTORY.csv": [
+     2,
+     3,
+     4
+    ]
+   },
+   "note": "the frozen code refers to /home/user/PAPER_PROJECT on purpose and bootstrap_paths.sh provides that link; recorded as a caveat, not as a defect to hide",
+   "ok": true
+  },
+  "duplicate_identical_files": {
+   "groups": 170,
+   "detail": {
+    "48ba160d17d9b57e96c04bbadc4d3d781e33e5d1a75ecd3193d8d5ccc605a53a": [
+     "01_PROGRAM/experiments/logs/convergence.log",
+     "01_PROGRAM/experiments/logs/convergence_gamma3p5_partial.log"
+    ],
+    "c18fd5258ebb3df27943aefab1ee5eca419389249ef0108f38e19d4ff942dac0": [
+     "01_PROGRAM/handoff_baseline/MASTER_PROMPT.md",
+     "07_DOCUMENTATION/program_control/MASTER_PROMPT.md"
+    ],
+    "ee50b98bb28008fd58feca48930310f26f7b32b070d916597dbaac0c2208095f": [
+     "01_PROGRAM/handoff_baseline/MASTER_PROMPT_VERSION",
+     "07_DOCUMENTATION/program_control/MASTER_PROMPT_VERSION"
+    ],
+    "868b8080809f40fe125e475de68b5542b4e860b2488f1d8b3df1968aaad85d5e": [
+     "01_PROGRAM/handoff_baseline/PILOT_HUANG_2025_01/run_basic_checks.py",
+     "01_PROGRAM/handoff_baseline/PILOT_HUANG_2025_01/versions/v01_before_endpoint_fix/run_basic_checks.py"
+    ],
+    "80de17b17e7454f1af16b6349b3fa5559c8038fd509dd0c86b0718852e9ed34d": [
+     "01_PROGRAM/handoff_baseline/PILOT_HUANG_2025_01/run_fvm.py",
+     "01_PROGRAM/handoff_baseline/PILOT_HUANG_2025_01/versions/v01_before_endpoint_fix/run_fvm.py"
+    ],
+    "92affc4c15fb6d63be909c31afd62b4b3c688745ee6f2c5346a0bb4e9759bf4b": [
+     "01_PROGRAM/handoff_baseline/PILOT_HUANG_2025_01/src/fvm.py",
+     "01_PROGRAM/handoff_baseline/PILOT_HUANG_2025_01/versions/v01_before_endpoint_fix/fvm.py"
+    ],
+    "3f635222804b0046a4f8e2ac9449fdbb99f828dd31cfdcd11bf6ea10acec7e7a": [
+     "01_PROGRAM/handoff_baseline/PROJECT_CRYSTAL_GEOMETRY_01/ASSUMPTIONS.md",
+     "06_VALIDATION/rerun_comparison/proj/ASSUMPTIONS.md"
+    ],
+    "97f3efb7da504f1323425b933cbd040fbc1fde3986109a8b5f5ee3af5d66629d": [
+     "01_PROGRAM/handoff_baseline/PROJECT_CRYSTAL_GEOMETRY_01/JOURNAL_SCREENING.md",
+     "06_VALIDATION/rerun_comparison/proj/JOURNAL_SCREENING.md"
+    ],
+    "acd5cbb736d4f74eecad3ff268c6303814a39a08e1a090c4321758594fa599e9": [
+     "01_PROGRAM/handoff_baseline/PROJECT_CRYSTAL_GEOMETRY_01/MANUSCRIPT_DRAFT.md",
+     "06_VALIDATION/rerun_comparison/proj/MANUSCRIPT_DRAFT.md"
+    ],
+    "3c2ea58f48e742ef93d6be5450f465aeab9a54de303f301f109f2da57ba46bfb": [
+     "01_PROGRAM/handoff_baseline/PROJECT_CRYSTAL_GEOMETRY_01/MATHEMATICAL_FORMULATION.md",
+     "06_VALIDATION/rerun_comparison/proj/MATHEMATICAL_FORMULATION.md"
+    ],
+    "eb930f5e5b33d5d6afd1c078a21e9a27d992da83ffa001442077e87412a3658c": [
+     "01_PROGRAM/handoff_baseline/PROJECT_CRYSTAL_GEOMETRY_01/NUMERICAL_METHOD_SELECTION.md",
+     "06_VALIDATION/rerun_comparison/proj/NUMERICAL_METHOD_SELECTION.md"
+    ],
+    "1104da2c0469b11c8f09cf9bdfb18d4a569fbfeae0abf6815089d1363f4ce2b1": [
+     "01_PROGRAM/handoff_baseline/PROJECT_CRYSTAL_GEOMETRY_01/PARAMETER_TABLE.md",
+     "06_VALIDATION/rerun_comparison/proj/PARAMETER_TABLE.md"
+    ]
+   },
+   "ok": true,
+   "note": "the archive keeps a single copy of every generated index document for the reader, plus its origin under 09_ARCHIVE_METADATA/generated_source/ for audit; those are listed here so nobody mistakes them for two versions"
+  },
+  "no_temp_cache_build_files": {
+   "found": [],
+   "ok": true
+  },
+  "provenance_manifest_present": {
+   "run_manifest": true,
+   "parameter_manifest": true,
+   "figure_provenance": true,
+   "data_dictionary": true,
+   "ok": true
+  },
+  "required_key_files": {
+   "missing": [],
+   "ok": true
+  },
+  "required_folders": {
+   "missing": [],
+   "ok": true
+  },
+  "final_versions_are_consistent": {
+   "note": "manuscript_IJHMT.pdf and FINAL_REVISED_MANUSCRIPT.pdf are both renders of the same source with different producers (different bytes, same content); the .md is the source of truth and the .tex is the submitted form - stated in ARCHIVE_README",
+   "pdfs": [
+    "08_FINAL_OUTPUTS/manuscript/FINAL_REVISED_CALCULATIONS.pdf",
+    "08_FINAL_OUTPUTS/manuscript/FINAL_REVISED_MANUSCRIPT.pdf",
+    "08_FINAL_OUTPUTS/manuscript/calculations_IJHMT.pdf",
+    "08_FINAL_OUTPUTS/manuscript/cover_letter.pdf",
+    "08_FINAL_OUTPUTS/manuscript/manuscript_IJHMT.pdf"
+   ],
+   "ok": true
+  }
+ },
+ "summary": {
+  "figures_referenced_exist": "ok",
+  "citations_resolve": "ok",
+  "code_data_dependencies_present": "ok",
+  "absolute_local_paths_in_code": "ok",
+  "duplicate_identical_files": "ok",
+  "no_temp_cache_build_files": "ok",
+  "provenance_manifest_present": "ok",
+  "required_key_files": "ok",
+  "required_folders": "ok",
+  "final_versions_are_consistent": "ok"
+ },
+ "files": 1277
+}

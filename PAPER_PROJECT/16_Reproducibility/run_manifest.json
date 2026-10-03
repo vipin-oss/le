@@ -1,0 +1,51 @@
+{
+ "generated": "2026-10-04",
+ "sections": {
+  "raw": [
+   424,
+   35220315
+  ]
+ },
+ "counts": {
+  "convergence": {
+   "json": 20,
+   "npz": 20
+  },
+  "convergence_gamma3p5": {
+   "json": 17,
+   "npz": 17
+  },
+  "production": {
+   "json": 175,
+   "npz": 175
+  }
+ },
+ "production_provenance_rows": 175,
+ "provenance_fields": [
+  "RUN_ID",
+  "block",
+  "status",
+  "CODE_VERSION(freeze sha256[:16])",
+  "INPUT_CHECKSUM",
+  "REFERENCE_DATA_VERSION(cg_model sha256[:16])",
+  "ENVIRONMENT_VERSION",
+  "OUTPUT_LOCATION",
+  "OUTPUT_SHA256[:16]",
+  "wall_s",
+  "n_solves",
+  "backward_err",
+  "wall_pulse_err"
+ ],
+ "environment": {
+  "python": "Python 3.11.2",
+  "python_used_for_gates": "/usr/bin/python3"
+ },
+ "gates": {},
+ "reproduction": {
+  "status": "NO FRESH RUN RECORD SUPPLIED",
+  "note": "the archive builder was invoked without --repro; the historical reproduction report in 04_REPRODUCTION is still included"
+ },
+ "sizes": {
+  "raw_total_bytes": 35220315
+ }
+}
