@@ -57,3 +57,29 @@ the cover letter. This remains the object to upload for the DOI.
 PASSED, `tools/verify_pdf.py` ALL CHECKS PASSED for the manuscript and (`-c`) the companion,
 `Phase_08_Final_Audit/verification/final_consistency.py` 0 failures,
 `tools/connection_audit.py` all connection checks passed after the commit.
+
+## 4. Downloadable bundle (this phase's deliverable for the authors)
+
+`verification/make_upload_bundle.py` builds `Phase_10_Submission_Package/IJHMT_submission_bundle.zip`
+(2.62 MB, 29 entries): the two `.tex` sources, the `.bib`, the eight vector figures under
+`MANUSCRIPT/figures/`, the Markdown sources of truth, the rendered preview PDFs,
+`highlights.txt`, the supplementary workbook, the cover letter in .md/.docx/.pdf, the submission
+checklist and author-input list, the deposit manifest
+(`CODE_FREEZE_submission_2026_10_03j.json`), `PDF_VERIFICATION.txt`, the
+reference-ordering artifacts, a `PROVENANCE/README.txt` that says how every file was produced and
+what is still bracketed for the authors, and a `MANIFEST.json` with a SHA-256 and byte size for
+every file. The bundle is verified after building (`testzip()` clean, 27/27 manifest hashes
+match) and it is **deterministic** - rebuilding gives byte-identical output (fixed timestamps,
+sorted order, fixed compression), which is what makes the manifest hashes usable as a checksum of
+the upload.
+
+It is committed on purpose: the workspace has been rebuilt from git eleven times during this
+programme, and `PAPER_PROJECT/packages/` is gitignored by the repository's own convention, so a
+large generated zip there does not survive a reset while this one does.
+
+The **full deposit package** (raw per-run `.npz/.json` outputs, convergence families, the whole
+code tree, ~43.6 MB, 603 files) is regenerated with
+`python3 PAPER_PROJECT/00_Project_Control/make_packages.py final` into
+`PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip`; that is the object to deposit in a public
+repository to obtain the DOI quoted in the Data availability statement, and it is deliberately not
+kept in git.

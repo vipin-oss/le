@@ -1,7 +1,10 @@
 CHANGELOG.md
+IJHMT_submission_bundle.zip
 REPORT.md
 compile_check.sh
 cover_letter.docx
 cover_letter.pdf
+manifest.txt
 verification/make_cover_letter_package.py
 verification/make_tex_figure_set.py
+verification/make_upload_bundle.py
