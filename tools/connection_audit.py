@@ -272,9 +272,19 @@ print("  info  ahead %s / behind %s vs origin/main" % (ahead, behind))
 if int(behind) > 0:
     fail("local branch is behind origin/main by %s commit(s) — pull/rebase before any rebuild" % behind)
 elif int(ahead) > 0:
-    notes.append("%s commit(s) ahead of origin/main and unpushed (push is user-owned): "
-                 "`git push -u origin %s`" % (ahead, branch))
     ok("local is a fast-forward of origin/main (no divergence)")
+    on_remote = git("rev-parse", "--verify", "--quiet", "origin/%s" % branch).returncode == 0
+    if on_remote:
+        rsha = git("rev-parse", "origin/%s" % branch).stdout.strip()
+        if rsha == sha:
+            print("  info  branch is on GitHub at %s, %s commit(s) ahead of main — open a PR when ready"
+                  % (rsha[:12], ahead))
+        else:
+            notes.append("local branch differs from origin/%s (%s vs %s) — push the local commit"
+                         % (branch, sha[:12], rsha[:12]))
+    else:
+        notes.append("%s commit(s) ahead of origin/main and unpushed: `git push -u origin %s`"
+                     % (ahead, branch))
 if sha != gh_sha and int(ahead) == 0:
     fail("local HEAD differs from origin/main")
 elif sha == gh_sha:
