@@ -74,6 +74,11 @@ the edited builders, which is the mechanism working as designed.
 - **Phase 6 (restructuring):** the reference list is thematic (numbers follow the list order, not
   first-appearance order: [6] is cited after [7] in 1.1, and [48]–[51] appear before [10]). If IJHMT is to be
   strictly sequential-numeric, that is a mechanical renumbering best done once, in the restructuring phase.
+  Related, and found while checking this phase's output: the Markdown carries literal numbers (`[55]`), while
+  `FINAL_REVISED_MANUSCRIPT.tex` carries `\cite{gurtin1968}` and leaves numbering to BibTeX, so the compiled
+  `.tex` numbers will not necessarily match the submitted Markdown's until one scheme is chosen. That has been
+  true of every entry, not just this one; it must be settled in Phase 6 or 8, and the `.tex` is not the file
+  the PDFs in the repository were rendered from.
 - **Phase 7 (language):** nothing in this phase changed wording outside Sections 1.2 and 2.2 and the companion's
   kernel paragraph.
 - No numerical code changed, so the verification record from Phase 4 (27 PASS / 0 FAIL / 1 exploratory) still
