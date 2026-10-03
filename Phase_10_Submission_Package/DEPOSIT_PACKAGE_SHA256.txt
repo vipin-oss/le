@@ -1,37 +1,69 @@
 DEPOSIT PACKAGE - CHECKSUM OF RECORD
 =====================================
 
-Object
-  PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip   (gitignored by the project's own convention, so
-  the archive is built on demand from the repository rather than stored in it)
+Two objects are produced for submission, both generated on demand from this repository and both recorded
+here rather than committed, because `PAPER_PROJECT/packages/*.zip` is gitignored by the project's own
+convention (an archive is a build output; the builder plus this file are what need to survive).
 
-  43,645,880 bytes
-  sha256  3278030e75326a40ae132018ddcf63359de934d56c867c1bb69ae1e5434a2f42
+Object 1 - deposit for a data/code repository (Zenodo, Figshare, GitHub release)
+  PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip
+  44,977,253 bytes
+  sha256  50faf355b178e6cf9bcf03de1495de88dd6af925c8dad4a26cbf405dc32aaeba
+  718 files + MANIFEST.json; whole `PAPER_PROJECT/` except `packages/`
+  Tree it was built from: commit a2a868260f8dc411297f0b6ee79a78fb6506859e
+  (branch arena/01a10176-le, 2026-10-04; code freeze `submission_2026_10_03j` unchanged - re-hashed
+   27/27 byte-identical by `PAPER_PROJECT/06_Source_Code/verify_code_freeze.py`)
 
-  Tree it was built from: commit a6b2a4fe74cbc54220f54ac61f9084ecf9101bfa
-  (branch arena/01a10176-le, 2026-10-03, code freeze submission_2026_10_03j unchanged)
+Object 2 - the reproducibility archive (what a researcher or reviewer should be handed)
+  PAPER_PROJECT/packages/PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip
+  58,866,581 bytes, 1,252 files in 9 sections
+  sha256  525e108fef4ad6ff0e17d2b52992e1dd2e9d9405f2175dfee28864e05e97ee44
+  content sha256 (invariant across a rebuild at a later commit)
+              f587e9aa9c87d111140c30f83deafbd9ca2ce26983233760ab741b284e2dc1cb
+                  = sha256 of 09_ARCHIVE_METADATA/SHA256SUMS.txt inside the archive
+  Full detail, the clean-room test transcript and the gate log: `09_ARCHIVE_METADATA/` inside it, and
+  `PAPER_PROJECT/16_Reproducibility/` (ARCHIVE_CHECKSUMS.txt, CLEAN_ROOM_TEST.txt, VERIFICATION_GATES.txt,
+  INTEGRITY_AUDIT.json) in the repository.
 
-How to reproduce it - the reason these numbers are recorded here
-  git checkout a6b2a4fe74cbc54220f54ac61f9084ecf9101bfa
+How to reproduce Object 1 - the reason these numbers are recorded here
+  git checkout a2a868260f8dc411297f0b6ee79a78fb6506859e
   python3 PAPER_PROJECT/00_Project_Control/make_packages.py final        # standard library only
   sha256sum PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip             # = the value above
 
-  The builder is deterministic by construction: every entry and MANIFEST.json is written through
-  ZipInfo with a fixed timestamp, an explicit compression type and fixed permissions, and nothing
-  inside the archive records a build clock or a commit id. The bytes are therefore a pure function of
-  the tracked files - verified here by rebuilding across an mtime churn of the manuscript and analysis
-  trees (same sha256) and by re-hashing all 603 entries against the archive's own manifest from inside
-  it (0 mismatches, testzip() clean). Provenance belongs beside the archive, in this file, not inside
-  it; an intermediate revision embedded `git HEAD` and that had to be undone, because it made the hash
-  depend on which commit you stood on rather than on what was packaged.
+  The builder is deterministic by construction: every entry and MANIFEST.json is written through ZipInfo
+  with a fixed timestamp, an explicit compression type and fixed permissions, and nothing inside records a
+  build clock or a commit id, so the bytes are a pure function of the tracked files. Verified for this
+  build: two consecutive builds gave the same sha256 (one across an mtime churn of the manuscript and
+  analysis trees); `testzip()` is clean; all 718 entries were re-hashed from inside the archive against
+  its own MANIFEST.json with 0 mismatches and 0 missing.
 
-Contents (603 files)
-  00_Project_Control .. 14_Documentation plus 15_Audits; all raw per-run .npz / .json outputs; both
-  convergence families and the production runs; every figure and table rendition; both manuscript
-  source trees (.md, .tex), FINAL_REVISED_REFERENCES.bib (55 entries), the preview PDFs, the
-  supplementary workbook, 13_Manuscript/figures/ (the eight vector PDFs the .tex loads), the author
-  input list and the fill-in form, and the frozen code manifest for 08/09/12/13.
-  Build date 2026-10-03; the build clock lives here only.
+  Rebuilding after committing anything changes the zip hash without changing the packaged content only
+  where the content itself moved; provenance therefore lives beside the archive, in this file, never
+  inside it (an earlier revision embedded `git HEAD` and that had to be undone - see the superseded log).
+
+How to reproduce and check Object 2
+  git checkout a2a868260f8dc411297f0b6ee79a78fb6506859e
+  /home/user/.venv-repro/bin/python PAPER_PROJECT/00_Project_Control/make_reproducibility_archive.py \
+      --repro PAPER_PROJECT/16_Reproducibility/REPRODUCTION_SUMMARY.json --keep-tree
+  sha256sum PAPER_PROJECT/packages/PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip
+  unzip -q <archive>; cd PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE
+  sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt     # 1,250 OK / 0 failures expected
+  python3 01_PROGRAM/restore_project_tree.py --into ../restored          # -> runnable PAPER_PROJECT tree
+
+  This archive deliberately does record its own `git_commit` (in 09_ARCHIVE_METADATA/archive_build.json):
+  provenance is the point of a reproducibility package, and the content checksum above exists so that the
+  two can coexist - the zip hash answers "did I receive the exact file", the content checksum answers
+  "is this the same package".
+
+Contents of Object 1 (718 files)
+  00_Project_Control .. 14_Documentation plus 15_Audits and 16_Reproducibility; all raw per-run .npz/.json
+  outputs; both convergence families and the production runs; every figure and table rendition; both
+  manuscript source trees (.md, .tex), FINAL_REVISED_REFERENCES.bib (55 entries), the preview PDFs, the
+  supplementary workbook, 13_Manuscript/figures/ (the eight vector PDFs the .tex loads), the author input
+  list and fill-in form, the frozen code manifest for 08/09/12/13, the phase builders, and the
+  archive/restoration/verification tooling added by the reproducibility phase
+  (`make_reproducibility_archive.py`, `restore_project_tree.py`, `run_reproduction_check.py`,
+  `verify_code_freeze.py`). Build date 2026-10-04; the build clock lives here only.
 
 What to deposit where
   Editorial Manager (EM-ID)   Phase_10_Submission_Package/IJHMT_submission_bundle.zip   (committed file)
@@ -42,16 +74,41 @@ What to deposit where
                               MANUSCRIPT/figures/, highlights.txt, SUPPLEMENTARY_TABLES.xlsx, the preview
                               PDFs, the cover letter in .md/.docx/.pdf, SUBMISSION_CHECKLIST.md,
                               AUTHOR_INPUT_REQUIRED.md, AUTHOR_INPUT_FORM.md, PROVENANCE/
-  Data / code repository      this archive - the object a reviewer can re-run, and the one to hand to
-  (Zenodo, through the        Zenodo or Figshare to mint the DOI quoted in the Data availability
-   link in the Data           statement
+  Data / code repository      Object 2 (the reproducibility archive) - the object a reviewer can re-run
+  (Zenodo, through the        end to end; Object 1 if the curator wants the raw run output alongside the
+   link in the Data           analysis. Both are regenerable from this commit, so neither is stored in git.
    availability statement)
 
+Status of the two objects, stated plainly
+  Code freeze            verified (27/27 files byte-identical to CODE_FREEZE_submission_2026_10_03j)
+  Data integrity         verified (1,250/1,250 archive files, 718/718 deposit entries re-hashed)
+  Reproduction test        PASS - analyze_v2 -> provenance -> figures -> reproduce.py re-run in a restored
+                         tree: 11 PASS / 0 FAIL, 11 of 11 regenerated artifacts byte-identical
+  LaTeX compile          NOT COMPILED in this sandbox (no TeX engine installable; the user has no
+                         package-manager access). Static checks pass: every figure, bib key, \input path
+                         and \\command resolves - see 02_OVERLEAF/README_OVERLEAF.md and
+                         Phase_10_Submission_Package/verification/. The author must run
+                         pdflatex -> bibtex -> pdflatex x2 (or `bash Phase_10_Submission_Package/compile_check.sh`)
+                         once, on a machine with TeX, before submitting.
+  Author input           still open and deliberately so: 5 `[AUTHOR INPUT REQUIRED]` placeholders +
+                         1 repository/DOI slot (`AUTHOR_INPUT_FORM.md`). No number, citation or claim was
+                         altered to make anything compile or to fill a gap.
+
 Superseded values, with the reason each differed (kept, not deleted)
-  de9cfb1a4369c444...  first fully deterministic deposit build; superseded because the author-input list
-                       and the fill-in form were then edited inside PAPER_PROJECT/13_Manuscript
-  bfeae56992d81bd0...  deterministic entries but with `git HEAD` embedded, so it depended on the commit
-  9fc543900dfa45bc...  per-entry mtimes + a live manifest clock (not reproducible)
-  5b0ee097f98d0f43...  built before the downloadable submission bundle was added to the tree
-  Bundle 7c50cadd6483437a...  superseded for the same two reasons: it predated the author-input list
-                       refresh and did not hash PROVENANCE/README.txt
+  Deposit 3278030e75326a40...  603 files; superseded because it predates everything the reproducibility
+                         phase added (16_Reproducibility/, the archive builder, restorer, reproduction
+                         checker and freeze verifier)
+  Deposit de9cfb1a4369c444...  first fully deterministic deposit build; superseded because the author-input
+                         list and the fill-in form were then edited inside PAPER_PROJECT/13_Manuscript
+  Deposit bfeae56992d81bd0...  deterministic entries but with `git HEAD` embedded, so it depended on the
+                         commit you stood on
+  Deposit 9fc543900dfa45bc...  per-entry mtimes + a live manifest clock (not reproducible)
+  Deposit 5b0ee097f98d0f43...  built before the downloadable submission bundle was added to the tree
+  Bundle  7c50cadd6483437a...  superseded for the same two reasons: it predated the author-input list
+                         refresh and did not hash PROVENANCE/README.txt
+  Archive 3d238e54..., b3b44d80..., 4e711957..., 5296dd6a..., 9dfa13ba..., 795ceb46..., 9725eb53...,
+          60f81026..., 709845b8..., f85c4b81..., ec172d47..., 5f7ed29e...  - intermediate packings while
+          the builder itself was being fixed (current value is the one at the top of this file)
+          (duplicate manifest copies, manifest self-hashing, a path that unpacked as a directory, the
+          gate transcript, the interpreter note). Each was superseded by a rebuild, not by a content change
+          in the research material; the manuscript, data and figures hashes are unchanged throughout.
