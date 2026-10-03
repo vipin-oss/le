@@ -863,27 +863,30 @@ def _frz(label):
 
 
 N_FRZ, N_FRZ_SAME, N_FRZ_DIFF = _frz('v2_gate')
-N_SUB, N_SUB_SAME, N_SUB_DIFF = _frz('submission_2026_10_03')
+N_SUB, N_SUB_SAME, N_SUB_DIFF = _frz('submission_2026_10_03b')
+N_MID, N_MID_SAME, N_MID_DIFF = _frz('submission_2026_10_03')
 N_PREV, N_PREV_SAME, N_PREV_DIFF = _frz('submission_2026_10_02')
 if N_SUB_DIFF:
-    raise SystemExit('CODE_FREEZE_submission_2026_10_03.json no longer describes the code '
+    raise SystemExit('CODE_FREEZE_submission_2026_10_03b.json no longer describes the code '
                      '(%d of %d entries differ); regenerate it before rebuilding this document'
                      % (N_SUB_DIFF, N_SUB))
-para('Both freezes were taken on 2026-10-01. %d of the %d entries of the gate freeze are '
-     'byte-identical in the code as submitted; %d entries (the pipeline driver, the test runner '
-     'and four experiment and analysis scripts) have been edited since, so the digests recorded '
-     'for them no longer describe it. The pipeline was therefore re-run end to end with the code '
-     'as submitted, and it reproduces the archived results exactly: the %d production runs agree '
+para('Both archived manifests were taken on 2026-10-01. %d of the %d entries of the gate freeze are '
+     'byte-identical in the code as submitted; %d entries (the pipeline driver, the test runner, four '
+     'experiment and analysis scripts and the two document builders) have been edited since, so the '
+     'digests recorded for them no longer describe it. The pipeline was therefore re-run end to end with '
+     'the code as submitted, and it reproduces the archived results exactly: the production runs agree '
      'with the archived quantities of interest to zero relative difference, every leaf of '
-     'ANALYSIS_V2.json agrees within 10\u207b\u2079, the eight figures and five tables are '
+     'ANALYSIS_V2.json agrees within 10\u207b\u2079, the eight figures and the five archived CSV tables are '
      'byte-identical, and only wall-clock timings differ '
-     '(PAPER_PROJECT/15_Audits/RERUN_COMPARISON.md). '
-     'CODE_FREEZE_submission_2026_10_03.json (%d files, all %d byte-identical to the code as '
-     'submitted) is the refreshed manifest, the one to deposit with the data package; it supersedes '
-     'CODE_FREEZE_submission_2026_10_02.json, of whose %d entries %d (the two manuscript builders) '
-     'had gone stale when they were edited during the restructure of 2026-10-02. The manifest is '
-     'regenerated after any further edit to the code, and both builders abort if it is not current.'
-     % (N_FRZ_SAME, N_FRZ, N_FRZ_DIFF, D['numerics']['n_runs'], N_SUB, N_SUB_SAME, N_PREV, N_PREV_DIFF))
+     '(PAPER_PROJECT/15_Audits/RERUN_COMPARISON.md). The verification pass of 2026-10-03 added an '
+     'ablation set at the production grid (24 runs), re-ran the analysis layer over all 175 stored runs '
+     'with no pre-existing quantity changed, and re-solved one production job in a different '
+     'Python/NumPy build, where it reproduced its stored peak wall stress to 2.7\u00d710\u207b\u00b9\u2076 relative. '
+     'CODE_FREEZE_submission_2026_10_03b.json (%d files, all %d byte-identical to the code as submitted) '
+     'is the refreshed manifest, the one to deposit with the data package; it supersedes '
+     'CODE_FREEZE_submission_2026_10_03.json (taken the same day, before that pass, %d of whose %d entries '
+     'still match) and CODE_FREEZE_submission_2026_10_02.json, and both are kept unchanged as history.'
+     % (N_FRZ_SAME, N_FRZ, N_FRZ_DIFF, N_SUB, N_SUB_SAME, N_MID_SAME, N_MID))
 bullets([
     'python3 PAPER_PROJECT/13_Manuscript/build_calculations.py — rebuilds this '
     'document from the frozen source and the processed data;',
@@ -931,7 +934,26 @@ out_md = os.path.join(HERE, 'calculations_IJHMT.md')
 with open(out_md, 'w', encoding='utf-8') as fh:
     fh.write('\n'.join(OUT).replace('\n\n\n', '\n\n') + '\n')
 
+def _no_placeholder_tables(path, doc):
+    """Submission guard (audit A2): a generated table must never ship a placeholder cell."""
+    bad = []
+    for i, line in enumerate(open(path, encoding='utf-8').read().split('\n'), 1):
+        if not line.lstrip().startswith('|'):
+            continue
+        cells = [c.strip() for c in line.strip().strip('|').split('|')]
+        if len(cells) < 2:
+            continue
+        for c in cells:
+            if c in ('n/a', 'N/A', '??', 'TODO', ''):
+                bad.append(f'  line {i}: {line.strip()[:110]}')
+                break
+    if bad:
+        raise SystemExit(f'{doc}: placeholder cells in generated tables ({len(bad)} line(s)):\n'
+                         + '\n'.join(bad[:8]) + '\nFix the builder or the data; do not ship the placeholder.')
+
 print('wrote %s' % out_md)
 print('  %d sections, %d subsections, %d equations, %d tables, ~%d words'
       % (_state['sec'], sum(1 for l in OUT if l.lstrip().startswith('### ')),
          _state['eq'], _state['tab'], _state['words']))
+
+_no_placeholder_tables(out_md, 'companion calculations')

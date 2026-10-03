@@ -31,6 +31,26 @@ import numpy as np                                            # noqa: E402
 import cg_bromwich as cb                                      # noqa: E402
 
 PLAN = cb.BromwichPlan()          # T = 20, gamma = 0.9, t0 = 2.5, tw = 1.2, eps = 1e-10
+import json                                                 # noqa: E402  (measured errors come from ANALYSIS_V2.json)
+
+_AN = {}
+try:
+    _AN = json.load(open(os.path.join(ROOT, '10_Processed_Data', 'ANALYSIS_V2.json')))
+except Exception:
+    _AN = {}
+
+
+def _num_(which='qoi', tw=None):
+    """Measured wall-pulse reconstruction error over the stored production runs (audit A5).  Falls back to the
+    analytic alias bound of the plan when the analysis output is not available."""
+    NUM = _AN.get('numerics', {})
+    if tw is not None:
+        v = (NUM.get('wall_pulse_error_by_tw') or {}).get(str(tw), {})
+        x = v.get('full' if which == 'full' else 'qoi')
+        return f'{x:.1e}' if x else '\u2014'
+    key = 'max_wall_pulse_error_full_window_0_12' if which == 'full' else 'max_wall_pulse_error'
+    x = NUM.get(key)
+    return f'{x:.1e}' if x else f'{PLAN.describe().get("alias", float("nan")):.1e}' 
 
 
 def E(tex, key=None):
@@ -203,8 +223,14 @@ def sec4_bromwich(p_intro=None, eq_brom=None, p_close=None):
         ('p', f'giving {PLAN.n_solves} solves per run; and (iii) round-off of the inversion grows like e^{{\u03b3_{{B}}t}}, which is '
               f'{np.exp(PLAN.gamma*6):.1f} at t = 6t_{{th}} and {np.exp(PLAN.gamma*12):.1f} at t = 12t_{{th}}. With '
               f'T = {PLAN.T:.0f} t_{{th}} and \u03b3_{{B}} = {PLAN.gamma}/t_{{th}} the reconstruction is therefore valid for '
-              f'0 \u2264 t \u2264 {d["t_valid_max"]:.1f} t_{{th}}, comfortably beyond the window 0 \u2264 t \u2264 6 t_{{th}} of the '
-              f'quantities of interest. The real symmetry H(s\u0304) = conj H(s) of the undamped real system halves nothing but '
+              f'0 \u2264 t \u2264 {d["t_valid_max"]:.1f} t_{{th}} for the baseline pulse width t_{{w}} = {PLAN.tw:g} t_{{th}}, comfortably '
+              f'beyond the window 0 \u2264 t \u2264 6 t_{{th}} of the quantities of interest. The bound is checked against the stored '
+              f'series of every production run, not only estimated: the reconstructed wall temperature deviates from the '
+              f'imposed Gaussian by at most {_num_()} anywhere in 0 \u2264 t \u2264 6 t_{{th}}; over the whole stored window '
+              f'0 \u2264 t \u2264 12 t_{{th}} the worst case for t_{{w}} = {PLAN.tw:g} is {_num_(which="full")}, while the widest pulse '
+              f'used in the locality test (t_{{w}} = 2.4 t_{{th}}) is the one case whose image term enters inside the stored '
+              f'window ({_num_(which="full", tw="2.4")} at t = 12 t_{{th}}), so that test is read only for peak values, which lie '
+              f'well inside the reported window. The real symmetry H(s\u0304) = conj H(s) of the undamped real system halves nothing but '
               f'is used as a consistency check, and because the contour lies at distance \u03b3_{{B}} from the resonances of the '
               f'finite undamped domain, no artificial damping is needed. The wall temperature reconstructed from H is '
               f'compared with the Gaussian in every run (Section 5.1).'),

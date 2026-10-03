@@ -1,0 +1,27 @@
+ok   x β-Ga₂O₃ y                                -> x $\beta$-Ga$_2$O$_3$ y
+ok   t_w (t_th)                                 -> $t_{w}$ ($t_{th}$)
+ok   $t_{th}$ = 25.3 ps                         -> $t_{th}$ = 25.3 ps
+ok   (T, $\gamma$_B) = (20, 0.9)                -> (T, $\gamma_B$) = (20, 0.9)
+ok   A_$\varphi$                                -> $A_\varphi$
+ok   labels: $N_{r}\times$N_$\theta$            -> labels: $N_{r}\times N_\theta$
+ok   $\rhoc_{p}$                                -> $\rhoc_{p}$
+ok   3.959×10^{−6} m²/s                         -> 3.959$\times 10^{-6}$ $m^{2}$/s
+ok   κ̄ = (det K)^{1/2}                         -> $\bar{\kappa}$ = (det $K)^{1/2}$
+ok   σ̂ = max                                   -> $\hat{\sigma}$ = max
+ok   H(s̄) = conj H(s)                          -> H($\bar{s}$) = conj H(s)
+ok   a–c plane                                  -> a--c plane
+ok   0.7 µm                                     -> 0.7 $\mu$m
+ok   Lamé constants                             -> Lam\'e constants
+ok   φ = 30°                                    -> $\varphi$ = 30$^{\circ}$
+ok   5–50 nm                                    -> 5--50 nm
+ok   ≤ 6 t_th                                   -> $\leq$ 6 $t_{th}$
+ok   MASTER_PROMPT                              -> MASTER\_PROMPT
+ok   peak 0.854 MPa/K                           -> peak 0.854 MPa/K
+ok   the stress σ_{θθ}                          -> the stress $\sigma_{\theta\theta}$
+ok   e^{−γ_{B}T}                                -> $e^{-\gamma_{B}T}$
+ok   ε² inertia                                 -> $\varepsilon^{2}$ inertia
+ok   (“collapse”)                               -> (``collapse'')
+ok   F = ∫ rθ dr                                -> F = $\int$ r$\theta$ dr
+ok   φ = 0, 30, …, 150°                         -> $\varphi$ = 0, 30, $\ldots$, 150$^{\circ}$
+ok   50\% and 28.7\%                            -> 50\% and 28.7\%
+RESULT: ALL 26 CONVERSION TESTS PASSED

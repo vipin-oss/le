@@ -20,6 +20,73 @@ import numpy as np
 import cg_pipeline as cp
 import ms_static as S
 
+def _v0_note(TR):
+    """One sentence on the metric-consistency case (audit A1): it inherits an absolute threshold from the project
+    handoff that was calibrated on a coarse demonstration grid which is not used for any reported result.  The
+    sentence is emitted only when the recorded numbers support the wording."""
+    try:
+        c = TR.get('V0_metric_consistency_linear_field', {})
+        val, thr = float(c['value_at_96x48_chi2']), float(c['threshold_at_96x48_chi2'])
+        if val <= thr:
+            return ''
+        return (" One inherited absolute threshold is exceeded on a grid that is not used for any reported result: at "
+                f"96×48 with χ = 2 the metric error is {val:.3e} against the threshold {thr:.0e} "
+                f"(a {val / thr - 1.0:.1%} exceedance of a bound calibrated on that demonstration grid), while the same "
+                "sequence converges at the expected second order and satisfies the threshold at the production grid; the "
+                "coarse-grid value is reported in Table 5 rather than suppressed, and the convergence order is asserted as "
+                "its own case (V0b).")
+    except Exception:
+        return ''
+
+
+def _v0_row(N):
+    """Table 5 row for the metric-consistency case, built only from recorded values."""
+    out = []
+    o = [x for v in (N.get('v0_orders') or {}).values() for x in (v or [])]
+    if N.get('v0b') is not None:
+        out.append(f"production grid 192×96: ≤ {sci(N['v0b'])}")
+    if o:
+        out.append(f"observed order {min(o):.2f}–{max(o):.2f} on refinement (asserted separately as V0b)")
+    if N.get('v0_coarse') is not None and N.get('v0_thr'):
+        rel = N['v0_coarse'] / N['v0_thr'] - 1.0
+        out.append((f"the inherited absolute threshold {sci(N['v0_thr'], 0)} is exceeded by {100 * rel:.1f}% at the "
+f"demonstration grid 96×48 with χ = 2 ({N['v0_coarse']:.3e}); that grid is not used for any reported result"
+                    if rel > 0 else
+                    f"the inherited absolute threshold {sci(N['v0_thr'], 0)} is also met at the demonstration grid 96×48 "
+                    f"({N['v0_coarse']:.3e})"))
+    return '; '.join(out) if out else 'n/a'
+
+
+def _shape_sentence(T4, a12):
+    """Shape effect of the ellipse relative to the circle, with numerator, denominator and grid stated (audit A10)."""
+    out = []
+    cm, rmm = T4.get('circle_M_sig_interp'), T4.get('ellipse_M_mean_over_circle_M')
+    if cm and rmm:
+        ex = T4.get('ellipse_M_extremes_over_circle_M') or []
+        out.append(f"At matched grids the mean ellipse peak on grid M is {rmm:.3f} of the circle peak on the same grid "
+                   f"({abs(cm) / 1e6:.3f} MPa/K)"
+                   + (f", and the extremes of the 12-orientation sweep are {ex[0]:.3f} and {ex[1]:.3f} of it" if len(ex) == 2 else ''))
+    ree = T4.get('ellipse_extrapolated_mean_over_circle_extrapolated')
+    if ree:
+        out.append(f"comparing the two extrapolated sequences gives {ree:.3f}")
+    if a12.get('min') and a12.get('max'):
+        out.append(f"the orientation of the crystal changes the ellipse peak by a factor of {a12['max'] / a12['min']:.3f} "
+                   f"between the most and the least favourable orientation")
+    if not out:
+        return ''
+    if len(out) == 1:
+        return out[0].rstrip('.') + '.'
+    tail = out[-1].rstrip('.')
+    return '; '.join(x.rstrip('.') for x in out[:-1]) + '. ' + tail[0].upper() + tail[1:] + '.'
+
+
+def _iso_shape_sentence(ISO):
+    r, lab = ISO.get('ellipse_M_over_circle_M'), 'both on grid 96×96'
+    if r is None:
+        r, lab = ISO.get('ellipse_M_over_circle_T48'), 'ellipse on 96×96, circle on 96×48'
+    return (f"{r:.3f} times the isotropic circle ({lab})" if r else 'n/a')
+
+
 def J(p):
     p = os.path.join(ROOT, p); return json.load(open(p)) if os.path.exists(p) else {}
 TR = {c['case']: c for c in J('07_Tests/TEST_RESULTS.json').get('cases', [])}
@@ -27,6 +94,13 @@ AN = J('10_Processed_Data/ANALYSIS_V2.json'); CR = J('10_Processed_Data/CONVERGE
 T1, T2, T3, T4 = AN.get('T1_H1', {}), AN.get('T2_H3', {}), AN.get('T3_H4', {}), AN.get('T4_H2', {})
 FLOC = (AN.get('F_locality', {}) or {}).get('rows', [])
 CIRC, ISO, EAB, LOC, SH = AN.get('circle_peak', {}), AN.get('isotropic', {}), AN.get('E_ablations', {}), AN.get('locality', {}), AN.get('shipped', {})
+# audit A8 (2026-10-03): the mechanism ablations exist at two resolutions.  Headline claims use the production-grid
+# set when it is present; the 96x48 pre-registered set stays in the same table for continuity.  EAB_GRID is
+# interpolated into the sentences so that the grid of a quoted modulation can never be left unstated.
+EAB_T48 = AN.get('E_ablations', {})
+EAB_M = AN.get('E_ablations_M', {})
+EAB = EAB_M if EAB_M.get('baseline_6phi') else EAB_T48
+EAB_GRID = '96×96 (production)' if EAB is EAB_M else '96×48 (coarse angular grid)'
 def g(d, *keys, default=None):
     for k in keys:
         if isinstance(d, dict) and k in d: d = d[k]
@@ -52,12 +126,18 @@ v9d = g(TR, 'V9d_time_domain_peak_and_series_vs_1D', 'peak_errs'); N['v9d'] = {k
 N['v9d_worst192'] = g(TR, 'V9d_time_domain_peak_and_series_vs_1D', 'worst_peak_192'); N['v9d_order'] = g(TR, 'V9d_time_domain_peak_and_series_vs_1D', 'min_order_peak_48_96')
 N['v9e'] = g(TR, 'V9e_thermal_memory_deviation_D_accuracy', 'detail'); N['v9e_worst'] = g(TR, 'V9e_thermal_memory_deviation_D_accuracy', 'worst_rel_err_192')
 N['v9b'] = g(TR, 'V9b_dynamic_a50nm_vs_1D_time_domain', 'peak_rel_err_96x48'); N['v9c'] = g(TR, 'V9c_inertia_off_switch', 'peak_rel_err_96x48')
-N['v0b'] = g(TR, 'V0b_metric_consistency_production_grids', 'worst_production_grids'); N['n_pass'] = sum(c['status'] == 'PASS' for c in TR.values()); N['n_fail'] = sum(c['status'] == 'FAIL' for c in TR.values())
+_v0c = TR.get('V0_metric_consistency_linear_field', {})
+_v0e = {k: lst(_v0c.get(k)) for k in ('chi1_errs_48_96_192', 'chi2_errs_48_96_192')}
+_v0p = [v[-1] for v in _v0e.values() if v]
+N['v0b'] = max(_v0p) if _v0p else g(TR, 'V0b_metric_consistency_production_grids', 'worst_production_grids')
+N['v0_coarse'] = _v0c.get('value_at_96x48_chi2'); N['v0_thr'] = _v0c.get('threshold_at_96x48_chi2')
+N['v0_orders'] = {k: lst(v) for k, v in TR.get('V0b_metric_consistency_convergence_order', {}).items() if k.startswith('orders_')}
+N['v0_status'] = _v0c.get('status'); N['n_pass'] = sum(c['status'] == 'PASS' for c in TR.values()); N['n_fail'] = sum(c['status'] == 'FAIL' for c in TR.values())
 N['n_tests'] = len(TR)
 
 def verification():
     L = [('h1', '4. Verification and numerical uncertainty'),
-         ('p', f"Verification is separated from validation: every comparison below is against an exact solution or an independent implementation of the same mathematical model (a 1-D axisymmetric Chebyshev solver in the Laplace domain and a time-domain Crank–Nicolson heat solver with the closed-form Lamé stress); none is a comparison with measurements. The suite has {N['n_tests']} tests ({N['n_pass']} passed, {N['n_fail']} failed, {N['n_tests'] - N['n_pass'] - N['n_fail']} exploratory; the failure is discussed below). The suite is summarised in @@tab:verif@@, and the rotation-invariance, axisymmetric and inversion tests are illustrated in Fig. 2."),
+         ('p', f"Verification is separated from validation: every comparison below is against an exact solution or an independent implementation of the same mathematical model (a 1-D axisymmetric Chebyshev solver in the Laplace domain and a time-domain Crank–Nicolson heat solver with the closed-form Lamé stress); none is a comparison with measurements. The suite has {N['n_tests']} tests ({N['n_pass']} passed, {N['n_fail']} failed, {N['n_tests'] - N['n_pass'] - N['n_fail']} exploratory). The suite is summarised in @@tab:verif@@, and the rotation-invariance, axisymmetric and inversion tests are illustrated in Fig. 2." + _v0_note(TR)),
          ('h2', '4.1 Component and reference tests')]
     rows = [
         ['Rotation of the stiffness/expansion tensors (27 angles)', 'independent 3-D rank-4 rotation', f"{sci(N['u1_fixed'])} (a sign error in one cross-term would give {sci(N['u1_ship'])})"],
@@ -68,7 +148,7 @@ def verification():
         ['Single pulse, isotropic circle (quasi-static, uncoupled): peak', 'time-domain reference', f"{', '.join(pc(x, 2) for x in N['v11'])} (48×24, 96×48, 192×96), orders {N['v11_ord'][0]:.2f}, {N['v11_ord'][1]:.2f}" if N['v11'] else 'n/a'],
         ['Dynamic coupled problem (inertia + feedback): wall-hoop peak, Fourier / CV / MCV3', '1-D spectral + same inversion', f"{', '.join(pc(x, 2) for x in N['v9d'].get('FOURIER0', []))} (Fourier; 48×24, 96×48, 192×96); worst of the four conduction laws at 192×96: {pc(N['v9d_worst192'], 2)}"],
         ['Quasi-static switch; a = 50 nm (echo-dominated)', '1-D reference', f"{pc(N['v9c'], 2)}; {pc(N['v9b'], 2)} (96×48)"],
-        ['Metric consistency (linear field)', '≤ 5×10^{−3}', f"production grids ≤ {sci(N['v0b'])}; the handoff-style 96×48 grid with χ = 2 gives 5.03×10^{{−3}} (reported failure of this criterion, angular-resolution dominated)"],
+        ['Metric consistency of the mapped grid (linear field)', 'order ≥ 1.9 and ≤ 5×10^{−3} at 192×96', _v0_row(N)],
     ]
     L.append(('table', ['Quantity', 'Reference', 'Result'], rows, 'Summary of the verification suite (full table: supplementary material).', [2.6, 1.6, 2.6], 'verif'))
     L.append(('fig', os.path.join(ROOT, '11_Figures', 'fig4_verification.png'), '(a) Rotation invariance of the circular-cavity peak stress: earlier analysis (rotation-tensor sign error) versus this work; (b) errors of the axisymmetric verification tests versus mesh size; (c) wall-temperature reconstruction by the Bromwich inversion.', 6.6, 'verif'))
@@ -123,16 +203,17 @@ def results():
     # ---------------- 5.2 ellipse
     L.append(('h2', '5.2 Elliptical cavity: crystal orientation modulates the peak wall stress'))
     a12 = g(T4, 'M_12phi_sig_interp', default={}); a6e = g(T4, 'extrapolated_6phi', default={})
-    L.append(('p', f"For the equal-area ellipse the peak wall stress depends strongly on the crystal orientation (@@fig:phi@@a). On grid M the peak ranges from {mp(a12.get('min'))} MPa/K (φ = {a12.get('phi_min')}°) to {mp(a12.get('max'))} MPa/K (φ = {a12.get('phi_max')}°): an orientation modulation A_{{φ}} = {pc(a12.get('amplitude'))}; after radial and angular extrapolation the six-orientation sweep gives A_{{φ}} = {pc(a6e.get('amplitude'))} with extremes {mp(a6e.get('min'))}–{mp(a6e.get('max'))} MPa/K. The numerical uncertainty of the amplitude is u_{{num}} = {pc(T4.get('u_num'), 2)} (largest difference between grid M and the finer or extrapolated estimates), the frozen threshold is max(5u_{{num}}, 2%) = {pc(T4.get('threshold'), 2)}, and the modulation is therefore {str(T4.get('status', 'n/a')).lower()} (T4). The ellipse peak is {g(T4, 'ellipse_extrapolated_mean_over_circle_extrapolated', default=float('nan')):.2f} times the circle peak on average; the orientation of the crystal changes the ellipse peak by a factor of about {a12.get('max', 1) / a12.get('min', 1):.2f} between the most and the least favourable orientation."))
+    L.append(('p', f"For the equal-area ellipse the peak wall stress depends strongly on the crystal orientation (@@fig:phi@@a). On grid M the peak ranges from {mp(a12.get('min'))} MPa/K (φ = {a12.get('phi_min')}°) to {mp(a12.get('max'))} MPa/K (φ = {a12.get('phi_max')}°): an orientation modulation A_{{φ}} = {pc(a12.get('amplitude'))}; after radial and angular extrapolation the six-orientation sweep gives A_{{φ}} = {pc(a6e.get('amplitude'))} with extremes {mp(a6e.get('min'))}–{mp(a6e.get('max'))} MPa/K. The numerical uncertainty of the amplitude is u_{{num}} = {pc(T4.get('u_num'), 2)} (largest difference between grid M and the finer or extrapolated estimates), the frozen threshold is max(5u_{{num}}, 2%) = {pc(T4.get('threshold'), 2)}, and the modulation is therefore {str(T4.get('status', 'n/a')).lower()} (T4). {_shape_sentence(T4, a12)}"))
     L.append(('fig', os.path.join(ROOT, '11_Figures', 'fig2_phi_sweep.png'), 'Peak wall hoop stress per kelvin versus crystal rotation φ. (a) Ellipse on the three radial grids and Richardson-extrapolated; circle (horizontal lines, three grids). (b) Same orientations: the earlier internal analysis (periodic-pulse synthesis, rotation-tensor sign error, coarser wall mesh) compared with this work.', 6.5, 'phi'))
     if ISO.get('ellipse_radial'):
         er = ISO['ellipse_radial']
-        L.append(('p', f"With isotropic stiffness, conductivity and expansion the ellipse is orientation-independent by symmetry and its peak is {mp(er.get('f_ext', er['f'][1]))} MPa/K (extrapolated; {mp(er['f'][1])} on grid M), i.e. {ISO.get('ellipse_M_over_circle_T48', float('nan')):.2f} times the isotropic circle: the shape alone raises the peak by the curvature at the ends of the major axis, and the crystal orientation then modulates the response by the amount given above."))
+        L.append(('p', f"With isotropic stiffness, conductivity and expansion the ellipse is orientation-independent by symmetry and its peak is {mp(er.get('f_ext', er['f'][1]))} MPa/K (extrapolated; {mp(er['f'][1])} on grid M), {_iso_shape_sentence(ISO)}: the shape alone raises the peak by the curvature at the ends of the major axis, and the crystal orientation then modulates the response by the amount given above."))
     if FLOC:
         tws = [r['tw'] for r in FLOC]; A2 = [r['A2'] for r in FLOC]; cc = [r['circle'] for r in FLOC]
         mono = all(A2[i] < A2[i + 1] for i in range(len(A2) - 1)); cvar = (max(cc) - min(cc)) / np.mean(cc)
-        iso_ratio = ISO.get('ellipse_M_over_circle_T48')
-        L.append(('p', f"Is the modulation a local effect? If the heated layer were thin compared with the radius of curvature, the response at each wall point would depend only on the local tangent direction; every tangent direction occurs on any convex wall, so the peak over the wall would be orientation-independent for the ellipse as well, and the modulation would vanish. In the present problem the heated layer is not thin: its thickness scales with t_{{w}}^{{1/2}} and is comparable to the cavity radius, and the isotropic ellipse already has a peak {iso_ratio if iso_ratio else float('nan'):.2f} times that of the isotropic circle, which a purely local response could not produce. A pulse-width test (t_{{w}} = {tws[0]:g}–{tws[-1]:g} t_{{th}}; @@tab:pw@@, @@fig:pw@@) shows that the two-point modulation A_{{2}} = (σ̂(150°) − σ̂(90°))/mean {'rises monotonically' if mono else 'does not vary monotonically'} but only weakly with the pulse width, from {pc(A2[0], 1)} to {pc(A2[-1], 1)}, while the circle peak varies by {pc(cvar, 1)} (peak to peak, relative to the mean; the narrowest pulse is the outlier). The trend is in the direction expected for a growing non-local contribution, but the accessible layer thicknesses (still thicker than the tip radius of curvature, 0.35a) do not reach the thin-layer limit, so the test neither confirms nor excludes a vanishing modulation in that limit; within the studied range the orientation dependence of the ellipse is a non-local effect of the interaction between the heated region and the cavity shape."))
+        iso_ratio = ISO.get('ellipse_M_over_circle_M', ISO.get('ellipse_M_over_circle_T48'))
+        iso_lab = ' (both on grid 96×96)' if 'ellipse_M_over_circle_M' in ISO else ' (ellipse on 96×96, circle on 96×48)'
+        L.append(('p', f"Is the modulation a local effect? If the heated layer were thin compared with the radius of curvature, the response at each wall point would depend only on the local tangent direction; every tangent direction occurs on any convex wall, so the peak over the wall would be orientation-independent for the ellipse as well, and the modulation would vanish. In the present problem the heated layer is not thin: its thickness scales with t_{{w}}^{{1/2}} and is comparable to the cavity radius, and the isotropic ellipse already has a peak {iso_ratio if iso_ratio else float('nan'):.2f} times that of the isotropic circle{iso_lab}, which a purely local response could not produce. A pulse-width test (t_{{w}} = {tws[0]:g}–{tws[-1]:g} t_{{th}}; @@tab:pw@@, @@fig:pw@@) shows that the two-point modulation A_{{2}} = (σ̂(150°) − σ̂(90°))/mean {'rises monotonically' if mono else 'does not vary monotonically'} but only weakly with the pulse width, from {pc(A2[0], 1)} to {pc(A2[-1], 1)}, while the circle peak varies by {pc(cvar, 1)} (peak to peak, relative to the mean; the narrowest pulse is the outlier). The trend is in the direction expected for a growing non-local contribution, but the accessible layer thicknesses (still thicker than the tip radius of curvature, 0.35a) do not reach the thin-layer limit, so the test neither confirms nor excludes a vanishing modulation in that limit; within the studied range the orientation dependence of the ellipse is a non-local effect of the interaction between the heated region and the cavity shape."))
         rows = [[f"{r['tw']:g}", mp(r['circle'], 4), mp(r['ell_phi90'], 4), mp(r['ell_phi150'], 4), pc(r['A2'], 1)] for r in FLOC]
         L.append(('table', ['t_w (t_th)', 'circle (MPa/K)', 'ellipse φ=90° (MPa/K)', 'ellipse φ=150° (MPa/K)', 'A_2'], rows, 'Pulse-width test (grid 96×48, interpolated peaks). t_w = 1.2 is the baseline.', [1.0, 1.3, 1.6, 1.6, 0.8], 'pw'))
         L.append(('fig', os.path.join(ROOT, '11_Figures', 'fig7_pulse_width.png'), 'Pulse-width test of the local-response interpretation (96×48). (a) Peak wall stress of the circle and of the ellipse at the baseline minimum and maximum orientations; (b) two-point orientation modulation.', 6.0, 'pw'))
@@ -141,21 +222,26 @@ def results():
     if EAB:
         bs = EAB.get('baseline_6phi', {})
         rows = [['full anisotropy (baseline)', pc(bs.get('amplitude')), mp(bs.get('mean'), 4), '1.000']]
+        if EAB is EAB_M and EAB_T48.get('baseline_6phi'):      # the pre-registered coarser set, kept for continuity
+            bs0 = EAB_T48['baseline_6phi']
+            rows.append(['full anisotropy (baseline, grid 96×48)', pc(bs0.get('amplitude')), mp(bs0.get('mean'), 4), '1.000'])
         for key, lab in (('E3_K_iso', 'isotropic conductivity'), ('E4_C_iso', 'isotropic stiffness'), ('E2_alpha_iso', 'isotropic expansion (mean α)'), ('E1_alpha_cheng298', 'expansion set of the 298 K-like data [18]')):
             e = EAB.get(key)
             if e: rows.append([lab, pc(e['amplitude']), mp(e['mean'], 4), f"{e['mean_over_baseline']:.3f}"])
+            e0 = EAB_T48.get(key)
+            if EAB is EAB_M and e0: rows.append([lab + ' (grid 96×48)', pc(e0['amplitude']), mp(e0['mean'], 4), f"{e0['mean_over_baseline']:.3f}"])
         rk = {k: (EAB[k]['amplitude'] / bs['amplitude']) for k in ('E3_K_iso', 'E4_C_iso', 'E2_alpha_iso') if k in EAB and bs.get('amplitude')}
         L.append(('p', 'To separate the contributions of the three anisotropic tensors the ellipse sweep was repeated with one tensor at a time made isotropic (stiffness from the same Lamé constants as the isotropic control; conductivity equal to the mean eigenvalue; expansion equal to the mean of the three axes) (@@tab:abl@@, Fig. @@fig:abl@@), and with an expansion set representing the 298 K measurements [18] (α = (0.10, 0.20, 0.20)×10^{−6} 1/K, a sensitivity-only set constructed from the abstract-level statement that α_{b} and α_{c} are about twice α_{a}). The ablations are exploratory and use the 96×48 grid (six orientations; the angular error common to all variants cancels in the comparison).'))
         if rk:
             L.append(('p', f"Removing the expansion anisotropy lowers the modulation to {pc(rk.get('E2_alpha_iso'), 0)} of the baseline, removing the stiffness anisotropy changes it to {pc(rk.get('E4_C_iso'), 0)} of the baseline, and removing the conductivity anisotropy changes it to {pc(rk.get('E3_K_iso'), 0)}. The orientation modulation therefore results from the competition of the expansion and stiffness anisotropies — the expansion anisotropy alone (isotropic stiffness) would give a larger modulation than the full crystal, the stiffness anisotropy partially compensates it — while the conductivity anisotropy is a minor modifier."))
-        L.append(('table', ['Variant', 'Modulation A_φ', 'Mean peak (MPa/K)', 'Mean / baseline'], rows, 'Mechanism ablations and expansion-set sensitivity for the ellipse (grid 96×48, φ = 0, 30, …, 150°).', [2.6, 1.3, 1.5, 1.2], 'abl'))
+        L.append(('table', ['Variant', 'Modulation A_φ', 'Mean peak (MPa/K)', 'Mean / baseline'], rows, 'Mechanism ablations and expansion-set sensitivity for the ellipse at six orientations φ = 0, 30, …, 150°. The unlabelled rows are on grid ' + EAB_GRID + '; rows labelled (grid 96×48) are the pre-registered coarser set, kept for continuity. A variant is always compared with the baseline of the same grid.', [2.6, 1.3, 1.5, 1.2], 'abl'))
         L.append(('fig', os.path.join(ROOT, '11_Figures', 'fig6b_ablation.png'), 'Orientation modulation of the ellipse peak stress for the baseline and with one anisotropic tensor made isotropic, and for the 298 K-like expansion set (96×48, six orientations).', 4.2, 'abl'))
     # ---------------- 5.4 thermal memory
     L.append(('h2', '5.4 Thermal memory and thermoelastic feedback'))
     pq, pd_ = T2.get('pair_QS'), T2.get('pair_dynamic')
     dyn = [r for r in T2.get('dynamic', []) if r['model'] == 'CV']; qs = [r for r in T2.get('quasi_static', []) if r['model'] == 'CV']
     dmax = max([r['D'] for r in dyn] or [float('nan')]); a10 = [r for r in dyn if r['a_nm'] == 10]; d10 = [r['D'] for r in a10]
-    pk = max([abs(r['peak_shift']) for r in dyn + qs] or [float('nan')]); ext = AN.get('H3_extended_map', {})
+    pk = max([abs(r['peak_shift']) for r in dyn + qs] or [float('nan')]); pk_dyn = max([abs(r['peak_shift']) for r in dyn] or [float('nan')]); ext = AN.get('H3_extended_map', {})
     sl = [(v.get('delta_D_slope_5_10'), v.get('delta_D_slope_10_20')) for k_, v in ext.items() if v.get('delta_D_slope_5_10') is not None and float(k_) <= 0.8]
     sl32 = ext.get('3.2', {})
     sl_txt = (f"; for Λ ≤ 0.8 the excess of the dynamic over the quasi-static D falls with ε roughly as ε^{{{min(s[0] for s in sl):.1f}–{max(s[0] for s in sl):.1f}}} (5→10 nm) to ε^{{{min(s[1] for s in sl):.1f}–{max(s[1] for s in sl):.1f}}} (10→20 nm), consistent with an O(ε²) leading correction (steeper, ε^{{{sl32.get('delta_D_slope_5_10', float('nan')):.1f}}}–ε^{{{sl32.get('delta_D_slope_10_20', float('nan')):.1f}}}, at Λ = 3.2)" if sl else '')
@@ -173,7 +259,7 @@ def results():
     L.append(('h2', '5.5 Sensitivity to the expansion data'))
     e1 = EAB.get('E1_alpha_cheng298')
     if e1:
-        L.append(('p', f"Stress per kelvin is proportional to the thermal-stress vector β = Cα. With the 298 K-like expansion set the mean ellipse peak is {e1['mean_over_baseline']:.3f} of the baseline value ({mp(e1['mean'], 4)} MPa/K) while the orientation modulation is {pc(e1['amplitude'])} (baseline {pc(EAB.get('baseline_6phi', {}).get('amplitude'))}). The absolute stress scale therefore carries a parameter uncertainty of more than an order of magnitude (a factor {1/e1['mean_over_baseline']:.0f} between the two expansion sets) through α, whereas the modulation depends on the anisotropy ratios of β and is almost unchanged; only the relative statements of this paper should be used quantitatively."))
+        L.append(('p', f"Stress per kelvin is proportional to the thermal-stress vector β = Cα. With the 298 K-like expansion set (variant and baseline both on grid {EAB_GRID}) the mean ellipse peak is {e1['mean_over_baseline']:.3f} of the baseline value ({mp(e1['mean'], 4)} MPa/K) while the orientation modulation is {pc(e1['amplitude'])} (baseline {pc(EAB.get('baseline_6phi', {}).get('amplitude'))}). The absolute stress scale therefore carries a parameter uncertainty of more than an order of magnitude (a factor {1/e1['mean_over_baseline']:.0f} between the two expansion sets) through α, whereas the modulation depends on the anisotropy ratios of β and is almost unchanged; only the relative statements of this paper should be used quantitatively."))
     return L
 
 

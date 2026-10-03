@@ -1,0 +1,97 @@
+## T1 / H1 — circle peak invariance (grid-aligned phi)
+  R48_sig_nodal: spread 6.70e-15  mean 851680.9 Pa/K
+  R48_sig_interp: spread 7.11e-15  mean 851715.5 Pa/K
+  M_sig_nodal: spread 4.64e-15  mean 853484.0 Pa/K
+  M_sig_interp: spread 4.36e-15  mean 853638.7 Pa/K
+  T1 status: PASS  (90-deg pairs max {'M': 4.092003769204385e-15, 'R48': 3.4172223453135524e-15})
+
+## Circle peak hoop stress (phi-independent), grid convergence
+  radial R48/M/R192: ['851715.5', '853638.7', '853867.3']  p=3.072693574786767  extrapolated=853899.9784901732  error at M -0.00030595020698245064, at R192 -3.82437758727552e-05; angular T48->M change 0.001091956620903229
+
+## T4 / H2 — ellipse orientation modulation
+  shape ratio at matched grids (M/M): mean 1.3964, extremes 1.132-1.549; extrapolated-pair ratio 1.3729
+  R48_12phi_sig_interp: amplitude 33.00%  range 0.9700-1.3733 MPa/K  (min at phi=90, max at phi=135)
+  T48_12phi_sig_interp: amplitude 28.82%  range 0.9617-1.3012 MPa/K  (min at phi=90, max at phi=150)
+  M_12phi_sig_interp: amplitude 29.87%  range 0.9659-1.3220 MPa/K  (min at phi=90, max at phi=150)
+  R48_6phi_interp: amplitude 32.92%  mean 1.2131
+  M_6phi_interp: amplitude 30.06%  mean 1.1845
+  R192_6phi_interp: amplitude 29.02%  mean 1.1741
+  T48_6phi_interp: amplitude 29.01%  mean 1.1707
+  T144_6phi_interp: amplitude 30.23%  mean 1.1868
+  extrapolated (6 phi): amplitude 28.75%  range 0.9640-1.3010; u_num=0.0131; threshold 0.0656 -> RESOLVABLE
+
+## Corrected vs shipped (handoff) numbers
+  shipped circle mean 0.9666 MPa/K (scatter 3.04e-03); shipped ellipse amplitude 36.56%, range 1.1255-1.6685
+  circle: extrapolated / shipped = 0.8834
+  ellipse (6 phi): extrapolated / shipped = ['0.826', '0.765', '0.785', '0.856', '0.777', '0.780']
+
+## T2 / H3 — thermal-memory deviation D(Lambda, eps)
+  dynamic      B_CV_tau20_a5          a=   5 Lambda=3.1671 eps=0.1030 D=6.3804e-02 peak_shift=-9.58e-03
+  dynamic      B_CV_tau1_a10          a=  10 Lambda=0.0396 eps=0.0515 D=1.0873e-03 peak_shift=+9.24e-04
+  dynamic      B_CV_tau5_a10          a=  10 Lambda=0.1979 eps=0.0515 D=5.2914e-03 peak_shift=+3.78e-03
+  dynamic      B_MCV3_tau5_a10        a=  10 Lambda=0.1979 eps=0.0515 D=5.9283e-03 peak_shift=+3.56e-03
+  dynamic      B_CV_tau20_a10         a=  10 Lambda=0.7918 eps=0.0515 D=1.5695e-02 peak_shift=+5.29e-03
+  dynamic      B_MCV3_tau20_a10       a=  10 Lambda=0.7918 eps=0.0515 D=1.3706e-02 peak_shift=+3.37e-03
+  dynamic      B_CV_tau20_a20         a=  20 Lambda=0.1979 eps=0.0258 D=2.5619e-03 peak_shift=+1.25e-03
+  dynamic      B_CV_tau20_a50         a=  50 Lambda=0.0317 eps=0.0103 D=2.9340e-04 peak_shift=+4.21e-05
+  quasi_static B_CV_tau20_a5_QS       a=   5 Lambda=3.1671 eps=0.1030 D=1.8130e-02 peak_shift=-1.43e-02
+  quasi_static B_CV_tau1_a10_QS       a=  10 Lambda=0.0396 eps=0.0515 D=4.0138e-04 peak_shift=-1.24e-06
+  quasi_static B_CV_tau5_a10_QS       a=  10 Lambda=0.1979 eps=0.0515 D=2.0213e-03 peak_shift=-2.57e-04
+  quasi_static B_MCV3_tau5_a10_QS     a=  10 Lambda=0.1979 eps=0.0515 D=2.3369e-03 peak_shift=-6.21e-04
+  quasi_static B_CV_tau20_a10_QS      a=  10 Lambda=0.7918 eps=0.0515 D=7.0704e-03 peak_shift=-3.10e-03
+  quasi_static B_MCV3_tau20_a10_QS    a=  10 Lambda=0.7918 eps=0.0515 D=6.6007e-03 peak_shift=-3.83e-03
+  quasi_static B_CV_tau20_a20_QS      a=  20 Lambda=0.1979 eps=0.0258 D=2.0213e-03 peak_shift=-2.57e-04
+  quasi_static B_CV_tau20_a50_QS      a=  50 Lambda=0.0317 eps=0.0103 D=3.2083e-04 peak_shift=+1.08e-06
+  equal-Lambda pair: dynamic {'D_a10_tau5': 0.005291443040284127, 'D_a20_tau20': 0.00256189554751928, 'Lambda': [0.19794140977750438, 0.19794140977750438], 'residual': 0.5158417981606549, 'ratio': 2.0654405857443745}  quasi-static {'D_a10_tau5': 0.00202129227007376, 'D_a20_tau20': 0.00202129227007376, 'Lambda': [0.19794140977750438, 0.19794140977750438], 'residual': 0.0, 'ratio': 1.0}
+  status: dynamic NOT-SUPPORTED, quasi-static SUPPORTED
+  extended map Lambda=0.05: D(a)={5.0: '3.651e-03', 10.0: '1.373e-03', 20.0: '6.363e-04'} spread 82.6%  D_QS=0.0005075427164921891  inertia excess slopes (eps) 5->10: 1.8611862564391233, 10->20: 2.7478039795892917
+  extended map Lambda=0.2: D(a)={5.0: '1.389e-02', 10.0: '5.343e-03', 20.0: '2.589e-03'} spread 81.4%  D_QS=0.0020421098325520085  inertia excess slopes (eps) 5->10: 1.8440141940455765, 10->20: 2.5946652331322677
+  extended map Lambda=0.8: D(a)={5.0: '3.962e-02', 10.0: '1.579e-02', 20.0: '8.696e-03'} spread 78.1%  D_QS=0.007125371432185716  inertia excess slopes (eps) 5->10: 1.9077156602045031, 10->20: 2.4627059225308714
+  extended map Lambda=3.2: D(a)={5.0: '6.398e-02', 10.0: '2.534e-02', 20.0: '1.857e-02'} spread 71.0%  D_QS=0.018247926436931676  inertia excess slopes (eps) 5->10: 2.689368286825549, 10->20: 4.477178337871092
+
+## T3 / H4 — thermoelastic feedback
+  delta=1.0782e-03, 5delta=5.391e-03; probe deviations ['1.60e-04', '3.06e-04', '6.19e-04']; peak-stress change -1.32e-05 -> WITHIN-BOUND
+
+## Isotropic controls
+  iso circle T48 980589.9 Pa/K (closed form 984,599 local term / 985,689 with far field); iso ellipse R48/M/R192 ['1509477.6', '1500999.7', '1497301.6']  extrapolated 1494440.2420225008
+  matched grids: iso circle at M 981309.4 Pa/K -> ellipse/circle 1.5296 (M/M), 1.5229 (ellipse extrapolated / circle M); the T48/M pair above is kept for continuity
+
+## E — mechanism ablations and expansion-set sensitivity (ellipse, 6 orientations, 96x48)
+  baseline_6phi        amplitude  29.01%  mean 1.1707 MPa/K
+  E1_alpha_cheng298    amplitude  29.91%  mean 0.0737 MPa/K  (x0.063 of baseline)
+  E2_alpha_iso         amplitude  20.78%  mean 1.1973 MPa/K  (x1.023 of baseline)
+  E3_K_iso             amplitude  27.22%  mean 1.1613 MPa/K  (x0.992 of baseline)
+  E4_C_iso             amplitude  45.59%  mean 1.4869 MPa/K  (x1.270 of baseline)
+
+## EM — mechanism ablations at the production grid (ellipse, 6 orientations, 96x96)
+  baseline_6phi            amplitude  30.06%  mean 1.1845 MPa/K
+  E1_alpha_cheng298        amplitude  30.96%  mean 0.0746 MPa/K  (x0.063 of M baseline)
+  E2_alpha_iso             amplitude  20.99%  mean 1.2113 MPa/K  (x1.023 of M baseline)
+  E3_K_iso                 amplitude  28.11%  mean 1.1746 MPa/K  (x0.992 of M baseline)
+  E4_C_iso                 amplitude  45.56%  mean 1.4989 MPa/K  (x1.266 of M baseline)
+
+## H5 — angular modes m2/m0 at the peak
+  circle_aniso: m2/m0=0.07441127544061008
+  ellipse_aniso_phi0: m2/m0=0.2632522321567042
+  ellipse_aniso_phi90: m2/m0=0.13214578010904418
+  circle_iso: m2/m0=3.902736993996106e-15
+  ellipse_iso: m2/m0=0.17311948895450466
+
+## Grid sensitivity of D (equal-Lambda pair)
+  a10_tau5: D(T48)=5.2914e-03  D(M)=5.3257e-03  change +0.6%
+  a20_tau20: D(T48)=2.5619e-03  D(M)=2.6205e-03  change +2.3%
+
+## Locality: wall hoop stress follows the wall temperature
+  circle_phi0_M: [hoop/p](t)/[hoop/p](t*) at t=[1.5, 2.0, 2.5, 3.0, 3.5]: ['1.0322', '1.0160', '1.0000', '0.9869', '0.9836']
+  ellipse_phi90_M: [hoop/p](t)/[hoop/p](t*) at t=[1.5, 2.0, 2.5, 3.0, 3.5]: ['0.9968', '0.9955', '1.0000', '1.0194', '1.0781']
+  ellipse_phi150_M: [hoop/p](t)/[hoop/p](t*) at t=[1.5, 2.0, 2.5, 3.0, 3.5]: ['0.9634', '0.9747', '0.9968', '1.0434', '1.1515']
+
+## F — pulse-width dependence (locality test), grid T48
+  tw= 0.3: circle 0.8990  ellipse(90) 0.9779  ellipse(150) 1.2552  A2 24.83%  ratios 1.088, 1.396
+  tw= 0.6: circle 0.8570  ellipse(90) 0.9488  ellipse(150) 1.2535  A2 27.67%  ratios 1.107, 1.463
+  tw= 1.2: circle 0.8527  ellipse(90) 0.9617  ellipse(150) 1.3012  A2 30.01%  ratios 1.128, 1.526
+  tw= 2.4: circle 0.8579  ellipse(90) 0.9886  ellipse(150) 1.3649  A2 31.98%  ratios 1.152, 1.591
+
+## Numerical quality of the stored runs
+  runs 175/175; max backward error 7.226266702964897e-17; max wall-pulse error (t<=6) 1.0054844078071441e-10; (t<=12) 0.3196191972977383; by pulse width: t_w=0.3: 6.8e-11/7.3e-09 (n=3), t_w=0.6: 1.0e-10/1.5e-08 (n=3), t_w=1.2: 3.5e-11/6.3e-09 (n=166), t_w=2.4: 5.7e-13/3.2e-01 (n=3)
+WROTE /home/user/le/PAPER_PROJECT/10_Processed_Data/ANALYSIS_V2.json

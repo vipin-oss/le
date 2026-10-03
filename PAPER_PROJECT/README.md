@@ -41,8 +41,10 @@ python 08_Experiments/analyze_v2.py && python 08_Experiments/make_figures.py && 
 python 08_Experiments/reproduce.py                                                                                 # reproduction test
 python ../../tools/compare_rerun.py                                                                                # compare with delivered results
 ```
-Environment: Python 3.13.14, numpy 2.3.5, scipy 1.17.1, matplotlib 3.10.9, python-docx 1.1.2, openpyxl 3.1.5 (identical to the handoff's recorded environment).
+Environment of the archived results: Python 3.13.14, numpy 2.3.5, scipy 1.17.1, matplotlib 3.10.9, python-docx 1.1.2, openpyxl 3.1.5 (identical to the handoff's recorded environment).
 Verified 2026-10-01 on **Python 3.11.2 with the same library versions**: all results bit-identical (`RERUN_COMPARISON.md`).
+Verified again 2026-10-03 on **Python 3.11.2 with numpy 2.4.6 / scipy 1.17.1 / matplotlib 3.11.2**: the analysis layer reproduces every archived quantity exactly and a full production job re-solves to 2.7e-16 relative (1 ulp) — see `Phase_02_Verification/verification/FIDELITY_check.json`. Install with
+`python3 -m venv .venv && .venv/bin/pip install numpy scipy matplotlib python-docx openpyxl reportlab pymupdf`.
 
 ## Read-only inputs
 `/home/user/work/handoff/` (304 files, 303/303 SHA-256) is the untouched handoff; `/home/user/work/rerun/` is the first-session review area (`REVIEW_FINDINGS.md`, patch, test scripts).

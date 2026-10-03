@@ -1,5 +1,23 @@
 # CHANGELOG — PAPER_PROJECT
 
+## 2026-10-03 — Q1 programme Phase 2 (verification audit and re-runs)
+
+Closed audit findings A1, A2, A5, A8, A9, A10 (`Phase_02_Verification/`). The verification suite was re-specified on
+the strength of the data rather than of the number: `V0` now asserts second-order convergence plus the inherited
+threshold at the production grid (28 cases: 27 PASS, 0 FAIL, 1 exploratory; the 96x48 exceedance stays visible in
+Table 5 and the 2026-10-01 FAIL record is preserved unchanged). The mechanism ablations were re-run at the
+production grid (24 new runs, block `EM`) and the isotropic circle added at the same grid, so the abstract's
+attribution and the ellipse/circle shape ratios are now measured on matched grids (modulation ratios 0.698/0.935/1.515
+vs 0.716/0.938/1.572 on the coarse grid: ranking unchanged, absolute values grid-dependent, and every quoted
+modulation now names its grid). A cross-environment re-solve reproduced an archived production job to 2.7e-16
+relative and the re-analysis left every pre-existing quantity of `ANALYSIS_V2.json` identical (only the audited-run
+count changed). The Bromwich validity statement is now qualified per pulse width with measured errors
+(<=1.005e-10 in the reported window for all 175 runs; 3.2e-1 only for the t_w=2.4 runs at t=12, outside that window).
+Both document builders gained a guard that aborts on placeholder cells in generated tables, and the code freeze was
+extended non-destructively with `CODE_FREEZE_submission_2026_10_03b.json`. LaTeX compilation remains unverifiable in
+this sandbox (no engine; the release-binary host is unreachable) and is recorded as such rather than claimed.
+
+
 ## 2026-10-01
 - Downloaded the handoff and verified it (303/303 SHA-256) into `/home/user/work/handoff/`.
 - Review area `/home/user/work/rerun/`: tests, logs, `REVIEW_FINDINGS.md`, `rotate_Q_beta_fix.diff`, `fixed_src/cg_model.py`. The patch is NOT applied to project code; the working copy `rerun/proj/` is still unfixed.

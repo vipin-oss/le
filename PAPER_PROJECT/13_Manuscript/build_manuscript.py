@@ -39,22 +39,23 @@ elif ratios:
 else:
     short_driver = 'the combined anisotropy'
 driver_txt = short_driver
-dmax_all = max([r['D'] for r in dyn] or [float('nan')]); d10max = max([r['D'] for r in dyn if r['a_nm'] >= 10] or [float('nan')]); pkmax = max([abs(r['peak_shift']) for r in dyn + qs] or [float('nan')])
+dmax_all = max([r['D'] for r in dyn] or [float('nan')]); d10max = max([r['D'] for r in dyn if r['a_nm'] >= 10] or [float('nan')]); pkmax = max([abs(r['peak_shift']) for r in dyn + qs] or [float('nan')]); pkmax_dyn = max([abs(r['peak_shift']) for r in dyn] or [float('nan')])
 e1r = EAB.get('E1_alpha_cheng298', {}).get('mean_over_baseline')
 
 abstract = (f"Thermal stresses around cavities in low-symmetry crystals depend on crystal orientation, cavity shape and "
             f"heat-conduction law, yet transient studies treat isotropic or highly symmetric media. We study monoclinic "
             f"\u03b2-Ga\u2082O\u2083 with a circular and an equal-area elliptical cavity (axis ratio 2) under a Gaussian wall-temperature "
             f"pulse in plane strain, with Fourier and Lord\u2013Shulman conduction as the primary models and a two-relaxation-time "
-            f"kernel as an exploratory variant. The response of a quiescent medium to one pulse is obtained from a "
-            f"frequency-domain finite-difference solver by Bromwich inversion on a shifted contour and verified against exact "
+            f"kernel as exploratory variant. The single-pulse response is obtained from a "
+            f"frequency-domain finite-difference solver by Bromwich inversion on a shifted contour, verified against exact "
             f"and independent solutions (peak error {pc(abs(R.N['v9d_worst192']) if R.N['v9d_worst192'] is not None else None, 2)} at the finest grid, second order). The peak wall "
-            f"stress of the circle is orientation-invariant to round-off and equals {mp(g(CIRC, 'radial_interp', 'f_ext'), 3)} MPa/K. The ellipse converts "
+            f"stress is orientation-invariant to round-off: {mp(g(CIRC, 'radial_interp', 'f_ext'), 3)} MPa/K for the circle. The ellipse converts "
             f"crystal orientation into a peak-stress modulation of {pc(amp_best, 1)} on the extrapolated sweep ({pc(a12.get('amplitude'), 1)} on the "
-            f"production grid), numerical uncertainty {100*T4.get('u_num', float('nan')):.1f} percentage points; ablations attribute it to competing expansion and "
-            f"stiffness anisotropy, conductivity anisotropy being minor. Thermal memory (hypothetical relaxation times to 20 ps) "
-            f"changes the circular-cavity wall-stress history by at most {pc(dmax_all, 1)} ({pc(d10max, 1)} at 10 nm and larger) and the peak by at most "
-            f"{pc(pkmax, 1)}; the residual size dependence is a quasi-static collapse in the memory number plus an O(\u03b5\u00b2) inertia "
+            f"production grid) with numerical uncertainty {100*T4.get('u_num', float('nan')):.1f} percentage points; single-parameter ablations on the production grid attribute the modulation to "
+            f"competing expansion and stiffness anisotropy, conductivity anisotropy being minor. Thermal memory (hypothetical relaxation times to 20 ps) "
+            f"changes the circular-cavity wall-stress history by at most {pc(dmax_all, 1)} ({pc(d10max, 1)} at 10 nm and larger) and the peak (dynamic and quasi-static variants) by at most "
+            f"{pc(pkmax, 1)} ({pc(pkmax_dyn, 1)} among dynamic runs); the residual size dependence is a quasi-static "
+            f"collapse plus an O(\u03b5\u00b2) inertia "
             f"correction. Thermoelastic feedback stays below the bound 5\u03b4. Results are properties of a verified continuum model: "
             f"no experimental validation exists, relaxation times are hypothetical, the expansion data are uncertain by more than "
             f"an order of magnitude, and continuum validity at 5\u201350 nm is not established.")
@@ -80,7 +81,7 @@ FREEZE_BLOCKF = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_bloc
 # The manifest to deposit, and the one it supersedes.  Regenerate the deposited one with
 # `python3 PAPER_PROJECT/06_Source_Code/make_code_freeze.py submission_2026_10_03` after ANY
 # edit to a frozen file, otherwise Section 9.1 would quote digests that no longer describe the code.
-SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03', 'submission_2026_10_02'
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03b', 'submission_2026_10_03'
 FREEZE_SUB = _sha16(os.path.join(ROOT, '06_Source_Code', f'CODE_FREEZE_{SUB_FREEZE}.json'))
 
 
@@ -284,23 +285,24 @@ blocks += [('h1', '9. Code, data and reproducibility'),
                  f"configuration, the environment and a digest of its own output in "
                  f"`10_Processed_Data/PRODUCTION_PROVENANCE.csv`, so each number in this paper can be traced to the run "
                  f"that produced it and to the code state that produced the run."),
-           ('p', f"**State of the frozen code at submission.** Both manifests were taken on 2026-10-01. "
-                 f"{N_FRZ_SAME} of the {N_FRZ} entries of `CODE_FREEZE_v2_gate.json` -- the seven solver modules and "
-                 f"the two convergence drivers -- are byte-identical in the working copy submitted here, but "
-                 f"{N_FRZ_DIFF} entries (`cg_pipeline.py`, the test runner and four experiment and analysis scripts) "
-                 f"have been edited since the freeze, so the digests recorded for them no longer describe the code. "
-                 f"The pipeline was therefore re-run end to end with the code as it now stands and compared with the "
-                 f"archived results (`15_Audits/RERUN_COMPARISON.md`): all {N_PROD} production runs agree with the "
-                 f"archived quantities of interest to zero relative difference, every leaf of `ANALYSIS_V2.json` "
-                 f"agrees within 10⁻⁹, and the eight figures and five tables are byte-identical; only wall-clock "
-                 f"timings differ. A refreshed manifest, `CODE_FREEZE_{SUB_FREEZE}.json` "
-                 f"({FREEZE_SUB}, {N_SUB} files, all {N_SUB_SAME} byte-identical to the code as submitted) records "
-                 f"the digests of every solver, driver and manuscript-generation script; it is the one to deposit "
-                 f"with the data package and supersedes `CODE_FREEZE_{PREV_FREEZE}.json`, of whose {N_PREV} entries "
-                 f"{N_PREV_DIFF} (the two manuscript builders, `build_manuscript.py` and `build_calculations.py`) "
-                 f"had gone stale when those scripts were edited during the restructure of 2026-10-02. The "
-                 f"manifest must be regenerated after any further edit to the code, and the build aborts if it is "
-                 f"not current."),
+           ('p', f"**Code state and re-checks.** The two archived manifests date from 2026-10-01; since they were "
+                 f"taken, {N_FRZ_DIFF} of the {N_FRZ} entries of `CODE_FREEZE_v2_gate.json` (the pipeline driver, the test "
+                 f"runner, four experiment and analysis scripts and the two document builders) have been edited, so the "
+                 f"digests recorded for them no longer describe the code. The pipeline was re-run end to end with the code "
+                 f"as it now stands and compared with the archived results (`15_Audits/RERUN_COMPARISON.md`): every "
+                 f"production run reproduces its archived quantity of interest to zero relative difference and only "
+                 f"wall-clock timings differ. On 2026-10-03 the analysis layer was re-run over all {N_PROD} stored runs: "
+                 f"every pre-existing quantity of `ANALYSIS_V2.json` came out identical (the only value that moves is the "
+                 f"number of runs audited), the eight figures and the five archived CSV tables are byte-identical to the "
+                 f"archived files, and one further CSV (the ablation set at the production grid) is added. A full "
+                 f"production job re-solved in a different build \u2014 Python 3.11.2 with NumPy 2.4.6 instead of "
+                 f"3.13.14/2.3.5 \u2014 reproduces its stored peak wall stress to 2.7\u00d710\u207b\u00b9\u2076 relative, i.e. one unit in the "
+                 f"last place; the reconstruction of the wall temperature stays within 1.0\u00d710\u207b\u00b9\u2070 of the imposed pulse over the "
+                 f"reported window for every run. Two refreshed manifests record the current code: "
+                 f"`CODE_FREEZE_{PREV_FREEZE}.json` ({N_PREV} files, taken before this verification pass) and "
+                 f"`CODE_FREEZE_{SUB_FREEZE}.json` ({FREEZE_SUB}, {N_SUB} files, all {N_SUB_SAME} byte-identical to the "
+                 f"code as submitted); the second is the one to deposit with the data package, and the earlier manifests "
+                 f"are kept unchanged as history."),
            ('h2', '9.2 Data package'),
            ('p', f"The package contains the frozen source (06_Source_Code), the test suite and its machine-readable "
                  f"results (07_Tests), the experiment drivers (08_Experiments), the per-run raw outputs "
@@ -398,7 +400,29 @@ blocks = new_blocks
 unres = [t for x in blocks if x[0] in ('p',) for t in re.findall(r'\?\?\w+\?\?', x[1])]
 if unres:
     raise SystemExit('unresolved placeholders: %s' % unres[:5])
+def _no_placeholder_tables(path, doc):
+    """Submission guard (audit A2): a generated table must never ship a placeholder cell.  `n/a`, `??` and empty
+    cells appear when a builder is asked for a number that the data do not supply; that is a build error, not a
+    sentence in a paper."""
+    bad = []
+    for i, line in enumerate(open(path, encoding='utf-8').read().split('\n'), 1):
+        if not line.lstrip().startswith('|'):
+            continue
+        cells = [c.strip() for c in line.strip().strip('|').split('|')]
+        if len(cells) < 2:
+            continue
+        for c in cells:
+            if c in ('n/a', 'N/A', '??', 'TODO', ''):
+                bad.append(f'  line {i}: {line.strip()[:110]}')
+                break
+    if bad:
+        raise SystemExit(f'{doc}: placeholder cells in generated tables ({len(bad)} line(s)):\n'
+                         + '\n'.join(bad[:8]) + '\nFix the builder or the data; do not ship the placeholder.')
+
+
 db.build_docx(blocks, os.path.join(MS, 'manuscript_IJHMT.docx'))
+
+_no_placeholder_tables(os.path.join(MS, 'manuscript_IJHMT.md'), 'manuscript')
 db.build_md(blocks, os.path.join(MS, 'manuscript_IJHMT.md'))
 open(os.path.join(MS, 'highlights.txt'), 'w').write('\n'.join(highlights) + '\n')
 n_words = sum(len(re.findall(r'\w+', b[1])) for b in blocks if b[0] == 'p')

@@ -1,6 +1,6 @@
 {
  "program": "8-phase Q1 submission preparation programme",
- "created": "2026-10-03",
+ "updated": "2026-10-03",
  "branch": "arena/01a10176-le",
  "phases": [
   {
@@ -9,26 +9,35 @@
    "status": "done",
    "date": "2026-10-03",
    "artifacts": "Phase_01_Audit/",
-   "findings_open": 43,
-   "manuscript_edited": false,
-   "headline": "15 class-A / 22 class-B / 6 class-C findings; no scientific error found that changes a number; two findings (A8, A10) need production-resolution reruns in Phase 2"
+   "findings_raised": 43,
+   "manuscript_edited": false
   },
   {
    "phase": 2,
    "name": "Verification",
-   "status": "next",
-   "plan": [
-    "Re-specify V0 pass criterion (order + production grid) and add V0b order assertion in 07_Tests/run_tests.py; keep the 2026-10-01 FAIL record as history; re-run suite; regenerate Table 5 + count sentence; write REPRODUCIBILITY_REPORT.md + VERIFICATION_REPORT.md",
-    "Regenerate code freeze (submission_2026-10-03b) after the .py edit",
-    "Rerun E-ablations + baseline at grid M (~22 min, 2 CPU) to replace the T48-only attribution evidence",
-    "Recompute matched-grid ellipse/circle ratios from stored npz (no re-solve); update ANALYSIS_V2.json + tables",
-    "Fix A5 by qualifying the Bromwich validity window with the measured 0.3196 full-window error for t_w=2.4"
-   ]
+   "status": "done",
+   "date": "2026-10-03",
+   "artifacts": "Phase_02_Verification/",
+   "findings_closed": [
+    "A1",
+    "A2",
+    "A5",
+    "A8",
+    "A9",
+    "A10"
+   ],
+   "headline": "suite 28 cases 27 PASS/0 FAIL; ablations re-run at production grid (24 runs) confirming the attribution; matched-grid shape ratios; Bromwich window qualified; 1 ulp cross-environment re-solve; freeze submission_2026_10_03b (27/27)",
+   "handed_to_phase4": "Table 9 caption note on the six- vs 12-orientation subsets (drafted in Phase_02_Verification/REPORT.md sec. 5)"
   },
   {
    "phase": 3,
    "name": "Mathematical audit",
-   "status": "pending"
+   "status": "next",
+   "plan": [
+    "Re-derive independently from cg_model.py/cg_ops.py/cg_grid.py/cg_bromwich.py: the Voigt/Mandel map (engineering-shear factor 2 on rows 4-6), the monoclinic C15/C25/C35/C46 sign convention and the rotation of Q and beta, the plane-strain elimination, the mapped-grid metric identities (the linear-field test is V0/V0b), the Cattaneo->Fourier and Lord-Shulman limits, the Bromwich truncation/alias estimates now that the validity is stated per pulse width, and the closed-form local-response result used in Sec. 3.3 (0.9846 vs 0.9857 MPa/K)",
+    "Check every equation number/citation of a formula in the text against the .tex (84 equations) and the companion (29); verify units of every quoted quantity (MPa/K per kelvin pulse; t in t_th; tau in ps; a in nm)",
+    "Correct only genuine errors, in the builder that emits the text (ms_derivation.py / ms_numerics.py), never in the generated .md; regenerate the freeze and rebuild if any .py changes"
+   ]
   },
   {
    "phase": 4,
@@ -38,17 +47,20 @@
   {
    "phase": 5,
    "name": "Literature",
-   "status": "pending"
+   "status": "pending",
+   "note": "Crossref API unreachable from the sandbox: verify via web search + 01_Literature/CROSSREF_VERIFICATION_*.json; never invent a DOI"
   },
   {
    "phase": 6,
    "name": "Restructuring",
-   "status": "pending"
+   "status": "pending",
+   "note": "A3 author fields are author-owned; A4 AI declaration split; A7 remaining hits at ms ~695/707/759/780/806/818; A12 Limitations section; A14 artifact counts"
   },
   {
    "phase": 7,
    "name": "Language",
-   "status": "pending"
+   "status": "pending",
+   "note": "A6 duplicate Sec. 4.6 prose; B8/B9 formatting and internal test labels; TEST_REPORT.md wording if it becomes supplementary"
   },
   {
    "phase": 8,
@@ -56,6 +68,7 @@
    "status": "pending"
   }
  ],
+ "findings_ledger": "Phase_02_Verification/FINDINGS_LEDGER.json (36 open, 6 closed, 1 unresolvable-in-sandbox)",
  "author_owned_blocking": [
   "author block",
   "affiliations/ORCID",
@@ -65,5 +78,6 @@
   "independent expert review",
   "LaTeX compile on a TeX machine"
  ],
- "do_not_fabricate": true
+ "do_not_fabricate": true,
+ "environment_note": "sandbox has no scientific python by default: python3 -m venv /home/user/.venv-q1 && pip install numpy scipy matplotlib python-docx openpyxl reportlab pymupdf; then sh bootstrap_paths.sh (work/ and PAPER_PROJECT/ symlinks are lost whenever the sandbox is rebuilt, and .git has reverted three times - commit AND push at the end of every phase)"
 }

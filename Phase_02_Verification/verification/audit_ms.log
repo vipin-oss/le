@@ -1,0 +1,72 @@
+AUDIT PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.tex
+  ok    ASCII only (0 non-ASCII: )
+  ok    no control characters ([])
+  ok    math delimiters balanced (odd $ on lines [])
+  ok    no triple $
+  ok    no empty math group ($$)
+  ok    braces balanced (1889 { vs 1889 })
+  ok    environment document     begin/end 1/1
+  ok    environment frontmatter  begin/end 1/1
+  ok    environment abstract     begin/end 1/1
+  ok    environment highlights   begin/end 1/1
+  ok    environment keyword      begin/end 1/1
+  ok    environment equation     begin/end 84/84
+  ok    environment figure       begin/end 8/8
+  ok    environment table        begin/end 11/11
+  ok    environment tabular      begin/end 7/7
+  ok    environment tabularx     begin/end 4/4
+  ok    environment itemize      begin/end 3/3
+  ok    bib parsed: 54 entries
+  ok    every \cite key exists in the bib (missing: [])
+  ok    every bib entry is cited (uncited: [])
+  ok    no empty \cite
+  ok    no leftover numeric citations such as [3] or [1,2]
+  ok    every \ref resolves (missing labels: [])
+  ok    every figure/table is referenced in the text (unused: [])
+  ok    no empty \ref
+  ok    no hard-coded equation numbers
+  ok    8 figures included (8)
+  ok    every figure file exists (missing: [])
+  ok    one caption per float (19 captions, 19 floats)
+  ok    figures numbered 1..8 ([1, 2, 3, 4, 5, 6, 7, 8])
+  ok    tables numbered 1..11 ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+  ok    table with 13 columns: all 0 rows agree (0 bad)
+  ok    table with 10 columns: all 0 rows agree (0 bad)
+  ok    table with 5 columns: all 3 rows agree (0 bad)
+  ok    table with 4 columns: all 7 rows agree (0 bad)
+  ok    table with 3 columns: all 8 rows agree (0 bad)
+  ok    table with 6 columns: all 2 rows agree (0 bad)
+  ok    table with 9 columns: all 5 rows agree (0 bad)
+  ok    table with 5 columns: all 3 rows agree (0 bad)
+  ok    table with 4 columns: all 9 rows agree (0 bad)
+  ok    table with 7 columns: all 7 rows agree (0 bad)
+  ok    table with 3 columns: all 41 rows agree (0 bad)
+  ok    booktabs rules paired
+  ok    abstract present
+  ok    abstract 249 words (limit 250)
+  ok    highlights: 5 items (3-5)
+  ok    highlights <= 85 characters (0 too long)
+  ok    required content: author placeholder
+  ok    required content: primary Fourier + Lord-Shulman
+  ok    required content: exploratory kernel labelled
+  ok    required content: MCV3 exploratory in results
+  ok    required content: no experimental validation
+  ok    required content: expansion uncertainty >10x
+  ok    required content: continuum validity
+  ok    required content: AI declaration
+  ok    required content: data availability
+  ok    required content: reproducibility placeholder
+  ok    required content: elsarticle class
+  ok    required content: numbered bibliography
+  ok    required content: bib call
+  ok    at least 80 numbered equations (84)
+  ok    equation count matches the .md (84 vs 84)
+  ok    sections present
+  ok    carried numbers present (missing: [])
+  ok    number 0.854 also present in the master .md
+  ok    number 28.7 also present in the master .md
+  ok    number 29.9 also present in the master .md
+  ok    number 1.078 also present in the master .md
+  ok    number 2.0213e-03 also present in the master .md
+  ok    table count matches the .md (11 vs 11)
+RESULT: ALL CHECKS PASSED

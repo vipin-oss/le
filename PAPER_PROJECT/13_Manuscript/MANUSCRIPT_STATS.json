@@ -1,5 +1,5 @@
 {
- "abstract_words": 248,
+ "abstract_words": 249,
  "highlight_lengths": [
   78,
   70,
@@ -7,7 +7,7 @@
   74,
   69
  ],
- "body_words": 9711,
+ "body_words": 10030,
  "driver": "the competition of expansion and stiffness anisotropy (conductivity anisotropy is minor)",
  "amp_best": 0.2874949857952955,
  "n_sections": 9,

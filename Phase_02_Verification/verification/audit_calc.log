@@ -1,0 +1,56 @@
+AUDIT PAPER_PROJECT/13_Manuscript/FINAL_REVISED_CALCULATIONS.tex
+  ok    ASCII only (0 non-ASCII: )
+  ok    no control characters ([])
+  ok    math delimiters balanced (odd $ on lines [])
+  ok    no triple $
+  ok    no empty math group ($$)
+  ok    braces balanced (871 { vs 871 })
+  ok    environment document     begin/end 1/1
+  ok    environment frontmatter  begin/end 1/1
+  ok    environment abstract     begin/end 0/0
+  ok    environment highlights   begin/end 0/0
+  ok    environment keyword      begin/end 0/0
+  ok    environment equation     begin/end 29/29
+  ok    environment figure       begin/end 0/0
+  ok    environment table        begin/end 9/9
+  ok    environment tabular      begin/end 7/7
+  ok    environment tabularx     begin/end 2/2
+  ok    environment itemize      begin/end 7/7
+  ok    bib parsed: 54 entries
+  ok    every \cite key exists in the bib (missing: [])
+  ok    no empty \cite
+  ok    no leftover numeric citations such as [3] or [1,2]
+  ok    every \ref resolves (missing labels: [])
+  ok    no empty \ref
+  ok    no hard-coded equation numbers
+  ok    every figure file exists (missing: [])
+  ok    one caption per float (9 captions, 9 floats)
+  ok    tables numbered 1..0 ([])
+  ok    table with 13 columns: all 0 rows agree (0 bad)
+  ok    table with 4 columns: all 0 rows agree (0 bad)
+  ok    table with 6 columns: all 0 rows agree (0 bad)
+  ok    table with 4 columns: all 0 rows agree (0 bad)
+  ok    table with 5 columns: all 3 rows agree (0 bad)
+  ok    table with 5 columns: all 2 rows agree (0 bad)
+  ok    table with 3 columns: all 2 rows agree (0 bad)
+  ok    table with 5 columns: all 2 rows agree (0 bad)
+  ok    table with 4 columns: all 4 rows agree (0 bad)
+  ok    booktabs rules paired
+  ok    required content: author placeholder
+  ok    required content: primary Fourier + Lord-Shulman
+  ok    required content: exploratory kernel labelled
+  ok    required content: MCV3 exploratory in results
+  ok    required content: no experimental validation
+  ok    required content: expansion uncertainty >10x
+  ok    required content: continuum validity
+  ok    required content: AI declaration
+  ok    required content: data availability
+  ok    required content: reproducibility placeholder
+  ok    required content: elsarticle class
+  ok    required content: numbered bibliography
+  ok    required content: bib call
+  ok    at least 20 numbered equations (29)
+  ok    equation count matches the .md (29 vs 29)
+  ok    sections present
+  ok    table count matches the .md (9 vs 9)
+RESULT: ALL CHECKS PASSED

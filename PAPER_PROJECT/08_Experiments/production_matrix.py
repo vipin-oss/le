@@ -2,6 +2,7 @@
 after Phase 9 / P9-D001: radial clustering gamma = 5).  Imported by run_production_v2.py and analyze_v2.py.
 Frozen by 02_Problem_Definition/ACCEPTANCE_CRITERIA_V2_FROZEN.md before any production run.
 Blocks: A orientation x shape (pre-registered); B thermal memory / size (pre-registered, dynamic undamped);
+EM = block E repeated at grid M (2026-10-03, audit A8); D_iso_circle_M = matched-grid control (audit A10).
 BQS quasi-static ablation of B; BM grid check of the equal-Lambda pair; B2/B2QS extended (Lambda, eps) map (EXPLORATORY);
 C feedback (pre-registered); D isotropic control; E mechanism ablations / parameter sensitivity (EXPLORATORY, specified before running).
 Grids (Nr x Nt, gamma = 5): R48 = 48x96, T48 = 96x48, M = 96x96 (production), R192 = 192x96, T144 = 96x144.
@@ -71,12 +72,21 @@ def matrix():
     add('C_CV_tau20_a10_coupling_off', 'C', 'CV', 20.0, 1, 0, energy_coupling=False)
     # ---- D ----------------------------------------------------------------------------------------------------------
     add('D_iso_circle_T48', 'D', 'FOURIER', 0.0, 1, 0, iso=True)
+    # added 2026-10-03 (Q1 audit, finding A10): the isotropic circle at the production grid, so that the
+    # ellipse/circle shape ratio can be evaluated with both quantities on the same grid.
+    add('D_iso_circle_M', 'D', 'FOURIER', 0.0, 1, 0, iso=True, g='M')
     for g in ('R48', 'M', 'R192'):
         add(f'D_iso_ellipse_{g}', 'D', 'FOURIER', 0.0, 2, 0, g=g, iso=True)
     # ---- E ----------------------------------------------------------------------------------------------------------
     for name, var in E_VARIANTS:
         for phi in E_PHIS:
             add(f'{name}_phi{phi:03d}', 'E', 'FOURIER', 0.0, 2, phi, g='T48', variant=var)
+    # ---- EM: the same four single-parameter ablations at the production grid (added 2026-10-03, Q1 audit finding
+    # A8: the mechanism evidence behind the abstract's attribution sentence was only available on the coarse 96x48
+    # angular grid, coarser than the grid behind the headline numbers).  Reference = A_chi2_phi*_M, already present.
+    for name, var in E_VARIANTS:
+        for phi in E_PHIS:
+            add(f'{name}_phi{phi:03d}_M', 'EM', 'FOURIER', 0.0, 2, phi, g='M', variant=var)
     # ---- F (exploratory; added after the gate, before any F result existed): locality test = pulse-width dependence, grid T48 -----------------
     for tw in F_TW:
         add(f'F_tw{tw:g}_circ', 'F', 'FOURIER', 0.0, 1, 0, g='T48', pulse=(2.5, tw))

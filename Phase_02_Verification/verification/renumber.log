@@ -1,0 +1,14 @@
+  ok   ms_static.py: 'two-relaxation-time kernel is carried along as an explorat'
+  ok   ms_static.py: 'Section 2 states the governing equations and the constitut'
+  ok   ms_static.py: 'cross-checked against an independent three-dimensional ran'
+  ok   ms_static.py: 'The quantities of interest are defined in Section 2.9 and '
+  ok   ms_static.py: 'are collected in @@tab:params@@.'
+  ok   ms_static.py: 'continuum validity not established (Section 7)'
+  ok   ms_static.py: 'The radial clustering parameter was chosen from a mesh-dir'
+  ok   build_manuscript.py: '(Section 5 lists the tests'
+  ok   ms_results.py: 'Summary of the verification suite (full table: supplementa'
+  ok   ms_results.py: 'one tensor at a time made isotropic'
+  ok   build_manuscript.py: 'The symbols used in this paper are listed in @@tab:nom@@.'
+  ok   build_manuscript.py: 'radial integrals of θ (a to R, a to r) in Eq. (@@eq:local@'
+
+ALL EDITS IN PLACE — 12 edit(s) verified

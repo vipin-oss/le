@@ -9,6 +9,7 @@
   radial R48/M/R192: ['851715.5', '853638.7', '853867.3']  p=3.072693574786767  extrapolated=853899.9784901732  error at M -0.00030595020698245064, at R192 -3.82437758727552e-05; angular T48->M change 0.001091956620903229
 
 ## T4 / H2 — ellipse orientation modulation
+  shape ratio at matched grids (M/M): mean 1.3964, extremes 1.132-1.549; extrapolated-pair ratio 1.3729
   R48_12phi_sig_interp: amplitude 33.00%  range 0.9700-1.3733 MPa/K  (min at phi=90, max at phi=135)
   T48_12phi_sig_interp: amplitude 28.82%  range 0.9617-1.3012 MPa/K  (min at phi=90, max at phi=150)
   M_12phi_sig_interp: amplitude 29.87%  range 0.9659-1.3220 MPa/K  (min at phi=90, max at phi=150)
@@ -53,6 +54,7 @@
 
 ## Isotropic controls
   iso circle T48 980589.9 Pa/K (closed form 984,599 local term / 985,689 with far field); iso ellipse R48/M/R192 ['1509477.6', '1500999.7', '1497301.6']  extrapolated 1494440.2420225008
+  matched grids: iso circle at M 981309.4 Pa/K -> ellipse/circle 1.5296 (M/M), 1.5229 (ellipse extrapolated / circle M); the T48/M pair above is kept for continuity
 
 ## E — mechanism ablations and expansion-set sensitivity (ellipse, 6 orientations, 96x48)
   baseline_6phi        amplitude  29.01%  mean 1.1707 MPa/K
@@ -60,6 +62,13 @@
   E2_alpha_iso         amplitude  20.78%  mean 1.1973 MPa/K  (x1.023 of baseline)
   E3_K_iso             amplitude  27.22%  mean 1.1613 MPa/K  (x0.992 of baseline)
   E4_C_iso             amplitude  45.59%  mean 1.4869 MPa/K  (x1.270 of baseline)
+
+## EM — mechanism ablations at the production grid (ellipse, 6 orientations, 96x96)
+  baseline_6phi            amplitude  30.06%  mean 1.1845 MPa/K
+  E1_alpha_cheng298        amplitude  30.96%  mean 0.0746 MPa/K  (x0.063 of M baseline)
+  E2_alpha_iso             amplitude  20.99%  mean 1.2113 MPa/K  (x1.023 of M baseline)
+  E3_K_iso                 amplitude  28.11%  mean 1.1746 MPa/K  (x0.992 of M baseline)
+  E4_C_iso                 amplitude  45.56%  mean 1.4989 MPa/K  (x1.266 of M baseline)
 
 ## H5 — angular modes m2/m0 at the peak
   circle_aniso: m2/m0=0.07441127544061008
@@ -84,4 +93,4 @@
   tw= 2.4: circle 0.8579  ellipse(90) 0.9886  ellipse(150) 1.3649  A2 31.98%  ratios 1.152, 1.591
 
 ## Numerical quality of the stored runs
-  runs 150/150; max backward error 7.226266702964897e-17; max wall-pulse error (t<=6) 1.0054844078071441e-10; (t<=12) 0.3196191972977383
+  runs 175/175; max backward error 7.226266702964897e-17; max wall-pulse error (t<=6) 1.0054844078071441e-10; (t<=12) 0.3196191972977383; by pulse width: t_w=0.3: 6.8e-11/7.3e-09 (n=3), t_w=0.6: 1.0e-10/1.5e-08 (n=3), t_w=1.2: 3.5e-11/6.3e-09 (n=166), t_w=2.4: 5.7e-13/3.2e-01 (n=3)

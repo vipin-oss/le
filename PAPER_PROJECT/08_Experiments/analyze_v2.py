@@ -169,6 +169,13 @@ if all(sub[g] for g in ('R48', 'M', 'R192', 'T48', 'T144')):
     ci = A.get('circle_peak', {}).get('radial_interp', {})
     if ci.get('f_ext'):
         T4['ellipse_extrapolated_mean_over_circle_extrapolated'] = float(T4['extrapolated_6phi']['mean'] / ci['f_ext'])
+    cm0 = load('A_chi1_phi000_M')
+    if cm0:
+        T4['circle_M_sig_interp'] = float(abs(cm0['sig_interp']))
+        T4['ellipse_M_mean_over_circle_M'] = float(T4['M_12phi_sig_interp']['mean'] / abs(cm0['sig_interp']))
+        T4['ellipse_M_extremes_over_circle_M'] = [float(T4['M_12phi_sig_interp']['min'] / abs(cm0['sig_interp'])),
+                                                  float(T4['M_12phi_sig_interp']['max'] / abs(cm0['sig_interp']))]
+        log(f"  shape ratio at matched grids (M/M): mean {T4['ellipse_M_mean_over_circle_M']:.4f}, extremes {T4['ellipse_M_extremes_over_circle_M'][0]:.3f}-{T4['ellipse_M_extremes_over_circle_M'][1]:.3f}; extrapolated-pair ratio {T4.get('ellipse_extrapolated_mean_over_circle_extrapolated', float('nan')):.4f}")
     write_csv('phi_sweep_ellipse.csv', ['phi_deg', 'M_interp_Pa_per_K', 'M_nodal', 'R48_interp', 'T48_interp', 'theta_star_deg_M'],
               [[p, abs(load(f'A_chi2_phi{p:03d}_M')['sig_interp']), abs(load(f'A_chi2_phi{p:03d}_M')['sig_nodal']), abs(load(f'A_chi2_phi{p:03d}_R48')['sig_interp']),
                 abs(load(f'A_chi2_phi{p:03d}_T48')['sig_interp']), load(f'A_chi2_phi{p:03d}_M')['th_star_interp_deg']] for p in cp.PHIS])
@@ -310,6 +317,14 @@ if ic and all(iso_e):
                circle_closed_form_local_term=984599.37, circle_closed_form_with_far_field=985689.45)
     A['isotropic'] = ISO
     log(f"  iso circle T48 {abs(ic['sig_interp']):.1f} Pa/K (closed form 984,599 local term / 985,689 with far field); iso ellipse R48/M/R192 {[f'{x:.1f}' for x in ge['f']]}  extrapolated {ge.get('f_ext')}")
+icM = load('D_iso_circle_M')
+if icM and all(iso_e):
+    ISO['circle_M'] = abs(icM['sig_interp'])
+    ISO['ellipse_M_over_circle_M'] = float(abs(iso_e[1]['sig_interp']) / abs(icM['sig_interp']))
+    if ISO['ellipse_radial'].get('f_ext'):
+        ISO['ellipse_ext_over_circle_M'] = float(ISO['ellipse_radial']['f_ext'] / abs(icM['sig_interp']))
+    A['isotropic'] = ISO
+    log(f"  matched grids: iso circle at M {abs(icM['sig_interp']):.1f} Pa/K -> ellipse/circle {ISO['ellipse_M_over_circle_M']:.4f} (M/M), {ISO.get('ellipse_ext_over_circle_M'):.4f} (ellipse extrapolated / circle M); the T48/M pair above is kept for continuity")
 
 # ======================================================================== E: mechanism ablations / sensitivity
 log(); log('## E — mechanism ablations and expansion-set sensitivity (ellipse, 6 orientations, 96x48)')
@@ -326,6 +341,30 @@ if base6:
     A['E_ablations'] = E
     for k, v in E.items(): log(f"  {k:20s} amplitude {v['amplitude']*100:6.2f}%  mean {v['mean']/1e6:.4f} MPa/K" + (f"  (x{v['mean_over_baseline']:.3f} of baseline)" if 'mean_over_baseline' in v else ''))
     write_csv('ablations_E.csv', ['case', 'amplitude', 'min_Pa_per_K', 'max_Pa_per_K', 'mean_Pa_per_K'], [[k, v['amplitude'], v['min'], v['max'], v['mean']] for k, v in E.items()])
+
+# ============================================== EM: the same four ablations at the production grid 96x96 (audit A8)
+log(); log('## EM — mechanism ablations at the production grid (ellipse, 6 orientations, 96x96)')
+EM = {}
+baseM = [abs(load(f'A_chi2_phi{p:03d}_M')['sig_interp']) for p in pm.E_PHIS] if all(load(f'A_chi2_phi{p:03d}_M') for p in pm.E_PHIS) else None
+if baseM:
+    EM['baseline_6phi'] = dict(grid='M', amplitude=amp(baseM), min=float(min(baseM)), max=float(max(baseM)), mean=float(np.mean(baseM)))
+    for name, _ in pm.E_VARIANTS:
+        qs = [load(f'{name}_phi{p:03d}_M') for p in pm.E_PHIS]
+        if all(qs):
+            v = [abs(q['sig_interp']) for q in qs]
+            EM[name] = dict(grid='M', amplitude=amp(v), min=float(min(v)), max=float(max(v)), mean=float(np.mean(v)),
+                            mean_over_baseline=float(np.mean(v) / np.mean(baseM)),
+                            amplitude_over_baseline=float(amp(v) / amp(baseM)), values=[float(x) for x in v])
+    if 'E_ablations' in A:
+        EM['grid_change_T48_to_M'] = {k: dict(mean_rel_change=float(EM[k]['mean'] / A['E_ablations'][k]['mean'] - 1.0),
+                                              amplitude_rel_change=float(EM[k]['amplitude'] / A['E_ablations'][k]['amplitude'] - 1.0))
+                                      for k in EM if k in A['E_ablations'] and 'mean' in A['E_ablations'][k]}
+    A['E_ablations_M'] = EM
+    for k, v in EM.items():
+        if 'mean' in v:
+            log(f"  {k:24s} amplitude {v['amplitude']*100:6.2f}%  mean {v['mean']/1e6:.4f} MPa/K" + (f"  (x{v['mean_over_baseline']:.3f} of M baseline)" if 'mean_over_baseline' in v else ''))
+    write_csv('ablations_E_M.csv', ['case', 'grid', 'amplitude', 'min_Pa_per_K', 'max_Pa_per_K', 'mean_Pa_per_K', 'mean_over_baseline'],
+              [[k, 'M', v['amplitude'], v['min'], v['max'], v['mean'], v.get('mean_over_baseline', '')] for k, v in EM.items() if 'mean' in v])
 
 # ======================================================================== H5: angular modes
 log(); log('## H5 — angular modes m2/m0 at the peak')
@@ -390,7 +429,18 @@ A['numerics'] = dict(n_runs=len(qs), max_backward_error=max(q['back_max'] for q 
                      max_wall_pulse_error_full_window_0_12=max(q['wall_pulse_err'] for q in qs) if qs else None,
                      note='wall-pulse error is evaluated for 0<=t<=6 (QoI window); over 0<=t<=12 it reaches 0.32 only for the t_w=2.4 runs of block F, where the n=-1 alias e^{gamma T} p(t-T) matters for t>8 (QoI unaffected)',
                      plan=qs[0]['plan'] if qs else None)
-log(f"  runs {A['numerics']['n_runs']}/{len(pm.matrix())}; max backward error {A['numerics']['max_backward_error']}; max wall-pulse error (t<=6) {A['numerics']['max_wall_pulse_error']}; (t<=12) {A['numerics']['max_wall_pulse_error_full_window_0_12']}")
+def wall_err_full(q):
+    t0_, tw_ = (q.get('pulse_t0_tw') or [2.5, 1.2]); t = q['t']; f = t <= 12.0 + 1e-9
+    return float(np.abs(q['wall'][:, f] - np.exp(-((t[f] - t0_) / tw_) ** 2)[None, :]).max())
+_bt = {}
+for q_ in qs:
+    tw_ = float((q_.get('pulse_t0_tw') or [2.5, 1.2])[1])
+    i = qs.index(q_)
+    r_ = _bt.setdefault(tw_, dict(n=0, qoi=0.0, full=0.0))
+    r_['n'] += 1; r_['qoi'] = max(r_['qoi'], w6[i]); r_['full'] = max(r_['full'], wall_err_full(q_))
+A['numerics']['wall_pulse_error_by_tw'] = {f'{k:g}': v for k, v in sorted(_bt.items())}
+A['numerics']['n_runs_above_1e6_in_qoi_window'] = int(sum(1 for x in w6 if x > 1e-6))
+log(f"  runs {A['numerics']['n_runs']}/{len(pm.matrix())}; max backward error {A['numerics']['max_backward_error']}; max wall-pulse error (t<=6) {A['numerics']['max_wall_pulse_error']}; (t<=12) {A['numerics']['max_wall_pulse_error_full_window_0_12']}; by pulse width: " + ', '.join(f"t_w={k}: {v['qoi']:.1e}/{v['full']:.1e} (n={v['n']})" for k, v in A['numerics']['wall_pulse_error_by_tw'].items()))
 
 json.dump(A, open(OUTJ, 'w'), indent=1, default=str)
 open(OUTM, 'w').write('\n'.join(L) + '\n')

@@ -10,20 +10,28 @@ its builders from data; see `PAPER_PROJECT/README.md` build rules).
 | Phase | Scope | Status | Artifacts |
 |---|---|---|---|
 | 1 | Complete scientific audit, classify A/B/C, save everything | **DONE 2026-10-03** | `Phase_01_Audit/` (REPORT.md, FINDINGS.json, snapshot/, verification/, manifest, CHANGELOG) |
-| 2 | Verification audit + re-runs: V0 re-specification, M-grid ablations, Bromwich window | **NEXT** | `Phase_02_Verification/` |
-| 3 | Mathematical audit (rotations, Voigt, plane strain, Cattaneo–Fourier limits, Bromwich derivation, units) | pending | `Phase_03_Mathematical_Audit/` |
+| 2 | Verification audit + re-runs | **DONE 2026-10-03** | `Phase_02_Verification/` (REPORT.md, VERIFICATION_REPORT.md, REPRODUCIBILITY_REPORT.md, FINDINGS_LEDGER.json, verification/, historical/, manifest) — closed A1, A2, A5, A8, A9, A10 |
+| 3 | Mathematical audit (rotations, Voigt, plane strain, Cattaneo–Fourier limits, Bromwich derivation, units) | **NEXT** | `Phase_03_Mathematical_Audit/` |
+
 | 4 | Figures + tables regenerated from verified data | pending | `Phase_04_Figures_Tables/` |
 | 5 | Literature audit + introduction repositioning | pending | `Phase_05_Literature/` |
 | 6 | Restructuring (title/abstract/keywords/sections/limitations/back matter/declarations) | pending | `Phase_06_Restructuring/` |
 | 7 | Language + style + internal-language strip + duplication | pending | `Phase_07_Language/` |
 | 8 | Final audit, consistency, compile, submission checklist, cover letter | pending | `Phase_08_Final_Audit/` |
 
-**Open findings ledger:** `Phase_01_Audit/FINDINGS.json` (43 findings: 15 A / 22 B / 6 C). Each later phase closes
-the findings routed to it and flips `status` to `closed` with the file:line where it was fixed.
+**Open findings ledger:** the current one is `Phase_02_Verification/FINDINGS_LEDGER.json` (43 findings: 6 closed, 1 recorded
+unresolvable in this sandbox, 36 open). `Phase_01_Audit/FINDINGS.json` is the frozen record of what was raised.
+Each later phase writes its own ledger with the newly closed findings and their evidence.
 
 **Author-owned, cannot be done by the agent (do not fabricate):** author names/affiliations/ORCIDs, funding
 numbers, repository DOI, independent expert review of the formulation, final journal formatting choices, LaTeX
 compilation on a machine with TeTeX/TeX Live (no engine in this sandbox).
+
+**Sandbox set-up needed in every new session (the workspace can be rebuilt without warning):**
+`python3 -m venv /home/user/.venv-q1 && /home/user/.venv-q1/bin/pip install numpy scipy matplotlib python-docx openpyxl reportlab pymupdf`
+then `sh bootstrap_paths.sh` (restores `/home/user/PAPER_PROJECT` and `/home/user/work`, which the scripts hard-code).
+Rebuild documents with `bash Phase_02_Verification/finalize2.sh` (steps 4–7: builders → tex/bib → static gates → PDFs),
+after regenerating the freeze if any `.py` changed.
 
 **Standing rules for every phase:** no new results without regenerating them from code; the failed test and every
 negative result stay in the record; "verified, not validated" stays; hypothetical τ stays labelled hypothetical;
