@@ -876,7 +876,7 @@ def _frz(label):
     return len(_f), _s, len(_f) - _s
 
 
-SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03e', 'submission_2026_10_03d'
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03g', 'submission_2026_10_03f'
 
 N_FRZ, N_FRZ_SAME, N_FRZ_DIFF = _frz('v2_gate')
 N_SUB, N_SUB_SAME, N_SUB_DIFF = _frz(SUB_FREEZE)
@@ -929,7 +929,7 @@ para('Both archived manifests were taken on 2026-10-01. %d of the %d entries of 
      'changed. CODE_FREEZE_%s.json (%d files, all %d byte-identical to the code as submitted) '
      'is the refreshed manifest, the one to deposit with the data package; it supersedes '
      'CODE_FREEZE_%s.json (taken the same day, before this change, %d of whose %d entries '
-     'still match), CODE_FREEZE_submission_2026_10_03c.json, CODE_FREEZE_submission_2026_10_03b.json, '
+     'still match), CODE_FREEZE_submission_2026_10_03f.json, CODE_FREEZE_submission_2026_10_03e.json, CODE_FREEZE_submission_2026_10_03d.json, CODE_FREEZE_submission_2026_10_03c.json, CODE_FREEZE_submission_2026_10_03b.json, '
      'CODE_FREEZE_submission_2026_10_03.json and '
      'CODE_FREEZE_submission_2026_10_02.json, all '
      'kept unchanged as history.'

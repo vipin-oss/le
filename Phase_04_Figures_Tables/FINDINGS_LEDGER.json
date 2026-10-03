@@ -8,7 +8,7 @@
   "T2": "PASS (320 of 320 table cells traced)",
   "T3": "PASS (587 of 587 prose and caption numbers traced)"
  },
- "note": "Same schema as Phases 2 and 3. This ledger also closes two Phase 3 items (P3-15 and, with a corrected diagnosis, P3-8). Phase 6 (part 1): Q1-conformance restructuring applied in the builders, all gates green.",
+ "note": "Same schema as Phases 2 and 3. This ledger also closes two Phase 3 items (P3-15 and, with a corrected diagnosis, P3-8). Phase 6 (part 1): Q1-conformance restructuring applied in the builders, all gates green. Phase 6 (part 2): back matter, Data availability, companion PDF; freeze 2026-10-03f; P6-5 closed as reviewed-conformant. Phase 6 complete (parts 1-3): numbered style, back matter, Data availability, AI disclosure; freeze 2026-10-03g.",
  "items": [
   {
    "id": "P4-1",
@@ -104,6 +104,55 @@
    "severity": "medium",
    "status": "open",
    "resolution": "open: title/abstract/keywords wording, Highlights, Limitations and Declarations, Data Availability"
+  },
+  {
+   "id": "P6-6",
+   "title": "Data availability statement named an obsolete freeze",
+   "severity": "medium",
+   "status": "closed",
+   "resolution": "it cited CODE_FREEZE_v2_gate.json and had a broken sentence boundary; the statement now resolves the submitted freeze through SUB_FREEZE, cross-references Section 9.1 instead of repeating the package inventory, and keeps the [PUBLIC REPOSITORY/DOI TO BE INSERTED] marker that tools/audit_tex.py gates on"
+  },
+  {
+   "id": "P6-7",
+   "title": "Acknowledgements section missing",
+   "severity": "low",
+   "status": "closed",
+   "resolution": "unnumbered Acknowledgements block inserted ahead of the Declarations with an author-input placeholder; tools/md_to_tex.py emits it as \\section* so the back matter is not renumbered"
+  },
+  {
+   "id": "P6-8",
+   "title": "editorial checklist: title, abstract, keywords, Highlights, Limitations",
+   "severity": "low",
+   "status": "closed",
+   "resolution": "reviewed against IJHMT/Elsevier guidance and unchanged where already conformant: abstract 249/250 words, single paragraph, no citations, no undefined abbreviations; 6 semicolon-separated keywords; 5 Highlights at 78/70/69/74/69 chars (limit 85); Section 7.2 is an explicit limitations list; the title keeps its subtitle because the clauses after the colon carry the verification and ablation claims"
+  },
+  {
+   "id": "P6-9",
+   "title": "companion PDF stale after the bracket repair",
+   "severity": "medium",
+   "status": "closed",
+   "resolution": "regenerated with tools/md_to_pdf.py -i/-o; tools/verify_pdf.py -c clean for the companion and the manuscript (323 text units, 0 missing, 0 out-of-order)"
+  },
+  {
+   "id": "P6-10",
+   "title": "A3 - author-identity and repository fields",
+   "severity": "A",
+   "status": "closed",
+   "resolution": "satisfied as far as the agent can: every non-identity field is drafted (Data availability, CRediT skeleton, competing interest, funding, AI declaration) and the remaining author inputs are listed in Phase_06_Restructuring/AUTHOR_FILLIN.md; the identity fields stay bracketed because filling them would be fabrication"
+  },
+  {
+   "id": "P6-11",
+   "title": "A4 - Elsevier AI-disclosure split",
+   "severity": "A",
+   "status": "closed",
+   "resolution": "declaration rewritten in the Elsevier sentence form, template wrapper and model-provider clause removed, research-process use left in the methods disclosure, and the no-independent-action / responsibility safeguards kept; audit gate on the repository marker and on the declaration heading still passes"
+  },
+  {
+   "id": "P6-12",
+   "title": "documents re-anchored for the back-matter and disclosure edits",
+   "severity": "medium",
+   "status": "closed",
+   "resolution": "CODE_FREEZE_submission_2026_10_03g.json (27 files); 03f/03e and earlier freezes byte-unchanged; all gates green (audit_tex, check_crossrefs, check_tex_commands, verify_pdf for both documents)"
   }
  ]
 }

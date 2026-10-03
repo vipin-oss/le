@@ -90,7 +90,7 @@ FREEZE_BLOCKF = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_bloc
 # The manifest to deposit, and the one it supersedes.  Regenerate the deposited one with
 # `python3 PAPER_PROJECT/06_Source_Code/make_code_freeze.py submission_2026_10_03` after ANY
 # edit to a frozen file, otherwise Section 9.1 would quote digests that no longer describe the code.
-SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03e', 'submission_2026_10_03d'
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03g', 'submission_2026_10_03f'
 FREEZE_SUB = _sha16(os.path.join(ROOT, '06_Source_Code', f'CODE_FREEZE_{SUB_FREEZE}.json'))
 
 
@@ -356,12 +356,32 @@ blocks += [('h1', '9. Code, data and reproducibility'),
                  "from the convergence families (Section 7.2)."),
            ]
 
+blocks += [('h1', 'Acknowledgements'),
+           ('p', '[AUTHOR INPUT REQUIRED: acknowledge any funding, technical help or computing facilities not already named in the Funding statement; omit this section if there is nothing to acknowledge.]'),
+           ]
+
 blocks += [('h1', 'Declarations'),
            ('p', '**CRediT authorship contribution statement:** [AUTHOR INPUT REQUIRED].'),
            ('p', '**Declaration of competing interest:** [AUTHOR INPUT REQUIRED].'),
            ('p', '**Funding:** [AUTHOR INPUT REQUIRED: name the grant, or state that no funding was received].'),
-           ('p', '**Data availability:** the Python source code, verification suite, per-run raw outputs (npz/json, including the frequency-domain transfer values), analysis and figure scripts, and the production matrix are provided in the project data package (SHA-256 code freeze `CODE_FREEZE_v2_gate.json`). to be deposited at [PUBLIC REPOSITORY/DOI TO BE INSERTED].'),
-           ('p', '**Declaration of Generative AI and AI-assisted technologies in the writing process.** [TEMPLATE — to be reviewed, edited and confirmed by the authors; Elsevier requires this statement above the references.] During the preparation of this work the author(s) used a generative-AI assistant (Arena.ai Agent Mode; the underlying models are provided by the service) for the writing process: drafting and revising the text and the figure captions, and checking the internal consistency of the manuscript, the calculation companion and the tables. After using this tool the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the publication. The same class of tool was also used in the research process — reviewing and extending the numerical code and the verification suite, and running the simulations — which the journal policy places in the methods rather than in this declaration; the numerical-methods section of the manuscript records that use. No AI tool generated a physical result, no AI tool was used to produce or select any number reported here, and no AI tool is an author or is cited as a source.')]
+           ('p', '**Data availability:** the Python source code, verification suite, '
+                 'per-run raw outputs (npz/json, including the frequency-domain transfer '
+                 'values), analysis and figure scripts and the production matrix are provided '
+                 'in the project data package, whose contents are fixed by the SHA-256 code '
+                 f'freeze `CODE_FREEZE_{SUB_FREEZE}.json` described in Section 9.1; the package '
+                 'will be deposited in a public repository under the persistent identifier '
+                 'to be deposited at [PUBLIC REPOSITORY/DOI TO BE INSERTED].'),
+           ('p', '**Declaration of Generative AI and AI-assisted technologies in the writing process.** '
+                 'During the preparation of this work the author(s) used a generative-AI assistant (Arena.ai Agent '
+                 'Mode) in order to draft and revise the text and the figure captions, and to check the internal consistency '
+                 'of the manuscript, the calculation companion and the tables. After using this tool the author(s) '
+                 'reviewed and edited the content as needed and take(s) full responsibility for the content of the '
+                 'publication. The research-process use of the same class of tool - reviewing and extending the numerical '
+                 'code and the verification suite, and running the simulations - is recorded with the numerical-methods '
+                 'section, as the journal policy directs. No AI tool generated a physical result and no AI tool produced '
+                 'or selected any number reported here; no AI tool acted without the author(s)\' review, and no AI tool '
+                 'is an author or is cited as a source.')]
+
 blocks += [('h1', 'References'), ('refs', [r['text'] for r in refs])]
 blocks += [('h1', 'Appendix A. Nomenclature'),
            ('p', 'The symbols used in this paper are listed in @@tab:nom@@.'),

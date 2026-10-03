@@ -391,8 +391,8 @@ def main():
                 continue
             if head == 'References':
                 continue
-            if head == 'Declarations':                      # Elsevier: unnumbered, before the bib
-                out.append('\\section*{Declarations}')
+            if head in ('Declarations', 'Acknowledgements'):   # Elsevier: unnumbered
+                out.append('\\section*{%s}' % head)
                 out.append('')
                 continue
             if head.startswith('Appendix'):
