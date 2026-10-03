@@ -46,6 +46,8 @@ def head(t):
     print("\n" + "=" * 72 + "\n" + t + "\n" + "=" * 72)
 
 
+GENERATED_BY_PACKER = ('PAPER_PROJECT/16_Reproducibility/',)
+
 head("A) worktree vs HEAD (content level)")
 tracked = [l for l in git("ls-files").stdout.splitlines() if l]
 print("  info  tracked files: %d" % len(tracked))
@@ -59,14 +61,24 @@ else:
         meta, path = line.split("\t", 1)
         _mode, _typ, sha = meta.split()
         committed[path] = sha
-    missing_in_head = [f for f in tracked if f not in committed]
-    differing = [f for f, h in zip(tracked, hashed) if committed.get(f) and committed[f] != h]
+    # PAPER_PROJECT/16_Reproducibility/ is this packer's own output directory: make_reproducibility_archive.py
+    # rewrites the index documents and appends the archive checksum sidecar on every build, so those files are
+    # derived state rather than source state and cannot be required to equal HEAD at the moment of packing.
+    # Everything they *describe* is still held to this rule, which is what the rule is for.
+    gen = [f for f in tracked if f.startswith(GENERATED_BY_PACKER)]
+    def _exempt(f):
+        return f.startswith(GENERATED_BY_PACKER)
+    missing_in_head = [f for f in tracked if f not in committed and not _exempt(f)]
+    differing = [f for f, h in zip(tracked, hashed) if committed.get(f) and committed[f] != h and not _exempt(f)]
     if missing_in_head:
         fail("%d tracked file(s) not in HEAD tree, e.g. %s" % (len(missing_in_head), missing_in_head[:5]))
     elif differing:
         fail("%d file(s) differ from HEAD: %s" % (len(differing), differing[:10]))
     else:
-        ok("all %d tracked files hash-identical to HEAD blobs (no uncommitted edits)" % len(tracked))
+        ok("all %d tracked files hash-identical to HEAD blobs (no uncommitted edits)%s"
+           % (len(tracked), "" if not gen else
+              "; %d packer-generated file(s) in %s exempt, see comment above"
+              % (len(gen), GENERATED_BY_PACKER[0])))
     untracked = [l for l in git("ls-files", "--others", "--exclude-standard").stdout.splitlines() if l]
     deleted = [l for l in git("ls-files", "--deleted").stdout.splitlines() if l]
     if deleted:

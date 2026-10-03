@@ -748,13 +748,16 @@ def main():
     print('sections:', json.dumps({k: v['files'] for k, v in ab['sections'].items()}, indent=0))
     print('audit:', json.dumps(audit['summary']))
     if not a.keep_tree:
-        # the generated documents were just written into PAPER_PROJECT/16_Reproducibility/; the zip holds
-        # them, and the working tree is returned to HEAD so that (a) the repository stays clean and (b) a
-        # later build's gate transcript describes a committed state. `git add` them (or --keep-tree) when
-        # the regenerated copies should be committed - the builder never commits by itself.
-        git('checkout', '--', os.path.relpath(GEN, ROOT))
-        for extra in ('Phase_08_Final_Audit/verification/final_consistency.json',):
-            git('checkout', '--', extra)
+        # the index documents were just regenerated into PAPER_PROJECT/16_Reproducibility/; the zip already
+        # holds them, so the working tree copies are returned to HEAD to keep the repository clean and to
+        # make a later build's gate transcript describe a committed state. The checksum sidecar is NOT
+        # restored - it is the record of the archive that was just built, and it is the one file here meant
+        # to be committed after packing. `--keep-tree` keeps the documents too, for review or a commit.
+        for name in docmap:
+            fp = os.path.join(GEN, name)
+            if os.path.isfile(fp):
+                git('checkout', '--', os.path.relpath(fp, ROOT))
+        git('checkout', '--', 'Phase_08_Final_Audit/verification/final_consistency.json')
     print('zip sha256    :', zsha)
     print('content sha256:', content_sha)
     return 0
