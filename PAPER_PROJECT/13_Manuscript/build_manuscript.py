@@ -90,7 +90,7 @@ FREEZE_BLOCKF = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_bloc
 # The manifest to deposit, and the one it supersedes.  Regenerate the deposited one with
 # `python3 PAPER_PROJECT/06_Source_Code/make_code_freeze.py submission_2026_10_03` after ANY
 # edit to a frozen file, otherwise Section 9.1 would quote digests that no longer describe the code.
-SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03g', 'submission_2026_10_03f'
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03i', 'submission_2026_10_03h'
 FREEZE_SUB = _sha16(os.path.join(ROOT, '06_Source_Code', f'CODE_FREEZE_{SUB_FREEZE}.json'))
 
 
@@ -297,7 +297,7 @@ blocks += [('p', 'Software and AI assistance (Methods disclosure): the finite-di
 # ---- Sections 5-8
 blocks += R.verification()
 blocks += [('h2', '5.4 What the verification covers and what it does not'),
-           ('p', f"The tests of Sections 5.1-5.3 are code-verification and solution-verification tests in the usual "
+           ('p', f"The tests of Sections 5.1–5.3 are code-verification and solution-verification tests in the usual "
                  f"sense [53]: they compare the implementation with exact solutions of the same equations (patch tests, "
                  f"steady and 1-D reference solutions, the closed form of Section 3.3) and with independent "
                  f"implementations of the same model (an independent three-dimensional tensor rotation, a 1-D spectral "
@@ -313,13 +313,14 @@ blocks += R.results() + R.discussion() + R.conclusions()
 blocks += [('h1', '9. Code, data and reproducibility'),
            ('h2', '9.1 Code and provenance'),
            ('p', f"The solver, the test suite, the experiment drivers and the analysis scripts are frozen: SHA-256 "
-                 f"digests of every file are recorded in `CODE_FREEZE_v2_gate.json` ({FREEZE_GATE} for the file itself) "
+                 f"digests of every file are recorded in the archived manifest `CODE_FREEZE_v2_gate.json` (its own digest "
+                 f"{FREEZE_GATE}) "
                  f"and `CODE_FREEZE_v2_blockF.json` ({FREEZE_BLOCKF}), and the material model alone is identified by "
                  f"`cg_model.py` ({MODEL_SHA}). Every production run records the code version, a checksum of its input "
                  f"configuration, the environment and a digest of its own output in "
                  f"`10_Processed_Data/PRODUCTION_PROVENANCE.csv`, so each number in this paper can be traced to the run "
                  f"that produced it and to the code state that produced the run."),
-           ('p', f"**Code state and re-checks.** The two archived manifests date from 2026-10-01; since they were "
+           ('p', f"**Code state.** The two archived manifests date from 2026-10-01; since they were "
                  f"taken, {N_FRZ_DIFF} of the {N_FRZ} entries of `CODE_FREEZE_v2_gate.json` ({FRZ_DIFF_NAMES}) have been "
                  f"edited, so the "
                  f"digests recorded for them no longer describe the code. The pipeline was re-run end to end with the code "
@@ -327,7 +328,7 @@ blocks += [('h1', '9. Code, data and reproducibility'),
                  f"production run reproduces its archived quantity of interest to zero relative difference and only "
                  f"wall-clock timings differ. On 2026-10-03 the analysis layer was re-run over all {N_PROD} stored runs: "
                  f"every pre-existing quantity of `ANALYSIS_V2.json` came out identical (the only value that moves is the "
-                 f"number of runs audited), the eight figures and the five archived CSV tables are byte-identical to the "
+                 f"number of runs covered), the eight figures and the five archived CSV tables are byte-identical to the "
                  f"archived files, and one further CSV (the ablation set at the production grid) is added. A full "
                  f"production job re-solved in a different build \u2014 Python 3.11.2 with NumPy 2.4.6 instead of "
                  f"3.13.14/2.3.5 \u2014 reproduces its stored peak wall stress to 2.7\u00d710\u207b\u00b9\u2076 relative, i.e. one unit in the "
@@ -343,12 +344,12 @@ blocks += [('h1', '9. Code, data and reproducibility'),
                  f"({N_PROD} production runs as .npz/.json pairs under 09_Raw_Data, together with the convergence and "
                  f"pulse-width runs), the processed analysis (10_Processed_Data: ANALYSIS_V2.json, the convergence "
                  f"results and the provenance table), the figure scripts and figures (11_Figures), the tables "
-                 f"(12_Tables), the manuscript builders (13_Manuscript) and the audit records (15_Audits). The raw "
+                 f"(12_Tables), the manuscript sources (13_Manuscript) and the verification records (15_Audits). The raw "
                  f"outputs store the frequency-domain transfer values as well as the inverted histories, so the "
                  f"quantities of interest can be recomputed without re-solving."),
            ('h2', '9.3 Reproduction'),
            ('p', "`python3 08_Experiments/reproduce.py` reruns the pipeline end to end (tests, production matrix, "
-                 "convergence runs, analysis, figures, manuscript builders) in the order used here; the individual "
+                 "convergence runs, analysis, figures, manuscript build scripts) in the order used here; the individual "
                  "stages are `07_Tests/run_tests.py`, `08_Experiments/run_production_v2.py`, `run_convergence.py`, "
                  "`analyze_v2.py`, `make_figures.py`, `13_Manuscript/build_manuscript.py` and "
                  "`tools/md_to_tex.py`. The environment is recorded in the code-freeze files; the memory required by "
@@ -368,9 +369,9 @@ blocks += [('h1', 'Declarations'),
                  'per-run raw outputs (npz/json, including the frequency-domain transfer '
                  'values), analysis and figure scripts and the production matrix are provided '
                  'in the project data package, whose contents are fixed by the SHA-256 code '
-                 f'freeze `CODE_FREEZE_{SUB_FREEZE}.json` described in Section 9.1; the package '
-                 'will be deposited in a public repository under the persistent identifier '
-                 'to be deposited at [PUBLIC REPOSITORY/DOI TO BE INSERTED].'),
+                 f'freeze `CODE_FREEZE_{SUB_FREEZE}.json` described in Section 9.1. The package will be '
+                 'deposited in a public repository under the persistent identifier recorded at submission '
+                 '[PUBLIC REPOSITORY/DOI TO BE INSERTED].'),
            ('p', '**Declaration of Generative AI and AI-assisted technologies in the writing process.** '
                  'During the preparation of this work the author(s) used a generative-AI assistant (Arena.ai Agent '
                  'Mode) in order to draft and revise the text and the figure captions, and to check the internal consistency '

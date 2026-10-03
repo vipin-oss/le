@@ -838,7 +838,7 @@ para('The last row is the one that matters for the absolute magnitude of every s
      'in the manuscript. Replacing the reference expansion set with the alternative set of '
      '[18] divides the mean peak wall stress by %s — a factor of about %s — while '
      'changing the modulation only from %s to %s. The two effects are therefore separable: '
-     'the *shape* of the orientation dependence is robust to which expansion set is used, '
+     'the *shape* of the orientation dependence is insensitive to which expansion set is used, '
      'while the *scale* is not. This is why the manuscript reports the modulation '
      'dimensionlessly and the stress per kelvin, and why it states the >10× uncertainty in '
      'the absolute stress scale prominently rather than in a footnote.'
@@ -850,7 +850,7 @@ para('The last row is the one that matters for the absolute magnitude of every s
 h1('Reproduction')
 h2('What to run, and what it must reproduce')
 para('The companion inherits the provenance of the manuscript. The source code is frozen '
-     'under PAPER_PROJECT/06_Source_Code/CODE_FREEZE_v2_gate.json (gate freeze, %d files) and '
+     'in the deposited package under 06_Source_Code/CODE_FREEZE_v2_gate.json (the archived manifest, %d files) and '
      'CODE_FREEZE_v2_final.json (%d files), each entry carrying a SHA-256 of the file; the '
      'raw output of the %d production runs and the convergence families is in '
      'PAPER_PROJECT/09_Raw_Data/production/; the processed numbers quoted here are in '
@@ -876,7 +876,7 @@ def _frz(label):
     return len(_f), _s, len(_f) - _s
 
 
-SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03g', 'submission_2026_10_03f'
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03i', 'submission_2026_10_03h'
 
 N_FRZ, N_FRZ_SAME, N_FRZ_DIFF = _frz('v2_gate')
 N_SUB, N_SUB_SAME, N_SUB_DIFF = _frz(SUB_FREEZE)
@@ -909,7 +909,7 @@ def _frz_diff_names(label):
 
 
 FRZ_DIFF_NAMES = _frz_diff_names('v2_gate')
-para('Both archived manifests were taken on 2026-10-01. %d of the %d entries of the gate freeze are '
+para('Both archived manifests were taken on 2026-10-01. %d of the %d entries of the archived manifest are '
      'byte-identical in the code as submitted; %d entries (%s) have been edited since, so the '
      'digests recorded for them no longer describe it. The pipeline was therefore re-run end to end with '
      'the code as submitted, and it reproduces the archived results exactly: the production runs agree '
@@ -929,7 +929,7 @@ para('Both archived manifests were taken on 2026-10-01. %d of the %d entries of 
      'changed. CODE_FREEZE_%s.json (%d files, all %d byte-identical to the code as submitted) '
      'is the refreshed manifest, the one to deposit with the data package; it supersedes '
      'CODE_FREEZE_%s.json (taken the same day, before this change, %d of whose %d entries '
-     'still match), CODE_FREEZE_submission_2026_10_03f.json, CODE_FREEZE_submission_2026_10_03e.json, CODE_FREEZE_submission_2026_10_03d.json, CODE_FREEZE_submission_2026_10_03c.json, CODE_FREEZE_submission_2026_10_03b.json, '
+     'still match), CODE_FREEZE_submission_2026_10_03h.json, CODE_FREEZE_submission_2026_10_03g.json, CODE_FREEZE_submission_2026_10_03f.json, CODE_FREEZE_submission_2026_10_03e.json, CODE_FREEZE_submission_2026_10_03d.json, CODE_FREEZE_submission_2026_10_03c.json, CODE_FREEZE_submission_2026_10_03b.json, '
      'CODE_FREEZE_submission_2026_10_03.json and '
      'CODE_FREEZE_submission_2026_10_02.json, all '
      'kept unchanged as history.'

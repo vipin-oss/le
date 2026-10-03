@@ -1,0 +1,497 @@
+{
+ "internal": [
+  {
+   "doc": "ms",
+   "line": 95,
+   "word": "gate",
+   "context": "0 the law is hyperbolic: temperature disturbances propagate at the finite speed"
+  },
+  {
+   "doc": "ms",
+   "line": 277,
+   "word": "C1",
+   "context": "| C_{ij} (13 constants) | C11 242.8, C22 343.8, C33 347.4, C44 47.8, C55 88.6, C66 "
+  },
+  {
+   "doc": "ms",
+   "line": 277,
+   "word": "C1",
+   "context": ", C22 343.8, C33 347.4, C44 47.8, C55 88.6, C66 104.0, C12 128.0, C13 160.0, C23 70.9, C15 \u22121.62, C25 0.36, C35 "
+  },
+  {
+   "doc": "ms",
+   "line": 277,
+   "word": "C1",
+   "context": ", C33 347.4, C44 47.8, C55 88.6, C66 104.0, C12 128.0, C13 160.0, C23 70.9, C15 \u22121.62, C25 0.36, C35 0.97, C46 5"
+  },
+  {
+   "doc": "ms",
+   "line": 277,
+   "word": "C1",
+   "context": ", C55 88.6, C66 104.0, C12 128.0, C13 160.0, C23 70.9, C15 \u22121.62, C25 0.36, C35 0.97, C46 5.59 GPa | literature "
+  },
+  {
+   "doc": "ms",
+   "line": 277,
+   "word": "C2",
+   "context": "| C_{ij} (13 constants) | C11 242.8, C22 343.8, C33 347.4, C44 47.8, C55 88.6, C66 104.0, C12 "
+  },
+  {
+   "doc": "ms",
+   "line": 277,
+   "word": "C2",
+   "context": ", C44 47.8, C55 88.6, C66 104.0, C12 128.0, C13 160.0, C23 70.9, C15 \u22121.62, C25 0.36, C35 0.97, C46 5.59 GPa | l"
+  },
+  {
+   "doc": "ms",
+   "line": 277,
+   "word": "C2",
+   "context": " C66 104.0, C12 128.0, C13 160.0, C23 70.9, C15 \u22121.62, C25 0.36, C35 0.97, C46 5.59 GPa | literature | Adachi et"
+  },
+  {
+   "doc": "ms",
+   "line": 835,
+   "word": "gate",
+   "context": " are recorded in the archived manifest `CODE_FREEZE_v2_gate.json` (its own digest feab48880c3c1359) and `CODE_FREE"
+  },
+  {
+   "doc": "ms",
+   "line": 835,
+   "word": "v2_gate",
+   "context": "ile are recorded in the archived manifest `CODE_FREEZE_v2_gate.json` (its own digest feab48880c3c1359) and `CODE_FREE"
+  },
+  {
+   "doc": "ms",
+   "line": 835,
+   "word": "_gate",
+   "context": "e are recorded in the archived manifest `CODE_FREEZE_v2_gate.json` (its own digest feab48880c3c1359) and `CODE_FREE"
+  },
+  {
+   "doc": "ms",
+   "line": 837,
+   "word": "gate",
+   "context": "hey were taken, 7 of the 15 entries of `CODE_FREEZE_v2_gate.json` (cg_bromwich.py, cg_pipeline.py, run_tests.py, a"
+  },
+  {
+   "doc": "ms",
+   "line": 837,
+   "word": "submission_2026",
+   "context": "reshed manifests record the current code: `CODE_FREEZE_submission_2026_10_03h.json` (27 files, taken before this verification"
+  },
+  {
+   "doc": "ms",
+   "line": 837,
+   "word": "submission_2026",
+   "context": " taken before this verification pass) and `CODE_FREEZE_submission_2026_10_03i.json` (fb8faf3d75d8b874, 27 files, all 27 byte-"
+  },
+  {
+   "doc": "ms",
+   "line": 837,
+   "word": "v2_gate",
+   "context": "e they were taken, 7 of the 15 entries of `CODE_FREEZE_v2_gate.json` (cg_bromwich.py, cg_pipeline.py, run_tests.py, a"
+  },
+  {
+   "doc": "ms",
+   "line": 837,
+   "word": "_gate",
+   "context": "they were taken, 7 of the 15 entries of `CODE_FREEZE_v2_gate.json` (cg_bromwich.py, cg_pipeline.py, run_tests.py, a"
+  },
+  {
+   "doc": "ms",
+   "line": 847,
+   "word": "build_manuscript",
+   "context": "y`, `analyze_v2.py`, `make_figures.py`, `13_Manuscript/build_manuscript.py` and `tools/md_to_tex.py`. The environment is recor"
+  },
+  {
+   "doc": "ms",
+   "line": 863,
+   "word": "submission_2026",
+   "context": "ents are fixed by the SHA-256 code freeze `CODE_FREEZE_submission_2026_10_03i.json` described in Section 9.1. The package wil"
+  }
+ ],
+ "banned": [],
+ "dup_within": [
+  "ms:3 == calc:3 / calc:3 :: [author input required: author names, affiliations, orcid ids and corresponding author]",
+  "ms:857 == calc:423 / calc:423 :: credit authorship contribution statement: [author input required].",
+  "ms:861 == calc:427 / calc:427 :: funding: [author input required: name the grant, or state that no funding was received].",
+  "ms:865 == calc:431 / calc:431 :: after using this tool the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of t"
+ ],
+ "dup_shared": [
+  "[author input required: author names, affiliations, orcid ids and corresponding author]",
+  "after using this tool the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the publication.",
+  "credit authorship contribution statement: [author input required].",
+  "funding: [author input required: name the grant, or state that no funding was received]."
+ ],
+ "long_sentences": [
+  {
+   "line": 42,
+   "words": 113,
+   "text": "The contributions are: (i) a verified time-domain method that returns the response of a quiescent medium to a single pul"
+  },
+  {
+   "line": 555,
+   "words": 95,
+   "text": "The bound is checked against the stored series of every production run, not only estimated: the reconstructed wall tempe"
+  },
+  {
+   "line": 621,
+   "words": 79,
+   "text": "One inherited absolute threshold is exceeded on a grid that is not used for any reported result: at 96\u00d748 with \u03c7 = 2 the"
+  },
+  {
+   "line": 766,
+   "words": 79,
+   "text": "The collapse in \u039b alone therefore fails for the full model at the 25% level, but the failure is entirely due to elastic "
+  },
+  {
+   "line": 548,
+   "words": 74,
+   "text": "A periodic discrete-Fourier synthesis over a window of a few thermal times must not be used for this purpose: it returns"
+  },
+  {
+   "line": 842,
+   "words": 73,
+   "text": "The package contains the frozen source (06_Source_Code), the test suite and its machine-readable results (07_Tests), the"
+  },
+  {
+   "line": 811,
+   "words": 72,
+   "text": "- **Model scope.** Linear, small-strain, plane strain in the a\u2013c plane; temperature-independent properties; prescribed ("
+  },
+  {
+   "line": 27,
+   "words": 71,
+   "text": "Transient cavity problems with a finite heat-wave speed have been solved for a fibre-reinforced anisotropic medium with "
+  },
+  {
+   "line": 550,
+   "words": 71,
+   "text": "Three errors enter and all three are controlled: (i) the trapezoidal rule periodises the integrand, so the result is the"
+  },
+  {
+   "line": 252,
+   "words": 70,
+   "text": "The feedback number is \u03b4 = T_{0}\u2016\u03b2\u2016^{2}/(\u03c1c_{p}C\u0304) = 1.078\u00d710^{\u22123}, where C\u0304 = C_{33} is the stiffness scale of the plan"
+  },
+  {
+   "line": 718,
+   "words": 70,
+   "text": "The trend is in the direction expected for a growing non-local contribution, but the accessible layer thicknesses (still"
+  },
+  {
+   "line": 689,
+   "words": 66,
+   "text": "The tests of Sections 5.1\u20135.3 are code-verification and solution-verification tests in the usual sense [54]: they compar"
+  },
+  {
+   "line": 32,
+   "words": 65,
+   "text": "Coupled thermoelasticity [12] and its generalisations to a finite heat-wave speed are the framework for transient proble"
+  },
+  {
+   "line": 651,
+   "words": 65,
+   "text": "A mesh-direction study for the ellipse at \u03c6 = 30\u00b0 (Table 6, Fig. 3) shows that the near-wall radial resolution, not the "
+  },
+  {
+   "line": 684,
+   "words": 65,
+   "text": "Doubling the outer radius (R = 160a, with N_{r} adjusted to keep the near-wall spacing) changes the peak wall stress by "
+  },
+  {
+   "line": 260,
+   "words": 64,
+   "text": "The three groups have direct physical readings: \u039b compares the relaxation time with the time heat takes to diffuse acros"
+  },
+  {
+   "line": 699,
+   "words": 63,
+   "text": "The stress follows the wall temperature near the peak: at the peak node the ratio \u03c3_{\u03b8\u03b8}(t)/p(t) deviates from its value"
+  },
+  {
+   "line": 557,
+   "words": 61,
+   "text": "(74) is the mistake this plan replaces: the DFT synthesis returns the periodic steady state of a pulse train of period T"
+  },
+  {
+   "line": 837,
+   "words": 61,
+   "text": "On 2026-10-03 the analysis layer was re-run over all 175 stored runs: every pre-existing quantity of `ANALYSIS_V2.json` "
+  },
+  {
+   "line": 105,
+   "words": 60,
+   "text": "which the Cattaneo\u2013Vernotte law meets for every \u03c4 > 0 because it is a positive-real (passive) kernel [15], a restriction"
+  },
+  {
+   "line": 835,
+   "words": 60,
+   "text": "The solver, the test suite, the experiment drivers and the analysis scripts are frozen: SHA-256 digests of every file ar"
+  },
+  {
+   "line": 837,
+   "words": 60,
+   "text": "**Code state.** The two archived manifests date from 2026-10-01; since they were taken, 7 of the 15 entries of `CODE_FRE"
+  },
+  {
+   "line": 847,
+   "words": 60,
+   "text": "`python3 08_Experiments/reproduce.py` reruns the pipeline end to end (tests, production matrix, convergence runs, analys"
+  },
+  {
+   "line": 716,
+   "words": 59,
+   "text": "With isotropic stiffness, conductivity and expansion the ellipse is orientation-independent by symmetry and its peak is "
+  },
+  {
+   "line": 252,
+   "words": 58,
+   "text": "The triple norm is the in-plane part of the tensor contraction and is therefore invariant under in-plane rotation of the"
+  },
+  {
+   "line": 192,
+   "words": 57,
+   "text": "Second, all three components of S\u2032 enter through the cross term \u2212 2cs C_{25} = -0.312 GPa at \u03c6 = 30\u00b0, and an error in th"
+  },
+  {
+   "line": 823,
+   "words": 57,
+   "text": "- The response of a quiescent medium to one pulse can be obtained from a frequency-domain solver by Bromwich inversion o"
+  },
+  {
+   "line": 837,
+   "words": 57,
+   "text": "Two refreshed manifests record the current code: `CODE_FREEZE_submission_2026_10_03h.json` (27 files, taken before this "
+  },
+  {
+   "line": 826,
+   "words": 56,
+   "text": "- Thermal memory changes the wall-stress history of the circular cavity by at most 6.4% (\u2264 1.6% for a \u2265 10 nm) and the p"
+  },
+  {
+   "line": 616,
+   "words": 55,
+   "text": "Software and AI assistance (Methods disclosure): the finite-difference solver of the preliminary analysis was reviewed, "
+  },
+  {
+   "line": 809,
+   "words": 55,
+   "text": "- **Parameters.** The relaxation times are hypothetical (order-of-magnitude estimates: gray \u2248 0.9 ps, longest-mean-free-"
+  },
+  {
+   "line": 865,
+   "words": 55,
+   "text": "**Declaration of Generative AI and AI-assisted technologies in the writing process.** During the preparation of this wor"
+  },
+  {
+   "line": 37,
+   "words": 54,
+   "text": "The study is a **verified continuum parametric study**: the numerical results are verified against exact and independent"
+  },
+  {
+   "line": 50,
+   "words": 54,
+   "text": "With temperature rise \u03b8 above the reference temperature T_{0} = 293 K, displacement u = (u_{1}, u_{3}) and Voigt strain "
+  },
+  {
+   "line": 699,
+   "words": 54,
+   "text": "This is the signature of the local response derived in Section 3: for the isotropic circle in quasi-static plane strain "
+  },
+  {
+   "line": 718,
+   "words": 53,
+   "text": "If the heated layer were thin compared with the radius of curvature, the response at each wall point would depend only o"
+  },
+  {
+   "line": 835,
+   "words": 53,
+   "text": "Every production run records the code version, a checksum of its input configuration, the environment and a digest of it"
+  },
+  {
+   "line": 800,
+   "words": 52,
+   "text": "- For a prescribed wall temperature the peak wall stress of a circular cavity is, to about 10^{\u22123} for the isotropic cir"
+  },
+  {
+   "line": 57,
+   "words": 51,
+   "text": "The distinction is stated because the alternative convention \u2014 generalised plane strain, \u03c3\u2082\u2082 = 0 \u2014 is not equivalent her"
+  },
+  {
+   "line": 381,
+   "words": 51,
+   "text": "where \u03b4_{th} is the thickness of the heated layer; for \u03b4_{th} of order a, R = 80a and the Lam\u00e9 constants of the isotropi"
+  },
+  {
+   "line": 533,
+   "words": 51,
+   "text": "with the backward error \u03b7 recorded for every solve (frequency-domain formulations of dynamic coupled thermoelasticity wi"
+  },
+  {
+   "line": 837,
+   "words": 51,
+   "text": "A full production job re-solved in a different build \u2014 Python 3.11.2 with NumPy 2.4.6 instead of 3.13.14/2.3.5 \u2014 reprodu"
+  },
+  {
+   "line": 222,
+   "words": 50,
+   "text": "Both non-Fourier kernels are positive real, so the models are passive; the two-relaxation-time kernel is a sensitivity d"
+  },
+  {
+   "line": 639,
+   "words": 50,
+   "text": "| Metric consistency of the mapped grid (linear field) | order \u2265 1.9 and \u2264 5\u00d710^{\u22123} at 192\u00d796 | production grid 192\u00d796:"
+  },
+  {
+   "line": 813,
+   "words": 50,
+   "text": "- **Method of analysis.** The code and the analysis were developed with AI assistance and verified as described in Secti"
+  },
+  {
+   "line": 863,
+   "words": 50,
+   "text": "**Data availability:** the Python source code, verification suite, per-run raw outputs (npz/json, including the frequenc"
+  },
+  {
+   "line": 621,
+   "words": 49,
+   "text": "Verification is separated from validation: every comparison below is against an exact solution or an independent impleme"
+  },
+  {
+   "line": 718,
+   "words": 49,
+   "text": "In the present problem the heated layer is not thin: its thickness scales with t_{w}^{1/2} and is comparable to the cavi"
+  },
+  {
+   "line": 738,
+   "words": 49,
+   "text": "To separate the contributions of the three anisotropic tensors the ellipse sweep was repeated with one tensor at a time "
+  },
+  {
+   "line": 32,
+   "words": 48,
+   "text": "Monoclinic \u03b2-Ga\u2082O\u2083 is an ultra-wide-band-gap semiconductor whose elastic [19], thermal-conductivity [20] and thermal-exp"
+  },
+  {
+   "line": 110,
+   "words": 48,
+   "text": "With the b axis taken as x_{2} and Voigt indices 1 = 11, 2 = 22, 3 = 33, 4 = 23, 5 = 13, 6 = 12, the stiffness has thirt"
+  },
+  {
+   "line": 792,
+   "words": 48,
+   "text": "The absolute stress scale therefore carries a parameter uncertainty of more than an order of magnitude (a factor 16 betw"
+  },
+  {
+   "line": 27,
+   "words": 47,
+   "text": "Within the bounded literature search described in the data package we found no study that combines a low-symmetry crysta"
+  },
+  {
+   "line": 327,
+   "words": 47,
+   "text": "**Scaling.** For \u03c1 \u2192 0 (quasi-static elasticity) and \u03b4 \u2192 0 (no thermoelastic feedback) the temperature problem in the va"
+  },
+  {
+   "line": 388,
+   "words": 47,
+   "text": "with F \u2272 a\u00b2, so the second (far-field) term is of order (a/R)\u00b2 \u2248 10^{\u22123} of the first: the peak wall stress is, to 0.1%,"
+  },
+  {
+   "line": 411,
+   "words": 47,
+   "text": "A body-fitted mapped polar grid with exponential radial clustering towards the cavity (parameter \u03b3 = 5) and a uniform pe"
+  },
+  {
+   "line": 718,
+   "words": 46,
+   "text": "A pulse-width test (t_{w} = 0.3\u20132.4 t_{th}; Table 8, Fig. 6) shows that the two-point modulation A_{2} = (\u03c3\u0302(150\u00b0) \u2212 \u03c3\u0302("
+  },
+  {
+   "line": 800,
+   "words": 46,
+   "text": "The pulse-width test shows only a weak dependence of this modulation on the heated-layer thickness (24.8%\u201332.0%), so wit"
+  },
+  {
+   "line": 8,
+   "words": 45,
+   "text": "Thermal memory (hypothetical relaxation times to 20 ps) changes the circular-cavity wall-stress history by at most 6.4% "
+  },
+  {
+   "line": 176,
+   "words": 45,
+   "text": "The b-axis expansion is not touched by the rotation about b, but the constants that carry it into the plane are: the sym"
+  },
+  {
+   "line": 416,
+   "words": 45,
+   "text": "The annular domain between the cavity and the outer circle R = 80a is mapped from the unit square (\u03be, \u03b7) \u2208 [0, 1] \u00d7 [0, "
+  },
+  {
+   "line": 449,
+   "words": 45,
+   "text": "The heat and momentum operators are written in contravariant flux form rather than as compositions of first derivatives,"
+  }
+ ],
+ "acronyms_unsupported": [
+  "ACM",
+  "AI",
+  "AUTHOR",
+  "CSV",
+  "CV",
+  "GB",
+  "IJ",
+  "INPUT",
+  "LU",
+  "SHA"
+ ],
+ "mechanics": {
+  "ise": 23,
+  "ize": 17,
+  "hyphen_ranges": 0,
+  "en_ranges": 14,
+  "double_spaces": 0,
+  "et_al_unmarked": 0,
+  "ref_words": {
+   "Section": 59,
+   "Table": 32,
+   "Eq": 39,
+   "Eqs": 2,
+   "Sections": 3
+  },
+  "acronyms": {
+   "AUTHOR": 5,
+   "INPUT": 5,
+   "ORCID": 1,
+   "IJ": 3,
+   "MJ": 1,
+   "CV": 5,
+   "LU": 2,
+   "SI": 1,
+   "PDE": 1,
+   "DFT": 1,
+   "AI": 10,
+   "ODE": 1,
+   "PASS": 1,
+   "NOT": 1,
+   "GB": 2,
+   "WITHIN": 1,
+   "BOUND": 1,
+   "SHA": 2,
+   "CSV": 2,
+   "PUBLIC": 1,
+   "DOI": 1,
+   "TO": 1,
+   "BE": 1,
+   "RT": 1,
+   "CLOSED": 1,
+   "FORM": 1,
+   "ACM": 2,
+   "IMA": 1,
+   "SIAM": 1,
+   "VIII": 1
+  },
+  "glossed": []
+ }
+}

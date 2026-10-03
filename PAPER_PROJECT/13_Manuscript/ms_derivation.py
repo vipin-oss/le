@@ -109,7 +109,7 @@ def sec2_kinematics():
               'kernel [55], a restriction stated there for a memory kernel rather than for a single relaxation time; the '
               'two-relaxation-time kernel of Section 2.5 is positive-real for the same reason but is not derived '
               'from a free energy, which is why it is carried as an exploratory variant only. Theories with two relaxation '
-              'times [24,25,26] and the reviews of hyperbolic and generalized conduction [14,23,27,28,31,32] locate the '
+              'times [24,25,26] and the reviews of hyperbolic and generalised conduction [14,23,27,28,31,32] locate the '
               'single-relaxation-time law used here within that literature.')
     ]
 

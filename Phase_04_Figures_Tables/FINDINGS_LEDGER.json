@@ -8,7 +8,7 @@
   "T2": "PASS (320 of 320 table cells traced)",
   "T3": "PASS (587 of 587 prose and caption numbers traced)"
  },
- "note": "Same schema as Phases 2 and 3. This ledger also closes two Phase 3 items (P3-15 and, with a corrected diagnosis, P3-8). Phase 6 (part 1): Q1-conformance restructuring applied in the builders, all gates green. Phase 6 (part 2): back matter, Data availability, companion PDF; freeze 2026-10-03f; P6-5 closed as reviewed-conformant. Phase 6 complete (parts 1-3): numbered style, back matter, Data availability, AI disclosure; freeze 2026-10-03g.",
+ "note": "Same schema as Phases 2 and 3. This ledger also closes two Phase 3 items (P3-15 and, with a corrected diagnosis, P3-8). Phase 6 (part 1): Q1-conformance restructuring applied in the builders, all gates green. Phase 6 (part 2): back matter, Data availability, companion PDF; freeze 2026-10-03f; P6-5 closed as reviewed-conformant. Phase 6 complete (parts 1-3): numbered style, back matter, Data availability, AI disclosure; freeze 2026-10-03g. Phase 7 complete: language/style/internal-vocabulary/duplication pass, freeze 2026-10-03i, all gates green.",
  "items": [
   {
    "id": "P4-1",
@@ -153,6 +153,48 @@
    "severity": "medium",
    "status": "closed",
    "resolution": "CODE_FREEZE_submission_2026_10_03g.json (27 files); 03f/03e and earlier freezes byte-unchanged; all gates green (audit_tex, check_crossrefs, check_tex_commands, verify_pdf for both documents)"
+  },
+  {
+   "id": "P7-12",
+   "title": "internal project vocabulary reached the printed text",
+   "severity": "medium",
+   "status": "closed",
+   "resolution": "Sections 9.1-9.3 and the companion reproduction note used programme words (re-checks, gate freeze, audit records, builders, runs audited) and a PAPER_PROJECT/ path prefix; reworded in the builders to reader-facing language while keeping every filename, digest, date and count"
+  },
+  {
+   "id": "P7-13",
+   "title": "banned word \"robust\" in the companion",
+   "severity": "low",
+   "status": "closed",
+   "resolution": "replaced by \"insensitive\" - identical claim, forbidden term removed; the hyperbole list now returns zero hits in both documents"
+  },
+  {
+   "id": "P7-14",
+   "title": "-ized/-ise mixed and one hyphen range",
+   "severity": "low",
+   "status": "closed",
+   "resolution": "prose unified to -ise (4 sites; the two remaining -ized words are verbatim reference titles and stay), \"Sections 5.1-5.3\" given an en dash like every other numeric range"
+  },
+  {
+   "id": "P7-15",
+   "title": "CV/F used without definition; one broken Data-availability sentence",
+   "severity": "medium",
+   "status": "closed",
+   "resolution": "CV/F glossed as the Cattaneo-Vernotte (single-relaxation-time) and Fourier responses at first use, and the placeholder-substitution artefact in the Data availability sentence repaired (\"persistent identifier recorded at submission [PUBLIC REPOSITORY/DOI TO BE INSERTED]\")"
+  },
+  {
+   "id": "P7-16",
+   "title": "duplication check",
+   "severity": "low",
+   "status": "closed",
+   "resolution": "the only repeated sentences are the front matter and the declarations, which must agree between the manuscript and the companion; no content paragraph is duplicated, so nothing was cut"
+  },
+  {
+   "id": "P7-17",
+   "title": "long-sentence review",
+   "severity": "low",
+   "status": "closed",
+   "resolution": "62 sentences of 45+ words were enumerated; the four densest non-enumeration chains were split at clause boundaries and the (i)-(iv) contributions sentence was kept as an enumeration on purpose"
   }
  ]
 }

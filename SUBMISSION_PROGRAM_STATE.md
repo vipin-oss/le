@@ -16,7 +16,7 @@ its builders from data; see `PAPER_PROJECT/README.md` build rules).
 | 4 | Figures + tables regenerated from verified data | complete (T1/T2/T3 PASS; guard-ordering and truncated-artefact defects found and fixed) | `Phase_04_Figures_Tables/` |
 | 5 | Literature audit + introduction repositioning | complete (55 refs; claim-citation matrix clean; classical pair unverifiable here -> open for authors) | `Phase_05_Literature/` |
 | 6 | Restructuring (title/abstract/keywords/sections/limitations/back matter/declarations) | **DONE 2026-10-03** - numbered citation style end to end, Appendix/Acknowledgements/Declarations order, Data availability re-anchored, AI disclosure rewritten (A3, A4 closed); freeze `submission_2026_10_03g`; all gates green | `Phase_06_Restructuring/` (REPORT.md, AUTHOR_FILLIN.md, CHANGELOG.md, manifest.txt, verification/) |
-| 7 | Language + style + internal-language strip + duplication | **NEXT** | `Phase_07_Language/` |
+| 7 | Language + style + internal-language strip + duplication | **DONE 2026-10-03** - internal vocabulary stripped from the printed text, "robust" removed, -ise unified, CV/F glossed, four long chains split, duplication checked (only shared boilerplate, intended); freeze `submission_2026_10_03i`; all gates green | `Phase_07_Language/` (REPORT.md, CHANGELOG.md, manifest.txt, verification/lang_audit.py + lang_audit.json + patch_phase7_language.py) | `Phase_07_Language/` |
 | 8 | Final audit, consistency, compile, submission checklist, cover letter | pending - inherits: the suite re-run after
 the Phase 3 code change, the CV/MCV3 order-of-agreement wording, and refreshing the historical counts in
 `13_Manuscript/CHANGELOG.md`, `FINAL_QA_REPORT.md`, `JOURNAL_FIT.md` | `Phase_08_Final_Audit/` |

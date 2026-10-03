@@ -1,0 +1,5 @@
+CHANGELOG.md
+REPORT.md
+verification/lang_audit.json
+verification/lang_audit.py
+verification/patch_phase7_language.py
