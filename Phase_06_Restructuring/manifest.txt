@@ -1,0 +1,6 @@
+AUTHOR_FILLIN.md
+CHANGELOG.md
+REPORT.md
+verification/patch_phase6_ai_declaration.py
+verification/patch_phase6_backmatter.py
+verification/patch_phase6_numbering.py
