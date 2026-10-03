@@ -23,6 +23,8 @@ def files_under(rel, exts=None, skip=('__pycache__', '_claims', 'equations')):
             if exts and not f.endswith(exts): continue
             out.append(os.path.join(r, f))
     return out
+ZIP_STAMP = (2026, 10, 3, 0, 0, 0)  # fixed stamp: the archive depends on tree content only,
+# so its sha256 is reproducible from any checkout of the recorded commit.
 CORE = ['00_Project_Control', '01_Literature', '02_Problem_Definition', '04_Theory', '05_Numerical_Method', '06_Source_Code', '07_Tests', '03_Validation', '14_Documentation']
 def collect(n):
     fl = []
@@ -39,11 +41,27 @@ def collect(n):
     if n >= 13: fl += files_under('13_Manuscript', ('.docx', '.md', '.xlsx', '.txt', '.json', '.py', '.png',
                                               '.tex', '.bib', '.pdf')) + files_under('09_Raw_Data', ('.npz',))
     return sorted(set(f for f in fl if os.path.isfile(f) and '/packages/' not in f))
+def source_commit():
+    try:
+        import subprocess
+        r = subprocess.run(['git', '-C', ROOT, 'rev-parse', 'HEAD'], capture_output=True, text=True)
+        return r.stdout.strip() if r.returncode == 0 and len(r.stdout.strip()) == 40 else 'unknown'
+    except Exception:
+        return 'unknown'
+
 def build(zname, fl, note):
     man = {f[len(ROOT) + 1:]: hashlib.sha256(open(f, 'rb').read()).hexdigest() for f in fl}
     with zipfile.ZipFile(os.path.join(PK, zname), 'w', zipfile.ZIP_DEFLATED) as z:
-        z.writestr('MANIFEST.json', json.dumps(dict(created=time.strftime('%Y-%m-%dT%H:%M:%S'), note=note, n_files=len(man), sha256=man), indent=1))
-        for f in fl: z.write(f, f[len(ROOT) + 1:])
+        minfo = zipfile.ZipInfo('MANIFEST.json', date_time=ZIP_STAMP)
+        minfo.compress_type = zipfile.ZIP_DEFLATED
+        minfo.external_attr = 0o644 << 16
+        z.writestr(minfo, json.dumps(dict(generated_from_commit=source_commit(), note=note, n_files=len(man), sha256=man), indent=1), zipfile.ZIP_DEFLATED)
+        for f in fl:
+            info = zipfile.ZipInfo(f[len(ROOT) + 1:], date_time=ZIP_STAMP)
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o644 << 16
+            with open(f, 'rb') as fh:
+                z.writestr(info, fh.read(), zipfile.ZIP_DEFLATED)
     return os.path.getsize(os.path.join(PK, zname)), len(fl)
 note = 'reconstructed at the end of the session from final versions of files belonging to phases <= N (MASTER_PROMPT §67/§68)'
 for n in range(7, 14):
