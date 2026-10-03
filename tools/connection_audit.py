@@ -174,11 +174,20 @@ for path in (tex, md):
     base = os.path.dirname(path)
     figdirs = [os.path.join(ROOT, "PAPER_PROJECT", "11_Figures"),
                os.path.join(ROOT, "PAPER_PROJECT", "12_Tables"), base]
+    # \graphicspath dirs are searched by LaTeX, so the checker must search them too.
+    gp = re.search(r"\\graphicspath\{(.*)\}", txt)
+    if gp:
+        for d in re.findall(r"\{([^{}]*)\}", gp.group(1)):
+            d = d.strip().rstrip("/")
+            if d:
+                figdirs.append(os.path.normpath(os.path.join(base, d)))
     dead = []
     for r in sorted(refs):
         r2 = r if os.path.isabs(r) else os.path.join(base, r)
         cands = [r2, r2 + ".pdf", r2 + ".png", r2 + ".eps", r2 + ".svg"] + \
-                [os.path.join(d, os.path.basename(r)) for d in figdirs]
+                [os.path.join(d, os.path.basename(r)) for d in figdirs] + \
+                [os.path.join(d, os.path.basename(r) + e) for d in figdirs
+                 for e in (".pdf", ".png", ".eps", ".jpg", ".svg")]
         if not any(os.path.isfile(c) for c in cands):
             dead.append(r)
     if dead:
