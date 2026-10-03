@@ -16,8 +16,8 @@ We submit the manuscript "Orientation-dependent wall stress around circular and 
 
 **Limitations stated in the paper.** No experimental validation exists (verification only); relaxation times are hypothetical; continuum validity at 5–50 nm is not established; the stress scale depends on the thermal-expansion data by more than an order of magnitude; the elastic echo of the finite outer boundary is a model feature for cavities ≥ 20 nm.
 
-**Declarations.** AI assistance: an AI agent was used to review and extend the code, run and analyse the simulations and draft text and figures; the authors' disclosure statement appears above the references [template — to be confirmed by the authors]. The manuscript is not under consideration elsewhere [authors to confirm]. Data and code: data package with SHA-256 code freeze; [repository DOI to be inserted]. Conflicts of interest, funding, CRediT: [authors].
+**Declarations.** AI assistance: a generative-AI tool was used for the writing process (drafting, revising and internal consistency checks) and, separately, to review and extend the numerical code and its verification suite and to run the simulations; the manuscript states both in the form the journal requires — the writing use in the declaration above the references, the code and simulation use in the numerical-methods section — and the authors take full responsibility for every number [declaration wording to be reviewed and confirmed by the authors]. The manuscript is not under consideration elsewhere [authors to confirm]. Data and code: data package with SHA-256 code freeze; [repository DOI to be inserted]. Conflicts of interest, funding, CRediT: [authors].
 
-Suggested reviewers: [authors to propose; none suggested by the assistant]. Corresponding author: [name, e-mail].
+Suggested reviewers: [authors to propose; none are proposed here]. Corresponding author: [name, e-mail].
 
 Sincerely, [authors]

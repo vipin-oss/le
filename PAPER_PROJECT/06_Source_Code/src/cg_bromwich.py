@@ -19,7 +19,8 @@ so i*w = s, w^2 = -s^2).  P(s) is the two-sided Laplace transform of the wall pu
 All times are dimensionless (units of t_th = a^2/kappa_bar).  Alias error of the periodised inverse is
 ~ exp(-gamma T) * |y(t+T)| (n>=1 images) and exp(+gamma T)*|y(t-T)| (n<=-1 images; negligible because the
 Gaussian pre-history is ~0 for t < t0 - 5 tw); roundoff growth is exp(gamma t).  Defaults T=20, gamma=0.9:
-exp(-18) = 1.5e-8, valid for 0 <= t <= T - 5.5 = 14.5.  K is chosen so that |P(s_K)|/|P(s_0)| < eps.
+exp(-18) = 1.5e-8; validity 0 <= t <= T - (t0 + 2.5*tw) = 14.5 for the baseline tw = 1.2 (11.5 for
+tw = 2.4: the bound tracks the pulse width, so wide-pulse runs are read only inside the peak window).  K is chosen so that |P(s_K)|/|P(s_0)| < eps.
 The real-system symmetry Y(conj(s)) = conj(Y(s)) (real K, Q, beta, rho, cp; NO hysteretic damping) is used.
 """
 import numpy as np
@@ -42,7 +43,14 @@ class BromwichPlan:
 
     @property
     def t_valid_max(self):
-        return self.T - 5.5
+        """Largest time for which the backward image e^{+gamma*T}*y(t-T) is negligible.  A Gaussian pulse
+        has no compact support, so the bound follows from the pulse width rather than from causality:
+        t <= T - (t0 + 2.5*tw), i.e. 2.5 widths of pre-history, where the image is exp(-6.25) ~ 2e-3 of
+        the peak and e^{+gamma*T} * that is still far below the forward alias e^{-gamma*T}.  The previous
+        hard-coded T - 5.5 was this expression for the baseline tw = 1.2 and was too generous for wider
+        pulses (tw = 2.4 gives 11.5, not 14.5), which is the case used in the locality test.
+        """
+        return self.T - (self.t0 + 2.5 * self.tw)
 
     def w_phys(self, t_th):
         """Complex angular frequencies (rad/s) for HarmonicSolver.solve (exp(+i w t)): w = -i s / t_th."""

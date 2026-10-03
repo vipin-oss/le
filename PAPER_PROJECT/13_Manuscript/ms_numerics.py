@@ -236,9 +236,11 @@ def sec4_bromwich(p_intro=None, eq_brom=None, p_close=None):
               f'compared with the Gaussian in every run (Section 5.1).'),
         ('p', 'Substituting a discrete Fourier synthesis over a window of a few thermal times for Eq. (@@eq:brom@@) is '
               'the mistake this plan replaces: the DFT synthesis returns the periodic steady state of a pulse train of '
-              'period T, in which the mean wall temperature is 0.27 of the peak, a steady temperature profile reaches the '
-              'outer boundary and the clamped boundary raises the stress. The two answers differ by more than the effects '
-              'studied here, which is why the earlier internal analysis had to be recomputed.'),
+              f'period T: the imposed wall temperature is then not a single pulse but a train with a nonzero mean '
+              f'of t_{{w}}√π/T = {PLAN.tw*np.sqrt(np.pi)/PLAN.T:.3f} of its peak, a steady temperature profile '
+              'reaches the outer boundary, and the clamped boundary adds a static stress. The question posed in '
+              'Section 1 is the response to one isolated pulse, which is why the inversion of Eq. (@@eq:brom@@) is '
+              'used instead of a windowed Fourier synthesis of the sampled history.'),
         ('p', 'Peaks in time are located on the sampled history and refined by the three-point parabola through the '
               'sample maximum,')
         , E(r't_\star=t_i+\frac{\Delta t}{2}\,\frac{y_{i-1}-y_{i+1}}{y_{i-1}-2y_i+y_{i+1}},\qquad '
@@ -304,7 +306,7 @@ def sec4_uncertainty():
         E(r'u_{\mathrm{num}}=\max\left(|A_\phi(M)-A_\phi(R192)|,\;|A_\phi(M)-A_\phi(T144)|,\;'
           r'|A_\phi(M)-A_\phi(\mathrm{ext})|\right)', 'unum'),
         ('p', 'i.e. the largest of the differences between the production value and the finer or extrapolated estimates, '
-              'and the pre-registered detection criterion for the modulation is A_{\u03c6} > max(5u_{num}, 2%). Following the '
+              'and the detection criterion for the modulation, fixed before the production runs, is A_{\u03c6} > max(5u_{num}, 2%). Following the '
               'extrapolation of Eq. (@@eq:richardson@@) goes back to Richardson and Gaunt [52], and in the standard '
               'terminology of the verification literature [53,54], these are solution-verification quantities: '
               'they bound the discretisation error of the computed solution of the stated model, and say nothing about '

@@ -862,17 +862,41 @@ def _frz(label):
     return len(_f), _s, len(_f) - _s
 
 
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03c', 'submission_2026_10_03b'
+
 N_FRZ, N_FRZ_SAME, N_FRZ_DIFF = _frz('v2_gate')
-N_SUB, N_SUB_SAME, N_SUB_DIFF = _frz('submission_2026_10_03b')
-N_MID, N_MID_SAME, N_MID_DIFF = _frz('submission_2026_10_03')
+N_SUB, N_SUB_SAME, N_SUB_DIFF = _frz(SUB_FREEZE)
+N_MID, N_MID_SAME, N_MID_DIFF = _frz(PREV_FREEZE)
+N_MIDN, N_MIDN_SAME, N_MIDN_DIFF = _frz('submission_2026_10_03')
 N_PREV, N_PREV_SAME, N_PREV_DIFF = _frz('submission_2026_10_02')
 if N_SUB_DIFF:
-    raise SystemExit('CODE_FREEZE_submission_2026_10_03b.json no longer describes the code '
+    raise SystemExit('CODE_FREEZE_%s.json no longer describes the code '
                      '(%d of %d entries differ); regenerate it before rebuilding this document'
-                     % (N_SUB_DIFF, N_SUB))
+                     % (SUB_FREEZE, N_SUB_DIFF, N_SUB))
+
+
+def _frz_diff_names(label):
+    """basenames of the entries of CODE_FREEZE_<label>.json whose recorded digest no longer matches
+    the file as it stands, as prose; computed, so this document cannot state a stale list."""
+    import hashlib as _hl
+    _p = os.path.join(ROOT, 'PAPER_PROJECT', '06_Source_Code', 'CODE_FREEZE_%s.json' % label)
+    try:
+        _f = json.load(open(_p))['files']
+    except (OSError, ValueError, KeyError):
+        return 'none'
+    names = [os.path.basename(r) for r, h in _f.items()
+             if not os.path.exists(os.path.join(ROOT, 'PAPER_PROJECT', r))
+             or _hl.sha256(open(os.path.join(ROOT, 'PAPER_PROJECT', r), 'rb').read()).hexdigest() != h]
+    if not names:
+        return 'none'
+    if len(names) == 1:
+        return names[0]
+    return ', '.join(names[:-1]) + ' and ' + names[-1]
+
+
+FRZ_DIFF_NAMES = _frz_diff_names('v2_gate')
 para('Both archived manifests were taken on 2026-10-01. %d of the %d entries of the gate freeze are '
-     'byte-identical in the code as submitted; %d entries (the pipeline driver, the test runner, four '
-     'experiment and analysis scripts and the two document builders) have been edited since, so the '
+     'byte-identical in the code as submitted; %d entries (%s) have been edited since, so the '
      'digests recorded for them no longer describe it. The pipeline was therefore re-run end to end with '
      'the code as submitted, and it reproduces the archived results exactly: the production runs agree '
      'with the archived quantities of interest to zero relative difference, every leaf of '
@@ -882,11 +906,18 @@ para('Both archived manifests were taken on 2026-10-01. %d of the %d entries of 
      'ablation set at the production grid (24 runs), re-ran the analysis layer over all 175 stored runs '
      'with no pre-existing quantity changed, and re-solved one production job in a different '
      'Python/NumPy build, where it reproduced its stored peak wall stress to 2.7\u00d710\u207b\u00b9\u2076 relative. '
-     'CODE_FREEZE_submission_2026_10_03b.json (%d files, all %d byte-identical to the code as submitted) '
+     'The mathematical audit that followed re-derived the constitutive algebra and every printed analytical '
+     'identity symbolically and re-checked the discretisation, kernel and inversion conventions against the '
+     'shipped code; it corrected two typographical statements in the model description, made the plane-strain '
+     'class and the norm convention of \u03b4 explicit, and replaced the hard-coded validity window of the '
+     'inversion by the bound it was an instance of (t \u2264 T \u2212 (t_{0} + 2.5t_{w}): 14.5 t_{th} for the '
+     'baseline t_{w} = 1.2 t_{th}, 11.5 t_{th} for t_{w} = 2.4 t_{th}). No stored run and no reported value '
+     'changed. CODE_FREEZE_%s.json (%d files, all %d byte-identical to the code as submitted) '
      'is the refreshed manifest, the one to deposit with the data package; it supersedes '
-     'CODE_FREEZE_submission_2026_10_03.json (taken the same day, before that pass, %d of whose %d entries '
-     'still match) and CODE_FREEZE_submission_2026_10_02.json, and both are kept unchanged as history.'
-     % (N_FRZ_SAME, N_FRZ, N_FRZ_DIFF, N_SUB, N_SUB_SAME, N_MID_SAME, N_MID))
+     'CODE_FREEZE_%s.json (taken the same day, before the audit, %d of whose %d entries '
+     'still match), CODE_FREEZE_submission_2026_10_03.json and CODE_FREEZE_submission_2026_10_02.json, all '
+     'kept unchanged as history.'
+     % (N_FRZ_SAME, N_FRZ, N_FRZ_DIFF, FRZ_DIFF_NAMES, SUB_FREEZE, N_SUB, N_SUB_SAME, PREV_FREEZE, N_MID_SAME, N_MID))
 bullets([
     'python3 PAPER_PROJECT/13_Manuscript/build_calculations.py — rebuilds this '
     'document from the frozen source and the processed data;',
@@ -922,12 +953,18 @@ para('**Data availability:** the Python source code, the verification suite, the
      'CODE_FREEZE_v2_gate.json), to be deposited at [PUBLIC REPOSITORY/DOI TO BE INSERTED].')
 para('**Declaration of Generative AI and AI-assisted technologies in the writing process.** '
      '[TEMPLATE — to be reviewed, edited and confirmed by the authors; Elsevier requires '
-     'this statement above the references.] During the preparation of this work the author(s) '
-     'used an AI agent (Arena.ai Agent Mode; the underlying models are provided by the service) '
-     'to review and extend the numerical code and the verification suite, to run and analyse '
-     'the simulations, and to draft the text and the figures. After using this tool the '
-     'author(s) reviewed and edited the content as needed and take(s) full responsibility for '
-     'the content of the publication.')
+     'this statement above the references.] '
+     'During the preparation of this work the author(s) used a generative-AI assistant (Arena.ai '
+     'Agent Mode; the underlying models are provided by the service) for the writing process: '
+     'drafting and revising the text and the figure captions, and checking the internal consistency '
+     'of the manuscript, the calculation companion and the tables. After using this tool the '
+     'author(s) reviewed and edited the content as needed and take(s) full responsibility for the '
+     'content of the publication. The same class of tool was also used in the research process — '
+     'reviewing and extending the numerical code and the verification suite, and running the '
+     'simulations — which the journal policy places in the methods rather than in this declaration; '
+     'the numerical-methods section of the manuscript records that use. No AI tool generated a '
+     'physical result, no AI tool was used to produce or select any number reported here, and no AI '
+     'tool is an author or is cited as a source.')
 
 # ----------------------------------------------------------------- write
 out_md = os.path.join(HERE, 'calculations_IJHMT.md')

@@ -211,7 +211,7 @@ def sec2_rotation():
               f'\u03b1_{{a}} \u2260 \u03b1_{{c}}. Second, all three components of S\u2032 enter through the cross term '
               f'\u2212 2cs C_{{25}} = {(-2*c*s*C["C25"]):+.3f} GPa at \u03c6 = 30\u00b0, and an error in the sign of that term is '
               f'invisible at \u03c6 = 0 and \u03c6 = 90\u00b0 (where cs = 0) but not at intermediate angles: this is precisely the '
-              f'defect that the earlier internal analysis carried and that tests U1 and V3 now exclude (Section 5.1).'),
+              f'defect carried by a superseded version of this analysis, which tests U1 and V3 now exclude (Section 5.1).'),
         ('table', ['\u03c6', '\u03b2\u2032_{1} (MPa/K)', '\u03b2\u2032_{3} (MPa/K)', '\u03b2\u2032_{5} (MPa/K)',
                    "\u2016\u03b2\u2032\u2016 (MPa/K)"], rows,
          'Thermal-stress vector in the laboratory frame at four crystal rotations (computed from @@tab:params@@ with '
@@ -278,9 +278,9 @@ def sec2_dimensionless():
     return [
         E(r't_{th}=\frac{a^2}{\bar\kappa},\qquad \bar\kappa=\frac{\sqrt{\det\mathbf{K}}}{\rho c_p}', 'tth'),
         E(r'\Lambda=\frac{\tau}{t_{th}}=\frac{\tau\bar\kappa}{a^2},\qquad '
-          r'\epsilon=\frac{\bar\kappa}{c_{ref}a},\qquad \delta=\frac{T_0\,\boldsymbol{\beta}\cdot\boldsymbol{\beta}}'
+          r'\epsilon=\frac{\bar\kappa}{c_{ref}a},\qquad \delta=\frac{T_0\,\Vert\boldsymbol{\beta}\Vert^{2}}'
           r'{\rho c_p\bar C}', 'groups'),
-        ('p', f'with c_{{ref}} = (\u03c1^{{1}}C_{{33}}/\u03c1)^{{1/2}} = {C_REF:.0f} m/s and C\u0304 = C_{{33}} = {C["C33"]:.1f} GPa. '
+        ('p', f'with c_{{ref}} = (C_{{33}}/\u03c1)^{{1/2}} = {C_REF:.0f} m/s and C\u0304 = C_{{33}} = {C["C33"]:.1f} GPa. '
               f'The three groups have direct physical readings: \u039b compares the relaxation time with the time heat '
               f'takes to diffuse across the cavity, \u03b5 compares the thermal diffusion speed \u03ba\u0304/a with the '
               f'elastic wave speed (it is the Mach number of diffusion), and \u03b4 measures the heat released by the '
@@ -402,7 +402,7 @@ def sec3(p_scaling=None, p_local_intro=None, p_local_close=None):
               'fields: the temperature drives the stress and the strain rate feeds back into the heat equation. Its size '
               'relative to the storage term \u03c1c_{p}\u03b8\u0307 is, from Eq. (@@eq:ehat@@), of order \u03b4 times the ratio of '
               'the strain rate to the temperature rate in dimensionless units, i.e. of order \u03b4 when the two evolve on '
-              'the same time scale. This motivates the frozen criterion used in Section 6.4: the feedback is negligible if '
+              'the same time scale. This motivates the criterion used in Section 6.4: the feedback is negligible if '
               'the relative change of the temperature field when the coupling term is removed satisfies'),
         E(r'\frac{|\Delta\theta|}{|\theta|}\;\leq\;5\delta', 'feedback'),
         ('p', f'with the factor five a margin chosen before the runs, not fitted to them. For the parameters of @@tab:params@@, '

@@ -67,6 +67,15 @@ highlights = ['Bromwich inversion gives a verified single-pulse thermoelastic ca
               'Verified, not validated: expansion data set the absolute stress scale']
 hl_ok = [(h, len(h)) for h in highlights]
 
+# A missing input number renders as 'n/a'; in the abstract or a highlight that is a build error, not a
+# cosmetic one (the abstract must never reach a reader with a hole in it).  The common cause is rebuilding
+# while the verification pass is rewriting 07_Tests/TEST_RESULTS.json.
+_bad = [s for s in [abstract] + highlights if 'n/a' in s]
+if _bad:
+    raise SystemExit("build aborted: the abstract or a highlight contains 'n/a' (a number its input "
+                     "artifact did not provide).  Rebuild after the verification pass has written its "
+                     "results, or fix the missing key.  Offending strings:\n  " + "\n  ".join(_bad))
+
 # ---------------------------------------------------------------- provenance for Section 9
 def _sha16(path):
     import hashlib
@@ -81,7 +90,7 @@ FREEZE_BLOCKF = _sha16(os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_v2_bloc
 # The manifest to deposit, and the one it supersedes.  Regenerate the deposited one with
 # `python3 PAPER_PROJECT/06_Source_Code/make_code_freeze.py submission_2026_10_03` after ANY
 # edit to a frozen file, otherwise Section 9.1 would quote digests that no longer describe the code.
-SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03b', 'submission_2026_10_03'
+SUB_FREEZE, PREV_FREEZE = 'submission_2026_10_03c', 'submission_2026_10_03b'
 FREEZE_SUB = _sha16(os.path.join(ROOT, '06_Source_Code', f'CODE_FREEZE_{SUB_FREEZE}.json'))
 
 
@@ -108,6 +117,31 @@ def _freeze_match(label):
 
 
 N_FRZ, N_FRZ_SAME, N_FRZ_DIFF = _freeze_match('v2_gate')
+
+
+def _freeze_diff_names(label):
+    """basenames of the entries of CODE_FREEZE_<label>.json whose recorded digest no longer matches
+    the file as it stands, as prose ("a.py, b.py and c.py"); computed so that the sentence in
+    Section 9.1 cannot go stale when the code is edited."""
+    import hashlib, json as _json
+    p = os.path.join(ROOT, '06_Source_Code', 'CODE_FREEZE_%s.json' % label)
+    try:
+        old = _json.load(open(p))['files']
+    except (OSError, ValueError, KeyError):
+        return ''
+    names = []
+    for rel, h in old.items():
+        f = os.path.join(ROOT, rel)
+        if not os.path.exists(f) or hashlib.sha256(open(f, 'rb').read()).hexdigest() != h:
+            names.append(os.path.basename(rel))
+    if not names:
+        return ''
+    if len(names) == 1:
+        return names[0]
+    return ', '.join(names[:-1]) + ' and ' + names[-1]
+
+
+FRZ_DIFF_NAMES = _freeze_diff_names('v2_gate')
 N_SUB, N_SUB_SAME, N_SUB_DIFF = _freeze_match(SUB_FREEZE)
 N_PREV, N_PREV_SAME, N_PREV_DIFF = _freeze_match(PREV_FREEZE)
 if N_SUB_DIFF:
@@ -258,7 +292,7 @@ blocks += NU.sec4_system()
 blocks += NU.sec4_bromwich(_brom_legacy[0], _brom_legacy[1], _brom_legacy[2])
 blocks += NU.sec4_qoi()
 blocks += [('h2', '3.3 Numerical uncertainty')] + ME['3.3 Numerical uncertainty'] + NU.sec4_uncertainty()[1:]
-blocks += [('p', 'Software and AI assistance (Methods disclosure): the finite-difference solver of the preliminary analysis was reviewed, corrected where noted, extended and verified with the help of an AI agent (Section 5 lists the tests; code, tests and raw data are in the data package). All numbers in this paper are produced by the analysis scripts from stored raw outputs.')]
+blocks += [('p', 'Software and AI assistance (Methods disclosure): the finite-difference solver of the preliminary analysis was reviewed, corrected where noted, extended and verified with the assistance of generative-AI coding tools; this is the research-process use referred to in the declaration before the references (Section 5 lists the tests; code, tests and raw data are in the data package). All numbers in this paper are produced by the analysis scripts from stored raw outputs.')]
 
 # ---- Sections 5-8
 blocks += R.verification()
@@ -286,8 +320,8 @@ blocks += [('h1', '9. Code, data and reproducibility'),
                  f"`10_Processed_Data/PRODUCTION_PROVENANCE.csv`, so each number in this paper can be traced to the run "
                  f"that produced it and to the code state that produced the run."),
            ('p', f"**Code state and re-checks.** The two archived manifests date from 2026-10-01; since they were "
-                 f"taken, {N_FRZ_DIFF} of the {N_FRZ} entries of `CODE_FREEZE_v2_gate.json` (the pipeline driver, the test "
-                 f"runner, four experiment and analysis scripts and the two document builders) have been edited, so the "
+                 f"taken, {N_FRZ_DIFF} of the {N_FRZ} entries of `CODE_FREEZE_v2_gate.json` ({FRZ_DIFF_NAMES}) have been "
+                 f"edited, so the "
                  f"digests recorded for them no longer describe the code. The pipeline was re-run end to end with the code "
                  f"as it now stands and compared with the archived results (`15_Audits/RERUN_COMPARISON.md`): every "
                  f"production run reproduces its archived quantity of interest to zero relative difference and only "
@@ -327,7 +361,7 @@ blocks += [('h1', 'Declarations'),
            ('p', '**Declaration of competing interest:** [AUTHOR INPUT REQUIRED].'),
            ('p', '**Funding:** [AUTHOR INPUT REQUIRED: name the grant, or state that no funding was received].'),
            ('p', '**Data availability:** the Python source code, verification suite, per-run raw outputs (npz/json, including the frequency-domain transfer values), analysis and figure scripts, and the production matrix are provided in the project data package (SHA-256 code freeze `CODE_FREEZE_v2_gate.json`). to be deposited at [PUBLIC REPOSITORY/DOI TO BE INSERTED].'),
-           ('p', '**Declaration of Generative AI and AI-assisted technologies in the writing process.** [TEMPLATE — to be reviewed, edited and confirmed by the authors; Elsevier requires this statement above the references.] During the preparation of this work the author(s) used an AI agent (Arena.ai Agent Mode; the underlying models are provided by the service) to review and extend the numerical code and the verification suite, to run and analyse the simulations, and to draft the text and the figures. After using this tool the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the publication.')]
+           ('p', '**Declaration of Generative AI and AI-assisted technologies in the writing process.** [TEMPLATE — to be reviewed, edited and confirmed by the authors; Elsevier requires this statement above the references.] During the preparation of this work the author(s) used a generative-AI assistant (Arena.ai Agent Mode; the underlying models are provided by the service) for the writing process: drafting and revising the text and the figure captions, and checking the internal consistency of the manuscript, the calculation companion and the tables. After using this tool the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the publication. The same class of tool was also used in the research process — reviewing and extending the numerical code and the verification suite, and running the simulations — which the journal policy places in the methods rather than in this declaration; the numerical-methods section of the manuscript records that use. No AI tool generated a physical result, no AI tool was used to produce or select any number reported here, and no AI tool is an author or is cited as a source.')]
 blocks += [('h1', 'References'), ('refs', [r['text'] for r in refs])]
 blocks += [('h1', 'Appendix A. Nomenclature'),
            ('p', 'The symbols used in this paper are listed in @@tab:nom@@.'),

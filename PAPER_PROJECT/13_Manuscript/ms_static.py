@@ -19,6 +19,7 @@ sys.path.insert(0, os.path.join(ROOT, '06_Source_Code', 'src'))
 import numpy as np
 import cg_pipeline as cp
 import cg_model as M
+import cg_bromwich as cb
 
 K = M.K_ac; kappa = cp.KAPPA; c_ref = cp.C_REF; delta = cp.delta_feedback()
 def t_th_ps(a_nm): return (a_nm * 1e-9) ** 2 / kappa * 1e12
@@ -26,6 +27,62 @@ def Lam(tau_ps, a_nm): return tau_ps * 1e-12 * kappa / (a_nm * 1e-9) ** 2
 def eps(a_nm): return kappa / (c_ref * a_nm * 1e-9)
 def echo(a_nm, R=80.0): return 2 * (R - 1) * eps(a_nm)
 KEV = np.linalg.eigvalsh(K)
+
+_A1, _A2, _A3 = M.alpha_crys
+_Q0, _b0 = M.plane_strain_block()
+_CBAR = M.Cij_GPa['C33'] * 1e9
+
+_PLAN = cb.BromwichPlan()
+TRAIN_MEAN_OVER_PEAK = float(_PLAN.tw * np.sqrt(np.pi) / _PLAN.T)
+
+
+def delta_tensor_norm():
+    """delta with the full tensor contraction beta:beta instead of the in-plane triple norm."""
+    C = M.Cij_GPa
+    b22 = (C['C12'] * _A1 + C['C22'] * _A2 + C['C23'] * _A3) * 1e9
+    return M.T0 * (_b0[0] ** 2 + _b0[1] ** 2 + 2 * _b0[2] ** 2 + b22 ** 2) / (M.rho * M.cp_ESTIMATED * _CBAR)
+
+
+def delta_orientation_spread():
+    """delta on the phi-lattice with the same in-plane triple norm as delta_tensor_norm()."""
+    ph = np.deg2rad(np.arange(0.0, 360.0, 1.0))
+    v = []
+    for p in ph:
+        b = M.rotate_Q_beta(_Q0, _b0, p)[1]
+        v.append(M.T0 * (b[0] ** 2 + b[1] ** 2 + 2 * b[2] ** 2) / (M.rho * M.cp_ESTIMATED * _CBAR))
+    v = np.asarray(v)
+    return float(v.min()), float(v.max())
+
+
+def plane_strain_convention_sensitivity():
+    """relative change of Q and beta if sigma_22 = 0 were imposed instead of u_2 = 0 (generalised plane
+    strain versus the kinematic plane strain the solver actually uses)."""
+    C = M.Cij_GPa
+    C6 = np.zeros((6, 6))
+    for i in range(6):
+        C6[i, i] = C[f'C{i+1}{i+1}']
+    for (i, j, k) in [(0, 1, 'C12'), (0, 2, 'C13'), (1, 2, 'C23'), (0, 4, 'C15'),
+                      (1, 4, 'C25'), (2, 4, 'C35'), (3, 5, 'C46')]:
+        C6[i, j] = C6[j, i] = C[k]
+    ix = [0, 2, 4]
+    S22 = C6[1, 1] * 1e9
+    S2i = C6[1, ix] * 1e9
+    Sii = C6[np.ix_(ix, ix)] * 1e9
+    Qg = Sii - np.outer(S2i, S2i) / S22
+    bg = np.array([(C['C11'] * _A1 + C['C12'] * _A2 + C['C13'] * _A3) * 1e9,
+                   (C['C13'] * _A1 + C['C23'] * _A2 + C['C33'] * _A3) * 1e9,
+                   (C['C15'] * _A1 + C['C25'] * _A2 + C['C35'] * _A3) * 1e9])
+    b22 = (C['C12'] * _A1 + C['C22'] * _A2 + C['C23'] * _A3) * 1e9
+    bg = bg - S2i * b22 / S22
+    return (float(np.abs(Qg - _Q0).max() / np.abs(_Q0).max() * 100.0),
+            float(np.abs(bg - _b0).max() / np.abs(_b0).max() * 100.0))
+
+
+DELTA_T = delta_tensor_norm()
+DELTA_MIN, DELTA_MAX = delta_orientation_spread()
+SPREAD_REL = abs(DELTA_MAX / DELTA_MIN - 1.0)
+PSQ, PSB = plane_strain_convention_sensitivity()
+
 
 
 def intro():
@@ -46,8 +103,25 @@ def model():
         ('p', 'Linear, small-strain thermoelasticity in plane strain is considered in the a\u2013c plane of a monoclinic crystal, with the unique axis b normal to the plane and coordinates (x_{1}, x_{3}) along the crystal a and c axes at zero rotation. With temperature rise \u03b8 above the reference temperature T_{0} = 293 K, displacement u = (u_{1}, u_{3}) and Voigt strain \u03f5 = (\u03f5_{11}, \u03f5_{33}, \u03b3_{13}), the constitutive law is \u03c3 = Q\u03f5 \u2212 \u03b2\u03b8 (Biot [10]); Q is the 3\u00d73 plane-strain block of the stiffness (only C_{11}, C_{13}, C_{15}, C_{33}, C_{35}, C_{55} enter) and \u03b2 = C\u03b1 the thermal-stress vector, which also involves C_{12}, C_{23}, C_{25} through the b-axis expansion. The crystal is rotated by \u03c6 about b: the rank-four stiffness and the rank-two conductivity and expansion tensors are rotated by the same angle, and the rotation is cross-checked against an independent three-dimensional rank-four implementation (Section 5.1). Momentum balance and the heat equation with one relaxation time \u03c4 (Cattaneo–Vernotte flux law with energy balance, i.e. the Lord–Shulman equation [11,12]) read'),
         ('eq', r'\nabla\cdot\boldsymbol{\sigma}=\rho\,\ddot{\mathbf{u}},\qquad \nabla\cdot(\mathbf{K}\nabla\theta)=\left(1+\tau\,\partial_t\right)\left(\rho c_p\,\dot\theta+T_0\,\boldsymbol{\beta}:\dot{\boldsymbol{\epsilon}}\right)', '', 'governing'),
         ('p', 'In the Laplace domain (variable s) the heat equation becomes \u2207\u00b7(K g(s) \u2207\u03b8) = s(\u03c1c_{p}\u03b8 + T_{0}\u03b2:\u03f5) with g = 1 for Fourier conduction and g = 1/(1 + s\u03c4) for the relaxation-time law; these two are the primary conduction models of the study. A two-relaxation-time kernel g = \u00bd/(1 + \u00bds\u03c4) + \u00bd/(1 + 2s\u03c4) is used as an exploratory sensitivity kernel only (it is positive real, hence passive, but is not derived from a free energy) and is labelled exploratory wherever it appears. The medium is quiescent before the pulse (u = \u03b8 = 0 and \u2202u/\u2202t = 0 for t < 0). The cavity wall is traction-free and held at the prescribed temperature \u03b8 = p(t) = exp(\u2212((t \u2212 t_{0})/t_{w})\u00b2) with t_{0} = 2.5 t_{th} and t_{w} = 1.2 t_{th}; the outer boundary at R = 80a is clamped (u = 0) and cold (\u03b8 = 0). The cavity is a circle of radius a or an ellipse of semi-axes a\u221a\u03c7 and a/\u221a\u03c7 (equal area, \u03c7 = 2) whose major axis is parallel to the crystal a-axis at rotation \u03c6 = 0 (Fig. 1). The quantities of interest are defined in Section 2.9 and their discrete forms in Section 4.7.'),
+        ('p', f'The class is the kinematic plane strain: the fields are independent of x_{2} and u_{2} = 0. '
+              'For a monoclinic crystal with the unique axis normal to the plane the out-of-plane shear '
+              'stresses σ₁₂ and σ₂₃ vanish identically for every in-plane strain, so no relaxation step is '
+              'needed to make the constraint admissible and σ₂₂ enters as a reaction, not as a boundary '
+              'condition. The distinction is stated because the alternative convention — generalised plane '
+              f'strain, σ₂₂ = 0 — is not equivalent here: it would change the plane-strain block Q by {PSQ:.1f}% '
+              f'and the thermal-stress vector β by {PSB:.1f}% at the parameters of @@tab:params@@, so the class is '
+              'stated explicitly and the solver is built on the constraint, not on the stress.'),
         ('h2', '2.2 Dimensionless groups'),
-        ('p', f'The thermal time is t_{{th}} = a\u00b2/\u03ba\u0304 with \u03ba\u0304 = (det K)^{{1/2}}/(\u03c1c_{{p}}) = {kappa*1e6:.3f}\u00d710^{{\u22126}} m\u00b2/s (t_{{th}} = {t_th_ps(10):.1f} ps at a = 10 nm). The memory number is \u039b = \u03c4/t_{{th}} = \u03c4\u03ba\u0304/a\u00b2 (\u039b = {Lam(1,10):.3f}, {Lam(5,10):.3f}, {Lam(20,10):.3f} for \u03c4 = 1, 5, 20 ps at 10 nm); the elastic number is \u03b5 = \u03ba\u0304/(c_{{ref}}a) with c_{{ref}} = (C_{{33}}/\u03c1)^{{1/2}} = {c_ref:.0f} m/s (\u03b5 = {eps(10):.4f} at 10 nm); the feedback number is \u03b4 = T_{{0}}\u03b2\u00b7\u03b2/(\u03c1c_{{p}}C\u0304) = {delta*1e3:.3f}\u00d710^{{\u22123}}, where C\u0304 = C_{{33}} is the stiffness scale of the plane-strain block. With the outer boundary at R = 80a the first return of the longitudinal wave to the wall occurs at t_{{echo}} = 2(R/a \u2212 1)\u03b5 t_{{th}} = {echo(5):.1f}, {echo(10):.2f}, {echo(20):.2f} and {echo(50):.2f} t_{{th}} for a = 5, 10, 20, 50 nm. All stresses are reported per kelvin of wall-temperature amplitude (MPa/K).'),
+        ('p', f'The thermal time is t_{{th}} = a\u00b2/\u03ba\u0304 with \u03ba\u0304 = (det K)^{{1/2}}/(\u03c1c_{{p}}) = {kappa*1e6:.3f}\u00d710^{{\u22126}} m\u00b2/s (t_{{th}} = {t_th_ps(10):.1f} ps at a = 10 nm). The memory number is \u039b = \u03c4/t_{{th}} = \u03c4\u03ba\u0304/a\u00b2 (\u039b = {Lam(1,10):.3f}, {Lam(5,10):.3f}, {Lam(20,10):.3f} for \u03c4 = 1, 5, 20 ps at 10 nm); the elastic number is \u03b5 = \u03ba\u0304/(c_{{ref}}a) with c_{{ref}} = (C_{{33}}/\u03c1)^{{1/2}} = {c_ref:.0f} m/s (\u03b5 = {eps(10):.4f} at 10 nm); the feedback number is \u03b4 = T_{{0}}\u2016\u03b2\u2016^{{2}}/(\u03c1c_{{p}}C\u0304) = {delta*1e3:.3f}\u00d710^{{\u22123}}, where C\u0304 = C_{{33}} is the stiffness scale of the plane-strain block and the norm in '
+              '@@eq:groups@@ is formed from the in-plane triple (β₁₁, β₃₃, β₁₃) with the shear slot weighted by 2, '
+              'the same triple that enters the thermal-stress scale γ_T of Section 3; the full tensor '
+              f'contraction β:β would give {DELTA_T*1e3:.3f}\u00d710^{{\u22123}}, a factor '
+              f'{DELTA_T/DELTA_MIN:.2f} larger, because it also counts the out-of-plane component β₂₂ that the '
+              'plane-strain class never uses. The triple norm is the in-plane part of the tensor contraction and '
+              f'is therefore invariant under in-plane rotation of the crystal (relative spread {SPREAD_REL:.0e} over '
+              'the 360-orientation lattice), so δ is a material constant of this model and not a directional '
+              'statistic; it is still only an order-of-magnitude criterion for Section 3.4, and the convention '
+              f'is stated for that reason. With the outer boundary at R = 80a the first return of the longitudinal wave to the wall occurs at t_{{echo}} = 2(R/a \u2212 1)\u03b5 t_{{th}} = {echo(5):.1f}, {echo(10):.2f}, {echo(20):.2f} and {echo(50):.2f} t_{{th}} for a = 5, 10, 20, 50 nm. All stresses are reported per kelvin of wall-temperature amplitude (MPa/K).'),
         ('h2', '2.3 Material parameters'),
         ('p', 'The parameters of the study, their values and their status (literature, assumed, hypothetical or design) are collected in @@tab:params@@.'),
         ('table', ['Parameter', 'Value', 'Class', 'Source'],
@@ -57,9 +131,9 @@ def model():
           ['ρ', '5880 kg/m³', 'literature', 'compilations; Klimm et al. [16] use 5.961 g/cm³ at 20 °C'],
           ['c_{p}', '560 J/(kg K)', 'assumed', 'reported values 485–537 J/(kg K) [19]; enters only t_{th}, \u03b4 and the dimensional labels'],
           ['τ', '1, 5, 20 ps (Λ = 0.04–0.8 at 10 nm)', 'hypothetical (sensitivity-only)', 'order-of-magnitude estimates (κ ≈ 15 W/(m K), ρc_{p} = 3.3 MJ/(m³ K), v ≈ 4 km/s): gray τ = 3κ/(ρc_{p}v²) ≈ 0.9 ps; phonons with the longest mean free path (≈ 0.7 µm [20]) τ ≈ 0.2 ns'],
-          ['R/a, pulse', '80; t_{0} = 2.5, t_{w} = 1.2 t_{th}', 'design', 'pre-registered'],
+          ['R/a, pulse', '80; t_{0} = 2.5, t_{w} = 1.2 t_{th}', 'design', 'fixed in the design note before the production runs'],
           ['a', '5–50 nm (10 nm reference)', 'design', 'continuum validity not established (Section 7)']],
-         'Parameters of the study and their status (MASTER_PROMPT classification: literature / assumed / hypothetical / design).', [1.1, 2.7, 1.1, 1.9], 'params'),
+         'Parameters of the study and their status (classification: literature / assumed / hypothetical / design).', [1.1, 2.7, 1.1, 1.9], 'params'),
         ('h2', '2.4 Quantities of interest'),
         ('p', 'The primary observable is the peak of the absolute wall hoop stress |\u03c3_{\u03b8\u03b8}| over the wall and over 0 \u2264 t \u2264 6 t_{th} (the window ends before the first elastic echo for a \u2264 10 nm). Two versions are reported: the nodal maximum over the wall nodes and the maximum of the spectrally (trigonometrically) interpolated wall profile; the latter removes the nodal quantisation of the angular maximum, which is of order (\u0394\u03d1)\u00b2 and not negligible on coarse grids. The orientation modulation of the ellipse is A_{\u03c6} = (max_{\u03c6}\u03c3\u0302 \u2212 min_{\u03c6}\u03c3\u0302)/mean_{\u03c6}\u03c3\u0302. The thermal-memory deviation is D = max|\u03c3_{CV} \u2212 \u03c3_{F}|/max|\u03c3_{F}| over the wall and 0 \u2264 t \u2264 6 t_{th} for the same grid and the same inversion plan.'),
     ]
@@ -83,7 +157,7 @@ def method():
         ('h2', '3.2 Single-pulse response by Bromwich inversion'),
         ('p', 'The time-domain response of the quiescent medium to one pulse is obtained from the transfer function H(s) (unit wall amplitude) evaluated on the vertical line Re s = \u03b3_{B} > 0 and inverted with the trapezoidal Bromwich sum [21,22]. With the two-sided Laplace transform of the pulse, P(s) = \u221a\u03c0 t_{w} exp((s t_{w}/2)\u00b2 \u2212 s t_{0}), and Y = H P,'),
         ('eq', r'y(t)=\frac{e^{\gamma_B t}}{T}\left[Y(\gamma_B)+2\,\mathrm{Re}\sum_{k=1}^{K}Y(\gamma_B+i\omega_k)\,e^{i\omega_k t}\right],\qquad \omega_k=\frac{2\pi k}{T}', '', 'brom'),
-        ('p', 'with T = 20 t_{th}, \u03b3_{B} = 0.9/t_{th}: the alias error is e^{\u2212\u03b3_{B}T} = 1.5\u00d710^{\u22128}, the Gaussian spectrum is truncated at 10^{\u221210} (K = 26, i.e. 27 solves per run), and the result is valid for 0 \u2264 t \u2264 14.5 t_{th}. The real symmetry H(s\u0304) = conj H(s) of the undamped real system is used. Because the evaluation line lies at distance \u03b3_{B} from the resonances of the finite undamped domain, no artificial damping is needed. The reconstruction of the wall temperature returns the Gaussian to better than 10^{\u22128} (10^{\u221210} for t \u2264 6 t_{th}), a check carried out in every run. A periodic discrete-Fourier synthesis over a window of a few thermal times must not be used for this purpose: it returns the periodic steady state of a pulse train (here with a mean wall temperature of 0.27 of the peak, which builds a steady temperature profile out to the outer boundary and raises the clamped-boundary stress), not the single-pulse response.'),
+        ('p', f'with T = 20 t_{{th}}, \u03b3_{{B}} = 0.9/t_{{th}}: the alias error is e^{{\u2212\u03b3_{{B}}T}} = 1.5\u00d710^{{\u22128}}, the Gaussian spectrum is truncated at 10^{{\u221210}} (K = 26, i.e. 27 solves per run), and the result is valid for 0 \u2264 t \u2264 14.5 t_{{th}}. The real symmetry H(s\u0304) = conj H(s) of the undamped real system is used. Because the evaluation line lies at distance \u03b3_{{B}} from the resonances of the finite undamped domain, no artificial damping is needed. The reconstruction of the wall temperature returns the Gaussian to better than 10^{{\u22128}} (10^{{\u221210}} for t \u2264 6 t_{{th}}), a check carried out in every run. A periodic discrete-Fourier synthesis over a window of a few thermal times must not be used for this purpose: it returns the periodic steady state of a pulse train, whose mean wall temperature is t_{{w}}\u221a\u03c0/T = {TRAIN_MEAN_OVER_PEAK:.3f} of the peak for the parameters above; that mean drives a steady temperature profile out to the outer boundary and adds a static clamped-boundary stress, so the answer is not the single-pulse response this study asks about.'),
         ('h2', '3.3 Numerical uncertainty'),
         ('p', 'Grid convergence is assessed with two refinement families at fixed other direction: radial (R48, M, R192; N_{\u03b8} = 96) and angular (T48, M, T144; N_{r} = 96). For each orientation the observed order is obtained from the three levels, the Richardson-extrapolated value is formed with the observed order bounded to [1, 3], and the extrapolated value is M + (radial correction) + (angular correction). The numerical uncertainty of the orientation modulation is the largest of the differences between the amplitude on grid M and the amplitudes on R192, T144 and the extrapolated values. The radial clustering parameter was chosen from a mesh-direction study (Section 5.2).'),
     ]
