@@ -164,7 +164,7 @@ Production grid/case definitions actually used (`production_matrix.py`): `GRIDS 
 | check_tex_commands_manuscript | 0 | ; RESULT: ALL COMMANDS DEFINED |
 | check_tex_commands_calculations | 0 | ; RESULT: ALL COMMANDS DEFINED |
 | check_crossrefs_manuscript | 0 | equations  : 0 | tables: [] | figures: []; all cross-references resolve |
-| final_consistency | 0 | note  1 path(s) uncommitted at audit time (they are committed at the e; wrote final_consistency.json |
+| final_consistency | 0 | note  12 path(s) uncommitted at audit time (they are committed at the ; wrote final_consistency.json |
 | verify_pdf_manuscript | 0 | ; RESULT: ALL CHECKS PASSED |
 | verify_pdf_companion | 0 | ; RESULT: ALL CHECKS PASSED |
 

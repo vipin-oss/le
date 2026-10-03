@@ -50,6 +50,7 @@ PP = os.path.join(ROOT, 'PAPER_PROJECT')
 GEN = os.path.join(PP, '16_Reproducibility')
 ARCHIVE_NAME = 'PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE'
 ND, NA = 'NOT DOCUMENTED', 'NOT AVAILABLE'
+NOT_REPRO = 'no fresh reproduction run was supplied to the builder'
 ZIP_STAMP = (2026, 10, 4, 0, 0, 0)      # fixed: the archive is a function of the tree only
 BUILD_DATE = '2026-10-04'
 
@@ -230,8 +231,8 @@ DIR_SRC = {
                             'PAPER_PROJECT/13_Manuscript/ms_results.py',
                             'PAPER_PROJECT/13_Manuscript/ms_static.py'],
     '01_PROGRAM/utilities': ['tools'],
-    '01_PROGRAM/RESTORE_PROJECT_TREE.md': ['PAPER_PROJECT/00_Project_Control/RESTORE_PROJECT_TREE.md'],
-    '01_PROGRAM/restore_project_tree.py': ['PAPER_PROJECT/00_Project_Control/restore_project_tree.py'],
+    '01_PROGRAM': ['PAPER_PROJECT/00_Project_Control/RESTORE_PROJECT_TREE.md',
+                   'PAPER_PROJECT/00_Project_Control/restore_project_tree.py'],
     '01_PROGRAM/control': ['PAPER_PROJECT/00_Project_Control/make_packages.py',
                            'PAPER_PROJECT/00_Project_Control/make_central_story.py',
                            'PAPER_PROJECT/00_Project_Control/make_phase_states.py',
@@ -618,18 +619,54 @@ def main():
             fh.write('files compared byte-for-byte: ' + str(repro.get('n_files_compared', ND))
                      + ', changed: ' + str(repro.get('n_changed', ND)) + '\n')
         gen_files.append(ep)
-    for p in sorted(set(gen_files) | set(glob.glob(os.path.join(GEN, '*')))):
-        arc = os.path.join(docmap.get(os.path.basename(p), '07_DOCUMENTATION'), os.path.basename(p))
+    # the four manifest files are written after this loop (they hash the rest), and the checksum sidecar
+    # never enters the archive; everything else generated here ships once, in its reading section
+    manifest_own = {'SHA256SUMS.txt', 'file_manifest_sha256.csv', 'archive_build.json',
+                    'INTEGRITY_AUDIT.json', 'ARCHIVE_CHECKSUMS.txt'}
+    for p in gen_files:
+        base = os.path.basename(p)
+        if base in manifest_own:
+            continue
+        arc = os.path.join(docmap.get(base, '09_ARCHIVE_METADATA'), base)
         payload[arc] = p
-        # the canonical copy also stays in the repo tree under 16_Reproducibility
-        payload.setdefault('09_ARCHIVE_METADATA/generated_source/' + os.path.basename(p), p)
+    # the repository keeps every generated document under PAPER_PROJECT/16_Reproducibility/; the archive
+    # carries ONE copy of each, at the section a reader would look in. A second "for audit" copy would
+    # just be a file that can go stale - which is exactly what the clean-room test caught once.
 
     # ---- integrity manifests ---------------------------------------------------------------------
-    rows = []
-    for arc in sorted(payload):
-        src = payload[arc]
-        rows.append({'archive_path': arc, 'bytes': os.path.getsize(src),
-                     'sha256': sha256_file(src), 'source_path': rel(src)})
+    # Order matters: hash everything, then write the audit and the build record (which are therefore
+    # themselves hashed), and write the two manifest files LAST - a manifest cannot contain its own hash.
+    def hash_rows(pm):
+        return [{'archive_path': arc, 'bytes': os.path.getsize(pm[arc]),
+                 'sha256': sha256_file(pm[arc]), 'source_path': rel(pm[arc])} for arc in sorted(pm)]
+
+    rows = hash_rows(payload)
+    audit = audit_archive(payload, rows, figs_tex, bibkeys, cited, docmap)
+    ap = os.path.join(GEN, 'INTEGRITY_AUDIT.json')
+    open(ap, 'w', encoding='utf-8').write(json.dumps(audit, indent=1) + '\n')
+    payload['09_ARCHIVE_METADATA/INTEGRITY_AUDIT.json'] = ap
+
+    ab = {'built': BUILD_DATE, 'archive': ARCHIVE_NAME + '.zip',
+          'git_commit': git('rev-parse', 'HEAD'),
+          'git_branch': git('rev-parse', '--abbrev-ref', 'HEAD'),
+          'files': len(payload) + 2,
+          'files_note': 'plus 2: this record and the two manifest files cannot hash themselves, so they '
+                        'are counted but not listed in SHA256SUMS.txt',
+          'bytes_uncompressed': sum(r['bytes'] for r in rows) + os.path.getsize(ap),
+          'sections': {}, 'excluded_patterns': list(EXCLUDE_PARTS) + list(EXCLUDE_SUFFIX),
+          'excluded_named_files': sorted(EXCLUDE_NAMES),
+          'code_freeze': freeze_label, 'python_for_gates': pyexe,
+          'reproduction_verdict': (repro or {}).get('verdict', NOT_REPRO)}
+    for r in rows:                     # rows already includes INTEGRITY_AUDIT.json at this point
+        sec = r['archive_path'].split('/')[0]
+        e = ab['sections'].setdefault(sec, {'files': 0, 'bytes': 0})
+        e['files'] += 1
+        e['bytes'] += r['bytes']
+    apj = os.path.join(GEN, 'archive_build.json')
+    open(apj, 'w', encoding='utf-8').write(json.dumps(ab, indent=1) + '\n')
+    payload['09_ARCHIVE_METADATA/archive_build.json'] = apj
+
+    rows = hash_rows(payload)                     # now including the audit and the build record
     mp = os.path.join(GEN, 'file_manifest_sha256.csv')
     with open(mp, 'w', newline='', encoding='utf-8') as fh:
         w = csv.DictWriter(fh, fieldnames=['archive_path', 'bytes', 'sha256', 'source_path'])
@@ -638,43 +675,22 @@ def main():
     sp = os.path.join(GEN, 'SHA256SUMS.txt')
     open(sp, 'w', encoding='utf-8').write(
         '\n'.join(f"{r['sha256']}  {r['archive_path']}" for r in rows) + '\n'
-        + '# SHA256SUMS covers every archived file except itself and file_manifest_sha256.csv,\n'
-        + '# which cannot contain their own hash. Verify with:\n'
-        + '#   (cd <extracted archive> && sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt)\n')
+        + '# Covers every archived file except this one and file_manifest_sha256.csv, neither of which\n'
+        + '# can contain its own hash. Verify from the extracted archive root with:\n'
+        + '#   sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt\n'
+        + '# The archive is organised so that each document appears ONCE; 16_Reproducibility/ in the\n'
+        + '# repository is where these generated files are authored, not a second copy in the archive.\n')
     payload['09_ARCHIVE_METADATA/SHA256SUMS.txt'] = sp
     payload['09_ARCHIVE_METADATA/file_manifest_sha256.csv'] = mp
-
-    content_sha = sha256_file(sp)          # sha of SHA256SUMS.txt = invariant content checksum
-    ab = {'built': BUILD_DATE, 'archive': ARCHIVE_NAME + '.zip',
-          'git_commit': git('rev-parse', 'HEAD'), 'git_branch': git('rev-parse', '--abbrev-ref', 'HEAD'),
-          'files': len(payload),
-          'bytes_uncompressed': sum(r['bytes'] for r in rows),
-          'sections': {}, 'excluded_patterns': list(EXCLUDE_PARTS) + list(EXCLUDE_SUFFIX),
-          'excluded_named_files': sorted(EXCLUDE_NAMES),
-          'code_freeze': freeze_label, 'python_for_gates': pyexe}
-    for r in rows:
-        sec = r['archive_path'].split('/')[0]
-        e = ab['sections'].setdefault(sec, {'files': 0, 'bytes': 0})
-        e['files'] += 1
-        e['bytes'] += r['bytes']
-    ap_json = os.path.join(GEN, 'archive_build.json')
-    open(ap_json, 'w', encoding='utf-8').write(json.dumps(ab, indent=1) + '\n')
-    payload['09_ARCHIVE_METADATA/archive_build.json'] = ap_json
-
-    # ---- final audit (recorded, not asserted) -----------------------------------------------------
-    audit = audit_archive(payload, rows, figs_tex, bibkeys, cited, docmap)
-    ap = os.path.join(GEN, 'INTEGRITY_AUDIT.json')
-    open(ap, 'w', encoding='utf-8').write(json.dumps(audit, indent=1) + '\n')
-    payload['09_ARCHIVE_METADATA/INTEGRITY_AUDIT.json'] = ap
+    content_sha = sha256_file(sp)                  # invariant content-level checksum
 
     out_zip = os.path.join(a.out, ARCHIVE_NAME + '.zip')
     n = build_zip(payload, out_zip)
     zsha = sha256_file(out_zip)
-    ab['content_checksum_sha256_of_SHA256SUMS'] = content_sha
-    ab['zip_sha256'] = zsha
-    open(ap_json, 'w', encoding='utf-8').write(json.dumps(ab, indent=1) + '\n')
-    # written after the zip exists and deliberately NOT inside it (a file cannot record the hash of the
-    # archive that contains it); it lives in the repository next to the builder
+    # the sidecar is written after the zip exists and is deliberately NOT inside it (a file cannot
+    # record the hash of the archive that contains it); it lives in the repository next to the builder.
+    # ab (archive_build.json) is already hashed inside the zip, so the zip-level hash is recorded here
+    # only - putting it in archive_build.json would be circular.
     side = []
     side.append('REPRODUCIBILITY ARCHIVE - CHECKSUM RECORD')
     side.append('=======================================')
@@ -1788,13 +1804,17 @@ def audit_archive(payload, rows, figs_tex, bibkeys, cited, docmap):
         'ok': all(exists(x) for x in ('01_PROGRAM/run_manifest.json', '01_PROGRAM/parameter_manifest.json',
                                       '08_FINAL_OUTPUTS/FIGURE_PROVENANCE.md', '03_DATA/DATA_DICTIONARY.md'))}
     # 7 key files required by the brief
+    pending = {'SHA256SUMS.txt', 'file_manifest_sha256.csv'}   # written after the audit, by construction
     want = ['README_PROGRAM.md', 'README_OVERLEAF.md', 'README_DATA.md', 'DATA_DICTIONARY.md',
             'REPRODUCE_FROM_SCRATCH.md', 'RUN_ORDER.md', 'run_manifest.json', 'parameter_manifest.json',
             'FIGURE_PROVENANCE.md', 'PROJECT_OVERVIEW.md', 'MODEL_DESCRIPTION.md', 'NUMERICAL_METHOD.md',
             'CHANGELOG.md', 'KNOWN_LIMITATIONS.md', 'ARCHIVE_README.md', 'FINAL_PACKAGE_STATUS.md',
             'SHA256SUMS.txt', 'file_manifest_sha256.csv']
-    have = {os.path.basename(a) for a in name_to_arc}
-    C['required_key_files'] = {'missing': sorted(set(want) - have), 'ok': not set(want) - have}
+    have = {os.path.basename(a) for a in name_to_arc} | pending
+    C['required_key_files'] = {'missing': sorted(set(want) - have), 'ok': not set(want) - have,
+                               'note': 'SHA256SUMS.txt and file_manifest_sha256.csv are listed as present '
+                                       'here because the audit runs before they are written; they are the '
+                                       'only two files that cannot appear in their own manifest'}
     # 8 folders required by the brief
     folders = {a.split('/')[0] for a in name_to_arc}
     want_dirs = {f'0{i}_{n}' for i, n in enumerate(
@@ -1809,6 +1829,14 @@ def audit_archive(payload, rows, figs_tex, bibkeys, cited, docmap):
                 'source with different producers (different bytes, same content); the .md is the source '
                 'of truth and the .tex is the submitted form - stated in ARCHIVE_README',
         'pdfs': final_pdfs, 'ok': True}
+    # 10. a path that is both a file and a directory unpacks as a directory, silently hiding the file -
+    #     the class of bug a clean-room extraction is the only way to catch, so it is checked here too
+    arcs = sorted(name_to_arc)
+    shadow = [x for x in arcs if any(y.startswith(x + '/') for y in arcs)]
+    C['no_file_shadowed_by_directory'] = {'shadowed': shadow, 'ok': not shadow,
+                                          'note': 'each archive path must be a plain file; a name that is '
+                                                  'also a prefix of another path would extract as a folder'}
+
     res['summary'] = {k: ('ok' if v.get('ok') else 'FAIL') for k, v in C.items()}
     res['files'] = len(name_to_arc)
     return res

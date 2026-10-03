@@ -1,14 +1,15 @@
 {
  "built": "2026-10-04",
  "archive": "PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip",
- "git_commit": "3017658b662dac9cec0fe964bef5df201378b741",
+ "git_commit": "031ba76c7f446ec595d8ee65a23ce83b91428463",
  "git_branch": "arena/01a10176-le",
- "files": 1278,
- "bytes_uncompressed": 66510684,
+ "files": 1250,
+ "files_note": "plus 2: this record and the two manifest files cannot hash themselves, so they are counted but not listed in SHA256SUMS.txt",
+ "bytes_uncompressed": 65598283,
  "sections": {
   "01_PROGRAM": {
    "files": 389,
-   "bytes": 10237671
+   "bytes": 10239450
   },
   "02_OVERLEAF": {
    "files": 14,
@@ -19,8 +20,8 @@
    "bytes": 35340175
   },
   "04_REPRODUCTION": {
-   "files": 11,
-   "bytes": 74197
+   "files": 10,
+   "bytes": 72261
   },
   "05_DERIVATIONS": {
    "files": 9,
@@ -31,16 +32,16 @@
    "bytes": 3505731
   },
   "07_DOCUMENTATION": {
-   "files": 145,
-   "bytes": 6433112
+   "files": 141,
+   "bytes": 6030650
   },
   "08_FINAL_OUTPUTS": {
    "files": 38,
    "bytes": 9922113
   },
   "09_ARCHIVE_METADATA": {
-   "files": 26,
-   "bytes": 524888
+   "files": 2,
+   "bytes": 7925
   }
  },
  "excluded_patterns": [
@@ -62,6 +63,5 @@
  ],
  "code_freeze": "submission_2026_10_03j",
  "python_for_gates": "/home/user/.venv-repro/bin/python",
- "content_checksum_sha256_of_SHA256SUMS": "ae22c3686a39edca140bfdc92bb8339745250c8f602bf8e2172bc9316a046d47",
- "zip_sha256": "f5f72416a04776f9efac5606acb29723eaadd1adc824132657490754c18eb395"
+ "reproduction_verdict": "PASS"
 }

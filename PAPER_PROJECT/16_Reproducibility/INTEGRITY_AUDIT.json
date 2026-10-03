@@ -24,7 +24,7 @@
    "note": "a missing entry means the code references a file the project does not track (generated raster renditions, packages/, _claims job dirs) - see 01_PROGRAM/RESTORE_PROJECT_TREE.md"
   },
   "absolute_local_paths_in_code": {
-   "files": 66,
+   "files": 58,
    "detail": {
     "01_PROGRAM/experiments/analyze_v2.py": [
      15
@@ -87,11 +87,11 @@
     ],
     "01_PROGRAM/control/make_reproducibility_archive.py": [
      22,
-     92,
-     786,
-     789,
-     1758,
-     1762
+     93,
+     802,
+     805,
+     1774,
+     1778
     ],
     "01_PROGRAM/control/bootstrap_paths.sh": [
      7,
@@ -185,7 +185,8 @@
   },
   "required_key_files": {
    "missing": [],
-   "ok": true
+   "ok": true,
+   "note": "SHA256SUMS.txt and file_manifest_sha256.csv are listed as present here because the audit runs before they are written; they are the only two files that cannot appear in their own manifest"
   },
   "required_folders": {
    "missing": [],
@@ -215,5 +216,5 @@
   "required_folders": "ok",
   "final_versions_are_consistent": "ok"
  },
- "files": 1279
+ "files": 1247
 }
