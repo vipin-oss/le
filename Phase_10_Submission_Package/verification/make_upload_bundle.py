@@ -153,8 +153,14 @@ def main():
             if not os.path.isfile(src):
                 missing.append(arc)
                 continue
-            z.write(src, arc)
-            manifest.append({'path': arc, 'bytes': os.path.getsize(src), 'sha256': sha256(src)})
+            # a fixed timestamp per entry, so the archive depends only on the file
+            # contents - see the determinism note in the module docstring
+            data = open(src, 'rb').read()
+            zi = zipfile.ZipInfo(arc, date_time=(NOW.year, NOW.month, NOW.day, 0, 0, 0))
+            zi.compress_type = zipfile.ZIP_DEFLATED
+            zi.external_attr = 0o644 << 16
+            z.writestr(zi, data)
+            manifest.append({'path': arc, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()})
         zi = zipfile.ZipInfo('PROVENANCE/README.txt', date_time=(NOW.year, NOW.month, NOW.day, 0, 0, 0))
         zi.compress_type = zipfile.ZIP_DEFLATED
         z.writestr(zi, README)
