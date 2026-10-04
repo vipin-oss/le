@@ -7,29 +7,29 @@ convention (an archive is a build output; the builder plus this file are what ne
 
 Object 1 - deposit for a data/code repository (Zenodo, Figshare, GitHub release)
   PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip
-  52,588,891 bytes
-  sha256  1d0d45617ed2c104ef65fb795241c9d1ec945873bc8a6c150593992c9f2036f1
+  52,588,981 bytes
+  sha256  78f02f83cc0d613bf837a2a88aa04363862f3af521b00dde134576592c1e16c2
   650 files + MANIFEST.json; whole `PAPER_PROJECT/` except `packages/`
-  Tree it was built from: commit 0e3a8ab2a1a2
+  Tree it was built from: commit 891061492e39
   (branch arena/01a10176-le, 2026-10-04; code freeze `submission_2026_10_03j` unchanged - re-hashed
    27/27 byte-identical by `PAPER_PROJECT/06_Source_Code/verify_code_freeze.py`)
 
 Object 2 - the reproducibility archive (what a researcher or reviewer should be handed)
   PAPER_PROJECT/packages/PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip
-  67,579,731 bytes, 1,270 files in 9 sections (76.9 MB unpacked)
+  67,579,833 bytes, 1,270 files in 9 sections (76.9 MB unpacked)
   section counts: 01_PROGRAM 391, 02_OVERLEAF 14, 03_DATA 438, 04_REPRODUCTION 11,
                   05_DERIVATIONS 9, 06_VALIDATION 206, 07_DOCUMENTATION 140,
                   08_FINAL_OUTPUTS 54, 09_ARCHIVE_METADATA 7
-  sha256  aa7657c131e63393b45dc5cdfaca2e4145270cf75003e73aa3e2308b3a00811e
+  sha256  d9078cf12f3730851c3537de02b6754b21d151a72e362441a60d3d4701ab8d54
   content sha256 (invariant across a rebuild that packs the same files)
-              ed539ef3235158c6e6ad276c6ffb0242f9ba8281e0698b81d0a6f280e40e5552
+              040e0b93db031d63e88c28b88dfab1cb2fb421b5210919a87d479bcf1e835f45
                   = sha256 of 09_ARCHIVE_METADATA/SHA256SUMS.txt inside the archive
   Full detail, the clean-room test transcript and the gate log: `09_ARCHIVE_METADATA/` inside it, and
   `PAPER_PROJECT/16_Reproducibility/` (ARCHIVE_CHECKSUMS.txt, CLEAN_ROOM_TEST.txt, VERIFICATION_GATES.txt,
   INTEGRITY_AUDIT.json) in the repository.
 
 How to reproduce Object 1 - the reason these numbers are recorded here
-  git checkout 0e3a8ab2a1a2   # the commit the builders were run from
+  git checkout 891061492e39   # the commit the builders were run from
   python3 PAPER_PROJECT/00_Project_Control/make_packages.py final        # standard library only
   sha256sum PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip             # = the value above
 
@@ -49,7 +49,7 @@ How to reproduce Object 1 - the reason these numbers are recorded here
   inside it (an earlier revision embedded `git HEAD` and that had to be undone - see the superseded log).
 
 How to reproduce and check Object 2
-  git checkout 0e3a8ab2a1a2   # the commit the builders were run from
+  git checkout 891061492e39   # the commit the builders were run from
   /home/user/.venv-repro/bin/python PAPER_PROJECT/00_Project_Control/make_reproducibility_archive.py \
       --repro PAPER_PROJECT/16_Reproducibility/REPRODUCTION_SUMMARY.json --keep-tree
   sha256sum PAPER_PROJECT/packages/PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip
@@ -115,6 +115,12 @@ Superseded values, with the reason each differed (kept, not deleted)
                          commit you stood on
   Deposit 9fc543900dfa45bc...  per-entry mtimes + a live manifest clock (not reproducible)
   Deposit 5b0ee097f98d0f43...  built before the downloadable submission bundle was added to the tree
+  Rebuild note (2026-10-04, after a full sandbox reset wiped the built archives): the package was rebuilt from
+  a fresh checkout of the commit named above plus the regenerated derived renditions, and 1,257 of 1,268
+  archived files came back byte-identical. The 11 that moved are the run-dated index documents (README_PROGRAM,
+  REPRODUCE_FROM_SCRATCH, run_manifest, ENVIRONMENT_OBSERVED, REPRODUCTION_SUMMARY, REPRODUCTION_TEST_REPORT,
+  VERIFICATION_GATES, CHANGELOG, ARCHIVE_README, FINAL_PACKAGE_STATUS, archive_build); no research file,
+  figure, dataset or manuscript byte changed. Hashes above are the published files as packed at that commit.
   Archive 4ae50af1-era rebuilds (d956f483..., 58214769..., b995d715..., ab55d912..., be2afd6e...) and the
                          deposits they were paired with (2db71f1f..., 445f9706..., 6ec65cef...): the packer
                          fix that ships hand-written records, the new internal-reference audit, and three
