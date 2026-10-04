@@ -1,6 +1,6 @@
 # FINAL_PACKAGE_STATUS
 
-Overall status: **READY WITH DOCUMENTED GAPS**
+Overall status: **REPRODUCIBLE, WORK IN PROGRESS - see the failing gates below**
 
 **Which copy of these index documents to trust:** the copies inside this archive are authoritative -
 they were generated in the same run that hashed every file listed in `SHA256SUMS.txt`. The working
@@ -19,7 +19,7 @@ and is excluded from the payload so it cannot be its own input.
 | Provenance | COMPLETE | figure -> script -> data -> command in `FIGURE_PROVENANCE.md`; run -> inputs -> output hash -> wall time in `03_DATA/processed/PRODUCTION_PROVENANCE.csv` |
 | Manuscript source | COMPLETE | `02_OVERLEAF/`: .tex (single file), companion .tex, .bib with 55 entries, 8 vector figures, highlights; every cited key resolves |
 | Manuscript compilation | NOT AVAILABLE IN THIS ENVIRONMENT | no TeX engine in the packaging sandbox; static verification passed (figures, citations, commands, cross-references); the four compile commands and the log triage script ship with it |
-| Validation | PARTIAL BY DESIGN | verification suite shipped with its one reported failure; physical validation status is EVIDENCE_UNAVAILABLE and the paper says so - see `06_VALIDATION/VALIDATION_INDEX.md` |
+| Validation | PARTIAL BY DESIGN | verification suite shipped with its one reported failure; physical validation status is EVIDENCE_UNAVAILABLE and the paper says so - see `06_VALIDATION/literature_verification/` and `07_DOCUMENTATION/program_control/VALIDATION_STATUS.md` |
 | Reproduction test | PASS | 5 steps, 18 files compared; clean-room runs of the packed archive are in `09_ARCHIVE_METADATA/CLEAN_ROOM_TEST.txt` |
 | Documentation / audit trail | COMPLETE | 137 files: program status documents, ten phase reports, corrections log, audits, repository-level notes |
 | Versioning | COMPLETE for the repository era | git history exported to `07_DOCUMENTATION/` + twelve code-freeze manifests; pre-2026-10-01 version control: HISTORICAL CHANGELOG NOT AVAILABLE (documents exist instead, and are shipped) |
@@ -30,7 +30,7 @@ and is excluded from the payload so it cannot be its own input.
 | gate | exit code |
 |---|---|
 | audit_tex | 0 |
-| connection_audit | 0 |
+| connection_audit | 1 |
 | check_tex_commands_manuscript | 0 |
 | check_tex_commands_calculations | 0 |
 | check_crossrefs_manuscript | 0 |

@@ -12,7 +12,7 @@ cd PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE
 mkdir -p ../rp && cp -r 01_PROGRAM/src ../rp/PAPER_PROJECT/06_Source_Code/src 2>/dev/null || true
 sh bootstrap_paths.sh          # or place the tree at the path the scripts expect
 python3 -m venv .venv && . .venv/bin/activate
-pip install -r 01_PROGRAM/environment/requirements_pinned_from_handoff.txt
+pip install -r 01_PROGRAM/environment/requirements.txt
 pip install python-docx pillow
 # 2. integrity
 sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt

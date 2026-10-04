@@ -8,7 +8,7 @@ is cheaper than pretending a file can contain the result of a test of itself.
 Environment
   Python 3.11.2 venv, numpy 2.3.5, scipy 1.17.1, matplotlib 3.10.9, PyMuPDF 1.28.2, openpyxl 3.1.5,
   python-docx, Pillow, reportlab, mpmath 1.3.0 - installed for this run from
-  01_PROGRAM/environment/requirements_pinned_from_handoff.txt plus the two unpinned extras the manuscript
+  01_PROGRAM/environment/requirements.txt plus the two unpinned extras the manuscript
   builders import. No TeX engine (none installable: the sandbox user has no package-manager access), so
   the LaTeX compile is NOT tested here and says so in 02_OVERLEAF/README_OVERLEAF.md.
   Isolation: extracted into a fresh directory outside the repository; the repository's own paths were then

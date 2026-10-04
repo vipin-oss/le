@@ -92,10 +92,10 @@
     "01_PROGRAM/control/make_reproducibility_archive.py": [
      22,
      93,
-     858,
-     861,
-     1847,
-     1851
+     866,
+     869,
+     1859,
+     1863
     ],
     "01_PROGRAM/control/bootstrap_paths.sh": [
      7,
@@ -202,6 +202,11 @@
    ],
    "ok": true
   },
+  "internal_references_resolve": {
+   "unresolved": {},
+   "ok": true,
+   "note": "each `NN_SECTION/...` path quoted in an archived document must exist in the archive; the failing list is per document"
+  },
   "no_file_shadowed_by_directory": {
    "shadowed": [],
    "ok": true,
@@ -219,7 +224,8 @@
   "required_key_files": "ok",
   "required_folders": "ok",
   "final_versions_are_consistent": "ok",
+  "internal_references_resolve": "ok",
   "no_file_shadowed_by_directory": "ok"
  },
- "files": 1264
+ "files": 1266
 }

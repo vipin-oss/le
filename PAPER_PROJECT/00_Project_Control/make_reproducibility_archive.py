@@ -656,6 +656,14 @@ def main():
             continue
         arc = os.path.join(docmap.get(base, '09_ARCHIVE_METADATA'), base)
         payload[arc] = p
+    # a record written by another tool (or by hand beside the pipeline) lives in the same folder: ship it
+    # too, otherwise documents here can point at a file that exists in the repository but not in the archive
+    for base in sorted(os.listdir(GEN)):
+        fp = os.path.join(GEN, base)
+        if not os.path.isfile(fp) or base in manifest_own or base == 'ARCHIVE_CHECKSUMS.txt':
+            continue
+        arc = os.path.join(docmap.get(base, '09_ARCHIVE_METADATA'), base)
+        payload.setdefault(arc, fp)
     # the repository keeps every generated document under PAPER_PROJECT/16_Reproducibility/; the archive
     # carries ONE copy of each, at the section a reader would look in. A second "for audit" copy would
     # just be a file that can go stale - which is exactly what the clean-room test caught once.
@@ -806,8 +814,8 @@ def readme_program(params, gates, prov_fields, prov_rows, pyexe, frozen, freeze_
     A("  If the Methods section cites an interpreter, cite the one the deposited run used (3.11.2),")
     A('  or re-run under 3.13.14 and regenerate the provenance CSV, which this archive rebuilds for you.')
     A('- Third-party packages: the pinned set the project shipped with, verbatim from')
-    A('  `01_PROGRAM/environment/requirements_pinned_from_handoff.txt` (also at')
-    A('  `work/handoff/PILOT_HUANG_2025_01/requirements.txt`):\n')
+    A('  `01_PROGRAM/environment/requirements.txt`, a copy of')
+    A('  `work/handoff/PILOT_HUANG_2025_01/requirements.txt` shipped with the archive so the path resolves\n')
     req = os.path.join(ROOT, 'work/handoff/PILOT_HUANG_2025_01/requirements.txt')
     if os.path.isfile(req):
         A('```')
@@ -848,7 +856,7 @@ def readme_program(params, gates, prov_fields, prov_rows, pyexe, frozen, freeze_
     A('')
     A('```bash')
     A('python3 -m venv .venv && . .venv/bin/activate')
-    A('pip install -r 01_PROGRAM/environment/requirements_pinned_from_handoff.txt')
+    A('pip install -r 01_PROGRAM/environment/requirements.txt')
     A('pip install python-docx pillow                 # manuscript builders only')
     A('sh bootstrap_paths.sh                          # see "Path convention" below')
     A('```')
@@ -1052,7 +1060,7 @@ def reproduce_md(pyexe, repro):
     A('mkdir -p ../rp && cp -r 01_PROGRAM/src ../rp/PAPER_PROJECT/06_Source_Code/src 2>/dev/null || true')
     A('sh bootstrap_paths.sh          # or place the tree at the path the scripts expect')
     A('python3 -m venv .venv && . .venv/bin/activate')
-    A('pip install -r 01_PROGRAM/environment/requirements_pinned_from_handoff.txt')
+    A('pip install -r 01_PROGRAM/environment/requirements.txt')
     A('pip install python-docx pillow')
     A('# 2. integrity')
     A('sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt')
@@ -1331,10 +1339,13 @@ def data_dictionary(raw_dirs, data_keys, npz_examples, prov_fields, prov_sample)
     A('')
     A('- `09_Raw_Data/production/_claims/` - the job-claiming directories the two workers used; transient')
     A('  by design, and the packager skips them (`packages/`, `__pycache__` likewise).')
-    A('- Any experimental measurement: the study is a continuum computation and the paper says no physical')
-    A('  validation data exists (`06_VALIDATION/PHYSICAL_VALIDATION.md`).')
+    A('- Any experimental measurement: the study is a continuum computation, and the paper states that no')
+    A('  physical validation data exists; that position is recorded in')
+    A('  `07_DOCUMENTATION/program_control/VALIDATION_STATUS.md` and in the audits under `06_VALIDATION/`,')
+    A('  not in a separate file with its own name.')
     A('- Third-party PDFs of the cited literature: not redistributable, so the archive ships the Crossref')
-    A('  verification records in `06_VALIDATION/literature_verification/` instead.')
+    A('  verification records in `06_VALIDATION/literature_verification/` instead (read')
+    A('  `REFERENCES_VERIFIED.md` there).')
     return '\n'.join(L) + '\n'
 
 
@@ -1651,7 +1662,7 @@ def archive_readme(payload, skipped, repro, gates):
         ['`05_DERIVATIONS/`', 'formulation, numerical method, stability, convergence, acceptance criteria, '
                               'the derivation companion', '`MODEL_DESCRIPTION.md`, `NUMERICAL_METHOD.md`'],
         ['`06_VALIDATION/`', 'validation results, literature/Crossref verification, project audits',
-         '`VALIDATION_INDEX.md`'],
+         '`literature_verification/REFERENCES_VERIFIED.md`, then `validation_results/`'],
         ['`07_DOCUMENTATION/`', 'program control documents, the ten phase reports, the repository-level '
                                 'docs, corrections log', '`PROJECT_OVERVIEW.md`'],
         ['`08_FINAL_OUTPUTS/`', 'manuscript source and renderings, supplement workbook, cover letter, '
@@ -1732,7 +1743,8 @@ def final_status(payload, repro, gates, figs_tex, bibkeys, cited):
          'commands, cross-references); the four compile commands and the log triage script ship with it'],
         ['Validation', 'PARTIAL BY DESIGN', 'verification suite shipped with its one reported failure; '
          'physical validation status is EVIDENCE_UNAVAILABLE and the paper says so - see '
-         '`06_VALIDATION/VALIDATION_INDEX.md`'],
+         '`06_VALIDATION/literature_verification/` and '
+         '`07_DOCUMENTATION/program_control/VALIDATION_STATUS.md`'],
         ['Reproduction test', (repro or {}).get('verdict', 'NOT RE-RUN DURING PACKAGING'),
          'historical report shipped (11 PASS / 0 FAIL at 2026-10-01, same tolerances) in '
          '`04_REPRODUCTION/REPRODUCTION_TEST_REPORT.md`' if not repro else
@@ -1902,6 +1914,32 @@ def audit_archive(payload, rows, figs_tex, bibkeys, cited, docmap):
                 'source with different producers (different bytes, same content); the .md is the source '
                 'of truth and the .tex is the submitted form - stated in ARCHIVE_README',
         'pdfs': final_pdfs, 'ok': True}
+    # 9b. internal references: a document may point at `03_DATA/foo.md`; if that path is not in the archive
+    #     the reader hits a dead link, which is precisely what this audit exists to prevent
+    unresolved = {}
+    ref_re = re.compile(r'`(0[1-9]_[A-Z_]+/[A-Za-z0-9_.\-/]+?)(?:#[^`]*)?`')
+    for arc, src in payload.items():
+        if not arc.endswith('.md'):
+            continue
+        try:
+            txt = open(src, encoding='utf-8', errors='replace').read()
+        except OSError:
+            continue
+        for ref in sorted(set(ref_re.findall(txt))):
+            if '...' in ref or '*' in ref:
+                continue                                  # prose glob or ellipsis, not a path
+            if ref in name_to_arc or ref in payload or (ARCHIVE_NAME + '/' + ref) in payload:
+                continue
+            if any(k == ref.rstrip('/') or k.startswith(ref if ref.endswith('/') else ref + '/')
+                   for k in name_to_arc):
+                continue                      # a folder reference, and the folder is shipped
+            if os.path.isfile(os.path.join(GEN, os.path.basename(ref))):
+                continue                      # refers to the repository-side copy, named as such
+            unresolved.setdefault(arc, []).append(ref)
+    C['internal_references_resolve'] = {'unresolved': unresolved, 'ok': not unresolved,
+                                        'note': 'each `NN_SECTION/...` path quoted in an archived document '
+                                                'must exist in the archive; the failing list is per document'}
+
     # 10. a path that is both a file and a directory unpacks as a directory, silently hiding the file -
     #     the class of bug a clean-room extraction is the only way to catch, so it is checked here too
     arcs = sorted(name_to_arc)

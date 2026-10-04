@@ -221,7 +221,10 @@ A_chi1_phi000_R192,A,RUN_SUCCESS,feab48880c3c1359,174c9ab3ff15a1fd,f15578152b637
 
 - `09_Raw_Data/production/_claims/` - the job-claiming directories the two workers used; transient
   by design, and the packager skips them (`packages/`, `__pycache__` likewise).
-- Any experimental measurement: the study is a continuum computation and the paper says no physical
-  validation data exists (`06_VALIDATION/PHYSICAL_VALIDATION.md`).
+- Any experimental measurement: the study is a continuum computation, and the paper states that no
+  physical validation data exists; that position is recorded in
+  `07_DOCUMENTATION/program_control/VALIDATION_STATUS.md` and in the audits under `06_VALIDATION/`,
+  not in a separate file with its own name.
 - Third-party PDFs of the cited literature: not redistributable, so the archive ships the Crossref
-  verification records in `06_VALIDATION/literature_verification/` instead.
+  verification records in `06_VALIDATION/literature_verification/` instead (read
+  `REFERENCES_VERIFIED.md` there).

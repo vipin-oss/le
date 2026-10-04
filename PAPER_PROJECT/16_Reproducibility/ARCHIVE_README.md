@@ -1,6 +1,6 @@
 # ARCHIVE_README - PAPER_PROJECT COMPLETE REPRODUCIBILITY ARCHIVE
 
-Built 2026-10-04 from `arena/01a10176-le` at commit `c61b8b49d99740dd9ff385fc32dfd79215722368`, code freeze `submission_2026_10_03j`.
+Built 2026-10-04 from `arena/01a10176-le` at commit `9b582f05e952e71a2cbc66c1d432e201e13bf802`, code freeze `submission_2026_10_03j`.
 **1245 files.** Everything needed to understand, run, audit, modify and re-submit the paper is
 inside this archive; the conversation and tooling that produced it are not needed and are not
 referenced by any file as a source of truth.
@@ -14,7 +14,7 @@ referenced by any file as a source of truth.
 | `03_DATA/` | raw per-run data (JSON + NPZ), processed analyses, CSV tables, provenance | `README_DATA.md`, then `DATA_DICTIONARY.md` |
 | `04_REPRODUCTION/` | the reproduction test, verification-suite results and reports | `REPRODUCTION_TEST_REPORT.md` |
 | `05_DERIVATIONS/` | formulation, numerical method, stability, convergence, acceptance criteria, the derivation companion | `MODEL_DESCRIPTION.md`, `NUMERICAL_METHOD.md` |
-| `06_VALIDATION/` | validation results, literature/Crossref verification, project audits | `VALIDATION_INDEX.md` |
+| `06_VALIDATION/` | validation results, literature/Crossref verification, project audits | `literature_verification/REFERENCES_VERIFIED.md`, then `validation_results/` |
 | `07_DOCUMENTATION/` | program control documents, the ten phase reports, the repository-level docs, corrections log | `PROJECT_OVERVIEW.md` |
 | `08_FINAL_OUTPUTS/` | manuscript source and renderings, supplement workbook, cover letter, figures, checklists | `FIGURE_PROVENANCE.md` |
 | `09_ARCHIVE_METADATA/` | this file, the status report, manifests, SHA-256 sums, gate transcripts | `FINAL_PACKAGE_STATUS.md` |
