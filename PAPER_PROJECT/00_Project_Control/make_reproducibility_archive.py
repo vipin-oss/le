@@ -1736,14 +1736,18 @@ def final_status(payload, repro, gates, figs_tex, bibkeys, cited):
         ['Reproduction test', (repro or {}).get('verdict', 'NOT RE-RUN DURING PACKAGING'),
          'historical report shipped (11 PASS / 0 FAIL at 2026-10-01, same tolerances) in '
          '`04_REPRODUCTION/REPRODUCTION_TEST_REPORT.md`' if not repro else
-         f'{len(repro.get("steps", []))} steps, {len(repro.get("files_regenerated", []))} files compared'],
+         f'{len(repro.get("steps", []))} steps, {len(repro.get("files_regenerated", []))} files compared; '
+         'clean-room runs of the packed archive are in `09_ARCHIVE_METADATA/CLEAN_ROOM_TEST.txt`'],
         ['Documentation / audit trail', 'COMPLETE', f'{per.get("07_DOCUMENTATION", 0)} files: program '
          'status documents, ten phase reports, corrections log, audits, repository-level notes'],
         ['Versioning', 'COMPLETE for the repository era', 'git history exported to `07_DOCUMENTATION/` + '
          'twelve code-freeze manifests; pre-2026-10-01 version control: HISTORICAL CHANGELOG NOT '
          'AVAILABLE (documents exist instead, and are shipped)'],
-        ['Integrity', 'COMPLETE', f'{n} files hashed (SHA256SUMS.txt + file_manifest_sha256.csv); the '
-         'archive is byte-deterministic from the tree'],
+        ['Integrity', 'COMPLETE', f'{n} files hashed at the time this document was written '
+         '(SHA256SUMS.txt + file_manifest_sha256.csv); the authoritative totals are '
+         '`archive_build.json` -> `files` and -> `sections`, which also count the metadata written after '
+         'this document - verify with `sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt`, which is the check '
+         'that does not rely on any number quoted here; the archive is byte-deterministic from the tree'],
     ]))
     A('')
     A('## Gate results recorded by this build')

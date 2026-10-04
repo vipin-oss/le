@@ -1,14 +1,14 @@
 REPRODUCIBILITY ARCHIVE - CHECKSUM RECORD
 =======================================
-built            2026-10-04 from commit 4ae50af19a9f9bb90ebabf8840b37fd6c16856cc (branch arena/01a10176-le)
+built            2026-10-04 from commit acad8489707f667660d9ee9af5ce240b2543c3b7 (branch arena/01a10176-le)
 archive          PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip in PAPER_PROJECT/packages/ (gitignored: generated archives are
                  built on demand from the repository, the same convention as make_packages.py)
-zip sha256       58214769402ed1b76f93c92d50250940692a00b23a8a1a70caeeecc8978aa8bf
-size             67573152 bytes, 1268 files
+zip sha256       2642afecf1153fdf2a1ffee1208f57f76427f5891877f6b610d5f1184579ce9e
+size             67573674 bytes, 1268 files
 
 Content checksum - the one to actually compare
   sha256 of 09_ARCHIVE_METADATA/SHA256SUMS.txt as it appears inside the archive:
-    8753c964c406fe8191e9e49667b10f94c52e844ee05ccf58507a8cc43121ff9f
+    b0e49ccc38350006b0e7d1c8feb5904417f60b95d0e393e75a1e8d7d4390b5fa
   Why this exists: the zip-level sha also covers archive_build.json, which records the commit
   the build ran from, so rebuilding at a later commit changes the zip hash even when every
   archived file is byte-identical. The content checksum is invariant across such a rebuild;

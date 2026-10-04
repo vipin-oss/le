@@ -1,6 +1,6 @@
 # ARCHIVE_README - PAPER_PROJECT COMPLETE REPRODUCIBILITY ARCHIVE
 
-Built 2026-10-04 from `arena/01a10176-le` at commit `4ae50af19a9f9bb90ebabf8840b37fd6c16856cc`, code freeze `submission_2026_10_03j`.
+Built 2026-10-04 from `arena/01a10176-le` at commit `acad8489707f667660d9ee9af5ce240b2543c3b7`, code freeze `submission_2026_10_03j`.
 **1245 files.** Everything needed to understand, run, audit, modify and re-submit the paper is
 inside this archive; the conversation and tooling that produced it are not needed and are not
 referenced by any file as a source of truth.

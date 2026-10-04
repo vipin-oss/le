@@ -3,6 +3,8 @@
 ## Repository history (this is real git history, not a reconstruction)
 
 ```
+2026-10-04 acad848 Phase 11: deposit/archive checksums of record updated to the final 1,268-file and 650-file builds
+2026-10-04 a7f64ea Phase 11: final archive (1,268 files) and deposit (650 files) re-recorded with derived-file accounting
 2026-10-04 4ae50af Phase 11: FINAL_PACKAGE_STATUS explains the repo-copy vs archive-copy lag
 2026-10-04 2a92271 Phase 11: clean-room run 3 (renditions included); checksum records excluded from the payload to avoid self-reference
 2026-10-04 adc357d Phase 11: regenerated index docs + archive rebuilt with the 600-dpi renditions and derived-file accounting
