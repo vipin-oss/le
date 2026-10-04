@@ -3,6 +3,7 @@
 ## Repository history (this is real git history, not a reconstruction)
 
 ```
+2026-10-04 c61b8b4 Phase 11: FINAL_PACKAGE_STATUS counts made self-consistent (archive_build.json is authoritative)
 2026-10-04 acad848 Phase 11: deposit/archive checksums of record updated to the final 1,268-file and 650-file builds
 2026-10-04 a7f64ea Phase 11: final archive (1,268 files) and deposit (650 files) re-recorded with derived-file accounting
 2026-10-04 4ae50af Phase 11: FINAL_PACKAGE_STATUS explains the repo-copy vs archive-copy lag
