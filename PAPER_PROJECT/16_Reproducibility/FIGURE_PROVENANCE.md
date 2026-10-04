@@ -39,9 +39,12 @@ python3 Phase_10_Submission_Package/verification/make_tex_figure_set.py  # the v
   it with different save settings and then restore the tree (they re-verify the frozen hashes and
   `git checkout --` the PNGs afterwards, so running them cannot leave the working tree modified).
 - The exporter wrapper is present in the repository: yes.
-- **Raster rendition sizes:** the 600-dpi PNGs and TIFFs are gitignored in the repository and are
-  therefore NOT inside this archive (they are 22-49 MB each uncompressed; regenerate with the second
-  command above, which is deterministic and takes about a minute).
+- **Raster rendition sizes:** the 600-dpi PNGs and TIFFs are gitignored derived files. They are
+  shipped inside this archive when the working copy has them, and when it does not they are exactly
+  one command away (the second one above: deterministic, about a minute). How many were packed is
+  recorded in `09_ARCHIVE_METADATA/archive_build.json` -> `derived_files.figure_renditions_600dpi`,
+  so a reader can tell which case they hold and can verify either way by re-running the exporter and
+  diffing the files.
 - The 200-dpi PNGs in `08_FINAL_OUTPUTS/figures/` are the tracked ones, so a reader can compare a
   regenerated figure against a shipped one without any network or repository access.
 

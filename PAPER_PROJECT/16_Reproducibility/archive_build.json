@@ -1,15 +1,15 @@
 {
  "built": "2026-10-04",
  "archive": "PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip",
- "git_commit": "a9a2fb3cb0c91a8fa6ffd4b9f30da2b006f33ae2",
+ "git_commit": "41d149f6b3ba83eebd89cfe57e80e6eb1e71c49f",
  "git_branch": "arena/01a10176-le",
- "files": 1252,
+ "files": 1268,
  "files_note": "plus 2: this record and the two manifest files cannot hash themselves, so they are counted but not listed in SHA256SUMS.txt",
- "bytes_uncompressed": 65621990,
+ "bytes_uncompressed": 76514514,
  "sections": {
   "01_PROGRAM": {
    "files": 391,
-   "bytes": 10256152
+   "bytes": 10257667
   },
   "02_OVERLEAF": {
    "files": 14,
@@ -21,7 +21,7 @@
   },
   "04_REPRODUCTION": {
    "files": 10,
-   "bytes": 72882
+   "bytes": 72981
   },
   "05_DERIVATIONS": {
    "files": 9,
@@ -33,15 +33,15 @@
   },
   "07_DOCUMENTATION": {
    "files": 141,
-   "bytes": 6036851
+   "bytes": 6037295
   },
   "08_FINAL_OUTPUTS": {
-   "files": 38,
-   "bytes": 9922113
+   "files": 54,
+   "bytes": 20812545
   },
   "09_ARCHIVE_METADATA": {
    "files": 2,
-   "bytes": 7918
+   "bytes": 7952
   }
  },
  "excluded_patterns": [
@@ -63,5 +63,10 @@
  ],
  "code_freeze": "submission_2026_10_03j",
  "python_for_gates": "/home/user/.venv-repro/bin/python",
- "reproduction_verdict": "PASS"
+ "reproduction_verdict": "PASS",
+ "derived_files": {
+  "figure_renditions_600dpi": 16,
+  "manuscript_equation_images": 0,
+  "note": "these two families are gitignored DERIVED files: they enter the archive when the working copy has them and are absent otherwise, which is why the archive hash can differ between two checkouts of the same commit. Both are regenerable from tracked code - see FIGURE_PROVENANCE.md and RUN_ORDER.md - and their presence here is a convenience for re-submission, not a dependency for reproduction."
+ }
 }

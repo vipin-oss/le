@@ -682,7 +682,6 @@ def main():
           'excluded_named_files': sorted(EXCLUDE_NAMES),
           'code_freeze': freeze_label, 'python_for_gates': pyexe,
           'reproduction_verdict': (repro or {}).get('verdict', NOT_REPRO),
-          'worktree_clean_at_packing': git('status', '--porcelain').strip() == '',
           'derived_files': {
               # keyed on ARCHIVE paths, not source paths, because that is what `payload` maps to
               'figure_renditions_600dpi': sum(1 for k in payload if k.endswith(('.png', '.tiff'))

@@ -38,9 +38,11 @@ so their presence is deliberate and tracked, not an oversight.
   `02_OVERLEAF/README_OVERLEAF.md` reports a static verification (paths, figures, citations,
   commands, references) and the compile itself stays an author-side step. Nothing in the archive
   claims a successful compile.
-- **The 600-dpi raster and TIFF renditions are not in the archive** (gitignored in the repository
-  and regenerable in about a minute with the command in `FIGURE_PROVENANCE.md`); the tracked 200-dpi
-  PNGs and the vector PDFs are in it.
+- **The 600-dpi raster and TIFF renditions are derived, gitignored files.** They are included when
+  the working copy has them and omitted otherwise, always regenerable with the command in
+  `FIGURE_PROVENANCE.md` (about a minute); the count actually packed is in
+  `archive_build.json` -> `derived_files`. The tracked 200-dpi PNGs and the vector PDFs are in the
+  archive in both cases, so nothing needed for reproduction depends on the derived set.
 - **`reportlab`/`python-docx` versions used for the .docx/.pdf previews are not pinned anywhere in
   the repository**, so a different version can render slightly different page breaks in the preview
   PDFs. The `.md` and `.tex` sources are the authoritative text; the PDFs are previews.
