@@ -3,6 +3,8 @@
 ## Repository history (this is real git history, not a reconstruction)
 
 ```
+2026-10-04 4ae50af Phase 11: FINAL_PACKAGE_STATUS explains the repo-copy vs archive-copy lag
+2026-10-04 2a92271 Phase 11: clean-room run 3 (renditions included); checksum records excluded from the payload to avoid self-reference
 2026-10-04 adc357d Phase 11: regenerated index docs + archive rebuilt with the 600-dpi renditions and derived-file accounting
 2026-10-04 41d149f Phase 11: derived-file accounting in archive_build.json; docs now describe the rendition behaviour accurately
 2026-10-04 10f4ca7 Phase 11: clean-room run 2 under the pinned library set - PASS, agrees with run 1

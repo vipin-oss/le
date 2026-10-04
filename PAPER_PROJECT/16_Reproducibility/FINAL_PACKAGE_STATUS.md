@@ -1,6 +1,14 @@
 # FINAL_PACKAGE_STATUS
 
-Overall status: **REPRODUCIBLE, WORK IN PROGRESS - see the failing gates below**
+Overall status: **READY WITH DOCUMENTED GAPS**
+
+**Which copy of these index documents to trust:** the copies inside this archive are authoritative -
+they were generated in the same run that hashed every file listed in `SHA256SUMS.txt`. The working
+copy in `PAPER_PROJECT/16_Reproducibility/` of the repository is restored to the previous commit
+after packing (the packer never commits), so a field derived from git - `CHANGELOG.md`, or
+`archive_build.json`/`run_manifest.json` gate exit codes - can lag by exactly one build. If the two
+disagree, the archive is right; `ARCHIVE_CHECKSUMS.txt` beside the zip records the shipped archive
+and is excluded from the payload so it cannot be its own input.
 
 | section | status | detail |
 |---|---|---|
@@ -22,7 +30,7 @@ Overall status: **REPRODUCIBLE, WORK IN PROGRESS - see the failing gates below**
 | gate | exit code |
 |---|---|
 | audit_tex | 0 |
-| connection_audit | 1 |
+| connection_audit | 0 |
 | check_tex_commands_manuscript | 0 |
 | check_tex_commands_calculations | 0 |
 | check_crossrefs_manuscript | 0 |
