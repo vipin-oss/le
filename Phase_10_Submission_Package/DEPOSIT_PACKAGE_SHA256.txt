@@ -7,42 +7,46 @@ convention (an archive is a build output; the builder plus this file are what ne
 
 Object 1 - deposit for a data/code repository (Zenodo, Figshare, GitHub release)
   PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip
-  44,977,253 bytes
-  sha256  50faf355b178e6cf9bcf03de1495de88dd6af925c8dad4a26cbf405dc32aaeba
-  718 files + MANIFEST.json; whole `PAPER_PROJECT/` except `packages/`
-  Tree it was built from: commit a2a868260f8dc411297f0b6ee79a78fb6506859e
+  52,586,614 bytes
+  sha256  2db71f1fcddc09f72a129641d0f6a25a77b1b39086147992ed9cbd2e55a222f3
+  650 files + MANIFEST.json; whole `PAPER_PROJECT/` except `packages/`
+  Tree it was built from: commit 4ae50af19a9f9bb90ebabf8840b37fd6c16856cc
   (branch arena/01a10176-le, 2026-10-04; code freeze `submission_2026_10_03j` unchanged - re-hashed
    27/27 byte-identical by `PAPER_PROJECT/06_Source_Code/verify_code_freeze.py`)
 
 Object 2 - the reproducibility archive (what a researcher or reviewer should be handed)
   PAPER_PROJECT/packages/PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip
-  58,866,581 bytes, 1,252 files in 9 sections
-  sha256  525e108fef4ad6ff0e17d2b52992e1dd2e9d9405f2175dfee28864e05e97ee44
-  content sha256 (invariant across a rebuild at a later commit)
-              f587e9aa9c87d111140c30f83deafbd9ca2ce26983233760ab741b284e2dc1cb
+  67,573,152 bytes, 1,268 files in 9 sections (76.51 MB unpacked)
+  sha256  58214769402ed1b76f93c92d50250940692a00b23a8a1a70caeeecc8978aa8bf
+  content sha256 (invariant across a rebuild that packs the same files)
+              8753c964c406fe8191e9e49667b10f94c52e844ee05ccf58507a8cc43121ff9f
                   = sha256 of 09_ARCHIVE_METADATA/SHA256SUMS.txt inside the archive
   Full detail, the clean-room test transcript and the gate log: `09_ARCHIVE_METADATA/` inside it, and
   `PAPER_PROJECT/16_Reproducibility/` (ARCHIVE_CHECKSUMS.txt, CLEAN_ROOM_TEST.txt, VERIFICATION_GATES.txt,
   INTEGRITY_AUDIT.json) in the repository.
 
 How to reproduce Object 1 - the reason these numbers are recorded here
-  git checkout a2a868260f8dc411297f0b6ee79a78fb6506859e
+  git checkout 4ae50af19a9f9bb90ebabf8840b37fd6c16856cc
   python3 PAPER_PROJECT/00_Project_Control/make_packages.py final        # standard library only
   sha256sum PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip             # = the value above
 
   The builder is deterministic by construction: every entry and MANIFEST.json is written through ZipInfo
   with a fixed timestamp, an explicit compression type and fixed permissions, and nothing inside records a
-  build clock or a commit id, so the bytes are a pure function of the tracked files. Verified for this
-  build: two consecutive builds gave the same sha256 (one across an mtime churn of the manuscript and
-  analysis trees); `testzip()` is clean; all 718 entries were re-hashed from inside the archive against
-  its own MANIFEST.json with 0 mismatches and 0 missing.
+  build clock or a commit id, so the bytes are a pure function of the working tree: the tracked files plus,
+  when present, gitignored DERIVED files (`11_Figures/submission/*.png|tiff` - the 600-dpi PNG and LZW TIFF
+  of each of the 8 figures, 16 files, made by
+  `python3 Phase_09_Closeout/verification/export_submission_figures.py`). Reproduction never depends on the
+  derived set; a deposit copy is only more convenient for a journal. A checkout of the commit above without
+  running that exporter yields a 634-file archive whose tracked content hashes identically file-for-file;
+  run the exporter first for the 650-file version recorded here. Verified for this build: `testzip()` clean;
+  all 650 entries re-hashed from inside the archive against its own MANIFEST.json, 0 mismatches, 0 missing.
 
   Rebuilding after committing anything changes the zip hash without changing the packaged content only
   where the content itself moved; provenance therefore lives beside the archive, in this file, never
   inside it (an earlier revision embedded `git HEAD` and that had to be undone - see the superseded log).
 
 How to reproduce and check Object 2
-  git checkout a2a868260f8dc411297f0b6ee79a78fb6506859e
+  git checkout 4ae50af19a9f9bb90ebabf8840b37fd6c16856cc
   /home/user/.venv-repro/bin/python PAPER_PROJECT/00_Project_Control/make_reproducibility_archive.py \
       --repro PAPER_PROJECT/16_Reproducibility/REPRODUCTION_SUMMARY.json --keep-tree
   sha256sum PAPER_PROJECT/packages/PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip
@@ -55,7 +59,7 @@ How to reproduce and check Object 2
   two can coexist - the zip hash answers "did I receive the exact file", the content checksum answers
   "is this the same package".
 
-Contents of Object 1 (718 files)
+Contents of Object 1 (650 files)
   00_Project_Control .. 14_Documentation plus 15_Audits and 16_Reproducibility; all raw per-run .npz/.json
   outputs; both convergence families and the production runs; every figure and table rendition; both
   manuscript source trees (.md, .tex), FINAL_REVISED_REFERENCES.bib (55 entries), the preview PDFs, the
@@ -81,9 +85,13 @@ What to deposit where
 
 Status of the two objects, stated plainly
   Code freeze            verified (27/27 files byte-identical to CODE_FREEZE_submission_2026_10_03j)
-  Data integrity         verified (1,250/1,250 archive files, 718/718 deposit entries re-hashed)
-  Reproduction test        PASS - analyze_v2 -> provenance -> figures -> reproduce.py re-run in a restored
-                         tree: 11 PASS / 0 FAIL, 11 of 11 regenerated artifacts byte-identical
+  Data integrity         verified (1,266 hash lines in the archive's SHA256SUMS.txt, all OK with 0 failures in a clean-room
+                         extraction; 650/650 deposit entries re-hashed against the archive's own manifest)
+  Reproduction test        PASS - three independent clean-room runs (09_ARCHIVE_METADATA/CLEAN_ROOM_TEST.txt
+                         inside the archive): analyze_v2 -> make_provenance -> make_figures -> reproduce.py
+                         re-run from a restored tree, 11 PASS / 0 FAIL, and 27 of 27 regenerated artifacts
+                         byte-identical (3 processed-data files, 8 figures, 16 600-dpi renditions). Runs 2 and
+                         3 used a virtualenv built from the project's own pinned library set.
   LaTeX compile          NOT COMPILED in this sandbox (no TeX engine installable; the user has no
                          package-manager access). Static checks pass: every figure, bib key, \input path
                          and \\command resolves - see 02_OVERLEAF/README_OVERLEAF.md and
@@ -106,6 +114,14 @@ Superseded values, with the reason each differed (kept, not deleted)
   Deposit 5b0ee097f98d0f43...  built before the downloadable submission bundle was added to the tree
   Bundle  7c50cadd6483437a...  superseded for the same two reasons: it predated the author-input list
                          refresh and did not hash PROVENANCE/README.txt
+  Deposit 50faf355b178e6cf..., 8ceb892de588b2f4..., aeff23a3c9ea9c96...  same tree, rebuilt as the
+                         reproducibility phase added files and as the derived renditions came and went;
+                         superseded by the 650-file build this file now describes
+  Archive 525e108fef4ad6ff..., b87f5f84863136b1..., 80620a231250f6df...  one rebuild each: derived-file
+                         accounting in archive_build.json, the FINAL_PACKAGE_STATUS note about which copy of
+                         the index documents is authoritative, and excluding the two checksum records from
+                         the payload they describe. No research file changed in any of them; the manuscript,
+                         data, figure and code hashes are stable throughout.
   Archive 3d238e54..., b3b44d80..., 4e711957..., 5296dd6a..., 9dfa13ba..., 795ceb46..., 9725eb53...,
           60f81026..., 709845b8..., f85c4b81..., ec172d47..., 5f7ed29e...  - intermediate packings while
           the builder itself was being fixed (current value is the one at the top of this file)
