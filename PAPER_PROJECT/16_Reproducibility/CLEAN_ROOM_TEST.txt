@@ -55,3 +55,28 @@ VERDICT:  PASS
   compare against shipped outputs: all green, every artifact byte-identical. The only untested link is the
   LaTeX compile, and that is an environment limit of the packaging sandbox, not a claim about the source:
   02_OVERLEAF/README_OVERLEAF.md lists the four commands and the static checks already done instead.
+
+--------------------------------------------------------------------------------
+RUN 2 (2026-10-04, repeat run in a FRESH sandbox against the archive rebuilt that day)
+--------------------------------------------------------------------------------
+Reason for repeating: the packaging sandbox is volatile (its working directory is reset between sessions),
+and a one-off test is weak evidence. This run also used a different machine profile - 3,939 MB RAM instead
+of 1,984 MB - and, unlike run 1, a virtual environment built from the project's OWN pinned library set
+(numpy 2.3.5, scipy 1.17.1, matplotlib 3.10.9, PyMuPDF 1.28.2, openpyxl 3.1.5, mpmath 1.3.0, from
+work/handoff/PILOT_HUANG_2025_01/requirements.txt, plus the two unpinned extras python-docx and
+Pillow/reportlab that the manuscript builders import). Interpreter still CPython 3.11.2: the pinned
+libraries install and run identically there, and 3.13 remains uninstallable in this sandbox.
+
+  unzip + count                                              -> 1,253 files
+  sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt            -> 1,251 OK, 0 failures
+  restore_project_tree.py --into <fresh>                     -> restored, 0 hash mismatches
+  bootstrap_paths.sh + verify_code_freeze.py                 -> 27 identical, 0 differing, 0 missing
+  analyze_v2.py / make_provenance.py / make_figures.py      -> exit 0 / 0 / 0
+  reproduce.py                                               -> Overall: 11 PASS, 0 FAIL
+  byte-compare regenerated vs shipped
+    ANALYSIS_V2.json, ANALYSIS_V2_TABLES.md, PRODUCTION_PROVENANCE.csv, fig1..fig7 (8 PNGs)
+                                                             -> 11 identical, 0 differing
+  Document gates in the restored tree: verify_pdf.py, audit_tex.py -> RESULT: ALL CHECKS PASSED
+
+VERDICT RUN 2: PASS, and it agrees with run 1 exactly. Two independent clean-room runs on two different
+machine profiles, one with the declared pinned libraries, reproduce every checked artifact byte-for-byte.

@@ -3,6 +3,7 @@
 ## Repository history (this is real git history, not a reconstruction)
 
 ```
+2026-10-04 a9a2fb3 Phase 11: reproduction re-run under the project's pinned library set (numpy 2.3.5, scipy 1.17.1, matplotlib 3.10.9, PyMuPDF 1.28.2, mpmath 1.3.0, openpyxl 3.1.5) - PASS, 18/18 byte-identical
 2026-10-03 99fc86a tools: serve_share.py duplicate header fix; artefact links verified at full size (archive 525e108f, deposit 50faf355, bundle e0254e0c)
 2026-10-03 4c819bd tools: range-capable share server used to publish the built artefacts
 2026-10-03 0619796 Phase 11: deposit rebuilt at the Phase-11 tip (718 files) and re-recorded with the reproducibility archive
