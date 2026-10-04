@@ -3,6 +3,7 @@
 ## Repository history (this is real git history, not a reconstruction)
 
 ```
+2026-10-04 ba0c756 Phase 11: post-reset rebuild reproduces 1,257/1,268 archived files byte-identically (11 changed are the run-dated index docs); fresh reproduction PASS under pinned env
 2026-10-04 cc7edb0 Phase 11: checksum-of-record lines corrected in place (archive aa7657c1 / content ed539ef3 / deposit 1d0d4561)
 2026-10-04 4c7e365 Phase 11: final recorded hashes - archive aa7657c1 (1,270 files), deposit 1d0d4561 (650 files)
 2026-10-04 0e3a8ab Phase 11: ship hand-written records in 16_Reproducibility, add internal-reference audit, fix 3 dead doc paths (incl. a pip command that would have failed)

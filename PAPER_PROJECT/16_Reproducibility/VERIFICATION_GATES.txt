@@ -14,13 +14,12 @@ reader can see what was actually checked, not only that something was checked.
 
 == connection_audit
    command: python tools/connection_audit.py
-   exit code: 1
-   |   FAIL  1 file(s) differ from HEAD: ['PAPER_PROJECT/07_Tests/REPRODUCTION_TEST_REPORT.md']
+   exit code: 0
    | NOTES (2):
-   | RESULT: 1 check(s) FAILED
+   | RESULT: all connection checks passed
    |   ok    GitHub reachable over the network; refs/heads/main = 18368e991967 as fetched
    | ========================================================================
-   |   - README 'Start here' points at packages/*.zip, which are gitignored and absent; regenerate with `python PAPER_PROJECT/00_Project_Control/make_packages.py final`
+   |   - local branch differs from origin/arena/01a10176-le (ba0c756c6a14 vs cc7edb06d255) — push the local commit
    |   - branch 'arena/01a10176-le' has no upstream (it was never pushed) — `git push -u origin arena/01a10176-le`
 
 == check_tex_commands_manuscript
@@ -48,10 +47,10 @@ reader can see what was actually checked, not only that something was checked.
    |   ok    test-suite sentence in the manuscript matches TEST_RESULTS.json (28, 27, 0, 1)
    |   ok    TEST_RESULTS.json status COMPLETE (28 cases)
    | D) git state
-   | SUMMARY: 0 check(s) failed, 3 note(s)
+   |   ok    working tree clean
+   | SUMMARY: 0 check(s) failed, 2 note(s)
    |   note  7 of the 9 headline constants are also quoted in the companion; the rest belong to the results tables and appear in the manuscript alone by design
    |   note  6 author-input placeholders remain (identity, funding, repository, CRediT, competing interest)
-   |   note  2 path(s) uncommitted at audit time (they are committed at the end of the phase)
    | wrote final_consistency.json
 
 == verify_code_freeze

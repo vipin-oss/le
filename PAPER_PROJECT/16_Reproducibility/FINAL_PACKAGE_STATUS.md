@@ -1,6 +1,6 @@
 # FINAL_PACKAGE_STATUS
 
-Overall status: **REPRODUCIBLE, WORK IN PROGRESS - see the failing gates below**
+Overall status: **READY WITH DOCUMENTED GAPS**
 
 **Which copy of these index documents to trust:** the copies inside this archive are authoritative -
 they were generated in the same run that hashed every file listed in `SHA256SUMS.txt`. The working
@@ -30,7 +30,7 @@ and is excluded from the payload so it cannot be its own input.
 | gate | exit code |
 |---|---|
 | audit_tex | 0 |
-| connection_audit | 1 |
+| connection_audit | 0 |
 | check_tex_commands_manuscript | 0 |
 | check_tex_commands_calculations | 0 |
 | check_crossrefs_manuscript | 0 |
