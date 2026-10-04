@@ -469,7 +469,7 @@ def main():
         for name, cmd, to in gate_cmds:
             rc, out = sh(cmd, timeout=to)
             # final_consistency.py writes its own timestamped transcript; restoring it keeps the archive a
-            # pure function of the tracked tree instead of a function of when it was packed
+            # function of the packed state rather than of when the packing happened
             fc = 'Phase_08_Final_Audit/verification/final_consistency.json'
             if name == 'final_consistency':
                 git('checkout', '--', fc)
@@ -681,7 +681,18 @@ def main():
           'sections': {}, 'excluded_patterns': list(EXCLUDE_PARTS) + list(EXCLUDE_SUFFIX),
           'excluded_named_files': sorted(EXCLUDE_NAMES),
           'code_freeze': freeze_label, 'python_for_gates': pyexe,
-          'reproduction_verdict': (repro or {}).get('verdict', NOT_REPRO)}
+          'reproduction_verdict': (repro or {}).get('verdict', NOT_REPRO),
+          'worktree_clean_at_packing': git('status', '--porcelain').strip() == '',
+          'derived_files': {
+              # keyed on ARCHIVE paths, not source paths, because that is what `payload` maps to
+              'figure_renditions_600dpi': sum(1 for k in payload if k.endswith(('.png', '.tiff'))
+                                              and '/figures/submission/' in k),
+              'manuscript_equation_images': sum(1 for k in payload if '/equations/' in k),
+              'note': 'these two families are gitignored DERIVED files: they enter the archive when the '
+                      'working copy has them and are absent otherwise, which is why the archive hash can '
+                      'differ between two checkouts of the same commit. Both are regenerable from tracked '
+                      'code - see FIGURE_PROVENANCE.md and RUN_ORDER.md - and their presence here is a '
+                      'convenience for re-submission, not a dependency for reproduction.'}}
     for r in rows:                     # rows already includes INTEGRITY_AUDIT.json at this point
         sec = r['archive_path'].split('/')[0]
         e = ab['sections'].setdefault(sec, {'files': 0, 'bytes': 0})
@@ -1362,9 +1373,12 @@ def figure_provenance(figs, vecs, figs_tex, fig_funcs, rcparams, exporter_exists
     _exp = 'yes' if exporter_exists else \
         'NO - it is referenced by the phase reports but was not found while packaging'
     A('- The exporter wrapper is present in the repository: ' + _exp + '.')
-    A('- **Raster rendition sizes:** the 600-dpi PNGs and TIFFs are gitignored in the repository and are')
-    A('  therefore NOT inside this archive (they are 22-49 MB each uncompressed; regenerate with the second')
-    A('  command above, which is deterministic and takes about a minute).')
+    A('- **Raster rendition sizes:** the 600-dpi PNGs and TIFFs are gitignored derived files. They are')
+    A('  shipped inside this archive when the working copy has them, and when it does not they are exactly')
+    A('  one command away (the second one above: deterministic, about a minute). How many were packed is')
+    A('  recorded in `09_ARCHIVE_METADATA/archive_build.json` -> `derived_files.figure_renditions_600dpi`,')
+    A('  so a reader can tell which case they hold and can verify either way by re-running the exporter and')
+    A('  diffing the files.')
     A('- The 200-dpi PNGs in `08_FINAL_OUTPUTS/figures/` are the tracked ones, so a reader can compare a')
     A('  regenerated figure against a shipped one without any network or repository access.')
     A('')
@@ -1573,9 +1587,11 @@ def known_limitations(repro):
     A('  `02_OVERLEAF/README_OVERLEAF.md` reports a static verification (paths, figures, citations,')
     A('  commands, references) and the compile itself stays an author-side step. Nothing in the archive')
     A('  claims a successful compile.')
-    A('- **The 600-dpi raster and TIFF renditions are not in the archive** (gitignored in the repository')
-    A('  and regenerable in about a minute with the command in `FIGURE_PROVENANCE.md`); the tracked 200-dpi')
-    A('  PNGs and the vector PDFs are in it.')
+    A('- **The 600-dpi raster and TIFF renditions are derived, gitignored files.** They are included when')
+    A('  the working copy has them and omitted otherwise, always regenerable with the command in')
+    A('  `FIGURE_PROVENANCE.md` (about a minute); the count actually packed is in')
+    A('  `archive_build.json` -> `derived_files`. The tracked 200-dpi PNGs and the vector PDFs are in the')
+    A('  archive in both cases, so nothing needed for reproduction depends on the derived set.')
     A('- **`reportlab`/`python-docx` versions used for the .docx/.pdf previews are not pinned anywhere in')
     A('  the repository**, so a different version can render slightly different page breaks in the preview')
     A('  PDFs. The `.md` and `.tex` sources are the authoritative text; the PDFs are previews.')
