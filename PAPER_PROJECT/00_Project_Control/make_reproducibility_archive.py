@@ -1705,6 +1705,14 @@ def final_status(payload, repro, gates, figs_tex, bibkeys, cited):
     A(f'Overall status: **' + ('READY WITH DOCUMENTED GAPS' if gate_ok else
                               'REPRODUCIBLE, WORK IN PROGRESS - see the failing gates below') + '**')
     A('')
+    A('**Which copy of these index documents to trust:** the copies inside this archive are authoritative -')
+    A('they were generated in the same run that hashed every file listed in `SHA256SUMS.txt`. The working')
+    A('copy in `PAPER_PROJECT/16_Reproducibility/` of the repository is restored to the previous commit')
+    A('after packing (the packer never commits), so a field derived from git - `CHANGELOG.md`, or')
+    A('`archive_build.json`/`run_manifest.json` gate exit codes - can lag by exactly one build. If the two')
+    A('disagree, the archive is right; `ARCHIVE_CHECKSUMS.txt` beside the zip records the shipped archive')
+    A('and is excluded from the payload so it cannot be its own input.')
+    A('')
     A(md_table(['section', 'status', 'detail'], [
         ['Program (code)', 'COMPLETE', 'frozen solver + drivers + tests + builders + utilities; '
          f'{per.get("01_PROGRAM", 0)} files; environment pinned where the project pinned it, '
