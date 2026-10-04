@@ -7,26 +7,29 @@ convention (an archive is a build output; the builder plus this file are what ne
 
 Object 1 - deposit for a data/code repository (Zenodo, Figshare, GitHub release)
   PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip
-  52,586,614 bytes
-  sha256  2db71f1fcddc09f72a129641d0f6a25a77b1b39086147992ed9cbd2e55a222f3
+  52,588,891 bytes
+  sha256  1d0d45617ed2c104ef65fb795241c9d1ec945873bc8a6c150593992c9f2036f1
   650 files + MANIFEST.json; whole `PAPER_PROJECT/` except `packages/`
-  Tree it was built from: commit 4ae50af19a9f9bb90ebabf8840b37fd6c16856cc
+  Tree it was built from: commit 0e3a8ab2a1a2
   (branch arena/01a10176-le, 2026-10-04; code freeze `submission_2026_10_03j` unchanged - re-hashed
    27/27 byte-identical by `PAPER_PROJECT/06_Source_Code/verify_code_freeze.py`)
 
 Object 2 - the reproducibility archive (what a researcher or reviewer should be handed)
   PAPER_PROJECT/packages/PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip
-  67,573,152 bytes, 1,268 files in 9 sections (76.51 MB unpacked)
-  sha256  58214769402ed1b76f93c92d50250940692a00b23a8a1a70caeeecc8978aa8bf
+  67,579,731 bytes, 1,270 files in 9 sections (76.9 MB unpacked)
+  section counts: 01_PROGRAM 391, 02_OVERLEAF 14, 03_DATA 438, 04_REPRODUCTION 11,
+                  05_DERIVATIONS 9, 06_VALIDATION 206, 07_DOCUMENTATION 140,
+                  08_FINAL_OUTPUTS 54, 09_ARCHIVE_METADATA 7
+  sha256  aa7657c131e63393b45dc5cdfaca2e4145270cf75003e73aa3e2308b3a00811e
   content sha256 (invariant across a rebuild that packs the same files)
-              8753c964c406fe8191e9e49667b10f94c52e844ee05ccf58507a8cc43121ff9f
+              ed539ef3235158c6e6ad276c6ffb0242f9ba8281e0698b81d0a6f280e40e5552
                   = sha256 of 09_ARCHIVE_METADATA/SHA256SUMS.txt inside the archive
   Full detail, the clean-room test transcript and the gate log: `09_ARCHIVE_METADATA/` inside it, and
   `PAPER_PROJECT/16_Reproducibility/` (ARCHIVE_CHECKSUMS.txt, CLEAN_ROOM_TEST.txt, VERIFICATION_GATES.txt,
   INTEGRITY_AUDIT.json) in the repository.
 
 How to reproduce Object 1 - the reason these numbers are recorded here
-  git checkout 4ae50af19a9f9bb90ebabf8840b37fd6c16856cc
+  git checkout 0e3a8ab2a1a2   # the commit the builders were run from
   python3 PAPER_PROJECT/00_Project_Control/make_packages.py final        # standard library only
   sha256sum PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip             # = the value above
 
@@ -46,12 +49,12 @@ How to reproduce Object 1 - the reason these numbers are recorded here
   inside it (an earlier revision embedded `git HEAD` and that had to be undone - see the superseded log).
 
 How to reproduce and check Object 2
-  git checkout 4ae50af19a9f9bb90ebabf8840b37fd6c16856cc
+  git checkout 0e3a8ab2a1a2   # the commit the builders were run from
   /home/user/.venv-repro/bin/python PAPER_PROJECT/00_Project_Control/make_reproducibility_archive.py \
       --repro PAPER_PROJECT/16_Reproducibility/REPRODUCTION_SUMMARY.json --keep-tree
   sha256sum PAPER_PROJECT/packages/PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip
   unzip -q <archive>; cd PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE
-  sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt     # 1,250 OK / 0 failures expected
+  sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt     # 1,268 OK / 0 failures expected
   python3 01_PROGRAM/restore_project_tree.py --into ../restored          # -> runnable PAPER_PROJECT tree
 
   This archive deliberately does record its own `git_commit` (in 09_ARCHIVE_METADATA/archive_build.json):
@@ -112,6 +115,11 @@ Superseded values, with the reason each differed (kept, not deleted)
                          commit you stood on
   Deposit 9fc543900dfa45bc...  per-entry mtimes + a live manifest clock (not reproducible)
   Deposit 5b0ee097f98d0f43...  built before the downloadable submission bundle was added to the tree
+  Archive 4ae50af1-era rebuilds (d956f483..., 58214769..., b995d715..., ab55d912..., be2afd6e...) and the
+                         deposits they were paired with (2db71f1f..., 445f9706..., 6ec65cef...): the packer
+                         fix that ships hand-written records, the new internal-reference audit, and three
+                         dead document paths (one a `pip install -r` a reader would have copied). The
+                         manuscript, data, figure and code hashes did not move in any of them.
   Bundle  7c50cadd6483437a...  superseded for the same two reasons: it predated the author-input list
                          refresh and did not hash PROVENANCE/README.txt
   Deposit 50faf355b178e6cf..., 8ceb892de588b2f4..., aeff23a3c9ea9c96...  same tree, rebuilt as the
