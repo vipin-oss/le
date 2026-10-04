@@ -741,9 +741,16 @@ def main():
     side.append('=======================================')
     side.append('built            %s from commit %s (branch %s)'
                 % (BUILD_DATE, git('rev-parse', 'HEAD'), git('rev-parse', '--abbrev-ref', 'HEAD')))
-    side.append('archive          %s.zip in PAPER_PROJECT/packages/ (gitignored: generated archives are'
+    side.append('archive          %s.zip in PAPER_PROJECT/packages/ - a build output, and by the project\'s'
                 % ARCHIVE_NAME)
-    side.append('                 built on demand from the repository, the same convention as make_packages.py)')
+    side.append('                 convention not regenerated-but-rebuilt on demand (the convention as')
+    side.append('                 `make_packages.py`). One exception is recorded here because it matters to')
+    side.append('                 a reader with only a link: this archive is ALSO committed at the release')
+    side.append('                 tag `repro-archive-2026-10-04` so it has a public download URL, because the')
+    side.append('                 packaging sandbox cannot reach `uploads.github.com` to attach a release')
+    side.append('                 asset. If your copy came from that tag, its bytes are the zip hash below;')
+    side.append('                 if you rebuilt from the commit, expect the content checksum to match and')
+    side.append('                 the zip hash to differ only by the run-dated index documents.')
     side.append('zip sha256       %s' % zsha)
     side.append('size             %d bytes, %d files' % (n, len(payload)))
     side.append('')

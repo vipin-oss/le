@@ -5,6 +5,13 @@ Two objects are produced for submission, both generated on demand from this repo
 here rather than committed, because `PAPER_PROJECT/packages/*.zip` is gitignored by the project's own
 convention (an archive is a build output; the builder plus this file are what need to survive).
 
+One deliberate exception: Object 2 (the reproducibility archive) is additionally committed at the tag
+`repro-archive-2026-10-04`, which is what `https://github.com/vipin-oss/le/releases/tag/repro-archive-2026-10-04`
+points at, so the package has a public download URL. Release assets could not be attached from the
+packaging sandbox (`uploads.github.com` is unreachable from there), and a 67 MB blob is inside GitHub's
+100 MB per-file limit - so the archive travels with the tag instead. Object 1 remains uncommitted;
+rebuild it with `make_packages.py final` if you need it.
+
 Object 1 - deposit for a data/code repository (Zenodo, Figshare, GitHub release)
   PAPER_PROJECT/packages/RESEARCH_PROJECT_FINAL.zip
   52,588,981 bytes

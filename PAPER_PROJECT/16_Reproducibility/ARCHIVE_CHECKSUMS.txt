@@ -1,8 +1,13 @@
 REPRODUCIBILITY ARCHIVE - CHECKSUM RECORD
 =======================================
 built            2026-10-04 from commit ba0c756c6a14eb44e8ece06e342a1313a8c9efdf (branch arena/01a10176-le)
-archive          PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip in PAPER_PROJECT/packages/ (gitignored: generated archives are
-                 built on demand from the repository, the same convention as make_packages.py)
+archive          PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip in PAPER_PROJECT/packages/ - a build
+                 output, normally not stored in git but rebuilt on demand from the commit (same convention
+                 as `make_packages.py`). Exception recorded because it changes what a reader can rely on:
+                 this archive is additionally committed at the release tag `repro-archive-2026-10-04` so it
+                 has a public download URL - the packaging sandbox cannot reach `uploads.github.com`, so a
+                 release asset could not be attached. Download link:
+                 https://github.com/vipin-oss/le/raw/repro-archive-2026-10-04/PAPER_PROJECT/packages/PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip
 zip sha256       d9078cf12f3730851c3537de02b6754b21d151a72e362441a60d3d4701ab8d54
 size             67579833 bytes, 1270 files
 
