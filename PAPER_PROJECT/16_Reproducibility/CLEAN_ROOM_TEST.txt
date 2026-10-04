@@ -105,3 +105,31 @@ VERDICT RUN 3: PASS. Note on self-reference: this transcript is inside the archi
 documents are those of the build immediately before the one that carries it; the two differ only by this
 appended text, and the reader's own `sha256sum -c` in step 1 is the check that does not depend on any
 claim made here.
+
+--------------------------------------------------------------------------------
+RUN 4 (2026-10-04, against the build that ships this transcript's own predecessors)
+--------------------------------------------------------------------------------
+Run after two packer fixes found by verification itself: hand-written records in `PAPER_PROJECT/16_
+Reproducibility/` were being skipped by the packager (so this transcript was referenced by
+`FINAL_PACKAGE_STATUS.md` but absent from the archive), and three document paths pointed at filenames that
+never existed - including one `pip install -r ...` command a reader would have copied and watched fail. An
+audit check `internal_references_resolve` now resolves every `NN_SECTION/...` path quoted inside an
+archived document against the archive's own contents, so that class of error fails the build.
+
+  extracted archive                                          -> 1,270 files
+  sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt            -> 1,268 OK, 0 problems
+  09_ARCHIVE_METADATA/CLEAN_ROOM_TEST.txt                    -> present, 7,689 bytes (runs 1-3)
+  restore_project_tree.py --into <fresh>                     -> 1,245 files, 0 hash mismatches
+  analyze_v2.py / make_provenance.py / make_figures.py / reproduce.py -> exit 0 / 0 / 0 / 0
+  reproduce.py report                                        -> Overall: 11 PASS, 0 FAIL
+  byte-compare regenerated vs shipped                        -> 27 identical, 0 differing
+      3 processed-data files + 8 figures + 16 regenerated 600-dpi PNG/TIFF renditions
+  deposit zip (Object 1, built from the same tree)            -> 650/650 entries re-hashed identical,
+                                                                 testzip() clean
+  integrity audit inside the archive                          -> 12 checks, all ok
+  verification gates recorded inside the archive              -> 9 gates, all exit code 0
+  git commit recorded in archive_build.json                   -> equals the repository HEAD at packing
+
+VERDICT RUN 4: PASS. Same as runs 1-3: byte-identical regeneration, no hidden failures. As before, the
+bytes this block describes are those of the build immediately preceding the one that carries this text;
+the difference is this appended block and nothing else, and the step-1 hash check is independent of it.
