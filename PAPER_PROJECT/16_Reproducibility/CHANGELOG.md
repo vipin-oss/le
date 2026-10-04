@@ -3,6 +3,7 @@
 ## Repository history (this is real git history, not a reconstruction)
 
 ```
+2026-10-04 adc357d Phase 11: regenerated index docs + archive rebuilt with the 600-dpi renditions and derived-file accounting
 2026-10-04 41d149f Phase 11: derived-file accounting in archive_build.json; docs now describe the rendition behaviour accurately
 2026-10-04 10f4ca7 Phase 11: clean-room run 2 under the pinned library set - PASS, agrees with run 1
 2026-10-04 a9a2fb3 Phase 11: reproduction re-run under the project's pinned library set (numpy 2.3.5, scipy 1.17.1, matplotlib 3.10.9, PyMuPDF 1.28.2, mpmath 1.3.0, openpyxl 3.1.5) - PASS, 18/18 byte-identical

@@ -13,9 +13,9 @@ Overall status: **REPRODUCIBLE, WORK IN PROGRESS - see the failing gates below**
 | Manuscript compilation | NOT AVAILABLE IN THIS ENVIRONMENT | no TeX engine in the packaging sandbox; static verification passed (figures, citations, commands, cross-references); the four compile commands and the log triage script ship with it |
 | Validation | PARTIAL BY DESIGN | verification suite shipped with its one reported failure; physical validation status is EVIDENCE_UNAVAILABLE and the paper says so - see `06_VALIDATION/VALIDATION_INDEX.md` |
 | Reproduction test | PASS | 5 steps, 18 files compared |
-| Documentation / audit trail | COMPLETE | 138 files: program status documents, ten phase reports, corrections log, audits, repository-level notes |
+| Documentation / audit trail | COMPLETE | 137 files: program status documents, ten phase reports, corrections log, audits, repository-level notes |
 | Versioning | COMPLETE for the repository era | git history exported to `07_DOCUMENTATION/` + twelve code-freeze manifests; pre-2026-10-01 version control: HISTORICAL CHANGELOG NOT AVAILABLE (documents exist instead, and are shipped) |
-| Integrity | COMPLETE | 1246 files hashed (SHA256SUMS.txt + file_manifest_sha256.csv); the archive is byte-deterministic from the tree |
+| Integrity | COMPLETE | 1245 files hashed (SHA256SUMS.txt + file_manifest_sha256.csv); the archive is byte-deterministic from the tree |
 
 ## Gate results recorded by this build
 

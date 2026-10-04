@@ -24,7 +24,7 @@
    "note": "a missing entry means the code references a file the project does not track (generated raster renditions, packages/, _claims job dirs) - see 01_PROGRAM/RESTORE_PROJECT_TREE.md"
   },
   "absolute_local_paths_in_code": {
-   "files": 60,
+   "files": 59,
    "detail": {
     "01_PROGRAM/experiments/analyze_v2.py": [
      15
@@ -92,10 +92,10 @@
     "01_PROGRAM/control/make_reproducibility_archive.py": [
      22,
      93,
-     856,
-     859,
-     1833,
-     1837
+     858,
+     861,
+     1835,
+     1839
     ],
     "01_PROGRAM/control/bootstrap_paths.sh": [
      7,
@@ -221,5 +221,5 @@
   "final_versions_are_consistent": "ok",
   "no_file_shadowed_by_directory": "ok"
  },
- "files": 1265
+ "files": 1264
 }

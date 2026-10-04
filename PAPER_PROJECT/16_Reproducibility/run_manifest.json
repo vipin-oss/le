@@ -62,7 +62,7 @@
     "RESULT: 1 check(s) FAILED",
     "  ok    GitHub reachable over the network; refs/heads/main = 18368e991967 as fetched",
     "========================================================================",
-    "  - local branch differs from origin/arena/01a10176-le (41d149f6b3ba vs 10f4ca790d89) \u2014 push the local commit",
+    "  - local branch differs from origin/arena/01a10176-le (adc357d4df8c vs 10f4ca790d89) \u2014 push the local commit",
     "  - branch 'arena/01a10176-le' has no upstream (it was never pushed) \u2014 `git push -u origin arena/01a10176-le`"
    ]
   },
@@ -101,7 +101,7 @@
     "SUMMARY: 0 check(s) failed, 3 note(s)",
     "  note  7 of the 9 headline constants are also quoted in the companion; the rest belong to the results tables and appear in the manuscript alone by design",
     "  note  6 author-input placeholders remain (identity, funding, repository, CRediT, competing interest)",
-    "  note  14 path(s) uncommitted at audit time (they are committed at the end of the phase)",
+    "  note  13 path(s) uncommitted at audit time (they are committed at the end of the phase)",
     "wrote final_consistency.json"
    ]
   },

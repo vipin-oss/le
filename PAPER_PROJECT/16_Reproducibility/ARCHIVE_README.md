@@ -1,7 +1,7 @@
 # ARCHIVE_README - PAPER_PROJECT COMPLETE REPRODUCIBILITY ARCHIVE
 
-Built 2026-10-04 from `arena/01a10176-le` at commit `41d149f6b3ba83eebd89cfe57e80e6eb1e71c49f`, code freeze `submission_2026_10_03j`.
-**1246 files.** Everything needed to understand, run, audit, modify and re-submit the paper is
+Built 2026-10-04 from `arena/01a10176-le` at commit `adc357d4df8cf6cc5c692cd75c721143f15d2fcb`, code freeze `submission_2026_10_03j`.
+**1245 files.** Everything needed to understand, run, audit, modify and re-submit the paper is
 inside this archive; the conversation and tooling that produced it are not needed and are not
 referenced by any file as a source of truth.
 
@@ -42,7 +42,7 @@ referenced by any file as a source of truth.
   the 52 MB `le.zip` snapshot (it is the same content as the repository), `work/handoff.zip`
   (redundant with `01_PROGRAM/handoff_baseline/`), `.git`, editor swap files, and the gitignored
   600-dpi figure renditions (regenerate; see `08_FINAL_OUTPUTS/FIGURE_PROVENANCE.md`).
-- Skipped while assembling: 13 path(s) matched the exclusion rules.
+- Skipped while assembling: 15 path(s) matched the exclusion rules.
 
 ## Integrity
 

@@ -80,3 +80,28 @@ libraries install and run identically there, and 3.13 remains uninstallable in t
 
 VERDICT RUN 2: PASS, and it agrees with run 1 exactly. Two independent clean-room runs on two different
 machine profiles, one with the declared pinned libraries, reproduce every checked artifact byte-for-byte.
+
+--------------------------------------------------------------------------------
+RUN 3 (2026-10-04, the build that also shipped the 600-dpi renditions)
+--------------------------------------------------------------------------------
+Context: the packer counts derived files now (archive_build.json -> derived_files), and the working copy
+this time had the gitignored 600-dpi renditions present, so they were packed - which is the case a reader
+who rebuilds after `export_submission_figures.py` will hold. Same pinned environment as run 2.
+
+  extracted archive                                          -> 1,269 files
+  sha256sum -c 09_ARCHIVE_METADATA/SHA256SUMS.txt            -> 1,267 OK, 0 problems
+  restore_project_tree.py --into <fresh>                     -> 1,246 files restored, 0 hash mismatches
+  verify_code_freeze.py (restored tree, no .git)             -> 27 identical, 0 differing, 0 missing
+  analyze_v2.py / make_provenance.py / make_figures.py / reproduce.py -> exit 0 / 0 / 0 / 0
+  reproduce.py report                                        -> Overall: 11 PASS, 0 FAIL
+  byte-compare regenerated vs shipped
+    ANALYSIS_V2.json, ANALYSIS_V2_TABLES.md, PRODUCTION_PROVENANCE.csv, 8 PNG figures   -> 11 identical
+    16 regenerated 600-dpi PNG/TIFF renditions vs the copies in
+    08_FINAL_OUTPUTS/figures/submission/                                                -> 16 identical
+    total 27 identical, 0 differing
+  Document gates in the restored tree: verify_pdf.py, audit_tex.py -> RESULT: ALL CHECKS PASSED
+
+VERDICT RUN 3: PASS. Note on self-reference: this transcript is inside the archive, so the bytes it
+documents are those of the build immediately before the one that carries it; the two differ only by this
+appended text, and the reader's own `sha256sum -c` in step 1 is the check that does not depend on any
+claim made here.

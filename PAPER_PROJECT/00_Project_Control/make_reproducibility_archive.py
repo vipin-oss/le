@@ -300,7 +300,9 @@ DIR_SRC = {
 
 EXCLUDE_PARTS = ('__pycache__', '.pytest_cache', '.ipynb_checkpoints', 'packages', '.venv')
 EXCLUDE_SUFFIX = ('.pyc', '.pyo', '.DS_Store', '.swp', '~')
-EXCLUDE_NAMES = {'le.zip', 'handoff.zip', 'ARCHIVE_CHECKSUMS.txt'}
+# ARCHIVE_CHECKSUMS.txt and DEPOSIT_PACKAGE_SHA256.txt are records written *after* packing, so the object they
+# describe cannot contain them; excluding them keeps the archive hash checkable without a self-reference loop.
+EXCLUDE_NAMES = {'le.zip', 'handoff.zip', 'ARCHIVE_CHECKSUMS.txt', 'DEPOSIT_PACKAGE_SHA256.txt'}
 GENERATED_NAMES = {'README_PROGRAM.md', 'README_OVERLEAF.md', 'README_DATA.md', 'DATA_DICTIONARY.md',
                    'REPRODUCE_FROM_SCRATCH.md', 'RUN_ORDER.md', 'run_manifest.json',
                    'parameter_manifest.json', 'FIGURE_PROVENANCE.md', 'PROJECT_OVERVIEW.md',
