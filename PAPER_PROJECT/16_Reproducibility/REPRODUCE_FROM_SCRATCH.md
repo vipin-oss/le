@@ -58,8 +58,8 @@ log; with no TeX engine installed it prints the commands instead of failing.
 ```json
 {
  "verdict": "PASS",
- "run_date": "2026-10-04T03:10:15",
- "wall_s": 44.0,
+ "run_date": "2026-10-04T04:21:50",
+ "wall_s": 43.0,
  "environment": {
   "python": "Python 3.11.2",
   "libraries": {

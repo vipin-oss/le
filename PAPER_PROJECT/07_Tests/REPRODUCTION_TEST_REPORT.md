@@ -1,6 +1,6 @@
 # REPRODUCTION_TEST_REPORT (MASTER_PROMPT §75)
 
-Date 2026-10-04 03:10:15 · environment: Python 3.11.2, numpy 2.3.5 · wall 38 s (2 vCPU) · script `08_Experiments/reproduce.py`
+Date 2026-10-04 04:21:50 · environment: Python 3.11.2, numpy 2.3.5 · wall 38 s (2 vCPU) · script `08_Experiments/reproduce.py`
 Scope: one verification case, one convergence/error study, one principal result, one principal figure, one table — re-computed from the frozen code and compared with stored outputs.
 
 | item | expected / stored | recomputed | rel. difference | tolerance | status | note |

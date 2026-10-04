@@ -1,15 +1,15 @@
 {
  "built": "2026-10-04",
  "archive": "PAPER_PROJECT_COMPLETE_REPRODUCIBILITY_ARCHIVE.zip",
- "git_commit": "0e3a8ab2a1a2f8cc91d55305dc7909835fc1f5f7",
+ "git_commit": "cc7edb06d2557fa81f99c4a9111dd760488c842c",
  "git_branch": "arena/01a10176-le",
  "files": 1269,
  "files_note": "plus 2: this record and the two manifest files cannot hash themselves, so they are counted but not listed in SHA256SUMS.txt",
- "bytes_uncompressed": 76523909,
+ "bytes_uncompressed": 76524458,
  "sections": {
   "01_PROGRAM": {
    "files": 391,
-   "bytes": 10261411
+   "bytes": 10261546
   },
   "02_OVERLEAF": {
    "files": 14,
@@ -21,7 +21,7 @@
   },
   "04_REPRODUCTION": {
    "files": 11,
-   "bytes": 74819
+   "bytes": 74955
   },
   "05_DERIVATIONS": {
    "files": 9,
@@ -33,7 +33,7 @@
   },
   "07_DOCUMENTATION": {
    "files": 140,
-   "bytes": 6029534
+   "bytes": 6029778
   },
   "08_FINAL_OUTPUTS": {
    "files": 54,
@@ -41,7 +41,7 @@
   },
   "09_ARCHIVE_METADATA": {
    "files": 3,
-   "bytes": 19100
+   "bytes": 19134
   }
  },
  "excluded_patterns": [

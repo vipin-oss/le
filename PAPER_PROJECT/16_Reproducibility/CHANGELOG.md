@@ -3,6 +3,8 @@
 ## Repository history (this is real git history, not a reconstruction)
 
 ```
+2026-10-04 cc7edb0 Phase 11: checksum-of-record lines corrected in place (archive aa7657c1 / content ed539ef3 / deposit 1d0d4561)
+2026-10-04 4c7e365 Phase 11: final recorded hashes - archive aa7657c1 (1,270 files), deposit 1d0d4561 (650 files)
 2026-10-04 0e3a8ab Phase 11: ship hand-written records in 16_Reproducibility, add internal-reference audit, fix 3 dead doc paths (incl. a pip command that would have failed)
 2026-10-04 9b582f0 Phase 11: index documents as shipped inside archive d956f483 (repo copies byte-identical to the archive copies)
 2026-10-04 c61b8b4 Phase 11: FINAL_PACKAGE_STATUS counts made self-consistent (archive_build.json is authoritative)

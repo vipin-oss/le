@@ -166,11 +166,11 @@ Production grid/case definitions actually used (`production_matrix.py`): `GRIDS 
 | gate | exit code | tail of output |
 |---|---|---|
 | audit_tex | 0 | ok    number 2.0213e-03 also present in the master .md; ok    table count matches the .md (11 vs 11) |
-| connection_audit | 0 | - local branch differs from origin/arena/01a10176-le (0e3a8ab2a1a2 vs ; - branch 'arena/01a10176-le' has no upstream (it was never pushed) — ` |
+| connection_audit | 1 | - README 'Start here' points at packages/*.zip, which are gitignored a; - branch 'arena/01a10176-le' has no upstream (it was never pushed) — ` |
 | check_tex_commands_manuscript | 0 | RESULT: ALL COMMANDS DEFINED; PAPER_PROJECT/13_Manuscript/FINAL_REVISED_MANUSCRIPT.tex 0 command(s)  |
 | check_tex_commands_calculations | 0 | RESULT: ALL COMMANDS DEFINED; PAPER_PROJECT/13_Manuscript/FINAL_REVISED_CALCULATIONS.tex 0 command(s |
 | check_crossrefs_manuscript | 0 | equations  : 0 | tables: [] | figures: []; all cross-references resolve |
-| final_consistency | 0 | note  11 path(s) uncommitted at audit time (they are committed at the ; wrote final_consistency.json |
+| final_consistency | 0 | note  2 path(s) uncommitted at audit time (they are committed at the e; wrote final_consistency.json |
 | verify_code_freeze | 0 | manifest : 06_Source_Code/CODE_FREEZE_submission_2026_10_03j.json  (la; entries  : 27   identical: 27   differing: 0   missing: 0 |
 | verify_pdf_manuscript | 0 | [4] equations     : 79 on pages [3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5; [5] figure/caption: PASS — 0 figure(s) without a caption on the same p |
 | verify_pdf_companion | 0 | [4] equations     : 28 on pages [2, 3, 3, 4, 4, 4, 4, 4, 5, 5, 6, 6, 7; [5] figure/caption: PASS — 0 figure(s) without a caption on the same p |
