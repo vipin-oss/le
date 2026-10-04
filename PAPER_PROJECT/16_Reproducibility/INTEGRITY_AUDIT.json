@@ -24,7 +24,7 @@
    "note": "a missing entry means the code references a file the project does not track (generated raster renditions, packages/, _claims job dirs) - see 01_PROGRAM/RESTORE_PROJECT_TREE.md"
   },
   "absolute_local_paths_in_code": {
-   "files": 58,
+   "files": 60,
    "detail": {
     "01_PROGRAM/experiments/analyze_v2.py": [
      15
@@ -72,6 +72,10 @@
      32,
      33
     ],
+    "01_PROGRAM/utilities/serve_share.py": [
+     11,
+     110
+    ],
     "01_PROGRAM/control/make_central_story.py": [
      5,
      14
@@ -107,11 +111,6 @@
     ],
     "01_PROGRAM/handoff_baseline/BENCHMARK_SOURCE_REVIEW/ALIT_01/BUILD_SOURCE_REVIEW_ARTIFACTS.py": [
      11
-    ],
-    "01_PROGRAM/handoff_baseline/BENCHMARK_SOURCE_REVIEW/ALIT_01/PACKAGE_INVENTORY.csv": [
-     2,
-     3,
-     4
     ]
    },
    "note": "the frozen code refers to /home/user/PAPER_PROJECT on purpose and bootstrap_paths.sh provides that link; recorded as a caveat, not as a defect to hide",
@@ -222,5 +221,5 @@
   "final_versions_are_consistent": "ok",
   "no_file_shadowed_by_directory": "ok"
  },
- "files": 1248
+ "files": 1249
 }

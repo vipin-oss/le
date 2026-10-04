@@ -3,6 +3,10 @@
 ## Repository history (this is real git history, not a reconstruction)
 
 ```
+2026-10-03 99fc86a tools: serve_share.py duplicate header fix; artefact links verified at full size (archive 525e108f, deposit 50faf355, bundle e0254e0c)
+2026-10-03 4c819bd tools: range-capable share server used to publish the built artefacts
+2026-10-03 0619796 Phase 11: deposit rebuilt at the Phase-11 tip (718 files) and re-recorded with the reproducibility archive
+2026-10-03 a2a8682 Phase 11: archive at the all-green fixed point (repo index docs == archive copies)
 2026-10-03 3489ea3 Phase 11: correct the interpreter note (3.13.14 is a real release, 2026-06-10); provenance CSV authoritative
 2026-10-03 a8e7554 Phase 11: builder sidecar re-emit
 2026-10-03 e8719b6 Phase 11: packing restores all generated index files, re-emits the checksum sidecar last

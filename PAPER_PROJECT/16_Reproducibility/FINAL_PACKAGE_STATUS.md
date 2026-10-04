@@ -1,10 +1,10 @@
 # FINAL_PACKAGE_STATUS
 
-Overall status: **READY WITH DOCUMENTED GAPS**
+Overall status: **REPRODUCIBLE, WORK IN PROGRESS - see the failing gates below**
 
 | section | status | detail |
 |---|---|---|
-| Program (code) | COMPLETE | frozen solver + drivers + tests + builders + utilities; 385 files; environment pinned where the project pinned it, unpinned parts labelled NOT DOCUMENTED |
+| Program (code) | COMPLETE | frozen solver + drivers + tests + builders + utilities; 386 files; environment pinned where the project pinned it, unpinned parts labelled NOT DOCUMENTED |
 | Data | COMPLETE | 436 files: every raw run, every processed aggregate, every CSV the figures read, and a generated data dictionary |
 | Parameters | COMPLETE | `01_PROGRAM/parameter_manifest.json` extracted from the source by AST; no value typed by hand |
 | Figures | COMPLETE (raster renditions regenerable) | 37 output files; 200-dpi PNGs and vector PDFs shipped, 600-dpi PNG/TIFF regenerate in one command |
@@ -15,14 +15,14 @@ Overall status: **READY WITH DOCUMENTED GAPS**
 | Reproduction test | PASS | 5 steps, 18 files compared |
 | Documentation / audit trail | COMPLETE | 138 files: program status documents, ten phase reports, corrections log, audits, repository-level notes |
 | Versioning | COMPLETE for the repository era | git history exported to `07_DOCUMENTATION/` + twelve code-freeze manifests; pre-2026-10-01 version control: HISTORICAL CHANGELOG NOT AVAILABLE (documents exist instead, and are shipped) |
-| Integrity | COMPLETE | 1229 files hashed (SHA256SUMS.txt + file_manifest_sha256.csv); the archive is byte-deterministic from the tree |
+| Integrity | COMPLETE | 1230 files hashed (SHA256SUMS.txt + file_manifest_sha256.csv); the archive is byte-deterministic from the tree |
 
 ## Gate results recorded by this build
 
 | gate | exit code |
 |---|---|
 | audit_tex | 0 |
-| connection_audit | 0 |
+| connection_audit | 1 |
 | check_tex_commands_manuscript | 0 |
 | check_tex_commands_calculations | 0 |
 | check_crossrefs_manuscript | 0 |
