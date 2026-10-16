@@ -1,5 +1,0 @@
-# Large archives and local artefacts
-*.zip
-*.rar
-__pycache__/
-*.asv
