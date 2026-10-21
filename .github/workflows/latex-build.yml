@@ -80,11 +80,31 @@ jobs:
 
       - name: Check for missing references
         run: |
+          FAIL=0
           if grep -q "Reference.*undefined" main.blg 2>/dev/null; then
-            echo "WARNING: Missing bibliography references detected"
+            echo "ERROR: Missing bibliography references detected"
             grep "Reference.*undefined" main.blg | head -20
+            FAIL=1
           else
             echo "No missing bibliography references"
+          fi
+          if grep -qi "I didn't find a database entry" main.blg 2>/dev/null; then
+            echo "ERROR: BibTeX could not resolve the following citation keys"
+            grep -i "I didn't find a database entry" main.blg | head -20
+            FAIL=1
+          else
+            echo "All citation keys resolved by BibTeX"
+          fi
+          if grep -q "Citation.*undefined" main.log 2>/dev/null; then
+            echo "ERROR: Undefined citations in the compiled document"
+            grep "Citation.*undefined" main.log | head -20
+            FAIL=1
+          else
+            echo "No undefined citations in the document"
+          fi
+          if [ "$FAIL" -ne 0 ]; then
+            echo "::error::Bibliography check failed"
+            exit 1
           fi
 
       - name: Upload PDF artifact

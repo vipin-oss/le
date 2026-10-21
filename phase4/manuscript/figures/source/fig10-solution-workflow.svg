@@ -110,7 +110,7 @@
   <text x="65" y="533" class="label" font-size="10">Steps 5-6: Solve for wave modes and normalize consistently for energy flux computation.</text>
   <text x="65" y="548" class="label" font-size="10">Step 7: Apply interface conditions (perfect or imperfect bonding, electrical conditions for piezoelectric media).</text>
   <text x="65" y="563" class="label" font-size="10">Step 8: Compute energy flux J<sub>i</sub> = σ<sub>ji</sub>v<sub>i</sub> + q<sub>i</sub> for each mode.</text>
-  <text x="65" y="578" class="label" font-size="10">Steps 9-10: Compute energy ratios and validate against benchmarks (BM-1, RG-003).</text>
+  <text x="65" y="578" class="label" font-size="10">Steps 9-10: Compute energy ratios and validate against benchmarks (BM-1; interface energy ratios of Barak et al.).</text>
   <text x="65" y="593" class="label" font-size="10">Generalized theories require additional flux terms (Section 10.3).</text>
   <text x="65" y="608" class="label" font-size="10">Complex modes require careful normalization (Section 8.5, Challenge 15.5).</text>
 </svg>

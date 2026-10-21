@@ -7,20 +7,25 @@
 #
 # Contents:
 #   01_manuscript_latex/   - full LaTeX source (main.tex, 17 sections,
-#                            frontmatter, appendices, tables, figure sources)
-#   02_bibliography/       - verified BibTeX library + DOI verification
+#                            frontmatter, appendices, table sources,
+#                            figure sources, build files)
+#   02_bibliography/       - verified BibTeX library, DOI verification
+#                            ledger, source provenance, manuscript-local copy
 #   03_figures/            - original vector figure sources (SVG) + rendered
-#   04_tables/             - standalone table sources
-#   05_compiled_pdf/       - compiled manuscript PDF (from CI build)
-#   06_literature_database/- expanded literature database + text extractions
-#   07_research_history/   - phases 1-3 planning/research records
-#   08_build_guides/       - build instructions, CI workflow, scripts
+#   04_tables/             - standalone table sources (T1-T8)
+#   05_compiled_pdf/       - compiled manuscript PDF + LaTeX build logs
+#   06_literature_database/- expanded literature database, PDF inventory,
+#                            text extractions, metadata, ingestion report
+#   07_research_history/   - phases 1-3 planning/research records, equation
+#                            derivations, verification logs, domain taxonomy
+#   08_build_guides/       - build + validation scripts, CI workflow
 #   DELIVERABLES.md        - manifest and scientific-readiness assessment
-#   ZIP_MANIFEST.txt       - full file inventory with SHA-256 checksums
+#   ZIP_MANIFEST.txt       - SHA-256 checksum for every packaged file
 #
 # NOTE: copyrighted source PDFs are NEVER included. Only text extractions
 #       and synthesized content are packaged, per the repository's
-#       copyright guidance.
+#       copyright guidance. The single PDF shipped here is the compiled
+#       output of this repository's own LaTeX source.
 # ---------------------------------------------------------------------------
 set -euo pipefail
 
@@ -34,107 +39,97 @@ echo "==> Building ${PKG_NAME}"
 rm -rf "$STAGE"
 mkdir -p "$STAGE"
 
-# --- helper: copy a tracked file if it exists -------------------------------
-copy_if() {
-  local rel="$1"
-  if [ -e "${REPO_ROOT}/${rel}" ]; then
-    mkdir -p "$STAGE/$(dirname "$rel")"
-    cp -r "${REPO_ROOT}/${rel}" "$STAGE/$rel"
-  fi
+# --- place <destdir> <srcpath-relative-to-repo> [destname] -----------------
+place() {
+  local destdir="$1" src="$2" name="${3:-}"
+  [ -e "${REPO_ROOT}/${src}" ] || { echo "    ! missing: ${src}"; return 0; }
+  local base; base="$(basename "$src")"
+  [ -n "$name" ] && base="$name"
+  mkdir -p "${STAGE}/${destdir}"
+  cp -r "${REPO_ROOT}/${src}" "${STAGE}/${destdir}/${base}"
 }
 
-copy_all() {
-  local dest="$1"; shift
-  mkdir -p "$STAGE/${dest}"
-  for rel in "$@"; do
-    if [ -e "${REPO_ROOT}/${rel}" ]; then
-      mkdir -p "$STAGE/$(dirname "${rel}")"
-      cp -r "${REPO_ROOT}/${rel}" "$STAGE/$rel"
-    fi
-  done
+# --- place_dir <destdir> <srcdir-relative-to-repo> <subdir-name> -----------
+place_dir() {
+  local destdir="$1" src="$2" sub="$3"
+  [ -d "${REPO_ROOT}/${src}" ] || { echo "    ! missing: ${src}"; return 0; }
+  mkdir -p "${STAGE}/${destdir}"
+  cp -r "${REPO_ROOT}/${src}" "${STAGE}/${destdir}/${sub}"
 }
 
 # --- 01 manuscript LaTeX source --------------------------------------------
-copy_all "01_manuscript_latex/manuscript" \
-  phase4/manuscript/main.tex \
-  phase4/manuscript/Makefile \
-  phase4/manuscript/BUILD.md \
-  phase4/manuscript/sections \
-  phase4/manuscript/frontmatter \
-  phase4/manuscript/appendices \
-  phase4/manuscript/tables \
-  phase4/manuscript/figures
+echo "    01_manuscript_latex"
+place "01_manuscript_latex/manuscript" phase4/manuscript/main.tex
+place "01_manuscript_latex/manuscript" phase4/manuscript/Makefile
+place "01_manuscript_latex/manuscript" phase4/manuscript/BUILD.md
+place_dir "01_manuscript_latex/manuscript" phase4/manuscript/sections sections
+place_dir "01_manuscript_latex/manuscript" phase4/manuscript/frontmatter frontmatter
+place_dir "01_manuscript_latex/manuscript" phase4/manuscript/appendices appendices
+place_dir "01_manuscript_latex/manuscript" phase4/manuscript/tables tables
+place_dir "01_manuscript_latex/manuscript" phase4/manuscript/figures figures
 
 # --- 02 bibliography --------------------------------------------------------
-copy_all "02_bibliography" \
-  phase4/references/library.bib \
-  phase4/references/doi_verification.csv \
-  phase4/references/source_provenance.csv \
-  phase4/manuscript/references_local.bib
+echo "    02_bibliography"
+place "02_bibliography" phase4/references/library.bib
+place "02_bibliography" phase4/references/doi_verification.csv
+place "02_bibliography" phase4/references/source_provenance.csv
+place "02_bibliography" phase4/manuscript/references_local.bib references_local.bib
 
 # --- 03 figures -------------------------------------------------------------
-copy_all "03_figures" \
-  phase4/manuscript/figures/source \
-  phase4/manuscript/figures/rendered \
-  phase4/figures/source \
-  phase4/figures/rendered
+echo "    03_figures"
+place_dir "03_figures/manuscript" phase4/manuscript/figures/source source
+place_dir "03_figures/manuscript" phase4/manuscript/figures/rendered rendered
+place_dir "03_figures/legacy" phase4/figures/source source
+place_dir "03_figures/legacy" phase4/figures/rendered rendered
 
 # --- 04 tables --------------------------------------------------------------
-copy_all "04_tables" \
-  phase4/tables/source
+echo "    04_tables"
+place_dir "04_tables" phase4/tables/source source
 
 # --- 05 compiled PDF --------------------------------------------------------
+echo "    05_compiled_pdf"
 mkdir -p "$STAGE/05_compiled_pdf"
 if [ -f "${REPO_ROOT}/phase4/manuscript/main.pdf" ]; then
   cp "${REPO_ROOT}/phase4/manuscript/main.pdf" "$STAGE/05_compiled_pdf/main.pdf"
   echo "    + compiled PDF included"
 else
-  echo "    ! compiled PDF not present in working tree (CI publishes it to the branch)"
+  echo "    ! compiled PDF not present in working tree"
 fi
 for lg in main.log main.blg; do
   [ -f "${REPO_ROOT}/phase4/manuscript/${lg}" ] && cp "${REPO_ROOT}/phase4/manuscript/${lg}" "$STAGE/05_compiled_pdf/" || true
 done
 
 # --- 06 literature database -------------------------------------------------
-mkdir -p "$STAGE/06_literature_database"
-for rel in phase4/literature/expanded_literature_database.csv \
-           phase4/literature/master_inventory.csv \
-           phase4/literature/deep_extraction_summary.md \
-           phase4/literature/COPYRIGHT_GUIDANCE.md \
-           phase4/literature/search_results_nonlocal_piezoelectric.md \
-           phase4/literature/search_results_thermoelasticity_families.md \
-           phase4/literature/reports \
-           phase4/literature/metadata \
-           phase4/literature/extraction; do
-  copy_if "$rel"
+echo "    06_literature_database"
+for rel in expanded_literature_database.csv master_inventory.csv \
+           deep_extraction_summary.md COPYRIGHT_GUIDANCE.md \
+           search_results_nonlocal_piezoelectric.md \
+           search_results_thermoelasticity_families.md; do
+  place "06_literature_database" "phase4/literature/${rel}"
 done
+place_dir "06_literature_database" phase4/literature/extraction extraction
+place_dir "06_literature_database" phase4/literature/metadata metadata
+place_dir "06_literature_database" phase4/literature/reports reports
 
 # --- 07 research history (phases 1-3) --------------------------------------
-mkdir -p "$STAGE/07_research_history"
+echo "    07_research_history"
 for d in phase1 phase2 phase3; do
-  if [ -d "${REPO_ROOT}/${d}" ]; then
-    mkdir -p "$STAGE/07_research_history/${d}"
-    cp -r "${REPO_ROOT}/${d}/." "$STAGE/07_research_history/${d}/"
-  fi
+  place_dir "07_research_history" "$d" "$d"
 done
 for f in README.md research_profile.md domain_taxonomy.md \
          recommended_research_direction.md existing_review_analysis.md \
          five_candidate_topics.md source_verification_log.csv \
          topic_comparison_matrix.csv; do
-  copy_if "$f"
+  place "07_research_history" "$f"
 done
-if [ -d "${REPO_ROOT}/phase4/reports" ]; then
-  cp -r "${REPO_ROOT}/phase4/reports" "$STAGE/07_research_history/phase4_reports"
-fi
-if [ -d "${REPO_ROOT}/phase4/equations" ]; then
-  cp -r "${REPO_ROOT}/phase4/equations" "$STAGE/07_research_history/phase4_equations"
-fi
+place_dir "07_research_history" phase4/reports phase4_reports
+place_dir "07_research_history" phase4/equations phase4_equations
 
 # --- 08 build guides -------------------------------------------------------
-mkdir -p "$STAGE/08_build_guides"
-cp -r "${REPO_ROOT}/scripts" "$STAGE/08_build_guides/scripts" 2>/dev/null || true
-cp -r "${REPO_ROOT}/.github" "$STAGE/08_build_guides/.github" 2>/dev/null || true
-copy_if "Makefile"
+echo "    08_build_guides"
+place_dir "08_build_guides" scripts scripts
+place_dir "08_build_guides" .github .github
+place "08_build_guides" Makefile top-level-Makefile
 
 # --- manifest ---------------------------------------------------------------
 if [ -f "${REPO_ROOT}/DELIVERABLES.md" ]; then

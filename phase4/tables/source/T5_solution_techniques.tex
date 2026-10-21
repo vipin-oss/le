@@ -12,15 +12,15 @@
 \toprule
 \textbf{Technique} & \textbf{Mathematical Basis} & \textbf{Applicability} & \textbf{Limitations} & \textbf{Evidence} \\
 \midrule
-Normal mode expansion & Separation of variables; eigenfunction expansion & Layered media; simple geometries & Limited to separable problems; boundary condition constraints & \cite{achenbach1973} \\
+Normal mode expansion & Separation of variables; eigenfunction expansion & Layered media; simple geometries & Limited to separable problems; boundary condition constraints & \cite{Achenbach1973} \\
 Green's functions & Fundamental solution; convolution & Point source problems; infinite domains & Singular integrals; complex for anisotropic media & Standard method \\
 Fourier transform & Frequency domain; $e^{-i\omega t}$ convention & Time-harmonic problems; dispersion analysis & Assumes time-harmonic fields; initial-value problems need Laplace & Standard method \\
 Laplace transform & Time domain to complex frequency & Initial-value problems; transient waves & Branch cuts; inversion complexity & Standard method \\
-Christoffel equation & $\det[\Gamma_{ik}-\rho c^2\delta_{ik}]=0$ & Plane wave propagation in anisotropic media & Secular polynomial degree grows with coupling & \cite{achenbach1973} \\
-Scattering matrix & $\Delta\mathbf{X}=\mathbf{Q}$; interface matching & Layered/interfacial problems; wave scattering & Matrix dimension grows with mode count; complex mode normalization & \cite{gupta2023_energy_ratios} \\
-Finite element & Weak form; variational principles & Complex geometries; nonlinear problems & Mesh dependency; computational cost & \cite{reddy2002} \\
+Christoffel equation & $\det[\Gamma_{ik}-\rho c^2\delta_{ik}]=0$ & Plane wave propagation in anisotropic media & Secular polynomial degree grows with coupling & \cite{Achenbach1973} \\
+Scattering matrix & $\Delta\mathbf{X}=\mathbf{Q}$; interface matching & Layered/interfacial problems; wave scattering & Matrix dimension grows with mode count; complex mode normalization & \cite{Barak2023} \\
+Finite element & Weak form; variational principles & Complex geometries; nonlinear problems & Mesh dependency; computational cost & \cite{Hughes1980} \\
 \bottomrule
 \multicolumn{5}{@{}l}{\textbf{Notes:} Complex wave number classification (propagating/evanescent/attenuating) follows standard wave theory.}\\
-\multicolumn{5}{@{}l}{\emph{Scattering matrix formulation verified from RG-003 Eq. (44) (\cite{gupta2023_energy_ratios}, open access).}}\\
+\multicolumn{5}{@{}l}{\emph{Scattering matrix formulation verified from Eq.~(44) of Barak et al.~\cite{Barak2023} (open access).}}\\
 \end{tabularx}
 \end{table}
