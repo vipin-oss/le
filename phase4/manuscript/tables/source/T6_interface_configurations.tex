@@ -1,0 +1,21 @@
+%======================================================================
+% Table T6: Interface configurations
+%======================================================================
+\begin{table}[htbp]
+\centering
+\small
+\caption{Interface condition configurations for wave reflection and transmission problems.}
+\label{tab:T6_interface}
+\begin{tabularx}{\textwidth}{@{}lXXXXX@{}}
+\toprule
+\textbf{Interface type} & \textbf{Mechanical conditions} & \textbf{Thermal conditions} & \textbf{Electrical conditions} & \textbf{Applications} \\
+\midrule
+Perfectly bonded (welded) & $u_i^{(1)} = u_i^{(2)}$; $\sigma_{j3}^{(1)} = \sigma_{j3}^{(2)}$ & $T^{(1)} = T^{(2)}$; $q_3^{(1)} = q_3^{(2)}$ & N/A (non-piezoelectric) & Welded joints, composite laminates, geological interfaces \\
+Perfectly bonded + piezoelectric & Same mechanical & Same thermal & $\phi^{(1)} = \phi^{(2)}$; $D_3^{(1)} = D_3^{(2)}$ & Piezoelectric sensors, transducers, smart structures \\
+Insulated (thermally) & Same mechanical & $q_3 = 0$ & N/A & Thermal barriers, insulated boundaries \\
+Insulated (electrically) & Same mechanical & Same thermal & $D_3 = 0$ & Electrically insulated piezoelectric interfaces \\
+Imperfect bonding (spring-type) & $u_i^{(2)} - u_i^{(1)} = K_i^u t_i$; $\sigma_{j3}^{(1)} = \sigma_{j3}^{(2)}$ & Same thermal & Same electrical & Adhesive layers, micro-cracks, weakly bonded interfaces \\
+Thermal contact resistance & Same mechanical & $q_3^{(1)} = q_3^{(2)}$; $T^{(1)} - T^{(2)} = R q_3$ & N/A & Thermal interface materials, electronic cooling \\
+\bottomrule
+\end{tabularx}
+\end{table}

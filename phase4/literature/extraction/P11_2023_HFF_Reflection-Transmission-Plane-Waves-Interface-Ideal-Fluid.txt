@@ -1,0 +1,1438 @@
+ThecurrentissueandfulltextarchiveofthisjournalisavailableonEmeraldInsightat:
+https://www.emerald.com/insight/0961-5539.htm
+fl
+HFF Re ection/transmission of plane
+33,2
+waves at the interface of an ideal
+fl
+uid and nonlocal
+piezothermoelastic medium
+912
+VipinGuptaandRajeshKumar
+Received29April2022
+Revised5September2022 DepartmentofMathematics,IndiraGandhiUniversityMeerpur,Rewari,India
+Accepted16September2022
+ManjeetKumar
+DepartmentofMathematics,Dr.B.R.AmbedkarGovt.College,Dabwali,India
+VijayataPathania
+DepartmentofMathematics,H.P.University,RegionalCenterDharamshala,India,and
+M.S.Barak
+DepartmentofMathematics,IndiraGandhiUniversityMeerpur,Rewari,India
+Abstract
+Purpose–Thispaperaimstostudythevariationof energyratiosofdifferentreflectedandtransmitted
+wavesbycalculatingtheamplituderatios.
+Design/methodology/approach–Thisinvestigationstudiedthereflectionandtransmissionofplane
+wavesonaninterfaceofnonlocalorthotropicpiezothermoelasticspace(NOPHS)andfluidhalf-space(FHS)in
+reference to dual-phase-lag theory under three different temperature models, namely, without-two-
+temperature,classical-two-temperature,andhyperbolic-two-temperaturewithmemory-dependentderivatives
+(MDDs).
+Findings–Theprimary(P)planewavespropagatethroughFHSandstrikeattheinterfacex =0.The
+3
+resultsareonewavereflectedinFHSandfourwavestransmittedinNOPHS.Itisnoticedthattheseratiosare
+observed under the impact of nonlocal, dual-phase-lag (DPL), two-temperature and memory-dependent
+parameters and are displayed graphically. Some particular cases are also deduced, and the law of
+conservationofenergyacrosstheinterfaceisjustified.
+Research limitations/implications – According to the available literature, there is no substantial
+researchontheconsideredmodelincorporatingNOPHSandFHSwithhyperbolictwo-temperature,DPLand
+memory.
+Practical implications – The current model may be used in various fields, including earthquake
+engineering,nuclearreactors,highparticleaccelerators,aeronautics,soildynamicsandsoon,whereMDDs
+andconductivetemperatureplayasignificantrole.Wavepropagationinafluid-piezothermoelasticmedia
+withdifferentcharacteristicssuchasinitialstress,magneticfield,porosity,temperature,etc.,providescrucial
+informationaboutthepresenceofnewandmodifiedwaves,whichishelpfulinavarietyoftechnicaland
+geophysicalsituations.Experimentalseismologists,newmaterialdesignersandresearchersmayfindthis
+modelvaluableinrevisingearthquakeestimates.
+I
+M
+nt
+e
+e
+t
+r
+h
+n
+o
+a
+d
+t
+s
+io
+f
+n
+o
+a
+r
+l
+H
+Jo
+ea
+u
+t
+rn
+&
+al
+F
+o
+lu
+f
+i
+N
+d
+u
+F
+m
+lo
+e
+w
+rical Theauthor(Mr.VipinGupta)isthankfulandacknowledgestheCouncilofScientificandIndustrial
+Vol.33No.2,2023 Research(CSIR),NewDelhi(File.No.09/1293(0003)/2019-EMR-I),forthefinancialsupporttocarry
+pp.912-937
+©EmeraldPublishingLimited outthisresearchwork.
+0
+D
+9
+O
+6
+I
+1-
+1
+5
+0
+5
+.
+3
+11
+9
+08/HFF-04-2022-0259
+Disclosurestatement:Theauthorsdeclaredthatthereisnopotentialconflictofinterest.
+Socialimplications–Theresearchersmayclassifythematerialusingthetwo-temperatureparameter Planewavesat
+andthetime-delay operator,wheretheparameter isa newindication ofitscapacitytotransmit heat in theinterface
+interactionwithvariousmaterials.
+Originality/value–Thesubmittedmanuscriptisoriginalworkdonebytheteamofsaidauthorsandeach
+authorcontributedequallytopreparingthismanuscript.
+Keywords Hyperbolic-two-temperature,Memory-dependentderivative,Piezothermoelasticmedium,
+Nonlocal,Energyratios
+913
+PapertypeResearchpaper
+1.Introduction
+Intheclassicaltheoryofthermoelasticity,theheatconductionmodelbasedonFourier’slaw
+predicts the infinite speed of heat propagation, which is unrealistic. To overcome this
+paradox,LordandShulman(1967)developedthefirstgeneralized(non-classical)theoryof
+thermoelasticity by adding one relaxation time t in Fourier’s law, known as the Lord–
+q
+Shulman(LS)theory.GreenandNaghdi(1992,1993)furtherextendedthegeneralizedtheory
+of thermoelasticity by incorporating the heat flux rate–temperature gradient relation in
+Fourierlaw.Somenewspeculationsonthegeneralizedcoupledtheoryofthermoelasticity
+have been studiedby Chandrasekharaiah(1998). In 1995, Tzou (1995) investigated a new
+dual-phase-lag(DPL)modelbyaddingtworelaxationtimest andt intheheatequation.
+q T
+Thet andt representsthetimedelaysduetothefasttransienteffectsofthermalinertia
+q T
+andmicrostructuralinteractions,respectively.Thewell-posednessandexponentialstability
+oftheDPLmodelhavebeenexaminedbyQuintanillaandRacke(2006).HobinyandAbbas
+(2020)examinedthegeneralizedthermoelasticinteractionundertheDPLmodel.Lewisand
+histeam(LewisandGarner,1972;Lewisetal.,1991,1997,2004)studiedthevariousmodels
+ofheatandfluidflowproblems.
+WangandLi(2011),byreplacingtheCaputotype(CaputoandMainardi,1971)fractional
+derivative with the integral form of the derivative developed the concept of memory-
+dependentderivatives(MDDs).Thefirstorderoffunctionfwiththehelpofakernelfunction
+canbeexpressedasanintegralformofacommonderivative.Thekernelfunctionk(t(cid:1)z)
+canbechosenarbitrarilyonaslippinginterval[(t(cid:1)t),t]inthefollowingform:
+ð
+1 t
+DtfðtÞ¼
+t
+kðt(cid:1)zÞf0ðzÞdz; (1.1)
+t(cid:1)t
+Wheret>0isthedelaytime.Thefunctionalvalueinrealtimealsodependsonthepast;
+thisisthemainfeatureof“MDD.”Dtisknownasanonlocaloperator.Anappropriatekernel
+functionmaybeselectedaccordingtothenatureoftheproblem.
+2b a2
+kðt(cid:1)zÞ¼1(cid:1) ðt(cid:1)zÞþ ðt(cid:1)zÞ2
+t t2
+8
+< 1 if a¼b¼0
+¼ 1(cid:1)ðt(cid:1)zÞ=t ifa¼0; b¼1=2 (1.2)
+:
+ð1(cid:1)ðt(cid:1)zÞ=tÞ2 ifa¼b¼1
+A classical-two-temperature (CTT) model of heat conduction in deformable bodies was
+developedbyChenandGurtin(1968),ChenandWilliams(1968),andChenetal.(1969).In
+this theory, the heat conduction equation relies on thermal and conductive temperature
+HFF fluctuations.Youssef(2006)formulatedtheCTTmodelanduniquenesstheoremsaboutthe
+33,2 generalizedmodelofthermoelasticitybasedontheLSmodel.YoussefandEl-Bary(2018)
+replaced the CTT model with the hyperbolic-two-temperature (HTT) model. They
+eliminatedtheconundrumofinfinitespeedpropagationofthermalwavesbyincorporating
+theaccelerationofthethermalandconductivetemperatures.Sheoranetal.(2020)studiedthe
+wave propagation in an initially stressed rotating thermo-diffusive medium with CTT.
+914 BassiounyandRajagopalan(2020)investigatedthethermoelasticmodelexposedtothermal
+stressintheframeworkofHTTtheoryusingfractionalderivatives.
+The nonlocal theory of thermoelasticity assumes that the different physical quantities
+suchas(bodyforce,mass,internalenergyandentropy)areinfluencednotonlybythevalues
+ofindependentconstitutivevariablesbutalsoatagivenpointbythevaluesforthewhole
+system. The traditional continuum elasticity theory fails to characterize the constitutive
+relationshipforthesematerials.Tosolvetheshortcomingsoftheconventional(local)theory
+of thermoelasticity, Edelen and Laws (1971), Edelen et al. (1971) and Eringen and Edelen
+(1972)createdthenonlocaltheoryofthermoelasticity.Polizzotto(2001),Chakraborty(2007)
+andSinghetal.(2017)expandedtheideaofnonlocalitytoelasticityandavarietyofother
+domains.Severalresearchers,includingVashishth andSukhija (2015), Barak etal.(2017),
+Kumaretal.(2018,2019,2021)investigatedtheenergysharesofreflectedandtransmitted
+waves at the interface of different types of mediums. Recently, Kumar et al. (2021)
+investigatedthepropagationcharacteristics(attenuation,velocity,lociofverticalslowness,
+phase shift, energy) of plane harmonic waves on the stress-free surface of a partially
+saturated poro-thermoelastic media. Later, Kumar et al. (2022) examined the partition of
+incidentenergyamongdistinctreflectedandrefractedwavesattheweldedinterfaceofan
+elasticsolidandunsaturatedporo-thermoelasticsolid.
+In recent years, piezoelectric materials have grown in popularity for dynamic sensing,
+actuationandactivestructuralandmechanicalsystemscontrol.KumarandSharma(2017)
+discussed the reflection of plane waves at the interface of elastic/piezothermoelastic solid
+half-spaceswithfractional-orderderivatives.Thenonlocalgeneralizedelasticitytheoryfor
+piezothermoelastic materials with thermal characteristics was established by Li and He
+(2018). In the context of MDD and two-temperature theories, Sur and Mondal (2020)
+developedanonlocalmathematicalmodel.YangandChen(2020)investigatedthenonlocal
+DPL heat theory for nonlocal thermal–viscoelastic materials. Mondal and Othman (2021)
+studiedtheeffectofmemoryonpiezothermoelasticmediumunderthreedifferenttheories.
+KumarandSharma(2021)usedtheCTTtheorytoinvestigatetheresponseofenergyratios
+attheelasticandpiezothermoelasticinterfaces.
+According to the literature mentioned above, there is no substantial research on the
+considered model incorporating fluid half-space (FHS) and nonlocal orthotropic
+piezothermoelastichalf-space(NOPHS)withhyperbolictwo-temperatureDPLandmemory.
+As a result, theeffects of HTTnonlocal, DPL andMDD on theenergy ratios of different
+wavesontheconsideredsurfacehavetobeinvestigated. Theimpactoftwo-temperature,
+MDDandnonlocalparametersontheenergyratiosisillustratedgraphicallyinFigures2-19.
+2.Basicequations
+Theconstitutiverelationsforahomogenous,nonlocal,anisotropicpiezothermoelasticsolid
+underHTTwithMDDsintheabsenceoffreechargedensity,bodyforcesandshearforces
+aregivenbyEringenandEdelen(1972),YoussefandEl-Bary(2018),andEzzatetal.(2016)
+asfollows:
+(cid:2) (cid:3)
+1(cid:1)j2r2 t ¼s ¼c e (cid:1)h E (cid:1)b T (2.1) Planewavesat
+ij ij ijkl kl ijk k ij
+theinterface
+t ; ¼ru€ (2.2)
+ij j i
+E ¼(cid:1)f; (2.3)
+i i
+915
+D ¼«E þh e þtT (2.4)
+i ij j ijk jk i
+(cid:4) (cid:5)
+(cid:6) (cid:6) (cid:7)(cid:7)
+t2
+ð1þt
+T
+Dt ÞK
+ij
+f*;
+ij
+¼ 1þt
+q
+Dt þ
+2
+q D2
+t
+rC
+e
+T _ þT
+0
+b
+ij
+u_
+i
+;
+j
+(cid:1)t
+i
+f_;
+i
+(2.5)
+T
+€ ¼f€*(cid:1)a*f*;
+(2.6)
+jj jj
+D; ¼0 (2.7)
+i i
+FollowingVashishthandSukhija(2015),basicgoverningequationsofaninviscidFHSin
+theabsenceofbodyforcesareasfollows:
+sf ¼lf uf; d (2.8)
+ij k k ij
+sf; ¼rf u€f ði;j;k;l ¼1;2;3Þ (2.9)
+ij j i
+2.1LimitingCases
+Case 1:Theheat conduction equation (2.5), inthelimitingcase t = t = 0 andT = f*,
+q T
+reducesintotheworkofBiot(1956).
+Case2:Theheatconductionequation(2.5),inthelimitingcaseT=f*,t >0,t2 ¼0,
+q q
+t
+T
+=0,k(t(cid:1)z)=1andDt !
+@
+@
+t
+,transformsintotheworkofLordandShulman(1967).
+Case3:Theheatconductionequation(2.5),inthelimitingcaseT=f*,k(t(cid:1)z)=1and
+Dt
+C
+!
+as @
+@
+e t
+,
+4
+c
+:
+ha
+T
+n
+h
+g
+e
+es
+h
+i
+e
+n
+a
+to
+t
+t
+c
+h
+o
+e
+n
+w
+du
+o
+c
+r
+t
+k
+io
+o
+n
+fT
+e
+z
+q
+o
+u
+u
+at
+(1
+io
+9
+n
+95
+(
+)
+2
+.
+.5), in the limiting case T € ¼T, f€* ¼f*,
+t2
+q
+¼t
+T
+¼0,k(t(cid:1)z)=1andDt !
+@
+@
+t
+,transformsintotheworkofYoussef(2006).
+Case5:Ifthefunctionofnonlocalityinthepiezothermoelasticmediaisignored,thenthe
+nonlocal piezothermoelastic stress–strain equation (2.1), in the limiting case j = 0,
+transformsintothelocalpiezothermoelasticstress–strainequation.
+2.2Nomenclature
+c =elasticstiffnesstensor;
+ijkl
+b =thermalmodulitensors;
+ij
+C =specificheatatconstantstrain;
+e
+E =electricfielddensity;
+i
+r =density;
+D =electricdisplacement;
+i
+HFF K =componentsofthermalconductivity;
+ij
+33,2
+f=electricalpotential;
+T =referencetemperature;
+0
+t =pyroelectricconstants;
+i
+t =phaselagofthetemperaturegradient;
+T
+t =phaselagofheatflux;
+q
+916 t ij =componentsofthenonlocalstress;
+s =componentsofthelocalstress;
+ij
+T =thermaltemperature;
+f*=conductivetemperature;
+a* ¼componentsoftwo-temperatureparameter;
+ij
+j =nonlocalparameter;
+e =componentofstrain;
+ij
+l,m=lame’sconstant;
+v=circularfrequency;
+h « =piezothermalmodulitensors;
+ijk, ij
+q =slownessparameter;and
+c =apparentphasevelocity.
+The engineering notations are used for simplicity, and the subscripts preceded by a
+superposeddot“.”andcomma“,”representtimeandpartialderivatives,respectively.FHS
+parametersaredenotedbyasuperscriptf.
+3.Formulationoftheproblem
+WeconsideredthattheinviscidFHS(x <0)andNOPHS(x >0)attheinterfacex =0are
+3 3 3
+weldedincontactasshowninFigure1.Theplanewaveispropagatinginthex x -plane,
+! 1 3
+andthe(cid:6)displace(cid:7)mentvectorsforNOPHSandFHSarerepresentedby u ¼ðu
+1
+;0;u
+3
+Þand
+! u f ¼ uf;0;uf ,respectively.
+1 3
+Following Slaughter (2002), for two-dimensional homogenous, nonlocal DPL the
+anisotropic piezothermoelastic medium in the case of two-phase symmetry, on equations
+(2.1)to(2.7)aregivenby:
+(cid:2) (cid:3)
+c u ; þ c u ; þ ðc þ c Þu ; þ ðh þ h Þf; (cid:1)b T; ¼r 1(cid:1)j2r2 u€
+11 1 11 55 1 33 13 55 3 13 31 15 13 11 1 1
+(3.1)
+Incident PWave Reflected P waves
+θ 0 θ 1
+FHS x <0
+3
+x
+1
+Figure1.
+Reflectionand NOPHS x
+3
+>0
+qP
+transmissionofplane
+wavesinFHSand qS
+NOPHS x qT
+3 eP
+(cid:2) (cid:3)
+ðc þc Þu ; þ c u ; þ c u ; þ h f; þh f; (cid:1) b T; ¼r 1(cid:1)j2r2 u€ Planewavesat
+55 13 1 13 55 3 11 33 3 33 15 11 33 33 33 3 3
+theinterface
+(3.2)
+(cid:4) (cid:5)
+(cid:6) (cid:7) t2 (cid:6) (cid:2) (cid:3)(cid:7)
+ð1þt
+T
+Dt Þ K
+11
+f;*
+11
+þK
+33
+f;*
+33
+(cid:1) 1þt
+q
+Dt þ
+2
+qD2
+t
+rC
+e
+T _ þT
+0
+b
+11
+u_
+1
+;
+1
+þb
+33
+u_
+3
+;
+3
+(cid:1)t
+3
+f_;
+3
+¼0
+(3.3) 917
+ðh þh Þu ; þ h u ; þ h u ; (cid:1) « f; (cid:1) « f; þ tT; ¼0 (3.4)
+15 31 1 13 15 3 11 33 3 33 11 11 33 33 3 3
+T € ¼f€*(cid:1)a* f*; (cid:1)a* f*; (3.5)
+11 11 33 33
+Usingequation(2.8)into(2.9),wehave:
+(cid:6) (cid:7)
+lf uf; þuf; (cid:1)rfu€f ¼0 (3.6)
+1 11 3 13 1
+(cid:6) (cid:7)
+lf uf; þuf; (cid:1)rfu€f ¼0 (3.7)
+1 31 3 33 3
+Thefollowingdimensionlessquantitiesaretaken:
+(cid:6) (cid:7) (cid:6) (cid:7)
+v (cid:2) (cid:3)
+x 0; x 0; u 0; u 0; uf0; uf0 ¼ 1 x ; x ; u ; u ; uf;uf ; t0; t0; t0
+1 3 1 3 1 3 c 1 3 1 3 1 3 T q
+1 (cid:6) (cid:7)
+¼vðt; t ; tÞ; j0 ¼ v 1j; f0 ¼ v 1 h 31 f; T0; f* 0
+1 T q c c b T
+¼ b 11 (cid:2) T; f* (cid:3) ; (cid:6) s0;s 1 f0 (cid:7) ¼ 1 1 1 (cid:6) 1 s 0 ;sf (cid:7) ; (cid:6) a*0; a*0 (cid:7)
+rc2 ij ij b T ij ij 11 33
+1 11 0
+(cid:6) (cid:7)
+1
+¼ a* ; a*
+c2 11 33
+1
+(3.8)
+qffiffiffiffi
+wherec 1 ¼ c r 11,v 1 ¼ rC K e 1 c2 1 :
+Invokingequation(3.8)inthesystemofequations(3.1)to(3.7)withtheremovalofprimes
+(0)takesthefollowingform:
+!
+@2 @2 (cid:2) (cid:3) @2 @2u @2f @T
+þl (cid:1) 1(cid:1)j2r2 u þl 3 þl (cid:1) ¼0 (3.9)
+@x2 11@x2 @t2 1 12@x @x 13@x @x @x
+1 3 1 3 1 3 1
+! !
+HFF @2u @2 @2 (cid:2) (cid:3) @2 @2 @2 @T
+1 þ l þl (cid:1)l 1(cid:1)j2r2 u þ l þl f(cid:1)l ¼0
+33,2 @x @x 21@x2 22@x2 23 @t2 3 24@x2 25@x2 26@x
+1 3 1 3 1 3 3
+(3.10)
+(cid:4) (cid:5) !
+(cid:2) (cid:3) t2 @2u @2u @T @2f
+918 ð1þt
+T
+Dt Þ l
+31
+f*;
+11
+þl
+32
+f*;
+33
+(cid:1) 1þt
+q
+Dt þ
+2
+qD2
+t @x @
+1
+t
+þl
+33@x @
+3
+t
+þl
+34 @t
+(cid:1)l
+35@x @t
+¼0
+1 3 3
+(3.11)
+! !
+@2u @2 @2 @2 @2 @T
+1 þ l þl u (cid:1) l þl fþl ¼0 (3.12)
+@x @x 41@x2 42@x2 3 43@x2 44@x2 45@x
+1 3 1 3 1 3 3
+@2T @2f* @2f* @2f*
+(cid:1) þa* þa* ¼0 (3.13)
+@t2 @t2 11 @x2 33 @x2
+1 3
+!
+@2uf @2uf 1 @2uf
+1 þ 3 (cid:1) 1 ¼0 (3.14)
+@x2 @x @x cf2 @t2
+1 3 1
+!
+@2uf @2uf 1 @2uf
+1 þ 3 (cid:1) 3 ¼0 (3.15)
+@x @x @x2 cf2 @t2
+1 3 3
+where l 11 ¼c c 5 1 5 1 , l 12 ¼c13 c þ 11 c55, l 13 ¼h 3 c 1 11 þ h 3 h 1 15b 11 T 0 , l 21 ¼ c55 c þ 55 c13 , l 22 ¼ c55 c þ 33 c13 , l 23 ¼ c55 c þ 11 c13 ,
+l 24 ¼ h 3 h 1 ð 1 c 5 5 b 5 1 þ 1 T c 0 13 Þ , l 25 ¼ h 3 h 1 ð 3 c 3 5 b 5 1 þ 1 T c 0 13 Þ , l 26 ¼ ðc55 c þ 11 b c1 3 3 3 Þb 11 , l 31 ¼K T 1 0 1 b v 2 1 1 1 r , l 32 ¼K T 3 0 3 b v 2 1 1 1 r , l 33 ¼b b 3 1 3 1 ,
+l 34 ¼c T 11 0 r b C 2 11 e, l 35 ¼t h 3T 31 0, l 41 ¼ ðh 15 h þ 15 h 31 Þ , l 42 ¼ ðh 15 h þ 33 h 31 Þ , l 43 ¼ h 31 « ð 1 h 1 1 b 5 1 þ 1 T h 0 31 Þ , l 44 ¼ h 31 « ð 3 h 3 1 b 5 1 þ 1 T h 0 31 Þ ,
+l 45 ¼ b ðh c11 t þ 3 h Þ ,cf2 ¼r l fc f 2 1 .
+11 15 31
+4.Wavepropagationanalysis
+Inthecaseofaplaneharmonicwave,thewavesolutioninNOPHSisconsideredtobeofthe
+followingform:
+(cid:9) (cid:4) (cid:5)(cid:10)
+(cid:2) (cid:3)
+x
+u ; u ; f; f*; T ðx ;x ;tÞ ¼ðG; M; N;O; PÞexp iv (cid:1) 1(cid:1)qx þt ; (4.1)
+1 3 1 3 c 3
+WhereG,M,N,OandParetheamplitudevectors.
+Thesystemofequations(3.9)to(3.13),withtheaidofequation(4.1),yieldsahomogenous
+system
+CR¼0 (4.2)
+2 3 2 3
+m þm q2 m q m q m þm q2 G Planewavesat
+C¼ 6 6 6 6 6 6 4 11 m m 1 1 q 12 m 21 m þ 1 3 3 1 m q 22 q2 m 23 (cid:1) þ m 14 m 32 q 24 q2 m m 2 1 3 5 5 3 q þ þ m m 1 3 2 6 4 6 q q 2 3 7 7 7 7 7 7 5 ; R¼ 6 6 6 6 6 4 M N 7 7 7 7 7 5 theinterface
+m q m þm q2 (cid:1)m (cid:1)m q2 (cid:1)m q(cid:1)m q3 O
+1 41 42 43 44 45 46
+919
+(4.3)
+where:
+(cid:4) (cid:5) (cid:4) (cid:5)
+c c3 l l c2 l c2 c2
+m ¼ (cid:1) (cid:1)cvj2;m ¼ 11(cid:1)vj2 c3;m ¼ 12 ;m ¼ 13 ;m ¼i t* (cid:1) ;
+11 v v 12 v 13 v 14 v 15 11 v2
+(cid:6) (cid:7)
+m 16 ¼it* 33 c2, m 1 ¼ v c, (cid:6)m 21 ¼l v 21(cid:7) (cid:1)l 23 c v 2þj2v , m 22 ¼l22 v c2(cid:1)l 23 j2c2v, m 23 ¼l v 24,
+m
+24
+¼d2
+v
+5c2, m
+25
+¼i
+(cid:6)
+l
+26
+t*
+11
+(cid:1)
+(cid:7)v
+c2
+2
+, m
+26
+¼t*
+33
+ic2l
+26
+, m
+31
+¼l33
+v
+c2, m
+32
+¼l35
+v
+c2,
+b=ivm
+33
+¼A
+v
+1l31þi
+(cid:6)
+l
+34
+t*
+11
+(cid:1)
+(cid:7)
+c
+v
+2 ,m
+34
+¼A1
+v
+c2l31(cid:1)il
+34
+t*
+33
+c2,m
+41
+¼l
+v
+41,m
+42
+¼l42
+v
+c2,m
+43
+¼l
+v
+43,
+m
+44
+¼l44
+v
+c2,m
+45
+¼il
+45
+t*
+11
+(cid:1)
+v
+c2
+2
+,m
+46
+¼t*
+33
+ic2l
+45
+,A
+1
+¼1þt q X
+1
+ðt
+þ
+;bÞ
+t T
+þ
+X
+t
+ð
+2 q
+t
+b
+;
+X
+bÞ
+ðt;bÞ=2;
+(cid:2) (cid:2) (cid:3) (cid:2) (cid:3) (cid:3)
+(cid:1)b2t2 a2(cid:1)2bþ1 þ2bta2(cid:1)b þ2a2 expð(cid:1)btÞþb2t2(cid:1)2bbtþ2a2
+Xðt;bÞ¼
+b2t3
+Foraconsistentsystem,thedeterminantofthecoefficientsmatrixCinequation(4.3)must
+bevanishing,whichyieldsacharacteristicequationasfollows:
+f q8þ f q6þ f q4þ f q2þ f ¼ 0: (4.4)
+11 12 13 14 15
+Theexpressionofthecoefficientsf (i=1,2,3,4,5)isgivenintheAppendix.q (i=1,2,3,4)
+1i i
+correspond to the roots of this equation whose imaginary parts are positive, and q (i =
+i
+5,6,7,8)representthosewhoseimaginarypartsarenegative.Theeigenvaluesareq (i=1,2,3)
+i
+thatrepresentthepropagatingquasiP(qP)mode,quasiS(qS)modeandquasiT(qT)mode,
+respectively,andq correspondtothecomponentoftheelectricpotential(eP)modeofwave
+4
+propagation.
+TheeigenvectorsG M N andO correspondingtoeachq (i=1,2,...,8)canbewritten
+i, i, i, i i
+asfollows:
+cfðC Þ cfðC Þ cfðC Þ
+W ¼ 42 qi; U ¼ 43 qi; H ¼ 44 qi (4.5)
+i cfðC Þ i cfðC Þ i cfðC Þ
+41 qi 41 qi 41 qi
+where:
+M N O
+W ¼ i; U ¼ i; H ¼ i (4.6)
+i G i G i G
+i i i
+andcfðC Þ denotes thecofactor C correspondingto theeigenvalueq. When theplane
+harmonic i w j q aivespropagateinanNO i P j HS,thecorrespondingamplitudes i (G M N andO)
+i, i, i i
+HFF decrease, which depends on the frequency of these waves. The solution of mechanical
+33,2 displacement,electricpotentialandtemperaturefieldinNOPHSbecomes:
+(cid:4) (cid:4) (cid:5)(cid:5)
+(cid:2) (cid:3) X8
+x
+u ; u ; f; f* ¼ ð1; W; U; HÞG exp iv (cid:1) 1(cid:1)q x þt (4.7)
+1 3 i i i i c i 3
+i¼1
+920
+ThesolutionofthewaveequationintheFHScanbeexpressedas:
+(cid:6) (cid:7) (cid:2) (cid:3) (cid:4) (cid:4) (cid:5)(cid:5)
+x
+uf;uf ¼ Gf;Af exp iv (cid:1) 17qfx þt (4.8)
+1 3 c 3
+rffiffiffiffiffiffiffiffiffiffiffi
+Where Gf andAf are theassociated amplitudes, q ¼1 c2(cid:1)1 is theunknown slowness
+f c c2
+f
+parameterandcfisthelongitudinalwavevelocityintheFHS.
+5.Reflectionandtransmissioncoefficients
+5.1Amplituderatios
+AplanelongitudinalwaveincidentattheinterfaceviatheFHSmakesanangleu withthe
+0
+negativedirectionofthex -axis,resultinginonereflectedwaveandfourtransmittedwaves.
+3
+Theformalsolutionsofthemechanicaldisplacements,electricpotential,temperature,stress
+andelectricdisplacementcomponentsareassumedinanNOPHSareasfollows:
+(cid:9) (cid:4) (cid:5)(cid:10)
+(cid:2) (cid:3) X
+x
+u ;u ; f; f* ¼ ð1; W; U; HÞG exp iv (cid:1) 1(cid:1)qx þt (5.1)
+1 3 i i i i c 3
+i
+(cid:9) (cid:4) (cid:5)(cid:10)
+X
+x
+ðs ; s ; D Þ¼ iv ðD ; D ; D ÞG exp iv (cid:1) 1(cid:1)qx þt i¼1;2;3;4 (5.2)
+33 31 3 1i 2i 5i i c 3
+i
+DisplacementsandnormalstressinFHSbecome:
+(cid:6) (cid:7) X(cid:6) (cid:7) (cid:4) (cid:4) (cid:5)(cid:5)
+x
+uf;uf ¼ 1;Wf Gfexp iv (cid:1) 1þð(cid:1)1Þp qfx þt (5.3)
+1 3 p p c 3
+p¼1;2
+(cid:4) (cid:4) (cid:5)(cid:5)
+X
+x
+sf ¼iv rfcGfexp iv (cid:1) 1þð(cid:1)1Þp qfx þt (5.4)
+33 p c 3
+p¼1;2
+cf
+Wf ¼qfc; Wf ¼(cid:1)qfc; c¼ (5.5)
+1 2 sinu
+Where p = 1 corresponds to the incident wave, and p = 2 corresponds to the reflected
+wave.
+5.2Boundaryconditions Planewavesat
+Theboundaryconditionsforthismodelattheinterfacex 3 =0areasfollows: theinterface
+(cid:6) (cid:7)
+i: Continuityofnormalstress s ¼sf (5.6)
+33 33
+ii: Vanishingofthetangentialstressðs ¼0Þ (5.7)
+31 921
+(cid:6) (cid:7)
+iii: Continuityofnormalvelocitydisplacement u_ ¼u_f (5.8)
+3 3
+iv: TheinterfaceisthermallyinsulatedðT; ¼0Þ (5.9)
+3
+v: TheelectricdisplacementcomponentisvanishedðD ¼0Þ (5.10)
+3
+Equations (5.1) to (5.4) and the above boundary conditions (5.6) to (5.10) result in a non-
+homogenoussystem
+DX ¼S (5.11)
+where:
+2 3 2 3 2 3
+D¼ 6 6 6 6 6 4 D D D D 1 2 3 4 1 1 1 1 D D D D 1 2 3 4 2 2 2 2 D D D D 1 2 3 4 3 3 3 3 D D D D 1 2 3 4 4 4 4 4 (cid:1) q r 0 0 fc fc 7 7 7 7 7 5 ;X ¼ 6 6 6 6 4 X X X X 1 2 3 4 7 7 7 7 5 ;S¼ 6 6 6 6 6 4 r q 0 0 f f c c 7 7 7 7 7 5 :
+D D D D 0 Xf 0
+51 52 53 54 5
+(cid:9) (cid:4) (cid:5) (cid:10)
+c h b T b c
+D ¼(cid:1) 13þ c W þ 33 11 0U q (cid:1) 33 11pH ;
+1i c 33 i h i i b iv i i
+31 11
+c W h b T U
+D ¼(cid:1) 55 i(cid:1)c q (cid:1) 15 11 0 i; D ¼W D ¼qpH;
+2i c 55 i ch 3i i 4i i i i
+31
+h « T b tc t*
+D ¼(cid:1) 31(cid:1)h qW þ 33 0 11qU (cid:1) 3 11 pH; p ¼v2 11þt* v2q2(cid:1)1
+5i c 33 i i h i i ivb i i i c2 33 i
+31 11
+G Gf
+X ¼ i;Xf ¼ 2;ði¼1;2;3;4Þ
+i Gf 5 Gf
+1 1
+After solving this non-homogenous system of equations, theamplitude ratios of reflected
+andtransmittedwavesareobtained.
+HFF 6.Energyratios
+33,2 Wemustexaminetheenergybalanceatthecontacttophysicallyexplaintheanalyticformulations
+of the amplitude ratios in this problem. The average energy flux of incident, reflected and
+transmitted waves may be used to determine the energy distribution between reflected and
+transmitted waves at the interface x = 0, over a unit area surface element. Following Kumar
+3
+andSharma(2021),thenormalacousticfluxinapiezothermoelasticsolidisasfollows:
+922 (cid:4) (cid:5)
+P ¼(cid:1)Re s u_ þ s u_ (cid:1) fD _ þ K T; T (6.1)
+13 1 33 3 3 33 3T
+0
+Andthatfortheincidentandreflectedwavesfortheinviscidfluidphasearefollows:
+(cid:6) (cid:7)
+Pe ¼(cid:1)Re se u_e (6.2)
+33 3
+Theaverageenergyfluxesoftheincident,reflectedandtransmittedwavesareasfollows:
+1
+hP i¼ v2qfrfc2jGfj2 (6.3)
+I 2 1
+1
+hP i¼(cid:1) v2qfrfc2jGfj2 (6.4)
+R 2 2
+(cid:4) (cid:5)
+1 iK
+hP i¼ v2Re D þD W þ 33D p H þD U jG j2; ðs¼1;2;3;4Þ: (6.5)
+s 2 2s 1s s vT 4s s s 5s s s
+0
+Theenergyratiosofthereflectedandtransmittedwavesaredefinedasfollows:
+hPfi hP i
+E ¼ R ; E ¼ s ; ðs¼1;2;3;4Þ: (6.6)
+R hP i s hP i
+I I
+Theinteractionenergyratios(interactionbetweenthedifferenttransmittedwaves)areas
+follows:
+hP i
+E ¼ st (6.7)
+st hP i
+I
+where:
+(cid:4) (cid:5)
+1 iK
+hP i¼ v2 Re D G G þD W G G þ 33D p H GG þD UGG : (6.8)
+st 2 2s s t 1s s s t vT 4s s s t s 5s t t s
+0
+X4
+Theenergyisconservedif ðES þE þE þE Þ¼1 (6.9)
+s int RP RS
+s¼1
+X4
+whereE ¼ E istheresultantinteractionenergybetweenthetransmittedwaves.
+int st
+s;t¼1;s6¼t
+7.Particularcases Planewavesat
+Case1:Ifweconsiderheatconduction,equation(2.5)intheabsenceofmemoryeffect,i.e. theinterface
+k(t(cid:1)z)=1andDt !
+@
+@
+t
+inequation(4.3),wefindbinplaceofX(t,b).
+Case2:Todevelopthethreedifferenttemperaturemodelsofpiezothermoelasticity,then
+t* ; t* willbeinthefollowingform:
+11 33
+8
+<a* =v2; a* =v2 forhyperbolic(cid:1)two(cid:1)temperature
+11 33 923
+t* ; t* ¼ a* ; a* forclassical(cid:1)two(cid:1)temperature
+11 33 : 11 33
+0; 0 forone(cid:1)temperature
+Case3:IfweconsidertheCTTcasealongwithj=0,t =0,X(t,b)=bandneglecttheterm
+T
+t2,thenthefollowingresultsareingoodagreementwiththespecialcaseofVashishthand
+q
+Sukhija(2015).
+8.Numericalresultsanddiscussion
+Theamplituderatiosandenergyratiosfortheincidenceplanewavesattheinterfacex =0
+3
+are computed and plotted graphically with varying angles of incidence for a particular
+modelofnonlocalpiezothermoelasticmaterial(cadmiumselenide[CDSe])andinviscidfluid
+(water).Differentparametersareconsideredfornumericalcomputingpurposesast=0.02s
+t = 0.05s, t = 0.03s, a* ¼0:7 and a* ¼0:8 such that material constants fulfill the
+q T 11 33
+constraintsestablishedbyQuintanillaandRacke(2006).Following,VashishthandSukhija
+(2015),theCdSeandwaterconstantshavebeentakenintoconsiderationasgiveninTable1.
+Threescenariosemergewhilediscussingthenumericalresultsofthismathematicalmodel,
+whichwillbediscussedinthefollowingthreesubsections.
+8.1Impactoftwo-temperatureonenergyratios
+Inthefollowingsubsections,Figures2–7representtheenergydistributionoftheincident
+plane wave in the FHS among various reflected, transmitted and interaction waves
+Symbol Value
+c 74.1(cid:3)109Nm(cid:1)2
+11
+c 45.2(cid:3)109Nm(cid:1)2
+12
+c 39.3(cid:3)109Nm(cid:1)2
+13
+c 83.6(cid:3)109Nm(cid:1)2
+33
+c 13.2(cid:3)109Nm(cid:1)2
+55
+T 298K
+0
+b 6.21(cid:3)105C2N(cid:1)1m(cid:1)2
+11
+b 5.51(cid:3)105C2N(cid:1)1m(cid:1)2
+33
+rf 2.65(cid:3)103kgm(cid:1)3
+h (cid:1)0.160Cm(cid:1)2
+13
+h (cid:1)0.138Cm(cid:1)2
+15
+« 8.26(cid:3)10(cid:1)11Nm(cid:1)2K(cid:1)1
+11
+« 9.03(cid:3)10(cid:1)11Nm(cid:1)2K(cid:1)1
+33
+t (cid:1)2.9(cid:3)10(cid:1)6Cm(cid:1)2K(cid:1)1
+3
+K ,K 9Wm(cid:1)1k(cid:1)1
+11 33
+v 2p(cid:3)103Hz
+r 5,504kgm(cid:1)3
+C 260Jkg(cid:1)1K(cid:1)1 Table1.
+e
+cf 0.0011(cid:3)103ms(cid:1)1 Valuesofthe
+h 0.347Cm(cid:1)2 materialsconstants
+33
+HFF
+33,2
+924
+Figure2.
+Variationofenergy
+ratioofreflected
+wavewithangleof
+incidence(u)
+0
+correspondingtothreedifferentmodels,namely,one-temperatureorwithout-two-temperature
+(OTT),CTT,andHTTmodelswithMDDsforafixedkernelk(t(cid:1) z)=1(cid:1) (t(cid:1) z)/tand
+nonlocalparameterj=pnmfollowingEringenandEdelen(1972)withrespecttotheangleof
+incidence(u)from0°to900.Thesolidgreenlinewithacircle,asolidredlinewithastaranda
+0
+solidbluelinewithadiamondrepresenttheHTT,CTTandOTTmodels,respectively.The
+sub-indentpictureprovidesanenlargedviewoftheoverlappingcurvestonoticethevariance
+inthemicroscale.
+Figure2representsthevariationofenergyratiosofreflectedPwave(E )againsttheangleof
+R
+incidence(u).ItisnoticedthatjE japproachestounitywithvanishingangleofincidence.Butas
+0 R
+thefurtherincreaseofangleofincidencejE jdecreases,reportedu =85°isthecriticalangle,
+R 0
+thereafter angle jE j decreases exponentially for all three considered models. A significant
+R
+portion of incident wave energy is reflected back in the liquid medium, indicating that the
+transmission medium is substantially denser. Initially, the magnitude of E in the case of
+R
+theOTTmodelisdominated,andafteru=17°thetwo-temperaturemodelsdominatedinthe
+wholerangeofangleofincidence17°<u#90°.Intheenergyofthereflectedwave,theHTT
+andCTTmodelshavenosignificantdifferencethroughoutthewholerangeofangleofincidence.
+ThebehaviorofenergyratioscarriedoutbyfourtransmittedwavesES (qP),ES (qS),
+1 2
+ES (qT) andES (eP) mode andthetotal interaction energy ratiobetweenthetransmitted
+3 4
+waves E against the u are depicted in Figures 3 to 7. As the angle of incidence u
+int 0 0
+increases,thetransmittedandinteractionenergyincreasesgradually,butafterthecritical
+angle u = 85°, energy increases exponentially. It is observed that all five graphs follow
+0
+almostthesamepattern,buttheirmagnitudesaredifferentinallthreeconsideredmodels.
+The magnitude in the case of the HTT model dominates over CTT and OTT models.
+In contrast, the negligible difference between CTT and OTT models is noticed in all
+transmitted and interaction energy distribution types. It is observed that qS mode
+propagatesmoreeasilyinthepiezothermoelasticmediumascomparedtoothertransmitted
+wavemodeswhiletheqPmodeisverylessexcited.
+8.2ImpactofLStheoryandmemoryontheenergyratio
+In this section, we want to analyze the distribution of energy ratios in three different
+models; the dual-phase-lag model without memory-dependent derivatives (DPL), and the
+Planewavesat
+theinterface
+925
+Figure3.
+Variationofenergy
+ratiooftransmitted
+qPwavewithangle
+ofincidence(u)
+0
+Figure4.
+Variationofenergy
+ratiooftransmitted
+qSwavewithangleof
+incidence(u)
+0
+dual-phase-lagmodelwithmemory-dependentderivatives(DPL(MDD)),andtheLSmodel.
+So,inthisseriesofFigures(8to13),eachoneismadeupofthreecurvestoallowforaquick
+comparison. This series of figures has been plotted by considering the HTT theory and
+nonlocal parameters j= pnm in all three models. The solid green line with a circle
+represents the DPL model, a solid red line with a star represents the DPL model with
+memory,andasolidbluelinewithadiamonddescribestheLSmodel.Thesub-indentfigure
+HFF
+33,2
+926
+Figure5.
+Variationofenergy
+ratiooftransmitted
+qTwavewithangle
+ofincidence(u)
+0
+Figure6.
+Variationofenergy
+ratiooftransmitted
+ePwavemodewith
+angleofincidence(u)
+0
+isdrawntoshowthemagnifiedimageoftheoverlappingcurvestoobservethevariationin
+themicroscale.
+Figure8representsthevariationofenergyratiosofreflectedPwave(E )withrespecttothe
+R
+angleofincidence(u).ItisnoticedthatjE j firstincreasesgraduallyasu increasesand
+0 R 0
+approachestounity.Afterthat,itdecreasesslowlyandreportedu=85°isthecriticalangle
+0
+afterthatanglejE jdecreasesexponentiallyforallthreeconsideredmodels.Themagnitude
+R
+ofE incaseoftheLSmodelisdominatedinthewholerangeofincidenceangles0°<u#
+R
+900.ThereisnoremarkableimpactofmemoryinDPLmodelsisnoticedinmagnitudesof
+energyfluxofreflectedwavesinthewholerangeofincidenceangles.
+Planewavesat
+theinterface
+927
+Figure7.
+Variationofenergy
+ratioofinteraction
+energywithangleof
+incidence(u)
+0
+Figure8.
+Variationofenergy
+ratioofreflected
+wavewithangleof
+incidence(u)
+0
+ThebehaviorofenergyratioscarriedoutbyfourtransmittedwavesES (qP),ES (qS),
+1 2
+ES (qT),andES (eP)modeandthetotalinteractionenergyratiobetweenthetransmitted
+3 4
+wavesE againsttheu aredepictedinFigures(9to13),respectively.Allfivegraphsseem
+int 0
+to follow a similar pattern, although their magnitudes varied in each of the three models
+analyzed. As the angle of incidence u increases, the transmitted and interaction energy
+0
+increases gradually but near the grazing incidence, i.e. after the critical angle u = 85°,
+0
+energy increases exponentially. The magnitude in DPL (MDD) model dominates over LS
+andwithoutmemoryDPLmodels,whilethenegligibledifferencebetweentheLSmodeland
+withoutmemoryDPLmodelsisnoticedinalltypesoftransmittedandinteractionenergy
+distributionexceptthethermalmode;inthiscase,reversebehavior,isobserved.Compared
+with other transmitted wave modes, the qS mode propagates more readily in the
+HFF
+33,2
+928
+Figure9.
+Variationofenergy
+ratiooftransmitted
+qPwavewithangle
+ofincidence(u)
+0
+Figure10.
+Variationofenergy
+ratiooftransmitted
+qSwavewithangleof
+incidence(u)
+0
+piezothermoelastic material, but the qP mode is much less stimulated. In the presence of
+MDDs, except the thermal mode, all types of modes propagate faster in the
+piezothermoelasticmediumascomparedwithothermodels.Atnearthegrazingincidence,
+all types of modes are highly excited in all considered models. The impact of MDDs is
+significantinalltransmittedwavesinNOPHSandnotsignificantinreflectedwavesinFHS
+duetothepresenceofanonlocalmemoryoperatorD intheheatconductionequationinthe
+t
+piezothermoelasticmediumandduetoitsabsenceinliquidmedium.
+Planewavesat
+theinterface
+929
+Figure11.
+Variationofenergy
+ratiooftransmitted
+qTwavewithangle
+ofincidence(u)
+0
+Figure12.
+Variationofenergy
+ratiooftransmitted
+ePwavemodewith
+angleofincidence(u)
+0
+8.3Impactofnonlocalityontheenergyratio
+Torevealtheeffectofnonlocalparametersontheenergyratios,weplottedFigures14–19.
+Forthispurpose,weusedtheHTTtheorywithMDD.Wewanttoanalyzethedistributionof
+energyratiosatthreedifferentvaluesofthenonlocalparameter,namely,j=0,j=2pand
+j= 4pin nanometers. As a result, each of the figures in Figures 14–19 comprises three
+curvestoallowforacomparisonataglance.Thesolidgreenlinewithacirclerepresentsthe
+HFF
+33,2
+930
+Figure13.
+Variationofenergy
+ratioofinteraction
+energywithangleof
+incidence(u)
+0
+Figure14.
+Variationofenergy
+ratioofreflected
+wavewithangleof
+incidence(u)
+0
+local HTT model, a solid red line with a star represents the nonlocal HTT model when
+j= 2pandthesolid blue line with a diamond representsthenonlocal HTTmodel when
+j= 4p. The sub-indent figure is drawn to show the magnified image of the overlapping
+curvestoobservethevariationinmicroscale.
+Figure14representsthevariationofenergyratiosofreflectedPwaves(E )withrespectto
+R
+the angle of incidence (u). It is noticed that as we increase the value of the nonlocal
+0
+parameter from 0 to 2p, there are negligible changes in the magnitude of E . But as we
+R
+furtherincreasethenonlocalparameterfrom2pto4p,themagnitudeofE alsoincreasesin
+R
+thewholerangeofangleofincidence0°<u#90°.Thepresenceofnonlocalitydoesnot
+Planewavesat
+theinterface
+931
+Figure15.
+Variationofenergy
+ratiooftransmitted
+qPwavewithangle
+ofincidence(u)
+0
+Figure16.
+Variationofenergy
+ratiooftransmitted
+qSwavewithangleof
+incidence(u)
+0
+change the trend of E . But with the increase in value of the nonlocal parameter, the
+R
+magnitudeofE isincreased.
+R
+ThebehaviorofenergyratioscarriedoutbyfourtransmittedwavesES (qP),ES (qS),
+1 2
+ES (qT) andES (eP) mode andthetotal interaction energy ratiobetweenthetransmitted
+3 4
+wavesE againsttheuaredepictedinFigures15–19,respectively.Allfivegraphsseemto
+int 0
+follow a nearly identical pattern, although their magnitudes varied in each of the three
+modelsanalyzed.ItisnoticedthatthemagnitudeoftheenergyratiosES ,ES ,ES andE
+2 3 4 int
+increases with the increase of j. On the contrary, the magnitude of the energy ratio ES
+1
+decreaseswiththeincreaseofj.InpresenceofnonlocalityqS,qTandePmodesareexcited,
+HFF
+33,2
+932
+Figure17.
+Variationofenergy
+ratiooftransmitted
+qTwavewithangle
+ofincidence(u)
+0
+Figure18.
+Variationofenergy
+ratiooftransmitted
+ePwavemodewith
+angleofincidence(u)
+0
+whiletheqPmodeisdepressed.ThemagnitudeofqSmodedominatesallothertransmitted
+waves in the piezothermoelastic medium; in other words, the qS mode propagates in a
+nonlocal piezothermoelastic medium more rapidly compared with the remaining
+transmittedmodes.
+9.Conclusions
+This manuscript presents a mathematical treatment to discuss the reflection and
+transmissionofharmonicplanewavesattheinterfaceofFHS/NOPHSbyusingthedual-
+phase-lags theory with hyperbolic-two-temperature, memory-dependent derivatives, and
+Planewavesat
+theinterface
+933
+Figure19.
+Variationofenergy
+ratioofinteraction
+energywithangleof
+incidence(u)
+0
+Eringen’s nonlocal elasticity theory. The graphically depicts the energy ratios of various
+reflectedandtransmittedwavesduetotheincidentPwave.TheresultsforCTT,OTTand
+local piezothermoelastic models are obtained. Exceptional cases such as the LS and DPL
+modelsarealsodiscussed.Fromtheanalysisoftheillustration,thefollowingpointscanbe
+noted:
+(cid:4) Energy ratios of reflected, transmitted and interaction waves for all types of
+considered three different temperature and nonlocal models with or without MDD
+dependontheangleofincidence(u).
+0
+(cid:4) Itisobservedthatineachcase,thesumofenergyratiosisapproximatelyunityat
+eachangleofincidence0°#u #90°.Hencethebalanceenergyconservationlawis
+0
+verifiedattheinterface.
+(cid:4) Theenergyfluxofalltransmittedwaves(qP,qS,qT,eP)andE aredominatedin
+int
+theHTTmodelascomparedtotheCTTandOTTmodels.
+(cid:4) The nonlocal parameter jhas a significant influence on the energy ratios of all
+reflectedandtransmittedwaves;asthevalueofthenonlocalparameterincreases,so
+doesthevalueoftheenergyratio.
+(cid:4) The energy ratios of reflected and transmitted waves asymptotically change their
+behavior at near the grazing incidence reported critical angle at u = 85°. The
+0
+changeinanonlocalparameter,two-temperatureparametersandpresenceofMDD
+doesnotsignificantlyaffectthevalueofthecriticalangle.
+(cid:4) The significant impact of MDDs has been observed in all transmitted waves in
+NOPHS, as expected theoretically due to the presence of the nonlocal memory
+operatorintheheatconductionequationofpiezothermoelasticmaterial.
+10.Applicationsandfuturescope
+Thecurrentmodelmaybeusedinvariousfields,includingearthquakeengineering,nuclear
+reactors,highparticleaccelerators,aeronautics,soildynamics,etc.,whereMDDandconductive
+HFF temperatureplayasignificantrole.Wavepropagationinafluid-piezothermoelasticmediawith
+33,2 different characteristics such as initial stress, magnetic field, porosity, temperature, etc.,
+providescrucialinformationaboutthepresenceofnewandmodifiedwaves,whichishelpfulin
+a variety of technical and geophysical situations. Experimental seismologists, new material
+designers and researchers may find this model valuable in revising earthquake estimates.
+According to this newly developed model, we may classify the material using the two-
+934 temperatureparameterandthetime-delayoperator,wheretheparameterisanewindicationof
+itscapacitytotransmitheatininteractionwithvariousmaterials.
+References
+Barak,M.,Kumari,M.andKumar,M.(2017),“Effectofhydrologicalpropertiesontheenergysharesof
+reflectedwavesatthesurfaceofapartiallysaturatedporoussolid”,AIMSGeosciences,Vol.3
+No.1,pp.67-90,doi:10.3934/geosci.2017.1.67.
+Bassiouny,E.andRajagopalan,R.(2020),“Hyperbolictwotemperaturefractional-orderthermoelastic
+modelsubjectedtothermalloadingwithtworelaxationtimes”,AdvancesinDynamicalSystems
+andApplications,Vol.15No.2,pp.217-229,doi:10.37622/ADSA/15.2.2020.217-229.
+Biot, M.A. (1956), “Thermoelasticity and irreversible thermodynamics”, Journal of Applied Physics,
+Vol.27No.3,pp.240-253,doi:10.1063/1.1722351.
+Caputo,M.andMainardi,F.(1971),“Anewdissipationmodelbasedonmemorymechanism”,Pureand
+AppliedGeophysicsPAGEOPH,Vol.91No.1,pp.134-147.
+Chakraborty, A. (2007), “Wave propagation in anisotropic media with non-local elasticity”,
+International Journal of Solids and Structures, Vol. 44 No. 17, pp. 5723-5741, doi: 10.1016/j.
+ijsolstr.2007.01.024.
+Chandrasekharaiah,D.S.(1998),“Hyperbolicthermoelasticity:areviewofrecentliterature”,Applied
+MechanicsReviews,Vol.51No.12,pp.705-729,doi:10.1115/1.3098984.
+Chen, P.J. and Gurtin, M.E. (1968), “On a theory of heat conduction involving two temperatures”,
+Zeitschrift Für Angewandte Mathematik Und Physik ZAMP, Vol. 19 No. 4, pp. 614-627, doi:
+10.1007/BF01594969.
+Chen, P.J. and Williams, W.O. (1968), “A note on non-simple heat conduction”, Zeitschrift Für
+Angewandte Mathematik Und Physik ZAMP, Vol. 19 No. 6, pp. 969-970, doi: 10.1007/
+BF01602278.
+Chen, P.J., Gurtin, M.E. and Williams, W.O. (1969), “On the thermodynamics of non-simple elastic
+materialswithtwotemperatures”,ZeitschriftFürAngewandteMathematikUndPhysikZAMP,
+Vol.20No.1,pp.107-112,doi:10.1007/BF01591120.
+Edelen,D.G.B.andLaws,N.(1971),“Onthethermodynamicsofsystemswithnonlocality”,Archivefor
+RationalMechanicsandAnalysis,Vol.43No.1,pp.24-35,doi:10.1007/BF00251543.
+Edelen,D.G.B.,Green,A.E.andLaws,N.(1971),“Nonlocalcontinuummechanics”,ArchiveforRational
+MechanicsandAnalysis,Vol.43No.1,pp.36-44,doi:10.1007/BF00251544.
+Eringen,A.C.andEdelen,D.G.B.(1972),“Onnonlocalelasticity”,InternationalJournalofEngineering
+Science,Vol.10No.3,pp.233-248,doi:10.1016/0020-7225(72)90039-0.
+Ezzat,M.A.,El-Karamany,A.S.andEl-Bary,A.A.(2016),“Modelingofmemory-dependentderivative
+ingeneralizedthermoelasticity”,TheEuropeanPhysicalJournalPlus,Vol.131No.10,pp.1-12,
+doi:10.1140/epjp/i2016-16372-3.
+Green,A.E.andNaghdi,P.M.(1992),“Onundampedheatwavesinanelasticsolid”,JournalofThermal
+Stresses,Vol.15No.2,pp.253-264.
+Green, A.E. and Naghdi, P.M. (1993), “Thermoelasticity without energy dissipation”, Journal of
+Elasticity,Vol.31No.3,pp.189-208,doi:10.1007/BF00044969.
+Hobiny,A.andAbbas,I.(2020),“Generalizedthermoelasticinteractioninatwo-dimensionalporous Planewavesat
+mediumunderdualphaselagmodel”,InternationalJournalofNumericalMethodsforHeatand
+theinterface
+FluidFlow,Vol.30No.11,pp.4865-4881,doi:10.1108/HFF-12-2019-0917.
+Kumar,R.andSharma,P.(2017),“Effectoffractionalorderonenergyratiosattheboundarysurfaceof
+elastic-piezothermoelastic media”, Coupled Systems Mechanics, Vol. 6 No. 2, pp. 157-174, doi:
+10.1016/j.amc.2019.04.020.
+Kumar, R. and Sharma, P. (2021), “Response of two-temperature on the energy ratios at elastic-
+935
+piezothermoelasticinterface”,JournalSolidMechanics,Vol.13No.2,pp.186-201,doi:10.22034/
+JSM.2020.1907521.1637.
+Kumar, M., Barak, M.S. and Kumari, M. (2019), “Reflection and refraction of plane waves at the
+boundary of an elastic solid and double-porosity dual-permeability materials”, Petroleum
+Science,Vol.16No.2,pp.298-317,doi:10.1007/s12182-018-0289-z.
+Kumar,M.,Kumari,M.andBarak,M.S.(2018),“Reflectionofplaneseismicwavesatthesurfaceof
+double-porositydual-permeabilitymaterials”,PetroleumScience,Vol.15No.3,pp.521-537,doi:
+10.1007/s12182-018-0245-y.
+Kumar,M.,Liu,X.,Kalkal,K.K.,Dalal,V.andKumari,M.(2021),“Inhomogeneouswavereflectionfrom
+the surface of a partially saturated thermoelastic porous media”, International Journal of
+NumericalMethodsforHeatandFluidFlow,Vol.32No.6,pp.1911-1943,doi:10.1108/HFF-04-
+2021-0279.
+Kumar,M.,Liu,X.,Kumari,M.andYadav,P.(2022),“Wavepropagationattheweldedinterfaceofan
+elastic solid and unsaturated poro-thermoelastic solid”, International Journal of Numerical
+MethodsforHeatandFluidFlow,doi:10.1108/hff-01-2022-0008.
+Kumar,M.,Singh,A.,Kumari,M.andBarak,M.S.(2021),“Reflectionandrefractionofelasticwavesat
+theinterfaceofanelasticsolidandpartiallysaturatedsoils”,ActaMechanica,Vol.232No.1,
+pp.33-55,doi:10.1007/s00707-020-02819-z.
+Lewis, R.W. and Garner, R.W. (1972), “A finite element solution of coupled electrokinetic and
+hydrodynamic flow in porous media”, International Journal for Numerical Methods in
+Engineering,Vol.5No.1,pp.41-55,doi:10.1002/nme.1620050105.
+Lewis, R.W., Huang, H.C., Usmani, A.S. and Cross, J.T. (1991), “Finite element analysis of heat
+transferandflowproblemsusingadaptiveremeshingincludingapplicationtosolidification
+problems”, International Journal for Numerical Methods in Engineering, Vol. 32 No. 4,
+pp.767-781.
+Lewis, R.W., Navti, S.E. and Taylor, C. (1997), “A mixed Lagrangian-Eulerian approach to
+modellingfluidflowduringmouldfilling”,InternationalJournalforNumericalMethodsin
+Fluids, Vol. 25 No. 8, pp. 931-952, doi: 10.1002/(sici)1097-0363(19971030)25:8<931::aid-
+fld594>3.0.co;2-1.
+Lewis,R.W.,Nithiarasu,P.andSeetharamu,K.N.(2004),FundamentalsoftheFiniteElementMethod
+forHeatandFluidFlow,JohnWileyandSonsLtd,TheAtrium,SouthernGate,Chichester.
+Li,D.andHe,T.(2018),“Investigationofgeneralizedpiezoelectric-thermoelasticproblemwithnonlocal
+effectandtemperature-dependentproperties”,Heliyon,Vol.4No.10,p.e00860,doi:10.1016/j.
+heliyon.2018.e00860.
+Lord, H.W. and Shulman, Y. (1967), “A generalized dynamical theory of thermoelasticity”,
+JournaloftheMechanicsandPhysicsofSolids,Vol.15No.5,pp.299-309,doi:10.1016/0022-
+5096(67)90024-5.
+Mondal, S. and Othman, M.I.A. (2021), “Memory dependent derivative effect on generalized piezo-
+thermoelastic medium underthree theories”, Waves inRandom and Complex Media, Vol. 31
+No.6,pp.2150-2167,doi:10.1080/17455030.2020.1730480.
+Polizzotto,C.(2001),“Nonlocalelasticityandrelatedvariationalprinciples”,InternationalJournalof
+SolidsandStructures,Vol.38Nos42/43,pp.7359-7380,doi:10.1016/S0020-7683(01)00039-7.
+HFF Quintanilla,R.andRacke,R.(2006),“Qualitativeaspectsindual-phase-lagthermoelasticity”,SIAM
+33,2 JournalonAppliedMathematics,Vol.66No.3,pp.977-1001.
+Sheoran,D.,Kumar,R.,Kumar,S.andKalkal,K.K.(2020),“Wavepropagationinaninitiallystressed
+rotating thermo-diffusive medium with two-temperature and micro-concentrations”,
+International Journal of Numerical Methods for Heat and Fluid Flow, Vol. 31 No. 4,
+pp.1245-1267.
+936 Singh,D.,Kaur,G.andTomar,S.K.(2017),“Wavesinnonlocalelasticsolidwithvoids”,Journalof
+Elasticity,Vol.128No.1,pp.85-114,doi:10.1007/s10659-016-9618-x.
+Slaughter, W.S. (2002), The Linearized Theory of Elasticity, Springer Science and Business Media,
+BirkhauserBoston,MA.
+Sur,A.andMondal,S.(2020),“Effectofnon-localityinthevibrationofamicro-scalebeamundertwo-
+temperaturememoryresponses”,WavesinRandomandComplexMedia,pp.1-28,doi:10.1080/
+17455030.2020.1851069.
+Tzou,D.Y.(1995),“Aunifiedfieldapproachforheatconductionfrommacro-tomicro-scales”,Journal
+ofHeatTransfer,Vol.117No.1,pp.8-16,doi:10.1115/1.2822329.
+Vashishth, A.K. and Sukhija, H. (2015), “Reflection and transmission of plane waves from fluid-
+piezothermoelasticsolidinterface”,AppliedMathematicsandMechanics,Vol.36No.1,pp.11-36,
+doi:10.1007/s10483-015-1892-9.
+Wang,J.L.andLi,H.F.(2011),“Surpassingthefractionalderivative:conceptofthememory-dependent
+derivative”,Computers andMathematicswith Applications,Vol.62No.3,pp. 1562-1567,doi:
+10.1016/j.camwa.2011.04.028.
+Yang,W.andChen,Z.(2020),“Nonlocaldual-phase-lagheatconductionandtheassociatednonlocal
+thermal-viscoelastic analysis”, International Journal of Heat and Mass Transfer, Vol. 156,
+p.119752,doi:10.1016/j.ijheatmasstransfer.2020.119752.
+Youssef, H.M. (2006), “Theory of two-temperature-generalized thermoelasticity”, IMA Journal of
+AppliedMathematics,Vol.71No.3,pp.383-390,doi:10.1093/imamat/hxh101.
+Youssef, H.M. and El-Bary, A.A. (2018), “Theory of hyperbolic two-temperature generalized
+thermoelasticity”,Materials Physics and Mechanics, Vol.40No.2,pp.158-171,doi: 10.18720/
+MPM.4022018_4.
+Appendix
+(cid:2) (cid:3)
+f ¼m m ðm m þm m Þþm ðm m þm m Þþm ðm m (cid:1)m m Þ
+11 12 22 32 46 34 44 42 24 34 26 32 31 24 46 26 44
+f ¼m ½m ðm m (cid:1)m m (cid:1)m m (cid:1)m m Þ
+12 1 14 22 34 26 31 34 42 31 46
+(cid:1)m ðm m þm m þm m (cid:1)m m Þ
+13 24 34 26 32 32 46 34 44
+þm ðm m þm m (cid:1)m m þm m Þ(cid:5)
+16 22 32 24 31 32 42 31 44
+þm ½m ðm m þm m Þþm ðm m þm :m Þ
+11 22 32 46 34 44 24 34 42 31 46
+þm ðm m (cid:1)m m Þ(cid:5)þm ½m ðm m þm m Þ
+26 32 42 31 44 12 21 32 46 34 44
+þm ðm m þm m þm m Þþm ðm m þm m Þ
+22 32 45 33 44 34 43 23 34 42 31 46
+þm ðm m þm m þm m Þþm ðm m (cid:1)m m Þ
+24 33 42 34 41 31 45 25 32 42 31 44
+þm ðm :m (cid:1)m m Þ(cid:5)þm ½m ðm m þm m Þ
+26 32 41 31 43 1 14 22 46 26 42
+Planewavesat
+(cid:1)m ðm m þm m Þþm ðm m (cid:1)m m Þ(cid:5)
+16 22 44 24 42 13 26 44 24 46 theinterface
+f ¼m ½m ðm m þm m þm m þm m þm m
+13 1 14 21 46 22 45 25 42 26 41 21 34
+þm m −m m −m ðm þm þm ÞÞ
+22 33 34 41 31 25 42 45
+þm ðm m þm m −m m −m m −m m m m Þ
+15 22 32 24 31 32 42 22 44 24 42 31 44
+937
+þm ðm m þm m
+13 25 44 26 43
+þm m −m m −m m −m m −m m −m m −m m −m m Þ
+23 34 23 46 24 45 24 33 25 32 32 45 33 44 34 43
+þm ðm m þm m −m m þm m −m m −m m −m m −m m Þ(cid:5)
+16 21 32 23 31 32 41 31 43 21 44 22 43 23 42 24 41
+þm ½m ðm m þm m −m m −m m Þ
+11 31 23 46 24 45 25 44 26 43
+þm ðm m þm m þm m þm m Þþm ðm m þm m Þ
+32 21 46 22 45 25 42 26 41 33 22 44 24 42
+þm :ðm m þm m þm m þm m Þ(cid:5)
+34 21 44 22 43 23 42 24 41
+þm ½m ðm m þm m þm m Þþm ðm m þm m þm m Þ
+12 21 32 45 33 44 34 43 23 33 42 34 41 31 45
+þm ðm m −m m Þþm ðm m þm m Þ(cid:5)
+25 32 41 31 43 33 22 43 24 41
+(cid:11)
+f ¼m m m ðm (cid:1)m Þ(cid:1)m m ðm þm Þþm ðm m (cid:1)m m Þ
+14 1 14 33 21 41 13 33 23 43 13 25 43 23 45
+þm ðm m þm m (cid:1)m m þm m (cid:1)m m
+15 21 32 23 31 32 41 31 43 21 44
+(cid:1)m m (cid:1)m m (cid:1)m m Þ(cid:1)m ðm m þm m Þ(cid:5)
+22 43 23 42 24 41 1 21 43 23 41
+þm ½m ðm :m þm m þm m Þ
+11 21 32 45 33 44 34 43
+þm ðm m þm m þm m Þþm ðm m (cid:1)m m Þ
+23 33 42 34 41 31 45 25 32 41 31 43
+þm ðm :m þm m Þ(cid:5)þm m ðm m þm m Þ
+33 22 43 24 41 12 33 21 43 23 41
+þm m ðm m þm m Þ
+14 1 21 45 25 41
+f ¼m m ðm m þm m Þ(cid:1)m m ðm m þm m Þ
+15 11 33 21 43 23 41 15 1 21 43 23 41
+Correspondingauthor
+M.S.Barakcanbecontactedat:ms_barak@igu.ac.in
+Forinstructionsonhowtoorderreprintsofthisarticle,pleasevisitourwebsite:
+www.emeraldgrouppublishing.com/licensing/reprints.htm
+Orcontactusforfurtherdetails:permissions@emeraldinsight.com

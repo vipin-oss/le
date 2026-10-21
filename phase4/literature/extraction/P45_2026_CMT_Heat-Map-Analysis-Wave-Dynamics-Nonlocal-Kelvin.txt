@@ -1,0 +1,1295 @@
+ContinuumMech.Thermodyn. (2026) 38:41
+https://doi.org/10.1007/s00161-026-01472-6
+ORIGINAL ARTICLE
+VipinGupta · SyedModassirHussain · MuratYaylacı · SoumikDas
+HeatmapanalysisofwavedynamicsinnonlocalKelvin–Voigt
+piezo-semiconductors under memory-dependent heat flux
+Received:1January2026/Accepted:4April2026
+©TheAuthor(s),underexclusivelicencetoSpringer-VerlagGmbHGermany,partofSpringerNature2026
+Abstract Thisworkinvestigatesthecoupledthermo–electro–mechanicalbehaviorofapiezo-semiconductor
+medium by integrating spatial nonlocality, temporal nonlocality, Kelvin–Voigt (KV) viscoelasticity, and
+memory-dependent derivatives into a unified analytical framework. The governing equations combine a
+Klein–Gordon (KG) type nonlocal operator with three-phase-lag heat conduction, semiconductor transport,
+andpiezoelectriccoupling,andaresolvedusingthenormal-modeapproach.Theanalysisrevealsthatwave-
+fieldmodificationsremainhighlyconcentratedwithinathinboundary-interactionzonedeterminedbytheKG
+nonlocalparameters,wherethecompetingeffectsofspatialnonlocality,temporalrelaxation,KVviscosity,and
+memory-drivenkernelsjointlyinfluencethepenetrationandstrengthofthermo–electro–mechanicalresponses.
+Spatial nonlocality suppresses the mechanical deformation and reduces the near-surface thermal amplitude,
+while simultaneously intensifying the coupled stress, carrier concentration, electric potential, and electric-
+displacementfields.Temporalrelaxationmechanismsmoderatethesevariationsbyredistributingamplitudes
+overdepthandsmoothingsharpspatialgradients.KV-viscositysignificantlysuppressestheelectricalfields.
+By capturing the coupled roles of nonlocality, viscoelasticity, thermal relaxation, and memory-driven carri-
+er–electromechanicalinteractions,themodelprovidesacomprehensivebasisforanalyzingmultiphysicswave
+behaviorinpiezoelectricsemiconductormediarelevanttoSAWsensors,acousto-electroniccomponents,trans-
+ducers,andhigh-frequencysignal-processingdevices.
+Keywords Piezo-semiconductor · Kelvin–Voigt model · Klein–Gordon nonlocality · Viscoelasticity ·
+Three-phase-lagmodel·Memory-dependentderivative
+Listofsymbols
+e Componentofstrain
+ij
+κ Thermalactivationcouplingparameter
+V.Gupta
+DepartmentofMathematics,GurugramUniversity,Gurugram,India
+E-mail:vipin@gurugramuniversity.ac.in
+B
+S.M.Hussain( )
+DepartmentofMathematics,FacultyofScience,IslamicUniversityofMadinah,42351Madinah,SaudiArabia
+E-mail:hussain.modassir@yahoo.com
+M.Yaylacı
+DepartmentofCivilEngineering,RecepTayyipErdoganUniversity,53100Rize,Turkey
+E-mail:murat.yaylaci@erdogan.edu.tr
+S.Das
+SchoolofPhysicalSciences,AmritaVishwaVidyapeetham,MysuruCampus,Mysore,Karnataka,India
+E-mail:soumikdas1993@gmail.com
+0123456789().: V,-vol
+41 Page 2 of 24 V.Guptaetal.
+φ Electricalpotential
+DE Carrierdiffusiontensor
+ij
+K Componentsofthethermalconductivity
+ij
+δN Carrier-mechanicalcouplingcoefficient
+ij
+τ v Phaselagofthermaldisp.Gradient
+K Componentsofthermalconductivity
+ij
+E Energygap
+g
+τ θ Phaselagofthetemperaturegradient
+N Carrierdensity
+σ Componentsofthenonlocalstress
+ij
+Dμ MDDoperator
+∗
+S Entropy
+ρ Density
+∗
+K Componentsoftherateofthermalconductivity
+ij
+τ∗
+Photo-generatedcarrierlifetime
+D Electricdisplacement
+i
+C Specificheatatconstantstrain
+E
+T Thermaltemperature
+μ MDDdelayparameter
+η , ε Piezo-thermalmodulitensors
+ijr ij
+c Elasticstiffnesstensor
+ijrl
+τ Temporalnonlocalityparameter
+τ Pyroelectricconstants
+i
+∗
+q Componentofheatflux
+i
+E Electricfielddensity
+i
+ξ Spatialnonlocalityparameter
+τ Phaselagofheatflux
+q
+βT Thermalmodulitensors
+ij
+v
+c Viscoelasticparameter
+ij
+1 Introduction
+Viscoelasticmaterialsareakeyclassofsolidsthatcombineelasticenergystoragewithtime-dependentviscous
+dissipation.Incontemporaryelectronicandenergy-conversionsystems,theseeffectsarefurtheramplifiedby
+couplingwithelectric,thermal,andcarrier-transportprocesses.Semiconductors,withtheirtunableelectronic
+properties,canexhibitpiezoelectricorflexoelectricbehavior,enderingtheelectromechanicalcouplingintrin-
+sicallyfrequency-dependentandsensitivetoviscoelasticeffects,evenwithinalinearconstitutiveframework
+[1–3].Thiscouplingenablesmultifunctionaldevicesinwhichmechanicaldeformation,thermalgradients,and
+electricfieldsaretightlyinterconnectedandmutuallyinfluential.
+Mathematical modelling of such coupled phenomena originated in early work on elastic wave propaga-
+tion. Classical thermoelastic theories were constrained by the unrealistic assumption that mechanical and
+thermaldisturbancespropagateinstantaneously.Biot’s[4]coupledthermoelastictheoryaddressedthisissue
+by incorporatingFourier heat conduction and establishing a thermodynamically consistent relation between
+temperatureanddeformationfields.Laterdevelopments[5–7]introducedrelaxationtimesintothegoverning
+equations,eliminatingtheparadoxofinfinitesignalspeedandleadingtothegeneralizedthermoelasticmodels
+now widely employed. At the microscale, Tzou [8] introduced the dual-phase-lag conduction law, and later
+the three-phase-lag model [9] was proposed by the Roy Choudhuri to better represent phonon-based relax-
+ation mechanisms. These developments significantly broadened the applicability of thermoelastic theory to
+microstructuredandthermallysensitivematerials.
+Paralleltotheseadvances,nonlocalelasticityemergedasapowerfulframeworkforcapturinglong-range
+interactionsatsmallscales.BeginningwiththeearlyconceptsofEdelenandLaws[10],Eringen[11]established
+a differential nonlocal formulation grounded in thermodynamic constraints. Although extensively used, this
+model has faced criticism for its inconsistencies in certain boundary-value settings, as shown by Romano,
+Kaplunov, and others [12, 13]. More recent efforts, such as the weakly nonlocal formulations by Anh and
+HeatmapanalysisofwavedynamicsinnonlocalKelvin... Page 3 of 24 41
+Vinh [14], and the Klein–Gordon-type nonlocal models developed by Lazar and Agiasofitou [15], provide
+improvedmathematicalstructurebyincorporatingbothcharacteristiclengthandintrinsictimescalesintothe
+constitutiverelations.
+Interestinpiezoelectricsemiconductorshasgrownrapidlybecausetheyofferanaturalplatformtointe-
+gratemechanicaldeformation,electricfields,thermalgradients,andcarriertransport[16].Mechanicalloading
+produces polarization charges, thermal effects induce additional electric potentials, and semiconductor car-
+riersresponddynamicallytoallthesefields.Mindlin’s[17]earlyformulationestablishedthefoundationfor
+thermo-piezoelectric coupling, which was later expanded by Chandrasekharaiah [18] through finite-speed
+thermal propagation models. Aouadi [19] further generalized the theory by allowing thermally dependent
+materialcoefficients.Lotfyandcollaborators[31–33]haveenrichedthefieldthroughextensiveinvestigations
+of magneto-thermo-elastic and microtemperature dynamics in semiconductor media under various loading
+conditions,includingrampheating,Hall-currenteffects,andphotothermalexcitation.
+Fractionalcalculushasbeenwidelyusedinrecentyearsduetoitsinherentnonlocalcharacterandability
+to model memory-dependent processes. Originating from de L’Hospital’s 1695 question on the meaning
+of non-integer differentiation, several fractional derivative definitions [20] have since been proposed, with
+the Riemann–Liouville and Caputo forms being the most commonly adopted. Despite their mathematical
+elegance,thephysicalmeaningoffractional-orderderivativesoftenremainsambiguous,asnotedbyDas[21].
+To provide a clearer interpretation of memory effects, Wang and Li [22] introduced the memory-dependent
+derivative(MDD),whichreplacesthefractionalpower-lawwithkernel K(t −ζ)anexplicitsliding-interval
+integral[(t −μ), t], involvingadelayparameterμ>0as
+(cid:2)
+1 t
+Dμf(t)(cid:3) K(t −ζ)f (cid:4) (ζ)dζ. (1.1)
+μ
+t−μ
+The DμisaMDDoperator.TheMDDreducestotheclassicalderivativewhenthedelaytendstozeroand
+allowsflexibleselectionofkernelfunctionsdependingonthephysicalproblem.
+⎧
+2n m2 ⎨ K I (cid:3)1 (cid:6) if m (cid:3)n (cid:3)0 (cid:6)
+K(t −ζ)(cid:3)1− μ (t −ζ)+ μ2 (t −ζ)2 (cid:3) ⎩ K II (cid:3)1− (cid:7) (t −ζ) μ (cid:6) (cid:8) if m (cid:3)0, n (cid:3)1 2 (1.2)
+K (cid:3) 1−(t −ζ) μ 2 if m (cid:3)n (cid:3)1
+III
+Comparedwithtraditionalfractionalderivatives,theMDDframeworkoffersamoretransparentrepresen-
+tation of temporal nonlocality and has been effectively applied in thermoelastic and magneto-thermoelastic
+modelsbyEzzatandcollaborators[23,24].
+Ezzat et al. [25] investigated thermo-viscoelastic models incorporating memory-dependent derivatives,
+establishingafoundationfornonlocalheat-transferanalysis.EzzatandBary[26]furtheradvancedthisdirec-
+tion by formulating a two-temperature thermo-electro model that integrates MDD-based heat conduction.
+Gupta et al. [27–31]investigated the piezo-thermo-electric and semiconductor interfaces, incorporating vis-
+coelasticrelaxation,phase-lageffects,andbothfractional-orderandmemory-dependentformulationswithin
+thegeneralizedthermo-piezoelectricframework.Recentstudiesinpulsedpowerandpowerelectronicsfocus
+onsuppressingtransientoscillationsandachievingfast,stablepulsegenerationforhigh-performancesystems
+[32, 33]. In parallel, electro-thermal protection of wide-bandgap semiconductor devices under rapid excita-
+tionhasbecomeakeyreliabilityconcern[34].Recentadvancesinelectronicandfunctionalmaterialsfocus
+onaccuratetemperature-dependentdevicemodeling,intelligentarchitectures,andengineeredwavecontrolto
+enhanceperformanceandadaptability[35,36].Inparticular,asymmetricanddirectionalelastic-wavetransport
+instructuredmediahighlightsnewpossibilitiesforcontrollingenergyflowincoupledmultiphysicssystems
+[37].Severalresearchers[38–44],havefurtherexaminedplane-wavepropagationinadvancedcontinua,incor-
+porating fractional-order effects, two-temperature formulations, and nonlocal thermoelastic theories, with
+recentextensionsaddressingcoupledpiezoelectric,thermo-viscoelastic,andsemiconductormedia.
+Recentcontributionsincontinuummechanicsdemonstratethatthedescriptionofwavepropagationincom-
+plexmediabenefitssignificantlyfromgeneralizedandnonclassicalframeworksthatincorporateinternallength
+scales,energeticandvariationalconsistency,andcoupleddissipativemechanisms;inthiscontext,generalized
+beamtheoriesforarchitecturematerials,electromechanicalanalogmodelsforpiezoelectricdampingnetworks,
+variationalformulationsoflinearthermoviscoelasticity,andstudiesofwavereflectioninanisotropicpyroelec-
+triccontinuawithnonclassicalthermoelasticeffectsprovidearigoroustheoreticalfoundationforthepresent
+investigationofnonlocal,Kelvin–Voigtviscoelastic,andmemory-dependentthermo-electro-mechanicalwave
+dynamicsinpiezo-semiconductormedia[45–48].
+41 Page 4 of 24 V.Guptaetal.
+Acarefulreviewofexistingresearchshowsthatmoststudiesonthermalpiezoelectricsemiconductormedia
+areformulatedwithinclassical(local)elasticityframeworks,whichfailtocaptureseveralcriticalmicroscale
+mechanisms.Inparticular,thecombinedrolesofspatial–temporalnonlocality,memory-dependentheattrans-
+port,andviscoelasticrelaxationeffectshavereceivedinadequateattention.Althoughanumberofinvestigations
+have examined these features in isolation focusing either on nonlocal elastic interactions or on MDD-based
+thermal conduction the literature still lacks a unified theoretical model that incorporates all three. To over-
+cometheselimitations,thepresentworkdevelopsaKlein–Gordon-typenonlocalviscoelasticelasticitymodel,
+consistently coupled with a memory-dependent three-phase-lag (MDD-TPL) heat conduction law, for the
+analysisofthermo-piezoelectricsemiconductordeformation.Introducingviscoelasticitywithinthenonlocal
+semiconductorframeworksignificantlyenhancesphysicalrealismbyaccountingforstressrelaxation,internal
+friction,andtime-dependentattenuationphenomena.Theproposedformulationoffersageneralizedandphys-
+icallyrobustfoundationforinvestigatingwavedispersion,attenuationofcoupledelectricalandthermalfields,
+and electromechanical–thermal interactions, and energy transport in advanced piezoelectric–semiconductor
+devices.
+2 Foundationalmodelandfieldequations
+Todescribemechanicalbehaviorinmediawhereinteractionsextendbeyondtheimmediateneighbourhoodand
+evolveoverspaceandtime,theclassicalmomentumbalanceisretainedwhilethestressfieldisreformulated
+to incorporate nonlocal contributions. For a continuum V with density ρ and body force F, the motion is
+i
+governedby
+σ (x,t)+F(x,t)(cid:3)ρu¨ (x,t), (2.1)
+ij,j i i
+wherethestressfieldσ isnottheclassicalpointwisevaluebutanonlocallyaveragedquantityandu isthe
+ij i
+displacementfield.
+2.1 Spatio–temporalnonlocalconstitutivelaw
+Insteadofrelatingstresstostrainatthesamespace–timepoint,weassumethateachmaterialpoint“feels”the
+deformationinitsneighbourhoodoveranintervalofpasttime.
+Thus,thestressisobtainedthroughatwo-foldconvolution[15,49]
+(cid:2)t (cid:2)
+(cid:7) (cid:8) (cid:7) (cid:8)
+σ (x,t)(cid:3) C x−x (cid:4) ,t −t (cid:4) e x (cid:4) ,t (cid:4) dV (cid:4) dt (cid:4) , (2.2)
+ij ijkl kl
+−∞ V
+w(cid:7)here C
+ijkl
+(cid:8)is the nonlocal elastic moduli, the strain tensor is the standard small-strain measure e
+kl
+(cid:3)
+1 u +u ,x,x (cid:4) ∈ V ⊆(cid:8)3.
+2 k,l l,k
+Toseparateattenuationeffectsfromtheintrinsicstiffness,thekerneliswrittenas
+(cid:7) (cid:8) (cid:7) (cid:8)
+C x−x (cid:4) ,t −t (cid:4) (cid:3)α x−x (cid:4) ,t −t (cid:4) LC (2.3)
+ijkl ijkl
+where LC istheclassicallocalelasticmodulustensorandα isascalarattenuationfunction.WithσL (cid:3)
+ijkl ij
+LC ε ,thenonlocalstressbecomes
+ijkl kl
+(cid:9) (cid:10)
+σ (x, t)(cid:3) α∗σL (x, t), (2.4)
+ij ij
+where∗indicatesconvolutionoverV ×(−∞, t].
+HeatmapanalysisofwavedynamicsinnonlocalKelvin... Page 5 of 24 41
+2.2 Green’sfunctioninterpretationanddifferentialformulation
+AssumetheattenuationkernelαistheGreen’sfunctionofalinearoperator L
+(cid:11) (cid:7) (cid:8)(cid:12) (cid:7) (cid:8) (cid:7) (cid:8)
+L α x−x (cid:4) ,t −t (cid:4) (cid:3)δ x−x (cid:4) δ t −t (cid:4) , (2.5)
+whereδdenotestheDiracdistribution.
+Applying L to(2.4)andinvoking(2.5)givestheequivalentdifferentialconstitutivelaw
+Lσ (x, t)(cid:3)σL(x, t). (2.6)
+ij ij
+Thisequationismathematicallyequivalenttotheintegralrepresentation(2.2).
+2.3 Choiceofthenonlocaloperator
+Awidelyusedformfortheoperator L isthedynamicHelmholtz-typeoperator
+∂2
+L ≡1−ξ2∇2+τ2 , (2.7)
+∂t2
+where ξ is the intrinsic material length scale (governing spatial nonlocality) and τ is the characteristic time
+constant(governingtemporalnonlocality).Theo(cid:6)perator(2.7)ishyperbolicandadmitsafinite-speednonlocal
+propagation with characteristic velocity c (cid:3) ξ τ. For crystalline materials, the estimate ξ ≈ 0.39a [50],
+wherea isthelatticeconstant,providesaphysicallyconsistentmicrostructuralscaling.
+Substituting(2.7)into(2.6)yieldstheKlein–Gordon-typeconstitutiverelation
+(cid:13) (cid:14)
+∂2
+1−ξ2∇2+τ2 σ (x, t)(cid:3)σL(x, t). (2.8)
+∂t2 ij ij
+2.4 Constitutiverelations
+Inthepresentmodel,thenonlocalstructureisentirelyencodedintheoperatorL introducedin(2.7),whilethe
+material-specific behavior is described through an enhanced local constitutive response. For the mechanical
+part,weadoptaKelvin–Voigt–typeviscoelasticlaw,augmentedbypiezoelectric,thermoelasticandsemicon-
+ductorcontributions.Thus,thestressfieldiswrittenas[51–53]
+(cid:13) (cid:14)
+∂2
+1−ξ2∇2+τ2 σ (cid:3)σL (cid:3)c e −η E −βTT −δNN, (2.9)
+∂t2 ij ij ijkl kl ijk k ij ij
+(cid:13) (cid:14)
+∂2
+1−ξ2∇2+τ2 D (cid:3) DL (cid:3)η e +ε E +τ T, (2.10)
+∂t2 i i ijk jk ij j i
+(cid:13) (cid:14)
+∂2 (cid:7) (cid:8) ρC T
+1−ξ2∇2+τ2 ρS ∗ (cid:3) ρS ∗ L (cid:3)βTe +τ E + E , (2.11)
+∂t2 ij ij i i T
+0
+where E (cid:3)−φ, ,c (cid:3)c +c v ∂ ,andc v istheviscoelasticconstant.
+i i ijkl ijkl ijkl∂t ijkl
+Equationsofmotion
+(cid:13) (cid:14) (cid:13) (cid:14)
+∂2 ∂2
+σL + 1−ξ2∇2+τ2 F (cid:3)ρ 1−ξ2∇2+τ2 u¨ , (2.12)
+ij,j ∂t2 i ∂t2 i
+D , (cid:3)0 (2.13)
+i i
+Energyscaleequation
+ρT S ˙∗ (cid:3)−q ∗ , (2.14)
+0 i i
+41 Page 6 of 24 V.Guptaetal.
+NonlocalmemorydependentTPLheattransferlaw[54]
+(cid:15) (cid:16)
+(cid:13) (cid:14)
+∂2 τ τ2 ∂ (cid:7) (cid:8)
+1−ξ2∇2+τ2 ∂t2 1+ 1 q ! Dμ+ 2 q ! D μ 2 q˙ i ∗ (cid:3)−K ij∂t 1+τ θDμ T, i
+(cid:2) (2.15)
+E N ˙ (cid:7) (cid:8)
+−
+τ
+g
+∗
+dx
+i
+−K
+i
+∗
+j
+1+τ vDμ T,
+i
+UsingEq.(2.11),(2.14),and(2.15),weobtain.
+∂ (cid:7) (cid:8) (cid:7) (cid:8) N ˙
+K
+ij∂t
+1+τ θDμ T,
+ij
++
+(cid:15)
+K
+i
+∗
+j
+1+τ vDμ T,
+ij
+(cid:16)
++E
+gτ∗
+τ τ2 (cid:9) (cid:9) (cid:10)(cid:10) (2.16)
+(cid:3) 1+ 1 q ! Dμ+ 2 q ! D μ 2 ρC E T ¨ +T 0 β i T j u¨ i , j −τ i φ¨ , i
+Thermo-Plasmatransportequation
+∂N N
+(cid:3) DEN, − +κT (2.17)
+∂t ij ij τ∗
+where,i, j, k, l (cid:3) 1, 2, 3.Thesuperscript L arelinkedwithlocalthermalpiezoelectricsemiconductor
+medium.
+3 Formulationoftheproblem
+We consider a homogeneous, orthotropic KG thermoelastic piezoelectric semiconductor semi-infinite half-
+spaceoccupyingthex x −plane.ThethermoelasticresponseofthematerialischaracterizedusingtheMDD
+1 3
+basedTPLheat-conductionmodel.Consequently,theconstitutiverelationsforstressandstrain,alongwiththe
+governingexpressionsforelectricdisplacementoriginallypresentedinEqs.(2.9)and(2.10)arere-expressed
+withinthepresentKGnonlocalframeworkasfollows(Fig.1)
+(cid:13) (cid:14)
+∂2
+1−ξ2∇2+τ2 σ (cid:3)σL (cid:3)η φ, −δNN −βTT +c u , +c u , , (3.1)
+∂t2 11 11 31 3 1 1 11 1 1 13 3 3
+(cid:13) (cid:14)
+∂2
+1−ξ2∇2+τ2 σ (cid:3)σL (cid:3)η φ, +c (u , +u , ), (3.2)
+∂t2 13 13 15 1 55 1 3 3 1
+(cid:13) (cid:14)
+∂2
+1−ξ2∇2+τ2 σ (cid:3)σL (cid:3)η φ, −δNN −βTT +c u , +c u , , (3.3)
+∂t2 33 33 33 3 3 3 13 1 1 33 3 3
+(cid:13) (cid:14)
+∂2
+1−ξ2∇2+τ2 D (cid:3) DL (cid:3)−ε φ, +η (u , +u , ), (3.4)
+∂t2 1 1 11 1 15 1 3 3 1
+Fig.1 Geometryoftheproblem
+HeatmapanalysisofwavedynamicsinnonlocalKelvin... Page 7 of 24 41
+(cid:13) (cid:14)
+∂2
+1−ξ2∇2+τ2 D (cid:3) DL (cid:3)−ε φ, +τ T +η u , +η u , , (3.5)
+∂t2 3 3 33 3 3 31 1 1 33 3 3
+where,∇2 (cid:3) ∂2 + ∂2 .
+∂x2 ∂x2
+1 3
+Substitution of Eqs. (3.1)–(3.5) into (2.12) and (2.13), with body forces neglected, yields the following
+formofthemotionequations
+∂2u ∂2u ∂2u ∂T ∂N ∂2φ
+c 1 +c 1 +(c +c ) 3 −βT −δN +(η +η )
+11 ∂x
+1
+2 55 ∂x
+3
+2 13 55 ∂x
+1
+∂x
+3
+1 ∂x
+1
+1
+(cid:13)
+∂x
+1
+31 15 ∂x
+(cid:14) 1
+∂x
+3 (3.6)
+∂2 ∂2u
+(cid:3)ρ 1−ξ2∇2+τ2 1 ,
+∂t2 ∂t2
+∂2u ∂2u ∂2u ∂T ∂N ∂2φ ∂2φ
+c 3 +c 3 +(c +c ) 1 −βT −δN +η +η
+55 ∂x
+1
+2 33 ∂x
+3
+2 13 55 ∂x
+1
+∂x
+3
+3 ∂x
+3
+3
+(cid:13)
+∂x
+3
+15∂x
+1
+2 33
+(cid:14)
+∂x
+3
+2
+(3.7)
+∂2 ∂2u
+(cid:3)ρ 1−ξ2∇2+τ2 3 ,
+∂t2 ∂t2
+∂2u ∂2u ∂2u ∂2φ ∂2φ ∂T
+η 3 +η 3 +(η +η ) 1 −ε −ε +τ (cid:3)0, (3.8)
+15 ∂x
+1
+2 33 ∂x
+3
+2 31 15 ∂x
+1
+∂x
+3
+11∂x
+1
+2 33∂x
+3
+2 3∂x
+3
+Thetransportequationcharacterizingthermo-plasmadynamicsinthex x −plane.
+1 3
+(cid:15) (cid:16)
+∂N ∂2N ∂2N N
+(cid:3) DE + DE − +κT (3.9)
+∂t 1 ∂x2 3 ∂x2 τ∗
+1 3
+Equation(2.16)reducesthememory-dependentTPLheatequationinthex x −planeas
+1 3
+(cid:7) (cid:8)(cid:7) (cid:8) (cid:7) (cid:8)(cid:7) (cid:8) ˙
+1+τ θDμ K
+1
+T ˙ ,
+11
++K
+3
+T ˙ ,
+33
++ 1+τ vDμ K
+1
+∗ T,
+11
++K
+3
+∗ T,
+33
++E
+gτ
+N
+∗
+(cid:3)
+(cid:15) (cid:16)
+τ2 (cid:7) (cid:7) (cid:8)(cid:8) (3.10)
+1+τ q Dμ+ q D μ 2 ρC E T ¨ +T 0 β 1 u¨ 1 , 1 +β 3 u¨ 3 , 3 −τ 3 φ¨ , 3 ,
+2
+where, K (cid:3) K δ ,βT (cid:3)βTδ , K ∗ (cid:3) K ∗δ .
+ij i ij ij i ij ij i ij
+4 Solutionoftheproblem
+Normal mode analysis is a central tool for studying wave-driven and coupled multi-field phenomena across
+manyareasofscienceandengineering.Themainadvantageofthisanalysisitsabilitytoextracttheintrinsic
+responseofthesystem,includingtemperature,mechanicaldisplacement,carrierdensity,andelectricpotential,
+withoutimposingrestrictiveassumptionsontheirspatialortemporalvariation.Byrepresentingeachfieldas
+aseparablefunctionofspaceandtime,themethodclarifiespropagationmechanisms,dispersionproperties,
+andstability,whilereducingthegoverningpartialdifferentialequationstomoretractableordinarydifferential
+equations.Thesolutionforeachvariablecanthereforebewritteninthefollowingform[55]
+(cid:13) (cid:14)
+(u, u , N, T, φ)(cid:3) (cid:16) u , (cid:16) u , N (cid:16) , T (cid:16) , φ (cid:16) (x )e ιk(x1 −ct) (4.1)
+3 1 3 3
+where (cid:16) u , (cid:16) u , N (cid:16) , T (cid:16) , φ (cid:16) represent the functions dependent solely on the spatial coordinate x , while k and
+1 3 3
+ω (cid:3)kcdenotethewavenumberandangularfrequencyassociatedwiththepropagatingmode,respectively.
+Upon substituting the normal-mode representations given by Eq. (4.1) into the governing relations
+(3.6)–(3.10),thecoupledfieldequationsreducetoahomogeneousalgebraicsysteminvolvingthefiveunknown
+modalamplitudesas.
+(cid:7) (cid:8)
+g +g D2 (cid:16) u +(g D)(cid:16) u −(g )N (cid:16) −(g )T (cid:16) +(g D)φ (cid:16) (cid:3)0, (4.2)
+11 12 1 13 3 14 15 16
+41 Page 8 of 24 V.Guptaetal.
+(cid:7) (cid:8) (cid:7) (cid:8)
+(g D)(cid:16) u + g +g D2 (cid:16) u −(g D)N (cid:16) −(g D)T (cid:16) + g +g D2 φ (cid:16) (cid:3)0, (4.3)
+21 1 22 23 3 24 25 26 27
+(cid:7) (cid:8)
+(g )(cid:16) u +(g D)(cid:16) u +(g )N (cid:16) + g +g D2 T (cid:16) −(g D)φ (cid:16) (cid:3)0, (4.4)
+31 1 32 3 33 34 35 36
+(cid:7) (cid:8) (cid:7) (cid:8)
+(g D)(cid:16) u + g +g D2 (cid:16) u +(0)N (cid:16) +(g D)T (cid:16) + g +g D2 φ (cid:16) (cid:3)0, (4.5)
+41 1 42 43 3 44 45 46
+(cid:7) (cid:8)
+(0)(cid:16) u +(0)(cid:16) u + g +g D2 N (cid:16) +(g )T (cid:16) +(0)φ (cid:16) (cid:3)0, (4.6)
+1 3 51 52 53
+and g 11 (cid:3) ρω2 −c 11 k2 +ρξ2k4c2 − (cid:6) ρτ2ω4, g 12 (cid:3) c 55 −ρξ2ω2, g 13 (cid:3) (c 13 +c 55 )ιk, g 14 (cid:3) ιkδ 1 N,
+g (cid:3) ιkβT,g (cid:3) (η +η )ιk, D (cid:3) ∂ ∂z,g (cid:3) (c +c )ιk,g (cid:3) ρω2−c k2+ρξ2k4c2−ρτ2ω4,
+15 1 16 31 15 21 13 55 22 55
+g (cid:3)c −ρξ2ω2,g (cid:3)δN,g (cid:3)βT,g (cid:3)−η k2,g (cid:3)η ,g (cid:3)−L T βTk2ω2,g (cid:3) L T βTω2,
+23 33 24 3 25 3 26 15 27 33 31 3 0 1 32 3 0 3
+g (cid:3) bEg, g (cid:3) L ιωK k2 − L K ∗ k2 + L ρC ω2, g (cid:3) −L ιωK + L K ∗ , g (cid:3) −L τ ω2T ,
+33 τ∗ 34 1 1 2 1 3 E 35 1 3 2 3 36 3 3 (cid:6) 0
+g (cid:3)(η +η )ιk,g (cid:3)−η k2,g (cid:3)η ,g (cid:3)τ ,g (cid:3)ε k2,g (cid:3)−ε ,g (cid:3)ιω+DEk2+1 τ∗ ,
+41 31 15 42 15 43 33 44 3 45 11 46 33 51 1
+g 52 (cid:3) D 3 E, g 53 (cid:3) −κ, L 1 (cid:3) 1+τ T (cid:19)(μ, b), L 2 (cid:3) 1+τ v (cid:19)(μ, b) L 3 (cid:3) 1+τ q (cid:19)(μ, b)+τ q 2b(cid:19)(μ, b)/2,
+b (cid:3)−ιω,
+(cid:7) (cid:7) (cid:8) (cid:7) (cid:8) (cid:8)
+−b2μ2 m2−2n+1 +2bμ m2−n +2m2 exp(−bμ)+b2μ2−2bnμ+2m2
+(cid:19)(μ, b)(cid:3)
+b2μ3
+.
+Theexistenceofanon-trivialsolutiontothealgebraicsystem(4.2)–(4.6)necessitatesthatthedeterminant
+ofitscoefficientmatrixvanish.Enforcingthiscompatibilitycriterionresultsinthecharacteristicequation.
+(cid:17)(cid:13) (cid:14) (cid:18)
+(cid:7) (cid:8)
+ϒ D10+ϒ D8+ϒ D6+ϒ D4+ϒ D2+ϒ (cid:16) u , (cid:16) u , N (cid:16) , T (cid:16) , φ (cid:16) (x ) (cid:3)0. (4.7)
+0 1 2 3 4 5 1 3 3
+The complete expressions for all coefficients in Eq. (4.7) can be obtained by solving the determinant
+constructedfromEqs.(4.2)–(4.6).
+Moreover,Eq.(4.7)canbeequivalentlyexpressedinafactoredformas
+(cid:17)(cid:13) (cid:14) (cid:18)
+(cid:7) (cid:8)(cid:7) (cid:8)(cid:7) (cid:8)(cid:7) (cid:8)(cid:7) (cid:8)
+D2−λ2 D2−λ2 D2−λ2 D2−λ2 D2−λ2 (cid:16) u , (cid:16) u , N (cid:16) , T (cid:16) , φ (cid:16) (x ) (cid:3)0. (4.8)
+1 2 3 4 5 1 3 3
+Whentheconditionx →∞issatisfied,Eq.(4.8)producesaboundedsolution,whichmaybewrittenas.
+3
+(cid:13) (cid:14)
+(cid:19)5
+(cid:16) u , (cid:16) u , N (cid:16) , T (cid:16) , φ (cid:16) (x )(cid:3) (M , (cid:22) M , (cid:22) M , (cid:22) M , (cid:22) M )e −λ ix3, (4.9)
+1 3 3 i 1i i 2i i 3i i 4i i
+i(cid:3)1
+where,
+⎡ ⎤ ⎡ ⎤ ⎡ ⎤
+(cid:22) g λ g g g λ
+−1
+g +g λ2
+⎢ ⎢ ⎣ (cid:22) (cid:22) 2 1i i ⎥ ⎥ ⎦ (cid:3) ⎢ ⎢ ⎣ g 2 − 2 + g 13 g 2 λ i 3 λ i 2 g g 24 1 λ 4 i g g + 25 1 g λ 5 i λ2 g 26 g + 16 g λ 2 i 7 λ i 2 ⎥ ⎥ ⎦ ⎢ ⎢ ⎣ 11 g − 2 g 1 λ 1 i 2 i ⎥ ⎥ ⎦
+3i 32 i 33 34 35 i 36 i 31
+(cid:22) g +g λ2 0 −g λ g +g λ2 −g λ
+4i 42 43 i 44 i 45 46 i 41 i
+andλ2, (i (cid:3)1−5)aretherootsoftheEq.(4.7).
+i
+ThesubstitutionofEq.(4.9)intothefieldEqs.(3.1)–(3.5),followedbytheapplicationofthenormal-mode
+approach(4.1),leadstotheensuingexpressions.
+(cid:19)5
+(σ , σ , σ , D , D )(cid:3) ((cid:22) , (cid:22) , (cid:22) , (cid:22) , (cid:22) )M L ∗ e ιk(x1 −ct)−λ ix3, (4.10)
+11 33 13 1 3 5i 6i 7i 8i 9i i
+n(cid:3)1
+where,
+(cid:7) (cid:8)
+L ∗ (cid:3) 1+ξ2k2−ξ2λ2−τ2ω2 −1 ,(cid:22) (cid:3)c ιk−c λ (cid:22) −δN(cid:22) −βT(cid:22) −η λ (cid:22) ,
+i 5i 11 13 i 1i 1 2i 1 3i 31 i 4i
+(cid:22) (cid:3)c ιk−c λ (cid:22) −δN(cid:22) −βT(cid:22) −η λ (cid:22) ,(cid:22) (cid:3)c (ιk(cid:22) −λ )+η ιk(cid:22) ,
+6i 13 33 i 1i 3 2i 3 3i 33 i 4i 7i 55 1i i 15 4i
+(cid:22) (cid:3)η (ιk(cid:22) −λ )−ε ιk(cid:22) ,(cid:22) (cid:3)η ιk−η λ (cid:22) +τ (cid:22) +ε λ (cid:22) .
+8i 15 1i i 11 4i 9i 31 33 i 1i 3 3i 33 i 4i
+HeatmapanalysisofwavedynamicsinnonlocalKelvin... Page 9 of 24 41
+5 Boundaryconditions
+At the free surface x (cid:3) 0 of the piezo-thermo-electric semiconductor medium, the following boundary
+3
+conditionsareprescribed.
+(i) Normal-tractionconditionThemechanicalbalanceatthefreesurfaceisrepresentedthroughageneral-
+izednormal-tractionrelationthatincorporatestheinfluenceoftemperatureandcarrierdensity
+σ (x , 0, t)+α T(x , 0, t)+α N(x , 0, t)(cid:3)0, (5.1)
+33 1 T 1 N 1
+whereα andα representeffectivesurfacecoefficientsassociatedwiththermalexpansionandcarrier-
+T N
+inducednormalpressure,respectively.
+(ii) SurfacedisplacementconditionToensurethattheboundaryremainsfreefromtangentialtraction,the
+surfacedisplacementinthehorizontaldirectionistakenas
+u (x , 0, t)(cid:3)0. (5.2)
+1 1
+(iii) Carrier-densityboundaryconditionThecarrierbehavioratthesurface,accountingfordiffusioneffects
+andphoto-generatedcarriers,isdescribedby
+N(x , 0, t)(cid:3) N (x , t)(cid:3) N ∗ exp{ιk(x −ct)}. (5.3)
+1 0 1 0 1
+∗
+Here, N representstheamplitudeoftheprescribedsurfacecarrier-densityvariation.
+0
+(iv) ThermalboundaryconditionThesurfaceisassumedtobeperfectlyisothermal,leadingtothecondition
+T(x , 0, t)(cid:3)0. (5.4)
+1
+(xxii) ElectricalboundaryconditionTheelectricalstateattheboundaryisprescribedbyaspecifiedsurface
+potentialoftheform
+φ(x , 0, t)(cid:3)φ (x , t)(cid:3)φ∗ exp{ιk(x −ct)}. (5.5)
+1 0 1 0 1
+Here,φ∗
+denotestheamplitudeoftheprescribedsurfacepotential.
+0
+To determine the five modal amplitudes M (i (cid:3)1−5), the boundary relations (5.1)–(5.5) are treated
+i
+as a coupled linear boundary system linking the mechanical, thermal, electrical and carrier-density fields.
+Each of these conditions introduces a weighted combination of the modal contributions associated with the
+exponential eigenmodes exp(−λ x ), and together they enforce the physical requirements prescribed at the
+i 3
+boundaryplane.Equations(5.1)–(5.5)consistoffiveindependentrelationsinvolvingthecoefficientsets(cid:22) ,
+6i
+(cid:22) ,(cid:22) ,(cid:22) ,(cid:22) andtheirmixedforms.Forconvenience,acompositequantity(cid:22) (cid:3)(cid:22) +α (cid:22) +α (cid:22) is
+3i 2i 1i 4i i 6i T 3i N 2i
+introduced,whichnaturallyconsolidatesalltermsenteringthethermomechanicaltractioncondition.Likewise,
+thecarrier-densityandelectric-potentialboundaryrequirementsgeneratethesums(cid:22) M ,(cid:22) M and(cid:22) M ,
+2i i 3i i 4i i
+ensuringcompatibilitybetweenthedecaymodesandthesemiconductor–electricalconstraintsprescribedatthe
+boundary.Theoverallstructurethereforeformsafive–equation/five–unknownsystem,whereeachexponential
+modecontributesthroughitsassociatedcharacteristiccoefficients.Theentiresystemmayberegardedasthe
+actionofalinearoperatorontheamplitudevector(M , M , M , M , M )T.
+i 2i 3i 4i 5i
+Thisoperatorencodes.
+(cid:26)
+• theweightedthermomech(cid:26)anicaltractionimposedbythecompositecoefficients (cid:22)
+i
+;
+• therigid-bodyconstraint M i (cid:3)0; (cid:26)
+• theimposedcarrierinput N(cid:26)
+0
+∗ throughtherelation (cid:22)
+2i
+M
+i
+(cid:3) N
+0
+∗ ;
+• thethermalcompatibility (cid:22) M (cid:3)0;
+3i i
+41 Page 10 of 24 V.Guptaetal.
+(cid:26)
+• theelectricalboundaryspecification (cid:22) M (cid:3)φ∗ .
+4i i 0
+Sincetheassociatedoperatorisnonsingularowingtothelinearindependenceoftheexponentialeigenmodes
+thesystemadmitsauniquesolution.TheamplitudesM arethusrecoveredbyperformingtheinversionofthis
+i
+operatorinasymbolicoralgebraicsense,wherebythefiveboundaryconditionsareenforcedsimultaneously
+and the five exponential weights are uniquely resolved. The resulting amplitudes take the form of explicit
+analytical expressions consisting solely of the eigenmode coefficients (cid:22) , (cid:22) , (cid:22) , (cid:22) , and the imposed
+i 2i 3i 4i
+boundarydata N
+∗ andφ∗
+.Thisprocedureproducesclosed-formformulasforall M ,withoutanynumerical
+0 0 i
+fittingorapproximation.Oncetheseamplitudesaredetermined,theydirectlyreconstructeveryfieldvariable
+displacement,stress,temperature,carrierconcentration,electricpotential,andelectricdisplacementthrough
+thesuperpositionofthedecayingexponentialsassociatedwiththefiverootsofthecharacteristicequation.
+Thus,thesolutionofEqs.(5.1)–(5.5)providesthecompleteanalyticaldescriptionofthethermo-electro-
+mechanicalresponsewithinthesize-dependent,semiconductorpiezoelectricmedium.
+6 Specialcases
+Thememory-dependentTPLframeworkcanberecastintodistinctheat-conductionmodelswhenthefollowing
+limitingconditionsareimposed.
+• Ifτ q (cid:3)τ v (cid:3)τ T (cid:3)0,and K i ∗ j (cid:3)0thenBiotmodel[4].
+• Ifτ q >0,τ T (cid:3)τ v (cid:3)0, K i ∗ j (cid:3)0,andμ→0thenLSmodel[56].
+• If K ∗ (cid:3)τ v (cid:3)0,andμ→0thenDPLmodel[8].
+ij
+• Ifμ→0correspondstoTPLmodel[9].
+7 Validation
+• When the effects of photo-excited waves, KG nonlocality, and viscosity are excluded from the governing
+equations,thepresentpiezothermoelasticmodelreducestoandagreeswithaspecialcasereportedin[57,
+58].Moreover,thecorrespondingformulationinvolvingthecommonderivativecoincideswithaparticular
+casepresentedbyEtharetal.[55].
+• IfKGnonlocality,thememory-dependentderivative(MDD),andviscosityareomittedandtheproblemis
+reduced to a one-dimensional setting, the current model becomes consistent with the results obtained by
+Khamisetal.[59].
+• Intheabsenceofpiezoelectriccoupling,KGnonlocality,andviscosity,theone-dimensionalMDD-based
+formulationofthepresentmodelagreeswith aspecificcase of[60],particularlyundertheconditionthat
+theconductivetemperatureequalsthethermaltemperature.
+8 Numericalresultsanddiscussion
+AcomprehensivenumericalexperimentiscarriedoutinMATLABtoexaminethecoupledthermo-mechanical,
+electrical,andcarrier-transportbehaviorofaKG-typenonlocalpiezo-viscoelasticsemiconductormediumgov-
+ernedbytheMDD-basedthree-phase-lag(TPL)heat-conductionlaw.CadmiumSelenide(CdSe)isconsidered
+asthereferencematerial,anditsbasicthermo-piezoelectricandsemiconductingconstantsaretakenfrom[61,
+62],assummarizedinTable1.Inadditiontothesestandardmaterialconstants,thepresentformulationinvolves
+severalparametersassociatedwithKV-viscosity,KG-nonlocality,MDDdelay,andTPLrelaxationeffects.For
+thenumericalimplementation,theseparametersareprescribedasc v (cid:3)5×107,c v (cid:3)4×107,c v (cid:3)1×106,
+11 33 13
+c v (cid:3)5×105,m (cid:3)0.5,n (cid:3)0.5,ξ (cid:3)0.005,t (cid:3)0.001,τ (cid:3)0.005,α (cid:3)0.005,α (cid:3)0.5,φ∗ (cid:3)4×10 −4,
+55 0 T N 0
+N (cid:3) 106. The MATLAB implementation solves the coupled normal-mode system by evaluating the real
+0
+partsofthefielddistributionobtainedfromthecomplexmodalfields.TheselectedTPLphase-lagparameters
+τ v (cid:3) 0.02, τ T (cid:3) 0.03, τ q (cid:3) 0.05 obey the thermodynamic admissibility restrictions of Quintanilla and
+Racke[63],therebyguaranteeingphysicalconsistencyofthecomputedheatflux.Bysystematicallyvarying
+theKGspatialnonlocalparameter,thetemporalnonlocalconstant,andtheMDD-kernelparameters,themodel
+captureshowmicrostructuralinteractions,hereditarythermalmemory,anddelayedheat-fluxfeedbackjointly
+influencethemulti-fieldresponseinasemiconductormedium.
+HeatmapanalysisofwavedynamicsinnonlocalKelvin... Page 11 of 24 41
+Table1 ValuesofKeyModelParameters
+Symbol Value Symbol Value
+c
+11
+74.1×109Nm−2 c
+33
+83.6×109Nm−2
+c
+13
+39.3×109Nm−2 T
+0
+298K
+δN −9×10−31m3 τ∗ 5 ×10−5s
+1
+η
+31
+−0.160Cm−2 τ
+3
+−2.9×10−6Cm−2K−1
+c
+55
+13.2×109Nm−2 K
+1
+∗, K
+3
+∗ 7Wm−1K−1s−1
+βT 6.21×105Nm−2K−1 βT 5.51×105Nm−2K−1
+1 3
+D
+1
+E,D
+3
+E 2.5 ×103m2/s η
+33
+0.347Cm−2
+ε
+33
+9.03×10−11C2N−1m−2 η
+15
+−0.138Cm−2
+K 1, K 3 9Wm−1K−1 Eg 1.11eV
+ρ 5504kgm−3 CE 260Jkg−1K−1
+δ
+3
+N −7×10−31m3 ε
+11
+8.26×10−11C2N−1m−2
+8.1 Effectofdifferentheatconductionmodelsandviscosity
+Figure2presentsadetailedcomparisonofthenormalizedfielddistributionsu˜ ,σ˜ ,T ˜ ,N ˜ ,φ˜ ,and D ˜ forfour
+1 11 1
+different heat-conduction models with viscosity, namely Biot, LS, DPL, TPL, and one TPL model without
+viscosityTPL-WV,alongthedepthcoordinatex .Beforeplotting,eachfieldvariableisnormalizedtofacilitate
+3
+afaircomparisonacrossthefivemodels.ForagenericquantityQ ∈{u
+1
+, σ 11(cid:13), T, N, φ, D
+1
+} (cid:14),theprogramfirst
+(cid:27) (cid:27)
+computesaglobalmaximumoverallmodelsandalldepths,Q (cid:3) max max (cid:27) Q (x )(cid:27) .Thenormalized
+max j 3
+j(cid:3)1,...,5 x3
+profiles are then obtained as Q ˜ (x ) (cid:3) Qj (x3 ) . In this way, all curves lie in a comparable magnitude range
+(typically within [−1, 1]), and j the 3 focus Q is m o ax n the relative amplification, surface gradients, and decay rates
+producedbyeachheat-conductionmodelratherthanonabsoluteunits.
+Thedisplacmentprofileu˜ (0)(cid:3)0attheboundaryandgivenegativevaluesinsidethemedium,indicating
+1
+aninward(compressive)horizontaldisplacement.ForBiot,LS,DPLandTPLtheprofileofu˜ decreasesrapidly
+1
+withdepth,reachesasingleminimumaroundx ≈0.08,andthenincreasemonotonicallybacktowardszero
+3
+as x increases. Among these four curves, the TPL model (purple) exhibits the largest negative peak (about
+3
+−1),followedbytheBiotmodel(blue).TheLS(red)andDPL(yellow)profileslieslightlyabovethem,with
+theDPLcurvegivingthesmallestnegativeamplitudeofthediffusive/phase-lagmodels.Thisorderingshows
+that,withinthepresentparameterset,thethree-phase-lagformulationenhancesthenear-surfacedisplacement
+moststrongly,whilethesingle-anddual-phase-laglawsproducesomewhatweakerdeformationthanthefully
+relaxed TPL response. The TPL-WV curve (green) behaves qualitatively differently from the other four. It
+exhibitsonlyashallowminimum(about−0.3)veryclosetothesurfaceandthenrisessmoothlytowardszero,
+stayingmuchlessnegativethanallothermodelsovertheentiredepthrange.Inthiscasethethreephaselags
+areretainedbuttheviscouspartsoftheelasticconstantsareswitchedoff,sothatthermalwavespropagateinan
+almostundampedelasticsolid.Thefigurethereforeindicatesthat,underTPL-WV,thein-planedisplacementis
+muchlessintenseandmorelocalizedneartheboundary,whereasthediffusiveandvisco-thermoelasticmodels
+(Biot,LS,DPL,TPL)produceastrongerandmoredeeplypenetratingdisplacementfield.
+Thenormalstressdistributionσ˜ exhibitsanextremelysharpattenuationneartheboundaryforallmodels,
+11
+butwithclearquantitativedifferencesintheinitialmagnitudes.Atthesurface,theDPLandTPLmodelsshow
+thehigheststresslevels,LSandBiotappearlower,whileTPL–WVbeginswiththesmalleststress.Thezoomed
+insethighlightsasubtlenear-surfacefeatureasmallovershootoccursjustbeneaththeboundaryforallmodels
+exceptTPL–WV,andwithinthisnarrowregiontheDPLcurverisesslightlyaboveTPL,formingthestrongest
+localized peak. LS and Biot remain distinctly below these responses, and TPL–WV shows only a mild and
+smooth rise without overshoot. A key observation is that the relative ordering of the curves changes with
+depth.AlthoughTPL–WVstartsasthesmallestatthesurface,itdecaysfarmoreslowlythantheothermodels
+because the absence of viscous damping reduces the rapid loss of stress energy. Consequently, after a very
+41 Page 12 of 24 V.Guptaetal.
+F(cid:9)ig.2 Effect of Biot,(cid:10)LS, DPL, and TPL heat-conduction models and viscosity on the normalized field distributions
+u˜ 1,σ˜ 11, T ˜ , N ˜ ,φ˜ , D ˜ 1 alongthedepthx 3
+HeatmapanalysisofwavedynamicsinnonlocalKelvin... Page 13 of 24 41
+shortdepth,theTPL–WVcurvebecomeshigherthantheothers,whiletheDPL,TPL,LSandBiotprofilesall
+approachzeromuchmorerapidly.
+˜
+Thetemperaturedistribution T forallconsideredmodels,startfromzeroattheboundary,satisfyingthe
+imposed thermal condition, and immediately drop downward for every model before recovering again with
+depth.Thissharpinitialfall,clearlyvisibleintheinset,representsastrongtemperaturesinkjustbeneaththe
+surface caused by the thermoelastic and semiconducting coupling. After reaching this thin-layer minimum,
+eachmodelbeginsagradualupwardrise,formingasmoothrecoveryzoneasthetemperaturefieldre-establishes
+itselfinsidethemedium.Theinsethighlightsthatthemagnitudeofthisinitialdipvariesamongthemodels
+TPL undergo the deepest and sharpest drop, while DPL and LS remain slightly above them, and TPL–WV
+exhibitstheshallowestfallduetotheabsenceofviscousdamping.Beyondthenear-surfacelayer,thecurves
+slowly rise toward their respective asymptotic levels, and the ordering of the models changes with depth.
+AlthoughLSandDPLrecovermostrapidlyinitially,theTPLmodeleventuallyovertakesthemdeeperinside
+themedium,reflectingthestrongercumulativeinfluenceoftriplephase-lageffects.Meanwhile,theTPL–WV
+temperature, despitestartingwith themildest dip,increases moresmoothlyand becomes comparable tothe
+TPLcurveatlargerdepths.Thus,thefiguredemonstratesthatthephase-lagmechanismsandviscosityjointly
+controlthepropagationandredistributionofthermalenergy.
+˜
+ThenormalizedcarrierconcentrationdistributionN startsfromthesameprescribedvalueattheboundary
+forallmodels,thussatisfyingtheimposedcarriercondition,andthenmonotonicallyincreasestowardszero
+as the depth x increases. A very rapid rise occurs in a thin layer just below the surface, which is clearly
+3
+seenintheinset;beyondthisregiontheprofilesflattenandapproachaslowlyvaryingplateau.Theinsetalso
+showsaclearseparationbetweenthemodels.TheTPL–WVcurveattainsthelargestvalues(leastnegative)
+throughoutthedepth,indicatingthestrongestcarrierbuild-upwhenthermalwavespropagateintheabsence
+ofviscousdamping.JustbelowitlietheDPLandTPLcurves,whicharealmostindistinguishableandyield
+slightly smaller carrier concentration than TPL–WV. The LS model remains further below these three, and
+the Biot model gives the most negative values over the entire range, corresponding to the weakest carrier
+redistribution under purely diffusive heat conduction. Unlike the temperature and stress fields, the ordering
+˜
+ofthecurvesfor N doesnotchangewithdepth;allmodelspreservetheirrelativepositionsastheyrisefrom
+thecommonboundaryvalue,showingthatthechoiceofheat-conductionlawaffectsmainlythemagnitudeof
+carrieraccumulationratherthanthequalitativeshapeofitsdepthprofile.
+The normalized electric potential
+φ˜
+begins from a small positive value at the boundary for all models,
+satisfyingtheimposedelectrostaticcondition,andthenrisessharplywithintheshallownear-surfacelayer.Each
+curvereachesadistinctpeakbeforegraduallydecayingwithdepth,formingacharacteristic“rise–crest–decay”
+pattern.Amongallmodels,theTPL–WVprofileshowsamarkedlydifferentbehavioritattainsamuchlarger
+peakthantheotherfouranddoessoataveryshallowdepth,followedbyaslowdecaythatkeepsitwellaboveall
+remainingcurvesthroughoutthedomain.Thisenhancedmagnitudereflectstheabsenceofviscousdampingin
+theTPL–WVcase,whichallowsstrongercouplingbetweenthermal,mechanical,andsemiconductingfields.
+The Biot, LS, DPL, and TPL curves stay close to each other, but their ordering shows subtle differences.
+Immediatelyaftertheboundary,theTPLresponserisesthehighestamongthisgroup,formingthestrongest
+peak, while Biot and DPL lie nearly together, and LS remains slightly lower. As depth increases, all four
+decaysmoothlytowardsimilarasymptoticvalues,andnore-orderingoccursafterthepeak.Overall,thefigure
+highlights a clear contrast TPL–WV produces a dominant and widely sustained electric-potential response,
+whereas the remaining models yield moderate, closely grouped potentials with only mild separation. This
+demonstratesthatthephase-lagmodelsadjusttheshapeandheightofthepotentialpeak,whiletheremoval
+ofviscousdampinginTPL–WVdramaticallyamplifiestheelectrostaticfieldthroughoutthemedium.
+˜
+The normalized electric displacement D begins from a moderate positive value at the boundary for all
+1
+modelsandthenundergoesasharprisewithintheveryshallowregionnearthesurface.Immediatelyafterthis
+initialascent,eachcurvereachesadistinctpeakbeforegraduallydecreasingwithdepth,formingaclear“rapid-
+rise–peak–decay”pattern.Amongallthemodels,theTPLresponseattainsthelargestpeakvalue,demonstrating
+the strongest electromechanical and thermoelectric coupling when all three phase lags are active. The DPL
+and LS curves follow the same trend but achieve progressively smaller peak magnitudes, which reflects the
+reducedinfluenceofthermalrelaxationasonemovesfromtriple-lagtodual-lagandsingle-lagformulations.
+TheBiotmodelshowsthelowestpeakamongthesefour,indicatingthatpurelydiffusiveheatconductionyields
+theweakestenhancementoftheelectricdisplacement.TheTPL–WVprofilestandsdistinctlyapartfromthe
+others although it rises sharply near the boundary, its peak value is significantly smaller, and its decay with
+depthismoregradual.Thismutedresponseisadirectconsequenceofremovingtheviscouscomponentsof
+thestiffnesses,whichweakensthecouplingbetweenmechanical,thermal,andelectricfields.
+41 Page 14 of 24 V.Guptaetal.
+8.2 Effectofspatialnonlocalityparameter
+Figure3showsthenormalizeddeviationmapsofthesixfieldvariablesasfunctionsofthespatialnonlocality
+parameterξandthedepthcoordinatex .Eachdeviationquantity(cid:23)Q ˜(x , ξ)(cid:3) Q ˜(x , ξ)−Q ˜(x , 0)represents
+3 3 3 3
+thechangerelativetothepurelylocalcase.Positivevalues(yellowshades)denoteanincrease,negativevalues
+(blue–purple shades) indicate a decrease, and green regions correspond to negligible change. A consistent
+feature across all maps is that the influence of ξ is highly localized near the boundary. In every subplot,
+deviations appear only within the narrow layer x (cid:2)0.08, while the field distributions become practically
+3
+identicaltothelocalmodelforlargerdepths.ThisconfirmsthattheKG-typespatialnonlocalityintroducesa
+finiteinteractionrange,confiningallnonlocalmodificationstoathinsurfaceregion.
+(cid:9)
+Fig.3
+(cid:10)
+Effectofspatialnonlocality(ξ)onthenormalizeddeviationmapsofthefieldcomponents (cid:23)u˜ 1, (cid:23)σ˜ 11, (cid:23)T ˜ , (cid:23)N ˜ , (cid:23)φ˜ ,
+(cid:23)D ˜
+1
+alongthedepthx
+3
+HeatmapanalysisofwavedynamicsinnonlocalKelvin... Page 15 of 24 41
+Thedeviationmap(cid:23)u˜ showsstrongnegativepatches(lightblueanddarkblue)concentratednearx ≈0,
+1 3
+andthesedeepenprogressivelyasξincreases.Thisbehaviorreflectsasystematicreductioninthedisplacement
+amplituderelativetothelocalmodel,indicatingthatnonlocalitysuppresseshorizontalmotioninthesurface
+zone.Thenegativebandremainssharplyconfinedandweakensrapidlywithdepth,disappearingalmostentirely
+once x exceeds about 0.08. This confirms that the influence of spatial nonlocality on deformation remains
+3
+restrictedtoaverynarrowinteractionregionadjacenttotheboundary.
+The stress deviation map (cid:23)σ˜ exhibits bright positive bands for increasing ξ, forming a clear contrast
+11
+withthedisplacementfield.Thisindicatesthatnonlocalityelevatesthemagnitudeofnormalstressclosetothe
+boundaryevenasthedisplacementreduces.Theenhancementappearsabruptly,strengthenswithincreasingξ,
+andremainsconcentratedwithinthesameshallowlayerwheredeformationissuppressed.Beyondthisregion
+thedeviationrapidlydiminishes,showingthatthenonlocalstiffeningeffectissharplylocalizedanddoesnot
+influencedeeperlayers.
+Thetemperaturedeviation(cid:23)T ˜ isdominatedbynegativevalueswithinthenear-surfacerangeforsufficiently
+large ξ. This pattern points to a reduction in the temperature amplitude compared with the local model,
+producing a cooler region adjacent to the boundary. The magnitude of this reduction grows gradually with
+nonlocalitybutremainsconfinedtotheupperportionofthedomain.Consistentwithotherfields,thedeviation
+vanishesforx (cid:3)0.08,illustratingthatthemodifiedthermalbehaviorinducedbynonlocalitydoesnotextend
+3
+intotheinterior.
+The deviation in carrier concentration (cid:23)N ˜ becomes distinctly positive as ξ increases, indicating an
+enhanced carrier response within the surface region. The strength of this positive band increases with the
+nonlocalparameter,revealingthatnonlocalmechanical–thermalinteractionspromoteahigherconcentration
+ofcarriersneartheboundary.Theeffectistightlyconfinedtothethinlayerwherenonlocalityisactive,and
+thedeviationdecaysquicklywithdepth,mergingwiththelocalprofilefurtherinsidethemedium.
+Thedeviationintheelectricpotential(cid:23)φ˜ showsanoticeableriseforincreasingξ,formingbrightpositive
+deviationswithinthesurfacelayer.Thisenhancementreflectsastrongercouplingbetweenthedisplacement,
+temperature, and carrier fields when nonlocality is present. The deviation band remains narrow and sharply
+localized,againrestrictedtotheinteractiondepth,withtheprofilerevertingtothelocalbehaviorbeyondroughly
+x ≈0.08.Thishighlightstheboundary-focusedinfluenceofnonlocalityonthepotentialdistribution.
+3
+Among all the fields, the deviation in the normal electric displacement (cid:23)D ˜ shows the most prominent
+1
+positive response, producing the largest and most intense bright region in the map. The deviation increases
+steadilywithξ,indicatingsubstantialamplificationrelativetothelocalcase.Despiteitslargemagnitude,the
+effect remains confined to the same narrow boundary layer as the other fields, suggesting that the electric-
+displacement component is highly sensitive to nonlocal modifications but still governed by the same short
+interactionlength.
+8.3 Effectoftemporalnonlocalityparameter
+Figure4showsthenormalizeddeviationmapsofthesixfieldvariablesasfunctionsofthetemporalnonlocality
+parameter τ along the depth coordinate x . Each deviation quantity (cid:23)Q ˜(x , τ) (cid:3) Q ˜(x , τ) − Q ˜(x , 0)
+3 3 3 3
+quantifies the departure from the purely instantaneous (local-in-time) response. Positive deviations (yellow
+shades) indicate an increase relative to the τ (cid:3) 0 case, negative deviations (blue–purple shades) denote a
+reduction,whilegreenregionscorrespondtonegligiblechange.Unlikethespatialnonlocalitymaps,wherethe
+influencewasconfinedtoanextremelythinboundarylayer,theeffectoftemporalnonlocalityspreadsmore
+broadlyforsmallvaluesofτ thedeviationsremainlocalizednearthesurface,butforlargerτ theinfluence
+extendsprogressivelydeeperintothemedium,oftencoveringthefulldepthforthestrongestmemorystrengths.
+Thisbehaviorreflectsthefactthattemporalrelaxationactsuniformlyintimethroughoutthedomain,allowing
+the memory parameter τ to reshape the entire field distribution rather than only modifying a short-range
+boundarylayer.
+Thedeviationmapfor(cid:23)u˜ showsthatincreasingτ leadstopredominantlypositivedeviations,especially
+1
+onceτ enterstherange10 −2–10 −1.Fortheselargervalues,theupperpartofthedomainchangesfromnearly
+zerodeviationtoabroadyellowregionextendingoveralmostthewholedepth,indicatingthatthehorizontal
+displacementisamplifiedrelativetothereferencecaseτ (cid:3)0.Theenhancementisslightlyweakerveryclose
+to the boundary and becomes more pronounced at intermediate and larger depths, suggesting that temporal
+nonlocalityprimarilyaugmentstheinteriordisplacementfieldratherthanonlythenear-surfacezone.
+41 Page 16 of 24 V.Guptaetal.
+(cid:9)
+Fig.4 Effe
+(cid:10)
+ctoftemporalnonlocality(τ)onthenormalizeddeviationmapsofthefieldcomponents (cid:23)u˜ 1, (cid:23)σ˜ 11, (cid:23)T ˜ , (cid:23)N ˜ ,
+(cid:23)φ˜ , (cid:23)D ˜ 1 alongthedepthx 3
+The map of (cid:23)σ˜ exhibits a mixed pattern for large τ, a bright positive band appears near the surface,
+11
+whileablue–purpleregiondevelopsdeeperinthemedium.Thus,temporalnonlocalityincreasesthenormal
+stress in the shallow layer but reduces it at larger depths, in contrast to the almost uniform enhancement
+seenfordisplacement.Thetransitionfrompositivetonegativedeviationshiftsslightlywithτ,andforsmall
+relaxationtimestheentiremapremainsclosetozero,indicatingthatonlysufficientlystrongtemporalmemory
+significantlyredistributesthestressbetweenthesurfaceandtheinterior.
+For(cid:23)T ˜(x , τ),thedeviationmapsshowaninitialnegativezoneclosetotheboundaryathighτ,followed
+3
+by a gradually emerging positive region at greater depths. This means that increasing temporal nonlocality
+first lowers the temperature amplitude in the thin near-surface layer and simultaneously raises it inside the
+medium.Thecontrastbetweenthecoolbandnear x ≈ 0andthewarmerregionfor x (cid:3)0.2becomesmore
+3 3
+pronounced as τ grows, indicating that time-memory effects tend to flatten and redistribute the temperature
+profileratherthanproducingauniformincreaseordecrease.
+HeatmapanalysisofwavedynamicsinnonlocalKelvin... Page 17 of 24 41
+Thedeviationincarrierconcentration(cid:23)N ˜ showsasimilarsign-changingstructure.Forsmallτ thedevia-
+tionsarenegligible,butforlargerτabluestripformsnearthesurfacewhileyellowtonesappearatintermediate
+andlargerdepths.Thispatternindicatesthattemporalnonlocalityreducesthecarrierlevelintheimmediate
+vicinity of the boundary while enhancing it deeper inside the medium. The magnitude of both the negative
+andpositivebandsincreaseswithτ,demonstratingthatstrongermemoryeffectspromoteamorepronounced
+redistributionofcarriersfromthesurfaceregionintotheinterior.
+Themapfor(cid:23)φ˜ isdominatedbypositivedeviationsonceτ becomessufficientlylarge.Almosttheentire
+depthrangeturnsyellowforhighrelaxationtimes,showingthattheelectricpotentialiselevatedthroughoutthe
+domaincomparedwiththereferencecase.Onlyanarrowzonenearτ (cid:3)0remainsclosetoneutral,wherethe
+solutioncoincideswiththelocal-in-timemodel.Thisbehaviorindicatesthattemporalnonlocalityconsistently
+strengthens the potential generated by the coupled thermo-elastic-semiconductor fields rather than merely
+reshapingitlocally.
+In contrast to the potential, the deviation map for (cid:23)D ˜ is predominantly negative for large τ, with blue
+1
+andpurpleshadesextendingacrossalmosttheentiredepth.Thismeansthatincreasingtemporalnonlocality
+systematically reduces the normal electric displacement compared with the τ (cid:3) 0 case. The magnitude of
+thenegativedeviationgrowswithτ andisespeciallystronginthedeeperpartofthemedium,indicatingthat
+theelectric-displacementcomponentishighlysensitivetotime-memoryeffectsandexperiencesasubstantial
+attenuationwhentherelaxationtimebecomeslarge.
+8.4 EffectoftheMDDkernelparameterm(withn(cid:3)0.5)
+Figure5showsthenormalizeddeviationmapsofthesixfieldvariablesasfunctionsofthekernelparameter
+m of the memory–dependent derivative, along the depth coordinate x . For each quantity (cid:23)Q ˜(x , m) (cid:3)
+3 3
+Q ˜(x , m)− Q ˜(x , 0), the reference state is the kernel with m (cid:3) 0 and fixed n (cid:3) 0.5. Positive deviations
+3 3
+(yellowshades)indicateanincreaserelativetothisreferencekernel,negativedeviations(blue–purpleshades)
+correspond to a reduction, and green zones represent almost no change. In all plots the deviations remain
+confined to the upper part of the layer and are significant only for relatively large kernel exponents m(cid:3)0.5;
+forsmallm thebehaviorcollapsesbacktothereferencesolution.Thus,theMDDkernelparameterm mainly
+controlshowstronglytherecenthistoryisweightednearthesurface,whilethedeeperregionremainsalmost
+insensitivetoitsvariation.
+The displacement deviation map (cid:23)u˜ exhibits a compact yellow patch near the surface for m close to
+1
+unityandx (cid:2)0.12.Thispatternshowsthatincreasingmenhancesthehorizontaldisplacementamplitudeina
+3
+thinboundarylayer,whiletheinteriorofthemediumisessentiallyunaffected(greenregion).Theabsenceof
+anybluezoneindicatesthatthechosenkernelfamilydoesnotsuppressu˜ ;instead,largerm monotonically
+1
+amplifiesthenear-surfacedeformationrelativetothem (cid:3)0case.
+For the normal stress deviation map (cid:23)σ˜ , the influence of m is more intricate. A bright positive band
+11
+appearsclosetox (cid:3)0whenm becomeslarge,indicatinganincreasedsurfacestressrequirement.However,
+3
+forthesamehigh-mvaluesthecoloursgraduallyturnbluewithdepth,meaningthatσ˜ isreducedintheinterior
+11
+region.Hence,astrongermemorykernelredistributesthestressitstiffenstheresponseintheimmediatevicinity
+oftheboundarywhilerelaxingitfartherinsidethelayer.
+The temperature deviation map (cid:23)T ˜ is dominated by negative deviations concentrated near the upper
+boundaryform(cid:3)0.6,withtherestofthedomainremainingclosetogreen.Thisindicatesthatstrengthening
+the memory kernel lowers the peak temperature in the surface zone, leading to a cooler near-surface profile
+compared with the reference kernel. Beyond x ≈ 0.15 the effect of m becomes negligible, suggesting that
+3
+thethermalfieldquicklyrelaxestoakernel-independentdistributionwithdepth.
+Forthecarrierconcentrationdeviationmap(cid:23)N ˜ ,aclearpositivebandemergesalongthetopofthemap
+oncemexceedsroughly0.6,extendingoverx (cid:2)0.2.Thisshowsthatthemodifiedmemorykernelpromotesa
+3
+strongercarrierbuild-upinthenear-surfaceregion.Theinteriorremainsnearlyunchanged,sothattheroleof
+m istointensifythesemiconductoractivationclosetotheboundarywithoutsignificantlyalteringthecarrier
+distributiondeeperinsidethemedium.
+Theelectricpotentialdeviationmap(cid:23)φ˜
+exhibitsabroadblue–purpleregionforlargem,coveringalmost
+theentiredepthform(cid:3)0.7.Thus,increasingthekernelexponentsystematicallyreducesthepotentialthrough-
+out the layer, in contrast to the localized enhancements seen for u˜ and N ˜ . This behavior indicates that a
+1
+strongermemoryintheconstitutivelawtendstodampthenetelectrostaticresponsegeneratedbythecoupled
+thermoelastic–semiconductorfields.
+41 Page 18 of 24 V.Guptaetal.
+(cid:9)
+Fig.5 Effectof
+(cid:10)
+kernelfunctionparameter(m)onthenormalizeddeviationmapsofthefieldcomponents (cid:23)u˜ 1, (cid:23)σ˜ 11, (cid:23)T ˜ ,
+(cid:23)N ˜ , (cid:23)φ˜ , (cid:23)D ˜ 1 alongthedepthx 3
+HeatmapanalysisofwavedynamicsinnonlocalKelvin... Page 19 of 24 41
+Amongallfields,theelectric-displacmentdeviationmap(cid:23)D ˜ showsthemostextensivenegativeregion.
+1
+Forhighvaluesofm,theentiredepthrangeiscoveredbyblueshades,demonstratingasubstantialreductionof
+thenormalelectricdisplacementcomparedwiththem (cid:3) 0kernel.Themagnitudeofthissuppressiongrows
+steadilywithm,highlightingthatthepolarizationresponseisparticularlysensitivetotheshapeoftheMDD
+kernelandisstronglyattenuatedwhenthememorycontributionisreinforced.
+8.5 Effectofspatialvariationinthe(x , x )-plane
+1 3
+Figure 6 presents the normalized spatial distributions of the all the six fields within the two-dimensional
+(x , x )-domain.Eachcontourplotillustrateshowthecoupledfieldsevolvebothalongthesurfacedirection
+1 3
+andwithdepthinsidethemedium.Thecolourvariationandcontourlevelsindicatetheirrelativemagnitudes
+afternormalization,enablingadirectcomparisonofthespatialextentandstrengthofeachfield.Acommon
+trendacrossallcomponentsisthatthemostprominentvariationsoccurintheregionclosetothelowerand
+left boundaries, where the mechanical, thermal, and electrical driving effects are most dominant, while the
+fieldsgraduallydiminishasthedistancefromtheactivezoneincreases.Theseplotsofferaclearviewofhow
+themulti-fieldinteractionsaredistributedthroughoutthemediumundertheinfluenceofnonlocality,memory,
+(cid:9) (cid:10)
+Fig.6 Normalizeddistributionsof u˜ 1, σ˜ 11, T ˜ , N ˜ , φ˜ , D ˜ 1 overthe(x 1, x 3 )−domain
+41 Page 20 of 24 V.Guptaetal.
+andthree-phase-lagconduction,highlightingtheregionswhereeachfieldisconcentratedandhowrapidlyit
+decaysawayfromtheactiveboundaries.
+Thecontourmapofu˜ showsthatthelargestnegativedisplacementsareconfinedtoanarrowstripclose
+1
+tothesurfaceandtowardstherearpartofthewavelength(largex ),wherethedarkestcontoursaccumulate.
+1
+Movingeitherintotheinterior(increasingx )orupstreamalongx ,thecontoursbecomeprogressivelylighter
+3 1
+and more widely spaced, indicating a smooth attenuation of the horizontal motion. The inset confirms that
+withinthetoplayer0≤ x ≤0.05themagnitudeisalreadystronglyreducedandvariesonlymildlyalongx ,
+3 1
+sothedepthdependencedominatesthenear-surfacedeformation.
+Forthenormalstressσ˜ thepatternissimilarinshapebutwithsteepergradientshighlynegativevalues
+11
+areconcentratednear x (cid:3) 0and x ≈ 1,andthecontourlinespackdenselyinthiscorner.Withincreasing
+3 1
+depththelevelsrelaxquicklytowardszero,producingalmostuniform,weaklynegativevaluesintheinterior.
+Theinsetoverx ≤0.05and0.92≤ x ≤1revealsanalmostparallelsetofstronglynegativecontourlines,
+3 1
+showingthatthepeakstressstateisessentiallycontrolledbytheverythinsurfacezonebehindthewavefront.
+˜
+ThetemperaturefieldT displaystheoppositesignawarmlobeofpositivevaluesoccupiesthenear-surface
+regionforlargex ,withthemaximumlocatedclosetothebottom-rightcornerofthemainplot.Thecontours
+1
+bendgentlyupwardandinward,indicatingthatthetemperaturedecayswithdepthandalsodecreaseswhen
+moving upstream along x . The inset focuses on the interval x ≤ 0.04 and 0.8 ≤ x ≤ 1, where several
+1 3 1
+closelyspacedpositivelevelsappear,makingclearthatthethermalfieldisstronglyconcentratedinashallow
+layeradjacenttotheboundary.
+˜
+The carrier density N remains negative over the whole domain, with the largest magnitude again near
+x (cid:3) 0 and large x . The contours become nearly horizontal as depth increases, signalling that the carrier
+3 1
+distribution smooths out quickly in the interior and approaches a weakly varying state. In the inset window
+thecontourlevelschangefromroughly−0.43atthesurfacetovaluesclosetozeroby x (cid:3) 0.025,showing
+3
+thatthecarrierdeficitinducedbythewaveisrestrictedtoaverythinaccumulationlayerattheboundary.
+The electric potential φ˜ exhibits a markedly two-dimensional structure near the left side (x ≈ 0) a
+1
+narrowzoneofsmallpositivevaluesappears,whileabroadtroughofnegativepotentialformsacrossmostof
+thedomain,withminimumvaluesattainedtowardtherearandslightlybelowmid-depth.Thenearlyvertical
+contourlinesatsmallx indicatestrongvariationalongthepropagationdirection,whereasthegentlecurvature
+1
+withdepthsuggeststhatthepotentialismoreslowlyvaryinginx .Overall,thewavegeneratesapronounced
+3
+potentialwellthatspreadsoveralargepartofthelayer.
+˜
+Finally,thenormalelectricdisplacement D isstrictlypositiveandshowsabroad,dome-shapedpattern.
+1
+Themaximumoccursintheinteriorofthelayerratherthanatthesurface,withconcentriccontourssurrounding
+acentralpeaklocatedroughlyatintermediatex andx .Towardstheboundariesinbothcoordinatesthelevels
+1 3
+decreasesmoothly,illustratingthatpolarizationisstrongestwithinthebulkanddecaystowardsboththesurface
+andtheleading/trailingedgesofthewave.Together,theseplotssummarizehowasingleMDDkernelproduces
+a tightly localized mechanical and thermal response near the surface, a more extended potential well, and a
+relativelydelocalizedbutinterior-peakedelectricdisplacementfieldinthesemiconductingmedium.
+9 Conclusions
+Thisstudydevelopsacoupledmulti-physicsframeworktoexaminethethermo–electro–mechanicalresponse
+ofapiezo-semiconductormediumbyincorporatingspatialandtemporalnonlocality,Kelvin–Voigtviscoelas-
+ticity,andmemory-dependentderivativeeffectswithinaunifiedanalyticalformulation.Thenumericalresults
+illustratedinFigs.2,3,4,5and6provideinsightintothedepth-dependentbehavioroftheinteractingfield
+variablesundertheadoptedmaterialparametersandboundaryconditions.Theprincipalobservationsmaybe
+summarizedasfollows.
+• The inclusion of viscosity modifies the wave response by increasing the magnitude of displacement and
+enhancing the carrier concentration and electric potential fields, while reducing the penetration depth of
+electric displacement. Its influence on temperature and mechanical stress varies with depth, indicating a
+position-dependentredistributionofthermo-mechanicalenergy.
+• Amongtheconsideredheat-conductionmodels,thethree-phase-lag(TPL)formulationyieldscomparatively
+higherpeaksintheelectricpotentialandelectricdisplacementdistributionsunderthechosenparameterset.
+Incontrast,thedisplacementresponseremainsrelativelylowerthanthatpredictedbytheBiot,LS,andDPL
+models,whilestress,carrierconcentration,andtemperatureprofilesexhibitdistinctdepth-wisevariations
+acrossthemodels.
+HeatmapanalysisofwavedynamicsinnonlocalKelvin... Page 21 of 24 41
+• Spatialnonlocalityintroducespronounceddeviationsprimarilywithinathinnear-surfaceinteractionregion.
+Beyondthisnarrowlayer,thefieldresponsesrapidlyconvergetowardthepredictionsofthecorresponding
+localmodel,indicatingafiniterangeofnonlocalinteraction.
+• Temporal nonlocality produces comparatively broader modifications than spatial nonlocality. For small
+relaxationtimes,itseffectremainsconfinednearthesurface;however,withincreasingtemporalmemory,
+thedeviationsextenddeeperintothemedium,reshapingtheoverallfielddistributionratherthanremaining
+boundary-localized.
+• Variations in the memory-dependent derivative (MDD) kernel parameter influence the response mainly
+within the surface zone. Displacement shows amplification, whereas carrier concentration, temperature,
+electricpotential,andelectricdisplacementtendtoattenuate.Thestressfieldexhibitsamixedtrend,with
+enhancementnearthesurfaceandreductionintheinterior,whiledeeperregionsremainrelativelyinsensitive
+tokernelvariations.
+• The spatial distributions of all coupled fields remain strongly depth-dependent. Mechanical and thermal
+responsesareconcentratedneartheactivesurfaceregionanddecayrapidlywithdistance,whereaselectrical
+fieldsextendmorebroadlyintothemedium,withelectricdisplacementattainingitspeakwithintheinterior
+domain.
+Overall,thepresentedformulationoffersatheoreticalbasisforunderstandingcoupledwaveinteractionsin
+piezo-semiconductormaterialswheresurface-dominatedthermo-mechanicaleffectsinteractwithelectrically
+governedinteriorresponses.Suchmultiphysicscouplingmayberelevantintheanalysisofwave-basedsensing
+structures,semiconductoracousticdevices,andthermallysensitivemicroelectroniclayers.
+10 Limitationsofthestudy
+The present investigation is developed within an analytical and linear theoretical framework. The material
+isassumedtobehomogeneousandorthotropic,andtheboundaryconditionsareidealizedinnature.Effects
+suchasgeometricnonlinearity,materialinhomogeneity,interfacialimperfections,andlarge-amplitudewave
+interactions are not considered in the current formulation. Furthermore, the numerical simulations are per-
+formedforaselectedsetofmaterialconstants(CdSe)andparameterranges,andtheresultsmayvaryforother
+semiconductororpiezoelectricmaterials.Experimentalvalidationoftheproposedmodelalsoremainsanopen
+directionforfutureresearch.
+AuthorContribution V.G.,S.M.H.,andS.D.developedthemodelandcomputationalframework,aswellasexaminedthedata.
+M.Y.andV.G.completedtheimplementation.S.D.,andS.M.H.performedthecalculations.V.G.andS.D.draftedthemanuscript,
+withinputfromallauthors.Allauthorsdiscussedthefindingsandhelpedtopreparethefinalmanuscript.
+Funding TheauthorsextendtheirappreciationtotheDeanshipofScientificResearch,IslamicUniversityofMadinah,Saudi
+Arabia,forfundingthisresearchwork.
+Dataavailability Alldatathatsupportthefindingsofthisstudyareincludedwithinthearticle(andanysupplementaryfiles).
+Declarations
+Conflictofinterest Theauthorsdeclarenocompetinginterests.
+References
+1. D.Neamen,SemiconductorPhysicsandDevicesBasicPrinciples.TataMcGrawHillEducation,1992.
+2. He,Y.,etal.:FeasibilitystudyofmechanicalstresswavedetectioninpowersemiconductordevicesusingbareFBGsensors.
+IEEESens.J.25(21),39849–39857(2025).https://doi.org/10.1109/JSEN.2025.3615108
+3. Guo,Z.,etal.:Photon-energy-gatedcarrieraccumulationinorderedcore-shellnanowiresforneuromorphicphotodetection
+andmemory.LaserPhoton.Rev.(2025).https://doi.org/10.1002/lpor.202502268
+4. Biot,M.A.:Thermoelasticityandirreversiblethermodynamics.J.Appl.Phys.27(3),240–253(1956).https://doi.org/10.
+1063/1.1722351
+5. Green,A.E.,Naghdi,P.M.:Are-examinationofthebasicpostulatesofthermomechanics.Proc.R.Soc.Lond.AMath.Phys.
+Sci.432(1885),171–194(1991).https://doi.org/10.1098/rspa.1991.0012
+41 Page 22 of 24 V.Guptaetal.
+6. Green,A.E.,Naghdi,P.M.:Thermoelasticitywithoutenergydissipation.J.Elast.31(3),189–208(1993).https://doi.org/10.
+1007/BF00044969
+7. Green,A.E.,Naghdi,P.M.:Onundampedheatwavesinanelasticsolid.J.Therm.Stresses15(2),253–264(1992)
+8. Tzou,D.Y.:Aunifiedfieldapproachforheatconductionfrommacro-tomicro-scales.J.HeatTransfer117,8–16(1995).
+https://doi.org/10.1115/1.2822329
+9. Choudhuri,S.R.:Onathermoelasticthree-phase-lagmodel.J.Therm.Stresses30(3),231–238(2007)
+10. Edelen,D.G.B.,Laws,N.:Onthethermodynamicsofsystemswithnonlocality.Arch.Ration.Mech.Anal.43(1),24–35
+(1971).https://doi.org/10.1007/BF00251543
+11. Eringen,A.C.,Edelen,D.G.B.:Onnonlocalelasticity.Int.J.Eng.Sci.10(3),233–248(1972).https://doi.org/10.1016/0020-
+7225(72)90039-0
+12. Kaplunov,J.,Prikazchikov,D.A.,Prikazchikova,L.:Onnon-locallyelasticRayleighwave.Philos.Trans.R.Soc.AMath.
+Phys.Eng.Sci.(2022).https://doi.org/10.1098/rsta.2021.0387
+13. Kaplunov,J.,Prikazchikov,D.A.,Prikazchikova,L.:Onintegralanddifferentialformulationsinnonlocalelasticity.Eur.J.
+Mech.A.Solids100,104497(2023).https://doi.org/10.1016/j.euromechsol.2021.104497
+14. Anh,V.,Vinh,P.:ExpressionsofnonlocalquantitiesandapplicationtoStoneleywavesinweaklynonlocalorthotropicelastic
+half-spaces.Math.Mech.Solids28(11),2420–2435(2023).https://doi.org/10.1177/10812865231164332
+15. Lazar,M.,Agiasofitou,E.:NonlocalelasticityofKlein–Gordontypefundamentalsandwavepropagation.WaveMotion
+114,103038(2022).https://doi.org/10.1016/j.wavemoti.2022.103038
+16. Smith,R.C.:SmartMaterialSystems.SocietyforIndustrialandAppliedMathematics,Philadelphia(2005).https://doi.org/
+10.1137/1.9780898717471
+17. Mindlin, R.D.: Equations of high frequency vibrations of thermopiezoelectric crystal plates. Int. J. Solids Struct. 10(6),
+625–637(1974).https://doi.org/10.1016/0020-7683(74)90047-X
+18. Chandrasekharaiah,D.S.:Ageneralizedlinearthermoelasticitytheoryforpiezoelectricmedia.ActaMech.71(1–4),39–49
+(1988).https://doi.org/10.1007/BF01173936
+19. Aouadi,M.:Generalizedthermo-piezoelectricproblemswithtemperature-dependentproperties.Int.J.SolidsStruct.43(21),
+6347–6358(2006).https://doi.org/10.1016/j.ijsolstr.2005.09.003
+20. deOliveira,E.C.,TenreiroMachado,J.A.:Areviewofdefinitionsforfractionalderivativesandintegral.Math.Probl.Eng.
+2014(1940),1–6(2014).https://doi.org/10.1155/2014/238459
+21. Wang,J.L.,Li,H.F.:Memory-dependentderivativeversusfractionalderivative(I)differenceintemporalmodeling.J.Comput.
+Appl.Math.384,112923(2021).https://doi.org/10.1016/j.cam.2020.112923
+22. Wang,J.L.,Li,H.F.:Surpassingthefractionalderivativeconceptofthememory-dependentderivative.Comput.Math.Appl.
+62(3),1562–1567(2011).https://doi.org/10.1016/j.camwa.2011.04.028
+23. Ezzat,M.A.,El-Bary,A.A.,Fayik,M.A.:FractionalFourierLawwiththree-phaselagofthermoelasticity.Mech.Adv.Mater.
+Struct.20(8),593–602(2013).https://doi.org/10.1080/15376494.2011.643280
+24. Ezzat, M.A., El-Bary, A.A.: Effects of variable thermal conductivity and fractional order of heat transfer on a perfect
+conductinginfinitelylonghollowcylinder.Int.J.Therm.Sci.108,62–69(2016).https://doi.org/10.1016/j.ijthermalsci.2016.
+04.020
+25. Ezzat,M.A.,El-Karamany,A.S.,El-Bary,A.A.:Generalizedthermo-viscoelasticitywithmemory-dependentderivatives.
+Int.J.Mech.Sci.89,470–475(2014).https://doi.org/10.1016/j.ijmecsci.2014.10.006
+26. Ezzat, M.A., El-Bary, A.A.: Magneto-thermoelectric viscoelastic materials with memory-dependent derivative involving
+two-temperature.Int.J.Appl.Electromagn.Mech.50(4),549–567(2016).https://doi.org/10.3233/JAE-150131
+27. Gupta,V.,Barak,M.S.:Photo-thermo-piezo-elasticwavesinsemiconductormediumsubjecttodistincttwotemperature
+modelswithhigherordermemorydependencies.Int.J.Numer.MethodsHeatFluidFlow34(1),84–108(2024)
+28. Gupta, V., Barak, M., Das, S.: Impact of memory-dependent heat transfer on Rayleigh waves propagation in nonlocal
+piezo-thermo-elasticmediumwithvoids.Int.J.Numer.MethodsHeatFluidFlow34(4),1902–1926(2024)
+29. Gupta,V.,Barak,M.S.,Das,S.:Vibrationalanalysisofsize-dependentthermo-piezo-photo-electricsemiconductormedium
+under memory-dependent Moore–Gibson–Thompson photo-thermoelasticity theory. Mech. Adv. Mater. Struct. 31(28),
+10543–10559(2024)
+30. Kumar,S.,Kumari,N.,Gupta,V.,Barak,M.S.:Responseofstiffnessandviscosityontheenergyratiosatpiezo-visco-
+thermo-elasticmedium.Int.J.Appl.Mech.Eng.29(1),54–72(2024).https://doi.org/10.59441/ijame/174992
+31. S.Kumar,M.S.Barak,N.Kumari,V.Gupta,andH.Ahmad,“Theeffectofviscosityandhyperbolictwo-temperatureon
+energyratiosinelasticandpiezoviscothermoelastichalf-spaces,”Mech.Time.Depend.Mater.,pp.1–21,2024.
+32. Dong,S.,etal.:AdesignandanalysisofRCDoscillationsuppressioncircuitforMarxpulsegenerator.IEEETrans.Plasma
+Sci.53(6),1277–1284(2025).https://doi.org/10.1109/TPS.2025.3559507
+33. Zhao,L.,etal.:Afast-edgesquare-waveadjustablepulsecurrentgeneratorbasedoncouplinginductor.IEEETrans.Ind.
+Electron.71(10),12086–12099(2024).https://doi.org/10.1109/TIE.2023.3342283
+34. Wen,Y.,Yang,Y.,Li,Y.:Anovelshort-circuitprotectionschemeforsiliconcarbide(SiC)MOSFETmoduleconsidering
+operation temperature. IEEE Trans. Power Electron. 40(8), 10661–10671 (2025). https://doi.org/10.1109/TPEL.2025.35
+49769
+35. Li,Z.,Zhou,S.:Gaussian-basedanalyticalmodelfortemperature-dependentI-V characteristicsofGaNHEMTs.IEEEJ.
+Electron.DevicesSoc.13,954–962(2025).https://doi.org/10.1109/JEDS.2025.3594767
+36. Huang,Y.,Wu,Q.,Gong,T.,Yang,J.,Luo,Q.,Liu,M.:Bayesianneuralnetworkwithunifiedentropysourceandsynapse
+weightsusing3D16-layerFe-diodearray.Nat.Commun.16(1),8063(2025).https://doi.org/10.1038/s41467-025-63302-8
+37. Hu,Y.,Li,Y.,Liu,Y.,Li,B.,Christensen,J.:Giantelastic-waveasymmetryinalinearpassivecirculator.Nat.Commun.
+16(1),3991(2025).https://doi.org/10.1038/s41467-025-59313-0
+38. Guha,S.,Gupta,V.,Biswas,M.,Singh,A.K.,Barak,M.S.:Complexwaveinteractionsingradedpiezomagneticmaterials
+agravityandflexomagneticperspective.Int.J.Numer.MethodsHeatFluidFlow35(4),1459–1483(2025).https://doi.org/
+10.1108/HFF-10-2024-0804
+HeatmapanalysisofwavedynamicsinnonlocalKelvin... Page 23 of 24 41
+39. Long,X.,etal.:Reverseanalysisoffilm/substratecohesionbyindentationamesoscopicperspective.Int.J.SolidsStruct.
+312,113285(2025).https://doi.org/10.1016/j.ijsolstr.2025.113285
+40. Gao,N.,Guo,X.,Deng,J.,Cheng,B.,Hou,H.:Elasticwavemodulationofdouble-leafABHbeamembeddedmassoscillator.
+Appl.Acoust.173,107694(2021).https://doi.org/10.1016/j.apacoust.2020.107694
+41. Wu,Z.,Wang,Y.,Dou,Y.,Zhou,L.,Zhu,J.:Propertymodulationsoftwo-dimensionalmaterialsundercompression.Nano
+Res.Energy2,e9120080(2023).https://doi.org/10.26599/NRE.2023.9120080
+42. Adel,M.,Kaushal,S.,Bala,I.,Lotfy,K.,Mahdy,A.M.S.,Arora,N.:Viscousandthermaleffectsonwavepropagationin
+amicropolarviscothermoelasticmediumwithimpedanceconsiderations.Sci.Rep.15(1),31711(2025).https://doi.org/10.
+1038/s41598-025-17293-7
+43. Abouelregal,A.E.,Marin,M.,Alhassan,Y.,Atta,D.:Anovelspace–timenonlocalthermo-viscoelasticmodelwithtwo-phase
+lagsforanalyzingheatdiffusioninahalf-spacesubjectedtoaheatsource.Iran.J.Sci.Technol.Trans.Mech.Eng.49(3),
+1315–1332(2025).https://doi.org/10.1007/s40997-025-00835-9
+44. Hendy,M.H.,Ezzat,M.A.:Fractionalpiezoelectricthermo-viscoelasticmaterialswithvariableproperties.J.Therm.Stress.
+48(4),441–457(2025).https://doi.org/10.1080/01495739.2025.2465402
+45. Ciallella,A.,Giorgio,I.,Eugster,S.R.,Rizzi,N.L.,dell’Isola,F.:Generalizedbeammodelfortheanalysisofwavepropagation
+withasymmetricpatternofdeformationinplanarpantographicsheets.WaveMotion113,102986(2022)
+46. Darleux, R., Lossouarn, B., Giorgio, I., dell’Isola, F., Deü, J.-F.: Electrical analogs of curved beams and application to
+piezoelectricnetworkdamping.Math.Mech.Solids27(4),578–601(2022)
+47. Abd-alla,A.,Giorgio,I.,Galantucci,L.,Hamdan,A.M.,DelVescovo,D.:Wavereflectionatafreeinterfaceinananisotropic
+pyroelectricmediumwithnonclassicalthermoelasticity.Contin.Mech.Thermodyn.28(1),67–84(2016)
+48. Giorgio,I.:Avariationalformulationforone-dimensionallinearthermoviscoelasticity.Math.Mech.ComplexSyst.9(4),
+397–412(2022)
+49. Agiasofitou,E.,Lazar,M.:NonlocalelasticityofKlein-Gordontypewithinternallengthandtimescalesconstitutivemod-
+ellinganddispersionrelations.PAMM(2023).https://doi.org/10.1002/pamm.202300065
+50. Eringen,A.C.:Ondifferentialequationsofnonlocalelasticityandsolutionsofscrewdislocationandsurfacewaves.J.Appl.
+Phys.54(9),4703–4710(1983).https://doi.org/10.1063/1.332803
+51. W.Voigt,Theoreticalstudiesontheelasticityofcrystals.RoyalSocietyofSciencesinGöttingen,1887.
+52. Gupta,V.,Barak,M.S.,Das,S.:Impactofmemory-dependentheattransferonRayleighwavespropagationinnonlocal
+piezo-thermo-elasticmediumwithvoids.Int.J.Numer.MethodsHeatFluidFlow(2024).https://doi.org/10.1108/HFF-10-
+2023-0615
+53. Iovane,G.,Nasedkin,A.V.:Modalanalysisofpiezoelectricbodieswithvoids.II.Finiteelementsimulation.Appl.Math.
+Model.34(1),47–59(2010).https://doi.org/10.1016/j.apm.2009.03.027
+54. Abouelregal,A.E.:Three-phase-lagthermoelasticheatconductionmodelwithhigher-ordertime-fractionalderivatives.Indian
+J.Phys.94(12),1949–1963(2020).https://doi.org/10.1007/s12648-019-01635-z
+55. Ahmed,E.A.A.,Abou-Dina,M.S.,Ghaleb,A.F.:Planewavepropagationinapiezo-thermoelasticrotatingmediumwithin
+thedual-phase-lagmodel.Microsyst.Technol.26(3),969–979(2020).https://doi.org/10.1007/s00542-019-04567-0
+56. Lord,H.W.,Shulman,Y.:Ageneralizeddynamicaltheoryofthermoelasticity.J.Mech.Phys.Solids15(5),299–309(1967).
+https://doi.org/10.1016/0022-5096(67)90024-5
+57. Barak,M.S.,Gupta,V.:Memory-dependentandfractionalorderanalysisoftheinitiallystressedpiezo-thermoelasticmedium.
+Mech.Adv.Mater.Struct.0(0),1–15(2023).https://doi.org/10.1080/15376494.2023.2211065
+58. Mondal,S.,Othman,M.I.A.:Memorydependentderivativeeffectongeneralizedpiezo-thermoelasticmediumunderthree
+theories.WavesRandomComplexMedia31(6),2150–2167(2021).https://doi.org/10.1080/17455030.2020.1730480
+59. Khamis,A.K.,Lotfy,K.,El-Bary,A.A.,Mahdy,A.M.S.,Ahmed,M.H.:Thermal-piezoelectricproblemofasemiconductor
+mediumduringphoto-thermalexcitation.WavesRandomComplexMedia31(6),2499–2513(2021).https://doi.org/10.1080/
+17455030.2020.1757784
+60. Lotfy, K., Sarkar, N.: Memory-dependentderivativesfor photothermalsemiconductingmedium in generalized thermoe-
+lasticitywithtwo-temperature.Mech.Time-Depend.Mater.21(4),519–534(2017).https://doi.org/10.1007/s11043-017-93
+40-5
+61. Gupta,V.,Barak,M.S.:FractionalandMDDanalysisofpiezo-photo-thermo-elasticwavesinsemiconductormedium.Mech.
+Adv.Mater.Struct.(2023).https://doi.org/10.1080/15376494.2023.2238201
+62. Lotfy,K.,Elidy,E.S.,Tantawi,R.S.:Piezo-photo-thermoelasticitytransportprocessforhyperbolictwo-temperaturetheory
+ofsemiconductormaterial.Int.J.Mod.Phys.C(2021).https://doi.org/10.1142/S0129183121500881
+63. Quintanilla,R.,Racke,R.:Anoteonstabilityinthree-phase-lagheatconduction.Int.J.HeatMassTransfer51(1–2),24–29
+(2008).https://doi.org/10.1016/j.ijheatmasstransfer.2007.04.045
+Publisher’s Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional
+affiliations.
+SpringerNatureoritslicensor(e.g.asocietyorotherpartner)holdsexclusiverightstothisarticleunderapublishingagreement
+with the author(s) or other rightsholder(s); author self-archiving of the accepted manuscript version of this article is solely
+governedbythetermsofsuchpublishingagreementandapplicablelaw.

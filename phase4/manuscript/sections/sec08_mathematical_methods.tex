@@ -1,0 +1,129 @@
+%======================================================================
+% Section 8: Mathematical Methods for Wave Propagation
+%======================================================================
+\section{Mathematical Methods for Wave Propagation}
+\label{sec:methods}
+
+This section reviews the mathematical methods used for wave propagation analysis in generalized continua: plane wave ansatz, Christoffel equations, secular equations, complex wave numbers, modal normalization, transform methods, and numerical approaches.
+
+\subsection{Plane wave ansatz and harmonic time dependence}
+\label{sec:8.1}
+
+For time-harmonic problems, all field variables take the form:
+
+\begin{equation}
+\text{field}(\bm{x},t) = \hat{\text{field}}(\bm{x}) e^{-i\omega t},
+\label{eq:8.1}
+\end{equation}
+
+where $\hat{\text{field}}$ is the complex amplitude and $\omega$ is the angular frequency. The convention $e^{-i\omega t}$ implies that positive imaginary parts of complex wave numbers correspond to spatial attenuation.
+
+\subsection{Christoffel-type equations and wave speeds}
+\label{sec:8.2}
+
+Substituting the plane wave ansatz into the governing equations yields the Christoffel-type equation:
+
+\begin{equation}
+[\Gamma_{ik}(\bm{n}) - \rho c^2 \delta_{ik}]\hat{u}_k = 0,
+\label{eq:8.2}
+\end{equation}
+
+where $\Gamma_{ik}(\bm{n})$ is the Christoffel tensor, $\bm{n}$ is the propagation direction, $c$ is the wave speed, and $\hat{u}_k$ is the polarization vector.
+
+Non-trivial solutions require:
+
+\begin{equation}
+\det[\Gamma_{ik}(\bm{n}) - \rho c^2 \delta_{ik}] = 0.
+\label{eq:8.3}
+\end{equation}
+
+\subsection{Secular equations and characteristic polynomials}
+\label{sec:8.3}
+
+The characteristic equation from \eqref{eq:8.3} is a polynomial in $c^2$ (or equivalently in the wave number $q$). For coupled thermo-piezoelastic media, this is typically an eighth-order polynomial:
+
+\begin{equation}
+G_1 q^8 + G_2 q^6 + G_3 q^4 + G_4 q^2 + G_5 = 0,
+\label{eq:8.4}
+\end{equation}
+
+where the coefficients $G_i$ depend on material properties, frequency, and incidence angle.
+
+\subsection{Complex wave numbers: propagating, evanescent, attenuating modes}
+\label{sec:8.4}
+
+The roots of the secular equation are classified as:
+
+\begin{enumerate}
+\item \textbf{Propagating modes:} real $q$ --- waves that propagate without spatial attenuation,
+\item \textbf{Evanescent modes:} purely imaginary $q$ --- waves that decay exponentially with distance,
+\item \textbf{Attenuating modes:} complex $q$ --- waves that both propagate and attenuate.
+\end{enumerate}
+
+Only outgoing modes satisfying the radiation condition are retained in the physical solution.
+
+\subsection{Modal normalization for energy flux computation}
+\label{sec:8.5}
+
+For energy flux computation, each mode must be consistently normalized. For propagating modes:
+
+\begin{equation}
+\hat{u}_i^{(n)} \hat{u}_i^{(n)*} = 1,
+\label{eq:8.5}
+\end{equation}
+
+where $^*$ denotes complex conjugation. For evanescent modes, normalization is chosen so that the time-averaged energy flux is real and positive. Consistent normalization across modes is essential for energy ratio computations.
+
+\subsection{Transform methods: Fourier and Laplace}
+\label{sec:8.6}
+
+Fourier transforms are used for steady-state harmonic problems:
+
+\begin{equation}
+\hat{f}(\omega) = \int_{-\infty}^{\infty} f(t) e^{i\omega t}\,dt.
+\label{eq:8.6}
+\end{equation}
+
+Laplace transforms are used for transient problems:
+
+\begin{equation}
+\tilde{f}(s) = \int_0^{\infty} f(t) e^{-st}\,dt.
+\label{eq:8.7}
+\end{equation}
+
+\subsection{Spectral methods and numerical approaches}
+\label{sec:8.7}
+
+Spectral methods expand the solution in terms of orthogonal basis functions (e.g., Fourier series, Chebyshev polynomials). These are particularly effective for problems with periodic boundary conditions or smooth solutions.
+
+Numerical approaches include finite element, finite difference, and boundary element methods for problems without closed-form solutions. Nonlocal and memory-dependent models require specialized numerical treatments due to their integral-form constitutive relations.
+
+\subsection{Notation summary for Section 8}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 8.}
+\label{tab:notation-sec8}
+\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$\Gamma_{ik}$ & Christoffel tensor & varies & \eqref{eq:8.2} \\
+$c$ & Wave speed & m/s & \eqref{eq:8.2} \\
+$q$ & Wave number & 1/m & \eqref{eq:8.4} \\
+$G_i$ & Secular equation coefficients & varies & \eqref{eq:8.4} \\
+$\hat{f}(\omega)$ & Fourier transform & varies & \eqref{eq:8.6} \\
+$\tilde{f}(s)$ & Laplace transform & varies & \eqref{eq:8.7} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open questions for Section 8}
+
+\begin{enumerate}[label=\textbf{OQ8.\arabic*}]
+\item How are complex modes consistently normalized for energy flux computation across theory families? \\ \label{oq:8.1}
+\item What are the convergence properties of spectral methods for nonlocal and memory-dependent media? \\ \label{oq:8.2}
+\end{enumerate}
+
+% LocalWords: 

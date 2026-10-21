@@ -1,0 +1,1179 @@
+Waves in Random and Complex Media
+ISSN: (Print) (Online) Journal homepage: www.tandfonline.com/journals/twrm20
+Rayleigh wave in nonlocal piezo-thermo-electric
+semiconductor medium with fractional MGT
+model
+Vipin Gupta, Hijaz Ahmad, M. S. Barak, Soumik Das & Sandeep Kumar
+To cite this article: Vipin Gupta, Hijaz Ahmad, M. S. Barak, Soumik Das & Sandeep
+Kumar (29 Jul 2024): Rayleigh wave in nonlocal piezo-thermo-electric semiconductor
+medium with fractional MGT model, Waves in Random and Complex Media, DOI:
+10.1080/17455030.2024.2379958
+To link to this article: https://doi.org/10.1080/17455030.2024.2379958
+Published online: 29 Jul 2024.
+Submit your article to this journal
+Article views: 9
+View related articles
+View Crossmark data
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=twrm20
+WAVESINRANDOMANDCOMPLEXMEDIA
+https://doi.org/10.1080/17455030.2024.2379958
+Rayleighwaveinnonlocalpiezo-thermo-electric
+semiconductormediumwithfractionalMGTmodel
+VipinGuptaa,b,HijazAhmad c,d,e,M.S.Barak a,SoumikDasf andSandeepKumarg
+aDepartmentofMathematics,IndiraGandhiUniversity,Rewari,India;bDepartmentofMathematics,
+GurugramUniversity,Gurugram,India;cNearEastUniversity,OperationalResearchCenterinHealthcare,
+Nicosia,Turkey;dDepartmentofMathematics,FacultyofScience,IslamicUniversityofMadinah,Madinah,
+SaudiArabia;eDepartmentofTechnicalSciences,WesternCaspianUniversity,Baku,Azerbaijan;fSchoolof
+PhysicalSciences,AmritaVishwaVidyapeetham,Mysurucampus,Karnataka,India;gDepartmentof
+Mathematics,CDLU,Sirsa,India
+ABSTRACT ARTICLEHISTORY
+This paper addresses a critical gap in Rayleigh wave propagation Received2December2023
+studieswithinpiezoelectricsemiconductors.Existingresearchoften Accepted17June2024
+overlooksthecombinedeffectsofpiezoelectricity,semiconductiv-
+KEYWORDS
+ity, and thermal behavior. This work presents analytical solutions
+Semiconductor;fractional
+forRayleighwavesinanovelnonlocalthermo-piezo-photo-electric derivative;Durand-Kerner;
+semiconductorhalf-space,employingthefractionalMoore-Gibson- piezo-photo-thermo-electric;
+Thompsonmodel.Thewave-modemethodandDurand-Kernertech- MGT
+niqueareemployedtoextractrelevantsolutionsfromthecharacter-
+isticequation,ensuringsurfacewavedecay.Analysisisconducted
+forwavespropagatinginastress-free,photo-excited,andisother-
+malboundarycondition.Numericalsimulationsunveilphaseveloc-
+ity,attenuationcoefficient,andparticlemotion,leadingtoadeeper
+understandingofwavebehavior.Theinfluenceofnonlocalandfrac-
+tionalorderparametersismeticulouslyinvestigated.Thesefindings
+reveal unique phenomena that significantly advance the compre-
+hensionofRayleighwavesintheseintricatematerials.
+1. Introduction
+Semiconductors occupy an enormous material position, poised delicately between con-
+ductors and insulators. Their distinct electrical properties play a pivotal role in advanc-
+ingvariousrenewableenergytechnologies,withanotablementionbeingsolarcells[1].
+When exploring the convergence of science, engineering, and technology, a fascinating
+dimensionemergeswiththeintegrationofpiezoelectriccapabilities.
+Theworldofresearchhasbeencaptivatedbytheintriguingpotentialofpiezoelectric
+semiconductors,anareathatcontinuestodrawsignificantattention.Whensubjectedto
+mechanicalstressorthermalvariations,thesematerialsunveilaremarkablephenomenon
+encompassing electricity generation through polarization [2]. This interplay of electrical,
+thermal, and mechanical forces offers a promising avenue for innovation and advance-
+ment in multiple fields. Mindlin [3] established a foundational framework of governing
+CONTACT HijazAhmad hijaz555@gmail.com
+©2024InformaUKLimited,tradingasTaylor&FrancisGroup
+2 V.GUPTAETAL.
+equationsthateffectivelycapturethecomplexinterplaybetweentemperatureandpiezo-
+electric materials. Extending Mindlin’s theory, Chandrasekharaiah [4] delved deeper into
+thesubject,pioneeringtheincorporationofafinitewavevelocityintotherealmofthermo-
+piezoelectricity. A significant leap in understanding occurred thanks to Aouadi [5], who
+introducedacomprehensivetheoryofthermoelasticitytailoredpreciselytoconfrontthe
+complexchallengesposedbypiezoelectricmaterials,wherematerialconstantsundergo
+temperature-inducedvariations.
+Theearlytwentiethcenturysawasurgeintheoriesexploringwavepropagationinelas-
+ticmaterials.However,afundamentallimitationplaguedthesemodels– theassumption
+ofinfinitelyfastwavespeeds– violatingestablishedphysicalprinciples.Toreconcilethis
+discrepancy, Biot [6] laid the groundwork for a more comprehensive approach by intro-
+ducingthecoupledthermoelasticity(CT)theory.TheCTtheorycenteredonFourier’slaw
+ofheatconductionaimedtoovercometheshortcomingsofpreviousmodelsandprovide
+a deeper understanding of wave behavior within elastic materials. Building upon Biot’s
+work,researchersaddressedtheparadoxofinfinitewavespeedsbyincorporatingrelax-
+ationtimesintothegoverningequationsforbothheatandmotion[7,8].Thiscriticalstep
+ofincorporatingrelaxationtimeslaidthegroundworkfortheformulationofgeneralized
+thermoelasticitytheory,whichhasfoundbroadapplicabilityacrossdiversematerialsand
+scenarios [9,10]. Notably, Green and Naghdi [11–13] made significant contributions by
+introducingspecificthermoelastictheoriesthatfocusedonenergydissipationmechanisms
+withinelasticbodies.Theirgroundbreakingwork,categorizedasGreen-Naghdi(GN)typeII
+andtypeIII,hassignificantlyimprovedourunderstandingofhowelasticmaterialsbehave
+intermsofenergyloss.Byleveraginginsightfulmethods,thesecutting-edgetheorieshave
+yieldedadeepunderstandingofthecomplexdynamicsatplaywithinthesesystems.
+Inrecentdecades,fractionalcalculushasemergedasapivotaltoolacrossdiversefields,
+spanningcontrolengineering,nuclearphysicssignalprocessing,electromagnetics,astron-
+omy, chemistry, quantum field theory, and quantum mechanics. Moreover, the pursuit
+ofinnovationinnewmaterialsnecessitatesunconventionalconstructiontechniques.The
+inherent nonlocality of fractional calculus stands out as a paramount asset in numerous
+applications.Theconceptoffractionalorderderivativesoriginatesinatimelessquestion
+posed by de L’Hospital in 1695, pondering the essence of derivatives when not an inte-
+ger. As Diethelm and Ford [14] noted, differentiation has been conceived as the inverse
+counterparttointegration,leadingtovariousdefinitionsovertime.Amongthespectrumof
+fractionalderivatives[15],theCaputoandRiemann-Liouvilletypes,notedfortheirnonlocal
+characteristics,havegarneredwidespreadacclaim.
+Definition1.1: AsperRiemann-Liouville[16],thefractionalderivativeoforderαapplied
+toafunctionf(t)definedwithintheinterval[a,b]canberepresentedasinEquation(1).
+Similarly, the fractional derivative following the Caputo approach [16] can be expressed
+asillustratedinEquation(2).ThesedefinitionsincorporateakernelfunctionKα (t−ζ)=
+1/(t−ζ)α ,wherethegammafunction(cid:4)(x)comesintoplayandthepermissibleαvalues
+liewithintherange0to1.
+(cid:2)(cid:3) (cid:4)
+1 d t
+R
+a
+D α
+t
+f(t)=
+(cid:4)(1−α)dt
+Kα (t−ζ)f(ζ)dζ (1)
+a
+(cid:2)(cid:3) (cid:4)
+1 t
+C
+a
+D α
+t
+f(t)=
+(cid:4)(1−α)
+Kα (t−ζ)f (cid:2)(ζ)dζ (2)
+a
+WAVESINRANDOMANDCOMPLEXMEDIA 3
+Notably, the upper bound, denoted as b, can be any sufficiently large finite number
+encompassingallrelevantdiscussions.However,conventionally,thelowerbound,a,isfre-
+quentlyestablishedas0.Itisstraightforwardtoconfirmthattherelationshipbetweenthese
+twoderivativecategoriesisasfollows:
+RD α f(t)=cD α f(t)+
+Kα (t−a)
+f(a) (3)
+a t a t (cid:4)(1−α)
+Thisimpliesthatweneedtoconsideronlyoneofthesederivativetypes,andtheCaputo
+typeemergesasthemorepracticalchoice.Thisderivativefallsintothecategoryofastan-
+dardderivativewithaweightedintegralcharacterwithintheinterval[a,t],andthelength
+ofthisintervalincreaseswiththeparametert.
+EdelenandLaws[17]madesignificantcontributionsbyadvancingtheconceptofnon-
+local interactions, suggesting that material behavior depends not just on its immediate
+surroundingsbutalsoonabroaderrangeofinfluences.ThisapproachledEdelenetal.[18]
+toderivethefundamentalequationsfornonlocalelasticitytheory(NLET),whichutilizesthe
+secondlawofthermodynamicsandglobalbalancelawstoestablishesacomprehensive
+methodologyforstudyingtheimpactofnonlocalinteractionsonthemechanicalresponse
+ofelasticsolids.EringenandEdelen[19]furtherexpandeduponNLET,solidifyingitsposi-
+tionasapowerfultool.Inrecentyears,theMoore-Gibson-Thompson(MGT)equationhas
+emerged as a subject of intense research [20,21]. Derived from a third-order differential
+equation, the MGT equation has proven to be a powerful tool for delving into various
+aspects of fluid dynamics. Quintanilla [22] made a noteworthy contribution by propos-
+inganovelthermoelasticheatconductionmodelbasedontheMGTequation.Thismodel
+adds a relaxation factor to the GN-III model, resulting in a modified heat equation with
+thepotentialfordeeperinsights.Sinceitsintroduction,theMGTtheoryhasattractedcon-
+siderablescientificinterest,withresearchersactivelyexploringitsintricacies[23,24].The
+continuedinvestigationofthisequationholdspromiseforsignificantadvancementsinour
+understandingofwavedynamicsandrelatedphenomena.
+Beyond the established theoretical frameworks, recent research explores the intrigu-
+inginterplaybetweenlightandmechanicsinsemiconductormaterials.Theapplicationof
+photo-thermalmethodsoffersauniqueapproachtostimulatingasemiconductorelastic
+medium.Thistechniquehasthepotentialtogeneratethermalloadswithinthematerial,
+consequently inducing mechanical changes. Sur and his team [25–33] explore material
+behavior,emphasizingheattransfer,memoryeffects,andmechanicalresponses.Examin-
+ingdiversematerialslikesemiconductorsanddeep-seasediments,theyincorporatefrac-
+tionalcalculusandanalyzewavepropagationundervariousstimuli,sheddinglightontheir
+intricate interplay. Singh et al. [27] investigate how heat and elasticity (thermoelasticity)
+affectdampinginmicro-beams.Itconsiderstwospecifictheories(modifiedcouplestress
+andMGT)foranalyzingthisdamping.Yuetal.[34]explorehowthesizeofananobeam
+(even smaller thana microbeam)influences its thermoelasticproperties. Yang et al. [35]
+analyzed the damping in rectangular nanoplates (flat, fragile structures), considering a
+dual-phase-lagmodelforheattransfer.
+Additionally, it incorporates the concept of nonlocality, which means the material’s
+behavioratapointdependsnotjustonitsimmediatesurroundingsbutalsoonabroader
+region.Theirresearchaimedtoanalyzetheresponseandcharacteristicsofsemiconductors
+subjectedtotheseexternalinfluences.Buildinguponthisfoundation,researchers[36–44]
+4 V.GUPTAETAL.
+have delved deeper into specific aspects of wave propagation within different types of
+materials.Theseinvestigationsexplorevarioustopicsrelatedtoplanewaves,incorporat-
+ingconceptssuchastwo-temperaturetheories,fractionalordercalculus,andnonlocality.
+Barak and his coworkers [45–52] focused their efforts on analyzing energy distribution
+withinpiezothermoelasticinterfacemodels.Theirworkconsideredthepresenceofphase
+lags,employingaframeworkthatincorporatesfractionalandmemory-dependentderiva-
+tives.Theseinnovativeapproachesoffervaluabletoolsforgainingamorecomprehensive
+understandingofenergytransferincomplexmaterialsystems.
+This research establishes a mathematical framework for the analysis of a nonlocal
+thermo-piezo-electric semiconductor medium, taking into account the fractional order
+Moore-Gibson-Thompsontheory.Thematerialconsideredinthisstudyisbothhomoge-
+nousandorthotropic,anditissubjectedtostress-freeisothermalconditionsandphoto-
+thermal excitation processes. The analysis commences with establishing the nonlocal
+governingequationsfortheelectricpotential,incorporatingtheprinciplesofbothphoto-
+thermal and piezoelectric theories. To find solutions of these equations, an eigen mode
+approachisemployed.Theresearchoutcomesincludethederivationofattenuationcoef-
+ficient, phase velocity, and particle motion trajectory curves. These curves reveal the
+significant influence of different heat conduction models, fractional order, and nonlocal
+parametersonthesystem’sresponse.
+2. Derivationofconstitutiverelations
+Building upon the foundation laid by Nowacki’s linear theory for piezoelectricity with
+thermal effects [53,54], this study expands the framework of piezo-thermoelectricity by
+incorporating Eringen’s nonlocal elasticity theory [55] and accounting for photo-excited
+processes[56].Anorthotropicpiezo-thermo-electricsemiconductormediumwithvolume
+V istakenintoaccountwhichisboundedbythesurface(cid:5)andcoveringtheregionℵin
+(cid:4)R3.Apoint’slocationbeforeandafterdeformationisrepresentedbyX(undeformed)and
+i
+x (deformed),respectively.Thedisplacementcomponentofaparticleisthendefinedas
+i
+u =X −x.Accordingtothetenetsoflinearelasticity,theLagrangianstraintensortakes
+i i i
+theformofe =0.5(u, +u,).Furthermore,toaccountforthermalexpansion,consider
+ij ij ji
+thematerial’stemperatureθ =θ −θ suchthat|θ/θ |<<1,whereθ representstheini-
+t 0 0 0
+tialundeformedtemperatureandθ signifiesthechangeinabsolutetemperature.Inthe
+t
+absence of body forces, the collections of fundamental variables at points ℘(cid:5) and ℘(cid:5)(cid:2) are
+delineatedas
+Y ={e (℘(cid:5)), E(℘(cid:5)), N(℘(cid:5)), T(℘(cid:5))} (4)
+ij i
+Y (cid:2) ={e (℘(cid:5)(cid:2)), E(℘(cid:5)(cid:2)), N(℘(cid:5)(cid:2)), T(℘(cid:5)(cid:2))} (5)
+ij i
+Thestrainenergyfunction(cid:4)∗
+isgivenas
+2(cid:4)∗ =c (℘(cid:5), ℘(cid:5)(cid:2))e (℘(cid:5))e (℘(cid:5)(cid:2))−η (℘(cid:5), ℘(cid:5)(cid:2))[e (℘(cid:5))E (℘(cid:5)(cid:2))+e (℘(cid:5)(cid:2))E (℘(cid:5))]
+ijkl ij kl ijk ij k ij k
+−βT(℘(cid:5), ℘(cid:5)(cid:2))[e (℘(cid:5))θ(℘(cid:5)(cid:2))+e (℘(cid:5)(cid:2))θ(℘(cid:5))]+δN(℘(cid:5), ℘(cid:5)(cid:2))[e (℘(cid:5))N(℘(cid:5)(cid:2))+e (℘(cid:5)(cid:2))N(℘(cid:5))]
+ij ij ij ij ij ij
+−ε (℘(cid:5), ℘(cid:5)(cid:2))E(℘(cid:5))E(℘(cid:5)(cid:2))−τ(℘(cid:5), ℘(cid:5)(cid:2))[E(℘(cid:5))θ(℘(cid:5)(cid:2))+E(℘(cid:5)(cid:2))θ(℘(cid:5))]
+ij i j i i i
+ρC
+−δ∗(℘(cid:5), ℘(cid:5)(cid:2))[E(℘(cid:5))N(℘(cid:5)(cid:2))+E(℘(cid:5)(cid:2))N(℘(cid:5))]− Eθ(℘(cid:5))θ(℘(cid:5)(cid:2))
+i i i θ
+0
+WAVESINRANDOMANDCOMPLEXMEDIA 5
+−v ∗(℘(cid:5), ℘(cid:5)(cid:2))N(℘(cid:5))N(℘(cid:5)(cid:2))−g ∗(℘(cid:5), ℘(cid:5)(cid:2))[N(℘(cid:5))θ(℘(cid:5)(cid:2))+N(℘(cid:5)(cid:2))θ(℘(cid:5))] (6)
+Theconstitutivecoefficientsymmetriesaregivenby
+η (℘(cid:5), ℘(cid:5)(cid:2))=η (℘(cid:5), ℘(cid:5)(cid:2)),δN(℘(cid:5), ℘(cid:5)(cid:2))=δN(℘(cid:5), ℘(cid:5)(cid:2)),
+ijk jik ij ji
+βT(℘(cid:5), ℘(cid:5)(cid:2))=βT(℘(cid:5), ℘(cid:5)(cid:2)),ε (℘(cid:5), ℘(cid:5)(cid:2))=ε (℘(cid:5), ℘(cid:5)(cid:2)),
+ij ji ij ji
+c (℘(cid:5), ℘(cid:5)(cid:2))=c (℘(cid:5), ℘(cid:5)(cid:2))=c (℘(cid:5), ℘(cid:5)(cid:2))
+ijkl klij jikl
+Eringen’sformulation[55]leadstothefollowingconstitutiverelation
+(cid:5) (cid:8)
+(cid:3) (cid:6) (cid:7)
+∂(cid:4)∗ ∂(cid:4)∗ (cid:4)S
+(cid:14)∗ = + dV(℘(cid:5)(cid:2)) (7)
+∂Y ∂Y(cid:2)
+V
+Superscriptnotation(cid:4)Sisemployedheretoemphasizetheinherentsymmetryofthequan-
+titywithrespecttoswappingvariables℘(cid:5)and℘(cid:5)(cid:2) .Theset(cid:14)∗ ={σ , −D, S ∗}isanordered
+ij i
+setwiththesetYasshowninEquation(4).
+InlightofEquations(6)and(7),thestresstensor(σ ),electricdisplacementvector(D),
+ij i
+andspecificentropy(ρS ∗ )areexpressedas
+(cid:3)
+σ = (c (℘(cid:5), ℘(cid:5)(cid:2))e ℘(cid:5)(cid:2)−η (℘(cid:5), ℘(cid:5)(cid:2))E (℘(cid:5)(cid:2))−δN(℘(cid:5), ℘(cid:5)(cid:2))N(℘(cid:5)(cid:2))
+ij ijkl kl ijk k ij
+V
+−βT(℘(cid:5), ℘(cid:5)(cid:2))θ(℘(cid:5)(cid:2)))dV(℘(cid:5)(cid:2)) (8)
+ij
+(cid:3)
+D =− (−η (℘(cid:5), ℘(cid:5)(cid:2))e (℘(cid:5)(cid:2))−δ∗(℘(cid:5), ℘(cid:5)(cid:2))N(℘(cid:5)(cid:2))−ε (℘(cid:5), ℘(cid:5)(cid:2))E(℘(cid:5)(cid:2))
+i ijk ij i ij j
+V
+−τ(℘(cid:5), ℘(cid:5)(cid:2))θ(℘(cid:5)(cid:2)))dV(℘(cid:5)(cid:2)) (9)
+i
+(cid:3) (cid:9)
+ρS ∗ = βT(℘(cid:5), ℘(cid:5)(cid:2))e (℘(cid:5)(cid:2))+T(℘(cid:5), ℘(cid:5)(cid:2))E(℘(cid:5)(cid:2))+g ∗(℘(cid:5), ℘(cid:5)(cid:2))N(℘(cid:5)(cid:2)) (1)
+ij kl i i
+V
+(cid:7)
+ρ(℘(cid:5), ℘(cid:5)(cid:2))C
++ Eθ(℘(cid:5)(cid:2)) dV(℘(cid:5)(cid:2)) (10)
+θ
+0
+Fortheorthotropicpiezo-thermo-electricsemiconductor,theconstitutivecoefficients
+δ∗ andg ∗ areadoptedtobezero.Theconstitutivecoefficientsd ,η ,βT,ε ,τ,andδNare
+i ijk ijk ij ij i ij
+functionsof℘˜ =|℘(cid:5),−℘(cid:5)(cid:2)|.Consequently,theconstitutiverelationsexpressedinequations
+(8)to(10)aretransformedasfollows
+(cid:3)
+σ = (c (℘˜)e (℘(cid:5)(cid:2))−η (℘˜)E (℘(cid:5)(cid:2))+δN(℘˜)N(℘(cid:5)(cid:2))−βT(℘˜)θ(℘(cid:5)(cid:2)))dV(℘(cid:5)(cid:2)) (11)
+ij ijkl kl ijk k ij ij
+V
+(cid:3)
+D = (η (℘˜)e (℘(cid:5)(cid:2))+ε (℘˜)E(℘(cid:5)(cid:2))+τ(℘˜)θ(℘(cid:5)(cid:2)))dV(℘(cid:5)(cid:2)) (12)
+i ijk ij ij j i
+V
+(cid:3) (cid:6) (cid:7)
+ρ(℘˜)C
+ρS ∗ = βT(℘˜)e (℘(cid:5)(cid:2))+τ(℘˜)E(℘(cid:5)(cid:2))+ Eθ(℘(cid:5)(cid:2)) dV(℘(cid:5)(cid:2)) (13)
+ij ij i i θ
+0
+V
+6 V.GUPTAETAL.
+Theinfluenceofintermolecularforcesisassumedtoweakenwithincreasingdistance
+from a reference point. Consequently, each component of the constitutive coefficients
+exhibits a decay in magnitude as distance increases. This behavior can be represented
+mathematically,forinstance, lim τ(℘˜)→0.As℘(cid:5) =℘(cid:5)(cid:2) ,eachcoefficientreachesitsmax-
+i
+℘˜→∞
+imumvalue.Therelationshipbetweenthesenonlocalandthecorrespondinglocalelastic
+coefficientsisthendefinedas.
+c (℘˜) η (℘˜) τ(℘˜) ρ(℘˜) δN(℘˜) βT(℘˜) ε (℘˜)
+ijkl = ijk = i = = ij = ij = ij =(cid:18)(℘˜) (14)
+(cid:17) c ijkl (cid:17)η ijk (cid:17)τ i ρ(cid:17) (cid:17) δ N β (cid:17)T (cid:17)ε ij
+ij ij
+where (cid:17) c , (cid:17)η , (cid:17) δ N ,β (cid:17)T , (cid:17)ε ,and (cid:17)τ areindicatedthematerialsparameters.
+ijkl ijk ij ij ij i
+Thenonlocalkernel(cid:18)(℘˜)adherestothefollowingproperty
+(cid:3)
+(cid:18)(℘˜)dV =1 (15)
+V
+AccordingtoEringenandWegner[57],
+(1−ξ2∇2)(cid:18)=δ(℘˜) (16)
+whereξ denotethenonlocalparameter,∇2representthelaplacianoperator,anddefined
+byξ =ξ l .Hereξ isamaterialconstantandl istheinternalcharacteristiclength.
+0e 0 e
+Byutilizingtheoperator(1−ξ2∇2)onEquations(11)to(13)andusingEquations(14)to
+(16),theconstitutiverelations(afterremovingtheoverheadtildesign)aregivenasfollows
+(1−ξ2∇2)σ =σL =c e (℘(cid:5))−η E (℘(cid:5))−δNN(℘(cid:5))−βTθ(℘(cid:5)), (17)
+ij ij ijkl kl ijk k ij ij
+(1−ξ2∇2)D =DL =η e (℘(cid:5))+ε E(℘(cid:5))+τθ(℘(cid:5)) (18)
+i i ijk jk ij j i
+ρC θ(℘(cid:5))
+(1−ξ2∇2)ρS ∗ =(ρS ∗)L =βTe (℘(cid:5))+τE(℘(cid:5))+ E (19)
+ij ij i i θ
+0
+Here, the terms σL, DL, and(ρS ∗)L are related to local orthotropic piezo-thermo-
+ij i
+electricsemiconductormedium.Equations(17)to(19)portrayfundamentalrelationships
+between strain, temperature, stress, electric potential, and carrier density for a nonlocal
+orthotropicpiezo-thermo-electricsemiconductormedium.
+3. Basicequationsfornonlocalthermopiezoelectricsemiconductormedium
+Following Eringen and Edelen [19], Quintanilla [22], Gupta and Barak [49], and Gupta
+et al. [58], the fundamental equations for a homogenous nonlocal thermo piezoelectric
+semiconductormediumincorporatingfractionalorderMGTaregivenas
+The nonlocal relation between temperature, plasma, stress, strain, and electrical dis-
+placement
+(1−ξ2∇2)σ =σL =c e −η E −βTθ −δNN (20)
+ij ij ijkl kl ijk k ij ij
+(1−ξ2∇2)D =η e +ε E +τθ, (21)
+i ijk jk ij j i
+WAVESINRANDOMANDCOMPLEXMEDIA 7
+Equationofmotion
+σL =ρ(1−ξ2∇2)u¨ (22)
+ij,j i
+Gaussequation
+D, =0,E =−ϕ, (23)
+ii i i
+Thenonlocalrelationbetweenentropy-strainandtemperature
+ρC θ
+(1−ξ2∇2)ρS ∗ =(ρS ∗)L =βTe +τE + E (24)
+ij ij i i θ
+0
+NonlocalfractionalorderMGTheatconductionlaw
+(cid:3)
+(1−ξ2∇2)(1+α∗ Dα )q ∗
+i
+=−[K
+ij
+θ,
+i
++K
+i
+∗
+j
+T,
+i
+]− E
+τ
+g
+∗
+N dx
+i
+,whereT ˙ =θ (25)
+Differentiatedwithrespecttox,weget
+i
+E N
+(1−ξ2∇2)(1+α∗ Dα )q ∗
+i,i
+=−[K
+ij
+θ,
+ij
++K
+i
+∗
+j
+T,
+ij
+]−
+τ
+g
+∗
+(26)
+Energyequation
+ρθ S ˙∗ =−q ∗ (27)
+0 i,i
+FromEquations(8)–(11),theMGTfractionalheatequationforthepiezothermoelectric
+semiconductormediumisgivenas
+˙
+[K
+ij
+θ˙ ,
+ij
++K
+i
+∗
+j
+θ,
+ij
+]+E
+gτ
+N
+∗
+=(1+α∗ Dα )(ρC
+E
+θ¨+θ
+0
+(β
+ij
+e
+ij
+−τ
+i
+ϕ¨,
+i
+)) (28)
+Thermo-Plasmatransportequation
+∂N N
+=DEN, − +κθ (29)
+∂t ij ij τ∗
+3.1. Nomenclature
+DE = carrierdiffusiontensor
+ij
+κ = thermalactivationcouplingparameter
+ϕ = electricalpotential
+K = componentsofthethermalconductivity
+ij
+e = componentofstrain
+ij
+c = elasticstiffnesstensor
+ijrl
+T = thermaldisplacement
+E = energygap
+g
+α = fractionalorderparameter
+σ = componentsofthenonlocalstress
+ij
+Dα = fractionalorderoperator
+S ∗ = entropy
+8 V.GUPTAETAL.
+ρ = Density
+η , ε = piezo-thermalmodulitensors
+ijr ij
+τ∗ = photo-generatedcarrierlifetime
+δN = electronicdeformationtensor
+ij
+C = specificheatatconstantstrain
+E
+α∗ = relaxationparameter
+σL = componentsofthelocalstress
+ij
+D = electricdisplacement
+i
+θ = thermaltemperature
+τ = pyroelectricconstants
+i
+N= carrierdensity
+E = electricfielddensity
+i
+ξ = nonlocalparameter
+q ∗ = componentofheatflux
+i
+βT = thermalmodulitensors
+ij
+K ∗ = componentsoftherateofthermalconductivity
+ij
+3.2. Limitingcase
+The current MGT heat transfer model for piezoelectric semiconductor material, may be
+convertinotherheatcondunctionmodelwhen:
+• K ∗ =α∗ =0,thentheexistingmodeltransformsaCTmodelasdescribedbyBiot[6].
+ij
+• K ∗ =0,transformsintotheLSmodelasdescribedbyLord-Shulman[7].
+ij
+• K =α∗ =0,convertsintoGN-II[12]model.
+ij
+• α∗ =0,convertsintoGN-III[13]model
+4. Formulationoftheproblem
+Weexamineauniform,orthotropicthermopiezoelectricsemiconductorhalf-spacewithin
+theframeworkoftheMGTfractionalheatconductionmodelatauniformreferencetem-
+peratureθ .InthecontextoftheRayleighwavediscussedinthispaper,weassumethatall
+0
+physicalparametersareindependentofspatialcoordinatey.Theconstitutiverelationships
+forthematerial’scomponentsinthexz-planearepresentedasfollows:
+σL =c u, +c w, +η ϕ, −δNN−βTθ (30)
+xx 11 x 13 z 31 z 1 1
+σL =c (u, +w, )+η ϕ, (31)
+xz 55 z x 15 x
+σL =c u, +c w, +η ϕ, −δNN−βTθ (32)
+zz 13 x 33 z 33 z 3 3
+D =η (u, +w, ) −ε ϕ, (33)
+x 15 z x 11 x
+D =η u, +η w, −ε ϕ, +τ θ (34)
+z 31 x 33 z 33 z 3
+ThecombinationofEquations(20)and(22)withEquations(30)–(32),intheabsenceof
+externalbodyforces,yieldsthefollowingequationsofmotion:
+∂2u ∂2u ∂2w ∂N
+c +c +(c +c ) −δN
+11∂x2 55∂z2 13 55 ∂x∂z 1 ∂x
+WAVESINRANDOMANDCOMPLEXMEDIA 9
+∂θ ∂2ϕ ∂2u
+−βT +(η +η ) =ρ(1−ξ2∇2) (35)
+1 ∂x 31 15 ∂x∂z ∂t2
+∂2w ∂2w ∂2u ∂N ∂θ
+c +c +(c +c ) −δN −βT
+55 ∂x2 33 ∂z2 13 55 ∂x∂z 3 ∂z 3 ∂z
+∂2ϕ ∂2ϕ ∂2w
++η +η =ρ(1−ξ2∇2) (36)
+15∂x2 33∂z2 ∂t2
+TheMGTheatconductionequationwithfractionalorderbehaviorinthexz-plane
+(cid:2) (cid:4)
+∂2θ˙ ∂2θ˙ ∂2θ ∂2θ N ˙
+K +K +K ∗ +K ∗ +E
+1∂x2 3∂z2 1∂x2 3 ∂z2 gτ∗
+=(1+α∗ Dα )(ρC
+E
+θ¨+θ
+0
+(β
+1
+u¨,
+x
++β
+3
+w¨,
+z
+−τ
+3
+ϕ¨,
+z
+)) (37)
+Gaussequationinthexz-plane
+∂2w ∂2w ∂2u ∂2ϕ ∂2ϕ ∂θ
+η +η +(η +η ) −ε −ε +τ =0 (38)
+15 ∂x2 33 ∂z2 31 15 ∂x∂z 11∂x2 33∂z2 3∂z
+ThetransportequationforThermo-Plasmainthexz-plane
+(cid:6) (cid:7)
+∂N ∂2N ∂2N N
+= DE +DE − +κT (39)
+∂t 1∂x2 3∂z2 τ∗
+where u(cid:5) =(u, 0, w), δN =δNδ , K ∗ =K ∗δ , K =Kδ , βT =βTδ , βT =(c +c )αT +
+ij i ij ij i ij ij i ij ij i ij 1 11 12 11
+c αT ,βT =2c αT +c αT ,αT ,αT aretheconstantsoflinearthermalexpansion.
+13 33 3 13 33 33 33 11 33
+5. Solutionoftheproblem
+The general solutions for the propagation of harmonic plane waves in a thermo
+piezoelectric semiconductor medium with amplitude (u˜, w˜, N ˜ , θ˜ , ϕ˜) corresponding to
+(u, w, N, θ, ϕ,)arerepresentedasfollows:
+(u, w, N, θ, ϕ,)=(u˜, w˜, N ˜ , θ˜ , ϕ˜)exp[ιω(qx+sz−t)] (40)
+whereqandsaretheslownessvectorsandωindicatetheangularfrequency.
+The combination of Equation (40) with Equations (35)–(39) results in the following
+systemofhomogeneousequations:
+(b +b s2)u˜ +(b s)w˜ −(b )N ˜ −(b )θ˜+(b s)ϕ˜ =0 (41)
+11 12 13 14 15 16
+(b s)u˜ +(b +b s2)w˜ −(b s)N ˜ −(b s)θ˜+(b +b s2)ϕ˜ =0 (42)
+21 22 23 24 25 26 27
+(b )u˜ +(b s)w˜ +(b )N ˜ +(b +b s2)θ˜−(b )ϕ˜ =0 (43)
+31 32 33 34 35 36
+(b s)u˜ +(b +b s2)w˜ +(0)N ˜ +(b s)θ˜−(b +b s2)ϕ˜ =0 (44)
+41 42 27 43 44 45
+(0)u˜ +(0)w˜ +(b +b s2)N ˜ +(b )θ˜+(0)ϕ˜ =0 (45)
+51 52 53
+where b =c q2−ρ(1+ω2ξ2q2), b =c −ρω2ξ2, b =(c +c )q, b =
+11 11 12 55 13 13 55 14
+−δNqb −1,b=−ιωb =−βTqb −1,b =(η +η )q,b =(c +c )q,b =c q2−
+1 15 1 16 31 15 21 13 55 22 55
+10 V.GUPTAETAL.
+ρ(1+ξ2ω2q2), b =c −ρξ2ω2, b =−δNb −1, b =−βTb −1, b =η q2, b =
+23 33 24 3 25 3 26 15 27
+η ,b =−L θ βTbq,b =−L θ βTb,b =−E (τ∗ b)−1,b =L ρC −K bq2−K ∗ q2,
+33 31 2 0 1 32 2 0 3 33 g 34 2 E 1 1
+b 35 =−K 3 b−K 3 ∗ ,b 36 =−L 2 θ 0 τ 3 b,L 2 =1+L 1 ,L 1 =α∗ t −α E 1,1−α (bt),b 41 =(η 31 +η 15 )q,
+b =η q2, b =τ b −1, b =ε q2 b =ε , b =DEq2−b −1+ω−2(τ∗)−1, b =
+42 15 43 3 44 11 45 33 51 1 52
+DE,b =κb −2.
+3 53
+Following[59,60],theMittag-LefflerfunctionEα,β (z),forz ∈C,andtwoparametersα,
+β ∈Cwith(cid:11)(α)>0,isdefinedas
+(cid:10)∞
+zk
+Eα,β (z)= (46)
+(cid:4)(αk+β)
+k=0
+Thepresenceofnon-trivialsolutionsforEquations(41)through(45)ensurebyfollowing
+characteristicequation
+(A s10+A s8+A s6+A s4+A s2+A ){u˜, w˜, N ˜ , T ˜ , ϕ˜}=0 (47)
+1 2 3 4 5 6
+The coefficients A, (i=1−6) are acquired using conventional methods by solving the
+i
+determinant.TheDurand-Kerneralgorithm[61]appliedtoEquation(47)yieldstencomplex
+conjugaterootpairs.Theserootsarethenselectedbasedontheradiationconditionfora
+semi-infinitehalf-space.Inthiscontext,forexample,ensuring(cid:12)(s )>0withinthez>0
+n
+regionguaranteesthatdisturbancesdecaywithdepthastheypropagate.Consequently,
+thefivedistinctrealpartsoftheselectedroots(denotedbys , p=1−5)definefiveslow-
+p
+nessvectors(q, s ),thatcharacterizethepropagationoffivedecayingwavephaseswithin
+p
+thesemiconductormedium.
+Consequently, the following presents the formal solution adhering to the radiation
+condition
+(cid:10)5
+(u, w, N, θ, ϕ)= (1, P , Q , R , S )u˜ exp[ιω(qx+s z−t)] (48)
+m m m m m m
+m=i
+ThevalueofamplituderatiosP ,Q ,R andS canbeobtainedbysolvingthissystem
+m m m m
+⎡
+P
+⎤ ⎡
+b s −b −b b s
+⎤−1 ⎡
+−b −b s2
+⎤
+m 13 m 14 15 16 m 11 12 m
+⎢ ⎢Q m ⎥ ⎥= ⎢ ⎢b 22 +b 23 s2 m −b 24 s m −b 25 s m b 26 +b 27 s2 m ⎥ ⎥ ⎢ ⎢ −b 21 s m ⎥ ⎥
+⎣ R ⎦ ⎣ b s b b +b s2 −b ⎦ ⎣ −b ⎦
+m 32 m 33 34 35 m 36 31
+S b +b s2 0 b s −b −b s2 −b s
+m 42 27 m 43 m 44 45 m 41 m
+(49)
+Uponsubstitutingthesolution(48)intoEquations(31)-(32)and(34),wecanrepresentthe
+stressandelectricdisplacementcomponentsintermsofamplituderatiosasfollows:
+(cid:10)5
+(σL, σL, D )= ιω(D , D D )u˜ exp[ιω(qx+s z−t)] (50)
+xz zz 3 1r 2r, 3r r r
+r=1
+where D =c (s +qP )+η qS , D =c q+c s P +η S s −δNQ −βTR , D =
+1r 55 r r 15 r 2r 13 33 r r 33 r r 3 r 3 r 3r
+η q+η s P −ε s S +τ R ,r =1−5.
+31 33 r r 33 r r 3 r
+WAVESINRANDOMANDCOMPLEXMEDIA 11
+6. SecularequationofRayleighwave
+ToestablishthesecularequationgoverningthebehaviorofaRayleighwave’spropagation,
+weintroducespecificboundaryconditionsatthefreesurfacez=0:
+• Mechanicalconditions:σL =0,σL =0 (51)
+xz zz
+• Electricaldisplacementcondition:D =0 (52)
+3
+• Thermalcondition:θ =0 (53)
+∂N s N
+• Carrierdensitycondition: = N (54)
+∂z DE
+1
+while,asthecarriersdiffuse,theypermeatethesurfacewithalowprobabilityofrecombin-
+ingduetotheconstantrecombinationrates .
+N
+Utilizing Equations (48) and (50) along with the boundary conditions (51) to (54), we
+obtainacoupledsystemofequationsinu˜ .
+r
+(cid:10)5
+D u˜ =0,(p=1−5) (55)
+pr r
+r=1
+whereD =R ,D =(bs −s /DE)Q .
+4r r 5r r N 1 r
+Finding a non-trivial solution for each scenario hinges on a crucial requirement:
+det{D
+5×5
+}=0.ThisconditionleadstoacomplexsecularequationthatgovernsRayleigh
+wave propagation. The Newton–Raphson technique is employed to solve this equation,
+and the resulting root is denoted by ‘c’. The phase velocity (V) depends on the angular
+frequency,highlightingthedispersivenatureofRayleighwavesinthesemiconductorhalf-
+space.Furthermore,thecomplexnatureof‘c’signifiestheattenuationofthesewaves.The
+positiveimaginarycomponentof‘c’confirmstheirdecaywithincreasingdepth.Established
+formulas[58]expresstheVandattenuationcoefficientofRayleighwavesasfollows:
+|c2|
+• V = (56)
+(cid:11)(c)
+(cid:12)(1/c2)
+• Attenuationcoefficient:Q −1 = (57)
+(cid:11)(1/c2)
+7. Pathofthesurfaceparticle
+Thedisplacementformulas(48)arecomputedtodeterminethevelocityofsurfaceparti-
+clesinthemedium,with‘c’indicatingtheRayleighwave.Inthecurrentinvestigation,the
+mechanicaldisplacementcomponentsareformulatedas
+(cid:10)5
+(u, w)= (1, P )u˜ exp[ιω(qx+s z−t)] (58)
+m m m
+m=i
+Assumingarealvalueforq,theEquation(58)fortheactualdisplacementsisgivenby:
+(cid:17) (cid:18)
+(cid:10)5
+(U, W)=(cid:11)(u, w)≈(cid:11) (1, P )exp[ιω(qx+s z−t)] (59)
+m m
+m=i
+12 V.GUPTAETAL.
+The parametric form (59) represents a closed curve that envelopes the particle’s motion
+with time (t) and locus (x, z) in a piezoelectric semiconductor half-space due to the
+propagation of Rayleigh wave. When considering a specific propagation direction (q=
+cosϕ/c(ϕ)),Equation(59)revealsthedependenceofp√articlemotion(U, W)onthewave’s
+propagationcharacteristics.Thescalarquantity(cid:14)= U2+W2,representingtheampli-
+tudeoftheparticlemotion(foru˜ =1).Thisamplitudeisdirectlyrelatedtothespecific
+m
+generalizedRayleighwavemodeanalyzedinthisstudy.
+8. Validation
+• Afterneglectingthecarrierdensityandnonlocalimpact,thecurrentthermopiezo-
+electricmodelconformstoalimitingcasediscussedbyBarakandGupta[62].Fur-
+thermore,byneglectingthefractionalderivativesimpactthepresentmodelaligns
+withaparticularcaseputforthbyAhmedetal.[63].
+• Ifwesetξ →0,andsimplifytheproblemintoonedimensionwithoutinvolvingfrac-
+tionalderivatives,thepresentmodelcoincideswiththeresultselucidatedbyKhamis
+etal.[64].
+• Byremovingthepiezoelectriceffectandtransformthemodelinaone-dimensional
+then the present model exhibits unity with a specific scenario elucidated in Lotfy
+andSarkar[65].Thiscorrespondenceisobservedwheretheconductivetemperature
+equalsthethermaltemperature.
+9. Numericalresultsanddiscussion
+Building upon the framework established in the previous section this section facilitates
+examining the propagation properties of a generalized Rayleigh wave in a thermo-
+piezoelectric semiconductor half-space. However, the associated mathematical expres-
+sionscanbecomplexandchallengingtointerpretinanabstractcontext.Toofferamore
+preciseunderstanding,wehaveincorporatedanumericalexampletoinvestigatehowvar-
+iousheatconductionmodelsaffectthepropagationpropertiesoftheRayleighwave.For
+ourcomputationalanalysis,wefocusonCadmiumSelenide(CdSe)asthematerialofchoice.
+ThisselectionleveragestheuniquematerialpropertiesofCdSe,asdocumentedintheprior
+worksofGuptaandBarak[49]andLotfyetal.[56]assummarizedinTable1.
+9.1. Comparisonbetweendistinctthermalpiezoelectricsemiconductormodels
+Inthiscase,weconductacomparativeanalysisoffiveprominentsemiconductorfractional
+heat conduction models, namely classical thermoelastic (CT), Lord Shulman (LS), Green-
+Naghiditype-I(GN-I),type-II(GN-II),andMoore-Gibson-Thompson(MGT)models,within
+theframeworkofEringen’snonlocaltheoryforϕ = 60°.Topresentourfindingseffectively,
+weemployvisualaidslabeledinFigure1(a,b).Bothfigurefeaturesdistinctlinesrepresent-
+ing the various thermo-piezo-electric models in a semiconductor medium. CT, LS, GN-II,
+GN-III,andMGTmodelsareshownbysolidcurvesinskyblue,orange,yellow,purple,and
+green,respectively.Toscrutinizesubtledistinctionsonamicroscalelevel,weincorporate
+expandedviewsoftheintersectingcurveswithinsupplementarysub-indentfigures.
+WAVESINRANDOMANDCOMPLEXMEDIA 13
+Table1.Keymodelparametersvalue.
+Symbol Value Symbol Value
+c11 74.1×109Nm−2 c33 83.6×109Nm−2
+c13 39.3×109Nm−2 T0 298K
+δN −9×10−31m3 δN −7×10−31m3
+c5 1 5 13.2×109Nm−2 K 3 3 9Wm−1K−1
+βT 6.21×105Nm−2K−1 βT 5.51×105Nm−2K−1
+η
+3
+1
+1
+−0.160Cm−2 η
+3
+3
+3
+0.347Cm−2
+η
+15
+−0.138Cm−2 ε
+11
+8.26×10−11C2N−1m−2
+ε
+33
+9.03×10−11C2N−1m−2 τ
+3
+−2.9×10−6Cm−2K−1
+K1 9Wm−1K−1 Eg 1.11eV
+K∗ 7Wm−1K−1s−1 K∗ 8Wm−1K−1s−1
+ρ 1 5504kgm−3 C 3 E 260Jkg−1K−1
+DE,DE 2.5 ×103m2/s τ∗ 5×10−5s
+1 3
+Figure1.(a–b)TheeffectofCT,LS,GN-II,GN-III,andMGTmodelsonphasevelocityandattenuation
+withfrequency(ω)whenα =0.9andξ =0.02.
+In Figure 1(a), we scrutinize phase velocity amplitude concerning frequency. With
+increasing frequency, phase velocity amplitude notably rises for the LS, MGT, and GN-II
+models,inlinewiththebehaviorofthermo-piezoelectricsemiconductormaterials,which
+exhibit heightened responses at higher frequencies. Conversely, the GN-III and CT mod-
+elsdemonstratedecreasingphasevelocityamplitudeswithrisingfrequency,suggesting
+thattheymaybelesssuitedfordescribingthebehaviorofthesematerialsathigherfre-
+quencies. Remarkably, the LS and MGT models exhibit the highest dominance among
+all the heat conduction models considered. This suggests their effectiveness in captur-
+ingthedynamicresponseofthermo-piezoelectricsemiconductormaterialsacrossvarious
+frequencyranges,likelyduetotheirabilitytoaccountforthematerial’sinherentproper-
+ties and their influence on phase velocity. Furthermore, it’s worth noting that variations
+infrequencyhaveaparticularlysignificantimpactontheGN-IIIandCTmodelscompared
+totheothermodels.Thisunderscorestheimportanceofaccuratelymodelingfrequency-
+dependentbehaviorinpiezosemiconductorapplications,wherethechoiceofmodelcan
+significantlyinfluencetheobtainedresults.
+InFigure1(b),wedelveintothestudyofRayleighwaveattenuationwithinapiezosemi-
+conductormedium.Intriguingpatternsemergeasweexaminetherelationshipbetween
+14 V.GUPTAETAL.
+Figure2.(a–b) The impact of fractional order parameter on phase velocity and attenuation with
+frequency(ω)whenξ =0.02.
+frequencyandattenuationcoefficient.Higherfrequenciesleadtoapronouncedincrease
+intheattenuationcoefficientfortheCT,GN-II,andGN-IIImodels,sheddinglightonRayleigh
+wave propagation in piezo semiconductor materials, where higher frequencies result in
+moreexcellentenergydissipationasheat,causingincreasedattenuation.Conversely,the
+MGTandLSmodelsexhibitacounterintuitivetrend:thenegativeattenuationcoefficient
+decreaseswithincreasingfrequencyinspecificranges.Thissuggeststhatthesemodelsmay
+offeramoreaccuraterepresentationofRayleighwaveattenuationinpiezosemiconductor
+materialsunderspecificconditionswhereenergylossiscomparativelylower.
+ThisexplorationintoRayleighwaveattenuationrevealsthecomplexitiesofwaveprop-
+agationinpiezosemiconductormaterials,emphasizingthecriticalimportanceofselecting
+the most suitable model for our research. Understanding how different models perform
+acrossvariousfrequenciesisessentialforacomprehensiveunderstandingofRayleighwave
+characteristicsinsemiconductorapplicationswithpiezoelectricity,wheresignalintegrity
+andenergyconservationareparamount.
+9.2. Impactoffractionalorderderivativeonattenuationcoefficientandphase
+velocity
+Inthiscontext,weinvestigatethefractionalorderparametersimpactontheattenuation
+coefficientandphasevelocitywithintheframeworkoftheMGTheatconductionmodel
+withnonlocality.Toconveyourresultsclearly,weutilizevisualaidslabeledasFigure2(a,b).
+Bothfiguresdisplaydistinctivecurvesrepresentingdifferentα valuesinathermo-piezo-
+electricsemiconductormedium.Specifically,weexamineαvaluesof0.8,0.9,1.0,and1.1.
+Figure2(a)illustratestherelationshipbetweenphasevelocityandfrequencywithina
+semiconductorhalf-space.Thephasevelocityshowsasmoothandconsistentriseasthe
+frequencyincreases.ThisbehavioralignswiththecharacteristicsofRayleighwavesinpiezo
+semiconductorhalf-space,wherehigherfrequenciesinduceamorerapidpropagationof
+thesesurfacewaves.Moreover,theresponseofthefractionalorderparameteralphaonthe
+phasevelocityisevidentinthefigure.Increasingalphavaluesleadtohighermagnitudesof
+Rayleighwavephasevelocity.Thisobservationsuggeststhatchangesinthefractionalorder
+WAVESINRANDOMANDCOMPLEXMEDIA 15
+Figure3.(a–b)Theimpactofnonlocalparameteronphasevelocityandattenuationwithfrequency
+(ω)whenα =0.9.
+parameteralphamayinfluencethematerial’sproperties,suchasitspiezoelectricbehavior,
+affectingtheRayleighwavephasevelocity.
+Figure2(b)revealsafascinatinginterplaybetweenattenuationcoefficient,frequency,
+andthefractionalorderparameterαforRayleighwavesinasemiconductorhalf-space.With
+increasingfrequency,theattenuationcoefficientshowsasteadydecline,whichcoincides
+with the anticipated behavior of Rayleigh waves in such materials – higher frequencies
+propagatewithlowerenergydissipation.Thefigurealsohighlightstheinfluenceofα.When
+α increases,theattenuationintensifies(coefficientincreases).Thissuggeststhatchanges
+in α can significantly impact the material’s properties, potentially affecting its ability to
+convertwaveenergyintoheat.
+Understanding the relationship between frequency, attenuation coefficient, phase
+velocity,andalphaisvitalwhenworkingwithRayleighwavesinpiezosemiconductormate-
+rials. It can inform the design and optimization of devices and systems with controlled
+Rayleighwavedispersion,suchassensorsandsignaltransmissionapplications.
+9.3. Impactofnonlocalityparameteronattenuationcoefficientandphasevelocity
+Thiscaseexploreshowmodifyingnonlocalparameteraffectstheattenuationcoefficient
+andphasevelocityofRayleighwavesinathermo-piezoelectricsemiconductormedium.We
+leveragethefractionalorderMGTheatconductionmodelforthisanalysis.Toclearlyillus-
+tratethefindings,Figure3(a,b)presentsinformativevisualizations.Eachfigureshowcases
+distinctcurvescorrespondingtodifferentnonlocalityparameterξ values.Specifically,we
+investigatevaluesof0,0.3,0.6,and0.9,representedbyskyblue,orange,yellow,andpurple
+line,respectively.
+InFigure3(a),asthefrequencyincreases,thephasevelocityexhibitsasmoothandcon-
+sistent rise for all nonlocal MGT heat conduction models. This behavior aligns with the
+typicalcharacteristicsofRayleighwavesinconsideredmedium,wherehigherfrequencies
+promptamorerapidpropagationofthesesurfacewaves.Interestingly,adistinctobser-
+vationemergeswhenconsideringthelocalMGTmodel,i.e.ξ =0.Inthiscase,wenoticea
+slightdecreaseinphasevelocitywithincreasingfrequency.Thisdeviationfromthegeneral
+16 V.GUPTAETAL.
+trendcanbeattributedtotheabsenceofnonlocaleffects,indicatingthatthepresenceor
+absenceofnonlocalitysignificantlyinfluencesthebehaviorofRayleighwaves.
+Figure3(b)showcasestwokeyfindingsrelatedtoRayleighwavesinthismaterial.First,
+asfrequencyincreases,theattenuationcoefficientsteadilydecreases.Thisalignswithour
+expectationsforRayleighwaves,wherehigherfrequenciesexperiencelessenergylossdur-
+ingpropagation.Second,thefigurerevealsaclearinfluenceofthenonlocalityparameter
+onattenuation.Whenthisparameterincreases,themagnitudeoftheattenuationcoeffi-
+cientweakens.Thissuggestsapotentiallinkbetweenthenonlocalityparameterandthe
+material’sabilitytodissipatewaveenergy.
+This finding underscores the importance of nonlocal effects in controlling how effi-
+ciently the material dissipates wave energy as heat. For applications requiring precise
+manipulationofRayleighwaves,suchasdevicesrelyingoncontrolledphasevelocityand
+attenuation,thisknowledgebecomescrucial.Itemphasizestheneedtoconsidernonlo-
+calityparameterswhendesigningwithpiezosemiconductors,especiallywhenaimingfor
+minimalenergylossandspecificwavebehavior.
+9.4. Impactofdepthonparticlemotionvariation
+Figure4(a–h)presentseightuniquevisualizationsthatdelveintothenonlocalfractional
+order MGT heat conduction model. These figures visually explore the intricate world of
+Rayleighwaveparticlemotionwithinthismodel.Thefirstsixfiguresarededicatedtoscru-
+tinizinghowvariousdepthvalueszaffectthebehaviorofRayleighwaveparticlemotion.
+Topreciselyanalyzevariationsinparticlemotion,wecarefullychosesixdepths.Wedivided
+thedepthrangebetween1e-06and2e-03intoequalsections.Thisallowsustoexamine
+themotionwithhighaccuracy,evenatverysmalldepthchanges.
+ThegrandfinaleofourinvestigationisFigure4(g).Itelegantlycombinesallsixindividual
+plotsfromFigure4(a–f),allowingforacomprehensivecomparisonofparticlemotionat
+differentdepths.Thisunifiedviewunveilstheintricateinterplaybetweenhorizontal(U)
+andvertical(W)particlemotionacrosstimespanningfrom0to2π.Incontrast,Figure4(h)
+takes a more focused approach. It skillfully presents the data from the first six figures in
+aclear2Dformat.Thissimplifiedviewenhancesourabilitytoanalyzesubtlevariationsin
+particlemotionwithgreaterprecision.
+DelvingdeeperintoFigure4(a–f),weunearthintriguinginsightsintotheparticlemotion
+behavior of Rayleigh waves at varying depths. These plots unveil a mesmerizing phe-
+nomenonwherebothhorizontalandverticalmotiontracesoutanenthrallingspiralellip-
+ticalpathovertimeforallconsidereddepth(z)valuesandagreewiththestudyconducted
+byGuptaetal.[58].Thiscaptivatingbehaviorcanbeattributedtothecomplexnatureof
+Rayleighwaves,whicharerenownedfororchestratingsimultaneoushorizontalandverti-
+calvibrations.Whattrulystandsoutisthatwhiletheoverallspiralellipticalpatternremains
+constant,themagnitudeofhorizontalandverticalmotionexhibitsnuanceddifferences.
+Thisvariationinmagnitudeisatellingsignthattheparticlemotionamplitudechangesas
+thewavetravelstodifferentdepths.ThissuggeststhatRayleighwavesmayinducesmaller
+particledisplacementsatshallowerdepthscomparedtotheirinfluenceatgreaterdepths.
+Figure4(g)powerfullyreinforcestheconceptofdepth-dependentbehaviorinRayleigh
+waves.Bycombiningallthedepthplots,it’sclearthatparticlesmoveindistinctwaysat
+WAVESINRANDOMANDCOMPLEXMEDIA 17
+(a) (b)
+(c) (d)
+(e) (f)
+(g) (h)
+Figure4.(a–h)Theimpactofdifferentshallowdepthzvaluesonthevariationofparticlemotion(U, W)
+withtime,whenξ =0.03,α =1.3,andω=100.
+18 V.GUPTAETAL.
+differentdepths.Thishighlightstheimportanceofconsideringspecificdepthswhenana-
+lyzingtheeffectsofRayleighwaves.Figure4(f)providesavaluable2Dperspective,further
+enriching our understanding. It reveals an initial increase in both horizontal and vertical
+particlemotionamplitudesasdepthincreases.Thissuggestsapotentialstrengtheningof
+thewave’sinfluenceatthesedepths.However,asdepthcontinuestoincrease,agradual
+transformationintheshapeoftheellipticalpathbeginstounfold.Mostnotably,thisellip-
+ticalpath’smajorandminoraxesstarttointerchange.Thisalterationintheshapeofthe
+ellipsesignifiesashiftintheorientationofparticlemotionasdepthprogresses.Inessence,
+Rayleigh waves at greater depths induce more significant particle motions and reshape
+thedirectionor orientationof thesemotions. Thesecomplex observations highlight the
+depth-dependentdynamicsofRayleighwavepropagationinthemedium.
+Insummary,ouranalysisunearthsprofounddepth-dependentbehaviorinthecontext
+ofRayleighwaves.Figures4(a–h)beautifullycapturethecrucialconceptofdepthdepen-
+dency in wave propagation. This variation reflects the dynamic interaction between the
+wave and the material at different depths. The observed spiral elliptical paths and their
+changes showcase the complexity of Rayleigh waves as they navigate through distinct
+geological layers. This comprehension holds significant practical implications, particu-
+larly in fields like earthquake engineering, where accurately modeling Rayleigh waves is
+paramountforassessingseismicriskandensuringthesafetyofstructuresandcommunities.
+Lastly,it’sessentialtoemphasizethatthepositivephasevelocity,negativeattenuation
+coefficient, and the observed changes in ellipse shape all affirm the accuracy of our cal-
+culations and coding. These phenomena align seamlessly with established principles of
+Rayleighwavebehaviorandserveassolidvalidationoftheprecisionandreliabilityofour
+computationalapproach.
+9.5. Impactoffractionalorderparameteronparticlemotionvariation
+This case focus on assessing the influence of varying fractional order parameters on
+Rayleighwavesurfaceparticlemotion,allwithinthecomprehensivecontextoftheMGT
+heat conduction model. To ensure a clear presentation of our findings, we’ve carefully
+selectedandexaminedfourdistinctαvalues:0.8,0.9,1.0,and1.1.Ouranalysisisthought-
+fullyvisualizedthrough3Dand2Dplots,whichwe’vedesignatedasFigure5(a,b).These
+figuresserveasinvaluabletoolsforcomprehendingthedynamicbehavioroftheparticle
+motionwithinasemiconductorhalf-spaceacrossdifferentalphavalues.
+Ourobservationsrevealanintriguingpattern.Atthemacroscalelevel,surfaceparticle
+motion remains remarkably consistent across various fractional order parameters. How-
+ever, a notable transformation emerges when we zoom in on the microscale, as vividly
+depicted in Figure 5(b). Here, we witness a substantial alteration in the particle motion
+behaviorassociatedwithdifferingfractionalorderparameters.Specifically,astheαvalue
+increases, there is a distinct compression in the magnitude of the elliptical path. This
+shiftsignifiesthatthechoiceofthefractionalorderparametersensitivelyinfluencesthe
+wave’sbehavioratthemicroscale.Whilethemacroscalebehaviorappearsunaffected,the
+microscale unveils an intriguing sensitivity to changes in alpha values, highlighting the
+fascinatingintricaciesofwavedynamicswithinthissemiconductormedium.
+Ourstudyemphasizesacriticalpoint:thescaleatwhichweobservewavebehaviorin
+complexmodelsmatters.Phenomenathatmightseemconsistentwhenviewedbroadly
+WAVESINRANDOMANDCOMPLEXMEDIA 19
+(a) (b)
+Figure5.(a–b)Theimpactofdistinctfractionalorderparameteronparticlemotion(U, W)withtime,
+whenξ =0.03andω=100.
+(a) (b)
+Figure6.(a–b)Theimpactofdifferentvaluesofnonlocalparameteronparticlemotion(U, W)with
+time,whenα =1.3andω=100.
+canrevealfascinatingintricaciesanddependenciesuponcloserexamination.Thisnuanced
+understandingenrichesourcomprehensionofthedynamicinteractionswithinthethermo-
+piezo-electricsemiconductormedium.Itaddsdepthtoourknowledgeoffractionalorder
+parameters’impactonRayleighwavesurfaceparticlemotion.
+9.6. Impactofnonlocalityparameteronparticlemotionvariation
+Thiscaseobjectiveistometiculouslydeterminetheresponseofvaryingnonlocalityparam-
+etersonthesurfaceparticlemotionofRayleighwaves,allwithintheMGTheatconduction
+model. To ensure the utmost clarity in conveying our findings, we have conscientiously
+selectedandscrutinizedfourdistinctξ values:0,0.3,0.6,and0.9.Tovividlyillustrateour
+analysis,wehaveharnessedthepowerof3Dand2Dgraphs,aptlylabeledasFigure6(a,b).
+20 V.GUPTAETAL.
+These graphical representations serve as indispensable tools for unraveling the intrica-
+ciesofparticlemotiondynamicswithinathermo-piezo-electricsemiconductormedium,
+especiallywhensubjecttovaryingnonlocalityparametervalues.
+Figure6(a)unveilsapanoramic3Ddepictionofparticlemotion,gracefullytracingellip-
+ticalspiralpathsacrosstheentirenonlocalandlocalvaluesspectrum.However,ourkey
+revelations emerge in Figure 6(b), where a concise yet profound insight emerges. Here,
+wediscernapivotaltrend:Aswesystematicallyreducethemagnitudeofthenonlocality
+parameter,anoteworthytransformationoccurs.Specifically,themagnitudeofbothhori-
+zontalandverticalmotionexperiencesasubstantialaugmentation,andthesizeofthespiral
+ellipticalpathexpands.Interestingly,ourfindingsshowthatasthenonlocalityparameter
+decreases(reachingzeroforthelocalMGTmodel),themaximumsurfaceparticlemotion
+actuallyincreasessignificantly.
+ThesefindingsholdsignificantweightforRayleighwavesinthermo-piezoelectricsemi-
+conductor media. The chosen nonlocality parameter value demonstrably influences the
+magnitudeanddynamicsofsurfaceparticlemotion.Moreover,reducingthenonlocality
+parameter(reachingzerointhelocalMGTmodel)surprisinglyamplifiesparticlemotion.
+This emphasizes the sensitivity of wave dynamics to this parameter, which is crucial for
+accuratemodelingandpredictionofwavebehaviorinthesematerials.
+10. Conclusion
+ThisstudyextensivelyexaminesRayleighwavebehaviorwithinageneralizedorthotropic
+piezoelectric semiconductor medium, employing the fractional order nonlocal Moore-
+Gibson-Thompson(MGT)model.Figures1–6revealseveralkeyfindings
+1. Across all heat transfer models, the phase velocity amplitude consistently
+increased with higher frequencies. Notably, the LS and MGT models demon-
+stratedthemostsignificant,emphasizingtheireffectivenessinmodelinghigh-
+frequencybehavior.
+2. Higherfrequenciesincreasedattenuationcoefficientsforsomemodels,whilethe
+LSandMGTmodelsexhibitednegativeattenuationcoefficients.Thesefindings
+highlightthecomplexityofwavepropagationinpiezosemiconductormaterials
+andthesignificanceofselectingappropriateresearchmodels.
+3. Higherfractionalvaluesincreasedphasevelocity,suggestinganimpactonmate-
+rialpropertieslikepiezoelectricbehavior.Theattenuationcoefficientdecreased
+with increasing frequency but was influenced by fractional order parameter
+changes,reflectingtheabilityofthemediumtodissipatewaveenergy.
+4. Asdepthincreased,theamplitudeofparticlemotioninitiallyincreased,followed
+byachangeintheellipseshape.Theinterchangeofmajorandminoraxesindi-
+catedashiftinparticlemotionorientationwithdepth,underscoringthedynamic
+natureofRayleighwavewithintheshallowsubsurfacelayersofthemedium.
+5. Surface particle motion in the thermo-piezo-electric semiconductor medium
+exhibitedsensitivitytofractionalorderparametersatthemicroscale.Variations
+in fractional order parameter significantly influenced particle motion behav-
+ior, emphasizing the intricacies of wave dynamics within this semiconductor
+medium.
+WAVESINRANDOMANDCOMPLEXMEDIA 21
+Disclosurestatement
+Nopotentialconflictofinterestwasreportedbytheauthor(s).
+ORCID
+HijazAhmad http://orcid.org/0000-0002-5438-5407
+M.S.Barak http://orcid.org/0000-0001-9947-000X
+References
+[1] NeamenD.Semiconductorphysicsanddevicesbasicprinciples.Boston:RichardD.IrwinInc.;
+1992.
+[2] SmithRC.Smartmaterialsystems.Philadelphia:SocietyforIndustrialandAppliedMathematics;
+2005.
+[3] MindlinRD.Equationsofhighfrequencyvibrationsofthermopiezoelectriccrystalplates.IntJ
+SolidsStruct.1974;10(6):625–637.doi:10.1016/0020-7683(74)90047-X
+[4] ChandrasekharaiahDS.Ageneralizedlinearthermoelasticitytheoryforpiezoelectricmedia.Acta
+Mech.1988;71(1–4):39–49.doi:10.1007/BF01173936
+[5] AouadiM.Generalizedthermo-piezoelectricproblemswithtemperature-dependentproperties.
+IntJSolidsStruct.2006;43(21):6347–6358.doi:10.1016/j.ijsolstr.2005.09.003
+[6] BiotMA.Thermoelasticityandirreversiblethermodynamics.JApplPhys.1956;27(3):240–253.
+doi:10.1063/1.1722351
+[7] LordHW,ShulmanY.Ageneralizeddynamicaltheoryofthermoelasticity.JMechPhysSolids.
+1967;15(5):299–309.doi:10.1016/0022-5096(67)90024-5
+[8] GreenAE,LindsayKA.Thermoelasticity.JElast.1972;2(1):1–7.doi:10.1007/BF00045689
+[9] Chandrasekharaiah DS. Thermoelasticity with second sound: a review. Appl Mech Rev.
+1986;39(3):355–376.doi:10.1115/1.3143705
+[10] ChandrasekharaiahDS.Hyperbolicthermoelasticity:areviewofrecentliterature.ApplMechRev.
+1998;51(12):705–729.doi:10.1115/1.3098984
+[11] GreenAE,NaghdiPM.Are-examinationofthebasicpostulatesofthermomechanics.ProcRSoc
+LondonSerAMathPhysSci.1991;432(1885):171–194.doi:10.1098/rspa.1991.0012
+[12] GreenAE,NaghdiPM.Thermoelasticitywithoutenergydissipation.JElast.1993;31(3):189–208.
+doi:10.1007/BF00044969
+[13] Green AE, Naghdi PM. On undamped heat waves in an elastic solid. J Therm Stress.
+1992;15(2):253–264.doi:10.1080/01495739208946136
+[14] Diethelm K, Ford NJ. Analysis of fractional differential equations. J Math Anal Appl.
+2002;265(2):229–248.doi:10.1006/jmaa.2000.7194
+[15] deOliveiraEC,TenreiroMachadoJA.Areviewofdefinitionsforfractionalderivativesandintegral.
+MathProblEng.2014;2014(1940):1–6.doi:10.1155/2014/238459
+[16] Wang JL, Li HF. Memory-dependent derivative versus fractional derivative (I): difference in
+temporalmodeling.JComputApplMath.2021;384:112923.doi:10.1016/j.cam.2020.112923
+[17] EdelenDGB,LawsN.Onthethermodynamicsofsystemswithnonlocality.ArchRationMech
+Anal.1971;43(1):24–35.doi:10.1007/BF00251543
+[18] EdelenDGB,GreenAE,LawsN.Nonlocalcontinuummechanics.ArchRationMechAnal.Oct.
+1971;43(1):36–44.doi:10.1007/BF00251544
+[19] Eringen AC, Edelen DGB. On nonlocal elasticity. Int J Eng Sci. Mar. 1972;10(3):233–248.
+doi:10.1016/0020-7225(72)90039-0
+[20] ThompsonPA,BeaversGS.Compressible-fluiddynamics.JApplMech.Jun.1972;39(2):366–366.
+doi:10.1115/1.3422684
+[21] Marchand R, McDevitt T, Triggiani R. An abstract semigroup approach to the third-order
+Moore–Gibson–Thompson partial differential equation arising in high-intensity ultrasound:
+structuraldecomposition,spectralanalysis,exponentialstability.MathMethodsApplSci.Oct.
+2012;35(15):1896–1929.doi:10.1002/mma.1576
+22 V.GUPTAETAL.
+[22] Quintanilla R. Moore–Gibson–Thompson thermoelasticity. Math Mech Solids. 2019;24(12):
+4020–4031.doi:10.1177/1081286519862007
+[23] AbouelregalAE,AhmadH,YaoS-W,etal.Thermo-viscoelasticorthotropicconstraintcylindrical
+cavitywithvariablethermalpropertiesheatedbylaserpulseviatheMGTthermoelasticitymodel.
+OpenPhys.Sep.2021;19(1):504–518.doi:10.1515/phys-2021-0034
+[24] GuptaS,DuttaR,DasS.Memoryresponseinanonlocalmicropolardoubleporousthermoelastic
+mediumwithvariableconductivityunderMoore–Gibson–Thompsonthermoelasticitytheory.J
+OceanEngSci.2023;8(3):263–277.doi:10.1016/j.joes.2022.01.010
+[25] ChakravortyS,GhoshS,SurA.Thermo-viscoelasticinteractioninathree-dimensionalproblem
+subjectedtofractionalheatconduction.ProcediaEng.2017;173:851–858.doi:10.1016/j.proeng.
+2016.12.125
+[26] Sur A, Mondal S, Kanoria M. Memory response in the vibration of a micro-scale beam due
+to time-dependent thermal loading. Mech Based Des Struct Mach. 2022;50(4):1161–1183.
+doi:10.1080/15397734.2020.1745078
+[27] SinghB,KumarH,MukhopadhyayS.Thermoelasticdampinganalysisinmicro-beamresonators
+in the frame of modified couple stress and Moore–Gibson–Thompson (MGT) thermoelastic-
+itytheories.WavesRandomComplexMedia.Nov.2021;231:3003–3015.doi:10.1080/17455030.
+2021.2001073
+[28] Mondal S, Sur A. Field equations and memory effects in a functionally graded magneto-
+thermoelasticrod.MechBasedDesStructMach.2023;51(3):1408–1430.doi:10.1080/15397734.
+2020.1868320
+[29] Othman MIA, Mondal S, Sur A. Influence of memory-dependent derivative on generalized
+thermoelastic rotating porous solid via three-phase-lag model. Int J Comput Mater Sci Eng.
+2023;12(4):2350009.
+[30] SurA.Moore–Gibson–Thompsongeneralizedheatconductioninathickplate.IndianJPhys.
+2024;98(5):1715–1726.doi:10.1007/s12648-023-02931-5
+[31] MondalS,SurA.Thermo-hydro-mechanicalinteractioninaporoelastichalf-spacewithnonlocal
+memoryeffects.IntJApplComputMath.2024;10(2):1–22.doi:10.1007/s40819-024-01717-5
+[32] Sur A. Photo-thermoelastic inter action in a semiconductor with cylindrical cavity due to
+memory-effect.MechTimeDependentMater.2023:1–25.doi:10.1007/s11043-023-09637-5
+[33] SurA.Magneto-photo-thermoelasticinteractioninaslimstripcharacterizedbyhereditaryfea-
+tureswithtworelaxationtimes.MechTimeDependentMater.2023:1–26.doi:10.1007/s11043-
+023-09658-0
+[34] Yu J-N, She C, Xu Y-P, et al. On size-dependent generalized thermoelasticity of nanobeams.
+WavesRandomComplexMedia.Jan.2022:1–30.doi:10.1080/17455030.2021.2019351
+[35] YangZ,ChengD,CongG,etal.Dual-phase-lagthermoelasticdampinginnonlocalrectangu-
+larnanoplates.WavesRandomComplexMedia.Jan.2024;34(1):162–181.doi:10.1080/17455030.
+2021.1903117
+[36] PathaniaV,KumarR,GuptaV,etal.Generalizedplanewavesinarotatingthermoelasticdouble
+poroussolid.IntJApplMechEng.Dec.2022;27(4):138–154.doi:10.2478/ijame-2022-0055
+[37] PathaniaV,KumarR,GuptaV,etal.Doubleporousthermoelasticwavesinahomogeneous,
+isotropicsolidwithinviscidliquid.ArchApplMech.2023;93(5):1943–1962.doi:10.1007/s00419-
+023-02364-w
+[38] KumarR,GuptaV,PathaniaV,etal.Energyratioresponseattheinterfaceofelasticanddual-
+porousthermoelastichalf-spaces.PhysScr.Nov.2023;98(11):115211.doi:10.1088/1402-4896/
+acfced
+[39] Gupta S, Dutta R, Das S, et al. Double poro-magneto-thermoelastic model with microtem-
+peratures and initial stress under memory-dependent heat transfer. J Therm Stress. Aug.
+2023;46(8):743–774.doi:10.1080/01495739.2023.2202718
+[40] Dutta R, Das S, Gupta S, et al. Nonlocal fiber-reinforced double porous material struc-
+ture under fractional-order heat and mass transfer. Int J Numer Methods Heat Fluid Flow.
+2023;33(11):3608–3641.doi:10.1108/HFF-05-2023-0295
+WAVESINRANDOMANDCOMPLEXMEDIA 23
+[41] GuptaS,DasS,DuttaR,etal.Higher-orderfractionalandmemoryresponseinnonlocaldouble
+poro-magneto-thermoelasticmediumwithtemperature-dependentpropertiesexcitedbylaser
+pulse.JOceanEngSci.Apr.2022.doi:10.1016/j.joes.2022.04.013
+[42] GuptaS,DuttaR,DasS.Photothermalexcitationofaninitiallystressednonlocalsemiconducting
+doubleporousthermoelasticmaterialunderfractionalordertriple-phase-lagtheory.IntJNumer
+MethodsHeatFluidFlow.2022;32(12):3697–3725.doi:10.1108/HFF-10-2021-0700
+[43] DuttaR,DasS,BhengraN,etal.Nonlocaleffectonshearwavepropagationinafiber-reinforced
+poroelasticlayeredstructuresubjectedtointerfacialimpulsivedisturbance.SoilDynEarthqEng.
+Jan.2024;176:108307.doi:10.1016/j.soildyn.2023.108307
+[44] KumarR,PathaniaV,GuptaV,etal.Thermoelasticmodelingwithdualporosityinteractingwith
+an inviscid liquid. J Appl Comput Mech. 2024;10(1):111–124. doi:10.22055/jacm.2023.44488.
+4221
+[45] Gupta V, Barak MS, Das S. Vibrational analysis of size-dependent thermo-piezo-photo-
+electricsemiconductormediumundermemory-dependentMoore–Gibson–Thompsonphoto-
+thermoelasticitytheory.MechAdvMaterStruct.Dec.2023:1–17.doi:10.1080/15376494.2023.
+2291804
+[46] KumarR,GuptaV,PathaniaV,etal.Analysisofwavesatboundarysurfacesatdistinctmedia
+withnonlocaldual-phase-lag.ProcNatlAcadSciIndiaSectAPhysSci.Dec.2023;93(4):573–585.
+doi:10.1007/s40010-023-00850-y
+[47] Barak MS, Ahmad H, Kumar R, et al. Behavior of higher-order MDD on energy ratios at the
+interface of thermoelastic and piezothermoelastic mediums. Sci Rep. Oct. 2023;13(1):17170.
+doi:10.1038/s41598-023-44339-5
+[48] GuptaV,BarakMS,AhmadH.Reflectionofquasiplasmawaveinphoto-piezosemiconductor
+mediumwithdistincthigherorderfractionalderivativetwotemperaturemodels.PhysScr.Feb.
+2024;99(2):025515.doi:10.1088/1402-4896/ad1972
+[49] GuptaV,BarakMS.FractionalandMDDanalysisofpiezo-photo-thermo-elasticwavesinsemi-
+conductormedium.MechAdvMaterStruct.Jul.2023:1–16.doi:10.1080/15376494.2023.2238
+201
+[50] KumarS,BarakMS,KumariN,etal.Theeffectofviscosityandhyperbolictwo-temperatureon
+energyratiosinelasticandpiezoviscothermoelastichalf-spaces.MechTimeDependentMater.
+2024:1–21.doi:10.1007/s11043-023-09657-1
+[51] GuptaV,BarakMS.Photo-thermo-piezo-elasticwavesinsemiconductormediumsubjecttodis-
+tincttwotemperaturemodelswithhigherordermemorydependencies.IntJNumerMethods
+HeatFluidFlow.Jan.2024;34(1):84–108.doi:10.1108/HFF-07-2023-0380
+[52] Gupta V, Barak MS, Ahmad H, et al. Response of moisture and temperature diffusivity on
+an orthotropic hygro-thermo-piezo-elastic medium. J Nonlinear Math Phys. 2024;31(1):1–26.
+doi:10.1007/s44198-024-00187-z
+[53] NowackiW.Somegeneraltheoremsofthermopiezoelectricity.JThermStress.Oct.1978;1(2):
+171–182.doi:10.1080/01495737808926940
+[54] NowackiW.Foundationsoflinearpiezoelectricity.ElectromagnInteractElasticsolids.1979;257:
+105–157.
+[55] EringenAC.Nonlocalcontinuummechanicsandsomeapplications.In:BarutAO,editor.Nonlin-
+earequationsinphysicsandmathematics.Dordrecht:Springer;1978.p.271–318.
+[56] Lotfy K, Elidy ES, Tantawi RS. Piezo-photo-thermoelasticity transport process for hyperbolic
+two-temperaturetheoryofsemiconductormaterial.IntJModPhysC.Jul.2021;32(7):2150088.
+doi:10.1142/S0129183121500881
+[57] Eringen A, Wegner J. Nonlocal continuum field theories. Appl Mech Rev. Mar. 2003;56(2):
+B20–B22.doi:10.1115/1.1553434
+[58] GuptaV,BarakMS,DasS.Impactofmemory-dependentheattransferonRayleighwavesprop-
+agationinnonlocalpiezo-thermo-elasticmediumwithvoids.IntJNumerMethodsHeatFluid
+Flow.Mar.2024;34(4):1902–1926.doi:10.1108/HFF-10-2023-0615
+[59] GarrappaR.NumericalevaluationoftwoandthreeparameterMittag-Lefflerfunctions.SIAMJ
+NumerAnal.2015;53(3):1350–1369.doi:10.1137/140971191
+24 V.GUPTAETAL.
+[60] GorenfloR,MainardiF,RogosinS.Mittag-Lefflerfunction:propertiesandapplications.Handb
+FractCalcAppl.Feb.2019;1:269–296.doi:10.1515/9783110571622
+[61] BurdenRL,FairesJD,BurdenAM.Numericalanalysis,no.1.Boston:CengaeLearning;2015.
+[62] Barak MS, Gupta V. Memory-dependent and fractional order analysis of the initially stressed
+piezo-thermoelasticmedium.MechAdvMaterStruct.May2023:1–15.doi:10.1080/15376494.
+2023.2211065
+[63] Ahmed EAA, Abou-Dina MS, Ghaleb AF. Plane wave propagation in a piezo-thermoelastic
+rotating medium within the dual-phase-lag model. Microsyst Technol. 2020;26(3):969–979.
+doi:10.1007/s00542-019-04567-0
+[64] KhamisAK,LotfyK,El-BaryAA,etal.Thermal-piezoelectricproblemofasemiconductormedium
+during photo-thermal excitation. Waves Random Complex Media. 2021;31(6):2499–2513.
+doi:10.1080/17455030.2020.1757784
+[65] LotfyK,SarkarN.Memory-dependentderivativesforphotothermalsemiconductingmediumin
+generalizedthermoelasticitywithtwo-temperature.MechTimeDependentMater.2017;21(4):
+519–534.doi:10.1007/s11043-017-9340-5

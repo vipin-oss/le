@@ -1,0 +1,136 @@
+%======================================================================
+% Section 11: Advanced Theoretical Developments
+%======================================================================
+\section{Advanced Theoretical Developments}
+\label{sec:advanced}
+
+This section presents advanced theoretical developments that extend the core theory families: fractional-order continuum models, strain-gradient and couple-stress theories, two-temperature and three-temperature formulations, and emerging hybrid models. These developments represent the frontier of generalized continuum mechanics.
+
+\subsection{Fractional-order continuum models}
+\label{sec:11.1}
+
+Fractional-order continuum models replace integer-order derivatives with fractional derivatives in the governing equations, introducing memory effects and temporal nonlocality.
+
+\subsubsection{Fractional thermoelasticity}
+
+The fractional heat conduction equation (Povstenko, 2004, 2015):
+
+\begin{equation}
+{}^C D_t^\alpha T = a\nabla^2 T, \qquad 0 < \alpha \leq 2,
+\label{eq:11.1}
+\end{equation}
+
+where ${}^C D_t^\alpha$ is the Caputo fractional derivative of order $\alpha$ and $a$ is the thermal diffusivity. For $\alpha = 1$, this reduces to the classical heat equation; for $1 < \alpha \leq 2$, it describes wave-like heat propagation with memory, interpolating between diffusive and wave-like behavior.
+
+\subsubsection{Fractional Cattaneo-type equations}
+
+Povstenko (2011) introduced fractional Cattaneo-type equations that interpolate between Lord--Shulman and Green--Naghdi type II theories:
+
+\begin{equation}
+q_i + \tau^\alpha {}^C D_t^\alpha q_i = -k T_{,i}.
+\label{eq:11.2}
+\end{equation}
+
+For $\alpha = 1$, this reduces to the LS equation; for $\alpha \to 0$ with appropriate scaling, it approaches GN-II behavior.
+
+\subsection{Strain-gradient and couple-stress theories}
+\label{sec:11.2}
+
+Strain-gradient theory introduces higher-order strain gradients in the constitutive relations:
+
+\begin{equation}
+\sigma_{ij} = C_{ijkl}\varepsilon_{kl} - \ell^2 C_{ijkl}\nabla^2\varepsilon_{kl}.
+\label{eq:11.3}
+\end{equation}
+
+Couple-stress theory (Eringen, 1968) introduces couple stresses and micro-rotations as independent degrees of freedom. The force stress tensor becomes generally non-symmetric, and the angular momentum balance includes couple stress terms:
+
+\begin{equation}
+\sigma_{[ij]} + \mu_{ij,j} = 0,
+\label{eq:11.4}
+\end{equation}
+
+where $\mu_{ij}$ is the couple stress tensor.
+
+These theories are relevant for materials with internal structure: granular materials, foams, composites with oriented inclusions, and biological tissues.
+
+\subsection{Two-temperature and three-temperature formulations}
+\label{sec:11.3}
+
+\subsubsection{Two-temperature theory}
+
+The two-temperature formulation distinguishes between the conductive temperature $T$ (measurable by a thermometer) and the thermodynamic temperature $T^*$ (appearing in the entropy relation):
+
+\begin{equation}
+T^* = T - \delta^2 \nabla^2 T,
+\label{eq:11.5}
+\end{equation}
+
+where $\delta^2$ is the two-temperature parameter. When $\delta^2 = 0$, the two temperatures coincide and the theory reduces to classical coupled thermoelasticity.
+
+\subsubsection{Three-temperature theory}
+
+Three-temperature theories introduce a third temperature variable (e.g., the temperature of a secondary phase in a composite, or the electron temperature in a semiconductor). These models are relevant for multi-phase materials where different sub-systems have different thermal response times.
+
+\subsection{Emerging hybrid models}
+\label{sec:11.4}
+
+Emerging formulations combine multiple generalization mechanisms:
+
+\begin{itemize}
+\item \textbf{Nonlocal-fractional hybrid models:} Combine spatial nonlocality (Eringen) with temporal memory (fractional derivatives) for materials with both spatial and temporal memory.
+\item \textbf{MDD-nonlocal models:} Memory-dependent derivatives combined with nonlocal elasticity for history-dependent, size-dependent materials.
+\item \textbf{Phase-field models:} Phase-field variables coupled to thermoelastic fields for fracture and phase transformation modeling.
+\item \textbf{Thermo-viscoelasticity with memory:} Hereditary integral formulations for viscoelastic materials with thermal coupling.
+\end{itemize}
+
+\subsection{Mathematical limitations and open problems}
+\label{sec:11.5}
+
+\subsubsection{Mathematical limitations}
+
+\begin{enumerate}
+\item \textbf{Lack of rigorous limit theorems:} All limiting procedures between theories are parameter substitutions, not rigorous limit theorems with convergence proofs or error bounds.
+\item \textbf{Well-posedness:} Each theory family has its own well-posedness conditions; a unified framework is lacking.
+\item \textbf{Nonlocal interface conditions:} The correct interface conditions for nonlocal media are not established.
+\end{enumerate}
+
+\subsubsection{Open problems}
+
+\begin{enumerate}
+\item Derive complete energy flux formulations for all generalized theories (Section 10.4),
+\item Establish rigorous limit theorems between theory families,
+\item Develop unified well-posedness criteria,
+\item Establish nonlocal interface conditions,
+\item Validate models experimentally across parameter ranges.
+\end{enumerate}
+
+\subsection{Notation summary for Section 11}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 11.}
+\label{tab:notation-sec11}
+\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$\alpha$ & Fractional derivative order & dimensionless & \eqref{eq:11.1} \\
+$\tau^\alpha$ & Fractional relaxation parameter & s$^\alpha$ & \eqref{eq:11.2} \\
+$\ell$ & Strain-gradient length scale & m & \eqref{eq:11.3} \\
+$\mu_{ij}$ & Couple stress tensor & N/m & \eqref{eq:11.4} \\
+$\delta^2$ & Two-temperature parameter & m$^2$ & \eqref{eq:11.5} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open questions for Section 11}
+
+\begin{enumerate}[label=\textbf{OQ11.\arabic*}]
+\item What are the rigorous limit theorems between thermoelastic theory families? \\ \label{oq:11.1}
+\item Can a unified well-posedness framework be established for all generalized theories? \\ \label{oq:11.2}
+\item What are the correct interface conditions for nonlocal-fractional hybrid models? \\ \label{oq:11.3}
+\end{enumerate}
+
+% LocalWords: 

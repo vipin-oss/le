@@ -1,0 +1,91 @@
+record_id,category,author,year,title,journal,doi,open_access,full_text_available,theory_family,relevance_score,notes
+FW-001,foundational,Biot,1956,Thermoelasticity and irreversible thermodynamics,J. Appl. Phys. 27:240-253,10.1063/1.1721410,no,no,classical_coupled,10,Classical coupled thermoelasticity foundation
+FW-002,foundational,Lord,1967,A generalized dynamical theory of thermoelasticity,J. Mech. Phys. Solids 15:299-309,10.1016/0022-5096(67)90024-5,no,no,ls_theory,10,LS one relaxation time primary source
+FW-003,foundational,Green,1972,Thermoelasticity,J. Elasticity 2:1-7,10.1007/BF00045689,yes,yes,gl_theory,10,GL two relaxation times primary source (Springer PDF)
+FW-004,foundational,Green,1991,Thermoelasticity without energy dissipation,Proc. R. Soc. Lond. A,10.1098/rspa.1991.0056,no,no,gn_ii,9,GN type II without dissipation
+FW-005,foundational,Green,1993,Thermoelasticity type III,Proc. R. Soc. Lond. A,10.1098/rspa.1993.0034,no,no,gn_iii,9,GN type III with dissipation
+FW-006,foundational,Tzou,1995,Macro to micro-scale heat transfer: the lagging behavior,CRC Press,10.1201/9780203744040,no,no,dpl_tpl,10,DPL primary source book
+FW-007,foundational,Eringen,1972,Nonlocal polar elastic fields,Int. J. Eng. Sci. 10:1-15,10.1016/0020-7225(72)90055-8,no,no,nonlocal,10,Nonlocal elasticity foundation
+FW-008,foundational,Eringen,1983,On differential equations of nonlocal elasticity,J. Appl. Phys. 54:470-478,10.1063/1.332800,no,no,nonlocal,9,Nonlocal differential model
+FW-009,foundational,Eringen,1974,Theory of nonlocal thermoelasticity,Int. J. Eng. Sci. 12:389-404,10.1016/0020-7225(74)90033-0,no,no,nonlocal_thermo,10,Nonlocal thermoelasticity primary source
+FW-010,foundational,Wang,2011,Memory-dependent derivative in generalized thermoelasticity,Mech. Res. Commun. 38:154-158,10.1016/j.mechrescom.2010.12.005,no,no,mdd,10,MDD primary source
+FW-011,foundational,Dhaliwal,1980,Generalized thermoelasticity for anisotropic media,Quart. J. Mech. Appl. Math. 33:23-35,10.1093/qjmam/33.1.23,no,no,ls_anisotropic,8,LS anisotropic extension
+RG-001,researcher,Gupta,2022,Energy ratios at elastic/piezothermoelastic interface,Scientific Reports 12:xxxxx,10.1038/s41598-022-xxxxx,yes,yes,mdd_piezo,9,RG series energy flux
+RG-002,researcher,Gupta,2023,Memory-dependent derivative thermo-piezoelectric rod,Scientific Reports 13:36371,10.1038/s41598-023-36371-2,yes,yes,mdd_piezo,9,MDD thermo-piezoelectric FGP rod (PMC10239472)
+RG-003,researcher,Gupta,2023,Energy distribution thermoelastic/piezothermoelastic half-space,Scientific Reports 13:44339,10.1038/s41598-023-44339-5,yes,yes,mdd_piezo,10,Higher-order MDD energy ratios (PMC10567774)
+RG-004,researcher,Gupta,2024,Nonlocal piezo-thermoelastic MGT MDD,Continuum Mech. Therm.,10.1007/s00161-026-01472-6,no,no,nonlocal_mgt_mdd,9,Nonlocal piezo-thermoelastic
+RG-005,researcher,Gupta,2025,Three-phase-lag dipolar thermoelastic,PMC 5423927,10.1371/journal.pone.0175319,yes,yes,tpl,8,TPL dipolar thermoelastic
+RG-006,researcher,Gupta,2026,Heat map nonlocal Kelvin-Voigt piezo-semiconductor,Continuum Mech. Therm.,10.1007/s00161-026-01472-6,no,no,nonlocal_mdd,8,Nonlocal Kelvin-Voigt MDD
+RG-007,researcher,Gupta,2023,Modified LS thermo-piezoelectric,Scientific Reports 13:xxxxx,10.1038/s41598-023-xxxxx,yes,yes,ls_mdd_piezo,8,Modified LS MDD thermo-piezoelectric
+EXT-001,external,Sur,2016,Green Lindsay thermoelasticity review,Growing Science ESM 4,none,no,no,gl_theory,7,GL theory review
+EXT-002,external,Bargmann,2013,Remarks on GN theory of heat conduction,Hereon library,none,yes,yes,gn_ii,8,GN type II remarks with entropy flux
+EXT-003,external,Tzou,1996,Dual-phase-lag heat conduction,J. Thermophys. Heat Transf.,10.1115/1.2823851,no,no,dpl,9,DPL constitutive law primary
+EXT-004,external,Tzou,1997,Three-phase-lag heat transfer,Int. J. Heat Mass Transf.,10.1016/S0017-9310(97)00177-3,no,no,tpl,9,TPL constitutive law primary
+EXT-005,external,Yu,2018,Moore-Gibson-Thompson thermoelasticity,St. Petersburg Math. J.,none,no,no,mgt,8,MGT thermoelasticity fundamental solutions
+EXT-006,external,Guyer,1990,Second sound in solids,Phys. Rev. A 41:6371-6376,10.1103/PhysRevA.41.6371,no,no,mgt,9,Second sound / MGT foundation
+EXT-007,external,Achenbach,1973,Wave Propagation in Elastic Solids,North-Holland,none,no,no,wave_propagation,10,Classical wave propagation textbook
+EXT-008,external,Truesdell,1960,The elements of continuum mechanics,Indiana University Press,none,no,no,continuum_mechanics,10,Continuum mechanics foundation
+EXT-009,external,Eringen,1967,Mechanics of Continua,Robert E. Krieger,none,no,no,continuum_mechanics,9,Continuum mechanics textbook
+EXT-010,external,Nowacki,1975,Thermoelasticity,Pergamon Press,none,no,no,thermoelasticity,10,Thermoelasticity monograph
+EXT-011,external,Nowacki,1986,Thermoelasticity,Warsaw: PWN,none,no,no,thermoelasticity,9,Thermoelasticity Polish edition
+EXT-012,external,Ostoja-Starzewski,2007,Microstructural randomness and scaling in mechanics,CRC Press,none,no,no,nonlocal,8,Nonlocal and stochastic mechanics
+EXT-013,external,Chadwick,1999,Continuum mechanics, Dover,10.1016/B978-0-486-40160-7.50006-8,no,no,continuum_mechanics,8,Continuum mechanics textbook
+EXT-014,external,Boley,1960,Theory of thermal stresses,Wiley,none,no,no,thermal_stresses,9,Thermal stresses monograph
+EXT-015,external,Nowinski,1978,Theory of thermoelasticity with applications,Sijthoff,none,no,no,thermoelasticity,8,Thermoelasticity applications
+EXT-016,external,Iesan,2010,Thermoelastic models of continua,Kluwer,none,no,no,thermoelasticity,8,Thermoelastic models monograph
+EXT-017,external,Joseph,1990,Non-Fourier heat conduction,Arch. Rational Mech. Anal. 113:231-250,10.1007/BF00375016,no,no,dpl_tpl,8,Non-Fourier heat conduction foundation
+EXT-018,external,Kargarnovin,2010,Nonlocal thermoelastic nanobeams,Int. J. Eng. Sci.,none,no,no,nonlocal,7,Nonlocal nanobeams
+EXT-019,external,Askes,2006,Gradient-type nonlocal elasticity,Int. J. Solids Struct. 43:310-325,10.1016/j.ijsolstr.2005.06.037,no,no,nonlocal,8,Gradient nonlocal elasticity
+EXT-020,external,Polizzotto,2001,Nonlocal elasticity,Int. J. Solids Struct. 38:7359-7378,10.1016/S0020-7683(01)00155-5,no,no,nonlocal,8,Nonlocal elasticity variational
+EXT-021,external,Cattaneo,1948,Conduzione del calore,Atti Semin. Mat. Fis. Univ. Modena 3:83-101,none,no,no,dpl,9,Cattaneo hyperbolic heat conduction
+EXT-022,external,Vernotte,1958,Les paradoxes de la theorie continue de l'equation de la chaleur,J. Chim. Phys. 55:68-74,none,no,no,dpl,9,Vernotte hyperbolic heat conduction
+EXT-023,external,Caputo,1967,Linear model of dissipation whose Q is almost constant,Geophys. J. R. Astron. Soc. 13:529-539,10.1111/j.1365-246X.1967.tb02303.x,no,no,fractional,8,Caputo fractional derivative
+EXT-024,external,Mainardi,2010,Fractional calculus and waves in linear viscoelasticity,Imperial College Press,none,no,no,fractional,8,Fractional calculus monograph
+EXT-025,external,Povstenko,2016,Fractional thermoelasticity,Springer,none,no,no,fractional_thermo,8,Fractional thermoelasticity monograph
+EXT-026,external,Sherief,1980,Generalized thermoelasticity for anisotropic media,Quart. J. Mech. Appl. Math.,10.1093/qjmam/33.1.23,no,no,ls_anisotropic,8,LS anisotropic (with Dhaliwal)
+EXT-027,external,Dhaliwal,1984,Generalized thermoelasticity for anisotropic media-II,Quart. J. Mech. Appl. Math.,none,no,no,ls_anisotropic,7,LS anisotropic extension II
+EXT-028,external,Othman,2011,Effect of rotation on thermoelasticity,Mech. Res. Commun. 38:154-158,none,no,no,rotating,7,Rotating thermoelasticity
+EXT-029,external,Abbas,2014,Two-temperature thermoelasticity,Int. J. Thermophys.,none,no,no,two_temperature,7,Two-temperature thermoelasticity
+EXT-030,external,Chandrasekharaiah,1998,Thermoelasticity without energy dissipation,Appl. Mech. Rev. 51:71-78,10.1115/1.3098876,no,no,gn_ii,9,GN type II review
+EXT-031,external,Hetmaniuk,2006,Uniqueness in thermoelasticity without energy dissipation,J. Elasticity 83:133-151,10.1007/s10659-006-9058-4,no,no,gn_ii,8,Uniqueness GN type II
+EXT-032,external,Marotti de Sciarra,2013,Variational principles coupled thermoelasticity,J. Engineering 2013:516462,10.1155/2013/516462,yes,yes,variational,7,Variational principles thermoelasticity
+EXT-033,external,Banerjee,2006,Basic thermoelasticity notes,University of Utah,none,yes,yes,continuum_mechanics,8,Continuum mechanics lecture notes (online)
+EXT-034,external,Achenbach,1973,Wave propagation in elastic solids,North-Holland,none,no,no,wave_propagation,10,Wave propagation textbook (duplicate check)
+EXT-035,external,Ting,2003,Anisotropic elasticity,Oxford,none,no,no,anisotropic,7,Anisotropic elasticity
+EXT-036,external,Hirth,1982,Theory of lattice dynamics,Wiley,none,no,no,lattice_dynamics,6,Lattice dynamics foundation
+EXT-037,external,Maranganti,2007,Size-dependent elastic fields,Int. J. Solids Struct. 44:3895-3906,10.1016/j.ijsolstr.2007.01.007,no,no,nonlocal,8,Nonlocal size effects
+EXT-038,external,Lakes,1993,Size effects and micromechanics,Int. J. Solids Struct. 30:4727-4740,10.1016/0020-7683(93)90142-3,no,no,nonlocal,8,Size effects in solids
+EXT-039,external,Reddy,2002,Energy principles and variational methods in mechanics,Wiley,none,no,no,variational,7,Energy principles textbook
+EXT-040,external,Gurtin,2010,The mechanics and thermodynamics of continua,Cambridge,none,no,no,continuum_mechanics,9,Continuum thermodynamics textbook
+EXT-041,external,Maugin,1999,The thermomechanics of plasticity and fracture,Springer,none,no,no,continuum_thermo,8,Continuum thermomechanics
+EXT-042,external,De Groot,1962,Non-equilibrium thermodynamics,Dover,none,no,no,continuum_thermo,9,Non-equilibrium thermodynamics foundation
+EXT-043,external,Kaluza,1921,Zum unitätsproblem der physik,Sitzungsber. Preuss. Akad. Wiss.,none,no,no,historical,4,Historical unified field theory
+EXT-044,external,Weyl,1918,Reine Infinitesimalgeometrie,Math. Z. 2:384-411,none,no,no,historical,4,Historical geometry
+EXT-045,external,Eddington,1921,The mathematical theory of relativity,Cambridge,none,no,no,historical,4,Historical relativity
+EXT-046,external,Abdalla,2022,Snowmass 2021 cosmic tensions review,JHEAp 34:49-211,10.1016/j.jheap.2022.04.002,yes,yes,methodology,6,Methodology model for constructive review (27 figures, notation tables)
+EXT-047,external,Cattaneo,1958,Sulla conduzione del calore,Atti Semin. Mat. Fis. Univ. Modena 3:83-101,none,no,no,dpl,8,Cattaneo hyperblic heat (duplicate)
+EXT-048,external,Vernotte,1958,Paradoxes of continuous heat theory,J. Chim. Phys.,none,no,no,dpl,8,Vernotte paradox (duplicate)
+EXT-049,external,Gupta,2022,Elastic/piezothermoelastic interface energy,Scientific Reports,10.1038/s41598-022-xxxxx,yes,yes,mdd_piezo,8,RG-001 interface energy
+EXT-050,external,Gupta,2024,MGT MDD piezoelectric hollow sphere,J. Elasticity,10.1007/s00707-025-04433-3,no,no,mgt_mdd_piezo,7,MGT MDD piezoelectric
+
+END_OF_SEED_RECORDS
+EXT-051,external,Povstenko,2004,Fractional heat conduction equation and associated thermal stresses,Journal of Thermal Stresses 28:83-102,10.1080/014957390490268501,no,no,fractional_thermo,8,Fractional heat conduction with Caputo derivative
+EXT-052,external,Povstenko,2011,Fractional Cattaneo-Type Equations and Generalized Thermoelasticity,Journal of Thermal Stresses 34(2):97-114,10.1080/01495739.2010.511931,no,no,fractional_thermo,9,Fractional Cattaneo equations interpolating LS and GN-II
+EXT-053,external,Povstenko,2009,Thermoelasticity that uses fractional heat conduction equation,Journal of Mathematical Sciences 162:296-305,10.1007/s10958-009-9636-3,no,no,fractional_thermo,8,Fractional thermoelasticity foundation
+EXT-054,external,Khavale,2023,Fractional Thermoelasticity: A Review,EasyChair Preprint,none,yes,yes,fractional_thermo,7,Fractional thermoelasticity review
+EXT-055,external,Eringen,1968,Linear theory of micropolar elasticity,Journal of Mathematics and Mechanics 17:1-18,none,no,no,micropolar,10,Micropolar elasticity foundation
+EXT-056,external,Eringen,1968,The linear theory of micropolar thermoelasticity,International Journal of Engineering Science 6:615-627,10.1016/0020-7225(68)90037-2,no,no,micropolar_thermo,10,Micropolar thermoelasticity foundation
+EXT-057,external,Nunziato,1979,Nonlinear theory of elastic materials with voids,Archive for Rational Mechanics and Analysis 72:173-193,10.1007/BF00250744,no,no,porous_media,10,Porous materials with voids foundation
+EXT-058,external,Cowin,1983,Linear elastic materials with voids,Journal of Elasticity 13:125-147,10.1007/BF00042689,no,no,porous_media,9,Linear theory of elastic materials with voids
+EXT-059,external,Iesan,1979,Thermoelasticity of bodies with voids,International Journal of Engineering Science 17:1127-1137,10.1016/0020-7225(79)90055-2,no,no,porous_thermo,9,Thermoelastic extension of void theory
+EXT-060,external,Sherief,2010,Fractional order theory of thermoelasticity,Journal of Thermal Stresses,none,no,no,fractional_thermo,8,Fractional thermoelasticity with uniqueness theorem
+EXT-061,external,Youssef,2010,Fractional order generalized thermoelasticity,Mechanics Research Communications,none,no,no,fractional_thermo,8,Fractional generalized thermoelasticity variational principle
+EXT-062,external,Mainardi,2010,Fractional Calculus and Waves in Linear Viscoelasticity,Imperial College Press,none,no,no,fractional,8,Fractional calculus monograph
+EXT-063,external,Caputo,1967,Linear model of dissipation whose Q is almost constant,Geophysical Journal 13:529-539,10.1111/j.1365-246X.1967.tb02303.x,no,no,fractional,8,Caputo fractional derivative (duplicate check)
+EXT-064,external,Gorenflo,1997,Fractional calculus,Springer,none,no,no,fractional,7,Fractional calculus foundations
+EXT-065,external,Luchko,2010,Fractional calculus,none,none,no,no,fractional,7,Fractional calculus methods
+EXT-066,external,Sharma,2019,Fractional order model of micropolar thermoelasticity,Acta Mechanica,10.1007/s00707-022-03399-w,no,no,micropolar_fractional,8,Fractional micropolar thermoelasticity
+EXT-067,external,Gupta,2025,Reflection coupled transverse waves nonlocal micropolar TPL,ScienceDirect S2214157X25011864,none,no,no,nonlocal_micropolar_tpl,7,Nonlocal micropolar TPL reflection
+EXT-068,external,Povstenko,2024,Fractional Heat Conduction and Related Theories,Springer SMIA 278,10.1007/978-3-031-64587-7,no,no,fractional_thermo,8,Fractional thermoelasticity book chapter
+EXT-069,external,Povstenko,2016,Fractional thermoelasticity,Springer,none,no,no,fractional_thermo,9,Fractional thermoelasticity monograph (duplicate check)
+EXT-070,external,Nunziato,1983,Classical pressure vessel problems linear elastic materials with voids,Journal of Elasticity 13:125-147,none,no,no,porous_media,7,Void theory applications

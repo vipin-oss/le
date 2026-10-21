@@ -1,0 +1,26 @@
+%======================================================================
+% Table T7: Energy transport properties
+%======================================================================
+\begin{table}[htbp]
+\centering
+\small
+\caption{Energy transport properties across theory families: flux structure, channels, and conservation validity.}
+\label{tab:T7_energy}
+\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
+\toprule
+\textbf{Theory} & \textbf{Energy flux structure} & \textbf{Energy channels} & \textbf{Conservation $\sum R+\sum T+A=1$} & \textbf{Verification status} \\
+\midrule
+Classical (CD) & $J_i = \sigma_{ji}v_i + q_i$ & Mechanical + thermal & Verified (elastic interfaces) & VERIFIED \\
+Lord--Shulman (LS) & $\sigma_{ji}v_i + q_i +$ relaxation contribution & Mechanical + thermal + relaxation & Open derivation & PARTIAL (frequency domain) \\
+Green--Lindsay (GL) & $\sigma_{ji}v_i + q_i +$ temperature-rate term & Mechanical + thermal & Open derivation & UNCERTAIN \\
+GN type II & $\sigma_{ji}v_i + q_i +$ thermal displacement term & Mechanical + thermal + $\alpha$ & Open derivation & UNCERTAIN \\
+GN type III & Mixed type I/II flux & Mechanical + thermal + mixed & Open derivation & UNCERTAIN \\
+DPL & $\sigma_{ji}v_i + q_i +$ lag terms & Mechanical + thermal + lags & Open derivation & PARTIAL (frequency domain) \\
+TPL & $\sigma_{ji}v_i + q_i +$ higher-order lag terms & Mechanical + thermal + higher-order & Open derivation & UNCERTAIN \\
+MGT & Third-order inertia flux & Mechanical + thermal + inertia & Open derivation & UNCERTAIN \\
+MDD & Hereditary (convolution) flux & Mechanical + thermal + memory & Open derivation & UNCERTAIN \\
+Piezothermoelastic & $\sigma_{ji}v_i - \phi\dot{D}_i + (T_0/T)K_iT_{,i}$ & Mechanical + electrical + thermal & Verified (8 sources) & VERIFIED \\
+Nonlocal & Integral-form flux & Mechanical + thermal + nonlocal & Open derivation & UNCERTAIN \\
+\bottomrule
+\end{tabularx}
+\end{table}

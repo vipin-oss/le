@@ -1,0 +1,200 @@
+%======================================================================
+% Section 6: Generalized Transport and Memory Effects
+%======================================================================
+\section{Generalized Transport and Memory Effects}
+\label{sec:transport}
+
+This section presents generalized transport mechanisms and memory effects in continuum media: relaxation mechanisms, fractional operators, hereditary integrals, memory-dependent derivatives, and their implications for wave propagation.
+
+\subsection{Relaxation mechanisms: physical origin and mathematical representation}
+\label{sec:6.1}
+
+Relaxation in continuum media arises from microscopic processes that delay the material response to an applied stimulus. The response at time $t$ depends not only on the current stimulus but on its history. Mathematically, relaxation is represented by three principal structures:
+
+\begin{itemize}
+\item \textbf{Differential relaxation:} Time derivatives of fluxes appear in the constitutive relation (LS, DPL, TPL, MGT). The heat flux $q_i$ satisfies a differential equation involving $\dot{q}_i$ or higher derivatives.
+\item \textbf{Integral relaxation:} The response is a convolution of the stimulus with a memory kernel (MDD, fractional). The flux at time $t$ depends on the history of the temperature gradient over a finite or semi-infinite interval.
+\item \textbf{Spatial relaxation:} Nonlocal integral relations where stress at a point depends on strain throughout a neighborhood (Eringen nonlocal elasticity).
+\end{itemize}
+
+The common feature is that the material response has memory: past states influence present behavior. This memory produces finite wave speeds, dispersion, attenuation, and history-dependent dissipation.
+
+\subsection{Fractional operators: Caputo and Riemann--Liouville}
+\label{sec:6.2}
+
+Fractional derivatives generalize integer-order differentiation to non-integer orders, providing a natural mathematical language for memory and hereditary effects.
+
+\subsubsection{Caputo fractional derivative}
+
+The Caputo derivative of order $\alpha$ ($n-1 < \alpha < n$, $n = \lceil\alpha\rceil$):
+
+\begin{equation}
+{}^C D_t^\alpha f(t) = \frac{1}{\Gamma(n-\alpha)}\int_0^t \frac{f^{(n)}(\tau)}{(t-\tau)^{\alpha+1-n}}\,d\tau.
+\label{eq:6.1}
+\end{equation}
+
+\subsubsection{Riemann--Liouville fractional derivative}
+
+\begin{equation}
+{}^{RL} D_t^\alpha f(t) = \frac{1}{\Gamma(n-\alpha)}\frac{d^n}{dt^n}\int_0^t \frac{f(\tau)}{(t-\tau)^{\alpha+1-n}}\,d\tau.
+\label{eq:6.2}
+\end{equation}
+
+The Caputo derivative is generally preferred in physical applications because it allows classical initial conditions (integer-order derivatives at $t=0$) to be prescribed.
+
+\subsubsection{Fractional heat conduction}
+
+The time-fractional heat conduction equation:
+
+\begin{equation}
+{}^C D_t^\alpha T = a\nabla^2 T, \qquad 0 < \alpha \leq 2,
+\label{eq:6.3}
+\end{equation}
+
+where $a$ is the thermal diffusivity. For $1 < \alpha \leq 2$, this equation describes wave-like heat propagation with memory, interpolating between diffusive behavior ($\alpha = 1$, classical Fourier) and wave-like behavior ($\alpha = 2$, classical wave equation).
+
+\subsection{Hereditary integrals: convolution kernels}
+\label{sec:6.3}
+
+Hereditary integrals represent the material response as a superposition of responses to past stimuli, weighted by a memory kernel:
+
+\begin{equation}
+f(t) = \int_{-\infty}^{t} K(t-\xi) g(\xi)\,d\xi,
+\label{eq:6.4}
+\end{equation}
+
+where $K(t-\xi)$ is the memory kernel satisfying the fading memory condition $K(s) \to 0$ as $s \to \infty$. The kernel weights recent stimuli more heavily than distant ones.
+
+\subsection{Memory-dependent derivative (MDD): operator and kernel}
+\label{sec:6.4}
+
+The MDD operator (Wang \& Li, 2011):
+
+\begin{equation}
+D_\omega f(t) = \frac{1}{\omega}\int_{t-\omega}^{t} \kappa(t-\xi) f'(\xi)\,d\xi,
+\label{eq:6.5}
+\end{equation}
+
+where $\omega > 0$ is the time delay (memory horizon) and $\kappa(t-\xi)$ is the kernel function with $0 \leq \kappa(t-\xi) \leq 1$.
+
+\subsubsection{MDD kernel function}
+
+A commonly used kernel:
+
+\begin{equation}
+\kappa(t-\xi) = 1 - \frac{2\beta}{\omega}(t-\xi) + \frac{\alpha^2}{\omega^2}(t-\xi)^2,
+\label{eq:6.6}
+\end{equation}
+
+where $\alpha$ and $\beta$ are kernel parameters controlling the weighting shape.
+
+\subsubsection{Limiting behavior}
+
+As $\omega \to 0$, the MDD approaches the classical first derivative:
+
+\begin{equation}
+\lim_{\omega \to 0} D_\omega f(t) = f'(t).
+\label{eq:6.7}
+\end{equation}
+
+\subsection{Energy flux in memory-dependent media}
+\label{sec:6.5}
+
+For memory-dependent media, the energy flux acquires a hereditary character through the heat flux:
+
+\begin{equation}
+J_i(t) = \sigma_{ji}(t)v_i(t) + q_i(t),
+\label{eq:6.8}
+\end{equation}
+
+where $q_i(t)$ satisfies the MDD heat conduction law:
+
+\begin{equation}
+q_i(t) + \tau_0 D_\omega q_i(t) = -k T_{,i}(t).
+\label{eq:6.9}
+\end{equation}
+
+Substituting the MDD definition:
+
+\begin{equation}
+q_i(t) + \frac{\tau_0}{\omega}\int_{t-\omega}^{t} \kappa(t-\xi) \dot{q}_i(\xi)\,d\xi = -k T_{,i}(t).
+\label{eq:6.10}
+\end{equation}
+
+The complete time-domain expression for $J_i$ solely in terms of $T$ requires solving this convolution equation, which depends on the kernel choice. The frequency-domain form can be derived for specific kernels, but the general time-domain hereditary flux remains an open formulation.
+
+\subsection{Well-posedness and causality for memory-dependent models}
+\label{sec:6.6}
+
+\subsubsection{Well-posedness conditions}
+
+For MDD models, well-posedness requires:
+\begin{enumerate}
+\item The kernel $\kappa$ must be positive definite,
+\item The time delay $\omega$ must be finite and positive,
+\item The relaxation parameter $\tau_0$ must be non-negative.
+\end{enumerate}
+
+\subsubsection{Causality (finite wave speed)}
+
+All memory-dependent models predict finite thermal wave speeds, addressing the infinite propagation speed paradox of classical Fourier theory. The thermal wave speed depends on the kernel parameters and relaxation time.
+
+\subsection{Comparative summary: transport models}
+
+Table \ref{tab:transport_comparison} summarizes transport and memory models across mathematical structure, dissipation, well-posedness, and energy flux status.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Comparative summary of transport and memory models.}
+\label{tab:transport_comparison}
+\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
+\toprule
+\textbf{Model} & \textbf{Mathematical structure} & \textbf{Dissipation} & \textbf{Well-posedness} & \textbf{Energy flux status} \\
+\midrule
+Classical Fourier & Local differential & Yes & Well-posed & Verified \\
+LS & Differential with flux relaxation & Yes & Well-posed ($\tau_0 > 0$) & Partial (frequency domain) \\
+GL & Differential with temperature-rate & No (centrally symmetric) & Well-posed & Uncertain \\
+DPL & Differential with two lags & Yes ($\tau_q \geq \tau_T$) & Well-posed & Partial (frequency domain) \\
+TPL & Differential with three lags & Yes & Well-posed & Uncertain \\
+MGT & Third-order differential & Yes & Well-posed & Uncertain \\
+MDD & Integral (convolution) & Kernel-dependent & Kernel-dependent & Uncertain \\
+Fractional & Fractional differential & Yes & Well-posed ($0 < \alpha \leq 2$) & Uncertain \\
+Nonlocal & Spatial integral & Yes & Well-posed & Uncertain \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Notation summary for Section 6}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 6.}
+\label{tab:notation-sec6}
+\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+${}^C D_t^\alpha$ & Caputo fractional derivative & $t^{-\alpha}$ & \eqref{eq:6.1} \\
+${}^{RL} D_t^\alpha$ & Riemann--Liouville derivative & $t^{-\alpha}$ & \eqref{eq:6.2} \\
+$a$ & Thermal diffusivity & m$^2$/s & \eqref{eq:6.3} \\
+$K(t-\xi)$ & Memory kernel & varies & \eqref{eq:6.4} \\
+$D_\omega$ & MDD operator & 1/s & \eqref{eq:6.5} \\
+$\omega$ & MDD time delay & s & \eqref{eq:6.5} \\
+$\kappa(t-\xi)$ & MDD kernel & dimensionless & \eqref{eq:6.6} \\
+$\alpha, \beta$ & MDD kernel parameters & varies & \eqref{eq:6.6} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open questions for Section 6}
+
+\begin{enumerate}[label=\textbf{OQ6.\arabic*}]
+\item What is the complete time-domain energy flux for MDD media with convolution-type memory? \\ \label{oq:6.1}
+\item How is energy partitioned between storage and dissipation in hereditary media? \\ \label{oq:6.2}
+\item What are the well-posedness conditions for fractional-order thermoelasticity with arbitrary $\alpha$? \\ \label{oq:6.3}
+\item How do different MDD kernel choices affect the energy flux and wave propagation? \\ \label{oq:6.4}
+\end{enumerate}
+
+% LocalWords: 

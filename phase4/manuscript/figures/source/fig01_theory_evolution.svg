@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350" font-family="Arial, sans-serif">
+  <text x="250" y="30" text-anchor="middle" font-size="16" font-weight="bold">Historical Evolution of Thermoelasticity Theories</text>
+  <line x1="50" y1="100" x2="450" y2="100" stroke="#333" stroke-width="2"/>
+  <text x="50" y="125" font-size="11">1822</text>
+  <text x="140" y="125" font-size="11">1892</text>
+  <text x="230" y="125" font-size="11">1956</text>
+  <text x="290" y="125" font-size="11">1967</text>
+  <text x="340" y="125" font-size="11">1972</text>
+  <text x="380" y="125" font-size="11">1991</text>
+  <text x="420" y="125" font-size="11">1995+</text>
+  <g transform="translate(40,140)">
+    <rect x="0" y="0" width="80" height="60" fill="#e6f3ff" stroke="#0066cc" stroke-width="1.5" rx="4"/>
+    <text x="40" y="18" text-anchor="middle" font-size="10" font-weight="bold">Fourier 1822</text>
+    <text x="40" y="38" text-anchor="middle" font-size="9">Heat eq.</text>
+    <text x="40" y="52" text-anchor="middle" font-size="9">infinite speed</text>
+  </g>
+  <g transform="translate(130,140)">
+    <rect x="0" y="0" width="80" height="60" fill="#fff0e6" stroke="#cc6600" stroke-width="1.5" rx="4"/>
+    <text x="40" y="18" text-anchor="middle" font-size="10" font-weight="bold">Kelvin 1892</text>
+    <text x="40" y="38" text-anchor="middle" font-size="9">Thermoelastic</text>
+    <text x="40" y="52" text-anchor="middle" font-size="9">coupling</text>
+  </g>
+  <g transform="translate(220,100)">
+    <rect x="0" y="0" width="80" height="100" fill="#e6ffe6" stroke="#009900" stroke-width="1.5" rx="4"/>
+    <text x="40" y="18" text-anchor="middle" font-size="10" font-weight="bold">Biot 1956</text>
+    <text x="40" y="42" text-anchor="middle" font-size="9">Classical coupled</text>
+    <text x="40" y="62" text-anchor="middle" font-size="9">thermoelasticity</text>
+    <text x="40" y="82" text-anchor="middle" font-size="9">infinite speed paradox</text>
+  </g>
+  <g transform="translate(280,140)">
+    <rect x="0" y="0" width="80" height="60" fill="#ffe6e6" stroke="#cc0000" stroke-width="1.5" rx="4"/>
+    <text x="40" y="18" text-anchor="middle" font-size="10" font-weight="bold">LS 1967</text>
+    <text x="40" y="38" text-anchor="middle" font-size="9">Single relaxation</text>
+    <text x="40" y="52" text-anchor="middle" font-size="9">time tau0</text>
+  </g>
+  <g transform="translate(340,140)">
+    <rect x="0" y="0" width="80" height="60" fill="#e6e6ff" stroke="#6600cc" stroke-width="1.5" rx="4"/>
+    <text x="40" y="18" text-anchor="middle" font-size="10" font-weight="bold">GL 1972</text>
+    <text x="40" y="38" text-anchor="middle" font-size="9">Two temperatures</text>
+    <text x="40" y="52" text-anchor="middle" font-size="9">T, T*</text>
+  </g>
+  <g transform="translate(380,140)">
+    <rect x="0" y="0" width="80" height="60" fill="#fff0ff" stroke="#990099" stroke-width="1.5" rx="4"/>
+    <text x="40" y="18" text-anchor="middle" font-size="10" font-weight="bold">GN 1991</text>
+    <text x="40" y="38" text-anchor="middle" font-size="9">Types II, III</text>
+    <text x="40" y="52" text-anchor="middle" font-size="9">thermal displacement</text>
+  </g>
+  <g transform="translate(420,140)">
+    <rect x="0" y="0" width="80" height="60" fill="#f0e6ff" stroke="#3300cc" stroke-width="1.5" rx="4"/>
+    <text x="40" y="18" text-anchor="middle" font-size="10" font-weight="bold">DPL/TPL 1995</text>
+    <text x="40" y="38" text-anchor="middle" font-size="9">Phase lags</text>
+    <text x="40" y="52" text-anchor="middle" font-size="9">tau_q, tau_T</text>
+  </g>
+  <path d="M120,100 L130,100" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <path d="M210,100 L220,100" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <path d="M300,100 L310,100" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <path d="M360,100 L370,100" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <path d="M420,100 L430,100" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+  <rect x="30" y="230" width="130" height="90" fill="none" stroke="#999" stroke-width="0.5"/>
+  <text x="45" y="248" font-size="10" font-weight="bold">Theory families:</text>
+  <rect x="45" y="255" width="12" height="12" fill="#e6f3ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="62" y="266" font-size="9">Classical / Fourier</text>
+  <rect x="45" y="272" width="12" height="12" fill="#fff0e6" stroke="#cc6600" stroke-width="1"/>
+  <text x="62" y="283" font-size="9">Thermoelastic coupling</text>
+  <rect x="45" y="289" width="12" height="12" fill="#e6ffe6" stroke="#009900" stroke-width="1"/>
+  <text x="62" y="300" font-size="9">Generalized (LS)</text>
+  <rect x="45" y="306" width="12" height="12" fill="#ffe6e6" stroke="#cc0000" stroke-width="1"/>
+  <text x="62" y="317" font-size="9">GL / GN</text>
+  <rect x="45" y="323" width="12" height="12" fill="#e6e6ff" stroke="#6600cc" stroke-width="1"/>
+  <text x="62" y="334" font-size="9">DPL / TPL / MDD</text>
+  <text x="300" y="240" text-anchor="middle" font-size="11" font-style="italic">Relaxation time tau0 -> 0: classical limit</text>
+  <text x="300" y="260" text-anchor="middle" font-size="11" font-style="italic">Finite thermal wave speed in all generalized theories</text>
+</svg>

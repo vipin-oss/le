@@ -1,0 +1,136 @@
+%======================================================================
+% Section 7: Nonlocal and Scale-Dependent Continuum Models
+%======================================================================
+\section{Nonlocal and Scale-Dependent Continuum Models}
+\label{sec:nonlocal}
+
+This section presents nonlocal and scale-dependent continuum models: Eringen's nonlocal elasticity, strain-gradient theory, size-dependent wave behavior, and their implications for wave propagation at micro- and nanoscales.
+
+\subsection{Nonlocal elasticity (Eringen): integral constitutive relations}
+\label{sec:7.1}
+
+Eringen's nonlocal elasticity theory (1972, 1974, 1983) states that the stress at a point depends on the strain throughout a neighborhood of that point, not just at the point itself:
+
+\begin{equation}
+\sigma_{ij}(\bm{x}) = \int_\Omega \alpha(|\bm{x}' - \bm{x}|, \tau)\, \sigma_{ij}^{\mathrm{local}}(\bm{x}')\, d\Omega_{\bm{x}'},
+\label{eq:7.1}
+\end{equation}
+
+where $\alpha$ is the attenuation (kernel) function and $\tau = e_0 a/\ell$ is the nonlocal parameter with $e_0$ a material constant, $a$ an internal characteristic length (e.g., lattice spacing), and $\ell$ an external characteristic length (e.g., specimen size).
+
+\subsubsection{Differential form}
+
+For special kernel functions (e.g., the Helmholtz kernel), the integral equation reduces to a differential equation:
+
+\begin{equation}
+(1 - \xi^2\nabla^2)\sigma_{ij} = \sigma_{ij}^{\mathrm{local}},
+\label{eq:7.2}
+\end{equation}
+
+where $\xi = e_0 a$ is the nonlocal length scale parameter.
+
+\subsection{Strain-gradient theory: higher-order gradients}
+\label{sec:7.2}
+
+Strain-gradient theory extends classical elasticity by including higher-order gradients of strain in the constitutive relations:
+
+\begin{equation}
+\sigma_{ij} = C_{ijkl}\varepsilon_{kl} - \ell^2 C_{ijkl}\nabla^2\varepsilon_{kl},
+\label{eq:7.3}
+\end{equation}
+
+where $\ell$ is a material length scale parameter. This introduces size-dependent effects: the stiffness depends on the gradient of strain, so smaller features exhibit higher apparent stiffness.
+
+\subsection{Size-dependent wave behavior: dispersion from nonlocality}
+\label{sec:7.3}
+
+Nonlocality introduces dispersion: wave speed depends on wavelength. For a nonlocal elastic bar, the dispersion relation is:
+
+\begin{equation}
+c(k) = \frac{c_0}{\sqrt{1 + \xi^2 k^2}},
+\label{eq:7.4}
+\end{equation}
+
+where $c_0$ is the classical wave speed, $k$ is the wave number, and $\xi$ is the nonlocal length scale. Long waves ($k \to 0$) approach the classical speed $c_0$; short waves ($k \to \infty$) are strongly slowed. This size-dependent dispersion has been observed in nanowires, nanotubes, and MEMS/NEMS devices.
+
+\subsection{Energy flux in nonlocal media}
+\label{sec:7.4}
+
+For nonlocal media, the classical divergence theorem must be modified because the stress at a point depends on strain throughout a neighborhood. The mechanical power $\sigma_{ji}v_i$ at a point includes contributions from the velocity field in a neighborhood, not just at the point.
+
+The energy flux takes the form:
+
+\begin{equation}
+J_i = \sigma_{ji}v_i + q_i + J_i^{\mathrm{nonlocal}},
+\label{eq:7.5}
+\end{equation}
+
+where $J_i^{\mathrm{nonlocal}}$ is the nonlocal correction term arising from the integral constitutive relation.
+
+\subsubsection{Nonlocal correction term}
+
+The nonlocal correction requires deriving the surface integral form of the nonlocal stress power:
+
+\begin{equation}
+J_i^{\mathrm{nonlocal}} = \int_\Omega \alpha(|\bm{x}' - \bm{x}|)\, \sigma_{ji}^{\mathrm{local}}(\bm{x}') v_i(\bm{x}')\, d\Omega_{\bm{x}'} - \sigma_{ji}(\bm{x})v_i(\bm{x}).
+\label{eq:7.6}
+\end{equation}
+
+This derivation requires modifying the divergence theorem for integral-type constitutive relations. The complete nonlocal energy flux remains an open formulation.
+
+\subsection{Interface conditions for nonlocal media}
+\label{sec:7.5}
+
+Interface conditions for nonlocal media differ from classical ones because the stress at a point depends on strain in a neighborhood. Additional constitutive boundary conditions may be required at the interface to ensure uniqueness.
+
+For the differential form \eqref{eq:7.2}, the interface conditions include both the classical conditions (displacement and traction continuity) and higher-order conditions arising from the $\nabla^2$ term.
+
+\subsection{Comparative summary: nonlocal models}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Comparative summary of nonlocal models.}
+\label{tab:nonlocal_comparison}
+\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
+\toprule
+\textbf{Model} & \textbf{Length scale} & \textbf{Wave dispersion} & \textbf{Energy flux form} & \textbf{Status} \\
+\midrule
+Eringen integral & $(e_0 a)$ & Yes (dispersive) & Integral form + correction & Open formulation \\
+Eringen differential & $\xi = e_0 a$ & Yes (dispersive) & Modified classical form & Open formulation \\
+Strain-gradient & $\ell$ & Yes & Higher-order gradient terms & Open formulation \\
+Two-phase local/nonlocal & $(e_0 a)$ + local weight & Yes & Two-channel flux & Open formulation \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Notation summary for Section 7}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 7.}
+\label{tab:notation-sec7}
+\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$\alpha(|\bm{x}'-\bm{x}|,\tau)$ & Nonlocal attenuation kernel & varies & \eqref{eq:7.1} \\
+$\tau$ & Nonlocal parameter & dimensionless & \eqref{eq:7.1} \\
+$\xi = e_0 a$ & Nonlocal length scale & m & \eqref{eq:7.2} \\
+$\ell$ & Strain-gradient length scale & m & \eqref{eq:7.3} \\
+$c(k)$ & Wave speed as function of wave number & m/s & \eqref{eq:7.4} \\
+$J_i^{\mathrm{nonlocal}}$ & Nonlocal energy flux correction & W/m$^2$ & \eqref{eq:7.5} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open questions for Section 7}
+
+\begin{enumerate}[label=\textbf{OQ7.\arabic*}]
+\item What is the correct energy flux at nonlocal interfaces? \\ \label{oq:7.1}
+\item How do nonlocal boundary conditions differ from classical ones? \\ \label{oq:7.2}
+\item What is the relationship between integral and differential nonlocal formulations for energy flux? \\ \label{oq:7.3}
+\end{enumerate}
+
+% LocalWords: 

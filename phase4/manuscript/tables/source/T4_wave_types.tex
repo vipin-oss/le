@@ -1,0 +1,27 @@
+%======================================================================
+% Table T4: Wave types across media
+%======================================================================
+\begin{table}[htbp]
+\centering
+\small
+\caption{Wave types supported by different continuum media: longitudinal (P), transverse (S/SV), thermal (T), and coupled modes.}
+\label{tab:T4_wave_types}
+\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
+\toprule
+\textbf{Medium} & \textbf{Wave types} & \textbf{Number of modes} & \textbf{Dispersion} & \textbf{Key characteristics} \\
+\midrule
+Classical elastic & P, S & 2 & Non-dispersive & Compressional (dilatational) and shear waves; constant speeds \\
+Classical thermoelastic & P, S, thermal diffusion & 2 + diffusive & Non-dispersive (elastic); parabolic (thermal) & Thermal diffusion with infinite speed; coupled P--T modes \\
+Lord--Shulman & P, S, thermal wave & 3 & Weakly dispersive & Finite thermal wave speed; damped thermal mode \\
+Green--Lindsay & P, S, T & 3 & Weakly dispersive & Two-temperature coupling; finite speed without dissipation (symmetric bodies) \\
+GN type II & P, S, T & 3 & Dispersive & Dissipationless thermal waves; no attenuation \\
+GN type III & P, S, T & 3 & Dispersive & Mixed dissipative/conservative thermal behavior \\
+DPL & P, S, T & 3 & Dispersive & Two relaxation times; tunable attenuation \\
+TPL & P, S, T & 3 & Dispersive & Higher-order lags; ultra-fast thermal response \\
+Piezothermoelastic & qP, qS, qT, electromagnetic & 4+ & Strongly dispersive & Three-field coupling; mode conversion at interfaces \\
+Porous (single) & P1, P2, S & 3 & Dispersive & Biot slow wave (P2) due to fluid--solid relative motion \\
+Double porous & P1, P2, P3, S & 4 & Dispersive & Three longitudinal modes from double porosity \\
+Nonlocal elastic & P, S & 2 & Strongly dispersive & Size-dependent speed; $c(k) = c_0/\sqrt{1+\xi^2k^2}$ \\
+\bottomrule
+\end{tabularx}
+\end{table}

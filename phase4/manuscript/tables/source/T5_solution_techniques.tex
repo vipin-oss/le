@@ -1,0 +1,24 @@
+%======================================================================
+% Table T5: Mathematical solution techniques
+%======================================================================
+\begin{table}[htbp]
+\centering
+\small
+\caption{Mathematical solution techniques for wave propagation in generalized continua: method, applicability, advantages, and limitations.}
+\label{tab:T5_solution}
+\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
+\toprule
+\textbf{Method} & \textbf{Applicability} & \textbf{Advantages} & \textbf{Limitations} \\
+\midrule
+Plane wave ansatz ($e^{i(\bm{k}\cdot\bm{x}-\omega t)}$) & Homogeneous media, infinite domains & Closed-form dispersion relations; physical insight & Limited to simple geometries; no boundary effects \\
+Christoffel equation & Anotropic/elastic media & Systematic wave speed and polarization determination & Becomes high-order for coupled media \\
+Secular equation / characteristic polynomial & Layered media, interfaces & Determines all admissible wave numbers & High-order polynomials (up to 8th order); numerical root finding \\
+Fourier transform & Steady-state harmonic problems & Frequency-domain solution; convolution becomes multiplication & Limited to linear time-invariant systems \\
+Laplace transform & Transient problems, initial-value problems & Handles initial conditions; transient wave fronts & Inversion can be complex; branch cuts \\
+Eigenmode expansion & Bounded domains, waveguides & Complete orthogonal basis; modal decomposition & Requires self-adjoint operators; complex for non-self-adjoint \\
+Finite element method & Complex geometries, heterogeneous media & Flexible geometry; handles material interfaces & Computational cost; nonlocal models need special treatment \\
+Boundary element method & Infinite/semi-infinite domains & Reduces dimensionality; good for scattering & Limited to homogeneous fundamental solutions \\
+Spectral methods & Periodic domains, smooth solutions & High accuracy; exponential convergence & Gibbs phenomena at discontinuities; complex geometries difficult \\
+\bottomrule
+\end{tabularx}
+\end{table}

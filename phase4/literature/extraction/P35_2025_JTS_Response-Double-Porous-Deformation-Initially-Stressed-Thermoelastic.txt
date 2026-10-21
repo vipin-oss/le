@@ -1,0 +1,987 @@
+Journal of Thermal Stresses
+ISSN: 0149-5739 (Print) 1521-074X (Online) Journal homepage: www.tandfonline.com/journals/uths20
+Response of double porous deformation on an
+initially stressed thermoelastic medium
+Rajesh Kumar, Vipin Gupta, M. S. Barak, Hijaz Ahmad, Bandar Almohsen &
+Vijayata Pathania
+To cite this article: Rajesh Kumar, Vipin Gupta, M. S. Barak, Hijaz Ahmad, Bandar
+Almohsen & Vijayata Pathania (22 Apr 2025): Response of double porous deformation
+on an initially stressed thermoelastic medium, Journal of Thermal Stresses, DOI:
+10.1080/01495739.2024.2441967
+To link to this article: https://doi.org/10.1080/01495739.2024.2441967
+Published online: 22 Apr 2025.
+Submit your article to this journal
+Article views: 44
+View related articles
+View Crossmark data
+Citing articles: 1 View citing articles
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=uths20
+JOURNAL OF THERMAL STRESSES
+https://doi.org/10.1080/01495739.2024.2441967
+Response of double porous deformation on an initially
+stressed thermoelastic medium
+Rajesh Kumara, Vipin Guptab, M. S. Baraka, Hijaz Ahmadc,d� , Bandar Almohsene, and
+Vijayata Pathaniaf
+aDepartment of Mathematics, Indira Gandhi University, Meerpur (Rewari), Haryana, India; bDepartment of
+Mathematics, Gurugram University, Gurugram, Haryana, India; cOperational Research Center in Healthcare,
+Near East University, Nicosia/TRNC, Mersin 10, Turkey; dDepartment of Mathematics, College of Science, Korea
+University, Seoul, South Korea; eDepartment of Mathematics, College of Science, King Saud University, Riyadh,
+Saudi Arabia; fDepartment of Mathematics, Himachal Pradesh University Regional Centre, Dharamshala,
+Himachal Pradesh, India
+ABSTRACT ARTICLE HISTORY
+This study investigates deformations within a homogeneous thermoelastic Received 18 July 2023
+medium containing two types of voids subjected to initial stress, employ- Accepted 21 September 2024
+ing the theoretical dual-phase-lag model. Utilizing the eigenmode method,
+precise expressions for key distributions, such as temperature and equili- KEYWORDS
+Double porosity;
+brated stresses from both voids, stress, and displacement components, are
+dual-phase-lag; eigenmode
+derived. Numerical computations are facilitated through MATLAB program-
+analysis; initial stress;
+ming, focusing on a material exhibiting properties analogous to a magne- isotropic
+sium crystal. Integrating dual-phase-lag, Lord-Shulman models, initial stress,
+and time, the research visually portrays the impact of these factors on the
+considered state variables through graphical representations. The numer-
+ical and graphical results underscore the significant influence of phase lag,
+time, and initial stress on the various field quantities.
+1. Introduction
+Virtually all solid substances, naturally or artificially, possess varying degrees of porosity and
+exhibit elastic behavior. An elastic porous solid may exhibit either interconnectivity or non-
+interconnectivity among its pores. A porous elastic material whose pores are not linked in any
+way is known as an elastic material having voids, and if porous are linked, the material is known
+as a porous elastic material. Furthermore, the pores may exhibit non-uniformity in size and can
+exist in diverse forms and dimensions. Multiple porosities are the property of an elastic solid,
+including different sizes of pores. Multiple porosities are vital in many areas, such as geophysics,
+petroleum sciences, chemical engineering, and biomechanics. It is also known that when a mater-
+ial undergoes heating, the voids within the material undergo expansion, while during the cooling
+process, the voids contract due to the thermal impact.
+Lord and Shulman [1] modified the coupled thermoelasticity (CT) theory by incorporating a
+time derivative, a heat flow vector, and a wave-type heat conduction equation was introduced.
+For porous elastic materials, a nonlinear theory (NT) is introduced by Nunziato and Cowin [2].
+According to NT theory, an extra degree of freedom, the fractional elementary volume, is incor-
+porated into every material particle. For thermoelastic materials with pores, a linear theory is
+CONTACT Hijaz Ahmad hijaz555@gmail.com Department of Mathematics, College of Science, Korea University,
+145 Anam-ro, Seongbuk-gu, Seoul 02841, South Korea.
+�Additional affiliation: Department of Technical Sciences, Western Caspian University, Baku 1001, Azerbaijan.
+� 2025 Taylor & Francis Group, LLC
+2 R. KUMAR ET AL.
+introduced by Ie¸san [3] and proves the theorem of the reciprocity connection, the uniqueness of
+the solution. For a double porous elastic medium, the model concerning thermo-hydro-mechan-
+ical analysis was addressed by Khalili and Selvadurai [4]. Singh and Tomar [5] examined the
+transmission of plane waves within an unbounded bi-porous thermomechanical solid medium.
+Gupta et al. [6–10] conducted a comprehensive investigation into wave propagation in diverse
+piezo-thermoelastic mediums, employing distinct theories of thermoelasticity.
+The NT theory of porous elastic material is extended to the dual porous thermoelastic material
+theory by Ie¸san and Quintanilla [11]. The three-dimensional boundary value problem is studied
+by Scarpetta et al. [12] for a double porous thermoelastic material using the potential technique.
+The reflection phenomena are studied by Kumari et al. [13] on the surface of a double-permeable,
+double-porous material. They concluded that four reflected waves, including one shear and three
+longitudinal waves, are present in the medium. Using the linear theory of elasto-thermo dual type
+of porous material, Arusoaie [14] deliberated the temporal behavior of the solution of IVP.
+Kumar et al. [15] analyzed the refraction and reflection of harmonic progressive waves on the
+interface of double-permeable double-porous material and elastic solid. Gales and Chirita [16]
+explored how the existence of pores in a resilient substance significantly impacts the wave behav-
+ior within a material with dual porosity. Using thermoelasticity theory, Chiri¸t�a and Arusoaie [17]
+investigated the Rayleigh wave propagation with a prescribed wavelength in a double porous ther-
+moelastic material. Svanadze [18] developed the united linear model of double porous elastic
+materials, in which the linked phenomena of volume fraction and Darcy’s law are taken. Pathania
+et al. [19,20] investigated the transmission phenomena of wave transpiring at the boundary
+between a thermomechanical solid medium with dual porosity and an incompressible liquid
+medium.
+A novel thermoelasticity concept, termed the dual-phase-lag model (DPL), has been introduced
+by adjusting Fourier’s law, given by Tzou [21]. Acording to this model, the heat transfer equation
+~q! ¼−kr~!T is transformed by ~q!ðP,tþs Þ¼−kr~!TðP,tþs Þ: The time delay s and s
+q T q T
+are the phase lag refer to the delay due to the heat and the temperature phenomenon. Quintanilla
+and Racke [22] studied the solidity of the DPL theory of thermoelasticity. Alla et al. [23]
+explained the plane progressive wave reflection and determined the reflection coefficient ratios in
+a thermoelastic medium when a magnetic field was present using Lord-Shulman (LS) and DPL
+theory. Abouelregal [24] used the DPL model of thermoelasticity to study of Rayleigh waves as
+they propagate through a uniformly consistent and isotropic medium with thermal and elastic
+properties. Othman et al. [25] explored wave propagation in temperature-dependent, initially
+stressed anisotropic elastic material using the DPL model. The transmission and reflection phe-
+nomena occurring in contact with thermoelastic and thermoelastic reinforced fibers half-spaces
+are examined by Kalkal et al. [26]. Othman and Elaziz [27] explored the force stresses, displace-
+ment components, and coupled stress in a rotating thermoelastic solid using the DPL model.
+Using the DPL model, Biswas [28] investigated the plane wave transmission within a thermoelas-
+tic solid characterized by isotropic and porosity properties. Barak et al. [29,30] focused on investi-
+gating phase lags, memory, and kernel functions on the seismic waves propagation in various
+fluid, elastic, piezo thermoelastic, and thermoelastic interfaces. This investigation was carried out
+within the context of multiple heat transfer models.
+In the medium, the initial stresses are due to many causes, including temperature differences,
+gravity variations, quenching process, etc. Initial pressures on the earth are expected to be signifi-
+cant. The influence of these pressures on thermal and mechanical conditions is of great interest.
+Montanaro [31] investigated the linear isotropic thermoelastic theory using the body’s basic con-
+figuration in a state of initial hydrostatic stress. By using the concept of initial stress and the LS
+theory, El-Naggar et al. [32] discussed the propagation of progressive waves in a homogenous iso-
+tropic elastic material. Othman et al. [33] investigated the plane strain problem of an anisotropic
+homogeneous thermal elastic porous material that is initially stressed. Khalil et al. [34] discussed
+JOURNAL OF THERMAL STRESSES 3
+the impact of prestress on a semiconducting homogeneous isotropic thermal elastic medium
+using the LS and DPL theory. Kumar et al. [35–37] investigated various problems within the con-
+text of different thermoelasticity theories. The work conducted by Lotfy and his coworkers
+[38–43] focused on the propagation of waves in elastic, thermal elastic, semiconductor mediums
+under the context of most recent theory of thermoelasticity.
+This manuscript introduces an innovative mathematical model to investigate the interactions
+within an isotropic initially stressed, homogeneous, double porous thermo elastic half-space, uti-
+lizing the DPL theory of thermoelasticity as the foundational framework. Despite the existence of
+multiple research challenges within such a medium, characterized by homogeneity, isotropy, and
+double porosity, no prior study has been undertaken to explore the spatial distributions of various
+physical fields. These fields encompass quantities like normal stress, shear stresses, normal dis-
+placement, temperature distribution field, and equilibrated stresses resulting from both types of
+voids. By utilizing eigenmode analysis, exact analytical solutions of different field variables are
+derived. The analytical results obtained are then translated into numerical computations and visu-
+ally depicted, with a specific emphasis on a material resembling a magnesium crystal. The study
+encompasses the impact of phase lags, initial stress, and time within the analyzed medium. The
+implications of these findings extend across diverse engineering sub-domains, including soil
+dynamics, seismology, geophysics, and earthquake engineering, among others.
+2. The governing equations
+Following Tzou [21], Montanaro [31], and Ie¸san and Quintanilla [11], the equations that govern
+a thermoelastic medium, initially stressed and characterized by double porosity, homogeneity, and
+isotropy, without heat sources and external body forces, may be articulated as such
+Constitutive relations:
+(cid:0) �
+r ¼−p d −x þkd e þ2le þbd uþdd w−bd h, (1)
+ij ij ij ij kk ij ij ij ij
+m1 ¼au þb w , (2)
+i ,i 1 ,i
+m2 ¼b u þcw , (3)
+i 1 ,i ,i
+n¼−be −a u−a wþc h, (4)
+jj 1 3 1
+f¼−de −a u−a wþc h: (5)
+jj 3 2 2
+The equations of motion:
+r ¼qu€ : (6)
+ji,j i
+The equation of motion for equilibrated stress:
+m1 þn¼v u€, (7)
+j,j 1
+m2 þf¼v w€: (8)
+j,j 2
+The heat conduction equation:
+� � � �
+@ @ s2 @2 (cid:0) �
+K 1þs T@t h ,ii ¼ 1þs q@t þg 2 q @t2 bT 0 e_ kk þc 1 T 0 u_ þc 2 T 0 w_ þqC e h_ : (9)
+where u
+i
+denotes the component of displacement, x
+ij
+¼ðu
+j,i
+−u i,jÞ=2; e
+ij
+¼ðu
+i,j
+þu
+j,i
+Þ=2; k,l
+represents the Lame’s constants, n denotes the equilibrated body force for type-I pores, due to
+type-II voids the intrinsic equilibrated body force is denoted by f; m1; m2are the equilibrated
+i i
+stress tensor, u and w are the volume fraction fields due to voids respectively, d denotes the
+ij
+4 R. KUMAR ET AL.
+Kronecker’s delta, r are the stress components, b and d are the voids parameters, p represents
+ij
+the initial stress, q is the medium’s density, the constitutive coefficients respect to thermal proper-
+ties is denoted by c and c ; a,a ,a ,a ,b ,c represents the material constants due to pores con-
+1 2 1 2 3 1
+taminants, b¼ð3kþ2lÞa is temperature coefficient, h is temperature deviation from the
+t
+uniform temperature T ; a is linear thermal expansion, K denotes the thermal conductivity, for
+0 t
+type-I and type-II voids v and v are the coefficients of equilibrated inertia, g is a unifying par-
+1 2
+ameter, C conveys the specific heat of the medium at a constant strain, s and s are phase lag
+e T q
+for the temperature gradient and heat flux. In this instance, the dot symbolizes temporal differen-
+tiation, and the subscripts marked by commas indicate the partial derivative performed concern-
+ing the associated Cartesian coordinates.
+3. Formulation of the problem
+An initially stressed double porous homogeneous thermoelastic solid medium is considered at the
+uniform temperature T using the DPL model. The origin O of the coordinate system ðx,y,zÞ is
+0
+on the horizontal surface with þve direction of the z− axis downward into the solid half-space,
+as shown in Figure 1. The basic field quantities depend on x,z; and t only. These field quantities
+are not influenced by the y− variable. The disturbance is taken on the surface z¼0; and it
+diminishes gradually as z!1 The displacement components for the two-dimensional problem
+are taken as: u¼u ¼uðx,z,tÞ and w¼u ¼wðx,z,tÞ:
+x z
+The stresses resulting from Eq. (1) can be expressed as
+r
+xx
+¼−pþðkþ2lÞu,x þkw,z þbuþdw−bh, (10)
+r
+zz
+¼−pþðkþ2lÞw,z þku,x þbuþdw−bh, (11)
+� � � �
+p p
+r
+xz
+¼ lþ u,z þ l− w,x , (12)
+2 2
+� � � �
+p p
+r
+zx
+¼ l− u,z þ lþ w,x : (13)
+2 2
+The equations of motion, the equation of motion for equilibrated stress, and energy equations
+by using the governing equations in two-dimensional forms have been obtained as
+� � � �
+p p
+ðkþ2lÞu,xx þ l− u,zz þ kþlþ w,xz þbu ,x þdw ,x −bh ,x ¼qu€, (14)
+2 2
+Figure 1. Geometry of the problem.
+JOURNAL OF THERMAL STRESSES 5
+� � � �
+p p
+kþlþ u,xz þ l− w,xx þðkþ2lÞw,zz þbu ,z þdw ,z −bh ,z ¼qw€, (15)
+2 2
+−bðu,x þw,z Þþaðu ,xx þu ,zz Þ−a 1 uþb 1 ðw ,xx þw ,zz Þ−a 3 wþc 1 h¼v 1 u€, (16)
+−dðu,x þw,z Þþb 1 ðu ,xx þu ,zz Þ−a 3 uþcðw ,xx þw ,zz Þ−a 2 wþc 2 h¼v 1 w€ , (17)
+� � � �
+@ @ s2 @2 (cid:0) �
+K 1þs T@t ðh ,xx þh ,zz Þ¼ 1þs q@t þg 2 q @t2 bT 0 ðu_ ,x þw_ ,x Þþc 1 T 0 u_ þc 2 T 0 w_ þqC e h_ :
+(18)
+The governing equations can be normalized by considering the below written non-dimensional
+terms:
+x� qx�c u (cid:0) � x�2v T
+ðx0,z0Þ¼ ðx,zÞ,u0 ¼ 1 ,t0 ¼x�t, u0 ,w0 ¼ 1ðu,wÞ,T0 ¼ ,
+c bT c2 T
+� � 1 0 1 0 (19)
+1
+r0 ,p 0 ¼ ðr ,pÞ:
+ij ðkþ2lÞ ij
+By utilizing dimensionless quantities from (19), the Eqs. (10)–(13) transform into the following
+equations (after removing the primes)
+bT bc2 dc2 bT
+r
+xx
+¼−pþ
+qc2
+0fu,x þð1−2d2Þw,z gþ
+x�2v ðk
+1
+þ2lÞ
+uþ
+x�2v ðk
+1
+þ2lÞ
+w−
+kþ2
+0
+l
+h, (20)
+1 1 1
+bT bc2 dc2 bT
+r
+zz
+¼−pþ
+qc2
+0fw,z þð1−2d2Þu,x gþ
+x�2v ðk
+1
+þ2lÞ
+uþ
+x�2v ðk
+1
+þ2lÞ
+w−
+kþ2
+0
+l
+h, (21)
+1 1 1
+� � � �
+p bT p bT
+r
+zx
+¼ d2−
+2 qc2
+0 u,z þ d2þ
+2 qc2
+0 w,x , (22)
+1 1
+� � � �
+p bT p bT
+r
+xz
+¼ d2þ
+2 qc2
+0 u,z þ d2−
+2 qc2
+0 w,x : (23)
+1 1
+The equilibrated stresses as a result of type-I, II voids in the nondimensional form are
+m1 z ¼g 1 u ,z þg 2 w ,z , (24)
+m2 z ¼g 2 u ,z þg 3 w ,z : (25)
+The Eqs. (14)–(18) can be reformulated in a dimensionless manner as presented below:
+� � � �
+p p
+u,xx þ d2− u,zz þ 1−d2þ w,xz þd 1 u ,x þd 2 w ,x −h ,x ¼u€, (26)
+2 2
+� � � �
+p p
+1−d2þ u,xz þ d2− w,xx þw,zz þd 1 u ,z þd 2 w ,z −h ,z ¼w€, (27)
+2 2
+1
+−d 4 ðu,x þw,z Þþu ,xx þu ,zz −d 5 uþd 3 ðw ,xx þw ,zz Þ−d 6 wþd 7 h¼ d2 u€, (28)
+1
+1
+−d 9 ðu,x þw,z Þþu ,xx þu ,zz −d 10 uþd 8 ðw ,xx þw ,zz Þ−d 11 wþd 12 h¼ d2 w€ , (29)
+2
+6 R. KUMAR ET AL.
+� � � �
+@ @ s2 @2 (cid:0) �
+1þs T@t ðh ,xx þh ,zz Þ¼ 1þs q@t þg 2 q @t2 eðu_ ,x þw_ ,z Þþd 13 u_ þd 14 w_ þh_ (30)
+where d ¼ bc2 1 ,d ¼ dc2 1 ,d ¼b1,d ¼bT0 v 1 b,d ¼ a 1c2 1 , d ¼ a 3c2 1 ,d ¼c 1 T0 v 1,d ¼ c ,
+d ¼bT0 v 1 d 1 ,d x� ¼ 2v 1 b a T 3 0 c2 1 , 2 d x�2v ¼ 1 bT a 0 2c2 1 3 ,d a ¼c 2 4 T0 v 1, q d c2 1 a ¼ 5 c 1 c4 1 ax , � d 2 ¼ 6 c 2 c4 1 a , x �2 e 7 ¼ b2T0 a ,c2 ¼ 8 kþ2 b l 1 ,
+9 qc2 1 b1 10 x�2b1 11 x�2b1 12 b1 13 Kx�3v 1 14 Kx�v 1 qKx� 1 q
+c2 ¼l, c2 ¼ a , c2 ¼b1, x� ¼Ce qc2 1; d2 ¼c2 2, d2 ¼c2 3, d2 ¼c2 4; g ¼ c2 1 ; g ¼
+2 q 3 v
+1
+4 v
+2
+K c2
+1
+1 c2
+1
+2 c2
+1
+1 v
+1
+x�2 2
+b1c2
+1 ; g ¼
+cc2
+1 :
+avx�2 3 avx�2
+1 1
+By applying Helmholtz’s decomposition theorem, the various components of displacement can
+be illustrated:
+u¼G,x þH,z ,w¼G,z −H,x , (31)
+Here, Hðx,z,tÞ represents the vector potential function associated with longitudinal waves
+while Gðx,z,tÞ signifies the scalar potential function associated with transverse waves.
+Putting the expression used in Eq. (31) in the Eqs. (26)–(30), we have
+G,xx þG,zz þd
+1
+uþd
+2
+w−h¼G € , (32)
+� �
+p
+d2− ðH,xx þH,zz Þ¼H € , (33)
+2
+1
+−d 4 ðG,xx þG,zz Þþu ,xx þu ,zz −d 5 uþd 3 ðw ,xx þw ,zz Þ−d 6 wþd 7 h¼ d2 u€, (34)
+1
+1
+−d 9 ðG,xx þG,zz Þþu ,xx þu ,zz −d 10 uþd 8 ðw ,xx þw ,zz Þ−d 11 wþd 12 h¼ d2 w€ , (35)
+2
+� � � �
+@ @ s2 @2 (cid:0) (cid:0) � �
+1þs T@t ðh ,xx þh ,zz Þ¼ 1þs q@t þg 2 q @t2 e G _ ,xx þG _ ,zz þd 13 u_ þd 14 w_ þh_ : (36)
+Eqs. (32), (34), (35), and (36) are the coupled equations in G, u, w; h and Eq. (33) is
+uncoupled in the potential H: Furthermore, the coupled system of waves is subject to the influ-
+ence of thermal characteristics as well as the presence of both types of voids.
+4. Solution of the problem
+Deciphering the solution for the physical variables entails decomposing them into their respective
+normal modes, as exemplified in the subsequent manner:
+� � n o
+G,H,u,w,h,r ,mi ðx,z,tÞ¼ G�, H�, u�, w�, h�, r�, mi� ðzÞexpfxtþimxg, (37)
+ij z ij z
+where i is the imaginary unit, x is the angular frequency, m is the wavenumber,
+G�, H�, u�, w�, h�; and r� are the function’s amplitudes of G, H, u, w, h; and r ; respectively.
+ij ij
+By using Eq. (37), Eqs. (32)–(36) transform into the forms
+(cid:0) �
+D2þa G�þd u�þd w�−h� ¼0, (38)
+11 1 2
+(cid:0) �
+D2−a H� ¼0, (39)
+21
+(cid:0) � (cid:0) � (cid:0) �
+−d D2þa G�þ D2þa u�þ d D2þa w�þd h� ¼0, (40)
+4 31 32 3 33 7
+(cid:0) � (cid:0) � (cid:0) �
+−d D2þa G�þ D2þa u�þ d D2þa w�þd h� ¼0, (41)
+9 41 42 8 43 12
+(cid:0) � (cid:0) �
+a D2þa G�þa u�þa w�þ −a D2þa h� ¼0: (42)
+53 54 55 56 51 57
+JOURNAL OF THERMAL STRESSES 7
+where D¼ @ ; a ¼−m2−x2; a ¼m2− x2 ; a ¼d m2; a ¼−m2−d −x2;
+@z 11 21 d2−p=2 31 4 32 5 d2
+1
+a ¼−d m2−d ; a ¼d m2; a ¼−m2−d ; a ¼−d m2−d −x2; a ¼1þs T x; a ¼
+33 3 6 41 9 42 10 43 8 11 d2 51 x 52
+2
+s2
+1þs xþ g qx2; a ¼ea ; a ¼−m2ea ; a ¼a d ; a ¼a d ; a ¼a þa m2:
+q 2 53 52 54 52 55 52 13 56 52 14 57 52 51
+For the nontrivial solution, the coefficient matrix’s determinant of a homogeneous system of
+coupled Eqs. (38), (40), (41), and (42) must be zero, which yields the characteristics equation as
+D8þA D6þA D4þA D2þA ¼0, (43)
+1 2 3 4
+where A ¼P16P26 þP17P25−P19P23−P20P22; A ¼P16P27 þP17P26 þP18P25−P19P24−P20P23−P21P22 A ¼
+P17P27 þP18P26−P20P
+1
+24−P23P21;
+P16P25
+A
+−P1
+¼
+9P22
+P18P27−P21P24;
+2
+P ¼a þa
+P
+þ
+16P
+d
+25−
+d
+P19
+;
+P22
+P ¼a a −d a
+3
+;
+P16P25−P19P22 4 P16P25−P19P22 1 32 11 1 4 2 11 32 1 31
+P ¼d −d d ; P ¼a d −d a ; P ¼a þd d ; P ¼a þa þd d ; P ¼a a −d a ;
+3 2 1 3 4 32 2 1 33 5 32 7 1 6 42 11 1 9 7 11 42 1 41
+P ¼d −d d ; P ¼a d −d a ; P ¼a þd d ; P ¼a −a d ; P ¼a a −a d ;
+8 2 1 8 9 42 2 1 43 10 42 1 12 11 55 53 1 12 11 55 54 1
+P ¼d a − d a ; P ¼a d ; P ¼−a −a d ; P ¼P P −P ; P ¼P P þ P P −
+13 2 55 1 56 14 51 1 15 55 57 1 16 11 3 13 17 11 4 12 3
+P P ; P ¼P P −P P ; P ¼P P ; P ¼P P þP P þP ; P ¼P P þP P ; P ¼
+1 13 18 12 4 2 13 19 14 3 20 14 4 15 3 13 21 15 4 5 13 22
+P P − P ; P ¼P P þP P −P P ; P ¼P P −P P ; P ¼P P ; P ¼P P þP P þ
+8 11 13 23 8 12 9 11 13 6 24 9 12 13 7 25 8 14 26 8 15 9 14
+P ; P ¼P P þP P :
+13 27 9 15 13 10
+Equation (43) can be factorized in the following manner
+(cid:0) �(cid:0) �(cid:0) �(cid:0) �� �
+D2−k2 D2−k2 D2−k2 D2−k2 G�ðzÞ, u�ðzÞ,w�ðzÞ, h�ðzÞ ¼0: (44)
+1 2 3 4
+where k2; n¼1−4 represents the zeroes of the characteristics equation given below
+n
+k8þA k6þA k4þA k2þA ¼0: (45)
+1 2 3 4
+The root of the uncoupled Eq. (39) is denoted by k2; which is equal to
+5
+x2
+k2 ¼m2− : (46)
+5 d2−p=2
+The solutions of Eqs. (43) and (39) are bounded as z!1: So, the solutions are of the form
+X4
+ðG�,h�,w�,u�Þ¼ ð1, N , N , N ÞH e−k nz, (47)
+1n 2n 3n n
+n¼1
+H� ¼H e−k 5z, (48)
+5
+where N ¼−P16 k4 n þP17 k2 n þP18; N ¼− k4 n þP1 k2 n þP2−ðk2 n þP5 ÞN1n; N ¼− k2 n þa11 þd2N2n−N1n:
+1n P19 k4
+n
+þP20 k2
+n
+þP21 2n P3 k2
+n
+þP4 3n d1
+And the parameters H ðn¼1−5Þ depend on m; x:
+n
+The components of stresses, displacement components, and equilibrated stresses due to type
+one and type two voids, after applying normal mode analysis, take the forms
+X4
+r� ¼−pþ N H e−k nzþN H e−k 5z, (49)
+xx 4n n 5 5
+n¼1
+X4
+r� ¼−pþ N H e−k nz−N H e−k 5z, (50)
+zz 5n n 5 5
+n¼1
+X4
+r� ¼ N H e−k nzþN H e−k 5z, (51)
+zx 6n n 6 5
+n¼1
+X4
+r� ¼ N H e−k nzþN H e−k 5z, (52)
+xz 6n n 7 5
+¼1
+8 R. KUMAR ET AL.
+X4
+u¼ imH e−k nz−k H e−k 5z, (53)
+n 5 5
+n¼1
+X4
+w¼ −k H e−k nz−imH e−k 5z, (54)
+n n 5
+n¼1
+X4
+mz ¼ N H e−k nz, (55)
+1 7n n
+n¼1
+X4
+mz ¼ N H e−k nz: (56)
+2 8n n
+n¼1
+(cid:0) �
+where N ¼d k2 −d ðm2−N Þþd N þd N ; N ¼d k2 −N −d m2þ d N þ
+4n 16 n 15 1n 17 3n 18 2n 5n 15 n 1n 16 17 3n
+d N N ¼−d k ; N ¼−k g N −k g N ,N ¼−k g N −k g N ; N ¼ k d ; N ¼
+18 2n 6n 22 n 7n n 1 3n n 2 2n 8n n 2 3n n 3 2n 5 5 19 6
+d m2þd k2; N ¼d m2þd k2; d ¼bT0; d ¼bT0 ð1−2d2Þ; d ¼ bc2 1 ; d ¼ dc2 1 ;
+21 20 5 7 20 21 5 15 qc2
+1
+16 qc2
+1
+17 x�2v
+1
+ðkþ2lÞ 18 x�2v
+1
+ðkþ2lÞ
+d ¼imðd −d Þ; d ¼
+bT0 ðd2−p=2Þ
+; d ¼
+bT0 ðd2þp=2Þ
+:
+19 16 15 20 qc2 21 qc2
+1 1
+To get the comprehensive expressions for the examined physical fields, the values of the
+parameters H , ðn¼1,2,3,4,5Þ are required, which are computed using adequate boundary
+n
+conditions.
+5. Boundary conditions
+The boundary conditions for the initial stresses isotropic homogeneous thermo elastic double
+porous solid half-space at the plane surface z¼0 are of the form:
+i. The stress components’ boundary conditions are:
+r� ¼−p−R , (57)
+zz 1
+r� ¼0: (58)
+zx
+ii. The boundary conditions for type-I, II voids are:
+@u�
+¼0, (59)
+@z
+@w�
+¼0: (60)
+@z
+iii. The condition regarding the transfer of heat at the boundary is:
+h�ðzÞ¼0: (61)
+where p is initial stress applied on the medium, and R is the mechanical load imposed perpen-
+1
+dicular to the surface z¼0:
+By utilizing non-dimensional expressions of physical quantities, normal mode technique, and
+using the Eqs. (57)–(61) in the expressions given in (47), (50), and (51), we get
+X4
+N H −N H ¼−R , (62)
+5n n 5 5 1
+n¼1
+X4
+N H þN H ¼0, (63)
+6n n 6 5
+n¼1
+JOURNAL OF THERMAL STRESSES 9
+X4
+N H ¼0, (64)
+3n n
+n¼1
+X4
+N H ¼0, (65)
+2n n
+n¼1
+X4
+N H ¼0: (66)
+1n n
+n¼1
+The set of Eqs. (62)–(66) form a non-homogeneous system of equations in the unknown
+H , ðn¼1,2,3,4,5Þ; which are determined by the following relation in the matrix form
+n
+2 3 2 3 2 3
+H N N N N −N −1 −R
+1 51 52 53 54 5 1
+6 7 6 7 6 7
+6H 7 6N N N N N 7 6 0 7
+6 27 6 61 62 63 64 6 7 6 7
+6 6H 3 7 7 ¼6 6N 31 N 32 N 33 N 34 0 7 7 6 6 0 7 7 : (67)
+6 7 6 7 6 7
+4H 5 4N N N N 0 5 4 0 5
+4 21 22 23 24
+H N N N N 0 0
+5 11 12 13 14
+In view of the obtained values of H , ðn¼1−5Þ from Eq. (67), Eqs. (49)–(56) give the exact
+n
+expressions for the physical fields, such as normal stress, shear stress, normal displacement, equi-
+librated stress due to both types of voids, and temperature field.
+6. Validation
+� To discuss the deformations without initial stress and dual-phase lag in the given medium, the
+initial stress’s value is zero, that is, p¼0 and g¼s ¼0: The present model resembles the
+T
+study of Abdou et al. [44], in which Eqs. (10)–(13) and Eq. (18) reduces to
+r
+xx
+¼ðkþ2lÞu,x þkw,z þbuþdw−bh, (68)
+r
+zz
+¼ðkþ2lÞw,z þku,x þbuþdw−bh, (69)
+r
+xz
+¼lðu,z þw,x Þ, (70)
+r
+zx
+¼lðu,z þw,x Þ, (71)
+� �
+@ (cid:0) �
+Kðh ,xx þh ,zz Þ¼ 1þs q@t bT 0 ðu_ ,x þw_ ,x Þþc 1 T 0 u_ þc 2 T 0 w_ þqC e h_ : (72)
+� To discuss this problem for the considered model under the LS theory, put the value of the
+unifying parameter and relaxation time as g¼s ¼0: The present model resembles the study
+T
+of Boora et al. [45], in which the Eq. (18) reduces to
+� �
+@ (cid:0) �
+Kðh ,xx þh ,zz Þ¼ 1þs q@t bT 0 ðu_ ,x þw_ ,x Þþc 1 T 0 u_ þc 2 T 0 w_ þqC e h_ : (73)
+7. Numerical results and discussion
+In this section, numerical analysis is performed using MATLAB software to demonstrate the
+influence of initial stress, generalized thermo elasticity theories, and time on the various physical
+fields, the normal stress, shear stresses, normal displacement, and equilibrated stresses due to
+both types of voids and temperature distribution field. In order to fulfill this objective, a material
+10 R. KUMAR ET AL.
+resembling magnesium crystals is selected. The physical data for numerical calculation is given in
+Table 1, following Singh and Tomar [5].
+The other constants that are used for numerical calculations are taken as follows x¼1:0;
+m¼1:1; p¼0:05; s ¼0:02s; s ¼0:01s and R ¼1: The results are plotted at different values
+q T 1
+of z at x¼1: To enhance convenience, we have organized the graphs into three distinct catego-
+ries. In the first set of groups, Figures 2–7 illustrate how the various wave profiles are influenced
+by the initial stress, utilizing three distinct values of initial stress as p¼0:2 (solid line), p¼0:1
+(dashed line), and p¼0 (dotted line). In the second group, Figures 8–13 depict the effect of gen-
+eralized theories LS (dashed line) and DPL (solid line) on the physical field variables. In the third
+group, Figures 14–19 illustrate how the various wave profiles are influenced by time t for various
+time values t ¼0:10 (dotted line), t ¼0:05 (dashed line), and t ¼0:01 (solid line).
+7.1. Effect of initial stress
+Figure 2 depicts the relationship between equilibrated stress m1 and distance z for various initial
+z
+stress values. At the initial distance range z �0:7; the amplitude of equilibrated stress m1 has a
+z
+higher magnitude when initial stress is not present. The amplitude of equilibrated stress decreases
+Table 1. Numerical values of the material constants.
+Symbol Value Symbol Value
+k 1:5�1010Nm−2 l 7:5�109Nm−2
+q 2�103Kgm−3 a 8�109N
+a
+1
+1:2�1010Nm−2 a
+2
+2:21�1010Nm−2
+a 1:23�106Nm−2 a 1:78�10−5K−1
+3 t
+c 8:2�109N c 2�106Nm−2K−1
+1
+c
+2
+3:11�106Nm−2 T0 293K
+b 2�108Nm−2 b1 8:1�106N
+d 2:1�108Nm−2 C 1:809�106m2s2K−1
+e
+K 1:7�102Wm−1K−1 v 320kgm−1
+1
+v 330kgm−1
+2
+Figure 2. Influence of initial stress on equilibrated stress m1:
+z
+JOURNAL OF THERMAL STRESSES 11
+Figure 3. Influence of initial stress on equilibrated stress m2:
+z
+Figure 4. Influence of initial stress on normal displacement w:
+if the initial stress increases. Also, if the distance z �0:7; the influence of initial stress follows the
+reverse trend. In every instance of initial stress, the trends converge toward zero with the expan-
+sion of distance. Figure 3 illustrates the behavior of equilibrated stress m2 for different initial
+z
+stress values. The magnitude of m2 decreases as the distance z increases. The initial stress exhibits
+z
+an opposite trend in the case of equilibrated stress m2 as compared to equilibrated stress m1:
+z z
+Initially, the amplitude experiences an exponential decrease, followed by a subsequent increase,
+ultimately approaching zero as distance z extends. In the starting range of distance z�0:7; the
+magnitude of initial stress positively influences the amplitude of the equilibrated stress m2; after
+z
+12 R. KUMAR ET AL.
+Figure 5. Influence of initial stress on normal stress r :
+zz
+Figure 6. Influence of initial stress on shear stress r zx :
+that, it acts as a decreasing agent. Figure 4 illustrates the trends of normal displacement for vary-
+ing initial stress values. The amplitude of normal displacement diminishes significantly as the dis-
+tance increases. Moreover, as the distance increases, there is a reduction in the amplitude of
+normal displacement. In the starting distance values, the impact of initial stress on normal dis-
+placement is distinctly prominent. The amplitude of normal displacement is seen to have a lower
+magnitude in the scenario where there is initial stress than in the absence of it. This impact also
+dims with the increase in distance.
+Figure 5 depicts the effect of different values of initial stress on normal stress r : The normal
+zz
+stress amplitude increases as the distance z increases. Without initial stress, the graphs show a
+higher amplitude of normal displacement. However, if the initial stress increases, there is a clear
+JOURNAL OF THERMAL STRESSES 13
+Figure 7. Influence of initial stress on temperature distribution h:
+Figure 8. Influence of generalized theories on equilibrated stress m1:
+z
+trend of decreasing magnitude in the normal displacement. This highlights the impactful relation-
+ship between the initial stress and the resulting amplitude of normal displacement. This observa-
+tion indicates that the initial stress acts as a diminishing factor for the normal displacement.
+Figure 6 illustrates the shear stress behavior for various initial stress values. The shear stress mag-
+nitude exhibits an initial exponential decline, followed by an ascent, ultimately converging toward
+zero with an increase in distance.
+Additionally, as the initial stress rises, the magnitude of shear stress decreases. Figure 7 illus-
+trates the correlation between the temperature distribution and distance, considering various ini-
+tial stress values. It is noteworthy that the magnitude of the temperature distribution experiences
+14 R. KUMAR ET AL.
+Figure 9. Influence of generalized theories on equilibrated stress m2:
+z
+Figure 10. Influence of generalized theories on normal displacement w:
+a progressive rise, reaching its peak as the distance increases. Subsequently, a discernible expo-
+nential decrease follows, gradually converging to zero. The initial stress acts as a factor that aug-
+ments the temperature distribution.
+7.2. Influences of generalized theories
+Figure 8 shows the impact of the thermo elasticity model on the equilibrated stress due to type-I
+voids m1 with distance. It is observed that the equilibrated stress’s magnitude m1 is higher in the
+z z
+JOURNAL OF THERMAL STRESSES 15
+Figure 11. Influence of generalized theories on normal stress r zz :
+Figure 12. Influence of generalized theories on shear stress r zx :
+initial distance range z�0:7 for the DPL theory and lower for the LS theory. Additionally, if the
+distance z �0:7; the magnitude for the LS model is higher than the DPL model. This observation
+implies that, initially, the magnitude is notably affected by the rising relaxation time s within a
+T
+specific range of distance, but this influence diminishes as the distance extends. Figure 9 illus-
+trates the impact of the thermo elasticity model on equilibrated stress m2: It is observed that the
+z
+relaxation time follows the reverse behavior for the equilibrated stress m2 compared to the equili-
+z
+brated stress m1: In both cases of equilibrated stresses, the impact of relaxation time s is reduced
+z T
+16 R. KUMAR ET AL.
+Figure 13. Influence of generalized theories on the temperature field h:
+Figure 14. Influence of time on equilibrated stress m1:
+z
+for the higher values of distance z: In both cases, namely the LS and DPL models, if there is a
+further increase in distance, the amplitude tends to zero. Figure 10 depicts the impact of thermo-
+elasticity theories on normal displacement. The amplitude of normal displacement diminishes as
+the distance increases. In the case of LS theory, the amplitude exhibits a lower magnitude com-
+pared to that of DPL theory. The magnitude tends to zero if we increase the value of distance z:
+Figure 11 clarifies the behavior of normal stress under the considered models of thermo elasti-
+city. As there is an increment in the distance z; the magnitude of normal stress increases.
+JOURNAL OF THERMAL STRESSES 17
+Figure 15. Influence of time on equilibrated stress m2:
+z
+Figure 16. Influence of time on normal displacement w:
+The amplitude of normal stress associated with the DPL model is less than that associated with
+the LS model of thermoelasticity, while the magnitudes are the same for both cases after z�3:6:
+Figure 12 determines the trends of shear stress with distance z for the DPL and LS model of ther-
+moelasticity. In the DPL model, the magnitude of shear stress once decreases sharply if the dis-
+tance increases, but after that, it increases with the distance. Moreover, while the decrease in
+amplitude isn’t as rapid as observed in the DPL model, the LS model also experiences an initial
+18 R. KUMAR ET AL.
+Figure 17. Influence of time on normal stress r :
+zz
+Figure 18. Influence of time on shear stress r zx :
+reduction in shear stress amplitude. Notably, the effect of relaxation time s on shear stress amp-
+T
+litude is observed to gradually diminish.
+Figure 13 llustrates the intriguing dynamics of temperature change in relation to distance
+within the examined thermoelastic model. Initially, there is a robust ascent in the temperature
+distribution as distance expands, eventually giving way to a gradual descent. Notably, the LS ther-
+moelasticity model exhibits a more substantial temperature distribution, surpassing that of the
+JOURNAL OF THERMAL STRESSES 19
+Figure 19. Influence of time on temperature distribution field h:
+DPL model. The amplitude of temperature distribution diminishes as distance increases, that is,
+after z�5:2:
+7.3. Effect of time
+Figure 14 illustrates the behavior of equilibrated stress due to type-I voids m1 for the different
+z
+values of the time. For the distance z�0:7; if the time decreases, the magnitude of equilibrated
+stress m1 increases. Within the specified range of distance z; time acts as a diminishing factor for
+z
+equilibrated stress. However, for distances exceeding z�0:7; an interesting trend emerges—with
+increasing time, the magnitude of equilibrated stress also experiences a noticeable rise. Figure 15
+depicts the behavior of equilibrated stress due to type-II voids m2 for the various values of the
+z
+time. If the distance z �0:7; the amplitude of equilibrated stress m2 increases as the time
+z
+increases. After that, the magnitude decreases with the rise of time. If the distance z is greater
+than 4.5, the impact of time on the amplitude of equilibrated stress m2 is negligible, as shown in
+z
+the figure. As distance extends, the magnitude approaches zero across all the scenarios under
+consideration. Figure 16 illustrates the impact of time on the components of normal displace-
+ment. It is observed that within the initial range of distance z; time exerts a substantial influence
+on the component of normal displacement. The amplitude likewise grows as time increases. As
+the distance increases, the magnitude tends to become zero. Therefore, at the larger value of dis-
+tance z; the normal displacement has a negligible influence due to time.
+Figure 17 demonstrates the compressive characteristic of normal stress as the distance z varies
+for various time t values. The amplitude of normal stress increases when time increases. The
+influence of time on normal stress is negligible for the larger values of distance. Figure 18 shows
+the shear stress function for different time values. A careful analysis indicates that for higher val-
+ues of time, the amplitude of shear stress is comparatively smaller. The influence of time on the
+magnitude of shear stress decreases as the distance grows. Figure 19 reveals the impact of time
+on the temperature distribution field h: As distance increases, the temperature distribution ini-
+tially rises, then decreases and tends to zero. Time has a positive impact on the amplitude of
+20 R. KUMAR ET AL.
+temperature distribution. As time increases, the magnitude of temperature distribution also
+increases. In the case of greater distance values, the impact of time change on the temperature
+distribution is comparatively reduced. As distance extends to larger values, the variations in time
+have a diminishing impact on the overall temperature distribution.
+8. Conclusions
+This article presents an innovative mathematical model within the domain of generalized thermo-
+elasticity, with a specific emphasis on a homogeneous double porous initially stressed isotropic
+thermoelastic solid half-space. The study is conducted within the framework of the DPL theory.
+The methodology involves utilizing normal mode analysis to derive accurate solutions for the
+physical field variables described by the governing equations of the proposed model. By incorpo-
+rating appropriate boundary conditions, the analysis leads to the following noteworthy
+conclusions:
+1. The numerical and graphical findings reveal that the phase lag, time, and initial stress consid-
+erably impact the physical field quantities.
+2. The equilibrium stress due to type-I voids has a positive impact due to initial stress in the
+initial part of the domain, but it exhibits a negative impact in the later part of the domain.
+However, the influence of initial stress on the equilibrated stress due to type-II voids gets
+reversed to its effect on equilibrated stress due to type-I voids.
+3. Initial stress has a positive impact on the temperature distribution field but a negative effect
+on normal stresses, shear stress, and normal displacement.
+4. When compared to the LS model of thermoelasticity, both the equilibrated stresses (due to
+type-I, II voids) and temperature field distribution have higher values in the DPL model;
+however, the generalized theories exhibit a contrary impact on normal stress, shear stress,
+and normal displacement.
+5. The time parameter exhibits a substantial amplifying influence on the equilibrated stress due
+to type-I, and II voids, shear stress, normal stress, normal displacement, and the temperature
+field distribution.
+The inclusion of initial stress in a thermoelastic medium makes the considered model more
+realistic. The present study is helpful in various engineering subfields such as soil dynamics, seis-
+mology, geophysics, and earthquake engineering.
+Acknowledgment
+The authors express their sincere gratitude to the anonymous reviewers whose insightful comments and construct-
+ive feedback significantly contributed to the enhancement of this manuscript.
+Disclosure statement
+The authors have no conflict of interest.
+Funding
+The research is supported by Researchers Supporting Project number (RSP2025R158), King Saud University,
+Riyadh, Saudi Arabia.
+JOURNAL OF THERMAL STRESSES 21
+References
+0[1] H. W. Lord and Y. Shulman, “A generalized dynamical theory of thermoelasticity,” J. Mech. Phys. Solids,
+vol. 15, no. 5, pp. 299–309, 1967. DOI: 10.1016/0022-5096(67)90024-5.
+0[2] J. W. Nunziato and S. C. Cowin, “A nonlinear theory of elastic materials with voids,” Arch. Rational Mech.
+Anal, vol. 72, no. 2, pp. 175–201, 1979. DOI: 10.1007/BF00249363.
+0[3] D. Ie¸san, “A theory of thermoelastic materials with voids,” Acta Mech, vol. 60, no. 1-2, pp. 67–89, 1986.
+DOI: 10.1007/BF01302942.
+0[4] N. Khalili and A. P. S. Selvadurai, “A fully coupled constitutive model for thermo-hydro-mechanical ana-
+lysis in elastic media with double porosity,” Geophys. Res. Lett, vol. 30, no. 24, pp. 1–5, 2003. DOI: 10.
+1029/2003GL018838.
+0[5] D. Singh, D. Kumar and S. K. Tomar, “Plane harmonic waves in a thermoelastic solid with double poros-
+ity,” Math. Mech. Solids, vol. 25, no. 4, pp. 869–886, 2020. DOI: 10.1177/1081286519890053.
+0[6] V. Gupta and M. S. Barak, “Fractional and MDD analysis of piezo-photo-thermo-elastic waves in semicon-
+ductor medium,” Mech. Adv. Mater. Struct, vol. 31, no. 25, pp. 6787–6802, 2024. DOI: 10.1080/15376494.
+2023.2238201.
+0[7] V. Gupta, M. S. Barak and S. Das, “Vibrational analysis of size-dependent thermo-piezo-photo-electric semi-
+conductor medium under memory-dependent Moore–Gibson–Thompson photo-thermoelasticity theory,”
+Mech. Adv. Mater. Struct, vol. 31, no. 28, pp. 10543–10559, 2024. DOI: 10.1080/15376494.2023.2291804.
+0[8] V. Gupta and M. S. Barak, “Photo-thermo-piezo-elastic waves in semiconductor medium subject to distinct
+two temperature models with higher order memory dependencies,” HFF, vol. 34, no. 1, pp. 84–108, 2024.
+DOI: 10.1108/HFF-07-2023-0380.
+0[9] V. Gupta, M. S. Barak and H. Ahmad, “Reflection of quasi plasma wave in photo-piezo semiconductor
+medium with distinct higher order fractional derivative two temperature models,” Phys. Scr, vol. 99, no. 2,
+pp. 025515, 2024. DOI: 10.1088/1402-4896/ad1972.
+[10] V. Gupta, B. M.s and S. Das, “Impact of memory-dependent heat transfer on Rayleigh waves propagation
+in nonlocal piezo-thermo-elastic medium with voids,” HFF, vol. 34Mar., no. 4, pp. 1902–1926, 2024. DOI:
+10.1108/HFF-10-2023-0615.
+[11] D. Ie¸san and R. Quintanilla, “On a theory of thermoelastic materials with a double porosity structure,”
+J. Therm. Stress, vol. 37, no. 9, pp. 1017–1036, 2014. DOI: 10.1080/01495739.2014.914776.
+[12] E. Scarpetta, M. Svanadze and V. Zampoli, “Fundamental solutions in the theory of thermoelasticity for solids
+with double porosity,” J. Therm. Stress, vol. 37, no. 6, pp. 727–748, 2014. DOI: 10.1080/01495739.2014.885337.
+[13] M. Kumar, M. Kumari and M. S. Barak, “Reflection of plane seismic waves at the surface of double-porosity
+dual-permeability materials,” Pet. Sci, vol. 15, no. 3, pp. 521–537, 2018. DOI: 10.1007/s12182-018-0245-y.
+[14] A. Arusoaie, “Spatial and temporal behavior in the theory of thermoelasticity for solids with double poros-
+ity,” J. Therm. Stress, vol. 41, no. 4, pp. 500–521, 2018. DOI: 10.1080/01495739.2017.1387882.
+[15] M. Kumar, M. S. Barak and M. Kumari, “Reflection and refraction of plane waves at the boundary of an
+elastic solid and double-porosity dual-permeability materials,” Pet. Sci, vol. 16, no. 2, pp. 298–317, 2019.
+DOI: 10.1007/s12182-018-0289-z.
+[16] C. Gales and S. Chirita, “Wave propagation in materials with double porosity,” Mech. Mater, vol. 149, pp.
+103558, 2020. DOI: 10.1016/j.mechmat.2020.103558.
+[17] S. Chiri¸t�a and A. Arusoaie, “Thermoelastic waves in double porosity materials,” Eur. J. Mech. - A/Solids,
+vol. 86, pp. 104177, 2021. DOI: 10.1016/j.euromechsol.2020.104177.
+[18] M. Svanadze, “Potential method in the coupled theory of elastic double-porosity materials,” Acta Mech, vol.
+232, no. 6, pp. 2307–2329, 2021. DOI: 10.1007/s00707-020-02921-2.
+[19] V. Pathania, R. Kumar, V. Gupta and M. S. Barak, “Double porous thermoelastic waves in a homogeneous,
+isotropic solid with inviscid liquid,” Arch Appl Mech, vol. 93, no. 5, pp. 1943–1962, 2023. DOI: 10.1007/
+s00419-023-02364-w.
+[20] V. Pathania, R. Kumar, V. Gupta and M. S. Barak, “Generalized Plane Waves in a Rotating Thermoelastic Double
+Porous Solid,” Int. J. Appl. Mech. Eng, vol. 27, no. 4, pp. 138–154, 2022. DOI: 10.2478/ijame-2022-0055.
+[21] D. Y. Tzou, “A Unified Field Approach for Heat Conduction From Macro- to Micro-Scales,” J. Heat
+Transfer, vol. 117, no. 1, pp. 8–16, 1995. DOI: 10.1115/1.2822329.
+[22] R. Quintanilla and R. Racke, “Qualitative aspects in dual-phase-lag thermoelasticity,” SIAM J. Appl. Math,
+vol. 66, no. 3, pp. 977–1001, 2006. DOI: 10.1137/05062860X.
+[23] A. M. Abd-Alla, M. I. A. Othman and S. M. Abo-Dahab, “Reflection of plane waves from electro-magneto-
+thermoelastic half-space with a dual-phase-lag model,” Comput. Mater. Contin, vol. 51, no. 2, pp. 63–79,
+2016. DOI: 10.3970/cmc.2016.051.063.pdf.
+[24] A. E. Abouelregal, “Rayleigh waves in a thermoelastic solid half space using dual-phase-lag model,” Int. J.
+Eng. Sci, vol. 49, no. 8, pp. 781–791, 2011. DOI: 10.1016/j.ijengsci.2011.03.007.
+22 R. KUMAR ET AL.
+[25] M. I. A. Othman, M. E. M. Zidan and I. E. A. Mohamed, “Effect of magnetic field and gravity on two-tem-
+perature thermomicrostretch elastic medium under dual-phase lag model,” Indian J Phys, vol. 94, no. 1, pp.
+69–79, 2020. DOI: 10.1007/s12648-019-01444-4.
+[26] K. K. Kalkal, S. K. Sheokand and S. Deswal, “Reflection and transmission between thermoelastic and ini-
+tially stressed fiber-reinforced thermoelastic half-spaces under dual-phase-lag model,” Acta Mech, vol. 230,
+no. 1, pp. 87–104, 2019. DOI: 10.1007/s00707-018-2302-4.
+[27] M. I. A. Othman and E. M. Abd-Elaziz, “Dual-phase-lag model on micropolar thermoelastic rotating
+medium under the effect of thermal load due to laser pulse,” Indian J Phys, vol. 94, no. 7, pp. 999–1008,
+2020. DOI: 10.1007/s12648-019-01552-1.
+[28] S. Biswas, “Fundamental solution of steady oscillations for porous materials with dual-phase-lag model in
+micropolar thermoelasticity,” Mech. Based Des. Struct. Mach, vol. 47, no. 4, pp. 430–452, 2019. DOI: 10.
+1080/15397734.2018.1557528.
+[29] M. S. Barak, et al., “Behavior of higher-order MDD on energy ratios at the interface of thermoelastic and
+piezothermoelastic mediums,” Sci. Rep., vol. 13, no. 1, pp. 17170, 2023. DOI: 10.1038/s41598-023-44339-5.
+[30] M. S. Barak, R. Kumar, R. Kumar, and V. Gupta, “Energy transfer at the interface of monoclinic piezother-
+moelastic and thermoelastic half spaces with MDD,” J. Therm. Stress., vol. 47, no. 2, pp. 189–216, 2023.
+DOI: 10.1080/01495739.2023.2253879.
+[31] A. Montanaro, “On singular surfaces in isotropic linear thermoelasticity with initial stress,” J. Acoust. Soc.
+Am, vol. 106, no. 3, pp. 1586–1588, 1999. DOI: 10.1121/1.427154.
+[32] A. M. El-Naggar, Z. Kishka, A. M. Abd-Alla, I. A. Abbas, S. M. Abo-Dahab, and M. Elsagheer, “On the ini-
+tial stress, magnetic field, voids and rotation effects on plane waves in generalized thermoelasticity,”
+J. Comput. Theor. Nanosci., vol. 10, no. 6, pp. 1408–1417, 2013. DOI: 10.1166/jctn.2013.2862.
+[33] M. I. A. Othman, R. S. Tantawi, and E. M. Abd-Elaziz, “Effect of initial stress on a thermoelastic medium
+with voids and microtemperatures,” J. Porous Media, vol. 19, no. 2, pp. 155–172, 2016. DOI: 10.1615/
+JPorMedia.v19.i2.40.
+[34] E. M. Khalil, S. M. Abo-Dahab, and A. A. Kilany, “Electromagnetic field and initial stress on a photother-
+mal semiconducting voids medium under thermoelasticity theories,” Math. Methods Appl. Sci., vol. 44, no.
+9, pp. 7778–7798, 2021. DOI: 10.1002/mma.6942.
+[35] R. Kumar, V. Gupta, V. Pathania, R. Kumar, and M. S. Barak, “Analysis of waves at boundary surfaces at
+distinct media with nonlocal dual-phase-lag,” Proc. Natl. Acad. Sci., India Sect. A Phys. Sci., vol. 93, no. 4,
+pp. 573–585, 2023. DOI: 10.1007/s40010-023-00850-y.
+[36] R. Kumar, V. Pathania, V. Gupta, M. S. Barak and H. Ahmad, “Thermoelastic Modeling with Dual
+Porosity Interacting with an Inviscid Liquid,” J. Appl. Comput. Mech., vol. 10, no. 1, pp. 111–124, 2024.
+DOI: 10.22055/jacm.2023.44488.4221.
+[37] R. Kumar, V. Gupta, V. Pathania, and M. S. Barak, “Energy ratio response at the interface of elastic and
+dual-porous thermoelastic half-spaces,” Phys. Scr., vol. 98, no. 11, pp. 115211, 2023. DOI: 10.1088/1402-
+4896/acfced.
+[38] K. Lotfy, E. S. Elidy, and R. S. Tantawi, “Piezo-photo-thermoelasticity transport process for hyperbolic two-
+temperature theory of semiconductor material,” Int. J. Mod. Phys. C, vol. 32, no. 07, pp. 2150088, 2021.
+DOI: 10.1142/S0129183121500881.
+[39] K. Lotfy, A. A. El-Bary, and R. S. Tantawi, “Effects of variable thermal conductivity of a small semicon-
+ductor cavity through the fractional order heat-magneto-photothermal theory,” Eur. Phys. J. Plus, vol. 134,
+no. 6, pp. 280, 2019. DOI: 10.1140/epjp/i2019-12631-1.
+[40] K. Lotfy and R. S. Tantawi, “Photo-thermal-elastic interaction in a functionally graded material (FGM) and
+magnetic field,” Silicon, vol. 12, no. 2, pp. 295–303, 2020. DOI: 10.1007/s12633-019-00125-5.
+[41] M. Yasein, N. Mabrouk, K. Lotfy, and A. A. EL-Bary, “The influence of variable thermal conductivity of
+semiconductor elastic medium during photothermal excitation subjected to thermal ramp type,” Results
+Phys., vol. 15, pp. 102766, 2019. DOI: 10.1016/j.rinp.2019.102766.
+[42] A. M. S. Mahdy, K. Lotfy, A. El-Bary, and I. M. Tayel, “Variable thermal conductivity and hyperbolic two-
+temperature theory during magneto-photothermal theory of semiconductor induced by laser pulses,” Eur.
+Phys. J. Plus, vol. 136, no. 6, pp. 651, 2021. DOI: 10.1140/epjp/s13360-021-01633-3.
+[43] A. M. S. Mahdy, K. A. Gepreel, K. Lotfy, and A. A. El-Bary, “A numerical method for solving the Rubella
+ailment disease model,” Int. J. Mod. Phys. C, vol. 32, no. 07, pp. 2150097, 2021. DOI: 10.1142/
+S0129183121500972.
+[44] M. A. Abdou, M. I. A. Othman, R. S. Tantawi, and N. T. Mansour, “Exact solutions of generalized thermo-
+elastic medium with double porosity under L–S theory,” Indian J. Phys., vol. 94, no. 5, pp. 725–736, 2020.
+DOI: 10.1007/s12648-019-01505-8.
+[45] K. Boora, A. Kadian, and S. Deswal, “Reflection of plane waves in an initially stressed thermodiffusion
+medium under double porosity effect,” J. Vib. Eng. Technol., vol. 12, no. 4, pp. 5879–5892, 2024. DOI: 10.
+1007/s42417-023-01225-8.

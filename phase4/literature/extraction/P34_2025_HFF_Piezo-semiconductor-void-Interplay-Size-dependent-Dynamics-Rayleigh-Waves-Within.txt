@@ -1,0 +1,1367 @@
+The current issue and full text archive of this journal is available on Emerald Insight at:
+https://www.emerald.com/insight/0961-5539.htm
+Piezo-semiconductor-void interplay International
+Journal of
+in the size-dependent dynamics of
+Numerical
+Methods for Heat
+Rayleigh waves within the Moore–
+& Fluid Flow
+Gibson–Thompson framework
+Vipin Gupta
+Received 15 April 2025
+Department of Mathematics, Gurugram University, Gurugram, India
+Revised 31 May 2025
+Accepted 2 June 2025
+Fuad A. Awwad and Emad A.A. Ismail
+Department of Quantitative Analysis, College of Business Administration,
+King Saud University, Riyadh, Saudi Arabia
+Hijaz Ahmad
+Operational Research Center in Healthcare, Near East University, Nicosia,
+Turkey; Department of Mathematics, College of Science, Korea University, Seoul,
+South Korea and Department of Technical Sciences, Western Caspian University,
+Baku, Azerbaijan, and
+Soumik Das
+School of Physical Sciences, Amrita Vishwa Vidyapeetham, Mysuru, India
+Abstract
+Purpose – This study aims to focus on a comparative analysis of three prominent models within the realm of
+Rayleigh wave dynamics: the piezo-thermoelastic with voids, the piezo-thermoelastic semiconductor and the
+composite piezo-thermoelastic semiconductor with voids.
+Design/methodology/approach – An innovative mathematical framework has been meticulously
+developed, incorporating the influential Moore–Gibson–Thompson (MGT) theory. The investigation
+commences with the formulation of governing equations that smoothly combine concepts from the voids,
+semiconductor and piezoelectric theories. The governing equations are established under the purview of
+Eringen’s nonlocal elasticity theory. These complex equations are expertly solved using an eigenmode
+technique. The surface wave decay condition is then used to refine these root solutions.
+Findings – This study delivers valuable insights into key parameters, encompassing surface particle motion,
+attenuation coefficients and phase velocities. These outcomes are thoroughly compared across the three
+models, offering a distinctive perspective on their individual characteristics. To enhance the understanding,
+This research is supported by Ongoing Research Funding Program, (ORF-2025-1060), King Saud
+University, Riyadh, Saudi Arabia Besides, the authors would like to express their gratitude and
+acknowledge Gurugram University, Near East University and Amrita Vishwa Vidyapeetham, Mysuru
+campus, India for providing the necessary facilities to carry out this research work.
+Funding: Ongoing Research Funding Program, (ORF-2025-1060), King Saud University, Riyadh,
+Saudi Arabia
+Data availability statement: All data that support the findings of this study are included within the article. International Journal of Numerical
+Methods for Heat & Fluid Flow
+Declaration of conflicting interest: On behalf of all authors, the corresponding author states that there is no © Emerald Publishing Limited
+0961-5539
+conflict of interest. DOI 10.1108/HFF-04-2025-0254
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF these findings are graphically demonstrated with scenarios where semiconductor or void effects are isolated,
+thereby enriching the depth of the research.
+Research limitations/implications – The analysis assumes specific types of boundary conditions at the
+surface. Real-world scenarios might involve more complex or mixed boundary conditions that could influence
+the Rayleigh wave behavior differently.
+Practical implications – The findings emphasize the role of nonlocal elasticity and material properties in
+optimizing wave behavior, offering significant implications for the development of next-generation
+sensing and signal transmission technologies. By strategically engineering these factors, researchers can
+enhance wave propagation efficiency, minimize energy loss and improve the performance of piezoelectric
+and semiconductor-based devices.
+Originality/value – This study unravels the intricate interplay of factors such as medium depth and
+nonlocality, profoundly influencing the dynamic behavior of Rayleigh waves within these captivating systems.
+The comparative analysis of the three models under the MGT theory and nonlocal elasticity provides a
+distinctive perspective and valuable insights into their individual characteristics.
+Keywords Voids, Durand-Kerner, Eigenmode, Moore-Gibson-Thompson heat equation,
+Semiconductor, Piezoelectric
+Paper typeResearch paper
+Nomenclature
+E = Electric field density;
+i
+e = Component of strain;
+ij
+σL = Local equilibrated stress;
+i
+σ = Nonlocal equilibrated stress;
+i
+ψ = Volume fraction of void;
+τ = Pyroelectric constants;
+i
+C = Specific heat at constant strain;
+E
+ϕ = Electrical potential;
+c = Elastic stiffness tensor;
+ijrl
+D = Component of dielectric displacement;
+i
+K = Components of the thermal conductivity;
+ij
+F = Components of body force;
+i
+χ = Equilibrated inertia of matrix pore;
+τ* = photo-generated carrier lifetime;
+δN = electronic deformation tensor;
+ij
+[ = relaxation parameter;
+σL = Componentsofthelocalstress;
+ij
+σ = Nonlocal stress;
+ij
+E = Energy gap;
+g
+l = Extrinsic equilibrated body force;
+1
+S* = Entropy;
+q� = Componentofheatflux;
+i
+ρ = Density;
+βT = Thermal moduli tensors;
+ij
+= carrier diffusion tensor;
+DE
+κ ij = Thermal activation coupling parameter;
+ζ = Nonlocal intrinsic equilibrated body force;
+K� = Components of the rate of thermal conductivity;
+ij
+T = Thermal displacement;
+θ = Thermal temperature;
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+N = carrier density; International
+ξ = Nonlocal parameter; Journal of
+η , ε = Piezo-thermal moduli tensors; and
+ijr ij Numerical
+= Intrinsic equilibrated body force.
+ζL Methods for Heat
+& Fluid Flow
+1. Introduction
+Semiconductors are materials that sit on the line between conductors and insulators. They
+exhibit unique electrical characteristics that are crucial for solar energy technology and other
+renewable energy sources (Neamen, 1992). The domains of technology and science are given
+new dimensions when integrated with piezoelectric capabilities. Piezoelectric semiconductors
+have attracted a lot of attention from researchers. These materials exhibit the electro-thermo-
+mechanical phenomena, in which they generate electricity through polarization in response to
+mechanical stress or thermal loads (Smith, 2005). Recent advancements in high-performance
+power electronic devices and distributed generation systems, such as power electronic
+transformers and adaptive current controllers (Zhang et al., 2023; Cheng et al., 2024), reflect the
+growing need for precise control of energy transfer in such coupled systems.
+The investigation of thermoelastic characteristics in certain materials has facilitated the
+advancement of traditional heat conduction theory. The theory under consideration suggests that
+the propagation of heat waves occurs at an infinite velocity, a concept that clearly contradicts
+scientific evidence. The classical coupled theory of thermoelasticity (CT), as highlighted by Biot
+(1956), is primarily based on the classical heat conduction model. Consequently, it inherits the
+aforementioned constraint. To surpass this fundamental limitation, a multitude of research
+endeavors has been performed. Two notable competitors have emerged as significant theories of
+thermoelasticity. One of the theories put forth by Lord and Shulman (1967)involves the inclusion
+of a solitary thermal relaxation parameter. Expanding on the foundational Lord-Shulman
+framework, Dhaliwal and Sherief (1980)further advanced the field by formulating equations for
+generalized thermoelasticity. This significant addition incorporates the consideration of anisotropic
+media, hence enhancing the applicability and relevance of the framework. Green and Naghdi
+(1991, 1992, 1993) are prominent scholars in the field of thermoelasticity. The researchers’
+ground-breaking efforts focus on the advancement of diverse thermoelastic theories that are
+carefully designed to investigate the complex mechanisms of energy dissipation present in elastic
+materials. The theories known as Green-Naghdi type II (GN-II) and Green-Naghdi type III (GN-
+III) are considered to be ground-breaking in the field. These ideas have significantly advanced our
+understanding concerning the way elastic materials behave when it comes to energy dissipation.
+In 1974, Mindlin (1974) established the fundamental basis by developing a series of
+governing equations that revealed the complex interplay between piezoelectric materials and
+temperature. Building upon the groundwork laid by Nowacki (1978, 1979) in 1978 and 1979,
+substantial contributions were made in the field of coupled piezo-thermoelastic diffusion
+equations. Drawing inspiration from Mindlin’s revolutionary study, Chandrasekharaiah (1988)
+undertook a comprehensive investigation whereby he introduced the pioneering notion of finite
+wave signal within the domain of piezo-thermoelasticity. This invention represents a notable
+advancement in our comprehension of the fundamental relationship between temperature and
+piezoelectricity. An important turning point in the development of this discipline took place
+when Aouadi (2006)made significant contributions by presenting a comprehensive theory of
+thermoelasticity specifically designed to tackle the distinct challenges posed by piezoelectric
+materials, which experience changes in their material constants as temperatures vary.
+The pioneering contributions of Edelen and Laws (1971)have been credited with significant
+progress in the domain of nonlocal interaction theory. Furthermore, Edelen et al. (1971)
+effectively derived the constitutive equations that are fundamental to the theory of nonlocal
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF elasticity. Eringen and Edelen (1972) established the nonlocal theory by incorporating the
+fundamental concepts of global balancing laws and the second rule of thermodynamics.
+Advancements in nanofabrication, such as stitchless atomic force microscopy and large-area
+scanning lithography (Li et al., 2024; Liu et al., 2023a, 2024), are enabling precise experimental
+realization of such hybrid devices. Moreover, dual-microphone active noise cancellation systems
+and novel hysteresis modeling approaches – such as Doppler assimilation (Liu et al., 2023b) and
+neural networks (Ni et al., 2025) have showcased the importance of complex system modeling for
+accurate performance predictions, supporting the development of intelligent semiconductor
+materials. The integration of micro- and nanoscale piezo-semiconductor systems is paralleled by
+advances in high-coupling symmetric transformers and neutron-irradiated thyristors (Deng et al.,
+2024; Tong et al., 2025) emphasizing the synergy between device physics and material behavior
+under extreme or dynamic conditions.
+The analysis of Rayleigh waves within different types of generalized thermoelastic media
+(Kumar et al., 2023; Kumar, 2025; Sharma, 2023; Gupta et al., 2024a) has increasingly
+considered nonlocal elasticity and time-dependent memory effects as critical factors
+influencing wave behavior. In recent times, there has been a significant increase in scholarly
+research focusing on the Moore–Gibson–Thompson (MGT) equation, as evidenced by studies
+(Thompson and Beavers, 1972; Marchand et al., 2012; Lasiecka and Wang, 2015; Pellicer and
+Solà-Morales, 2019). This equation, which originates from a third-order dynamic equation,
+has been of significant importance in elucidating diverse facets of fluid dynamics. Quintanilla
+(2019) has made noteworthy advancements in the field by discovering an intriguing
+thermoelastic model, which originates from the MGT model. Quintanilla made improvements
+to the existing model by introducing the relaxation parameter in the GN-III framework, which
+improved the heat model that previously existed. The MGT theory has sparked a significant
+increase in academic research endeavors focused on comprehending its complex ramifications
+(Abouelregal et al., 2021; Gupta et al., 2022; Abouelregal et al., 2022).
+Piezoelectric semiconductors with voids are a ground-breaking class of materials that have
+appeared in the constantly changing semiconductor environment. These complex nanoscale-
+engineered structures have the potential to revolutionize sensor and energy-harvesting
+technologies. Thermal stresses can be produced, and mechanical changes can be caused when
+photo-thermal techniques are used to activate an elastic semiconductor media. This
+phenomenon is very important for studying the piezoelectric effect, especially in a variety of
+disciplines like laser drilling. In a thorough investigation, (Lotfy and El-Bary, 2022; Aldwoah et
+al., 2022; Alshehri and Lotfy, 2023) conducted a comprehensive examination of semiconductor
+materials, examining several parameters, including pyroelectricity, the magnetic fields, electron-
+hole effect and thermal conductivity. Studies on reverse recovery, asymmetric flux modulation
+and hybrid excited machines (Shen et al., 2022, 2024; Huo, 2024) further enrich the landscape
+of electromechanical interaction analysis – strengthening the motivation for examining the
+wave propagation behavior in composite piezo-thermoelastic semiconductor systems.
+Numerous scholars (Marin et al., 2013; Pathania et al., 2022; Abouelregal et al., 2022; Pathania
+et al., 2023) have focused their research on exploring various facets of plane waves, with a
+notable emphasis on fractional order, nonlocality and two-temperature models. Barak et al.
+(Barak et al., 2023a; Gupta et al., 2023; Barak et al., 2023b; Gupta and Barak, 2023) examined
+the energy distribution in a number of piezo-thermoelastic contact models. Lewis and his team
+(Lewis et al., 2004a; Lewis et al., 1997; Lewis et al., 1991; Lewis and Garner, 1972; Lewis
+et al., 2004b) offers a systematic approach to solving heat transfer and fluid dynamics problems
+using finite element methods, integrating conduction, convection and porous media flow
+analyses.
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+This study conducts a comparative analysis of three Rayleigh wave dynamics models: one International
+involving a piezo-thermoelastic with voids, another with a piezo-thermoelastic semiconductor Journal of
+and a third with a composite piezo-thermoelastic semiconductor with voids medium. An
+Numerical
+innovative mathematical framework is developed, incorporating the influential MGT theory.
+Methods for Heat
+The analysis begins by formulating equations that merge principles from piezoelectric, void
+& Fluid Flow
+and semiconductor theories. These complicated equations are solved using an eigenmode
+method. The research provides insights into surface particle motion, attenuation coefficients
+and phase velocities. These outcomes are compared across the three models, highlighting their
+unique features. Furthermore, the findings are contrasted with scenarios where semiconductor
+or void impacts are isolated, adding depth to the research.
+2. Basic equations
+The present study extends the theory of porous piezoelectricity (Iovane and Nasedkin, 2010) by
+incorporating thermal effects, photo excitation processes (Gupta et al., 2024b) and Eringen’s
+nonlocal elasticity theory (Eringen, 1978). The kinematic variable, denoted as ψ, depends on
+!
+both time t and spatial coordinates ς. The analysis begins with a porous piezo-thermoelastic
+semiconductor body occupying a defined volume V within the spatial region ℵ, bounded by the
+surface R3 and confined by surface Ξ. Two key positions are identified X and x, signifying a
+i i
+certain point in its unchanged and changed states, respectively. This gives the displacement
+component u = X – x inside the body. The Lagrangian strain tensor is expressed as
+i i i
+e =0.5(u, +u,). Additionally, the material’s temperature is considered θ=θ – θ with jθ/θj≪
+ij ij ji 0 0
+1, where θ represents the absolute temperature and θ denotes the temperature in the natural
+t 0
+state. The fundamental variables at positions ! ς and ! ς ′ are further articulated to provide a
+comprehensive understanding of the material’s behavior under these conditions as:
+n (cid:0) � (cid:0) � (cid:0) � (cid:0) � (cid:0) � (cid:0) �o
+! ! ! ! ! !
+Y= e ς ; E ς ; ψ ς ; ψ; ς ; θ ς ;N ς ; (2.1)
+ij i i
+n � � � � � � � � � � � �o
+Y′= e ! ς ′ ;E ! ς ′ ;ψ ! ς ′ ;ψ; ! ς ′ ;θ ! ς ′ ;N ! ς ′ : (2.2)
+ij i i
+The strain energy function (U) is given as:
+U= 1
+2
+cijkl ð ! ς; ! ς′Þeij ð ! ςÞekl ð ! ς′Þ− 1
+2
+η
+ijk
+ð ! ς; ! ς′Þ½eij ð ! ςÞEk ð ! ς′Þ+eij ð ! ςÞEk ð ! ς′Þ�
++ 1 2 dijk ð ! ς; ! ς′Þ½eij ð ! ςÞψ; k ð ! ς′Þ+eij ð ! ς′Þψ; k ð ! ςÞ�+ 1 2 γ ij ð ! ς; ! ς′Þ½eij ð ! ςÞψð ! ς′Þ+eij ð ! ς′Þψð ! ςÞ�
+− 1
+2
+βT
+ij
+ð ! ς; ! ς′Þ½eij ð ! ςÞθð ! ς′Þ+eij ð ! ς′Þθð ! ςÞ�− 1
+2
+δN
+ij
+ð ! ς; ! ς′Þ½eij ð ! ςÞNð ! ς′Þ+eij ð ! ς′ÞNð ! ςÞ�
++ 1 2 hij ð ! ς; ! ς′Þ½ψ; i ð ! ςÞEj ð ! ς′Þ+ψ; i ð ! ς′ÞEj ð ! ςÞ�− 1 2 γ�ð ! ς; ! ς′Þ½ψð ! ςÞNð ! ς′Þ+ψð ! ς′ÞNð ! ςÞ�
+− 1
+2
+αi ð ! ς; ! ς′Þ½Ei ð ! ςÞNð ! ς′Þ+Ei ð ! ς′ÞNð ! ςÞ�− 1
+2
+pi ð ! ς; ! ς′Þ½ψ
+;i
+ð ! ςÞNð ! ς′Þ+ψ
+;i
+ð ! ς′ÞNð ! ςÞ�
++ 1 2 Aij ð ! ς; ! ς′Þψ; i ð ! ςÞψ; j ð ! ς′Þ− 1 2 εij ð ! ς; ! ς′ÞEi ð ! ςÞEj ð ! ς′Þ− 1 2 li ð ! ς; ! ς′Þ½ψ; i ð ! ςÞθð ! ς′Þ+ψ; i ð ! ς′Þθð ! ςÞ�
++ 1 2 gi ð ! ς; ! ς′Þ½Ei ð ! ςÞψð ! ς′Þ+Ei ð ! ς′Þψð ! ςÞ�+ 1 2 fi ð ! ς; ! ς′Þ½ψð ! ςÞψ; i ð ! ς′Þ+ψð ! r′Þψ; i ð ! ς′Þ�
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF
+− 1
+2
+τi ð ! ς; ! ς′Þ½Ei ð ! ςÞθð ! ς′Þ+Ei ð ! ς′Þθð ! ςÞ�+ 1
+2
+a1 ð ! ς; ! ς′Þψð ! ςÞψð ! ς′Þ− 1
+2
+νð ! ς; ! ς′Þ½ψð ! ςÞθð ! ς′Þ
++ψð ! ς′Þθð ! ςÞ�− 1ρCEθð ! ςÞθð ! ς′Þ− 1 m�ð ! ς; ! ς′Þ½Nð ! ςÞθð ! ς′Þ+Nð ! ς′Þθð ! ςÞ�: (2.3)
+2 θ0 2
+The constitutive coefficients incorporate the following symmetries:
+η
+ijk
+ð ! ς; ! ς′Þ=η
+jik
+ð ! ς; ! ς′Þ; dijk ð ! ς; ! ς′Þ=djik ð ! ς; ! ς′Þ; γ
+ij
+ð ! ς; ! ς′Þ=γ
+ji
+ð ! ς; ! ς′Þ; βT
+ij
+ð ! ς; ! ς′Þ=βT
+ji
+ð ! ς; ! ς′Þ;
+Aij ð ! ς; ! ς′Þ=Aji ð ! ς; ! ς′Þ;hij ð ! ς; ! ς′Þ=hji ð ! ς; ! ς′Þ;εij ð ! ς; ! ς′Þ=εji ð ! ς; ! ς′Þ;cijkl ð ! ς; ! ς′Þ=cklij ð ! ς; ! ς′Þ=cjikl ð ! ς; ! ς′Þ:
+δNð ! ς; ! ς′Þ=δNð ! ς; ! ς′Þ
+ij ji
+The following are the constitutive relations that were taken from Eringen’s work (Eringen,
+1978):
+" #
+Γ= ð ∂U + � ∂U � 6S dV (cid:0) ! ς � ; (2.4)
+∂Y ∂Y′
+V
+where the superscript $h�ighlights the quantity’s� symmetrical character to the interchange of
+! ς and ! ς ′. The set Γ= σ ; −D; −ζ; σ1; S� can be seen as an ordered set with equation
+ij i i
+(2.1). Using equations (2.3)and (2.4), the set can be represented mathematically (Nowacki,
+1978) as:
+ð� � � � � � � � � � � � �
+σ = c ! ς; ! ς′ e ! ς′ −η ! ς; ! ς′ E ! ς′ +d ! ς; ! ς′ ψ; ! ς′
+ij ijkl kl ijk k ijk k
+V
+� � � � � � � � � � � �i � �
++γ ! ς; ! ς′ ψ ! ς′ −βT ! ς; ! ς′ θ ! ς′ −δN ! ς; ! ς′ N ! ς′ dV ! ς′ ; (2.5)
+ij ij ij
+ð� � � � � � � � � � � � � � � � �
+D = η ! ς; ! ς ′ e ! ς ′ −h ! ς; ! ς ′ ψ; ! ς ′ −g ! ς; ! ς ′ ψ ! ς ′ +ε ! ς; ! ς ′ E ! ς ′
+i ijk ij ij j i ij j
+V
+� � � � � � � �i � �
++τ ! ς; ! ς ′ θ ! ς ′ +α ! ς; ! ς ′ N ! ς ′ dV ! ς ′ ; (2.6)
+i i
+ð� � � � � � � � � � � � � � � � �
+ζ= −γ ij ! ς; ! ς′ eij ! ς′ −gi ! ς; ! ς′ Ei ! ς′ −fi ! ς; ! ς′ ψ; i ! ς′ −a1 ! ς; ! ς′ ψ ! ς′
+V
+� � � � � � � �� � �
++ν ! ς; ! ς ′ θ ! ς ′ +γ� ! ς; ! ς ′ N ! ς ′ dV ! ς ′ ; (2.7)
+ð� � � � � � � � � � � � � � � � �
+σ1= d ! ς; ! ς′ e ! ς′ +A ! ς; ! ς′ ψ; ! ς′ +h ! ς; ! ς′ E ! ς′ −l ! ς; ! ς′ θ ! ς′
+i kli kl ij j ij j i
+� � � � � � � � � �
+− V p ! ς; ! ς ′ N ! ς ′ +f ! ς; ! ς ′ ψ ! ς ′ �dV ! ς ′ ; (2.8)
+i i
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+ð� � � � � � � � � � � � � � � � �
+International
+ρS�= βT ! ς; ! ς ′ e ! ς ′ +τ ! ς; ! ς ′ E ! ς ′ +l ! ς; ! ς ′ ψ; ! ς ′ +ν ! ς; ! ς ′ ψ ! ς ′
+ij kl i i i i Journal of
+V � � Numerical
++ ρ ! ς; ! ς ′ C E θ � ! ς ′ � +m� � ! ς; ! ς ′ � N � ! ς ′ �i dV � ! ς ′ � : (2.9) Methods for Heat
+θ 0 & Fluid Flow
+The constitutive coefficients c , η , γ , βT, δN, h , α, p, A , ε , τ, g, γ*, m*, ν and a , are
+functions of eς=j ! ς − ! ς ′j. The ij k c l ons ij t k itut ij ive i j rela ij tion ij ship i s ( i 2.5 i ) j –(2 ij .9) i tu i rn into: 1
+ðh � � � � � � � � � �
+σ = c ðeςÞe ! ς ′ −η ðeςÞE ! ς ′ +d ðeςÞψ; ! ς ′ +γ ðeςÞψ ! ς ′ −βTðeςÞθ ! ς ′
+ij ijkl kl ijk k ijk k ij ij
+V � �� � �
+−δNðeςÞN ! ς ′ dV ! ς ′ ; (2.10)
+ij
+ðh � � � � � � � � � �
+D = η ðeςÞe ! ς ′ −h ðeςÞψ; ! ς ′ −gðeςÞψ ! ς ′ +ε ðeςÞE ! ς ′ +τðeςÞθ ! ς ′
+i ijk ij ij j i ij j i
+V � �� � �
++αðeςÞN ! ς ′ dV ! ς ′ ; (2.11)
+i
+ðh � � � � � � � � � �
+ζ= −γ ðeςÞe ! ς ′ −gðeςÞE ! ς ′ −fðeςÞψ; ! ς ′ −a ðeςÞψ ! ς ′ +νðeςÞθ ! ς ′
+ij ij i i i i 1
+V
+� �� � �
++γ�ðeςÞN ! ς ′ dV ! ς ′ ; (2.12)
+ðh � � � � � � � � � �
+σ1= d ðeςÞe ! ς ′ +A ðeςÞψ; ! ς ′ +h ðeςÞE ! ς ′ −lðeςÞθ ! ς ′ −pðeςÞN ! ς ′
+i kli kl ij j ij j i i
+V
+� �� � �
++fðeςÞψ ! ς ′ dV ! ς ′ ; (2.13)
+i
+ð� � � � � � � � � � �
+ρS�= βTðeςÞe ! ς ′ +τðeςÞE ! ς ′ +lðeςÞψ; ! ς ′ +νðeςÞψ ! ς ′ + ρðeςÞC Eθ ! ς ′
+ij kl i i i i θ
+0
+V
+� �� � �
++m�ðeςÞN ! ς ′ dV ! ς ′ : (2.14)
+The constituent coefficient exhibits a progressive decline with increasing distance from
+the reference point, attributed to the weakening of intermolecular forces over greater
+separations. Specifically, this phenomenon can be observed as the distance increases, for
+instance lima ðeςÞ!0. At the point ! ς = ! ς ′ , where each coefficient attains its respective
+1
+eς!∞
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF maximum value, a definitive relationship emerges, linking the nonlocal elastic
+coefficients with their local counterparts as:
+c ðeςÞ η ðeςÞ γ ðeςÞ βTðeςÞ δNðeςÞ ε ðeςÞ τðeςÞ h ðeςÞ A ðeςÞ gðeςÞ
+ijkl = ijk = ij = ij = ij = ij = i = ij = ij = i
+_c ijkl _η ijk _γ ij β _T ij _ δ N ij _ε ij _τ i h _ ij A _ ij _g i
+αðeςÞ pðeςÞ νðeςÞ γ�ðeςÞ m�ðeςÞ a ðeςÞ pðeςÞ
+= i = i = = = = 1 = =ΠðeςÞ;
+α_ _p _ν _γ � m_ � a_ p_
+i i 1
+(2.15)
+where _c , _η , _γ , β _T , _ δ N , A _ , h _ , _ε , g_ , T _ , α_ , p_ , _γ � , m_ � , a_ , _νand ρ_are materials
+ijkl ijk ij ij ij ij ij ij i ij i i 1
+parameters.
+The following relationship is met by the nonlocal kernel ΠðeςÞ:
+ð
+ΠðeςÞdV=1: (2.16)
+V
+According to Eringen and Wegner (2003):
+(cid:0) �
+1−ξ2∇2 Π=δðeςÞ; (2.17)
+where ∇2 indicate the laplacian operator and ξ indicate the nonlocal parameter defined as
+ξ=ξ l Here, ξ is a material constant and l is the internal characteristic length.
+0e 0 e
+By neglecting the constitutive coefficients (i.e. d , l, α, p and f) for orthotropic piezo-
+ijk i i i i
+thermoelastic semiconductor material with voids and by applying the operator (1 – ξ2∇2) on
+equations (2.10)–(2.14)and using equations (2.15)–(2.17), we obtain (after the above tilde
+symbol has been suppressed)
+• Constitutive relations:
+(cid:0) �
+1−ξ2∇2 σ =σL=c e −η E −βTθ−δNN+γ ψ; (2.18)
+ij ij ijkl kl ijk k ij ij ij
+(cid:0) � (cid:0) �
+1−ξ2∇2 σ1= σ1 L =A ψ; +h E; (2.19)
+i i ij j ij j
+(cid:0) �
+1−ξ2∇2 ζ=ζL= −γ e −g E −a ψ+νθ; (2.20)
+ij ij k k 1
+(cid:0) �
+1−ξ2∇2 D =DL=η e +ε E +τθ−gψ−h ψ; : (2.21)
+i i ijk jk ij j i i ij j
+(cid:0) � ρC θ
+1−ξ2∇2 ρS�=ðρS�ÞL=βTe +τE +νψ+ E : (2.22)
+ij ij i i θ
+0
+• Equations of motion:
+(cid:0) � (cid:0) �
+σL + 1−ξ2∇2 F =ρ 1−ξ2∇2 €u; (2.23)
+ij;j i i
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+DL =0;whereE = −φ;; (2.24) International
+i;i i i
+Journal of
+� �
+L
+σ1 +ζL+ρð1−ε2∇2Þl =χð1−ε2∇2Þψ€: (2.25) Numerical
+i;i 1
+Methods for Heat
+& Fluid Flow
+• Energy Scale equation:
+ρθ S _�= −q�;; (2.26)
+0 i i
+• Nonlocal MGT heat transport law:
+� �
+(cid:0) � ∂ N˙ � �
+1−ξ2∇2 1+ 2 q� +E = − K θ; +K�T; ;whereT˙ =θ: (2.27)
+∂t i;i gτ� ij ij ij ij
+• Nonlocal MGT heat transport equation
+Equations (2.22), (2.26)and (2.27)are used to get:
+� �
+h i N_ ∂ � (cid:0) � �
+K θ_; +K�θ; +E = 1+ 2 ρC €θ+θ β €e −τφ€; +νψ€ : (2.28)
+ij ij ij ij gτ� ∂t E 0 ij ij i i
+• Thermo-plasma transport equation:
+∂N N
+=DEN; − +κθ: (2.29)
+∂t ij ij τ�
+2.1 Case limitation
+Under certain conditions, the current MGT model reduces to:
+• K�= 2 =0, changed into the CT model (Biot, 1956).
+ij
+• K�=0, turned into an Lord-Shulman model (Lord and Shulman, 1967).
+ij
+• [=K =0, transform into a GN-II model (Green and Naghdi, 1993).
+ij
+• [=0, modified to the GN-III model (Green and Naghdi, 1992).
+3. Formulation of the problem
+The core framework of our research focuses on analyzing a semi-infinite stratum composed of a
+nonlocal piezo-thermoelastic semiconductor medium containing voids, all maintained at a
+uniform temperature θ, within the context of MGT photo-thermoelasticity theory. In our
+0
+mathematical modeling of Rayleigh wave propagation, we employ a Cartesian coordinate system.
+The origin of the system is positioned at the free surface, with wave propagation taking
+place along the x-axis. The orientation of the positive z-axis is downward, as depicted in
+Figure 1. The primary variables of interest for Rayleigh include the void volume fraction,
+displacement vector, electric potential, temperature and carrier density as:
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF
+Figure 1. Schematic representation of the problem
+Source: Authors’ own work
+!
+ψ=ψðx;z;tÞ; u =ðuðx;z;tÞ;0;wðx;z;tÞÞ;ϕ=ϕðx;z;tÞ;θ=θðx;z;tÞ;N=Nðx;z;tÞ (3.1)
+Equation (3.1) leads to modifications in the stress-strain-temperature and electric
+displacement relationships outlined in equations (2.18)–(2.21), which are as follows:
+(cid:0) �
+1−ξ2∇2 σ =σL =c u; +c w; +η φ; −δNN−βTθ+γ ψ; (3.2)
+xx xx 11 x 13 z 31 z 1 1 1
+(cid:0) �
+1−ξ2∇2 σ =σL=c ðu; +w; Þ+η φ; ; (3.3)
+xz xz 55 z x 15 x
+(cid:0) �
+1−ξ2∇2 σ =σL=c u; +c w; +η φ; −δNN−βTθ+γ ψ (3.4)
+zz zz 13 x 33 z 33 z 3 3 3
+(cid:0) � (cid:0) �
+1−ξ2∇2 σ1= σ1 L =A ψ; −h φ; ; (3.5)
+x x 1 x 1 x
+(cid:0) � � � L
+1−ξ2∇2 σ1= σ1 =A ψ; −h φ; ; (3.6)
+z z 3 z 3 z
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+(cid:0) �
+1−ξ2∇2 D =DL=η ðu; +w; Þ −ε φ; −h ψ; ; (3.7) International
+x x 15 z x 11 x 1 x
+(cid:0) � Journal of
+1−ξ2∇2 D z =DL z =η 31 u; x +η 33 w; z −ε 33 φ; z +τ 3 θ−g 3 ψ−h 3 ψ; z : (3.8) Numerical
+Methods for Heat
+Utilizing equations (3.2)–(3.8) and (2.20), we can reformulate the equations of motion
+& Fluid Flow
+(2.23)–(2.25)as follows:
+∂2u ∂2u ∂2w ∂N ∂θ ∂2φ ∂ψ (cid:0) �∂2u
+c11∂x2 +c55∂z2 +ðc13+c55Þ
+∂x∂z
+−δN
+1 ∂x
+−βT
+1∂x
++ðη
+31
++η
+15
+Þ
+∂x∂z
++γ
+1∂x
+=ρ 1−ξ2∇2
+∂t2
+; (3.9)
+∂2w ∂2w ∂2u ∂N ∂θ ∂2φ ∂2φ ∂ψ (cid:0) �∂2w
+c55∂x2 +c33∂z2 +ðc13+c55Þ
+∂x∂z
+−δN
+3 ∂z
+−βT
+3∂z
++η
+15∂x2
++η
+33∂z2
++γ
+3∂z
+=ρ 1−ξ2∇2
+∂t2
+; (3.10)
+∂2w ∂2w ∂2u ∂2φ ∂2φ ∂θ ∂ψ ∂2ψ ∂2ψ
+η
+15∂x2
++η
+33∂z2
++ðη
+31
++η
+15
+Þ
+∂x∂z
+−ε11∂x2 −ε33∂z2 +τ3∂z −g3∂z −h1∂x2 −h3∂z2 =0; (3.11)
+A1ψ; xx+A3ψ; zz−h1φ; xx−h3φ; zz−γ
+1
+u; x−γ
+3
+w; z−g1φ; x−g3φ; z−a1ψ+νθ=χð1−ε2∇2Þψ(cid:0): (3.12)
+Equation (3.1)leads to a simplification of the MGT heat equation (2.28), which is as follows:
+� K1 ∂
+∂
+2
+x
+θ
+2
+_ +K3 ∂
+∂
+2
+z
+θ
+2
+_ +K
+1
+� ∂
+∂
+2
+x
+θ
+2
++K
+3
+� ∂
+∂
+2
+z
+θ
+2
+� +Egτ N_
+�
+= � 1+ 2
+∂
+∂
+t
+�� ρCE €θ+θ0 (cid:0) βT
+1
+€u; x+βT
+3
+w€; z−τ3φ€; z+νψ€ �� : (3.13)
+Thermo-plasma transport equation (2.29)is modified as:
+� �
+∂N ∂2N ∂2N N
+= DE +DE − +κθ; (3.14)
+∂t 1 ∂x2 3 ∂z2 τ�
+where, βT=βTδ , δN=δNδ , h =hδ , A =Aδ , K�=K�δ , K =Kδ , γ =γδ ,
+ij i ij ij i ij ij i ij ij i ij ij i ij ij i ij ij i ij
+βT=ðc +c ÞαT +c αT , βT=2c αT +c αT , αT; αT are the constants of linear
+1 11 12 11 13 33 3 13 11 33 33 11 33
+thermal expansion.
+4. Solution procedure
+The genera(cid:0)l solutions for th�e harmonic plane wave’s propagation in the x-direction with
+amplitude eu;we;Ne;eθ;φe;ψe corresponding to (u, w, N, θ, ϕ, ψ) may be expressed as
+follows:
+(cid:0) �
+ðu;w;N;θ;ϕ;ψÞ= eu;we;Ne;eθ;ϕ e;ψe exp½ιωðqx +sx −tÞ�; (4.1)
+1 3
+where ω is the angular frequency and q, s indicate the horizontal and vertical slowness
+vectors, respectively.
+The amalgamation of equation (4.1) with equations (3.6) through (3.11) results in the
+following set of homogeneous equations:
+(cid:0) �
+b +b s2 eu+ðb sÞwe−ðb ÞNe−ðb Þeθ+ðb sÞφe+ðb Þψe=0; (4.2)
+11 12 13 14 15 16 17
+(cid:0) � (cid:0) �
+ðb sÞeu+ b +b s2 we−ðb sÞNe−ðb sÞe θ+ b +b s2 φe+ðb sÞψe=0; (4.3)
+21 22 23 24 25 26 27 28
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+(cid:0) �
+HFF ðb Þeu+ðb sÞwe−ðb ÞNe+ b +b s2 e θ−ðb sÞϕ e +ðb Þψe=0; (4.4)
+31 32 33 34 35 36 37
+(cid:0) � (cid:0) � (cid:0) �
+ðb sÞeu+ b +b s2 we+ð0ÞNe+ðb sÞeθ− b +b s2 φe− b s+b s2+b ψe=0; (4.5)
+41 42 27 43 44 45 46 47 48
+(cid:0) �
+ð0Þeu+ð0Þwe+ b +b s2 Ne+ðb Þe θ+ð0Þφe+ð0Þψe=0; (4.6)
+51 52 53
+(cid:0) � (cid:0) �
+ðb Þeu+ðb sÞwe+ð0ÞNe+ðb Þe θ+ b +b s+b s2 ϕ e + b +b s2 ψe=0; (4.7)
+61 62 63 64 47 65 66 67
+where b =c q2 – ρ(1+ω2ξ2q2), b =c – ρω2ξ2, b =(c +c )q, b =δNqb−1,
+11 11 12 55 13 13 55 14 1
+b =βTqb−1, b =(η +η )q, b =γ qb−1, b =(c +c )q, b =c q2 – ρ(1+ξ2ω2q2)
+15 1 16 31 15 17 1 21 13 55 22 55
+b =c – ρξ2ω2, b =δNb−1, b =βTb−1, b =η q2, b =η , b =γ b−1,
+23 33 24 3 25 3 26 15 27 33 28 3
+b =b�θ βTω2q, b =θ βTb�ω2, b =E (τ*)−1, b =K ω2q2+K�ιωq2−b�ιωρC ,
+31 0 1 32 0 3 33 g 34 1 1 E
+b =K ω2+K�ιω, b =ω2τ b*θ b =– b*ιωθ v, b*=1 – ιω [, b =(η +η )q,
+35 3 3 36 3 0 37 0 41 31 15
+b =η q2, b =τ b−1, b =ε q2 b =ε , b =g b−1, b =h , b =h q2,
+42 15 43 3 44 11 45 33 46 3 47 3 48 1
+b =DEq2+b−1+ω−2ðτ�Þ−1 , b =DE, b =κb−2 b =– γ qb−1, b =– γ b−1, b =vb−2,
+51 1 52 3 53 61 1 62 3 63
+b =– h q2 – g qb−1, b =– g b−1, b =q2A – a b−2 – χ(1+ε2ω2q2, b =– χε2ω2.
+64 1 1 65 3 66 1 1 67
+The following Christoffel equation is obtained by simplifying the previously described
+equations (4.2)–(4.7):
+12
+∑ B sn=0: (4.8)
+n
+n=0
+The coefficients Bn, (n=0–12) can be determined using standard techniques by
+calculating the determinant of the coefficient matrix derived from equations (4.2)
+through (4.7). The 12 complex roots are determined by solving equation (4.8)using the
+Durand–Kerner technique (Burden et al., 2015). After that, these 12 roots are positioned
+so that they meet the radiation requirement, especially in the area z>0 with (cid:0)(sn)>0,
+which assures that disturbances diminish with depth as waves propagate. Thus, six
+slowness vectors that describe the propagation of six attenuating phases inside the
+piezo-thermoelastic semiconductor substrate with voids are defined by the six ordered
+values of s (expressed as s to s ).
+1 6
+As a consequence, the solution that fulfills the radiation criterion is given by the following
+expression:
+6
+ðu;w;N;θ;φ;ψÞ= ∑ð1;P ;Q ;R ;S ;V Þeu exp½ιωðqx+s z−tÞ�: (4.9)
+m m m m m m m
+m=i
+where the value of P , Q , R , S and V determined by evaluating the following
+m m m m m
+expression:
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+2 3 2 3 2 3
+6 6 6 6 6 6 6 6 4 Q P R Sm m m m 7 7 7 7 7 7 7 7 5 = 6 6 6 6 6 6 6 6 4 b b 2 4 2 2 b b + + 1 3 3 2 b b s s 2 2 m m 3 7 s s 2 m 2 m − − − b 0 b b 24 1 3 s 4 3 m b3 − 4 b − + 4 b 3 b 2 b s 5 1 3 m s 5 5 m s2 m − b2 b 6 4 − b 4 + 1 b − 6 b s 3 2 6 b m 7 s 4 s 5 2 m s2 m − b b b 2 b 8 1 3 4 s 7 7 6 m sm 7 7 7 7 7 7 7 7 5 −1 6 6 6 6 6 6 6 6 6 4 −b − − 1 − 1 b b − b 2 4 1 1 3 b s s 1 1 m m 2s2 m7 7 7 7 7 7 7 7 7 5 : (4.10) Met & h I o n F d t N e J s l o r u u f n u i m o d a r r t n e F i H a r o l i l n o c e o a a w a f l l t
+Vm 0 b51+b52s2
+m
+b53 0 0 0
+Equation (4.8) allows equations (3.3), (3.4), (3.6), (3.8) with (2.18), (2.19) and (2.21) to
+change into:
+� �
+6
+σ ;σ ;σ1;D = ∑ ιωðD ;D ;D ;D Þeu exp½ιωðqx+s z−tÞ�; (4.11)
+xz zz z z 1r 2r 3r 4r r r
+r=1
+where:
+� (cid:0) �� � (cid:0) ��
+D =DL 1−ξ2ω2 q2+s2 ;D =DL 1−ξ2ω2 q2+s2
+1r 1r r 2r 2r r
+� (cid:0) �� � (cid:0) ��
+D =DL 1−ξ2ω2 q2+s2 ;D =DL 1−ξ2ω2 q2+s2
+3r 3r r 4r 4r r
+DL =c ðs +qP Þ+η qS;DL =A s V −h s S
+1r 55 r r 15 r 3r 3 r r 3 r r
+DL =c q+c s P +η S s −δNQ −βTR +γ V;
+2r 13 33 r r 33 r r 3 r 3 r 3 r
+DL =η q+η s P −ε s S +τ R −g V −h s V :
+4r 31 33 r r 33 r r 3 r 3 r 3 r r
+.5. Boundary conditions
+The specific boundary conditions are imposed at z=0:
+Mechanicalconditions:σ =0;σ =0; (5.1)
+xz zz
+Equilibratedstressescondition:σ1=0; (5.2)
+z
+Dielectricaldisplacementcondition:D =0; (5.3)
+z
+Thermalcondition:θ=0; (5.4)
+∂N s N
+Carrierdensitycondition: = N : (5.5)
+∂z DE
+1
+The mechanical boundary conditions (5.1) and (5.2) assume a traction-free surface and
+equilibrated stress vanishing at the boundary, which is physically representative of a free
+surface in Rayleigh wave propagation studies. Equation (5.3) presumes that the dielectric
+displacement is continuous across the surface, consistent with the absence of surface charge
+accumulation. The thermal boundary condition (5.4) enforces a thermally insulated surface,
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF meaning no heat flux crosses the boundary, which is common in studies where external
+thermal sources are negligible.
+Most importantly, the carrier density boundary condition (5.5) accounts for surface
+recombination effects through a recombination rate parameter sn. This term reflects the
+physical reality that photo-generated carriers may diffuse toward the surface and recombine
+there due to surface states or defects.
+6. Secular equation
+The characteristics of surface waves are captured by the secular equation. To obtain this
+equation for Rayleigh wave propagation in a nonlocal half-space consisting of piezo-
+thermoelastic semiconductor material with voids, we must address the boundary value
+problem related to the linearized equations of motion. This is achieved by combining
+equations (4.9)–(4.11)with (5.1)–(5.5)to create a unified set of simultaneous equations:
+6
+∑ D eu =0;ðj=1−6Þ; (6.1)
+jr r
+r=1
+(cid:0) �
+where, D =R, D = ιωs −s =DE Q :
+5r r 6r r N 1 r
+For a particular scenario, the determinant of the coefficients in equation (6.1) must be
+zero, i.e. to ensure the existence of a non-trivial solution. This condition yields a complex
+secular equation for Rayleigh waves, whose root is determined by the Newton–Raphson
+method and symbolically denoted by “c.”
+In a specific context, a non-trivial solution is contingent upon the determinant of the
+coefficients in equation (6.1)equating to zero, i.e. det{D }=0. This condition leads to a
+6×6
+secular equation for Rayleigh waves, with its root “c” determined using the
+Newton–Raphson technique. The phase velocity “c” of these waves exhibits a dependence
+on the angular frequency (ω), a characteristic feature of Rayleigh waves propagating through
+a piezo-thermoelastic semiconductor half-space with voids. The complex nature of “c”
+signifies that the Rayleigh waves undergo attenuation, as indicated by the imaginary
+component, which in turn confirms that the wave amplitude decreases with increasing depth.
+The formula presented by Kumar and Gupta (2015) provides an expression for the phase
+velocity and attenuation coefficient of the Rayleigh wave as:
+jc2j
+Phasevelocity:V= : (6.2)
+ℜðcÞ
+(cid:0) �
+ℑ 1=c2
+Attenuationcoefficient:Q−1= (cid:0) �: (6.3)
+ℜ 1=c2
+7. Path of the surface particles
+To describe the movement of particles within a semiconductor medium that possesses
+piezoelectric and thermoelastic properties alongside voids, we ascertain the displacement
+components in (4.9) for the Rayleigh wave, governing the parameter “c.” The formulation of
+the mechanical displacement components in the present examination is as follows:
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+6 International
+ðu;wÞ= ∑ ð1;P Þeu exp½ιωðqx+s z−tÞ�: (7.1)
+m m m Journal of
+m=1
+Numerical
+Methods for Heat
+Provided a particular real value is assigned to the variable q, using equation (7.1), the actual
+& Fluid Flow
+displacements are expressed as follows:
+!
+6
+ðU;WÞ=ℜðu;wÞ≈ℜ ∑ ð1;P Þexp½ιωðqx+s z−tÞ� : (7.2)
+m m
+m=1
+The closed curve described by equation (7.2) represents the trajectory of particles as a
+function of their position (x, z) and time (t). The present motion is a result of the propagation
+of Rayleigh waves in a semiconductor substrate that possesses piezo-thermoelastic
+properties and contains voids. Equation (7.2) for q=cosϕ/c(ϕ) establishes a connection
+between particle mobility (U, W) and the propagation direction of the Rayleigh waves. The
+pffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+scalar parameter Λ= U2+W2 represents particle displacement magnitude (when eu =1),
+m
+which is intrinsically tied to the Rayleigh wave. This waveform is pivotal in the study,
+emphasizing its role in particle movement and wave propagation.
+8. Validation
+• Disregarding the influence of carrier density, nonlocality and voids the current piezo-
+thermoelastic model aligns with a specific case discussed by Barak and Gupta
+(2023).
+• When we set ξ ! 0, omit the impact of voids and simplify the problem into one
+dimension, the present model corresponds to the results elucidated by Khamis et al.
+(2021).
+• Without piezoelectric effect, voids and transformation into a one-dimensional
+model, the current model coincides with a particular scenario elucidated in the work
+of Lotfy and Sarkar (2017). This correspondence is observed where the thermal
+temperature equals the conductive temperature.
+• In the absence of temperature, carrier density, voids and nonlocality, the present
+study conforms to a particular scenario discussed by Sharma et al. (2005).
+• Disregarding the response of carrier density, nonlocality and voids the present model
+agrees with the research conducted by Sharma et al. (2008).
+• By disregarding the influences of voids, temperature, carrier density and nonlocal
+effects, the present model reduces to a specific case previously examined by Sharma
+(2023).
+9. Special cases
+9.1 Case-I
+When the impact of voids is neglected, then the governing equation of the current model
+(3.9)–(3.14)is reduced to the following equations (Gupta et al., 2024b):
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF ∂2u ∂2u ∂2w ∂N ∂θ ∂2φ (cid:0) �∂2u
+c +c +ðc +c Þ −δN −βT +ðη +η Þ =ρ 1−ξ2∇2 ;
+11∂x2 55∂z2 13 55 ∂x∂z 1 ∂x 1 ∂x 31 15 ∂x∂z ∂t2
+(9.1)
+∂2w ∂2w ∂2u ∂N ∂θ ∂2φ ∂2φ (cid:0) �∂2w
+c +c +ðc +c Þ −δN −βT +η +η =ρ 1−ξ2∇2 :
+55∂x2 33 ∂z2 13 55 ∂x∂z 3 ∂z 3 ∂z 15∂x2 33∂z2 ∂t2
+(9.2)
+∂2w ∂2w ∂2u ∂2φ ∂2φ ∂θ
+η +η +ðη +η Þ −ε −ε +τ =0; (9.3)
+15 ∂x2 33 ∂z2 31 15 ∂x∂z 11∂x2 33 ∂z2 3∂z
+� �
+∂N ∂2N ∂2N N
+= DE +DE − +κT; (9.4)
+∂t 1 ∂x2 3 ∂z2 τ�
+� � � �
+∂2θ_ ∂2θ_ ∂2θ ∂2θ N_ ∂ (cid:0) (cid:0) ��
+K +K +K� +K� +E = 1+ 2 ρC €θ+T β €u; +β w€; −τ ϕ€; :
+1∂x2 3∂z2 1∂x2 3∂z2 gτ� ∂t E 0 1 x 3 z 3 z
+(9.5)
+9.2 Case-II
+When the impact of carrier density, i.e. plasma wave, is neglected, then the governing
+equation of the current model (3.9)–(3.14)is reduced to the following equations (Gupta et
+al., 2024a):
+∂2u ∂2u ∂2w ∂θ ∂2φ ∂ψ (cid:0) �∂2u
+c +c +ðc +c Þ −βT +ðη +η Þ +γ =ρ 1−ξ2∇2 ;
+11∂x2 55∂z2 13 55 ∂x∂z 1 ∂x 31 15 ∂x∂z 1 ∂x ∂t2
+(9.6)
+∂2w ∂2w ∂2u ∂θ ∂2φ ∂2φ ∂ψ (cid:0) �∂2w
+c +c +ðc +c Þ −βT +η +η +γ =ρ 1−ξ2∇2 ;
+55∂x2 33 ∂z2 13 55 ∂x∂z 3 ∂z 15∂x2 33∂z2 3 ∂z ∂t2
+(9.7)
+∂2w ∂2w ∂2u ∂2φ ∂2φ ∂θ ∂ψ ∂2ψ ∂2ψ
+η 15∂x2 +η 33 ∂z2 +ðη 31 +η 15 Þ ∂x∂z −ε 11∂x2 −ε 33∂z2 +τ 3∂z −g 3 ∂z −h 1∂x2 −h 3 ∂z2 =0;
+(9.8)
+A ψ; +A ψ; −h φ; −h φ; −γ u; −γ w; −g φ; −g φ; −a ψ+νθ=χð1−ε2∇2Þψ(cid:0)(cid:0); (9.9)
+1 xx 3 zz 1 xx 3 zz 1 x 3 z 1 x 3 z 1
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+� �
+∂2θ ∂2θ ∂2θ ∂2θ ∂ (cid:0) (cid:0) �� International
+K +K +K� +K� = 1+ 2 ρC θ(cid:0)+θ βTu(cid:0); +βTw(cid:0); −τ φ(cid:0); +νψ(cid:0) :
+1∂x2 3∂z2 1∂x2 3∂z2 ∂t E 0 1 x 3 z 3 z Journal of
+(9.10) Numerical
+Methods for Heat
+& Fluid Flow
+10. Numerical analysis and discussion
+Expanding on the foundation laid in the previous section, this section explores the
+propagation characteristics of a generalized Rayleigh wave in a piezo-thermoelastic
+semiconductor half-space with voids. Given the complexity of the mathematical expressions
+involved, interpreting them in an abstract manner can be challenging. To provide clearer
+insights, we present a numerical example that examines the influence of several key
+parameters on the wave propagation behavior. The selected material for the computational
+study is Cadmium Selenide (CdSe), which is chosen based on its unique material
+characteristics as described in previous studies conducted by Gupta et al. (2024a, 2024b)
+which are further consolidated in Table 1.
+The thermal relaxation time is linked to the finite speed of heat propagation, as described
+in the MGT framework, and is typically derived from experimental studies or cited literature
+for materials like CdSe. Similarly, the nonlocal parameter is associated with the internal
+characteristic length of the medium and reflects the scale at which long-range interactions
+become significant. This clarification aims to assist readers in replicating or adapting the
+model for different material systems.
+10.1 Impact of nonlocal parameter on attenuation coefficient and phase velocity
+Figure 2(a)and (b), illustrates the impact of the nonlocal parameter (ξ) on Rayleigh wave
+propagation in a piezo-thermoelastic semiconductor material with voids. In Figure 2(a), the
+variation of phase velocity with respect to the wave number is depicted for four different
+values of ξ(= 0, 0.003, 0.006, 0.009). It is observed that as the wave number increases, the
+phase velocity also increases. The influence of the nonlocal parameter is significant, as
+higher values of ξ lead to a noticeable increase in phase velocity. This indicates that nonlocal
+effects enhance wave speed by accounting for long-range interactions within the material,
+effectively reducing stiffness constraints at the local scale. When ξ=0, the material behaves
+as a classical continuum, yielding the lowest phase velocity. However, as ξ increases, the
+wave experiences a stronger nonlocal influence, leading to a steeper rise in velocity.
+Figure 2(b) illustrates the variation of attenuation with respect to the wave number for
+different values of ξ. The attenuation decreases as the wave number increases, but its rate of
+decrease is influenced by the nonlocal parameter. Higher values of ξ result in a more rapid
+decline in attenuation, suggesting that nonlocal effects contribute to reduced energy
+dissipation. When ξ=0, the classical model predicts relatively higher attenuation, whereas
+increasing ξ introduces a nonlocal softening effect, leading to reduced wave damping. This
+behavior suggests that in highly nonlocal regimes, wave energy is sustained over longer
+distances, which is crucial for applications requiring low-loss wave propagation.
+The nonlocal parameter plays a pivotal role in altering both phase velocity and attenuation
+in piezo-semiconductor materials with voids. As this parameter increases, it enhances wave
+speed while concurrently reducing attenuation. This underscores the significance of nonlocal
+elasticity in wave dynamics. These findings hold substantial implications for the design of
+cutting-edge piezoelectric and semiconductor-based devices, such as high-frequency
+acoustic sensors and waveguides. By leveraging nonlocal effects, it is possible to optimize
+wave propagation characteristics, which is crucial for achieving high-performance signal
+transmission and detection in these devices.
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF Table 1. Values of the parameters
+Symbol Value
+c 74.1×109Nm–2
+11
+c 39.3×109Nm–2
+13
+A 1.3×10–5
+1
+δN –9×10–31m–3
+1
+A 1.2×10–5n
+3
+γ 0.9×1010Nm–2
+1
+DE 2.5×103m2/s
+3
+γ 0.7×1010Nm–2
+3
+a 1.2×1010Nm–2
+1
+c 1.32×109Nm–2
+55
+βT 6.21×105Nm–2K–1
+1
+η –0.160Cm–2
+31
+E 1.11eV
+g
+η –0.138Cm–2
+15
+ε 9.03×10–11C2n–1m–2
+33
+K 9Wm–1K–1
+1
+K� 7Wm–1K–1s–1
+1
+ρ 5504kgm–3
+c 83.6×109Nm–2
+33
+T 298K
+0
+h 4×10–16Cm–2
+1
+δN –7×10–31m–3
+3
+h 5×10–16cm–2
+3
+g 4×10–10Cm–2
+1
+τ* 5×10–5S
+g 6×10–10Cm–2
+3
+ν 60Nm–2K–1
+K 9Wm–1K–1
+3
+βT 5.5×105Nm–2K–1
+3
+η 0.347Cm–2
+33
+DE 2.5×103m2/s
+1
+ε 8.26×10–11C2n–1m–2
+11
+τ –2.9×10–6Cm–2K–1
+3
+χ 1.45×10–16Nm–2s2
+K� 8Wm–1K–1s–1
+3
+C 260Jkg–1K–1
+E
+Source(s): Authors’ own work
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+International
+Journal of
+Numerical
+Methods for Heat
+& Fluid Flow
+Figure 2. (a) and (b): The impact of nonlocal parameter on phase velocity and attenuation with
+frequency (ω)
+Source: Authors’ own work
+10.2 Comparative analysis on attenuation coefficient and phase velocity in different
+material configurations
+Figure 3(a) and (b), illustrates the impact of varying material conditions, namely, piezo-
+thermoelastic semiconductor (P-semi), piezo-thermoelectric with voids (P-void) and piezo-
+thermoelastic semiconductor with voids (P-semi-void) on Rayleigh wave propagation. These
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF
+Figure 3. (a) and (b): Comparative analysis of piezo-thermoelastic semiconductor (P-semi), piezo-
+thermoelastic with voids (P-void) and piezo-thermoelastic semiconductor with voids (P-semi-void)
+models on phase velocity and attenuation with frequency (ω)
+Source: Authors’ own work
+cases represent distinct physical scenarios where semiconductor effects, piezoelectricity and
+void-induced alterations interact to influence phase velocity and attenuation for ξ=0.03. The
+analysis highlights how these factors contribute to the unique behavior of Rayleigh waves,
+which is essential for understanding wave dynamics in complex materials.
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+Figure 3(a)presents the variation of phase velocity as a function of wave number for the International
+three material conditions, revealing significant differences in wave speed under varying Journal of
+configurations. The phase velocity in the piezo-semiconductor (P-semi) case remains
+Numerical
+relatively stable, indicating that charge carrier interactions with the acoustic wave do not
+Methods for Heat
+significantly alter its speed. For piezoelectric materials with voids (P-void), the phase
+& Fluid Flow
+velocity slightly increases, suggesting that voids enhance wave propagation by modifying
+the structural properties of the material. In the case of piezo-semiconductor with voids
+(P-semi-void), a sharp increase in phase velocity is observed with increasing wave number,
+indicating that the combined effects of voids and semiconductor interactions can optimize
+wave propagation characteristics. This suggests potential applications in high-frequency
+acoustic sensors and signal transmission devices where controlled wave speed is essential.
+Figure 3(b)illustrates the attenuation as a function of frequency (ω). The attenuation for
+P-void is significantly positive and decreases with increasing frequency, indicating strong
+initial energy dissipation due to void-induced scattering, followed by a gradual reduction as
+frequency increases. For P-semi, the attenuation remains nearly constant and negative,
+suggesting a redistribution of energy rather than dissipation, which is characteristic of
+semiconductor materials. The P-semi-void case exhibits a small but initially increasing
+attenuation before stabilizing at low values, implying a balance between energy dissipation
+and wave transmission. The insets provide a closer look at the small variations in attenuation
+for P-semi and P-semi-void cases, highlighting their subtle influences on wave behavior.
+This discovery holds significant implications for applications such as surface acoustic
+wave (SAW) sensors and ultrasonic transducers, where precise control over attenuation is
+crucial for enhancing signal fidelity and energy efficiency. The study highlights how voids,
+piezoelectricity and semiconductor effects collectively influence Rayleigh wave behavior.
+While voids alter density and elasticity introducing controlled dispersion and energy
+dissipation, piezoelectricity slightly increases phase velocity without significantly impacting
+attenuation. By strategically incorporating these factors, researchers can optimize wave
+propagation, minimizing energy loss and maximizing transmission efficiency. These insights
+offer valuable guidance for the development of next-generation piezoelectric-semiconductor
+devices, including high-performance SAW sensors and ultrasonic transducers.
+10.3 Depth-dependent variation of particle motion in Rayleigh waves
+Figure 4(a)–(f) provides a series of six distinct visualizations that delve into the intricate
+behavior of Rayleigh wave particle motion in the context of the nonlocal MGT model. These
+figures provide a visual illustration of how Rayleigh wave propagation varies with depth,
+illustrating the complex interactions that occur as these waves traverse different depths of the
+medium. We partitioned the depth range from 1e−06 and 2e−03 into three equal segments,
+enabling precise analysis of motion even for minimal depth variations.
+The first four Figure 4(a)–(d)presents the progressive variations in particle motion as the
+Rayleigh wave propagates through increasing depths within the medium and concur with the
+research that was done by Gupta et al. (2024a). These plots reveal a captivating phenomenon
+where both horizontal (U) and vertical (W) particle displacements trace out spiral elliptical
+paths over time. The comprehensive nature of our analysis is highlighted in Figure 4(e),
+which elegantly overlays the first four individual plots from Figure 4(a)–(d). This combined
+representation facilitates a direct comparison of particle motion at different depths, providing
+a clear depiction of the variations in elliptical trajectories. The transition from shallower to
+deeper depths unveils a dynamic interaction between the medium and wave, emphasizing the
+depth-dependent nature of Rayleigh wave propagation.
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF
+Figure 4. (a)–(f): The response of particle motion (U, (w) with time for different depth values z, given a
+fixed ξ=0.3, and ω=100
+Source: Authors’ own work
+A particularly intriguing feature is revealed in Figure 4(a)–(f)is the transformation of the
+elliptical motion patterns as depth increases. At greater depths, a noticeable transition occurs:
+the elliptical trajectories begin to deform, exhibiting an interchange in their major and minor
+axes. This transformation highlights the complex interplay of nonlocal effects and the MGT
+heat conduction model in governing Rayleigh wave behavior. Figure 4(e)plays a crucial role
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+in consolidating these insights, as it merges the individual particle motion paths from International
+previous Figure 4(a)–(d). The combined visualization enables a holistic understanding of Journal of
+how the particle motion evolves with increasing depth. The elliptical patterns not only shift
+Numerical
+but also indicate variations in the influence of Rayleigh waves as they propagate through
+Methods for Heat
+different depth layers.
+& Fluid Flow
+A key takeaway from these observations is the depth dependency of Rayleigh wave
+propagation. At shallower depths, horizontal particle displacements tend to be smaller, whereas,
+at greater depths, the motion amplifies. This suggests that the interaction between the Rayleigh
+wave and the medium becomes more pronounced as depth increases, potentially influencing
+how energy dissipates and interacts with geological structures. Figure 4(a)–(f) highlight the
+complexity of Rayleigh wave behavior in a nonlocal MGT heat conduction model. Through
+these visualizations, we capture a detailed perspective of the wave’s particle motion evolution
+with depth, emphasizing the intricate nature of wave-material interactions in different
+geological settings. This understanding is vital for applications in seismology, geophysics and
+material sciences, where precise wave behavior predictions are crucial.
+10.4 Comparative analysis on particle motion in different material configurations
+Figure 5(a)–(b)illustrates the influence of piezo-semiconductor (P-semi), piezo-void (P-void)
+and their combined effect (P-semi-void) on the particle motion of Rayleigh waves. These
+visualizations provide valuable insights into how different material properties affect wave
+propagation and displacement characteristics. Figure 5(a) presents a three-dimensional
+trajectory of particle motion over time in the U-W-t space. The blue curve (P-semi-void)
+exhibits an extended elliptical motion with a pronounced spiral pattern, suggesting significant
+variations in both horizontal (U) and vertical (W) displacements. In contrast, the green curve
+(P-semi) and red curve (P-void) display more constrained motion, indicating that the void effect
+plays a crucial role in modifying wave behavior.
+Figure 5(b)offers a two-dimensional projection of the particle motion in the U-W plane,
+allowing for a clearer analysis of displacement characteristics. The elliptical paths highlight
+the impact of material composition, with the blue ellipse (P-semi-void) demonstrating the
+largest displacement, followed by the green (P-semi) and red (P-void), which appear almost
+linear. This suggests that the semiconductor and void effects alter the wave-induced
+displacement, with the void effect reducing the elliptical deformation. The inset plot in
+Figure 5(b)provides a zoomed-in view, capturing finer details of the motion.
+As depth increases, the elliptical trajectories undergo transformations, indicating a shift in
+the direction and amplitude of particle motion. The findings suggest that the inclusion of
+semiconductor and void effects leads to noticeable modifications in wave energy distribution
+and particle displacement. These observations are particularly significant in applications such as
+geophysics, earthquake engineering and material science, where understanding wave behavior
+in complex materials is essential for accurate modeling and structural safety assessments.
+11. Conclusions
+This study presents a comparative analysis of three significant models in Rayleigh wave
+dynamics: piezo-thermoelastic with voids, piezo-thermoelastic semiconductor and the
+composite piezo-thermoelastic semiconductor with voids medium. Utilizing an advanced
+mathematical framework based on the MGT theory, the research systematically formulates
+governing equations and solves them using the eigenmode technique. The impact of critical
+parameters such as the nonlocal effect, material configuration and depth variations on phase
+velocity, attenuation coefficient and particle motion is extensively analyzed. The findings
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF
+Figure 5. (a) and (b): Comparative analysis of piezo-thermoelastic semiconductor (P-semi), piezo-
+thermoelastic with voids (P-void) and piezo-thermoelastic semiconductor with voids (P-semi-void)
+models on phase particle motion
+Source: Authors’ own work
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+provide a deeper understanding of Rayleigh wave propagation characteristics with direct International
+applications in piezoelectric and semiconductor-based technologies: Journal of
+• An increase in the nonlocal parameter enhances phase velocity by incorporating long- Numerical
+range interactions, thereby reducing local stiffness constraints. Higher nonlocality leads Methods for Heat
+to a significant reduction in attenuation, enabling sustained wave propagation over
+& Fluid Flow
+longer distances, which is advantageous for low-loss wave transmission applications.
+• The piezo-thermoelastic semiconductor with voids model exhibits the highest phase
+velocity, demonstrating the combined effect of voids and semiconductor interactions
+in optimizing wave propagation. Attenuation varies significantly among the models,
+with void-induced scattering leading to higher initial energy dissipation in P-void,
+whereas P-semi maintains energy with minimal loss.
+• Rayleigh wave particle motion follows elliptical trajectories, which undergo
+significant transformation as depth increases. A shift in the major and minor axes of
+the elliptical motion at slightly greater depths highlights its dependency on depth.
+• The inclusion of voids and semiconductor effects results in significant variations in
+horizontal and vertical particle displacement. The piezo-semiconductor with void
+model exhibits the largest displacement, demonstrating its superior ability to
+manipulate wave propagation characteristics.
+This study highlights the intricate interplay between piezoelectricity, semiconductor effects and
+void-induced modifications in Rayleigh wave propagation. The findings emphasize the role of
+nonlocal elasticity and material properties in optimizing wave behavior, offering significant
+implications for the development of next-generation sensing and signal transmission technologies.
+Piezoelectric semiconductors such as Cadmium Selenide (CdSe) and Zinc Oxide (ZnO),
+particularly in thin-film or layered structures on substrates, provide promising platforms for
+observing Rayleigh wave propagation influenced by both piezoelectric and carrier diffusion
+effects. Such systems are commonly used in SAW devices and photoacoustic experiments, where
+thermal, electrical and mechanical responses can be simultaneously measured. By strategically
+engineering these factors, researchers can enhance wave propagation efficiency, minimize energy
+loss and improve the performance of piezoelectric and semiconductor-based devices.
+References
+Abouelregal, A.E., Ahmad, H., Badr, S.K., Almutairi, B. and Almohsen, B. (2022), “Viscoelastic
+stressed microbeam analysis based on Moore–Gibson–Thompson heat equation and laser
+excitation resting on Winkler foundation”, J. Low Freq. Noise Vib. Act. Control, Vol. 41 No. 1,
+pp. 118-139, doi: 10.1177/14613484211040318.
+Abouelregal, A.E., Ahmad, H., Yao, S.-W. and Abu-Zinadah, H. (2021), “Thermo-viscoelastic orthotropic
+constraint cylindrical cavity with variable thermal properties heated by laser pulse via the MGT
+thermoelasticity model”, Open Physics, Vol. 19 No. 1, pp. 504-518, doi: 10.1515/phys-2021-0034.
+Abouelregal, A.E., Marin, M. and Alsharari, F. (2022), “Thermoelastic plane waves in materials with a
+microstructure based on micropolar thermoelasticity with two temperature and higher order time
+derivatives”, Mathematics, Vol. 10 No. 9, doi: 10.3390/math10091552.
+Aldwoah, K.A., Lotfy, K., Mhemdi, A. and El-Bary, A. (2022), “A novel magneto-photo-elasto-
+thermodiffusion electrons-holes model of excited semiconductor”, Case Stud. Therm. Eng,
+Vol. 32 No. February, p. 101877, doi: 10.1016/j.csite.2022.101877.
+Alshehri, H.M. and Lotfy, K. (2023), “An analysis of the photo-thermoelastic waves due to the
+interaction between electrons and holes in semiconductor materials under laser pulses”,
+Mathematics, Vol. 11 No. 1, doi: 10.3390/math11010127.
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF Aouadi, M. (2006), “Generalized thermo-piezoelectric problems with temperature-dependent
+properties”, International Journal of Solids and Structures, Vol. 43 No. 21, pp. 6347-6358, doi:
+10.1016/j.ijsolstr.2005.09.003.
+Barak, M.S. and Gupta, V. (2023), “Memory-dependent and fractional order analysis of the initially
+stressed piezo-thermoelastic medium”, Mechanics of Advanced Materials and Structures,
+Vol. 31 No. 20, pp. 1-15, doi: 10.1080/15376494.2023.2211065.
+Barak, M.S., Kumar, R., Kumar, R. and Gupta, V. (2023a), “Energy analysis at the boundary interface of
+elastic and piezothermoelastic half-spaces”, Indian Journal of Physics, Vol. 97 No. 8,
+pp. 2369-2383, doi: 10.1007/s12648-022-02568-w.
+Barak, M.S., Kumar, R., Kumar, R. and Gupta, V. (2023b), “The effect of memory and stiffness on
+energy ratios at the interface of distinct media”, Multidiscipline Modeling in Materials and
+Structures, Vol. 19 No. 3, pp. 464-492, doi: 10.1108/MMMS-10-2022-0209.
+Biot, M.A. (1956), “Thermoelasticity and irreversible thermodynamics”, Journal of Applied Physics,
+Vol. 27 No. 3, pp. 240-253, doi: 10.1063/1.1722351.
+Burden, R.L., Faires, J.D. and Burden, A.M. (2015), Numerical Analysis, Cengae learning, No. 1
+Chandrasekharaiah, D.S. (1988), “A generalized linear thermoelasticity theory for piezoelectric media”,
+Acta Mechanica, Vol. 71 Nos 1/4, pp. 39-49, doi: 10.1007/BF01173936.
+Cheng, Z., Li, L., Zhong, C., Wang, J., Bai, X. and Liu, J. (2024), “Adaptive nonlinear active
+disturbance rejection current controller for distributed generation system considering uncertain
+ripples”, IEEE Transactions on Power Electronics, Vol. 40 No. 4.
+Deng, Y., Wang, F., Yin, X., Yang, Y., Yu, N. and Li, Y. (2024), “A high coupling coefficient and
+symmetric transformer based on TSV”, IEEE Trans. Components, Packag. Manuf. Technol.
+Dhaliwal, R.S. and Sherief, H.H. (1980), “Generalized thermoelasticity for anisotropic media”,
+Quarterly of Applied Mathematics, Vol. 38 No. 1, pp. 1-8.
+Edelen, D.G.B. and Laws, N. (1971), “On the thermodynamics of systems with nonlocality”, Archive
+for Rational Mechanics and Analysis, Vol. 43 No. 1, pp. 24-35, doi: 10.1007/BF00251543.
+Edelen, D.G.B., Green, A.E. and Laws, N. (1971), “Nonlocal continuum mechanics”, Archive for
+Rational Mechanics and Analysis, Vol. 43 No. 1, pp. 36-44, doi: 10.1007/BF00251544.
+Eringen, A.C. and Edelen, D.G.B. (1972), “On nonlocal elasticity”, International Journal of
+Engineering Science, Vol. 10 No. 3, pp. 233-248, doi: 10.1016/0020-7225(72)90039-0.
+Eringen A.C., 1978, “Nonlocal continuum mechanics and some applications,” Nonlinear Equations in
+Physics and Mathematics, Dordrecht: Springer Netherlands, pp. 271-318, doi: 10.1007/978-94-
+009-9891-9_12.
+Eringen, A. and Wegner, J. (2003), “Nonlocal continuum field theories”, Applied Mechanics Reviews,
+Vol. 56 No. 2, pp. B20-B22, doi: 10.1115/1.1553434.
+Green, A.E. and Naghdi, P.M. (1991), “A re-examination of the basic postulates of thermomechanics”,
+Proc. R. Soc. London. Ser. A Math. Phys. Sci, Vol. 432 No. 1885, pp. 171-194, doi: 10.1098/rspa.
+1991.0012.
+Green, A.E. and Naghdi, P.M. (1992), “On undamped heat waves in an elastic solid”, journal of thermal
+stresses Vol. 15 No. 2, pp. 253-264.
+Green, A.E. and Naghdi, P.M. (1993), “Thermoelasticity without energy dissipation”, Journal of
+Elasticity, Vol. 31 No. 3, pp. 189-208, doi: 10.1007/BF00044969.
+Gupta, S., Dutta, R. and Das, S. (2022), “Memory response in a nonlocal micropolar double porous
+thermoelastic medium with variable conductivity under Moore-Gibson-Thompson
+thermoelasticity theory”, J. Ocean Eng. Sci, doi: 10.1016/j.joes.2022.01.010.
+Gupta, V. and Barak, M.S. (2023), “Quasi-P wave through orthotropic piezo-thermoelastic materials
+subject to higher order fractional and memory-dependent derivatives”, Mechanics of Advanced
+Materials and Structures, Vol. 31 No. 22, pp. 1-15, doi: 10.1080/15376494.2023.2217420.
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+Gupta, V., Ahmad, H., Barak, M.S., Das, S. and Kumar, S. (2024b), “Rayleigh wave in nonlocal piezo- International
+thermo-electric semiconductor medium with fractional MGT model”, Waves in Random and Journal of
+Complex Media, doi: 10.1080/17455030.2024.2379958.
+Numerical
+Gupta, V., Barak, M.S. and Das, S. (2024a), “Impact of memory-dependent heat transfer on Rayleigh
+Methods for Heat
+waves propagation in nonlocal piezo-thermo-elastic medium with voids”, International Journal
+of Numerical Methods for Heat and Fluid Flow, Vol. 34 No. 4, doi: 10.1108/HFF-10-2023-0615. & Fluid Flow
+Gupta, V., Kumar, R., Kumar, M., Pathania, V. and Barak, M.S. (2023), “Reflection/transmission of
+plane waves at the interface of an ideal fluid and nonlocal piezothermoelastic medium”,
+International Journal of Numerical Methods for Heat and Fluid Flow, Vol. 33 No. 2,
+pp. 912-937, doi: 10.1108/HFF-04-2022-0259.
+Huo, S., Qu, H., Meng, F., Zhang, Z., Yang, Z., Zhang, S., Hu, X. and Wu, E. (2024), “Negative
+differential resistance with ultralow peak-to-valley voltage difference in Td-WTe2/2H-MoS2
+heterostructure”, Nano Letters, Vol. 24 No. 38, pp. 11937-11943.
+Iovane, G. and Nasedkin, A.V. (2010), “Modal analysis of piezoelectric bodies with voids. I. Mathematical
+approaches”, Applied Mathematical Modelling, Vol. 34 No. 1, pp. 60-71, doi: 10.1016/j.apm.2009.
+03.028.
+Khamis, A.K., Lotfy, K., El-Bary, A.A., Mahdy, A.M.S. and Ahmed, M.H. (2021), “Thermal-piezoelectric
+problem of a semiconductor medium during photo-thermal excitation”, Waves in Random and
+Complex Media, Vol. 31 No. 6, pp. 2499-2513, doi: 10.1080/17455030.2020.1757784.
+Kumar, M., Lather, P., Fu, L.Y., Kumari, N., Kaswan, P., Nianqi, L. and Kumari, M. (2025), “Rayleigh-type wave
+in thermo-poroelastic media with dual-phase-lag heat conduction”, International Journal of Numerical
+Methods for Heat and Fluid Flow, Vol. 35 No. 2, pp. 774-798, doi: 10.1108/HFF-11-2024-0853.
+Kumar, M., Kaswan, P., Sarkar, N., Liu, X. and Kumari, M. (2023), “Rayleigh waves in nonlocal
+generalized thermoelastic media”, International Journal of Numerical Methods for Heat and
+Fluid Flow, Vol. 33 No. 6, pp. 2049-2072, doi: 10.1108/HFF-08-2022-0468.
+Kumar, R. and Gupta, V. (2015), “Effect of phase-lags on Rayleigh wave propagation in thermoelastic
+medium with mass diffusion”, Multidiscipline Modeling in Materials and Structures, Vol. 11
+No. 4, pp. 474-493, doi: 10.1108/MMMS-12-2014-0066.
+Lasiecka, I. and Wang, X. (2015), “Moore–Gibson–Thompson equation with memory, part II: general
+decay of energy”, Journal of Differential Equations, Vol. 259 No. 12, pp. 7610-7635, doi: 10.
+1016/j.jde.2015.08.052.
+Lewis, R.W. and Garner, R.W. (1972), “A finite element solution of coupled electrokinetic and
+hydrodynamic flow in porous media”, International Journal for Numerical Methods in
+Engineering, Vol. 5 No. 1, pp. 41-55, doi: 10.1002/nme.1620050105.
+Lewis, R.W., Huang, H.C., Usmani, A.S. and Cross, J.T. (1991), “Finite element analysis of heat transfer
+and flow problems using adaptive remeshing including application to solidification problems”,
+International Journal for Numerical Methods in Engineering, Vol. 32 No. 4, pp. 767-781.
+Lewis, R.W., Nithiarasu, P. and Seetharamu, K.N. (2004a), “Fundamentals of the FEM for heat and fluid
+flow”, p. 356.
+Lewis, R.W., Nithiarasu, P. and Seetharamu, K.N. (2004b), Fundamentals of the Finite Element Method
+for Heat and Fluid Flow, John Wiley and Sons, doi: 10.1002/0470014164.
+Lewis, R.W., Navti, S.E. and Taylor, C. (1997), “A mixed Lagrangian-Eulerian approach to modelling fluid
+flow during mould filling”, International Journal for Numerical Methods in Fluids, Vol. 25 No. 8,
+pp. 931-952, doi: 10.1002/(SICI)1097-0363(19971030)25:8<931::AID-FLD594>3.0.CO;2-1.
+Li, X., Wang, S., Li, Z., Yang, R. and Li, Z. (2024), “Measurement of bolt axial stress using a combination
+of trailing wave and shear wave ultrasound”, NDT and E International, Vol. 143, p. 103056.
+Liu, F., Zhao, X., Zhu, Z., Zhai, Z. and Liu, Y. (2023b), “Dual-microphone active noise cancellation
+paved with doppler assimilation for TADS”, Mechanical Systems and Signal Processing,
+Vol. 184, p. 109727.
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+HFF Liu, Y., Li, X., Ge, L. and Zhang, Z. (2023a), “Ultralarge-area stitchless scanning probe lithography and
+in situ characterization system using a compliant nanomanipulator”, IEEE/ASME Transactions
+on Mechatronics, Vol. 29 No. 2, pp. 924-935.
+Liu, Y., Li, X., Zhang, Y., Ge, L., Guan, Y. and Zhang, Z. (2024), “Ultra-large scale stitchless AFM:
+advancing nanoscale characterization and manipulation with zero stitching error and high
+throughput”, Small, Vol. 20 No. 1, p. 2303838.
+Lord, H.W. and Shulman, Y. (1967), “A generalized dynamical theory of thermoelasticity”, Journal of the
+Mechanics and Physics of Solids, Vol. 15 No. 5, pp. 299-309, doi: 10.1016/0022-5096(67)90024-5.
+Lotfy, K. and El-Bary, A.A. (2022), “Magneto-photo-thermo-microstretch semiconductor elastic
+medium due to photothermal transport process”, Silicon, Vol. 14 No. 9, pp. 4809-4821, doi: 10.
+1007/s12633-021-01205-1.
+Lotfy, K. and Sarkar, N. (2017), “Memory-dependent derivatives for photothermal semiconducting
+medium in generalized thermoelasticity with two-temperature”, Mechanics of Time-Dependent
+Materials, Vol. 21 No. 4, pp. 519-534, doi: 10.1007/s11043-017-9340-5.
+Marchand, R., McDevitt, T. and Triggiani, R. (2012), “An abstract semigroup approach to the
+third-order Moore-Gibson-Thompson partial differential equation arising in high-intensity
+ultrasound: structural decomposition, spectral analysis, exponential stability”,
+Mathematical Methods in the Applied Sciences, Vol. 35 No. 15, pp. 1896-1929, doi: 10.
+1002/mma.1576.
+Marin, M., Agarwal, R.P. and Mahmoud, S.R. (2013), “Modeling a microstretch thermoelastic body with
+two temperatures”, Abstract and Applied Analysis, Vol. 2013, pp. 1-7, doi: 10.1155/2013/583464.
+Mindlin, R.D. (1974), “Equations of high frequency vibrations of thermopiezoelectric crystal plates”,
+International Journal of Solids and Structures, Vol. 10 No. 6, pp. 625-637, doi: 10.1016/0020-
+7683(74)90047-X.
+Neamen, D. (1992),Semiconductor Physics and Devices Basic Principles, Tata McGraw Hill Education.
+Ni, L., Wang, H., Chen, G., Zhang, L., Yao, N. and Wang, G. (2025), “An interpretable Dahl-LRN
+neural-network for accurately modelling the systems with rate-dependent asymmetric
+hysteresis”, Applied Soft Computing, Vol. 173, p. 112936.
+Nowacki, W. (1979), “Foundations of linear piezoelectricity”, Electromagn. Interact. elastic Solids,
+Vol. 257, pp. 105-157.
+Nowacki, W. (1978), “Some general theorems of thermopiezoelectricity”, Journal of Thermal Stresses,
+Vol. 1 No. 2, pp. 171-182, doi: 10.1080/01495737808926940.
+Pathania, V., Kumar, R., Gupta, V. and Barak, M.S. (2023), “Double porous thermoelastic waves in a
+homogeneous, isotropic solid with inviscid liquid”, Archive of Applied Mechanics, Vol. 93 No. 5,
+doi: 10.1007/s00419-023-02364-w.
+Pathania, V., Kumar, R., Gupta, V. and Barak, M.S. (2022), “Generalized plane waves in a rotating
+thermoelastic double porous solid”, International Journal of Applied Mechanics and
+Engineering, Vol. 27 No. 4, pp. 138-154, doi: 10.2478/ijame-2022-0055.
+Pellicer, M. and Solà-Morales, J. (2019), “Optimal scalar products in the Moore-Gibson-Thompson equation”,
+Evolution Equations and Control Theory, Vol. 8 No. 1, pp. 203-220, doi: 10.3934/eect.2019011.
+Quintanilla, R. (2019), “Moore–Gibson–Thompson thermoelasticity”, Mathematics and Mechanics of
+Solids, Vol. 24 No. 12, pp. 4020-4031, doi: 10.1177/1081286519862007.
+Sharma, J.N., Pal, M. and Chand, D. (2005), “Propagation characteristics of Rayleigh waves in
+transversely isotropic piezothermoelastic materials”, Journal of Sound and Vibration, Vol. 284
+Nos 1/2, pp. 227-248, doi: 10.1016/j.jsv.2004.06.036.
+Sharma, J.N., Walia, V. and K Gupta, S. (2008), “Effect of rotation and thermal relaxation on Rayleigh
+waves in piezothermoelastic half space”, International Journal of Mechanical Sciences, Vol. 50
+No. 3, pp. 433-444, doi: 10.1016/j.ijmecsci.2007.10.001.
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025
+Sharma, M.D. (2023), “Propagation of generalised Rayleigh wave at the surface of piezoelectric International
+medium with arbitrary anisotropy”, ZAMM Zeitschrift Fur Angew. Math. und Mech, Vol. 103 Journal of
+No. 3, pp. 1-15, doi: 10.1002/zamm.202000160.
+Numerical
+Shen, Y., Lu, Q. and Li, Y. (2022), “Design criterion and analysis of hybrid-excited vernier reluctance
+Methods for Heat
+linear machine with slot Halbach PM arrays”, IEEE Transactions on Industrial Electronics,
+Vol. 70 No. 5, pp. 5074-5084. & Fluid Flow
+Shen, Y., Li, Z., Zeng, Z., Lu, Q. and Lee, C.H.T. (2024), “Quantitative analysis of asymmetric flux
+reversal permanent magnet linear machine for long excursion application”, IEEE Transactions
+on Industrial Electronics, Vol. 71 No. 10, pp. 12781-12792.
+Smith, R.C. (2005),Smart Material Systems, Society for Industrial and Applied Mathematics,
+Philadelphia, doi: 10.1137/1.9780898717471.
+Thompson, P.A. and Beavers, G.S. (1972), “Compressible-fluid dynamics”, Journal of Applied
+Mechanics, Vol. 39 No. 2, pp. 366-366, doi: 10.1115/1.3422684.
+Tong, W., Li, H., Liu, D., Wu, Y., Xu, M. and Wang, K. (2025), “Study on the changes in the reverse
+recovery characteristics of high-power thyristor under 14.1 MeV fusion neutron irradiation”,
+Fusion Engineering and Design, Vol. 211, p. 114744.
+Zhang, J., Li, H., Kong, X., Zhou, J., Shi, G., Zang, J. and Wang, J. (2023), “A novel multiple-medium-
+AC-port power electronic transformer”, IEEE Transactions on Industrial Electronics, Vol. 71
+No. 7, pp. 6568-6578.
+Corresponding author
+Soumik Das can be contacted at: soumikdas1993@gmail.com
+For instructions on how to order reprints of this article, please visit our website:
+www.emeraldgrouppublishing.com/licensing/reprints.htm
+Or contact us for further details: permissions@emeraldinsight.com
+Downloaded from http://www.emerald.com/hff/article-pdf/doi/10.1108/HFF-04-2025-0254/10050863/hff-04-2025-0254en.pdf by Yakin Dogu University user on 11 August 2025

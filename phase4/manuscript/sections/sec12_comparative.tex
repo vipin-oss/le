@@ -1,0 +1,145 @@
+%======================================================================
+% Section 12: Comparative Synthesis of Existing Research
+%======================================================================
+\section{Comparative Synthesis of Existing Research}
+\label{sec:comparative}
+
+This section synthesizes the existing research across all theory families using a twelve-criteria comparison framework. The synthesis is constructive: differences between theories are presented as modeling choices with different assumptions and domains of validity, not as contradictions or errors.
+
+\subsection{Cross-theory comparison table (12 criteria $\times$ 9 theory families)}
+\label{sec:12.1}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Twelve-criteria comparison across theory families. Flux status: V=verified, P=partial, U=uncertain.}
+\label{tab:twelve_criteria}
+\begin{tabularx}{\textwidth}{@{}lcccccccccc@{}}
+\toprule
+\textbf{Criterion} & \textbf{CD} & \textbf{LS} & \textbf{GL} & \textbf{GN-II} & \textbf{GN-III} & \textbf{DPL} & \textbf{TPL} & \textbf{MGT} & \textbf{MDD} & \textbf{Nonlocal} \\
+\midrule
+Relaxation parameters & 0 & 1 & 2 & 0 & 1 & 2 & 3 & 1 & 1+kernel & $(e_0a)^2$ \\
+Dissipation & Yes & Yes & No & No & Yes & Yes & Yes & Yes & Kernel-dep. & Yes \\
+Wave speed & Infinite & Finite & Finite & Finite & Finite & Finite & Finite & Finite & Finite & Finite (dispersive) \\
+Energy flux & V & P & U & U & U & P & U & U & U & U \\
+Well-posedness & Yes & $\tau_0>0$ & Yes & Yes & Yes & $\tau_q\geq\tau_T$ & Yes & Yes & Kernel-dep. & Yes \\
+Causality & No & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Interface conditions & Classical & Classical & Classical & Classical & Classical & Classical & Classical & Classical & Classical & Modified \\
+Mathematical structure & PDE & PDE & PDE & PDE & PDE & PDE & PDE & 3rd-order PDE & Integro-PDE & Integro-PDE \\
+Primary source & Biot 1956 & LS 1967 & GL 1972 & GN 1991 & GN 1993 & Tzou 1995 & Tzou 1997 & Quintanilla 2019 & Wang \& Li 2011 & Eringen 1972 \\
+Open access & No & No & Yes & No & No & No & No & No & Yes (PMC) & No \\
+Applications & General & Thermal shocks & Symmetric bodies & Conservative & General & Micro-scale & Micro-scale & Thermal waves & Memory materials & Nanoscale \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Evidence trends by theory family}
+\label{sec:12.2}
+
+\begin{itemize}
+\item \textbf{Classical (CD):} Most extensively validated experimentally; infinite speed paradox well documented.
+\item \textbf{LS:} Widely applied to thermal shock problems; relaxation time parameter well understood.
+\item \textbf{GL:} Applied to centrally symmetric bodies; dissipationless in appropriate limits.
+\item \textbf{GN-II:} Conservative theory; no dissipation; thermal waves without attenuation.
+\item \textbf{GN-III:} Most general GN model; combines dissipative and non-dissipative characteristics.
+\item \textbf{DPL:} Applied to micro-scale heat transfer; two phase lags provide modeling flexibility.
+\item \textbf{TPL:} Extension of DPL with thermal displacement gradient; less widely applied.
+\item \textbf{MGT:} Third-order equation; thermal inertia; emerging theory.
+\item \textbf{MDD:} Integral-form memory; alternative to fractional calculus; growing literature.
+\item \textbf{Nonlocal:} Applied to nanoscale materials; size-dependent effects well demonstrated.
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{../figures/source/fig07_theory_relationships.svg}
+\caption{Relationships and limiting cases between thermoelastic theory families. All generalized theories converge to classical coupled thermoelasticity as relaxation parameters approach zero.}
+\label{fig:theory_relationships_sec12}
+\end{figure}
+
+\subsection{Mathematical relationships: limiting cases and specializations}
+\label{sec:12.3}
+
+Table \ref{tab:limiting_cases_revisited} summarizes the limiting relationships between theories.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Limiting cases between thermoelastic theories.}
+\label{tab:limiting_cases_revisited}
+\begin{tabularx}{\textwidth}{@{}llX@{}}
+\toprule
+\textbf{From} & \textbf{To} & \textbf{Conditions} \\
+\midrule
+LS & Classical & $\tau_0 \to 0$ \\
+DPL & Classical & $\tau_q = \tau_T = 0$ \\
+TPL & DPL & $\tau_\nu = 0$ \\
+MDD+TPL & Classical & All $\tau \to 0$, kernel $\to 1$ \\
+MDD+TPL & LS & $\tau_T = \tau_\nu = 0$, first order \\
+MDD+TPL & DPL & $\tau_\nu = 0$ \\
+GN-II & Classical & Special parameter limit \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{Note on limiting procedures}
+
+All limiting procedures in the existing literature are parameter substitutions, not rigorous limit theorems with convergence proofs or error bounds. This is documented as a limitation of the current mathematical framework, not as an error in any publication.
+
+\subsection{Contradiction mapping: where studies disagree and why}
+\label{sec:12.4}
+
+Apparent contradictions between studies arise from:
+
+\begin{enumerate}
+\item \textbf{Different assumptions:} Constitutive assumptions, material symmetry, geometry, boundary conditions differ between studies.
+\item \textbf{Different approximation levels:} First-order vs. higher-order Taylor expansions of phase-lag laws.
+\item \textbf{Different normalization:} Different choices of reference temperature, density, or elastic constants.
+\item \textbf{Different frequency conventions:} $e^{i\omega t}$ vs. $e^{-i\omega t}$ affect sign conventions.
+\end{enumerate}
+
+Each apparent contradiction is traceable to specific assumptions, not to mathematical inconsistency. No study is presented as erroneous; differences reflect different modeling choices.
+
+\subsection{Model comparability: conditions under which theories can be compared}
+\label{sec:12.5}
+
+Two theories can be meaningfully compared when:
+
+\begin{enumerate}
+\item They share the same geometric setting (e.g., both half-spaces, both plates),
+\item They use the same boundary and interface conditions,
+\item They use the same normalization and units,
+\item They address the same physical phenomenon (e.g., wave reflection at an interface),
+\item The comparison accounts for differences in relaxation parameters and kernel functions.
+\end{enumerate}
+
+\subsection{Notation summary for Section 12}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Notation introduced in Section 12.}
+\label{tab:notation-sec12}
+\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+CD & Classical coupled theory & --- & Table \ref{tab:twelve_criteria} \\
+LS & Lord--Shulman theory & --- & Table \ref{tab:twelve_criteria} \\
+GL & Green--Lindsay theory & --- & Table \ref{tab:twelve_criteria} \\
+GN-II/III & Green--Naghdi type II/III & --- & Table \ref{tab:twelve_criteria} \\
+DPL/TPL & Dual/triple phase-lag & --- & Table \ref{tab:twelve_criteria} \\
+MGT & Moore--Gibson--Thompson & --- & Table \ref{tab:twelve_criteria} \\
+MDD & Memory-dependent derivative & --- & Table \ref{tab:twelve_criteria} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open questions for Section 12}
+
+\begin{enumerate}[label=\textbf{OQ12.\arabic*}]
+\item Can rigorous limit theorems be established between all theory pairs? \label{oq:12.1}
+\item What is the minimal set of criteria needed to distinguish theory families? \label{oq:12.2}
+\item How should apparent contradictions between studies be systematically classified? \label{oq:12.3}
+\end{enumerate}
+
+% LocalWords: 

@@ -1,0 +1,1332 @@
+ThecurrentissueandfulltextarchiveofthisjournalisavailableonEmeraldInsightat:
+https://www.emerald.com/insight/0961-5539.htm
+Impact of memory-dependent heat Impactof
+memory-
+transfer on Rayleigh waves
+dependentheat
+transfer
+propagation in nonlocal piezo-
+thermo-elastic medium with voids
+VipinGuptaandM.S.Barak
+Received16October2023
+DepartmentofMathematics,IndiraGandhiUniversityMeerpur,Meerpur,India,and Revised12December2023
+16January2024
+Accepted5February2024
+SoumikDas
+SchoolofPhysicalSciences,AmritaVishwaVidyapeetham,Mysuru,India
+Abstract
+Purpose–ThispaperaddressesasignificantresearchgapinthestudyofRayleighsurfacewavepropagation
+within a piezoelectric medium characterized by piezoelectric properties, thermal effects and voids. Previous
+researchhasoftenoverlookedthecrucialaspectsrelatedtovoids.Thisstudyaimstoprovideanalyticalsolutions
+forRayleighwavespropagatingthroughamediumconsistingofanonlocalpiezo-thermo-elasticmaterialwith
+voidsundertheMoore–Gibson–Thompsonthermo-elasticitytheorywithmemorydependencies.
+Design/methodology/approach–Theanalyticalsolutionsarederivedusingawave-modemethod,and
+rootsarecomputedfromthecharacteristicequationusingtheDurand–Kernermethod.Theserootsarethen
+filteredbasedonthedecayconditionofsurfacewaves.Theanalysispertainstoamediumsubjectedtostress-
+freeandisothermalboundaryconditions.
+Findings– Computationalsimulationsareperformedtodeterminetheattenuationcoefficientandphase
+velocityofRayleighwaves.Thisinvestigationgoesbeyondmerecalculationsandexaminesparticlemotion
+togaindeeperinsightsintoRayleighwavepropagation.Furthermore,thisinvestigateshowkernelfunction
+andnonlocalparametersinfluencethesewavephenomena.
+Research limitations/implications – The results of this study reveal several unique cases that
+significantlycontributetotheunderstandingofRayleighwavepropagationwithinthisintricatematerial
+system,particularlyinthepresenceofvoids.
+Practical implications – This investigation provides valuable insights into the synergistic dynamics
+amongpiezoelectricconstituents,voidstructuresandRayleighwavepropagation,enablingadvancementsin
+sensortechnology,augmentedenergyharvestingmethodologiesandpioneeringseismicmonitoringapproaches.
+Originality/value–Thisstudyformulatesanovelgoverningequationforanonlocalpiezo-thermo-elastic
+mediumwithvoids,highlightingthesignificanceofRayleighwavesandinvestigatingtheimpactofmemory.
+Keywords Rayleighwave,Piezoelectricmaterial,Voids,Nonlocalelasticity,
+Memory-dependentderivative,Moore–Gibson–Thompsontheory
+PapertypeResearchpaper
+TheauthorswouldliketoexpresstheirgratitudeandacknowledgeAmritaVishwaVidyapeetham,
+Mysuru campus, India and Indira Gandhi University, Meerpur, India for providing the necessary
+facilitiestocarryoutthisresearchwork.
+Funding: This research received no specific grant from any funding agency in the public,
+commercial,ornot-for-profitsectors. InternationalJournalofNumerical
+MethodsforHeat&FluidFlow
+Disclosurestatement:Theauthorsdonotpossessanyfinancialornonfinancialintereststhatcould ©EmeraldPublishingLimited
+beseenasconflictinginthecontextofthisresearch.
+DOI10.1108/HFF-10-
+0
+2
+9
+0
+6
+2
+1
+3
+-
+-
+5
+0
+5
+6
+3
+15
+9
+HFF 1. Introduction
+Surfacewavespropagatealongtheboundaryofthemediumandcontaininformationabout
+surface imperfections. Surface waves are commonly classified as Love, Stoneley and
+Rayleigh waves. Rayleigh (1885), in 1885, first explained the waves as moving along an
+elasticsolid’splanesurface.PressandHealy(1957)calculatedtheRayleighwaveabsorption
+coefficient in low-loss media. Rayleigh wave coefficients at vertical boundaries when
+movingfromonewaveguidetypetoanotherwerecalculatedbyMcGarrandAlsop(1967).
+Inscientificexploration,thepioneeringduoofCurieandCurie(1880),whileinvestigating
+the pyroelectric attributes of specific crystal structures, stumbled upon a remarkable
+phenomenon known as piezoelectricity. Mindlin (1974) laid the foundation by formulating
+governing equations that elucidate the intricate relationship between temperature and
+piezoelectricmaterials.Expandinguponthisgroundwork,Nowacki(1978,1979)developed
+thecoupledthermoelasticdiffusionequation,advancingourcomprehensionoftheinterplay
+between these fundamental properties. Inspired by Mindlin’s pioneering work,
+Chandrasekharaiah(1988)embarkedondeeperexploration,introducingthegroundbreaking
+conceptoffinitewavepropagationspeedintothermo-piezoelectricity.Lewisetal.(1991,1997,
+2004) conducted an in-depth treatment of various heat conduction problems. Barak et al.
+(2023)haveembarkedonafocusedresearchjourneyspecificallycenteredaroundtheanalysis
+ofenergydistributionwithinvariouspiezo-thermo-elasticinterfacemodels.
+Incorporating voids within these piezoelectric thermoelastic materials introduces an
+added layer of complexity and versatility. These voids, often nanoengineered to precise
+specifications, influence the material’s thermal and mechanical behavior, enhancing its
+overall performance. Cowin and Nunziato (1983) have investigated linear and nonlinear
+theories of elastic material with voids. Based on the Cowin–Nunziato model, Iovane and
+Nasedkin (2010a) developed the linear theory of piezoelectric materials with voids for
+porosity change properties. Significant advancements in nonlocal interaction theory have
+been attributed to the pioneering work of Edelen and Laws (1971). Building upon these
+foundations and using the principles of global balance laws and thermodynamics law,
+Eringen and Edelen (1972) expanded the nonlocal theory, providing a comprehensive
+framework for comprehending nonlocal effects withinelastic materials. In recent years, a
+notable surge in scientific investigations has centered around the Moore–Gibson–
+Thompson(MGT)equation(ThompsonandBeavers,1972;Marchandetal.,2012;Lasiecka
+andWang,2015;PellicerandSol(cid:1)a-Morales,2019).Developedfromadifferentialequationof
+third order, this equation has played a pivotal role in unraveling various aspects of fluid
+dynamics.Notably,Quintanilla(2019)hasachievedsignificantprogressbyintroducingan
+innovativethermoelasticheattransfermodelderivedfromtheMGTequation.
+Theinceptionofthememory-dependentderivative(MDD)conceptcanbeattributed
+to the groundbreaking work of Wang and Li (2011). This concept delves into the
+elucidationoftheconversionoftheCaputoandMainarditypefractionalderivativeinto
+anintegralrepresentation,encompassingtheintegrationofakernelfunctionK(t(cid:1)z).
+Thistransformationisaconsequenceofthevariationintimeintervals[(t(cid:1)[),t].The
+integralformulationofafunctioninvolvestheintegrationofthetimedelayfactor[>0,
+whichcanberepresentedasfollows:
+ð
+1 t
+D2fðtÞ¼
+2
+Kðt(cid:1)zÞf0ðzÞdz: (1.1)
+t(cid:1)2
+According to Gupta et al. (2023), the complexity of the problem in question dictates the
+choiceofasuitablekernelfunction:
+2b* a*2 Impactof
+Kðt(cid:1)zÞ¼1(cid:1) ðt(cid:1)zÞþ ðt(cid:1)zÞ2
+2 22 memory-
+8
+>>< K
+I
+¼1 if a* ¼b* ¼0 dependentheat
+transfer
+¼ K ¼1(cid:1)ðt(cid:1)zÞ=2 ifa* ¼0;b* ¼1=2 : (1.2)
+>>: II
+K ¼ð1(cid:1)ðt(cid:1)zÞ=2Þ2 ifa* ¼b* ¼1
+III
+Several researchers, including Pathania et al. (2022), Pathania et al. (2023), Kumar et al.
+(2023a,2023b)havedevotedtheirresearcheffortstoexploringarangeofissuesrelatedto
+plane waves. These investigations have delved into topics such as fractional order, two-
+temperaturetheoriesandnonlocality.
+This investigation introduces an innovative mathematical framework to analyze a
+nonlocal thermo-piezoelectric medium with voids. The focus is on the integration of the
+memory-dependent MGT theory. The material under scrutiny displays homogeneity and
+orthotropyandissubjectedtoisothermalconditionswhilemaintainingastress-freestate.
+Thestudybeginsbyformulatingnovelgoverningequationsrelatedtotheelectricpotential,
+seamlessly integrating principles from void and nonlocal piezoelectric theories. An
+eigenmode approach is skillfully used to solve these intricate equations effectively. The
+study yields significant research outcomes, providing derived attenuation coefficients,
+phasevelocitiesandsurfaceparticlemotioncurves.Theseresultantcurvesofferprofound
+insights into the intricate interplay of various influencing factors. These include the
+medium’s depth, the kernel function’s characteristics and the inherent nonlocality, all
+collectivelyshapingthesystem’sdynamicbehaviorunderinvestigation.
+2. Fundamentalequations
+IovaneandNasedkin(2010b)initiallydevelopedthelineartheoryforpiezoelectricmaterials
+incorporatingvoidstoaccountforchangesinporosity.Inthiscurrentstudy,thetheoryof
+porous piezoelectricity is extended by introducing the influence of thermal effects and
+integrating Eringen’s nonlocal elasticity theory (Eringen, 1978). Let c represents the
+!
+kinematicvariable,whichisafunctionofbothtimetandspatialcoordinates<§.Initially,a
+porouspiezo-thermo-elasticbodywithadefinedvolumeVisconsidered.Thisbodyencloses
+theregionQinspaceR3andisconfinedbythesurfaceN.Twocrucialpointsareidentified:
+X and x symbolizing the positions of a given point X in its undeformed and deformed
+i i
+states, respectively. Let u ¼ X (cid:1) x represents the displacement component within the
+i i i
+piezo-thermo-elastic body. From the principles of linear elasticity, the Lagrangian strain
+tensorcanbedescribedase ¼ 0.5(u þ u ).Inaddition,considerthatu¼u (cid:1)u with
+ij i,j j,i t 0
+ju/uj << 1, whereu representing the material’s temperature in its natural state andu
+0 0 ! t
+denoting the material’s absolute temperature. Fundamentals variables at points<§ and
+< ! § 0 arearticulatedas:
+(cid:2) (cid:3)
+Y ¼ e ð! § Þ; Eð! § Þ;c ð! § Þ;c;ð! § Þ;u ð! § Þ ; (2.1)
+ij i i
+n (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)o
+Y0 ¼ e ! § 0 ; E ! § 0 ;c ! § 0 ;c; ! § 0 ;u ! § 0 : (2.2)
+ij i i
+Thestrainenergyfunction,denotedasUcanbeexpressedas
+HFF U ¼ 1 c ð ! §; ! § 0Þe ð ! §Þe ð ! § 0Þ(cid:1) 1 h ð ! §; ! § 0Þ½e ð ! §ÞE ð ! § 0Þþe ð ! §ÞE ð ! § 0Þ(cid:3)
+2 ijkl ij kl 2 ijk ij k ij k
+þ 1 d ð ! §; ! § 0Þ½e ð ! §Þc; ð ! § 0Þþe ð ! § 0Þc; ð ! §Þ(cid:3)
+2 ijk ij k ij k
+þ 1 gð ! §; ! § 0Þ½e ð ! §Þcð ! § 0Þþe ð ! § 0Þcð ! §Þ(cid:3)
+2 ij ij ij
+(cid:1) 1 bTð ! §; ! § 0Þ½e ð ! §Þuð ! § 0Þþe ð ! § 0Þuð ! §Þ(cid:3)
+2 ij ij ij
+þ 1 h ð ! §; ! § 0Þ½c;ð ! §ÞEð ! § 0Þþc;ð ! § 0ÞEð ! §Þ(cid:3)
+2 ij i j i j
+þ 1 A ð ! §; ! § 0Þc;ð ! §Þc;ð ! § 0Þ(cid:1) 1 «ð ! §; ! § 0ÞEð ! §ÞEð ! § 0Þ
+2 ij i i 2 ij i j
+(2.3)
+(cid:1) 1 lð ! §; ! § 0Þ½c;ð ! §Þuð ! § 0Þþc;ð ! § 0Þuð ! §Þ(cid:3)
+2 i i i
+þ 1 gð ! §; ! § 0Þ½Eð ! §Þcð ! § 0ÞþEð ! § 0Þcð ! §Þ(cid:3)
+2 i i i
+þ 1 fð ! §; ! § 0Þ½cð ! §Þc;ð ! § 0Þþcð ! r 0 Þc;ð ! § 0Þ(cid:3)
+2 i i i
+(cid:1) 1 tð ! §; ! § 0Þ½Eð ! §Þuð ! § 0ÞþEð ! § 0Þuð ! §Þ(cid:3)þ 1 a ð ! §; ! § 0Þcð ! §Þcð ! § 0Þ
+2 i i i 2 1
+(cid:1) 1 (cid:2)ð ! §; ! § 0Þ½cð ! §Þuð ! § 0Þþcð ! § 0Þuð ! §Þ(cid:3)
+2
+(cid:1) 1rC Euð ! §Þuð ! § 0Þ:
+2 u
+0
+Thefollowingsymmetriesareincorporatedintotheconstitutivecoefficients:
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)
+h ! §; ! § 0 ¼h ! §; ! § 0 ; d ! §; ! § 0 ¼d ! §; ! § 0 ;
+ijk jik ijk jik
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)
+g ! §; ! § 0 ¼g ! §; ! § 0 ; bT ! §; ! § 0 ¼bT ! §; ! § 0 ;
+ij ji ij ji
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)
+A ! §; ! § 0 ¼A ! §; ! § 0 ; h ! §; ! § 0 ¼h ! §; ! § 0 ;
+ij ji ij ji
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)
+« ! §; ! § 0 ¼« ! §; ! § 0 ; c ! §; ! § 0 ¼c ! §; ! § 0 ¼c ! §; ! § 0 :
+ij ji ijkl klij jikl
+The constitutive relations have been extracted from the work of Eringen (1978) as
+follows
+" #
+ð (cid:6) (cid:7)
+C¼ @U þ @U $ dVð! § Þ; (2.4)
+@Y @Y0
+V
+wherethesuperscript$emphasizesthesymmentricalnatureofthegivenoquantityinrelation
+totheinterchangeof ! § and ! § 0 .ThesetC¼ s; (cid:1)D; (cid:1)z;s1; S* canbeseenasan
+ij i i
+orderedsetwiththeset[asstatedinequation(2.1)].AccordingtoNowacki(1978),byusing Impactof
+equations(2.3)and(2.4),itispossibletorepresentthesetinamathematicalformas: memory-
+ð(cid:8) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) dependentheat
+s ¼ c ! §; ! § 0 e ! § 0(cid:1)h ! §; ! § 0 E ! § 0 þd ! §; ! § 0 c; ! § 0 transfer
+ij ijkl kl ijk k ijk k
+V
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)(cid:9) (cid:4) (cid:5)
+þg ! §; ! § 0 c ! § 0 (cid:1)bT ! §; ! § 0 u ! § 0 dV ! § 0 ; (2.5)
+ij ij
+ð(cid:8)
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)
+D ¼(cid:1) (cid:1)h ! §; ! § 0 e ! § 0 þh ! §; ! § 0 c; ! § 0 þg ! §; ! § 0 c ! § 0
+i ijk ij ij j i
+V
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)(cid:9) (cid:4) (cid:5)
+(cid:1)« ! §; ! § 0 E ! § 0 (cid:1)t ! §; ! § 0 u ! § 0 dV ! § 0 (2.6)
+ij j i
+ð(cid:8)
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)
+z¼(cid:1) g ! §; ! § 0 e ! § 0 þg ! §; ! § 0 E ! § 0 þf ! §; ! § 0 c; ! § 0
+ij ij i i i i
+V
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)(cid:9) (cid:4) (cid:5)
+þa ! §; ! § 0 c ! § 0 (cid:1)(cid:2) ! §; ! § 0 u ! § 0 dV ! § 0 (2.7)
+1
+ð(cid:8)
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)
+s1 ¼ d ! §; ! § 0 e ! § 0 þA ! §; ! § 0 c; ! § 0 þh ! §; ! § 0 E ! § 0
+i kli kl ij j ij j
+V
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:9) (cid:4) (cid:5)
+(cid:1)l ! §; ! § 0 u ! § 0 þf ! §; ! § 0 cð ! § 0Þ dV ! § 0 (2.8)
+i i
+ð(cid:8)
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)
+rS* ¼ bT ! §; ! § 0 e ! § 0 þt ! §; ! § 0 E ! § 0 þl ! §; ! § 0 c; ! § 0
+ij kl i i i i
+V
+(cid:4) (cid:5) !
+þ(cid:2) (cid:4) ! §; ! § 0 (cid:5) c (cid:4) ! § 0 (cid:5) þ r ! §; ! § 0 C Eu (cid:4) ! § 0 (cid:5) dV (cid:4) ! § 0 (cid:5) (2.9)
+u
+0
+The constitutive coefficients c , h , g, bT, h , A , «, t, g, v and a are functions of
+ijkl ijk ij ij ij ij ij i i 1
+§~¼j ! §(cid:1) ! § 0j.Thus,theconstitutiverelations(2.5)–(2.9)become:
+ð(cid:8)
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)
+s ¼ c ð§~Þe ! § 0 (cid:1)h ð§~ÞE ! § 0 þd ð§~Þc; ! § 0 þgð§~Þc ! § 0
+ij ijkl kl ijk k ijk k ij
+V (cid:4) (cid:5)(cid:9) (cid:4) (cid:5)
+(cid:1)bTð§~Þu ! § 0 dV ! § 0 (2.10)
+ij
+ð(cid:8)
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)
+HFF D ¼(cid:1) (cid:1)h ð§~Þe ! § 0 þh ð§~Þc; ! § 0 þgð§~Þc ! § 0 (cid:1)«ð§~ÞE ! § 0
+i ijk ij ij j i ij j
+V
+(cid:4) (cid:5)(cid:9) (cid:4) (cid:5)
+(cid:1)tð§~Þu ! § 0 dV ! § 0 (2.11)
+i
+ð(cid:8) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)(cid:9) (cid:4) (cid:5)
+z¼(cid:1) gð§~Þe ! § 0 þgð§~ÞE ! § 0 þfð§~Þc; ! § 0 þa ð§~Þc ! § 0 (cid:1)(cid:2)ð§~Þu ! § 0 dV ! § 0
+ij ij i i i i 1
+V
+(2.12)
+ð(cid:8) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)(cid:9) (cid:4) (cid:5)
+s1¼ d ð§~Þe ! § 0 þA ð§~Þc; ! § 0 þh ð§~ÞE ! § 0 (cid:1)lð§~Þu ! § 0 þfð§~Þc ! § 0 dV ! § 0 ;
+i kli kl ij j ij j i i
+V
+(2.13)
+ð(cid:6) (cid:7)
+rS*¼ bTð§~Þe (cid:4) ! § 0 (cid:5) þtð§~ÞE (cid:4) ! § 0 (cid:5) þlð§~Þc; (cid:4) ! § 0 (cid:5) þ(cid:2)ð§~Þc (cid:4) ! § 0 (cid:5) þ rð§~ÞC Eu (cid:4) ! § 0 (cid:5) dV (cid:4) ! § 0 (cid:5) :
+ij kl i i i i u
+0
+V
+(2.14)
+The constituent coefficient decreases as distance increases due to the weakening
+intermolecular forces as the distance from the reference point increases, i.e. for instance
+lima ð§~Þ!0. When each of these coefficients reaches its respective maximum at
+1
+§~!1
+! § ¼ ! § 0 ,thenonlocalandlocalelasticcoefficientsareconnectedas:
+c ð§~Þ h ð§~Þ gð§~Þ bTð§~Þ h ð§~Þ A ð§~Þ «ð§~Þ tð§~Þ
+ijkl ¼ ijk ¼ ij ¼ ij ¼ ij ¼ ij ¼ ij ¼ i
+_c
+ijkl
+h_
+ijk
+g_
+ij b
+_T
+ij h
+_
+ij A
+_
+ij
+«_
+ij
+t_
+i
+gð§~Þ (cid:2)ð§~Þ a ð§~Þ rð§~Þ
+¼ i ¼ ¼ 1 ¼ ¼Pð§~Þ; (2.15)
+g_ (cid:2)_ _a r_
+i 1
+where,_c ,h_ ,g_ ,b _T, _ h ,A _ ,«_ ,T _ ,g_ ,(cid:2)_,_a andr_ arematerialsparameters.
+ijkl ijk ij ij ij ij ij ij i 1
+ThenonlocalkernelPð§~Þmeetsthefollowingrelationship:
+ð
+Pð§~ÞdV ¼1: (2.16)
+V
+AccordingtoEringenandWegner(2003),
+(cid:4) (cid:5)
+1(cid:1)j2r2 P¼dð§~Þ; (2.17)
+where,r2denotetheLaplacianoperator,andjisthenonlocalparameterdefinedbyj¼jl.
+0e
+Herel istheinternalcharacteristiclengthandj isamaterialconstant.
+e 0
+By applying the operator (1 (cid:1) j2r2) on equations (2.10)–(2.14) and with the help of Impactof
+equations(2.15)–(2.17)fororthotropicsymmetryofpiezoelectricmaterialwithvoids,i.e.d ijk , memory-
+l andf becomezero,weget(aftersuppressingtheoverheadtildesign)
+i i dependentheat
+(cid:4) Constitutiverelations transfer
+(cid:4) (cid:5)
+1(cid:1)j2r2 s ¼sL ¼c e ð! § Þ(cid:1)h E ð! § Þ(cid:1)bTu ð! § Þþgc ð! § Þ; (2.18)
+ij ij ijkl kl ijk k ij ij
+(cid:4) (cid:5) (cid:8) (cid:9)
+1(cid:1)j2r2 s1 ¼ s1 L ¼A c;ð! § Þþh Eð! § Þ; (2.19)
+i i ij j ij j
+(cid:4) (cid:5)
+1(cid:1)j2r2 z¼zL ¼(cid:1)ge ð! § Þ(cid:1)g E ð! § Þ(cid:1)a c ð! § Þþ(cid:2)u ð! § Þ; (2.20)
+ij ij k k 1
+(cid:4) (cid:5)
+1(cid:1)j2r2 D ¼DL ¼h e ð! § Þþ«Eð! § Þþtu ð! § Þ(cid:1)gc ð! § Þ(cid:1)h c;ð! § Þ; (2.21)
+i i ijk jk ij j i i ij j
+(cid:4) 1(cid:1)j2r2 (cid:5) rS* ¼ (cid:4) rS* (cid:5) L ¼bTe ð! § ÞþtEð! § Þþ(cid:2)c ð! § Þþ rC E u ð! § Þ : (2.22)
+ij ij i i u
+0
+(cid:4) Equationsofmotion
+(cid:4) (cid:5) (cid:4) (cid:5)
+sL þ 1(cid:1)j2r2 F ¼r1(cid:1)j2r2 u€; (2.23)
+ij;j i i
+D; ¼0; whereE ¼(cid:1)w; (2.24)
+i i i i
+(cid:8) (cid:9)
+s1 L þzLþr ð 1(cid:1)«2r2Þ l* ¼x ð 1(cid:1)«2r2Þ c €: (2.25)
+i;i 1
+(cid:4) Energyscaleequation
+ruS _* ¼(cid:1)q*;: (2.26)
+0 i i
+(cid:4) NonlocalMDDMGTheattransferlaw
+(cid:4) (cid:5) h i
+1(cid:1)j2r2 ð1þ2D2 Þq*
+i
+¼(cid:1) K
+ij
+u;
+i
+þK
+i
+*
+j
+T;
+i
+; whereT _ ¼u (2.27)
+(cid:4) NonlocalMDDMGTheatequation
+Usingequation(2.22),(2.26)and(2.27),weobtain
+h i (cid:8) (cid:8) (cid:9)(cid:9)
+K
+ij
+u _;
+ij
+þK
+i
+*
+j
+u;
+ij
+¼ð1þ2D2 Þ rC
+E
+u €þu
+0
+bT
+ij
+€e
+ij
+(cid:1)t
+i
+w€;
+i
+þ(cid:2)c € (2.28)
+(cid:4) (cid:5) (cid:4) (cid:5)
+where,sL, s1 L ,zL,DLand rS* L areassociatedwithlocalpiezo-thermo-elasticmaterial
+ij i i
+withvoids.
+HFF 2.1 Limitingcase
+TheexistingMGTheat transfermodelcanpotentiallybetransformedintoanalternative
+heatmodelundercertainconditionswhen:
+(cid:4) K* ¼ 2 ¼0,thenturnedintoaCTmodel(Biot,1956).
+ij
+(cid:4) K* ¼0,thenchangedtotheLSmodel(LordandShulman,1967).
+ij
+(cid:4) K ¼[¼0,thenconvertintotheGN-IImodel(GreenandNaghdi,1993).
+ij
+(cid:4) [ ¼ 0, subsequently, it can be adapted into the GN-III model (Green and Naghdi,
+1992).
+2.2 Nomenclature
+sL =Equilibratedstress;
+i
+C =Specificheatatconstantstrain;
+E
+c =Volumefractionofmatrixpore;
+x =Equilibratedinertiaofmatrixpore;
+E =Electricfielddensity;
+i
+sL =Componentsofthelocalstress;
+ij
+c =Elasticstiffnesstensor;
+ijrl
+K =Componentsofthethermalconductivity;
+ij
+zL =Intrinsicequilibratedbodyforce;
+T =Thermaldisplacement;
+D[ =MDDoperator;
+S* =Entropy;
+r =Density;
+z =Nonlocalintrinsicequilibratedbody;
+s =Nonlocalequilibratedstress;
+i
+f =Electricalpotential;
+ti =Pyroelectricconstants;
+l* =Extrinsicequilibratedbodyforce;
+1
+s =Componentsofthenonlocalstress;
+ij
+e =Componentofstrain;
+ij
+D =Componentofdielectricdisplacement;
+i
+h ,« =Piezo-thermalmodulitensors;
+ijr ij
+F =Componentsofbodyforce;
+i
+u =Thermaltemperature;
+j =Nonlocalparameter;
+q* =Componentofheatflux;
+i
+bT =Thermalmodulitensors;and
+ij
+K* =Componentsoftherateofthermalforceconductivity.
+ij
+where, A ,g, g, h , a andv aretheconstitutive constants characterizingtheproperties
+ik ij i ij 1
+associatedwithalterationsinporosity.
+3. Problemformulationandgeometricalset-up
+The basic structure of the present study involves a semiinfinite medium comprising a
+nonlocalpiezoelectricthermoelasticmaterialwithvoidsatauniformtemperatureu under
+0
+memory-dependentMGTpiezo-thermo-elasticitytheory.WeadopttheCartesiancoordinate
+system intheRayleigh wave propagationmathematicalmodeling.Thesystem’s originis
+positionedatthefreesurface,withthewavepropagatingalongthex(cid:1)axisandthepositive Impactof
+z(cid:1)axisrepresentingtheverticallydownwarddirection.Figure1illustratestheschematic
+memory-
+ofthisscenario.ForRayleighwavepropagationwithinthisplane,thedisplacementvector,
+dependentheat
+electricpotential,voidvolumefractionandtemperatureareconsideredas:
+transfer
+!
+u ¼ðuðx; z; tÞ; 0; wðx; z; tÞÞ;f¼fðx; z; tÞ;c¼cðx; z; tÞ;u¼uðx; z; tÞ: (3.1)
+Inviewofequation(3.1),thestress–strainandelectricdisplacementrelations(2.18)–(2.21)
+aremodifiedas:
+(cid:4) (cid:5)
+1(cid:1)j2r2 s ¼sL ¼c u; þc w; þh w; (cid:1)bTuþgc; (3.2)
+xx xx 11 x 13 z 31 z 1 1
+(cid:4) (cid:5)
+1(cid:1)j2r2 s ¼sL ¼c ðu; þw; Þþh w; ; (3.3)
+xz xz 55 z x 15 x
+(cid:4) (cid:5)
+1(cid:1)j2r2 s ¼sL ¼c u; þc w; þh w; (cid:1)bTuþgc; (3.4)
+zz zz 13 x 33 z 33 z 3 3
+(cid:4) (cid:5) (cid:8) (cid:9)
+L
+1(cid:1)j2r2 s1 ¼ s1 ¼A c; (cid:1)h w; ; (3.5)
+x x 1 x 1 x
+(cid:4) (cid:5) (cid:8) (cid:9)
+L
+1(cid:1)j2r2 s1 ¼ s1 ¼A c; (cid:1)h w;; (3.6)
+z z 3 z 3 z
+(cid:4) (cid:5)
+1(cid:1)j2r2 D ¼DL ¼h ðu; þw; Þ (cid:1)« w; (cid:1)h c; ; (3.7)
+x x 15 z x 11 x 1 x
+(cid:4) (cid:5)
+1(cid:1)j2r2 D ¼DL ¼h u; þh w; (cid:1)« w; þtu(cid:1)g c(cid:1)h c; ; (3.8)
+z z 31 x 33 z 33 z 3 3 3 z
+where,r2 ¼ @2 þ @2.
+@x2 @z2
+Figure1.
+Schematic
+representationofthe
+problem
+HFF Withthehelpofequations(3.2)–(3.8),equationsofmotion(2.23)–(2.25)withoutconsidering
+thebodyforcescanberewrittenas:
+@2u @2u @2w @u @2f @c
+c þc þðc þc Þ (cid:1)bT þðh þh Þ þg
+11@x2 55@z2 13 55 @x@z 1 @x 31 15 @x@z 1@x
+(cid:4) (cid:5)@2u
+¼r1(cid:1)j2r2 (3.9)
+@t2
+@2w @2w @2u @u @2f @2f @c
+c þc þðc þc Þ (cid:1)bT þh þh þg
+55 @x2 33 @z2 13 55 @x@z 3 @z 15 @x2 33 @z2 3 @z
+(cid:4) (cid:5)@2w
+¼r1(cid:1)j2r2 (3.10)
+@t2
+@2w @2w @2u @2f @2f @u @c @2c
+h þh þðh þh Þ (cid:1)« (cid:1)« þt (cid:1)g (cid:1)h
+15 @x2 33 @z2 31 15 @x@z 11 @x2 33 @z2 3@z 3 @z 1@x2
+@2c
+(cid:1)h ¼0 (3.11)
+3 @z2
+A c; þA c; (cid:1)h w; (cid:1)h w; (cid:1)gu; (cid:1)gw; (cid:1)g f; (cid:1)g f; (cid:1)a cþ(cid:2)u
+1 xx 3 zz 1 xx 3 zz 1 x 3 z 1 x 3 z 1
+¼x ð 1(cid:1)«2r2Þ c € (3.12)
+Inlightofequation(3.1),MDDMGTheattransportequation(2.28)reducesto:
+K
+1
+@
+@
+2
+x
+u _
+2
+þK
+3
+@
+@
+2
+z
+u
+2
+_ þK
+1
+* @
+@
+2
+x
+u
+2
+þK
+3
+* @
+@
+2
+z
+u
+2
+¼ð1þ2D2 Þ (cid:8) rC
+E
+u €þu
+0
+(cid:8) bT
+1
+u€;
+x
+þbT
+3
+w€;
+z
+(cid:1)t
+3
+w€;
+z
+þ(cid:2)c € (cid:9)(cid:9) ;
+(3.13)
+where, bT ¼bTd, K* ¼K*d, K ¼ Kd, g ¼ gd, h ¼ hd, A ¼ Ad,
+ij i ij ij i ij ij i ij ij i ij ij i ij ij i ij
+bT ¼ ðc þc ÞaT þ c aT and bT ¼2c aT þ c aT. Here, aT and aT are the
+1 11 12 11 13 33 3 13 11 33 33 11 33
+constantsoflinearthermalexpansion.
+4. Solutionprocedure
+Forharmonicwavepropagationinthex(cid:1)directionwithtemporalt,weassumethesolution
+inthefollowingform:
+(cid:4) (cid:5)
+ðu; w;u;f;cÞ¼ u~; w~;u ~;f ~;c ~ exp½ivðqxþsz(cid:1)tÞ(cid:3); (4.1)
+(cid:4) (cid:5)
+where,q,saretheslownessvectors, u~; w~;u ~;f ~;c ~ amplitudecorrespondingto(u,w,u,f,c)
+andvindicatestheangularfrequency.
+Withtheaidofequation(4.1),fromequations(3.9)–(3.13),weobtain:
+(cid:4) (cid:5)
+b þb s2 u~þðb sÞw~ (cid:1)ðb Þu ~þðb sÞf ~ þðb Þc ~ ¼0; (4.2)
+11 12 13 14 15 16
+(cid:4) (cid:5) (cid:4) (cid:5)
+ðb sÞu~þ b þb s2 w~ (cid:1)ðb sÞu ~þ b þb s2 f ~ þðb sÞc ~ ¼0; (4.3)
+21 22 23 24 25 26 27
+(cid:4) (cid:5)
+ðb Þu~þðb sÞw~ þ b þb s2 u ~(cid:1)ðb Þf ~ þðb Þc ~ ¼0; (4.4) Impactof
+31 32 33 34 35 36
+memory-
+(cid:4) (cid:5) (cid:4) (cid:5) (cid:4) (cid:5)
+ðb sÞu~þ b þb s2 w~ þðb sÞu ~(cid:1) b þb s2 f ~ (cid:1) b sþb s2þb c ~ ¼0; (4.5) dependentheat
+41 42 27 43 44 45 46 47 48
+transfer
+(cid:4) (cid:5) (cid:4) (cid:5)
+ðb Þu~þðb Þw~ þðb Þu ~þ b þb sþb s2 f ~ þ b þb s2 c ~ ¼0; (4.6)
+51 52 53 54 47 55 56 57
+where,b ¼c q2(cid:1)r(1þv2j2q2),b ¼c (cid:1)rv2j2,b ¼(c þc )q,b ¼(cid:1)bTqb(cid:1)1,
+11 11 12 55 13 13 55 14 1
+b ¼(h þh )q,b ¼(cid:1)g qb(cid:1)1,b ¼(c þc )q,b ¼c q2(cid:1)r(1þj2v2q2),b ¼c
+15 31 15 16 1 21 13 55 22 55 23 33
+(cid:1) rj2v2, b ¼(cid:1)bTb(cid:1)1, b ¼ h q2, b ¼ h , b ¼ (cid:1)gb(cid:1)1, b ¼(cid:1)L ubTbq,
+24 3 25 15 26 33 27 3 31 2 0 1
+b ¼(cid:1)L ubTb,b ¼L rC (cid:1)K bq2(cid:1)K*q2,b ¼(cid:1)K b(cid:1)K*,b ¼(cid:1)Lutb,b ¼
+32 2 0 3 33 2 E 1 1 34 3 3 35 2 0 3 36
+Luv,L ¼1þL ,b¼(cid:1)iv,b ¼(h þh )q,b ¼h q2,b ¼(cid:1)t b(cid:1)1,b ¼« q2,
+2 0 2 1 41 31 15 42 15 43 3 44 11
+b ¼« ,b ¼(cid:1)g b(cid:1)1,b ¼h ,b ¼h q2,b ¼g qb(cid:1)1,b ¼g b(cid:1)1,b ¼vb(cid:1)2,b ¼
+45 33 46 3 47 3 48 1 51 1 52 3 53 54
+(cid:1)h q2þg qb(cid:1)1,b ¼g b(cid:1)1,b ¼q2A (cid:1)a b(cid:1)2(cid:1)x(1þ«2v2q2),b ¼(cid:1)x«2v2,
+1 1 55 3 56 1 1 57
+(cid:4) (cid:4) (cid:5) (cid:4) (cid:5) (cid:5)
+(cid:1)b222 a*2(cid:1)2b*þ1 þ22b a*2(cid:1)b* þ2a*2 expð(cid:1)b2Þþ2a*2(cid:1)22bb*þb222
+L ð2;bÞ¼ :
+1 b222
+Bysimplifyingtheaboveequations(4.2)–(4.6),weyieldthefollowingcharacteristicequation:
+X10
+B sn ¼0: (4.7)
+n
+n¼0
+ThecoefficientsB ,(n¼0(cid:1)10)canbeobtainedthroughstandardmethodsbycalculatingthe
+n
+determinantofthecoefficientmatrixderivedfromequations(4.2)to(4.6).Theresulting10roots
+areidentifiedascomplexconjugatepairsafterusingtheDurand–Kerner(Burdenetal.,2015)
+algorithmprocedureinequation(4.7).These10rootsarethenorganizedtosatisfytheradiation
+condition fordisturbances ina semi-infinitehalf-space, particularlywithinthe z> 0 region,
+ensuringI(s )>0thedecayofdisturbanceswithdepthduringpropagation.Asaresult,the
+n
+fivearrangedvaluesofs(representedass,s,s,s ands)definefiveslownessvectors(q,s ),
+1 2 3 4 5 n
+n ¼ 1(cid:1)5 that characterize the propagation of five decaying phases within the thermo-
+piezoelectricmediumcontainingvoids.
+Consequently,theformalsolutionthatsatisfiestheradiationrequirementispresentedas
+follows:
+X5
+ðu; w;u;w;cÞ¼ ð1; P ; R ; S ; V Þu~ exp½ivðqxþs z(cid:1)tÞ(cid:3); (4.8)
+m m m m m m
+m¼i
+where,P ,R ,S andV canbecalculatedfromthefollowingexpression:
+m m m m
+2 3 2 3 2 3
+6
+P
+m7 6
+b
+13
+s
+m
+(cid:1)b
+14
+b
+15
+s
+m
+b
+16 7
+(cid:1)1
+6
+(cid:1)b
+11
+(cid:1)b
+12
+s2
+m7
+6 6 6 R m 7 7 7¼ 6 6 6 b 22 þb 23 s2 m (cid:1)b 24 s m b 25 þb 26 s2 m b 27 s m 7 7 7 6 6 6 (cid:1)b 21 s m 7 7 7
+6 4S m 7 5 6 4 b 32 s m b 33 þb 34 s2 m (cid:1)b 35 b 36 7 5 6 4 (cid:1)b 31 7 5
+V m b 42 þb 27 s2 m b 43 s m (cid:1)b 44 (cid:1)b 45 s2 m (cid:1)b 46 s m (cid:1)b 47 s2 m (cid:1)b 48 (cid:1)b 41 s m
+(4.9)
+HFF Withtheaidofequation(4.8),equations(3.3),(3.4),(3.6)and(3.8)transforminto:
+(cid:8) (cid:9) X5
+s ;s ;s1; D ¼ ivðD ; D ; D ; D Þu~ exp½ivðqxþs z(cid:1)tÞ(cid:3); (4.10)
+xz zz z z 1r 2r 3r 4r r r
+r¼1
+where,
+h (cid:8) (cid:9)i
+D ¼DL 1(cid:1)j2v2 q2þs2 ;
+1r 1r r
+h (cid:8) (cid:9)i
+D ¼DL 1(cid:1)j2v2 q2þs2 ;
+2r 2r r
+h (cid:8) (cid:9)i
+D ¼DL 1(cid:1)j2v2 q2þs2 ;
+3r 3r r
+h (cid:8) (cid:9)i
+D ¼DL 1(cid:1)j2v2 q2þs2 ;
+4r 4r r
+DL ¼c ðs þqP Þþh qS ;
+1r 55 r r 15 r
+DL ¼A s V (cid:1)h s S
+3r 3 r r 3 r r
+DL ¼c qþc s P þh S s (cid:1)bTR þgV
+2r 13 33 r r 33 r r 3 r 3 r
+DL ¼h qþh s P (cid:1)« s S þtR (cid:1)g V (cid:1)h s V :
+4r 31 33 r r 33 r r 3 r 3 r 3 r r
+Equation (4.10) represents the expressions of nonlocal normal stress, shear stress,
+equilibratedstressandelectricdisplacementcomponentsoftheconsideredmodel.
+5. Boundaryconditions
+At the free surface (z ¼ 0) of the considered nonlocal piezo-thermo-elastic substrate, we
+introducethespecificboundaryconditions:
+(cid:4) Mechanicalconditions: s ¼0;s ¼0; (5.1)
+xz zz
+(cid:4) Equilibratedstressescondition: s1 ¼0; (5.2)
+z
+(cid:4) Dielectricaldisplacementcondition: D ¼0; (5.3)
+z
+(cid:4) Thermalcondition: u¼0: (5.4)
+6. Formulationofthesecularequation
+TheformulationofthesecularequationforRayleighwavepropagationinvolvessolvingthe
+boundaryvalueproblemofthelinearizedequationsofmotionforanonlocalpiezo-thermo-
+elastic half-space with voids. By using equations (4.8) and (4.10) in conjunction with the Impactof
+boundary conditions (5.1) through (5.4), a consistent system of simultaneous equations is memory-
+obtained. dependentheat
+transfer
+X5
+D u~ ¼0; ðj¼1(cid:1)5Þ; (6.1)
+jr r
+r¼1
+where,D ¼R.
+5r r
+In any given situation, the presence of a nontrivial solution is contingent upon the
+determinantofthecoefficientsinequation(6.1)beingequaltozero.Theresultingsystemdet
+{D } ¼ 0 produces a complex secular equation for the Rayleigh wave. The root of the
+5(cid:5)5
+given secular equation has been determined by the use of the Newton–Raphson method,
+whichissymbolicallyrepresentedas“c.”Thephasevelocity,derivedfrom“c,”isdependent
+upon the angular frequency, which ensures the dispersive character of Rayleigh waves
+withinthepiezo-thermo-elasticmediumwithvoids.Theexistenceofacomplexvaluefor“c”
+signifiesthedampeningofRayleighwaves,asseenbytheirpositiveimaginarycomponent,
+which verifies their diminishing intensity as depth increases. The attenuation coefficient
+(Q(cid:1)1) and phase velocity (V) of the Rayleigh wave may be expressed by the following
+formula,asstatedbyKumarandGupta(2015):
+(cid:4) (cid:5)
+= 1=c2
+Attenuationcoefficient: Q(cid:1)1 ¼ (cid:4) (cid:5): (6.2)
+< 1=c2
+jc2j
+Phasevelocity: V ¼ : (6.3)
+<ðcÞ
+7. Pathofthesurfaceparticles
+Tocharacterizeparticlemotioninapiezo-thermo-elasticmediumwithvoids,wedetermine
+the displacement formulas (4.8) for the value of “c,” which represents the Rayleigh wave.
+Thecomponentsofmechanicaldisplacementinthecurrentinvestigationareformulatedas
+X5
+ðu; wÞ¼ ð1; P Þu~ exp½ivðqxþs z(cid:1)tÞ(cid:3): (7.1)
+m m m
+m¼1
+Foragivenrealvalueofq,theactualdisplacementsobtainedfromequations(7.1)mightbe
+expressedinthefollowingmanner:
+!
+X5
+ðU; WÞ¼<ðu; wÞ(cid:6)< ð1; P Þexp½ivðqxþs z(cid:1)tÞ(cid:3) : (7.2)
+m m
+m¼i
+The parametric form (7.2) defines a closed curve that encompasses the movement of
+particleswithlocus(x,z)andtime(t).Thismotionoccursinresponsetothepropagationof
+Rayleighwaveinapiezo-thermo-elasticmediumwithvoids.Forq¼cosf/c(f),equation
+(7.2)indicateshowparticlemotion(U,W)dependsonthedirectionofpropagationforthe
+pffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+HFF Rayleighwave.ThescalarquantityK¼ U2þW2 establishestheamplitudeofparticle
+motion(foru~ ¼1),andthisamplitudeisconnectedtothegeneralizedRayleighwavethat
+m
+isthefocusofthisresearch.
+8. Specialcases
+(cid:4) If we disregard the effects of voids, memory and nonlocality, the current model
+alignswiththestudyofSharmaetal.(2008).
+(cid:4) When we neglect the effects of temperature, voids, memory and nonlocality, the
+currentmodelagreeswithaparticularcasestudiedbySharma(2023).
+9. Computationprocedure
+In the preceding sections, we have presented mathematical expressions that elucidate the
+relationshipsbetweendielectriccoefficients,thermo-elasticproperties,voids,piezoelectriceffects
+andthedensityofthematerialunderexamination.Theseexpressionsareinvaluabletoolsforthe
+computation and in-depth analysis of how a generalized Rayleigh wave propagates. The
+forthcoming algorithm provides a clear and systematic approach for determining crucial
+parameterssuchastheattenuationcoefficient,phasevelocityandsurfaceparticletrajectoryofa
+Rayleighsurfacewaveinthecontextofathermo-piezoelectrichalf-spacewithvoids.
+(cid:4) Commencingwiththehorizontalslownessvaluespecification“q,”webeginsolvinga
+characteristicsequationofdegree10.UsingtheDurand–Kernermethod,all10complex
+valuesof“s”aredetermined.OurfocusshiftstoselectingfivevaluesI(s)>0,fromthis
+setthatpreciselycorrespondtothedecayingphase(KeithandCrampin,1977).
+(cid:4) To ascertain the amplitude ratios P , Q , R and S , we solved the system of
+m m m m
+equationsoutlinedinequation(4.9)forthesetoffiveslownessvectors(q,s ).
+m
+(cid:4) Let us now consider the Rayleigh wave travels at an angle wrelative to the
+boundaryofthethermo-piezoelectricmediumwithvoids.Wetakethevalueofq¼
+cosw/c,wherecdenotestheunknownRayleighwavevelocity,andourobjectiveis
+todetermineitsvalue.
+(cid:4) UsingtheamplituderatiosP ,Q ,R andS alongwiththeslownessvalueq¼
+m m m m
+cos w/c, within the nontrivial solution of the boundary condition, we derive a
+complexdeterminantalequationinc.
+(cid:4) Followingthat,wedevelopaNewton–Raphsonprogramtoascertainthevalueofc.
+Using equations (6.2) and (6.3), compute the Rayleigh wave phase velocity and
+attenuationcoefficient.
+(cid:4) By using equation (7.2), we use MATLAB software to create plots illustrating the
+trajectory of surface particles for both horizontal and vertical displacement
+componentsovertime.Theseplotsarevisualizedinbothtwoandthreedimensions.
+10. Numericalresultsanddiscussion
+The algorithm introduced in the preceding section provides a valuable means to explore the
+intricaciesofRayleighwavepropagationalongthefreesurfaceofathermo-piezoelectricmedium
+enriched with voids. While the associated mathematical expressions may seem intricate and
+abstract,theobjectiveistoofferamoretangiblecomprehensionofthesephenomena.Toachieve
+this,anumericalexampleisusedtodelveintotheinfluenceofnonlocalparametersandkernel
+functionsontheheatconductionmodelsonRayleighwavepropagation.Inthecomputational
+analysis, Cadmium Selenide (CdSe) serves as the chosen material, drawing upon the distinct Impactof
+materialpropertiesdetailedinpriorworksbyGuptaetal.(2023).Notably,theabsenceofexact memory-
+piezoelectric parameters tailored to the specific material with voids is a recognized challenge. dependentheat
+However,thisresearchadvancessignificantlybyemphasizingthepivotalroleofvoidsinthis
+transfer
+context.Inspirationisdrawnfrompreviousstudies(Singh,2007;SharmaandKaur,2010;Iovane
+and Nasedkin, 2010b; Pathania and Joshi, 2021) examining voids in various materials and
+enablingtheextrapolationanddefinitionofvoidparameters,assummarizedinTable1.This
+approach deepens the understanding of the paramount influence of voids in the realm of
+Rayleighwavepropagation.
+10.1 Influenceofkernelfunctiononphasevelocityandattenuationcoefficient
+Inthisscenario,weexplorehowvariouskernelfunctionsinfluencethephasevelocityand
+attenuationcoefficientwithinthecontextofthenonlocalMGTheattransfermodel,withj¼
+0.3 and w¼ 600. To effectively communicate our findings, we have included visual
+representationsdenotedasFigures2.Thesefiguresfeaturedistinctivecurvesrepresenting
+kernelfunctions(K ,K,K andK )appliedinathermo-piezoelectricmediumwithvoids.
+0 I II III
+Symbol Value
+c 74.1(cid:5)109Nm(cid:1)2
+11
+c 39.3(cid:5)109Nm(cid:1)2
+13
+A 1.3(cid:5)10(cid:1)5N
+1
+A 1.2(cid:5)10(cid:1)5N
+3
+g 0.9(cid:5)1010Nm(cid:1)2
+1
+g 0.7(cid:5)1010Nm(cid:1)2
+3
+a 1.2(cid:5)1010Nm(cid:1)2
+1
+c 13.2(cid:5)109Nm(cid:1)2
+55
+bT 6.21(cid:5)105Nm(cid:1)2K(cid:1)1
+h 1 (cid:1)0.160Cm(cid:1)2
+31
+h (cid:1)0.138Cm(cid:1)2
+15
+« 9.03(cid:5)10(cid:1)11C2N(cid:1)1m(cid:1)2
+33
+K 9Wm(cid:1)1K(cid:1)1
+1
+K* 7Wm(cid:1)1K(cid:1)1s(cid:1)1
+r 1 5,504kgm(cid:1)3
+c 8.36(cid:5)109Nm(cid:1)2
+33
+T 298K
+0
+h 4(cid:5)10(cid:1)16Cm(cid:1)2
+1
+h 5(cid:5)10(cid:1)16Cm(cid:1)2
+3
+g 4(cid:5)10(cid:1)10Cm(cid:1)2
+1
+g 6(cid:5)10(cid:1)10Cm(cid:1)2
+3
+v 60Nm(cid:1)2K(cid:1)1
+K 9Wm(cid:1)1K(cid:1)1
+3
+bT 5.51(cid:5)105Nm(cid:1)2K(cid:1)1
+h 3 0.347Cm(cid:1)2
+33
+« 8.26(cid:5)10(cid:1)11C2N(cid:1)1m(cid:1)2
+11
+t (cid:1)2.9(cid:5)10(cid:1)6Cm(cid:1)2K(cid:1)1
+3
+x 1.45(cid:5)10(cid:1)16Nm(cid:1)2s2
+K* 8Wm(cid:1)1K(cid:1)1s(cid:1)1
+C 3 260Jkg(cid:1)1K(cid:1)1 Table1.
+E Valuesofthe
+Source:Tablebyauthors parameters
+HFF Notably,K correspondstothekernelcasewhentheimpactofMDDisneglected,whilethe
+0
+valuesforK,K andK kernelsaredetailedinequation(1.2).
+I II III
+In Figure 2(a), we illustrate the captivating interplay between frequency and phase
+velocity withina piezo-thermo-elastic medium enriched with voids. Initially, asfrequency
+increases, a subtle decrease in phase velocity is observed, attributed to the influences of
+materialdispersionandresonantbehavior.Thistemporarydipisfollowedbyasustained
+and smooth rise in phase velocity. This behavior seamlessly aligns with the study of
+Sharma et al. (2008) of the expected characteristics of Rayleigh waves within the piezo-
+thermo-elastic medium, wherein higher frequencies invariably correlate with more rapid
+surface wave propagation. Furthermore, the impact of the kernel function on the phase
+velocitybecomesapparentwhenexaminingthefigure.Here,weobservethatthekernelK
+II
+takes precedence over the kernel K, with K following suit. Notably, the presence of
+I III
+memoryhasasignificantinfluence,resultinginanoticeabledecreaseintheamplitudeofthe
+phasevelocity.Thisobservationshedslightontheintricateinterplaybetweenfrequency,
+phasevelocityandthespecifickernelfunctionusedinouranalysis.
+InFigure2(b),wegainvaluableinsightsintotheintricaterelationshipamongfrequency,
+attenuation coefficient and the chosen kernel functions. A noteworthy and significant
+observationisthatasfrequencyincreases,thereisanintriguinginitialamplituderise,which
+capturesourattention.Thisphenomenoncanbeattributedtotheresonantbehaviorofthe
+piezo-thermo-elastic material with voids. As the frequency rises, it approaches a specific
+pointwheretheRayleighwavessynchronizewiththematerial’sinherentvibrationalmodes.
+This synchronization resultsin constructiveinterference,causing thewave amplitudesto
+momentarilysurge.However,beyondthisresonancepoint,thereisaconsistentandgradual
+decrease in the attenuation coefficient. This intriguing trend aligns seamlessly with the
+expectedbehaviorofRayleighwavesinsuchmaterials.Higherfrequenciescorrespondto
+reducedenergylossduringwave propagation,emphasizingtheefficientenergytransport
+characteristics.Furthermore,theimpactofkernelfunctionsontheattenuationcoefficientis
+clearlyillustratedinthesub-indentfigure.TheK kernelfunctionexhibitsdominanceover
+III
+theK function,followedbytheK .Notably,thepresenceofmemorysubstantiallyamplifies
+I II
+themagnitudeoftheattenuationcoefficient.Thisobservationimpliesthatmodificationsin
+kernel values can have an appreciable effect on the material’s characteristics, potentially
+influencingitscapacitytodissipatewaveenergyasheat.
+Figure2.
+(a–b):Theeffectof
+memoryandkernel
+functionsonphase
+velocityand
+attenuationwith
+frequency(v)when (a) (b)
+j¼0.3
+Source: Figure by authors
+Gaining insights into theintricate dynamicsamong frequency, phase velocity,attenuation Impactof
+coefficientandvariouskernelfunctionsisparamountintherealmofRayleighwaveswithin
+memory-
+piezo-thermo-elasticmaterialsfeaturingvoids.Thiscomprehensionservesasacornerstone,
+dependentheat
+offeringinvaluableguidanceforthedesignandenhancementofdevicesandsystemsreliant
+transfer
+on the meticulous management of Rayleigh wave properties. Examples include the
+optimization of sensors and the enhancement of signal transmission applications, where
+precisecontrolofphasevelocityandattenuationisofutmostimportance.
+10.2 Influenceofnonlocalparameteronphasevelocityandattenuationcoefficient
+In this particular context, our exploration delves into the effect of altering the nonlocal
+parameterjvalueonboththephasevelocityandattenuationcoefficient.Thisinvestigation
+isconductedwithintheframeworkofthememory-dependentMGTheattransfermodelwith
+afixedkernelfunctionK .Topresentourfindingswithutmostclarity,weusevisualaids,
+II
+whicharedesignatedasFigure3.Thesefiguresprovideagraphicalrepresentationofour
+results, showcasing distinct curves that correspond to different values of the nonlocal
+parameter within a thermo-piezoelectric medium containing voids. More precisely, we
+scrutinizenonlocalparametervaluesof0,0.3,0.6and0.9,andthesevaluesarerepresented
+bysolidlinesinrespectivecolors,namely,skyblue,orange,yellowandpurple.
+InFigure3(a),weunveilacompellingrelationshipbetweenthenonlocalparametervalue
+and the phase velocity’s amplitude. Notably, as we increment the nonlocal parameter, a
+pronounced decrease in phase velocity amplitude occurs, particularly at higher frequencies.
+Thisintriguingtrendcanbelogicallyexplained:thenonlocalparameterintroducesadditional
+constraintsandinteractionswithinthematerial,whichinturnhinderthewave’spropagation,
+leadingtoareductioninphasevelocity.Interestingly,whenweshiftourfocustothelocalMGT
+model with a nonlocal parameter value set to zero, we observe a subtle departure from the
+generaltrend.Here,phasevelocitydisplaysaslightincrementasthefrequencyrises.
+In Figure 3(b), the subfigure within the chart serves as compelling evidence of how the
+nonlocal parameter profoundly influences the attenuation coefficient. As we progressively
+augment the value of the nonlocal parameter, we observe a corresponding escalation in the
+magnitudeoftheattenuationcoefficient,particularlynotableathigherfrequencies.Thereason
+behind this trend is rooted in the role of the nonlocal parameter: it introduces additional
+interactionsandconstraintswithinthematerial,whichimpedethewave’senergydissipation,
+Figure3.
+(a–b):Theeffectof
+nonlocalparameters
+onphasevelocityand
+attenuationwith
+(a) (b) frequency(v)fora
+Source: Figure by authors
+fixedkernelK
+II
+HFF resultinginamoresubstantialattenuation.Notably,thiseffectbecomesevenmorepronounced
+whencomparingthenonlocalMGTmodeltothelocalMGTmodel.ThenonlocalMGTmodel
+exhibits greater influence and dominance over the attenuation coefficient. This observation
+underscoresthepivotalroleofnonlocalparametersinshapingthebehaviorofRayleighwavesin
+piezo-thermo-elastic materials with voids, providing critical insights into how these waves
+propagateandattenuatewithinsuchcomplexmediums.
+This observation underscores thesignificant role of nonlocaleffects in influencing the
+material’s ability to dissipate wave energy as heat. From a practical perspective, this
+understandingisinvaluablewhendesigningandoptimizingdevicesorsystemsthatrelyon
+precise control of Rayleigh wave phase velocity and attenuation. It highlights the
+importanceofconsideringnonlocalparametersandtheirimpactonthebehaviorofRayleigh
+waves in piezo-thermo-elastic materials with voids, especially when aiming to achieve
+specificperformanceobjectiveswithminimalenergyloss.
+10.3 Influenceofdepthonparticlemotion
+In our thorough analysis, we have painstakingly constructed a set of six distinct figures,
+specifically labeled as Figures 4(a)–4(f). These figures revolve around the nonlocal memory-
+dependentMGTheattransfermodelwithj¼0.3,afixedkernelK andv¼100.Theinitial
+II
+quartetoffiguresisexclusivelydevotedtoameticulousexplorationofhowvaryingdepthvalues
+influencethedynamicsofRayleighwaveparticlemotion.Toensureprecisioninourexamination,
+wemadeadeliberatechoiceoffourshallowdistinctdepthvalues.Theseselectionsweremade
+thoughtfully,resultinginastrategicdivisionofthedepthrangebetween1e-05and1.1e-05into
+three equal parts. This meticulous partitioning empowers us to scrutinize particle motion
+variationswithexceptionalprecision,evenwhendealingwithexceedinglyfinedepthincrements.
+Figure 4(e) stands as the culmination of our inquiry, gracefully amalgamating and
+simultaneouslypresentingallfourdistinctplots.Itoffersacomprehensiveandperceptive
+juxtapositionofparticlemotiondynamicsatdiversedepthlevels.Collectively,Figures4(a)–
+4(e)depicttheintricateorchestrationofparticlemotioninacaptivatingthree-dimensional
+(3D) format, encapsulating both horizontal (U) and vertical (W) particle motion. This
+synchronizedportrayalunfoldscontinuouslythroughtime,encompassingaspanfrom0to
+2p.Incontrast,Figure4(f)adoptsadifferentperspective,providingatwo-dimensional(2D)
+viewbyadeptlyplottingdatafromtheinitialfourcurves.This2Drepresentationenhances
+ouranalyticalcapabilities,enablingustodiscernsubtlevariationsinparticlemotionmore
+distinctlyandwithheightenedfocus.
+UponfurtherexaminationofFigures4(a)–4(d),wediscovercompellingobservationson
+thedynamicsofparticlemotioninRayleighwavesatdifferentdepths.Thepresentedplots
+reveal captivating phenomena in which particles exhibit a spiral elliptical trajectory over
+time, including both horizontal and vertical motion, across all examined depth (z) values.
+TheintriguingbehaviorseenmaybeduetotheintricatecharacteristicsofRayleighwaves,
+which are well-known for their ability to induce simultaneous horizontal and vertical
+vibrations (Sharma, 2023; Kumar et al., 2023c). Onenotable observation is that, while the
+generalspiralellipsepatternstaysconsistent,therearesubtlevariationsintheamplitudeof
+horizontalandverticalparticlemotion.Theobservedvariabilityinmagnitudeservesasa
+significantindicatorthattheamplitudeofparticlemotionundergoesalterationswhenthe
+wavepropagatesthroughvaryingdepths.ThecollectiveviewpointpresentedinFigure4(e)
+reinforces the idea that particles follow distinct trajectories at varying depths. This
+observation underscores the depth-dependent characteristics of Rayleigh waves and
+emphasizes the importance of accounting for specific depths when studying their effects.
+Figure 4(f) contributes to our comprehension by offering a 2D perspective on this
+Impactof
+memory-
+dependentheat
+transfer
+Figure4.
+(a–f):Theimpactof
+differentshallow
+depthzvaluesonthe
+variationofparticle
+motion(U,W)with
+timeforafixedkernel
+K ,j¼0.3and
+II
+v¼100
+HFF phenomenon. It illustrates that as the shallow depth value slightly increases, Rayleigh
+waves amplify both horizontal and vertical particle motion magnitudes, resulting in an
+enlargement of the elliptical motion’s major and minor axes. This intricate behavior
+highlightsthedynamicnatureofRayleighwavepropagationwithinthemedium’sdepths.
+Intheresult,ourresearchrevealsthesubstantialdepth-dependentcharacteristicsthatare
+fundamentaltoRayleighwaves.Thephenomenalinkedtodepth,whichhavebeenthoroughly
+analyzedinFigures4(a)–(f),areanessentialaspectofwavepropagation.Thephenomenonseen
+reflects the continuous interaction between the propagating wave and the underlying
+subsurface medium. The complex spiral elliptical trajectory and its subtle changes provide
+insights into the complicated characteristics of Rayleigh waves as they propagate across
+distinct geological strata. The comprehension of this concept has significant practical
+ramifications, particularly within disciplines such as earthquake engineering. The precise
+characterizationofRayleighwaveshassignificantsignificanceinthe assessmentofseismic
+hazardsandthepreservationoftheintegrityofbuildingsandcommunities.
+10.4 Influenceofkernelfunctiononparticlemotion
+Themainobjectiveofthisinvestigationistoassesstheimpactofdifferentkernelfunctions
+onthemovementofparticlesonthesurfaceofRayleighwaves.Theinvestigationiscarried
+outwithintheextensiveframeworkofthenonlocalMGTheattransportmodelwithj¼0.3
+and v¼ 100. To enhance the comprehensibility of our research outcomes, we have
+meticulously chosenandexamined four distinct kernel functions, namely, K , K, K and
+0 I II
+K . The analytical findings are graphically represented using both 3D and 2D plots,
+III
+specifically referred to as Figure 5(a) and 5(b). The use of graphical representations is
+essential for understanding the dynamic behaviors of particle motion inside a thermo-
+piezoelectricmediumthatcontainsvoidsacrossdifferentkernelvalues.
+The findings made have shown an intriguing trend. At the macroscopic scale, the
+movement of surface particles exhibits a high degree of consistency across all kernel
+functionsunderconsideration.However, a significant change becomesapparentwhenwe
+examine the microscopic level, as seen in the 2D depiction shown in Figure 5(b). In this
+study,anotablemodificationinthebehaviorofparticlemotionisseeninrelationtovarious
+kernelfunctions.Theintroductionofmemorydeficiencyresultsinasubtleriseinparticle
+elliptical motion. Notably, when examining MDD effects, it becomes evident that particle
+Figure5.
+(a–b):Theeffectof
+memoryanddistinct
+kernelfunctionson
+particlemotion
+(U,W)withtime,
+whenj¼0.3and
+v¼100
+elliptical motion is most prominently accentuated in the K kernel, succeeded by K and Impactof
+III I
+thenK II . memory-
+Ourinvestigationhighlightstheimportanceofconsideringtheobservationscalewhen
+dependentheat
+analyzing wave behavior inside complex models. While some phenomena may exhibit
+transfer
+regularity when seen on a larger scale, they might exhibit unexpected variations and
+sensitivity when examined more closely. A thorough understanding of the complicated
+characteristics of the thermo-piezoelectric medium, including voids, contributes to the
+advancement of our knowledge of the intricate interactions taking place inside it. In
+addition, this study enhances our understanding of the impact of kernel functions on the
+motionofparticlessituatedonthesurfaceofRayleighwaves.
+10.5 Influenceofnonlocalparameteronparticlemotion
+Inthissection,themainaimofthisextensivestudyistothoroughlyevaluatetheinfluence
+of nonlocal characteristics on the movement of surface particles in Rayleigh waves. The
+presentinvestigationisconductedwithintheestablishedframeworkofthenonlocalMGT
+heattransfermodelwithafixedkernelfunctionK andv¼100.Toenhancetheprecision
+II
+ofourresults,wehavedeliberatelyselectedandthoroughlyexaminedfouruniquenonlocal
+parametervalues:0,0.3,0.6and0.9.Toeffectivelydemonstrateourfindings,wehaveused
+both3Dand2Dplots,appropriatelyreferredtoasFigure6(a)and6(b).
+In Figure 6(a), a comprehensive 3D representation of particle movement is shown,
+illustratingtheeleganttrajectoryofellipticalspiralpathwaysthroughoutawiderangeof
+nonlocalandlocalvalues.Nevertheless,Figure6(b)revealsourprimaryfindings,unveiling
+asuccinctbutsubstantialcomprehension.Inthisanalysis,asignificantpatternisseen.A
+significant alteration takes place when the size of the nonlocal parameter is gradually
+decreased. In particular, the magnitudes of both horizontal and vertical surface particle
+motionundergoareduction,whilethespiralellipticalroutedecreasesinsizeandundergoes
+torsion. The aforementioned occurrence highlights the fact that when the nonlocal
+parameterisdecreased,eventuallyapproachingzerointhecontextofthelocalMGTmodel,
+thereisasignificantdecreaseintheamplitudeofsurfaceparticlemovement.
+The importance of these discoveries resides in their implications for the behavior of
+Rayleighwavesinthermo-piezoelectricmediums,includingvoids.Theauthorsdemonstrate
+that the selection of a nonlocal parameter value significantly impacts the extent and
+behavior of particle mobility on the surface. Moreover, the shift from localized to
+Figure6.
+(a–b):Theeffectof
+distinctnonlocal
+parametervalueson
+particlemotion
+(U,W)withtime,for
+fixedkernelfunction
+K andv¼100
+II
+HFF nonlocalizedbehaviorgreatlyenhancesthemovementofparticles,whichcorrespondstoa
+riseinthenonlocalparameter.Theaforementionedobservationisofsignificantimportance,
+as it highlights the intricate relationship between wave dynamics and the nonlocal
+parameter.Thisparameterplaysacrucialroleinthemodelingandcomprehensionofwave
+propagationinthesematerials.
+11. Conclusions
+ThisresearchprovidesathoroughexaminationofRayleighwavebehaviorinageneralized
+orthotropic piezo-thermo-elastic medium with voids. This study uses the memory-
+dependentnonlocalMGTmodeltosystematicallyaddressthegoverningequationsthrough
+an eigenmode analysis technique. The study seeks to unravel the influences of diverse
+factors, including different kernel functions, nonlocal parameters and depth, on essential
+wavecharacteristicssuchasphasevelocity,attenuationcoefficientandthepathofsurface
+particles.AdetailedanalysisofFigures2–6leadstoseveralkeyconclusions:
+(cid:4) The inclusion of a MDD in the analysis leads to a reduction in the phase velocity
+and an amplification in the attenuation coefficient of Rayleigh waves. Notably,
+withintheK kernel,theamplitudeoftheattenuationcoefficientisatitsmaximum,
+III
+whilethephasevelocityisatitsminimum.
+(cid:4) The incorporation of nonlocality into the analysis results in a decrease in the
+attenuationcoefficientandanamplificationinthephasevelocityofRayleighwaves.
+Notably, higher nonlocal parameters lead to a reduction in phase velocity and an
+increaseintheattenuationcoefficient.
+(cid:4) The motion of Rayleigh wave particles demonstrates depth-dependent
+characteristics. As we move toward shallower depths, there is a slight increase in
+the magnitude of both the horizontal and vertical displacement components,
+consequentlyleadingtoanenlargementinthesizeofparticleellipticalmotion.
+(cid:4) Atthemacroscale,thememoryeffectisnegligible,butatthemicro-scale,itexertsa
+significantinfluenceonparticlemotion.Micro-scaleanalysisunveilstheimpactsof
+kernelfunctionsonparticlemotion,highlightingtheirscale-dependenteffects.
+(cid:4) Nonlocality exerts a noteworthy influence on particle motion. The presence of
+nonlocalitydistortstheellipticalmotiontracedoutbytheparticles,andanincrease
+in the nonlocal parameter leads to a substantial amplification in the amplitude of
+bothhorizontalandverticaldisplacementcomponents,resultinginlargerelliptical
+particlemotion.
+12. Practicalapplications
+Thefindingsofthisstudyholdsignificantimplicationsforvariouspracticalapplications,
+particularlyinthefieldsofsensortechnology,energyharvestingmethodologiesandseismic
+monitoringapproaches.
+(cid:4) Sensor technology: The insights gained into the synergistic dynamics among
+piezoelectric constituents, void structures and Rayleigh wave propagation can be
+leveragedtoenhancesensortechnology.Byunderstandingthenuancedbehaviorof
+Rayleighwavesinapiezoelectricmediumwithvoids,researchersandengineerscan
+develop more sensitive and efficient sensors for applications such as structural
+healthmonitoring,environmentalsensingandindustrialinstrumentation.
+(cid:4) Energy harvesting methodologies: The study’s revelations about Rayleigh wave Impactof
+behavior within the examined material system open avenues for advancements in memory-
+energyharvesting.Bytailoringthedesignofenergyharvestingdevicestocapitalize
+dependentheat
+onthespecificcharacteristicsofRayleighwaves,itbecomespossibletoimprovethe
+transfer
+efficiency and effectiveness of energy harvesting methodologies, contributing to
+sustainableandrenewableenergysolutions.
+(cid:4) Seismic monitoring approaches: The investigation’s insights into Rayleigh wave
+propagation, especially in the presence of voids, offer valuable contributions to
+seismic monitoring. Understanding how the material’s properties and wave
+characteristics interact allows for the development of more accurate and reliable
+seismic monitoring approaches. This has implications for early earthquake
+detection,structuralintegrityassessmentsandgeologicalstudies.
+ThesefindingsoffervaluableinsightsintothedynamicsofRayleighwaveswithinthermo-
+piezoelectric materials containing voids. They underscore the significance of factors like
+modelselection,parametervariations,depthanalysis,engineeringfortailoredcomposites,
+seismic hazard assessment, mechanical system optimization and nanotechnology, with
+potentialimplicationsinnumerousindustries.
+References
+Barak, M.S., Ahmad, H., Kumar, R., Kumar, R., Gupta, V., Awwad FA. and Ismail, EA. A. (2023),
+“Behavior of higher-order MDD on energy ratios at the interface of thermoelastic and
+piezothermoelasticmediums”,ScientificReports,Vol.13No.1,pp.1-20,doi:10.1038/s41598-023-
+44339-5.
+Biot, M.A. (1956), “Thermoelasticity and irreversible thermodynamics”, Journal of Applied Physics,
+Vol.27No.3,pp.240-253,doi:10.1063/1.1722351.
+Burden,R.L.,Faires,D.J.andAnnette,M.(2015),NumericalAnalysis,10thed.,Brooks/Cole.
+Chandrasekharaiah,D.S.(1988),“Ageneralizedlinearthermoelasticitytheoryforpiezoelectricmedia”,
+ActaMechanica,Vol.71Nos1/4,pp.39-49,doi:10.1007/BF01173936.
+Cowin,S.C.andNunziato,J.W.(1983),“Linearelasticmaterialswithvoids”,JournalofElasticity,Vol.13
+No.2,pp.125-147,doi:10.1007/BF00041230.
+Curie,J.andCurie,P.(1880),“DevelopmentbycompressionofpolarelectricityinHemihedralcrystals
+withslantedfaces”,BulletindelaSoci(cid:3)et(cid:3)eMin(cid:3)eralogiquedeFrance,Vol.3No.4,pp.90-93,doi:
+10.3406/bulmi.1880.1564.
+Edelen,D.G.B.andLaws,N.(1971),“Onthethermodynamicsofsystemswithnonlocality”,Archivefor
+RationalMechanicsandAnalysis,Vol.43No.1,pp.24-35,doi:10.1007/BF00251543.
+Eringen, A.C. (1978), “Nonlocal continuum mechanics and some applications”, in Barut, A.O. (Ed.),
+Nonlinear Equations in Physics and Mathematics. NATO Advanced Study Institutes Series,
+Springer,Dordrecht,p.40,doi:10.1007/978-94-009-9891-9_12.
+Eringen,A.C.andEdelen,D.G.B.(1972),“Onnonlocalelasticity”,InternationalJournalofEngineering
+Science,Vol.10No.3,pp.233-248,doi:10.1016/0020-7225(72)90039-0.
+Eringen,A.C.andWegner,J.R.(2003),“Nonlocalcontinuumfieldtheories”,AppliedMechanicsReviews,
+Vol.56No.2,pp.B20-B22,doi:10.1115/1.1553434.
+Green,A.E.andNaghdi,P.M.(1992),“Onundampedheatwavesinanelasticsolid”,JournalofThermal
+Stresses,Vol.15No.2,pp.253-264.
+Green, A.E. and Naghdi, P.M. (1993), “Thermoelasticity without energy dissipation”, Journal of
+Elasticity,Vol.31No.3,pp.189-208,doi:10.1007/BF00044969.
+HFF Gupta,V.,Barak,M.S.andDas,S.(2023),“Vibrationalanalysisofsize-dependentthermo-piezo-photo-
+electric semiconductor medium under memory-dependent Moore–Gibson–Thompson photo-
+thermoelasticity theory”, Mechanics of Advanced Materials and Structures, pp. 1-17, doi:
+10.1080/15376494.2023.2291804.
+Gupta,V.,Kumar,R.,Kumar,R.andBarak,M.S.(2023),“Energyanalysisattheinterfaceofpiezo/
+thermoelastichalfspaces”,InternationalJournalofNumericalMethodsforHeatandFluidFlow,
+Vol.33No.6,pp.2250-2277,doi:10.1108/HFF-11-2022-0654.
+Iovane, G. and Nasedkin, A.V. (2010a), “Modal analysis of piezoelectric bodies with voids. I.
+Mathematical approaches”, Applied Mathematical Modelling, Vol. 34 No. 1, pp. 60-71, doi:
+10.1016/j.apm.2009.03.028.
+Iovane,G.andNasedkin,A.V.(2010b),“Modalanalysisofpiezoelectricbodieswithvoids.II.Finite
+elementsimulation”,AppliedMathematicalModelling, Vol.34No.1,pp.47-59,doi:10.1016/j.
+apm.2009.03.027.
+Keith,C.M.andCrampin,S.(1977),“Seismicbodywavesinanisotropicmedia:reflectionandrefraction
+ataplaneinterface”,GeophysicalJournalInternational,Vol.49No.1,pp.181-208,doi:10.1111/
+j.1365-246X.1977.tb03708.x.
+Kumar,R.andGupta,V.(2015),“Effectofphase-lagsonRayleighwavepropagationinthermoelastic
+medium with mass diffusion”, Multidiscipline Modeling in Materials and Structures, Vol. 11
+No.4,pp.474-493,doi:10.1108/MMMS-12-2014-0066.
+Kumar,R.,Gupta,V.,Pathania,V.andBarak,M.S.(2023b),“Energyratioresponseattheinterfaceof
+elasticandDual-PorousthermoelasticHalf-Spaces”,PhysicaScripta,Vol.98No.11,p.115211,
+doi:10.1088/1402-4896/acfced.
+Kumar,R.,Gupta,V.,Pathania,V.,Kumar,R.andBarak,M.S.(2023a),“Analysisofwavesatboundary
+surfacesatdistinctmediawithnonlocalDual-Phase-Lag”,ProceedingsoftheNationalAcademy
+ofSciences,IndiaSectionA:PhysicalSciences,Vol.93No.4,pp.573-585,doi:10.1007/s40010-023-
+00850-y.
+Kumar, M., Kaswan, P., Sarkar, N., Liu, X. and Kumari, M. (2023c), “Rayleigh waves in nonlocal
+generalized Thermoelastic media”, International Journal of Numerical Methods for Heat and
+FluidFlow,Vol.33No.6,pp.2049-2072,doi:10.1108/HFF-08-2022-0468.
+Lasiecka,I.andWang,X.(2015),“Moore–Gibson–Thompsonequationwithmemory,PartII:general
+decayofenergy”,JournalofDifferentialEquations,Vol.259No.12,pp.7610-7635,doi:10.1016/j.
+jde.2015.08.052.
+Lewis,R.W.,Huang,H.C.,Usmani,A.S.andCross,J.T.(1991),“Finiteelementanalysisofheattransfer
+andflowproblemsusingadaptiveremeshingincludingapplicationtosolidificationproblems”,
+InternationalJournalforNumericalMethodsinEngineering,Vol.32No.4,pp.767-781.
+Lewis,R.W.,Navti,S.E.andTaylor,C.(1997),“AmixedLagrangian-Eulerianapproachtomodelling
+fluidflowduringMouldfilling”,InternationalJournalforNumericalMethodsinFluids,Vol.25
+No.8,pp.931-952,doi:10.1002/(SICI)1097-0363(19971030)25:8<931::AID-FLD594>3.0.CO;2-1.
+Lewis,R.W.,Nithiarasu,P.andSeetharamu,K.N.(2004),FundamentalsoftheFiniteElementMethod
+forHeatandFluidFlow,JohnWileyandSons,NewYork,NY.
+Lord,H.W.andShulman,Y.(1967),“AgeneralizeddynamicaltheoryofThermoelasticity”,Journalof
+theMechanicsandPhysicsofSolids,Vol.15No.5,pp.299-309,doi:10.1016/0022-5096(67)90024-5.
+McGarr, A. and Alsop, L.E. (1967), “Transmission and reflection of Rayleigh waves at vertical
+boundaries”, Journal of Geophysical Research, Vol. 72 No. 8, pp. 2169-2180, doi: 10.1029/
+JZ072i008p02169.
+Marchand,R.,McDevitt,T.andTriggiani,R.(2012),“Anabstractsemigroupapproachtothethird-
+order Moore–Gibson–Thompson partial differential equation arising in high-intensity
+ultrasound: structural decomposition, spectral analysis, exponential stability”, Mathematical
+MethodsintheAppliedSciences,Vol.35No.15,pp.1896-1929,doi:10.1002/mma.1576.
+Mindlin,R.D.(1974),“EquationsofhighfrequencyvibrationsofThermopiezoelectriccrystalplates”, Impactof
+InternationalJournalofSolidsandStructures,Vol.10No.6,pp.625-637,doi:10.1016/0020-7683 memory-
+(74)90047-X.
+dependentheat
+Nowacki,W.(1978),“SomegeneraltheoremsofThermopiezoelectricity”,JournalofThermalStresses,
+transfer
+Vol.1No.2,pp.171-182,doi:10.1080/01495737808926940.
+Nowacki,W.(1979),“Foundationsoflinearpiezoelectricity”,ElectromagneticInteractionelasticSolids,
+Vol.257,pp.105-157.
+Pathania,V.andJoshi,P.(2021),“Wavesinthermoelasticsolidhalf-spacecontainingvoidswithliquid
+loadings”,ZAMM-JournalofAppliedMathematicsandMechanics,Vol.101No.12,pp.1-19,doi:
+10.1002/zamm.202100093.
+Pathania, V., Kumar, R., Gupta, V. and Barak, M.S. (2022), “Generalized plane waves in a rotating
+thermoelasticdoubleporoussolid”,InternationalJournalofAppliedMechanicsandEngineering,
+Vol.27No.4,pp.138-154,doi:10.2478/ijame-2022-0055.
+Pathania,V.,Kumar,R.,Gupta,V.andBarak,M.S.(2023),“DoubleporousThermoelasticwavesina
+homogeneous,isotropicsolidwithinviscidliquid”,ArchiveofAppliedMechanics,Vol.93No.5,
+pp.1943-1962,doi:10.1007/s00419-023-02364-w.
+Pellicer, M. and Sol(cid:1)a-Morales, J. (2019), “Optimal scalar products in the Moore–Gibson–Thompson
+equation”, Evolution Equations and Control Theory, Vol. 8 No. 1, pp. 203-220, doi: 10.3934/
+eect.2019011.
+Press,F.andHealy,J.(1957),“AbsorptionofRayleighwavesinLow-Lossmedia”,JournalofApplied
+Physics,Vol.28No.11,pp.1323-1325,doi:10.1063/1.1722642.
+Quintanilla, R. (2019), “Moore–Gibson–Thompson thermoelasticity”, Mathematicsand Mechanics of
+Solids,Vol.24No.12,pp.4020-4031,doi:10.1177/1081286519862007.
+Rayleigh,L.(1885),“Onwavespropagatedalongtheplanesurfaceofanelasticsolid”,Proceedingsof
+theLondonMathematicalSociety,Vol.s1-17No.1,pp.4-11,doi:10.1112/plms/s1-17.1.4.
+Sharma,M.D.(2023),“PropagationofgeneralisedRayleighwaveatthesurfaceofpiezoelectricmedium
+witharbitraryanisotropy”,ZAMM-JournalofAppliedMathematicsandMechanics,Vol.103
+No.3,pp.1-15,doi:10.1002/zamm.202000160.
+Sharma, J.N. and Kaur, D. (2010), “Rayleigh waves in rotating thermoelastic solids with voids”,
+InternationalJournalofAppliedMathematicsandMechanics,Vol.6No.3,pp.43-61.
+Sharma,J.N.,Walia,V.andKGupta,S.(2008),“EffectofrotationandthermalrelaxationonRayleigh
+wavesinPiezothermoelastichalfspace”,InternationalJournalofMechanicalSciences,Vol.50
+No.3,pp.433-444,doi:10.1016/j.ijmecsci.2007.10.001.
+Singh, B. (2007), “Wave propagation in a generalized Thermoelastic material with voids”, Applied
+MathematicsandComputation,Vol.189No.1,pp.698-709,doi:10.1016/j.amc.2006.11.123.
+Thompson, P.A. and Beavers, G.S. (1972), “Compressible-Fluid dynamics”, Journal of Applied
+Mechanics,Vol.39No.2,pp.366-366,doi:10.1115/1.3422684.
+Wang,J.-L.andLi,H.F.(2011),“Surpassingthefractionalderivative:conceptofthememory-dependent
+derivative”,Computers andMathematicswith Applications,Vol.62No.3,pp. 1562-1567,doi:
+10.1016/j.camwa.2011.04.028.
+Correspondingauthor
+SoumikDascanbecontactedat:soumikdas1993@gmail.com
+Forinstructionsonhowtoorderreprintsofthisarticle,pleasevisitourwebsite:
+www.emeraldgrouppublishing.com/licensing/reprints.htm
+Orcontactusforfurtherdetails:permissions@emeraldinsight.com

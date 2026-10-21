@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" font-family="Arial, sans-serif">
+  <text x="250" y="30" text-anchor="middle" font-size="16" font-weight="bold">Theory Family Relationships and Limiting Cases</text>
+  <circle cx="250" cy="130" r="35" fill="#e74c3c" opacity="0.2" stroke="#e74c3c" stroke-width="2"/>
+  <text x="250" y="125" text-anchor="middle" font-size="11" font-weight="bold">Classical</text>
+  <text x="250" y="140" text-anchor="middle" font-size="9">(Fourier/Biot)</text>
+  <circle cx="100" cy="230" r="35" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="2"/>
+  <text x="100" y="225" text-anchor="middle" font-size="11" font-weight="bold">LS</text>
+  <text x="100" y="240" text-anchor="middle" font-size="9">tau0 -> 0</text>
+  <circle cx="200" cy="230" r="35" fill="#2ecc71" opacity="0.2" stroke="#2ecc71" stroke-width="2"/>
+  <text x="200" y="225" text-anchor="middle" font-size="11" font-weight="bold">GL</text>
+  <text x="200" y="240" text-anchor="middle" font-size="9">2 relaxation times</text>
+  <circle cx="300" cy="230" r="35" fill="#9b59b6" opacity="0.2" stroke="#9b59b6" stroke-width="2"/>
+  <text x="300" y="225" text-anchor="middle" font-size="11" font-weight="bold">GN-II</text>
+  <text x="300" y="240" text-anchor="middle" font-size="9">Dissipationless</text>
+  <circle cx="400" cy="230" r="35" fill="#f39c12" opacity="0.2" stroke="#f39c12" stroke-width="2"/>
+  <text x="400" y="225" text-anchor="middle" font-size="11" font-weight="bold">GN-III</text>
+  <text x="400" y="240" text-anchor="middle" font-size="9">Mixed type I/II</text>
+  <circle cx="100" cy="330" r="35" fill="#e67e22" opacity="0.2" stroke="#e67e22" stroke-width="2"/>
+  <text x="100" y="325" text-anchor="middle" font-size="11" font-weight="bold">DPL</text>
+  <text x="100" y="340" text-anchor="middle" font-size="9">tau_q, tau_T</text>
+  <circle cx="200" cy="330" r="35" fill="#1abc9c" opacity="0.2" stroke="#1abc9c" stroke-width="2"/>
+  <text x="200" y="325" text-anchor="middle" font-size="11" font-weight="bold">TPL</text>
+  <text x="200" y="340" text-anchor="middle" font-size="9">3 phase lags</text>
+  <circle cx="300" cy="330" r="35" fill="#34495e" opacity="0.2" stroke="#34495e" stroke-width="2"/>
+  <text x="300" y="325" text-anchor="middle" font-size="11" font-weight="bold">MGT</text>
+  <text x="300" y="340" text-anchor="middle" font-size="9">3rd-order</text>
+  <circle cx="400" cy="330" r="35" fill="#95a5a6" opacity="0.2" stroke="#95a5a6" stroke-width="2"/>
+  <text x="400" y="325" text-anchor="middle" font-size="11" font-weight="bold">MDD</text>
+  <text x="400" y="340" text-anchor="middle" font-size="9">Memory kernel</text>
+  <circle cx="250" cy="430" r="35" fill="#8e44ad" opacity="0.2" stroke="#8e44ad" stroke-width="2"/>
+  <text x="250" y="425" text-anchor="middle" font-size="11" font-weight="bold">Nonlocal</text>
+  <text x="250" y="440" text-anchor="middle" font-size="9">Spatial memory</text>
+  <path d="M225,165 Q160,200 125,205" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <path d="M225,165 Q240,200 220,205" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <path d="M275,165 Q330,200 325,205" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <path d="M275,165 Q370,200 425,205" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <path d="M100,265 Q100,300 100,305" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <path d="M200,265 Q200,300 200,305" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="250" y="475" text-anchor="middle" font-size="10" font-style="italic">All generalized theories converge to classical as relaxation parameters -> 0</text>
+  <text x="250" y="490" text-anchor="middle" font-size="10" font-style="italic">Parameter substitutions, not rigorous limit theorems</text>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

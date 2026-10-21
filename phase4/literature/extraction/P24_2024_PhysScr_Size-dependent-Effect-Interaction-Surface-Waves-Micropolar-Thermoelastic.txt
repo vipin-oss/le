@@ -1,0 +1,1440 @@
+Phys.Scr.99(2024)065232 https://doi.org/10.1088/1402-4896/ad4829
+PAPER
+Size-dependenteffectontheinteractionofsurfacewavesin
+RECEIVED micropolarthermoelasticmediumwithdualporeconnectivity
+30January2024
+REVISED
+4April2024
+SoumikDas1 ,RachaitaDutta2,3 ,Eduard-MariusCraciun4,5,AbhikSur6 ,MSBarak7 and
+ACCEPTEDFORPUBLICATION
+7May2024
+VipinGupta7,∗
+PUBLISHED 1 SchoolofPhysicalSciences,AmritaVishwaVidyapeetham,Mysuru,Karnataka,India
+16May2024 2 DepartmentofMathematics,DayanandaSagarUniversity,Bengaluru,Karnataka,India
+3 AmritaSchoolofComputing,AmritaVishwaVidyapeetham,Mysuru,Karnataka,India
+4 FacultyofMechanical,IndustrialandMaritimeEngineering,OvidiusUniversityofConstanta,900527Constanta,Romania
+5 AcademyofRomanianScientists,IIfovStreet,Bucharest,Romania
+6 DepartmentofMathematics,SisterNiveditaUniversity,WestBengal,India
+7 DepartmentofMathematics,IndiraGandhiUniversity,Meerpur,Rewari,Haryana,India
+∗ Authortowhomanycorrespondenceshouldbeaddressed.
+E-mail:soumikdas1993@gmail.com,rachaita.dutta18@gmail.com,mcraciun@univ-ovidius.ro,abhiksur4@gmail.com,ms_barak@
+igu.ac.inandvipin.math.rs@igu.ac.in
+Keywords:rayleighwaves,voids,micropolar,three-phase-lag,nonlocalelasticity
+Abstract
+ThisresearchtacklesacriticalknowledgegapinRayleighsurfacewavepropagation.Itoffersa
+comprehensiveanalysisthatsurpassespreviouslimitations.Asize-dependentmicropolarmedium
+withuniquevoiddistributionsandthermaleffectsisconsideredinthiswork.Theconstitutive
+relationsandequationsofmotionforanonlocalmicropolarthermoelasticmediumwithdoublevoids
+(MTMWDV)havebeenestablishedbyusingEringen’snonlocalelasticitytheory.Employingthe
+three-phase-lagthermoelasticitytheory(TPLTE),thestudyutilizesawave-modemethodtoderive
+analyticalsolutionsforRayleighwavesinanonlocalMTMWDV.Togainacomprehensive
+understandingofwavebehavior,wesolvethecharacteristicequationandanalyzeitsroots,applyinga
+filterbasedonthesurfacewavedecaycondition.Amediumwithstress-freeandisothermalboundaries
+isexploredthroughcomputationalsimulationstodeterminetheattenuationcoefficientandphase
+velocity.Furthermore,particlemotionanalysisisconductedtocomplementtheanalyticaland
+computationalapproaches.Moreover,theinfluenceofthenonlocalparameterandvarious
+thermoelasticmodelsonthesewavephenomenaisinvestigated.Thevalidityofthecurrent
+mathematicalmodelisconfirmedthroughthederivationofparticularscenarios.
+1.Introduction
+Propagatingalongtheboundaryofamedium,surfacewavesoffercrucialinsightsintosurfaceirregularities.
+CategorizedprimarilyasLove,Stoneley,orRayleighwaves,theirtheoreticalfoundationwaslaidbyLord
+Rayleighin1885,whoelucidatedtheirpropagationcharacteristicsonanelasticsolidhalf-space[1].Building
+uponthisgroundwork,PressandHealy[2]laterdeterminedtheabsorptioncoefficientofRayleighwavesinlow-
+lossmedia.Additionally,McGarrandAlsop[3]delvedintothecomputationofRayleighwavecoefficientsat
+verticalboundaries,particularlyduringthetransitionfromonewaveguidetypetoanother.Thepractical
+applicationsofRayleighwavesspandiversefields,includingacoustics,seismology,geophysics,electronics,non-
+destructivetesting,telecommunications,andmicrofluidics[4–6].Thesewaveshaveproveninstrumentalin
+varioustechnologicaladvancementsandscientificinvestigations.Understandingthepropagationpropertiesof
+Rayleighwavesholdsparamountimportancefromboththeoreticalandpracticalstandpoints,asitenhancesthe
+efficiencyofsurfacewavedevices.Thiscomprehensiveexplorationofsurfacewavecharacteristicsbuildsonthe
+historicalfoundationslaidbyLordRayleighandincorporatessubsequentadvancementsinthefield.Some
+recentliteratures[7–11]investigatedthepropagationofplaneandsurfacewavesinlayeredstructure.
+©2024IOPPublishingLtd
+Phys.Scr.99(2024)065232 SDasetal
+Theintricateinterplaybetweenthermaldistributionanddeformationservesasacomprehensiveframework
+fordescribingthemotionofabody.Thegoverningthermo-mechanicalprocessesindicatethatthermalstate
+changescoincidewithdisplacementalterations.WiththestandardFourier’sformulation,Biot[12]introduced
+thecoupledthermoelasticitytheorytoanswertheclassicaluncoupledcontradictioninherentinthese
+phenomena.Thisparadoxquestionedtheinfluenceoftemperaturechangeonelasticdeformation,aphysically
+unrealisticscenario.However,Biot’spropositionintroducedtheparabolicnatureoftheheatequation.In
+responsetothislimitation,toattainlimitedthermalwavespeeds,anumberofnon-classicalheatconduction
+modelshavebeendeveloped.TheMaxwell-CattaneomodelwasusedbyLordandShulman(LS)toreplace
+Fourier’slaw,resultinginthefirstgeneralizedthermalelasticitytheorythatincorporatesthermaldelaytimeinto
+theheatlaw[13].TheGreen-Lindsay(GL)model[14]isanothernoteworthythermoelasticmodelthatincludes
+tworelaxationdurationsandtemperaturerate-dependentthermoelasticity.Threelogicallycompatible
+thermoelastictheorieswerecontributedbyGreenandNaghdi[15–17](GN-I,GN-II,andGN-III).WhileGN-II
+andGN-IIItheoriespredictfinitethermalwavespeeds,GN-Itheorypredictslimitlessthermalwavepropagation
+speed.WhileGN-IIIallowsforenergydissipationandcombineselementsoftheprecedingtwotheories,GN-II
+hypothesisdoesnotshowanyenergydissipation.Withtheadditionofdelaycomponentstotheheatconduction
+rule,Tzou[18]developedthedual-phase-lag(DPL)thermoelasticmodel.Byaddingthreedelayfactors,
+Choudhuri[19]developedatriple-phase-lag(TPL)thermoelasticmodelthatisanextensionofTzou’stheory
+[18].Theseadvancementscontributetoanuancedunderstandingofthedynamicinteractionsbetween
+deformationandtemperaturedistributioninmaterials.Asthegeneralizedthermoelasticitytheoryprogresses,
+scientistsareexpandingitsapplicationsinseveralstudyareas,suchasmissiletechnologies,drone,nuclear
+reactors,andairplanemanufacturing.Severalresearchers[20,21]incorporateddifferentthermoelasticity
+theoriesfortheinvestigationofRayleighwavepropagationinthermoelasticmedium.Singhandhisco-workers
+[22,23]studiedthermo-mechanicalinteractionindifferentmediasubjectedtodifferentthermoelasticity
+theories.Thermo-mechanicalcharacteristicsofdifferentcompositematerialshavebeeninvestigatedinseveral
+researcharticles[24,25].Inarecentcontribution,Barakandhisteam[26,27]delvedintotheexplorationof
+thermo-mechanicalinteractionswithinathermoelastic,nonlocalpiezothermoelasticsolidhalf-space.This
+researchsignificantlycontributestotheexpandingknowledgeingeneralizedthermoelasticity,offeringnuanced
+insightsintotheintricatedynamicsofmaterialssubjectedtovariousthermo-mechanicalconditions.
+Thenonlocalitypostulatesintroducethenotionofaninternalcharacteristiclengthparameter,anextension
+ofconventionalsolidmechanicstheory.Thisparameterisusefulwhenestimatingthephysicalcharacteristicsof
+materialsatthenanoscale.Computersandbiosensorsaretwoexamplesofthemanytechnologicalapplications
+heavilyrelyingonnanostructures.NonlocalelasticitywasfirstproposedbyEringenandEdelen[28],who
+postulatedthatstressatthefracturepointhasalimitednumericalvalue.Byexpandingitsapplicationstoseveral
+studydomains,Eringen[29,30]madeasignificantcontributiontononlocalelasticityandrevealedaplethoraof
+opportunitiesindifferentdirections.Hispainstakingstudyhasgreatlycontributedtoourgraspofnonlocal
+theoriesconcerningmanykindsofmaterials.Thenonlocaltheoryprovidesauniqueinsightintomaterial
+behaviorbyclaimingthat,incontrasttoclassicaltheory,thepropertyofagivenparticlereliesonthewhole
+substance.AsshownbyChallameletal[31],researchershavecreatedthenonlocalFourier’sheatconductionlaw
+forbothone-andtwo-dimensionalthermallattices.Furthermore,withinthecontextofEringen’snonlocal
+theory,BachherandSarkar[32]scrutinizedmaterialsexhibitingboththermoelasticandvoidcharacteristics
+usingthefractional-orderheattransportequation.Furthermore,Surandhiscoauthors[33,34]haveconsidered
+thenonlocaleffectintheirstudyondifferentthermoelasticstructures.
+Porosityisubiquitousinmanyscientificandtechnicalfields,includingbiomechanics,chemicalengineering,
+petroleum,geophysics,andbonemechanics.Thishasledtoagreatdealofstudyonintegratingvoid-containing
+elasticmaterialsintoawiderangeoffields.Withintheframeworkoflinearelasticityappliedtomaterials
+containingvoids,Cowinandco-workers[35,36]definethevoidvolumefractionastheproportionoftheporous
+material’sbulkdensityrelativetothebulkdensityofthesolidmatrix.Iesan[37]furtherextendedhisexploration
+ofthethermalbehaviorofmaterialscontainingvoids,contributingtotheadvancementofourunderstandingof
+thethermalpropertiesofporousmaterials.Thedoubleporositytheory,introducedbyBarenblattetal[38],
+conceptualizesmatrixblocksseparatedbyfracturenetworks.BerrymanandWang[39]contributedessential
+relationsandmacroscopicmomentumforasolidmediumwithdual-permeability/dual-porosity.The
+investigationconductedbyIesanandQuintanilla[40]delvedintothethermoelasticitytheoryforsolidmedium
+withdualporosity,rootedintheNunziato-Cowintheoryofelasticmaterialwithvoids.Theysystematically
+addressedaspectsofuniqueness,stabilitycriteria,andsolutionconditions.Kumaretal[41]exploredthe
+Rayleighwavesphenomenoninathermoelasticcontinuawithdoubleporosity.Recentresearchendeavorshave
+beenfocusedonprobingthermoelasticinteractionswithindoubleporousmedia[42–47].
+Thebehaviorofelastomerandpolymertypeofsolidsisnotpossibletocharacterizewiththeaidoflinear
+elasticitytheory.‘MicropolarElasticity’entitledbyEringen[48],isappropriatetodelineatethecharacteristicsof
+thesematerials.Micropolartheoryconsidersthepartofthemediumwhichisgranularinnatureandwheresolid
+2
+Phys.Scr.99(2024)065232 SDasetal
+canexperiencemacro-deformationsandmicro-rotations.Physically,solidsthatarecomposedofdumbbelltype
+moleculesmaybeadequatelyrepresentedbythemicropolarelasticitymodel.Fibrousmaterialsandsome
+granularandporoussolidsmayalsofallintothiscategory.Thistheorytriggerstheattentioninextensiveuseof
+severalkindsofcompositematerials.Nowacki[49–51]andEringen[52]investigatedthethermalimpactsin
+micropolarelasticmodel.LineartheoryofmicropolarthermoelasticitywasdevelopedbyBoschiandIesan[53].
+AcomprehensivereviewofworksonmicropolarthermoelasticitywasgiveninDhaliwalandSingh[54].Plane
+wavedynamicsinamicropolarthermoelasticmediumwithporosityunderdualphaselagmodelhasbeen
+investigatedbyBiswas[55].Said[56]analyzedamagneto-micropolarthermoelasticmediumwithinthe
+frameworkofthedual-phase-lagmodelwithmemorydependence.Guptaetal[43]studiedthetwo-dimensional
+thermomechanicalresponseofanonlocalmicropolardoubleporousthermoelasticmaterialwithvariable
+conductivityinthecontextofMoore-Gipson-Thompsontheoryofthermoelasticity.Kumaretal[57]presented
+aproblemofwavepropagationinamicropolarporousthermoelasticplateundermemory-dependentderivative
+regardingLord-ShulmanandGreen-Lindsaytheories.
+Wavepropagationinnonlocalmicropolarmaterialswithdualporosityisanemergingfieldofresearchthat
+bridgesthegapbetweenclassicalelasticityandthebehaviorofmaterialsatverysmallscales.Nonlocalelasticity
+acknowledgesthatthestressatapointisinfluencedbythestrainthroughouttheentirematerial.Thisbecomes
+importantformaterialswithcharacteristiclengthscomparabletothesizeofthemicrostructure.Micropolar
+materialsexhibitnotonlytranslationaldeformationsbutalsomicrorotations.Realisticallyspeaking,the
+structureofthematerialmaycontaindifferenttypesofvoidsneglectingwhichanerrormayappearinthe
+generatedoutcome.Thecollaborationofnonlocalelasticitytheoryandmicropolartheorywithdualporosity
+allowsresearcherstostudywavepropagationinmaterialswhereboththenonlocaleffectsandmicrorotation
+playarole.Thisisparticularlyrelevantforunderstandingthebehaviorofmaterialsatthemicroandnanoscale.
+Kumaretal[41]haveinvestigatedthecharacteristicsofRayleighwavepropagationinathermoelastichalfspace
+withdoubleporosityunderthepurviewofstressfreethermallyinsulated/isothermalboundaryconditions.The
+propagationofRayleighsurfacewavesinhomogeneousorthotropicmediumwithvoidsunderTPL
+thermoelasticmodelhasbeenstudiedbyBiswas[58].SinghandKashyap[59]haveconsideredamicropolar
+thermoelasticmaterialwithtimedelaytoanalyseRayleighwavepropagationundermemoryeffect.A
+comprehensivereviewoftheliteraturerevealsnopriorstudiesthathaveexaminedtheinterplaybetween
+nonlocality,micropolarbehavior,andthepresenceoftwovoidtypesinthecontextofRayleighwave
+propagation.Inthispresentwork,theconstitutiverelationsforanonlocalmicropolarthermoelasticmedium
+withdoublevoids(MTMWDV)havebeenestablishedbyusingEringen’snonlocalelasticitytheory.Thisstudy
+breaksnewgroundbyderivinganalyticalsolutionsforRayleighwavesinaMTMWDVsubjectedtoTPL
+thermoelasticity.Weemploythewave-modemethodandleveragetheDurand-Kernermethodtocompute
+rootsfromthecharacteristicequation.Rootfilteringbasedonthesurfacewavedecayconditionisfollowedby
+computationalsimulationstodeterminethephasevelocityandattenuationcoefficient.Moreover,particle
+motionduetoRayleighwavepropagationhasbeengraphicallyexploredsubjectedtothevariationinnonlocal
+parameter,depth,anddifferentthermoelasticmodels.Inthepresentstudy,thenonlocalelasticitytheory,which
+iswidelyusedfornanomaterials,isemployedtodevelopthesize-dependentmodelinconjunctionwiththe
+micropolartheory,whichisoftenusedformicromaterials.ThenonlocalMTMWDVdevelopedinthis
+manuscriptissuitableforbothmicroscaleandnanoscalematerials.Thiscombinedmodelmayanalysehow
+vibrationstravelthroughnanoparticles,whichiscrucialfordesigningnewmaterialswithspecificproperties.
+Theresultmayalsohelpstostudythepropagationofstresswavesinbone,toinvestigatethewavepropagationin
+advancedcomposites,andtopredictthebehavioroftinydevices,suchasmicro/nanoelectromechanicalsystems
+(M/NEMS)wherenonlocalandmicrorotationeffectsbecomesignificant.Thesemyriadapplicationsencourage
+theauthorstoinvestigatetheRayleighwavepropagationinanonlocalMTMWDV.
+2.Derivationofgoverningequations
+2.1.Constitutiverelations
+FollowingtheworksofPassarella[60]onstress-strainrelationsinmicropolarthermoelasticmaterialswithvoids
+andIesanandQuintanilla’s[40]developmentoffundamentalequationsfordoubleporousthermoelastic
+materials,thisarticleventurestoexpandthesetheoriestoencompassnonlocalmechanicsofmicropolar
+thermoelasticmaterialswithdoublevoids.WeintroduceindependentkinematicvariablesΨandΦ,
+representingthevolumefractionsofthefirst(matrix)andsecond(fracture)typesofvoidsintheundeformed
+state,whicharedefinedasY = Y*(, t) - YandF = F*(, t) - F,whererepresentsthepositionvector
+andtistime.WeconsideraMTMWDVbodywithinitialvolume,enclosedbysurfaceandoccupying
+regioninspace.Apoint’slocationbeforeandafterdeformationisrepresentedbyX (undeformed)andx
+ i   i
+(deformed),respectively.Thedisplacementvectorofaparticleisthendefinedasu = x - X.Furthermore,we
+3
+Phys.Scr.99(2024)065232 SDasetal
+representthegradientsofvoidvolumefractions,straintensor,andwrynesstensorbyΨ ,Φ ,ande ,andj ,
+,i ,i ij ij
+respectively.Finally,weexpressthecollectionoffundamentalvariablesatpointsand¢intheabsenceof
+stressandintrinsicequilibratedforces
+ = {e (), j (), Y(), F(), Y (), F (), q()},
+ij ij ,i ,i ⎫
+. (1)
+¢= {e (¢), j (¢), Y(¢), F(¢), Y (¢), F (¢), q(¢)},⎬
+ij ij ,i ,i ⎭
+Thestrainenergyfunctioniswrittenas
+2 = (, ¢)e ()e (¢) +  (, ¢)[e ()j (¢) + e (¢)j ()]
+ijkl ij kl ijkl ij kl ij kl
++h(1)(, ¢)[e ()Y (¢) + e (¢)Y ()] + h(2)(, ¢)[e ()F (¢) + e (¢)F ()]
+ijk ij ,k ij ,k ijk ij ,k ij ,k
++j*(, ¢)[e ()Y(¢) + e (¢)Y()] + j*(, ¢)[e ()F(¢) + e (¢)F()]
+1ij ij ij 2ij ij ij
+-c (, ¢)[e ()q(¢) + e (¢)q()] +  (, ¢)j ()j (¢)
+1ij ij ij ijkl ij kl
++P(1)(, ¢)[j ()Y(¢) + j (¢)Y()] + P(2)(, ¢)[j ()F(¢) + j (¢)F()]
+ij ij ij ij ij ij
++(1)(, ¢)[j ()Y (¢) + j (¢)Y ()] + (2)(, ¢)[j ()F (¢) + j (¢)F ()]
+ijk ij ,k ij ,k ijk ij ,k ij ,k
++ (, ¢)[j ()q(¢) + j (¢)q()] + V (, ¢)Y()Y(¢)
+ij ij ij 1
++b(1)(, ¢)[Y()Y (¢) + Y(¢)Y ()] + V (, ¢)[Y()F(¢) + Y(¢)F()]
+i ,i ,i 2
++b(2)(, ¢)[Y()F (¢) + Y(¢)F ()] - m (, ¢)[Y()q(¢) + Y(¢)q()]
+i ,i ,i 1
++g*(, ¢)Y ()Y (¢) + b(2)(, ¢)[Y ()F(¢) + Y (¢)F()]
+1ij ,i ,j i ,i ,i
++g (, ¢)[Y ()F (¢) + Y (¢)F ()] + (1)(, ¢)[Y ()q(¢) + Y (¢)q()]
+2ij ,i ,j ,i ,j i ,i ,i
++V (, ¢)F()F(¢) + b(3)(, ¢)[F()F (¢) + F(¢)F ()]
+3 i ,i ,i
+-m (, ¢)[F()q(¢) + F(¢)q()] + g*(, ¢)F ()F (¢)
+2 3ij ,i ,j
++(2)(, ¢)[F ()q(¢) + F (¢)q()] - a(, ¢)q()q(¢). (2)
+i ,i ,i
+Theacquiredsymmetriesoftheconstitutivecoefficientsare
+ (, ¢) =  (, ¢) =  (, ¢),  (, ¢) =  (, ¢) =  (, ¢),
+ijkl klij jikl ijkl klij jikl ⎫
+⎪
+j 1 * ij (, ¢) = j 1 * ji (, ¢), j* 2ij (, ¢) = j* 2ji (, ¢), c 1ij (, ¢) = c 1ji (, ¢), ⎬ (3)
+g*(, ¢) = g*(, ¢), g*(, ¢) = g*(, ¢), g*(, ¢) = g*(, ¢). ⎪
+1ij 1ji 2ij 2ji 3ij 3ji ⎭
+ByadoptingtheframeworkofEringenandWegner[61],theconstitutiverelationsareobtainedfrom
+¶ ¶ r
+ = ò ⎡ + ⎛ ⎞ ⎤ d(¢). (4)
+⎣ ⎢¶ ⎝¶¢⎠ ⎦ ⎥
+Here,thesuperscript‘r’denotestheinherentsymmetryofthequantityundertheexchangeofpointsand¢.
+Set = {¡,  , -v, -v, ¡, W, h}representsanorderedcounterparttoset.
+ij ij 1 2 i i
+Withtheaidofequations(1)–(4),thestresstensor(ϒ ),couplestresstensor( ),equilibratedbodyforces
+ij ij
+(ϖ andϖ ),equilibratedstresscomponents(ϒ andΩ),andspecificentropy(ñη)areobtainedas
+1 2 i i
+W =ò [ (, ¢)e (¢) +  (, ¢)j (¢) + h(1)(, ¢)Y (¢) + h(2)(, ¢)F (¢)
+ij ijkl kl ijkl kl ijk ,k ijk ,k
+V
++j*(, ¢)Y(¢) + j*(, ¢)F(¢) - c (, ¢)q(¢)]d(¢), (5)
+1ij 2ij 1ij
+ =ò [D (, ¢)e (¢) + F (, ¢)j (¢) + P(1)(, ¢)Y(¢) + P(2)(, ¢)F(¢)
+ij ijkl kl ijkl kl ij ij
+V
++(1)(, ¢)Y (¢) + (2)(, ¢)f (¢) +  (, ¢)q(()¢)]d(¢), (6)
+ijk ,k ijk ,k ij
+v =-ò [j*(, ¢)e (¢) + P(1)(, ¢)j (¢) + V*(, ¢)Y(¢) + b(1)(, ¢)Y (¢)
+1
+V
+1ij ij ij ij 1 i ,i
++V*(, ¢)F(¢) + b(2)(, ¢)F (¢) - m (, ¢)q(¢)]d(¢), (7)
+2 i ,i 1
+v =-ò [j*(, ¢)e (¢) + P(2)(, ¢)j (¢) + V*(, ¢)Y(¢) + b(2)(, ¢)Y (¢)
+2
+V
+2ij ij ij ij 2 i ,i
++V*(, ¢)F(¢) + b(3)(, ¢)F (¢) - m (, ¢)q(¢)]d(¢), (8)
+3 i ,i 2
+¡ =ò [h(1)(, ¢)e (¢) + (1)(, ¢)j (¢) + b(1)(, ¢)Y(¢) + g*(, ¢)Y (¢)
+i
+V
+ijk ij ijk ij i 1ij ,j
++b(2)(, ¢)F(¢) + g*(, ¢)F (¢) + (1)(, ¢)q(¢)]d(¢), (9)
+i 2ij ,j i
+4
+Phys.Scr.99(2024)065232 SDasetal
+W =ò [h(2)(, ¢)e (¢) + (2)(, ¢)j (¢) + b(2)(, ¢)Y(¢) + g*(, ¢)Y (¢)
+i
+V
+ijk ij ijk ij i 2ij ,j
++b(3)(, ¢)F(¢) + g*(, ¢)F (¢) + (2)(, ¢)q(¢)]d(¢), (10)
+i 3ij ,j i
+h=ò [c (, ¢)e (¢) -  (, ¢)j (¢) + m (, ¢)Y(¢) - (1)(, ¢)Y (¢)
+V
+1ij ij ij ij 1 i ,i
++m (, ¢)F(¢) - (2)(, ¢)F (¢) + a(, ¢)q(¢)]d(¢), (11)
+2 i ,i
+Inisotropicmaterials,theconstitutivecoefficientsbecome
+ (, ¢) = l(, ¢)d d + (J + )(, ¢)d d + J(, ¢)d d ,
+ijkl ij kl ik jl il jk ⎫
+ (, ¢) = g(, ¢)d d + j(, ¢)d d + c(, ¢)d d , ⎪
+ijkl ij kl ik jl il jk
+⎪
+j
+1
+*
+ij
+(, ¢) = j
+1
+*(, ¢)d
+ij
+, j*
+2ij
+(, ¢) = j*
+2
+(, ¢)d
+ij
+, c
+1ij
+(, ¢) = c
+1
+(, ¢)d
+ij
+,⎪
+⎪
+g 1 * ij (, ¢) = g 1 *(, ¢)d ij , g* 2ij (, ¢) = g* 2 (, ¢)d ij , g* 3ij (, ¢) = g* 3 (, ¢)d ij , ⎬ (12)
+ (, ¢) = h(1)(, ¢) = h(2)(, ¢) = (1)(, ¢) = (2)(, ¢) = 0 ⎪
+ijkl ijk ijk ijk ijk
+⎪
+P i ( j 1)(, ¢) = P i ( j 2)(, ¢) =  ij (, ¢) = ( i 1)(, ¢) = ( i 2)(, ¢) ⎪
+⎪
+=b(1)(, ¢) = b(2)(, ¢) = 0,
+i i ⎭
+wherethecoefficientsλ,ϑ,,j*,j*,χ ,g*,g*,g*,V*,V*,V*,m ,m ,andaarefunctionsof˜ = ∣ - ¢∣.
+1 2 1 1 2 3 1 2 3 1 2
+Withthehelpofequation(12),theconstitutiverelations(5)–(11)become
+W =ò [l(˜)d e (¢) + (J + )(˜)e (¢) + J(˜)e (¢) + j*(˜)d Y(¢)
+ij ij kk ij ji 1 ij
+V
++j*(˜)d F(¢) - c (˜)d q(¢)]d(¢), (13)
+2 ij 1 ij
+ = ò [g(˜)d j (¢) + j(˜)j (¢) + c(˜)j (¢)]d(¢), (14)
+ij ij kk ij ji
+V
+v = -ò [j*(˜)e (¢) + V*(˜)Y(¢) + V*(˜)F(¢) - m (˜)q(¢)]d(¢), (15)
+1 1 kk 1 2 1
+V
+v = -ò [j*(˜)e (¢) + V*(˜)Y(¢) + V*(˜)F(¢) - m (˜)q(¢)]d(¢), (16)
+2 2 kk 2 3 2
+V
+¡ = ò [g*(˜)Y (¢) + g*(˜)F (¢)]d(¢), (17)
+i 1 ,i 2 ,i
+V
+W = ò [g*(˜)Y (¢) + g*(˜)F (¢)]d(¢), (18)
+i 2 ,i 3 ,i
+V
+h = ò [c (˜)e (¢) + m (˜)Y(¢) + m (˜)F(¢) + a(˜)q(¢)]d(¢). (19)
+1 kk 1 2
+V
+Asintermolecularforcesdiminishwithincreasingdistancefromthereferencepoint,eachconstitutive
+coefficientisexpectedtodecaywithdistance.Forinstance,l(˜)approacheszeroas˜ goestoinfinity.This
+relationshipconnectsthelocalandnonlocalelasticcoefficientsasfollows
+l(˜) J(˜) (˜) j*(˜) j*(˜) g*(˜) g*(˜) g*(˜)⎫
+= = = 1 = 2 = 1 = 2 = 3
+l˜ J˜ ˜ j˜* j˜* g˜* g˜* g˜* ⎪
+1 2 1 2 3 (20)
+V*(˜) V*(˜) V*(˜) c (˜) g(˜) j(˜) c(˜) ⎬
+= 1 = 2 = 3 = 1 = = = = (˜), ⎪
+V˜* V˜* V˜* c˜ g˜ j˜ c˜
+1 2 3 1 ⎭
+wherel˜andJ˜ aretheLame’sconstants.c˜,j˜,g˜,and˜ aremicropolarmaterialconstants.g˜*,g˜*,g˜*,V˜*,V˜*,
+1 2 3 1 2
+V˜*,j˜*,andj˜*delineatethematerialpropertiesassociatedwiththetwovoidtypes,m˜ andm˜ capturethevoid-
+3 1 2 1 2
+thermaleffects,andc˜ signifiesthermalparameter.
+1
+Thenonlocalkernel(˜)incorporatestheinfluenceofdistantmaterialinteractionsbetweenpointsand
+¢,providingamorecomprehensivedescriptionofthematerial’sbehavior.Furthermore,
+ò (˜)d = 1, (21)
+V
+whichimpliesthefunction behavesfunctionallyequivalenttoaDiracdeltafunctionintegratedacrossthe
+entiredomain.
+AsnotedbyEringen[62],wecanexpress
+(1 - e22) = d(˜), (22)
+whereδistheDirac-deltafunctionandεisthenonlocalityparameterwhichisdefinedase =  c.Here,M is
+0 l 0
+thematerialconstantandc istheinternalcharacteristicslength.
+l
+5
+Phys.Scr.99(2024)065232 SDasetal
+Applyingoperator(1−ε2∇2)toequations(13)–(19)andutilizingequations(20)–(22),weobtainthe
+following(droppingthesuperscript
+˜
+)
+(1 - e22)¡ = ¡L = lu d + (J + )u + Ju -  u + j*Yd + j*Fd - c qd , (23)
+ij ij r,r ij j,i i,j ijr r 1 ij 2 ij 1 ij
+(1 - e22) = L = gu d + ju + cu , (24)
+ij ij r,r ij i,j j,i
+(1 - e22)¡ = ¡L = g*Y + g*F , (25)
+i i 1 ,i 2 ,i
+(1 - e22)W = WL = g*Y + g*F , (26)
+i i 2 ,i 3 ,i
+(1 - e22)v = vL = -j*e - V*Y - V*F + m q, (27)
+1 1 1 1 2 1
+(1 - e22)v = vL = -j*e - V*Y - V*F + m q, (28)
+2 2 2 2 3 2
+(1 - e22)h = (h)L = c u + m Y + m F + aq,
+1 r,r 1 2
+
+wheree =  · uandc = (3l + 2J + )g.
+1 q
+Encompassingnonlocaleffects,equations(23)–(28)depictthefundamentalrelationshipsbetween
+temperature,strain,andstressthatgovernthebehavioroftheconsideredmaterial.
+2.2.Equationsofmotion
+Asestablishedinpreviousworks(Passarella[60],IesanandQuintanilla[40],Choudhuri[19]),theequationsof
+motionforanonlocalMTMWDVundertheTPLTEmodelaregivenby
+¡L + (1 - e22) = (1 - e22)ü, (29)
+ij,j i i
+L - ¡ + (1 - e22) = (1 - e22)Gü, (30)
+ij,j irs rs i i
+¡L + vL + (1 - e22) = (1 - e22)z*Ÿ, (31)
+i,i 1 1 1
+WL + vL + (1 - e22) = (1 - e22)z*F̈, (32)
+i,i 2 2 2
+where and arethebodyforceandbodycouplecomponentsand and areextrinsicequilibratedbody
+i i 1 2
+forces.
+Inlightofequations(23)–(28)andintheabsenceofbodyforce,bodycouple,andextrinsicequilibratedbody
+forces,equationsofmotion(29)–(32)transforminto
+(l + J)( · u) + (J + )2u +  ´ u + j*Y + j*F - c q = (1 - e22)ü, (33)
+1 2 1
+(g + j + c)( · u) - c ´ ( ´ u) +  ´ u - 2u =(1 - e22)Gü (34)
+g*Y + g*F - j*e - V*Y - V*F + m q = (1 - e22)z*Ÿ, (35)
+1 ,ii 2 ,ii 1 1 2 1 1
+g*Y + g*F - j*e - V*Y - V*F + m q = (1 - e22)z*F̈. (36)
+2 ,ii 3 ,ii 2 2 3 2 2
+2.3.Energyscaleequation
+ · Q = -q h, (37)
+0
+(1 - e22)h = (h)L = c u + m Y + m F + aq, (38)
+1 r,r 1 2
+wherea = Cs.
+q0
+2.4.Heatconductionlawofthree-phase-lagmodel
+W2
+(1 - e22) ⎛ Q + W Q + q Q̈⎞ = -[W*q + W Kq + K*n], (39)
+⎜ i q i i⎟ n q
+2
+⎝ ⎠
+wheren = qandW* = K + W K*.
+n n
+2.5.Limitingcases
+ThereexistspecificconditionsunderwhichthecurrentTPLheatconductionmodelcanberecastasadifferent
+heatconductionmodel.
+(cid:129) TheconditionK *=Ω ν =0yieldsaDPLmodel[18].
+(cid:129) IfΩ
+θ
+=Ω
+ν
+=Ω
+Q
+=0,thenTPLmodelreducestotheGN-IIImodel[17].
+(cid:129) K *=Ω θ =Ω ν =0establishestheLSmodel[13].
+(cid:129) K *=Ω θ =Ω ν =Ω Q =0transformstheTPLmodeltotheclassicalcoupledthermoelastcitymodel[12].
+6
+Phys.Scr.99(2024)065232 SDasetal
+Figure1.Schematicdiagramoftheproblem.
+ThedetailedelucidationoftheaforementionedtermshavebeendelineatedinNomenclature.
+Λ, ϑ Lame’sparameters ò Levi-Civita
+ijr
+c,j,g, Micropolarmaterialconstants e Straintensor
+ij
+ϒ Nonlocalstresstensor  Nonlocalcouplestresstensor
+ij ij
+ϒ,Ω Nonlocalequilibratedstressvectorsofdouble ϖ,ϖ Nonlocalequilibratedbodyforcesofdoublevoids
+i i 1 2
+voids
+¡L Localstresstensor L Localcouplestresstensor
+ij ij
+¡L,WL Localequilibratedstressvectorsofdouble vL,vL Localequilibratedbodyforcesofdoublevoids
+i i 1 2
+voids
+ε Nonlocalityparameter δ Kroneckerdelta
+ij
+u,u Soliddisplacementcomponents ñ Densityofmaterial
+1 3 
+θ Thermodynamictemperature u Microrotationvector
+Γ Microinertia θ Referencetemperature
+0
+Q Componentofheatfluxvector Ψ,Φ Volumefractionsoftwotypesofvoids
+i
+K Thermalconductivity K* Materialpropertyassociatedwiththerateof
+conductivity.
+ν Thermaldisplacement η Entropyperunitvolume
+C s Specificheatatconstantstrain γ θ coefficientoflinearthermalexpansion
+g*,g*,g*, Voidparameters z*,z* Equilibratedinertiaofdoublevoids
+1 2 3 1 2
+V*,V*,V*,j*,j*
+1 2 3 1 2
+χ
+1
+,m
+1
+,m
+2
+Thermalparameters Ω θ,Ω ν, Relaxationparameters
+Ω
+Q
+3.Problemdefinitionandgeometricdescription
+Theanalysisfocusesonasemi-infinitemediumcomposedofanonlocalmicropolarthermoelasticmaterial
+containingtwotypesofvoids.Thematerialisassumedtobeatauniformtemperature,θ ,andgovernedbythe
+0
+principlesofthree-phase-lagthermoelasticitytheory.TomathematicallymodelRayleighwavepropagation,at
+thefreesurfaceweutilizeaCartesiancoordinatesystemwiththeoriginplaced(seefigure1).Thewave
+propagatesinthepositivex-direction,whilethepositivez-directionsignifiesadownwardmovement.Within
+thisplaneofwavepropagation,weexpressthedisplacementvector,microrotationvector,volumefractionsof
+thedoublevoids,andtemperatureas
+ 
+u = (u, 0, u ), u = (0, u , 0), Y = Y(x, z, t), F = F(x, z, t), q = q(x, z, t). (40)
+1 3 2
+7
+Phys.Scr.99(2024)065232 SDasetal
+Inlightofaforementionedcondition(40),thestress-strain-temperaturerelations(23)-(28)aremodifiedas
+¶u
+(1 - e22)¡ = ¡L = le + (2J + ) 3 + j*Y + j*F - c q, (41)
+zz zz ¶z 1 2 1
+¶u ¶u
+(1 - e22)¡ = ¡L = (J + ) 1 + J 3 - u , (42)
+zx zx ¶z ¶x 2
+¶u
+(1 - e22)¡ = ¡L = le + (2J + ) 1 + j*Y + j*F - c q, (43)
+xx xx ¶x 1 2 1
+¶u
+(1 - e22) = L = c 2, (44)
+zy zy ¶
+z
+¶Y ¶F
+(1 - e22)¡ = ¡L = g* + g* , (45)
+x x 1 ¶x 2¶x
+¶Y ¶F
+(1 - e22)¡ = ¡L = g* + g* , (46)
+z z 1 ¶z 2 ¶z
+¶Y ¶F
+(1 - e22)W = WL = g* + g* , (47)
+x x 2¶x 3¶x
+¶Y ¶F
+(1 - e22)W = WL = g* + g* , (48)
+z z 2¶z 3 ¶z
+wheree = ¶u1 + ¶u3and2 = ¶2 + ¶2 .
+¶x ¶z ¶x2 ¶z2
+Letasassumethenon-dimensionalquantitiesasfollows
+w cw c2u q
+(x¢, z¢, e¢) = 1(x, z, e), (u¢, u¢) = 1 1(u, u ), u¢ = 1 2, t¢= w t, q¢= ,
+c 1 3 c q 1 3 2 c q 1 q
+1 1 0 1 0 0
+z*w2Y z*w2F C c2 l + 2J + 
+Y¢= 1 1 , F¢ = 2 1 , W¢ = w W , w = s 1 , c2= . (49)
+c2 c2 q 1 q 1 K 1 
+1 1
+Substitutingtheequations(40)-(48)intoequationsofmotionandwiththehelpofnon-dimensional
+quantitiesinequation(49),equations(33)-(39)aremodifiedas
+¶e ¶u ¶Y ¶F ¶q ¶2u
+r + r 2u - r 2 + r + r - = (1 - e22) 1, (50)
+1 2 1 3 4 5
+¶x ¶z ¶x ¶x ¶x ¶t2
+¶e ¶u ¶Y ¶F ¶q ¶2u
+r + r 2u + r 2 + r + r - = (1 - e22) 3, (51)
+1 ¶z 2 3 3 ¶x 4 ¶z 5 ¶z ¶z ¶t2
+¶u ¶u ¶2u
+r 2u + r ⎛ 1 - 3⎞ - 2r u = (1 - e22) 2, (52)
+6 2 7 ⎝¶z ¶x ⎠ 7 2 ¶t2
+¶2Y
+r 2Y - r Y + r 2F - r F - r e + r q = (1 - e22) , (53)
+8 9 10 11 12 13 ¶t2
+¶2F
+r 2Y - r Y + r 2F - r F - r e + r q = (1 - e22) , (54)
+14 15 16 17 120 18
+¶t2
+⎛1 + W ¶ ⎞2q + r ⎛1 + W ¶ ⎞2q = ⎛ 1 + W ¶ + W Q 2 ¶2 ⎞⎡ ¶2q + r ¶2e + r ¶2Y + r ¶2F ⎤,
+⎝ q ¶t⎠ 19 ⎝ n ¶t⎠ ⎜ ⎝ Q ¶t 2 ¶t2⎟ ⎠⎣ ⎢¶t2 20 ¶t2 21 ¶t2 22 ¶t2 ⎦ ⎥
+(55)
+where,r = l+J,r = J+,r =  ,r = j 1
+*2
+,r = j 1 *j* 2 ,r = c ,r =  ,r = g 1 * ,r = V 1 * ,
+1 c
+1
+2 2 c
+1
+2 3 c
+1
+2 4 z
+1
+*c
+1
+q0w
+1
+2 5 z
+1
+*c
+1
+q0w
+1
+2 6 Gc
+1
+2 7 w
+1
+2G 8 z
+1
+*c
+1
+2 9 z
+1
+*w
+1
+2
+r = g* 2 ,r = V* 2 ,r = c 1 q0,r = m1q0,r = g* 2 ,r = V* 2 ,r = g* 3 ,r = V* 3 ,r = c 1 q0j* 2 z 1 * ,
+10 z 1 *c 1 2 11 z 1 *w 1 2 12 c 1 2 13 j 1 * 14 z* 2 c 1 2 15 z* 2 w 1 2 16 z* 2 c 1 2 17 z* 2 w 1 2 120 c 1 2j 1 *z* 2
+r = m2q0z 1 * ,r = K* ,r = c 1 2q0,r = m1c 1 2j 1 * ,r = m2c 1 2j 1 * .
+18 j
+1
+*z*
+2
+19 Kw 20 Kw1 21 Kw
+1
+3z
+1
+* 22 Kw
+1
+3z
+1
+*
+Now,takethefollowingassumptions
+¶G ¶G ¶G ¶G
+u = 1 - 2, u = 1 + 2, (56)
+1 3
+¶x ¶z ¶z ¶x
+whereΓ andΓ arepotentialfunctions.
+1 2
+Substituteequation(56)inequations(50)–(55)andcomparingthetermsassociatedwith ¶ onbothsidesof
+¶x
+allequations,weobtain
+¶2G
+(r + r)2G + r Y + r F - q = (1 - e22) 1, (57)
+1 2 1 4 5
+¶t2
+8
+Phys.Scr.99(2024)065232 SDasetal
+¶2G
+r 2G + r u = (1 - e22) 2, (58)
+2 2 3 2
+¶t2
+¶2u
+r 2u - r 2G - 2r u = (1 - e22) 2, (59)
+6 2 7 2 7 2 ¶t2
+¶2Y
+r 2Y - r Y + r 2F - r F - r 2G + r q = (1 - e22) , (60)
+8 9 10 11 12 1 13 ¶t2
+¶2F
+r 2Y - r Y + r 2F - r F - r 2G + r q = (1 - e22) , (61)
+14 15 16 17 120 1 18
+¶t2
+¶ ¶ ¶
+⎡ ⎛1 + W ⎞ + r ⎛1 + W ⎞⎤2q
+q 19 n
+⎣ ⎢¶t⎝ ¶t⎠ ⎝ ¶t⎠⎦ ⎥
+= ⎛ 1 + W ¶ + W Q 2 ¶2 ⎞⎡ ¶2q + r ¶2(2G 1 ) + r ¶2Y + r ¶2F ⎤. (62)
+⎝ ⎜ Q ¶t 2 ¶t2 ⎠ ⎟ ⎣ ⎢¶t2 20 ¶t2 21 ¶t2 22 ¶t2 ⎦ ⎥
+4.Solutionmethodology
+Examiningthepropagationofharmonicwavesinthex-direction.withtimedependencedenotedbyt,the
+solutionisassumedtobe
+(G, G, u , Y, F, q)(x, z, t) = (G˜, G˜ , u˜ , Y˜, F˜, q˜)exp[iw(qx + sz - t)], (63)
+1 2 2 1 2 2
+where,qistheslownessvector,(G˜, G˜ , u˜ , Y˜, F˜, q˜)areamplitudescorrespondingto(G, G, u , Y, F, q).
+1 2 2 1 2 2
+Inlightofequation(63),equations(57)–(62)aremodifiedas
+(A + A s2)G˜ + r Y˜ + r F˜ - q˜ = 0, (64)
+1 2 1 4 5
+(A + A s2)G˜ + r u˜ = 0, (65)
+3 4 2 3 2
+(A + A s2)G˜ + (A + A s2)u˜ = 0, (66)
+5 6 2 7 8 2
+(A + A s2)G˜ + (A + A s2)Y˜ + (A + A s2)F˜ + r q˜ = 0, (67)
+9 10 1 11 12 13 14 13
+(A + A s2)G˜ + (A + A s2)Y˜ + (A + A s2)F˜ + r q˜ = 0, (68)
+15 16 1 17 18 19 20 18
+(A + A s2)G˜ + A Y˜ + A F˜ + (A + A s2)q˜ = 0, (69)
+21 22 1 23 24 25 26
+whereA =ω2+ω4ε2q2−(r +r )ω2q2,A =ω4ε2−(r +r )ω2,A =ω2+ω4ε2q2−ω2r q2,
+1 1 2 2 1 2 3 2
+A =ω4ε2−r ω2,A =r ω2q2,A =r ω2,A =ω2+ω4ε2q2−r ω2q2−2r ,A =ω4ε2−r ω2,A =r ω2q2,
+4 2 5 7 6 7 7 6 7 8 6 9 12
+A =r ω2,A =ω2+ω4ε2q2−r q2ω2−r ,A =ω4ε2−r ω2,A =−r q2ω2−r ,A =–r ω2,
+10 12 11 8 9 12 8 13 10 11 14 10
+A =r q2ω2,A =r ω2,A =–r q2ω2−r ,A =–r ω2,A =ω2+ε2ω4q2−r q2ω2−r ,
+15 120 16 120 17 14 15 18 14 19 16 17
+A =ε2ω4−r ω2,A = r w4q2 - iW r w5q2 - W Q 2 r w6q2,A = r w4 - iW r w5 - W Q 2 r w6,
+20 16 21 20 Q 20 2 20 22 20 Q 20 2 20
+A = -w2r + iw3W r + W Q 2 w4r ,A = -w2r + iw3W r + W Q 2 w4r ,
+23 21 Q 21 21 24 22 Q 22 22
+2 2
+A = -w2 + iw3W + w4W Q 2 - iw3q2(1 - W iw) + r w2q2(1 - W iw),and
+25 Q q 19 n
+2
+A 26 =r 19 ω2(1−Ω ν ιω)−ιω3(1−Ω θ ιω).
+Solvingequations(65)and(66),wegetthefollowingcharacteristicequation
+(L s4+ L s2+ L )(G˜ , u˜ ) = 0. (70)
+1 2 3 2 2
+Bysimplifyingtheaboveequations(64),(67)–(69),weyieldthefollowingcharacteristicequation
+(L s8+ L s6+ L s4+ L s2+ L )(G˜, Y˜, F˜, q˜) = 0, (71)
+4 5 6 7 8 1
+whereL, for allj = 1, 8aredefinedinAppendix.
+j
+TheDurand-Kernermethod[63]appliedtoequations(70)and(71)yieldstwelvecomplexconjugateroot
+pairs.Toensuresolutionsrepresentingdecayingdisturbanceswithinthesemi-infinitemedium(z>0),weselect
+sixrootssatisfyingtheradiationcondition(Im(s ) < 0).Thesesixroots,denotedbys tos ,definetheslowness
+m 1 6
+vectors(q,s )form=1to6,characterizingthepropagationofsixdecayingwavemodesinthemicropolar
+m
+thermoelasticmaterialwithdoublevoids.
+Thefollowingexpressionrepresentstheformalsolutionfulfillingtheradiationrequirement
+2
+(G, u )(x, z, t) = å(1, N )E exp[iw(qx + s z - t)], (72)
+2 2 1m m m
+m=1
+9
+Phys.Scr.99(2024)065232 SDasetal
+6
+(G, Y, F, q)(x, z, t) = å(1, N , N , N )E exp[iw(qx + s z - t)], (73)
+1 2m 3m 4m m m
+m=3
+where
+A + A s2
+N = - 5 6 m, m = 1, 2
+1m A + A s2
+7 8 m
+P s4 + P s2 + P
+N = 1 m 2 m 3 , m = 3, 4, 5, 6
+2m Q s4 + Q s2 + Q
+1 m 2 m 3
+P s4 + P s2 + P
+N = 4 m 5 m 6 , m = 3, 4, 5, 6
+3m Q s4 + Q s2 + Q
+1 m 2 m 3
+P s4 + P s2 + P
+N = 7 m 8 m 9 , m = 3, 4, 5, 6
+4m Q s4 + Q s2 + Q
+1 m 2 m 3
+whereP, for allj = 1, 9andQ, for allj = 1, 3aredefinedinAppendix.
+j j
+Withtheaidofequations(72),(73)and(56),(41)–(48)transforminto
+6 2
+u (x, z, t) = iwqå E exp[iw(qx + s z - t)] - iwå s E exp[iw(qx + s z - t)], (74)
+1 m m m m m
+m=3 m=1
+6 2
+u (x, z, t) = iwå s E exp[iw(qx + s z - t)] + iwqå E exp[iw(qx + s z - t)], (75)
+3 m m m m m
+m=3 m=1
+6 E
+(¡ , ¡ )(x, z, t) = å(D , D ) m exp[iw(qx + s z - t)], (76)
+zz zx 1m 2m 1 + e2w2(s2 + q2) m
+m=1 m
+2 D E
+ (x, z, t) = å 3m m exp[iw(qx + s z - t)], (77)
+zy 1 + e2w2(s2 + q2) m
+m=1 m
+¶q 6 D E
+(x, z, t) = iwå 4m m exp[iw(qx + s z - t)], (78)
+¶z 1 + e2w2(s2 + q2) m
+m=3 m
+6 E
+(¡, W )(x, z, t) = å(D , D ) m exp[iw(qx + s z - t)], (79)
+z z 5m 6m 1 + e2w2(s2 + q2) m
+m=3 m
+where
+l
+D =w2qs (r - 1), m = 1, 2, r = ,
+1m m 01 01 c2
+1
+D =-w2(r q2 + s2) + r N + r N - N , m = 3, 4, 5, 6,
+1m 01 m 4 2m 5 3m 4m
+J
+D =w2(r s2 - r q2) - r N , m = 1, 2, r = ,
+2m 2 m 02 3 1m 02 c2
+1
+D =-w2qs (r + r ), m = 3, 4, 5, 6,
+2m m 2 02
+D =s N , m = 1, 2, D = s N , m = 3, 4, 5, 6,
+3m m 1m 4m m 4m
+g*
+D =s (g˜ N + N ), m = 3, 4, 5, 6, g˜ = 1 ,
+5m m 12 2m 3m 12 g*
+2
+g*
+D =s (g˜ N + N ), m = 3, 4, 5, 6, g˜ = 2.
+6m m 23 2m 3m 23 g*
+3
+5.Boundaryconditions
+Onthesurface(z=0)ofthenonlocalMTMWDV,weimposethefollowingboundaryconditions.
+5.1.Normalandtangentialstressesconditions
+¡ = 0, (80)
+zz
+¡ = 0. (81)
+zx
+10
+Phys.Scr.99(2024)065232 SDasetal
+5.2.Couplestresscondition
+ = 0. (82)
+zy
+5.3.Thermalcondition
+¶q
+= 0. (83)
+¶z
+5.4.Equilibratedstressesconditions
+¡ = 0, (84)
+z
+W = 0. (85)
+z
+6.Secularequation
+ThesecularequationforRayleighwavesinanonlocalMTMWDVisderivedbysolvingtheboundaryvalue
+problemformedbyequations(74)–(79)and(80)–(85).
+6
+å D E = 0, for allj = 1, 6. (86)
+jm m
+m=1
+Anon-trivialsolutionexistsonlywhenthedeterminantofthecoefficientmatrixinequation(86)vanishes,
+leadingtothecomplex-valuedsecularequationdet[D ] = 0fortheRayleighwave.TheNewton-Raphson
+6´6
+methodisemployedtofindtheroot(representedasc)ofthisequation.Thisrootdeterminesthephasevelocity,
+V,theangularfrequencydictatesthisdependency,thusconfirmingthedispersivebehaviorofRayleighwavesin
+thedouble-voidmicropolarthermoelasticmedium.Thecomplexnatureofc(withapositiveimaginary
+component)signifieswaveattenuation,indicatingadecayinwaveintensitywithincreasingdepth.Asshownby
+Kumaretal[64],VandamplituderatioQ −1oftheRayleighwavearedefinedas
+∣c2∣
+V = , (87)
+R(c)
+I(1 c2)
+Q-1= . (88)
+R(1 c2)
+7.Pathoftheparticles
+Inordertogaindeeperinsightsintoparticlemotionwithinanonlocalmicropolarthermoelasticmedium
+containingtwovoidtypes,weestablishthedisplacementformulasforRayleighwaves(representedbythewave
+speedc).Themathematicalrepresentationofthemechanicaldisplacementcomponentsforthecurrent
+investigationisgivenby
+6 2
+u (x, z, t)=iwqå E exp[iw(qx + s z - t)] - iwå s E exp[iw(qx + s z - t)],
+1 m m m m m
+m=3 m=1
+6 2
+u (x, z, t)=iwå s E exp[iw(qx + s z - t)] + iwqå E exp[iw(qx + s z - t)]. (89)
+3 m m m m m
+m=3 m=1
+Foraspecificqvalue,equation(89)yieldsthefollowingclosed-formexpressionsfortheactualdisplacements
+6 2
+U =R(u (x, z, t)) » R ⎛ iwqå exp[iw(qx + s z - t)] - iwå s exp[iw(qx + s z - t)] ⎞ ,
+1 1 ⎜ m m m ⎟
+⎝ m=3 m=1 ⎠
+6 2
+U =R(u (x, z, t)) » R ⎛ iwå s exp[iw(qx + s z - t)] + iwqå exp[iw(qx + s z - t)] ⎞ . (90)
+3 3 ⎜ m m m ⎟
+⎝ m=3 m=1 ⎠
+Equation(90)representsaparametriccurve,tracingthetrajectoryofaparticlelocatedat(x,z)overtimetasit
+undergoesmotionduetoaRayleighwavepropagatingwithinanonlocalMTMWDV.Whenthewavenumberq
+satisfiesq = cos(d) c(d)(wherecisthephasevelocitydependentonδ),equation(90)describeshowthe
+particle’sin-planedisplacement(U )andout-of-planedisplacement(U )dependonthewave’spropagation
+1 3
+direction.ThescalarquantityΛ,definedasthesquarerootof(U2+ U2),representstheparticle’smotion
+1 3
+amplitude(assuminganinitialamplitudeE =1).
+m
+11
+Phys.Scr.99(2024)065232 SDasetal
+8.Verificationofthepresentmodelagainstexistingmodels
+Tovalidatethepresentmathematicalmodel,wehavediscussedsomenoteworthycaseswhichareasfollows.
+8.1.CaseI
+Byeliminatingthecontributionsofnonlocality,couplestress,andphase-lagthroughsettingtheirparametersto
+zero(i.e.e =  = g = j = c = K*= W = W = W = G = 0),theconstitutiverelations(23)-(28),
+n q q
+equationsofmotion(33)-(36),heatconductionlaw(39)aremodifiedas
+¡
+ij
+= lu
+r,r
+d
+ij
++ J(u
+i,j
++ u
+j,i
+) + j
+1
+*Yd
+ij
++ j*
+2
+Fd
+ij
+- c
+1
+qd
+ij
+,⎫
+⎪
+¡ = g*Y + g*F ,
+i 1 ,i 2 ,i ⎪
+W = g*Y + g*F , ⎪
+i 2 ,i 3 ,i (91)
+v = -j*e - V*Y - V*F + m q, ⎬
+1 1 1 2 1 ⎪
+v 2 = -j* 2 e - V* 2 Y - V* 3 F + m 2 q, ⎪
+⎪
+h = c u + m Y + m F + aq,
+1 r,r 1 2 ⎭
+
+wheree =  · uandχ
+1
+=(3λ+2ϑ)γ θ.
+(l + J)( · u) + J2u + j
+1
+*Y + j*
+2
+F - c
+1
+q =u,̈⎫
+⎪
+g*Y + g*F - j*e - V*Y - V*F + m q = z*Ÿ, (92)
+1 ,ii 2 ,ii 1 1 2 1 1 ⎬
+g*Y + g*F - j*e - V*Y - V*F + m q = z*F̈, ⎪
+2 ,ii 3 ,ii 2 2 3 2 2 ⎭
+Q = -Kq. (93)
+i
+Equations(91),(92),and(93)representtheconstitutiverelations,governingequations,andheatconduction
+law,respectively,foralocal,isotropic,homogeneousdoubleporo-thermoelasticmediumwithintheframework
+ofclassicalcoupledthermoelasticitytheory.Theseequationscloselyalignwiththefundamentalequations
+presentedbyKumaretal[41].Employingasimilarsolutionmethodology,wearriveatthesecularequationfor
+Rayleighwavesderivedfromequation(86).OurresultsexhibitgoodagreementwiththoseofKumaretal[41],
+albeitwithsomemodificationstotheboundaryconditions.
+8.2.CaseII
+IncaseII,theanalysisexcludesthecomplexitiesofnonlocality,couplestress,andfractureporosity(i.e.
+e =  = g = j = c = K*= j*= g*= g*= V*= V*= z*= G = 0).Intheabsenceofaforementioned
+2 2 3 2 3 2
+parameters,theconstitutiverelations(23)-(28),equationsofmotion(33)-(36),heatconductionlaw(39)are
+givenby,respectively
+¡
+ij
+= lu
+r,r
+d
+ij
++ J(u
+i,j
++ u
+j,i
+) + j
+1
+*Yd
+ij
+- c
+1
+qd
+ij
+,⎫
+⎪
+¡ = g*Y
+i 1 ,i (94)
+v = -j*e - V*Y + m q, ⎬
+1 1 1 1 ⎪
+h = c u + m Y + aq.
+1 r,r 1 ⎭
+(l + J)( · u) + J2u + j
+1
+*Y - c
+1
+q =ü,⎫
+(95)
+g*Y - j*e - V*Y + m q = z*Ÿ. ⎬
+1 ,ii 1 1 1 1 ⎭
+W2
+Q + W Q + q Q̈ = -[W*q + W Kq + K*n]. (96)
+i q i i n q
+2
+Equations(94)to(96)(constitutiverelations,equationsofmotion,andheatconductionlaw)representa
+localthermoelasticmediumwithonevoidtypeunderTPLTE.Theseequationsalignwiththecoreprinciples
+establishedbyBiswas[58]forisotropicmaterials.
+8.3.CaseIII
+Byeliminatingtheparameterscorrespondingtononlocality,doubleporosity,andphase-lags(i.e.
+e = j*= j*= g*= g*= g*= V*= V*= V*= m = m = z*= z*= K*= W = W = 0),the
+1 2 1 2 3 1 2 3 1 2 1 2 n q
+constitutiverelations(23)-(28),equationsofmotion(33)-(36),heatconductionlaw(39)aremodifiedas
+¡ = lu d + (J + )u + Ju -  u - c qd ,
+ij r,r ij j,i i,j ijr r 1 ij ⎫
+ = gu d + ju + cu , (97)
+ij r,r ij i,j j,i
+⎬
+h = c u + aq.
+1 r,r ⎭
+12
+Phys.Scr.99(2024)065232 SDasetal
+(l + J)( · u) + (J + )2u +  ´ u - c
+1
+q =ü,
+⎫ (98)
+(g + j + c)( · u) - c ´ ( ´ u) +  ´ u - 2u =Gü.⎬
+⎭
+Q + W Q = -Kq. (99)
+i q i
+Equations(97)–(99)representthegoverningframework(includingheatconduction)foralocalmicropolar
+thermoelasticmediumunderLStheory.TheseequationsagreewithSinghandKashyap[59]whenthememory-
+dependentderivativeisexcluded.
+8.4.CaseIV
+Whentheparametersassociatedwithnonlocality,doubleporosity,andcouplestressaresettozero(i.e.
+e =  = g = j = c = j*= j*= g*= g*= g*= V*= V*= V*= m = m = G = z*= z*= 0),the
+1 2 1 2 3 1 2 3 1 2 1 2
+constitutiverelations(23)-(28),equationsofmotion(33)-(36),heatconductionlaw(39)reduceto
+¡ = lu d + (J + )u + Ju -  u - c qd ,
+ij r,r ij j,i i,j ijr r 1 ij ⎫ (100)
+h = c u + aq. ⎬
+1 r,r ⎭
+(l + J)( · u) + J2u - c q =u.̈ (101)
+1
+W2
+Q + W Q + q Q̈ = -[W*q + W Kq + K*n]. (102)
+i q i i n q
+2
+IncaseIV,equations(100)-(102)representthegoverningequationsoflocalthermoelasticmediumunder
+TPLTE,whichareidenticaltobasicequationsofBiswas[65]intheabsenceofmagneticeffectandanisotropy.
+9.Computationalsteps
+Thepriorsectionsestablishedmathematicalrelationshipsbetweenmicropolarproperties,thermoelasticity,void
+characteristics,nonlocality,andmaterialdensity.Theserelationsareinstrumentalforcomputingandanalyzing
+Rayleighwavepropagation.Thefollowingalgorithmoutlinesastep-by-stepproceduretodeterminekey
+parameterslikeV,Q
+−1,andparticlemotionforRayleighwavesinanonlocalmicropolarhalf-spacewithdouble
+voids.
+(cid:129) Weinitiatetheanalysisbyspecifyingthehorizontalslownessvalue,denotedbyq.Thisallowsustosolvethe
+characteristicequationsoffourthandeighthdegree,representedbyequations(70)and(71),respectively.
+UsingtheDurand-Kernermethod,wedeterminealltwelvecomplexsolutionsfors.Oursubsequentfocusis
+toselectthesixspecificsvaluesthatcorrespondtodecayingphases,identifiedbyapositiveimaginary
+component(Im(s) > 0).
+(cid:129) Thesystemofequations(70)and(71)isthensolvedforthesixslownessvectors(q,s )toobtaintheamplitude
+m
+ratios,N ,N ,N ,andN .
+1m 2m 3m 4m
+(cid:129) WenowconsiderthescenariowhereaRayleighwavepropagatesatanangle,denotedasδ,alongthemediums
+boundary.Wesubstitutetheq,withtheexpressioncos(d) c.Ourgoalistosolvefortheunknownvelocity,c.
+(cid:129) Byincorporatingtheamplituderatios(N ,N ,N ,andN )andtheslownessvalue(q = cosd)intothe
+1m 2m 3m 4m c
+non-trivialboundaryconditionsolution,weestablishacomplex-valuedfrequencyequationforc.
+(cid:129) Next,weemployaNewton-RaphsoniterativemethodtonumericallysolvefortheunknownRayleighwave
+velocity,c,usingequations(87)and(88).Subsequently,theseequationsallowustodeterminethewave’s
+phasevelocityandattenuationcoefficient.
+(cid:129) Tovisualizethetrajectoriesofsurfaceparticledisplacementsovertime,weemployequation(80)andutilize
+MATLABsoftware.Theresultingplotsdepictboththehorizontalandverticalcomponents,presentedinboth
+2Dand3Dformats.
+10.Numericalvaluesandgraphicaldiscussions
+ThealgorithmoutlinedintheprevioussectionoffersausefultoolforinvestigatingthecomplexitiesofRayleigh
+wavesonthesurfaceofanonlocalmicropolarthermoelasticmaterialenhancedwithtwotypesofvoids.Despite
+theseeminglyintricateandabstractnatureofthemathematicalexpressionsinvolved,thegoalistoofferamore
+comprehensivecomprehensionoftheseevents.Inordertodothis,theimpactsoftheheatconductionmodels
+andnonlocalityparameteronRayleighwavepropagationareinvestigatedthroughtheuseofanumerical
+13
+Phys.Scr.99(2024)065232 SDasetal
+Figure2.Variationsin(a)phasevelocityand(b)attenuationcoefficientwithrespecttofrequencyfordifferentvaluesofnonlocality
+parameter.
+Table1.Tabulatedmagnitudesofmaterialconstants.
+Notations Magnitudes Notations Magnitudes
+Λ 9.4×1010N ϑ 4×1010Nm−2
+m−2
+ 1010Nm−2 χ 0.779×10−9N
+Γ 0.2×10−19m2 ñ 1740kgm−3
+g* 1.3×10−5N g* 0.12×10−5N
+1 2
+g* 1.1×10−5N V* 8×109Nm−2
+3 1
+V* 8.1×106Nm−2 V* 8.2×109Nm−2
+2 3
+j* 0.9×1010N j* 0.1×1010N
+1 2
+m−2 m−2
+z* 0.1456×10−12 z* 0.1546×10−12
+1 2
+Nm−2s2 Nm−2s2
+m 0.16×105N m 0.219×105N
+1 2
+m−2K−1 m−2K−1
+γ θ 1.78×10−5K−1 θ 0 293K
+C 383.1Jkg−1K−1 K 2059.5Wm−1
+s
+K−1
+Ω ν 0.25s Ω q 0.2s
+Ω θ 0.15s
+example.Magnesiumcontinuumistheselectedmaterialinthecomputationalanalysis.Forthepurposeof
+graphicaldemonstration,thematerialconstantsvalues(table1)aretakenfromKhalili[66]andDeswaland
+Kalkal[67].Toachievevisualrepresentations,wehaveemployedspecificparametervalues,whicharelistedas
+ω=100, δ=60°, ε=3×10 −4, t=10, z=0.01.Infigures2(a)and(b),variationsinthephasevelocityand
+attenuationcoefficient,respectively,varywiththewavefrequencyω,respectively,showcasingtheeffectof
+nonlocalityparameteronRayleighwavepropagation.Infigures3(a)and(b),phasevelocityandattenuation
+coefficientsarecomparedseparatelywithωbasedonTPL,DPL,GN-III,andLSthermoelasticitytheories.Inall
+thefiguresfrom4(a)to6(b),particlemotionisinvestigatedfordifferentvaluesoftheconsideredparametersby
+plottingthedisplacementcomponentsU andU withrespecttotimet(for3Dgraphs)andU againstU (for
+1 3 1 3
+2Dgraphs).Figures4(a)–(f)portraytheeffectofthedepthparameter(z)onthepathoftheparticlemotion.The
+influencesofthenonlocalityparameterontheparticlemotionarevisualizedinfigures5(a)and(b).Theimpacts
+ofdifferentheatconductionmodelsonparticlemotionaredisplayedinfigures6(a)and(b).
+10.1.Impactofnonlocality(ε)onphasevelocity(V)andattenuationcoefficient(Q −1)
+Inthiscase,westudytheimpactofchangingεonbothVandQ −1withintheTPLheattransfermodelframework
+isexaminedinthissection.Forclearpresentation,figures2(a)and2(b)depicttheresultsgraphically.These
+figuresshowdistinctcurvescorrespondingtodifferentεvaluesforamicropolarthermoelasticmedium
+containingdoublevoids.Theinvestigationspecificallyhighlightsεvaluesof0,0.1,0.2,and0.3,depictedbyfour
+distinctsolidcolorlines.
+14
+Phys.Scr.99(2024)065232 SDasetal
+Figure3.Variationsin(a)phasevelocityand(b)attenuationcoefficientwithrespecttofrequencyfordifferentheatconduction
+models.
+Figure4.(a)-(f)Pathoftheparticlemotion(U,U)withrespecttotimetfordepth(z)values.
+1 3
+15
+Phys.Scr.99(2024)065232 SDasetal
+Figure5.(a)Three-dimensionaland(b)two-dimensionalrepresentationsofvariationinpathoftheparticlemotion(U,U)with
+respecttotimetfordifferentnonlocalityparameter(ε)valuesof0,2×10−4,4×10−4,and6×10−4. 1 3
+Figure6.(a)Three-dimensionaland(b)two-dimensionalrepresentationsofvariationinpathoftheparticlemotion(U,U)with
+1 3
+respecttotimetfordifferentheatconductionmodels.
+Figure2(a)exposesanintriguingcorrelationbetweentheεvalueandtheV.Significantly,astheεvalue
+escalates,thereisamarkedaugmentationinV,especiallynoticeableathigherfrequencies.Thisintriguing
+patternislikelyattributedtothenonlocalparameter’sinfluenceonparticleinteractionwithinthematerial.This
+adjustedinteractionmayleadtoafirmermedium,enablingfasterwavepropagation(higherphasevelocity).
+Notably,theTPLmodelwithoutnonlocality(εsettozero)deviatesfromthistrend.Here,theVexhibitsaslight
+declineasωincreases,inlinewithtraditionalmodels.
+Infigure2(b),thesubstantialinfluenceofεontheattenuationcoefficientishighlighted.Withanincreasein
+theεvalue,thereisanoticeabledecreaseinthemagnitudeoftheQ −1,particularlyprominentatlower
+frequencies.Thispatterncanbeelucidatedbyconsideringhownonlocalparametersaffectinternalinteractions
+withinthematerial.Theseinteractionsmayfacilitateamoreefficienttransferofwaveenergy,resultingin
+diminishedattenuation.Remarkably,thisimpactismorenoticeablewhencomparedtothelocalTPLmodel
+(ε=0).Thelocalmodelexhibitsastrongerattenuationeffect,emphasizingtheimportanceofnonlocal
+parametersinunderstandingwavebehaviorinthiscomplexmaterial.Thisobservationprovidesuseful
+perspectivesonintothepropagationandattenuationofRayleighwavesinmicropolarthermoelasticmediawith
+doublevoids.
+Therecognitionofthisphenomenonemphasizesthecrucialfunctionofnonlocalinfluencesingoverning
+themodulationofRayleighwavesinmicropolarthermoelasticmediumcharacterizedbydoublevoids.Such
+materialsofferprospectsforapplicationsdemandingmeticulouscontroloverwavecharacteristics,suchas
+advancedthermalinsulationorinnovativeacousticmetamaterials.Researchersmaytailorthesematerialsto
+attaindesiredfunctionalitiesthroughpreciseadjustmentofthenonlocalparameter.
+16
+Phys.Scr.99(2024)065232 SDasetal
+10.2.Impactofdifferentheatconductionmodelsonphasevelocity(V)andattenuationcoefficient(Q −1)
+Inthissection,weanalyzetheeffectsofvariousnonlocalheatconductionmodelsonVandQ
+−1inmicropolar
+thermoelasticmaterialswithdoublevoids.Figures3(a)and3(b)areutilizedtoclearlypresentourfindings,
+comparingthephasevelocityandattenuationcoefficientacrossfourdifferentheatconductionmodels:TPL,
+DPL,LS,andGN-III.
+Figure3(a)showcasesthevariationbetweenthefrequencyandphasevelocityinthemicropolar
+thermoelasticmediumwithdoublevoids.Aslightincreaseinphasevelocityisobservedwithincreasing
+frequency.Thisphenomenoncanbeascribedtofactorslikematerialdispersionandresonantbehavior.
+Nevertheless,thispatternissucceededbyapersistentandmorenotableincreaseinphasevelocity.Notably,the
+GN-IIImodelexhibitsthehighestphasevelocitythroughouttheentirefrequencyrangecomparedtotheother
+models(TPL,DPL,LS).Thisisfurtheremphasizedbytheinsetfigure,whichhighlightstheminimalimpactof
+frequencyonphasevelocityfortheothermodels.
+Figure3(b)revealsafascinatinginterplaybetweenfrequency,attenuationcoefficient,andtheemployedheat
+conductionmodels.Asfrequencyincreases,thereisanotabledeclineintheattenuationcoefficientacrossall
+models.Thisfindingalignswiththewell-knowncharacteristicofRayleighwaves:asfrequenciesincrease,the
+waveexperienceslessenergyattenuationduringpropagation.However,theLSmodelexhibitsastronger
+attenuationeffectcomparedtoTPL,DPL,andGN-IIImodels,particularlyatlowerfrequencies.Thissuggests
+thattheLSmodelmightintroduceadditionalenergydissipationmechanismsatlowerfrequencies.
+Comprehendingthecomplexrelationshipamongfrequency,phasevelocity,attenuationcoefficient,and
+differentheatconductionmodelsholdsparamountimportanceinmanipulatingRayleighwaveswithin
+micropolarthermoelasticmaterialsfeaturingdoublevoids.Byharnessingthisknowledge,engineerscandesign
+andoptimizedevicesandsystemsthatleveragepreciselycontrolledRayleighwaves.Thisincludesadvanced
+signaltransmissiontechnologiesandhigh-sensitivitysensors,wheremeticulousmodulationofphasevelocity
+andattenuationisessential.
+10.3.Impactofdepthonparticlemotion
+Thiscomprehensiveanalysisutilizessixdistinctfigures(figures4(a)through4(f))toexplorethenonlocalTPL
+heattransfermodel,incorporatingvaluesofz=0.01,0.013333,0.016667,and0.02.Thefirstfourfigures(4)a)-
+4(d))meticulouslyinvestigatetheinfluenceofvaryingdepthonRayleighwaveparticlemotion.Westrategically
+selectedfourshallowdepthsthatdividethe0.01to0.02depthrangeintoequalportionstoachievehigh
+precision.Withthismeticulousapproach,particlemotionvariationscanbeexaminedinexceptionaldetail,even
+forverysmalldepthchanges.Figure4(e)servesastheculminationoftheanalysis.Itcombinesfigures4(a)-4(d)
+resultsintoasingle,comprehensive3Dplot.Thisvisualizationeffectivelyportraystheparticlemotiondynamics
+atvariousdepthsforbothverticalandhorizontalcomponents(U andU ),unfoldingcontinuouslythrough
+1 3
+time.Ontheotherhand,figure4(f)providesa2Dview.Integratingdatafromtheinitialfourfiguresallowsfora
+moretargetedanalysisofnuancedvariationsinparticlemotionwithdepth.
+Figures4(a)through4(d)revealfascinatinginsightsintoparticlemotiondynamicswithinRayleighwavesat
+differentdepths.Eachplotshowcasesamesmerizingphenomenon:particlestraceanellipticalpaththatspirals
+overtime,encompassingbothverticalandhorizontalmotion.Thisbehavioralignswiththewell-established
+propertyofRayleighwavestoinducesimultaneoushorizontalandverticalvibrations[68,69].Intriguingly,the
+spiralingellipticalmotionremainsconsistentoverall,butacloserlookrevealssubtlevariationsintheintensityof
+U andU .Thisvariationsuggeststhatthestrengthofparticlemotionisn’tuniform;itchangesasthewave
+1 3
+travelsthroughdifferentdepths.Figure4(e)reinforcesthisconceptbydepictingdistinctparticlepathsatvarying
+depths,visuallyemphasizingthedepth-dependenceofRayleighwaves.Figure4(f)complementsthis
+understandingwitha2Dperspective.Itrevealsthatasthewavetravelsclosertothesurface(shallowerdepths),
+bothU andU becomemorepronounced.Thistranslatestoalargerellipse,withboththemajorandminoraxes
+1 3
+expanding.Thisdepth-dependentcomplexityunderscoresthedynamicnatureofRayleighwavepropagation,
+consistentwithGuptaetal[70].
+TheanalysisrevealsaremarkabledependenceofRayleighwavepropertiesondepthwithinmicropolar
+thermoelasticmedia.Figures4(a)to4(f)meticulouslyanalyzethesedepth-relatedphenomena,crucialfor
+understandingwavepropagationinthiscomplexmaterial.Theobservedbehaviorrevealshowthewave
+propagationisprofoundlyaffectedbytheinterplaywiththeinherentpropertiesofthemicropolarthermoelastic
+medium.Theintricatespiralingellipticaltrajectoryofparticlemotionanditssubtlevariationswithdepthshed
+lightonthefascinatingdynamicsofRayleighwavepropagationastheytravelthroughthismaterial.
+Understandingthesedepth-dependentcharacteristicsholdssignificantpracticalimplicationsforvariousfields,
+especiallyearthquakeengineering.AccuratedescriptionofRayleighwavesinmicropolarthermoelasticmediais
+criticalforassessingseismichazards.Thisknowledgecancontributetodevelopingsaferinfrastructuresand
+communitiesbyaidinginthedesignofearthquake-resistantbuildingsandmitigationstrategies.
+17
+Phys.Scr.99(2024)065232 SDasetal
+10.4.Impactofnonlocalityonparticlemotion
+Thissectioninvestigatesthecrucialroleofnonlocalmaterialpropertiesingoverningthesurfaceparticlemotion
+ofRayleighwavespropagatingthroughamicropolarthermoelasticmediumincorporatingdoubleporosity.We
+leveragethenonlocalTPLheattransfermodelforthisinvestigation.Toensurepreciseanalysis,wemeticulously
+examinefourdistinctnonlocalvalues:0,0.0002,0.0004,and0.0006.Weemployacombinationof3Dand2D
+plots(figures5(a)and5(b))tocommunicateourfindingseffectively.Figure5(a)offersacomprehensive3D
+visualizationofparticlemotion,showcasingtheintricateellipticalspiraltrajectoriesacrossaspectrumoflocal
+andnonlocalparametervalues.
+Thekeyfindingisthatimplementingthenonlocalthermoelasticmodel,comparedtothelocalmodel,leads
+toadecreaseintheamplificationofboththeverticalandhorizontalcomponentsofparticlemotion.This
+observeddecreasecanbeattributedtothenonlocalmodel’sinfluenceontheinternalinteractionswithinthe
+material.Thisanalysissuggeststhattheseinteractionsmayinvolveamoreintricateinterplaybetweenparticles,
+potentiallyleadingtoadissipationofwaveenergy,manifestingasadampeningeffectontheoverall
+displacementamplitude.Bymanipulatingthenonlocalparameter,engineerscouldpotentiallytailorthese
+devicestoachievespecificfunctionalities,suchascontrollingthepropagationandattenuationofsurfacewaves.
+10.5.Impactofdifferentheatconductionmodelsonparticlemotion
+ThissectiondivesintoacomparativeanalysisofsurfaceparticlemotioninducedbyRayleighwavepropagation.
+Toachievethis,3Dand2Dplots(figures6(a)and(b)respectively)aregeneratedwithintheframeworkoffour
+heattransfermodels:TPL,DPL,LS,andGN-IIIforz=0.01andε=3×10 −4.
+Figure6(a)presentsa3Dvisualizationofparticlemotion,highlightingthecharacteristicellipticalspiral
+trajectoriesforeachheattransfermodel.Theseelegantpathwaysdepictthecombinedhorizontalandvertical
+movementofparticles.Figure6(b)offersacomplementary2Dview,providingadetaileddescriptionofthis
+motion.Notably,theGN-IIImodelexhibitsthelargestmagnitudesforboththeverticalandhorizontal
+componentsofsurfaceparticlemotion.Interestingly,thetrajectoriesassociatedwiththeotherthreemodels
+(TPL,DPL,andLS)showminimalvariationsacrossasignificantportionofthedomain.However,withinavery
+smallregion,theDPLmodelexhibitsthelowestvaluesforboththeverticalandhorizontalsurfaceparticle
+motion.
+Understandingthesevariationsinparticlemotionacrossdifferentheattransfermodelsholdssignificance
+forvariousapplications.Bycarefullyselectingasuitableheattransfermodelandmanipulatingthenonlocal
+parameter,researcherscanpotentiallydesignmaterialsthatoptimizewavepropagationcharacteristicsfor
+specificpurposes.Forinstance,materialswithminimalparticlemotion(liketheDPLmodelinaspecificregion)
+couldbedesirableforapplicationsrequiringwaveattenuation.
+11.Conclusions
+ThisstudypresentsacomprehensiveinvestigationofRayleighwavepropagationinanonlocalmicropolar
+thermoelasticmaterialwithdoublevoids.WeemploytheTPLmodelandleverageeigenmodeanalysisto
+meticulouslysolvethegoverningequations.Ourprimaryfocusistoelucidatetheimpactofvariousfactorson
+crucialwavecharacteristicsphasevelocity,attenuationcoefficient,andsurfaceparticlemotion.Thesefactors
+includethechoiceofheatconductionmodel,nonlocalparameter,andwavepropagationdepth.A
+comprehensiveanalysisoffigures2through8unveilsseveralkeyfindingsthatwillbesubsequentlydiscussed:
+(cid:129) Favorableimpactofvariousheatconductionmodelsontheattenuationcoefficientandphasevelocityare
+observed.
+(cid:129) Theincorporationofsize-dependentelasticitytheory(nonlocalelsticitytheory)intotheanalysisinfluences
+phasevelocitymoresignificantlythanattenuationofRayleighwaves.
+(cid:129) Thisanalysisrevealsapronounceddepth-dependenceinRayleighwaveparticlemotion.Specifically,a
+significantdecreaseinthemagnitudesofbothverticalandhorizontaldisplacementcomponentsisobserved
+asthewavepropagatestowardsshallowerdepths.Moreover,thedistancesbetweentheconsecutiveelliptical
+spiralpathwaysimplicateasignificanteffectofdepthontheparticlemotion.
+(cid:129) VariousheatconductionmodelsexhibitfavorableeffectontheparticlemotionasRayleighwavepropagates.
+Specifically,theinfluencesofGN-IIImodelandtheotherthreeheatconductionmodelsaresignificantly
+noticeable,whereastheellipticaltrajectoriesofLS,DPL,andTPLmodelsdonothaveanyconsiderable
+differenceswithinalargedomain.
+18
+Phys.Scr.99(2024)065232 SDasetal
+(cid:129) NonlocalmaterialpropertiessignificantlyimpactparticlemotionwithinRayleighwaves.Theseeffectsdistort
+theparticles’characteristicellipticalpath.Decreasingthenonlocalparametersignificantlyincreasesboth
+horizontalandverticalwavedisplacements.Additionally,thespacingbetweenconsecutiveellipticalspirals
+suggestsastronginfluenceofnonlocalityontheoverallparticlemotionpattern.
+Acknowledgments
+TheauthorswouldliketoexpresstheirgratitudeandacknowledgeAmritaVishwaVidyapeetham,Indira
+GandhiUniversity,DayanandaSagarUniversity,SisterNiveditaUniversity,Indiaand‘Ovidius’Universityof
+Constanta,Romaniaforprovidingthenecessaryfacilitiestocarryoutthisresearchwork.
+Dataavailabilitystatement
+Alldatathatsupportthefindingsofthisstudyareincludedwithinthearticle(andanysupplementaryfiles).
+Funding
+Thisresearchreceivednospecificgrantfromanyfundingagencyinthepublic,commercial,ornot-for-profit
+sectors.
+Declarationofconflictinginterests
+Onbehalfofallauthors,thecorrespondingauthorstatesthatthereisnoconflictofinterest.
+Appendix
+L = A A , L = A A - A r + A A , L = -A r + A A , L = L = A A (A A - A A ),
+1 4 8 2 3 8 6 3 4 7 3 5 3 3 7 4 4 2 26 12 20 14 18
+L = A [A (A - A A + AA A - AA A ) + A (A A + A A A + A A
+5 12 20 22 18 22 1 20 26 1 18 26 2 11 20 12 19 26 20 25
+-A A A - A (A A + A A )) + A A A r - A A A r - A A A r
+13 18 26 14 17 26 18 25 10 18 26 5 12 16 26 5 10 20 26 4
++A A A r)],
+14 16 26 4
+L = A A A - A A A - A A A + A A A + A A A + A A A - A A A
+6 10 18 24 12 16 24 10 20 23 11 20 22 12 19 22 12 20 21 13 18 22
++A A A - A A A - A A A + AA A A + AA A A + AA A A
+14 16 23 14 17 22 14 18 21 1 11 20 26 1 12 19 26 1 12 20 25
+-AA A A - AA A A - AA A A + A A A A + A A A A
+1 13 18 26 1 14 17 26 1 14 18 25 2 11 19 26 2 11 20 25
++A A A A - A A A A - A A A A - A A A A - A A A r
+2 12 19 25 2 13 17 26 2 13 18 25 2 14 17 25 2 12 24 18
++A A A r + A A A r - A A A r + A A A r + A A A r + A A A r
+2 14 23 18 2 18 24 13 2 20 23 13 9 18 26 5 10 17 26 5 10 18 25 5
+-A A A r - A A A r - A A A r - A A A r - A A A r - A A A r
+11 16 26 5 12 15 26 5 12 16 25 5 9 20 26 4 10 19 26 4 10 20 25 4
++A A A r + A A A r + A A A r + A A r r - A A r r - A A r r
+13 16 26 4 14 15 26 4 14 16 25 4 12 22 5 18 14 22 4 18 18 22 5 13
++A A r r ,
+20 22 4 13
+L = A A A + A A A - A A A - A A A - A A A - A A A + A A A
+7 9 18 24 10 17 24 11 16 24 12 15 24 9 20 23 10 19 23 11 19 22
++A A A + A A A + A A A - A A A - A A A + A A A
+11 20 21 12 19 21 13 16 23 13 17 22 13 18 21 14 15 23
+-A A A + AA A A + AA A A + AA A A - AA A A
+14 17 21 1 11 19 26 1 11 20 25 1 12 19 25 1 13 17 26
+-AA A A - AA A A + A A A A - A A A A - AA A r
+1 13 18 25 1 14 17 25 2 11 19 25 2 13 17 25 1 12 24 18
+-A A A r + AA A r + AA A r + A A A r + A A A r
+2 11 24 18 1 14 23 18 1 18 24 13 2 13 23 18 2 17 24 13
+-AA A r - A A A r + A A A r + A A A r + A A A r - A A A r
+1 20 23 13 2 19 23 13 9 17 26 5 9 18 25 5 10 17 25 5 11 15 26 5
+-A A A r - A A A r - A A A r - A A A r - A A A r + A A A r
+11 16 25 5 12 15 25 5 9 19 26 4 9 20 25 4 10 19 25 4 13 15 26 4
++A A A r + A A A r - A A r r + A A r r + A A r r + A A r r
+13 16 25 4 14 15 25 4 10 23 5 18 10 24 4 18 11 22 5 18 12 21 5 18
+-A A r r - A A r r + A A r r - A A r r - A A r r - A A r r
+13 22 4 18 14 21 4 18 16 23 5 13 16 24 4 13 17 22 5 13 18 21 5 13
++A A r r + A A r r ,
+19 22 4 13 20 21 4 13
+L = A A17A - A A A - A A A + A A A + A A A - A A A
+8 9 24 11 15 24 9 19 23 11 19 21 13 15 23 13 17 21
++AA A A - AA A A - AA A r + AA A r + AA A r
+1 11 19 25 1 13 17 25 1 11 24 18 1 13 23 18 1 17 24 13
+-AA A r + A A A r - A A A r - A A A r + A A A r - A A r r
+1 19 23 13 9 17 25 5 11 15 25 5 9 19 25 4 13 15 25 4 9 23 5 18
++A A r r + A A r r - A A r r + A A r r - A A r r - A A r r
+9 24 4 18 11 21 5 18 13 21 4 18 15 23 5 13 15 24 4 13 17 21 5 13
++A A r r .
+19 21 4 13
+19
+Phys.Scr.99(2024)065232 SDasetal
+P = A A - A A - A A r + A A r , P = A A + A A - A A - A A
+1 14 16 10 20 2 20 13 14 2 18 2 14 15 13 16 10 19 20 9
+-A A r - AA r + AA r + A A r + A r r - A r r, P = A A - A A
+19 2 13 1 20 13 1 14 18 13 2 18 16 13 5 10 18 5 3 13 15 19 9
+-AA r + AA r + A r r - A r r, P = -A A + A A - A A r + A A r ,
+1 19 13 1 13 18 15 13 5 9 18 5 4 12 16 10 18 18 2 13 12 2 18
+P = -A A - A A + A A + A A - AA r - A A r + AA r + A A r
+5 12 15 11 16 10 17 18 9 1 18 13 17 2 13 1 12 18 11 2 18
+-A r r + A r r, P = -A A + A A - AA r + AA r - A r r + A r r,
+16 13 4 10 18 4 6 11 15 17 9 1 17 13 1 1118 15 13 4 9 18 4
+P = -AA A - A A A - A A A + A A A + AA A + A A A + A A r
+7 1 14 18 14 17 2 13 18 2 12 19 2 1 12 20 11 2 20 14 16 4
+-A A r - A A r + A A r, P = -AA A - AA A + AA A - A A A
+10 20 4 12 16 5 10 18 5 8 1 14 17 1 13 18 1 12 19 13 17 2
++A A A + AA A + A A r + A A r - A A r - A A r - A A r - A A r
+11 19 2 1 11 20 14 15 4 13 16 4 10 19 4 20 9 4 12 15 5 11 16 5
++A A r + A A r, P = -AA A + AA A + A A r - A A r - A A r
+10 17 5 18 9 5 9 1 13 17 1 11 19 13 15 4 19 9 4 11 15 5
++A A r, Q = A A - A A , Q = A A + A A - A A - A A + A r r
+17 9 5 1 12 20 14 18 2 11 20 12 19 13 18 14 17 12 5 18
+-A r r - A r r + A r r , Q = A A - A A + A r r - A r r - A r r + A r r .
+14 4 18 18 5 13 20 4 13 3 11 19 13 17 11 5 18 13 4 18 17 5 13 19 4 13
+ORCIDiDs
+SoumikDas https://orcid.org/0000-0002-7946-0637
+RachaitaDutta https://orcid.org/0000-0002-3906-4365
+AbhikSur https://orcid.org/0000-0001-6326-6429
+VipinGupta https://orcid.org/0000-0002-5238-1963
+References
+[1] RayleighL1885OnwavespropagatedalongtheplanesurfaceofanelasticsolidProceedingsoftheLondonmathematicalSociety14–11
+[2] PressFandHealyJ1957Absorptionofrayleighwavesinlow-lossmediaJ.Appl.Phys.281323–5
+[3] McGarrAandAlsopL1967TransmissionandreflectionofrayleighwavesatverticalboundariesJ.Geophys.Res.722169–80
+[4] AsfarORandHawwaMA1995FilteringofrayleighsurfacewavesbymeansofperiodiccorrugationsJ.Vib.Control15–14
+[5] OttosenNS,RistinmaaMandLjungC2000Rayleighwavesobtainedbytheindeterminatecouple-stresstheoryEuropeanJournalof
+Mechanics-A/Solids19929–47
+[6] SharmaJ2005Someconsiderationsontherayleigh-lambwavepropagationinvisco-thermoelasticplatesJ.Vib.Control111311–35
+[7] QiL2019Rayleighwavepropagationinsemi-infiniteflexoelectricdielectricsPhys.Scr.94065803
+[8] NuruddeenRI,NawazRandZiaQZ2020Investigatingtheviscousdampingeffectsonthepropagationofrayleighwavesinathree-
+layeredinhomogeneousplatePhys.Scr.95065224
+[9] MirpariziM,ZhangCandAmiriMJ2022One-dimensionalelectro-magneto-poro-thermoelasticwavepropagationinafunctionally
+gradedmediumwithenergydissipationPhys.Scr.97045203
+[10] GuptaV,BarakMandAhmadH2023Reflectionofquasiplasmawaveinphoto-piezosemiconductormediumwithdistincthigher
+orderfractionalderivativetwotemperaturemodelsPhys.Scr.99025515
+[11] SaeedTetal2024RayleighwavethroughhalfspacesemiconductorsolidwithtemperaturedependentpropertiesPhys.Scr.99025208
+[12] BiotMA1956ThermoelasticityandirreversiblethermodynamicsJ.Appl.Phys.27240–53
+[13] LordHWandShulmanY1967AgeneralizeddynamicaltheoryofthermoelasticityJ.Mech.Phys.Solids15299–309
+[14] GreenAEandLindsayK1972ThermoelasticityJ.Elast.21–7
+[15] GreenAEandNaghdiP1991Are-examinationofthebasicpostulatesofthermomechanics.ProceedingsoftheRoyalSocietyof
+LondonSeriesAMathematicalandPhysicalSciences432171–94
+[16] GreenAandNaghdiP1992OnundampedheatwavesinanelasticsolidJ.Therm.Stresses15253–64
+[17] GreenAandNaghdiP1993ThermoelasticitywithoutenergydissipationJ.Elast.31189–208
+[18] TzouDY1995Aunifiedfieldapproachforheatconductionfrommacro-tomicro-scalesJournalofHeatTransfer1178–16
+[19] ChoudhuriSR2007Onathermoelasticthree-phase-lagmodelJ.Therm.Stresses30231–8
+[20] BiswasS2021Rayleighwavesinamagneto-thermoelasticanisotropichalf-spaceJ.Therm.Stresses44197–213
+[21] BiswasMandSahuSA2023Surfacewavedispersioninimperfectlybondedflexoelectric-piezoelectric/fgpmbi-compositeincontact
+ofnewtonianliquidMech.Adv.Mater.Struct.302995–3012
+[22] KaurIetal2022Transverselyisotropicvisco-thermo-elasticnanobeamwithtimeharmoniclaserpulseandnewmodifiedthreephase
+laggreen-nagdhimodelZAMM-JournalofAppliedMathematicsandMechanics/ZeitschriftfürAngewandteMathematikundMechanik
+102e202100263
+[23] SinghK,KaurIandCraciunEM2023Hygro-photo-thermoelasticsolidcylinderundermoistureandthermaldiffusivitywithmoore-
+gibson-thompsontheoryDiscoverMechanicalEngineering221
+[24] ZarubinV,SavelyevaIYandSergeevaE2019Estimatesforthethermoelasticpropertiesofacompositewithellipsoidalanisotropic
+inclusionsMech.Compos.Mater.55513–24
+[25] AbbaspourFandArvinH2022Afreevibrationanalysisoflaminatedmicroplatesreinforcedbygrapheneplateletsintegratedwith
+piezoelectricfacesheets,restingonanelasticfoundation,andsubjectedtothermoelectricalloadsMech.Compos.Mater.58435–50
+[26] GuptaVetal2023Energyanalysisattheinterfaceofpiezo/thermoelastichalfspacesInt.J.Numer.MethodsHeatFluidFlow332250–77
+[27] GuptaV,BarakMandDasS2023Vibrationalanalysisofsize-dependentthermo-piezo-photo-electricsemiconductormediumunder
+memory-dependentmoore-gibson-thompsonphoto-thermoelasticitytheoryMech.Adv.Mater.Struct.1–17
+[28] EringenACandEdelenD1972OnnonlocalelasticityInt.J.Eng.Sci.10233–48
+[29] EringenAC1974TheoryofnonlocalthermoelasticityInt.J.Eng.Sci.121063–77
+[30] EringenA1974MemorydependentnonlocalelasticsolidsLettersinAppliedandEngineeringSciences2145–59
+[31] Anonlocalfourierʼslawanditsapplicationtotheheatconductionofone-dimensionalandtwo-dimensionalthermallattices.Comptes
+RendusM?nique.2016;344:388–401
+[32] BachherMandSarkarN2019NonlocaltheoryofthermoelasticmaterialswithvoidsandfractionalderivativeheattransferWaves
+RandomComplexMedium29595–613
+20
+Phys.Scr.99(2024)065232 SDasetal
+[33] SurA,MondalSandKanoriaM2022EffectofnonlocalityinthevibrationofamicroscaleribbonduetolaserpulseWavesRandom
+ComplexMedium322751–75
+[34] SurA2024Thermo-hydro-mechanicalnonlocalresponseonporousdeep-seasedimentsundervibrationofminingvehicle
+InternationalJournalofComputationalMaterialsScience&Engineering133
+[35] CowinSCandNunziatoJW1983LinearelasticmaterialswithvoidsJ.Elast.13125–47
+[36] NunziatoJWandCowinSC1979AnonlineartheoryofelasticmaterialswithvoidsArch.Ration.Mech.Anal.72175–201
+[37] IeşanD1986AtheoryofthermoelasticmaterialswithvoidsActaMech.6067–89
+[38] BarenblattGI,ZheltovIPandKochinaI1960Basicconceptsinthetheoryofseepageofhomogeneousliquidsinfissuredrocks[strata]
+J.Appl.Math.Mech.241286–303
+[39] Elasticwavepropagationandattenuationinadouble-porositydual-permeabilitymedium.InternationalJournalofRockMechanics
+andMiningSciences.2000;37:63–78
+[40] IeşanDandQuintanillaR2014OnatheoryofthermoelasticmaterialswithadoubleporositystructureJ.Therm.Stresses371017–36
+[41] KumarR,VohraRandAbo-DahabS2018RayleighwavesinthermoelasticmediumwithdoubleporosityMojCivilEng4143–8
+[42] GuptaS,DasSandDuttaR2023Peltierandseebeckeffectsonanonlocalcouplestressdoubleporousthermoelasticdiffusivematerial
+undermemory-dependentmoore-gibson-thompsontheoryMech.Adv.Mater.Struct.30449–72
+[43] GuptaS,DuttaRandDasS2023Memoryresponseinanonlocalmicropolardoubleporousthermoelasticmediumwithvariable
+conductivityundermoore-gibson-thompsonthermoelasticitytheoryJournalofOceanEngineeringandScience8263–77
+[44] GuptaSetal2023Doubleporo-magneto-thermoelasticmodelwithmicrotemperaturesandinitialstressundermemory-dependent
+heattransferJ.Therm.Stresses46743–74
+[45] DuttaRetal2023Nonlocalfiber-reinforceddoubleporousmaterialstructureunderfractional-orderheatandmasstransferInt.J.
+Numer.MethodsHeatFluidFlow333608–41
+[46] MahatoCSandBiswasS2023Statespaceapproachtostudythermalshockprobleminnonlocalthermoelasticmediumwithdouble
+porosityJ.Therm.Stresses46415–43
+[47] DuttaRetal2024Nonlocaleffectonshearwavepropagationinafiber-reinforcedporoelasticlayeredstructuresubjectedtointerfacial
+impulsivedisturbanceSoilDyn.EarthquakeEng.176108307
+[48] EringenAC1966LineartheoryofmicropolarelasticityJournalofMathematicsandMechanics5909–23
+[49] NowackiW1966Couple-stressesinthetheoryofthermoelasticityiIn:IrreversibleAspectsofContinuumMechanicsandTransferof
+PhysicalCharacteristicsinMovingFluids:SymposiaVienna,June22-28(Springer)259–78
+[50] NowackiW1966Couple-stressesinthetheoryofthermoelasticityiiIn:IrreversibleAspectsofContinuumMechanicsandTransferof
+PhysicalCharacteristicsinMovingFluids:SymposiaVienna,June22-28(Springer)259–78
+[51] NowackiW1968Couple-stressesinthetheoryofthermoelasticityiiIn:IrreversibleAspectsofContinuumMechanicsandTransferof
+PhysicalCharacteristicsinMovingFluids:SymposiaVienna,June22-28(Springer)259–78
+[52] EringenAC1966AunifiedtheoryofthermomechanicalmaterialsInt.J.Eng.Sci.4179–202
+[53] BoschiEandIeşanD1973AgeneralizedtheoryoflinearmicropolarthermoelasticityMeccanica8154–7
+[54] DhaliwalRSandSinghA1987Micropolarthermoelasticity.ThermalStressesIIedRBHetnarski(Elsevier)
+[55] BiswasS2019Fundamentalsolutionofsteadyoscillationsforporousmaterialswithdual-phase-lagmodelinmicropolar
+thermoelasticityMech.BasedDes.Struct.Mach.47430–52
+[56] SaidSM2023Astudyontheframeofamemory-dependentderivativeinamicropolarthermoelasticmediumundertheeffectofthe
+variablethermalconductivityMech.BasedDes.Struct.Mach.51665–81
+[57] KumarS,KumarRandPartapG2023Wavemotioninhomogeneousisotropicmicropolarporousthermoelasticplateundermemory-
+dependentlord-shulmanandgreen-lindsaytheoriesJ.Therm.Stresses461084–102
+[58] BiswasS2021RayleighwavesinporousorthotropicmediumwithphaselagsStruct.Eng.Mech.80265–74
+[59] SinghKandKashyapM2023MemoryeffectsonrayleighwavespropagationinamicropolarthermoelastichalfspaceMech.Solids58
+1228–38
+[60] PassarellaF1996SomeresultsinmicropolarthermoelasticityMech.Res.Commun.23349–57
+[61] EringenACandWegnerJ2003NonlocalcontinuumfieldtheoriesApplMechRev.56B20–2
+[62] EringenAC1984PlanewavesinnonlocalmicropolarelasticityInt.J.Eng.Sci.221113–21
+[63] BurdenRL,FairesDJandAnnetteM2015Numericalanalysis10thedn.(Brooks/Cole)
+[64] KumarRandGuptaV2015Effectofphase-lagsonrayleighwavepropagationinthermoelasticmediumwithmassdiffusion.
+MultidisciplineModelinginMater.Struct.11474–93
+[65] BiswasS2021Rayleighwavesinamagneto-thermoelasticanisotropichalf-spaceJ.Therm.Stresses44197–213
+[66] KhaliliN2003CouplingeffectsindoubleporositymediawithdeformablematrixGeophys.Res.Lett.3022
+[67] DeswalSandKalkalKK2014Planewavesinafractionalordermicropolarmagneto-thermoelastichalf-spaceWaveMotion51100–13
+[68] SharmaM2023PropagationofgeneralisedrayleighwaveatthesurfaceofpiezoelectricmediumwitharbitraryanisotropyZAMM-
+JournalofAppliedMathematicsandMechanics/ZeitschriftfürAngewandteMathematikundMechanik103e202000160
+[69] KumarMetal2023RayleighwavesinnonlocalgeneralizedthermoelasticmediaInt.J.Numer.MethodsHeatFluidFlow332049–72
+[70] GuptaV,MSBandDasS2024Impactofmemory-dependentheattransferonrayleighwavespropagationinnonlocalpiezo-thermo-
+elasticmediumwithvoidsInt.J.Numer.MethodsHeatFluidFlow341902–26
+21

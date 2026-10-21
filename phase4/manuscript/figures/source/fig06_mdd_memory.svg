@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="420" viewBox="0 0 500 420" font-family="Arial, sans-serif">
+  <text x="250" y="25" text-anchor="middle" font-size="16" font-weight="bold">Memory-Dependent Derivative: Fading Memory Kernel</text>
+  <line x1="50" y1="200" x2="450" y2="200" stroke="#333" stroke-width="2"/>
+  <text x="450" y="215" font-size="10">Time t</text>
+  <text x="30" y="200" text-anchor="end" font-size="10">t - omega</text>
+  <text x="250" y="200" text-anchor="middle" font-size="10">t</text>
+  <rect x="150" y="180" width="100" height="40" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="1.5" rx="4"/>
+  <text x="200" y="200" text-anchor="middle" font-size="9" font-weight="bold">Memory window [t-omega, t]</text>
+  <path d="M150,200 Q200,140 250,200" fill="none" stroke="#e74c3c" stroke-width="2"/>
+  <text x="200" y="125" text-anchor="middle" font-size="10" fill="#e74c3c">Kernel kappa(t-xi)</text>
+  <text x="185" y="165" text-anchor="middle" font-size="9">kappa = 1 at xi = t</text>
+  <text x="225" y="165" text-anchor="middle" font-size="9">kappa -> 0 at xi = t-omega</text>
+  <rect x="50" y="250" width="400" height="80" fill="#f9f9f9" stroke="#333" stroke-width="1.5" rx="6"/>
+  <text x="250" y="275" text-anchor="middle" font-size="13">Memory-dependent derivative:</text>
+  <text x="250" y="300" text-anchor="middle" font-size="14">D_omega f(t) = (1/omega) ∫_[t-omega,t] kappa(t-xi) f'(xi) dxi</text>
+  <text x="250" y="322" text-anchor="middle" font-size="10">Weighted average of recent history</text>
+  <g transform="translate(50,360)">
+    <rect x="0" y="0" width="130" height="50" fill="#e6ffe6" stroke="#009900" stroke-width="1.5" rx="4"/>
+    <text x="65" y="18" text-anchor="middle" font-size="10" font-weight="bold">omega -> 0</text>
+    <text x="65" y="35" text-anchor="middle" font-size="9">D_omega f(t) -> f'(t)</text>
+    <text x="65" y="47" text-anchor="middle" font-size="9">Classical derivative recovered</text>
+  </g>
+  <g transform="translate(190,360)">
+    <rect x="0" y="0" width="130" height="50" fill="#ffe6e6" stroke="#cc0000" stroke-width="1.5" rx="4"/>
+    <text x="65" y="18" text-anchor="middle" font-size="10" font-weight="bold">omega > 0</text>
+    <text x="65" y="35" text-anchor="middle" font-size="9">Memory-dependent</text>
+    <text x="65" y="47" text-anchor="middle" font-size="9">History-dependent response</text>
+  </g>
+  <g transform="translate(330,360)">
+    <rect x="0" y="0" width="130" height="50" fill="#e6e6ff" stroke="#6600cc" stroke-width="1.5" rx="4"/>
+    <text x="65" y="18" text-anchor="middle" font-size="10" font-weight="bold">Kernel shapes</text>
+    <text x="65" y="35" text-anchor="middle" font-size="9">Linear, quadratic,</text>
+    <text x="65" y="47" text-anchor="middle" font-size="9">exponential decay</text>
+  </g>
+  <rect x="50" y="120" width="400" height="45" fill="#fff8e6" stroke="#f39c12" stroke-width="1" rx="4"/>
+  <text x="250" y="138" text-anchor="middle" font-size="10">Physical interpretation: material response at time t depends on the history of the stimulus over [t-omega, t]</text>
+  <text x="250" y="152" text-anchor="middle" font-size="9">with fading weight — older stimuli contribute less.</text>
+</svg>

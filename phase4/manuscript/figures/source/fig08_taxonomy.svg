@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" font-family="Arial, sans-serif">
+  <text x="250" y="30" text-anchor="middle" font-size="16" font-weight="bold">Five-Axis Research Taxonomy</text>
+  <g transform="translate(250,220)">
+    <path d="M0,-110 L95,-40 L58,95 L-58,95 L-95,-40 Z" fill="none" stroke="#333" stroke-width="1.5"/>
+    <text x="0" y="-125" text-anchor="middle" font-size="12" font-weight="bold" fill="#e74c3c">Physical</text>
+    <text x="0" y="-110" text-anchor="middle" font-size="9">Material type</text>
+    <text x="95" y="-40" text-anchor="middle" font-size="11" font-weight="bold" fill="#3498db">Mathematical</text>
+    <text x="95" y="-25" text-anchor="middle" font-size="9">PDE / integral / fractional</text>
+    <text x="58" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#2ecc71">Wave</text>
+    <text x="58" y="125" text-anchor="middle" font-size="9">P, S, T, coupled modes</text>
+    <text x="-58" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#f39c12">Energy</text>
+    <text x="-58" y="125" text-anchor="middle" font-size="9">Mechanical + thermal + electrical</text>
+    <text x="-95" y="-40" text-anchor="middle" font-size="11" font-weight="bold" fill="#9b59b6">Validation</text>
+    <text x="-95" y="-25" text-anchor="middle" font-size="9">Theory / analytical / experimental</text>
+    <circle cx="0" cy="0" r="20" fill="#f39c12" opacity="0.2" stroke="#f39c12" stroke-width="2"/>
+    <text x="0" y="-3" text-anchor="middle" font-size="10" font-weight="bold">Study</text>
+    <text x="0" y="8" text-anchor="middle" font-size="9">classification</text>
+    <path d="M0,-15 L0,-50" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <path d="M12,-9 L42,-28" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <path d="M12,9 L42,28" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <path d="M-12,9 L-42,28" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <path d="M-12,-9 L-42,-28" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  </g>
+  <g transform="translate(60,330)">
+    <rect x="0" y="0" width="130" height="100" fill="#fdecea" stroke="#e74c3c" stroke-width="1" rx="4"/>
+    <text x="65" y="18" text-anchor="middle" font-size="10" font-weight="bold">Physical axis categories:</text>
+    <text x="15" y="35" font-size="9">• Elastic</text>
+    <text x="15" y="48" font-size="9">• Thermoelastic</text>
+    <text x="15" y="61" font-size="9">• Piezothermoelastic</text>
+    <text x="15" y="74" font-size="9">• Porous / double porous</text>
+    <text x="15" y="87" font-size="9">• Micropolar / semiconductor</text>
+  </g>
+  <g transform="translate(200,330)">
+    <rect x="0" y="0" width="130" height="100" fill="#e6f7ff" stroke="#3498db" stroke-width="1" rx="4"/>
+    <text x="65" y="18" text-anchor="middle" font-size="10" font-weight="bold">Mathematical axis categories:</text>
+    <text x="15" y="35" font-size="9">• Classical PDE</text>
+    <text x="15" y="48" font-size="9">• Generalized PDE</text>
+    <text x="15" y="61" font-size="9">• Fractional PDE</text>
+    <text x="15" y="74" font-size="9">• Hereditary integral</text>
+    <text x="15" y="87" font-size="9">• Nonlocal integral</text>
+  </g>
+  <g transform="translate(340,330)">
+    <rect x="0" y="0" width="130" height="100" fill="#e6ffe6" stroke="#2ecc71" stroke-width="1" rx="4"/>
+    <text x="65" y="18" text-anchor="middle" font-size="10" font-weight="bold">Wave axis categories:</text>
+    <text x="15" y="35" font-size="9">• P (longitudinal)</text>
+    <text x="15" y="48" font-size="9">• S (transverse)</text>
+    <text x="15" y="61" font-size="9">• T (thermal)</text>
+    <text x="15" y="74" font-size="9">• Evanescent</text>
+    <text x="15" y="87" font-size="9">• Coupled modes</text>
+  </g>
+  <g transform="translate(60,435)">
+    <rect x="0" y="0" width="130" height="40" fill="#fff4e6" stroke="#f39c12" stroke-width="1" rx="4"/>
+    <text x="65" y="16" text-anchor="middle" font-size="10" font-weight="bold">Energy axis: mechanical + thermal + electrical channels</text>
+  </g>
+  <g transform="translate(300,435)">
+    <rect x="0" y="0" width="130" height="40" fill="#f3e6ff" stroke="#9b59b6" stroke-width="1" rx="4"/>
+    <text x="65" y="16" text-anchor="middle" font-size="10" font-weight="bold">Validation axis: theory → analytical → experimental</text>
+  </g>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

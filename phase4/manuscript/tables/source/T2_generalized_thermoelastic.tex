@@ -1,0 +1,26 @@
+%======================================================================
+% Table T2: Generalized thermoelastic theories comparison
+%======================================================================
+\begin{table}[htbp]
+\centering
+\small
+\caption{Comparative summary of generalized thermoelasticity theories: constitutive structure, wave speed, dissipation, and domain of validity.}
+\label{tab:T2_generalized}
+\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
+\toprule
+\textbf{Theory} & \textbf{Governing modification} & \textbf{Thermal wave speed} & \textbf{Dissipation} & \textbf{Domain of validity} \\
+\midrule
+Classical (CD) & Fourier: $q_i = -kT_{,i}$ & Infinite (parabolic) & Yes (Fourier) & Macroscopic, low-frequency thermal processes \\
+Lord--Shulman (LS) & $q_i + \tau_0\dot{q}_i = -kT_{,i}$ & Finite: $c_T = \sqrt{k/(\rho c_v\tau_0)}$ & Yes (relaxation) & Thermal shocks, high-frequency heating \\
+Green--Lindsay (GL) & Two temperatures $T, T^*$; two relaxation times & Finite & No (centrally symmetric) & Symmetric bodies, wave propagation without dissipation \\
+GN type II & Thermal displacement $\dot{\alpha} = T$ & Finite & No & Conservative thermoelasticity, waveguides \\
+GN type III & Mixed type I/II with $\dot{T}$-dependent conduction & Finite & Yes (mixed) & General dissipative thermoelasticity \\
+Dual-phase-lag (DPL) & $q_i(t+\tau_q) = -kT_{,i}(t+\tau_T)$ & Finite & Yes & Micro-scale heat transfer, thin films \\
+Triple-phase-lag (TPL) & Three lags incl. thermal displacement gradient & Finite & Yes & Ultra-fast processes, laser heating \\
+Moore--Gibson--Thompson (MGT) & $\tau\ddot{q}_i + \dot{q}_i = -(k/\rho c)\nabla(\dot{T} + \tau\ddot{T})$ & Finite & Yes (third-order) & Ultrasound, high-intensity thermal waves \\
+Memory-dependent (MDD) & $D_\omega q_i + \tau_0 q_i = -kT_{,i}$ (convolution) & Finite & Kernel-dependent & Polymers, biological tissues, composites with memory \\
+Fractional & ${}^CD_t^\alpha T = a\nabla^2T$ & Finite (for $1<\alpha\le2$) & Yes (anomalous) & Anomalous diffusion, complex media \\
+Nonlocal & $\sigma_{ij}(\bm{x}) = \int\Omega \alpha(\bm{x}'-\bm{x})\sigma_{ij}^{\rm local}(\bm{x}')d\Omega$ & Finite (dispersive) & Yes & Nanoscale, MEMS/NEMS, size-dependent materials \\
+\bottomrule
+\end{tabularx}
+\end{table}

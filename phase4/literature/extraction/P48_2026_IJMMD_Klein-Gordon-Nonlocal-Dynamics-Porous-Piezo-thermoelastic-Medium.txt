@@ -1,0 +1,1644 @@
+Int J Mech Mater Des (2026) 22:77
+https://doi.org/10.1007/s10999-026-09892-7
+Klein–Gordon nonlocal dynamics of porous
+piezo‑thermoelastic medium with surface irregularity
+under fractional‑order modified LS model
+Soumik Das · Vipin Gupta · Rachaita Dutta · Abhinav Singhal · Wei Peng ·
+Abhik Sur
+Received: 9 November 2025 / Revised: 31 January 2026 / Accepted: 28 February 2026
+© The Author(s), under exclusive licence to Springer Nature B.V. 2026
+Abstract The miniaturization of devices alongside behavior in an orthotropic, size-dependent piezo-ther-
+advances in thermal management technologies neces- moelastic substrate featuring voids, modeled within
+sitates the generalization of heat conduction and ther- the Modified Lord–Shulman (MLS) thermoelasticity
+mal elastic coupling to faithfully represent material theory augmented by fractional derivatives. Employ-
+responses at ultrashort temporal scales. Motivated by ing the Klein–Gordon nonlocal elasticity formula-
+viscoelastic mechanical analogies, this work develops tion, the governing equations of motion are rigor-
+an analytical framework for investigating vibrational ously derived. The normal mode method facilitates
+the examination of coupled thermo–electro-mechan-
+ical excitation phenomena. Emphasis is placed on a
+S. Das
+corrugated interface contiguous to a vacuum, where
+School of Physical Sciences, Amrita Vishwa
+comprehensive boundary conditions encompassing
+Vidyapeetham University, Coimbatore, India
+e-mail: soumikdas1993@gmail.com thermal, electrical, mechanical, and stress equilibria
+are imposed to determine fundamental field variables.
+V. Gupta
+The study systematically evaluates the influence of
+Department of Mathematics, Gurugram University,
+pivotal parameters, including temporal evolution,
+Gurgaon, India
+e-mail: vipin@gurugramuniversity.ac.in nonlocality characteristics, and spatial coordinates,
+on the thermomechanical and electrical responses,
+R. Dutta
+with outcomes substantiated through detailed graphi-
+School of Computing, Amrita Vishwa Vidyapeetham
+cal representations. Although previous investigations
+University, Coimbatore, India
+e-mail: rachaita.dutta18@gmail.com have addressed vibrations in porous piezo-thermoe-
+lastic media under varying theoretical constructs,
+A. Singhal
+the current research uniquely elucidates the dynamic
+Department of Mathematics, christ university, Bangalore,
+response of a size-dependent porous piezo-thermoe-
+India
+e-mail: abhinav.singhal@christuniversity.in lastic medium with a corrugated surface within the
+fractional-order modified Lord–Shulman framework,
+W. Peng
+marking a significant advancement in the modeling of
+Heilongjiang University of Science and Technology,
+smart microstructured materials.
+Harbin, China
+e-mail: pengweiusth@l63.com
+Keywords Fractional-order derivative ·
+*
+A. Sur ( )
+Piezoelectric · Voids · Modified Lord–Shulman
+Sister Nivedita University, Kolkata, India
+model · Klein–Gordon operator · Irregularity
+e-mail: abhiksur4@gmail.com
+Vol.: (0123456789)
+77 Page 2 of 27 S. Das et al.
+1 Introduction drawbacks of Fourier’s instantaneous heat transfer,
+Cattaneo (1958) and Vernotte (1958) proposed the
+In recent years, researchers and engineers have shown hyperbolic Cattaneo–Vernotte (CV) model, introduc-
+growing interest in studying the coupled electro- ing a finite relaxation time to represent phase lag in
+thermo-mechanical behavior of smart structures made thermal response. Building on these developments,
+of piezoelectric ceramics, particularly when subjected Lord and Shulman (1967) combined the CV model
+to complex temperature variations. Piezoelectric with classical elasticity to formulate the generalized
+materials possess a unique electromechanical cou- LS theory, which incorporated thermal relaxation into
+pling characteristic: they generate an electricity when the field equations and established a finite speed for
+subjected to mechanical stress and exhibit elastic thermal wave propagation.
+deformation when exposed to an electric field. These The theoretical landscape of thermo-electrome-
+intelligent materials find widespread use in various chanical coupling has evolved through a sequence of
+applications, including sonar systems, microphones, foundational contributions. Mindlin (1974) first artic-
+sensors, energy harvesting technologies, transducers, ulated the governing relations connecting temperature
+and actuators. Recent advancements (Bae and Lee variations with piezoelectric responses, forming the
+2016; Honein et al. 1991) involve integrating piezo- groundwork for subsequent advancements. Chan-
+electric materials into structural systems to create drasekharaiah (1988) refined these ideas by intro-
+smart structures, often embedded as layers or fibers ducing finite thermal propagation considerations,
+within multifunctional composites. However, electro- allowing a more realistic portrayal of transient phe-
+mechanical devices based on single-phase piezoelec- nomena in thermo-piezoelectric media. Later, Aouadi
+tric substrates face certain drawbacks, such as high (2006) formulated a generalized theoretical structure
+density and specific acoustic impedance, which can that incorporated temperature-dependent physical
+negatively impact their operational efficiency. Fur- constants, thereby extending classical thermoelas-
+thermore, the inherent brittleness of these materials ticity into a comprehensive framework suitable for
+can lead to device failure under mechanical or electri- piezoelectric analysis. Incorporating porosity into
+cal stress. The piezoelectric response of these mate- piezoelectric solids brings an additional dimension of
+rials is primarily influenced by several fundamental controllability by enabling manipulation of heat and
+properties such as elasticity, dielectric permittivity, stress pathways through tailored void geometry. Such
+density, porosity, and viscosity. A notable issue aris- porous configurations, often realized through meticu-
+ing from acoustic impedance mismatch can be miti- lous nanoengineering, produce measurable changes in
+gated by carefully modifying the material’s porosity the thermal, mechanical, and electrical performance
+to achieve a lower density. Consequently, porous pie- of the host solid. The conceptual underpinnings of
+zoelectric materials are emerging as promising candi- materials with voids trace back to the work of Cowin
+dates for applications in contact microphones, vibra- and Nunziato (1983), whose models addressed both
+tory sensors, and underwater devices, leveraging their linear and nonlinear elasticity in porous media.
+tailored porosity. Gupta et al. (2025) studied circum- Expanding on their principles, Iovane and Nased-
+ferential SH waves in graded cylindrical piezoelectric kin (2010) introduced a linear piezoelectric model
+structures with interfacial imperfections, while Seema accounting for the effects of varying porosity, thereby
+et al. (2025) explored surface elasticity in piezoelec- connecting the mechanics of void evolution with elec-
+tric layers, finding notable influences on acoustic tromechanical performance in functional materials.
+wave velocity and energy transmission. Numerous studies have systematically explored the
+Early theories of wave propagation in elastic progression of thermo-electromechanical and porous
+media, developed in the early twentieth century, were piezoelectric theories, establishing significant bench-
+limited by the assumption of infinite wave speeds, marks in the field (Biswas and Sahu 2023, Gupta
+violating physical principles. To address this issue, et al. 2022; 2024a, b, 2025; Kaur et al. 2022; Lotfy
+Biot (1956) introduced the coupled thermoelastic- et al. 2021). These works collectively address the
+ity (CT) theory based on Fourier’s heat conduction, governing relations, wave propagation, temperature-
+providing a more realistic link between mechanical dependent material behavior, and the impact of engi-
+deformation and thermal effects. Recognizing the neered porosity on electromechanical responses.
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 3 of 27 77
+The evolution of nonlocal continuum mechanics chemical dynamics, material physics, and quantum-
+traces its intellectual roots to the pioneering efforts scale modeling. The fractional-order operators, by
+of Edelen and Laws (1971), who first formalized inherently capturing long-range temporal correla-
+interaction frameworks extending beyond classical tions, have proven particularly suitable for describing
+local theories. This conceptual foundation was sig- the complex behavior of modern technological mate-
+nificantly expanded by Eringen and Edelen (1972) rials (Abouelregal 2020; Abouelregal et al. 2021a, b).
+through the incorporation of global balance princi- Subsequent progress in computational and analytical
+ples and thermodynamic consistency, leading to a modeling has been significantly influenced by the
+unified description of material behavior influenced pioneering works (Marin et al. 2013; Yadav 2021;
+by long-range interatomic forces. Their formula- Pathania et al. 2022, 2023; Yadav et al. 2022; Abouel-
+tion provided the cornerstone for modern nonlo- regal et al. 2022), wherein fractional-order param-
+cal elasticity, particularly relevant in microscale and eters were incorporated into multi-temperature and
+nanoscale analyses where size-dependent phenom- nonlocal thermoelastic frameworks. These develop-
+ena become dominant (Biswas 2020; Lata and Singh ments have facilitated a more comprehensive under-
+2020; Saeed and Abbas 2022; Yang and Chen 2020; standing of plane wave propagation under general-
+Zhang et al. 2014). Nevertheless, Eringen’s differ- ized thermomechanical conditions. Gupta, along with
+ential model once widely adopted has faced notable their respective research groups, advanced this line of
+scrutiny. Romano et al. (2017), along with Kaplunov inquiry by investigating energy distribution and trans-
+et al. (2022, 2023), identified mathematical inconsist- mission at piezo-thermo-electric interfaces. Their
+encies and constructed counterexamples that ques- studies incorporated fractional and memory-depend-
+tioned the general validity of this classical represen- ent frameworks with phase-lag effects, revealing sub-
+tation. To overcome these fundamental issues, Anh tle interactions among electric, mechanical, and ther-
+and Vinh (2023) proposed a weakly nonlocal elastic mal fields that conventional integer-order models fail
+model formulated in spatial domains, facilitating the to represent.
+analysis of surface wave propagation at the junction Although numerous studies have explored ther-
+between two interacting nonlocal bodies. Their meth- moelastic coupling and piezoelectric behavior, most
+odology later evolved through subsequent work by have been confined to simplified geometries and
+Anh and his team (Anh et al. 2023), where Rayleigh- conventional theoretical frameworks. Existing mod-
+type surface waves were examined under impedance els rarely integrate the combined roles of size effect,
+boundary settings, further enriching the theoretical porosity, and surface irregularity, all of which sig-
+landscape. Pursuing a complementary line of devel- nificantly influence microscale thermo-mechanical
+opment, Lazar and Agiasofitou (2022) established a wave responses. Furthermore, classical formula-
+Klein–Gordon-type weakly nonlocal elasticity model tions based solely on integer-order derivatives can-
+applicable to isotropic solids. This approach refined not adequately describe relaxation phenomena and
+the earlier Helmholtz-based theory by embedding memory-dependent processes inherent to modern
+intrinsic temporal and spatial scaling parameters. The materials. To address these limitations, the pre-
+introduction of temporal nonlocality proved espe- sent work employs a fractional order Modified
+cially insightful, as it captured the emergence of opti- Lord–Shulman (MLS) thermoelastic model within
+cal branches and frequency band gaps within the dis- the context of Klein–Gordon (KG) type nonlocal
+persion spectrum—features absent in purely acoustic elasticity that accounts for both spatial and temporal
+wave regimes. nonlocality. The proposed framework is particularly
+In the past several decades, fractional calculus suitable for micro- and nano-structured materials
+(Diethelm and Ford 2002; Oliveira and Tenreiro in which size effects, porosity, surface irregular-
+Machado 2014) has evolved into a powerful math- ity, and memory-dependent thermal behaviour play
+ematical framework, enabling more accurate repre- a dominant role. Typical examples include porous
+sentations of systems exhibiting memory, hereditary piezoelectric ceramics and thin films (e.g., PZT,
+effects, and spatial nonlocality. Its adaptability has B aTiO , ZnO), functionally graded piezoelectric
+3
+led to widespread application across numerous disci- layers, nano-porous piezoelectric membranes, and
+plines such as control engineering, electromagnetics, microelectromechanical and nanoelectromechanical
+Vol.: (0123456789)
+77 Page 4 of 27 S. Das et al.
+system (MEMS/NEMS) components such as reso- 1
+e = (u +u ).
+nators, sensors, and actuators. Moreover, the model kl 2 k,l l,k
+is well suited for surface-engineered or corrugated
+The overall nonlocal mechanical response of the
+piezoelectric substrates, phononic and acoustic met-
+medium is governed by a tensor function C ijkl that
+amaterials, and piezoelectric nanocomposites where
+incorporates the effects of spatial interactions. Thus,
+long-range interactions, nonlocal elasticity, and
+the dynamic equation including nonlocal contribu-
+fractional thermal relaxation effects become signifi-
+tions becomes (Sur et al. 2025a, b, c, 2026):
+cant. These material classes are commonly encoun-
+tered in high-frequency, high-precision sensing t
+𝜕
+and energy-harvesting applications, where classi- C (x,t;x�,t� )e (x�,t� )dV�dt�+F(x,t)=𝜌ü .
+𝜕x ∫ ∫ ijkl kl i i
+cal local and integer-order models fail to accurately j −∞ V
+capture experimentally observed wave dispersion, (3)
+attenuation, and thermo-electrical coupling. This
+To decouple nonlocal anisotropy from the mate-
+dual nonlocal formulation enables a unified treat-
+rial’s inherent elastic anisotropy, the nonlocal tensor
+ment of wave dispersion, energy transmission, and C ijkl (x−x�,t−t�) is represented as the product of a
+thermal–electrical interactions in an orthotropic
+scalar kernel function
+𝛼(x−x�,t−t�)
+and the local
+porous piezo-thermoelastic plate with a corrugated anisotropic modulus tensor C ijkl:
+vacuum interface. The developed model provides
+deeper insights into the coupled influence of frac- C ijkl (x−x�,t−t� )=C ijkl 𝛼(x−x�,t−t� ). (4)
+tional parameters and time–space nonlocality on
+temperature fields, mechanical stresses, and electric The scalar nonlocal kernel
+𝛼(x−x�,t−t�)
+potentials. accounts for both spatial and temporal dependencies,
+thereby embedding intrinsic length and time scale
+effects into the formulation. As a result, the nonlocal
+stress tensor can be written as a space–time convolu-
+2 Basic equations for spatiotemporal nonlocality tion of the kernel function together with the classical
+Cauchy stress tensor
+𝜎L
+:
+ij
+Consider a 3D infinite elastic continuum occupying t
+region V. When the medium experiences distributed 𝜎
+ij
+(x,t)=
+∫ ∫
+C ijkl(x,t;x�,t�)e kl(x�,t�)dV�dt�=𝛼(x,t)∗𝜎
+i
+L
+j
+(x,t),
+body forces F i , the motion equation derived from −∞ V
+Newton’s law takes the form ∗
+where symbol indicate the convolution operation
+𝜎 (x,t)+F(x,t)=𝜌ü (x,t), over space and time.
+ij,j i i (1)
+For the special case of a homogeneous, isotropic
+where 𝜎 ij is the nonlocal stress and u i being the solid, the nonlocal tensor simplifies to:
+displacement components. Considering the effect
+t
+of both spatial and temporal nonlocal interactions,
+the constitutive law, motivated by analogies with
+𝜎
+ij
+(x,t)=
+∫ ∫
+𝛼(
+|
+x−x�,t−t�
+|
+)𝜎
+i
+L
+j
+(x�,t� )dV�dt�.
+(5)
+| |
+the electrodynamics of continuous media takes the −∞ V
+following generalized form (Lazar and Agiasofitou Here the Cauchy stress tensor 𝜎 i L j =𝜆e kk 𝛿 ij +2𝜇e ij
+2022; Agiasofitou and Lazar 2023):
+retains its standard representation in terms of the
+t Lamé parameters 𝜆 and 𝜇 . Eringen emphasized that
+𝜎 ij (x,t)= ∫ ∫ C ijkl (x,t;x�,t� )e kl (x�,t� )dV�dt�, (2) the scalar nonlocal kernel’s accuracy can be validated
+−∞ V by matching plane wave dispersion curves with those
+obtained from lattice dynamics. Using the Green’s
+where C ijkl denotes the fourth-order elasticity ten- function technique, the scalar kernel can be written in
+sor, satisfying the usual symmetry conditions, i.e. terms of a linear differential operator L . The general
+C ijkl =C jikl , C ijkl =C ijlk . The infinitesimal strain representation of the kernel operator L for an
+components relate to displacements through
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 5 of 27 77
+unbounded medium (Das et al. 2025; Sur et al. nano scale where classical local theories break down
+2025d): (Seema and Singhal 2024a, b, 2025a, b). According
+to Eringen (Eringen 1983), a plausible estimation of
+L𝛼(
+|
+x−x�,t−t�
+|
+)=𝛿(x−x� )𝛿(t−t� ),
+(6) the characteristic length scale can be expressed as
+| | 𝓁 ≃0.39a , where a denotes the lattice constant. The
+where
+𝛿(∗)
+is the Dirac delta function. Substituting
+nonlocal elasticity incorporated through the KG for-
+the operator L into Eq. (5) and invoking expression
+mulation introduces intrinsic spatial and temporal
+(6), we get the governing differential form:
+length scales that account for long-range interatomic
+L𝜎 =𝜎L. interactions and microstructural heterogeneity. In sur-
+ij ij (7)
+face acoustic wave (SAW) devices, this manifests as
+Here, the Cauchy stress tensor
+𝜎L
+represents the dispersion modification, where the phase and group
+ij
+nonhomogeneous term. This formulation clarifies that velocities become frequency-dependent even in oth-
+the scalar kernel function is identically the Green’s erwise homogeneous substrates. Such behavior ena-
+function associated with the differential operator. bles accurate modeling of experimentally observed
+Hence, the integral constitutive form given in (5) can velocity shifts, band-gap formation, and mode cou-
+equivalently be expressed in the differential form pre- pling, which are critical for high-frequency SAW sen-
+sented in (7). Assuming the operator L possesses lin- sor performance and sensitivity enhancement.
+earity with constant coefficients, the equation of
+motion (1) when combined with (7) yields:
+3 Generalized heat conduction models
+L(𝜌𝜕2u)−𝜕𝜎L =LF.
+t i j ij i (8)
+Drawing an analogy between heat conduction and
+The Helmholtz operator may be further extended viscoelastic behavior, thermal elasticity and thermal
+to form a second-order dynamic hyperbolic differen- viscosity are modeled using elements that correspond
+tial operator (Lazar and Agiasofitou 2022; Agiasofi- to the elastic springs and dashpots in viscoelastic
+tou and Lazar 2023) represented as: theory. When the concept of thermal displacement is
+𝜕2 defined as 𝜗 ( 𝜗̇ =𝜃 , where 𝜃 is the temperature), its
+L≡1−𝓁2∇2+𝜏2 . (9) spatial gradient expressed as 𝜛 =∇𝜗.
+𝜕t2
+As indicated in Fig. 1, the governing heat conduc-
+In this formulation, the Laplacian operator ∇ tion relations for these thermal elastic and viscous
+defines spatial dispersion, while the parameter components are formulated as (Yu et al. 2024):
+𝓁 ∈ℝ+
+introduces the intrinsic length scale control- �=−𝜅∗𝜛, �=−𝜅𝜛̇ .
+(10)
+ling the degree of spatial nonlocality. The constant
+𝓁 =e 0 a cl corresponds to a material-dependent factor
+e 0 , and 𝜏 ∈ℝ+ represents the temporal scale associ- In this expression, ℏ signifies the heat flux vec-
+ated with nonlocal delay effects. By defining a char- tor, 𝜅 stands for the thermal conductivity coefficient,
+acteristic propagation velocity c∈ℝ+ as c= 𝓁 , the 𝜐 represents the relaxation time, and 𝜅∗ = 𝜅 is a
+𝜏 𝜐
+hyperbolic operator L transforms into the well-known material-dependent parameter. In the present study,
+Klein–Gordon (KG) operator. This KG-nonlocal the correspondence between viscoelastic mechani-
+operator plays a physically meaningful and math- cal models and generalized heat conduction formu-
+ematically powerful role when modeling flexoelec- lations, as initially proposed in Yu et al. (2024), is
+tric-piezoelectric materials, especially at the micro/
+Fig. 1 a Thermoelastic unit
+and b Thermo-viscoelastic
+unit
+Vol.: (0123456789)
+77 Page 6 of 27 S. Das et al.
+further employed to derive extended analogies. This The preceding relationship gives rise to the formu-
+approach enables the development of more sophisti- lation of the LS transfer model
+cated generalized heat conduction models by com-
+𝜕
+bining thermal elastic and viscous elements in either
+(1+𝜐 )ℏ=−𝜅∇𝜃.
+(14)
+𝜕t
+series or parallel arrangements, as depicted in Fig. 2.
+On this basis, several modified forms of heat con- Following the methodology (Sherief et al. 2010), a
+duction models are constructed in the subsequent generalized fractional-order form of the LS heat con-
+sections. duction law is introduced as
+( 𝜐𝛼 𝜕𝛼 )
+3.1 Fractional-order LS (FOLS) heat conduction
+1+
+Γ(𝛼+1)𝜕t𝛼
+ℏ=−𝜅∇𝜃.
+(15)
+model
+The fractional-order parameter 𝛼 , defined as
+The Lord–Shulman (LS) model is composed of ther-
+mal elastic and thermal viscous components, with the f(x,z,t)−f(x,z,0), when𝛼 →0
+⎧
+c e o n n d d s i o ti f o t n h e t h c a o t n t fi h g e u h ra e t a i t o n fl , u i x .e r . emains identical at both 𝜕𝛼f 𝜕 (x t , 𝛼 z,t) = ⎪ ⎪ I1−𝛼 𝜕f(x 𝜕 , t z,t) , when0<𝛼<1
+⎨𝜕f(x,z,t)
+ℏ=ℏ 1 =ℏ 2 . (11) ⎪ , when𝛼=1,
+⎪ 𝜕t
+⎩
+The overall thermal displacement is obtained by
+adding the thermal displacements contributed by each with
+of the two constituent units t
+1
+𝜛 =𝜛 +𝜛 I𝛼f(x,z,t)= (t−s)𝛼−1f(x,z,s)ds.
+1 2 (12) Γ(𝛼)∫
+0
+Among them,
+� =−𝜅∗𝜛 , � =−𝜅𝜛̇
+1 1 2 2 (13)
+Fig. 2 a Fractional-order
+Lord-Shulman (FOLS), b
+Fractional-order Green-
+Naghdi (FOGN), c
+Fractional-order modified
+Lord-Shulman-I (FOMLS-
+I), d Fractional-order
+modified Lord-Shulman-II
+(FOMLS-II), e Fractional-
+order modified Lord-
+Shulman-III (FOMLS-III),
+and f Fractional-order
+modified Lord-Shulman-IV
+(FOMLS-IV) heat transfer
+models
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 7 of 27 77
+3.2 Fractional-order modified LS (FOMLS) heat ℏ=ℏ +ℏ , 𝜛 =𝜛 =𝜛 .
+1 2 1 2 (22)
+conduction models
+For the LS model,
+3.2.1 Fractional‑order modified LS‑I (FOMLS‑I)
+𝜐 �̇ +� =−𝜅 ∇𝜛̇ .
+heat conduction model 1 1 1 1 1 (23)
+For the viscous unit,
+The model may be interpreted as the GN framework
+� =−𝜅 𝜛̇ .
+connected sequentially with a thermal viscous ele- 2 2 2 (24)
+ment, such that the total thermal displacement cor-
+From Eqs. (22) and (23), we have
+responds to the sum of the displacements from each
+part, while the overall heat flux equals the heat flux 𝜐
+1
+�̇ +�=−𝜐
+1
+𝜅
+2
+𝜛̈ −(𝜅
+1
++𝜅
+2
+)𝜛̇ .
+(25)
+within each individual component.
+ℏ=ℏ =ℏ , 𝜛 =𝜛 +𝜛 It is also consider that 𝜅 =𝜅 1 =𝜅 2 , 𝜐=𝜐 1 , Eq.
+1 2 1 2 (16)
+(25) can be derived in the following form
+For the GN model, 𝜕 𝜕
+(1+𝜐 )ℏ=−𝜅(2+𝜐 )∇𝜃.
+(26)
+𝜐 �̇ =−𝜅 𝜛̇ −𝜅 𝜐 𝜛̈ 𝜕t 𝜕t
+1 1 1 1 1 1 1 (17)
+For FOMLS-II, Eq. (26) can be written as
+For the viscous unit,
+� 2 =−𝜅 2 𝜛̇ 2 . (18) ( 1+ 𝜐𝛼 𝜕𝛼 ) ℏ=−𝜅 ( 2+ 𝜐𝛼 𝜕𝛼 ) ∇𝜃.
+Γ(𝛼+1)𝜕t𝛼 Γ(𝛼+1)𝜕t𝛼
+Using (16)-(18), the generalized heat conduction (27)
+equation for the MLS-I model can be formulated as
+follows.
+3.2.3 Fractional‑order modified LS‑III (FOMLS‑III)
+𝜅 1�+𝜐 ( 1+ 𝜅 1) �̇ =−𝜅 𝜛̇ −𝜅 𝜐 𝜛̈. heat conduction model
+𝜅 1 𝜅 1 1 1 (19)
+2 2
+The model is represented as the CV and GN models
+It is also consider that 𝜅 =𝜅 1 =𝜅 2 , 𝜐=𝜐 1 . Con- connected sequentially. The total thermal displace-
+sequently, the above equation can be rearranged into ment at the model’s boundaries corresponds to the
+the form sum of the displacements from the CV and GN com-
+𝜕 𝜕 ponents, i.e., 𝜛 =𝜛 1 +𝜛 2 . Meanwhile, the overall
+(1+2𝜐 )ℏ=−𝜅(1+𝜐 )∇𝜃.
+𝜕t 𝜕t (20) heat flux remains equal to that passing through each
+component, i.e.,
+ℏ=ℏ
+1
+=ℏ
+2 . Additionally, the model
+For FOMLS-I, Eq. (20) can be modified as adheres to the relation
+( 1+2 𝜐𝛼 𝜕𝛼 ) ℏ=−𝜅 ( 1+ 𝜐𝛼 𝜕𝛼 ) ∇𝜃. � 1 +𝜐 1 �̇ 1 =−𝜅 1 ∇𝜃, 𝜐 2 �̇ 2 =−𝜅 2 ∇𝜃−𝜅 2 𝜐 2 ∇𝜃̇ (28)
+Γ(𝛼+1)𝜕t𝛼 Γ(𝛼+1)𝜕t𝛼
+By combining the above-mentioned conditions, we
+(21)
+arrive at the following expression
+𝜅 2�+ ( 𝜐 + 𝜅 2𝜐 + 𝜅 2𝜐 ) �̇ + 𝜅 2𝜐 𝜐 �̈ =−𝜅 ∇𝜃−𝜅 𝜐 ∇𝜃̇.
+3.2.2 Fractional‑order modified LS‑II (FOMLS‑II) 𝜅 2 𝜅 1 𝜅 2 𝜅 1 2 2 2 2
+1 1 1 1
+heat conduction model (29)
+It is also consider that 𝜅 =𝜅 1 =𝜅 2 , 𝜐=𝜐 1 =𝜐 2 ,
+The model is considered as the thermal viscous com- Eq. (29) can be reformulated as follows:
+ponent arranged in parallel with the CV model, where
+both components share the same thermal displace- ( 1+3𝜐 𝜕 +𝜐2 𝜕2 ) ℏ=−𝜅(1+𝜐 𝜕 )∇𝜃.
+𝜕t 𝜕t2 𝜕t (30)
+ment, and the total heat flux is the sum of the indi-
+vidual heat fluxes from each component.
+For FOMLS-III, Eq. (30) can be modified as
+Vol.: (0123456789)
+77 Page 8 of 27 S. Das et al.
+(1+3 𝜐𝛼 𝜕𝛼
++
+𝜐2𝛼 𝜕2𝛼 )
+ℏ
+Γ(𝛼+1)𝜕t𝛼 Γ(2𝛼+1)𝜕t2𝛼 When these are combined, the fractional thermal
+=−𝜅 (1+
+Γ(𝛼
+𝜐
++
+𝛼
+1)𝜕
+𝜕
+t
+𝛼
+𝛼
+) ∇𝜃. (31) m
+su
+e
+r
+m
+fac
+o
+e
+ry
+a c
+a
+o
+n
+u
+d
+s t
+K
+ic
+G
+w
+n
+a
+o
+v
+n
+e
+l o
+(
+c
+S
+a
+A
+li
+W
+ty
+)
+s
+p
+ig
+ro
+n
+p
+ifi
+a
+c
+g
+a
+a
+n
+ti
+t
+o
+ly
+n
+i
+b
+n
+y
+fl u
+a
+e
+l
+n
+te
+c
+r
+e
+-
+ing wave dispersion characteristics, enabling tunable
+phase velocity and improved frequency selectivity.
+The model enhances its sensitivity to surface pertur-
+3.2.4 Fractional‑order modified LS‑IV (FOMLS‑IV)
+bations, such as mass loading, temperature gradients,
+heat conduction model
+or adsorbed species, which is essential for chemical
+and biosensing applications. Moreover, this embed-
+The MLS-IV model can be viewed as the MLS-II
+ded formulation has the ability to accurately predict
+model coupled in series with a thermoelastic element.
+attenuation and quality factor variations, thereby sup-
+Consequently, the following expression is derived
+porting optimal sensor design at nanoscale dimen-
+�=� =� , 𝜛 =𝜛 +𝜛 } sions. When corrugated or patterned interfaces
+1 2 1 2
+� +𝜐 �̇ =−2𝜅 ∇𝜃−𝜅 𝜐 ∇𝜃̇, � =−𝜅 𝜛 . strongly interact with nonlocal and memory-depend-
+1 1 1 1 1 1 2 2 2
+ent fields, the surface irregularities can be captured
+(32)
+significantly. As a consequence, the proposed frame-
+By combining the system of equations presented work provides a physically consistent and predic-
+above, we derive the following result tive modeling tool for next-generation SAW sensors,
+including those based on porous, piezoelectric, and
+�+ ( 𝜐 +2 𝜅 1𝜐 ) �̇ + 𝜅 1𝜐 𝜐 �̈ =−2𝜅 ∇𝜃−𝜅 𝜐 ∇𝜃̇. surface-engineered substrates, where classical local
+1 𝜅 2 𝜅 1 2 1 1 1
+2 2 and integer-order theories fail to capture the observed
+(33)
+thermo-electro-mechanical coupling and wave
+Assuming consistent cell parameters, we attain behavior.
+( 𝜕 𝜕2 ) 𝜕
+1+3𝜐 +𝜐2 ℏ=−𝜅(2+𝜐 )∇𝜃.
+𝜕t 𝜕t2 𝜕t (34)
+4 Governing equations
+For FOMLS-IV, Eq. (34) can be rewritten as
+Iovane and Nasedkin (2010) originally established
+(1+3 𝜐𝛼 𝜕𝛼
++
+𝜐2𝛼 𝜕2𝛼 )
+ℏ
+the linear framework for piezoelectric materials with
+Γ(𝛼+1)𝜕t𝛼 Γ(2𝛼+1)𝜕t2𝛼
+voids to model porosity effects. This study expands
+=−𝜅 (2+ 𝜐𝛼 𝜕𝛼 ) ∇𝜃. (35) upon their theory by incorporating thermal influences
+Γ(𝛼+1)𝜕t𝛼 and integrating Eringen’s nonlocal elasticity theory
+(Eringen 1978).
+However, the memory-dependent fractional-order • Stress-strain-temperature relations
+Modified Lord–Shulman (MLS) model captures ther-
+mal and mechanical relaxation processes that extend ( 1−𝜉2∇2+𝜏2 𝜕 𝜕 t 2 2 ) 𝜎 ij =𝜎 i L j =c ijkl e kl −𝜂 ijk E k −𝛽 i T j 𝜃+𝛾 ij 𝜓,
+beyond instantaneous response. Fractional derivatives
+(36)
+naturally represent energy dissipation, attenuation,
+and delayed thermoelastic feedback, leading to non- ( 1−𝜉2∇2+𝜏2 𝜕 𝜕 t 2 2 ) 𝜎 i =(𝜎 i ) L =A ij 𝜓, j +h ij E j , (37)
+exponential decay of surface acoustic wave (SAW)
+amplitudes. This is particularly relevant for governing
+surface acoustic wave (SAW) sensors operating under ( 1−𝜉2∇2+𝜏2 𝜕2) 𝜁 =𝜁L =−𝛾 e −g E −a 𝜓+𝜈𝜃,
+fluctuating thermal environments or high-frequency 𝜕t2 ij ij k k 1
+excitation, where classical integer-order models (38)
+underestimate damping and phase lag effects.
+(1−𝜉2∇2+𝜏2 𝜕 𝜕 t 2 2 ) D i =DL i =𝜂 ijk e jk +𝜀 ij E j +𝜏 i 𝜃−g i 𝜓−h ij 𝜓, j , (39)
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 9 of 27 77
+(1−𝜉2∇2+𝜏2 𝜕2 ) 𝜌S∗ =(𝜌S∗)L where 𝜎 i L j , (𝜎 i ) L , 𝜁L , DL i , and (𝜌S∗)L are related with
+𝜕t2
+local thermal piezoelectric material with voids. The
+𝜌C 𝜃 (40)
+=𝛽Te +𝜏E +𝜈𝜓 + E . definitions of the symbols are delineated as below:
+ij ij i i 𝜃
+0
+C
+E
+=
+Specific heat at constant
+𝜑=
+Electrical potential
+Equations of motion strain
+𝜎L + ( 1−𝜉2∇2+𝜏2 𝜕2) F =𝜌 ( 1−𝜉2∇2+𝜏2 𝜕2) ü , 𝜌=Density 𝛽 i T j = Thermal moduli tensors
+ij,j 𝜕t2 i 𝜕t2 i 𝜎 i = Nonlocal equilibrated 𝜓 = Volume fraction of matrix
+stress pore
+(41)
+D, =0, where E =−𝜑, , e ij = Component of strain 𝜏 i = Pyroelectric constants
+i i i i (42) 𝜒 =Equilibrated inertia of l 1 ∗= Extrinsic equilibrated
+matrix pore body force
+(𝜎1) L +𝜁L+𝜌 (1−𝜀2∇2+𝜏2 𝜕2 )l∗ E i =Electric field density 𝜎 ij = Components of the nonlo-
+i,i 𝜕t2 1 cal stress
+=𝜒
+(1−𝜀2∇2+𝜏2
+𝜕2
+)
+𝜓̈
+(43) K i
+t
+j
+h
+=
+er
+C
+m
+o
+a
+m
+l
+p
+c
+o
+o
+n
+n
+e
+d
+n
+u
+t
+c
+s
+t i
+o
+v
+f
+i t
+t
+y
+he 𝜂 ij
+t
+r
+e
+,
+n
+𝜀
+s
+i
+o
+j
+r
+=
+s
+Piezo-thermal moduli
+𝜕t2
+𝜁L= Intrinsic equilibrated 𝜃= Thermal temperature
+body force
+Energy scale equation 𝜏 = Temporal nonlocality 𝜉= Spatial nonlocality param-
+𝜌𝜃 Ṡ∗ =−� . parameter eter
+0 i,i (44) S∗ = Entropy ℏ i = Component of heat flux
+Nonlocal FOMLS heat transfer law c ijrl = Elastic stiffness tensor D i = Component of dielectric
+displacement
+By incorporating the Klein–Gordon nonlocal opera- 𝜁 = Nonlocal intrinsic equili- 𝛼= Fractional-order parameter
+tor, all the heat transfer models (FOLS, FOMLS-I,
+brated body
+FOMLS-II, FOMLS-III, FOMLS-IV) for orthotropic
+material are expressed in the following unified form where A ik ,𝛾 ij ,g i, h ij ,a 1 , and𝜈 are the constitutive constants
+characterize the properties associated with alterations in poros-
+( 1−𝜉2∇2+𝜏2 𝜕2 ) Bℏ =−E𝜅 𝜃 , ity.
+𝜕t2 i ij ,j (45)
+where the expressions of B and E are given in the
+5 Formulation of the problem
+Table 1.
+• Nonlocal FOMLS heat transport equation
+We consider a semi-infinite, corrugated medium
+Using Eqs. (40), (44), and (45), we obtain
+composed of a nonlocal thermal piezoelectric mate-
+E𝜅 𝜃, =B(𝜌C 𝜃̇ +𝜃 (𝛽Tė −𝜏𝜑̇, +𝜈𝜓̇ )). rial containing voids, maintained at a uniform ref-
+ij ij E 0 ij ij i i (46) erence temperature 𝜃 0 . The analysis is carried out
+within the context of the fractional-order modified
+Lord–Shulman piezo-thermoelasticity theory. A Car-
+tesian coordinate system is employed to formulate the
+Table 1 Coefficients of FOLS and FOMLS heat conduction governing equations describing thermo–mechanical
+models coupling within the material. The origin of the coor-
+Heat transfer model B E dinate system is defined at the free surface, with the
+wave propagating along the x-axis and the positive z
+FOLS 1+ 𝜐𝛼 𝜕𝛼 1
+Γ(𝛼+1)𝜕t𝛼 -axis directed vertically downward. Figure 3 provides
+FOMLS-I 1+2 Γ(𝛼 𝜐 + 𝛼 1)𝜕 𝜕 t 𝛼 𝛼 1+ Γ(𝛼 𝜐 + 𝛼 1)𝜕 𝜕 t 𝛼 𝛼 a schematic illustration of the geometric configura-
+FOMLS-II 1+ 𝜐𝛼 𝜕𝛼 2+ 𝜐𝛼 𝜕𝛼 tion. In analyzing thermal wave propagation within
+Γ(𝛼+1)𝜕t𝛼 Γ(𝛼+1)𝜕t𝛼
+FOMLS-III 1+3 𝜐𝛼 𝜕𝛼 + 𝜐2𝛼 𝜕2𝛼 1+ 𝜐𝛼 𝜕𝛼 this plane, the displacement components, electric
+Γ(𝛼+1)𝜕t𝛼 Γ(2𝛼+1)𝜕t2𝛼 Γ(𝛼+1)𝜕t𝛼
+potential, void volume fraction, and temperature field
+FOMLS-IV 1+3 𝜐𝛼 𝜕𝛼 + 𝜐2𝛼 𝜕2𝛼 2+ 𝜐𝛼 𝜕𝛼
+Γ(𝛼+1)𝜕t𝛼 Γ(2𝛼+1)𝜕t2𝛼 Γ(𝛼+1)𝜕t𝛼
+Vol.: (0123456789)
+77 Page 10 of 27 S. Das et al.
+are expressed as functions dependent on both spatial (1−𝜉2∇2+𝜏2
+𝜕
+𝜕
+t
+2
+2
+) D
+z
+=DL
+z
+=𝜂31u,
+x
++𝜂33w,
+z
+coordinates and time. (54)
+u⃗ =(u(x, z, t), 0, w(x, z, t)),
+−𝜀33𝜑,
+z
++𝜏3𝜃−g3𝜓−h3𝜓,
+z
+,
+𝜙=𝜙(x, z, t), 𝜓 where ∇2 = 𝜕2 + 𝜕2 .
+(47) 𝜕x2 𝜕z2
+=𝜓(x, z, t), 𝜃 =𝜃(x, z, t). With the help of Eqs. (48)–(54), equations of
+motion (41)–(43) without considering the body
+forces can be rewritten as
+In accordance with Eq. (47), the stress–strain-tem-
+c 11 u ,xx+c 55 u ,zz+(c 13+c 55)w ,xz−𝛽 1 T𝜃,x
+perature and electric displacement relations (36)–(39)
+are modified as +(𝜂31+𝜂15)𝜑,xz+𝛾1𝜓,x=𝜌 (1−𝜉2∇2+𝜏2 𝜕 𝜕 t 2 2 )𝜕 𝜕 2 t𝟐 u , (55)
+(1−𝜉2∇2+𝜏2
+𝜕2
+) 𝜎 =𝜎L =c u,
+𝜕t2 xx xx 11 x c 55 w ,xx+c 33 w ,zz+(c 13+c 55)u ,xz−𝛽 3 T𝜃,z+𝜂15𝜑,xx
+(48)
++c 13 w, z +𝜂 31 𝜑, z −𝛽 1 T𝜃+𝛾 1 𝜓, +𝜂33𝜑,zz+𝛾3𝜓,z=𝜌 (1−𝜉2∇2+𝜏2 𝜕 𝜕 t 2 2 )𝜕 𝜕 2 t w 𝟐 , (56)
+( 1−𝜉2∇2+𝜏2 𝜕2 ) 𝜎 =𝜎L =c (u, +w, )+𝜂 𝜑, , 𝜂15w,xx +𝜂33w,zz +(𝜂31+𝜂15)u,xz −𝜀11𝜑,xx
+𝜕t2 xz xz 55 z x 15 x (57)
+−𝜀33𝜑,zz +𝜏3𝜃,z −g3𝜓,z −h1𝜓,xx −h3𝜓,zz =0,
+(49)
+(1−𝜉2∇2+𝜏2
+𝜕2
+) 𝜎 =𝜎L =c u, +c w, A1𝜓, xx +A3𝜓, zz −h1𝜑, xx −h3𝜑, zz −𝛾1u, x −𝛾3w, z
+𝜕t2 zz
++
+zz
+𝜂 𝜑,
+13
+−𝛽
+x
+T𝜃
+3
++
+3
+𝛾
+z
+𝜓,
+−g1𝜑,
+x
+−g3𝜑,
+z
+−a1𝜓+𝜈𝜃=𝜒 (1−𝜀2∇2+𝜏2
+𝜕
+𝜕
+t
+2
+2
+)𝜕
+𝜕
+2
+t
+𝜓
+2
+(58)
+33 z 3 3
+(50) In light of Eq. (47), fractional-order modified
+( 1−𝜉2∇2+𝜏2 𝜕2 ) 𝜎 =(𝜎 ) L =A 𝜓, −h 𝜑, , Lord–Shulman heat transport Eq. (46) reduces to
+𝜕t2 x x 1 x 1 x E(𝜅1𝜃,xx+𝜅3𝜃,zz)=B(𝜌C E𝜃̇+𝜃0(𝛽 1 Tu̇, x+𝛽 3 Tẇ, z−𝜏3𝜑̇, z+𝜈𝜓̇)), (59)
+(51)
+( 1−𝜉2∇2+𝜏2 𝜕 𝜕 t 2 2 ) 𝜎 z =(𝜎 z ) L =A 3 𝜓, z −h 3 𝜑, z , A ij w = h A er i 𝛿 e, ij , 𝛽 i T j = 𝛽 𝛽 1 T i T = 𝛿 ( ij c , 1 𝜅 1 ij + = c 1 𝜅 2 i ) 𝛿 𝛼 ij , 1 T 1 𝛾 ij = + 𝛾 c i 𝛿 13 ij 𝛼 , 3 T h 3 i , j =h a i 𝛿 n ij d ,
+(52) 𝛽 3 T =2c 13 𝛼 1 T 1 +c 33 𝛼 3 T 3 . Here, 𝛼 1 T 1 and 𝛼 3 T 3 are the
+constants of linear thermal expansion.
+(1−𝜉2∇2+𝜏2
+𝜕2
+)D =DL
+𝜕t2 x x
+(53)
+=𝜂 15( u, z +w, x) −𝜀 11 𝜑, x −h 1 𝜓, x , 6 Solution procedure
+To analytically determine the field distributions
+including horizontal and vertical displacements, void
+fraction, stress components, temperature, electric
+potential, and electric displacements—the normal
+mode analysis is employed. This analytical frame-
+work facilitates the solution of the coupled governing
+equations by representing each dependent variable as
+a combination of harmonic modes. Such a represen-
+tation enables closed-form solutions that remain valid
+without imposing restrictive assumptions on the mate-
+rial or model parameters. In this formulation, the field
+variables are assumed to take the form
+Fig. 3 Schematic diagram of the mathematical model
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 11 of 27 77
+(u, w, 𝜃, 𝜑, 𝜓)(x,z,t)=(ũ, w̃, 𝜃̃, 𝜑̃, 𝜓̃)(z)exp(𝜔t+𝜄kx), 5
+(ũ, w̃, 𝜃̃, 𝜑̃, 𝜓̃)(z)=∑(G , G , G , G )Ne−𝜇 i z,
+(60) 1i 2i 3i 4i i
+i=1
+where k denotes the wave number associated with (67)
+spatial variation, and 𝜔 is the complex circular fre- where 𝜇 i , i=1(1)5 are the eigen values.
+quency (
+𝜔=𝜔
+r
++i𝜔
+i ) describing the temporal evolu- Substituting the assumed solution from Eq. (67) into
+tion of the wave. The functions ũ, w̃, 𝜃̃, 𝜑̃, 𝜓̃ signify
+Eqs. (61)–(65) and setting the coefficients of
+e−𝜇
+i
+z
+to
+the amplitude distributions of the respective physical
+zero yields:
+quantities along the depth direction.
+5 5 5
+Utilizing the normal mode representation given in
+R ∑𝜇G −R ∑G +R ∑𝜇G
+Eq. (60) and applying it to Eqs. (55)–(59), we derive 3 i 1i 4 2i 5 i 3i
+i=1 i=1 i=1
+the subsequent set of simplified equations 5 5 (68)
+(R D2+R )ũ +R Dw̃ +R 𝜃̃+R D𝜑̃ +R 𝜓̃ =0, −R 6 ∑G 4i =R 1 ∑𝜇 i 2+R 2 ,
+1 2 3 4 5 6
+i=1 i=1
+(61)
+R
+7
+Dũ +
+(
+R
+8
+D2+R
+9)
+w̃ +R
+10
+D𝜃̃
+5 5
++ ( R 11 D2+R 12)𝜑̃ +R 13 D𝜓̃ =0, (62) ∑( R 8 𝜇 i 2+R 9) G 1i −R 10 ∑𝜇 i G 2i
+i=1 i=1
+5 5 5
+R 14 Dũ+ (R 15 D2+R 16)w̃ +R 17 D𝜃̃+ (R 18 D2+R 19)𝜑̃ +∑( R 11 𝜇 i 2+R 12) G 3i −R 13 ∑𝜇 i G 4i =R 7 ∑𝜇 i ,
++ (R
+20
+D2+R
+21
+D+R 22)𝜓̃ =0, (63) i=1 i=1 i=1
+(69)
+5 5 5
+R 23 ũ+R 24 Dw̃ +R 25𝜃̃+(R 26 D2+R 27 D+R 28)𝜑̃ ∑(R 15𝜇 i 2+R 16)G 1i−R 17∑𝜇i G 2i+∑(R 18𝜇 i 2+R 19)G 3i
++(R 29 D2+R 30)𝜓̃ =0, (64) i=1 5 i=1 i 5 =1
++∑(R 20𝜇
+i
+2−R 21𝜇i+R 22)G 4i=R 14∑𝜇i ,
+R ũ+R Dw̃ +(R D2+R )𝜃̃+R D𝜑̃ +R 𝜓̃ =0, i=1 i=1
+31 32 33 34 35 36 (70)
+(65)
+5 5 5
+where R i , i=1(1)36 are given in Appendix. R 24∑𝜇i G 1i−R 25∑G 2i−∑
+i=1 i=1 i=1
+By simplifying the above Eqs. (61)–(65), we yield 5 (71)
+the following characteristic equation (R 26𝜇 i 2−R 27𝜇i+R 28)G 3i−∑(R 29𝜇 i 2+R 30)G 4i=R 23 ,
+i=1
+10
+∑C
+n
+Dn (ũ,w̃,𝜃̃,𝜑̃,𝜓̃)(z)=0,
+(66) 5 5
+n=0 R 32 ∑𝜇 i G 1i −∑( R 33 𝜇 i 2+R 34) G 2i
+where the coefficients C n , n=0(1)10 are determined i=1 i=1
+5 5 (72)
+using conventional procedures, specifically by evalu-
++R ∑𝜇G −R ∑G =R ,
+ating the determinant of the coefficient matrix formed 35 i 3i 36 4i 31
+i=1 i=1
+from Eqs. (61)–(65).
+Equation (66) admits a physically admissible
+(bounded) solution under the condition
+z→∞
+, and can
+therefore be expressed in the following form:
+Solving the above Eqs. (68)–(72), we obtain
+G R 𝜇2+R −R 𝜇 R 𝜇2+R −R 𝜇 −1 R 𝜇
+1i 8 i 9 10 i 11 i 12 13 i 7 i
+⎡G ⎤ ⎡R 𝜇2+R −R 𝜇 R 𝜇2+R R 𝜇2−R 𝜇 +R ⎤ ⎡R 𝜇 ⎤
+⎢ G 2i ⎥=⎢ 15 R i 𝜇 16 −R 17 i −�R 𝜇 1 2 8 − i R 𝜇 19 +R � 2 − 0 � i R 𝜇2 21 + i R � 22 ⎥ ⎢ R 14 i ⎥. (73)
+⎢ 3i⎥ ⎢ 24 i 25 26 i 27 i 28 29 i 30 ⎥ ⎢ 23 ⎥
+⎢ ⎣ G 4i⎥ ⎦ ⎢ ⎣ R 32 𝜇 i −�R 33 𝜇 i 2+R 34 � R 35 𝜇 i −R 36 ⎥ ⎦ ⎢ ⎣ R 31 ⎥ ⎦
+Vol.: (0123456789)
+77 Page 12 of 27 S. Das et al.
+By substituting Eq. (67) into Eqs. (60) and 𝜃 =𝜃∗e𝜔t+𝜄kx,
+l (80)
+(48)–(54) and subsequently employing the eigen-
+mode analysis, the corresponding expressions can be where c r =d r cos(Φx) . Here, d r and Φ are the flat-
+derived as follows: ness and fluctuation parameters of the corrugation,
+5
+(u, w, 𝜃, 𝜑, 𝜓)(x,z,t)=∑(1,G , G , G , G )Ne−𝜇 i z+𝜔t+𝜄kx, (74)
+1i 2i 3i 4i i
+i=1
+5
+(𝜎 , 𝜎 , 𝜎 , 𝜎 ,𝜎 ,D , D )(x,z,t)=∑(G , G , G , G , G ,G ,G )Ne−𝜇 i z+𝜔t+𝜄kx, (75)
+xx xz zz x z x z 5i 6i 7i 8i 9i 10i 11i i
+i=1
+where G ji , j=5(1)11 is defined in Appendix. respectively.
+Equations (74) and (75) represent the expressions By applying the boundary constraints given in
+of horizontal and vertical displacements, temperature, Eqs. (76)–(80), together with the substitution of the
+void volume fractions, nonlocal normal, shear, and expressions defined in Eqs. (74) and (75), the govern-
+equilibrated stresses and electric displacement com- ing relations can be rearranged into a matrix equation.
+ponents of the considered model.
+Ξ Ξ Ξ Ξ Ξ N −p∗
+⎛ 11 12 13 14 15 ⎞⎛ 1 ⎞ ⎛ l ⎞
+Ξ Ξ Ξ Ξ Ξ N 0
+⎜ 21 22 23 24 25⎟⎜ 2⎟ ⎜ ⎟
+7 Boundary conditions
+⎜Ξ
+31
+Ξ
+32
+Ξ
+33
+Ξ
+34
+Ξ 35⎟⎜N 3⎟=⎜ 0 ⎟,
+(81)
+⎜Ξ Ξ Ξ Ξ Ξ ⎟⎜N ⎟ ⎜ 0 ⎟
+41 42 43 44 45 4
+⎜ Ξ Ξ Ξ Ξ Ξ ⎟⎜ N ⎟ ⎜ 𝜃∗ ⎟
+The material under consideration is assumed to pos- ⎜ 51 52 53 54 55⎟⎜ 5⎟ ⎜ l ⎟
+⎝ ⎠⎝ ⎠ ⎝ ⎠
+sess a corrugated free surface at its upper boundary.
+Ξ
+A sudden mechanical load of constant magnitude, where ij are defined in Appendix.
+On solving the system of equations represented by
+together with a thermal shock, is applied on this cor-
+rugated surface defined by
+z=c
+r
+(x)
+. Consequently,
+(81), the following results are obtained:
+the boundary conditions governing the problem can det[Λ]
+i
+be expressed as follows: N i = det[Λ] , i=1(1)5. (82)
+• Mechanical conditions:
+𝝈 −c � (x)𝝈 =−p ∗ e𝝎t+𝜾kx, In this expression, det[Λ] refers to the determinant
+zz r zx 1 (76)
+of the
+5×5
+coefficient matrix, and
+Λ
+i is evaluated by
+substituting the ith column of the original matrix with
+𝝈 xz −c r ′ (x)𝝈 xx =0, (77) the corresponding column vector (−p∗ 0 0 0 𝜃∗ ) T .
+l l
+Within the context of the fractional-order modified
+• Equilibrated stresses condition:
+Lord–Shulman heat conduction model, the analytical
+𝝈 −c ′ (x)𝝈 =0, forms of the displacement, temperature, void fraction,
+z r x (78)
+electric potential, electric displacement, and stress
+• Dielectrical displacement condition: profiles are determined by inserting the expressions
+derived in Eq. (82) into Eqs. (74) and (75).
+D =0,
+z (79)
+5
+1
+• Thermal condition: (u,w,𝜃,𝜑,𝜓)(x,z,t)= det[Λ] ∑( G 1i ,G 2i ,G 3i , G 4i)
+i=1
+det[Λ i] e−𝜇iz+𝜔t+𝜄kx,
+(83)
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 13 of 27 77
+5
+1
+(𝜎 , 𝜎 , 𝜎 , 𝜎 ,𝜎 ,D , D )(x,z,t)= ∑(G , G , G , G , G ,G ,G )det[Λ]e−𝜇 i z+𝜔t+𝜄kx, (84)
+xx xz zz x z x z det[Λ] 5i 6i 7i 8i 9i 10i 11i i
+i=1
+8 Validation 9.1 Impact of spatial nonlocal parameter 𝜉
+In order to validate the present model with the pre- The numerical computations in Fig. 4a–h have
+existing thermoelastic models, a detailed illustration been carried out to investigate the impact of spa-
+has been represented in Table 2 as given below: tial nonlocal parameter 𝜉 for FOMLS-IV heat
+transfer model by taking the parameter values as
+𝜏 =5×10−3, 𝛼 =0.1, d =0.5
+r .
+9 Numerical results and discussion Figure 4a depicts the variation of the horizontal
+displacement u versus the distance z for time t=0.1
+In this study, numerical simulations were carried out for different values of spatial nonlocal parameter 𝜉 .
+using MATHEMATICA software to examine the As seen from the figure, the magnitude of the hori-
+impact of various key parameters on the field vari- zontal displacement u attains the maximum on the
+ables. The computational analysis was conducted for boundary z=0. However, it is seen that the magni-
+Cadmium Selenide (CdSe), whose material proper- tude of the profile of the displacement yields an influ-
+ties were adopted from the earlier work of Gupta and encing characteristic with the increase of the spatial
+Barak (2023), as listed in Table 3. nonlocal parameter. This suggests that the material
+The following parameters are taken as constant for exhibits long-range interactions, with nonlocal effects
+the purpose of drawing Figs. 4a, 5, 6, 7 and 8(c). altering the stiffness or elastic properties over a finite
+𝜔 =1, 𝜔 =0.9, k=3, x=0.1,t=0.1, p∗ =1,
+1 2 l range, which in turn modifies the displacement dis-
+𝜃 l ∗ =3, 𝜐=0.02, andΦ=0.5. In Fig. 4a–h, 5a–h, tribution. As 𝜉 increases, the displacement profile
+6a–h, and 8a–c, the graphs have been plotted for may become smoother or less localized, reflecting
+FOMLS-IV heat transfer model. In Fig. 7a–h, com- the fact that nonlocal models incorporate the influ-
+parative study of field variables has been done among ence of neighboring points, diminishing the sharp-
+different heat transfer models, viz. FOLS, FOMLS-I, ness of local deformations and potentially reducing
+FOMLS-II, FOMLS-III, and FOMLS-IV. the overall magnitude of displacement in the interior
+of the material. Thus, the spatial nonlocal parameter
+Table 2 Validation of the present model with pre-established results
+Case Condition Model
+I
+𝛼=1,𝜉=𝜏=0,c11 =c13 =c33 =𝜆,c55 =𝜇,
+This case corresponds to a local porous thermoelastic medium con-
+𝜂 31 =𝜂 33 =𝜂 15 =h1 =h3 =𝜏 3 =g3 =0 taining a single type of voids, analyzed within the framework of the
+LS theory. The obtained results show excellent agreement with those
+reported by Gunghas et al. (Gunghas et al. 2020), when the effects of
+the functionally graded parameter and gravity are neglected
+II
+𝛼=1,𝜉=𝜏=0,c11 =c13 =c33 =𝜆,c55 =𝜇,
+This configuration describes a local homogeneous thermoelastic
+𝜂 31 =𝜂 33 =𝜂 15 =h1 =h3 =𝜏 3 =g3 =0, medium governed by the classical LS thermoelasticity theory. The
+𝛾
+1
+=𝛾
+3
+=A1 =A3 =𝜀
+11
+=𝜀
+33
+=0. findings are consistent with the results of Gunghas et al. (Gunghas
+et al. 2019), in the limiting situation where the functionally graded
+parameter, rotational effects, and magnetic field are absent
+III
+0<𝛼<1, 𝜉=𝜏=0,c11 =c13 =c33 =𝜆,c55 =𝜇,
+In this case, a local thermoelastic medium is considered under the
+𝜂 31 =𝜂 33 =𝜂 15 =h1 =h3 =𝜏 3 =g3 =0, fractional-order Lord–Shulman thermoelasticity framework. The
+𝛾
+1
+=𝛾
+3
+=A1 =A3 =𝜀
+11
+=𝜀
+33
+=0. present results exhibit close correspondence with those obtained by
+Othman and Mondal (Othman and Mondal 2020), when the rota-
+tional effects are neglected
+Vol.: (0123456789)
+77 Page 14 of 27 S. Das et al.
+Table 3 Material constants
+Symbol Value Symbol Value
+used for the purpose of
+numerical simulations c11 74.1×109Nm−2 c33 83.6×109Nm−2
+(Gupta and Barak 2023) c13 39.3×109Nm−2 T0 298K
+A1 1.3×10−5N h1 4×10−16Cm−2
+A3 1.2×10−5N h3 5×10−16Cm−2
+𝛾 1 0.9×1010Nm−2 g1 4×10−10Cm−2
+𝛾 3 0.7×1010Nm−2 g3 6×10−10Cm−2
+a1 1.2×1010Nm−2 𝜈 60Nm−2K−1
+c55 13.2×109Nm−2 K3 9Wm−1K−1
+𝛽T 6.21×105Nm−2K−1 𝛽T 5.51×105Nm−2K−1
+1 3
+𝜂
+31
+−0.160Cm−2 𝜂
+33
+0.347Cm−2
+𝜂
+15
+−0.138Cm−2 𝜀
+11
+8.26×10−11C2N−1m−2
+𝜀
+33
+9.03×10−11C2N−1m−2 𝜏
+3
+−2.9×10−6Cm−2K−1
+K1 9Wm−1K−1 𝜒 1.45 ×10−16Nm−2s2
+𝜌 5504kgm−3 C 260Jkg−1K−1
+E
+𝜉 plays a critical role in governing the spatial extent confirming the partial validation of the formulated
+and magnitude of the displacement, highlighting the model. Furthermore, a similar qualitative behavior is
+importance of incorporating nonlocal effects in mod- evident in the magnitude of the temperature field with
+eling material behavior in heterogeneous or complex varying values of the spatial nonlocal parameter 𝜉 ,
+systems. indicating that spatial nonlocality exerts a noticeable
+In Fig. 4b, the variation of the vertical displace- influence on the thermal response of the medium.
+ment w is illustrated at time t=0.1 to examine the The variation of void volume fraction 𝜓 versus
+influence of the spatial nonlocal parameter 𝜉 . The the distance z has been illustrated in Fig. 4d at time
+graph indicates that w attains its maximum value at t=0.1 . It is seen from the graphical representation,
+the free surface; however, the spatial nonlocal param- the magnitude of void volume fraction 𝜓 increases in
+eter 𝜉 does not exhibit any pronounced effect on this 0<z<2.9 to attain the maximum near z=2.9 and
+displacement component. This negligible influence thereafter decreases at far from the boundary. It is
+can be attributed to the inherently smooth nature of also noticed that the magnitude of void volume frac-
+the displacement field and the predominant impact of tion increases sharply with the influence of the spatial
+the applied boundary and loading conditions near the nonlocal parameter 𝜉.
+free surface. Since the nonlocal parameter primarily To investigate the effect of the spatial nonlocal
+influences the response in regions with high stress or parameter 𝜉 on the normal stress 𝜎 zz and shear stress
+strain gradients, its impact becomes negligible when 𝜎 zx , Fig. 4e and f are presented. As evident from the
+the deformation varies gradually, as in the present figures, both stress components satisfy the prescribed
+case. Moreover, at the early time instant
+t=0.1
+, the mechanical boundary conditions, confirming the
+deformation is mainly governed by classical elastic accuracy and reliability of the developed numerical
+and thermal effects rather than nonlocal interactions. model. In the vicinity of the corrugated boundary,
+Additionally, when the ratio of the internal length the stress waves exhibit a compressive nature, while
+scale 𝜉 to the structural dimension is small, the system with increasing distance from the boundary, distinct
+exhibits a nearly local behavior, leading to an insig- oscillatory patterns emerge in both stress profiles.
+nificant contribution of 𝜉 to the vertical displacement. Moreover, the graphical results reveal that the spatial
+Figure 4c illustrates the effect of the spatial non- nonlocal parameter 𝜉 significantly influences the mag-
+local parameter 𝜉 on the temperature distribution 𝜃 . nitude of the stress components within the medium,
+As observed, the temperature profile adheres to the highlighting its critical role in capturing the nonlocal
+boundary condition specified in Eq. (80), thereby mechanical behavior. The observed compressive and
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 15 of 27 77
+Fig. 4 Impact of spatial nonlocal parameter on the distributions of a u , b w , c 𝜃 , d 𝜓 , e 𝜎 zz , f 𝜎 zx , g𝜎 z , and h D z with respect to vertical
+z
+distance for FOMLS-IV heat transfer model
+Vol.: (0123456789)
+77 Page 16 of 27 S. Das et al.
+Fig. 5 Impact of temporal nonlocal parameter on the distributions of a u , b w , c 𝜃 , d 𝜓 , e 𝜎 zz , f 𝜎 zx , g𝜎 z , and h D z with respect to ver-
+z
+tical distance for FOMLS-IV heat transfer model
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 17 of 27 77
+Fig. 6 Impact of fractional-order parameter on the distributions of a u , b w , c 𝜃 , d 𝜓 , e 𝜎 zz , f 𝜎 zx , g𝜎 z , and h D z with respect to vertical
+z
+distance for FOMLS-IV heat transfer model
+Vol.: (0123456789)
+77 Page 18 of 27 S. Das et al.
+Fig. 7 Impact of different heat transfer models on the distributions of a u , b w , c 𝜃 , d 𝜓 , e 𝜎 zz , f 𝜎 zx , g𝜎 z , and h D z with respect to ver-
+z
+tical distance
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 19 of 27 77
+Fig. 8 Impact of corrugated boundary on the distributions of a 𝜎 zz , b 𝜎 zx , and c 𝜎 z with respect to vertical distance z
+oscillatory characteristics of the normal and shear displacement D z can be explained by the coupled
+stresses can be attributed to the combined effects of electromechanical interaction and boundary con-
+boundary geometry, wave propagation, and nonlo- straints of the medium. The disappearance of D z on
+cal interactions within the medium. Near the corru- the corrugated boundary arises from the prescribed
+gated boundary, the imposed mechanical and geomet- electrical boundary condition, which enforces a zero
+ric constraints cause stress waves to undergo initial normal electric flux at the surface. Within the region
+compression. As these waves propagate away from 0<z<2 , the combined influence of mechani-
+the boundary, multiple reflections and interactions cal deformation and induced polarization leads to
+between neighboring points—enhanced by the spa- an accumulation of charge, causing D z to increase
+tial nonlocal effect—lead to phase shifts and energy and reach its peak near
+z=2
+. Beyond this point, the
+redistribution, resulting in the emergence of oscilla- diminishing mechanical and electric field interac-
+tory stress patterns. The spatial nonlocal parameter 𝜉 tions result in a gradual decay of D z toward zero. The
+modifies the stress distribution by introducing a long- spatial nonlocal parameter 𝜉 further modulates this
+range interaction between material points, thereby response by incorporating long-range electromechan-
+influencing the amplitude and wavelength of the ical interactions, thereby influencing both the inten-
+stress oscillations within the medium. sity and spatial distribution of the electric displace-
+In Fig. 4g, the equilibrated stress 𝜎 z is highlighted ment within the medium.
+along the distance z for different values of the spatial
+nonlocal parameter. Here also, a similar qualitative 9.2 Impact of temporal nonlocal parameter 𝜏
+phenomenon is revealed due to the variation of the
+spatial nonlocal parameter. The numerical computations in Fig. 5a–h have
+Figure 4h illustrates the variation of the electric been carried out to investigate the impact of tem-
+displacement D z for the same set of parameters dis- poral nonlocal parameter 𝜏 for FOMLS-IV heat
+cussed earlier. The observed behavior of the electric
+Vol.: (0123456789)
+77 Page 20 of 27 S. Das et al.
+transfer model by taking the parameter values as Figure 5c illustrates the variation of the tempera-
+𝜉 =9×10−3, 𝛼 =0.1, d r =0.5 . ture distribution 𝜃 for different magnitudes of the
+Figure 5a illustrates the variation of the horizon- temporal nonlocal parameter 𝜏 at time t=0.1 . It is
+tal displacement u corresponding to different values observed that the temperature profile initially exhibits
+of the temporal nonlocal parameter 𝜏 , evaluated at the an increasing trend for moderate values of 𝜏 ; however,
+time instant t=0.1 . As evident from the figure, the as 𝜏 increases further, the magnitude of 𝜃 decreases
+horizontal displacement exhibits its peak magnitude sharply with depth ( z ). This behavior indicates that
+along the corrugated boundary, followed by a grad- stronger temporal nonlocal effects tend to suppress
+ual attenuation as the distance z increases, reflecting the thermal response of the medium.
+the dissipative nature of wave propagation within the A similar qualitative trend is observed for the
+medium. A notable observation is that diminishing void volume fraction 𝜓 , as depicted in Fig. 5d,
+the temporal nonlocal parameter 𝜏 enhances the dis- where the variation follows a comparable pattern
+placement magnitude u . This indicates that reduced with respect to the temporal nonlocal parameter 𝜏.
+temporal nonlocality facilitates greater deformation, Figure 5e and f illustrate the variations of the
+underscoring the influence of the material’s temporal normal stress 𝜎 zz and shear stress 𝜎 zx for different
+memory on its mechanical response. values of the temporal nonlocal parameter 𝜏 . It is
+The observed characteristics of the horizontal dis- evident from the figures that the normal stress 𝜎 zz
+placement u can be explained by the influence of the undergoes only minor changes with varying 𝜏 , sug-
+temporal nonlocal parameter 𝜏 , which indicate the gesting a relatively weak sensitivity to temporal
+material’s memory effect in time. A larger 𝜏 implies nonlocal effects. In contrast, the shear stress 𝜎 zx
+stronger temporal nonlocality, meaning the current exhibits a more pronounced variation, indicating
+state of stress and strain depends more significantly that the temporal memory effects embedded in 𝜏
+on the past history of deformation. This delayed play a significant role in governing the shear behav-
+response effectively introduces additional stiffness ior of the medium. This contrasting response high-
+or resistance in the medium, thereby suppressing lights the anisotropic nature of temporal nonlocal-
+the amplitude of displacement. Conversely, when ity, which tends to influence shear-dominated modes
+𝜏 decreases, the material response becomes more of deformation more strongly than normal stress
+instantaneous, reducing the memory-induced resist- components. The distinct influence of the tempo-
+ance and allowing larger deformation amplitudes. The ral nonlocal parameter 𝜏 on the normal and shear
+gradual decay of u with increasing z further reflects stresses arises from the different deformation mech-
+the natural attenuation of wave energy as it propa- anisms governing these stress components. The
+gates away from the corrugated boundary. normal stress 𝜎 zz is primarily associated with direct
+However, in the variation of the vertical dis- compression or tension along the vertical direc-
+placement w , no such effect of the temporal nonlo- tion, where the deformation evolves more gradually
+cal parameter is noticed in Fig. 5b. This is plausible with time, resulting in weaker temporal gradients
+since the vertical motion is primarily governed by and minimal memory effects. In contrast, the shear
+normal stresses and boundary conditions at the cor- stress 𝜎 zx involves coupled deformation between
+rugated surface, the effect of temporal memory is adjacent layers, where time-dependent strain inter-
+relatively weak compared to the horizontal response, actions are more significant. Consequently, the tem-
+which involves stronger shear interactions and time- poral nonlocality, which accounts for the material’s
+dependent coupling. Moreover, the vertical displace- memory of past deformation states, has a stronger
+ment field varies smoothly with time, leading to mini- impact on the shear response, amplifying its sen-
+mal temporal gradients; hence, the history-dependent sitivity to variations in 𝜏 . This explains why 𝜎 zx
+effects introduced by 𝜏 contribute negligibly to w . exhibits greater variation compared to 𝜎 zz for differ-
+This indicates that the vertical deformation is largely ent values of the temporal nonlocal parameter.
+controlled by instantaneous elastic and geometric As noticed from Fig. 5g, the equilibrated stress
+effects rather than by the delayed temporal response is also significantly affected due to the variation
+of the material. of the temporal nonlocal parameter, however, the
+electric displacement is independent of the change
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 21 of 27 77
+in the magnitude of the temporal nonlocality. The thereby decreasing the overall magnitude of the ther-
+equilibrated stress is time-dependent and sensitive mophysical fields. The fractional parameter essen-
+to the material’s memory effects introduced by 𝜏 , tially introduces a form of nonlocal diffusion, which
+which modify stress relaxation and redistribution. enhances energy dissipation and attenuates sharp var-
+In contrast, the electric displacement is governed by iations in the system’s response.
+instantaneous electromechanical coupling, respond- However, the vertical displacement w remains
+ing immediately to deformation and thus remaining almost independent of 𝛼 because it is primarily gov-
+largely unaffected by temporal nonlocality. erned by boundary geometry and normal stress con-
+ditions rather than by the internal nonlocal diffu-
+9.3 Impact of fractional-order parameter 𝛼 sion mechanisms affected by the fractional order. In
+the present configuration, the vertical deformation
+The numerical computations in Fig. 6a–h have evolves in a relatively smooth and stable manner, with
+been carried out to investigate the impact of frac- minimal spatial gradients in the direction influenced
+tional-order parameter 𝛼 for FOMLS-IV heat by fractional nonlocality. Consequently, the fractional
+transfer model by taking the parameter values as parameter exerts negligible control over w , while it
+𝜉 =9×10−3, 𝜏 =5×10−3, d r =0.5 . significantly alters the other thermophysical quanti-
+Figure 6a–h depict the variation of the differ- ties that are more sensitive to nonlocal diffusion and
+ent thermophysical quantities due to the presence of gradient-based interactions.
+spatiotemporal nonlocal effect in the context of Frac-
+tional-Order Modified LS-IV (FOMLS-IV) model. 9.4 Comparative study among different heat transfer
+As noticed from the graphical demonstrations, the models (Fig. 7a–h)
+magnitude of the thermophysical quantities decreases
+with the increment of the nonlocal fractional param- The numerical computations in Fig. 7a–h
+eter 𝛼 . Though, the vertical displacement is independ- have been carried out to investigate the differ-
+ent of the effect of the fractional parameter 𝛼. ence among different heat transfer models (i.e.
+The Fractional-Order Modified LS-IV (FOMLS- FOLS, FOMLS-I, FOMLS-II, FOMLS-III, and
+IV) heat conduction model can be interpreted as an FOMLS-IV) by taking the parameter values as
+extension of the Modified LS-II (MLS-II) model 𝜉 =9×10−3, 𝜏 =5×10−3, 𝛼 =0.1, d r =0.5 .
+arranged in series with a thermoelastic element. In Figure 7a–h have been plotted to make a compara-
+this configuration, the overall thermal displacement tive study among different thermoelastic models of
+of the system is represented as the sum of the thermal involving the fractional parameter 𝛼 subject to the
+displacements contributed by each constituent com- presence of spatiotemporal nonlocal effects due to
+ponent, whereas the total heat flux remains continu- the presence of corrugation. The numerical computa-
+ous and identical throughout all connected elements. tions have been carried out to analyze the variation of
+This model effectively incorporates both fractional- the thermophysical quantities in the context of FOLS
+order and thermally elastic effects, enabling a more model, FOMLS-I, FOMLS-II, FOMLS-III, FOMLS-
+accurate representation of coupled heat conduction IV models, respectively.
+processes that account for relaxation, memory, and As noticed from Fig. 7a, illustrating the vari-
+reversible thermal interactions within the medium. ation of the horizontal displacement u along the
+The observed reduction in the magnitudes of ther- length z , the magnitude of the profile of u is highest
+mophysical quantities with increasing values of the for the FOMLS-III model, followed successively by
+fractional nonlocal parameter 𝛼 can be attributed to the FOLS, FOMLS-I, and FOMLS-II models. This
+the inherent smoothing and dissipative characteris- behavior signifies that the series combination of the
+tics introduced by the fractional-order operator. As 𝛼 Green–Naghdi (GN) and Cattaneo–Vernotte (CV)
+increases, the fractional derivative accounts for long- mechanisms in the FOMLS-III model enhances ther-
+range spatial interactions more strongly, effectively moelastic coupling, leading to greater deformation
+redistributing the thermal and mechanical responses under thermal loading. In contrast, the FOLS and
+over a wider region. This leads to a reduction in local- FOMLS-I models exhibit comparatively lower dis-
+ized gradients of temperature, heat flux, and stress, placement due to partial energy dissipation through
+Vol.: (0123456789)
+77 Page 22 of 27 S. Das et al.
+their viscous and elastic units, while the FOMLS-II nonuniformity along the free surface. The periodic
+model, dominated by parallel viscous effects, shows surface waviness, characterized by the local slope
+the least displacement owing to its higher thermal c r �(x) , causes coupling between the normal and shear
+damping capacity. Thus, the observed trend reflects stress components, such that even a purely normal
+that models incorporating stronger wave-like ther- load generates secondary shear stresses along the
+mal conduction (such as FOMLS-III) favor greater boundary. This coupling effect leads to spatial modu-
+elastic response, whereas those with dominant vis- lation of stress, producing alternating zones of stress
+cous or diffusive effects yield reduced thermoelastic concentration at the crests and stress relaxation at
+deformation. the troughs of the corrugation. The resulting stress
+However, as noticed from Fig. 7b, there is no such field, therefore, becomes nonuniform and exhibits
+significant differences observed in the variation of the periodicity consistent with the surface profile. Moreo-
+vertical displacement w while different thermoelastic ver, in the presence of nonlocal and fractional-order
+models have been taken into account. This indicates effects, the corrugated geometry enhances spatiotem-
+that the vertical deformation is relatively insensitive poral interactions between thermal and mechanical
+to the fractional-order parameter and the specific heat fields, promoting localized energy accumulation and
+conduction model employed. Physically, this behavior delayed stress relaxation. Such behavior is physically
+arises because the vertical displacement is primar- significant as it reflects the realistic response of mate-
+ily governed by mechanical boundary conditions and rials with rough or patterned surfaces, where the geo-
+geometric constraints, which remain identical for all metric curvature alters the local heat flux and strain
+models. In contrast to the horizontal displacement, distribution, thereby intensifying the thermomechani-
+which is strongly influenced by the evolution of tem- cal coupling. Consequently, the corrugated boundary
+perature gradients and thermal relaxation effects, the condition plays a crucial role in amplifying the non-
+vertical displacement is only weakly coupled to the locality of stress and capturing the complex thermoe-
+thermal field. Consequently, variations in the frac- lastic response of advanced micro- and nanostruc-
+tional-order and nonlocal parameters have negligible tured materials.
+impact on w , leading to almost identical vertical dis-
+placement profiles across all the considered models.
+A similar qualitative behavior in the other variations 10 Conclusions
+are noticed as observed in Fig. 7a.
+The present work reformulates the thermal con-
+9.5 Effectiveness of corrugated boundary (Fig. 8a–c) duction model by establishing an analogy between
+viscoelastic mechanical behavior and heat conduc-
+The numerical computations in Fig. 8a–c have tion phenomena. Based on this analogy, a series of
+been carried out to investigate the impact of cor- modified thermal models are proposed, including the
+rugated boundaries for FOMLS-IV heat trans- fractional-order modified Lord–Shulman (FOMLS)
+fer model by taking the parameter values as formulations, which are obtained through the appro-
+𝜉 =9×10−3, 𝜏 =5×10−3, 𝛼 =0.1 . Two scenarios priate assignment of specific model parameters.
+are depicted in each figure which are “without cor- Through the graphical illustrations, significance of
+rugation ( d r =0 )” and “with corrugation ( d r =0.5)”. various parameters such as spatiotemporal nonlocal
+Figure 8a, b analyzes the variation of the nonlocal parameters, fractional-order parameters and corru-
+normal stress and shearing stress components while gated boundary effects have been demonstrated and
+Fig. 8c depicts the equilibrated stress subjected to the the following concluding remarks can be addressed:
+inclusion and exclusion of corrugated boundary con-
+dition in the problem. These numerical computations (i) The Spatial nonlocal parameter (ξ) governs
+have been carried out in the context of the spatiotem- the extent of long-range spatial interactions
+poral nonlocal effect. within the material. Influence of ξ smoothens
+Due to the assumption for a corrugated boundary displacement and stress distributions, reduces
+significantly influences the stress variation within sharp gradients, and weakens local stress con-
+the thermoelastic medium by inducing geometric centrations.
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 23 of 27 77
+(ii) The larger magnitude of the temporal nonlocal otemporal nonlocality, and corrugated geom-
+parameter (τ) leads to delayed stress relaxation etry provides a unified and realistic framework
+and smaller displacement amplitudes, espe- for predicting complex thermoelastic interac-
+cially affecting shear stresses more than normal tions in advanced materials.
+stresses. (ix) The developed FOMLS-IV model effectively
+(iii) The Fractional-order parameter (α) introduces captures memory-dependent, nonlocal, and
+additional diffusion and damping through geometric effects, offering valuable insights for
+fractional-order heat conduction. Higher α val- thermal and electromechanical system design.
+ues reduce the magnitudes of all thermophysi-
+cal quantities, while the vertical displacement
+remains nearly unaffected due to its geometric
+dependence. 11 Application of the current study
+(iv) The FOMLS-III model exhibits the highest
+horizontal displacement due to strong thermoe- The theoretical framework developed in this study,
+lastic coupling between GN and CV mecha- grounded in fractional-order thermoelasticity and
+nisms. Klein–Gordon-type nonlocal elasticity, is directly
+(v) Models dominated by viscous or diffusive applicable to the analysis and design of advanced
+effects (e.g., FOMLS-II) show reduced ther- surface acoustic wave (SAW) sensors, as illustrated
+moelastic deformation. in Fig. 9. By explicitly modeling orthotropic porous
+(vi) The vertical displacement remains nearly iden- piezo-thermoelastic media with a corrugated free sur-
+tical across models, being primarily controlled face, the proposed approach enables accurate predic-
+by boundary constraints. tion of wave propagation characteristics and electro-
+(vii) The inclusion of a corrugated boundary induces mechanical coupling mechanisms relevant to modern
+geometric nonuniformity, coupling normal and communication and sensing environments. The inclu-
+shear stresses, producing alternating stress con- sion of engineered porosity within the piezoelectric
+centration and relaxation zones consistent with substrate reduces acoustic impedance and allows con-
+surface curvature. Moreover, imposing the cor- trolled tuning of mechanical and electrical material
+rugated boundary condition amplifies nonlo- properties, thereby enhancing sensor sensitivity and
+cal and fractional-order influences, capturing operational bandwidth. In parallel, the presence of a
+realistic thermomechanical responses in micro/ corrugated surface geometry introduces additional
+nanostructured surfaces. wave modulation and mode coupling effects, leading
+(viii) In general, it can be concluded that the com- to improved signal transduction and selectivity, par-
+bined incorporation of fractional-order, spati- ticularly in miniaturized or harsh operating conditions.
+Fig. 9 Potential application
+of porous piezo-electric
+material with corrugated
+surface
+Vol.: (0123456789)
+77 Page 24 of 27 S. Das et al.
+Furthermore, the incorporation of memory-dependent feedback, and electrically induced thermal relaxation
+fractional behavior and spatiotemporal nonlocality effects, which are particularly relevant in piezoelec-
+provides a physically consistent representation of dis- tric and semiconductor-based devices.
+persion, attenuation, and thermal relaxation phenom- Moreover, the fractional-order and nonlocal struc-
+ena at micro- and nano-length scales. Consequently, ture of the model is inherently compatible with mul-
+the present model establishes a robust theoretical basis tiphysics coupling, making it suitable for integra-
+for the design and optimization of porous piezoelec- tion with diffusion, electromagnetic, or phase-field
+tric SAW sensors with complex surface morphologies, models. While such extensions are beyond the scope
+supporting the development of next-generation com- of the present study, the developed framework pro-
+munication and sensing technologies. vides a robust foundation for future investigations
+of complex coupled phenomena in micro- and nano-
+structured materials, particularly where size effects,
+12 Prospects for future investigations memory dependence, and inter-field interactions are
+significant.
+The proposed framework is well suited for extension
+to thermo-electrical, magneto-thermal, and more gen- Author contribution AS: supervision, methodology, SD:
+conceptualization, RD: visualization, investigation, AS: writ-
+eral multiphysics phenomena. The present model is
+ing, review and editing, validation, WP: original draft, VG:
+formulated within a modular and thermodynamically
+software.
+consistent continuum framework, where the govern-
+ing equations are derived from balance laws and con- Funding The authors declare that no external funding was
+stitutive relations. As such, additional physical fields received from any public, commercial, or not-for-profit organi-
+zation for the conduct of this research.
+can be incorporated in a systematic manner.
+For thermo-electrical coupling, the extension can Data availability No datasets were generated or analysed
+be achieved by augmenting the constitutive relations during the current study.
+with electrical conduction and polarization equations Conflict of interest The authors declare no competing inter-
+(e.g., charge conservation and generalized Ohm’s ests.
+law), while retaining the existing fractional-order
+thermal and nonlocal elastic operators. This would
+enable the modeling of Joule heating, electro-thermal Appendix
+R =c +𝜌𝜉2𝜔2, R =−k2c −𝜌𝜔2−𝜌𝜉2k2𝜔2−𝜌𝜏2𝜔4, R =𝜄k(c +c ), R =−𝜄k𝛽T,
+1 55 2 11 3 13 55 4 1
+R =𝜄k(𝜂 +𝜂 ), R =𝜄k𝛾 , R =R , R =c +𝜌𝜉2𝜔2, R =−k2c −𝜌𝜔2−𝜌𝜉2k2𝜔2−𝜌𝜏2𝜔4,
+5 31 15 6 1 7 3 8 33 9 55
+R =−𝛽T, R =𝜂 , R =−k2𝜂 , R =𝛾 , R =R , R =R , R =R , R =𝜏 , R =−𝜀 ,
+10 3 11 33 12 15 13 3 14 5 15 11 16 12 17 3 18 33
+R =𝜀 k2, R =−h , R =−g , R =h k2, R =−𝜄k𝛾 , R =−𝛾 , R =𝜈, R =R , R =R ,
+19 11 20 3 21 3 22 1 23 1 24 3 25 26 20 27 21
+R =k2h −𝜄kg , R =A +𝜒𝜉2𝜔2, R =−k2A −a −𝜒𝜔2−𝜒𝜉2k2𝜔2−𝜒𝜏2𝜔4, R =B𝛽T𝜃 𝜄k𝜔,
+28 1 1 29 3 30 1 1 31 1 0
+R =B𝛽T𝜃 𝜔, R =−E𝜅 , R =Ek2𝜅 +B𝜌C 𝜔, R =−B𝜏 𝜔𝜃 , R =B𝜈𝜃 𝜔.
+32 3 0 33 3 34 1 E 35 3 0 36 0
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 25 of 27 77
+See Table 4. lags. Multidiscip. Model. Mater. Struct. 16(4), 689–711
+(2020). https://d oi.o rg/1 0.1 108/M MMS-0 7-2 019-0 138
+Abouelregal, A.E., Civalek, Ö., Oztop, H.F.: Higher-order
+Table 4 Coefficients of FOLS and FOMLS heat conduction time-differential heat transfer model with three-phase
+models lag including memory-dependent derivatives. Int. Com-
+mun. Heat Mass Transfer 128, 1–12 (2021b). https://d oi.
+Heat transfer model B E org/1 0.1 016/j.i cheat masst ransf er.2 021.1 05649
+Abouelregal, A.E., Marin, M., Alsharari, F.: Thermoelastic
+FOLS 1+ Γ(𝛼 𝜐 + 𝛼 1) 𝜔𝛼 1 plane waves in materials with a microstructure based
+FOMLS-I 1+2 𝜐𝛼 𝜔𝛼 1+ 𝜐𝛼 𝜔𝛼 on micropolar thermoelasticity with two temperature
+Γ(𝛼+1) Γ(𝛼+1)
+and higher order time derivatives. Mathematics (2022).
+FOMLS-II 1+ 𝜐𝛼 𝜔𝛼 2+ 𝜐𝛼 𝜔𝛼
+Γ(𝛼+1) Γ(𝛼+1) https://d oi.o rg/1 0.3 390/m ath10 09155 2
+FOMLS-III 1+3 𝜐𝛼 𝜔𝛼+ 𝜐2𝛼 𝜔2𝛼 1+ 𝜐𝛼 𝜔𝛼 Abouelregal, A.E., Moustapha, M.V., Nofal, T.A., Rashid,
+Γ(𝛼+1) Γ(2𝛼+1) Γ(𝛼+1) S., Ahmad, H.: Generalized thermoelasticity based on
+FOMLS-IV 1+3 Γ(𝛼 𝜐 + 𝛼 1) 𝜔𝛼+ Γ(2 𝜐 𝛼 2𝛼 +1) 𝜔2𝛼 2+ Γ(𝛼 𝜐 + 𝛼 1) 𝜔𝛼 higher-order memory-dependent derivative with time
+delay. Results Phys 20, 103705 (2021a). https://d oi.o rg/
+10.1 016/j.r inp.2 020.1 03705
+Agiasofitou, E., Lazar, M.: Nonlocal elasticity of Klein‐Gor-
+G 5i ={1+𝜉2 (𝜇 i 2−k2 )−𝜏2𝜔2 } d ti o v n e m ty o p d e e w lli i n th g i a n n te d r n d a is l p l e e r n s g io th n a r n el d a t t i i o m n e s . s P c A al M es: M c o (2 n 0 st 2 it 3 u ) - .
+(c
+11
+𝜄k−c
+13
+𝜇
+i
+G
+1i
+−𝛽
+1
+TG
+2i
+−𝜂
+31
+𝜇
+i
+G
+3i
++𝛾
+1
+G 4i), https://d oi.o rg/1 0.1 002/p amm.2 02300 065
+Anh, V., Vinh, P.: Expressions of nonlocal quantities and
+G 6i={1+𝜉2 (𝜇 i 2−k2 )−𝜏2𝜔2 }(c 55(𝜄kG 1i−𝜇i)+𝜂15𝜄kG 3i), application to Stoneley waves in weakly nonlocal ortho-
+tropic elastic half-spaces. Math. Mech. Solids 28(11),
+G 7i ={ 1+𝜉2 (𝜇 i 2−k2 )−𝜏2𝜔2 } 2420–2435 (2023). https://d oi.o rg/1 0.1 177/1 08128 6523
+116433 2
+( c 13 𝜄k−c 33 𝜇 i G 1i −𝜂 33 𝜇 i G 3i −𝛽 3 TG 2i +𝛾 3 G 4i) , Anh, V.T.N., Vinh, P.C., Tuan, T.T., Hue, L.T.: Weakly nonlo-
+cal Rayleigh waves with impedance boundary conditions.
+Contin. Mech. Thermodyn. 35(5), 2081–2094 (2023).
+G ={1+𝜉2 (𝜇2−k2 )−𝜏2𝜔2 }𝜄k(A G −h G ), https:// doi. org/ 10. 1007/ s00161- 023- 01235-7
+8i i 1 4i 1 3i
+Aouadi, M.: Generalized thermo-piezoelectric problems with
+temperature-dependent properties. Int. J. Solids Struct.
+G ={1+𝜉2 (𝜇2−k2 )−𝜏2𝜔2 }𝜇(h G −A G ), 43(21), 6347–6358 (2006). https:// doi. org/ 10. 1016/j. ijsol
+9i i i 3 3i 3 4i
+str. 2005. 09. 003
+Bae, D.-Y., Lee, J.-R.: Development of single channeled serial-
+G 10i ={ 1+𝜉2 (𝜇 i 2−k2 )−𝜏2𝜔2 } connected piezoelectric sensor array and damage visuali-
+zation based on multi-source wave propagation imaging.
+(−𝜇 i 𝜂 15 +𝜄k𝜂 15 G 1i −𝜄k𝜀 11 G 3i −𝜄kh 1 G 4i) , J. Intell. Mater. Syst. Struct. 27(13), 1861–1870 (2016).
+https:// doi. org/ 10. 1177/ 10453 89X15 615969
+Biot, M.A.: Thermoelasticity and irreversible thermodynamics.
+G 11i ={ 1+𝜉2 (𝜇 i 2−k2 )−𝜏2𝜔2 } J. Appl. Phys. 27(3), 240–253 (1956). https:// doi. org/ 10.
+1063/1. 17223 51
+(𝜄k𝜂
+31
+−𝜇
+i
+𝜂
+33
+G
+1i
++𝜏
+3
+G
+2i Biswas, S.: Rayleigh waves in a nonlocal thermoelastic layer
++𝜇 i 𝜀 33 G 3i −(g 3 −𝜇 i h 3)G 4i ) . lying over a nonlocal thermoelastic half-space. Acta
+Mech. 231(10), 4129–4144 (2020). https:// doi. org/ 10.
+1007/ s00707- 020- 02751-2
+Ξ 1i =( G 7i −c� r G 6i) e−𝜇i c r, Ξ 2i =( G 6i −c� r G 5i) e−𝜇i c r, Biswas, M., Sahu, S.A.: Plane wave reflection in micro-struc-
+Ξ 3i =( G 9i −c� r G 8i) e−𝜇i c r, Ξ 4i =G 11i e−𝜇i c r, t b u o r u a n l d p a i r e y z o c m o a n g d n it e i t o ic n - s fl . e M xo e m ch ag . n B et a i s c e d so l d id e s. w i S th tr u i c m t. p e M da a n c c h e .
+Ξ
+5i
+=G
+2i
+e−𝜇i c r, i=1(1)5. 0(0), 1–23 (2023). https:// doi. org/ 10. 1080/ 15397 734.
+2023. 22972 56
+Cattaneo, C.: A form of heat-conduction equations which elim-
+inates the paradox of instantaneous propagation. Comptes
+Rendus 247, 431 (1958)
+Chandrasekharaiah, D.S.: A generalized linear thermoelastic-
+References
+ity theory for piezoelectric media. Acta Mech. 71(1–4),
+39–49 (1988). https:// doi. org/ 10. 1007/ BF011 73936
+Cowin, S.C., Nunziato, J.W.: Linear elastic materials with
+Abouelregal, A.E.: A novel generalized thermoelastic-
+voids. J. Elast. 13(2), 125–147 (1983). https:// doi. org/ 10.
+ity with higher-order time-derivatives and three-phase
+1007/ BF000 41230
+Vol.: (0123456789)
+77 Page 26 of 27 S. Das et al.
+Das, S., Dutta, R., Sur, A., Craciun, E.M.: Dynamic response Iovane, G., Nasedkin, A.V.: Modal analysis of piezoelectric
+of porous viscoelastic living tissue under fractional-order bodies with voids. I. mathematical approaches. Appl.
+Moore-Gibson–Thompson thermoelasticity theory. Int. J. Math. Model. 34(1), 60–71 (2010). https:// doi. org/ 10.
+Numer. Methods Heat Fluid Flow (2025). https:// doi. org/ 1016/j. apm. 2009. 03. 028
+10. 1108/ HFF- 04- 2025- 0269 Kaplunov, J., Prikazchikov, D.A., Prikazchikova, L.: On non-
+Diethelm, K., Ford, N.J.: Analysis of fractional differential locally elastic Rayleigh wave. Philos. Trans. r. Soc. A
+equations. J. Math. Anal. Appl. 265(2), 229–248 (2002). Math. Phys. Eng. Sci. (2022). https:// doi. org/ 10. 1098/ rsta.
+https:// doi. org/ 10. 1006/ jmaa. 2000. 7194 2021. 0387
+Edelen, D.G.B., Laws, N.: On the thermodynamics of systems Kaplunov, J., Prikazchikov, D.A., Prikazchikova, L.: On inte-
+with nonlocality. Arch. Ration. Mech. Anal. 43(1), 24–35 gral and differential formulations in nonlocal elasticity.
+(1971). https:// doi. org/ 10. 1007/ BF002 51543 Eur. J. Mech. A/Solids 100, 104497 (2023). https:// doi.
+Eringen, A.C.: On differential equations of nonlocal elasticity org/ 10. 1016/j. eurom echsol. 2021. 104497
+and solutions of screw dislocation and surface waves. J. Kaur, I., Lata, P., Singh, K.: Thermoelastic damping in gener-
+Appl. Phys. 54(9), 4703–4710 (1983). https:// doi. org/ 10. alized simply supported piezo-thermo-elastic nanobeam.
+1063/1. 332803 Struct. Eng. Mech. 81(1), 29–37 (2022)
+Eringen, A.C.: Nonlocal Continuum Mechanics and Some Lata, P., Singh, S.: Effects of nonlocality and two temperature
+Applications. In: Barut, A.O. (ed.) Nonlinear equations in a nonlocal thermoelastic solid due to ramp type heat
+in physics and mathematics. NATO advanced study insti- source. Arab. J. Basic Appl. Sci. 27(1), 357–363 (2020).
+tutes series, vol. 40. Springer, Dordrecht (1978). https:// https:// doi. org/ 10. 1080/ 25765 299. 2020. 18251 57
+doi. org/ 10. 1007/ 978- 94- 009- 9891-9_ 12 Lazar, M., Agiasofitou, E.: Nonlocal elasticity of Klein–Gor-
+Eringen, A.C., Edelen, D.G.B.: On nonlocal elasticity. Int. J. don type: fundamentals and wave propagation. Wave
+Eng. Sci. 10(3), 233–248 (1972). https:// doi. org/ 10. 1016/ Motion 114, 103038 (2022). https:// doi. org/ 10. 1016/j.
+0020- 7225(72) 90039-0 wavem oti. 2022. 103038
+Gunghas, A., Kumar, R., Deswal, S., Kalkal, K.K.: Influence of Lord, H.W., Shulman, Y.: A generalized dynamical theory of
+rotation and magnetic fields on a functionally graded ther- thermoelasticity. J. Mech. Phys. Solids 15(5), 299–309
+moelastic solid subjected to a mechanical load. J. Math. 1, (1967). https:// doi. org/ 10. 1016/ 0022- 5096(67) 90024-5
+1016981 (2019) Lotfy, K., Elidy, E.S., Tantawi, R.S.: Piezo-photo-thermoelas-
+Gunghas, A., Kumar, S., Sheoran, D., Kalkal, K.K.: Thermo- ticity transport process for hyperbolic two-temperature
+mechanical interactions in a functionally graded elastic theory of semiconductor material. Int. J. Mod. Phys. C
+material with voids and gravity field. Int. J. Mech. Mater. 32(07), 2150088 (2021). https:// doi. org/ 10. 1142/ S0129
+des. 16(4), 767–782 (2020) 18312 15008 81
+Gupta, V., Barak, M.S.: Fractional and MDD analysis of piezo- Marin, M., Agarwal, R.P., Mahmoud, S.R.: Modeling a micro-
+photo-thermo-elastic waves in semiconductor medium. stretch thermoelastic body with two temperatures. Abstr.
+Mech. Adv. Mater. Struct. (2023). https:// doi. org/ 10. 1080/ Appl. Anal. (2013). https:// doi. org/ 10. 1155/ 2013/ 583464
+15376 494. 2023. 22382 01 Mindlin, R.D.: Equations of high frequency vibrations of ther-
+Gupta, V., Barak, M.S., Das, S.: Vibrational analysis of size- mopiezoelectric crystal plates. Int. J. Solids Struct. 10(6),
+dependent thermo-piezo-photo-electric semiconduc- 625–637 (1974). https:// doi. org/ 10. 1016/ 0020- 7683(74)
+tor medium under memory-dependent Moore–Gibson– 90047-X
+Thompson photo-thermoelasticity theory. Mech. Adv. de Oliveira, E.C., Tenreiro Machado, J.A.: A review of defini-
+Mater. Struct. 31(28), 10543–10559 (2024a). https:// doi. tions for fractional derivatives and integral. Math. Probl.
+org/ 10. 1080/ 15376 494. 2023. 22918 04 Eng. 2014(1940), 1–6 (2014). https:// doi. org/ 10. 1155/
+Gupta, V., Barak, M., Das, S.: Impact of memory-dependent 2014/ 238459
+heat transfer on Rayleigh waves propagation in nonlocal Othman, M.I., Mondal, S.: Memory-dependent derivative
+piezo-thermo-elastic medium with voids. Int. J. Numer. effect on 2D problem of generalized thermoelastic rotat-
+Methods Heat Fluid Flow 34(4), 1902–1926 (2024b) ing medium with Lord–Shulman model. Indian J. Phys.
+Gupta, S., Das, S., Dutta, R., Verma, A.K.: “Higher-order 94(8), 1169–1181 (2020)
+fractional and memory response in nonlocal double poro- Pathania, V., Kumar, R., Gupta, V., Barak, M.S.: Generalized
+magneto-thermoelastic medium with temperature-depend- plane waves in a rotating thermoelastic double porous
+ent properties excited by laser pulse. J. Ocean Eng. Sci. solid. Int. J. Appl. Mech. Eng. 27(4), 138–154 (2022).
+(2022). https:// doi. org/ 10. 1016/j. joes. 2022. 04. 013 https:// doi. org/ 10. 2478/ ijame- 2022- 0055
+Gupta, V., Kumawat, S., Vishwakarma, S.K., Barak, M.S., Das, Pathania, V., Kumar, R., Gupta, V., Barak, M.S.: Double
+S.: Effects of layer imperfections and material gradation porous thermoelastic waves in a homogeneous, isotropic
+on circumferential shear horizontal waves in cylindrical solid with inviscid liquid. Arch. Appl. Mech. (2023).
+piezoelectric composite structure. Compos. Struct. 359, https:// doi. org/ 10. 1007/ s00419- 023- 02364-w
+118997 (2025). https:// doi. org/ 10. 1016/j. comps truct. 2025. Romano, G., Barretta, R., Diaco, M., de Marotti Sciarra, F.:
+118997 Constitutive boundary conditions and paradoxes in non-
+Honein, B., Braga, A.M.B., Barbone, P., Herrmann, G.: Wave local elastic nanobeams. Int. J. Mech. Sci. 121, 151–156
+propagation in piezoelectric layered media with some (2017). https:// doi. org/ 10. 1016/j. ijmec sci. 2016. 10. 036
+applications. J. Intell. Mater. Syst. Struct. 2(4), 542–557 Saeed, T., Abbas, I.: Effects of the nonlocal thermoelastic
+(1991). https:// doi. org/ 10. 1177/ 10453 89X91 00200 408 model in a thermoelastic nanoscale material. Mathematics
+Vol:. (1234567890)
+Klein–Gordon nonlocal dynamics of porous piezo‑thermoelastic medium with surface irregularity… Page 27 of 27 77
+10(2), 1–10 (2022). https:// doi. org/ 10. 3390/ math1 00202 Transf. (2025d). https:// doi. org/ 10. 1016/j. ichea tmass trans
+84 fer. 2025. 109771
+Seema, Saeed, A.M., Singhal, A., Das, S.: “Surface acoustic Sur, A., Marin, M., Mondal, S., Yaylaci, M., Das, S.: Mem-
+waves in a layered piezoelectric plate with considered sur- ory-dependent wave dynamics in micropolar thermoe-
+face effects. Int. J. Dyn. Control 13(1), 38 (2025). https:// lastic solid with Klein–Gordon nonlocal effect. Con-
+doi. org/ 10. 1007/ s40435- 024- 01543-z tin. Mech. Thermodyn. (2026). https:// doi. org/ 10. 1007/
+Seema, Singhal, A.: Examining three distinct rheological s00161- 025- 01447-z
+models with flexoelectric effect to investigate Love-type Vernotte, P.: Les paradoxes de la theorie continue de l’equation
+wave velocity in bedded piezo-structure. ZAMM (2024a). de la chaleur. Comptes Rendus 246, 3154 (1958)
+https:// doi. org/ 10. 1002/ zamm. 20240 0724 Yadav, A.K.: Reflection of plane waves from the impedance
+Seema, Singhal, A.: Analysis of imperfect interfaces in cobalt boundary of a magneto-thermo-microstretch solid with
+ferrite plates using a linear spring model: a comparative diffusion in a fractional order theory of thermoelasticity.
+study with terfenol-D. Discover Mater. 4(1), 97 (2024b) Waves Random Complex Media (2021). https:// doi. org/
+Seema, Singhal, A.: Surface effects study: a continuum 10. 1080/ 17455 030. 2021. 19097 81
+approach from fundamental modes to higher modes and Yadav, A.K., Carrera, E., Marin, M., Othman, M.I.A.: Reflec-
+topological polarization in orthotropic piezoelectric mate- tion of hygrothermal waves in a nonlocal theory of cou-
+rials. J. Appl. Mech. 92(1), 011008 (2025a) pled thermo-elasticity. Mech. Adv. Mater. Struct. (2022).
+Seema, Singhal, A.: “Study of surface wave velocity in distinct https:// doi. org/ 10. 1080/ 15376 494. 2022. 21304 84
+rheological models with flexoelectric effect in piezoelec- Yang, W., Chen, Z.: Nonlocal dual-phase-lag heat conduction
+tric aluminium nitride structure. J. Braz. Soc. Mech. Sci. and the associated nonlocal thermal-viscoelastic analysis.
+Eng. 47(1), 29 (2025b) Int. J. Heat Mass Transf. 156, 119752 (2020). https:// doi.
+Sherief, H.H., El-Sayed, A.M.A., El-Latief, A.M.A.: Fractional org/ 10. 1016/j. ijhea tmass trans fer. 2020. 119752
+order theory of thermoelasticity. Int. J. Solids Struct. Yu, Y.-J., Wu, H., Deng, Z.-C.: New insights on fractional
+47(2), 269–275 (2010). https:// doi. org/ 10. 1016/j. ijsol str. thermoelasticity from anomalous heat conduction. Acta
+2009. 09. 034 Mech. Sin. 40(5), 423419 (2024). https:// doi. org/ 10. 1007/
+Sur, A., Lotfy, K., Dutta, R., Das, S.: Spatiotemporal nonlo- s10409- 023- 23419-x
+cal effect on thermoelastic wave propagation in nanoscale Zhang, L.L., Liu, J.X., Fang, X.Q., Nie, G.Q.: Effects of sur-
+beam influenced by moving load and memory-based heat face piezoelectricity and nonlocal scale on wave propaga-
+transport. Mech. Based des. Struct. Mach. (2025a). https:// tion in piezoelectric nanoplates. Eur. J. Mech. A/Solids
+doi. org/ 10. 1080/ 15397 734. 2025. 25951 81 46, 22–29 (2014). https:// doi. org/ 10. 1016/j. eurom echsol.
+Sur, A., Abouelregal, A.E., Dutta, R., Das, S.: Spatiotemporal 2014. 01. 005
+dynamics of graded Piezothermoelastic rod: coupled non-
+local elasticity and MGT heat conduction with memory
+Publisher’s Note Springer Nature remains neutral with regard
+effects. Contin. Mech. Thermodyn. (2025b). https:// doi.
+to jurisdictional claims in published maps and institutional
+org/ 10. 1007/ s00161- 025- 01427-3
+affiliations.
+Sur, A., Mondal, S., Das, S.: Size-dependent vibrations of
+piezo-thermoelastic microbeam using dual-scale nonlocal
+Springer Nature or its licensor (e.g. a society or other partner)
+strain gradient and memory-dependent thermoelasticity
+holds exclusive rights to this article under a publishing
+theories. Contin. Mech. Thermodyn. 37(5), 78 (2025c).
+agreement with the author(s) or other rightsholder(s); author
+https:// doi. org/ 10. 1007/ s00161- 025- 01410-y
+self-archiving of the accepted manuscript version of this article
+Sur, A., Lotfy, K., Ranjit, N.K., Das, S.: Advanced finite ele-
+is solely governed by the terms of such publishing agreement
+ment analysis of photothermal response in cylindrical
+and applicable law.
+semiconductor with spatial nonlocality and memory-
+dependent heat transport. Int. Commun. Heat Mass
+Vol.: (0123456789)

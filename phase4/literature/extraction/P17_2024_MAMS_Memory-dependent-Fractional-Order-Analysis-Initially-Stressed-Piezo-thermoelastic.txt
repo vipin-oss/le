@@ -1,0 +1,1227 @@
+Mechanics of Advanced Materials and Structures
+ISSN: (Print) (Online) Journal homepage: https://www.tandfonline.com/loi/umcm20
+Memory-dependent and fractional order analysis
+of the initially stressed piezo-thermoelastic
+medium
+M. S. Barak & Vipin Gupta
+To cite this article: M. S. Barak & Vipin Gupta (2023): Memory-dependent and fractional order
+analysis of the initially stressed piezo-thermoelastic medium, Mechanics of Advanced Materials
+and Structures, DOI: 10.1080/15376494.2023.2211065
+To link to this article: https://doi.org/10.1080/15376494.2023.2211065
+Published online: 17 May 2023.
+Submit your article to this journal
+View related articles
+View Crossmark data
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=umcm20
+MECHANICSOFADVANCEDMATERIALSANDSTRUCTURES
+https://doi.org/10.1080/15376494.2023.2211065
+ORIGINAL ARTICLE
+Memory-dependent and fractional order analysis of the initially stressed piezo-
+thermoelastic medium
+M. S. Barak and Vipin Gupta
+Departmentof Mathematics,Indira GandhiUniversity, Rewari, India
+ABSTRACT ARTICLEHISTORY
+In the context of the triple-phase lag model, comparison studies are conducted between the Received20February2023
+memory-dependent derivative and fractional order derivative on the propagation of plane waves Accepted3May2023
+in a half-space of initially stressed transversely isotropic piezothermoelastic material. The coupled
+KEYWORDS
+governing equations of the considered model involving relaxation time, time delay, fractional
+Fractionalorderderivative;
+order parameter,andkernelfunctionareselectedaccordingtospecificproblemsandsolvedusing
+memory-dependentderiva-
+thenormalmode analysistechniqueandobtaining the analytical expression. Thenon-dimensional
+tive;kernelfunction;initial
+temperature, displacement, electrical displacements, and stresses at different values of the frac- stress;three-phaselag;
+tionalorderparameterandtimedelayfactorareobtainedgraphically. piezothermoelastic
+1. Introduction application of fractional derivatives. Their research delved
+into the intricacies of these problems, and their findings
+Biot [1] developed the classical theory of thermoelasticity
+shed new light on the behavior of fractional derivative sys-
+(CTT), in which a parabolic-type partial differential equation tems in reflective scenarios. Bary and his coworkers [17–22]
+governs the temperature distribution within the system. As a
+investigated several photo thermal semiconductor models,
+result, this approach falls short of adequately describing the
+focusing on the fractional heat conduction law. Their study
+process behind thermal signal velocity. One of the most
+provided insights into the behavior of these models under
+noteworthy developments of the CTT was by Lord and
+fractional conditions, contributing to the advancement of
+Shulman [2], who modified the original Fourier’s law by research in this field. Many researchers [23–31] have
+adding a new element known as one relaxation time. Later,
+explored a wide range of issues regarding the reflection and
+Green and Naghdi [3–5] created three additional generalized
+transmission of plane waves.
+thermoelastic models (GN-I, GN-II, and GN-III), which
+Initial stresses play a crucial role in the investigation of
+provide answers for a variety of heat flow-related problems.
+wave propagation because they alter the mechanical reac-
+Tzou [6] added phase lags sq and sT in Fourier’s law and
+tions of the material. Piezoelectric materials undergo pre-
+discovered the dual-phase-lag (2PL) model. The heat flux
+stressing before production to prevent fractures that might
+phase lag sq caused by the quickly varying impact of thermal be fragile due to unreliable material properties. Zenkour
+inertia, and the temperature gradient phase lag sT caused by [32] investigated the wave phenomenon in a gravitated
+the microstructural interactions. Ezzat et al. [7] developed a piezo-thermoelastic half-space using a refined multi-phase-
+generalized thermoelasticity model with 2PL heat conduc- lags theory. Guha and Singh [33] examined the reflecting
+tion using the memory-dependent derivative methodology. phenomena on composite piezothermoelastic material under
+By taking the 2PL model and adding a new delay time sv to the influence of initial stress. Singh and Guha [34] focused
+account for the thermal displacement gradient, Roy on the reflection problem at the surface of a fiber-reinforced
+Choudhuri [8] developed the three-phase lag (3PL) model. composite piezothermoelastic. Recently, Gupta et al. [35–
+The use of piezoelectric materials has increased recently 37], and Barak et al. [38] investigated the energy ratio at the
+and gained interest in actuation, dynamic sensing, intelligent different piezothermoelastic interfaces model in the presence
+structures, and mechanical systems. The phenomenon of of a 2PL, 3PL memory-dependent derivative model.
+piezoelectricity was discovered in the year 1880 by the Curie The present study analyzes the effects of memory-
+brothers [9]. Piezothermoelectricity was first theorized by dependent and fractional order derivatives on plane wave
+Mindlin [10], who created the piezothermoelastic plate propagation in piezothermoelastic material using the triple-
+governing equations. The basic principles governing the pie- phase lag model. The governing equations, including relax-
+zothermoelastic material were studied by Nowacki [11]. ation time, time delay, fractional order parameter, and
+Abo-Dahab and his team [12–16] conducted an extensive kernel function, are solved through normal mode analysis.
+study on various reflection problems that involve the The significant impacts of memory-dependent derivative,
+CONTACTVipinGupta vipin.math.rs.@igu.ac.in DepartmentofMathematics,IndiraGandhiUniversity,Meerpur,Rewari,India.
+(cid:1)2023Taylor&FrancisGroup,LLC
+2 M.S.BARAKANDV.GUPTA
+fractional order derivative, and delay time factor are stated by Das [42]. According to Wang and Li [43], defini-
+detected in all physical quantities of the CdSe material. tions 2.1 and 2.2 have two limitations: first, the kernel func-
+Some specific cases of interest that satisfy previously studied tion K ðt(cid:3)nÞ is a fixed function for a given real number a,
+a
+conditions have also been discussed. These findings provide but from the perspective of applications, the kernel should
+valuable insights into the behavior of piezothermoelastic be freely selected since various processes need different ker-
+materials under different conditions, which could inform the nels to represent their memory effects: secondly, since the
+development of more accurate models and simulations in FOD is defined on an interval ½a,t(cid:2) with a fixed real value
+the future. a, it may not be appropriate to describe the memory effect
+over a long period of time t: These facts led Wang and Li
+[43] to develop the memory-dependent derivative (MDD)
+2. Fractional and memory dependent derivatives
+idea, which explains how sliding intervals cause a fractional
+During the last few decades, fractional calculus has been derivative of the Caputo type [44] to be changed into an
+used in various disciplines, including control engineering, integral version of the derivative with a kernel function. The
+electromagnetic, chemistry, signal processing, quantum following integral form definition applies to the first order
+mechanics, astronomy, quantum field theory, and nuclear of function f on a sliding interval ½ðt(cid:3)sÞ, t(cid:2) with the kernel
+physics. In addition, unconventional building techniques are function Kðt(cid:3)nÞ, and the delay time factor s>0 as
+ð
+required for continuous advancement in the new material. 1 t
+The nonlocal aspect of fractional calculus is one of its most D s fðtÞ¼ s K ða,bÞ ðt(cid:3)nÞf0ðnÞdf: (2.4)
+t(cid:3)s
+essential benefits in many applications. Fractional order
+derivative (FOD) theory may be traced back to de L’ The D s is a nonlocal operator. The MDD may be regarded
+Hospital’s famous question in 1695: “What does the deriva- as a common derivative in the strictest sense when s!0:
+tive dnf=dxn mean if n¼1=2?” According to Diethelm and Depending on the complexity of the problem, we may
+Ford [39], differentiation may be the opposite operation of choose the proper kernel function
+integration. Since that time, several definitions have been 2b a2
+developed. Among all of the FOD [40], the most popular
+K
+ða,bÞ
+ðt(cid:3)nÞ¼1(cid:3)
+s
+ðt(cid:3)nÞþ
+s2
+ðt(cid:3)nÞ2
+8
+nonlocal ones are the Riemann-Liouville and Caputo types.
+>>< 1 if a¼b¼0
+Definition. The Riemann-Liouville a order fractional deriva-
+tive [41] of function fðtÞ defin
+"
+ed on the interval ½a
+#
+,b(cid:2) as
+¼
+>>:
+1(cid:3)ðt(cid:3)nÞ=s if a¼0, b¼1=2
+ð ð1(cid:3)ðt(cid:3)nÞ=sÞ2 if a¼b¼1
+R a Da t fðtÞ¼ Cð1 1 (cid:3)aÞd d t
+a
+t K a ðt(cid:3)nÞfðnÞdn (2.1) (2.5)
+Wang and Li [41, 45] proved that this concept, as opposed
+to fractional calculus, will more clearly demonstrate the
+Definition. The Caputo fractional a order derivative [41] of “memory effect” (change rate depends on the preceding
+function fðtÞ defined on the interval ½a,b(cid:2) as
+state). MDD is readily explained in strictly physical terms,
+" #
+ð
+t and it is possible to interpret the memory-dependent differ-
+R a Da t fðtÞ¼ Cð1 1 (cid:3)aÞ
+a
+K a ðt(cid:3)nÞf0ðnÞdn (2.2) ential equation as corresponding to increased verbal fluency.
+As a result, it may be used in more circumstances than par-
+with a kernel function K ðt(cid:3)nÞ¼1=ðt(cid:3)nÞm , where CðxÞ tial derivatives, where the parameter of fractional derivative
+a
+is the gamma function, a value lies between 0 to 1: plays a key role.
+We observe that the upper bound b may be any finite
+number that is big enough to include all the discussions, but 3. Basic equations
+the lower bound a is often set to be 0: It is simple to verify
+that the connection between these two categories of deriva- The primary dynamical governing equations for anisotropic
+tives is as follows: piezothermoelastic crystal with the effects of initial stress,
+FOD, MDD, and three-phase lag, in the absence of heat
+K ðt(cid:3)aÞ
+RDafðtÞ¼ a fðaÞþcDafðtÞ (2.3) sources, body forces, and electric forces have been developed
+a t Cð 1(cid:3)aÞ a t
+by Roy Choudhuri [8], Guha and Singh [33] as follows:
+This means that we can only take into account one of Generalized Hooke’s law
+them. Caputo type is the most convenient choice. It is abun- rij ¼c ijrl e rl (cid:3)g ijr E r (cid:3)b ij T: (3.1)
+dantly evident that this derivative is classified as a common
+derivative weighted-integral version on the interval ½a,t(cid:2), Equation of motion
+whose length rises with the growth t: rji,j þðu i,kr0 k,j Þ ,j ¼qu€ i : (3.2)
+Yet, to the best of our knowledge, the majority of defini-
+tions have focused on mathematical self-consistency, leaving Electric constitutive equation
+the initial issue of “What does the FOD mean?” unanswered. D i ¼eij E j þg ijr e jr þsi T, (3.3)
+The definitions are no stricter than their equivalent in inte-
+ger order, and the physical meaning is difficult to explain, as with
+MECHANICSOFADVANCEDMATERIALSANDSTRUCTURES 3
+E i ¼(cid:3)/,i : (3.4) rij ¼ components of the stress
+r0 ¼ components of initial stress
+Equation of electrostatics ij
+D i,i ¼0 ði, j, r, l¼1,2,3Þ, (3.5) s K T ij ¼ ¼ p c h o a m se po la n g en o t f s t o h f e t t h e e m t p h e e r r a m tu a r l e co gr n a d d u ie c n ti t vity
+The 3PL heat conduction law with fractional order deriva- T ¼ reference temperature
+0
+tive (FOD), as given by C E ¼ specific heat at constant strain
+(cid:2) 1þ Cða s þ a v 1Þ@ @ t a a (cid:3) K i (cid:4) j T ,ij þ (cid:2) 1þ Cða s þ a T 1Þ@ @ t a a (cid:3) K ij T_ ,ij s e i v j ¼ ¼ p co h m as p e o l n ag en o t f o t f he st r r m ai a n l disp. Gradient
+!
+¼ 1þ
+Cða
+s
+þ
+a q
+1Þ@
+@
+t
+a
+a
+þ
+Cð2
+s
+a
+2 q a
+þ1Þ@
+@
+t
+2
+2
+a
+a
+T
+de
+h
+r
+e
+iv
+s
+a
+u
+ti
+b
+v
+s
+e
+c
+,
+r
+a
+ip
+n
+t
+d
+f
+a
+o
+n
+llo
+o
+w
+v
+e
+e
+d
+rla
+b
+id
+y
+d
+a
+o
+c
+t
+o
+“
+m
+:”
+m
+in
+a
+di
+“
+c
+,
+a
+”
+te
+r
+s
+ep
+th
+re
+e
+s
+t
+e
+i
+n
+m
+ts
+e
+t
+d
+h
+e
+e
+riv
+p
+a
+a
+t
+r
+i
+t
+v
+i
+e
+a
+.
+l
+(cid:4) (cid:4) (cid:5)(cid:5)
+qC E T€ þT 0 b ij u€ i,j (cid:3)si/ € ,i :
+4. Problem formulation
+(3.6)
+We consider a homogenous, normal initially stressed trans-
+The 3PL heat conduction law with Memory dependent versely isotropic piezothermoelastic half-space in the x x (cid:3)
+1 3
+derivative (MDD), as given by
+plane under the influence of memory-dependent derivative
+ð1þsv D
+s
+ÞK
+i
+(cid:4)
+j
+T
+,ij
+þð1þsT D
+s
+ÞK
+ij
+T_
+,ij
+and fractional order derivative. The constitutive relations are
+(cid:2) (cid:3) in components in the x x (cid:3)plane given as
+(cid:4) (cid:4) (cid:5)(cid:5) 1 3
+s2
+¼ 1þsq D s þ 2 qD2 s qC E T€ þT 0 b ij u€ i,j (cid:3)si/ € ,i : (3.7) r 11 ¼c 11 u 1,1 þc 13 u 3,3 þg 31 /,3 (cid:3)b 1 T, (4.1)
+r 13 ¼c 44 ðu 1,3 þu 3,1 Þþg 15 /,1 , (4.2)
+3.1. Limiting cases
+r 33 ¼c 13 u 1,1 þc 33 u 3,3 þg 33 /,3 (cid:3)b 3 T, (4.3)
+Case 1: The Biot [1] model is consistent with the heat equa- D 1 ¼g 15 ðu 1,3 þu 3,1 Þ(cid:3)e 11 /,1 , (4.4)
+tion (3.7) if K
+i
+(cid:4)
+j
+¼0, sq ¼sT ¼0:
+Case 2: The Lord and Shulman [2] model is consistent with D 3 ¼g 31 u 1,1 þg 33 u 3,3 (cid:3)e 33 /,3 þs 3 T: (4.5)
+the heat equation (3.7) if K i (cid:4) j ¼0, sq >0, s2 q ¼ Equations (4.1)–(4.3) are applied to Equation (3.2) to pro-
+sT ¼0, Kðt(cid:3)nÞ¼1, and D s ! @ @ t : duce the equations of motion as
+Case 3: The Green and Naghdi [5] type-II model is consist- (cid:6) (cid:7) (cid:6) (cid:7)
+ent with the heat equation (3.7) if K ij ¼0, sq ¼
+c
+11
+þr0
+11
+u
+1,11
+þ c
+44
+þr0
+33
+u
+1,33
+þðc
+44
+þc
+13
+Þu
+3,13
+(4.6)
+sT ¼sv ¼0, Kðt(cid:3)nÞ¼1, and D s ! @ @ t : þðg 31 þg 15 Þ/,13 (cid:3)b 1 T ,1 ¼qu€ 1 ,
+Case 4: The Green and Naghdi [3] type-III model is consist-
+(cid:6) (cid:7) (cid:6) (cid:7)
+ent with the heat equation (3.7) if sq ¼sT ¼sv ¼0, ðc
+44
+þc
+13
+Þu
+1,13
+þ c
+44
+þr0
+33
+u
+3,11
+þ c
+33
+þr0
+33
+u
+3,33
+Case 5: K Th ðt e (cid:3) Tz n o Þ u ¼ [6 1 ] , m an o d de D l i s s ! con @ @ t s : istent with the heat equa- þg 15 /,11 þg 33 /,33 (cid:3)b 3 T ,3 ¼qu€ 3 : (4.7)
+tion (3.7) if K(cid:4) ¼0, Kðt(cid:3)nÞ¼1, and D ! @ : Using Equation (3.6), obtain the three-phase lag heat equa-
+Case 6: The Ezzat et a ij l. [7] model is consistent wi s th th @ e t heat tion with FOD in x 1 x 3 (cid:3)plane
+(cid:2) (cid:3)
+equation (3.7) if K i (cid:4) j ¼0: 1þ
+Cða
+s
+þ
+a v
+1Þ@
+@
+t
+a
+a
+(cid:6) K
+1
+(cid:4)T
+,11
+þK
+3
+(cid:4)T
+,33
+(cid:7)
+(cid:2) (cid:3)
+3.2. Nomenclature þ 1þ
+Cða
+s
+þ
+a T
+1Þ@
+@
+t
+a
+a
+(cid:6) K
+1
+T_
+,11
+þK
+3
+T_
+,33
+(cid:7)
+sq ¼ phase lag of heat flux ! (4.8)
+T ¼ thermal temperature ¼ 1þ sa q @a þ s2 q a @2a
+c ijrl ¼ elastic stiffness tensor Cðaþ1Þ@ta Cð2aþ1Þ@t2a
+(cid:6) (cid:6) (cid:7)(cid:7)
+q D i ¼ ¼ d e e l n ec si t t r y ic displacement qC E T€ þT 0 b 1 u€ 1,1 þb 3 u€ 3,3 (cid:3)s 3 / € ,3 :
+b ij ¼ thermal moduli tensors Using Equation (3.7), obtain the three-phase lag heat equa-
+K i (cid:4) j ¼ heat conduction tensor tion with MDD in x 1 x 3 (cid:3)plane
+s / i ¼ ¼ e p l y e r c o tr e i l c e a c l tr p i o c te c n o t n ia s l tants ð1þ (cid:2) sv D s Þ (cid:6) K 1 (cid:4)T ,11 þK (cid:3)3 (cid:4)T ,33 (cid:7) þð1þsT D s Þ (cid:6) K 1 T_ ,11 þK 3 T_ ,33 (cid:7)
+g E i i jr ¼ , ei e j l ¼ ect p ri i c ez f o ie t l h d er d m en al si m ty oduli tensors ¼ 1þsq D s þ s 2 2 qD2 s (cid:6) qC E T€ þT 0 (cid:6) b 1 u€ 1,1 þb 3 u€ 3,3 (cid:3)s 3 / € ,3 (cid:7)(cid:7) :
+a¼ fractional order parameter (4.9)
+4 M.S.BARAKANDV.GUPTA
+!
+Equations (4.4) and (4.5) are used in Eq. (3.5) to get the @2u @2 @2
+1 þ d þd u
+electrostatics equation as @x @x 41@x2 42@x2 3
+1 3 1 3
+ðg 15 þg 31 Þu 1,13 þg 15 u 3,11 þg 33 u 3,33 (cid:3)e 11 /,11 (cid:3)e 33 /,33 @2 @2 ! @T (4.16)
+þs
+3
+T
+,3
+¼0, (cid:3) d
+43@x2
+þd
+44@x2
+/þd
+45@x
+¼0,
+1 3 3
+(4.10)
+where K ij ¼K idij, b ij ¼b i dij, K i (cid:4) j ¼K i (cid:4)dij, andi is not summed. where,
+The following dimensionless formulas are taken into con- d ¼c 44 þr0 33, d ¼ c 11 , d ¼c 13 þc 44, d ¼ðg 31 þg 15 Þb 1 T 0, d ¼
+sideration: 11 c
+11
+þr0
+11
+12 c
+11
+þr0
+11
+13 c
+11
+þr0
+11
+14 ðc
+11
+þr0
+11
+Þg
+31
+21
+ðx 1 0 , x 3 0Þ¼ x c 1 ðx 1 , x 3 Þ, ðu 1 0 , u 3 0Þ¼ x c 1 ðu 1 , u 3 Þ, c c 4 4 4 4 þ þ r c 1 0 3 3 3, d 22 ¼c c 3 4 3 4 þ þ r c 1 0 3 3 3, d 23 ¼ c 44 c þ 11 c 13 , d 24 ¼ g 31 g ð 1 c 5 4 b 4 1 þ T c 0 13 Þ , d 25 ¼
+r / ij 0 0 ¼ ¼ b c x r 1 i T b 1 j 1 g T 3 , 1 0 T / 0 , ¼ 1(cid:6) t b 0 q , 1 s c T T 2 0 , , ð s D q 0 1 , 0 s , v D 0 (cid:7) 3 0Þ ¼ ¼ x g 1 ð c t b , 1 1 1 s T T, ð s D q, 1 s , v D Þ, 3 Þ, d g ðg 3 3 1 g 4 ð g 3 þ c 3 3 ¼ 4 b 3 4 g 1 þ T K c T Þ 0 3 1 , 0 x 3 b Þ 1 d 2 1 , q 4 , 3 d d ¼ 2 3 6 5 g ¼ ¼ e ð 1 g ð 1 b b c b 3 1 4 1 4 þ , c T þ 1 g 1 0 d c b 1 3 3 3 Þ 6 Þ , b ¼ 1 d , 4 s g 3 4 3 T d ¼ 1 0 3 , 1 g d ¼ e 3 ð 3 g 7 3 T K b ¼ 0 1 (cid:4) 1 b þ q T 2 1 c g 0 1 T 1 0 q Þ d b C , 2 1 3 E 2 d ¼ d 45 4 T 1 ¼ K 0 ¼ 3 (cid:4) b q b 2 1 ð , ð g g c 15 1 g 1 þ d 1 þ s 5 3 g 3 g 3 31 ¼ Þ Þ , : K d T 1 4 0 x b 2 1 2 1 ¼ q,
+1 0 1 33 1 0 15 31 31 15 31 31 15 31 1 15 31
+(4.11)
+qffiffiffiffi
+where c ¼ c 11 , x ¼qC E c2 1 :
+1 q 1 K 1 5. Solution of the problem
+Using dimensionless formulas in Eqs. (4.6)–(4.10), after
+0 The normal mode analysis technique is used in various dis-
+removing the primes (), we get
+!
+ciplines. It provides answers without imposing any presump-
+@2
+þd
+@2
+(cid:3)d
+@2
+u þd
+@2u
+3 þd
+@2/
+tive constraints on the considered variables, including
+@x2 11@x2 12@t2 1 13@x @x 14@x @x
+displacements, electric potential, and temperature. In terms
+1 3 1 3 1 3
+@T of normal modes, the solution of the variables under consid-
+(cid:3)d ¼0, eration may be decomposed as follows [46]:
+12@x
+1
+(cid:9) (cid:10)
+(4.12) ½u , u , /, T(cid:2)ðx , x , tÞ¼ u(cid:4) , u(cid:4) , / (cid:4) , T(cid:4) ðx Þexp½iaðx (cid:3)ctÞ(cid:2),
+1 3 1 3 1 3 3 1
+!
+(5.1)
+@2u @2 @2 @2
+1 þ d þd (cid:3)d u
+@x 1 @x 3 21@x 1 2 22 ! @x 3 2 23@t2 3 (4.13) w tio h n er s e u u , (cid:4) 1 , u u , (cid:4) 3 , / / , (cid:4) a , n a d n T d , T r (cid:4) es a p r e e ct t i h v e el a y m . A p s lit a ud re e s s u o lt f , t o h u e r f s u o n lu c- -
+@2 @2 @T 1 3
+þ d þd /(cid:3)d ¼0, tion shows progressive waves propagating parallel to the
+24@x2 25@x2 26@x
+1 3 3 half-border spaces whose amplitude decays with depth.
+! Equation (5.1) is substituted into Eqs. (4.12)–(4.16), and
+(cid:2) (cid:3)
+sa @a @2 @2 denoting D¼d=dz, we get
+1þ v d þd T
+Cðaþ1Þ@ta 31@x2 32@x2 (cid:6) (cid:7)
+(cid:2) (cid:3) 1 3 ! A 1 þd 11 D2 u(cid:4) 1 þA 2 Du(cid:4) 3 þA 3 D/ (cid:4)(cid:3)A 4 T(cid:4) ¼0, (5.2)
+þ 1þ
+sa
+T
+@a
+d
+@2
+þd
+@2
+T_
+Cðaþ1Þ@ta 33@x2 34@x2 (cid:6) (cid:7) (cid:6) (cid:7)
+1 !3 (4.14) A(cid:4)Du(cid:4)þ d D2þA u(cid:4)þ A þd D2 / (cid:4)(cid:3)d DT(cid:4) ¼0,
+4 1 22 5 3 6 25 26
+¼ 1þ
+sa
+q
+@a
+þ
+s2
+q
+a @2a
+(5.3)
+Cðaþ1Þ@ta Cð2aþ1Þ@t2a
+!
+(cid:6)
+@u€ 1þd @u€ 3(cid:3)d @/ € þd T€ , A 7 u(cid:4) 1 þA 8 Du(cid:4) 3 (cid:3)A 9 D/ (cid:4)þ A 10 þH 1 A 11 þH 1 d 32 D2
+@x 35@x 36@x 37 (5.4)
+1 3 3 þH A þH A D2ÞT(cid:4) ¼0,
+2 12 2 13
+!
+@2 @2 (cid:6) (cid:7) (cid:6) (cid:7)
+ð1þsv D
+s
+Þ d
+31@x2
+þd
+32@x2
+T
+A(cid:4)Du(cid:4)þ A þd D2 u(cid:4)(cid:3) A þd D2 / (cid:4)þd DT(cid:4) ¼0,
+1 3 ! 4 1 14 42 3 15 44 45
+(5.5)
+@2 @2
+þð1þsT D
+s
+Þ d
+33@x2
+þd
+34@x2
+T_
+¼ (cid:2) 1þsq D s þ s 2 2 qD2 s 1 (cid:3) @ @ u€ x 1 1þ 3 d 35 @ @ u€ x 3 3(cid:3)d 36@ @ x / € 3 þd 37 T€ ! , A A wh (cid:4) 4 e ¼ ¼ re d i , a A , a 1 2 ¼ c A 2 5 , a ¼ 2ðd A (cid:3) 12 d c ¼ 2 2 1 a (cid:3) d 2 1 þ a Þ, 2 d c 2 A 2 3 , a 2 2 ¼ c2 A i , ad ¼ 1 A 3 , 6 d ¼ A 3 a (cid:3) 2 ¼ c d 2 2 i , 4 a a d 2 1 , A 4 , A A ¼ 4 7 ¼ ¼ (cid:3)d i i a a d 3 a c 1 2 2 2 , , ,
+8 35 9 36 10 37 11 31
+(4.15) A ¼id a3c, A ¼(cid:3)d iac, A ¼(cid:3)a2d , A ¼(cid:3)a2d :
+12 33 13 34 14 41 15 43
+MECHANICSOFADVANCEDMATERIALSANDSTRUCTURES 5
+The parameter values of H and H Mechanical boundary conditions:
+1 2
+(cid:5) for the FOD heat conduction model r ðx , 0, tÞ¼f ðx , tÞ¼(cid:3)f(cid:4) exp (cid:11) iaðx (cid:3)ctÞ (cid:12) , r ðx , 0, tÞ¼0:
+33 1 1 1 1 1 13 1
+H ¼ 1þ Cða s þ a v 1Þ H 1 (cid:4) , (6.1)
+1 1þ saq H(cid:4)þ s2qa H(cid:4) Thermal boundary condition:
+Cðaþ1Þ 1 Cð2aþ1Þ 2 (cid:11) (cid:12)
+H ¼ 1þ Cða sa T þ1Þ H 2 (cid:4) ,b¼(cid:3)iac, (5.6) Tðx 1 , 0, tÞ¼f 2 ðx 1 , tÞ¼f 2 (cid:4) exp iaðx 1 (cid:3)ctÞ , (6.2)
+2 1þ saq H(cid:4)þ s2qa H(cid:4) where, f 1 ðx 1 , tÞ and f 2 ðx 1 , tÞ are arbitrary functions of
+Cðaþ1Þ 1 Cð2aþ1Þ 2 ðx , tÞ, f(cid:4) , f(cid:4) are constant, x¼ac be the frequency, and a
+H
+1
+(cid:4) ¼t(cid:3)aE
+1,1(cid:3)a
+ðbtÞ, H
+2
+(cid:4) ¼t(cid:3)2aE
+1,1(cid:3)2a
+ðbtÞ,
+be
+1
+the wa
+1
+ve n
+2
+umber in the x 1 (cid:3) direction.
+where, for any z2C, E a,b ðzÞ is the Mittag-Leffler function Electrical boundary condition:
+[47, 48] in two parameters a, b 2C with RðaÞ>0 defined as /,3 ðx
+1
+, 0, tÞ¼0: (6.3)
+X1 zk
+Inserting the assumed solutions in the boundary conditions
+E a,b ðzÞ¼ CðakþbÞ : (5.7) (6.1)-(6.3) to compute the coefficients M n ðn¼1(cid:3)4Þ, yield
+k¼0
+(cid:5) for the MDD heat conduction model
+X4
+L 5n M n ¼(cid:3)f
+1
+(cid:4) , (6.4)
+H 1 ¼ 1þsq Kð 1 s þ ,b s Þ v þ Kð s s 2q , b b K Þ ðs,bÞ=2 , n¼1
+H
+2
+¼
+1
+(cid:6)
+þsq K
+(cid:6)
+1
+ðs
+þ
+,b
+s
+Þ
+T
+þ
+K
+s
+ð
+2q
+s
+b
+,b
+K
+Þ
+(cid:7)
+ðs,bÞ=2
+(cid:6)
+,b¼(cid:3)
+(cid:7)
+iac,
+(cid:7)
+X4
+L 6n M n ¼0, (6.5)
+Kðs,bÞ¼
+(cid:3)b2s2 a2(cid:3)2bþ1 þ2bs a2(cid:3)b þ2a2 expð(cid:3)bsÞþb2s2(cid:3)2bbsþ2a2
+:
+n¼1
+b2s3
+(5.8)
+X4
+Equations (5.2)–(5.5) can only have a non-trivial solution if n¼1
+L 3n M n ¼f
+2
+(cid:4) , (6.6)
+the coefficients determinant of the preceding linear system
+disappears. Then X4
+ðD8(cid:3)AD6þBD4(cid:3)CD2þEÞ (cid:11) u(cid:4)
+1
+ðx
+3
+Þ,u(cid:4)
+3
+ðx
+3
+Þ,/ (cid:4)ðx
+3
+Þ,T(cid:4)ðx
+3
+Þ (cid:12) ¼0,
+n¼1
+k n L 2n M n ¼0: (6.7)
+(5.9) Solving Eqs. (6.4)–(6.7) for M n ðn¼1(cid:3)4Þ by the inverse
+where, A,B,C, and E are given in Appendix. matrix method as follows:
+2 3 2 3 2 3
+Equa
+(cid:6)
+tion (5.9
+(cid:7)
+)
+(cid:6)
+can be f
+(cid:7)
+a
+(cid:6)
+ctored as
+(cid:7)
+:
+(cid:6) (cid:7) M L L L L
+(cid:3)1
+(cid:3)f(cid:4)
+D (cid:11) 2 u (cid:3) (cid:4) 1 ð k x 2 1 3 Þ, D u 2 (cid:4) 3 ð (cid:3) x 3 k Þ, 2 2 / (cid:4) D ðx 2 3 (cid:3) Þ, k T 2 3 (cid:4)ðx D 3 2 Þ (cid:12) (cid:3) ¼ k2 4 0: (5.10) 6 6 6 6 4 M M 1 2 3 7 7 7 7 5 ¼ 6 6 6 6 4 L L 5 6 3 1 1 1 L L 5 6 3 2 2 2 L L 5 6 3 3 3 3 L L 5 6 3 4 4 4 7 7 7 7 5 6 6 6 6 4 f 0 2 (cid:4) 1 7 7 7 7 5 (6.8)
+The following are the solutions to Eq. (5.9), which are M 4 k 1 L 21 k 2 L 22 k 3 L 23 k 4 L 24 0
+bounded as x 3 !1 where, the elements of matrix L 5i, L 6i, L 3i, L 2i, i¼1(cid:3)4
+(cid:6) (cid:7) X4 are provided in Appendix.
+u(cid:4) 1 , u(cid:4) 3 , / (cid:4) , T(cid:4) ¼ ðM n, L 1n M n, L 2n M n, L 3n M n Þexpð(cid:3)k n x 3 Þ, As a result, we can calculate precise analytical formulas
+n¼1
+for the displacement vector components, temperature, elec-
+(5.11)
+tric potential, stress tensors, and electric displacement.
+where, k2, ðn¼1, 2, 3, 4Þ are the roots of the characteristics
+n
+Eq. (5.9).
+7. Special cases
+Using Eq. (5.11) into Eqs. (4.1)–(4.5), after doing dimen-
+sionless analysis within the context of the normal mode Case 1: If we ignore the impact of initial stresses, i.e. r0 ¼
+11
+approach, yielding r0 ¼0, then the current model with MDD heat
+33
+(cid:6) (cid:7) X4 conduction equation agrees with the Mondal and
+r (cid:4) 11 , r (cid:4) 33 , r (cid:4) 13 , D(cid:4) 1 , D(cid:4) 3 ¼ ðL 4n, L 5n, L 6n, L 7n, L 8n Þexpð(cid:3)k n x 3 Þ Othman [49] model.
+n¼1 Case 2: The present model with 2PL theory without initial
+(5.12) stresses and memory, that is, r0 ¼r0 ¼0, K(cid:4) ¼
+11 33 ij
+where L jn, j¼1(cid:3)8, n¼1(cid:3)4 are provided in Appendix. 0, jðt(cid:3)nÞ¼1, and D
+s
+!
+@
+@
+t
+, agree with a par-
+ticular case of the Ethar et al. [46] model.
+Case 3: If the fractional order parameter a!1 and time delay
+6. Boundary conditions
+factor s!0, FOD, and MDD heat conduction mod-
+The following boundary conditions will allow the governing els coincide with without memory heat conduction
+equations to be solved in a half-space ðx , x , x (cid:6)0Þ model.
+1 2 3
+6 M.S.BARAKANDV.GUPTA
+Table1. Valuesoftheparameters.
+Symbol Value Symbol Value
+c 74:1(cid:8)109Nm(cid:3)2 c 45:2(cid:8)109Nm(cid:3)2
+11 12
+c 39:3(cid:8)109Nm(cid:3)2 c 83:6(cid:8)109Nm(cid:3)2
+13 33
+c 13:2(cid:8)109Nm(cid:3)2 T 298K
+44 0
+b 6:21(cid:8)105Nm(cid:3)2K(cid:3)1 b 5:51(cid:8)105Nm(cid:3)2K(cid:3)1
+g 1 (cid:3)0:160Cm(cid:3)2 g 3 0:347Cm(cid:3)2
+g 31 (cid:3)0:138Cm(cid:3)2 e 33 8:26(cid:8)10(cid:3)11C2N(cid:3)1m(cid:3)2
+e 15 9:03(cid:8)10(cid:3)11C2N(cid:3)1m(cid:3)2 s 11 (cid:3)2:9(cid:8)10(cid:3)6Cm(cid:3)2K(cid:3)1
+33 3
+K , K 9Wm(cid:3)1K(cid:3)1 K(cid:4), K(cid:4) 7Wm(cid:3)1K(cid:3)1
+q 1 3 5504kgm(cid:3)3 C 1 e 3 260Jkg(cid:3)1K(cid:3)1
+8. Numerical results and discussion
+MATLAB software is used to enable us to carry out a
+numerical experiment to study the impact of fractional order
+derivative (FOD) and memory-dependent derivative (MDD).
+Cadmium Selenide (CdSe), a piezothermoelastic material
+with hexagonal symmetry in the 6mm class, has been
+Figure1. Distributionofhorizontaldisplacementcomponentu withx.
+selected for the numerical computations. Following Biswas 1 3
+[50], the CdSe material parameters are listed in Table 1.
+The three-phase lag parameters are taken sq ¼0:5, sT ¼
+0:3, sv ¼0:2 so that Quintanilla and Racke’s [51] restric-
+tions on the usage of material constants are satisfied. The
+whole computation is performed assuming the value of ini-
+tial stresses r0 ¼0:7, r0 ¼0:8, and x ¼0:1 at a time t ¼
+11 33 1
+1:5 with f(cid:4) ¼1 and f(cid:4) ¼6: In the process of using the
+1 1
+numerical method described earlier, we are particularly
+interested in the real parts of the displacement vector com-
+ponents u , u , temperature T, stress tensor components
+1 3
+r , r , r , electric potential /, and electric displacement
+11 33 13
+components D , D : Here all the functions are in non-
+1 3
+dimensional form. The impact of fractional order derivative,
+memory-dependent derivative, and material characteristics
+parameters on the various distributions has been studied in
+three different scenarios as follows
+8.1. Impact of the FOD parameter and the MDD Figure2. Distributionofverticaldisplacementcomponentu 3 withx 3 .
+In this study, we compare and contrast the MDD and FOD
+noticed that the FOD model dominates when the vertical
+piezothermoelasticity models to examine their connections
+displacement components is positive, whereas the MDD
+and differences, with a particular focus on how different val- model dominates when the displacement is negative. The
+ues of the FOD parameter and the MDD affect the non- dominance of a particular model is important in predicting
+dimensional functions distribution profile. We present our the deformation behavior of the material accurately. The
+results in Figures 1–9, where the solid sky blue line, orange impact of different fractional order parameters is visible in
+line, and yellow line correspond to the fractional order the graph, and its dominance depends upon the value x :
+3
+parameters a¼0:5, a¼0:8, and a¼1, respectively, in the The numerical analysis confirms that the displacement com-
+fractional order piezothermoelastic model. The purple line ponents profile satisfies our theoretical assumption (5.12),
+represents the MDD model with a fixed kernel function which states that the solution is bounded as x !1:
+3
+Kðt(cid:3)fÞ¼1(cid:3)ðt(cid:3)fÞ=s and delays time factor s¼0:02: Figure 3 reveals that the value of the electric potential
+To highlight microscale differences, we also include magni- first goes down abruptly, reaches its minimum, then
+fied versions of overlapping curves in sub-indent figures. increases monotonically, and becomes stable with increasing
+The horizontal displacement component u 1 decreases and value of x 3 : The MDD model dominates over the fractional
+reaches its minimum value within the range 0(cid:7)x 3 (cid:7)0:13: order model in a whole range of x 3 : The FOD model with
+After, further increase of x 3 the u 1 gradually increases and parameter a¼1 is dominated, followed by a¼0:8, a¼0:5
+approaches zero as depicted in Figure 1. The MDD model electric potential curves. As the fractional order parameter
+dominates over the fractional order model except for the increases, the electric potential also increases. After the value
+range 0:05(cid:7)x (cid:7)0:13, and where the FOD model with x ¼5, every curve overlaps, and the impacts of FOD and
+3 3
+parameter a¼0:5 is dominated. Figure 2 reflected that the MDD are lost. The temperature T first goes up exponen-
+vertical displacement u has an opposite trend of u : We tially, reaches its maximum, and then decreases very slowly
+3 1
+MECHANICSOFADVANCEDMATERIALSANDSTRUCTURES 7
+Figure3. Distributionofelectricpotential/withx 3 . Figure6. Distributionofstresscomponentr 33 withx 3 .
+and becomes stable with increasing values of x as shown in
+3
+Figure 4. The fractional order model dominates over the
+MDD model in a whole range of x : The FOD model with
+3
+parameter a¼0:5 is dominated the temperature curves. As
+the value of the fractional order parameter increases, the
+temperature decreases. The overlapping curves depicted that
+the impact of FOD and MDD vanished after the value x ¼
+3
+3:5: The theoretical assumption (5.12) postulates that the
+solution to the problem is bounded as x !1: The results
+3
+of our graphical interpretation validate this assumption by
+confirming that the profiles of the electrical potential and
+temperature also satisfy this bound.
+Figure 5 shows that the stress component r follows the
+11
+peaks and valleys of the curve. Specifically, we observe that
+the FOD model dominates the stress component curve for
+the MDD model when the stress component is at its max-
+imum, with the opposite behavior observed for the min-
+Figure4. DistributionoftemperatureTwithx. imum stress component. This is in line with our
+3
+expectations and suggests that the FOD and MDD models
+have distinct strengths and weaknesses that depend on the
+specific characteristics of the stress component curve. Figure
+6 depicts that the value of the stress component r exhibits
+33
+a maximum peak, and we observe that the impact of frac-
+tional order parameter and MDD follow the same pattern as
+in Figure 5 for the maxima peak of r : This consistency
+11
+across Figures 5 and 6 suggests that the relationship between
+the FOD and MDD models and the stress component is
+consistent across different scenarios, providing further sup-
+port for our findings. Examining the sub-indent picture of
+Figure 7 reveals that, the r profile begins from zero, which
+13
+satisfies the boundary condition (6.1), that is, r ðx , 0, tÞ¼
+13 1
+0: This observation provides some degree of confidence in
+the accuracy and validity of our numerical coding, as it sug-
+gests that the boundary condition (6.1) has been correctly
+implemented.
+Figure 8 depict the distribution of the electric displace-
+ment component D : The path followed by the D almost
+1 1
+same as r : At the peak, the FOD model dominates for
+13
+Figure5. Distributionofstresscomponentr withx. a¼0:05 followed by the a¼0:8, a¼1, and MDD model.
+11 3
+8 M.S.BARAKANDV.GUPTA
+Figure7. Distributionofstresscomponentr withx.
+13 3 Figure9. DistributionofelectricdisplacementcomponentD withx.
+3 3
+behavior of materials under different loading conditions,
+making it a valuable tool for researchers and practitioners in
+various fields.
+8.2. Impact of the thermal time delay factor and
+the FOD
+The thermal time delay factor plays a critical role in various
+practical applications of generalized thermoelasticity. For
+example, in the design of thermal insulation materials,
+understanding the behavior of heat transfer under different
+conditions is essential for achieving the desired performance.
+The thermal time delay factor can help capture the effects of
+heat storage and transport within the material, which are
+crucial considerations in such applications. Similarly, in the
+development of thermal energy storage systems, accurate
+modeling of the thermal behavior of materials over time is
+essential to ensure efficient and reliable performance.
+Figure8. DistributionofelectricdisplacementcomponentD 1 withx 3 . Figures 10–18 are drawn to study the impact of different
+thermal time delay factors s and the fractional order param-
+As we further increase the value of x 3 the D 1 tend to zero eter a on the variation of the various function profiles. In
+for all considered cases satisfying bounded solution these figures, the memory-dependent piezothermoelastic
+assumptions. model with kernel function Kðt(cid:3)fÞ¼1(cid:3)ðt(cid:3)fÞ=s is rep-
+Figure 9 presents the value of the electric displacement resented by the solid sky blue line, orange line, and yellow
+component D 3 that first goes down abruptly, reaches its line for thermal time-delay factor s¼0:9, s¼0:5, and ,
+minimum value, and maintains a downward trend by respectively, while the FOD model with parameter a¼0:99
+increasing of x 3 : After increasing more value of x 3 attained is represented by the purple line. The patterns in these fig-
+its maximum and approaches zero value for all considered ures are similar to those observed in Figures 1–9, but there
+cases. The MDD model dominates over the fractional order are significant impacts of the time delay factor that can be
+model in the lower peak, and the remaining range of x 3 the seen.
+FOD model with parameter a¼0:5 is dominated followed Observations from Figures 10–18 are as follows:
+by a¼0:8, a¼1, and MDD electric displacement compo-
+nent D 3 curves. An important feature of the generalized pie- (cid:5) The time delay factor does not significantly alter the dis-
+zothermoelastic model is that all the studied fields tend to tribution pattern of the studied fields, indicating the
+zero as the x increases. This ensures that the wave speed models are generally robust and can be applied effectively
+3
+phenomena in the model are finite, which is a crucial con- across a range of scenarios.
+sideration for many practical applications. By maintaining (cid:5) The time delay factor work as a catalyst in all the distri-
+finite wave speeds, the model can accurately capture the butions. As we increase the time delay factor, the
+MECHANICSOFADVANCEDMATERIALSANDSTRUCTURES 9
+Figure10. Distributionofhorizontaldisplacementcomponentu 1 withx 3 . Figure13. DistributionoftemperatureTwithx.
+3
+Figure11. Distributionofverticaldisplacementcomponentu 3 withx 3 . Figure14. Distributionofstresscomponentr 11 withx 3 .
+Figure12. Distributionofelectricpotential/withx. Figure15. Distributionofstresscomponentr withx.
+3 33 3
+10 M.S.BARAKANDV.GUPTA
+Figure16. Distributionofstresscomponentr 13 withx 3 . Figure18. DistributionofelectricdisplacementcomponentD 3 withx 3 .
+Figure19. Distributionofu in(x,x)plane.
+1 1 3
+Figure17. DistributionofelectricdisplacementcomponentD withx.
+1 3
+amplitude of all the distributions also increases and
+dependent derivative, as discussed in Section 2, and sup-
+decreases according to the function profile distributed
+ports the notion that these models capture different
+positively and negatively, respectively. Magnitudes of all
+aspects of the piezothermoelastic behavior depending on
+the field variables decrease along the x direction. It
+3 the specific values of the parameters involved.
+ensures the finite propagation speed of the thermal wave
+and validates the assumption (5.11).
+(cid:5) All the field variables met the boundary conditions. This 8.3. Impact of the values of x and x co-ordinates
+1 3
+finding suggests that the models used in our study are
+Figures 1–18 depict the behavior of the FOD and MDD mod-
+able to accurately capture the physical behavior of the
+els at a fixed value of x ¼0:1 across various distributions. In
+material or system under consideration and that the 1
+contrast, Figures 19–27 present three-dimensional plots of the
+resulting solutions are consistent with the underlying
+physics of the problem. solutions in the x 1 x 3 plane at a fixed time t ¼1:5 in the pres-
+(cid:5) The yellow and purple curves, which represent the MDD ence of MDD, allowing us to explore the impact of x 1 on the
+and FOD models, respectively, are almost indistinguish- distribution patterns. All of the figures were generated using
+able in all of the considered distributions. This observation the range of (cid:3)10(cid:7)x 1 (cid:7)10 and 0(cid:7)x 3 (cid:7)1:
+suggests that when the thermal delay factor s is close to Observations from Figures 19–27
+zero and the fractional order parameter a is close to 1, the
+MDD and FOD models converge to the without-MDD (cid:5) All of the function profiles exhibit a nearly uniform dis-
+model. This finding provides further validation of the defi- tribution with alternating peaks throughout the entire
+nitions of the fractional order derivative and memory- range of x :
+1
+MECHANICSOFADVANCEDMATERIALSANDSTRUCTURES 11
+Figure20. Distributionu 3 in(x 1 ,x 3 )plane. Figure23. Distributionofr 11 in(x 1 ,x 3 )plane.
+Figure24. Distributionofr in(x,x)plane.
+Figure21. Distributionof/in(x,x)plane. 33 1 3
+1 3
+Figure22. DistributionofTin(x,x)plane. Figure25. Distributionofr in(x,x)plane.
+1 3 13 1 3
+12 M.S.BARAKANDV.GUPTA
+(cid:5) The green color region represents the value of displace-
+ment that tends to zero and validates our theoretical
+assumption that the solution is bounded as x !1:
+3
+9. Conclusions
+The present study investigates the behavior of initially
+stressed transversely isotropic piezothermoelastic material
+under the influence of memory-dependent and fractional-
+order derivatives. Specifically, we compare the effects of
+these parameters on the various distribution profiles using
+the triple-phase lag model. One of the main innovations of
+our research is the integration of memory-dependent deriva-
+tive and fractional-order derivative into the coupled govern-
+ing equations of the model. Analytical solutions for
+piezoethermoelastic medium have been developed and
+Figure26. DistributionofD in(x,x)plane. implemented using normal mode analysis. Significant
+1 1 3
+impacts of memory-dependent derivative (MDD), fractional
+order derivative (FOD), and delay time factor have been
+detected in all physical quantities of CdSe material.
+(cid:5) When the fractional order parameter a tends to 1, and
+the thermal time-delay factor s tends to 0, all the distri-
+bution curves of the non-dimensional displacement, tem-
+perature, stresses, electric potential, and electric
+displacement potentials overlap. This finding is consist-
+ent with previous theoretical deductions [41, 45] and
+highlights the importance of these parameters in govern-
+ing the behavior of piezoethermoelastic materials.
+(cid:5) The fractional order parameter a works as a catalyst to
+increase and decrease the distribution amplitude when
+distributed negatively and positively. In contrast, the
+thermal time-delay factor s show reverses behavior.
+These findings suggest that the time delay factor can play
+a critical role in shaping the behavior of materials and
+Figure27. DistributionofD 3 in(x 1 ,x 3 )plane. systems under different conditions, providing valuable
+insights into the underlying mechanisms at work.
+(cid:5) Figures 19, 20, 22, 23, 24, and 27 demonstrate that all of (cid:5) Magnitudes of all the field variables decrease along the
+x direction. It ensures the finite propagation speed of
+the peaks vanish and become independent of the value of 3
+x beyond a certain point x (cid:6)0:5: On the other hand, the thermal wave and validates the assumption (5.11),
+1 3 which agrees with prior research carried out by Mondal
+in Figures 21, 25, and 26, the peaks vanish beyond a cer-
+and Othman [49].
+tain value of x (cid:6)5:
+3 (cid:5) In addition to the fact that all functions are continuous,
+(cid:5) All distribution maxima and minima peaks are mirror
+every physical quantity agrees with the boundary
+images of each other. From the contour plot in the x x
+1 3 conditions.
+plane, we conclude that significantly changing the value (cid:5) Figures 19–27 reveal that when there is a considerable
+of x 1 the direction of distribution is the opposite. change in the value x , the direction of distribution flips
+(cid:5) The peaks of the distribution, both the maxima, and 180 degrees, and eac 1 h function’s maximum and min-
+minima, are symmetrical with respect to each other. By
+imum peaks are almost mirror images of one another.
+examining the contour plot on the x x plane, we can
+1 3
+infer that any significant change in x the distribution’s
+1
+direction is the opposite. Disclosure Statement
+(cid:5) All of the field variables complied with the boundary
+Authorshavestatedthatthisstudyhasnopossibleconflictsofinterest.
+constraints. In practical applications, boundary condi-
+tions play a critical role in determining the behavior of
+Funding
+piezothermoelastic systems, and our study provides valu-
+able insights into how different models can be used to
+The author, Mr. Vipin Gupta, appreciates the CSIR, New Delhi, for
+satisfy these conditions and obtain accurate solutions. fundingthisworkFile.No.09/1293(0003)/2019-EMR-I.
+MECHANICSOFADVANCEDMATERIALSANDSTRUCTURES 13
+ORCID [18] M.A. Ezzat, and A.A. El-Bary, Effects of variable thermal con-
+ductivity on Stokes’ flow of a thermoelectric fluid with frac-
+M.S.Barak http://orcid.org/0000-0001-9947-000X tional order of heat transfer, Int. J. Thermal Sci., vol. 100, pp.
+305–315,2016.DOI:10.1016/j.ijthermalsci.2015.10.008.
+[19] M. Yasein, N. Mabrouk, K. Lotfy, and A.A. EL-Bary, The influ-
+References
+ence of variable thermal conductivity of semiconductor elastic
+medium during photothermal excitation subjected to thermal
+[1] M.A. Biot, Thermoelasticity and irreversible thermodynamics, J.
+ramp type, Results Phys., vol. 15, no. September, pp. 102766,
+Appl. Phys., vol. 27, no. 3, pp. 240–253, 1956. DOI: 10.1063/1.
+2019.DOI:10.1016/j.rinp.2019.102766.
+1722351.
+[20] A.K. Khamis, K. Lotfy, A.A. El-Bary, A.M.S. Mahdy, and M.H.
+[2] H.W.Lord,andY.Shulman,Ageneralizeddynamicaltheoryof
+Ahmed, Thermal-piezoelectric problem of a semiconductor
+thermoelasticity, J. Mech. Phys. Solids., vol. 15, no. 5, pp. 299–
+medium during photo-thermal excitation, Waves Random
+309,1967.DOI:10.1016/0022-5096(67)90024-5. Complex Medium, vol. 31, no. 6, pp. 2499–2513, 2021. DOI:
+[3] A.E. Green, and P.M. Naghdi, A re-examination of the basic
+10.1080/17455030.2020.1757784.
+postulates of thermomechanics, Proc. R. Soc. Lond. Ser. A
+[21] A.M.S. Mahdy, K. Lotfy, A. El-Bary, and I.M. Tayel, Variable
+Math. Phys. Sci., vol. 432, no. 1885, pp. 171–194, 1991. DOI:
+thermal conductivity and hyperbolic two-temperature theory
+10.1098/rspa.1991.0012.
+duringmagneto-photothermaltheoryofsemiconductorinduced
+[4] A.E. Green, and P.M. Naghdi, On undamped heat waves in an
+by laser pulses, Eur. Phys. J. Plus, vol. 136, no. 6, pp. 651, Jun
+elastic solid, J. Thermal Stress., vol. 15, no. 2, pp. 253–264,
+2021.DOI:10.1140/epjp/s13360-021-01633-3.
+1992.DOI:10.1080/01495739208946136.
+[22] A.M.S. Mahdy, K. Lotfy, A. El-Bary, and H.H. Sarhan, Effect of
+[5] A.E. Green, and P.M. Naghdi, Thermoelasticity without energy
+rotation and magnetic field on a numerical-refined heat con-
+dissipation, J Elast., vol. 31, no. 3, pp. 189–208, 1993. DOI: 10.
+duction in a semiconductor medium during photo-excitation
+1007/BF00044969.
+processes,Eur.Phys.J.Plus,vol.136,no.5,pp.553,May2021.
+[6] D.Y. Tzou, A unified field approach for heat conduction from
+DOI:10.1140/epjp/s13360-021-01552-3.
+macro-tomicro-scales,J.HeatTransfer.,vol.117,no.1,pp.8–
+[23] M.A. Ezzat, A.S. El-Karamany, and A.A. El-Bary, Generalized
+16,1995.DOI:10.1115/1.2822329.
+thermoelasticity with memory-dependent derivatives involving
+[7] M.A. Ezzat, A.S. El-Karamany, and A.A. El-Bary, On dual-
+two temperatures, Mech. Adv. Mater. Struct., vol. 23, no. 5, pp.
+phase-lag thermoelasticity theory with memory-dependent 545–553,2016.DOI:10.1080/15376494.2015.1007189.
+derivative, Mech. Adv. Mater. Struct., vol. 24, no. 11, pp. 908–
+[24] P.C. Pal, S. Kumar, and D. Mandal, Surface wave propagation
+916,Aug2017.DOI:10.1080/15376494.2016.1196793.
+in sandy layer overlying a liquid saturated porous half-space
+[8] S.R. Choudhuri, On a thermoelastic three-phase-lag model, J.
+and lying under a uniform liquid layer, Mech. Adv. Mater.
+Thermal Stress., vol. 30, no. 3, pp. 231–238, 2007. DOI: 10. Struct., vol. 23, no. 1, pp. 59–65, 2016. DOI: 10.1080/15376494.
+1080/01495730601130919.
+2014.929765.
+[9] J. Curie, and P. Curie, Development by compression of polar
+[25] N. Sarkar, D. Ghosh, and A. Lahiri, A two-dimensional mag-
+electricity in hemihedral crystals with slanted faces, Bull. Soc.
+neto-thermoelastic problem based on a new two-temperature
+Min. France, vol. 3, no. 4, pp. 90–93, 1880. DOI: 10.3406/ generalized thermoelasticity model with memory-dependent
+bulmi.1880.1564. derivative, Mech. Adv. Mater. Struct., vol. 26, no. 11, pp. 957–
+[10] R.D. Mindlin, Equations of high frequency vibrations of ther-
+966,2019.DOI:10.1080/15376494.2018.1432784.
+mopiezoelectric crystal plates, Int. J. Solids Struct., vol. 10, no. [26] M.S. Barak, and V. Kaliraman, Reflection and transmission of
+6,pp.625–637,1974.DOI:10.1016/0020-7683(74)90047-X.
+elastic waves from an imperfect boundary between micropolar
+[11] W. Nowacki, Some general theorems of thermopiezoelectricity, elastic solid half space and fluid saturated porous solid half
+J. Thermal Stress., vol. 1, no. 2, pp. 171–182, 1978. DOI: 10. space, Mech. Adv. Mater. Struct., vol. 26, no. 14, pp. 1226–
+1080/01495737808926940. 1233,2019.DOI:10.1080/15376494.2018.1432795.
+[12] S.M. Abo-Dahab, and K. Lotfy, Generalized magneto-thermoelas- [27] Y. Li, and T. He, The transient response of a functionally
+ticity with fractional derivative heat transfer for a rotation of a graded half-space heated by a laser pulse based on the general-
+fibre-reinforced thermoelastic,J. Comput. Theor.Nanosci., vol. 12, ized thermoelasticity with memory-dependent derivative, Mech.
+no.8,pp.1869–1881,2015.DOI:10.1166/jctn.2015.3972. Adv. Mater. Struct., vol. 28, no. 22, pp. 2299–2309, 2020. DOI:
+[13] S.M. Abo-Dahab, A.A. Kilany, E.A.B. Abdel-Salam, and A. 10.1080/15376494.2020.1731888.
+Hatem, Fractional derivative order analysis and temperature- [28] S.M.Abo-Dahab,andS.Biswas,P,T,andSVwavepropagation
+dependent properties on p- and SV-waves reflection under ini- at the interface between solid–liquid media with magnetic field
+tial stress and three-phase-lag model, Results Phys., vol. 18, no. andinitialstressinthecontextofthree-phase-lagmodel,Mech.
+June,pp.103270,2020.DOI:10.1016/j.rinp.2020.103270. Adv. Mater. Struct., vol. 27, no. 2, pp. 165–175, 2020. DOI: 10.
+[14] S.M. Abo-Dahab, A.E. Abouelregal, and H. Ahmad, Fractional 1080/15376494.2018.1472347.
+heat conduction model with phase lags for a half-space with [29] A.K.Yadav,Reflectionofplanewavesinafraction-ordergener-
+thermal conductivity and temperature dependent, Math. alized magneto-thermoelasticityinarotatingtriclinicsolidhalf-
+MethodsAppl.Sci.,pp.1–16,2020.DOI:10.1002/mma.6614. space, Mech. Adv. Mater. Struct., vol. 29, no. 25, pp. 4273–
+[15] F. S. Bayones, S. M. Abo-Dahab, A. E. Abouelregal, A. Al- 4290,2022.DOI:10.1080/15376494.2021.1926017.
+Mullise, S. Abdel-Khalek, and E. M. Khalil, Model of fractional [30] C. Zorammuana, and J. Lalvohbika, Reflection of inhomogen-
+heat conduction in a thermoelastic thin slim strip under ther- eous waves in a monoclinic magneto-thermoelastic rotating
+mal shock and temperature-dependent thermal conductivity, material, Mech. Adv. Mater. Struct., pp. 1–18, 2022. DOI: 10.
+Comput. Mater. Contin., vol. 67, no. 3, pp. 2899–2913, 2021. 1080/15376494.2022.2098428.
+DOI:10.32604/cmc.2021.012583. [31] A.K. Yadav, E. Carrera, M. Marin, and M.I.A. Othman,
+[16] M. Ragab, S.M. Abo-Dahab, A.E. Abouelregal, and A.A. Kilany, Reflection of hygrothermal waves in a Nonlocal Theory of
+A thermoelastic piezoelectric fixed rod exposed to an axial coupled thermo-elasticity, Mech. Adv. Mater. Struct., pp. 1–14,
+moving heat source via a dual-phase-lag model, Complexity, 2022.DOI:10.1080/15376494.2022.2130484.
+vol.2021,pp.1–11,2021.DOI:10.1155/2021/5547566. [32] A.M. Zenkour, Wave propagation of a gravitated piezo-thermo-
+[17] M.A. Ezzat, and A.A. El-Bary, MHD free convection flow with elastic half-space via a refined multi-phase-lags theory, Mech.
+fractionalheatconductionlaw,Magnetohydrodynamics,vol.48, Adv. Mater. Struct., vol. 27, no. 22, pp. 1923–1934, 2020. DOI:
+no.4,pp.587–606,2012.DOI:10.22364/mhd.48.4.1. 10.1080/15376494.2018.1533057.
+14 M.S.BARAKANDV.GUPTA
+[33] S. Guha, and A. Kumar Singh, Effects of initial stresses on [42] S. Das, Functional Fractional Calculus, Berlin, Heidelberg:
+reflection phenomenon of plane waves at the free surface of a Springer,2011.
+rotating piezothermoelastic fiber-reinforced composite half- [43] J.L.Wang,andH.F.Li,Surpassingthefractionalderivative:concept
+space, Int. J. Mech. Sci., vol. 181, no. February, pp. 105766, ofthememory-dependentderivative,Comput.Math.Appl.,vol.62,
+2020.DOI:10.1016/j.ijmecsci.2020.105766.
+no.3,pp.1562–1567,2011.DOI:10.1016/j.camwa.2011.04.028.
+[34] A.K. Singh, and S. Guha, Reflection of plane waves from the [44] M.Caputo,andF.Mainardi,Anewdissipationmodelbasedon
+surface of a piezothermoelastic fiber-reinforced composite half- memory mechanism, PAGEOPH., vol. 91, no. 1, pp. 134–147,
+space, Mech. Adv. Mater. Struct., vol. 28, no. 22, pp. 2370– 1971.DOI:10.1007/BF00879562.
+[45] J.L. Wang, and H.F. Li, Memory-dependent derivative versus
+2382,2021.DOI:10.1080/15376494.2020.1736697.
+fractional derivative (II): Remodelling diffusion process, Appl.
+[35] V. Gupta, R. Kumar, M. Kumar, V. Pathania, and M.S. Barak,
+Math. Comput., vol. 391, no. March, pp. 125627, 2021. DOI:
+Reflection/transmission of plane waves at the interface of an ideal
+10.1016/j.amc.2020.125627.
+fluid and nonlocal piezothermoelastic medium, HFF., vol. 33, no.
+2,pp.912–937,Jan2023.DOI:10.1108/HFF-04-2022-0259. [46] E.A.A. Ahmed, M.S. Abou-Dina, and A.F. Ghaleb, Plane wave
+propagation in a piezo-thermoelastic rotating medium within
+[36] M.S. Barak, R. Kumar, R. Kumar, and V. Gupta, The effect of
+the dual-phase-lag model, Microsyst. Technol., vol. 26, no. 3,
+memory and stiffness on energy ratios at the interface of dis-
+pp.969–979,2020.DOI:10.1007/s00542-019-04567-0.
+tinct media, MMMS., vol. 19, no. 3, pp. 464–492, Mar 2023.
+[47] R. Garrappa, Numerical evaluation of two and three parameter
+DOI:10.1108/MMMS-10-2022-0209.
+Mittag-Leffler functions, SIAM J. Numer. Anal., vol. 53, no. 3,
+[37] V. Gupta, R. Kumar, R. Kumar, and M.S. Barak, Energy analysis pp.1350–1369,2015.DOI:10.1137/140971191.
+at the interface of piezo/thermoelastic half spaces, HFF., vol. 33,
+[48] S. Gorenflo, R. Mainardi, and F. Rogosin, Mittag-Leffler func-
+no.6,pp.2250–2277,Feb2023.DOI:10.1108/HFF-11-2022-0654.
+tion:propertiesandapplications,Handb.Fract.Calc.Appl.,vol.
+[38] M.S.Barak,R.Kumar,R.Kumar,andV.Gupta,Energyanalysisat 1,pp.269–296,Feb2019.DOI:10.1515/9783110571622.
+the boundaryinterfaceof elasticandpiezothermoelastichalf-spaces,
+[49] S. Mondal, and M.I.A. Othman, Memory dependent derivative
+IndianJPhys.,Jan2023.DOI:10.1007/s12648-022-02568-w. effect on generalized piezo-thermoelastic medium under three
+[39] K. Diethelm, and N.J. Ford, Analysis of fractional differential theories, Waves Random Complex Medium., vol. 31, no. 6, pp.
+equations, J. Math. Anal. Appl., vol. 265, no. 2, pp. 229–248, 2150–2167,2021.DOI:10.1080/17455030.2020.1730480.
+2002.DOI:10.1006/jmaa.2000.7194. [50] S. Biswas, Surface waves in piezothermoelastic transversely iso-
+[40] E.C. de Oliveira, and J.A. Tenreiro Machado, A review of defi- tropic layer lying over piezothermoelastic transversely isotropic
+nitionsforfractionalderivativesandintegral,Math.Probl.Eng., half-space,ActaMech.,vol.232,no.2,pp.373–387,2021.DOI:
+vol.2014,pp.1–6,2014.no1940DOI:10.1155/2014/238459.
+10.1007/s00707-020-02848-8.
+[41] J.L. Wang, and H.F. Li, Memory-dependent derivative versus [51] R. Quintanilla, and R. Racke, A note on stability in three-
+fractional derivative (I): difference in temporal modeling, J. phase-lag heat conduction, Int. J. Heat Mass Transf., vol. 51,
+Comput. Appl. Math., vol. 384, pp. 112923, 2021. DOI: 10. no. 1–2, pp. 24–29, Jan 2008. DOI: 10.1016/j.ijheatmasstransfer.
+1016/j.cam.2020.112923. 2007.04.045.
+Appendix
+P ¼d d , P ¼d A (cid:3)A A(cid:4) , P ¼d A (cid:3)d A , P ¼(cid:3)A A , P ¼d A (cid:3)d A , P ¼(cid:3)A A , P ¼d A ,
+1 11 26 2 26 1 4 4 3 26 2 24 4 4 4 5 5 26 3 25 4 6 4 6 7 11 17
+P ¼d A þA A , P ¼A A þA A , P ¼A A , P ¼A A þA A , P ¼A A , P ¼A A (cid:3)A A ,
+8 11 16 1 17 9 1 16 4 7 10 2 17 11 2 16 4 8 12 3 17 13 3 16 4 9
+P ¼d d , P ¼d A (cid:3)A A(cid:4) , P ¼d A þd A , P ¼A A , P ¼d A (cid:3)A d , P ¼(cid:3)A A :
+14 11 45 15 45 1 4 4 16 45 2 42 4 17 4 14 18 45 3 4 44 19 4 15
+D ¼P P P (cid:3)P P P þP P P (cid:3)P P P þP P P (cid:3)P P P
+0 5 7 16 3 7 18 1 10 18 1 12 16 3 12 24 5 10 24
+D ¼P P P (cid:3)P P P (cid:3)P P P (cid:3)P P P þP P P (cid:3)P P P þP P P þP P P (cid:3)P P P (cid:3)P P P
+1 5 7 17 3 8 18 4 7 18 3 7 19 5 8 16 6 7 16 1 10 19 1 11 18 1 12 17 1 13 16
+þP P P (cid:3)P P P (cid:3)P P P þP P P þP P P (cid:3)P P P (cid:3)P P P (cid:3)P P P
+2 10 18 2 12 16 3 12 15 3 13 14 4 12 14 5 10 15 5 11 14 6 10 14
+D ¼P P P (cid:3)P P P (cid:3)P P P (cid:3)P P P (cid:3)P P P þP P P þP P P þP P P þP P P (cid:3)P P P
+2 5 8 17 3 9 18 4 7 19 4 8 18 3 8 19 5 9 16 6 7 17 6 8 16 1 11 19 1 13 17
+þP P P þP P P (cid:3)P P P (cid:3)P P P þP P P þP P P þP P P (cid:3)P P P (cid:3)P P P (cid:3)P P P
+2 10 19 2 11 18 2 12 17 2 13 16 3 13 15 4 12 15 4 13 14 5 11 15 6 10 15 6 11 14
+D ¼P P P (cid:3)P P P (cid:3)P P P (cid:3)P P P þP P P þP P P þP P P (cid:3)P P P þP P P (cid:3)P P P
+3 5 9 17 4 8 19 4 9 18 3 9 19 6 8 17 6 9 16 2 11 19 2 13 17 4 13 15 6 11 15
+D ¼P P P (cid:3)P P P
+4 6 9 17 4 9 19
+D D D D
+A¼(cid:3) 1 , B¼ 2 , C¼(cid:3) 3 , E¼ 4
+D D D D
+0 0 0 0
+q 1n ¼(cid:3)P 1 k3 n (cid:3)P 2 k n, q 2n ¼P 3 k2 n þP 4 , q 3n ¼P 5 k2 n þP 6 , q 4n ¼P 7 k4 n þP 8 q2 n þP 9 ,
+q 5n ¼(cid:3)P 10 k3 n (cid:3)P 11 k n, q 6n ¼(cid:3)P 12 k3 n (cid:3)P 13 k n
+L 1n ¼
+q
+q 3n
+q
+q 4n
+(cid:3)
+(cid:3)
+q
+q 1n
+q
+q 6n , L 2n ¼
+(cid:3)q
+1n
+(cid:3)
+q
+q
+2n
+L
+1n , L 3n ¼
+A
+1
+þd
+11
+k2
+n
+(cid:3)A
+A 2
+k
+n
+L
+1n
+(cid:3)A
+3
+k
+n
+L
+2n
+2n 6n 3n 5n 3n 4
+MECHANICSOFADVANCEDMATERIALSANDSTRUCTURES 15
+L 4n ¼ b c 1 1 3 T ia 0 (cid:3) c 3 b 3 k 1 n T L 0 1n(cid:3) g 33 g k 3 n 1 L 2n(cid:3) c 1 b 1 b 2 1 T 3 L 0 3n , L 5n ¼ c 55 ðia b L 1 l T n 0 (cid:3)k n Þ þ g 15 g i 3 a 1 L 2n ,
+L 6n ¼ i b ac T 11(cid:3) c 1 b 3 k n T L 1n(cid:3)k n L 2n (cid:3) L b 3n T c 11, L 7n ¼ c 11 g 15 b ði T aL g 1n (cid:3)k n Þ (cid:3) c 11 g e 11 g iaL 2n ,
+1 0 1 0 1 0 1 0 33 33 31
+(cid:2) (cid:3)
+L 8n ¼ b c 1 T 1 ia g g 31(cid:3)k n L 1n þ e 33 b g 1 T g 0 k n L 2nþ s 3 b c 1 g 1 L 3n , n¼1(cid:3)4
+1 0 33 31 33 1 33

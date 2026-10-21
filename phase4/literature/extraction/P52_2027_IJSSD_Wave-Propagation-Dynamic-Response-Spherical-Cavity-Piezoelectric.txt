@@ -1,0 +1,1319 @@
+February 27, 2026 18:8 ws-ijssd
+InternationalJournalofStructuralStabilityandDynamics
+'WorldScientificPublishingCompany
+On the wave propagation and dynamic response of a spherical cavity in
+piezoelectric microstructures via Rabotnov kernel-based
+Moore-Gibson-Thompson thermoelasticity theory
+AbhikSur
+Department of Mathematics, Sister Nivedita University
+Kolkata, West Bengal 700156, India
+abhiksur4@gmail.com
+VipinGupta
+Department of Mathematics, Gurugram University
+Gurugram, Haryana 122018, India
+vipin@gurugramuniversity.ac.in
+AbhinavSinghal
+Department of Mathematics, Christ University
+Bengaluru, Karnataka 560029, India
+ism.abhinav@gmail.com
+MuratYaylacı
+Department of Civil Engineering, Recep Tayyip Erdogan University
+Rize 53100, Turkey
+murat.yaylaci@erdogan.edu.tr
+SoumikDas∗
+School of Physical Sciences, Amrita Vishwa Vidyapeetham
+Mysuru, Karnataka 570026, India
+soumikdas1993@gmail.com
+∗Corresponding author
+Received(01Jan2026)
+Revised(12Feb2026)
+Accepted(16Feb2026)
+Published(27Feb2026)
+This study investigates the transient dynamic response and thermomechanical stabil-
+ity of a transversely isotropic piezoelectric medium featuring a spherical cavity. To
+accurately model the small-scale effects inherent in advanced structural components,
+a spatiotemporal nonlocal elasticity framework of the Klein-Gordon type is employed,
+incorporating both internal length and intrinsic time scale parameters. The governing
+equationsoftheMoore-Gibson-Thompson(MGT)thermoelasticmodelarereformulated
+using a nonsingular Rabotnov-type fractional exponential kernel, providing a robust
+mathematicalformulationtocapturememory-dependentinteractionswithoutthepara-
+doxofinfinitepropagationspeeds.Thestructuralboundaryofthecavityissubjectedtoa
+ramp-typethermalloadingandelectricalgrounding,simulatingrealisticoperationalcon-
+ditionsforsensorsandactuators.UsingtheLaplacetransformtechniqueandtheZakian
+numerical inversion method, the transient distributions of temperature, displacement,
+stress, and electric potential are derived. The results highlight the significant influence
+1
+February 27, 2026 18:8 ws-ijssd
+2 Sur et al.
+oftheRabotnovfractionalparameterandspatiotemporalnonlocalityonthestructural
+stabilityandwave-frontcharacteristics.Thisresearchprovidesauniquemediumforun-
+derstandingthelatestdevelopmentsinfractional-orderdynamicsforpiezoelectricmicro-
+and nano-structures, offering practical insights for civil, aerospace, and mechanical en-
+gineeringapplications.
+Keywords: Piezoelectric material; Moore-Gibson-Thompson (MGT) theory; Rabotnov-
+typeexponentialkernel;Fractional-orderparameter;Spatiotemporalnonlocality;Cavity.
+1. Introduction
+The utilization of piezoelectric solids has grown remarkably over the past few
+decadesduetotheiradaptablenatureinsmartmaterialsandmultifunctionalstruc-
+tures.Thesesolidspossessanintrinsicabilitytointerconvertelectricalandmechan-
+ical forms of energy, making them essential for precision engineering and advanced
+electromechanical applications. This electro-mechanical coupling facilitates their
+widespread adoption in ultra-sensitive actuators, micro-positioning systems, and
+precision sensing devices, thereby enhancing their value across modern functional
+material technologies.1
+A defining feature of piezoelectric materials is their intrinsic multiscale het-
+erogeneity. Even within a single crystal, the presence of polarization domains with
+distinctcrystallographicorientationsleadstospatialvariationsinelastic,dielectric,
+andpiezoelectricproperties.Thisheterogeneitybecomesmorepronouncedinpoly-
+crystalline ceramics, where each grain exhibits its own domain configuration and
+interacts anisotropically with neighboring grains, resulting in highly non-uniform
+electroelastic fields. Processing-induced elastic, electrical, and thermal anisotropies
+generateresidualstressesandinternalmicrofields,whichmayrelaxthroughdomain
+switching or microcrack formation, thereby modifying the macroscopic response.
+Furthermore, porosity can either enhance or degrade the overall electromechani-
+calefficiency.2–4 Atlargerscales,piezoelectricfibersembeddedinpolymermatrices
+formhybridcompositeswhoseeffectivebehaviorisgovernedbytheelectromechani-
+calpropertiesoftheceramicinclusionsandthefiber–matrixinterfacialinteractions.
+Theresultingspatialdistributionoflocalelectroelasticfieldsultimatelycontrolsthe
+global response under coupled thermo-electro-mechanical loading.
+Fractional-order thermoelasticity extends classical thermoelastic theory by in-
+corporatingfractionalcalculustomodelelasticmaterialssubjectedtothermalloads
+withgreaterfidelity.Theintroductionofafractional-orderparameterαenablesthe
+representation of memory effects and nonlocal interactions, allowing heat and me-
+chanical disturbances to propagate with finite speeds. This framework provides
+a more realistic description of wave propagation and coupled thermal-mechanical
+responsesthanconventionalinteger-ordermodels,withapplicationsspanningengi-
+neering systems and biomechanical materials.
+Besides addressing non-Fourier heat conduction, the generalized thermoelastic
+frameworkbasedontheMoore–Gibson–Thompson(MGT)modelincorporatesafi-
+nite velocity of thermal wave propagation along with a refined correlation between
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 3
+the temperature gradient and the heat flux. The central objective of the MGT for-
+mulationistoovercometheinconsistencyfoundinclassicalthermoelasticity,where
+heattransferisassumedto occurinstantaneously,implyinganinfinitepropagation
+speed.5 By accounting for materials that exhibit high thermal conductivity or are
+subjected to rapid temperature variations, the MGT model introduces additional
+parameters that enable a more realistic description of thermoelastic behavior.6–8
+The principal advantage of the MGT model lies in its ability to overcome the
+unphysical assumption of infinite thermal wave speed inherent in classical Fourier-
+based thermoelasticity. By incorporating higher-order time derivatives and addi-
+tional relaxation parameters, the MGT framework ensures finite-speed thermal
+wavepropagationandprovidesamoreaccuratedescriptionofheat–mechanicalcou-
+pling, particularly for materials with high thermal conductivity or those subjected
+to rapid thermal loading. Moreover, the MGT model generalizes and unifies earlier
+non-Fouriertheories,suchastheCattaneo–VernotteandLord–Shulmanmodels,as
+limiting cases, thereby offering greater modeling flexibility and physical realism.
+Despitethesestrengths,theMGTmodelalsohascertainlimitations.Theintro-
+ductionofadditionalmaterialparametersincreasesthecomplexityofthegoverning
+equations and may pose challenges in parameter identification from experimental
+data.9,10 Furthermore, the applicability of the MGT framework is most relevant at
+short time scales or high-frequency thermal processes; for slow thermal evolutions,
+themodelnaturallyreducestoclassicalthermoelasticformulations,whereitsadded
+complexity may not yield significant advantages. These aspects have now been ex-
+plicitly acknowledged in the manuscript to provide a balanced and transparent
+discussion of the scope and applicability of the model.
+The use of fractional differential equations in modeling real-world phenomena
+hasattractedsignificantattentioninrecentyears.Owingtotheirinherentmemory
+and hereditary properties,11–13 fractional derivatives provide a more accurate and
+comprehensive framework for describing complex physical processes, including dif-
+fusion and transport, electrical circuits, fluid dynamics, viscoelastic materials, and
+financial systems. In the past decade, fractional-order operators have also been in-
+creasingly adopted in epidemiological modeling, where they effectively capture the
+nonlocal and memory-dependent dynamics15–18 underlying the spread of infectious
+diseases.19
+Thermoelasticity with a fractional Rabotnov kernel introduces a generalized
+heat-conduction framework in which the classical Fourier law is replaced by a
+constitutive relation involving a hereditary (memory) integral whose kernel fol-
+lows a Rabotnov-type fractional function. In this approach the heat flux q is ex-
+pressed as a convolution of the temperature gradient with a fading-memory kernel
+K (t) ∼ t−αE (λtα), where 0 < α < 1 and E is the Mittag-Leffler function.
+α α,β α,β
+TheRabotnovkernelprovidesasmoothtransitionbetweenpurelyelastic(instanta-
+neous)andfullydiffusivethermalresponses,therebycapturinglong-rangetemporal
+correlations and power-law relaxation that are observed in polymers, functionally
+graded composites, and micro/nano-scale solids.
+February 27, 2026 18:8 ws-ijssd
+4 Sur et al.
+ThefractionalRabotnovkernelofferssignificantadvantagesinheat-conduction
+modeling by incorporating memory and nonlocal effects, ensuring that the present
+heat flux reflects the complete thermal history of the material. Through its
+fractional-order parameter α, the model provides continuous tunability between
+classical Fourier diffusion (α = 1) and anomalous sub-diffusion (α < 1), enabling
+accurate fitting of experimental data without introducing ad hoc parameters. Un-
+like the classical Fourier law, it predicts finite-speed thermal wave propagation,
+consistent with second-sound and ballistic heat-transport phenomena observed at
+micro- and nanoscales. When embedded within thermoelastic field equations, the
+Rabotnov kernel enhances damping, stabilizes thermal stresses, and improves the
+fidelity of dynamic analyses, offering a mathematically robust and physically real-
+istic framework for advanced thermoelastic applications such as energy-harvesting
+composites and microelectronic systems where classical diffusion models fail.
+Forsimulatingheterogeneouspiezoelectricsubstances,wherecoupledelectrome-
+chanical and thermal forces show considerable memory and nonlocal effects, the
+inclusion of the Rabotnov exponential kernel in a fractional thermoelastic frame-
+workprovidessubstantialscientificbenefits.Indescribinglong-termrelaxationand
+retardation processes, the Rabotnov kernel ensures both mathematical regularity
+and physical realism by offering a non-singular, exponentially decaying memory
+function. This is especially helpful in heterogeneous piezoelectric materials, where
+differences in composition, polarization, and microstructure lead to anomalies in
+electrothermalcoupling,rate-dependentstressresponses,andnon-Fourierheatcon-
+duction that are not captured by classical models. The current method allows for
+the precise prediction of time-delayed thermo-electromechanical interactions and
+finite-speed heat wave propagation in graded or composite domains by combining
+the fractional-order derivative with the dual-phase-lag idea. An important devel-
+opment for the design and performance optimization of smart structures, sensors,
+and energy-harvesting devices operating under transient thermal and mechanical
+fields is the unified treatment of fractional thermoelasticity and electromechanical
+coupling through the Rabotnov kernel, which offers a generalized theoretical basis
+for analyzing memory-dependent, heterogeneous piezoelectric media.
+Motivated by these considerations, the present study examines thermoelas-
+tic interactions in a heterogeneous medium containing a spherical bore, with
+particular emphasis on coupled spatiotemporal nonlocal effects. Unlike classi-
+cal or singular fractional formulations, the constitutive relations are enriched
+by incorporating a nonsingular Rabotnov-type exponential kernel within the
+Moore–Gibson–Thompson (MGT) thermoelastic framework, enabling a physically
+consistent description of finite-speed heat transport with memory. This formula-
+tion bridges the gap between classical diffusion-based models and experimentally
+observed non-Fourier thermal responses in heterogeneous solids. To elucidate the
+resulting thermomechanical wave propagation, a coupled loading configuration is
+imposed by prescribing both mechanical traction and a temporally localized pulse
+heat source on the inner surface of the cavity, thereby providing a realistic set-
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 5
+ting to assess the combined influence of material heterogeneity, nonlocality, and
+thermal relaxation. The Laplace transform method is used to solve the governing
+equationsanalytically,andtheZakianalgorithm20 isusedtogeneratethematching
+real-timeresponsesusingnumericalinversion.Thecalculatednumericalfindingsof-
+feracomprehensiveunderstandingofhowthespatiotemporalnonlocalparameters,
+fractional-order effects, and Rabotnov kernel parameters affect the thermoelastic
+field variables. The analysis shows that the wave properties, dispersion behavior,
+and thermal response of the medium are considerably changed when the nonlocal
+and fractional factors are present. Moreover, significant transient effects that affect
+thedynamicstabilityandenergydistributionareintroducedbythetime-dependent
+pulse heating. All things considered, the suggested theoretical framework provides
+a thorough comprehension of coupled thermomechanical processes in piezoelectric
+solidsandisasignificantsteptowardthecreationofadaptivepiezoelectricsystems
+and next-generation smart materials.
+2. Basic Equations
+Beforeproceedingwiththepresentanalysis,itisusefultorevisitsomeessentialcon-
+ceptsrelatedtofractionalcalculus,particularlythefractionalderivativesemployed
+in this study. In this section, we focus on a recently introduced fractional operator
+presentedin,21,22 knownasthefractionalderivativewiththeRabotnovexponential
+kernel.Thisformulationrepresentsaclassoffractionalderivativescharacterizedby
+a nonsingular kernel, offering smoother and more physically consistent behavior
+compared to traditional definitions.
+The fractional derivative of a function f :[a, ∞[→R of order α, defined in the
+sense of the Rabotnov exponential kernel, can be expressed as follows:22,23
+t
+(cid:90)
+Dα,λf(t)= exp (−λ(t−s)α)f′(s)ds. (2.1)
+t α
+a
+Here, the parameters are defined as follows: the time variable satisfies t > a, the
+fractional order is α ∈ (0,1), and λ and a are positive real quantities, that is,
+λ ∈ R+ and a ∈ R+. Moreover, the Rabotnov exponential function governing the
+kernel behavior is formulated through the following relation:24
+(cid:88) ∞ λkz(k+1)(α+1)−1
+exp (λzα)= , (2.2)
+α Γ((α+1)(k+1))
+k=0
+where z ∈C and Γ(·) denotes the Gamma function.
+Under the MGT framework, the modified Fourier law yields:
+∂q
+q+τ =−(K∇θ+K⋆∇ν), ν˙ =θ. (2.3)
+0∂t
+February 27, 2026 18:8 ws-ijssd
+6 Sur et al.
+Moreover, the generalized Fourier law in the context of MGT theory adjoining
+Rabotnov-type fractional operator is given by25
+q +ταDα,λq =−K∇θ−K⋆∇ν, ν˙ =θ, (2.4)
+i 0 t i
+where q is the component of the heat flux vector, τ is the relaxation time, K
+i 0
+being the thermal conductivity of the material and K⋆ being the conductivity-rate
+parameter. The energy balance equation yields26
+∂
+−∇·q+Q=− [ρc θ+T (β ε +p E )], (2.5)
+∂t E 0 ij ij i i
+The constitutive relations in the context of spatiotemporal nonlocality can be re-
+trieved as27,28
+(cid:18) ∂2 (cid:19)
+1−ℓ2∇2+τ2 τ =C ε −e E −β θ. (2.6)
+∂t2 ij ijkl kl ijk k ij
+The strain-displacement relation is given by
+1
+ε = (u +u ), (2.7)
+ij 2 i,j j,i
+where u are the displacement components.
+i
+The equation of motion yields
+τ +F =ρu¨ . (2.8)
+ij,j i i
+The regulation of structural interactions in multifunctional smart materials can
+be accomplished by coupling electric fields with the thermal piezoelectric elastic
+field,enablingthecreationofthermalpiezoelasticcomponentsthatsimultaneously
+convert mechanical, thermal, and electrical energy. In these materials the direct
+piezoelectric effect transforms mechanical strain into electric polarization, while
+the converse effect allows applied electric potentials to induce deformation; when
+combined with thermal gradients, these interactions generate a strongly coupled
+system of mechanical, electrical, and thermal responses. Mindlin29 first formalized
+the thermo-piezoelectric effect by deriving three-dimensional equations of motion
+forathermalpiezoelectricplatewithintheframeworkoflinearthermodynamicsand
+small-strain theory, incorporating mechanical displacement, electric potential, and
+temperature as primary field variables. Building on this foundation, Nowacki30 ex-
+panded the constitutive relations and balance laws to include anisotropic behavior,
+pyroelectric effects, and thermal relaxation, and clarified boundary conditions for
+thermal flux and charge continuity. The resulting electric displacement vector D is
+commonlyexpressedasD =εSE+eε+p△θ,whereεS isthepermittivityatconstant
+strain, e the piezoelectric coupling tensor, and p the pyroelectric vector, providing
+thefundamentalframeworkforanalyzingvibrationcontrol,energyharvesting,and
+thermalmanagementinadvancedthermo-piezoelectricdevices.31,32 Corresponding
+to the aforementioned assumptions, the electric displacement is given by30
+D =e ε +ϵ E +p θ. (2.9)
+i ijk kl ij j i
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 7
+Intheabsenceoffreechargesandexternalmechanicalpressuresactingonthebody,
+the behavior of the piezoelectric system is described by the governing equations
+given in33
+D =0, E =−φ , (2.10)
+i,i i i
+where θ = T − T denotes the temperature change, T being the absolute tem-
+0
+perature, T being the reference temperature, K the thermal conductivity of the
+0
+material, K⋆ the conductivity-rate parameter, τ the components of stress tensor,
+ij
+ε the strain tensor, p the pyroelectric moduli, E the electric field components,
+ij i i
+e piezolectric moduli, D electric displacements, ϵ dielectric parameters, φ the
+ijk i ij i
+electric potential change, c being the specific heat at constant strain, ρ being the
+E
+density,Qtheexternalheatsupply,β =C ;α denotesthethermalexpansion
+ij ijkl kl
+tensor and C is isothermal elastic constants.
+ijkl
+3. Problem Formulation
+Weconsideraninfinite,heterogeneousthermoelasticsolidwithtransverseisotropy,
+which contains a spherical cavity of radius a, as illustrated in Figure 1.
+Fig.1. Schematicrepresentationofthemodel
+Wefurtherassumethecenterofthecavityastheoriginandintroducespherical
+coordinates(r, θ, ϕ).Undertheassumptionofsphericalsymmetry,itispostulated
+that all physical variables depend solely on the radial coordinate r and time t.
+Consequently, for the current analysis, the displacement vector and temperature
+distribution are expressed as
+u=(u(r,t), 0, 0), θ =θ(r,t). (3.1)
+(cid:18) ∂2 (cid:19)
+1−ℓ2∇2+τ2 τ =C ε +C (ε +ε )−e E −β θ, (3.2)
+∂t2 rr 11 rr 12 θθ ϕϕ 11 r 11
+February 27, 2026 18:8 ws-ijssd
+8 Sur et al.
+(cid:18) ∂2 (cid:19)
+1−ℓ2∇2+τ2 τ =C ε +C ε +C ε −e E −β θ,
+∂t2 θθ 12 rr 22 θθ 23 ϕϕ 12 r 22
+(cid:18) ∂2 (cid:19) (3.3)
+1−ℓ2∇2+τ2 τ =C ε +C ε +C ε −e E −β θ,
+∂t2 ϕϕ 12 rr 22 θθ 23 ϕϕ 12 r 22
+D =e ε +e (ε +ε )+ϵ E +p θ, (3.4)
+rr 11 rr 12 θθ ϕϕ 11 r 1
+where
+β =α C +2α C , β =α C +α (C +C ),
+11 1 11 2 12 22 1 12 2 22 23
+where α , α denotes the coefficient of linear thermal expansion of the material.34
+1 2
+Corresponding to this formulation, the axis of transverse isotropy (which also
+coincides with the piezoelectric polarization direction) is assumed to be aligned
+with the radial direction emanating from the center of the spherical cavity. Under
+this specific orientation, the material symmetry is compatible with the geometric
+symmetryofthecavity,andtheresultingthermo-electro-mechanicalfieldspreserve
+sphericalsymmetry.Consequently,wavepropagationremainspurelyradial,andall
+field variables depend only on the radial coordinate and time.
+However, if the piezoelectric axis were oriented arbitrarily with respect to the
+cavitygeometry,thetransverseisotropywouldbreakthesphericalsymmetry,lead-
+ing to anisotropic wave propagation with angular dependence. In such a case, cou-
+plingbetweenradialandcircumferentialmodeswouldarise,andtheproblemwould
+no longer admit a one-dimensional radial reduction.
+The strain-displacement relation yields
+∂u u
+ε = , ε =ε = , ε =ε =ε =0.
+rr ∂r θθ ϕϕ r rθ rϕ θϕ
+The radial component of the electric field
+∂φ
+E =− . (3.5)
+r ∂r
+Equations (3.2)-(3.4) can be rewritten as
+(cid:18) ∂2 (cid:19) ∂u 2u ∂φ
+1−ℓ2∇2+τ2 τ =C +C +e −β θ, (3.6)
+∂t2 rr 11∂r 12 r 11∂r 11
+(cid:18) ∂2 (cid:19) ∂u u ∂φ
+1−ℓ2∇2+τ2 τ =C +(C +C ) +e −β θ, (3.7)
+∂t2 θθ 12∂r 22 23 r 12∂r 22
+∂u 2u ∂φ
+D =e +e −ϵ +p θ, (3.8)
+rr 11∂r 12 r 11∂r 1
+The equation of motion is given by
+∂τ 2 ∂2u
+rr + (τ −τ )=ρ , (3.9)
+∂r r rr θθ ∂t2
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 9
+Here, the Laplacian operator is given by35
+(cid:18) (cid:19)
+1 ∂ ∂
+∇2 ≡ r2 .
+r2∂r ∂r
+The heat conduction equation in the context of MGT theory of generalized ther-
+moelasticityinaccountoftheRabotbov-typefractionaloperatorcanberepresented
+as
+(cid:32) ∂2θ˙ 2∂θ˙ (cid:33) (cid:18) ∂2θ 2∂θ (cid:19)
+K + +K⋆ +
+∂r2 r∂r ∂r2 r∂r
+(cid:16) (cid:17)(cid:20) ∂2 (cid:18) ∂u 2u (cid:19) ∂3φ (cid:21)
+= 1+ταDα,λ ρc θ¨+T β +β −p T . (3.10)
+0 t E 0∂t2 11∂r 22 r 1 0∂t2∂r
+Theequationofelectrostaticchargeforthemediumcanbegovernedbytheequation
+∂D 2
+rr + D =0. (3.11)
+∂r r rr
+Applying the method of separation of variables, we arrive at
+d(t)
+D = , (3.12)
+rr r2
+where d(t) is an undetermined function of the time parameter t. From equations
+(3.8) and (3.12), we arrive at
+(cid:20) (cid:21)
+∂φ 1 ∂u d(t) 2u
+= e − +e +p θ . (3.13)
+∂r ϵ 11∂r r2 12 r 1
+11
+For the simplicity of the problem, we assume d(t)=d=constant and e =0.
+12
+The constitutive relations for the present problem can be represented as
+(cid:18) ∂2 (cid:19) (cid:18) e2 (cid:19) ∂u 2u (cid:18) e p (cid:19) e d
+1−ℓ2∇2+τ2 τ = C + 11 +C − β − 11 1 θ− 11 ,
+∂t2 rr 11 ϵ ∂r 12 r 11 ϵ ϵ r2
+11 11 11
+(3.14)
+(cid:18) ∂2 (cid:19) (cid:18) ∂2 (cid:19) ∂u u
+1−ℓ2∇2+τ2 τ = 1−ℓ2∇2+τ2 τ =C +(C +C ) −β θ.
+∂t2 θθ ∂t2 ϕϕ 12∂r 22 23 r 22
+(3.15)
+The equation of motion is given by
+(cid:18) e2 (cid:19) ∂2u (cid:18) e2 (cid:19) 2∂u u (cid:18) e p (cid:19) ∂θ
+C + 11 + C + 11 +2[C −(C +C )] − β − 11 1
+11 ϵ ∂r2 11 ϵ r ∂r 12 22 23 r2 11 ϵ ∂r
+11 11 11
+(cid:20) e p (cid:21) θ (cid:18) ∂2 (cid:19)
+−2 β − 11 1 −β =ρ 1−ℓ2∇2+τ2 u¨. (3.16)
+11 ϵ 22 r ∂t2
+11
+The Fourier modified Fourier law in the context of MGT theory is given by
+(cid:16) (cid:17)
+1+ταDα,λ q˙ =−K∇θ˙−K⋆∇θ. (3.17)
+0 t r
+February 27, 2026 18:8 ws-ijssd
+10 Sur et al.
+The heat transport equation for the present problem yields
+(cid:32) ∂2θ˙ 2∂θ˙ (cid:33) (cid:18) ∂2θ 2∂θ (cid:19)
+K + +K⋆ +
+∂r2 r∂r ∂r2 r∂r
+(cid:16) (cid:17)(cid:20) (cid:18) p2T (cid:19) ∂2θ ∂2 (cid:26)(cid:18) e p (cid:19) ∂u 2u (cid:27)(cid:21)
+= 1+ταDα,λ ρ c − 1 0 +T β − 11 1 +β .
+0 t E ϵ ρ ∂t2 0∂t2 11 ϵ ∂r 22 r
+11 11
+(3.18)
+(cid:18) (cid:19)
+1 ∂u d
+E = −e + −p θ . (3.19)
+r ϵ 11∂r r2 1
+11
+Invoking the following nondimensional variables
+r c νt ℓ ντ ντ a
+r′ = , u′ = 11 u, t′ = , ℓ′ = , τ′ = , τ′ = 0, q = q ,
+a aT β a a a 0 a r KT r
+0 1 0
+a aνρϵ c τ θ
+q = q , E′ = 11 eE , τ′ = ij , θ′ = ,
+0 KT 0 r Ke r ij β T T
+0 11 1 0 0
+where
+(cid:114)c e2 e p T p2
+ν = 11, c =C + 11, β =β − 11 1, c =c − 0 1,
+ρ 11 11 ϵ 1 11 ϵ e E ϵ ρ
+11 11 11
+then after discarding primes, equations (3.14)-(3.19) can be represented in nondi-
+mensional form as follows
+(cid:18) ∂2 (cid:19) ∂u 2u e d
+1−ℓ2∇2+τ2 τ = +λ −θ− 11 , (3.20)
+∂t2 rr ∂r 1 r T β ϵ a2r2
+0 1 11
+(cid:18) ∂2 (cid:19) ∂u u
+1−ℓ2∇2+τ2 τ =λ +λ −βθ, (3.21)
+∂t2 θθ 1∂r 2r
+∂2u 2∂u u (cid:18) ∂2 (cid:19) ∂θ θ
++ −ℓ − 1−ℓ2∇2+τ2 u¨= +ϱ , (3.22)
+∂r2 r ∂r 0r2 ∂t2 ∂r r
+(cid:16) (cid:17) ∂θ˙ C2 ∂θ
+1+ταDα,λ q˙ =− − T , (3.23)
+0 t r ∂r C2 ∂r
+K
+(cid:32) ∂2θ˙ 2∂θ˙ (cid:33) (cid:18) ∂2θ 2∂θ (cid:19) (cid:16) (cid:17)(cid:20) ∂2θ ∂2 (cid:18) ∂u 2u (cid:19)(cid:21)
+C2 + +C2 + = 1+ταDα,λ +ϵ +β .
+K ∂r2 r∂r T ∂r2 r∂r 0 t ∂t2 ∂t2 ∂r r
+(3.24)
+(cid:20) (cid:21)
+aνρc e T β ∂u d
+E = e − 11 0 1 + −p T θ , (3.25)
+r Ke c ∂r a2r2 1 0
+11 11
+where
+C C +C β
+λ = 12, λ = 22 23, β = 22, ϱ=2(1−β), ℓ =2(λ −λ ),
+1 c 2 c β 0 2 1
+11 11 1
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 11
+K K⋆ β2T β
+C2 = , C2 = , ϵ= 1 0 , β = 22.
+K ρc aν T ρc ν2 ρc c β
+e e 11 e 1
+It has been assumed that the medium is initially at rest, while, the undisturbed
+state is maintained at reference temperature. This yields the initial conditions for
+the problem as
+u(r,0)=u˙(r,0)=θ(r,0)=θ˙(r,0)=0.
+4. Boundary Conditions
+Thesphericalcavityisassumedtobefreefromtractionandsubjectedtoathermal
+loadthatvarieswithtime,preciselycharacterizedbylaserpulseheating.Therefore,
+the boundary conditions for the present analysis are formulated as
+τ (r,t)=σ on r =a, (4.1)
+rr l
+t2
+− t
+q r (r,t)=q 016t2 e tp at r =a (4.2)
+p
+5. Method of Solution
+Define the Laplace transform for a function f(r,t) by
+∞
+(cid:90)
+L{f(r,t)}=f¯(r,s)= f(r,t)e−stdt, Re(s)>0,
+0
+satisfying the operational relationship
+(cid:104) (cid:105) sf¯(r,s)−f(r,0)
+L Dα,λf(r,t) = .
+t sα+1 (cid:2) 1+λs−(α+1) (cid:3)
+Therefore, equations (3.20)-(3.25) can be represented as
+(cid:0) a −ℓ2∇2(cid:1) τ¯ = du¯ +λ 2u¯ −θ¯− e 11 d , (5.1)
+1 rr dr 1 r T β ϵ a2r2s
+0 1 11
+(cid:0) a −ℓ2∇2(cid:1) τ¯ =λ du¯ +λ u¯ −βθ¯, (5.2)
+1 θθ 1dr 2r
+d2u¯ 2du¯ 2u¯ a s2 1 dθ¯
++ − (1+ℓ2s2)−1− 1 u¯= . (5.3)
+dr2 r dr r2 1+ℓ2s2 1+ℓ2s2dr
+In the present problem, the material is chosen so that, the elastic parameters must
+satisfy C 22 +C 23 −(C 11 +C 12 )= e ϵ1 2 1 1 1, so that ℓ 0 =2 and β 11 −β 22 = e1 ϵ 1 11 p1, so that
+ϱ=0. Moreover, neglecting the higher-order of nonlocality, the equation of motion
+(5.3) can be rewritten as
+d2u¯ 2du¯ 2u¯ a s2 1 dθ¯
++ − − 1 u¯= . (5.4)
+dr2 r dr r2 1+ℓ2s2 1+ℓ2s2dr
+February 27, 2026 18:8 ws-ijssd
+12 Sur et al.
+The Fourier law yields
+(cid:34) s (cid:35) (cid:18) C2 (cid:19) dθ¯
+1+ sq¯ =− s+ T . (5.5)
+sα+1 (cid:0) 1+λs−(α+1) (cid:1) r C2 dr
+K
+The heat conduction equation is given by
+d2θ¯ 2dθ¯ (cid:20) (cid:18) du¯ 2u¯ (cid:19)(cid:21)
++ =b s2θ¯+ϵs2 + , (5.6)
+dr2 rdr 1 dr r
+(cid:20) (cid:21)
+aνρc e T β du¯ d
+E¯ = e − 11 0 1 + −p T θ¯ , (5.7)
+r Ke c dr a2r2s 1 0
+11 11
+where
+(cid:34) (cid:35)
+1 s
+a =1+τ2s2 and b = 1+ .
+1 1 (C2 +sC2) s(α+1) (cid:0) 1+λs−(α+1) (cid:1)
+T K
+Introducing a new function Ψ defined as
+dΨ
+u= .
+dr
+Equations (5.4) and (5.6) can be rewritten using the aforementioned function with
+the help of the operators D and D as follows
+1 2
+(cid:0) D D −a s2ξ (cid:1) Ψ¯ =ξ θ¯, (5.8)
+1 2 1 1 1
+(cid:0) D D −b s2(cid:1) θ¯=b ϵs2D D Ψ¯, (5.9)
+1 2 1 1 1 2
+where
+d 2 d 1
+D = + , D = , ξ = .
+1 dr r 2 dr 1 1+ℓ2s2
+Between equations (5.8) and (5.9), eliminating θ¯, we arrive at
+(cid:0) D D −p2(cid:1)(cid:0) D D −p2(cid:1) Ψ¯ =0, (5.10)
+1 2 1 1 2 2
+where, p2 and p2 being the roots of the characteristic equation
+1 2
+k4−k2(cid:0) b s2+ξ a s2(cid:1) +b ξ s2(a s2−ϵ)=0. (5.11)
+1 1 1 1 1 1
+Invoking Φ¯ =r2 1Ψ¯ as a substitution, we can express differential equation (5.10) as
+(cid:18) d2 1 d (cid:18) 1 (cid:19)(cid:19)(cid:18) d2 1 d (cid:18) 1 (cid:19)(cid:19)
++ − +p2 + − +p2 Φ¯ =0. (5.12)
+dr2 rdr 4r2 1 dr2 rdr 4r2 2
+This yields
+2
+Ψ¯ =r−1 2 (cid:88) A i (s)K 1/2 (p i r), (5.13)
+i=1
+u¯= d d Ψ¯ r =−r−1 2 (cid:88) 2 A i (s)p i K 3/2 (p i r), (5.14)
+i=1
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 13
+where K (·) denotes the modified Bessel function of second kind of order n.
+n
+From equation (5.8), the temperature distribution can be represented as
+θ¯= 1 (cid:88) 2 A i (s)p2 i√ K 5/2 (p i r) −a s2 (cid:88) 2 A i (s)K √1/2 (p i r) + 2 (cid:88) 2 A i (s)K 1/2 (p i r) .
+ξ r 1 r ξ r3/2
+1 1
+i=1 i=1 i=1
+(5.15)
+From equation (5.1), the differential equation satisfied by the radial stress gives
+(cid:0) a −ℓ2∇2(cid:1) τ¯ = (cid:88) 2 A i (s) (cid:18) p2+a s2− 2 (cid:19) K (p r)+2 (cid:88) 2 (1−λ )p A (s) K 3/2 (p i r)
+1 rr r1/2 i 1 ξ r 1/2 i 1 i i r3/2
+1
+i=1 i=1
+− 1 (cid:88) 2 A i (s)p2 i K 5/2 (p i r) − ℏ , (5.16)
+ξ r1/2 r2
+1
+i=1
+where
+e d
+ℏ= 11 .
+T β ϵ a2s
+0 1 11
+Since
+(cid:18) π (cid:19)1/2 (cid:20) (4n2−12) (cid:18) (4n2−32) (cid:18) (4n2−52) (cid:19)(cid:19)(cid:21)
+K (p r)≈ e−pir 1+ 1+ 1+ (1+···) .
+n i 2p r 1(8p r) 2(8p r) 3(8p r)
+i i i i
+Using Mathematica 7.0 to analyze equation (5), an approximate analytical expres-
+sion for the radial stress in the Laplace transform domain is obtained as
+τ¯ rr =− (cid:88) 2 2 √ a ℓr(a 1 −ℓ2p2) e−r√ ℓ a1 (cid:2) (a 1 −ℓ2p2 i )(Ψ i +Φ i )+Υ i −Λ i (cid:3) , (5.17)
+i=1 1 1 i
+where
+√ √
+Ψ i =ℏ (cid:26) Ei (cid:18)r ℓ a 1 (cid:19) −e 2r√ ℓ a1Ei (cid:18) − r ℓ a 1 (cid:19)(cid:27) ,
+√ √
+Φ i =(p i Z i +S i )
+(cid:26)
+Ei
+(cid:18)r
+ℓ
+a 1
+−rp i
+(cid:19)
+−e
+2r√
+ℓ
+a1Ei (cid:18)
+−rp i −
+r
+ℓ
+a 1 (cid:19)(cid:27)
+,
+√ √
+Υ i = √ a 1 ℓp2 i Z i e 2r√ ℓ a1Ei (cid:18) −rp i − r ℓ a 1 (cid:19) + √ a 1 ℓp2 i Z i Ei (cid:18)r ℓ a 1 −rp i (cid:19) ,
+√ √
+Λ i = a3 1 ℓ /2 Z i e 2r√ ℓ a1Ei (cid:18) −rp i + r ℓ a 1 (cid:19) − a3 1 ℓ /2 Z i Ei (cid:18)r ℓ a 1 −rp i (cid:19) −2 √ a 1 ℓR i e r (cid:16)√ ℓ a1−pi (cid:17) ,
+February 27, 2026 18:8 ws-ijssd
+14 Sur et al.
+3C
+R =C −E , S = i +D +F ,
+i i i i p i i
+i
+(cid:18) (cid:19)1
+Z = 3C i + D i, C = π 2 1 A (s)p2,
+i p2 p i 2p ξ i i
+i i i 1
+(cid:18) (cid:19)1 (cid:18) (cid:19)1
+π 2 π 2
+D =2A (s)p (λ −1) ,E = A (s)(p2+a s2),
+i i i 1 2p i 2p i i 1
+i i
+(cid:18) (cid:19)1
+F = π 2 2A i (s) i=1, 2.
+i 2p ξ
+i 1
+Where, the exponential integral Ei(x) is defined as
+∞
+(cid:90) e−t
+Ei(x)=− dt.
+t
+−x
+Moreover, from equation (5.5), the expression of the component of the nondimen-
+sional heat-flux in the Laplace transform domain yields
+q¯ =−ρ (cid:34) (cid:88) 2 2A i (s)p2 iK (p r)− (cid:88) 2 A i (s)p3 iK (p r)− (cid:88) 2 3A i (s) K (p r)
+r ω ξ r3/2 5/2 i ξ r1/2 7/2 i 2ξ r5/2 1/2 i
+1 1 1
+i=1 i=1 i=1
++ (cid:88) 2 A (s)p (cid:18) a 1 s2 + 3 (cid:19) K (p r) (cid:35) . (5.18)
+i i r1/2 ξ r3/2 3/2 i
+1
+i=1
+The nondimensional boundary conditions in the Laplace transform domain are
+given by
+σ
+τ¯ (r,s)= l at r =1,
+rr s
+(5.19)
+q t
+q¯ (r,s)= 0 p at r =1.
+r 8(st +1)3
+p
+Substituting the boundary conditions (5.19) in equations (5.17) and (5) yields
+the system of equation in the following form
+− (cid:88) 2 2 √ a ℓ(a 1 −ℓ2p2) e− √ ℓ a1 (cid:2) (a 1 −ℓ2p2 i )(Ψ i +Φ i )+Υ i −Λ i (cid:3) (cid:12) (cid:12) (cid:12) (cid:12) = σ s l,
+i=1 1 1 i r=1
+(cid:88) 2 2A i (s)p2 iK (p )− (cid:88) 2 A i (s)p3 iK (p )− (cid:88) 2 3A i (s) K (p )+
+ξ 5/2 i ξ r1/2 7/2 i 2ξ 1/2 i
+1 1 1
+i=1 i=1 i=1
+2 (cid:18) (cid:19)
+(cid:88) A (s)p a s2+ 3 K (p )=− q 0 t p .
+i i 1 ξ 3/2 i 8ρ (st +1)3
+1 ω p
+i=1
+(5.20)
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 15
+Uponsolvingthesystemofequations(5.20),theunknowncoefficientsA (s),for
+i
+i = 1,2, have been determined for the respective cases. This finalizes the solution
+of the present problem within the Laplace transform framework.
+6. Numerical Results and Interpretations
+This section examines the thermal electro-elastic response of an individual magne-
+siumcrystalanddiscussesthenumericalresultsderivedfromthetheoreticalmodel.
+To obtain the solution in the physical space-time domain, the Laplace transform
+inversion is performed numerically using Zakian’s method,20 as detailed in the Ap-
+pendix. This study aims to highlight the potential benefits and applications of
+magnesium in structural engineering, owing to its distinctive properties such as a
+highstrength-to-weightratio,lowdensity,andexcellentthermalconductivity.Mag-
+nesium’s advantageous characteristics make it a preferred material in automotive
+and aerospace sectors, as well as in thermal management systems like heat sinks
+and electronic devices. For numerical simulations, the material properties used are
+adopted from:34
+ρ=1470 kg m−3, C =5.974×1010 N m−2,
+11
+C =2.624×1010 N m−2, C =2.17×1010 N m−2,
+12 23
+α =2×10−5K−1, α =2×10−6K−1,
+1 2
+K =386 W m−1K−1, K⋆ =200 W m−1K−1s−1,
+c =140 J kg−1K−1, e =15.1 C m−2,
+e 11
+p =−2.5×10−5C m−2K−1, ϵ =5.62×10−9C2N−1m−2,
+1 11
+T =298 K, d=15 C
+0
+m=0.1, a=1 m,
+q =1, t=0.12.
+0
+6.1. Effectiveness of spatial nonlocal parameter ℓ
+Figures2(a)–2(c)illustratethedistributionsofdisplacementu,temperatureθ,and
+radialstressσ asfunctionsoftheradialcoordinater attimet=0.12fordifferent
+rr
+valuesofthespatialnonlocalparameterℓ.Thenumericalcomputationsarecarried
+out for τ =0.01, fractional order α=0.5, and Rabotnov parameter λ=0.1.
+Figure 2(a) shows that the displacement increases gradually in the region 1 <
+r < 1.15, attains its maximum near r = 1.15, and then decreases with further
+increase in r. An increase in the nonlocal parameter ℓ significantly modifies the
+displacement profile, indicating the strong influence of spatial nonlocality on the
+mechanical response. Larger values of ℓ enhance long-range interactions among
+material points, resulting in smoother displacement gradients and a more diffused
+deformation field, which reduces stress localization.
+Figure2(b)depictsthetemperaturedistributionalongtheradialdirection.The
+temperature reaches its maximum at the cavity surface due to direct laser heating
+February 27, 2026 18:8 ws-ijssd
+16 Sur et al.
+uH´10-4L
+0 1.1 1.2 1.3 1.4 1.5r
+-2
+-4 2 3 1 2 3 . . . { { { = = = 1 5 9 × × × 1 1 1 0 0 0 - - - 3 3 3
+-6
+1
+-8
+(a)
+-10
+ΘH´10-3L
+5
+1. { = 1×10-3
+4 2. { = 5×10-3
+3. { = 9×10-3
+3
+3
+2 2
+1 1
+(b) 0 1.1 1.2 1.3 1.4 1.5r
+Σrr
+1.5
+1. { = 1×10-3
+1.0 1 2. { = 5×10-3
+3. { = 9×10-3
+0.5 2
+3
+(c)0.0 1.1 1.2 1.3 1.4 1.5r
+Fig.2. Distributionsof(a)u,(b)θ,(c)σrr vs.r fordifferentspatialnonlocalparameterℓ.
+anddecreasesoutwardasaresultofthermaldiffusion.Increasingℓproducesamore
+gradual temperature decay, reflecting the redistribution of thermal energy caused
+by spatial nonlocal effects and highlighting the limitations of classical Fourier heat
+conduction at small length scales.
+Figure 2(c) illustrates the variation of the radial stress σ with r. The results
+rr
+indicate that increasing ℓ markedly alters both the magnitude and spatial distri-
+bution of the stress field. Higher nonlocality smooths stress gradients and reduces
+stress concentration near the cavity wall by redistributing internal forces over a
+broader region. This behavior is essential for accurately modeling the mechanical
+response of micro- and nanoscale heterogeneous materials.
+6.2. Effectiveness of temporal nonlocal parameter τ
+Figures 3(a)–3(c) illustrate the variations of displacement u, temperature θ, and
+radial stress σ with the radial coordinate r for different values of the temporal
+rr
+nonlocalparameterτ.Theresultsareobtainedatt=0.12withthespatialnonlocal
+parameterfixedatℓ=1×10−3,fractionalorderα=0.5,andRabotnovparameter
+λ = 0.1. These parameter values are selected to examine the combined influence
+of temporal nonlocality and fractional-order memory effects on the transient ther-
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 17
+moelastic response.
+Figure3(a)showsthatthedisplacementfieldisstronglydependentonthetem-
+poral nonlocal parameter τ. Increasing τ leads to a noticeable reduction in the
+displacement amplitude throughout the domain. This behavior is attributed to the
+finite relaxation time introduced by temporal nonlocality, which delays the ther-
+moelasticresponseandsuppressesinstantaneousenergytransfer.Asaresult,larger
+values of τ produce a more attenuated deformation field.
+A similar trend is observed in Figure 3(b) for the temperature distribution.
+As τ increases, the peak temperature decreases and the thermal profile becomes
+morediffused,indicatingaslowerthermalresponse.Thisreflectsthedeviationfrom
+classicalFourierheatconductionduetothermalrelaxation,leadingtodampedand
+non-instantaneous heat propagation.
+Figure 3(c) presents the corresponding radial stress distributions. Smaller val-
+uesofτ resultinlowerstressmagnitudes,indicatingfasterrelaxationandenhanced
+stressdissipation.Incontrast,largerτ valuesallowstresswavestopersistforlonger
+duration due to delayed mechanical response. These results demonstrate that tem-
+poral nonlocality significantly influences both heat transport and stress evolution,
+which is essential for accurately modeling transient thermoelastic behavior in het-
+erogeneous and microscale materials.
+6.3. Effectiveness of time-pulse t
+p
+Figures 4(a)-4(c) illustrate the variation of the thermophysical quantities viz. dis-
+placement, temperature, and radial stress along the radial distance r for different
+values of the pulse duration t . The computations are performed for ℓ=1×10−3,
+p
+τ = 0.01, the Rabotnov parameter λ = 0.1, and the fractional parameter α = 0.5.
+Asobservedfromthegraphicalrepresentation,theamplitudeofthethermophysical
+responses is strongly influenced by the increase in the pulse duration t . A longer
+p
+pulsetimecorrespondstoaslowerandmoresustainedthermalenergyinput,which
+allows the heat to penetrate deeper into the medium, leading to a smoother tem-
+perature gradient and consequently a moderated mechanical response. In contrast,
+a shorter pulse induces a highly localized and transient temperature rise, produc-
+ing sharper stress and displacement gradients near the cavity surface. Physically,
+the extended heating period enhances the diffusion of thermal energy and facili-
+tates a quasi-steady-state response, thereby reducing thermal shock effects. This
+trend highlights the sensitivity of thermoelastic wave propagation in the hetero-
+geneous medium to the temporal characteristics of the applied laser pulse, which
+is crucial for accurately modeling laser-solid interactions in advanced engineering
+applications.
+6.4. Effectiveness of Rabotnov coefficient λ
+Figures 5(a)-5(c) exhibit the significance of the thermophysical fields along the
+radial coordinate r for different magnitudes of the Rabotnov coefficient λ, while
+February 27, 2026 18:8 ws-ijssd
+18 Sur et al.
+uH´10-4L
+0 1.1 1.2 1.3 1.4 1.5r
+1. Τ = 0.02
+-5 2. Τ = 0.03
+3. Τ = 0.04
+-10 3, 2, 1
+(a)
+-15
+ΘH´10-3L
+5
+4 1. Τ = 0.02
+2. Τ = 0.03
+3 3, 2, 1 3. Τ = 0.04
+2
+1
+0 1.1 1.2 1.3 1.4 1.5r
+(b)
+-1
+Σrr
+8 1. Τ = 0.02
+2. Τ = 0.03
+6 3. Τ = 0.04
+1, 2, 3
+4
+2
+(c) 1.1 1.2 1.3 1.4 1.5r
+Fig.3. Distributionsof(a)u,(b)θ,(c)σrr vs.r fordifferenttemporalnonlocalparameterτ.
+maintaining all other parameters constant as described previously. The graphical
+analysis reveals that increasing the value of λ produces a pronounced attenuation
+in the amplitude of all thermophysical responses. This behavior can be attributed
+to the role of the Rabotnov exponential kernel, where a higher λ intensifies the
+exponentialdecayrateinthememorykernelfunction,leadingtofasterrelaxationof
+thethermalandmechanicaldisturbances.Physically,thiscorrespondstoastronger
+hereditary damping mechanism, in which the material’s memory of prior states
+diminishesmorerapidly,therebyreducingthepersistenceoftemperaturegradients
+and stress waves within the medium. Consequently, as λ increases, the system
+transitionstowardamorediffusiveandlessoscillatorythermalresponse,indicating
+enhanced stability and faster energy dissipation. These findings demonstrate the
+sensitivity of fractional-order thermoelastic models to the Rabotnov parameter,
+confirming its critical influence on controlling the rate of energy relaxation and the
+propagation characteristics of coupled thermomechanical fields in heterogeneous
+media.
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 19
+uH´10-4L
+0 1.1 1.2 1.3 1.4 1.5r
+-5 1. tp=0.01
+2. tp=0.02
+-10 3. tp=0.03
+1, 2, 3
+-15
+(a)
+ΘH´10-3L
+6
+5 1. tp=0.01
+2. tp=0.02
+4
+1, 2, 3
+3. tp=0.03
+3
+2
+1
+(b) 0 1.1 1.2 1.3 1.4 1.5r
+Σrr
+1.0
+3, 2, 1
+0.5
+0.0 1.1 1.2 1.3 1.4 1.5r
+-0.5 1. tp=0.01
+-1.0 2 3 . . t t p p = = 0 0 . . 0 0 2 3
+(c)
+-1.5
+Fig.4. Distributionsof(a)u,(b)θ,(c)σrr vs.r fordifferentpulsetimetp.
+6.5. Effectiveness of fractional parameter α
+Figures 6(a)-6(c) illustrate the variation of the physical fields towards the radial
+coordinate r for different values of the fractional-order parameter α, while main-
+taining all other parameters remains invariant. The graphical results demonstrate
+that increasing α causes a significant reduction in the magnitude of all thermo-
+physical responses, indicating faster decay and stabilization of the system. This
+phenomenonarisesfromtheintrinsicroleofthefractionalparameterincontrolling
+the intensity of the memory and nonlocal effects embedded within the fractional
+derivative. At lower values of α, the system exhibits stronger memory retention,
+meaningthatthepresentstateofthematerialisheavilyinfluencedbyitshistorical
+thermal and mechanical behavior. This results in a slower relaxation process and
+more pronounced thermomechanical coupling. As α increases, the contribution of
+paststatesdiminishes,weakeningthehereditaryeffectsandpromotingamorediffu-
+sive response. Consequently, the thermal and stress waves attenuate more rapidly,
+and the material response tends to approach the behavior predicted by classical
+(integer-order) thermoelastic theories. This sensitivity of the thermophysical fields
+to α highlights the fractional-order parameter as a fundamental control factor in
+modeling relaxation dynamics, non-Fourier heat conduction, and energy transport
+February 27, 2026 18:8 ws-ijssd
+20 Sur et al.
+uH´10-4L
+0 1.1 1.2 1.3 1.4 1.5r
+-5 1. Λ = 0.1
+2. Λ = 0.5
+3. Λ = 1.0
+-10
+3, 2, 1
+-15
+(a)
+ΘH´10-3L
+6
+1. Λ = 0.1
+5 2. Λ = 0.5
+4 3, 2, 1 3. Λ = 1.0
+3
+2
+1
+(b) 0 1.1 1.2 1.3 1.4 1.5r
+Σrr
+1.5
+1. Λ = 0.1
+1.0 2. Λ = 0.5
+3. Λ = 1.0
+0.5 1, 2, 3
+0.0 1.1 1.2 1.3 1.4 1.5r
+-0.5
+(c) -1.0
+Fig.5. Distributionsof(a)u,(b)θ,(c)σrr vs.r fordifferentparameterλ.
+in smart materials.
+7. Validation of the model
+Validation of the present result with pre-established results is delineated in Table
+1.
+Table1. Summaryofselectedcasesandtheirassociatedmodels.
+Case Condition Model
+I ℓ=0,τ =0,λ=1, InthecontextofMGTtheoryduetoabsenceofspatiotem-
+poralnonlocaleffects,thethermoelasticmodel,asshown
+in Case I, is in excellent alignment with the results pro-
+ducedby.34
+II τ =0,λ=1 The validation of the results in absence of temporal non-
+local effects corresponding to MGT theory as outlined in
+Case II is supported by its agreement with the results of
+existingliterature.35
+Thepresentsubsectionisdevotedtoacomparativeanalysisbetweenthecompu-
+tationalresultsobtainedinthisstudyandthepreviouslypublishedresultsreported
+in.34 As illustrated in Figures 7(a) and 7(b), the distributions of displacement and
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 21
+uH´10-4L
+0 1.1 1.2 1.3 1.4 1.5r
+-5
+1. Α = 0.1
+2. Α = 0.5
+-10 3. Α = 1.0
+3, 2, 1
+-15
+(a)
+ΘH´10-3L
+5
+4 1. Α = 0.1
+2. Α = 0.5
+3 3, 2, 1 3. Α = 1.0
+2
+1
+(b) 0 1.1 1.2 1.3 1.4 1.5r
+1.5
+Σrr
+1. Α = 0.1
+1.0 2. Α = 0.5
+1, 2, 3 3. Α = 1.0
+0.5
+0.0 1.1 1.2 1.3 1.4 1.5r
+-0.5
+(c)
+-1.0
+Fig.6. Distributionsof(a)u,(b)θ,(c)σrr vs.r fordifferentfractionalparameterα.
+temperature are graphically presented as functions of the radial coordinate r in
+the absence of spatiotemporal nonlocal effects (ℓ = τ = 0), with the Rabotnov
+parameterfixedatλ=1.Thegraphicalcomparisonsrevealanexcellentagreement
+between the present computations and the existing results, thereby confirming the
+accuracy and reliability of the numerical implementation.
+8. Concluding remarks
+The present study has developed and analyzed a comprehensive fractional-order
+nonlocal thermoelastic model incorporating the Rabotnov exponential kernel to
+investigate the transient thermomechanical response of a heterogeneous spherical
+medium subjected to laser pulse heating. The proposed framework integrates spa-
+tial and temporal nonlocal effects, fractional-order derivatives, and hereditary ker-
+nel functions to capture complex memory-dependent behaviors that cannot be ad-
+dressedbyclassicalthermoelastictheories.Throughadetailedparametricanalysis,
+the influence of key model parameters have been addressed as follows:
+• A fractional-order nonlocal thermoelastic model incorporating the Rabot-
+nov exponential kernel has been developed to analyze the transient ther-
+moelastic response of a heterogeneous spherical medium under laser pulse
+February 27, 2026 18:8 ws-ijssd
+22 Sur et al.
+uH´10-4L
+0 1.1 1.2 1.3 1.4 1.5r
+-5
+1. Present model
+2. Reference [34]
+-10
+-15
+(a)
+ΘH´10-3L
+5
+4
+1. Present model
+2. Reference [34]
+3
+2
+1
+(b) 0 1.1 1.2 1.3 1.4 1.5r
+Fig.7. Comparativestudyof(a)uand(b)θ vs.r betweenthepresentmodelandReference.34
+heating.
+• The model successfully integrates spatial and temporal nonlocality,
+fractional-order derivatives, and hereditary kernel effects, enabling accu-
+ratedescriptionofmemory-dependentandscale-sensitivebehaviorsabsent
+in classical theories.
+• The spatial nonlocal parameter significantly influences displacement and
+stress distributions by smoothing gradients, reducing stress localization,
+and enhancing structural stability.
+• The temporal nonlocal parameter governs relaxation dynamics; increasing
+delays heat and stress propagation, resulting in more diffusive and stable
+thermomechanical responses.
+• The Rabotnov coefficient λ introduces a hereditary damping mechanism.
+A larger magnitude of λ accelerates thermal and mechanical relaxation,
+reducing oscillatory behavior and improving energy dissipation.
+• The model provides a physically consistent and mathematically robust
+frameworkforstudyingnon-Fourierheatconductionandnonlocalthermoe-
+lastic coupling in heterogeneous, micro/nanoscale, and smart materials.
+9. Applications
+Themathematicalframeworkandnumericalfindingsofthisresearchareapplicable
+to the following specialized areas:
+• The proposed model facilitates the optimization of structural stabil-
+ity in high-frequency piezoelectric resonators and micro-sensors used in
+MEMS/NEMS. By accounting for the internal characteristic length scales,
+engineers can more accurately predict how miniaturization affects the me-
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 23
+chanical reliability and signal integrity of these advanced micro-structures.
+• This research provides a robust framework for predicting the thermome-
+chanical response of micro-devices when physical dimensions approach the
+material’s intrinsic scales. The inclusion of spatiotemporal nonlocality al-
+lowsforthedetectionofdispersioneffectsthattraditionallocaltheoriesfail
+to capture, ensuring higher precision in sub-micron structural engineering.
+• Thestudyofferssignificantinsightsintothemodelingofstructuralstability
+and material deformation during high-intensity femtosecond or ultrashort
+pulse laser machining. Precision in these industrial processes is often com-
+promisedbythermalgradients,andthismodelhelpsinpredictingtheheat-
+affected zone more accurately to maintain the integrity of the remaining
+structure.
+• By integrating the Rabotnov-fractional kernel, the research accounts for
+the”thermalmemory”ofpiezoelectricceramicsduringprecisionindustrial
+drillingorablation.Thismemoryeffectisvitalformaintainingthestability
+of the microstructure, as it dictates how the material accumulates energy
+and redistributes stress over consecutive loading cycles.
+Acknowledgements
+The authors express their sincere gratitude to Amrita Vishwa Vidyapeetham, My-
+suru Campus, India; Sister Nivedita University, India; and Gurugram University,
+India, for their invaluable support, guidance, and for providing excellent research
+facilities and resources that greatly contributed to this work.
+ORCID
+Abhik Sur - https://orcid.org/0000-0001-6326-6429
+Vipin Gupta - https://orcid.org/0000-0002-5238-1963
+Abhinav Singhal - https://orcid.org/0000-0002-6796-1995
+Murat Yaylacı - https://orcid.org/0000-0003-0407-1685
+Soumik Das - https://orcid.org/0000-0002-7946-0637
+Funding
+This research received no specific grant from any funding agency in the public,
+commercial, or not-for-profit sectors.
+Authorship statement
+Abhik Sur: Supervision, Methodology. Vipin Gupta: Validation, Writing-
+Reviewing and Editing. Abhinav Singhal: Conceptualization, Software. Mu-
+rat Yaylacı: Software, Methodology, Visualization. Soumik Das: Investigation,
+Writing- Original draft preparation.
+February 27, 2026 18:8 ws-ijssd
+24 Sur et al.
+Declaration of competing interests
+The authors have no competing interests to declare.
+Declaration of generative AI use
+This statement confirms that the authors did not use AI in the core process
+Data availability
+All data generated or analysed during this study are included in this published
+article.
+Appendix A. Appendices
+Zakian Method
+To convert the theoretical results previously obtained in the Laplace transform
+domain into the physical space-time domain, we employ the numerical inversion of
+the Laplace transform using Zakian’s method.20
+Let F(s) denote the Laplace transform of a causal function f(t) of exponential
+order σ. The inverse Laplace transform is given by the Bromwich integral
+γ+i∞
+1 (cid:90)
+f(t)= F(s)estds, γ >σ. (A.1)
+2πi
+γ−i∞
+where Re(s)>σ and f(t) is assumed to be integrable and of exponential order σ.
+The inverse can be numerically approximated by
+N
+f (t)= 1 (cid:88) K F (cid:16)α i (cid:17) , (A.2)
+N t i t
+i=−N
+where f (t) represents an approximation to the function f(t). Here, the constants
+N
+α and K may be real or occur as complex conjugate pairs. The quality of the
+i i
+approximation improves as N increases, with f (t) → f(t) as N → ∞. Typically,
+N
+sufficient accuracy can be achieved with N =5.
+When the constants are complex conjugates, the expression for the numerical
+inversion becomes
+5
+f (t)= 1 (cid:88) {Re[K ]+iIm[K ]} (cid:110) Re (cid:104) F (cid:16)α i (cid:17)(cid:105) +iIm (cid:104) F (cid:16)α i (cid:17)(cid:105)(cid:111) , (A.3)
+N t i i t t
+i=−5
+which can be simplified, as the imaginary cross-product terms cancel out upon
+summation over conjugate pairs, yielding
+5
+f (t)=
+2(cid:88)(cid:110)
+Re[K ]Re
+(cid:104)
+F
+(cid:16)α
+i
+(cid:17)(cid:105)
+−Im[K ]Im
+(cid:104)
+F
+(cid:16)α
+i
+(cid:17)(cid:105)(cid:111)
+, (A.4)
+N t i t i t
+i=1
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 25
+and further reduced to
+5
+f (t)=
+2(cid:88)
+Re
+(cid:104)
+K F
+(cid:16)α
+i
+(cid:17)(cid:105)
+. (A.5)
+N t i t
+i=1
+The parameter values for α and K (for i=5) are listed in Table 2.
+i i
+Table 2. The values
+of α and W employed in the Zakian method for i = 5 are presented below.20
+i i
+i α W
+i i
+Re α Im α Re W Im W
+i i i i
+1 1.283767675E+01 1.666063445E+00 -3.690208210E+04 1.969904257E+05
+2 1.222613209E+01 5.012718792E+00 6.127702524E+04 -9.540862551E+04
+3 1.093430308E+01 8.409673116E+00 -2.891656228E+04 1.816918531E+04
+4 8.776434715E+00 1.192185389E+01 4.655361138E+03 -1.901528642E+00
+5 5.225453361E+00 1.572952905E+01 -1.187410411E+02 -1.413036911E+02
+TheconvergenceoftheZakianmethodisbasedonapproximatingtheexponen-
+tial function appearing in equation (A.1) by a rational expansion of the form
+N
+est ≈ (cid:88) K δ (cid:16) s− α i (cid:17) , (A.6)
+i t
+i=−N
+in a weighted sense over the complex plane. Substituting this approximation into
+the Bromwich integral leads directly to the discrete inversion formula (A.2).
+Provided that F(s) is analytic in the half-plane Re(s)>σ and satisfies suitable
+growth conditions as |s| → ∞, the Zakian approximation converges to the exact
+inverse Laplace transform, namely,
+lim f (t)=f(t), t>0. (A.7)
+N
+N→∞
+The inversion error may be expressed as
+ε (t)=f(t)−f (t)= 1 γ (cid:90) +i∞ F(s) (cid:34) est− (cid:88) N K δ (cid:16) s− α i (cid:17) (cid:35) ds. (A.8)
+N N 2πi i t
+γ−i∞ i=−N
+Under the assumption that F(s) is sufficiently smooth and decays algebraically or
+exponentially in the complex plane, the error satisfies the bound
+|ε (t)|⩽C(t)e−cN, (A.9)
+N
+where C(t) and c are positive constants. Equation (A.9) indicates exponential
+convergence of the Zakian series with respect to the number of terms N.
+In numerical implementations, convergence is typically verified using the crite-
+rion
+∥f (t)−f (t)∥<ε, (A.10)
+N+1 N
+February 27, 2026 18:8 ws-ijssd
+26 Sur et al.
+for a prescribed tolerance ε. For transient thermoelastic problems, accurate and
+stable results are generally obtained with N = 5, which represents an effective
+compromise between computational efficiency and numerical accuracy.
+References
+1. M.L.DunnandM.Taya,Electromechanicalpropertiesofporouspiezoelectricceram-
+ics, J. Am. Cer. Soc. 76 (1993) 1697-1706.
+2. M. L. Dunn, A theoretical framework for the analysis of thermoelectroelastic hetero-
+geneous media with applications, J. Intell. Mat. Systems Struct. 6 (1995) 255-265.
+3. M.L.Dunn,Exactrelationsbetweenthethermoelectroelasticmoduliofheterogeneous
+materials, Proc. Royal Soc. London A. 441 (1993) 549-557.
+4. M. L. Dunn, Micromechanics of coupled electroelastic composites: effective thermal
+expansion and pyroelectric coefficient, J. Appl. Phys. 73 (1993) 5131-5140.
+5. P. A. Thompson, Compressible-Fluid Dynamics. New York: McGraw-Hill, 1972.
+6. S. Gupta, R. Dutta and S. Das, Memory response in a nonlocal micropolar
+double porous thermoelastic medium with variable conductivity under Moore-
+Gibson-Thompson thermoelasticity theory, J. Ocean Engrng. Sci. (2022), doi:
+https://doi.org/10.1016/j.joes.2022.01.010.
+7. W.ChenaandR.Ikehata,TheCauchyproblemfortheMoore-Gibson-Thompsonequa-
+tion in the dissipative case, J. Differ. Eqs. 292 (2021) 176-219.
+8. F. Dell’Oro, I. Lasiecka and V. Pata, The Moore-Gibson-Thompson equation with
+memory in the critical case, J. Differ. Eqs. 261 (7) (2016) 4188-4222.
+9. A. E. Abouelregal, W. W. Mohammed and H. Mohammad-Sedighi, Vibration anal-
+ysis of functionally graded microbeam under initial stress via a generalized ther-
+moelastic model with dual-phase lags, Arch Appl Mech. 91 (2021) 2127–2142,
+https://doi.org/10.1007/s00419-020-01873-2.
+10. R.Kumar,V.Pathania,V.Gupta,M.S.Barak,andH.Ahmad,ThermoelasticMod-
+eling with Dual Porosity Interacting with an Inviscid Liquid, J. Appl. Comput. Mech.
+10 (1) (2024) 111-124.
+11. D.Avci,N.OzdemirandM.Yavuz,MethodsofMathematicalModelling:Fractional
+Differential Equations, CRC Press, 63-82 (2019).
+12. A.SurandM.Kanoria,Fractionalordertwo-temperaturethermoelasticitywithfinite
+wave speed, Acta Mech. 223 (2012) 2685-2701.
+13. I.Podlubny,FractionalDifferentialEquations,MathematicsinScienceandEngineer-
+ing, 198, Academic Press, New York, NY, USA, 1999.
+14. M. Caputo and M. Fabrizio, Progr. Fract. Differ. Appl. 1(2) (2015) 1-15.
+15. A. Sur, Kh. Lotfy, N. K. Ranjit and S. Das, Advanced finite element analy-
+sis of photothermal response in cylindrical semiconductor with spatial nonlocal-
+ity and memory-dependent heat transport, Int. Commun. Heat Mass transf. (2025)
+doi:https://doi.org/10.1016/j.icheatmasstransfer.2025.109771.
+16. Meghana A.R., R. Dutta, V. Gupta, S. Das, A. Singhal, A. Sur and B. Al-
+mohsen,Shearwavesinducedvibrationinasize-dependentloosely-bondedviscoelastic-
+flexoelectric material structure subjected to fractional derivative, Euro. J. Mech.-
+A/Solids, (2025), doi: https://doi.org/10.1016/j.euromechsol.2025.105666.
+17. I. Kaur and K. Singh, Effect of memory dependent derivative and variable thermal
+conductivityincantilevernano-Beamwithforcedtransversevibrations,ForcesinMech.
+5 (2021) 100043.
+18. A.E.AbouelregalandH.Ahmad,Responseofthermoviscoelasticmicrobeamsaffected
+February 27, 2026 18:8 ws-ijssd
+On the wave propagation and dynamic response 27
+by the heating of laser pulse under thermal and magnetic fields, Physica Scripta, 95
+(12) (2020) 125501.
+19. M. Yavuz, O¨zdemir N. Math. Sci. Appl. 8(1) (2020) 142-154.
+20. D. J. Halsted and D. E. Brown, Zakian’s technique for inverting Laplace transforms,
+The Chemical Engineering Journal. 3 (1995) 312-313.
+21. G.Mittag-LefflerandM.G.Sopra,ComptesRendusdel’AcadmiedesSci,13(1904)
+3-5.
+22. X. G. Yang, M. Abdel-Aty and C. Cattani, A New General Fractional-Order
+Derivataive With Rabotnov Fractional-Exponential Kernel Applied to Model the
+Anomalous Heat Transfer, Therm. Sci. 23 (2019) 1677-1681.
+23. M.YavuzandN.Sene,Fundamentalcalculusofthefractionalderivativedefinedwith
+Rabotnov exponential kernel and application to nonlinear dispersive wave model, J.
+Ocean Engrng. Sci. 6 (2021) 196-205.
+24. A. Erdlyi, W. Magnus, F. Oberhettinger and F. G. Tricomi, Higher Transcendental
+Functions, McGraw-Hill, New York, NY, USA. 3, (2018).
+25. C. Li, L. Zheng and T. He, Fractional-order rate-dependent porous-thermo-elasticity
+model based on new fractional derivatives with non-singular kernels and 1D transient
+dynamic response analysis of magnesium-based porous half-space with voids, Arch.
+Appl. Mech. 95(30) (2025).
+26. S. Das, A. Sur, V. Gupta,
+R. Dutta, A. Singhal and P. Kumar, Hydro-thermo-electromechanical response in a
+size-dependent porous piezoelectric medium under memory-dependent MGT theory,
+Mech. Adv. Mater. Struct. https://doi.org/10.1080/15376494.2025.2516213, 2025.
+27. A. Sur, Kh. Lotfy, R. Dutta and S. Das, Spatiotemporal nonlocal effect on ther-
+moelastic wave propagation in nanoscale beam influenced by moving load and
+memory-based heat transport, Mech. Based Design of Struct. Mach. (2025), doi:
+10.1080/15397734.2025.2595181.
+28. A. Sur, A. E. Abouelregal, R. Dutta and S. Das, Spatiotemporal dynam-
+ics of graded piezothermoelastic rod: coupled nonlocal elasticity and MGT
+heat conduction with memory effects, Cont. Mech. Thermodyn. 37 (94) (2025),
+https://doi.org/10.1007/s00161-025-01427-3
+29. R. D. Mindlin, Equations of high frequency vibrations of thermo-piezoelectric plate,
+Int. J. Solids Struct. 10 (1974) 625-637.
+30. W. Nowacki, Some general theorems of thermo-piezoelectricity, J. Therm. Stresses 1
+(1978) 71-182.
+31. S.MondalandA.Sur,StudiesonPiezoelectricvibrationsinthermoelasticmicrobeam
+resonatorwithmemoryandnonlocaleffects,J.StrainAnal.Engring.Des.60(3)(2024)
+180-195.
+32. S. Mondal and A. Sur, Piezothermoelastic vibrations of microbeam resonator with
+memory effects, Mech Time-Depend Mater. 29(5) (2025).
+33. M. Aouadi, Generalized thermo-piezoelectric problemswith temperature-dependent
+properties, Int. J. Solids Struct. 43 (21) (2006) 6347-6358.
+34. F. Sami and S. F. Megahid, Memory-dependent Moore-Gibson-Thompson
+heat conduction model for a heterogeneous piezoelectric solid with a spheri-
+cal hole exposed to time-dependent laser pulse heat flux, Acta Mech. (2025),
+https://doi.org/10.1007/s00707-025-04433-3.
+35. A.Sur,Elasto-thermodiffusivenonlocalresponsesforasphericalcavityduetomemory
+effect, Mech. Time-Depend Mater. 28 (2024) 1395-1419.

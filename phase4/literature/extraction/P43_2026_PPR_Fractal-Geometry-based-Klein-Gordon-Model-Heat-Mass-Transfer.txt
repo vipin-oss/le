@@ -1,0 +1,3162 @@
+Propulsion and Power Research 2026;15(1):179—196
+http://ppr.buaa.edu.cn/
+Propulsion and Power Research
+www.sciencedirect.com
+ORIGINAL ARTICLE
+Fractal geometry-based Klein-Gordon model for
+heat and mass transfer in a cylindrical cavity
+with variable thermal conductivity
+Abhik Sur a , Soumik Dasb , *, Vipin Gupta c , Wei Pengd ,
+Hijaz Ahmade ,f,g , Taha Radwan h, **
+a Department of Mathematics, Sister Nivedita University, West Bengal, India
+b School of Physical Sciences, Amrita Vishwa Vidyapeetham, Mysuru Campus, Karnataka, India
+c Department of Mathematics, Gurugram University, Gurugram, India
+d School of Architecture and Civil Engineering, Heilongjiang University of Science and Technology, Harbin 150022,
+China
+e Irfan Suat Gunsel Operational Research Institute, Near East University, Nicosia/TRNC 99138 Mersin 10, Turkey
+f Department of Mathematics, Faculty of Science, Islamic University of Madinah, Madinah 42351, Saudi Arabia
+g Sustainability Competence Centre, Széchenyi István University, Egyetem tér 1, H-9026 Gyo}r , Hungary
+h Department of Management Information Systems, College of Business and Economics, Qassim University,
+Buraydah 51452, Saudi Arabia
+Received 16 November 2025; accepted 17 February 2026
+Available online 30 March 2026
+KEYWORDS Abstract This study presents a generalized framework of vector calculus for non-integer
+dimensional spaces, motivated by the prevalence of fractals in nature. The work formulates first-
+Thermoelastic diffusion;
+Fractal media;
+and second-order differential operators, including gradient, divergence, and scalar and vector La-
+Mathematical model;
+placian, for scalar and rotationally covariant vector functions. This framework is applied to the
+Variable thermal thermoelastic response of an infinite fractal medium with a cylindrical cavity, a problem that in-
+conductivity; corporates thermoelastic mass diffusion and variable thermal conductivity through the Kirchhoff
+Nonlinear kernel transformation. The system is analyzed under combined thermal and chemical shocks at the
+functions; boundary, with the medium remaining mechanically fixed. The governing equations are solved
+Moore-Gibson- using the Laplace transform method, and Zakian technique is employed for numerical inversion.
+Thompson equation; The computational results indicate that parameters such as delay time and fractal dimension
+Cylindrical cavity
+significantly influence the material’s response. The graphical analysis visually examines the
+*Corresponding author.
+**Corresponding author.
+E-mail addresses: soumikdas1993@gmail.com (Soumik Das), t.radwan@qu.edu.sa (Taha Radwan).
+Peer review under the responsibility of Propulsion and Power Research.
+https://doi.org/10.1016/j.jppr.2026.02.007
+2212-540X/ª 2026 The Authors. Publishing services by Elsevier B.V. on behalf of KeAi Communications Co. Ltd. This is an open access article under the
+CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/).
+180 Abhik Sur et al.
+effects of different kernel functions, fractal dimension, variable thermal conductivity, nonlocal
+length and time scales on the thermoelastic response, providing a clear illustration of their
+impact. Specifically, an increase in fractal dimension leads to a more pronounced reduction in
+the thermoelastic response near the cylindrical cavity. Furthermore, an examination of different
+memory-dependent kernel functions reveals that nonlinear kernels demonstrate superior perfor-
+mance compared to linear kernels within this theoretical framework.
+ª 2026 The Authors. Publishing services by Elsevier B.V. on behalf of KeAi Communications Co. Ltd.
+This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-
+nc-nd/4.0/).
+1. Introduction structure. This value is generally independent of the specific
+geometry of W , and also does not depend on whether the
+Benoit Mandelbrot [1] coined the term “fractal” to packing within a sphere of radius R 0 is porous with evenly
+characterize structures that exhibit complexity across scales distributed voids, densely packed, or arranged randomly. A
+and are neither completely continuous nor uniform in their medium characterized by such a non-integer mass dimen-
+spatial or temporal dimensions. A property known as self- sion qualifies as a fractal medium. While the fractional
+similarity allows these items to be disassembled into dimension alone does not fully describe all geometric or
+smaller, comparable parts in a predictable or random way. dynamic features, it provides valuable insight into material
+Because of this characteristic, fractals appear to have properties and enables the development of modeling ap-
+infinite complexity regardless of the size at which they are proaches that incorporate dimensions outside the set of in-
+seen [2,3]. In a generalized framework, the dimensionality tegers [16—19].
+of space or space-time, denoted by D, need not be restricted One of the mechanisms underlying the natural transport
+to integer values. The development of non-integer dimen- phenomenon is diffusion. Two distinct approaches viz. the
+sional space concepts, alongside dimensional continuation phenomenological method and the atomistic approach can
+technique, initially arose within the fields of quantum field be used to explain the concept of diffusion. Fick’s law
+theory and statistical mechanics. In particular, analyses of [20—22] describes the phenomenological approach for a
+phase transitions and critical behavior in statistical physics fractal media, which frequently shows aberrant behavior.
+often rely on employing a space-time dimensionality of the Fractal-based thermoelastic diffusion is essential for simu-
+form D � 4 (cid:0) ε, which serves as the foundation for the lating heat and mass transfer in fuel cells, nuclear materials,
+ε-expansion technique [4,5]. Moreover, the dimensional and geothermal reservoirs [23,24]. Additionally, thermo-
+regularization approach, which extends the notion of inte- elastic diffusion is used in biomedical engineering. Fractal
+gration into non-integer dimensions, has become a crucial structures are seen in tissues and bones. Treatments for
+tool in quantum field theory, providing precise solutions conditions like hyperthermia benefit from an understanding
+while circumventing issues related to ultraviolet di- of how heat and fluids move through them. Fractal models
+vergences [6—8]. A notable property evident across multi- aid in the creation of materials that are more durable and
+ple scales is that fractal media often possess Hausdorff energy-efficient by withstanding high mechanical and
+dimensions that are not whole numbers [9—12]. By defi- thermal loads [25,26].
+nition, the Hausdorff dimension is a localized measure, Owing to their relevance in numerous important and
+describing the way a set of scattered points is quantified in varied applications, thermoelasticity theories that allow
+the limiting case where the covering diameter tends toward thermal signals to propagate at finite speeds have attracted
+zero. In physical materials, there exists a minimum scale considerable research interest in recent decades [27—31].
+R
+0
+, corresponding to the radius of a constituent particle The Moore-Gibson-Thompson (MGT) heat conduction law
+such as an atom or molecule. Fractal patterns can be has received significant attention in the field of fluid me-
+observed only for length scales satisfying R > R
+0
+, where R
+0
+chanics [32] due to experimental evidence supporting the
+denotes the intrinsic size of these particles. In real-world finiteness of the heat propagation speed. This is demon-
+situations, the Hausdorff dimension [13—15] may be strated by the addition of the energy equation into the
+replaced with a fractional mass dimension. Assuming the relation [33—35].
+m
+ca
+a
+p
+t
+t
+e
+u
+r
+r
+i
+e
+a
+s
+l d
+h
+e
+o
+n
+w
+s it
+t
+y
+h e
+r e
+t
+m
+ot
+a
+a
+i
+l
+n s
+m
+c
+a
+o
+ss
+n s
+c
+ta
+o
+n
+n
+t
+t
+,
+a i
+t
+n
+h
+e
+i
+d
+s m
+w
+a
+it
+s
+h
+s
+i n
+d i
+a
+m e
+re
+n
+g
+s
+i
+i
+o
+o
+n
+n
+q+ τ
+0
+∂
+∂
+q
+t
+� (cid:0) (KVT + K ★ Vν); ν_ � T; (1)
+changes with its characteristic size. Consider a region W of
+the medium: its mass M(W ) often follows an asymptotic where q denotes the heat flux vector, τ
+0
+(> 0) represents the
+scaling relation with radius R, given by M(W )∝R D ; where relaxation time, ν is the thermal displacement, K is the
+D represents the fractional mass dimension of the fractal thermal conductivity [36,37], and K ★ refers to the
+Fractal geometry-based Klein-Gordon model 181
+conductivity rate parameter [38,39]. Building on this elasto-thermodiffusion in fractal media, based on non-
+recently proposed framework, Pellicer and Quintanilla [37] integer dimensional space and variable thermal conductiv-
+investigated the instability and uniqueness associated with ity, thereby extending generalized thermoelastic theory to
+certain thermomechanical problems. In related work, Jangid more realistically represent multiscale material behavior.
+and Mukhopadhyay [40,41] analyzed the region of influ- For analytical simplicity, rotationally covariant scalar
+ence corresponding to the same theoretical approach. and vector functions independent of angular coordinates are
+Building on Eringen’s nonlocal elasticity framework, considered. The operators introduced allow for the
+Mondal and Sur [42] investigated the coupled thermal, description of fractal materials for various dimensions D.
+hydraulic, and mechanical responses in a poroelastic half- The thermoelastic problem is formulated within the MGT
+space. Further, Sur [43] examined how introducing a model of generalized thermoelasticity, incorporating the
+nonlinear kernel influenced the behavior of functionally memory-dependent derivative in a sliding interval, where
+graded materials, specifically accounting for the role of the derivative is defined with different kernel functions. The
+memory-dependent effects. Mondal and Sur [44] also boundary of the fractal medium is subjected to prescribed
+examined thermoelastic interactions in a nanoscale reso- displacement, temperature, and chemical potential. The
+nator under the Caputo-Fabrizio heat conduction law. governing equations are solved using the Laplace trans-
+Moreover, Das et al. [45] studied surface wave propagation form, and numerical inversion is carried out through Zakian
+in a micropolar material exhibiting dual pore connectivity. [57] method. The numerical and graphical results reveal the
+Additional theoretical foundations and selected applications significant influence of parameters such as delay time and
+of the MGT model can be found in Refs. [46—48]. Wang fractal dimension. Additionally, the study analyzes the in-
+and Li [49] introduced the memory-dependent derivative fluence of different kernel functions, revealing that
+(MDD), offering a novel alternative to the fractional de- nonlinear kernels outperform linear counterparts in
+rivative framework. In this approach, the derivative of a modeling accuracy. The investigation also highlights the
+function f is formulated as an integral involving the con- significant effects of thermodiffusion within the proposed
+ventional derivative weighted by a kernel function across a framework.
+shifting interval. It is expressed as [50]
+∫ t 2. Basic equations
+1
+D
+ω
+f (t) �
+ω
+K(t (cid:0) ξ)f ′ (ξ) dξ (2)
+Consider an unbounded elastic continuum occupying the
+t(cid:0) ω
+domain V , influenced by prescribed body forces. The
+where K(t (cid:0) ξ) is the kernel function, and ω (> 0) repre-
+dynamics of displacement u within this medium obey the
+sents the delay time. Both can be completely customized as
+fundamental balance equation [58,59]
+constant functions, both linear and even nonlinear [51,52]. t
+ij;j
++ F
+i
+�ρu€
+i
+; (4)
+In the framework of the Moore-Gibson-Thompson theory,
+Mondal and Sur [53] together with Sur [54] introduced a
+modified form of Fourier’s law, incorporating the memory-
+where t
+ij
+denote the local stress components, F
+i
+is the body
+dependent derivative within a sliding interval, expressed as:
+force, u
+i
+is the displacement component. Accounting for
+both spatial and temporal nonlocal interactions, the
+(1 + ωD
+ω
+)q� (cid:0) (KVT + K ★ Vν); ν_ � T: (3)
+constitutive relation [60,61] draws inspiration from material
+electrodynamics, and is formulated as:
+In recent years, fractal thermoelastic models for elasto- ∫ t ∫
+t
+f
+h
+o
+e
+r
+rm
+de
+o
+s
+-
+c
+d
+r
+i
+i
+f
+b
+f
+i
+u
+n
+s
+g
+io n
+th e
+h av
+co
+e
+u
+e
+p
+m
+le
+e
+d
+r g
+t
+e
+ra
+d
+n
+a
+sp
+s
+o
+a
+r t
+p
+o
+o
+f
+w e
+h
+r
+e
+f
+a
+u
+t
+l
+,
+f
+m
+ra
+a
+m
+ss
+e
+,
+w
+a
+o
+n
+r
+d
+k t
+ij
+(x;t) � C
+i jkl
+(x;t;x′ ;t ′ )e
+kl
+(x ′ ;t ′ )dv ′ dt ′ ; (5)
+stress in materials with complex multiscale geometries, (cid:0) ∞ V
+such as porous, cracked, and heterogeneous media. By
+incorporating fractal geometry and fractional operators, where the strain displacement relation is given by
+these models effectively capture anomalous diffusion, long- 1
+range interactions, and memory effects that are beyond the e k l � 2 (u k;l + u l;k )
+reach of classical continuum theories [55,56]. Conse-
+quently, they have found broad relevance in applications
+The nonlocal elastic response is described by the fourth-
+r
+a
+a
+n
+n
+d
+g i
+t
+n
+h
+g
+e r
+f
+m
+ro
+a
+m
+l b
+p
+a
+o
+rr
+r
+i
+o
+e
+u
+r
+s
+c
+e
+o
+l
+a
+e
+t
+c
+i
+t
+n
+r
+g
+o
+s
+d e
+i
+s
+n
+in
+ae
+e
+ro
+n
+s
+e
+p
+rg
+ac
+y
+e
+s t
+e
+o
+n
+r
+g
+a
+i
+g
+n
+e
+e e
+s
+r
+y
+i
+s
+n
+t
+g
+e m
+to
+s
+o
+sp
+rd
+a
+e
+ti
+r
+a l
+t
+i
+e
+n
+n
+t
+s
+e
+o
+ra
+r
+c
+C
+tio
+i jk
+n
+l
+,
+s .
+w
+In
+h
+c
+i
+o
+ch
+rp o
+c
+r
+a
+a
+p
+t
+t
+i
+u
+n
+r
+g
+e
+t
+s
+h e
+th
+se
+e
+n
+m
+on
+a
+l
+t
+o
+er
+c
+i
+a
+a
+l
+l ’
+i
+s
+n fl
+in
+u
+h
+en
+er
+c
+e
+e
+n
+s
+t
+,
+environmental transport processes and biomedical mate-
+the governing dynamic equation takes the form:
+rials. Despite these advances, no prior study, to the best of
+the authors’ knowledge, has addressed the integration of ∂
+∫ t ∫
+f
+g
+r
+e
+a
+n
+c
+e
+ta
+ra
+l
+li
+e
+z
+l
+e
+a
+d
+s to
+th
+-t
+e
+h
+r
+e
+m
+rm
+oe
+o
+l
+-
+a
+d
+s
+i
+t
+f
+ic
+fu
+it
+s
+y
+i
+.
+o n
+M
+w
+ot
+i
+i
+t
+v
+h
+a
+i
+t
+n
+e d
+t h
+b
+e
+y
+fr
+th
+am
+is
+ew
+ga
+o
+p
+r
+,
+k
+th
+o
+e
+f ∂x
+j
+(cid:0) ∞ V
+C
+i jkl
+(x;t;x ′ ;t ′ )e
+kl
+(x ′ ;t ′ )dv ′ dt ′ + F
+i
+(x;t) �ρu€
+i
+: (6)
+present work proposes a novel continuum formulation for
+182 Abhik Sur et al.
+To distinguish the anisotropy attributed to nonlocal ef- ∂ 2
+fects from that intrinsic to the conventional elastic moduli,
+L≡1 (cid:0) l 2 V 2 + τ 2
+∂t 2
+(12)
+the nonlocal anisotropic elastic modulus tensor
+C
+i jkl
+(x (cid:0) x ′ ; t (cid:0) t ′ ) is expressed as the product of a scalar
+In this formulation, V denotes the Laplace operator,
+nonlocal kernel function α(x (cid:0) x ′ ; t (cid:0) t ′ ) and the local while l ˛ℝ + represents the intrinsic length scale parameter
+anisotropic elastic moduli tensor C
+i jkl
+, as formulated below:
+reflecting the spatial nonlocal effects. This length scale,
+C
+i jkl
+(x (cid:0) x ′ ;t (cid:0) t ′ ) �C
+i jkl
+α(x (cid:0) x ′ ;t (cid:0) t ′ ) (7)
+given by l � e
+0
+a
+cl
+, characterizes a fundamental material
+length, where e
+0
+is a material-dependent constant. Addi-
+The scalar kernel function α(x (cid:0) x ′ ; t (cid:0) t ′ ) encompasses tionally, τ˛ℝ + stands for the fundamental time scale
+nonlocal effects across both spatial and temporal di- parameter associated with temporal nonlocality. Introducing
+mensions, thereby incorporating characteristic length and a characteristic nonlocal velocity c˛ℝ +, defined by c �
+time scales. As a result, the nonlocal stress tensor t i j (x; t) is l =τ, the hyperbolic operator L admits an equivalent rep-
+represented as the spatiotemporal convolution between this resentation as:
+kernel and the classical Cauchy stress tensor σ i j (x; t): [ 1 ∂ 2 ]
+∫ t ∫ L≡1 + l 2 (cid:0) V 2 (13)
+c2 ∂t 2
+t
+i j
+(x;t)� C
+ijkl
+(x;t;x′ ;t ′ )e
+kl
+(x ′ ;t ′ )dv ′ dt ′ �α(x;t)★σ
+ij
+(x;t)
+(cid:0) ∞ V This operator is commonly recognized as the “Klein-
+Gordon operator”. Eringen has estimated the characteristic
+Here, the convolution operator ★ represents integration length scale l ≈0:39a, where a denotes the lattice spacing,
+over both spatial and temporal variables. providing a practical measure of l . Furthermore, as detailed
+For a homogeneous and isotropic medium, the nonlocal in Ref. [63], this characteristic length is typically quantified
+stress tensor t
+ij
+simplifies to the form: in units of Å ngström.
+∫ t ∫ The selection of this operator is motivated by its ability
+t
+i j
+(x;t) � α(|x (cid:0) x′ ;t (cid:0) t ′ |)σ
+ij
+(x ′ ;t ′ )dv ′ dt ′ (8) t
+e
+o
+n a
+in
+b
+c
+li
+o
+n
+r
+g
+p or
+fi
+a
+n
+te
+it e
+a
+-
+n
+s p
+i
+e
+n
+e
+tr
+d
+i ns
+p
+i
+r
+c
+o
+l
+p
+e
+a
+n
+g
+g
+a
+t
+t
+h
+i o
+a
+n
+n d
+o
+/o
+f
+r t
+t
+i
+h
+m
+er
+e
+m
+s
+o
+ca
+e
+l
+l
+e
+a
+,
+s t
+t
+i
+h
+c
+e r
+a
+e
+n
+b
+d
+y
+(cid:0) ∞ V diffusive disturbances, which is essential for capturing
+nonlocal behavior in fractal media. Unlike classical diffu-
+with the Cauchy stress tensor given by σ
+ij
+� λe
+k k
+δ
+ij
++ 2μe
+ij
+,
+sion operators that lead to instantaneous signal propagation,
+where λ and μ are the Lame’s constants. Eringen high-
+the Klein-Gordon-type formulation ensures causality and
+lighted the significance of the nonlocal scalar kernel by
+aligns with generalized thermoelastic theories. Furthermore,
+comparing plane wave dispersion curves with lattice dy-
+this operator preserves rotational covariance and self-
+namics. Utilizing the Green’s function framework, the
+adjointness in non-integer dimensional spaces, ensuring
+scalar nonlocal kernel is expressed via a linear differential
+consistency with the generalization of vector calculus.
+operator L. In the case of an infinite domain, the nonlocal
+kernel operator L assumes the general form:
+3. Fractal thermoelastic equations and basic
+Lα(|x (cid:0) x′ ;t (cid:0) t ′ |) � δ(x (cid:0) x′ )δ(t (cid:0) t ′ ) (9)
+formulation
+Here, δ( ·) denotes the Dirac delta distribution. By applying
+Formulations of differential operators in spherical and
+the operator L to Eq. (8) and subsequently invoking equa- cylindrical coordinate systems within ℝn are employed for a
+tion (9), one obtains the partial differential equation
+general dimension n to explicitly demonstrate their depen-
+describing the behavior of t
+ij
+[62]:
+dence on the spatial dimension. This framework serves as a
+Lt i j �σ ij (10) foundation for defining vector differential operators in
+spaces characterized by non-integer dimensions. By
+In this formulation, the Cauchy stress tensor σ
+i j
+acts as extending the dimension parameter from the integer n to a
+the source term. Consequently, when the scalar nonlocal fractional value D, these operators can be generalized
+kernel is regarded as a Green’s function, the integral accordingly. For the sake of clarity, the analysis here fo-
+constitutive relation Eq. (8) reduces to the partial differ- cuses on scalar fields ϕ and vector fields u that are inde-
+ential Eq. (10). Moreover, assuming L is a differential pendent of angular variables.
+operator with constant coefficients, Eq. (4) can be rewritten ϕ(r) �ϕ(r);u(r)�u(r)�u
+r
+e
+r
+alongside Eq. (10) as [62]:
+(cid:0) )
+L ρ∂2
+t
+u
+i
+(cid:0) ∂
+j
+σ
+i j
+� LF
+i
+(11)
+In this context, r�|r| denotes the radial distance,
+e
+r
+�r=r defines the unit vector oriented radially outward,
+The classical Helmholtz operator is generalized and u
+r
+�u
+r
+(r) is the radial component of the vector field u.
+dynamically into a second-order linear differential operator Extending the dimension parameter from an integer n to
+of hyperbolic type, as described in Refs. [60,61]: a general non-integer D enables the explicit formulation of
+Fractal geometry-based Klein-Gordon model 183
+differential operators in fractional-dimensional spaces. It is reflect reduced load-transfer efficiency and effective stiff-
+important to highlight that integration within non-integer ness as D decreases from the Euclidean value.
+dimensional spaces, together with the associated Gauss’ Similarly, thermal and mass diffusion processes are
+theorem, yields consistent expressions for these operators. governed by the fractal Laplacian, leading to anomalous
+Consider materials exhibiting axial symmetry, where the transport behavior. Lower values of D correspond to
+scalar field ϕ(r) and the vector field u(r)�u
+r
+(r) e
+r
+are increased pathway tortuosity and reduced effective diffu-
+invariant under rotations about the symmetry axis. By ori- sivity, while D→3 recovers the classical diffusion regime
+enting the z-axis along this axis of symmetry, the cylindrical and standard thermoelastic constitutive relations, ensuring
+coordinate system is naturally defined. Under these condi- consistency with conventional theory.
+tions, the divergence of the vector field u�u(r) in a non- The invariant is assumed as [64].
+integer dimensional space takes the form [64] ∂u D (cid:0) 2
+u D (cid:0) 2
+e�ε
+kk
+�div D
+r
+u�
+∂r
+r +
+r
+u
+r
+(18)
+divD
+r
+u�
+∂r
+r +
+r
+u
+r
+(14)
+Consider an extension of thermoelasticity for fractal
+The gradient operator for a scalar field ϕ� ϕ(r) within a materials [65—67], formulated within the context of the
+non-integer dimensional space is derived and detailed in fractional-integral continuum model [68—70] proposed by
+Ref. [64]. Ostoja-Starzewski [18,19]. The medium is considered to be
+a homogeneous and isotropic continuum featuring a cylin-
+∂ϕ
+gradD r ϕ� ∂r e r (15) drical cavity of radius R. The body is described using cy-
+lindrical coordinates (r; θ; z), with the z-axis aligned along
+the cavity’s axis. Consequently, the continuum occupies the
+Additionally, the scalar Laplacian operator acting on ϕ�
+region r ≥ R extending to infinity, as illustrated in Figure 1.
+ϕ(r) in a non-integer dimensional space is given by
+For an isotropic material subjected to non-uniform
+Ref. [64].
+heating, the constitutive relation describing its thermo-
+S Δa Dϕ� ∂ 2 ϕ + D (cid:0) 2 ∂ϕ (16) elastic behavior is formulated as [64,71].
+r ∂r 2 r ∂r σ
+i j
+�λε
+kk
+δ
+i j
++ 2με
+i j
+(cid:0) Kα
+t
+Tδ
+ij
+(19)
+The vector Laplacian operator applied to the vector field
+where λ and μ being Lame constants, K denotes the bulk
+u�v
+r
+e
+r
+within a non-integer dimensional space is
+modulus which is related to the Lame constants for a fractal
+expressed as shown in Ref. [64].
+( ) medium by the relationship
+V Δa D r u � gradD r div D r u�
+∂
+∂
+2
+r
+u
+2 r +
+D (cid:0)
+r
+2 ∂
+∂
+u
+r r(cid:0)
+D
+r
+(cid:0)
+2
+2
+u r e r K �λ +
+D
+2 μ (20)
+(17)
+In the context of Klein-Gordon-type nonlocality, the
+If D � n, the above equations provide the formulae for constitutive relations for a thermodiffusive fractal medium
+the n-dimensional space ℝ n [64]. is given by [64].
+( )
+In the context of a non-integer dimensional framework ∂ 2
+applicable to fractal materials, if the displacement vector is 1 (cid:0) l 2 V 2 + τ2 ∂t 2 σ kl �2με kl + δ kl λe n n (cid:0) (Dλ + 2μ)α t Tδ k l
+r
+g
+e
+i
+p
+v
+r
+e
+e
+n
+s e
+b
+n
+y
+t e
+u
+d
+�
+in t
+u
+h
+r
+e
+( r
+f
+)
+o
+e
+r
+r
+m
+, t h
+[6
+e
+4
+n
+]
+the strain tensor ε
+i j
+(r) can be
+(cid:0) (Dλ + 2μ)α
+c
+Cδ
+kl
+(cid:0) ) ∂u (21)
+ε
+r r
+� e
+r
+; gradD
+r
+u
+r
+�
+∂r
+r
+(cid:0) ) D (cid:0) 2
+ε
+θ θ
+� div D
+r
+u (cid:0) e
+r
+; gradD
+r
+u
+r
+�
+r
+u
+r
+:
+In the present formulation, the fractal dimension D
+characterizes the microstructural complexity of the medium
+by accounting for deviations in material connectivity from
+classical integer-dimensional continua. Its influence on the
+stress-strain response arises indirectly through non-integer
+dimensional differential operators, which modify the
+spatial distribution and attenuation of stress and strain
+fields. In particular, the fractal divergence and Laplacian
+introduce dimension-dependent weighting effects that Figure 1 Geometric configuration of the problem.
+184 Abhik Sur et al.
+The entropy equation is given by The Kirchhoff transformation is utilized to linearize the
+ρT
+0
+S_ � (cid:0) q
+j;j
++ Pη
+j;j
+n
+v
+o
+ar
+n
+i
+l
+a
+i
+b
+n
+l
+e
+e
+a r
+d e
+d
+fi
+if
+n
+f
+e
+u
+d
+s i
+a
+o
+s
+n
+[
+p
+7
+r
+3
+o
+]
+c
+.
+ess by introducing a transformed
+The scalar field C(x; t) denotes the mass concentration 1
+∫T
+(diffusive mass content) per unit reference volume, repre-
+ϕ� k(τ)dτ (28)
+senting the deviation of the diffusing species from its
+k
+0
+0
+equilibrium state. The vector η
+j
+(x; t) represents the associ-
+ated mass flux vector, characterizing the transport of the In this expression, κ
+1
+is a non-positive parameter, k
+0
+diffusive species within the thermoelastic medium. The denotes the thermal conductivity evaluated at the reference
+conservation law expresses local mass balance and couples temperature T
+0
+, and ϕ is an auxiliary function introduced to
+the diffusion process with the thermoelastic field. With represent the thermal conduction.
+these definitions, the entropy relation is subsequently The assumption that κ
+1
+is non-positive is physically
+introduced through a thermodynamically consistent Helm- motivated by the thermal behavior of many engineering
+holtz free energy formulation. Therefore, the mass conser- solids. In materials such as semiconductors and crystalline
+vation equation can be expressed as solids, increased phonon-phonon scattering at elevated tem-
+η � (cid:0) C_ peratures generally leads to a reduction in effective thermal
+j;j
+conductivity. Consequently, the thermal conductivity either
+decreases or exhibits saturation with increasing temperature.
+which leads to
+ρT
+0
+S �ρc
+E
+T + (Dλ + 2μ)α
+t
+T
+0
+e
+k k
++ aT
+0
+C (22)
+o
+A
+b
+d
+s
+o
+e
+p
+rv
+ti
+e
+n
+d
+g
+m
+κ
+1
+a
+�
+ter
+0
+ia l
+e n
+b
+s
+e
+u
+h
+r
+a
+e
+v
+s
+i o
+c
+r
+o
+,
+n
+p
+s
+r
+i
+e
+s
+s
+te
+e
+n
+rv
+c
+e
+y
+s
+w
+th
+i
+e
+th
+rm
+e
+o
+x
+d
+p
+y
+e
+n
+ri
+a
+m
+m
+e
+i
+n
+c
+ta
+s
+l
+t
+l
+a
+y
+-
+bility, and guarantees the monotonicity of the Kirchhoff
+Also, the chemical potential P is defined as transformation, which is essential for the mathematical well-
+P� (cid:0) (Dλ + 2μ)α
+c
+e
+n n
++ bC (cid:0) aT (23) posedness of the transformed heat conduction equation.
+Using Eq. (27) into Eq. (28) gives
+H
+ex
+e
+p
+r
+a
+e
+n
+,
+s
+α
+io
+t
+n
+a n
+a
+d
+n d
+α c
+l in
+d
+e
+e
+a
+n
+r
+o t
+d
+e
+i ff
+th
+u
+e
+si o
+c
+n
+o e
+e
+f
+x
+fi
+p
+c
+a
+ie
+n
+n
+s
+t
+i
+s
+o n
+o
+,
+f
+r
+l
+e
+i
+s
+n
+p
+e
+e
+a
+c
+r
+t i
+t
+v
+h
+e
+e
+l
+r
+y
+m
+;
+a
+a
+l ϕ�T +
+1
+2
+κ
+1
+T 2 (29)
+and b quantify the thermodiffusion and diffusion effects in
+the material. The parameter D represents the fractal Eqs. (28) and (29) lead to the following expressions
+dimension. Neglecting body forces, the governing equa- k
+0
+ϕ
+; i
+� k(T)T
+;i
+;
+tions of motion for the system reduce to:
+∂e ∂T ∂C
+k
+0
+ϕ
+; ii
+� (k(T)T
+;i
+)
+;i
+;
+(30)
+(λ + 2μ)
+∂r
+(cid:0)
+(
+(Dλ + 2μ)α
+t ∂r ∂
+(cid:0)
+2 )
+(D λ + 2μ)α
+c∂r (24) k 0 ϕ_ � k(T) ∂ ∂ T t
+�ρ 1 (cid:0) l 2 V 2 + τ 2 u€
+∂t 2
+Eqs. (21) and (30) together yields the constitutive
+relations
+The governing equation for mass flux is expressed as ( )
+( ) ∂ 2 ∂u D (cid:0) 2
+1 (cid:0) χ2
+D
+V 2+ τ 2
+1∂
+∂
+t
+2
+2
+(1 + τ
+1
+D
+ω
+)η
+i
+� (cid:0) D P
+;i
+(25)
+1 (cid:0) l 2 V 2 + τ2
+∂t 2
+σ
+rr
+� (λ + 2μ)
+∂r
++ λ
+r
+u
+r
+(cid:0) (Dλ + 2μ)α
+t
+ϕ (cid:0) (Dλ + 2μ)α
+c
+C
+In this context, χ signifies the phonon mean-free path (31)
+D
+of the diffusing particle, serving as the diffusive nonlocal
+p re a l r a a x m at e i t o e n r, t η im i r e e p re re la s t e e n d t s t o th m e m as a s s fl s u fl x o , w a n v d e c D to r, c τ o 1 r r d e e s n p o o t n e d s s t h to e
+(
+1 (cid:0) l 2 V 2 + τ 2 ∂ ∂ t 2 2
+)
+σ θθ �λ ∂ ∂ u r + (λ + 2μ) D (cid:0) r 2 u r
+the diffusion coefficient.
+In the context of MGT theory, the modified Fourier law
+(cid:0) (Dλ + 2μ)α
+t
+ϕ (cid:0) (Dλ + 2μ)α
+c
+C
+is given by (32)
+(1 + ωD
+ω
+)D
+t
+q� (cid:0) (KVT_ + K ★ VT) (26)
+When body forces are neglected, the equation of motion
+Here, K denotes the thermal conductivity, while K ★ rep- takes the form:
+resents the conductivity-rate parameter.
+(λ + 2μ)
+∂e
+(cid:0) (Dλ + 2μ)α
+∂ϕ
+(cid:0) (Dλ + 2μ)α
+∂C
+Assuming a linear dependence of thermal conductivity, it ∂r
+(
+t∂r
+)
+c∂r
+(33)
+can be expressed as [72]. ∂ 2
+�ρ 1 (cid:0) l 2 V 2 + τ 2 u€
+k(T) �k
+0
+(1 + κ
+1
+T) (27) ∂t 2
+Fractal geometry-based Klein-Gordon model 185
+The heat conduction equation adjoining the memory P� (cid:0) e + α
+3
+C (cid:0) α
+1
+ϕ (40)
+dependent derivative is given by
+K
+( ∂
+∂
+2
+r
+ϕ
+2
+_
++
+D (cid:0)
+r
+2∂
+∂
+ϕ
+r
+_ )
++ K ★
+( ∂
+∂
+2
+r
+ϕ
+2
++
+D (cid:0)
+r
+2∂
+∂
+ϕ
+r
+)
+(34) V 2 e + α
+1
+V 2 ϕ (cid:0) α
+3
+V 2 C +
+(
+1 (cid:0) χ 2
+D
+V 2+ τ2
+1 ∂
+∂
+t
+2
+2
+)
+(41)
+[ { }
+(1 + τ
+1
+D
+ω
+)α
+2
+C_ �0
+∂ 2 ∂u D (cid:0) 2
+� (1 + ωD
+ω
+) ρc
+E
+ϕ€ + (Dλ + 2μ)α
+t
+T
+0∂t 2 ∂r
++
+r
+u
+]
+where
++ aT 0 C€ : ß2 � λ + 2μ ;c2� K ★ ;ϵ� {(Dλ + 2μ)α t } 2 T 0;
+μ T ρc
+E
+c2 ρc
+E
+(λ + 2μ)
+aρc 2
+α � ;
+The governing equation for the thermoelastic mass 1 (Dλ + 2μ) 2 α
+t
+α
+c
+diffusion is given by
+D (D
+(
+λ + 2μ)α
+c
+V 2 e + D
+)
+a V 2 ϕ (cid:0) D bV 2 C
+α �
+ρc2
+1 ;α �
+b(λ + 2μ)
++ 1 (cid:0) χ2
+D
+V 2+ τ 2
+1∂
+∂
+t
+2
+2
+(1 + τ
+1
+D
+ω
+)C_�0 (35) 2 D η{(Dλ + 2μ)α c } 2 3 {(Dλ + 2μ)α c } 2
+Assuming the medium is initially at rest and the undis-
+Introducing the following nondimensional variables turbed state corresponds to the reference temperature, the
+r ′ �cηr;u ′ �cηu;l ′ �cηl ;t ′ �c 2 ηt;τ ′ �c 2 ητ;τ ′
+1
+�c 2 ητ
+1
+; initial conditions for the problem are specified as
+e(r;0) �e_(r;0)�ϕ(r;0)� ϕ_(r;0)�C(r;0)� C_(r;0)�0
+(Dλ + 2μ)α
+ω ′ �c2 ηω;ϕ′ � tϕ; For the heat transport equation, the kernel function
+λ + 2μ
+K(t (cid:0) ξ) can be chosen in accordance with the characteris-
+C ′ �
+(Dλ + 2μ)α
+cC;P ′ �
+P
+; tics of the problem [74—79]
+λ + 2μ (Dλ + 2μ)α
+c 2f e2
+K(t (cid:0) ξ) �1 (cid:0) (t (cid:0) ξ) + (t (cid:0) ξ) 2
+ω ω 2
+⎧
+χ ′
+D
+� cηχ
+D
+;σ′
+i j
+�
+λ +
+σ i j
+2μ
+;c2 � λ +
+ρ
+2μ ;η� ρ
+K
+c E: ⎪⎪⎪⎪⎪⎪⎪⎨
+1 (cid:0)
+(
+1
+t
+;
+(cid:0) ξ)
+; i
+i
+f
+f e
+e
+�
+�
+0
+0
+;
+;
+f
+f
+�
+�
+0
+1
+� ω 2
+b
+(
+e
+A
+gi
+f
+v
+te
+e
+r
+n
+d
+b
+i
+y
+sregardi
+)
+ng primes, th
+(
+e above
+)
+Eqs. (31)—(35) can ⎪⎪⎪⎪⎪⎪⎪⎩
+(
+1 (cid:0)
+t (cid:0) ξ
+)
+2
+; if e�1; f �1
+∂ 2 ∂u 2 D (cid:0) 2 ω
+1 (cid:0) l 2 V 2 + τ 2
+∂t 2
+σ
+rr
+�
+∂r
++ 1 (cid:0)
+ß2 r
+u (cid:0) ϕ (cid:0) C
+(36) where ω is the delay time and e, f are some unified
+parameters.
+( ) ( ) The type of memory effect required for a given appli-
+1 (cid:0) l 2 V 2 + τ 2
+∂
+∂
+t
+2
+2
+σ
+θθ
+� 1 (cid:0)
+ß
+2
+2
+∂
+∂
+u
+r
++
+D (cid:0)
+r
+2
+u (cid:0) ϕ (cid:0) C c
+fu
+a
+n
+ti
+c
+o
+t
+n
+io
+m
+n
+us
+in
+t be
+th
+t
+e
+a ke
+m
+n
+e m
+in
+o
+to
+r y
+a
+-
+c
+d
+c
+e
+o
+p
+u
+e
+n
+n
+t
+d e
+w
+n
+h
+t
+en
+d e
+s
+r
+e
+i
+l
+v
+e
+a
+c
+t
+t
+i
+i
+v
+n
+e
+g a
+( M
+ke
+D
+rn
+D
+e
+)
+l
+(37) framework. Over a time-delay period [t (cid:0) ω; t), the kernel
+function K(t (cid:0) ξ) establishes the degree to which previous
+( ) states impact the present state.
+∂e ∂ϕ ∂C ∂ 2
+(cid:0) (cid:0) � 1 (cid:0) l 2 V 2 + τ 2 u€ (38) Constant kernel K(t (cid:0) ξ) � 1
+∂r ∂r ∂r ∂t 2
+All previous states throughout the delay interval have an
+equal impact on the current state, according to this kernel,
+(
+∂ 2ϕ_ D (cid:0) 2 ∂ϕ_
+) (
+∂ 2 ϕ D (cid:0) 2 ∂ϕ
+)
+which indicates a uniform memory effect.
+∂r 2 + r ∂r + c2 T ∂r 2 + r ∂r Linear decay kernel K(t (cid:0) ξ) � 1 (cid:0) (t (cid:0) ξ)=ω
+[ ( ) ] (39) In this case, the most recent occurrences have the
+�(1 + ωD
+ω
+) ϕ€ + ϵ
+∂
+∂
+t
+2
+2
+∂
+∂
+u
+r
++
+D (cid:0)
+r
+2
+u + α
+1
+ϵC€ s
+d
+t
+i
+r
+m
+on
+in
+g
+i
+e
+s
+s
+h
+t
+e s
+im
+li
+p
+n
+a
+e
+c
+a
+t
+r
+,
+l y
+w
+w
+he
+i
+r
+th
+ea
+t
+s
+i m
+th
+e
+e
+w
+in
+it
+fl
+h
+u
+in
+e n
+t
+c
+h
+e
+e
+o
+d
+f
+e la
+p
+y
+re
+p
+v
+e
+io
+ri
+u
+o
+s
+d .
+s tates
+Quadratic decay kernel K(t (cid:0) ξ) � (1 (cid:0) (t (cid:0) ξ)=ω) 2
+186 Abhik Sur et al.
+This kernel offers more rapid memory effect decay, V 2 ϕ�a
+1
+[ϕ + ϵe + α
+1
+ϵC] (45)
+where most recent events have very little impact and recent
+e
+g
+v
+u
+e
+a
+n
+ra
+ts
+n te
+c
+e
+o
+i
+n
+n
+t
+g
+ri b
+n
+u
+o
+te
+n -
+s
+n
+u
+e
+b
+g
+s
+a
+t
+t
+a
+iv
+n
+e
+ti a
+c
+ll
+o
+y
+n t
+m
+ri
+o
+b
+r
+u
+e
+t io
+th
+n
+a
+s
+n
+to
+o ld
+m
+e
+e
+r
+m
+o
+o
+n
+r
+e
+y
+s
+,
+.
+t
+B
+h
+y
+e
+V 2 e + α
+1
+V 2 ϕ (cid:0) (α
+3
++ a
+4
+)V 2 C + a
+2
+C � 0 (46)
+chosen kernels preserve causality in the physical model
+(i.e., eliminating nonphysical reactions such as detrimental P� (cid:0) e + α 3 C (cid:0) α 1 ϕ (47)
+effects from previous states). Temperature and stress fields
+in materials with memory-dependent features can be real- where
+istically modeled because to this consistency. [1 + G(ω; p)]p 2 (cid:0) ) [ τ ]
+The detailed procedural workflow for the numerical so- a 1 � p + c2 ;a 2 � 1 + τ 1 p 2 pα 2 1 + ω 1 G(ω;p)
+lution, encompassing the linearization of thermal conduc- T
+tivity, the domain transformation, and the implementation [
+τ
+]
+of the inversion technique, is provided as a structured al- a
+3
+�1 + τ2 p 2 ;a
+4
+�χ2
+D
+α
+2
+p 1 +
+ω
+1 G(ω;p)
+gorithm in the Appendix.
+Eliminating any two of ϕ, e or C between Eq. (44)—(46)
+4. Method of solution
+yields
+(cid:0) )
+Define the Laplace transform of a function f (r; t) by
+V 6 (cid:0) N
+1
+V 4 + N
+2
+V 2 (cid:0) N
+3
+(e; ϕ; C) � 0 (48)
+∫∞
+where
+L {f (r; t)}�f (r; p) � f (r;t)e(cid:0) pt dt; Re (p) > 0
+0
+N �
+(α
+1
++ α
+2
++ a
+4
+)(a
+1
+b
+1
++ a
+1
+ϵ + p 2 a
+3
+) + a
+2
+b
+1
++ a
+1
+(1 + α
+1
+ϵ)(1 + α
+1
+b
+1
+) (cid:0) p 2 a
+3
+α
+1
+1 b
+1
+(α
+3
++ a
+4
+) (cid:0) 1
+N �
+p 2 α
+1
+a
+1
+a
+3
+(1 + α
+1
+ϵ) + a
+2
+(a
+1
+b
+1
++ a
+1
+ϵ + p 2 a
+3
+) + (α
+1
++ α
+3
++ a
+4
+)p 2 a
+1
+a
+3
+2 b
+1
+(α
+3
++ a
+4
+) (cid:0) 1
+N
+3
+�
+b
+1
+(α
+p
+3
+2 a
++
+1
+a
+a
+2
+4
+a
+)
+3
+(cid:0) 1
+;b
+1
+�1 + l 2 b 2
+Eq. (48) can be further expressed as
+(cid:0) )(cid:0) )(cid:0) )
+satisfying the operational relationship V 2 (cid:0) p2 V 2 (cid:0) p 2 V 2 (cid:0) p2 (e; ϕ; C) � 0; (49)
+⎡ ⎤ 1 2 3
+∫ t
+L ⎣ K(t (cid:0) ξ)f ′ (r;ξ)dξ⎦�f (r;p)G(ω;p) where p2, p 2, p2 are the roots of the equation
+1 2 3
+t(cid:0) ω k 6 (cid:0) N
+1
+k 4 + N
+2
+k 2 (cid:0) N
+3
+�0 (50)
+[(cid:0)
+in which G(ω; p) � 1 + 2e2 (cid:0) 2f (cid:0) e (cid:0) pω 1 (cid:0) The solution of Eq. (49) can be expressed as
+) (cid:0) ) ω] 2 p2 ωp ω 2 p2
+2f +e 2 ω 2 p 2 +2ωp e2 (cid:0) f +2e 2 ∑3 ∑3 ∑3
+Therefore, on applying the Laplace transform, Eqs.
+e� e
+i
+;ϕ� ϕ
+i
+;C� C
+i
+(36)—(41) reduce to
+i�1 i�1 j�1
+( )
+(cid:0) ) du 2 D (cid:0) 2
+a
+3
+(cid:0) l 2 V 2 σ
+r r
+�
+dr
++ 1 (cid:0)
+ß2 r
+u (cid:0) ϕ (cid:0) C (42)
+(cid:0)
+In wh
+)
+ic h, e
+i
+, ϕ
+(cid:0) i
+, C
+i
+are
+)
+solutio
+(cid:0)
+n of the
+)
+e quation
+V 2 (cid:0) p2
+i
+e
+i
+�0; V 2 (cid:0) p 2
+i
+ϕ
+i
+�0; V 2 (cid:0) p 2
+i
+C
+i
+�0;i�1;2;3
+( )
+(cid:0) ) 2 du D (cid:0) 2
+a
+3
+(cid:0) l 2 V 2 σ
+θ θ
+� 1 (cid:0)
+ß2 dr
++
+r
+u (cid:0) ϕ (cid:0) C (43)
+Therefore, invoking the superposition principle, the so-
+lution of Eq. (48) can be expressed as
+V 2 e�
+1 +
+p2
+l
+a
+3
+2 p 2
+e +
+1 +
+1
+l 2 p 2
+V 2 ϕ +
+1 +
+1
+l 2 p2
+V 2 C (44) C(r;p) �
+∑3
+A i (p)K 0 (p i r) (51)
+i�1
+Fractal geometry-based Klein-Gordon model 187
+e(r;p) �
+∑3
+E i A i (p)K 0 (p i r) (52) (cid:0) πY 0
+(
+(cid:0)
+i √ ̅ a ̅̅
+3
+̅̅ r ) ∑3 ∫r
+l
+i�1 i�1
+( ) 1 ( )
+ϕ(r; p) �
+∑3
+X i A i (p)K 0 (p i r) (53)
+⎡
+⎢ ⎣
+e (cid:0) pi ϕ J
+0
+iϕ
+√
+l
+̅
+a
+̅
+3
+̅
+C
+i +
+e(cid:0) pi ϕ J
+0
+i
+√
+ϕ
+√
+l ̅ ̅
+̅
+a
+̅
+̅
+3
+̅
+D
+i
+⎤
+⎥ ⎦dϕ
+i�1 2l 2 2l 2 ϕ
+Here, K
+ν
+( ·) denotes the modified Bessel function of second
+kind of order ν. Substituting Eqs. (51)—(53) into Eqs. where J
+0
+( ·), Y
+0
+( ·) denote the Bessel functions of order
+(44)—(46), we have zero of first and second kind, respectively. Also,
+E �
+p4
+i
++ a
+1
+(1 + α
+1
+ϵ)p2
+i ( ) 1
+i b
+1
+p4
+i
+(cid:0) (a
+1
+b
+1
++ a
+1
+ϵ + p 2 a
+3
+)p2
+i
++ p 2 a
+1
+a
+3 C
+i
+�
+2
+π
+p
+i
+2
+A
+i
+(p)(E
+i
+(cid:0) X
+i
+(cid:0) 1) and
+X i �
+a
+1
+ϵE
+p 2 i i (cid:0)
++
+a
+a
+1 1
+α
+1
+ϵ
+D i � 2 ß E 2 p
+i
+i
+(
+2 π p
+i
+)1
+2 A i (p)
+For fractal dimension D � 3, Eq. (52) yields the
+displacement component as
+5. Special case
+u(r;p) � (cid:0)
+∑3 E
+i
+A
+p
+i
+(p)
+K
+1
+(p
+i
+r) (54)
+When D�4 is assumed, the higher dimensional repre-
+i�1 i
+sentation of the mass concentration C(r; p), temperature
+Substituting Eqs. (51)—(53) into Eq. (47), the chemical
+ϕ(r; p) and the cubical dilatation e(r; p) can be obtained on
+potential can be expressed as
+solving the modified form of the differential Eq. (49) in
+some higher dimension in the following form
+∑3
+P(r;p) � (α 3 (cid:0) E i (cid:0) α 1 X i )A i (p)K 0 (p i r) (55) 1 ∑3
+i�1 C(r; p) �r (cid:0) 2 A i (p)K 1 =2 (p i r) (57)
+i�1
+Since
+( ) [ (cid:0) ) ( (cid:0) ) ( (cid:0) ) ))]
+π 1=2 4n 2 (cid:0) 1 2 4n 2 (cid:0) 3 2 4n 2 (cid:0) 5 2
+K
+n
+(p
+i
+r)≈
+2p
+i
+r
+e(cid:0) pi r 1 +
+1(8p
+i
+r)
+1 +
+2(8p
+i
+r)
+1 +
+3(8p
+i
+r)
+(1 + ⋯)
+Using Mathematica 7.0 to evaluate Eq. (42), the
+a
+L
+p
+a
+p
+p
+r
+l
+o
+a
+x
+ce
+im
+tr
+a
+a
+t
+n
+e
+s
+a
+f
+n
+o
+a
+rm
+ly ti
+d
+c
+o
+a
+m
+l e
+a
+x
+in
+p r
+i
+e
+s
+s s
+g
+i
+i
+o
+v
+n
+e n
+fo
+b
+r
+y
+the radial stress in the e(r;p) �r(cid:0) 1 2
+∑3
+E i A i (p)K 1=2 (p i r) (58)
+i�1
+(
+i
+√ ̅
+a
+̅̅ ̅̅
+r
+)
+∑3
+∫r
+σ
+r r
+(r; p)∼πJ
+0
+3
+l
+i�1
+⎡ ⎢
+⎣
+e (cid:0) p i ϕ Y 0
+(
+(cid:0) iϕ √ l ̅ a ̅ 3 ̅
+)
+C i
++
+e(cid:0)
+1
+pi ϕ Y 0
+(
+(cid:0)
+√
+iϕ
+̅̅
+√
+̅
+l ̅ a ̅ 3 ̅
+)
+D i ⎤ ⎥
+⎦dϕ
+(56) ϕ(r;p) �r (cid:0) 1 2
+∑
+i�
+3
+1 X i A i (p)K 1=2 (p i r) (59)
+2l 2 2l 2 ϕ
+Therefore, from Eq. (58), the higher dimensional
+displacement of the fractal medium is given by
+188 Abhik Sur et al.
+u(r;p) � (cid:0) r (cid:0) 1 2 ∑3 E i A p i (p) K 3 =2 (p i r) (60) (iii) Chemical boundary condition
+i�1 i The bounding plane r�R is under the action of a
+chemical shock as follows
+Moreover, with the aid of Eqs. (57)—(59), Eq. (47)
+yields the chemical potential as
+P(R;t) �P
+1
+H(t) (66)
+1
+∑3
+P(r;p) �r (cid:0) 2 (α 3 (cid:0) E i (cid:0) α 1 X i )A i (p)K 1=2 (p i r) (61) where T 1 , P 1 are some constants and H( ·) being the
+i�1 Heaviside unit step function.
+By applying the Laplace transform to the boundary
+Substituting Eqs. (57)—(59) into Eq. (42), the radial conditions Eqs. (64)—(66) and employing Eqs. (53)—(55),
+stress can be represented as the resulting system of equations for D�3 is obtained as:
+σ r r (r;p)∼ ∑ i� 3 1 Ψ(r 2 ; p rl i ) 2 J p i i (cid:0) + a 3 2 (cid:0) l 2 l p 2 i e p (cid:0) 2 i ) pi r G i (62) ∑ i� 3 1 A i (p) E p i i K 1 (p i R)�0;
+w
+G
+h
+i
+e
+�
+re
+(
+2
+π
+p i
+)1 2
+A
+i
+(p)(E
+i
+(cid:0) X
+i
+(cid:0) 1);J
+i
+�
+ß
+4
+2
+E
+p3 i =
+i
+2
+( π
+2
+) 1
+2 A
+i
+(p)
+∑3
+∑
+i�
+A
+3
+1
+i
+(
+X
+p) (
+i
+A
+α
+i
+3
+(
+(cid:0)
+p )K
+E
+0
+i
+(
+(cid:0)
+p
+i
+R
+α
+)
+1
+�
+X
+T
+p
+i
+)
+1
+K
++
+0
+(
+2
+p
+1
+p
+i
+R
+κ
+1
+)
+T
+�
+1
+2 ;
+P
+p
+1 :
+(67)
+( (√ ̅̅̅̅̅ )) i�1
+Ψ(r; p i ) �e(cid:0) l
+r√ ̅
+a
+̅
+3
+̅
+Ei
+(
+r
+l
+a
+(
+3
+√
+(cid:0)
+̅
+p
+̅̅̅
+i
+̅ ))
+Further, on applying the Laplace transform on the bound-
++ el
+r√ ̅
+a
+̅
+3
+̅
+Ei (cid:0) r
+l
+a
+3+ p
+i
+(cid:0)
+a
+3
+(cid:0) l 2 p2
+i
+) a
+y
+r
+i
+y
+el d
+c
+s
+o
+t
+n
+h
+d
+e
+i t
+f
+i
+o
+o
+l
+n
+l
+s
+o w
+E
+in
+q
+g
+s.
+sy
+(6
+st
+4
+e
+)
+m
+— (
+o
+6
+f
+6 )
+e q
+a
+u
+n
+a
+d
+ti on
+u
+s
+s in
+fo
+g
+r D
+Eq
+�
+s.
+4
+(59)—(61)
+and the exponential integral Ei(x) is defined as R(cid:0) 1 2
+∑3
+A i (p) E p i K 3 =2 (p i R)�0;
+∫∞ i�1 i
+e(cid:0) t
+Ei(x) � (cid:0) (cid:0) x t dt (63) R (cid:0) 1 2 ∑3 X i A i (p)K 1=2 (p i R)� T p 1+ 2 1 p κ 1 T 1 2 ; (68)
+i�1
+6. Boundary conditions R(cid:0) 1 2
+∑3
+A i (p)(α 3 (cid:0) E i (cid:0) α 1 X i )K 1=2 (p i R)� P p 1 :
+i�1
+The imposed boundary conditions are as follows:
+Upon solving the system of Eqs. (67) and (68), the un-
+(i) Mechanical boundary condition
+f
+k
+o
+n
+r
+o
+t
+w
+he
+n
+c
+p
+a
+a
+s
+r
+e
+a
+s
+m
+D
+e
+�
+ter
+3
+s
+a
+A
+n
+i
+(
+d
+p
+D
+),
+�
+i �
+4,
+1
+re
+;
+s
+2
+p
+;
+e
+3
+c
+,
+t
+h
+iv
+a
+e
+v
+l
+e
+y ,
+b
+t
+e
+h
+e
+u
+n
+s
+d
+co
+et
+m
+er
+p
+m
+le
+i
+t
+n
+in
+ed
+g
+the solution in the Laplace transform domain.
+The fractal medium is constrained at the cavity boundary
+r � R. Hence,
+7. Model assessment and validation
+u(R; t) � 0 (64)
+The present results are validated against previously
+established findings, as summarized in the Table 1.
+(ii) Thermal boundary condition
+8. Numerical results and discussions
+The boundary surface at r�R is subjected to a specified
+To recover the thermophysical quantities in the space-
+thermal load.
+time domain, the numerical inversion of the Laplace
+T(R;t) �T
+1
+H(t)
+transform was conducted using Zakian’s method [57]. The
+inverse function f (r; t) is approximated from its Laplace
+which, in view of Eq. (29), takes the form image f (r; p) following the algorithm:
+ϕ(R;t) �T
+1
+H(t) +
+1
+2
+κ
+1
+(T
+1
+H(t)) 2 (65)
+f (r;t) �
+2
+t
+∑N
+Re
+[
+K ~
+i
+f
+(
+r;
+b
+t
+∗
+i
+)]
+: (69)
+i�1
+Fractal geometry-based Klein-Gordon model 189
+Table1 Casestudyofassociatedmodelsandselectedcases.
+Case Condition Model
+I τ�0,κ �0 Theresultsof[24]areinpreciseagreementwiththethermoelasticmodelunderlying
+1
+MGTtheory(caseI)correspondingtothefractaldimensionD�4indemonstratingthe
+absenceofthetemporalnonlocalityandduetotheabsenceofvariablethermal
+conductivityofthemedium.
+II τ�0,l �0,χ �0,τ �0,ω→0 ThevalidityofthepresentmodelincaseIIisestablishedthroughitsconsistencywiththe
+0 D 1
+resultsof[80]underconditionsduetotheabsenceofspatiotemporalnonlocalityandin
+absenceofmemoryresponse.Thisagreementarisesinabsenceofthermodiffusion.
+For illustration, copper material has been considered, The thermoelastic response of the fractal medium is
+with the material constants given by investigated graphically by plotting the effects of various
+K�3860 W·m(cid:0) 1 ·deg (cid:0) 1 K ★ �7 W·m(cid:0) 1 ·deg (cid:0) 1 ·s (cid:0) 1 α
+t
+�1:78 × 10 (cid:0) 5 K (cid:0) 1
+α
+c
+�1:98 × 10 (cid:0) 4 m (cid:0) 3 ·kg (cid:0) 1 D �0:85 × 10 (cid:0) 8 kg· s·m (cid:0) 3 c
+E
+�383:1 J·kg (cid:0) 1 deg (cid:0) 1
+λ�7:76 × 10 10 N·m (cid:0) 2 μ�3:86 × 10 10 N·m (cid:0) 2 ρ�8954 kg·m (cid:0) 3
+a�1:2 × 10 4 m 2 ·s (cid:0) 2 ·K (cid:0) 1 b�0:9 × 10 6 m 5 ·kg (cid:0) 1 ·s (cid:0) 2 κ
+1
+� (cid:0) 3
+T
+0
+�293 K P
+1
+�1 T
+1
+�1
+l �9 × 10(cid:0) 5 τ�7 × 10(cid:0) 3 χ �0:01
+D
+The phase lag parameters, along with the additional parameters for fractal dimensions D�3 and D � 4. Spe-
+material constants, have been taken into account to ensure cifically, in subsection 7.1, the influence of the different
+the stability condition for MGT model [81]. Specifically, kernel functions is analyzed using Figure 2. Subsection 7.2
+the solution is exponentially stable if the conditions K > 0, examines the impact of the variable thermal conductivity
+K ★ > 0, ω > 0, and K > K ★ ω are satisfied [36]. parameter through Figure 3. The performance of different
+Figure 2 Impact of different kernel functions on the distributions of (a) displacement u, (b) temperature T, (c) chemical potential P, and (d)
+radial stress σ
+r r
+with respect to radial distance r for fractal dimension D�3 and D � 4.
+190 Abhik Sur et al.
+Figure 3 Impact of variable thermal conductivity on the distributions of (a) displacement u, (b) temperature T, (c) chemical potential P, and (d)
+radial stress σ
+rr
+with respect to radial distance r for fractal dimension D�3 and D � 4.
+nonlocal length scale parameter is compared in subsection post-transition displacements, with the nonlinear kernel
+7.3, as illustrated by Figure 4. Finally, subsection 7.4 producing the maximum response. Additionally, displace-
+visualizes the effect of nonlocal time scale parameter in ment magnitudes for D�3 are consistently higher than
+Figure 5 detailing the thermal, stress, and mass diffusion those for D � 4, as lower fractal dimensionality implies
+responses. fewer internal constraints and reduced energy dissipation,
+allowing greater deformation.
+8.1. Impact of different kernel functions Figure 2(b) illustrates the radial temperature distribution
+T(r), which transitions smoothly from negative values near
+Figure 2 illustrates the effects of different kernel func- the cavity to positive values toward the outer boundary,
+tions on the variations of displacement (u), temperature (T), forming an S-shaped diffusive profile governed by thermal
+chemical potential (P), and radial stress (σ
+rr
+) with respect to memory. A transition point occurs near r≈1:7, where
+radial distance r for two fractal dimensions: D� 3 (solid thermal accumulation overtakes resistance. Increasing
+lines) and D�4 (dashed lines). The memory-dependent kernel nonlinearity results in smoother and more diffused
+kernel functions are considered in three distinct cases: (i) temperature profiles; in particular, the nonlinear kernel (e �
+e�0; f �0 representing a constant kernel (no memory), (ii) 1; f �1) exhibits the most gradual gradient, indicating
+e�0; f �0:5 for a linear kernel, and (iii) e�1; f �1 for a delayed yet spatially distributed heat transfer due to strong
+nonlinear kernel. The effect of increasing kernel memory retention. Before the transition, this kernel yields
+complexity and memory is systematically explored across lower temperatures than the constant and linear cases,
+these figures. whereas beyond it, it produces a more uniform and elevated
+In Figure 2(a), the displacement u(r) exhibits a non- temperature field. The fractal dimension significantly in-
+monotonic profile with a peak near r≈1:7, indicating a fluences this behavior: prior to the transition, D�3 shows a
+transition point where the influence of the memory kernel faster temperature rise, while beyond it, D�4 attains higher
+reverses. For 1 < r < 1:7, the nonlinear kernel (e �1; f � temperatures, reflecting delayed but more sustained thermal
+1) yields lower displacement than the constant and linear diffusion in higher-dimensional fractal media.
+kernels, reflecting an initial suppressive effect. Beyond this Figure 2(c) presents the chemical potential P(r), which
+point, the nonlinear kernel becomes dominant and exhibits two transition points at approximately r≈1:3 and
+produces higher displacement, suggesting that memory r≈1:8, where the dominance of the memory kernels re-
+effects shift from resisting deformation to enhancing verses. Initially, the nonlinear kernel yields the highest
+energy accumulation. For both fractal dimensions (D� 3 potential, followed by the linear and constant kernels. Be-
+and D�4), increased kernel nonlinearity leads to larger tween the two transition points, this order inverts, with the
+Fractal geometry-based Klein-Gordon model 191
+Figure 4 Impact of nonlocal length scale parameter on the distributions of (a) displacement u, (b) temperature T, (c) chemical potential P, and
+(d) radial stress σ
+rr
+with respect to radial distance r for fractal dimension D�3 and D � 4.
+Figure 5 Impact of nonlocal time scale parameter on the distributions of (a) displacement u, (b) temperature T, (c) chemical potential P, and (d)
+radial stress σ
+r r
+with respect to radial distance r for fractal dimension D�3 and D � 4.
+192 Abhik Sur et al.
+nonlinear kernel producing the lowest values, before In Figure 3(c), the chemical potential becomes increas-
+reverting again at larger radii. This behavior reflects alter- ingly negative as κ
+1
+increases, indicating stronger thermally
+nating enhancement and suppression of diffusion due to driven mass diffusion under enhanced heat transfer. This
+accumulated memory effects. The fractal dimension mod- effect is more pronounced for D �3, where steeper gradi-
+ulates the response magnitude: D�3 consistently produces ents persist, whereas the D�4 case exhibits gentler slopes
+more negative potentials, indicating stronger diffusion, and earlier saturation due to more spatially distributed
+whereas D�4 yields smoother profiles with slightly diffusion.
+delayed transition points due to enhanced internal Figure 3(d) presents oscillatory radial stress profiles
+connectivity. associated with stress-wave propagation. Both the ampli-
+Figure 2(d) shows the radial stress σ
+rr
+, characterized by tude and divergence of the oscillations increase as κ
+1
+be-
+oscillatory wave-like behavior resulting from stress propa- comes less negative, with κ
+1
+� (cid:0) 3 producing the strongest
+gation and reflection. The nonlinear kernel generates the stress response, particularly beyond r≈1:7. The D�3
+largest stress amplitudes near the inner and outer regions, medium consistently shows higher stress amplitudes due to
+highlighting enhanced energy accumulation due to memory lower damping, while the D�4 medium exhibits attenuated
+effects, while the linear and constant kernels exhibit oscillations resulting from increased internal connectivity
+reduced amplitudes. In the intermediate region (1:5 < r < and energy dissipation.
+1:8), this trend reverses, with the nonlinear kernel showing
+suppressed stress due to wave interference. Overall, the 8.3. Impact of nonlocal length scale parameter
+D�3 case exhibits higher stress amplitudes than D � 4,
+reflecting lower dissipation in simpler geometries, although Figure 4 illustrates the effect of the nonlocal length scale
+localized amplification for D�4 occurs in the mid-domain parameter l on the radial distributions of displacement u,
+under certain memory conditions. temperature T, chemical potential P, and radial stress σ
+rr
+for fractal dimensions D�3 (solid lines) and D�4 (dashed
+lines). The values l �7 × 10(cid:0) 5 ; 8 × 10 (cid:0) 5 ; 9 × 10(cid:0) 5 repre-
+8.2. Impact of variable thermal conductivity sent increasing degrees of spatial nonlocality.
+parameter In Figure 4(a), the displacement decreases mono-
+tonically with increasing l , demonstrating that stronger
+Figure 3 illustrates the effect of the temperature- nonlocal interactions suppress mechanical deformation
+dependent thermal conductivity parameter κ 1 on the radial through spatial averaging of the strain field. Smaller l
+distributions of displacement u, temperature T, values yield more localized responses and higher
+chemical potential P, and radial stress σ r r for fractal displacement amplitudes, whereas larger l significantly
+dimensions D�3 (solid lines) and D�4 (dashed lines). The reduce deformation. For all cases, the D�3 medium ex-
+values κ 1 � (cid:0) 5; (cid:0) 4; (cid:0) 3 represent increasing thermal hibits larger displacements than D � 4, reflecting lower
+nonlinearity, with less negative κ 1 corresponding to stronger geometric resistance in the lower fractal dimension.
+effective thermal conduction. Figure 4(b) shows that increasing l suppresses the
+In Figure 3(a), the displacement increases monotonically temperature field, particularly in the inner region, resulting
+as κ 1 becomes less negative, with the maximum deforma- in smoother and less negative temperature profiles. This
+tion observed for κ 1 � (cid:0) 3. Enhanced thermal conductivity indicates that nonlocality weakens sharp thermal gradients
+promotes greater heat transfer, leading to increased thermal by redistributing thermal energy over a wider spatial range.
+expansion and mechanical response. For all cases, the D� The D�4 profiles are flatter than those of D � 3, high-
+3 medium exhibits larger displacements than D � 4, lighting enhanced thermal diffusion and uniformity in
+reflecting reduced internal resistance in lower fractal higher-dimensional fractal media.
+dimensions. In Figure 4(c), the chemical potential decreases mono-
+Figure 3(b) shows that the temperature transitions from tonically with radius and becomes increasingly negative as
+negative to positive values with increasing radius, with a l increases, especially for r > 1:4. This suggests that
+trend reversal near r≈1:7. For r < 1:7, higher conductivity nonlocal interactions strengthen effective concentration
+(κ 1 �(cid:0) 3) yields higher temperatures due to faster heat gradients and enhance mass diffusion by extending the
+accumulation, whereas beyond this point, lower conduc- spatial influence of thermodiffusive forces. The effect is
+tivity (κ 1 �(cid:0) 5) results in higher boundary temperatures, more pronounced for D � 3, while the D�4 case exhibits
+indicating reduced outward diffusion. The D�3 profiles smoother profiles due to more distributed diffusion.
+display sharper gradients, while the D�4 profiles are Figure 4(d) illustrates the radial stress σ
+r r
+for different
+smoother, demonstrating enhanced energy dissipation in values of the nonlocal length scale parameter l , exhibiting
+higher-dimensional fractal media. oscillatory patterns associated with stress-wave
+Fractal geometry-based Klein-Gordon model 193
+Figure 6 Comparative study of (a) displacement u and (b) chemical potential P with respect to radial distance r between the present model and
+Sur [24].
+propagation and reflection. The influence of nonlocality is enhanced thermal redistribution in higher-dimensional
+strongly position-dependent. In the near-field region (1:0 < fractal media.
+r < 1:3), all curves nearly coincide, indicating the domi- In Figure 5(c), the chemical potential decreases mono-
+nance of local interactions. In the intermediate region tonically with radius, with the strongest dependence on τ near
+(1:3 < r < 1:6), increasing l suppresses stress oscillations, the inner boundary. Smaller τ yields more negative values of
+as nonlocal averaging reduces both peak and trough mag- P, indicating sharper concentration gradients and stronger
+nitudes, a trend highlighted in the inset. Beyond r≈ 1:6, initial mass diffusion due to faster system response. The in-
+this behavior reverses: larger l enhances stress amplitudes, fluence of τ diminishes with increasing r, while D�3
+suggesting that accumulated long-range interactions rein- consistently exhibits steeper gradients than D � 4.
+force the mechanical response in the outer domain. The Figure 5(d) presents oscillatory radial stress profiles,
+fractal dimension further modulates this response, with D� where decreasing τ leads to higher amplitudes and more
+3 exhibiting higher amplitudes and sharper transitions, pronounced oscillations, reflecting a more reactive stress-
+while D�4 shows smoother, more attenuated profiles due wave response under weaker temporal memory. Larger τ
+to increased internal connectivity and energy dissipation. smoothens the stress field through cumulative damping. The
+D�3 case shows stronger oscillations than D � 4, consis-
+8.4. Impact of nonlocal time scale parameter tent with reduced internal damping and localized wave
+propagation in lower fractal dimensions.
+Figure 5 illustrate the influence of the nonlocal time
+scale parameter τ on the radial distributions of displacement 8.5. Validation with pre-established model
+u, temperature T, chemical potential P, and radial stress σ
+rr
+for fractal dimensions D�3 (solid lines) and D� 4 (dashed The present subsection is devoted to validating the
+lines). The values τ�1 × 10 (cid:0) 3 ; 4× 10 (cid:0) 3 ; 7 × 10(cid:0) 3 repre- proposed model through a comparison with previously
+sent increasing temporal memory effects. published results [24] as outlined in Figure 6. Specifically,
+In Figure 5(a), the displacement decreases with the variations in displacement and chemical potential re-
+increasing τ in the inner region (r≲1:4), indicating that ported in Ref. [24] are compared with the corresponding
+stronger temporal nonlocality suppresses immediate me- numerical results obtained in the present study for the case
+chanical deformation. Beyond r≈1:6, this trend reverses of fractal dimension D � 4. As evidenced by the graphical
+and larger τ produces higher displacements, suggesting that comparisons, an excellent agreement is observed between
+accumulated memory effects enhance deformation in the the computed and reference results, indicating a negligible
+outer region. For all cases, the D�3 medium exhibits larger discrepancy between the two cases. This close correspon-
+displacements than D � 4, owing to reduced geometric dence confirms the numerical accuracy and reliability of the
+resistance. present formulation and validates its consistency with the
+Figure 5(b) shows that the temperature increases with τ, existing literature.
+particularly for r > 1:6, where higher τ leads to greater
+thermal accumulation due to temporal inertia that 9. Concluding remarks
+slows heat dissipation. In the inner region, the
+temperature profiles remain closely clustered, indicating The present investigation develops and applies a gener-
+weak memory effects. The D�4 profiles are smoother and alized elasto-thermo-diffusive framework for fractal media
+slightly lower than those of D�3 at larger radii, reflecting by incorporating non-integer dimensional vector calculus,
+194 Abhik Sur et al.
+variable thermal conductivity, and Klein-Gordon-type graded composites or fractal-like materials for tar-
+nonlocal effects with memory-dependent derivatives. The geted thermal, mechanical, or diffusive performance.
+numerical results, supported by extensive graphical anal- (vii) Proper tuning of fractal dimension, kernel function,
+ysis, yield the following key conclusions: thermal conductivity nonlinearity, and nonlocal parame-
+ters can strategically control deformation, stress propa-
+(i) The fractal dimension D exerts a pronounced influ- gation, and coupled thermal-diffusion behavior in
+ence on all physical fields. A lower fractal dimension advanced functional materials. These findings are appli-
+(D � 3) leads to higher displacement and stress am- cable to high-performance fractal composites, thermal
+plitudes, attributable to reduced internal constraints barrier systems, porous electrodes, and biomedical scaf-
+and weaker energy dissipation. In contrast, a higher folds where multiscale interactions are key.
+fractal dimension (D � 4) facilitates smoother and
+more spatially distributed thermal and diffusion
+fields, accompanied by enhanced energy dissipation. 9.1. Future scope of work
+(ii) Nonlinear memory-dependent kernels (e � 1;f � 1)
+markedly enhance displacement, improve temperature The scope of the present work can be further expanded
+uniformity, and intensify stress oscillations in specific by extending the proposed elasto-thermo-diffusive frame-
+spatial regions due to their stronger retention of past work to anisotropic, heterogeneous, and spatially graded
+states. Their effects are highly spatially dependent, fractal media, including variable and evolving fractal di-
+exhibiting suppression in intermediate regions while mensions to better capture realistic multiscale material ar-
+dominating the inner and outer zones. In contrast, chitectures. Incorporating nonlinear constitutive relations,
+linear and constant kernels yield weaker but more phase transformation effects, and fully concentration-
+spatially uniform responses, indicating that kernel se- dependent material properties would improve the predic-
+lection should be tailored to achieve the desired spatial tive capability of the model under extreme thermal and
+behavior. mechanical conditions. Future investigations may also
+(iii) Less negative values of the thermal conductivity explore alternative spatiotemporal nonlocal formulations,
+parameter κ
+1
+promote greater initial heat accumula- fractional-order memory kernels, and stochastic effects to
+tion and deformation due to enhanced local heat better represent complex hereditary and long-range in-
+transport, but they also accelerate outward diffusion, teractions. Validation through experimental studies along-
+resulting in reduced temperatures near the boundary. side extensions to multidimensional geometries and
+In contrast, stronger nonlinearity (more negative κ
+1
+) transient loading would significantly broaden the applica-
+suppresses heat propagation, leading to localized bility of the present model to advanced engineering and
+thermal retention and prolonged thermal gradients, biomedical systems.
+which in turn affect the stress and diffusion fields in a
+spatially dependent manner. Funding
+(iv) Increasing the nonlocal length scale l suppresses
+displacement and stress in intermediate regions via
+The Researchers would like to thank the Deanship of
+spatial averaging but enhances stress amplitudes in
+Graduate Studies and Scientific Research at Qassim Uni-
+the far field due to accumulated long-range effects.
+versity for financial support (QU-APC-2026).
+Larger l also smooths temperature gradients and
+deepens chemical potential, intensifying mass diffu-
+sion in lower D media. Acknowledgements
+(v) Higher nonlocal time scale τ introduces temporal
+inertia, initially suppressing deformation and oscilla- The Researchers would like to thank the Deanship of
+tions while enhancing long-term displacement and Graduate Studies and Scientific Research at Qassim Uni-
+temperature persistence in the outer domain. Shorter τ versity for financial support (QU-APC-2026).
+produces sharper and more immediate mechanical
+and thermal responses, increasing stress oscillation Appendix
+frequency and amplitude.
+(vi) The combined influence of nonlocality, fractal ge- To provide a comprehensive overview of the computa-
+ometry, and memory effects generates spatial transi- tional workflow and ensure the reproducibility of the nu-
+tion zones where the dominance of one effect shifts to merical results, the systematic steps involved in solving the
+another. These transitions are critical for designing coupled thermoelastic diffusion equations through the
+Fractal geometry-based Klein-Gordon model 195
+proposed numerical framework are summarized in the al- [12] M.I. Shvidler, Statistical Hydrodynamics of Porous Media, Nedra,
+gorithm below: Moscow, 1985.
+[13] M. Ostoja-Starzewski, Extremum and variational principles for
+elastic and inelastic media with fractal geometries, Acta Mech. 205
+(1—4) (2009) 161—170.
+Algorithm: Numerical Solution for Fractal-based Thermoelastic
+[14] V.E. Tarasov, Anisotropic fractal media by vector calculus in non-
+integer dimensional space, J. Math. Phys. 55 (8) (2014) 083510.
+Diffusion
+[15] V.E. Tarasov, Vector calculus in non-integer dimensional space and
+1 Input: Physical properties, Fractal dimension (D), Nonlocal
+its applications to fractal media, Commun. Nonlinear Sci. Numer.
+parameters, and Time-delay kernel.
+Simul. 20 (2) (2015) 360—374.
+2 Step 1: Linearization
+[16] A. Carpinteri, P. Cornetti, A. Sapora, Static-kinematic fractional
+3 Apply the Kirchhoff Transformation to handle variable thermal
+operators for fractal and non-local solids, Z. Angew. Math. Mech. 89
+(3) (2009) 207—217.
+conductivity.
+4 Map the nonlinear heat conduction equation into a linear
+[17] J. Li, M. Ostoja-Starzewski, Micropolar continuum mechanics of
+fractal media, Int. J. Eng. Sci. 49 (12) (2011) 1302—1310.
+domain.
+5 Step 2: Domain transformation
+[18] M. Ostoja-Starzewski, Towards thermoelasticity of fractal media, J.
+6 Apply Laplace Transform with respect to time (t→s) to the Therm. Stress 30 (9—10) (2007) 889—896.
+governing equations.
+[19] M. Ostoja-Starzewski, Towards thermomechanics of fractal media, Z.
+7 Convert the coupled partial differential equations (PDEs) into
+Angew. Math. Phys. 58 (6) (2007) 1085—1096.
+ordinary differential equations (ODEs) in the transform
+[20] W. Nowacki, Dynamical problems of thermoelastic diffusion in
+solids-I, Bull, L’Aca. Pol. Sci. 22 (1974) 55—64.
+domain.
+8 Step 3: Analytical solution in transform domain
+[21] W. Nowacki, Dynamical problems of thermoelastic diffusion in
+9 Solve the system of ODEs considering the cylindrical cavity
+solids-II, Bull, L’Aca. Pol. Sci. 22 (1974) 129—135.
+boundary conditions.
+[22] W. Nowacki, Dynamical problems of thermoelastic diffusion in
+10 Utilize modified Bessel functions of non-integer order
+solids-III, Bull, L’Aca. Pol. Sci. 22 (1974) 257—266.
+(dependent on fractal dimension D).
+[23] A. Sur, Elasto thermo-diffusion in a slim strip revisited with new
+11 Determine integration constants using boundary conditions at
+definition of nonlocal heat conduction, Int. J. Appl. Comput. Math.
+the cavity surface.
+10 (2024) 159.
+12 Step 4: Numerical inversion
+[24] A. Sur, Elasto-thermodiffusive nonlocal responses for a spherical
+13 Implement the Zakian Technique for numerical Laplace
+cavity due to memory effect, Mech. Time Dep. Mater. 28 (2024)
+1395—1419.
+inversion.
+14 Compute values in the physical time domain for temperature,
+[25] A.E. Abouelregal, S.S. Alsaeed, H.M. Sedighi, M.E. Elzayady,
+stress, and concentration.
+A.R. Hafezi, A comprehensive study on heterogeneous media with
+15 Step 5: Post-processing
+spherical cavity: the higher-order fractional triple-phase-lag thermo-
+16 Execute parallel processing for spatial distribution plots.
+elasticity with local kernels, Int. J. Appl. Mech. 16 (10) (2024)
+17 Output: Generate graphical representations of thermoelastic
+2450120.
+[26] P. Ailawalia, M. Marin, J. Kaur, A study of thermoelastic double
+fields.
+porosity rod under a thermal shock, J. Appl. Comput. Mech. 11 (3)
+(2025) 707—714.
+[27] M.A. Ezzat, A.A. Bary, State space approach of two-temperature
+magneto-thermoelasticity with thermal relaxation in a medium of
+perfect conductivity, Int. J. Engrng. Sci. 47 (4) (2009) 618—630.
+References
+[28] M.A. Ezzat, A.A. El-Bary, S. Ezzat, Combined heat and mass transfer
+for unsteady MHD flow of perfect conducting micropolar fluid with
+[1] B.B. Mandelbrot, The Fractal Geometry of Nature, V.1, W.H. thermal relaxation, Energy Convers. Manag. 52 (2) (2011) 934—945.
+Freeman, San Francisco, 1977. [29] M.A. Ezzat, A.S. El-Karamany, A.A. El-Bary, Two-temperature
+[2] M. Schroeder, Fractals, Chaos, Power Laws: Minutes from an Infinite theory in green-naghdi thermoelasticity with fractional phase-lag heat
+Paradise, Dover Publications, New York, 2009. transfer, Microsys. Technol. 24 (2018) 951—961.
+[3] R.M. Crownover, Introduction to Fractals and Chaos, Jones & Bar- [30] M.A. Ezzat, A.A. El-Bary, Effects of variable thermal conductivity
+tlett Learning, Burlington, 1995. and fractional order of heat transfer on a perfect conducting infinitely
+[4] K.G. Wilson, M.E. Fisher, Critical exponents in 3.99 dimensions, long hollow cylinder, Int. J. Therm. Sci. 108 (2016) 62—69.
+Phys. Rev. Lett. 28 (4) (1972) 240—243. [31] M.A. Ezzat, A.S. El-Karamany, A.A. El-Bary, Generalized thermo-
+[5] K.G. Wilson, J. Kogut, The renormalization group and the ϵ expan- viscoelasticity with memory-dependent derivatives, Int. J. Mech.
+sion, Phy. Rep. 12 (2) (1974) 75—199. Sci. 89 (2014) 470—475.
+[6] G. ’t Hooft, M. Veltman, Regularization and renormalization of [32] P.A. Thompson, Compressible-Fluid Dynamics, McGraw-Hill, New
+gauge fields, Nucl. Phys. B 44 (1) (1972) 189—213. York, 1972.
+[7] G. Leibbrandt, Introduction to the technique of dimensional regula- [33] S. Gupta, R. Dutta, S. Das, Memory response in a nonlocal micro-
+rization, Rev. Mod. Phys. 47 (4) (1975) 849—876. polar double porous thermoelastic medium with variable conductivity
+[8] J.C. Collins, Renormalization, Cambridge University Press, Cam- under Moore-Gibson-Thompson thermoelasticity theory, J. Ocean
+bridge, 1984. Engrng. Sci. 8 (3) (2023) 263—277.
+[9] P.M. Adler, Porous Mmedia: Geometry and Transport, Butterworth- [34] W. Chena, R. Ikehata, The cauchy problem for the moore-gibson-
+Heinemann, Stoneham, 1992. thompson equation in the dissipative case, J. Differ. Eqs. 292
+[10] F.A.L. Dullien, Porous Media: Geometry and Transport, Academic (2021) 176—219.
+Press, New York, 1979. [35] F. Dell’Oro, I. Lasiecka, V. Pata, The moore-gibson-thompson
+[11] K.S. Romm, Structural Models of the Pore Space of Rocks, Nedra, equation with memory in the critical case, J. Differ. Eqs. 261 (7)
+Leningrad, 1985. (2016) 4188—4222.
+196 Abhik Sur et al.
+[36] R. Quintanilla, Moore-gibson-thompson thermoelasticity, Math. functional equations of mixed integro-differential type, Bound. Value
+Mech. Solids 24 (14) (2019) 4020—4031. Probl. 2025 (2025) 108.
+[37] M. Pellicer, R. Quintanilla, On uniqueness and instability for some [59] P. Ailawalia, A. Kamel, A.M. Mahdy, E.S. Elidy, Kh Lotfy, Thermal
+thermomechanical problems involving the moore-gibson-thompson shock analysis in a semiconducting medium using a modified green-
+equation, Z. Angew. Math. Phys. 71 (2020) 84. lindsay thermoelastic model, Mech. Solids. 60 (2025) 4050—4064.
+[38] H. Kumar, S. Mukhopadhyay, Thermoelastic damping analysis in [60] E. Agiasofitou, M. Lazar, Nonlocal elasticity of klein-gordon type
+microbeam resonators based on moore-gibson-thompson generalized with internal length and time scales: constitutive modelling and
+thermoelasticity theory, Acta Mech. 231 (2020) 3003—3015. dispersion relations, Proc. Appl. Math. Mech. 23 (2023) e20230006.
+[39] J.R. Fernández, R. Quintanilla, Moore-gibson-thompson theory for [61] M. Lazar, E. Agiasofitou, Nonlocal elasticity of klein-gordon type:
+thermoelastic dielectrics, Appl. Math. Mech. 42 (2021) 309—316. fundamentals and wave propagation, Wave Motion 114 (2022)
+[40] K. Jangid, S. Mukhopadhyay, A domain of influence theorem under 103038.
+the MGT thermoelasticity theory, Math. Mech. Solids 26 (2) (2021) [62] A. Sur, Kh Lotfy, R. Dutta, S. Das, Spatiotemporal nonlocal effect on
+285—295. thermoelastic wave propagation in nanoscale beam influenced by moving
+[41] K. Jangid, S. Mukhopadhyay, A domain of influence theorem for a load and memory-based heat transport, Mech. Based Design of Struct.
+natural stress-heat-flux problem in the moore-gibson-thompson Mach. (2025) 1—27. https://doi.org/10.1080/15397734.2025.2595181.
+thermoelasticity theory, Acta Mech. 232 (2021) 177—187. [63] M. Lazar, E. Agiasofitou, G. Po, Three-dimensional nonlocal aniso-
+[42] S. Mondal, A. Sur, Thermo-hydro-mechanical interaction in a tropic elasticity: a generalized continuum theory of Ång-
+poroelastic half-space with nonlocal memory effects, Int. J. Appl. strömmechanics, Acta Mech. 231 (2020) 743—781.
+Comput. Math. 10 (2024) 68. [64] V.E. Tarasov, Elasticity of fractal materials using the continuum
+[43] A. Sur, Effectiveness of nonlinear kernel with memory for a func- model with non-integer dimensional space, C. R. Mec. 343 (1) (2015)
+tionally graded solid with size dependency, Mech. Time-Dependent 57—73.
+Mater. 28 (2024) 1761—1786. [65] H. Parkus, Thermoelasticity, second ed., Springer-Verlag, Vien, New
+[44] S. Mondal, A. Sur, Piezothermoelastic vibrations of microbeam York, 1976.
+resonator with memory effects, Mech. Time-Dependent Mater. 29 [66] A.D. Kovalenko, Basiñs of Thermoelasticity, Naukova Dumka, Kiev,
+(2025) 5. 1970.
+[45] S. Das, R. Dutta, E.M. Craciun, A. Sur, M.S. Barak, V. Gupta, Size- [67] J. Ignaczak, M. Ostoja-Starzewski, Thermoelasticity with Finite
+dependent effect on the interaction of surface waves in micropolar Wave Speeds, first ed., Oxford University Press, London, 2009.
+thermoelastic medium with dual pore connectivity, Physica Scripta [68] V.E. Tarasov, Fractional hydrodynamic equations for fractal media,
+99 (6) (2024) 065232. Ann. Phys. 318 (2) (2005) 286—307.
+[46] M. Conti, V. Pata, R. Quintanilla, Thermoelasticity of moore-gibson- [69] V.E. Tarasov, Continuous medium model for fractal media, Phys.
+thompson type with history dependence in the temperature, Lett. A. 336 (2—3) (2005) 167—174.
+Asymptot. Anal. 120 (1—2) (2020) 1—21. [70] V.E. Tarasov, Fractional Dynamics: Applications of Fractional Cal-
+[47] M. Conti, V. Pata, M. Pellicer, R. Quintanilla, On the analyticity of culus to Dynamics of Particles, Fields and Media, Springer, New
+the MGT-viscoelastic plate with heat conduction, J. Differ. Equ. 269 York, 2011.
+(10) (2020) 7862—7880. [71] L.D. Landau, E.M. Lifshitz, Theory of Elasticity, third ed., Butter-
+[48] N. Bazarra, J.R. Fernandez, R. Quintanilla, Analysis of a moore- worth-Heinemann, Oxford, 1986.
+gibson-thompson thermoelasticity problem, J. Comput. Appl. Math. [72] I.A. Abbas, A. Hobiny, M. Marin, Photo-thermal interactions in a
+382 (2021) 113058. semi-conductor material with cylindrical cavities and variable ther-
+[49] J.L. Wang, H.F. Li, Surpassing the fractional derivative: concept of mal conductivity, J. Taiban Univ. Sci. 14 (1) (2020) 1369—1376.
+the memory-dependent derivative, Comput. Math. Appl. 62 (2011) [73] S. Kim, A simple direct estimation of temperature-dependent thermal
+1562—1567. conductivity with Kirchhoff transformation, Int. Commun, Heat Mass
+[50] J.L. Wang, H.F. Li, On numerical solution of the memory dependent Transfer 28 (4) (2001) 537—544.
+partial differential equations, Adv. Appl. Math. 6 (4) (2017) [74] A.E. Abouelregal, H.E. Dargail, Memory and dynamic response of a
+637—643. thermoelastic functionally graded nanobeams due to a periodic heat
+[51] I.A. Abbas, M.I.A. Othman, Plane waves in generalized thermo- flux, Mech. Based Design of Struct. Mach. 51 (4) (2023) 2154—2176.
+microstretch elastic solid with thermal relaxation using finite [75] M.A. Ezzat, A.S. El-Karamany, A.A. El-Bary, On dual-phase-lag
+element method, Int. J. Thermophys. 33 (2012) 2407—2423. thermoelasticity theory with memory-dependent derivative, Mech.
+[52] I.A. Abbas, R. Kumar, V. Chawla, Response of thermal source in a Adv. Mater. Struct. 24 (11) (2017) 908—916.
+transversely isotropic thermoelastic half-space with mass diffusion [76] A.E. Abouelregal, Generalized thermoelastic MGT model for a
+by using a finite element method, Chin. Phys. B 21 (2012) 084601. functionally graded heterogeneous unbounded medium containing a
+[53] S. Mondal, A. Sur, Studies on piezoelectric vibrations in thermo- spherical hole, Euro. Phys. J. Plus. 137 (8) (2022) 953.
+elasticmicrobeam resonator with memory and nonlocal effects, The J. [77] M.A. Ezzat, A.A. El-Bary, M.A. Fayik, Fractional Fourier law with
+Strain Anal. Engrng. Des. 60 (3) (2025) 180—195. three-phase lag of thermoelasticity, Mech. Adv. Mater. Struct. 20 (8)
+[54] A. Sur, Magneto-photo-thermoelastic interaction in a slim strip (2013) 593—602.
+characterized by hereditary features with two relaxation times, Mech. [78] A.E. Abouelregal, M. Marin, A. Ochsner, The influence of a non-
+Time-Dependent Mater. 28 (2024) 1465—1490. local moore-gibson-thompson heat transfer model on an underlying
+[55] P. Lute, L. Khalsa, N. Chandel, V. Varghese, Photothermoelastic thermoelastic material under the model of memory-dependent de-
+behavior of fractal semiconductor media in noninteger-dimensional rivatives, Cont. Mech. Thermodyn. 35 (2) (2023) 545—562.
+space via memory and nonlocal effects, Acta Mech. 236 (2025) [79] S. Banik, S.H. Mallik, M. Kanoria, A unified genealized thermo-
+4007—4024. elasticity fromulation: applicaton to an infinite body with a cylin-
+[56] N. Chandel, L. Khalsa, V. Varghese, Thermoelastic diffusion inter- drical cavity and variable material properties, Int. J. Appl. Mech.
+action of fractal medium with non-integer dimensional space via Engrng. 14 (2009) 113—126.
+nonlocality and memory effect, J. Therm. Stress. 48 (10) (2025) [80] H.H. Sherief, A.M. Abd El-Latief, A one-dimensional fractional
+1314—1337. order thermoelastic problem for a spherical cavity, Math. Mech.
+[57] D.J. Halsted, D.E. Brown, Zakian’s technique for inverting laplace Solids 20 (5) (2015) 512—521.
+transforms, The Chem Engrng J. 3 (1972) 312—313. [81] A. Sur, Photo-thermoelastic interaction in a semiconductor with cy-
+[58] A.M.S. Mahdy, M.A. Abdou, D.S. Mohamed, Computational lindrical cavity due to memory-effect, Mech. Time-Dependent Mater.
+methods and dynamical analysis for studying (1+1) dimensional 28 (2024) 1219—1243.

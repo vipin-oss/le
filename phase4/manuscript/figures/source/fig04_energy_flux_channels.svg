@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="380" viewBox="0 0 500 380" font-family="Arial, sans-serif">
+  <text x="250" y="25" text-anchor="middle" font-size="16" font-weight="bold">Energy Flux Channels at Piezothermoelastic Interface</text>
+  <g transform="translate(50,70)">
+    <circle cx="40" cy="40" r="30" fill="#e74c3c" opacity="0.2" stroke="#e74c3c" stroke-width="2"/>
+    <text x="40" y="35" text-anchor="middle" font-size="11" font-weight="bold" fill="#e74c3c">Mechanical</text>
+    <text x="40" y="52" text-anchor="middle" font-size="9" fill="#e74c3c">sigma_ji v_i</text>
+    <text x="40" y="68" text-anchor="middle" font-size="9">Stress power across surface</text>
+    <text x="40" y="82" text-anchor="middle" font-size="9">(work done by tractions)</text>
+  </g>
+  <g transform="translate(230,70)">
+    <circle cx="40" cy="40" r="30" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="2"/>
+    <text x="40" y="35" text-anchor="middle" font-size="11" font-weight="bold" fill="#3498db">Electrical</text>
+    <text x="40" y="52" text-anchor="middle" font-size="9" fill="#3498db">-phi D_dot_i</text>
+    <text x="40" y="68" text-anchor="middle" font-size="9">Electric potential x</text>
+    <text x="40" y="82" text-anchor="middle" font-size="9">displacement rate</text>
+  </g>
+  <g transform="translate(410,70)">
+    <circle cx="40" cy="40" r="30" fill="#2ecc71" opacity="0.2" stroke="#2ecc71" stroke-width="2"/>
+    <text x="40" y="35" text-anchor="middle" font-size="11" font-weight="bold" fill="#2ecc71">Thermal</text>
+    <text x="40" y="52" text-anchor="middle" font-size="9" fill="#2ecc71">(T0/T) K_i T_,i</text>
+    <text x="40" y="68" text-anchor="middle" font-size="9">Heat conduction normalized</text>
+    <text x="40" y="82" text-anchor="middle" font-size="9">by reference temperature</text>
+  </g>
+  <rect x="50" y="160" width="400" height="70" fill="#f9f9f9" stroke="#333" stroke-width="1.5" rx="6"/>
+  <text x="250" y="185" text-anchor="middle" font-size="13" font-weight="bold">Total normal acoustic energy flux:</text>
+  <text x="250" y="210" text-anchor="middle" font-size="14" fill="#2c3e50">P = -Re[sigma_13 u_dot_1 + sigma_33 u_dot_3 - phi D_dot_3 + (T0/T) K_3 T_,3]</text>
+  <line x1="50" y1="280" x2="450" y2="280" stroke="#333" stroke-width="3"/>
+  <text x="120" y="260" text-anchor="middle" font-size="11" font-weight="bold">TS medium</text>
+  <text x="380" y="260" text-anchor="middle" font-size="11" font-weight="bold">HPS medium</text>
+  <text x="250" y="295" text-anchor="middle" font-size="10">Interface x3 = 0</text>
+  <path d="M100,320 L180,280" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="130" y="305" font-size="9" fill="#e74c3c">Incident flux</text>
+  <path d="M320,320 L380,280" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="350" y="305" font-size="9" fill="#2ecc71">Transmitted flux</text>
+  <path d="M250,320 L180,280" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#arrowhead)"/>
+  <text x="250" y="305" text-anchor="middle" font-size="9" fill="#e74c3c">Reflected flux</text>
+  <rect x="50" y="340" width="400" height="30" fill="#e8f6f3" stroke="#1abc9c" stroke-width="1" rx="4"/>
+  <text x="250" y="355" text-anchor="middle" font-size="10">Energy conservation: sum R + sum T + A = 1</text>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

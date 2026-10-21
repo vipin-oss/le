@@ -1,0 +1,1549 @@
+ThecurrentissueandfulltextarchiveofthisjournalisavailableonEmeraldInsightat:
+https://www.emerald.com/insight/0961-5539.htm
+fl
+Re ection at the free surface of Orthotropic
+piezo-hygro-
+the orthotropic piezo-hygro-
+thermo-elastic
+medium
+thermo-elastic medium
+AnandKumarYadav 3535
+DepartmentofMathematics,ShishuNiketanModelSeniorSecondarySchool,
+Chandigarh,India,and Received17April2023
+Revised21June2023
+M.S.BarakandVipinGupta Accepted22June2023
+DepartmentofMathematics,IndiraGandhiUniversityMeerpur,Rewari,India
+Abstract
+Purpose–Thispaperaimstostudytheimpactofpyro-electricity,moistureandtemperaturediffusivityon
+the energy distribution of plane waves at the free surface of an orthotropic piezo-hygro-thermo-elastic
+medium.
+Design/methodology/approach–Thisstudypresentsthenovelcreationofgoverningequationsforan
+anisotropic piezothermoelastic medium with moisture impact, which is a significant contribution of this
+paper.
+Findings–Inadditiontoprovidingnumericaldatafortheamplituderatiosandenergyratiosofreflected
+waves,thisstudyidentifiesfivedifferentkindsofcoupledreflectedplanewaves,namely,quasi-longitudinalP
+wave,quasi-thermalwave,quasi-transversewave,quasi-moisturewaveandelectricpotentialwave.
+Researchlimitations/implications–Thegraphicalanalysisexaminestheimpactofvariousfactors,
+suchastheangleofincidence,moistureandtemperaturediffusivity,pyro-electricityandfrequency,onenergy
+distribution.
+Practical implications – Thispaper’sresultssignificantlyimpactthedevelopmentofmoreefficient
+piezoelectricmaterialsandtheirapplicationsingeophysics.
+Originality/value–Theauthorsofthesubmitteddocumentinitiatedandproduceditcollectively,with
+equalcontributionsfromallmembers.
+Keywords Piezoelectric,Pyro-electricity,Moisture,Hygro-thermal,Reflection,Amplituderatios,
+Energyratios
+PapertypeResearchpaper
+Nomenclature
+H =Thermaltemperature;
+c =Elasticstiffnesstensor;
+ijkl
+r =Density;
+f =Electricalpotential;
+E =Electricfielddensity;
+i
+td =Pyro-electricconstants;
+i, i
+J =Moistureconcentrationpotential;
+InternationalJournalofNumerical
+MethodsforHeat&FluidFlow
+Theauthor,MrVipinGupta,appreciatestheCSIR,NewDelhi,forfundingthisworkFileNumber Vol.33No.10,2023
+pp.3535-3560
+09/1293(0003)/2019-EMR-I. ©EmeraldPublishingLimited
+Disclosurestatement:Theauthorsdeclaredthatthereisnopotentialconflictofinterest.
+DOI10.1108/HFF-04-
+0
+2
+9
+0
+6
+2
+1
+3
+-
+-
+5
+0
+5
+2
+3
+08
+9
+HFF qm =Coupledmoisturediffusivities;
+ij
+33,10 aT =Couplingthermalmaterialcoefficients;
+ij
+DT =Temperaturediffusivity;
+ij
+bm =Moisturemodulitensor;
+ij
+S =Entropy;
+e =Componentofstrain;
+3536 ij
+bT =Thermalmodulitensor;
+ij
+D =Electricdisplacement;
+i
+h ,« =Piezo-thermalmodulitensors;
+ijr ij
+s =Componentsofthestress;
+ij
+C =Specificheatatconstantstrain;
+E
+K =Moisturediffusionconstant;
+m
+QT =Coupledthermaldiffusivity;
+ij
+v =Poisson’sratio;
+Dm =Moisturediffusivity;
+ij
+G =Shearmodulus;and
+d =Kroneckardelta.
+ij
+1.Introduction
+Mostmodernengineeringmaterials,suchasbiotissues,concrete,compositesandfoams,are
+heatsensitive(thermoscopic)andhygroscopicbecauseofthematerial’sporosity,crackand
+atomic structure. Smart materials, especially piezoelectric materials, can combine
+mechanical,electricalandhygro-thermalpropertiestoimprovetheperformanceofnetworks
+throughactivestiffening,activedampingandreducingthesizeofvibrations(Smith,2005).
+Heatandmoisturecannotbedisregardedwhenaddressingthemechanicsofthesematerials
+andstructures(Sihetal.,1986;Hens,2012).“Hygro-thermaleffect”referstotheinteraction
+betweentemperatureandmoisture.Inlightofthis,thatiscrucialtocontinueresearchingthe
+piezoelectriccompositematerialsbehaveinahygro-thermalenvironment.
+Piezoelectric materials have garnered much attention in the domains of actuation,
+sensing,intelligentstructuresandmechanicalsystems.Theterminology“piezoelectricity”
+describes a crystal’s capacity to produce a voltage when stressed mechanically.
+PiezoelectricitywasinitiallydiscoveredbytheCuriebrothers(CurieandCurie,1880).The
+governingequationforcouplingbetweenthetemperatureandpiezoelectricmaterial(piezo-
+thermo-elastic material)hasbeendevelopedbyMindlin(1974).Thefundamentalphysical
+laws for piezo-thermo-elastic materials have been investigated by Nowacki (1978, 1979).
+Researchersandengineersputalotofeffortintoperfectpiezoelectricmaterialsinthepast
+few decades and made their commercial use a reality. Lewis and his team investigated
+different heat and fluid flow issue models, as described in references (Lewis and Garner,
+1972;Lewisetal.,1991,1997,2004).Marinetal.(2013)conductedastudyonthetheoryof
+thermoelasticity,whichincorporatesheatconductionindeformablebodiesandaccountsfor
+the influence of two temperatures. Alzahraniet al. (2020) used the eigenvalues methodto
+investigateatwo-dimensionalporousmaterialwithvaryingconductivity,includingweak,
+strongandnormalconductivity.Numerousresearchershaveinvestigatedvariousproblems
+relatedtothereflectionandtransmissionofplanewaves(SharmaandMarin,2013;Marin
+etal.,2017;Yadav,2020,2022a;Pathaniaetal.,2022;Yadav,2022b;Pathaniaetal.,2023).
+Raja et al. (2004b), using the virtual work concept, demonstrate the impact of active
+stiffness on the dynamic behavior of piezo-hygro-thermo-elastic (PHTE) laminates and a
+coupledpiezoelectricfiniteelementformulationwithahygro-thermalstrainfieldhasbeen
+developed.PHTEcurvedandflatplateactuationandsensingbehaviorwithactivecontrol Orthotropic
+weredemonstratedbyRajaetal.(2004a),usingthefirst-ordersheardeformationtheoryand
+piezo-hygro-
+hygro-thermalstrain.BasedonPHTEdifferentialequations,Wangetal.(2005)investigated
+thermo-elastic
+the moisture impact on the response history and distribution of dynamical stresses in
+medium
+piezoelectricactuatorlayersduringfreevibration.Thetemperature,moistureandothernon-
+linear effects on the mathematical modeling of piezoelectric intelligent structures using
+different vibration control approach and relevant software have been reviewed by Gupta
+3537
+etal.(2011).
+Dini and Abolbashari (2016) investigated the thick-walled cylinder formed of
+functionallygradedpiezosmartmaterialsinthecontextofanon-axisymmetricPHTE
+mechanicalstress.Thegeneralsteady-statesolutionforthree-dimensionalPHTEuses
+the potential theory technique from Zhao et al. (2018). Zenkour and Alghanmi (2021)
+analyzedthestressanddeformationofsandwichplateswithafunctionallygradedcore
+and piezoelectric material faces with electro-mechanical-hygro-thermo sinusoidal
+loadings. The energy ratio at various types of interfaces, including fluid, elastic,
+semiconductor and piezo-thermo-elastic, has been studied by Yadav (2021a, 2021b,
+2021c),Guptaandhisteam(Guptaetal.,2023b;Baraketal.,2023a;Guptaetal.,2023a;
+Barak et al., 2023b; Barak andGupta, 2023; Gupta and Barak, 2023) and analyzed the
+effects of moisture, magnetic fields, phase lags, memory-dependent and fractional
+derivatives.
+Basedontheliterature,piezoelectricmaterialsareextensivelyusedinavarietyofreal-
+worldapplications.Still,thesematerials’behaviorattheorthotropicPHTEmedium’sfree
+surfaceisnotfullyunderstood.Theobjectiveistocreateanewmathematicalmodelforsuch
+a medium, solve the reflection problem using the plane wave method and examine the
+effects of moisture and temperature diffusivities, moisture content, pyro-electricity and
+frequencyonthedistributionofenergyratio.
+2.Basicequationsofpiezo-hygro-thermo-elasticmedium
+(cid:1)Follo(cid:3)wingSzekeres(2000,2012),Fourier’sheatfluxqF
+i
+dependsuponthetemperaturediffusivity
+DT andcanbeexpressedasqF ¼(cid:2)DTH;.InFick’slaw,themoisturefluxpotential(fF)
+ij i (cid:4) ij (cid:5) i
+depends upon the moisture diffusivity Dm and can be expressed as fF ¼(cid:2)Dmm;. But
+ij i ij i
+numerous experimental results (Sih et al., 1986) show that heat and moisture impact the
+temperaturefieldandthemoisturecontent.TheDufourandSoreteffectsarerepresentativeof
+thecouplingofheatandmoisture.TheDufoureffectinvolvesthetransportofheatbecauseof
+non-uniformmoistureconcentration.Incontrast,theSoreteffectdescribestheflowofmoisture
+arising from a non-uniform temperature within a solid material with a uniform moisture
+distribution.BecauseofDufourflux(qd)andSoretflux(fs),cross-couplingdiffusivitiesqm,QT
+ij ij
+comeintoexistencesuchthatqd i ¼(cid:2)qm ij m; i ,f i s ¼(cid:2)QT ij H ;i .
+FollowingtheworksofGuptaetal.(2023b),Szekeres(2000,2012),HosseiniandGhadiri
+Rad (2017) and Yadav et al. (2022), the total heat flux q, total moisture flux f and the
+i i
+fundamentalrelationsforacoupledanisotropicPHTEmediumare:
+q ¼(cid:2)DTH; (cid:2)qmm;; (2.1)
+i ij i ij i
+f ¼(cid:2)Dmm;; (cid:2)QTH;: (2.2)
+i ij i ij i
+HFF Thepiezo-hygro-electricmediumfacilitatesthepropagationofvarioustypesofwaves,
+33,10 includingthermal,elastic,moistureandelectromagneticwaves.Theconstitutiveequations
+aregivenas:
+D ¼h e þ«E þtHþdm;E ¼(cid:2)f;; (2.3)
+i ijk jk ij j i i i i
+3538 bTH
+rH S _ ¼(cid:2)q;;rH S¼Hþ ij 0 e (cid:2)H tf;; (2.4)
+0 i j 0 rC kk 0 i i
+E
+(cid:2)q; ¼DTH; þqmm; ; (2.5)
+i j ij ij ij ij
+9
+J _ ¼(cid:2)f;; =
+i j
+bmDmm ; (2.6)
+J ¼mþ ij ij 0 e (cid:2)m df; ;
+K kk 0 i i
+m
+(cid:2)f; ¼Dmm; þQTH; ; (2.7)
+i j ij ij ij ij
+s ¼c e (cid:2)h E þbTHþbmm; (2.8)
+ij ijkl kl ijk k ij ij
+2Gv
+where c ¼ dd þGdd þGdd; i;j;k;l ¼1;2;3:
+ijkl 1(cid:2)2v ij kl ik jl il jk
+Now, introduce the compact notation by replacing the pairs of indices ij or kl with single
+indicesporqandtakingthevalues1,2,3,4,5and6accordingto:
+ijorkl: 11 22 33 23or32 31or13 12or21
+porq: 1 2 3 4 5 6
+Thus,c !c ,h !h:
+ijkl pq ikl ip
+9
+s
+s
+1
+1
+1
+2
+¼
+¼
+c
+c
+1
+6
+1
+6
+u
+ðu
+1;
+1
+1
+;2
+þ
+þ
+c 1
+u
+2
+2
+u
+;1
+2
+Þ
+;2
+;
+þc 13 u 3;3 (cid:2)bT 1 H(cid:2)bm 1 mþh 31 f; 3 ;>>>>>>=
+s
+13
+¼c
+55
+ðu
+1;3
+þu
+3;1
+Þþh
+15
+f;
+1
+;
+(2.9)
+s
+s
+2
+2
+2
+3
+¼
+¼
+c
+c
+1
+4
+2
+4
+u
+ðu
+1;
+2
+1
+;3
+þ
+þ
+c 2
+u
+2
+3
+u
+;2
+2
+Þ
+;2
+þ
+þ
+h
+c
+2
+2
+4
+3
+f
+u 3
+;
+;
+2
+3
+;
+(cid:2)bT 2 H(cid:2)bm 2 mþh 32 f; 3 ;>>>>>>;
+s 33 ¼c 13 u 1;1 þc 23 u 2;2 þc 33 u 3;3 (cid:2)bT 3 H(cid:2)bm 3 mþh 33 f; 3 ;
+9
+D 1 ¼h 15 ðu 1;3 þu 3;1 Þ(cid:2)« 11 f; 1 ; =
+D 2 ¼h 24 ðu 2;3 þu 3;2 Þ(cid:2)« 22 f; 2 ; : (2.10)
+D 3 ¼h 31 u 1;1 þh 32 u 2;2 þh 33 u 3;3 (cid:2)« 33 f; 3 þt 3 Hþd 3 m
+Equationofmotion: Orthotropic
+piezo-hygro-
+s ji;j ¼ru€ i : (2.11) thermo-elastic
+medium
+Usingequations(2.1),(2.4)and(2.5),weget:
+bTH
+DTH; þqmm; (cid:2)H_ (cid:2) i 0u_ ; þH tf_; ¼0: (2.12) 3539
+i ii i ii rC j j 0 i i
+E
+Usingequations(2.2),(2.6)and(2.7),weget:
+Dm i m; ii þQT i H; it (cid:2)m_ (cid:2) bm i K Dm i m 0 u_ j;j þm 0 d i f_; i ¼0: (2.13)
+m
+Theelectricdisplacementequation(2.3)canbeexpressedas:
+D i;i ¼0)D 1;1 þD 2;2 þD 3;3 ¼0; (2.14)
+wherebT ¼bTd,bm ¼bmd,qm ¼qmd,QT ¼QTd,DT ¼DTd,Dm ¼Dmd,and,i,j
+ij i ij ij i ij ij i ij ij i ij ij i ij ij i ij
+isnotsummed.
+3.Problemformulation
+We consider a homogeneous orthotropic PHTE half-space with the Cartesian coordinate
+system(x,y,z)inuniforminitialmoisturem andtemperatureH anddesignatesuchthat
+0 0
+they¼0.Thehygro-thermo-elasticplanewavespropagateinthexzplanesuchthatallfield
+!
+variablesdependonx,z,tandthedisplacementvectorisrepresentedas u ¼ðu;0;wÞ.The
+governingequation(2.9)–(2.14)inthexzplanecanbewrittenas:
+@2u @2u @2w @2f @H @m
+c þc þðc þc Þ þðh þh Þ (cid:2)bT (cid:2)bm ¼ru€; (3.1)
+11@x2 55@z2 13 55 @x@z 31 15 @x@z 1 @x 1 @x
+@2u @2w @2w @2f @2f @H @m
+ðc þc Þ þc þc þh þh (cid:2)bT (cid:2)bm ¼rw€; (3.2)
+13 55 @x@z 55@x2 33 @z2 15@x2 33 @z2 3 @z 3 @z
+(cid:6) (cid:7)
+@2H @2H @2m @2m @H H @2u @2w @2f
+DT þDT þqm þqm (cid:2) (cid:2) 0 bT þbT þH t ¼0; (3.3)
+1 @x2 3 @z2 1 @x2 3 @z2 @t rC 1 @x@t 3 @z@t 0 3@z@t
+E
+(cid:6) (cid:7)
+@2H @2H @2m @2m @m m @2u @2w @2f
+QT þQT þDm þDm (cid:2) (cid:2) 0 bTDm þbTDm þm d ¼0;
+1 @x2 3 @z2 1 @x2 3 @z2 @t K 1 1 @x@t 3 3 @z@t 0 3@z@t
+m
+(3.4)
+@2u @2w @2w @2f @2f @H @m
+ðh þh Þ þh þh (cid:2)« (cid:2)« þt þd ¼0: (3.5)
+15 31 @x@z 15 @x2 33 @z2 11 @x2 33 @z2 3 @z 3 @z
+where bT ¼ðc þc ÞaT þc aT, bT ¼2c aT þc aT, bm ¼ðc þc Þam þc am
+1 11 12 11 13 33 3 13 11 33 33 1 11 12 11 13 33
+and bm ¼2c am þc am, aT;aT are the constants of linear thermal expansion, and
+3 13 11 33 33 11 33
+am;am aretheconstantsofmoistureexpansion.
+11 33
+HFF 4.Plane-wavesolutionandreflectionfromthefreesurface
+33,10 Letusassumetheplanewavesolutionoftheform:
+(cid:4) (cid:5)
+ðu;w;f;H;mÞ¼ u0;w0;f0;H0;m0 ðzÞeıðvt(cid:2)kxÞ; (4.1)
+whereu0,w0,f0,H0 andm0 arethefunctionofzonly;kandvarethewavenumberand
+3540 angularfrequency,respectively.
+Equations (3.1)–(3.5) with the aid of equation (4.1) yield a homogenous system of
+equationsinv,kandfiveunknownsu0,w0,f0,H0andm0as:
+XR¼0; (4.2)
+where:
+2 3 2 3
+a þc D2 (cid:2)a D (cid:2)a D a a u0
+X¼ 6 6 6 6 6 4 11 a a a 21 31 D 55 a 22 a a (cid:2) 32 1 c D D 2 33 D2 a 23 (cid:2) (cid:2) (cid:2) a a 1 3 h 3 3 3 D D 3 D2 a a 34 (cid:2) (cid:2) bT 3 1 Q D 4 D T 3 T D D 2 2 a a 35 (cid:2) b (cid:2) m 3 1 D q 5 D m 3 m D D 2 2 7 7 7 7 7 5 R¼ 6 6 6 6 4H f w0 0 0 7 7 7 7 5 ;
+a 41 D a (cid:2) 42 h D2 « D2 4 (cid:2) 3 a 44 (cid:2)tD 3 45 (cid:2)d D 3 m0
+51 52 33 33 53 3 3
+and a ¼ rv2 (cid:2) c k2, a ¼ (c þ c )ık, a ¼ (h þ h )ık, a ¼bTık, a ¼bmık,
+11 11 12 13 55 13 31 15 14 1 15 1
+D ¼ @/@z, a 21 ¼ (c 13 þ c 55 )ık, a 22 ¼ c 55 k2 (cid:2) rv2, a 23 ¼ h 15 k2, a 31 ¼H 0 r b C T 1 e kv , a 32 ¼H o r b C T 3 e ıv ,
+a 33 ¼T 0 t 3 ıv,a 34 ¼k2DT 1 þıv,a 35 ¼k2qm 1 ,a 41 ¼m0 b K T 1 D m m 1 kv ,a 42 ¼m0 b K T 3 m Dm 3 ıv ,a 43 ¼m 0 d 3 ıv,
+a ¼QTk2,a ¼k2Dmþıv,a ¼(h þh )ık,a ¼h k2,a ¼« k2.
+44 1 45 1 51 15 31 52 15 53 11
+Thecoefficientmatrixdeterminantinequation(4.2)mustbenulltoobtainasolutionthat
+isnottrivial,whichresultsinthefollowingcharacteristicsequation:
+(cid:4) (cid:5)(cid:8) (cid:9)
+B D10þB D8þB D6þB D4þB D2þB u0ðzÞ;w0ðzÞ;f0ðzÞ;m0ðzÞ;H0ðzÞ ¼0;
+0 1 2 3 4 5
+(4.3)
+ThecoefficientsofthisequationarewritteninAppendix.
+Equation(4.3)canbefactoredas:
+(cid:1) (cid:3)(cid:1) (cid:3)(cid:1) (cid:3)(cid:1) (cid:3)(cid:1) (cid:3)(cid:8) (cid:9)
+D2(cid:2)l2 D2(cid:2)l2 D2(cid:2)l2 D2(cid:2)l2 D2(cid:2)l2 u0ðzÞ;w0ðzÞ;f0ðzÞ;m0ðzÞ;H0ðzÞ ¼0:
+1 2 3 4 5
+(4.4)
+With the help of MATLAB software, the roots of equation (4.3) were determined and
+arrangedindecreasingorder.Therootsl,l,l,l andl representthevelocitiesoffive
+1 2 3 4 5
+reflected plane waves, that is, quasi-longitudinal P (QP) wave, quasi-thermal (QT) wave,
+quasi-transverse(QS)wave,quasi-moisture(QM)wave andelectricpotential(QEP)wave,
+respectively.
+5.Reflectioncoefficient
+A plane wave making an angle u with the z-axis, incident at the free surface of
+0
+homogenousorthotropicPHTEhalf-space.Thisresultsinfivewavesreflected,asshown
+inFigure1.
+The formal solutions for the mechanical displacements, electric potential, temperature Orthotropic
+andmoistureintheconsideredmediumare: piezo-hygro-
+X5 X5 thermo-elastic
+u0ðzÞ¼ A 0i e(cid:2)l izþ A i el iz; (5.1) medium
+i¼1 i¼1
+X5 X5 3541
+w0ðzÞ¼ p
+i
+A
+0i
+e(cid:2)l izþ p
+i
+A
+i
+el iz; (5.2)
+i¼1 i¼1
+X5 X5
+f0ðzÞ¼ q
+i
+A
+0i
+e(cid:2)l izþ q
+i
+A
+i
+el iz; (5.3)
+i¼1 i¼1
+X5 X5
+H0ðzÞ¼ r
+i
+A
+0i
+e(cid:2)l izþ r
+i
+A
+i
+el iz; (5.4)
+i¼1 i¼1
+X5 X5
+m0ðzÞ¼ s
+i
+A
+0i
+e(cid:2)l izþ s
+i
+A
+i
+el iz (5.5)
+i¼1 i¼1
+where:
+2 3 2 3 (cid:2)1 2 3
+6 6 4 q p r i i i 7 7 5 ¼ 6 6 6 4 a 22 a a (cid:2) 1 3 2 2 c l l 3 i i 3 l2 i a 23 (cid:2) a (cid:2) a 13 3 h l 3 l 3 i 3 i l2 i (cid:2)a 3 (cid:2) 4 a b þ 1 T 3 4 D l i T 3 l2 i (cid:2)a (cid:2) 35 b a þ 1 m 3 5 q l m 3 i l2 i 7 7 7 5 6 6 6 4 (cid:2)a 11 l a i (cid:2) a 31 2 c 1 55 l2 i 7 7 7 5 :
+s a l (cid:2)a l (cid:2)a þQTl2 (cid:2)a þDml2 a
+i 42 i 43 i 44 3 i 45 3 i 41
+6.Boundaryconditions
+Assumethefollowingappropriateboundaryconditionsatz¼0as:
+@H @m
+s ¼0; s ¼0; ¼0; ¼0; D ¼0 (6.1)
+33 31 @z @z 3
+Figure1.
+Geometryofthe
+problem
+HFF Usingequations(5.1)–(5.5),wecanseethattheboundaryrequirementsaremetifandonlyif:
+33,10
+sinu k
+0 ¼ ; (6.2)
+v v
+0
+wherev istheincidentwavevelocity.
+3542 0
+Equations (4.1) and (5.1)–(5.5) are used in boundary conditions (6.1) with the help of
+equation(6.2)toproduceasystemoffivenonhomogeneousequationsas:
+2 32 3 2 3
+D D D D D X Q
+11 12 13 14 15 1 1
+6 6 D 21 D 22 D 23 D 24 D 25 7 7 6 6X 2 7 7 6 6Q 2 7 7
+6 6 D 31 D 32 D 33 D 34 D 35 7 7 6 6X 3 7 7 ¼6 6Q 3 7 7 ; (6.3)
+4D D D D D 54 X 5 4 Q 5
+41 42 43 44 45 4 4
+D D D D D X Q
+51 52 53 54 55 5 5
+where:
+A
+X ¼ i;i¼1(cid:2)5
+i A*
+ForincidenceQPwave:A*¼A ,Q ¼D0;i¼1(cid:2)5.
+01 i i1
+ForincidenceQTwave:A*¼A ,Q ¼D0;i¼1(cid:2)5.
+02 i i2
+ForincidenceQSwave:A*¼A ,Q ¼D0;i¼1(cid:2)5.
+03 i i3
+ForincidenceQMwave:A*¼A ,Q ¼D0;i¼1(cid:2)5.
+04 i i4
+ForincidenceQEPwave:A*¼A ,Q ¼D0;i¼1(cid:2)5.
+05 i i5
+(cid:1) (cid:3)
+D ¼ (cid:2)c ıkþc lp þh lq (cid:2)bTr (cid:2)bms ;j¼1(cid:2)5
+1j 13 33 j j 33 j j 3 j 3 j
+(cid:1) (cid:3)
+D0 ¼ c ıkþc lp þh lq þbTr þbms ;j¼1(cid:2)5
+1j 13 33 j j 33 j j 3 j 3 j
+(cid:8) (cid:4) (cid:5) (cid:9)
+D ¼ c l(cid:2)ıkp (cid:2)h qık ;j¼1(cid:2)5;
+2j 55 j j 15 j
+(cid:8) (cid:4) (cid:5) (cid:9)
+D0 ¼ c lþıkp þh qık ;j¼1(cid:2)5
+2j 55 j j 15 j
+D ¼rl;j¼1(cid:2)5;
+3j j j
+D0 ¼rl;j¼1(cid:2)5;
+3j j j
+D ¼sl;j¼1(cid:2)5
+4j j j
+D0 ¼sl;j¼1(cid:2)5 Orthotropic
+4j j j
+(cid:4) (cid:5) piezo-hygro-
+D ¼ (cid:2)h ıkþh lp (cid:2)« lq þtr þd s ;j¼1(cid:2)5 thermo-elastic
+5j 31 33 j j 33 j j 3 j 3 j
+medium
+(cid:4) (cid:5)
+D0 ¼ h ıkþh lp (cid:2)« lq (cid:2)tr (cid:2)d s ;j¼1(cid:2)5
+5j 31 33 j j 33 j j 3 j 3 j
+3543
+7.Energyratios
+Considertheenergydistributionamongseveralreflectedwavesatasurfaceelementwitha
+unit area. For an orthotropic PHTE material, following Achenbach (1975), the normal
+acousticfluxatafreesurfacez¼0isgivenby:
+!
+H @H m @m
+P ¼(cid:2)Re s u_ þs w_ (cid:2)fD þDT þDm ; (7.1)
+31 33 3 3 H @z 3 m @z
+0 0
+whereRefortherealportion,theabovebarrepresentsthecomplexconjugate.
+Theaverageenergyofincidentwavesatz¼0:
+!
+<P inc;i >¼(cid:2)Re ı 2 v p (cid:2) i D0 1i þD0 2i (cid:2)q i D(cid:2)0 5i (cid:2) ıv D H T 3 r i D(cid:2)0 3i (cid:2) ıv D m m 3 s i D(cid:2)0 4i jA 0i j2;i¼1(cid:2)5;
+0 0
+(7.2)
+8
+>>>>>>>>< i
+i
+¼
+¼
+1
+2
+;
+;
+f
+f
+o
+o
+r
+r
+i
+i
+n
+n
+c
+c
+i
+i
+d
+d
+e
+e
+n
+n
+t
+t
+Q
+Q
+P
+T
+w
+w
+a
+a
+v
+v
+e
+e
+where i¼3; forincidentQSwave :
+>>>>>>>>:
+i¼4; forincidentQMwave
+i¼5; forincidentQEPwave
+Theaverageenergyofreflectedwavesatz¼0:
+!
+<P ref;i >¼Re ı 2 v p (cid:2) i D 1i þD 2i (cid:2)q i D(cid:2) 5i (cid:2) ıv D H T 3 r i D(cid:2) 3i (cid:2) ıv D m m 3 s i D(cid:2) 4i jA i j2;i¼1(cid:2)5: (7.3)
+o o
+Theenergyratiosof:
+reflectedwaves;E ¼
+<P
+ref;i
+>
+;i¼1(cid:2)5; (7.4)
+i <P
+inc;i
+>
+HFF X5 <P >
+interactionwaves;E ¼ E ; whereE ¼ mn ;i¼1(cid:2)5; (7.5)
+33,10
+(cid:1)
+int
+m;n¼1;m6¼n
+mn mn <P
+inc;i
+>
+and <P mn >¼Reı 2 v p n D 1m A m A n þD 2m A m A n (cid:2)q n D 5m A m A n (cid:2) lv D T T 3 o r n D 3m A m A n (cid:2) lv D m m 3 o
+X5
+s D A A Þ:Theenergywillbeconservedif E þE ¼1.
+n 4m m n i int
+3544
+i¼1
+8.Specialcase(hygro-thermo-elasticcase)
+Neglectingorthotropy,piezoelectricandpyro-electriceffects,wehave:
+c lþ 2m, c ¼ lþ 2m, c ¼ l, c ¼ m, bT ¼bT ¼bT, bm ¼bm ¼bm,
+11 ¼ 33 13 55 1 3 1 3
+DT ¼DT ¼DT,Dm ¼Dm ¼Dm,qm ¼qm ¼Dm,QT ¼QT ¼DT,d ¼ 0,t ¼ 0,« 5
+1 3 1 3 1 3 T 1 3 m 3 3 11
+« ¼ 0, h ¼ h ¼ h ¼ 0, the above analysis reduces to hygro-thermo-elastic model
+33 31 33 15
+studiedbyYadavetal.(2022).
+Equations(3.1)–(3.5)reducetothefollowingequations:
+@2u @2u @2w @H @m
+ðlþ2mÞ þm þððlþmÞÞ þ(cid:2)bT (cid:2)bm ¼ru€; (8.1)
+@x2 @z2 @x@z @x @x
+@2u @2w @2w @H @m
+ðlþmÞ þm þðlþ2mÞ þ(cid:2)bT (cid:2)bm ¼rw€; (8.2)
+@x@z @x2 @z2 @z @z
+(cid:6) (cid:7) (cid:6) (cid:7) (cid:6) (cid:7)
+@2H @2H @2m @2m @H bTH @2u @2w
+DT þ þDm þ (cid:2) (cid:2) 0 þ ¼0; (8.3)
+@x2 @z2 T @x2 @z2 @t rC @x@t @z@t
+E
+(cid:6) (cid:7) (cid:6) (cid:7) (cid:6) (cid:7)
+@2H @2H @2m @2m @m bmm Dm @2u @2w
+DT þ þDm þ (cid:2) (cid:2) 0 þ ¼0: (8.4)
+m @x2 @z2 @x2 @z2 @t K @x@t @z@t
+m
+9.Numericalresultsanddiscussion
+FollowingSihetal.(1986),Yadavetal.(2022)andGuptaetal.(2023b,2023a),thecadmium
+selenide material constants and hygro parameters have been considered, as shown in
+Table1.
+Using MATLAB programming, equations (7.4) and (7.5) are computed for the CdSe
+materialunderhygro-thermalconditions.Theenergyratiosagainsttheangleofincidence
+0°<u #90°,forincidentplanewavesattheinterfacex ¼ 0arecomputedandplotted
+0 3
+graphicallyfordifferentvaluesofmoistureconcentrationm ,moisturediffusivityDm,Dm,
+0 1 3
+temperaturediffusivityDT,DT,pyro-electricparameters ,d andfrequencyv.Theenergy
+1 3 3 3
+ratiosofreflectedQPwave,QTwave,QSwave,QMwaveandQEPwave,forincidenceQP
+wave,arerepresentedbyE ,E ,E ,E andE ,respectively.TheE denotesthe
+RP RT RS RM REP int
+totalinteractionenergyratiobetweenthereflectedwaves.Theimage’ssub-figuredepicts
+overlapping curves to illustrate the differences precisely and clearly, making it easier to
+understandtheintricatedetailsatthemicro-scale.
+Figures2(a)–2(f)depictedthevariationsoftheenergyratioswithanangleofincidence
+0°<u#90°fordifferentvaluesofmoistureconcentrationm ¼10%,20%,30%and40%.
+0 0
+In Figures 2(a), 2(b) and 2(d), it is observed that as the angle of incidence increases, the
+Orthotropic
+Symbol Value
+piezo-hygro-
+c 74.1(cid:3)109Nm(cid:2)2 thermo-elastic
+11
+c 12 45.2(cid:3)109Nm(cid:2)2 medium
+c 39.3(cid:3)109Nm(cid:2)2
+13
+c 83.6(cid:3)109Nm(cid:2)2
+13
+c 13.2(cid:3)109Nm(cid:2)2
+55
+H 298K 3545
+0
+bT 6.21(cid:3)105Nm(cid:2)2K(cid:2)1
+1
+bT 5.51(cid:3)105Nm(cid:2)2K(cid:2)1
+3
+m 10%
+0
+Dm 0.8(cid:3)10(cid:2)4m2sec(cid:2)1
+D 1 m 1.1(cid:3)10(cid:2)4m2sec(cid:2)1
+h 3 0.347Cm(cid:2)2
+33
+qm 18.5(cid:3)10(cid:2)5m2(0K)/sec(%HO)
+q 1 m 18(cid:3)10(cid:2)5m2(0K)/sec(%H 2 O)
+K 3 2.2(cid:3)10(cid:2)8Kg/msM 2
+m
+« 8.26(cid:3)10(cid:2)11C2N(cid:2)1m(cid:2)2
+11
+« 9.03(cid:3)10(cid:2)11C2N(cid:2)1m(cid:2)2
+33
+t (cid:2)2.9(cid:3)10(cid:2)6Cm(cid:2)2K(cid:2)1
+3
+bm 0.8(cid:3)10(cid:2)4Nm(cid:2)2K(cid:2)1
+b 1 m 1.1(cid:3)10(cid:2)4Nm(cid:2)2K(cid:2)1
+C 3 260Jkg(cid:2)1K(cid:2)1
+E
+P 5,504kgm(cid:2)3
+h (cid:2)0.160Cm(cid:2)2
+31
+h (cid:2)0.138Cm(cid:2)2
+15
+DT 50m2sec(cid:2)1
+1
+DT 75m2sec(cid:2)1
+3
+v 750Hz
+QT 31.3(cid:3)10(cid:2)6m2(%HO)/sec(0K)
+1 2
+QT 33.3(cid:3)10(cid:2)6m2(%HO)/sec(0K)
+d 3 0.34Cm(cid:2)2K 2 –1 Table1.
+3 Valuesofthe
+Source:Compiledbyauthors materialsconstants
+magnitudeofE ,E andE alsoincreasesexceptfortheE ,whichshowsaminimum
+RP RT RM RT
+valueforthem ¼10%,atacertainangleu¼35°.However,asthemoistureconcentration
+0
+increases,themagnitudeofE ,E andE decreases.Themoistureimpactisnegligible
+RP RT RM
+near the normal incidence, but it becomes significant as the angle of incidence increases,
+withthemaximumimpactoccurringatthegrazingincidence.
+Figure 2(c) presents an intriguing finding: at normal incidence, the magnitude of E
+RS
+experiencesasteepdeclineastheangleofincidenceisincreased0°#u#20°,andoncethe
+incidenceanglereachesgrazingincidence,theE followsanearlystationarypath.Uponcloser
+RS
+inspectionofthemagnifiedsub-indentpictureconfirmsthatthemagnitudeofE significantly
+RS
+decreaseswithanincreaseintheamountofmoisture.MovingontoFigure2(e),werevealthat
+astheangleofincidencerises,theE firstgoestomaximaatanangleu¼3°,thenshowsa
+REP
+minimum at u¼ 19°; after a further rise of angle 19° # u# 90°, the magnitude of E
+REP
+increasesveryslowly.Notably,anincreaseinthemoisturecontentleadstoadecreaseinthe
+magnitudeofthe acrosstherangeofanglesexamined.InFigure2(f),wecanseethatthe
+EREP
+interaction energy starts out as negative but becomes positive as the incidence angle is
+increasedtou¼53°.Theimpactofmoistureontheinteractionenergyatdifferentanglesof
+incidenceisevidentinthesub-indentimage.
+HFF
+33,10
+3546
+Figure2.
+Figures2(a)–2(f).
+Variationsofthe
+energyratiosof
+reflectedquasi-
+longitudinalPwave
+(E ),quasi-thermal
+RP
+wave(E ),quasi-
+RT
+transversewave
+(E ),quasi-moisture
+RS
+wave(E ),electric
+RM
+potentialwave(E )
+REP
+andinteraction
+energy(E )are
+int
+depictedagainstthe
+angleofincidenceu,
+0
+0<u<90°for
+0
+differentvaluesof
+moisture
+concentrationm ¼
+0
+10%,20%,30%and
+40%,atwhen
+DT ¼50,DT ¼75,
+D 1 m¼0:8(cid:3) 3 10(cid:2)4,
+D 1 m¼1:1(cid:3)10(cid:2)4,
+t 3 ¼(cid:2)2.94(cid:3)10(cid:2)6,
+3
+d ¼0.34andv¼
+3
+750Hz Source: Created by author’s
+The variations of the energy ratios against the an(cid:1)gle of incidence u
+0
+, 0 < u
+0
+# 90° fo(cid:3)r
+differentvaluesofmoisturediffusivityparameters Dm ¼0:8(cid:3)10 (cid:2)4;Dm ¼1:1(cid:3)10 (cid:2)4 ,
+(cid:1) (cid:3) (cid:1) 1 3 (cid:3)
+(cid:4)
+Dm ¼1:0(cid:3)10 (cid:2)4;Dm ¼1:3(cid:3)10 (cid:2)4 , Dm ¼1:2(cid:3)10 (cid:2)4;Dm ¼1:5(cid:3)10 (cid:2)4 and Dm ¼
+1 3 1 3 1
+1:4(cid:3)10 (cid:2)4;Dm ¼1:7(cid:3)10 (cid:2)4ÞareshowninFigures3(a)–3(f).Thefollowingobservationsare
+3
+made:
+(cid:4) Increasing the moisture diffusivity parameters leads to an increase in the Orthotropic
+magnitudesofE RP ,E RS .Thisincreaseinmagnitudebecomesmorepronouncedas piezo-hygro-
+theangleofincidenceincreases0<u #90°.
+0 thermo-elastic
+(cid:4) At first, the magnitude of E RT is not significantly affected by the moisture medium
+diffusivity parameters. However, after a certain angle u > 29°, the impact of
+0
+moisturediffusivityparametersbecomesnoticeable.
+(cid:4) ThemagnitudeoftheE intherangeofangleofincidence0<u #50°increases 3547
+RM 0
+withmoisturediffusivity.Afterafurtherincreaseintheangleofincidence50°<u
+0
+#90°,theeffectofmoisturediffusivityisinvertedandbecomesmoresubstantial.
+Figure3.
+Figures3(a)–3(f).
+Variationsofthe
+energyratiosof
+reflectedquasi-
+longitudinalPwave
+(E ),quasi-thermal
+RP
+wave(E ),quasi-
+RT
+transversewave
+(E ),quasi-moisture
+RS
+wave(E ),electric
+RM
+potentialwave(E )
+REP
+andinteraction
+energy(E )are
+int
+depictedagainstthe
+angleofincidenceu,
+0
+0<u<90°for
+0
+differentvaluesof
+moisturediffusivity
+parameter
+(cid:4)
+Dm¼1:8(cid:3)10(cid:2)4;
+1 (cid:5)
+Dm¼1:1(cid:3)10(cid:2)4 ,
+(cid:4)3
+Dm¼1:0(cid:3)10(cid:2)4;
+1 (cid:5)
+Dm¼1:3(cid:3)10(cid:2)4 ,
+(cid:4)3
+Dm¼1:2(cid:3)10(cid:2)4;
+1 (cid:5)
+Dm¼1:5(cid:3)10(cid:2)4
+3
+and
+(cid:4)
+Dm¼1:4(cid:3)10(cid:2)4;
+1 (cid:5)
+Dm¼1:7(cid:3)10(cid:2)4 ,at
+3
+whenm ¼10%,
+0
+DT ¼50;DT ¼75,
+1 3
+Dm¼0:8(cid:3)10(cid:2)4,
+1
+Dm¼1:1(cid:3)10(cid:2)4,
+3
+t¼(cid:2)2.94(cid:3)10(cid:2)6,
+3
+d ¼0.34andv¼
+3
+Source: Created by author’s 750Hz
+HFF (cid:4) Near the normal incidence, the impact of moisture diffusivity parameters on
+33,10 magnitudesofE REP ,E int isnegligible.However,astheangleofincidencerises,the
+impact of moisture diffusivity parameters becomes more apparent and profound,
+particularlynearthegrazingincidence.
+Figures4(a)–4(f)displa(cid:4)ythevariationsofthe(cid:5)en(cid:4)ergyratiosfordifferen(cid:5)tv(cid:4)aluesofthetemperatur(cid:5)e
+diffu(cid:4)sivity parameter DT (cid:5)¼50;DT ¼75 , DT ¼100;DT ¼125 , DT ¼150;DT ¼175
+3548 1 3 1 3 1 3
+and DT ¼200;DT ¼225 .BycarefullyanalyzingFigures4(a)–4(f),severalkeyobservations
+1 3
+canbemade:
+Figure4.
+Figures4(a)–4(f).
+Variationsofthe
+energyratiosof
+reflectedquasi-
+longitudinalPwave
+(E ),quasi-thermal
+RP
+wave(E ),quasi-
+RT
+transversewave
+(E ),quasi-moisture
+RS
+wave(E ),electric
+RM
+potentialwave(E )
+REP
+andinteraction
+energy(E )are
+int
+depictedagainstthe
+angleofincidenceu,
+0
+0<u<90°for
+0
+differentvaluesof
+temperature
+d(cid:4)iffusivityparameter
+(cid:4)DT
+1
+¼50;DT
+3
+¼75Þ,
+DT ¼100;
+1
+D(cid:4) T
+3
+¼125Þ,
+DT ¼150;
+1
+D(cid:4) T
+3
+¼175Þ,
+DT ¼200;
+1
+DT ¼225Þ,atwhen
+3
+m ¼10%,
+0
+Dm¼0:8(cid:3)10(cid:2)4,
+1
+Dm¼1:1(cid:3)10(cid:2)4,
+3
+t¼(cid:2)2.94(cid:3)10(cid:2)6,
+3
+d ¼0.34andv¼
+3
+750Hz Source: Created by author’s
+(cid:4) Itwasfoundthatnosignificantimpactoftemperaturediffusivityhasbeenobservedin Orthotropic
+themagnitudesofE RP andE RM intherangeofconsideredincidenceangles. piezo-hygro-
+(cid:4) ThemagnitudeofE intherangeofangleofincidence0<u #35°increaseswith thermo-elastic
+RT 0
+temperaturediffusivity.Afterafurtherincreaseintheangleofincidence35°<u
+0
+#
+medium
+90°,theeffectoftemperaturediffusivityisinvertedandbecomesmoresubstantial.
+(cid:4) Increasing the temperature diffusivity parameters leads to a decrease in the
+magnitude of E in 0 < u # 90° and E in 0 < u # 15°. The impact of 3549
+RS 0 REP 0
+temperature diffusivity on E and E is more prominent at lower angles of
+RS REP
+incidenceandbecomesprogressivelyweakeratlargeranglesofincidence.
+(cid:4) TheeffectoftemperaturediffusivityparametersonmagnitudesofE issignificant
+int
+atanglesclosertonormalincidence.However,astheangleofincidencerises0<u
+0
+# 90°, the impact of temperature diffusivity parameters becomes less pronounced
+andeventuallydisappears.
+Figures5(a)–5(b)depicttheeffectofpyro-electricparametersonvariationsoftheenergyratiosfor
+differentvaluesofpyroelectricparameters(t ¼(cid:2)2.94(cid:3)10(cid:2)6,d ¼0.34)and(t ¼(cid:2)3.04(cid:3)
+3 3 3
+10(cid:2)6andd ¼0.44),(t¼(cid:2)3.14(cid:3)10(cid:2)6andd ¼0.54)and(t¼(cid:2)3.24(cid:3)10(cid:2)6andd ¼0.64).
+3 3 3 3 3
+AthoroughexaminationofFigures5(a)–5(f)willrevealsomesignificantfindingsthatwillhelpto
+betterunderstandpyro-electricityandaidinmakingmoreeducatedchoices:
+(cid:4) Increasingthepyro-electricparametersleadstoadecreaseinthemagnitudesofE ,
+RP
+E .Thisdecreaseinmagnitudebecomesmoresignificantastheangleofincidence
+RM
+increases0<u #90°.
+0
+(cid:4) In the beginning, the magnitude of E is not significantly affected by the pyro-
+RT
+electricparameters.However,afteracertainangleu > 35°,theinfluenceofpyro-
+0
+electricparametersbecomesapparent.
+(cid:4) Uponcloserexaminationofthemagnifiedsub-indentpictureconfirmsthatthemagnitudes
+of E , E decreases significantly as the pyro-electric parameters are increased. This
+RS REP
+decreaseinmagnitudebecomesmostpronouncednearthenormalincidence.
+(cid:4) At near the normal and grazing incidence angles, the magnitude of E decreases
+int
+with the increase of pyro-electric parameters. However, in the mid-range of
+incidenceangles,anoppositetrendisobserved.
+Thevariationsoftheenergyratiosfordifferentvaluesoffrequencyv¼450Hz,550Hz,650
+Hzand750HzareshowninFigures6(a)–6(f).Theimportantfindingsareasfollows:
+(cid:4) IncreasingthefrequencyleadstoanincreaseinthemagnitudesofE ,E .Thisincrease
+RP RM
+inmagnitudebecomesmorenoticeableastheangleofincidenceincreases0<u#90°.
+0
+(cid:4) Initially, the magnitudes of E and E are not significantly affected by the
+RT int
+frequency. However, after a certain angle u > 35°, the influence of frequency
+0
+becomesapparentanddirectlyproportionaltoE andE .
+RT int
+(cid:4) Closer examination of the magnified sub-indent picture confirms that the
+magnitudesofE andE decreasessignificantlyasthefrequencyisincreasedin
+RS REP
+therangeofangleofincidence0<u #52°and0<u #22°,respectively.
+0 0
+10.Conclusions
+ThereflectionbehaviorofPHTEwavesintheorthotropicmediumisinvestigatedbyusingthe
+normalmodetechnique.Theamplituderatioswereusedtoobtaintheenergyratiosofvarious
+reflectedwavesforanincidentQPwave.Thefollowingconclusionsmaybemadeinlight:
+HFF (cid:4) Theenergyratiosofallreflectedwavesdropwithincreasingmoisturecontentand
+33,10 pyro-electricity.Thisimpactismorepronouncedathigherincidenceangles.
+(cid:4) Atgrazingincidence, theenergy ratiosof all reflectedwaves except E decrease
+RM
+withincreasingmoisturediffusivity.
+(cid:4) TheenergyratiosofallreflectedwavesexceptE ,E nearthenormalincidence
+RP RM
+aresufficientlyaffectedbytemperaturediffusivity.
+3550
+(cid:4) At higher incidence angles, the energy ratios of all reflected waves increase with
+increasingfrequency.
+(cid:4) These results might potentially affect the design of innovative materials and
+compositeswithspecializedmoisture,frequencyandpyro-electriccharacteristicsfor
+improvedenergystorageandconversion.
+Figure5.
+Figures5(a)–5(f).
+Variationsofthe
+energyratiosof
+reflectedquasi-
+longitudinalPwave
+(E ),quasi-thermal
+RP
+wave(E ),quasi-
+RT
+transversewave
+(E ),quasi-moisture
+RS
+wave(E ),electric
+RM
+potentialwave(E )
+REP
+andinteraction
+energy(E )are
+int
+depictedagainstthe
+angleofincidenceu,
+0
+0<u<90°for
+0
+differentvaluesofthe
+pyro-electric
+parameter
+ðt ¼(cid:2)2:94(cid:3)10
+3
+(cid:2)6;d ¼0:34Þ,
+3
+ðt ¼(cid:2)3:04(cid:3)10
+3
+(cid:2)6;d ¼0:44Þ,
+3
+ðt ¼(cid:2)3:14(cid:3)
+3
+(cid:4)10(cid:2)6;d
+3
+¼0:54Þ,
+t ¼(cid:2)3:24(cid:3)10(cid:2)6;
+3
+d ¼0:64Þ,atwhen
+3
+m ¼10%,DT ¼50,
+0 1
+DT ¼75,
+D 3 m¼0:8(cid:3)10(cid:2)4,
+D 1 m¼1:1(cid:3)10(cid:2)4,
+t 3 ¼(cid:2)2.94(cid:3)10(cid:2)6,
+3
+d ¼0.34andv¼
+3
+750Hz
+Source: Created by author’s
+Orthotropic
+piezo-hygro-
+thermo-elastic
+medium
+3551
+Figure6.
+Figures6(a)–6(f).
+Variationsofthe
+energyratiosof
+reflectedquasi-
+longitudinalPwave
+(E ),quasi-thermal
+RP
+wave(E ),quasi-
+RT
+transversewave
+(E ),quasi-moisture
+RS
+wave(E ),electric
+RM
+potentialwave(E )
+REP
+andinteraction
+energy(E )are
+int
+depicted,againstthe
+angleofincidenceu,
+0
+0<u<90°for
+0
+differentvaluesof
+frequencyv¼450
+Hz,550Hz,650Hz
+and750Hz,atwhen
+m ¼10%,DT ¼50,
+0 1
+DT ¼75,
+Dm¼0:8(cid:3) 3 10(cid:2)4,
+D 1 m¼1:1(cid:3)10(cid:2)4,
+t 3 ¼(cid:2)2.94(cid:3)10(cid:2)6
+Source:Created by authors 3 andd ¼0.34
+3
+References
+Achenbach,J.D.(1975),WavePropagationinElasticSolids,Elsevier,NewYork.
+Alzahrani, F., Hobiny, A., Abbas, I. and Marin, M. (2020), “An eigenvalues approach for a two-
+dimensional porous medium based upon weak, normal and strong thermal conductivities”,
+Symmetry(Basel),Vol.12No.5,p.848,doi:10.3390/sym12050848.
+Barak, M.S. andGupta,V. (2023), “Memory-dependentandfractional order analysisof the initially
+stressed piezo-thermoelastic medium”, Mechanics of Advanced Materials and Structures,
+pp.1-15,doi:10.1080/15376494.2023.2211065.
+Barak,M.S.,Kumar,R.,Kumar,R.andGupta,V.(2023a),“Energyanalysisattheboundaryinterfaceof
+elastic and piezothermoelastic half-spaces”, Indian Journal of Physics, Vol. 97 No. 8,
+pp.2369-2383,doi:10.1007/s12648-022-02568-w.
+HFF Barak, M.S., Kumar, R., Kumar, R. and Gupta, V. (2023b), “The effect of memory and stiffness on
+33,10 energy ratios at the interface of distinct media”, Multidiscipline Modeling in Materials and
+Structures,Vol.19No.3,pp.464-492,doi:10.1108/MMMS-10-2022-0209.
+Curie,J.andCurie,P.(1880),“Developmentbycompressionofpolarelectricityinhemihedralcrystals
+withslantedfaces”,BulletindelaSoci(cid:3)et(cid:3)eMin(cid:3)eralogiquedeFrance,Vol.3No.4,pp.90-93,doi:
+10.3406/bulmi.1880.1564.
+3552 Dini,A.andAbolbashari,M.H.(2016),“Hygro-thermo-electro-elasticresponseofafunctionallygraded
+piezoelectric cylinder resting on an elastic foundation subjected to non-axisymmetric loads”,
+International Journal of Pressure Vessels and Piping, Vol. 147, pp. 21-40, doi: 10.1016/j.
+ijpvp.2016.09.005.
+Gupta,V. andBarak, M.S. (2023), “Quasi-P wave throughorthotropic piezo-thermoelastic materials
+subjecttohigherorderfractionalandmemory-dependentderivatives”,MechanicsofAdvanced
+MaterialsandStructures,pp.1-15,doi:10.1080/15376494.2023.2217420.
+Gupta, V., Sharma, M. and Thakur, N. (2011), “Mathematical modeling of actively controlled piezo
+smart structures: a review”, Smart Structures and Systems, Vol. 8 No. 3, pp. 275-302, doi:
+10.12989/sss.2011.8.3.275.
+Gupta,V.,Kumar,R.,Kumar,R.andBarak,M.S.(2023a),“Energyanalysisattheinterfaceofpiezo/
+thermoelastichalfspaces”,InternationalJournalofNumericalMethodsforHeatandFluidFlow,
+Vol.33No.6,pp.2250-2277,doi:10.1108/HFF-11-2022-0654.
+Gupta,V.,Kumar,R.,Kumar,M.,Pathania,V.andBarak,M.S.(2023b),“Reflection/transmissionof
+plane waves at the interface of an ideal fluid and nonlocal piezothermoelastic medium”,
+InternationalJournalofNumericalMethodsforHeatandFluidFlow,Vol.33No.2,pp.912-937,
+doi:10.1108/HFF-04-2022-0259.
+Hens,H.(2012),“Buildingphysics–heat,airandmoisture:fundamentalsandengineeringmethodswith
+examplesandexercises”,Ernst&SohnVerlagfürArchitekturundtechnischeWissenschaften
+GmbH&Co.KG,Berlin.
+Hosseini,S.M.andGhadiriRad,M.H.(2017),“Applicationofmeshlesslocalintegralequationsfortwo-
+dimensionaltransientcoupledhygrothermoelasticityanalysis:moistureandthermoelasticwave
+propagationsundershockloading”,JournalofThermalStresses,Vol.40No.1,pp.40-54,doi:
+10.1080/01495739.2016.1224134.
+Lewis, R.W. and Garner, R.W. (1972), “A finite element solution of coupled electrokinetic and
+hydrodynamic flow in porous media”, International Journal for Numerical Methods in
+Engineering,Vol.5No.1,pp.41-55,doi:10.1002/nme.1620050105.
+Lewis, R.W., Huang, H.C., Usmani, A.S. and Cross, J.T. (1991), “Finite element analysis of heat
+transfer and flow problems using adaptive remeshing including application to
+solidification problems”, International Journal for Numerical Methods in Engineering,
+Vol.32No.4,pp.767-781.
+Lewis,R.W.,Navti,S.E.andTaylor,C.(1997),“AmixedLagrangian-Eulerianapproachtomodelling
+fluidflowduringmouldfilling”,InternationalJournalforNumericalMethodsinFluids,Vol.25
+No.8,pp.931-952,doi:10.1002/(SICI)1097-0363(19971030)25:8<931::AID-FLD594>3.0.CO;2-1.
+Lewis, R.W., Nithiarasu, P. and Seetharamu, K.N. (2004), Fundamentals of the Finite Element
+Method for Heat and Fluid Flow, John Wiley and Sons Ltd, The Atrium, Southern Gate,
+Chichester.
+Marin,M.,Agarwal,R.P.andMahmoud,S.R.(2013),“Modelingamicrostretchthermoelasticbody
+with two temperatures”, Abstract and Applied Analysis, Vol. 2013, pp. 1-7, doi: 10.1155/
+2013/583464.
+Marin,M.,Codarcea,L.andChirila,A.(2017),“Qualitativeresultsonmixedproblemofmicropolar
+bodies with microtemperatures”, Applications and Applied Mathematics: An International
+Journal(AAM),Vol.12No.2,p.9.
+Mindlin,R.D.(1974),“Equationsofhighfrequencyvibrationsofthermopiezoelectriccrystalplates”, Orthotropic
+InternationalJournalofSolidsandStructures,Vol.10No.6,pp.625-637,doi:10.1016/0020-7683 piezo-hygro-
+(74)90047-X.
+thermo-elastic
+Nowacki,W.(1978),“Somegeneraltheoremsofthermopiezoelectricity”,JournalofThermalStresses,
+medium
+Vol.1No.2,pp.171-182,doi:10.1080/01495737808926940.
+Nowacki, W. (1979), “Foundation of linear piezoelectricity”, in Parkus, H. (Ed.), Electro-Magnetic
+InteractionsinElasticSolidsChapter1,Springer,Wein.
+3553
+Pathania, V., Kumar, R., Gupta, V. and Barak, M.S. (2022), “Generalized plane waves in a rotating
+thermoelasticdoubleporoussolid”,InternationalJournalofAppliedMechanicsandEngineering,
+Vol.27No.4,pp.138-154,doi:10.2478/ijame-2022-0055.
+Pathania,V.,Kumar,R.,Gupta,V.andBarak,M.S.(2023),“Doubleporousthermoelasticwavesina
+homogeneous,isotropicsolidwithinviscidliquid”,ArchiveofAppliedMechanics,Vol.93No.5,
+pp.1943-1962,doi:10.1007/s00419-023-02364-w.
+Raja, S., Dwarakanathan, D., Sinha, P.K. and Prathap, G. (2004a), “Bending behavior of piezo-
+hygrothermo-elastic smart laminated composite flat and curved plates with active control”,
+Journal of Reinforced Plastics and Composites, Vol. 23 No. 3, pp. 265-290, doi: 10.1177/
+0731684404031461.
+Raja,S., Sinha, P.K.,Prathap,G. and Dwarakanathan, D.(2004b),“Influence ofactivestiffeningon
+dynamicbehaviourofpiezo-hygro-thermo-elasticcompositeplatesandshells”,JournalofSound
+andVibration,Vol.278Nos1/2,pp.257-283,doi:10.1016/j.jsv.2003.10.002.
+Sharma,K.andMarin,M.(2013),“Effectofdistinctconductiveandthermodynamictemperaturesonthe
+reflection of plane waves in micropolar elastic half-space”, University Politehnica of Bucharest
+ScientificBulletin-SeriesA-AppliedMathematicsandPhysics,Vol.75No.2,pp.121-132.
+Sih,G.C.,Michopoulos,J.G.andChou,S.C.(1986),Hygrothermoelasticity,SpringerScience\&Business
+Media,Netherlands.
+Smith, R.C. (2005), Smart Material Systems, Society for Industrial and Applied Mathematics,
+Philadelphia.
+Szekeres, A. (2000), “Analogy between heat and moisture thermo-hygro-mechanical tailoring of
+compositesbytakingintoaccountthesecondsoundphenomenon”,ComputersandStructures,
+Vol.76Nos1/3,pp.145-152,doi:10.1016/S0045-7949(99)00170-4.
+Szekeres,A.(2012),“Cross-coupledheat andmoisturetransport:part1-theory”,Journal ofThermal
+Stresses,Vol.35Nos1/3,pp.248-268,doi:10.1080/01495739.2012.637827.
+Wang,X.,Dong,K.andWang,X.Y.(2005),“Hygrothermaleffectondynamicinterlaminarstressesin
+laminatedplateswithpiezoelectricactuators”,CompositeStructures,Vol.71No.2,pp.220-228,
+doi:10.1016/j.compstruct.2004.10.004.
+Yadav,A.K.(2020),“Reflectionofplanewavesfromthefreesurfaceofarotatingorthotropicmagneto-
+thermoelastic solid half-space with diffusion”, Journal of Thermal Stresses, Vol. 44 No. 1,
+pp.86-106,doi:10.1080/01495739.2020.1842273.
+Yadav,A.K.(2021a),“Effectofimpedanceboundaryonthereflectionofplanewavesinfraction-order
+thermoelasticityinaninitiallystressedrotatinghalf-spacewithamagneticfield”,International
+JournalofThermophysics,Vol.42No.1,p.3,doi:10.1007/s10765-020-02753-1.
+Yadav,A.K.(2021b),“Reflectionofplanewavesfromtheimpedanceboundaryofamagneto-thermo-
+microstretch solid with diffusion in a fractional order theory of thermoelasticity”, Waves in
+RandomandComplexMedia,doi:10.1080/17455030.2021.1909781.
+Yadav, A.K.(2021c), “Reflection of plane waves in a micropolar thermo-diffusion porous medium”,
+WavesinRandomandComplexMedia,doi:10.1080/17455030.2021.1956014.
+Yadav, A.K. (2022a), “Reflection of plane waves in a fraction-order generalized magneto-
+thermoelasticityinarotatingtriclinicsolidhalf-space”,MechanicsofAdvancedMaterialsand
+Structures,Vol.29No.25,pp.4273-4290,doi:10.1080/15376494.2021.1926017.
+HFF Yadav, A.K. (2022b), “Reflection of magneto-photothermal plasma waves in a diffusion
+33,10 semiconductor in two-temperature with multi-phase-lag thermoelasticity”, Mechanics
+Based Design of Structures and Machines, Vol. 50 No. 12, pp. 4117-4138, doi: 10.1080/
+15397734.2020.1824797.
+Yadav,A.K.,Carrera,E.,Marin,M.andOthman,M.I.A.(2022),“Reflectionofhygrothermalwavesina
+nonlocaltheoryofcoupledthermo-elasticity”,MechanicsofAdvancedMaterialsandStructures,
+pp.1-14,doi:10.1080/15376494.2022.2130484.
+3554
+Zenkour, A.M. and Alghanmi, R.A. (2021), “Hygro-thermo-electro-mechanical bending analysis of
+sandwichplateswithFGcoreandpiezoelectricfaces”,MechanicsofAdvancedMaterialsand
+Structures,Vol.28No.3,pp.282-294,doi:10.1080/15376494.2018.1562134.
+Zhao, M., Dang, H., Fan, C. and Chen, Z. (2018), “Three-dimensional steady-state general
+solutionfortransverselyisotropichygrothermopiezoelectricmediaanditsapplicationin
+fracture”,InternationalJournalofFracture,Vol.214No.1,pp.79-95,doi:10.1007/s10704-
+018-0320-9.
+Appendix,compiledandpresentedbyauthors
+B ¼QTc h2 qm(cid:2)DTDmc h2 (cid:2)DTDmc c « þQTc c « qm
+0 3 55 33 3 3 3 55 33 3 3 33 55 33 3 33 55 33 3
+B ¼DTa c h2 (cid:2)DTDma h2 þDma c h2 (cid:2)QTa c h2 þQTa h2 qm
+1 3 45 55 33 3 3 11 33 3 34 55 33 3 35 55 33 3 11 33 3
+(cid:2) a c h2 qm(cid:2)DTDma a c þDTDma c c þDTDma a «
+44 55 33 3 3 3 13 51 33 3 3 53 33 55 3 3 12 21 33
+þ DTDma a h þDTDma a h (cid:2)DTDma c « þ DTDma c «
+3 3 13 21 33 3 3 12 51 33 3 3 11 33 33 3 3 22 55 33
+þDTDma c h þDTDma c h (cid:2)DTa c c d þ Dma bTc «
+3 3 23 55 33 3 3 52 55 33 3 43 33 55 3 3 32 3 55 33
+þDTa bmc « (cid:2)Dma bTc h (cid:2)DTa bmc h þ DTa c c «
+3 42 3 55 33 3 33 3 55 33 3 43 3 55 33 3 45 33 55 33
+þDma c c « (cid:2)DTa c d h þQTa c c d (cid:2)QTa bmc «
+3 34 33 55 33 3 42 55 3 33 3 33 33 55 3 3 32 3 55 33
+þQTa bmc h (cid:2)QTa c c « þQTa c d h (cid:2)Dma c c t
+3 33 3 55 33 3 35 33 55 33 3 32 55 3 33 3 33 33 55 3
+(cid:2)Dma c h t þQTa a c qm(cid:2)QTa c c qm(cid:2)QTa a « qm
+3 32 55 33 3 3 13 51 33 3 3 53 33 55 3 3 12 21 33 3
+(cid:2)QTa a h qm(cid:2)QTa a h qmþQTa c « qm(cid:2)QTa c « qm
+3 13 21 33 3 3 12 51 33 3 3 11 33 33 3 3 22 55 33 3
+(cid:2)QTa c h qm(cid:2)QTa c h qm (cid:2)a bTc « qmþa bTc h qm
+3 23 55 33 3 3 52 55 33 3 42 3 55 33 3 43 3 55 33 3
+(cid:2)a c c « qmþa c c qmt þa c h qmt
+44 33 55 33 3 43 33 55 3 3 42 55 33 3 3
+Orthotropic
+B ¼DTa a h2 (cid:2)DTa a h2 þDma a h2 (cid:2)Dma a h2 (cid:2)QTa a h2 piezo-hygro-
+2 3 11 45 33 3 15 41 33 3 11 34 33 3 14 31 33 3 11 35 33
+thermo-elastic
+þQTa a h2 (cid:2)a a c h2 þa a c h2 (cid:2)a a h2 qmþDma a h2
+3 15 31 33 34 45 55 33 35 44 55 33 11 44 33 3 3 14 31 33 medium
+(cid:2)QTa a h2 þQTa a h2 (cid:2)a a c h2 þa a c h2 (cid:2)a a h2 qm
+3 11 35 33 3 15 31 33 34 45 55 33 35 44 55 33 11 44 33 3
+þa a h2 qm(cid:2)DTDma a a (cid:2)DTDma a a (cid:2)DTDma a a
+14 41 33 3 3 3 12 21 53 3 3 12 23 51 3 3 13 21 52 3555
+þDTDma a a þDTDma a c (cid:2)DTDma a c (cid:2)DTDma a c
+3 3 13 22 51 3 3 11 53 33 3 3 22 53 55 3 3 23 52 55
+þDTDma a « þDTDma a h þDTDma a h þDma a a bT
+3 3 11 22 33 3 3 11 23 33 3 3 11 52 33 3 12 33 51 3
+þDma a a bTþDTa a a bmþDTa a a bmþDTa a a c
+3 13 32 51 3 3 12 43 51 3 3 13 42 51 3 3 13 45 51 33
+(cid:2)DTa a a c þDma a a c (cid:2)Dma a a c þ DTa a a d
+3 15 43 51 33 3 13 34 51 33 3 14 33 51 33 3 12 21 43 3
+þDTa a a d (cid:2)Dma a bTc þDma a bTc (cid:2)DTa a bmc
+3 13 21 42 3 3 32 53 3 55 3 33 52 3 55 3 42 53 3 55
+þDTa a bmc (cid:2)DTa a c c (cid:2)Dma a c c (cid:2)DTa a a «
+3 43 52 3 55 3 45 53 33 55 3 34 53 33 55 3 12 21 45 33
+(cid:2)DTa a a « (cid:2)Dma a a « (cid:2)Dma a a « (cid:2)DTa a a h
+3 15 21 42 33 3 12 21 34 33 3 14 21 32 33 3 13 21 45 33
+þDTa a a h (cid:2)Dma a a h þDma a a h (cid:2)DTa a a h
+3 15 21 43 33 3 13 21 34 33 3 14 21 33 33 3 12 45 51 33
+(cid:2)DTa a a h (cid:2)Dma a a h (cid:2)Dma a a h
+3 15 42 51 33 3 12 34 51 33 3 14 32 51 33
+(cid:2)DTa a c d DTa a c d þDTa a c d þDTa a c d þDma a bT«
+3 11 43 33 3 3 13 41 33 3 3 22 43 55 3 3 23 42 55 3 3 11 32 3 33
+þDma a bT« þDTa a bm« þDTa a bm« (cid:2)Dma a bTh
+3 12 31 3 33 3 11 42 3 33 3 12 41 3 33 3 11 33 3 33
+þDma a bTh (cid:2)DTa a bmh þDTa a bmh þDTa a c «
+3 13 31 3 33 3 11 43 3 33 3 13 41 3 33 3 11 45 33 33
+(cid:2)DTa a c « þDma a c « (cid:2)Dma a c « (cid:2)DTa a c «
+3 15 41 33 33 3 11 34 33 33 3 14 31 33 33 3 22 45 55 33
+(cid:2)Dma a c « (cid:2)DTa a c h (cid:2)Dma a c h (cid:2)DTa a c h
+3 22 34 55 33 3 23 45 55 33 3 23 34 55 33 3 45 52 55 33
+(cid:2)Dma a c h (cid:2)DTa a d h (cid:2)DTa a d h (cid:2)QTa a a bm
+3 34 52 55 33 3 11 42 3 33 3 12 41 3 33 3 12 33 51 3
+(cid:2)QTa a a bm(cid:2)QTa a a c þQTa a a c (cid:2)QTa a a d
+3 13 32 51 3 3 13 35 51 33 3 15 33 51 33 3 12 21 33 3
+(cid:2)QTa a a d þQTa a bmc (cid:2)QTa a bmc þQTa a c c
+3 13 21 32 3 3 32 53 3 55 3 33 52 3 55 3 35 53 33 55
+þQTa a a « þQTa a a « þQTa a a h (cid:2)QTa a a h
+3 12 21 35 33 3 15 21 32 33 3 13 21 35 33 3 15 21 33 33
+þQTa a a h þQTa a a h þQTa a c d (cid:2)QTa a c d
+3 12 35 51 33 3 15 32 51 33 3 11 33 33 3 3 13 31 33 3
+(cid:2)QTa a c d (cid:2)QTa a c d (cid:2)QTa a bm« (cid:2)QTa a bm«
+3 22 33 55 3 3 23 32 55 3 3 11 32 3 33 3 12 31 3 33
+þQTa a bmh (cid:2)QTa a bmh þDma a a t þDma a a t
+3 11 33 3 33 3 13 31 3 33 3 12 21 33 3 3 13 21 32 3
+HFF
+(cid:2)QTa a c « þQTa a c « þQTa a c « þQTa a c h þQTa a c h
+33,10 3 11 35 33 33 3 15 31 33 33 3 22 35 55 33 3 23 35 55 33 3 35 52 55 33
+þQTa a d h þQTa a d h (cid:2)Dma a c t þDma a c t þDma a c t
+3 11 32 3 33 3 12 31 3 33 3 11 33 33 3 3 13 31 33 3 3 22 33 55 3
+þDma a c t (cid:2)Dma a h t (cid:2)Dma a h t þQTa a a qmþQTa a a qm
+3 23 32 55 3 3 11 32 33 3 3 12 31 33 3 3 12 21 53 3 3 12 23 51 3
+þQTa a a qm(cid:2)QTa a a qm(cid:2)QTa a c qmþQTa a c qm
+3556 3 13 21 52 3 3 13 22 51 3 3 11 53 33 3 3 22 53 55 3
+þQTa a c qm(cid:2)QTa a « qm(cid:2)QTa a h qm(cid:2)QTa a h qm
+3 23 52 55 3 3 11 22 33 3 3 11 23 33 3 3 11 52 33 3
+þa a bTc d (cid:2)a a bTc d (cid:2)a a c c d þa a c c d (cid:2)a a bTc «
+32 43 3 55 3 33 42 3 55 3 33 44 33 55 3 34 43 33 55 3 32 45 3 55 33
+þa a bTc « þa a bmc « (cid:2)a a bmc « þa a bTc h
+35 42 3 55 33 32 44 3 55 33 34 42 3 55 33 33 45 3 55 33
+(cid:2)a a bTc h (cid:2)a a bmc h þa a bmc h (cid:2)a a c c «
+35 43 3 55 33 33 44 3 55 33 34 43 3 55 33 34 45 33 55 33
+þa a c c « (cid:2)a a c d h þa a c d h (cid:2)a a a bTqm(cid:2)a a a bTqm
+35 44 33 55 33 32 44 55 3 33 34 42 55 3 33 12 43 51 3 3 13 42 51 3 3
+(cid:2)a a a c qmþa a a c qmþa a bTc qm(cid:2)a a bTc qmþa a c c qm
+13 44 51 33 3 14 43 51 33 3 42 53 3 55 3 43 52 3 55 3 44 53 33 55 3
+þa a a « qmþa a a « qmþa a a h qm(cid:2)a a a h qm
+12 21 44 33 3 14 21 42 33 3 13 21 44 33 3 14 21 43 33 3
+þa a a h qmþa a a h qm(cid:2)a a bTh qm(cid:2)a a bT« qm
+12 44 51 33 3 14 42 51 33 3 11 42 3 33 3 12 41 3 33 3
+þa a bTh qm(cid:2)a a bTh qm(cid:2)a a c « qmþa a c « qmþa a c « qm
+11 43 3 33 3 13 41 3 33 3 11 44 33 33 3 14 41 33 33 3 22 44 55 33 3
+þa a c h qmþa a c h qm(cid:2)a a bmc t þa a bmc t þa a c c t
+23 44 55 33 3 44 52 55 33 3 32 43 3 55 3 33 42 3 55 3 33 45 33 55 3
+(cid:2)a a c c t þa a c h t (cid:2)a a c h t (cid:2)a a a qmt (cid:2)a a a qmt
+35 43 33 55 3 32 45 55 33 3 35 42 55 33 3 12 21 43 3 3 13 21 42 3 3
+þa a c qmt (cid:2)a a c qmt (cid:2)a a c qmt (cid:2)a a c qmt þa a h qmt
+11 43 33 3 3 13 41 33 3 3 22 43 55 3 3 23 42 55 3 3 11 42 33 3 3
+þa a h qmt
+12 41 33 3 3
+Orthotropic
+B ¼ð(cid:2)a a a (cid:2)a a a ÞDTDm piezo-hygro-
+3 11 22 53 11 23 52 3 3
+thermo-elastic
+þða a a (cid:2)a a a (cid:2)a a a þa a a ÞDTh
+15 23 41 11 23 45 11 45 52 15 41 52 3 33 medium
+þða a a (cid:2)a a a ÞDT«
+15 22 41 11 22 45 3 33
+þða a a (cid:2)a a a (cid:2)a a a (cid:2)a a a ÞDTbm
+11 43 52 11 42 53 12 41 53 13 41 52 3 3 3557
+þða a a a þa a a a þa a a a (cid:2)a a a a þa a a a
+12 21 45 53 12 23 45 51 13 21 45 52 13 22 45 51 15 21 42 53
+(cid:2)a a a a þa a a a þa a a a (cid:2)a a a c þa a a c
+15 21 43 52 15 22 43 51 15 23 42 51 11 45 53 33 15 41 53 33
+þa a a c þa a a c þa a a d þa a a d þa a a d
+22 45 53 55 23 45 52 55 11 22 43 3 11 23 42 3 12 23 41 3
+(cid:2)a a a d ÞDT þða a a (cid:2)a a a (cid:2)a a a þa a a ÞDmh
+13 22 41 3 3 14 23 31 11 23 34 11 34 52 14 31 52 3 33
+þða a a (cid:2)a a a ÞDm«
+14 22 31 11 22 34 3 33
+þða a a (cid:2)a a a (cid:2)a a a (cid:2)a a a ÞDmbT
+11 33 52 11 32 53 12 31 53 13 31 52 3 3
+þða a a þa a a þa a a (cid:2)a a a ÞDmt
+11 22 33 11 23 32 12 23 31 13 22 31 3 3
+þða a a a þa a a a þa a a a (cid:2)a a a a þa a a a
+12 21 34 53 12 23 34 51 13 21 34 52 13 22 34 51 14 21 32 53
+(cid:2)a a a a þa a a a þa a a a (cid:2)a a a c þa a a c
+14 21 33 52 14 22 33 51 14 23 32 51 11 34 53 33 14 31 53 33
+þa a a c þa a a c ÞDm
+22 34 53 55 23 34 52 55 3
+þða a a (cid:2)a a a þa a a (cid:2)a a a (cid:2)a a a þa a a Þh2
+11 35 44 11 34 45 14 31 45 14 35 41 15 31 44 15 34 41 33
+þða a a (cid:2)a a a þa a a (cid:2)a a a (cid:2)a a a þa a a Þh bm
+11 34 43 11 33 44 13 31 44 13 34 41 14 31 43 14 33 41 33 3
+þða a a (cid:2)a a a (cid:2)a a a þa a a þa a a (cid:2)a a a Þh bT
+11 33 45 11 35 43 13 31 45 13 35 41 15 31 43 15 33 41 33 3
+þða a a (cid:2)a a a þa a a (cid:2)a a a þa a a (cid:2)a a a Þh t
+11 32 45 11 35 42 12 31 45 12 35 41 15 31 42 15 32 41 33 3
+þðQTa a a (cid:2)QTa a a þQTa a a (cid:2)QTa a a þa a a a
+3 11 23 35 3 15 23 31 3 11 35 52 3 15 31 52 13 21 34 45
+(cid:2)a a a a (cid:2)a a a a þa a a a þa a a a (cid:2)a a a a
+13 21 35 44 14 21 33 45 14 21 35 43 15 21 33 44 15 21 34 43
+þa a a a (cid:2)a a a a þa a a a (cid:2)a a a a (cid:2)a a a a
+12 34 45 51 12 35 44 51 14 32 45 51 14 35 42 51 15 32 44 51
+þa a a a þa a a c (cid:2)a a a c þa a a c (cid:2)a a a c
+15 34 42 51 23 34 45 55 23 35 44 55 34 45 52 55 35 44 52 55
+(cid:2)a a a d þa a a d (cid:2)a a a d þa a a d (cid:2)a a a d þa a a d
+11 32 44 3 11 34 42 3 12 31 44 3 12 34 41 3 14 31 42 3 14 32 41 3
+þa a a qm(cid:2)a a a qmþa a a qm(cid:2)a a a qmÞh
+11 23 44 3 14 23 41 3 11 44 52 3 14 41 52 3 33
+þða a a (cid:2)a a a þa a a (cid:2)a a a þa a a (cid:2)a a a Þ« bm
+11 32 44 11 34 42 12 31 44 12 34 41 14 31 42 14 32 41 33 3
+þða a a (cid:2)a a a (cid:2)a a a þa a a (cid:2)a a a þa a a Þ« bT
+11 35 42 11 32 45 12 31 45 12 35 41 15 31 42 15 32 41 33 3
+HFF
+þðQTa a a (cid:2)QTa a a þa a a c (cid:2)a a a c þa a a qm
+33,10 3 11 22 35 3 15 22 31 22 34 45 55 22 35 44 55 11 22 44 3
+(cid:2)a a a qmÞ«
+14 22 41 3 33
+þða a a (cid:2)a a a (cid:2)a a a þa a a (cid:2)a a a þa a a Þbmt
+11 33 42 11 32 43 12 31 43 12 33 41 13 31 42 13 32 41 3 3
+þðQTa a a (cid:2)QTa a a þQTa a a þQTa a a þa a a a
+3558 3 11 32 53 3 11 33 52 3 12 31 53 3 13 31 52 12 33 44 51
+(cid:2)a a a a þa a a a (cid:2)a a a a (cid:2)a a a a þa a a a
+12 34 43 51 13 32 44 51 13 34 42 51 14 32 43 51 14 33 42 51
+(cid:2)a a a c þa a a c þa a a c (cid:2)a a a c Þbm
+32 44 53 55 33 44 52 55 34 42 53 55 34 43 52 55 3
+þða a a a (cid:2)a a a a (cid:2)a a a a þa a a a þa a a a
+12 35 43 51 12 33 45 51 13 32 45 51 13 35 42 51 15 32 43 51
+(cid:2)a a a a þa a a c (cid:2)a a a c (cid:2)a a a c þa a a a
+15 33 42 51 32 45 53 55 33 45 52 55 35 42 53 55 13 35 42 51
+þa a a a (cid:2)a a a a þa a a c (cid:2)a a a c (cid:2)a a a c
+15 32 43 51 15 33 42 51 32 45 53 55 33 45 52 55 35 42 53 55
+þa a a c þa a a d (cid:2)a a a d þa a a d (cid:2)a a a d þa a a d
+35 43 52 55 11 32 43 3 11 33 42 3 12 31 43 3 12 33 41 3 13 31 42 3
+(cid:2)a a a d þa a a qm(cid:2)a a a qmþa a a qmþa a a qmÞbT
+13 32 41 3 11 42 53 3 11 43 52 3 12 41 53 3 13 41 52 3 3
+þða a a a (cid:2)a a a a (cid:2)a a a a þa a a a þa a a a
+12 21 35 43 12 21 33 45 13 21 32 45 13 21 35 42 15 21 32 43
+(cid:2)a a a a þa a a c (cid:2)a a a c (cid:2)a a a c þa a a c þa a a c
+15 21 33 42 11 33 45 33 11 35 43 33 13 31 45 33 13 35 41 33 15 31 43 33
+(cid:2)a a a c (cid:2)a a a c þa a a c (cid:2)a a a c þa a a c (cid:2)a a a qm
+15 33 41 33 22 33 45 55 22 35 43 55 23 32 45 55 23 35 42 55 11 22 43 3
+(cid:2)a a a qm(cid:2)a a a qmþa a a qmÞt þQTa a a a (cid:2)QTa a a a
+11 23 42 3 12 23 41 3 13 22 41 3 3 3 13 22 35 51 3 12 23 35 51
+(cid:2)QTa a a a (cid:2)QTa a a a (cid:2)QTa a a a þQTa a a a
+3 13 21 35 52 3 12 21 35 53 3 15 21 32 53 3 15 21 33 52
+(cid:2)QTa a a a (cid:2)QTa a a a þQTa a a c (cid:2)QTa a a c
+3 15 22 33 51 3 15 23 32 51 3 11 35 53 33 3 15 31 53 33
+(cid:2)QTa a a c (cid:2)QTa a a c (cid:2)QTa a a d (cid:2)QTa a a d (cid:2)QTa a a d
+3 22 35 53 55 3 23 35 52 55 3 11 22 33 3 3 11 23 32 3 3 12 23 31 3
+þQTa a a d þQTa a a qmþQTa a a qm(cid:2)a a a a c þa a a a c
+3 13 22 31 3 3 11 22 53 3 3 11 23 52 3 13 34 45 51 33 13 35 44 51 33
+þa a a a c (cid:2)a a a a c (cid:2)a a a a c þa a a a c þa a a a d
+14 33 45 51 33 14 35 43 51 33 15 33 44 51 33 15 34 43 51 33 12 21 33 44 3
+(cid:2)a a a a d þa a a a d (cid:2)a a a a d (cid:2)a a a a d þa a a a d
+12 21 34 43 3 13 21 32 44 3 13 21 34 42 3 14 21 32 43 3 14 21 33 42 3
+þa a a c c (cid:2)a a a c c (cid:2)a a a c d þa a a c d þa a a c d
+34 45 53 33 55 35 44 53 33 55 11 33 44 33 3 11 34 43 33 3 13 31 44 33 3
+(cid:2)a a a c d (cid:2)a a a c d þa a a c d þa a a c d (cid:2)a a a c d
+13 34 41 33 3 14 31 43 33 3 14 33 41 33 3 22 33 44 55 3 22 34 43 55 3
+þa a a c d (cid:2)a a a c d
+23 32 44 55 3 23 34 42 55 3
+þð(cid:2)a a a a (cid:2)a a a a (cid:2)a a a a þa a a a (cid:2)a a a a
+12 21 44 53 12 23 44 51 13 21 44 52 13 22 44 51 14 21 42 53
+þa a a a (cid:2)a a a a (cid:2)a a a a þa a a c (cid:2)a a a c
+14 21 43 52 14 22 43 51 14 23 42 51 11 44 53 33 14 41 53 33
+(cid:2)a a a c (cid:2)a a a c Þqm
+22 44 53 55 23 44 52 55 3
+Orthotropic
+B ¼ða a a a þa a a a (cid:2)a a a a (cid:2)a a a a ÞDT piezo-hygro-
+4 11 22 45 53 11 23 45 52 15 22 41 53 15 23 41 52 3
+þða a a a þa a a a (cid:2)a a a a (cid:2)a a a a ÞDm thermo-elastic
+11 22 34 53 11 23 34 52 14 22 31 53 14 23 31 52 3
+medium
+þða a a a (cid:2)a a a a (cid:2)a a a a þa a a a þa a a a
+11 23 34 45 11 23 35 44 14 23 31 45 14 23 35 41 15 23 31 44
+(cid:2)a a a a þa a a a (cid:2)a a a a (cid:2)a a a a þa a a a
+15 23 34 41 11 34 45 52 11 35 44 52 14 31 45 52 14 35 41 52 3559
+þa a a a (cid:2)a a a a Þh
+15 31 44 52 15 34 41 52 33
+þða a a a (cid:2)a a a a (cid:2)a a a a þa a a a þa a a a
+11 22 34 45 11 22 35 44 14 22 31 45 14 22 35 41 15 22 31 44
+(cid:2)a a a a Þ«
+15 22 34 41 33
+þða a a a (cid:2)a a a a þa a a a (cid:2)a a a a (cid:2)a a a a
+11 33 44 52 11 32 44 53 11 34 42 53 11 34 43 52 12 31 44 53
+þa a a a (cid:2)a a a a þa a a a (cid:2)a a a a þa a a a
+12 34 41 53 13 31 44 52 13 34 41 52 14 31 42 53 14 31 43 52
+þa a a a (cid:2)a a a a Þbm
+14 32 41 53 14 33 41 52 3
+þða a a a (cid:2)a a a a (cid:2)a a a a þa a a a þa a a a
+11 32 45 53 11 33 45 52 11 35 42 53 11 35 43 52 12 31 45 53
+(cid:2)a a a a þa a a a (cid:2)a a a a þa a a a (cid:2)a a a a
+12 35 41 53 13 31 45 52 13 35 41 52 15 31 42 53 15 31 43 52
+(cid:2)a a a a þa a a a ÞbT
+15 32 41 53 15 33 41 52 3
+þða a a a (cid:2)a a a a (cid:2)a a a a þa a a a (cid:2)a a a a
+11 22 35 43 11 22 33 45 11 23 32 45 11 23 35 42 12 23 31 45
+þa a a a þa a a a (cid:2)a a a a (cid:2)a a a a þa a a a
+12 23 35 41 13 22 31 45 13 22 35 41 15 22 31 43 15 22 33 41
+(cid:2)a a a a þa a a a Þt
+15 23 31 42 15 23 32 41 3
+þða a a a (cid:2)a a a a (cid:2)a a a a þa a a a ÞQT(cid:2)a a a a a
+15 22 31 53 11 23 35 52 11 22 35 53 15 23 31 52 3 12 21 34 45 53
+þa a a a a (cid:2)a a a a a þa a a a a (cid:2)a a a a a
+12 21 35 44 53 12 23 34 45 51 12 23 35 44 51 13 21 34 45 52
+þa a a a a þa a a a a (cid:2)a a a a a (cid:2)a a a a a
+13 21 35 44 52 13 22 34 45 51 13 22 35 44 51 14 21 32 45 53
+þa a a a a þa a a a a (cid:2)a a a a a (cid:2)a a a a a
+14 21 33 45 52 14 21 35 42 53 14 21 35 43 52 14 22 33 45 51
+þa a a a a (cid:2)a a a a a þa a a a a þa a a a a
+14 22 35 43 51 14 23 32 45 51 14 23 35 42 51 15 21 32 44 53
+(cid:2)a a a a a (cid:2)a a a a a þa a a a a þa a a a a
+15 21 33 44 52 15 21 34 42 53 15 21 34 43 52 15 22 33 44 51
+(cid:2)a a a a a þa a a a a (cid:2)a a a a a þa a a a c
+15 22 34 43 51 15 23 32 44 51 15 23 34 42 51 11 34 45 53 33
+(cid:2)a a a a c (cid:2)a a a a c þa a a a c þa a a a c
+11 35 44 53 33 14 31 45 53 33 14 35 41 53 33 15 31 44 53 33
+(cid:2)a a a a c (cid:2)a a a a c þa a a a c (cid:2)a a a a c
+15 34 41 53 33 22 34 45 53 55 22 35 44 53 55 23 34 45 52 55
+þa a a a c þa a a a d (cid:2)a a a a d þa a a a d
+23 35 44 52 55 11 22 33 44 3 11 22 34 43 3 11 23 32 44 3
+(cid:2)a a a a d þa a a a d (cid:2)a a a a d
+11 23 34 42 3 12 23 31 44 3 12 23 34 41 3
+HFF
+(cid:2)a a a a d þa a a a d þa a a a d (cid:2)a a a a d þa a a a d
+33,10 13 22 31 44 3 13 22 34 41 3 14 22 31 43 3 14 22 33 41 3 14 23 31 42 3
+(cid:2)a a a a d þða a a a (cid:2)a a a a (cid:2)a a a a þa a a a Þqm
+14 23 32 41 3 14 22 41 53 11 22 44 53 11 23 44 52 14 23 41 52 3
+B ¼(cid:2)a a a a a þa a a a a (cid:2)a a a a a þa a a a a
+5 11 22 34 45 53 11 22 35 44 53 11 23 34 45 52 11 23 35 44 52
+3560
+þa a a a a (cid:2)a a a a a þa a a a a (cid:2)a a a a a
+14 22 31 45 53 14 22 35 41 53 14 23 31 45 52 14 23 35 41 52
+(cid:2)a a a a a þa a a a a (cid:2)a a a a a þa a a a a
+15 22 31 44 53 15 22 34 41 53 15 23 31 44 52 15 23 34 41 52
+Correspondingauthor
+VipinGuptacanbecontactedat:vipin.math.rs@igu.ac.in
+Forinstructionsonhowtoorderreprintsofthisarticle,pleasevisitourwebsite:
+www.emeraldgrouppublishing.com/licensing/reprints.htm
+Orcontactusforfurtherdetails:permissions@emeraldinsight.com

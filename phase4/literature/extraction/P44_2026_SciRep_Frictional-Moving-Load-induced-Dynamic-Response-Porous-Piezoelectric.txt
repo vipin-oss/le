@@ -1,0 +1,2398 @@
+Scientific Reports
+https://doi.org/10.1038/s41598-025-34351-2
+Article in Press
+Frictional moving load-induced dynamic
+response of a porous piezoelectric micro/nano
+plate with superficial parabolic discontinuity
+Received: 18 November 2025 A. R. Meghana, Soumik Das, Rachaita Dutta, Vipin Gupta, Murat Yaylacı, Faisal Muteb
+Accepted: 28 December 2025 K. Almalki, Mohammad Ghatasheh & Aymen Flah
+S
+We are providing an unedited version of this manuscript to give early access to its
+Cite this article as: Meghana A.R., Das S., S
+findings. Before final publication, the manuscript will undergo further editing. Please
+Dutta R. et al. Frictional moving load-
+E
+note there may be errors present which affect the content, and all legal disclaimers
+induced dynamic response of a porous
+R
+piezoelectric micro/nano plate with apply.
+P
+superficial parabolic discontinuity. Sci
+If this paper is publishi ng under a Transparent Peer Review model then Peer
+Rep (2025). https://doi.org/10.1038/ N
+Review reports will publish with the final article.
+s41598-025-34351-2
+I
+E
+L
+C
+I
+T
+R
+A
+© The Author(s) 2025. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit
+to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do
+not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the
+article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain
+permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+Frictional moving load-induced dynamic response of a
+porous piezoelectric micro/nano plate with superficial
+parabolic discontinuity
+Meghana A R1, Soumik Das1, Rachaita Dutta2,∗, Vipin Gupta3, Murat Yaylacı4,
+Faisal Muteb K. Almalki5, Mohammad Ghatasheh6, Aymen Flah7,8,9
+1School of Physical Sciences, Amrita Vishwa Vidyapeetham, Mysuru Campus, Karnataka, India
+2School of Computing, Amrita Vishwa Vidyapeetham, Mysuru Campus, Karnataka, India
+3Department of Mathematics, Gurugram University, Gurugram, India
+4Department of Civil Engineering, Recep Tayyip Erdogan University, 53100, Rize, Turkey
+5Department of Mathematics, Faculty of Science, Al-Baha University, Alaqiq, 65779-7738, Saudi
+Arabia
+6Department of Basic Sciences, Middle East University, Amman 11831, Jordan
+7Applied Science Research Center, Applied Science Private University, Amman, 11931, Jordan
+8ENET Centre, CEET, VSB-Technical University of Ostrava, 70800 Ostrava, Czech Republic
+9Centre for Research Impact and Outcome, Chitkara University, Punjab University, Punjab,
+Rajpura, 140401, India
+∗Corresponding author, Email: rachaita.dutta18@gmail.com
+Abstract
+S
+S
+The present paper aims to analyze the complex dynamic response of micro/nano-scale compo-
+E
+nents through investigating the stress distribution within a Nonlocal Porous Piezoelectric Layer
+R
+(NPPEL)offinitethickness. ThestudyspecificallyfocPusesonquantifyingthecombinedeffectsof
+material porosity, size-dependent elasticity, and geom etrical surface imperfections when the layer
+N
+is subjected to a load moving across its upper boundary. This comprehensive model provides a
+I
+more realistic assessment of reliability for s mall-scale smart devices. The layer’s constitutive be-
+E
+haviorismodeledusingEringen’snonLlocalelasticitytheorytoaccountfortheessentialsizeeffects
+presentatthemicro/nanoscale. CThegoverningequationsforthecoupledporousandpiezoelectric
+I
+mediumarederived,incorporatingappropriateboundaryconditionsforamovingload. Crucially,
+T
+the superficial paraboliRc discontinuity on the upper surface is handled analytically through a ro-
+bustperturbationtAechnique,allowingforthederivationofclosedanalyticalformsfortheresulting
+shearandnormalstresses. ThefinalsolutionsarethencomputedusingMathematicatoillustrate
+the transient stress fields. Numerical results demonstrate that the nonlocal parameter is highly
+effectiveatamplifyingthemagnitudeofthestresses,whichischaracteristicofthestiffeningeffect
+in nonlocal models. The depth and factor of the parabolic irregularity significantly amplify the
+stress concentrations at the interface, indicating a critical pathway for potential failure. Further-
+more, the frictional coefficient of the moving load plays a non-linear role in dictating the shear
+stress distribution, providing crucial insight into contact mechanics at the nanoscale. The core
+noveltyliesinthesimultaneousanalyticalincorporationofnonlocaleffects, porosity, andanarbi-
+trary surface irregularity under dynamic moving load conditions—a combination highly relevant
+tomicrofabrication. Themodelisdirectlyapplicabletoenhancingthedesignandperformanceas-
+sessment of MEMS/NEMS pressure sensors, ultra-thin piezoelectric energy harvesters, and other
+micro-electromechanical devices where surface quality and size effects dictate device lifespan and
+reliability.
+Keywords
+Moving load; Piezoelectric material; Porosity; Nonlocal elasticity; Parabolic irregularity; Pertur-
+bation technique
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+1. Introduction
+Smartmaterialshaveemergedaskeycomponentsacrossaerospace,civil,mechanical,andbiomed-
+ical engineering owing to their multifunctional capabilities and adaptability to complex environ-
+ments [1]. Among these, piezoelectric materials have received significant attention due to their
+dual functionality as both actuators and sensors, enabling applications ranging from structural
+health monitoring to precision control systems [2]. Their ability to convert mechanical stimuli
+into electrical signals and vice versa has motivated extensive research on the behavior of coupled
+electromechanical structures under various loading conditions [3–5].
+Dynamic problems involving moving loads have become increasingly important due to their
+relevance in transportation engineering, particularly for high-speed trains, highway systems, and
+mechanizedtransit[6,7]. Pioneeringstudiesonvehicle–bridge,vehicle–pavement,andtrain–track
+interactions have demonstrated the critical influence of moving loads on vibration, stability, and
+long-termperformanceoflayeredstructuralsystems[8–10]. Theseworkscollectivelyhighlightthat
+understandingstressdevelopmentinlayeredorheterogeneousmediaundermovingexcitationsre-
+mains a major engineering challenge, especially as structural systems become more lightweight
+and multifunctional. Historical developments in moving-load theory laid the foundation for con-
+temporary analyzes. Sneddon [11] provided one of the earliest formulations for stresses induced
+by slowly moving loads over an elastic half-space . Subsequent analytical advances by Ang [12],
+Payton [13], and Sackman [14] extended the framework to transient and finite-domain settings.
+Further studies incorporated geometric imperfections and irregularitSies; for example, Chatterjee
+and Chattopadhyay [15] examined the influence of parabolic surfSace irregularities on stress fields
+in floating ice sheets under moving loads. More recent contEributions have integrated advanced
+R
+material systems—such as functionally graded, anisotropic, or porous media—into moving-load
+P
+models [16–18].
+N
+Within this broader context, porous piezoelectric materials have gained prominence as re-
+I
+searchers seek to overcome the high density , acoustic impedance, and brittleness of conventional
+E
+piezoelectric ceramics [19]. Introducing controlled porosity leads to improved electromechanical
+L
+performance, enhanced acousticCmatching, and greater tunability of material behavior [20,21].
+Piezoelectricmaterials,owingtIotheirelectromechanicalcoupling,generateelectricchargesunder
+T
+mechanical deformation and conversely deform elastically in electric fields [22]. These materials
+R
+find wide applicatioAns in sensors, actuators, energy harvesters, and smart structures [23]. How-
+ever, monolithic piezoelectric substrates face challenges such as high density, acoustic impedance
+mismatch, and brittleness, which porous piezoelectric composites mitigate by reducing density
+and improving acoustic compatibility [24]. Porosity notably affects parameters like elastic mod-
+uli, dielectric constants, and viscosity, tailoring piezoelectric responses for applications including
+contact microphones and underwater transducers [25,26]. Sophisticated analyses of porous and
+visco-porous piezoelectric structures under dynamic loading have demonstrated the significant
+influence of both porosity distribution and viscoelastic damping on the coupled response.
+Recent investigations emphasize the critical role of imperfections and environmental factors
+on wave propagation and stress distributions in piezoelectric media. Studies by Gupta et al. [27]
+analyzed circumferential SH waves in graded cylindrical piezoelectric structures with interfacial
+imperfections. Seemaetal.[28]demonstratedthatsurfaceelasticitysignificantlyinfluencesacous-
+ticwavevelocityandenergytransmissioninpiezoelectriclayers. Wavedampingeffectsinlayered
+systems immersed in viscous fluids were explored by Cui et al. [29], while Liu et al. [30] studied
+pre-stress impacts on Love waves relevant to sensor technology. Furthermore, Kumhar et al. [31]
+highlighted wave behavior in porous piezo-composites with interfacial discontinuities, important
+forbiosensing,andMoharana[32]proposedcontinuumshear-lagmodelsdetectingstructuraldam-
+age through frequency shifts of SH waves.
+Surfaceirregularitiesandinterfaceimperfectionsfurthercomplicatestressgenerationinlayered
+piezoelectric systems. Irregular geometries introduce localized stress concentrations and signif-
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+icantly modify acoustic and elastic wave propagation, making their consideration essential for
+realistic modeling of piezoelectric plates, smart structures, and geophysical media [33,34]. Such
+geometrical deviations—whether in the form of surface corrugations, waviness, or micro-scale
+roughness—are known to cause scattering, attenuation, and mode conversion of guided waves,
+thereby influencing sensing and actuation efficiency [35,36]. Moreover, imperfect bonding condi-
+tionsinlayeredmicrostructuresstronglyaffectelectromechanicalcoupling,dynamicstiffness,and
+stress transfer across interfaces.
+Thetrendtowardminiaturizationinsmartstructuresnecessitatestheincorporationofnonlocal
+elasticity, which accounts for long-range interatomic interactions and size-dependent mechanical
+behavior. Developed by Eringen and Edelen [37,38], nonlocal elasticity addresses limitations
+of classical continuum theory by eliminating stress singularities and more accurately represent-
+ing nanoscale phenomena. The nonlocal framework has since been widely applied to carbon-
+nanotube-basedstructures[39–41], nanoscalevibrationproblems[42,43], andfunctionallygraded
+nanoplates [44]. Nonlocal effects on wave propagation in porous and viscoelastic media have also
+beeninvestigatedinrecentworks[45–47]. MEMSandNEMSareintegratedsystemsthatcombine
+mechanical and electrical components at the micro (10−6m) and nano (10−9m) scales to function
+as sensors, actuators, and resonators. They include diverse types such as accelerometers, gyro-
+scopes, and lab-on-a-chip devices, which are essential for modern technology. These systems are
+widely applied in smartphones for motion sensing, automotive safety for airbag deployment, and
+healthcareforhigh-precisionmedicaldiagnostics. ThestudybyLiyuanWangetal.[48]focuseson
+thenonlinearvibrationanalysisofnonlocalfractionalviscoelasticpiezSoelectricnanobeams,which
+S
+also incorporates surface effects. The nonlocal dynamic and resonance responses of multifunc-
+E
+tional Functionally Graded Porous micro/nanobeam adsorbers under multi-physics coupling for
+R
+highly sensitive biosensing applications have also been investigated in recent works [49–51]. The
+P
+nonlinearthermaleffectonaperforatedFunctionally GradedPorousbio-resonatorwasstudiedby
+N
+Yahia Maiza et al. [52] using the nonlocal strain gradient theory and the Differential Quadrature
+I
+Method. The studies [53,54] examines the effect of adsorption, shear distortion, and small-scale
+E
+effect on the resonant frequency shifLts of biomolecular resonators under thermomagnetic condi-
+tions. Mektout et al. [55] developCed a functional, resonator-based, nonlocal Functionally Graded
+I
+Porous hollow adsorber to detect coupled biomolecules using the Differential Quadrature Method
+T
+framework. R
+DespiteasubstaAntialbodyofresearchincontinuummechanics,existingstudieshaveexamined
+porous piezoelectric layers, nonlocal elasticity, and moving-load problems largely in isolation. To
+thebestofourknowledge,nopublishedworkhasinvestigatedthecombinedeffectsofnonlocalelas-
+ticity,porosity,piezoelectriccoupling,frictionalloading,andgeometricsurfaceirregularitywithin
+a unified analytical framework. This represents a significant knowledge gap, given the increasing
+reliance on porous piezoelectric layers in microscale sensors, actuators, surface acoustic wave de-
+vices, and energy harvesters. Furthermore, while most research on nonlocal porous piezoelectric
+media remains limited to static or basic wave-propagation scenarios, the present work addresses
+a morechallenging and practicallyrelevantdynamic frictional moving-loadproblem. The present
+researchfillsthistheoreticalvoidbyanalyticallyevaluatingtheinducedstressesandelectricpoten-
+tialsinanonlocalporouspiezoelectriclayer(NPPEL)featuringasuperficialparabolicirregularity.
+By employing a perturbation-based solution methodology, we derive closed-form expressions for
+thefieldcomponentswhileincorporatingappropriatemechanicalandelectromechanicalboundary
+conditions. The novelty of this study lies in capturing transient electromechanical interactions
+that have not been previously modeled, specifically revealing how the simultaneous inclusion
+of long-range nonlocal interactions, pore-fluid contributions, and piezoelectric coupling governs
+stress transmission. The primary contribution of this work is a qualitatively new understanding
+of how friction, surface geometry, load velocity, and microstructural scale effects interact at the
+micro/nano scale. By systematically analyzing critical parameters—including the friction coeffi-
+cient, irregularity depth, surface factor, and nonlocal scaling parameter—this study advances the
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+theoretical understanding of moving-load-induced responses in size-dependent porous structures.
+Ultimately,thisresearchprovidesarigorousfoundationfortheoptimizeddesignandperformance
+prediction of next-generation smart plates and nano-electromechanical systems (NEMS) charac-
+terized by surface irregularities.
+A detailed clarification of the preceding terms, as well as other terms discussed subsequently,
+is summarized in the Table 1.
+Table1: Listofsymbolswithdefinitions
+.
+Notations Definition Notations Definition
+v Displacement component for Υ∗ Fluid pressure
+i ij
+nonlocal porous piezoelectric
+layer
+Φ∗ Electric potential function of Φ Electric potential function of
+fluid phase solid phase
+Υnl Nonlocal stress tensor of porous Υl Local stress tensor
+ij ij
+piezoelectric layer
+D Electricdisplacementcomponent D∗ Electricdisplacementcomponent
+i i
+of solid phase of fluid phase
+E Electric field component of solid E∗ Electric field component of fluid
+i i
+phase phase
+C ,M Elastic constants of solid A Dielectric constant
+ijkl ij ij
+E∗ Piezoelectric moduli of fluid E Piezoelectric moduli of soild
+i ij
+χ ,χ∗ Piezoelectric coupling between (ϱ ) , (ϱ ) , MSass coefficients
+ij i 11 ij 22 ij
+solid and fluid phase S
+(ϱ ) E
+12 ij
+ς Dielectric permittivity for solid ς∗ R Dielectric permittivity for fluid
+ij i
+phase P phase
+Γ Straincomponentforsolidphase Γ∗ Dilatation for the fluid
+ij N
+I
+E
+L
+2. Derivationof fundamCentalrelationsfornonlocalfluid-saturatedporous
+piezoelectric layerI
+T
+2.1 ConstitutiveRrelations
+A
+This work extends the framework of fluid-saturated porous piezothermoelasticity by incorporat-
+ing the nonlocal elasticity theory proposed by Eringen [37]. We consider a porous piezoelectric
+medium saturated with fluid, occupying a domain V within the spatial set ℵ, enclosed by the
+outer boundary ℜ and an internal boundary Ξ. A material point is described by its reference
+coordinates X and its current coordinates x , corresponding to the undeformed and deformed
+i i
+configurations, respectively. The solid-phase displacement field is therefore defined as
+v =X −x .
+i i i
+The associated Lagrangian strain measure is written in the standard form
+Γ = 1(v +v ).
+ij 2 i,j j,i
+Thedivergenceoperatorsactingonthedisplacementfieldsofboththesolidandfluidconstituents
+are then introduced as Γ = ∇·⃗v and Γ∗ = ∇· V⃗, respectively. The fundamental variables
+s
+at positions α⃗ and α⃗′ are further articulated to provide a comprehensive understanding of the
+material’s behavior under these conditions as
+Y ={Γ (α⃗),Γ∗(α⃗),E (α⃗),E∗(α⃗)}, (1)
+ij i i
+(cid:110) (cid:111)
+Y′ = Γ (α⃗′),Γ∗(α⃗′),E (α⃗′),E∗(α⃗′) . (2)
+ij i i
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+The strain energy U is formulated as
+2U =C (α⃗,α⃗′)Γ (α⃗)Γ (α⃗′)+M (α⃗,α⃗′) (cid:2) Γ (α⃗)Γ∗(α⃗′)+Γ (α⃗′)Γ∗(α⃗) (cid:3) 
+−E
+i
+i
+j
+j
+k
+k
+(
+l
+α⃗,α⃗′) (cid:2) Γ
+i
+i
+j
+j
+(α⃗)E
+k
+k
+l
+(α⃗′)+Γ
+ij
+i
+(
+j
+α⃗′)E
+k
+(α⃗) (cid:3)
+ij
+−χ
+ijk
+(α⃗,α⃗′) (cid:2) Γ
+ij
+ij
+(α⃗)E
+k
+∗(α⃗′)+Γ
+ij
+(α⃗′)E
+k
+∗(α⃗) (cid:3)
+
++R(α⃗,α⃗′)Γ∗(α⃗)Γ∗(α⃗′)−χ∗(α⃗,α⃗′) (cid:2) Γ∗(α⃗)E (α⃗′)+Γ∗(α⃗′)E (α⃗) (cid:3)
+i i i
+−
+−
+E
+ς
+i
+∗
+(
+(
+α
+α
+⃗
+⃗
+,
+,
+α
+α
+⃗
+⃗
+′
+′
+)
+)
+E
+(cid:2) Γ∗
+(α⃗
+(α⃗
+)E
+)E
+(
+i
+∗
+α⃗
+(α
+′
+⃗
+)
+′)
+−
++
+ς∗
+Γ
+(
+∗
+α⃗
+(α
+,
+⃗
+α
+′
+⃗
+)
+′
+E
+)E
+i
+∗(
+∗
+α⃗
+(α⃗
+) (cid:3)
+)E
+−
+∗
+A
+(α⃗
+ij
+′)
+(
+.
+α⃗,α⃗′) (cid:2) E
+i
+(α⃗)E
+j
+∗(α⃗′)+E
+i
+(α⃗′)E
+j
+∗(α⃗) (cid:3)
+
+ij i j ij i j
+(3)
+The constitutive coefficients incorporate the following symmetries
+C (α⃗,α⃗′)=C (α⃗,α⃗′)=C (α⃗,α⃗′) , E (α⃗,α⃗′)=E (α⃗,α⃗′) , χ (α⃗,α⃗′)=χ (α⃗,α⃗′) , (cid:41)
+ijkl klij jikl ijk jik ijk jik
+.
+M (α⃗,α⃗′)=M (α⃗,α⃗′) , ς (α⃗,α⃗′)=ς (α⃗,α⃗′) ,A (α⃗,α⃗′)=A (α⃗,α⃗′), ς∗(α⃗,α⃗′)=ς∗(α⃗,α⃗′)
+ij ji ij ji ij ji ij ji
+(4)
+The constitutive relations are obtained with the help of the following equation obtained from
+Eringen [56]
+(cid:90) (cid:34) ∂U (cid:18) ∂U (cid:19)b (cid:35)
+η = + dV(α⃗′), (5)
+∂Y ∂Y′
+V
+where the superscript b indicates that the corresponding quantity remains invariant under the
+interchange of α⃗ and α⃗′. Let η = {Υ
+ij
+, Υ∗, −D
+i
+, −D
+i
+∗,} denote thSe ordered collection associ-
+ated with equation (1). Invoking equations (1)–(5), the set η caSn be expressed in the following
+mathematical form: E
+R
+(cid:90)
+Υ = (cid:2) C (α⃗,α⃗′)Γ (α⃗′)+M (α⃗,α⃗′)Γ∗(α⃗′)−E P(α⃗,α⃗′)E (α⃗′)−χ (α⃗,α⃗′)E∗(α⃗′) (cid:3) dV(α⃗′),
+ij ijkl kl ij ijk k ijk k
+V N
+(6)
+(cid:90) I
+Υ∗ = (cid:2) M (α⃗,α⃗′)Γ (α⃗′)+R(α⃗,α⃗′)Γ∗ (α⃗′)−χ∗(α⃗,α⃗′)E (α⃗′)−E∗(α⃗,α⃗′)E∗(α⃗′) (cid:3) dV(α⃗′),
+ij ij E i i i i
+V
+L (7)
+(cid:90) C
+D = (cid:2) E (α⃗,α⃗′)Γ (α⃗′)+χ∗(α⃗,α⃗′)Γ∗(α⃗′)+ς (α⃗,α⃗′)E (α⃗′)+A (α⃗,α⃗′)E∗(α⃗′) (cid:3) dV(α⃗′),
+i ijk kj Ii ij j ij j
+V T
+(8)
+R
+(cid:90)
+D∗ = (cid:2) χ (α⃗,Aα⃗′)Γ (α⃗′)+E∗(α⃗,α⃗′)Γ∗(α⃗′)+A (α⃗,α⃗′)E (α⃗′)+ς∗(α⃗,α⃗′)E∗(α⃗′) (cid:3) dV(α⃗′).
+i ijk kj i ij j ij j
+V
+(9)
+TheconstitutivecoefficientsC ,E ,χ ,M ,ς ,A ,andς∗ arefunctionsofα˜ =|α⃗−α⃗′|.
+ijkl ijk ijk ij ij ij ij
+The constitutive relationships (6)-(9) turn into
+(cid:90)
+Υ = (cid:2) C (α˜)Γ (α⃗′)+M (α˜)Γ∗(α⃗′)−E (α˜)E (α⃗′)−χ (α˜)E∗(α⃗′)(α⃗′) (cid:3) dV(α⃗′), (10)
+ij ijkl kl ij ijk k ijk k
+V
+(cid:90)
+Υ∗ = (cid:2) M (α˜)Γ (α⃗′)+R(α˜)Γ∗(α⃗′)−χ∗(α˜)E (α⃗′)−E∗(α˜)E∗(cid:3) dV(α⃗′), (11)
+ij ij i i i i
+V
+(cid:90)
+D = (cid:2) E (α˜)Γ (α⃗′)+χ∗(α˜)Γ∗(α⃗′)+ς (α˜)E (α⃗′)+A (α˜)E∗(α⃗′) (cid:3) dV(α⃗′), (12)
+i ijk kj i ij j ij j
+V
+(cid:90)
+D∗ = (cid:2) χ (α˜)Γ (α⃗′)+E∗(α˜)Γ∗(α⃗′)+A (α˜)E (α⃗′)+ς∗(α˜)E∗(α⃗′) (cid:3) dV(α⃗′). (13)
+i ijk kj i ij j ij j
+V
+In a nonlocal medium, the influence exerted by a material point diminishes as the separation
+from the reference position grows. This reduction arises from the gradual fading of intermolec-
+ular interactions over larger spatial gaps. Consequently, the associated constitutive coefficient
+decreases monotonically with increasing distance; in other words, as the gap between two points
+expands, the contribution of the surrounding continuum to the response at the reference point
+becomes progressively weaker. For example, when the distance becomes large, one observes that
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+lim d(L˜∗)→0.
+L˜∗→∞
+At the coincident position α⃗ =α⃗′, where each constitutive coefficient reaches its peak magnitude,
+a clear correspondence arises between the nonlocal elastic parameters and their classical (local)
+counterparts. This connection can be written as
+C (α˜) E (α˜) χ (α˜) M (α˜) ς (α˜) A (α˜) ς∗(α˜)
+ijkl = ijk = ijk = ij = ij = ij = ij , (14)
+Cˆ
+ijkl
+Eˆ
+ijk
+χˆ
+ijk
+Mˆ
+ij
+ςˆ
+ij
+Aˆ
+ij
+ςˆ
+i
+∗
+j
+where Cˆ , Eˆ , χˆ , Mˆ , ςˆ , Aˆ , and ςˆ∗ are material parameters.
+ijkl ijk ijk ij ij ij ij
+The nonlocal attenuation kernel Π(α˜) satisfies the normalization condition
+(cid:90)
+Π(α˜)dV =1. (15)
+V
+Following the formulation proposed by Eringen and Wegner [57], the kernel is further con-
+strained by
+(cid:0) 1−Γ2∇2(cid:1)
+Π=δ(α˜), (16)
+where ∇2 denotes the Laplacian operator, and the parameter ε (<< 1) represents the intrinsic
+0
+nonlocal scale, defined through ε =ε l with ε being a material-dependent constant and l the
+0 1 e 1 e
+internal characteristic length.
+To simplify the complex integral constitutive relations (equations (10)-(13)) into a more
+S
+tractable differential form, Eringen’s differential constitutive modSel is employed. This is achieved
+by applying the differential operator
+(cid:0) 1−ε2∇2(cid:1)
+to both sideEs of the integral equations and uti-
+0
+R
+lizing the property of the Dirac delta function δ(α˜) in conjunction with the kernel constraint
+P
+providedbyequation(16). Thismathematicalmanipulationconvertsthelong-rangeinter-atomic
+interactions into an equivalent local relationshipNmodified by the nonlocal differential operator.
+I
+(cid:0) 1−ε2∇2(cid:1) Υnl =Υl =C Γ ( α˜)+M Γ∗(α˜)−E E (α˜)−χ E∗(α˜), (17)
+0 ij ij ijklEkl ij kij k kij k
+L
+(cid:0) 1−ε2∇2(cid:1) Υ∗nl =ΥC∗l =M Γ (α˜)+RΓ∗(α˜)−χ∗E (α˜)−E∗E∗(α˜), (18)
+0 ij ij i i i i
+(cid:0) 1−ε2
+0
+∇2(cid:1) DTi = I D
+i
+le =E
+ijk
+Γ
+jk
+(α˜)+χ∗
+i
+Γ∗(α˜)+ς
+ij
+E
+j
+(α˜)+A
+ij
+E
+j
+∗(α˜), (19)
+R
+(cid:0) 1−ε2∇2(cid:1) D∗ =D∗le =χ Γ (α˜)+E∗Γ∗(α˜)+A E (α˜)+ς∗E∗(α˜), (20)
+A0 i i ijk jk i ij j ij j
+where ϱ = (1−f)ϱ +fϱ . Here, C are the elastic constants of the solid phase which are
+s f ijkl
+positive definite in the sense that C Γ Γ >0. M represent the parameters which deal with
+ijkl ij kl ij
+thecouplingbetweenthesolidandfluidphasesoftheporousaggregate. E arethepiezoelectric
+ijk
+modulitensorcomponentsforthesolidphase. Theseconstantsexhibitsymmetryinindicesj and
+k. R measures the pressure to be exerted on the fluid to push its unit volume into the porous
+matrix. E∗ indicate the piezoelectric coefficient for the fluid phase. The coefficients χ quantify
+i ijk
+the solid–fluid electromechanical coupling. They measure how deformation of the solid skeleton
+influences the electric field within the pore fluid and, conversely, how the fluid-phase electric
+field contributes to the total stress. Physically, χ represents the redistribution of polarization
+ijk
+and charge transport across the solid–fluid interface under mechanical loading. Similarly, the
+coefficientsA representthedielectriccouplingbetweenthesolidandfluidphases. Theycapture
+ij
+how the electric displacement in the fluid is affected by the electric field in the solid matrix and
+viceversa. Insaturatedporouscomposites,A dependsonporegeometry,fluidpermittivity,and
+ij
+the connectivity of the fluid network.
+Under the quasi-static approximation, the electric field can be obtained from scalar electric
+potentials, Φ and Φ∗, as
+E =−Φ , E∗ =−Φ∗ . (21)
+k ,k k ,k
+Equations (17)-(20) represent the nonlocal stress-strain relation for nonlocal porous piezoelectric
+material.
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+3. Problem formulation and geometrical set up
+Figure 1 illustrates the physical configuration considered in this study, where a moving line load
+L travels with a constant speed V across an irregular, transversely isotropic, nonlocal porous
+0 0
+piezoelectric layer of thickness H. The upper boundary of the layer is characterized by a friction
+coefficient R . A Cartesian coordinate system Oxyz is adopted such that the z–axis points
+0
+verticallydownward(representingdepth), whilethex–axiscoincideswiththedirectionofmotion
+oftheappliedload. Theoriginispositionedatthemidpointoftheirregularityspan, asindicated
+in Figure 1.
+S
+S
+E
+R
+P
+N
+I
+E
+Figure 1. Geometric Configuration of the Problem
+L
+ToincorporatethesurfaceimCperfection,thetopboundaryismodeledwithaparabolicprofile.
+I
+Hence, the irregular surface geometry with total span 2a and maximum indentation depth h is
+T 0
+described by R
+A z =ϵ f(x), (22)
+0
+where
+
+ 0, |x|>a,
+f(x)=
+ 2(cid:0) a2−x2(cid:1) , −a≤x≤a.
+a
+Equation (22) therefore characterizes the perturbed upper boundary. The dimensionless per-
+turbation parameter is defined as ϵ =h /(2a), satisfying 0<ϵ <1.
+0 0 0
+4. Solution methodology
+4.1 Wave dynamics of nonlocal porous piezoelectric layer (NPPEL)
+In the absence of body forces and dissipative effects, the governing equations of motion for the
+nonlocal porous piezoelectric material take the form [58]
+Υl =(1−ε2▽2)((ϱ ) v¨ +(ϱ ) v¨∗),
+ij,j 0 11 ij i 12 ij i
+(23)
+Υl∗ =(1−ε2▽2)((ϱ ) v¨ +(ϱ ) v¨∗), (i,j =1,2,3)
+,i 0 12 ij i 22 ij i
+where the dynamic mass coefficients (ϱ ) , (ϱ ) , and (ϱ ) satisfy the physical assumptions:
+11 ij 12 ij 22 ij
+(ϱ ) >0,(ϱ ) >0,(ϱ ) ≤0,and(ϱ ) (ϱ ) −(ϱ )2 >0. Theseparametersarerelated
+11 ij 22 ij 12 ij 11 ij 22 ij 12 ij
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+tothesoliddensityϱ ,fluiddensityϱ ,andporosityf throughthefollowingestablishedrelations:
+s f
+(ϱ ) +(ϱ ) =(1−f)ϱ δ , (ϱ ) +(ϱ ) =fϱ δ ,and ϱδ =(ϱ ) +2(ϱ ) +(ϱ ) .
+11 ij 12 ij s ij 12 ij 22 ij f ij ij 11 ij 12 ij 22 ij
+The electro-dynamic Maxwell relations governing a porous piezoelectric medium, upon ne-
+glecting the displacement electric current, reduce to [58]
+D =0,
+i,i
+(24)
+D∗ =0. (i=1,2,3)
+i,i
+To facilitate the solution, the general local constitutive relations Υl , Υ∗l, Dl, and D∗l, as
+ij i i
+expressed in equations (17)-(20) are specialized for a transversely isotropic porous piezoelectric
+solid [58]:
+
+(1−ε2▽2)Υnl =Υl =C Γ +C Γ +C Γ +M Γ∗−E E −χ E∗,
+(
+(
+(
+(
+(
+(
+1
+1
+1
+1
+1
+1
+−
+−
+−
+−
+−
+−
+ε
+ε
+ε
+ε
+ε
+ε
+2
+0
+2 0
+2
+0
+2
+0
+2
+0
+2
+0
+0
+▽
+▽
+▽
+▽
+▽
+▽
+2
+2
+2
+2
+2
+2
+)
+)
+)
+)
+)
+)
+Υ
+Υ
+Υ
+Υ
+Υ
+Υ
+n
+x
+∗
+n
+z
+n
+y
+n
+z
+n
+y
+x
+n
+x
+z
+z
+y
+y
+x
+l
+l
+l
+l
+l
+l
+=
+=
+=
+=
+=
+=
+Υ
+Υ
+Υ
+Υ
+Υ
+Υ
+l
+z
+l
+y
+l
+y
+l
+z
+l
+x
+x
+∗
+z
+z
+x
+y
+y
+x
+l
+=
+=
+=
+=
+=
+=
+C
+2
+C
+2
+2
+M
+1
+C
+C
+1
+C
+1
+3
+2
+4
+1
+4
+4
+Γ
+1
+Γ
+4
+4
+4
+1
+Γ
+Γ
+x
+Γ
+x
+x
+Γ
+x
+x
+y
+z
+x
+x
+x
+z
+x
+y
++
++
+x
+,
+−
+−
++
+C
+C
+E
+1
+E
+1
+1
+M
+3
+1
+1
+1
+2
+Γ
+5
+Γ
+5
+E
+E
+y
+1
+y
+y
+y
+1
+y
+y
+y
+x
+Γ
++
++
+−
+−
+yy
+C
+C
+χ
+χ
+3
++
+1
+1
+1
+1
+3
+3
+3
+5
+5
+Γ
+Γ
+M
+E
+E
+z
+z
+z
+y
+z
+∗
+x
+z
+∗
+z
+3
+,
+,
++
+3
++
+Γ
+M
+M
+zz
+3
+1
+1
++
+3
+1
+1
+Γ
+Γ
+R
+∗
+∗
+Γ
+−
+−
+∗
+E
+E
+−
+3
+3
+3
+3
+1
+1
+χ
+E
+E
+∗ 3
+z
+z
+z
+E
+−
+−
+z −
+χ
+χ
+3
+3
+3
+E
+3
+1
+1
+E
+3
+E
+∗E
+z
+∗
+z
+∗
+z
+,
+z
+,
+∗,
+
+(25)
+(
+(
+(
+(
+(
+(
+1
+1
+1
+1
+1
+1
+−
+−
+−
+−
+−
+−
+ε
+ε
+ε
+ε
+ε
+ε
+2
+2
+0
+2
+0
+2
+0
+2
+0
+2
+0
+▽
+▽
+▽
+▽
+▽
+▽
+2
+2
+2
+2
+2
+2
+)
+)
+)
+)
+)
+)
+D
+D
+D
+D
+D
+D
+y
+x
+z
+y
+x
+∗
+∗
+∗
+n
+n
+n
+n
+n
+n
+l
+l
+l
+l
+l
+l
+=
+=
+=
+=
+=
+=
+D
+D
+D
+D
+D
+D
+z
+y
+x
+l
+l
+l
+y
+x
+∗
+∗
+∗
+=
+=
+=
+l
+l
+l
+=
+=
+=
+E
+2
+2
+E
+3
+E
+χ
+2
+2
+1
+1
+1
+χ
+χ
+Γ
+5
+5
+1
+1
+Γ
+Γ
+x
+Γ
+5
+5
+x
+y
+z
+Γ
+Γ
+z
+x
++
+y
+z
++
++
+x
+x
++
+E
++
++
+E
+ς
+ς
+3
+χ
+1
+1
+1
+1
+A
+1
+A
+Γ
+E
+E
+y
+1
+1
+Γ
+y
+y
+x
+1
+1
+I
+E
+E
++
++
++
+x
+y
+N
++
+A
+E
+A
++
++
+3
+1
+1
+χ
+3
+1
+ς
+ς
+1
+Γ
+1
+1
+E
+∗
+∗
+E
+1
+1
+z
+y
+P
+Γ
+z
+∗
+x
+E
+E
+∗
+,
+,
++
+y
+x
+∗
+∗
+,
+,
+R
++
+χ∗
+3
+E
+Γ
+E
+∗
+∗
+Γ
++
+∗
+S
++
+ς
+33
+A
+E
+S
+z
++
+E
+A
++
+33
+ς
+E
+∗
+z
+∗
+E
+,
+∗.
+
+0 z z 31 xLx 31 yy 33 zz 3 33 z 33 z
+C
+The connections between the strain measures and the mechanical displacement fields, together
+I
+with the relations linking tThe electric field intensities to their corresponding electric potentials in
+both solid and fluid phRases, are expressed as
+A
+Γ = 1(v +v ), Γ∗ =v , E =−Φ , E∗ =−Φ∗. (26)
+ij 2 i,j j,i k,k i ,i i ,i
+Foraplane–strainsettingrestrictedtothexz–plane, thedisplacementandpotentialfieldsare
+specified in the form
+v =v (x,z,t), v =0, v =v (x,z,t), Φ=Φ(x,z,t),
+1 1 2 3 3
+(27)
+∂
+Φ∗ =Φ∗(x,z,t), with =0.
+∂y
+The final set of coupled partial differential equations is obtained by substituting the reduced
+localconstitutiverelations(25),alongwiththekinematicandelectricpotentialrelations(26)and
+(27), into the equations of motion (23) and the Maxwell equation (24). After extensive algebraic
+manipulationandapplyingtheplane-straincondition(∂/∂y =0),thefourcoupledfieldequations
+for the displacement components (v , v ) and the electric potentials (Φ, Φ∗) in the xz-plane are
+1 3
+derived as follows:
+(cid:18) (ϱ ) (cid:19) ∂2v (cid:18) (ϱ ) (cid:19) ∂2v
+C − 12 11M 1 + C +C − 12 11M 3
+11 (ϱ ) 11 ∂x2 44 13 (ϱ ) 33 ∂x∂z
+22 11 22 11
+(cid:18) (ϱ ) (cid:19) ∂2Φ (cid:18) (ϱ ) (cid:19) ∂2Φ∗
++ E +E −χ∗ 12 11 + χ +χ −E∗ 12 11 (28)
+31 15 3(ϱ ) ∂x∂z 31 15 3(ϱ ) ∂x∂z
+22 11 22 11
+∂2v ∂4v ∂4v ∂2v
++C 1 +d′ ε2 1 +d′ ε2 1 −d′ 1 =0,
+44 ∂z2 11 0∂t2∂x2 11 0∂t2∂z2 11 ∂t2
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+(cid:18) (ϱ ) (cid:19) ∂2v (cid:18) (ϱ ) (cid:19) ∂2v (cid:18) (ϱ ) (cid:19) ∂2ϕ
+C − 12 33M 3 + C +C − 12 33M 1 + E −χ∗ 12 33
+33 (ϱ ) 33 ∂z2 44 13 (ϱ ) 11 ∂x∂z 33 3(ϱ ) ∂z2
+22 33 22 33 22 33
+∂2v (cid:18) (ϱ ) (cid:19) ∂2Φ∗ ∂2Φ∗ ∂4v ∂4v ∂2v
++C 3 + χ − 12 33E∗ +χ +d′ ε2 3 +d′ ε2 3 −d′ 3 =0,
+44 ∂x2 33 (ϱ ) 3 ∂z2 15 ∂x2 33 0∂t2∂x2 33 0∂t2∂z2 33 ∂t2
+22 33
+(29)
+(cid:18) ∂2v ∂2v (cid:19) ∂2Φ ∂2Φ∗ ∂2v ∂2v ∂2Φ ∂2Φ∗
+E 3 + 1 −ς −A +E 1 +E 3 −ς −A =0, (30)
+15 ∂x2 ∂z∂x 11∂x2 11 ∂x2 31∂z∂x 33 ∂z2 33∂z2 33 ∂z2
+(cid:18) ∂2v ∂2v (cid:19) ∂2Φ ∂2Φ∗ ∂2v ∂2v ∂2Φ ∂2Φ∗
+χ 3 + 1 −A −ς∗ +χ 1 +χ 3−A −ς∗ =0, (31)
+15 ∂x2 ∂z∂x 11∂x2 11 ∂x2 31∂z∂x 33 ∂z2 33∂z2 33 ∂z2
+where d′ 11 =(ϱ 11 ) 11 − ( ( ϱ ϱ 1 2 2 2 ) ) 2 1 1 1 1 and d′ 33 =(ϱ 11 ) 33 − ( ( ϱ ϱ2 1 2 2 ) ) 3 2 3 3 3.
+The solutions of the equations (28)-(31) are assumed in the following formula,
+(cid:90) ∞
+v = (Acosk(x−V t)+Bsink(x−V t))e−kνzdk, (32)
+1 0 0
+0
+(cid:90) ∞
+v = (Ccosk(x−V t)+Dsink(x−V t))e−kνzdk, (33)
+3 0 0
+0
+(cid:90) ∞
+Φ= (cid:0) Acosk(x−V t)+Bsink(x−V t) (cid:1) e−kνzdk, (34)
+0 0
+0
+(cid:90) ∞
+Φ∗ = (cid:0) Ccosk(x−V t)+Dsink(x−V t) (cid:1) eS−kνzdk, (35)
+0 0
+0 S
+where A,B,C,D together with A,B,C and D are undeterminEed constants, and ν denotes a pos-
+R
+itive real, dimensionless quantity that remains unaffected by the choice of the wavenumber k.
+P
+Now substituting the aforementioned equations into the equations (28)-(31), we obtain the fol-
+N
+lowing system of simultaneous equations:
+I
+(cid:0)
+n +n
+ν2(cid:1)
+AE−m qD−m νB−m νD =0,
+2 1 2 3 4
+(36)
+(cid:0) n +n ν2 L(cid:1) B+m ν+m νA+m νC =0,
+2 C1 2 3 4
+I
+−m νB+ (cid:0)Tn +n ν2(cid:1) C+ (cid:0) m ν2−E (cid:1) A+ (cid:0) m ν2−χ (cid:1) C =0,
+5 3 4 7 15 8 15
+R (37)
+m νA+ (cid:0) n +n ν2(cid:1) D+ (cid:0) m q2−E (cid:1) B+ (cid:0) m ν2−χ (cid:1) D =0,
+5 A3 4 7 15 8 15
+−m νB−
+(cid:0)
+E −E
+ν2(cid:1)
+C+
+(cid:0)
+ς −ς
+ν2(cid:1)
+A+
+(cid:0)
+A −A
+ν2(cid:1)
+C =0,
+9 15 33 11 33 11 33
+(38)
+m νA−
+(cid:0)
+E −E
+ν2(cid:1)
+D+
+(cid:0)
+ς −ς
+ν2(cid:1)
+B+
+(cid:0)
+A −A
+ν2(cid:1)
+D =0,
+9 15 33 11 33 11 33
+−m νB− (cid:0) χ −χ ν2(cid:1) C+ (cid:0) A −A ν2(cid:1) A+ (cid:0) ς∗ −ς∗ ν2(cid:1) C =0,
+10 15 33 11 33 11 33
+(39)
+m νA− (cid:0) χ −χ ν2(cid:1) D+ (cid:0) A −A ν2(cid:1) B+ (cid:0) ς∗ −ς∗ ν2(cid:1) D =0,
+10 15 33 11 33 11 33
+where m (i=1,2,...10) and n (i=1,2,3,4) are defined in Appendix A.
+i i
+Equations (36)-(39) are consistent if
+ν8θ −ν7θ +ν6θ −ν5θ +ν4θ −ν3θ +ν2θ −νθ +θ =0. (40)
+1 2 3 4 5 6 7 8 9
+Upon incorporating equation (40), the system described by (32)–(35) transforms into:
+(cid:90) ∞
+v = (cid:0) A e−kν1z+A e−kν2z+A e−kν3z+A e−kν4z(cid:1) cosk(x−V t)
+1 1 2 3 4 0
+0 (41)
++ (cid:0) B e−kν1z+B e−kν2z+B e−kν3z+B e−kν4z(cid:1) sink(x−V t)dk,
+1 2 3 4 0
+(cid:90) ∞(cid:16) (cid:17)
+v = Θ(1)B e−kν1z+Θ(1)B e−kν2z+Θ(1)B e−kν3z+Θ(1)B e−kν4z cosk(x−V t)
+3 1 1 2 2 3 3 4 4 0
+0 (42)
+(cid:16) (cid:17)
++ Ψ(1)A e−kν1z+Ψ(1)A e−kν2z+Ψ(1)A e−kν3z+Ψ(1)A e−kν4z sink(x−V t)dk,
+1 1 2 2 3 3 4 4 0
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+(cid:90) ∞(cid:16) (cid:17)
+Φ= Θ(2)B e−kν1z+Θ(2)B e−kν2z+Θ(2)B e−kν3z+Θ(2)B e−kν4z cosk(x−V t)
+1 1 2 2 3 3 4 4 0
+0 (43)
+(cid:16) (cid:17)
++ Ψ(2)A e−kν1z+Ψ(2)A e−kν2z+Ψ(2)A e−kν3z+Ψ(2)A e−kν4z sink(x−V t)dk,
+1 1 2 2 3 3 4 4 0
+(cid:90) ∞(cid:16) (cid:17)
+Φ∗ = Θ(3)B e−kν1z+Θ(3)B e−kν2z+Θ(3)B e−kν3z+Θ(3)B e−kν4z cosk(x−V t)
+1 1 2 2 3 3 4 4 0
+0 (44)
+(cid:16) (cid:17)
++ Ψ(3)A e−kν1z+Ψ(3)A e−kν2z+Ψ(3)A e−kν3z+Ψ(3)A e−kν4z sink(x−V t)dk.
+1 1 2 2 3 3 4 4 0
+where ν , for i=1,2,3,4 are the roots of the equation (40).
+i
+5. Boundary conditions and induced stresses
+(i) On the perturbed surface z = ϵ f(x), the influence of the moving load leads to the following
+0
+boundary conditions:
+Υnl −ϵ f′Υnl =−(1+ε2▽2)L δ(x−V t), (45)
+zz 0 zx 0 0 0
+Υnl −ϵ f′Υnl =−(1+ε2▽2)L R δ(x−V t), (46)
+zx 0 xx 0 0 0 0
+Φ+Φ∗ =0, (47)
+where δ(x−V t) denotes the Dirac delta distribution, which may be represented in integral form
+0
+as
+1 (cid:90) ∞
+δ(x−V t)= cos[k(x−V t)] dk.
+0 π 0 S
+0
+S
+(ii) The boundary conditions at the interface z =H are prescribed as
+E
+R
+Υnl =0, P (48)
+zz
+ΥnlN=0, (49)
+zx
+I
+Φ +Φ∗ =0. (50)
+E
+L
+Duetothenon-uniformboundarysurfaceoftheconsideredlayeredmodel,theconstantsA ,A ,A ,
+C 1 2 3
+A ,B ,B ,B and B are assumed to be the functions of ϵ . By expanding these quantities up
+4 1 2 3 4 I 0
+to the first order of ϵ , we Tobtain
+0
+R
+A ∼ =A A+ϵ A ,A ∼ =A +ϵ A ,A ∼ =A +ϵ A ,A ∼ =A +ϵ A ,
+1 10 0 11 2 20 0 21 3 30 0 31 4 40 0 41
+(51)
+B ∼ =B +ϵ B ,B ∼ =B +ϵ B ,B ∼ =B +ϵ B ,B ∼ =B +ϵ B ,
+1 10 0 11 2 20 0 21 3 30 0 31 4 40 0 41
+where A and B (i=1,2,3,4) and (j =0,2) are undetermined constants.
+ij ij
+On solving boundary conditions and with help of aforementioned equations, we obtain
+4
+(cid:88) (C −ν p )β B =− L 0, (52)
+13 i i i i0 kπ
+i=1
+4
+(cid:88)
+−(C +ν t )β A =0, (53)
+13 i i i i0
+i=1
+4
+(cid:88) (r −C ν )β A =− L 0 R 0, (54)
+i 44 i i i0 kπ
+i=1
+4
+(cid:88)
+−(C ν +s )β B =0, (55)
+44 i i i i0
+i=1
+4
+(cid:88)(cid:16)
+Θ(2)+Θ(3)
+(cid:17)
+B =0, (56)
+i i i0
+i=1
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+4
+(cid:88)(cid:16)
+Ψ(2)+Ψ(3)
+(cid:17)
+A =0, (57)
+i i i0
+i=1
+4 4
+(cid:88) (cid:88)
+(C −ν p )β B = (C −ν p )β kfν B +f′(r −C ν )β A , (58)
+13 i i i i1 13 i i i i i0 i 44 i i i0
+i=1 i=1
+4 4
+(cid:88) (cid:88)
+(C +ν t )β A = (C +ν t )β kfν A +f′(C ν +s )β B , (59)
+13 i i i i1 13 i i i i i0 44 i i i i0
+i=1 i=1
+4 4
+(cid:88) (cid:88)
+(r −C ν )β A = (r −C ν )kfβ A +f′(C −w ν )β B , (60)
+i 44 i i i1 i 44 i i i0 11 i i i i0
+i=1 i=1
+4 4
+(cid:88) (cid:88)
+(C ν +s )β B = (C ν +s )kfν B +f′(C +y νi)β A , (61)
+44 i i i i1 44 i i i i0 11 i i i0
+i=1 i=1
+4
+(cid:88)(cid:16)
+Θ(2)+Θ(3)
+(cid:17)
+B =
+(cid:16)
+Θ(2)+Θ(3)
+(cid:17)
+kfν B , (62)
+i i i1 i i i i0
+i=1
+4
+(cid:88)(cid:16)
+Ψ(2)+Ψ(3)
+(cid:17)
+A =
+(cid:16)
+Ψ(2)+Ψ(3)
+(cid:17)
+kfν A . (63)
+i i i1 i i i i0
+i=1
+By solving aforementioned equations, we get
+L L L L
+A = 0W ,A = 0W ,A = 0W ,A =S0W ,
+10 kπ 10 20 kπ 20 30 kπ 30 40 kπ 40
+S
+L L L L
+A = 0W ,A = 0W ,A = 0W E,A = 0W ,
+11 kπ 11 21 kπ 21 31 kπR 31 41 kπ 41
+(64)
+L L L L
+B = 0W ,B = 0W ,B = P0W ,B = 0W ,
+10 kπ 10 20 kπ 20 30 kπ 30 40 kπ 40
+N
+L L L L
+B
+11
+=
+kπ
+0W
+11
+,B
+21
+=
+kπ
+0 WI21 ,B
+31
+=
+kπ
+0W
+31
+,B
+41
+=
+kπ
+0W
+41
+,
+E
+where W and W , i = 1,2 and j = 0,1, are obtained by using MATHEMATICA software.
+ij ij L
+After substituting equation (64)Cinto the expression of the displacement components v and v ,
+1 3
+the local shear and normal strIesses of the present model due to moving load can be determined
+T
+by performing integratiRon on the expressions obtained from equation (25) are given by,
+A
+Υl zx = 1 (cid:88) 4 (cid:2)(r i −C 44 ν i )ν i zW i − (s i +C 44 ν i )(x−V 0 t)W i(cid:3) , (65)
+L π ν2z2+(x−V t)2 ν2z2+(x−V t)2
+0 i=1 i 0 i 0
+Υl zz = 1 (cid:88) 4 (cid:2)−(C 13 +ν i t i )(x−V 0 t)W i + (C 13 −ν i p i )ν i zW i(cid:3) , (66)
+L π ν2z2+(x−V t)2 ν2z2+(x−V t)2
+0 i=1 i 0 i 0
+where W =W +ϵ W and W =W +ϵ W for i=1,2,3,4.
+i i0 0 i1 i i0 0 i1
+By combining equations (65) and (66) and adopting a low-order approximation framework, the
+system simplifies to
+Υnl = (1+ε2▽2)Υl and Υnl = (1+ε2▽2)Υl , the nonlocal stresses of the current model are
+zx 0 zx zz 0 zz
+derived,
+4 (cid:26) (cid:27)
+Υnl = 1 (cid:88) (r i −C 44 ν i ) − 2(r i −C 44 ν i ) ε2+ 2(r i −C 44 ν i ) ε2 W , (67)
+zx π ν z ν3z3 0 ν z3 0 i
+i=1 i i i
+4 (cid:26) (cid:27)
+Υnl = 1 (cid:88) (C 13 −ν i p i ) − 2(C 13 −ν i p i )ν i ) ε2+ 2(C 13 −ν i p i ) ε2 W . (68)
+zz π ν z ν3z3 0 ν z3 0 i
+i=1 i i i
+6. Validation
+Some particular cases are presented in Table 2, which validates the current mathematical model.
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+Table2: Notablecasesandtheircorrespondingmodels.
+Case Condition Model
+1 ε =0,z →∞ This case corresponds to a local porous
+0
+piezoelectric halfspace. The obtained
+results show excellent agreement with
+those reported by Rakshit et al. [21],
+when the viscosity parameter is ne-
+glected.
+2 ε = 0,z → ∞, M = M = This configuration describes a local
+0 11 33
+A =A =0 piezoelectric halfspace with parabolic
+11 33
+irregularity.
+χ = χ = χ = χ∗ = E∗ = Thefindingsareconsistentwiththere-
+31 33 15 3 3
+ς∗ =ς∗ =0 sults of Kumari et al. [59],
+11 33
+3 ε = 0,z → ∞, M = M = This case corresponds to a isotropic
+0 11 33
+A =A =0 halfspace with irregularity.
+11 33
+χ = χ = χ = χ∗ = E∗ = The resulting model has a perfect val-
+31 33 15 3 3
+ς∗ =ς∗ =0 idation with those reported by Chat-
+11 33
+topadhyay et al. [60].
+C =µ,C =C =C =C =λ
+44 11 12 13 33
+4 χ = χ = χ = This case corresponds to a nonlocal
+31 33 15
+χ∗ = E∗ = ς∗ = ς∗ = porouslayerwithparabolicirregularity
+3 3 11 33
+0, C =µ, C =C =C =C =λ which is in well agreement with Gupta
+44 11 12 13 33
+et al. [45] in the absence of the half-
+space and fracture porosity of the dou-
+ble porous layer.S
+S
+E
+R
+7. Numerical results and discussions P
+N
+Theinfluenceofthefrictionalcoefficient(R ),theirregularitydepth(h /a),theirregularityfactor
+0 I 0
+(x/a), and the nonlocal parameter (ε ) on the nonlocal normal stress (ΥnlH/L ), shear stress
+0E zz 0
+(Υn
+zx
+lH/L
+0
+), displacementfields(v
+1
+,vL3 ), andtheelectricpotentialsofthesolid(Φ)andfluid(Φ∗)
+phases of the NPPEL is illustrateCd through the graphical results presented in Figures 2–5.
+I
+ThenumericalsimulationsemploythematerialpropertiesofPZT–5A,withthecorresponding
+T
+constants for the NPPERL adopted from the parameters listed in Table 3.
+A
+Table3: Elastic,piezoelectric,dielectric,anddynamiccoefficientsofPZT-5Amaterial[61,62]
+Elastic con- Piezoelectric Dielectric Dynamic coeffi-
+stants (GPa) constants constants cients (kg/m3)
+(C/m2) (C2N−1m2)×
+10−9
+C =121 E =17.0 ς =8.1 ϱ=6700
+11 15 11
+.
+C =75.2 E =−5.4 ς =7.34 (ϱ ) =4950
+12 31 11 11 11
+C =75.2 E =12.3 (ϱ ) =−1125
+13 33 12 11
+C =111 χ =3.36 (ϱ ) =4800
+33 15 22 11
+C =21.1 χ =−0.8
+44 31
+χ =5.76
+33
+7.1 Effect of frictional coefficient
+ThevariationofthenonlocalstressesΥnlH/L andΥnlH/L/L ,displacementsv andv ,andthe
+zz 0 zx 0 1 3
+electric potentials Φ and Φ∗ with respect to the depth (z/H) for different values of the frictional
+coefficient R is depicted in Figures 2(a)–2(f). Curves 1, 2, and 3 correspond to R = 0.1,0.2,
+0 0
+and 0.3, respectively. The valid range of R is [0,1].
+0
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+Figures 2(a) and 2(b) indicate that an increase in R leads to a rise in the stresses ΥnlH/L
+0 zz 0
+and ΥnlH/L . This trend is consistent with the physical expectation that friction acts opposite
+zx 0
+to the motion of the applied load, thereby intensifying the stress field. However, in Figure 2(b),
+theinfluenceofR onΥnlH/L isextremelyweak, andthecurvesexhibitslightdownwardtrend
+0 zx 0
+near the surface. The distinction between the curves is much more apparent in Figure 2(a) than
+in Figure 2(b).
+In Figure 2(c), the vertical axis representing the horizontal displacement component v car-
+1
+ries a negative sign. This negative sign indicates the direction of the displacement (contrac-
+tion/backward shift) relative to the positive x-axis. As the friction parameter R increases from
+0
+0.1 to 0.3, the numerical values move further from zero in the negative direction. Consequently,
+while the algebraic value decreases, the absolute magnitude |v | actually increases. Therefore,
+1
+both the horizontal displacement (v ) and the vertical displacement (v ) exhibit a consistent
+1 3
+physical trend: their magnitudes ascend as the friction parameter R increases. The separation
+0
+between the curves reduces as z approaches unity, implying that the effect of R becomes less
+0
+dominant at greater depths. In figure 2(d), the spacing between the successive curves remains
+small, and v tends to flatten as z → 1, suggesting that the vertical displacement approaches a
+3
+negligible value near the bottom surface.
+FromFigure2(e)and2(f),itisevidentthatwhenthefrictioncoefficientincreases,thetangen-
+tial resistance at the upper surface suppresses horizontal deformation of the solid skeleton. This
+reduction in in-plane strain directly weakens the piezoelectric contribution associated with the
+solidphase,leadingtoadecreaseinΦ. Incontrast,thesamefriction-Sinducedconstraintenhances
+S
+verticaldeformationandpore-fluiddilatationwithintheporousnetwork. Becausethefluid-phase
+E
+electric potential Φ∗ is coupled to the dilatational strain of the fluid and the mixed fluid–solid
+R
+electromechanical terms, an increase in fluid compression produces a stronger fluid-phase electri-
+P
+cal response. This results in an increase in Φ∗. In b oth cases, the differences among the curves
+N
+are marginal. Furthermore, as z →1, the curves become nearly horizontal, indicating that Φ and
+I
+Φ∗ approach very small values near the low er boundary.
+E
+L
+C
+I
+T
+R
+A
+(a) (b)
+7.2 Effect of irregularity depth
+Figures 3(a)–3(f) illustrate the variation of the quantities ΥnlH/L , ΥnlH/L , v , v , Φ, and Φ∗
+zz 0 zx 0 1 3
+with respect to the normalized depth z/H for different values of the irregularity-depth parameter
+h /a. The valid mathematical range of h/a can be written as 0 ≤ h /a < 2. The chosen values
+0 0
+of h /a are 0.00, 0.04, and 0.08 for all the plots. The case h /a = 0 corresponds to a perfectly
+0 0
+regular upper surface with no geometric disturbance.
+Figure 3(a) shows that ΥnlH/L increases as h /a becomes larger. The curves shift upward
+zz 0 0
+with increasing irregularity depth, indicating that a deeper parabolic irregularity intensifies the
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+(c) (d)
+(e) (f)
+S
+S
+E
+R
+P
+N
+I
+Figure 2. Variations in (a) nonlocal normal st ress Υn
+zz
+lH/L0, (b) nonlocal shear stress Υn
+zx
+lH/L0, (c) the
+E
+horizontal displacement component v1, (d)
+L
+the vertical displacement component v3, (e) the electric potential of
+solidΦ,and(f)theelectricpotentialoCffluidphaseΦ∗ fordifferentvaluesoffrictionalcoefficientR0 .
+I
+T
+normal stress throughoRut the layer. The maximum stress occurs near the upper boundary (z →
+0) and decreases raApidly with depth, approaching nearly zero around z = 1. A similar trend
+is observed for the shear stress in Figure 3(b), where the stress level rises with the increasing
+irregularity depth. The differences among successive curves in both Figures 3(a) and 3(b) are
+relatively small. In all cases, the stresses tend to vanish as z approaches unity.
+The displacement behaviour presented in Figures 3(c) and 3(d) reveals that v decreases with
+1
+increasingh /a,whilev exhibitsanoppositetrendandincreasesastheirregularitydepthgrows.
+0 3
+Theinfluenceofh /aonv isminimal,whereasinthecaseofv thecurvesremainclosebutshow
+0 1 3
+a consistent upward shift with increasing h /a.
+0
+Figure 3(e) demonstrates that the electric potential Φ diminishes as h /a increases across
+0
+the entire depth. Conversely, Figure 3(f) shows that the fluid-phase potential Φ∗ increases with
+increasingirregularitydepth. Inbothfigures,theseparationbetweenconsecutivecurvesismodest,
+indicating that the effect of h /a on the potentials, although noticeable, is not substantial.
+0
+7.3 Effect of irregularity factor
+The influence of the irregularity factor (x/a) on the quantities ΥnlH/L , ΥnlH/L , v , v , Φ,
+zz 0 zx 0 1 3
+and Φ∗ is presented in Figures 4(a)–4(f), respectively. The valid mathematical range of x/a is
+[0,1]. Inallcases, theinitialvaluex/a=0correspondstoarectangularirregularityontherough
+upper surface. Thereafter, x/a is increased to 0.5 and 1.0 and the curve for x/a=1 corresponds
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+(a) (b)
+(c) (d)
+S
+S
+E
+R
+P
+N
+I
+E
+L
+C
+I
+T
+R
+A
+(e) (f)
+Figure 3. Variations in (a) nonlocal normal stress Υn
+zz
+lH/L0, (b) nonlocal shear stress Υn
+zx
+lH/L0, (c) the
+horizontal displacement component v1, (d) the vertical displacement component v3, (e) the electric potential of
+solidΦ,and(f)theelectricpotentialoffluidphaseΦ∗ fordifferentvaluesofirregularitydepthh0/a.
+to a configuration without irregularity.
+Figures4(a)and4(b)demonstratethatbothΥnlH/L andΥnlH/L decreaseasx/aincreases.
+zz 0 zx 0
+Thisinverserelationshipsuggeststhatastheirregularitytransitionsfromapronouncedparabolic
+shape (x/a = 0) toward a flat surface (x/a = 1), the stresses reduce, potentially indicating
+enhanced stability or increased material resistance due to reduced geometric disturbance. The
+spacing between successive curves is more noticeable in Figure 4(a) compared to Figure 4(b).
+The displacement response exhibits contrasting behavior. Figure 4(c) shows that v increases
+1
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+with x/a, whereas Figure 4(d) reveals that v decreases as x/a approaches unity. The effect of
+3
+the irregularity factor on v is clearly pronounced throughout the depth, while in the case of v
+1 3
+thecurvesremainclose,indicatingonlyminorvariations. Thus,theparameterx/ahasastronger
+influence on the horizontal displacement v than on the vertical displacement v .
+1 3
+The electric potential profiles in Figures 4(e) and 4(f) further complement these trends. As
+x/a increases, the solid-phase potential Φ shifts upward, showing an overall increase. In contrast,
+the fluid-phase potential Φ∗ decreases for larger values of x/a. In both figures, the differences
+between the consecutive curves are modest, indicating that the impact of the irregularity factor
+on the potentials, although consistent, remains relatively small.
+(a) (b)
+S
+S
+E
+R
+P
+N
+I
+E
+L
+C
+I
+T
+(c) (d)
+R
+A
+7.4 Effect of nonlocality parameter
+Figures5(a)–5(f)illustratetheinfluenceofthenonlocalparameterε onthequantitiesΥnlH/L ,
+0 zz 0
+ΥnlH/L , v , v , Φ, and Φ∗, respectively. Curves 1, 2, and 3 correspond to ε =0.00, 0.02, and
+zx 0 1 3 0
+0.04, where ε (<<1)=0 denotes the purely local case with no nonlocal interactions.
+0
+Figures 5(a) and 5(b) reveal that increasing ε leads to a increment in both ΥnlH/L and
+0 zz 0
+ΥnlH/L , indicating adirectrelationshipbetweenthestressesandthenonlocalityparameter. In
+zx 0
+Figure 5(a), the curves remain close to each other for z ∈[0.2,1], showing minimal sensitivity to
+ε near the lower surface. For z ∈ [0,0.2], noticeable differences appear after which the curves
+0
+converge and exhibit negligible variation as z approaches unity. A similar behaviour is observed
+in Figure 5(b). However, the impact of nonlocality paramter ε is significant on shear stress
+0
+compared to normal stress.
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+(e) (f)
+Figure 4. Variations in (a) nonlocal normal stress Υn
+zz
+lH/L0, (b) nonlocal shear stress Υn
+zx
+lH/L0, (c) the
+horizontal displacement component v1, (d) the vertical displacement component v3, (e) the electric potential of
+solidΦ,and(f)theelectricpotentialoffluidphaseΦ∗ fordifferentvaluesofirregularityfactorx/a.
+The displacement components show similar trends. In figure 5(c), the negative sign on the
+verticalaxisactuallyrepresentsthedirectionofthedisplacementcomponent(v )whicheventually
+1
+indicatesthatcontractionisoccurringincaseofv . Asε increases,themagnitudeofv increases
+1 0 1
+but in the opposite direction. Therefore, it can be concluded that the horizontal displacement
+S
+component is not decreasing with respect to the increase in ε , rather the magnitude shows
+S0
+ascending trend but it is increasing in the opposite directionEof the positive x-axis. Therefore,
+both v and v exhibit same nature, i.e. ascending trendRalong with ε . The differences between
+1 3 0
+successive curves in both figures are appreciable, withPthe change from Curve 2 to Curve 3 being
+more pronounced than the change from Curve 1Nto Curve 2. This suggests that the influence of
+nonlocality becomes increasingly significant aIt higher values of ε .
+0
+The electric potential responses folloEw consistent patterns as observed for displacement com-
+L
+ponents. In Figure 5(e), the magnitude of solid-phase potential Φ increases with increasing ε .
+C 0
+However,theseparationbetweenthecurvesisextremelysmall,implyingthatnonlocalityhasonly
+I
+a minor effect on Φ. In coTntrast, Figure 5(f) shows a clear rise in the fluid-phase potential Φ∗
+R
+with increasing ε , particularly over the initial portion of the depth. As z approaches unity, all
+0 A
+curves in Figure 5(f) flatten out and tend toward zero.
+(a) (b)
+7.5 Effect of Moving load velocity
+Figures6(a)-–6(f)illustratetheinfluenceofthemovingloadvelocityV onthequantitiesΥnlH/L ,
+0 zz 0
+ΥnlH/L , v , v , Φ, and Φ∗, respectively. Curves 1, 2, and 3 correspond to V =10, 12, and 14,
+zx 0 1 3 0
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+(c) (d)
+(e) (f)
+S
+S
+E
+R
+P
+N
+I
+Figure 5. Variations in (a) nonlocal normal st ress Υn
+zz
+lH/L0, (b) nonlocal shear stress Υn
+zx
+lH/L0, (c) the
+E
+horizontal displacement component v1, (d)
+L
+the vertical displacement component v3, (e) the electric potential of
+solidΦ,and(f)theelectricpotentialoCffluidphaseΦ∗ fordifferentvaluesofnonlocalityparameterε0 .
+I
+T
+respectively. ThesegrapRhicalimplementationsarevalidwhenV assumesanypositivemagnitude.
+0
+Figures 6(a) anAd 6(b) illustrate the influence of the moving load velocity V on the dimen-
+0
+sionless nonlocal normal stress ΥnlH/L and nonlocal shear stress ΥnlH/L , respectively. In
+zz 0 zx 0
+both plots, curves 1, 2, and 3 correspond to velocities V = 10,12, and 14, respectively. From
+0
+Figure 6(a), it is observed that as the velocity V increases, the magnitude of the normal stress
+0
+significantly diminishes. A similar trend is depicted in Figure 6(b) for the nonlocal shear stress,
+where higher load velocities lead to a clear reduction in the stress amplitudes across the spa-
+tial domain. This reveals a consistent inverse relationship between the moving load velocity and
+the dynamic stress components within the porous piezoelectric layer. The observed reduction in
+stress magnitudes with increasing velocity can be physically attributed to the dynamic lag and
+inertiaeffectsinherentinthenonlocalporouspiezoelectricmedium. Athighervelocities,theload
+traverses the surface faster than the characteristic time required for the piezoelectric skeleton to
+fully develop its electromechanical strain response. Consequently, the material does not reach its
+full static-equivalent deformation, preventing theaccumulation of high localizedstressconcentra-
+tions. Furthermore, within Eringen’s nonlocal framework, the internal characteristic length scale
+facilitates a spatial averaging of the external force. As the load speed increases, the energy is
+distributed more broadly across the nonlocal neighborhood rather than being focused at a single
+point, thereby lowering the stress intensity. This behavior suggests that the NPPEL structure
+exhibits a ”velocity-induced shielding” effect, which is a critical consideration for the durability
+of micro-devices subjected to high-speed dynamic loading.
+Figures6(c)and6(d)illustratethevariationofthehorizontaldisplacementcomponent(v )and
+1
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+the vertical displacement component (v ) across the spatial domain for different values of moving
+3
+loadvelocity(V ). Curves1,2,and3correspondtoV =10,12,and14,respectively. Observation
+0 0
+ofFigure6(c)indicatesthatthehorizontaldisplacementv reachesitsmaximummagnitudenear
+1
+the point of load application and gradually attenuates. As the velocity V increases, there is a
+0
+prominentreductionintheamplitudeofv ,movingfromcurve1tocurve3. Similarly,Figure6(d)
+1
+revealsthattheverticaldisplacementv followsamatchingtrend,wherehigherloadvelocitieslead
+3
+to a systematic decrease in the vertical deformation peaks. These results confirm that increasing
+the speed of the moving load exerts a dampening effect on the overall mechanical deformation of
+thenonlocalporouspiezoelectriclayer. Thereductionindisplacementcomponentswithincreasing
+velocity is primarily attributed to the dynamic stiffening effect and the mechanical inertia of the
+porous piezoelectric aggregate. At lower velocities, the material has sufficient time to respond
+to the external excitation, allowing the strain field to develop fully. However, as the velocity V
+0
+increases, the duration of the load’s interaction with any specific localized region of the plate
+decreases.
+Figures 6(e) and 6(f) illustrate the influence of the moving load velocity V on the electric
+0
+potentialofthesolidphase(ϕ)andthefluidphase(ϕ∗),respectively. Curves1,2,and3correspond
+to velocities V = 10,12, and 14. From Figure 6(e), it is observed that ϕ takes negative values,
+0
+indicating a specific polarity in the induced electric field. As V increases, the curves move closer
+0
+to the zero-axis, which signifies a decrease in the absolute magnitude |ϕ|. Similarly, Figure 6(f)
+shows that the positive magnitude of the fluid-phase potential ϕ∗ decreases consistently with the
+risingvaluesofvelocity. TheseresultsindicatethathigherloadspeedSsleadtoageneralreduction
+S
+in the induced electrical response across both phases of the porous piezoelectric medium.Physical
+E
+SignificanceThereductioninthemagnitudeofϕandϕ∗ withincreasingvelocityisdirectlylinked
+R
+to the electromechanical coupling efficiency and the dynamic lag of the system. In a piezoelectric
+P
+material,theelectricpotentialisgeneratedasadirect resultofmechanicalstrain. Asestablishedin
+N
+the displacement analysis (Figures 6c and 6d), higher load velocities result in smaller mechanical
+I
+deformations because the material’s inertia prevents it from responding fully to a fast-moving
+E
+transient load. L
+C
+I
+T
+R
+A
+(a) (b)
+7.6 Comparative analysis for normal and shear stresses
+Figures7(a)and7(b)presentaquantitativevalidationofthecurrentmodelagainsttheestablished
+workofRakshitetal. [21]. Inbothfigures,thesolidlinesrepresenttheresultsofthepresentstudy,
+whilethedashedlinesrepresenttheresultsofthecomparativemodelunderthelimitingconditions
+of ε =0 (local limit) and z →∞ (half-space approximation). The graphical comparison reveals
+0
+that the stress profiles in both studies follow an identical trend, exhibiting excellent qualitative
+agreement. Thisalignmentconfirmstheaccuracyofthemathematicalformulationandnumerical
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+(c) (d)
+(e) (f)
+S
+S
+E
+R
+P
+N
+I
+Figure 6. Variations in (a) nonlocal normal st ress Υn
+zz
+lH/L0, (b) nonlocal shear stress Υn
+zx
+lH/L0, (c) the
+E
+horizontal displacement component v1, (d)
+L
+the vertical displacement component v3, (e) the electric potential of
+solidΦ,and(f)theelectricpotentialoCffluidphaseΦ∗ fordifferentvaluesofVelocityV0 .
+I
+T
+algorithmemployedintRhecurrentanalysis. However,adistinctquantitativedifferenceisobserved:
+themagnitudesofbAoththenormalstress(Fig. 7a)andshearstress(Fig. 7b)inthepresentwork
+are consistently higher than those reported by Rakshit et al. [21]. The enhancement in stress
+magnitudes in the present model is primarily attributed to the consideration of the nonlocal
+layered structure rather than a local half-space, leading to internal wave reflections and energy
+confinementthatamplifythedynamicstressresponsecomparedtothesemi-infinitemediumused
+inthecomparativemodel. Furthermore,theincorporationofnonlocaleffectsstiffensthematerial
+whichresultsintheincreasingnatureofbothnormalandshearstressesinthepresentmodel. This
+validation proves that while our model recovers the classical trends, it provides a more realistic
+and conservative estimate of the stresses in irregular porous piezoelectric structures.
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+(a) (b)
+Figure 7. Comparativestudyfor(a)normalstressand(b)shearstressbetweenthepresentworkandpartcular
+caseI(Rakshitetal.[21]).
+8. Conclusions
+The key conclusions of this investigation can be summarized as follows:
+• The frictional coefficient R serves as a critical measure of the drag and resistance experi-
+0
+encedbytheplateastheloadtraversesitsuppersurface. PhysicSally,amovingloadgenerates
+S
+both vertical pressure and a horizontal frictional force that opposes motion; R represents
+0
+E
+the shear coupling between this load and the plate, acting as the primary parameter con-
+R
+trolling the magnitude of resulting stress fields and the susceptibility of the micro/nano
+P
+device to fatigue or cracking. In the present model, this coefficient significantly amplifies
+N
+the nonlocal normal stress Υnl and alters both displacement components. However, while
+zz I
+it acts as a crucial driver for normal s tress and structural deformation, its influence on the
+E
+nonlocal shear stress Υnl and the resulting electric potentials remains comparatively weak.
+zx L
+C
+• The irregularity depth ratio h /a is a dimensionless parameter that quantifies the severity
+I0
+T
+of surface imperfections, representing the maximum indentation depth of the superficial
+R
+parabolic discontinuity on the upper boundary of the micro/nano plate. An increase in
+A
+h /a values leads to a decrease in the nonlocal normal stress Υnl, while simultaneously
+0 zz
+causinganincreaseinthenonlocalshearstressneartheupperroughsurface. Thisindicates
+that while the deepening of the irregularity may mitigate normal stress, it intensifies shear-
+related stress concentrations at the interface, serving as a critical factor in the potential
+failure of the plate. Despite these significant impacts on nonlocal stresses, the influence of
+the irregularity depth on displacement components and electric potentials remains minimal
+throughout the depth of the structure.
+• The irregularity span ratio x/a serves as a critical geometric parameter, with numerical re-
+sults demonstrating that all mechanical and electrical variables decrease as the irregularity
+spanvalueincreases. Physically,thisrationormalizesthehorizontalcoordinatex—whichco-
+incideswiththedirectionoftheappliedload—againsta,halfthetotalspanoftheparabolic
+defect (2a). The study of x/a reveals that the maximum stress concentration and peak
+displacements occur at the center of the parabolic irregularity (x/a = 0), followed by a
+consistentdeclineasonemovestowardtheflatedgesoftheplate. Whilethisfactorstrongly
+governs the in-plane displacement v and significantly modifies the nonlocal normal stress
+1
+Υnl, it exerts a minimal impact on the nonlocal shear stress Υnl, the vertical displacement
+zz zx
+v , and the electric potentials for both the solid and fluid phases. This suggests that while
+3
+the severity of the surface defect dictates the primary load-bearing response, its influence
+on shear and potential distributions is relatively secondary.
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+• The nonlocality parameter ε is utilized to capture small-scale effects in micro- and nano-
+0
+scale structures that are otherwise neglected by classical continuum mechanics. Increasing
+this parameter results in a simultaneous ascent of all physical variables, characterized by
+an enhancement in both nonlocal stress profiles and displacement fields (v and v ). This
+1 3
+uniform increment across all variables indicates a significant nonlocal stiffening effect that
+reinforces the overall structural response. Physically, this behavior demonstrates that a
+higherε leadstoelevatedpeakvaluesfornormalandshearstresses,whichservestoimprove
+0
+the material’s resistance against localized failure and crack propagation.
+• As a moving load travels faster across a surface, the intensity of its impact—including
+stress,physicalmovement(displacements),andelectricpotentials—actuallydecreases. This
+happens because at high speeds, the load passes over a specific point so quickly that the
+material doesn’t have enough time to fully react or sink. Physically, this can be understood
+through the concept of material ”stiffness” under fast loading: the material behaves more
+rigidly because the atoms and fibers cannot move out of the way fast enough.
+• Forallparametersconsidered,thestrongestvariationsoccurneartheupperirregularsurface,
+withstressesanddisplacementsdecayingrapidlyandapproachingzeroasz →1,confirming
+the physical consistency of the model.
+9. Applications
+S
+The results obtained from the present model can be applicable inSfollowing areas:
+E
+• ThemodelhelpspredictthefatiguelifeandfailurepoRintsofpiezoelectricdiaphragmsensors.
+Manufacturing processes often leave surface imPperfections (like the parabolic irregularity
+studied). The model can determine the crNitical tolerance for these surface defects before a
+moving load (e.g., fluid flow, shock wavIe) causes stress concentrations that lead to device
+failure. It is used to design and aEnalyze Surface Acoustic Wave (SAW) or Bulk Acoustic
+L
+Wave(BAW)deviceswherethepropagationofmechanicalwavesisinfluencedbythedevice’s
+C
+porous structure and surface finish.
+I
+T
+• Piezoelectric platRes are used as mechanical filters. The thickness, porosity, and boundary
+conditions (inAcluding surface defects) directly affect the device’s resonant frequency. The
+model’sabilitytoaccuratelypredictdynamicstressfieldsallowsengineerstotunethestruc-
+tural response and filter characteristics precisely. It provides insight into how the nonlocal
+effectsandporosityaffectthematerial’sabilitytodampoutvibrationsorabsorbmechanical
+shocks from a moving source.
+• Beyond its theoretical framework, this study provides actionable design metrics for the fab-
+rication and quality control of micro-electromechanical systems (MEMS). Specifically, the
+quantitativeanalysisofstressconcentrationasafunctionoftheparabolicirregularitydepth
+(h /s) allows for the establishment of precise manufacturing tolerance limits. For instance,
+0
+the results indicate that while normal stress exhibits a stress-relief trend, the shear stress
+concentrationincreasessignificantlyasthe irregularitydepthratioexceeds 0.1. In aMEMS
+fabrication context—such as the chemical etching of PZT-5H micro-plates—a process en-
+gineer can utilize these curves to set a “Critical Defect Threshold”. By mapping the peak
+shear stress values against the material’s mechanical yield strength and depolarization lim-
+its, a maximum allowable surface roughness of h /s ≤ 0.1 can be established to prevent
+0
+premature fatigue failure or signal degradation under frictional moving loads. This trans-
+forms the observed stress-field sensitivities into a rigorous “Design-for-Reliability” (DfR)
+protocol, enabling a strategic balance between high-precision manufacturing costs and the
+operational longevity of smart micro-devices.
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+Acknowledgements
+This article has been produced with the financial support of the European Union under the
+REFRESH – Research Excellence For Region Sustainability and High-tech Industries project
+number CZ.10.03.01/00/22 003/0000048 via the Operational Programme Just Transition.
+Funding
+This article has been produced with the financial support of the European Union under the RE-
+FRESH-ResearchExcellenceForRegionSustainabilityandHigh-techIndustriesprojectnumber
+CZ.10.03.01/00/22 003/0000048 via the Operational Programme Just Transition.
+Authorship statement
+Meghana A R: Supervision, Methodology. Soumik Das: Validation, Writing- Reviewing and
+Editing. Rachaita Dutta: Investigation, Writing- Original draft preparation. Vipin Gupta:
+Conceptualization. Murat Yaylacı: Software. Faisal Muteb K. Almalki: Methodology.
+Mohammad Ghatasheh: Visualization. Aymen Flah: Software, Writing- Reviewing and
+Editing, Validation.
+Declaration of competing interests
+S
+The authors have no competing interests to declare. S
+E
+Declaration of generative AI use R
+P
+This statement confirms that the authors did noNt use AI in the core process
+I
+Data availability E
+L
+All data generated or analysed dCuring this study are included in this published article.
+I
+T
+Appendix
+R
+A
+(cid:18) (cid:19) (cid:18) (cid:19) (cid:18) (cid:19)
+(ϱ ) (ϱ ) (ϱ )
+m = C − 12 11M ,m = C +C − 12 11M ,m = E +E −χ∗ 12 11 ,
+1 11 (ϱ ) 11 2 44 13 (ϱ ) 33 3 31 15 3(ϱ )
+22 11 22 11 22 11
+(cid:18) (cid:19) (cid:18) (cid:19) (cid:18) (cid:19)
+(ϱ ) (ϱ ) (ϱ )
+m = χ +χ −E∗ 12 11 ,m = C +C − 12 33M ,m = C − 12 33M ,
+4 31 15 3(ϱ ) 5 44 13 (ϱ ) 11 6 33 (ϱ ) 33
+22 11 22 33 22 33
+(cid:18) (cid:19) (cid:18) (cid:19)
+(ϱ ) (ϱ )
+m = E −χ∗ 12 33 ,m = χ − 12 33E∗ ,m =E +E ,m =χ +χ ,
+7 33 3(ϱ ) 8 33 (ϱ ) 3 9 15 31 10 31 15
+22 33 22 33
+n =C −d′ ε k2V2,n =−M +d′ ε k2V2+d′ V2,
+1 44 11 0 0 2 11 11 0 0 11 0
+n =−C +d′ ε k2V2+d′ V2,n =m −d′ ε k2V2.
+3 44 33 0 0 33 0 4 6 33 0 0
+p =C Θ(1)+E Θ(2)+χ Θ(3),s =C Θ(1)+E Θ(2)+χ Θ(3),
+i 33 i 33 i 33 i i 44 i 15 i 15 i
+t =C Ψ(1)+E Ψ(2)+χ Ψ(3),r =C Ψ(1)+E Ψ(2)+χ Ψ(3),
+i 33 i 33 i 33 i i 44 i 15 i 15 i
+w =C Θ(1)+E Θ(2)+χ Θ(3),y =C Ψ(1)+E Ψ(2)+χ Ψ(3), for i=1,2,3,4.
+i 13 i 31 i 31 i i 13 i 31 i 31 i
+References
+[1] BahlS,NagarH,SinghI,etal.Smartmaterialstypes,propertiesandapplications: Areview.
+Materials Today: Proceedings. 2020;28:1302–1306.
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+[2] UchinoK.Piezoelectricactuatorsandultrasonicmotors.Vol.1.SpringerScience&Business
+Media; 1996.
+[3] Kar-Gupta R, Venkatesh T. Electromechanical response of porous piezoelectric materials.
+Acta Materialia. 2006;54(15):4063–4078.
+[4] WangF,HanX,DingT.Ananisotropiclayeredporoelastichalf-spacesubjectedtoamoving
+point load. Soil Dynamics and Earthquake Engineering. 2021;140:106427.
+[5] Muho EV. Dynamic response of an elastic plate on a transversely isotropic viscoelastic half-
+space with variable with depth moduli to a rectangular moving load. Soil Dynamics and
+Earthquake Engineering. 2020;139:106330.
+[6] Mallik AK, Chandra S, Singh AB. Steady-state response of an elastically supported infinite
+beam to a moving load. Journal of sound and vibration. 2006;291(3-5):1148–1169.
+[7] Fry`ba L. Vibration of solids and structures under moving loads. Vol. 1. Springer science &
+business media; 2013.
+[8] ShamaltaM,MetrikineA.Analyticalstudyofthedynamicresponseofanembeddedrailway
+track to a moving load. Archive of Applied Mechanics. 2003;73(1):131–146.
+[9] Fry`ba L. Dynamic interaction of vehicles with tracks and roads. Vehicle System Dynamics.
+S
+1987;16(3):129–138.
+S
+[10] Yang YB, Yau J, Yao Z, et al. Vehicle-bridge interactiEon dynamics: with applications to
+R
+high-speed railways. World Scientific; 2004.
+P
+[11] Sneddon IN. The stress produced by a pulsNe of pressure moving along the surface of a semi-
+infinite solid. Rendiconti del Circolo MatIematico di Palermo. 1952;1(1):57–62.
+E
+[12] Ang DD. Transient motion of a line load on the surface of an elastic half-space. Quarterly of
+L
+Applied Mathematics. 1960;C18(3):251–256.
+I
+[13] Payton RG. TransientTmotion of an elastic half-space due to a moving surface line load.
+R
+International Journal of Engineering Science. 1967;5(1):49–79.
+A
+[14] Sackman J. Uniformly moving load on a layered half plane. Journal of the Engineering Me-
+chanics Division. 1961;87(4):75–89.
+[15] ChatterjeeM,ChattopadhyayA.Effectofmovingloadduetoirregularityinicesheetfloating
+on water. Acta Mechanica. 2017;228(5):1749–1765.
+[16] Kumar P, Chattopadhyay A, Mahanty M, et al. Stresses induced by a moving load in a
+composite structure with an incompressible poroviscoelastic layer. Journal of Engineering
+Mechanics. 2019;145(9):04019062.
+[17] Kaur T, Sharma SK, Singh AK. Dynamic response of a moving load on a micropolar half-
+space with irregularity. Applied Mathematical Modelling. 2016;40(5-6):3535–3549.
+[18] Malekzadeh P, Monajjemzadeh S. Nonlinear response of functionally graded plates under
+moving load. Thin-Walled Structures. 2015;96:120–129.
+[19] RybyanetsAN.Porouspiezoceramics: theory, technology, andproperties.IEEEtransactions
+on ultrasonics, ferroelectrics, and frequency control. 2011;58(7):1492–1507.
+[20] Chen S, Zhang Q, Liu H. Dynamic response of double-FG porous beam system subjected to
+moving load. Engineering with Computers. 2022;38(Suppl 3):2309–2328.
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+[21] Rakshit S, Mistri KC, Das A, et al. Stress analysis on the irregular surface of visco-porous
+piezoelectric half-space subjected to a moving load. Journal of Intelligent Material Systems
+and Structures. 2022;33(10):1244–1270.
+[22] Yang J. An introduction to the theory of piezoelectricity. Springer; 2005.
+[23] Balageas D, Fritzen CP, Gu¨emes A. Structural health monitoring. Vol. 90. John Wiley &
+Sons; 2010.
+[24] Galassi C. Processing of porous ceramics: Piezoelectric materials. Journal of the European
+Ceramic Society. 2006;26(14):2951–2958.
+[25] Honein B, Braga A, Barbone P, et al. Wave propagation in piezoelectric layered media with
+some applications. Journal of intelligent material systems and structures. 1991;2(4):542–557.
+[26] Bae DY, Lee JR. Development of single channeled serial-connected piezoelectric sensor ar-
+ray and damage visualization based on multi-source wave propagation imaging. Journal of
+Intelligent Material Systems and Structures. 2016;27(13):1861–1870.
+[27] Gupta V, Kumawat S, Vishwakarma SK, et al. Effects of layer imperfections and material
+gradation on circumferential shear horizontal waves in cylindrical piezoelectric composite
+structure. Composite Structures. 2025;359:118997.
+[28] Seema, Saeed AM, Singhal A, et al. Surface acoustic waves in Sa layered piezoelectric plate
+S
+withconsideredsurfaceeffects.InternationalJournalofDynamicsandControl.2025;13(1):38.
+E
+R
+[29] Cui J, Du J, Wang J. Effects of viscous liquid on sh wave propagation in layered viscoelas-
+P
+tic/piezoelectricstructure.In: 2014IEEEInternationalUltrasonicsSymposium;IEEE;2014.
+p. 1971–1974. N
+I
+[30] Liu H, Wang Z, Wang T. Effect ofEinitial stress on the propagation behavior of love waves
+in a layered piezoelectric structLure. International Journal of Solids and Structures. 2001;
+C
+38(1):37–51.
+I
+T
+[31] Kumhar R, Kundu S, Maity M, et al. Analysis of interfacial imperfections and electro-
+R
+mechanicalproApertiesonelasticwavesinporouspiezo-compositebars.InternationalJournal
+of Mechanical Sciences. 2020;187:105926.
+[32] Moharana S. Investigation of a continuum shear lag model as an indicator for the damage
+detectioninpiezo-elastodynamicstructure.JournalofVibrationEngineering&Technologies.
+2021;9(7):1755–1768.
+[33] Singh S, Barde A, Mahanty B, et al. Emerging technologies-based and digital twin driven
+inclusive manufacturing system. International Journal of Integrated Supply Management.
+2020;13(4):353–375.
+[34] ZhouY,Lu¨ C,ChenW.Bulkwavepropagationinlayeredpiezomagnetic/piezoelectricplates
+with initial stresses or interface imperfections. Composite Structures. 2012;94(9):2736–2745.
+[35] Huang Y, Li XF. Interfacial waves in dissimilar piezoelectric cubic crystals with an imper-
+fect bonding. IEEE transactions on ultrasonics, ferroelectrics, and frequency control. 2011;
+58(6):1261–1265.
+[36] Li P, Jin F. Excitation and propagation of shear horizontal waves in a piezoelectric layer
+imperfectly bonded to a metal or elastic substrate. Acta Mechanica. 2015;226(2):267–284.
+[37] Eringen AC, Edelen D. On nonlocal elasticity. International journal of engineering science.
+1972;10(3):233–248.
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+[38] Eringen AC. Theory of nonlocal thermoelasticity. International Journal of Engineering Sci-
+ence. 1974;12(12):1063–1077.
+[39] Asghar S, Naeem MN, Hussain M, et al. Prediction and assessment of nonlocal natural fre-
+quencies of dwcnts: Vibration analysis. Computers and Concrete, An International Journal.
+2020;25(2):133–144.
+[40] Hussain M, Naeem MN, Tounsi A, et al. Nonlocal effect on the vibration of armchair and
+zigzag swcnts with bending rigidity. Advances in nano research. 2019;7(6):431–442.
+[41] Zenkour AM, Abouelregal AE. Decaying temperature and dynamic response of a thermoe-
+lastic nanobeam to a moving load. Advances in computational design. 2018;3(1):1–16.
+[42] MatoukH,BousahlaAA,HeirecheH,etal.Investigationonhygro-thermalvibrationofP-FG
+and symmetric S-FG nanobeam using integral timoshenko beam theory. Advances in nano
+research. 2020;8(4):293–305.
+[43] Barati MR, Faleh NM, Zenkour AM. Dynamic response of nanobeams subjected to mov-
+ing nanoparticles and hygro-thermal environments based on nonlocal strain gradient theory.
+Mechanics of Advanced Materials and Structures. 2019;26(19):1661–1669.
+[44] Boutaleb S, Benrahou KH, Bakora A, et al. Dynamic analysis of nanosize FG rectangular
+plates based on simple nonlocal quasi 3d hsdt. Advances in nano research. 2019;7(3):191.
+S
+S
+[45] Gupta S, Das S, Dutta R. Nonlocal stress analysis of an irregular FGFPM structure im-
+E
+perfectly bonded to fiber-reinforced substrate subjected to moving load. Soil Dynamics and
+R
+Earthquake Engineering. 2021;147:106744. P
+N
+[46] Dutta R, Das S, Bhengra N, et al. Nonlocal effect on shear wave propagation in a fiber-
+I
+reinforced poroelastic layered structure subjected to interfacial impulsive disturbance. Soil
+E
+Dynamics and Earthquake Engineering. 2024;176:108307.
+L
+C
+[47] ARM,DuttaR,GuptaV,etal.Size-dependentanalysisofsurfacewaveinirregularfractured
+I
+porousseabedsubjecteTdtofractional-orderderivative.MechanicsofAdvancedMaterialsand
+Structures. 2024;:1R–22.
+A
+[48] Wang,Liyuan,NanChong, etal.Nonlinearvibrationanalysisofnonlocalfractionalviscoelas-
+tic piezoelectric nanobeams incorporating surface effects. European Journal of Mechanics-
+A/Solids (2025);:105840.
+[49] Mektout, Mohamed, and Hicham Bourouina. Nonlocal dynamic response of FGP sandwich
+microbeam with 2D PSH network incorporating adatoms-surface interactions energy under
+magnetic field. Mechanics of Advanced Materials and Structures, no. 15 (2025): 3632-3663.
+[50] Mektout, Mohamed, Hicham Bourouina, et al. Functional resonator-based nonlocal FGP
+hollowadsorberforwidedetectionofcoupledbiomoleculesusingDQMframework.Meccanica
+(2025): 1-35.
+[51] Mektout, Mohamed, Hicham Bourouina, Yahia Maiza, Soumia Khouni, and Abir Lamari.
+Size-dependent nonlocal resonance of smart phononic adsorber for biosensing under inter-
+atomic energy and magnetic intensity. Multiscale and Multidisciplinary Modeling, Experi-
+ments and Design , no. 1 (2026): 33.
+[52] MAIZA,Yahia,HichamBourouina,MohamedMektout,etal.Nonlocalstraingradient-based
+nonlinear thermal effect on perforated FGP bio-resonator using DQM approach. Journal of
+Physics D: Applied Physics (2025).
+ACCAERPTTICEDLE M IANN PURSECSRSIPT
+[53] Maiza, Yahia, and Hicham Bourouina. Non-local response prediction for FGP sandwich mi-
+crobeam with 2D PSH network subjected to adatoms-substrate interactions and exited by
+magnetic intensity. Acta Mechanica 236, no. 1 (2025): 259-288.
+[54] Mektout, Mohamed, Hicham Bourouina, et al. Size-dependent nonlocal resonance of smart
+phononicadsorberforbiosensingunderinteratomicenergyandmagneticintensity.Multiscale
+and Multidisciplinary Modeling, Experiments and Design 9, no. 1 (2026): 33.
+[55] Mektout,Mohamed,etal.Functionalresonator-basednonlocalFGPhollowadsorberforwide
+detection of coupled biomolecules using DQM framework. Meccanica (2025): 1-35.
+[56] Eringen AC, Wegner J. Nonlocal continuum field theories. Appl Mech Rev. 2003;56(2):B20–
+B22.
+[57] Eringen AC. Plane waves in nonlocal micropolar elasticity. International Journal of Engi-
+neering Science. 1984;22(8-10):1113–1121.
+[58] Gupta, Vishakha, and Anil K. Vashishth. The effects of piezoelectricity on the interaction
+of waves in fluid-loaded poroelastic half-space. Smart Materials Research 2014, no. 1 (2014):
+281013.
+[59] Kumari P, Modi C, Sharma V. Dynamic response of normal moving load on a transversely
+isotropicpiezoelectrichalf-spacewithparabolicirregularity.WavesinRandomandComplex
+S
+Media. 2018;28(4):601–623. S
+E
+[60] Chattopadhyay A, Gupta S, Sharma V, et al. Stresses produced on a rough irregular half-
+R
+space by a moving load. Acta mechanica. 2011;22P1(3):271–280.
+N
+[61] Vashishth AK, Gupta V. Ultrasonic wave’s interaction at fluid-porous piezoelectric layered
+I
+interface. Ultrasonics. 2013;53(2):479–494.
+E
+[62] Li J, Dunn ML. ViscoelectroelasLtic behavior of heterogeneous piezoelectric solids. Journal of
+C
+Applied Physics. 2001;89(5):2893–2903.
+I
+T
+R
+A

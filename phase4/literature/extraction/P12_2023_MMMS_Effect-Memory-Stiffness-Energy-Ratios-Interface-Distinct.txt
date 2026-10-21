@@ -1,0 +1,1301 @@
+ThecurrentissueandfulltextarchiveofthisjournalisavailableonEmeraldInsightat:
+https://www.emerald.com/insight/1573-6105.htm
+MMMS The effect of memory and stiffness
+19,3
+on energy ratios at the interface
+of distinct media
+464 M.S. Barak and Rajesh Kumar
+DepartmentofMathematics,IndiraGandhiUniversity,Meerpur,India
+Received10October2022 Rajneesh Kumar
+Revised9January2023
+Accepted6February2023 DepartmentofMathematics,KurukshetraUniversity,
+Kurukshetra,India,and
+Vipin Gupta
+DepartmentofMathematics,IndiraGandhiUniversity,Meerpur,India
+Abstract
+Purpose–Thispaperaimstostudytheenergyratiosofplanewavesonanimperfectinterfaceofelastic
+half-space(EHS)andorthotropicpiezothermoelastichalf-space(OPHS).
+Design/methodology/approach–Thedual-phaselag(DPL)theorywithmemory-dependentderivativesis
+employedtostudythevariationofenergyratiosattheimperfectinterface.
+Findings–Aplanelongitudinalwave(P)ortransversalwave(SV)propagatesthroughEHSandstrikesatthe
+interface.Asaresult,twowavesarereflected,andfourwavesaretransmitted,asshowninFigure2.The
+amplituderatiosaredeterminedbyimperfectboundarieshavingnormalstiffnessandtransversestiffness.
+Thevariationofenergyratiosiscomputednumericallyforaparticularmodelofgraphite(EHS)/cadmium
+selenide(OPHS)anddepictedgraphicallyagainsttheangleofincidencetoconsidertheeffectofstiffness
+parameters,memoryandkernelfunctions.
+Researchlimitations/implications–TheenergydistributionofincidentPorSVwavesamongvarious
+reflectedand transmittedwaves, as well as the interaction of waves for imperfect interface (IIF),normal
+stiffness interface (NSIF), transverse stiffness interface (TSIF), and welded contact interface (WCIF), are
+importantfactorstoconsiderwhenstudyingseismicwavebehavior.
+Practicalimplications–Thepresentmodelmaybeusedinvariousdisciplines,suchashigh-energyparticle
+physics,earthquakeengineering,nuclearfusion,aeronautics,soildynamicsandotherareaswherememory-
+dependentderivativeandphasedelaysaresignificant.
+Originality/value–Inavarietyoftechnicalandgeophysicalscenarios,wavepropagationinanelastic/
+piezothermoelastic medium with varying magnetic fields, initial stress, temperature, porosity, etc., gives
+importantinformationregardingthepresenceofnewandmodifiedwaves.
+KeywordsKernel,Timedelay,Memory-dependentderivative,Normalstiffness,Transversestiffness,
+Piezothermoelastic,Energyratios
+PapertypeResearchpaper
+1.Introduction
+In recent years, the theories of thermoelasticity, which predict the finite velocity of
+propagation of thermal signals, have aroused much interest due to the wide range of
+applicationsinmodernengineering,earthquakeengineering,geophysics,geologicalscience
+andmaterialscience.Theuncoupledtheoryofthermoelasticityisinsufficienttoexplainthe
+mechanismofthevelocityofthethermalsignals.Oneofthefamousgeneralizationsofthe
+classicaltheoryofthermoelasticitywasintroducedbyLordandShulman(1967),inwhich
+MultidisciplineModelingin
+MaterialsandStructures Theauthor(Mr.VipinGupta)isthankfulandacknowledgestoCouncilofScientificandIndustrialResearch
+Vol.19No.3,2023 (CSIR),NewDelhi(File.No.09/1293(0003)/2019-EMR-I)forthefinancialsupporttocarryoutthisresearch
+pp.464-492
+©EmeraldPublishingLimited work.
+1573-6105
+DOI10.1108/MMMS-10-2022-0209 Disclosurestatement:Theauthorsdeclaredthattherewasnopotentialconflictofinterest.
+classicalFourier’slawwasmodifiedbyaddinganewtermcalledonerelaxationtime,andthe The effect of
+remaining terms are identical. Green and Lindsay (1972) developed the theory of memory and
+thermoelasticitybyaddingthesecondsoundeffectofheatconduction.Afewspeculations
+stiffness
+onthegeneralizedcoupledtheoryarepresentedbyIgnaczak(1989)andChandrasekharaiah
+(1998).In1995,Tzou(1995)developedadual-phaselag(DPL)theory,inwhichFourier’slaw
+wasmodifiedbyusing(τ ,τ )two-timedelayconstants.Thedelaytimeτ istheheatflux
+q T q
+phase lag caused by fast transient effects of thermal inertia and τ is the temperature
+T 465
+gradientphaselagduetomicrostructuralinteractions.Theexponentialstabilityandwell-
+posednessoftheDPLmodelhavebeenexaminedbyQuintanillaandRacke(2006).
+In2011,WangandLi(2011)introducedanewconceptofMemorydependentderivative
+(MDD)inwhichCaputoandMainardi(1971)typefractionalderivativeistransformedintoan
+integralformofthederivativewithkernelfunctiononaslippingintervalcondition.
+Z
+1 t vf
+Dτf ¼
+τ
+Kðt(cid:2)ξÞ
+vξ
+dξ (1.1)
+t(cid:2)τ
+is the memory-dependent derivative for delay time τand a limiting case when time delay
+tends to zero, MDD becomes a common derivative and Dτ →
+v
+v
+t
+in the absence of memory
+effect. In general, from the standpoint of applications, the kernel function κðt(cid:2)ξÞshould
+satisfytheinequality0≤κðt(cid:2)ξÞ<1forξ∈½t(cid:2) τ;t(cid:3).FollowingGuptaetal.(2023),wecan
+chooseasuitablekernelfunctionas
+8
+< 1ifm¼n¼0
+2n m2
+Kðt(cid:2)ξÞ¼1(cid:2) ðt(cid:2)ξÞþ ðt(cid:2)ξÞ2 ¼ 1(cid:2)ðt(cid:2)ξÞ=τifm¼0;n¼1=2 (1.2)
+τ τ2 :
+ð1(cid:2)ðt(cid:2)ξÞ=τ Þ2ifm¼n¼1
+Yuetal.(2014)analyzedthatwhenMDDisusedintheheatconductionlaw,theheattransport
+equationischanged.Asaresult,theconstitutiveequationsarealsochanged,aswellasthe
+newmemory-dependentmodel,whichmightbebetterthanfractionalonesformanyreasons:
+first,thenewmodelhasauniqueshape,whiledifferentauthors’fractionalordertheorieshave
+differentpictures;andsecond,thephysicalmeaningoftheformerisclearerwhenreaders
+lookatwhatMDDisallabout.Third,thenewmodelisshownbyintegerorderdifferential
+andintegral,whichmakesiteasiertofigureoutnumbersthanfractionalones;Lastly,MDD’s
+kernel function and time delay can be chosen at will, giving more ways to describe a
+material’s real-world response. This makes it more flexible in applications than fractional
+ones,wherethefractionalorderparameteristheimportantvariable.
+Ezzatetal.(2014,2016)examinedsomeproblemswithgeneralizedthermo-viscoelasticity
+theorywithmemory-dependenteffects.KumarandSharma(2019)studiedthereflectionand
+refractionattheinterfaceofpiezothermoelastichalf-spaceandliquidhalf-spaceusingnormal
+modeanalysisandalsocalculatedtheenergyvariationforhomogenousplanewaves.Several
+physical problems in reference to this new generalized thermoelasticity with memory-
+dependentderivativehavebeenreportedintheliterature(Ezzatetal.,2015;EzzatandEl-Bary,
+2016;Bachher,2019;LiandHe,2019;Aldawodyetal.,2019;KantandMukhopadhyay,2019;
+SarkarandMondal,2019;SurandMondal,2022;SarkarandMukhopadhyay,2021).
+Piezoelectric has become the most exciting research topic in the last two decades.
+Piezoelectricmaterialsarebecomingincreasinglypopularindynamicsensing,actuationand
+structural and mechanical system control. The electric potential generation in a non-
+centrosymmetric crystal under mechanical stress such as stretching, compression and
+bending is called piezoelectricity. Applications of piezoelectric elements are in intelligent
+structuralsystemsandmanyengineeringproblems.Abouelregaletal.(2020)modifiedthe
+thermo-piezoelectricmodelinthecontextofgeneralizedheatconductionwithanMDDand
+MMMS verified the time-delay effect. Mondal and Othman (2021) analyzed the memory effect on
+19,3 piezo-thermoelasticmediumunderLSandDPLtheoriesofthermoelasticity.Amathematical
+modelofwavepropagationinanisotropicgeneralizedthermo-piezoelectricinthepresenceof
+amagneticfieldandrotationhasbeenstudiedbyAlshaikh(2022).Kauretal.(2022)studied
+theplanewavereflectionandrefractionattheimperfectboundaryoftwodistincttypesof
+transversely isotropic piezothermoelastic solid half-spaces with two temperatures. Singh
+etal.(2021)examinedthereflectionandtransmissionofplanewavesattheimperfectinterface
+466
+betweentwodistinctpiezoelectrichalf-spaces.
+Keepingtheabovestudyinmind,inthispaper,anovelmathematicalmodelofanelastic
+half-space (EHS) lying over an orthotropic piezothermoelastic half-space (OPHS) with
+imperfectinterfaceinthecontextofdualphaselagwithMDDhasdeveloped,asshownin
+Figure1.Theamplituderatiosareobtainedbyusingappropriateboundaryconditions.These
+amplituderationsarefurtherusedtoobtaintheenergyratios.Theenergyconservationlawis
+verified,andsomeexceptionalcases,suchastheeffectofstiffnessparametersanddifferent
+kernelfunctionsontheenergyratios,arealsodiscussednumericallyandgraphically.
+2.Basicequations
+The constitutive relations of a homogenous, thermally conducting, anisotropic
+piezothermoelastic half-space (OPHS) in the absence of free charge density, body forces
+and shear forces are given by Sarkar and Mukhopadhyay (2021), Kumar and Sharma
+(2017)as
+σ ¼c e (cid:2) η E (cid:2)β T (2.1)
+ij ijkl kl ijk k ij
+E ¼(cid:2)w; (2.2)
+i i
+D ¼ ε E þ η e þ τ T (2.3)
+i ij j ijk jk i
+D i;i ¼0 (2.4)
+σ ij;j ¼ ρu€ i (2.5)
+!
+τ2 (cid:2) (cid:3)
+ð1þ τ T DτÞK ij T;ij ¼ 1þ τ q Dτþ 2 qD τ 2 ρC e T _ þT 0 ðβ ij u_ i;j (cid:2) τ i w_ ;i Þ ði;j;k;l¼1;2;3Þ (2.6)
+Theconstitutiverelationsofahomogenous,isotropicandelastichalf-spaceintheabsenceof
+bodyforces,asdefinedbyAchenbach(1975)are
+(cid:2) (cid:3)
+σe ¼λeue δ þ μe ue þue (2.7)
+ij k;k ij i;j j;i
+Elastichalf-space(EHS) x <0
+3
+x =0
+3
+x
+ImperfectInterface 1
+x >0
+Orthotropicpiezothermoelastichalf-space 3
+Figure1. (OPHS)
+Modeloftheproblem x
+3
+σe ¼ ρeu€eði;j;k¼1;2;3Þ (2.8) The effect of
+ij;j i memory and
+stiffness
+2.1Limitingcases
+Case1:Ifτ ¼ τ ¼0,heatequation(2.6)correspondstoBiot(1956)model.
+q T
+Case 2: when τ
+q
+>0, τ2
+q
+¼ τ
+T
+¼0, κðt(cid:2)ζÞ¼1 and Dτ →
+v
+v
+t
+, heat equation (2.6) 467
+correspondstoLordandShulman(1967)model.
+Case3:whenκðt(cid:2)ζÞ¼1andDτ →
+v
+v
+t
+,heatequation(2.6)correspondstoTzou(1995)
+model.
+For simplicity, the engineering notations are used and the subscripts proceeded by
+superposeddot“:”andcomma“;”correspondingtotimeandpartialderivatives,respectively.
+Thesuperscripteisusedforelastichalf-spaceparameters.
+2.2Nomenclature
+c ¼ elasticstiffnesstensor Ae ¼ amplitudeofreflected
+ijkl 1
+K ¼ components of thermal Pwaves
+ij
+conductivity β ¼ thermalmodulitensors
+ij
+C ¼ specific heat at constant w¼ electricalpotential
+e
+strain E ¼ electricfielddensity
+i
+ρ¼ density D ¼ electricdisplacement
+i
+T ¼ referencetemperature τ ¼ pyroelectricconstants
+0 i
+τ ¼ phaselagofthetemperature τ ¼ phaselagofheatflux
+T q
+gradient T ¼ absolutetemperature
+σ ¼ componentsofthestress λ;μ¼ Lame’sconstant
+ij
+e ¼ omponentofstrain η ;ε ¼ piezothermalmodulitensors
+ij ijk ij
+u ;u ¼ displacement components Be ¼ amplitudeofincident
+1 3 0
+ofvector ! u SVwaves
+Ae ¼ amplitudeofincident Be ¼ amplitudeofreflected
+0 1
+Pwaves SVwaves
+3.Formulationoftheproblem
+Thismodelassumedthatthecontactof(OPHS,x >0)and (EHS,x <0)attheinterface
+3 3
+x ¼0isimperfect,asshowninFigure1.Theplanewaveispropagatinginthex x (cid:2)plane,
+3 1 3
+and the displacement vector for OPHS and EHS represented by ! u ¼ðu ;0;u Þ
+1 3
+and ! u e ¼ðue;0;ueÞ.
+1 3
+TheconstitutiveequationsfortheOPHSandelectricdisplacementinthex x (cid:2)planeare
+1 3
+givenas
+σ ¼c u ; þc u ; þ η w; (cid:2)β T (3.1)
+11 11 1 1 13 3 3 31 3 11
+σ ¼c ðu ; þu ; Þþ η w; (3.2)
+13 55 1 3 3 1 15 1
+σ ¼c u ; þc u ; þ η w; (cid:2)β T (3.3)
+33 13 1 1 33 3 3 33 3 33
+D ¼ η ðu ; þu ; Þ (cid:2) ε w; (3.4)
+1 15 1 3 3 1 11 1
+MMMS D ¼ η u ; þ η u ; (cid:2) ε w; þ τ T (3.5)
+3 31 1 1 33 3 3 33 3 3
+19,3
+TheconstitutiveequationsfortheEHSinthex x (cid:2)planearegivenbelow
+1 3
+(cid:4) (cid:5)
+σe ¼λe u e; þue; þ2μeue (3.6)
+11 1 1 3 3 1;1
+(cid:4) (cid:5)
+468 σe 13 ¼ μe u 1 e; 3 þue 3 ; 1 (3.7)
+(cid:4) (cid:5)
+σe ¼λe u e; þue; þ2μeue (3.8)
+33 1 1 3 3 3;3
+Usingequations(3.1)–(3.8)intherelations(2.4)–(2.8),weget
+c u ; þc u ; þðc þc Þu ; þðη þ η Þw; (cid:2)β T; ¼ ρu€ (3.9)
+11 1 11 55 1 33 13 55 3 13 31 15 13 11 1 1
+ðc 13 þc 55 Þu 1 ; 13 þc 55 u 3 ; 11 þc 33 u 3 ; 33 þ η 15 w; 11 þ η 33 w ;33 (cid:2)β 33 T; 3 ¼ ρu€ 3 (3.10)
+!
+τ2
+ð1þ τ
+T
+DτÞðK
+11
+T;
+11
+þK
+33
+T;
+33
+Þ(cid:2) 1þ τ
+q
+Dτþ
+2
+qD
+τ
+2
+(cid:6) (cid:6) (cid:7)(cid:7) (3.11)
+ρCT _ þT β u_ ; þβ u_ ; (cid:2) τ w_; ¼0
+e 0 11 1 1 33 3 3 3 3
+ð η þ η Þu ; þ η u ; þ η u ; (cid:2) ε w; (cid:2) ε w; þ τ T; ¼0 (3.12)
+15 31 1 13 (cid:4) 15 3 11 (cid:5)33 3 3 (cid:4) 3 11 11 (cid:5) 33 33 3 3
+ðλeþ μeÞ ue; þue; þ μe ue; þue; (cid:2) ρeu€e¼0 (3.13)
+1 11 3 13 1 11 1 33 1
+(cid:4) (cid:5) (cid:4) (cid:5)
+ðλeþ μeÞ ue; þue; þ μe ue; þue; (cid:2) ρeu€e¼0 (3.14)
+1 31 3 33 3 11 3 33 3
+Followingdimensionlessquantitiesareintroducedforfurthersimplification
+(cid:4) (cid:5) ω (cid:4) (cid:5) (cid:2) (cid:3) β
+x0;x0;u0;u0;ue0;ue0 ¼ 1 x ;x ;u ;u ;ue;ue ; t0;τ0 ;τ0 ¼ ω ðt;τ ;τ Þ;T0 ¼ 11 T
+1 3 1 3 1 3 c 1 3 1 3 1 3 T q 1 T q ρc2
+1 1
+ω η (cid:2) (cid:3) 1 (cid:2) (cid:3) (cid:4) (cid:5) c
+w’ ¼ 1 31 w; σ’;σe’ ¼ σ ;σe ; K’;K’ ¼ 1 ðK ;KÞ (3.15)
+c β T ij ij β T ij ij n t β T ω n t
+1 11 0 11 0 11 0 1
+qffiffiffiffi
+wherec ¼ c11,ω ¼ ρCec2 1 :
+1 ρ 1 K11
+Usingthesenon-dimensionquantitiesinequations(3.9)–(3.14)withtheremovalofprimes
+ð0Þcanbewrittenas
+(cid:6) (cid:7)
+v2 v2 v2 v2u v2w vT
+c þc (cid:2)a u þa 3 þa (cid:2)a ¼0 (3.16)
+11vx2 55vx2 11vt2 1 12 vx vx 13 vx vx 11 vx
+1 3 1 3 1 3 1
+(cid:6) (cid:7) (cid:6) (cid:7)
+v2u v2 v2 v2 v2 v2 vT
+a þ c þc (cid:2)a u þ a þa w (cid:2)a ¼0
+12 vx vx 55vx2 33vx2 11vt2 3 21 vx2 22 vx2 23vx
+1 3 1 3 1 3 3
+(3.17)
+(cid:6) (cid:7) !
+v2 v2 τ2 The effect of
+ð1þ τ T DτÞ a 31vx2 þa 32vx2 T(cid:2) 1þ τ q Dτþ 2 qD τ 2 memory and
+(cid:6) 1 3 (cid:7) (3.18) stiffness
+vT v2u v2u v2w
+a þa 1 þa 3 (cid:2)a ¼0
+33vt 34vx vt 35vx vt 36vx vt
+1 3 3
+(cid:6) (cid:7) (cid:6) (cid:7)
+a
+v2u
+1 þ a
+v2
+þa
+v2
+u (cid:2) a
+v2
+þa
+v2
+w þa
+vT
+¼0 (3.19) 469
+41 vx vx 42vx2 43vx2 3 44 vx2 45 vx2 46vx
+1 3 !1
+(cid:6)
+3
+(cid:7)
+1
+(cid:6)
+3
+(cid:7)
+3
+αe2 (cid:2)βe2 v2ue v2ue βe2 v2ue v2ue v2ue
+1 þ 3 þ 1 þ 1 ¼ 1 (3.20)
+c2 vx2 vx vx c2 vx2 vx2 vt2
+1 1 3 1 1 1 3
+!(cid:6) (cid:7) (cid:6) (cid:7)
+αe2 (cid:2)βe2 v2ue v2ue βe2 v2ue v2ue v2ue
+1 þ 3 þ 3 þ 3 ¼ 3 (3.21)
+c2 vx vx vx2 c2 vx2 vx2 vt2
+1 3 1 3 1 1 3
+qffiffiffiffiffiffiffiffiffiffi qffiffiffi
+whereαe
+¼
+λeþ2μeandβe
+¼
+μearethevelocitiesoflongitudinalandtransversewaves.
+ρe ρe
+ThedisplacementcomponentsinanEHSmediumbyusingtheHelmholtzprincipleare
+vwe vψe vwe vψe
+ue ¼ (cid:2) ;ue ¼ þ (3.22)
+1 vx vx 3 vx vx
+1 3 3 1
+wherethepotentialsweandψesatisfythefollowingwaveequations
+w€e ψ€e
+∇2we ¼ ;∇2ψe ¼ (3.23)
+α*2 β*2
+αe βe
+hereα* ¼ ;β* ¼ (3.24)
+c c
+1 1
+4.Wavepropagationanalysis
+Forplanehomogenousharmonicwave,itisassumedthatthewavesolutioninOPHSisof
+theform
+h (cid:2) (cid:3)i
+x
+½u ;u ;w;T(cid:3) ¼½U;P;Q;R(cid:3)exp ιω (cid:2) 1(cid:2)qx þt : (4.1)
+1 3 c 3
+whereU;P;QandRaretheamplitudevectors.
+Thesystemofequations(3.16)–(3.19),withtheaidofequation(4.1),yieldsasystem
+BX ¼0 (4.2)
+2 3 2 3
+m q2þm m q m q m U
+6 15 11 12 13 14 7 6 7
+whereB¼ 6 4 m 12 q m 25 q2þm 22 m 23 q2þm 26 m 24 q 7 5 ;X ¼ 6 4 P 7 5 :
+m m q m q m q2þm Q
+31 32 33 35 34
+m q m q2þm m q2þm m q R
+41 45 42 46 43 44
+(4.3)
+MMMS ThenotationsusedinthematrixBarelistedintheAppendix1.Foranon-trivialsolution,the
+19,3 determinant of the coefficients matrix Bmust be vanishing, which gives a characteristic
+equation
+V q8þV q6þV q4þV q2þV ¼0: (4.4)
+11 12 13 14 15
+470 The coefficients V 1i ði¼1;2;3;4;5Þ of this equation are given in the Appendix 1.
+q ði¼1;2;3;4Þandq ði¼5;6;7;8Þaretherootsofequation(4.4),whoseimaginaryparts
+i i
+are positive and negative, respectively. The eigen values q ði¼1;2;3Þ represent the
+i
+propagatingquasiPðqPÞmode,quasiSðqSÞmodeandquasiTðqTÞmode,respectively,and
+q correspondtoacomponentoftheelectricpotentialðePÞmodeofwavepropagation.
+4
+The eigenvectors U;P;Q and R corresponding to each q ði¼1;2;:::;8Þ can be
+i i i i i
+writtenas
+cofðB Þ cofðB Þ cofðB Þ
+W ¼ 42 qi;Φ ¼ 43 qi;Θ ¼ 44 qi (4.5)
+i cofðB Þ i cofðB Þ i cofðB Þ
+41 qi 41 qi 41 qi
+where
+P Q R
+W ¼ i;Φ ¼ i;Θ ¼ i (4.6)
+i U i U i U
+i i i
+andfortheeigenvalueq thecofactorofV denotesascofðB Þ .Whentheplaneharmonic
+waves propagate in a i piezothermoela i s j tic medium, the ij q ciorresponding amplitudes
+ðU;P;Q;andRÞdecrease,whichdependsonthefrequencyofthesewaves.
+i i i i
+5.Reflectionandrefractioncoefficients
+Aplanelongitudinalwave,makinganangleθ withthex (cid:2)axis,isincidentattheinterface
+0 3
+throughtheEHS.Asaresult,twowavesarereflectedintheEHSmedium,andfourwavesare
+transmitted in the OPHS medium, as shown in Figure 2. The formal solutions of the
+mechanical displacements, electric potential, temperature, stress and electric displacement
+componentsassumedinanOPHSare
+IncidentPorSVWave
+ReflectedPandSVwaves
+θ
+θ 1
+0
+EHS X 3 <0 θ 2
+x
+1
+OPHS X >0
+3
+qP
+Figure2.
+Reflectionand qS
+r w e a fr v a e c s ti i o n n E o H f S plane x 3 eP qT
+andOPHS
+Source(s): Author’s own creation
+X4 h (cid:2)
+x
+(cid:3)i
+The effect of
+ðu ;u ;w;TÞ ¼ ð1;W;Φ;ΘÞU exp ιω (cid:2) 1(cid:2)q x þt (5.1)
+1 3 i i i i c i 3 memory and
+i¼1
+stiffness
+X4 h (cid:2)
+x
+(cid:3)i
+ð σ ;σ ;D Þ¼ ιω ðD ;D ;D ÞU exp ιω (cid:2) 1(cid:2)q x þt (5.2)
+33 31 3 1i 2i 6i i c i 3
+i¼1
+471
+wherec¼V =sinθ andV ¼ α*ðβ*ÞforincidentPðSVÞwave.
+0 0 o
+InanEHS,thesolutionofthewaveequationcanbeexpressedas
+(cid:9) (cid:6) (cid:7)(cid:10) (cid:9) (cid:6) (cid:7)(cid:10)
+(cid:2)x sinθ (cid:2)x cosθ (cid:2)x sinθ þx cosθ
+we ¼Aeexp ιω 1 0 3 0þt þAeexp ιω 1 0 3 0þt
+0 α* 1 α*
+(5.3)
+(cid:9) (cid:6) (cid:7)(cid:10) (cid:9) (cid:6) (cid:7)(cid:10)
+(cid:2)x sinθ (cid:2)x cosθ (cid:2)x sinθ þx cosθ
+ψe ¼Beexp ιω 1 0 3 0þt þBeexp ιω 1 0 3 0þt :
+0 β* 1 β*
+(5.4)
+5.1Boundaryconditions
+Thepossibleboundaryconditionsforthismodelataninterfacex ¼0areasfollows:
+(cid:4) (cid:5)3
+i:Continuityofnormalstress σ ¼ σe (5.5)
+33 33
+(cid:4) (cid:5)
+ii:Continuityoftangentialstress σ ¼ σe (5.6)
+31 31
+iii:Duetointerfacialimperfection;thediscontinuityconditionsformechanical
+(cid:4) (cid:5) (5.7)
+displacementareσ ¼K ue (cid:2)u
+13 t 1 1
+(cid:4) (cid:5)
+σ ¼K ue (cid:2)u (5.8)
+33 n 3 3
+vT
+iv:Theinterfaceisthermallyinsulated ¼0 (5.9)
+vx
+3
+v:TheelectricdisplacementcomponentvanishesattheinterfaceD ¼0 (5.10)
+3
+whereK ,K representsthenormalforcestiffness,transverseforcestiffnesscoefficientsofa
+n t
+unitlayerthicknessandbothhavingthesamedimensionN=m3:Equations(5.1)–(5.4)with
+theaidofboundaryconditions(5.5)–(5.10)resultsinanon-homogenoussystem
+DX ¼N (5.11)
+2 3 2 3 2 3
+D D D D D D X N
+11 12 13 14 15 16 1 1
+6 7 6 7 6 7
+6D 21 D 22 D 23 D 24 D 25 D 267 6X 27 6N 27
+6 7 6 7 6 7
+whereD¼ 6 6 D 31 D 32 D 33 D 34 D 35 D 367 7 ;X ¼ 6 6 X 37 7 ;N ¼ 6 6 N 37 7 :
+6D 41 D 42 D 43 D 44 D 45 D 467 6X 47 6N 47
+4 5 4 5 4 5
+D D D D 0 0 X 0
+51 52 53 54 5
+D D D D 0 0 X 0
+61 62 63 64 6
+ThenotationsusedinthesematricesD,X andN arementionedintheAppendix2.The
+amplituderatiosofthereflectedandrefractedwavesareobtainedaftersolvingthesystemof
+equations(5.11).
+MMMS 6.Energyratios
+19,3 Theenergy partitioning ofdifferent reflected andrefracted waves attheinterface x 3 ¼0;
+across a unit surface area element is assumed. Following Kumar and Sharma (2019), the
+normalacousticfluxinapiezothermoelasticsolidisasfollows
+0 1
+P ¼(cid:2)Re @σ u_ þ σ u_ (cid:2)wD _ þK T; TA (6.1)
+13 1 33 3 3 33 3T
+472 0
+andfortheincidentandreflectedwavesfo rtheelasticpha!seare
+Pe ¼(cid:2)Re σe u_e þ σe u_e (6.2)
+31 1 33 3
+TheaverageenergyfluxesoftheincidentPandSVwavesare
+(cid:11) Pe (cid:12) ¼ 1 ω4ρec2Reðcosθ Þ (cid:13) (cid:13) Ae (cid:13) (cid:13)2; (cid:11) Pe (cid:12) ¼ 1 ω4ρec2Reðcosθ Þ (cid:13) (cid:13) Be (cid:13) (cid:13)2; (6.3)
+IP 2α* 1 0 0 IS 2β* 1 0 0
+TheaverageenergyfluxesofthereflectedPandSVwavesare
+(cid:11) Pe (cid:12) ¼(cid:2) 1 ω4ρec2Reðcosθ Þ (cid:13) (cid:13) Ae (cid:13) (cid:13)2; (cid:11) Pe (cid:12) ¼(cid:2) 1 ω4ρec2Reðcosθ Þ (cid:13) (cid:13) Be (cid:13) (cid:13)2; (6.4)
+RP 2α* 1 1 1 RS 2β* 1 2 1
+Theaverageenergyfluxesofthetransmittedwavesare
+(cid:6) (cid:7)
+1 ι K
+hPi¼ ω2Re D þD W þD Φ þ 33D Θ jUj2;ðs¼1;2;3;4Þ: (6.5)
+s 2 2s 1s s 6s s ω T 5s s s
+0
+Theenergyratiosofthereflectedandtransmittedwavesaredefinedas
+(1) ForincidentPwave
+(cid:11) (cid:12) (cid:11) (cid:12)
+Pe Pe hPi
+E ¼ (cid:11) RP(cid:12);E ¼ (cid:11) RS(cid:12);ES ¼ (cid:11) s(cid:12);ðs¼1;2;3;4Þ: (6.6)
+RP Pe RS Pe s Pe
+IP IP IP
+(2) ForincidentSV wave
+(cid:11) (cid:12) (cid:11) (cid:12)
+Pe Pe hPi
+E ¼ (cid:11) RP(cid:12);E ¼ (cid:11) RS(cid:12);ES ¼ (cid:11) s(cid:12);ðs¼1;2;3;4Þ: (6.7)
+RP Pe RS Pe s Pe
+IS IS IS
+The interaction energy ratios (interaction between different fields and displacements
+correspondingtorefractedwaves)inbothcasesare
+E ¼ hPsti;forincidentPwaveandE ¼ hPsti;forincidentSV wave
+st hPei st hPei
+IP (cid:6) IS (cid:7)
+1 ι K
+where;hP i¼ ω2Re D UU þD W UU þD ΦUU þ 33D ΘU U : (6.8)
+st 2 2s s t 1s t s t 6s t t s ω T 5s s s t
+0
+X4
+Theenergyisconservedif ðES þE þE þE Þ¼1 (6.9)
+s int RP RS
+P4 s¼1
+whereE ¼ E istheresultantinteractionenergybetweentherefractedwaves.
+int st
+s;t¼1;s≠t
+7.Specialcases The effect of
+Case-1: For the perfect normal stiffness interface (NSIF), i.e. K ≠0 and K →∞ the memory and
+n t
+correspondingenergyratiosareobtainedforelastic/piezothemoelastichalf-spaceswith stiffness
+normalstiffnessandmodifiedD arementionedinAppendix3.
+mn
+Case-2:For theperfecttransverse stiffnessinterface (TSIF),i.e. K →∞andK ≠0the
+n t
+correspondingenergyratiosareobtainedforelastic/piezothemoelastichalf-spaceswith
+473
+transversestiffnessandchangesD arementionedinAppendix3.
+mn
+Case-3: The welded contact stiffness interface (WCIF), i.e. K →∞ and K →∞ the
+n t
+correspondingenergyratiosareobtainedforelastic/piezothemoelastichalf-spaceswith
+perfectbondingandrectifiedD arementionedinAppendix3.
+mn
+Case-4: If we consider τ
+q
+>0, τ2
+q
+¼ τ
+T
+¼0, κðt(cid:2)ζÞ¼1 and Dτ →
+v
+v
+t
+, with perfect
+boundarycondition,thenthepresentanalysisagreeswiththespecificcaseofKumarand
+Sharma(2021).
+8.Numericalresultsanddiscussion
+Theenergyratiosduetotheincidenceofwavesatdifferentanglesarecomputedandplotted
+graphicallyforcadmiumselenideandgraphitematerialwiththehelpofMATLABsoftware.
+Fornumericalcomputations,thephaselagsfortheDPLmodelofMDDareconsideredas
+τ ¼0:05s, τ ¼0:03s such that material constants satisfy the conditions, as given by
+q T
+QuintanillaandRacke(2006),andthedimensionlessstiffnessparametersareconsideredas
+K ¼5N=m3;K ¼10N=m3,asgivenbyKumarandSharma(2008).FollowingKumarand
+n t
+Sharma (2021), the OPHS material Cadmium Selenide (CdSe) and EHS material graphite
+parametershavebeenconsidered,asshowninTable1.
+Todiscusstheresultofthismathematicalmodelnumericallyfollowingtwocasesarise:
+8.1Impactofstiffnessonenergyratios
+Inthefollowingsubsections,Figures3–16theenergydistributionoftheincidentPorSV
+wave among various reflected, transmitted waves and the interaction of waves for
+imperfect interface (IIF), normal stiffnessinterface (NSIF), transverse stiffness interface
+(TSIF)andweldedcontactinterface(WCIF)boundariesasmentionedinsection7witha
+fixed kernel function, namely Kðt(cid:2)ξÞ¼1(cid:2)ðt(cid:2)ξÞ=τcorresponding to the increasing
+Symbol Value Symbol Value
+c
+11
+74:13109Nm(cid:2)2 c
+12
+45:23109Nm(cid:2)2
+c
+13
+39:33109Nm(cid:2)2 c
+33
+83:63109Nm(cid:2)2
+c
+55
+13:23109Nm(cid:2)2 T
+0
+298K
+β
+11
+6:213105Nm(cid:2)2K(cid:2)1 β
+33
+5:513105Nm(cid:2)2K(cid:2)1
+e
+13
+(cid:2)0:160Cm(cid:2)2 e
+33
+0:347Cm(cid:2)2
+e
+15
+(cid:2)0:138Cm(cid:2)2 ε
+11
+8:26310(cid:2)11C2N(cid:2)1m(cid:2)2
+ε
+33
+9:03310(cid:2)11C2N(cid:2)1m(cid:2)2 τ
+3
+(cid:2)2:9310(cid:2)6Cm(cid:2)2K(cid:2)1
+K
+11
+9Wm(cid:2)1K(cid:2)1 K
+33
+9Wm(cid:2)1K(cid:2)1
+ρ αe 5 0 5 :0 0 0 4 1 k 1 g 3 m(cid:2) 10 3 3ms(cid:2)1 C βe e 2 0 6 :0 0 0 J 1 k 3 g(cid:2) 1 1K 03 (cid:2) m 1 s(cid:2)1 parameter V s, a c lu T re e a a s t b o e l f d e t b h 1 y e .
+ρe 2:653103kgm(cid:2)3 ω 100Hz theauthors
+MMMS
+19,3
+474
+Figure3.
+Variationofenergy
+ratioE
+RP
+withðθ 0Þ
+Source(s): Author’s own creation
+Figure4.
+Variationofenergy
+ratioE
+RS
+withðθ 0Þ
+Source(s): Author’s own creation
+angleofincidenceðθ Þfrom00to900isexploredgraphically.Thesub-indentfiguredepicts
+0
+themagnifiedimageoftheoverlappingregiontoobservethevariationinthemicroscale.
+Numerical simulations are also used to compare the energy of these waves at distinct
+interfaces.
+8.1.1ForincidentPwave.ThevariationofenergyratioscorrespondingtothereflectedP
+wave ðE Þ and SV wave ðE Þ with respect to an angle of incidence ðθ Þ are depicted
+RP RS 0
+graphicallyinFigures3and4,respectively.ItisobservedthatE closetounityforNSIFand
+RP
+TSIFboundaries,whileforIIFandWCIFboundariesoscillatesbetween0and1.Thevalues
+The effect of
+memory and
+stiffness
+475
+Figure5.
+Variationofenergy
+Source(s): Author’s own creation
+ratioES
+1
+withðθ 0Þ
+Figure6.
+Variationofenergy
+ratioES
+2
+withðθ 0Þ
+E oscillatebetween0and1forIIFandWCIFboundariesandnearto0forNSIFandTSIF.It
+RS
+isconcludedthatforNSIFandTSIFboundaries,themagnitudeofE isdominatedoverIIF
+RP
+andWCIFboundaries,whileinthecaseofE oppositebehaviorisreported.
+RS
+ThebehaviorofenergyratioscarriedoutbyfourtransmittedwavesðES;i¼1;2;3;4Þ
+i
+correspondingtoqP,qS,qT,ePandinteractionenergyratioE withrespecttotheangleof
+int
+incidenceðθ ÞisevaluatedinFigures5–9,respectively.Itisdemonstratedthatallfivegraphs
+0
+followalmostthesamepattern,buttheirmagnitudeisdifferentinallfourcases.Theimpact
+of stiffness boundaries can be seen clearly from these figures. The transmitted and
+interaction energy ratios at the NSIF and WCIF boundaries follow the parabolic path. In
+contrast,theTSIFboundaryfollowstheoppositepattern,andattheIIFboundary,nearzero
+MMMS
+19,3
+476
+Figure7.
+Variationofenergy
+ratioES
+3
+withðθ 0Þ
+Source(s): Author’s own creation
+Figure8.
+Variationofenergy
+ratioES
+4
+ðθ 0Þ
+Source(s): Author’s own creation
+inθ ranges08to908.Thesubfiguresineachfiguredepictedthebehavioroftheoverlapping
+0
+curve(rangeasindicatedinthesubfigure)byzoominginontheportionofthatoverlapping
+curveinFigures5–9.
+8.1.2ForincidentSVwave.Figures10and11manifestthevariationofenergyratiosfor
+thereflectedPwaveðE ÞandSVwavesðE Þwithrespecttoanangleofincidenceðθ Þ.Itis
+RP RS 0
+observedthatE closetozeroandE closetooneforNSIFandTSIFboundaries,whileIIF
+RP RS
+andWCIFboundariesoscillatebetween0and1intherange00≤θ ≤660,reportingθ ¼660
+0 0
+asthecriticalangle.Thesub-indentimagedepictsthedifferenceinmicroscalebetweenNSIF
+The effect of
+memory and
+stiffness
+477
+Figure9.
+Variationofenergy
+Source(s): Author’s own creation
+ratioE
+int
+withðθ 0Þ
+Figure10.
+Variationofenergy
+ratioE withðθ Þ
+Source(s): Author’s own creation RP 0
+andTSIFboundaries.Afterthatcriticalangle,i.e.660≤θ ≤900,allfourcurvesarenearzero
+0
+andoneforreflectedPwaveandSVwave,respectively.
+The behavior of energy ratios of transmitted waves ðES;i¼1;2;3;4Þand interaction
+i
+wavesE againsttheangleofincidenceðθ ÞisrepresentedbyFigures12–16,respectively.It
+int 0
+isrevealedthatallfiveenergyratiographsfollowthesamepattern,andtheirmagnitudesare
+different in all four considered boundaries. The critical angle θ ¼660 is observed to
+0
+correspondtoonlytheWCIFboundary.
+It is evident from Figures 3–16 that for incident P wave, none of E , E ,
+RP RS
+ES ði¼1;2;3;4Þ and E corresponding to any boundary interface have any critical
+i int
+MMMS
+19,3
+478
+Figure11.
+Variationofenergy
+ratioE
+RS
+withðθ 0Þ
+Source(s): Author’s own creation
+Figure12.
+Variationofenergy
+ratioES
+1
+withðθ 0Þ
+Source(s): Author’s own creation
+angle. But in the case of SV wave incident, all E , E , ES ði¼1;2;3;4Þ and E
+RP RS i int
+correspondingtoWCIFboundaryattainacriticalangleatanangleofincidenceθ ¼660:Itis
+0
+noteworthytomentionthattheinterfaceparametersplayasignificantroleindeterminingthe
+energyratiosofincidentwaves.
+8.2ImpactofMDDwithdifferentkernelfunctionsonenergyratios
+Figures 17–30 show the impact of MDD and comparison between three different kernel
+functionsofMDDmentionedinequation(2.7)onthereflected,transmitted,andinteraction
+The effect of
+memory and
+stiffness
+479
+Figure13.
+Variationofenergy
+Source(s): Author’s own creation
+ratioES
+2
+withðθ 0Þ
+Figure14.
+Variationofenergy
+ratioES withðθ Þ
+Source(s): Author’s own creation 3 0
+energyratiosofthewavesagainstanangleofincidence00≤θ ≤900attheweldedcontact
+0
+boundaryinterface,asshowninFigure1.
+8.2.1ForincidentPwave.Figures17and18illustratethevariationofenergyratiosforthe
+reflectedPwaveðE ÞandSVwaveðE Þwithanangleofincidenceðθ Þ.Itisnoticedthat
+RP RS 0
+E andE correspondstoallfourconsideredcasesfollowingtheoverlappingsinusoidal
+RP RS
+curve, even in microscopic view up to 35 decimal points (using MATLAB) in the range
+00≤θ ≤220.Afterθ ¼220,themagnitudeofE correspondingtothethirdkernelfunction
+0 0 RP
+Kðt(cid:2)ξÞ¼½1(cid:2)ðt(cid:2)ξÞ=t(cid:3)2 dominates other kernel functions while in case of E reverse
+RS
+trendsarereported.
+MMMS
+19,3
+480
+Figure15.
+Variationofenergy
+ratioES
+4
+withðθ 0Þ
+Source(s): Author’s own creation
+Figure16.
+Variationofenergy
+ratioE withðθ Þ
+int 0 Source(s): Author’s own creation
+The behavior of energy ratios carried by the transmitted waves ðES;i¼1;2;3;4Þ and
+i
+interactionwaveE withrespecttotheangleofincidenceðθ ÞisrepresentedbyFigures19–23,
+int 0
+respectively.Withtheincreaseintheangleofincidenceðθ Þ,themagnitudeandvarianceofall
+0
+fiveenergyratiosarealsoincreased,reachtheirmaximumandthendropto0.Theinfluenceof
+MDDandkernelsisobservedinthegraphs.ThepresenceofMDDincreasesthemagnitudesof
+energyratiosexceptinthecaseofthethirdkernelfunction.
+8.2.2ForincidentSVwave.Figures24and25representthevariationofenergyratiosfor
+thereflectedPwaveðE ÞandSVwaveðE Þwithrespecttoanangleofincidenceðθ Þ.Itis
+RP RS 0
+noticed that the energy ratios of E and E for all four considered cases follow the
+RP RS
+The effect of
+memory and
+stiffness
+481
+Figure17.
+Variationofenergy
+Source(s): Author’s own creation
+ratioE
+RP
+withðθ 0Þ
+Figure18.
+Variationofenergy
+Source(s): Author’s own creation
+ratioE
+RS
+withðθ 0Þ
+sinusoidal curve for the range 00≤θ ≤660 reporting 660 as a critical angle and are
+0
+complementarytoeachotherinthewholerangeofθ :
+0
+The behavior of energy ratio carried by the transmitted waves ðES;i¼1;2;3;4Þand
+i
+interaction wave E with respect to the angle of incidence ðθ Þ are represented by
+int 0
+Figures26–30,respectively.Itisdemonstratedbythefiguresthatthevariationofenergy
+ratiosexponentiallydecreaseswithincreasingtheangleofincidenceðθ Þ.Butameticulous
+0
+examinationofthesubfiguresrevealsthatacriticalangleisnoticedatθ ¼660.Theimpact
+0
+MMMS
+19,3
+482
+Figure19.
+Variationofenergy
+ratioES
+1
+withðθ 0Þ
+Source(s): Author’s own creation
+Figure20.
+Variationofenergy
+ratioES
+2
+withðθ 0Þ
+Source(s): Author’s own creation
+ofMDDandkernelscanbeseenclearlyfromthefigures.ThepresenceofMDDdecreasesthe
+magnitudeofenergyratiosoftransmittedandinteractionwavesexceptfortheES.
+1
+ItisevidentfromFigures17–30thatforincidentPandSVwaves,E andE arenot
+RP RS
+affected by MDD and its different kernel functions except for the incidence P wave
+corresponds to the third kernel. But a significant effect of MDD can be observed in
+ES ði¼1;2;3;4ÞandE .ForincidentPwave,inthepresenceofMDD,themagnitudeof
+i int
+energy carried by the transmitted and interaction waves increases, while for incident SV
+The effect of
+memory and
+stiffness
+483
+Figure21.
+Variationofenergy
+Source(s): Author’s own creation
+ratioES
+3
+withðθ 0Þ
+Figure22.
+Variationofenergy
+Source(s): Author’s own creation
+ratioES
+4
+withðθ 0Þ
+wave, it decreases except for the ES. It is noteworthy to mention that MDD plays a
+1
+significantroleindeterminingthemagnitudeofenergyratiosofincidentwaves.
+9.Conclusions
+Thepresentstudyinvestigatesthewavephenomenonofelasticwavesatdifferenttypesof
+boundaryinterfacesofEHSandOPHSunderMDDofthedual-phaseequation.Theenergy
+MMMS
+19,3
+484
+Figure23.
+Variationofenergy
+ratioE
+int
+withðθ 0Þ
+Source(s): Author’s own creation
+Figure24.
+Variationofenergy
+ratioE
+RP
+withðθ 0Þ
+Source(s): Author’s own creation
+ratiosofdifferentreflectedandtransmittedwavesfortheincidentPorSVwavesareobtained
+usingtheamplituderatios.Theseratiosarediscussedandrepresentedgraphicallytoshow
+the effect of stiffness parameters and the presence of MDD with different types of kernel
+functions.Thefollowingobservationsaremadefromtheabovestudy:
+(1) EnergyratiosofreflectedPwave,SVwaveandinteractionenergyforalltypesof
+consideredinterfacesandMDDdependontheangleofincidenceðθ Þ.
+0
+The effect of
+memory and
+stiffness
+485
+Figure25.
+Variationofenergy
+Source(s): Author’s own creation
+ratioE
+RS
+withðθ 0Þ
+Figure26.
+Variationofenergy
+Source(s): Author’s own creation
+ratioES
+1
+withðθ 0Þ
+(2) Itisobservedthatineachcasesumofenergyratiosisapproximatelyunityuptoten
+decimalsateachangleofincidence00≤θ ≤900.Hence,theprincipleofconservation
+0
+ofenergyisverified.
+(3) Forincidence,PorSVwavesinbothcasesE andE arealmostreversedtoeach
+RP RS
+other in the whole range 00≤θ ≤900. The magnitude of E and E varies with
+0 RP RS
+MMMS
+19,3
+486
+Figure27.
+Variationofenergy
+ratioES withðθ Þ
+2 0 Source(s): Author’s own creation
+Figure28.
+Variationofenergy
+ratioES withðθ Þ
+3 0 Source(s): Author’s own creation
+differenttypesoftheconsideredinterfacialboundarywhilethenegligibleimpactof
+MDDandkernelsareobserved.
+(4) Forincidence,PorSVwavesinbothcasesES ;ES ;ES ;ES andE followalmost
+1 2 3 4 int
+thesametrends,butthemagnitudesaredifferent.ItisfoundthatMDDplaysavital
+The effect of
+memory and
+stiffness
+487
+Figure29.
+Variationofenergy
+Source(s): Author’s own creation
+ratioES
+4
+withðθ 0Þ
+Figure30.
+Variationofenergy
+Source(s): Author’s own creation
+ratioE
+int
+withðθ 0Þ
+role in the behavior of energy ratios of transmitted and interaction waves. For
+incidencePwave,comparativelylargermagnitudesinthepresenceofMDDwhile
+smallermagnitudesforincidenceSVwaveexceptfortheES.Also,correspondingto
+1
+differenttypesofconsideredkernelfunctions,thesametrendisobserved,butwith
+changesinmagnitude.
+(5) Energy ratios for incidence SV wave at WCIF boundary, without MDD and with
+MDD corresponding to different kernel functions mentioned in equation (2.7), a
+criticalangleisobservedatθ ¼660.
+0
+(6) Thispresentinvestigationmayhelpexperimentalists,researchersandseismologists
+workingonwavepropagationproblemsinOPHSincontactwithEHS.
+MMMS References
+19,3 Abouelregal, A.E., Ahmad, H. and Yao, S.W. (2020), “Functionally graded piezoelectric medium
+exposed to a movable heat flow based on a heat equation with a memory-dependent
+derivative”,Materials(Basel),Vol.13No.18,doi:10.3390/ma13183953.
+Achenbach,J.D.(1975),WavePropagationinElasticSolids,Elsevier,North-HollandAmerica,Elsevier,
+NewYork.
+488 Aldawody, D.A., Hendy, M.H. and Ezzat, M.A. (2019), “On dual-phase-lag magneto-thermo-
+viscoelasticity theory with memory-dependent derivative”, Microsystem Technologies, Vol. 25
+No.8,pp.2915-2929,doi:10.1007/s00542-018-4194-6.
+Alshaikh, F. (2022), “Effect of primary magnetic intensity and rotation on wave propagation in
+generalized thermo-piezoelectric anisotropic smart materials”, Mechanics Based Design of
+StructuresandMachines,Vol.50No.9,pp.3283-3302,doi:10.1080/15397734.2020.1801465.
+Bachher, M. (2019), “Plane harmonic waves in thermoelastic materials with a memory-dependent
+derivative”, Journal of Applied Mechanics and Technical Physics, Vol. 60 No. 1, pp. 123-131,
+doi:10.1134/S0021894419010152.
+Biot, M.A. (1956), “Thermoelasticity and irreversible thermodynamics”, Journal of Applied Physics,
+Vol.27No.3,pp.240-253,doi:10.1063/1.1722351.
+Caputo,M.andMainardi,F.(1971),“Anewdissipationmodelbasedonmemorymechanism”,Pure
+andAppliedGeophysics,Vol.91No.1,pp.134-147.
+Chandrasekharaiah, D.S. (1998), “Hyperbolic thermoelasticity: a review of recent literature”, Applied
+MechanicsReviews,Vol.51No.12,pp.705-729,doi:10.1115/1.3098984.
+Ezzat,M.A.andEl-Bary,A.A.(2016),“ThermoelectricMHDwithmemory-dependentderivativeheat
+transfer”,TheInternationalCommunicationsinHeatandMassTransfer,Vol.75,pp.270-281,
+doi:10.1016/j.icheatmasstransfer.2016.04.026.
+Ezzat, M.A., El-Karamany, A.S. and El-Bary, A.A. (2014), “Generalized thermo-viscoelasticity with
+memory-dependent derivatives”, International Journal of Mechanical Sciences, Vol. 89,
+pp.470-475,doi:10.1016/j.ijmecsci.2014.10.006.
+Ezzat,M.A.,El-Karamany,A.S.andEl-Bary,A.A.(2015),“Anovelmagneto-thermoelasticitytheory
+withmemory-dependentderivative”,JournalofElectromagneticWavesandApplications,Vol.29
+No.8,pp.1018-1031,doi:10.1080/09205071.2015.1027795.
+Ezzat,M.A.,El-Karamany,A.S.andEl-Bary,A.A.(2016),“Generalizedthermoelasticitywithmemory-
+dependent derivatives involving two temperatures”, Mechanics of Advanced Materials and
+Structures,Vol.23No.5,pp.545-553,doi:10.1080/15376494.2015.1007189.
+Green,A.E. andLindsay,K.A. (1972),“Thermoelasticity”,Journal ofElasticity,Vol.2No.1,pp. 1-7,
+doi:10.1007/BF00045689.
+Gupta, V., Kumar, R., Kumar, M., Pathania, V. and Barak, M.S. (2023), “Reflection/transmission of
+plane waves at the interface of an ideal fluid and nonlocal piezothermoelastic medium”,
+InternationalJournalofNumericalMethodsforHeatandFluidFlow,Vol.33No.2,pp.912-937,
+January,doi:10.1108/HFF-04-2022-0259.
+Ignaczak, J. (1989), “Generalized thermoelasticity and itsapplications”, Journal of Thermal Stresses,
+Vol.3,pp.279-354.
+Kant,S.andMukhopadhyay,S.(2019),“Aninvestigationonresponsesofthermoelasticinteractionsin
+a generalized thermoelasticity with memory-dependent derivatives inside a thick plate”,
+Mathematics and Mechanics of Solids, Vol. 24 No. 8, pp. 2392-2409, doi: 10.1177/
+1081286518755562.
+Kaur,I.,Lata, P.andSingh, K. (2022), “Reflection andrefraction of planewave in piezo-thermoelastic
+diffusivehalfspaceswiththreephaselagmemorydependentderivativeandtwo-temperature”,
+WavesinRandomandComplexMedia,Vol.32No.5,pp.2499-2532,doi:10.1080/17455030.2020.
+1856451.
+Kumar, R. and Sharma, N. (2008), “Propagation of waves in micropolar viscoelastic generalized The effect of
+thermoelastic solids having interficial imperfections”, Theoretical and Applied Fracture memory and
+Mechanics,Vol.50No.3,pp.226-234,doi:10.1016/j.tafmec.2008.07.010.
+stiffness
+Kumar,R.andSharma,P.(2017),“Effectoffractionalorderonenergyratiosattheboundarysurface
+of elastic-piezothermoelastic media”, Coupled Systems Mechanics, Vol. 6 No. 2, pp. 157-174,
+doi:10.1016/j.amc.2019.04.020.
+Kumar, R. and Sharma, P. (2019), “Response of fractional order on energy ratios at the boundary
+489
+surface of fluid-piezothermoelastic media”, Applied Mathematics and Computation, Vol. 358,
+pp.194-203,October,doi:10.1016/j.amc.2019.04.020.
+Kumar, R. and Sharma, P. (2021), “Response of two-temperature on the energy ratios at elastic-
+piezothermoelastic interface”, Journal of Solid Mechanics, Vol. 13 No. 2, pp. 186-201, doi: 10.
+22034/JSM.2020.1907521.1637.
+Li, Y. and He, T. (2019), “A generalized thermoelastic diffusion problem with memory-dependent
+derivative”, Mathematics and Mechanics of Solids, Vol. 24 No. 5, pp. 1438-1462, doi: 10.1177/
+1081286518797988.
+Lord,H.W.andShulman,Y.(1967),“Ageneralizeddynamicaltheoryofthermoelasticity”,Journalof
+the Mechanics and Physics of Solids, Vol. 15 No. 5, pp. 299-309, doi: 10.1016/0022-5096(67)
+90024-5.
+Mondal, S. and Othman, M.I.A. (2021), “Memory dependent derivative effect on generalized piezo-
+thermoelastic medium under three theories”, Waves in Random and Complex Media, Vol. 31
+No.6,pp.2150-2167,doi:10.1080/17455030.2020.1730480.
+Quintanilla, R. and Racke, R. (2006), “Qualitative aspects in dual-phase-lag thermoelasticity”,SIAM
+JournalonAppliedMathematics,Vol.66No.3,pp.977-1001.
+Sarkar, N. and Mondal, S. (2019), “Transient responses in a two-temperature thermoelastic infinite
+medium having cylindrical cavity due to moving heat source with memory-dependent
+derivative”, ZAMM Zeitschrift fur Angewandte Mathematik und Mechanik, Vol. 99 No. 6,
+pp.1-19,doi:10.1002/zamm.201800343.
+Sarkar,I.andMukhopadhyay,B.(2021),“Thermo-viscoelasticinteractionunderdual-phase-lagmodel
+with memory-dependent derivative”, Waves in Random and Complex Media, Vol. 31 No. 6,
+pp.2214-2237,doi:10.1080/17455030.2020.1736733.
+Singh,S.,Singh,A.K.andGuha,S.(2021),“ImpactofinterfacialimperfectionsontheReflectionand
+Transmission phenomenon of plane waves in a Porous-Piezoelectric model”, Applied
+MathematicalModelling,Vol.100,pp.656-675,doi:10.1016/j.apm.2021.08.022.
+Sur,A.andMondal,S.(2022),“Effectofnon-localityinthevibrationofamicro-scalebeamundertwo-
+temperature memory responses”, Waves in Random and Complex Media, Vol. 32 No. 5,
+pp.2368-2395,doi:10.1080/17455030.2020.1851069.
+Tzou,D.Y.(1995),“Aunifiedfieldapproachforheatconductionfrommacro-tomicro-scales”,Journal
+ofHeatTransfer,Vol.117,pp.8-16,doi:10.1115/1.2822329.
+Wang,J.L.andLi,H.F.(2011),“Surpassingthefractionalderivative:conceptofthememory-dependent
+derivative”,ComputersandMathematicswithApplications,Vol.62No.3,pp.1562-1567,doi:10.
+1016/j.camwa.2011.04.028.
+Yu,Y.J.,Hu,W.andTian,X.G.(2014),“Anovelgeneralizedthermoelasticitymodelbasedonmemory-
+dependentderivative”,InternationalJournalofEngineeringScience,Vol.81,pp.123-134,doi:10.
+1016/j.ijengsci.2014.04.014.
+(The Appendixfollows overleaf)
+MMMS Appendix1
+19,3
+V ¼m m m m (cid:2)m m m m
+11 15 23 35 45 15 25 35 46
+V ¼m2 m m (cid:2)m m m m (cid:2)m m m m þm m m m þm m m m
+12 12 35 46 12 13 35 45 12 23 35 41 11 23 35 45 13 25 35 41
+(cid:2)m m m m þm m m m (cid:2)m m m m þm m m m
+15 23 32 44 15 23 35 42 11 25 35 46 15 23 34 45
+490
+þm m m m (cid:2)m m m m þm m m m (cid:2)m m m m
+15 24 32 46 15 24 33 45 15 25 33 44 15 22 35 46
+(cid:2)m m m m (cid:2)m m m m þm m m m (cid:2)m m m m
+15 25 35 43 15 25 34 46 15 26 35 45 15 22 35 46
+(cid:2)m m m m (cid:2)m m m m þm m m m
+15 25 35 43 15 25 34 46 15 26 35 45
+V ¼m2 m m (cid:2)m2 m m þm2 m m þm m m m (cid:2)m m m m
+13 12 35 43 12 33 44 12 34 46 12 13 32 44 12 13 35 42
+(cid:2)m m m m (cid:2)m m m m þm m m m (cid:2)m m m m
+12 13 34 45 12 14 32 46 12 14 33 45 11 23 32 44
+þm m m m (cid:2)m m m m þm m m m (cid:2)m m m m
+12 23 31 44 12 23 34 41 12 24 33 41 13 24 32 41
+þm m m m þm m m m þm m m m þm m m m
+14 23 32 41 11 23 35 42 13 22 35 41 11 23 34 45
+þm m m m (cid:2)m m m m þm m m m (cid:2)m m m m
+11 24 32 46 11 24 33 45 11 25 33 44 12 24 31 46
+þm m m m (cid:2)m m m m þm m m m (cid:2)m m m m
+13 24 31 45 13 25 31 44 13 25 34 41 14 23 31 45
+(cid:2)m m m m (cid:2)m m m m (cid:2)m m m m (cid:2)m m m m
+14 25 33 41 11 22 35 46 11 25 35 43 12 26 35 41
+þm m m m þm m m m þm m m m (cid:2)m m m m
+15 22 33 44 15 23 34 42 15 24 32 43 15 24 33 42
+(cid:2)m m m m (cid:2)m m m m þm m m m þm m m m
+15 22 35 43 11 25 34 46 14 25 31 46 11 26 35 45
+(cid:2)m m m m (cid:2)m m m m (cid:2)m m m m þm m m m
+15 22 34 46 15 25 34 43 15 26 32 44 15 26 35 42
+þm m m m
+15 26 34 45
+V ¼m2 m m (cid:2)m m m m (cid:2)m m m m þm m m m þm m m m
+14 12 34 43 12 13 34 42 12 14 32 43 12 14 33 42 11 22 33 44
+þm m m m þm m m m (cid:2)m m m m (cid:2)m m m m
+11 23 34 42 11 24 32 43 11 24 33 42 12 24 31 43
+(cid:2)m m m m þm m m m þm m m m (cid:2)m m m m
+13 22 31 44 13 22 34 41 13 24 31 42 14 22 33 41
+(cid:2)m m m m (cid:2)m m m m (cid:2)m m m m (cid:2)m m m m
+14 23 31 42 11 22 35 43 11 22 34 46 11 25 34 43
+(cid:2)m m m m þm m m m (cid:2)m m m m þm m m m
+11 26 32 44 12 26 31 44 12 26 34 41 14 22 31 46
+þm m m m þm m m m þm m m m (cid:2)m m m m
+14 25 31 43 14 26 32 41 11 26 35 42 15 22 34 43
+þm m m m (cid:2)m m m m þm m m m
+11 26 34 45 14 26 31 45 15 26 34 42
+V ¼m m m m (cid:2)m m m m þm m m m (cid:2)m m m m
+15 14 22 31 43 11 22 34 43 11 26 34 42 14 26 31 42
+m 11 ¼c c 1 2 1(cid:2)a 11 , m 12 ¼a c 12, m 13 ¼a c 13, m 14 ¼(cid:2)a c 1 ω 1 ι, m 15 ¼c 55 , m 22 ¼c c 5 2 5(cid:2)a 11 , m 23 ¼a 22 , m 24 ¼(cid:2)a ω 23 ι,
+m 25 ¼c 33 ,m 26 ¼a c 2 2 1,m 31 ¼a c 34,m 32 ¼a 35 ,m 33 ¼(cid:2)a 36 ,m 34 ¼a ω 33 ι þ A a 1 3 c 1 2 ,m 35 ¼a A 3 1 2,m 41 ¼a c 41,m 42 ¼a c 4 2 2,
+m 43 ¼(cid:2)a c 4 2 4,m 44 ¼a4 ω 6 ι,m 45 ¼a 43 ,m 46 ¼(cid:2)a 45 ;
+a 11 ¼ρc2 1 ;a 12 ¼c 13 þc 55 ;a 13 ¼ðη 31 þη 15 Þ β 1 η 1 3 T 1 0 ;a 21 ¼η 15 β 1 η 1 3 T 1 0;a 22 ¼η 33 β 1 η 1 3 T 1 0,a 23 ¼a1 β 1 1 β 1 33;a 31 ¼ ρω β 2 1 1 K 1 11; T m h e e m e o f r f y ec a t n o d f
+a 32 ¼ ρω β 2 1 K33;a 33 ¼ ρ2C β e ω 1c2 1;a 34 ¼T 0 β 11 ω 1 ;a 35 ¼β 33 ω 1 T 0 ;a 36 ¼ τ 3 ω 1 η β 11T0;a 41 ¼η 15 þη 31 ; stiffness
+11 11 31
+a
+42
+¼η
+15
+;a
+43
+¼η
+33
+;a
+44
+¼ ε 11
+η
+β 11T0;a
+45
+¼ ε 33
+η
+β 11T0;a
+46
+¼ τ 3
+β
+ρc2 1;b¼ιω
+31 31 11
+(cid:4) (cid:5)
+(cid:2)b2τ2ðm2(cid:2)2nþ1Þþ2bτ ðm2(cid:2)nÞþ2m2 expf(cid:2)bτ gþb2τ2(cid:2)2bnτ þ2m2
+Hð τ;bÞ¼ i i i i i ; 491
+b2τ3
+. i
+1þ τ Hð τ;bÞþ τ2bHð τ;bÞ 2
+A ¼ q q :
+1 1þ τ Hð τ;bÞ:
+T
+Appendix2
+(cid:9)(cid:6) (cid:7) (cid:10)
+η β T c β ρc2
+D ¼(cid:2) c W þ 33 11 0Φ q þ 13þ 32 1Θ ;
+1i 33 i η i i c ιωβ i
+(cid:9) 31 (cid:10) 11
+c W η β T
+D ¼(cid:2) 55 iþ 15 11 0Φ þc q
+2i c cη i 55 i
+31
+(cid:6) (cid:7) (cid:6) (cid:7)
+D 1 D W
+D ¼ ιω 2iþ ; D ¼ ιω 1iþ i ; D ¼Θq;
+3i k ιω 4i k ιω 5i i i
+(cid:6) t (cid:7) n
+ε β T η τ ρc2
+D ¼ (cid:2) η W þ 33 11 0Φ q (cid:2) 31þ 3 1Θ i¼1;2;3;4
+6i 33 i η i i c β ιω i
+31 11
+(1) ForincidentPwave
+h i
+D 15 ¼(cid:2)ιωρec2 1 1(cid:2)2βe2 α s e in 2 2θ 0 ,D 16 ¼ιωρec2 1 sin2θ 2 ,D 25 ¼ ιωβe2ρ α ec e 2 1 2 sin2θ 0D 26 ¼ιωρec2 1 cos2θ 2 ,D 35 ¼ ιωs α i * nθ 0,
+D 36 ¼ ιωc β o * sθ 2,D 45 ¼(cid:2) ιωc α o * sθ 0,D 46 ¼ ιωs β i * nθ 2X i ¼ A U e i;ði¼1;2;3;4Þ,X i e¼ A U e iði¼1;2;3;4Þ; X 5 e¼ A A e 1 e ,
+0 0 0
+X 6 e¼ A Be 1 e ,N 1 ¼(cid:2)D 15 ,N 2 ¼D 25 ,N 3 ¼(cid:2)D 35 ,N 4 ¼D 45
+0
+(2) ForincidentSVwave
+h i
+D 15 ¼(cid:2)ιωρec2 1 1(cid:2)2βe2 α s e i 2 n2θ 1 ,D 16 ¼ιωρec2 1 sin2θ 0 ,D 25 ¼ ιωβe2ρ α ec e 2 1 2 sin2θ 1D 26 ¼ιωρec2 1 cos2θ 0 ,D 35 ¼ ιωs α i * nθ 1,
+D
+36
+¼ ιωc
+β
+o
+*
+sθ 0,D
+45
+¼(cid:2) ιωc
+α
+o
+*
+sθ 1,D
+46
+¼ ιωs
+β
+i
+*
+nθ 0N
+1
+¼D
+16
+,N
+1
+¼D
+16
+; N
+2
+¼(cid:2)D
+26
+,N
+3
+¼D
+36
+,N
+4
+¼(cid:2)D
+46
+Appendix3
+Case-1:D ¼1wherei¼1;2;3;4
+3i
+(i)ForincidentPwave
+ιωsinθ ιωcosθ
+D ¼ 0;D ¼ 2
+35 α* 36 β*
+(ii)ForincidentSVwave
+MMMS ιωsinθ ιωcosθ
+D ¼ 1;D ¼ 0
+19,3 35 α* 36 β*
+Case-2:D ¼W wherei¼1;2;3;4
+4i i
+(i)ForincidentPwave
+492 ιωcosθ ιωsinθ
+D ¼(cid:2) 0;D ¼ 2
+45 α* 46 β*
+(ii)ForincidentSVwave
+ιωcosθ ιωsinθ
+D ¼(cid:2) 1;D ¼ 0
+45 α* 46 β*
+Case-3:D ¼1,D ¼W wherei¼1;2;3;4
+3i 4i i
+(i)ForincidentPwave
+ιωsinθ ιωcosθ ιωcosθ ιωsinθ
+D ¼ 0;D ¼ 2;D ¼(cid:2) 0;D ¼ 2
+35 α* 36 β* 45 α* 46 β*
+(ii)ForincidentSVwave
+ιωsinθ ιωcosθ ιωcosθ ιωsinθ
+D ¼ 1;D ¼ 0;D ¼(cid:2) 1;D ¼ 0
+35 α* 36 β* 45 α* 46 β*
+Correspondingauthor
+VipinGuptacanbecontactedat:vipin.math.rs@igu.ac.in
+Forinstructionsonhowtoorderreprintsofthisarticle,pleasevisitourwebsite:
+www.emeraldgrouppublishing.com/licensing/reprints.htm
+Orcontactusforfurtherdetails:permissions@emeraldinsight.com
