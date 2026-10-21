@@ -35,7 +35,7 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq texlive-full texlive-latex-extra \
-            texlive-fonts-extra texlive-bibtex-extra biber latexmk inkscape
+            texlive-fonts-extra texlive-bibtex-extra biber inkscape
 
       - name: Convert SVG figures to PDF
         run: |
@@ -59,25 +59,53 @@ jobs:
       - name: Minimal LaTeX test
         run: |
           echo "\documentclass{article}\begin{document}Hello\end{document}" > test_minimal.tex
-          latexmk -pdf -interaction=nonstopmode test_minimal.tex 2>&1 | tail -5 || true
-          if [ -f test_minimal.pdf ]; then echo "MINIMAL TEST PASSED"; else echo "MINIMAL TEST FAILED"; fi
+          pdflatex -interaction=nonstopmode test_minimal.tex > /dev/null 2>&1 || true
+          if [ -f test_minimal.pdf ]; then echo "MINIMAL TEST PASSED"; else echo "MINIMAL TEST FAILED"; exit 1; fi
 
-      - name: Compile LaTeX manuscript (first pass)
+      # ------------------------------------------------------------------
+      # Deterministic build: explicit pdflatex/bibtex sequence.
+      # latexmk's incremental dependency logic is not used here, because a
+      # stale latexmk state file can cause the final pass to be skipped,
+      # which leaves the .aux without \bibcite entries and every citation
+      # in the document reported as undefined.
+      # ------------------------------------------------------------------
+      - name: Compile LaTeX manuscript (pass 1)
         run: |
-          latexmk -pdf -interaction=nonstopmode main.tex 2>&1 | tee first_pass.log
-          echo "=== Error lines from first pass ==="
-          grep -i "^! \|Error\|undefined\|Missing" first_pass.log | head -30 || true
-          echo "=== Log tail ==="
-          tail -50 first_pass.log || true
+          pdflatex -interaction=nonstopmode -file-line-error main.tex > pass1.log 2>&1 || true
+          echo "--- pass 1 errors ---"
+          grep -n "^.*:[0-9]*: " pass1.log | head -20 || echo "(none)"
+          echo "--- pass 1 log tail ---"
+          tail -15 pass1.log || true
 
       - name: Run BibTeX
-        run: bibtex main || true
+        run: |
+          bibtex main > bibtex.log 2>&1 || true
+          echo "--- bibtex.log ---"
+          cat bibtex.log
+          echo "--- .bbl bibitem count ---"
+          grep -c "bibitem" main.bbl || echo 0
 
-      - name: Compile LaTeX manuscript (second pass)
-        run: latexmk -pdf -interaction=nonstopmode main.tex 2>&1 | tee second_pass.log || true
+      - name: Compile LaTeX manuscript (pass 2)
+        run: |
+          pdflatex -interaction=nonstopmode -file-line-error main.tex > pass2.log 2>&1 || true
+          echo "--- pass 2 errors ---"
+          grep -n "^.*:[0-9]*: " pass2.log | head -20 || echo "(none)"
+          echo "--- aux \bibcite count after pass 2 ---"
+          grep -c "bibcite" main.aux || echo 0
 
-      - name: Compile LaTeX manuscript (third pass)
-        run: latexmk -pdf -interaction=nonstopmode main.tex 2>&1 | tee third_pass.log || true
+      - name: Compile LaTeX manuscript (pass 3)
+        run: |
+          pdflatex -interaction=nonstopmode -file-line-error main.tex > pass3.log 2>&1 || true
+          echo "--- pass 3 errors ---"
+          grep -n "^.*:[0-9]*: " pass3.log | head -20 || echo "(none)"
+          echo "--- aux \bibcite count after pass 3 ---"
+          grep -c "bibcite" main.aux || echo 0
+
+      - name: Compile LaTeX manuscript (pass 4, settle references and TOC)
+        run: |
+          pdflatex -interaction=nonstopmode -file-line-error main.tex > pass4.log 2>&1 || true
+          echo "--- pass 4 errors ---"
+          grep -n "^.*:[0-9]*: " pass4.log | head -20 || echo "(none)"
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
@@ -94,23 +122,35 @@ jobs:
           path: |
             phase4/manuscript/main.log
             phase4/manuscript/main.blg
-            phase4/manuscript/first_pass.log
-            phase4/manuscript/second_pass.log
-            phase4/manuscript/third_pass.log
+            phase4/manuscript/pass1.log
+            phase4/manuscript/pass2.log
+            phase4/manuscript/pass3.log
+            phase4/manuscript/pass4.log
+            phase4/manuscript/bibtex.log
           retention-days: 7
           if-no-files-found: ignore
 
       - name: Check for undefined references
         run: |
+          FAIL=0
           if grep -q "Undefined control sequence" main.log; then
             echo "ERROR: Undefined control sequences found"
-            grep "Undefined control sequence" main.log | head -20
+            grep -n -A 3 "Undefined control sequence" main.log | head -40
+            FAIL=1
+          else
+            echo "No undefined control sequences"
           fi
           if grep -q "Undefined reference" main.log; then
             echo "ERROR: Undefined references found"
             grep "Undefined reference" main.log | head -20
+            FAIL=1
+          else
+            echo "No undefined references"
           fi
-          echo "Check complete"
+          if [ "$FAIL" -ne 0 ]; then
+            echo "::error::LaTeX reference check failed"
+            exit 1
+          fi
 
       - name: Check for missing references
         run: |
@@ -132,9 +172,22 @@ jobs:
           if grep -q "Citation.*undefined" main.log 2>/dev/null; then
             echo "ERROR: Undefined citations in the compiled document"
             grep "Citation.*undefined" main.log | head -20
+            echo "--- aux bibcite count: $(grep -c 'bibcite' main.aux 2>/dev/null || echo 0) ---"
+            echo "--- bbl bibitem count: $(grep -c 'bibitem' main.bbl 2>/dev/null || echo 0) ---"
             FAIL=1
           else
             echo "No undefined citations in the document"
+          fi
+          BIBITEMS=$(grep -c "bibitem" main.bbl 2>/dev/null || echo 0)
+          BIBCITES=$(grep -c "bibcite" main.aux 2>/dev/null || echo 0)
+          echo "bbl bibitems: $BIBITEMS   aux bibcites: $BIBCITES"
+          if [ "$BIBITEMS" -eq 0 ]; then
+            echo "ERROR: main.bbl contains no entries - the bibliography was never generated"
+            FAIL=1
+          fi
+          if [ "$BIBCITES" -eq 0 ]; then
+            echo "ERROR: main.aux contains no \\bibcite entries - the .bbl was never read into the document"
+            FAIL=1
           fi
           if [ "$FAIL" -ne 0 ]; then
             echo "::error::Bibliography check failed"
@@ -158,32 +211,36 @@ jobs:
             echo "--- main.blg : grep I didn't find a database entry ---"
             grep -i "didn't find a database entry" phase4/manuscript/main.blg 2>/dev/null | head -40 || echo "(none)"
             echo
-            echo "--- main.log : lines containing 'citation' (case-insensitive) ---"
-            grep -in "citation" phase4/manuscript/main.log 2>/dev/null | head -40 || echo "(none)"
+            echo "--- main.bbl : first 20 lines ---"
+            if [ -f phase4/manuscript/main.bbl ]; then head -20 phase4/manuscript/main.bbl; else echo "(main.bbl missing)"; fi
             echo
-            echo "--- main.log : lines containing 'undefined' ---"
-            grep -in "undefined" phase4/manuscript/main.log 2>/dev/null | head -40 || echo "(none)"
-            echo
-            echo "--- main.log : lines containing '!' (errors) ---"
-            grep -n "^!" phase4/manuscript/main.log 2>/dev/null | head -40 || echo "(none)"
-            echo
+            echo "--- main.aux : bibcite count ---"
+            grep -c "bibcite" phase4/manuscript/main.aux 2>/dev/null || echo "(no aux)"
             echo "--- main.aux : citation count ---"
-            grep -c "\\\\citation" phase4/manuscript/main.aux 2>/dev/null || echo "(no aux)"
-            echo "--- main.aux : bibdata ---"
-            grep "\\\\bibdata" phase4/manuscript/main.aux 2>/dev/null || echo "(no aux)"
-            echo "--- main.aux : bibstyle ---"
-            grep "\\\\bibstyle" phase4/manuscript/main.aux 2>/dev/null || echo "(no aux)"
-            echo "--- main.aux : bibitem count ---"
-            grep -c "\\\\bibitem" phase4/manuscript/main.aux 2>/dev/null || echo "(no aux)"
+            grep -c "citation" phase4/manuscript/main.aux 2>/dev/null || echo "(no aux)"
+            echo "--- main.aux : bibdata / bibstyle ---"
+            grep -E "bibdata|bibstyle" phase4/manuscript/main.aux 2>/dev/null || echo "(no aux)"
             echo
-            echo "--- main.bbl : bibitem count ---"
-            grep -c "\\\\bibitem" phase4/manuscript/main.bbl 2>/dev/null || echo "(no bbl)"
+            echo "--- main.log : lines containing 'No file' ---"
+            grep -n "No file" phase4/manuscript/main.log 2>/dev/null | head -20 || echo "(none)"
+            echo
+            echo "--- main.log : undefined citations (first 30) ---"
+            grep -n "Citation.*undefined" phase4/manuscript/main.log 2>/dev/null | head -30 || echo "(none)"
+            echo
+            echo "--- main.log : undefined control sequences (with context) ---"
+            grep -n -A 3 "Undefined control sequence" phase4/manuscript/main.log 2>/dev/null | head -60 || echo "(none)"
+            echo
+            echo "--- main.log : errors (first 30) ---"
+            grep -n "^!" phase4/manuscript/main.log 2>/dev/null | head -30 || echo "(none)"
+            echo
+            echo "--- main.log : extra-brace / endgroup errors with context ---"
+            grep -n -B 2 -A 6 "Extra }, or forgotten" phase4/manuscript/main.log 2>/dev/null | head -60 || echo "(none)"
             echo
             echo "--- references_local.bib : entry count ---"
             grep -c "^@" phase4/manuscript/references_local.bib 2>/dev/null || echo "(no bib)"
             echo
             echo "--- distinct citation keys requested in main.aux ---"
-            grep "\\\\citation" phase4/manuscript/main.aux 2>/dev/null | sed 's/.*citation{\(.*\)}.*/\1/' | tr ',' '\n' | sed 's/^ *//; s/ *$//' | sort -u || echo "(no aux)"
+            grep "citation{" phase4/manuscript/main.aux 2>/dev/null | sed 's/.*citation{\(.*\)}.*/\1/' | tr ',' '\n' | sed 's/^ *//; s/ *$//' | sort -u || echo "(no aux)"
           } > phase4/manuscript/build_diagnostics.txt 2>&1
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.github.com"
@@ -207,7 +264,7 @@ jobs:
             exit 0
           fi
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.github.com"
           git add phase4/manuscript/main.pdf
           if git diff --cached --quiet; then
             echo "PDF is byte-identical to the committed one (reproducible build) - nothing to do"

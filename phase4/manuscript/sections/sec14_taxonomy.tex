@@ -1,125 +1,196 @@
 %======================================================================
-% Section 14: Original Multidimensional Research Taxonomy
+% Section 14: An Original Multidimensional Taxonomy of the Field
 %======================================================================
-\section{Original Multidimensional Research Taxonomy}
+\section{An Original Multidimensional Taxonomy of the Field}
 \label{sec:taxonomy}
 
-This section presents the original five-axis research taxonomy developed for this review. The taxonomy classifies studies across physical, mathematical, wave, energy, and validation dimensions, enabling systematic identification of research gaps and contradictions.
+The preceding sections have followed the physics: from the kinematics of a continuum, through the constitutive commitments that distinguish one generalized thermoelastic theory from another, to the wave and interface phenomena that those commitments make possible. This section turns the same body of material sideways. It asks a different question. Instead of ``what does this theory predict?'' it asks \emph{``in what ways can studies of this field differ from one another, and what does the pattern of those differences reveal about the state of the subject?''}
+
+The answer matters for three reasons. First, the field has grown horizontally faster than it has grown vertically: the number of named theory families has increased steadily since the 1960s, while the number of settings in which any one of them has been analysed in depth has barely changed. Second, the theoretical questions that connect the families---the existence of rigorous limits between them, the identifiability of their parameters, the transferability of their solutions across geometries---are almost never posed in a form that spans families. Third, a taxonomy that is explicit about its axes, and about the cells it leaves empty, is the most compact available statement of what remains to be done.
+
+\subsection{The organising problem}
+\label{sec:14.1}
+
+A single-axis classification is the obvious first attempt, and it is the one that the field's own literature most often uses: a study is ``generalized thermoelastic'' or it is not. Such a classification is unsatisfactory for a specific reason. The phrase collapses four logically independent commitments into one label. A study may adopt a relaxation law for the heat flux, a gradient or integral constitutive law for the stress, a coupling to a second field (electric, magnetic, porotic), and a validation protocol---and any one of these four can be varied while the other three are held fixed. Two studies bearing the same one-axis label can therefore differ in the mathematics of their governing equations, in the modal content of their solutions, and in the kind of evidence they offer, to the point where they share no common proposition that could be compared.
+
+The alternative used here is to classify a study by its \emph{vector of commitments} rather than by a single name. The classification is multi-dimensional in the strict sense: each axis is a categorical variable, and the taxonomy is the discrete product of the axes. A study occupies one cell of that product. Two studies that share a cell are directly comparable; two studies that differ in one coordinate are comparable with a controlled adjustment; two studies that differ in several coordinates are usually not directly comparable at all, and the taxonomy says so in advance rather than after the fact.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.9\textwidth]{fig08-taxonomy.pdf}
-\caption{Five-axis research taxonomy: physical (material type), mathematical (PDE/integral/fractional), wave (P/S/T/coupled), energy (mechanical/thermal/electrical), and validation (theory/analytical/experimental) dimensions. Each study is classified as a vector across all five axes.}
+\caption{The five-axis research taxonomy used in this review: physical (material class), mathematical (equation structure), wave (modal content), coupling (topology of coupled fields), and validation (evidence regime). Each study is classified by a vector across all five axes; the cells of the resulting product space are what Section~\ref{sec:14.4} analyses.}
 \label{fig:taxonomy}
 \end{figure}
 
-\subsection{Five-axis taxonomy}
-\label{sec:14.1}
-
-The five-axis taxonomy classifies each study across five independent dimensions:
-
-\begin{enumerate}
-\item \textbf{Physical axis:} Material type (elastic, thermoelastic, piezothermoelastic, porous, micropolar, semiconductor, magneto-thermo-elastic).
-\item \textbf{Mathematical axis:} Mathematical structure (PDE, integro-PDE, fractional PDE, nonlocal integral, hereditary integral).
-\item \textbf{Wave axis:} Wave types supported (P, S, thermal, evanescent, attenuating, coupled modes).
-\item \textbf{Energy axis:} Energy transport mechanism (classical flux, relaxation flux, hereditary flux, integral flux, electrical flux).
-\item \textbf{Validation axis:} Validation level (theoretical only, analytical + numerical, analytical + experimental, full experimental).
-\end{enumerate}
-
-Each axis is further subdivided into categories, producing a multi-dimensional classification space.
-
-\subsection{Application to the evidence base}
+\subsection{The five axes and their resolution}
 \label{sec:14.2}
 
-The taxonomy is applied to the literature database (88 records currently, expanding to 500+). Each study is classified across all five axes, producing a taxonomy vector:
+The axes are chosen so that each one is \emph{decision-relevant}: resolving an axis should tell the reader something about the equations, the solutions, or the evidential status of the work.
 
+\begin{enumerate}[label=\textbf{Axis \arabic*:}]
+\item \textbf{Physical axis (material class).} Which class of material the constitutive law describes: classical elastic, thermoelastic, piezoelectric, piezothermoelastic, magneto-thermo-elastic, poroelastic, micropolar, two-temperature, or semiconductor-like. The physical axis determines which conserved quantities and which driving fields are present before any approximation is made.
+
+\item \textbf{Mathematical axis (equation structure).} The functional form of the governing operator: local PDE, integro-differential equation, fractional-order PDE, nonlocal gradient operator, hereditary (memory) integral, or variational/weak formulation. This is the axis along which the most consequential differences between otherwise similar theories run.
+
+\item \textbf{Wave axis (modal content).} The modal content that the formulation admits: a finite propagation speed for the diffusive mode, the number and type of coupled modes, the presence of attenuation, and the dispersion character of each mode.
+
+\item \textbf{Coupling axis (field topology).} The set of fields that are coupled and the strength of that coupling: thermoelastic, thermo-piezoelectric, thermo-magneto-elastic, thermo-poro-elastic, thermo-micro-elastic. This axis replaces the purely energetic classification used in earlier drafts of this review, because it is the coupling topology---rather than the choice of energy functional---that determines whether an interface problem is tractable.
+
+\item \textbf{Validation axis (evidence regime).} The kind of evidence offered: analytical existence and uniqueness only; closed-form solutions for special geometries; numerical solutions validated against a reference solution; comparison with experiment; or a benchmark suite shared with other groups.
+\end{enumerate}
+
+A study is assigned the vector
 \begin{equation}
-\bm{v} = (v_\text{physical}, v_\text{mathematical}, v_\text{wave}, v_\text{energy}, v_\text{validation}).
+\bm{v} = \left(v_{\text{phys}},\; v_{\text{math}},\; v_{\text{wave}},\; v_{\text{coup}},\; v_{\text{val}}\right),
 \label{eq:14.1}
 \end{equation}
+whose components are indices into the respective axis resolutions. Two studies are directly comparable only when their vectors agree in the first two coordinates; the remaining three coordinates then determine \emph{how} the comparison must be posed. To make this quantitative, define the axis-weight dissimilarity
+\begin{equation}
+d(\bm{v}^{(a)},\bm{v}^{(b)}) = \sum_{j=1}^{5} w_j \,\delta\!\left(v^{(a)}_j,\, v^{(b)}_j\right),
+\label{eq:14.2}
+\end{equation}
+where $\delta$ is the Kronecker delta and the weights $w_j$ encode the relative severity of a mismatch. The natural choice is $w_{\text{math}} \geq w_{\text{phys}} > w_{\text{coup}} > w_{\text{wave}} > w_{\text{val}}$: a difference in the mathematical axis changes the governing operator and invalidates most direct comparisons; a difference in the validation axis changes only the epistemic status of the conclusion. The weights are a modelling decision of this review and are stated explicitly so that they can be contested; the ordering they encode is, however, widely shared in the modelling literature.
 
-Studies with similar taxonomy vectors form clusters, revealing research concentrations and gaps.
-
-\subsection{Empty cells: research gaps identified by taxonomy}
+\subsection{Application to the verified corpus}
 \label{sec:14.3}
 
-Empty cells in the taxonomy (combinations with no or few studies) identify research gaps:
+The taxonomy is applied to the verified corpus assembled for this review, comprising 96 records of which 92 carry a resolvable digital object identifier, and of which 13 are openly accessible. The corpus is not a random sample of the field, and the taxonomy must not be read as producing an unbiased map. It is instead a deliberately constructed corpus that is enriched in three respects: it is dense in foundational works that establish the mathematical structure of the families, it is dense in the work of one research group on memory-dependent and multiphysics extensions, and it is deliberately widened to include works on fractional, nonlocal, micropolar, porous, and rotating variants so that the taxonomic axes are populated rather than asserted.
+
+Consolidating the corpus metadata onto the five axes gives the distribution summarised in Table~\ref{tab:taxonomy_distribution}. Three features of this distribution carry most of the interpretive weight in what follows.
 
 \begin{table}[h]
 \centering
 \small
-\caption{Research gaps identified by empty taxonomy cells.}
-\label{tab:taxonomy_gaps}
-\begin{tabularx}{\textwidth}{@{}lXrX@{}}
+\caption{Consolidated theory-family distribution of the 96-record verified corpus, with the taxonomic position that each family occupies along the mathematical and wave axes.}
+\label{tab:taxonomy_distribution}
+\begin{tabularx}{\textwidth}{@{}lrlX@{}}
 \toprule
-\textbf{Gap ID} & \textbf{Description} & \textbf{Priority} & \textbf{Related section} \\
+\textbf{Theory family} & \textbf{Records} & \textbf{Share} & \textbf{Taxonomic position} \\
 \midrule
-GAP-001 & Energy flux for LS theory in time domain & High & Section 10.3 \\
-GAP-002 & Energy flux for GL theory & High & Section 10.3 \\
-GAP-003 & Energy flux for GN-II theory & High & Section 10.3 \\
-GAP-004 & Energy flux for GN-III theory & High & Section 10.3 \\
-GAP-005 & Energy flux for DPL theory in time domain & High & Section 10.3 \\
-GAP-006 & Energy flux for TPL theory & High & Section 10.3 \\
-GAP-007 & Energy flux for MGT theory & High & Section 10.3 \\
-GAP-008 & MDD hereditary energy flux & High & Section 10.3 \\
-GAP-009 & Nonlocal integral-form energy flux & High & Section 10.3 \\
-GAP-010 & Piezoelectric electrical energy flux & High & Section 10.3 \\
-GAP-011 & Energy flux asymmetry at multiphysics interfaces & High & Section 15.1 \\
-GAP-012 & Rigorous limit theorems between theories & Medium & Section 12.3 \\
+Classical / continuum foundations & 24 & 25.0\% & Local PDE on all axes; reference point for every other family \\
+Fractional-order theories & 15 & 15.6\% & Fractional PDE in time; infinite-memory limit in the order parameter \\
+Nonlocal / gradient models & 13 & 13.5\% & Nonlocal operator on the stress; size-dependent stiffness and dispersion \\
+Dual / triple phase-lag & 9 & 9.4\% & Local PDE of higher order; two relaxation times as extra state variables \\
+Memory-dependent derivative & 9 & 9.4\% & Hereditary integral kernel; integer-order operator over an enlarged state space \\
+Lord--Shulman and descendants & 5 & 5.2\% & Local PDE with relaxation; hyperbolic thermal wave as the reference case \\
+Green--Naghdi II and III & 5 & 5.2\% & Local PDE; conservative and dissipative branches separated \\
+Porous / poroelastic couplings & 5 & 5.2\% & Local PDE with added mass and pressure fields; two-fluid coupling \\
+Micropolar and rotating continua & 4 & 4.2\% & Local PDE with an independent micro-rotation field \\
+Moore--Gibson--Thompson & 3 & 3.1\% & Third-order PDE; thermal inertia; two temperature fields \\
+Green--Lindsay & 2 & 2.1\% & Local PDE with two relaxation times; the two-temperature bridge \\
+Unclassified metadata & 2 & 2.1\% & Incomplete records; excluded from axis assignment \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-GAP-011 (energy flux asymmetry at interfaces) is documented from the interface energy-ratio computations of Barak et al.~\cite{Barak2023}, not as an error allegation.
+First, the corpus is \emph{not} dominated by the classical families that dominate the field's historical literature. The single largest block---classical and continuum foundations---contributes a quarter of the corpus, while the mathematically intensive families (fractional, nonlocal, memory-dependent) together contribute just over a third. This is a statement about the corpus, not about the field, and the two are deliberately distinguished throughout: the taxonomy describes the reviewed evidence, and the gap analysis in Section~\ref{sec:14.5} describes the field.
 
-\subsection{Contradiction mapping: pairs of studies with contradictory approaches}
+Second, the temporal profile is bimodal. Seventeen records predate 1970 and seventeen more fall in the 1970s, reflecting the period in which the basic families were established; the 2010s and the 2020s contribute thirty-nine records, reflecting the period in which the extensions proliferated. The intervening decades are comparatively thin, which is itself an observation about how the field's attention has been distributed rather than about a lack of activity in those years.
+
+Third, the metadata carry a diagnostic limitation that should be stated plainly. The theory-family labels are inherited from the source records, which were compiled by different hands at different times, and they are not uniform: a single field's literature appears under labels such as ``mdd'', ``mdd\_piezo'' and ``ls\_mdd\_piezo'' that differ in whether coupling is treated as part of the family name. Any taxonomy applied to such metadata inherits that non-uniformity, and the resolution adopted here---consolidating labels into families while keeping the coupling on its own axis---is itself a methodological decision that could reasonably have been made differently.
+
+\subsection{Four structural asymmetries}
 \label{sec:14.4}
 
-Apparent contradictions between studies are mapped to their root causes:
+Placing the corpus in the product space of the five axes reveals four asymmetries. These are more useful than a gap list because they describe the \emph{shape} of the field rather than merely the absence of particular papers.
+
+\paragraph{Asymmetry I: the mathematical axis is thick in the middle and thin at the ends.}
+Almost all of the corpus sits between the fully local PDE and the strongly nonlocal or fractional operator, in the band where the constitutive law has been rewritten but the resulting system is still second order in space. The extremes are sparse. Fully local formulations with rigorous existence theory are under-represented relative to their importance, and strongly nonlocal operators with controlled variational structure are rarer still. The field has been more interested in producing new operators than in proving properties of the operators it produces.
+
+\paragraph{Asymmetry II: the wave axis is almost entirely populated by one canonical problem.}
+The modal content of generalized thermoelasticity is genuinely interesting---the second sound, the thermal wave speed, the switch between hyperbolic and parabolic behaviour---but the overwhelming majority of the corpus examines it in a single configuration: a homogeneous, isotropic, half-space or infinite medium, in the frequency domain, for a plane incident wave. Bounded domains, three-dimensional transients, inhomogeneity, and interfaces between dissimilar media occupy a small fraction of the corpus. The wave axis therefore carries a great deal of information about which theories differ, but very little about how they behave when the geometry is not trivial.
+
+\paragraph{Asymmetry III: the coupling axis is thin in its strong cells.}
+Coupling to a second field is one of the most active frontiers, and the corpus reflects this: piezothermoelastic and magneto-thermo-elastic entries are numerous. But coupling that is \emph{simultaneously} non-classical on more than one axis is rare. Combinations such as nonlocal plus piezoelectric, or memory-dependent plus magneto-electro-elastic, appear as isolated contributions rather than as established lines. The coupling axis behaves like a lattice whose higher-dimensional cells are populated but whose corners are empty.
+
+\paragraph{Asymmetry IV: the validation axis is dominated by self-consistency.}
+The great majority of entries in the corpus are validated in the sense that a numerically computed quantity agrees with a closed-form solution obtained from the same equations, or with a result previously published within the same framework. Comparisons against independent experiments, against finite-element implementations of a competing formulation, or against laboratory data obtained for a genuinely comparable material, are rare. This is the most consequential asymmetry in the corpus, because it is the axis along which the field's claims would be most directly exposed to falsification, and it is precisely the axis that is least populated.
 
 \begin{table}[h]
 \centering
 \small
-\caption{Contradiction mapping framework.}
-\label{tab:contradiction_map}
-\begin{tabularx}{\textwidth}{@{}lXXX@{}}
+\caption{Four structural asymmetries of the reviewed corpus, with the taxonomic axis that carries each and the specific question that the asymmetry leaves unresolved.}
+\label{tab:asymmetries}
+\begin{tabularx}{\textwidth}{@{}lXlX@{}}
 \toprule
-\textbf{Contradiction type} & \textbf{Root cause} & \textbf{Resolution approach} & \textbf{Example} \\
+\textbf{Asymmetry} & \textbf{Axis} & \textbf{What the corpus contains} & \textbf{What is missing} \\
 \midrule
-Assumption difference & Different constitutive assumptions & Trace to primary sources & LS vs. GL relaxation mechanism \\
-Approximation difference & Different Taylor expansion orders & Compare validity ranges & DPL first-order vs. second-order \\
-Normalization difference & Different reference values & Convert to common units & Temperature reference \\
-Frequency convention & $e^{i\omega t}$ vs. $e^{-i\omega t}$ & Standardize convention & Sign of imaginary parts \\
+I & Mathematical & Second-order-in-space operators with rewritten constitutive laws & Rigorous well-posedness and existence theory for the operators actually in use; control of the limit to the local case \\
+II & Wave & Half-space and infinite-medium plane-wave problems & Bounded, inhomogeneous, and transient three-dimensional wave problems; modal content away from the canonical configuration \\
+III & Coupling & Single-axis extensions in reasonable number; combined extensions as isolated contributions & Systematic treatment of the joint limit in which two extensions are active simultaneously \\
+IV & Validation & Numerical agreement with closed-form solutions of the same equations & Comparison against experiment and against competing formulations implemented independently \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-Each contradiction is resolved by tracing to assumptions, not by declaring any study erroneous.
-
-\subsection{Advantages over single-axis classifications}
+\subsection{Cells that remain thin: frontiers rather than gaps}
 \label{sec:14.5}
 
-The five-axis taxonomy offers several advantages:
+A gap analysis is only as good as the axis resolution behind it. The table below replaces an earlier version of this analysis that was organised around a single quantity; organising a frontier list around one derived quantity produces a list of technical tasks rather than of scientific problems, and it obscures the fact that the genuinely open questions in this field are mostly about \emph{formulation} and \emph{evidence} rather than about further calculation. The entries below are stated as scientific questions, each of which admits an experimental, computational, or theoretical resolution.
 
-\begin{enumerate}
-\item \textbf{Multi-dimensional:} Captures complexity that single-axis classifications miss,
-\item \textbf{Gap identification:} Empty cells reveal underexplored research areas,
-\item \textbf{Contradiction resolution:} Differences traced to specific assumptions,
-\item \textbf{Comparability:} Enables systematic comparison across theory families,
-\item \textbf{Extensibility:} New axes can be added as research evolves.
-\end{enumerate}
+\begin{table}[h]
+\centering
+\small
+\caption{Frontier questions identified from thin cells of the taxonomy. Priority reflects feasibility and scientific leverage, not size of the associated literature.}
+\label{tab:taxonomy_gaps}
+\begin{tabularx}{\textwidth}{@{}lXXl@{}}
+\toprule
+\textbf{ID} & \textbf{Scientific question} & \textbf{Why the cell is thin} & \textbf{Priority} \\
+\midrule
+GAP-001 & Under what conditions do two generalization mechanisms, each of which reduces to classical thermoelasticity in its own limit, commute with one another? & Combined-extension cells are populated only by isolated contributions & High \\
+GAP-002 & How are the relaxation and kernel parameters of a generalized theory identified from measurements that are not themselves produced by that theory? & Identification is almost always performed within the framework being tested & High \\
+GAP-003 & What is the modal content of generalized thermoelastic waves in bounded, inhomogeneous bodies? & The wave axis is populated almost entirely by half-space problems & High \\
+GAP-004 & Which of the competing generalized theories predicts the same measurable sequence for a common well-characterized material? & Cross-theory benchmarks on common material data are essentially absent & High \\
+GAP-005 & How do thermo-mechanical coupling alter the existence and stability of interfacial waves at a bonded dissimilar interface? & Interface work concentrates on scalar reflection coefficients & Medium \\
+GAP-006 & What is the correct high-frequency limit of the fractional and nonlocal operators when the characteristic length scale is comparable with the microstructure? & Limits are stated as formal parameter substitutions without error bounds & Medium \\
+GAP-007 & Can the memory-dependent and fractional descriptions of the same memory effect be related by an operator equivalence with quantified error? & Both are presented as alternatives without a common yardstick & Medium \\
+GAP-008 & What validation protocol would distinguish a genuinely dissipative generalized theory from a fitted correction to a dissipative theory? & The corpus offers no discriminating experimental design & High \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
-\subsection{Limitations}
+Two of these questions deserve a note on why they are treated as scientific rather than technical. The commutativity question of GAP-001 has a precise mathematical form: two generalization mechanisms, each of which acts on the thermal and the mechanical variables, are said to commute if the order in which they are applied does not affect the resulting operator. This is not a formality. If the mechanisms do not commute, then a study that adopts both simultaneously is not the composition of two studies that adopt them separately, and the entire practice of extending a theory by successive generalisations---which is how much of the corpus has been built---produces results that depend on the order of construction in a way that is not always acknowledged. The parameter-identification question of GAP-002 is likewise substantive rather than procedural. A generalized theory introduces parameters---relaxation times, kernel parameters, length scales---whose values are usually obtained by fitting the very predictions that the theory then uses to validate itself. A parameter thus determined is not an independent physical quantity, and the evidence for the theory is correspondingly weaker than the number of fitted parameters might suggest.
+
+\subsection{Divergence map: why results differ across the corpus}
 \label{sec:14.6}
 
+Studies in this field frequently report apparently incompatible results for what is nominally the same physical problem. In almost every instance examined here, the divergence is fully accounted for by a difference in modelling assumptions, and can be reproduced exactly by a reader who adopts the same assumptions. The purpose of the map below is therefore not to adjudicate between studies but to make the assumptions explicit, so that a comparison can be posed in a form in which it is meaningful.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Divergence map: the modelling commitments that account for apparent disagreement between studies in the reviewed corpus.}
+\label{tab:contradiction_map}
+\begin{tabularx}{\textwidth}{@{}lXXl@{}}
+\toprule
+\textbf{Divergence type} & \textbf{Root cause} & \textbf{Resolution procedure} & \textbf{Canonical instance} \\
+\midrule
+Assumption difference & Different constitutive commitments on the thermal and mechanical sides & Trace both derivations to their primary sources and identify the first point at which the assumptions differ & Classical versus Lord--Shulman thermal equation \\
+Approximation difference & Different truncation orders in the Taylor expansion of the phase-lag law & Compare on the intersection of the two validity ranges rather than on either range alone & First-order versus second-order dual phase-lag \\
+Normalisation difference & Different reference temperature, density, or stiffness conventions & Re-express both in a common nondimensionalisation before comparing & Absolute versus relative temperature measure \\
+Convention difference & Opposite sign convention in the harmonic ansatz & Standardise the convention and track the corresponding sign change & $e^{i\omega t}$ versus $e^{-i\omega t}$ \\
+Limit difference & Formal parameter substitution used as though it were a convergence theorem & Verify that the limiting and the limiting problem share a well-posedness hypothesis before comparing & Fractional order approaching two \\
+Geometry difference & Different admissible geometries or boundary conditions & Restrict the comparison to the common geometric class & Half-space versus bounded plate \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The procedure that follows from this map is uniform: to compare two studies, locate the first modelling commitment on which they differ, and either eliminate that difference or state the comparison as conditional on it. Apparent disagreement then either dissolves, because the two studies were never addressing the same problem, or sharpens into a genuine scientific question, which is the desirable outcome. What this map cannot do---and what no classification can do---is decide which modelling commitment is preferable. That judgement requires the experimental axis, and Section~\ref{sec:14.4} has already recorded how thinly that axis is populated.
+
+\subsection{Methodological limitations of the taxonomy}
+\label{sec:14.7}
+
+The taxonomy is an instrument constructed for this review, and its limitations should be stated with the same care as the limitations of the theories it organises.
+
 \begin{enumerate}
-\item \textbf{Analyst-constructed:} The taxonomy is constructed by the analyst, not discovered from data,
-\item \textbf{Abstract-only classifications:} Many studies are classified from abstracts only, limiting accuracy,
-\item \textbf{Subjectivity:} Classification decisions involve analyst judgment,
-\item \textbf{Incomplete coverage:} Current database covers 88 records, expanding to 500+.
+\item \textbf{Analyst-constructed.} The axes and their resolutions were chosen in response to the reviewed literature rather than derived from it. A different analyst, reading the same corpus, could plausibly choose a different axis set---for example, replacing the coupling axis with an axis for spatial dimension and boundary-condition class, or splitting the validation axis into ``analytical'' and ``experimental'' as two separate axes.
+\item \textbf{Classification from heterogeneous metadata.} Many records were classified from abstracts, and some from secondary descriptions rather than from the papers themselves. Where the metadata were ambiguous, the classification was conservative, but the resulting error rate is not zero and cannot be quantified without a double-classification study.
+\item \textbf{Corpus construction.} The corpus is enriched in foundational works, in one group's contributions, and in the mathematical extensions needed to populate the axes. Statements about the density of the taxonomy refer to this corpus and not to the field at large.
+\item \textbf{Unvalidated weights.} The dissimilarity measure of Eq.~\eqref{eq:14.2} uses an ordering of axis weights that is asserted rather than demonstrated. No formal comparison exercise is available in the corpus from which the ordering could be inferred.
+\item \textbf{Coupling choices.} Placing coupling on its own axis, rather than folding it into the physical axis, is a deliberate choice that makes the multi-field cases visible. It also separates families that some authors treat as single families, and that separation is not canonical.
 \end{enumerate}
 
-These limitations are acknowledged; the taxonomy is presented as a research tool, not as a definitive classification.
+Subject to these limitations, the taxonomy is offered as a working instrument for the review, and---more ambitiously---as a proposal for how a much larger corpus might be organised. Section~\ref{sec:future} returns to this point as one of the practical recommendations that follow from the analysis.
 
 \subsection{Notation summary for Section 14}
 
@@ -132,7 +203,11 @@ These limitations are acknowledged; the taxonomy is presented as a research tool
 \toprule
 \textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
 \midrule
-$\bm{v}$ & Taxonomy vector & dimensionless & \eqref{eq:14.1} \\
+$\bm{v}$ & Taxonomy vector of a study & dimensionless & \eqref{eq:14.1} \\
+$v_{\text{phys}}$, $v_{\text{math}}$, $v_{\text{wave}}$, $v_{\text{coup}}$, $v_{\text{val}}$ & Axis components of the taxonomy vector & dimensionless & \eqref{eq:14.1} \\
+$d(\bm{v}^{(a)},\bm{v}^{(b)})$ & Axis-weight dissimilarity between two studies & dimensionless & \eqref{eq:14.2} \\
+$w_j$ & Weight assigned to axis $j$ in the dissimilarity & dimensionless & \eqref{eq:14.2} \\
+$\delta(\cdot,\cdot)$ & Kronecker delta on axis labels & dimensionless & \eqref{eq:14.2} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -140,8 +215,10 @@ $\bm{v}$ & Taxonomy vector & dimensionless & \eqref{eq:14.1} \\
 \subsection{Open questions for Section 14}
 
 \begin{enumerate}[label=\textbf{OQ14.\arabic*}]
-\item How can the taxonomy be validated against independent analyst classifications? \label{oq:14.1}
-\item What additional axes would improve the taxonomy's coverage? \label{oq:14.2}
+\item Can the taxonomy be validated against an independent double-classification of the corpus, and what is the resulting agreement rate? \label{oq:14.1}
+\item Which additional axes---spatial dimension, boundary-condition class, material symmetry class, or the type of inverse problem posed---would most improve the coverage of the product space? \label{oq:14.2}
+\item Is the ordering of the axis weights in Eq.~\eqref{eq:14.2} recoverable from data, for example from the observed frequency of successful cross-family comparisons?
+\item Can the frontier questions of Section~\ref{sec:14.5} be converted into a shared benchmark protocol that independent groups could execute without sharing code?
 \end{enumerate}
 
-% LocalWords: 
+% LocalWords:

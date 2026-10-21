@@ -4,136 +4,148 @@
 \section{Energy Transport and Dissipation}
 \label{sec:energy}
 
-This section addresses energy transport and dissipation across all theory families: the general energy balance, classical energy flux, interface energy balance, conservation identities, and dissipation mechanisms. Energy transport is presented as one aspect of wave mechanics, integrated with the broader treatment of coupled-field interactions.
+Every generalized thermoelastic theory is, at bottom, a statement about how heat travels through a solid, and every statement of that kind has an energetic consequence that can be checked. The energy balance is therefore not an appendix to the constitutive theory but a diagnostic of it: a proposed constitutive law that cannot be embedded in a balance with a non-negative dissipation rate is not a physical theory, however elegant its solutions. This section develops that diagnostic for the families treated in Sections~\ref{sec:thermoelastic}--\ref{sec:advanced}. Energy transport is treated as one aspect of wave mechanics, integrated with the broader treatment of coupled-field interactions rather than as a separate subject.
 
 \subsection{General energy balance}
 \label{sec:10.1}
 
-For a continuum body occupying region $\Omega$ with boundary $\partial\Omega$, the total energy density $\mathcal{E}$ comprises kinetic energy, internal (elastic + thermal) energy, and, in multiphysics theories, electrical energy:
+For a continuum body occupying region $\Omega$ with boundary $\partial\Omega$, the total energy density $\mathcal{E}$ comprises kinetic energy, internal (elastic + thermal) energy, and, in multiphysics theories, the energy of the additional fields:
 
 \begin{equation}
-\mathcal{E} = \frac{1}{2}\rho v_i v_i + e + \mathcal{E}_{\mathrm{elec}},
+\mathcal{E} = \frac{1}{2}\rho v_i v_i + e + \mathcal{E}_{\mathrm{coup}},
 \label{eq:10.1}
 \end{equation}
-
-where $\mathcal{E}_{\mathrm{elec}} = 0$ for purely thermoelastic media and $\mathcal{E}_{\mathrm{elec}} = \frac{1}{2}D_i E_i$ for piezoelectric media (electrical energy density).
-
-The general energy balance takes the form:
+where $\mathcal{E}_{\mathrm{coup}} = 0$ for purely thermoelastic media, $\mathcal{E}_{\mathrm{coup}} = \frac{1}{2}D_i E_i$ for piezoelectric media, and an analogous term for the magnetic or porotic fields where those are present. The general energy balance is
 
 \begin{equation}
 \frac{\partial\mathcal{E}}{\partial t} + \partial_i J_i = \mathcal{P} - \mathcal{D},
 \label{eq:10.2}
 \end{equation}
+where $\bm{J}$ is the total energy flux vector (W\,m$^{-2}$), $\mathcal{P} = \rho f_i v_i$ is the mechanical power input per unit volume (W\,m$^{-3}$), and $\mathcal{D} \geq 0$ is the dissipation rate per unit volume (W\,m$^{-3}$).
 
-where:
-\begin{itemize}
-\item $\bm{J}$ is the total energy flux vector (W/m$^2$),
-\item $\mathcal{P} = \rho f_i v_i$ is the mechanical power input per unit volume (W/m$^3$),
-\item $\mathcal{D} \geq 0$ is the dissipation rate per unit volume (W/m$^3$).
-\end{itemize}
+Equation~\eqref{eq:10.2} has a status in the theory that is easy to underestimate. It is not an extra assumption appended to the equations of motion; it is a \emph{consequence} of them, obtained by combining the momentum balance with the internal-energy balance and the constitutive laws. That is why it can be used as a test of a constitutive proposal: if the combination yields a balance with $\mathcal{D} \geq 0$, the proposal is thermodynamically admissible; if it yields $\mathcal{D}$ of indefinite sign, the proposal is not, and no amount of successful solution of the resulting boundary-value problems can repair that.
 
 For an isolated system with no body forces and no dissipation, \eqref{eq:10.2} reduces to the local conservation law $\partial_t\mathcal{E} + \partial_i J_i = 0$, which integrates to global energy conservation.
 
 \subsection{Classical energy flux}
 \label{sec:10.2}
 
-For classical coupled thermoelasticity (Fourier heat conduction), adding the mechanical power balance and the internal energy balance yields:
+For classical coupled thermoelasticity, adding the mechanical power balance and the internal energy balance yields
 
 \begin{equation}
 J_i = \sigma_{ji}v_i + q_i,
 \label{eq:10.3}
 \end{equation}
+the classical energy flux, with two channels: the mechanical energy flux $\sigma_{ji}v_i$, which is the stress power transmitted across a surface per unit area, and the thermal energy flux $q_i$, the heat conducted across that surface.
 
-which is the classical energy flux. The two contributions are:
-\begin{itemize}
-\item Mechanical energy flux: $\sigma_{ji}v_i$ --- stress power transmitted across a surface per unit area,
-\item Thermal energy flux: $q_i$ --- heat conduction across a surface per unit area.
-\end{itemize}
-
-For time-harmonic fields, the average energy flux is computed using the time-average identity:
+For time-harmonic fields, the average energy flux is obtained from the time-average identity
 
 \begin{equation}
-\avg{J_i}_t = \frac{1}{2}\Re\left[\hat{\sigma}_{ji}\hat{v}_i^*\right].
+\avg{J_i}_t = \frac{1}{2}\Re\left[\hat{\sigma}_{ji}\hat{v}_i^*\right],
 \label{eq:10.4}
 \end{equation}
+in which the complex conjugate appears because the physical field is the real part of the complex amplitude. For an interface problem the quantity of interest is the normal component $J_n = J_i n_i$, and the sign convention of the harmonic ansatz determines the sign of the imaginary part of $\hat{J}_n$; the divergence map of Table~\ref{tab:divergence_map} records this as one of the routine sources of apparent disagreement.
+
+A point worth keeping in view is that the classical flux contains \emph{no} term associated with the internal variables that generalized theories introduce. The entire difficulty of Section~\ref{sec:10.4} follows from that absence.
 
 \subsection{Interface energy balance}
 \label{sec:10.3}
 
-Consider an interface $\Sigma$ between two media with unit normal $\bm{n}$. Integrating the general energy balance over a thin pillbox straddling the interface and taking the thinness limit gives the jump condition:
+Consider an interface $\Sigma$ between two media with unit normal $\bm{n}$. Integrating the general energy balance over a thin pillbox straddling the interface and taking the thinness limit gives the jump condition
 
 \begin{equation}
 \jump{J_n} = \mathcal{P}_\Sigma - \frac{\partial\mathcal{E}_\Sigma}{\partial t},
 \label{eq:10.5}
 \end{equation}
-
 where $J_n = J_i n_i$ is the normal energy flux, $\mathcal{P}_\Sigma$ is the mechanical power input at the interface, and $\mathcal{E}_\Sigma$ is the interfacial energy density.
 
-For a passive interface with no mechanical power input and no interfacial energy storage:
+For a passive interface with no mechanical power input and no interfacial energy storage,
 
 \begin{equation}
 \jump{J_n} = 0,
 \label{eq:10.6}
 \end{equation}
+that is, the normal energy flux is continuous across the interface. Two qualifications are needed before this condition is used numerically. First, it is a statement about the \emph{correct} energy flux of the theory in which it is used; a flux built from the classical form alone, applied to a family with internal variables, will not satisfy it even when the mathematics is otherwise flawless. Second, the continuity of the normal flux does not by itself imply the scalar conservation identity of Section~\ref{sec:10.5}: that identity is a statement about modal energies, while \eqref{eq:10.6} is a statement about a single component of a flux at a single surface, and the two are related only after the modal decomposition and normalisation conventions have been fixed.
 
-which states that the normal energy flux is continuous across the interface.
-
-\subsection{Energy flux in generalized theories}
+\subsection{Energy transport in generalized theories: the internal-variable structure}
 \label{sec:10.4}
 
-For generalized theories, the energy flux acquires additional terms beyond the classical form $\sigma_{ji}v_i + q_i$. The complete energy flux for each theory family must be derived from that theory's specific constitutive relations combined with the general energy balance.
+The systematic way to write the energy balance for a generalized theory is the internal-variable formulation. In this formulation the state variables that a family introduces beyond displacement and temperature are treated as \emph{internal variables} $z^\alpha$, each with a conjugate thermodynamic force $Y^\alpha$ that measures the rate at which the internal variable is generated. Two consequences follow, and together they determine the structure of every generalized energy flux.
 
-\subsubsection{Verified piezothermoelastic energy flux}
-
-The normal acoustic energy flux for piezothermoelastic media has been verified across multiple full-text sources (Scientific Reports, Indian Journal of Physics, Heat and Fluid Flow, Mathematics and Mechanics of Solids, Journal of Thermal Stresses, International Journal of Applied Mechanics, Mechanics of Time-Dependent Materials):
+\paragraph{First, the energy density acquires an internal-variable contribution.}
+The internal energy is not a function of temperature alone but of the state $(T, z^1, \dots, z^n)$, and the energy density may be written schematically as
 
 \begin{equation}
-P = -\Re\left[\sigma_{13}\dot{u}_1 + \sigma_{33}\dot{u}_3 - \phi\dot{D}_3 + \frac{T_0}{T}K_3 T_{,3}\right],
+e(T, z^\alpha) = e_{\mathrm{eq}}(T) + \sum_{\alpha} Y^\alpha z^\alpha,
 \label{eq:10.7}
 \end{equation}
 
-which includes three channels: mechanical power ($\sigma_{ji}\dot{u}_i$), electrical power ($-\phi\dot{D}_3$), and thermal conduction ($\frac{T_0}{T}K_3 T_{,3}$).
+where $e_{\mathrm{eq}}(T)$ is the equilibrium internal energy and the sum collects the contributions of the internal variables. The relation is structural rather than numerical: its content is that an internal variable enters the energy density only in combination with its conjugate force.
 
-For the elastic (TS) medium, the flux includes only the mechanical power channel:
+\paragraph{Second, the energy flux acquires a flux-of-internal-energy term.}
+Because the internal variables evolve in time, the product $Y^\alpha z^\alpha$ contributes to the time derivative of the energy density, and the corresponding balance requires an additional flux term, so that the flux of Eq.~\eqref{eq:10.3} generalizes to
 
 \begin{equation}
-P_e = -\Re\left[\sigma_{3e1}\dot{u}_{e1} + \sigma_{3e3}\dot{u}_{e3}\right].
+J_i = \sigma_{ji}v_i + q_i - \sum_{\alpha} Y^\alpha \dot{z}^\alpha ,
 \label{eq:10.8}
 \end{equation}
 
-\subsubsection{Open formulations for pure generalized theories}
+up to the sign convention adopted for the forces $Y^\alpha$. This single structural fact is what makes the energy balance of every generalized theory have the same shape, and it is why the energy flux of a generalized theory can be discussed generically even when its explicit form for a given family is not known.
 
-For pure generalized theories (LS, GL, GN-II, GN-III, DPL, TPL, MGT, MDD, nonlocal) without piezoelectric coupling, the complete time-domain energy flux remains an open derivation:
+\paragraph{What the families contribute.}
+Mapping the internal variables of the families onto this structure makes the differences concrete:
 
 \begin{itemize}
-\item \textbf{LS:} The flux-relaxation term $\tau_0\dot{q}_i$ in $q_i + \tau_0\dot{q}_i = -kT_{,i}$ requires an additional contribution to the energy flux.
-\item \textbf{GL/GN-II:} Temperature-rate dependence or thermal displacement introduces new state variables whose fluxes must be accounted for.
-\item \textbf{DPL/TPL:} Time-lagged constitutive relations lead to higher-order time derivatives in the energy equation.
-\item \textbf{MGT:} The third-order heat equation introduces acceleration-level flux terms.
-\item \textbf{MDD:} The convolution-form flux requires hereditary integral formulations.
-\item \textbf{Nonlocal:} The integral constitutive relation modifies the divergence theorem, requiring nonlocal surface terms.
+\item \textbf{Classical coupled thermoelasticity} has no internal variable; the thermal channel is the Fourier flux alone.
+\item \textbf{Lord--Shulman} and the Cattaneo--Christoff construction introduce the heat flux itself as an internal variable, so the flux acquires a term proportional to the entropy-production-like force multiplied by $\dot{q}_i$.
+\item \textbf{Green--Lindsay} introduces a temperature rate in the one-temperature formulation and a second temperature field in the two-temperature formulation; in the latter case two thermal channels appear, one for each temperature.
+\item \textbf{Green--Naghdi types~II and III} introduce the thermal displacement (type~II) or the rate of heat flux (type~III) as internal variables, which is precisely what permits a conservative mechanical structure with a dissipative thermal branch.
+\item \textbf{Dual and triple phase-lag} theories introduce one and two additional internal variables beyond the flux, corresponding to the lagged gradient and the thermal displacement gradient.
+\item \textbf{Moore--Gibson--Thompson} introduces the heat flux and an additional temperature difference, the latter acting as the thermal-inertia variable.
+\item \textbf{Memory-dependent} formulations replace the single relaxation exponential by a kernel-weighted history; the internal variable is then an entire function of time, and the flux term becomes a convolution rather than a local product.
+\item \textbf{Nonlocal} formulations act on the stress rather than on the thermal law; the corresponding modification appears as a nonlocal surface term when the divergence theorem is applied to the convolution form.
 \end{itemize}
 
-These open formulations are identified as research questions, not presented as uncertain or contradictory results.
+\subsubsection{Verified piezothermoelastic energy flux}
+
+For the piezothermoelastic family, the energy flux has been computed explicitly and checked across several independent publications in the reviewed corpus. The normal acoustic energy flux is
+
+\begin{equation}
+P = -\Re\left[\sigma_{13}\dot{u}_1 + \sigma_{33}\dot{u}_3 - \phi\dot{D}_3 + \frac{T_0}{T}K_3 T_{,3}\right],
+\label{eq:10.9}
+\end{equation}
+
+which comprises three channels: the mechanical power $\sigma_{ji}\dot{u}_i$, the electrical power $-\phi\dot{D}_3$, and the thermal conduction term $\frac{T_0}{T}K_3 T_{,3}$ \cite{Barak2023IJP,Barak2023JTS}. The corresponding result for an elastic (thermoelastic) medium retains only the mechanical channel,
+
+\begin{equation}
+P_e = -\Re\left[\sigma_{3e1}\dot{u}_{e1} + \sigma_{3e3}\dot{u}_{e3}\right],
+\label{eq:10.10}
+\end{equation}
+
+so that the comparison of the two fluxes isolates the contribution of the piezoelectric coupling \cite{Barak2023,Gupta2023Energy}. Interface energy ratios computed from these expressions, with and without memory-dependent operators acting on the heat flux, have been used to quantify the effect of the memory kernel and of the relative stiffness of the two media on the energy partition \cite{Barak2023,Barak2023MMMS,Kumar2023PhysScr}. The energy partition at an interface between an ideal fluid and a nonlocal piezothermoelastic medium has been examined on the same basis \cite{Gupta2023IJNMF}.
+
+\subsubsection{What remains open in the pure generalized theories}
+
+For the families without an added field---Lord--Shulman, Green--Lindsay, Green--Naghdi, the phase-lag families, Moore--Gibson--Thompson, the memory-dependent formulation, and the nonlocal formulation---the explicit time-domain energy flux and the corresponding dissipation function are not available in the reviewed corpus in a form that can be independently verified. This is a gap in the theory, and it is recorded here as a gap: it is not used as a premise for any derivation elsewhere in this review. The structural description of Eq.~\eqref{eq:10.8} is the most that can be asserted generally, and the explicit expressions remain an open item for each family.
 
 \subsection{Conservation identity: $\sum R + \sum T + A = 1$}
 \label{sec:10.5}
 
-For wave scattering at an interface, energy conservation requires that the sum of reflection, transmission, and absorption coefficients equals unity:
+For wave scattering at an interface, energy conservation requires that the sum of the reflection, transmission, and absorption coefficients be unity:
 
 \begin{equation}
 \sum R + \sum T + A = 1,
-\label{eq:10.9}
+\label{eq:10.11}
 \end{equation}
 
-where the sums run over all reflected and transmitted modes. With no dissipation ($A = 0$):
+where the sums run over all reflected and transmitted modes, and $A$ is the absorbed fraction. With no dissipation ($A = 0$),
 
 \begin{equation}
 \sum R + \sum T = 1.
-\label{eq:10.10}
+\label{eq:10.12}
 \end{equation}
 
-The identity holds when: (1) the energy flux is correctly defined for the specific theory, (2) the interface is passive, (3) all modes (propagating, evanescent, attenuating) are properly accounted for, and (4) complex modes are consistently normalized.
+The identity holds when four conditions are met: the energy flux is correctly defined for the theory in use; the interface is passive; all modes---propagating, evanescent, and attenuating---are properly accounted for; and complex modes are consistently normalised. These conditions are not automatic. The third is the most frequently violated in practice: evanescent modes carry a normal flux that is not zero, so omitting them from the modal sums produces an apparent deficit that is sometimes attributed to absorption \cite{Gupta2026HeatMap}. The fourth is the most frequently overlooked: the notion of the energy of a complex mode depends on the normalisation adopted for the modal amplitude, and two groups using different normalisations can report energy ratios that differ by a constant factor while describing the same physics.
 
 \subsection{Dissipation mechanisms}
 \label{sec:10.6}
@@ -141,30 +153,31 @@ The identity holds when: (1) the energy flux is correctly defined for the specif
 Dissipation in generalized continuum theories arises from several mechanisms:
 
 \begin{itemize}
-\item \textbf{Thermal relaxation:} LS, DPL, TPL, MGT theories introduce relaxation times that produce entropy generation through heat flux relaxation.
-\item \textbf{Viscous/mechanical:} Kelvin--Voigt viscoelasticity introduces stress relaxation and mechanical dissipation.
-\item \textbf{Electrical:} Dielectric loss and electrical resistance in piezoelectric and semiconductor media.
-\item \textbf{Interface:} Imperfect bonding, interfacial damage, and electrical contact resistance dissipate energy at interfaces.
-\item \textbf{Memory-dependent:} MDD kernels with memory produce history-dependent dissipation.
+\item \textbf{Thermal relaxation.} The Cattaneo--Christoff, Lord--Shulman, phase-lag, Moore--Gibson--Thompson, and memory-dependent families introduce relaxation that produces entropy generation through the lag between the flux and the force that drives it.
+\item \textbf{Viscous and mechanical.} Kelvin--Voigt viscoelasticity introduces stress relaxation and mechanical dissipation, and is the standard device for combining the constitutive descriptions of Sections~\ref{sec:thermoelastic} and~\ref{sec:nonlocal}.
+\item \textbf{Electrical.} Dielectric loss and electrical resistance dissipate energy in piezoelectric and semiconductor media; these terms enter the balance of Eq.~\eqref{eq:10.2} as a further contribution to $\mathcal{D}$ and are relevant in the wave-propagation setting of Section~\ref{sec:applications}.
+\item \textbf{Interface.} Imperfect bonding, interfacial damage, and contact resistance dissipate energy at interfaces, and are the physical origin of a non-zero absorption coefficient in Eq.~\eqref{eq:10.11}.
+\item \textbf{Memory.} Memory-dependent kernels with a non-trivial history generate dissipation that is nonlocal in time, so that the dissipation rate at a given instant depends on the past of the body \cite{Abouelregal2023}.
 \end{itemize}
 
-The dissipation rate $\mathcal{D}$ in \eqref{eq:10.2} must be non-negative for thermodynamic admissibility. Each theory family has specific conditions for this (e.g., $\tau_q \geq \tau_T$ for DPL thermodynamic admissibility).
+The dissipation rate $\mathcal{D}$ in \eqref{eq:10.2} must be non-negative for thermodynamic admissibility. Each family has specific conditions for this: for the phase-lag families the relaxation times must satisfy an ordering, $\tau_q \geq \tau_T \geq 0$, and for the Lord--Shulman family $\tau_0 \geq 0$; these are mathematical constraints on the constitutive parameters, and violating them produces a theory that propagates thermal disturbances backwards in time.
 
 \subsection{Thermodynamic admissibility: well-posedness, causality, positivity}
 \label{sec:10.7}
 
-A generalized theory is thermodynamically admissible if:
+A generalized theory is thermodynamically admissible if three conditions hold:
+
 \begin{enumerate}
-\item \textbf{Well-posedness:} The initial-boundary value problem has a unique solution depending continuously on the data,
-\item \textbf{Causality:} Disturbances propagate at finite speed,
-\item \textbf{Positivity:} The dissipation rate $\mathcal{D} \geq 0$ for all admissible processes.
+\item \textbf{Well-posedness.} The initial-boundary value problem has a unique solution that depends continuously on the data.
+\item \textbf{Causality.} Disturbances propagate at finite speed; the domain of dependence of the solution at a point is contained in the domain of influence of the initial data.
+\item \textbf{Positivity.} The dissipation rate $\mathcal{D} \geq 0$ for all admissible processes.
 \end{enumerate}
 
-All generalized theories in this review (LS, GL, GN-II, GN-III, DPL, TPL, MGT, MDD) predict finite thermal wave speeds, addressing the infinite propagation speed paradox of classical Fourier heat conduction.
+All the generalized families considered here---Lord--Shulman, Green--Lindsay, Green--Naghdi types~II and~III, the dual and triple phase-lag theories, Moore--Gibson--Thompson, and the memory-dependent formulation---predict a finite thermal wave speed, and thereby address the infinite propagation speed paradox of classical Fourier heat conduction \cite{Biot1956,Lord1967,Green1972,Green1991,Green1993,Tzou1995,Tzou1997,Quintanilla2019}. The three conditions above are not equivalent to one another, and the distinction matters. A family may satisfy positivity and causality while failing well-posedness, which is the situation for several of the integral and fractional formulations: the constitutive law is thermodynamically acceptable, but the initial-value problem for the resulting system is not known to possess a unique solution in the natural function space. Section~\ref{sec:challenges} treats this gap in more detail.
 
 \subsection{Comparative table: energy transport across theory families}
 
-Table \ref{tab:T7-energy} summarizes energy transport properties across theory families.
+Table~\ref{tab:T7-energy} summarises energy transport properties across the theory families.
 
 \begin{figure}[htbp]
 \centering
@@ -186,15 +199,17 @@ Table \ref{tab:T7-energy} summarizes energy transport properties across theory f
 \toprule
 \textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
 \midrule
-$\mathcal{E}$ & Total energy density & J/m$^3$ & \eqref{eq:10.1} \\
-$\bm{J}$ & Energy flux vector & W/m$^2$ & \eqref{eq:10.2} \\
-$\mathcal{P}$ & Mechanical power input & W/m$^3$ & \eqref{eq:10.2} \\
-$\mathcal{D}$ & Dissipation rate & W/m$^3$ & \eqref{eq:10.2} \\
-$J_i$ & Classical energy flux component & W/m$^2$ & \eqref{eq:10.3} \\
-$\avg{J_i}_t$ & Time-averaged energy flux & W/m$^2$ & \eqref{eq:10.4} \\
-$R, T, A$ & Reflection, transmission, absorption coefficients & dimensionless & \eqref{eq:9.10} \\
-$\mathcal{E}_\Sigma$ & Interfacial energy density & J/m$^2$ & \eqref{eq:10.5} \\
-$\mathcal{P}_\Sigma$ & Interfacial power input & W/m$^2$ & \eqref{eq:10.5} \\
+$\mathcal{E}$ & Total energy density & J\,m$^{-3}$ & \eqref{eq:10.1} \\
+$\bm{J}$ & Energy flux vector & W\,m$^{-2}$ & \eqref{eq:10.2} \\
+$\mathcal{P}$ & Mechanical power input & W\,m$^{-3}$ & \eqref{eq:10.2} \\
+$\mathcal{D}$ & Dissipation rate & W\,m$^{-3}$ & \eqref{eq:10.2} \\
+$J_i$ & Classical energy flux component & W\,m$^{-2}$ & \eqref{eq:10.3} \\
+$\avg{J_i}_t$ & Time-averaged energy flux & W\,m$^{-2}$ & \eqref{eq:10.4} \\
+$z^\alpha$ & Internal variable of the constitutive theory & --- & \eqref{eq:10.7} \\
+$Y^\alpha$ & Conjugate thermodynamic force of $z^\alpha$ & --- & \eqref{eq:10.7} \\
+$\mathcal{E}_\Sigma$ & Interfacial energy density & J\,m$^{-2}$ & \eqref{eq:10.5} \\
+$\mathcal{P}_\Sigma$ & Interfacial power input & W\,m$^{-2}$ & \eqref{eq:10.5} \\
+$R, T, A$ & Reflection, transmission, absorption coefficients & dimensionless & \eqref{eq:10.11} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -202,14 +217,13 @@ $\mathcal{P}_\Sigma$ & Interfacial power input & W/m$^2$ & \eqref{eq:10.5} \\
 \subsection{Open questions for Section 10}
 
 \begin{enumerate}[label=\textbf{OQ10.\arabic*}]
-\item What is the complete energy flux for LS theory in the time domain? \\ \label{oq:10.1}
-\item What is the explicit constitutive relation for $q_i$ in GL theory? \\ \label{oq:10.2}
-\item What is the relationship between energy flux and entropy flux in GN-II? \\ \label{oq:10.3}
-\item What is the mixed energy flux for GN-III? \\ \label{oq:10.4}
-\item What is the TPL energy flux in the time domain? \\ \label{oq:10.5}
-\item What is the MDD hereditary energy flux? \\ \label{oq:10.6}
-\item What is the MGT energy flux in the time domain? \\ \label{oq:10.7}
-\item What is the nonlocal integral-form energy flux? \\ \label{oq:10.8}
+\item What is the explicit time-domain energy flux and dissipation function for each of the families listed in Section~\ref{sec:10.4}, obtained by evaluating the internal-variable structure of Eq.~\eqref{eq:10.8} with that family's own state variables and forces? \label{oq:10.1}
+\item Is there a common formal structure under which the energy fluxes of the Lord--Shulman, phase-lag, Moore--Gibson--Thompson, and memory-dependent families become instances of a single template, so that a single derivation suffices for all of them? \label{oq:10.2}
+\item Which observable would distinguish the energy partition predicted by two competing theories at the same interface, so that the difference could be measured rather than argued? \label{oq:10.3}
+\item How should the entropy production of the conservative Green--Naghdi type~II structure be related to the entropy production of the dissipative branches, given that the former has no dissipation mechanism? \label{oq:10.4}
+\item What normalisation of complex modes makes the energy ratios of Eq.~\eqref{eq:10.11} reproducible across independent implementations? \label{oq:10.5}
+\item Can a dissipation potential be constructed for the memory-dependent kernel in the spirit of the classical one for the relaxation terms, and does its positivity restrict the admissible kernels to a smaller set than is currently assumed? \label{oq:10.6}
+\item What is the relative importance of interface dissipation and bulk dissipation in the absorption coefficient of Eq.~\eqref{eq:10.11} for realistic bonded joints? \label{oq:10.7}
 \end{enumerate}
 
-% LocalWords: 
+% LocalWords:
