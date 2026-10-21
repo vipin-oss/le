@@ -251,6 +251,111 @@ Polymer processing, biomedical tissue modeling, composite material design.
 
 Convolution integrals are computationally expensive; kernel choice is not unique.
 
+\subsection{Parameter identifiability and model discrimination}
+\label{sec:15.8}
+
+\subsubsection{Existing foundation}
+
+Every theory family discussed in this review introduces at least one parameter that is not determined by the classical theory: a relaxation time $\tau_0$, a pair of phase lags $(\tau_q, \tau_T)$, a nonlocal length $\xi$, a fractional order $\alpha$, a memory horizon $\omega$ with an associated kernel, or a set of anisotropic moduli. The classical comparison quantities --- the elastic moduli, the thermal conductivity, the heat capacity --- are measured routinely; the generalized parameters are not, and the constitutive relations in which they appear are written so that the parameters cannot be separated from the measurement by inspection.
+
+\subsubsection{Why important}
+
+A generalized theory that cannot be fitted to data cannot be tested against data, and cannot be used for design. The practical consequence is that the generalized models are currently used in a regime --- modal and interface analysis with a prescribed parameter set --- rather than in a regime in which the parameter set has been measured. This is the single largest obstacle to the practical adoption of the whole field.
+
+\subsubsection{What's achieved}
+
+Structural identifiability has been established for several families in the sense that the parameter appears in the dispersion relation in a form that permits its extraction from a measured dispersion curve: the nonlocal length $\xi$ appears as a curvature in the wave-speed plot of Section~\ref{sec:nonlocal}, and the relaxation time appears as the ratio of the thermal to the mechanical wave speed. The comparison between the nonlocal and gradient predictions of Section~\ref{sec:nonlocal} is explicitly constructed so that the two mechanisms can be separated from a single dispersion measurement.
+
+\subsubsection{What's open}
+
+No comparable identifiability result exists for the memory-dependent family, where the kernel is a function rather than a number and the parameter set is infinite-dimensional. For the phase-lag family the separation of $\tau_q$ from $\tau_T$ requires measurements at more than one frequency and, in practice, more than one specimen. And for the anisotropic and monoclinic generalizations the number of independent material parameters grows faster than the number of independently measurable combinations, so that an under-determined problem is the default rather than the exception.
+
+\subsubsection{Approaches}
+
+\begin{itemize}
+\item Fit the full dispersion curve rather than a single phase velocity, since the shape of the curve constrains the mechanism and not merely its scale;
+\item Use two-parameter families to design experiments that separate mechanisms, in the manner of the nonlocal/gradient comparison;
+\item Treat the kernel as a low-dimensional basis rather than a free function, so that the parameter count remains finite.
+\end{itemize}
+
+\subsubsection{Practical relevance}
+
+Without identifiability there can be no inverse design, no damage diagnosis from a measured wave, and no calibrated model of a specific specimen.
+
+\subsubsection{Major obstacles}
+
+The experimental cost of measuring a dispersion curve over a broad range of wave numbers; the absence of a widely used specimen set; and the fact that the most-used generalized parameters are, in practice, chosen from the literature rather than measured.
+
+\subsection{Material symmetry, anisotropy and the tensor form of the generalizations}
+\label{sec:15.9}
+
+\subsubsection{Existing foundation}
+
+The constitutive derivation of Section~\ref{sec:foundations} produces the stiffness tensor in full tensor form, and the classical symmetry conditions --- major and minor symmetry, and the minor symmetries of the strain and stress tensors --- are what reduce it to the familiar two-modulus form for an isotropic solid. Every generalization in this review adds coefficients with the same tensor character, and therefore inherits the same symmetry conditions.
+
+\subsubsection{Why important}
+
+The generalization of a theory to an anisotropic medium is not a matter of substituting different numbers into the same equations. A new material parameter enters the constitutive relation with its own tensor index structure, and the symmetry conditions that relate its components must be re-derived, not assumed. The monoclinic and orthotropic piezothermoelastic configurations that appear in the recent interface-energy work \cite{Barak2023JTS} are exactly the cases in which this matters, because the piezoelectric tensor is the most strongly constrained of the tensors involved and its component count is much smaller than for the elasticity tensor.
+
+\subsubsection{What's achieved}
+
+The symmetry conditions for the classical elasticity, piezoelectricity and thermoelastic tensors are standard and well documented, and the anisotropic interface-energy computations have been carried out for at least the monoclinic and transversely isotropic cases. The existence and uniqueness results for the coupled systems \cite{Iesan2013} are stated for anisotropic configurations.
+
+\subsubsection{What's open}
+
+The systematic treatment of the generalized thermal laws --- the phase-lag, memory-dependent and fractional families --- under anisotropic material symmetry is largely absent, and in particular the question of whether the thermodynamic restrictions of Section~\ref{sec:foundations} reduce the admissible parameter set in the anisotropic case, as they do in the isotropic case, has not been worked through. The coordinate-free formulation of the fractional and memory operators under anisotropic differentiation operators is an additional technical obstacle, since the operators themselves are not rotationally invariant.
+
+\subsubsection{Approaches}
+
+\begin{itemize}
+\item Re-derive the symmetry conditions from the free-energy functional for each generalized thermal law, in the manner in which the classical conditions are obtained;
+\item Formulate the memory and fractional operators in a covariant or rotationally invariant way, so that the theory can be applied in an arbitrary material frame;
+\item Treat the resulting restrictions as constitutive constraints to be reported alongside the computed results, rather than as assumptions to be left implicit.
+\end{itemize}
+
+\subsubsection{Practical relevance}
+
+Most engineering materials of interest --- fibre composites, monoclinic semiconductors, single-crystal piezoelectrics, textured metals --- are anisotropic, so that the isotropic generalized theory addresses a minority of the practical cases.
+
+\subsubsection{Major obstacles}
+
+The algebraic burden of the tensor bookkeeping; the scarcity of anisotropic experimental data against which to check a proposed anisotropic generalization; and the risk that an unnoticed violation of the symmetry conditions propagates into an energy balance that appears to close but for the wrong reason.
+
+\subsection{Computational cost and verifiability of the solvers}
+\label{sec:15.10}
+
+\subsubsection{Existing foundation}
+
+The modal machinery of Section~\ref{sec:methods} is exact and cheap, and it is the appropriate tool for the interface problems that dominate the reviewed literature. For bounded domains, for heterogeneous material distributions and for geometries with traction-free or prescribed boundaries, the finite element method is the natural tool, and the machinery for the classical and linear-thermoelastic cases is mature \cite{Hughes1980}. The generalization of the element formulation to the theories of this review, however, requires the quadrature rules for the nonlocal, memory and fractional operators, and these are not standard.
+
+\subsubsection{Why important}
+
+The value of a generalized theory is realized in problems that cannot be solved by the classical theory, and those are typically bounded, heterogeneous and geometrically complicated --- which is exactly where the modal analysis stops being sufficient and a solver is needed. The gap between the modal literature and the practical literature is therefore largely a gap in numerical capability.
+
+\subsubsection{What's achieved}
+
+Discrete convolution-quadrature schemes for the fractional operators, and nonlocal kernel assembly schemes for the integral-form constitutive relations, have been developed in the mechanics literature and are described in Section~\ref{sec:methods}. The essential structure --- a quadrature in the operator's argument, combined with an assembly in which each node interacts with a neighbourhood rather than with its immediate neighbours --- is established.
+
+\subsubsection{What's open}
+
+There is no widely used, independently verified benchmark suite for these solvers, and the published implementations are not interoperable. Convergence behaviour under refinement is known for the classical operators and is only partially characterised for the nonlocal and fractional ones, where the order of convergence is limited by the smoothness of the kernel rather than by the polynomial order of the shape functions.
+
+\subsubsection{Approaches}
+
+\begin{itemize}
+\item Extend the benchmark set of Appendix~C to the generalized operators, so that a solver can be verified against a manufactured solution before it is used on a physical problem;
+\item Publish reference implementations and the data needed to reproduce the published energy ratios, so that the interface results can be checked rather than merely quoted;
+\item Report convergence orders explicitly, and distinguish the order of the approximation from the order of the operator.
+\end{itemize}
+
+\subsubsection{Practical relevance}
+
+Verification of the solver is a precondition for the verification of the theory. An energy ratio computed with an unverified quadrature cannot support a claim about a constitutive model, however carefully the model was derived.
+
+\subsubsection{Major obstacles}
+
+The cost of nonlocal assembly grows with the square of the neighbourhood size in three dimensions, and the memory required by a convolution scheme grows with the number of time steps; both scale badly for the three-dimensional transient problems where the generalizations matter most.
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.9\textwidth]{fig14-energy-flux-channels.pdf}
@@ -259,7 +364,7 @@ Convolution integrals are computationally expensive; kernel choice is not unique
 \end{figure}
 
 \subsection{Challenge summary table}
-\label{sec:15.8}
+\label{sec:15.11}
 
 \begin{table}[h]
 \centering
@@ -277,6 +382,9 @@ Experimental validation & Classical theory validated & Generalized theories; int
 Complex mode handling & Classification; normalization guidelines & Cross-theory normalization & No standardized approach \\
 Nonlocal interface energetics & Constitutive relations; wave dispersion & Interface flux; interface conditions & Computational cost \\
 Memory-dependent energy flux & MDD operator verified & Hereditary flux; energy partition & Kernel non-uniqueness \\
+Parameter identifiability & Dispersion-based extraction for the nonlocal and relaxation parameters & Kernel and phase-lag identifiability; anisotropy under-determination & Measurement cost; infinite-dimensional kernel \\ 
+Anisotropy of the generalizations & Symmetry conditions for the classical tensors; monoclinic interface energies & Generalized thermal laws under anisotropic symmetry & Tensor bookkeeping; covariant operators \\ 
+Solver verifiability & Convolution-quadrature and nonlocal assembly schemes established & Shared benchmark suite; convergence orders & Nonlocal assembly cost; memory footprint \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -304,6 +412,6 @@ $\xi$ & Nonlocal length scale & m & Section 7.4 \\
 
 \subsection{Open questions for Section 15}
 
-See OQ10.1--OQ10.8 and OQ15.1--OQ15.7 above.
+The open questions recorded in Sections~\ref{sec:interfaces}, \ref{sec:energy} and \ref{sec:advanced}, together with the challenges catalogued above, constitute the outstanding agenda of the field.
 
 % LocalWords: 

@@ -328,6 +328,19 @@ Ill-posedness of inverse problems; non-uniqueness of parameter identification.
 \label{fig:theory_relationships_sec16}
 \end{figure}
 
+\subsection{Sequencing the programme}
+\label{sec:16.11}
+
+The nine directions above are not independent, and the order in which they can be attempted is not arbitrary. Three dependencies structure the programme.
+
+The first is that \emph{verification precedes application}. The reproducible benchmark suite of Section~\ref{sec:future} is a precondition for the experimental validation and inverse-characterisation directions, because a model whose numerical implementation has not been verified cannot be validated against data: a discrepancy between prediction and measurement would be uninterpretable. The benchmark work is therefore not housekeeping but the enabling step.
+
+The second is that \emph{the constitutive structure precedes the physics}. The mathematically consistent generalized transport direction and the nonlocal and hereditary interaction direction both concern the constitutive law itself --- whether the operator is thermodynamically admissible, whether an interface can be defined for it, whether a free energy exists. The experimental validation and inverse-characterisation directions depend on those constitutive questions being settled, because a parameter that has no admissible range cannot be inferred from a measurement.
+
+The third dependency runs the other way and is the reason the programme is not merely sequential: \emph{the interface physics is the cheapest experiment}. Of the nine directions, the interface and multiphysics mode-conversion directions are the ones in which a generalized theory makes a prediction that differs qualitatively from the classical prediction --- a different mode count, a different evanescent branch, a different partition of energy --- and that difference is measurable with the apparatus that already exists for classical ultrasonic inspection. If the field is to convert its theoretical richness into experimental standing, this is the route, and it is a shorter one than the routes through nanoscale dispersion measurements or through the identification of memory kernels.
+
+Read in this order, the programme has the shape of a discipline consolidating: first establish what can be computed and verified, then what can be measured, then what can be inverted. The nine directions are already present in the literature in the opposite order, which is one reason the field has produced many modal analyses and comparatively few measurements.
+
 \subsection{Future directions summary table}
 \label{sec:16.10}
 

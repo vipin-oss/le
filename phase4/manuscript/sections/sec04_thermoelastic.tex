@@ -252,6 +252,39 @@ Table \ref{tab:T2-generalized} summarizes the governing modifications, wave spee
 \label{fig:theory_map}
 \end{figure}
 
+\subsection{What the internal variables physically represent}
+\label{sec:4.13}
+
+The differences between the families surveyed above are frequently described in terms of their equations, but the equations are easier to compare once the state variables they introduce are identified, because the state variables carry the physics.
+
+In the \emph{relaxation-time} construction the added variable is the heat flux itself, and the added equation is a kinetic equation for it: the flux approaches its Fourier value with a time constant $\tau_0$. The relaxation time is therefore a property of the carriers --- electrons and phonons --- and is bounded below by the mean free time between collisions, which is what makes it estimable in principle and which also fixes the scale below which the continuum description of the carriers themselves ceases to be valid.
+
+In the \emph{two-temperature} construction the added variable is a second temperature, distinguished from the measured temperature by the fact that it relaxes on its own time scale $\tau_T$. The physical picture is that of a body whose internal thermal field adjusts more slowly than the temperature that a thermometer at its surface registers --- a familiar situation for a poorly conducting material whose surface is heated suddenly, where the surface reads hot while the interior is still cold. The second temperature is not an artefact; it is the thermal field that the constitutive law actually governs, and the measured temperature is a fast variable that tracks it.
+
+In the \emph{thermal displacement} construction the added variable is a displacement whose time derivative is the temperature. The theory is then built as the analogue of elastodynamics, with the thermal field playing the role of the displacement and the entropy playing the role of the momentum; the price is that the constitutive relation must be reformulated in terms of an energy potential, and the benefit is that the resulting equations are conservative and admit a Hamiltonian structure, so that a conserved energy exists and the wave structure is that of an undamped system.
+
+In the \emph{phase-lag} construction nothing is added to the state; what changes is the meaning of the time at which the constitutive relation is evaluated. The heat flux at time $t$ is tied to the temperature gradient at time $t + \tau_T$ and to the flux itself at time $t + \tau_q$, so that the lag separates the time at which the carriers respond from the time at which the driving gradient is applied. The phase-lag construction is consequently the one in which the thermal law and the mechanical law are most obviously decoupled in time, and it is the one that produces the richest thermal mode structure: a dual-phase-lag model supports a finite number of distinct thermal modes, each with its own speed and attenuation, and the number of modes grows with the number of lags.
+
+In the \emph{memory-dependent} and \emph{fractional} constructions the added object is a function rather than a variable: a kernel or an operator. The physical content is the shape of the memory, and the theoretical content is that the memory is now continuous rather than discrete.
+
+\subsection{Thermodynamic admissibility as a selection principle}
+\label{sec:4.14}
+
+Because every family above is a modification of the same free energy, the Clausius--Duhem inequality of Section~\ref{sec:foundations} applies to all of them, and it does the work of selection. The inequality is not a formality: it is what excludes half of the parameter space of the phase-lag models and what excludes the Green--Lindsay theory for centrally symmetric bodies.
+
+The mechanism is the same in each case. Write the free energy as $\psi(\varepsilon_{ij}, T, \alpha)$ and the entropy production as $\dot{\mathcal{D}} = \bm{\sigma}\cdot\dot{\bm{\varepsilon}} + T_0\,\bm{q}\cdot\nabla(1/T)$, where the second term is the part that depends on the thermal law alone. For the relaxation-time law this term is non-negative for every $\tau_0 > 0$; for the two-temperature law it is non-negative only if the associated dissipation matrix is positive semi-definite, which fails for certain symmetry classes; for the phase-lag law it is non-negative only if the ordering condition on the two lags is satisfied; for the memory-dependent law it is non-negative only if the kernel is positive and non-increasing; and for the fractional law it is non-negative for the admissible range of the order.
+
+This has a practical consequence that is easy to overlook. A generalized thermoelastic model is specified by a constitutive law and a parameter set, and the parameter set is usually quoted in the literature without the admissibility condition that restricts it. The relaxation time must be positive; the phase lags must satisfy an ordering; the kernel must be admissible; the fractional order must lie in its range. A computation that violates these conditions produces a solution that may be perfectly well defined and entirely unphysical, and the energy identity of Section~\ref{sec:energy} will not close. The admissibility conditions are therefore part of the specification of the model, not a remark attached to it, and the tables of this review record them where they are known.
+
+\subsection{The wave structure that each family produces}
+\label{sec:4.15}
+
+The practical consequence of the constitutive choices is the modal structure, and it is worth stating it explicitly because it is what a computation actually has to resolve.
+
+The relaxation-time family produces one additional mode relative to the classical theory: a thermal mode with speed $c_T = \sqrt{k/(\rho c_v\tau_0)}$ and attenuation set by the imaginary part of the thermal wave number. This mode is propagating at low frequency and becomes evanescent at high frequency, with the crossover at the frequency at which the thermal wavelength equals the thermal penetration depth. The two-temperature family produces the same number of modes but with a different structure, since the second relaxation time introduces a second time scale and therefore a second characteristic frequency. The thermal-displacement family produces one thermal mode in the conservative case and two in the dissipative case. The phase-lag families produce a number of thermal modes that increases with the number of lags, and the additional modes are not all physical: some of the roots of the secular polynomial correspond to spurious solutions that must be identified and discarded, and the selection of the physical roots is a genuine part of the analysis. The memory-dependent and fractional families produce one thermal mode, but a dispersive one, with a speed that varies with the wave number and, in the memory-dependent case, a dependence on the kernel as well.
+
+This progression is the reason the review devotes Section~\ref{sec:methods} to the root-selection problem, and the reason the interface problems of Section~\ref{sec:interfaces} are formulated in terms of the full modal set rather than in terms of a propagating wave alone. In a relaxed or generalized medium the transmitted field at an interface is in general not a single transmitted wave but a superposition of a propagating mode and an evanescent mode, and an interface condition written for a single transmitted wave is simply wrong.
+
 \subsection{Notation summary for Section 4}
 
 Table \ref{tab:notation-sec4} summarizes the notation introduced in this section.
