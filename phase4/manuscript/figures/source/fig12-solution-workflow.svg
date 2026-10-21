@@ -22,7 +22,7 @@
 
   <rect width="1100" height="700" fill="white"/>
 
-  <text x="550" y="28" class="title" text-anchor="middle">Figure 10. Solution workflow for wave propagation problems</text>
+  <text x="550" y="28" class="title" text-anchor="middle">Solution workflow for wave propagation problems</text>
   <text x="550" y="46" class="subtitle" text-anchor="middle">From governing equations to energy flux computation (Sections 8, 9, 10)</text>
 
   <!-- Step 1: Governing equations -->

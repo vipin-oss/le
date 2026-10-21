@@ -35,6 +35,13 @@ v_i = \dot{u}_i = \frac{\partial u_i}{\partial t}.
 \subsubsection{Physical interpretation}
 The strain components $\varepsilon_{ii}$ represent normal strains (relative changes in length along coordinate directions), while $\varepsilon_{ij}$ ($i \neq j$) represent shear strains (changes in angle between originally orthogonal material lines). The infinitesimal strain assumption requires $\|\varepsilon_{ij}\| \ll 1$, which is valid for small deformations typical of linearized wave propagation problems.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{fig04-continuum-kinematics.pdf}
+\caption{Kinematics of a continuum element. The displacement field $\bm{u}(\bm{x},t)$ defines the deformation gradient, which in the infinitesimal regime splits additively into a symmetric part (strain, the extensional part of the deformation) and an antisymmetric part (rotation, the rigid part). The rigid part does no work and is removed from the balance laws by the objectivity requirement, so that only the strain enters the stress; this is the first of the two places where irreversibility enters the formulation, the second being the second law of Section~\ref{sec:3.4}.}
+\label{fig:kinematics}
+\end{figure}
+
 \subsection{Conservation laws: linear momentum and angular momentum}
 \label{sec:3.2}
 
@@ -271,6 +278,13 @@ These are the classical elastic wave speeds. The P-wave speed exceeds the S-wave
 \subsubsection{Physical interpretation}
 Equation \eqref{eq:3.23} describes how elastic disturbances propagate through a homogeneous isotropic solid. The P-wave involves volume change (compressional), while the S-wave involves shear (distortional) deformation. Both propagate without dispersion in classical elasticity — all frequencies travel at the same speed.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig06-classical-waves.pdf}
+\caption{Classical elastic wave propagation in an isotropic solid. A longitudinal (P) wave, whose polarization is parallel to the propagation direction, travels at $c_p = \sqrt{(\lambda + 2\mu)/\rho}$; a transverse (S) wave, whose polarization is perpendicular to it, travels at $c_s = \sqrt{\mu/\rho}$. Because the elastic moduli are independent of frequency, both speeds are dispersion-free: this constancy is the reference against which the dispersive branches of Sections~4--7 are measured, and it is the property that a generalized theory must forfeit when it introduces a length scale or a memory kernel.}
+\label{fig:classical_waves}
+\end{figure}
+
 \subsection{Plane wave assumptions and harmonic wave form}
 \label{sec:3.7}
 
@@ -344,7 +358,7 @@ Equation \eqref{eq:3.29} is the classical energy flux \cite{Biot1956} for elasti
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\textwidth]{fig09-constitutive-relations.pdf}
+\includegraphics[width=0.95\textwidth]{fig05-constitutive-relations.pdf}
 \caption{Constitutive relations and thermoelastic coupling: stress-strain response under isothermal and non-isothermal conditions (Section 3.5).}
 \label{fig:constitutive}
 \end{figure}

@@ -4,25 +4,46 @@
 \section{Generalized Transport and Memory Effects}
 \label{sec:transport}
 
-This section presents generalized transport mechanisms and memory effects in continuum media: relaxation mechanisms, fractional operators, hereditary integrals, memory-dependent derivatives, and their implications for wave propagation.
+Classical Fourier conduction is a constitutive statement about the \emph{instantaneous} relationship between heat flux and temperature gradient. It is an extraordinarily good approximation over almost the whole of engineering practice, and it fails in a specific and well-characterised regime: when the timescale of the thermal disturbance becomes comparable with the microscopic relaxation time of the carriers that carry the heat. This section develops the constitutive structures that replace it, in the order in which they were conceived, and identifies what each buys and what each costs.
 
-\subsection{Relaxation mechanisms: physical origin and mathematical representation}
-\label{sec:6.1}
+\subsection{Physical origin of thermal relaxation}
 
-Relaxation in continuum media arises from microscopic processes that delay the material response to an applied stimulus. The response at time $t$ depends not only on the current stimulus but on its history. Mathematically, relaxation is represented by three principal structures:
+Heat in a solid is carried by electrons and phonons, each of which is scattered by the lattice and by defects. The scattering is not instantaneous, and the carrier velocity distribution does not adjust to a new temperature gradient in zero time. The physical picture that survives into the continuum description is a \emph{collision-time} picture: the flux adjusts towards its equilibrium value with a characteristic time $\tau_0$, the mean time between collisions, and the adjustment is exponential because the relaxation of a distribution towards equilibrium is governed by a linear kinetic equation whose spectrum is continuous but whose typical decay is exponential.
+
+Two features of this picture matter for the continuum models. First, the existence of a relaxation time is the microscopic reason a thermal wave can exist at all: if the carrier velocity distribution cannot change instantaneously, then a temperature disturbance cannot propagate instantaneously, and the flux equation must retain the memory of the disturbance. Second, the exponential character of the microscopic relaxation is an idealisation. Real collision-time distributions are not exponential, and the shape of the distribution is what determines the dispersion of the thermal wave away from the hydrodynamic limit. This section therefore treats the \emph{shape of the memory} as a separate modelling object, which is the point of departure for the phase-lag, fractional and memory-dependent families.
+
+\subsection{Three structural routes to memory}
+
+Three mathematically distinct ways of making a constitutive law remember have been used, and they are not interchangeable.
 
 \begin{itemize}
-\item \textbf{Differential relaxation:} Time derivatives of fluxes appear in the constitutive relation (LS, DPL, TPL, MGT). The heat flux $q_i$ satisfies a differential equation involving $\dot{q}_i$ or higher derivatives.
-\item \textbf{Integral relaxation:} The response is a convolution of the stimulus with a memory kernel (MDD, fractional). The flux at time $t$ depends on the history of the temperature gradient over a finite or semi-infinite interval.
-\item \textbf{Spatial relaxation:} Nonlocal integral relations where stress at a point depends on strain throughout a neighborhood (Eringen \cite{Eringen1972} nonlocal elasticity).
+\item \textbf{Differential relaxation.} The constitutive relation for the flux is differentiated in time, so that $\dot{q}_i$ appears. This is the relaxation-time family of Section~\ref{sec:thermoelastic}: Lord--Shulman, Green--Lindsay, Moore--Gibson--Thompson, and the phase-lag models, in which the time derivatives are of order one to three. The memory is then encapsulated in a finite number of additional state variables, and the price is a higher-order differential system.
+\item \textbf{Integral (convolution) memory.} The constitutive relation is written as a convolution of the driving quantity with a memory kernel over a finite or semi-infinite interval. This includes the hereditary-integral formulation of Section~\ref{sec:transport} and the memory-dependent derivative of Wang and Li \cite{Wang2011}. The memory is then encapsulated in an arbitrary function, and the price is that the constitutive relation is no longer local in time, so that the discretisation must carry the history.
+\item \textbf{Spatial (nonlocal) memory.} The constitutive relation at a point averages over a neighbourhood, as in Eringen's nonlocal elasticity \cite{Eringen1972}. This is the spatial analogue of the two above and is developed in Section~\ref{sec:nonlocal}. It is listed here because the same Laplace-domain structure unifies all three: a memory operator becomes a multiplier in the transform domain.
 \end{itemize}
 
-The common feature is that the material response has memory: past states influence present behavior. This memory produces finite wave speeds, dispersion, attenuation, and history-dependent dissipation.
+\subsection{A unifying transform-domain picture}
+
+All three structures admit a common description, and this description is the most economical way to compare them. In the Laplace domain, a memory operator becomes a multiplicative function of the transform variable. Writing the thermal equation as a constitutive relation of the form
+\begin{equation}
+\mathcal{D}[\bm{q}] = -k\,\bm{\nabla}T,
+\label{eq:6.1}
+\end{equation}
+where $\mathcal{D}$ is the memory operator acting on the flux, the Laplace transform $\tilde{q}_i(s)$ satisfies
+\begin{equation}
+\mathcal{D}(s)\,\tilde{q}_i(s) = -k\,\widetilde{\nabla T}(s),
+\qquad
+\mathcal{D}(s) = \frac{1}{\tau_0}\frac{s}{\,s + 1/\tau_0\,}
+\label{eq:6.2}
+\end{equation}
+for the relaxation-time law, $\mathcal{D}(s) = s^{\alpha-1}$ for the Caputo fractional derivative, and $\mathcal{D}(s) = \tilde{\kappa}(s)/s$ for a memory kernel $\kappa$ of finite horizon. The three families differ, in other words, only in the function that replaces the bare derivative, and the entire comparative literature on generalized transport can be read as a literature on the choice of $\mathcal{D}(s)$.
+
+This has three practical consequences that recur throughout the review. The classical limit is obtained by $\mathcal{D}(s)\to s$ in every case, but the route to it differs: $\tau_0\to 0$, $\alpha\to 1$, or horizon $\to 0$ with a normalised kernel. The frequency-domain dispersion relation of every family follows from the substitution of $s = -i\omega$ into the transformed constitutive equations, which is why the modal analysis of Section~\ref{sec:methods} applies uniformly. And the thermodynamic admissibility of a memory operator is a statement about the positivity of the associated loss modulus in the frequency domain, which is a necessary but not sufficient condition for the existence of a consistent free energy.
 
 \subsection{Fractional operators: Caputo and Riemann--Liouville}
 \label{sec:6.2}
 
-Fractional derivatives generalize integer-order differentiation to non-integer orders, providing a natural mathematical language for memory and hereditary effects. The Caputo derivative was introduced by Caputo (1967) \cite{Caputo1967} in the context of viscoelastic dissipation, and the mathematical foundations of fractional calculus were developed by Gorenflo and Mainardi (1997) \cite{Gorenflo1997}.
+Fractional derivatives generalise integer-order differentiation to non-integer orders and thereby provide a natural language for memory: an order $\alpha$ between zero and one describes sub-diffusion, and an order between one and two describes a diffusive process with a finite propagation speed.
 
 \subsubsection{Caputo fractional derivative}
 
@@ -30,98 +51,88 @@ The Caputo derivative of order $\alpha$ ($n-1 < \alpha < n$, $n = \lceil\alpha\r
 
 \begin{equation}
 {}^C D_t^\alpha f(t) = \frac{1}{\Gamma(n-\alpha)}\int_0^t \frac{f^{(n)}(\tau)}{(t-\tau)^{\alpha+1-n}}\,d\tau.
-\label{eq:6.1}
+\label{eq:6.3}
 \end{equation}
 
 \subsubsection{Riemann--Liouville fractional derivative}
 
 \begin{equation}
 {}^{RL} D_t^\alpha f(t) = \frac{1}{\Gamma(n-\alpha)}\frac{d^n}{dt^n}\int_0^t \frac{f(\tau)}{(t-\tau)^{\alpha+1-n}}\,d\tau.
-\label{eq:6.2}
+\label{eq:6.4}
 \end{equation}
 
-The Caputo derivative is generally preferred in physical applications because it allows classical initial conditions (integer-order derivatives at $t=0$) to be prescribed.
+The Caputo derivative is preferred in physical applications because it permits the prescription of classical initial conditions --- integer-order derivatives of $f$ at $t = 0$ --- whereas the Riemann--Liouville operator forces fractional initial data. Caputo's original motivation was the construction of a linear model of dissipation with an almost frequency-independent loss factor \cite{Caputo1967}, a property that the fractional operator shares with the glass transition and with the dynamic response of biological tissues, and which is the reason the fractional formulation was imported into thermoelasticity in the first place \cite{Gorenflo1997,Luchko2010}.
 
-\subsubsection{Fractional heat conduction}
-
-The time-fractional heat conduction equation:
+\subsubsection{Fractional heat conduction and its limits}
 
 \begin{equation}
 {}^C D_t^\alpha T = a\nabla^2 T, \qquad 0 < \alpha \leq 2,
-\label{eq:6.3}
+\label{eq:6.5}
 \end{equation}
+where $a$ is the thermal diffusivity. The limits are physically meaningful: $\alpha = 1$ recovers the classical Fourier equation and hence infinite propagation speed, while $\alpha = 2$ recovers the classical wave equation and hence a dispersion-free propagation speed $c = \sqrt{a}$. For $1 < \alpha < 2$ the equation interpolates between the two, and the propagation speed is frequency-dependent, which is the characteristic and experimentally testable signature of the fractional family.
 
-where $a$ is the thermal diffusivity. For $1 < \alpha \leq 2$, this equation describes wave-like heat propagation with memory, interpolating between diffusive behavior. The fractional thermoelasticity framework was developed by Povstenko (2004) \cite{Povstenko2004} and Povstenko (2009) \cite{Povstenko2009}, with a comprehensive treatment in Povstenko (2016) \cite{Povstenko2016} ($\alpha = 1$, classical Fourier) and wave-like behavior ($\alpha = 2$, classical wave equation).
+The fractional thermoelasticity framework was developed by Povstenko \cite{Povstenko2004,Povstenko2009,Povstenko2016}, who established the time-fractional heat equation in thermoelastic form, treated the associated initial-value and boundary-value problems, and examined the dependence of the solution on the order $\alpha$. Two features of that work are worth carrying forward. The first is that the fractional formulation was introduced not as a phenomenological device but as a \emph{measure of the memory} --- the order $\alpha$ is a proxy for the sharpness of the memory kernel, and the comparison with a power-law kernel is therefore direct. The second is that the fractional family inherits the well-posedness theory of the underlying functional calculus, so that the admissible range of $\alpha$ and the required initial data are known rather than assumed.
 
 \subsection{Hereditary integrals: convolution kernels}
 \label{sec:6.3}
 
-Hereditary integrals represent the material response as a superposition of responses to past stimuli, weighted by a memory kernel:
+The most general formulation of a linear memory is the hereditary integral:
 
 \begin{equation}
-f(t) = \int_{-\infty}^{t} K(t-\xi) g(\xi)\,d\xi,
-\label{eq:6.4}
+f(t) = \int_{-\infty}^{t} K(t-\xi)\,g(\xi)\,d\xi,
+\label{eq:6.6}
 \end{equation}
-
-where $K(t-\xi)$ is the memory kernel satisfying the fading memory condition $K(s) \to 0$ as $s \to \infty$. The kernel weights recent stimuli more heavily than distant ones.
+where $K(t-\xi)$ is the memory kernel. Three conditions on $K$ are required for physical admissibility: it must decay as the lag grows (the \emph{fading memory} condition), it must be non-negative so that a past stimulus always contributes in the same sense, and it must be non-increasing, which is the statement that the material is thermodynamically stable in the sense of a positive free-energy dissipation. When $K$ is completely monotone, the integral can be represented as a superposition of exponentials, and the constitutive relation then becomes a continuum of relaxation times rather than a single one --- which is the configuration-space counterpart of the phase-lag hierarchy.
 
 \subsection{Memory-dependent derivative (MDD): operator and kernel}
 \label{sec:6.4}
 
-The MDD operator (Wang \& Li, 2011):
+The memory-dependent derivative of Wang and Li \cite{Wang2011} generalises the exponential kernel into an arbitrary weighting function defined on a finite horizon:
 
 \begin{equation}
 D_\omega f(t) = \frac{1}{\omega}\int_{t-\omega}^{t} \kappa(t-\xi) f'(\xi)\,d\xi,
-\label{eq:6.5}
+\label{eq:6.7}
 \end{equation}
-
-where $\omega > 0$ is the time delay (memory horizon) and $\kappa(t-\xi)$ is the kernel function with $0 \leq \kappa(t-\xi) \leq 1$.
+where $\omega > 0$ is the time delay (memory horizon) and $\kappa(t-\xi)$ is the kernel function with $0 \leq \kappa(t-\xi) \leq 1$. Two properties distinguish this construction from a relaxation time. First, the horizon is finite and the memory is therefore \emph{truncatable}: the operator does not depend on the entire past, which makes a finite-dimensional state-space realisation possible and the computation finite. Second, the kernel is a free modelling choice, so that the memory structure is a design object rather than a material constant.
 
 \subsubsection{MDD kernel function}
 
-A commonly used kernel:
-
+A commonly used kernel is
 \begin{equation}
 \kappa(t-\xi) = 1 - \frac{2\beta}{\omega}(t-\xi) + \frac{\alpha^2}{\omega^2}(t-\xi)^2,
-\label{eq:6.6}
+\label{eq:6.8}
 \end{equation}
-
-where $\alpha$ and $\beta$ are kernel parameters controlling the weighting shape.
+where $\alpha$ and $\beta$ are kernel parameters controlling the weighting shape; the parameters are constrained so that the kernel remains non-negative and non-increasing on the horizon, which is what preserves thermodynamic admissibility.
 
 \subsubsection{Limiting behavior}
 
 As $\omega \to 0$, the MDD approaches the classical first derivative:
-
 \begin{equation}
 \lim_{\omega \to 0} D_\omega f(t) = f'(t).
-\label{eq:6.7}
+\label{eq:6.9}
 \end{equation}
+The converse limit is equally instructive: if the kernel is chosen to be the exponential relaxation response, the MDD law reproduces the Lord--Shulman equation exactly. The MDD construction therefore contains the relaxation-time theory as a special case rather than as a rival to it, and the same is true of the fractional operator when a power-law kernel is used.
 
 \subsection{Energy flux in memory-dependent media}
 \label{sec:6.5}
 
-For memory-dependent media, the energy flux acquires a hereditary character through the heat flux:
-
+For memory-dependent media the energy flux acquires a hereditary character through the heat flux. The classical expression
 \begin{equation}
-J_i(t) = \sigma_{ji}(t)v_i(t) + q_i(t),
-\label{eq:6.8}
-\end{equation}
-
-where $q_i(t)$ satisfies the MDD heat conduction law:
-
-\begin{equation}
-q_i(t) + \tau_0 D_\omega q_i(t) = -k T_{,i}(t).
-\label{eq:6.9}
-\end{equation}
-
-Substituting the MDD definition:
-
-\begin{equation}
-q_i(t) + \frac{\tau_0}{\omega}\int_{t-\omega}^{t} \kappa(t-\xi) \dot{q}_i(\xi)\,d\xi = -k T_{,i}(t).
+J_i(t) = \sigma_{ji}(t)v_i(t) + q_i(t)
 \label{eq:6.10}
 \end{equation}
+remains the correct \emph{formal} statement of the flux, but the heat flux appearing in it is now itself a functional of the temperature history through the MDD heat conduction law:
+\begin{equation}
+q_i(t) + \tau_0 D_\omega q_i(t) = -k T_{,i}(t),
+\label{eq:6.11}
+\end{equation}
+which, after substituting the MDD definition, becomes
+\begin{equation}
+q_i(t) + \frac{\tau_0}{\omega}\int_{t-\omega}^{t} \kappa(t-\xi) \dot{q}_i(\xi)\,d\xi = -k T_{,i}(t).
+\label{eq:6.12}
+\end{equation}
 
-The complete time-domain expression for $J_i$ solely in terms of $T$ requires solving this convolution equation, which depends on the kernel choice. The frequency-domain form can be derived for specific kernels, but the general time-domain hereditary flux remains an open formulation.
+An important subtlety follows from this form and is often glossed over. The flux \eqref{eq:6.10} is not itself the flux that appears in the energy balance of the classical theory: the mechanical power is stored and released over the memory horizon, and the correct local balance contains an additional storage term associated with the internal variables that carry the memory. Writing the balance in the classical form with a modified flux is therefore legitimate only if the flux is understood as an \emph{effective} flux that already accounts for the storage --- an interpretation that is natural in the frequency domain and delicate in the time domain. Section~\ref{sec:energy} returns to this point, and the complete time-domain expression for $J_i$ solely in terms of $T$ remains an open formulation rather than a result presented here.
 
 \subsection{Well-posedness and causality for memory-dependent models}
 \label{sec:6.6}
@@ -130,14 +141,15 @@ The complete time-domain expression for $J_i$ solely in terms of $T$ requires so
 
 For MDD models, well-posedness requires:
 \begin{enumerate}
-\item The kernel $\kappa$ must be positive definite,
-\item The time delay $\omega$ must be finite and positive,
-\item The relaxation parameter $\tau_0$ must be non-negative.
+\item The kernel $\kappa$ must be positive and non-increasing on the horizon, so that the associated loss function is non-negative;
+\item The time delay $\omega$ must be finite and positive, so that the truncation of the memory is well defined;
+\item The relaxation parameter $\tau_0$ must be non-negative, so that the stored energy cannot be created ex nihilo.
 \end{enumerate}
+These conditions are sufficient for the transform-domain problem to be well posed for data of bounded exponential order; the corresponding initial-value problem is then well posed in a suitable Banach space, and the solution depends continuously on the data.
 
 \subsubsection{Causality (finite wave speed)}
 
-All memory-dependent models predict finite thermal wave speeds, addressing the infinite propagation speed paradox of classical Fourier theory. The thermal wave speed depends on the kernel parameters and relaxation time.
+All memory-dependent models predict finite thermal wave speeds, addressing the infinite propagation speed paradox of classical Fourier theory. The thermal wave speed depends on the kernel parameters and the relaxation time, and --- in contrast to the relaxation-time family --- on the wave number, because a non-exponential kernel produces a dispersive thermal branch. This is the observable that separates the memory families from one another, and it is the reason that a dispersion measurement is the natural experimental test of a memory model.
 
 \subsection{Comparative summary: transport models}
 
@@ -146,29 +158,29 @@ Table \ref{tab:transport_comparison} summarizes transport and memory models acro
 \begin{table}[htbp]
 \centering
 \small
-\caption{Comparative summary of transport and memory models.}
+\caption{Comparative summary of transport and memory models. The ``loss modulus'' column records whether the dissipation function is non-negative for every admissible parameter set, which is the condition that makes the constitutive law thermodynamically admissible.}
 \label{tab:transport_comparison}
-\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
+\begin{tabularx}{\textwidth}{@{}lXXXXX@{}}
 \toprule
-\textbf{Model} & \textbf{Mathematical structure} & \textbf{Dissipation} & \textbf{Well-posedness} & \textbf{Energy flux status} \\
+\textbf{Model} & \textbf{Mathematical structure} & \textbf{Dissipation} & \textbf{Loss modulus non-negative} & \textbf{Well-posedness} & \textbf{Energy flux status} \\
 \midrule
-Classical Fourier & Local differential & Yes & Well-posed & Verified \\
-LS & Differential with flux relaxation & Yes & Well-posed ($\tau_0 > 0$) & Partial (frequency domain) \\
-GL & Differential with temperature-rate & No (centrally symmetric) & Well-posed & Uncertain \\
-DPL & Differential with two lags & Yes ($\tau_q \geq \tau_T$) & Well-posed & Partial (frequency domain) \\
-TPL & Differential with three lags & Yes & Well-posed & Uncertain \\
-MGT & Third-order differential & Yes & Well-posed & Uncertain \\
-MDD & Integral (convolution) & Kernel-dependent & Kernel-dependent & Uncertain \\
-Fractional & Fractional differential & Yes & Well-posed ($0 < \alpha \leq 2$) & Uncertain \\
-Nonlocal & Spatial integral & Yes & Well-posed & Uncertain \\
+Classical Fourier & Local differential & Yes & Yes & Well-posed & Verified \\
+LS & Differential with flux relaxation & Yes & Yes & Well-posed ($\tau_0 > 0$) & Partial (frequency domain) \\
+GL & Differential with temperature-rate & No (centrally symmetric) & Degenerate branch & Well-posed & Uncertain \\
+DPL & Differential with two lags & Yes & Yes if $\tau_q \geq \tau_T$ & Well-posed & Partial (frequency domain) \\
+TPL & Differential with three lags & Yes & Conditional & Well-posed & Uncertain \\
+MGT & Third-order differential & Yes & Conditional & Well-posed & Uncertain \\
+MDD & Integral (convolution) & Kernel-dependent & Yes for admissible $\kappa$ & Well-posed & Uncertain \\
+Fractional & Fractional differential & Yes & Yes for $0 < \alpha \leq 2$ & Well-posed & Uncertain \\
+Nonlocal & Spatial integral & Yes & Conditional & Well-posed & Uncertain \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\textwidth]{fig06-mdd-memory.pdf}
-\caption{Memory-dependent derivative (MDD) operator: convolution over a finite time horizon with kernel weighting (Section 6.4).}
+\includegraphics[width=0.95\textwidth]{fig10-mdd-memory.pdf}
+\caption{The memory-dependent derivative: the convolution operator over a finite time horizon (upper left), the weighting kernel and the classical limit (upper right), and the three consequences the operator has for the wave problem --- a genuine second sound, a hereditary energy flux, and a cost in solvability (below). The memory kernel is a modelling choice, and the figure shows where the choices enter.}
 \label{fig:mdd_memory}
 \end{figure}
 
@@ -183,14 +195,17 @@ Nonlocal & Spatial integral & Yes & Well-posed & Uncertain \\
 \toprule
 \textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
 \midrule
-${}^C D_t^\alpha$ & Caputo fractional derivative & $t^{-\alpha}$ & \eqref{eq:6.1} \\
-${}^{RL} D_t^\alpha$ & Riemann--Liouville derivative & $t^{-\alpha}$ & \eqref{eq:6.2} \\
-$a$ & Thermal diffusivity & m$^2$/s & \eqref{eq:6.3} \\
-$K(t-\xi)$ & Memory kernel & varies & \eqref{eq:6.4} \\
-$D_\omega$ & MDD operator & 1/s & \eqref{eq:6.5} \\
-$\omega$ & MDD time delay & s & \eqref{eq:6.5} \\
-$\kappa(t-\xi)$ & MDD kernel & dimensionless & \eqref{eq:6.6} \\
-$\alpha, \beta$ & MDD kernel parameters & varies & \eqref{eq:6.6} \\
+$\mathcal{D}[\cdot]$ & Generic memory operator acting on the flux & --- & \eqref{eq:6.1} \\
+$\mathcal{D}(s)$ & Memory operator in the Laplace domain & s & \eqref{eq:6.2} \\
+${}^C D_t^\alpha$ & Caputo fractional derivative & $t^{-\alpha}$ & \eqref{eq:6.3} \\
+${}^{RL} D_t^\alpha$ & Riemann--Liouville derivative & $t^{-\alpha}$ & \eqref{eq:6.4} \\
+$a$ & Thermal diffusivity & m$^2$/s & \eqref{eq:6.5} \\
+$K(t-\xi)$ & Memory kernel & varies & \eqref{eq:6.6} \\
+$D_\omega$ & MDD operator & 1/s & \eqref{eq:6.7} \\
+$\omega$ & MDD time delay (horizon) & s & \eqref{eq:6.7} \\
+$\kappa(t-\xi)$ & MDD kernel & dimensionless & \eqref{eq:6.8} \\
+$\alpha, \beta$ & MDD kernel parameters & varies & \eqref{eq:6.8} \\
+$\tilde{q}_i(s)$ & Laplace transform of the heat flux & --- & \eqref{eq:6.2} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -198,10 +213,11 @@ $\alpha, \beta$ & MDD kernel parameters & varies & \eqref{eq:6.6} \\
 \subsection{Open questions for Section 6}
 
 \begin{enumerate}[label=\textbf{OQ6.\arabic*}]
-\item What is the complete time-domain energy flux for MDD media with convolution-type memory? \\ \label{oq:6.1}
-\item How is energy partitioned between storage and dissipation in hereditary media? \\ \label{oq:6.2}
-\item What are the well-posedness conditions for fractional-order thermoelasticity with arbitrary $\alpha$? \\ \label{oq:6.3}
-\item How do different MDD kernel choices affect the energy flux and wave propagation? \\ \label{oq:6.4}
+\item What is the complete time-domain energy flux for MDD media with convolution-type memory, expressed solely in terms of the temperature and the stored internal variables? \\ \label{oq:6.1}
+\item How is energy partitioned between storage and dissipation in hereditary media, and what is the correct effective flux that enters a local balance? \\ \label{oq:6.2}
+\item What are the well-posedness conditions for fractional-order thermoelasticity with arbitrary $\alpha$, in the coupled mechanical setting rather than in isolation? \\ \label{oq:6.3}
+\item How do different MDD kernel choices affect the energy flux and the wave propagation, and can the dispersion of the thermal branch be used to identify the kernel experimentally? \\ \label{oq:6.4}
+\item Can the memory operator be given a finite-dimensional state-space realisation for a general admissible kernel, and what is the numerical cost of that realisation relative to a direct quadrature? \\ \label{oq:6.5}
 \end{enumerate}
 
 % LocalWords: 

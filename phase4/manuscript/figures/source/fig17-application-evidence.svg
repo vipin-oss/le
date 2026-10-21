@@ -22,7 +22,7 @@
 
   <rect width="1100" height="700" fill="white"/>
 
-  <text x="550" y="28" class="title" text-anchor="middle">Figure 12. Application evidence map</text>
+  <text x="550" y="28" class="title" text-anchor="middle">Application evidence map</text>
   <text x="550" y="46" class="subtitle" text-anchor="middle">Peer-reviewed evidence levels across applications and theory families (Section 13)</text>
 
   <!-- Main chart area -->

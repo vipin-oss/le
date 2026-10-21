@@ -25,7 +25,7 @@
   
   <rect width="1100" height="750" fill="white"/>
   
-  <text x="550" y="26" class="title" text-anchor="middle">Figure 6. Generalized thermoelasticity theory map</text>
+  <text x="550" y="26" class="title" text-anchor="middle">Generalized thermoelasticity theory map</text>
   <text x="550" y="44" class="subtitle" text-anchor="middle">Relationships among classical and generalized thermal transport theories</text>
   
   <!-- Classical (CD) at top-left -->

@@ -23,7 +23,7 @@
 
   <rect width="1100" height="700" fill="white"/>
 
-  <text x="550" y="28" class="title" text-anchor="middle">Figure 11. Fractional derivative order and transport behavior</text>
+  <text x="550" y="28" class="title" text-anchor="middle">Fractional derivative order and transport behavior</text>
   <text x="550" y="46" class="subtitle" text-anchor="middle">Interpolation between diffusive and wave-like heat transport (Sections 6, 11)</text>
 
   <!-- Main plot area -->

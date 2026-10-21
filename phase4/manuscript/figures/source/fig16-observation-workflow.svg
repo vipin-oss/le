@@ -19,7 +19,7 @@
   
   <rect width="1000" height="700" fill="white"/>
   
-  <text x="500" y="26" class="title" text-anchor="middle">Figure 7. Mathematical solution workflow</text>
+  <text x="500" y="26" class="title" text-anchor="middle">Mathematical solution workflow</text>
   <text x="500" y="44" class="subtitle" text-anchor="middle">From governing equations to observable quantities in generalized continuum wave problems</text>
   
   <!-- Step 1: Governing equations -->

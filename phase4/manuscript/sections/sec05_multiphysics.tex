@@ -6,6 +6,13 @@
 
 This section presents coupled multiphysics continua: piezothermoelasticity, porous and double-porous media, micropolar continua, semiconductor photo-thermo-elasticity, and magneto-thermo-elasticity. For each medium, the governing equations, constitutive relations, coupling mechanisms, and representative applications are presented. Primary sources are cited where available.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig09-multiphysics-coupling.pdf}
+\caption{Coupling topology of multiphysics continua. The mechanical field is coupled to a thermal field through the thermoelastic dilatation term, to an electrical field through the piezoelectric tensors, to a porosity field through the void fraction, to a carrier field through the semiconductor transport equations, and to a micro-rotation field through the couple-stress relation. Each coupling is a separate term in a separate equation, and each introduces its own material coefficients and its own additional boundary conditions at an interface; this is the reason that the size of the interface system grows so rapidly as couplings are added (Section~\ref{sec:interfaces}).}
+\label{fig:coupling_map}
+\end{figure}
+
 \subsection{Piezoelectricity: constitutive relations and coupling coefficients}
 \label{sec:5.1}
 
@@ -82,6 +89,19 @@ where $\beta_{ij}$ is the thermal stress coefficient and $p_i$ is the pyroelectr
 
 The coupled system consists of the equation of motion \eqref{eq:5.7}, the heat conduction equation (theory-dependent: classical, LS, GL, GN, DPL, TPL, MDD, etc.), and the charge conservation equation \eqref{eq:5.10}. All three fields are coupled through the constitutive relations \eqref{eq:5.6} and \eqref{eq:5.9}: temperature changes induce thermal stresses and pyroelectric effects; mechanical deformation generates piezoelectric polarization; electric fields produce electrostrictive deformation.
 
+\subsubsection{Modal content of a piezoelectric solid}
+
+The coupling of Section~\ref{sec:5.2} has an immediate and testable consequence: the number of propagating modes increases. A piezoelectric solid admits a quasi-longitudinal mode $qP$, in which the mechanical polarization is essentially parallel to the propagation direction but is accompanied by a longitudinal electric field; a quasi-transverse mode $qS$, whose polarization is essentially transverse but which is accompanied by a transverse electric field whose amplitude is small because the dielectric stiffness dominates; and an electromagnetic mode, which is a pure electrostatic oscillation of the potential with vanishing mechanical displacement and which travels at the speed of light in the material. The three speeds are separated by many orders of magnitude in most materials, and this separation is the reason that the electromagnetic mode can usually be separated from the mechanical ones by a modal truncation, whereas the separation of $qP$ from $qS$ is not.
+
+\subsubsection{The coupling coefficient as a wave-speed diagnostic}
+
+Because the electrical field and the mechanical field are both excited by the strain, the effective elastic stiffness of a piezoelectric solid along a given direction is not $c_{ijkl}$ but a stiffness that has been renormalised by the dielectric stiffness, through the electromechanical factor
+\begin{equation}
+\bar{c}_{ijkl} = c_{ijkl} - \frac{e_{mij}e_{nkl}}{\kappa_{mn}},
+\label{eq:5.19}
+\end{equation}
+which is the quantity that appears in the coupled wave speeds of Section~\ref{sec:methods}. The correction is small for weak piezoelectrics such as quartz and large for strong ones such as lead zirconate titanate, and it is the reason that a piezoelectric medium cannot be modelled accurately by adding a piezoelectric source term to an otherwise classical elastic wave calculation: the correction is to the stiffness, and therefore to the wave speed, and not to the amplitude of the excitation alone.
+
 \subsection{Electrical boundary conditions}
 \label{sec:5.3}
 
@@ -105,6 +125,14 @@ D_i n_i = 0 \quad \text{at the interface}.
 D_3^{(1)} = D_3^{(2)} \quad \text{at the interface}.
 \label{eq:5.13}
 \end{equation}
+
+\subsubsection{Why a void needs its own field of freedom}
+
+The kinematics of a porous body require a kinematic variable beyond the displacement, because the material inside the pores can change its volume independently of the solid matrix. This is not a modelling convenience; it is forced by the kinematics of a body whose constituents occupy a variable volume fraction. The void volume fraction $\phi$ measures the change of that fraction from its reference value, and it enters the balance laws of Section~\ref{sec:5.4} as a field in its own right, with its own inertia term, its own equilibrated stress and its own body force. The system is hyperelastic in the sense that the potentials are functions of $\varepsilon_{ij}$, $\gamma_{mn}$ and $\phi$ jointly, so that the cross-coupling terms $d_{ijk}$ are constrained by the requirement of a positive-definite quadratic form rather than being free parameters.
+
+\subsubsection{Modal content of a void-bearing medium}
+
+The presence of the void field adds a further mode to the modal structure: a fast wave associated with the inertia of the solid matrix and the coupled fluid motion, a slow wave associated with the equilibration of the void fraction against the surrounding matrix, and the usual shear waves, which are unaffected by the void field to the lowest order because shear does not change the volume fraction. The slow wave is of practical interest because it is the wave that transports the equilibration of the void pressure, and its speed is controlled by the ratio of the equilibrated inertia to the coupling stiffness. In a thermoporous medium the interaction with the thermal field adds a further degree of freedom, and the resulting modal structure is the one tabulated in Table~\ref{tab:T3-multiphysics}.
 
 \subsection{Porous media: voids and double porosity}
 \label{sec:5.4}
@@ -152,6 +180,14 @@ where $\sigma_{ij}$ is the force stress tensor (generally non-symmetric in micro
 
 Micropolar models are relevant for granular materials, liquid crystals, composite materials with oriented inclusions, and biological tissues where micro-structural rotation cannot be neglected. The thermoelastic extension (Tauchert, Claus and Ariman, 1968 \cite{Eringen1968b}) couples micro-rotation with thermal fields, providing a framework for structured materials with thermal coupling, and is the earliest of the micropolar-thermoelastic formulations from which the later void and micropolar-thermoelastic literature grew.
 
+\subsubsection{The absorption term and the photothermal source}
+
+Illumination does not act on the mechanical field directly; it acts through the heat and the carriers that it generates. The absorbed optical power, attenuated by the Beer--Lambert law, appears as a volumetric source in the thermal equation and as a generation term in the carrier continuity equations. The chain of consequences is then fixed: the thermal source produces a temperature rise; the temperature rise produces a thermoelastic stress through the dilatation term and a pyroelectric polarisation through the pyroelectric coefficient; the stress produces a displacement, and the polarisation produces an electric field, which in turn modifies the carrier distribution. The system is thus closed through the constitutive relations rather than through any additional assumption, and the number of degrees of freedom that must be solved simultaneously is four.
+
+\subsubsection{Photoacoustic waves as a diagnostic of the coupling}
+
+The photoacoustic wave that follows pulsed absorption is the most direct macroscopic observable of the coupling, and it has a distinctive structure: it contains a thermal contribution that propagates at the sound speed, an electronic contribution that propagates at the speed of light but decays on the absorption length, and a thermoelastic contribution whose amplitude depends on the piezoelectric coupling. The relative weight of these contributions depends on the regime --- diffusion-dominated at low frequency, ballistic at high frequency --- and it is the crossover between them that makes the technique sensitive to the thermal model. This is a concrete instance of the general point developed in Section~\ref{sec:applications}: a generalized theory earns its place not by being more general, but by being required in a regime where the classical description demonstrably fails.
+
 \subsection{Semiconductor photo-thermo-elasticity}
 \label{sec:5.6}
 
@@ -196,10 +232,19 @@ Table \ref{tab:T3-multiphysics} summarizes the coupled multiphysics media: field
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\textwidth]{fig02-wave-types.pdf}
+\includegraphics[width=0.9\textwidth]{fig08-wave-types.pdf}
 \caption{Wave types supported by different continuum media: classical elastic (P, S), generalized thermoelastic (P, S, T), piezothermoelastic (qP, qS, qT, EM-coupled), and double porous (P1, P2, P3, S).}
 \label{fig:wave_types}
 \end{figure}
+
+\subsection{The coupling hierarchy and its computational consequences}
+\label{sec:5.9}
+
+The families surveyed above can be ordered by the number of independent fields they carry, and this ordering has a direct computational consequence that runs through the whole of the review. A single-field thermoelastic problem has one propagation constant per mode and a $2\times 2$ interface system for the classical and relaxation-time families. Adding a temperature rate (Green--Lindsay) or a thermal displacement (Green--Naghdi) adds an internal variable but does not add a propagating mode. Adding the electrical field adds one mode and doubles the number of interface conditions. Adding the void fraction adds one mode of a different character, a slow equilibration wave, without changing the rank of the stress tensor. Adding the micro-rotation adds two modes, because a micropolar solid admits a transverse wave and a shear--couple wave in addition to the classical pair.
+
+Two consequences follow. The first is that the secular polynomial of Section~\ref{sec:methods} grows in degree with the number of fields, and for a fully coupled thermopiezomagnetoelastic medium the characteristic equation is of degree eight or more in the propagation constant; the selection of the physical roots then becomes a genuine numerical problem rather than a formality, and it is the stage at which spurious roots are most often introduced. The second is that the interface system of Section~\ref{sec:interfaces} grows in the same proportion, and that it is at the interface that the coupled models are most often tested --- which is why the recent work on energy ratios at piezothermoelastic and magnetothermoelastic interfaces \cite{Barak2023,Barak2023IJP,Barak2023JTS,Barak2023MMMS,Gupta2023Energy,Gupta2023IJNMF,Kumar2023PhysScr,Gupta2026HeatMap} is important out of proportion to its volume: it exercises the constitutive couplings, the mode classification and the conservation laws simultaneously.
+
+A third observation completes the picture and is a caution against treating the coupled theories as a straightforward extension of the uncoupled ones. A coupling is admissible only if the free energy that generates it remains positive definite and if the resulting balance law remains hyperbolic in the relevant regime. Adding a piezoelectric term to a thermoelastic free energy can make the mechanical subsystem elliptic in a temperature or field range where it was hyperbolic before, which shows up as an instability rather than as an improved prediction. The coupled theories of micropolar, porous and semiconductor continua have been subjected to this test more carefully than have some of their simpler counterparts, and the existence and uniqueness results for the coupled systems \cite{Iesan2013} are part of the mature content of the field rather than an optional refinement.
 
 \subsection{Notation summary for Section 5}
 
@@ -220,6 +265,7 @@ $D_i$ & Electric displacement & C/m$^2$ & \eqref{eq:5.2} \\
 $\phi$ & Electric potential & V & \eqref{eq:5.3} \\
 $\beta_{ij}$ & Thermal stress coefficient & Pa/K & \eqref{eq:5.6} \\
 $p_i$ & Pyroelectric coefficient & C/(m$^2$$\cdot$K) & \eqref{eq:5.9} \\
+$\bar{c}_{ijkl}$ & Piezoelectrically renormalised stiffness & Pa & \eqref{eq:5.19} \\
 $\phi$ & Void volume fraction & dimensionless & \eqref{eq:5.14} \\
 $h_i$ & Equilibrated stress vector & N/m & \eqref{eq:5.16} \\
 \bottomrule

@@ -31,7 +31,7 @@
   
   <rect width="1000" height="650" fill="white"/>
   
-  <text x="500" y="26" class="title" text-anchor="middle">Figure 5. Interface reflection and transmission</text>
+  <text x="500" y="26" class="title" text-anchor="middle">Interface reflection and transmission</text>
   <text x="500" y="44" class="subtitle" text-anchor="middle">Incident, reflected, and transmitted waves at a bonded interface between two media</text>
   
   <!-- Interface line -->

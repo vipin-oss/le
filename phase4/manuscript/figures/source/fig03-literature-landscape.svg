@@ -22,7 +22,7 @@
 
   <rect width="1100" height="700" fill="white"/>
 
-  <text x="550" y="28" class="title" text-anchor="middle">Figure 13. Theory family evolution in generalized continuum mechanics</text>
+  <text x="550" y="28" class="title" text-anchor="middle">Theory family evolution in generalized continuum mechanics</text>
   <text x="550" y="46" class="subtitle" text-anchor="middle">Historical development of major theory families from classical to modern multiphysics formulations (Section 2)</text>
 
   <!-- Timeline axis -->

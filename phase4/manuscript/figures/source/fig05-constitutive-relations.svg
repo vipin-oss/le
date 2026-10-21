@@ -22,7 +22,7 @@
 
   <rect width="1100" height="700" fill="white"/>
 
-  <text x="550" y="28" class="title" text-anchor="middle">Figure 9. Constitutive relations and thermoelastic coupling</text>
+  <text x="550" y="28" class="title" text-anchor="middle">Constitutive relations and thermoelastic coupling</text>
   <text x="550" y="46" class="subtitle" text-anchor="middle">Stress-strain response under isothermal and non-isothermal conditions (Section 3.5)</text>
 
   <!-- Main plot area -->

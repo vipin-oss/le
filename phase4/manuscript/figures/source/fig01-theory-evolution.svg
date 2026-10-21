@@ -24,7 +24,7 @@
   <rect width="1100" height="700" fill="white"/>
   
   <!-- Title -->
-  <text x="550" y="30" class="title" text-anchor="middle">Figure 1. Historical evolution of generalized continuum wave theories</text>
+  <text x="550" y="30" class="title" text-anchor="middle">Historical evolution of generalized continuum wave theories</text>
   <text x="550" y="48" class="subtitle" text-anchor="middle">Documented development of classical and generalized thermoelastic theories with primary sources</text>
   
   <!-- Timeline axis -->

@@ -24,7 +24,7 @@
   
   <rect width="1000" height="650" fill="white"/>
   
-  <text x="500" y="28" class="title" text-anchor="middle">Figure 3. Fundamental continuum kinematics</text>
+  <text x="500" y="28" class="title" text-anchor="middle">Fundamental continuum kinematics</text>
   <text x="500" y="46" class="subtitle" text-anchor="middle">Displacement, strain, rotation, and velocity in an infinitesimal continuum element</text>
   
   <!-- Undeformed element (dashed) -->
