@@ -194,7 +194,7 @@ Mode conversion governs energy partition between wave types at interfaces.
 
 \subsubsection{What's achieved}
 
-Scattering matrix formulation $\Delta\bm{X}=\bm{Q}$ verified (RG-003). Mode classification (propagating, evanescent, attenuating).
+Scattering matrix formulation $\Delta\bm{X}=\bm{Q}$ verified (RG-003 \cite{Barak2023a}). Mode classification (propagating, evanescent, attenuating).
 
 \subsubsection{What's open}
 
@@ -221,7 +221,7 @@ Complex mode normalization; uncertain energy flux formulations.
 
 \subsubsection{Existing foundation}
 
-BM-1 benchmark (classical elastic interface: $R_P + T_P = 1$) verified. RG-003 provides numerical results.
+BM-1 benchmark (classical elastic interface: $R_P + T_P = 1$) verified. RG-003 \cite{Barak2023a} provides numerical results.
 
 \subsubsection{Importance}
 
@@ -321,6 +321,13 @@ Material characterization, quality control, structural health monitoring.
 
 Ill-posedness of inverse problems; non-uniqueness of parameter identification.
 
+\begin{figure}[htbp]
+\centering
+\includesvg[width=0.9\textwidth]{../figures/source/fig07_theory_relationships.svg}
+\caption{Relationships among theory families: classical, generalized thermoelastic, nonlocal, and coupled-field theories form a hierarchical framework (Sections 4, 5, 7, 11).}
+\label{fig:theory_relationships}
+\end{figure}
+
 \subsection{Future directions summary table}
 \label{sec:16.10}
 
@@ -339,7 +346,7 @@ Multiscale wave phenomena & Nonlocal relations; wave dispersion & Hybrid models;
 Nonlocal-hereditary interactions & Individual theories verified & Combined models & Mathematical complexity \\
 Advanced interface conditions & Classical conditions verified & Nonlocal; memory-dependent interfaces & Not established \\
 Multiphysics mode conversion & Scattering matrix verified & Generalized theories; complex modes & Normalization uncertainty \\
-Reproducible benchmarks & BM-1 verified; RG-003 results & Generalized theory benchmarks & Lack of closed-form solutions \\
+Reproducible benchmarks & BM-1 verified; RG-003 \cite{Barak2023a} results & Generalized theory benchmarks & Lack of closed-form solutions \\
 Experimental validation & Classical theory validated & Generalized theories; interface flux & Measurement difficulty \\
 Inverse characterization & Classical methods established & Relaxation times; kernel parameters & Ill-posedness \\
 \bottomrule

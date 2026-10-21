@@ -1,64 +1,125 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" font-family="Arial, sans-serif">
-  <text x="250" y="30" text-anchor="middle" font-size="16" font-weight="bold">Five-Axis Research Taxonomy</text>
-  <g transform="translate(250,220)">
-    <path d="M0,-110 L95,-40 L58,95 L-58,95 L-95,-40 Z" fill="none" stroke="#333" stroke-width="1.5"/>
-    <text x="0" y="-125" text-anchor="middle" font-size="12" font-weight="bold" fill="#e74c3c">Physical</text>
-    <text x="0" y="-110" text-anchor="middle" font-size="9">Material type</text>
-    <text x="95" y="-40" text-anchor="middle" font-size="11" font-weight="bold" fill="#3498db">Mathematical</text>
-    <text x="95" y="-25" text-anchor="middle" font-size="9">PDE / integral / fractional</text>
-    <text x="58" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#2ecc71">Wave</text>
-    <text x="58" y="125" text-anchor="middle" font-size="9">P, S, T, coupled modes</text>
-    <text x="-58" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#f39c12">Energy</text>
-    <text x="-58" y="125" text-anchor="middle" font-size="9">Mechanical + thermal + electrical</text>
-    <text x="-95" y="-40" text-anchor="middle" font-size="11" font-weight="bold" fill="#9b59b6">Validation</text>
-    <text x="-95" y="-25" text-anchor="middle" font-size="9">Theory / analytical / experimental</text>
-    <circle cx="0" cy="0" r="20" fill="#f39c12" opacity="0.2" stroke="#f39c12" stroke-width="2"/>
-    <text x="0" y="-3" text-anchor="middle" font-size="10" font-weight="bold">Study</text>
-    <text x="0" y="8" text-anchor="middle" font-size="9">classification</text>
-    <path d="M0,-15 L0,-50" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
-    <path d="M12,-9 L42,-28" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
-    <path d="M12,9 L42,28" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
-    <path d="M-12,9 L-42,28" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
-    <path d="M-12,-9 L-42,-28" stroke="#666" stroke-width="1" marker-end="url(#arrowhead)"/>
-  </g>
-  <g transform="translate(60,330)">
-    <rect x="0" y="0" width="130" height="100" fill="#fdecea" stroke="#e74c3c" stroke-width="1" rx="4"/>
-    <text x="65" y="18" text-anchor="middle" font-size="10" font-weight="bold">Physical axis categories:</text>
-    <text x="15" y="35" font-size="9">• Elastic</text>
-    <text x="15" y="48" font-size="9">• Thermoelastic</text>
-    <text x="15" y="61" font-size="9">• Piezothermoelastic</text>
-    <text x="15" y="74" font-size="9">• Porous / double porous</text>
-    <text x="15" y="87" font-size="9">• Micropolar / semiconductor</text>
-  </g>
-  <g transform="translate(200,330)">
-    <rect x="0" y="0" width="130" height="100" fill="#e6f7ff" stroke="#3498db" stroke-width="1" rx="4"/>
-    <text x="65" y="18" text-anchor="middle" font-size="10" font-weight="bold">Mathematical axis categories:</text>
-    <text x="15" y="35" font-size="9">• Classical PDE</text>
-    <text x="15" y="48" font-size="9">• Generalized PDE</text>
-    <text x="15" y="61" font-size="9">• Fractional PDE</text>
-    <text x="15" y="74" font-size="9">• Hereditary integral</text>
-    <text x="15" y="87" font-size="9">• Nonlocal integral</text>
-  </g>
-  <g transform="translate(340,330)">
-    <rect x="0" y="0" width="130" height="100" fill="#e6ffe6" stroke="#2ecc71" stroke-width="1" rx="4"/>
-    <text x="65" y="18" text-anchor="middle" font-size="10" font-weight="bold">Wave axis categories:</text>
-    <text x="15" y="35" font-size="9">• P (longitudinal)</text>
-    <text x="15" y="48" font-size="9">• S (transverse)</text>
-    <text x="15" y="61" font-size="9">• T (thermal)</text>
-    <text x="15" y="74" font-size="9">• Evanescent</text>
-    <text x="15" y="87" font-size="9">• Coupled modes</text>
-  </g>
-  <g transform="translate(60,435)">
-    <rect x="0" y="0" width="130" height="40" fill="#fff4e6" stroke="#f39c12" stroke-width="1" rx="4"/>
-    <text x="65" y="16" text-anchor="middle" font-size="10" font-weight="bold">Energy axis: mechanical + thermal + electrical channels</text>
-  </g>
-  <g transform="translate(300,435)">
-    <rect x="0" y="0" width="130" height="40" fill="#f3e6ff" stroke="#9b59b6" stroke-width="1" rx="4"/>
-    <text x="65" y="16" text-anchor="middle" font-size="10" font-weight="bold">Validation axis: theory → analytical → experimental</text>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
   <defs>
-    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    <style>
+      .title { font: 700 16px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+      .subtitle { font: 12px 'DejaVu Sans', sans-serif; fill: #555; }
+      .axis-title { font: 700 12px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+      .axis-label { font: 10px 'DejaVu Sans', sans-serif; fill: #333; }
+      .box { fill: #eef3f8; stroke: #1a3a5c; stroke-width: 1.5; rx: 4; ry: 4; }
+      .box-a { fill: #e8f2e8; stroke: #2d6a2d; stroke-width: 1.5; rx: 4; ry: 4; }
+      .box-b { fill: #e8f0ff; stroke: #2980b9; stroke-width: 1.5; rx: 4; ry: 4; }
+      .box-c { fill: #fdeaea; stroke: #c0392b; stroke-width: 1.5; rx: 4; ry: 4; }
+      .box-d { fill: #fdf2e8; stroke: #d35400; stroke-width: 1.5; rx: 4; ry: 4; }
+      .box-e { fill: #f4e8f2; stroke: #8e44ad; stroke-width: 1.5; rx: 4; ry: 4; }
+      .arrow { stroke: #666; stroke-width: 1.5; fill: #666; marker-end: url(#arrowhead); }
+      .gap { fill: #ffe6e6; stroke: #c0392b; stroke-width: 2; rx: 4; ry: 4; stroke-dasharray: 5,4; }
+    </style>
+    <marker id="arrowhead" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0,0 7,3.5 0,7" fill="#666"/>
     </marker>
   </defs>
+  
+  <rect width="1000" height="650" fill="white"/>
+  
+  <text x="500" y="26" class="title" text-anchor="middle">Figure 8. Five-axis research taxonomy</text>
+  <text x="500" y="44" class="subtitle" text-anchor="middle">Classification framework for continuum mechanics literature (GAP-001 through GAP-012)</text>
+  
+  <!-- Axis A: Physical -->
+  <text x="80" y="80" class="axis-title">Axis A — Physical domain</text>
+  <g transform="translate(80, 100)">
+    <rect x="0" y="0" width="160" height="25" class="box-a"/>
+    <text x="20" y="18" class="axis-label">Elastic</text>
+    <rect x="0" y="35" width="160" height="25" class="box-a"/>
+    <text x="20" y="53" class="axis-label">Thermoelastic</text>
+    <rect x="0" y="70" width="160" height="25" class="box-a"/>
+    <text x="20" y="88" class="axis-label">Piezothermoelastic</text>
+    <rect x="0" y="105" width="160" height="25" class="box-a"/>
+    <text x="20" y="123" class="axis-label">Porous / Micropolar</text>
+  </g>
+  
+  <!-- Axis B: Mathematical -->
+  <text x="280" y="80" class="axis-title">Axis B — Mathematical structure</text>
+  <g transform="translate(280, 100)">
+    <rect x="0" y="0" width="160" height="25" class="box-b"/>
+    <text x="20" y="18" class="axis-label">PDE (local)</text>
+    <rect x="0" y="35" width="160" height="25" class="box-b"/>
+    <text x="20" y="53" class="axis-label">Integro-PDE</text>
+    <rect x="0" y="70" width="160" height="25" class="box-b"/>
+    <text x="20" y="88" class="axis-label">Fractional PDE</text>
+    <rect x="0" y="105" width="160" height="25" class="box-b"/>
+    <text x="20" y="123" class="axis-label">Hereditary integral</text>
+  </g>
+  
+  <!-- Axis C: Wave -->
+  <text x="480" y="80" class="axis-title">Axis C — Wave behavior</text>
+  <g transform="translate(480, 100)">
+    <rect x="0" y="0" width="160" height="25" class="box-c"/>
+    <text x="20" y="18" class="axis-label">Propagating</text>
+    <rect x="0" y="35" width="160" height="25" class="box-c"/>
+    <text x="20" y="53" class="axis-label">Evanescent</text>
+    <rect x="0" y="70" width="160" height="25" class="box-c"/>
+    <text x="20" y="88" class="axis-label">Attenuating</text>
+    <rect x="0" y="105" width="160" height="25" class="box-c"/>
+    <text x="20" y="123" class="axis-label">Coupled modes</text>
+  </g>
+  
+  <!-- Axis D: Energy -->
+  <text x="680" y="80" class="axis-title">Axis D — Energy transport</text>
+  <g transform="translate(680, 100)">
+    <rect x="0" y="0" width="160" height="25" class="box-d"/>
+    <text x="20" y="18" class="axis-label">Classical flux</text>
+    <rect x="0" y="35" width="160" height="25" class="box-d"/>
+    <text x="20" y="53" class="axis-label">Relaxation flux</text>
+    <rect x="0" y="70" width="160" height="25" class="box-d"/>
+    <text x="20" y="88" class="axis-label">Hereditary flux</text>
+    <rect x="0" y="105" width="160" height="25" class="box-d"/>
+    <text x="20" y="123" class="axis-label">Integral flux</text>
+  </g>
+  
+  <!-- Axis E: Validation -->
+  <text x="80" y="320" class="axis-title">Axis E — Validation level</text>
+  <g transform="translate(80, 340)">
+    <rect x="0" y="0" width="160" height="25" class="box-e"/>
+    <text x="20" y="18" class="axis-label">Theoretical only</text>
+    <rect x="0" y="35" width="160" height="25" class="box-e"/>
+    <text x="20" y="53" class="axis-label">Analytical + numerical</text>
+    <rect x="0" y="70" width="160" height="25" class="box-e"/>
+    <text x="20" y="88" class="axis-label">Analytical + experimental</text>
+    <rect x="0" y="105" width="160" height="25" class="box-e"/>
+    <text x="20" y="123" class="axis-label">Full experimental</text>
+  </g>
+  
+  <!-- Gap highlights -->
+  <rect x="280" y="340" width="160" height="55" class="gap"/>
+  <text x="360" y="362" class="axis-label" text-anchor="middle">GAP-001 through GAP-010</text>
+  <text x="360" y="380" class="axis-label" text-anchor="middle" font-size="9">Energy flux formulations</text>
+  
+  <rect x="480" y="340" width="160" height="55" class="gap"/>
+  <text x="560" y="362" class="axis-label" text-anchor="middle">GAP-011</text>
+  <text x="560" y="380" class="axis-label" text-anchor="middle" font-size="9">Interface energy asymmetry</text>
+  
+  <rect x="680" y="340" width="160" height="55" class="gap"/>
+  <text x="760" y="362" class="axis-label" text-anchor="middle">GAP-012</text>
+  <text x="760" y="380" class="axis-label" text-anchor="middle" font-size="9">Rigorous limit theorems</text>
+  
+  <!-- Connections showing taxonomy vector -->
+  <path d="M 240 140 Q 340 220 340 340" class="arrow"/>
+  <path d="M 440 140 Q 440 220 440 340" class="arrow"/>
+  <path d="M 640 140 Q 640 220 640 340" class="arrow"/>
+  <path d="M 840 140 Q 840 220 840 340" class="arrow"/>
+  
+  <!-- Taxonomy vector equation -->
+  <rect x="80" y="480" width="360" height="90" fill="#f8f9fa" stroke="#cccccc" stroke-width="1"/>
+  <text x="95" y="500" class="axis-title">Taxonomy vector:</text>
+  <text x="95" y="520" class="axis-label" font-size="11">v = (v_A, v_B, v_C, v_D, v_E)</text>
+  <text x="95" y="538" class="axis-label" font-size="10">Each study classified as one 5-tuple</text>
+  <text x="95" y="556" class="axis-label" font-size="10">Empty cells = research gaps</text>
+  
+  <!-- Gap summary -->
+  <rect x="480" y="480" width="440" height="90" fill="#ffe6e6" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="495" y="500" class="axis-title" style="fill: #c0392b;">Identified gaps (12 total):</text>
+  <text x="495" y="520" class="axis-label" font-size="10">GAP-001 to GAP-010: Energy flux derivations (8 theories)</text>
+  <text x="495" y="538" class="axis-label" font-size="10">GAP-011: Interface energy flux asymmetry (§15.1)</text>
+  <text x="495" y="556" class="axis-label" font-size="10">GAP-012: Rigorous limit theorems between theories (§12.3)</text>
 </svg>

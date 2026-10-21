@@ -14,7 +14,7 @@ Relaxation in continuum media arises from microscopic processes that delay the m
 \begin{itemize}
 \item \textbf{Differential relaxation:} Time derivatives of fluxes appear in the constitutive relation (LS, DPL, TPL, MGT). The heat flux $q_i$ satisfies a differential equation involving $\dot{q}_i$ or higher derivatives.
 \item \textbf{Integral relaxation:} The response is a convolution of the stimulus with a memory kernel (MDD, fractional). The flux at time $t$ depends on the history of the temperature gradient over a finite or semi-infinite interval.
-\item \textbf{Spatial relaxation:} Nonlocal integral relations where stress at a point depends on strain throughout a neighborhood (Eringen nonlocal elasticity).
+\item \textbf{Spatial relaxation:} Nonlocal integral relations where stress at a point depends on strain throughout a neighborhood (Eringen \cite{Eringen1972} nonlocal elasticity).
 \end{itemize}
 
 The common feature is that the material response has memory: past states influence present behavior. This memory produces finite wave speeds, dispersion, attenuation, and history-dependent dissipation.
@@ -164,6 +164,13 @@ Nonlocal & Spatial integral & Yes & Well-posed & Uncertain \\
 \bottomrule
 \end{tabularx}
 \end{table}
+
+\begin{figure}[htbp]
+\centering
+\includesvg[width=0.95\textwidth]{../figures/source/fig06_mdd_memory.svg}
+\caption{Memory-dependent derivative (MDD) operator: convolution over a finite time horizon with kernel weighting (Section 6.4).}
+\label{fig:mdd_memory}
+\end{figure}
 
 \subsection{Notation summary for Section 6}
 

@@ -1,24 +1,26 @@
 %======================================================================
-% Table T5: Mathematical solution techniques
+% Table T5 — Mathematical solution techniques
+% Section: §8
+% Evidence: Standard methods from continuum mechanics literature
 %======================================================================
-\begin{table}[htbp]
+\begin{table}[h]
 \centering
 \small
-\caption{Mathematical solution techniques for wave propagation in generalized continua: method, applicability, advantages, and limitations.}
-\label{tab:T5_solution}
+\caption{Mathematical solution techniques for generalized continuum wave problems. Each technique's applicability and limitations are identified.}
+\label{tab:T5-techniques}
 \begin{tabularx}{\textwidth}{@{}lXXXX@{}}
 \toprule
-\textbf{Method} & \textbf{Applicability} & \textbf{Advantages} & \textbf{Limitations} \\
+\textbf{Technique} & \textbf{Mathematical Basis} & \textbf{Applicability} & \textbf{Limitations} & \textbf{Evidence} \\
 \midrule
-Plane wave ansatz ($e^{i(\bm{k}\cdot\bm{x}-\omega t)}$) & Homogeneous media, infinite domains & Closed-form dispersion relations; physical insight & Limited to simple geometries; no boundary effects \\
-Christoffel equation & Anotropic/elastic media & Systematic wave speed and polarization determination & Becomes high-order for coupled media \\
-Secular equation / characteristic polynomial & Layered media, interfaces & Determines all admissible wave numbers & High-order polynomials (up to 8th order); numerical root finding \\
-Fourier transform & Steady-state harmonic problems & Frequency-domain solution; convolution becomes multiplication & Limited to linear time-invariant systems \\
-Laplace transform & Transient problems, initial-value problems & Handles initial conditions; transient wave fronts & Inversion can be complex; branch cuts \\
-Eigenmode expansion & Bounded domains, waveguides & Complete orthogonal basis; modal decomposition & Requires self-adjoint operators; complex for non-self-adjoint \\
-Finite element method & Complex geometries, heterogeneous media & Flexible geometry; handles material interfaces & Computational cost; nonlocal models need special treatment \\
-Boundary element method & Infinite/semi-infinite domains & Reduces dimensionality; good for scattering & Limited to homogeneous fundamental solutions \\
-Spectral methods & Periodic domains, smooth solutions & High accuracy; exponential convergence & Gibbs phenomena at discontinuities; complex geometries difficult \\
+Normal mode expansion & Separation of variables; eigenfunction expansion & Layered media; simple geometries & Limited to separable problems; boundary condition constraints & \cite{Eringen1972} \\
+Green's functions & Fundamental solution; convolution & Point source problems; infinite domains & Singular integrals; complex for anisotropic media & Standard method \\
+Fourier transform & Frequency domain; $e^{-i\omega t}$ convention & Time-harmonic problems; dispersion analysis & Assumes time-harmonic fields; initial-value problems need Laplace & Standard method \\
+Laplace transform & Time domain to complex frequency & Initial-value problems; transient waves & Branch cuts; inversion complexity & Standard method \\
+Christoffel equation & $\det[\Gamma_{ik}-\rho c^2\delta_{ik}]=0$ & Plane wave propagation in anisotropic media & Secular polynomial degree grows with coupling & \cite{Eringen1972} \\
+Scattering matrix & $\Delta\mathbf{X}=\mathbf{Q}$; interface matching & Layered/interfacial problems; wave scattering & Matrix dimension grows with mode count; complex mode normalization & \cite{Barak2023a} \\
+Finite element & Weak form; variational principles & Complex geometries; nonlinear problems & Mesh dependency; computational cost & \cite{Biot1956} \\
 \bottomrule
+\multicolumn{5}{@{}l}{\textbf{Notes:} Complex wave number classification (propagating/evanescent/attenuating) follows standard wave theory.}\\
+\multicolumn{5}{@{}l}{\emph{Scattering matrix formulation verified from RG-003 Eq. (44) (\cite{Barak2023a}, open access).}}\\
 \end{tabularx}
 \end{table}

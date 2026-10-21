@@ -46,7 +46,7 @@ Convolution integrals (MDD), integral-form divergence theorem (nonlocal), third-
 
 \subsubsection{Existing foundation}
 
-The conservation identity $\sum R + \sum T + A = 1$ is verified for classical elastic interfaces (BM-1 benchmark). RG-003 verified the scattering matrix formulation for thermo-piezoelastic interfaces.
+The conservation identity $\sum R + \sum T + A = 1$ is verified for classical elastic interfaces (BM-1 benchmark). RG-003 \cite{Barak2023a} verified the scattering matrix formulation for thermo-piezoelastic interfaces.
 
 \subsubsection{Why important}
 
@@ -54,7 +54,7 @@ Conservation verification validates interface models and energy partition comput
 
 \subsubsection{What's achieved}
 
-Classical conservation verified. Scattering matrix $\Delta\bm{X}=\bm{Q}$ verified from RG-003.
+Classical conservation verified. Scattering matrix $\Delta\bm{X}=\bm{Q}$ verified from RG-003 \cite{Barak2023a}.
 
 \subsubsection{What's open}
 
@@ -81,7 +81,7 @@ Uncertain energy flux formulations; complex mode normalization; imperfect bondin
 
 \subsubsection{Existing foundation}
 
-BM-1 benchmark (classical elastic interface: $R_P + T_P = 1$) verified. RG-003 provides numerical results for thermo-piezoelastic interfaces.
+BM-1 benchmark (classical elastic interface: $R_P + T_P = 1$) verified. RG-003 \cite{Barak2023a} provides numerical results for thermo-piezoelastic interfaces.
 
 \subsubsection{Why important}
 
@@ -89,7 +89,7 @@ Benchmarks provide validation targets for numerical methods and new theories.
 
 \subsubsection{What's achieved}
 
-BM-1 analytical benchmark verified. RG-003 numerical results available.
+BM-1 analytical benchmark verified. RG-003 \cite{Barak2023a} numerical results available.
 
 \subsubsection{What's open}
 
@@ -221,7 +221,7 @@ Integral-form constitutive relations are computationally expensive; interface co
 
 \subsubsection{Existing foundation}
 
-MDD operator verified from RG-003. MDD heat conduction law established.
+MDD operator verified from RG-003 \cite{Barak2023a}. MDD heat conduction law established.
 
 \subsubsection{Why important}
 
@@ -251,6 +251,13 @@ Polymer processing, biomedical tissue modeling, composite material design.
 
 Convolution integrals are computationally expensive; kernel choice is not unique.
 
+\begin{figure}[htbp]
+\centering
+\includesvg[width=0.9\textwidth]{../figures/source/fig04_energy_flux_channels.svg}
+\caption{Energy flux channels across coupled fields: mechanical, thermal, and electrical contributions to total energy flux (Sections 3.8, 10).}
+\label{fig:energy_flux_channels}
+\end{figure}
+
 \subsection{Challenge summary table}
 \label{sec:15.8}
 
@@ -264,7 +271,7 @@ Convolution integrals are computationally expensive; kernel choice is not unique
 \textbf{Challenge} & \textbf{What's achieved} & \textbf{What's open} & \textbf{Major obstacles} \\
 \midrule
 Energy flux formulation & Classical verified; LS/DPL partial & 8 formulations unresolved & Convolution integrals, integral divergence theorem \\
-Conservation verification & Classical verified; RG-003 scattering matrix & Generalized theories; nonlocal interfaces & Uncertain flux formulations \\
+Conservation verification & Classical verified; RG-003 \cite{Barak2023a} scattering matrix & Generalized theories; nonlocal interfaces & Uncertain flux formulations \\
 Numerical benchmarks & BM-1 verified & Generalized theory benchmarks & Lack of closed-form solutions \\
 Experimental validation & Classical theory validated & Generalized theories; interface flux & Measurement difficulty \\
 Complex mode handling & Classification; normalization guidelines & Cross-theory normalization & No standardized approach \\

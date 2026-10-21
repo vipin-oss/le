@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="700" viewBox="0 0 1100 700">
+  <defs>
+    <style>
+      .title { font: 700 16px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+      .subtitle { font: 12px 'DejaVu Sans', sans-serif; fill: #555; }
+      .label { font: 11px 'DejaVu Sans', sans-serif; fill: #333; }
+      .bar { fill: none; stroke-width: 2; }
+      .bar-high { stroke: #2d6a2d; }
+      .bar-medium { stroke: #c07c00; }
+      .bar-low { stroke: #c0392b; }
+      .axis { stroke: #333; stroke-width: 1.5; fill: none; marker-end: url(#arrow-axis); }
+      .grid { stroke: #e0e0e0; stroke-width: 0.5; fill: none; }
+      .marker { fill: #1a3a5c; }
+      .box { fill: #f8f9fa; stroke: #cccccc; stroke-width: 1; }
+      .box-title { font: 700 11px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+    </style>
+    <marker id="arrow-axis" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <polygon points="0,0 9,4.5 0,9" fill="#333"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="700" fill="white"/>
+
+  <text x="550" y="28" class="title" text-anchor="middle">Figure 12. Application evidence map</text>
+  <text x="550" y="46" class="subtitle" text-anchor="middle">Peer-reviewed evidence levels across applications and theory families (Section 13)</text>
+
+  <!-- Main chart area -->
+  <rect x="80" y="80" width="600" height="460" fill="#fdfdfd" stroke="#cccccc" stroke-width="1"/>
+
+  <!-- Y-axis categories -->
+  <text x="60" y="135" class="label" text-anchor="end" font-size="10">Smart structures</text>
+  <text x="60" y="190" class="label" text-anchor="end" font-size="10">NDE (ultrasonic)</text>
+  <text x="60" y="245" class="label" text-anchor="end" font-size="10">NDE (thermal wave)</text>
+  <text x="60" y="300" class="label" text-anchor="end" font-size="10">Energy harvesting</text>
+  <text x="60" y="355" class="label" text-anchor="end" font-size="10">Geophysics/seismology</text>
+  <text x="60" y="410" class="label" text-anchor="end" font-size="10">Biomedical ultrasound</text>
+  <text x="60" y="465" class="label" text-anchor="end" font-size="10">Thermal ablation</text>
+  <text x="60" y="520" class="label" text-anchor="end" font-size="10">Photoacoustic imaging</text>
+  <text x="60" y="575" class="label" text-anchor="end" font-size="10">Nanoscale devices</text>
+
+  <!-- X-axis evidence scale -->
+  <line x1="80" y1="600" x2="680" y2="600" class="axis"/>
+  <text x="80" y="620" class="label" text-anchor="middle" font-size="10">Low</text>
+  <text x="220" y="620" class="label" text-anchor="middle" font-size="10">Medium</text>
+  <text x="360" y="620" class="label" text-anchor="middle" font-size="10">High</text>
+  <text x="500" y="620" class="label" text-anchor="middle" font-size="10">Very high</text>
+  <text x="680" y="620" class="label" text-anchor="middle" font-size="10">Evidence level →</text>
+
+  <!-- Grid lines -->
+  <line x1="80" y1="80" x2="80" y2="600" class="grid"/>
+  <line x1="220" y1="80" x2="220" y2="600" class="grid"/>
+  <line x1="360" y1="80" x2="360" y2="600" class="grid"/>
+  <line x1="500" y1="80" x2="500" y2="600" class="grid"/>
+
+  <!-- Evidence bars -->
+  <!-- Smart structures: High -->
+  <line x1="80" y1="135" x2="360" y2="135" class="bar bar-high" stroke-width="6"/>
+  <circle cx="360" cy="135" r="5" class="marker"/>
+  <!-- NDE ultrasonic: Very high -->
+  <line x1="80" y1="190" x2="500" y2="190" class="bar bar-high" stroke-width="6"/>
+  <circle cx="500" cy="190" r="5" class="marker"/>
+  <!-- NDE thermal wave: Medium -->
+  <line x1="80" y1="245" x2="220" y2="245" class="bar bar-medium" stroke-width="6"/>
+  <circle cx="220" cy="245" r="5" class="marker"/>
+  <!-- Energy harvesting: High -->
+  <line x1="80" y1="300" x2="360" y2="300" class="bar bar-high" stroke-width="6"/>
+  <circle cx="360" cy="300" r="5" class="marker"/>
+  <!-- Geophysics/seismology: Very high -->
+  <line x1="80" y1="355" x2="500" y2="355" class="bar bar-high" stroke-width="6"/>
+  <circle cx="500" cy="355" r="5" class="marker"/>
+  <!-- Biomedical ultrasound: Very high -->
+  <line x1="80" y1="410" x2="500" y2="410" class="bar bar-high" stroke-width="6"/>
+  <circle cx="500" cy="410" r="5" class="marker"/>
+  <!-- Thermal ablation: Medium -->
+  <line x1="80" y1="465" x2="220" y2="465" class="bar bar-medium" stroke-width="6"/>
+  <circle cx="220" cy="465" r="5" class="marker"/>
+  <!-- Photoacoustic imaging: Medium -->
+  <line x1="80" y1="520" x2="220" y2="520" class="bar bar-medium" stroke-width="6"/>
+  <circle cx="220" cy="520" r="5" class="marker"/>
+  <!-- Nanoscale devices: Medium -->
+  <line x1="80" y1="575" x2="220" y2="575" class="bar bar-medium" stroke-width="6"/>
+  <circle cx="220" cy="575" r="5" class="marker"/>
+
+  <!-- Legend -->
+  <rect x="720" y="80" width="300" height="200" class="box"/>
+  <text x="735" y="98" class="box-title">Evidence levels</text>
+  <text x="735" y="120" class="math" font-size="10" fill="#2d6a2d">High / Very high</text>
+  <text x="735" y="135" class="label" font-size="10">Strong theoretical + experimental support</text>
+  <text x="735" y="155" class="math" font-size="10" fill="#c07c00">Medium</text>
+  <text x="735" y="170" class="label" font-size="10">Growing literature, some validation</text>
+  <text x="735" y="190" class="math" font-size="10" fill="#c0392b">Low</text>
+  <text x="735" y="205" class="label" font-size="10">Limited or theoretical only</text>
+
+  <!-- Theory families per application -->
+  <rect x="720" y="300" width="300" height="300" class="box"/>
+  <text x="735" y="318" class="box-title">Theory families by application</text>
+  <text x="735" y="338" class="label" font-size="10">Smart structures: Piezothermoelastic</text>
+  <text x="735" y="353" class="label" font-size="10">NDE ultrasonic: Classical, LS, GL</text>
+  <text x="735" y="368" class="label" font-size="10">NDE thermal: LS, DPL, GN</text>
+  <text x="735" y="383" class="label" font-size="10">Energy harvesting: Piezoelectric</text>
+  <text x="735" y="398" class="label" font-size="10">Geophysics: Classical, poroelastic</text>
+  <text x="735" y="413" class="label" font-size="10">Biomedical ultrasound: Classical</text>
+  <text x="735" y="428" class="label" font-size="10">Thermal ablation: Classical, LS</text>
+  <text x="735" y="443" class="label" font-size="10">Photoacoustic: LS, DPL</text>
+  <text x="735" y="458" class="label" font-size="10">Nanoscale: Nonlocal</text>
+
+  <!-- Physical interpretation -->
+  <rect x="80" y="620" width="940" height="50" class="box"/>
+  <text x="95" y="638" class="label" font-size="10">Source: Section 13.6 evidence map (Table \\ref{tab:evidence_map}). All evidence levels are peer-reviewed assessments, not original measurements.</text>
+</svg>

@@ -4,7 +4,7 @@
 \section{Foundations of Continuum Wave Mechanics}
 \label{sec:foundations}
 
-This section develops the first-principles foundation (Layer I of the layered mathematical exposition) for all subsequent theory families. We begin with kinematics, proceed through the conservation laws of continuum mechanics, establish the thermodynamic restrictions on constitutive relations, derive classical elasticity and wave propagation, and conclude with the classical energy flux and interface conditions. Every equation in this section is derived from first principles or drawn from established standard results with documented assumptions.
+This section develops the first-principles foundation (Layer I of the layered mathematical exposition) for all subsequent theory families. We begin with kinematics, proceed through the conservation laws of continuum mechanics, establish the thermodynamic restrictions on constitutive relations, derive classical elasticity and wave propagation, and conclude with the classical energy flux \cite{Biot1956} and interface conditions. Every equation in this section is derived from first principles or drawn from established standard results with documented assumptions.
 
 \subsection{Kinematics: displacement, strain, rotation}
 \label{sec:3.1}
@@ -340,7 +340,14 @@ Integrating \eqref{eq:3.29} over a volume $V$ and applying the divergence theore
 For an isolated system ($J_i n_i = 0$ on $S$), the total energy is conserved: $\frac{\diff}{\diff t}\int_V \mathcal{E} \, \diff V = 0$.
 
 \subsubsection{Physical interpretation}
-Equation \eqref{eq:3.29} is the classical energy flux for elastic and thermoelastic media. The mechanical part $\sigma_{ji}v_i$ represents the rate of work done by tractions on a surface, while the thermal part $q_i$ represents heat conduction. This two-channel energy flux structure generalizes to all theory families in Section 10, with additional terms appearing in generalized theories.
+Equation \eqref{eq:3.29} is the classical energy flux \cite{Biot1956} for elastic and thermoelastic media. The mechanical part $\sigma_{ji}v_i$ represents the rate of work done by tractions on a surface, while the thermal part $q_i$ represents heat conduction. This two-channel energy flux structure generalizes to all theory families in Section 10, with additional terms appearing in generalized theories.
+
+\begin{figure}[htbp]
+\centering
+\includesvg[width=0.95\textwidth]{../figures/source/fig09_constitutive_relations.svg}
+\caption{Constitutive relations and thermoelastic coupling: stress-strain response under isothermal and non-isothermal conditions (Section 3.5).}
+\label{fig:constitutive}
+\end{figure}
 
 \subsection{Interface conditions: perfect and imperfect bonding}
 \label{sec:3.9}
@@ -442,7 +449,7 @@ $c_p, c_s$ & P-wave and S-wave speeds & m/s & \eqref{eq:3.24}--\eqref{eq:3.25} \
 \begin{enumerate}[label=\textbf{OQ3.\arabic*}]
 \item What is the most general form of energy flux that remains valid across all generalized theories (LS, GL, GN, DPL, TPL, MGT, MDD, nonlocal)? \label{oq:3.1}
 \item How do interface conditions change for nonlocal media where the stress at a point depends on strain throughout a neighborhood? \label{oq:3.2}
-\item What is the relationship between the classical energy flux \eqref{eq:3.29} and the entropy flux in thermoelasticity without energy dissipation (GN-II)? \label{oq:3.3}
+\item What is the relationship between the classical energy flux \cite{Biot1956} \eqref{eq:3.29} and the entropy flux in thermoelasticity without energy dissipation (GN-II)? \label{oq:3.3}
 \end{enumerate}
 
 % LocalWords: 

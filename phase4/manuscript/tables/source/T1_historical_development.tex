@@ -1,29 +1,29 @@
 %======================================================================
-% Table T1: Historical development of thermoelasticity theories
+% Table T1 — Historical development of continuum wave theories
+% Section: §4
+% Evidence: All entries traceable to primary sources in library.bib
 %======================================================================
-\begin{table}[htbp]
+\begin{table}[h]
 \centering
 \small
-\caption{Historical development of thermoelasticity theories from classical to generalized formulations.}
-\label{tab:T1_historical}
-\begin{tabularx}{\textwidth}{@{}lXlX@{}}
+\caption{Historical development of continuum wave theories. All dates and primary sources verified via DOI. Limiting relationships are parameter substitutions, not rigorous limit theorems.}
+\label{tab:T1-historical}
+\begin{tabularx}{\textwidth}{@{}lllXXl@{}}
 \toprule
-\textbf{Year} & \textbf{Theory / Development} & \textbf{Key reference} & \textbf{Principal contribution} \\
+\textbf{Theory} & \textbf{Year} & \textbf{Primary Source} & \textbf{Key Mathematical Contribution} & \textbf{Applicability} & \textbf{Evidence} \\
 \midrule
-1822 & Fourier's heat conduction law & Fourier (1822) & Heat equation with infinite propagation speed \\
-1855 & Classical elasticity & Navier, Cauchy & Equations of motion, wave speeds \\
-1892 & Thermoelastic coupling & Kelvin (1892) & Thermoelastic effect, reversible thermodynamics \\
-1956 & Classical coupled thermoelasticity & Biot (1956) & Coupled elasticity with Fourier heat conduction; infinite speed paradox \\
-1948/1958 & Cattaneo--Vernotte hyperbolic heat conduction & Cattaneo (1948); Vernotte (1958) & Relaxation-time heat flux; finite thermal wave speed \\
-1967 & Lord--Shulman (LS) theory & Lord \& Shulman (1967) & Single relaxation time; generalized thermoelasticity \\
-1972 & Green--Lindsay (GL) theory & Green \& Lindsay (1972) & Two temperatures, two relaxation times \\
-1991 & Green--Naghdi type II & Green \& Naghdi (1991) & Thermal displacement; dissipationless thermoelasticity \\
-1993 & Green--Naghdi type III & Green \& Naghdi (1993) & Mixed dissipative/non-dissipative formulation \\
-1995 & Dual-phase-lag (DPL) theory & Tzou (1995) & Two phase lags (heat flux and temperature gradient) \\
-1997 & Triple-phase-lag (TPL) theory & Tzou (1997) & Three phase lags including thermal displacement gradient \\
-2011 & Memory-dependent derivative (MDD) & Wang \& Li (2011) & Integral-form memory operator with fading memory \\
-1972--1983 & Nonlocal elasticity & Eringen (1972, 1974, 1983) & Stress depends on strain in a neighborhood; scale dependence \\
-2011--2015 & Fractional thermoelasticity & Povstenko (2011, 2015) & Time-fractional heat equation; anomalous diffusion \\
+Classical coupled (CD) & 1956 & Biot \cite{Biot1956} & Classical coupled thermoelasticity with Fourier heat conduction $q_i=-kT_{,i}$ & Isotropic solids, small deformations, infinite thermal speed & \cite{Biot1956} \\
+Lord--Shulman (LS) & 1967 & Lord \& Shulman \cite{Lord1967} & One relaxation time $\tau_0$; modified heat equation $q_i+\tau_0\dot{q}_i=-kT_{,i}$; hyperbolic heat transfer & Finite thermal wave speed $c_T=\sqrt{k/(\rho c_v\tau_0)}$ & \cite{Lord1967} \\
+Green--Lindsay (GL) & 1972 & Green \& Lindsay \cite{Green1972} & Two relaxation times $\tau_0,\tau_1$; temperature-rate dependent constitutive relations & Finite wave speed; no dissipation for centrally symmetric bodies & \cite{Green1972} \\
+G--N Type II & 1991 & Green \& Naghdi \cite{Green1991} & Thermal displacement $\alpha_i=\int T_i\,dt$; entropy flux from free energy potential; no energy dissipation & Wave propagation without dissipation; second sound & \cite{Green1991} \\
+G--N Type III & 1993 & Green \& Naghdi \cite{Green1993} & Dissipative type III theory; mixed type I--II character & Finite wave speed with dissipation & \cite{Green1993} \\
+Dual-phase-lag (DPL) & 1995 & Tzou \cite{Tzou1995} & Two phase lags $\tau_q$ (flux) and $\tau_T$ (gradient); $q(t+\tau_q)=-k\nabla T(t+\tau_T)$ & Micro-scale heat transfer; $\tau_q\ge\tau_T$ for admissibility & \cite{Tzou1995} \\
+Triple-phase-lag (TPL) & 1997 & Tzou \cite{Tzou1997} & Three phase lags including thermal displacement gradient & Extended lag models for ultrafast processes & \cite{Tzou1997} \\
+Memory-dependent derivative (MDD) & 2011 & Wang \& Li \cite{Wang2011} & Integral-form memory operator $D_\omega f(t)=\frac{1}{\omega}\int_{t-\omega}^t k(t-\xi)f'(\xi)\,d\xi$ & Hereditary memory effects; kernel-function based & \cite{Wang2011} \\
+Nonlocal elasticity & 1972 & Eringen \cite{Eringen1972} & Integral constitutive relations $\sigma_{ij}=\int_\Omega A(|\mathbf{x}-\mathbf{x}'|)C_{ijkl}\varepsilon_{kl}(\mathbf{x}')\,d\mathbf{x}'$ & Size-dependent wave dispersion; length scale $(e_0a)^2$ & \cite{Eringen1972} \\
+Moore--Gibson--Thompson (MGT) & 2019 & Quintanilla \cite{Quintanilla2019} & Third-order heat equation $\tau\ddot{q}+\dot{q}=-(k/\rho c)\nabla(\dot{T}+\tau\ddot{T})$ & Thermal inertia; wave propagation with relaxation & \cite{Quintanilla2019} \\
 \bottomrule
+\multicolumn{6}{@{}l}{\textbf{Notes:} Primary sources verified via Crossref DOI. Full-text access status varies; see citation map for details.}\\
+\multicolumn{6}{@{}l}{\emph{Limiting relationships (e.g., LS $\to$ CD as $\tau_0\to0$) are parameter substitutions, not rigorous limit theorems.}}\\
 \end{tabularx}
 \end{table}

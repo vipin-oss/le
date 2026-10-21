@@ -1,27 +1,25 @@
 %======================================================================
-% Table T4: Wave types across media
+% Table T4 — Wave types and governing characteristics
+% Section: §3, §4
+% Evidence: Wave speeds from classical elasticity; model-specific modes from referenced theories
 %======================================================================
-\begin{table}[htbp]
+\begin{table}[h]
 \centering
 \small
-\caption{Wave types supported by different continuum media: longitudinal (P), transverse (S/SV), thermal (T), and coupled modes.}
-\label{tab:T4_wave_types}
+\caption{Wave types and their governing characteristics across theory families. Phase speeds are model-dependent; values shown are classical limits.}
+\label{tab:T4-waves}
 \begin{tabularx}{\textwidth}{@{}lXXXX@{}}
 \toprule
-\textbf{Medium} & \textbf{Wave types} & \textbf{Number of modes} & \textbf{Dispersion} & \textbf{Key characteristics} \\
+\textbf{Wave Type} & \textbf{Polarization} & \textbf{Governing Speed (Classical)} & \textbf{Model-Specific Interpretation} & \textbf{Evidence} \\
 \midrule
-Classical elastic & P, S & 2 & Non-dispersive & Compressional (dilatational) and shear waves; constant speeds \\
-Classical thermoelastic & P, S, thermal diffusion & 2 + diffusive & Non-dispersive (elastic); parabolic (thermal) & Thermal diffusion with infinite speed; coupled P--T modes \\
-Lord--Shulman & P, S, thermal wave & 3 & Weakly dispersive & Finite thermal wave speed; damped thermal mode \\
-Green--Lindsay & P, S, T & 3 & Weakly dispersive & Two-temperature coupling; finite speed without dissipation (symmetric bodies) \\
-GN type II & P, S, T & 3 & Dispersive & Dissipationless thermal waves; no attenuation \\
-GN type III & P, S, T & 3 & Dispersive & Mixed dissipative/conservative thermal behavior \\
-DPL & P, S, T & 3 & Dispersive & Two relaxation times; tunable attenuation \\
-TPL & P, S, T & 3 & Dispersive & Higher-order lags; ultra-fast thermal response \\
-Piezothermoelastic & qP, qS, qT, electromagnetic & 4+ & Strongly dispersive & Three-field coupling; mode conversion at interfaces \\
-Porous (single) & P1, P2, S & 3 & Dispersive & Biot slow wave (P2) due to fluid--solid relative motion \\
-Double porous & P1, P2, P3, S & 4 & Dispersive & Three longitudinal modes from double porosity \\
-Nonlocal elastic & P, S & 2 & Strongly dispersive & Size-dependent speed; $c(k) = c_0/\sqrt{1+\xi^2k^2}$ \\
+Longitudinal (P) & Parallel to propagation & $c_p=\sqrt{(\lambda+2\mu)/\rho}$ & Compressional; volume change; exists in all theories & \cite{Eringen1972} \\
+Transverse (S) & Perpendicular to propagation & $c_s=\sqrt{\mu/\rho}$ & Shear; distortional; no volume change & \cite{Eringen1972} \\
+Thermal & Parallel (dissipative) or propagating (generalized) & Classical: infinite (parabolic); LS: $c_T=\sqrt{k/(\rho c_v\tau_0)}$ & Diffusive in CD; wave-like in LS, GL, DPL, TPL, MGT & \cite{Lord1967} \\
+Coupled modes & Mixed polarization & Coupled system eigenfrequencies & P--T, S--T, or piezo--thermal coupling splits wave speeds & Model-specific \\
+Surface waves & Decaying with depth & Rayleigh: $c_R\approx0.87c_s$ (Poisson solid) & Exists at free surfaces; modified by thermal/electrical boundary conditions & Model-specific \\
+Evanescent modes & Exponential decay & Imaginary wave number $q=i\kappa$ & Near-field interface phenomena; important for scattering & Model-specific \\
 \bottomrule
+\multicolumn{5}{@{}l}{\textbf{Notes:} Classical speeds apply to isotropic elastic media. Generalized theories introduce dispersion and attenuation.}\\
+\multicolumn{5}{@{}l}{\emph{Thermal wave speed for LS theory from \cite{Lord1967}; classical speeds from \cite{Eringen1972}.}}\\
 \end{tabularx}
 \end{table}

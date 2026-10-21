@@ -1,22 +1,25 @@
 %======================================================================
-% Table T3: Coupled multiphysics continua
+% Table T3 — Coupled multiphysics continuum systems
+% Section: §5
+% Evidence: Constitutive relations from verified sources; model-specific entries marked
 %======================================================================
-\begin{table}[htbp]
+\begin{table}[h]
 \centering
 \small
-\caption{Coupled multiphysics continua: fields, coupling mechanisms, constitutive structure, and applications.}
-\label{tab:T3_coupled}
-\begin{tabularx}{\textwidth}{@{}lXXXXX@{}}
+\caption{Comparison of coupled multiphysics continuum systems. Coupling relationships drawn from verified constitutive equations; model-specific features identified by primary reference.}
+\label{tab:T3-multiphysics}
+\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
 \toprule
-\textbf{Medium} & \textbf{Coupled fields} & \textbf{Coupling mechanism} & \textbf{Constitutive structure} & \textbf{Representative applications} \\
+\textbf{System} & \textbf{Coupled Fields} & \textbf{Governing Equations} & \textbf{Constitutive Coupling} & \textbf{Primary Reference} \\
 \midrule
-Piezoelectric & Mechanical, electrical & Stress $\leftrightarrow$ electric polarization & $\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k$; $D_i = e_{ikl}\varepsilon_{kl} + \kappa_{ij}E_j$ & Sensors, actuators, energy harvesters, transducers \\
-Piezothermoelastic & Mechanical, thermal, electrical & Stress $\leftrightarrow$ temperature $\leftrightarrow$ polarization & Three-field coupling with thermal stress $-\beta_{ij}T$ and pyroelectric $p_iT$ & Smart structures, adaptive aerospace, vibration control \\
-Thermoelastic with voids & Mechanical, thermal, void fraction & Stress $\leftrightarrow$ temperature $\leftrightarrow$ void volume fraction & Equilibrated stress $\sigma_{ij}$; equilibrated body force $\xi_j$ & Porous rocks, soils, biological foams \\
-Double porous & Mechanical, thermal, two void fractions & Macro- and micro-porosity coupling & Two coupled void fraction fields $\phi_1, \phi_2$ & Hydrocarbon reservoirs, fissured rocks, aquifers \\
-Micropolar & Mechanical, micro-rotation & Force stress $\leftrightarrow$ couple stress & Asymmetric stress with couple stresses $\mu_{ij}$ & Granular materials, liquid crystals, composites \\
-Semiconductor & Mechanical, thermal, electrical, carrier density & Photo-thermo-elastic coupling; carrier diffusion & Coupled plasma wave and heat equations & Photoacoustic imaging, semiconductor devices \\
-Magneto-thermo-elastic & Mechanical, thermal, magnetic & Lorentz force $\leftrightarrow$ thermal stress & Magnetic body force + thermal coupling & MHD systems, liquid metals, geophysics \\
+Classical thermoelasticity & Mechanical + Thermal & Navier--Fourier system & Thermal stress $\beta T\delta_{ij}$; heat flux $q_i=-kT_{,i}$ & \cite{Biot1956} \\
+Piezothermoelasticity & Mechanical + Thermal + Electrical & Coupled piezo--thermal equations & Piezoelectric tensor $e_{kij}$; pyroelectric coefficient $p_i$ & \cite{Barak2023a} \\
+Thermo-poroelasticity & Mechanical + Thermal + Porosity & Nunziato--Cowin void theory & Void fraction $\phi$; thermal void coupling & \cite{Nunziato1979} \\
+Thermoelasticity with voids & Mechanical + Thermal + Voids & Iesan's extension of void theory & Void volume fraction; thermo-void coupling & \cite{Nunziato1979} \\
+Micropolar thermoelasticity & Mechanical + Thermal + Microrotation & Coupled linear momentum + angular momentum & Couple stress tensor; micro-inertia $j$ & \cite{Eringen1972} \\
+Semiconductor thermoelectric & Mechanical + Thermal + Carrier + Electrical & Carrier diffusion + heat equation & Carrier concentration $n$; electrical--thermal coupling & Model-specific \\
 \bottomrule
+\multicolumn{5}{@{}l}{\textbf{Notes:} Coupling coefficients are material-specific and must be determined experimentally for each material system.}\\
+\multicolumn{5}{@{}l}{\emph{Piezothermoelastic constitutive relations verified from RG-003 (\cite{Barak2023a}, open access).}}\\
 \end{tabularx}
 \end{table}
