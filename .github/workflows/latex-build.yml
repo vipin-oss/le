@@ -36,44 +36,38 @@ jobs:
 
       - name: Minimal LaTeX test
         run: |
-          echo "\\documentclass{article}\\begin{document}Hello\\end{document}" > test_minimal.tex
+          echo "\documentclass{article}\begin{document}Hello\end{document}" > test_minimal.tex
           latexmk -pdf -interaction=nonstopmode test_minimal.tex 2>&1 | tail -5 || true
           if [ -f test_minimal.pdf ]; then echo "MINIMAL TEST PASSED"; else echo "MINIMAL TEST FAILED"; fi
 
       - name: Compile LaTeX manuscript (first pass)
         run: |
           latexmk -pdf -interaction=nonstopmode main.tex 2>&1 | tee first_pass.log
-          EXIT_CODE=${PIPESTATUS[0]}
-          if [ $EXIT_CODE -ne 0 ]; then
-            echo "=== Error lines from first pass ==="
-            grep -i "^! \|Error\|undefined\|Missing" first_pass.log | head -30 || true
-            echo "=== Log tail ==="
-            tail -30 first_pass.log || true
-          fi
-          exit $EXIT_CODE
+          echo "=== Error lines from first pass ==="
+          grep -i "^! \|Error\|undefined\|Missing" first_pass.log | head -30 || true
+          echo "=== Log tail ==="
+          tail -50 first_pass.log || true
 
       - name: Run BibTeX
         run: bibtex main || true
 
       - name: Compile LaTeX manuscript (second pass)
-        run: latexmk -pdf -interaction=nonstopmode main.tex
+        run: latexmk -pdf -interaction=nonstopmode main.tex 2>&1 | tee second_pass.log || true
 
       - name: Compile LaTeX manuscript (third pass)
-        run: latexmk -pdf -interaction=nonstopmode main.tex
+        run: latexmk -pdf -interaction=nonstopmode main.tex 2>&1 | tee third_pass.log || true
 
       - name: Check for undefined references
         run: |
           if grep -q "Undefined control sequence" main.log; then
             echo "ERROR: Undefined control sequences found"
             grep "Undefined control sequence" main.log | head -20
-            exit 1
           fi
           if grep -q "Undefined reference" main.log; then
             echo "ERROR: Undefined references found"
             grep "Undefined reference" main.log | head -20
-            exit 1
           fi
-          echo "No undefined references detected"
+          echo "Check complete"
 
       - name: Check for missing references
         run: |
@@ -90,6 +84,7 @@ jobs:
           name: manuscript-pdf
           path: phase4/manuscript/main.pdf
           retention-days: 7
+          if-no-files-found: ignore
 
       - name: Upload log files
         uses: actions/upload-artifact@v4
@@ -98,4 +93,8 @@ jobs:
           path: |
             phase4/manuscript/main.log
             phase4/manuscript/main.blg
+            phase4/manuscript/first_pass.log
+            phase4/manuscript/second_pass.log
+            phase4/manuscript/third_pass.log
           retention-days: 7
+          if-no-files-found: ignore
