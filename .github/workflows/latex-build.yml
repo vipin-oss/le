@@ -25,16 +25,16 @@ jobs:
             texlive-fonts-extra texlive-bibtex-extra biber latexmk inkscape
 
       - name: Compile LaTeX manuscript (first pass)
-        run: latexmk -pdf -interaction=nonstopmode main.tex
+        run: latexmk -pdf -interaction=nonstopmode --shell-escape main.tex
 
       - name: Run BibTeX
         run: bibtex main || true
 
       - name: Compile LaTeX manuscript (second pass)
-        run: latexmk -pdf -interaction=nonstopmode main.tex
+        run: latexmk -pdf -interaction=nonstopmode --shell-escape main.tex
 
       - name: Compile LaTeX manuscript (third pass)
-        run: latexmk -pdf -interaction=nonstopmode main.tex
+        run: latexmk -pdf -interaction=nonstopmode --shell-escape main.tex
 
       - name: Check for undefined references
         run: |
