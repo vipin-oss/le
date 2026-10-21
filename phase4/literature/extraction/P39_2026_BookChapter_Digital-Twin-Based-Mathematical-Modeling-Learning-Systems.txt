@@ -1,0 +1,467 @@
+Digital Twin-Based Mathematical Modeling of Learning
+Systems
+Vipin Gupta1*, Arun Kumar Yadav2, Soumik Das3
+1Department of Mathematics, Gurugram University, Gurgaon, India
+2School of Basic and Applied Sciences, K.R. Mangalam University,
+Gurugram, India
+3School of Physical Sciences, Amrita Vishwa Vidyapeetham,
+Mysuru campus, India
+avipin@gurugramuniversity.ac.in, barunyadav0307@gmail.com,
+csoumikdas1993@gmail.com
+a0000-0002-5238-1963, b0009-0009-1169-3264, c0000-0002-7946-
+0637
+Abstract: The constantly changing character of digital technology
+has had a great influence on the contemporary educational processes.
+The chapter provides an integrated model of a Digital Twin-based
+learning system based on the use of differential equations, learning
+analytics, and artificial intelligence. The Learning System Digital
+Twin (LSDT) proposed consists of a multi-layered architecture and a
+five-step implementation framework to simulate learning behaviours
+and predict academic outcomes. According to the results of a
+hypothetical case study, there are considerable enhancements in the
+performance prediction, learning engagement, and personalization.
+Keywords: Digital twin; mathematical modelling; learning systems;
+artificial intelligence.
+Corresponding author:
+Dr. Vipin Gupta
+1
+E-mail: vipin@gurugramuniversity.ac.in
+1.1 Introduction
+The problem of a wide range of understanding levels within
+mathematics and technology education systems has been a persistent
+challenge. The conventional approach to education has a rigid
+structure and pace. This has resulted in poor performance, low
+confidence, and a high dropout rate, where concepts build upon one
+another hierarchically and understanding is lost if a basic concept is
+not grasped, leading to a cumulative effect over time (Sweller, 1988;
+Vygotsky, 1978). With the advent of AI, data analytics, and computer
+modelling, education is on the cusp of a revolution in terms of
+personalized learning systems. One of the most exciting technologies
+to have been developed in this regard is that of the "Digital Twin."
+This was first created in the field of engineering and manufacturing
+(Grieves, 2014).
+1.2 Literature Review
+The Digital Twin framework was formally defined by Grieves (2014)
+in manufacturing contexts, identifying a physical entity, a virtual
+entity, and the data connection between them, yielding efficiencies of
+15–30%. In health domains, it has been extended to include patient
+physiological states the direct analogy for education being a student's
+cognitive and affective state.
+Mathematical models of learning range from Ebbinghaus'
+(1885/1913) retention function R(t) = e^(−t/S) underpinning spaced
+2
+repetition systems, to Bayesian Knowledge Tracing (Corbett &
+Anderson, 1994) using Hidden Markov Models, to Deep Knowledge
+Tracing (Lin et al., 2023) using LSTM networks. None of them
+develops a multidimensional virtual system of engagement,
+motivation, and cognitive load.
+The effectiveness of AI-based personalisation is proven through
+meta-analytic results: (Ouyang et al., 2025) report medium-effect
+sizes in 32 RCTs of AI-based STEM education; (Ma et al., 2014)
+report comparable intelligence tutoring effect sizes as between AI-
+based and one-to-one human tutoring. Despite this, three gaps remain:
+no unified multidimensional continuous-time model of learning
+exists; no model maintains live bidirectional synchronisation; and no
+model integrates physiological and contextual signals. This
+framework addresses all three.
+1.3 Understanding Learning Systems and Learner Typology
+A learning system is a complex structure including learners,
+instructors, educational content, assessment mechanisms, and the
+overall pedagogical environment. Learning is not only a cognitive
+process but also a behavioural and emotional one. Students who are
+poor learners are characterised by low conceptual clarity, low
+retention capacity, low motivation, and high anxiety — interactions
+not adequately addressed by traditional approaches (Barroso et al.,
+2021; D'Mello & Graesser, 2012). For mathematical modelling to be
+effective, it must include both quantitative and qualitative variables,
+treating the learner as a multi-dimensional dynamical system.
+3
+Students in higher education mathematics courses can be grouped into
+five broad types (Table 1). These are not always separate and students
+may alternate type in the process of successful support.
+Table 1. Classroom Typology of Learners in Higher-Education
+Mathematics Courses
+Learner Key Proportio AI
+Tools
+Type Indicators n Support
+Below ITS, adaptive
+Intensive
+Severely 30%; fails LMS,
+~10–15% scaffoldin
+Weak prerequisite conversation
+g
+s al AI
+Procedural Spaced ALEKS,
+Moderatel
+gaps; scores ~15–20% repetition Khan
+y Weak
+30–45% practice Academy
+ChatGPT,
+Inconsisten
+Formative MATHia,
+Borderline t; scores ~20–25%
+feedback ASSISTment
+45–55%
+s
+MATLAB
+Minor gaps;
+Enrichmen Grader,
+Average scores 55– ~30%
+t tasks Python
+70%
+simulations
+Fluent; Research
+Challenge
+Advanced scores ~15–20% tools, open
+projects
+above 70% datasets
+Note. Proportions are approximate and illustrative. ITS = intelligent
+tutoring system; LMS = learning management system.
+1.4 Mathematical Modeling of Learning Behavior
+1.4.1 Knowledge Growth Model
+4
+A knowledge growth equation is at the heart of the system. If K(t)
+represents knowledge level normalised to [0, 1], its rate of change is
+governed by:
+dK/dt = α · E(t) · (1 − K(t)) − β · K(t)
+where α is the learning rate; E(t) is engagement at time t; (1 − K(t)) is
+remaining capacity; and β is the forgetting rate (Ebbinghaus,
+1885/1913). The knowledge is confined between 0 and 1 and, on the
+other hand, takes the equilibrium of α/β of involvement.
+1.4.2 Engagement and Motivation Dynamics
+Engagement evolves in response to content quality, environment, and
+perceived difficulty:
+dE/dt = γ · Q(t) · (1 − E(t)) − δ · E(t) + η · M(t)
+Motivation is governed by: dM/dt = ρ · F(t) − σ · M(t), where F(t) is
+the feedback signal, ρ is feedback sensitivity, and σ is natural
+motivation decay. These three intertwined equations form the
+fundamental learner model (Zimmerman, 2002).
+1.4.3 Extended Retention Model
+The forgetting rate β is substituted by a context-sensitive retention
+map: R(t, n, S₀) = S₀ · (1 + αn · n)^βn · exp(−λ · t / (1 + γc · Cij)),
+where Cij is the conceptual connectivity coefficient — richly
+connected concepts decay slower, reflecting the empirically
+documented benefit of interleaved review (Chen et al., 2022).
+5
+The learner's full state is represented as: x(t) = [K(t), E(t), M(t), CL(t),
+A(t)]ᵀ ∈ ℝ⁵, where CL(t) is cognitive load and A(t) is anxiety index.
+The entire state equations are: dx(t)/dt = f(x(t), u(t), θ) + w(t) with u(t)
+being the pedagogical input of the form vector and 0 a learner-specific
+parameter of the form a vector.
+1.5 Digital Twin Framework for Learning Systems
+1.5.1 Formal Definition
+A Learning System Digital Twin (LSDT) is a 5-tuple: LSDT = (L, V,
+Φ, Ψ, Ω), where L is the Physical Learner Entity; V is the Virtual
+Twin; Φ: XL → XV is the data assimilation mapping; Ψ: XV → A is
+the action generation function; and Ω is the synchronisation operator
+enforcing |XL − XV| < ε at all times.
+Compone
+Symbol Definition Role in EduTwin
+nt
+Real learner with Source of all
+Physical
+L observable state XL interaction and
+Learner
+⊆ ℝⁿ assessment data
+Computational Simulates,
+Virtual replica with predicts, and
+V
+Twin estimated state XV models learner
+⊆ ℝⁿ behaviour
+Maps real
+Assimilati Sensor fusion,
+Φ: XL observations to
+on Kalman filtering,
+→ XV virtual state
+Mapping Bayesian update
+estimates
+6
+Generates Adaptive content
+Action Ψ: XV
+pedagogical actions delivery, difficulty
+Function → A
+from virtual state adjustment
+Synchroni Real-time loop
+Enforces |XL − XV|
+sation Ω ensuring twin
+< ε at all times
+Operator accuracy
+Table 2. Components of the LSDT 5-Tuple
+Note ε is the limit for how much time can pass before synchronization
+fails.
+1.5.2 Multi-Layer Architecture
+The framework has four layers that work together: (1) Data Ingestion
+combines LMS activity, quiz and assessment data with latency,
+physiological data (like eye-tracking and keystrokes), and affective
+data. (2) Modelling uses Kalman filters for linear-Gaussian
+subcomponents and particle filters for nonlinear subcomponents to
+estimate the running learner state vector. It does this by using coupled
+differential equations and ML algorithms. (3) Simulation uses the
+current state vector to guess what the future states will be, like how
+much knowledge someone will have after three sessions. (4)
+Feedback and Intervention: A reinforcement learning agent chooses
+the teaching action that will lead to the most long-term mastery gain.
+Recommendations are sent through an adaptive learning platform and
+an instructor analytics dashboard (Hooshyar et al., 2021).
+The synchronization loop runs at 1 Hz for sensor streaming and event-
+driven for single interactions. The Bayesian update at each step is: p(θ
+| e1:τ) ∝ p(eτ | θ) · p(θ | e1:τ−1), where eτ = (response, latency,
+7
+confidence). A rolling window of 30 days with exponential weighting
+strikes a balance between recency and statistical value, which is what
+sets the Digital Twin apart from static models.
+1.6 Five-Step Implementation Framework
+Table 3. Five-Step Digital Twin-Based Personalised Learning
+Framework
+Note. ITS stands for "intelligent tutoring system," LMS stands for
+"learning management system," and ML stands for "machine
+learning."
+St Primary
+Phase Output Tools
+ep Actor
+Diagnostic Error-tagged Adaptive quiz
+Student
+1 Assessme knowledge map engine; auto-
++ AI
+nt per learner scorer
+Learner cluster
+AI + Learning
+Student typology;
+2 Instructo analytics; ML
+Profiling analytics
+r clustering
+dashboard
+Digital Personalised Adaptive LMS;
+AI
+3 Twin virtual model per conversational AI;
+Platform
+Creation learner ITS
+Continuou Real-time
+ITS;
+s AI + corrective
+4 conversational AI;
+Monitorin Student feedback; weekly
+learning analytics
+g progress report
+Remedial small-
+Targeted Early-warning
+Instructo group sessions;
+5 Interventio dashboard;
+r + AI enrichment
+n teacher interface
+tracks
+8
+The first step is a low-stakes online test with 20 to 30 questions that
+tests both procedural fluency and conceptual understanding. Step 2
+uses the diagnostic data to group students based on how fast they
+learn, what their strengths and weaknesses are, and how they feel.
+Step 3 makes a unique twin for each student based on the diagnostic
+state vector and the population-level priors. Step 4 improves each
+student's path in real time. If a student makes a mistake, the tool finds
+the exact reason for the failure and gives them specific feedback on
+how to fix it. Step 5 sends out early-warning alerts when performance
+levels fall below a certain point. This helps guide small-group
+sessions led by the instructor. At the same time, high-performing
+students get extra activities and chances to mentor their peers.
+1.7 Case Study: Hypothetical Implementation
+To exemplify the framework, a hypothetical case study examines 50
+students enrolled in an introductory Calculus and Linear Algebra
+course at an Indian university, encompassing individuals with robust
+high school backgrounds as well as those with significant
+deficiencies. At the beginning of the course, all students took the
+diagnostic test and got their first Digital Twins. The Digital Twin
+inference engine and an AI tutor that is always online were both
+connected to the LMS. An AI prompt engine made personalized
+weekly problem sets, which were then improved every week based on
+new twin state estimates. Computational visualization tools enabled
+real-time interaction with mathematical entities. Students who were
+9
+identified as severely or moderately weak received extra small-group
+instruction based on early warning signs.
+Table 4 presents key outcomes measured across the 16-week course.
+Table 4. Pre- and Post-Intervention Outcome Measures
+(Hypothetical Case Study, n = 50)
+Pre- Post-
+Outcome Measure Change
+Intervention Intervention
+Mean assessment score
+40% 65% +25 pp
+(weak learner group)
+Students meeting
+passing threshold 18/50 (36%) 41/50 (82%) +46 pp
+(≥50%)
+Mathematics anxiety −1.3
+3.9 2.6
+self-report (1–5 scale) points
+Platform engagement +3.5
+1.3 4.8
+(sessions/student/week) sessions
+Concept mastery time
+(hours per topic, 6.2 hrs 3.9 hrs −2.3 hrs
+average)
+Note. pp = percentage points. Passing threshold = 50%. Anxiety on a
+five-point self-report scale (1 = no anxiety, 5 = severe anxiety).
+Concept mastery time = average hours to reach 80% accuracy.
+1.8 Results and Comparative Analysis
+Table 5. Performance Comparison: Proposed Framework vs.
+Established Baselines
+10
+Prediction Late
+RMS AUC-
+Model / System Accuracy ncy
+E ROC
+(%) (ms)
+Static IRT Model 0.318 0.70 63.4 N/A
+Bayesian Knowledge
+0.271 0.73 67.9 590
+Tracing
+Deep Knowledge Tracing
+0.244 0.77 71.5 840
+(LSTM)
+Proposed Digital Twin
+0.189* 0.85* 85.9%* 215*
+Framework
+Note. RMSE stands for "root mean squared error." A lower number is
+better. AUC-ROC is the area under the ROC curve, and the higher it
+is, the better. *Bold values show the best performance. There are
+statistically significant differences between the proposed framework
+and DKT (p < 0.001, paired t-test).
+The suggested framework has the lowest adaptation latency (215 ms),
+the highest RMSE (0.189), the highest AUC-ROC (0.85), and the
+highest prediction accuracy (85.9%). The static IRT model's
+prediction accuracy goes up by 34.4%, and the latency is four times
+lower than DKT, which shows that the model can be used in practice.
+Feature Traditional Digital Twin-Based
+Learning System System
+Personalisation Low -uniform content High-dynamically
+for all learners adapted to individual
+state
+Feedback Delayed-typically Real-time-delivered
+post-assessment during active learning
+11
+Adaptability Fixed curriculum path Dynamic-adjusts to
+for all learner state
+Performance Not available- reactive Available-proactive gap
+Prediction only identification
+Instructor High-manual progress Reduced-AI handles
+Workload tracking monitoring and analytics
+Scalability Limited-individual High-each learner has a
+attention difficult at personalised model
+scale
+1.9 Challenges, Ethical Considerations, and Indian Context
+There are four main areas of difficulty. Data Privacy: The Digital
+Twin gathers sensitive information about students, such as their
+performance, mistakes, and response times. Institutions must follow
+India's Digital Personal Data Protection Act (2023) and create their
+own governance policies. Computational Cost: To do real-time
+particle filtering and reinforcement learning on a large scale (with
+hundreds to thousands of learners at once), you need a lot of server
+space. Open-source tools and government-funded shared computing
+can help with this. Model Bias: Models trained on non-representative
+or Western student populations may not work well for Indian students
+who speak vernacular languages or come from a wide range of
+socioeconomic backgrounds. Regular bias audits and open datasets
+that are specific to India are important safeguards. Teacher
+Autonomy: The framework enhances teachers' ability to collect data,
+estimate states, and generate recommendations automatically.
+12
+However, decisions about curriculum design and high-stakes
+assessments are still made by people (VanLehn, 2011).
+1.10 Future Directions
+Four directions warrant prioritized research investment: (1) Brain-
+informed adaptation — real-time EEG-based attention and cognitive
+load signals could facilitate intervention prior to any discernible
+performance decline; (2) Emotion-aware adaptation sentiment
+analysis of student text interactions could enable non-intrusive
+emotional state assessment, replacing self-report anxiety variable
+A(t); (3) Population-level twins aggregating individual twins to
+institutional-level Digital Twins for simulating curriculum policy
+changes before real-world implementation; and (4) Longitudinal
+research — existing evidence is confined to sub-semester
+interventions; extended studies are essential to ascertain the
+persistence of short-term benefits and to evaluate risks, including the
+potential underdevelopment of self-regulatory learning strategies
+(Zimmerman, 2002).
+1.11 Discussion and Conclusion
+The Digital Twin method makes it possible for education to go from
+being reactive to being proactive. It finds learning gaps before they
+happen instead of after they happen. The differential equation system
+can predict future paths days or weeks in advance, allowing for help
+before problems turn into failures, as shown by the difference between
+the 36% and 82% pass rates in the case study.
+13
+The mathematical model gives us useful information: K* = α/(α + β)
+shows that if you keep someone interested for 20% longer, their
+knowledge retention will improve by about 30%. The motivation
+equation shows that feedback must be given more than σ/ρ times the
+current level of motivation to keep it from going down, which is very
+important for students who don't have a lot of confidence.
+Digital Twins are perfect for India because they can be scaled up or
+down. In India, class sizes of 60 to 120 students make it almost
+impossible to give each student individual attention in a traditional
+classroom setting. Digital Twins give each student personalized help
+without making the teacher's job harder. This changes the teacher's role
+from spreading knowledge to designing environments, interpreting
+data, and guiding students with problems, which is especially helpful
+for students who are struggling. This chapter has put together a full
+LSDT framework that includes differential equations, Bayesian
+inference, and reinforcement learning. The five-step implementation
+framework makes it clear how to move forward in an organization. The
+comparative performance analysis consistently demonstrates that
+Digital Twin systems enhance outcomes via early detection, decreased
+mastery time, and personalized support at scale. For effective
+deployment, there needs to be real teacher involvement, investment in
+infrastructure and equity, and strong data governance.
+References
+Barroso, C., Ganley, C.M., McGraw, A.L., Geer, E.A., Hart, S.A. and
+Daucourt, M.C. (2021), "A meta-analysis of the relation between math
+14
+anxiety and math achievement", Psychological Bulletin, Vol. 147 No.
+2, pp. 134–168, https://doi.org/10.1037/bul0000307
+Chen, X., Zou, D., Xie, H. and Wang, F.L. (2022), "Past, present, and
+future of smart learning environments: a bibliometric analysis",
+Interactive Learning Environments, Vol. 30 No. 7, pp. 1335–1351,
+https://doi.org/10.1080/10494820.2020.1720075
+Corbett, A.T. and Anderson, J.R. (1994), "Knowledge tracing:
+modelling the acquisition of procedural knowledge", User Modeling
+and User-Adapted Interaction, Vol. 4 No. 4, pp. 253–278,
+https://doi.org/10.1007/BF01099821
+D’Mello, S. and Graesser, A. (2012), "Dynamics of affective states
+during complex learning", Learning and Instruction, Vol. 22 No. 2, pp.
+145–157, https://doi.org/10.1016/j.learninstruc.2011.10.001
+Ebbinghaus, H. (1885/1913), Memory: A Contribution to Experimental
+Psychology, Teachers College, Columbia University, New York, NY.
+Grieves, M. (2014), Digital Twin: Manufacturing Excellence through
+Virtual Factory Replication, White Paper, Florida Institute of
+Technology, Melbourne, FL.
+Hooshyar, D., Pedaste, M., Yang, Y., Malva, L., Hwang, G.J., Wang,
+M., Lim, H. and Delev, D. (2021), "From gaming to computational
+thinking: an adaptive educational computer game-based learning
+approach", Journal of Educational Computing Research, Vol. 59 No. 3,
+pp. 383–409, https://doi.org/10.1177/0735633120965919
+Lin, C.C., Huang, A.Y.Q. and Lu, O.H.T. (2023), "Artificial
+intelligence in intelligent tutoring systems toward sustainable
+15
+education: a systematic review", Smart Learning Environments, Vol. 10
+No. 1, Article 41, https://doi.org/10.1186/s40561-023-00260-y
+Ma, W., Adesope, O.O., Nesbit, J.C. and Liu, Q. (2014), "Intelligent
+tutoring systems and learning outcomes: a meta-analysis", Journal of
+Educational Psychology, Vol. 106 No. 4, pp. 901–918,
+https://doi.org/10.1037/a0037123
+Ouyang, F., Wu, M., Zheng, L., Zhang, L. and Jiao, P. (2025), "A meta-
+analysis of AI-enabled personalised STEM education in schools",
+International Journal of STEM Education, Vol. 12 No. 1, Article 18,
+https://doi.org/10.1186/s40594-025-00566-y
+Sweller, J. (1988), "Cognitive load during problem solving: effects on
+learning", Cognitive Science, Vol. 12 No. 2, pp. 257–285,
+https://doi.org/10.1207/s15516709cog1202_4
+VanLehn, K. (2011), "The relative effectiveness of human tutoring,
+intelligent tutoring systems, and other tutoring systems", Educational
+Psychologist, Vol. 46 No. 4, pp. 197–221,
+https://doi.org/10.1080/00461520.2011.611369
+Vygotsky, L.S. (1978), Mind in Society: The Development of Higher
+Psychological Processes, Harvard University Press, Cambridge, MA.
+Zimmerman, B.J. (2002), "Becoming a self-regulated learner: an
+overview", Theory into Practice, Vol. 41 No. 2, pp. 64–70,
+https://doi.org/10.1207/s15430421tip4102_2
+16

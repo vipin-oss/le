@@ -1,0 +1,1208 @@
+Journal of Thermal Stresses
+ISSN: (Print) (Online) Journal homepage: https://www.tandfonline.com/loi/uths20
+Energy transfer at the interface of monoclinic
+piezothermoelastic and thermoelastic half spaces
+with MDD
+M. S. Barak, Rajesh Kumar, Rajneesh Kumar & Vipin Gupta
+To cite this article: M. S. Barak, Rajesh Kumar, Rajneesh Kumar & Vipin Gupta (11 Oct 2023):
+Energy transfer at the interface of monoclinic piezothermoelastic and thermoelastic half
+spaces with MDD, Journal of Thermal Stresses, DOI: 10.1080/01495739.2023.2253879
+To link to this article: https://doi.org/10.1080/01495739.2023.2253879
+Published online: 11 Oct 2023.
+Submit your article to this journal
+View related articles
+View Crossmark data
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=uths20
+JOURNAL OF THERMAL STRESSES
+https://doi.org/10.1080/01495739.2023.2253879
+Energy transfer at the interface of monoclinic
+piezothermoelastic and thermoelastic half spaces with MDD
+M. S. Baraka, Rajesh Kumara, Rajneesh Kumarb, and Vipin Guptaa
+aDepartment of Mathematics, Indira Gandhi University, Rewari, India; bDepartment of Mathematics,
+Kurukshetra University, Kurukshetra, India
+ABSTRACT ARTICLE HISTORY
+This research article presents an analysis of the behavior of an initially Received 22 May 2023
+stressed monoclinic piezothermoelastic half-space based on memory- Accepted 3 August 2023
+dependent three-phase lags heat transfer law (MPS) underlying a thermo-
+elastic half-space (TS) with subject to the hyperbolic two-temperature KEYWORDS
+Energy ratios; kernel; MDD;
+(H2T), classical two-temperature (C2T), and without two-temperature (W2T)
+monoclinic piezothermoe-
+models. By applying the normal mode approach, calculate the amplitude
+lastic; three-phase lag
+ratios and further utilize them to obtain the waves’ energy ratios and inter-
+action energy. The effect of memory-dependent derivatives (MDD), initial
+stresses, various kernel functions, and two temperature factors on the vari-
+ation of energy ratios with incidence angle are graphically shown. The
+findings of this study have the potential to optimize material design,
+enhance seismic imaging techniques, improve thermal management in
+machinery, develop renewable energy systems, and facilitate materials
+characterization across diverse industries.
+1. Introduction
+The reflection problem in piezothermoelastic materials has practical applications in designing
+devices, advanced materials, and structures across various industries. An improved understanding
+of wave behavior and energy transfer at material interfaces can enhance smart composites’ and
+multilayered plates’ performance and durability.
+Actuation, dynamic sensing, intelligent structures, and mechanical systems have shown signifi-
+cant interest in piezoelectric materials. Curie brothers [1] first uncovered piezoelectricity. The
+ability of a crystal to generate a voltage when subjected to mechanical stress is known as piezo-
+electricity. The piezothermoelectricity theory was invented by Mindlin [2]. Nowacki [3] and
+Chandrasekharaiah [4] investigated the piezothermoelastic material’s adherence to the universe’s
+physical laws. Extensive effort was made in the subsequent century, particularly in the past few
+decades, to create piezoelectric materials and make their possible usage in commercial applica-
+tions a reality. Kumar and his team [5–9] conducted several vital investigations on the wave
+reflection phenomena in intelligent and composite structures.
+The Biot [10] classical coupled thermoelasticity (CCT) theory and the two-temperature ther-
+moelasticity (C2T) theory developed by Chen and his coworkers [11–13] are plagued by the para-
+dox of heat conduction. These theories predicted that the heat equations are of a mixed
+parabolic–hyperbolic type, which indicates infinite propagation speeds of heat waves even though
+these speeds are considered finite in the real world. Several researchers have tried modified CCT
+and C2T theories to construct a hyperbolic equation for heat conduction to avoid the paradoxical
+CONTACT Vipin Gupta vipin.math.rs@igu.ac.in Department of Mathematics, Indira Gandhi University, Rewari, India.
+� 2023 Taylor & Francis Group, LLC
+2 M. S. BARAK ET AL.
+unlimited speed of thermal waves. Lord and Shulman [14] generalized the CCT theory by adding
+a relaxation time to Fourier’s law of heat conduction and making the equation hyperbolic. Green
+and Naghdi (GN-I,-II,-III) [15–17] presented the three novel generalized thermoelastic models.
+GN I’s linearized form is the same as Fourier’s thermoelasticity. GN-II,-III linear types have a
+slow thermal signal transfer, and the entropy flow vector is a stress-affecting potential. Unlike
+GN-III, GN-II does not dissipate thermal energy.
+In 1995, Tzou [18] proposed modifying the CCT model by adding the two delay time parame-
+ters for temperature gradient and microstructural interaction and developed the dual-phase-lag
+(DPL) model. Tzou’s framework illustrates tiny electron–phonon interactions as retarding causes
+causing a macroscopic delay. Using the DPL model for the macroscopic formulation, it would be
+possible to analyze micro-structural heat transport behavior. Later, the three-phase lag (TPL)
+theory was developed by Roy Choudhuri [19] by extending the DPL theory to account for an
+additional delay time for the thermal displacement gradient. Recently, Youssef and Bary [20]
+overcame the conundrum of thermal wave propagation at infinite speed in C2T theory by invent-
+ing the novel hyperbolic two-temperature (H2T) model.
+Control engineering, electromagnetic, bio-physics, signal processing, astronomy, bio-engineering,
+quantum mechanics, and nuclear physics are the fields that have found applications for fractional
+calculus during the last several decades. Furthermore, unorthodox construction methods are essen-
+tial for the material’s ongoing development. The term Memory-dependent derivative (MDD) was
+coined by Wang and Li [21] and described how a fractional derivative of the Caputo type [22] is
+developed into an integral representation of the derivative using the kernel function under the con-
+dition of slipping intervals. With the kernel function Kðt(cid:0) fÞ, the first-order function f on a slid-
+ing interval ½ðt(cid:0) sÞ,t� and the delay time s>0, may be defined in integral form as follows
+ð
+1 t
+D fðtÞ¼ K ðt(cid:0) fÞf0ðfÞdf: (1.1)
+s s ða,bÞ
+t(cid:0) s
+Here, D is a nonlocal operator. In the most restrictive context, the MDD may be considered a
+s
+common derivative when s!0: We may choose an appropriate kernel function based on the
+problem’s nature
+8
+<1 if a¼b¼0
+2b a2
+K ðt(cid:0) fÞ¼1(cid:0) ðt(cid:0) fÞþ ðt(cid:0) fÞ2 ¼ 1(cid:0) ðt(cid:0) fÞ=s if a¼0,b¼1=2 (1.2)
+ða,bÞ s s2 :
+ð1(cid:0) ðt(cid:0) fÞ=sÞ2 if a¼b¼1
+This idea will more clearly illustrate the “memory effect” (change rate depends on prior state)
+than the fractional calculus. MDD may be easily described purely physically, and the memory-
+dependent differential equation can be seen as equating to greater verbal fluency. Therefore, it
+may be used in more situations than partial derivatives can, where the parameter of the fractional
+derivative is the most important.
+Initial stresses are essential in studying wave propagation, reflection, and transmission because
+they affect material mechanical responses. Initial stresses are relentless due to non-uniform mater-
+ial qualities, sluggish creeping, changes in thermal expansion coefficients, differential external
+forces, gravity fluctuations, material shrinkage, growth, etc., throughout the processing at various
+temperatures. Piezoelectric materials are pre-stressed during manufacture to avoid brittle fractures
+caused by inconsistent material characteristics. Several problems with the transmission and reflec-
+tion of plane waves have been explored by various researchers [23–27].
+Biswas [28] comprehensively examined Stroh’s analysis of the Rayleigh waves in an anisotropic
+medium. Moreover, Biswas and Abo-Dahab [29] scrutinized the influence of initial stresses on sur-
+face waves within orthotropic-thermoelastic mediums. Utilizing the TPL theory with MDD, Biswas
+[30] discussed a thermoelastic problem in an orthotropic medium. Furthermore, Biswas [31]
+JOURNAL OF THERMAL STRESSES 3
+explored the propagation of Rayleigh surface waves in a piezothermoelastic transversely isotropic
+layer positioned above a piezothermoelastic transversely isotropic half-space, focusing specifically on
+the Green–Naghdi III model. In a recent study, in their noteworthy research, Gupta et al. [32–36]
+have made a significant advancement in the field by examining wave phenomena at the interface of
+orthotropic piezothermoelastic materials. They utilized the 2PL and 3PL MDD models, which
+effectively capture the intricate material behavior, and incorporated various temperature theories to
+investigate the impact of hyperbolic temperature on the wave behavior of the interface.
+We conclude from the above literature work that much work has been done on transversely
+isotropic and orthotropic piezothemoelastic material. Still, few researchers study the wave phe-
+nomenon at monoclinic piezothemoelastic medium due to its complexity. In this research work,
+the distribution of energy ratios of transmitted and reflected waves at the interface of initially
+stressed monoclinic piezothermoelastic half-space and thermoelastic half-space have been studied
+under the H2T and TPL theory of MDD.
+2. Field equations
+The primary dynamical governing equations for anisotropic piezothermoelastic crystal with the
+effects of H2T, initial stress, MDD, and TPL, in the absence of heat sources, body forces, and
+electric forces following Roy Choudhuri [19] and Gupta et al. [37] are
+r ¼c e (cid:0) g E (cid:0) b T (2.1)
+ij ijrl rl ijr r ij
+D ¼e E þg e þsT (2.2)
+i ij j ijr jr i
+E i ¼(cid:0) u ,i (2.3)
+r ji,j þðu i,k r0 k,j Þ ,j ¼qu€ i (2.4)
+� �
+s2 � (cid:0) � �
+ð1þs v D s ÞK i � j u� ,ij þð1þs T D s ÞK ij u_� ,ij ¼ 1þs q D s þ 2 q D2 s qC E T € þT 0 b ij u€ i,j (cid:0) s i u€ ,i
+(2.5)
+T € ¼u€�(cid:0) a� jj u� ,jj (2.6)
+D i,i ¼0ði,j,r,l¼1,2,3Þ: (2.7)
+Following Nye [38], the explicit expressions for monoclinic piezothermoelastic material with
+x x plane as the plane of symmetry, based on the extended Stroh formalism, the constitutive
+2 3
+Eqs. (2.1) and (2.2) in standard contracted notation can be represented as:
+2 3 2 32 3 2 3
+r c c c c 0 0 g 0 0 e b
+11 11 12 13 14 11 11 11
+6r 7 6c c c c 0 0 g 0 0 76 e 7 6b 7
+6 227 6 12 22 23 24 12 76 22 7 6 227
+6 6 r 33 7 7 6 6c 13 c 23 c 33 c 34 0 0 g 13 0 0 7 7 6 6 e 33 7 7 6 6 b 33 7 7
+6 6 r 23 7 7 6 6c 14 c 24 c 34 c 44 0 0 g 14 0 0 7 7 6 62e 23 7 7 6 6 0 7 7
+6 6 r 13 7 7 ¼6 6 0 0 0 0 c 55 c 56 0 g 25 g 35 7 7 6 62e 31 7 7 (cid:0) 6 6 0 7 7T (2.8)
+6 6 r 12 7 7 6 6 0 0 0 0 c 56 c 66 0 g 26 g 36 7 7 6 62e 12 7 7 6 6 0 7 7
+6 6D 1 7 7 6 6 g 11 g 12 g 13 g 14 0 0 e 11 0 0 7 7 6 6 E 1 7 7 6 6 s 1 7 7
+4 D 5 4 0 0 0 0 g g 0 e e 54 E 5 4 s 5
+2 25 26 22 23 2 2
+D 0 0 0 0 g g 0 e e E s
+3 35 36 32 33 3 3
+The equation of motions and field relations of a TS medium without energy dissipation and
+heat sources are given by Green and Naghdi [17] as:
+ðkeþleÞrðr: ! u eÞþler2 ! u e(cid:0) berTe ¼qe @2 ! u e (2.9)
+@t2
+4 M. S. BARAK ET AL.
+K�r2Te ¼qeCe
+@2Te
+þbeTe
+@2
+ðr: ! u eÞ (2.10)
+e E @t2 0@t2
+(cid:0) �
+re ij ¼keu r,r d ij þle ue i,j þue j,i (cid:0) beTed ij ði,j,r ¼1,2,3Þ: (2.11)
+2.1. Limiting cases
+Case 1: The Biot [10] model is consistent with the heat equation (2.5) if K� ¼0, s ¼s ¼0
+ij q T
+and T ¼u�:
+Case 2: The Lord and Shulman [14] model is consistent with the heat equation (2.5) if K� ¼0,
+ij
+T ¼u�, s >0, s2 ¼s ¼0, jðt(cid:0) fÞ¼1, and D ! @ :
+q q T s @t
+Case 3: The Green and Naghdi [17] type-II model is consistent with the heat equation (2.5) if
+K ¼0, T ¼u�, s ¼s ¼s ¼0, jðt(cid:0) fÞ¼1, and D ! @
+ij q T v s @t
+Case 4: The Green and Naghdi [15] type-III model is consistent with the heat equation (2.5) if
+s ¼s ¼s ¼0, T ¼u�, jðt(cid:0) fÞ¼1, and D ! @ :
+q T v s @t
+Case 5: The Tzou [18] model is consistent with the heat equation (2.5) if K� ¼0, T ¼u�, jðt(cid:0)
+ij
+fÞ¼1, and D ! @ :
+s @t
+Case 6: The Ezzat et al. [39] model is consistent with the heat equation (2.5) if K� ¼0, T ¼u�:
+ij
+Case 7: The Youssef [40] model is consistent with the heat equations (2.5) and (2.6)
+if K� ¼0, s2 ¼s ¼0, T € ¼T, u€� ¼u�, jðt(cid:0) fÞ¼1 and D ! @ :
+ij q T s @t
+A superscript indicates the parameters of a thermoelastic material €e€: A superimposed dot
+shows the time derivative and the subscript followed by a comma indicates the spatial derivatives.
+3. Problem formulation
+We consider a monoclinic piezothermoelastic solid under the influence of normal initial stresses
+ðr0 ,r0 Þ, hyperbolic two-temperature, and memory dependent three phase lag heat theory
+11 33
+(MPS) (x >0) underneath a thermoelastic solid (TS) (x <0), as shown in Figure 1. In this par-
+3 3
+ticular examination, we are only concerned with two-dimensional space and pyroelectric charge
+in x direction. The plane wave incident in the x x (cid:0) plane, all the field variables depend on
+1 1 3
+x , x and t only. The displacement vectors ! u ¼ðu ,0,u Þ for the MPS medium and ! u e ¼
+1 3 1 3
+ðue,0,ueÞ the TS medium are considered.
+1 3
+Figure 1. Reflection and transmission of plane waves at TS/MPS.
+JOURNAL OF THERMAL STRESSES 5
+Using Eq. (2.8) in Eqs. (2.3)–(2.7), the field equations for MPS medium becomes
+(cid:0) � (cid:0) �
+c 11 þr0 11 u 1,11 þ c 55 þr0 33 u 1,33 þðc 55 þc 13 Þu 3,13 þg 11 u ,11 þg 35 u ,33 (cid:0) b 1 T,1 ¼qu€ 1 (3.1)
+(cid:0) � (cid:0) �
+ðc 55 þc 13 Þu 1,13 þ c 55 þr0 11 u 3,11 þ c 33 þr0 33 u 3,33 þðg 13 þg 35 Þu ,13 (cid:0) b 3 T,3 ¼qu€ 3 (3.2)
+ð1 � þs v D s ÞðK 1 �u , � 11 þ � K 3 �u , � 33 Þþð1þs T D s ÞðK 1 u_ , � 11 þK 3 u_ , � 33 Þ¼
+s2 (cid:0) � (3.3)
+1þs q D s þ 2 q D2 s qC E T € þT 0 ðb 1 u€ 1,1 þb 3 u€ 3,3 (cid:0) s 1 u€ ,1 Þ
+g 11 u 1,11 þg 35 u 1,33 þðg 13 þg 35 Þu 3,13 (cid:0) e 11 u ,11 (cid:0) e 33 u ,33 þs 1 T,1 ¼0 (3.4)
+T € ¼u€�(cid:0) a� 1 u� ,11 (cid:0) a� 3 u� ,33 (3.5)
+where K ¼Kd , K ¼K�d , b ¼bd , a� ¼a�d and i is not summed.
+ij i ij ij i ij ij i ij ij i ij
+The following non-dimensional quantities are considered
+x (cid:0) � x (cid:0) � � � 1 (cid:0) �
+ðx 0,x 0Þ¼ 1 ðx ,x Þ, u 0,u 0,ue0,ue0 ¼ 1 u ,u ,ue,ue ,t0 ¼x t, r 0,re0 ¼ r ,re ,
+1 3 c 1 3 1 3 1 3 c 1 3 1 3 1 ij ij b T ij ij
+1 (cid:0) � 1 x g (cid:0) � b 1 0
+s
+T
+0,s
+q
+0,s
+v
+0 ¼x 1ðs
+T
+,s
+q
+,s vÞ,u0 ¼
+c b
+1 3
+T
+1 u, T0,u�0 ¼
+qc
+1
+2
+ðT,u�Þ,
+1 11 0 1
+rffiffiffiffiffiffi
+1 c c qC c2
+ða�0,a�0Þ¼ ða�,a�Þ,D 0 ¼ 11 D where c ¼ 11 ,x ¼ E 1: (3.6)
+1 3 c2 1 3 3 g b T 3 1 q 1 K
+1 33 1 0 1
+Using these non-dimensional formulas in the set of Eqs. (3.1)–(3.5) and (2.9)–(2.10), after
+removal of the primes ð0Þ can be written as
+! !
+@2 @2 @2 @2u @2 @2 @T
+þs (cid:0) s u þs 3 þ s þs /(cid:0) s ¼0 (3.7)
+@x2 11@x2 12@t2 1 13@x @x 14@x2 15@x2 12@x
+1 3 1 3 1 3 1
+!
+@2u @2 @2 @2 @2/ @T
+1 þ s þs (cid:0) s u þs (cid:0) s ¼0 (3.8)
+@x @x 21@x2 22@x2 23@t2 3 24@x @x 25@x
+1 3 1 3 1 3 3
+! !
+ð1þs D Þ s
+@2
+þs
+@2
+/�þð1þs D Þ s
+@2
+þs
+@2
+/_�
+v s 31@x2 32@x2 T s 33@x2 34@x2
+�
+1
+�
+3 1 !3
+(3.9)
+s2 @u€ @u€ @/€
+¼ 1þs D þ q D2 1þs 3þs T € (cid:0) s
+q s 2 s @x 35@x 36 37@x
+1 3 1
+! !
+@2 @2 @2u @2 @2 @T
+þs u þs 3 (cid:0) s þs /þs ¼0 (3.10)
+@x2 41@x2 1 42@x @x 43@x2 44@x2 45@x
+1 3 1 3 1 3 1
+@2T @2/� @2/� @2/�
+(cid:0) þa� þa� ¼0 (3.11)
+@t2 @t2 1 @x2 3 @x2
+1 3
+! ! ! !
+ae2(cid:0) ae2 @2ue @2ue ae2 @2ue @2ue @Te @2ue
+1 2 1þ 3 þ 2 1þ 1 (cid:0) c ¼ 1 (3.12)
+c2 @x2 @x @x c2 @x2 @x2 @x @t2
+1 1 3 1 1 1 3 1
+! ! ! !
+ae2(cid:0) ae2 @2ue @2ue ae2 @2ue @2ue @Te @2ue
+1 2 1 þ 3 þ 2 3þ 3 (cid:0) c ¼ 3 (3.13)
+c2 @x @x @x2 c2 @x2 @x2 @x @t2
+1 3 1 3 1 1 3 3
+6 M. S. BARAK ET AL.
+� � � �
+@ @ @ @ @2Te
+þ u€e(cid:0) s þ Teþs ¼0 (3.14)
+@x @x 51 @x2 @x2 52 @t2
+1 3 1 3
+where
+s ¼ c55 þr0 33 , s ¼ c11 , s ¼ c13 þc55 , s ¼ g 11 b 1 T0 , s ¼ g 35 b 1 T0 , s ¼c55 þr0 11,
+11 c11 þþr0
+11
+12 c11 þr0
+11
+13 c11 þþr0
+11
+14 g
+31
+ðc11 þr0
+11
+Þ 15 g
+31
+ðc11 þr0
+11
+Þ 21 c55 þc13
+s ¼c33 þr0 33, s ¼ c11 , s ¼ðg 13 þg 35 Þb 1 T0, s ¼ c11 b 3 , s ¼ K 1 �q s ¼ K 3 �q , s ¼K1 x 1 q,
+22 c55 þc13 23 c55 þc13 24 g 31 ðc55 þc13 Þ 25 b 1 ðc55 þc13 Þ 31 T0 b2 1 32 T0 b2 1 33 T0 b2 1
+s ¼K3 x 1 q, s ¼b 3, s ¼c11 qCE, s ¼s 1T0 s ¼g 35, s ¼g 13 þg 35, s ¼e 11 b 1 T0, s ¼e 33 b 1 T0,
+34 T0 b2 1 35 b 1 36 T0 b2 1 37 g 31 41 q g 1ffi1ffiffiffiffiffiffiffiffi 4 ffiffi 2 g q11 ffiffiffiffi 43 g 11 g 31 44 g 11 g 31
+s ¼ s 1c11, s ¼ K e �q , s ¼qeqC E ec2 1,c¼ qbe ,ae ¼ keþ2le,ae ¼ le
+45 g b 51 bbeTe 52 bbeTe qeb 1 qe 2 qe
+11 1 1 0 1 0 1
+4. Solution of the problem
+For the plane harmonic waves, the wave solution of the MPS medium can be taken as
+� � ��
+x
+ðu ,u ,/,/�,TÞðx ,x ,tÞ¼ðG,M,N,O,UÞexp ix (cid:0) 1(cid:0) qx þt (4.1)
+1 3 1 3 3
+c
+where c refers to the apparent phase velocity, G,M,N,O,U denotes the unknown amplitude vec-
+tors, and q stands for the unknown slowness parameter.
+The system of Eqs. (3.7)–(3.11) with Eq. (4.1) produce a homogenous system as
+XR¼0 (4.2)
+2 3 2 3
+l þl q2 l q l þl q2 l þl q2 G
+11 12 13 14 15 16 17
+where X¼ 6 6 4 l l 21 q l 22 þ l l q 23 q2 (cid:0) l 24 l q l l 25 q þ þ l l 26 q q 2 3 7 7 5,R¼ 6 6 4 M N 7 7 5 (4.3)
+31 32 33 34 35
+l þl q2 l q (cid:0) l (cid:0) l q2 (cid:0) l (cid:0) l q2 O
+41 42 43 44 45 46 47
+� �
+c c3 s c3 s c2 s c s c3 c2
+l ¼ (cid:0) s ,l ¼ 11 ,l ¼ 13 ,l ¼ 14 ,l ¼ 15 ,l ¼i s� (cid:0) s
+11 x 12x 12 x 13 x 14 x 15 x 16 11 x2 12
+� �
+c s s c2 s c2 s c c2
+l ¼is� c2s ,l ¼ ,l ¼ 21(cid:0) 23 ,l ¼ 22 ,l ¼ 24 ,l ¼is s� (cid:0) ,
+17 33 12 21 x 22 x x 23 x 24 x 25 25 11 x2
+� �
+s c2 s c iA s A s c2
+l ¼is� c2s ,l ¼l ,l ¼ 35 ,l ¼ 37 ,l ¼(cid:0) 1 31þ 2 33(cid:0) s i s� (cid:0) ,
+26 33 25 31 21 32 x2 33 x 34 x2 x 36 11 x
+� �
+A s iA s 1 s c2 s c s s c2
+l ¼ 2 34(cid:0) 1 32(cid:0) is� s c2,l ¼ ,l ¼ 41 ,l ¼ 42 ,l ¼ 43 ,l ¼ 44
+35 x x2 33 36 41 x 42 x 43 x 44 x 45 x
+� �
+is c2 1þs Cðs,bÞ 1þs Cðs,bÞ
+l ¼ 45 s� (cid:0) ,A ¼ v ,A ¼ T ,
+46 c 11 x2 1 1þs Cðs,bÞþs2bCðs,bÞ=2 2 1þs Cðs,bÞþs2bCðs,bÞ=2
+q q q q
+l ¼is� cs ,b¼ix,
+47 33 45
+(cid:0) (cid:0) � (cid:0) � �
+(cid:0) b2s2 a2(cid:0) 2bþ1 þ2bs a2(cid:0) b þ2a2 expð(cid:0) bsÞþb2s2(cid:0) 2bbsþ2a2
+Cðs,bÞ¼ :
+b2s3
+For a nontrivial solution, the determinant of the matrix X must be null; this results in a char-
+acteristic equation that reads as follows:
+V q8þV q6þV q4þV q2þV ¼0: (4.4)
+11 12 13 14 15
+JOURNAL OF THERMAL STRESSES 7
+The coefficients of this equation are provided in Appendix. The roots of this equation are taken
+in magnitude-wise decreasing order when solved using MATLAB software. For convenience, they
+are labeled as follows: the first four roots qði¼1(cid:0) 4Þ of this equation with imaginary parts are
+i
+positive, and the last four qði¼5(cid:0) 8Þ represent negative imaginary parts. The eigenvalues qði¼
+i i
+1(cid:0) 3Þ correspond to the quasi PðqPÞ, quasi TðqTÞ, and quasi SðqSÞ propagating modes and q
+4
+correspond to the component of the electric potential ðePÞ mode of wave propagation, respectively.
+The eigenvectors G,M,N, and O corresponding to each qði¼1(cid:0) 8Þ can be written as
+i i i i i
+cfðX Þ cfðX Þ cfðX Þ
+W ¼ 42 qi,U ¼ 43 qi,H ¼ 44 qi (4.5)
+i cfðX Þ i cfðX Þ i cfðX Þ
+41 qi 41 qi 41 qi
+where
+M N O
+W ¼ i ,U ¼ i ,H ¼ i (4.6)
+i i i
+G G G
+i i i
+and for the eigenvalue q, cfðX Þ denote the cofactor of X : Depending on the frequency of the
+i ij qi ij
+plane waves, the corresponding amplitudes ðG,M,N, and OÞ drop as the waves propagate
+i i i i
+through the MPS medium.
+Now, applying the Helmholtz decomposition technique using the potential function /e and we
+for TS medium as
+@/e @we @/e @we
+ue ¼ (cid:0) ,ue ¼ þ (4.7)
+1 @x @x 3 @x @x
+1 3 3 1
+By plugging Eq. (4.7) into Eqs. (3.12), (3.13), and (3.14), we get
+a�2r2/e(cid:0) /€e ¼cTe (4.8)
+1
+a�2r2we(cid:0) w€e ¼0 (4.9)
+2
+a2r2Te(cid:0) T €e (cid:0) a2r2/€e ¼0 (4.10)
+1 2
+where a� ¼ae 1, a� ¼ae 2, a2 ¼ K e � , a2 ¼ b 1 beT 0 e :
+1 c1 2 c1 1 qeCec2
+1
+2 qqeC
+E
+ec2
+1
+For a harmonic plane wave traveling in a TS medium and making an angle h with the x (cid:0)
+0 3
+axis, we may use the expression:
+ð/e,Te,weÞ¼ðA /e,A
+Te
+,A weÞexp½ikð(cid:0) x
+1
+sinh
+0
+(cid:0) x
+3
+cosh
+0
+Þþixt� (4.11)
+where A /e, A Te and A we are the unknown wave amplitudes constants, kð¼x=cÞ is the complex
+wavenumber.
+After plugging Eq. (4.11) into Eqs. (4.8)–(4.10), we obtain the following result:
+pffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi pffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+L þ L2(cid:0) 4L L (cid:0) L2(cid:0) 4L
+q2 ¼ 1 1 2 , q2 ¼ 1 1 2 ,q2 ¼a�2 (4.12)
+e1 2 e21 2 e3 2
+where L ¼a�2þa2þa2c, L ¼a2a�2
+1 1 1 2 2 1 1
+Here q2, q2 corresponding to the coupled elastic P-wave and thermal T-wave, respectively,
+e1 e2
+and corresponds to a transversal SV-wave.
+5. Reflection and refraction coefficients
+Assuming that a plane wave (P, SV, or T) strikes at the interface of TS/MPS through the thermo-
+elastic medium to create an angle h with the negative direction of the x (cid:0) axis, that consequence,
+0 3
+8 M. S. BARAK ET AL.
+three waves (P, SV, T) are reflected in the TS medium, and four waves (qP, qS, qT, eP) are trans-
+mitted in the MPS medium.
+Equation (4.5) allows us to rewrite the formal solution (4.1) of mechanical displacements, elec-
+tric potential, and conductive temperature as
+� � ��
+X4
+x
+ðu ,u ,/,/�Þ¼ ð1,W,U,HÞG exp ix (cid:0) 1(cid:0) qx þt (5.1)
+1 3 i i i i i 3
+c
+i¼1
+The stresses and electric displacement components of the MPS medium, using Eqs. (2.8), (3.6),
+and (5.1), can be expressed as
+� � ��
+X4
+x
+ðr ,r ,D Þ¼ix ðD ,D ,D ÞG exp ix (cid:0) 1(cid:0) qx þt (5.2)
+33 31 3 1i 2i 7i i 3
+c
+i¼1
+where
+c c Wq g b c c W c q g Uq
+D ¼(cid:0) 13 (cid:0) 33 i i(cid:0) 13 U þ 3 11 pH,D ¼(cid:0) 55 i(cid:0) 55 i (cid:0) 35 i i
+1i b 1 T 0 c b 1 T 0 g 31 c i b2 1 T 0 ix i i 2i b 1 T 0 c b 1 T 0 g 31
+� �
+g c W e c s�
+D ¼(cid:0) 35 11 q þ i þ 33 11 qU,p ¼x2 11þs� x2q2(cid:0) 1,i¼1,2,3,4 (5.3)
+7i g b T i c g g i i i c2 33 i
+33 1 0 31 33
+5.1. Boundary conditions
+The following boundary conditions at the interface x ¼0 are introduced to solve this problem
+3
+� �
+@ @/�
+r ¼re ,r ¼re ,u ¼ue,u ¼ue,/� ¼Te, K�ð1þs D ÞþK ð1þs D Þ
+33 33 31 31 1 1 3 3 3 v s 3 T s @t @x
+3
+@Te
+¼K� ,D ¼0 (5.4)
+e @x 3
+3
+In a TS medium, complete wave field structures (including incident and reflected waves) sat-
+isfy the boundary criteria as
+� � � �
+/e ¼Ae
+0
+ex�p ik
+1
+ð(cid:0) x
+1
+sinh
+0
+(cid:0) x
+3
+cosh
+0
+Þþix �t þAe
+1
+ex�p ik
+1
+ð(cid:0) x
+1
+sinh
+1
+þx
+3
+cosh
+1
+Þþix �t
+þBeexp ik ð(cid:0) x sinh (cid:0) x cosh Þþixt þBeexp ik ð(cid:0) x sinh þx cosh Þþixt
+0 2 1 0 3 0 1 2 1 2 3 2
+(5.5)
+� � � �
+Te ¼f
+1
+Ae
+0
+ex�p ik
+1
+ð(cid:0) x
+1
+sinh
+0
+(cid:0) x
+3
+cosh
+0
+Þþix �t þf
+1
+Ae
+1
+ex�p ik
+1
+ð(cid:0) x
+1
+sinh
+1
+þx
+3
+cosh
+1
+Þþix �t
+þf Beexp ik ð(cid:0) x sinh (cid:0) x cosh Þþixt þf Beexp ik ð(cid:0) x sinh þx cosh Þþixt
+2 0 2 1 0 3 0 2 1 2 1 2 3 2
+5.6
+� � � �
+we ¼Deexp ik ð(cid:0) x sinh (cid:0) x cosh Þþixt þDeexp ik ð(cid:0) x sinh þx cosh Þþixt
+0 3 1 0 3 0 1 3 1 3 3 3
+(5.7)
+where f ¼ x2 ðq2 (cid:0) a�2Þ, j¼1,2 and Ae, Be, De (Ae, Be, De) represent the incident (reflected)
+j q2
+ej
+c ej 1 0 0 0 1 1 1
+amplitude coefficients of the P-, T-, and SV- waves, respectively, and for incidence
+P-wave: Be,De ¼0,T-wave: Ae,De ¼0, and SV-wave: Ae,Be ¼0,
+0 0 0 0 0 0
+sinh sinh sinh sinh
+Snell’s law: 0 ¼ 1 ¼ 2 ¼ 3 (5.8)
+V q q q
+0 e1 e2 e3
+JOURNAL OF THERMAL STRESSES 9
+where
+8
+<q for incident P(cid:0) wave
+V ¼ q
+e1
+for incident T(cid:0) wave; and c¼
+V
+0 (5.9)
+0 : e2 sinh
+q for incident SV(cid:0) wave 0
+e3
+Using Eqs. (5.1)–(5.9), we get
+DX ¼S (5.9)
+where
+2 3 2 3 2 3
+D D D D D D D X S
+11 12 13 14 15 16 17 1 1
+6 6 D 21 D 22 D 23 D 24 D 25 D 26 D 27 7 7 6 6X 2 7 7 6 6S 2 7 7
+6 6 D 31 D 32 D 33 D 34 D 35 D 36 D 37 7 7 6 6X 3 7 7 6 6S 3 7 7
+D¼6 6 D 41 D 42 D 43 D 44 D 45 D 46 D 47 7 7,X ¼6 6X 4 7 7,S¼6 6S 4 7 7 :
+6 6 D 51 D 52 D 53 D 54 D 55 D 56 0 7 7 6 6X 5 7 7 6 6S 5 7 7
+4D D D D D D 0 5 4 X 5 4 S 5
+61 62 63 64 65 66 6 6
+D D D D 0 0 0 X 0
+71 72 73 74 7
+� �qc x
+D ¼1,D ¼W,D ¼H,D ¼(cid:0) K�ð1þs Cðs,bÞÞþK ð1þs Cðs,bÞÞixx 1 1Hq,
+3i 4i i 5i i 6i 3 v 3 T 1 b i i
+1
+i¼1,2,3,4
+(cid:0) � (cid:0) �
+k2qe ae2(cid:0) 2ae2sin2h þC f k2qe ae2(cid:0) 2ae2sin2h þC f c be
+D ¼ 1 1 2 1 T 1 ,D ¼ 2 1 2 2 T 2 ,C ¼ 11
+15 ixb T 16 ixb T T b
+1 0 1 0 1
+k2qeae2sin2h k2sin2h ae2qe k2sin2h ae2qe
+D ¼(cid:0) 3 1 3 ,D ¼(cid:0) 1 1 1 ,D ¼(cid:0) 2 2 2 ,
+17 ixb T 25 ixb T 26 ixb T
+1 0 1 0 1 0
+k2cos2h ae2qe
+D ¼(cid:0) 3 3 2 ,D ¼ik sinh ,D ¼ik sinh ,D ¼ik cosh ,D ¼(cid:0) ik cosh ,
+27 ixb T 35 1 1 36 2 2 37 3 3 45 1 1
+1 0
+(cid:0) f k qc x cosh K�
+D ¼(cid:0) ik cosh ,D ¼ik sinh ,D ¼(cid:0) f ,D ¼(cid:0) f ,D ¼ 1 1 1 1 1 e ,
+46 2 2 47 3 3 55 1 56 2 65 xb
+1
+(cid:0) f k qc x cosh K� G Ae Be De
+D ¼ 2 2 1 1 2 e ,X ¼ iði¼1,2,3,4Þ,X ¼ 1,X ¼ 1,X ¼ 1
+66 xb i A� 5 A� 6 A� 7 A�
+1
+� For incidence P wave: A� ¼Ae, S ¼(cid:0) D , S ¼D , S ¼(cid:0) D , S ¼D ,
+0 1 15 2 25 3 35 4 45
+S ¼(cid:0) D , S ¼D :
+5 55 6 65
+� For incidence T wave: A� ¼Be, S ¼(cid:0) D , S ¼D , S ¼(cid:0) D , S ¼D ,
+0 1 16 2 26 3 36 4 46
+S ¼(cid:0) D , S ¼D :
+5 56 6 66
+� For incidence SV wave: A� ¼De, S ¼D , S ¼(cid:0) D , S ¼D , S ¼(cid:0) D ,
+0 1 17 2 27 3 37 4 47
+S ¼0, S ¼0:
+5 6
+6. Energy ratios
+The incident wave energy is supposed to be conserved by the transmitted and reflected wave’s
+energy. The distribution of energy among different reflected waves in the TS medium and trans-
+mitted waves in the MPS medium is analyzed to justify this phenomenon at the unit surface area
+element interface. The normal acoustic flux has been represented by Kumar and Sharma [9] and
+Guha and Singh [41], asfor the MPS medium:
+10 M. S. BARAK ET AL.
+� �
+T
+P¼(cid:0) Re r 13 u_ 1 þr 33 u_ 3 þr0 33 ðu 1,3 u_ 1 þu 3,3 u_ 3 Þ(cid:0) /D _ 3 þK 33 T � ,3 T , (6.1)
+0
+for the TS medium:
+� �
+Pe ¼(cid:0) Re re u_e þre u_e , (6.2)
+31 1 33 3
+average incident wave energy fluxes:
+1(cid:0) � � �
+hPe i¼ ae2qek2þC f k xReðcosh Þ� Ae�2 , (6.3)
+IP 2 1 1 T 1 1 0 0
+1(cid:0) � � �
+hPe i¼ ae2qek2þC f k xReðcosh Þ� Be�2 , (6.4)
+IT 2 1 2 T 2 2 0 0
+1 � �
+hPe i¼ ae2qek3xReðcosh Þ� De�2 , (6.5)
+IS 2 2 3 0 0
+average reflected wave energy fluxes:
+1(cid:0) � � �
+hPe i¼(cid:0) ae2qek2þC f k xReðcosh Þ� Ae�2 , (6.6)
+RP 2 1 1 T 1 1 1 1
+1(cid:0) � � �
+hPe i¼(cid:0) ae2qek2þC f k xReðcosh Þ� Be�2 , (6.7)
+RT 2 1 2 T 2 2 2 1
+1 � �
+hPe i¼(cid:0) ae2qek3xReðcosh Þ� De�2 , (6.8)
+RS 2 2 3 3 1
+the transmitted waves:
+� �
+1 i K
+hPi¼ x2Re D þD W � (cid:0) r0 qð1þD W � ÞþD� U þ 33D� jpj2H jGj2,ðs¼1,2,3,4Þ:
+s 2 2s 1s s 33 s 4s s 7s s x T 5s s s s
+0
+(6.9)
+Reflected and transmitted wave energy ratios are:
+(i) For incident P wave
+hPe i hPe i hPe i hPi
+E ¼ RP ,E ¼ RT ,E ¼ RS ,ES ¼ s ,ðs¼1,2,3,4Þ: (6.10)
+RP hPe i RT hPe i RS hPe i s hPe i
+IP IP IP IP
+(ii) For incident T wave
+hPe i hPe i hPe i hPi
+E ¼ RP ,E ¼ RT ,E ¼ RS ,ES ¼ s ,ðs¼1,2,3,4Þ: (6.11)
+RP hPe i RT hPe i RS hPe i s hPe i
+IT IT IT IT
+(iii) For incident SV wave
+hPe i hPe i hPe i hPi
+E ¼ RP ,E ¼ RT ,E ¼ RS ,ES ¼ s ,ðs¼1,2,3,4Þ: (6.12)
+RP hPe i RT hPe i RS hPe i s hPe i
+IS IS IS IS
+The interaction energy ratios, which describe the interaction of several fields and displace-
+ments and correlate to refracted waves, are as follows:
+E ¼ hPst i for incident P wave, E ¼ hPst i for incident T wave, and E ¼ hPst i for incident SV
+st hPei st hPe i st hPei
+wave IP IT IS
+JOURNAL OF THERMAL STRESSES 11
+0 1
+D GG � þD W � GG � (cid:0) r0 ð1þD W � ÞqGG �
+where,hP
+st
+i¼ 1
+2
+x2Re @ 2s s
+þ
+t
+D� 7s U
+1
+t
+s
+G � t G
+t
+s
+s
+þ
+t
+x
+i K
+T 3
+3
+D�
+3
+5s �p s p t H
+4
+s
+s
+G � s G
+t
+t
+s s t Aðs,t ¼1,2,3,4Þ:
+0
+(6.13)
+X4
+Theenergywillbeconservedif ðES þE þE þE þE Þ¼1 (6.14)
+s int RP RT RS
+s¼1
+P
+where E ¼ 4 E is the energy created due to the interaction between the refracted
+int s,t¼1,s6¼t st
+waves.
+7. Particular cases
+Case 1: When the impact of MDD s is neglected, i.e., jðt(cid:0) fÞ¼1 and D ! @ in Eqs. (6.10)–
+s @t
+(6.14), yield the required energy ratios along with the change value of Xðs,bÞ!b:
+Case 2: When the impact of initial stresses is neglected, i.e., r0 ¼r0 ¼0:
+11 33
+Case 3: For the purpose of constructing the three unique temperature models, s� , s� will
+11 33
+be in the form
+8
+<a�=x2,a�=x2 for hyperbolic(cid:0) two(cid:0) temperature ðHTTÞ
+1 3
+s� ,s� ¼ a�,a� for classical(cid:0) two(cid:0) temperature ðCTTÞ
+11 33 : 1 3
+0,0 without(cid:0) two(cid:0) temperature
+8. Numerical results and discussion
+The energy ratios of the distinct reflected waves in the thermoelastic medium and transmitted
+waves in the MPS medium for incident P or SV wave are graphically illustrated. The MPS mater-
+ial like cadmium selenide and TS materials like magnesium are chosen for numerical computa-
+tion. Following Kumar and Sarthi [42], and Vashishth and Sukhija [43], the physical constants
+for cadmium selenide (CdSe) and magnesium materials are considered and shown in Table 1.
+The following phase lag parameters s¼0:02s, s ¼0:05s, s ¼0:03s, and s ¼0:02s are con-
+q T v
+sidered such that material constants satisfy the criteria stated by Quintanilla and Racke [44].
+Assume the value of H2T, initial stresses, and thermoelastic material parameters as a� ¼0:2,
+11
+a� ¼0:4, r0 ¼0:5, r0 ¼0:8 and K� ¼Ceðkþ2lÞ=4: The crucial parameters in this study are
+3 11 33 e E
+the two temperatures, initial stresses, delay times, and kernel function of MDDs. The ability to
+freely choose the kernel function and delay time, outlined in the introduction section, are the two
+Table 1. Values of the materials constants.
+Symbol Value Symbol Value
+c11 74:1�109Nm(cid:0)2 e 11 8:26�10(cid:0)11C2N(cid:0)1m(cid:0)2
+c12 45:2�109Nm(cid:0)2 e 33 9:03�10(cid:0)11C2N(cid:0)1m(cid:0)2
+c13 39:3�109Nm(cid:0)2 s 1 0:1�10(cid:0)6Cm(cid:0)2K(cid:0)1
+c 83:6�109Nm(cid:0)2 K ,K 9Wm(cid:0)1K(cid:0)1
+33 1 3
+c55 15:1�109Nm(cid:0)2 K
+1
+� 7Wm(cid:0)1K(cid:0)1s(cid:0)1
+T0 298K K
+3
+� 7Wm(cid:0)1K(cid:0)1s(cid:0)1
+b 6:21�105Nm(cid:0)2K(cid:0)1 q 5504kgm(cid:0)3
+1
+b 5:51�105Nm(cid:0)2K(cid:0)1 Ce 1:04�103Jkg(cid:0)1deg(cid:0)1
+3 E
+ke 2:696�1010Nm(cid:0)2 le 1:639�1010Nm(cid:0)2
+g 5�10(cid:0)3Cm(cid:0)2 qe 1:74�103kgm(cid:0)3
+13
+g 3�10(cid:0)3Cm(cid:0)2 be 2:68�106Nm(cid:0)2deg(cid:0)1
+15
+g 15�10(cid:0)3Cm(cid:0)2 g 35�10(cid:0)3Cm(cid:0)2
+35 31
+g 5�10(cid:0)3Cm(cid:0)2 g 34�10(cid:0)3Cm(cid:0)2
+11 33
+CE 260Jkg(cid:0)1deg(cid:0)1 x 1�10(cid:0)1Hz
+12 M. S. BARAK ET AL.
+most important advantages of this MDD model, making it flexible in applications. The magnitude
+of energy ratios associated with reflected waves in the TS medium, namely P, T, and SV, are indi-
+cated by E , E , and E respectively and corresponding to transmitted waves in the MPS
+RP RT RS
+medium, namely qP, qT, qS, and eP are represented by ES, i¼1to4, respectively. The ratio of
+i
+the total energy that results from all interactions between the different transmitted waves is
+defined by E : The following two scenarios arise when discussing the numerical outcomes of
+int
+this model:
+8.1. Impact of memory with three different kernel functions
+Figures 2–17, in the following subsections, illustrate the energy distribution of the two types of
+incident plane waves, P or SV, at the interface of the considered model among various transmit-
+ted waves in the MPS medium, reflected waves in the TS medium, and interaction waves corre-
+sponding to three different kernel functions K 0,0 , K 0,1=2 , K 1,1 of MDD as well as in the absence
+of MDD. The values of kernel functions are specified in Eq. (1.2). The solid green line, a dotted-
+dash blue line with circles, a dotted-dash red line with stars, and a dotted-dash magenta line rep-
+resent the K 0,0 , K 0,1=2 , K 1,1 and without MDD (W MDD ) functions, respectively. The sub-indent
+image shows overlapping curves to highlight microscale differences.
+8.1.1. For incident P wave
+Figures 2–4 depict the energy ratios (E , E , E ) change depending on the angle of incidence,
+RP RS RT
+respectively. The E first went down gradually within the angle of incidence range 00 �h �540
+RP 0
+after a further increase of h the E went up quickly. The E first goes up steadily and reaches
+0 RP RS
+the highest point in the range 00 �h �760 after a further rise in h the E going down stead-
+0 0 RS
+ily. The E increase exponentially after the angle of incidence h ¼800: The significant impact
+RT 0
+of different kernel functions is visible in the microscopic view. The presence of MDD decreases
+the magnitude of energy ratios of reflected P and SV waves and increases the reflected thermal
+waves.
+The distribution of energy ratios conveyed by transmitted waves ðES,i¼1,2,3,4Þ about the
+i
+angle of incidence is illustrated in Figures 5–8, respectively. It is clear from a quick examination
+of Figures 5–8 that the qT and qS modes can propagate in monoclinic piezothermoelastic media
+Figure 2. Variation of energy ratio ERP with h 0 :
+JOURNAL OF THERMAL STRESSES 13
+Figure 3. Variation of energy ratio ERS with h 0 :
+Figure 4. Variation of energy ratio ERT with h 0 :
+Figure 5. Variation of energy ratio ES1 with h 0 :
+14 M. S. BARAK ET AL.
+Figure 6. Variation of energy ratio ES2 with h 0 :
+Figure 7. Variation of energy ratio ES3 with h 0 :
+Figure 8. Variation of energy ratio ES4 with h 0 :
+JOURNAL OF THERMAL STRESSES 15
+Figure 9. Variation of energy ratio Eint with h 0 :
+Figure 10. Variation of energy ratio E with h :
+RP 0
+Figure 11. Variation of energy ratio ERS with h 0 :
+16 M. S. BARAK ET AL.
+Figure 12. Variation of energy ratio ERT with h 0 :
+Figure 13. Variation of energy ratio ES1 with h 0 :
+Figure 14. Variation of energy ratio ES2 with h 0 :
+JOURNAL OF THERMAL STRESSES 17
+Figure 15. Variation of energy ratio ES3 with h 0 :
+Figure 16. Variation of energy ratio ES4 with h 0 :
+Figure 17. Variation of energy ratio Eint with h 0 :
+18 M. S. BARAK ET AL.
+more easily than the other modes throughout the whole range of angles of incidence that were
+taken into consideration. In the beginning, the qS wave mode is not activated, but after increasing
+the incidence angle further, the qS mode became excited, reached its maximum, and then grad-
+ually deactivated again. Near the normal incidence, the size of all modes tends to decrease, and
+in the presence of a MDD, higher excitement levels may be seen in the qT and qS wave modes.
+On the other hand, the qP and eP wave modes display lower excitement levels when memory
+and the K kernel function are present.
+1,1
+Figure 9 shows that the interaction energy first increases to the maximum and then decreases
+with the growth of the angle of incidence. The presence of memory reduces the magnitude of
+interaction energy. The interaction energy is dominated by the K kernel function followed by
+0,0
+the K and K kernel functions of MDD.
+0,1/2 1,1
+8.1.2. For incident SV wave
+Figures 10–12 depict the variations of energy ratios E , E , E concerning the angle of inci-
+RP RS RT
+dence, respectively. The magnitude of energy ratios of reflected P and thermal waves show a dip
+while SV waves rise at the critical angle of incidence h ¼310 due to the mode of impedance
+0
+conversion from thermoelastic medium to monoclinic piezothermoelastic medium. The magni-
+tude of reflected SV waves approaches unity near the grazing incidence, while primary and ther-
+mal waves approach zero. The MDD decreases the magnitude of the energy ratio of reflected P
+waves, while thermal waves increase in a whole range of angles of incidence. In all reflected
+waves, the energy ratios are dominated by the K kernel function followed by the K and K
+0,0 0,1/2 1,1
+kernel functions of MDD.
+The distribution of energy ratios conveyed by transmitted waves ðES,i¼1,2,3,4Þ concerning
+i
+the angle of incidence is illustrated by Figures 13–16, respectively. In all surface modes, a clear
+spike can be seen at a critical angle h ¼310 due to excitation and deactivation of surface mode.
+0
+Figures 13–16 may be quickly inspected to demonstrate that the qT mode can propagate more
+readily in a monoclinic piezothermoelastic medium for the mid-range of the normal and critical
+angle of incidence. In contrast, the eP mode can transfer in the critical angle and grazing inci-
+dence mid-range. Except for thermal mode in all other modes, the magnitude of transmitted
+energy ratios is dominated by the K kernel followed by the K and K kernel functions of
+0,0 0,1/2 1,1
+MDD. In contrast, thermal mode follows the reverse pattern of kernel functions. In the absence
+of the memory effect, a remarkable change in the pattern of energy ratios of transfer modes has
+been observed.
+Figure 17 indicates that the interaction energy also shows a slight dip at a critical angle h ¼
+0
+310: The interaction energy disappeared near the grazing angle of incidence. In the absence of
+memory, the trend of interaction energy completely changes. The interaction energy is dominated
+by the K kernel followed by the K and K kernel functions of MDD.
+1,1 0,1/2 0,0
+8.2. Impact of initial stress and two-temperature
+Figures 18–33 in the following subsections illustrate the energy distribution of the two types of
+incident plane waves, P or SV, at the interface of the considered model among various transmit-
+ted waves in the MPS medium, reflected waves in the TS medium, and interaction waves corre-
+sponding to three different temperature models in the presence of initial stresses; H2T model,
+classical two-temperature model (C2T), and without a two-temperature model (W2T) as well as
+one without initial stresses (WIS) model. The solid green line, a dotted-dash blue line with circles,
+a dotted-dash red line with stars, and a dotted-dash magenta line represent the H2T, C2T, W2T,
+and WIS models, respectively. The snapshot with the sub-indent offers an expanded perspective
+of the overlapping curves so that the variation in the microscale may be seen more clearly.
+JOURNAL OF THERMAL STRESSES 19
+Figure 18. Variation of energy ratio ERP with h 0 :
+Figure 19. Variation of energy ratio E with h :
+RS 0
+8.2.1. For incident P wave
+Figure 18 depicts that for H2T, C2T, and WIS models, the P wave’s reflected energy ratio
+increases exponentially near the grazing incidence. In contrast, the W2T model slightly decreases.
+Near the normal incidence, the W2T model is close to unity, while all other considered models
+are close to zero. Figure 19 shows that the E first increase monotonically and go to maximum
+RS
+and then decrease with further increases in angle of incidence for H2T, C2T, and WIS models. In
+contrast, in the W2T model, the E a slight rise in the mid-value of the angle of incidence. For
+RS
+H2T, C2T, and WIS models, Figure 20 depicts that the amount of reflected energy ratio of ther-
+mal wave very sharply increases near the grazing incidence. The quantity of energy drops mono-
+tonically in the W2T model over the whole range of incidence angles. Initial stresses slightly
+decrease the magnitude of all reflected energy ratios.
+The distribution of energy ratios conveyed by transmitted waves ðES,i¼1,2,3,4Þ with regard
+i
+to the angle of incidence is illustrated by Figures 21–24, respectively. It is clear from a quick
+examination of Figures 21–24 that the qT and qS modes can propagate in monoclinic piezother-
+moelastic media more easily than the other modes throughout the whole range of angles of
+20 M. S. BARAK ET AL.
+Figure 20. Variation of energy ratio ERT with h 0 :
+Figure 21. Variation of energy ratio ES1 with h 0 :
+Figure 22. Variation of energy ratio ES with h :
+2 0
+JOURNAL OF THERMAL STRESSES 21
+Figure 23. Variation of energy ratio ES3 with h 0 :
+Figure 24. Variation of energy ratio ES4 with h 0 :
+incidence that were taken into consideration. Near the normal incidence, the qT mode is excited
+for the H2T model and qS mode for the C2T model, while the qP and eP wave modes are deacti-
+vated for all considered models. The presence of initial stresses slightly increases the magnitude
+of all transfer modes. Near the grazing incidence, all other modes slightly decrease while qS mode
+slightly increases for W2T and C2T models.
+For the near normal and grazing angle of incidences, Figure 25 shows the interaction energy
+dominated by the C2T model, followed by W2T, H2T, and WIS models. At the mid-range of the
+incidence angle, the interaction energy varies differently for different temperature models. Initial
+stresses cause little raises the magnitude of E :
+int
+8.2.2. For incident SV wave
+Figures 26–28 show that the energy ratios of reflected P, SV, and thermal waves have a critical
+angle h ¼380 for the W2T model and h ¼310 for the remaining considered models. The E
+0 0 RP
+and E dominated for C2T and W2T models, respectively, near the normal incidence. Figure 27
+RT
+22 M. S. BARAK ET AL.
+Figure 25. Variation of energy ratio Eint with h 0 :
+Figure 26. Variation of energy ratio ERP with h 0 :
+Figure 27. Variation of energy ratio ERS with h 0 :
+JOURNAL OF THERMAL STRESSES 23
+Figure 28. Variation of energy ratio ERT with h 0 :
+Figure 29. Variation of energy ratio with h 0 :
+Figure 30. Variation of energy ratio ES2 with h 0 :
+24 M. S. BARAK ET AL.
+Figure 31. Variation of energy ratio ES3 with h 0 :
+Figure 32. Variation of energy ratio ES4 with h 0 :
+Figure 33. Variation of energy ratio Eint with h 0 :
+JOURNAL OF THERMAL STRESSES 25
+depicts the magnitude of E waves towering in the W2T model in a whole range of angles of
+RS
+incidence except grazing incidence. Initial stresses increase the magnitude of reflected primary
+and thermal waves and decrease the magnitude of secondary waves.
+The distribution of energy ratios conveyed by transmitted waves ðES,i¼1,2,3,4Þ concerning
+i
+the angle of incidence is represented by Figures 29–32, respectively. In all shared surface modes,
+a spike can be seen at the critical angles h ¼310, h ¼320, h ¼380 for H2T, C2T, and W2T,
+0 0 0
+respectively. The classical theory of two-temperature increase the critical angle by 10, and without
+two-temperature, increase the critical angle by 60: A brief examination of Figures 29 through 32
+reveals that the qP and eP wave modes can propagate more readily in a monoclinic piezother-
+moelastic medium than the qS and qT wave modes. In the presence of initial stresses, all transfer
+modes propagate more easily in the MPS medium. The eP modes propagate more quickly in the
+C2T model than in other temperature models.
+Figure 33 shows that the interaction energy becomes negative at the normal incidence for the
+W2T model and a complete range of considered angles of incidence for the C2T model.
+Interaction energy follows the same sequence of critical angles as the transfer modes for three dif-
+ferent temperature models.
+9. Conclusion
+In this work, we investigate the plane wave phenomena at the interface of thermoelastic and ini-
+tially stressed monoclinic piezothermoelastic medium under the 3PL equation of MDDs with
+H2T. The energy ratios of various reflected (in TS medium) and transmitted waves (in MPS
+medium) are depicted graphically for the incident of two types of waves, P or SV. The results are
+obtained for different kernel functions and temperature models. The study’s findings are summar-
+ized as follows:
+i. For incidence P waves, MDD reduces the size of the energy ratios of reflected P and SV
+waves while increasing the reflected thermal waves. The size of each reflected energy ratio is
+somewhat reduced when initial stresses are present.
+ii. For incidence SV waves, in all reflected waves, the energy ratios are dominated by the K0,0
+kernel function followed by the K and K kernel functions of MDD. Initial stresses
+0,1/2 1,1
+increase the magnitude of reflected P and thermal waves and decrease the magnitude of SV
+waves.
+iii. Energy ratios are influenced by the material’s two-temperature properties, initial stresses,
+MDD, and angle of incidence. This dependency manifests differently for various waves.
+iv. Graphically the sum of the energy ratios at each angle of incidence is almost equal to one
+for all considered models. Thus, every model concurs with the law of energy balance.
+This research’s applications span materials science, geophysics, mechanical engineering, applied
+mathematics, renewable energy, and materials characterization, offering valuable insights into the
+behavior of stressed piezothermoelastic materials and wave propagation dynamics.
+26 M. S. BARAK ET AL.
+Nomenclature
+a� jj ¼ Components of two-temperature parameter s v ¼ Phase lag of thermal displacement gradient
+k,l¼ Lam�e’s constant eij ¼ Component of strain
+s ¼ Phase lag of heat flux T¼ Thermal temperature
+q
+K i � j ¼ Heat conduction tensor s i ¼ pyroelectric constants
+u¼ Electrical potential g ijr ,e ij ¼ Piezothermal moduli tensors
+Ei ¼ Electric field density Di ¼ Electric displacement
+s ¼ Phase lag of the temperature gradient T ¼ Reference temperature
+T 0
+u�¼ Conductive temperature b ¼ Thermal moduli tensors
+ij
+cijrl ¼ Elastic stiffness tensor r0
+ij
+¼ Components of the initial stress
+x¼ Circular frequency CE ¼ Specific heat at constant strain
+q¼ Density K�¼ Material constant
+e
+Kij ¼ Components of thermal conductivity r ij ¼ Components of the stress
+Disclosure statement
+The authors have stated that this study has no possible conflicts of interest.
+Appendix
+V ¼l l l l (cid:0) l l l l þl l l l (cid:0) l l l l
+11 12233545 12263245 15233542 15263242
+V ¼l l l l (cid:0) l l l l þl l l l þl l l l þl l l l þl l l l (cid:0) l l l l (cid:0) l l l l
+12 11233545 11263245 12223545 12233445 12233544 12243543 12253245 12263244
+þl l l l (cid:0) l l l l (cid:0) l l l l (cid:0) l l l l þl l l l (cid:0) l l l l (cid:0) l l l l þl l l l
+12263343 13213545 13243542 13263342 14233542 14263242 15213543 15223542
+þl l l l þl l l l (cid:0) l l l l (cid:0) l l l l (cid:0) l l l l þl l l l þl l l l þl l l l
+15233442 15233541 15253242 15263241 15213247 15263143 12233347 12243247
+þl l l l þl l l l þl l l l þl l l l þl l l l (cid:0) l l l l
+13263145 17233342 17213245 17243242 15233147 17233145
+V ¼l l l l þl l l l þl l l l þl l l l (cid:0) l l l l (cid:0) l l l l þl l l l þl l l l
+13 11223545 11233445 11233544 11243543 11253245 11263244 11263343 12223445
+þl l l l þl l l l þl l l l (cid:0) l l l l þl l l l (cid:0) l l l l (cid:0) l l l l (cid:0) l l l l
+12223544 12233444 12243443 12253244 12253343 13213445 13213544 13243442
+(cid:0) l l l l (cid:0) l l l l (cid:0) l l l l (cid:0) l l l l þl l l l þl l l l þl l l l (cid:0) l l l l
+13243541 13253342 13263341 14213543 14223542 14233442 14233541 14253242
+(cid:0) l l l l (cid:0) l l l l þl l l l þl l l l þl l l l (cid:0) l l l l þl l l l þl l l l
+14263241 15213443 15223442 15223541 15233441 15253241 11233347 11243247
+þl l l l þl l l l þl l l l (cid:0) l l l l þl l l l þl l l l (cid:0) l l l l þl l l l
+12223347 12233346 12243246 13213347 13253145 13263144 14213247 14263143
+(cid:0) l l l l þl l l l þl l l l þl l l l þl l l l þl l l l (cid:0) l l l l þl l l l
+15213246 15253143 16213245 16233342 16243242 17213244 17213343 17223342
+þl l l l þl l l l (cid:0) l l l l þl l l l þl l l l þl l l l (cid:0) l l l l (cid:0) l l l l
+17233341 17243241 13243147 14233147 15223147 15233146 16233145 17223145
+(cid:0) l l l l (cid:0) l l l l
+17233144 17243143
+V ¼l l l l þl l l l þl l l l þl l l l (cid:0) l l l l þl l l l þl l l l (cid:0) l l l l
+13 11223445 11223544 11233444 11243443 11253244 11253343 12223444 13213444
+(cid:0) l l l l (cid:0) l l l l (cid:0) l l l l þl l l l þl l l l þl l l l (cid:0) l l l l þl l l l
+13243441 13253341 14213443 14223442 14223541 14233441 14253241 15223441
+þl l l l þl l l l þl l l l þl l l l (cid:0) l l l l þl l l l (cid:0) l l l l þl l l l
+11223347 11233346 11243246 12223346 13213346 13253144 14213246 14253143
+þl l l l (cid:0) l l l l þl l l l þl l l l þl l l l þl l l l (cid:0) l l l l þl l l l
+16213244 16213343 16223342 16233341 16243241 17223341 13243146 14223147
+þl l l l þl l l l (cid:0) l l l l (cid:0) l l l l (cid:0) l l l l (cid:0) l l l l
+14233146 15223146 16223145 16233144 16243143 17223144
+V ¼l l l l þl l l l þl l l l þl l l l þl l l l (cid:0) l l l l
+14 11223444 14223441 11223346 16223341 14223146 16223144
+References
+0[1] J. Curie and P. Curie, “Development by compression of polar electricity in hemihedral crystals with slanted
+faces,” BULMI, vol. 3, no. 4, pp. 90–93, 1880. DOI: 10.3406/bulmi.1880.1564.
+0[2] R. D. Mindlin, “Equations of high frequency vibrations of thermopiezoelectric crystal plates,” Int. J. Solids
+Struct., vol. 10, no. 6, pp. 625–637, Jun. 1974. DOI: 10.1016/0020-7683(74)90047-X.
+0[3] W. Nowacki, “Some general theorems of thermopiezoelectricity,” J. Therm. Stress, vol. 1, no. 2, pp.
+171–182, Feb. 1978. DOI: 10.1080/01495737808926940.
+0[4] D. S. Chandrasekharaiah, “A generalized linear thermoelasticity theory for piezoelectric media,” Acta Mech.,
+vol. 71, no. 1–4, pp. 39–49, Feb. 1988. DOI: 10.1007/BF01173936.
+0[5] R. Kumar and P. Sharma, “Analysis of plane waves in anisotropic magneto- piezothermoelastic diffusive
+body with fractional order derivative,” J. Solid Mech., vol. 9, no. 1, pp. 86–99, Mar. 2017. https://jsm.arak.
+iau.ir/article_529284.html
+0[6] R. Kumar and P. Sharma, “Response of fractional order on energy ratios at the boundary surface of fluid-
+piezothermoelastic media,” Appl. Math. Comput., vol. 358, pp. 194–203, Oct. 2019. DOI: 10.1016/j.amc.
+2019.04.020.
+JOURNAL OF THERMAL STRESSES 27
+0[7] R. Kumar and P. Sharma, “Response of two-temperature on the energy ratios at elastic-piezothermoelastic
+interface,” J. Solid Mech., vol. 13, no. 2, pp. 186–201, Jun. 2021. DOI: 10.22034/JSM.2020.1907521.1637.
+0[8] R. Kumar and P. Sharma, “Some theorems and wave propagation in a piezothermoelastic medium with
+two-temperature and fractional order derivative,” Mater. Phys. Mech., vol. 47, no. 2, pp. 196–218, Nov.
+2021. DOI: 10.18149/MPM.4722021_4.
+0[9] R. Kumar and P. Sharma, “Effect of two-temperature on the energy ratios at the elastic–piezothermoelastic
+interface with phase lags,” Eur. Phys. J. Plus, vol. 136, no. 12, pp. 1200, Dec. 2021. DOI: 10.1140/epjp/
+s13360-021-02042-2.
+[10] M. A. Biot, “Thermoelasticity and irreversible thermodynamics,” J. Appl. Phys., vol. 27, no. 3, pp. 240–253,
+Mar. 1956. DOI: 10.1063/1.1722351.
+[11] P. J. Chen and M. E. Gurtin, “On a theory of heat conduction involving two temperatures,” J. Appl. Math.
+Phys. (ZAMP), vol. 19, no. 4, pp. 614–627, Jul. 1968. DOI: 10.1007/BF01594969.
+[12] P. J. Chen and W. O. Williams, “A note on non-simple heat conduction,” J. Appl. Math. Phys. (ZAMP),
+vol. 19, no. 6, pp. 969–970, Nov. 1968. DOI: 10.1007/BF01602278.
+[13] P. J. Chen, M. E. Gurtin and W. O. Williams, “On the thermodynamics of non-simple elastic materials
+with two temperatures,” J. Appl. Math. Phys. (ZAMP), vol. 20, no. 1, pp. 107–112, Jan. 1969. DOI: 10.1007/
+BF01591120.
+[14] H. W. Lord and Y. Shulman, “A generalized dynamical theory of thermoelasticity,” J. Mech. Phys. Solids,
+vol. 15, no. 5, pp. 299–309, Sep. 1967. DOI: 10.1016/0022-5096(67)90024-5.
+[15] A. E. Green and P. M. Naghdi, “A re-examination of the basic postulates of thermomechanics,” Proc. R.
+Soc. Lond. Ser. A Math. Phys. Sci., vol. 432, no. 1885, pp. 171–194, Feb. 1991. DOI: 10.1098/rspa.1991.0012.
+[16] A. E. Green and P. M. Naghdi, “On undamped heat waves in an elastic solid,” J. Therm. Stress, vol. 15,
+no. 2, pp. 253–264, Dec. 1991. DOI: 10.1080/01495739208946136.
+[17] A. E. Green and P. M. Naghdi, “Thermoelasticity without energy dissipation,” J. Elasticity, vol. 31, no. 3,
+pp. 189–208, Jun. 1993. DOI: 10.1007/BF00044969.
+[18] D. Y. Tzou, “A unified field approach for heat conduction from macro- to micro-scales,” J. Heat Transf.,
+vol. 117, no. 1, pp. 8–16, Feb. 1995. DOI: 10.1115/1.2822329.
+[19] S. R. Choudhuri, “On a thermoelastic three-phase-lag model,” J. Therm. Stress, vol. 30, no. 3, pp. 231–238,
+Feb. 2007. DOI: 10.1080/01495730601130919.
+[20] H. M. Youssef and A. A. El-Bary, “Theory of hyperbolic two-temperature generalized thermoelasticity,”
+Mater. Phys. Mech., vol. 40, no. 2, pp. 158–171, Mar. 2018. DOI: 10.18720/MPM.4022018_4.
+[21] J. L. Wang and H. F. Li, “Surpassing the fractional derivative: concept of the memory-dependent deriva-
+tive,” Comput. Math. Appl., vol. 62, no. 3, pp. 1562–1567, Aug. 2011. DOI: 10.1016/j.camwa.2011.04.028.
+[22] M. Caputo and F. Mainardi, “A new dissipation model based on memory mechanism,” Pure Appl.
+Geophys., vol. 91, no. 1, pp. 134–147, Dec. 1971. DOI: 10.1007/BF00879562.
+[23] M. I. A. Othman, K. Lotfy and R. M. Farouk, “Generalized thermo-microstretch elastic medium with
+temperature dependent properties for different theories,” Eng. Anal. Bound. Element, vol. 34, no. 3,
+pp. 229–237, Mar. 2010. DOI: 10.1016/j.enganabound.2009.10.003.
+[24] K. Sharma and M. Marin, “Effect of distinct conductive and thermodynamic temperatures on the reflection
+of plane waves in micropolar elastic half-space,” UPB Sci. Bull. Ser. A Appl. Math. Phys., vol. 75, no. 2,
+pp. 121–132, Jan. 2013. https://www.scientificbulletin.upb.ro/rev_docs_arhiva/full121_739957.pdf
+[25] M. Marin, L. Codarcea and A. Chirila, “Qualitative results on mixed problem of micropolar bodies with
+microtemperatures,” Appl. Appl. Math. An Int. J., vol. 12, no. 2, pp. 9, Dec. 2017. https://digitalcommons.
+pvamu.edu/aam/vol12/iss2/9/
+[26] R. Kumar, N. Sharma, P. Lata and M. Marin, “Reflection of plane waves at micropolar piezothermoelastic
+half-space,” CMST, vol. 24, no. 2, pp. 113–124, Jan. 2018. DOI: 10.12921/cmst.2016.0000069.
+[27] I. Kaur, P. Lata and K. Singh, “Reflection and refraction of plane wave in piezo-thermoelastic diffusive half
+spaces with three phase lag memory dependent derivative and two-temperature,” Waves Random Complex
+Med., vol. 32, no. 5, pp. 2499–2532, Sep. 2022. DOI: 10.1080/17455030.2020.1856451.
+[28] S. Biswas, “Stroh analysis of Rayleigh waves in anisotropic thermoelastic medium,” J. Therm. Stress, vol. 41,
+no. 5, pp. 627–644, Feb. 2018. DOI: 10.1080/01495739.2018.1425940.
+[29] S. Biswas and S. M. Abo-Dahab, “Effect of phase-lags on Rayleigh wave propagation in initially stressed
+magneto-thermoelastic orthotropic medium,” Appl. Math. Model., vol. 59, pp. 713–727, Jul. 2018. DOI: 10.
+1016/j.apm.2018.02.025.
+[30] S. Biswas, “Modeling of memory-dependent derivatives in orthotropic medium with three-phase-lag model
+under the effect of magnetic field,” Mech. Based Des. Struct. Mach., vol. 47, no. 3, pp. 302–318, May 2019.
+DOI: 10.1080/15397734.2018.1548968.
+[31] S. Biswas, “Surface waves in piezothermoelastic transversely isotropic layer lying over piezothermoelastic
+transversely isotropic half-space,” Acta Mech., vol. 232, no. 2, pp. 373–387, Nov. 2020. DOI: 10.1007/
+s00707-020-02848-8.
+28 M. S. BARAK ET AL.
+[32] V. Gupta, R. Kumar, M. Kumar, V. Pathania and M. S. Barak, “Reflection/transmission of plane waves at
+the interface of an ideal fluid and nonlocal piezothermoelastic medium,” Int. J. Numer. Methods Heat Fluid
+Flow, vol. 33, no. 2, pp. 912–937, Jan. 2023. DOI: 10.1108/HFF-04-2022-0259.
+[33] M. S. Barak, R. Kumar, R. Kumar and V. Gupta, “Energy analysis at the boundary interface of elastic and
+piezothermoelastic half-spaces,” Indian J. Phys., vol. 97, no. 8, pp. 2369–2383, Jan. 2023. DOI: 10.1007/
+s12648-022-02568-w.
+[34] V. Gupta, R. Kumar, R. Kumar and M. S. Barak, “Energy analysis at the interface of piezo/thermoelastic
+half spaces,” Int. J. Numer. Methods Heat Fluid Flow, vol. 33, no. 6, pp. 2250–2277, May 2023. DOI: 10.
+1108/HFF-11-2022-0654.
+[35] M. S. Barak, R. Kumar, R. Kumar and V. Gupta, “The effect of memory and stiffness on energy ratios at
+the interface of distinct media,” Multidis. Model. Mater. Struct., vol. 19, no. 3, pp. 464–492, Apr. 2023.
+DOI: 10.1108/MMMS-10-2022-0209.
+[36] V. Gupta and M. S. Barak, “Quasi-P wave through orthotropic piezo-thermoelastic materials subject
+to higher order fractional and memory-dependent derivatives,” Mech. Adv. Mater. Struct., vol. 0, no. 0,
+pp. 1–15, Jun. 2023. DOI: 10.1080/15376494.2023.2217420.
+[37] M. S. Barak and V. Gupta, “Memory-dependent and fractional order analysis of the initially stressed piezo-
+thermoelastic medium,” Mech. Adv. Mater. Struct., vol. 0, no. 0, pp. 1–15, May 2023. DOI: 10.1080/
+15376494.2023.2211065.
+[38] J. F. Nye, Physical Properties of Crystals: Their Representation by Tensors and Matrices. Oxford: Oxford
+University Press, 1985.
+[39] M. A. Ezzat, A. S. El-Karamany and A. A. El-Bary, “On dual-phase-lag thermoelasticity theory with
+memory-dependent derivative,” Mech. Adv. Mater. Struct., vol. 24, no. 11, pp. 908–916, Aug. 2017. DOI:
+10.1080/15376494.2016.1196793.
+[40] H. M. Youssef, “Theory of two-temperature-generalized thermoelasticity,” IMA J. Appl. Math., vol. 71,
+no. 3, pp. 383–390, Jun. 2006. DOI: 10.1093/imamat/hxh101.
+[41] S. Guha and A. Kumar Singh, “Effects of initial stresses on reflection phenomenon of plane waves at the
+free surface of a rotating piezothermoelastic fiber-reinforced composite half-space,” Int. J. Mech. Sci.,
+vol. 181, pp. 105766, Feb. 2020. DOI: 10.1016/j.ijmecsci.2020.105766.
+[42] R. Kumar and P. Sarthi, “Reflection and refraction of thermoelastic plane waves at an interface between
+two thermoelastic media without energy dissipation,” Arch. Mech., vol. 58, no. 2, pp. 155–185, Jan. 2006.
+https://am.ippt.pan.pl/index.php/am/article/view/v58p155
+[43] A. K. Vashishth and H. Sukhija, “Inhomogeneous waves in porous piezo-thermoelastic solids,” Acta Mech.,
+vol. 228, no. 5, pp. 1891–1907, Feb. 2017. DOI: 10.1007/s00707-017-1805-8.
+[44] R. Quintanilla and R. Racke, “A note on stability in three-phase-lag heat conduction,” Int. J. Heat Mass
+Transf., vol. 51, no. 1–2, pp. 24–29, Jan. 2008. DOI: 10.1016/j.ijheatmasstransfer.2007.04.045.

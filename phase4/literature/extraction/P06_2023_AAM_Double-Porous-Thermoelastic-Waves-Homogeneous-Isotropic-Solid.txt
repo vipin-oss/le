@@ -1,0 +1,1260 @@
+ArchiveofAppliedMechanics
+https://doi.org/10.1007/s00419-023-02364-w
+ORIGINAL
+VijayataPathania · RajeshKumar · VipinGupta ·
+M.S.Barak
+Double porous thermoelastic waves in a homogeneous,
+isotropic solid with inviscid liquid
+Received:30September2022/Accepted:8January2023
+©TheAuthor(s),underexclusivelicencetoSpringer-VerlagGmbHGermany,partofSpringerNature2023
+Abstract Atwo-dimensionalmodelbasedonLord–Shulman’sthermoelasticitytheoryhasbeenconstructedto
+examinetheimpactofvariousphysicalparametersofthemediuminadoubleporousthermoelastic,isotropic,
+homogeneoushalf-spaceincontactwithaninviscidliquidhalf-space.Ithasbeendiscoveredthatfourcoupled
+longitudinal waves and one uncoupled transverse wave may exist in the solid medium and one mechanical
+waveintheliquidmedium,allpropagatingatdifferentspeeds.Ithasbeenobservedthatlinkedlongitudinal
+wavesexhibitdispersion,attenuation,etc.,anddependonbothkindsofvoidsandthethermalcharacteristics
+ofthemedium.Thesimplestformofthecomplexsecularequationhasbeenderived.Theamplitudesofsolid
+and liquid displacements, volume fractional fields, and temperature change at the interface have also been
+obtained.Thecomputer-simulatedresultsformagnesiumcrystalmaterialfordifferentwaveprofileshavebeen
+graphicallydisplayed.
+Keywords Voids·Doubleporosity·Inviscidliquid·Thermoelasticity·Secularequation
+1 Introduction
+Theporesmostlycontain(soil,liquid,andgases)aporoelasticmaterialthatmaybeofdifferentsizesandexist
+invariousforms.Poroelasticitywithinaporousmediumdefinestheassociationbetweensolidsandfluidflow
+distortion.Thebehavioroffluid-saturatedporousmediumisverycomplexduetothecomplicatedstructuresof
+pores,differentmaterialproperties,andvariousmovementsoftheliquidandsolidphases.Thereflectedwave
+fromasolid–fluidinterfacecontainsvaluableinformationthatunfoldsmultiplecharacteristicsofthesolidif
+explored.ThefirstgeneralizedtheoryofthermoelasticitywasproposedbyLordandShulman[1],inwhichthe
+relationbetweenheatflowandtemperaturegradientsinvolvedonerelaxationtime,modifiedtheheatequation
+as hyperbolic, and removed the deficiency of infinite speed of energy wave. The mechanics of diffusion in
+materialsusingamulti-poroussystemwithadegreeoffreedomandpercentageofelementaryvolumehavebeen
+investigatedbyAifantis[2].NunziatoandCowin[3]obtainedthenonlineartheoryofelasticmaterialswith
+voidsbyconsideringtheexistenceofporesinanelasticcontinuum.Thephysicalinterpretation,experimental
+V.Pathania
+DepartmentofMathematics,HimachalPradeshUniversityRegionalCentre,Dharamshala,HP,India
+e-mail:vpmsmrc@gmail.com
+B
+R.Kumar·V.Gupta·M.S.Barak( )
+DepartmentofMathematics,IndiraGandhiUniversity,Meerpur,Rewari,HR,India
+e-mail:ms_barak@igu.ac.in
+R.Kumar
+e-mail:rajesh.math.rs@igu.ac.in
+V.Gupta
+e-mail:vipin.math.rs@igu.ac.in
+V.Pathaniaetal.
+determination of the idea of double porosity consolidation, and application to common engineering issues
+havebeenexploredbyBeskosandAifanits[4].Iesan[5]developedsometheoremsabouttheuniquenessand
+reciprocityrelationshipbetweenproblemsanditssolutionforporothermoelasticsolids.DhaliwalandWang
+[6]includedtheheatflowamongtheconstitutivevariablestodevelopthethermoelastictheorywithvoidsand
+mixedinitialboundaryvalueissues.
+Thesignificanceofcouplingeffectsintheconsolidationoffissuredclaysonthemacroscopicresponseof
+doubleporousmediahasbeennoticedbyKhalili[7].KhaliliandSelvadurai[8]proposedafullycoupledcon-
+stitutivemodelforhydro-thermomechanicalevaluationinelasticmediabasedonadoubleporositystructure.
+The feasibility of plane harmonic wave propagation in an infinite thermoelastic material and the reflection
+phenomenonfromafreeplaneboundaryofathermoelastichalf-spacewithvoidshavebeeninvestigatedby
+SinghandTomar[9].Straughan[10]proposedthestabilityanduniquenessofdualporouselasticmedia.The
+theoryofthermoelasticsolidswithadoubleporositystructureusingtheNunziato-Cowinapproachwithvoids
+andwithoutusingDarcy’slawhasbeenderivedbyIesanandQuantinilla[11].
+Scarpettaetal.[12]establisheduniquetheoremsforlinearandnonlineartheoriesofelasticmaterialswitha
+dual-porositystructureusingasphericalcavity.Thesurfaceharmonicwaveswithadoubleporositystructurein
+rigid/elasticsubstancesandthepresenceofeigenfrequencieshavebeenstudiedbySvanadze[13].Thepresence
+oftheporesinthematerialsignificantlyaffectsthewaveresponseofadoubleporositymaterial,whichhasbeen
+concluded by Gales and Chirita [14]. The elastic material with voids overlying inviscid liquid is commonly
+encounteredinhydrocarbonexploration,marinehydrodynamics,acousticmicroscope,etc.RayleighandLamb
+wavesatliquid–solidboundarieshavebeenstudiedbyPlonaetal.[15].MozhaevandWeihnacht[16]discussed
+subsonicleakyRayleighwavesatliquid–solidinterfaces.Thewavepropagationinahomogeneous,thermally
+conductingisotropicplateflankedonbothsidesbylayersorhalf-spaceoftheinviscidliquidhasbeenpresented
+bySharmaandPathania[17].
+Baraketal.[18]investigatedthatthereflectedwaveisextremelysensitiveduetofluidflowattheinterface
+ofdoubleporoussedimentunderlyinguniformelasticsolidmaterial.Rayleighwavepropagationinathermo-
+porous elastic material loaded with an inviscid fluid in reference to Lord and Shulman’s theory has been
+examinedbyPathaniaandJoshi[19].PathaniaandDhiman[20]studiedtheeffectofLamb-typewavesina
+porothermoelasticplateimmersedintheinviscidfluidandderivedthecomplexsecularequationsforsymmetric
+andantisymmetricwavemodes.Kumaretal.[21–25]studiedvariousseismicwavepropagationproblems.
+The present manuscript has developed the basic governing equations for double porothermoelastic solid
+and liquid medium. The time-harmonic plane wave solution has been employed to solve these equations.
+It is observed that the variations in elastic, porous, and thermal fields of the solid medium affect the phase
+speedsofcoupledlongitudinalwaves.Thegeneralsecularequationfortheconsideredmodelhasbeenderived
+anddiscussedintheframeworkofLord–Shulman’stheoryofthermoelasticityatthestress-freesolid–liquid
+interface. The resulting secular equation has been solved numerically, and computer-simulated results have
+been obtained for various parameters of magnesium crystal material using MATLAB software. The present
+study has various applications in seismology, earthquake engineering, electronics engineering, hydrological
+engineering,ultrasonics,geophysics,etc.
+2 Constitutiverelationsandbasicequations
+The constitutive relations for a homogeneous, isotropic, double porous thermoelastic solid half-space and
+inviscid liquid half-space in the absence of body forces, equilibrated forces, and external heat sources have
+beengivenbyIesanandQuintanilla[11],PathaniaandJoshi[19]asfollows:
+2.1 Equationsforsolidhalf-space
+τ (cid:2)λδ e +2μe +bδ φ+dδ ψ −βδ T (2.1)
+ij ij kk ij ij ij ij
+σ1 (cid:2)αφ +b ψ (2.2)
+i i 1 i
+σ2 (cid:2)b φ +γψ (2.3)
+i 1 i i
+ξ (cid:2)−be −α φ−α ψ +γ T (2.4)
+jj 1 3 1
+ζ (cid:2)−de −α φ−α ψ +γ T (2.5)
+jj 3 2 2
+Doubleporousthermoelasticwavesinahomogeneous…
+ρη (cid:2)βe +γ φ+γ ψ +aT (2.6)
+jj 1 2
+Fourier’slawofheatconduction
+Q +t Q ˙ (cid:2) KT (2.7)
+i 0 i i
+Theequationsofmotion
+τ ij,j (cid:2)ρu¨ i (2.8)
+Theequilibratedstressequationsofmotion
+σ1 +ξ (cid:2)χ φ¨ (2.9)
+j,j 1
+σ2 +ζ (cid:2)χ ψ¨ (2.10)
+j,j 2
+Theenergyequation
+ρT 0 (η˙+t 0 η¨)(cid:2) Q j,j i, j (cid:2)1,2,3 (2.11)
+2.2 Equationsforliquidhalf-space
+(τ ) (cid:2)λ δ (e ) (2.12)
+L ij L ij L kk
+Theequationsofmotion
+(τ L ) ij,j (cid:2)ρ L (u¨ L ) i i, j,k (cid:2)1,2,3 (2.13)
+hereτ ,σ1,σ2,η,λ, μ,ξ,andζ representthestresstensor,theequilibratedstresstensorforvoidsoftype
+ij i i
+I,typeII,theentropyperunitmass,Lame’sconstantsforthesolidhalf-space,theintrinsicequilibratedbody
+forcesfortypeIandtypeIIvoids,respectively.Thevolumefractionfieldsdenoteφ,ψ andb, d denotevoids
+parameters for type I and type II, β (cid:2) (3λ+2μ)α , α , δ , ρ indicate the temperature coefficient, linear
+t t ij
+thermal expansion, Kronecker delta, and density of solid half-space, respectively. α, α , α , α , b , γ
+1 2 3 1
+arethematerialconstantscorrespondingtovoidsimpurities,γ andγ representtheconstitutivecoefficients
+1 2
+correspondingtothermalproperties, Q denotestheheatflux, K isthethermalconductivity,T isthechange
+i
+in temperature from the ambient temperature T
+0
+, χ
+1
+and χ
+2
+are the coefficients of equilib(cid:2)rated inertia for
+type I and type II voids, u i represents the component of displacement, e ij (cid:2) (u i,j +u j,i ) 2 is the strain
+tensor, t is the thermal relaxation time, and a is the thermal capacity of the material. Here dot denotes the
+0
+differentiationw.r.t.timet,andthesubscriptprecededbythecommadenotesthepartialdifferentiationw.r.
+t.correspondingCartesiancoordinates.Liquidhalf-space(τ ) isthestresstensor,λ isthebulkmodulus,
+L ij L
+ρ representsthedensity,and(u ) representsthedisplacementcomponents.SubscriptL denotesparameters
+L L i
+ofliquidhalf-space.
+Byusingrelation(2.1)inEq.(2.8),theequationsofmotioninthexz-planehavebeenobtainedas
+(λ+2μ)u +λw +μ(u +w )+bφ +dψ −βT (cid:2)ρu¨ (2.14)
+xx xz zz xz x x x
+(λ+μ)u +μw +(λ+2μ)w +bφ +dψ −βT (cid:2)ρw¨ (2.15)
+xz xx zz z z z
+Usingrelations(2.2)–(2.5)inEqs.(2.9)–(2.10),theequilibratedstressequationsofmotionbecome:
+−b(u +w )+α(φ +φ )−α φ+b (ψ +ψ )−α ψ +γ T (cid:2)χ φ¨ (2.16)
+x z xx zz 1 1 xx zz 3 1 1
+−d(u +w )+b (φ +φ )−α φ+γ(ψ +ψ )−α ψ +γ T (cid:2)χ ψ¨ (2.17)
+x z 1 xx zz 3 xx zz 2 2 2
+UsingEqs.(2.6)-(2.7)inEq.(2.11),theenergyequationisasfollows:
+(cid:3) (cid:4) (cid:5) (cid:6) (cid:5) (cid:6) (cid:5) (cid:6)
+−βT u˙ +w˙ +t (u¨ +w¨ ) −γ T φ˙ +t φ¨ −γ T ψ˙ +t ψ¨ +K(T +T )(cid:2)ρC T ˙ +t T ¨ (2.18)
+0 x z 0 x z 1 0 0 2 0 0 xx zz e 0
+Puttingtherelation(2.12)intoEq.(2.13),theequationsofmotionofliquidhalf-spacehavebeenobtained
+as
+(cid:5) (cid:6)
+ρ L u L,xx +w L,xz (cid:2)λ L u¨ L (2.19)
+(cid:5) (cid:6)
+ρ L u L,xz +w L,zz (cid:2)λ L w¨ L (2.20)
+Here,aT (cid:2)ρC andC isthespecificheatatconstantstrainforasolidmedium.
+0 e e
+V.Pathaniaetal.
+e-m3 z
+Homogeneous inviscid
+liquid half-space
+z =0 x+
+e−m z
+1
+z>0
+e-m
+4
+z
+e-m
+2
+z
+Double porous thermoelastic
+Solid half-space e−mz
+e-m
+3
+z
+5
+Fig.1 Geometryoftheproblem
+3 Formulationoftheproblem
+Ahomogeneous,isotropicthermoelastichalf-spacewithdoublevoidshasbeenexaminedincontactwithan
+inviscidliquidhalf-space,whichisinitiallyataconstanttemperatureT .Intherectangularcoordinatesystem
+0
+(x,y,z),theoriginOmaybefoundontheflathorizontalsurfacez (cid:2)0andz+ispointingverticallydownwards
+intothesolidhalf-space,asshowninFig.1.
+The stress-free, isothermal, or thermally insulated boundary conditions at the solid–liquid interface are
+assumed at z (cid:2) 0, with no fractional volume change across the boundary. The x-axis is set along the wave
+propagationdirectionsuchthatallparticlesonalineparalleltothe y-axisaredisplacedequally.Asaresult,
+allfieldvaluesbecomeindependentof y-coordinates.
+3.1 Non-dimensionalgoverningequations
+Considerthedimensionlessparametersas
+ω∗ x ω∗ z ρω∗ c u ρω∗ c w T
+x (cid:3) (cid:2) , z (cid:3) (cid:2) , u (cid:3) (cid:2) 1 , w(cid:3) (cid:2) 1 , t (cid:3) (cid:2)ω∗ t, t (cid:3) (cid:2)ω∗ t , T (cid:3) (cid:2) ,
+c c βT βT 0 0 T
+1 1 0 0 0
+ω∗2χ φ ω∗2χ ψ ρω∗ c u ρω∗ c w
+φ(cid:3) (cid:2) 1 , ψ(cid:3) (cid:2) 1 , u (cid:3) (cid:2) 1 L, w(cid:3) (cid:2) 1 L (3.1)
+c 1 2 c 1 2 L βT 0 L βT 0
+PluggingEqs.(3.1)inEqs.(2.14)–(2.20),thegoverningequationsinnon-dimensionalform(afterdropping
+theprime)havebeenobtainedas
+(cid:5) (cid:6)
+u +δ2u + 1−δ2 w +a φ +a ψ −T (cid:2)u¨ (3.2)
+xx zz xz 1 x 2 x x
+(cid:5) (cid:6)
+1−δ2 u +δ2w +w +a φ +a ψ −T (cid:2)w¨ (3.3)
+xz xx zz 1 z 2 z z
+−a (u +w )+φ +φ −a φ+a (ψ +ψ )−a ψ +a T (cid:2) 1 φ¨ (3.4)
+4 x z xx zz 5 3 xx zz 6 7 δ2
+1
+−a (u +w )+φ +φ −a φ+a (ψ +ψ )−a ψ +a T (cid:2) 1 ψ¨ (3.5)
+9 x z xx zz 10 8 xx zz 11 12 δ2
+(cid:3) (cid:4) (cid:5) (cid:6) (cid:5) (cid:6) (cid:5)2 (cid:6)
+ε u˙ +w˙ +t (u¨ +w¨ ) +a φ˙ +t φ¨ +a ψ˙ +t ψ¨ −T −T (cid:2)− T ˙ +t T ¨ (3.6)
+x z 0 x z 13 0 14 0 xx zz 0
+1
+u L,xx +w L,xz (cid:2) δ2 u¨ L (3.7)
+L
+Doubleporousthermoelasticwavesinahomogeneous…
+1
+u L,xz +w L,zz (cid:2) δ2 w¨ L (3.8)
+L
+where
+bc2 dc2 b βT χ b α c2 α c2
+a (cid:2) 1 , a (cid:2) 1 , a (cid:2) 1, a (cid:2) 0 1 , a (cid:2) 1 1 , a (cid:2) 3 1
+1 ω∗2χ
+1
+βT
+0
+2 ω∗2χ
+1
+βT
+0
+3 α 4 ρc
+1
+2α 5 αω∗2 6 αω∗2
+γ T χ γ βT χ d α c2 α c2 γ T χ
+a (cid:2) 1 0 1, a (cid:2) , a (cid:2) 0 1 ,a (cid:2) 3 1 , a (cid:2) 2 1 , a (cid:2) 2 0 1
+7 α 8 b
+1
+9 ρc
+1
+2b
+1
+10 ω∗2b
+1
+11 ω∗2b
+1
+12 b
+1
+γ c4 γ c4 β2T λ+2μ μ α
+a (cid:2) 1 1 , a (cid:2) 2 1 , ε (cid:2) 0 , c2 (cid:2) , c2 (cid:2) c2 (cid:2) ,
+13 Kω∗3χ 14 Kω∗χ ρC (λ+2μ) 1 ρ 2 ρ 3 χ
+1 1 e 1
+b C ρc2 c2 c2 c2 c2
+c2 (cid:2) 1, ω∗ (cid:2) e 1, δ2 (cid:2) 2, δ2 (cid:2) 3, δ2 (cid:2) 4, δ2 (cid:2) L.
+4 χ 2 K c 1 2 1 c 1 2 2 c 1 2 L c 1 2
+Hereω∗ isthecharacteristicsfrequency(cid:2)inadoubleporousthermoelasticsolidhalf-space,εisthethermome-
+chanicalcouplingconstant,andc2 (cid:2)λ ρ representsthevelocityofsoundinliquid.Also,c isthevelocity
+L L L 1
+of a longitudinal wave, c is the velocity of a transverse wave c , and c are the velocities due to volume
+2 3 4
+fractionfieldsofthetypeIandtypeIIvoids,respectively.
+3.2 Helmholtzdecompositionprinciple
+FollowingAchenbach[26],thedisplacementcomponentsmaybeexpressedusingtheHelmholtzdecomposi-
+tionprincipleas
+u (cid:2) G + H , w (cid:2) G − H (3.9)
+x z z x
+whereG(x,z,t)andH(x,z,t)arethescalarandvectorpotentialfunctionsforthelongitudinalandtransverse
+waves,respectively;becauseinviscidliquidcannotsustainshearmotion,thedisplacementcomponents(3.9)
+forliquidmediumbecomes
+u L (cid:2) G L,x , w L (cid:2) G L,z (3.10)
+where G (x,z,t) is the scalar potential function for liquid half-space, using the Helmholtz expression of
+L
+displacementasdefinedinrelation(3.9)inrelation(3.2)–(3.6),weget
+G +G +a φ+a ψ −T (cid:2) G ¨ (3.11)
+xx zz 1 2
+δ2(H + H )(cid:2) H ¨ (3.12)
+xx zz
+−a (G +G )+φ +φ −a φ+a (ψ +ψ )−a ψ +a T (cid:2) 1 φ¨ (3.13)
+4 xx zz xx zz 5 3 xx zz 6 7 δ2
+1
+−a (G +G )+φ +φ −a φ+a (ψ +ψ )−a ψ +a T (cid:2) 1 ψ¨ (3.14)
+9 xx zz xx zz 10 8 xx zz 11 12 δ2
+(cid:3) (cid:5) (cid:6)(cid:4) (cid:5) (cid:6) (cid:5) (cid:6) (cid:5) 2 (cid:6)
+ε G ˙ +G ˙ +t G ¨ +G ¨ +a φ˙ +t φ¨ +a ψ˙ +t ψ¨ −T −T (cid:2)− T ˙ +t T ¨ (3.15)
+xx zz 0 xx zz 13 0 14 0 xx zz 0
+UsingEq.(3.10)inEqs.(3.7)and(3.8),weget
+G L,xx +G L,zz (cid:2) δ 1 2 G ¨ L (3.16)
+L
+It is observed that the connection of potential functionwith wave polarization or particle motion cannot
+beignored.HenceEqs.(3.11),(3.13)-(3.15)representcoupledsystemsofequationsinfunctions G, φ, ψ,
+and T, whereas Eqs. (3.12) and (3.16) are uncoupled in potentials H and G , respectively. Equation (3.16)
+L
+representstheindependentwavemotionfortheliquidhalf-space.Itisalsonoticedthatthethermalproperties
+andpresenceofbothtypesofvoidsparametersaffectthecoupledsystemofwaves.
+V.Pathaniaetal.
+4 Solutionoftheproblem
+Fortime-harmonicplanewavesolutions,thevariouspotentialfunctionscanbetakenas
+(cid:7) (cid:8)
+(G,H,φ,ψ,T,G )(cid:2) G(z),H(z),φ(z),ψ(z),T(z),G (z) exp{ιk(x −ct)} (4.1)
+L L
+Here G(z), H(z),φ(z),ψ(z), T(z), G (z)arethefunctionsrepresentingtheamplitudeofwaves,c (cid:2) ω/k
+L
+non-dimensionalphasevelocity,andk andωrepresentwavenumberandangularfrequency.
+UsingEq.(4.1)inEqs.(3.11)–(3.16),aftersuppressingbars,weget
+(cid:5) (cid:6)
+m2−(cid:19)2 G+a φ+a ψ −T (cid:2)0 (4.2)
+1 1 2
+(cid:5) (cid:6) (cid:5) (cid:6) (cid:3) (cid:5) (cid:6) (cid:4)
+−a m2−k2 G+ m2−(cid:19)2 φ+ a m2−k2 −a ψ +a T (cid:2)0 (4.3)
+4 2 3 6 7
+(cid:5) (cid:6) (cid:5) (cid:6) (cid:3) (cid:5) (cid:6)(cid:4)
+−a m2−k2 G+ m2−k2−a φ+ a m2−(cid:19)2 ψ +a T (cid:2)0 (4.4)
+9 10 8 3 12
+(cid:5) (cid:6) (cid:5) (cid:6)
+ω2τ ε m2−k2 G+ω2τ a φ+ω2τ a ψ + m2−(cid:19)2 T (cid:2)0 (4.5)
+0 0 13 0 14 4
+(cid:5) (cid:6)
+m2−(cid:19)2 H (cid:2)0 (4.6)
+5
+(cid:5) (cid:6)
+m2−(cid:19)2 G (cid:2)0 (4.7)
+6 L
+where
+(cid:9) (cid:10) (cid:11)(cid:12) (cid:9) (cid:10) (cid:11)(cid:12)
+(cid:5) (cid:6) 1 a c2 1 a
+(cid:19)2 (cid:2)k2 1−c2 , (cid:19)2 (cid:2)k2 1−c2 − 5 , (cid:19)2 (cid:2)k2 1− − 11
+1 2 δ2 ω2 3 a δ2 ω2
+1 (cid:10) (cid:11) 8 2
+(cid:13) (cid:14)
+(cid:5) (cid:6) c2 c2
+(cid:19)2 (cid:2)k2 1−τ c2 , (cid:19)2 (cid:2)k2 1− , (cid:19)2 (cid:2)k2 1− , τ (cid:2)t +ιω−1.
+4 0 5 δ2 6 δ2 0 0
+L
+4.1 Characteristicsroots
+ThehomogeneoussystemofEqs.(4.2)-(4.7)hasanontrivialsolutionifthedeterminantofitscoefficientmatrix
+vanishes,whichyieldscharacteristicsrootsas
+(cid:15) (cid:16)
+m2 (cid:2)k2 1−λ2c2 ; j (cid:2)1, 2, 3, 4, 5, 6
+j j
+whereλ2; j (cid:2)1, 2, 3, 4aretherootsoftheequation
+j
+D4+L D3+L D2+L D+L (cid:2)0 (4.8)
+1 2 3 4
+ThevaluesofcoefficientsL , L , L , L aregiveninAppendixA.Thesevaluesarecomplexquantities
+1 2 3 4
+anddependonangularfrequencyω.Thus,characteristicrootsobtainedfromEq.(4.8)arecomplex.
+Also
+1 1
+λ2 (cid:2) , λ2 (cid:2) .
+5 δ2 6 δ2
+L
+Doubleporousthermoelasticwavesinahomogeneous…
+4.2 Couplingparameters
+Sincethestudyisconcernedwithsurfacewaves,thus,themotionmustberestri(cid:5)ctedtotheinterfaceasdefined(cid:6)
+inthemodel.HencetheformalsolutionthatmeetstheradiationrequirementRe m ≥0, q (cid:2)1, 2, 3, 4, 5
+q
+forthermoelasticsolidhalf-space(0< z <∞)withdoubleporosityisobtainedas
+(cid:17)4 (cid:5) (cid:6) (cid:7) (cid:8)
+(G,φ,ψ,T)(cid:2) 1,V ,W ,S U exp ιk(x −ct)−m z (4.9)
+q q q q q
+q(cid:2)1
+H (cid:2)U exp{ιk(x −ct)−m z} (4.10)
+5 5
+andtheformalsolutionsatisfyingtheradiationconditionRe(m ) ≥ 0forliquidhalf-space(−∞<z <0),
+6
+isgivenby
+G (cid:2)U exp{ιk(x −ct)+m z} (4.11)
+L 6 6
+where V , W , S arethecouplingparametersgiveninAppendixB.HereU , U , U , U , and U are
+q q q 1 2 3 4 5
+amplitudesoflongitudinal,thermal,voidsoftypeI,typeII,andtransversewaves,respectively.Also,U isthe
+6
+amplitudeoflongitudinalwaveinliquidhalf-space.
+5 Boundaryconditions
+Theboundaryconditionsthatmustbemetatthethermoelasticsolid–liquidcontactz (cid:2)0are:
+(i) Thestressboundaryconditionsare
+ρ
+G ¨ −2δ2(G + H )(cid:2) L G ¨ (5.1)
+xx xz ρ L
+H ¨ +2δ2(G − H )(cid:2)0 (5.2)
+xz xx
+(ii) Thedisplacementboundaryconditionis
+G z − H x (cid:2) G L,z (5.3)
+(iii) ThetypeIandtypeIIvoidsboundaryconditionsare
+αφ +b ψ (cid:2)0 (5.4)
+z 1 z
+b φ +γψ (cid:2)0 (5.5)
+1 z z
+(iv) Thethermalboundaryconditionis
+T +hT (cid:2)0 (5.6)
+z
+wherehisthecoefficientofsurfaceheattransfer,whichuponh →0andh →∞correspondstothethermally
+insulatedandisothermalboundaries,respectively.
+V.Pathaniaetal.
+6 Derivationofthesecularequation
+Withtherelations(4.9)-(4.11)andtheboundaryconditions(5.1)–(5.6)attheinterface z (cid:2) 0,thefollowing
+systemofequationshasbeenobtained.
+(cid:17)4 2ιk ρ ω2
+U + m U (cid:2)− L U (6.1)
+q P 5 5 ρδ2P 6
+q(cid:2)1
+2ιk (cid:17)4
+m U −U (cid:2)0 (6.2)
+q q 5
+P
+q(cid:2)1
+(cid:17)4
+m U +ιkU (cid:2)−m U (6.3)
+q q 5 6 6
+q(cid:2)1
+(cid:17)4 (cid:5) (cid:6)
+m V +a W U (cid:2)0 (6.4)
+q q 3 q q
+q(cid:2)1
+(cid:17)4 (cid:5) (cid:6)
+m V +a W U (cid:2)0 (6.5)
+q q 8 q q
+q(cid:2)1
+(cid:17)4 (cid:5) (cid:6)
+−m +h S U (cid:2)0 (6.6)
+q q q
+q(cid:2)1
+(cid:15) (cid:16)
+Here P (cid:2)k2 2− c2 .
+δ2
+A nontrivial solution of the linear system of six homogenous equations has been obtained from
+Eqs. (6.1)–(6.6), which, after extensive calculations, yields the secular equation for modified guided waves
+propagationas
+(cid:13) (cid:14) (cid:13) (cid:14)
+c2 2 4m
+2− (F −F +F −F )+ ω − 5 (m F −m F +m F −m F )
+δ2 1 2 3 4 L k2 1 1 2 2 3 3 4 4
+(cid:9) (cid:12)
+(cid:13) (cid:14) (cid:13) (cid:14)
+c2 2(cid:5) (cid:6) 4m (cid:5) (cid:6)
+(cid:2)h 2− F (cid:3) −F (cid:3) +F (cid:3) −F (cid:3) + ω − 5 m F (cid:3) −m F (cid:3) +m F (cid:3) −m F (cid:3) (6.7)
+δ2 1 2 3 4 L k2 1 1 2 2 3 3 4 4
+where
+ρ ω4
+ω (cid:2) L ,
+(cid:18)
+L ρδ4k4m
+6 (cid:18)
+(cid:18) (cid:18)
+(cid:18)m
+2
+(V
+2
++a
+3
+W
+2
+)m
+3
+(V
+3
++a
+3
+W
+3
+)m
+4
+(V
+4
++a
+3
+W
+4
+)(cid:18)
+F 1 (cid:2)(cid:18) (cid:18)m 2 (V 2 +a 8 W 2 )m 3 (V 3 +a 8 W 3 )m 4 (V 4 +a 8 W 4 )(cid:18) (cid:18) ,
+(cid:18) (cid:18)
+m S m S m S
+(cid:18) 2 2 3 3 4 4 (cid:18)
+(cid:18) (cid:18)
+(cid:18)m
+1
+(V
+1
++a
+3
+W
+1
+)m
+3
+(V
+3
++a
+3
+W
+2
+)m
+4
+(V
+4
++a
+3
+W
+4
+)(cid:18)
+F 2 (cid:2)(cid:18) (cid:18)m 1 (V 1 +a 8 W 1 )m 3 (V 3 +a 8 W 3 ) m 4 (V 4 +a 8 W 4 )(cid:18) (cid:18)
+(cid:18) (cid:18)
+m S m S m S
+(cid:18) 1 1 3 3 4 4 (cid:18)
+(cid:18) (cid:18)
+(cid:18)m
+1
+(V
+1
++a
+3
+W
+1
+)m
+2
+(V
+2
++a
+3
+W
+2
+)m
+4
+(V
+4
++a
+3
+W
+4
+)(cid:18)
+F 3 (cid:2)(cid:18) (cid:18)m 1 (V 1 +a 8 W 1 )m 2 (V 2 +a 8 W 2 )m 4 (V 4 +a 8 W 4 )(cid:18) (cid:18) ,
+(cid:18) (cid:18)
+m S m S m S
+(cid:18) 1 1 2 2 4 4 (cid:18)
+(cid:18) (cid:18)
+(cid:18)m
+1
+(V
+1
++a
+3
+W
+1
+)m
+2
+(V
+2
++a
+3
+W
+2
+)m
+3
+(V
+3
++a
+3
+W
+3
+)(cid:18)
+F 4 (cid:2)(cid:18) (cid:18)m 1 (V 1 +a 8 W 1 )m 2 (V 2 +a 8 W 2 )m 3 (V 3 +a 8 W 3 )(cid:18) (cid:18) .
+(cid:18) (cid:18)
+m S m S m S
+1 1 2 2 3 3
+Similarly,F (cid:3) itcanbeobtainedF byreplacingm S byS ,q (cid:2)1, 2, 3, 4.ThesecularEq.(6.7)provides
+q q q q q
+completeinformationonphasevelocity,wavenumber,attenuationcoefficient,andothercharacteristicsofthe
+wave.Thesecularequationforthegivenpossiblecasesisasfollows:
+Doubleporousthermoelasticwavesinahomogeneous…
+6.1 Forthethermallyinsulatedcase(h → 0)
+(cid:13) (cid:14) (cid:13) (cid:14)
+c2 2 4m
+2− (F −F +F −F )+ ω − 5 (m F −m F +m F −m F )(cid:2)0 (6.8)
+δ2 1 2 3 4 L k2 1 1 2 2 3 3 4 4
+6.2 Fortheisothermalcase(h → ∞)
+(cid:13) (cid:14) (cid:13) (cid:14)
+c2 2(cid:5) (cid:6) 4m (cid:5) (cid:6)
+2− F (cid:3) −F (cid:3) +F (cid:3) −F (cid:3) + ω − 5 m F (cid:3) −m F (cid:3) +m F (cid:3) −m F (cid:3) (cid:2)0 (6.9)
+δ2 1 2 3 4 L k2 1 1 2 2 3 3 4 4
+6.3 Particularcases
+• Intheabsenceofliquid(ρ →0),Eqs.(6.8)and(6.9)reduceto
+L
+(cid:13) (cid:14)
+c2 2
+k2 2− (F −F +F −F )(cid:2)4m (m F −m F +m F −m F ) (6.10)
+δ2 1 2 3 4 5 1 1 2 2 3 3 4 4
+(cid:13) (cid:14)
+c2 2(cid:5) (cid:6) (cid:5) (cid:6)
+k2 2− F (cid:3) −F (cid:3) +F (cid:3) −F (cid:3) (cid:2)4m m F (cid:3) −m F (cid:3) +m F (cid:3) −m F (cid:3) (6.11)
+δ2 1 2 3 4 5 1 1 2 2 3 3 4 4
+Equations (6.10) and (6.11) represent the secular equations of Rayleigh waves in a thermoelastic solid
+half-space.
+• IntheabsenceofvoidstypeII,Eqs.(6.10)and(6.11)reduceto
+(cid:13) (cid:14)
+c2 2(cid:5) (cid:6) (cid:5) (cid:6)
+k2 2− F ∗−F ∗ +F ∗ (cid:2)4m m F ∗−m F ∗ +m F ∗ (6.12)
+δ2 1 2 4 5 1 1 2 2 4 4
+(cid:13) (cid:14)
+c2 2(cid:5) (cid:6) (cid:5) (cid:6)
+k2 2− F (cid:3)∗−F (cid:3)∗ +F (cid:3)∗ (cid:2)4m m F (cid:3)∗−m F (cid:3)∗ +m F (cid:3)∗ (6.13)
+δ2 1 2 4 5 1 1 2 2 4 4
+where
+(cid:5) (cid:6) (cid:5) (cid:6) (cid:5) (cid:6)
+F ∗ (cid:2)m m V ∗ S ∗−V ∗ S ∗ , F ∗ (cid:2)m m V ∗ S ∗−V ∗ S ∗ , F ∗ (cid:2)m m V ∗ S ∗−V ∗ S ∗
+1 2 4 2 4 4 2 2 1 4 1 4 4 1 4 1 2 1 2 2 1
+F (cid:3)∗ (cid:2)m V ∗ S ∗−m V ∗ S ∗, F (cid:3)∗ (cid:2)m V ∗ S ∗−m V ∗ S ∗, F (cid:3)∗ (cid:2)m V ∗ S ∗−m V ∗ S ∗.
+1 2 2 4 4 4 2 2 1 1 4 4 4 1 4 1 1 2 2 2 1
+Here V ∗ and S ∗ ; q (cid:2) 1,2,4canbeobtainedfromV and S byneglectingtheparametersoftypeIIvoids.
+q q q q
+Equations (6.12) and (6.13) represent the secular equations of Rayleigh waves in a porothermoelastic solid
+half-spaceforthermallyinsulatedandisothermalboundaries,respectively.
+• IntheabsenceofvoidstypeI,Eqs.(6.12)and(6.13)reduceto
+(cid:13) (cid:14)
+c2 2(cid:5) (cid:6)
+k2 2− m2+m2+m m −(cid:19)2 (cid:2)4m m m (m +m ) (6.14)
+δ2 1 4 1 4 1 5 1 4 1 4
+(cid:13) (cid:14)
+c2 2 (cid:5) (cid:6)
+k2 2− (m +m )(cid:2)4m m m +(cid:19)2 (6.15)
+δ2 1 4 5 1 4 1
+Equations(6.14)and(6.15)givethesecularequationsoftheRayleighwavesinthermoelastichalf-space
+forthermallyinsulatedandisothermalboundaries,respectively.
+• Foruncoupledthermoelasticity,theEqs.(6.14)and(6.15)leadto
+(cid:13) (cid:14) (cid:19) (cid:13) (cid:14)(cid:20)
+c2 2 (cid:5) (cid:6) c2 2 1
+2− (cid:2)4 1−c2 1− (6.16)
+δ2 δ2
+Equation(6.16)isthevelocityoftheRayleighwaveinelastokineticsandthesameasobtained[17]and
+[19].
+V.Pathaniaetal.
+7 Solutionofthesecularequation
+Thesecularequationgivesinformationaboutthebehavioralpatternofwaveprofile,phasevelocity,attenuation
+coefficient,andwavenumberoftheleakyRayleighwaves.Thecharacteristicsrootsm2; j (cid:2)1, 2, 3, 4, 5, 6
+j
+arecomplexasfollows:
+(cid:5) (cid:2) (cid:6)
+c (cid:2)± 1 m (7.1)
+j j
+These six couples give five distinct waves in the double porous thermoelastic solid half-space and one
+mechanicalwaveintheinviscidliquidhalf-space.Outofthesefivewavesinsolidhalf-space,fourdispersive
+andattenuatedwavesdependontemperaturechangeandthefractionofvoidvolumeduetotypeIandtypeII
+voids.Onedecoupledtransversewaveisindependentoftheseparameters.TosolvethesecularEq.(6.7)and
+derivetheexpressionsforphasevelocity,attenuationcoefficients,etc.,wetake
+c
+−1 (cid:2)v−1+ιω−1Q ∗
+(7.2)
+j j j
+Herek (cid:2) R ∗ +ιω−1Q ∗, R ∗ (cid:2)ω/ν andQ ∗ arerealnumbers.Thecomponentofplanewavesolutiongivenby
+j j j j j
+Eq.(4.1)becomes−Q ∗ x+ιR ∗ (x−ν t).Thisshowsv andQ ∗ thephasevelocityandattenuationcoefficient
+j j j j j
+ofthewaves,respectively.UsingEq.(7.2)inthesecularEq.(6.7),therootsλ2 ofEq.(4.8)arecalculatedwith
+j
+thehelpofMatlab.Thevaluesoftherootsλ2;arethenusedtocomputethecomplexcharacteristicrootsm2
+(cid:15) (cid:16) j j
+fromrelationm2 (cid:2)k2 1−λ2c2 .Therootsm2; j (cid:2)1, 2, 3, 4, 5,6areusedtosolvethesecularequation.
+j j j
+Aftersolvingthesecularequation,thephasevelocityandattenuationcoefficientareobtainedν (cid:2)1/Re(m ),
+j j
+Q ∗ (cid:2) ωIm(m ), respectively, using the relation (7.2) in Eq. (7.1). The distinct value of phase velocity ν
+j j j
+∗
+correspondstodifferentwaves.Thesewavesareattenuatedinspace,havingtheattenuationcoefficient Q .
+j
+7.1 Specificlossandpenetrationdepth
+Itisawell-knownfactthatanyvibratingbodywouldultimatelycometorestevenifentirelyisolatedfromits
+surroundings.Thisresultsinenergydissipationwithinthematerialcalledinternalfriction.Thespe(cid:2)cificlossis
+themostdirectmethodtocalculateinternalfrictioninamaterial.Thespecificlossistheratio(cid:21)E E,where
+(cid:21)E theamountofenergydissipatedinaspecimeninpassingthroughonestresscycletotheelasticenergy E
+storedwithinthespecimenatmaximumstrain.Therefore,wehave
+(cid:18) (cid:18) (cid:18) (cid:18)
+(cid:18) (cid:18) (cid:18) (cid:18)
+SL (cid:2) (cid:18) (cid:18) (cid:18) (cid:21) E E (cid:18) (cid:18) (cid:18) (cid:2)4π (cid:18) (cid:18) (cid:18) I R m e ( ( k k ) ) (cid:18) (cid:18) (cid:18) (cid:2)4π (cid:18) (cid:18) (cid:18) (cid:18) Q R ∗ ∗ j (cid:18) (cid:18) (cid:18) (cid:18) (cid:2)4π (cid:18) (cid:18) (cid:18) (cid:18) ν j ω Q ∗ j (cid:18) (cid:18) (cid:18) (cid:18) . (7.3)
+j
+Whenthewavesincidentthesurfaceofsolidmaterial,theymaybepartiallyreflectedfromthatsurface,
+andsomeenergymaybetransmittedintothematerial.Thesewavesinteractwiththemoleculespresentinside
+thematerial.Dependingonthenatureofthematerial,thewavemaydieoutveryquicklyormighttravelvery
+far into the material. Thus the penetration depth measures how deep a wave can penetrate a material. It is
+definedas
+1 1
+PD (cid:2) |Im(k)| (cid:2) (cid:18) (cid:18) (cid:18)Q ∗ (cid:18) (cid:18) (cid:18) . (7.4)
+j
+8 Amplitudeoftemperaturechange,displacements,andvolumefractionfields
+UsingEqs.(3.9),(3.10),and(4.9)–(4.11),theamplitudeofdisplacements,volumefractionfields,andtemper-
+aturechangeincaseofthestress-free,voided,thermallyinsulated,orisothermalboundariesattheinterface
+z (cid:2)0havebeenobtainedas
+(cid:21) (cid:22) (cid:21) (cid:22)
+(cid:5) (cid:6) (cid:5) (cid:6)
+U ˜ (cid:2)U χexp ιR ∗ x −v t , W ˜ (cid:2) W χexp ιR ∗ x −v t
+s s j j s s j j
+(cid:21) (cid:22) (cid:21) (cid:22)
+(cid:5) (cid:6) (cid:5) (cid:6)
+φ˜ (cid:2)(cid:23)χexp ιR ∗ x −v t , ψ˜ (cid:2)ψχexp ιR ∗ x −v t
+s j j s j j
+Doubleporousthermoelasticwavesinahomogeneous…
+(cid:21) (cid:15) (cid:16)(cid:22) (cid:21) (cid:22)
+(cid:5) (cid:6)
+T ˜ (cid:2)(cid:24)χexp ιR ∗ x −v∗ t , U ˜ (cid:2)U χexp ιR ∗ x −v t ,
+s j j L L j j
+(cid:21) (cid:22)
+(cid:5) (cid:6)
+W ˜ (cid:2) W χexp ιR ∗ x −v t ; j (cid:2)1, 2, 3, 4, 5,6 (8.1)
+L L j j
+Here, u (cid:2) U(cid:21) ˜
+s
+, w (cid:2) (cid:22)W ˜
+s
+, φ (cid:2) φ˜
+s
+, ψ (cid:2) ψ˜
+s
+, T (cid:2) T ˜
+s
+, u
+L
+(cid:2) U ˜
+L
+, w
+L
+(cid:2) W ˜
+L
+at the interface z (cid:2) 0 and
+χ (cid:2)U exp −Q ∗ x ,
+1 j
+(cid:13) (cid:14) (cid:13) (cid:14)
+U U U U U U U U
+U (cid:2)ιk 1+ 2 + 3 + 4 −m 5, W (cid:2)− m +m 2 +m 3 +m 4 −ιk 5
+S 5 S 1 2 3 4
+U U U U U U U U
+1 1 1 1 1 1 1 1
+U U U U U U
+(cid:23)(cid:2) V +V 2 +V 3 +V 4, (cid:25) (cid:2) W +W 2 +W 3 +W 4
+1 2 3 4 1 2 3 4
+U U U U U U
+1 1 1 1 1 1
+U U U U U
+(cid:24)(cid:2) S +S 2 +S 3 +S 4, U (cid:2)ιk 6, W (cid:2)m 6.
+1 2 3 4 L L 6
+U U U U U
+1 1 1 1 1
+Usingtherelation(8.1)inrelations(6.1)–(6.5),asetofequationshasbeenwritteninmatrixformas
+⎡ ⎤
+1 1 1 p m p
+1 5 2
+⎢−p m −p m −p m 1 0 ⎥
+⎢ 1 2 1 3 1 4 ⎥
+⎢m m m ιk m ⎥
+⎣ 2 3 4 6⎦
+m (V +a W )m (V +a W )m (V +a W )0 0
+2 2 3 2 3 3 3 3 4 4 3 4
+m (V +a W )m (V +a W )m (V +a W )0 0
+2 2 8 2 ⎡3 3 8 3 4 4⎤ 8 4
+−1
+⎢p m ⎥
+⎢ 1 1 ⎥
+⎢−m ⎥
+⎣ 1 ⎦
+−m (V +a W )
+1 1 3 1
+−m (V +a W )
+1 1 8 1
+(cid:2)
+where p (cid:2) 2ιk, p (cid:2) ρ L ω2 .ThetermsU U i (cid:2)2, 3, 4, 5, 6havebeendefinedinAppendixC.
+1 p∗ 2 ρp∗ i 1
+9 Particlepathsonthesurface
+The motion of the surface particles (z (cid:2)0) of modified waves has been discussed in this section. When
+thermomechanicalcouplingandinteractionofdifferentfieldsareactive,theamplitudeofwavesandslowness
+areunreal.Thisindicatesthatthewavehasbeendamped,andthefunctionsu andwhaveaphasedifference.
+Asaresult,onthesurfacez (cid:2)0,theEqs.(8.2)onrealpartsretentionleadto
+U
+˜˜
+(cid:2)|U |χcos(θ − p), W
+˜˜
+(cid:2)|W |χcos(θ − p) (9.1)
+s s 1 s s 2
+U
+˜˜
+(cid:2)|U |χcos(θ − p), W
+˜˜
+(cid:2)|W |χcos(θ − p) (9.2)
+L L 3 L L 4
+(cid:5) (cid:6)
+whereθ (cid:2)arg(U ),θ (cid:2)arg(W ),θ (cid:2)arg(U ),θ (cid:2)arg(W ),and p (cid:2) R ∗ x −v t .
+1 s 2 s 3 L 4 L j j
+Equation(9.1)canalsobewrittenas
+U
+˜˜
+(cid:2)|U |χ[cosθ cosp+sinθ sin p] , (9.3)
+s s 1 1
+W
+˜˜
+(cid:2)|W |χ[cosθ cosp+sinθ sin p] (9.4)
+s s 2 2
+Eliminating pEqs.(9.3)and(9.4),wehave
+U
+˜˜2
+W
+˜˜2
+2U
+˜˜
+W
+˜˜
+s + s − s s cos(θ −θ )(cid:2)χ2sin2(θ −θ ) (9.5)
+|U
+s
+|2 |W
+s
+|2 |U
+s
+||W
+s
+| 1 2 1 2
+Similarly,byeliminating pEq.(9.2),weget
+U
+˜˜2
+W
+˜˜2
+2U
+˜˜
+W
+˜˜
+L + L − L L cos(θ −θ )(cid:2)χ2sin2(θ −θ ) (9.6)
+|U
+L
+|2 |W
+L
+|2 |U
+L
+||W
+L
+| 3 4 3 4
+V.Pathaniaetal.
+Since cos2(θ 1 −θ 2 ) − 1 (cid:2)−sin2(θ 1 −θ 2 ) <0,so,Eq.(9.5)representsanellipsewithasemimajoraxis
+(G ),semim |Us in |2 o |W r s a |2 xis(G |Us ) | , 2| a W n s d |2 eccent | r U ic s | i 2 t | y W (s e |2 )as
+1 2
+(cid:19) (cid:20)
+(cid:21) (cid:22)
+(cid:5) (cid:6) 1 χ2
+G2 (cid:2) |U |2+|W |2+ |U |2−|W |2 2 +4|U |2|W |2cos2(θ −θ ) 2 (9.7)
+1 (cid:19) s s s s s s 1 2 (cid:20) 2
+(cid:21) (cid:22)
+(cid:5) (cid:6) 1 χ2
+G2 (cid:2) |U |2+|W |2− |U |2−|W |2 2 +4|U |2|W |2cos2(θ −θ ) 2 (9.8)
+2 s s s s s s 1 2 2
+(cid:21) (cid:22)
+(cid:5) (cid:6) 1
+2 |U |2−|W |2 2 +4|U |2|W |2cos2(θ −θ ) 2
+s s s s 1 2
+e2 (cid:2) (cid:21) (cid:22) (9.9)
+(cid:5) (cid:6) 1
+|U |2+|W |2+ |U |2−|W |2 2 +4|U |2|W |2cos2(θ −θ ) 2
+s s s s s s 1 2
+Furthermore,themagnitudesofthesemimajorandsemiminoraxesintheliquidmediumareapproximately
+identical,i.e., G (cid:2) G ,indicatingthatparticletrajectoriesintheliquidportionoftheinterfaceareclosely
+1 2
+approximatedascirclesratherthanellipses.Inthesolidmedium,theinclinationangleδ∗
+ofthewavenormal
+tothesemimajoraxisisgivenby
+2(tan2θ −1)U W cos(θ −θ )−(U2−W2)tanθ
+tan(2δ∗ )(cid:2) s s 1 2 s s (9.10)
+(tan2θ −1)(U2−W2)+4U W cos(θ −θ )tanθ
+s s s s 1 2
+(cid:2)
+Theincidenceangleisrepresentedbyθ.Ifthewavesarepropagatinghorizontally,thenθ (cid:2)π 2itimplies
+that
+(cid:13) (cid:14)
+1 2U W cos(θ −θ )
+δ∗ (cid:2) tan −1 s s 1 2 (9.11)
+2 U2−W2
+s s
+◦
+Equation(9.11)showsthatthereisa45 degreeofinclinationtothemajoraxis,andwavenormaldisplace-
+mentcomponentshaveequalmagnitudeatδ∗ (cid:2)45 ◦ .Asaresult,Eq.(9.5)depictsanellipticalretrogradepath,
+with surface particles moving in vertical planes parallel to the directionof wave propagation.The semiaxes
+groworshrinkexponentiallyasχ (cid:2)U exp(−Q ∗ x)increaseordecrease.Whenthesemimajorandsemimi-
+1
+nor axes have the same sign, the elliptical trajectories of t(cid:2)he waves degrade. However, the semimajor and
+semiminoraxesareofthesamemovementforθ −θ (cid:2)π 2.Furthermore,whenθ (cid:2)θ ,thatis,whenthe
+1 2 1 2
+functionsU and W havenophasedifference,theparticlepathsdegradeintostraightlines.Thesemimajor
+s s
+axisoftheellipseisperpendiculartothesolidsurfaceinasolidhalf-spacethroughwhichsurfacewavesmove
+onellipticalroutes,andthesizeoftheellipticalpathreducesasthewavepenetrationrises.Duetothepresence
+oftypeIandtypeIIvoids,theplaneofparticlemotionisslantedtowardthesemiminoraxis.
+10 Numericalresultsanddiscussion
+Toillustratetheoreticaladvancesbasedontheformulationsshownintheprecedingsections,wepresentsome
+computer-simulatednumericalresultsusingMATLABsoftware.Themagnesiumcrystalhasbeenselectedfor
+numericalcomputation.Thephysicaldataforwhichisgivenbelow[27,28]areasfollows:
+λ(cid:2)1.5×1010 Nm −2, μ(cid:2)7.5×109 Nm −2, ρ (cid:2)2×103 Kgm −3, α (cid:2)1.2×1010Nm −2, α (cid:2)8×109 N
+1
+α (cid:2)2.21×1010 Nm −2, α (cid:2)1.23×106 Nm −2, α (cid:2)1.78×10 −5K −1, γ (cid:2)8.2×109 N, T (cid:2)293K
+2 3 t 0
+γ (cid:2)2×106Nm −2, γ (cid:2)3.11×106 Nm −2, b (cid:2)2×108 Nm −2, b (cid:2)8.1×106 N, d (cid:2)2.1×108Nm −2
+1 2 1
+C (cid:2)1.809×106 m2s2K −1, K (cid:2)1.7×102 Wm −1K −1, ρ (cid:2)1.0×103 Kgm −3, λ (cid:2)2.140×103Nm −2
+e L L
+χ (cid:2)320kgm −1, χ (cid:2)330kgm −1.
+1 2
+Using these above parameters, the graphs of different physical properties (from Fig. 2 to Fig. 12) of
+theconsideredmodelw.r.t.non-dimensionalwavenumberhavebeenplottedforLord–Shulman(LS)theory,
+coupledthermoelasticity(CT)theory,andlocaltemperature(LT).Thesolidline,dashedline,anddash-dotted
+linecorrespondtotheCTtheory,LStheory,andLTeffect,respectively.
+Figure2depictsthephasevelocityprofileagainstthewavenumber.Itisnoticedthatmagnitudeofphase
+velocityisquitehighatvanishingwavenumber,whichexponentiallydecreaseswiththeincreaseinwavenumber
+Doubleporousthermoelasticwavesinahomogeneous…
+Fig.2 Variationofphasevelocitywithwavenumber
+Fig.3 Variationofspecificlosswithwavenumber
+andbecomesclosertotheRayleighwavevelocityattheinterfaceofdoubleporoussolidthermoelastichalf-
+spaceandinviscidliquidhalf-space.ItisobservedthattheLTeffecthashigherphasevelocity,followedby
+thegeneralizedLStheoryandCTtheory.Duetothedampingeffectofliquid,novariationhasbeenseenin
+thevelocityprofilefortheseparameters.
+Figure 3 shows the profile of specific loss w.r.t. wavenumber. The magnitude of specific loss is high at
+smaller wavenumbers that decrease exponentially with the increase in wavenumber. It is observed that CT
+theoryhasthelowestmagnitudeandtheLTeffecthasthehighestmagnitudeofspecificloss.Thetrendsinthe
+caseofCTtheoryandLStheoryshowthatrelaxationtimebehavesasanincreasingagentfortheamplitude
+ofspecificloss.Theeffectoflocaltemperatureshowsthattemperatureisanincreasingagentforthespecific
+loss.
+Figure4displaysthevariationofattenuationcoefficientw.r.t.wavenumber.Asthewavenumberincreases,
+theattenuationcoefficientalsoincreasesmonotonically.Themagnitudeoftheattenuationcoefficientishigher
+in the case of the LS theory, which is followed by the CT theory and LT effect, respectively. So, it can be
+concludedthatifthetemperatureofthemediumincreases,thenthemagnitudeoftheattenuationcoefficient
+decreases; also, if relaxation time is introduced, then the amplitude of the attenuation coefficient increases.
+V.Pathaniaetal.
+Fig.4 Variationofattenuationcoefficientwithwavenumber
+Fig.5 Variationofpenetratingdepthwithwavenumber
+Thatis,relaxationtimehasapositiveeffect,andthetemperaturehasanegativeeffectontheamplitudeofthe
+attenuationcoefficient.
+Figure5representsthevariationofpenetrationdepthwithwavenumber.Forthevanishingwavenumber,the
+amplitudeofpenetrationdepthisveryhighanddecreasesasthewavenumberincreasesforallthreeconsidered
+cases, i.e., LS, CT, and LT effects. It is observed that the LT effect has a higher magnitude of penetrating
+depth,followedbyCTtheoryandLStheory.Iftheimpactofrelaxationtimeisconsidered,theamplitudeof
+penetratingdepthdecreaseswhiletheamplitudeincreasesasthetemperatureofthemediumincreases.
+Figures 6 and 7 illustrate the effect of wavenumber on surface displacement components of magnesium
+materialinthecontextofLStheory,CTtheory,andlocaltemperaturevariation.Thehorizontalandvertical
+surface displacement component profiles show linear variations with increasing wave numbers for all three
+cases.ItisseenthatthehorizontaldisplacementcomponenthasahighermagnitudeintheLTeffect,followed
+byCTtheoryandthenLStheory.Still,intheverticaldisplacementcomponent,themagnitudeofCTtheory
+hasahighermagnitudethanLT,followedbyLStheory.
+Figures8and9displaythevariationofwavenumberonliquiddisplacementcomponentsinthecontextof
+LS,CTtheories,andlocaltemperaturevariation.Thehorizontalandverticalliquiddisplacementcomponent
+profiles are directly proportional to the wavenumber for all three cases. In both the horizontal and vertical
+Doubleporousthermoelasticwavesinahomogeneous…
+Fig.6 Variationofsurfaceofsurfacedisplacement(horizontal)withwavenumber
+Fig.7 variationofsurfacedisplacement(vertical)withwavenumber
+components of liquid displacement, the magnitude corresponding to CT theory is higher, followed by LS
+theoryandthentheLTeffect.
+Figure10unveilstheeffectofwavenumberonsurfacetemperaturechange,i.e.,thechangeintemperatureat
+theinterfaceofsolidandliquidhalf-spaces.Surfacetemperaturechangeincreasesexponentiallywithincreases
+inwavenumber.Inthestartingrangeofwavenumber(k <1),thereisnovariationinthesurfacetemperature
+changecorrespondingtotheLS,CTtheories,andlocaltemperature.Butsignificantdifferencesareobservedin
+themagnitudeofthesurfacetemperaturechangeasthewavenumberincreases.Itcanbeseenthatthemagnitude
+ofsurfacetemperaturechangeofCTtheoryisgreaterthantheLStheoryandLTeffect.Therelaxationtime
+andtemperatureareboththedecreasingagentfortheamplitudeofsurfacetemperaturechange.
+Figures11,12depictthevariationofwavenumberonthesurfacevolumefractionfieldduetotypeIandtype
+IIvoidsunderthethreeconsideredtheories.ThevolumefractionoftypeIvoidsandtypeIIvoidsdecreasesas
+thewavenumberincreases.Frombothfigures,itisnoticedthatthereisasignificanteffectoflocaltemperature
+andrelaxationtimeonthevolumefractionfieldduetotypeIvoidsandtypeIIvoids.Themagnitudesofthe
+volumefractionfieldduetotypeIandtypeIIhaveahighermagnitudeinthecaseofLStheory,followedby
+LTeffectandCTtheory.
+V.Pathaniaetal.
+Fig.8 Variationofliquiddisplacement(horizontal)withwavenumber
+Fig.9 Variationofliquiddisplacement(vertical)withwavenumber
+11 Conclusions
+Thepropagationofwavesinahomogenousisotropicdoubleporousthermoelasticsolidhalf-spaceunderly-
+ing an inviscid liquid half-space has been studied in the context of the LS theory of thermoelasticity. The
+expressionforcharacteristicroots,amplituderatios,andsecularequationsarewritteninthesimplestandthe
+mostconvenientformafterdoingrigorouscalculationsinthebackground.Thefollowingoutcomeshavebeen
+observedfromtheanalyticaldiscussionandnumericalanalysis.
+• Itisfoundthatthemagnitudesofphasevelocity,specificloss,andpenetrationdepthsharplydecreasewith
+the increase in wavenumber. At the same time, reverse behavioris observed in the attenuation coefficient
+profiles.
+• Itisconcludedthatthewaveprofilesofphasevelocity,specificloss,andattenuationcoefficienthavealower
+magnitude corresponding to the CT theory than the LS theory. In contrast, penetrating depth follows the
+reversebehavior.
+Doubleporousthermoelasticwavesinahomogeneous…
+Fig.10 Variationofsurfacetemperaturechangewithwavenumber
+Fig.11 VariationofVolumefractiontypeIvoidswithwavenumber
+• Ifthelocaltemperatureincreases,themagnitudeofphasevelocity,specificloss,andpenetratingdepthalso
+increases,butthemagnitudeoftheattenuationcoefficientdecreases.
+• Therelaxationtimeisadecreasingagentfortheamplitudeofsolidandliquiddisplacementsandtemperature
+change.
+• ThemagnitudeofthevolumefractionfieldduetotypeIandtypeIIvoidssharplydecreaseswiththeincrease
+inwavenumber.
+Theunusualpropertiesrevealedinsolidandliquiddisplacements,voids,andtemperaturechangemaybe
+helpfulinengineering,electronics,navigation,hydrology,andultrasonics.
+V.Pathaniaetal.
+Fig.12 VariationofvolumefractiontypeIIvoidswithwavenumber
+Acknowledgements ThethirdauthoristhankfultotheCouncilofScientificandIndustrialResearch(CSIR),NewDelhi,India
+(Fileno.09/1293(0003)/2019-EMR-I),forprovidingthejuniorresearchfellowship(JRF).
+Theauthorsdeclarethattheyhavenoconflictofinterest.
+Declarations
+Conflictofinterest Theauthorsdeclarethattheyhavenoconflictofinterest.
+AppendixA
+(cid:9)(cid:10) (cid:11) (cid:12)
+1 1 a 1
+L (cid:2)1+τ (1+ε)+ + 8 + (a −a +a a −a a +a a −a a +a a a −a a a )
+1 0 (a −a ) δ2 δ2 ω2 6 11 2 9 2 4 3 10 5 8 1 4 8 1 3 9
+(cid:29) 8 3 (cid:10) 2 (cid:11)1 (cid:9)
+1 1 1 a 1 1
+L (cid:2)τ + + + 8 {1+τ (1+ε)}+ a −a +a a −a a + (a a −a )
+2 0 (a −a ) δ2δ2 δ2 δ1 0 ω2 6 11 3 10 5 8 δ2 2 9 11
+8 3 1 2 2 1 1
+1
++ (a a −a )+τ (a −a +a a −a a +a a −a a +a a −a a +a a −a a
+δ2 1 4 5 0 6 11 2 9 2 4 3 10 5 8 7 14 4 14 9 14 12 14
+2
++a a a −a a a +a a a −a a a +a a a −a a a +ε(a −a +a a −a a +a a
+4 8 13 1 3 9 1 4 8(cid:12) 3 9 13 3 12 13 7 8 13 6 11 2 12 2 7 (cid:30)3 10
+1
+−a a +a a a +a a a )) + (a a −a a +a a a −a a a +a a a −a a a )
+5 8 1 3 12 1 7 8 ω4 5 11 6 10 1 6 9 1 4 11 2 4 10 2 5 9
+(cid:29) (cid:10) (cid:11) (cid:9)
+1 1 1 a 1 a a
+L (cid:2) {1+τ (1+ε)}+τ + 8 − 11 + 5 −τ {a −a +a a −a a
+3 (a −a ) δ2δ2 0 0 δ2 δ2 ω2 δ2 δ2 0 6 11 3 10 5 8
+8 3 1 2 2 1 1 2
+1 1
++a a −a a +a a a −a a a − (a −a a +a a −a a )− (a −a a +a a
+7 14 12 14 3 12 13 7 8 13 δ2 11 2 9 12 14 9 14 δ2 5 1 4 7 13
+(cid:9) 1 (cid:12)(cid:12)(cid:12) 2
+1 1 1
+−a a )−ε (a −a a )+ (a −a a ) − {a a −a a +τ {a a −a a a
+4 13 δ2 11 2 12 δ2 5 1 7 ω4 6 10 5 11 0 6 10 1 6 9
+1 2
++a a a −a a a +a a a −a a a +a a a −a a a +a a .a −a a a +a a a
+1 4 11 2 4 10 2 5 9 4 10 14 4 11 13 6 9 13 5 9 14 5 12 14 6 12 13
+−a a a +a a a −a a a a +a a a a −a a a a +a a a a −ε(a a −a a
+7 11 13 7 10 14 1 7 9 14 1 4 12 14 2 4 12 13 2 7 9 13 5 11 6 10
++a a a −a a a +a a a −a a a )}}]
+1 6 12 1 7 11 2 7 10 2 5 12
+Doubleporousthermoelasticwavesinahomogeneous…
+(cid:9) (cid:12)
+τ 1 1 1 1 1
+L (cid:2) 0 [ − (a +a a )+ (a +a a ) + (a a −a a +a a a
+4 a −a δ2δ2 ω2 δ2 11 12 14 δ2 5 7 13 ω4 5 11 6 10 5 12 14
+8 3 1 2 1 2
+−a .a a +a a a −a a a )]
+6 12 13 7 11 13 7 10 14
+AppendixB
+Vq (cid:2)((a3a9 −a4a8 −a3a12+a7a8)m
+q
+4 +(a6a12 −a6a9 −a2a4a12+a2a7a9+(cid:19)
+3
+2a4a8+(cid:19)
+1
+2a3a12 −(cid:19)
+1
+2a7a8
+−(cid:19)
+3
+2a7a8 −2a3a9k2+a4a8k2+a3a12k2)m
+q
+2 +a3a9k4−(cid:19)
+1
+2a6a12+a6a9k2+a2a4a12k2−a2a7a9k2
++(cid:19)
+1
+2(cid:19)
+3
+2a7a8 −(cid:19)
+3
+2a4a8k2−(cid:19)
+1
+2a3a12k2)/σ∗
+Wq (cid:2)((a4 −a7+a12 −a9)m
+q
+4 +(a7a10 −a4a10+(cid:19)
+1
+2a7 −(cid:19)
+1
+2a12+(cid:19)
+2
+2a9 −(cid:19)
+2
+2a12+a7k2−2a4k2+a9k2−a1a7a9
++a1a4a12)m
+q
+2 +a4k4−(cid:19)
+1
+2a7k2+(cid:19)
+1
+2(cid:19)
+2
+2a12 −(cid:19)
+2
+2a9k2+a4a10k2−(cid:19)
+1
+2a7a10+a1a7a9k2−a1a4a12k2)/σ∗
+Sq (cid:2)((a8 −a3)m
+q
+6 +(a6 −a2a4+a2a9+a3a10+(cid:19)
+1
+2a3 −(cid:19)
+1
+2a8 −(cid:19)
+2
+2a8 −(cid:19)
+3
+2a8+2a3k2−a1a3a9
++a1a4a8)m
+q
+4 +((cid:19)
+1
+2(cid:19)
+2
+2a8 −(cid:19)
+1
+2a6 −a3k4−a6k2−a6a10+(cid:19)
+1
+2(cid:19)
+3
+2a8+(cid:19)
+2
+2(cid:19)
+3
+2a8 −2(cid:19)
+1
+2a3k2
++a1a6a9+a2a4a10 −(cid:19)
+2
+2a2a9 −(cid:19)
+1
+2a3a10+2a2a4k2−a2a9k2−a3a10k2−(cid:19)
+3
+2a1a4a8+2a1a3a9k2
+−a1a4a8k2)m
+q
+2 +(cid:19)
+1
+2a3k4+(cid:19)
+1
+2a6k2+(cid:19)
+1
+2a6a10 −a2a4k4−a1 ·a3a9k4−a1a6a9k2−a2a4a10k2
++(cid:19)
+2
+2a2a9k2+(cid:19)
+1
+2a3a10k2−(cid:19)
+1
+2(cid:19)
+2
+2(cid:19)
+3
+2a8+(cid:19)
+3
+2a1a4a8 ·k2)/σ∗
+σ∗ (cid:2)(a −a )m4 +(a (cid:19)2−2a k2+a (cid:19)2−a +a a −a a +a a a −a a −a a a )m2 +a a
+3 8 q 8 2 3 8 3 6 2 7 3 10 1 3 12 2 12 1 7 8 q 6 10
+−(cid:19)2(cid:19)2a +a k4−a a a +a k2−a a a +(cid:19)2a a −a a k2+a a k2−a a a k2+(cid:19)2a a a
+2 3 8 3 1 6 12 6 2 7 10 2 2 12 2 7 3 10 1 3 12 3 1 7 8
+AppendixC
+U2 /U1 (cid:2)((V3W1 −V1W3)m1m3m6+(V1W4 −V4W1)m1m4m6+(V4W3 −V3W4)m3m4m6+(V1W3 −V3W1+V4W1
++V4W1 −V1W4+V3W4 −V4W3+ p1 ιk(V1W3 −V3W1+V4W1 −V1W4+V3W4 −V4W3))p2m1m3m4
++(V3W1 −V1W3+V1W4 −V4W1+V4W3 −V3W4)p
+1
+2m1m2m4m
+5
+m6)/σ∗∗
+U3 /U1 (cid:2)((V1W2 −V2W1)m1m2m6+(V4W1 −V1W4)m1m4m6+(V2W4 −V4W2)m2m4m6+(V2W1 −V1W2
++V1W4 −V4W1+V4W2 −V2W4+ p1 ιk(V2W1 −V1W2+V1W4 −V4W1+V4W2 −V2W4))p2m1m2m4
++(V1W2 −V2W1+V4W1 −V1W4+V2W4 −V4W2)p
+1
+2m1m2m4m
+5
+m6)/σ∗∗
+U4 /U1 (cid:2)((V2W1 −V1W2)m1m2m6+(V1W3 −V3W1)m1m3m6+(V3W2 −V2W3)m2m3m6+(V1W2 −V2W1
++V3W1 −V1W3+V2W3 −V3W2+ p1 ιk(V1W2 −V2W1+V3W1 −V1W3+V2W3 −V3W2))p2m1m2m3
++(V2W1 −V1W2+V1W3 −V3W1+V3W2 −V2W3)p
+1
+2m1m2m3m
+5
+m6)/σ∗∗
+U
+5
+/U1 (cid:2) p1m6((V1W2 −V2W1+V3W1 −V1W3+V2W3 −V3W2)m1m2m3+(V2W1 −V1W2+V1W4 −V4W1
++V4W2 −V2W4)m1m2m4+(V1W3 −V3W1+V4W1 −V1W4+V3W4 −V4W3)m1m3m4
++(V3W2 −V2W3+V2W4 −V4W2+V3W4+V4W3))/σ∗∗
+U6 /U1 (cid:2)(p1 ιk+1)((V2W1 −V1W2+V1W3 −V3W1+V3W2 −V2W3)m1m2m3+(V1W2 −V2W1+V4W1 −V1W4
++V2W4 −V4W2)m1m2m4+(V3W1 −V1W3+V1W4 −V4W1+V4W3 −V3W4)m1m3m4
++(V2W3 −V3W2+V4W2 −V2W4 −V3W4 −V4W3))/σ∗∗
+σ∗∗(cid:2)(V2W3 −V3W2)m2m3m6+(V4W2 −V2W4)m2m4m6+(V3W4 −V4W3)m3m4m6+(V3W2 −V2W3+V2W4
+−V4W2+V3W4 −V4W3+ p1 ιk(V3W2 −V2W3+V2W4 −V4W2+V4W3 −V3W4))p2m2m3m4
++(V2W3 −V3 .W2+V4W2 −V2W4+V3W4 −V4W3)p
+1
+2m1m2m3m
+5
+m6
+V.Pathaniaetal.
+References
+1. Lord,H.W.,Shulman,Y.:Ageneralizeddynamicaltheoryofthermoelasticity.J.Mech.Phys.Solids15(5),299–309(1967).
+https://doi.org/10.1016/0022-5096(67)90024-5
+2. Aifantis,E.C.:Introducingamulti-porousmedium.Dev.Mech8(3),209–211(1977)
+3. Nunziato,J.W.,Cowin,S.C.:Anonlineartheoryofelasticmaterialswithvoids.Arch.Ration.Mech.Anal.72(2),175–201
+(1979).https://doi.org/10.1007/BF00249363
+4. Beskos,D.E.,Aifantis,E.C.:Onthetheoryofconsolidationwithdoubleporosity—II.Int.J.Eng.Sci.24(11),1697–1716
+(1986).https://doi.org/10.1016/0020-7225(86)90076-5
+5. Ies¸an, D.: A theory of thermoelastic materials with voids. Acta Mech. 60(1), 67–89 (1986). https://doi.org/10.1007/
+BF01302942
+6. Dhaliwal,R.S.,Wang,J.:Aheat-fluxdependenttheoryofthermoelasticitywithvoids.ActaMech.110(1),33–39(1995).
+https://doi.org/10.1007/BF01215413
+7. Khalili,N.:Couplingeffectsindoubleporositymediawithdeformablematrix.Geophys.Res.Lett.30(22),10–12(2003).
+https://doi.org/10.1029/2003GL018544
+8. Khalili,N.,Selvadurai,A.P.S.:Afullycoupledconstitutivemodelforthermo-hydro-mechanicalanalysisinelasticmedia
+withdoubleporosity.Geophys.Res.Lett.(2003).https://doi.org/10.1029/2003GL018838
+9. Singh,J.,Tomar,S.K.:Planewavesinthermo-elasticmaterialwithvoids.Mech.Mater.39(10),932–940(2007)
+10. Straughan,B.:Stabilityanduniquenessindoubleporosityelasticity.Int.J.Eng.Sci.65,1–8(2013).https://doi.org/10.1016/
+j.ijengsci.2013.01.001
+11. Ies¸an,D.,Quintanilla,R.:Onatheoryofthermoelasticmaterialswithadoubleporositystructure.J.Therm.Stress.37(9),
+1017–1036(2014).https://doi.org/10.1080/01495739.2014.914776
+12. Scarpetta,E.,Svanadze,M.,Zampoli,V.:Fundamentalsolutionsinthetheoryofthermoelasticityforsolidswithdouble
+porosity.J.Therm.Stress.37(6),727–748(2014).https://doi.org/10.1080/01495739.2014.885337
+13. Svanadze,M.:Steadyvibrationproblemsinthetheoryofelasticityformaterialswithdoublevoids.ActaMech.229(4),
+1517–1536(2018).https://doi.org/10.1007/s00707-017-2077-z
+14. Gales,C.,Chirita,S.:Wavepropagationinmaterialswithdoubleporosity.MechMater.149,1–9(2020)
+15. Plona,T.J.,Behravesh,M.,Mayer,W.G.:RayleighandLambwavesatliquid-solidboundaries.Ultrasonics2(2),171–175
+(1975)
+16. Mozhaev,V.G.,Weihnacht,M.:SubsonicleakyRayleighwavesatliquid-solidinterfaces.Ultrasonics40(1–8),927–933
+(2002).https://doi.org/10.1016/S0041-624X(02)00233-0
+17. Sharma,J.N.,Pathania,V.:GeneralizedthermoelasticLambwavesinaplateborderedwithlayersofinviscidliquid.J.Sound
+Vib.268(5),897–916(2003).https://doi.org/10.1016/S0022-460X(02)01639-5
+18. Barak, M.S., Kumari, M., Kumar, M.: Effect of local fluid flow on the propagation of plane waves at an interface of
+water/double-porosity solid with underlying uniform elastic solid. Ocean Eng. 147, 195–205 (2018). https://doi.org/10.
+1016/j.oceaneng.2017.10.030
+19. Pathania,V.,Joshi,P.:Wavesinthermoelasticsolidhalf-spacecontainingvoidswithliquidloadings.ZAMM-J.Appl.Math.
+Mech.ZeitschriftfürAngew.Math.undMech.101(12),e202100093(2021).https://doi.org/10.1002/zamm.202100093
+20. Pathania,V.,Dhiman,P.:Onlamb-typewavesinaporo-thermoelasticplateimmersedintheinviscidfluid.WavesRandom
+ComplexMedia(2021).https://doi.org/10.1080/17455030.2021.2014599
+21. Kumar,M.,Liu,X.,Kalkal,K.K.,Dalal,V.,Kumari,M.:Inhomogeneouswavereflectionfromthesurfaceofapartially
+saturatedthermoelasticporousmedia.Int.J.Numer.MethodsHeatFluidFlow32(6),1911–1943(2022).https://doi.org/10.
+1108/HFF-04-2021-0279
+22. Kumari,M.,Kumar,M.:Wave-inducedflowofporefluidinacrackedporoussolidcontainingpenny-shapedinclusions.Pet.
+Sci.18(5),1390–1408(2021).https://doi.org/10.1016/j.petsci.2021.09.022
+23. Kumar,M.,Liu,X.,Kumari,M.,Yadav,P.:Wavepropagationattheweldedinterfaceofanelasticsolidandunsaturated
+poro-thermoelasticsolid.Int.J.Numer.MethodsHeatFluidFlow32(11),3526–3550(2022).https://doi.org/10.1108/HFF-
+01-2022-0008
+24. Kumari,M.,Kumar,M.:Reflectionofinhomogeneouswavesatthesurfaceofacrackedporoussolidwithpenny-shaped
+inclusions.WavesRandomComplexMedia32(4),1992–2013(2022).https://doi.org/10.1080/17455030.2020.1842555
+25. Kumari,M.,Kaswan,P.,Kumar,M.,Yadav,P.:Reflectionofinhomogeneousplanewavesatthesurfaceofanunsaturated
+porothermoelasticmedia.Eur.Phys.J.Plus137(6),729(2022).https://doi.org/10.1140/epjp/s13360-022-02880-8
+26. Achenbach,J.D.:Wavepropagationinelasticsolids.Elsevier,Amsterdam(1975).https://doi.org/10.1016/C2009-0-08707-
+8
+27. Sharma,J.N.,Pathania,V.:Propagationofleakysurfacewavesinthermoelasticsolidsduetoinviscidfluidloadings.J.Therm.
+Stress.28(5),485–519(2005).https://doi.org/10.1080/01495730590925010
+28. Singh,D.,Kumar,D.,Tomar,S.K.:Planeharmonicwavesinathermoelasticsolidwithdoubleporosity.Math.Mech.Solids
+25(4),869–886(2020).https://doi.org/10.1177/1081286519890053
+Publisher’s Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional
+affiliations.
+SpringerNatureoritslicensor(e.g.asocietyorotherpartner)holdsexclusiverightstothisarticleunderapublishingagreement
+with the author(s) or other rightsholder(s); author self-archiving of the accepted manuscript version of this article is solely
+governedbythetermsofsuchpublishingagreementandapplicablelaw.

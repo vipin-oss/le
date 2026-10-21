@@ -1,0 +1,1218 @@
+Applied Mathematical Modelling 150 (2026) 116393
+Contents lists available at ScienceDirect
+Applied Mathematical Modelling
+journal homepage: www.elsevier.com/locate/apm
+Modeling SH-wave dynamics in a size-dependent
+poroelastic-flexomagnetic layered waveguide structure with
+parabolic interfacial discontinuity
+Vipin Guptaa, Soumik Dasb, , Marin Marinc,d, , Bandar Almohsene,
+Rachaita
+Duttaf,∗
+aDepartment of Mathematics, Gurugram University, Gurugram, India
+bSchool of Physical Sciences, Amrita Vishwa Vidyapeetham, Mysuru Campus, Karnataka, India
+cDepartment of Mathematics and Computer Science, Transilvania University of Brasov, 500036 Brasov, Romania
+dAcademy of Romanian Scientists, IIfov Street, 3, 050045 Bucharest, Romania
+eDepartment of Mathematics, College of Science, King Saud University, P.O. Box 2455, 11451 Riyadh, Saudi Arabia
+fAmrita School of Computing, Amrita Vishwa Vidyapeetham, Mysuru Campus, Karnataka, India
+A R T I C L E I N F O A B S T R A C T
+Keywords: This research explores the behavior of shear horizontal (SH) waves as they propagate through a
+Nonlocal elasticity unique size-dependent configuration where a stratum of fluid-saturated nonlocal fissured porous
+Fissured porosity material overlays a substrate comprising nonlocal flexomagnetic material. The analysis focuses
+Flexomagnetic
+on how parabolic interfacial irregularity, nonlocality, and flexomagnetic effect jointly influence
+Irregularity
+SH-wave behavior. By applying the Fourier transform alongside perturbation techniques, complex
+Perturba tionm ethod
+frequency relation is determined to describe SH-wave propagation across the irregular interface.
+Acousticwavesensors
+Groundwater flow The dispersion and damping properties of the waves are extracted from the real and imaginary
+components of the frequency relation. Key parameters, such as the flexomagnetic coefficient,
+shape of the interfacial irregularity, porosity, piezomagnetic properties, and nonlocality are
+evaluated for their impact on wave propagation. The results reveal that parabolic interfacial
+irregularity and flexomagnetic effects significantly modify SH-wave dispersion and damping
+characteristics. The study underscores the material-dependent nature of wave propagation in such
+complex layered systems and validates the proposed model through consistency with established
+wave propagation theories.
+1. Introduction
+Seismology emerges as a critical scientific discipline dedicated to comprehensively understanding earthquakes and the intricate
+characteristics of seismic waves through the Earth’s lithosphere. Different geometrical features of geological structures, inhomo-
+geneities, irregularities, and anisotropies are the main factors that determine the change in frequency, amplitude, and direction of
+seismic waves, resulting in wave scattering and coupling between modes of P, SV and SH-waves. Zhou and Chen [1] put forward an
+in-depth practical approach that can directly determine the sampling points on irregular surfaces and significantly decrease the cal-
+* Correspondingauthor.
+E-mailaddress:rachaita.dutta18@gmail.com(R.Dutta).
+https://doi.org/10.1016/j.apm.2025.116393
+Received 7 February 2025; Received in revised form 3 August 2025; Accepted 19 August 2025
+Available online 25 August 2025
+0307-904X/© 2025 Elsevier Inc. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+culation amount with high precision. Chattopadhyay et al. [2] demonstrated that interface roughness significantly affects SH-wave
+propagation, influencing phase velocity and dispersion. This finding emphasizes the need to consider surface irregularities when
+studying wave behavior, especially in layered or interfacial systems. SH-waves are particularly valuable in these contexts due to their
+unique propagation properties across different media and interfaces.
+The study of surface waves in electro-magneto-elastic materials has garnered significant attention due to their theoretical im-
+portance and practical applications in electro-active technologies. Recent studies have focused on layered structures incorporating
+advanced materials with unique properties. These include examinations of Love waves in systems featuring piezoelectric [3–5] and
+piezomagnetic [6–8] components, further enhancing our understanding of wave propagation in complex, multi-functional materi-
+als.
+The emerging field of straintronics, situated at the intersection of micro- and nano-electronics and materials science, investi-
+gates the potential of strain-induced physical effects in solids for developing cutting-edge electronic devices [9,10]. This innovative
+approach has led to the exploration of various phenomena, including direct flexoelectricity, where polarization is induced in non-
+piezoelectric materials through strain gradients [11–13]. Complementing this effect is converse flexoelectricity, which describes the
+linear relationship between stress and applied electric field gradients. Flexomagnetism, a phenomenon that links strain gradients to
+induced magnetization, remains a largely unexplored frontier in materials science. Its complexity surpasses that of flexoelectricity,
+primarily due to the indirect nature of its mechanism. While flexoelectricity involves a straightforward relationship between elec-
+tric polarization and atomic displacement, flexomagnetism relies on the intricate reorientation of atomic spins following structural
+deformations. The significance of flexomagnetism becomes particularly pronounced in nanostructures, where strain gradients can
+be substantial. In contrast, macro-scale structures often exhibit negligible strain gradients, rendering flexomagnetic effects largely
+inconsequential. Lukashev and Sabirianov [14] proposed a phenomenological approach to describe magnetomechanical coupling by
+incorporating higher-gradient terms into the thermodynamic potential, drawing parallels with flexoelectric effect calculations. While
+the piezomagnetic effect is limited by crystal symmetry constraints, Eliseev [15] has conducted extensive theoretical calculations
+using symmetry theory to determine the form of the flexomagnetic tensor across various magnetic classes. This work suggests that
+flexomagnetic coupling could potentially induce magnetic fields in a wider range of materials, opening up possibilities for developing
+piezomagnetic-like structures beyond traditional piezomagnetic materials. Recent years have seen a surge in research exploring the
+behavior of plane and surface waves in flexoelectric and flexomagnetic structures [16–18]. These studies are paving the way for a
+deeper understanding of wave propagation in these novel materials, potentially leading to innovative applications in fields ranging
+from sensors to energy harvesting devices.
+Poroelasticity is crucial in soil dynamics, reservoir engineering, and various geological processes. The double porosity concept
+distinguishes between two pore types: matrix pores, which provide substantial storage but limited fluid flow, and fracture pores, which
+facilitate fluid movement but offer minimal storage. In order to refine fluid flow analysis and derive a symmetric dual-permeability
+Darcy’s Law, Pride and Berryman [19] incorporated mesoscopic structure for understanding the complex nature of fluid movement
+within hydrocarbon reservoirs by using volume averaging technique. This work stimulated further research on fractured poroelastic
+models [20–22]. More recently, Kumar et al. [23] examined plane wave reflection in dual-porous thermoelastic materials. Das et al.
+[24] investigated size-dependent micropolar media with dual porosity, focusing on thermal influences. Recently, Dutta et al. [25]
+studied the impact of matrix and fracture pores on horizontally polarized wave behavior.
+Nonlocal theory fundamentally challenges classical elasticity by proposing that a material’s behavior is not determined solely
+by local conditions, but by the interconnected state of its entire system, i.e., the stress state is influenced by the strain conditions
+throughout the entire body of the material. Researchers have extensively explored wave propagation characteristics using nonlocal
+elasticity theory [26–28] laying critical groundwork for understanding these complex mechanical behaviors. Recent investigations
+have further expanded our understanding of wave dynamics in nonlocal systems. Kaur et al. [29,30] conducted an in-depth analysis
+of wave behavior in complex media, focusing on Love and Lamb waves traversing nonlocal porous elastic structures. Complementing
+this research, Manna et al. [31] conducted an in-depth analysis of Love wave dispersion characteristics within finite layers. Dutta
+et al. [32] and Said et al. [33] have continued to push the boundaries, investigating wave propagation through layered nonlocal
+structures and exploring the impacts of memory-dependent derivatives and gravitational effects. Marin and his co-workers [34–36]
+investigated wave behavior in different types of materials subjected to size-dependent elasticity theories.
+Kumar et al. [37] conducted a significant study on Love wave propagation in a anisotropic fluid-filled porous layer with a rigid
+boundary overlying an irregular, inhomogeneous half-space. Hrytsyna et al. [38] explored the combined influence of flexo-effects and
+microinertia on Love wave propagation in a nano-sized layer bonded to piezomagnetic /piezoelectric substrates. Further advancing
+the field, Gupta et al. [39] investigated the response of flexoelectricity and interfacial irregularity on SH-wave propagation in a func-
+tionally graded, fissured porous layer. Despite these advancements, there remains a gap in our understanding of SH-wave propagation
+in systems that combine size-dependent elasticity, flexomagnetism, and fluid-saturated fissured porous layers. The current research
+work addresses these gaps by integrating several advanced structural formation which are given as follows;
+• This study aims to investigate SH-wave propagation in a nonlocal fissured porous layer overlying a nonlocal flexomagnetic
+substrate with a parabolic interfacial irregularity.
+• The primary objective is to derive the complex frequency equation that governs the dispersive and attenuative behavior of
+SH-waves in this composite structure.
+2
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+• A critical and novel aspect of this investigation is the inclusion of a parabolic interfacial irregularity between these two layers.
+This irregular interface is a realistic feature often overlooked in simpler models and is expected to significantly influence wave
+propagation.
+The study’s findings have broad practical applications which are presented as below;
+• The model can be used to monitor the integrity of critical structures made of these materials, such as aerospace components,
+civil infrastructure (e.g., concrete with embedded sensors), or biomedical implants.
+• Flexomagnetic materials exhibit a coupling between strain gradient and magnetic polarization. This unique property, combined
+with SH-wave propagation, could lead to the development of highly sensitive sensors for various applications, including detection
+of minute deformations or stress gradients in materials and creation of sensors that respond to localized magnetic fields induced
+by flexomagnetic effects.
+• The interaction of SH waves with fluid-saturated porous media can be used to infer properties of aquifers and groundwater flow.
+• Poroelastic materials are fundamental to understanding fluid-saturated rocks. This model could improve the understanding of
+seismic wave propagation in complex geological formations, particularly those with fissured or fractured rock, aiding in oil and
+gas exploration and geothermal energy assessment.
+• The interfacial irregularity aspect could be particularly useful for modeling fault zones.
+• The model enhances seismic imaging for complex formations, aiding fractured reservoir and sedimentary basin characterization.
+It improves flaw detection in composites, benefiting aerospace and civil engineering. The insights also advance acoustic wave
+devices, particularly surface acoustic wave sensors for bio-sensing and chemical detection.
+• Additionally, the results contribute to earthquake engineering by refining seismic risk assessments and earthquake-resistant
+design.
+Being motivated by the aforementioned facts, authors have considered to analyze the behavior of SH-waves propagating through
+a stratum of nonlocal fluid-saturated fissured porous material overlying a substrate comprising nonlocal flexomagnetic material
+under the purview of parabolic irregularity at the interface. By employing the Fourier transform and perturbation technique, a
+complex frequency relation is determined to describe SH-wave propagation across the irregular interface. The dispersion and damping
+equations are determined from the real and imaginary components of the frequency relation. The impact of various parameters, such
+as the flexomagnetic coefficient, irregularity parameter, depth of source, porosity, piezomagnetic properties, and nonlocality are
+visualized through graphical execution. Validation of the proposed model is represented through several cases.
+2. Problem formulation and model configuration
+The mathematical model depicted in Fig. 1consists of a fluid-saturated nonlocal fissured porous medium (𝑀 ) situated above a
+1
+nonlocal flexomagnetic substrate (𝑀 ), featuring a parabolic-shaped irregularity at their interface. In this set-up, SH-waves propagate
+2
+along the 𝑦-axis, while the 𝑥-axis is oriented vertically downward. The thickness of the upper medium (𝑀 ) is represented by 𝐻.
+1
+The irregularity is defined by its span 𝑠and maximum depth 𝐻 . The origin point 𝑂is located at the midpoint of the irregularity’s
+0
+span. Additionally, a point source (∗) of disturbance is placed along the 𝑥-axis at a depth 𝑑 𝑠, which is greater than 𝐻
+0
+, relative
+to the origin. The equation describing the parabolic type irregular interface is expressed as 𝑥=𝜀𝑝(𝑦), with perturbation parameter
+𝜀=𝐻 ∕𝑠<<1and
+0
+{
+𝑝(𝑦)= 𝑠 ( 1−4𝑦2 0 ∕ , 𝑠 ) , w w he h n en |y − |> 𝑠∕ 𝑠 2 ∕ ≤ 2 𝑦≤𝑠∕2. (1)
+2.1. Constitutive equations of nonlocal fluid-saturated fissured porous material
+Let us consider a fluid-saturated isotropic fissured porous material body occupying a spatial region Φ∗, with an initial volume
+Ω∗, bounded by surface Ψ∗. 𝑒( 𝑖𝑗 1) denotes the strain tensor of the solid component, while the divergences of the displacement vectors
+for the solid, matrix pore fluid, and fissure fluid are expressed as
+𝑒(
+𝑘
+1
+𝑘
+)=∇⋅𝐮(1), 𝑒(
+𝑝
+1
+1
+)=∇⋅𝐯(1),
+and
+𝑒(
+𝑝
+1
+2
+)=∇⋅𝐰(1),
+respectively. Here,
+𝐮(1), 𝐯(1), and 𝐰(1) are the respective displacement vectors for solid and fluid in pores. In the context of linear theory and assuming
+no stresses or intrinsic equilibrated forces, we define the following sets of fundamental variables associated with two distinct points,
+denoted as 𝕜 and 𝕜′, respectively
+1 1
+{ } { }
+∗= 𝑒( 𝑖𝑗 1)(𝕜 1 ),𝑒( 𝑝 1 1 )(𝕜 1 ),𝑒( 𝑝 1 2 )(𝕜 1 ) and ∗′ = 𝑒( 𝑖𝑗 1)(𝕜′ 1 ),𝑒( 𝑝 1 1 )(𝕜′ 1 ),𝑒( 𝑝 1 2 )(𝕜′ 1 ) .
+The strain energy function ∗is given as
+[ ]
+2∗=(1)𝑒(1)(𝕜 )𝑒(1)(𝕜′)+ 𝑒(1)(𝕜 )𝑒(1)(𝕜′)+ 𝑒(1)(𝕜 )𝑒(1)(𝕜′)+ 𝑒(1)(𝕜 )𝑒(1)(𝕜′)+𝑒(1)(𝕜′)𝑒(1)(𝕜 )
+𝑖𝑗𝑘𝑙 𝑖𝑗 1 𝑘𝑙 1 22 𝑝 [1 1 𝑝 1 1 33 𝑝 2 1 𝑝 2 1 ] 12𝑖𝑗 [ 𝑖𝑗 1 𝑝 1 1 𝑖𝑗 1 𝑝 1 1 ] (2)
++ 𝑒(1)(𝕜 )𝑒(1)(𝕜′)+𝑒(1)(𝕜′)𝑒(1)(𝕜 ) + 𝑒(1)(𝕜 )𝑒(1)(𝕜′)+𝑒(1)(𝕜′)𝑒(1)(𝕜 ) ,
+13𝑖𝑗 𝑖𝑗 1 𝑝 2 1 𝑖𝑗 1 𝑝 2 1 23 𝑝 1 1 𝑝 2 1 𝑝 1 1 𝑝 2 1
+3
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+Fig.1.Schematicrepresentationofthetwo-layeredmodelwithparabolicirregularity.
+where 𝐹𝑃 ,  ,  ,  ,  , and  are the constitutive coefficients. Drawing upon the work of Eringen and Wegner [40], we
+𝑖𝑗𝑘𝑙 12𝑖𝑗 13𝑖𝑗 22 33 23
+derive the constitutive relations using the following approach
+[ ( ) ]
+𝑠
+𝜕∗ 𝜕∗
+ 1 = ∫ 𝜕∗ + 𝜕∗′ dΩ∗(𝕜′ 1 ). (3)
+Ω∗
+The supe{rscript ‘s’ denotes t}he symmetry of certain quantities when the points 𝕜
+1
+and 𝕜′
+1
+are interchanged. Let us define an ordered
+set  1 = 𝜎 𝑖 ( 𝑗 1),− 1 (1),− 2 (1) which corresponds to the set ∗. Based on the assumption that all the constitutive coefficients exhibit
+an identical rate of attenuation, the nonlocal kernel Δ∗(|𝕜 −𝕜′|) characterizes the influence of long-range interactions between
+1 1
+spatially separated material points located at 𝕜 and 𝕜′. Also, the function Δ∗behaves analogously to the Dirac delta function across
+1 1
+the entire domain and it adheres to the following relationship
+(1−𝜀2∇2)Δ∗=𝛿(|𝕜 −𝕜′|), (4)
+1 1 1
+where nonlocal parameter 𝜀 is defined as the product of two factors, namely 𝑀̃ , a material-specific constant, and 𝑙̃ representing an
+1
+internal characteristic length of the material.
+Utilizing equations (2) ,(3), and (4)in the context of a material exhibiting centro-symmetric isotropy, we derive the following
+expressions for the nonlocal mechanical stress tensor 𝜎 𝑖 ( 𝑗 1) , the nonlocal matrix pore fluid pressure  1 (1) , and the nonlocal fissure pore
+fluid pressure
+(1)
+2
+(1−𝜀2 1 ∇2)𝜎 𝑖 ( 𝑗 1)=𝜎 𝑖 ( 𝑗 1)𝐿 =− 𝑐(𝕜 1 )𝛿 𝑖𝑗+𝜇
+(
+2𝑒( 𝑖𝑗 1)(𝕜 1 )−
+2𝑒(
+𝑘
+1
+𝑘
+)(
+3
+𝕜
+1
+)𝛿
+𝑖𝑗
+)
+, (5)
+−(1−𝜀2 1 ∇2) 1 (1)=− 1 (1)𝐿 = 12 𝑒( 𝑘 1 𝑘 )(𝕜 1 )+ 22 𝑒( 𝑝 1 1 )(𝕜 1 )+ 23 𝑒( 𝑝 1 2 )(𝕜 1 ), (6)
+−(1−𝜀2 1 ∇2) 2 (1)=− 2 (1)𝐿 = 13 𝑒( 𝑘 1 𝑘 )(𝕜 1 )+ 23 𝑒( 𝑝 1 1 )(𝕜 1 )+ 33 𝑒( 𝑝 1 2 )(𝕜 1 ), (7)
+where − 𝑐(𝕜 1 )= 11 𝑒( 𝑘 1 𝑘 )(𝕜 1 )+ 12 𝑒( 𝑝 1 1 )(𝕜 1 )+ 13 𝑒( 𝑝 1 2 )(𝕜 1 ). 𝜎 𝑖 ( 𝑗 1)𝐿 represents the total stress tensor for the fluid-saturated local fissured
+porous material.
+(1)𝐿
+denotes the matrix pore fluid pressure in the context of the local material model. Lastly,
+(1)𝐿
+signifies the
+1 2
+fissure pore fluid pressure for the local representation of the material.
+2.2. Constitutive equations of nonlocal flexomagnetic material
+A flexomagnetic body is considered to occupy a spatial region Φ, with its initial volume denoted by Ωand bounded by the surface
+Ψ. The following two fundamental sets containing the strain 𝑒( 𝑖𝑗 2) , strain gradient 𝜂 𝑖𝑗𝑚, and electric field  𝑖associated with the points
+𝕜 and 𝕜′ are introduced by assuming that body forces are absent
+2 2
+{ } { }
+= 𝑒(
+𝑖𝑗
+2)(𝕜
+2
+), 𝑖(𝕜
+2
+),𝜂 𝑖𝑗𝑚(𝕜
+2
+) and′= 𝑒(
+𝑖𝑗
+2)(𝕜′
+2
+), 𝑖(𝕜′
+2
+),𝜂 𝑖𝑗𝑚(𝕜′
+2
+) .
+4
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+The strain energy density function  takes the following form [14]
+[ ]
+⎫
+2= 𝑖 ( 𝑗 2 𝑘 ) 𝑙 (𝕜 2 ,𝕜′ 2 )𝑒( 𝑖𝑗 2)(𝕜 2 )𝑒( 𝑘 2 𝑙 )(𝕜′ 2 )−𝑑 𝑖𝑗𝑘(𝕜 2 ,𝕜′ 2 ) 𝑒( 𝑖𝑗 2)(𝕜 2 ) 𝑘(𝕜′ 2 )+𝑒( 𝑖𝑗 2)(𝕜′ 2 ) 𝑘(𝕜 2 ) ⎪
+[ ] ⎪
+⎪
++ 𝑖𝑗𝑘𝑙𝑚(𝕜 2 ,𝕜′ 2 ) 𝑒( 𝑖𝑗 2)(𝕜 2 )𝜂 𝑘𝑙𝑚(𝕜′ 2 )+𝑒( 𝑖𝑗 2)(𝕜′ 2 )𝜂 𝑘𝑙𝑚(𝕜 2 ) −𝛾 𝑖𝑗(𝕜 2 ,𝕜′ 2 ) 𝑖(𝕜 2 ) 𝑗(𝕜′ 2 ) ⎬ ⎪ (8)
+[ ]
+⎪
+−𝜉 𝑘𝑖𝑗𝑚(𝕜
+2
+,𝕜′
+2
+)  𝑘(𝕜
+2
+)𝜂 𝑖𝑗𝑚(𝕜′
+2
+)+ 𝑘(𝕜′
+2
+)𝜂 𝑖𝑗𝑚(𝕜
+2
+) +𝑠 𝑖𝑗𝑚𝑘𝑙𝑛(𝕜
+2
+,𝕜′
+2
+)𝜂 𝑖𝑗𝑚(𝕜
+2
+)𝜂 𝑘𝑙𝑛(𝕜′
+2
+).⎪
+⎭
+The components of the elastic, piezomagnetic, and magnetic permeability tensors are denoted by 
+𝑖
+(
+𝑗
+2
+𝑘
+)
+𝑙
+, 𝑑 𝑖𝑗𝑘, and 𝛾 𝑖𝑗, respectively.
+The fourth-order flexomagnetic coefficient tensor is symbolized by 𝜉 𝑖𝑗𝑘𝑙. Additionally, 𝑠 𝑖𝑗𝑚𝑘𝑙𝑛and  𝑖𝑗𝑘𝑙𝑚are the components of strain
+gradient and strain gradient coupling tensor and strain and strain gradient coupling tensor, respectively.
+In view of the theoretical framework proposed by [40], the constitutive relations are obtained from
+[ ( ) ]
+𝑝
+𝜕 𝜕
+
+2
+=∫
+𝜕
++
+𝜕′
+𝑑Ω(𝕜′
+2
+) .
+(9)
+Ω
+Th{e superscript ‘𝑝 }’ serves to denote the inherent symmetry of the quantity with respect to the permutation of points 𝕜
+2
+and 𝕜′
+2
+.
+ 2 = 𝜎 𝑖 ( 𝑗 2),𝜎 𝑖 ( 𝑗 2 𝑚 ),−𝐵 𝑖 is considered to be an ordered set subjected to . At the nanoscale, the coupling between the strain and
+strain gradient can be ignored, i.e.,  𝑖𝑗𝑘𝑙𝑚are assumed as zero. Strain gradie(nt and strain g)radient coupling tensor and flexomagnetic
+coefficient tensor are defined as 𝑠 𝑖𝑗𝑚𝑘𝑙𝑛=𝑙 1 2𝛿 𝑚𝑛  𝑖𝑗𝑘𝑙and 𝜉 𝑖𝑗𝑘𝑙=𝜉 1 𝛿 𝑗𝑘 𝛿 𝑖𝑙+𝜉 2 𝛿 𝑖𝑘 𝛿 𝑗𝑙+𝛿 𝑖𝑗 𝛿 𝑘𝑙 (Sladek et al. [41]). A distance-dependent
+attenuation factor, Δ(|𝕜 −𝕜′|)is incorporated into each constitutive coefficient, reflecting the weakening influence of intermolecular
+2 2
+interactions with increasing distance (|𝕜 −𝕜′|) from the reference point. The nonlocal kernel Δ(|𝕜 −𝕜′|)characterizes the influence
+2 2 2 2
+of long-range interactions between spatially separated material points located at 𝕜 and 𝕜′. Also, the function Δbehaves analogously
+2 2
+to the Dirac delta function across the entire domain and it adheres to the following relationship
+(1−𝜀2∇2)Δ=𝛿(|𝕜 −𝕜′|) , (10)
+2 2 2
+where nonlocality parameter 𝜀 is defined as the product of two factors, namely 𝑀∗, a material-specific constant, and 𝑙∗ implying
+2
+internal characteristic length of the material.
+Equations (8) ,(9), and (10)yield the subsequent formulations for the nonlocal stress tensor 𝜎 𝑖 ( 𝑗 2) , the higher order nonlocal stress
+tensor 𝜎 𝑖 ( 𝑗 2 𝑚 ) , and the nonlocal magnetic induction component 𝐵 𝑖by taking into account the material symmetry
+(1−𝜀2 2 ∇2)𝜎 𝑖 ( 𝑗 2)=𝜎 𝑖 ( 𝑗 2)𝐿 = 𝑖 ( 𝑗 2 𝑘 ) 𝑙 𝑒( 𝑘 2 𝑙 )(𝕜 2 )−𝑑 𝑖𝑗𝑘  𝑘(𝕜 2 ), (11)
+(1−𝜀2 2 ∇2)𝜎 𝑖 ( 𝑗 2 𝑚 ) =𝜎 𝑖 ( 𝑗 2 𝑚 )𝐿 =−𝜉 𝑘𝑖𝑗𝑚  𝑘(𝕜 2 )+𝑠 𝑖𝑗𝑚𝑘𝑙𝑛 𝜂 𝑘𝑙𝑛(𝕜 2 ), (12)
+(1−𝜀2 2 ∇2)𝐵 𝑖=𝐵 𝑖 𝐿 =𝛾 𝑖𝑗  𝑗(𝕜 2 )+𝑑 𝑗𝑘𝑖 𝑒( 𝑗 2 𝑘 )(𝕜 2 )+𝜉 𝑖𝑘𝑗𝑚 𝜂 𝑘𝑗𝑚(𝕜 2 ). (13)
+Equations (11) ,(12), and (13)encapsulate the essential relationships between strain and stress for nonlocal flexomagnetic material.
+3. Dynamics of layered structure
+( )
+The nonlocal fissured porous layer exhibits mechanical displacement components that are characterized as 𝐮(1)= 0, 0, 𝑢( 𝑧 1) ,
+( ) ( )
+𝐯(1)= 0, 0, 𝑣 𝑧 (1) and 𝐰(1)= 0, 0, 𝑤( 𝑧 1) for the solid phase, matrix pore fluid, and fracture pore fluid fields, respectively. For the
+piezomagnetic material incorporating the flexomagnetic effect, we define the mechanical displacement vector as
+𝐮(2)=(0,0,𝑢(
+𝑧
+2)).
+Given that SH-waves propagate in the 𝑦-direction and all physical quantities depend solely on 𝑥-and 𝑦-coordinates (i.e., 𝜕 =0), the
+𝜕𝑧
+mechanical displacement occurs only in the 𝑧-direction.
+3.1. Dynamics of fluid-saturated nonlocal fissured porous layer (𝑀 )
+1
+By following equations (5) , (6), and (7), the fundamental equations for a non-viscous fluid-saturated nonlocal fissured porous
+layer are given as follows
+( )
+(
+1−𝜉 1 2∇2
+)
+𝜎 𝑖 ( 𝑗 1)=𝜎 𝑖 ( 𝑗 1)𝐿 =
+(
+ 11 𝑒( 𝑘 1 𝑘 )+ 12 𝑒( 𝑝 1 1 )+ 33 𝑒( 𝑝 1 2 )
+)
+𝛿 𝑖𝑗+𝜇 2𝑒( 𝑖𝑗 1)−
+2𝑒(
+𝑘
+1
+3 𝑘
+) 𝛿
+𝑖𝑗 , (14)
+( )
+− 1−𝜉 1 2∇2  1 (1)=− 1 (1)𝐿 = 12 𝑒( 𝑘 1 𝑘 )+ 22 𝑒( 𝑝 1 1 )+ 23 𝑒( 𝑝 1 2 ), (15)
+( )
+− 1−𝜉 1 2∇2  2 (1)=− 2 (1)𝐿 = 13 𝑒( 𝑘 1 𝑘 )+ 23 𝑒( 𝑝 1 1 )+ 33 𝑒( 𝑝 1 2 ). (16)
+5
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+The dynamic behavior of the fluid-saturated nonlocal fissured porous layer is governed by the following equations of motion [19]
+( )[ ]
+𝜎 𝑖 ( 𝑗 1 , ) 𝑗 𝐿 = 1−𝜉 1 2∇2 𝜌 1 𝑢̈( 𝑖 1)+𝜌 𝑓 𝑣̈( 𝑖 1)+𝜌 𝑓 𝑤̈( 𝑖 1) , (17)
+( ) ( )[ ]
+− 1 (1)𝐿 , 𝑖= 1−𝜉 1 2∇2 𝜌 𝑓 𝑢̈( 𝑖 1)+𝜌 2 𝑣̈( 𝑖 1)+𝜌 3 𝑤̈( 𝑖 1) , (18)
+( ) ( )[ ]
+− 2 (1)𝐿 , 𝑖= 1−𝜉 1 2∇2 𝜌 𝑓 𝑢̈( 𝑖 1)+𝜌 3 𝑣̈( 𝑖 1)+𝜌 4 𝑤̈( 𝑖 1) , (19)
+where 𝜌 1 (=𝜗 𝑠 𝜌 𝑠+𝜍𝜌 𝑓), 𝜌 𝑠, 𝜌 𝑓, Φ(=𝜗 1 +𝜗 2 ), 𝜗 𝑠(=1−𝜍), 𝜗 1 , and 𝜗 2 symbolize the density of porous aggregate, density of solid,
+density of fluid, total porosity, volume fraction of solid, volume fraction of matrix pore fluid, and volume fraction of fissure fluid,
+respectively.
+The remaining dynamic coefficients are defined as follows
+[( ) ( ) ]
+𝜌 2 =𝜏 1 𝜌 𝑓∕𝜗 1 ,𝜌 3 =𝜌 𝑓 𝜏−𝜏 2 ∕2𝜗 1 + 𝜏−𝜏 1 ∕2𝜗 2 ,𝜌 4 =𝜏 2 𝜌 𝑓∕𝜗 2 ,
+( ) ( ) ( )
+where the tortuosity parameters are represented as 𝜏 =1+𝑟𝜗 𝑠∕𝜍 , 𝜏
+1
+=1+𝑟𝜗 𝑠∕𝜗
+1
+, and 𝜏
+2
+=1+𝑟𝜗 𝑠∕𝜗
+2
+. Here 𝑟(=0.5)denotes
+the shape factor associated with spherical grains. Additionally, it is observed that in the absence of the nonlocality parameter, i.e.,
+when 𝜉 =0, equations (17) ,(18), and (19)simplify to the equations of motion for a non-viscous, fluid-saturated local fissured porous
+1
+layer as derived by [21].
+After using equations (14) ,(15), and (16)in equations (17) ,(18), and (19), we get
+( ) ( )
+𝜇 𝑢( 𝑧 1 ,𝑥 ) 𝑥 +𝑢( 𝑧 1 ,𝑦 ) 𝑦 = 1−𝜉 1 2∇2 𝜌 7 𝑢̈( 𝑧 1), (20)
+where 𝜌 =𝜌 +𝜌 +𝜌 , 𝜌 = 𝜌𝑓(𝜌 3−𝜌 4) , and 𝜌 = 𝜌𝑓(𝜌 3−𝜌 2) .
+7 1 5 6 5 𝜌
+2
+𝜌 4−𝜌2
+3
+6 𝜌
+2
+𝜌 4−𝜌2
+3
+3.2. Dynamics of nonlocal flexomagnetic substrate (𝑀 )
+2
+In view of equations (11) ,(12), and (13), the linear coupled constitutive equations governing anisotropic piezomagnetic materials
+incorporating flexomagnetic effects are expressed as follows
+(1−𝜀2 2 ∇2)𝜎 𝑖 ( 𝑗 2)=𝜎 𝑖 ( 𝑗 2)𝐿 = 𝑖 ( 𝑗 2 𝑘 ) 𝑙 𝑒( 𝑘 2 𝑙 )−𝑑 𝑖𝑗𝑘  𝑘 , (21)
+(1−𝜀2 2 ∇2)𝜎 𝑖 ( 𝑗 2 𝑚 ) =𝜎 𝑖 ( 𝑗 2 𝑚 )𝐿 =−𝜉 𝑘𝑖𝑗𝑚  𝑘+𝑠 𝑖𝑗𝑚𝑘𝑙𝑛 𝜂 𝑘𝑙𝑛 , (22)
+(1−𝜀2 2 ∇2)𝐵 𝑖=𝐵 𝑖 𝐿 =𝛾 𝑖𝑗  𝑗+𝑑 𝑗𝑘𝑖 𝑒( 𝑗 2 𝑘 )+𝜉 𝑖𝑘𝑗𝑚 𝜂 𝑘𝑗𝑚 , (23)
+where 𝜎 𝑗 (2 𝑘 ) ℎ and 𝐵 𝑖 denote the compone ( nts of h ) igher-order stress and magnetic induction, respectively, while  𝑖 represents the
+magnetic field component. The term 𝜂 𝑙𝑚𝑛 =𝑒 𝑙𝑚 , 𝑛 refers to a component of the strain-gradient tensor, 𝑑 𝑘𝑖𝑗signifies the piezomagnetic
+constants, and 𝛾 𝑘𝑙 indicates the magnetic permeability. Furthermore, 𝑔 𝑗𝑘ℎ𝑙𝑚𝑛 is the higher-order elastic coefficient associated with
+strain-gradient elasticity, and 𝜉 𝑖𝑗𝑘ℎrepresents the flexomagnetic coefficients. In this context, 𝑢( 𝑖 2) is the component of the mechanical
+displacement vector in the 𝑖th direction, and a comma followed by a subscript denotes partial differentiation with respect to the
+coordinate indicated by that subscript.
+By following Sidhardh and Ray [42], the equation of motion is given as
+( ) ( )
+𝜎 𝑖 ( 𝑗 2)−𝜎 𝑖 ( 𝑗 2 𝑚 ) ,𝑚 , 𝑗= 1−𝜉 2 2∇2 𝜌 2𝑓 𝑢̈( 𝑖 2). (24)
+The Gauss-Faraday law without free electric charges is as follows
+𝐵 𝑖,𝑖=0. (25)
+Furthermore, the magnetic field vector described as the gradient of magnetic potential 𝜓, i.e.
+𝐻 𝑖=𝜓, 𝑖 . (26)
+Using equations (21) ,(22) ,(23) ,(24) ,(25), and (26), we get
+( ) ( ) ( ) ( )
+ 44 𝑢( 𝑧 2 ,𝑥 ) 𝑥 +𝑢( 𝑧 2 ,𝑦 ) 𝑦 +𝑑 15 𝜓, 𝑥𝑥+𝜓, 𝑦𝑦 −𝜉 41 𝜓, 𝑥𝑥𝑦−𝜓, 𝑦𝑦𝑦 = 1−𝜉 2 2∇2 𝜌 2𝑓 𝑢̈( 𝑧 2), (27)
+( ) ( ) ( )
+−𝛾 11 𝜓, 𝑥𝑥+𝜓, 𝑦𝑦 +𝑑 15 𝑢( 𝑧 2 ,𝑥 ) 𝑥 +𝑢( 𝑧 2 ,𝑦 ) 𝑦 +𝜉 41 𝑢( 𝑧 2 ,𝑥 ) 𝑥𝑦 −𝑢( 𝑧 2 ,𝑦 ) 𝑦𝑦 =0. (28)
+4. Analytical solution of the problem
+We propose the following time-dependent harmonic solutions for equations (20), (27), and (28)
+( ) ( )
+𝑢( 𝑧 1), 𝑢 𝑧 (2), 𝜓 (𝑥,𝑦,𝑡)= 𝑈 𝑧 (1), 𝑈 𝑧 (2), Ψ (𝑥,𝑦)𝑒𝑖𝜔𝑡, (29)
+6
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+where 𝜔denotes the angular frequency.
+Using solution (29)in equation (20), we get
+( ) ( )[ ]
+𝜇 𝑈 𝑧 (1 ,𝑥 ) 𝑥 +𝑈 𝑧 (1 ,𝑦 ) 𝑦 =−𝜔2 1−𝜉 1 2∇2 𝜌 7 𝑈 𝑧 (1) . (30)
+Using Fourier transform as defined in Appendix, we get from equation (30)
+𝑑2𝑈̄(1)
+𝑑𝑥 𝑧 2 +𝛽 1 2𝑈̄ 𝑧 (1)=0, (31)
+( )( )
+where 𝛽2= −𝜁2+ 𝜔2𝜌 + 𝜔2𝜉2𝜌 𝜁2 1− 𝜔2𝜉2𝜌 −1 .
+1 𝜇 7 𝜇 1 7 𝜇 1 7
+Using equations (29)in equations (27)and (28)and applying Fourier transform as defined in Appendix, we get
+𝑎 1 𝑑2 𝑑 𝑈 𝑥 ̄ 𝑧 2 (2) +𝑎 2 𝑈̄ 𝑧 (2)+𝑎 3 𝑑 𝑑 2 𝑥 Ψ 2 ̄ −𝑎 4 Ψ ̄ =0, (32)
+( ) ( )
+𝑎 5𝑑 𝑑 𝑥 2 2 +𝑎 6 𝑈̄ 𝑧 (2)−𝛾 11 𝑑 𝑑 𝑥 2 2 −𝜁2 Ψ ̄( 𝑧 2)=0, (33)
+where 𝑎
+1
+=
+44
+−𝜔2𝜉
+2
+2𝜌 2𝑓, 𝑎
+2
+=−𝜁2
+44
++𝜔2𝜌 2𝑓+𝜔2𝜉
+2
+2𝜁2𝜌 2𝑓, 𝑎
+3
+=𝑑
+15
+−𝜄𝜉
+41
+𝜁, 𝑎
+4
+=𝑑
+15
+𝜁2+𝜄𝜉
+41
+𝜁3, 𝑎
+5
+=𝑑
+15
++𝜉
+41
+𝜄𝜁, 𝑎
+6
+=𝜄𝜁3𝜉
+41
+−𝑑
+15
+𝜁2.
+In light of inverse Fourier transform as defined in Appendix, the solutions of equations (31) ,(32), and (33)are given by
+∞
+𝑈 𝑧 (1)= 2 1 𝜋 ∫
+(
+cos
+(
+𝛽 1 𝑥
+)
++sin
+(
+𝛽 1 𝑥
+))
+𝑒−𝜄𝜁𝑦𝑑𝜁, (34)
+−∞
+∞
+Ψ= 2
+1
+𝜋 ∫
+(𝑒−𝑟
+1
+𝑥 +𝑒−𝑟
+2
+𝑥 )𝑒−𝜄𝜁𝑦𝑑𝜁,
+(35)
+−∞
+∞ ( )
+𝑈 𝑧 (2)= 2 1 𝜋 ∫ 𝑆𝑒−𝑟 1 𝑥 +𝑇𝑒−𝑟 2 𝑥 + 𝑟 2 𝑒𝑟 1 𝑥𝑒−𝑟 1 𝑑𝑠+ 𝑟 2 𝑒𝑟 2 𝑥𝑒−𝑟 2 𝑑𝑠 𝑒−𝜄𝜁𝑦𝑑𝜁, (36)
+1 2
+−∞
+where 𝑆, 𝑇, 𝑟 1 , and 𝑟 2 are defined in Appendix. Here, the third and fourth terms in the integrand of 𝑈 𝑧 (2) arise from the presence
+of source 𝑑 𝑠 within the flexomagnetic substrate. Due to the non-uniform nature of the interface, the coefficients , , , and in
+equations (34) ,(35), and (36)are treated as functions of 𝜀. Given that 𝜀≪1, only terms up to the first order in 𝜀are retained, while
+higher-order terms are disregarded. The approximations for , , , and are expressed as follows
+≅̄ +𝜀′, ≅̄ +𝜀′, ≅̄ +𝜀′, ≅̄ +𝜀′. (37)
+Furthermore, because 𝜀is extremely small, one can make the following approximations
+𝑒±Ξ𝜀ℎ ≅1±Ξ𝜀ℎ, sinΞ𝜀ℎ≅Ξ𝜀ℎ, cosΞ𝜀ℎ≅1, (38)
+where Ξis an arbitrary quantity.
+The boundary conditions for the considered model is written as follows
+• The free surface experiences no mechanical stress, i.e.
+𝜎 𝑧 (1 𝑥 )=0 at 𝑥=−𝐻. (39)
+• The irregular interface remains unaffected by the magnetic potential, i.e.
+𝜓=0 at 𝑥=𝜀𝑝(𝑦). (40)
+• The irregular interface maintains continuity in mechanical stresses, i.e. at 𝑥=𝜀𝑝(𝑦)
+{( ) } {( ) }
+𝜎 𝑧 (1 𝑥 )−𝜀𝑝′(𝑦)𝜎 𝑦 (1 𝑧 )= 𝜎 𝑧 (2 𝑥 )−𝜎 𝑧 (2 𝑥 ) 𝑥 , 𝑥−𝜎 𝑧 (2 𝑥 ) 𝑦 , 𝑦 −𝜎 𝑧 (2 𝑦 ) 𝑥,𝑦 −𝜀𝑝′(𝑦) 𝜎 𝑦 (2 𝑧 )−𝜎 𝑧 (2 𝑦 ) 𝑥 , 𝑥−𝜎 𝑧 (2 𝑦 ) 𝑦 , 𝑦 −𝜎 𝑧 (2 𝑥 ) 𝑦,𝑥 . (41)
+• The irregular interface maintains continuity in mechanical displacements, i.e.
+𝑢( 𝑧 1)=𝑢 𝑧 (2) at 𝑥=𝜀𝑝(𝑦). (42)
+By applying equation (14)and (37)together with the boundary condition (39), we obtain
+( ) ( )
+̄ +𝜀′ sin(𝛽 𝐻)+ ̄ +𝜀′ cos(𝛽 𝐻)=0. (43)
+1 1
+By using equation (35), (37), and (38)together with the boundary condition (40), we obtain
+7
+V.Gupta,S.Das,M.Marinetal.
+∞ ∞
+Applied Mathematical Modelling 150 (2026) 116393
+[( ) ( )] ( )
+∫ ̄ +̄ +𝜀 ′+′ 𝑒−𝜄𝜁𝑦𝑑𝜁=𝜀 ∫ ̄𝑟 1 +̄𝑟 2 𝑝(𝑦)𝑒−𝜄𝜁𝑦𝑑𝜁. (44)
+−∞ −∞
+By applying Fourier transform and inverse Fourier transform on 𝑝(𝑦)and setting 𝜁+𝜆=𝑘 for the inner integral on the right-hand
+1
+side of equation (44), where 𝑑𝜁=𝑑𝑘 and taking 𝜁=𝑘 for the integral on the left-hand side of equation (44), we obtain
+1 1
+( ) ( ) ( )
+̄ +̄ +𝜀 ′+′ =𝜀𝑅̄ 𝑘 , (45)
+1 1
+( )
+where 𝑅̄ 𝑘 is defined in Appendix.
+1 1
+Proceeding in a similar manner and utilizing equations (14), (21), (22), (34), (36), along with the boundary conditions (41)and
+(42), we derive
+[ ( )] [ ] ( )
+𝜇𝛽 𝐺 ̄ +𝛼 𝑟 ̄ +𝛼 𝑟 ̄ −2 𝐺 𝑒−𝑟 1 𝑑𝑠+𝐺 𝑒−𝑟 2 𝑑𝑠 +𝜀 𝜇𝛽 𝐺 ′+𝛼 𝑟 ′+𝛼 𝑟 ′ =𝜀𝑅̄ 𝑘 , (46)
+1 1 1 1 2 2 44 2 3 1 1 1 1 2 2 2 1
+̄ −𝑆̄ −𝑇̄ − 2 𝑒−𝑟 1 𝑑𝑠− 2 𝑒−𝑟 2 𝑑𝑠+𝜀
+(
+′−𝑆′−𝑇′
+)
+=𝜀𝑅̄
+(
+𝑘
+)
+, (47)
+𝑟 𝑟 3 1
+1 2
+( ) ( )
+where 𝑅̄ 𝑘 and 𝑅̄ 𝑘 are provided in Appendix.
+2 1 3 1
+By equating the constant terms independent of 𝜀and the coefficients of 𝜀on both sides of equations (43), (45), (46), and (47),
+we obtain a system of eight linear equations. By solving this system of equations, we derive the expressions of eight unknowns, viz.
+̄ , ′, ̄ , ′, ̄ , ′, ̄ , and ′which are expressed in Appendix. By using these expressions, equation (34)is rewritten as
+∞
+( )[ ( )]
+𝑈 𝑧 (1)= 2 1 𝜋 ∫ Δ 𝐸 1 + ( 𝑘 Δ )2 1+𝜀 Δ 3 Δ +Δ + 4 Δ +Δ 5 [ cos ( 𝛽 1 𝑥 ) +Γ 0 sin ( 𝛽 1 𝑥 )] 𝑒−𝜄𝜁𝑦𝑑𝜁. (48)
+0 1 1 2
+−∞
+5. Frequency equation subjected to parabolic-shaped irregularity
+In view of equation (1), Fourier transform of 𝑝(𝑦)can be rewritten as
+( ) ( ) ( )
+𝜆𝑠 𝜆𝑠 𝜆𝑠
+𝑝̄(𝜆)=
+2𝐻
+0
+𝑠
+×
+sin
+2
+−
+( 2 )
+cos
+2 . (49)
+𝜀 𝜆𝑠 3
+2
+( ) ( ) ( )
+Now, in terms of 𝑅̄ 𝑘 , 𝑅̄ 𝑘 , and 𝑅̄ 𝑘 and with the help of equation (49), we acquire
+1 1 2 1 3 1
+∞ √
+Δ 3 +Δ 4 +Δ 5 = 𝐻 𝜋 0 𝜀 𝑠 ∫ [ Υ ( 𝑘 1 −𝜆 ) +Υ ( 𝑘 1 +𝜆 )] × 𝜋 2 𝐽 ( 3 𝜆 ∕ 𝑠 2 ∕ ( 2 𝜆 ) 𝑠 3 ∕ ∕ 2 2 ) 𝑑𝜆, (50)
+−∞
+where 𝐽 (𝜆𝑠∕2) represents the Bessel function of the first kind of order 3/2 and Υ(⋅) is defined in Appendix. Leveraging the
+3∕2
+asymptotic expressions, we simplify our analysis by focusing on the dominant terms. This approach involves retaining only the most
+significant components while eliminating terms containing 𝑠−1 and higher inverse powers of 𝑠for large values of 𝑠. Consequently,
+we arrive at the following refined expressions
+∞ √ ( )
+∫ [ Υ ( 𝑘 1 −𝜆 ) +Υ ( 𝑘 1 +𝜆 )] 𝜋 2 𝐽 ( 3 𝜆 ∕ 𝑠 2 ∕ ( 2 𝜆 ) 𝑠 3 ∕ ∕ 2 2 ) 𝑑𝜆≅ 4Υ 3𝑠 𝑘 1 . (51)
+−∞
+With the help of equations (50), equation (51)leads to
+( )
+4𝐻 Υ 𝑘
+Δ +Δ +Δ = 0 1 . (52)
+3 4 5 3𝜋𝜀
+In view of equation (52), equation (48)is modified as
+∞
+( )
+𝑈 𝑧 (1)= 2 1 𝜋 ∫ 𝐸 ( 𝑘 ) Δ [ 1 1 − +Δ 4𝐻 2 (0Υ ( 𝑘 1 ) ) ] [ cos ( 𝛽 1 𝑥 ) +Γ 0 sin ( 𝛽 1 𝑥 )] 𝑒−𝜄𝜁𝑦𝑑𝜁. (53)
+−∞ 0 1 3𝜋 Δ1+Δ2
+The value of the integra l(53)is exclusively governed by the poles of the integrand, which are identified as the roots of the equation
+presented below
+[ ( ) ]
+( ) 4𝐻 Υ 𝑘
+𝐸 𝑘 1− (0 1 ) =0. (54)
+0 1 3𝜋 Δ +Δ
+1 2
+Equation (54) encapsulates the complex frequency relation governing SH-wave propagation in our considered layered system.
+The wave number 𝑘 1 is expressed in complex form as 𝑘 1 =𝑘 𝑟+𝜄𝑘 𝑖, where 𝑘 𝑟 and 𝑘 𝑖 represent its real and imaginary components,
+8
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+respectively. The attenuation coefficient is defined as 𝛼= 𝑘𝑖. The wave frequency 𝜔and phase velocity 𝑐 of SH waves are related
+𝑘𝑟
+to 𝑘 𝑟 through the equation 𝜔=𝑘 𝑟 𝑐. Given the complex nature of this frequency relation, it can be decomposed into two distinct
+equations
+[ [ ( ) ]]
+( ) 4𝐻 Υ 𝑘
+ℜ 𝐸 𝑘 1− (0 1 ) =0, (55)
+0 1 3𝜋 Δ +Δ
+[ [ 1 ( ) 2 ]]
+( ) 4𝐻 Υ 𝑘
+ℑ 𝐸 𝑘 1− (0 1 ) =0. (56)
+0 1 3𝜋 Δ +Δ
+1 2
+Equations (55)and (56)represent the dispersion and attenuation equations of SH-waves propagating in the size-dependent layered
+structure.
+6. Particular cases and validation
+6.1. Case-I
+If nonlocality and fracture porosity are neglected (i.e. 𝜉 =𝜉 =0, 𝜌 =𝜌 = = = =0) and the piezomagnetic substrate
+1 2 3 4 13 23 33
+is considered to be isotropic without any flexomagnetic effect (i.e. 𝜉 =𝜉 =0), equation (54)is simplified to
+41 52
+[ ( )]
+( ) 4𝐻 Υ(𝐼) 𝑘
+𝐸(𝐼) 𝑘 1− 0 1 =0, (57)
+0 1 3𝜋Δ(𝐼)
+1
+√ [ ]
+where 𝐸 0 (𝐼)(𝑘 1 )=𝜇𝛽 1 Γ 0 + 44 𝑟 1 , 𝛽 1 = 𝜇 𝜔 ∕𝜌 2 7 −𝑘2 1 , 𝜌 7 =𝜌 1 −𝜌2 𝑓 𝜌− 2 1, Υ(𝐼)(𝑘 1 )= 𝑄( 1 𝐼)+𝑄( 2 𝐼)+𝑄( 3 𝐼)+𝑄( 4 𝐼)
+𝜁=𝑘
+1 , Δ( 1 𝐼)=4 44 𝑒−𝑟 1 𝑑𝑠.
+Equation (57)represents the frequency equation of SH-waves in a poroelastic layer overlying an irregular isotropic half-space which
+matches well with the dispersion equation derived by Saini and Kumar [43] in the absence of initial stress, rigid boundary, and
+non-homogeneity.
+6.2. Case-II
+In addition to the case-I, when the upper layer becomes isotropic without porosity (i.e. 𝜌 𝑓 = 12 = 22 =0), equation (54) is
+simplified to
+[ ( )]
+( ) 4𝐻 Υ(𝐼) 𝑘
+𝐸(𝐼) 𝑘 1− 0 1 =0, (58)
+0 1 3𝜋Δ(𝐼)
+1
+√
+where 𝛽 = 𝜔2 −𝑘2. Equation (58)determines SH-wave propagation behavior in an isotropic layer overlying an irregular isotropic
+1 𝜇∕𝜌 1 1
+half-space which matches favorably with the dispersion equation derived by Acharya and Roy [44] by neglecting magnetoelasticity.
+6.3. Case-III
+In addition to Case-II, when the interface becomes plain without any irregularity, equation (54)is transformed into the following
+classical Love wave dispersion equation
+√
+[√ ] 𝜇∗ 1− 𝑐2
+tan 𝜇
+𝑐
+∕
+2
+𝜌 −1𝑘 𝑟 𝐻 = √
+𝜇∗∕𝜌 2𝑓
+. (59)
+1 𝜇 𝑐2 −1
+𝜇∕𝜌
+1
+Equation (59)resembles with the classical dispersion equation of SH-waves which validates the considered model.
+7. Numerical computation and graphical observations
+In this section, the dispersion and attenuation equations are used to demonstrate the dispersive and damping profiles of shear
+waves in several two-dimensional graphs. Fig. 2depicts the comparative analysis of phase and group velocities for dispersion and
+damping profiles of SH-waves propagating in the layered structure. The influence of key parameters, viz., depth of irregularity
+(𝐻
+0
+∕𝐻), source-depth (𝑑 𝑠), total porosity (Φ), flexomagnetic coefficient (𝜉
+41
+), nonlocal parameters associated with fissured porous
+and flexomagnetic layers (𝜉 and 𝜉 ) on the dispersive behavior of SH-waves is visually represented in the Fig. 3(a), Fig. 4(a), Fig. 5(a),
+1 2
+Fig. 6(a), Fig. 7(a), and Fig. 8(a), where the wave velocity is plotted as the function of the wave number (𝑘 𝑟). In contrast, Fig. 2(b),
+Fig. 3(b), Fig. 4(b), Fig. 5(b), Fig. 6(b), Fig. 7(b), and Fig. 8(b) illustrate the corresponding damping profiles where wave velocity
+9
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+Fig.2.Comparativeanalysisbetweenphaseandgroupvelocitiesinthe(a)dispersionand(b)attenuationofSH-waves.
+is drawn with respect to attenuation coefficient (𝐿𝑜𝑔[𝛼]). Fig. 9(a) and 9(b) delineate the comparative analysis between different
+material structures, namely Sandstone-Cobalt Ferrite (CoFe O ), Sandstone-Barium Titanate (BaTiO ), and Sandstone-Lead Zirconate
+2 4 3
+Titanate (PZT-2), in terms of dispersion and attenuation, respectively. The material properties of the fluid-saturated fissured porous
+material and flexomagnetic material in this study are specified as follows
+Values for nonlocal fissured porous material (Sandstone) [21]:
+𝜇=8 G Pa, 𝜌 𝑠=2650 k g/m3, 𝜌 𝑓 =1000 k g/m3, Φ=0.6, 𝜉 1 =0.001 m .
+Values for nonlocal flexomagnetic material (Cobalt Ferrite) [42]:
+ =45.3×109Nm−2, 𝑑 =550 N/Am, 𝛾 =157×10−6Ns2/C2, 𝜌(2)=5300 kg/m3, 𝜉 =0.001 m.
+44 15 11 2
+7.1. Comparison between phase and group velocities of SH-waves
+Fig. 2(a) shows how phase and group velocities for dispersion vary as functions of the dimensionless wave number 𝑘 𝑟. The phase
+velocity (curve 1) exhibits a decreasing trend with increasing 𝑘 𝑟, starting from a higher value and gradually stabilizing. This behavior
+indicates the presence of dispersive effects within the structure. Conversely, the group velocity (curve 2) initially increases sharply,
+reaches a peak, and then decreases smoothly. Such characteristics highlight the influence of structural and material parameters on
+wave propagation modes, revealing distinct phase-group velocity dynamics associated with the medium.
+Fig. 2(b) demonstrates the dependence of velocities on the logarithmic attenuation coefficient log[𝛼]. The phase velocity (curve
+1) shows a gradual decrease as log[𝛼] increases, suggesting a reduction in wave speed due to increasing material attenuation. In
+contrast, the group velocity (curve 2) increases with log[𝛼], implying a change in energy transport mechanisms at higher levels of
+attenuation. This contrasting behavior between phase and group velocities indicates mode-dependent responses of the medium to
+attenuation effects and potential energy redistribution during wave propagation.
+7.2. Impact of irregularity parameter
+Fig. 3presents a detailed analysis of the impact of irregularity parameter (𝐻 ∕𝐻)on wave propagation characteristics through
+0
+dispersion and attenuation graphs. The dispersion graph (Fig. 3(a)) shows velocity variations against 𝑘 𝑟for three distinct modes with
+different irregularity parameters (𝐻 ∕𝐻= 0.1, 0.2, and 0.3). The velocity range extends from approximately 2000 m/s to 3000 m/s.
+0
+The first mode exhibits the most dramatic response, showing a sharp decline around 𝑘 𝑟 = 0.5, while the second and third modes
+demonstrate more gradual decreases in velocity. The curves for all three modes eventually diverge at higher wavenumbers, with the
+third mode maintaining the highest velocity values throughout the range.
+The attenuation behavior (Fig. 3(b)) is plotted against Log[𝛼], revealing complex frequency-dependent characteristics. All three
+modes start at approximately 3000 units velocity and show distinct attenuation patterns. The first mode experiences the steepest
+decline, particularly around Log[𝛼] = -2.2, while the second and third modes show progressively more gradual attenuation. The
+irregularity parameter (𝐻 ∕𝐻) significantly influences the attenuation behavior, with higher values leading to more pronounced
+0
+velocity reductions.
+The irregularity parameter’s influence reveals important material behavior characteristics. Higher 𝐻 ∕𝐻 values result in greater
+0
+velocity variations, suggesting stronger wave-material interactions. The distinct behavior of each mode indicates multiple wave prop-
+agation mechanisms within the medium, with the first mode being most sensitive to structural irregularities. This analysis provides
+valuable insights into how structural irregularities affect wave propagation, particularly relevant for understanding wave behavior
+in heterogeneous materials.
+10
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+Fig. 3 .Variation in (a) dispersion and (b) damping profiles of SH-waves for different thickness parameter (𝐻 0 ∕𝐻) values of 0.1, 0.2, and 0.3.
+Fig. 4 .Variation in (a) dispersion and (b) damping profiles of SH-waves for different source depth parameter (𝑑 𝑠) values of 20m, 25m, and 30m.
+7.3. Impact of depth of source
+Fig. 3illustrates the effects of depth of source parameter (𝑑 𝑠) on wave propagation characteristics through dispersion and atten-
+uation analyses, with three different values of 𝑑 𝑠(20 m, 25 m, and 30 m).
+The dispersion analysis (Fig. 4(a)) demonstrates velocity variations against wavenumber 𝑘 𝑟, ranging from 2000 m/s to 3000
+m/s. The curves show distinct behavior across three modes, with each mode responding differently to changes in the source depth
+parameter. The first mode exhibits the steepest decline around 𝑘 𝑟= 0.5, while the second and third modes show progressively more
+gradual velocity reductions. As 𝑑 𝑠 increases from 20 m to 30 m, the curves shift rightward, indicating delayed onset of dispersion
+effects at greater source depths.
+In the attenuation analysis (Fig. 4(b), plotted against Log[𝛼], all three modes begin at approximately 3000 m/s velocity but follow
+distinct attenuation patterns. The first mode experiences the most dramatic velocity reduction, particularly pronounced around Log[𝛼]
+= -2.5. The second and third modes demonstrate more gradual attenuation, with higher degree values resulting in curves shifted
+toward higher frequencies. This shift suggests that deeper source locations lead to reduced attenuation effects at lower frequencies.
+The physical significance of these patterns reveals how source depth influences wave propagation mechanisms. Larger 𝑑 𝑠 values
+result in more gradual velocity changes, indicating that deeper sources produce more stable wave propagation characteristics. The
+mode separation becomes more pronounced with increasing depth, suggesting that source depth significantly affects the coupling
+between different wave propagation mechanisms. This analysis provides valuable insights into how source depth parameters influence
+wave behavior, particularly relevant for applications in seismic exploration and wave propagation in layered media.
+11
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+Fig. 5 .Variation in (a) dispersion and (b) damping profiles of SH-waves for different porosity parameter (Φ) values of 0.4, 0.5, and 0.6.
+7.4. Impact of porosity parameter
+The Fig. 5shows two important graphs analyzing the impact of porosity parameter (Φ) on wave propagation characteristics in
+porous media, specifically focusing on dispersion and attenuation behaviors across three distinct modes.
+In Fig. 5(a), the dispersion curves demonstrate how wave velocity (𝑐) varies with wavenumber (𝑘 𝑟) for different porosity values
+(Φ = 0.4, 0.5, and 0.6). The first mode exhibits the steepest decline in velocity, indicating it’s the most sensitive to changes in
+wavenumber. As porosity increases, there’s a noticeable shift in the curves, suggesting that higher porosity values lead to generally
+lower wave velocities across all modes. This behavior can be attributed to the fact that increased porosity results in a less rigid
+medium, thereby reducing the effective wave propagation speed.
+Fig. 5(b) presents the attenuation characteristics through Log[𝛼]plots, where 𝛼represents the attenuation coefficient. The curves
+show three distinct modes of wave propagation, with each mode displaying unique attenuation patterns. The first mode shows the
+most dramatic change in attenuation with frequency, particularly in the lower frequency range. Higher porosity values (Φ= 0.6)
+consistently demonstrate stronger attenuation compared to lower porosity values (Φ= 0.4), which is physically intuitive as more
+porous materials tend to dissipate wave energy more effectively.
+The physical implications of these observations extend beyond mere mathematical relationships. Wave propagation demonstrates
+increasing complexity at higher frequencies, manifested through clear mode separation. The material’s dispersive nature becomes
+more pronounced with increasing porosity, while attenuation effects strengthen, particularly in higher-order modes. The first mode,
+typically associated with fast compressional waves, exhibits the highest sensitivity to porosity variations in both its dispersive and
+attenuative behavior. These findings have significant implications for various fields, including geophysics, material science, and
+structural engineering, where understanding wave propagation through porous media is crucial for practical applications.
+7.5. Impact of flexomagnetic coefficient
+Fig. 6presents a comprehensive analysis of wave propagation characteristics with and without flexomagnetic effects through two
+key plots: dispersion and attenuation behaviors. In Fig. 6(a), the dispersion relation shows three distinct modes of wave propagation
+plotted against the wavenumber 𝑘 𝑟. The first mode, appearing at the bottom of the graph, demonstrates the lowest phase velocity
+and exhibits a nearly linear relationship. When comparing curves 1 (with flexomagnetic effect) and 2 (without flexomagnetic effect),
+there’s a subtle but noticeable separation, indicating that the flexomagnetic effect slightly modifies the wave propagation speed. The
+second and third modes appear at higher frequencies, with the third mode showing the most pronounced dispersion characteristics.
+Fig. 6(b) illustrates the attenuation behavior on a logarithmic scale (Log[𝛼]). The attenuation curves reveal stronger damping at
+higher frequencies, as evidenced by the rightward shift of the curves. The presence of the flexomagnetic effect (curve 1) leads to
+different attenuation patterns compared to its absence (curve 2), particularly noticeable in the higher modes. This suggests that the
+flexomagnetic coupling mechanism contributes to additional energy dissipation in the system.
+The separation between curves with and without flexomagnetic effects becomes more pronounced at higher frequencies and wave
+numbers, indicating that the flexomagnetic coupling is more influential in the high-frequency regime. This behavior suggests that
+the flexomagnetic effect acts as an additional mechanism for wave modulation and energy dissipation. The existence of multiple
+modes (first, second, and third) represents different wave propagation patterns, each with distinct phase velocities and attenuation
+characteristics, showcasing the complex nature of wave dynamics in this system.
+12
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+Fig.6.Variationin(a)dispersionand(b)dampingprofilesofSH-waveswithandwithoutflexomagneticeffect.
+Fig.7.Variationin(a)dispersionand(b)dampingprofilesofSH-waveswithandwithoutnonlocalityparameterassociatedwithfissuredporouslayer.
+7.6. Impact of nonlocality parameter associated with fissured porous material
+The Fig. 7shows two important graphs depicting the dispersion and attenuation characteristics of SH-waves in fissured porous layer
+system, with and without the 𝜉 effect. In the Fig. 7(a), the dispersion curves demonstrate three distinct modes of wave propagation.
+1
+The first mode exhibits a steep decline in velocity (𝑐) as the wave number (𝑘 𝑟) increases, showing the strongest dispersion effect among
+all modes. When comparing curves with and without the 𝜉 effect, there’s a noticeable separation between the curves, particularly
+1
+in the second and third modes. The higher modes (second and third) show less steep curves, indicating reduced dispersion effects at
+higher frequencies.
+Fig. 7(b) presents the attenuation characteristics plotted against Log[𝛼]. The first mode shows the most dramatic attenuation
+effect, with a sharp drop in the curve around Log[𝛼]≈-2.5. This indicates strong energy dissipation in the primary wave mode. The
+second and third modes demonstrate more gradual attenuation patterns, extending further into higher Log[𝛼]values. The presence of
+the 𝜉 effect consistently results in higher attenuation values across all modes, suggesting enhanced energy dissipation in the system.
+1
+The observed behavior can be attributed to the fissured porous layer structure’s wave-material interaction. The first mode repre-
+sents the fundamental wave propagation, which is most sensitive to the material properties and shows the strongest dispersion and
+attenuation effects. The higher modes represent more complex wave patterns that are less affected by the material’s porous nature.
+The 𝜉 effect, representing the nonlocality parameter, introduces additional energy dissipation mechanisms, resulting in modified
+1
+wave propagation characteristics and enhanced attenuation, particularly evident in the higher modes.
+13
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+Fig.8.Variationin(a)dispersionand(b)dampingprofilesofSH-waveswithandwithoutnonlocalityparameterassociatedwithflexomagneticsubstrate.
+7.7. Impact of nonlocality parameter associated with flexomagnetic material
+Fig. 8presents two crucial graphs depicting the behavior of SH-waves (dispersion and attenuation) with respect to the changes in
+nonlocality parameter (𝜉 ) associated with flexomagnetic material.
+2
+In Fig. 8(a), the dispersion curves demonstrate three distinct modes plotted against 𝑘 𝑟. The first mode exhibits a steep declining
+trend, starting from approximately 𝑐=3000 m/s and dropping sharply as 𝑘 𝑟increases. There’s a notable difference between the cases
+with and without the 𝜉 effect, particularly visible in the higher modes. The second and third modes show more gradual curves, with
+2
+the 𝜉 effect causing a slight shift in their trajectories.
+2
+Fig. 8(b) illustrates the attenuation behavior plotted against Log[𝛼]. The first mode shows a curved pattern that terminates around
+Log[𝛼]= -2.5, while the second and third modes extend further into the negative Log[𝛼]region. The presence of the 𝜉 effect creates
+2
+a distinct separation between the curves, particularly noticeable in the higher modes.
+The dispersion and attenuation patterns reveal important physical characteristics of the flexomagnetic layer’s wave propagation
+properties. The steep decline in the first mode suggests strong frequency-dependent behavior at lower wavenumbers. The separation
+between curves with and without the 𝜉 effect indicates that the nonlocality parameter significantly influences wave propagation
+2
+characteristics, particularly in higher modes. This behavior suggests that the flexomagnetic layer exhibits complex wave-material
+interactions that are sensitive to both frequency and the nonlocality parameter.
+The three modes demonstrate distinctly different behaviors, with the first mode showing the most dramatic changes in both
+dispersion and attenuation. The second and third modes exhibit more gradual variations, suggesting different wave propagation
+mechanisms at higher frequencies. The consistent separation between curves with and without the 𝜉 effect across all modes indicates
+2
+that the nonlocality parameter has a systematic influence on the material’s wave propagation properties.
+7.8. Impact of different material compositions
+Fig. 9presents a comparative analysis of the dispersive and damping behavior of SH-wave propagation in fissured porous layered
+media composed of three different material combinations, viz. Sandstone–CoFe O , Sandstone–BaTiO , and Sandstone–PZT-2.
+2 4 3
+Fig. 9(a) illustrates the dispersion characteristics as a function of the wavenumber 𝑘 𝑟. It is clearly observed that the material
+composition significantly affects the wave propagation behavior, particularly in the lower frequency regime corresponding to the
+first mode. The Sandstone–CoFe O composite exhibits the highest phase velocities in this mode, indicating a stiffer response and
+2 4
+weaker dispersion. Conversely, the Sandstone–PZT-2 system shows the lowest wave speeds, signifying a stronger dispersion effect.
+As we move to higher modes (second and third), the separation between the dispersion curves for different materials becomes more
+evident. The PZT-2 composite consistently produces the lowest phase velocities across all modes, while CoFe O maintains relatively
+2 4
+higher values. This behavior highlights the influence of electromechanical and magneto-electrical coupling properties in altering
+wave velocity and dispersive responses.
+Fig. 9(b) depicts the attenuation characteristics of SH-waves plotted against the logarithm of the attenuation parameter, log[𝛼].
+The first mode experiences the most significant attenuation, especially in the case of the Sandstone–PZT-2 composite, which shows a
+steep reduction in phase velocity (𝑐) with increasing log[𝛼]. This signifies a high degree of energy dissipation, attributed to the strong
+electromechanical coupling properties of PZT-2. In contrast, the Sandstone–CoFe O and Sandstone–BaTiO combinations display
+2 4 3
+more gradual attenuation patterns, particularly in the first mode. However, in the higher modes, all material structures exhibit
+enhanced attenuation, with the Sandstone–PZT-2 system consistently demonstrating the highest levels of energy loss. This implies
+that PZT-2 possesses a greater ability to dissipate wave energy across the entire frequency spectrum. This comparative study confirms
+14
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+Fig.9.Variationin(a)dispersionand(b)dampingprofilesofSH-wavesforSandstone–CoFe2O4,Sandstone–BaTiO3,andSandstone–PZT-2.
+that the selection of smart materials in the fissured porous configuration has a pronounced effect on wave dynamics. Materials with
+higher piezoelectric and magneto-electro-elastic coupling, such as PZT-2, contribute significantly to increased wave dispersion and
+attenuation, especially in higher-order modes where complex wave-material interactions become dominant.
+8. Conclusions
+This study investigates the propagation characteristics of Shear Horizontal (SH) waves in a fluid-saturated fissured porous material
+layer overlying a flexomagnetic substrate with a parabolic interfacial irregularity. The model incorporates nonlocal elasticity theory,
+flexomagnetic effects, and various material parameters to analyze wave dispersion and attenuation behavior. By applying Fourier
+transform and perturbation techniques, complex frequency relations are derived to describe SH-wave propagation across the irregular
+interface. Based on the comprehensive analysis of wave propagation characteristics in this complex layered system, several key
+conclusions can be drawn.
+• Complex wave behavior: The study reveals intricate dispersion and attenuation patterns across multiple wave modes, indicating
+complex wave-material interactions in the layered system. This complexity is particularly evident in the frequency-dependent
+velocity changes and mode-specific attenuation characteristics.
+• Impact of structural irregularities: The irregularity parameter (𝐻 ∕𝐻) significantly influences wave propagation. Higher
+0
+irregularity values lead to more pronounced velocity variations and stronger attenuation, especially in the first mode. This
+suggests that structural heterogeneities play a crucial role in modulating wave behavior.
+• Source depth effects: Deeper wave sources result in more stable propagation characteristics, with delayed onset of dispersion
+effects and reduced attenuation at lower frequencies. This finding has important implications for seismic exploration and wave
+propagation studies in layered media.
+• Porosity influence: Increased porosity generally leads to lower wave velocities and stronger attenuation across all modes.
+This behavior is attributed to the reduced rigidity and increased energy dissipation in more porous materials, highlighting the
+importance of porosity in wave propagation through fissured porous media.
+• Flexomagnetic effects: The inclusion of flexomagnetic coupling introduces additional wave modulation and energy dissipation
+mechanisms, particularly noticeable at higher frequencies. This effect modifies both dispersion and attenuation characteristics,
+underscoring the importance of considering flexomagnetic properties in advanced material designs.
+• Nonlocality parameters: The nonlocality parameters (𝜉 and 𝜉 ) significantly influence wave propagation, especially in higher
+1 2
+modes. Their presence consistently results in modified dispersion curves and enhanced attenuation, indicating the importance
+of considering nonlocal effects in accurate wave modeling.
+• Mode-specific behavior: Different wave modes exhibit distinct responses to various parameters, with the first mode typically
+showing the highest sensitivity to changes in material properties and structural characteristics.
+These findings have significant implications for various fields, including geophysics, materials science, and structural engineering.
+They provide valuable insights into wave behavior in complex media, which can be applied to improve seismic analysis techniques,
+design advanced materials with specific wave propagation properties, and enhance our understanding of wave dynamics in heteroge-
+neous and layered systems. The study also highlights the importance of considering multiple factors, such as structural irregularities,
+material properties, and nonlocal effects, in accurately predicting and analyzing wave propagation phenomena in complex media.
+15
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+CRediT authorship contribution statement
+Vipin Gupta :Writing – original draft, Supervision, Methodology .Soumik Das :Writing – original draft, Visualization, Validation,
+Software .Marin Marin :Writing – review & editing, Supervision, Conceptualization .Bandar Almohsen :Writing – review & editing,
+Resources, Project administration .Rachaita Dutta :Software, Methodology, Formal analysis.
+Funding
+No external funding received regarding this research.
+Declaration of competing interest
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to
+influence the work reported in this paper.
+Acknowledgements
+Authors are also sincerely thankful to Amrita Vishwa Vidyapeetham, Mysuru campus, India, Gurugram University, India, Transil-
+vania University of Brasov, Romania, and King Saud University, Riyadh, Saudi Arabia for supporting immensely by providing great
+opportunity, guidance, best facilities and equipments.
+Appendix A
+The Fourier transforms of function 𝑈 𝑧 (1)(𝑥,𝑦), 𝑈 𝑧 (2)(𝑥,𝑦), and Ψ(𝑥,𝑦)are defined as follows
+∞ ∞ ∞
+𝑈̄(1)(𝑥,𝜁)= 𝑈(1)(𝑥,𝑦)𝑒𝜄𝜁𝑦𝑑𝑦, 𝑈̄(2)(𝑥,𝜁)= 𝑈(2)(𝑥,𝑦)𝑒𝜄𝜁𝑦𝑑𝑦, Ψ ̄ (𝑥,𝜁)= Ψ(𝑥,𝑦)𝑒𝜄𝜁𝑦𝑑𝑦,
+𝑧 ∫ 𝑧 𝑧 ∫ 𝑧 ∫
+−∞ −∞ −∞
+and their inverse
+∞ ∞
+𝑈(1)(𝑥,𝑦)= 1 𝑈̄(1)(𝑥,𝜁)𝑒−𝜄𝜁𝑦𝑑𝜁, 𝑈(2)(𝑥,𝑦)= 1 𝑈̄(2)(𝑥,𝜁)𝑒−𝜄𝜁𝑦𝑑𝜁,
+𝑧 2𝜋 ∫ 𝑧 𝑧 2𝜋 ∫ 𝑧
+−∞ −∞
+∞
+Ψ(𝑥,𝑦)= 1 Ψ ̄ (𝑥,𝜁)𝑒−𝜄𝜁𝑦𝑑𝜁.
+2𝜋 ∫
+−∞
+𝐿 =𝑎 𝑎 +𝑎 𝛾 , 𝐿 =𝑎 𝑎 −𝑎 𝑎 −𝑎 𝛾 𝜁2+𝑎 𝛾 , 𝐿 =−𝑎 𝑎 −𝑎 𝛾 𝜁2,
+0 √3 5 1 11 1 3 6 4 5√ 1 11 2 11 2 4 6 2 11
+√ √ √ √
+√ √
+𝑟 =
+√ √−𝐿
+1
++ 𝐿2
+1
+−4𝐿
+0
+𝐿
+2 ,𝑟 =
+√ √−𝐿
+1
+− 𝐿2
+1
+−4𝐿
+0
+𝐿
+2 ,𝑆=
+𝑎
+4
+−𝑎
+3
+𝑟2
+1,𝑇 =
+𝑎
+4
+−𝑎
+3
+𝑟2
+2.
+1 2𝐿
+0
+2 2𝐿
+0
+𝑎
+1
+𝑟2
+1
++𝑎
+2
+𝑎
+1
+𝑟2
+2
++𝑎
+2
+∞
+𝑅̄
+(
+𝑘
+)
+= 1
+[
+̄𝑟 +̄𝑟
+]
+𝜁=𝑘 1−𝜆𝑝̄(𝜆)𝑑𝜆,
+1 1 2𝜋 ∫ 1 2
+−∞
+{ ( )}
+𝑅̄ 2 ( 𝑘 1 ) = 2 1 𝜋 ∫ ∞ ⎡ ⎢ ⎢ ⎢(𝜄  𝜆 ̄ ) 𝜇 ⎧ ⎪ ⎨ 𝐺 ( 1 𝜄𝜁 𝛽 ) 1 2 { + 2 − ̄𝛼   1 ̄ 𝑟 𝜇 2 1 ( 𝐺 + 𝑒 1 −  + 𝑟 ̄ 1𝑑 𝛼 ( 𝑠 2  𝐺 𝑟 4 2 2 4 + 𝑆 + 2 + 𝑒  − 𝑑 4 𝑟2 4 1 𝑑 5 𝑠 ) 𝐺 𝐺 𝐺 2 𝑟 2) 1 ̄ 𝑒 + −𝑟 1( 𝑑  𝑠 4 + 4 𝑇 𝐺 + 3 𝑟 𝑑 1 1 𝑒 5 − ) 𝑟 2 𝐺 𝑑𝑠 3 ̄ + − } ⎫ ⎪ ⎬ ⎤ ⎥ ⎥ ⎥ 𝜁=𝑘 1−𝜆 𝑝̄(𝜆)𝑑𝜆,
+−∞ ⎢ ⎣ ⎪ ⎩+ {( 𝜉 + 4 𝜉 4 )(𝑟 𝑟 1 2𝐺  2 ̄ +𝑟2 𝑟 𝐺 2 ̄ )3 +𝜁2𝜉 ( 𝐺 ̄ +𝐺 ̄ )} ⎪ ⎭ ⎥ ⎦
+41 52 1 2 2 3 41 2 3
+∞
+𝑅̄ 3
+(
+𝑘 1
+)
+= 2 1 𝜋 ∫
+(
+−̄𝛽 1 −𝑆̄𝑟 1 −𝑇̄𝑟 2 +2𝑒−𝑟 1 𝑑𝑠+2𝑒−𝑟 2 𝑑𝑠
+)
+𝜁=𝑘 1−𝜆 𝑝̄(𝜆)𝑑𝜆
+−∞
+̄ = Δ 1 + ( Δ )2, ′= Δ 3 +Δ (4 + ) Δ 5,̄ =Γ ̄,̄ =−̄,′=Γ ′,′=𝑅̄ ( 𝑘 ) −′,
+𝐸 𝑘 𝐸 𝑘 0 0 1 1
+0 (1 0 1) ( )
+̄ = 2 44 𝐺 2 𝑒−𝑟 1 𝑑𝑠+𝐺 3 𝑒−𝑟 2 𝑑𝑠 −2𝜇𝛽 (1 𝐺 1) Γ 0 𝑟− 1 1𝑟− 2 1 𝑟 2 𝑒−𝑟 1 𝑑𝑠+𝑟 1 𝑒−𝑟 2 𝑑𝑠 ,
+𝐸 𝑘
+( ) ( ) 0 [1 ( ) ( )]
+𝑅̄ 𝑘 −𝛼 𝑟 𝑅̄ 𝑘 −𝜇𝛽 𝐺 Γ 𝑅̄ 𝑘 +𝑇𝑅̄ 𝑘
+′= 2 1 2 2 1 1 (1 1) 0 3 1 1 1 ,
+𝐸 𝑘
+0 1
+16
+V.Gupta,S.Das,M.Marinetal.
+( ) ( ) ( ) ( )
+Applied Mathematical Modelling 150 (2026) 116393
+Γ =−tan 𝛽 𝐻 , 𝐺 =1−𝜉2 𝛽2+𝜁2 , 𝐺 =1+𝜉2 𝑟2−𝜁2 , 𝐺 =1+𝜉2 𝑟2−𝜁2 ,
+0 ( 1 1 ) 1 1 ( 2 2 )1 3 2 2
+𝛼 =  𝑆+𝑑 +𝜄𝜁𝜉 𝐺 , 𝛼 =  𝑇+𝑑 +𝜄𝜁𝜉 𝐺 , 𝜓 =𝑟 𝑇𝛼 −𝑟 𝑆𝛼 ,
+1 44 15 41 2 2 44 15 41 3 1 1 1 2 2
+( ) ( )
+𝜓 =𝑆−𝑇, 𝜓 =𝛼 𝑟 −𝛼 𝑟 , 𝐸 𝑘 =𝜇𝛽 𝐺 Γ 𝜓 +𝜓 , Δ =2𝜓  𝐺 𝑒−𝑟 1 𝑑𝑠+𝐺 𝑒−𝑟 2 𝑑𝑠 ,
+2 3 1 1 2 2 0 1 1 1 0 2 3 1 2 44 2 3
+( ) ( ) ( ) ( )
+Δ =2𝜓 𝑟−1𝑟−1 𝑟 𝑒−𝑟 1 𝑑𝑠+𝑟 𝑒−𝑟 2 𝑑𝑠 , Δ =𝑅̄ 𝑘 𝜓 , Δ =𝑅̄ 𝑘 𝜓 , Δ =𝑅̄ 𝑘 𝜓 .
+2 ( 3 )1 [2 2 1 3 ] 1 1 1 4 2 1 2 5 3 1 3
+Υ 𝑘 −𝜆 = 𝑄 +𝑄 +𝑄 +𝑄 +𝑄 +𝑄 𝜁=𝑘 1−𝜆, 𝑄 =̄𝜇𝐺 𝛽2𝜓 , 𝑄 =−̄𝛽 𝜓 ,
+1 ( 1 2 3 ) 4 5 ( 6 1 1 )1 2 2 1 3
+𝑄 =̄ 𝑟 𝜓 +𝛼 𝑟2𝜓 −𝑆𝑟 𝜓 , 𝑄 =̄ 𝑟 𝜓 +𝛼 𝑟2𝜓 −𝑇𝑟 𝜓 ,
+3 1 ( 1 1 1 2 1 3 ) 4 ( 2 1 2 2 2 ) 2 3
+𝑄 =2 𝐺 𝑟 𝑒−𝑟 1 𝑑 +𝐺 𝑟 𝑒−𝑟 2 𝑑 𝜓 + 2𝑒−𝑟 1 𝑑𝑠+2𝑒−𝑟 2 𝑑𝑠 𝜓 ,
+5 44 2 1 3 1 2 3
+{ ( ) ( ) }
+𝑄 =(𝜄𝜆) ⎧ ⎪ ⎨ (𝜄𝜁) 2 −  ̄𝜇 ( 𝐺 𝑒 1 − + 𝑟1𝑑𝑠  𝐺 44 𝑆 + + 𝑒− 𝑑 𝑟2 1 𝑑 5 𝑠𝐺 𝐺 2) ̄ +  44 𝑇+𝑑 15 𝐺 3 ̄ + ⎫ ⎪ ⎬.
+6 {( 44 )(𝑟 2 𝑟 )3 ( )}
+⎪ ⎩+ 𝜉 +𝜉 𝑟 1 2𝐺 ̄ +𝑟2𝐺 2 ̄ +𝜁2𝜉 𝐺 ̄ +𝐺 ̄ ⎪ ⎭
+41 52 1 2 2 3 41 2 3 [ ]
+𝑄(𝐼)=̄(𝐼)𝜇𝛽2, 𝑄(𝐼)=−̄(𝐼)𝛽  𝑟 , 𝑄(𝐼)=4 𝑟 𝑒−𝑟 1 𝑑𝑠, 𝑄 =(𝜄𝜆)(𝜄𝜁) ̄(𝐼)𝜇−̄(𝐼) −2
+𝑒−𝑟
+1
+𝑑𝑠
+,
+1 1 2 1 44 1 3 44 1 4 44 44 𝑟
+√ 1
+Δ(𝐼)=𝑅̄
+(
+𝑘
+)
+, Δ(𝐼)=𝑅̄
+(
+𝑘
+)
+ 𝑟 , 𝑟 =
+−𝜁2
+44
++𝜔2𝜌
+2𝑓 , ̄(𝐼)=
+Δ(
+1(
+𝐼)
+),̄(𝐼)=Γ ̄(𝐼),
+2 1 1 3 2 1 44 1 1  𝐸(𝐼) 𝑘 0
+44 0 1 ( ) ( )
+̄(𝐼)= 2 44 𝑒−𝑟 1 𝑑𝑠−2𝜇 ( 𝛽 1 Γ ) 0 𝑟− 1 1𝑒−𝑟 1 𝑑𝑠 , ′(𝐼) = Δ( 2 𝐼)+ ( Δ( 3) 𝐼) , ′(𝐼) =Γ ′(𝐼), ′(𝐼) = 𝑅̄ 1 𝑘 1 −𝜇𝛽 ( 1 Γ 0 ) 𝑅̄ 2 𝑘 1 ,
+𝐸(𝐼) 𝑘 𝐸(𝐼) 𝑘 0 𝐸(𝐼) 𝑘
+0 1 0 1 0 1
+𝑅̄ 1 ( 𝑘 1 ) = 2 1 𝜋 ∫ ∞ [{ ̄𝜇𝛽 1 2+̄ 44 𝑟2 1 +2 44 𝑟 1 𝑒−𝑟 1 𝑑𝑠 } +(𝜆𝜁) { −̄𝜇+ 44 ̄ +2 44 𝑒− 𝑟 𝑟1 1 𝑑𝑠 }] 𝜁=𝑘 1−𝜆 𝑝̄(𝜆)𝑑𝜆,
+−∞
+∞
+𝑅̄ 2
+(
+𝑘 1
+)
+= 2 1 𝜋 ∫
+(
+−̄𝛽 1 −̄𝑟 1 +2𝑒−𝑟 1 𝑑𝑠
+)
+𝜁=𝑘 1−𝜆 𝑝̄(𝜆)𝑑𝜆.
+−∞
+Data availability
+No data was used for the research described in the article.
+References
+[1]H.Zhou,X.Chen,AnewapproachtosimulatescatteringofSH-wavesbyanirregulartopography,Geophys.J.Int.164(2)(2006)449–459.
+[2]A.Chattopadhyay,S.Gupta,V.Sharma,P.Kumari,PropagationofSH-wavesinanirregularmonocliniccrustallayer,Arch.Appl.Mech.78(2008)989–999.
+[3]A.Zakharenko,Love-typewavesinlayeredsystemsconsistingoftwocubicpiezoelectriccrystals,J.SoundVib.285(4–5)(2005)877–886.
+[4]Z.Danoyan,G.Piliposian,Surfaceelectro-elasticLovewavesinalayeredstructurewithapiezoelectricsubstrateandadielectriclayer,Int.J.SolidsStruct.
+44(18–19)(2007)5829–5847.
+[5]J.Liu,S.He,PropertiesofLovewavesinlayeredpiezoelectricstructures,Int.J.SolidsStruct.47(2)(2010)169–174.
+[6]H.Ezzin,M.B.Amor,M.H.B.Ghozlen,Lovewavespropagationinatransverselyisotropicpiezoelectriclayeronapiezomagnetichalf-space,Ultrasonics69(2016)
+83–89.
+[7]S.A.Sahu,J.Baroi,Analysisofsurfacewavebehaviorincorrugatedpiezomagneticlayerrestingoninhomogeneoushalf-space,Mech.Adv.Mat.Struct.26(7)
+(2019)639–650.
+[8]A.Ray,A.K.Singh,R.Kumari,Green’sfunctiontechniquetomodelLove-typewavepropagationduetoanimpulsivepointsourceinapiezomagneticlayered
+structure,Mech.Adv.Mat.Struct.28(7)(2021)709–720.
+[9]M.Fiebig,N.Spaldin,Currenttrendsofthemagnetoelectriceffect,Eur.Phys.J.B71(2009)293–297.
+[10] A.A.Bukharaev,A.K.Zvezdin,A.P.Pyatakov,Y.K.Fetisov,Straintronics:anewtrendinmicro-andnanoelectronicsandmaterialsscience,Phys.Usp.61(12)
+(2018)1175.
+[11] S.Bühlmann,B.Dwir,J.Baborowski,P.Muralt,Size-effectinmesoscopicepitaxialferroelectricstructures:increaseofpiezoelectricresponsewithdecreasing
+feature-size,Integr.Ferroelectr.50(1)(2002)261–267.
+[12] L.E.Cross,Flexoelectriceffects:chargeseparationininsulatingsolidssubjectedtoelasticstraingradients,J.Mater.Sci.41(2006)53–63.
+[13] P.V.Yudin,A.K.Tagantsev,Fundamentalsofflexoelectricityinsolids,Nanotechnology24(43)(2013)432001.
+[14] P.Lukashev,R.F.Sabirianov,Flexomagneticeffectinfrustratedtriangularmagneticstructures,Phys.Rev.B,Condens.Matter82(9)(2010)094417.
+[15] E.A.Eliseev,Completesymmetryanalysesofthesurface-inducedpiezomagnetic,piezoelectricandlinearmagnetoelectriceffects,Ferroelectrics417(1)(2011)
+100–109.
+[16] M.Biswas,S.A.Sahu,Responseofsurfaceeffectonplanewavereflectionattheboundaryofflexomagneticsubstrate,Mech.Adv.Mat.Struct.(2024)1–20.
+[17] S.Seema,A.Singhal,R.Tiwari,V.Gupta,R.Dutta,H.Ahmad,S.Das,etal.,Rheology-dependentsurfacewavecharacteristicsinanadvancedgeomaterial
+flexoelectricplatewithviscoelasticcoating,Phys.Scr.100(1)(2024)015232.
+[18] S.Seema,A.M.Saeed,A.Singhal,S.Das,Surfaceacousticwavesinalayeredpiezoelectricplatewithconsideredsurfaceeffects,Int.J.Dyn.Control13(1)(2025)
+38.
+[19] S.R.Pride,J.G.Berryman,Lineardynamicsofdouble-porositydual-permeabilitymaterials.I.Governingequationsandacousticattenuation,Phys.Rev.E68(3)
+(2003)036603.
+[20] Z.-j.Dai,Z.-B.Kuang,Lovewavesindoubleporositymedia,J.SoundVib.296(4–5)(2006)1000–1012.
+17
+V.Gupta,S.Das,M.Marinetal.
+Applied Mathematical Modelling 150 (2026) 116393
+[21] M.Sharma,Constitutiverelationsforwavepropagationinadoubleporositysolids,Mech.Mater.91(2015)263–276.
+[22] S.Gupta,S.Das,R.Dutta,NonlocalstressanalysisofanirregularFGFPMstructureimperfectlybondedtofiber-reinforcedsubstratesubjectedtomovingload,
+SoilDyn.Earthq.Eng.147(2021)106744.
+[23] M.Kumar,J.Bhagwan,P.Kaswan,X.Liu,M.Kumari,Inhomogeneouswavespropagationindouble-porositythermoelasticmedia,Int.J.Numer.MethodsHeat
+FluidFlow33(8)(2023)2927–2962.
+[24] S.Das,R.Dutta,E.-M.Craciun,A.Sur,M.Barak,V.Gupta,Size-dependenteffectontheinteractionofsurfacewavesinmicropolarthermoelasticmediumwith
+dualporeconnectivity,Phys.Scr.99(6)(2024)065232.
+[25] R.Dutta,S.Das,H.Ahmad,A.Meghana,V.Gupta,ComparativeanalysisofdoubleandsingleporosityeffectsonSH-waveinducedvibrationsinperiodicporous
+lattices,SoilDyn.Earthq.Eng.186(2024)108919.
+[26] A.Chakraborty,Wavepropagationinanisotropicmediawithnon-localelasticity,Int.J.SolidsStruct.44(17)(2007)5723–5741.
+[27] S.R.Reddy,B.Ramabrahmam,PropagationofLovewavesinnonlocalelasticmediumwithmaterialboundaries,Int.J.Mech.Solids5(1)(2010)49–53.
+[28] G.Kaur,D.Singh,S.Tomar,Rayleigh-typewaveinanonlocalelasticsolidwithvoids,Eur.J.Mech.ASolids71(2018)134–150.
+[29] D.Singh,G.Kaur,S.Tomar,Wavesinnonlocalelasticsolidwithvoids,J.Elast.128(1)(2017)85–114.
+[30] G.Kaur,D.Singh,S.Tomar,Lambwavesinnonlocalelasticplatewithvoids,J.Mech.Mater.Struct.16(4)(2021)389–405.
+[31] S.Manna,T.Halder,S.N.Althobaiti,DispersionofLove-typewaveanditslimitationinanonlocalelasticmodelofnonhomogeneouslayeruponanorthotropic
+extendedmedium,SoilDyn.Earthq.Eng.153(2022)107117.
+[32] R.Dutta,S.Das,N.Bhengra,S.K.Vishwakarma,S.K.Das,Nonlocaleffectonshearwavepropagationinafiber-reinforcedporoelasticlayeredstructuresubjected
+tointerfacialimpulsivedisturbance,SoilDyn.Earthq.Eng.176(2024)108307.
+[33] S.M.Said,E.M.Abd-Elaziz,M.I.Othman,Wavepropagationonanonlocalporousmediumwithmemory-dependentderivativeandgravity,Int.J.Comput.Mater.
+Sci.Eng.13(01)(2024)2350015.
+[34] M.Marin,I.Abbas,R.Kumar,RelaxedSaint-Venantprincipleforthermoelasticmicropolardiffusion,Struct.Eng.Mech.51(4)(2014)651–662.
+[35] A.K.Yadav,E.Carrera,M.Marin,M.I.A.Othman,Reflectionofhygrothermalwavesinanonlocaltheoryofcoupledthermo-elasticity,Mech.Adv.Mat.Struct.
+31(5)(2024)1083–1096.
+[36] M.Bhatti,M.Marin,R.Ellahi,I.Fudulu,InsightintothedynamicsofEMHDhybridnanofluid(ZnO/CuO-SA)flowthroughapipeforgeothermalenergy
+applications,J.Therm.Anal.Calorim.148(24)(2023)14261–14273.
+[37] R.Kumar,D.K.Madan,J.S.Sikka,Wavepropagationinanirregularfluid-saturatedporousanisotropiclayersandwichedbetweenahomogeneouslayerandhalf
+space,WSEASTrans.Appl.Theor.Mech.10(2015)62–70.
+[38] O.Hrytsyna,J.Sladek,V.Sladek,M.Hrytsyna,Lovewavespropagationinlayeredwaveguidestructuresincludingflexomagneticity/flexoelectricityandmicro-
+inertiaeffects,Mech.Adv.Mat.Struct.30(23)(2023)4933–4951.
+[39] S.Gupta,R.Dutta,S.Das,FlexoelectriceffectonSH-wavepropagationinfunctionallygradedfracturedporoussedimentaryrockswithinterfacialirregularity,
+J.Vib.Eng.Technol.12(1)(2024)1067–1087.
+[40] A.C.Eringen,J.Wegner,Nonlocalcontinuumfieldtheories,Appl.Mech.Rev.56(2)(2003)B20–B22.
+[41] J.Sladek,V.Sladek,M.Xu,Q.Deng,Acantileverbeamanalysiswithflexomagneticeffect,Meccanica56(9)(2021)2281–2292.
+[42] S.Sidhardh,M.Ray,Flexomagneticresponseofnanostructures,J.Appl.Phys.124(24)(2018).
+[43] A.Saini,R.Kumar,AnalysisofLovewavesinaninitiallystressedtransverselyisotropicporouslayeroverheterogeneoushalf-spacewithparabolicirregularity,
+J.Vib.Eng.Technol.(2024)1–14.
+[44] D.Acharya,I.Roy,EffectofsurfacestressandirregularityoftheinterfaceonthepropagationofSH-wavesinthemagneto-elasticcrustallayerbasedonasolid
+semispace,Sadhana34(2)(2009)309–330.
+18

@@ -1,0 +1,1522 @@
+Journal of Nonlinear Mathematical Physics (2024) 31:26
+https://doi.org/10.1007/s44198-024-00187-z
+RESEARCH ARTICLE
+Response of Moisture and Temperature Diffusivity
+on an Orthotropic Hygro‑thermo‑piezo‑elastic Medium
+Vipin Gupta1 · M. S. Barak1 · Hijaz Ahmad2,3,4 · Soumik Das5 · Bandar Almohsen6
+Received: 18 December 2023 / Accepted: 25 March 2024
+© The Author(s) 2024
+Abstract
+This research explores the complex interaction between piezoelectric waves and
+heat-moisture diffusion within a semi-infinite piezoelectric material under hygro-
+thermal conditions. By employing a two-dimensional Cartesian framework, novel
+governing equations for a thermo-piezoelectrically orthotropic medium influenced
+by moisture effects are developed. Accurate representations for key parameters are
+obtained by utilizing normal mode analysis. The investigation examines the influ-
+ence of critical factors like moisture content, diffusivity, and temperature diffusivity
+on the spatial distribution of various physical fields. Additionally, a particular sce-
+nario of significance is highlighted. These results have the potential to improve sen-
+sor, actuator, and energy-harvesting device performance and dependability.
+Keywords Piezo-electric · Pyro-electricity · Moisture · Hygro-thermal ·
+Thermoelasticity
+List of symbols
+c ijkl = Elastic stiffness tensor
+T = Thermal temperature
+qF =
+Fourier’s heat flux
+i
+*
+Hijaz Ahmad
+hijaz.ahmad@neu.edu.tr
+1 Department of Mathematics, Indira Gandhi University, Meerpur, Rewari, India
+2 Near East University, Operational Research Center in Healthcare,
+TRNC Mersin 10, Nicosia, 99138, Turkey
+3 Center for Applied Mathematics and Bioinformatics, Gulf University for Science and
+Technology, Mishref, Kuwait
+4 Department of Computer Science and Mathematics, Lebanese American University, Beirut,
+Lebanon
+5 School of Physical Sciences, Amrita Vishwa Vidyapeetham, Mysuru Campus, Mysore,
+Karnataka, India
+6 Department of Mathematics, College of Science, King Saud University, P.O. Box 2455,
+11451 Riyadh, Saudi Arabia
+Vol.:(012134 536789)
+26 Page 2 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+qd =
+Dufour flux
+𝜙=
+Electrical potential
+𝜌=
+Density
+𝜏 i , d i = Pyro-electric constants
+E i = Electric field density
+qm =
+Coupled moisture diffusivities
+ij
+J = Moisture concentration potential
+DT =
+Temperature diffusivity
+ij
+aT =
+Coupling thermal material coefficients
+ij
+S=
+Entropy
+𝛽T =
+Thermal moduli tensor
+ij
+e ij = Component of strain
+fF =
+Moisture flux
+fs =
+Soret flux
+𝜂 , 𝜀 =
+ijr ij Piezothermal moduli tensors
+D i = Electric displacement
+C E = Specific heat at constant strain
+𝜎 =
+ij Components of the stress
+QT =
+Coupled thermal diffusivity
+ij
+K m = Moisture diffusion constant
+Dm =
+Moisture diffusivity
+ij
+𝛽m =
+Moisture moduli tensor
+ij
+𝛿 =
+ij Kroneckar delta
+1 Introduction
+Contemporary engineered materials, including composites, concrete, bio tissues,
+and foams, commonly exhibit susceptibility to heat and moisture due to their
+porous, fractured, and atomic structure. Piezoelectric materials are a category
+of intelligent materials that hold promise for enhancing network performance
+by employing active dampening, stiffening, and vibration mitigation [1]. How-
+ever, thermal stresses caused by aerodynamic heating, heat transfer, and moisture
+transfer can lead to buckling, instability, and decreased stiffness and strength in
+these materials over their service life. As the temperature increases, fluid can be
+absorbed into the perforations, enlarging voids and tiny flaws and causing defects
+to expand. Conversely, when the temperature is lowered, trapped fluid can fur-
+ther broaden defects, resulting in potential system failure. Hence, the inclusion
+of the impact of hygro-thermal, highlighting the interplay between moisture and
+temperature, is crucial when scrutinizing the mechanical characteristics of these
+materials and structures[2]. Alhashash et al. [3] have presented a novel approach
+to understanding the behavior of semiconductor materials under the reference of
+the two-temperature hygro-thermo-elasticity theory. Alenazi et al. [4]conducted
+1 3
+Journal of Nonlinear Mathematical Physics (2024) 31:26 Page 3 of 26 26
+research on the influence of moisture diffusivity in a semiconductor material
+within the framework of photo-thermoelasticity theory. El-Sapa et al. [5] delved
+into the study of moisture impact on the free surface of a semiconductor mate-
+rial. Their investigation utilized a one-dimensional deformation model to explore
+these interactions.
+Piezoelectric materials are now widely used in many fields, such as medi-
+cal imaging, energy harvesting, and vibration control. The term “piezoelectric-
+ity” describes the capability of certain crystals to generate a voltage when they are
+mechanically stressed, which can be used for various applications. The Curie broth-
+ers [6] were the first to discover this phenomenon, and their work laid the foundation
+for developing modern piezoelectric materials. Mindlin [7] developed an equation
+for the relationship between temperature and piezoelectric materials. The fundamen-
+tal laws that govern thermo-piezo-elasticmaterials were explored by Nowacki [8,
+9].In recent decades, there has been substantial progress made by researchers and
+engineers in enhancing the properties of piezoelectric materials, hence leading to
+an expansion of their potential uses. Numerous researchers [10–13] have conducted
+extensive research on wave propagation in different types of thermoelastic materials
+with piezoelectricity, diffusion, memory, and the two-temperature effect. Their find-
+ings have contributed significantly to understanding the behavior of plane waves in
+these mediums and finding practical applications in various fields, such as material
+engineering and acoustics. The energy transmission methods across several contact
+types, including elastic, thermo-elastic, and thermo-piezo-electric, have been thor-
+oughly studied by Gupta and his team [14–22]. They have examined how numer-
+ous elements, including electric fields, phase delays, and memory derivatives, affect
+these energy transfer processes. This research holds significance in advancing the
+comprehension of interface behavior and in the development of novel applications in
+the realms of energy harvesting and vibration control. Gupta and his research team
+[23–25] conducted an in-depth investigation into diverse wave phenomena within a
+porous fiber-reinforced thermoelastic medium. Their study considered the influence
+of memory effects, magnetic fields, and nonlocality on the observed phenomena.
+Further research is necessary to understand how piezoelectric composite materials
+perform in hygro-thermal environments.
+Hygro-piezo-thermo-elastic (HPTE) materials are of significant importance as
+they offer a diverse range of properties that can be customized to cater to specific
+engineering needs. The combination of mechanical, electrical, and hygro-thermal
+features makes these materials capable of actively reducing vibrations, enhancing
+stiffness and strength, and adapting to variations in temperature and humidity. Due
+to these exceptional characteristics, they have immense potential for applications in
+diverse fields, including aerospace, robotics, and environmental monitoring, where
+precise control over material properties is critical. Using the virtual work idea, Raja
+et al. [26] have demonstrated how active stiffness affects the dynamic behavior of
+HPTE laminates. Gupta et al. [27] carried out an extensive review, examining the
+impacts of hygro-thermal conditions and additional non-linear influences on the
+mathematical formulation of smart structures incorporating piezoelectric elements.
+This review provides valuable insights into the challenges and opportunities in
+developing more advanced and robust models for piezoelectric intelligent systems.
+1 3
+26 Page 4 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+Zenkour and Alghanmi [28] investigated the behavior of sandwich plates under elec-
+tro-mechanical-hygro-thermo sinusoidal loadings using piezoelectric material faces
+and a functionally graded core.
+Tiwari and her research team [29–35] conducted an in-depth investigation into
+wave propagation, examining various scenarios, including continuous line heat
+sources, magneto-thermoelasticity, and memory-dependent derivatives. Their
+research yielded valuable insights into material behaviors under specific conditions,
+with implications for applications ranging from thermal management to high-tem-
+perature environments. Through the integration of memory-dependent phenomena
+and nonlocal effects, Tiwari’s work contributes to the advancement of theoretical
+frameworks, offering support for material design and optimization in diverse tech-
+nological domains. Kaur’s research group [36–39] has significantly advanced the
+understanding of thermoelastic damping and dynamic responses in nanobeams, pri-
+marily focused on generalized piezothermoelastic nanobeams with simply supported
+boundaries. Additionally, they examined the magneto-electro-piezo-thermoelastic
+nanobeam with two temperatures subjected to ramp-type heating, revealing insights
+into the behavior of nanobeam structures under the influence of magneto-electro-
+piezo-thermoelastic effects during ramp-type heating scenarios.
+Piezoelectric materials are widely employed in diverse real-world applications,
+yet their behavior at the free surface of the hygro-thermo-piezo-elastic medium
+remains inadequately understood. The objective of this study is to develop an inno-
+vative mathematical model to analyze the behavior of plane waves in piezo-thermo-
+elastic materials. Additionally, the study aims to investigate the influence of mois-
+ture and temperature diffusivities, as well as moisture content, on the distribution of
+physical properties within the thermo-piezo-elasticmaterial. This study provides a
+deeper understanding of these materials’ behavior, aiding in optimizing their design
+for practical applications.
+2 F undamental Equations of Hygro‑thermo‑piezo‑elastic Medium
+Following Yadav et al. [40], Barak and Gupta [41], Szekeres [42, 43], and Hosseini
+and Ghadiri [44],the total moisture flux f i and heat flux q i and the basic relationship
+for a coupled anisotropic hygro-thermo-piezo-elasticmedium are:
+q =−DTT, −qmm, ,
+i ij i ij i (1)
+f =−Dmm, −QTT, .
+i ij i ij i (2)
+The hygro-piezoelectric medium facilitates the transmission of elastic, moisture,
+electro-magnetic, and thermal waves. The constitutive equations pertaining to this
+medium are stated in the following manner:
+D =𝜂 e +𝜀 E +𝜏T+dm,E =−𝜙,
+i ijk jk ij j i i i i (3)
+1 3
+Journal of Nonlinear Mathematical Physics (2024) 31:26 Page 5 of 26 26
+𝛽TT
+𝜌T 0 Ṡ =−q i , i ,𝜌T 0 S= 𝜌 ij C 0 e kk +T−T 0 𝜏 i 𝜙, i , (4)
+E
+−q, =DTT, +qmm, ,
+i i ij ii ij ii (5)
+J̇ =−f, ,
+i i
+J =m+ 𝛽 i m j Dm ij m 0e −m d𝜙, , (6)
+K kk 0 i i}
+m
+−f, =Dmm, +QTT, ,
+i i ij ii ij ii (7)
+𝜎 =c e −𝜂 E +𝛽TT+𝛽mm,
+ij ijkl kl ijk k ij ij (8)
+𝜎 =c u , +c u , +c u , −𝛽TT−𝛽mm+𝜂 𝜙, ,
+11 11 11 12 22 13 33 1 1 31} 3
+𝜎 =c u , +u , ,
+12 66 12 21
+𝜎 =c u , +u , +𝜂 𝜙, , ⎫
+𝜎
+13
+=c
+55�
+u ,
+13
++c
+3
+u
+1�
+, +c
+15
+u ,
+1
+−𝛽TT−𝛽mm+𝜂 𝜙, , ⎪ (9)
+22 12 � 11 22 2 � 2 23 33 2 2 32} 3 ⎪
+𝜎 23 =c 44 u 2 , 3 +u 3 , 2 +𝜂 24 𝜙, 2 , ⎪
+𝜎 =c u , +c u , +c u , −𝛽TT−𝛽mm+𝜂 𝜙, ,⎬
+33 13 � 11 23 2 � 2 33 33 3 3 33} 3 ⎪
+⎪
+⎪
+⎭
+D =𝜂 u , +u , −𝜀 𝜙, ,
+1 15 13 31 11 1
+D =𝜂 u , +u , −𝜀 𝜙,
+2 24� 23 32� 22 2 (10)
+D =𝜂 u , +𝜂 u , +𝜂 u , −𝜀 𝜙, +𝜏 T +d m.⎫
+3 31 11 32 22 33 33 33 3 3 3
+� � ⎪
+⎬
+Equation of motion: ⎪
+⎭
+𝜎 , =𝜌ü .
+ji j i (11)
+The following is the outcome of Eqs. (1), (4), and (5):
+𝛽TT
+DT i T, ii +qm i m, ii −Ṫ − 𝜌 i C 0 u̇ j , j +T 0 𝜏 i 𝜙̇, i =0. (12)
+E
+The following is the outcome of Eqs. (2), (6), and (7):
+𝛽mDmm
+Dmm, +QTT, −ṁ − i i 0 u̇ , +m d𝜙̇, =0.
+i ii i ii K j j 0 i i (13)
+m
+Equation (3) may be written as follows:
+D, =0 ⇒ D , +D , +D , =0,
+i i 11 2 2 3 3 (14)
+1 3
+26 Page 6 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+where, 𝛽 i T j =𝛽 i T𝛿 ij , 𝛽 i m j =𝛽 i m𝛿 ij , DT ij =DT i 𝛿 ij , Dm ij =Dm i 𝛿 ij , qm ij =qm i 𝛿 ij ,QT ij =QT i 𝛿 ij ,
+and, i, j is not summed.
+3 Modeling of the Problem
+We assume a homogeneous orthotropic hygro-thermo-piezo-elastic half-space, and
+we adopt a Cartesian coordinate system (x, y, z) . The half-space is characterized by
+uniform initial temperature T 0 and moisture m 0 , as shown in Fig. 1. The propagation
+of hygro-thermal-elastic waves occurs within the xz plane, with all physical field
+variables function of t , x, and z.
+The set of Eqs. (9)–(14) represents the governing equation that can be mathemati-
+cally described in the
+xz−
+plane as:
+𝜕2u 𝜕2u 𝜕2w 𝜕2𝜙 𝜕T 𝜕m
+c +c + c +c + 𝜂 +𝜂 −𝛽T −𝛽m =𝜌ü,
+11𝜕x2 55𝜕z2 13 55 𝜕x𝜕z 31 15 𝜕x𝜕z 1 𝜕x 1 𝜕x
+( ) ( ) (15)
+𝜕2u 𝜕2w 𝜕2w 𝜕2𝜙 𝜕2𝜙 𝜕T 𝜕m
+c +c +c +c +𝜂 +𝜂 −𝛽T −𝛽m =𝜌ẅ ,
+13 55 𝜕x𝜕z 55𝜕x2 33𝜕z2 15𝜕x2 33𝜕z2 3 𝜕z 3 𝜕z
+( ) (16)
+DT
+𝜕2T
++DT
+𝜕2T
++qm
+𝜕2m
++qm
+𝜕2m
+−
+𝜕T
+−
+T
+0 𝛽T
+𝜕2u
++𝛽T
+𝜕2w
++T 𝜏
+𝜕2𝜙
+=0,
+1 𝜕x2 3 𝜕z2 1 𝜕x2 3 𝜕z2 𝜕t 𝜌C 1𝜕x𝜕t 3𝜕z𝜕t 0 3𝜕z𝜕t
+E( )
+(17)
+QT 𝜕2T +QT 𝜕2T +Dm 𝜕2m +Dm 𝜕2m − 𝜕m − m 0 𝛽TDm 𝜕2u +𝛽TDm 𝜕2w +m d 𝜕2𝜙 =0,
+1 𝜕x2 3 𝜕z2 1 𝜕x2 3 𝜕z2 𝜕t K 1 1𝜕x𝜕t 3 3𝜕z𝜕t 0 3𝜕z𝜕t
+m( )
+(18)
+𝜕2u 𝜕2w 𝜕2w 𝜕2𝜙 𝜕2𝜙 𝜕T 𝜕m
+𝜂 +𝜂 +𝜂 +𝜂 −𝜀 −𝜀 +𝜏 +d =0,
+15 31 𝜕x𝜕z 15𝜕x2 33 𝜕z2 11𝜕x2 33𝜕z2 3𝜕z 3 𝜕z
+( )
+(19)
+Fig. 1 Schematic representation of the problem
+1 3
+Journal of Nonlinear Mathematical Physics (2024) 31:26 Page 7 of 26 26
+where, u⃗ =(u, 0, w) , 𝛽 1 T = c 11 +c 13 𝛼 1 T 1 +c 13 𝛼 1 T 1 , 𝛽 3 T =2c 13 𝛼 3 T 3 +c 33 𝛼 3 T 3 ,
+𝛽 1 m = c 11 +c 13 𝛼 1 m 1 +c 13 𝛼 1 m 1 , 𝛽 3 m = ( 2c 13 𝛼 3 m 3) +c 33 𝛼 3 m 3 , the constants 𝛼 1 m 1 , 𝛼 3 m 3 for the
+moisture expansion and 𝛼T , 𝛼T for the linear thermal expansion.
+( ) 11 33
+4 Solution of the Problem
+The technique of normal mode analysis has broad applications across several dis-
+ciplines. It enables the calculation of solutions without imposing preconceptions
+on the studied variables, such as horizontal and vertical displacements, electric
+potential, temperature, and moisture. For the normal mode approach, the solution
+for these variables can be broken down as follows [45]:
+(u, w, 𝜙, T, m)(x,z,t)= u�, w�, 𝜙�, T�, m� (z)exp[ik(x−ct)],
+(20)
+where, 𝜔=kc be the frequency,k be ( the wave number ) in the x− direction and u′ , w′ ,
+𝜙′ T′ , and m′ are the function of z only,
+Equations (15) through (19) and Eq. (20) together produce a homogeneous set
+of equations in five unknowns
+u′
+,
+w′
+,
+𝜙′
+,
+T′
+,
+m′
+as
+ΩR=0
+(21)
+a +c D2 −a D −a D a a
+11 55 12 13 14 15
+a D a −c D2 a −𝜂 D2 𝛽TD 𝛽mD
+21 22 33 23 33 3 3
+where, Ω=⎡ a 31 a 32 D −a 33 D a 34 −DT 3 D2 a 35 −qm 3 D2 ⎤ ,
+⎢ a a D −a D a −QTD2 a −DmD2⎥
+⎢ a 41 D a − 42 𝜂 D2 𝜀 D2 43 −a 44 −𝜏 D 3 45 −d D 3 ⎥
+⎢ 51 52 33 33 53 3 3 ⎥
+u� ⎢ ⎥
+⎢ ⎥
+w�
+⎣ ⎦
+R= ⎡ 𝜙� ⎤ , and a 11 =𝜌𝜔2−c 11 k2 , a 12 =− c 13 +c 55 𝜄k , a 13 =− 𝜂 31 +𝜂 15 𝜄k ,
+T�
+⎢ ⎥
+⎢m�
+⎥
+( ) ( )
+⎢ ⎥
+a 14 = ⎢ −𝛽 1 T ⎥ 𝜄k , a 15 =−𝛽 1 m𝜄k , a 21 =− c 13 +c 55 𝜄k , a 22 =c 55 k2−𝜌𝜔2 , a 23 =𝜂 15 k2 ,
+a 31 = ⎣ − T 0 ⎦ 𝜌 𝛽 C 1 Tk𝜔 , a 32 = T 0 𝜌 𝛽 C 3 T𝜄𝜔 , a 33(=T 0 𝜏 3 𝜄𝜔) , a 34 =k2DT 1 +𝜄𝜔 , a 35 =k2qm 1 ,
+e e
+a 41 =− m 0 𝛽 1 T K Dm 1 k𝜔 , a 42 = m 0 𝛽 K 3 TDm 3 𝜄𝜔 , a 43 =m 0 d 3 𝜄𝜔 , a 44 =QT 1 k2 , a 41 = m 0 𝛽 1 T K Dm 1 k𝜔 ,
+m m m
+a 51 =− 𝜂 15 +𝜂 31 𝜄k , a 52 =𝜂 15 k2 , a 53 =𝜀 11 k2 D=𝜕∕𝜕z.
+The characteristic equation is obtained by nullifying the determinant of the
+( )
+matrix presented in Eq. (21) to find a non-trivial solution.
+B D10+B D8+B D6+B D4+B D2+B 𝜙�(z), T�(z),u�(z), w�(z), m�(z) =0
+0 1 2 3 4 5
+(22)
+the ( coefficients B i , i=1−5 are provided in t ) h { e Appendix. }
+The factorization of Eq. (22) may be expressed as.
+1 3
+26 Page 8 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+5
+D2−𝜆2 𝜙�(z), T�(z),u�(z), w�(z), m�(z) =0.
+j (23)
+j=1
+∏( )
+{ }
+The solutions of Eq. (23) are bounded as
+z→∞
+and given as follows:
+5
+u�, w�, 𝜙�, T�,m� = M , L M , L M , L M , L M exp −𝜆 z ,
+n 1n n 2n n 3n n 4n n n
+n=1
+( ) ∑( ) ( )
+(24)
+w h e r e ,
+L a 𝜆 a 𝜆 a a −1 −a −c 𝜆2
+1n 12 n 13 n 14 15 11 55 n
+L a −c 𝜆2 a −𝜂 𝜆2 −𝛽T𝜆 −𝛽m𝜆 𝜆 a
+2n = 22 33 n 23 33 n 3 n 3 n n 21
+L a 𝜆 −a 𝜆 −a +DT𝜆2 −a +qm𝜆2 a
+⎡ 3n⎤ ⎡ 32 n 33 n 34 3 n 35 3 n ⎤ ⎡ 31 ⎤
+⎢ L 4n⎥ ⎢ a 42 𝜆 n −a 43 𝜆 n −a 44 +QT 3 𝜆2 n −a 45 +Dm 3 𝜆2 n⎥ ⎢ a 41 ⎥
+⎢ ⎥ ⎢ ⎥ ⎢ ⎥
+⎢and 𝜆⎥2, (n⎢=1− 5) are the solutions of the characteristics Eq. (2⎥3).⎢ ⎥
+⎣ ⎦n ⎣ ⎦ ⎣ ⎦
+By using Eq. (24) in Eqs. (9)-(10) in the xz plane and applying the normal mode
+approach yields the subsequent outcomes:
+5
+𝜎 , 𝜎 , 𝜎 , D , D = L , L , L , L , L exp(−𝜆 x ).
+xx zz xz x z 5n 6n 7n 8n 9n n 3 (25)
+n=1
+( ) ∑( )
+5 Boundary Conditions
+The free surface (z = 0) of the considered model is subjected to mechanical load and
+thermal shock. Following Dutta et al. [46], the subsequent boundary conditions aid
+in solving the governing equations within a half-space domain (x, y, z≥0).
+Mechanical boundary conditions:
+𝜎 (x, 0, t)=P (x, t)=−P∗exp{𝜄k(x−ct)},𝜎 (x, 0, t)=0
+zz 1 1 xz (26)
+Thermal boundary condition:
+T(x, 0, t)=P (x, t)=P∗exp{𝜄k(x−ct)},
+2 2 (27)
+where, P 1 (x, t) and P 2 (x, t) indicated the arbitrary functions of (x, t) , P∗ 1 , P∗ 2 are
+constant.
+Electrical boundary condition:
+𝜙, (x, 0, t)=0.
+z (28)
+Electrical displacement boundary condition:
+D, (x, 0, t)=0.
+z (29)
+1 3
+Journal of Nonlinear Mathematical Physics (2024) 31:26 Page 9 of 26 26
+Upon substitution of the postulated solutions into the prescribed boundary condi-
+tions (26)–(29), the coefficients M n (n=1−5) , yield
+5
+L M =−P∗,
+6n n 1 (30)
+n=1
+∑
+5
+L M =0,
+7n n (31)
+n=1
+∑
+5
+L M =P∗,
+3n n 2 (32)
+n=1
+∑
+5
+𝜆 L M =0,
+n 2n n (33)
+n=1
+∑
+5
+𝜆 L M =0,
+n 9n n (34)
+n=1
+∑
+w h e r e , L 5n =c 11 𝜄k−c 13 𝜆 n L 1n −𝜂 31 𝜆 n L 2n −𝛽 1 TL 3n −𝛽 1 mL 4n ,
+L 7n =−c 55 𝜆 n −𝜄kL 1n +𝜂 15 𝜄kL 2n.
+L 6n =c 1(3 𝜄k−c 33 𝜆 n L )1n −𝜂 33 𝜆 n L 2n −𝛽 3 TL 3n −𝛽 3 mL 4n ,
+L 8n =−𝜂 15 𝜆 n −𝜄kL 1n −𝜀 11 𝜄kL 2n.
+L 9n =𝜂 3 ( 1 𝜄k−𝜂 33 𝜆 n L) 1n +𝜀 33 𝜆 n L 2n +𝜏 3 L 3n +d 3 L 4n.
+To obtain the value of M n (n=1−5) , the Eqs. (30) to (34) can be solved using
+the inverse matrix method, which can be carried out as follows:
+M L L L L L −1 −P∗
+1 61 62 63 64 65 1
+M L L L L L 0
+2 71 72 73 74 75
+⎡ M 3⎤ = ⎡ L 31 L 32 L 33 L 34 L 35 ⎤ ⎡ P∗ 2 ⎤ (35)
+M 𝜆 L 𝜆 L 𝜆 L 𝜆 L 𝜆 L 0
+⎢ 4⎥ ⎢ 1 21 2 22 3 23 4 24 5 25⎥ ⎢ ⎥
+⎢M ⎥ ⎢𝜆 L 𝜆 L 𝜆 L 𝜆 L 𝜆 L ⎥ ⎢ 0 ⎥
+5 1 91 2 92 3 93 4 94 5 95
+⎢ ⎥ ⎢ ⎥ ⎢ ⎥
+⎢ ⎥ ⎢ ⎥ ⎢ ⎥
+This approach enables the derivation of precise analytical expressions for the
+⎣ ⎦ ⎣ ⎦ ⎣ ⎦
+diverse components of the displacement vector, electric displacement, stresses, tem-
+perature, and electric potential.
+6 Validation
+Considering isotropy and neglecting piezo and pyro-electric effects, we have
+c 11 =𝜆+2𝜇 , c 33 =𝜆+2𝜇 , c 13 =𝜆 , c 55 =𝜇 , 𝛽 1 T =𝛽 3 T =𝛽T , 𝛽 1 m =𝛽 3 m =𝛽m ,
+DT 1 =DT 3 =DT , Dm 1 =Dm 3 =Dm , qm 1 =qm 3 =Dm T , QT 1 =QT 3 =DT m , d 3 =0 , 𝜏 3 =0 ,
+1 3
+26 Page 10 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+𝜀
+11
+=𝜀
+33
+=0
+,
+𝜂
+31
+=𝜂
+33
+=𝜂
+15
+=0
+, the above model transforms into a thermo-
+hygro-elastic model as developed by Yadav et al. [40].
+The fundamental Eqs. (15) to (19) regulating the system may be simplified as
+𝜕2u 𝜕2u 𝜕2w 𝜕T 𝜕m
+(𝜆+2𝜇) +𝜇 +((𝜆+𝜇)) +−𝛽T −𝛽m =𝜌ü,
+(36)
+𝜕x2 𝜕z2 𝜕x𝜕z 𝜕x 𝜕x
+𝜕2u 𝜕2w 𝜕2w 𝜕T 𝜕m
+(𝜆+𝜇) +𝜇 +(𝜆+2𝜇) +−𝛽T −𝛽m =𝜌ẅ ,
+(37)
+𝜕x𝜕z 𝜕x2 𝜕z2 𝜕z 𝜕z
+𝜕2T 𝜕2T 𝜕2m 𝜕2m 𝜕T 𝛽TT 𝜕2u 𝜕2w
+DT + +Dm + − − 0 + =0,
+𝜕x2 𝜕z2 T 𝜕x2 𝜕z2 𝜕t 𝜌C 𝜕x𝜕t 𝜕z𝜕t
+( ) ( ) E ( )
+(38)
+𝜕2T 𝜕2T 𝜕2m 𝜕2m 𝜕m 𝛽mm Dm 𝜕2u 𝜕2w
+DT + +Dm + − − 0 + =0.
+m 𝜕x2 𝜕z2 𝜕x2 𝜕z2 𝜕t K 𝜕x𝜕t 𝜕z𝜕t
+( ) ( ) m ( )
+(39)
+7 N umerical Results and Discussion
+A numerical experiment has been conducted using MATLAB software to investi-
+gate the impact of hygrothermal conditions on the physical distribution of piezo-
+thermoelastic material.The values for hygro parameters and material constants for
+cadmium selenide, as presented in Table 1, are adopted based on the works of Yadav
+et al.[47].
+Table 1 Values of the materials constants
+Symbol Value Symbol Value
+c
+11
+74.1×109Nm−2 𝜀
+11
+8.26×10−11 C2N−1m−2
+c
+12
+45.2×109Nm−2 𝜀
+33
+9.03×10−11 C2N−1m−2
+c
+13
+39.3×109Nm−2 𝜏
+3
+−2.9×10−6cm−2K−1
+c
+33
+83.6×109Nm−2 T
+0
+298K
+c
+55
+13.2×109Nm−2 C
+E
+260Jkg−1K−1
+𝛽T 6.21×105Nm−2K−1 𝜌 5504kgm−3
+1
+𝛽
+3
+T 5.51×105Nm−2K−1 𝜂
+31
+−0.160cm−2
+m 10% 𝜂 −0.138cm−2
+0 15
+Dm 0.8×10−4m2s−1 DT 50×10−4m2s−1
+1 1
+Dm 1.1×10−4m2s−1 DT 75×10−4m2s−1
+3 3
+𝜂 0.347cm−2 𝜔 100Hz
+33
+qm 18.5×10−5m2(0K)∕s(%H O) QT 31.3×10−6m2(%H O)∕s(0K)
+1 2 1 2
+qm 18×10−5m2(0K)∕s(%H O) QT 33.3×10−6m2(%H O)∕s(0K)
+3 2 3 2
+K
+m
+2.2×10−8kg∕msM d
+3
+0.34cm−2K−1
+1 3
+Journal of Nonlinear Mathematical Physics (2024) 31:26 Page 11 of 26 26
+During the numerical method outlined previously, we focus on the real compo-
+nents of the stress tensor 𝜎 xx , 𝜎 zz , 𝜎 xz , electric displacement D x , D z , displace-
+ment vector (u, w) , temperature T , and electric potential 𝜙 . We calculated and
+( ) ( )
+plotted the physical distribution of these components by varying moisture concen-
+trations, moisture diffusivity, and temperature diffusivity for fixed
+𝛽m =0.8×10−4
+,
+1
+𝛽m =1.1×10−4
+. The sub-figures of the resulting graph present overlapping curves
+3
+to clearly illustrate any subtle differences, thereby aiding in comprehending intricate
+details at a micro-scale.
+The first category, Fig. 2a–i depicted the effect of various levels of mois-
+ture concentration m 0 =10%, 20%, 30%, 40% on the hygro-piezo-thermal-
+elastic-electric wave propagation with the distance z . All calculations have been
+evaluated with time
+( t=1.5
+and assumed constant
+)
+s
+P∗ =0.01
+and
+P∗ =0.02
+. The
+1 1
+sky blue, orange, yellow, and purple linesrelated to the moisture concentration
+m 0 =10%, 20%, 30%, 40% , respectively.
+The distribution of displacement expresses the elastic wave. Within the given
+range 0≤z≤0.5 , the horizontal displacement component u exponentially decreases
+from a negative value to its minimum value. As shown in Fig. 2a, with a further
+increase of z , the horizontal displacement progressively increases and tends towards
+zero. The vertical displacement component w starts with a positive value at the max-
+imum point and decreases exponentially, converging to zero as z approaches infin-
+ity, as illustrated in Fig. 2b. The horizontal displacement component’s distribution
+is directly proportional to the concentration of the moisture, whereas the vertical
+displacement component’s distribution is inversely proportional to it.
+𝜙
+The potential distribution field represents the electric wave, starting from its
+minimum negative point and sharply increasing as z increases, ultimately vanishing
+as z approaches infinity, as illustrated in Fig. 2c. The thermal temperature T rep-
+resents the thermal wave, decreasing exponentially within the range
+0≤z≤0.05
+.
+Subsequently, with a further increment of z the u gradually increases and approaches
+zero, as shown in Fig. 2d. The amount of electric potential and temperature distribu-
+tions is inversely proportional to the moisture concentration, with higher moisture
+concentrations resulting in lower amounts of both distributions.
+The mechanical wave generated by the stress components is shown in Fig. 2e–g. Fig-
+𝜎
+ure 2e illustrates the distribution profile of the stress component xx , which starts from
+a maximum value and decreases exponentially, approaching zero as z tends to infinity.
+𝜎
+Figure 2f reveals that the stress component zz distribution starts from zero, increases
+exponentially within the range 0≤z≤0.3 , and then tends to zero as z further increases.
+𝜎
+Figure 2g demonstrates that the distribution profile of the stress component xz follows
+𝜎 𝜎
+a pattern almost identical to that of the stress component zz . The xz distribution curve
+starts from zero, satisfying the boundary condition (26), i.e.,
+𝜎
+xz
+(x,0,t)=0
+. The noted
+observation enhances assurance in the accuracy and reliability of our numerical coding,
+indicating the accurate implementation of the boundary condition (36). Figure 2e–g dis-
+tinctly illustrate the considerable influence of moisture content on the mechanical wave.
+The electrical displacement D x and D z are shown in Fig. 2h, i. The amplitude of
+D x start from a positive value at the maximum point and reaches minima its negative
+value with a slight increase of z . Further increase of z the amplitude increases and
+1 3
+26 Page 12 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+Fig. 2 a–i Distribution of the physical quantities with respect to z for various values of moisture
+concentration m 0 =10%, 20%, 30%, 40%, at Dm 1 =0.8×10−4 , Dm 3 =1.1×10−4 , DT 1 =50×10−4 ,
+DT=75×10−4
+1
+reaches to zero. The amplitude of the D z start from positive value at the maximum
+point decreases exponentially and tends to zero with z . Figure 2h, i suggest that the
+electrical displacement increases with the increase of moisture concentration.
+The second category, Fig. 3a–i shows the effect of moisture diffusivity param-
+eters
+Dm =0.8×10−4, Dm =1.1×10−4
+,
+Dm =0.8×10−3, Dm =1.1×10−3
+,
+1 3 1 3
+( ) ( )
+1 3
+Journal of Nonlinear Mathematical Physics (2024) 31:26 Page 13 of 26 26
+Fig. 2 (continued)
+Dm =0.8×10−2, Dm =1.1×10−2
+,
+Dm =0.8×10−1, Dm =1.1×10−1
+on the
+1 3 1 3
+(profiles of the hygro-piezo-thermo)-el(astic model with a fixed time t=) 1.5 and
+assumed constant
+P∗ =0.01
+and
+P∗ =0.02
+. From these figures, note that all physi-
+1 1
+cal field distributions exhibit similar behavior, as described in Fig. 2a–i.
+The significant impact of moisture diffusivity observes a fascinating complex-
+ity that defies a simplistic direct or inverse proportionality with moisture diffusiv-
+ity. Rather than adhering to predictable patterns, the relationship between moisture
+diffusivity and the distribution profiles unfolds in a nuanced manner, showcasing
+the richness of interactions at play. It becomes apparent that the impact of moisture
+diffusivity is not uniform, leading to intricate variations in the distribution profiles.
+This departure from conventional expectations adds a layer of sophistication to the
+understanding of the system. To enhance clarity, we employ descriptive language to
+highlight specific instances where the influence of moisture diffusivity manifests in
+unexpected ways. By navigating through these specific scenarios or depth ranges,
+1 3
+26 Page 14 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+Fig. 3 a–i Distribution of the physical quantities with respect to z for various values of moisture dif-
+fusivity
+Dm
+1
+=0.8×10−4
+,
+DT
+3
+=1.1×10−4
+,
+Dm
+1
+=0.8×10−3
+,
+Dm
+3
+=1.1×10−3
+,
+Dm
+1
+=0.8×10−2
+,
+Dm 3 =1.1×10−2 , Dm 1 =0.8×10−1 , Dm 3 =1.1×10−1 , at m 0 =10%, DT 1 =50×10−4 , DT 3 =75×10−4
+the graphical discussion unveils a tapestry of complexities, offering a more profound
+and convincing interpretation of the observed phenomena.
+In essence, this approach acknowledges the intricate and non-linear nature of
+the relationship between moisture diffusivity and physical distribution profiles and
+1 3
+Journal of Nonlinear Mathematical Physics (2024) 31:26 Page 15 of 26 26
+Fig. 3 (continued)
+persuasively underscores the need to embrace the complexity inherent in the sys-
+tem under investigation. The physical properties of the hygro-piezo-thermo-elastic
+model always tend to the equilibrium state as z approaches infinity.
+The third category, Fig. 4a–i shows the effect of temperature diffusivity param-
+eters
+DT =50×10−4, DT =75×10−4
+,
+DT =50×10−3, DT =75×10−3
+,
+1 3 1 3
+DT =(50×10−2, DT =75×10−2 , DT =)50×( 10−1, DT =75×10−1 on the var)i-
+1 3 1 3
+ous distribution profiles of the hygro-piezo-thermo-elastic model with a fixed time
+( t=1.5 and assumed constant P∗ = ) 0 ( .01 and P∗ =0.02 . Upon examina ) tion of these
+1 1
+figures, it becomes apparent that all of the field distributions exhibit a similar trend,
+as depicted in Fig. 2a–i. Notably, the impact of temperature diffusivity is promi-
+nently manifested in the aforementioned figures. It should also be pointed out that
+the physical properties of the hygro-piezo-thermo-elastic model invariably tend
+towards an equilibrium state as z approaches infinity.
+The initial three categories illustrate the physical field distribution at a fixed value
+of
+x=0.1
+across various profiles. Conversely, the fourth category, presented in
+Fig. 5a–i, showcases 3D plots of the solutions in the xz plane at a fixed time t=1.5 ,
+1 3
+26 Page 16 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+Fig. 4 a–i Distribution of the physical quantities with respect to z for various values of tempera-
+ture diffusivity
+DT
+1
+=50×10−4
+,
+DT
+3
+=75×10−4
+,
+DT
+1
+=50×10−3
+,
+DT
+3
+=75×10−3
+,
+DT
+1
+=50×10−2
+,
+DT 3 =75×10−2 , DT 1 =50×10−1 , DT 3 =75×10−1 , at m 0 =10%, Dm 1 =0.8×10−4 , DT 3 =1.1×10−4
+allowing an exploration of the influence of x on the distribution patterns. All figures
+were generated within the range of
+−10≤x≤10
+and
+0≤z≤30
+. The observation
+from Fig. 5a–i are as follows:
+1 3
+Journal of Nonlinear Mathematical Physics (2024) 31:26 Page 17 of 26 26
+Fig. 4 (continued)
+• Across the entire range of x , all function profiles display a nearly uniform distri-
+bution characterized by alternating peaks.
+• The green color region signifies displacement values approaching zero, affirming
+the theoretical assumption of boundedness in the solution as
+z→∞
+.
+• By inspecting the contour plot on the xz plane, we can deduce that any sig-
+nificant alteration in x corresponds to an opposite change in the distribution’s
+direction.
+• All field variables adhere to the boundary constraints.
+8 Conclusions
+This research comprehensively analyzes the behavior of plane waves within a
+piezo-elastic medium subjected to hygro-thermal environments. Applying the
+rigorous mathematical approach of normal mode analysis, we reveal the nuanced
+dynamics of the thermo-piezo-elastic medium. Our examination sheds light on
+the interplay between moisture content, moisture diffusivity, and temperature
+1 3
+26 Page 18 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+Fig. 5 a–i Distribution of the physical quantities in (x,z) plane when, m 0 =10%,DT 1 =50×10−4 ,
+DT
+3
+=75×10−4
+,
+Dm
+1
+=0.8×10−4
+,
+Dm
+3
+=1.1×10−4
+diffusivity, which collectively shape the comprehensive physical field distribution
+of the CdSe material. Based on our detailed analysis, several notable outcomes
+emerge:
+1 3
+Journal of Nonlinear Mathematical Physics (2024) 31:26 Page 19 of 26 26
+Fig. 5 (continued)
+• The field variables’ magnitudes decrease in the z direction, validating the
+assumption (24) and supporting previous research conducted by Mondal and
+Othman [48]. This phenomenon ensures the finite propagation speed of the
+thermal wave.
+• All physical quantities in the system have both continuity and boundary condition
+agreements.
+• The moisture content and moisture and temperature diffusivities significantly
+impact all the physical field distribution of the hygro-piezo-thermo-elastic model.
+• The distribution of physical fields in the hygro-piezo-thermo-elastic model is nota-
+bly influenced by moisture and temperature diffusivities. Importantly, these impacts
+do not exhibit a straightforward direct proportionality, adding a layer of complexity
+to the interplay between these factors
+• The outcomes of this study contribute to enhancing the performance and durability
+of electronic devices, sensors, energy harvesting systems, materials for structural
+health monitoring, and infrastructure, particularly in the face of fluctuating moisture
+and temperature conditions.
+1 3
+26 Page 20 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+Appendix
+B =QTc 𝜂2 qm−DTDmc 𝜂2 −DTDmc c 𝜀 +QTc c 𝜀 qm
+0 3 55 33 3 3 3 55 33 3 3 33 55 33 3 33 55 33 3
+B1 =(DT
+3
+a45c55 𝜂
+3
+2
+3
+−DT
+3
+Dm
+3
+a11 𝜂
+3
+2
+3
++Dm
+3
+a34c55 𝜂
+3
+2
+3
+−QT
+3
+a35c55 𝜂
+3
+2
+3
++QT
+3
+a11 𝜂
+3
+2
+3
+qm
+3
+−a44c55 𝜂
+3
+2
+3
+qm
+3
+−DT
+3
+Dm
+3
+a13
+a51c33 +DT 3 Dm 3 a53c33c55 +DT 3 Dm 3 a12a21 𝜀 33 +DT 3 Dm 3 a13a21 𝜂 33 +DT 3 Dm 3 a12a51 𝜂 33 −DT 3 Dm 3 a11c33
+𝜀 33 +DT 3 Dm 3 a22c55 𝜀 33 +DT 3 Dm 3 a23c55 𝜂 33 +DT 3 Dm 3 a52c55 𝜂 33 −DT 3 a43c33c55d3 +Dm 3 a32 𝛽 3 Tc55 𝜀 33
++DT 3 a42 𝛽 3 mc55 𝜀 33 −Dm 3 a33 𝛽 3 Tc55 𝜂 33 −DT 3 a43 𝛽 3 mc55 𝜂 33 +DT 3 a45c33c55 𝜀 33 +Dm 3 a34c33c55 𝜀 33 −DT 3
+a42c55d3 𝜂 33 +QT 3 a33c33c55d3 −QT 3 a32 𝛽 3 mc55 𝜀 33 +QT 3 a33 𝛽 3 mc55 𝜂 33 −QT 3 a35c33c55 𝜀 33 +QT 3 a32c55
+d3 𝜂 33 −Dm 3 a33c33c55 𝜏 3 −Dm 3 a32c55 𝜂 33 𝜏 3 +QT 3 a13a51c33qm 3 −QT 3 a53c33c55qm 3 −QT 3 a12a21 𝜀 33qm 3 −QT 3 a13
+a21 𝜂 33qm
+3
+−QT
+3
+a12a51 𝜂 33qm
+3
++QT
+3
+a11c33 𝜀 33qm
+3
+−QT
+3
+a22c55 𝜀 33qm
+3
+−QT
+3
+a23c55 𝜂 33qm
+3
+−QT
+3
+a52c55 𝜂 33qm
+3
+−a42 𝛽
+3
+Tc55 𝜀 33qm
+3
++a43 𝛽
+3
+Tc55 𝜂 33qm
+3
+−a44c33c55 𝜀 33qm
+3
++a43c33c55qm
+3
+𝜏
+3
++a42c55 𝜂 33qm
+3
+𝜏
+3
+)∕B0
+B2 =(DT
+3
+a11a45 𝜂
+3
+2
+3
+−DT
+3
+a15a41 𝜂
+3
+2
+3
++Dm
+3
+a11a34 𝜂
+3
+2
+3
+−Dm
+3
+a14a31 𝜂
+3
+2
+3
+−QT
+3
+a11a35 𝜂
+3
+2
+3
++QT
+3
+a15a31 𝜂
+3
+2
+3
+−a34a45
+c55 𝜂
+3
+2
+3
++a35a44c55 𝜂
+3
+2
+3
+−a11a44 𝜂
+3
+2
+3
+qm
+3
++Dm
+3
+a14a31 𝜂
+3
+2
+3
+−QT
+3
+a11a35 𝜂
+3
+2
+3
++QT
+3
+a15a31 𝜂
+3
+2
+3
+−a34a45c55 𝜂
+3
+2
+3
++a35a44c55 𝜂
+3
+2
+3
+−a11a44 𝜂
+3
+2
+3
+qm
+3
++a14a41 𝜂
+3
+2
+3
+qm
+3
+−DT
+3
+Dm
+3
+a12a21a53 −DT
+3
+Dm
+3
+a12a23a51 −DT
+3
+Dm
+3
+a13a21
+a52 +DT 3 Dm 3 a13a22a51 +DT 3 Dm 3 a11a53c33 −DT 3 Dm 3 a22a53c55 −DT 3 Dm 3 a23a52c55 +DT 3 Dm 3 a11a22 𝜀 33
++DT 3 Dm 3 a11a23 𝜂 33 +DT 3 Dm 3 a11a52 𝜂 33 +Dm 3 a12a33a51 𝛽 3 T+Dm 3 a13a32a51 𝛽 3 T+DT 3 a12a43a51 𝛽 3 m
++DT
+3
+a13a42a51 𝛽
+3
+m+DT
+3
+a13a45a51c33 −DT
+3
+a15a43a51c33 +Dm
+3
+a13a34a51c33 −Dm
+3
+a14a33a51c33 +
+DT
+3
+a12a21a43d3 +DT
+3
+a13a21a42d3 −Dm
+3
+a32a53 𝛽
+3
+Tc55 +Dm
+3
+a33a52 𝛽
+3
+Tc55 −DT
+3
+a42a53 𝛽
+3
+mc55 +DT
+3
+a43a52 𝛽 3 mc55 −DT 3 a45a53c33c55 −Dm 3 a34a53c33c55 −DT 3 a12a21a45 𝜀 33 −DT 3 a15a21a42 𝜀 33 −Dm 3 a12a21
+a34 𝜀 33 −Dm 3 a14a21a32 𝜀 33 −DT 3 a13a21a45 𝜂 33 +DT 3 a15a21a43 𝜂 33 −Dm 3 a13a21a34 𝜂 33 +Dm 3 a14a21a33
+𝜂 33 −DT 3 a12a45a51 𝜂 33 −DT 3 a15a42a51 𝜂 33 −Dm 3 a12a34a51 𝜂 33 −Dm 3 a14a32a51 𝜂 33 −DT 3 a11a43c33d3 +
+DT 3 a13a41c33d3 +DT 3 a22a43c55d3 +DT 3 a23a42c55d3 +Dm 3 a11a32 𝛽 3 T𝜀 33 +Dm 3 a12a31 𝛽 3 T𝜀 33 +DT 3 a11
+a42 𝛽 3 m𝜀 33 +DT 3 a12a41 𝛽 3 m𝜀 33 −Dm 3 a11a33 𝛽 3 T𝜂 33 +Dm 3 a13a31 𝛽 3 T𝜂 33 −DT 3 a11a43 𝛽 3 m𝜂 33 +DT 3 a13a41
+𝛽 3 m𝜂 33 +DT 3 a11a45c33 𝜀 33 −DT 3 a15a41c33 𝜀 33 +Dm 3 a11a34c33 𝜀 33 −Dm 3 a14a31c33 𝜀 33 −DT 3 a22a45c55 𝜀 33
+−Dm 3 a22a34c55 𝜀 33 −DT 3 a23a45c55 𝜂 33 −Dm 3 a23a34c55 𝜂 33 −DT 3 a45a52c55 𝜂 33 −Dm 3 a34a52c55 𝜂 33 −DT 3 a11
+a42d3 𝜂 33 −DT 3 a12a41d3 𝜂 33 −QT 3 a12a33a51 𝛽 3 m−QT 3 a13a32a51 𝛽 3 m−QT 3 a13a35a51c33 +QT 3 a15a33a51c33
+−QT
+3
+a12a21a33d3 −QT
+3
+a13a21a32d3 +QT
+3
+a32a53 𝛽
+3
+mc55 −QT
+3
+a33a52 𝛽
+3
+mc55 +QT
+3
+a35a53c33c55 +QT
+3
+a12
+a21a35 𝜀 33 +QT 3 a15a21a32 𝜀 33 +QT 3 a13a21a35 𝜂 33 −QT 3 a15a21a33 𝜂 33 +QT 3 a12a35a51 𝜂 33 +QT 3 a15a32a51
+𝜂 33 +QT 3 a11a33c33d3 −QT 3 a13a31c33d3 −QT 3 a22a33c55d3 −QT 3 a23a32c55d3 −QT 3 a11a32 𝛽 3 m𝜀 33 −QT 3 a12
+a31 𝛽 3 m𝜀 33 +QT 3 a11a33 𝛽 3 m𝜂 33 −QT 3 a13a31 𝛽 3 m𝜂 33 +Dm 3 a12a21a33 𝜏 3 +Dm 3 a13a21a32 𝜏 3 −QT 3 a11a35c33
+𝜀 33 +QT 3 a15a31c33 𝜀 33 +QT 3 a22a35c55 𝜀 33 +QT 3 a23a35c55 𝜂 33 +QT 3 a35a52c55 𝜂 33 +QT 3 a11a32d3 𝜂 33 +
+QT 3 a12a31d3 𝜂 33 −Dm 3 a11a33c33 𝜏 3 +Dm 3 a13a31c33 𝜏 3 +Dm 3 a22a33c55 𝜏 3 +Dm 3 a23a32c55 𝜏 3 −
+Dm 3 a11a32 𝜂 33 𝜏 3 −Dm 3 a12a31 𝜂 33 𝜏 3 +QT 3 a12a21a53qm 3 +QT 3 a12a23a51qm 3 +QT 3 a13a21a52qm 3 −QT 3 a13
+1 3
+Journal of Nonlinear Mathematical Physics (2024) 31:26 Page 21 of 26 26
+a22a51qm 3 −QT 3 a11a53c33qm 3 +QT 3 a22a53c55qm 3 +QT 3 a23a52c55qm 3 −QT 3 a11a22 𝜀 33qm 3 −QT 3 a11a23 𝜂 33
+qm
+3
+−QT
+3
+a11a52 𝜂 33qm
+3
++a32a43 𝛽
+3
+Tc55d3 −a33a42 𝛽
+3
+Tc55d3 −a33a44c33c55d3 +a34a43c33c55d3 −a32
+a45 𝛽 3 Tc55 𝜀 33 +a35a42 𝛽 3 Tc55 𝜀 33 +a32a44 𝛽 3 mc55 𝜀 33 −a34a42 𝛽 3 mc55 𝜀 33 +a33a45 𝛽 3 Tc55 𝜂 33 −a35a43
+𝛽
+3
+Tc55 𝜂
+33
+−a33a44 𝛽
+3
+mc55 𝜂
+33
++a34a43 𝛽
+3
+mc55 𝜂
+33
+−a34a45c33c55 𝜀
+33
++a35a44c33c55 𝜀
+33
+−a32a44c55
+d3 𝜂 33 +a34a42c55d3 𝜂 33 −a12a43a51 𝛽 3 Tqm 3 −a13a42a51 𝛽 3 Tqm 3 −a13a44a51c33qm 3 +a14a43a51c33qm 3
++a42a53 𝛽
+3
+Tc55qm
+3
+−a43a52 𝛽
+3
+Tc55qm
+3
++a44a53c33c55qm
+3
++a12a21a44 𝜀 33qm
+3
++a14a21a42 𝜀 33qm
+3
++
+a13a21a44 𝜂 33qm
+3
+−a14a21a43 𝜂 33qm
+3
++a12a44a51 𝜂 33qm
+3
++a14a42a51 𝜂 33qm
+3
+−a11a42 𝛽
+3
+T𝜂 33qm
+3
+−a12
+a41 𝛽
+3
+T𝜀 33qm
+3
++a11a43 𝛽
+3
+T𝜂 33qm
+3
+−a13a41 𝛽
+3
+T𝜂 33qm
+3
+−a11a44c33 𝜀 33qm
+3
++a14a41c33 𝜀 33qm
+3
++a22a44
+c55 𝜀 33qm 3 +a23a44c55 𝜂 33qm 3 +a44a52c55 𝜂 33qm 3 −a32a43 𝛽 3 mc55 𝜏 3 +a33a42 𝛽 3 mc55 𝜏 3 +a33a45c33
+c55 𝜏 3 −a35a43c33c55 𝜏 3 +a32a45c55 𝜂 33 𝜏 3 −a35a42c55 𝜂 33 𝜏 3 −a12a21a43qm 3 𝜏 3 −a13a21a42qm 3 𝜏 3 +a11
+a43c33qm
+3
+𝜏
+3
+−a13a41c33qm
+3
+𝜏
+3
+−a22a43c55qm
+3
+𝜏
+3
+−a23a42c55qm
+3
+𝜏
+3
++a11a42 𝜂 33qm
+3
+𝜏
+3
++a12a41 𝜂 33qm
+3
+𝜏
+3
+)∕B0
+B3 =((−a11a22a53 −a11a23a52 )DT 3 Dm 3 +(a15a23a41 −a11a23a45 −a11a45a52 +a15a41a52 )DT 3 𝜂 33 +(a15
+a22a41 −a11a22a45 )DT 3 𝜀 33 +(a11a43a52 −a11a42a53 −a12a41a53 −a13a41a52 )DT 3 𝛽 3 m+(a12a21a45a53
++a12a23a45a51 +a13a21a45a52 −a13a22a45a51 +a15a21a42a53 −a15a21a43a52 +a15a22a43a51 +a15
+a23a42a51 −a11a45a53c33 +a15a41a53c33 +a22a45a53c55 +a23a45a52c55 +a11a22a43d3 +a11a23a42
+d3 +a12a23a41d3 −a13a22a41d3 )DT 3 +(a14a23a31 −a11a23a34 −a11a34a52 +a14a31a52 )Dm 3 𝜂 33 +
+(a14a22a31 −a11a22a34 )Dm
+3
+𝜀
+33
++(a11a33a52 −a11a32a53 −a12a31a53 −a13a31a52 )Dm
+3
+𝛽
+3
+T+(a11a22
+a33 +a11a23a32 +a12a23a31 −a13a22a31 )Dm 3 𝜏 3 +(a12a21a34a53 +a12a23a34a51 +a13a21a34a52 −
+a13a22a34a51 +a14a21a32a53 −a14a21a33a52 +a14a22a33a51 +a14a23a32a51 −a11a34a53c33 +a14
+a31a53c33 +a22a34a53c55 +a23a34a52c55 )Dm
+3
++(a11a35a44 −a11a34a45 +a14a31a45 −a14a35a41 −
+a15a31a44 +a15a34a41 )𝜂
+3
+2
+3
++(a11a34a43 −a11a33a44 +a13a31a44 −a13a34a41 −a14a31a43 +a14a33
+a41 )𝜂 33 𝛽 3 m+(a11a33a45 −a11a35a43 −a13a31a45 +a13a35a41 +a15a31a43 −a15a33a41 )𝜂 33 𝛽 3 T+
+(a11a32a45 −a11a35a42 +a12a31a45 −a12a35a41 +a15a31a42 −a15a32a41 )𝜂 33 𝜏 3 +(QT 3 a11a23a35 −
+QT
+3
+a15a23a31 +QT
+3
+a11a35a52 −QT
+3
+a15a31a52 +a13a21a34a45 −a13a21a35a44 −a14a21a33a45 +a14
+a21a35a43 +a15a21a33a44 −a15a21a34a43 +a12a34a45a51 −a12a35a44a51 +a14a32a45a51 −a14a35
+a42a51 −a15a32a44a51 +a15a34a42a51 +a23a34a45c55 −a23a35a44c55 +a34a45a52c55 −a35a44a52
+c55 −a11a32a44d3 +a11a34a42d3 −a12a31a44d3 +a12a34a41d3 −a14a31a42d3 +a14a32a41d3 +a11
+a23a44qm
+3
+−a14a23a41qm
+3
++a11a44a52qm
+3
+−a14a41a52qm
+3
+)𝜂
+33
++(a11a32a44 −a11a34a42 +a12a31a44
+−a12a34a41 +a14a31a42 −a14a32a41 )𝜀
+33
+𝛽
+3
+m+(a11a35a42 −a11a32a45 −a12a31a45 +a12a35a41 −
+a15a31a42 +a15a32a41 )𝜀 33 𝛽 3 T+(QT 3 a11a22a35 −QT 3 a15a22a31 +a22a34a45c55 −a22a35a44c55 +a11
+a22a44qm
+3
+−a14a22a41qm
+3
+)𝜀
+33
++(a11a33a42 −a11a32a43 −a12a31a43 +a12a33a41 −a13a31a42 +a13
+a32a41 )𝛽 3 m𝜏 3 +(QT 3 a11a32a53 −QT 3 a11a33a52 +QT 3 a12a31a53 +QT 3 a13a31a52 +a12a33a44a51 −a12
+a34a43a51 +a13a32a44a51 −a13a34a42a51 −a14a32a43a51 +a14a33a42a51 −a32a44a53c55 +a33a44
+1 3
+26 Page 22 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+a c +a a a c −a a a c )𝛽m+(a a a a −a a a a −a a a a +a
+52 55 34 42 53 55 34 43 52 55 3 12 35 43 51 12 33 45 51 13 32 45 51 13
+a a a +a a a a −a a a a +a a a c −a a a c −a a a c +a
+35 42 51 15 32 43 51 15 33 42 51 32 45 53 55 33 45 52 55 35 42 53 55 13
+a a a +a a a a −a a a a +a a a c −a a a c −a a a c +a
+35 42 51 15 32 43 51 15 33 42 51 32 45 53 55 33 45 52 55 35 42 53 55 35
+a a c +a a a d −a a a d +a a a d −a a a d +a a a d −a a
+43 52 55 11 32 43 3 11 33 42 3 12 31 43 3 12 33 41 3 13 31 42 3 13 32
+a d +a a a qm−a a a qm+a a a qm+a a a qm)𝛽T+(a a a a −
+41 3 11 42 53 3 11 43 52 3 12 41 53 3 13 41 52 3 3 12 21 35 43
+a a a a −a a a a +a a a a +a a a a −a a a a +a a a c
+12 21 33 45 13 21 32 45 13 21 35 42 15 21 32 43 15 21 33 42 11 33 45 33
+−a a a c −a a a c +a a a c +a a a c −a a a c −a a a c
+11 35 43 33 13 31 45 33 13 35 41 33 15 31 43 33 15 33 41 33 22 33 45 55
++a a a c −a a a c +a a a c −a a a qm−a a a qm−a a a qm+
+22 35 43 55 23 32 45 55 23 35 42 55 11 22 43 3 11 23 42 3 12 23 41 3
+a a a qm)𝜏 +QTa a a a −QTa a a a −QTa a a a −QTa a a a −
+13 22 41 3 3 3 13 22 35 51 3 12 23 35 51 3 13 21 35 52 3 12 21 35 53
+QTa a a a +QTa a a a −QTa a a a −QTa a a a +QTa a a c
+3 15 21 32 53 3 15 21 33 52 3 15 22 33 51 3 15 23 32 51 3 11 35 53 33
+−QTa a a c −QTa a a c −QTa a a c −QTa a a d −QTa a a d −
+3 15 31 53 33 3 22 35 53 55 3 23 35 52 55 3 11 22 33 3 3 11 23 32 3
+QTa a a d +QTa a a d +QTa a a qm+QTa a a qm−a a a a c
+3 12 23 31 3 3 13 22 31 3 3 11 22 53 3 3 11 23 52 3 13 34 45 51 33
++a a a a c +a a a a c −a a a a c −a a a a c +a a a a c
+13 35 44 51 33 14 33 45 51 33 14 35 43 51 33 15 33 44 51 33 15 34 43 51 33
++a a a a d −a a a a d +a a a a d −a a a a d −a a a a d +
+12 21 33 44 3 12 21 34 43 3 13 21 32 44 3 13 21 34 42 3 14 21 32 43 3
+a a a a d +a a a c c −a a a c c −a a a c d +a a a c d +
+14 21 33 42 3 34 45 53 33 55 35 44 53 33 55 11 33 44 33 3 11 34 43 33 3
+a a a c d −a a a c d −a a a c d +a a a c d +a a a c d −a
+13 31 44 33 3 13 34 41 33 3 14 31 43 33 3 14 33 41 33 3 22 33 44 55 3 22
+a a c d +a a a c d −a a a c d +(−a a a a −a a a a −a a
+34 43 55 3 23 32 44 55 3 23 34 42 55 3 12 21 44 53 12 23 44 51 13 21
+a a +a a a a −a a a a +a a a a −a a a a −a a a a +a
+44 52 13 22 44 51 14 21 42 53 14 21 43 52 14 22 43 51 14 23 42 51 11
+a a c −a a a c −a a a c −a a a c )qm)∕B
+44 53 33 14 41 53 33 22 44 53 55 23 44 52 55 3 0
+B =((a a a a +a a a a −a a a a −a a a a )DT+(a a a a +a a
+4 11 22 45 53 11 23 45 52 15 22 41 53 15 23 41 52 3 11 22 34 53 11 23
+a a −a a a a −a a a a )Dm+(a a a a −a a a a −a a a a +a
+34 52 14 22 31 53 14 23 31 52 3 11 23 34 45 11 23 35 44 14 23 31 45 14
+a a a +a a a a −a a a a +a a a a −a a a a −a a a a +a
+23 35 41 15 23 31 44 15 23 34 41 11 34 45 52 11 35 44 52 14 31 45 52 14
+a a a +a a a a −a a a a )𝜂 +(a a a a −a a a a −a a a a
+35 41 52 15 31 44 52 15 34 41 52 33 11 22 34 45 11 22 35 44 14 22 31 45
++a a a a +a a a a −a a a a )𝜀 +(a a a a −a a a a +a a a
+14 22 35 41 15 22 31 44 15 22 34 41 33 11 33 44 52 11 32 44 53 11 34 42
+a −a a a a −a a a a +a a a a −a a a a +a a a a −a a a
+53 11 34 43 52 12 31 44 53 12 34 41 53 13 31 44 52 13 34 41 52 14 31 42
+a +a a a a +a a a a −a a a a )𝛽m+(a a a a −a a a a −a
+53 14 31 43 52 14 32 41 53 14 33 41 52 3 11 32 45 53 11 33 45 52 11
+a a a +a a a a +a a a a −a a a a +a a a a −a a a a +a
+35 42 53 11 35 43 52 12 31 45 53 12 35 41 53 13 31 45 52 13 35 41 52 15
+a a a −a a a a −a a a a +a a a a )𝛽T+(a a a a −a a a a
+31 42 53 15 31 43 52 15 32 41 53 15 33 41 52 3 11 22 35 43 11 22 33 45
+−a a a a +a a a a −a a a a +a a a a +a a a a −a a a a
+11 23 32 45 11 23 35 42 12 23 31 45 12 23 35 41 13 22 31 45 13 22 35 41
+−a a a a +a a a a −a a a a +a a a a )𝜏 +(a a a a −a a a a
+15 22 31 43 15 22 33 41 15 23 31 42 15 23 32 41 3 15 22 31 53 11 23 35 52
+−a a a a +a a a a )QT−a a a a a +a a a a a −a a a a a +a
+11 22 35 53 15 23 31 52 3 12 21 34 45 53 12 21 35 44 53 12 23 34 45 51 12
+a a a a −a a a a a +a a a a a +a a a a a −a a a a a −a a
+23 35 44 51 13 21 34 45 52 13 21 35 44 52 13 22 34 45 51 13 22 35 44 51 14 21
+a a a +a a a a a +a a a a a −a a a a a −a a a a a +a a a
+32 45 53 14 21 33 45 52 14 21 35 42 53 14 21 35 43 52 14 22 33 45 51 14 22 35
+a a −a a a a a +a a a a a +a a a a a −a a a a a −a a a a a
+43 51 14 23 32 45 51 14 23 35 42 51 15 21 32 44 53 15 21 33 44 52 15 21 34 42 53
++a a a a a +a a a a a −a a a a a +a a a a a −a a a a a +a
+15 21 34 43 52 15 22 33 44 51 15 22 34 43 51 15 23 32 44 51 15 23 34 42 51 11
+1 3
+Journal of Nonlinear Mathematical Physics (2024) 31:26 Page 23 of 26 26
+a34a45a53c33 −a11a35a44a53c33 −a14a31a45a53c33 +a14a35a41a53c33 +a15a31a44a53c33 −a15a34
+a41a53c33 −a22a34a45a53c55 +a22a35a44a53c55 −a23a34a45a52c55 +a23a35a44a52c55 +a11a22
+a33a44d3 −a11a22a34a43d3 +a11a23a32a44d3 −a11a23a34a42d3 +a12a23a31a44d3 −a12a23a34a41
+d3 −a13a22a31a44d3 +a13a22a34a41d3 +a14a22a31a43d3 −a14a22a33a41d3 +a14a23a31a42d3
+−a14a23a32a41d3 +(a14a22a41a53 −a11a22a44a53 −a11a23a44a52 +a14a23a41a52 )qm
+3
+)∕B0
+B =(−a a a a a +a a a a a −a a a a a +a a a a a +a a a a a −a
+5 11 22 34 45 53 11 22 35 44 53 11 23 34 45 52 11 23 35 44 52 14 22 31 45 53 14
+a a a a +a a a a a −a a a a a −a a a a a +a a a a a −a a a
+22 35 41 53 14 23 31 45 52 14 23 35 41 52 15 22 31 44 53 15 22 34 41 53 15 23 31
+a a +a a a a a )∕B
+44 52 15 23 34 41 52 0
+Acknowledgements This research is supported by Researchers Supporting Project Number
+(RSP2024R158), King Saud University, Riyadh, Saudi Arabia.
+Author Contributions SD: Conceptualization, methodology, VG: software, writing-original draft prepa-
+ration. HA: supervision, visualization, investigation, MSB: software, BA: validation.
+Funding No external funding received regarding this research.
+Data Availability Data will be provided on request to the corresponding author.
+Declarations
+Conflict of interest The authors declare no conflict of interest.
+Ethical approval All the authors demonstrating that they have adhered to the accepted ethical standards of
+a genuine research study.
+Consent to participate Being the corresponding author, I have consent to participate of all the authors in
+this research work.
+Consent to publish All the authors are agreed to publish this research work.
+Open Access This article is licensed under a Creative Commons Attribution 4.0 International License,
+which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as
+you give appropriate credit to the original author(s) and the source, provide a link to the Creative Com-
+mons licence, and indicate if changes were made. The images or other third party material in this article
+are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the
+material. If material is not included in the article’s Creative Commons licence and your intended use is
+not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission
+directly from the copyright holder. To view a copy of this licence, visit http:// creat iveco mmons. org/ licen
+ses/ by/4. 0/.
+References
+1. Smith, R.C.: Smart Material Systems. Society for Industrial and Applied Mathematics, Philadel-
+phia (2005)
+2. Sih, G.C., Michopoulos, J.G., Chou, S.C.: Hygrothermoelasticity. Springer, Netherlands,
+Dordrecht (1986)
+1 3
+26 Page 24 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+3. Alhashash, A., Elidy, E.S., El-Bary, A.A., Tantawi, R.S., Lotfy, K.: Two-temperature semicon-
+ductor model photomechanical and thermal wave responses with moisture diffusivity process.
+Crystals (2022). https://d oi.o rg/1 0.3 390/c ryst1 21217 70
+4. Alenazi, A., Ahmed, A., El-Bary, A.A., Tantawi, R.S., Lotfy, K.: Moisture photo-thermoelastic-
+ity diffusivity in semiconductor materials: a novel stochastic model. Crystals 13(1), 1–25 (2023).
+https:// doi. org/ 10. 3390/ cryst 13010 042
+5. El-Sapa, S., Lotfy, K., Elidy, E.S., El-Bary, A., Tantawi, R.S.: Photothermal excitation process in
+semiconductor materials under the effect moisture diffusivity. SILICON (2023). https:// doi. org/ 10.
+1007/ s12633- 023- 02311-y
+6. Curie, J., Curie, P.: Development by compression of polar electricity in hemihedral crystals with
+slanted faces’. Bull. Mineral. Soc. Fr. 3(4), 90–93 (1880). https:// doi. org/ 10. 3406/ bulmi. 1880. 1564
+7. Mindlin, R.D.: Equations of high frequency vibrations of thermopiezoelectric crystal plates. Int. J.
+Solids Struct. 10(6), 625–637 (1974). https:// doi. org/ 10. 1016/ 0020- 7683(74) 90047-X
+8. Nowacki, W.: Some general theorems of thermopiezoelectricity. J. Therm. Stress. 1(2), 171–182
+(1978). https:// doi. org/ 10. 1080/ 01495 73780 89269 40
+9. Nowacki, W. Foundation of linear piezoelectricity. In: Parkus, H. (ed) Electro-magnetic Interactions
+in Elastic Solids. Chapter 1. Springer, Wein (1979)
+10. Sharma, K., Marin, M.: Effect of distinct conductive and thermodynamic temperatures on the reflec-
+tion of plane waves in micropolar elastic half-space. UPB Sci. Bull. Ser. A Appl. Math. Phys. 75(2),
+121–132 (2013)
+11. Marin, M., Codarcea, L., Chirila, A.: Qualitative results on mixed problem of micropolar bodies
+with microtemperatures. Appl. Appl. Math. An Int. J. 12(2), 9 (2017)
+12. Lotfy, K.: Waves propagation for magneto-thermoelastic medium during the two-temperature theory
+with the gravitational field. Waves Random Complex Media (2022). https:// doi. org/ 10. 1080/ 17455
+030. 2022. 21226 29
+13. Gupta, V., Barak, M.S.: Quasi-P wave through orthotropic piezo-thermoelastic materials subject
+to higher order fractional and memory-dependent derivatives. Mech. Adv. Mater. Struct. (2023).
+https:// doi. org/ 10. 1080/ 15376 494. 2023. 22174 20
+14. Gupta, V., Barak, M.S., Das, S.: Vibrational analysis of size-dependent thermo-piezo-photo-electric
+semiconductor medium under memory-dependent Moore–Gibson–Thompson photo-thermoelastic-
+ity theory. Mech. Adv. Mater. Struct. (2023). https:// doi. org/ 10. 1080/ 15376 494. 2023. 22918 04
+15. Gupta, V., Barak, M.S., Ahmad, H.: Reflection of quasi plasma wave in photo-piezo semiconductor
+medium with distinct higher order fractional derivative two temperature models. Phys. Scr. (2023).
+https:// doi. org/ 10. 1088/ 1402- 4896/ ad1972
+16. Barak, M.S., Kumar, R., Kumar, R., Gupta, V.: Energy transfer at the interface of monoclinic piezo-
+thermoelastic and thermoelastic half spaces with MDD. J. Therm. Stress. (2023). https:// doi. org/ 10.
+1080/ 01495 739. 2023. 22538 79
+17. Gupta, V., Barak, M.S.: Photo-thermo-piezo-elastic waves in semiconductor medium subject to dis-
+tinct two temperature models with higher order memory dependencies. Int. J. Numer. Methods Heat
+Fluid Flow 34(1), 84–108 (2024). https:// doi. org/ 10. 1108/ HFF- 07- 2023- 0380
+18. Barak, M.S., et al.: Behavior of higher-order MDD on energy ratios at the interface of thermoe-
+lastic and piezothermoelastic mediums. Sci. Rep. 13(1), 17170 (2023). https:// doi. org/ 10. 1038/
+s41598- 023- 44339-5
+19. Kumar, R., Gupta, V., Pathania, V., Kumar, R., Barak, M.S.: Analysis of waves at boundary sur-
+faces at distinct media with nonlocal dual-phase-lag. Proc. Natl. Acad. Sci. India Sect. A Phys. Sci.
+(2023). https:// doi. org/ 10. 1007/ s40010- 023- 00850-y
+20. Kumar, R., Gupta, V., Pathania, V., Barak, M.S.: Energy ratio response at the interface of elastic and
+dual-porous thermoelastic half-spaces. Phys. Scr. 98(11), 115211 (2023). https:// doi. org/ 10. 1088/
+1402- 4896/ acfced
+21. Kumar, R., Pathania, V., Gupta, V., Barak, M.S., Ahmad, H.: Thermoelastic modeling with dual
+porosity interacting with an inviscid liquid. J. Appl. Comput. Mech. 10(1), 111–124 (2024). https://
+doi. org/ 10. 22055/ jacm. 2023. 44488. 4221
+22. Kumar, S., Barak, M.S., Kumari, N., Gupta, V., Ahmad, H.: The effect of viscosity and hyperbolic
+two-temperature on energy ratios in elastic and piezoviscothermoelastic half-spaces. Mech. Time-
+Dependent Mater. (2024). https:// doi. org/ 10. 1007/ s11043- 023- 09657-1
+23. Gupta, S., Das, S., Dutta, R., Verma, A.K.: Higher-order fractional and memory response in nonlo-
+cal double poro-magneto-thermoelastic medium with temperature-dependent properties excited by
+laser pulse. J. Ocean Eng. Sci. (2022). https:// doi. org/ 10. 1016/j. joes. 2022. 04. 013
+1 3
+Journal of Nonlinear Mathematical Physics (2024) 31:26 Page 25 of 26 26
+24. Gupta, S., Dutta, R., Das, S., Verma, A.K.: Double poro-magneto-thermoelastic model with micro-
+temperatures and initial stress under memory-dependent heat transfer. J. Therm. Stress. 46(8), 743–
+774 (2023). https:// doi. org/ 10. 1080/ 01495 739. 2023. 22027 18
+25. Dutta, R., Das, S., Bhengra, N., Vishwakarma, S.K., Das, S.K.: Nonlocal effect on shear wave
+propagation in a fiber-reinforced poroelastic layered structure subjected to interfacial impulsive
+disturbance. Soil Dyn. Earthq. Eng. 176, 108307 (2024). https://d oi.o rg/1 0.1 016/j.s oildy n.2 023.
+108307
+26. Raja, S., Sinha, P.K., Prathap, G., Dwarakanathan, D.: Influence of active stiffening on dynamic
+behaviour of piezo-hygro-thermo-elastic composite plates and shells. J. Sound Vib. 278(1–2),
+257–283 (2004). https://d oi.o rg/1 0.1 016/j.j sv.2 003.1 0.0 02
+27. Gupta, V., Sharma, M., Thakur, N.: Mathematical modeling of actively controlled piezo smart
+structures: a review. Smart Struct. Syst. 8(3), 275–302 (2011). https://d oi.o rg/1 0.1 2989/s ss.
+2011.8.3 .2 75
+28. Zenkour, A.M., Alghanmi, R.A.: Hygro-thermo-electro-mechanical bending analysis of sandwich
+plates with FG core and piezoelectric faces. Mech. Adv. Mater. Struct. 28(3), 282–294 (2021).
+https:// doi. org/ 10. 1080/ 15376 494. 2018. 15621 34
+29. Tiwari, R., Mukhopadhyay, S.: On electromagneto-thermoelastic plane waves under Green-Naghdi
+theory of thermoelasticity-II. J. Therm. Stress. 40(8), 1040–1062 (2017)
+30. Tiwari, R., Mukhopadhyay, S.: Analysis of wave propagation in the presence of a continuous line
+heat source under heat transfer with memory dependent derivatives. Math. Mech. Solids 23(5), 820–
+834 (2018)
+31. Tiwari, R., Kumar, R., Abouelregal, A. E.: Analysis of a magneto-thermoelastic problem in a pie-
+zoelastic medium using the non-local memory-dependent heat conduction theory involving three
+phase lags. Mech. Time-Dependent Mater. 1–17 (2021).
+32. Tiwari, R., Misra, J.C., Prasad, R.: Magneto-thermoelastic wave propagation in a finitely conduct-
+ing medium: a comparative study for three types of thermoelasticity I, II, and III. J. Therm. Stress.
+44(7), 785–806 (2021)
+33. Tiwari, R., Misra, J.C.: Magneto-thermoelastic excitation induced by a thermal shock: a study under
+the purview of three phase lag theory. Waves Random Complex Media 32(2), 797–818 (2022)
+34. Kumar, R., Tiwari, R., Singhal, A.: Analysis of the photo-thermal excitation in a semiconducting
+medium under the purview of DPL theory involving non-local effect. Meccanica 57(8), 2027–2041
+(2022)
+35. Tiwari, R., Saeed, A.M., Kumar, R., Kumar, A., Singhal, A.: Memory response on generalized ther-
+moelastic medium in context of dual phase lag thermoelasticity with non-local effect. Arch. Mech.
+74(2–3), 69–88 (2022)
+36. Kaur, I., Singh, K., Ghita, G. M. D.: New analytical method for dynamic response of thermoelas-
+tic damping in simply supported generalized piezothermoelastic nanobeam. ZAMM J. Appl. Math.
+Mech. Zeitschrift für Angew. Math. und Mech. (2021). https:// doi. org/ 10. 1002/ zamm. 20210 0108
+37. Kaur, I., Lata, P., Singh, K.: Thermoelastic damping in generalized simply supported piezo-thermo-
+elastic nanobeam. Struct. Eng. Mech. 81(1), 29–37 (2022)
+38. Kaur, I., Singh, K., Ghita, G.M.D., Craciun, E.-M.: Modeling of a magneto-electro-piezo-thermoe-
+lastic nanobeam with two temperature subjected to ramp type heating. Proc. Rom. Acad. Ser. A 23,
+141–149 (2022)
+39. Singh, K., Kaur, I., Craciun, E.-M.: Hygro-photo-thermoelastic solid cylinder under moisture and
+thermal diffusivity with Moore–Gibson–Thompson theory. Discov. Mech. Eng. 2(1), 21 (2023).
+https:// doi. org/ 10. 1007/ s44245- 023- 00028-1
+40. Yadav, A.K., Carrera, E., Marin, M., Othman, M.I.A.: Reflection of hygrothermal waves in a Nonlo-
+cal Theory of coupled thermo-elasticity. Mech. Adv. Mater. Struct. (2022). https:// doi. org/ 10. 1080/
+15376 494. 2022. 21304 84
+41. Barak, M.S., Gupta, V.: Memory-dependent and fractional order analysis of the initially stressed
+piezo-thermoelastic medium. Mech. Adv. Mater. Struct. (2023). https:// doi. org/ 10. 1080/ 15376 494.
+2023. 22110 65
+42. Szekeres, A.: Analogy between heat and moisture thermo-hygro-mechanical tailoring of compos-
+ites by taking into account the second sound phenomenon. Comput. Struct. 76(1), 145–152 (2000).
+https:// doi. org/ 10. 1016/ S0045- 7949(99) 00170-4
+43. Szekeres, A.: Cross-coupled heat and moisture transport: Part 1-theory. J. Therm. Stress. 35(1–3),
+248–268 (2012). https:// doi. org/ 10. 1080/ 01495 739. 2012. 637827
+1 3
+26 Page 26 of 26 Journal of Nonlinear Mathematical Physics (2024) 31:26
+44. Hosseini, S.M., Ghadiri Rad, M.H.: Application of meshless local integral equations for two-dimen-
+sional transient coupled hygrothermoelasticity analysis: moisture and thermoelastic wave propaga-
+tions under shock loading. J. Therm. Stress. 40(1), 40–54 (2017). https:// doi. org/ 10. 1080/ 01495 739.
+2016. 12241 34
+45. Ahmed, E.A.A., Abou-Dina, M.S., Ghaleb, A.F.: Plane wave propagation in a piezo-thermoelas-
+tic rotating medium within the dual-phase-lag model. Microsyst. Technol. 26(3), 969–979 (2020).
+https:// doi. org/ 10. 1007/ s00542- 019- 04567-0
+46. Dutta, R., Das, S., Gupta, S., Singh, A., Chaudhary, H.: Nonlocal fiber-reinforced double porous
+material structure under fractional-order heat and mass transfer. Int. J. Numer. Methods Heat Fluid
+Flow 33(11), 3608–3641 (2023). https:// doi. org/ 10. 1108/ HFF- 05- 2023- 0295
+47. Yadav, A.K., Barak, M.S., Gupta, V.: Reflection at the free surface of the orthotropic piezo-hygro-
+thermo-elastic medium. Int. J. Numer. Methods Heat Fluid Flow (2023). https:// doi. org/ 10. 1108/
+HFF- 04- 2023- 0208
+48. Mondal, S., Othman, M.I.A.: Memory dependent derivative effect on generalized piezo-thermoelas-
+tic medium under three theories. Waves Random Complex Media 31(6), 2150–2167 (2021). https://
+doi. org/ 10. 1080/ 17455 030. 2020. 17304 80
+1 3

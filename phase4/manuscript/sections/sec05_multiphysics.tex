@@ -1,0 +1,238 @@
+%======================================================================
+% Section 5: Coupled Multiphysics Continua
+%======================================================================
+\section{Coupled Multiphysics Continua}
+\label{sec:multiphysics}
+
+This section presents coupled multiphysics continua: piezothermoelasticity, porous and double-porous media, micropolar continua, semiconductor photo-thermo-elasticity, and magneto-thermo-elasticity. For each medium, the governing equations, constitutive relations, coupling mechanisms, and representative applications are presented. Primary sources are cited where available.
+
+\subsection{Piezoelectricity: constitutive relations and coupling coefficients}
+\label{sec:5.1}
+
+Piezoelectricity describes the coupling between mechanical and electrical fields in certain crystalline materials (e.g., quartz, barium titanate, lead zirconate titanate). The linear constitutive relations are:
+
+\begin{equation}
+\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k,
+\label{eq:5.1}
+\end{equation}
+
+\begin{equation}
+D_i = e_{ikl}\varepsilon_{kl} + \kappa_{ij}E_j,
+\label{eq:5.2}
+\end{equation}
+
+\begin{equation}
+E_i = -\phi_{,i},
+\label{eq:5.3}
+\end{equation}
+
+where $\sigma_{ij}$ is the Cauchy stress tensor, $c_{ijkl}$ is the elastic stiffness tensor, $\varepsilon_{kl}$ is the infinitesimal strain tensor, $e_{kij}$ is the piezoelectric stress coefficient, $E_k$ is the electric field, $D_i$ is the electric displacement, $\kappa_{ij}$ is the dielectric permittivity, and $\phi$ is the electric potential.
+
+\subsubsection{Charge conservation}
+
+In the absence of free electric charge:
+
+\begin{equation}
+D_{i,i} = 0.
+\label{eq:5.4}
+\end{equation}
+
+\subsubsection{Electrical energy density}
+
+The electrical energy density is:
+
+\begin{equation}
+\mathcal{E}_{\mathrm{elec}} = \frac{1}{2}D_i E_i.
+\label{eq:5.5}
+\end{equation}
+
+\subsection{Piezothermoelasticity: three-field coupling}
+\label{sec:5.2}
+
+Piezothermoelasticity couples mechanical, thermal, and electrical fields. The constitutive relations are:
+
+\begin{equation}
+\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k - \beta_{ij}T,
+\label{eq:5.6}
+\end{equation}
+
+\begin{equation}
+\sigma_{ij,j} = \rho\ddot{u}_i,
+\label{eq:5.7}
+\end{equation}
+
+\begin{equation}
+E_i = -\phi_{,i},
+\label{eq:5.8}
+\end{equation}
+
+\begin{equation}
+D_i = \kappa_{ij}E_j + e_{ikl}\varepsilon_{kl} + p_i T,
+\label{eq:5.9}
+\end{equation}
+
+\begin{equation}
+D_{i,i} = 0,
+\label{eq:5.10}
+\end{equation}
+
+where $\beta_{ij}$ is the thermal stress coefficient and $p_i$ is the pyroelectric coefficient.
+
+\subsubsection{Governing equations for coupled fields}
+
+The coupled system consists of the equation of motion \eqref{eq:5.7}, the heat conduction equation (theory-dependent: classical, LS, GL, GN, DPL, TPL, MDD, etc.), and the charge conservation equation \eqref{eq:5.10}. All three fields are coupled through the constitutive relations \eqref{eq:5.6} and \eqref{eq:5.9}: temperature changes induce thermal stresses and pyroelectric effects; mechanical deformation generates piezoelectric polarization; electric fields produce electrostrictive deformation.
+
+\subsection{Electrical boundary conditions}
+\label{sec:5.3}
+
+\subsubsection{Perfect electrical contact}
+
+\begin{equation}
+\phi^{(1)} = \phi^{(2)} \quad \text{at the interface}.
+\label{eq:5.11}
+\end{equation}
+
+\subsubsection{Insulated interface}
+
+\begin{equation}
+D_i n_i = 0 \quad \text{at the interface}.
+\label{eq:5.12}
+\end{equation}
+
+\subsubsection{Electric displacement continuity}
+
+\begin{equation}
+D_3^{(1)} = D_3^{(2)} \quad \text{at the interface}.
+\label{eq:5.13}
+\end{equation}
+
+\subsection{Porous media: voids and double porosity}
+\label{sec:5.4}
+
+Porous elastic materials contain vacuous voids or pores distributed throughout the matrix. The Nunziato--Cowin theory (Nunziato and Cowin, 1979 \cite{Nunziato1979}; Cowin and Nunziato, 1983 \cite{Cowin1983}) introduces an additional kinematic variable: the void volume fraction $\phi$.
+
+\subsubsection{Governing equations}
+
+The basic equations for thermoelastic materials with voids:
+
+\begin{equation}
+\sigma_{ij} = A_{ijmn}\varepsilon_{mn} + B_{ijmn}\gamma_{mn} + d_{ijk}\phi_{,k} - \alpha_{ij}\theta,
+\label{eq:5.14}
+\end{equation}
+
+\begin{equation}
+\rho\ddot{u}_i = \sigma_{ji,j} + \rho f_i,
+\label{eq:5.15}
+\end{equation}
+
+\begin{equation}
+\rho\ddot{\phi} = h_{i,i} + \rho l,
+\label{eq:5.16}
+\end{equation}
+
+where $\phi$ is the void volume fraction, $h_i$ is the equilibrated stress vector, $l$ is the equilibrated body force, $A_{ijmn}$ and $B_{ijmn}$ are elastic and equilibrated elasticity tensors, $d_{ijk}$ is the equilibrated stress coupling tensor, and $\alpha_{ij}$ is the thermal coupling tensor. The thermoelastic extension of void theory was developed by Iesan (1979 \cite{Iesan1979}).
+
+\subsubsection{Double porosity}
+
+Double porosity models introduce two porosity fields to capture both macro- and micro-porosity effects. The governing equations extend the single-porosity theory with two coupled void volume fractions $\phi_1$ and $\phi_2$, each with its own equilibrated stress and equilibrated body force. Double porosity models are particularly relevant for hydrocarbon reservoirs, fissured rocks, and aquifers where both fracture and matrix porosity contribute to fluid flow and wave propagation.
+
+\subsection{Micropolar and micromorphic continua}
+\label{sec:5.5}
+
+Micropolar elasticity (Eringen, 1968a \cite{Eringen1968a}) extends classical elasticity by incorporating micro-rotational degrees of freedom and couple stresses. In addition to the displacement field $u_i$, the microrotation field $\phi_i$ describes independent rotation of material particles.
+
+\subsubsection{Governing equations}
+
+\begin{equation}
+\sigma_{ij} = A_{ijmn}\varepsilon_{mn} + B_{ijmn}\gamma_{mn} + d_{ijk}\phi_{,k} - \alpha_{ij}\theta,
+\label{eq:5.17}
+\end{equation}
+
+where $\sigma_{ij}$ is the force stress tensor (generally non-symmetric in micropolar media), $\gamma_{mn}$ is the micro-curvature tensor, and couple stresses $\mu_{ij}$ appear in the angular momentum balance.
+
+Micropolar models are relevant for granular materials, liquid crystals, composite materials with oriented inclusions, and biological tissues where micro-structural rotation cannot be neglected. The thermoelastic extension (Eringen, 1968b \cite{Eringen1968b}) couples micro-rotation with thermal fields, providing a framework for structured materials with thermal coupling.
+
+\subsection{Semiconductor photo-thermo-elasticity}
+\label{sec:5.6}
+
+Semiconductor photo-thermo-elasticity couples mechanical deformation, thermal fields, electrical fields, and carrier density (electrons and holes). When a semiconductor is illuminated, absorbed photons generate electron--hole pairs, producing carrier diffusion, temperature changes, and thermoelastic stresses.
+
+\subsubsection{Governing equations}
+
+The coupled system includes:
+\begin{itemize}
+\item The equation of motion with piezoelectric and thermal stress terms,
+\item The heat conduction equation with carrier recombination heat source,
+\item The charge conservation equation with carrier generation and recombination,
+\item The carrier continuity equations for electrons and holes.
+\end{itemize}
+
+Applications include photoacoustic imaging, semiconductor device thermal management, and optoelectronic sensors.
+
+\subsection{Magneto-thermo-elasticity}
+\label{sec:5.7}
+
+Magneto-thermo-elasticity couples mechanical, thermal, and magnetic fields. In electrically conducting media (e.g., liquid metals, plasmas), magnetic fields induce Lorentz forces that couple with thermal stresses.
+
+\subsubsection{Governing equations}
+
+The equation of motion includes the Lorentz force term:
+
+\begin{equation}
+\rho\ddot{u}_i = \sigma_{ji,j} + \rho f_i + (\bm{J} \times \bm{B})_i,
+\label{eq:5.18}
+\end{equation}
+
+where $\bm{J}$ is the current density and $\bm{B}$ is the magnetic flux density.
+
+Applications include magnetohydrodynamic (MHD) systems, liquid metal cooling, geophysical dynamo theory, and electromagnetic forming.
+
+\subsection{Comparative summary}
+\label{sec:5.8}
+
+Table \ref{tab:T3-multiphysics} summarizes the coupled multiphysics media: fields, coupling mechanisms, constitutive structure, and applications.
+
+\input{../tables/source/T3_coupled_multiphysics}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{fig02-wave-types.pdf}
+\caption{Wave types supported by different continuum media: classical elastic (P, S), generalized thermoelastic (P, S, T), piezothermoelastic (qP, qS, qT, EM-coupled), and double porous (P1, P2, P3, S).}
+\label{fig:wave_types}
+\end{figure}
+
+\subsection{Notation summary for Section 5}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 5.}
+\label{tab:notation-sec5}
+\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$c_{ijkl}$ & Elastic stiffness tensor & Pa & \eqref{eq:5.1} \\
+$e_{kij}$ & Piezoelectric stress coefficient & C/m$^2$ & \eqref{eq:5.1} \\
+$\kappa_{ij}$ & Dielectric permittivity & F/m & \eqref{eq:5.2} \\
+$E_i$ & Electric field & V/m & \eqref{eq:5.3} \\
+$D_i$ & Electric displacement & C/m$^2$ & \eqref{eq:5.2} \\
+$\phi$ & Electric potential & V & \eqref{eq:5.3} \\
+$\beta_{ij}$ & Thermal stress coefficient & Pa/K & \eqref{eq:5.6} \\
+$p_i$ & Pyroelectric coefficient & C/(m$^2$$\cdot$K) & \eqref{eq:5.9} \\
+$\phi$ & Void volume fraction & dimensionless & \eqref{eq:5.14} \\
+$h_i$ & Equilibrated stress vector & N/m & \eqref{eq:5.16} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open questions for Section 5}
+
+\begin{enumerate}[label=\textbf{OQ5.\arabic*}]
+\item What are the complete constitutive relations for piezothermoelastic media with nonlocal elasticity? \\ \label{oq:5.1}
+\item How do double-porosity models capture scale-dependent fluid--solid interaction? \\ \label{oq:5.2}
+\item What are the energy flux expressions for micropolar media with couple stresses? \\ \label{oq:5.3}
+\item How can semiconductor photo-thermo-elastic models be validated experimentally? \\ \label{oq:5.4}
+\end{enumerate}
+
+% LocalWords: 

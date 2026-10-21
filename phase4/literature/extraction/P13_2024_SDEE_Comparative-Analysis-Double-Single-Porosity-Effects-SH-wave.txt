@@ -1,0 +1,1900 @@
+Soil Dynamics and Earthquake Engineering 186 (2024) 108919
+ContentslistsavailableatScienceDirect
+SoilDynamicsandEarthquakeEngineering
+journalhomepage:www.elsevier.com/locate/soildyn
+ComparativeanalysisofdoubleandsingleporosityeffectsonSH-wave
+inducedvibrationsinperiodicporouslattices
+RachaitaDuttaa,SoumikDasb,∗,HijazAhmadc,d,e,MeghanaA.R.b,VipinGuptaf,g
+aSchoolofComputing,AmritaVishwaVidyapeetham,Mysurucampus,Karnataka,India
+bSchoolofPhysicalSciences,AmritaVishwaVidyapeetham,Mysurucampus,Karnataka,India
+cNearEastUniversity,OperationalResearchCenterinHealthcare,TRNCMersin10,Nicosia,99138,Turkey
+dCenterforAppliedMathematicsandBioinformatics,GulfUniversityforScienceandTechnology,Mishref,Kuwait
+eDepartmentofComputerScienceandMathematics,LebaneseAmericanUniversity,Beirut,Lebanon
+fDepartmentofMathematics,IndiraGandhiUniversity,Meerpur,Rewari,Haryana,India
+gDepartmentofMathematics,GurugramUniversity,Gurugram,India
+A R T I C L E I N F O A B S T R A C T
+Keywords: The manuscript presents a novel study comparing the impact of single and double porosity on horizontally
+SH-waves polarizedshearwave(SH-wave)propagationincorrugatedelasticvoidmaterials.Theconsideredmathematical
+Voidpore model comprises two cases; the first one depicts SH-wave propagation through a void porous layer having
+Doubleporosity creasedboundariesandrestingoveraheterogeneousanisotropicfluid-saturatedfracturedporoushalf-space,
+Singleporosity
+whereasaccordingtothesecondcase,heterogeneousanisotropicfluid-saturatedporoussemi-infinitemedium
+Corrugation
+withoutfractureshasbeenconsidered.Inbothcases,rigidityanddensityofthehalf-spacevaryquadratically
+Surfaceresponse
+with depth. The separable variable method is used to attain the complex frequency equation for each case
+thatleadstotwodifferentdispersionrelationsassociatedwithtwodistinctwavefronts.Thefirstwavefront
+dependsonthevoidparameters,whereasthesecondwavefrontdefinesthepropagationofSH-wavesinan
+elastic layer without void pores. In each case, the complex dispersion relation has been separated into two
+equations that illustrate the dispersion and attenuation properties of SH-waves. Using the variations in the
+inhomogeneity,position,fluctuation,flatness,totalporosity,andanisotropyparameters,caseIandcaseIIhave
+beencomparedineachgraphicalexecution.Inaddition,thesurfaceresponseofshearstressanddisplacement
+havebeenimplementedgraphically.
+1. Introduction layered medium. This proposition by Love challenged the previous
+understandingandopenedupnewpossibilitiesforthestudyofsurface
+Lovewaves,atypeofseismicsurfacewaves,holdgreatimportance wavepropagation.Notableworksrelatedtoshearwavescanbefound
+in geophysics and seismology due to their prolonged duration and inGuptaetal.[3–5],SadabandKundu[6,7]andDuttaetal.[8].
+capacitytoinducesignificantdamageduringearthquakes,particularly An assemblage of diverse elements forms Earth’s outermost layer.
+in the case of large seismic events. Therefore, studying Love waves Poroelasticity is one type of materialistic property which is vastly
+is crucial in understanding and mitigating the destructive effects of analysed by several researchers. Porosity measures fraction of void
+earthquakes. Interestingly, Love-type waves have also been utilized
+space volume over bulk volume. The development in the theory of
+in the development of bio-sensors that serve various purposes such
+voidporousmaterialswithnon-linearityhasbeeninitiatedbyNunziato
+as virus and bacteria detection, DNA characterization, and other re-
+and Cowin [9]. Later, the theory of linear elastic materials has been
+lated applications. Despite extensive existing literature on the topic,
+redesigned by Cowin and Nunziato [10]. This theory is applicable to
+SH-wavesremainhighlyintriguingandrelevantbecauseoftheirwide-
+materialswithmicroscopicholesorvoidsdisperseduniformlythrough-
+rangingapplicationsinvariousfields.Accordingtotheclassicaltheory
+out their structure. According to this theory, the material’s overall
+(See Achenbach [1]), it was initially believed that SH-waves could
+density is defined as the product of two fields: the density of the
+not exist in a completely elastic half-space. However, Love [2] put
+solid material itself and the volume fraction of the voids. This theory
+forth the concept that SH-waves could indeed propagate through a
+∗ Correspondingauthor.
+E-mailaddresses: rachaita.dutta18@gmail.com(R.Dutta),soumikdas1993@gmail.com(S.Das),hijaz.ahmad@neu.edu.tr(H.Ahmad),
+meghanaar@my.amrita.edu(MeghanaA.R.),vipin.math.rs@igu.ac.in(V.Gupta).
+https://doi.org/10.1016/j.soildyn.2024.108919
+Received11May2024;Receivedinrevisedform14August2024;Accepted14August2024
+Available online 21 August 2024
+0267-7261/© 2024 Elsevier Ltd. All rights are reserved, including those for text and data mining , AI training , and similar technologies.
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+incorporatesfourindependentvariablesdescribingthematerial’sstate, substances share similarities with naturally occurring materials like
+three of which are related to the displacement field. In the context bone,wood,andsomebiologicaltissues.Thesematerialsoftenexhibit
+of materials with voids, the transmission of forces across a surface is thesepropertiestoachievespecificfunctionalities.Understandingwave
+characterized by two entities: the familiar stress tensor and an extra propagationcanprovideinsightsintotheirmechanicalbehaviour.FG
+generalized force called equilibrated stress. This innovative concept porous materials inherit properties like porosity or stiffness gradu-
+expands the understanding of how loads are distributed within the ally changing throughout the material. Studying wave propagation
+material, accounting for the presence of voids and their influence on helps engineers and geophysicists to design and analyse porous ma-
+themechanicalbehaviourofthemedium.Hence,thetheoryofelastic terials with wave control properties for applications like vibration
+materialswithvoidsbuildsuponandextendsthefoundationalprinci- dampingoracousticmetamaterials.Analysinghowsurfacewavesprop-
+plesofclassicalelasticitytheory.Deyetal.[11]discussedtheeffectof agate through the material can evaluate integrity of porous materials
+voidporesonthepropagationofLovewave.Buildingontheworkof non-destructively. Such myriad applications motivate researchers to
+Guptaetal.[12]onSH-wavepropagationinporousmaterials,recently investigate the wave propagation features through porous materials.
+Dutta et al. [13] recently investigated the behaviour of SH-waves in There exists significant scientific interest in studying surface wave
+fibre-reinforcedporoelasticstructuresexcitedbyalinesource.Inrecent propagationinporousmedia,bothwithandwithoutfractures,forthe
+years, several scientists have included the theory of poroelasticity in followingreasons:
+theirresearchworks.Employingdifferenthigher-ordersheardeforma- • UnderstandingSubsurfaceProperties:Surfacewavesaresensi-
+tion theory (HSDT), Tounsi and his co-workers [14–19] analysed the
+tivetothephysicalpropertiesofthemediumtheytravelthrough,
+impact of porosity on the static and dynamic behaviour of laminated
+including porosity (amount of void space), fluid saturation, and
+compositeshell,functionallygraded(FG)sandwichshell,bi-directional
+materialstiffness.Studyinghowsurfacewavespropagateinporous
+FGplates,FGcarbonnanotube-reinforcedbeam,etc.Chitouretal.[20]
+media helps us understand these properties, which is crucial
+performed the stability analysis of imperfect FG sandwich plates con- in various fields like hydrogeology, geotechnical engineering,
+tainingmetallicfoamcoresunderquasi-3DHSDT.Cuong-Leetal.[21] petroleum engineering, etc. Fractures can significantly alter the
+exploredthenonlinearbendingofporoussigmoidFGnanoplateinthe propagation of surface waves. Studying these changes helps us
+contextofnonlocalstraingradienttheory(NSGT).Usingthequasi-3D understandthepresence,size,andorientationoffractureswithin
+sinusoidalsheardeformationmodel,Hadjietal.[22]investigatedthe the porous medium. This information is valuable for geophysics
+combined influence of porosity and elastic foundation parameters on andenvironmentalengineering.Surfacewavepropagationoffers
+thebendingbehaviourofimperfectFGsandwichplateslayingonthe a non-invasive way to probe the subsurface. By studying how
+Winkler–Pasternak foundation. Vibrational analysis of the FG porous waves interact with the medium, engineers can develop tech-
+TimoshenkobeamshasbeenstudiedbyKhorasanietal.[23]. niques to monitor the robustness of infrastructure, to assess soil
+The Earth’s crust and upper mantle are riddled with poroelas- stability,etc.
+tic materials like sandstones, limestones, and shales, often saturated • UnderstandingSeismicWavePropagation:Porousmediawith
+withfluidslikegroundwateroroil.Poroelasticmaterialstypicallyfall fracturescanbeasuitablemodelforsomegeologicalformations.
+into two categories. Single porous medium contains matrix pores or Studying surface wave propagation in these models helps us
+primary pores whereas double porous rocks contain two subsystems: understandthecomplexbehaviourofseismicwavesduringearth-
+fracture or secondary networks which segregate a porous matrix into quakes,whichcanimproveearthquakepredictionandmitigation
+separatedblocks.Matrixporosityinvolvesasignificantportionofthe strategies. Porous media with fractures present a challenging
+total volume, but in case of crack porosity a very little volume is scenario for wave propagation due to the interaction between
+occupied. Surface wave propagation in a porous medium filled with solid matrix, fluid, and the presence of discontinuities. By un-
+fluidwaspreviouslyanalysedbyseveralresearchers.Theintroductory derstandinghowsurfacewavespropagateinthesecomplexenvi-
+perception regarding porosity has been produced by Biot [24,25]. ronments,scientistsandengineerscangainvaluableinsightsinto
+Ghorai et al. [26] and Wang and Zhang [27] observed the behaviour thepropertiesandbehaviourofthesubsurfaceregion,leadingto
+of Love waves in fluid-filled porous material. Barenblatt’s [28] pro- advancementsinvariousfields.
+posal regarding fluid flow in cracks was further analysed immensely
+Inconclusion,studyingsurfacewavepropagationincorrugatedporous
+by Warren and Root [29]. The assumption of mixture theory based
+materialisdrivenbythedesiretounderstandcomplexwavebehaviour
+on consolidation was first introduced by Aifantis [30]. Dual porous
+in these materials and the potential for developing novel applica-
+theory has been further developed by Bescos et al. [31]. Berryman
+tions with wave control properties. This research holds promise for
+and Wang [32,33] determined the constitutive and balance relations
+advancementsinvariousscientificandengineeringfields.
+forcrackedporousmediumeffectively.Lovewavepropagationindual
+SH-wave propagation in void medium has been investigated by
+porous system is examined by Dai and Kuang [34]. Nowadays, the
+Guptaetal.[12]byconsideringplaininterface.Kauretal.[43]have
+propagation of surface waves in double porous material has drawn
+determined the surface response of nonlocal void layered structure
+theattentionofmanyeminentresearchers.Numerousresearchers[35–
+underthepurviewofLovewavepropagation.Asfarastheauthorsare
+40]havesignificantlycontributedtothestudyofwavepropagationin
+concerned,nostudyhaspresentedthesurfaceeffectduetotheeffect
+fluid-saturated double porous media. Corrugation is the result of the
+ofcorrugationwithacomparisonbetweensingleanddoubleporosity.
+reactionbetweensaltandcoredeposits,formingasequenceofparal-
+IncorporatingcorrugationsintotheboundariesbetweenEarth’slayers
+lel crimps. Many researchers have analysed different microstructures
+better reflects real-world conditions leading towards more realistic
+including corrugated or ridged boundaries. Utilizing a time-domain
+investigations. The analysis of SH-wave propagation through crimped
+boundaryelementmethod(TD-BEM),Panji[41]exploredtheseismic
+elastic layer with void pores along with surface response is the main
+groundresponseinamodelcomprisingalinearcorrugatedorthotropic topicofdiscussioninthisstudy.Twocaseshavebeenconsideredhere.
+stratumaboveasemi-infinitesubstratum.Thecrustalformationofthe According to the first case, the lowermost medium is assumed to be
+Earth is highly anisotropic and inhomogeneous according to several anisotropicfluid-filleddoubleporoushalf-space,whereasinthesecond
+researchers. Due to these features, structural complexity increases. case,thesemi-infinitemediumhasbeenconsideredtobeconstructed
+Gupta et al. [42] studied the influence of corrugated boundaries on byanisotropicfluid-filledsingleporousmaterial.Inbothcases,rigidity
+Love-typewavepropagation. anddensityofthehalf-spacevaryquadraticallywithdepth,i.e.,
+ThestudyofSH-wavepropagationincorrugatedporousmediawith
+𝑀𝐷=𝑀𝐷′(1+𝑎𝑧)2, 𝑁𝐷=𝑁𝐷′(1+𝑎𝑧)2, 𝜌𝐷=𝜌𝐷′(1+𝑎𝑧)2,
+voidporesstemsfromascientificinteresttounderstandthebehaviour Forcase-I, 2 2 2 2 𝑖𝑗 𝑖𝑗
+of propagating waves in several complex models. Corrugated porous 𝛺𝐷=𝛺𝐷′(1+𝑎𝑧)2, 𝜌𝐷=𝜌𝐷′(1+𝑎𝑧)2
+𝑖𝑗 𝑖𝑗 2 2
+2
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+Byapplyingaboverelations,Eq.(1)canbemodifiedas
+∞
+𝑡 =𝑟 cos(𝛹𝑥)+ ∑ [𝐸(1)cos(𝑗𝛹𝑥)+𝐹(1)sin(𝑗𝛹𝑥)], (2)
+1 1 𝑗 𝑗
+𝑗=2
+∞
+𝑡 =𝑟 cos(𝛹𝑥)+ ∑ [𝐸(2)cos(𝑗𝛹𝑥)+𝐹(2)sin(𝑗𝛹𝑥)]. (3)
+2 2 𝑗 𝑗
+𝑗=2
+The upper corrugated surface and lower corrugated interface can be
+written as 𝑡 = 𝑟 cos(𝛹𝑥) and 𝑡 = 𝑟 cos(𝛹𝑥), respectively. Here,
+1 1 2 2
+the corrugation’s wave number, wavelength, and amplitudes are rep-
+resentedby𝛹, 2𝜋,𝑟 ,and𝑟 ,respectively.InviewofSH-wavepropa-
+𝛹 1 2
+gation,𝑢 =𝑢 =0,𝑢 =𝑢 (𝑥,𝑧,𝑡),and 𝜕 =0,where𝑢 ,𝑢 ,and𝑢 are
+𝑥 𝑧 𝑦 𝑦 𝜕𝑦 𝑥 𝑦 𝑧
+thedisplacementcomponentsinthe𝑥,𝑦,and𝑧directions,respectively.
+3. Solutionoftheproblem
+Fig.1. Schematicdiagramoftheproblem.
+3.1. Wavedynamicsinporouselasticmediawithvoids
+and
+InviewofCowinandNunziato[10],theequationsofmotionforthe
+Forcase-II, 𝑀 2 𝑆 =𝑀 2 𝑆′(1+𝑎𝑧)2, 𝑁 2 𝑆 =𝑁 2 𝑆′(1+𝑎𝑧)2, elasticlayerwithvoidporesneglectingbodyforcesarerepresentedas
+𝜌𝑆
+𝑖𝑗
+=𝜌𝑆
+𝑖𝑗
+′(1+𝑎𝑧)2, 𝜌𝑆
+2
+=𝜌𝑆
+2
+′(1+𝑎𝑧)2,
+𝜇 1 ∇2𝑢 1 +(𝜆 1 +𝜇 1 )∇(∇⋅𝑢 1 )+𝛽 1 ∇𝜙=𝜌 1 𝑢̈ 1 , (4)
+where𝜌 and𝛺 arecouplingmassandviscositycoefficients,respec-
+𝑖𝑗 𝑖𝑗
+tively.Here,𝑎isinhomogeneityparameterwhosedimensionisinverse 𝛼∇2𝜙−𝜉𝜙−𝜔 𝜕𝜙 −𝛽 ∇⋅𝑢 =𝜌 𝑘̄𝜙̈, (5)
+of length. Method of separation of variable has been used to acquire 𝜕𝑡 1 1 1
+thedisplacementcomponentsofSH-waves.Onapplyingfiveboundary where𝜆 1 and𝜇 1 areLame′sconstantsofelasticmaterial,𝛼,𝛽 1 ,𝜉,and
+conditions,thecomplexfrequencyequationhasbeenderivedforeach 𝜔arevoidparameters,𝑘̄ delineatesequilibratedinertia,and𝜌 defines
+1
+case that leads to two different dispersion relations corresponding to the density of the considered medium. The change in void volume
+two distinct wave fronts. Two kinds of first wave front have been fractionisdenotedby𝜙.𝑢⃗ =(𝑢 ,𝑢 ,𝑢 )isthedisplacementvector
+1 1𝑥 1𝑦 1𝑧
+calculatedindetail.Thefirstkindisdependentonthemedium’sshear and𝑡isthetime.
+wavevelocityandthevoidparameter,butthesecondkindoffirstwave Thestress–strainrelationforisotropicelasticmediumwithvoidsis
+frontsimplyshowstheinfluenceofthevoidparameter.Inallscenarios, definedbyCowinandNunziato[10]
+the propagation ofSH-waves in an elastic layerwithoutvoid pores is
+𝜏 =𝜆 𝛿 𝑒 +2𝜇 𝑒 +𝛽 𝜙𝛿 (𝑖,𝑗=𝑥,𝑦,𝑧). (6)
+definedbythesecondwavefront.Eachcomplexdispersionrelationhas 𝑖𝑗 1 𝑖𝑗 𝑘𝑘 1 𝑖𝑗 1 𝑖𝑗
+been divided into real and imaginary parts, which in turn, describe Here𝛿 ,𝜏 ,and𝑒 areKroneckerdelta,stress,andstraincomponents,
+𝑖𝑗 𝑖𝑗 𝑖𝑗
+SH-wave’s attenuation and dispersion features. The considered cases respectively.
+have been compared in each graph executing the phase velocity and Therelationsbetweenstrainanddisplacementcomponentsare
+attenuationcoefficientintermsofthevariationsinseveralparameters,
+such as heterogeneity, anisotropy, position, fluctuation, and flatness 𝑒 𝑖𝑗 =0.5(𝑢 1𝑖,𝑗 +𝑢 1𝑗,𝑖 ). (7)
+parameters.Theperformedworkisvalidatedbyderivingsomepartic-
+UsingEqs.(6),(7),andtheconditionsofSH-wavepropagation,Eqs.(4)
+ular cases under some specific conditions. The surface effects on the
+and(5)aremodifiedasbelow
+shear stress against the vertical depth with and without corrugation
+are displayed in two separate plots. Moreover, the surface effect on
+𝜇
+(𝜕2𝑢 1𝑦
++
+𝜕2𝑢 1𝑦 )
++𝛽
+( 𝜕𝜙
++
+𝜕𝜙 )
+=𝜌 𝑢̈ , (8)
+thedisplacementofparticlesonthecorrugatedboundariesispresented 1 𝜕𝑥2 𝜕𝑧2 1 𝜕𝑥 𝜕𝑧 1 1𝑦
+graphically. ( 𝜕2𝜙 𝜕2𝜙 ) 𝜕𝜙
+𝛼 + −𝜉𝜙−𝜔 =𝜌 𝑘̄𝜙̈. (9)
+2. Problemformationandgeometricalset-up 𝜕𝑥2 𝜕𝑧2 𝜕𝑡 1
+In order to find the solutions of Eqs. (8) and (9), variable separable
+An isotropic elastic layer containing void pores of thickness ℎ 1 methodhasbeenappliedasbelow
+havingcreasedfreesurfaceisconsideredinFig.1.Accordingtothefirst
+case, there exists a heterogeneous anisotropic fractured porous half- 𝑢 1𝑦 (𝑥,𝑧,𝑡)=𝑈 1𝑦 (𝑧)𝑒𝑖𝑘(𝑥−𝑐𝑡), 𝜙(𝑥,𝑧,𝑡)=𝛷(𝑧)𝑒𝑖𝑘(𝑥−𝑐𝑡). (10)
+spacesaturatedwithfluidbelowthelayerandasperthesecondcase, WiththehelpofEq.(10),Eqs.(8)and(9)aremodifiedas
+a fluid-saturated heterogeneous anisotropic porous half-space without
+fracturesissituatedbeneaththelayer.Wavespropagatein𝑥direction (𝐷 𝑧𝑧 −𝑁 1 2)𝑈 1𝑦 (𝑧)+𝐵 1 (𝑖𝑘+𝐷 𝑧 )𝛷(𝑧)=0, (11)
+and 𝑧 axis is pointing vertically downwards. 𝑧 = 𝑡 (𝑥) is the ridged
+2
+interface between the layer and the semi-infinite medium, while the (𝐷 −𝑀2)𝛷(𝑧)=0, (12)
+𝑧𝑧 1
+uppercorrugatedsurfaceisdenotedby𝑧=𝑡 (𝑥)−ℎ .Here,𝑡 (𝑥)and
+1 1 1 √
+𝑡 F 2 o (𝑥 u I ) r n i a e v r r e i s e e p w r e i r e o i s f od e A x i s c p a a f n u n o n si c [ o t 4 i n 4 o ] n g , s iv 𝑡 o 1 e ( f n 𝑥 𝑥 ) b a e o l n n o d l w y. 𝑡 2 (𝑥)areexpressedintheformof w √ h 𝛼 e 𝑘 r 2 e +𝜉 𝐷 −𝑖 𝑖 𝜔 𝑖 𝑘𝑐 → −𝜌1 𝑑 𝑘̄ 𝑑 𝑘 𝑖 2 2 2𝑐 , 2 𝐷 ,𝐵 𝑖 → = 𝑑 𝑑 𝛽 𝑖 1 , , 𝑖 an = d 𝑥 𝐴 ,𝑧, = 𝑡. √ Als 𝜇 o 1 , ,w 𝑁 h 1 ic = h 𝑘 isth 1 e − sh 𝐴 𝑐 e 2 2 1 a , r 𝑀 w 1 av = e
+𝛼 1 𝜇1 1 𝜌1
+∞ velocity of the layer. Neglecting the damping term 𝜔, which is very
+𝑡 𝑚 (𝑥)= ∑ [𝑡( 𝑗 𝑚)exp(𝑖𝑗𝛹𝑥)+𝑡( − 𝑚 𝑗 )exp(−𝑖𝑗𝛹𝑥)], 𝑚=1,2, (1) smallforsinusoidalwave,𝑀 1 isrewrittenas
+𝑗=1 √
+where 𝑡(𝑚) and 𝑡(𝑚) are the Fourier series expansion coefficients. The 𝑀 =𝑘 1− 𝑐2 + 1 . (13)
+constant 𝑗 s𝑟 ,𝑟 ,𝐸 −𝑗 (𝑚),and𝐹(𝑚) arerepresentedas 1 𝛼∕𝜌 1 𝑘̄ 𝑘2(𝛼∕𝜉)
+1 2 𝑗 𝑗
+ThesolutionofEq.(12)is
+𝑡(
+±
+1
+1
+)= 𝑟
+2
+1, 𝑡(
+±
+2
+1
+)= 𝑟
+2
+2, 𝑡(
+±
+𝑚
+𝑗
+)= 𝐸 𝑗 (𝑚)∓
+2
+𝑖𝐹 𝑗 (𝑚) , 𝑚=1,2 𝑎𝑛𝑑 𝑗=2,3,… 𝛷(𝑧)=𝐿
+3
+𝑒𝑀1𝑧+𝐿
+4
+𝑒−𝑀1𝑧. (14)
+3
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+WiththehelpofEq.(14),Eq.(11)becomes Here,𝑅 and𝑟 aretheelasticmoduliofdrainagesystemandmaterial
+𝑖𝑗 𝑖𝑗
+parameters,respectively.𝑀𝐷and𝑁𝐷aretheshearmoduli.𝜏𝐷and𝑒𝐷
+(𝐷
+𝑧𝑧
+−𝑁
+1
+2)𝑈
+1𝑦
+(𝑧)=−𝐵
+1
+[(𝑖𝑘+𝑀
+1
+)𝐿
+3
+𝑒𝑀1𝑧+(𝑖𝑘−𝑀
+1
+)𝐿
+4
+𝑒−𝑀1𝑧]. (15)
+symbolizethestressandstra
+2
+incomp
+2
+onents,respectively.
+𝑖𝑗 𝑖𝑗
+When𝑴𝟐−𝑵𝟐≠𝟎,solvingEq.(15),wegetfromEq.(10) The formulations of 𝑤
+𝑚
+and 𝑤
+𝑓
+representing the measurement
+𝟏 𝟏
+of augmenting fluid in matrix pore blocks and fracture networks,
+𝑢 1𝑦 respectively,aregivenby
+[ ]
+𝐵 (𝑖𝑘+𝑀 ) 𝐵 (𝑖𝑘−𝑀 )
+= 𝐿 1 𝑒𝑁1𝑧+𝐿 2 𝑒−𝑁1𝑧−𝐿 3 𝑀 1 2−𝑁2 1 𝑒𝑀1𝑧−𝐿 4 𝑀 1 2−𝑁2 1 𝑒−𝑀1𝑧 𝑒𝑖𝑘(𝑥−𝑐𝑡), 𝑤 𝑚 =−𝑣 𝑚 𝜙 𝑚 ∇⋅(𝑢 𝑚 −𝑢 2 ) , 𝑤 𝑓 =−𝑣 𝑓 ∇⋅(𝑢 𝑓 −𝑢 2 ). (25)
+1 1 1 1
+ByusingEqs.(24)and(25),Eq.(20)canbemodifiedasbelow
+(16)
+𝜌𝐷𝑢̈ +𝜌𝐷𝑢̈ +𝜌𝐷𝑢̈ + [ 𝛺𝐷 +𝛺𝐷] 𝑢̇ −𝛺𝐷𝑢̇ −𝛺𝐷𝑢̇
+11 2𝑦 12 𝑚𝑦 13 𝑓𝑦 12 13 2𝑦 12 𝑚𝑦 13 𝑓𝑦
+𝜙=(𝐿 3 𝑒𝑀1𝑧+𝐿 4 𝑒−𝑀1𝑧)𝑒𝑖𝑘(𝑥−𝑐𝑡). (17) =𝑁𝐷 𝜕2𝑢 2𝑦 +𝑀𝐷 𝜕2𝑢 2𝑦 + 𝜕𝑀 2 𝐷𝜕𝑢 2𝑦 (26)
+When𝑴𝟐−𝑵𝟐=𝟎,similarlywehave 2 𝜕𝑥2 2 𝜕𝑧2 𝜕𝑧 𝜕𝑧,
+𝟏 𝟏
+𝐵 (𝑖𝑘+𝑀 ) 𝜌𝐷𝑢̈ +𝜌𝐷𝑢̈ −𝛺𝐷𝑢̇ +𝛺𝐷𝑢̇ =0, (27)
+𝑢
+1𝑦
+=[𝐿
+1
+𝑒𝑁1𝑧+𝐿
+2
+𝑒−𝑁1𝑧+𝐿
+3
+1
+𝑁2
+1 𝑒𝑀1𝑧 12 2𝑦 22 𝑚𝑦 12 2𝑦 12 𝑚𝑦
+1 (18)
+𝐵 (𝑖𝑘−𝑀 ) 𝜌𝐷𝑢̈ +𝜌𝐷𝑢̈ −𝛺𝐷𝑢̇ +𝛺𝐷𝑢̇ =0. (28)
++𝐿
+4
+1
+𝑁2
+1 𝑒−𝑀1𝑧]𝑒𝑖𝑘(𝑥−𝑐𝑡), 13 2𝑦 33 𝑓𝑦 13 2𝑦 13 𝑓𝑦
+1 Now,variableseparablemethodhasbeenintroducedasfollows
+𝜙=(𝐿 3 𝑒𝑀1𝑧+𝐿 4 𝑒−𝑀1𝑧)𝑒𝑖𝑘(𝑥−𝑐𝑡), (19) {𝑢 ,𝑢 ,𝑢 }={𝑈 (𝑧),𝑈 (𝑧),𝑈 (𝑧)}𝑒𝑖(𝑘𝑥−𝜔𝑡). (29)
+2𝑦 𝑚𝑦 𝑓𝑦 2𝑦 𝑚𝑦 𝑓𝑦
+where𝐿 ,𝐿 ,𝐿 ,and𝐿 arearbitraryconstants.
+1 2 3 4 BysubstitutingEq.(29)inEqs.(26),(27),and(28),weget
+[ ]
+3.2. Wavedynamicsinfracturedfluid-saturatedporousmedia 𝜌𝐷 − 𝑖𝛺𝐷
+12 𝜔 12
+Thegoverningequationsforfluid-filledporouslayerwithfractures
+𝑈
+𝑚𝑦
+(𝑧)=−[
+𝜌𝐷 + 𝑖𝛺𝐷
+]𝑈
+2𝑦
+(𝑧), (30)
+22 𝜔 12
+canbeformulatedas[33] [ ]
+𝜌𝐷 − 𝑖𝛺𝐷
+⎛ ⎜ ⎜ ⎜ ⎝ 𝜌 𝜌 𝜌 𝐷 1 𝐷 1 𝐷 1 1 2 3 𝜌 𝜌 𝜌 𝐷 1 𝐷 2 𝐷 2 2 2 3 𝜌 𝜌 𝜌 𝐷 1 𝐷 2 𝐷 3 3 3 3 ⎞ ⎟ ⎟ ⎟ ⎠ ⎛ ⎜ ⎜ ⎜ ⎜ ⎝ 𝑢 𝑢 𝑢 ̈ ̈ ̈ 𝑚 𝑓 2𝑦 𝑦 𝑦 ⎞ ⎟ ⎟ ⎟ ⎟ ⎠ + ⎛ ⎜ ⎜ ⎜ ⎝ 𝛺 1 𝐷 − − 2 𝛺 𝛺 + 1 1 𝐷 𝐷 𝛺 2 3 1 𝐷 3 𝛺 1 𝐷 − − 2 𝛺 𝛺 + 1 2 𝐷 𝐷 𝛺 2 3 2 𝐷 3 𝛺 1 𝐷 − − 3 𝛺 𝛺 + 1 2 𝐷 𝐷 𝛺 3 3 2 𝐷 3 ⎞ ⎟ ⎟ ⎟ ⎠ ⎛ ⎜ ⎜ ⎜ ⎜ ⎝ 𝑢 𝑢 𝑢 ̇ ̇ ̇ 𝑚 𝑓 2𝑦 𝑦 𝑦 ⎞ ⎟ ⎟ ⎟ ⎟ ⎠ 𝑈 𝐷 𝑓 𝑧 𝑦 𝑧 𝑈 (𝑧 2 ) 𝑦 = + − 𝑀 [ 1 𝜌 𝐷 𝐷 3 1 3 3 𝐷 + 𝑧 𝑀 𝜔 𝜔 𝑖 2 𝐷 𝛺 𝐷 1 1 𝐷 3 3 𝑧 ] 𝑈 𝑈 2𝑦 2𝑦 + (𝑧 𝑀 𝑁 ), 2 𝐷 𝐷 [ 𝜔2𝜌𝐷 2 −𝑘2] 𝑈 2𝑦 =0. ( ( 3 3 1 2 ) )
+⎛ 𝜏 𝑦 𝐷 𝑗,𝑗 ⎞ 2 2
+= ⎜ ⎜ −𝑃 𝑚,𝑦 ⎟ ⎟ , (20) Massdensity𝜌𝐷 2 isdefinedby
+⎜ ⎝−𝑃 𝑓,𝑦 ⎟ ⎠ 𝜌𝐷 + 𝑖 ( 𝛺𝐷 +𝛺𝐷) ( 𝜌𝐷 − 𝑖𝛺𝐷 )2 ( 𝜌𝐷 − 𝑖𝛺𝐷 )2
+w sh h o e w re n m in as A s p c p o e e n f d fi i c x i . en 𝑢 2 ts 𝑦 , 𝜌 𝑢 𝐷 𝑖𝑗 𝑚𝑦 a , n a d nd co 𝑢 u 𝑓 p 𝑦 li a n r g e v d i e sc fi o n s e it d y a c s o t e h ff e ic d ie is n p t l s a 𝛺 ce 𝑖 𝐷 m 𝑗 e a n re t 𝜌𝐷 2 = 11 𝜔 𝑁 2 𝐷 12 13 −( 𝜌𝐷 22 1 + 2 𝜔 𝑖𝛺 𝜔 1 𝐷 2 1 ) 2 𝑁 2 𝐷 −( 𝜌𝐷 33 1 + 3 𝜔 𝑖𝛺 𝜔 1 𝐷 3 1 ) 3 𝑁 2 𝐷 .
+componentsforthesolid,thefluidinthematrixpores,andthefluidin
+(33)
+the fracture pores, respectively. Since long-term propagation of wave
+is assumed to be neglected in this model, 𝜌𝐷 23 , 𝛽 2 𝐷 3 , 𝜅(12), and 𝜅(21) Byusingtheinhomogeneitymentionedearlier,wegetfromEq.(32)
+are presumed to be nullified. Density of fluid and that of solid are
+denotedby𝜌𝐷and𝜌𝐷,respectively.𝜂 representsshearviscosityofthe [ 𝐷 + 2𝑎 𝐷 +𝛾𝐷(−𝑘2+𝜔2𝜌𝐷′) ] 𝑈 =0. (34)
+𝑙 𝑠 𝑙 𝑧𝑧 1+𝑎𝑧 𝑧 2 2𝑦
+liquid.Themacroscopicfluidpressures𝑃 and𝑃 andtheinternalfluid
+𝑚 𝑓
+pressures𝑝 and𝑝 arerelatedasbelow
+where𝛾𝐷=𝑁𝐷′(𝑀𝐷′)−1.
+𝑚 𝑓 2 2
+Bysubstituting𝑈 (𝑧)=𝑈 (𝑧)(1+𝑎𝑧)−1inEq.(34)andfromEq.(29),
+𝑃 =𝑣 𝜙 𝑝 ,𝑃 =𝑣 𝜙 𝑝 . (21)
+2𝑦 2𝑦
+𝑚 𝑚 𝑚 𝑚 𝑓 𝑓 𝑓 𝑓 we get the displacement component in the anisotropic heterogeneous
+Matrix porosity, fracture porosity, and fractions of entire matrix pore doubleporoushalf-spaceasfollows
+𝑣 vol , u r m es e pe a c n t d ive fr l a y c , t w ur h e er p e o 𝑣 re v + o 𝑣 lum = e 1 a . r S e in s c y e m f b r o ac li t z u e r d e b p y or 𝜙 os 𝑚 i , ty 𝜙 i 𝑓 s , e 𝑣 q 𝑚 u , a a l n t d o 𝑢 2𝑦 (𝑥,𝑧,𝑡)=𝐿 5 𝑒𝑖𝛼 2 𝐷𝑧(1+𝑎𝑧)−1𝑒𝑖(𝑘𝑥−𝜔𝑡). (35)
+𝑓 𝑚 𝑓
+1[33],theformulationoftotalporositycanberepresentedas Here,𝑢 →0while𝑧→∞and𝐼𝑚(𝛼𝐷)>0.𝐿 isanarbitraryconstant
+2𝑦 √ 2 5
+𝜙 =𝑣 𝜙 +𝑣 . (22) and𝛼𝐷= 𝛾𝐷(−𝑘2+𝜔2𝜌𝐷′).
+𝑡 𝑚 𝑚 𝑓 2 2
+Since𝜙 =1,Eq.(21)isrewrittenasbelow
+𝑓 3.3. Wavedynamicsinfluid-saturatedporousmediawithoutfracture
+𝑃 =𝑣 𝜙 𝑝 , 𝑃 =𝑣 𝑝 . (23)
+𝑚 𝑚 𝑚 𝑚 𝑓 𝑓 𝑓
+Following Biot [24], the equations of motion for the fluid-filled
+AccordingtoBerrymanandWang[33],thestress–strainequationsfor
+anisotropicporousmediumareexpressedasfollows
+theporouslayerwithfracturescanbedelineatedasfollows
+( )
+𝜏 𝑥 𝐷 𝑥 =𝑅 11 𝑒𝐷 𝑥𝑥 +𝑅 12 𝑒𝐷 𝑦𝑦 +𝑅 13 𝑒𝐷 𝑧𝑧 +𝑟 14 (−𝑤 𝑚 )+𝑟 15 (−𝑤 𝑓 ), 𝜏 𝑦 𝑆 𝑗,𝑗 = 𝜌𝑆 11 𝑢̈ 3𝑦 +𝜌𝑆 12 𝑢̈ 𝑚𝑦 , (36)
+𝜏𝐷 =𝑅 𝑒𝐷 +𝑅 𝑒𝐷 +𝑅 𝑒𝐷 +𝑟 (−𝑤 )+𝑟 (−𝑤 ), ( )
+𝑦𝑦 21 𝑥𝑥 22 𝑦𝑦 23 𝑧𝑧 24 𝑚 25 𝑓 𝑃 = 𝜌𝑆𝑢̈ +𝜌𝑆𝑢̈ , (37)
+𝜏𝐷 =𝑅 𝑒𝐷 +𝑅 𝑒𝐷 +𝑅 𝑒𝐷 +𝑟 (−𝑤 )+𝑟 (−𝑤 ), ,𝑦 12 3𝑦 22 𝑚𝑦
+𝑧𝑧 31 𝑥𝑥 32 𝑦𝑦 33 𝑧𝑧 34 𝑚 35 𝑓
+−𝑝 =𝑟 𝑒𝐷 +𝑟 𝑒𝐷 +𝑟 𝑒𝐷 +𝑟 (−𝑤 )+𝑟 (−𝑤 ), (24) where 𝜏 𝑖 𝑆 𝑗 indicates the components of stress tensor. Here, 𝑃 = −𝑓𝑝,
+𝑚 41 𝑥𝑥 42 𝑦𝑦 43 𝑧𝑧 44 𝑚 45 𝑓 suchthat𝑝and𝑓arethepressureofthefluidandporosityoftheporous
+−𝑝 𝑓 =𝑟 51 𝑒𝐷 𝑥𝑥 +𝑟 52 𝑒𝐷 𝑦𝑦 +𝑟 53 𝑒𝐷 𝑧𝑧 +𝑟 54 (−𝑤 𝑚 )+𝑟 55 (−𝑤 𝑓 ), layer,respectively.𝑢 3𝑦 isthesoliddisplacementcomponentand𝑢 𝑚𝑦 is
+𝜏𝐷 =2𝑀𝐷(𝑧)𝑒𝐷,𝜏𝐷 =2𝑀𝐷(𝑧)𝑒𝐷,𝜏𝐷 =2𝑁𝐷(𝑧)𝑒𝐷. thedisplacementcomponentoffluidpresentinpores.
+𝑦𝑧 2 𝑦𝑧 𝑧𝑥 2 𝑧𝑥 𝑥𝑦 2 𝑥𝑦
+4
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+Thefollowingrelationsbetweenthemasscoefficients𝜌𝑆, 𝜌𝑆,𝜌𝑆 (𝐢)𝜏 −𝑡′𝜏 =0at𝑧=𝑡 (𝑥)−ℎ ,
+11 12 22 𝑦𝑧 1 𝑦𝑥 1 1
+andthedensitiesofsolidandfluid𝜌𝑆 and𝜌𝑆,respectively,aredefined (𝐢𝐢)𝑛⃗⋅∇𝜙=0at𝑧=𝑡 (𝑥)−ℎ ,(𝐢𝐢𝐢)𝑛⃗⋅∇𝜙=0at𝑧=𝑡 (𝑥),
+𝑠 𝑙 1 1 2
+asbelow (𝐢𝐯) (𝐚) For Case:I, 𝑢 = 𝑢 at 𝑧 = 𝑡 (𝑥), (𝐛) For Case:II, 𝑢 = 𝑢 at
+1 2𝑦 2 1 3𝑦
+𝑧=𝑡 (𝑥),
+𝜌𝑆 +𝜌𝑆 =(1−𝑓)𝜌 , 𝜌𝑆 +𝜌𝑆 =𝑓𝜌. 2
+11 12 𝑠 12 22 𝑙 (𝐯)(𝐚)ForCase:I,𝜏 −𝑡′𝜏 =𝜏𝐷 −𝑡′𝜏𝐷 at𝑧=𝑡 (𝑥),(𝐛)ForCase:II,
+𝑦𝑧 2 𝑦𝑥 𝑦𝑧 2 𝑦𝑥 2
+Total density is 𝜌′ = 𝜌𝑆 11 +2𝜌𝑆 12 +𝜌𝑆 22 . The following inequalities have 𝜏 𝑦𝑧 −𝑡′ 2 𝜏 𝑦𝑥 =𝜏 𝑦 𝑆 𝑧 −𝑡′ 2 𝜏 𝑦 𝑆 𝑥 at𝑧=𝑡 2 (𝑥).
+beenfulfilledbythedynamiccoefficients,𝜌𝑆 >0,𝜌𝑆 >0,𝜌𝑆 ≤0,and Here, 𝑛⃗is the unit vector normal to the external boundary. 𝑡′ and
+11 22 12 1
+𝜌𝑆 11 𝜌 T 𝑆 2 h 2 e − s 𝜌 t 𝑆 1 r 2 e 2 ss > –s 0 tr . ain relations for anisotropic fluid-filled porous layer 𝑡′ 2 a I r n e c d a e s r e iv o a f ti 𝑴 ves 𝟐 𝟏 − of 𝑵 𝑡 1 𝟐 𝟏 a ≠ nd 𝟎, 𝑡 2 w w e i g th et r t e h s e pe f c o t ll t o o w 𝑥 in , g re e s x p p e r c e ti s v s e io ly n . sfromthe
+arerepresentedas[24] above-mentionedboundaryconditions
+𝜏 𝑥 𝑆 𝑥 =2𝑁 2 𝑆𝑒𝑆 𝑥𝑥 +𝐹𝑒+𝑄𝜀, 𝜏 𝑥 𝑆 𝑦 =2𝑁 2 𝑆𝑒𝑆 𝑥𝑦 , 𝐿 1 (𝑁 1 −𝑖𝑘𝑡′ 1 )𝑒𝑁1(𝑡1−ℎ1)+𝐿 2 (−𝑁 1 −𝑖𝑘𝑡′ 1 )𝑒−𝑁1(𝑡1−ℎ1)
+𝜏 𝜏 𝑆 𝑦 𝑆 𝑦 = = 2 2 𝑁 𝑁 2 𝑆 𝑆 𝑒 𝑒 𝑆 𝑆 𝑦𝑦 + + 𝐹 𝐹 𝑒 𝑒 + + 𝑄 𝑄 𝜀 𝜀 , , 𝜏 𝜏 𝑆 𝑦 𝑆 𝑧 = = 2 2 𝑀 𝑀 2 𝑆 𝑆 𝑒 𝑒 𝑆 𝑆 𝑦𝑧 , , (38) +𝐿 3 𝐵 1 ( ( 𝑀 𝑖𝑘 1 2 + − 𝑀 𝑁 1 1 2 )( ) − 𝑒− 𝑀 𝑀1 1 (𝑡 + 1− 𝑖 ℎ 𝑘 1) 𝑡′ 1 ) +𝐿 4 𝐵 1 ( ( 𝑀 𝑖𝑘 1 2 − − 𝑀 𝑁 1 1 2 ) ) ( 𝑒 𝑀 𝑀 1 1(𝑡 + 1− 𝑖 ℎ 𝑘 1) 𝑡′ 1 ) =0, (47)
+𝑧𝑧 2 𝑧𝑧 𝑧𝑥 2 𝑧𝑥
+𝑃 =𝑄𝑒+𝑅𝜀, 𝐿 3 𝑒𝑀1(𝑡1−ℎ1)−𝐿 4 𝑒−𝑀1(𝑡1−ℎ1)=0, (48)
+where 𝑒 = 𝑑𝑖𝑣𝑢⃗,𝜀 = 𝑑𝑖𝑣𝑈⃗, 𝐹,𝑁𝑆, and 𝑀𝑆 imply Lame’s constants,
+𝑅istheamount
+3
+ofpressure
+3
+tofor
+2
+ceacertai
+2
+nvolumeofthefluidinto
+𝐿
+3
+𝑒𝑀1𝑡2−𝐿
+4
+𝑒−𝑀1𝑡2 =0, (49)
+theaggregate,and𝑄isthecouplingcoefficientbetweenthechangein
+𝐵 (𝑖𝑘+𝑀 ) 𝐵 (𝑖𝑘−𝑀 )
+volu
+S
+m
+ub
+e
+st
+o
+i
+f
+tu
+t
+t
+h
+i
+e
+ng
+so
+E
+li
+q
+d
+.
+a
+(3
+n
+8
+d
+)
+t
+i
+h
+n
+e
+(
+f
+3
+lu
+6
+i
+)
+d.
+and (37) and using conventional SH-
+𝐿
+1
+𝑒𝑁1𝑡2+𝐿
+2
+𝑒−𝑁1𝑡2−𝐿
+3 (𝑀
+1
+2
+1
+−𝑁
+1
+2)𝑒−
+1
+𝑀1𝑡2
+−𝐿
+4 (𝑀
+1
+2
+1
+−𝑁
+1
+2)𝑒𝑀
+1
+1𝑡2
+(50)
+wavecondition,wehave
+−𝐿
+𝑒𝑖𝛼
+2
+𝐷𝑡2
+=0,
+𝑁 2 𝑆 𝜕 𝜕 2 𝑥 𝑢 3 2 𝑦 +𝑀 2 𝑆 𝜕 𝜕 2 𝑧 𝑢 2 3𝑦 + 𝜕𝑀 𝜕𝑧 2 𝑆 𝜕 𝜕 𝑢 𝑧 3𝑦 =𝜌𝑆 11 𝑢̈ 3𝑦 +𝜌𝑆 12 𝑢̈ 𝑚𝑦 , (39) 𝐿
+1
+𝑒𝑁1𝑡2+𝐿 5
+2
+𝑒 1 − + 𝑁1 𝑎 𝑡2 𝑡 2 −𝐿
+3 (𝑀
+𝐵
+2
+1
+−
+(𝑖𝑘
+𝑁
++
+2)
+𝑀
+𝑒−
+1
+𝑀
+)
+1𝑡2
+−𝐿
+4 (𝑀
+𝐵
+2
+1 (
+−
+𝑖𝑘
+𝑁
+−
+2
+𝑀
+)𝑒𝑀
+1 )
+1𝑡2
+𝜌𝑆 12 𝑢̈ 3𝑦 +𝜌𝑆 22 𝑢̈ 𝑚𝑦 =0. (40) −𝐿 𝑒𝑖𝛼 2 𝑆𝑡2 =0, 1 1 1 1 (51)
+Now,variableseparablemethodhasbeenintroducedasfollows 61+𝑎𝑡 2
+{𝑢 ,𝑢 }={𝑈 (𝑧),𝑈 (𝑧)}𝑒𝑖(𝑘𝑥−𝜔𝑡). (41)
+3𝑦 𝑚𝑦 3𝑦 𝑚𝑦 𝐿
+1
+𝜇
+1
+(𝑁
+1
+−𝑖𝑘𝑡′
+2
+)𝑒𝑁1𝑡2+𝐿
+2
+𝜇
+1
+(−𝑁
+1
+−𝑖𝑘𝑡′
+2
+)𝑒−𝑁1𝑡2
+SubstitutingEq.(41)inEqs.(39)and(40),weacquire 𝐵 (𝑖𝑘+𝑀 )(−𝑀 +𝑖𝑘𝑡′)
++𝐿 𝜇 1 1 1 2
+𝐷 𝑈 𝑚 𝑧𝑧 𝑦 𝑈 (𝑧 3 ) 𝑦 = + − (𝑀 𝜌 𝜌 𝑆 2 𝑆 1 2 𝑆 2 2 ) 𝑈 −1 3 𝐷 𝑦 ( 𝑧 𝑧 𝑀 ), 2 𝑆𝐷 𝑧 𝑈 3𝑦 +𝑁 2 𝑆(𝑀 2 𝑆)−1[ 𝜔2𝜌𝑆 2 −𝑘2. ] 𝑈 3𝑦 =0. ( ( 4 4 3 2 ) ) + − 𝐿 𝐿 4 5 3 𝜇 𝑒𝑖 1 1 𝛼 2 𝐷 𝐵 𝑡2 1 𝑀 (𝑖 ( ( 𝑘 𝑀 𝑀 2 𝐷 − [ 1 2 1 ( 2 𝑀 1 − − + 1 𝑁 𝑁 ) 𝑎 ( 1 2 𝑀 1 𝑡 2 2 ) ) 𝑒 ) 𝑒 1 𝑖 𝑀 − 𝛼 + 𝑀 1 2 𝐷 𝑡2 1 𝑖 𝑡 − 𝑘 2 𝑡′ 2 𝑎 ) −𝑖𝑘𝑡′ 2 𝛾(1+𝑎𝑡 2 )]=0, (52)
+Massdensity𝜌𝑆 isdefinedby
+2
+𝜌𝑆 𝜌𝑆2
+𝐿
+1
+𝜇
+1
+(𝑁
+1
+−𝑖𝑘𝑡′
+2
+)𝑒𝑁1𝑡2+𝐿
+2
+𝜇
+1
+(−𝑁
+1
+−𝑖𝑘𝑡′
+2
+)𝑒−𝑁1𝑡2
+𝜌𝑆 2 = 𝑁 1 2 𝑆 1 − 𝑁 2 𝑆 1 𝜌 2 𝑆 22 . (44) +𝐿 3 𝜇 1 𝐵 1 (𝑖 ( 𝑘 𝑀 + 2 𝑀 − 1 𝑁 )(− 2) 𝑀 𝑒− 1 𝑀 + 1𝑡2 𝑖𝑘𝑡′ 2 )
+1 1
+U [ 𝐷 sin
+𝑧𝑧
+g + th
+1
+e
++
+2 i 𝑎 n
+𝑎
+h
+𝑧
+o 𝐷 m
+𝑧
+o + ge 𝛾 n 𝑆 e ( i − ty 𝑘2 m + en 𝜔 t 2 i 𝜌 o 𝑆
+2
+n ′ e ) d ] 𝑈 e
+3
+a
+𝑦
+rl = ier 0 , , Eq.(43)ismodifieda ( s 45) +𝐿 4 𝜇 1 𝐵 1 (𝑖 ( 𝑘 𝑀 −
+1
+2 𝑀 − 1 𝑁 )(
+1
+2 𝑀 )𝑒 1 𝑀 + 1𝑡2 𝑖𝑘𝑡′ 2 ) (53)
+where𝛾𝑆 =𝑁𝑆′(𝑀𝑆′)−1. −𝐿 6 𝑒𝑖𝛼 2 𝑆𝑡2𝑀 2 𝑆[(1+𝑎𝑡 2 )𝑖𝛼 2 𝑆
+Bysubstitu 2 ting𝑈 2 3𝑦 (𝑧)=𝑈 3𝑦 (𝑧)(1+𝑎𝑧)−1inEq.(45)andfromEq.(41), −𝑎−𝑖𝑘𝑡′ 2 𝛾(1+𝑎𝑡 2 )]=0.
+we get the displacement component in the anisotropic heterogeneous In case of 𝑴𝟐 −𝑵𝟐 = 𝟎, we get the following expressions from the
+poroushalf-spacewithoutfracturesasfollows 𝟏 𝟏
+above-mentionedboundaryconditions
+𝑢 3𝑦 (𝑥,𝑧,𝑡)=𝐿 6 𝑒𝑖𝛼 2 𝑆𝑧(1+𝑎𝑧)−1𝑒𝑖(𝑘𝑥−𝜔𝑡). (46) 𝐿 1 (𝑁 1 −𝑖𝑘𝑡′ 1 )𝑒𝑁1(𝑡1−ℎ1)+𝐿 2 (−𝑁 1 −𝑖𝑘𝑡′ 1 )𝑒−𝑁1(𝑡1−ℎ1)
+H an e d re 𝛼 , 2 𝑆 𝑢 3 = 𝑦 → 𝛾𝑆 0 (− w 𝑘2 hi + le 𝜔 𝑧 2𝜌 → 𝑆 2 ′ ∞ ). and𝐼𝑚(𝛼 2 𝑆)>0.𝐿 6 isanarbitraryconstant +𝐿 3 𝐵 1 (𝑖𝑘 𝑁 + 1 2 𝑀 𝑒− 1 𝑀 ) 1 ( ( 𝑀 𝑡1− 1 ℎ − 1) 𝑖𝑘𝑡′ 1 ) +𝐿 4 𝐵 1 (𝑖𝑘− 𝑁 𝑀 1 2𝑒 1 𝑀 )( 1 − (𝑡1 𝑀 −ℎ 1 1) −𝑖𝑘𝑡′ 1 ) =0, (54)
+4. Boundaryconditionsandfrequencyequation 𝐿
+3
+𝑒𝑀1(𝑡1−ℎ1)−𝐿
+4
+𝑒−𝑀1(𝑡1−ℎ1)=0, (55)
+When 𝑴𝟐−𝑵𝟐 ≠ 𝟎, five boundary conditions for both cases are
+writtenbelow
+𝟏 𝟏 𝐿
+3
+𝑒𝑀1𝑡2−𝐿
+4
+𝑒−𝑀1𝑡2 =0, (56)
+(𝐢)𝜏 −𝑡′𝜏 =0at𝑧=𝑡 (𝑥)−ℎ ,
+( ( 𝐢 𝐢 𝐯 𝐢) ) 𝑛⃗ 𝑦 ( 𝑧 𝐚 ⋅ ) ∇ F 𝜙 1 o = r 𝑦𝑥 C 0 a a s t e: 𝑧 I, = 𝑢 𝑡 1 1 ( = 𝑥) 1 𝑢 − 2𝑦 ℎ 1 a , t (𝐢 𝑧 1 𝐢𝐢) = 𝑛⃗⋅ 𝑡 2 ∇ (𝑥 𝜙 ), = (𝐛 0 ) a F t o 𝑧 r = C 𝑡 a 2 s ( e 𝑥 : ) I , I, 𝑢 1 = 𝑢 3𝑦 at 𝐿 1 𝑒𝑁1𝑡2+𝐿 2 𝑒−𝑁1𝑡2+𝐿 3 𝐵 𝑁 1 (𝑖 1 2 𝑘 𝑒− + 𝑀 𝑀 1𝑡2 1 ) +𝐿 4 𝐵 1 𝑁 (𝑖 1 𝑘 2𝑒 − 𝑀1 𝑀 𝑡2 1 ) −𝐿 51 𝑒 + 𝑖𝛼 2 𝐷 𝑎 𝑡2 𝑡 2 (57)
+𝑧=𝑡 (𝑥), =0,
+2
+(𝐯)(𝐚)ForCase:I,𝜏 −𝑡′𝜏 =𝜏𝐷 −𝑡′𝜏𝐷 at𝑧=𝑡 (𝑥),(𝐛)ForCase:II,
+𝜏 𝑦𝑧 − W 𝑡 h ′ 2 e 𝜏 n 𝑦𝑥 𝑴 = 𝟐 𝜏 𝑦 𝑆 − 𝑧 − 𝑵 𝑡 𝟐 ′ 2 𝑦 𝜏 𝑧 = 𝑦 𝑆 𝑥 𝟎 a , t 2 f 𝑧 𝑦 iv 𝑥 = e 𝑡 b 2 ( o 𝑥 𝑦 u ) 𝑧 . nda 2 ry 𝑦𝑥 conditions 2 for both cases are 𝐿 1 𝑒𝑁1𝑡2+𝐿 2 𝑒−𝑁1𝑡2+𝐿 3 𝐵 𝑁 1 (𝑖 1 2 𝑘 𝑒− + 𝑀 𝑀 1𝑡2 1 ) +𝐿 4 𝐵 1 𝑁 (𝑖 1 𝑘 2𝑒 − 𝑀1 𝑀 𝑡2 1 ) −𝐿 61 𝑒 + 𝑖𝛼 2 𝑆 𝑎 𝑡2 𝑡 2 =0,
+𝟏 𝟏
+writtenbelow (58)
+5
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+UsingEq.(66),thedispersionandattenuationequationshavebeen
+𝐿
+1
+𝜇
+1
+(𝑁
+1
+−𝑖𝑘𝑡′
+2
+)𝑒𝑁1𝑡2+𝐿
+2
+𝜇
+1
+(−𝑁
+1
+−𝑖𝑘𝑡′
+2
+)𝑒−𝑁1𝑡2 acquiredfromEq.(62),whicharegivenby
++𝐿 𝜇 𝐵 1 (𝑖𝑘+𝑀 1 )(𝑀 1 −𝑖𝑘𝑡′ 2 ) sin[𝑀 11 𝑘 1 (𝑡 1 −𝑡 2 −ℎ 1 )]=0, (67)
+3 1 𝑁
+1
+2𝑒−𝑀1𝑡2
+(59)
+𝐵 (𝑖𝑘−𝑀 )(−𝑀 −𝑖𝑘𝑡′) cos[𝑀 𝑘 (𝑡 −𝑡 −ℎ )]=0. (68)
++𝐿 𝜇 1 1 1 2 11 1 1 2 1
+4 1 𝑁
+1
+2𝑒𝑀1𝑡2
+Eqs. (67) and (68) define the dispersive and damping natures of the
+−𝐿 5 𝑒𝑖𝛼 2 𝐷𝑡2𝑀 2 𝐷[(1+𝑎𝑡 2 )𝑖𝛼 2 𝐷−𝑎−𝑖𝑘𝑡′ 2 𝛾(1+𝑎𝑡 2 )]=0, primarySH-wavefrontpropagatinginthevoidporousmediumforboth
+𝐿 1 𝜇 1 (𝑁 1 −𝑖𝑘𝑡′ 2 )𝑒𝑁1𝑡2+𝐿 2 𝜇 1 (−𝑁 1 −𝑖𝑘𝑡′ 2 )𝑒−𝑁1𝑡2 cases,respectively.𝑅𝑒[𝑀 1 2−𝑁 1 2]=0⇒
+𝐵 (𝑖𝑘+𝑀 )(𝑀 −𝑖𝑘𝑡′) 1
++𝐿 3 𝜇 1 1 𝑁 1 2𝑒 1 −𝑀1𝑡 1 2 2 ⎡ ⎢ 1 ⎤ ⎥ 2
++𝐿 𝜇 𝐵 1 (𝑖𝑘−𝑀 1 )(−𝑀 1 −𝑖𝑘𝑡′ 2 ) (60) 𝑐=⎢ ⎢ (1−𝛿2)(𝑘 𝑚 )2 ( 1 − 1 )⎥ ⎥ , (69)
+4 1 𝑁 1 2𝑒𝑀1𝑡2 ⎢ ⎣ 1 1 𝑐 1 2 𝐴2 1 ⎥ ⎦
+−𝐿 6 𝑒𝑖𝛼 2 𝑆𝑡2𝑀 2 𝑆[(1+𝑎𝑡 2 )𝑖𝛼 2 𝑆 which maybe illustrated as the velocity of SH-waves of the first kind
+in a void porous layer of finite thickness for each case. Here, 𝑚 =
+−𝑎−𝑖𝑘𝑡′ 2 𝛾(1+𝑎𝑡 2 )]=0. √ 𝛼𝜉−1 = displacementparameter and 𝑐 = √ 𝛼(𝜌 𝑘̄)−1 =, velocity 1 of
+1 1
+After eliminating the arbitrary constants 𝐿 1 , 𝐿 2 , 𝐿 3 , 𝐿 4 , and 𝐿 5 from shear waves induced by changes in void volume fraction within the
+Eqs.(47),(48),(49),(50),and(52)incaseof𝑴𝟐−𝑵𝟐 ≠𝟎andfrom layer.
+𝟏 𝟏
+Eqs.(54),(55),(56),(57),and(59)incaseof𝑴𝟐−𝑵𝟐=𝟎,acommon Eq.(67)istransformedinto
+𝟏 𝟏
+complexequationforCase:Ihasbeenacquiredwhichisgivenby ( )2
+2 𝑛𝜋
+𝑀 = , (70)
+(𝑒𝑀1(𝑡1−𝑡2−ℎ1)−𝑒−𝑀1(𝑡1−𝑡2−ℎ1))[𝐷𝐷𝐷𝐷𝐷𝐷+𝐷𝐷𝐷𝐷𝐷𝐷]=0, (61) 11 𝑘 (𝑡 −𝑡 −ℎ )
+1 2 3 4 5 6 1 1 2 1
+where𝐷 𝑖 𝐷, 𝑖=1(1)6,areprovidedinAppendix. where 𝑀 11 2 = −0.5(1+𝛿2) √ 𝑀 1 2 1 +𝑀 1 2 2 −0.5(1−𝛿2)𝑀 11 +𝛿𝑀 12 . 𝑀 11
+Eq.(61)implies and 𝑀 are shown in Appendix and 𝑛 is an integer. Eq. (70) defines
+12
+𝑒𝑀1(𝑡1−𝑡2−ℎ1)−𝑒−𝑀1(𝑡1−𝑡2−ℎ1)=0, (62) theexpressionofSH-wavevelocityofsecondkindinelasticlayerwith
+voidporesforbothcases.
+With the help of Eqs. (63) and (66), we get the dispersive and
+𝐷 1 𝐷𝐷 2 𝐷𝐷 3 𝐷+𝐷 4 𝐷𝐷 5 𝐷𝐷 6 𝐷=0. (63) damping characteristics of secondary SH-wave front in Case I, which
+areasfollows
+The dispersion relation expressed in Eq. (62) describes the behaviour
+of the first SH-wave front depending only on void parameter and the 𝐷𝐷𝐷𝐷 +𝐷𝐷𝐷𝐷 𝐸𝐷𝐸𝐷+𝐸𝐷𝐸𝐷
+11 41 12 42 =− 3 1 4 2 , (71)
+complex Eq. (63) governs the propagation of the secondary SH-wave (𝐷𝐷)2+(𝐷𝐷)2 (𝐸𝐷)2+(𝐸𝐷)2
+41 42 1 2
+frontintheelasticlayeroveraheterogeneousanisotropicdualporous
+𝐷𝐷𝐷𝐷 −𝐷𝐷𝐷𝐷 𝐸𝐷𝐸𝐷−𝐸𝐷𝐸𝐷
+half-space. 12 41 11 42 =− 4 1 3 2 . (72)
+Aftereliminatingthearbitraryconstants𝐿 1 ,𝐿 2 ,𝐿 3 ,𝐿 4 ,and𝐿 6 from (𝐷 4 𝐷 1 )2+(𝐷 4 𝐷 2 )2 (𝐸 1 𝐷)2+(𝐸 2 𝐷)2
+Eqs.(47),(48),(49),(51),and(53)incaseof𝑴𝟐
+𝟏
+−𝑵𝟐
+𝟏
+≠𝟎andfrom
+Eqs.(71)and(72)portraythedispersiveanddampingcharacteristicsof
+Eqs.(54),(55),(56),(58),and(60)incaseof𝑴𝟐 𝟏 −𝑵𝟐 𝟏 =𝟎,acommon thesecondarySH-wavefrontpropagatingthroughanelastichomoge-
+complexequationforCase:IIhasbeenacquired,whichisgivenby neouslayeroverlyingananisotropicinhomogeneousfracturedporous
+(𝑒𝑀1(𝑡1−𝑡2−ℎ1)−𝑒−𝑀1(𝑡1−𝑡2−ℎ1))[𝐷𝑆𝐷𝑆𝐷𝑆+𝐷𝑆𝐷𝑆𝐷𝑆]=0, (64) half-space.
+1 2 3 4 5 6 With the help of Eqs. (65) and (66), we get the dispersive and
+where𝐷𝑆, 𝑖=1(1)6,areprovidedinAppendix. damping characteristics of second wave front of SH-waves in Case:II,
+𝑖
+Eq.(64)implies whichareexpressedasfollows
+𝑒𝑀1(𝑡1−𝑡2−ℎ1)−𝑒−𝑀1(𝑡1−𝑡2−ℎ1)=0, 𝐷
+1
+𝑆
+1
+𝐷
+4
+𝑆
+1
++𝐷
+1
+𝑆
+2
+𝐷
+4
+𝑆
+2 =−
+𝐸
+3
+𝑆𝐸
+1
+𝑆+𝐸
+4
+𝑆𝐸
+2
+𝑆
+, (73)
+(𝐷𝑆)2+(𝐷𝑆)2 (𝐸𝑆)2+(𝐸𝑆)2
+41 42 1 2
+𝐷𝑆𝐷𝑆 −𝐷𝑆𝐷𝑆 𝐸𝑆𝐸𝑆−𝐸𝑆𝐸𝑆
+𝐷𝑆𝐷𝑆𝐷𝑆+𝐷𝑆𝐷𝑆𝐷𝑆 =0. (65) 12 41 11 42 =− 4 1 3 2 , (74)
+1 2 3 4 5 6 (𝐷𝑆)2+(𝐷𝑆)2 (𝐸𝑆)2+(𝐸𝑆)2
+41 42 1 2
+Eq. (62) refers to the primary SH-wave front depending only on void
+where𝐷𝑖 ,𝐷𝑖 ,and𝐸𝑖,𝑖=𝐷,𝑆,𝑗=1,2,and𝑘=1(1)4,areprovided
+parameterandthecomplexEq.(65)representsthesecondarySH-wave 1𝑗 4𝑗 𝑘
+inAppendix.
+front propagating in an elastic layer over heterogeneous anisotropic
+Eqs.(73)and(74)delineatethedispersiveanddampingcharacter-
+singleporoushalf-space.
+istics of the secondary SH-wave front propagating through an elastic
+homogeneous layer overlying an anisotropic inhomogeneous porous
+5. Dispersionandattenuationequations
+half-spacewithoutfractures.
+Complexwavenumberisexpressedas𝑘=𝑘
+1
+(1+𝑖𝛿),where𝛿(≪1)
+6. Surfaceresponse
+isthedampingcoefficient.Theangularfrequency‘𝜔’isgivenby𝜔=
+𝑘 1 𝑐, where 𝑐 is the velocity of SH-waves. Several complex quantities WiththeaidofEqs.(16)and(35),thefollowingequationsrepresent
+includedinEqs.(62),(63),and(65)aredescribedas the derived expressions for shear stresses in the layer and half-space
+𝑁 =𝑘 (𝑁̄ +𝑖𝑁′),𝑀 =𝑘 (𝑀̄ +𝑖𝑀′),𝛼𝐷=𝑘 (𝛼𝐷 +𝑖𝛼𝐷), undercaseI
+1 𝛼 2 𝑆 1 = 1 𝑘 1 (𝛼 2 𝑆 1 1 +𝑖𝛼 2 𝑆 1 2 ),𝐷 𝑗 𝐷 1 = 1 𝐷 𝑗 𝐷 1 +𝑖 1 𝐷 𝑗 𝐷 2 2 ,𝐷 𝑗 𝑆 = 1 𝐷 2 𝑗 𝑆 1 1 +𝑖𝐷 2 𝑗 2 𝑆 2 , (66) 𝜏 𝑦𝑧 =𝜇 1 [𝐿 1 𝑁 1 𝑒𝑁1𝑧−𝐿 2 𝑁 1 𝑒−𝑁1𝑧−𝐿 3 𝑀 1 𝐵 𝑀 1 (𝑖 2 𝑘 − + 𝑁 𝑀 2 1 ) 𝑒𝑀1𝑧
+w
+𝑗=
+he
+1
+r
+(
+e
+1)
+𝑁
+6
+̄
+,
+1 ,
+ar
+𝑁
+e
+1 ′
+e
+,
+x
+𝑀
+h
+̄
+ib
+1 ,
+it
+𝑀
+ed
+1 ′
+i
+,
+n
+𝛼
+A
+2 𝐷 1
+p
+,
+p
+𝛼
+e
+2 𝐷
+n
+2
+d
+,
+i
+𝛼
+x
+2 𝑆
+.
+1 , 𝛼 2 𝑆 2 , 𝐷 𝑗 𝐷 1 , 𝐷 𝑗 𝐷 2 , 𝐷 𝑗 𝑆 1 , and 𝐷 𝑗 𝑆 2 for +𝐿
+4
+𝑀
+1
+𝐵
+𝑀
+1 (𝑖
+2
+𝑘
+−
+−
+𝑁
+𝑀
+2
+1 ) 𝑒−𝑀1𝑧]𝑒𝑖𝑘(𝑥−𝑐𝑡), 1 1 (75)
+1 1
+6
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+𝜏 𝑦 𝐷 𝑧 =𝑀 2 𝐷′ [ 𝐿 5 𝑖𝛼 2 𝐷𝑒𝑖𝛼 2 𝐷𝑧(1+𝑎𝑧)−𝐿 5 𝑎𝑒𝑖𝛼 2 𝐷𝑧 ] 𝑒𝑖(𝑘𝑥−𝜔𝑡). (76) 𝐸̃ 2 𝑗 =𝑡′ 1 𝑒−𝛼 2 𝑗 2 𝑘1𝑡2[ { 𝑀 2 𝑗′( 𝛼 2 𝑗 1 −𝑡′ 2 𝛾𝑗 ) +𝜇 1 𝑡′ 2 } cos ( 𝛼 2 𝑗 1 𝑘 1 𝑡 2 )
+Now,fromEqs.(75)and(76)andtheboundaryconditions(47)–(50) +𝑀𝑗′ 𝛼𝑗 sin ( 𝛼𝑗 𝑘 𝑡 ) ],
+2 22 21 12
+and(52),weacquiretheexpressionsofthearbitraryconstants𝐿 −𝐿
+2 5
+√
+(
+in
+76
+t
+)
+e
+,
+rm
+th
+s
+e
+o
+f
+f
+in
+𝐿
+al
+1 .
+fo
+A
+r
+f
+m
+te
+u
+r
+la
+s
+t
+u
+i
+b
+o
+s
+n
+tit
+o
+u
+f
+ti
+s
+n
+h
+g
+ea
+t
+r
+he
+s
+s
+t
+e
+res
+e
+s
+x
+e
+p
+s
+re
+a
+s
+r
+s
+e
+io
+d
+n
+e
+s
+d
+i
+u
+n
+ce
+E
+d
+q
+,
+s.
+w
+(
+h
+7
+i
+5
+c
+)
+h
+a
+a
+n
+r
+d
+e
+𝐸̃
+3
+𝑗 =−𝐸̃
+1
+𝑗, 𝐸̃
+4
+𝑗 =−𝐸̃
+2
+𝑗, 𝛼
+2
+𝑗
+1
+=−𝑞
+1
+𝑗, 𝑞
+1
+𝑗 = √ √ √1−
+𝑐
+𝑐
+𝑗
+2
+2
+, 𝑐
+2
+𝑗
+the desired expressions to analyse the surface response. In case II, 2
+similarapproachisadaptedtofindtheshearstressesinthelayerand √
+half-space. = √ √ √ 𝑁 2 𝑗′ , 𝑗=𝑆,𝐷.
+𝜌𝑗′
+7. Validationofthepresentmodelwithpre-establishedmodels Eq.(78)representsthedispersionequationofsecondwavefrontofSH-
+wavespropagatingthroughancorrugatedelasticlayerwithvoidpores
+Toassessthevalidityofourmathematicalmodel,severalrelevant restingoveranisotropichomogeneouselasticsubstratewhichmatches
+scenarioshavebeenexaminedwhichareprovidedbelow perfectlywiththedispersionequation(24)ofSharmaetal.[46]inthe
+absenceofcouplestressparameter.
+Case-7.1: Neglecting the presence of void pores (i.e. 𝛽 = 𝛼 = 𝜉 =
+1
+𝜔 = 𝑘 = 0) in the layer and in the absence of inhomogeneity param- Case-7.3: In the absence of inhomogeneity parameter, anisotropy,
+eter,attenuationcoefficient,andcouplingmasscoefficientsrelatedto attenuationcoefficient,couplingmasscoefficientsotherthan𝜌𝑗 ,and
+11
+f m ra o c d t e u l re b s ec ( o i. m e. e 𝑎 sa = c 𝛿 or = rug 𝜌 a 𝐷 1 t 3 ′ ed = h 𝜌 o 𝐷 3 m 3 ′ o = ge 𝛺 ne 1 𝐷 o 2 ′ u = sis 𝛺 o 1 𝐷 t 3 r ′ op = ic 0) e , la t s h t e ic c l o a n y s e i r d r e e r s e t d - 𝜌 co 𝐷 r ′ r = ug 𝜌 a 𝐷 te ′ d = b 𝜌 o 𝐷 u ′ n = da 𝜌 r 𝐷 i ′ es = ( 𝜌 i. 𝐷 e ′ . = 𝑎 0 → ,𝑡 0 ( , 𝑥 𝛾 ) 𝐷 =0 = ,a 1 n , d 𝛿 𝑡 = (𝑥 0 ) , = 𝛿 2 0) = ,fr 0 o , m 𝜌𝐷 1 E 1 ′ q = .(7 𝜌𝑗 1 ′ ) ,
+12 13 22 23 33 1 2
+ingoverananisotropichomogeneousfluid-saturatedporoussubstrate. weget
+Hence, only one wave front of SH-waves exists in the medium. Using √
+aforementionedconditions,thedispersionrelations(71)and(73)ofthe 𝑀𝑗′ 1− 𝑐2
+secondwavefrontforcaseIandcaseIIaremodifiedas
+[√
+𝑐2
+] 2
+𝑐 2
+𝑗2
+tan −1𝑘 ℎ = , 𝑗=𝑆,𝐷. (79)
+𝐸̃ 3 𝑗𝐸̃ 1 𝑗+𝐸̃ 4 𝑗𝐸̃ 2 𝑗 =−1, (77) 𝐴2 1 1 1 𝜇 1 √ 𝐴 𝑐2 2 −1
+𝐸̃𝑗2 +𝐸̃𝑗2 1
+1 2
+Eq.(79)representsthewell-knownLovewavedispersionrelation[2]
+where
+propagating in an isotropic homogeneous elastic layer lying over an
+𝐸̃ 1 𝑗 =𝑡′ 1 𝑒−𝛼 2 𝑗 2 𝑘1𝑡2[ { 𝑀 2 𝑗′( 𝛼 2 𝑗 1 −𝑡′ 2 𝛾𝑗 ) +𝜇 1 𝑡′ 2 } cos ( 𝛼 2 𝑗 1 𝑘 1 𝑡 2 ) i √ sotropic homogeneous elastic half-space. Here, 𝐴 1 = √𝜇 𝜌1 1 and 𝑐 2 𝑗 =
+𝐸̃ 2 𝑗 =
+−
+𝑡′ 1 𝑒
+𝑀
+−𝛼
+2 𝑗
+2 𝑗
+′
+2
+𝛼
+𝑘
+2
+1
+𝑗 2
+𝑡2
+s
+[
+in
+{
+(
+𝑀
+𝛼 2 𝑗
+2 𝑗
+1
+′
+𝑘
+(
+1
+𝛼
+𝑡 2
+2 𝑗
+)
+1 −
+],
+𝑡′ 2 𝛾𝑗 ) +𝜇 1 𝑡′ 2 } cos ( 𝛼 2 𝑗 1 𝑘 1 𝑡 2 )
+𝑁 𝜌𝑗 2 𝑗 ′ ′ .
++𝑀𝑗′ 𝛼𝑗 sin ( 𝛼𝑗 𝑘 𝑡 ) ], 8. Numericaldataandgraphicalimplementations
+2 22 21 12
+√
+𝐸̃𝑗 =−𝐸̃𝑗, 𝐸̃𝑗 =−𝐸̃𝑗, 𝛼𝑗 =−𝑞𝑗√ 𝛾𝑗, 𝑞𝑗 = √ √ √1− 𝑐2 , 𝑐𝑗 The impact of void parameter (𝑚 ∕ℎ ), inhomogeneity parameter
+3 1 4 2 21 1 1 𝑐𝑗2 2 1 1
+2 (𝑎ℎ 1 ),positionparameter(𝑥∕ℎ 1 ),fluctuationparameter(𝛹ℎ 1 ),flatness
+= √ 𝑁𝑗′ ⎡ ⎢𝜌𝑗′ − (𝜌𝑗 1 ′ 2 )2⎤ ⎥ − 2 1 , 𝑗=𝑆,𝐷. p h a a r v a e m b e e t e e n r ( v 𝑟 i 1 s ∕ u ℎ a 1 li ) ze o d n i t n he all ph fi a g s u e re v s e . lo F c ig it u y re a s n 2 d , a 3 t , te a n n u d a 4 tio r n ep c r o es e e ff n i t ci t e h n e t
+2 ⎢ 11 𝜌𝑗′ ⎥ dispersioncharacteristicofthefirstwavefrontofSH-wavessubjected
+⎣ 22 ⎦
+tothevoidparameters.Figs.2and3displaytheeffectofvoidparame-
+Eq. (77) represents the dispersion equation of SH-waves propagating terforthefirstkind,whereasFig.4correspondstothesecondkindof
+through a corrugated isotropic homogeneous layer situated over an first wave front. This is accomplished by plotting the phase velocity
+anisotropichomogeneousfluid-saturatedporoussubstrate,whichaligns (𝑐∕𝑐 ) against the dimensionless wave number (𝑘 ℎ ). Figures 5(2)15
+1 1 1
+perfectlywiththedispersionequation(28)ofKunduetal.[45]inthe and 6(2)16 display the dispersion and damping properties of second
+absenceofinitialstress. wave front of SH-waves propagating in an elastic material without
+voids, respectively. Figures 6(2)16 are associated with the damping
+Case-7.2:Inthiscase,theanalysisexcludestheimpactsofanisotropy,
+nature, where attenuation coefficient 𝐿𝑜𝑔(𝛿) is plotted against (𝑘 ℎ ).
+inhomogeneityparameters,attenuationcoefficient,andcouplingmass 1 1
+coefficientsrelatedtobothmatrixporesandfractures(i.e.𝛾𝑗 =1,𝑎= A comparison between Case I and Case II is presented in each of the
+𝛿 = 𝜌𝑗 = 0,𝜌𝑗′ = 𝜌𝑗′). By neglecting the aforementioned parameters, figures5−16.Figs.17and18illustratethesurfaceeffectsofshearstress
+𝑖𝑘 11 withrespecttothepresenceandabsenceofcorrugation,respectively.
+weobtainthedispersionrelationsoftwowavefrontsofSH-waves.In
+Fig.19dealswiththesurfaceresponseofthedisplacementoflayer(𝑢 )
+this case, the dispersion relation (70) of first wave front will remain 𝑦
+withrespecttothehorizontaldistance𝑥inthecaseofonlythreeridges
+unaffected, while the second front needs to be addressed. Hence, the
+on the free corrugated surface and the interface. Numerical values of
+dispersion Eqs. (71) and (73) of the second wave front for case I and
+requiredparametersrelatedtovoidporouslayerareobtainedfromDey
+caseIIaretransformedinto
+etal.[11]
+𝐸̃𝑗𝐸̃𝑗+𝐸̃𝑗𝐸̃𝑗
+3 𝐸̃𝑗 1 2 +𝐸̃ 4 𝑗2 2 =−1, (78) 𝜇 1 =7.5×109 N/m2, 𝜌 1 =1973kg/m3
+1 2
+Numerical values for porous half-space with fractures are taken from
+where
+BerrymanandWang[33]andDaiandKuang[34],
+𝐸̃ 1 𝑗 =𝑡′ 1 𝑒−𝛼 2 𝑗 2 𝑘1𝑡2[ { 𝑀 2 𝑗′( 𝛼 2 𝑗 1 −𝑡′ 2 𝛾𝑗 ) +𝜇 1 𝑡′ 2 } cos ( 𝛼 2 𝑗 1 𝑘 1 𝑡 2 ) 𝑀𝐷=10GPa, 𝑁𝐷=12GPa𝜌𝐷=3000kg/m3, 𝜌𝐷=1000kg/m3,
+−𝑀 2 𝑗′ 𝛼 2 𝑗 2 sin ( 𝛼 2 𝑗 1 𝑘 1 𝑡 2 ) ], 2 2 𝜂 𝑙 =10−3 PaS, 𝑠 𝜅(11)=10−16 m2, 𝑙 𝜅(22)=10−12 m2
+7
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+Fig.2. Effectofseveralvaluesofvoidparameter 𝑚 ℎ1 1 onphasevelocity 𝑐 𝑐 1 against𝑘 1 ℎ 1 . Fig.4. Effectofseveralvaluesofvoidparameter 𝑚 ℎ1 1 onphasevelocity 𝑐 𝑐 1 against𝑘 1 ℎ 1 .
+(𝐴2∕𝑐2), namely (𝐴2∕𝑐2) = 1.2, 1.8, and 2.4. It is evident from Fig. 3
+1 1 1 1
+that as value of (𝐴2∕𝑐2) escalates, phase velocity (𝑐∕𝑐 ) is noticed to
+1 1 1
+bedecreased.Thedifferencebetweenconsecutivecurvesissignificant
+throughouttheentirerange.Thedifferencebetweencurves1and2is
+muchmoredominantascomparedtothedifferencebetweencurves2
+and3.Furthermore,itcanbeclearlyobservedthatthephasevelocity
+ofSH-wavesishigherforlowvaluesof𝑘 ℎ .
+1 1
+Fig. 4 represents the variation of phase velocity (𝑐∕𝑐 ) against
+1
+dimensionless wave number (𝑘 ℎ ) for the second kind of first wave
+1 1
+front subjected to discrete values for void parameter 𝑚1, viz. (𝑚1) =
+0.2, 0.3, and 0.4. It is evident from Fig. 4 that as the
+ℎ1
+value of
+ℎ1
+(𝑚1)
+ℎ1
+ascends, phase velocity (𝑐∕𝑐 ) is noticed to diminish. The difference
+1
+betweensuccessivecurvesissignificantthroughouttheentiredomain.
+Furthermore, it can be clearly observed that the phase velocity of SH
+wavesishigherforlowvaluesof𝑘 ℎ .
+1 1
+8.2. Effectofinhomogeneityparameter(𝑎ℎ )
+1
+Fig.3. Effectofseveralvaluesofvoidparameter 𝐴 𝑐1 2 2 1 onphasevelocity 𝑐 𝑐 1 against𝑘 1 ℎ 1 . and T a h t e te e n f u fe a c t t io o n f c in o h e o ff m ic o ie g n e t ne is ity ob p s a e r r a v m ed et i e n r F (𝑎 ig ℎ s 1 . ) 5 on an th d e 6 p , h r a e s s e pe v c e t l i o v c e i l t y y .
+In both the figures, the values of 𝑎ℎ are considered as 0.1, 0.5, and
+1
+0.9. From Fig. 5, it is observed that 𝑐∕𝐴 decreases with respect to
+1
+ByfollowingDaiandKuang[34],valuesforporoushalf-spacewithout the increase in 𝑎ℎ for each case. On the other hand, phase velocity
+1
+fracturesareobtainedwhichareasfollows is greater in case II for each value of 𝑎ℎ . The distance between
+1
+𝑀𝑆 =10GPa, 𝑁𝑆 =12GPa, 𝜌𝑆′ =2848.9152kg/m3, curves 2 and 3 is negligible as compared to the distance between
+2 2 11 curves 1 and 2. Similar scenario can also be observed for curves 4, 5,
+𝜌𝑆
+12
+′ =−400.77kg/m3, 𝜌𝑆
+22
+′ =586.6248kg/m3
+and 6. Furthermore, for each 𝑎ℎ 1 value, the distance between curves
+associated with case I and case II is very nominal. As 𝑘 ℎ assumes
+1 1
+8.1. Effectofvoidparameter(𝑚 1 ∕ℎ 1 and𝐴2 1 ∕𝑐 1 2) ascendingmagnitudes,thevisibilityofthevariationincurvesincreases.
+From Fig. 6, it is observed that attenuation coefficient decreases
+Fig. 2 reflects the fluctuation of phase velocity (𝑐∕𝑐 1 ) against di- withrespecttotheaugmenting𝑎ℎ 1 valuesforeachcase.Ontheother
+mensionless wave number (𝑘 1 ℎ 1 ) for the first kind of first wave front hand,attenuationcoefficientislesserincaseIIforeachvalueof𝑎ℎ 1 .
+subjected to discrete values for void parameter 𝑚1, viz. 𝑚1 = 0.3, Thedifferencesamongallthecurvesaresignificantlynoticeableupto
+0 ph .5 a , se an v d elo 0 c .7 it . y I ( t 𝑐∕ is 𝑐 1 e ) v i i s d n e o n t t ic f e r d om to F b i e g. de 2 cr t e h a a s t ed a . s T v h a e lu ℎ d 1 e iff o e f re 𝑚 ℎ n 1 1 ce ℎ e 1 b sc e a tw la e te e s n , a ca 𝑘 se 1 ℎ I 1 a v n a d lu c e as o e f I 4 I . c 5 ur a v p e p s ro fo x r im ea a c te h ly v . a A lu f e te o r f t 𝑎 h ℎ a 1 t, b t e h c e o d m i e ff s er n e e n g c l e igi b b e l t e w . een
+consecutivecurvesissignificantthroughouttheentirerange.Thedif-
+ferencebetweencurves1and2ismuchmorefavourableascompared 8.3. Effectofanisotropy(𝛾)
+tothedifferencebetweencurves2and3.Furthermore,itcanbeclearly
+noticedthatthevelocityofSH-wavesishigherforlowvaluesof𝑘 ℎ . The impact of variation of anisotropy parameter (𝛾) on phase ve-
+1 1
+Fig.3representsthefluctuationof(𝑐∕𝑐 )against(𝑘 ℎ )forthefirst locity 𝑐 andattenuationcoefficient𝐿𝑜𝑔(𝛿)isobservedinFigs.7and
+1 1 1 𝐴1
+kindoffirstwavefrontsubjectedtodiscretevaluesforvoidparameter 8, respectively. In both figures, the values of 𝛾 are considered as 1.0,
+8
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+Fig.5. Effectofseveralvaluesof𝑎ℎ 1 onphasevelocity 𝐴 𝑐 1 against𝑘 1 ℎ 1 . Fig.7. Effectofseveralvaluesof𝛾 onphasevelocity 𝐴 𝑐 1 against𝑘 1 ℎ 1 .
+Fig.8. Effectofseveralvaluesof𝛾 onattenuationcoefficientagainst𝑘ℎ.
+1 1
+Fig.6. Effectofseveralvaluesof𝑎ℎ onattenuationcoefficientagainst𝑘ℎ.
+1 1 1
+issignificantforthepurposeofnon-destructivetestingofengineering
+1.5, and 2.0. From Fig. 7, it is clear that 𝑐 is inversely proportional materials.
+𝐴1
+to𝛾 regardlesstothefactfractureporosityispresentornot,i.e.,as𝛾
+ascends,phasevelocitydiminishes.Ontheotherhand,phasevelocityis 8.4. Effectofpositionparameter(𝑥∕ℎ 1 )
+greaterforcaseIIascomparedtocaseIwithrespecttoeachvalueof𝛾.
+Moreover,adrasticdifferencebetweenthesuccessivecurvesisvisible Figs. 9 and 10 represent the fluctuation of 𝑐 and 𝐿𝑜𝑔(𝛿) against
+𝐴1
+aftera𝑘 ℎ valueof2.5approximately.Thedistancebetweencurves1 (𝑘 ℎ ) subjected to the discrete values of position parameter (𝑥∕ℎ ),
+1 1 1 1 1
+and4iscomparativelyminimalratherthanthedistancebetweencurves respectively.Inboththefigures,thevaluesof 𝑥 areconsideredas0.40,
+2and5andcurves3and6. 0.45, and 0.50. It is evident from Fig. 9 that ℎ p 1 hase velocity increases
+FromFig.8,itisobservedthatattenuationcoefficientdecreasesfor with the increase in position parameter for both cases. The phase
+initial𝑘 ℎ rangesas𝛾 ascendsforeachcase.Beyondparticular𝑘 ℎ velocity is lesser in the first case than case II in terms of a particular
+1 1 1 1
+values,curves1and4,curves2and5,andcurves3and6intersectand value of position parameter. The difference between the successive
+reversenatureisobservedforadiminutiverangeof𝑘 ℎ .Afterwards, curvesineachcaseisfavourablewhen𝑥∕ℎ varies.Novisibleimpact
+1 1 1
+𝐿𝑜𝑔(𝛿) again starts to acquire greater values in case I than in case isobservedwhenthecomparisonbetweencaseIandcaseIIcurvesis
+II. Furthermore, attenuation coefficient is greater in case I than case takenunderconsideration.
+II for each value of 𝛾. The differences among all the case II curves From Fig. 10, it is observed that attenuation coefficient increases
+becomenegligiblebeyonda𝑘 ℎ valueof4.5approximately,whereas withrespecttotheincreasein𝑥∕ℎ foreachcase.Ontheotherhand,
+1 1 1
+curvessubjectedtothevariationin𝛾wideninboththecases.Analysing attenuationcoefficientisgreaterincaseIforeachvalueof(𝑥∕ℎ ).The
+1
+the impact of anisotropy parameter on the propagation of SH-waves differencesamongallthecaseIIcurvesbecomesignificantlyvisibleup
+9
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+Fig.9. Effectofseveralvaluesof 𝑥 onthephasevelocity 𝑐 inoppositionto𝑘ℎ. Fig.11. Effectofseveralvaluesof𝛹ℎ onphasevelocity 𝑐 against𝑘ℎ.
+ℎ1 𝐴1 1 1 1 𝐴1 1 1
+Fig.12. Effectofseveralvaluesof𝛹ℎ onattenuationcoefficientagainst𝑘ℎ.
+1 1 1
+Fig.10. Effectofseveralvaluesof 𝑥 onattenuationcoefficientagainst𝑘ℎ.
+ℎ1 1 1
+From Fig. 12, it is noticed that 𝐿𝑜𝑔(𝛿) is directly proportional to
+𝛹ℎ for each case. Moreover, 𝐿𝑜𝑔(𝛿) is sightly greater in case I than
+1
+to a 𝑘 ℎ value of 5 approximately. After that, no difference between
+1 1 case II for each value of 𝛹ℎ . The difference between the successive
+1
+consecutivecurvesisvisible.
+curvesineachcaseissignificantlydominating,whereasthedifference
+isnegligiblewhenthecomparisonbetweenbothcasesaretakenunder
+8.5. Effectoffluctuationparameter(𝛹ℎ )
+1 consideration.
+Figs.11and12representthevariationin 𝑐 andattenuationcoef-
+ficient𝐿𝑜𝑔(𝛿)subjectedtothedifferentvalues 𝐴 o 1 ffluctuationparameter 8.6. Effectsofflatnessparameters(𝑟 1 ∕ℎ 1 and𝑟 2 ∕ℎ 1 )
+(𝛹ℎ ),respectively.Inboththefigures,thevaluesof𝛹ℎ areconsidered
+1 1
+as 1.1, 1.5, and 1.9. It is evident from Fig. 11 that phase velocity Figs. 13 and 14 represent the effect of the variation in flatness
+decreaseswiththeincreaseinfluctuationparameterforbothcases.The parameter (𝑟 ∕ℎ ) on the phase velocity and attenuation coefficient,
+1 1
+phasevelocityislesserincaseIthancaseIIinlightofaparticularvalue respectively. In both the figures, the values of 𝑟 ∕ℎ are considered
+1 1
+offluctuationparameter.Thedifferencebetweenthesuccessivecurves as0.30,0.35,and0.40.ItisevidentfromFig.13thatphasevelocity
+ineachcaseisfavourablewhen𝛹ℎ varies.Thedistancesbetweenthe increases with the decrease in flatness parameter for both cases. The
+1
+curvesassociatedwithcaseIandIIarenegligibleascomparedtothe phase velocity is lesser in case I than case II for a particular value
+differencesbetweenthecurvescorrespondingtothevariationin𝛹ℎ . offlatnessparameter.Thedifferencebetweenthesuccessivecurvesin
+1
+10
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+Fig.13. Effectofseveralvaluesof
+ℎ
+𝑟1
+1
+onphasevelocity
+𝐴
+𝑐
+1
+against𝑘
+1
+ℎ
+1
+.
+Fig.14. Effectofseveralvaluesof
+ℎ
+𝑟1
+1
+onattenuationcoefficientagainst𝑘
+1
+ℎ
+1
+.
+each case is favourable when 𝑟 ∕ℎ varies. Case I and case II curves
+1 1
+exhibit minimal separation compared to the impact of varying the
+flatnessparameter.
+From Fig. 14, it is noticed that attenuation coefficient increases
+withtheincreasein𝑟 ∕ℎ forbothcasesthroughouttheentiredomain.
+1 1
+Moreover, attenuation coefficient increase up to a 𝑘 ℎ value of 7
+1 1
+approximately and beyond that 𝑘 ℎ value, curves intersect and a
+1 1
+reverse feature is observed when the comparison between case I and
+case II is considered, i.e., attenuation coefficient is greater in case II
+before intersection and is lesser after intersection of curves for each
+valueof𝑟 ∕ℎ .Furthermore,foreach𝑟 ∕ℎ value,thedistancebetween
+1 1 1 1
+curves associated with case I and case II is very nominal. As 𝑘 ℎ
+1 1
+assumesascendingmagnitudes,thevisibilityofthevariationincurves
+increases.
+Figs.15and16representthefluctuationof 𝑐 and𝐿𝑜𝑔(𝛿)against
+𝐴1
+(𝑘 ℎ ) subjected to the discrete values of flatness parameter 𝑟 ∕ℎ ,
+1 1 2 1
+respectively. In both the figures, the values of 𝑟 ∕ℎ are considered
+2 1
+as0.08,0.10,and0.12.ItisevidentfromFig.15thatphasevelocity
+increases with the decrease in flatness parameter for both cases. The
+phasevelocityisgreaterincaseIIthancaseIforaeachvalueofflatness
+parameter.Thedifferencebetweenthesuccessivecurvesineachcase
+is favourable when 𝑟 2 ∕ℎ 1 varies. The distances between the curves of Fig.15. Effectofseveralvaluesof ℎ 𝑟2 1 onphasevelocity 𝐴 𝑐 1 against𝑘 1 ℎ 1 .
+caseIandcaseIIareverynominalascomparedtothedifferenceswhen
+variationinflatnessparameteristakenunderconsideration.
+From Fig. 16, it is observed that attenuation coefficient decreases layer and curves 2 and 4 are plotted for half-space. At 𝑧 = −10.0001,
+withtheincreasein𝑟 2 ∕ℎ 1 forbothcasesinitially.Lateron,curvesinter- |𝜏 𝑦𝑧| starts from the values of approximately 9.1875 and 9.394 for
+sectatdifferent𝑘 1 ℎ 1 values.Afterintersecting,attenuationcoefficient caseIandcaseII,respectively.Thisobservationjustifiestheboundary
+becomesgreaterincaseIIforeachvalueof𝑟 2 ∕ℎ 1 .Furthermore,foreach conditionconsideredatthefreesurfaceinthepresenceofcorrugation.
+𝑟 2 ∕ℎ 1 value, the distances between curves associated with both cases As𝑧ascends,|𝜏 𝑦𝑧|increasesandreachesaparticularcoordinateatthe
+areverynominal.As𝑘 1 ℎ 1 ascends,thevariationbetweenconsecutive interface. It is observed that at 𝑧 = 0.0001, |𝜏 𝑦𝑧| for the half-space
+curvesunderthepurviewofthevariationin𝑟 2 ∕ℎ 1 canbenoticedmuch startsfromdifferentmagnitudeduetocorrugationineachcase,which
+moreeffectivelyineachcase. isagainsatisfyingtheconsideredboundarycondition.As𝑧augments,
+shear stressof thehalf-space beginsto diminish.Furthermore,case II
+8.7. Surfaceresponseofshearstress(𝜏 𝑦𝑧 ) curvesobtainhigher|𝜏 𝑦𝑧|magnitudeswhenthedepthofthehalf-space
+increases.Beyondaparticularpoint,thereversefeatureisdisclosed.
+Surface effects of the shear stress (|𝜏 𝑦𝑧|) against depth (𝑧) for cor- A 𝑧 range of [−10,20] has been considered in Fig. 18. 𝑧 = −10
+rugatedboundariesandwithoutcorrugationareshowninFigs.17and representsthefreesurfacewithoutcorrugationand𝑧=0indicatesthe
+18,respectively.A𝑧rangeof[−10.0001,20]hasbeentakenintoaccount corrugation free interface in both cases. At 𝑧 = −10, |𝜏 𝑦𝑧| starts from
+in Fig. 17. 𝑧 = −10.0001 represents the free corrugated surface and the value of 0 for both cases. This observation justifies the boundary
+𝑧 = 0.0001 indicates the corrugated interface in both cases. In both conditionatthefreesurfacewithoutcorrugation,i.e.𝜏 =0at𝑧=−ℎ.
+𝑦𝑧
+figures, curves 1 and 2 are plotted for Case I and curves 3 and 4 As𝑧ascends,|𝜏 𝑦𝑧|increasesandreachesaparticularcoordinateatthe
+define Case II. Moreover, curves 1 and 3 imply the surface effect in interface.Itisobservedthatat𝑧=0,|𝜏 𝑦𝑧|forthehalf-spacestartsfrom
+11
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+Fig. 18. Surface effect of stress tensor |𝜏 𝑦𝑧| against depth 𝑧 without corrugated
+Fig.16. Effectofseveralvaluesof
+ℎ
+𝑟2
+1
+onattenuationcoefficientagainst𝑘
+1
+ℎ
+1
+. boundaries.
+is three, it is observed that the first ridge acquires the greatest depth
+at𝑥=−0.75,thesecondridgehasthehighestpeakat𝑥=0,andthe
+third ridge has the maximum depth at 𝑥 = 0.75 approximately. Now,
+according to Fig. 19, curves 3 and 4 correspond to the displacement
+at the corrugated free surface and interface, respectively. It is clearly
+noticedthatforboththecorrugatedboundaries,thedistributionof𝑢
+𝑦
+has fluctuations at the locations exactly same as of the highest peaks
+or maximum depths of the ridges. Moreover, 𝑢 for the corrugated
+𝑦
+interfaceattainslessermagnitudesthanforthecorrugatedfreesurface
+except the regions of fluctuations. This fact justifies the presumed
+conditionthatdisplacementdecreasesalongwiththeincreaseindepth.
+9. Conclusions
+Theconcludingremarksareasfollows:
+• Inbothcases,dispersionandattenuationequationsarefreefrom
+pressureoftheliquidsaturatedinpores.
+• This study reveals that the medium transmits two fronts of SH-
+waves. The velocity of the first wave front depends on the void
+parameters, whereas the velocity of the second wave front in-
+Fig.17. Surfaceeffectofstresstensor|𝜏 𝑦𝑧|againstdepth𝑧forcorrugatedboundaries. cludesrigiditymodulusofelasticlayerwithoutvoidporeswhich
+issameaspropagationofSH-wavesinanelasticlayeraccording
+tobothcases.
+exactlythesamemagnitudeineachcase,whichisagainsatisfyingthe • EloquentchangesinthedispersionandattenuationofSH-waves
+general boundary condition for corrugation free interface, i.e., 𝜏 is alongheterogeneityparametershavebeennoticedforbothcases,
+𝑦𝑧
+continuous at the interface. As 𝑧 augments, shear stress of the half- whereas according to the comparison between the considered
+space begins to diminish. Furthermore, case II curves obtain higher cases, minimal variation can be identified in terms of both dis-
+|𝜏 𝑦𝑧| magnitudes when the depth of the half-space increases. Beyond persionanddampingbehaviour.
+aparticularpoint,thereversefeatureisanalysed. • Attenuation of SH-waves due to ascending values of anisotropy
+parameterismuchmoredominatingthandispersionineachcase,
+8.8. Surfaceresponseofdisplacement whereasminimalchangesareobservedbetweenbothcases.
+• It is justified from each case that dispersion curves show more
+Fig. 19 deals with the surface response of the displacement of substantial change than attenuation with respect to the vari-
+layer(𝑢 )withrespecttothehorizontaldistance𝑥inthecaseofonly ation in position parameter. Moreover, attenuation coefficient
+𝑦
+three ridges on the free corrugated surface and the interface. Here, vary more significantly than phase velocity according as the
+the considered mathematical model is represented by the combined comparativestudybetweenthetwocases.
+plot of 𝑡 and 𝑡 against a 𝑥 range of [−1,1] shown within the figure. • Fluctuation parameter dominates attenuation more visibly than
+1 2
+Curve 1 represents 𝑡 , i.e., the corrugated free surface and curve 2 dispersion of SH-waves in each case but on comparing, the two
+1
+indicates 𝑡 , i.e., the corrugated interface between the layer and the cases reflect minimal significance in terms of dispersion and
+2
+half-space.Astheconsiderednumberofridgesforboththeboundaries damping.
+12
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+Fig.19. Surfaceresponseofdisplacementagainsthorizontaldistance𝑥alongwiththeschematicdiagramoftheconsideredmodel.
+• Ineachcase,attenuationofSH-wavesseemstobeaffectedmuch Funding
+more by flatness parameters regarding lower and upper corru-
+gatedinterfacethandispersionbutaccordingtothecomparison Noexternalfundingreceivedregardingthisresearch.
+betweentheconsideredcases,minimalvariationcanbeobserved
+forbothdispersiveanddampingbehaviour.
+Appendix
+• Attheinterface,thestresstensor(|𝜏 𝑦𝑧|)ofthelayerandthehalf-
+space are observed to be discontinuous due to the presence of
+corrugation, whereas it is continuous when the corrugation is
+neglected. 𝜌𝐷′ =(1−𝜙)𝜌𝐷+(𝜏−1)𝜙𝜌𝐷, 𝜌𝐷′
+11 𝑡 𝑠 𝑡 𝑙 33
+• The displacement of layer (𝑢 𝑦 ) is significantly interrelated with =𝜏′𝑣 𝜙 𝜌𝐷, 2𝜌𝐷′
+the ridges present on the surface. The fluctuation of 𝑢 appears 𝑓 𝑓 𝑙 12
+𝑦 =[(𝜏′−1)𝑣 𝜙 −(𝜏̄−1)𝑣 𝜙 −(𝜏−1)𝜙]𝜌𝐷,
+at the same horizontal distances as the locations of the highest 𝑓 𝑓 𝑚 𝑚 𝑡 𝑙
+peaks or maximum depth of the ridges. Moreover, displacement 2𝜌𝐷′ =[(𝜏̄−1)𝑣 𝜙 −(𝜏′−1)𝑣 𝜙 −(𝜏−1)𝜙]𝜌𝐷, 2𝜌𝐷′
+13 𝑚 𝑚 𝑓 𝑓 𝑡 𝑙 23
+isobservedtobeinverselyproportionaltotheverticaldepth. =[(𝜏−1)𝜙 −(𝜏̄−1)𝑣 𝜙 −(𝜏′−1)𝑣 𝜙 ]𝜌𝐷,
+𝑡 𝑚 𝑚 𝑓 𝑓 𝑙
+CRediTauthorshipcontributionstatement 𝜌𝐷 22 ′ =𝜏̄𝑣 𝑚 𝜙 𝑚 𝜌𝐷 𝑙 ,𝜅=𝜅(11)𝜅(22)−𝜅(12)𝜅(21),
+𝜂𝑣 𝜙 (𝑣 𝜙 𝜅(22)−𝑣 𝜙 𝜅(21)) 𝜂𝑣 𝑣 𝜙 𝜙 𝜅(12)
+RachaitaDutta:Supervision.SoumikDas:Writing–originaldraft, 𝛺 1 𝐷 2 ′ = 𝑚 𝑚 𝑚 𝑚 𝜅 𝑓 𝑓 , 𝛺 2 𝐷 3 ′ = 𝑓 𝑚 𝜅 𝑚 𝑓 ,
+I W nv ri e t s in ti g ga – ti r o e n v . ie H w ij & az ed A i h ti m ng a , d S : o V ft a w li a d r a e t . io V n i , pi S n up G e u rv p i t s a io : n S . of M tw e a g r h e a , n M a e A th . o R d . - : 𝛺 1 𝐷 3 ′ = 𝜂𝑣 𝑓 𝜙 𝑓 (𝑣 𝑓 𝜙 𝑓 𝜅( 𝜅 11)−𝑣 𝑚 𝜙 𝑚 𝜅(12)) , 𝑁̄ 1 =−𝛿 √ 𝐴 𝑐2 2 −1,
+ology. 1
+√ [ ( )]
+𝑐2 𝑐2
+Declarationofcompetinginterest 𝑁 1 ′=𝛿 𝐴2 −1, 𝐵𝐷=2 𝛿−𝛿 1 𝑐𝐷2 ,
+1 2
+√ √
+The authors declare that they have no known competing finan- √ √ √ 𝑀2 +𝑀2 +𝑀 √ √ √ 𝑀2 +𝑀2 −𝑀
+cial interests or personal relationships that could have appeared to 𝑀̄ = √ 11 12 11 −𝛿 √ 11 12 11 ,
+influencetheworkreportedinthispaper. 1 2 2
+√ √
+√√ √√
+√ 𝑀2 +𝑀2 −𝑀 √ 𝑀2 +𝑀2 +𝑀
+Dataavailability 𝑀′= √ 11 12 11 +𝛿 √ 11 12 11 ,
+1 2 2
+Nodatawasusedfortheresearchdescribedinthearticle. 𝑀
+11
+= √ √ √ √1− 𝑐
+𝛼1
+2 +
+𝑘2[(1−
+1
+𝛿2
+−
+)2
+𝛿
++
+2
+4𝛿2]𝛼1
+, 𝑀
+12
+=
+𝑘2[(1−𝛿
+−
+2)
+2
+2
+𝛿
++4𝛿2]𝛼1
+,
+Acknowledgement 𝜌1𝑘̄ 1 𝜉1 1 𝜉1
+𝛼𝑗 =−𝑞𝑗√ 𝛾𝑗, 𝛼𝑗 =𝑞𝑗√ 𝛾𝑗,
+Authors are sincerely thankful to Amrita Vishwa Vidyapeetham, 21 2 22 1
+√ √
+M
+op
+y
+p
+s
+o
+u
+r
+r
+t
+u
+un
+c
+i
+a
+ty
+m
+,
+p
+g
+u
+u
+s
+i
+,
+da
+In
+n
+d
+ce
+ia
+,b
+fo
+es
+r
+t
+s
+f
+u
+a
+p
+ci
+p
+li
+o
+t
+r
+ie
+ti
+s
+n
+a
+g
+n
+i
+d
+m
+e
+m
+qu
+en
+ip
+s
+m
+ely
+en
+b
+ts
+y
+.
+providing great
+𝑞 1 𝑗 =
+√ 𝐴𝑗2+
+2
+𝐵𝑗2+𝐴𝑗
+, 𝑞 2 𝑗 =
+√ 𝐴𝑗2+
+2
+𝐵𝑗2−𝐴𝑗
+,
+13
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+[8] DuttaR,DasS,GuptaS,SinghA,ChaudharyH.Nonlocalfiber-reinforceddouble
+𝑐2 𝑐2 porousmaterialstructureunderfractional-orderheatandmasstransfer.Internat
+𝐴𝐷=(1−𝛿2)− ,𝐴𝑆 =(1−𝛿2)− , 𝐵𝑆 =2𝛿,
+𝑐𝐷2 𝑐𝑆2 JNumerMethodsHeatFluidFlow2023;33(11):3608–41.
+2 2 [9] NunziatoJW,CowinSC.Anon-lineartheoryofelasticmaterialwithvoids.Arch
+√ 2(𝛽𝐷′)2𝜌𝐷′+(𝛽𝐷′)2𝜌𝐷′−𝜔2(𝜌𝐷′)2𝜌𝐷′ RationMechAnal1979;72:175–201.
+𝑐𝐷= 𝑁𝐷′ [𝜌𝐷′+ 12 12 12 22 12 22 [10] Cowin SC, Nunziato JW. Linear elastic materials with voids. J Elasticity
+2 2 11 𝑠(2)
+1983;13(2):125–47.
+1
++
+2(𝛽
+13
+𝐷′)2𝜌𝐷
+13
+′+(𝛽
+13
+𝐷′)2𝜌𝐷
+33
+′−𝜔2(𝜌𝐷
+13
+′)2𝜌𝐷
+33
+′
+]−1 2,
+[11] D
+vo
+e
+i
+y
+d
+S
+p
+,
+o
+G
+re
+u
+s
+p
+.
+t
+S
+a
+ad
+S,
+ha
+G
+n
+u
+a
+pt
+2
+a
+00
+A
+4
+K
+;2
+.
+9
+P
+(
+r
+4
+o
+)
+p
+:3
+a
+5
+g
+5
+at
+–
+i
+6
+o
+3
+n
+.
+ofLovewavesinanelasticlayerwith
+𝑠(2) [12] Gupta S, Ahmed M, Pramanik A. Shear waves in elastic medium with void
+𝜔𝑐𝐷2 [ 𝛽𝐷′(𝜌𝐷′+𝜌𝐷 2 ′)2 𝛽𝐷′(𝜌𝐷′+𝜌𝐷′)2] p
+se
+o
+m
+re
+i
+s
+-in
+w
+fi
+e
+n
+ld
+it
+e
+e
+d
+m
+b
+e
+e
+d
+tw
+ia
+e
+.
+e
+A
+n
+c
+v
+ta
+er
+G
+ti
+e
+c
+o
+al
+p
+l
+h
+y
+y
+i
+s
+nh
+2
+o
+0
+m
+17
+o
+;
+g
+6
+e
+5
+n
+(
+e
+1
+o
+):
+u
+1
+s
+39
+an
+–4
+d
+9
+a
+.
+nisotropicmagnetoelastic
+𝛿 = 2 12 12 22 + 13 13 33 ,
+1 2𝑁𝐷′ 𝑠𝐷′ 𝑠𝐷′ [13] DuttaR,DasS,BhengraN,VishwakarmaSK,DasSK.Nonlocaleffectonshear
+2 1 2 wavepropagationinafiber-reinforcedporoelasticlayeredstructuresubjectedto
+𝑠𝐷′ =(𝛽𝐷′)2+𝜔2(𝜌𝐷′)2, interfacialimpulsivedisturbance.SoilDynEarthqEng2024;176:108307.
+1 12 22 [14] Addou FY, Bourada F, Tounsi A, Bousahla AA, Tounsi A, Benrahou KH, et
+𝑠𝐷 2 ′ =(𝛽 1 𝐷 3 ′)2+𝜔2(𝜌𝐷 33 ′)2, al. Effect of porosity distribution on flexural and free vibrational behaviors of
+√
+[ (𝜌𝑆′)2]−1
+2
+l
+2
+a
+0
+m
+2
+i
+4
+n
+;
+a
+2
+t
+4
+e
+(
+d
+2)
+c
+:1
+o
+0
+m
+2
+p
+.
+osite shell using a novel sinusoidal HSDT. Arch Civ Mech Eng
+𝑐 2 𝑆 = 𝑁 2 𝑆′ 𝜌𝑆 11 ′− 𝜌 1 𝑆 2 ′ , [15] LakhdarZ,ChorfiSM,BelaliaSA,KhedherKM,AlluqmaniAE,TounsiA,etal.
+22 Freevibrationandbendinganalysisofporousbi-directionalFGMsandwichshell
+𝑇̄𝑗 =𝑁̄ +𝛿𝑡′, 𝑇′𝑗 =𝑁′−𝑡′, 𝑇̄𝑗 =𝑁̄ +𝛿𝑡′, 𝑇′𝑗 =𝑁′−𝑡′, usingaTSDTp-versionfiniteelementmethod.ActaMech2024;235(6):3657–86.
+1 1 2 1 1 2 2 1 1 2 1 1 [16] Bourada F, Bousahla AA, Tounsi A, Tounsi A, Tahir SI, Al-Osta MA, et al. An
+𝑇̄𝑗 =𝑁̄ −𝛿𝑡′, 𝑇̄𝑗 =𝑁̄ −𝛿𝑡′, 𝑇′𝑗 =𝑁′+𝑡′, integralquasi-3Dcomputationalmodelforthehygro-thermalwavepropagation
+3 1 2 4 1 1 4 1 1
+𝑇̄ 𝑗 =−𝛼𝑗 (1+𝑎𝑡 )−𝑎𝑘−1+𝛿𝑡′𝛾𝑗(1+𝑎𝑡 ), ofimperfectFGMsandwichplates.ComputConcr2023;32(1):61–74.
+11 22 2 1 2 2 [17] AddouFY,BouradaF,MeradjahM,BousahlaAA,TounsiA,GhazwaniMH,etal.
+𝑇′𝑗 =𝑁′+𝑡′, 𝑇′𝑗 =𝛼𝑗 (1+𝑎𝑡 )−𝑡′𝛾𝑗(1+𝑎𝑡 ), Impactofporositydistributiononstaticbehavioroffunctionallygradedplates
+3 1 2 11 21 2 2 2 usingasimplequasi-3DHSDT.ComputConcr2023;32(1):87–97.
+𝐷
+1
+𝑗
+1
+=𝑒𝑘1𝑁̄ 1(𝑡1−ℎ1)cos[𝑘
+1
+𝑁
+1
+′(𝑡
+1
+−ℎ
+1
+)], [18] Alsubaie AM, Alfaqih I, Al-Osta MA, Tounsi A, Chikh A, Mudhaffar IM, et
+𝐷 1 𝑗 2 =𝑒𝑘1𝑁̄ 1(𝑡1−ℎ1)sin[𝑘 1 𝑁 1 ′(𝑡 1 −ℎ 1 )], a n l a . no P t o u r b o e s - i r t e y i - n d f e o p r e c n e d d e c n o t m v p i o b s r i a t t e io b n ea i m nv . e C st o i m ga p t u io t n Co o n f cr fu 2 n 0 c 2 ti 3 o ; n 3 a 2 l ( l 1 y ):7 g 5 ra – d 8 e 5 d . carbon
+𝐷 2 𝑗 1 =𝑒−(𝑁̄ 1+𝛼 2 𝑗 2 )𝑘1𝑡2cos[(𝛼 2 𝑗 1 −𝑁 1 ′)𝑘 1 𝑡 2 ], [19] K on ati t y h a e r v V ib , r G at u i p o t n a r A e , sp T o o n u s n e si of A g . e M o i m cr e o tr s i t c ru al c l t y ur d a i l s / c g o e n o t m in e u t o r u ic s i b m i- p d e ir r e fe c c t t io io n n al se fu n n si c t t i i v o i n ty -
+𝐷 2 𝑗 2 =𝑒−(𝑁̄ 1+𝛼 2 𝑗 2 )𝑘1𝑡2sin[(𝛼 2 𝑗 1 −𝑁 1 ′)𝑘 1 𝑡 2 ], a S l t l r y uc g t r , a I d n e t d J p 2 la 0 t 2 e 2 s ;4 (2 5 D (5) F : G 62 P 1 s) –4 w 0 i . thpartialsupportsbyusingFEM.SteelCompos
+𝐷𝑗 =𝑇̄𝑗 ( 𝑀𝑗′ 𝑇̄ 𝑗 + 𝜇 1 𝑇̄ 3 𝑗 ) −𝑇′𝑗 ( 𝑀𝑗′ 𝑇′𝑗 + 𝜇 1 𝑇 3 ′𝑗 ) , [20] C St h a i b to il u it r y M a , na B l o y u si h s ad o r f a im A, pe B r o f u ec ra t d F a G F, sa M n a d m w e ic n h B p , la B t o e u s sa c h o l n a ta A in A i , ng To m un e s ta i ll A ic , e f t oa a m l.
+31 2 2 11 1+𝑎𝑡
+2
+2 2 11 1+𝑎𝑡
+2 coresundervariousboundaryconditions.In:Structures.Vol.61,Elsevier;2024,
+𝐷𝑗 =𝑇̄𝑗 ( 𝑀𝑗′ 𝑇′𝑗 + 𝜇 1 𝑇 3 ′𝑗 ) +𝑇′𝑗 ( 𝑀𝑗′ 𝑇̄ 𝑗 + 𝜇 1 𝑇̄ 3 𝑗 ) , [21] C 10 u 6 o 0 n 2 g 1 -L . e T, Nguyen KD, Le-Minh H, Phan-Vu P, Nguyen-Trong P, Tounsi A.
+32 2 2 11 1+𝑎𝑡 2 2 11 1+𝑎𝑡 Nonlinear bending analysis of porous sigmoid FGM nanoplate via IGA and
+2 2
+nonlocalstraingradienttheory.AdvNanoRes2022;12(5):441–55.
+𝐷 4 𝑗 1 =𝑒−𝑘1𝑁̄ 1(𝑡1−ℎ1)cos[𝑘 1 𝑁 1 ′(𝑡 1 −ℎ 1 )], [22] Hadji M, Bouhadra A, Mamen B, Menasria A, Bousahla AA, Bourada F, et
+𝐷
+4
+𝑗
+2
+=−𝑒−𝑘1𝑁̄ 1(𝑡1−ℎ1)sin[𝑘
+1
+𝑁
+1
+′(𝑡
+1
+−ℎ
+1
+)], a
+b
+l
+e
+.
+nd
+C
+i
+o
+n
+m
+g
+b
+b
+in
+e
+e
+h
+d
+av
+i
+i
+n
+or
+flu
+o
+e
+f
+n
+a
+ce
+dv
+o
+a
+f
+nc
+p
+e
+o
+d
+ro
+s
+s
+a
+i
+n
+ty
+dw
+a
+i
+n
+c
+d
+h s
+e
+t
+l
+r
+a
+u
+s
+c
+ti
+t
+c
+ur
+f
+e
+o
+s
+u
+.
+n
+S
+d
+t
+a
+e
+t
+e
+i
+l
+on
+Co
+p
+m
+a
+p
+ra
+o
+m
+s
+e
+S
+t
+t
+e
+r
+r
+u
+s
+ct
+o
+,
+n
+In
+t
+t
+he
+J
+𝐷 5 𝑗 1 =𝑒(𝑁̄ 1−𝛼 2 𝑗 2 )𝑘1𝑡2cos[(𝛼 2 𝑗 1 +𝑁 1 ′)𝑘 1 𝑡 2 ], [23] K 20 h 2 o 3 ra ;4 sa 6 n (1 i ) M :1 , –1 L 3 a . mpani L, Tounsi A. A refined vibrational analysis of the FGM
+𝐷 5 𝑗 2 =𝑒(𝑁̄ 1−𝛼 2 𝑗 2 )𝑘1𝑡2sin[(𝛼 2 𝑗 1 +𝑁 1 ′)𝑘 1 𝑡 2 ], p 2 o 0 r 2 o 3 u ;4 s 7 t ( y 5 p ) e :63 b 3 ea – m 44 s . restingonthesilicaaerogelsubstrate.SteelComposStruct
+𝐷𝑗 =𝑇̄𝑗 ( 𝑀𝑗′ 𝑇̄ 𝑗 − 𝜇 1 𝑇̄ 1 𝑗 ) −𝑇′𝑗 ( 𝑀𝑗′ 𝑇′𝑗 − 𝜇 1 𝑇 1 ′𝑗 ) , [24] B so io li t d. M I A . . Lo T w heo fr r e y qu o e f n p cy rop ra a n ga g t e i . on II. o H f i e g l h a e st r ic fr w eq a u v e e n s cy in ra a ng fl e u . id J -sa A t c u o r u at s e t d So p c or A ou m s
+61 4 2 11 1+𝑎𝑡 4 2 11 1+𝑎𝑡
+2 2 1955;28:168–91.
+𝐷𝑗 =𝑇̄𝑗 ( 𝑀𝑗′ 𝑇′𝑗 − 𝜇 1 𝑇 1 ′𝑗 ) +𝑇′𝑗 ( 𝑀𝑗′ 𝑇̄ 𝑗 − 𝜇 1 𝑇̄ 1 𝑗 ) , [25] B J i A ot pp M l A P . h M ys ec 1 h 9 a 6 n 2 i ; c 3 s 3: o 1 f 4 d 8 e 2 f – o 9 r 8 m . ationandacousticpropagationinporousmedia.
+62 4 2 11 1+𝑎𝑡 2 4 2 11 1+𝑎𝑡 2 [26] GhoraiAP,SamalSK,MahantiNC.Lovewaveinafluid-saturatedporouslayer
+underarigidboundaryandlyingoveranelastichalf-spaceundergravity.Appl
+𝐸 1 𝑗 =𝐷 2 𝑗 1 𝐷 3 𝑗 1 −𝐷 2 𝑗 2 𝐷 3 𝑗 2 , 𝐸 2 𝑗 =𝐷 2 𝑗 1 𝐷 3 𝑗 2 +𝐷 2 𝑗 2 𝐷 3 𝑗 1 , MathModel2010;34(7):1873–83.
+𝐸𝑗 =𝐷𝑗 𝐷𝑗 −𝐷𝑗 𝐷𝑗 , 𝐸𝑗 =𝐷𝑗 𝐷𝑗 +𝐷𝑗 𝐷𝑗 , 𝑗=𝐷,𝑆. [27] WangYS,ZhangZM.PropagationofLovewavesinatransverselyisotropicfluid
+3 51 61 52 62 4 51 62 52 61 saturatedporouslayeredhalf-space.JAcoustSocAm1998;103(2):695–701.
+[28] BarenblattGI,ZheltowIP,KochinaTN.Basicconceptsinthetheoryofseepage
+homogeneousliquidsinfissuredrocks.JApplMathMech1960;24:1286–303.
+References [29] WarrenJE,RootPJ.Thebehaviorofnaturallyfracturedreservoirs.SocPetrol
+EngJ1963;3:245–55.
+[30] AifantisEC.Ontheproblemofdiffusioninsolids.ActaMech1980;37:265–96.
+[1] AchenbachJ.Wavepropagationinelasticsolids.USA:Elsevier;2012.
+[31] BescosDE,VgenopoulouI,ProvidakisCP.Dynamicsofsaturatedrocks,II:body
+[2] Love AEH. Some problems of geodynamics. United Kingdom: University Press; waves.JEngMech1989;115:996–1106.
+1911. [32] Berryman JG, Wang HF. The elastic coefficients of double porosity mod-
+[3] GuptaS,DasS,DuttaR.Finitedifferencemodelingofshearwavepropagation els for fluid transport in jointed rock. J Geophys Res: Solid Earth
+inmultilayeredfracturedporousstructures.ArabJGeosci2021;14:1–19. 1995;100(B12):24611–27.
+[4] Gupta S, Dutta R, Das S. Analytical approach to determine the impact of [33] Berryman JG, Wang HF. Elastic wave propagation and attenuation in
+linesourceonSH-wavepropagationinananisotropicporo-viscoelasticlayered a double-porosity dual-permeability medium. Int J Rock Mech Min Sci
+structureinthecontextofEringen’snonlocalelasticitytheory.SoilDynEarthq 2000;37(1–2):63–78.
+Eng2021;151:106987. [34] Dai ZJ, Kuang ZB. Love waves in double porosity media. J Sound Vib
+[5] GuptaS,DuttaR,DasS.FlexoelectriceffectonSH-wavepropagationinfunc- 2006;296(4–5):1000–12.
+tionallygradedfracturedporoussedimentaryrockswithinterfacialirregularity. [35] Ba Z, Wu M, Liang J. 3D dynamic responses of a multi-layered transversely
+JVibEngTechnol2024;12(1):1067–87. isotropicsaturatedhalf-spaceunderconcentratedforcesandporepressure.Appl
+[6] Sadab M, Kundu S. SH-wave propagation in double layers imperfectly bonded MathModel2020;80:859–78.
+overadrysandyhalf-space.IntJGeomech2023;23(12):04023228. [36] Jiao K, Han D, Li J, Bai B, Gong L, et al. A novel LBM-dem based pore-scale
+[7] Sadab M, Kundu S. SH-wave propagation in a piezoelectric layer over a thermal-hydro-mechanical model for the fracture propagation process. Comput
+heterogeneousdrysandyhalf-space.ActaMech2023;234(11):5841–54. Geotech2021;139:104418.
+14
+R.Duttaetal. Soil Dynamics and Earthquake Engineering 186 (2024 ) 108919
+[37] SuF,HeX,DaiM,YangJ,HamanakaA,YuY,etal.Estimationofthecavity [42] GuptaS,DasS,DuttaR.Case-wiseanalysisofLove-typewavepropagationin
+volumeinthegasificationzoneforundergroundcoalgasificationunderdifferent anirregularfissuredporousstratumcoatedbyasandylayer.MultidiscipModel
+oxygenflowconditions.Energy2023;285:129309. MaterStruct2021;17(6):1119–41.
+[38] Tian R, Wang M, Zhang Y, Jing X, Zhang X. A concave X-shaped structure [43] KaurG,SinghD,TomarSK.Lovewavesinanonlocalelasticmediawithvoids.
+supportedbyvariablepitchspringsforlow-frequencyvibrationisolation.Mech JVibControl2019;25(8):1470–83.
+SystSignalProcess2024;218:111587. [44] AsanoS.Reflectionandrefractionofelasticwavesatacorrugatedinterface.Bull
+[39] GuptaV,M.S.B,DasS.Impactofmemory-dependentheattransferonRayleigh SeismolSocAm1966;56(1):201–21.
+wavespropagationinnonlocalpiezo-thermo-elasticmediumwithvoids.Internat [45] KunduS,MannaS,GuptaS.Lovewavedispersioninpre-stressedhomogeneous
+JNumerMethodsHeatFluidFlow2024;34(4):1902–26. mediumoveraporoushalf-spacewithirregularboundarysurfaces.IntJSolids
+[40] DasS,DuttaR,CraciunEM,SurA,BarakMS,GuptaV.Size-dependenteffecton Struct2014;51(21–22):3689–97.
+theinteractionofsurfacewavesinmicropolarthermoelasticmediumwithdual [46] Sharma V, Goyal R, Kumar S. Love waves in a layer with void pores over a
+poreconnectivity.PhysScr2024;99(6):065232. microstructuralcouplestresssubstratewithcorrugatedboundarysurfaces.JBraz
+[41] Panji M. A half-space TD-BEM model for a seismic corrugated orthotropic SocMechSciEng2020;42:1–16.
+stratum.EngAnalBoundElem2023;152:655–77.
+15
