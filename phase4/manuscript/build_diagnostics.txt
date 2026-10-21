@@ -1,4 +1,4 @@
-=== CI run 39636962526 (attempt 1) ===
+=== CI run 39638689101 (attempt 1) ===
 
 --- main.blg : BibTeX log (full) ---
 This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
@@ -50,118 +50,54 @@ write$ -- 823
 
 --- main.blg : grep I didn't find a database entry ---
 
---- main.log : lines containing 'citation' (case-insensitive) ---
-608:Package natbib Warning: Citation `Biot1956' on page 1 undefined on input line 6
-612:Package natbib Warning: Citation `Lord1967' on page 1 undefined on input line 6
-616:Package natbib Warning: Citation `Green1972' on page 1 undefined on input line 
-620:Package natbib Warning: Citation `Green1991' on page 1 undefined on input line 
-624:Package natbib Warning: Citation `Green1993' on page 1 undefined on input line 
-628:Package natbib Warning: Citation `Tzou1995' on page 1 undefined on input line 6
-632:Package natbib Warning: Citation `Tzou1997' on page 1 undefined on input line 6
-636:Package natbib Warning: Citation `Wang2011' on page 1 undefined on input line 6
-640:Package natbib Warning: Citation `Eringen1972' on page 1 undefined on input lin
-671:Package natbib Warning: Citation `Biot1956' on page 13 undefined on input line 
-675:Package natbib Warning: Citation `Lord1967' on page 13 undefined on input line 
-679:Package natbib Warning: Citation `Green1972' on page 13 undefined on input line
-683:Package natbib Warning: Citation `Green1991' on page 13 undefined on input line
-687:Package natbib Warning: Citation `Tzou1995' on page 13 undefined on input line 
-691:Package natbib Warning: Citation `Wang2011' on page 13 undefined on input line 
-695:Package natbib Warning: Citation `Eringen1972' on page 13 undefined on input li
-721:Package natbib Warning: Citation `Biot1956' on page 16 undefined on input line 
-725:Package natbib Warning: Citation `Cattaneo1948' on page 16 undefined on input l
-729:Package natbib Warning: Citation `Vernotte1958' on page 16 undefined on input l
-733:Package natbib Warning: Citation `Lord1967' on page 16 undefined on input line 
-739:Package natbib Warning: Citation `Green1972' on page 18 undefined on input line
-743:Package natbib Warning: Citation `Green1991' on page 18 undefined on input line
-747:Package natbib Warning: Citation `Green1993' on page 18 undefined on input line
-751:Package natbib Warning: Citation `Tzou1995' on page 18 undefined on input line 
-755:Package natbib Warning: Citation `Tzou1997' on page 18 undefined on input line 
-759:Package natbib Warning: Citation `Eringen1972' on page 18 undefined on input li
-763:Package natbib Warning: Citation `Eringen1974' on page 18 undefined on input li
-767:Package natbib Warning: Citation `Eringen1983' on page 18 undefined on input li
-771:Package natbib Warning: Citation `Guyer1990' on page 18 undefined on input line
-775:Package natbib Warning: Citation `Joseph1989' on page 18 undefined on input lin
-779:Package natbib Warning: Citation `Wang2011' on page 18 undefined on input line 
-783:Package natbib Warning: Citation `Povstenko2004' on page 18 undefined on input 
-787:Package natbib Warning: Citation `Povstenko2009' on page 18 undefined on input 
-791:Package natbib Warning: Citation `Povstenko2011' on page 18 undefined on input 
-795:Package natbib Warning: Citation `Povstenko2016' on page 18 undefined on input 
-799:Package natbib Warning: Citation `Caputo1967' on page 18 undefined on input lin
-803:Package natbib Warning: Citation `Chandrasekharaiah1986' on page 18 undefined o
-807:Package natbib Warning: Citation `Chandrasekharaiah1998' on page 18 undefined o
-811:Package natbib Warning: Citation `Shakeriaski2021' on page 18 undefined on inpu
-815:Package natbib Warning: Citation `Dhaliwal1980' on page 18 undefined on input l
+--- main.bbl : first 20 lines ---
+\begin{thebibliography}{55}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
---- main.log : lines containing 'undefined' ---
-608:Package natbib Warning: Citation `Biot1956' on page 1 undefined on input line 6
-612:Package natbib Warning: Citation `Lord1967' on page 1 undefined on input line 6
-616:Package natbib Warning: Citation `Green1972' on page 1 undefined on input line 
-620:Package natbib Warning: Citation `Green1991' on page 1 undefined on input line 
-624:Package natbib Warning: Citation `Green1993' on page 1 undefined on input line 
-628:Package natbib Warning: Citation `Tzou1995' on page 1 undefined on input line 6
-632:Package natbib Warning: Citation `Tzou1997' on page 1 undefined on input line 6
-636:Package natbib Warning: Citation `Wang2011' on page 1 undefined on input line 6
-640:Package natbib Warning: Citation `Eringen1972' on page 1 undefined on input lin
-671:Package natbib Warning: Citation `Biot1956' on page 13 undefined on input line 
-675:Package natbib Warning: Citation `Lord1967' on page 13 undefined on input line 
-679:Package natbib Warning: Citation `Green1972' on page 13 undefined on input line
-683:Package natbib Warning: Citation `Green1991' on page 13 undefined on input line
-687:Package natbib Warning: Citation `Tzou1995' on page 13 undefined on input line 
-691:Package natbib Warning: Citation `Wang2011' on page 13 undefined on input line 
-695:Package natbib Warning: Citation `Eringen1972' on page 13 undefined on input li
-721:Package natbib Warning: Citation `Biot1956' on page 16 undefined on input line 
-725:Package natbib Warning: Citation `Cattaneo1948' on page 16 undefined on input l
-729:Package natbib Warning: Citation `Vernotte1958' on page 16 undefined on input l
-733:Package natbib Warning: Citation `Lord1967' on page 16 undefined on input line 
-739:Package natbib Warning: Citation `Green1972' on page 18 undefined on input line
-743:Package natbib Warning: Citation `Green1991' on page 18 undefined on input line
-747:Package natbib Warning: Citation `Green1993' on page 18 undefined on input line
-751:Package natbib Warning: Citation `Tzou1995' on page 18 undefined on input line 
-755:Package natbib Warning: Citation `Tzou1997' on page 18 undefined on input line 
-759:Package natbib Warning: Citation `Eringen1972' on page 18 undefined on input li
-763:Package natbib Warning: Citation `Eringen1974' on page 18 undefined on input li
-767:Package natbib Warning: Citation `Eringen1983' on page 18 undefined on input li
-771:Package natbib Warning: Citation `Guyer1990' on page 18 undefined on input line
-775:Package natbib Warning: Citation `Joseph1989' on page 18 undefined on input lin
-779:Package natbib Warning: Citation `Wang2011' on page 18 undefined on input line 
-783:Package natbib Warning: Citation `Povstenko2004' on page 18 undefined on input 
-787:Package natbib Warning: Citation `Povstenko2009' on page 18 undefined on input 
-791:Package natbib Warning: Citation `Povstenko2011' on page 18 undefined on input 
-795:Package natbib Warning: Citation `Povstenko2016' on page 18 undefined on input 
-799:Package natbib Warning: Citation `Caputo1967' on page 18 undefined on input lin
-803:Package natbib Warning: Citation `Chandrasekharaiah1986' on page 18 undefined o
-807:Package natbib Warning: Citation `Chandrasekharaiah1998' on page 18 undefined o
-811:Package natbib Warning: Citation `Shakeriaski2021' on page 18 undefined on inpu
-815:Package natbib Warning: Citation `Dhaliwal1980' on page 18 undefined on input l
+\bibitem[Abouelregal et~al.(2023)Abouelregal, Askar, Marin, and
+  Mohamed]{Abouelregal2023}
+A.~E. Abouelregal, S.~S. Askar, M.~Marin, and B.~Mohamed.
+\newblock The theory of thermoelasticity with a memory-dependent dynamic
+  response for a thermo-piezoelectric functionally graded rotating rod.
+\newblock \emph{Scientific Reports}, 13:\penalty0 36371, 2023.
+\newblock \doi{10.1038/s41598-023-36371-2}.
 
---- main.log : lines containing '!' (errors) ---
-1904:! Undefined control sequence.
-2750:! Undefined control sequence.
-2759:! Undefined control sequence.
-2768:! Undefined control sequence.
-2777:! Undefined control sequence.
-2786:! Undefined control sequence.
-3526:! Undefined control sequence.
-3535:! Undefined control sequence.
-3548:! Undefined control sequence.
-3557:! Undefined control sequence.
-3566:! Undefined control sequence.
-3575:! Undefined control sequence.
-4229:! You can't use a prefix with `end-group character }'.
-4236:! Extra }, or forgotten \endgroup.
+\bibitem[Achenbach(1973)]{Achenbach1973}
+J.~D. Achenbach.
+\newblock \emph{Wave propagation in elastic solids}.
+\newblock North-Holland, 1973.
+\newblock ISBN 9780444858160.
 
---- main.aux : citation count ---
-163
---- main.aux : bibdata ---
-\bibdata{references_local}
---- main.aux : bibstyle ---
-\bibstyle{plainnat}
---- main.aux : bibitem count ---
-0
-(no aux)
-
---- main.bbl : bibitem count ---
+--- main.aux : bibcite count ---
 55
+--- main.aux : citation count ---
+187
+--- main.aux : bibdata / bibstyle ---
+\bibstyle{plainnat}
+\bibdata{references_local}
+
+--- main.log : lines containing 'No file' ---
+
+--- main.log : undefined citations (first 30) ---
+
+--- main.log : undefined control sequences (with context) ---
+
+--- main.log : errors (first 30) ---
+
+--- main.log : extra-brace / endgroup errors with context ---
+6478-I'll pretend you didn't say \long or \outer or \global or \protected.
+6479-
+6480:./main.bbl:401: Extra }, or forgotten \endgroup.
+6481-\add@accent ...spaces \relax \accent #1 #2\egroup 
+6482-                                                  \ifmmode \else \spacefacto...
+6483-l.401 ...radoxes de la th\'eorie continue de l\'\'
+6484-                                                  equation de la
+6485-I've deleted a group-closing symbol because it seems to be
+6486-spurious, as in `$x}$'. But perhaps the } is legitimate and
 
 --- references_local.bib : entry count ---
 55
