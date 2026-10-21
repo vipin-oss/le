@@ -7,9 +7,16 @@ on:
     branches: [arena/40393d9f-le]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # Fixed timestamp -> byte-reproducible PDF -> no push loop
+      SOURCE_DATE_EPOCH: '1700000000'
+      FORCE_SOURCE_DATE: '1'
     defaults:
       run:
         working-directory: phase4/manuscript
@@ -17,6 +24,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install TeX Live
         run: |
@@ -98,3 +107,27 @@ jobs:
             phase4/manuscript/third_pass.log
           retention-days: 7
           if-no-files-found: ignore
+
+      - name: Publish compiled PDF back to branch
+        if: github.ref == 'refs/heads/arena/40393d9f-le' && github.event_name == 'push'
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          if [ ! -f phase4/manuscript/main.pdf ]; then
+            echo "No PDF produced - skipping publish step"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add phase4/manuscript/main.pdf
+          if git diff --cached --quiet; then
+            echo "PDF is byte-identical to the committed one (reproducible build) - nothing to do"
+            exit 0
+          fi
+          PUBLISH_COUNT=$(git log --oneline --grep="publish compiled manuscript PDF" | wc -l)
+          if [ "$PUBLISH_COUNT" -ge 3 ]; then
+            echo "Publish guard reached ($PUBLISH_COUNT) - skipping to avoid a push loop"
+            exit 0
+          fi
+          git commit -m "chore: publish compiled manuscript PDF (build ${{ github.run_number }})"
+          git push origin HEAD:refs/heads/arena/40393d9f-le
+          echo "Published PDF to branch"
