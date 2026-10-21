@@ -58,7 +58,8 @@
 
 ## 3. Deliverable 2 — Compiled PDF
 
-**Location:** `05_compiled_pdf/main.pdf`
+**Location:** `05_compiled_pdf/main.pdf`  
+**Extent:** 119 pages, produced and published by the CI workflow (build 23, run `39631406164`)
 
 Produced by the CI `LaTeX Build` workflow (TeX Live + Inkscape SVG→PDF conversion, three LaTeX passes with BibTeX in between). The build is made byte-reproducible via a pinned `SOURCE_DATE_EPOCH`, and the resulting PDF is published back onto the branch by the workflow so that the source tree and the compiled artifact never drift apart.
 
@@ -162,7 +163,7 @@ Each table was rebuilt on a common three- or four-column analytical schema so th
 
 | Criterion | Status |
 |---|---|
-| Compiles cleanly from source | ✅ Verified by CI (run `39621353552` and later runs, status success) |
+| Compiles cleanly from source | ✅ Verified by CI — latest run `39631406164`, status **success** (run 23) |
 | All citations resolve | ✅ 54/54 |
 | Figures referenced and resolvable | ✅ 13/13 |
 | Tables referenced and resolvable | ✅ 8/8 |
