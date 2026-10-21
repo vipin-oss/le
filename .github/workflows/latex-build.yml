@@ -29,7 +29,10 @@ jobs:
           for f in ../figures/source/*.svg; do
             inkscape "$f" --export-type=pdf --export-filename="${f%.svg}.pdf" 2>/dev/null || true
           done
-          ls -la ../figures/source/*.pdf 2>/dev/null || echo "No PDFs generated"
+          for f in figures/source/*.svg; do
+            inkscape "$f" --export-type=pdf --export-filename="${f%.svg}.pdf" 2>/dev/null || true
+          done
+          ls -la ../figures/source/*.pdf figures/source/*.pdf 2>/dev/null || echo "No PDFs generated"
 
       - name: Minimal LaTeX test
         run: |
