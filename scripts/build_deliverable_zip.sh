@@ -95,7 +95,7 @@ if [ -f "${REPO_ROOT}/phase4/manuscript/main.pdf" ]; then
 else
   echo "    ! compiled PDF not present in working tree"
 fi
-for lg in main.log main.blg; do
+for lg in main.log main.blg build_diagnostics.txt; do
   [ -f "${REPO_ROOT}/phase4/manuscript/${lg}" ] && cp "${REPO_ROOT}/phase4/manuscript/${lg}" "$STAGE/05_compiled_pdf/" || true
 done
 
