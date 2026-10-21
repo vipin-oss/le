@@ -1,4 +1,4 @@
-=== CI run 39647203596 (attempt 1) ===
+=== CI run 39648727726 (attempt 1) ===
 
 --- main.blg : BibTeX log (full) ---
 This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
@@ -75,7 +75,7 @@ A.~E. Abouelregal, S.~S. Askar, M.~Marin, and B.~Mohamed.
 --- main.aux : bibcite count ---
 56
 --- main.aux : citation count ---
-215
+231
 --- main.aux : bibdata / bibstyle ---
 \bibstyle{plainnat}
 \bibdata{references_local}
@@ -89,15 +89,15 @@ A.~E. Abouelregal, S.~S. Askar, M.~Marin, and B.~Mohamed.
 --- main.log : errors (first 30) ---
 
 --- main.log : extra-brace / endgroup errors with context ---
-6563-I'll pretend you didn't say \long or \outer or \global or \protected.
-6564-
-6565:./main.bbl:410: Extra }, or forgotten \endgroup.
-6566-\add@accent ...spaces \relax \accent #1 #2\egroup 
-6567-                                                  \ifmmode \else \spacefacto...
-6568-l.410 ...radoxes de la th\'eorie continue de l\'\'
-6569-                                                  equation de la
-6570-I've deleted a group-closing symbol because it seems to be
-6571-spurious, as in `$x}$'. But perhaps the } is legitimate and
+6803-I'll pretend you didn't say \long or \outer or \global or \protected.
+6804-
+6805:./main.bbl:410: Extra }, or forgotten \endgroup.
+6806-\add@accent ...spaces \relax \accent #1 #2\egroup 
+6807-                                                  \ifmmode \else \spacefacto...
+6808-l.410 ...radoxes de la th\'eorie continue de l\'\'
+6809-                                                  equation de la
+6810-I've deleted a group-closing symbol because it seems to be
+6811-spurious, as in `$x}$'. But perhaps the } is legitimate and
 
 --- references_local.bib : entry count ---
 56
