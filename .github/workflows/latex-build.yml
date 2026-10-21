@@ -10,6 +10,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -137,6 +141,60 @@ jobs:
             exit 1
           fi
 
+      - name: Publish build diagnostics
+        if: >-
+          always()
+          && github.ref == 'refs/heads/arena/40393d9f-le'
+          && github.event_name == 'push'
+          && github.actor != 'github-actions[bot]'
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          {
+            echo "=== CI run ${{ github.run_id }} (attempt ${{ github.run_attempt }}) ==="
+            echo
+            echo "--- main.blg : BibTeX log (full) ---"
+            if [ -f phase4/manuscript/main.blg ]; then head -120 phase4/manuscript/main.blg; else echo "(main.blg missing)"; fi
+            echo
+            echo "--- main.blg : grep I didn't find a database entry ---"
+            grep -i "didn't find a database entry" phase4/manuscript/main.blg 2>/dev/null | head -40 || echo "(none)"
+            echo
+            echo "--- main.log : lines containing 'citation' (case-insensitive) ---"
+            grep -in "citation" phase4/manuscript/main.log 2>/dev/null | head -40 || echo "(none)"
+            echo
+            echo "--- main.log : lines containing 'undefined' ---"
+            grep -in "undefined" phase4/manuscript/main.log 2>/dev/null | head -40 || echo "(none)"
+            echo
+            echo "--- main.log : lines containing '!' (errors) ---"
+            grep -n "^!" phase4/manuscript/main.log 2>/dev/null | head -40 || echo "(none)"
+            echo
+            echo "--- main.aux : citation count ---"
+            grep -c "\\\\citation" phase4/manuscript/main.aux 2>/dev/null || echo "(no aux)"
+            echo "--- main.aux : bibdata ---"
+            grep "\\\\bibdata" phase4/manuscript/main.aux 2>/dev/null || echo "(no aux)"
+            echo "--- main.aux : bibstyle ---"
+            grep "\\\\bibstyle" phase4/manuscript/main.aux 2>/dev/null || echo "(no aux)"
+            echo "--- main.aux : bibitem count ---"
+            grep -c "\\\\bibitem" phase4/manuscript/main.aux 2>/dev/null || echo "(no aux)"
+            echo
+            echo "--- main.bbl : bibitem count ---"
+            grep -c "\\\\bibitem" phase4/manuscript/main.bbl 2>/dev/null || echo "(no bbl)"
+            echo
+            echo "--- references_local.bib : entry count ---"
+            grep -c "^@" phase4/manuscript/references_local.bib 2>/dev/null || echo "(no bib)"
+            echo
+            echo "--- distinct citation keys requested in main.aux ---"
+            grep "\\\\citation" phase4/manuscript/main.aux 2>/dev/null | sed 's/.*citation{\(.*\)}.*/\1/' | tr ',' '\n' | sed 's/^ *//; s/ *$//' | sort -u || echo "(no aux)"
+          } > phase4/manuscript/build_diagnostics.txt 2>&1
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.github.com"
+          git add phase4/manuscript/build_diagnostics.txt
+          if git diff --cached --quiet; then
+            echo "Diagnostics unchanged - nothing to publish"
+            exit 0
+          fi
+          git commit -m "chore: publish build diagnostics (run ${{ github.run_id }})"
+          git push origin HEAD:refs/heads/arena/40393d9f-le
+
       - name: Publish compiled PDF back to branch
         if: >-
           github.ref == 'refs/heads/arena/40393d9f-le'
@@ -156,7 +214,7 @@ jobs:
             exit 0
           fi
           PUBLISH_COUNT=$(git log --oneline --fixed-strings --grep="chore: publish compiled manuscript PDF" | wc -l)
-          if [ "$PUBLISH_COUNT" -ge 3 ]; then
+          if [ "$PUBLISH_COUNT" -ge 25 ]; then
             echo "::warning::Publish guard reached ($PUBLISH_COUNT prior PDF publications) - skipping"
             exit 0
           fi
