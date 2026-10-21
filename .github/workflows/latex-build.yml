@@ -31,6 +31,12 @@ jobs:
           done
           ls -la ../figures/source/*.pdf 2>/dev/null || echo "No PDFs generated"
 
+      - name: Minimal LaTeX test
+        run: |
+          echo "\\documentclass{article}\\begin{document}Hello\\end{document}" > test_minimal.tex
+          latexmk -pdf -interaction=nonstopmode test_minimal.tex 2>&1 | tail -5 || true
+          if [ -f test_minimal.pdf ]; then echo "MINIMAL TEST PASSED"; else echo "MINIMAL TEST FAILED"; fi
+
       - name: Compile LaTeX manuscript (first pass)
         run: |
           latexmk -pdf -interaction=nonstopmode main.tex 2>&1 | tee first_pass.log
