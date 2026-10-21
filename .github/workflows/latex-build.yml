@@ -109,7 +109,10 @@ jobs:
           if-no-files-found: ignore
 
       - name: Publish compiled PDF back to branch
-        if: github.ref == 'refs/heads/arena/40393d9f-le' && github.event_name == 'push'
+        if: >-
+          github.ref == 'refs/heads/arena/40393d9f-le'
+          && github.event_name == 'push'
+          && github.actor != 'github-actions[bot]'
         run: |
           cd "$GITHUB_WORKSPACE"
           if [ ! -f phase4/manuscript/main.pdf ]; then
