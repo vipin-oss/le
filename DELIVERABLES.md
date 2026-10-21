@@ -186,7 +186,7 @@ Each table was rebuilt on a common three- or four-column analytical schema so th
 
 | Criterion | Status |
 |---|---|
-| Compiles cleanly from source | ✅ Verified by CI — run `39651987389`, status **success** (build 32, PDF unchanged from build 31's successor run `39649798246`) |
+| Compiles cleanly from source | ✅ Verified by CI — run `39653180428`, status **success** (build 32; the PDF is byte-identical to the one produced by run `39649798246`) |
 | All citations resolve | ✅ 56/56 |
 | Figures referenced and resolvable | ✅ 18/18 referenced, all sources present and XML-valid |
 | Tables referenced and resolvable | ✅ 8/8 standalone, 43 in total |
