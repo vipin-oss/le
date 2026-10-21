@@ -25,7 +25,16 @@ jobs:
             texlive-fonts-extra texlive-bibtex-extra biber latexmk inkscape
 
       - name: Compile LaTeX manuscript (first pass)
-        run: latexmk -pdf -interaction=nonstopmode --shell-escape main.tex
+        run: |
+          latexmk -pdf -interaction=nonstopmode --shell-escape main.tex 2>&1 | tee first_pass.log
+          EXIT_CODE=${PIPESTATUS[0]}
+          if [ $EXIT_CODE -ne 0 ]; then
+            echo "=== Error lines from first pass ==="
+            grep -i "^! \|Error\|undefined\|Missing" first_pass.log | head -30 || true
+            echo "=== Log tail ==="
+            tail -30 first_pass.log || true
+          fi
+          exit $EXIT_CODE
 
       - name: Run BibTeX
         run: bibtex main || true
