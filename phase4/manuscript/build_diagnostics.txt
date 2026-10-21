@@ -1,4 +1,4 @@
-=== CI run 39638689101 (attempt 1) ===
+=== CI run 39647203596 (attempt 1) ===
 
 --- main.blg : BibTeX log (full) ---
 This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
@@ -6,76 +6,76 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: plainnat.bst
 Database file #1: references_local.bib
-You've used 55 entries,
+You've used 56 entries,
             2773 wiz_defined-function locations,
-            1012 strings with 14199 characters,
-and the built_in function-call counts, 24479 in all, are:
-= -- 2331
-> -- 1092
-< -- 45
-+ -- 386
-- -- 327
-* -- 2023
-:= -- 3799
-add.period$ -- 218
-call.type$ -- 55
-change.case$ -- 267
-chr.to.int$ -- 51
-cite$ -- 110
-duplicate$ -- 1114
-empty$ -- 2135
-format.name$ -- 414
-if$ -- 5089
+            1019 strings with 14452 characters,
+and the built_in function-call counts, 24923 in all, are:
+= -- 2376
+> -- 1112
+< -- 46
++ -- 393
+- -- 333
+* -- 2055
+:= -- 3869
+add.period$ -- 222
+call.type$ -- 56
+change.case$ -- 271
+chr.to.int$ -- 52
+cite$ -- 112
+duplicate$ -- 1134
+empty$ -- 2173
+format.name$ -- 422
+if$ -- 5183
 int.to.chr$ -- 5
 int.to.str$ -- 1
-missing$ -- 62
-newline$ -- 336
-num.names$ -- 220
-pop$ -- 445
+missing$ -- 63
+newline$ -- 342
+num.names$ -- 224
+pop$ -- 451
 preamble$ -- 1
-purify$ -- 219
+purify$ -- 222
 quote$ -- 0
-skip$ -- 787
+skip$ -- 802
 stack$ -- 0
-substring$ -- 1232
-swap$ -- 65
+substring$ -- 1256
+swap$ -- 66
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 570
+type$ -- 581
 warning$ -- 0
-while$ -- 255
+while$ -- 260
 width$ -- 0
-write$ -- 823
+write$ -- 838
 
 --- main.blg : grep I didn't find a database entry ---
 
 --- main.bbl : first 20 lines ---
-\begin{thebibliography}{55}
+\begin{thebibliography}{56}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[Abdalla et~al.(2022)]{Abdalla2022}
+E.~Abdalla et~al.
+\newblock Cosmology intertwined: A review of the particle physics,
+  astrophysics, and cosmology associated with the cosmological tensions and
+  anomalies.
+\newblock \emph{Journal of High Energy Astrophysics}, 34:\penalty0 49--211,
+  2022.
+\newblock \doi{10.1016/j.jheap.2022.04.002}.
+
 \bibitem[Abouelregal et~al.(2023)Abouelregal, Askar, Marin, and
   Mohamed]{Abouelregal2023}
 A.~E. Abouelregal, S.~S. Askar, M.~Marin, and B.~Mohamed.
 \newblock The theory of thermoelasticity with a memory-dependent dynamic
-  response for a thermo-piezoelectric functionally graded rotating rod.
-\newblock \emph{Scientific Reports}, 13:\penalty0 36371, 2023.
-\newblock \doi{10.1038/s41598-023-36371-2}.
-
-\bibitem[Achenbach(1973)]{Achenbach1973}
-J.~D. Achenbach.
-\newblock \emph{Wave propagation in elastic solids}.
-\newblock North-Holland, 1973.
-\newblock ISBN 9780444858160.
 
 --- main.aux : bibcite count ---
-55
+56
 --- main.aux : citation count ---
-187
+215
 --- main.aux : bibdata / bibstyle ---
 \bibstyle{plainnat}
 \bibdata{references_local}
@@ -89,20 +89,21 @@ J.~D. Achenbach.
 --- main.log : errors (first 30) ---
 
 --- main.log : extra-brace / endgroup errors with context ---
-6478-I'll pretend you didn't say \long or \outer or \global or \protected.
-6479-
-6480:./main.bbl:401: Extra }, or forgotten \endgroup.
-6481-\add@accent ...spaces \relax \accent #1 #2\egroup 
-6482-                                                  \ifmmode \else \spacefacto...
-6483-l.401 ...radoxes de la th\'eorie continue de l\'\'
-6484-                                                  equation de la
-6485-I've deleted a group-closing symbol because it seems to be
-6486-spurious, as in `$x}$'. But perhaps the } is legitimate and
+6563-I'll pretend you didn't say \long or \outer or \global or \protected.
+6564-
+6565:./main.bbl:410: Extra }, or forgotten \endgroup.
+6566-\add@accent ...spaces \relax \accent #1 #2\egroup 
+6567-                                                  \ifmmode \else \spacefacto...
+6568-l.410 ...radoxes de la th\'eorie continue de l\'\'
+6569-                                                  equation de la
+6570-I've deleted a group-closing symbol because it seems to be
+6571-spurious, as in `$x}$'. But perhaps the } is legitimate and
 
 --- references_local.bib : entry count ---
-55
+56
 
 --- distinct citation keys requested in main.aux ---
+Abdalla2022
 Abouelregal2023
 Achenbach1973
 Askes2006
