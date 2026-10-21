@@ -50,10 +50,11 @@ place() {
 }
 
 # --- place_dir <destdir> <srcdir-relative-to-repo> <subdir-name> -----------
+# <subdir-name> may contain slashes; its parent directories are created.
 place_dir() {
   local destdir="$1" src="$2" sub="$3"
   [ -d "${REPO_ROOT}/${src}" ] || { echo "    ! missing: ${src}"; return 0; }
-  mkdir -p "${STAGE}/${destdir}"
+  mkdir -p "${STAGE}/${destdir}/$(dirname "${sub}")"
   cp -r "${REPO_ROOT}/${src}" "${STAGE}/${destdir}/${sub}"
 }
 
@@ -67,6 +68,11 @@ place_dir "01_manuscript_latex/manuscript" phase4/manuscript/frontmatter frontma
 place_dir "01_manuscript_latex/manuscript" phase4/manuscript/appendices appendices
 place_dir "01_manuscript_latex/manuscript" phase4/manuscript/tables tables
 place_dir "01_manuscript_latex/manuscript" phase4/manuscript/figures figures
+# The manuscript \input{} paths resolve relative to the MAIN file's directory,
+# so the compiled table set must sit one level above the manuscript folder
+# and the manuscript-local bibliography must sit beside main.tex.
+place_dir "01_manuscript_latex" phase4/tables/source tables/source
+place "01_manuscript_latex/manuscript" phase4/manuscript/references_local.bib references_local.bib
 
 # --- 02 bibliography --------------------------------------------------------
 echo "    02_bibliography"
