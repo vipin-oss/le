@@ -74,7 +74,7 @@
 | Extracted text | 412,875 characters |
 | Unresolved references (`[?]`) | **0** |
 | Unresolved citations (`(?`) | **0** |
-| Produced by | CI `LaTeX Build` workflow, build **32**, run **`39649798246`** |
+| Produced by | CI `LaTeX Build` workflow, build **32**, run **`39649798246`** (reproduced byte-identically by run `39651987389`) |
 | Reproducibility | byte-reproducible via a pinned `SOURCE_DATE_EPOCH` |
 
 The build converts all SVG figures to PDF with Inkscape, runs a deterministic `pdflatex → bibtex → pdflatex → pdflatex` sequence (no `latexmk`, whose incremental dependency logic could skip the final pass), checks for undefined control sequences, undefined references and missing bibliography entries, publishes the build diagnostics back to the branch, and then publishes the compiled PDF back onto the branch so that the source tree and the compiled artifact never drift apart.
@@ -186,7 +186,7 @@ Each table was rebuilt on a common three- or four-column analytical schema so th
 
 | Criterion | Status |
 |---|---|
-| Compiles cleanly from source | ✅ Verified by CI — run `39649798246`, status **success** (build 32) |
+| Compiles cleanly from source | ✅ Verified by CI — run `39651987389`, status **success** (build 32, PDF unchanged from build 31's successor run `39649798246`) |
 | All citations resolve | ✅ 56/56 |
 | Figures referenced and resolvable | ✅ 18/18 referenced, all sources present and XML-valid |
 | Tables referenced and resolvable | ✅ 8/8 standalone, 43 in total |
