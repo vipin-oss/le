@@ -61,7 +61,7 @@ EQ-017 & $p_i = k_{ij}\alpha_{,j}$ & VERIFIED & GN-II entropy flux; free energy 
 EQ-018 & $q_i(t+\tau_q) = -kT_{,i}(t+\tau_T)$ & VERIFIED & DPL constitutive law (Tzou 1995) \\
 EQ-019 & $q_i(t+\tau_q) = -k[T_{,i}(t+\tau_T) + \tfrac{\tau_\nu}{2}\partial_t^2 T_{,i}(t+\tau_\nu)]$ & VERIFIED & TPL constitutive law (Tzou 1997) \\
 EQ-020 & $D_\omega f(t) = \tfrac{1}{\omega}\int_{t-\omega}^{t}\kappa(t-\xi)f'(\xi)\,d\xi$ & VERIFIED & MDD operator (Wang \& Li 2011) \\
-EQ-021 & $\kappa(t-\xi) = 1 - \tfrac{2\beta}{\omega}(t-\xi) + \tfrac{\alpha^2}{\omega^2}(t-\xi)^2$ & VERIFIED & MDD kernel function (RG-003) \\
+EQ-021 & $\kappa(t-\xi) = 1 - \tfrac{2\beta}{\omega}(t-\xi) + \tfrac{\alpha^2}{\omega^2}(t-\xi)^2$ & VERIFIED & MDD kernel function (Barak et al.~\cite{Barak2023}) \\
 EQ-022 & $\tau\ddot{q}_i + \dot{q}_i = -\tfrac{k}{\rho c}\nabla(\dot{T} + \tau\ddot{T})$ & VERIFIED & MGT third-order heat equation \\
 \bottomrule
 \end{tabularx}
@@ -82,8 +82,8 @@ EQ-023 & $\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k$ & VERIFIED & Piez
 EQ-024 & $D_i = e_{ikl}\varepsilon_{kl} + \kappa_{ij}E_j$ & VERIFIED & Electric displacement (piezoelectric) \\
 EQ-025 & $E_i = -\phi_{,i}$ & VERIFIED & Electric field from potential \\
 EQ-026 & $D_{i,i} = 0$ & VERIFIED & Charge conservation (no free charge) \\
-EQ-027 & $\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k - \beta_{ij}T$ & VERIFIED & Piezothermoelastic (RG-003 Eq. 3) \\
-EQ-028 & $D_i = \kappa_{ij}E_j + e_{ikl}\varepsilon_{kl} + p_i T$ & VERIFIED & Piezothermoelectric (RG-003 Eq. 6) \\
+EQ-027 & $\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k - \beta_{ij}T$ & VERIFIED & Piezothermoelastic (Barak et al.~\cite{Barak2023}, Eq.~3) \\
+EQ-028 & $D_i = \kappa_{ij}E_j + e_{ikl}\varepsilon_{kl} + p_i T$ & VERIFIED & Piezothermoelectric (Barak et al.~\cite{Barak2023}, Eq.~6) \\
 EQ-029 & $\mathcal{E}_{\text{elec}} = \tfrac{1}{2}D_i E_i$ & VERIFIED & Electrical energy density \\
 \bottomrule
 \end{tabularx}

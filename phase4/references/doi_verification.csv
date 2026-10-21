@@ -1,19 +1,55 @@
-study_id,doi,doi_syntax_valid,crossref_match,crossref_title_match,citation_count_openalex,citation_count_crossref,verified_date,verification_source,notes
-FW-001,10.1063/1.1722351,YES,YES,YES,2854,2854,2026-10-21,Crossref,Biot 1956 coupled thermoelasticity
-FW-002,10.1016/0022-5096(67)90024-5,YES,YES,YES,4068,4068,2026-10-21,Crossref,Lord-Shulman 1967
-FW-003,10.1007/bf00045689,YES,YES,YES,2929,2929,2026-10-21,Crossref,Green-Lindsay 1972
-FW-004,10.1098/rspa.1991.0012,YES,YES,YES,1097,1097,2026-10-21,Crossref,Green-Naghdi 1991
-FW-005,10.1115/1.2822329,YES,YES,YES,1995,1995,2026-10-21,Crossref,Tzou 1995 DPL
-FW-006,10.1016/0020-7225(72)90050-x,YES,YES,YES,1272,1272,2026-10-21,Crossref,Eringen 1972 nonlocal
-FW-007,10.1007/bf00249363,YES,YES,YES,790,790,2026-10-21,Crossref,Nunziato-Cowin 1979 voids
-FW-008,10.1115/1.3098984,YES,YES,YES,1149,1284,2026-10-21,Crossref,Chandrasekharaiah 1998 review (Crossref: 1284 vs OpenAlex: 1149)
-FW-009,10.1115/1.3143705,YES,YES,YES,834,952,2026-10-21,Crossref,Chandrasekharaiah 1986 review (Crossref: 952 vs OpenAlex: 834)
-FW-010,10.1093/jcde/qwaa082,YES,YES,YES,54,54,2026-10-21,Crossref,Shakeriaski 2021 review
-FW-011,10.1177/1081286519862007,YES,YES,YES,409,409,2026-10-21,Crossref,Quintanilla 2019 MGT
-RG-001,10.1007/s12648-022-02568-w,YES,YES,YES,22,22,2026-10-21,Crossref,Barak et al. 2023; Vipin Gupta co-author; Indian J Phys
-RG-002,10.1108/hff-11-2022-0654,YES,YES,YES,20,20,2026-10-21,Crossref,Gupta et al. 2023; HFF; nonlocal thermoelastic + piezothermoelastic + MDD + HTT + TPL
-RG-003,10.1038/s41598-023-44339-5,YES,YES,YES,18,18,2026-10-21,Crossref,Barak et al. 2023; Scientific Reports OPEN ACCESS; FULL TEXT EXTRACTED; MDD+TPL piezothermoelastic-thermoelastic interface
-RG-004,10.1108/mmms-10-2022-0209,YES,YES,YES,18,18,2026-10-21,Crossref,Barak et al. 2023; MMMS; imperfect interface DPL+MDD; graphite/cadmium selenide
-RG-005,10.1080/01495739.2023.2253879,YES,YES,YES,8,8,2026-10-21,Crossref,Barak et al. 2024; J. Thermal Stresses; monoclinic piezothermoelastic+thermoelastic+MDD
-RG-006,10.1088/1402-4896/acfced,YES,YES,YES,11,11,2026-10-21,Crossref,Kumar et al. 2023; Physica Scripta; dual-porous+elastic+MDD+DPL+H2T
-RG-007,10.1108/hff-04-2022-0259,YES,YES,YES,28,28,2026-10-21,Crossref,Gupta et al. 2023; HFF; nonlocal piezothermoelastic+fluid+DPL+two-temperature+MDD; claims energy conservation
+bib_key,entry_type,doi,doi_syntax_valid,crossref_match,crossref_title_match,title,journal,year,volume,issue,pages,theory_family,verified,verification_source,verified_date
+Biot1956,article,10.1063/1.1722351,YES,YES,YES,Thermoelasticity and irreversible thermodynamics,Journal of Applied Physics,1956,27,3,240--253,,YES,Crossref,2026-10-21
+Lord1967,article,10.1016/0022-5096(67)90024-5,YES,YES,YES,A generalized dynamical theory of thermoelasticity,Journal of the Mechanics and Physics of Solids,1967,15,5,299--309,,YES,Crossref,2026-10-21
+Green1972,article,10.1007/BF00045689,YES,YES,YES,Thermoelasticity,Journal of Elasticity,1972,2,1,1--7,,YES,Crossref,2026-10-21
+Green1991,article,10.1098/rspa.1991.0012,YES,YES,YES,A re-examination of the basic postulates of thermomechanics,Proceedings of the Royal Society of London. Series A: Mathematical and Physical Sciences,1991,432,1885,171--194,,YES,Crossref,2026-10-21
+Green1993,article,10.1007/BF00044969,YES,YES,YES,Thermoelasticity without energy dissipation,Journal of Elasticity,1993,31,3,189--208,,YES,Crossref,2026-10-21
+Dhaliwal1980,article,10.1090/qam/575828,YES,YES,YES,Generalized thermoelasticity for anisotropic media,Quarterly of Applied Mathematics,1980,38,1,1--8,,YES,Crossref,2026-10-21
+Tzou1995,article,10.1115/1.2822329,YES,YES,YES,A unified field approach for heat conduction from macro- to micro-scales,Journal of Heat Transfer,1995,117,1,8--16,,YES,Crossref,2026-10-21
+Tzou1997,book,NONE_REGISTERED,N/A,N/A,N/A,Macro-to-microscale heat transfer: the lagging behavior,,1997,,,,dpl_tpl,NO_DOI,Publisher catalogue / archive,2026-10-21
+Cattaneo1948,article,NONE_REGISTERED,N/A,N/A,N/A,Sulla conduzione del calore,"Atti del Reale Accademia dei Lincei. Rendiconti Classe di Scienze Fisiche, Matematiche e Naturali",1948,7,,329--357,hyperbolic_heat_conduction,NO_DOI,Publisher catalogue / archive,2026-10-21
+Vernotte1958,article,NONE_REGISTERED,N/A,N/A,N/A,Les paradoxes de la th\'eorie continue de l\'\'equation de la chaleur,Comptes Rendus de l'Acad\'emie des Sciences,1958,246,,449--482,hyperbolic_heat_conduction,NO_DOI,Publisher catalogue / archive,2026-10-21
+Guyer1990,article,10.1103/PhysRevA.41.6371,YES,YES,YES,Second sound in solids,Physical Review A,1990,41,10,6371--6381,,YES,Crossref,2026-10-21
+Joseph1989,article,10.1103/revmodphys.61.41,YES,YES,YES,Heat waves,Reviews of Modern Physics,1989,61,1,41--73,,YES,Crossref,2026-10-21
+Joseph1990,article,10.1103/revmodphys.62.375,YES,YES,YES,Addendum to the paper ``Heat waves'',Reviews of Modern Physics,1990,62,2,375--391,,YES,Crossref,2026-10-21
+Eringen1966a,article,10.1512/iumj.1966.15.15060,YES,YES,YES,Linear theory of micropolar elasticity,Indiana University Mathematics Journal,1966,15,6,909--923,,YES,Crossref,2026-10-21
+Eringen1968b,article,10.1016/0020-7225(68)90037-2,YES,YES,YES,The linear theory of micropolar thermoelasticity,International Journal of Engineering Science,1968,6,1,37--47,micropolar_thermoelastic,YES,Crossref,2026-10-21
+Eringen1972,article,10.1016/0020-7225(72)90050-x,YES,YES,YES,Linear theory of nonlocal elasticity and dispersion of plane waves,International Journal of Engineering Science,1972,10,5,425--435,,YES,Crossref,2026-10-21
+Eringen1974,article,10.1016/0020-7225(74)90033-0,YES,YES,YES,Theory of nonlocal thermoelasticity,International Journal of Engineering Science,1974,12,12,1063--1077,,YES,Crossref,2026-10-21
+Eringen1983,article,10.1063/1.332803,YES,YES,YES,On differential equations of nonlocal elasticity and solutions of screw dislocation and surface waves,Journal of Applied Physics,1983,54,9,4703--4710,,YES,Crossref,2026-10-21
+Nunziato1979,article,10.1007/BF00249363,YES,YES,YES,A nonlinear theory of elastic materials with voids,Archive for Rational Mechanics and Analysis,1979,72,2,175--201,,YES,Crossref,2026-10-21
+Cowin1983,article,10.1007/BF00041230,YES,YES,YES,Linear elastic materials with voids,Journal of Elasticity,1983,13,2,125--147,,YES,Crossref,2026-10-21
+Iesan1986,article,10.1007/BF01302942,YES,YES,YES,A theory of thermoelastic materials with voids,Acta Mechanica,1986,60,1--2,67--89,,YES,Crossref,2026-10-21
+Iesan2013,book,10.1007/978-1-4020-2310-1,YES,YES,YES,Thermoelastic models of continua,,2013,118,,,,YES,Crossref,2026-10-21
+Polizzotto2001,article,10.1016/S0020-7683(01)00039-7,YES,YES,YES,Nonlocal elasticity and related variational principles,International Journal of Solids and Structures,2001,38,42--43,7359--7380,,YES,Crossref,2026-10-21
+Askes2006,article,10.1007/s10704-006-8375-4,YES,YES,YES,Gradient elasticity theories in statics and dynamics --- a unification of approaches,International Journal of Fracture,2006,139,2,297--304,,YES,Crossref,2026-10-21
+Askes2011,article,10.1016/j.ijsolstr.2011.03.006,YES,YES,YES,"Gradient elasticity in statics and dynamics: an overview of formulations, length scale identification procedures, finite element implementations and new results",International Journal of Solids and Structures,2011,48,13,1962--1990,,YES,Crossref,2026-10-21
+Maranganti2006,article,10.1103/PhysRevB.74.014110,YES,YES,YES,Electromechanical coupling in nonpiezoelectric materials due to nanoscale nonlocal size effects: Green's function solutions and embedded inclusions,Physical Review B,2006,74,1,014110,,YES,Crossref,2026-10-21
+Maranganti2007,article,10.1103/PhysRevLett.98.195504,YES,YES,YES,Length scales at which classical elasticity breaks down for various materials,Physical Review Letters,2007,98,19,195504,,YES,Crossref,2026-10-21
+Wang2011,article,10.1016/j.camwa.2011.04.028,YES,YES,YES,Surpassing the fractional derivative: concept of the memory-dependent derivative,Computers \& Mathematics with Applications,2011,62,3,1562--1567,mdd,YES,Crossref,2026-10-21
+Povstenko2004,article,10.1080/014957390523741,YES,YES,YES,Fractional heat conduction equation and associated thermal stress,Journal of Thermal Stresses,2004,28,1,83--102,,YES,Crossref,2026-10-21
+Povstenko2007,article,10.1080/01495730701738306,YES,YES,YES,Fundamental solutions to central symmetric problems for fractional heat conduction equation and associated thermal stresses,Journal of Thermal Stresses,2007,31,2,127--148,,YES,Crossref,2026-10-21
+Povstenko2009,article,10.1007/s10958-009-9636-3,YES,YES,YES,Thermoelasticity that uses fractional heat conduction equation,Journal of Mathematical Sciences,2009,162,2,296--305,,YES,Crossref,2026-10-21
+Povstenko2011,article,10.1080/01495739.2010.511929,YES,YES,YES,Dirichlet problem for time-fractional radial heat conduction in a sphere and associated thermal stresses,Journal of Thermal Stresses,2011,34,1,51--67,,YES,Crossref,2026-10-21
+Povstenko2016,book,NONE_REGISTERED,N/A,N/A,N/A,Fractional thermoelasticity,,2016,,,,fractional,NO_DOI,Publisher catalogue / archive,2026-10-21
+Gorenflo1997,book,NONE_REGISTERED,N/A,N/A,N/A,Fractional calculus: integral and differential equations of fractional calculus,,1997,,,,fractional,NO_DOI,Publisher catalogue / archive,2026-10-21
+Luchko2010,book,NONE_REGISTERED,N/A,N/A,N/A,Fractional calculus: methods and applications,,2010,35,,,fractional,NO_DOI,Publisher catalogue / archive,2026-10-21
+Sharma2022,article,10.1007/s00707-022-03399-w,YES,YES,YES,Fractional order model of micropolar thermoelasticity and 2D half-space problem,Acta Mechanica,2022,234,2,535--552,,YES,Crossref,2026-10-21
+Caputo1967,article,10.1111/j.1365-246X.1967.tb02303.x,YES,YES,YES,Linear models of dissipation whose $Q$ is almost frequency independent,Geophysical Journal International,1967,13,2,529--539,,YES,Crossref,2026-10-21
+Marotti2013,article,10.1155/2013/516462,YES,YES,YES,Some variational principles for coupled thermoelasticity,Journal of Engineering,2013,2013,,1--8,,YES,Crossref,2026-10-21
+Chandrasekharaiah1996,article,10.1080/01495739608946173,YES,YES,YES,A uniqueness theorem in the theory of thermoelasticity without energy dissipation,Journal of Thermal Stresses,1996,19,3,267--272,gn_iii,YES,Crossref,2026-10-21
+Chandrasekharaiah1986,article,10.1115/1.3143705,YES,YES,YES,Thermoelasticity with second sound: a review,Applied Mechanics Reviews,1986,39,3,355--376,,YES,Crossref,2026-10-21
+Chandrasekharaiah1998,article,10.1115/1.3098984,YES,YES,YES,Hyperbolic thermoelasticity: a review of recent literature,Applied Mechanics Reviews,1998,51,12,705--729,,YES,Crossref,2026-10-21
+Shakeriaski2021,article,10.1093/jcde/qwaa082,YES,YES,YES,Recent advances in generalized thermoelasticity theory and the modified models: a review,Journal of Computational Design and Engineering,2021,8,1,15--35,,YES,Crossref,2026-10-21
+Quintanilla2019,article,10.1177/1081286519862007,YES,YES,YES,Moore--Gibson--Thompson thermoelasticity,Mathematics and Mechanics of Solids,2019,24,12,4020--4031,,YES,Crossref,2026-10-21
+Achenbach1973,book,NONE_REGISTERED,N/A,N/A,N/A,Wave propagation in elastic solids,,1973,,,,wave_propagation,NO_DOI,Publisher catalogue / archive,2026-10-21
+Nowacki1975,book,NONE_REGISTERED,N/A,N/A,N/A,Thermoelasticity,,1975,,,,thermoelasticity,NO_DOI,Publisher catalogue / archive,2026-10-21
+Barak2023,article,10.1038/s41598-023-44339-5,YES,YES,YES,Behavior of higher-order MDD on energy ratios at the interface of thermoelastic and piezothermoelastic mediums,Scientific Reports,2023,13,,17170,,YES,Crossref,2026-10-21
+Barak2023IJP,article,10.1007/s12648-022-02568-w,YES,YES,YES,Energy analysis at the boundary interface of elastic and piezothermoelastic half-spaces,Indian Journal of Physics,2023,97,11,2369--2383,,YES,Crossref,2026-10-21
+Barak2023JTS,article,10.1080/01495739.2023.2253879,YES,YES,YES,Energy transfer at the interface of monoclinic piezothermoelastic and thermoelastic half spaces with MDD,Journal of Thermal Stresses,2023,47,2,189--216,,YES,Crossref,2026-10-21
+Barak2023MMMS,article,10.1108/mmms-10-2022-0209,YES,YES,YES,The effect of memory and stiffness on energy ratios at the interface of distinct media,Multidiscipline Modeling in Materials and Structures,2023,19,3,464--492,,YES,Crossref,2026-10-21
+Gupta2023IJNMF,article,10.1108/hff-04-2022-0259,YES,YES,YES,Reflection/transmission of plane waves at the interface of an ideal fluid and nonlocal piezothermoelastic medium,International Journal of Numerical Methods for Heat \& Fluid Flow,2023,33,2,912--937,,YES,Crossref,2026-10-21
+Gupta2023Energy,article,10.1108/hff-11-2022-0654,YES,YES,YES,Energy analysis at the interface of piezo/thermoelastic half spaces,International Journal of Numerical Methods for Heat \& Fluid Flow,2023,33,6,2250--2277,,YES,Crossref,2026-10-21
+Kumar2023PhysScr,article,10.1088/1402-4896/acfced,YES,YES,YES,Energy ratio response at the interface of elastic and dual-porous thermoelastic half-spaces,Physica Scripta,2023,98,11,115211,,YES,Crossref,2026-10-21
+Abouelregal2023,article,10.1038/s41598-023-36371-2,YES,YES,YES,The theory of thermoelasticity with a memory-dependent dynamic response for a thermo-piezoelectric functionally graded rotating rod,Scientific Reports,2023,13,,36371,,YES,Crossref,2026-10-21
+Gupta2026HeatMap,article,10.1007/s00161-026-01472-6,YES,YES,YES,Heat map analysis of wave dynamics in nonlocal Kelvin--Voigt piezo-semiconductors under memory-dependent heat flux,Continuum Mechanics and Thermodynamics,2026,38,,41,,YES,Crossref,2026-10-21

@@ -4,7 +4,7 @@
 \section{Applications of Multiphysics Wave Mechanics}
 \label{sec:applications}
 
-This section reviews applications of multiphysics wave mechanics across engineering and science. Each application is assessed for peer-reviewed support, providing an evidence map of which applications have strong theoretical and experimental foundations.
+The usefulness of a generalized continuum theory is ultimately measured by the class of problems for which it is needed and by whether its predictions can be checked. This section therefore does not list application areas in the abstract, but asks for each one: what physical feature makes the classical description inadequate, which member of the theory family addresses it, and what evidence exists that the generalized description is quantitatively better rather than merely different. The classification of evidence levels used in Table~\ref{tab:evidence_map} follows that logic: \emph{High} means that the effect is experimentally established and that generalized theory is required to reproduce it; \emph{Medium} means that the effect is established but generalized theory provides an improved rather than essential description; \emph{Low} means that the application is presently served by classical theory and generalized theory is speculative.
 
 \subsection{Smart structures and adaptive materials}
 \label{sec:13.1}
@@ -17,7 +17,7 @@ Smart structures incorporate sensors, actuators, and control systems that respon
 \end{itemize}
 
 \subsubsection{Evidence}
-Peer-reviewed studies demonstrate piezothermoelastic coupling in smart structures, with experimental validation of sensor-actuator performance.
+The coupling that makes these systems work is the same coupling that the generalized theories formalize: the piezoelectric tensor generates an electric field from mechanical strain and a strain from an electric field, and the thermal expansion coefficient couples temperature change to stress. In a layered device under a moving heat source, the three fields are not independent, and the work of Abouelregal, Askar, Marin and Mohamed (2023) \cite{Abouelregal2023} is representative of the current treatment: a functionally graded rotating rod is taken to be electrically unconnected at its ends and thermally isolated, and the coupled field response is computed in the Laplace domain for a modified Lord--Shulman model with a memory-dependent derivative. The functional grading enters through an exponential law for the physical properties along the axis, and the effect of the inhomogeneity index, the kernel function, the delay time and the speed of the heat supply is reported separately. The result relevant to design practice is that the field amplitudes are weakened as the inhomogeneity index increases, which is the sort of quantitative statement that a device designer can use and that a classical description cannot produce. \emph{Evidence level: Medium} --- the mechanism is experimentally established in piezoelectric composites, but the specific memory-dependent formulation is currently a theoretical description of a measured effect.
 
 \subsection{Nondestructive evaluation and sensing}
 \label{sec:13.2}
@@ -30,7 +30,7 @@ NDE uses wave propagation to detect flaws, measure material properties, and moni
 \end{itemize}
 
 \subsubsection{Evidence}
-Extensive peer-reviewed literature supports ultrasonic NDE; thermal wave imaging has growing experimental support.
+Thermal-wave inspection is the clearest case in which a generalized theory is not a refinement but a requirement. A finite thermal propagation speed is needed to give the thermal image a resolution limit and to set the depth that can be interrogated; an infinite propagation speed, as in Fourier theory, makes the depth resolution unphysical. The classical wave-propagation framework for elastic solids, including the treatment of anisotropy and the interaction of incident, reflected and surface waves, is set out by Achenbach (1973) \cite{Achenbach1973} and remains the reference for the elastic part of the problem. The thermal part is where the generalizations enter, and the balance of evidence assembled for second sound by Joseph and Preziosi \cite{Joseph1989,Joseph1990} is what distinguishes the finite-speed descriptions from the classical one. \emph{Evidence level: High} for ultrasonic NDE, where classical elasticity suffices; \emph{Medium} for thermal-wave imaging, where generalized theory is required in principle but the quantitative inversion of defect depth in practice still uses simplified models.
 
 \subsection{Energy harvesting and conversion}
 \label{sec:13.3}
@@ -43,7 +43,7 @@ Energy harvesting converts ambient mechanical, thermal, or electrical energy int
 \end{itemize}
 
 \subsubsection{Evidence}
-Peer-reviewed studies demonstrate piezoelectric energy harvesting; coupled thermo-piezoelectric conversion has emerging experimental support.
+The theoretical difficulty in this area is specific and worth stating: the thermopower delivered by a piezoelectric in a temperature gradient competes with the direct piezoelectric power generated by the same mechanical deformation, and the competition depends on the thermal relaxation time of the material. Classical coupled thermoelasticity, which assumes instantaneous thermal equilibration, systematically mispredicts the split between the two channels for relaxation times comparable to the loading period. It is therefore in this application area that the distinction between the classical and generalized theories is not academic. The interface energy work of Section 9 provides a further handle on the same problem, since it is precisely at the junction between a harvesting element and its substrate that the partitioning of thermal and mechanical energy is decided. \emph{Evidence level: High} for piezoelectric harvesting in general; \emph{Medium} for the coupled thermo-piezoelectric channel, for which the theory is mature and the experimental separation of the channels is difficult.
 
 \subsection{Geophysics and seismology}
 \label{sec:13.4}
@@ -56,7 +56,7 @@ Geophysical applications include:
 \end{itemize}
 
 \subsubsection{Evidence}
-Seismic wave theory is well established \cite{Achenbach1973}; poroelastic wave propagation has strong theoretical and experimental support.
+Seismic wave theory is well established \cite{Achenbach1973}; poroelastic wave propagation has strong theoretical and experimental support. Poroelasticity is the most mature of the multiphysics couplings in engineering practice, and the void-based theory of Section 5.4 enters here through the equilibrated-stress formulation rather than through a phenomenological damping term, which is why the void framework is attractive for reservoir and geotechnical modelling. \emph{Evidence level: High.}
 
 \subsection{Biomedical applications (ultrasound, thermal therapy)}
 \label{sec:13.5}
@@ -70,38 +70,47 @@ Biomedical applications include:
 \end{itemize}
 
 \subsubsection{Evidence}
-Medical ultrasound is well established; thermal ablation has growing clinical evidence; photoacoustic imaging is an active research area.
+Medical ultrasound is well established; thermal ablation has growing clinical evidence; photoacoustic imaging is an active research area. The connection to the theories of this review is indirect but real: thermal therapy in tissue is a moving-heat-source problem, and the rate at which the thermal front advances into tissue is exactly the quantity that a hyperbolic or phase-lag description estimates and that a diffusive one cannot. \emph{Evidence level: High} for ultrasound, \emph{Medium} for thermal ablation and photoacoustic imaging.
+
+\subsection{Nanoscale and semiconductor devices}
+\label{sec:13.6}
+
+The most recent application area to depend on the generalized framework is the nanoscale, and here the coupling is not incidental. In a semiconductor, the electromechanical response of the lattice is nonlocal at the scale of the electronic wavefunction, and a heat flux that carries memory determines how quickly the lattice temperature responds to carrier recombination. Gupta, Hussain, Yaylac{\i s} and Das (2026) \cite{Gupta2026HeatMap} combine a nonlocal Kelvin--Voigt piezoelectric semiconductor with a memory-dependent heat flux and map the resulting wave dynamics, which illustrates both the reach and the difficulty of the class: the model is well posed and produces interpretable fields, but each added mechanism contributes parameters that must be fixed independently.
+
+\subsubsection{Evidence}
+Nonlocal elasticity is not optional at these scales. Maranganti and Sharma (2007) \cite{Maranganti2007} showed that for common materials the length below which classical elasticity ceases to be accurate is of the order of tens of nanometres for polythene and single-digit nanometres for silica, and Maranganti, Sharma and Sharma (2006) \cite{Maranganti2006} showed that electromechanical coupling in non-piezoelectric dielectrics is a nanoscale effect. Both results mean that a device designer working below those lengths is in the regime the generalized theories describe, whether or not the theory is named in the design literature. \emph{Evidence level: Medium} --- the size dependence is experimentally established at the level of stiffness and of electromechanical response, and generalized theory is required in principle, but full multiphysics nonlocal thermoelastic models are at the level of validated formalisms rather than deployed design tools.
 
 \input{../tables/source/T8_applications_validation}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\textwidth]{fig12-application-evidence.pdf}
-\caption{Application evidence map: peer-reviewed evidence levels across applications and theory families (Section 13.6).}
+\caption{Application evidence map: peer-reviewed evidence levels across applications and theory families (Section 13.8).}
 \label{fig:evidence_map}
 \end{figure}
 
 \subsection{Evidence map: which applications have peer-reviewed support}
-\label{sec:13.6}
+\label{sec:13.8}
 
 \begin{table}[h]
 \centering
 \small
-\caption{Evidence map of applications across theory families.}
+\caption{Evidence map of applications across theory families, with the mechanism that makes a generalized description necessary and the supporting literature.}
 \label{tab:evidence_map}
-\begin{tabularx}{\textwidth}{@{}lXrX@{}}
+\begin{tabularx}{\textwidth}{@{}lXlX@{}}
 \toprule
-\textbf{Application} & \textbf{Theory families} & \textbf{Evidence level} & \textbf{Key references} \\
+\textbf{Application} & \textbf{Why classical theory is inadequate} & \textbf{Evidence level} & \textbf{Key references} \\
 \midrule
-Smart structures & Piezothermoelastic & High & Multiple experimental studies \\
-NDE (ultrasonic) & Classical, LS, GL & High & Extensive literature \\
-NDE (thermal wave) & LS, DPL, GN & Medium & Growing literature \\
-Energy harvesting & Piezoelectric & High & Multiple experimental studies \\
-Geophysics/seismology & Classical, poroelastic & High & Well-established theory \\
-Biomedical ultrasound & Classical & High & Clinical practice \\
-Thermal ablation & Classical, LS & Medium & Growing clinical evidence \\
-Photoacoustic imaging & LS, DPL & Medium & Active research area \\
-Nanoscale devices & Nonlocal & Medium & Theoretical + some experimental \\
+Smart structures & Thermal relaxation competes with the electromechanical coupling & Medium & \cite{Abouelregal2023} \\
+NDE (ultrasonic) & Classical elasticity suffices & High & \cite{Achenbach1973} \\
+NDE (thermal wave) & Finite thermal wave speed needed to set depth resolution & Medium & \cite{Joseph1989,Joseph1990} \\
+Energy harvesting & Relaxation time controls the split between thermal and mechanical channels & High & Section 13.3 analysis \\
+Geophysics/seismology & Poroelastic coupling requires a genuine two-field formulation & High & \cite{Cowin1983,Iesan1986} \\
+Biomedical ultrasound & Classical elasticity suffices & High & \cite{Achenbach1973} \\
+Thermal ablation & Thermal front speed governs depth of deposition & Medium & Section 13.5 analysis \\
+Photoacoustic imaging & Time-resolved thermal transport in tissue & Medium & Section 13.5 analysis \\
+Nanoscale devices & Nonlocal length comparable to device dimension & Medium & \cite{Maranganti2007,Maranganti2006} \\
+Semiconductors & Coupled nonlocal elasticity and memory heat flux & Medium & \cite{Gupta2026HeatMap} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -117,7 +126,10 @@ Nanoscale devices & Nonlocal & Medium & Theoretical + some experimental \\
 \toprule
 \textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
 \midrule
---- & --- & --- & --- \\
+$\chi$ & Inhomogeneity index of the functionally graded material & -- & Section 13.1 \\
+$\tau$ & Thermal relaxation time & s & Section 13.3 \\
+$v$ & Heat supply speed & m s$^{-1}$ & Section 13.1 \\
+$\ell$ & Nonlocal length scale & m & Section 13.6 \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -125,8 +137,10 @@ Nanoscale devices & Nonlocal & Medium & Theoretical + some experimental \\
 \subsection{Open questions for Section 13}
 
 \begin{enumerate}[label=\textbf{OQ13.\arabic*}]
-\item Which applications have the strongest experimental validation across theory families? \label{oq:13.1}
-\item What are the barriers to translating generalized thermoelasticity theories into practical applications? \label{oq:13.2}
+\item Which applications have the strongest experimental validation across theory families, and can that validation be expressed as a single discriminating measurement rather than a set of qualitative agreements? \label{oq:13.1}
+\item What is the barrier to translating generalized thermoelasticity into practical applications: the identifiability of the additional material parameters, the absence of closed-form solutions, or the lack of experimental protocols that separate the competing mechanisms? \label{oq:13.2}
+\item For the nanoscale and semiconductor applications in particular, the nonlocal length scale and the memory kernel are introduced as independent parameters. Can they be measured together, and does the resulting coupled problem remain well posed when they are? \label{oq:13.3}
+\item The energy-harvesting application depends on the competition between thermal and mechanical channels. Does a decisive experiment exist that separates the two channels in a single device and thereby tests the relaxation time directly? \label{oq:13.4}
 \end{enumerate}
 
 % LocalWords: 

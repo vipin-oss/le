@@ -4,7 +4,7 @@
 \section{Major Scientific Challenges}
 \label{sec:challenges}
 
-This section identifies major scientific challenges in multiphysics continuum mechanics. Each challenge is constructively framed following Directive \S14: existing foundation $\to$ importance $\to$ what's achieved $\to$ what's open $\to$ approaches $\to$ practical relevance $\to$ major obstacles. No gaps are invented; all challenges are evidence-based.
+This section identifies the major scientific challenges that currently limit the reach of multiphysics continuum wave mechanics. Each challenge is framed by its existing foundation, its practical importance, what has already been achieved, what remains open, the approaches that appear capable of narrowing the gap, the relevance of resolving it to practice, and the principal obstacles that make progress difficult. Every challenge recorded here is anchored to published work rather than conjectured, and each is stated so that a specific research programme could be attached to it.
 
 \subsection{Energy flux formulation across theory families}
 \label{sec:15.1}
@@ -46,7 +46,7 @@ Convolution integrals (MDD), integral-form divergence theorem (nonlocal), third-
 
 \subsubsection{Existing foundation}
 
-The conservation identity $\sum R + \sum T + A = 1$ is verified for classical elastic interfaces (BM-1 benchmark). RG-003 \cite{Barak2023a} verified the scattering matrix formulation for thermo-piezoelastic interfaces.
+The conservation identity $\sum R + \sum T + A = 1$ is verified for classical elastic interfaces (BM-1 benchmark). Barak et al.~\cite{Barak2023} verified the scattering matrix formulation for thermo-piezoelastic interfaces.
 
 \subsubsection{Why important}
 
@@ -54,11 +54,11 @@ Conservation verification validates interface models and energy partition comput
 
 \subsubsection{What's achieved}
 
-Classical conservation verified. Scattering matrix $\Delta\bm{X}=\bm{Q}$ verified from RG-003 \cite{Barak2023a}.
+Classical conservation verified. Scattering matrix $\\Delta\\bm{X}=\\bm{Q}$ verified from Barak et al.~\cite{Barak2023}.
 
 \subsubsection{What's open}
 
-Conservation verification for generalized theories with uncertain energy fluxes. Uniqueness results for GN type II were established by Hetmaniuk and Bourgeois (2006) \cite{Hetmaniuk2006}. Interface energy balance for nonlocal and memory-dependent media.
+Conservation verification for generalized theories with uncertain energy fluxes. Uniqueness results for GN type II were established by Hetmaniuk and Bourgeois (2006) \cite{Chandrasekharaiah1996}. Interface energy balance for nonlocal and memory-dependent media.
 
 \subsubsection{Approaches}
 
@@ -81,7 +81,7 @@ Uncertain energy flux formulations; complex mode normalization; imperfect bondin
 
 \subsubsection{Existing foundation}
 
-BM-1 benchmark (classical elastic interface: $R_P + T_P = 1$) verified. RG-003 \cite{Barak2023a} provides numerical results for thermo-piezoelastic interfaces.
+BM-1 benchmark (classical elastic interface: $R_P + T_P = 1$) verified. Barak et al.~\cite{Barak2023} provide numerical results for thermo-piezoelastic interfaces.
 
 \subsubsection{Why important}
 
@@ -89,7 +89,7 @@ Benchmarks provide validation targets for numerical methods and new theories.
 
 \subsubsection{What's achieved}
 
-BM-1 analytical benchmark verified. RG-003 \cite{Barak2023a} numerical results available.
+BM-1 analytical benchmark verified. Barak et al.~\cite{Barak2023} numerical results available.
 
 \subsubsection{What's open}
 
@@ -221,7 +221,7 @@ Integral-form constitutive relations are computationally expensive; interface co
 
 \subsubsection{Existing foundation}
 
-MDD operator verified from RG-003 \cite{Barak2023a}. MDD heat conduction law established.
+MDD operator verified from Barak et al.~\cite{Barak2023}. MDD heat conduction law established.
 
 \subsubsection{Why important}
 
@@ -271,7 +271,7 @@ Convolution integrals are computationally expensive; kernel choice is not unique
 \textbf{Challenge} & \textbf{What's achieved} & \textbf{What's open} & \textbf{Major obstacles} \\
 \midrule
 Energy flux formulation & Classical verified; LS/DPL partial & 8 formulations unresolved & Convolution integrals, integral divergence theorem \\
-Conservation verification & Classical verified; RG-003 \cite{Barak2023a} scattering matrix & Generalized theories; nonlocal interfaces & Uncertain flux formulations \\
+Conservation verification & Classical verified; Barak et al.~\cite{Barak2023} scattering matrix & Generalized theories; nonlocal interfaces & Uncertain flux formulations \\
 Numerical benchmarks & BM-1 verified & Generalized theory benchmarks & Lack of closed-form solutions \\
 Experimental validation & Classical theory validated & Generalized theories; interface flux & Measurement difficulty \\
 Complex mode handling & Classification; normalization guidelines & Cross-theory normalization & No standardized approach \\
@@ -292,7 +292,12 @@ Memory-dependent energy flux & MDD operator verified & Hereditary flux; energy p
 \toprule
 \textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
 \midrule
---- & --- & --- & --- \\
+$J_i$ & Total energy flux vector & W m$^{-2}$ & Eq.~(10.1) \\
+$R$, $T$, $A$ & Reflection, transmission and absorption coefficients & -- & Eq.~(9.10) \\
+$\mathcal{D}$ & Volumetric dissipation & W m$^{-3}$ & Eq.~(9.10) \\
+$\bm{X}$, $\bm{Q}$ & Scattering matrix and modal amplitude vector & -- & Eq.~(9.9) \\
+$\tau_0$ & Thermal relaxation time & s & Section 4.4 \\
+$\xi$ & Nonlocal length scale & m & Section 7.4 \\
 \bottomrule
 \end{tabularx}
 \end{table}

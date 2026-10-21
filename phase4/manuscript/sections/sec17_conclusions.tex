@@ -12,10 +12,10 @@ This review presents a constructive synthesis of generalized continuum mechanics
 \item \textbf{Classical energy flux is verified:} $J_i = \sigma_{ji}v_i + q_i$ (EQ-007) satisfies the local energy balance for classical coupled thermoelasticity.
 \item \textbf{Finite wave speed is a universal feature:} All generalized theories (LS, GL, GN-II, GN-III, DPL, TPL, MGT, MDD) predict finite thermal wave speeds, resolving the infinite propagation speed paradox of classical Fourier theory.
 \item \textbf{Energy flux uncertainty is theory-specific:} Eight energy flux formulations (LS, GL, GN-II, GN-III, DPL, TPL, MGT, MDD, nonlocal, piezoelectric electrical) remain mathematically unresolved and are identified as open derivations, not presented as canonical results.
-\item \textbf{Scattering matrix formulation is verified:} $\Delta\bm{X} = \bm{Q}$ (RG-003 \cite{Barak2023a} Eq. 44) provides a consistent framework for interface wave analysis.
+\item \textbf{Scattering matrix formulation is verified:} $\Delta\bm{X} = \bm{Q}$ (Eq.~44 of Barak et al.~\cite{Barak2023}) provides a consistent framework for interface wave analysis.
 \item \textbf{Conservation identity holds for classical media:} $\sum R + \sum T + A = 1$ is verified for classical elastic interfaces (BM-1 benchmark).
 \item \textbf{Five-axis taxonomy enables gap identification:} The physical/mathematical/wave/energy/validation taxonomy classifies the evidence base and identifies twelve research gaps.
-\item \textbf{Constructive synthesis avoids adversarial criticism:} Model differences are traced to assumptions, not presented as contradictions or errors.
+\item \textbf{Differences between models are attributable:} Each divergence between competing formulations is traced to a specific modelling choice, so that the theories can be compared on common ground rather than treated as mutually exclusive.
 \end{enumerate}
 
 \subsection{What is well established vs. what remains open}
@@ -43,9 +43,9 @@ This review presents a constructive synthesis of generalized continuum mechanics
 \item Reproducible numerical benchmarks for generalized theories.
 \end{itemize}
 
-\subsection{The role of constructive synthesis vs. adversarial criticism}
+\subsection{Methodological stance: tracing differences to assumptions}
 
-This review deliberately avoids adversarial criticism of individual publications. Model-specific differences are traced to documented assumptions (constitutive, material symmetry, geometry, boundary conditions, thermal theory, frequency convention, normalization, approximation level). Where material errors are conclusively established, they are recorded transparently; where uncertainty exists, it is acknowledged as an open question. This approach follows Directive \S1: the review never becomes an article about alleged errors in any publication.
+Model-specific differences in generalized continuum wave mechanics are almost never contradictions. They arise from different choices of constitutive form, material symmetry, geometry, boundary conditions, thermal theory, frequency convention, normalization and approximation level, and each of these choices is legitimate within the domain for which it was made. This review therefore attributes differences to their underlying assumptions rather than treating them as errors, and it reports the state of each derivation on an explicit scale: verified where the result follows from a stated derivation or a primary source, partially derived where only part of the form has been established, and open where the formulation has not been resolved. Where uncertainty exists it is recorded as an open question rather than settled by inference, and the corresponding entry in the equation register states explicitly what remains to be shown.
 
 \begin{figure}[htbp]
 \centering
@@ -68,7 +68,7 @@ The next decade of research should focus on:
 \item \textbf{Inverse characterization} of relaxation times, nonlocal length scales, and kernel parameters.
 \end{enumerate}
 
-The foundation is solid: classical balance laws are verified, generalized theory governing equations are established, and the scattering matrix framework is validated. The path forward is clear: complete the energy flux derivations, validate experimentally, and extend to emerging applications. The constructive organizational approach employed here follows the model of comprehensive review articles such as Abdalla et al. (2022) \cite{Abdalla2022}, which demonstrate how theory-spanning synthesis can be organized around conceptual themes rather than individual publications.
+The foundation is solid: classical balance laws are verified, generalized theory governing equations are established, and the scattering matrix framework is validated. The path forward is clear: complete the energy flux derivations, validate experimentally, and extend to emerging applications. The constructive organizational approach employed here follows the model of comprehensive review articles such as Abdalla et al. (2022) \cite{Shakeriaski2021}, which demonstrate how theory-spanning synthesis can be organized around conceptual themes rather than individual publications.
 
 \subsection{Notation summary for Section 17}
 
@@ -81,7 +81,12 @@ The foundation is solid: classical balance laws are verified, generalized theory
 \toprule
 \textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
 \midrule
---- & --- & --- & --- \\
+$J_i$ & Total energy flux vector & W m$^{-2}$ & Eq.~(10.1) \\
+$\sigma_{ij}$ & Cauchy stress tensor & Pa & Eq.~(3.6) \\
+$q_i$ & Heat flux vector & W m$^{-2}$ & Eq.~(3.9) \\
+$\tau_0$ & Thermal relaxation time & s & Section 4.4 \\
+$c$ & Thermal wave speed & m s$^{-1}$ & Section 6.3 \\
+$\omega$ & Angular frequency & rad s$^{-1}$ & Section 8.1 \\
 \bottomrule
 \end{tabularx}
 \end{table}

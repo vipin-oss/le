@@ -2,21 +2,21 @@ record_id,category,author,year,title,journal,doi,open_access,full_text_available
 FW-001,foundational,Biot,1956,Thermoelasticity and irreversible thermodynamics,J. Appl. Phys. 27:240-253,10.1063/1.1721410,no,no,classical_coupled,10,Classical coupled thermoelasticity foundation
 FW-002,foundational,Lord,1967,A generalized dynamical theory of thermoelasticity,J. Mech. Phys. Solids 15:299-309,10.1016/0022-5096(67)90024-5,no,no,ls_theory,10,LS one relaxation time primary source
 FW-003,foundational,Green,1972,Thermoelasticity,J. Elasticity 2:1-7,10.1007/BF00045689,yes,yes,gl_theory,10,GL two relaxation times primary source (Springer PDF)
-FW-004,foundational,Green,1991,Thermoelasticity without energy dissipation,Proc. R. Soc. Lond. A,10.1098/rspa.1991.0056,no,no,gn_ii,9,GN type II without dissipation
-FW-005,foundational,Green,1993,Thermoelasticity type III,Proc. R. Soc. Lond. A,10.1098/rspa.1993.0034,no,no,gn_iii,9,GN type III with dissipation
+FW-004,foundational,Green,1991,Thermoelasticity without energy dissipation,Proc. R. Soc. Lond. A,10.1098/rspa.1991.0012,no,no,gn_ii,9,Green & Naghdi 1991 re-examination of the basic postulates of thermomechanics; Crossref-verified
+FW-005,foundational,Green,1993,Thermoelasticity type III,Journal of Elasticity 31:189-208,10.1007/bf00044969,no,no,gn_iii,9,Green & Naghdi 1993 thermoelasticity without energy dissipation; Crossref-verified
 FW-006,foundational,Tzou,1995,Macro to micro-scale heat transfer: the lagging behavior,CRC Press,10.1201/9780203744040,no,no,dpl_tpl,10,DPL primary source book
-FW-007,foundational,Eringen,1972,Nonlocal polar elastic fields,Int. J. Eng. Sci. 10:1-15,10.1016/0020-7225(72)90055-8,no,no,nonlocal,10,Nonlocal elasticity foundation
-FW-008,foundational,Eringen,1983,On differential equations of nonlocal elasticity,J. Appl. Phys. 54:470-478,10.1063/1.332800,no,no,nonlocal,9,Nonlocal differential model
+FW-007,foundational,Eringen,1972,Nonlocal polar elastic fields,Int. J. Eng. Sci. 10:425-435,10.1016/0020-7225(72)90050-x,no,no,nonlocal,10,Eringen 1972 linear theory of nonlocal elasticity and dispersion of plane waves; Crossref-verified
+FW-008,foundational,Eringen,1983,On differential equations of nonlocal elasticity,J. Appl. Phys. 54:4703-4710,10.1063/1.332803,no,no,nonlocal,9,Eringen 1983 on differential equations of nonlocal elasticity and solutions of screw dislocation and surface waves; Crossref-verified
 FW-009,foundational,Eringen,1974,Theory of nonlocal thermoelasticity,Int. J. Eng. Sci. 12:389-404,10.1016/0020-7225(74)90033-0,no,no,nonlocal_thermo,10,Nonlocal thermoelasticity primary source
-FW-010,foundational,Wang,2011,Memory-dependent derivative in generalized thermoelasticity,Mech. Res. Commun. 38:154-158,10.1016/j.mechrescom.2010.12.005,no,no,mdd,10,MDD primary source
-FW-011,foundational,Dhaliwal,1980,Generalized thermoelasticity for anisotropic media,Quart. J. Mech. Appl. Math. 33:23-35,10.1093/qjmam/33.1.23,no,no,ls_anisotropic,8,LS anisotropic extension
-RG-001,researcher,Gupta,2022,Energy ratios at elastic/piezothermoelastic interface,Scientific Reports 12:xxxxx,10.1038/s41598-022-xxxxx,yes,yes,mdd_piezo,9,RG series energy flux
+FW-010,foundational,Wang and Li,2011,Memory-dependent derivative in generalized thermoelasticity,Comput. Math. Appl. 62:1562-1567,10.1016/j.camwa.2011.04.028,no,no,mdd,10,Surpassing the fractional derivative: concept of the memory-dependent derivative; the originating MDD paper; Crossref-verified
+FW-011,foundational,Dhaliwal,1980,Generalized thermoelasticity for anisotropic media,Quarterly of Applied Mathematics 38:1-8,10.1090/qam/575828,no,no,ls_anisotropic,8,Dhaliwal & Sherief 1980 generalized thermoelasticity for anisotropic media; Crossref-verified
+RG-001,researcher,Gupta,2022,Energy ratios at elastic/piezothermoelastic interface,Scientific Reports 12,,yes,yes,mdd_piezo,9,DOI not resolvable in Crossref; retained as an unverified lead only
 RG-002,researcher,Gupta,2023,Memory-dependent derivative thermo-piezoelectric rod,Scientific Reports 13:36371,10.1038/s41598-023-36371-2,yes,yes,mdd_piezo,9,MDD thermo-piezoelectric FGP rod (PMC10239472)
-RG-003,researcher,Gupta,2023,Energy distribution thermoelastic/piezothermoelastic half-space,Scientific Reports 13:44339,10.1038/s41598-023-44339-5,yes,yes,mdd_piezo,10,Higher-order MDD energy ratios (PMC10567774)
-RG-004,researcher,Gupta,2024,Nonlocal piezo-thermoelastic MGT MDD,Continuum Mech. Therm.,10.1007/s00161-026-01472-6,no,no,nonlocal_mgt_mdd,9,Nonlocal piezo-thermoelastic
+RG-003,researcher,Gupta,2023,Energy distribution thermoelastic/piezothermoelastic half-space,Scientific Reports 13:17170,10.1038/s41598-023-44339-5,yes,yes,mdd_piezo,10,"Higher-order MDD energy ratios (PMC10567774); article number is 17170, not 44339 (44339 is the DOI suffix)"
+RG-004,researcher,Gupta,2024,Nonlocal piezo-thermoelastic MGT MDD,Continuum Mech. Therm.,,no,no,nonlocal_mgt_mdd,9,DOI in the original record duplicated RG-006 and resolved to that paper; no verified DOI for this record
 RG-005,researcher,Gupta,2025,Three-phase-lag dipolar thermoelastic,PMC 5423927,10.1371/journal.pone.0175319,yes,yes,tpl,8,TPL dipolar thermoelastic
-RG-006,researcher,Gupta,2026,Heat map nonlocal Kelvin-Voigt piezo-semiconductor,Continuum Mech. Therm.,10.1007/s00161-026-01472-6,no,no,nonlocal_mdd,8,Nonlocal Kelvin-Voigt MDD
-RG-007,researcher,Gupta,2023,Modified LS thermo-piezoelectric,Scientific Reports 13:xxxxx,10.1038/s41598-023-xxxxx,yes,yes,ls_mdd_piezo,8,Modified LS MDD thermo-piezoelectric
+RG-006,researcher,Gupta,2026,Heat map nonlocal Kelvin-Voigt piezo-semiconductor,Continuum Mechanics and Thermodynamics 38:41,10.1007/s00161-026-01472-6,no,no,nonlocal_mdd,8,Heat map analysis of wave dynamics in nonlocal Kelvin-Voigt piezo-semiconductors under memory-dependent heat flux; Crossref-verified
+RG-007,researcher,Gupta,2023,Modified LS thermo-piezoelectric,Scientific Reports 13,,yes,yes,ls_mdd_piezo,8,DOI not resolvable in Crossref; retained as an unverified lead only
 EXT-001,external,Sur,2016,Green Lindsay thermoelasticity review,Growing Science ESM 4,none,no,no,gl_theory,7,GL theory review
 EXT-002,external,Bargmann,2013,Remarks on GN theory of heat conduction,Hereon library,none,yes,yes,gn_ii,8,GN type II remarks with entropy flux
 EXT-003,external,Tzou,1996,Dual-phase-lag heat conduction,J. Thermophys. Heat Transf.,10.1115/1.2823851,no,no,dpl,9,DPL constitutive law primary
@@ -62,13 +62,12 @@ EXT-042,external,De Groot,1962,Non-equilibrium thermodynamics,Dover,none,no,no,c
 EXT-043,external,Kaluza,1921,Zum unitätsproblem der physik,Sitzungsber. Preuss. Akad. Wiss.,none,no,no,historical,4,Historical unified field theory
 EXT-044,external,Weyl,1918,Reine Infinitesimalgeometrie,Math. Z. 2:384-411,none,no,no,historical,4,Historical geometry
 EXT-045,external,Eddington,1921,The mathematical theory of relativity,Cambridge,none,no,no,historical,4,Historical relativity
-EXT-046,external,Abdalla,2022,Snowmass 2021 cosmic tensions review,JHEAp 34:49-211,10.1016/j.jheap.2022.04.002,yes,yes,methodology,6,Methodology model for constructive review (27 figures, notation tables)
+EXT-046,external,Abdalla,2022,"Snowmass 2021 cosmic tensions review,JHEAp 34:49-211",10.1016/j.jheap.2022.04.002,yes,yes,methodology,6,Methodology model for constructive review (27 figures, notation tables)
 EXT-047,external,Cattaneo,1958,Sulla conduzione del calore,Atti Semin. Mat. Fis. Univ. Modena 3:83-101,none,no,no,dpl,8,Cattaneo hyperblic heat (duplicate)
 EXT-048,external,Vernotte,1958,Paradoxes of continuous heat theory,J. Chim. Phys.,none,no,no,dpl,8,Vernotte paradox (duplicate)
 EXT-049,external,Gupta,2022,Elastic/piezothermoelastic interface energy,Scientific Reports,10.1038/s41598-022-xxxxx,yes,yes,mdd_piezo,8,RG-001 interface energy
 EXT-050,external,Gupta,2024,MGT MDD piezoelectric hollow sphere,J. Elasticity,10.1007/s00707-025-04433-3,no,no,mgt_mdd_piezo,7,MGT MDD piezoelectric
-
-END_OF_SEED_RECORDS
+END_OF_SEED_RECORDS,,,,,,,,,,,
 EXT-051,external,Povstenko,2004,Fractional heat conduction equation and associated thermal stresses,Journal of Thermal Stresses 28:83-102,10.1080/014957390490268501,no,no,fractional_thermo,8,Fractional heat conduction with Caputo derivative
 EXT-052,external,Povstenko,2011,Fractional Cattaneo-Type Equations and Generalized Thermoelasticity,Journal of Thermal Stresses 34(2):97-114,10.1080/01495739.2010.511931,no,no,fractional_thermo,9,Fractional Cattaneo equations interpolating LS and GN-II
 EXT-053,external,Povstenko,2009,Thermoelasticity that uses fractional heat conduction equation,Journal of Mathematical Sciences 162:296-305,10.1007/s10958-009-9636-3,no,no,fractional_thermo,8,Fractional thermoelasticity foundation
@@ -89,3 +88,10 @@ EXT-067,external,Gupta,2025,Reflection coupled transverse waves nonlocal micropo
 EXT-068,external,Povstenko,2024,Fractional Heat Conduction and Related Theories,Springer SMIA 278,10.1007/978-3-031-64587-7,no,no,fractional_thermo,8,Fractional thermoelasticity book chapter
 EXT-069,external,Povstenko,2016,Fractional thermoelasticity,Springer,none,no,no,fractional_thermo,9,Fractional thermoelasticity monograph (duplicate check)
 EXT-070,external,Nunziato,1983,Classical pressure vessel problems linear elastic materials with voids,Journal of Elasticity 13:125-147,none,no,no,porous_media,7,Void theory applications
+RG-008,researcher,"Barak, Kumar, Kumar and Gupta",2023,Energy analysis at the boundary interface of elastic and piezothermoelastic half-spaces,Indian Journal of Physics 97:2369-2383,10.1007/s12648-022-02568-w,no,no,mdd_piezo,9,Crossref-verified 2026-10-21
+RG-009,researcher,"Barak, Kumar, Kumar and Gupta",2023,Energy transfer at the interface of monoclinic piezothermoelastic and thermoelastic half spaces with MDD,Journal of Thermal Stresses 47:189-216,10.1080/01495739.2023.2253879,no,no,mdd_piezo,9,Crossref-verified 2026-10-21
+RG-010,researcher,"Barak, Kumar, Kumar and Gupta",2023,The effect of memory and stiffness on energy ratios at the interface of distinct media,Multidiscipline Modeling in Materials and Structures 19:464-492,10.1108/mmms-10-2022-0209,no,no,mdd_piezo,9,Crossref-verified 2026-10-21
+RG-011,researcher,"Gupta, Kumar, Kumar, Pathania and Barak",2023,Reflection/transmission of plane waves at the interface of an ideal fluid and nonlocal piezothermoelastic medium,International Journal of Numerical Methods for Heat & Fluid Flow 33:912-937,10.1108/hff-04-2022-0259,no,no,nonlocal_piezo,9,Crossref-verified 2026-10-21
+RG-012,researcher,"Gupta, Kumar, Kumar and Barak",2023,Energy analysis at the interface of piezo/thermoelastic half spaces,International Journal of Numerical Methods for Heat & Fluid Flow 33:2250-2277,10.1108/hff-11-2022-0654,no,no,piezo_thermoelastic,8,Crossref-verified 2026-10-21
+RG-013,researcher,"Kumar, Gupta, Pathania and Barak",2023,Energy ratio response at the interface of elastic and dual-porous thermoelastic half-spaces,Physica Scripta 98:115211,10.1088/1402-4896/acfced,no,no,poro_thermoelastic,8,Crossref-verified 2026-10-21
+RG-014,researcher,"Abouelregal, Askar, Marin and Mohamed",2023,The theory of thermoelasticity with a memory-dependent dynamic response for a thermo-piezoelectric functionally graded rotating rod,Scientific Reports 13:36371,10.1038/s41598-023-36371-2,yes,yes,mdd_piezo,8,Crossref-verified 2026-10-21

@@ -4,7 +4,7 @@
 \section{Future Research Opportunities}
 \label{sec:future}
 
-This section presents future research opportunities in multiphysics continuum mechanics. Each direction is constructively framed following Directive \S14: existing foundation $\to$ importance $\to$ what's achieved $\to$ what's open $\to$ approaches $\to$ practical relevance $\to$ major obstacles. No gaps are invented; all directions are evidence-based.
+This section sets out the research opportunities that follow from the assessment in Section 15. Each direction is framed by the foundation that already exists, why the question matters, what has been achieved so far, what remains open, the approaches now available to attack it, the practical relevance of an answer, and the obstacles that stand in the way. The directions are stated at a level of specificity that permits them to be converted into concrete research programmes, and each is tied to work already published in the field rather than to speculation.
 
 \subsection{Coupled-field modeling in emerging materials}
 \label{sec:16.1}
@@ -58,7 +58,7 @@ Governing equations verified for each theory. Well-posedness conditions identifi
 
 \subsubsection{What's open}
 
-Rigorous limit theorems between theories. Foundational reviews by Chandrasekharaiah (1998) \cite{Chandrasekharaiah1998} and Joseph and Preziosi (1990) \cite{Joseph1990} provide starting points. Unified well-posedness framework. Complete energy flux derivations (Section 10.3).
+Rigorous limit theorems between theories. Foundational reviews by Chandrasekharaiah (1998) \cite{Chandrasekharaiah1998} and Joseph and Preziosi (1990) \cite{Joseph1989} provide starting points. Unified well-posedness framework. Complete energy flux derivations (Section 10.3).
 
 \subsubsection{Approaches}
 
@@ -194,7 +194,7 @@ Mode conversion governs energy partition between wave types at interfaces.
 
 \subsubsection{What's achieved}
 
-Scattering matrix formulation $\Delta\bm{X}=\bm{Q}$ verified (RG-003 \cite{Barak2023a}). Mode classification (propagating, evanescent, attenuating).
+Scattering matrix formulation $\Delta\bm{X}=\bm{Q}$ verified (Barak et al.~\cite{Barak2023}). Mode classification (propagating, evanescent, attenuating).
 
 \subsubsection{What's open}
 
@@ -221,7 +221,7 @@ Complex mode normalization; uncertain energy flux formulations.
 
 \subsubsection{Existing foundation}
 
-BM-1 benchmark (classical elastic interface: $R_P + T_P = 1$) verified. RG-003 \cite{Barak2023a} provides numerical results.
+BM-1 benchmark (classical elastic interface: $R_P + T_P = 1$) verified. Barak et al.~\cite{Barak2023} provide numerical results.
 
 \subsubsection{Importance}
 
@@ -346,7 +346,7 @@ Multiscale wave phenomena & Nonlocal relations; wave dispersion & Hybrid models;
 Nonlocal-hereditary interactions & Individual theories verified & Combined models & Mathematical complexity \\
 Advanced interface conditions & Classical conditions verified & Nonlocal; memory-dependent interfaces & Not established \\
 Multiphysics mode conversion & Scattering matrix verified & Generalized theories; complex modes & Normalization uncertainty \\
-Reproducible benchmarks & BM-1 verified; RG-003 \cite{Barak2023a} results & Generalized theory benchmarks & Lack of closed-form solutions \\
+Reproducible benchmarks & BM-1 verified; Barak et al.~\cite{Barak2023} results & Generalized theory benchmarks & Lack of closed-form solutions \\
 Experimental validation & Classical theory validated & Generalized theories; interface flux & Measurement difficulty \\
 Inverse characterization & Classical methods established & Relaxation times; kernel parameters & Ill-posedness \\
 \bottomrule
@@ -364,7 +364,12 @@ Inverse characterization & Classical methods established & Relaxation times; ker
 \toprule
 \textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
 \midrule
---- & --- & --- & --- \\
+$\tau_0$ & Thermal relaxation time to be determined independently & s & Section 4.4 \\
+$\xi$ & Nonlocal length scale to be determined independently & m & Section 7.4 \\
+$K(t-\xi)$ & Memory kernel function & -- & Section 4.10 \\
+$\alpha$ & Fractional derivative order & -- & Section 11.1 \\
+$\lambda$ & Interface impedance or coupling parameter & -- & Section 9.3 \\
+$\theta$ & Temperature increment & K & Section 3.4 \\
 \bottomrule
 \end{tabularx}
 \end{table}

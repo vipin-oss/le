@@ -30,25 +30,25 @@
 
 | Section | File | Words | Figures | Primary focus |
 |---|---|---|---|---|
-| 1 | `sections/sec01_scope.tex` | 1132 | fig01, fig07 | Scope, objectives, taxonomy of the field, review methodology |
+| 1 | `sections/sec01_scope.tex` | 1138 | fig01, fig07 | Scope, objectives, taxonomy of the field, review methodology |
 | 2 | `sections/sec02_literature.tex` | 1061 | fig13 | Literature landscape: foundations → contemporary developments |
 | 3 | `sections/sec03_foundations.tex` | 2637 | fig09 | Continuum mechanics foundations, constitutive axioms, kinematics |
-| 4 | `sections/sec04_thermoelastic.tex` | 1522 | fig01 | Classical and generalized thermoelasticity (Lord–Shulman lineage) |
-| 5 | `sections/sec05_multiphysics.tex` | 1192 | fig02 | Thermo-piezo-magneto-electric coupling, hydrostatic initial stress |
+| 4 | `sections/sec04_thermoelastic.tex` | 1587 | fig01 | Classical and generalized thermoelasticity (Lord–Shulman lineage) |
+| 5 | `sections/sec05_multiphysics.tex` | 1239 | fig02 | Thermo-piezo-magneto-electric coupling, hydrostatic initial stress |
 | 6 | `sections/sec06_transport.tex` | 1159 | fig06 | Heat conduction, hyperbolic heat conduction, memory effects |
-| 7 | `sections/sec07_nonlocal.tex` | 836 | fig05 | Eringen-type nonlocal elasticity, strain-gradient, fractional orders |
-| 8 | `sections/sec08_mathematical_methods.tex` | 648 | fig10 | Integral transforms, eigenvalue methods, FEM, meshless, boundary integral |
-| 9 | `sections/sec09_interfaces.tex` | 1134 | fig03 | Interface conditions, reflection/transmission, welded and bonded contact |
+| 7 | `sections/sec07_nonlocal.tex` | 920 | fig05 | Eringen-type nonlocal elasticity, strain-gradient, fractional orders |
+| 8 | `sections/sec08_mathematical_methods.tex` | 798 | fig10 | Integral transforms, eigenvalue methods, FEM, meshless, boundary integral |
+| 9 | `sections/sec09_interfaces.tex` | 1567 | fig03 | Interface conditions, reflection/transmission, welded and bonded contact |
 | 10 | `sections/sec10_energy.tex` | 1279 | fig04 | Energy densities, balance laws, generalized thermoelastic energy structure |
-| 11 | `sections/sec11_advanced.tex` | 719 | fig11 | Fractional/gradient thermoelasticity, higher-order effects |
+| 11 | `sections/sec11_advanced.tex` | 908 | fig11 | Fractional/gradient thermoelasticity, higher-order effects |
 | 12 | `sections/sec12_comparative.tex` | 951 | fig07 | Cross-theory comparative assessment of governing assumptions |
-| 13 | `sections/sec13_applications.tex` | 525 | fig12 | Engineering application domains and validation evidence |
+| 13 | `sections/sec13_applications.tex` | 1701 | fig12 | Engineering application domains and validation evidence |
 | 14 | `sections/sec14_taxonomy.tex` | 747 | fig08 | Unified classification scheme for thermoelastic theories |
-| 15 | `sections/sec15_challenges.tex` | 1101 | fig04 | Open problems, verification gaps, numerical difficulties |
-| 16 | `sections/sec16_future.tex` | 1203 | fig07 | Future research directions |
-| 17 | `sections/sec17_conclusions.tex` | 591 | fig01 | Synthesis and conclusions |
+| 15 | `sections/sec15_challenges.tex` | 1215 | fig04 | Open problems, verification gaps, numerical difficulties |
+| 16 | `sections/sec16_future.tex` | 1322 | fig07 | Future research directions |
+| 17 | `sections/sec17_conclusions.tex` | 749 | fig01 | Synthesis and conclusions |
 
-**Body total:** ~18,400 words across 17 sections (frontmatter and appendices additional).
+**Body total:** ~21,000 words across 17 sections (frontmatter and appendices additional).
 
 **Appendices:** `appA` equation register · `appB` balance derivations · `appC` benchmarks · `appD` figures · `appE` tables · `appF` reproducibility · `energy_flux_derivations`
 
@@ -72,11 +72,13 @@ Produced by the CI `LaTeX Build` workflow (TeX Live + Inkscape SVG→PDF convers
 
 | Metric | Value |
 |---|---|
-| Total verified entries in `library.bib` | **44** |
-| Entries expanded during this work | 25 (from 19) |
-| Distinct citation keys used in the manuscript | **41** |
+| Total verified entries in `library.bib` | **54** |
+| Entries expanded during this work | 35 (from 19) |
+| Distinct citation keys used in the manuscript | **54** |
 | Cited keys that fail to resolve | **0** |
-| Entries retained as background (not cited) | 3 — `Gupta2023a`, `Marotti2013`, `Sharma2019` |
+| Entries retained as background (not cited) | 0 — every entry in the library is cited |
+| Entries with a Crossref-resolved DOI | 46 |
+| Entries with no registered DOI (pre-2000 monograph or archive) | 8, identified by journal/volume/pages |
 
 **Expansion method.** The 90-record expanded literature database (`06_literature_database/expanded_literature_database.csv`) was cross-referenced against the 49-entry PDF inventory, and the shortfall was closed by querying Crossref for authoritative bibliographic metadata. Every added entry carries author, title, journal, year, volume, pages and DOI where Crossref supplied them.
 
@@ -160,13 +162,15 @@ Each table was rebuilt on a common three- or four-column analytical schema so th
 
 | Criterion | Status |
 |---|---|
-| Compiles cleanly from source | ✅ Verified by CI (run `39621353552`, status success) |
-| All citations resolve | ✅ 41/41 |
+| Compiles cleanly from source | ✅ Verified by CI (run `39621353552` and later runs, status success) |
+| All citations resolve | ✅ 54/54 |
 | Figures referenced and resolvable | ✅ 13/13 |
 | Tables referenced and resolvable | ✅ 8/8 |
 | Section structure complete | ✅ 17/17 |
-| Bibliography independently verifiable | ✅ Crossref DOIs recorded for every entry |
+| Bibliography independently verifiable | ✅ Every DOI re-resolved against Crossref; 46 verified, 8 explicitly marked as having no registered DOI |
 | Claim-level verification of all equations | ⚠️ Partial — derivations provided for a subset, rest cited to primary sources |
+| No unresolved placeholder citations | ✅ Verified — two placeholder records removed and replaced with the real works |
+| No citations resolving to unrelated papers | ✅ Verified — all 46 DOIs re-resolved and compared field by field against Crossref |
 | Redrawn quantitative figures | ⚠️ Outstanding — schematics in place |
 | Journal-length compression | ⚠️ Outstanding — current form is a comprehensive review monograph |
 | Copyright compliance | ✅ No copyrighted PDF redistributed |
