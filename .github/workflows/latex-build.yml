@@ -43,6 +43,15 @@ jobs:
           done
           ls -la ../figures/source/*.pdf figures/source/*.pdf 2>/dev/null || echo "No PDFs generated"
 
+      - name: Verify bibliography sources are in sync
+        run: |
+          if ! diff -q ../references/library.bib references_local.bib; then
+            echo "::error::references_local.bib is out of sync with phase4/references/library.bib"
+            diff ../references/library.bib references_local.bib | head -40
+            exit 1
+          fi
+          echo "references_local.bib matches phase4/references/library.bib"
+
       - name: Minimal LaTeX test
         run: |
           echo "\documentclass{article}\begin{document}Hello\end{document}" > test_minimal.tex
@@ -65,6 +74,27 @@ jobs:
 
       - name: Compile LaTeX manuscript (third pass)
         run: latexmk -pdf -interaction=nonstopmode main.tex 2>&1 | tee third_pass.log || true
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: manuscript-pdf
+          path: phase4/manuscript/main.pdf
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Upload log files
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: |
+            phase4/manuscript/main.log
+            phase4/manuscript/main.blg
+            phase4/manuscript/first_pass.log
+            phase4/manuscript/second_pass.log
+            phase4/manuscript/third_pass.log
+          retention-days: 7
+          if-no-files-found: ignore
 
       - name: Check for undefined references
         run: |
@@ -106,27 +136,6 @@ jobs:
             echo "::error::Bibliography check failed"
             exit 1
           fi
-
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: manuscript-pdf
-          path: phase4/manuscript/main.pdf
-          retention-days: 7
-          if-no-files-found: ignore
-
-      - name: Upload log files
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-logs
-          path: |
-            phase4/manuscript/main.log
-            phase4/manuscript/main.blg
-            phase4/manuscript/first_pass.log
-            phase4/manuscript/second_pass.log
-            phase4/manuscript/third_pass.log
-          retention-days: 7
-          if-no-files-found: ignore
 
       - name: Publish compiled PDF back to branch
         if: >-
