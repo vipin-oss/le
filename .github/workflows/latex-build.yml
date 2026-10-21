@@ -126,9 +126,9 @@ jobs:
             echo "PDF is byte-identical to the committed one (reproducible build) - nothing to do"
             exit 0
           fi
-          PUBLISH_COUNT=$(git log --oneline --grep="publish compiled manuscript PDF" | wc -l)
+          PUBLISH_COUNT=$(git log --oneline --fixed-strings --grep="chore: publish compiled manuscript PDF" | wc -l)
           if [ "$PUBLISH_COUNT" -ge 3 ]; then
-            echo "Publish guard reached ($PUBLISH_COUNT) - skipping to avoid a push loop"
+            echo "::warning::Publish guard reached ($PUBLISH_COUNT prior PDF publications) - skipping"
             exit 0
           fi
           git commit -m "chore: publish compiled manuscript PDF (build ${{ github.run_number }})"
