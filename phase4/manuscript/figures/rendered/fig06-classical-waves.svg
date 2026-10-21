@@ -25,7 +25,7 @@
   
   <rect width="1000" height="600" fill="white"/>
   
-  <text x="500" y="26" class="title" text-anchor="middle">Figure 4. Classical elastic wave propagation</text>
+  <text x="500" y="26" class="title" text-anchor="middle">Classical elastic wave propagation</text>
   <text x="500" y="44" class="subtitle" text-anchor="middle">Longitudinal (P) and transverse (S) waves in an isotropic elastic solid</text>
   
   <!-- Left panel: P-wave -->

@@ -22,7 +22,7 @@
   
   <rect width="1000" height="650" fill="white"/>
   
-  <text x="500" y="26" class="title" text-anchor="middle">Figure 8. Five-axis research taxonomy</text>
+  <text x="500" y="26" class="title" text-anchor="middle">Five-axis research taxonomy</text>
   <text x="500" y="44" class="subtitle" text-anchor="middle">Classification framework for continuum mechanics literature (GAP-001 through GAP-012)</text>
   
   <!-- Axis A: Physical -->

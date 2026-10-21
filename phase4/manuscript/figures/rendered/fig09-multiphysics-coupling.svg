@@ -47,7 +47,7 @@
   
   <rect width="1100" height="750" fill="white"/>
   
-  <text x="550" y="30" class="title" text-anchor="middle">Figure 2. Conceptual map of multiphysics continuum interactions</text>
+  <text x="550" y="30" class="title" text-anchor="middle">Conceptual map of multiphysics continuum interactions</text>
   <text x="550" y="48" class="subtitle" text-anchor="middle">Coupling domains and their governing relationships in generalized continuum mechanics</text>
   
   <!-- Central node: Continuum body -->
@@ -79,7 +79,7 @@
   <rect x="60" y="420" width="130" height="80" class="node-poro"/>
   <text x="125" y="445" class="field" text-anchor="middle">Porosity</text>
   <text x="125" y="462" class="field" text-anchor="middle">(φ, void fraction)</text>
-  <text x="125" y="480" class="coupling" text-anchor="middle">Nunziato-Cowin</text>
+  <text x="125" y="480" class="coupling" text-anchor="middle">Cowin–Nunziato</text>
   
   <!-- Carrier field (bottom-right) -->
   <rect x="910" y="420" width="130" height="80" class="node-carrier"/>
