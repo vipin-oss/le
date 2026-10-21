@@ -1,0 +1,224 @@
+=== CI run 39636962526 (attempt 1) ===
+
+--- main.blg : BibTeX log (full) ---
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: plainnat.bst
+Database file #1: references_local.bib
+You've used 55 entries,
+            2773 wiz_defined-function locations,
+            1012 strings with 14199 characters,
+and the built_in function-call counts, 24479 in all, are:
+= -- 2331
+> -- 1092
+< -- 45
++ -- 386
+- -- 327
+* -- 2023
+:= -- 3799
+add.period$ -- 218
+call.type$ -- 55
+change.case$ -- 267
+chr.to.int$ -- 51
+cite$ -- 110
+duplicate$ -- 1114
+empty$ -- 2135
+format.name$ -- 414
+if$ -- 5089
+int.to.chr$ -- 5
+int.to.str$ -- 1
+missing$ -- 62
+newline$ -- 336
+num.names$ -- 220
+pop$ -- 445
+preamble$ -- 1
+purify$ -- 219
+quote$ -- 0
+skip$ -- 787
+stack$ -- 0
+substring$ -- 1232
+swap$ -- 65
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 570
+warning$ -- 0
+while$ -- 255
+width$ -- 0
+write$ -- 823
+
+--- main.blg : grep I didn't find a database entry ---
+
+--- main.log : lines containing 'citation' (case-insensitive) ---
+608:Package natbib Warning: Citation `Biot1956' on page 1 undefined on input line 6
+612:Package natbib Warning: Citation `Lord1967' on page 1 undefined on input line 6
+616:Package natbib Warning: Citation `Green1972' on page 1 undefined on input line 
+620:Package natbib Warning: Citation `Green1991' on page 1 undefined on input line 
+624:Package natbib Warning: Citation `Green1993' on page 1 undefined on input line 
+628:Package natbib Warning: Citation `Tzou1995' on page 1 undefined on input line 6
+632:Package natbib Warning: Citation `Tzou1997' on page 1 undefined on input line 6
+636:Package natbib Warning: Citation `Wang2011' on page 1 undefined on input line 6
+640:Package natbib Warning: Citation `Eringen1972' on page 1 undefined on input lin
+671:Package natbib Warning: Citation `Biot1956' on page 13 undefined on input line 
+675:Package natbib Warning: Citation `Lord1967' on page 13 undefined on input line 
+679:Package natbib Warning: Citation `Green1972' on page 13 undefined on input line
+683:Package natbib Warning: Citation `Green1991' on page 13 undefined on input line
+687:Package natbib Warning: Citation `Tzou1995' on page 13 undefined on input line 
+691:Package natbib Warning: Citation `Wang2011' on page 13 undefined on input line 
+695:Package natbib Warning: Citation `Eringen1972' on page 13 undefined on input li
+721:Package natbib Warning: Citation `Biot1956' on page 16 undefined on input line 
+725:Package natbib Warning: Citation `Cattaneo1948' on page 16 undefined on input l
+729:Package natbib Warning: Citation `Vernotte1958' on page 16 undefined on input l
+733:Package natbib Warning: Citation `Lord1967' on page 16 undefined on input line 
+739:Package natbib Warning: Citation `Green1972' on page 18 undefined on input line
+743:Package natbib Warning: Citation `Green1991' on page 18 undefined on input line
+747:Package natbib Warning: Citation `Green1993' on page 18 undefined on input line
+751:Package natbib Warning: Citation `Tzou1995' on page 18 undefined on input line 
+755:Package natbib Warning: Citation `Tzou1997' on page 18 undefined on input line 
+759:Package natbib Warning: Citation `Eringen1972' on page 18 undefined on input li
+763:Package natbib Warning: Citation `Eringen1974' on page 18 undefined on input li
+767:Package natbib Warning: Citation `Eringen1983' on page 18 undefined on input li
+771:Package natbib Warning: Citation `Guyer1990' on page 18 undefined on input line
+775:Package natbib Warning: Citation `Joseph1989' on page 18 undefined on input lin
+779:Package natbib Warning: Citation `Wang2011' on page 18 undefined on input line 
+783:Package natbib Warning: Citation `Povstenko2004' on page 18 undefined on input 
+787:Package natbib Warning: Citation `Povstenko2009' on page 18 undefined on input 
+791:Package natbib Warning: Citation `Povstenko2011' on page 18 undefined on input 
+795:Package natbib Warning: Citation `Povstenko2016' on page 18 undefined on input 
+799:Package natbib Warning: Citation `Caputo1967' on page 18 undefined on input lin
+803:Package natbib Warning: Citation `Chandrasekharaiah1986' on page 18 undefined o
+807:Package natbib Warning: Citation `Chandrasekharaiah1998' on page 18 undefined o
+811:Package natbib Warning: Citation `Shakeriaski2021' on page 18 undefined on inpu
+815:Package natbib Warning: Citation `Dhaliwal1980' on page 18 undefined on input l
+
+--- main.log : lines containing 'undefined' ---
+608:Package natbib Warning: Citation `Biot1956' on page 1 undefined on input line 6
+612:Package natbib Warning: Citation `Lord1967' on page 1 undefined on input line 6
+616:Package natbib Warning: Citation `Green1972' on page 1 undefined on input line 
+620:Package natbib Warning: Citation `Green1991' on page 1 undefined on input line 
+624:Package natbib Warning: Citation `Green1993' on page 1 undefined on input line 
+628:Package natbib Warning: Citation `Tzou1995' on page 1 undefined on input line 6
+632:Package natbib Warning: Citation `Tzou1997' on page 1 undefined on input line 6
+636:Package natbib Warning: Citation `Wang2011' on page 1 undefined on input line 6
+640:Package natbib Warning: Citation `Eringen1972' on page 1 undefined on input lin
+671:Package natbib Warning: Citation `Biot1956' on page 13 undefined on input line 
+675:Package natbib Warning: Citation `Lord1967' on page 13 undefined on input line 
+679:Package natbib Warning: Citation `Green1972' on page 13 undefined on input line
+683:Package natbib Warning: Citation `Green1991' on page 13 undefined on input line
+687:Package natbib Warning: Citation `Tzou1995' on page 13 undefined on input line 
+691:Package natbib Warning: Citation `Wang2011' on page 13 undefined on input line 
+695:Package natbib Warning: Citation `Eringen1972' on page 13 undefined on input li
+721:Package natbib Warning: Citation `Biot1956' on page 16 undefined on input line 
+725:Package natbib Warning: Citation `Cattaneo1948' on page 16 undefined on input l
+729:Package natbib Warning: Citation `Vernotte1958' on page 16 undefined on input l
+733:Package natbib Warning: Citation `Lord1967' on page 16 undefined on input line 
+739:Package natbib Warning: Citation `Green1972' on page 18 undefined on input line
+743:Package natbib Warning: Citation `Green1991' on page 18 undefined on input line
+747:Package natbib Warning: Citation `Green1993' on page 18 undefined on input line
+751:Package natbib Warning: Citation `Tzou1995' on page 18 undefined on input line 
+755:Package natbib Warning: Citation `Tzou1997' on page 18 undefined on input line 
+759:Package natbib Warning: Citation `Eringen1972' on page 18 undefined on input li
+763:Package natbib Warning: Citation `Eringen1974' on page 18 undefined on input li
+767:Package natbib Warning: Citation `Eringen1983' on page 18 undefined on input li
+771:Package natbib Warning: Citation `Guyer1990' on page 18 undefined on input line
+775:Package natbib Warning: Citation `Joseph1989' on page 18 undefined on input lin
+779:Package natbib Warning: Citation `Wang2011' on page 18 undefined on input line 
+783:Package natbib Warning: Citation `Povstenko2004' on page 18 undefined on input 
+787:Package natbib Warning: Citation `Povstenko2009' on page 18 undefined on input 
+791:Package natbib Warning: Citation `Povstenko2011' on page 18 undefined on input 
+795:Package natbib Warning: Citation `Povstenko2016' on page 18 undefined on input 
+799:Package natbib Warning: Citation `Caputo1967' on page 18 undefined on input lin
+803:Package natbib Warning: Citation `Chandrasekharaiah1986' on page 18 undefined o
+807:Package natbib Warning: Citation `Chandrasekharaiah1998' on page 18 undefined o
+811:Package natbib Warning: Citation `Shakeriaski2021' on page 18 undefined on inpu
+815:Package natbib Warning: Citation `Dhaliwal1980' on page 18 undefined on input l
+
+--- main.log : lines containing '!' (errors) ---
+1904:! Undefined control sequence.
+2750:! Undefined control sequence.
+2759:! Undefined control sequence.
+2768:! Undefined control sequence.
+2777:! Undefined control sequence.
+2786:! Undefined control sequence.
+3526:! Undefined control sequence.
+3535:! Undefined control sequence.
+3548:! Undefined control sequence.
+3557:! Undefined control sequence.
+3566:! Undefined control sequence.
+3575:! Undefined control sequence.
+4229:! You can't use a prefix with `end-group character }'.
+4236:! Extra }, or forgotten \endgroup.
+
+--- main.aux : citation count ---
+163
+--- main.aux : bibdata ---
+\bibdata{references_local}
+--- main.aux : bibstyle ---
+\bibstyle{plainnat}
+--- main.aux : bibitem count ---
+0
+(no aux)
+
+--- main.bbl : bibitem count ---
+55
+
+--- references_local.bib : entry count ---
+55
+
+--- distinct citation keys requested in main.aux ---
+Abouelregal2023
+Achenbach1973
+Askes2006
+Askes2011
+Barak2023
+Barak2023IJP
+Barak2023JTS
+Barak2023MMMS
+Biot1956
+Caputo1967
+Cattaneo1948
+Chandrasekharaiah1986
+Chandrasekharaiah1996
+Chandrasekharaiah1998
+Cowin1983
+Dhaliwal1980
+Eringen1966a
+Eringen1968b
+Eringen1972
+Eringen1974
+Eringen1983
+Gorenflo1997
+Green1972
+Green1991
+Green1993
+Gupta2023Energy
+Gupta2023IJNMF
+Gupta2026HeatMap
+Guyer1990
+Hughes1980
+Iesan1986
+Iesan2013
+Joseph1989
+Joseph1990
+Kumar2023PhysScr
+Lord1967
+Luchko2010
+Maranganti2006
+Maranganti2007
+Marotti2013
+Nowacki1975
+Nunziato1979
+Polizzotto2001
+Povstenko2004
+Povstenko2007
+Povstenko2009
+Povstenko2011
+Povstenko2016
+Quintanilla2019
+Shakeriaski2021
+Sharma2022
+Tzou1995
+Tzou1997
+Vernotte1958
+Wang2011
