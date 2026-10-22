@@ -1,0 +1,67 @@
+{
+  "query_doi": "10.1007/BF00045689",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/bf00045689",
+    "type": "journal-article",
+    "title": [
+      "Thermoelasticity"
+    ],
+    "author": [
+      {
+        "given": "A. E.",
+        "family": "Green",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "K. A.",
+        "family": "Lindsay",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1972,
+          3
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1972,
+          3
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Elasticity"
+    ],
+    "short-container-title": [
+      "J Elasticity"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "2",
+    "issue": "1",
+    "page": "1-7",
+    "ISSN": [
+      "0374-3535",
+      "1573-2681"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "query_doi": "10.1016/j.ijheatmasstransfer.2017.06.071",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.ijheatmasstransfer.2017.06.071",
+    "type": "journal-article",
+    "title": [
+      "On the thermomechanical consistency of the time differential dual-phase-lag models of heat conduction"
+    ],
+    "author": [
+      {
+        "given": "Stan",
+        "family": "Chiriţă",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-4739-4759",
+        "authenticated-orcid": false,
+        "given": "Michele",
+        "family": "Ciarletta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9861-1210",
+        "authenticated-orcid": false,
+        "given": "Vincenzo",
+        "family": "Tibullo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2017,
+          11
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          11
+        ]
+      ]
+    },
+    "container-title": [
+      "International Journal of Heat and Mass Transfer"
+    ],
+    "short-container-title": [
+      "International Journal of Heat and Mass Transfer"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "114",
+    "page": "277-285",
+    "ISSN": [
+      "0017-9310"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "query_doi": "10.1007/s00021-021-00629-4",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s00021-021-00629-4",
+    "type": "journal-article",
+    "title": [
+      "Spatial Behaviour of Solutions of the Moore-Gibson-Thompson Equation"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-3493-363X",
+        "authenticated-orcid": false,
+        "given": "M.",
+        "family": "Ostoja-Starzewski",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7059-7058",
+        "authenticated-orcid": false,
+        "given": "R.",
+        "family": "Quintanilla",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          11
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          15
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          15
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Mathematical Fluid Mechanics"
+    ],
+    "short-container-title": [
+      "J. Math. Fluid Mech."
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "23",
+    "issue": "4",
+    "article-number": "105",
+    "ISSN": [
+      "1422-6928",
+      "1422-6952"
+    ]
+  }
+}

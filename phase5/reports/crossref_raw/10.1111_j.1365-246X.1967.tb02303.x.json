@@ -1,0 +1,57 @@
+{
+  "query_doi": "10.1111/j.1365-246X.1967.tb02303.x",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1111/j.1365-246x.1967.tb02303.x",
+    "type": "journal-article",
+    "title": [
+      "Linear Models of Dissipation whose Q is almost Frequency Independent--II"
+    ],
+    "author": [
+      {
+        "given": "M.",
+        "family": "Caputo",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1967,
+          11,
+          1
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1967,
+          11,
+          1
+        ]
+      ]
+    },
+    "container-title": [
+      "Geophysical Journal International"
+    ],
+    "short-container-title": [
+      "Geophysical Journal International"
+    ],
+    "publisher": "Oxford University Press (OUP)",
+    "volume": "13",
+    "issue": "5",
+    "page": "529-539",
+    "ISSN": [
+      "0956-540X",
+      "1365-246X"
+    ]
+  }
+}
