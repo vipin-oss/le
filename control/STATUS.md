@@ -25,3 +25,6 @@ Next audit trigger: Arena pushes a commit to its branch and Vipin says "Arena do
 Evidence: Arena head 54fb603; CI run 39753968114 strict green; I opened phase5/build_outputs/phase5-v1.1-master.pdf myself: 146 pp, 0 "??" unresolved refs; rendered pp 1/93/99/128 clean (no clipping/overfull visible). Underfull 416 hbox = accepted (cosmetic, R1-06 DISPUTED stays open as low priority).
 Carry-over defects found by supervisor: title page date "November 14, 2023" (wrong; use \today or submission date), single author only (addendum R4), TPL heading "(Tzou, 1997)" at PDF text lines (UPDATE 5).
 R2 (content fixes) now OPEN for Arena.
+
+## 2026-10-22 later (supervisor)
+Brave: B8a ff1c472, B9 af01639, B11 c46312a, B10a a1cafed, B10b b9fcc53, B10c-B01 7986af0, B10c-B02 943cce0: all ACCEPTED. Base 444 records, 307 blank authors. Quintanilla 2009 TPL window independently confirmed (sympy Routh-Hurwitz). Megahid 2023 eq(7) matches manuscript (4.18). Next: B03. Arena R2 report pending.
