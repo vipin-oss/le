@@ -109,3 +109,26 @@ sum is not the sum of fluxes.
 **Read levels after B3:** primary full texts opened = **1** (Dreher–Quintanilla–Racke 2009, and it is
 about well-posedness, not interfaces). Interface literature read = **0**. Every interface number in
 this set is mine.
+
+## Phase B4 — audit of the manuscript itself (2026-10-22)
+
+Orders: `control/BRAVE_B4.md` @ `origin/claude/control` `d8552ce`. Read-only access to
+`arena/40393d9f-le` `phase5/master`; nothing outside `verification/` touched.
+
+| File | What it is |
+|---|---|
+| `EQUATION_LEDGER.csv` | **130 rows**, all 132 display environments of `sec03, sec04, sec06, sec07, sec09, sec10, appA, appB, energy_flux_derivations`. Columns: id, file:line, LaTeX, model, verdict, compared-with, method, confidence, note. 105 CORRECT / 19 CORRECT-CONDITIONAL / **3 WRONG** / 2 UNCLEAR / 1 UNVERIFIED. |
+| `CLAIM_LEDGER.csv` | **29 rows** for every sentence asserting finite speed, dissipativity, conservation, stability, well-posedness or consistency. 18 CORRECT / 5 CORRECT-CONDITIONAL / **3 WRONG** / 1 UNCLEAR / 2 NOT-CHECKABLE. |
+| `V-B4_summary.md` | Counts, 15 ranked defects with file:line, safe vs unsafe sections, method, confidence, gaps. |
+| `V-B4_secular_degree.py` | sympy: the 2-D (P,SV,T) determinant is **degree 6 in q** (cubic in q²) for Biot, LS and GN-III. |
+| `V-B4_energy_flux_convention.py` | numeric: per-mode vs total-field vs quadratic flux; `A = D/J_inc`; three models × five frequencies. |
+
+The three WRONG equations, in one line each:
+
+1. **`sec04:101` (4.9) GL energy equation is a copy of the LS one** (τ₀) while the stress (4.10) uses τ₁ — inconsistent; the corrected form carries τ₁ in both, with `q + τ₀q̇ = -kT_,i` and τ₀ > τ₁ > 0.
+2. **`sec09:117` (9.9) "eighth-order in q" is degree 6** for every single-temperature theory in the paper (computed, three theories); degree 8 needs a fourth branch, which a quasi-static electric potential does not supply.
+3. **`energy_flux:270`** the Fourier symbol of the finite-horizon MDD derivative exists only for κ ≡ 1; with kernel (6.8) the operator is a convolution.
+
+And the two places where the paper stops hedging and is wrong are matched by two where it hedges and
+a real result exists: GL's τ₀ ≥ τ₁ (CL-006), and the Clausius–Duhem/Coleman–Noll pair that `appA`
+calls UNVERIFIED while `sec03` derives it (CL-028).

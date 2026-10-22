@@ -1,0 +1,131 @@
+id,file_line,latex_short,model,verdict,compared_with,method,confidence,note
+EQ-001,sec03:14,"u_{i,j}=\varepsilon_{ij}+\omega_{ij}",continuum,CORRECT,definitions,re-derived,HIGH,"kinematic decomposition, no constitutive content"
+EQ-002,sec03:21,"\varepsilon_{ij}=\tfrac12(u_{i,j}+u_{j,i}),\ \omega_{ij}=\tfrac12(u_{i,j}-u_{j,i})",continuum,CORRECT,definitions,re-derived,HIGH,"small-strain, small-rotation linearisation"
+EQ-003,sec03:30,v_i=\dot u_i,continuum,CORRECT,definition,re-derived,HIGH,
+EQ-004,sec03:52,d/dt\int_V\rho v_i = \int_S \sigma_{ji}n_j + \int_V\rho f_i,continuum,CORRECT,Cauchy,re-derived,HIGH,traction t_i=\sigma_{ji}n_j with outward n: tension-positive
+EQ-005,sec03:63,"\rho\dot v_i=\sigma_{ji,j}+\rho f_i",continuum,CORRECT,appB:33-40,re-derived,HIGH,index order consistent with (3.22)
+EQ-006,sec03:70,"\rho\ddot u_i=\sigma_{ji,j}+\rho f_i",continuum,CORRECT,=EQ-005,re-derived,HIGH,
+EQ-007,sec03:81,d/dt\int_V\rho(\bm x\times\bm v)_k=\int_S\epsilon_{kij}x_i\sigma_{jm}n_m+\int_V\rho\epsilon_{kij}x_if_j,continuum,CORRECT,Cauchy,re-derived,HIGH,no body couple and no couple stress: this restriction is what makes EQ-008 hold
+EQ-008,sec03:92,\sigma_{ij}=\sigma_{ji},classical,CORRECT-CONDITIONAL,appA EQ-002,re-derived,HIGH,"fails for the micropolar continua of Sec.5 (Cosserat stress is not symmetric); appA marks it CONDITIONAL, the section text does not"
+EQ-009,sec03:109,"\int_V\rho\dot v_iv_i=\int_V\sigma_{ji,j}v_i+\int_V\rho f_iv_i",continuum,CORRECT,,re-derived,HIGH,
+EQ-010,sec03:120,\int_V\rho\dot v_iv_i=\tfrac{d}{dt}\int_V\tfrac12\rho v_iv_i,continuum,CORRECT,,re-derived,HIGH,
+EQ-011,sec03:129,"\int_V\sigma_{ji,j}v_i=\int_S\sigma_{ji}v_in_j-\int_V\sigma_{ji}\dot\varepsilon_{ij}",continuum,CORRECT,,re-derived,HIGH,"uses \sigma_{ji}v_{i,j}=\sigma_{ij}\dot\varepsilon_{ij}, valid only for symmetric \sigma"
+EQ-012,sec03:140,"\rho\tfrac{d}{dt}(\tfrac12 v_iv_i)=-\sigma_{ij}\dot\varepsilon_{ij}+(\sigma_{ij}v_j)_{,i}+\rho f_iv_i",continuum,CORRECT,appB:104,re-derived,HIGH,
+EQ-013,sec03:155,"\rho\dot e=\sigma_{ij}\dot\varepsilon_{ij}-q_{i,i}+\rho r",classical,CORRECT,appB:115,re-derived,HIGH,"first law, e = specific internal energy; no internal-variable power term"
+EQ-014,sec03:162,"\rho\dot e=\sigma_{ij}\dot\varepsilon_{ij}-q_{i,i}",classical,CORRECT,=EQ-013 with r=0,re-derived,HIGH,
+EQ-015,sec03:175,"\rho\dot s\geq-(q_i/\Theta)_{,i}+\rho r/\Theta",classical,CORRECT,Clausius-Duhem,re-derived,HIGH,
+EQ-016,sec03:182,"\sigma_{ij}\dot\varepsilon_{ij}-\rho(\dot\psi+s\dot\Theta)-q_i\Theta_{,i}/\Theta\geq0",classical,CORRECT,,re-derived,MEDIUM,"equals the standard form with \psi=e-s\Theta; that substitution is not shown, the sign is right"
+EQ-017,sec03:199,"\dot\psi=\partial_\varepsilon\psi\,\dot\varepsilon_{ij}+\partial_T\psi\,\dot T",classical only,CORRECT-CONDITIONAL,"V-B2c (GL), V-B2d-f (GN)",re-derived,HIGH,"\psi=\psi(\varepsilon,T): this EXCLUDES temperature-rate and thermal-displacement dependence, i.e. the whole of GL, GN-II, GN-III, DPL cannot be derived in this framework. Stated as generic; it is not"
+EQ-018,sec03:207,"\sigma_{ij}=\rho\partial\psi/\partial\varepsilon_{ij},\ s=-\partial\psi/\partial T",classical only,CORRECT-CONDITIONAL,=EQ-017,re-derived,HIGH,Coleman-Noll pair; valid subject to the same restriction
+EQ-019,sec03:216,"-q_iT_{,i}/T\geq0",classical,CORRECT,,re-derived,HIGH,"gives Fourier q=-k\nabla T, k>0"
+EQ-020,sec03:227,\psi=\tfrac1{2\rho}(\lambda\varepsilon_{kk}\varepsilon_{ll}+2\mu\varepsilon_{ij}\varepsilon_{ij})-\tfrac{\beta}{\rho}\varepsilon_{kk}T-s_0T-\tfrac{c_v}{2T_0}T^2,classical,CORRECT,,re-derived,HIGH,"T is the increment (stated at sec03:180,225); \sigma,\ s follow correctly from it"
+EQ-021,sec03:235,\sigma_{ij}=\lambda\varepsilon_{kk}\delta_{ij}+2\mu\varepsilon_{ij}-\beta T\delta_{ij},classical,CORRECT,= \rho\partial_\psi,re-derived,HIGH,"lambda,mu are ISOTHERMAL moduli (derived from Helmoltz at fixed T) - relevant to EQ-024"
+EQ-022,sec03:240,s=s_0+\tfrac{\beta}{\rho}\varepsilon_{kk}+\tfrac{c_v}{T_0}T,classical,CORRECT,,re-derived,HIGH,
+EQ-023,sec03:255,"\rho\ddot u_i=(\lambda+\mu)u_{j,ji}+\mu u_{i,jj}",elastic,CORRECT,,re-derived,HIGH,isothermal elastodynamics
+EQ-024,sec03:264,c_p=\sqrt{(\lambda+2\mu)/\rho},elastic,CORRECT-CONDITIONAL,V-B2a; V-B2z,re-derived + numeric,MEDIUM,"with the isothermal lambda of (3.21) this is the ISOTHERMAL P speed; the ultrasonic (adiabatic) speed is sqrt((lambda+2mu+beta^2 T0/(rho c_v))/rho). For steel the difference is 2.8e6 Pa on 2.72e11 Pa (5e-6 relative, 0.03 m/s) - small here, not small for soft/high-alpha materials. The notation table (sec03:456) calls it 'P-wave speed' with no qualification. Also c_p collides with specific heat at constant pressure, in a paper that uses c_v"
+EQ-025,sec03:271,c_s=\sqrt{\mu/\rho},elastic,CORRECT,V-B2a,re-derived,HIGH,
+EQ-026,sec03:293,u_i=\hat u_i(\bm x)e^{-i\omega t},convention,CORRECT,,source,HIGH,time convention stated once - this is the single most important convention in the paper and it is explicit
+EQ-027,sec03:308,\langle ab\rangle_t=\tfrac12\Re[\hat a\hat b^*],convention,CORRECT,,re-derived,HIGH,correct for e^{-i\omega t} and e^{+ikx}
+EQ-028,sec03:320,\partial_t\mathcal E+\partial_j(q_j-\sigma_{ji}v_i)=\rho f_iv_i,classical,CORRECT,appB:138,re-derived,HIGH,exact for total E (includes the linear parts of e); requires symmetric sigma
+EQ-029,sec03:331,J_i=q_i-\sigma_{ij}v_j,classical,CORRECT-CONDITIONAL,V-B4_energy_flux_convention.py,re-derived + numeric,HIGH,"exact as the flux of the TOTAL energy, whose balance has no dissipation term. It is NOT the flux for which div<J>=-<D>: that one is -sigma v+(T/T0)q. Using (3.29) in eq.(9.10) together with A=D/J_inc breaks the identity - see EQ-077"
+EQ-030,sec03:347,d/dt\int_V\mathcal E+\int_SJ_in_i=0,classical,CORRECT,=EQ-028,re-derived,HIGH,
+EQ-031,sec03:373,"u_i^{(1)}=u_i^{(2)},\ \sigma_{ji}^{(1)}n_j=\sigma_{ji}^{(2)}n_j,\ T^{(1)}=T^{(2)},\ q_i^{(1)}n_i=q_i^{(2)}n_i",classical,CORRECT,V-B3d (uses these four),re-derived + numeric,HIGH,4 conditions for the 1-D normal-incidence problem; the 2-D count is 6 (V-B3e)
+EQ-032,sec03:390,[u_i]=(C^u)^{-1}_{ij}t_j,spring interface,CORRECT-CONDITIONAL,V-B3e,dimensional,MEDIUM,"C^u is stiffness (Pa/m), so C^{-1} is a compliance (m/Pa) and [u]=C^{-1}t is dimensionally right. The SIGN of the jump ([u]=u2-u1 vs u1-u2) is not fixed in the display; without it the same equation describes a soft and a stiff interface"
+EQ-033,sec03:403,\phi^{(1)}=\phi^{(2)},piezo,CORRECT,,source,HIGH,perfect electrical contact
+EQ-034,sec03:409,D_i^{(1)}n_i=D_i^{(2)}n_i,piezo,CORRECT,,source,HIGH,no free surface charge stated implicitly
+EQ-035,sec03:417,D_in_i=0,piezo,CORRECT-CONDITIONAL,,source,MEDIUM,"vacuum outside, no free charge: both assumed, neither stated"
+EQ-036,sec04:27,"\rho\ddot u_i=(\lambda+\mu)u_{j,ji}+\mu u_{i,jj}-\beta T_{,i}",Biot,CORRECT,,re-derived,HIGH,
+EQ-037,sec04:32,"\rho c_v\dot T=k\nabla^2T-\beta T_0\dot u_{i,i}",Biot,CORRECT,V-B2a,re-derived,HIGH,linearised; sign gives heating under compression
+EQ-038,sec04:43,"c_p=\sqrt{(\lambda+2\mu)/\rho},\ c_s=\sqrt{\mu/\rho}",elastic,CORRECT-CONDITIONAL,=EQ-024,re-derived,MEDIUM,"duplicate of (3.24)-(3.25) inside a thermoelastic section, where the isothermal/adiabatic distinction actually matters"
+EQ-039,sec04:61,"q_i+\tau_0\dot q_i=-kT_{,i}",LS,CORRECT,V-B2b,source + re-derived,HIGH,
+EQ-040,sec04:72,"\rho c_v(\dot T+\tau_0\ddot T)=k\nabla^2T-\beta T_0(\dot u_{i,i}+\tau_0\ddot u_{i,i})",LS,CORRECT,V-B2b,re-derived,HIGH,"obtained by applying (1+tau0 d/dt) to the energy balance and using the flux law exactly: no truncation, so no Taylor-order caveat is needed here"
+EQ-041,sec04:83,c_T=\sqrt{k/(\rho c_v\tau_0)},LS,CORRECT,V-B2a (c_h=354.14 m/s),re-derived,HIGH,= sqrt(kappa/tau0)
+EQ-042,sec04:101,"\rho c_v(\dot T+\tau_0\ddot T)=k\nabla^2T-\beta T_0(\dot u_{i,i}+\tau_0\ddot u_{i,i})",GL,WRONG,V-B2c R7; standard GL form,re-derived,MEDIUM,"verbatim copy of the LS equation (4.5) while the stress (4.10) carries tau1. In GL the SAME time multiplies the temperature-rate terms in the stress and in the energy equation, because both descend from the s(eps,T,Tdot) of the same free energy. Correct form: rho c_v(Tdot+tau1 Tddot)=k lap T - beta T0 (div udot + tau1 div uddot), with q+tau0 qdot=-k grad T and tau0>tau1>0. As printed, (4.9)+(4.10) are inconsistent unless tau0=tau1, in which case they are LS with a shifted stress. GL 1972 itself not opened (paywall) - verdict rests on the derivation, not on a quotation"
+EQ-043,sec04:106,\sigma_{ij}=\lambda\varepsilon_{kk}\delta_{ij}+2\mu\varepsilon_{ij}-\beta(T+\tau_1\dot T)\delta_{ij},GL,CORRECT,standard GL,source,HIGH,"tau1 in the temperature-rate slot is the standard GL stress; the defect is EQ-042, not this equation"
+EQ-044,sec04:124,"k\nabla^2\alpha_{\rm GN}=\rho c_e\ddot\alpha_{\rm GN}+\beta T_0\ddot u_{i,i}",GN-II,CORRECT,V-B3d (D==0 verified),re-derived,HIGH,"equivalent to rho c_e Tdot = -p_{i,i} - beta T0 div udot with p=-k grad alpha"
+EQ-045,sec04:131,"p_i=k_{ij}\alpha_{,j}",GN-II,CORRECT,,source,HIGH,GN-II only; for GN-III the flux needs the +k* grad T part (which (4.14)/energy_flux:165 does supply)
+EQ-046,sec04:142,\partial_t\mathcal E+\partial_iJ_i=\mathcal P,GN family,CORRECT-CONDITIONAL,V-B3a,re-derived,MEDIUM,P is not defined in the display; if P is body-force power the left side must be the total energy
+EQ-047,sec04:156,"KT_{,ii}+k^*\dot T_{,ii}-\rho C_e\ddot T=\vartheta\theta_0\ddot u_{i,i}",GN-III,CORRECT,V-B2f,re-derived,HIGH,equals rho c_e Tddot = k lap Tdot + k* lap T - beta T0 div uddot
+EQ-048,sec04:168,"q_i(t+\tau_q)=-kT_{,i}(t+\tau_T)",DPL (delayed form),CORRECT,V-B2g,source,HIGH,exact delayed form; the Taylor truncation is what (4.16) does and what must be named (R1)
+EQ-049,sec04:179,"q_i+\tau_q\dot q_i=-k(T_{,i}+\tau_T\dot T_{,i})",DPL (first order),CORRECT,V-B2p,re-derived,HIGH,first-order-in-both truncation: infinite propagation speed despite the hyperbolic look (V-B2p)
+EQ-050,sec04:196,"\tau\dot q_i+q_i=-kT_{,i}-k^*\vartheta_{m,i},\ \dot\vartheta_m=T",unstated (MGT-like),UNCLEAR,V-B2 (MGT),re-derived,LOW,"the model is not named in the display and the equation is not MGT (MGT carries q-ddot); with k*=0 it is LS, with tau=0 it is GN-III. Needs a label"
+EQ-051,sec04:208,D_{\omega_M}f=\tfrac1{\omega_M}\int_{t-\omega_M}^tf'(\xi)\kappa(t-\xi)d\xi,MDD,CORRECT,=EQ-059,source,HIGH,definition; finite horizon
+EQ-052,sec04:220,{}^CD_t^\alpha T=a_\alpha\nabla^2T,Caputo,CORRECT,V-B2k,source,HIGH,"scalar illustrative equation, labelled as such"
+EQ-053,sec06:26,\mathcal D[\bm q]=-k\nabla T,operator form,CORRECT,,re-derived,HIGH,
+EQ-054,sec06:31,\mathcal D_{\rm LS}(s)=1+\tau_0s,LS,CORRECT,,re-derived,HIGH,Laplace variable
+EQ-055,sec06:48,{}^CD_t^\alpha f=\tfrac1{\Gamma(n-\alpha)}\int_0^t\tfrac{f^{(n)}}{(t-\tau)^{\alpha+1-n}},fractional,CORRECT,,source,HIGH,n=ceil(alpha)
+EQ-056,sec06:55,{}^{RL}D_t^\alpha f=\tfrac1{\Gamma(n-\alpha)}\tfrac{d^n}{dt^n}\int_0^t\tfrac{f}{(t-\tau)^{\alpha+1-n}},fractional,CORRECT,,source,HIGH,
+EQ-057,sec06:64,{}^CD_t^\alpha T=a_\alpha\nabla^2T,Caputo,CORRECT,=EQ-052,source,HIGH,exact duplicate of (4.19) - two numbers for one equation
+EQ-058,sec06:75,f(t)=\int_{-\infty}^tK(t-\xi)g(\xi)d\xi,hereditary,CORRECT,,source,HIGH,
+EQ-059,sec06:86,D_\omega f=\tfrac1\omega\int_{t-\omega}^t\kappa(t-\xi)f'(\xi)d\xi,MDD,CORRECT,=EQ-051,source,HIGH,
+EQ-060,sec06:95,\kappa(t-\xi)=1-\tfrac{2\beta}{\omega}(t-\xi)+\tfrac{\alpha^2}{\omega^2}(t-\xi)^2,MDD kernel,CORRECT-CONDITIONAL,,source,MEDIUM,"inherited candidate (the paper says so). NOTATION DEFECT: alpha is the fractional order two displays earlier and beta is the thermal-stress coefficient in every other section; and the same omega is the horizon here and the angular frequency everywhere else. Needs renaming (e.g. a_k, b_k, omega_M)"
+EQ-061,sec06:109,J_i(t)=q_i(t)-\sigma_{ij}(t)v_j(t),memory-dependent,CORRECT,=EQ-029,re-derived,HIGH,"same caveat as EQ-029: total-energy flux, not the dissipative one"
+EQ-062,sec06:114,"q_i+\tau_0D_\omega q_i=-kT_{,i}",MDD,UNVERIFIED,,none,LOW,"the paper itself labels this an inherited candidate; no primary source opened here either, so nothing is added"
+EQ-063,sec06:118,"q_i+\tfrac{\tau_0}{\omega}\int_{t-\omega}^t\kappa(t-\xi)\dot q_i(\xi)d\xi=-kT_{,i}",MDD,CORRECT,=EQ-062 expanded,algebra,HIGH,"is (6.11) with (6.7) substituted; giving both numbers to one equation is redundancy, not error"
+EQ-064,sec07:18,"\sigma_{ij}(\bm x)=\int_\Omega\alpha(|\bm x'-\bm x|,\tau)\sigma_{ij}^{\rm local}(\bm x')d\Omega",Eringen nonlocal,CORRECT,V-B2m,source,HIGH,for homogeneous C the kernel may act on sigma or on epsilon; both forms occur in the literature
+EQ-065,sec07:30,(1-\xi^2\nabla^2)\sigma_{ij}=\sigma_{ij}^{\rm local},Eringen differential,CORRECT,V-B2m,source,HIGH,"exact for the Helmholtz kernel only, which the text says explicitly - this is the correct scoping"
+EQ-066,sec07:41,\sigma_{ij}=C_{ijkl}\varepsilon_{kl}-\ell^2C_{ijkl}\nabla^2\varepsilon_{kl},strain-gradient (Mindlin I),CORRECT-CONDITIONAL,V-B2m,re-derived,HIGH,"the equation is standard, but the section then gives only the NONLOCAL dispersion (7.4). Form (7.3) gives the opposite behaviour: omega^2=c_0^2k^2(1+ell^2k^2), i.e. phase speed growing without bound as k->inf. A section titled 'size-dependent wave behavior' that shows the band-limited case and omits the stiffening case is misleading by omission; ell^2>0 is also never stated"
+EQ-067,sec07:57,c(k)=c_0/\sqrt{1+\xi^2k^2},Eringen nonlocal,CORRECT,V-B2m,re-derived,HIGH,"omega->c_0/xi finite, phase speed ->0: verified in the text's own remark at sec07:66"
+EQ-068,sec09:16,"{\rm field}(x_1,x_3,t)=\hat{\rm field}(x_3)e^{i(kx_1-\omega t)}",convention,CORRECT,=EQ-026,source,HIGH,same time factor as (3.28); consistent
+EQ-069,sec09:28,"u_i^{(m)}=\sum_nA_n^{(m)}\hat u_i^{(m,n)}e^{i(q_n^{(m)}x_3-\omega t)}",convention,CORRECT,"V-B3d, V-B3e",source,HIGH,
+EQ-070,sec09:44,"u_i^{(1)}=u_i^{(2)},\ \sigma_{j3}^{(1)}=\sigma_{j3}^{(2)}",interface,CORRECT,=EQ-031,source,HIGH,"flat interface, n=x3"
+EQ-071,sec09:55,"T^{(1)}=T^{(2)},\ q_3^{(1)}=q_3^{(2)}",interface,CORRECT,=EQ-031,source,HIGH,perfect thermal contact; a Kapitza/contact resistance is used in V-B3a but not here
+EQ-072,sec09:66,"\phi^{(1)}=\phi^{(2)},\ D_3^{(1)}=D_3^{(2)}",interface,CORRECT,=EQ-033/034,source,HIGH,
+EQ-073,sec09:77,"u_i^{(2)}-u_i^{(1)}=K_i^ut_i,\ \sigma_{j3}^{(1)}n_j=\sigma_{j3}^{(2)}n_j=t_i",spring interface,CORRECT,=EQ-032,algebra,HIGH,"here the sign IS fixed (2-1), and K plays the role of C^{-1} in (3.33); the two displays should share one symbol"
+EQ-074,sec09:89,\Delta\bm X=\bm Q,linear system,CORRECT,V-B3d solve(),re-derived,HIGH,
+EQ-075,sec09:105,\bm X=\Delta^{-1}\bm Q,linear system,CORRECT-CONDITIONAL,V-B3d,re-derived,HIGH,"det != 0 stated; the physically important failure is not singularity but ill-conditioning when two mode wavenumbers nearly coincide (kappa_t -> kappa_e), which is exactly the strong-coupling regime. V-B3d row-scales the matrix for this reason"
+EQ-076,sec09:117,G_1q^8+G_2q^6+G_3q^4+G_4q^2+G_5=0,coupled thermo-piezoelastic,WRONG,V-B4_secular_degree.py,symbolic (sympy),HIGH,"the 2-D (P,SV,T) determinant is a CUBIC in q^2, i.e. degree 6 in q, for Biot, LS and GN-III - all computed. Degree 8 needs FOUR branches per medium; the single-temperature theories of Sec.4/6 have three (qP,qSV,qT), and a quasi-static electric potential (div D=0) adds no branch because it is slaved. Corrected: 'cubic in q^2 (degree 6) for the three-mode theories; quartic in q^2 only with a second thermal branch, e.g. a fourth-order-in-space heat operator or a carrier/plasma mode'"
+EQ-077,sec09:151,"R=|\langle J_{{\rm ref},n}\rangle|/|\langle J_{{\rm inc},n}\rangle|,\ T=|\langle J_{{\rm trans},n}\rangle|/|\langle J_{{\rm inc},n}\rangle|,\ A=\mathcal D/|\langle J_{{\rm inc},n}\rangle|",interface,UNCLEAR,V-B4_energy_flux_convention.py,numeric,HIGH,"two defects. (1) D is never defined as INTERFACE-local or BULK. If it is the bulk dissipation, then D/J_inc = R+T to within 1.5e-3 (measured, 3 models x 5 frequencies), because everything that crosses is eventually dissipated, and (9.12) then reads 2(R+T)=1, i.e. fails by ~1. (2) 'J_ref' with per-mode numerators is not the reflected field: with the paper's own flux and per-mode accounting, GN-II gives sum R + sum T = 0.667 instead of 1.000 (33% of the incident energy is the thermal mode's interference term). Total-field accounting repairs (2) exactly (1.000000 for all three models) - so the fix for (2) is one sentence, and (1) needs the words 'interface-local'"
+EQ-078,sec09:164,\sum R+\sum T=1,interface,CORRECT-CONDITIONAL,V-B4_energy_flux_convention.py,numeric,HIGH,"true with total-field (cross-term) accounting: measured 1.000000 at 5 frequencies for Biot, LS, GN-II. False with per-mode accounting (0.667 for GN-II, 1.013 for Biot at 1e11 Hz)"
+EQ-079,sec09:171,\sum R+\sum T+A=1,interface,CORRECT-CONDITIONAL,=EQ-077,numeric,HIGH,"holds iff A is the interface-local residual (then it is a definition, cf. V-B3a S2) or D excludes the bulk dissipation already counted in R and T"
+EQ-080,sec10:14,\mathcal E=\tfrac12\rho v_iv_i+\rho e,classical,CORRECT,,re-derived,HIGH,
+EQ-081,sec10:21,\partial_t\mathcal E+\partial_iJ_i=\rho f_iv_i,classical,CORRECT,,re-derived,HIGH,
+EQ-082,sec10:33,J_i=q_i-\sigma_{ij}v_j,classical,CORRECT,=EQ-029,re-derived,HIGH,the text's next sentence ('thermal contribution is q_i') is the one that needs care: the TIME-AVERAGED thermal contribution of the q-channel is zero for a harmonic field (EQ-083 says so correctly); the thermal energy is transported through the theta v term inside sigma
+EQ-083,sec10:41,\langle J_i\rangle_t=\bar q_i-\tfrac12\Re[\hat\sigma_{ij}\hat v_j^*],classical,CORRECT,,re-derived,HIGH,"explicitly defines qbar as zero for an oscillatory perturbation - that is right, and it is rare to see it stated"
+EQ-084,sec10:55,\llbracket J_n\rrbracket=\mathcal P_\Sigma-\partial_t\mathcal E_\Sigma,interface,CORRECT,,re-derived,HIGH,pillbox limit
+EQ-085,sec10:63,\llbracket J_n\rrbracket=0,interface,CORRECT-CONDITIONAL,V-B3a (Kapitza),re-derived,HIGH,"passive, storage-free; V-B3a shows the Kapitza case where it is not zero and A>0 results"
+EQ-086,sec10:87,\sum R+\sum T+A=1,interface,CORRECT-CONDITIONAL,=EQ-079,numeric,HIGH,
+EQ-087,sec10:94,\sum R+\sum T=1,interface,CORRECT-CONDITIONAL,=EQ-078,numeric,HIGH,lossless limit only (GN-II: verified exactly)
+EQ-088,appB:13,d/dt\int_V\rho v_i=\int_S\sigma_{ji}n_j+\int_V\rho f_i,continuum,CORRECT,=EQ-004,re-derived,HIGH,appB reproduces Sec.3.2 line by line; no new content and no new error
+EQ-089,appB:40,"\rho\dot v_i=\sigma_{ji,j}+\rho f_i",continuum,CORRECT,=EQ-005,re-derived,HIGH,
+EQ-090,appB:60,\int_V\epsilon_{kij}(\sigma_{ij}-\sigma_{ji})dV=0,continuum,CORRECT,=EQ-007,re-derived,HIGH,the step that would fail for a Cosserat continuum (couple stress absent from the moment balance): worth one sentence in a review that devotes Sec.5 to micropolar media
+EQ-091,appB:97,"\sigma_{ji}v_{i,j}=\sigma_{ij}\dot\varepsilon_{ij}",continuum,CORRECT,,re-derived,HIGH,silently uses symmetry; same comment as EQ-090
+EQ-092,appB:104,"\rho\tfrac{d}{dt}(\tfrac12v_iv_i)=-\sigma_{ij}\dot\varepsilon_{ij}+(\sigma_{ij}v_j)_{,i}+\rho f_iv_i",continuum,CORRECT,=EQ-012,re-derived,HIGH,
+EQ-093,appB:149,"\partial_t\mathcal E+\partial_iJ_i=0,\ J_i=q_i-\sigma_{ij}v_j",classical,CORRECT,=EQ-029,re-derived,HIGH,
+EQ-094,energy_flux:17,J_i=q_i-\sigma_{ij}v_j,classical,CORRECT,=EQ-029,re-derived,HIGH,
+EQ-095,energy_flux:81,"q_i(1-i\omega\tau_0)=-kT_{,i},\ q_i=-kT_{,i}/(1-i\omega\tau_0)",LS,CORRECT,V-B3d flux(),re-derived,HIGH,correct for e^{-i\omega t}: this is precisely the 1/(1-i\omega\tau_0) factor whose omission in the dissipation integral was my own B3d error
+EQ-096,energy_flux:90,"J_i=-\sigma_{ij}v_j-kT_{,i}/(1-i\omega\tau_0)",LS,CORRECT,V-B3d,re-derived,HIGH,same convention as EQ-029
+EQ-097,energy_flux:99,"J_i=q_i-\sigma_{ij}v_j,\ q_i+\tau_0\dot q_i=-kT_{,i}",LS,CORRECT,=EQ-029/039,re-derived,HIGH,
+EQ-098,energy_flux:130,"k\nabla^2\alpha=\rho c_e\ddot\alpha+\beta T_0\ddot u_{i,i}",GN-II,CORRECT,=EQ-044,re-derived,HIGH,
+EQ-099,energy_flux:165,"KT_{,ii}+k^*\dot T_{,ii}-\rho C_e\ddot T=\vartheta\theta_0\ddot u_{i,i}",GN-III,CORRECT,=EQ-047,re-derived,HIGH,
+EQ-100,energy_flux:213,"q_i(1-i\omega\tau_q)=-kT_{,i}(1-i\omega\tau_T)",DPL,CORRECT,V-B2g,algebra,HIGH,
+EQ-101,energy_flux:218,"J_i=-\sigma_{ij}v_j-kT_{,i}(1-i\omega\tau_T)/(1-i\omega\tau_q)",DPL,CORRECT,V-B2g,algebra,HIGH,the tau_T/tau_q ratio is the whole DPL physics and it sits in the right place
+EQ-102,energy_flux:270,D_\omega f\leftrightarrow\tfrac{1-e^{-i\omega_f\omega}}{i\omega_f\omega}(-i\omega_f)\hat f\quad\text{(simplified)},MDD,WRONG,V-B2j (MDD),re-derived,MEDIUM,"this transform is correct only for kappa==1 (a pure moving-average derivative). With the kernel (6.8) the finite-horizon operator is a CONVOLUTION in time and has no multiplicative symbol, so no such factor exists; the word 'simplified' does not make it defined. Either state kappa==1 explicitly or delete the line"
+EQ-103,energy_flux:302,(1-\xi^2\nabla^2)\sigma_{ij}=\sigma_{ij}^{\rm local},Eringen,CORRECT,=EQ-065,source,HIGH,
+EQ-104,energy_flux:323-333,"\sigma_{ij}=c_{ijkl}\varepsilon_{kl}-e_{kij}E_k;\ D_i=e_{ikl}\varepsilon_{kl}+\kappa_{ij}E_j;\ E_i=-\phi_{,i};\ D_{i,i}=0",piezo,CORRECT,appA EQ-023..026,source,HIGH,"standard; the index convention e_{kij} with symmetry in (i,j) should be stated once, since e_{ikj} vs e_{kij} is a common source of sign errors in the stress"
+EQ-105,appB:24,"\int_S\sigma_{ji}n_jdS=\int_V\sigma_{ji,j}dV",continuum,CORRECT,divergence theorem,re-derived,HIGH,
+EQ-106,appB:33,"\int_V(\rho\dot v_i-\sigma_{ji,j}-\rho f_i)dV=0",continuum,CORRECT,=EQ-005,re-derived,HIGH,
+EQ-107,appB:49,d/dt\int_V\rho(\bm x\times\bm v)_k=\int_S\epsilon_{kij}x_i\sigma_{jm}n_m+\int_V\rho\epsilon_{kij}x_if_j,continuum,CORRECT,=EQ-007,re-derived,HIGH,
+EQ-108,appB:67,\sigma_{ij}=\sigma_{ji},classical,CORRECT-CONDITIONAL,=EQ-008,re-derived,HIGH,same couple-stress restriction
+EQ-109,appB:76,"\rho\dot v_iv_i=\sigma_{ji,j}v_i+\rho f_iv_i",continuum,CORRECT,=EQ-009,re-derived,HIGH,
+EQ-110,appB:83,\rho\dot v_iv_i=\tfrac{d}{dt}(\tfrac12\rho v_iv_i),continuum,CORRECT,=EQ-010,re-derived,HIGH,
+EQ-111,appB:115,"\rho\dot e=\sigma_{ij}\dot\varepsilon_{ij}-q_{i,i}+\rho r",classical,CORRECT,=EQ-013,re-derived,HIGH,
+EQ-112,appB:122,"\rho\dot e=\sigma_{ij}\dot\varepsilon_{ij}-q_{i,i}",classical,CORRECT,=EQ-014,re-derived,HIGH,
+EQ-113,appB:131,\mathcal E=\tfrac12\rho v_iv_i+\rho e,classical,CORRECT,=EQ-080,re-derived,HIGH,
+EQ-114,appB:138,\partial_t\mathcal E+\partial_j(q_j-\sigma_{ji}v_i)=\rho f_iv_i,classical,CORRECT,=EQ-028,re-derived,HIGH,
+EQ-115,energy_flux:44,"q_i+\tau_0\dot q_i=-kT_{,i}",LS,CORRECT,=EQ-039,source,HIGH,
+EQ-116,energy_flux:53,"\rho\dot e=\sigma_{ij}\dot\varepsilon_{ij}-q_{i,i}",classical,CORRECT,=EQ-014,re-derived,HIGH,
+EQ-117,energy_flux:60,"\rho\tfrac{d}{dt}(\tfrac12v_iv_i)=-\sigma_{ij}\dot\varepsilon_{ij}+(\sigma_{ij}v_j)_{,i}+\rho f_iv_i",classical,CORRECT,=EQ-012,re-derived,HIGH,
+EQ-118,energy_flux:70,"\partial_t\mathcal E+(q_i-\sigma_{ij}v_j)_{,i}=\rho f_iv_i",classical,CORRECT,=EQ-028,re-derived,HIGH,
+EQ-119,energy_flux:123,\dot\alpha=T,GN,CORRECT,,source,HIGH,defines the thermal displacement; GN-II and GN-III only
+EQ-120,energy_flux:137,"p_i=k_{ij}\alpha_{,j}",GN-II,CORRECT,=EQ-045,source,HIGH,
+EQ-121,energy_flux:148,\partial_t\mathcal E+\partial_iJ_i=\mathcal P,GN,CORRECT-CONDITIONAL,=EQ-046,re-derived,MEDIUM,same undefined P as (4.13)
+EQ-122,energy_flux:184,"q_i(t+\tau_q)=-kT_{,i}(t+\tau_T)",DPL,CORRECT,=EQ-048,source,HIGH,
+EQ-123,energy_flux:193,"q_i+\tau_q\dot q_i=-k(T_{,i}+\tau_T\dot T_{,i})",DPL,CORRECT,=EQ-049,source,HIGH,
+EQ-124,energy_flux:202,"\rho\dot e=\sigma_{ij}\dot\varepsilon_{ij}-q_{i,i}",classical,CORRECT,=EQ-014,re-derived,HIGH,repeated a third time in this appendix
+EQ-125,energy_flux:241,D_\omega f=\tfrac1\omega\int_{t-\omega}^t\kappa(t-\xi)f'(\xi)d\xi,MDD,CORRECT,=EQ-059,source,HIGH,
+EQ-126,energy_flux:250,"(1+\tau_0D_\omega)q_i=-kT_{,i}",MDD,CORRECT,=EQ-062,algebra,HIGH,"same object as (6.11), third numbering"
+EQ-127,energy_flux:257,"q_i+\tau_0D_\omega q_i=-kT_{,i}",MDD,CORRECT,=EQ-062,algebra,HIGH,"identical to the line above it with the operator expanded - two numbers, one equation"
+EQ-128,energy_flux:281,"J_i=q_i-\sigma_{ij}v_j,\ q_i+\tau_0D_\omega q_i=-kT_{,i}",MDD,CORRECT,=EQ-029/062,algebra,HIGH,
+EQ-129,energy_flux:295,"\sigma_{ij}(\bm x)=\int_\Omega\alpha(|\bm x'-\bm x|,\tau)\sigma^{\rm local}_{ij}d\Omega",Eringen,CORRECT,=EQ-064,source,HIGH,
+EQ-130,energy_flux:328,D_i=e_{ikl}\varepsilon_{kl}+\kappa_{ij}E_j,piezo,CORRECT,=EQ-034/104,source,HIGH,
