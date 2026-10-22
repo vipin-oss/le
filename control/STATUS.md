@@ -14,3 +14,9 @@ Updated: 2026-10-22 17:40 IST
 | Arena addendum (journal/format/authors) | WAIT until round 1 gate passed. |
 | Open decisions for Vipin | Confirm AMR as primary target after B1 data and Editor reply. |
 Next audit trigger: Arena pushes a commit to its branch and Vipin says "Arena done"; or Brave pushes V-files.
+
+
+## UPDATE 2026-10-22 (supervisor)
+- Arena R1: strict CI green (run 39750456893, 146 pp, head 11b3330). Gate HOLD: no visual proof (artifact download blocked for Arena and Claude). Arena ordered to commit PDF + contact sheets to phase5/build_outputs, 161->146 reconciliation. Part 2 not started.
+- Brave B8a (ff1c472) ACCEPTED: legacy EQ-019 WRONG-CONFIRMED; live master withdrawal correct; sec01:45 and heading still say TPL (Tzou 1997) = live defect for Arena; EQ-10.12 legacy VERIFIED -> UNVERIFIED. Next: control/BRAVE_B9.md.
+- Findings: control/FULLTEXT_FINDINGS_02.md (F6-F9). GN 1991 scanned, unread.
