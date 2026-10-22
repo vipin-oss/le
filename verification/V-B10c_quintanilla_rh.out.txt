@@ -1,0 +1,96 @@
+==============================================================================
+1. SYMBOLIC ROUTH-HURWITZ TABLE (quartic, exact rational arithmetic)
+==============================================================================
+
+--- N1 (c0 = k) ---
+first column: a0, a1, b1, c1, a4
+  a0 = tau_q**2/2
+  a1 = tau_q
+  b1 = k*lam2*tau_T - lam2*tau_m*tau_q/2 + 1
+  c1 = lam2*(-2*k*tau_q + tau_m*(2*k*lam2*tau_T - lam2*tau_m*tau_q + 2))/(2*k*lam2*tau_T - lam2*tau_m*tau_q + 2)
+  a4 = k*lam2
+  b1 > 0  <=>   2*k*lam2*tau_T - lam2*tau_m*tau_q + 2  > 0
+  c1 > 0  <=>   lam2*(2*k*lam2*tau_T*tau_m - 2*k*tau_q - lam2*tau_m**2*tau_q + 2*tau_m)  > 0
+  c1 numerator / (tau_q*lam2) = (2*k*lam2*tau_T*tau_m + 2*tau_m - tau_q*(2*k + lam2*tau_m**2))/tau_q
+  as  P + lam2*Q :  P = -2*k + 2*tau_m/tau_q    Q = tau_m*(2*k*tau_T - tau_m*tau_q)/tau_q
+
+--- N2 (c0 = k*/k) ---
+first column: a0, a1, b1, c1, a4
+  a0 = tau_q**2/2
+  a1 = tau_q
+  b1 = k*lam2*tau_T - lam2*tau_m*tau_q/2 + 1
+  c1 = lam2*(k*tau_m*(2*k*lam2*tau_T - lam2*tau_m*tau_q + 2) - 2*k_star*tau_q)/(k*(2*k*lam2*tau_T - lam2*tau_m*tau_q + 2))
+  a4 = k_star*lam2/k
+  b1 > 0  <=>   2*k*lam2*tau_T - lam2*tau_m*tau_q + 2  > 0
+  c1 > 0  <=>   lam2*(2*k**2*lam2*tau_T*tau_m - k*lam2*tau_m**2*tau_q + 2*k*tau_m - 2*k_star*tau_q)  > 0
+  c1 numerator / (tau_q*lam2) = (2*k**2*lam2*tau_T*tau_m + 2*k*tau_m - tau_q*(k*lam2*tau_m**2 + 2*k_star))/tau_q
+  as  P + lam2*Q :  P = 2*k*tau_m/tau_q - 2*k_star    Q = k*tau_m*(2*k*tau_T - tau_m*tau_q)/tau_q
+
+READING OF THE SYMBOLIC RESULT
+  The two non-trivial Routh conditions are
+     (R1)  P + lam2*Q > 0  for every lam2 > 0
+     (R2)  which, since a0,a1,a2,a3,a4 > 0 already holds, is the whole condition.
+  For both normalisations this splits into
+     P > 0   ->  tau_m > tau_q * c0        (lower bound, proportional to the T-coefficient)
+     Q >= 0  ->  tau_m <= 2*k*tau_T/tau_q  (upper bound, INDEPENDENT of the normalisation)
+
+==============================================================================
+2. NUMERIC SWEEP: does the printed window predict the sign of Re(s)?
+==============================================================================
+
+Barak-scale lags (tau_q=0.05, tau_T=0.03):  predicted window (c0=k) = (0.05, 1.2)
+  tau_m=0.025     inside=False max Re(s)=+5.332286e-02 at lam2=11.55  -> UNSTABLE
+  tau_m=0.04995   inside=False max Re(s)=+2.172704e-07 at lam2=0.017  -> UNSTABLE
+  tau_m=0.05005   inside=True  max Re(s)=-2.507180e-09 at lam2=0.0001  -> STABLE
+  tau_m=0.625     inside=True  max Re(s)=-2.875000e-05 at lam2=0.0001  -> STABLE
+  tau_m=1.1988    inside=True  max Re(s)=-5.744016e-05 at lam2=0.0001  -> STABLE
+  tau_m=1.2012    inside=False max Re(s)=+1.935923e-02 at lam2=1e+06  -> UNSTABLE
+  tau_m=12        inside=False max Re(s)=+1.788159e+02 at lam2=1e+06  -> UNSTABLE
+
+tau_q < tau_T (0.02, 0.03):  predicted window (c0=k) = (0.02, 3)
+  tau_m=0.01      inside=False max Re(s)=+2.090556e-02 at lam2=10.9  -> UNSTABLE
+  tau_m=0.01998   inside=False max Re(s)=+8.387790e-08 at lam2=0.017  -> UNSTABLE
+  tau_m=0.02002   inside=True  max Re(s)=-1.002977e-09 at lam2=0.0001  -> STABLE
+  tau_m=1.51      inside=True  max Re(s)=-7.450000e-05 at lam2=0.0001  -> STABLE
+  tau_m=2.997     inside=True  max Re(s)=-1.488504e-04 at lam2=0.0001  -> STABLE
+  tau_m=3.003     inside=False max Re(s)=+4.833963e-02 at lam2=1e+06  -> UNSTABLE
+  tau_m=30        inside=False max Re(s)=+4.470386e+02 at lam2=1e+06  -> UNSTABLE
+
+General symbolic condition for the constant term c0 = C:
+   [tau_m - tau_q*C] + lam2*[tau_m*(k*tau_T - tau_m*tau_q/2)] > 0 for all lam2 > 0
+   <=>  tau_m > tau_q*C   and   tau_m <= 2*k*tau_T/tau_q.
+N1 (C=k)          -> (tau_q*k, 2*k*tau_T/tau_q)
+N2 (C=k*/k)       -> (tau_q*k*/k, 2*k*tau_T/tau_q)
+N3 (C=k/k*)       -> (tau_q*k/k*, 2*k*tau_T/tau_q)   <-- EXACTLY the printed eq (1.2)
+
+The switch of sign of max Re(s) happens exactly at the two predicted edges
+(to within the 1e-3 relative offset used for the test points), so the window is
+confirmed for the normalisation c0 = k.  The upper edge 2*k*tau_T/tau_q is
+normalisation-independent; the lower edge scales with c0.
+
+==============================================================================
+3. EDGE SHARPNESS: scan tau_m through the predicted upper edge
+==============================================================================
+  tau_m/hi=0.900  max Re(s)=-5.1500e-05  argmax lam2=0.0001   STABLE
+  tau_m/hi=0.925  max Re(s)=-5.3000e-05  argmax lam2=0.0001   STABLE
+  tau_m/hi=0.950  max Re(s)=-5.4500e-05  argmax lam2=0.0001   STABLE
+  tau_m/hi=0.975  max Re(s)=-5.6000e-05  argmax lam2=0.0001   STABLE
+  tau_m/hi=1.000  max Re(s)=-5.7500e-05  argmax lam2=0.0001   STABLE
+  tau_m/hi=1.025  max Re(s)=+4.9931e-01  argmax lam2=1e+06   UNSTABLE
+  tau_m/hi=1.050  max Re(s)=+9.9926e-01  argmax lam2=1e+06   UNSTABLE
+  tau_m/hi=1.075  max Re(s)=+1.4992e+00  argmax lam2=1e+06   UNSTABLE
+  tau_m/hi=1.100  max Re(s)=+1.9991e+00  argmax lam2=1e+06   UNSTABLE
+
+Near the edge the instability is pushed to ever larger wave numbers
+(lam2* ~ P/|Q| -> infinity as tau_m -> 2*k*tau_T/tau_q from above), which is why
+a finite wavelength grid that stops at lam2 = 400 misses it.  This is a
+long-wavelength/short-wavelength split, not a failure of the criterion.
+==============================================================================
+4. N3: the exact printed form, checked numerically
+==============================================================================
+  C = k/k* = 2.5, printed window = (0.125, 1.2)
+  tau_m=0.1125   predicted_inside=False max Re(s)=+5.7483e-03 -> UNSTABLE
+  tau_m=0.12512  predicted_inside=True  max Re(s)=-6.2668e-09 -> STABLE
+  tau_m=0.6625   predicted_inside=True  max Re(s)=-2.6875e-05 -> STABLE
+  tau_m=1.1988   predicted_inside=True  max Re(s)=-5.3690e-05 -> STABLE
+  tau_m=1.26     predicted_inside=False max Re(s)=+9.9930e-01 -> UNSTABLE
