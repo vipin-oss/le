@@ -1,7 +1,7 @@
 # PDF request list 2 — the eleven sources behind `REFERENCE_GAPS.csv`
 
 **Prepared:** 2026-10-22, independent verifier.
-**Companion:** `REFERENCE_GAPS.csv` (16 rows) — this file covers the eleven gaps that need a document, and leaves GAP-03/04/05/08 to `V-B13_gap_closeout.md` because the supervisor's findings already carry part of them.
+**Companion:** `REFERENCE_GAPS.csv` (16 rows) — this file covers the eleven gaps that need a document (twelve table rows: row 2b is the superseded 1997-book entry, kept so the correction is auditable), and leaves GAP-03/04/05/08 to `V-B13_gap_closeout.md` because the supervisor's findings already carry part of them.
 
 **Verification method.** Every DOI below was resolved against the **Crossref REST API** on 2026-10-22 (`api.crossref.org/works/...` and bibliographic queries), and open-access status against **Unpaywall** (`api.unpaywall.org/v2/...`). Nothing here is from memory. Where Crossref holds no record, the row says **NO DOI** — it does not carry a plausible-looking identifier. Where a book exists in a later edition with a DOI, both facts are stated, because citing the 2014 DOI for a 1997 book would be a different citation.
 
@@ -12,12 +12,13 @@
 | # | citation | journal / volume / pages | DOI | verified via | OA | serves |
 |---|---|---|---|---|---|---|
 | 1 | **Cattaneo, C. (1948).** Sulla conduzione del calore. | Atti del Seminario Matematico e Fisico dell'Università di Modena **3**, 83–101 | **NO DOI** | Crossref bibliographic query returns no record for the 1948 paper; the only hit is a one-page reprint entry in a 2011 Springer volume (`10.1007/978-3-642-11051-1_5`, p. 485), which is **not** the article and must not be cited as it | none found | GAP-01 |
-| 2 | **Tzou, D. Y. (1997).** *Macro- to Microscale Heat Transfer: The Lagging Behavior.* | Taylor & Francis, Washington DC (book) | **NO DOI** | Crossref has **no 1997 record** for this book and no 1997 D.Y. Tzou journal article on lagging heat conduction (the 1997 author-year hits are H. S. Tzou, piezo shells, unrelated). The **2nd edition** is verifiable: Tzou, *Macro- to Microscale Heat Transfer*, Wiley 2014, `10.1002/9781118818275` | closed (2nd ed.) | GAP-06 |
+| 2 | **Tzou, D. Y. (1995).** A unified field approach for heat conduction from macro- to micro-scales. | J. Heat Transfer **117**, 8–16 | `10.1115/1.2822329` | Crossref work record; **also opened by the supervisor** (`control/FULLTEXT_FINDINGS_04.md` F15, file `1.2822329.pdf`), who identifies it as the DPL paper | closed | GAP-06 |
+| 2b | *(superseded row, kept for the record)* **Tzou, D. Y. (1997).** *Macro- to Microscale Heat Transfer: The Lagging Behavior.* | Taylor & Francis, Washington DC (book) | **NO DOI** | Crossref has **no 1997 record** for this book; the **2nd edition** is verifiable as Tzou, *Macro- to Microscale Heat Transfer*, Wiley 2014, `10.1002/9781118818275`. **This is a book, not the DPL journal paper.** Manuscript key `Tzou1997` (pp. 110–116) conflates the two — the DPL equations to be checked are in the 1995 *JHT* paper above | closed (2nd ed.) | GAP-06 |
 | 3 | **Chen, P. J.; Gurtin, M. E. (1968).** On a theory of heat conduction involving two temperatures. | Z. Angew. Math. Phys. **19**(4), 614–627 | `10.1007/BF01594969` | Crossref work record (title, authors, volume, pages, 1968-07) | closed | GAP-10 |
 | 4 | **Achenbach, J. D. (1973).** *Wave Propagation in Elastic Solids.* | North-Holland/American Elsevier, Amsterdam (book) | **NO DOI (book level)** | Crossref carries only **chapter-level** DOIs under `10.1016/b978-0-7204-0325-1.*` (Elsevier 1975 printing), and the front-matter chapters are marked WITHDRAWN; there is no monograph record | n/a | GAP-12 |
 | 5 | **Povstenko, Y. (2015).** *Fractional Thermoelasticity.* | Springer, Solid Mechanics and Its Applications **219**; ISBN 978-3-319-15334-6 | `10.1007/978-3-319-15335-3` | Crossref work record (book, 2015, Springer Cham) plus Unpaywall | closed | GAP-09 |
 
-**Note on rows 2 and 5.** Both are cited in the manuscript under keys that carry a year the record does not support — `Tzou1997` and `Povstenko2016`. What Crossref verifies is a **2014** Wiley edition and a **2015** Springer book (with a 2024 second edition, `10.1007/978-3-031-64587-7`). Either the keys are wrong or they point at something else; the authors have to say which before the list is frozen.
+**Note on rows 2/2b and 5 (rewritten 2026-10-22 after F15).** Row 2 is no longer a *request*: the DPL primary is **Tzou 1995, JHT 117:8–16**, and the supervisor has already opened it, so what is needed is the **printed equation numbers** for the two lag statements, nothing more. Row 2b is the 1997 book, which is a different document with no DOI; cite it as a book and only if a book is meant. Row 5 stands as before — `Povstenko2016` points at a **2015** Springer book (2nd ed. 2024, `10.1007/978-3-031-64587-7`), so the key year is wrong.
 
 ## Priority 2 — needed, but a section can stand without them for now
 
@@ -36,9 +37,9 @@
 
 ## What I am asking for, in order
 
-1. **Rows 1–5** (P1). Rows 3 and 5 can be bought or borrowed through the library in minutes; rows 1, 2 and 4 are the ones that need a human — they are old books and an Italian 1948 proceedings volume with no DOI anywhere.
+1. **Rows 1–5** (P1). Rows 3 and 5 can be bought or borrowed through the library in minutes; rows 1, 2b and 4 are the ones that need a human — they are old books and an Italian 1948 proceedings volume with no DOI anywhere.
 2. **Rows 6–11** (P2) whenever convenient.
-3. For every item, the **pages that carry the equations**, not the whole document: Cattaneo the flux law itself; Tzou 1997 the DPL statement and its eq numbers (the 2014 edition will not substitute, because the equation numbering changed); Chen & Gurtin the two-temperature relation and the energy balance; Achenbach the energy-flux/average-intensity definition; Povstenko the fractional constitutive chapter.
+3. For every item, the **pages that carry the equations**, not the whole document: Cattaneo the flux law itself; **Tzou 1995 the DPL statement and its equation numbers** (the 1997 book and its 2014 edition will not substitute — different equation numbering); Chen & Gurtin the two-temperature relation and the energy balance; Achenbach the energy-flux/average-intensity definition; Povstenko the fractional constitutive chapter.
 
 ## What I am *not* claiming
 
