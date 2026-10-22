@@ -1,8 +1,8 @@
 # STATUS (updated by Claude)
-Updated: 2026-10-22 14:30 IST
+Updated: 2026-10-22 14:55 IST
 | Item | State |
 |---|---|
-| Round 1 (Arena) | IN PROGRESS: Arena restructured wide tables and wrapping (commits 4936cc5..d424434, 06:22-06:37 UTC). Claude re-audit pending Arena's report. |
+| Round 1 (Arena) | NEARLY PASSED. Claude rebuild of 6e81d2b: 144 pp, 0 errors, 0 undefined, 18 overfull (15 > 1 pt, 2 > 10 pt: p93 37 pt, p99 Table 29 19 pt). CI strict gate fails on the same 15 boxes (Arena report accurate). Remaining: layout, hyperref/page.1 warnings, explain 161->144 pages, CI green + PDF. See ARENA_NEXT.md. |
 | Brave Phase B1 | DONE in chat; files NOT visible on remote (branch arena/04fdf32e-le does not exist on GitHub). Claude spot-check: mostly confirmed; 'Length: open' quote unconfirmed; preprint overlap overstated. See BRAVE_B2_GO.md. Needs push to brave/verification. |
 | Brave B2 | DONE and accepted. Revisions R1-R5 accepted (DPL tau_theta>tau_q/2 re-derived by Claude). |
 | Brave B3 | DONE and accepted (coupled interface: 3 R definitions; scripts reproduce; hand check passes). |
