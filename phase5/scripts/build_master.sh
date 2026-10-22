@@ -65,6 +65,11 @@ run_pdflatex 3
 run_pdflatex 4
 printf '\n=== PDF metadata ===\n' | tee -a build/process.log
 pdfinfo build/main.pdf | tee build/pdfinfo.txt | tee -a build/process.log
+pdf_pages=$(awk '/^Pages:/ {print $2}' build/pdfinfo.txt)
+printf 'PDF_PAGE_COUNT: %s\n' "$pdf_pages" | tee -a build/process.log
+if [[ "${GITHUB_ACTIONS:-}" == "true" ]]; then
+  printf '::notice title=Phase5 PDF metadata::Pages=%s\n' "$pdf_pages"
+fi
 printf '\n=== PDF fonts ===\n' | tee -a build/process.log
 pdffonts build/main.pdf | tee build/pdffonts.txt | tee -a build/process.log
 python3 "$ROOT/scripts/check_pdf_fonts.py" build/pdffonts.txt | tee -a build/process.log

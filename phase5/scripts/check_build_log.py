@@ -51,17 +51,23 @@ for kind, pattern in (
         if size > 1.0:
             line = text.count("\n", 0, match.start()) + 1
             index = line - 1
-            nearby = log_lines[max(0, index - 500):index + 3]
-            source = "unknown source"
-            for nearby_line in reversed(nearby):
-                source_match = re.search(r"(?:\./|/)[^()\s]+\.tex", nearby_line)
-                if source_match:
-                    source = source_match.group(0)
-                    break
+            nearby = log_lines[max(0, index - 1000):index + 3]
             warning = log_lines[index]
             nearby_text = "\n".join(log_lines[max(0, index - 3):min(len(log_lines), index + 12)])
             source_lines = re.search(r"at lines ([0-9]+--[0-9]+)", nearby_text)
             source_range = source_lines.group(1) if source_lines else "?"
+            line_end = int(source_range.split("--")[-1]) if source_range != "?" else None
+            source = "unknown source"
+            candidates = []
+            for nearby_line in nearby:
+                candidates.extend(re.findall(r"(?:\./|/)[^()\s]+\.tex", nearby_line))
+            for candidate in reversed(candidates):
+                candidate_path = Path(candidate)
+                if line_end is not None and candidate_path.is_file():
+                    if line_end > len(candidate_path.read_text(errors="replace").splitlines()):
+                        continue
+                source = candidate
+                break
             context = " / ".join(
                 item.strip() for item in log_lines[max(0, index - 2):min(len(log_lines), index + 10)] if item.strip()
             )
@@ -79,11 +85,9 @@ for source, entries in sorted(by_source.items(), key=lambda item: (-len(item[1])
 if source_details:
     print("overfull by source: " + " | ".join(source_details))
 if len(boxes) <= 50:
-    details = [
-        f"{Path(source).name}:{source_range} +{size:.1f}pt {excerpt[:220]}"
-        for _kind, size, _line, source, source_range, excerpt in boxes
-    ]
-    print("all overfull details: " + " | ".join(details))
+    print("all overfull details:")
+    for _kind, size, _line, source, source_range, excerpt in boxes:
+        print(f"  {Path(source).name}:{source_range} +{size:.1f}pt {excerpt[:220]}")
 worst_overall = sorted(boxes, key=lambda entry: entry[1], reverse=True)[:8]
 if worst_overall:
     print("largest overfull boxes: " + " | ".join(
