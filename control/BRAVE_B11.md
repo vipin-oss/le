@@ -1,0 +1,7 @@
+# BRAVE B11 (supervisor audit of B9 af01639: ACCEPTED with 3 conditions)
+Accepted: APPA_LEDGER (84), EQ-016 (GN-II coupling one time-derivative too many; I confirm by integrating energy eq once: rho c a_tt + T0 beta u_t,kk = K* lap a), EQ-017 missing 1/T, T/T0 from publisher render, E_int test. GN 1992 DOI/pages match the PDF in handler's Downloads (supervisor-confirmed). Go-ahead for B10 given.
+CONDITIONS
+1. Barak tables (nine printed numbers sum 0.120/0.889/1.121, violating their eq 58): re-read from the page RENDER of the tables, not text layer. Until two renderings agree, tag UNVERIFIED. These are the handler's own research-group papers: the review states only neutrally "printed values do not satisfy the stated unity at stated precision" and never accuses. Do not put this in ledgers as WRONG of the paper; tag the PAPER row CONDITIONAL.
+2. GL 1972 is NOT unread: supervisor read it (control/FULLTEXT_FINDINGS_01.md). Do the GL recheck order now, before B10: V-B2c R8, V-B4 W1, CL-006, EQUATION_LEDGER (4.9) row, V-B2z cells, V-B3 GL interface numbers, using original GL eqs (4.11, 4.13, 4.14, 4.16): Fourier flux, stress beta(T+tau1 Tdot), energy k lap T = rho c (Tdot + tau0 Tddot) + beta T0 e_kk,t (no tau0 on coupling). Frozen counts may change ONLY for rows whose verdict changes; list each change.
+3. Re-base B10d blank-author count to 308. Regenerate literature_base.bib after adding LIT-0429/0430.
+Then B10 (control/BRAVE_B10.md). Push to arena/04fdf32e-le, hash + 10-line status.
