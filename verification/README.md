@@ -153,3 +153,37 @@ CONFIRMED-WRONG), `CLAIM_LEDGER` (CL-006, CL-010), `V-B4_summary` (supersession 
 
 Process change adopted: no verdict of WRONG without (i) a grep of my own earlier V-files for the same
 statement, and (ii) an explicit statement of which sub-system the check covers.
+
+## Phase B5 — citations and literature base (2026-10-22)
+
+Orders: `control/BRAVE_B5.md` @ `origin/claude/control` `5f23d52`. B4 recheck accepted; the
+"τ₁ ≥ τ₀ as commonly imposed" decision is recorded in `V-B4_recheck.md` §2.3.
+
+| File | What it is |
+|---|---|
+| `REFERENCE_AUDIT.csv` | **56 rows**, one per bib key: DOI, Crossref existence, metadata match, citation count and first site, claim-support verdict, and a note naming the defect. |
+| `LITERATURE_BASE.csv` | **149 DOI-verified candidate records** with type, sub-area, citation count, proposed section and a one-line reason. |
+| `V-B5_coverage.md` | Per-sub-area counts, the ten most important records, six named holes, what a hostile referee says in each sub-area, the 20-author check, and why the base is 149 and not 400. |
+| `make_bibtex.py` (+ generated `literature_base.bib`) | FamilyYearWord keys, duplicate-DOI and duplicate-key detection, DOI-less report, `--enrich` to fetch missing author lists from Crossref. |
+
+### The finding that matters
+
+**`Guyer1990` is fabricated.** DOI `10.1103/PhysRevA.41.6371` returns "Resource not found" from
+Crossref, and a bibliographic search finds no 1990 *Physical Review A* paper by "Guyer & McCracken"
+— no author of that name exists in this literature. It is cited in the paragraph that establishes
+that second sound was *measured*. The real anchors (Guyer & Krumhansl 1964 `10.1103/PhysRev.133.A1411`;
+1966 `10.1103/PhysRev.148.778`; Chester 1963 `10.1103/PhysRev.131.2013`; Ackerman et al. 1966
+`10.1103/PhysRevLett.16.789`) are absent from the bibliography and are now in the base.
+
+Also: `Eringen1968b` resolves to **Tauchert, Claus & Ariman** (cited 5×); `Sharma2022` resolves to
+**Sherief & Hussein**; Iesan's book is **2004** not 2013; `Vernotte1958`'s page range is the wrong
+article; `Abdalla2022` is a **cosmology** review cited in the conclusions; Nowacki is **W.** not Z.
+and Gorenflo is **R.** not I.
+
+### The shortfall, stated plainly
+
+Base = **149**, target 400. The blocker is transfer cost, not access: Crossref returns ~700 B per
+record to this workspace through a page-fetch tool, so 25 records cost one call. I stopped at 149
+verified records rather than pad the file — one invented row would have cost more than the 251
+missing ones. `V-B5_coverage.md` §4 lists the exact nine queries that close the gap, and
+`make_bibtex.py --enrich` fills the 50 missing author blocks from DOI.
