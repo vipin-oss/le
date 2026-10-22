@@ -9,3 +9,6 @@ F11 What the paper does NOT print (so cannot be cited for it): the continuum "GK
 ORDERS
 BRAVE: use F10/F11 to close the GK row in FULLTEXT_FACTS (PRIMARY-SOURCE-CHECKED for the Boltzmann-derived structure and lambda^2; UNVERIFIED for any specific continuum form). Check the manuscript's GK equation and tau_N/tau_R notation against F10.
 ARENA: when writing the GK part, say "derived from phonon Boltzmann equation (Guyer-Krumhansl 1966)", quote lambda^2 = c^2 tau_N tau_R/5, and do not attribute a ready-made continuum flux law to the 1966 paper.
+
+## F12 Clarification (supervisor, from page 4 of the paper, shown just above eq (4))
+Page text: <1|R*|1> = -<0|tau_R(q)^-1|0> = -tau_z^-1, and "This average of the relaxation time rather than the relaxation time shall be referred to as the Ziman limit." So tau_z IS the Ziman-averaged resistive (R-process) relaxation time, i.e. the paper's tau_R averaged over the phonon distribution. F10 (tau_z, as printed) and F11 (tau_R, generic notation) are the same quantity: lambda^2 = c^2 tau_N tau_z / 5 with tau_z = Ziman-average of tau_R. Quote as printed (tau_z) and define it as the Ziman-averaged R-process time. No inconsistency.
