@@ -64,6 +64,12 @@ for source, entries in sorted(by_source.items(), key=lambda item: (-len(item[1])
     )
 if source_details:
     print("overfull by source: " + " | ".join(source_details))
+if len(boxes) <= 50:
+    details = [
+        f"{Path(source).name}:{source_range} +{size:.1f}pt {excerpt[:34]}"
+        for _kind, size, _line, source, source_range, excerpt in boxes
+    ]
+    print("all overfull details: " + " | ".join(details))
 worst_overall = sorted(boxes, key=lambda entry: entry[1], reverse=True)[:8]
 if worst_overall:
     print("largest overfull boxes: " + " | ".join(
