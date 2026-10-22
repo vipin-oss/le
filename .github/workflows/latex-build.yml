@@ -94,6 +94,7 @@ jobs:
         with:
           name: phase5-v1.1-build-logs-${{ github.run_id }}
           path: |
+            phase5/master/build/latexmk.log
             phase5/master/build/main.log
             phase5/master/build/main.blg
             phase5/master/build/main.fdb_latexmk

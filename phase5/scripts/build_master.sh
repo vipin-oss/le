@@ -9,14 +9,20 @@ report_failure() {
   trap - ERR
   if [[ "${GITHUB_ACTIONS:-}" == "true" ]]; then
     printf '::error title=Phase5 build failure::line %s; exit %s; command: %s\n' "${BASH_LINENO[0]:-?}" "$rc" "${BASH_COMMAND//%/%25}"
-    for logfile in "$ROOT/master/build/main.log" "$ROOT/master/build/main.blg"; do
+    for logfile in "$ROOT/master/build/latexmk.log" "$ROOT/master/build/main.log" "$ROOT/master/build/main.blg"; do
       if [[ -f "$logfile" ]]; then
         while IFS= read -r line; do
           line=${line//%/%25}; line=${line//$'\r'/%0D}
           printf '::error title=%s diagnostic::%s\n' "$(basename "$logfile")" "$line"
-        done < <(grep -nE '^! |LaTeX Error:|Package .* Error:|undefined|Overfull \\\\([hv]box)' "$logfile" | head -30 || true)
+        done < <(grep -niE '^! |error|couldn.t|not found|undefined|Overfull \\\\([hv]box)' "$logfile" | head -40 || true)
       fi
     done
+    if [[ -f "$ROOT/master/build/latexmk.log" ]]; then
+      while IFS= read -r line; do
+        line=${line//%/%25}; line=${line//$'\r'/%0D}
+        printf '::error title=latexmk tail::%s\n' "$line"
+      done < <(tail -20 "$ROOT/master/build/latexmk.log")
+    fi
   fi
   exit "$rc"
 }
@@ -31,7 +37,12 @@ python3 "$ROOT/scripts/validate_figures.py"
 cd "$ROOT/master"
 mkdir -p build
 latexmk -C -outdir=build main.tex
-latexmk -pdf -g -interaction=nonstopmode -file-line-error -halt-on-error -outdir=build main.tex
+# BibTeX runs from the auxiliary/output directory under -outdir; place the
+# local database there and also expose the source tree for TeX inputs.
+cp references_local.bib build/references_local.bib
+export TEXINPUTS="$PWD//:${TEXINPUTS:-}"
+export BIBINPUTS="$PWD//:${BIBINPUTS:-}"
+latexmk -pdf -g -interaction=nonstopmode -file-line-error -halt-on-error -outdir=build main.tex 2>&1 | tee build/latexmk.log
 python3 "$ROOT/scripts/check_build_log.py" build/main.log
 pdfinfo build/main.pdf | tee build/pdfinfo.txt
 pdffonts build/main.pdf | tee build/pdffonts.txt
