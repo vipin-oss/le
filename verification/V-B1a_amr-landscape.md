@@ -66,13 +66,26 @@ Older same-topic AMR precedent (outside the 2018–2026 window, verified from Cr
 
 Consequence: a new AMR review on wave mechanics in generalized continua would not be duplicating any recent AMR content, but would be measured against Chandrasekharaiah's two AMR reviews — which are the field's most-cited surveys.
 
+**Dating caveat (added after supervisor audit):** the ASME landing page for DOI 10.1115/1.3098984 shows a **2009** date because ASME digitised the back catalogue later. The **print publication year is 1998** (*Appl. Mech. Rev.* **51**(12):705–729, December 1998, confirmed from the Crossref `issued` field and from the volume/issue/pagination). When citing, give 1998 as the publication year; if a date discrepancy is queried, the explanation is digitisation, not a second edition. The same caveat applies to any pre-2000 AMR DOI whose publisher page shows a recent "published online" date.
+
 ### R4. Stated policy on length and number of authors
 
 **Length — Review Article: explicitly open.**
-> "**Review Article** — Review articles undergo full peer review. A Review Article organizes, clarifies, and summarizes existing major works in science and engineering and provides comprehensive citations to a full spectrum of relevant literature. **Length: open.**"
-— *Journal Submission Types*, ASME, https://www.asme.org/publications-submissions/journals/information-for-authors/journal-guidelines/journal-submission-types (read 2026-10-22).
 
-Same statement in ASME's *Guide for Journal Authors* PDF ("Review Article … Length: Open"), https://www.asme.org/getmedia/25d77d56-5186-4767-bb93-94211457ee93/asme_guide_for_journal_authors_final.pdf (read 2026-10-22, search-indexed text; PDF body not page-by-page verified).
+This quote was challenged by the supervisor and is now re-verified with full provenance. **Exact source:** ASME, *Journal Submission Types*, URL
+`https://www.asme.org/publications-submissions/journals/information-for-authors/journal-guidelines/journal-submission-types`
+**Exact sentence, under the heading "### Review Article"** (third block on the page, after "Research Paper" and "Technical Brief"):
+
+> "Review articles undergo full peer review. A Review Article organizes, clarifies, and summarizes existing major works in science and engineering and provides comprehensive citations to a full spectrum of relevant literature. **Length: open.**"
+
+Read in full twice: 2026-10-22 (initial) and 2026-10-22 (re-check after the challenge), both fetches showing the identical sentence.
+
+**Two qualifications that must travel with this quote — do not let it harden into "AMR guarantees unlimited length":**
+
+1. **It is an ASME-wide journal policy page, not an AMR-specific page.** It governs all ASME journals and is reached from AMR's own "Information for Authors" link. The AMR-specific author page (`https://journaltool.asme.org/home/AMRAuthorInfo.cfm`) says only "There are no page charges in AMR" and *does not state a review length* — the supervisor is correct on that point, and my original file did not claim otherwise, but it did not make the distinction explicit. It is now explicit.
+2. **"Length: open" is a policy statement about there being no fixed cap, not a promise of acceptance at any length.** The same page gives word counts for other types, and the Editor can always require cutting. Practical implication for R4: use the observed AMR norms in R2/R5 of this file (median ~21.5 pp verified, max 36 pp in the 2018–2026 sample) as the de facto target, and treat "open" as permission, not budget.
+
+Secondary corroboration, weaker: ASME's *Guide for Journal Authors* PDF also lists Review Article as "Length: Open" — `https://www.asme.org/getmedia/25d77d56-5186-4767-bb93-94211457ee93/asme_guide_for_journal_authors_final.pdf`, read 2026-10-22. That PDF was read via search-indexed text, **not** page-by-page; its table layout garbles the adjacent entries, so treat it as supporting evidence only. The primary quotation above stands on its own.
 
 The 12,000-word cap found on ASME's site applies to **research papers**, not reviews: "A research paper should not exceed 12,000 words. – 1 journal page = 1000 words" (https://www.asme.org/publications-submissions/journals/information-for-authors/journal-guidelines/writing-a-research-paper, read 2026-10-22). Do not apply this to a review.
 

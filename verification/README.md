@@ -10,7 +10,9 @@ Role: independent verifier. I did not see, and did not edit, the manuscript. Eve
 |---|---|---|
 | `V-B1a_amr-landscape.md` | 13 AMR reviews 2018–2026 (metadata, refs, cites, page counts), descriptive statistics, AMR length/author policy with quotes, and the finding that AMR has no recent thermoelasticity review | HIGH on bibliographic + policy; MEDIUM on page statistics; figures/tables UNVERIFIED |
 | `V-B1b_competing-reviews.md` | 14 existing reviews/primary sources across 5 sub-areas, coverage/omission assessment, honest "is the field covered?" verdict, ranked list of what a constructive review can add | HIGH on bibliography; MEDIUM on coverage judgements (no full texts read) |
-| `V-B1c_most-cited.md` | 15 most-cited papers with counts, a consistent single-index ranking, runner-ups, and explicit statement that Google Scholar/Scopus/WoS were unavailable | HIGH as Crossref counts; NOT a Google Scholar ranking |
+| `V-B1c_most-cited.md` | 15 most-cited papers with Crossref **and** OpenAlex counts, runner-ups, index-dependent rank pairs flagged, and explicit statement that Google Scholar/Scopus/WoS were unavailable | HIGH as Crossref/OpenAlex counts; NOT a Google Scholar ranking |
+
+**Revision log (after supervisor audit of B1):** (1) the "Length: open" quote in V-B1a now carries the exact URL, the exact sentence, the read date and a note that it is an ASME-wide page, not an AMR-specific one; (2) AMR digitisation caveat added for the 1998 Chandrasekharaiah DOI (print 1998, publisher page 2009); (3) the 2026 Research Square preprint is re-characterised in V-B1b from its verified 15-section list — overlap is partial, and it has **no** interface-partition, two-temperature, MDD, fractional or piezothermoelastic content; (4) OpenAlex counts added for all 15 rows in V-B1c, with the two index-dependent rank swaps flagged.
 
 ## Environment constraints (affect what "verified" means here)
 
