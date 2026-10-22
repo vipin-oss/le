@@ -1,0 +1,126 @@
+{
+ "case": "V-B5b-1 / Guyer1990 tie-break",
+ "date": "2026-10-22",
+ "target": {
+  "bib_key": "Guyer1990",
+  "doi_claimed": "10.1103/PhysRevA.41.6371",
+  "claim": "Guyer & McCracken, 'Second sound in solids', Physical Review A 41(10) 6371-6381, 1990",
+  "arena_doi_verification_row": "crossref_match YES, title_match YES, verified YES, checked 2026-10-21"
+ },
+ "tool_note": "All requests issued through the sandbox fetch_page tool, which returns the response body but does not expose the numeric HTTP status code. Where the status below is marked 'inferred', it is inferred from the documented API error body; the body text itself is verbatim.",
+ "requests": [
+  {
+   "n": 1,
+   "route": "Crossref REST, single work",
+   "url": "https://api.crossref.org/works/10.1103/PhysRevA.41.6371",
+   "http_status": "404",
+   "status_basis": "inferred - body is Crossref's HTML not-found page, not JSON",
+   "body": "<pre>Resource not found.</pre>",
+   "truncated": false,
+   "reading": "No Crossref record exists at that DOI. This is the primary negative."
+  },
+  {
+   "n": 2,
+   "route": "Crossref REST, single work (CONTROL)",
+   "url": "https://api.crossref.org/works/10.1103/PhysRev.133.A1411",
+   "http_status": "200",
+   "status_basis": "JSON body with \"status\":\"ok\"",
+   "body_excerpt": "{\"status\":\"ok\",\"message-type\":\"work\",\"message\":{\"DOI\":\"10.1103/physrev.133.a1411\",\"title\":[\"Dispersion Relation for Second Sound in Solids\"],\"author\":[{\"given\":\"R. A.\",\"family\":\"Guyer\"},{\"given\":\"J. A.\",\"family\":\"Krumhansl\"}],\"container-title\":[\"Physical Review\"],\"volume\":\"133\",\"issue\":\"5A\",\"page\":\"A1411-A1417\",\"issued\":{\"date-parts\":[[1964,3,2]]},\"is-referenced-by-count\":131}}",
+   "truncated": true,
+   "truncated_note": "author list and some fields elided for length; DOI/title/authors/journal/volume/pages/date/cited-by are verbatim",
+   "reading": "Real APS DOI resolves on the same route, same publisher prefix. The route works; the negative in request 1 is therefore discriminating, not a tool failure."
+  },
+  {
+   "n": 3,
+   "route": "Crossref REST, single work (CONTROL)",
+   "url": "https://api.crossref.org/works/10.1103/PhysRev.131.2013",
+   "http_status": "200",
+   "status_basis": "JSON body with \"status\":\"ok\"",
+   "body_excerpt": "{\"status\":\"ok\",\"message-type\":\"work\",\"message\":{\"DOI\":\"10.1103/physrev.131.2013\",\"title\":[\"Second Sound in Solids\"],\"author\":[{\"given\":\"W.\",\"family\":\"Chester\"}],\"container-title\":[\"Physical Review\"],\"volume\":\"131\",\"issue\":\"5\",\"page\":\"2013-2015\",\"issued\":{\"date-parts\":[[1963,9,1]]},\"is-referenced-by-count\":553}}",
+   "truncated": true,
+   "truncated_note": "reference list elided; bibliographic fields verbatim",
+   "reading": "Second control resolves. Note: this paper's own reference list cites Cattaneo C. R. 247:431 and Vernotte C. R. 246:3154 - an independent corroboration of the Vernotte1958 page correction recorded in B5a."
+  },
+  {
+   "n": 4,
+   "route": "Crossref REST, bibliographic search",
+   "url": "https://api.crossref.org/works?query.bibliographic=Second+sound+in+solids+Guyer+McCracken&rows=10",
+   "http_status": "200",
+   "status_basis": "JSON message-type work-list",
+   "body_excerpt": "top hits, in order: Guyer & Krumhansl 1964 (10.1103/physrev.133.a1411); Guyer, McClintock & Mueller 1968, Phys. Lett. A; Guyer & Krumhansl 1966 (10.1103/physrev.148.778)",
+   "truncated": true,
+   "truncated_note": "hit titles only; no result anywhere in the list carries a co-author named McCracken",
+   "reading": "No Guyer+McCracken combination exists in Crossref."
+  },
+  {
+   "n": 5,
+   "route": "Crossref REST, bibliographic search",
+   "url": "https://api.crossref.org/works?query.bibliographic=%22Second+sound+in+solids%22+1990+Physical+Review+A&rows=10",
+   "http_status": "200",
+   "status_basis": "JSON message-type work-list",
+   "body_excerpt": "top hits: Chester 1963; Sham 1967 (10.1103/physrev.156.494); Prohofsky & Krumhansl 1964 (10.1103/physrev.133.a1403); Guyer & Krumhansl 1964",
+   "truncated": true,
+   "truncated_note": "hit titles only",
+   "reading": "No 1990 Physical Review A item on second sound in solids."
+  },
+  {
+   "n": 6,
+   "route": "OpenAlex, DOI filter",
+   "url": "https://api.openalex.org/works?filter=doi:10.1103%2FPhysRevA.41.6371",
+   "http_status": "200",
+   "status_basis": "JSON body with \"count\": 0",
+   "body": "{\"meta\":{\"count\":0,...},\"results\":[]}",
+   "truncated": false,
+   "reading": "Independent index: zero works at that DOI."
+  },
+  {
+   "n": 7,
+   "route": "OpenAlex, DOI filter (ROUTE DISCRIMINATION TEST)",
+   "url": "https://api.openalex.org/works?filter=doi:10.1103%2FPhysRevA.41.6371|10.1103%2FPhysRev.133.A1411",
+   "http_status": "200",
+   "status_basis": "JSON body with \"count\": 1",
+   "body": "{\"meta\":{\"count\":1,...},\"results\":[<Guyer & Krumhansl 1964>]}",
+   "truncated": false,
+   "reading": "count:1 with only the real DOI present proves the filter parser is working, so request 6's count:0 is a genuine absence."
+  },
+  {
+   "n": 8,
+   "route": "OpenAlex, year + first page",
+   "url": "https://api.openalex.org/works?filter=publication_year:1990,biblio.first_page:6371",
+   "http_status": "200",
+   "status_basis": "JSON body with \"count\": 5",
+   "body_excerpt": "count 5: J. Phys. Chem. 94(16) 6371-6379; Cancer Research 50(19) 6371; Tetrahedron Letters 31(44) 6371; J. Chem. Phys. 93(9) 6371; Phys. Rev. B 42(10) 6371-6377 'Momentum constraints in collective-variable theory'",
+   "truncated": true,
+   "truncated_note": "five hits as listed; titles shortened",
+   "reading": "Decisive physical check: the only APS article starting on page 6371 in 1990 is in Phys. Rev. B vol. 42, not Phys. Rev. A vol. 41. The claimed volume/issue/page triple is internally impossible."
+  },
+  {
+   "n": 9,
+   "route": "Semantic Scholar Graph API, DOI",
+   "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1103/PhysRevA.41.6371?fields=title,year,venue,authors,externalIds",
+   "http_status": "404",
+   "status_basis": "JSON error body",
+   "body": "{\"error\":\"Paper with id DOI:10.1103/PhysRevA.41.6371 not found\"}",
+   "truncated": false,
+   "reading": "Third independent index: not found."
+  },
+  {
+   "n": 10,
+   "route": "Semantic Scholar Graph API, DOI (CONTROL)",
+   "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1103/PhysRev.133.A1411?fields=title,year,venue,authors,externalIds",
+   "http_status": "200",
+   "status_basis": "JSON paper object",
+   "body_excerpt": "Guyer, R. A.; Krumhansl, J. A.; 1964; Physical Review",
+   "truncated": true,
+   "truncated_note": "field values only",
+   "reading": "Control resolves, so the S2 negative in request 9 is discriminating."
+  }
+ ],
+ "conclusion": {
+  "verdict": "FABRICATED",
+  "confidence": "HIGH",
+  "basis": "Four independent routes (Crossref, OpenAlex by DOI, OpenAlex by year+first-page, Semantic Scholar) plus five controls that all succeed on the same routes in the same session. No route produced any Guyer+McCracken record, and no 1990 PRA article exists at page 6371.",
+  "what_a_guyer_mccracken_record_would_be": "None exists in any index consulted. The real Guyer second-sound papers are with Krumhansl (1964, 1966) and with McClintock and Mueller (1968); 'McCracken' is not associated with any of them.",
+  "root_cause_of_arena_label": "phase5/references/doi_verification.csv marks this row YES/YES/YES, but scripts/validate_references.py only tests DOI syntax, duplicate DOIs and status labels - it never contacts Crossref. The 'Crossref match' column is self-asserted."
+ }
+}

@@ -162,7 +162,7 @@ Orders: `control/BRAVE_B5.md` @ `origin/claude/control` `5f23d52`. B4 recheck ac
 | File | What it is |
 |---|---|
 | `REFERENCE_AUDIT.csv` | **56 rows**, one per bib key: DOI, Crossref existence, metadata match, citation count and first site, claim-support verdict, and a note naming the defect. |
-| `LITERATURE_BASE.csv` | **149 DOI-verified candidate records** with type, sub-area, citation count, proposed section and a one-line reason. |
+| `LITERATURE_BASE.csv` | **400 DOI-verified candidate records** (149 as of the B5 sign-off; extended to 400 in B5b-2 — see `V-B5b2_harvest.md`) with type, sub-area, citation count, proposed section and a one-line reason. |
 | `V-B5_coverage.md` | Per-sub-area counts, the ten most important records, six named holes, what a hostile referee says in each sub-area, the 20-author check, and why the base is 149 and not 400. |
 | `make_bibtex.py` (+ generated `literature_base.bib`) | FamilyYearWord keys, duplicate-DOI and duplicate-key detection, DOI-less report, `--enrich` to fetch missing author lists from Crossref. |
 
@@ -187,3 +187,19 @@ record to this workspace through a page-fetch tool, so 25 records cost one call.
 verified records rather than pad the file — one invented row would have cost more than the 251
 missing ones. `V-B5_coverage.md` §4 lists the exact nine queries that close the gap, and
 `make_bibtex.py --enrich` fills the 50 missing author blocks from DOI.
+
+---
+
+## B5b — Guyer1990 tie-break and the frozen ≥400 target (2026-10-22)
+
+Claude's `control/BRAVE_B5b.md` (order) demanded a multi-route resolution of the Guyer1990
+conflict, a re-test of Arena's method on all 56 rows, and authorisation to finish B5b-2 to 400.
+
+| file | what it holds |
+|---|---|
+| `V-B5b_guyer1990.md` | **Verdict FABRICATED, HIGH confidence** — four independent routes (Crossref, OpenAlex by DOI, OpenAlex by year+first page, Semantic Scholar) with five controls that all succeed on the same routes. The page 6371 in 1990 belongs to *Phys. Rev. B* **42**, not *Phys. Rev. A* 41. Cause: `scripts/validate_references.py` checks DOI **syntax only** and never contacts Crossref, so the `crossref_match` column is self-asserted. |
+| `V-B5b_arena_method.md` + `V-B5b_arena_method_reclassification.csv` | All 56 rows re-classified: **44 exists-and-matches, 2 authors-differ, 1 irrelevant, 1 not-found, 8 not machine-checkable (no DOI)**. 47 of 48 DOIs resolve, so the fabrication is isolated — but **13 rows carry a metadata defect** behind a flat YES. |
+| `V-B5b2_harvest.md` | Base extended **149 → 400** with 0 duplicate DOIs and 0 DOI-less rows. Interfaces **1 → 44**; Moore & Gibson 1960 located (`10.2514/8.8418`, 132 cites). Discloses the remaining holes (numerical methods = 6, plane waves = 11; Racke, Mindlin, Singh, Biswas, Sur/Kanoria, Kovács/Ván still absent; Thompson 1972 not found) and the one real casualty of the sandbox: **`--enrich` was attempted and fetched 0 of 301 author lists** (TLS blocked), so 290 entries still have a blank `authors` field. |
+| `api_log/` | Per-query log (`b5b_queries.csv`, Q1–Q14 with URL, date, HTTP status, rows), per-record index (`LITERATURE_ROW_INDEX.csv`, 400 rows) and the raw Guyer1990 bodies (`guyer1990.json`). Attribution honesty — 91 rows exact query, 282 batch-level — is stated in `api_log/README.md`. |
+
+Nothing outside `verification/` was touched; no manuscript or bib file was edited.

@@ -1,5 +1,11 @@
 # V-B5 — citations and literature base (Round R3)
 
+> **Superseded in part (2026-10-22, B5b-2).** The base is now **400 records**, and the
+> interfaces sub-area has gone from 1 to 44. Every count, hole and shortfall sentence below
+> describes the 149-record state at B5 sign-off and is kept unchanged so the round's history
+> stays auditable. For current numbers see `V-B5b2_harvest.md`; for the Guyer1990 tie-break see
+> `V-B5b_guyer1990.md`.
+
 **Task.** B5a: audit the 56 keys in `phase5/master/references_local.bib`. B5b: build a
 DOI-verified candidate base of ≥400 records. B5c: this report. B5d: `make_bibtex.py`.
 
