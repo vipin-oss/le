@@ -29,7 +29,7 @@ for name, pattern in checks.items():
             print("  ", hit.strip() if isinstance(hit, str) else hit)
 
 # Treat material horizontal or vertical overflow above 1 pt as a proofing failure.
-boxes: list[tuple[str, float, int, str, str]] = []
+boxes: list[tuple[str, float, int, str, str, str]] = []
 log_lines = text.splitlines()
 for kind, pattern in (
     ("hbox", r"Overfull \\hbox \(([-+0-9.]+)pt too wide\)"),
@@ -40,18 +40,25 @@ for kind, pattern in (
         if size > 1.0:
             line = text.count("\n", 0, match.start()) + 1
             index = line - 1
-            nearby = log_lines[max(0, index - 45):index + 3]
+            nearby = log_lines[max(0, index - 500):index + 3]
             source = "unknown source"
             for nearby_line in reversed(nearby):
                 source_match = re.search(r"(?:\./|/)[^()\s]+\.tex", nearby_line)
                 if source_match:
                     source = source_match.group(0)
                     break
-            excerpt = " ".join(log_lines[index:min(index + 3, len(log_lines))]).strip()
-            boxes.append((kind, size, line, source, excerpt[:240]))
+            warning = log_lines[index]
+            source_lines = re.search(r"at lines ([0-9]+--[0-9]+)", warning)
+            source_range = source_lines.group(1) if source_lines else "?"
+            excerpt = log_lines[index + 1].strip() if index + 1 < len(log_lines) else ""
+            boxes.append((kind, size, line, source, source_range, excerpt[:40]))
 print(f"overfull hboxes/vboxes > 1 pt: {len(boxes)}")
-for kind, size, line, source, excerpt in boxes[:100]:
-    print(f"  {kind}, {source}, log line {line}: {size:.3f} pt; {excerpt}")
+box_details = [
+    f"{kind} {Path(source).name}:{source_range} +{size:.1f}pt {excerpt}"
+    for kind, size, _line, source, source_range, excerpt in boxes
+]
+if box_details:
+    print("overfull detail: " + " | ".join(box_details))
 if boxes:
     failed = True
 
