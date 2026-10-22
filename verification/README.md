@@ -55,3 +55,22 @@ Role: independent verifier. I did not see, and did not edit, the manuscript. Eve
 1. **Figures/tables/sections for the 13 AMR reviews** need ASME access; the DOIs are listed in V-B1a and the columns can be filled quickly once PDFs are available.
 2. **The 2026 Research Square preprint** "Thermodynamic Admissibility, Finite-Speed Heat Transport, and Wave Stability in Generalized Thermoelasticity: A Critical Review with Analytical Proofs" (DOI 10.21203/rs.3.rs-10734164/v1) targets nearly the same scope as this project. It is unrefereed. Someone should track whether it is published.
 3. **V-B1c must not be presented as a Google Scholar ranking.** Re-run with GS/Scopus if available.
+
+## Phase B2 revisions (R1–R5) — 2026-10-22
+
+Orders: `control/BRAVE_B2_REVISIONS.md` @ `origin/claude/control` `db71198`.
+
+| File | Order | Outcome |
+|---|---|---|
+| `V-B2p_dpl-truncation-order.md` (+ `V-B2p_dpl_truncation_check.py`) | R1 | **Table cell was wrong.** DPL finite speed is truncation-dependent: T2 (2nd order τ_q, 1st τ_θ) **does** have finite speed c∞ = √(2κτ_θ)/τ_q; T1 infinite; T4 band-limited. Stability is **τ_θ > τ_q/2** — the recalled `τ_q > τ_T/2` has the **wrong direction** (Q&R 2006 + independent Routh–Hurwitz). |
+| `V-B2c_green-lindsay.md` §R7 | R2 | Mapping to (τ₀,τ₁) given; found a **notation defect** in my own (τ₁,τ₂) scheme (two symbols, three slots); corrected GL's speed to **c_h = √(κ/τ₀)** (verified); ordering **not** asserted — GL stays **do not print**. 1972 still not opened. |
+| `V-B2n_piezothermoelasticity.md` | R3 | Structure-level file: 5 ingredients, quasi-static E, what it neglects, stiffening β→β−ep/ε (verified), mode-count correction (quasi-static electric = **constraint, not a mode**), 8 pitfalls. **No primary full text.** |
+| `V-B2o_guyer-krumhansl.md` | R4 | Depth-marked overview. GK has **no finite speed for ℓ>0** (band-limited second sound); ℓ=0 ⇒ Cattaneo. Factor-3 convention flagged. |
+| `V-B2q_micropolar-porous-semiconductor.md` | R4 | Depth-marked overview. **Classification:** all three are kinematic/transport enrichments, *not* heat-law generalisations — they inherit the thermal speed. Semiconductor part **UNVERIFIED** (no source). |
+| `V-B2z_comparison_table.md` | R5 | Two new columns (**primary source opened?** = *no* everywhere; **printable as-is?**), DPL and GL cells corrected, two new rows (piezothermoelastic, GK), grouping fact 1 corrected. |
+
+**Read levels after the revisions:** primary full texts opened = **1** (Dreher, Quintanilla & Racke
+2009, *Appl. Math. Lett.* 22:1374–1379 — full text via Elsevier open archive). Abstract/summary
+level = 3 (Q&R 2006 IJHMT preview; Q&R 2007 RSPA abstract; Chandrasekharaiah 1988 abstract).
+Everything else is bibliographic record or secondary. **No model's *originating* paper has been
+read.**

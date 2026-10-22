@@ -16,27 +16,53 @@ Sources for the heat-law forms: mostly standard published forms; where I could o
 
 ### R1. The table
 
-| Model | Heat law | Finite wave speed? | Dissipative? | Energy-conserving? | Key parameter(s) | Known pitfalls / misuses |
-|---|---|---|---|---|---|---|
-| **Biot / Fourier** (Biot 1956) | q = −k_th∇θ; ρcθ̇ + βT₀ε̇ = k_th∇²θ | **No** (parabolic) | **Yes** | No | δ = T₀β²/(ρcM); κ | v_ph = √(2κω) → ∞; often blamed for a "paradox" that is simply its domain of validity |
-| **Lord–Shulman** (1967) | τ₀q̇ + q = −k_th∇θ | **Yes**, c_h = √(κ/τ₀) | **Yes** | No | τ₀ | τ₀ placement varies (thermal only vs thermal+coupling); τ₀ rarely measured; terms often mis-scaled (LS≈Fourier below 1/2πτ₀) |
-| **Green–Lindsay** (1972) | Fourier for q; relaxation on **temperature-rate** terms | Yes (speed not verified in closed form) | **Yes** | No | τ₁, τ₂ (τ₂ ≥ τ₁ ≥ 0) | **Commonly mis-stated as having a flux relaxation — it does not**; τ₁ = τ₂ collapses GL to LS |
-| **GN Type I** | = Fourier | **No** | Yes | No | (none new) | **GN-I IS the classical Biot theory — not a separate ninth model** |
-| **GN Type II** (1992/93) | q = −k*∇α, α̇ = θ; ρcθ̈ + βT₀ε̈ = k*∇²θ | **Yes**, exactly; **non-dispersive** | **No** | **Yes** | k* [conductivity×time] | "No dissipation" is a strong physical claim — real second sound is strongly attenuated; k* values incomparable across papers (units!) |
-| **GN Type III** | q = −(k*∇α + k_th∇θ) | Yes (asymptote) | **Yes** (via k_th) | No | k*, k_th | At least 3 inequivalent published forms differing in the **principal part**; k*=0 is **not** Biot |
-| **DPL** (Tzou 1995) | q(x,t+τ_q) = −k_th∇θ(x,t+τ_T), 1st-order Taylor | τ_T = 0: yes (=LS); **τ_T ≠ 0: NOT established** | Yes (τ_T ≥ 0) | No | τ_q, τ_T | **τ_T < 0 ⇒ ill-posed above k_c = 1/√(κ|τ_T|)** — verified numerically; Taylor truncation ≠ delay; DPL ⊃ LS |
-| **TPL** (Roy Choudhuri 2007) | as DPL + ½τ_v²∂_t² on the thermal operator | **NOT established** (3rd order in time) | Yes | No | τ_q, τ_T, τ_v | ½τ_v² vs τ_v² factor varies; admissibility contested; stiff fast modes (~1/τ_v) dominate numerics; invisible below 1/2πτ_v |
-| **MGT** (Quintanilla 2019) | τT_ttt + T_tt = b∇²T_t + c²∇²T | **Yes**: √(b/τ) at high ω, √(c²) at low ω | **Yes** | No (has decay functional for γ>0) | τ, b, c², **γ = b − τc²** | **γ > 0 is required and is often not reported**; positivity of τ,b,c² is NOT sufficient; frequently mis-dated as 2018 |
-| **MDD** (Wang & Li 2011) | ρc D_ω θ + βT₀ D_ω ε = k_th∇²θ | **No** | Kernel-dependent | No | ω_m **and** kernel K | Model undefined without the kernel; not a derivative (no product/chain rule); thermodynamics unestablished; indistinguishable from Fourier at low ω |
-| **Caputo fractional** (1967) | ᶜD^αθ = κ∇²θ, 0<α≤1 | **No** | **Yes** | No | α | **Does not fix the finite-speed problem** (parabolic class); attenuation ∝ ω^{α/2}; dimensionally inconsistent unless κ carries fractional units; α=1 must equal Fourier exactly |
-| **Two-temperature** (Chen–Gurtin 1968) | q = −k_th∇φ; T = φ − a∇²φ | **No** (adds length, not time) | Yes | No | a [m²] | Orthogonal to all relaxation theories (composes with them); short-wavelength low-pass filter; does **not** create a thermal wave; a<0 ill-posed (argued, not computed) |
-| **Eringen nonlocal** (1972/1983) | (elastic, not thermal) σ − (e₀a)²∇²σ = C:ε | **Yes** (frequency cutoff ω_max = c/ℓ) | No | **Yes** | ℓ = e₀a | **Softens**: v_ph → 0; differential form is not exactly the integral model; "e₀" calibration is problem-specific |
-| **Mindlin gradient** (1962/1964) | (elastic) strain-gradient free energy | **No** — v_ph → ∞ (worse than classical) | No | **Yes** | ℓ (general theory: 5 constants) | **Stiffens**: v_ph → ∞; at identical ℓ and k it differs from nonlocal by a factor **10⁶**; single-ℓ reduction is a modelling choice |
+| Model | Heat law | Finite wave speed? | Dissipative? | Energy-conserving? | Key parameter(s) | Known pitfalls / misuses | Primary source opened? | Printable as-is? |
+|---|---|---|---|---|---|---|---|---|
+| **Biot / Fourier** (Biot 1956) | q = −k_th∇θ; ρcθ̇ + βT₀ε̇ = k_th∇²θ | **No** (parabolic) | **Yes** | No | δ = T₀β²/(ρcM); κ | v_ph = √(2κω) → ∞; often blamed for a "paradox" that is simply its domain of validity | no | **yes** |
+| **Lord–Shulman** (1967) | τ₀q̇ + q = −k_th∇θ | **Yes**, c_h = √(κ/τ₀) | **Yes** | No | τ₀ | τ₀ placement varies; τ₀ rarely measured; terms often mis-scaled (LS≈Fourier below 1/2πτ₀) | no | conditional — τ₀ placement must be stated |
+| **Green–Lindsay** (1972) | Fourier for q; relaxation on **temperature-rate** terms | **Yes**, c_h = √(κ/τ₀) — **closed form, verified** (V-B2c §R7.3); supersedes "not verified" | **Yes** | No | τ₀ (on θ̈), τ₁ (on θ̇ in stress); ordering **UNVERIFIED** | **No flux relaxation** (it does not); **my earlier (τ₁,τ₂) labelling is a notation defect, not a relabelling of (τ₀,τ₁)**; GL ≡ LS when the two times coincide; with pure Fourier q it is a telegrapher equation, unlike DPL-T1 | no | **no** — form and ordering unsourced |
+| **GN Type I** | = Fourier | **No** | Yes | No | (none new) | **GN-I IS the classical Biot theory — not a separate ninth model** | no | **yes** (as an identity) |
+| **GN Type II** (1992/93) | q = −k*∇α, α̇ = θ; ρcθ̈ + βT₀ε̈ = k*∇²θ | **Yes**, exactly; **non-dispersive** | **No** | **Yes** | k* [conductivity×time] | "No dissipation" is a strong physical claim; k* values incomparable across papers (units!) | no | conditional — state k* units |
+| **GN Type III** | q = −(k*∇α + k_th∇θ) | Yes (asymptote) | **Yes** (via k_th) | No | k*, k_th | ≥3 inequivalent published forms differing in the **principal part**; k*=0 is **not** Biot | no | conditional — state which variant |
+| **DPL** (Tzou 1995) | q(t+τ_q) = −k_th∇θ(t+τ_T) | **Truncation-dependent — see V-B2p.** T2 (2nd order τ_q, 1st τ_T): **YES**, c∞ = √(2κτ_T)/τ_q; T1 (1st order both): **NO** (v∝√ω, overdamped); T4 (2nd order both): **NO** (band-limited, ω≤1/τ_T, v_ph→0) | Yes (τ_T ≥ 0) | No | τ_q, τ_T | **Stability (T2): τ_T > τ_q/2 — the direction τ_q > τ_T/2 is WRONG** (Q&R 2006; re-derived via Routh–Hurwitz; k_c = [κ(τ_q/2−τ_T)]^{−1/2}); **τ_T < 0 ⇒ ill-posed**; truncations with (time order) − (Δ-order) ≥ 3 are ill-posed (DQR 2009 Thm 1.3); **the delay equation itself is ill-posed, so a stable truncation is not an approximation of it** | no (for DPL itself; DQR 2009 — a *third-party* analysis — was read in full) | conditional — **must name the truncation (T1/T2/T3/T4) in every sentence** |
+| **TPL** (Roy Choudhuri 2007) | as DPL + ½τ_v²∂_t² on the thermal operator | **NOT established** (3rd order in time) | Yes | No | τ_q, τ_T, τ_v | ½τ_v² vs τ_v² factor varies; admissibility contested; stiff fast modes (~1/τ_v) dominate numerics; invisible below 1/2πτ_v; DQR's τ₁>τ₂>τ₃ ordering applies to the delay form | no | **no** |
+| **MGT** (Quintanilla 2019) | τT_ttt + T_tt = b∇²T_t + c²∇²T | **Yes**: √(b/τ) at high ω, √(c²) at low ω | **Yes** | No (has decay functional for γ>0) | τ, b, c², **γ = b − τc²** | **γ > 0 is required and is often not reported**; positivity of τ,b,c² is NOT sufficient; frequently mis-dated as 2018 | no | conditional — γ>0 must be stated |
+| **MDD** (Wang & Li 2011) | ρc D_ω θ + βT₀ D_ω ε = k_th∇²θ | **No** | Kernel-dependent | No | ω_m **and** kernel K | Model undefined without the kernel; not a derivative (no product/chain rule); thermodynamics unestablished; indistinguishable from Fourier at low ω | no | conditional — kernel must be stated |
+| **Caputo fractional** (1967) | ᶜD^αθ = κ∇²θ, 0<α≤1 | **No** | **Yes** | No | α | **Does not fix the finite-speed problem** (parabolic class); attenuation ∝ ω^{α/2}; dimensionally inconsistent unless κ carries fractional units; α=1 must equal Fourier exactly | no | **yes** |
+| **Two-temperature** (Chen–Gurtin 1968) | q = −k_th∇φ; T = φ − a∇²φ | **No** (adds length, not time) | Yes | No | a [m²] | Orthogonal to all relaxation theories (composes with them); short-wavelength low-pass filter; does **not** create a thermal wave; a<0 ill-posed (argued, not computed) | no | **yes** |
+| **Eringen nonlocal** (1972/1983) | (elastic, not thermal) σ − (e₀a)²∇²σ = C:ε | **Yes** (frequency cutoff ω_max = c/ℓ) | No | **Yes** | ℓ = e₀a | **Softens**: v_ph → 0; differential form is not exactly the integral model; "e₀" calibration is problem-specific | no | **yes** |
+| **Mindlin gradient** (1962/1964) | (elastic) strain-gradient free energy | **No** — v_ph → ∞ (worse than classical) | No | **Yes** | ℓ (general theory: 5 constants) | **Stiffens**: v_ph → ∞; at identical ℓ and k it differs from nonlocal by a factor **10⁶**; single-ℓ reduction is a modelling choice | no | **yes** |
+| **Piezothermoelastic** (Mindlin 1961; Nowacki; Chandrasekharaiah 1984/1988) | q = −k∇θ (classical) or LS/GL form; **+ D_i = ε_ijE_j + e_ijk e_jk + p_iθ**, ∇·D = 0, E = −∇φ (quasi-static) | **Inherited from the heat law** — piezo adds no propagating branch; "quasi-static electric mode" is a **constraint, not a mode** | Inherited | No | e (piezo), ε, p (pyro), β | **"Isotropic piezoelectric" is impossible** (needs 6mm); pyroelectric term must appear in **both** D_i and the heat equation; c_E vs c_D differ by ~10 % (electric BC!); indexing of e_kij varies | no | **no** — equations unattributed |
+| **Guyer–Krumhansl** (1966) | q + τq̇ = −k∇θ + ℓ²(Δq + 2∇∇·q) ⇒ τθ̈ + θ̇ = κθ_xx + 3ℓ²θ̇_xx (1-D) | **No for ℓ>0** (short waves overdamped; "second sound" is a **band-limited** k∈(k₁,k₂) resonance); **ℓ=0 ⇒ Cattaneo, √(κ/τ)** | Yes | No | τ, ℓ (with a **factor-3 convention**) | **factor 3 from the 1-D reduction is absorbed differently across papers**; nonlocal length ≠ nonlocal-elasticity length; not a higher-order *time* truncation, so DQR's theorem does not apply | no | **no** — coefficient structure unverified |
+
+### R1b. The two revision-R5 columns: what they mean
+
+- **"Primary source opened?"** — has a *primary* full text (the paper that introduced the model)
+  been read in this verification set? **The answer is "no" for every row, including the two new
+  ones.** The single primary full text opened anywhere in this set is Dreher, Quintanilla & Racke
+  (2009) — and that is a **third-party analysis of DPL**, not the source of DPL. A table whose
+  column reads "no" everywhere is not a defect; it is the honest state of the evidence and it tells
+  the handler exactly what to obtain before submission. Do not upgrade a cell to "yes" on the basis
+  of having read a review that quotes the paper.
+- **"Printable as-is?"** — may the statements in that row be printed *as they stand*, with the
+  source labels attached? `yes` = derived here and source-independent (identities, symmetry
+  statements, closed forms checked two ways); `conditional` = printable only with a specified
+  qualifier (truncation, variant, kernel, units, sign convention); `no` = the row contains a defect
+  or an unattributed form that must be resolved first. **Five rows are `no`: GL, TPL,
+  piezothermoelasticity, Guyer–Krumhansl and — in the sense that its *stability* statement was
+  wrong before this revision — DPL is `conditional` but its previously printed cell was wrong.**
+- **The two cross-cutting files are not models.** `V-B2p` (DPL truncation order) and `V-B2q`
+  (micropolar/porous/semiconductor) do not add rows of their own: `V-B2p` is a *disambiguation* of
+  the DPL row (which truncation?), and `V-B2q` covers three families whose defining feature is that
+  they are **not** heat-conduction generalisations at all (they add kinematics/transport, and
+  inherit whatever thermal speed the chosen heat law gives them). Listing them as further items in
+  a Fourier→LS→GL→GN→… progression would be a category error; see `V-B2q` §3.4.
 
 ### R2. The three grouping facts a review should state on one page
 
-1. **Propagation class is a property of the principal part, not of the "generality" of the theory.** Biot, Caputo, MDD and 2T are all non-finite-speed; LS, GN-II/III, MGT are finite-speed (with TPL and *coupled* DPL unestablished). "Generalized" does not imply "hyperbolic".
-2. **Dissipation and finite speed are independent axes.** GN-II has finite speed and *no* dissipation; Biot and Caputo have dissipation and *no* finite speed; MGT and GN-III have both. A table with a single "generality" ordering is meaningless.
+1. **Propagation class is a property of the principal part, not of the "generality" of the theory.** Biot, Caputo, MDD and 2T are all non-finite-speed; LS, GL, GN-II/III, MGT are finite-speed; DPL depends on the Taylor truncation (finite for T2 only — `V-B2p`); TPL remains unestablished. "Generalized" does not imply "hyperbolic".
+2. **Dissipation and finite speed are independent axes.** GN-II has finite speed and *no* dissipation; Biot and Caputo have dissipation and *no* finite speed; MGT and GN-III have both; DPL-T1 has dissipation and *no* finite speed while DPL-T2, on the same constitutive law truncated differently, has both.
+   **A corollary that only became visible in revision R1/R2:** propagation class is a property of the *truncation/principal part*, so two papers using "the same" DPL or GL equations can disagree about finite speed without either being wrong — which is exactly the trap the review should warn about. A table with a single "generality" ordering is meaningless.
 3. **Only GN-II (and the purely elastic nonlocal/gradient models) conserve energy.** Every thermoelastic conduction model except GN-II is dissipative. This is the classification Phase B3 needs, and it is why "energy flux" at an interface has to be treated separately for GN-II.
 
 ### R3. Catalogue of commonly repeated mistakes

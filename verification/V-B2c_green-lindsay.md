@@ -2,6 +2,14 @@
 
 **Access date 2026-10-22.** No subscription full text. ⚠ This file carries a larger UNVERIFIED block than the others: see §NOT verified.
 
+> **REVISION R2 (2026-10-22) — read this before using anything below.** Revision R2 is
+> implemented in §R7 at the end of this file. It (i) gives the mapping to the standard
+> $(\tau_0,\tau_1)$ notation, (ii) records that the $(\tau_1,\tau_2)$ scheme used in §R1–§R5
+> below is a **notation defect, not a relabelling**, and (iii) corrects the finite-speed entry:
+> GL in its standard form **does** have a closed-form thermal wave speed $\sqrt{\kappa/\tau_0}$.
+> The earlier statement in §R3 that GL has no closed-form speed is **superseded**. GL remains
+> "**do not print**" for the reasons given in §R7.
+
 ## Task
 
 As V-B2a, for Green–Lindsay (GL) theory. The brief's hint: "two relaxations; note there is NO relaxation in the heat flux but in the temperature rate terms" — this hint is the specific thing I test below.
@@ -89,3 +97,123 @@ Because the coupling term carries τ₂ while the thermal terms carry τ₁, the
 3. **No GL dispersion relation from a primary source** was compared against R5. The cubic/quartic structure is mine.
 4. The claim "GL produces a finite thermal speed" is standard but I have **not** verified the closed-form GL speed, and I would not let the manuscript print one without a source.
 5. Ignaczak & Ostoja-Starzewski, *Thermoelasticity with Finite Wave Speeds* (OUP, DOI 10.1093/acprof:oso/9780199541645.001.0001, registered **2009-09-24**, 208 citations) is the obvious monograph source for GL. **SECONDARY-SOURCE ONLY and NOT opened** — note the book is commonly cited as 2010; Crossref registers 2009.
+
+---
+
+## R7. Revision R2 — notation mapping to standard $(\tau_0,\tau_1)$, and the corrected speed
+
+### R7.1 What R2 asked, and what blocked it
+
+> **R2 (GL):** use original notation ($\tau_0,\tau_1$ in standard literature; mine uses
+> $\tau_1,\tau_2$). State the mapping explicitly and the admissibility ordering as stated in a
+> source. **If 1972 still cannot be opened, say so and keep GL "do not print".**
+
+**Green & Lindsay (1972) is STILL NOT OPENED.** *Journal of Elasticity* **2**(1):1–7,
+DOI `10.1007/BF00045689`, Crossref 2929 — Springer paywall; no open-access statement of the GL
+equations was found by a further search this session (same outcome as the first two attempts
+recorded in §Method; not retried a fourth time). **Therefore: GL stays "do not print"**, and the
+additional reason in §R7.2 now applies independently.
+
+Everything in §R7.2–§R7.4 below is a statement about **the form of GL that the literature cites**,
+not about what Green & Lindsay wrote on the page. Tag: **SECONDARY-SOURCE**, and weaker than that
+for the ordering (§R7.4).
+
+### R7.2 The mapping, slot by slot — and a defect in this file's notation
+
+The GL system as it is most commonly cited uses two relaxation times, most often named
+$(\tau_0,\tau_1)$, in these three slots:
+
+| slot | standard-form symbol | this file (§R1, §R2) | consistent? |
+|---|---|---|---|
+| $\dot\theta$ in the stress: $\sigma_{ij}=\lambda e_{kk}\delta_{ij}+2\mu e_{ij}-\beta(\theta+\tau_1\dot\theta)\delta_{ij}$ | $\tau_1$ | $\tau_1$ | **yes** |
+| $\ddot\theta$ in the energy equation | $\tau_0$ | $\tau_1$ | **NO** |
+| $\ddot e_{kk}$ in the energy equation | $\tau_1$ | $\tau_2$ | **NO** |
+| heat flux: $q_i=-k_{\text{th}}\theta_{,i}$ | no time | no time | yes |
+
+So §R1's heat equation
+
+$$\rho c(\dot\theta+\tau_1\ddot\theta)+\beta T_0(\dot e_{kk}+\tau_2\ddot e_{kk})=k_{\text{th}}\theta_{,ii}$$
+
+uses **two** symbols for the **three** slots of the standard form. It coincides with the standard
+form only in the special case $\tau_0=\tau_1=\tau_1^{\text{(mine)}}=\tau_2^{\text{(mine)}}$.
+
+**Consequence — this is the point of R2.** The ordering constraint asserted in §R1/§R4
+($\tau_2\ge\tau_1\ge0$) and the ordering quoted in the literature ($\tau_1\ge\tau_0\ge0$) are
+**not** the same statement under any relabelling, because the two schemes do not agree slot for
+slot. A reader (or a co-author) who "translates" $\tau_2\ge\tau_1$ into $\tau_1\ge\tau_0$ will get
+a statement I cannot support. **Do not perform that translation, and do not print either ordering
+from this file.** §R4's parenthetical ("stated as a structural expectation — I did not verify a
+published instability theorem for $\tau_1>\tau_2$") stands and is now elevated to a warning.
+
+The mapping that *can* be stated without ambiguity is the one-directional one used for the
+manuscript: **the coefficient of $\ddot\theta$ in the energy equation is GL's $\tau_0$; the
+coefficient of $\dot\theta$ in the stress (and of $\ddot e_{kk}$ in the energy equation) is GL's
+$\tau_1$.** In this file's symbols those are, respectively, $\tau_1^{\text{(mine)}}$ and
+$\tau_2^{\text{(mine)}}$ — hence $\tau_0\leftrightarrow\tau_1^{\text{(mine)}}$,
+$\tau_1\leftrightarrow\tau_2^{\text{(mine)}}$ **as slot labels only**, while the stress slot in
+§R1 is already labelled $\tau_1$, which is exactly the clash.
+
+### R7.3 Corrected finite-speed statement (supersedes §R3 and the `V-B2z` GL cell)
+
+Take the standard form. With pure Fourier flux and no coupling ($\beta=0$) the energy equation is
+
+$$\tau_0\ddot\theta+\dot\theta=\kappa\nabla^2\theta ,\qquad \kappa=k_{\text{th}}/(\rho c),$$
+
+which is the telegrapher's equation. It is hyperbolic and has the **closed-form finite speed**
+
+$$\boxed{\,c_h=\sqrt{\kappa/\tau_0}\,}$$
+
+i.e. GL's thermal wave speed is controlled by the coefficient of $\ddot\theta$ (GL's $\tau_0$), not
+by any flux relaxation. **Verified numerically** (reference material $\kappa=1.254181\times10^{-5}$
+m²/s): $v_{ph}\to354.144$ m/s at $10^{12}$–$10^{13}$ Hz for $\tau_0=10^{-10}$ s, against the
+predicted $\sqrt{\kappa/\tau_0}=354.14$; and $v_{ph}\to250.418$ m/s for $\tau_0=2\times10^{-10}$ s
+against $250.42$. At low frequency $v_{ph}\propto\sqrt{\omega}\to0$ (diffusive branch), so the
+*maximum* propagation speed is $\sqrt{\kappa/\tau_0}$; the speed is bounded but approached from
+below, which is why a numerically-evaluated $v_{ph}$ at $10^{8}$ Hz ($121.7$ m/s) looks nothing
+like it.
+
+**This also resolves an internal inconsistency in this file.** §R5's determinant carries factors
+$(1-i\omega\tau_1)(1-i\omega\tau_2)$, i.e. the flux-relaxation (DPL/Jeffreys) structure, whereas
+§R1 correctly says GL has *no* relaxation in the flux. Those cannot both describe the same medium.
+The resolution: §R5 is the symbol of the standard form *after* applying the mapping of §R7.2 with
+$\tau^{\text{(mine)}}_1\equiv\tau_0$; its uncoupled factor
+$k_{\text{th}}k^2-i\omega\rho c(1-i\omega\tau^{\text{(mine)}}_1)$ is precisely
+$\tau_0\ddot\theta+\dot\theta+\kappa k^2\theta=0$, giving $\sqrt{\kappa/\tau_0}$ as above. §R5 is
+therefore correct **as a symbol** but its labels must not be carried into print.
+
+**Contrast with DPL, which is the reason the distinction matters:** DPL's T1 truncation
+$q+\tau_q\dot q=-\kappa\nabla\theta-\kappa\tau_\theta\nabla\dot\theta$ gives
+$\tau_q\ddot\theta+\dot\theta=\kappa\nabla^2\theta+\kappa\tau_\theta\nabla^2\dot\theta$, whose
+extra $\nabla^2\dot\theta$ makes $k^2$ grow with $\omega$ and $v_{ph}\propto\sqrt{\omega}$
+**unbounded** (measured 1.255×10³, 1.255×10⁴, 1.255×10⁵ m/s at $10^{10}$, $10^{12}$, $10^{14}$ Hz
+— see `V-B2p`). GL has no such term and is genuinely finite-speed. **"GL and DPL are both
+hyperbolic" is true but incomplete: only GL is finite-speed in the telegrapher sense.**
+
+### R7.4 The admissibility ordering — why I will not state it
+
+R2 asks for the ordering "as stated in a source". I could not obtain such a statement from any
+source I opened, and there is a substantive reason to be cautious:
+
+- With $q_i=-k_{\text{th}}\theta_{,i}$ (GL's flux law, unchanged), the classical dissipation
+  inequality $-q_i\theta_{,i}\ge0$ reads $k_{\text{th}}|\nabla\theta|^2\ge0$, which holds
+  **identically for every value of $\tau_0$ and $\tau_1$**. The relaxation times therefore cannot
+  be constrained by the flux part of the second law at all. Any ordering $\tau_1\ge\tau_0$ must
+  come from GL's specific construction of the free energy/entropy as functions of
+  $(\theta,\dot\theta,e_{ij})$ — which is exactly the part I cannot check without the paper.
+- For the uncoupled heat equation, $\tau_0 s^2+s+\kappa k^2=0$ is stable for all $k$ **iff
+  $\tau_0>0$**; $\tau_1$ does not appear. So no ordering involving $\tau_1$ can follow from
+  well-posedness of the heat equation.
+
+**Conclusion: I assert only $\tau_0>0$ (necessary for the uncoupled heat equation to be stable),
+and I record the ordering $\tau_1\ge\tau_0\ge0$ as an unverified convention that must be sourced
+from Green & Lindsay (1972) before it appears anywhere in the review.** If the handler supplies
+the PDF, the three things to check on the page are: (i) the coefficient of $\ddot\theta$,
+(ii) the coefficient of $\ddot e_{kk}$, (iii) whether an inequality between the two times is
+stated and from which equation it follows.
+
+### R7.5 Effect on the other files
+
+- `V-B2z_comparison_table.md`: GL row's "finite speed: Yes (speed not verified in closed form)"
+  is superseded by $c_h=\sqrt{\kappa/\tau_0}$, but the row still carries "printable: no".
+- `V-B2p`: DPL and GL are **not** in the same hyperbolic class; see the contrast in §R7.3.
+- `V-B2a`: the Biot/Fourier row is unaffected.
