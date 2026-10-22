@@ -6,7 +6,7 @@
 
 ## Executive disposition
 
-A versioned copy was audited and partially repaired. The v1.0 source/PDF remain unchanged. Static structure checks report zero duplicate labels, unresolved cross-references, duplicate bibliography keys, missing inputs, citation keys, or figure PDFs. Eighteen SVGs were converted to vector PDFs without converter warnings; the results contain extractable text and vector drawing operators. These are engineering checks, not scientific validation. There is no strict successful v1.1 build or accessible PDF: thirteen strict GitHub phase5 runs failed (first three exit 12; last ten exit 1). The latest completed TeX/BibTeX but failed `check_build_log.py`, with 675 overfull boxes >1 pt surfaced in annotations. Source distribution and final reference counts remain unknown; grouped diagnostics are untested. The runner PDF was not uploaded.
+A versioned copy was audited and partially repaired. The v1.0 source/PDF remain unchanged. Static structure checks report zero duplicate labels, unresolved cross-references, duplicate bibliography keys, missing inputs, citation keys, malformed refs, unescaped texttt underscores, stray Markdown backticks, or figure PDFs. Eighteen SVGs were converted to vector PDFs without converter warnings; these are engineering checks, not scientific validation. There is no strict successful v1.1 build or accessible PDF: thirteen strict GitHub runs failed (first three exit 12; last ten exit 1). The latest completed four pdfLaTeX passes and BibTeX with zero fatal errors, unresolved refs/citations, missing files, or missing BibTeX keys, then failed the overfull-box gate on 675 boxes >1 pt. It produced a transient 148-page runner PDF, not uploaded for inspection. The working tree splits the widest comparison table and constrains column widths in large tables; these layout changes remain unbuilt.
 
 The available baseline PDF is 161 pages, SHA-256 `b03dc426046a1473d3d6cf1088f9fc115c7103b4786c4eb2389ab968f640c636`, producer pdfTeX 1.40.25. It contains visible figures in the page-thumbnail survey, but shows poor appendix-table layout on multiple pages. It is not the separately described 170-page/pdfTeX 1.40.29 file, which was unavailable. Those two artifacts must not be conflated.
 
@@ -30,7 +30,7 @@ The available baseline PDF is 161 pages, SHA-256 `b03dc426046a1473d3d6cf1088f9fc
 
 ## Inventory outputs
 
-- Latest static inventory: 37 TeX files; 430 labels; 297 reference commands; 56 bibliography keys; 222 citation calls; zero malformed truncated ref fragments and zero unresolved items in the scanned classes.
+- Latest static inventory: 37 TeX files; 431 labels; 308 reference commands; 56 bibliography keys; 222 citation calls; zero malformed truncated ref fragments and zero unresolved items in the scanned classes.
 - Figures: 18/18 source SVGs parse; 18/18 requested PDF assets generated; converter reported zero warnings; each generated PDF has text and vector operators, with zero raster XObjects.
 - Baseline PDF: 161 pages; seven thumbnail sheets cover pages 1–161. This overview is not text extraction or final-size proofing.
 - Literature inventory: 95 records; 48 DOI cells populated, 47 blank; inherited full-text/open-access flags are not independently validated here.

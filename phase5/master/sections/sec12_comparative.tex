@@ -11,28 +11,52 @@ The synthesis is constructive throughout. Differences between theories are prese
 \subsection{Cross-theory comparison}
 \label{sec:12.1}
 
-Table~\ref{tab:twelve_criteria} compares the ten theory families against twelve criteria chosen so that each row isolates one axis of the taxonomy introduced in Section~\ref{sec:taxonomy}. The table is a compact index into the detailed treatments of Sections~\ref{sec:thermoelastic}--\ref{sec:advanced}; it is not a substitute for them, and several of its entries are deliberately coarse.
+Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} compare the ten theory families against ten provisional comparison criteria, with a final row of primary-source leads chosen so that each row isolates one axis of the taxonomy introduced in Section~\ref{sec:taxonomy}. These tables are a compact index into the detailed treatments of Sections~\ref{sec:thermoelastic}--\ref{sec:advanced}; it is not a substitute for them, and several of its entries are deliberately coarse.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \footnotesize
-\caption{Cross-theory comparison across ten theory families. Entries are the reviewer's synthesis of the primary sources; where a family admits genuinely different branches, the entry reflects the branch most widely used in the reviewed corpus.}
-\label{tab:twelve_criteria}
-\begin{tabularx}{\textwidth}{@{}lcccccccccc@{}}
+\caption{Provisional cross-theory comparison, Part A: classical, relaxation, rate-dependent, and Green--Naghdi families. Entries are an index to discussion, not independently verified comparative findings.}
+\label{tab:twelve_criteria_a}
+\begin{tabularx}{\textwidth}{@{}p{2.6cm}*{5}{>{\centering\arraybackslash}X}@{}}
 \toprule
-\textbf{Criterion} & \textbf{CD} & \textbf{LS} & \textbf{GL} & \textbf{GN-II} & \textbf{GN-III} & \textbf{DPL} & \textbf{TPL} & \textbf{MGT} & \textbf{MDD} & \textbf{Nonlocal} \\
+\textbf{Criterion} & \textbf{CD} & \textbf{LS} & \textbf{GL} & \textbf{GN-II} & \textbf{GN-III} \\
 \midrule
-Thermal law & Fourier & Cattaneo & Cattaneo & Fourier & Cattaneo & Cattaneo & Cattaneo & Cattaneo & Cattaneo & Cattaneo \\
-State variables & 2 & 2 & 2 & 2 & 2 & 3 & 4 & 3 & 2 & 2 \\
-Characteristic time & --- & $\tau_0$ & $\tau_0,\tau_T$ & --- & $\tau_0$ & $\tau_q,\tau_T$ & $\tau_q,\tau_T,\tau_\nu$ & $\tau_T$ & $\tau$ (kernel) & $\tau$ (kernel) \\
-Characteristic length & --- & --- & --- & --- & --- & --- & --- & $\ell$ & $\ell$ & $\ell$ \\
-Thermal wave speed & $\infty$ & finite & finite & $\infty$ & finite & finite & finite & finite & finite & finite \\
-Dissipation & yes & yes & branch & no & yes & yes & yes & yes & kernel & yes \\
-Order in space & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 3 & 2 & 2 \\
-Mathematical structure & PDE & PDE & PDE & PDE & PDE & PDE & PDE & PDE & integro-PDE & integro-PDE \\
-Interface conditions & classical & classical & classical & classical & classical & classical & classical & classical & classical & modified \\
-Causality & no & yes & yes & yes & yes & yes & yes & yes & yes & yes \\
-Primary source & \cite{Biot1956} & \cite{Lord1967} & \cite{Green1972} & \cite{Green1991} & \cite{Green1993} & \cite{Tzou1995} & \cite{Tzou1997} & \cite{Quintanilla2019} & \cite{Wang2011} & \cite{Eringen1972} \\
+Thermal law & Fourier & Cattaneo & Cattaneo & Fourier & Cattaneo \\
+State variables & 2 & 2 & 2 & 2 & 2 \\
+Characteristic time & --- & $\tau_0$ & $\tau_0,\tau_T$ & --- & $\tau_0$ \\
+Characteristic length & --- & --- & --- & --- & --- \\
+Thermal wave speed & $\infty$ & finite & finite & $\infty$ & finite \\
+Dissipation & yes & yes & branch & no & yes \\
+Order in space & 2 & 2 & 2 & 2 & 2 \\
+Mathematical structure & PDE & PDE & PDE & PDE & PDE \\
+Interface conditions & classical & classical & classical & classical & classical \\
+Causality & no & yes & yes & yes & yes \\
+Primary source & \cite{Biot1956} & \cite{Lord1967} & \cite{Green1972} & \cite{Green1991} & \cite{Green1993} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Provisional cross-theory comparison, Part B: phase-lag, higher-order, memory-dependent, and nonlocal families. Entries are an index to discussion, not independently verified comparative findings.}
+\label{tab:twelve_criteria_b}
+\begin{tabularx}{\textwidth}{@{}p{2.6cm}*{5}{>{\centering\arraybackslash}X}@{}}
+\toprule
+\textbf{Criterion} & \textbf{DPL} & \textbf{TPL} & \textbf{MGT} & \textbf{MDD} & \textbf{Nonlocal} \\
+\midrule
+Thermal law & Cattaneo & Cattaneo & Cattaneo & Cattaneo & Cattaneo \\
+State variables & 3 & 4 & 3 & 2 & 2 \\
+Characteristic time & $\tau_q,\tau_T$ & $\tau_q,\tau_T,\tau_\nu$ & $\tau_T$ & $\tau$ (kernel) & $\tau$ (kernel) \\
+Characteristic length & --- & --- & --- & $\ell$ & $\ell$ \\
+Thermal wave speed & finite & finite & finite & finite & finite \\
+Dissipation & yes & yes & yes & kernel & yes \\
+Order in space & 2 & 2 & 3 & 2 & 2 \\
+Mathematical structure & PDE & PDE & PDE & integro-PDE & integro-PDE \\
+Interface conditions & classical & classical & classical & classical & modified \\
+Causality & yes & yes & yes & yes & yes \\
+Primary source & \cite{Tzou1995} & \cite{Tzou1997} & \cite{Quintanilla2019} & \cite{Wang2011} & \cite{Eringen1972} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -69,7 +93,7 @@ Table~\ref{tab:limiting_cases_revisited} summarises the limiting relationships b
 \small
 \caption{Limiting cases between thermoelastic theories, with the parameter that is taken to its limit and the sense of the limit.}
 \label{tab:limiting_cases_revisited}
-\begin{tabularx}{\textwidth}{@{}lllX@{}}
+\begin{tabularx}{\textwidth}{@{}p{2.5cm}p{2.5cm}p{2.2cm}X@{}}
 \toprule
 \textbf{From} & \textbf{To} & \textbf{Limit} & \textbf{What the limit removes} \\
 \midrule
@@ -101,7 +125,7 @@ The literature contains many cases in which two studies address a nominally iden
 \small
 \caption{Divergence map for the reviewed corpus: modelling commitments that account for apparent disagreement, and the procedure that puts two studies on a common footing.}
 \label{tab:divergence_map}
-\begin{tabularx}{\textwidth}{@{}lXXl@{}}
+\begin{tabularx}{\textwidth}{@{}p{2.3cm}X X p{2.5cm}@{}}
 \toprule
 \textbf{Divergence type} & \textbf{Root cause} & \textbf{Resolution procedure} & \textbf{Canonical instance} \\
 \midrule
@@ -116,7 +140,7 @@ Geometry difference & Different admissible geometries or boundary conditions & R
 \end{tabularx}
 \end{table}
 
-Several labels in Table~\ref{tab:twelve_criteria} encompass multiple formulations. Their constitutive equations, state variables, and assumptions must be checked separately before branch-level comparisons are made. Green--Lindsay is a single-temperature, temperature-rate-dependent formulation, distinct from two-temperature thermoelasticity. The inherited branch descriptions and their cited equations remain unverified in this revision.
+Several labels in Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} encompass multiple formulations. Their constitutive equations, state variables, and assumptions must be checked separately before branch-level comparisons are made. Green--Lindsay is a single-temperature, temperature-rate-dependent formulation, distinct from two-temperature thermoelasticity. The inherited branch descriptions and their cited equations remain unverified in this revision.
 
 \subsection{Conditions under which two theories can be compared}
 \label{sec:12.5}
@@ -151,7 +175,7 @@ The fourth consideration---validation---is the one that the reviewed literature 
 The framework above inherits the limitations of the corpus it organises, and these should be stated rather than glossed.
 
 \begin{enumerate}
-\item \textbf{The comparison is coarse.} Entries in Table~\ref{tab:twelve_criteria} are single labels where the underlying theory admits a range of behaviours. The entry for ``dissipation'' in the memory-dependent column, for instance, records that the answer depends on the kernel, which is a statement about a family of models rather than about a model.
+\item \textbf{The comparison is coarse.} Entries in Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} are single labels where the underlying theory admits a range of behaviours. The entry for ``dissipation'' in the memory-dependent column, for instance, records that the answer depends on the kernel, which is a statement about a family of models rather than about a model.
 \item \textbf{Validation is not directly comparable.} Because the validation axis of Section~\ref{sec:taxonomy} is dominated by self-consistency checks, the ``validation'' row of any comparison across families would compare methods rather than results; the row is therefore omitted deliberately rather than filled with an entry that would invite misreading.
 \item \textbf{Branches are under-documented.} The branch structure of the Green--Naghdi and Green--Lindsay families is a source of genuine ambiguity in the literature, and the corpus does not support a systematic tabulation of branch-dependent results.
 \item \textbf{Interface conditions are treated as a single column.} Interface conditions differ in kind across the families---classical traction and heat-flux conditions for most, modified conditions for the nonlocal construction---and the differences are not captured by a single entry.
@@ -164,22 +188,22 @@ The framework above inherits the limitations of the corpus it organises, and the
 \small
 \caption{Notation introduced in Section 12.}
 \label{tab:notation-sec12}
-\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\begin{tabularx}{\textwidth}{@{}p{1.8cm}X p{2.2cm}p{2.1cm}@{}}
 \toprule
 \textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
 \midrule
-CD & Classical coupled thermoelasticity & --- & Table~\ref{tab:twelve_criteria} \\
-LS & Lord--Shulman theory & --- & Table~\ref{tab:twelve_criteria} \\
-GL & Green--Lindsay theory & --- & Table~\ref{tab:twelve_criteria} \\
-GN-II / GN-III & Green--Naghdi types II and III & --- & Table~\ref{tab:twelve_criteria} \\
-DPL / TPL & Dual and triple phase-lag theories & --- & Table~\ref{tab:twelve_criteria} \\
-MGT & Moore--Gibson--Thompson theory & --- & Table~\ref{tab:twelve_criteria} \\
-MDD & Memory-dependent derivative formulation & --- & Table~\ref{tab:twelve_criteria} \\
+CD & Classical coupled thermoelasticity & --- & Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} \\
+LS & Lord--Shulman theory & --- & Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} \\
+GL & Green--Lindsay theory & --- & Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} \\
+GN-II / GN-III & Green--Naghdi types II and III & --- & Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} \\
+DPL / TPL & Dual and triple phase-lag theories & --- & Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} \\
+MGT & Moore--Gibson--Thompson theory & --- & Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} \\
+MDD & Memory-dependent derivative formulation & --- & Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} \\
 $\tau_0$ & Mechanical relaxation time & s & Table~\ref{tab:limiting_cases_revisited} \\
 $\tau_T$ & Thermal relaxation time & s & Table~\ref{tab:limiting_cases_revisited} \\
 $\tau_q$ & Phase-lag time of the heat flux & s & Table~\ref{tab:limiting_cases_revisited} \\
 $\tau_\nu$ & Phase-lag time of the thermal gradient & s & Table~\ref{tab:limiting_cases_revisited} \\
-$\ell$ & Intrinsic material length scale & m & Table~\ref{tab:twelve_criteria} \\
+$\ell$ & Intrinsic material length scale & m & Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} \\
 \bottomrule
 \end{tabularx}
 \end{table}
