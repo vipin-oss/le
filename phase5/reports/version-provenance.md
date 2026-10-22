@@ -23,6 +23,6 @@ Repairs in `phase5/scripts/repair_source.py` and subsequent source edits apply t
 
 1. **v1.0 repository baseline** — 161-page tracked PDF; exists and was thumbnailed.
 2. **Other reported PDF** — said to be 170 pages with pdfTeX 1.40.29; not available for inspection.
-3. **phase5 v1.1** — versioned source, repaired relative paths, 18 generated PDF figures, static scans; **not compiled**. No v1.1 page count, log, final visual proof, or release status exists.
+3. **phase5 v1.1** — versioned source, repaired relative paths, 18 generated PDF figures, static scans, and strict CI build. Run `39748215109` passed on commit `5df59c6d4d6d3eb0915d8fbc47fc2302cc330604`, produced a 146-page PDF, and uploaded the PDF/contact-sheet artifacts. Final visual/page-level inspection remains open because artifact download returns EOF in this environment.
 
-The inherited build workflow's green status is not substituted for a phase5 compile: the old workflow compiled the phase4 tree and suppressed failures with `|| true`. A strict phase5 workflow is now present, but until it runs successfully and its artifacts are inspected, engineering status remains **NOT PASSED**.
+The inherited build workflow's green status is not substituted for a phase5 compile: the old workflow compiled the phase4 tree and suppressed failures with `|| true`. The replacement strict phase5 workflow does not suppress command failures; its strict build gate passed in run `39748215109`. Overall R1/Part 1 is still open pending visual/page-level review and underfull-warning disposition.

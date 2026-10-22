@@ -10,7 +10,7 @@
 2. The draft still discusses GN-II/III, DPL/TPL, MGT, MDD, fractional and nonlocal theories without a model-specific balance for each. The authors appropriately avoid a universal flux formula, but a review cannot leave the central subject almost entirely open while using broad family labels. Choose a narrower claim and derive only what follows from each displayed constitutive set.
 3. The GL, LS, and piezoelectric corrections are not source-verified. Provide the exact primary-source equations, notation map, assumptions, and page/equation references after inspecting the source. Do not use an inherited bibliography record as evidence of equation correctness.
 4. The fractional diffusion-wave equation has been dimensionally repaired, but it is only a scalar equation. Explain how temperature, heat flux, and the mechanical field are coupled, which initial data are needed, and which parameter values retain a physical/thermodynamic interpretation—or clearly label it as a scalar illustration.
-5. A compile is absent. The v1.0 PDF's appendix tables appear to overrun the text block at overview scale. Rework all table layouts, inspect each table at readable scale, and provide a clean phase5 PDF/log with zero unresolved references and a documented treatment of warnings.
+5. Strict CI now passes for phase5 and reports the repaired overfull boxes, but the uploaded final PDF/contact sheets remain unavailable for local inspection. The v1.0 PDF's appendix tables appeared to overrun the text block at overview scale. Inspect each table at readable scale and verify the final PDF/log and warning disposition.
 6. For nonlocal and higher-gradient models, state the exact boundary power and additional traction terms before discussing an energy-flux ratio. A local Cauchy traction formula is not a universal substitute.
 
 ### Author response plan (status, not completed response)
@@ -21,7 +21,7 @@
 | Generalized model balances | No universal law claimed; several equations marked candidate or open | OPEN; primary-source derivations required |
 | Primary equations | No original full texts checked in phase5 | UNVERIFIED; obtain and cite exact source equations |
 | Fractional theory | Coefficient dimensions corrected and scalar scope narrowed | CONDITIONAL; coupled constitutive formulation still open |
-| Tables/compile | Baseline table defects recorded; strict pipeline prepared | NOT PASSED; run TeX build and page proof |
+| Tables/compile | Strict CI passed in run 39748215109; 146-page PDF/contact sheets uploaded | Build PASSED; final visual/page proof remains OPEN because artifacts were not locally inspectable |
 | Nonlocal boundary work | No universal correction asserted | OPEN; derive per kernel/domain/BC |
 
 ## Simulated Reviewer 2 — literature synthesis / editorial and reproducibility

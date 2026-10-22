@@ -4,9 +4,12 @@
 2. **P0 — Review:** all seven baseline-PDF contact sheets were surveyed; figures render, while appendix-table overflow/fragmentation is visible at thumbnail scale.
 3. **P1 — Portable source:** phase5 has local table/figure inputs; the static scan finds no unresolved input, bibliography, citation, label, or figure path.
 4. **P1 — Figure assets:** 18/18 SVGs converted to vector PDFs with zero renderer warnings; structural validation passes, final manuscript-scale proof is pending.
-5. **P1 — Build:** local TeX is absent; Twenty strict CI attempts have failed. Run 39739833380 passed PDF-font embedding checks (77/77) and uploaded the PDF/contact sheets, then failed the strict gate on the same 15 overfull boxes >1 pt; expanded warning-context diagnostics are unbuilt.
+5. **P1 — Build:** local TeX is absent. Strict CI run 39748215109 passed on commit 5df59c6d4d6d3eb0915d8fbc47fc2302cc330604 with no weakened gate, generated a 146-page PDF, passed the PDF-font check, rendered contact sheets, and uploaded artifacts. Artifact contents are not locally downloadable, so final visual proof remains open.
 6. **P2 — Scientific repairs:** classical Cauchy flux and units were re-derived; LS/GL/piezoelectric/nonlocal/interface descriptions were narrowed or corrected with explicit conditions.
 7. **P2 — Generalized models:** GN, DPL/TPL, MGT, MDD, fractional, nonlocal and multiphysics balances remain partly unverified/open; no universal generalized flux is asserted.
 8. **P3 — Literature/content:** 95 inherited records are listed in the evidence matrix, but every claim remains OPEN/UNVERIFIED; no full-text claim audit or new systematic search was completed.
-9. **P3 — Packaging/editing:** master-source-only, journal-source/supplement-only and source-audit ZIPs pass integrity checks; the required master source+v1.1-PDF ZIP cannot yet be created.
+9. **P3 — Packaging/editing:** master-source-only, journal-source/supplement-only and source-audit ZIPs pass integrity checks; the CI PDF artifact exists, but the required master source+v1.1-PDF ZIP has not been assembled locally.
 10. **P4 — Independent gates:** two clearly labelled reviewer simulations exist; no real external review, full compile proof, final-page proofread, or submission-readiness PASS is claimed.
+
+
+**Part 1 / R1 disposition:** strict build subgate PASSED in run 39748215109. Part 1 is not yet marked complete: final PDF/contact-sheet inspection, page-count/content reconciliation, and underfull-warning disposition remain open. Part 2 has not started.
