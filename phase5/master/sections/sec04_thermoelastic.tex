@@ -17,7 +17,7 @@ For the historical overview, see Figure~\ref{fig:theory_evolution} in Section 1.
 
 A recurring motivation for some generalized heat-transport models is that Fourier conduction is parabolic and has formally infinite propagation speed. Generalized constitutive choices explore alternatives for selected regimes, but finite-speed behavior and thermodynamic consistency are model-specific properties that require derivation; neither follows from the label “generalized.”
 
-The experimental and theoretical case for second sound was assembled by Joseph and Preziosi, whose review of heat waves (1989 \cite{Joseph1989}) set out the balance of evidence in favour of a finite-speed thermal disturbance in solids, and whose addendum (1990 \cite{Joseph1990}) addressed the objections raised in the intervening discussion. That debate is the origin of the modern class of thermal-wave theories reviewed in Section 6.
+Joseph and Preziosi's review (1989) and 1990 addendum summarize the second-sound evidence and the objections raised in the intervening discussion \cite{Joseph1989,Joseph1990}. This debate helped motivate later finite-speed heat-transport models; it does not establish a universal need for them.
 
 \subsection{Classical coupled thermoelasticity (Fourier heat conduction)}
 \label{sec:4.2}
@@ -188,7 +188,17 @@ Formal reductions can sometimes be obtained by setting one or both lag parameter
 \subsection{Triple-phase-lag (TPL) theory (Roy Choudhuri, 2007)}
 \label{sec:4.8}
 
-Roy Choudhuri (2007) \cite{RoyChoudhuri2007} introduced a three-lag law with a thermal-displacement-gradient term, $q_i(t+\tau_q)=-[kT_{,i}(t+\tau_T)+k^*v_{,i}(t+\tau_v)]$, where $\dot v=T$; the cited source gives a first-order expansion in the three lags and the ordering $0\leq\tau_v<\tau_T<\tau_q$. This source-level attribution and form follow the full-text findings recorded for this revision. No $\tau_\nu/2$ term is used. Any second-order $\tau_q^2/2$ form is a distinct Barak/Gupta extension \cite{Barak2023}, secondary here, and CONDITIONAL on that model's stated stability/admissibility assumptions; it is not the Roy Choudhuri 2007 law.
+Roy Choudhuri (2007) \cite{RoyChoudhuri2007} proposed a three-lag law with a thermal-displacement-gradient term:
+
+\begin{equation}
+\begin{aligned}
+q_i(t+\tau_q) &= -kT_{,i}(t+\tau_T)\\
+&\quad - k^*v_{,i}(t+\tau_v), \qquad \dot v=T.
+\end{aligned}
+\label{eq:4.17}
+\end{equation}
+
+The cited source gives a first-order expansion in the three lags with $0\leq\tau_v<\tau_T<\tau_q$. We use no $\tau_\nu/2$ term. A $\tau_q^2/2$ term appears only in a distinct Barak/Gupta second-order extension \cite{Barak2023}; it is secondary here and CONDITIONAL on that model's stated stability/admissibility assumptions, not part of the Roy Choudhuri 2007 law.
 
 \subsection{Moore--Gibson--Thompson (MGT) theory}
 \label{sec:4.9}
