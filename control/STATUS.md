@@ -20,3 +20,8 @@ Next audit trigger: Arena pushes a commit to its branch and Vipin says "Arena do
 - Arena R1: strict CI green (run 39750456893, 146 pp, head 11b3330). Gate HOLD: no visual proof (artifact download blocked for Arena and Claude). Arena ordered to commit PDF + contact sheets to phase5/build_outputs, 161->146 reconciliation. Part 2 not started.
 - Brave B8a (ff1c472) ACCEPTED: legacy EQ-019 WRONG-CONFIRMED; live master withdrawal correct; sec01:45 and heading still say TPL (Tzou 1997) = live defect for Arena; EQ-10.12 legacy VERIFIED -> UNVERIFIED. Next: control/BRAVE_B9.md.
 - Findings: control/FULLTEXT_FINDINGS_02.md (F6-F9). GN 1991 scanned, unread.
+
+## R1 GATE: PASSED (supervisor, 2026-10-22)
+Evidence: Arena head 54fb603; CI run 39753968114 strict green; I opened phase5/build_outputs/phase5-v1.1-master.pdf myself: 146 pp, 0 "??" unresolved refs; rendered pp 1/93/99/128 clean (no clipping/overfull visible). Underfull 416 hbox = accepted (cosmetic, R1-06 DISPUTED stays open as low priority).
+Carry-over defects found by supervisor: title page date "November 14, 2023" (wrong; use \today or submission date), single author only (addendum R4), TPL heading "(Tzou, 1997)" at PDF text lines (UPDATE 5).
+R2 (content fixes) now OPEN for Arena.
