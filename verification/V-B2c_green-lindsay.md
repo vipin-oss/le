@@ -38,6 +38,10 @@ with the ordering constraint
 
     τ₂ ≥ τ₁ ≥ 0
 
+> **SUPERSEDED by §R8 (2026-10-22):** the `(τ₁, τ₂)` slot assignment above is wrong — two
+> different times do not sit inside the energy equation. See §R8 for the source-backed
+> structure. Do not cite the line above.
+
 **The brief's hint is corroborated at the level of structure**: GL keeps Fourier's law for q (no flux relaxation) and puts the relaxation on the temperature-rate / temperature-rate-of-strain terms. This is what distinguishes GL from LS, and it is why the two theories are *not* interchangeable despite both having "relaxation times".
 
 ### R2. Coupled equations, 1-D
@@ -217,3 +221,64 @@ stated and from which equation it follows.
   is superseded by $c_h=\sqrt{\kappa/\tau_0}$, but the row still carries "printable: no".
 - `V-B2p`: DPL and GL are **not** in the same hyperbolic class; see the contrast in §R7.3.
 - `V-B2a`: the Biot/Fourier row is unaffected.
+
+## R8. Revision (2026-10-22) — the GL slot structure, now source-backed
+
+R8 supersedes the slot assignment of §R1–§R3 and the ordering discussion of §R7.4. It was written
+after `control/ARBITRATION_B4.md` disputed a charge I had made against the manuscript (my `V-B4` W1),
+and the arbitration was right: **the manuscript's GL system is the standard one and my charge was
+wrong**. This section records the sources and the corrected statement.
+
+### R8.1 Three independent statements (all opened 2026-10-22)
+
+**S1.** Bera, Mondal, Mahapatra, Roymahapatra, Acharjya, "Generalized theory of thermoelasticity in
+isotropic and homogeneous thermoelastic solids", *Turkish Journal of Mathematics and Computer
+Science*, article 11902 (turcomat.org/index.php/turkbilmat). Access: **full text, open.**
+GL equations (12)–(15): energy `−q_{i,i}+ρQ = ρc_e(Ṫ+α₀T̈) + βT₀u̇_{i,i}`; stress
+`τ_ij = λu_{i,i}δ_ij + 2μe_ij − β(T+αṪ)δ_ij`; **Fourier law unchanged**; ordering **`α ≥ α₀ > 0`**.
+
+**S2.** Singh, B., "A GL Model on Thermo-Elastic Interaction in a Poroelastic Material Using Finite
+Element Method", *Symmetry* **12**(3):488 (2020), DOI `10.3390/sym12030488`. Access: **full text,
+open.** Energy equation (11) carries `τ₀s` in the operator `(∂_t + τ₀s∂²_t)` applied to *both* the
+temperature and the strain-rate terms; stress (13) carries `τ₁s`; ordering **`0 < τ₀s < τ₁s`** (stated in the article's abbreviations
+block, not in an equation display).
+This is the closest match to the manuscript's uniform `(1+τ₀∂_t)` operator.
+
+**S3.** "Thermodynamic Admissibility, Finite-Speed Heat Transport, and Wave Stability in Generalized
+Thermoelasticity: A Critical Review with Analytical Proofs", Research Square preprint
+rs-10734164/v1. Access: **section text, open** (preprint — corroboration only). GL "introduces
+relaxation in constitutive relations without using a heat-flux rate in exactly the Lord–Shulman
+manner … two nonnegative times, one entering stress/entropy-temperature coupling and one entering the
+thermal equation".
+
+### R8.2 The corrected slot table
+
+| slot | symbol in the standard form | in this file's §R1 | status |
+|---|---|---|---|
+| `T̈` in the energy equation | **τ₀** (energy/entropy time) | τ₁ | **wrong label** |
+| `ë_kk` in the energy equation | same operator as `T̈`: **τ₀** (S2) or absent (S1) | τ₂ | **wrong: no independent τ₂** |
+| `Ṫ` in the stress | **τ₁** (stress time) | τ₁ | correct |
+| heat flux | **no relaxation — plain Fourier** | none | correct |
+| ordering | **`τ₁ ≥ τ₀ > 0`** (S1 `α ≥ α₀`; S2 `0 < τ₀ < τ₁`) | `τ₂ ≥ τ₁` | **wrong direction** |
+
+So GL has **two** relaxation times in **two** slots (stress, energy), not two times inside the energy
+equation. §R3's `√(κ/τ₀)` thermal speed stands unchanged: it depends only on the coefficient of `T̈`,
+which is the energy time — and in the corrected labelling that is GL's τ₀, exactly as §R7.3 says.
+
+### R8.3 Why my §R1 assignment was wrong, and the trap it hides
+
+I had put one time on `T̈` and another on `ë_kk` in the same equation. That is not GL under any
+labelling: it would require the entropy to carry two different relaxation times, and no source I found
+does that. The trap is that this assignment reproduces the *observable* structure of GL for a pure
+thermal problem (β = 0), where only the `T̈` coefficient matters — which is why it survived several
+revision rounds. The check that exposes it is the one §R7.2 already demands: write the slots down and
+compare slot-by-slot with a source, not kernel-by-kernel.
+
+### R8.4 What stays "do not print", and why the reason is now sharper
+
+GL still stays "do not print **from this file**", but the reason changes. It is no longer "the form is
+unverified" — the form is now sourced three ways. It is that **the paper must state GL's flux law**:
+GL keeps Fourier, while LS (and the manuscript's eq. 4.4) has `q_i + τ₀q̇_i = −kT_{,i}`. A reader who
+carries (4.4) forward gets DPL-with-equal-lags. The manuscript's §4.4 does not say which it means, and
+in its notation `τ₀` plays the LS flux role in §4.3 and the GL energy role in §4.4. One sentence fixes
+it; until then, GL equations should not be quoted from either paper.

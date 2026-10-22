@@ -132,3 +132,24 @@ The three WRONG equations, in one line each:
 And the two places where the paper stops hedging and is wrong are matched by two where it hedges and
 a real result exists: GL's τ₀ ≥ τ₁ (CL-006), and the Clausius–Duhem/Coleman–Noll pair that `appA`
 calls UNVERIFIED while `sec03` derives it (CL-028).
+
+## Recheck of B4 against `control/ARBITRATION_B4.md` (2026-10-22)
+
+Order: `ARBITRATION_B4.md` @ `origin/claude/control` `8b1b32d`. Outcome: **W1 and W2 withdrawn, W3
+confirmed.** Both withdrawals came from the same error on my side — checking a sub-problem and
+asserting the whole.
+
+| item | before | now | evidence |
+|---|---|---|---|
+| **W1** GL energy equation (4.9) | WRONG | **CORRECT-CONDITIONAL**, my charge withdrawn | 3 open sources tabulated slot-by-slot (`V-B4_recheck.md` §2): S1 Bera et al. (α₀ on T̈, α in stress, Fourier flux, α≥α₀>0); S2 Singh, *Symmetry* 12:488 (2020) (τ₀s on both energy terms, τ₁s in stress, 0<τ₀s<τ₁s); S3 preprint (two independent times, no flux rate). My B4 derivation assumed a one-time free energy, i.e. a different model. Residual defects are documentation: §4.4 never states GL's flux law, and the ordering to print is **τ₁ ≥ τ₀ > 0** — the opposite direction to what I wrote |
+| **W2** degree 8 in (9.9) | WRONG | **my charge withdrawn** | `V-B4_branch_count.py`: isotropic P‑SV‑T block 6 + shear 2 = **8**; 6mm P‑SV‑T‑φ block 8 + shear 2 = 10, minus the quasi-static Gauss root = 8. Four branches ⇒ degree 8. My earlier "6" was the coupled block alone |
+| **W3** MDD symbol | WRONG | **CONFIRMED-WRONG** | `V-B4_mdd_symbol_check.py`: exact symbol is (iΩ/ω)K̂(Ω); the printed factor is the κ≡1 case; measured magnitude ratios 0.70–1.34 and phase sign flips for the inherited kernel |
+| **CL-006** GL ordering | WRONG, "τ₀ ≥ τ₁" | verdict stands, **direction corrected to τ₁ ≥ τ₀** | I contradicted my own `V-B2c` §R7.2; arbitration caught it |
+| **CL-010** "no ordering condition applies" | WRONG | **CONFIRMED-WRONG**, now the strongest content defect | GL τ₁≥τ₀; DPL τ_θ>τ_q/2; LS τ₀>0 |
+
+Files corrected for self-consistency: `V-B2c` (new **§R8**, supersedes the (τ₁,τ₂) slot assignment of
+§R1–§R3), `V-B2z` (GL ordering cell), `EQUATION_LEDGER` (EQ-042, EQ-076 re-graded; EQ-102 marked
+CONFIRMED-WRONG), `CLAIM_LEDGER` (CL-006, CL-010), `V-B4_summary` (supersession banner).
+
+Process change adopted: no verdict of WRONG without (i) a grep of my own earlier V-files for the same
+statement, and (ii) an explicit statement of which sub-system the check covers.

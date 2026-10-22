@@ -1,5 +1,12 @@
 # V-B4 — independent audit of the manuscript (Round 2, math truth)
 
+> **PARTLY SUPERSEDED (2026-10-22).** Following `control/ARBITRATION_B4.md`, W1 and W2 below are
+> **withdrawn**: the manuscript's GL equations and its degree-8 statement are defensible, and my
+> two charges came from testing sub-problems. W3 stands as CONFIRMED-WRONG. Read
+> **`V-B4_recheck.md`** first; where this file and that one differ, that one is current. The
+> corrected verdict counts are 1 CONFIRMED-WRONG equation (not 3) and 1 CONFIRMED-WRONG claim
+> (CL-010), with CL-006's ordering direction corrected.
+
 **Task.** Audit every displayed constitutive law, governing PDE, dispersion relation, wave-speed
 formula, energy density/flux/dissipation expression and interface condition in
 `phase5/master/{sections/sec03,sec04,sec06,sec07,sec09,sec10,appendices/appA,appB,energy_flux_derivations}.tex`
