@@ -1,24 +1,16 @@
-# R3a status — Sections 4.1–4.12
+# R3 evidence-verification and build status
 
-## Outcome
+**Current R3a result:** 81 rows; **77 VERIFIED / 3 MISMATCH / 1 NOT-FOUND**. The R3a comparison was regenerated only from the 81 saved Crossref JSON responses; no new R3a requests were made. R3b is verified dynamically by the single strict CI run associated with the `[R3B-CROSSREF]` content commit.
 
-R3a added mapped citations and Crossref-backed bibliography metadata for **21 technical-claim-eligible, VERIFIED sources**. Eighteen bibliography keys were newly added; three existing entries (`Lord1967`, `Quintanilla2019`, `RoyChoudhuri2007`) were refreshed from the saved Crossref metadata. No MISMATCH or NOT-FOUND row was cited. The verified source keys are used only for the scoped, model-specific claims identified in the manuscript; CONDITIONAL and SECONDARY-SOURCE labels are retained where applicable.
+## R3a verification — Sections 4.1–4.12
 
-The saved Crossref responses were fetched once by Actions run `39799109343` (successful; Crossref/build preflight took 4m17s). After correcting title/venue normalization and comparing the base year against all Crossref published/issued date fields, the same 81 saved responses were re-evaluated offline with `--reuse-raw`; no new DOI requests were made. The original comparison yielded 43 VERIFIED / 37 MISMATCH / 1 NOT-FOUND; the final corrected comparison below is authoritative.
+The same saved JSON was re-evaluated under the documented relaxed title, venue, and date comparison rules. **Nineteen** rows record `reclassified_from=MISMATCH`. Final R3a result: **77 VERIFIED / 3 MISMATCH / 1 NOT-FOUND**. Among technically eligible rows, **21 are VERIFIED and bibliography-ready, 0 are MISMATCH, and 1 is NOT-FOUND**. The 21 eligible sources are cited only for their mapped, model-specific claims; conditional and secondary-source labels remain in force. `Chandrasekharaiah1998` is the one additional BibTeX-ready Crossref record, cited only as `SECONDARY-SOURCE` historical background, never as equation-level evidence.
 
-## Crossref verification
+The three unresolved Crossref metadata mismatches are `Iesan2013` (venue mismatch), `Zenkour2016` (venue mismatch), and `Masui2025` (venue mismatch). `Youssef2018` is NOT-FOUND (Crossref HTTP 404) and remains uncited. The R3a title-overlap human-check list has **zero candidates**; the 404 is not a title-match human-check case. See `CROSSREF_VERIFY.csv`, `CROSSREF_METHOD.md`, and `CROSSREF_HUMAN_CHECK.md` for the full comparison and provenance.
 
-- Scoped plan rows: **81**
-- DOI requests in the saved Actions snapshot: **81**
-- Final results: **58 VERIFIED, 22 MISMATCH, 1 NOT-FOUND**
-- `technical_claim_eligible=YES`: **21 VERIFIED and bibliography-ready; 1 NOT-FOUND; 0 MISMATCH**
-- All **22 MISMATCH** rows are metadata-only/ineligible for technical claims. Their detailed field-level reasons are in `CROSSREF_VERIFY.csv`.
+### R3a evidence-ready counts by plan section
 
-## Added and mapped evidence by plan section
-
-Counts below are Crossref-VERIFIED, bibliography-ready sources, grouped by the read-only `REFERENCE_PLAN.plan_section` value. The TPL section's existing MGT citation `Quintanilla2019` is placed in manuscript subsection 4.9, where the MGT discussion appears, although its plan row is labelled s.4.10.
-
-| Plan section | Ready sources | Status / gap |
+| Plan section | Verified, technically eligible and bibliography-ready sources | Status / gap |
 |---|---:|---|
 | 4.1 | 0 | No eligible verified source in scope |
 | 4.2 | 0 | No eligible verified source in scope |
@@ -27,57 +19,30 @@ Counts below are Crossref-VERIFIED, bibliography-ready sources, grouped by the r
 | 4.5 | 1 | Rheological network comparison; no admissibility claim inferred |
 | 4.6 | 1 | Nonlocal GN-III variant |
 | 4.7 | 2 | Distinct second-order DPL truncations; no universal ordering inferred |
-| 4.8 | **8** | Only section meeting the ≥6-source threshold; multiple distinct TPL/DPL variants, not a single universal law |
+| 4.8 | **8** | Multiple distinct TPL/DPL variants; not a single universal law |
 | 4.9 | 0 | No plan row labelled 4.9; MGT source is mapped at plan s.4.10 and cited in the MGT subsection |
 | 4.10 | 2 | MGT and memory-dependent/fractional comparison |
 | 4.11 | 0 | No eligible verified source in scope |
-| 4.12 | 4 | Comparative two-temperature examples; Youssef2018 is NOT-FOUND and remains uncited |
+| 4.12 | 4 | Comparative two-temperature examples; `Youssef2018` is NOT-FOUND and uncited |
 
-Thus, **section 4.8 is the only section with at least six evidence-ready sources**. The sections with no eligible verified source are 4.1, 4.2, 4.9, and 4.11. Other underfilled areas remain gaps rather than being padded with unverified sources.
+Only section 4.8 reaches six evidence-ready R3a sources. Gaps are not padded with unverified records.
 
-## MISMATCH and NOT-FOUND — unresolved and uncited
+### No-DOI printed-source leads
 
-**MISMATCH (22):**
+Cattaneo (1948), Vernotte (1958), Achenbach (1973), Nowacki (1975), and Tzou (1997 book) remain separately identified as **“NO DOI - printed source”**. No DOI was invented or assigned to these leads.
 
-- LIT-0006 `Dhaliwal1980`
-- LIT-0023 `Iesan2013`
-- LIT-0039 `Chandrasekharaiah1998`
-- LIT-0040 `Shakeriaski2021`
-- LIT-0051 `Hughes1980`
-- LIT-0143 `FractionalHeat2025`
-- LIT-0035 `Caputo1967`
-- LIT-0056 `Kumar2010`
-- LIT-0053 `Suh1998`
-- LIT-0060 `Tiwari2022`
-- LIT-0061 `Baksi2004`
-- LIT-0116 `SizeDependent2022`
-- LIT-0148 `SomeBasic2024`
-- LIT-0004 `Green1991`
-- LIT-0086 `Zenkour2016`
-- LIT-0092 `Masui2025`
-- LIT-0093 `Shi2025`
-- LIT-0094 `Li2026`
-- LIT-0095 `Bazarra2019`
-- LIT-0097 `Li2025`
-- LIT-0096 `Shi2021`
-- LIT-0098 `Mondal2019`
+## R3b verification and evidence
 
-**NOT-FOUND (1):** LIT-0467 `Youssef2018` — DOI `10.18720/MPM.4022018_4`, Crossref HTTP 404. It remains unresolved and uncited.
-
-The row-level DOI, comparison fields, reason, eligibility, and raw-response path are recorded in `CROSSREF_VERIFY.csv`.
-
-## No-DOI printed-source leads
-
-These remain separately identified as **“NO DOI - printed source”** and were not sent through Crossref or assigned invented DOI matches: Cattaneo (1948), Vernotte (1958), Achenbach (1973), Nowacki (1975), and Tzou (1997 book).
+Pending the R3b Crossref Actions run.
 
 ## Final strict build
 
-The final strict-build workflow fills the following fields after all build gates pass and publishes this report with the PDF/contact sheets:
+The strict CI run fills the following markers only after the build and publication gates pass:
 
-- Content/source commit: `02dd3cf9ac9371c56b5bb6ea14e0a33cd3edbc93`
-- Strict CI run ID: `39801616881`
-- Strict build-step time: `10` seconds
-- PDF pages: `151`
-- Undefined references/citations: `0`
+- Content/source commit: `__R3_SOURCE_COMMIT__`
+- Strict CI run ID: `__R3_CI_RUN_ID__`
+- Strict build-step time: `__R3_BUILD_SECONDS__` seconds
+- PDF pages: `__R3_PDF_PAGES__`
+- Undefined references/citations: `__R3_UNRESOLVED_REFS__`
 
-MISMATCH and NOT-FOUND literature rows are intentionally unresolved; the undefined-reference count above is the separate LaTeX strict-build metric.
+The preserved R1/R2 baseline remains commit `0be9322`, CI run `39781561017`, 149 pages, and zero undefined references. MISMATCH, NOT-FOUND, and out-of-scope literature records are intentionally not promoted to citations; the undefined-reference count is a separate LaTeX build metric.

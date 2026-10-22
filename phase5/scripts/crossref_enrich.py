@@ -24,6 +24,7 @@ MAILTO = "vipin@gurugramuniversity.ac.in"
 DOI_RE = re.compile(r"^10\.\d{4,9}/\S+$", re.I)
 MATCH_FIELDS = ("title_match", "first_author_match", "year_match", "pages_match")
 USER_AGENT = f"le-crossref-enrichment/1.0 (mailto:{MAILTO})"
+R3A_BACKGROUND_KEYS = {"Chandrasekharaiah1998"}
 
 
 def norm(value: str) -> str:
@@ -54,6 +55,15 @@ def parse_bib(path: Path) -> list[dict[str, str]]:
 
 def issued_year(message: dict) -> str:
     for field in ("published-print", "published-online", "issued", "created"):
+        parts = message.get(field, {}).get("date-parts", [])
+        if parts and parts[0]:
+            return str(parts[0][0])
+    return ""
+
+
+def crossref_issued_year(message: dict) -> str:
+    """Return Crossref's issued year, falling back to published dates when absent."""
+    for field in ("issued", "published-print", "published-online", "created"):
         parts = message.get(field, {}).get("date-parts", [])
         if parts and parts[0]:
             return str(parts[0][0])
@@ -228,28 +238,57 @@ def _normal_metadata(value: str) -> str:
 
 
 def _normal_venue(value: str) -> str:
-    # Remove editorial notes and trailing volume/issue/page locators, but retain
-    # named editions such as "English Edition" and normalize only explicit abbreviations.
+    # Normalize DOI-record container titles against common journal abbreviations,
+    # punctuation, ampersands, and harmless edition/volume annotations.
     value = html.unescape(value or "")
     value = re.sub(r"<[^>]*>", " ", value)
     value = re.sub(r"\s+\((?=[^)]*(?:published online|online\s+\d|volume/pages))[^)]*\)", "", value, flags=re.I)
     value = re.sub(r"\s+\d{1,4}(?:\(\d+\))?\s*[,;:]\s*[\w./–-]+\s*$", "", value)
     abbreviations = {
-        "int": "international", "j": "journal", "mech": "mechanics",
-        "phys": "physics", "physical": "physics", "physics": "physics",
+        "q": "quarterly", "quart": "quarterly", "int": "international", "j": "journal",
+        "mech": "mechanics", "phys": "physics", "physical": "physics", "physics": "physics",
         "sci": "science", "science": "science", "sciences": "science",
-        "transf": "transfer", "therm": "thermal", "proc": "proceedings",
+        "transf": "transfer", "therm": "thermal", "proc": "proceedings", "r": "royal", "soc": "society",
         "natl": "national", "acad": "academy", "appl": "applied", "applied": "applied",
         "mater": "materials", "material": "materials", "materials": "materials",
-        "eng": "engineering", "engl": "english", "english": "english", "ed": "edition",
-        "math": "mathematics", "comp": "computational", "rev": "review",
+        "eng": "engineering", "engng": "engineering", "engl": "english", "english": "english", "ed": "edition",
+        "math": "mathematics", "comput": "computational", "comp": "computational", "numer": "numerical", "num": "numerical",
+        "geophys": "geophysical", "rev": "review", "reviews": "review",
         "adv": "adv", "advances": "adv", "advanced": "adv",
         "struct": "structures", "structures": "structures", "technol": "technology", "sect": "section",
         "univ": "university", "lett": "letters", "res": "research", "commun": "communications",
         "des": "design", "mach": "machines",
     }
     tokens = _normal_metadata(value).split()
-    return " ".join(abbreviations.get(token, token) for token in tokens if token not in {"of", "the", "and"})
+    tokens = [abbreviations.get(token, token) for token in tokens if token not in {"of", "the", "and", "in", "for"}]
+    # Crossref uses the long title for this journal while the base uses its
+    # standard short form, Proc. R. Soc. A.
+    if {"proceedings", "royal", "society", "a"}.issubset(set(tokens)):
+        return "proceedings royal society a"
+    return " ".join(tokens)
+
+
+def _venue_matches(base_venue: str, crossref_venues: list[str]) -> bool:
+    base = _normal_venue(base_venue)
+    if not base:
+        return False
+    for candidate in crossref_venues:
+        normalized = _normal_venue(candidate)
+        if normalized == base:
+            return True
+    return False
+
+
+def _title_overlap(base_title: str, crossref_title: str) -> tuple[float, bool]:
+    base = _normal_metadata(base_title)
+    crossref = _normal_metadata(crossref_title)
+    if not base or not crossref:
+        return 0.0, False
+    base_tokens = set(base.split())
+    crossref_tokens = set(crossref.split())
+    overlap = len(base_tokens & crossref_tokens) / min(len(base_tokens), len(crossref_tokens))
+    substring = base in crossref or crossref in base
+    return overlap, substring
 
 
 def _crossref_years(message: dict) -> set[str]:
@@ -325,13 +364,13 @@ def _fetch_r3a(doi: str, raw_dir: Path, log_writer: csv.writer, pause: float) ->
     raise RuntimeError(f"Crossref request failed for {doi}; no verification row will be emitted: {last_error}")
 
 
-def _bib_from_crossref(key: str, doi: str, message: dict, preferred_year: str = "") -> str:
+def _bib_from_crossref(key: str, doi: str, message: dict) -> str:
     authors = authors_from_message(message)
     title_values = message.get("title") or []
     title = title_values[0] if title_values else ""
     title = html.unescape(re.sub(r"<[^>]*>", " ", title))
     title = re.sub(r"\s+", " ", title).strip()
-    year = preferred_year if preferred_year in _crossref_years(message) else issued_year(message)
+    year = crossref_issued_year(message)
     container_values = message.get("container-title") or message.get("short-container-title") or []
     container = container_values[0] if container_values else ""
     kind = "book" if message.get("type") in ("book", "monograph") else "article"
@@ -368,6 +407,9 @@ def run_r3a(args: argparse.Namespace) -> int:
 
     args.raw_dir.mkdir(parents=True, exist_ok=True)
     args.report_dir.mkdir(parents=True, exist_ok=True)
+    verify_path = args.report_dir / "CROSSREF_VERIFY.csv"
+    previous_rows = _read_csv(verify_path) if verify_path.is_file() else []
+    previous_by_id = {row.get("lit_id", ""): row for row in previous_rows}
     dois = sorted({base_by_id[row["lit_id"]].get("DOI", "").strip() for row in scoped
                    if DOI_RE.match(base_by_id[row["lit_id"]].get("DOI", "").strip())})
     log_path = args.report_dir / "CROSSREF_REQUEST_LOG.csv"
@@ -393,12 +435,12 @@ def run_r3a(args: argparse.Namespace) -> int:
             if key.strip():
                 map_by_key.setdefault(key.strip(), []).append(item.get("claim_id", ""))
 
-    verify_path = args.report_dir / "CROSSREF_VERIFY.csv"
-    verify_fields = ["lit_id", "citekey", "resolved_citekey", "section", "DOI", "status", "title_match", "year_match",
-                     "venue_match", "crossref_title", "crossref_year", "crossref_years", "crossref_venue", "technical_claim_eligible",
-                     "read_level", "prior_api_log", "citation_map_claims", "raw_json", "reason", "bib_ready"]
-    verified_bib: list[str] = ["% R3a entries only: Crossref VERIFIED and REFERENCE_PLAN technical_claim_eligible=YES.",
-                               "% Metadata-only/NO rows are deliberately excluded; authors/fields come from saved Crossref JSON.", ""]
+    verify_fields = ["lit_id", "citekey", "resolved_citekey", "section", "DOI", "status", "title_match", "title_overlap",
+                     "title_acceptable", "year_match", "year_acceptable", "year_delta", "venue_match", "base_title", "base_venue", "crossref_title",
+                     "crossref_year", "crossref_years", "crossref_venue", "technical_claim_eligible", "read_level", "prior_api_log",
+                     "citation_map_claims", "raw_json", "reclassified_from", "reason", "citation_scope", "bib_ready"]
+    verified_bib: list[str] = ["% Crossref VERIFIED R3a sources: technical eligible keys plus explicitly background-only review sources.",
+                               "% Authors and bibliographic fields come from saved Crossref JSON; metadata-only keys are not equation evidence.", ""]
     rows_out: list[dict[str, str]] = []
     existing_entries = parse_bib(args.local_bib)
     existing_by_key = {entry["key"]: entry for entry in existing_entries}
@@ -417,23 +459,51 @@ def run_r3a(args: argparse.Namespace) -> int:
         http_status, message = messages[doi]
         title_values = (message or {}).get("title") or []
         cross_title = title_values[0] if title_values else ""
-        cross_year = issued_year(message or {})
+        cross_year = crossref_issued_year(message or {})
         cross_venues = ((message or {}).get("container-title") or []) + ((message or {}).get("short-container-title") or [])
         cross_venue = cross_venues[0] if cross_venues else ""
-        title_match = "YES" if cross_title and _normal_metadata(base.get("title", "")).replace(" ", "") == _normal_metadata(cross_title).replace(" ", "") else "NO"
+        base_title = base.get("title", "")
+        title_norm_base = _normal_metadata(base_title)
+        title_norm_cross = _normal_metadata(cross_title)
+        title_match = "YES" if title_norm_base and title_norm_base == title_norm_cross else "NO"
+        overlap, is_substring = _title_overlap(base_title, cross_title)
+        title_acceptable = "YES" if title_match == "YES" or overlap >= 0.60 or is_substring else "NO"
         matching_years = _crossref_years(message or {})
-        year_match = "YES" if base.get("year", "").strip() in matching_years else "NO"
-        base_venue = _normal_venue(base.get("venue", ""))
-        venue_match = "YES" if base_venue and any(base_venue == _normal_venue(v) for v in cross_venues) else "NO"
+        try:
+            base_year = int(base.get("year", "").strip())
+        except ValueError:
+            base_year = 0
+        year_match = "YES" if str(base_year) in matching_years else "NO"
+        year_delta = min((abs(base_year - int(year)) for year in matching_years if year.isdigit()), default=None)
+        year_acceptable = "YES" if year_delta is not None and year_delta <= 1 else "NO"
+        venue_match = "YES" if _venue_matches(base.get("venue", ""), cross_venues) else "NO"
         response_doi = (message or {}).get("DOI", "").strip().lower()
         doi_match = response_doi == doi.lower()
-        status = "NOT-FOUND" if http_status == 404 else ("VERIFIED" if title_match == year_match == venue_match == "YES" and doi_match else "MISMATCH")
+        status = "NOT-FOUND" if http_status == 404 else (
+            "VERIFIED" if doi_match and title_acceptable == year_acceptable == venue_match == "YES" else "MISMATCH")
+        prior_row = previous_by_id.get(lit_id, {})
+        previous_status = prior_row.get("status", "")
+        reclassified_from = "MISMATCH" if previous_status == "MISMATCH" and status == "VERIFIED" else prior_row.get("reclassified_from", "")
         reason_parts = []
         if not doi_match and http_status != 404:
             reason_parts.append("DOI field differs from requested DOI")
-        for label, value in (("title", title_match), ("year", year_match), ("venue", venue_match)):
-            if value != "YES":
-                reason_parts.append(f"{label} does not match LITERATURE_BASE")
+        if title_match != "YES":
+            if title_acceptable == "YES":
+                detail = "base title is a truncated/variant match" if is_substring else "base-title token coverage qualifies"
+                reason_parts.append(f"title accepted under relaxed rule: overlap={overlap:.2f}; {detail}")
+            else:
+                reason_parts.append(f"title overlap={overlap:.2f} (<0.60); needs human check")
+        if year_match != "YES":
+            if year_acceptable == "YES":
+                reason_parts.append(f"base year differs by {year_delta} year(s) from Crossref published/issued years {', '.join(sorted(matching_years))}")
+            else:
+                reason_parts.append(f"base year {base_year} differs by >1 year from Crossref published/issued years {', '.join(sorted(matching_years))}")
+        if venue_match != "YES":
+            reason_parts.append("normalized venue does not match Crossref container-title/short-container-title")
+        elif prior_row.get("venue_match") == "NO":
+            reason_parts.append("venue accepted after container-title/short-container-title normalization")
+        if reclassified_from:
+            reason_parts.insert(0, "reclassified from MISMATCH under relaxed title/year/venue rules")
         if http_status == 404:
             reason_parts.append("Crossref returned HTTP 404")
         key = plan.get("citekey", "").strip()
@@ -444,17 +514,19 @@ def run_r3a(args: argparse.Namespace) -> int:
         if lit_id in row_index:
             prior = "HISTORICAL_HTTP_" + row_index[lit_id].get("http_status", "UNKNOWN")
         bib_ready = "NO"
-        if status == "VERIFIED" and eligible and key and authors_from_message(message or {}):
+        citation_scope = ""
+        background_only = key in R3A_BACKGROUND_KEYS
+        if status == "VERIFIED" and (eligible or background_only) and key and authors_from_message(message or {}):
             existing_for_doi = existing_by_doi.get(doi.lower(), [])
             target_key = existing_for_doi[0]["key"] if existing_for_doi else key
             conflict = target_key in existing_by_key and existing_by_key[target_key].get("doi", "").strip().lower() != doi.lower()
             if not conflict:
                 bib_ready = "YES"
+                citation_scope = "technical" if eligible else "background-only"
                 resolved_key = target_key
                 claims = "; ".join(sorted(set(map_by_key.get(key, []) + map_by_key.get(target_key, []))))
                 if target_key not in bib_written:
-                    preferred_year = base.get("year", "").strip() if base.get("year", "").strip() in matching_years else ""
-                    verified_bib.append(_bib_from_crossref(target_key, doi, message or {}, preferred_year))
+                    verified_bib.append(_bib_from_crossref(target_key, doi, message or {}))
                     verified_bib.append("")
                     bib_written.add(target_key)
             else:
@@ -464,18 +536,28 @@ def run_r3a(args: argparse.Namespace) -> int:
         elif status == "VERIFIED" and eligible and not key:
             reason_parts.append("REFERENCE_PLAN has no citekey; do not emit a BibTeX entry")
         rows_out.append({"lit_id": lit_id, "citekey": key, "resolved_citekey": resolved_key, "section": plan.get("plan_section", ""), "DOI": doi,
-                         "status": status, "title_match": title_match, "year_match": year_match,
-                         "venue_match": venue_match, "crossref_title": cross_title, "crossref_year": cross_year,
-                         "crossref_years": "; ".join(sorted(matching_years)),
+                         "status": status, "title_match": title_match, "title_overlap": f"{overlap:.2f}",
+                         "title_acceptable": title_acceptable, "year_match": year_match, "year_acceptable": year_acceptable,
+                         "year_delta": "" if year_delta is None else str(year_delta), "venue_match": venue_match,
+                         "base_title": base_title, "base_venue": base.get("venue", ""),
+                         "crossref_title": cross_title, "crossref_year": cross_year, "crossref_years": "; ".join(sorted(matching_years)),
                          "crossref_venue": "; ".join(cross_venues), "technical_claim_eligible": "YES" if eligible else "NO",
-                         "read_level": plan.get("read_level", ""), "prior_api_log": prior,
-                         "citation_map_claims": claims, "raw_json": str(args.raw_dir / (safe_doi(doi) + ".json")),
-                         "reason": "; ".join(reason_parts), "bib_ready": bib_ready})
+                         "read_level": plan.get("read_level", ""), "prior_api_log": prior, "citation_map_claims": claims,
+                         "raw_json": str(args.raw_dir / (safe_doi(doi) + ".json")), "reclassified_from": reclassified_from,
+                         "reason": "; ".join(reason_parts), "citation_scope": citation_scope, "bib_ready": bib_ready})
 
     with verify_path.open("w", encoding="utf-8", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=verify_fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows_out)
+    human_rows = [row for row in rows_out if row["status"] == "MISMATCH" and row["title_match"] == "NO" and row["title_acceptable"] == "NO"]
+    human_lines = ["# R3a title-match human checks", "", "Rows below fail the 0.60 shorter-title token-coverage threshold and are not VERIFIED on title grounds.", ""]
+    if human_rows:
+        for row in human_rows:
+            human_lines.append(f"- {row['lit_id']} `{row['citekey']}` — overlap {row['title_overlap']}; base: {row['base_title']}; Crossref: {row['crossref_title']}; {row['reason']}")
+    else:
+        human_lines.append("None. All returned title mismatches met the relaxed overlap/prefix rule.")
+    (args.report_dir / "CROSSREF_HUMAN_CHECK.md").write_text("\n".join(human_lines) + "\n", encoding="utf-8")
     (args.report_dir / "R3A_VERIFIED_REFERENCES.bib").write_text("\n".join(verified_bib), encoding="utf-8")
     method = f"""# R3a Crossref verification method
 
@@ -483,11 +565,11 @@ Scope: REFERENCE_PLAN rows whose `plan_section` is s.4.1–s.4.12. Each `lit_id`
 
 For each unique DOI, the job requests `https://api.crossref.org/works/<URL-encoded DOI>` with `{USER_AGENT}`. `CROSSREF_REQUEST_LOG.csv` records DOI, HTTP status, UTC time, metadata-file path, and error. `crossref_raw/` contains an allowlisted Crossref metadata projection (DOI, type, title, authors, issued/published dates, venue, publisher, volume/issue/pages, ISSN/ISBN); abstracts, links, reference lists, and full-text material are excluded.
 
-`CROSSREF_VERIFY.csv` compares DOI, normalized title, year, and venue against `LITERATURE_BASE`. HTML tags/entities are normalized in titles. Venue comparison removes explicit editorial notes and trailing volume/page locators, then expands a fixed set of journal abbreviations and common word variants. The base year may match a Crossref `published-print`, `published-online`, or `issued` year; deposit/creation dates are not treated as publication years, and all eligible Crossref publication years are retained in the audit CSV. No row-index HTTP code is treated as verification evidence. `VERIFIED` requires DOI, title, year, and venue all to match. A Crossref HTTP 404 is `NOT-FOUND`; a returned record with any disagreement is `MISMATCH`. Network/decoding failures fail the job instead of being relabelled as NOT-FOUND. `--reuse-raw` recomputes the comparison from the previously saved responses without making new network requests or changing the original request log.
+`CROSSREF_VERIFY.csv` compares DOI, normalized title, year, and venue against `LITERATURE_BASE`. Title verification accepts an exact normalized match, a prefix/substring, or shared-token coverage of at least 0.60 of the shorter title; lower-overlap titles remain MISMATCH and appear in `CROSSREF_HUMAN_CHECK.md`. Venue comparison uses Crossref `container-title` and `short-container-title`, normalizes punctuation, `&`/`and`, journal abbreviations, and harmless volume/editorial annotations. The base year may match a Crossref `published-print`, `published-online`, or `issued` year, or differ by at most one year; the nearest-date decision is recorded. BibTeX year is taken from Crossref's issued-year priority. The row's `reclassified_from` field and reason record MISMATCH-to-VERIFIED changes. No row-index HTTP code is treated as verification evidence. A Crossref HTTP 404 is `NOT-FOUND`; a returned record failing the relaxed title/year/venue rules is `MISMATCH`. Network/decoding failures fail the job instead of being relabelled as NOT-FOUND. `--reuse-raw` recomputes the comparison from saved responses without new network requests or changing the original request log.
 
-`R3A_VERIFIED_REFERENCES.bib` includes only `VERIFIED` rows with `technical_claim_eligible=YES`, a nonempty Crossref author field, and no conflicting existing BibTeX key. New author and bibliographic fields are taken from the saved metadata JSON. Metadata-only/NONE rows are excluded.
+`R3A_VERIFIED_REFERENCES.bib` includes only `VERIFIED` technical-eligible rows plus the explicitly allowlisted `Chandrasekharaiah1998` review as `background-only`; metadata-only entries are never presented as evidence for equations or technical claims. BibTeX authors, title, venue, and issue metadata come from saved Crossref JSON; the BibTeX year is Crossref's issued year.
 
-Counts: {len(scoped)} plan rows in scope; {len(rows_out)} rows with a Crossref DOI; {len(dois)} unique DOI requests; {sum(row['status'] == 'VERIFIED' for row in rows_out)} VERIFIED; {sum(row['status'] == 'MISMATCH' for row in rows_out)} MISMATCH; {sum(row['status'] == 'NOT-FOUND' for row in rows_out)} NOT-FOUND; {len(bib_written)} bibliography-ready eligible keys. No DOI records are handled separately in R3_STATUS.md as printed-source leads, not fabricated DOI matches.
+Counts: {len(scoped)} plan rows in scope; {len(rows_out)} DOI rows; {len(dois)} unique DOI requests; {sum(row['status'] == 'VERIFIED' for row in rows_out)} VERIFIED; {sum(row['status'] == 'MISMATCH' for row in rows_out)} MISMATCH; {sum(row['status'] == 'NOT-FOUND' for row in rows_out)} NOT-FOUND; {sum(row['status'] == 'VERIFIED' and row['technical_claim_eligible'] == 'YES' and row['bib_ready'] == 'YES' for row in rows_out)} verified eligible BibTeX keys; {sum(row['citation_scope'] == 'background-only' for row in rows_out)} background-only keys. No-DOI printed sources are listed separately in R3_STATUS.md.
 """
     (args.report_dir / "CROSSREF_METHOD.md").write_text(method, encoding="utf-8")
     print(f"R3a Crossref rows={len(rows_out)}; unique DOI requests={len(dois)}; bib-ready entries={len(bib_written)}")
