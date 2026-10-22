@@ -9,11 +9,11 @@ report_failure() {
   local rc=$?
   if (( rc == 0 || failure_reported )); then return 0; fi
   failure_reported=1
-  local command=${BASH_COMMAND} pipeline_status="${PIPESTATUS[*]}"
+  local command=${BASH_COMMAND}
   trap - ERR EXIT
   set +e
   if [[ "${GITHUB_ACTIONS:-}" == "true" ]]; then
-    printf '::error title=Phase5 build failure::line %s; exit %s; pipeline [%s]; command: %s\n' "${BASH_LINENO[0]:-?}" "$rc" "$pipeline_status" "${command//%/%25}"
+    printf '::error title=Phase5 build failure::exit %s; command: %s\n' "$rc" "${command//%/%25}"
     for logfile in "$ROOT/master/build/process.log" "$ROOT/master/build/main.log" "$ROOT/master/build/main.blg"; do
       if [[ -f "$logfile" ]]; then
         while IFS= read -r line; do
@@ -23,10 +23,10 @@ report_failure() {
       fi
     done
     if [[ -f "$ROOT/master/build/process.log" ]]; then
-      while IFS= read -r line; do
-        line=${line//%/%25}; line=${line//$'\r'/%0D}
-        printf '::error title=build-log-tail::%s\n' "$line"
-      done < <(tail -20 "$ROOT/master/build/process.log")
+      local tail_summary
+      tail_summary=$(tail -35 "$ROOT/master/build/process.log" | tr '\n' ' ')
+      tail_summary=${tail_summary//%/%25}; tail_summary=${tail_summary//$'\r'/%0D}
+      printf '::error title=Phase5 build-log tail::%s\n' "$tail_summary"
     fi
   fi
   exit "$rc"
@@ -44,8 +44,9 @@ mkdir -p build
 latexmk -C -outdir=build main.tex
 : > build/process.log
 # Keep source includes/figures resolvable from the master directory while
-# directing all generated TeX files to build/. BibTeX reads build/main.aux and
-# resolves the bibliography from the source tree through BIBINPUTS.
+# directing all generated TeX files to build/. Run BibTeX from build/ so it
+# resolves main.aux and any auxiliary files relative to the output directory;
+# BIBINPUTS exposes the source-local database.
 export TEXINPUTS="$PWD/build//:$PWD//:${TEXINPUTS:-}"
 export BIBINPUTS="$PWD//:${BIBINPUTS:-}"
 run_pdflatex() {
@@ -54,8 +55,11 @@ run_pdflatex() {
   pdflatex -interaction=nonstopmode -file-line-error -halt-on-error -output-directory=build main.tex 2>&1 | tee "build/pass${pass}.log" | tee -a build/process.log
 }
 run_pdflatex 1
-printf '\n=== BibTeX ===\n' | tee -a build/process.log
-bibtex build/main 2>&1 | tee build/bibtex.log | tee -a build/process.log
+printf '\n=== BibTeX (from output directory) ===\n' | tee -a build/process.log
+(
+  cd build
+  bibtex main 2>&1 | tee bibtex.log | tee -a process.log
+)
 run_pdflatex 2
 run_pdflatex 3
 run_pdflatex 4
