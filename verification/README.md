@@ -203,3 +203,28 @@ conflict, a re-test of Arena's method on all 56 rows, and authorisation to finis
 | `api_log/` | Per-query log (`b5b_queries.csv`, Q1–Q14 with URL, date, HTTP status, rows), per-record index (`LITERATURE_ROW_INDEX.csv`, 400 rows) and the raw Guyer1990 bodies (`guyer1990.json`). Attribution honesty — 91 rows exact query, 282 batch-level — is stated in `api_log/README.md`. |
 
 Nothing outside `verification/` was touched; no manuscript or bib file was edited.
+
+---
+
+## B6 — whole-manuscript audit (2026-10-22)
+
+Order: `control/BRAVE_B6.md` on `origin/claude/control` @ `84878de`. Manuscript read:
+`origin/arena/40393d9f-le` @ **`d116771`**.
+
+| file | what it holds |
+|---|---|
+| `V-B6a_equation_claim_audit.md` | Audit of the nine sections and four appendices never covered before (sec05, 08, 11, 12, 13, 14, 15, 16, 17, appC–F, T1–T5, T8). Adds **EQ-131…176** and **CL-030…053**. Eleven new confirmed-wrong statements, two duplicate displays, three artefact claims verified against binaries. |
+| `V-B6b_holes_and_citations.md` | Base **400 → 428**; six of eight named author holes closed (Racke, Mindlin, Singh, Sur/Kanoria, Kovács/Ván), **Hetnarski and Sharma still absent**, Biswas partial, **Thompson 1972 still not found**. Numerical methods 6 → 8 — still the weakest column, said plainly. |
+| `V-B6c_citation_map.md` + `CITATION_MAP.csv` | 17 claims → 44 proposed keys, all machine-verified to resolve; three rows rated HIGH risk because no record in the base may support the claim as written. |
+| `V-B6_summary.md` | Whole-manuscript verdict counts (229 statements: 152 correct, 44 conditional, 21 wrong), 16 ranked defects merged with B4, and the safe/unsafe map. |
+
+Headline new defects: eq. (5.17) is eq. (5.14) verbatim with an undefined `φ_{,k}`; `φ` is listed
+twice in the §5 notation table; eq. (11.1) is dimensionally inconsistent; the fractional kernel at
+`sec11:41` is mis-stated; four wrong cells in the §12 comparison tables; Table 14.3 sums to 96 over
+95 records; the "1970s" count is 9, not 17; T4's Rayleigh constant belongs to ν = 0, not a Poisson
+solid; T1 dates MGT to 2019; and §13's thermal-imaging paragraph inverts the role of Fourier
+diffusion.
+
+Verified correct against binaries: appF's PDF (161 pp, pdfTeX-1.40.25, 2023-11-14), 18 figure
+sources + 18 PDFs, 8 tables, and the §14 inventory counts (95 records, 48 DOIs, 13 open access,
+12 full text + 1 methodology).
