@@ -5,6 +5,29 @@ structure; numeric checks in `V-B3_rta.py`.
 
 ---
 
+> ### SCOPE LIMITS (ordered into the headline by the handler, 2026-10-22)
+>
+> **(S1) Purely thermal interface, rigid conductors.** What is solved here is heat conduction
+> *only*: two rigid half-spaces, **one wave per side**, **normal incidence**, no displacement field.
+> It is **not** a coupled thermoelastic interface. Every "\(A=0\)" statement in this file is a
+> statement about **the rigid heat equation** and must never be quoted as a thermoelastic
+> wave-partition result. The coupled problem is `V-B3d`.
+>
+> **(S2) \(A:=1-R-T\) is a definition.** \(|R+T+A-1|=0\) is therefore an **identity**, not a check.
+> The real checks are (i) \(A\), computed as a residual from *independently computed* \(R\) and \(T\),
+> vanishes for ideal contact — and it does, to \(10^{-16}\); and (ii) for Kapitza contact it equals
+> the dissipation predicted from the flux jump — and it does (§3.3, M1). The non-trivial content is
+> **which** of these obtains, not the arithmetic of the sum.
+>
+> **(S3) Cross terms.** With attenuated (complex-\(k\)) waves the time-averaged flux of a
+> superposition is **not** the sum of the fluxes of its parts. This setting has **one wave per side**
+> on each half-space boundary, so there are no *intra-side* cross terms to compute here; the only
+> superposition is the transmitted/reflected pair across the interface, which the flux-continuity
+> condition handles exactly. **A coupled problem will not have this luxury** — it has two or three
+> modes per side, whose mutual interference does not vanish (quantified in `V-B3d` §3.2: up to
+> \(8.6	imes10^{-4}\)).
+
+
 ## 1. Task
 
 `control/BRAVE_NEXT.md`, B3a: derive the energy balance and the flux at an interface, **separately
@@ -31,6 +54,16 @@ $\varkappa := k^*/(\rho c_v)$ [m²/s²] so that GN's second-sound speed is $c_h=
 
 ## 3. Result
 
+> **REVISION NOTE (2026-10-22, found during B3d).** The identity in §3.1 originally carried
+> $+\sigma_{ij}\dot u_i$ and $D=(k_{\text{th}}/T_0^2)|\nabla\theta|^2$. Both were **wrong**: the
+> energy flux is $-\sigma_{ij}\dot u_i+\theta q_j/T_0$ (tensile-positive $\sigma$, i.e. the
+> "$q-\sigma v$" form) and $D=(k_{\text{th}}/T_0)|\nabla\theta|^2$ (one factor $T_0$, not two).
+> Corrected above and in §3.1's bullets and in the §3.7 table. Found **numerically**, not by
+> re-reading: the coupled dissipation check in `V-B3d` refused to close until both were fixed (it
+> read 0.0031 instead of 1, a factor $T_0=300$). GN-II signs in §3.4 are corrected in the same way.
+
+
+
 ### 3.1 Biot / Fourier
 
 $$\rho\ddot u_i=\sigma_{ji,j},\quad
@@ -41,13 +74,13 @@ q_i=-k_{\text{th}}\theta_{,i}.$$
 Energy identity (multiply momentum by $\dot u_i$, heat equation by $\theta/T_0$):
 
 $$\partial_t\underbrace{\Big[\tfrac12\rho\dot u_i\dot u_i+\tfrac12\sigma_{ij}e_{ij}+\tfrac{\rho c_v}{2T_0}\theta^2\Big]}_{E}
-+\partial_j\underbrace{\Big[\sigma_{ij}\dot u_i+\frac{\theta}{T_0}q_j\Big]}_{S_j}
-=-\underbrace{\frac{k_{\text{th}}}{T_0^2}\theta_{,i}\theta_{,i}}_{D\ge0}.$$
++\partial_j\underbrace{\Big[-\sigma_{ij}\dot u_i+\frac{\theta}{T_0}q_j\Big]}_{S_j}
+=-\underbrace{\frac{k_{\text{th}}}{T_0}\theta_{,i}\theta_{,i}}_{D\ge0}.$$
 
 - **Conserved energy? NO.** $D>0$ whenever $\nabla\theta\ne0$.
-- **Dissipation:** $D=(k_{\text{th}}/T_0^2)|\nabla\theta|^2$ — the classical Fourier dissipation
+- **Dissipation:** $D=(k_{\text{th}}/T_0)|\nabla\theta|^2$ — the classical Fourier dissipation
   potential, the only one in this list that is a genuine dissipation *potential*.
-- **Flux at an interface:** $S_n=\sigma_{in}\dot u_i+(\theta/T_0)q_n$; in linearised form the
+- **Flux at an interface:** $S_n=-\sigma_{in}\dot u_i+(\theta/T_0)q_n$; in linearised form the
   thermal part is $q_n$ and the mechanical part $\sigma_{in}\dot u_i$.
 
 ### 3.2 Lord–Shulman
@@ -104,7 +137,7 @@ $q_i=-k^*\alpha_{,i}$, $\rho c_v\ddot\alpha+\beta T_0\ddot e_{kk}=k^*\alpha_{,ii
 Energy identity (this is the model that *has* one):
 
 $$\partial_t\underbrace{\Big[\tfrac12\rho\dot u_i\dot u_i+\tfrac12\sigma_{ij}e_{ij}+\tfrac{\rho c_v}{2T_0}\theta^2+\tfrac{k^*}{2T_0}|\nabla\alpha|^2\Big]}_{E}
-+\partial_j\underbrace{\Big[\sigma_{ij}\dot u_i+\frac{k^*}{T_0}\theta\,\alpha_{,j}\Big]}_{S_j}=0 .$$
++\partial_j\underbrace{\Big[-\sigma_{ij}\dot u_i-\frac{k^*}{T_0}\theta\,\alpha_{,j}\Big]}_{S_j}=0 .$$
 
 **Verified by substitution** (pure-conduction case): with $\rho c_v\theta_{,tt}=k^*\nabla^2\theta$,
 take $E=\tfrac12\rho c_v\theta_{,t}^2+\tfrac12k^*|\nabla\theta|^2$ and $S=-k^*\theta_{,t}\nabla\theta$;
@@ -165,11 +198,11 @@ $$\tau\theta_{,ttt}+\theta_{,tt}=b\nabla^2\theta_{,t}+c^2\nabla^2\theta .$$
 
 | model | energy conserved? | dissipation term | interface flux (normal) | # interface conditions needed (thermal part) |
 |---|---|---|---|---|
-| **Biot** | no | $(k_{\text{th}}/T_0^2)\|\nabla\theta\|^2$ | $q_n=-k_{\text{th}}\partial_n\theta$ | 1 (flux) + $[\theta]=0$ |
-| **LS** | no | $(k_{\text{th}}/T_0^2)\|\nabla\theta\|^2/(1+\omega^2\tau_0^2)$ (harmonic) | $-k_{\text{th}}\partial_n\theta/(1-i\omega\tau_0)$ | 1 + $[\theta]=0$ |
+| **Biot** | no | $(k_{\text{th}}/T_0)\|\nabla\theta\|^2$ | $q_n=-k_{\text{th}}\partial_n\theta$ | 1 (flux) + $[\theta]=0$ |
+| **LS** | no | $(k_{\text{th}}/T_0)\|\nabla\theta\|^2/(1+\omega^2\tau_0^2)$ (harmonic) | $-k_{\text{th}}\partial_n\theta/(1-i\omega\tau_0)$ | 1 + $[\theta]=0$ |
 | **GL** | no | same as Biot *if* the $\tau$-terms are absorbed in $E$ (unverified) | $-k_{\text{th}}\partial_n\theta$ (**Fourier**) | 1 + $[\theta]=0$; **traction also carries $\dot\theta$** |
 | **GN-II** | **YES** | **0** | $-k^*\partial_n\alpha$ | 1 + $[\alpha]=0$ (⇔$[\theta]=0$) |
-| **GN-III** | no | $(k_{\text{th}}/T_0^2)\|\nabla\theta\|^2$ (→0 as $k_{\text{th}}\to0$) | $-k_{\text{th}}\partial_n\theta-k^*\partial_n\alpha$ | 1 + $[\theta]=0$ |
+| **GN-III** | no | $(k_{\text{th}}/T_0)\|\nabla\theta\|^2$ (→0 as $k_{\text{th}}\to0$) | $-k_{\text{th}}\partial_n\theta-k^*\partial_n\alpha$ | 1 + $[\theta]=0$ |
 | **MGT** | **undefined without a choice** | decays for $\gamma>0$ (decay functional, not a potential) | **not well defined** | **3** on $\theta$ |
 
 ## 4. Evidence / Sources

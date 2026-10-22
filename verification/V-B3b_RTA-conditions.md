@@ -4,6 +4,29 @@
 
 ---
 
+> ### SCOPE LIMITS (ordered into the headline by the handler, 2026-10-22)
+>
+> **(S1) Purely thermal interface, rigid conductors.** What is solved here is heat conduction
+> *only*: two rigid half-spaces, **one wave per side**, **normal incidence**, no displacement field.
+> It is **not** a coupled thermoelastic interface. Every "\(A=0\)" statement in this file is a
+> statement about **the rigid heat equation** and must never be quoted as a thermoelastic
+> wave-partition result. The coupled problem is `V-B3d`.
+>
+> **(S2) \(A:=1-R-T\) is a definition.** \(|R+T+A-1|=0\) is therefore an **identity**, not a check.
+> The real checks are (i) \(A\), computed as a residual from *independently computed* \(R\) and \(T\),
+> vanishes for ideal contact — and it does, to \(10^{-16}\); and (ii) for Kapitza contact it equals
+> the dissipation predicted from the flux jump — and it does (§3.3, M1). The non-trivial content is
+> **which** of these obtains, not the arithmetic of the sum.
+>
+> **(S3) Cross terms.** With attenuated (complex-\(k\)) waves the time-averaged flux of a
+> superposition is **not** the sum of the fluxes of its parts. This setting has **one wave per side**
+> on each half-space boundary, so there are no *intra-side* cross terms to compute here; the only
+> superposition is the transmitted/reflected pair across the interface, which the flux-continuity
+> condition handles exactly. **A coupled problem will not have this luxury** — it has two or three
+> modes per side, whose mutual interference does not vanish (quantified in `V-B3d` §3.2: up to
+> \(8.6	imes10^{-4}\)).
+
+
 ## 1. Task
 
 B3b: state and derive the conditions under which $R+T+A=1$ for reflection/transmission at an

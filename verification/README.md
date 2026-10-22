@@ -88,3 +88,24 @@ Orders: `control/BRAVE_NEXT.md`.
 
 **Coupled-system stability status (requested with B3a) remains UNVERIFIED** for every model — the
 files state this explicitly rather than extrapolating the rigid-conductor results.
+
+## Phase B3 revisions (B3d, B3e, B3f) — 2026-10-22
+
+Orders: `control/BRAVE_B3_REVISIONS.md` @ `origin/claude/control` `d1983cc`.
+
+**Scope limits (S1–S3) are now in the HEADLINE of `V-B3a` and `V-B3b`, not only in §7:**
+(S1) the B3a/B3b problem is a **purely thermal** interface between rigid conductors — *not* coupled
+thermoelasticity; (S2) `A := 1-R-T` is a definition, so `|R+T+A-1|=0` is an identity and the real
+checks are the dissipation integrals and the identical-media test; (S3) with complex `k` the flux of a
+sum is not the sum of fluxes.
+
+| File | Order | Outcome |
+|---|---|---|
+| `V-B3d_coupled-interface-rta.md` (+ `V-B3d_coupled_interface.py`) | B3d | **Coupled** thermoelastic interface, normal incidence, Biot / LS / GN-II, steel\|Al, 2 modes per side, 4 conditions. **Three different "R" values computed**: `R_flux` (total field), `R_ref` (reflected sum), `R_mode` (diagonal = what papers square). They coincide to 1e-10 at 1e6 Hz and split to **8.6e-4** at 1e11 Hz; they coincide *exactly* only in the lossless model (GN-II). `A_flux ≈ 1e-16` always ⇒ **A=0 persists at a perfect interface, and is uninformative** (it is flux continuity). Independent checks: transmitted energy = ∫D over medium 2 to **1e-6**; reflected energy = ∫D over medium 1 to 1e-4; identical media gives R=0,T=1,A=0 **exactly**; omitting the LS flux factor `1/(1-iωτ₀)` reproduces the predicted error `1+ω²τ₀²` to 4 digits. Strong-coupling frequency for Biot: **4.46e11 Hz**; LS never reaches |k_t|=|k_e|. **Five of my own errors found and logged** (§3.6) — none of them detectable from `R+T+A=1`. |
+| `V-B3e_oblique-incidence-plan.md` | B3e | Plan only, **no numbers**. SH decouples exactly from heat at *any* angle (e_{kk}=0) ⇒ 3+3 modes for P/SV incidence, 2 for SH; 6 interface conditions; conserved: ω, k_z, J_x. Six source leads with DOI, **none opened**. |
+| `V-B3c` §3.4 (B3f) | B3f | Search log made falsifiable: **Crossref only**, 6 exact query strings, date 2026-10-22, ~27 records, 8 kept, and what would falsify the negative claim. Six specific papers with DOI + what each does; their "energy ratio" definitions marked **UNVERIFIED (not opened)**, with the precise question to ask of each: does it report diagonal, reflected-sum, or total-field energy? |
+| `V-B3a` | correction | The B3d computation exposed **two errors in my B3a identity**: flux is `-σ·u̇ + θq/T₀` (not `+σ·u̇`) and `D = (k_th/T₀)|∇θ|²` (not `/T₀²`). Both corrected, with a revision note. |
+
+**Read levels after B3:** primary full texts opened = **1** (Dreher–Quintanilla–Racke 2009, and it is
+about well-posedness, not interfaces). Interface literature read = **0**. Every interface number in
+this set is mine.
