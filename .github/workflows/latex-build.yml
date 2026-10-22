@@ -127,7 +127,7 @@ jobs:
           EOF
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add phase5/build_outputs/README.md phase5/build_outputs/phase5-v1.1-master.pdf phase5/build_outputs/contact-sheets/*.png
+          git add -A phase5/build_outputs
           if git diff --cached --quiet; then
             echo "Published output files are unchanged."
             exit 0
