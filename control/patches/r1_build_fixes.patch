@@ -1,0 +1,82 @@
+diff --git a/phase5/master/appendices/appF_reproducibility.tex b/phase5/master/appendices/appF_reproducibility.tex
+index 6945e13..b603ba4 100644
+--- a/phase5/master/appendices/appF_reproducibility.tex
++++ b/phase5/master/appendices/appF_reproducibility.tex
+@@ -3,7 +3,7 @@
+ 
+ This appendix describes the status of the repository materials accompanying this revision; it is not a claim that every result in the manuscript has been reproduced. The working bibliography is \texttt{references\_local.bib}. Literature metadata is drawn from the repository inventory and selected DOI checks. DOI resolution is bibliographic verification only. It does not establish that a source was read in full or that a particular equation, interpretation, or numerical result has been checked against that source.
+ 
+-The versioned source bundle contains the LaTeX manuscript, embedded table sources, editable SVG figures, and generated PDF figure assets. The baseline PDF is separately identified as \texttt{v1.0-baseline.pdf}; it is not a rendering of the edited source in this directory. The repository copy of that PDF is 161 pages with embedded metadata identifying pdfTeX 1.40.25 and a 2023-11-14 creation date; the separately described 170-page/pdfTeX-1.40.29 attachment is not available in this workspace, so its provenance cannot be reconciled here. A local TeX engine remains unavailable, so no fresh PDF of version 1.1 has been generated and no strict build gate has passed. Eighteen SVG figures were converted to PDF with the pinned Node renderer; CairoSVG was unavailable because its native Cairo library could not be loaded. Source files, commands, and limitations are recorded in \texttt{../README_build.md} and \texttt{../reports/build-status.md}.
++The versioned source bundle contains the LaTeX manuscript, embedded table sources, editable SVG figures, and generated PDF figure assets. The baseline PDF is separately identified as \texttt{v1.0-baseline.pdf}; it is not a rendering of the edited source in this directory. The repository copy of that PDF is 161 pages with embedded metadata identifying pdfTeX 1.40.25 and a 2023-11-14 creation date; the separately described 170-page/pdfTeX-1.40.29 attachment is not available in this workspace, so its provenance cannot be reconciled here. A local TeX engine remains unavailable, so no fresh PDF of version 1.1 has been generated and no strict build gate has passed. Eighteen SVG figures were converted to PDF with the pinned Node renderer; CairoSVG was unavailable because its native Cairo library could not be loaded. Source files, commands, and limitations are recorded in \texttt{../README\_build.md} and \texttt{../reports/build-status.md}.
+ 
+ The engineering and scientific audit registers distinguish the limited calculations checked directly from claims that remain conditional, unverified, or open. Specifically, the classical local energy balance is re-derived in Sections~3 and Appendix~B under an outward-positive convention; the other family-specific balance identities and all newly asserted benchmark values remain outside the verified set unless an explicit derivation and source record is provided. The literature search is not a systematic review, and no screening flow diagram or comprehensive database query is claimed.
+ 
+diff --git a/phase5/master/appendices/energy_flux_derivations.tex b/phase5/master/appendices/energy_flux_derivations.tex
+index 9bd2dcc..3f50e71 100644
+--- a/phase5/master/appendices/energy_flux_derivations.tex
++++ b/phase5/master/appendices/energy_flux_derivations.tex
+@@ -341,7 +341,7 @@ No electrical energy density or electrical power-flux expression is asserted her
+ 
+ \subsection{Status}
+ 
+-\textbf{OPEN.} The inherited candidate `-phi dot(D_i)` term and combined piezothermoelastic flux are withheld, not promoted as formulae. Derive the complete balance from a stated electromechanical free energy and field equations, then compare it with the relevant primary source.
++\textbf{OPEN.} The inherited candidate \ensuremath{-\phi\,\dot{D}_i} term and combined piezothermoelastic flux are withheld, not promoted as formulae. Derive the complete balance from a stated electromechanical free energy and field equations, then compare it with the relevant primary source.
+ 
+ \section{Summary Table}
+ 
+diff --git a/phase5/master/sections/sec04_thermoelastic.tex b/phase5/master/sections/sec04_thermoelastic.tex
+index 4a02b73..cf88595 100644
+--- a/phase5/master/sections/sec04_thermoelastic.tex
++++ b/phase5/master/sections/sec04_thermoelastic.tex
+@@ -13,8 +13,7 @@ The development of generalized thermoelasticity spans nearly two centuries, from
+ 
+ \input{tables/source/T1_historical_development}
+ 
+-For the historical overview, see Figure~
+-ef{fig:theory_evolution} in Section 1.
++For the historical overview, see Figure~\ref{fig:theory_evolution} in Section 1.
+ 
+ A recurring motivation for some generalized heat-transport models is that Fourier conduction is parabolic and has formally infinite propagation speed. Generalized constitutive choices explore alternatives for selected regimes, but finite-speed behavior and thermodynamic consistency are model-specific properties that require derivation; neither follows from the label “generalized.”
+ 
+diff --git a/phase5/master/sections/sec15_challenges.tex b/phase5/master/sections/sec15_challenges.tex
+index d2f5271..ad1f106 100644
+--- a/phase5/master/sections/sec15_challenges.tex
++++ b/phase5/master/sections/sec15_challenges.tex
+@@ -356,8 +356,7 @@ Verification of the solver is a precondition for the verification of the theory.
+ 
+ The cost of nonlocal assembly grows with the square of the neighbourhood size in three dimensions, and the memory required by a convolution scheme grows with the number of time steps; both scale badly for the three-dimensional transient problems where the generalizations matter most.
+ 
+-The classical-flux schematic is given once in Figure~
+-ef{fig:energy_flux}; generalized channels remain model-specific and open.
++The classical-flux schematic is given once in Figure~\ref{fig:energy_flux}; generalized channels remain model-specific and open.
+ 
+ \subsection{Challenge summary table}
+ \label{sec:15.11}
+diff --git a/phase5/master/sections/sec16_future.tex b/phase5/master/sections/sec16_future.tex
+index d5f75dc..8d9cb70 100644
+--- a/phase5/master/sections/sec16_future.tex
++++ b/phase5/master/sections/sec16_future.tex
+@@ -321,8 +321,7 @@ Material characterization, quality control, structural health monitoring.
+ 
+ Ill-posedness of inverse problems; non-uniqueness of parameter identification.
+ 
+-The provisional relationship schematic appears once as Figure~
+-ef{fig:theory_relationships} in Section 1.
++The provisional relationship schematic appears once as Figure~\ref{fig:theory_relationships} in Section 1.
+ 
+ \subsection{Sequencing the programme}
+ \label{sec:16.11}
+diff --git a/phase5/master/sections/sec17_conclusions.tex b/phase5/master/sections/sec17_conclusions.tex
+index 73fa137..d576e1c 100644
+--- a/phase5/master/sections/sec17_conclusions.tex
++++ b/phase5/master/sections/sec17_conclusions.tex
+@@ -45,8 +45,7 @@ Differences between formulations may reflect constitutive choice, material symme
+ 
+ The stance has a cost, which should be stated. By declining to adjudicate between formulations, this review leaves the reader with a map rather than a recommendation in those places where the literature does not itself contain one. The map is, however, the more durable object: the particular theory that will be found correct in a given application is not yet decidable on the available evidence, and a review that pretended otherwise would be asserting more than the evidence supports. What the map does provide is a statement of what evidence would be needed to decide, and that is the more useful contribution at the present stage of the field.
+ 
+-See the single historical overview in Figure~
+-ef{fig:theory_evolution}.
++See the single historical overview in Figure~\ref{fig:theory_evolution}.
+ 
+ \subsection{The three problems that matter most}
+ \label{sec:17.4}

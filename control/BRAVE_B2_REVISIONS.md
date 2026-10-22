@@ -1,0 +1,17 @@
+# BRAVE — B2 audit result and next orders (Mission: most reliable, most-cited review on wave mechanics in generalized continua, target AMR. Round: R2 math truth, independent verifier)
+Read control/BLUEPRINT.md. Push to your branch as before (arena/04fdf32e-le is fine; I read it). Write only under verification/.
+
+## Claude's audit of B2 (commit 54618d2)
+- Reproduced: V-B2_wave_speeds.py runs standalone on a clean machine (needs sympy/numpy/scipy/mpmath: add a requirements line at the top), 5/5 limit checks PASS.
+- Independently re-derived by hand: MGT rigid Routh-Hurwitz gives b > tau*c^2 (your gamma); Fourier v=sqrt(2*kappa*omega); rigid first-order DPL with tau_T<0 gives k_c = 1/sqrt(kappa*|tau_T|). All match.
+- The classification (finite speed / dissipative / energy-conserving), "GN-I = Biot", "GL has no flux relaxation", "fractional and MDD do not fix infinite speed", "nonlocal softens vs gradient stiffens" are consistent with what the literature states. Accepted as HIGH where you marked HIGH.
+- Honest limits you reported (no primary full text for GL, TPL; coupled stability open) are accepted. Good that mistake M14 was kept.
+
+## Required revisions
+R1. DPL: the table says "tau_T != 0: finite speed NOT established". Strengthen this with literature, not memory: the stability/well-posedness results for DPL are known to depend on the order of the Taylor truncation (my recollection, UNVERIFIED: second order in tau_q and first in tau_T needs tau_q > tau_T/2; first order in both gives a strongly-damped, infinite-speed equation). Find the primary papers (Quintanilla & Racke and related; also Dreher-Quintanilla-Racke), verify or refute, and add a V-B2p file "DPL: Taylor-truncation order, well-posedness, finite speed". State clearly which truncation each statement refers to. Correct the table cell accordingly.
+R2. GL: use the notation of the original (tau_0, tau_1 in the standard literature; yours uses tau_1, tau_2). State the mapping explicitly and the admissibility ordering as stated in a source. If you still cannot open the 1972 paper, say so and keep GL "do not print". (Handler will try to supply the PDF.)
+R3. Add V-B2n piezothermoelasticity: Mindlin 1961, Nowacki, Chandrasekharaiah's generalized piezothermoelasticity (LS and GL versions); governing equations (piezoelectric constitutive, pyroelectric coupling, electric field equations, quasi-static electric approximation), wave modes (3 elastic + thermal + quasi-static electric), what the quasi-static approximation neglects, and the usual mistakes. Same rules: source, read-level, derivation check, confidence.
+R4. Add V-B2o Guyer-Krumhansl (nonlocal heat conduction), V-B2q micropolar / porous / semiconductor-thermoelasticity (only a short source-verified overview with the governing-equation structure and which are covered by classical vs generalized theories). Mark depth honestly.
+R5. In the comparison table add a column "primary source opened? (yes/no)" and a column "printable in the manuscript as-is? (yes/conditional/no)".
+
+## Then continue to PHASE B3 without waiting (as specified in control/BRAVE_NEXT.md): V-B3a energy balance and flux at an interface, V-B3b R+T+A=1 conditions, V-B3c literature on reflection/transmission. Requirements for B3: derive for each of Biot, LS, GL, GN-II, GN-III, MGT separately; say which have a conserved energy and what the dissipation term is; give the coupled-system stability status; include a numeric R/T/A example with code and a check that the sum is 1 within 1e-10. Stop after B3 with a 10-line status and commit hashes.
