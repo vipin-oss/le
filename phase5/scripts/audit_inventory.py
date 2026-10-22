@@ -18,6 +18,7 @@ inputs: list[tuple[Path, str]] = []
 bibliographies: set[str] = set()
 malformed_ref_fragments: list[tuple[Path, int, str]] = []
 unescaped_texttt_underscores: list[tuple[Path, int, str]] = []
+single_backtick_lines: list[tuple[Path, int]] = []
 
 for path in TEX:
     text = path.read_text(encoding="utf-8")
@@ -31,6 +32,11 @@ for path in TEX:
             unescaped_texttt_underscores.append(
                 (path, text.count("\n", 0, position) + 1, command.group(1))
             )
+    single_backtick_lines.extend(
+        (path, line_number)
+        for line_number, line in enumerate(text.splitlines(), 1)
+        if "`" in line.replace("``", "")
+    )
     for label in re.findall(r"\\label\{([^}]+)\}", text):
         labels[label].append(path.relative_to(ROOT).as_posix())
     refs.extend((path, label) for label in re.findall(r"\\(?:eqref|ref|cref|Cref|autoref)\{([^}]+)\}", text))
@@ -71,6 +77,9 @@ for path, line, label in malformed_ref_fragments:
 print(f"Unescaped underscores in texttt paths: {len(unescaped_texttt_underscores)}")
 for path, line, snippet in unescaped_texttt_underscores:
     print(f"  UNESCAPED UNDERSCORE in \\texttt{{{snippet}}} at {path.relative_to(ROOT).as_posix()}:{line}")
+print(f"Single Markdown-style backticks in TeX lines: {len(single_backtick_lines)}")
+for path, line in single_backtick_lines:
+    print(f"  SINGLE BACKTICK at {path.relative_to(ROOT).as_posix()}:{line}")
 print(f"Duplicate bibliography keys: {len(bib_duplicates)}")
 for key, count in sorted(bib_duplicates.items()):
     print(f"  DUPLICATE BIBKEY {key}: {count}")
@@ -97,5 +106,5 @@ if inventory.exists():
         print(f"  {field}: {dict(counts)}")
 print("NOTE: This static check does not compile TeX, inspect the manuscript PDF, verify references externally, or validate scientific claims.")
 
-if duplicates or missing_refs or malformed_ref_fragments or unescaped_texttt_underscores or bib_duplicates or missing_cites or missing_inputs or missing_bibs or missing_figures:
+if duplicates or missing_refs or malformed_ref_fragments or unescaped_texttt_underscores or single_backtick_lines or bib_duplicates or missing_cites or missing_inputs or missing_bibs or missing_figures:
     sys.exit(1)
