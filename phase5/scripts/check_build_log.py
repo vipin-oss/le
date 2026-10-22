@@ -50,8 +50,10 @@ for kind, pattern in (
             warning = log_lines[index]
             source_lines = re.search(r"at lines ([0-9]+--[0-9]+)", warning)
             source_range = source_lines.group(1) if source_lines else "?"
-            excerpt = log_lines[index + 1].strip() if index + 1 < len(log_lines) else ""
-            boxes.append((kind, size, line, source, source_range, excerpt[:40]))
+            context = " / ".join(
+                item.strip() for item in log_lines[index:index + 4] if item.strip()
+            )
+            boxes.append((kind, size, line, source, source_range, context[:120]))
 print(f"overfull hboxes/vboxes > 1 pt: {len(boxes)}")
 by_source: dict[str, list[tuple[str, float, int, str, str, str]]] = {}
 for box in boxes:
