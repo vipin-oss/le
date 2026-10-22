@@ -125,10 +125,10 @@ GN-II theory (thermoelasticity without energy dissipation) introduces the therma
 \label{ef:gn2:1}
 \end{equation}
 
-where $T$ is the temperature increment. The heat conduction equation for type II is:
+where $T$ is the temperature increment. The source-free thermal-displacement form, obtained by integrating the primary temperature equation once with zero integration constant, is \cite{Green1993}:
 
 \begin{equation}
-k\nabla^2\alpha = \rho c_e \ddot{\alpha} + \beta T_0 \ddot{u}_{i,i}.
+\kappa^*\nabla^2\alpha = \rho c_e \ddot{\alpha} + \beta T_0 \dot{u}_{i,i}.
 \label{ef:gn2:2}
 \end{equation}
 
@@ -160,20 +160,20 @@ The entropy flux $p_i$ is determined by the same free energy potential as the st
 
 \subsection{Governing equations}
 
-One commonly used GN-III variant combines thermal-displacement and temperature-gradient terms in its heat-flux law, $q_i=-(k^*\alpha_{,i}+kT_{,i})$ with $\dot\alpha=T$. This form is variant-specific; its energy flux and dissipation identity are not derived here:
+For the source-free, linear isotropic GN-III system transcribed from Green and Naghdi (1992), the temperature equation is:
 
 \begin{equation}
-K T_{,ii} + k^*\dot{T}_{,ii} - \rho C_e\ddot{T} = \vartheta\theta_0\ddot{u}_{i,i}.
+\rho c_e\ddot{T} + \beta T_0\ddot{u}_{i,i} = \kappa\nabla^2\dot{T} + \kappa^*\nabla^2T.
 \label{ef:gn3:1}
 \end{equation}
 
 \subsection{Energy flux}
 
-The energy flux for GN-III has a mixed character: part dissipative (type I) and part non-dissipative (type II).
+The rate term can contribute dissipation when $\kappa>0$; the exact energy flux and dissipation identity are not derived here.
 
 \subsection{Status}
 
-\textbf{OPEN WORKING CLAIM.} The GN-III energy flux combines contributions from both type I and type II formulations. The precise combination requires the full GN-III thermodynamic formulation from the primary source (Green \& Naghdi, 1993). This derivation is open.
+\textbf{OPEN WORKING CLAIM.} The GN-III energy flux and dissipation identity require a derivation from the full 1992 formulation, including its free energy and boundary power. No mixed-flux identity is asserted here.
 
 \section{Open audit item 5: Dual-Phase-Lag (DPL) Theory}
 

@@ -103,7 +103,7 @@ Green and Lindsay (1972) introduced a temperature-rate-dependent thermoelastic t
 \label{eq:4.9}
 \end{equation}
 
-The original Green--Lindsay 1972 energy equation has no $\tau_0\ddot{u}_{i,i}$ term. Later modified GL models may add strain-rate couplings; Yu, Xue, and Tian (2018) explicitly present such a modified formulation and it must be labelled as a variant, not as the original GL system \cite{Yu2018ModifiedGL}. The control-suggested Bera et al. item remains unidentified. The cited ``Singh (2020), Symmetry 12:488 identifier resolves to a Saeed--Abbas--Marin paper, so that author attribution and its relevance to this specific strain-rate variant are not asserted here pending the Crossref audit. The common ordering $\tau_1\geq\tau_0>0$ is stated here as a restriction of the original formulation, not as a new derivation \cite{Green1972}.
+The original Green--Lindsay 1972 energy equation has no $\tau_0\ddot{u}_{i,i}$ term. The LS equation does carry $\tau_0$ on the strain-rate coupling; applying the same operator to that term while retaining the GL stress law produces an LS/GL hybrid, not original GL. Later modified GL models may use such couplings; Yu, Xue, and Tian (2018) explicitly present a modified variant \cite{Yu2018ModifiedGL}. The control-suggested Bera et al. item remains unidentified. The cited ``Singh (2020), Symmetry 12:488'' identifier resolves to a Saeed--Abbas--Marin paper, so that author attribution and its relevance to this variant are not asserted here pending the Crossref audit. The condition $\tau_1\geq\tau_0>0$ is primary-source-checked from Green and Lindsay's entropy-production restriction \cite{Green1972}.
 
 \begin{equation}
 \sigma_{ij} = \lambda\varepsilon_{kk}\delta_{ij} + 2\mu\varepsilon_{ij} - \beta(T + \tau_1\dot{T})\delta_{ij}.
@@ -114,21 +114,21 @@ The original Green--Lindsay 1972 energy equation has no $\tau_0\ddot{u}_{i,i}$ t
 
 The second relaxation time enters the stress through the temperature rate; it does not introduce a second temperature field. Green--Lindsay theory is distinct from Chen--Gurtin two-temperature thermoelasticity. The displayed ordering applies to the original GL convention; it is not a claim that every later GL-labelled variant has the same admissible range.
 
-\subsection{Green--Naghdi type II theory (1991)}
+\subsection{Green--Naghdi type II theory (1993)}
 \label{sec:4.5}
 
-Green and Naghdi (1991) introduced a thermal displacement, commonly denoted $\alpha$ in this family. To avoid a collision with the fractional order later in this section, the local notation here is $\alpha_{\mathrm{GN}}$, with $\dot{\alpha}_{\mathrm{GN}} = T$.
+The type-II system treated here is Green and Naghdi's 1993 thermoelasticity without energy dissipation. Let $\alpha_{\mathrm{GN}}$ be the thermal displacement, with $\dot{\alpha}_{\mathrm{GN}}=T$; it is distinct from the fractional order $\alpha$.
 
 \subsubsection{Thermal displacement gradient formulation}
 
-The heat conduction equation for type II:
+For the source-free form, time integration with zero integration constant gives the source-checked relation \cite{Green1993}:
 
 \begin{equation}
-k\nabla^2\alpha_{\mathrm{GN}} = \rho c_e \ddot{\alpha}_{\mathrm{GN}} + \beta T_0 \ddot{u}_{i,i}.
+\kappa^*\nabla^2\alpha_{\mathrm{GN}} = \rho c_e \ddot{\alpha}_{\mathrm{GN}} + \beta T_0 \dot{u}_{i,i}.
 \label{eq:4.11}
 \end{equation}
 
-The entropy flux is determined by the free energy potential:
+The strain-rate coupling carries one fewer time derivative than the inherited form. Here $\kappa^*$ is the thermal-displacement coefficient; below, $\kappa$ denotes the coefficient on the temperature-rate term in GN-III. The entropy flux is determined by the free-energy potential:
 
 \begin{equation}
 p_i = k_{ij}\alpha_{,j},
@@ -139,7 +139,7 @@ where $p_i$ is the entropy flux vector.
 
 \subsubsection{Energy conservation}
 
-Standard Green--Naghdi type II formulations are described as nondissipative, but the exact statement depends on the selected constitutive equations and energy definition. This characterization is not independently verified against the primary source in this revision; no generalized balance is inferred from the schematic equation below.
+The 1993 type-II paper states that the displayed system permits harmonic-wave propagation without damping. This source-checked property is limited to that system and its stated coefficients; the schematic balance below is not a derived GN-II energy identity.
 
 \begin{equation}
 \frac{\partial\mathcal{E}}{\partial t} + \partial_i J_i = \mathcal{P}.
@@ -148,17 +148,19 @@ Standard Green--Naghdi type II formulations are described as nondissipative, but
 
 Wave attenuation and energy conservation for type II must be obtained from the specific model equations and boundary-value problem; no application suitability claim is made here.
 
-\subsection{Green--Naghdi type III theory (1993)}
+\subsection{Green--Naghdi type III theory (1992)}
 \label{sec:4.6}
 
-Green--Naghdi type III denotes a particular family of thermal-displacement constitutive models. Its relation to type I/II and its dissipation properties depend on the precise formulation; the inherited blanket classification is not independently checked here.
+Green and Naghdi's 1992 type-III system contains both the temperature-rate and thermal-displacement contributions. The displayed source-free isotropic equation uses $\kappa$ for the rate term and $\kappa^*$ for the non-dissipative term, consistently with Eq.~\eqref{eq:4.11} \cite{GreenGN1992}.
 
 \subsubsection{Governing equations}
 
 \begin{equation}
-K T_{,ii} + k^*\dot{T}_{,ii} - \rho C_e\ddot{T} = \vartheta\theta_0\ddot{u}_{i,i}.
+\rho c_e\ddot{T} + \beta T_0\ddot{u}_{i,i} = \kappa\nabla^2\dot{T} + \kappa^*\nabla^2 T.
 \label{eq:4.14}
 \end{equation}
+
+This source-free form is conditional on the displayed linear isotropic system; the source term and material normalization must be restored for other conventions. The transcribed restrictions include $\kappa\geq0$, $c\geq0$, and $\kappa^{**}=0$; no additional sign restriction on $\kappa^*$ is inferred here.
 
 Any proposed type-III-to-type-II or classical limit must be verified by substitution into the exact system and by a convergence analysis. No general limit theorem is asserted here.
 
@@ -185,6 +187,10 @@ q_i + \tau_q\dot{q}_i = -k(T_{,i} + \tau_T\dot{T}_{,i}).
 
 Formal reductions can sometimes be obtained by setting one or both lag parameters to zero in a specified DPL equation, but the resulting equations and solution limits must be checked for that model. The ordering $\tau_q\geq\tau_T$ is not asserted here as a universal thermodynamic-admissibility condition; a model-specific free-energy/entropy derivation is required.
 
+\paragraph{Guyer--Krumhansl (GK) phonon transport.}
+
+Guyer and Krumhansl's 1966 kinetic treatment derives the nonlocal phonon-flux structure from the phonon Boltzmann equation, not from a ready-made continuum thermoelastic law. In the rapid-normal-scattering regime ($\Omega\tau_N\ll1$), its characteristic length is $\lambda^2=c^2\tau_N\tau_z/5$, where $\tau_z$ is the Ziman-averaged resistive-process relaxation time \cite{GuyerKrumhansl1966}. As a SECONDARY continuum statement, Tzou (1995, Eq.~15) prints $\dot{\bm q}+(c^2C_p/3)\nabla T+\bm q/\tau_R=(\tau_Nc^2/5)[\nabla^2\bm q+2\nabla(\nabla\cdot\bm q)]$; this particular reduction is not attributed to the 1966 paper. Tzou's Eq.~17 maps this phonon case to DPL parameters $\alpha=\tau_Rc^2/3$, $\tau_T=9\tau_N/5$, and $\tau_q=\tau_R$ \cite{Tzou1995}. These continuum and mapping statements are conditional on Tzou's stated phonon approximation; they are not universal DPL identities.
+
 \subsection{Triple-phase-lag (TPL) theory (Roy Choudhuri, 2007)}
 \label{sec:4.8}
 
@@ -203,7 +209,7 @@ The cited source gives a first-order expansion in the three lags with $0\leq\tau
 \subsection{Moore--Gibson--Thompson (MGT) theory}
 \label{sec:4.9}
 
-MGT is a family of higher-order thermal models, and its equations vary by formulation. A candidate constitutive system commonly used to motivate a third-order thermal-displacement equation is
+Moore and Gibson (1960) derived a third-order acoustic wave equation for gas dynamics with relaxation; it is not a heat-conduction law for thermoelastic solids. Later Moore--Gibson--Thompson thermoelastic models are analogues that borrow this higher-order structure \cite{MooreGibson1960,Quintanilla2019}. A candidate constitutive system used in some later thermal formulations is
 
 \begin{equation}
 \tau\dot{q}_i+q_i=-kT_{,i}-k^*\vartheta_{m,i},\qquad \dot{\vartheta}_m=T.
@@ -288,7 +294,8 @@ $c_T$ & Thermal wave speed & m/s & \eqref{eq:4.6} \\
 $\beta$ & Thermal stress coefficient & Pa/K & \eqref{eq:4.1} \\
 $c_v$ & Specific heat at constant strain & J/(kg$\cdot$K) & \eqref{eq:4.2} \\
 $k$ & Thermal conductivity & W/(m$\cdot$K) & \eqref{eq:4.2} \\
-$\alpha_{\mathrm{GN}}$ & Thermal displacement (GN-II; locally relabelled to distinguish fractional order $\alpha$) & K$\cdot$s & \eqref{eq:4.11} \\
+$\alpha_{\mathrm{GN}}$ & Thermal displacement (GN-II; distinct from fractional order $\alpha$) & K$\cdot$s & \eqref{eq:4.11} \\
+$\kappa,\kappa^*$ & GN-III rate and thermal-displacement coefficients & model-dependent & \eqref{eq:4.11}, \eqref{eq:4.14} \\
 $p_i$ & Entropy flux (GN-II) & W/(m$^2$$\cdot$K) & \eqref{eq:4.12} \\
 $D_{\omega_M}$ & MDD operator & 1/s & \eqref{eq:4.19} \\
 $\omega_M$ & MDD finite time horizon & s & \eqref{eq:4.19} \\

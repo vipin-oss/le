@@ -22,17 +22,17 @@ Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} compare the t
 \toprule
 \textbf{Criterion} & \textbf{CD} & \textbf{LS} & \textbf{GL} & \textbf{GN-II} & \textbf{GN-III} \\
 \midrule
-Thermal law & Fourier & Cattaneo & Fourier flux; temperature-rate terms & $q=-k^*\nabla\alpha$ & $q=-(k^*\nabla\alpha+k\nabla T)$ \\
+Thermal law & Fourier & Cattaneo & Fourier flux; temperature-rate terms & Source-free GN-II Eq. (4.11) & GN-III Eq. (4.14): $\kappa\nabla^2\dot T+\kappa^*\nabla^2T$ \\
 State variables & 2 & 2 & 2 & 2 & 2 \\
 Characteristic time & --- & $\tau_0$ & $\tau_0,\tau_T$ & --- & $\tau_0$ \\
 Characteristic length & --- & --- & --- & --- & --- \\
-Thermal wave speed & $\infty$ & finite ($\tau_0>0$) & not assigned; corrected coupled roots not recalculated & $\infty$ & not assigned; model-specific \\
-Dissipation & yes & yes & branch & no & yes \\
+Thermal wave speed & $\infty$ & finite if $\tau_0>0$ & not assigned; corrected coupled roots not recalculated & finite propagating waves for the displayed coefficients & source-free system; wave behavior is coefficient-dependent \\
+Dissipation & yes & yes & branch & none for the displayed GN-II system & rate term may dissipate when $\kappa>0$; exact balance open \\
 Order in space & 2 & 2 & 2 & 2 & 2 \\
 Mathematical structure & PDE & PDE & PDE & PDE & PDE \\
 Interface conditions & classical & classical & classical & classical & classical \\
 Causality & no & yes & yes & yes & yes \\
-Primary source & \cite{Biot1956} & \cite{Lord1967} & \cite{Green1972} & \cite{Green1991} & \cite{Green1993} \\
+Primary source & \cite{Biot1956} & \cite{Lord1967} & \cite{Green1972} & \cite{Green1993} & \cite{GreenGN1992} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -46,7 +46,7 @@ Primary source & \cite{Biot1956} & \cite{Lord1967} & \cite{Green1972} & \cite{Gr
 \toprule
 \textbf{Criterion} & \textbf{DPL} & \textbf{TPL} & \textbf{MGT} & \textbf{MDD} & \textbf{Nonlocal} \\
 \midrule
-Thermal law & DPL lag law & Roy Choudhuri first-order TPL & MGT heat equation & MDD kernel law & No heat law (elastic model) \\
+Thermal law & DPL lag law & Roy Choudhuri first-order TPL & Later MGT-type thermal analogue; variant-specific & MDD kernel law & No heat law (elastic model) \\
 State variables & 3 & 4 & 3 & 2 & 2 \\
 Characteristic time & $\tau_q,\tau_T$ & $\tau_q,\tau_T,\tau_v$ & $\tau_T$ & $\omega_M$ (window) & --- \\
 Characteristic length & --- & --- & --- & --- & $\ell$ \\
@@ -67,7 +67,7 @@ Three of these rows carry most of the interpretive content.
 The number of state variables is not by itself a reliable measure of the memory or modal structure of a theory. Local Fourier, relaxation, phase-lag, higher-order, hereditary, fractional, and spatially nonlocal laws use different state spaces and operators; one named family may also include multiple variants. For any comparison, the exact constitutive equations and field variables must be given. The table summarizes inherited descriptions and should be read as a preliminary map: its row-level claims have not all been checked against primary sources in this revision.
 
 \paragraph{Thermal wave speed and dissipation.}
-Propagation, dissipation, and stored energy depend on the precise equations and parameter regime; they cannot be ranked by family name alone. In particular, Green--Lindsay is not a two-temperature theory: its original 1972 formulation keeps Fourier heat flux (no flux relaxation), while LS uses Cattaneo flux relaxation. The GN-II and GN-III entries name thermal-displacement fluxes, not Fourier and Cattaneo laws, respectively. Claims about thermal-wave speed, second sound, parameter ordering, or conservative structure must be traced to the exact formulation and its thermodynamic assumptions. The corresponding table entries remain UNVERIFIED pending primary-source checks.
+Propagation, dissipation, and stored energy depend on the precise equations and parameter regime; they cannot be ranked by family name alone. In particular, Green--Lindsay is not a two-temperature theory: its original 1972 formulation keeps Fourier heat flux (no flux relaxation), while LS uses Cattaneo flux relaxation. GN-II here denotes the 1993 nondissipative system; GN-III denotes the 1992 system with both rate and thermal-displacement terms. Thermal-wave, dissipation, and conservative-structure statements apply only to the displayed equations and their coefficient assumptions; no family-wide claim is made.
 
 \paragraph{Well-posedness and causality.}
 Finite propagation, causality, and well-posedness are separate properties. Fourier's parabolic heat equation has instantaneous mathematical support, while relaxation and thermal-displacement models may yield hyperbolic branches under particular constitutive assumptions. Phase-lag, fractional, memory, and nonlocal formulations require analysis of their actual operators, parameters, initial data, and boundary conditions. No general causal or well-posedness result, nor a universal phase-lag ordering condition, is established in this review.
@@ -77,16 +77,16 @@ Finite propagation, causality, and well-posedness are separate properties. Fouri
 
 Read across the table, the families separate not by their equations but by the answer they give to a single question: does the mechanical energy of the body have a well-defined conserved or monotonically decreasing value? The three structural answers are worth stating separately, because most of the apparent confusion in the wider literature comes from conflating them.
 
-\emph{Conservative structure.} In the Green--Naghdi type~II construction, the mechanical energy is an exact first integral of the equations \cite{Green1991}. This is a strong and desirable property: it guarantees that a disturbance does not pump energy into the medium indefinitely, and it makes the theory attractive for the analysis of interfaces and for the derivation of impedance conditions. Its price is that no mechanism dissipates the thermal degree of freedom; the temperature field is slaved to the mechanical one rather than being governed by an independent balance law.
+\emph{Conservative structure.} The Green--Naghdi 1993 type-II system is described as nondissipative and permits undamped thermal-wave propagation under its stated coefficients \cite{Green1993}. The full energy identity is not reproduced or independently derived here, so no exact first-integral or interface-impedance claim is made. These properties are conditional on the specified GN-II system, not on the type label alone.
 
-\emph{Dissipative structure.} In the Cattaneo--Christoff, Lord--Shulman, phase-lag, Moore--Gibson--Thompson, and memory-dependent families, the mechanical energy has a decay rate, and the heat equation supplies a genuine irreversibility \cite{Cattaneo1948,Lord1967,Tzou1995,Quintanilla2019,Wang2011}. These are the theories used for thermal-shock and thermal-stress applications, where the decay of energy is the physical effect of interest. Their price is that mechanical energy is no longer conserved and that the decay law must be postulated rather than derived.
+\emph{Dissipative structure.} Some Cattaneo--Christoff, Lord--Shulman, phase-lag, Moore--Gibson--Thompson-type, and memory-dependent models are dissipative, but neither decay of mechanical energy nor an irreversibility law follows from a family name. Such conclusions require the exact constitutive system, free energy, admissible parameters, and boundary conditions; they are not asserted universally here.
 
 \emph{Neither.} The classical Biot theory falls outside both categories in the thermal variable, since the parabolic heat equation has infinite propagation speed and no finite energy associated with the transported heat \cite{Biot1956}. This is why the classical theory appears in the corpus mainly as the limit case against which the others are measured, and why the limiting procedures of Section~\ref{sec:12.3} are scientifically important rather than merely formal.
 
 \subsection{Mathematical relationships: limiting cases and specializations}
 \label{sec:12.3}
 
-Table~\ref{tab:limiting_cases_revisited} summarises the limiting relationships between the families. These relationships are the backbone of the theoretical development: each new family was constructed by generalising a specific constitutive law, and each is therefore expected to reduce to its parent when the generalising parameter is removed.
+Table~\ref{tab:limiting_cases_revisited} lists candidate formal reductions only. Each row is conditional on retaining the same state variables, constitutive convention, source terms, and boundary data; none is presented as a convergence theorem.
 
 \begin{table}[htbp]
 \centering
@@ -98,14 +98,12 @@ Table~\ref{tab:limiting_cases_revisited} summarises the limiting relationships b
 \textbf{From} & \textbf{To} & \textbf{Limit} & \textbf{What the limit removes} \\
 \midrule
 Lord--Shulman & Classical coupled & $\tau_0 \to 0$ & The thermal wave; the heat equation becomes parabolic again \\
-Green--Naghdi III & Lord--Shulman & $\tau_T \to 0$ with $\tau_0$ retained & One of the two relaxation times \\
 Dual phase-lag & Lord--Shulman & $\tau_q \to 0$ & The hyperbolic part of the phase-lag law \\
 Triple phase-lag & Dual phase-lag & $\tau_\nu \to 0$ & The thermal-displacement-gradient term \\
 Triple phase-lag & Classical coupled & all $\tau \to 0$ & Every relaxation mechanism simultaneously \\
-Moore--Gibson--Thompson & Triple phase-lag & thermal inertia parameter $\to 0$ & The second temperature field \\
 Memory-dependent + phase-lag & Phase-lag & $\tau_T=\tau_\nu=0$ & All memory except the phase-lag law \\
 Memory-dependent + phase-lag & Classical coupled & all $\tau \to 0$, kernel $\to 1$ & Every memory mechanism simultaneously \\
-Green--Naghdi II & Classical coupled & parameter limit with $\tau \to \infty$ & The thermal degree of freedom entirely \\
+Green--Naghdi III & Green--Naghdi II & $\kappa\to0$, same source-free coefficient convention & Removes the temperature-rate term; formal reduction only \\
 Fractional order $\to 2$ & Classical coupled & $\alpha \to 2$ & Fractional differentiation; the Caputo operator becomes the second derivative \\
 Nonlocal length $\to 0$ & Local theory & $\ell \to 0$ & The nonlocal operator becomes the local gradient \\
 \bottomrule
@@ -113,7 +111,7 @@ Nonlocal length $\to 0$ & Local theory & $\ell \to 0$ & The nonlocal operator be
 \end{table}
 
 \paragraph{On the status of these limits.}
-All the limiting procedures collected in Table~\ref{tab:limiting_cases_revisited} are parameter substitutions within a fixed formal framework. None of them is, in the reviewed corpus, supported by a convergence theorem with an error estimate: that is, there is no result of the form ``if the relaxation parameter is small, then the solution of the generalized problem converges to the solution of the classical problem at a rate bounded by $C\tau$'', with the constant and the norm made explicit. This is a genuine limitation of the current mathematical framework and is recorded as such in Section~\ref{sec:challenges}. It is not a defect of any individual publication; it reflects the fact that the theory-building and the theory-justifying activities have been carried out by different communities. It also has a practical consequence for the taxonomy of Section~\ref{sec:taxonomy}: the limiting relations are what make the families comparable at all, so the absence of rigorous limits removes the foundation on which a quantitative cross-family comparison would rest.
+The rows in Table~\ref{tab:limiting_cases_revisited} are formal parameter substitutions, not convergence theorems. Convergence results have been established for some model pairs, including Moore--Gibson--Thompson and classical/relaxation limits, but this review does not reproduce those proofs and does not claim a theorem for every row in the table. A row therefore identifies a candidate reduction under matched constitutive conventions, sources, state variables, and boundary data; it does not by itself establish convergence, an error estimate, or a rate. The coverage is uneven across model pairs and variants, as noted in Section~\ref{sec:challenges}. This distinction matters for the taxonomy of Section~\ref{sec:taxonomy}: formal limits aid comparison, while quantitative comparison requires a justified limit result for the particular pair and regime.
 
 \subsection{Divergence map: why results differ across the corpus}
 \label{sec:12.4}

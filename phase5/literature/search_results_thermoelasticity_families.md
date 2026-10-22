@@ -38,8 +38,9 @@
 ## Green-Naghdi (GN) Theory — Types I, II, III
 
 **Foundational:**
-- Green, A.E., Naghdi, P.M. (1991). Thermoelasticity without energy dissipation.
-- Green, A.E., Naghdi, P.M. (1993). Thermoelasticity type III.
+- Green, A.E., Naghdi, P.M. (1993). “Thermoelasticity without energy dissipation.” *Journal of Elasticity* 31:189–208. Type II.
+- Green, A.E., Naghdi, P.M. (1992). “On undamped heat waves in an elastic solid.” *Journal of Thermal Stresses* 15:253–264. Type III.
+- Green, A.E., Naghdi, P.M. (1991). “A re-examination of the basic postulates of thermomechanics.” General framework; not assigned here as the type-II equation source.
 
 **Key results from search:**
 - [1] arXiv 1211.4481: "A revised exposition of the Green–Naghdi theory of heat propagation" — Type I/II/III classification
@@ -56,11 +57,12 @@
 - [18] Continuum Mech. Therm. 2020: Asymptotic stability porous-elastic with type III
 - [20] Nature Scientific Reports 2026: Rotational field thermo-acoustic GNII/GNIII
 
-## Dual-Phase-Lag (DPL) and Triple-Phase-Lag (TPL) — Tzou
+## Dual-Phase-Lag (DPL) and Triple-Phase-Lag (TPL)
 
 **Foundational:**
-- Tzou, D.Y. (1995). Macro to micro-scale heat transfer: the lagging behavior. (DPL model)
-- Tzou (1996/1997): Three-phase-lag extension
+- Tzou, D.Y. (1995). “A unified field approach for heat conduction from macro- to micro-scales.” *Journal of Heat Transfer* 117:8–16. DPL primary; Eqs. (15)–(17) give a secondary phonon-continuum GK statement and mapping.
+- Roy Choudhuri (2007). First-order TPL law with thermal-displacement-gradient term.
+- Tzou (1997) is a separate book, not the 1995 DPL article or a TPL primary source.
 
 **Key results from search:**
 - [2] ScienceDirect 2022: Fractional order triple-phase-lag thermoelasticity — full governing equations
