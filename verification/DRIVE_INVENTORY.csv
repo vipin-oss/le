@@ -1,0 +1,371 @@
+inv_id,folder,file_name,drive_id,title,first_author,year,journal,doi_printed,matched_lit_key,match_basis,read_level,meta_source,is_pdf
+DRV-0001,1_My_Published_Papers,P54_2026_EJMSOL_Acoustic-Wave-Rotating-FG-Piezomagnetic-Impedance-Boundaries.pdf,1ztj9FdnyVaZ3eMsJZ-eDsqkQY09yfRCC,Acoustic Wave Rotating FG Piezomagnetic Impedance Boundaries,,2026,EJMSOL,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0002,1_My_Published_Papers,P53_2026_AMM-Engl_Effect-Phason-Transport-Lord-Shulman-Surface-Waves-Hexagonal-Quasicrystal.pdf,1IqUAWJ2824gXhW2QVgDb63TiHN1a8Vp_,P53 2026 AMM Engl Effect Phason Transport Lord Shulman Surface Waves Hexagonal Quasicrystal,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0003,1_My_Published_Papers,P52_2027_IJSSD_Wave-Propagation-Dynamic-Response-Spherical-Cavity-Piezoelectric.pdf,1djZLCi0WIFRd2BUJpP9BzVyq-gupAawr,Wave Propagation Dynamic Response Spherical Cavity Piezoelectric,,2027,IJSSD,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0004,1_My_Published_Papers,P51_2026_MAMS_Size-dependent-Analysis-Surface-Wave-Irregular-Fractured-Porous.pdf,16Rh1sRjm388O8I7YzZU_btCZ_OnF0nlE,Size dependent Analysis Surface Wave Irregular Fractured Porous,,2026,MAMS,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0005,1_My_Published_Papers,P50_2026_SciRep_Rayleigh-Surface-Wave-Dynamics-Porous-Piezo-thermoelectric-Smart.pdf,14evPQmbn0wUeTbDg5MHd58i5vblT01FA,Rayleigh Surface Wave Dynamics Porous Piezo thermoelectric Smart,,2026,SciRep,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0006,1_My_Published_Papers,P48_2026_IJMMD_Klein-Gordon-Nonlocal-Dynamics-Porous-Piezo-thermoelastic-Medium.pdf,1BULnQy0gmttuhTpSr3qVoi7Cy__bxode,Klein Gordon Nonlocal Dynamics Porous Piezo thermoelastic Medium,,2026,IJMMD,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0007,1_My_Published_Papers,P47_2026_IJN_Key-Advances-Roadmap-Bio-electrochemical-Systems-Past-Future.pdf,1BFJQB67_o4VUGP0Kf-bxhlB-xEPHkqCf,Key Advances Roadmap Bio electrochemical Systems Past Future,,2026,IJN,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0008,1_My_Published_Papers,P46_2026_MAMS_Hydro-thermo-electromechanical-Response-Size-dependent-Porous-Piezoelectric-Medium-Memory-dependent.pdf,1Jds3ZONprw5_5OnVIv795x6A2tHpQQvr,Hydro thermo electromechanical Response Size dependent Porous Piezoelectric Medium Memory dependent,,2026,MAMS,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0009,1_My_Published_Papers,P45_2026_CMT_Heat-Map-Analysis-Wave-Dynamics-Nonlocal-Kelvin.pdf,1cjFCkvSrQ_TNrdKVc-JcavAKkHI5oaDo,Heat Map Analysis Wave Dynamics Nonlocal Kelvin,,2026,CMT,,LIT-0050,"TITLE_TOKEN_MATCH(1.00,4 shared)",NONE,FILENAME+TITLE-MATCH,yes
+DRV-0010,1_My_Published_Papers,P44_2026_SciRep_Frictional-Moving-Load-induced-Dynamic-Response-Porous-Piezoelectric.pdf,1L4InbbjtDjC3VbLVQfxEJQZqCby9eppf,Frictional Moving Load induced Dynamic Response Porous Piezoelectric,,2026,SciRep,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0011,1_My_Published_Papers,P43_2026_PPR_Fractal-Geometry-based-Klein-Gordon-Model-Heat-Mass-Transfer.pdf,1z3f5V2CBw-LcdUAo6nBuAjwcJgzxZvDK,Fractal Geometry based Klein Gordon Model Heat Mass Transfer,,2026,PPR,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0012,1_My_Published_Papers,P42_2026_SciRep_Dynamic-Response-Tri-layered-Functionally-Graded-viscoelastic-piezomagnetic-Cylindrical-Tunnel.pdf,12IxT8mCkUoK2VO12RUwvQ5jCtDzpulIK,Dynamic Response Tri layered Functionally Graded viscoelastic piezomagnetic Cylindrical Tunnel,,2026,SciRep,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0013,1_My_Published_Papers,P41_2026_AMM_Dynamic-Response-Loosely-Bonded-Viscoelastic-Porous-Piezoelectric.pdf,1sktMoU6XS9OYBzzbHKf0w348GHgCQDlT,Dynamic Response Loosely Bonded Viscoelastic Porous Piezoelectric,,2026,AMM,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0014,1_My_Published_Papers,P40_2026_HFF_Dispersion-Damping-Characteristics-Rayleigh-type-Waves-KG-Nonlocal.pdf,1nynWgpD_kdKwN49Uf1nCloEZixSH6ji9,Dispersion and damping characteristics of Rayleigh-type waves in KG nonlocal fractional piezo-thermo-electric semiconductor medium,Aldandani,2026,Int. J. Numer. Methods Heat Fluid Flow (HFF),10.1108/HFF-11-2025-0930,NEW,no_match,NONE,FIRST-PAGE,yes
+DRV-0015,1_My_Published_Papers,P39_2026_BookChapter_Digital-Twin-Based-Mathematical-Modeling-Learning-Systems.pdf,1HfUteZd5NNt9hTMSakur2spk5s6XCPdT,Digital Twin Based Mathematical Modeling Learning Systems,,2026,BookChapter,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0016,1_My_Published_Papers,P38_2025_EJMSOL_Shear-Waves-Induced-Vibration-Size-dependent-Loosely-bonded-Viscoelastic.pdf,19tuCy4g7oATfLu99ZuQUkZZA4Ry5Wmru,Shear Waves Induced Vibration Size dependent Loosely bonded Viscoelastic,,2025,EJMSOL,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0017,1_My_Published_Papers,P37_2025_PhysScr_Rheology-dependent-Surface-Wave-Characteristics-Advanced-Geomaterial-Flexoelectric.pdf,15igdkMM4ybrjawGCeJDdqkOFMAii4vqX,Rheology dependent Surface Wave Characteristics Advanced Geomaterial Flexoelectric,,2025,PhysScr,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0018,1_My_Published_Papers,P36_2025_JIOS_Response-Memory-Imperfect-Fluid-Double-Porous-Non.pdf,1glHfOxxV_nj4yLGIAN_hAghSm6K4Dm53,Response Memory Imperfect Fluid Double Porous Non,,2025,JIOS,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0019,1_My_Published_Papers,P35_2025_JTS_Response-Double-Porous-Deformation-Initially-Stressed-Thermoelastic.pdf,1zB4nJl6wZrAld9i8VXtQc6_0tvkvwtZM,Response Double Porous Deformation Initially Stressed Thermoelastic,,2025,JTS,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0020,1_My_Published_Papers,P34_2025_HFF_Piezo-semiconductor-void-Interplay-Size-dependent-Dynamics-Rayleigh-Waves-Within.pdf,1uIhwFxRGIcCVffBba6GKQdCJUMIaJPUZ,Piezo semiconductor void Interplay Size dependent Dynamics Rayleigh Waves Within,,2025,HFF,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0021,1_My_Published_Papers,P33_2025_AMM_Modelling-SH-wave-Dynamics-Size-dependent-Poroelastic-flexomagnetic-Layered-Waveguide.pdf,1yDm1oMzoGNpY_zFbdfbg31Me84Ej4ij7,Modelling SH wave Dynamics Size dependent Poroelastic flexomagnetic Layered Waveguide,,2025,AMM,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0022,1_My_Published_Papers,P32_2025_EJMSOL_Fractional-Memory-Effects-Wave-Reflection-Pre-stressed-Microstructured.pdf,1k_qkBPAfy4F7LV8aQOZNIRYZCJxGSLl1,Fractional Memory Effects Wave Reflection Pre stressed Microstructured,,2025,EJMSOL,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0023,1_My_Published_Papers,P31_2025_CompStruct_Effects-Layer-Imperfections-Material-Gradation-Circumferential-Shear.pdf,1AE4qTTX-G30Tc_P9UrYc0t0jcN0BQ3-M,Effects Layer Imperfections Material Gradation Circumferential Shear,,2025,CompStruct,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0024,1_My_Published_Papers,P30_2025_HFF_Coupled-Thermo-mechanical-Dynamics-Rotating-Nano-beams-Spatiotemporal-Nonlocality.pdf,1pVliNVK1UytlWsU4LzTneMaY86MgJMcN,Coupled Thermo mechanical Dynamics Rotating Nano beams Spatiotemporal Nonlocality,,2025,HFF,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0025,1_My_Published_Papers,P29_2025_HFF_Complex-Wave-Interactions-Graded-Piezomagnetic-Materials-Gravity.pdf,1U5ELErR53t2Yl0X95uLRbFq9CDXrpCGC,Complex Wave Interactions Graded Piezomagnetic Materials Gravity,,2025,HFF,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0026,1_My_Published_Papers,P28_2024_MAMS_Vibrational-Analysis-Size-dependent-Thermo-piezo-photo-electric-Semiconductor-Medium-Memory-dependent.pdf,1ffIBSfhkXrIamFa98wrqvw0jgFIvxgGy,Vibrational Analysis Size dependent Thermo piezo photo electric Semiconductor Medium Memory dependent,,2024,MAMS,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0027,1_My_Published_Papers,P27_2024_PhysScr_Three-phase-lag-Analysis-Transversely-Isotropic-Double-Porous-Thermoelastic.pdf,15iPLa4Dh3-yUJj7iz8nZd1t8fynG1kWa,Three phase lag Analysis Transversely Isotropic Double Porous Thermoelastic,,2024,PhysScr,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0028,1_My_Published_Papers,P26_2024_JACM_Thermoelastic-Modeling-Dual-Porosity-Interacting-Inviscid-Liquid.pdf,1DgPaeivs_SqBouoMEEmnNNOiEmA80Kvb,Thermoelastic Modeling Dual Porosity Interacting Inviscid Liquid,,2024,JACM,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0029,1_My_Published_Papers,P25_2024_MTDM_Effect-Viscosity-Hyperbolic-Two-temperature-Energy-Ratios-Elastic.pdf,1iLmHwUmvB45mmbcprM0ExkUZ5D9QtBqU,Effect Viscosity Hyperbolic Two temperature Energy Ratios Elastic,,2024,MTDM,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0030,1_My_Published_Papers,P24_2024_PhysScr_Size-dependent-Effect-Interaction-Surface-Waves-Micropolar-Thermoelastic.pdf,1oOEDYn-09sxKcdjp2LEhbLKb6W5VJdFU,Size dependent Effect Interaction Surface Waves Micropolar Thermoelastic,,2024,PhysScr,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0031,1_My_Published_Papers,P23_2024_IJAME_Response-Stiffness-Viscosity-Energy-Ratios-Piezo-visco-thermo-elastic-Medium.pdf,1AgiZk9eOOUY6tX89uwrOOzk5g3FPGdeR,Response Stiffness Viscosity Energy Ratios Piezo visco thermo elastic Medium,,2024,IJAME,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0032,1_My_Published_Papers,P22_2024_JNMP_Response-Moisture-Temperature-Diffusivity-Orthotropic-Hygro-thermo-piezo-elastic-Medium.pdf,1Yk-DGjo-6VmoA-UxP4tEJpH7g67o3sdG,Response Moisture Temperature Diffusivity Orthotropic Hygro thermo piezo elastic Medium,,2024,JNMP,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0033,1_My_Published_Papers,P21_2024_PhysScr_Reflection-Quasi-Plasma-Wave-Photo-piezo-Semiconductor-Medium.pdf,1yDUGChBTkspQuCTK-iCzw5XuVhJVOJZM,Reflection Quasi Plasma Wave Photo piezo Semiconductor Medium,,2024,PhysScr,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0034,1_My_Published_Papers,P20_2024_WRCM_Rayleigh-Wave-Nonlocal-Piezo-thermo-electric-Semiconductor-Medium-Fractional.pdf,17w6Epm1ssWXTvTvloN7FAPGWCnBCA7T1,Rayleigh Wave Nonlocal Piezo thermo electric Semiconductor Medium Fractional,,2024,WRCM,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0035,1_My_Published_Papers,P19_2024_MAMS_Quasi-P-Wave-Through-Orthotropic-Piezo-thermoelastic-Materials-Subject.pdf,1dukgB65Vq2bHIpt3k45bzuJXddJrqa-6,Quasi-P wave through orthotropic piezo-thermoelastic materials subject to higher order fractional and memory-dependent derivatives,Gupta,2023,Mechanics of Advanced Materials and Structures (online 01 Jun 2023),10.1080/15376494.2023.2217420,NEW,no_match,NONE,FIRST-PAGE,yes
+DRV-0036,1_My_Published_Papers,P18_2024_HFF_Photo-thermo-piezo-elastic-Waves-Semiconductor-Medium-Subject-Distinct-Two.pdf,1xZTQCZt3HP6u9ofi0hwjbMI6qAkVr-xZ,Photo thermo piezo elastic Waves Semiconductor Medium Subject Distinct Two,,2024,HFF,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0037,1_My_Published_Papers,P17_2024_MAMS_Memory-dependent-Fractional-Order-Analysis-Initially-Stressed-Piezo-thermoelastic.pdf,1Wnpt-zLsCkrcrIgv4evco5NTQA0iG8TI,Memory dependent Fractional Order Analysis Initially Stressed Piezo thermoelastic,,2024,MAMS,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0038,1_My_Published_Papers,P16_2024_HFF_Impact-Memory-dependent-Heat-Transfer-Rayleigh-Waves-Propagation.pdf,1YIOT7-7nLm4UlRY2UQB-GsI_gT84AFCM,Impact Memory dependent Heat Transfer Rayleigh Waves Propagation,,2024,HFF,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0039,1_My_Published_Papers,P15_2024_MAMS_Fractional-MDD-Analysis-Piezo-photo-thermo-elastic-Waves-Semiconductor-Medium.pdf,1CmTEHZKKGKdTR1-2bNLyYPhsQk-HbKse,Fractional MDD Analysis Piezo photo thermo elastic Waves Semiconductor Medium,,2024,MAMS,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0040,1_My_Published_Papers,P14_2024_JTS_Energy-Transfer-Interface-Monoclinic-Piezothermoelastic-Thermoelastic-Half.pdf,1hqbMA07WrseMdh35nkjczPVhoN5rqGVa,Energy Transfer Interface Monoclinic Piezothermoelastic Thermoelastic Half,,2024,JTS,,LIT-0044,"TITLE_TOKEN_MATCH(1.00,7 shared)",NONE,FILENAME+TITLE-MATCH,yes
+DRV-0041,1_My_Published_Papers,P13_2024_SDEE_Comparative-Analysis-Double-Single-Porosity-Effects-SH-wave.pdf,1Pj7K9MSHp3ysBKwT6MKyd7zZraH9w7LQ,Comparative Analysis Double Single Porosity Effects SH wave,,2024,SDEE,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0042,1_My_Published_Papers,P12_2023_MMMS_Effect-Memory-Stiffness-Energy-Ratios-Interface-Distinct.pdf,1tDGXlwqeCHPDc-VBghL_9WnH5uRvbew5,Effect Memory Stiffness Energy Ratios Interface Distinct,,2023,MMMS,,LIT-0045,"TITLE_TOKEN_MATCH(1.00,6 shared)",NONE,FILENAME+TITLE-MATCH,yes
+DRV-0043,1_My_Published_Papers,P11_2023_HFF_Reflection-Transmission-Plane-Waves-Interface-Ideal-Fluid.pdf,1DBz7tUXTvxfhCvdddzJQsgTsOvksqidh,Reflection Transmission Plane Waves Interface Ideal Fluid,,2023,HFF,,LIT-0046,"TITLE_TOKEN_MATCH(1.00,4 shared)",NONE,FILENAME+TITLE-MATCH,yes
+DRV-0044,1_My_Published_Papers,P10_2023_HFF_Reflection-Free-Surface-Orthotropic-Piezo-hygro-thermo-elastic-Medium.pdf,19hhxlFm4Q2JkpzON15KjRbby4TgybFiX,Reflection Free Surface Orthotropic Piezo hygro thermo elastic Medium,,2023,HFF,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0045,1_My_Published_Papers,P09_2023_PhysScr_Energy-Ratio-Response-Interface-Elastic-Dual-porous-Thermoelastic.pdf,18sAl3_HC0sl7DSlN0nDWqWdGamMeVm92,Energy Ratio Response Interface Elastic Dual porous Thermoelastic,,2023,PhysScr,,LIT-0048,"TITLE_TOKEN_MATCH(1.00,8 shared)",NONE,FILENAME+TITLE-MATCH,yes
+DRV-0046,1_My_Published_Papers,P08_2023_HFF_Energy-Analysis-Interface-Piezo-Thermoelastic-Half-Spaces.pdf,1bk48_Wf2zxCpAU0rukkV2RIq_lzFBCiQ,Energy Analysis Interface Piezo Thermoelastic Half Spaces,,2023,HFF,,LIT-0047,"TITLE_TOKEN_MATCH(1.00,6 shared)",NONE,FILENAME+TITLE-MATCH,yes
+DRV-0047,1_My_Published_Papers,P07_2023_IJP_Energy-Analysis-Boundary-Interface-Elastic-Piezothermoelastic-Half-spaces.pdf,1vn8INOlK08JXeqKoTu3CCuUQ9WrkoinQ,Energy Analysis Boundary Interface Elastic Piezothermoelastic Half spaces,,2023,IJP,,LIT-0043,"TITLE_TOKEN_MATCH(1.00,7 shared)",NONE,FILENAME+TITLE-MATCH,yes
+DRV-0048,1_My_Published_Papers,P06_2023_AAM_Double-Porous-Thermoelastic-Waves-Homogeneous-Isotropic-Solid.pdf,1vHg0FGN0jHbTX6trSYX-P8B3eYFarxOY,Double Porous Thermoelastic Waves Homogeneous Isotropic Solid,,2023,AAM,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0049,1_My_Published_Papers,P05_2023_SciRep_Behavior-Higher-order-MDD-Energy-Ratios-Interface-Thermoelastic.pdf,1OisiZOOAh0EOV_E5K6Ot2XL5ctYyceYi,Behavior of higher-order MDD on energy ratios at the interface of thermoelastic and piezothermoelastic mediums,Barak,2023,"Scientific Reports 13, 17170",10.1038/s41598-023-44339-5,LIT-0042,"TITLE_TOKEN_MATCH(1.00,7 shared)",NONE,FILENAME+TITLE-MATCH,yes
+DRV-0050,1_My_Published_Papers,P04_2023_PNASI_Analysis-Waves-Boundary-Surfaces-Distinct-Media-Nonlocal.pdf,1lDRD3LcvVwxzvmiefIE_tBM28lhQRXxF,Analysis Waves Boundary Surfaces Distinct Media Nonlocal,,2023,PNASI,,LIT-0275,"TITLE_TOKEN_MATCH(0.80,4 shared)",NONE,FILENAME+TITLE-MATCH,yes
+DRV-0051,1_My_Published_Papers,P03_2022_IJAME_Generalized-Plane-Waves-Rotating-Thermoelastic-Double-Porous.pdf,1Ly_TTjIh1LFpjFPvkkbPWJnNVuuC7Z6q,Generalized Plane Waves Rotating Thermoelastic Double Porous,,2022,IJAME,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0052,1_My_Published_Papers,P02_2021_TURCOMAT_Waves-Propagation-Interface-Two-Liquid-Saturated-Porous.pdf,1-3b-LBbDvM0dXNSMoq3oKwCN32hG7uCA,Waves Propagation Interface Two Liquid Saturated Porous,,2021,TURCOMAT,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0053,1_My_Published_Papers,P01_2020_SST_Waves-Boundary-Surface-Transversely-Viscothermoelastic-Slab-Between.pdf,1H_32-ybMsgEyYyiZwkm7LbOfZsT78jCi,Waves Boundary Surface Transversely Viscothermoelastic Slab Between,,2020,SST,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0054,2_Others_Papers_/_root,Sur-2018_ActaMech_FE-Fiber-Reinforced-Cylinder-MDD.pdf,1cdakRQimHNXZdMVcFOveumwzilHO7NXU,Sur 2018 ActaMech FE Fiber Reinforced Cylinder MDD,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0055,2_Others_Papers_/_root,ssrn-5403086.pdf,1afWKXQAAfFZRVCQ1gFWjUT615Te9C0IT,ssrn 5403086,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0056,2_Others_Papers_/_root,sensors-25-01401-v2.pdf,1nb_rMXeGbJmjv6fERjuLfr-4uTGijKgm,sensors 25 01401 v2,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0057,2_Others_Papers_/_root,Dynamic of qusicristal.pdf,12nfYGLDMRL_wRMq8_V6JYFeweMC30UZG,Dynamic of qusicristal,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0058,2_Others_Papers_/_root,lord1967.pdf,1jT6ymG7e-uVrZXzFvDcbCEUpKlhImJQr,A generalized dynamical theory of thermoelasticity,Lord,1967,"J. Mech. Phys. Solids 15, 299-309",,LIT-0002,"TITLE_TOKEN_MATCH(1.00,4 shared,recheck)",NONE,FILENAME+TITLE-MATCH,yes
+DRV-0059,2_Others_Papers_/_root,Artificial_neural_network-driven_approaches_to_imp.pdf,1ppYteol1crXjjHt6thcfx695dw-yyVwW,Artificial neural network driven approaches to imp,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0060,2_Others_Papers_/_root,Mondal et al.pdf,1fEVAIjP6kYCAFBcQ8_kTDOm-HzErw7PK,Mondal et al,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0061,2_Others_Papers_/_root,sarkar and Mondal.pdf,1EGBY_a5cvvt1EOgu2Djnpar_nHVSRADI,sarkar and Mondal,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0062,2_Others_Papers_/_root,16-sarkar_ghosh_lahiri_mams.pdf,12us4CFYsy48BjVF_l3FLwCa14GtFINRY,16 sarkar ghosh lahiri mams,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0063,2_Others_Papers_/_root,DS chandrasekharahica.pdf,1399ee2mq8DNEFavuz5jZ8MSITua_Nzlf,DS chandrasekharahica,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0064,2_Others_Papers_/Beam,math-08-05-593.pdf,1oYKE9kmWxAiUm-Tb_seHx3nfD9y39SjN,math 08 05 593,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0065,2_Others_Papers_/Beam,math-08-08-914.pdf,1lSMXthis7AVabjWuZX-9N1MQ2WLCQGNE,math 08 08 914,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0066,2_Others_Papers_/Beam,428-1996-1-PB.pdf,1Piifi73jyviEUuR4qaGd1BALtCEK3VN4,428 1996 1 PB,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0067,2_Others_Papers_/Beam,2020_Vibration-Cylindrical-Shells-Shell-to-Beam-Modes.pdf,12uHbwnlBUpDOhC5_0TtvdjM8nUiS2YPx,2020 Vibration Cylindrical Shells Shell to Beam Modes,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0068,2_Others_Papers_/Beam,Free_Vibration_Analysis_of_A357_All.pdf,1TC1kD7OJGI7JpCS1oaT8A-BCsecaLuIk,Free Vibration Analysis of A357 All,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0069,2_Others_Papers_/Beam,Stress and buckling analysis of a thick-walled .pdf,18f-u4F6A4AdUZKutYjPsLBFxR2v4TCJN,Stress and buckling analysis of a thick walled ,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0070,2_Others_Papers_/Beam,Shabani-14.SEM70508C.PDF,1vxTFMxtF4bTKcCIUzw6ZCLlnPh-YsLDc,Shabani 14.SEM70508C,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0071,2_Others_Papers_/Beam,Amini-Faraji-steelandcomposite-scs3205009.pdf,1KA6aNflYJfWHFXAQVYlei04BPhkzHsum,Amini Faraji steelandcomposite scs3205009,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0072,2_Others_Papers_/Beam,FullText2019.pdf,1sDu-RUeuCaXxEGq8d2Yrs--qLOv94_90,FullText2019,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0073,2_Others_Papers_/Beam,fractalfract-07-00129.pdf,16ihUpRJrzKcMbt2zFxuMFOF989n7M92L,fractalfract 07 00129,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0074,2_Others_Papers_/Beam,fulltext.Abbasali-Akhavan-scs2903010-steelandco.pdf,1RlIIa3UFXSaq2GMp5fmszDfcIHNJiQLQ,fulltext.Abbasali Akhavan scs2903010 steelandco,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0075,2_Others_Papers_/Beam,mahesh-2021-effect-of-carbon-nanotube-reinforce.pdf,1HZPFVUBzRG42H8QI477ypUV2ZPH2IZzW,mahesh 2021 effect of carbon nanotube reinforce,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0076,2_Others_Papers_/Beam,1-s2.0-S2214914720300647-main.pdf,1rDstIS6R2KB-97TSZcscrET_W4GLxu8r,1 s2.0 S2214914720300647 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0077,2_Others_Papers_/Beam,Higher_order_shear_deformation_bending_r.pdf,19g64Q1JUPzpfuA-iVosYZT_Mk9FpkrhD,Higher order shear deformation bending r,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0078,2_Others_Papers_/Beam,1-s2.0-S1359836818323072-main.pdf,1iY75kla78HNGPAMOwD9aZ8niKPCoktA_,1 s2.0 S1359836818323072 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0079,2_Others_Papers_/Flexo,1-s2.0-S0304885320324902-main.pdf,1XZj7Ju7iDonhG7iezcQH-rg_HRj7I-u2,1 s2.0 S0304885320324902 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0080,2_Others_Papers_/Flexo,s11433-008-0058-x.pdf,1c3GXb3wEKmX4V-cSDAQlmvzvraUCC4DD,s11433 008 0058 x,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0081,2_Others_Papers_/Flexo,14786435.2017.1378825.pdf,17d6lzCu0EQ3udJv5RDQNdBEP_W2nkNKN,14786435.2017.1378825,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0082,2_Others_Papers_/Flexo,Liu-2014_SH-Wave-Periodic-Piezomagnetic.pdf,19Tr6CAJGtj8NAdAbFrAsG_6D1kzq84s9,Liu 2014 SH Wave Periodic Piezomagnetic,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0083,2_Others_Papers_/Flexo,flexomagnetic-response-of-buckled-piezomagnetic.pdf,1hwGaWcfVanCJ6Kt-y5VMthzDMA5163em,flexomagnetic response of buckled piezomagnetic,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0084,2_Others_Papers_/Flexo,Multimodal_frequency_and_phase_velocity_spectru.pdf,1wexr7b4YlkLpzY5nXT6yilXxYxOOYiva,Multimodal frequency and phase velocity spectru,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0085,2_Others_Papers_/Flexo,LMBD_Plane-Wave-Piezomagnetic-Flexomagnetic.pdf,169sk7Q6QIUuhBaYFlHHsyIbxXIWmeend,LMBD Plane Wave Piezomagnetic Flexomagnetic,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0086,2_Others_Papers_/Flexo,Love waves propagation in layered waveguide str.pdf,15JN__IZMgXrA63XLQ4JXhVX2KZSzs8xG,Love waves propagation in layered waveguide str,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0087,2_Others_Papers_/Flexo,"Biswas, Sahu - 2024 - Response of surface effec.pdf",1wqg71aShSjXpmcVaj25kQxfyuNekcoB3,"Biswas, Sahu   2024   Response of surface effec",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0088,2_Others_Papers_/Flexo,"Gupta, Das, Dutta - 2021 - Nonlocal stress anal.pdf",17ajUNskhTVRGNiFpHKw_rLLZDoaSC-Fg,"Gupta, Das, Dutta   2021   Nonlocal stress anal",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0089,2_Others_Papers_/Flexo,"Megahid, Abouelregal, Sedighi - 2023 - Modified.pdf",1HiYxgOywJM4_B4FmY-L_tOSQ2WGu1Et7,"Megahid, Abouelregal, Sedighi   2023   Modified",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0090,2_Others_Papers_/Flexo,"Singh, Gupta - 2023 - Wave reflection by the fr.pdf",1QH_X8hFSHwHQY7ooY38WSaXo_5Z_gIRJ,"Singh, Gupta   2023   Wave reflection by the fr",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0091,2_Others_Papers_/Flexo,"Mondal, Sahu, Nirwal - 2022 - Analysis of wave .pdf",1TShkykrYBQrMN-N2ysdM1iq3DKP_0fXc,"Mondal, Sahu, Nirwal   2022   Analysis of wave ",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0092,2_Others_Papers_/Flexo,"Gupta, Dutta, Das - 2024 - Flexoelectric Effect.pdf",1OViH3OCnAt3U2uOHrzSkIEYJHvRL1106,"Gupta, Dutta, Das   2024   Flexoelectric Effect",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0093,2_Others_Papers_/Flexo,Jiao et al. - 2024 - The dispersion and reflect.pdf,16CdXXYmRuPBTmkqTD2EwkKKCWawigZjx,Jiao et al.   2024   The dispersion and reflect,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0094,2_Others_Papers_/Imperfect-Boundary,j.tafmec.2008.07.010.pdf,1n2kB-99IxcRZMxoAzlWMdnxuL71S8OkX,j.tafmec.2008.07.010,,,,10.1016/j.tafmec.2008.07.010,LIT-0352,DOI_in_filename,NONE,FILENAME,yes
+DRV-0095,2_Others_Papers_/Imperfect-Boundary,TheWavePropagationthroughtheImperfectInterfaceb.pdf,1-zcJhJfUwUwZbYj5q_zgEqA9Bao6qU49,TheWavePropagationthroughtheImperfectInterfaceb,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0096,2_Others_Papers_/Energy,slaughter2002.pdf,1vchEdiGJZ7r79YoqfCi4Yt4hHryznVk5,slaughter2002,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0097,2_Others_Papers_/Energy,Reflection of plane waves from the surface of a.pdf,10ZcYhGGpB-w1t6M9ayqy_5iozpvfANho,Reflection of plane waves from the surface of a,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0098,2_Others_Papers_/Energy,Inhomogeneous waves in porous piezo-thermoelast.pdf,1qhrtohIal79_GQjoZhaghx2XxHUpUZ-S,Inhomogeneous waves in porous piezo-thermoelastic solids,Vashishth,2017,Acta Mechanica,10.1007/s00707-017-1805-8,NEW,no_match,NONE,FIRST-PAGE,yes
+DRV-0099,2_Others_Papers_/Energy,Response of fractional order on energy ratios a.pdf,1x9rZfdLelOAhJvmyt1QoRulrIG74gVbS,Response of fractional order on energy ratios a,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0100,2_Others_Papers_/Energy,Ultrasonic waves in an orthorhombic porous piez.pdf,1t3FSA4iUD1mz3VEtC-eklBFOTB_8GAqh,Ultrasonic waves in an orthorhombic porous piez,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0101,2_Others_Papers_/Energy,Inhomogeneous waves at the boundary of an aniso.pdf,1zTMfmIC1W2b-OTcZ1Ur1XoMOi_o0pEp8,Inhomogeneous waves at the boundary of an aniso,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0102,2_Others_Papers_/Energy,sharma2005 (2).pdf,1mVlkrXbesBX_ALhp8_TVCtZ0V2x5M4Rf,sharma2005 (2),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0103,2_Others_Papers_/Energy,j.jsv.2006.12.002.pdf,1ntB4qMD-3EkvtCyZWmV4s9A3UHVpmcDP,j.jsv.2006.12.002,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0104,2_Others_Papers_/Piezo+MDD,Ahmed.pdf,1D9K9qvFkS1GnQHQtXZlzDnmRscr_5WwG,Ahmed,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0105,2_Others_Papers_/Piezo+MDD,"Kaur, lata.pdf",1YxZGmpYx8wpOMNG8E28K3BiJhC-sAetr,"Kaur, lata",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0106,2_Others_Papers_/Nonlocal,Surface waves in porous nonlocal.pdf,1ZiMLXgtnqMEAyXJPOKj609JgmMdWcWqR,Surface waves in porous nonlocal,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0107,2_Others_Papers_/Nonlocal,10.1016@j.ijheatmasstransfer.2020.119752.pdf,15HHmOvP9UK1v5oo41gnDbuLuDIo72hFV,10.1016@j.ijheatmasstransfer.2020.119752,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0108,2_Others_Papers_/Nonlocal,15. Khurana-Tomar-Ultrasonics-2017.pdf,1nRwryTdRtteKjiJ7k-iIn7YSrtndS1Gh,15. Khurana Tomar Ultrasonics 2017,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0109,2_Others_Papers_/Nonlocal,12. sharma1991.pdf,1qXrbOxGcmH6mX1TS0zkuQqf0ECT8YVIT,12. sharma1991,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0110,2_Others_Papers_/Nonlocal,6. chakraborty2008.pdf,176pz_UxLwOWntMFTBvjvNBCTewNmGF3i,6. chakraborty2008,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0111,2_Others_Papers_/Nonlocal,2019Amodifiedfractional-ordergeneralizedpiezoel.pdf,1c9HDTsM0IXFVmw0e3aiz0b7kA075wgqX,2019Amodifiedfractional ordergeneralizedpiezoel,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0112,2_Others_Papers_/Nonlocal,Li-2016_Nonlocal-Piezoelectric-Nanobeams.pdf,18NvYeOZCEoieEWvmGdS-1HLTcKcpTSgW,Li 2016 Nonlocal Piezoelectric Nanobeams,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0113,2_Others_Papers_/Nonlocal,Arefi-2014_SSS_Piezo-Thermo-Elastic-Spherical-Shell.pdf,1fQ9tCWMq-KAGdUAfjnCiwAqRQzQ0LyQI,Arefi 2014 SSS Piezo Thermo Elastic Spherical Shell,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0114,2_Others_Papers_/Nonlocal,malikan2018.pdf,1BeIIJ6St7VXqgn5V2juH9bOzPEmXbNSq,malikan2018,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0115,2_Others_Papers_/Nonlocal,arefi2016 (2).pdf,1quYjarRBIEauaVU75iyhr1RSiIY-t7dC,arefi2016 (2),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0116,2_Others_Papers_/Nonlocal,sizedependent-effect-on-thermoelectromechanical.pdf,1xOKtLufmAtj9WbH8YPb7DOnqMkZT1Ub6,sizedependent effect on thermoelectromechanical,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0117,2_Others_Papers_/Nonlocal,2020_SSS_Nonlocal-MEET-Beams-Stability.pdf,1jCvuVOQmTUCWY-MmiKzY2UqnhaWS6CL_,2020 SSS Nonlocal MEET Beams Stability,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0118,2_Others_Papers_/Nonlocal,ebrahimi2016.pdf,1ndU-GR5U41trU-yTrq0KPI3dZlb5dY_C,ebrahimi2016,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0119,2_Others_Papers_/Nonlocal,ansari2016.pdf,1IYWTXhKP7ZPvJrM6JmHwxnRK2Do4GgOy,ansari2016,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0120,2_Others_Papers_/Nonlocal,Li-2018_Heliyon_Nonlocal-Piezo-Thermoelastic.pdf,1VTlSnbi5zFwO4dj33DIfZ-VUn8yYypzT,Li 2018 Heliyon Nonlocal Piezo Thermoelastic,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0121,2_Others_Papers_/Nonlocal,arefi2016.pdf,17EcdsK6YxRQaZYB5_l1du66kBxhoTQhx,arefi2016,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0122,2_Others_Papers_/Nonlocal,Chen-2017_JSV_MEE-Multilayered-Plates.pdf,1UViz2xM0Gkico6ML8Pk29Ani8xaS_IIG,Chen 2017 JSV MEE Multilayered Plates,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0123,2_Others_Papers_/Nonlocal,Liu-2020_EJMSOL_Reflection-Elastic-Waves.pdf,1kZZoZUSh_ZFdaOTegvpfyF7SD4unnFDB,Liu 2020 EJMSOL Reflection Elastic Waves,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0124,2_Others_Papers_/Nonlocal,zhang2014.pdf,1tNocqYpJAmnlXnpzX0mOWUOkoXNJl7j5,zhang2014,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0125,2_Others_Papers_/Nonlocal,Yan-2017_SH-Waves-Nanoscale-Phononic-Crystals.pdf,1-eIobADMP87laFadRaof24-84OUufjbX,Yan 2017 SH Waves Nanoscale Phononic Crystals,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0126,2_Others_Papers_/Mendeley,"Li, He - 2020 - The transient response of a fun.pdf",1Yi8dUgjYJ5hixt_XWbKDGIqD1HckSyhy,"Li, He   2020   The transient response of a fun",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0127,2_Others_Papers_/Mendeley,"Wang, Li - 2011 - Surpassing the fractional der.pdf",1vXTDUonr1mShnsxb6OilZ_HVqzl4CipB,"Wang, Li   2011   Surpassing the fractional der",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0128,2_Others_Papers_/Mendeley,"Sur, Kanoria - 2018 - Modeling of memory-depend.pdf",13qlwq15IxHTIJFUEkp7atk-0-anFSgaj,"Sur, Kanoria   2018   Modeling of memory depend",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0129,2_Others_Papers_/Mendeley,"Sarkar, Ghosh, Lahiri - 2019 - A two-dimensiona.pdf",1n_RWq-xUcpHRxPkFh9UpQg5HIlZ-sqov,"Sarkar, Ghosh, Lahiri   2019   A two dimensiona",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0130,2_Others_Papers_/Mendeley,Mondal et al. - 2020 - Thermoelastic interactio.pdf,1k_UpbzT6xKQCQo4f32DS6dCbb6dqjar8,Mondal et al.   2020   Thermoelastic interactio,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0131,2_Others_Papers_/Mendeley,Biswas - 2020 - Modeling of memory-dependent de.pdf,1tYUmZIEp4buzm8jPFhNgxlVjrGWbYJPX,Biswas   2020   Modeling of memory dependent de,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0132,2_Others_Papers_/Mendeley,"Kaur, Lata, Singh - 2020 - Memory-dependent der.pdf",1mPu8gKkRkyWhrMpJy-t0uV05U1qnjafr,"Kaur, Lata, Singh   2020   Memory dependent der",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0133,2_Others_Papers_/Mendeley,"Kant, Mukhopadhyay - 2019 - An investigation on.pdf",1QtDGjhLCcLsYucYja7DISA5Rj9HgNi2-,"Kant, Mukhopadhyay   2019   An investigation on",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0134,2_Others_Papers_/Mendeley,"Ghosh, Das, Lahiri - 2019 - Modelling of a thre.pdf",1s0pWCH8aUJ8A4LP-RHPQjlJluPB8VrXA,"Ghosh, Das, Lahiri   2019   Modelling of a thre",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0135,2_Others_Papers_/Mendeley,"Ezzat, El-Bary - 2016 - Thermoelectric MHD with.pdf",1ABqL-9GZDnw_7nk7lZPr5GkdD32bboNx,"Ezzat, El Bary   2016   Thermoelectric MHD with",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0136,2_Others_Papers_/Mendeley,"Ezzat, El-Karamany, El-Bary - 2015 - A novel ma.pdf",1w-GAKqk3o8cTPioHNXSLKovzCE95b9Fb,"Ezzat, El Karamany, El Bary   2015   A novel ma",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0137,2_Others_Papers_/Mendeley,"Aldawody, Hendy, Ezzat - 2019 - On dual-phase-l.pdf",1zsv4QhqxqHxFT_vSnVzH3yoxfMaq6Mgo,"Aldawody, Hendy, Ezzat   2019   On dual phase l",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0138,2_Others_Papers_/Mendeley,"Mondal, Sur, Kanoria - 2019 - Transient respons.pdf",1SoYzGZiC2o-LELnMn9pJ5dp0d2aTyRBJ,"Mondal, Sur, Kanoria   2019   Transient respons",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0139,2_Others_Papers_/Mendeley,"Sarkar, Mukhopadhyay - 2019 - A domain of influ.pdf",1Q1Th-FVOcURJ-Yx3256WLh6zXFvVggpi,"Sarkar, Mukhopadhyay   2019   A domain of influ",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0140,2_Others_Papers_/Mendeley,"Hendy, El-Attar, Ezzat - 2020 - On thermoelectr.pdf",141H0o_Sh_LB2CxUrbV3Iw0qQJvD9CzK4,"Hendy, El Attar, Ezzat   2020   On thermoelectr",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0141,2_Others_Papers_/Mendeley,"Kumar, Chawla - 2013 - Reflection and refractio.pdf",1-oFiG6F4MjOfEBwyKIKuqgLyj3WIRuI2,"Kumar, Chawla   2013   Reflection and refractio",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0142,2_Others_Papers_/Mendeley,"Tiwari, Kumar - 2021 - Analysis of plane wave p.pdf",1Cmue2Z6Cy0CCNsp5AoUh92LUJPtMrzDI,"Tiwari, Kumar   2021   Analysis of plane wave p",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0143,2_Others_Papers_/Mendeley,"Sarkar, De, Sarkar - 2019 - Waves in nonlocal t.pdf",1zVSN5Pyyq4Pu8SGaX1tPGsXFhcQZNoWx,"Sarkar, De, Sarkar   2019   Waves in nonlocal t",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0144,2_Others_Papers_/Mendeley,Kumar et al. - 2018 - Reflection of Plane Waves.pdf,19_pkF-jB0l3YV1EZsq3-SrDxUppGls5L,Kumar et al.   2018   Reflection of Plane Waves,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0145,2_Others_Papers_/Mendeley,"Kumar, Sharma - 2017 - Analysis of plane waves .pdf",1jOeXzK3FmlJnOLNcXiVsll8JqEoSbSQ6,"Kumar, Sharma   2017   Analysis of plane waves ",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0146,2_Others_Papers_/Mendeley,"Kaur, Lata, Singh - 2020 - Reflection and refra.pdf",1CN7WNYE9qalKhTB5Xu2AVYYD0f5k8VcY,"Kaur, Lata, Singh   2020   Reflection and refra",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0147,2_Others_Papers_/Mendeley,"Kaur, Lata, Singh - 2020 - Reflection and refra(1).pdf",14lDMyTKF5tveehserSv1CQqo54rAHHlR,"Kaur, Lata, Singh   2020   Reflection and refra(1)",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0148,2_Others_Papers_/Mendeley,Eringen - 1978 - Nonlocal Continuum Mechanics a.pdf,1vNZfo_IOu6i9DCu8vi-GcTz3hh72GC-U,Eringen   1978   Nonlocal Continuum Mechanics a,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0149,2_Others_Papers_/Mendeley,Youssef - 2006 - Theory of two-temperature-gene.pdf,1tXvwadJW6-s179O7-7NIARo5FmWzpCm8,Youssef   2006   Theory of two temperature gene,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0150,2_Others_Papers_/Mendeley,"Bachher, Sarkar - 2019 - Nonlocal theory of the.pdf",1B89kGZbXJt8ZhbVfHXq_DZ_bUN7oevqI,"Bachher, Sarkar   2019   Nonlocal theory of the",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0151,2_Others_Papers_/Mendeley,"Unknown - 2019 - Nonlocal Modeling, Analysis, a.pdf",1SmJFXvhTTXyUp2AmwdtjyA68UD3bRoEg,"Unknown   2019   Nonlocal Modeling, Analysis, a",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0152,2_Others_Papers_/Mendeley,"Ezzat, Karamany - 2011 - Fractional order heat .pdf",1u7NgI2focjIJ0SiXfqlZlvB1ypFaEM_S,"Ezzat, Karamany   2011   Fractional order heat ",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0153,2_Others_Papers_/Mendeley,"Biswas, Mukhopadhyay - 2018 - Eigenfunction exp.pdf",1D1EmCx3Gq89wlneFVKhI-KctjAH932bk,"Biswas, Mukhopadhyay   2018   Eigenfunction exp",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0154,2_Others_Papers_/Mendeley,Yang et al. - 2021 - Dual-phase-lag thermoelast.pdf,1X8xphw7OxjUowgBd9rQe66baaxhFxNao,Yang et al.   2021   Dual phase lag thermoelast,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0155,2_Others_Papers_/Mendeley,"Tiwari, Kumar, Abouelregal - 2021 - Analysis of.pdf",1AzZ006crPJ0Pkh2jJrbJSqRDGb9pjBHE,"Tiwari, Kumar, Abouelregal   2021   Analysis of",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0156,2_Others_Papers_/New-piezo,rotating medium.pdf,1-_37i6eCThWZW4908yg9z8Al0cGI9CIu,rotating medium,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0157,2_Others_Papers_/New-piezo,MDD+energy ratio.pdf,1RtP3YgKAKLnvwzsLADP8601vTDISizzj,MDD+energy ratio,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0158,2_Others_Papers_/New-piezo,Effectsofstiffnessonreflection.pdf,1gUoumMmDyVDTADgOvzi5VLddgo2dR_pq,Effectsofstiffnessonreflection,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0159,2_Others_Papers_/New-piezo,Piezo-ortho-2017.pdf,1R64d26of00O4M285RJEkcY0LD4cQH2ls,Piezo ortho 2017,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0160,2_Others_Papers_/New-piezo,fluid porous + vashisth and gupta.pdf,1dWr0a2ZRDs_Y-3ODB3ZWweqVLDIUpi65,fluid porous + vashisth and gupta,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0161,2_Others_Papers_/New-piezo,sharma and walia.pdf,1u3h9ssfbPsMnlUV5IsYSh1mNqpelbVGO,sharma and walia,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0162,2_Others_Papers_/New-piezo,Tzou and Bao.pdf,1iQ6a49jbOKK76rTRGGeuOGBA2ED3wLtk,Tzou and Bao,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0163,2_Others_Papers_/New-piezo,ortho-Kumar-2021.pdf,10PzcNoJeVlpNXZ5wSmAMgSZc0a-ThE2x,ortho Kumar 2021,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0164,2_Others_Papers_/New-piezo,ortho-chawla.pdf,1aN_w1AD0ku3MBqR9TBYaAKoUy-ac_bjp,ortho chawla,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0165,2_Others_Papers_/New-piezo,Kumar-2017_CSM_Fractional-Energy-Ratios-Piezothermoelastic.pdf,15KXO7Dw9Uzr_FnzOPce91gr81Cfo6w3e,Kumar 2017 CSM Fractional Energy Ratios Piezothermoelastic,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0166,2_Others_Papers_/Reflection+piezo,abo el nour abd alla.pdf,1ss9HymC7gamZCj1R6-rtV0dDnfvXED6V,abo el nour abd alla,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0167,2_Others_Papers_/Reflection+piezo,reflection.pdf,1INdKrB13idQuoVWoGaYM34PSlXieslgf,reflection,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0168,2_Others_Papers_/Reflection+piezo,MMMS-03-2015-0012.pdf,1-kjIqctdyzvmZYMn5GGrmYjiezL_TnWk,MMMS 03 2015 0012,,,,10.1108/mmms-03-2015-0012,LIT-0271,DOI_in_filename,NONE,FILENAME,yes
+DRV-0169,2_Others_Papers_/Reflection+piezo,Vashishth.pdf,1xA0PYf2EjR7vVu2jSvvR0yIHrR2Unl24,Vashishth,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0170,2_Others_Papers_/Reflection+piezo,Kuang.pdf,1uWbMHyGXnf3TZNLnWULNZFnfksLUlwJ8,Kuang,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0171,2_Others_Papers_/Reflection+piezo,abd alla.pdf,1_cq4tbm_zGFqm4RW60gfBJmmsU8REeUq,abd alla,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0172,2_Others_Papers_/Two-temp,plane waves hyper two temp.pdf,1dvEDF_W1hBPsnnSBv8Mzf6FBkoqXKBEh,plane waves hyper two temp,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0173,2_Others_Papers_/Two-temp,MPM240_04_youssef-Final.pdf,11ZoFLW3z_GUb0tv1L2FGHoOZXqEwrcjD,MPM240 04 youssef Final,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0174,2_Others_Papers_/Two-temp,h_yp two.pdf,177tCSRJ0X2mlC1w-DKCmZFbWBUUc1z9F,h yp two,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0175,2_Others_Papers_/Two-temp,hyperobolic temp.pdf,1g609p8GNi22Fj0GN4_yjosYCU7DM_fiW,hyperobolic temp,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0176,2_Others_Papers_/Two-temp,hyperbolic two temper .pdf,1bBV0iXMHqmK9nW3gFltDxVtQgIxiS74D,hyperbolic two temper ,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0177,2_Others_Papers_/Two-temp,hyperbolic two temp.pdf,1iPTdDu1X4sWhJE2XkPjAlQ5PuOdJKH8x,hyperbolic two temp,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0178,2_Others_Papers_/Two-temp,hyerpbolic two temp.pdf,1sL0g1lAEfuW_FimO_lbkJWKw-tLAwHK2,hyerpbolic two temp,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0179,2_Others_Papers_/Two-temp,energy.pdf,11QcdiesZyl01SZY5Jg5ryiR6VWMeRkNk,energy,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0180,2_Others_Papers_/R-Poonia-Sir,deswal2018.pdf,11E4lp93bwRxIBDdKCHeexu2xu2sQGjVd,deswal2018,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0181,2_Others_Papers_/R-Poonia-Sir,Reflection_of_plane_waves_at_the_free_surface_o.pdf,1wUV0j7R-3zznkzBNLcIK68IzQn_09AxA,Reflection of plane waves at the free surface o,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0182,2_Others_Papers_/Three-phase-lag,Thermoelastic interaction in the semi infinite .pdf,1mn8_1_rJuElsj7eha3BL_EIZD1NNbSKn,Thermoelastic interaction in the semi infinite ,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0183,2_Others_Papers_/Three-phase-lag,Spatial behaviour of solutions of the three-pha.pdf,1O9ciqiS6UN5Cufwe9WT74nbiJCOrRSCZ,Spatial behaviour of solutions of the three pha,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0184,2_Others_Papers_/Three-phase-lag,On A Thermoelastic Three-Phase-Lag Mode.pdf,18jS1yRo_rSoIgzal9cttN4vwqe0nBrtm,On A Thermoelastic Three Phase Lag Mode,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0185,2_Others_Papers_/Three-phase-lag,nonlocal thermoelastic.pdf,1_rp9nH8DhDKo9j0XqoibPKz2P68Cb0NW,nonlocal thermoelastic,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0186,2_Others_Papers_/Three-phase-lag,modeling of memeory dependent.pdf,1m8fCf7ofdGdAoszCVPsdB9bLaMywwh-H,modeling of memeory dependent,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0187,2_Others_Papers_/Three-phase-lag,Eigenfunction approach to generalized thermovis.pdf,15VFip_8RuP0yf-7grQA5aarMjOGDlx8T,Eigenfunction approach to generalized thermovis,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0188,2_Others_Papers_/Three-phase-lag,Effect of moving heat source on a magneto-therm.pdf,14yqwvZ3hCW4bcR89c5B1eHxfP3K3QZwS,Effect of moving heat source on a magneto therm,,,,,NEW,"AMBIGUOUS(ties: LIT-0101,LIT-0098)",NONE,FILENAME-ONLY,yes
+DRV-0189,2_Others_Papers_/Three-phase-lag,Analysis of plane wave propagation under the pu.pdf,1RWEvq-FQ87bml0ZPAFzl_02ZwJhQjlAP,Analysis of plane wave propagation under the pu,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0190,2_Others_Papers_/TPL,Modeling of memory-dependent.pdf,1sjLHnsI1SbuiqmhJTlJtmndlnnsMNnPv,Modeling of memory dependent,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0191,2_Others_Papers_/Reflection-piezo,Othman-Ethar-SEM-2015.pdf,19s5CghTq9CvVxL916EPDYCGr5rflttpd,Othman Ethar SEM 2015,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0192,2_Others_Papers_/Reflection-piezo,othman and ahmed Effect of magnetic field on pi.pdf,13IC0bFMiPhBKbSEVgLVIiKSrurdCUHz_,othman and ahmed Effect of magnetic field on pi,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0193,2_Others_Papers_/Reflection-piezo,"Othman, Mohamed I. A._ Elmaklizi, Yassmin D._ A.pdf",1cDfcl7_SY9dtEtUNhSjWfryB0jP3Ylpi,"Othman, Mohamed I. A.  Elmaklizi, Yassmin D.  A",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0194,2_Others_Papers_/Reflection-piezo,ethar__ahmed-2019_article_effectofgravityonpiez.pdf,19uPNZzPhARRgWxh31Z9RZIl-DQw_Hvw1,ethar ahmed 2019 article effectofgravityonpiez,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0195,2_Others_Papers_/Reflection-piezo,"Sharma, M. D. Piezoelectric effect on the veloc.pdf",1VrUeipQ5I5UJtJNs5nmanmx4qvzGixWW,"Sharma, M. D. Piezoelectric effect on the veloc",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0196,2_Others_Papers_/Reflection-piezo,Piezoelectric_effect_on_the_velocities_of_waves.pdf,1qUafCjcBJP1D7pIAYa2C5Sb2sRD991De,Piezoelectric effect on the velocities of waves,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0197,2_Others_Papers_/Reflection-piezo,"Sharma, M. D. (2020). Generalised surface waves.pdf",1OcXjV7XjF9aT5y-uJ37Lxjmv4IxzAQt3,"Sharma, M. D. (2020). Generalised surface waves",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0198,2_Others_Papers_/Reflection-piezo,M. D. Sharma (2010). Propagation of inhomogeneo.pdf,1s_ZsEXfkMCaGTuzEWei34w6MZvKmknsY,M. D. Sharma (2010). Propagation of inhomogeneo,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0199,2_Others_Papers_/Reflection-piezo,"Sharma, M. D. (2010). Piezoelectric effect on t.pdf",1PBHezB5bqsO_QU-KKSqSab-hzXiZZv6z,"Sharma, M. D. (2010). Piezoelectric effect on t",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0200,2_Others_Papers_/Reflection-piezo,Sharma for orthotropic.pdf,18yxRTIb0mN62NGYNuBDAkFfqbmCE9s7F,Sharma for orthotropic,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0201,2_Others_Papers_/Reflection-piezo,sharma2021.pdf,1I4AAvFg-H2C2tTzR58a5cTNI2M8pnfkB,sharma2021,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0202,2_Others_Papers_/Used-in-P10,szeker-2.pdf,1OYLJT41qrkYOvvdAiH2X2D2CbkoqjEio,szeker 2,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0203,2_Others_Papers_/Used-in-P10,szeker-1.pdf,1L-mb9ewv0U29xCw7VgsHaFioe6Vk53OS,szeker 1,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0204,2_Others_Papers_/Used-in-P10,piezo-hygro.pdf,167ChHNDHChn9ieBw-NLnzyWURb62A3Uo,piezo hygro,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0205,2_Others_Papers_/Used-in-P10,Moisture Control in Buildings_ The Key Factor i.pdf,1oOJ2CZyAYQhPFDbj1QiV5TFFZPLtrHLY,Moisture Control in Buildings  The Key Factor i,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0206,2_Others_Papers_/Used-in-P10,j.ijengsci.2004.04.002.pdf,1MdLMni0xaOF2bH_X8uUtwSXsb3aAcRVr,j.ijengsci.2004.04.002,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0207,2_Others_Papers_/Used-in-P10,Hygrothermoelasticity.pdf,1-cguU0D8sQnroLY0ob2njWdxJrf4X9VY,Hygrothermoelasticity,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0208,2_Others_Papers_/Used-in-P10,hygro peizo.pdf,1kplh4LXs-fvaSAsz7wIJ1Vph4j2V5YeN,hygro peizo,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0209,2_Others_Papers_/Used-in-P10,"Building Physics_ Heat, Air and Moisture, Funda.pdf",1PQ7w7lLpy0nXY2oSx_0x0_TTwiFGOCHT,"Building Physics  Heat, Air and Moisture, Funda",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0210,2_Others_Papers_/Used-in-P10,"Building physics _ heat, ventilation, moisture,.pdf",14aQakESkC5OBWipf4xULVDkzNoL6iTw9,"Building physics   heat, ventilation, moisture,",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0211,2_Others_Papers_/Used-in-P10,An Introduction to the Theory of Piezoelectrici.pdf,1GNBAtkwc_5cIpJzNIU2ZxsAP-Ok8ScCl,An Introduction to the Theory of Piezoelectrici,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0212,2_Others_Papers_/Used-in-P10,23 PI- 13 MAMS Reflection hygrothermal Nonlocal.pdf,14IV2Ccx2fK7MGvD1xuTzLHV8ivqCph9P,23 PI  13 MAMS Reflection hygrothermal Nonlocal,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0213,2_Others_Papers_/Used-in-P10,10 Hygrothermal analysis of magneto.pdf,1MhTrIZopLaTD-uQe7BRg6IxdRHdybMTY,10 Hygrothermal analysis of magneto,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0214,2_Others_Papers_/Used-in-P10,00 hosseini2016 Hygrothermal N Data.pdf,18n6tFPXV6f-SZW85T1pDXQSmD-beC3W1V,00 hosseini2016 Hygrothermal N Data,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0215,2_Others_Papers_/Used-in-P07,two-temperature thermo-viscoelasticity with thr.pdf,1UDVZQNN-MVw8gC5rY2PLPZyLzuSAfNe_,two temperature thermo viscoelasticity with thr,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0216,2_Others_Papers_/Used-in-P07,Two-temperature theory in magneto-thermoelastic.pdf,10sK4OpIc8PkQEpYHDA1V7ATc2FodR1sm,Two temperature theory in magneto thermoelastic,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0217,2_Others_Papers_/Used-in-P07,Reflection of plane waves in a nonlocal micropo.pdf,1Nplk4d8OGphq_ilZV3dzt5CBqGgej_zn,Reflection of plane waves in a nonlocal micropo,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0218,2_Others_Papers_/Used-in-P07,piezo+nonlocal_1.pdf,1jl7LPawJT9FPcOc9yAE6BJhOORmUZFF0,piezo+nonlocal 1,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0219,2_Others_Papers_/Used-in-P07,piezo+nonlocal.pdf,1BkXE2QeXj8TzNDPA0FRmxM-TDWYGNvKX,piezo+nonlocal,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0220,2_Others_Papers_/Used-in-P07,non-local memory-dependent heat conduction theo.pdf,1wDLcnHpEYShTOBfXhSrb1xxNCTfxvijp,non local memory dependent heat conduction theo,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0221,2_Others_Papers_/Used-in-P07,lata2020.pdf,1IQHNYLEL4Q76DpKmwJcMkYYdlmVI8njr,lata2020,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0222,2_Others_Papers_/Used-in-P07,Effects of nonlocality and two temperature.pdf,1BHRNkCgcMU2JMw7HwZvTBs9l4F7nEm3I,Effects of nonlocality and two temperature,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0223,2_Others_Papers_/Used-in-P11,Wave propagation at the welded interface of an .pdf,1pfg5OPgy3abO4gc0WQYHNxqD8MrnF5ck,Wave propagation at the welded interface of an ,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0224,2_Others_Papers_/Used-in-P11,Inhomogeneous wave reflection from the surface .pdf,1jKck_a9dFXy_KSWjeyru126UQgvEohcj,Inhomogeneous wave reflection from the surface ,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0225,2_Others_Papers_/Used-in-P17,Piezo-thermoelastic media.pdf,1jUPO4a3fIYl-DG1Q98Fo7ywQ3wHSu6mA,Piezo thermoelastic media,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0226,2_Others_Papers_/Used-in-P17,mdd vs fract.pdf,1UauSoB06IDzwwOAo9bWz3TKYnpAcOlia,mdd vs fract,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0227,2_Others_Papers_/Used-in-P17,mdd + fractional.pdf,1ZIVYNZ0JSktOOfMYUV0-oN_sB3L3bBpH,mdd + fractional,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0228,2_Others_Papers_/Used-in-P17,j.apm.2021.02.028.pdf,1a7eHpTwrKfs6V6qfBj2OXIN8mJ3E71RW,j.apm.2021.02.028,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0229,2_Others_Papers_/Used-in-P17,AppliedMathematicsandComputation3912021125627.pdf,10VSUuhPfYye5rfVBB_6ZpZ50Vzw7U5zZ,AppliedMathematicsandComputation3912021125627,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0230,2_Others_Papers_/Used-in-P17,"Ahmed, Abou-Dina, Ghaleb - 2020 - Plane wave pr.pdf",1pt35dn_vrzaKAMcjoaw6lY43qUhlOxjQ,"Ahmed, Abou Dina, Ghaleb   2020   Plane wave pr",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0231,2_Others_Papers_/Used-in-P17,2019Amodifiedfractional-ordergeneralizedpiezoel.pdf,1oY6hKUlgeDbpYnxwqbP6shlL1gFsPRUT,2019Amodifiedfractional ordergeneralizedpiezoel,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0232,2_Others_Papers_/Used-in-P17,10.1080@15397734.2020.1852088.pdf,1Rl3JmWNNgDFAcVANtfG8U_Qc6uht4Y5n,10.1080@15397734.2020.1852088,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0233,2_Others_Papers_/Used-in-P17,1-s2.0-S2214157X21003749-main.pdf,1nRRtjEXMhpgI9cYrWxvuoLiWhgj2tEIw,1 s2.0 S2214157X21003749 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0234,2_Others_Papers_/Used-in-P17,1-s2.0-S221137972031737X-main.pdf,1DPpJyz715AwYhEjMbv6iTBwzrZ0_4z2z,1 s2.0 S221137972031737X main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0235,2_Others_Papers_/Used-in-P31,Wave propagation analysis in viscoelastic Timos.pdf,1KBW4kXhOboEd5NQOW5RmxReqDDIlIOGj,Wave propagation analysis in viscoelastic Timos,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0236,2_Others_Papers_/Used-in-P31,s00339-016-0365-4.pdf,1ydeVhKElMYAb9aJSGgmIU0o2mVFxrx6D,s00339 016 0365 4,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0237,2_Others_Papers_/Used-in-P31,jmech.2018.10.pdf,1OWpZVlJdvsEyJ64SgmLDlm6gvcHRNFA5,jmech.2018.10,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0238,2_Others_Papers_/Used-in-P31,15397734.2019.1697932 (2).pdf,1MPjlikLBYSbL44QmywrwQU_ClNJ-oT8P,15397734.2019.1697932 (2),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0239,2_Others_Papers_/Used-in-P31,1-s2.0-S0997753821000978-main.pdf,119HKcho7autW_qXVM30HDbGmK9JkacdO,1 s2.0 S0997753821000978 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0240,2_Others_Papers_/Used-in-P31,1-s2.0-S0263823117306845-main.pdf,1b1T6xrFtDE4iey8ctOYraLP4JcfGmqEQ,1 s2.0 S0263823117306845 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0241,2_Others_Papers_/Used-in-P31,1-s2.0-S0263822317342447-main.pdf,1LuYxrNOebDwrgOcpOQ6BR03hKPlpYIGf,1 s2.0 S0263822317342447 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0242,2_Others_Papers_/Used-in-P31,1-s2.0-S0263822314002657-main.pdf,1OT2KXmmBC0PphRdRbJmOAeFhGdCTbUeQ,1 s2.0 S0263822314002657 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0243,2_Others_Papers_/Used-in-P31,1-s2.0-S0022509615000320-main.pdf,1nQsYKzgkmsw-XhJCtYDBGS6zJe_y-SoB,1 s2.0 S0022509615000320 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0244,2_Others_Papers_/Used-in-P31,1-s2.0-S0020768307002041-main.pdf,1hofDUMsVueGsidKIExzg0-ZOWh7dwH7U,1 s2.0 S0020768307002041 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0245,Papers_root,fileserve.pdf,1WyJyrbHR5z_T2pYMZ9nI5oyMO1_uDDQf,Deformation in rotating viscothermoelastic medium under Hall current and magnetic effects,Kumar,2022,Change Management: An International Journal 22(1),,NEW,no_match,NONE,FIRST-PAGE,yes
+DRV-0246,Papers_root,paper-2 sandeep(R4) (1).doc,1CGWttnVwS2IyvvEM0fN7vKQ3xo0t325a,paper 2 sandeep(R4) (1),,,,,NEW,no_match,NONE,FILENAME-ONLY,no
+DRV-0247,Papers_root,paper-2 sandeep(R3).doc,14tUWe41O73eW_1DDnPPdn44cg0mB9LCZ,paper 2 sandeep(R3),,,,,NEW,no_match,NONE,FILENAME-ONLY,no
+DRV-0248,2_Others_Papers_/Collected-from-Drafts,zheng2009.pdf,1um7dYsNaPyk_uF0h_jyodTWj7vGZMM6U,zheng2009,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0249,2_Others_Papers_/Collected-from-Drafts,wang2020.pdf,1nfLB6r0jCH9mqKvmykYEpOaQM4SARjkV,wang2020,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0250,2_Others_Papers_/Collected-from-Drafts,VJMech_02_19728.pdf,1LUPVa0U0g8d_ykqX95rN4w2_ogdPfG0v,VJMech 02 19728,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0251,2_Others_Papers_/Collected-from-Drafts,TheoreticalModelingandAnalysisofOrthotropic.pdf,1eJZYxntQFKX-Rt0ivaGKIvXu-mZYV-0D,TheoreticalModelingandAnalysisofOrthotropic,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0252,2_Others_Papers_/Collected-from-Drafts,Stress field of orthotropic cylinder subjected to axial compression.pdf,1DrbLepSgIzjyegtto_RtHZfZbFpk7GmU,Stress field of orthotropic cylinder subjected to axial compression,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0253,2_Others_Papers_/Collected-from-Drafts,Statistics Crash Course for_ (Z-Library).pdf,1cjaG4z_e72TfS6G94RclqwWwRXMtzxN_,Statistics Crash Course for  (Z Library),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0254,2_Others_Papers_/Collected-from-Drafts,Shakeriaski_2021_Phys._Scr._96_125206.pdf,1saQAC68Nizzb7o1Zqh8Q3HmDg64D1w42,Shakeriaski 2021 Phys. Scr. 96 125206,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0255,2_Others_Papers_/Collected-from-Drafts,SCSB23.pdf,1qPrXdJuInCWfftJGMfVojsQOkgr5PAMZ,SCSB23,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0256,2_Others_Papers_/Collected-from-Drafts,s12633-023-02815-7.pdf,1VtgyYOIpOo8CWfXUnZUVPBk7Z2b8Cy7j,s12633 023 02815 7,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0257,2_Others_Papers_/Collected-from-Drafts,s11770-024-1152-1 seismic paper.pdf,1bej9greQ5UchtGiAmx03daMDzibPgh6H,s11770 024 1152 1 seismic paper,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0258,2_Others_Papers_/Collected-from-Drafts,s00707-017-1897-1.pdf,1miIx9gZ9eyssskWNMvUFkj-7SHnGKtqm,s00707 017 1897 1,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0259,2_Others_Papers_/Collected-from-Drafts,rakshit-et-al-2021-stress-analysis-on-the-irregular-surface-of-visco-porous-piezoelectric-half-space-subjected-to-a.pdf,1W5IZcfnGMGUPbmBrOjnC7zmsUCfU9VyC,rakshit et al 2021 stress analysis on the irregular surface of visco porous piezoelectric half space subjected to a,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0260,2_Others_Papers_/Collected-from-Drafts,Pyroelectricdevicesandmaterials.pdf,17U9nhYS0WyCXmHwPi8X6NEaQ-WF612_k,Pyroelectricdevicesandmaterials,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0261,2_Others_Papers_/Collected-from-Drafts,porous piezo thermo.pdf,10ftCVCgi3b63utDp_nj334iGJJ48EIZa,porous piezo thermo,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0262,2_Others_Papers_/Collected-from-Drafts,paper on damage mechanics.pdf,1W4iv7UQyucwTY0W4rjipQyzg9Xx08kH-,paper on damage mechanics,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0263,2_Others_Papers_/Collected-from-Drafts,mmms-07-2019-0138.pdf,1xDTdw8cOwZ3PcGYkYasbZ99PrxDJDPsf,mmms 07 2019 0138,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0264,2_Others_Papers_/Collected-from-Drafts,MD_Sharma Rayleigh.pdf,16KOFnGY0VKJq6KKCtHk5OCv-B360sdp-,MD Sharma Rayleigh,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0265,2_Others_Papers_/Collected-from-Drafts,"Mathematical Theory of Elas_ (z-library.sk, 1lib.sk, z-lib.sk)-1.pdf",1QAgnnbVUynKnodonCENfZz0FBnh7GMQj,"Mathematical Theory of Elas  (z library.sk, 1lib.sk, z lib.sk) 1",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0266,2_Others_Papers_/Collected-from-Drafts,Marcum(2).pdf,1TZKaLlEa8B0W9m6F2Z17MGAc4ge9cimc,Marcum(2),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0267,2_Others_Papers_/Collected-from-Drafts,MACS-2502-1808-1-2.pdf,1QrKdTsFk7JuCthbQGp7bE_TSXrUSv_Jp,State space approach to generalized piezothermoelasticity with memory-dependent derivative and Moore-Gibson-Thomson equation,Seth,,(publisher id MACS-2502-1808),,NEW,no_match,NONE,FIRST-PAGE,yes
+DRV-0268,2_Others_Papers_/Collected-from-Drafts,li2021.pdf,1lLQGductV8I0RfSbAda8-qgLrAYoGa_j,li2021,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0269,2_Others_Papers_/Collected-from-Drafts,li2017.pdf,1_Fc4kRY4MmUue0wRSVla8eSRDwX2gyve,li2017,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0270,2_Others_Papers_/Collected-from-Drafts,li2015.pdf,1zqLq5q3BCrS4t69oXFHDUIrgre4lZKZl,li2015,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0271,2_Others_Papers_/Collected-from-Drafts,latex_primer.pdf,1KPIMZgSSxqoi5cZMtWEME4k4dAK0L6R6,latex primer,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0272,2_Others_Papers_/Collected-from-Drafts,LAg_Nonlocal_WM-6.pdf,1APhqwnBcOZ0dUO3u6avchL2nucSG_PzC,LAg Nonlocal WM 6,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0273,2_Others_Papers_/Collected-from-Drafts,LAg_Nonlocal_WM-6 (2).pdf,1hDRFsGigadXrsJCZ80nRvNTiXzcKoVHv,LAg Nonlocal WM 6 (2),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0274,2_Others_Papers_/Collected-from-Drafts,i2018-12285-5.pdf,1PH9Nqf5xQrzN618kasTAs8FaRLW6-JOn,i2018 12285 5,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0275,2_Others_Papers_/Collected-from-Drafts,hff-10-2021-0700.pdf,1xQnDOYzNY5T2tUvnYZPE9iWRZ3MY-XoD,hff 10 2021 0700,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0276,2_Others_Papers_/Collected-from-Drafts,Full.pdf,1PsaxhQAKBHpryZIESjNeVJCUReALflQr,Structural Mechanics (LibreTexts OER textbook),Wierzbicki,,LibreTexts (open-education resource),,NEW,no_match,NONE,FIRST-PAGE,yes
+DRV-0277,2_Others_Papers_/Collected-from-Drafts,Fractional_heat_conduction_with_variable_thermal_c.pdf,1SWbjaV-uQwwl3CerzckNxfs-D0o5QIKU,Fractional heat conduction with variable thermal c,,,,,LIT-0143,"TITLE_TOKEN_MATCH(1.00,5 shared)",NONE,FILENAME+TITLE-MATCH,yes
+DRV-0278,2_Others_Papers_/Collected-from-Drafts,fphy-10-1069454.pdf,1XqYbOO1FkDQr-xi8wDvP3_y7x83sgKRO,fphy 10 1069454,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0279,2_Others_Papers_/Collected-from-Drafts,fan2011.pdf,1nYKemhVQr3X5S8UYZw3Txdi-3i_-HCQc,fan2011,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0280,2_Others_Papers_/Collected-from-Drafts,Elasto-Dynamics_of_Quasicrystals.pdf,1FsGuUs9Zc-MDo7XYCquN_Nw00kqbjpcQ,Elasto Dynamics of Quasicrystals,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0281,2_Others_Papers_/Collected-from-Drafts,crystals-13-01205.pdf,10hXdKIpmEL_BtHOLwDXmXQcxBHO5XrFQ,crystals 13 01205,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0282,2_Others_Papers_/Collected-from-Drafts,Band-gaps-of-elastic-waves-in-1-D-dielectric-phononic-crystal-with-the-flexoelectric-and.pdf,1VhhqTKb7Nqc_2Lv-F835lH1kPugEyxaT,Band gaps of elastic waves in 1 D dielectric phononic crystal with the flexoelectric and,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0283,2_Others_Papers_/Collected-from-Drafts,Average_dimensions_of_Galois_hulls_of_constacyclic.pdf,1IVsJ47-YYs71mou0pOC9gPZIWfjRiiFs,Average dimensions of Galois hulls of constacyclic,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0284,2_Others_Papers_/Collected-from-Drafts,applsci-12-05914-v2.pdf,1vVRN0Oh7EAXOW4w8hh6F2CCLOzkmHd9j,applsci 12 05914 v2,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0285,2_Others_Papers_/Collected-from-Drafts,An Introduction to the Theory of Piezoelectricity by Jiashi Yang (z-lib.org).pdf,1fi0GXyqon0EwWqDk2jwxgNFC1EwvUbEz,An Introduction to the Theory of Piezoelectricity by Jiashi Yang (z lib.org),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0286,2_Others_Papers_/Collected-from-Drafts,AL2023-PAMM-NL.pdf,1019CU9kTBD9albJJKzQzJ12vegDKwkdA,AL2023 PAMM NL,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0287,2_Others_Papers_/Collected-from-Drafts,AL-1401.4968.pdf,1NCKTr8-12wYu6-gwUir4YCoszWbAsosN,AL 1401.4968,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0288,2_Others_Papers_/Collected-from-Drafts,abouelregal2020.pdf,1RF_VFqTMh8iQ7f7OXv32WhJaLvAIr7E8,abouelregal2020,,,,,LIT-0429?,AUTHOR_YEAR_ONLY(abouelregal 2020) unconfirmed,NONE,FILENAME-ONLY,yes
+DRV-0289,2_Others_Papers_/Collected-from-Drafts,1a10900e-91ad-4563-b69f-1458a360db95.pdf,1qwBPa-i80do1wIPdh_iYP0KkAUappJcJ,Dynamic stress concentration around a nanoscale arbitrarily shaped hole in a non-homogeneous medium under the incidence of SH waves,Sun,2026,"Adv. Math. Phys. (submission PDF, ID 4899295)",,NEW,no_match,NONE,FIRST-PAGE,yes
+DRV-0290,2_Others_Papers_/Collected-from-Drafts,1802.00825v1.pdf,1eEAvH1S74qs65iTwzPaQ2c4tNHNdtt8o,1802.00825v1,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0291,2_Others_Papers_/Collected-from-Drafts,10.2478_s13540-011-0035-3.pdf,1mkMYgPpviOsN-zUe1i4QmBZq_XkM0GkY,10.2478 s13540 011 0035 3,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0292,2_Others_Papers_/Collected-from-Drafts,10-1108_hff-11-2024-0853.pdf,1g89Ila7e3hY8qcV90tYpROd4uDW6kwHe,10 1108 hff 11 2024 0853,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0293,2_Others_Papers_/Collected-from-Drafts,10-1108_hff-08-2022-0468.pdf,1j_nQ3guljl-TSFbvX3PyNKfD-xcYw2pH,10 1108 hff 08 2022 0468,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0294,2_Others_Papers_/Collected-from-Drafts,1-s2.0-S0020740307000665-main.pdf,1n3Zc2qJIh0QtjJMewYryeCg8_Erryg8X,1 s2.0 S0020740307000665 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0295,2_Others_Papers_/Collected-from-Drafts,1-s2.0-S0017931007006618-main.pdf,1sbcUl7enQhRJXVankYDVy8q2oJEm9rSs,1 s2.0 S0017931007006618 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0296,2_Others_Papers_/Collected-from-Drafts,093.pdf,1T0Cv5KavYwibhHCuaiJzrRpJC2rN7U3R,A benchmark strain gradient elasticity solution in two-dimensions for verifying computational approaches by means of the finite element method,Shekarchizadeh,2022,Mathematics and Mechanics of Solids 27(10) 2218-2238,10.1177/10812865221114336,NEW,no_match,NONE,FIRST-PAGE,yes
+DRV-0297,2_Others_Papers_/Collected-from-My-Folders,zhang2020.pdf,1HxVsTF2cPvufmqDDtHAQ5-ye3q1BPz_m,zhang2020,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0298,2_Others_Papers_/Collected-from-My-Folders,zhang2020 (2).pdf,1lGWsWbmZfzu5taEoKhlDDyzKagZ7tygM,zhang2020 (2),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0299,2_Others_Papers_/Collected-from-My-Folders,zhan2010.pdf,1RXFBZC8qn8ENVlN6cjFE4rg-PXht2hU6,zhan2010,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0300,2_Others_Papers_/Collected-from-My-Folders,yang2014.pdf,1neKr72Wm_EG7mDrMm47u2ZmJhpLwR4uT,yang2014,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0301,2_Others_Papers_/Collected-from-My-Folders,Wave-propagation-analysis-of-functionally-graded-graphene-origami-enabled-auxetic-metamaterial.pdf,1xzBpVp6MkFTmt7wA7ZzvHDfbQNT_BMta,Wave propagation analysis of functionally graded graphene origami enabled auxetic metamaterial,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0302,2_Others_Papers_/Collected-from-My-Folders,wang2020 (1).pdf,1IuOCK4kmiu5VFKx-yI2goVNsYjOWM50j,wang2020 (1),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0303,2_Others_Papers_/Collected-from-My-Folders,wang2015.pdf,1R7iTrqkwptpV-AKWmggSBBxg2hUCsBXg,wang2015,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0304,2_Others_Papers_/Collected-from-My-Folders,sun2011.pdf,1hSru2YH-UVamRHYG3MNdTjOkSWlXTTMk,sun2011,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0305,2_Others_Papers_/Collected-from-My-Folders,Sun-2010_JSV_TED-Micro-Circular-Plate.pdf,1nFiINfWlAtc2L4UlHXBYZKg20ZTzUQ9J,Sun 2010 JSV TED Micro Circular Plate,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0306,2_Others_Papers_/Collected-from-My-Folders,Sun-2009_JSV_TED-Circular-Plate.pdf,1bvKkr6X0SBE3xIitg6Mb7EKSHZiPcoUE,Sun 2009 JSV TED Circular Plate,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0307,2_Others_Papers_/Collected-from-My-Folders,sharma2011.pdf,1jw3WeZ5a5VHLA_X5YUMDHsYdjDVGRXCU,sharma2011,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0308,2_Others_Papers_/Collected-from-My-Folders,Seema-2025_Surface-Acoustic-Waves-Layered-Piezoelectric-Plate_IJDC.pdf,1F567lrooeZBlgikJPiz-KxiytcBIkw-V,Seema 2025 Surface Acoustic Waves Layered Piezoelectric Plate IJDC,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0309,2_Others_Papers_/Collected-from-My-Folders,s40314-023-02298-7.pdf,1co9e-wQOCW5PD-7leTXoYW8VWP75n9di,s40314 023 02298 7,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0310,2_Others_Papers_/Collected-from-My-Folders,s13661-025-01992-1.pdf,1tdhaTWdInfOpcouPjgAb5iX4rntSm4mR,s13661 025 01992 1,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0311,2_Others_Papers_/Collected-from-My-Folders,s12648-019-01635-z.pdf,1hwJpCLHC0VJcncE71LRrbZya--rBit0p,s12648 019 01635 z,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0312,2_Others_Papers_/Collected-from-My-Folders,s12190-022-01811-1.pdf,1mOynEcFYuMBO0kwsnvMd9L66U2ebH8oN,s12190 022 01811 1,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0313,2_Others_Papers_/Collected-from-My-Folders,s12095-025-00815-5.pdf,1oOTiIgSZyLRNRniM1HOLUM2W0w-EqL7D,s12095 025 00815 5,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0314,2_Others_Papers_/Collected-from-My-Folders,s12095-022-00591-6.pdf,1x8UIMX3HHI59EB0y3TVsU2FLOVnrGwUH,s12095 022 00591 6,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0315,2_Others_Papers_/Collected-from-My-Folders,s12095-021-00501-2.pdf,1bZqTbpJm8CAKArAdg_G1IcpSv68JZmzn,s12095 021 00501 2,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0316,2_Others_Papers_/Collected-from-My-Folders,s11043-017-9340-5.pdf,1AAEqyHYzHqYnOv3HJaa7yLUebdb7SI5R,s11043 017 9340 5,,,,10.1007/s11043-017-9340-5,LIT-0294,DOI_in_filename,NONE,FILENAME,yes
+DRV-0317,2_Others_Papers_/Collected-from-My-Folders,s10999-026-09873-w.pdf,1Bf-3R3daRJWYK-TjtNnxGCr1NZQlQBqG,s10999 026 09873 w,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0318,2_Others_Papers_/Collected-from-My-Folders,s10773-022-05163-1.pdf,13utp3Zfky9VdgG1EaGor-HapcpaJ_1Le,s10773 022 05163 1,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0319,2_Others_Papers_/Collected-from-My-Folders,s10483-025-3280-7 (1).pdf,1qJV7Fqa06QYMXLkYRbdLtWE_S07tWt8T,s10483 025 3280 7 (1),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0320,2_Others_Papers_/Collected-from-My-Folders,s10483-024-3145-8.pdf,1t7ZPHrWay661nPu9Z9nRG61159h5wJr-,s10483 024 3145 8,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0321,2_Others_Papers_/Collected-from-My-Folders,s10409-023-23419-x.pdf,1JnoD4gJmGPKBnX-xFEHg_cUcMpokyWAo,s10409 023 23419 x,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0322,2_Others_Papers_/Collected-from-My-Folders,s00707-026-04680-y.pdf,19Ctq9uP5WWf4k0CJ8QTVyQ_sd5aNKSuJ,s00707 026 04680 y,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0323,2_Others_Papers_/Collected-from-My-Folders,s00707-025-04333-6.pdf,1Dut1C17w8gOsOu0D76I5XcEaXXHm457Q,s00707 025 04333 6,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0324,2_Others_Papers_/Collected-from-My-Folders,s00707-024-04162-z (1).pdf,1N1VzScRMJgRl_Og_oJU82YNkHt1P5lyX,s00707 024 04162 z (1),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0325,2_Others_Papers_/Collected-from-My-Folders,s00419-026-03092-7.pdf,1kClAIlCD-zX1BA9tATYngjioMT_W7MKp,s00419 026 03092 7,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0326,2_Others_Papers_/Collected-from-My-Folders,s00419-025-02931-3.pdf,1TzQaFGFyZSy9oaKXeR2md5VEY2E3eq27,s00419 025 02931 3,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0327,2_Others_Papers_/Collected-from-My-Folders,s00419-024-02719-x.pdf,1R4-YPDILYDTVrXEGuet-y6Jf1MSkh813,s00419 024 02719 x,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0328,2_Others_Papers_/Collected-from-My-Folders,rsta.2021.0373.pdf,1p0RWVCR_p01-apxEslVfbp0ts8oNcvmj,rsta.2021.0373,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0329,2_Others_Papers_/Collected-from-My-Folders,Photothermal.pdf,1VAeF74I9FjrLFSM3oNahu1Ol80cQNoVi,Photothermal,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0330,2_Others_Papers_/Collected-from-My-Folders,Nonlocal photoacoustic waves in hydro-Poroelastic semiconductors with variable thermal conductivity subjected to mass diffusion.pdf,1T7m8pTQ0OW16JEIf8ATY41mCi9QvVv7O,Nonlocal photoacoustic waves in hydro Poroelastic semiconductors with variable thermal conductivity subjected to mass diffusion,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0331,2_Others_Papers_/Collected-from-My-Folders,nakatani2016.pdf,1J6NMdFpxYly_BSmKopHkPUIU5SUVKb9b,nakatani2016,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0332,2_Others_Papers_/Collected-from-My-Folders,MAIN PAPER (3).pdf,1rPwY-7HJUdHwF6TsB1RqHpQ4DEzsiYDf,MAIN PAPER (3),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0333,2_Others_Papers_/Collected-from-My-Folders,MAIN PAPER (1).pdf,1xoZ6DTeBpJCk35N2MtC6b72WpszyXU42,MAIN PAPER (1),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0334,2_Others_Papers_/Collected-from-My-Folders,Love-wave-on-a-flexoelectric-piezoelectric-viscoelastic-stratified-structure-with-dielectrically.pdf,1Be0Vi9ALpPjw6g7m9GmVN9kRF6GOzc8P,Love wave on a flexoelectric piezoelectric viscoelastic stratified structure with dielectrically,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0335,2_Others_Papers_/Collected-from-My-Folders,Lofty.pdf,1SzPebL_gbTcWa6Rs5a2sApvJzTg_qlCS,Lofty,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0336,2_Others_Papers_/Collected-from-My-Folders,li2016.pdf,1zhArTEDLDOE77u1LonRmCYMC2-yyy3HW,li2016,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0337,2_Others_Papers_/Collected-from-My-Folders,lewandowski2010.pdf,1lSpX4_z6DurzS6MyTBbo7sIVuhkIDz2E,lewandowski2010,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0338,2_Others_Papers_/Collected-from-My-Folders,lee-et-al-2014-prediction-of-bending-stiffness-for-laminated-cfrp-and-its-application-to-manufacturing-of-roof.pdf,1Zsl7WB0SeTeZdO62sf0lLRirZ9wKNBaT,lee et al 2014 prediction of bending stiffness for laminated cfrp and its application to manufacturing of roof,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0339,2_Others_Papers_/Collected-from-My-Folders,lang2005.pdf,1yqRKKaTnbxFcU82358u6ELncHElBM2zk,lang2005,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0340,2_Others_Papers_/Collected-from-My-Folders,LAg_Nonlocal_WM-6 (1).pdf,1EW9l2Fv3zAGSY6BA6Kbuwm2mVjaY2mfP,LAg Nonlocal WM 6 (1),,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0341,2_Others_Papers_/Collected-from-My-Folders,"Kumawat, Vishwakarma - 2023 - Circumferential SH wave in piezo-reinforced composite structure with imperfect interface bonding.pdf",1F8BfIEHKkMSkWDAb01vYJbADgbHumTar,"Kumawat, Vishwakarma   2023   Circumferential SH wave in piezo reinforced composite structure with imperfect interface bonding",,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0342,2_Others_Papers_/Collected-from-My-Folders,kumari2021.pdf,1e-Rdm5rlu-fC9TEE5q_l8mkUgSI7G5zL,kumari2021,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0343,2_Others_Papers_/Collected-from-My-Folders,Kumar2017.pdf,1qjp3bMNiSvuvduKTttPzAu3wA840cNe6,Kumar2017,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0344,2_Others_Papers_/Collected-from-My-Folders,j_bmj_042.pdf,11bCm9yGIt5G1nlzlrrP88FtW54Rj3v-t,j bmj 042,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0345,2_Others_Papers_/Collected-from-My-Folders,JAP1030311012008.pdf,1xho4A-d8aO1VZ-vONZXZNlK4NB7GGaUw,JAP1030311012008,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0346,2_Others_Papers_/Collected-from-My-Folders,j.finel.2011.08.008.pdf,1xmmiMRs07I97bOpaEW_m59pPMB6-BG6m,j.finel.2011.08.008,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0347,2_Others_Papers_/Collected-from-My-Folders,Influence_of_moving_heat_sources_on_thermoviscoela.pdf,1i3TwqxHo7Jc8I3XHtFoVbR5qyVXaj4Mk,Influence of moving heat sources on thermoviscoela,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0348,2_Others_Papers_/Collected-from-My-Folders,hu2000.pdf,18IFvAL_TdQKGPEg1ydJJ_MyJp-huR_Cg,hu2000,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0349,2_Others_Papers_/Collected-from-My-Folders,hosseini2019.pdf,19PHD1x26IhyoLSWCQm2qgX03_uA0-uGF,hosseini2019,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0350,2_Others_Papers_/Collected-from-My-Folders,farno2018.pdf,1QvDU2pFIqfiXlyEY4sJPXFRB7pT7Xj8M,farno2018,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0351,2_Others_Papers_/Collected-from-My-Folders,d1cec606-abc1-428e-bac7-9d486bfd3be9.pdf,1WGOd7tpKip1jMJbFDFb2zL19xq8QFumD,d1cec606 abc1 428e bac7 9d486bfd3be9,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0352,2_Others_Papers_/Collected-from-My-Folders,csm1004005.pdf,1iYtFfoHldGi1Em50ZULne7a1lfCI6Vm5,csm1004005,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0353,2_Others_Papers_/Collected-from-My-Folders,crystals-13-00116-v2.pdf,13ZJ2387nt-BnVFwMQI7p91SQWQQ3hMSw,crystals 13 00116 v2,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0354,2_Others_Papers_/Collected-from-My-Folders,crystals-13-00082-v2.pdf,1YAyG9QQhlhvhpFuR-OiAjeZsap5o4RIo,crystals 13 00082 v2,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0355,2_Others_Papers_/Collected-from-My-Folders,crystals-13-00042.pdf,1xjvY6NFcbUgm4fw01wVcCB-Wz8q_CBod,crystals 13 00042,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0356,2_Others_Papers_/Collected-from-My-Folders,crystals-12-01770.pdf,1FxrviFJuYs3IDkuME4wZa3ij8JYsqOBB,crystals 12 01770,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0357,2_Others_Papers_/Collected-from-My-Folders,crystals-12-01680.pdf,1bKnldyBHS_wCVIilo-zRjMNp7NKNECoz,crystals 12 01680,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0358,2_Others_Papers_/Collected-from-My-Folders,crystals-12-01603-v2.pdf,17iH0XRH_3V5XihPfBm79iLD1qEHEHyPN,crystals 12 01603 v2,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0359,2_Others_Papers_/Collected-from-My-Folders,crystals-12-01458-v3.pdf,1epJlSFtP3OY14OWf1AgSIykFHuFeX68w,crystals 12 01458 v3,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0360,2_Others_Papers_/Collected-from-My-Folders,cjp-2015-0782.pdf,1JI4NCiY2thEkiyHD8cTQpYsVhiR5koaz,cjp 2015 0782,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0361,2_Others_Papers_/Collected-from-My-Folders,chellappan2015.pdf,1exqdIRb1f7HA3Hn3D8WBiSqAcf_75nai,chellappan2015,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0362,2_Others_Papers_/Collected-from-My-Folders,9e349b6c-7d29-4359-a239-7ac4974dc4541.pdf,1XIAj3aFljBvRBwzeFDCPbwMmZYC8MEWr,9e349b6c 7d29 4359 a239 7ac4974dc4541,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0363,2_Others_Papers_/Collected-from-My-Folders,2020Baljeet-porous thermo two temp.pdf,13s0vrxdCNxcsRnPZ_7FHCTn7h2jYeAfO,2020Baljeet porous thermo two temp,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0364,2_Others_Papers_/Collected-from-My-Folders,15376494.2016.1255826.pdf,1x73lzFPSBIQw1bBPDYqxV8ukTsyJvDpc,15376494.2016.1255826,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0365,2_Others_Papers_/Collected-from-My-Folders,1-s2.0-S259012302501134X-main.pdf,1vJumdgfp36SZjnMypANSYeVBnGKkPzbH,1 s2.0 S259012302501134X main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0366,2_Others_Papers_/Collected-from-My-Folders,1-s2.0-S0307904X23002895-main.pdf,1EwC26SMGYSYLo45QY-RRnYlaAAkii5Ra,1 s2.0 S0307904X23002895 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0367,2_Others_Papers_/Collected-from-My-Folders,1-s2.0-S0307904X2030367X-main.pdf,1-uN5VMZY8SgrCSkY7wPmgVn-_unvUCsi,1 s2.0 S0307904X2030367X main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0368,2_Others_Papers_/Collected-from-My-Folders,1-s2.0-S0013794424002339-main.pdf,1v0Ab8D5bsXTT6re525b8dY7Z3Mw3Ocp3,1 s2.0 S0013794424002339 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0369,2_Others_Papers_/Collected-from-My-Folders,1-s2.0-S0013794422006075-main.pdf,1F4xpybfjJa3F3n7SCWpn5lQex49Dpfqu,1 s2.0 S0013794422006075 main,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
+DRV-0370,2_Others_Papers_/Collected-from-My-Folders,000345476900016.pdf,1R5QbE3JnvAtZJB0OShP4jhD2iFTkYYRI,000345476900016,,,,,NEW,no_match,NONE,FILENAME-ONLY,yes
