@@ -37,3 +37,7 @@ Both files also resisted three download attempts (the connector reported success
 - Equation numbers are transcribed only for DRV-0223 ((30), (32)) and DRV-0146 ((75), (77)); the other rows are section-level.
 - DRV-0181 was read from a **journal pre-proof**; page numbers will change on publication and the bibliographic record must be refreshed before the reference list is frozen.
 - Citation counts not fetched; `citations` blank for the five new rows.
+
+---
+
+**Correction added 2026-10-22, during T3-1.** The paragraph above says the defect is "in the stored files". A controlled re-download of DRV-0141 (and of the newly failing DRV-0056 in tier 3) returned files that are **byte-identical to the first copies** (same size, same md5) and truncated in the same place, so the transfer is reproducible and not a one-off glitch. What cannot be distinguished from here is whether the stored objects are themselves truncated or whether the download path truncates them deterministically. The corrected statement: **the copies that reach this workspace are reproducibly truncated; the site of the damage is undetermined.** The reading verdict — UNREADABLE, not citable, not guessed — is unchanged. DRV-0056 fails the same way (`root of pages tree has no /Kids array`).
