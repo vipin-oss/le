@@ -56,7 +56,7 @@ Equations \eqref{eq:4.1}--\eqref{eq:4.2} are two-way coupled: volumetric strain 
 \subsection{Lord--Shulman (LS) theory (1967)}
 \label{sec:4.3}
 
-Lord and Shulman (1967) introduced a single thermal relaxation time $\tau_0$ into Fourier's law:
+Lord and Shulman (1967) \cite{Lord1967} introduced a single thermal relaxation time $\tau_0$ into Fourier's law:
 
 \begin{equation}
 q_i + \tau_0 \dot{q}_i = -k T_{,i},
@@ -89,12 +89,12 @@ For the displayed LS/Cattaneo law, the formal thermal characteristic speed is fi
 
 \subsubsection{Well-posedness}
 
-For the displayed Cattaneo-type heat-flux law, $\tau_0>0$ gives a finite characteristic speed for the thermal branch. This parameter condition alone is not a proof that the full coupled initial-boundary-value problem is well-posed; the latter depends on coefficients, domain, and boundary/initial data.
+For the displayed Cattaneo-type heat-flux law, $\tau_0>0$ gives a finite characteristic speed for the thermal branch. This parameter condition alone is not a proof that the full coupled initial-boundary-value problem is well-posed; the latter depends on coefficients, domain, and boundary/initial data. A separate fractional Lord--Shulman formulation couples a Klein--Gordon nonlocal operator to the heat law; its printed $\alpha\to0$ branch is not used here as a limiting identity (CONDITIONAL) \cite{Das2026}.
 
 \subsection{Green--Lindsay (GL) theory (1972)}
 \label{sec:4.4}
 
-Green and Lindsay (1972) introduced a temperature-rate-dependent thermoelastic theory with two relaxation times and a single temperature field. It is distinct from two-temperature thermoelasticity. The original formulation retains Fourier heat flux, $q_i=-kT_{,i}$, with no flux-relaxation time.
+Green and Lindsay (1972) introduced a temperature-rate-dependent thermoelastic theory with two relaxation times and a single temperature field. It is distinct from two-temperature thermoelasticity. The original formulation retains Fourier heat flux, $q_i=-kT_{,i}$, with no flux-relaxation time. A separate rate-dependent two-temperature relation uses its own assumption $t_1\geq t_2>0$ and likewise carries no flux-relaxation term; it is not part of the original single-temperature GL law (CONDITIONAL) \cite{Srivastava2026}.
 
 \subsubsection{Governing equations}
 
@@ -146,7 +146,7 @@ The 1993 type-II paper states that the displayed system permits harmonic-wave pr
 \label{eq:4.13}
 \end{equation}
 
-Wave attenuation and energy conservation for type II must be obtained from the specific model equations and boundary-value problem; no application suitability claim is made here.
+Wave attenuation and energy conservation for type II must be obtained from the specific model equations and boundary-value problem; no application suitability claim is made here. A separate rheological network derivation relates CV/GN/MCV/MGN flux laws and includes second-order coefficients proportional to $\tau^2$; those coefficients do not establish energy ratios or admissibility for the displayed system (CONDITIONAL) \cite{Huang2025}.
 
 \subsection{Green--Naghdi type III theory (1992)}
 \label{sec:4.6}
@@ -160,7 +160,7 @@ Green and Naghdi's 1992 type-III system contains both the temperature-rate and t
 \label{eq:4.14}
 \end{equation}
 
-This source-free form is conditional on the displayed linear isotropic system; the source term and material normalization must be restored for other conventions. The transcribed restrictions include $\kappa\geq0$, $c\geq0$, and $\kappa^{**}=0$; no additional sign restriction on $\kappa^*$ is inferred here.
+A distinct nonlocal GN-III formulation prints a flux law containing both the temperature-gradient and thermal-displacement-gradient contributions; it is not substituted into the local source-free form shown here (CONDITIONAL) \cite{Biswas2020a}. This source-free form is conditional on the displayed linear isotropic system; the source term and material normalization must be restored for other conventions. The transcribed restrictions include $\kappa\geq0$, $c\geq0$, and $\kappa^{**}=0$; no additional sign restriction on $\kappa^*$ is inferred here.
 
 Any proposed type-III-to-type-II or classical limit must be verified by substitution into the exact system and by a convergence analysis. No general limit theorem is asserted here.
 
@@ -185,7 +185,7 @@ q_i + \tau_q\dot{q}_i = -k(T_{,i} + \tau_T\dot{T}_{,i}).
 \label{eq:4.16}
 \end{equation}
 
-Formal reductions can sometimes be obtained by setting one or both lag parameters to zero in a specified DPL equation, but the resulting equations and solution limits must be checked for that model. The ordering $\tau_q\geq\tau_T$ is not asserted here as a universal thermodynamic-admissibility condition; a model-specific free-energy/entropy derivation is required.
+Some later DPL variants retain a $\tau_q^2/2$ term in a second-order flux expansion (Yang et al.; Gupta et al.); these are distinct model-specific truncations, not part of Eq.~\eqref{eq:4.16}. No universal lag-order admissibility follows (CONDITIONAL) \cite{Yang2021,Gupta2023}. Formal reductions can sometimes be obtained by setting one or both lag parameters to zero in a specified DPL equation, but the resulting equations and solution limits must be checked for that model. The ordering $\tau_q\geq\tau_T$ is not asserted here as a universal thermodynamic-admissibility condition; a model-specific free-energy/entropy derivation is required.
 
 \paragraph{Guyer--Krumhansl (GK) phonon transport.}
 
@@ -204,7 +204,7 @@ q_i(t+\tau_q) &= -kT_{,i}(t+\tau_T)\\
 \label{eq:4.17}
 \end{equation}
 
-The cited source gives a first-order expansion in the three lags with $0\leq\tau_v<\tau_T<\tau_q$. We use no $\tau_\nu/2$ term. A $\tau_q^2/2$ term appears only in a distinct Barak/Gupta second-order extension \cite{Barak2023}; it is secondary here and CONDITIONAL on that model's stated stability/admissibility assumptions, not part of the Roy Choudhuri 2007 law.
+The cited source gives a first-order expansion in the three lags with $0\leq\tau_v<\tau_T<\tau_q$. We use no $\tau_\nu/2$ term. Second-order DPL variants retain a $\tau_q^2/2$ term, but they are distinct from this first-order Roy Choudhuri law and establish no shared admissibility condition (CONDITIONAL) \cite{Yang2021,Gupta2023}. Other published variants include second-order DPL/TPL truncations with a free coefficient or tensor conductivity \cite{Kumar2023,Singh2019,Biswas2019}; a higher-order two-temperature TPL model uses a temperature lag rather than $\tau_v$ \cite{Abouelregal2020}. Further formulations combine memory-kernel bounds \cite{Singh2020a} or nonlocal operators on both stress and inertia \cite{Bayones2021}; related DPL/TPL model studies are also reported by Tibullo et al. \cite{Tibullo2017}. These are distinct constitutive variants, not one universal TPL law; no common stability or admissibility condition is inferred (CONDITIONAL).
 
 \subsection{Moore--Gibson--Thompson (MGT) theory}
 \label{sec:4.9}
@@ -228,7 +228,7 @@ D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} \kappa(t-\xi) f'(\xi
 \label{eq:4.19}
 \end{equation}
 
-where $\omega_M>0$ is the finite horizon in this displayed candidate operator; the subscript distinguishes it from angular frequency elsewhere in the review. Its kernel bounds, normalization, regularity, and any admissible parameter set require verification for the exact formulation. A fading-memory condition on an unbounded lag variable cannot be inferred from this finite-horizon formula. A limit as $\omega_M\to0$ may be considered only after kernel normalization and regularity assumptions are specified; no classical-derivative limit or material calibration is asserted here.
+where $\omega_M>0$ is the finite horizon in this displayed candidate operator; the subscript distinguishes it from angular frequency elsewhere in the review. Its kernel bounds, normalization, regularity, and any admissible parameter set require verification for the exact formulation. A fading-memory condition on an unbounded lag variable cannot be inferred from this finite-horizon formula. A limit as $\omega_M\to0$ may be considered only after kernel normalization and regularity assumptions are specified; no classical-derivative limit or material calibration is asserted here. Li et al. use a $1/\omega$ normalization and report a degenerate-limit equivalence between their memory-dependent and fractional models; that result is formulation-specific and does not establish a limit for the candidate operator displayed here (CONDITIONAL) \cite{Li2019}.
 
 \subsection{Fractional thermoelasticity}
 \label{sec:4.11}
@@ -248,6 +248,8 @@ where ${}^C D_t^\alpha$ is the Caputo fractional derivative of order $\alpha$ an
 Table \ref{tab:T2-generalized} summarizes selected constitutive distinctions and the evidence limits for the model classes discussed here; it does not assert family-wide wave-speed, dissipation, or validity results.
 
 \input{tables/source/T2_generalized_thermoelastic}
+
+Published examples include a hyperbolic two-temperature closure \cite{Prasad2020}, fractional-order heat conduction with two temperatures \cite{Ezzat2011}, semiconductor applications of a hyperbolic two-temperature model \cite{Alzahrani2020}, and a fractional two-temperature hybrid with relaxation times \cite{Bassiouny2020}. These examples illustrate distinct constructions only; they do not establish shared admissibility or stability results (CONDITIONAL).
 
 \begin{figure}[htbp]
 \centering

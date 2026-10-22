@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import csv
 import datetime as dt
+import html
 import json
 import re
 import sys
@@ -216,7 +217,9 @@ def _read_csv(path: Path) -> list[dict[str, str]]:
 
 def _normal_metadata(value: str) -> str:
     import unicodedata
-    value = unicodedata.normalize("NFKD", value or "")
+    value = html.unescape(value or "")
+    value = re.sub(r"<[^>]*>", " ", value)  # Crossref occasionally embeds inline markup in titles.
+    value = unicodedata.normalize("NFKD", value)
     value = "".join(ch for ch in value if not unicodedata.combining(ch))
     value = value.replace("&", " and ")
     value = re.sub(r"\\[A-Za-z]+\*?(?:\{([^{}]*)\})?", lambda m: m.group(1) or "", value)
@@ -225,18 +228,37 @@ def _normal_metadata(value: str) -> str:
 
 
 def _normal_venue(value: str) -> str:
-    # Strip only a trailing volume/issue/page locator; the source title remains intact.
-    value = re.sub(r"\s+\d{1,4}(?:\(\d+\))?\s*[,;:]\s*[\w./–-]+\s*$", "", value or "")
+    # Remove editorial notes and trailing volume/issue/page locators, but retain
+    # named editions such as "English Edition" and normalize only explicit abbreviations.
+    value = html.unescape(value or "")
+    value = re.sub(r"<[^>]*>", " ", value)
+    value = re.sub(r"\s+\((?=[^)]*(?:published online|online\s+\d|volume/pages))[^)]*\)", "", value, flags=re.I)
+    value = re.sub(r"\s+\d{1,4}(?:\(\d+\))?\s*[,;:]\s*[\w./–-]+\s*$", "", value)
     abbreviations = {
-        "int": "international", "j": "journal", "mech": "mechanics", "phys": "physical",
-        "sci": "sciences", "transf": "transfer", "therm": "thermal", "proc": "proceedings",
-        "natl": "national", "acad": "academy", "appl": "applied", "mater": "materials",
-        "eng": "engineering", "math": "mathematics", "comp": "computational", "rev": "review",
-        "adv": "advances", "struct": "structures", "technol": "technology", "sect": "section",
+        "int": "international", "j": "journal", "mech": "mechanics",
+        "phys": "physics", "physical": "physics", "physics": "physics",
+        "sci": "science", "science": "science", "sciences": "science",
+        "transf": "transfer", "therm": "thermal", "proc": "proceedings",
+        "natl": "national", "acad": "academy", "appl": "applied", "applied": "applied",
+        "mater": "materials", "material": "materials", "materials": "materials",
+        "eng": "engineering", "engl": "english", "english": "english", "ed": "edition",
+        "math": "mathematics", "comp": "computational", "rev": "review",
+        "adv": "adv", "advances": "adv", "advanced": "adv",
+        "struct": "structures", "structures": "structures", "technol": "technology", "sect": "section",
         "univ": "university", "lett": "letters", "res": "research", "commun": "communications",
+        "des": "design", "mach": "machines",
     }
     tokens = _normal_metadata(value).split()
     return " ".join(abbreviations.get(token, token) for token in tokens if token not in {"of", "the", "and"})
+
+
+def _crossref_years(message: dict) -> set[str]:
+    years: set[str] = set()
+    for field in ("published-print", "published-online", "issued"):
+        for parts in (message.get(field, {}) or {}).get("date-parts", []) or []:
+            if parts:
+                years.add(str(parts[0]))
+    return years
 
 
 def _crossref_metadata(message: dict) -> dict:
@@ -245,6 +267,23 @@ def _crossref_metadata(message: dict) -> dict:
                "container-title", "short-container-title", "publisher", "volume", "issue", "page",
                "article-number", "ISSN", "ISBN")
     return {key: message[key] for key in allowed if key in message}
+
+
+def _load_r3a_raw(doi: str, raw_dir: Path) -> tuple[int, dict | None]:
+    target = raw_dir / (safe_doi(doi) + ".json")
+    if not target.is_file():
+        raise RuntimeError(f"Saved Crossref metadata is missing for {doi}: {target}")
+    try:
+        payload = json.loads(target.read_text(encoding="utf-8"))
+        status = int(payload["http_status"])
+        message = payload.get("message")
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        raise RuntimeError(f"Saved Crossref metadata is invalid for {doi}: {target}: {exc}") from exc
+    if status == 404:
+        return status, None
+    if status != 200 or not isinstance(message, dict):
+        raise RuntimeError(f"Saved Crossref metadata has unexpected status/content for {doi}: {status}")
+    return status, message
 
 
 def _fetch_r3a(doi: str, raw_dir: Path, log_writer: csv.writer, pause: float) -> tuple[int, dict | None]:
@@ -286,11 +325,13 @@ def _fetch_r3a(doi: str, raw_dir: Path, log_writer: csv.writer, pause: float) ->
     raise RuntimeError(f"Crossref request failed for {doi}; no verification row will be emitted: {last_error}")
 
 
-def _bib_from_crossref(key: str, doi: str, message: dict) -> str:
+def _bib_from_crossref(key: str, doi: str, message: dict, preferred_year: str = "") -> str:
     authors = authors_from_message(message)
     title_values = message.get("title") or []
     title = title_values[0] if title_values else ""
-    year = issued_year(message)
+    title = html.unescape(re.sub(r"<[^>]*>", " ", title))
+    title = re.sub(r"\s+", " ", title).strip()
+    year = preferred_year if preferred_year in _crossref_years(message) else issued_year(message)
     container_values = message.get("container-title") or message.get("short-container-title") or []
     container = container_values[0] if container_values else ""
     kind = "book" if message.get("type") in ("book", "monograph") else "article"
@@ -331,12 +372,19 @@ def run_r3a(args: argparse.Namespace) -> int:
                    if DOI_RE.match(base_by_id[row["lit_id"]].get("DOI", "").strip())})
     log_path = args.report_dir / "CROSSREF_REQUEST_LOG.csv"
     messages: dict[str, tuple[int, dict | None]] = {}
-    with log_path.open("w", encoding="utf-8", newline="") as stream:
-        writer = csv.writer(stream, lineterminator="\n")
-        writer.writerow(["DOI", "HTTP_status", "timestamp_utc", "metadata_json", "error"])
+    if args.reuse_raw:
         for index, doi in enumerate(dois, 1):
-            print(f"Crossref {index}/{len(dois)}: {doi}", flush=True)
-            messages[doi] = _fetch_r3a(doi, args.raw_dir, writer, args.pause)
+            print(f"Reuse saved Crossref response {index}/{len(dois)}: {doi}", flush=True)
+            messages[doi] = _load_r3a_raw(doi, args.raw_dir)
+        if not log_path.is_file():
+            raise RuntimeError(f"Request log is missing while reusing saved responses: {log_path}")
+    else:
+        with log_path.open("w", encoding="utf-8", newline="") as stream:
+            writer = csv.writer(stream, lineterminator="\n")
+            writer.writerow(["DOI", "HTTP_status", "timestamp_utc", "metadata_json", "error"])
+            for index, doi in enumerate(dois, 1):
+                print(f"Crossref {index}/{len(dois)}: {doi}", flush=True)
+                messages[doi] = _fetch_r3a(doi, args.raw_dir, writer, args.pause)
 
     map_by_key: dict[str, list[str]] = {}
     for item in citation_rows:
@@ -347,7 +395,7 @@ def run_r3a(args: argparse.Namespace) -> int:
 
     verify_path = args.report_dir / "CROSSREF_VERIFY.csv"
     verify_fields = ["lit_id", "citekey", "resolved_citekey", "section", "DOI", "status", "title_match", "year_match",
-                     "venue_match", "crossref_title", "crossref_year", "crossref_venue", "technical_claim_eligible",
+                     "venue_match", "crossref_title", "crossref_year", "crossref_years", "crossref_venue", "technical_claim_eligible",
                      "read_level", "prior_api_log", "citation_map_claims", "raw_json", "reason", "bib_ready"]
     verified_bib: list[str] = ["% R3a entries only: Crossref VERIFIED and REFERENCE_PLAN technical_claim_eligible=YES.",
                                "% Metadata-only/NO rows are deliberately excluded; authors/fields come from saved Crossref JSON.", ""]
@@ -373,7 +421,8 @@ def run_r3a(args: argparse.Namespace) -> int:
         cross_venues = ((message or {}).get("container-title") or []) + ((message or {}).get("short-container-title") or [])
         cross_venue = cross_venues[0] if cross_venues else ""
         title_match = "YES" if cross_title and _normal_metadata(base.get("title", "")).replace(" ", "") == _normal_metadata(cross_title).replace(" ", "") else "NO"
-        year_match = "YES" if cross_year and base.get("year", "").strip() == cross_year else "NO"
+        matching_years = _crossref_years(message or {})
+        year_match = "YES" if base.get("year", "").strip() in matching_years else "NO"
         base_venue = _normal_venue(base.get("venue", ""))
         venue_match = "YES" if base_venue and any(base_venue == _normal_venue(v) for v in cross_venues) else "NO"
         response_doi = (message or {}).get("DOI", "").strip().lower()
@@ -404,7 +453,8 @@ def run_r3a(args: argparse.Namespace) -> int:
                 resolved_key = target_key
                 claims = "; ".join(sorted(set(map_by_key.get(key, []) + map_by_key.get(target_key, []))))
                 if target_key not in bib_written:
-                    verified_bib.append(_bib_from_crossref(target_key, doi, message or {}))
+                    preferred_year = base.get("year", "").strip() if base.get("year", "").strip() in matching_years else ""
+                    verified_bib.append(_bib_from_crossref(target_key, doi, message or {}, preferred_year))
                     verified_bib.append("")
                     bib_written.add(target_key)
             else:
@@ -416,6 +466,7 @@ def run_r3a(args: argparse.Namespace) -> int:
         rows_out.append({"lit_id": lit_id, "citekey": key, "resolved_citekey": resolved_key, "section": plan.get("plan_section", ""), "DOI": doi,
                          "status": status, "title_match": title_match, "year_match": year_match,
                          "venue_match": venue_match, "crossref_title": cross_title, "crossref_year": cross_year,
+                         "crossref_years": "; ".join(sorted(matching_years)),
                          "crossref_venue": "; ".join(cross_venues), "technical_claim_eligible": "YES" if eligible else "NO",
                          "read_level": plan.get("read_level", ""), "prior_api_log": prior,
                          "citation_map_claims": claims, "raw_json": str(args.raw_dir / (safe_doi(doi) + ".json")),
@@ -432,11 +483,11 @@ Scope: REFERENCE_PLAN rows whose `plan_section` is s.4.1–s.4.12. Each `lit_id`
 
 For each unique DOI, the job requests `https://api.crossref.org/works/<URL-encoded DOI>` with `{USER_AGENT}`. `CROSSREF_REQUEST_LOG.csv` records DOI, HTTP status, UTC time, metadata-file path, and error. `crossref_raw/` contains an allowlisted Crossref metadata projection (DOI, type, title, authors, issued/published dates, venue, publisher, volume/issue/pages, ISSN/ISBN); abstracts, links, reference lists, and full-text material are excluded.
 
-`CROSSREF_VERIFY.csv` compares DOI, normalized title, year, and venue against `LITERATURE_BASE`. Venue comparison removes a trailing volume/page locator and expands a fixed set of common journal abbreviations; no row-index HTTP code is treated as verification evidence. `VERIFIED` requires DOI, title, year, and venue all to match. A Crossref HTTP 404 is `NOT-FOUND`; a returned record with any disagreement is `MISMATCH`. Network/decoding failures fail the job instead of being relabelled as NOT-FOUND.
+`CROSSREF_VERIFY.csv` compares DOI, normalized title, year, and venue against `LITERATURE_BASE`. HTML tags/entities are normalized in titles. Venue comparison removes explicit editorial notes and trailing volume/page locators, then expands a fixed set of journal abbreviations and common word variants. The base year may match a Crossref `published-print`, `published-online`, or `issued` year; deposit/creation dates are not treated as publication years, and all eligible Crossref publication years are retained in the audit CSV. No row-index HTTP code is treated as verification evidence. `VERIFIED` requires DOI, title, year, and venue all to match. A Crossref HTTP 404 is `NOT-FOUND`; a returned record with any disagreement is `MISMATCH`. Network/decoding failures fail the job instead of being relabelled as NOT-FOUND. `--reuse-raw` recomputes the comparison from the previously saved responses without making new network requests or changing the original request log.
 
 `R3A_VERIFIED_REFERENCES.bib` includes only `VERIFIED` rows with `technical_claim_eligible=YES`, a nonempty Crossref author field, and no conflicting existing BibTeX key. New author and bibliographic fields are taken from the saved metadata JSON. Metadata-only/NONE rows are excluded.
 
-Counts: {len(scoped)} plan rows in scope; {len(rows_out)} rows with a Crossref DOI; {len(dois)} unique DOI requests; {len(bib_written)} bibliography-ready keys. No DOI records are handled separately in R3_STATUS.md as printed-source leads, not fabricated DOI matches.
+Counts: {len(scoped)} plan rows in scope; {len(rows_out)} rows with a Crossref DOI; {len(dois)} unique DOI requests; {sum(row['status'] == 'VERIFIED' for row in rows_out)} VERIFIED; {sum(row['status'] == 'MISMATCH' for row in rows_out)} MISMATCH; {sum(row['status'] == 'NOT-FOUND' for row in rows_out)} NOT-FOUND; {len(bib_written)} bibliography-ready eligible keys. No DOI records are handled separately in R3_STATUS.md as printed-source leads, not fabricated DOI matches.
 """
     (args.report_dir / "CROSSREF_METHOD.md").write_text(method, encoding="utf-8")
     print(f"R3a Crossref rows={len(rows_out)}; unique DOI requests={len(dois)}; bib-ready entries={len(bib_written)}")
@@ -455,6 +506,7 @@ def main() -> int:
     ap.add_argument("--row-index-csv", type=Path)
     ap.add_argument("--report-dir", type=Path)
     ap.add_argument("--pause", type=float, default=1.0)
+    ap.add_argument("--reuse-raw", action="store_true", help="recompute R3a status from saved Crossref responses without querying Crossref")
     args = ap.parse_args()
     if args.plan_csv:
         required = (args.citation_map_csv, args.row_index_csv, args.report_dir)
