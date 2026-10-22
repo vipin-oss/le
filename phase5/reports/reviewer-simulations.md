@@ -21,7 +21,7 @@
 | Generalized model balances | No universal law claimed; several equations marked candidate or open | OPEN; primary-source derivations required |
 | Primary equations | No original full texts checked in phase5 | UNVERIFIED; obtain and cite exact source equations |
 | Fractional theory | Coefficient dimensions corrected and scalar scope narrowed | CONDITIONAL; coupled constitutive formulation still open |
-| Tables/compile | Strict CI passed in run 39748215109; 146-page PDF/contact sheets uploaded | Build PASSED; final visual/page proof remains OPEN because artifacts were not locally inspectable |
+| Tables/compile | Strict CI passed in run 39750456893; 146-page PDF/contact sheets uploaded | Build PASSED; final visual/page proof remains OPEN because artifacts were not locally inspectable |
 | Nonlocal boundary work | No universal correction asserted | OPEN; derive per kernel/domain/BC |
 
 ## Simulated Reviewer 2 — literature synthesis / editorial and reproducibility

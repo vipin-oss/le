@@ -40,5 +40,5 @@ No full-text primary-source verification of the named generalized thermoelastici
 ## Quality gates
 
 - Scientific correctness: **PARTIAL; NOT PASSED**.
-- Engineering build: strict CI **PASSED** in run `39748215109` (146-page PDF uploaded); final PDF/contact-sheet visual inspection remains open because the artifact could not be downloaded locally.
+- Engineering build: strict CI **PASSED** in run `39750456893` (146-page PDF uploaded); final PDF/contact-sheet visual inspection remains open because the artifact could not be downloaded locally.
 - Editorial/submission readiness: **NOT PASSED**; no complete proofread, journal-specific adaptation, or final PDF inspection.
