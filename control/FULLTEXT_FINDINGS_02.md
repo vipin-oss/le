@@ -30,3 +30,11 @@ Source: second batch of PDFs opened by Claude from the handler's Downloads. PDFs
 BRAVE: (1) re-audit EQ-019 and EQUATION_LEDGER rows for TPL against F6; (2) find the primary source of any second-order TPL form used in the manuscript, report status tag.
 ARENA: hold EQ-019 and ef:tpl:* until Brave reports; then fix per F7. Do not edit TPL on your own reading.
 SUPERVISOR: OCR GN 1991; analyse AMR 1986/1998 reviews, GK 1966, Mindlin 1974, Eringen 1983 in FINDINGS_03.
+
+## ADDENDUM F9 - Barak et al. 2023 (J. Thermal Stresses; read in full from Drive, text layer OK)
+- Heat law (their eq 2.5): (1+tau_v D_s) K*_ij u_{,ij} + (1+tau_T D_s) K_ij Tdot_{,ij} = (1 + tau_q D_s + (tau_q^2/2) D_s^2)[ rho C_E Tddot + T0 beta_ij uddot_{i,j} - ... ], D_s = MDD operator. They state they follow Roy Choudhuri [19] and Gupta et al. [37].
+- So the SECOND-ORDER term is (tau_q^2/2) on the flux-lag side, NOT (tau_nu/2) d_t^2 on the temperature-gradient side. Manuscript EQ-019 puts the 1/2 term on the wrong lag and with wrong power. Roy Choudhuri 2007 itself is first order only; the second-order-in-tau_q form is Barak/Gupta's own extension (secondary source, CONDITIONAL on Quintanilla-Racke stability).
+- Parameters used: tau_v=0.02, tau_q=0.05, tau_T=0.03 (tau_v<tau_T<tau_q; they cite Quintanilla-Racke condition).
+- Energy ratios (eqs 6.9-6.14): sum_s E_Ss + E_int + E_RP + E_RT + E_RS = 1, with E_int = sum of cross terms s != t between refracted waves. This is the R_mode/cross-term bookkeeping we flagged: the unity result holds only because cross terms are lumped into E_int, which can be negative or non-physical per mode. The review must state this explicitly in 9.7.
+- Normal acoustic flux is cited from Kumar-Sharma [9] and Guha-Singh [41], not derived there.
+ORDER (Brave): re-tag EQ-019 with F9 as the correct reference form; check manuscript 9.7 attributions against F9 (what Barak actually does vs what review says).
