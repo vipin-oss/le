@@ -24,3 +24,7 @@ Source of truth: control/ARBITRATION_B4.md and verification/EQUATION_LEDGER.csv 
 6. Section 9.7 (Barak, Gupta attributions): verify from the papers or remove.
 7. Every CONDITIONAL row in the ledgers: write the condition into the text next to the equation (one clause is enough).
 Push after each item group; report commit hash and CI run number in chat; no PASS without execution.
+
+## UPDATE (reference integrity) — read before Part 2
+Brave's REFERENCE_AUDIT.csv (branch arena/04fdf32e-le, 6649b3c) disputes your phase5/references/doi_verification.csv. Specifically: (1) Guyer1990 (10.1103/PhysRevA.41.6371) is reported by Brave as NOT FOUND although your CSV says verified YES on 2026-10-21; (2) Eringen1968b resolves to Tauchert, Claus & Ariman, not Eringen (cited 5x in sec02/05/07); (3) Abdalla2022 is a cosmology review cited in the conclusions; (4) Vernotte1958 pages wrong; Sharma2022, Iesan2013, Povstenko2004, Barak2023JTS, Nowacki/Gorenflo initials, Luchko2010 problems; (5) MGT cited without Moore-Gibson 1960 / Thompson 1972.
+DO NOW (no manuscript prose changes): explain in a file phase5/reports/doi_verification_method.md exactly HOW each "YES" in doi_verification.csv was produced (script? manual? which API call, which fields compared, raw response saved?). If any row was filled without an actual lookup, say so. Mark every row of that CSV you cannot back with a saved raw response as UNVERIFIED. Do not delete Guyer1990 or the others yet: wait for Claude's ruling after Brave's cross-check.
