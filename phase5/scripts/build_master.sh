@@ -4,9 +4,14 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 # Surface concise diagnostics as GitHub check annotations when a build command
 # fails, since the signed Actions log/artifact endpoints may not be reachable.
+failure_reported=0
 report_failure() {
-  local rc=$? command=${BASH_COMMAND} pipeline_status="${PIPESTATUS[*]}"
-  trap - ERR
+  local rc=$?
+  if (( rc == 0 || failure_reported )); then return 0; fi
+  failure_reported=1
+  local command=${BASH_COMMAND} pipeline_status="${PIPESTATUS[*]}"
+  trap - ERR EXIT
+  set +e
   if [[ "${GITHUB_ACTIONS:-}" == "true" ]]; then
     printf '::error title=Phase5 build failure::line %s; exit %s; pipeline [%s]; command: %s\n' "${BASH_LINENO[0]:-?}" "$rc" "$pipeline_status" "${command//%/%25}"
     for logfile in "$ROOT/master/build/process.log" "$ROOT/master/build/main.log" "$ROOT/master/build/main.blg"; do
@@ -26,7 +31,7 @@ report_failure() {
   fi
   exit "$rc"
 }
-trap report_failure ERR
+trap report_failure ERR EXIT
 
 for cmd in latexmk pdflatex bibtex pdffonts pdfinfo; do
   command -v "$cmd" >/dev/null || { echo "ERROR: required build tool not found: $cmd" >&2; exit 127; }
@@ -54,9 +59,12 @@ bibtex build/main 2>&1 | tee build/bibtex.log | tee -a build/process.log
 run_pdflatex 2
 run_pdflatex 3
 run_pdflatex 4
-python3 "$ROOT/scripts/check_build_log.py" build/main.log
-pdfinfo build/main.pdf | tee build/pdfinfo.txt
-pdffonts build/main.pdf | tee build/pdffonts.txt
+printf '\n=== Build-log gates ===\n' | tee -a build/process.log
+python3 "$ROOT/scripts/check_build_log.py" build/main.log 2>&1 | tee -a build/process.log
+printf '\n=== PDF metadata ===\n' | tee -a build/process.log
+pdfinfo build/main.pdf | tee build/pdfinfo.txt | tee -a build/process.log
+printf '\n=== PDF fonts ===\n' | tee -a build/process.log
+pdffonts build/main.pdf | tee build/pdffonts.txt | tee -a build/process.log
 if grep -qvE '^(name|[-[:space:]]|$)' build/pdffonts.txt; then
   if awk 'NR>2 && $4 != "yes" {bad=1; print "UNEMBEDDED FONT:", $0} END {exit bad}' build/pdffonts.txt; then
     echo "All reported PDF fonts are embedded."
