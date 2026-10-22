@@ -19,3 +19,10 @@ c) font embedding report, page count, pdfinfo, and a contact sheet of the final 
 d) DEFECT_STATUS.csv updated: every defect FIXED/PARTLY/NOT DONE/DISPUTED with evidence.
 e) Do NOT touch scientific content in this round except where the fix requires it; log every content change in DECISIONS.
 Push, then report commit hash and CI run number in chat.
+
+## UPDATE 12:55 IST — Claude rebuilt arena/40393d9f-le @4e2a062 (your own fixes): 0 LaTeX errors, 148 pp, 0 undefined. Fatal defects are GONE. Do not spend more CI runs on error hunting.
+Remaining R1 work is ONLY layout. 683 Overfull, 299 of them > 10 pt, concentrated on a few pages (see control/reports/overfull_by_page_4e2a062.md, pages of Claude's 148-page build):
+- p31 (Table 3 "Wave types and governing characteristics", 180 boxes, 73 > 10 pt), p84 (Table 22 "limiting relationships between the families", 229 boxes), p96 (section 14.4 table, 101 boxes), p120 (157 boxes, worst 246 pt), p82 (single 517 pt box next to Table 20 notation), p66 (98 pt), p62 (80 pt), p30 (63 pt).
+- Fix by redesigning those tables: landscape/sidewaystable or split tables, `tabularx`/`\small`+`\raggedright` `p{}` columns with explicit widths, shorter cell text, `\allowbreak` in long macros/paths. No unbreakable \texttt strings. Rebuild with 4 passes locally if you can get a TeX; otherwise use ONE CI run per batch of fixes, not per single fix.
+- Explain 161 -> 148 pages (what was removed/merged).
+Gate b) of R1 (no overfull > 10 pt) stays open until this is done.
