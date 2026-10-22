@@ -6,7 +6,7 @@
 
 ## Executive disposition
 
-A versioned copy was audited and partially repaired. The v1.0 source/PDF remain unchanged. Static structure checks report zero duplicate labels, unresolved cross-references, duplicate bibliography keys, missing inputs, citation keys, or figure PDFs. Eighteen SVGs were converted to vector PDFs without converter warnings; the results contain extractable text and vector drawing operators. These are engineering checks, not scientific validation. There is no successful v1.1 build or PDF: TeX tools are absent locally, and seven strict GitHub phase5 runs failed (`39728213927`, `39728597464`, `39728900152` exit 12; `39729338751`, `39729569948`, `39729834892`, `39730189442` exit 1). The latest used explicit pdfLaTeX/BibTeX; annotations did not identify its failure stage, and signed logs/artifact downloads returned EOF. Earlier annotations surfaced unresolved citation/reference warnings although static inventory finds the keys/labels. Whether the latest TeX/BibTeX passes completed is unknown.
+A versioned copy was audited and partially repaired. The v1.0 source/PDF remain unchanged. Static structure checks report zero duplicate labels, unresolved cross-references, duplicate bibliography keys, missing inputs, citation keys, or figure PDFs. Eighteen SVGs were converted to vector PDFs without converter warnings; the results contain extractable text and vector drawing operators. These are engineering checks, not scientific validation. There is no successful v1.1 build or PDF: TeX tools are absent locally, and eight strict GitHub phase5 runs failed (`39728213927`, `39728597464`, `39728900152` exit 12; `39729338751`, `39729569948`, `39729834892`, `39730189442`, `39730441139` exit 1). The latest run's annotation identifies a first-pass TeX error from a truncated `\ref` in `sec04_thermoelastic.tex`; static scanning found three more instances in `sec17_conclusions.tex`, `sec15_challenges.tex`, and `sec16_future.tex`. All four have been repaired and a static malformed-ref guard added, but the changes remain unbuilt. Earlier undefined citation/reference warnings preceded this fatal stop and cannot be treated as final-pass results.
 
 The available baseline PDF is 161 pages, SHA-256 `b03dc426046a1473d3d6cf1088f9fc115c7103b4786c4eb2389ab968f640c636`, producer pdfTeX 1.40.25. It contains visible figures in the page-thumbnail survey, but shows poor appendix-table layout on multiple pages. It is not the separately described 170-page/pdfTeX 1.40.29 file, which was unavailable. Those two artifacts must not be conflated.
 
@@ -30,7 +30,7 @@ The available baseline PDF is 161 pages, SHA-256 `b03dc426046a1473d3d6cf1088f9fc
 
 ## Inventory outputs
 
-- Latest static inventory: 37 TeX files; 430 labels; 293 reference commands; 56 bibliography keys; 222 citation calls; zero unresolved items in the scanned classes.
+- Latest static inventory: 37 TeX files; 430 labels; 297 reference commands; 56 bibliography keys; 222 citation calls; zero malformed truncated ref fragments and zero unresolved items in the scanned classes.
 - Figures: 18/18 source SVGs parse; 18/18 requested PDF assets generated; converter reported zero warnings; each generated PDF has text and vector operators, with zero raster XObjects.
 - Baseline PDF: 161 pages; seven thumbnail sheets cover pages 1–161. This overview is not text extraction or final-size proofing.
 - Literature inventory: 95 records; 48 DOI cells populated, 47 blank; inherited full-text/open-access flags are not independently validated here.

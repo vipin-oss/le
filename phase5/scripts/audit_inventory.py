@@ -16,9 +16,14 @@ cites: list[str] = []
 figs: set[str] = set()
 inputs: list[tuple[Path, str]] = []
 bibliographies: set[str] = set()
+malformed_ref_fragments: list[tuple[Path, int, str]] = []
 
 for path in TEX:
     text = path.read_text(encoding="utf-8")
+    malformed_ref_fragments.extend(
+        (path, text.count("\n", 0, match.start()) + 1, match.group(1))
+        for match in re.finditer(r"(?m)^[ \t]*ef\{([^}]+)\}", text)
+    )
     for label in re.findall(r"\\label\{([^}]+)\}", text):
         labels[label].append(path.relative_to(ROOT).as_posix())
     refs.extend((path, label) for label in re.findall(r"\\(?:eqref|ref|cref|Cref|autoref)\{([^}]+)\}", text))
@@ -53,6 +58,9 @@ for label, paths in sorted(duplicates.items()):
 print(f"Missing reference labels: {len(missing_refs)}")
 for label, count in sorted(missing_refs.items()):
     print(f"  MISSING {label}: {count} reference(s)")
+print(f"Malformed truncated ref commands: {len(malformed_ref_fragments)}")
+for path, line, label in malformed_ref_fragments:
+    print(f"  MALFORMED ref{{{label}}} at {path.relative_to(ROOT).as_posix()}:{line}")
 print(f"Duplicate bibliography keys: {len(bib_duplicates)}")
 for key, count in sorted(bib_duplicates.items()):
     print(f"  DUPLICATE BIBKEY {key}: {count}")
@@ -79,5 +87,5 @@ if inventory.exists():
         print(f"  {field}: {dict(counts)}")
 print("NOTE: This static check does not compile TeX, inspect the manuscript PDF, verify references externally, or validate scientific claims.")
 
-if duplicates or missing_refs or bib_duplicates or missing_cites or missing_inputs or missing_bibs or missing_figures:
+if duplicates or missing_refs or malformed_ref_fragments or bib_duplicates or missing_cites or missing_inputs or missing_bibs or missing_figures:
     sys.exit(1)
