@@ -1,0 +1,116 @@
+# V-B2z — Comparison table of canonical models, and catalogue of repeated mistakes
+
+**Access date 2026-10-22.** Companion to V-B2a … V-B2m and to `V-B2_wave_speeds.py`.
+
+## Task
+
+One table with columns: model | heat law | finite wave speed? | dissipative? | energy-conserving? | key parameter(s) | known pitfalls/misuses. Plus a flagged list of commonly repeated mistakes.
+
+## Method
+
+Everything in the table is a **derived** or **computed** statement, except where the cell is marked with a source label. The "finite speed", "dissipative" and "energy-conserving" columns were decided from the **principal part** of each heat operator (which fixes propagation class) and from the presence/absence of a dissipative (odd-in-temperature) term — not by taking any author's word for it.
+
+Sources for the heat-law forms: mostly standard published forms; where I could obtain an openly readable statement of the actual law it is noted in the individual files. **No primary full text was opened** (see `README.md`). Read-level per model is in each V-B2x file.
+
+## Result
+
+### R1. The table
+
+| Model | Heat law | Finite wave speed? | Dissipative? | Energy-conserving? | Key parameter(s) | Known pitfalls / misuses |
+|---|---|---|---|---|---|---|
+| **Biot / Fourier** (Biot 1956) | q = −k_th∇θ; ρcθ̇ + βT₀ε̇ = k_th∇²θ | **No** (parabolic) | **Yes** | No | δ = T₀β²/(ρcM); κ | v_ph = √(2κω) → ∞; often blamed for a "paradox" that is simply its domain of validity |
+| **Lord–Shulman** (1967) | τ₀q̇ + q = −k_th∇θ | **Yes**, c_h = √(κ/τ₀) | **Yes** | No | τ₀ | τ₀ placement varies (thermal only vs thermal+coupling); τ₀ rarely measured; terms often mis-scaled (LS≈Fourier below 1/2πτ₀) |
+| **Green–Lindsay** (1972) | Fourier for q; relaxation on **temperature-rate** terms | Yes (speed not verified in closed form) | **Yes** | No | τ₁, τ₂ (τ₂ ≥ τ₁ ≥ 0) | **Commonly mis-stated as having a flux relaxation — it does not**; τ₁ = τ₂ collapses GL to LS |
+| **GN Type I** | = Fourier | **No** | Yes | No | (none new) | **GN-I IS the classical Biot theory — not a separate ninth model** |
+| **GN Type II** (1992/93) | q = −k*∇α, α̇ = θ; ρcθ̈ + βT₀ε̈ = k*∇²θ | **Yes**, exactly; **non-dispersive** | **No** | **Yes** | k* [conductivity×time] | "No dissipation" is a strong physical claim — real second sound is strongly attenuated; k* values incomparable across papers (units!) |
+| **GN Type III** | q = −(k*∇α + k_th∇θ) | Yes (asymptote) | **Yes** (via k_th) | No | k*, k_th | At least 3 inequivalent published forms differing in the **principal part**; k*=0 is **not** Biot |
+| **DPL** (Tzou 1995) | q(x,t+τ_q) = −k_th∇θ(x,t+τ_T), 1st-order Taylor | τ_T = 0: yes (=LS); **τ_T ≠ 0: NOT established** | Yes (τ_T ≥ 0) | No | τ_q, τ_T | **τ_T < 0 ⇒ ill-posed above k_c = 1/√(κ|τ_T|)** — verified numerically; Taylor truncation ≠ delay; DPL ⊃ LS |
+| **TPL** (Roy Choudhuri 2007) | as DPL + ½τ_v²∂_t² on the thermal operator | **NOT established** (3rd order in time) | Yes | No | τ_q, τ_T, τ_v | ½τ_v² vs τ_v² factor varies; admissibility contested; stiff fast modes (~1/τ_v) dominate numerics; invisible below 1/2πτ_v |
+| **MGT** (Quintanilla 2019) | τT_ttt + T_tt = b∇²T_t + c²∇²T | **Yes**: √(b/τ) at high ω, √(c²) at low ω | **Yes** | No (has decay functional for γ>0) | τ, b, c², **γ = b − τc²** | **γ > 0 is required and is often not reported**; positivity of τ,b,c² is NOT sufficient; frequently mis-dated as 2018 |
+| **MDD** (Wang & Li 2011) | ρc D_ω θ + βT₀ D_ω ε = k_th∇²θ | **No** | Kernel-dependent | No | ω_m **and** kernel K | Model undefined without the kernel; not a derivative (no product/chain rule); thermodynamics unestablished; indistinguishable from Fourier at low ω |
+| **Caputo fractional** (1967) | ᶜD^αθ = κ∇²θ, 0<α≤1 | **No** | **Yes** | No | α | **Does not fix the finite-speed problem** (parabolic class); attenuation ∝ ω^{α/2}; dimensionally inconsistent unless κ carries fractional units; α=1 must equal Fourier exactly |
+| **Two-temperature** (Chen–Gurtin 1968) | q = −k_th∇φ; T = φ − a∇²φ | **No** (adds length, not time) | Yes | No | a [m²] | Orthogonal to all relaxation theories (composes with them); short-wavelength low-pass filter; does **not** create a thermal wave; a<0 ill-posed (argued, not computed) |
+| **Eringen nonlocal** (1972/1983) | (elastic, not thermal) σ − (e₀a)²∇²σ = C:ε | **Yes** (frequency cutoff ω_max = c/ℓ) | No | **Yes** | ℓ = e₀a | **Softens**: v_ph → 0; differential form is not exactly the integral model; "e₀" calibration is problem-specific |
+| **Mindlin gradient** (1962/1964) | (elastic) strain-gradient free energy | **No** — v_ph → ∞ (worse than classical) | No | **Yes** | ℓ (general theory: 5 constants) | **Stiffens**: v_ph → ∞; at identical ℓ and k it differs from nonlocal by a factor **10⁶**; single-ℓ reduction is a modelling choice |
+
+### R2. The three grouping facts a review should state on one page
+
+1. **Propagation class is a property of the principal part, not of the "generality" of the theory.** Biot, Caputo, MDD and 2T are all non-finite-speed; LS, GN-II/III, MGT are finite-speed (with TPL and *coupled* DPL unestablished). "Generalized" does not imply "hyperbolic".
+2. **Dissipation and finite speed are independent axes.** GN-II has finite speed and *no* dissipation; Biot and Caputo have dissipation and *no* finite speed; MGT and GN-III have both. A table with a single "generality" ordering is meaningless.
+3. **Only GN-II (and the purely elastic nonlocal/gradient models) conserve energy.** Every thermoelastic conduction model except GN-II is dissipative. This is the classification Phase B3 needs, and it is why "energy flux" at an interface has to be treated separately for GN-II.
+
+### R3. Catalogue of commonly repeated mistakes
+
+Ordered by how often I met them and how damaging they are.
+
+**M1. GN Type I counted as a distinct theory.** GN-I ≡ Biot/Fourier (V-B2d). A nine-model list containing both is a single-theory inflation. *Confidence: HIGH.*
+
+**M2. Green–Lindsay described as having a heat-flux relaxation.** It does not: q remains Fourier; the relaxation sits on the temperature-rate terms (V-B2c). Papers that write GL with a τ on q have written LS. *Confidence: HIGH that this is the standard reading; MEDIUM that it matches GL's 1972 text (not opened).*
+
+**M3. MGT thermoelasticity dated 2018.** Quintanilla's paper is *Math. Mech. Solids* **24**(12):4020–4031, `issued` 2019-07-21 (both indices agree). *Confidence: HIGH.*
+
+**M4. DPL used with τ_T < 0 and reported as a solution.** For τ_T < 0 the rigid model is unstable above k_c = 1/√(κ|τ_T|) (verified numerically for two values of τ_T, straddling each threshold). Growth rates reach ~10¹¹ s⁻¹. Any such "solution" is a mesh artefact. *Confidence: HIGH (rigid model); the coupled case is not settled here.*
+
+**M5. "DPL/TPL have finite propagation speed" asserted without proof.** Established for the τ_T = 0 sub-case (= LS) only. For τ_T ≠ 0 the operator is higher order and finite propagation needs a real theorem. Marked **NOT established** rather than "yes". *Confidence: MEDIUM — this is a gap in the literature as much as a mistake.*
+
+**M6. TPL with ½τ_v² in one paper and τ_v² in another.** Factor 2 on the highest-order term; not cosmetic. *Confidence: HIGH that both forms exist; the canonical one is UNVERIFIED.*
+
+**M7. GN-II k* quoted without its calibration.** k* has units conductivity×time, so a bare number is meaningless. Setting k* = k_th/τ₀ makes GN-II reproduce the LS speed to within the coupling δ (verified: 1125.9 vs 1119.9 m/s). *Confidence: HIGH.*
+
+**M8. Caputo heat equation written dimensionally inconsistently.** κ must carry fractional units (or be non-dimensionalised); most papers write κ in m²/s next to a fractional time derivative. *Confidence: HIGH that the inconsistency exists; I did not count instances.*
+
+**M9. "Fractional / memory-dependent models resolve the infinite-speed paradox."** They do not: both are non-finite-speed (V-B2k R4, V-B2j R5). They change the attenuation law, not the propagation class. *Confidence: HIGH.*
+
+**M10. Isothermal vs isentropic moduli silently swapped.** The elastic speed differs by O(δ) (~1% for steel, δ = 0.0102). Papers comparing "their" wave speed with "the classical" speed without stating which moduli were used manufacture discrepancies of exactly this size. *Confidence: HIGH on the O(δ) magnitude; the specific papers committing it were not audited.*
+
+**M11. "Nonlocal/gradient effects" treated as one effect.** At identical ℓ and k the two differ by 10⁶ (V-B2m). They are opposite physics. *Confidence: HIGH.*
+
+**M12. τ₀, τ_q, τ_T, τ_v, a, ℓ, k*, e₀a quoted as "typical material values" without a source.** I could verify **no** measured value of any of these in this session. *Confidence: HIGH (absence of verification).*
+
+**M13. Coupled nonlocal-thermoelastic systems presented as thermodynamic.** The nonlocal operator is applied to the elastic law and the heat equation left local; no entropy-inequality derivation was verified. *Confidence: MEDIUM (absence of evidence).*
+
+**M14 — a defect I committed myself, recorded deliberately.** In the first run of `V-B2_wave_speeds.py`, the DPL and TPL rows had the sign of the k_th k²(1−iωτ_T) term wrong, so both failed the τ → 0 limit check against Biot. The limit checks caught it and I corrected it. This is why the limit checks exist and why every equation in the manuscript needs a verifier who did not write it.
+
+### R4. Verification status by model (what the manuscript may and may not print)
+
+| Model | Equations | Admissibility | Wave speeds | Overall |
+|---|---|---|---|---|
+| Biot | HIGH (derived) | MEDIUM | HIGH (√(2κω) verified) | usable |
+| LS | HIGH (derived; form secondary) | MEDIUM | HIGH | usable |
+| GL | **MEDIUM/LOW — form not source-verified** | LOW | LOW (no closed form) | **do not print GL equations without the 1972 paper** |
+| GN-I | HIGH (identity) | HIGH | HIGH | usable |
+| GN-II | HIGH (derived) | MEDIUM | HIGH (exact) | usable |
+| GN-III | MEDIUM (variant problem) | LOW (contested) | HIGH (for stated form) | usable with variants stated |
+| DPL | HIGH (form secondary but explicit) | **HIGH for rigid** | HIGH | usable |
+| TPL | **LOW (form unresolved)** | LOW | MEDIUM | **needs the 2007 paper** |
+| MGT | MEDIUM (coupled form unverified) | **HIGH for rigid prototype** | HIGH (rigid) | usable with coupled caveat |
+| MDD | MEDIUM | LOW | HIGH (generic) | usable with kernel stated |
+| Caputo | HIGH (standard math) | MEDIUM | HIGH | usable |
+| 2T | MEDIUM | MEDIUM | HIGH (structural) | usable |
+| Nonlocal/gradient | HIGH (derived) | MEDIUM | HIGH | usable |
+
+## Evidence / Sources
+
+All rows summarise V-B2a…V-B2m, where each claim carries its own source and read level. Numerical values are outputs of `V-B2_wave_speeds.py` (reproducible with that file alone; steel-like constants stated in V-B2a R3).
+
+## Checks done
+
+- Every "finite speed / dissipative / energy-conserving" entry was decided by inspecting the principal part and the presence of an odd-order temperature term — not copied from a table in any paper.
+- The five symbolic limit checks (LS→Biot, DPL→Biot, TPL→Biot, GN-III k*→0 ≠ Biot, GN-II rigid exactness) all pass after the M14 correction.
+- Numeric cross-checks: Fourier √(2κω) (0.4%); GN-II non-dispersiveness across 6 decades; GN-II ↔ LS speed agreement; MGT both asymptotes; Caputo α=1 ≡ Fourier; nonlocal/gradient opposite asymptotics.
+- Consistency of the "dissipative" column with the "energy-conserving" column: only GN-II is both non-dissipative and energy-conserving, which is the required internal consistency.
+
+## Confidence
+
+- **HIGH** on the classification columns and on mistakes M1–M3, M6–M11.
+- **MEDIUM** on M5, M12, M13 (absences of verification rather than positive findings) and on GL/TPL equation-level status.
+- **LOW**: nothing in the table is *presented* as LOW-confidence, but see R4 — GL and TPL equations should not be printed from this file.
+
+## NOT verified / open issues
+
+1. **No primary full text was opened for any of the 14 models.** Every "equation" column is either standard published form or my derivation from it. The two rows that are genuinely unsafe to print without the source paper are **GL** and **TPL**.
+2. **Coupled (as opposed to rigid) stability is unresolved for DPL, TPL and MGT.** My rigorous results are for the rigid models. Generalising them to the coupled systems requires the sources on coupled-DPL/MGT stability that I did not open.
+3. **"Energy-conserving" for GN-II is asserted on the basis of the absence of a dissipative term.** The actual conserved functional was not constructed — that is Phase B3's job, and it must be done before the review claims GN-II energy conservation at an interface.
+4. **No experimental values for any parameter** in the "key parameter" column were verified.
+5. The mistake catalogue is **not a systematic literature survey** — it is what I encountered while verifying these 14 models. A proper prevalence claim ("X% of papers do Y") would need a coded sample and was not attempted.
+6. Piezothermoelasticity is in the mission statement but **not** in this phase's model list; it is unverified here and would need its own file (candidate V-B2n) if the review covers piezoelectric coupling.

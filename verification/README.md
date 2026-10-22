@@ -2,7 +2,29 @@
 
 Role: independent verifier. I did not see, and did not edit, the manuscript. Everything below was derived or checked from sources I could open; everything I could not check is listed under each file's "NOT verified" heading.
 
-**Phase status: B1 complete (a, b, c). B2 and B3 not started — awaiting go-ahead.**
+**Phase status: B1 complete (a, b, c) and revised after supervisor audit; B2 complete (a–m, z). B3 not started — awaiting go-ahead.**
+
+## Phase B2 files
+
+| File | Model | Overall status |
+|---|---|---|
+| `V-B2a_biot-fourier.md` | Fourier / Biot | usable |
+| `V-B2b_lord-shulman.md` | Lord–Shulman | usable |
+| `V-B2c_green-lindsay.md` | Green–Lindsay | **do not print GL equations without the 1972 paper (form not source-verified)** |
+| `V-B2d_green-naghdi-I.md` | GN Type I | usable — establishes GN-I ≡ Biot |
+| `V-B2e_green-naghdi-II.md` | GN Type II | usable |
+| `V-B2f_green-naghdi-III.md` | GN Type III | usable with the variant problem stated |
+| `V-B2g_dual-phase-lag.md` | DPL (Tzou) | usable; ill-posedness threshold verified |
+| `V-B2h_triple-phase-lag.md` | TPL (Roy Choudhuri) | **needs the 2007 paper (form unresolved)** |
+| `V-B2i_moore-gibson-thompson.md` | MGT (Quintanilla) | usable; γ = b − τc² > 0 independently verified |
+| `V-B2j_memory-dependent-derivative.md` | MDD (Wang & Li) | usable with kernel stated |
+| `V-B2k_caputo-fractional.md` | Caputo fractional | usable |
+| `V-B2l_two-temperature.md` | Two-temperature | usable |
+| `V-B2m_eringen-mindlin-nonlocal-gradient.md` | Eringen nonlocal + Mindlin gradient | usable |
+| `V-B2z_comparison_table.md` | **comparison table + 14-entry mistakes catalogue** | the deliverable to read first |
+| `V-B2_wave_speeds.py` | reproducible engine: all dispersion relations, 5 limit checks, numerics | runs standalone (needs numpy, sympy) |
+
+**Headline B2 results:** (i) GN Type I *is* Biot — a nine-model list inflation; (ii) GL has no flux relaxation, contrary to a common description; (iii) DPL with τ_T < 0 is ill-posed above k_c = 1/√(κ|τ_T|), verified numerically; (iv) MGT's stability number γ = b − τc² > 0 independently reproduced, and positivity of τ, b, c² is not sufficient; (v) nonlocal and gradient elasticity differ by a factor 10⁶ at identical parameters; (vi) fractional/MDD models do **not** fix the infinite-speed problem; (vii) five symbolic limit checks pass — after they caught a sign error of mine.
 
 ## Files
 
