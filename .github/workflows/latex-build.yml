@@ -17,7 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 25
     env:
       SOURCE_DATE_EPOCH: '1700000000'
       FORCE_SOURCE_DATE: '1'
@@ -76,19 +76,38 @@ jobs:
             --status-report phase5/reports/R3_STATUS.md
 
       - name: Install TeX and PDF tools
+        timeout-minutes: 12
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            latexmk \
-            texlive-latex-base \
-            texlive-latex-recommended \
-            texlive-latex-extra \
-            texlive-science \
-            texlive-bibtex-extra \
-            texlive-fonts-recommended \
-            texlive-pictures \
-            fonts-dejavu-core \
-            poppler-utils
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            echo "TeX/PDF package installation attempt ${attempt}/3"
+            if timeout --signal=TERM --kill-after=5s 220s \
+              bash -euo pipefail -c '
+                sudo apt-get update -qq
+                sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+                  latexmk \
+                  texlive-latex-base \
+                  texlive-latex-recommended \
+                  texlive-latex-extra \
+                  texlive-science \
+                  texlive-bibtex-extra \
+                  texlive-fonts-recommended \
+                  texlive-pictures \
+                  fonts-dejavu-core \
+                  poppler-utils
+              '; then
+              echo "TeX/PDF package installation succeeded on attempt ${attempt}."
+              exit 0
+            else
+              result=$?
+              echo "Attempt ${attempt}/3 failed (exit ${result})."
+            fi
+            if [[ "${attempt}" -lt 3 ]]; then
+              sleep 5
+            fi
+          done
+          echo "TeX/PDF package installation failed after 3 attempts."
+          exit 1
 
       - name: Set up Python and audit dependencies
         uses: actions/setup-python@v5
