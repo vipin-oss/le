@@ -115,3 +115,7 @@ Row 2 replaced by **Tzou 1995, JHT 117:8–16, `10.1115/1.2822329`** and demoted
 5. **Tzou 1995 not opened by me**; the facts row asserts identity and role only and says so in both `status` and `read_level`. Its equation numbers are still unknown, so the manuscript's DPL equation cannot yet be checked against print.
 6. **The manuscript still has to be changed, and I cannot do it** (no `.tex` here): sec. 4.5/4.6 citation years, sec. 4.7 key `Tzou1997`, sec. 4.10 + Table 1 Moore–Gibson wording, Table 12-A cells. These are reports, not fixes.
 7. **Existing incorrect string inside EQ-165's note** (`−k^*\x07lpha_{,i}`, an escaped `\a`) is a pre-existing encoding defect, left untouched in this batch to avoid reflowing an already-verified row; it should be fixed once, globally.
+
+---
+
+**Closure note (B15, appended 2026-10-22).** Items 1, 2 and 5 of the open list above are now closed by `control/FULLTEXT_FINDINGS_05.md` F16–F18 (renders transcribed by the supervisor): GN 1992 (3.19)–(3.20), GN 1993 (3.15)–(3.17) and Tzou 1995 (15)–(17) are recorded in `FULLTEXT_FACTS.csv` as `GreenNaghdi1992TypeIII`, `GreenNaghdi1993TypeII` and `Tzou1995DPL`, tagged `PRIMARY-SOURCE-CHECKED (supervisor-transcribed from page render; this verifier did not open the paper)`. Item 6 (GN 1993 identity (4.15)) stays **open by instruction**. Items 3 (GN 1991 unread) and 4 (Moore–Gibson, Thompson 1972) are unchanged. See `V-B15_gn_printed_equations.md`.
