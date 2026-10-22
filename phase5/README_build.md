@@ -5,6 +5,7 @@
 - `phase4/manuscript/` is the inherited v1.0 source tree; it is preserved unchanged.
 - `phase4/manuscript/main.pdf` and `phase5/master/v1.0-baseline.pdf` are byte-identical repository artifacts. Their embedded metadata reports **161 pages**, producer `pdfTeX-1.40.25`, and creation date 2023-11-14. This does not match the separately described 170-page/pdfTeX-1.40.29 attachment; no such attachment is present in this workspace, so its provenance and page-specific observations cannot be confirmed from the available files.
 - `phase5/master/` is the editable v1.1 working copy. Its figures and tables are self-contained beneath that directory. `phase5/figures/source/` and `phase5/tables/source/` remain phase-level mirrors used by audits and scripts.
+- `phase5/master/figures/rendered/` retains v1.0 SVG snapshots for comparison; despite the folder name these are SVG sources, not PDFs.
 
 ## Build figures
 
@@ -12,34 +13,38 @@ The manuscript includes PDF figures directly; there is no shell-escape conversio
 
 ```sh
 cd phase5
-npm ci --prefix tools
+npm ci --prefix tools --ignore-scripts
 ./scripts/build_figures.sh
 ```
 
-This converts each `figures/source/*.svg` to a vector PDF in `master/figures/source/`, then mirrors the PDFs for workspace-level static checks. Conversion uses the pinned `pdfkit` and `svg-to-pdfkit` dependencies in `tools/package-lock.json`. The SVGs use DejaVu Sans; the script currently expects its TTF files at `/usr/share/fonts/truetype/dejavu/`. If absent, install a compatible DejaVu Sans font and update the script's `fontDir`.
+This converts each `figures/source/*.svg` to a vector PDF in `master/figures/source/`, then mirrors the PDFs for workspace-level static checks. Conversion uses the pinned `pdfkit` and `svg-to-pdfkit` dependencies in `tools/package-lock.json`. The SVGs use DejaVu Sans; the script expects its TTF files at `/usr/share/fonts/truetype/dejavu/`.
 
 The renderer currently reports zero unsupported-SVG warnings for the 18 source images. Every PDF has vector drawing operators and extracted text, and zero embedded raster images in the generated page objects. This is not a substitute for inspection at final manuscript size.
 
 ## Compile the master
 
-With TeX Live (pdfLaTeX, BibTeX, `latexmk`) installed:
+From the repository root, install the pinned converter and symbolic-audit dependencies, then run the strict build:
 
 ```sh
-cd phase5/master
-latexmk -pdf -interaction=nonstopmode -file-line-error -halt-on-error -recorder main.tex
+npm ci --prefix phase5/tools --ignore-scripts
+python3 -m pip install -r phase5/tools/requirements-audit.txt
+bash phase5/scripts/build_master.sh
 ```
 
-The project requires a standard TeX Live installation containing `article`, `natbib`, `hyperref`, `cleveref`, AMS math, `booktabs`, `tabularx`, `longtable`, `graphicx`, `caption`, `subcaption`, `enumitem`, `titlesec`, `setspace`, `xcolor`, `array`, `geometry`, and their dependencies. No `draft` option is intentionally enabled. Exact package versions must be recorded from the build host. Local TeX tools are absent; strict GitHub run `39728213927` failed in the combined build step with exit 12, and the inaccessible signed log endpoint prevents confirming the precise failure stage. No successful v1.1 compile is claimed.
+The script validates source paths and figures, rebuilds figure PDFs, cleans generated outputs, performs four fail-fast pdfLaTeX passes with an explicit BibTeX pass, checks the final log for errors/unresolved references/missing graphics and material overfull boxes, and records PDF metadata/fonts. It uses no suppressed errors. The project requires standard TeX Live packages for `article`, `natbib`, `hyperref`, `cleveref`, AMS math, `booktabs`, `tabularx`, `longtable`, `graphicx`, `caption`, `subcaption`, `enumitem`, `titlesec`, `setspace`, `xcolor`, `array`, `geometry`, and dependencies. No `draft` option is intentionally enabled.
 
-## Static checks performed
+The first strict CI attempts (runs `39728213927`, `39728597464`, and `39728900152`) failed in the build step; annotations exposed unresolved citation/reference warnings, but the signed log artifacts could not be downloaded. The exact final-pass state is unknown. Local TeX tools are absent, so no successful v1.1 compile is claimed. See `reports/build-status.md` for the current state.
+
+## Static checks
 
 ```sh
-python3 scripts/audit_inventory.py
-python3 scripts/validate_figures.py
-python3 scripts/verify_classical_flux.py  # after installing tools/requirements-audit.txt
+python3 phase5/scripts/audit_inventory.py
+python3 phase5/scripts/validate_figures.py
+python3 -m pip install -r phase5/tools/requirements-audit.txt
+python3 phase5/scripts/verify_classical_flux.py
 ```
 
-The inventory and figure scripts check labels, cross-reference targets, bibliography keys, expected figure files, and SVG/PDF file-level properties. The SymPy script checks only the displayed classical symmetric-Cauchy power identity and its stated units; install its pinned dependency with `python3 -m pip install -r tools/requirements-audit.txt`. None of these checks compiles TeX, establishes generalized-theory validity, or replaces visual proofing. See `reports/build-status.md`, `reports/quality-gates.md`, and `reports/scientific-audit.md` for executed checks, limitations, and open work.
+These scans cover input/include paths, labels, cross-reference targets, bibliography keys/files, expected figure files, and SVG/PDF file-level properties. The SymPy script checks only the displayed classical symmetric-Cauchy power identity and stated units. None compiles TeX, establishes generalized-theory validity, or replaces visual proofing. See `phase5/reports/build-status.md`, `quality-gates.md`, and `scientific-audit.md` for limitations/open work.
 
 ## Journal wrapper
 
