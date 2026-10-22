@@ -373,3 +373,67 @@ Batch 1 is where GL/GN/MGT gaps ( §6 ) get explicitly restated as "not checkabl
   this item.
 * **Tier 3 was not inspected row by row** — it is a residual bucket, and its contents are asserted to be
   non-essential by elimination, not by examination.
+
+---
+
+## 14. Status at close of tier 1, and the tier-2 plan (B10d)
+
+**Tier-1 status.** All seven batches are complete (`V-B10c_b01` … `V-B10c_b07`, commits `7986af0`, `943cce0`, `544079b`, `bf8ec09`, `ea9a7e8`, `a2a35b6`, and this batch). `FULLTEXT_FACTS.csv` holds **70 rows**, one per file, including the 3 duplicates and the one preprint that was later superseded by a journal version. Reading changed the classification of five of the 70, all now corrected in `DRIVE_PRIORITY.csv`: DRV-0179 is an interface/energy paper, not two-temperature; DRV-0185 is a Green–Naghdi reflection paper, not a nonlocal one (the file name `nonlocal thermoelastic.pdf` lied); DRV-0190 is a duplicate of DRV-0186; DRV-0177 is the journal version of the DRV-0176 preprint; and the two-temperature block belongs to §11.3, not §4.12.
+
+**Tier-2 roster.** 26 files, all `s.9` except two that also touch `s.10`/`s.11`. Split: **7 own papers** in `1_My_Published_Papers`, 19 external, spread over 11 folders.
+
+**Two actions before any reading.**
+
+1. **Deduplicate first, on content, not on names.** `Kaur, Lata, Singh - 2020 - Reflection and refra.pdf` and `…(1).pdf` (DRV-0146 / DRV-0147) are near-certainly one paper; md5 plus the printed DOI decides. A duplicate found here is recorded in `dup_of` and read once — the tier-1 experience (DRV-0190: md5-distinct, same DOI) is why the check is by DOI, not by hash.
+2. **Same evidence discipline as tier 1.** Every row gets the ten `FULLTEXT_FACTS` columns; no row without a printed equation number; `read_level = FULL` only for text actually read this session.
+
+**Batches (3 × ≤10).**
+
+| batch | files | content | why this order |
+|---|---|---|---|
+| T2-A | 9 | the 7 own papers + the 2 `Energy`-folder papers (DRV-0097, DRV-0099) | the own set carries the §9.7 attributions and must be read before the external papers so the comparison runs source → group, not group → source |
+| T2-B | 9 | imperfect-boundary pair (DRV-0094, DRV-0095), flexo pair (DRV-0090, DRV-0093), nonlocal-interface (DRV-0123), `New-piezo` pair (DRV-0157, DRV-0158), `Reflection+piezo` pair (DRV-0167, DRV-0168) | the §9.3 interface-condition material; these are the papers that decide whether the manuscript's boundary conditions are stated correctly |
+| T2-C | 8 | `Mendeley` set (DRV-0141, 0144, 0146/0147), `Used-in-P11` pair (0223, 0224), `R-Poonia-Sir` (0181), `Collected-from-My-Folders` (0341) | left-overs, plus the remainder of the reference-transfer set |
+
+**What each tier-2 row must record, beyond the ten columns.** For every paper: (a) the **energy-ratio definition as printed** — whether each ratio is a flux ratio, a work ratio, or a modal energy ratio, and whether cross/interaction terms are defined; (b) whether the paper prints an **exact identity** (like DRV-0040 eq (6.14) and DRV-0179 eq (80)) or an **approximate/numerical unity statement** (like the five B06 own-group papers); (c) for the imperfect-boundary papers, the printed form of the interface condition (spring stiffness, mass layer, or displacement/temperature jump) with its equation number.
+
+**Deliverable.** One `V-B10d_t2x.md` per batch plus a consolidated table in `V-B10d_summary.md`: paper → printed identity or approximation → equation number → section. That table is what §9.7 and §10.5 need, and it is the honest replacement for the current situation in which the manuscript's unity statement rests on two printed identities and a cluster of approximations.
+
+## 15. Tier-3 plan — metadata-only pass (B10e), 274 files
+
+**Scope, stated narrowly.** Title page and printed DOI only. **No body is read, no equation is recorded, no `FULLTEXT_FACTS` row is created.** The purpose is bookkeeping: find out what is in the library, which of it is already in `LITERATURE_BASE`, and which of it is own-group work. Nothing produced here may be cited as a literature fact — a title page tells you what a paper is, never what it says.
+
+**Output.** A new file `verification/DRIVE_TIER3_METADATA.csv`, one row per file, columns:
+
+| column | content |
+|---|---|
+| `inv_id` | from `DRIVE_INVENTORY.csv` |
+| `file_name` | as filed |
+| `first_author` | surname only, as printed on the title page |
+| `journal` | as printed (book chapter / thesis / report flagged as such) |
+| `year` | as printed |
+| `DOI` | as printed on the title page or copyright line; **blank if not printed** — never resolved from a search engine, because a resolved DOI is no longer a title-page fact |
+| `match_status` | `IN_BASE` / `NEW` / `AMBIGUOUS` / `UNREADABLE` / `NO_TITLE_PAGE` |
+| `lit_id` | `LITERATURE_BASE` id when `IN_BASE`, else blank |
+| `own_paper` | `Y` / `N` / `UNKNOWN`, from the folder and the author string |
+| `evidence` | the literal title-page line the metadata came from (≤120 chars) |
+| `notes` | only for exceptions |
+
+**Method.**
+
+1. Batches of **~35 files** (8 batches). Download 35 at a time, md5 all of them, extract only page 1 (and page 2 when page 1 is a repository cover sheet, which happened repeatedly in tier 1). Delete the batch before the next.
+2. **Match to `LITERATURE_BASE` by DOI first, then by `first_author + year + journal`.** A name-only match is `AMBIGUOUS`, never `IN_BASE` — the tier-1 lesson is that a plausible file name can describe a different paper, and the same applies to a plausible author/year pair.
+3. **Unreadable title pages are recorded, not guessed.** `UNREADABLE` means the extracted page 1 has no title line (scanned image, math-font garbling, cover sheet with no bibliographic data); `NO_TITLE_PAGE` means the file is not a paper at all (statistics, LaTeX source, figure lists).
+4. **A DOI collision inside tier 3 is itself a result** — that is how DRV-0190 was found — so duplicates are recorded in `notes` and counted, not silently merged.
+5. **Own-group files get no special treatment here.** They are flagged and counted; whether they are cited is a §14 question, not a metadata question.
+
+**Deliverable and acceptance.** `V-B10e.md` with a reconciliation table: 274 = `IN_BASE` + `NEW` + `AMBIGUOUS` + `UNREADABLE` + `NO_TITLE_PAGE` + duplicates, with the residue named file by file. Plus one number that currently does not exist: **how many of the 274 are already in the bibliography**, and how many are own-group work that is not.
+
+**Explicit limits, so this pass cannot be mistaken for reading.**
+
+* No claim from this pass goes into the manuscript. A tier-3 file that later turns out to matter must be promoted and read under the tier-1 rules before any statement rests on it.
+* `read_level` in `DRIVE_PRIORITY.csv` becomes `METADATA-ONLY` for these rows — deliberately distinct from `FULL` and from `NONE`, so the two can never be confused in a later audit.
+* No folder that the privacy rule protects is named in the CSV, the V-file, or here; own-group files are referenced by `inv_id` and file name only.
+* `LITERATURE_BASE` is **not** extended from this pass. Adding a row requires either a read (tier 1) or an explicit decision to keep a candidate — the pass produces candidates, not entries.
+
+**Estimated cost.** 8 batches, one turn each, same shape as a tier-1 batch but roughly a third of the per-paper work. Stops on request at any batch boundary.
