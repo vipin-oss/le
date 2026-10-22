@@ -19,6 +19,13 @@ checks = {
 }
 failed = False
 check_counts: dict[str, int] = {}
+layout_warning_checks = {
+    "duplicate page.1 destinations": r"(?i)destination with the same identifier \(name\{page\.1\}\) has been already used",
+    "PDF-string token warnings": r"Token not allowed in a PDF string",
+    "h-float specifier warnings": r"`h' float specifier changed to `ht'",
+    "underfull hboxes": r"Underfull \\hbox",
+    "underfull vboxes": r"Underfull \\vbox",
+}
 for name, pattern in checks.items():
     hits = re.findall(pattern, text)
     check_counts[name] = len(hits)
@@ -27,6 +34,10 @@ for name, pattern in checks.items():
         failed = True
         for hit in hits[:12]:
             print("  ", hit.strip() if isinstance(hit, str) else hit)
+
+print("nonfatal layout warning inventory:")
+for name, pattern in layout_warning_checks.items():
+    print(f"  {name}: {len(re.findall(pattern, text))}")
 
 # Treat material horizontal or vertical overflow above 1 pt as a proofing failure.
 boxes: list[tuple[str, float, int, str, str, str]] = []
@@ -48,12 +59,13 @@ for kind, pattern in (
                     source = source_match.group(0)
                     break
             warning = log_lines[index]
-            source_lines = re.search(r"at lines ([0-9]+--[0-9]+)", warning)
+            nearby_text = "\n".join(log_lines[max(0, index - 3):min(len(log_lines), index + 12)])
+            source_lines = re.search(r"at lines ([0-9]+--[0-9]+)", nearby_text)
             source_range = source_lines.group(1) if source_lines else "?"
             context = " / ".join(
-                item.strip() for item in log_lines[index:index + 4] if item.strip()
+                item.strip() for item in log_lines[max(0, index - 2):min(len(log_lines), index + 10)] if item.strip()
             )
-            boxes.append((kind, size, line, source, source_range, context[:120]))
+            boxes.append((kind, size, line, source, source_range, context[:220]))
 print(f"overfull hboxes/vboxes > 1 pt: {len(boxes)}")
 by_source: dict[str, list[tuple[str, float, int, str, str, str]]] = {}
 for box in boxes:
@@ -62,20 +74,20 @@ source_details = []
 for source, entries in sorted(by_source.items(), key=lambda item: (-len(item[1]), item[0]))[:30]:
     worst = max(entries, key=lambda entry: entry[1])
     source_details.append(
-        f"{source}={len(entries)} (max {worst[1]:.1f}pt at {worst[4]}; {worst[5][:24]})"
+        f"{source}={len(entries)} (max {worst[1]:.1f}pt at {worst[4]}; {worst[5][:100]})"
     )
 if source_details:
     print("overfull by source: " + " | ".join(source_details))
 if len(boxes) <= 50:
     details = [
-        f"{Path(source).name}:{source_range} +{size:.1f}pt {excerpt[:34]}"
+        f"{Path(source).name}:{source_range} +{size:.1f}pt {excerpt[:220]}"
         for _kind, size, _line, source, source_range, excerpt in boxes
     ]
     print("all overfull details: " + " | ".join(details))
 worst_overall = sorted(boxes, key=lambda entry: entry[1], reverse=True)[:8]
 if worst_overall:
     print("largest overfull boxes: " + " | ".join(
-        f"{Path(source).name}:{source_range} +{size:.1f}pt {excerpt[:30]}"
+        f"{Path(source).name}:{source_range} +{size:.1f}pt {excerpt[:220]}"
         for _kind, size, _line, source, source_range, excerpt in worst_overall
     ))
 if boxes:
