@@ -62,7 +62,7 @@ if grep -qvE '^(name|[-[:space:]]|$)' build/pdffonts.txt; then
     echo "All reported PDF fonts are embedded."
   else
     echo "ERROR: at least one font is not embedded." >&2
-    exit 1
+    false
   fi
 fi
 printf 'Build complete: %s\n' "$ROOT/master/build/main.pdf"

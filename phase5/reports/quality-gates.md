@@ -4,7 +4,7 @@
 
 - **Static structure checks:** passed for duplicate labels (0), unresolved reference labels (0), duplicate bibliography keys (0), missing citation keys (0), missing `\input`/`\include` files (0), missing bibliography files (0), and missing figure assets (0). Inventory: 37 TeX files (430 labels, 293 reference commands, 222 citation calls).
 - **Figure assets:** 18/18 PDFs generated from 18/18 parseable SVGs; vector drawing operators and extractable text confirmed. Contact-sheet overview reviewed. Individual final-size visual proof, caption match, scientific content, and license/source provenance remain open.
-- **LaTeX compilation:** no successful build. Local TeX tools are absent; three strict GitHub attempts (`39728213927`, `39728597464`, `39728900152`) failed in the combined build step with exit 12. Annotations showed unresolved citation/reference warnings; exact final failure is unknown because signed logs could not be downloaded. The revised explicit pdfLaTeX/BibTeX pipeline is not yet tested. No v1.1 PDF was produced.
+- **LaTeX compilation:** no successful build. Local TeX tools are absent; four strict GitHub attempts failed (`39728213927`, `39728597464`, `39728900152` exit 12; `39729338751` exit 1). The latest used explicit pdfLaTeX/BibTeX; signed log and artifact downloads returned EOF, leaving the failing stage unknown. Earlier annotations showed unresolved citation/reference warnings. No v1.1 PDF was produced.
 - **PDF inspection:** v1.0 baseline surveyed at overview scale only; no v1.1 PDF exists, so v1.1 page/text/box/font checks are NOT RUN.
 - **Strict warnings/cross-reference/BibTeX pass:** NOT PASSED. Static source scans are not a LaTeX or BibTeX build.
 
