@@ -1,1 +1,5 @@
 phase4/literature/incoming/*.pdf
+
+# Local tool dependencies and generated TeX build products
+**/node_modules/
+phase5/master/build/

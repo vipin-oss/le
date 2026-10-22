@@ -1,0 +1,41 @@
+%======================================================================
+% Appendix C: Benchmark specifications and execution status
+%======================================================================
+\section{Benchmark Specifications and Status}
+\label{app:benchmarks}
+
+The entries below are proposed reproducibility targets, not reported computational results. No benchmark was executed in this revision. In particular, the inherited “VERIFIED” labels and published numerical values have been removed; a mathematical expectation is not a reproduced benchmark.
+
+\subsection{BM-1: Classical elastic interface}
+
+\textbf{Problem:} Plane P-wave incident on a perfectly bonded interface between two elastic half-spaces.
+
+\textbf{Governing equations:} Navier equations for the stated isotropic elastic model in each medium. Specify densities, Lam\'e moduli, incidence angle, normal orientation, and amplitude normalization before computing coefficients.
+
+\textbf{Expected check:} For a lossless passive interface, evaluate the complete time-averaged normal flux and verify conservation after all propagating channels and any relevant cross terms are included. The shorthand $R_P+T_P=1$ is conditional on a single uncoupled channel and consistent flux normalization.
+
+\textbf{Status:} SPECIFIED, NOT EXECUTED. No numerical value is asserted.
+
+\subsection{BM-2: Classical thermoelastic interface}
+
+\textbf{Problem:} Coupled thermoelastic wave at a welded interface.
+
+\textbf{Status:} OPEN. Requires model-specific coupled flux, boundary data, and primary-source comparison; no benchmark values supplied.
+
+\subsection{BM-3: Piezothermoelastic interface}
+
+\textbf{Problem:} Coupled elastic, thermal, and quasistatic electrical fields at an interface.
+
+\textbf{Status:} OPEN. Inherited scattering-matrix equations and energy ratios attributed to the cited literature were not rederived or independently checked in this revision. The cited publication is a source lead only, not a reproduction record.
+
+\subsection{BM-4: One-dimensional nonlocal elastic dispersion}
+
+\textbf{Problem:} For the specific Helmholtz-type model stated in Section~\ref{sec:nonlocal}, compare the dispersion relation and its long- and short-wavelength limits with the classical bar.
+
+\textbf{Status:} ALGEBRAIC LIMITS DERIVED for the stated law; no numerical benchmark or independent implementation was produced. Boundary-power and interface checks remain open.
+
+\subsection{BM-5: Memory-dependent thermoelastic wave}
+
+\textbf{Problem:} Select a fully specified memory kernel and initial-boundary-value problem; compare a numerical solution with an independently derived reference solution.
+
+\textbf{Status:} OPEN. No kernel-specific benchmark data or reference solution is supplied in this version.

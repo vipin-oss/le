@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+  <defs>
+    <style>
+      .title { font: 700 16px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+      .subtitle { font: 12px 'DejaVu Sans', sans-serif; fill: #555; }
+      .label { font: 11px 'DejaVu Sans', sans-serif; fill: #333; }
+      .math { font: 12px 'DejaVu Sans', monospace; fill: #1a3a5c; }
+      .head { font: 700 12px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+      .node { fill: #f2f6fa; stroke: #1a3a5c; stroke-width: 1.4; rx: 6; }
+      .nodewarm { fill: #fdf3e7; stroke: #e67e22; stroke-width: 1.4; rx: 6; }
+      .nodecool { fill: #eaf2fa; stroke: #2980b9; stroke-width: 1.4; rx: 6; }
+      .lim { stroke: #2d6a2d; stroke-width: 1.8; fill: none; }
+      .ext { stroke: #888; stroke-width: 1.5; fill: none; stroke-dasharray: 5 4; }
+      .limlabel { font: 10px 'DejaVu Sans', sans-serif; fill: #2d6a2d; }
+    </style>
+    <marker id="a-lim" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0,0 8,4 0,8" fill="#2d6a2d"/>
+    </marker>
+    <marker id="a-ext" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0,0 8,4 0,8" fill="#888"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="650" fill="white"/>
+
+  <text x="500" y="26" class="title" text-anchor="middle">Relationships and limiting cases between thermoelastic theory families</text>
+  <text x="500" y="44" class="subtitle" text-anchor="middle">Solid arrows: schematic parameter limits; dashed arrows: conceptual extensions, not convergence theorems</text>
+
+  <!-- ============ classical base ============ -->
+  <rect x="360" y="500" width="280" height="70" rx="6" class="node"/>
+  <text x="500" y="524" class="head" text-anchor="middle">Classical coupled thermoelasticity</text>
+  <text x="500" y="542" class="math" text-anchor="middle" font-size="11">Fourier heat conduction, infinite thermal speed</text>
+  <text x="500" y="560" class="label" text-anchor="middle" font-size="10">Biot (1956) — classical reference; limits are model-specific</text>
+
+  <!-- ============ relaxation-time family ============ -->
+  <rect x="90" y="380" width="230" height="74" rx="6" class="node"/>
+  <text x="205" y="402" class="head" text-anchor="middle">Lord–Shulman</text>
+  <text x="205" y="420" class="math" text-anchor="middle" font-size="11">q + τ₀q̇ = −kT,ᵢ</text>
+  <text x="205" y="438" class="label" text-anchor="middle" font-size="10">one relaxation time, τ₀ &gt; 0</text>
+
+  <rect x="385" y="380" width="230" height="74" rx="6" class="node"/>
+  <text x="500" y="402" class="head" text-anchor="middle">Green–Lindsay</text>
+  <text x="500" y="420" class="math" text-anchor="middle" font-size="11">τ₀q̇ + q + τ_T Ṫ = −kT,ᵢ</text>
+  <text x="500" y="438" class="label" text-anchor="middle" font-size="10">temperature-rate terms; check admissibility by model</text>
+
+  <rect x="680" y="380" width="230" height="74" rx="6" class="node"/>
+  <text x="795" y="402" class="head" text-anchor="middle">Green–Naghdi II / III</text>
+  <text x="795" y="420" class="math" text-anchor="middle" font-size="11">thermal displacement α</text>
+  <text x="795" y="438" class="label" text-anchor="middle" font-size="10">type-specific energy claims require source checks</text>
+
+  <!-- ============ higher-order thermal laws ============ -->
+  <rect x="90" y="258" width="230" height="74" rx="6" class="nodewarm"/>
+  <text x="205" y="280" class="head" text-anchor="middle">Dual / triple phase-lag</text>
+  <text x="205" y="298" class="math" text-anchor="middle" font-size="11">q(t+τ_q) = −kT,ᵢ(t+τ_T)</text>
+  <text x="205" y="316" class="label" text-anchor="middle" font-size="10">parameter restrictions are model-dependent</text>
+
+  <rect x="385" y="258" width="230" height="74" rx="6" class="nodewarm"/>
+  <text x="500" y="280" class="head" text-anchor="middle">Moore–Gibson–Thompson</text>
+  <text x="500" y="298" class="math" text-anchor="middle" font-size="11">τq̈ + q̇ = −(k/ρc)∇(Ṫ + τT̈)</text>
+  <text x="500" y="316" class="label" text-anchor="middle" font-size="10">third order under stated law; stability is model-dependent</text>
+
+  <rect x="680" y="258" width="230" height="74" rx="6" class="nodewarm"/>
+  <text x="795" y="280" class="head" text-anchor="middle">Memory-dependent derivative</text>
+  <text x="795" y="298" class="math" text-anchor="middle" font-size="11">∫₀ᵗ α(τ) ∂̇T(t−τ) dτ</text>
+  <text x="795" y="316" class="label" text-anchor="middle" font-size="10">integral-form memory; kernel replaces the exponential</text>
+
+  <!-- ============ operator-level extensions ============ -->
+  <rect x="90" y="120" width="230" height="74" rx="6" class="nodecool"/>
+  <text x="205" y="142" class="head" text-anchor="middle">Fractional operators</text>
+  <text x="205" y="160" class="math" text-anchor="middle" font-size="11">ᴄDₜᵅT = a∇²T,&#160; 0 &lt; α ≤ 2</text>
+  <text x="205" y="178" class="label" text-anchor="middle" font-size="10">power-law memory kernel; α = 1 recovers Fourier</text>
+
+  <rect x="680" y="120" width="230" height="74" rx="6" class="nodecool"/>
+  <text x="795" y="142" class="head" text-anchor="middle">Nonlocal / gradient</text>
+  <text x="795" y="160" class="math" text-anchor="middle" font-size="11">(1 − ξ²∇²)σ = σ, ξ = e₀a</text>
+  <text x="795" y="178" class="label" text-anchor="middle" font-size="10">acts on the stress; introduces an internal length</text>
+
+  <rect x="385" y="120" width="230" height="74" rx="6" class="nodecool"/>
+  <text x="500" y="142" class="head" text-anchor="middle">Coupled-field extensions</text>
+  <text x="500" y="160" class="math" text-anchor="middle" font-size="11">piezo · magneto · poro · micropolar</text>
+  <text x="500" y="178" class="label" text-anchor="middle" font-size="10">add a field; leave the thermal law unchanged</text>
+
+  <!-- ============ limiting arrows ============ -->
+  <path d="M 205 452 L 205 498" class="lim" marker-end="url(#a-lim)"/>
+  <text x="212" y="480" class="limlabel">τ₀ → 0</text>
+
+  <path d="M 425 452 L 430 498" class="lim" marker-end="url(#a-lim)"/>
+  <text x="436" y="480" class="limlabel">τ₀, τ_T → 0</text>
+
+  <path d="M 795 452 L 690 498" class="lim" marker-end="url(#a-lim)"/>
+  <text x="800" y="480" class="limlabel">α → 0</text>
+
+  <path d="M 205 256 L 205 256" class="lim"/>
+  <path d="M 205 332 L 205 378" class="lim" marker-end="url(#a-lim)"/>
+  <text x="212" y="360" class="limlabel">τ_q, τ_T → 0</text>
+
+  <path d="M 500 256 L 500 256" class="lim"/>
+  <path d="M 500 332 L 500 378" class="lim" marker-end="url(#a-lim)"/>
+  <text x="507" y="360" class="limlabel">thermal inertia → 0</text>
+
+  <path d="M 795 256 L 795 256" class="lim"/>
+  <path d="M 795 332 L 795 378" class="lim" marker-end="url(#a-lim)"/>
+  <text x="802" y="360" class="limlabel">kernel → 1</text>
+
+  <!-- extension arrows -->
+  <path d="M 205 256 L 205 196" class="ext" marker-end="url(#a-ext)"/>
+  <text x="212" y="228" class="label" font-size="10" fill="#666">temporal memory</text>
+
+  <path d="M 795 256 L 795 196" class="ext" marker-end="url(#a-ext)"/>
+  <text x="802" y="228" class="label" font-size="10" fill="#666">spatial memory</text>
+
+  <path d="M 500 196 L 500 196" class="ext"/>
+  <path d="M 425 178 L 340 300" class="ext" marker-end="url(#a-ext)"/>
+  <path d="M 575 178 L 660 300" class="ext" marker-end="url(#a-ext)"/>
+
+  <!-- ============ legend ============ -->
+  <rect x="45" y="590" width="910" height="48" rx="6" class="panel" fill="none" stroke="#c8d2dc" stroke-width="1.2"/>
+  <text x="70" y="610" class="label" font-size="10">Solid green arrow: proposed limiting relation; the reduction must be checked model by model.</text>
+  <text x="70" y="628" class="label" font-size="10">Dashed grey arrow: conceptual extension. The arrows do not establish a rigorous limit theorem.</text>
+  <text x="70" y="642" class="label" font-size="10"></text>
+</svg>

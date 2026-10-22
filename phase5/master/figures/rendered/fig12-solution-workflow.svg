@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="700" viewBox="0 0 1100 700">
+  <defs>
+    <style>
+      .title { font: 700 16px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+      .subtitle { font: 12px 'DejaVu Sans', sans-serif; fill: #555; }
+      .label { font: 11px 'DejaVu Sans', sans-serif; fill: #333; }
+      .box-text { font: 11px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+      .box { fill: #eef3f8; stroke: #1a3a5c; stroke-width: 1.5; rx: 6; ry: 6; }
+      .box-alt { fill: #f0f8e8; stroke: #2d6a2d; stroke-width: 1.5; rx: 6; ry: 6; }
+      .arrow { stroke: #1a3a5c; stroke-width: 2; fill: none; marker-end: url(#arrow-flow); }
+      .arrow-alt { stroke: #2d6a2d; stroke-width: 2; fill: none; marker-end: url(#arrow-flow-alt); }
+      .decision { fill: #fdf3e0; stroke: #c07c00; stroke-width: 1.5; rx: 4; ry: 4; }
+    </style>
+    <marker id="arrow-flow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <polygon points="0,0 9,4.5 0,9" fill="#1a3a5c"/>
+    </marker>
+    <marker id="arrow-flow-alt" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <polygon points="0,0 9,4.5 0,9" fill="#2d6a2d"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="700" fill="white"/>
+
+  <text x="550" y="28" class="title" text-anchor="middle">Solution workflow for wave propagation problems</text>
+  <text x="550" y="46" class="subtitle" text-anchor="middle">From governing equations to energy flux computation (Sections 8, 9, 10)</text>
+
+  <!-- Step 1: Governing equations -->
+  <rect x="50" y="80" width="200" height="70" class="box"/>
+  <text x="150" y="100" class="box-text" text-anchor="middle" font-weight="bold">Step 1</text>
+  <text x="150" y="118" class="box-text" text-anchor="middle">Governing equations</text>
+  <text x="150" y="133" class="box-text" text-anchor="middle">Balance laws + constitutive</text>
+
+  <!-- Step 2: Plane wave ansatz -->
+  <rect x="300" y="80" width="200" height="70" class="box"/>
+  <text x="400" y="100" class="box-text" text-anchor="middle" font-weight="bold">Step 2</text>
+  <text x="400" y="118" class="box-text" text-anchor="middle">Plane wave ansatz</text>
+  <text x="400" y="133" class="box-text" text-anchor="middle">e<sup>i(k·x - ωt)</sup></text>
+
+  <!-- Step 3: Christoffel equation -->
+  <rect x="550" y="80" width="200" height="70" class="box"/>
+  <text x="650" y="100" class="box-text" text-anchor="middle" font-weight="bold">Step 3</text>
+  <text x="650" y="118" class="box-text" text-anchor="middle">Christoffel equation</text>
+  <text x="650" y="133" class="box-text" text-anchor="middle">det[Γ - ρc<sup>2</sup>I] = 0</text>
+
+  <!-- Step 4: Solve secular equation -->
+  <rect x="800" y="80" width="250" height="70" class="box"/>
+  <text x="925" y="100" class="box-text" text-anchor="middle" font-weight="bold">Step 4</text>
+  <text x="925" y="118" class="box-text" text-anchor="middle">Secular equation</text>
+  <text x="925" y="133" class="box-text" text-anchor="middle">Characteristic polynomial</text>
+
+  <!-- Arrows row 1 -->
+  <line x1="250" y1="115" x2="300" y2="115" class="arrow"/>
+  <line x1="500" y1="115" x2="550" y2="115" class="arrow"/>
+  <line x1="750" y1="115" x2="800" y2="115" class="arrow"/>
+
+  <!-- Step 5: Classify modes -->
+  <rect x="50" y="220" width="200" height="70" class="box"/>
+  <text x="150" y="240" class="box-text" text-anchor="middle" font-weight="bold">Step 5</text>
+  <text x="150" y="258" class="box-text" text-anchor="middle">Classify modes</text>
+  <text x="150" y="273" class="box-text" text-anchor="middle">Propagating / evanescent</text>
+
+  <!-- Step 6: Normalize modes -->
+  <rect x="300" y="220" width="200" height="70" class="box"/>
+  <text x="400" y="240" class="box-text" text-anchor="middle" font-weight="bold">Step 6</text>
+  <text x="400" y="258" class="box-text" text-anchor="middle">Modal normalization</text>
+  <text x="400" y="273" class="box-text" text-anchor="middle">Energy flux normalization</text>
+
+  <!-- Step 7: Interface conditions -->
+  <rect x="550" y="220" width="200" height="70" class="box"/>
+  <text x="650" y="240" class="box-text" text-anchor="middle" font-weight="bold">Step 7</text>
+  <text x="650" y="258" class="box-text" text-anchor="middle">Interface conditions</text>
+  <text x="650" y="273" class="box-text" text-anchor="middle">Displacement, traction, T, q</text>
+
+  <!-- Step 8: Compute energy flux -->
+  <rect x="800" y="220" width="250" height="70" class="box-alt"/>
+  <text x="925" y="240" class="box-text" text-anchor="middle" font-weight="bold">Step 8</text>
+  <text x="925" y="258" class="box-text" text-anchor="middle">Energy flux</text>
+  <text x="925" y="273" class="box-text" text-anchor="middle">J<sub>i</sub> = σ<sub>ji</sub>v<sub>i</sub> + q<sub>i</sub></text>
+
+  <!-- Arrows row 2 -->
+  <line x1="250" y1="255" x2="300" y2="255" class="arrow"/>
+  <line x1="500" y1="255" x2="550" y2="255" class="arrow"/>
+  <line x1="750" y1="255" x2="800" y2="255" class="arrow"/>
+
+  <!-- Step 9: Energy ratios -->
+  <rect x="250" y="360" width="200" height="70" class="box"/>
+  <text x="350" y="380" class="box-text" text-anchor="middle" font-weight="bold">Step 9</text>
+  <text x="350" y="398" class="box-text" text-anchor="middle">Energy ratios</text>
+  <text x="350" y="413" class="box-text" text-anchor="middle">R + T + A = 1</text>
+
+  <!-- Step 10: Validate -->
+  <rect x="650" y="360" width="200" height="70" class="box-alt"/>
+  <text x="750" y="380" class="box-text" text-anchor="middle" font-weight="bold">Step 10</text>
+  <text x="750" y="398" class="box-text" text-anchor="middle">Validate</text>
+  <text x="750" y="413" class="box-text" text-anchor="middle">BM-1 benchmark</text>
+
+  <!-- Arrows row 3 -->
+  <line x1="300" y1="430" x2="350" y2="360" class="arrow"/>
+  <line x1="700" y1="430" x2="650" y2="360" class="arrow"/>
+
+  <!-- Feedback loop -->
+  <path d="M 800 290 L 800 430 L 700 430" class="arrow"/>
+  <text x="810" y="360" class="label" font-size="10" fill="#2d6a2d">Iterate for convergence</text>
+
+  <!-- Notes -->
+  <rect x="50" y="480" width="1000" height="180" class="box"/>
+  <text x="65" y="498" class="box-title">Method notes</text>
+  <text x="65" y="518" class="label" font-size="10">Steps 1-4: Formulate the boundary-value problem and derive the dispersion relation.</text>
+  <text x="65" y="533" class="label" font-size="10">Steps 5-6: Solve for wave modes and normalize consistently for energy flux computation.</text>
+  <text x="65" y="548" class="label" font-size="10">Step 7: Apply interface conditions (perfect or imperfect bonding, electrical conditions for piezoelectric media).</text>
+  <text x="65" y="563" class="label" font-size="10">Step 8: Compute energy flux J<sub>i</sub> = σ<sub>ji</sub>v<sub>i</sub> + q<sub>i</sub> for each mode.</text>
+  <text x="65" y="578" class="label" font-size="10">Steps 9-10: Compute energy ratios and validate against benchmarks (BM-1; interface energy ratios of Barak et al.).</text>
+  <text x="65" y="593" class="label" font-size="10">Generalized theories require additional flux terms (Section 10.3).</text>
+  <text x="65" y="608" class="label" font-size="10">Complex modes require careful normalization (Section 8.5, Challenge 15.5).</text>
+</svg>

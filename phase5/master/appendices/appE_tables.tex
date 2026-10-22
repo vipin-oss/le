@@ -1,0 +1,30 @@
+%======================================================================
+% Appendix E: Table sources and audit status
+%======================================================================
+\section{Table Source Inventory and Audit Status}
+\label{app:tables}
+
+The eight principal comparison tables are editable LaTeX sources in \texttt{../tables/source/}. They are included by the master manuscript from that directory. This register records source location and current review status; it does not certify every entry. The energy-transport table was rewritten to avoid presenting unverified generalized flux formulae as canonical. Other tables contain inherited entries whose references, dimensions, counts, and assumptions still require row-by-row audit.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Principal comparison-table inventory; source-level audit remains incomplete.}
+\label{tab:appE-tables}
+\begin{tabularx}{\textwidth}{@{}lXlX@{}}
+\toprule
+\textbf{ID} & \textbf{Source file} & \textbf{Primary section} & \textbf{Status} \\
+\midrule
+T-01 & \texttt{T1\_historical\_development.tex} & 4 & Rewritten as provisional metadata/source leads; claim-level checks open \\
+T-02 & \texttt{T2\_generalized\_thermoelastic.tex} & 4 & Rewritten as broad model classes; equation-level checks open \\
+T-03 & \texttt{T3\_coupled\_multiphysics.tex} & 5 & Caveated; couplings and cited equations not row-audited \\
+T-04 & \texttt{T4\_wave\_types.tex} & 3 & One universal mode claim narrowed; remaining entries open \\
+T-05 & \texttt{T5\_solution\_techniques.tex} & 8 & Caveated; methods and source claims not independently checked \\
+T-06 & \texttt{T6\_interface\_configurations.tex} & 9 & Caveated; conditions require model-specific review \\
+T-07 & \texttt{T7\_energy\_transport.tex} & 10 & Rewritten; generalized entries explicitly OPEN \\
+T-08 & \texttt{T8\_applications\_validation.tex} & 13 & Rewritten as evidence questions; no validation score assigned \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+A release audit must check each cell against the cited source, preserve units and tensor conventions, verify inventory counts and labels against the underlying data, and inspect the compiled table for legibility and overflow. The source has not been typeset in this revision, so table-rendering and editorial gates remain OPEN.

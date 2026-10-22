@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Selected generalized thermoelastic model classes. The table records broad constitutive distinctions; propagation, admissibility, and energy-flux claims require model-specific primary-source checks.}
+\label{tab:T2-generalized}
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}
+\toprule
+\textbf{Model class} & \textbf{Broad constitutive feature} & \textbf{Status in this revision} & \textbf{Source lead} \\
+\midrule
+Classical coupled thermoelasticity & Fourier heat flux coupled to mechanical balance & Classical local flux derived; equation set not wholly re-audited & \cite{Biot1956} \\
+Lord--Shulman & Heat-flux relaxation & Standard form shown; primary-source equation check pending & \cite{Lord1967} \\
+Green--Lindsay & Temperature-rate-dependent, single-temperature formulation with two relaxation parameters & Corrected description; full equations and admissibility unverified & \cite{Green1972} \\
+Green--Naghdi II/III & Thermal-displacement formulations; type-specific distinctions & Model-specific thermodynamic claims unverified & \cite{Green1991,Green1993} \\
+Dual/triple phase lag & Lagged constitutive formulations & Exact expansions and parameter restrictions unverified & \cite{Tzou1995,Tzou1997} \\
+Moore--Gibson--Thompson & Higher-order thermal evolution variants & Variant-specific equations and stability open & \cite{Quintanilla2019} \\
+Memory-dependent & Kernel-based/history-dependent heat transport & Operator and limiting behavior not full-text-checked & \cite{Wang2011} \\
+Fractional scalar diffusion--wave example & Caputo time derivative in the displayed scalar equation; not by itself a coupled thermoelastic model & Order-dependent coefficient units stated; embedding, initial data, and admissibility open & \cite{Povstenko2004,Povstenko2009} \\
+\bottomrule
+\multicolumn{4}{@{}l}{\footnotesize No universal finite-speed, dissipation, stability, or well-posedness result is inferred from a family label.}\\
+\multicolumn{4}{@{}l}{\footnotesize Generalized energy-flux identities remain OPEN unless individually derived from the selected model.}\\
+\end{tabularx}
+\end{table}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+  <defs>
+    <style>
+      .title { font: 700 16px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+      .subtitle { font: 12px 'DejaVu Sans', sans-serif; fill: #555; }
+      .label { font: 11px 'DejaVu Sans', sans-serif; fill: #333; }
+      .math { font: 12px 'DejaVu Sans', monospace; fill: #1a3a5c; }
+      .head { font: 700 12px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+      .axis { stroke: #444; stroke-width: 1.4; fill: none; }
+      .kernel { stroke: #2d6a2d; stroke-width: 2.5; fill: none; }
+      .kernelfill { fill: #d6ead6; opacity: 0.8; }
+      .panel { fill: none; stroke: #c8d2dc; stroke-width: 1.2; }
+      .box { fill: #f2f6fa; stroke: #1a3a5c; stroke-width: 1.2; }
+      .warn { fill: #fdf3e7; stroke: #e67e22; stroke-width: 1.3; }
+      .tline { stroke: #1a3a5c; stroke-width: 2.2; fill: none; }
+      .dash { stroke: #888; stroke-width: 1.5; fill: none; stroke-dasharray: 6 4; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="650" fill="white"/>
+
+  <text x="500" y="26" class="title" text-anchor="middle">The memory-dependent derivative: convolution over a finite time horizon with kernel weighting</text>
+  <text x="500" y="44" class="subtitle" text-anchor="middle">The history of the field enters through a weighted integral, and the weights are a modelling choice rather than a single parameter</text>
+
+  <!-- ================= LEFT: the operator ================= -->
+  <rect x="45" y="66" width="470" height="300" rx="6" class="panel"/>
+  <text x="280" y="88" class="head" text-anchor="middle">The operator and its kernel</text>
+
+  <rect x="66" y="100" width="428" height="58" rx="4" class="box"/>
+  <text x="280" y="124" class="math" text-anchor="middle" font-size="11">Ḋᵢ(x,t) = (1/τ) ∫₀ᵗ α(τ′) ∂̇Vᵢ(x, t − τ′) dτ′</text>
+  <text x="280" y="144" class="label" text-anchor="middle" font-size="10">α is the memory kernel with α(0) = 1; the exponential kernel recovers the Cattaneo relaxation</text>
+
+  <!-- kernel shape -->
+  <line x1="90" y1="320" x2="480" y2="320" class="axis"/>
+  <path d="M 90 320 C 130 320, 165 190, 230 190 C 300 190, 340 250, 480 300" class="kernelfill"/>
+  <path d="M 90 320 C 130 320, 165 190, 230 190 C 300 190, 340 250, 480 300" class="kernel"/>
+  <text x="120" y="184" class="label" font-size="11" fill="#2d6a2d">α(τ′)</text>
+  <text x="470" y="338" class="label" font-size="10" text-anchor="end">τ′ (time lag)</text>
+  <text x="100" y="308" class="label" font-size="10">τ′ = 0</text>
+  <text x="285" y="268" class="label" font-size="10" fill="#666">weight decays with the lag: recent history counts most</text>
+
+  <text x="280" y="356" class="label" text-anchor="middle" font-size="10">A memory-dependent derivative is a temporal operator: the response at t depends on the whole past,</text>
+  <text x="280" y="370" class="label" text-anchor="middle" font-size="10">not only on the instantaneous state. Its kernel is a free modelling choice.</text>
+
+  <!-- ================= RIGHT: the history / horizon ================= -->
+  <rect x="535" y="66" width="420" height="300" rx="6" class="panel"/>
+  <text x="745" y="88" class="head" text-anchor="middle">Horizon and the classical limit</text>
+
+  <line x1="580" y1="250" x2="910" y2="250" class="axis"/>
+  <line x1="580" y1="250" x2="580" y2="130" class="axis"/>
+  <text x="905" y="268" class="label" font-size="10" text-anchor="end">time t</text>
+  <text x="586" y="138" class="label" font-size="10">∂̇V</text>
+
+  <!-- history curve -->
+  <path d="M 600 230 C 630 210, 650 190, 680 176 C 710 162, 740 158, 770 156" class="tline"/>
+  <path d="M 770 156 C 810 155, 850 154, 880 154" class="dash"/>
+
+  <!-- integration window -->
+  <rect x="600" y="140" width="170" height="96" fill="#d6ead6" opacity="0.45" stroke="#2d6a2d" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="685" y="228" class="label" font-size="10" fill="#2d6a2d" text-anchor="middle">memory window (horizon)</text>
+
+  <line x1="770" y1="140" x2="770" y2="236" class="axis"/>
+  <text x="775" y="132" class="label" font-size="10">t</text>
+  <text x="596" y="252" class="label" font-size="10">t − t_m</text>
+
+  <text x="745" y="296" class="label" text-anchor="middle" font-size="10">The horizon may be finite (truncated memory) or infinite (full fading memory);</text>
+  <text x="745" y="310" class="label" text-anchor="middle" font-size="10">the truncated form is the one that admits a finite-dimensional state-space realization.</text>
+
+  <rect x="558" y="322" width="374" height="32" rx="4" class="box"/>
+  <text x="745" y="336" class="math" text-anchor="middle" font-size="11">kernel → exponential (τ_Q) : Cattaneo / Lord–Shulman</text>
+  <text x="745" y="350" class="label" text-anchor="middle" font-size="10">kernel → power law : fractional operator,  ᴄDₜᵅ</text>
+
+  <!-- ================= BOTTOM: consequences ================= -->
+  <rect x="45" y="392" width="910" height="212" rx="6" class="panel"/>
+  <text x="500" y="414" class="head" text-anchor="middle">What the memory operator changes in the wave problem</text>
+
+  <rect x="70" y="430" width="270" height="150" rx="5" class="box"/>
+  <text x="205" y="452" class="head" text-anchor="middle">1 · A genuine second sound</text>
+  <text x="84" y="474" class="label">Any kernel with a non-zero first</text>
+  <text x="84" y="490" class="label">moment gives a hyperbolic thermal</text>
+  <text x="84" y="506" class="label">equation and therefore a thermal wave</text>
+  <text x="84" y="522" class="label">of finite speed, with a dispersion</text>
+  <text x="84" y="538" class="label">that the kernel determines.</text>
+  <text x="84" y="562" class="math" font-size="11">c_T² = 2K(T₀)α₁/(ρc_v)</text>
+
+  <rect x="365" y="430" width="270" height="150" rx="5" class="box"/>
+  <text x="500" y="452" class="head" text-anchor="middle">2 · A non-local energy flux</text>
+  <text x="379" y="474" class="label">Because the stress depends on the</text>
+  <text x="379" y="490" class="label">history of the strain, the mechanical</text>
+  <text x="379" y="506" class="label">power at a point samples the past, and</text>
+  <text x="379" y="522" class="label">the energy flux acquires a hereditary</text>
+  <text x="379" y="538" class="label">term rather than a local one.</text>
+  <text x="379" y="562" class="math" font-size="11">Jᵢ = σⱼᵢvᵢ + qᵢ + Jᵢᴹᴰᴰ</text>
+
+  <rect x="660" y="430" width="270" height="150" rx="5" class="box"/>
+  <text x="795" y="452" class="head" text-anchor="middle">3 · A cost in solvability</text>
+  <text x="674" y="474" class="label">The convolution must be carried</text>
+  <text x="674" y="490" class="label">through the solution, so the</text>
+  <text x="674" y="506" class="label">discretization is history-dependent</text>
+  <text x="674" y="522" class="label">unless the kernel is realized in a</text>
+  <text x="674" y="538" class="label">finite-dimensional state space.</text>
+  <text x="674" y="562" class="label" font-size="10">quadrature and convolution-quadrature schemes</text>
+
+  <text x="500" y="636" class="label" text-anchor="middle" font-size="10">Original figure prepared for this review; the operator and the wave-speed relation are those of Section 6 and of Section 11.1.</text>
+</svg>

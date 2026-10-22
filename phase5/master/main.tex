@@ -1,0 +1,198 @@
+%======================================================================
+% Multiphysics Wave Mechanics in Generalized Continua:
+% A Constructive Review of Theory, Energy Transport, and Interface Phenomena
+%
+% Manuscript inventory: 17 numbered sections, 7 appendices, 18 unique figures, 8 tables.
+%
+% Branch: arena/40393d9f-le
+%======================================================================
+
+\documentclass[11pt,oneside]{article}
+
+%======================================================================
+% Packages
+%======================================================================
+\usepackage[a4paper,margin=1in,top=1.2in,bottom=1.2in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\graphicspath{{figures/source/}}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+
+%======================================================================
+% Hyperref setup
+%======================================================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=blue,
+    pdftitle={Multiphysics Wave Mechanics in Generalized Continua},
+    pdfauthor={Vipin Gupta},
+    pdfsubject={Review of generalized thermoelasticity, piezothermoelasticity, nonlocal and memory-dependent continua}
+}
+
+%======================================================================
+% Theorem environments
+%======================================================================
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{remark}{Remark}[section]
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{lemma}{Lemma}[section]
+
+%======================================================================
+% Custom commands
+%======================================================================
+\newcommand{\bm}[1]{\boldsymbol{#1}}
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\dt}{\frac{\partial}{\partial t}}
+\newcommand{\dtt}{\frac{\partial^2}{\partial t^2}}
+\newcommand{\divop}{\nabla \cdot}
+\newcommand{\grad}{\nabla}
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+\newcommand{\jump}[1]{\left[ #1 \right]}
+
+%======================================================================
+% Bibliography
+%======================================================================
+\bibliographystyle{plainnat}
+
+%======================================================================
+% Document
+%======================================================================
+\begin{document}
+
+%======================================================================
+% Front matter
+%======================================================================
+\input{frontmatter/titlepage}
+\input{frontmatter/abstract}
+\input{frontmatter/notation}
+\input{frontmatter/acronyms}
+
+\tableofcontents
+\newpage
+
+%======================================================================
+% Section 1: Review Scope and Purpose
+%======================================================================
+\input{sections/sec01_scope}
+
+%======================================================================
+% Section 2: Literature Strategy
+%======================================================================
+\input{sections/sec02_literature}
+
+%======================================================================
+% Section 3: Foundations of Continuum Wave Mechanics
+%======================================================================
+\input{sections/sec03_foundations}
+
+%======================================================================
+% Section 4: Classical and Generalized Thermoelastic Theories
+%======================================================================
+\input{sections/sec04_thermoelastic}
+
+%======================================================================
+% Section 5: Coupled Multiphysics Continua
+%======================================================================
+\input{sections/sec05_multiphysics}
+
+%======================================================================
+% Section 6: Generalized Transport and Memory Effects
+%======================================================================
+\input{sections/sec06_transport}
+
+%======================================================================
+% Section 7: Nonlocal and Scale-Dependent Continuum Models
+%======================================================================
+\input{sections/sec07_nonlocal}
+
+%======================================================================
+% Section 8: Mathematical Methods for Wave Propagation
+%======================================================================
+\input{sections/sec08_mathematical_methods}
+
+%======================================================================
+% Section 9: Reflection, Transmission, and Interface Phenomena
+%======================================================================
+\input{sections/sec09_interfaces}
+
+%======================================================================
+% Section 10: Energy Transport and Dissipation
+%======================================================================
+\input{sections/sec10_energy}
+
+%======================================================================
+% Section 11: Advanced Theoretical Developments
+%======================================================================
+\input{sections/sec11_advanced}
+
+%======================================================================
+% Section 12: Comparative Synthesis of Existing Research
+%======================================================================
+\input{sections/sec12_comparative}
+
+%======================================================================
+% Section 13: Applications of Multiphysics Wave Mechanics
+%======================================================================
+\input{sections/sec13_applications}
+
+%======================================================================
+% Section 14: Original Multidimensional Research Taxonomy
+%======================================================================
+\input{sections/sec14_taxonomy}
+
+%======================================================================
+% Section 15: Major Scientific Challenges
+%======================================================================
+\input{sections/sec15_challenges}
+
+%======================================================================
+% Section 16: Future Research Opportunities
+%======================================================================
+\input{sections/sec16_future}
+
+%======================================================================
+% Section 17: Conclusions and Scientific Outlook
+%======================================================================
+\input{sections/sec17_conclusions}
+
+%======================================================================
+% References
+%======================================================================
+\bibliography{references_local}
+
+%======================================================================
+% Appendices
+%======================================================================
+\appendix
+\input{appendices/appA_equation_register}
+\input{appendices/appB_balance_derivations}
+\input{appendices/appC_benchmarks}
+\input{appendices/appD_figures}
+\input{appendices/appE_tables}
+\input{appendices/appF_reproducibility}
+\input{appendices/energy_flux_derivations}
+
+\end{document}

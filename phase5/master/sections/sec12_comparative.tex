@@ -1,0 +1,196 @@
+%======================================================================
+% Section 12: Comparative Synthesis of Existing Research
+%======================================================================
+\section{Comparative Synthesis of Existing Research}
+\label{sec:comparative}
+
+This section synthesizes the reviewed research using a comparison framework that is deliberately organised by \emph{scientific content} rather than by chronology or by authorship. Three organising questions recur: what does each theory retain of the second law of thermodynamics; what replaces Fourier's constitutive law; and what does each theory predict for the speed, attenuation, and dispersion of the diffusive mode. A theory that answers these three questions differently is not a variant of another theory---it is a different claim about how heat is transported in solids, and the comparison below is organised to make those differences explicit.
+
+The synthesis is constructive throughout. Differences between theories are presented as modelling choices with different assumptions and different domains of validity, and the framework identifies the conditions under which two theories can be meaningfully compared at all.
+
+\subsection{Cross-theory comparison}
+\label{sec:12.1}
+
+Table~\ref{tab:twelve_criteria} compares the ten theory families against twelve criteria chosen so that each row isolates one axis of the taxonomy introduced in Section~\ref{sec:taxonomy}. The table is a compact index into the detailed treatments of Sections~\ref{sec:thermoelastic}--\ref{sec:advanced}; it is not a substitute for them, and several of its entries are deliberately coarse.
+
+\begin{table}[h]
+\centering
+\footnotesize
+\caption{Cross-theory comparison across ten theory families. Entries are the reviewer's synthesis of the primary sources; where a family admits genuinely different branches, the entry reflects the branch most widely used in the reviewed corpus.}
+\label{tab:twelve_criteria}
+\begin{tabularx}{\textwidth}{@{}lcccccccccc@{}}
+\toprule
+\textbf{Criterion} & \textbf{CD} & \textbf{LS} & \textbf{GL} & \textbf{GN-II} & \textbf{GN-III} & \textbf{DPL} & \textbf{TPL} & \textbf{MGT} & \textbf{MDD} & \textbf{Nonlocal} \\
+\midrule
+Thermal law & Fourier & Cattaneo & Cattaneo & Fourier & Cattaneo & Cattaneo & Cattaneo & Cattaneo & Cattaneo & Cattaneo \\
+State variables & 2 & 2 & 2 & 2 & 2 & 3 & 4 & 3 & 2 & 2 \\
+Characteristic time & --- & $\tau_0$ & $\tau_0,\tau_T$ & --- & $\tau_0$ & $\tau_q,\tau_T$ & $\tau_q,\tau_T,\tau_\nu$ & $\tau_T$ & $\tau$ (kernel) & $\tau$ (kernel) \\
+Characteristic length & --- & --- & --- & --- & --- & --- & --- & $\ell$ & $\ell$ & $\ell$ \\
+Thermal wave speed & $\infty$ & finite & finite & $\infty$ & finite & finite & finite & finite & finite & finite \\
+Dissipation & yes & yes & branch & no & yes & yes & yes & yes & kernel & yes \\
+Order in space & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 3 & 2 & 2 \\
+Mathematical structure & PDE & PDE & PDE & PDE & PDE & PDE & PDE & PDE & integro-PDE & integro-PDE \\
+Interface conditions & classical & classical & classical & classical & classical & classical & classical & classical & classical & modified \\
+Causality & no & yes & yes & yes & yes & yes & yes & yes & yes & yes \\
+Primary source & \cite{Biot1956} & \cite{Lord1967} & \cite{Green1972} & \cite{Green1991} & \cite{Green1993} & \cite{Tzou1995} & \cite{Tzou1997} & \cite{Quintanilla2019} & \cite{Wang2011} & \cite{Eringen1972} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Three of these rows carry most of the interpretive content.
+
+\paragraph{Thermal law and state variables.}
+The number of state variables is not by itself a reliable measure of the memory or modal structure of a theory. Local Fourier, relaxation, phase-lag, higher-order, hereditary, fractional, and spatially nonlocal laws use different state spaces and operators; one named family may also include multiple variants. For any comparison, the exact constitutive equations and field variables must be given. The table summarizes inherited descriptions and should be read as a preliminary map: its row-level claims have not all been checked against primary sources in this revision.
+
+\paragraph{Thermal wave speed and dissipation.}
+Propagation, dissipation, and stored energy depend on the precise equations and parameter regime; they cannot be ranked by family name alone. In particular, Green--Lindsay is not a two-temperature theory, and no universal classification of its dissipation or of Green--Naghdi type II/III energy conservation is asserted here. Claims about thermal-wave speed, second sound, parameter ordering, or conservative structure must be traced to the exact formulation and its thermodynamic assumptions. The corresponding table entries remain UNVERIFIED pending primary-source checks.
+
+\paragraph{Well-posedness and causality.}
+Finite propagation, causality, and well-posedness are separate properties. Fourier's parabolic heat equation has instantaneous mathematical support, while relaxation and thermal-displacement models may yield hyperbolic branches under particular constitutive assumptions. Phase-lag, fractional, memory, and nonlocal formulations require analysis of their actual operators, parameters, initial data, and boundary conditions. No general causal or well-posedness result, nor a universal phase-lag ordering condition, is established in this review.
+
+\subsection{What each family retains of the second law}
+\label{sec:12.2}
+
+Read across the table, the families separate not by their equations but by the answer they give to a single question: does the mechanical energy of the body have a well-defined conserved or monotonically decreasing value? The three structural answers are worth stating separately, because most of the apparent confusion in the wider literature comes from conflating them.
+
+\emph{Conservative structure.} In the Green--Naghdi type~II construction, the mechanical energy is an exact first integral of the equations \cite{Green1991}. This is a strong and desirable property: it guarantees that a disturbance does not pump energy into the medium indefinitely, and it makes the theory attractive for the analysis of interfaces and for the derivation of impedance conditions. Its price is that no mechanism dissipates the thermal degree of freedom; the temperature field is slaved to the mechanical one rather than being governed by an independent balance law.
+
+\emph{Dissipative structure.} In the Cattaneo--Christoff, Lord--Shulman, phase-lag, Moore--Gibson--Thompson, and memory-dependent families, the mechanical energy has a decay rate, and the heat equation supplies a genuine irreversibility \cite{Cattaneo1948,Lord1967,Tzou1995,Quintanilla2019,Wang2011}. These are the theories used for thermal-shock and thermal-stress applications, where the decay of energy is the physical effect of interest. Their price is that mechanical energy is no longer conserved and that the decay law must be postulated rather than derived.
+
+\emph{Neither.} The classical Biot theory falls outside both categories in the thermal variable, since the parabolic heat equation has infinite propagation speed and no finite energy associated with the transported heat \cite{Biot1956}. This is why the classical theory appears in the corpus mainly as the limit case against which the others are measured, and why the limiting procedures of Section~\ref{sec:12.3} are scientifically important rather than merely formal.
+
+\subsection{Mathematical relationships: limiting cases and specializations}
+\label{sec:12.3}
+
+Table~\ref{tab:limiting_cases_revisited} summarises the limiting relationships between the families. These relationships are the backbone of the theoretical development: each new family was constructed by generalising a specific constitutive law, and each is therefore expected to reduce to its parent when the generalising parameter is removed.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Limiting cases between thermoelastic theories, with the parameter that is taken to its limit and the sense of the limit.}
+\label{tab:limiting_cases_revisited}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}
+\toprule
+\textbf{From} & \textbf{To} & \textbf{Limit} & \textbf{What the limit removes} \\
+\midrule
+Lord--Shulman & Classical coupled & $\tau_0 \to 0$ & The thermal wave; the heat equation becomes parabolic again \\
+Green--Naghdi III & Lord--Shulman & $\tau_T \to 0$ with $\tau_0$ retained & One of the two relaxation times \\
+Dual phase-lag & Lord--Shulman & $\tau_q \to 0$ & The hyperbolic part of the phase-lag law \\
+Triple phase-lag & Dual phase-lag & $\tau_\nu \to 0$ & The thermal-displacement-gradient term \\
+Triple phase-lag & Classical coupled & all $\tau \to 0$ & Every relaxation mechanism simultaneously \\
+Moore--Gibson--Thompson & Triple phase-lag & thermal inertia parameter $\to 0$ & The second temperature field \\
+Memory-dependent + phase-lag & Phase-lag & $\tau_T=\tau_\nu=0$ & All memory except the phase-lag law \\
+Memory-dependent + phase-lag & Classical coupled & all $\tau \to 0$, kernel $\to 1$ & Every memory mechanism simultaneously \\
+Green--Naghdi II & Classical coupled & parameter limit with $\tau \to \infty$ & The thermal degree of freedom entirely \\
+Fractional order $\to 2$ & Classical coupled & $\alpha \to 2$ & Fractional differentiation; the Caputo operator becomes the second derivative \\
+Nonlocal length $\to 0$ & Local theory & $\ell \to 0$ & The nonlocal operator becomes the local gradient \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{On the status of these limits.}
+All the limiting procedures collected in Table~\ref{tab:limiting_cases_revisited} are parameter substitutions within a fixed formal framework. None of them is, in the reviewed corpus, supported by a convergence theorem with an error estimate: that is, there is no result of the form ``if the relaxation parameter is small, then the solution of the generalized problem converges to the solution of the classical problem at a rate bounded by $C\tau$'', with the constant and the norm made explicit. This is a genuine limitation of the current mathematical framework and is recorded as such in Section~\ref{sec:challenges}. It is not a defect of any individual publication; it reflects the fact that the theory-building and the theory-justifying activities have been carried out by different communities. It also has a practical consequence for the taxonomy of Section~\ref{sec:taxonomy}: the limiting relations are what make the families comparable at all, so the absence of rigorous limits removes the foundation on which a quantitative cross-family comparison would rest.
+
+\subsection{Divergence map: why results differ across the corpus}
+\label{sec:12.4}
+
+The literature contains many cases in which two studies address a nominally identical problem and obtain apparently incompatible results. Examination of these cases shows that the incompatibility is almost always attributable to a difference in modelling commitments rather than to an inconsistency in the mathematics. The map below records the commitments responsible and the procedure by which each is eliminated, so that a comparison can be posed in a form in which it is meaningful.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Divergence map for the reviewed corpus: modelling commitments that account for apparent disagreement, and the procedure that puts two studies on a common footing.}
+\label{tab:divergence_map}
+\begin{tabularx}{\textwidth}{@{}lXXl@{}}
+\toprule
+\textbf{Divergence type} & \textbf{Root cause} & \textbf{Resolution procedure} & \textbf{Canonical instance} \\
+\midrule
+Assumption difference & Different constitutive commitments on the thermal and mechanical sides & Trace both derivations to their primary sources and identify the first point at which the commitments differ & Classical versus Lord--Shulman thermal equation \\
+Approximation difference & Different truncation orders in the Taylor expansion of the phase-lag law & Compare on the intersection of the two validity ranges rather than on either alone & First-order versus second-order dual phase-lag \\
+Normalisation difference & Different reference temperature, density, or stiffness conventions & Re-express both under a common nondimensionalisation before comparing & Absolute versus relative temperature measure \\
+Convention difference & Opposite sign convention in the harmonic ansatz & Standardise the convention and track the corresponding sign change & $e^{i\omega t}$ versus $e^{-i\omega t}$ \\
+Limit difference & Formal parameter substitution used as though it were a convergence theorem & Verify that the limiting and the limited problem share a well-posedness hypothesis before comparing & Fractional order approaching two \\
+Branch difference & A family with genuinely distinct branches being read as one & Fix the branch explicitly, since the branches differ in dissipation and in temperature structure & The two Green--Naghdi types; the dissipative and conservative Green--Lindsay branches \\
+Geometry difference & Different admissible geometries or boundary conditions & Restrict the comparison to the common geometric class & Half-space versus bounded plate \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Several labels in Table~\ref{tab:twelve_criteria} encompass multiple formulations. Their constitutive equations, state variables, and assumptions must be checked separately before branch-level comparisons are made. Green--Lindsay is a single-temperature, temperature-rate-dependent formulation, distinct from two-temperature thermoelasticity. The inherited branch descriptions and their cited equations remain unverified in this revision.
+
+\subsection{Conditions under which two theories can be compared}
+\label{sec:12.5}
+
+Because the families differ in so many structural respects, a comparison is only meaningful when a number of conditions are met simultaneously.
+
+\begin{enumerate}
+\item \textbf{Common geometric class.} Both theories must be posed on the same class of geometry, with the same class of boundary conditions. Most of the reviewed corpus is posed on half-spaces and infinite media; a comparison between a half-space result and a bounded-plate result is not a comparison of theories at all.
+\item \textbf{Common branch and parameter set.} Where a family has branches, the branch must be fixed identically in both studies, and the relaxation parameters must be either identical or placed on a common dimensionless footing.
+\item \textbf{Common observable.} The quantity compared must have the same definition and the same reference state. Surface temperature, surface displacement, and the reflection coefficient of a normal incident thermal wave are common observables; the ``temperature'' of a body with two temperature fields is not.
+\item \textbf{Common nondimensionalisation.} Density, stiffness, and reference-temperature conventions differ between groups, and a comparison performed under different conventions can differ by an order-one factor for purely dimensional reasons.
+\item \textbf{Common wave convention.} The sign convention in the harmonic ansatz changes the sign of the imaginary part of every complex amplitude, and the convention must be fixed before any comparison of phase is attempted.
+\item \textbf{Common limit.} Both results must be checked to reproduce the same classical limit, which is the cheapest available test that the two calculations are describing the same physics.
+\end{enumerate}
+
+\subsection{Choosing among competing theories}
+\label{sec:12.6}
+
+The comparison framework is only useful if it also supports a decision: given a physical problem, which family should be used? The taxonomy of Section~\ref{sec:taxonomy} provides the structure for such a decision, and the criteria reduce to three questions in practice.
+
+\begin{enumerate}
+\item \textbf{Is the thermal wave relevant to the observable?} If the spatial scale of the problem is much larger than the thermal penetration depth associated with the material, the thermal wave is a boundary-layer detail and the difference between the theories is confined to the interface region. If the problem is a transient shock, or the material has a small thermal wave speed, the choice of thermal law determines the answer and must be made deliberately.
+\item \textbf{Is there a material length scale that the continuum description must respect?} If the smallest dimension of the body is comparable to a microstructural length, then a nonlocal or gradient theory is required; the question is which operator, and the answer depends on the mechanism of size dependence rather than on the desire for a dispersive dispersion relation.
+\item \textbf{Is the dissipation structure needed for the conclusion?} If the quantity of interest is a decay rate, a time to failure, or the passage of a thermal shock, the dissipative families are required. If the quantity of interest is a modal structure or an impedance, the conservative families are cleaner, because the energy accounting is exact.
+\end{enumerate}
+
+The fourth consideration---validation---is the one that the reviewed literature has been least able to supply, for the reasons given in Section~\ref{sec:14.4}. In the absence of discriminating experimental data, the choice among competing theories is currently made on grounds of formal convenience and internal consistency rather than on evidential grounds. This is the single most consequential gap identified by this review.
+
+\subsection{Limitations of the comparison framework}
+\label{sec:12.7}
+
+The framework above inherits the limitations of the corpus it organises, and these should be stated rather than glossed.
+
+\begin{enumerate}
+\item \textbf{The comparison is coarse.} Entries in Table~\ref{tab:twelve_criteria} are single labels where the underlying theory admits a range of behaviours. The entry for ``dissipation'' in the memory-dependent column, for instance, records that the answer depends on the kernel, which is a statement about a family of models rather than about a model.
+\item \textbf{Validation is not directly comparable.} Because the validation axis of Section~\ref{sec:taxonomy} is dominated by self-consistency checks, the ``validation'' row of any comparison across families would compare methods rather than results; the row is therefore omitted deliberately rather than filled with an entry that would invite misreading.
+\item \textbf{Branches are under-documented.} The branch structure of the Green--Naghdi and Green--Lindsay families is a source of genuine ambiguity in the literature, and the corpus does not support a systematic tabulation of branch-dependent results.
+\item \textbf{Interface conditions are treated as a single column.} Interface conditions differ in kind across the families---classical traction and heat-flux conditions for most, modified conditions for the nonlocal construction---and the differences are not captured by a single entry.
+\end{enumerate}
+
+\subsection{Notation summary for Section 12}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Notation introduced in Section 12.}
+\label{tab:notation-sec12}
+\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+CD & Classical coupled thermoelasticity & --- & Table~\ref{tab:twelve_criteria} \\
+LS & Lord--Shulman theory & --- & Table~\ref{tab:twelve_criteria} \\
+GL & Green--Lindsay theory & --- & Table~\ref{tab:twelve_criteria} \\
+GN-II / GN-III & Green--Naghdi types II and III & --- & Table~\ref{tab:twelve_criteria} \\
+DPL / TPL & Dual and triple phase-lag theories & --- & Table~\ref{tab:twelve_criteria} \\
+MGT & Moore--Gibson--Thompson theory & --- & Table~\ref{tab:twelve_criteria} \\
+MDD & Memory-dependent derivative formulation & --- & Table~\ref{tab:twelve_criteria} \\
+$\tau_0$ & Mechanical relaxation time & s & Table~\ref{tab:limiting_cases_revisited} \\
+$\tau_T$ & Thermal relaxation time & s & Table~\ref{tab:limiting_cases_revisited} \\
+$\tau_q$ & Phase-lag time of the heat flux & s & Table~\ref{tab:limiting_cases_revisited} \\
+$\tau_\nu$ & Phase-lag time of the thermal gradient & s & Table~\ref{tab:limiting_cases_revisited} \\
+$\ell$ & Intrinsic material length scale & m & Table~\ref{tab:twelve_criteria} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open questions for Section 12}
+
+\begin{enumerate}[label=\textbf{OQ12.\arabic*}]
+\item Can convergence theorems with explicit error estimates be established for the limiting procedures of Table~\ref{tab:limiting_cases_revisited}? \label{oq:12.1}
+\item What is the minimal set of criteria that distinguishes two theory families uniquely, and is it the same set that distinguishes them experimentally? \label{oq:12.2}
+\item Can a systematic taxonomy of the branches within the Green--Naghdi and Green--Lindsay families be constructed, so that branch-level ambiguity is removed from the literature? \label{oq:12.3}
+\item Under what conditions does the choice among competing theories change a predicted quantity by more than the uncertainty of the measurement that would test it? \label{oq:12.4}
+\end{enumerate}
+
+% LocalWords:

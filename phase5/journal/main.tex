@@ -1,0 +1,52 @@
+% Generic journal-format working draft. No target journal has been selected.
+% Build from phase5/journal/ after resolving the blockers in reports/build-status.md.
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,tabularx,longtable,graphicx,xcolor}
+\usepackage{hyperref,cleveref,natbib,setspace,titlesec,caption,subcaption,enumitem}
+\graphicspath{{../figures/source/}}
+% Sections use tables/source/T*.tex; resolve them inside the self-contained master.
+\makeatletter\def\input@path{{../master/}}\makeatother
+\newcommand{\bm}[1]{\boldsymbol{#1}}
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+\newcommand{\jump}[1]{\left[ #1 \right]}
+\bibliographystyle{plainnat}
+\hypersetup{pdftitle={Multiphysics Wave Mechanics in Generalized Continua},pdfauthor={Vipin Gupta}}
+
+\title{Multiphysics Wave Mechanics in Generalized Continua: A Constructive Review of Theory, Energy Transport, and Interface Phenomena}
+\author{Vipin Gupta}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\input{../master/frontmatter/abstract.tex}
+\end{abstract}
+\noindent\textbf{Keywords:} generalized thermoelasticity; multiphysics waves; energy transport; interface phenomena; nonlocal continua; memory-dependent models.
+
+% Sections are shared with the editable master source; table inputs resolve from
+% the phase5 workspace and are shared between master and journal drafts.
+\input{../master/sections/sec01_scope}
+\input{../master/sections/sec02_literature}
+\input{../master/sections/sec03_foundations}
+\input{../master/sections/sec04_thermoelastic}
+\input{../master/sections/sec05_multiphysics}
+\input{../master/sections/sec06_transport}
+\input{../master/sections/sec07_nonlocal}
+\input{../master/sections/sec08_mathematical_methods}
+\input{../master/sections/sec09_interfaces}
+\input{../master/sections/sec10_energy}
+\input{../master/sections/sec11_advanced}
+\input{../master/sections/sec12_comparative}
+\input{../master/sections/sec13_applications}
+\input{../master/sections/sec14_taxonomy}
+\input{../master/sections/sec15_challenges}
+\input{../master/sections/sec16_future}
+\input{../master/sections/sec17_conclusions}
+
+\bibliography{../master/references_local}
+\end{document}

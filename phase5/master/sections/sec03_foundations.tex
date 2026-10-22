@@ -1,0 +1,469 @@
+%======================================================================
+% Section 3: Foundations of Continuum Wave Mechanics
+%======================================================================
+\section{Foundations of Continuum Wave Mechanics}
+\label{sec:foundations}
+
+This section develops the first-principles foundation (Layer I of the layered mathematical exposition) for all subsequent theory families. We begin with kinematics, proceed through the conservation laws of continuum mechanics, establish the thermodynamic restrictions on constitutive relations, derive classical elasticity and wave propagation, and conclude with the classical energy flux \cite{Biot1956} and interface conditions. Every equation in this section is derived from first principles or drawn from established standard results with documented assumptions.
+
+\subsection{Kinematics: displacement, strain, rotation}
+\label{sec:3.1}
+
+Let $\bm{u}(\bm{x},t)$ denote the displacement field of a continuum body occupying a region $\Omega \subset \mathbb{R}^3$ with boundary $\partial\Omega$. The displacement gradient tensor decomposes additively into symmetric and antisymmetric parts:
+
+\begin{equation}
+u_{i,j} = \varepsilon_{ij} + \omega_{ij},
+\label{eq:3.1}
+\end{equation}
+
+where the infinitesimal strain tensor and rotation tensor are defined by
+
+\begin{equation}
+\varepsilon_{ij} = \frac{1}{2}(u_{i,j} + u_{j,i}),
+\qquad
+\omega_{ij} = \frac{1}{2}(u_{i,j} - u_{j,i}).
+\label{eq:3.2}
+\end{equation}
+
+The strain tensor $\varepsilon_{ij}$ measures the symmetric part of the displacement gradient (deformation), while the rotation tensor $\omega_{ij}$ measures the antisymmetric part (rigid-body rotation). The velocity field is the material time derivative of displacement:
+
+\begin{equation}
+v_i = \dot{u}_i = \frac{\partial u_i}{\partial t}.
+\label{eq:3.3}
+\end{equation}
+
+\subsubsection{Physical interpretation}
+The strain components $\varepsilon_{ii}$ represent normal strains (relative changes in length along coordinate directions), while $\varepsilon_{ij}$ ($i \neq j$) represent shear strains (changes in angle between originally orthogonal material lines). The infinitesimal strain assumption requires $\|\varepsilon_{ij}\| \ll 1$, which is valid for small deformations typical of linearized wave propagation problems.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{fig04-continuum-kinematics.pdf}
+\caption{Kinematics of a continuum element. The displacement field $\bm{u}(\bm{x},t)$ defines the deformation gradient, which in the infinitesimal regime splits additively into a symmetric part (strain, the extensional part of the deformation) and an antisymmetric part (rotation, the rigid part). The rigid part does no work and is removed from the balance laws by the objectivity requirement, so that only the strain enters the stress; this is the first of the two places where irreversibility enters the formulation, the second being the second law of Section~\ref{sec:3.4}.}
+\label{fig:kinematics}
+\end{figure}
+
+\subsection{Conservation laws: linear momentum and angular momentum}
+\label{sec:3.2}
+
+\subsubsection{Linear momentum balance}
+
+Consider a material subvolume $V \subset \Omega$ with surface $S = \partial V$ and outward unit normal $\bm{n}$. The linear momentum balance states that the time rate of change of linear momentum equals the sum of surface tractions and body forces:
+
+\begin{equation}
+\frac{\diff}{\diff t} \int_V \rho v_i \, \diff V
+=
+\int_S \sigma_{ji} n_j \, \diff S
++
+\int_V \rho f_i \, \diff V,
+\label{eq:3.4}
+\end{equation}
+
+where $\rho$ is the mass density, $\sigma_{ji}$ is the Cauchy stress tensor, and $f_i$ is the body force per unit mass. Applying the divergence theorem to the surface integral and localizing (since $V$ is arbitrary) yields the pointwise form:
+
+\begin{equation}
+\rho \dot{v}_i = \sigma_{ji,j} + \rho f_i.
+\label{eq:3.5}
+\end{equation}
+
+Since $v_i = \dot{u}_i$, this can also be written in terms of displacement:
+
+\begin{equation}
+\rho \ddot{u}_i = \sigma_{ji,j} + \rho f_i.
+\label{eq:3.6}
+\end{equation}
+
+Equation \eqref{eq:3.5} is the fundamental equation of motion for continuum mechanics. It is sometimes called Cauchy's first law or the equation of linear momentum.
+
+\subsubsection{Angular momentum balance}
+
+The angular momentum balance for an arbitrary subvolume $V$ states:
+
+\begin{equation}
+\frac{\diff}{\diff t} \int_V \rho (\bm{x} \times \bm{v})_k \, \diff V
+=
+\int_S \epsilon_{kij} x_i \sigma_{jm} n_m \, \diff S
++
+\int_V \rho \epsilon_{kij} x_i f_j \, \diff V,
+\label{eq:3.7}
+\end{equation}
+
+where $\epsilon_{kij}$ is the Levi-Civita permutation symbol. Applying the divergence theorem, using the linear momentum balance \eqref{eq:3.5}, and localizing gives:
+
+\begin{equation}
+\sigma_{ij} = \sigma_{ji}.
+\label{eq:3.8}
+\end{equation}
+
+Equation \eqref{eq:3.8} states that the Cauchy stress tensor is symmetric in the absence of couple stresses or body couples. This symmetry is essential for the energy flux derivations in Sections 3.8 and 10.2.
+
+\subsubsection{Physical interpretation}
+Equations \eqref{eq:3.5} and \eqref{eq:3.8} are local statements of Newton's second law applied to continuum matter. The symmetry of stress (\eqref{eq:3.8}) means that traction on a surface is determined solely by the normal to that surface, without additional rotational degrees of freedom in classical (non-polar) continua.
+
+\subsection{Mechanical power and internal energy: first law of thermodynamics}
+\label{sec:3.3}
+
+\subsubsection{Mechanical power balance}
+
+Multiply the linear momentum equation \eqref{eq:3.5} by $v_i$ and integrate over $V$:
+
+\begin{equation}
+\int_V \rho \dot{v}_i v_i \, \diff V
+=
+\int_V \sigma_{ji,j} v_i \, \diff V
++
+\int_V \rho f_i v_i \, \diff V.
+\label{eq:3.9}
+\end{equation}
+
+The left-hand side is the rate of change of kinetic energy:
+
+\begin{equation}
+\int_V \rho \dot{v}_i v_i \, \diff V
+=
+\frac{\diff}{\diff t} \int_V \frac{1}{2}\rho v_i v_i \, \diff V.
+\label{eq:3.10}
+\end{equation}
+
+For the stress term, use the identity $\sigma_{ji,j}v_i = (\sigma_{ji}v_i)_{,j} - \sigma_{ji}v_{i,j}$. Since $v_{i,j} = \dot{u}_{i,j} = \dot{\varepsilon}_{ji}$ (using symmetry of $\sigma_{ji}$ and $\varepsilon_{ij}$), we obtain:
+
+\begin{equation}
+\int_V \sigma_{ji,j} v_i \, \diff V
+=
+\int_S \sigma_{ji} v_i n_j \, \diff S
+-
+\int_V \sigma_{ji} \dot{\varepsilon}_{ij} \, \diff V.
+\label{eq:3.11}
+\end{equation}
+
+Combining \eqref{eq:3.9} through \eqref{eq:3.11} gives the mechanical power balance:
+
+\begin{equation}
+\rho \frac{\diff}{\diff t}\left(\frac{1}{2}v_i v_i\right)
+=
+\sigma_{ji,j}v_i + \rho f_i v_i
+=
+-\sigma_{ij}\dot{\varepsilon}_{ij} + (\sigma_{ij}v_j)_{,i} + \rho f_i v_i.
+\label{eq:3.12}
+\end{equation}
+
+The term $\sigma_{ij}v_j n_i$ on the surface represents mechanical power entering through the boundary per unit area; its density $(\sigma_{ij}v_j)_{,i}$ is the mechanical power flux divergence.
+
+\subsubsection{Internal energy balance}
+
+The first law of thermodynamics for a continuum states that the rate of change of internal energy equals the mechanical power input minus the heat flux out of the body plus heat supply:
+
+\begin{equation}
+\rho \dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i} + \rho r,
+\label{eq:3.13}
+\end{equation}
+
+where $e$ is the specific internal energy (per unit mass), $q_i$ is the heat flux vector, and $r$ is the heat supply per unit mass. In the absence of external heat supply ($r = 0$):
+
+\begin{equation}
+\rho \dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i}.
+\label{eq:3.14}
+\end{equation}
+
+\subsubsection{Physical interpretation}
+Equation \eqref{eq:3.13} expresses energy conservation: the internal energy of a material element changes due to (i) mechanical work done by stresses ($\sigma_{ij}\dot{\varepsilon}_{ij}$), (ii) heat conduction out of the element ($-q_{i,i}$), and (iii) external heat supply ($\rho r$). The term $\sigma_{ij}\dot{\varepsilon}_{ij}$ is the stress power density — the rate of mechanical work converted into internal energy or stored as elastic energy.
+
+\subsection{Entropy and dissipation inequality: Clausius--Duhem inequality}
+\label{sec:3.4}
+
+The second law of thermodynamics, in the Clausius--Duhem form, states that the entropy production within a continuum is non-negative:
+
+\begin{equation}
+\rho \dot{s} \geq -\left(\frac{q_i}{\Theta}\right)_{,i} + \frac{\rho r}{\Theta},
+\label{eq:3.15}
+\end{equation}
+
+where $s$ is specific entropy and $\Theta$ is absolute temperature. In the linear constitutive equations below, $T=\Theta-T_0$ denotes the temperature increment. Using the internal-energy balance \eqref{eq:3.13} and defining the Helmholtz free energy by $\psi=e-\Theta s$, we obtain after standard manipulation:
+
+\begin{equation}
+\sigma_{ij}\dot{\varepsilon}_{ij} - \rho\left(\dot{\psi} + s\dot{\Theta}\right) - \frac{q_i \Theta_{,i}}{\Theta} \geq 0.
+\label{eq:3.16}
+\end{equation}
+
+Equation \eqref{eq:3.16} is the Clausius--Duhem dissipation inequality. The left-hand side represents the local entropy production rate (multiplied by temperature) and must be non-negative for all admissible thermodynamic processes.
+
+\subsubsection{Physical interpretation}
+The dissipation inequality restricts admissible constitutive relations. Any constitutive model must be constructed so that \eqref{eq:3.16} holds for all processes. This principle is used in Section 3.5 to derive Coleman--Noll restrictions and in Section 10.7 to assess thermodynamic admissibility of generalized theories.
+
+\subsection{Constitutive principles: free energy and linear relations}
+\label{sec:3.5}
+
+\subsubsection{Coleman--Noll procedure}
+
+Assuming the free energy depends on strain and temperature, $\psi = \psi(\varepsilon_{ij}, T)$, we have:
+
+\begin{equation}
+\dot{\psi} = \frac{\partial\psi}{\partial\varepsilon_{ij}}\dot{\varepsilon}_{ij}
++ \frac{\partial\psi}{\partial T}\dot{T}.
+\label{eq:3.17}
+\end{equation}
+
+Substituting into the dissipation inequality \eqref{eq:3.16} and requiring it to hold for arbitrary $\dot{\varepsilon}_{ij}$ and $\dot{T}$ yields the Coleman--Noll restrictions:
+
+\begin{equation}
+\sigma_{ij} = \rho \frac{\partial\psi}{\partial\varepsilon_{ij}},
+\qquad
+s = -\frac{\partial\psi}{\partial T}.
+\label{eq:3.18}
+\end{equation}
+
+With these restrictions, the dissipation inequality reduces to the thermal conduction restriction:
+
+\begin{equation}
+-\frac{q_i T_{,i}}{T} \geq 0.
+\label{eq:3.19}
+\end{equation}
+
+For isotropic linear conduction with Fourier's law $q_i = -k T_{,i}$ ($k > 0$), we have $-q_i T_{,i}/T = k(T_{,i})^2/T \geq 0$, which is satisfied.
+
+\subsubsection{Linear isotropic constitutive relations}
+
+For a linear isotropic thermoelastic material, with temperature increment $T=\Theta-T_0$ and thermal-stress coefficient $\beta$ in Pa K$^{-1}$, take the specific Helmholtz free energy:
+
+\begin{equation}
+\psi = \frac{1}{2\rho}(\lambda \varepsilon_{kk}\varepsilon_{ll} + 2\mu \varepsilon_{ij}\varepsilon_{ij})
+- \frac{\beta}{\rho}\varepsilon_{kk} T - s_0 T - \frac{c_v}{2 T_0}T^2 + \text{const.},
+\label{eq:3.20}
+\end{equation}
+
+where $\lambda$ and $\mu$ are Lamé elastic constants, $\beta$ is the thermal stress coefficient, and $c_v$ is the specific heat at constant strain. Applying \eqref{eq:3.18} gives:
+
+\begin{equation}
+\sigma_{ij} = \lambda \varepsilon_{kk}\delta_{ij} + 2\mu\varepsilon_{ij} - \beta T\delta_{ij},
+\label{eq:3.21}
+\end{equation}
+
+\begin{equation}
+s = s_0 + \frac{\beta}{\rho}\varepsilon_{kk} + \frac{c_v}{T_0}T.
+\label{eq:3.22}
+\end{equation}
+
+Equation \eqref{eq:3.21} is the linear isotropic thermoelastic constitutive relation: the first two terms are the classical elastic stress (Hooke's law), and the last term is the thermal stress contribution.
+
+\subsubsection{Physical interpretation}
+The constitutive relations \eqref{eq:3.21}--\eqref{eq:3.22} couple mechanical and thermal fields: temperature changes induce thermal stresses ($-\beta T\delta_{ij}$), and deformation changes entropy ($\frac{\beta}{\rho}\varepsilon_{kk}$). This coupling is the physical origin of thermoelastic wave propagation.
+
+\subsection{Classical elasticity: Navier equations and wave speeds}
+\label{sec:3.6}
+
+Substituting the constitutive relation \eqref{eq:3.21} into the equation of motion \eqref{eq:3.6} with no body forces ($f_i = 0$) and isothermal conditions ($T = T_0$ constant), we obtain the Navier equations of classical elasticity:
+
+\begin{equation}
+\rho\ddot{u}_i = (\lambda + \mu)u_{j,ji} + \mu u_{i,jj}.
+\label{eq:3.23}
+\end{equation}
+
+\subsubsection{Plane wave solutions}
+
+For harmonic plane waves of the form $u_i = \hat{u}_i e^{i(\bm{k}\cdot\bm{x} - \omega t)}$, substitution into \eqref{eq:3.23} gives the Christoffel equation. For longitudinal (P) waves propagating in direction $\bm{n}$ with polarization parallel to $\bm{n}$:
+
+\begin{equation}
+c_p = \sqrt{\frac{\lambda + 2\mu}{\rho}},
+\label{eq:3.24}
+\end{equation}
+
+and for transverse (S or SV) waves with polarization perpendicular to $\bm{n}$:
+
+\begin{equation}
+c_s = \sqrt{\frac{\mu}{\rho}}.
+\label{eq:3.25}
+\end{equation}
+
+These are the classical elastic wave speeds. The P-wave speed exceeds the S-wave speed since $\lambda + 2\mu > \mu$ for stable materials ($\lambda + 2\mu/3 > 0$, $\mu > 0$).
+
+\subsubsection{Physical interpretation}
+Equation \eqref{eq:3.23} describes how elastic disturbances propagate through a homogeneous isotropic solid. The P-wave involves volume change (compressional), while the S-wave involves shear (distortional) deformation. Both propagate without dispersion in classical elasticity — all frequencies travel at the same speed.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig06-classical-waves.pdf}
+\caption{Classical elastic wave propagation in an isotropic solid. A longitudinal (P) wave, whose polarization is parallel to the propagation direction, travels at $c_p = \sqrt{(\lambda + 2\mu)/\rho}$; a transverse (S) wave, whose polarization is perpendicular to it, travels at $c_s = \sqrt{\mu/\rho}$. Because the elastic moduli are independent of frequency, both speeds are dispersion-free: this constancy is the reference against which the dispersive branches of Sections~4--7 are measured, and it is the property that a generalized theory must forfeit when it introduces a length scale or a memory kernel.}
+\label{fig:classical_waves}
+\end{figure}
+
+\subsection{Plane wave assumptions and harmonic wave form}
+\label{sec:3.7}
+
+For time-harmonic problems, all field variables take the form:
+
+\begin{equation}
+u_i(\bm{x},t) = \hat{u}_i(\bm{x}) e^{-i\omega t},
+\qquad
+\sigma_{ij}(\bm{x},t) = \hat{\sigma}_{ij}(\bm{x}) e^{-i\omega t},
+\qquad
+q_i(\bm{x},t) = \hat{q}_i(\bm{x}) e^{-i\omega t},
+\label{eq:3.26}
+\end{equation}
+
+where $\hat{u}_i$, $\hat{\sigma}_{ij}$, $\hat{q}_i$ are complex amplitudes and $\omega$ is the angular frequency. The time convention $e^{-i\omega_t}$ implies that positive imaginary parts of complex wave numbers correspond to attenuation (decay in space) and negative imaginary parts of complex frequencies correspond to temporal decay.
+
+\subsubsection{Time-average identity}
+
+For two harmonic quantities $a(t) = \Re[\hat{a} e^{-i\omega t}]$ and $b(t) = \Re[\hat{b} e^{-i\omega t}]$, the time average over one period is:
+
+\begin{equation}
+\avg{ab}_t = \frac{1}{2}\Re[\hat{a}\hat{b}^*],
+\label{eq:3.27}
+\end{equation}
+
+where $^*$ denotes complex conjugation. This identity is used throughout Sections 9 and 10 to compute average energy fluxes and energy ratios from complex wave amplitudes.
+
+\subsection{Energy flux in classical elasticity}
+\label{sec:3.8}
+
+Adding the mechanical power balance \eqref{eq:3.12} and the internal-energy balance \eqref{eq:3.14} (with $r=0$), and defining total energy per unit volume as $\mathcal{E}=\frac12\rho v_i v_i+\rho e$, gives an outward-positive flux $J_j=q_j-\sigma_{ji}v_i$:
+
+\begin{equation}
+\frac{\partial\mathcal{E}}{\partial t}
++
+\frac{\partial}{\partial x_j}\left(q_j - \sigma_{ji}v_i\right)
+=
+\rho f_i v_i.
+\label{eq:3.28}
+\end{equation}
+
+With no body forces ($f_i = 0$), this becomes the local energy conservation law:
+
+\begin{equation}
+\frac{\partial\mathcal{E}}{\partial t} + \frac{\partial J_i}{\partial x_i} = 0,
+\qquad
+J_i = q_i - \sigma_{ij}v_j.
+\label{eq:3.29}
+\end{equation}
+
+Equation \eqref{eq:3.29} states that the total energy density changes only due to the divergence of the energy flux $J_i$. The energy flux has two contributions:
+
+\begin{itemize}
+\item $-\sigma_{ij}v_j$: mechanical contribution to the outward-positive flux, and
+\item $q_i$: thermal energy flux (heat conduction across a surface per unit area).
+\end{itemize}
+
+Integrating \eqref{eq:3.29} over a volume $V$ and applying the divergence theorem:
+
+\begin{equation}
+\frac{\diff}{\diff t}\int_V \mathcal{E} \, \diff V
++
+\int_S J_i n_i \, \diff S = 0.
+\label{eq:3.30}
+\end{equation}
+
+For an isolated system ($J_i n_i = 0$ on $S$), the total energy is conserved: $\frac{\diff}{\diff t}\int_V \mathcal{E} \, \diff V = 0$.
+
+\subsubsection{Physical interpretation}
+Equation \eqref{eq:3.29} is the classical energy flux \cite{Biot1956} for elastic and thermoelastic media. With the outward-positive convention, the mechanical contribution is $-\sigma_{ij}v_j$ and the thermal contribution is $q_i$. Reversing the normal or defining inward-positive flux reverses the signs consistently. This local balance is derived for the classical thermoelastic model only. Whether an additional stored-energy or boundary-power term is required in a generalized theory depends on its constitutive equations and must be derived model by model.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig05-constitutive-relations.pdf}
+\caption{Constitutive relations and thermoelastic coupling: stress-strain response under isothermal and non-isothermal conditions (Section 3.5).}
+\label{fig:constitutive}
+\end{figure}
+
+\subsection{Interface conditions: perfect and imperfect bonding}
+\label{sec:3.9}
+
+Consider an interface $\Sigma$ between two media (denoted $1$ and $2$) with common unit normal $\bm{n}$. For perfectly bonded interfaces:
+
+\subsubsection{Perfect bonding}
+
+\begin{equation}
+u_i^{(1)} = u_i^{(2)},
+\qquad
+\sigma_{ji}^{(1)}n_j = \sigma_{ji}^{(2)}n_j,
+\qquad
+T^{(1)} = T^{(2)},
+\qquad
+q_i^{(1)}n_i = q_i^{(2)}n_i,
+\label{eq:3.31}
+\end{equation}
+
+on $\Sigma$. The first condition enforces displacement continuity (no slip or separation), the second enforces traction equilibrium (Newton's third law at the interface), and the last two enforce thermal contact (temperature continuity and heat flux continuity).
+
+\subsubsection{Imperfect bonding: spring-type conditions}
+
+For imperfectly bonded interfaces, displacement and traction are related by interfacial stiffness parameters:
+
+\begin{equation}
+[u_i] = (C^u)^{-1}_{ij} t_j,
+\qquad
+\sigma_{ki}^{(1)}n_k = \sigma_{ki}^{(2)}n_k = t_i,
+\label{eq:3.32}
+\end{equation}
+
+where $[u_i]=u_i^{(2)}-u_i^{(1)}$, $t_i$ is the common traction on the shared normal, and $C^u_{ij}$ is a positive-definite interfacial stiffness tensor (units Pa/m). The compliance form is used so that, when all stiffness eigenvalues tend to infinity, the displacement jump vanishes; when they tend to zero through positive values, the traction vanishes for a finite jump. More general imperfect-interface laws require their own constitutive and dissipation assumptions.
+
+\subsubsection{Electrical interface conditions (piezoelectric media)}
+
+For piezoelectric media, additional interface conditions involve the electric potential $\phi$ and electric displacement $D_i$:
+
+\begin{equation}
+\phi^{(1)} = \phi^{(2)}
+\qquad \text{(perfect electrical contact)},
+\label{eq:3.33}
+\end{equation}
+
+\begin{equation}
+D_i^{(1)}n_i = D_i^{(2)}n_i
+\qquad \text{(electric displacement continuity)},
+\label{eq:3.34}
+\end{equation}
+
+or for an insulated interface:
+
+\begin{equation}
+D_i n_i = 0.
+\label{eq:3.35}
+\end{equation}
+
+\subsubsection{Physical interpretation}
+Interface conditions determine how waves transmit and reflect at material boundaries. Perfect bonding (\eqref{eq:3.31}) is the standard assumption for welded interfaces. Imperfect bonding (\eqref{eq:3.32}) models thin adhesive layers, micro-cracks, or weakly bonded interfaces. Electrical conditions (\eqref{eq:3.33}--\eqref{eq:3.35}) are essential for piezothermoelastic interface problems in Section 5 and Section 9.
+
+\input{tables/source/T4_wave_types}
+
+\subsection{Notation summary for Section 3}
+\label{sec:3.10}
+
+Table \ref{tab:notation-sec3} summarizes the notation introduced in this section.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Notation introduced in Section 3.}
+\label{tab:notation-sec3}
+\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$u_i$ & Displacement & m & \eqref{eq:3.1} \\
+$\varepsilon_{ij}$ & Infinitesimal strain & dimensionless & \eqref{eq:3.2} \\
+$\omega_{ij}$ & Rotation tensor & dimensionless & \eqref{eq:3.2} \\
+$v_i$ & Velocity & m/s & \eqref{eq:3.3} \\
+$\sigma_{ij}$ & Cauchy stress & Pa & \eqref{eq:3.5} \\
+$\rho$ & Mass density & kg/m³ & \eqref{eq:3.5} \\
+$f_i$ & Body force & N/kg & \eqref{eq:3.5} \\
+$q_i$ & Heat flux & W/m² & \eqref{eq:3.13} \\
+$T$ & Temperature increment $\Theta-T_0$ & K & \eqref{eq:3.20} \\
+$e$ & Specific internal energy & J/kg & \eqref{eq:3.13} \\
+$\psi$ & Specific free energy & J/kg & \eqref{eq:3.18} \\
+$s$ & Specific entropy & J/(kg·K) & \eqref{eq:3.18} \\
+$\mathcal{E}$ & Total energy density & J/m³ & \eqref{eq:3.29} \\
+$J_i$ & Energy flux & W/m² & \eqref{eq:3.29} \\
+$\lambda, \mu$ & Lamé constants & Pa & \eqref{eq:3.23} \\
+$c_p, c_s$ & P-wave and S-wave speeds & m/s & \eqref{eq:3.24}--\eqref{eq:3.25} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open questions for this section}
+
+\begin{enumerate}[label=\textbf{OQ3.\arabic*}]
+\item What is the most general form of energy flux that remains valid across all generalized theories (LS, GL, GN, DPL, TPL, MGT, MDD, nonlocal)? \label{oq:3.1}
+\item How do interface conditions change for nonlocal media where the stress at a point depends on strain throughout a neighborhood? \label{oq:3.2}
+\item What is the relationship between the classical energy flux \cite{Biot1956} \eqref{eq:3.29} and the entropy flux in thermoelasticity without energy dissipation (GN-II)? \label{oq:3.3}
+\end{enumerate}
+
+% LocalWords:

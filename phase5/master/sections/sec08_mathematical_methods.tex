@@ -1,0 +1,168 @@
+%======================================================================
+% Section 8: Mathematical Methods for Wave Propagation
+%======================================================================
+\section{Mathematical Methods for Wave Propagation}
+\label{sec:methods}
+
+The theory families of this review differ in their constitutive content, but the mathematics with which they are analysed differs far less. This section sets out that shared mathematics, and takes the position that most of the apparent difficulty in the generalized theories is methodological rather than physical: the same transform, eigenproblem, and boundary-layer machinery that handles classical thermoelasticity handles the generalized families, provided that three points are respected---the sign convention of the harmonic ansatz, the selection of the physical roots of the secular equation, and the consistent normalization of the modes whose energies are to be compared.
+
+\subsection{Plane wave ansatz and harmonic time dependence}
+\label{sec:8.1}
+
+For time-harmonic problems, all field variables take the form
+
+\begin{equation}
+\text{field}(\bm{x},t) = \hat{\text{field}}(\bm{x}) e^{-i\omega t},
+\label{eq:8.1}
+\end{equation}
+
+where $\hat{\text{field}}$ is the complex amplitude and $\omega$ is the angular frequency. Two consequences of the convention $e^{-i\omega t}$ should be stated, because both are used repeatedly in the sections that follow. First, a wave with complex wave number $q$ whose imaginary part is positive is spatially attenuated, since the spatial factor $e^{iqx}$ acquires a factor $e^{-\operatorname{Im}(q)\,x}$. Second, the sign of the imaginary part of every complex amplitude reverses if the opposite convention $e^{+i\omega t}$ is adopted, while the physical content of the solution does not change. The divergence map of Section~\ref{sec:comparative} records the second point as one of the routine sources of apparent disagreement between studies.
+
+\subsection{Christoffel-type equations and wave speeds}
+\label{sec:8.2}
+
+Substituting the plane wave ansatz into the governing equations yields the Christoffel-type equation
+
+\begin{equation}
+[\Gamma_{ik}(\bm{n}) - \rho c^2 \delta_{ik}]\hat{u}_k = 0,
+\label{eq:8.2}
+\end{equation}
+
+where $\Gamma_{ik}(\bm{n})$ is the Christoffel tensor, $\bm{n}$ is the propagation direction, $c$ is the wave speed, and $\hat{u}_k$ is the polarization vector. Non-trivial solutions require
+
+\begin{equation}
+\det[\Gamma_{ik}(\bm{n}) - \rho c^2 \delta_{ik}] = 0.
+\label{eq:8.3}
+\end{equation}
+
+For an anisotropic material the Christoffel tensor depends on the direction $\bm{n}$, and the three roots of Eq.~\eqref{eq:8.3} are the three phase velocities of the quasi-longitudinal and two quasi-transverse modes. Their separation, and the dependence of each on the direction of propagation, is the classical anisotropy phenomenon; the generalized theories inherit it unchanged, since they modify the constitutive law rather than the kinematics.
+
+\subsection{Secular equations and characteristic polynomials}
+\label{sec:8.3}
+
+The characteristic equation from Eq.~\eqref{eq:8.3} is a polynomial in $c^2$, or equivalently in the squared wave number $q^2$. For coupled thermo-piezoelastic media the equation is typically of eighth order in $q$ and, because the system possesses a certain symmetry with respect to the sign of $q$, reduces to a quartic in $q^2$:
+
+\begin{equation}
+G_1 q^8 + G_2 q^6 + G_3 q^4 + G_4 q^2 + G_5 = 0,
+\label{eq:8.4}
+\end{equation}
+
+where the coefficients $G_i$ depend on the material properties, the frequency, and the angle of incidence. Two features of this structure are worth recording. First, the equation is quartic in $q^2$ and therefore has four pairs of roots in $q$, of which only a subset corresponds to physically admissible modes; the number of modes in the physical solution is therefore \emph{smaller} than the order of the secular equation suggests, and the surplus modes are unphysical branches of the algebra. Second, in the generalized families the coefficients $G_i$ acquire the relaxation times, the memory kernel, or the nonlocal length scale, and the dependence of the root structure on those parameters is the mechanism by which the constitutive generalization is converted into an observable difference in the wave field. This is the point at which a change in the constitutive law becomes a change in a coefficient that can be measured.
+
+\subsection{Complex wave numbers: propagating, evanescent, attenuating modes}
+\label{sec:8.4}
+
+The roots of the secular equation are classified as
+
+\begin{enumerate}
+\item \textbf{Propagating modes:} real $q$, waves that propagate without spatial attenuation;
+\item \textbf{Evanescent modes:} purely imaginary $q$, waves that decay exponentially with distance;
+\item \textbf{Attenuating modes:} complex $q$, waves that both propagate and attenuate.
+\end{enumerate}
+
+Only outgoing modes satisfying the radiation condition are retained in the physical solution. The selection rule is simple to state and easy to get wrong: in a half-space problem the retained roots are those for which the wave decays as $x \to \infty$, and in a slab or layer problem the retained roots are those for which the transmitted field decays into the far material. Every additional root that is retained produces a mode that carries energy out of, or into, the region of interest and breaks the conservation identity of Section~\ref{sec:10.5}.
+
+\subsection{Modal normalization for energy flux computation}
+\label{sec:8.5}
+
+For energy flux computation, each mode must be consistently normalized. For propagating modes a convenient choice is
+
+\begin{equation}
+\hat{u}_i^{(n)} \hat{u}_i^{(n)*} = 1,
+\label{eq:8.5}
+\end{equation}
+
+where $^{*}$ denotes complex conjugation. For evanescent modes the normalization is chosen so that the time-averaged energy flux is real and positive.
+
+For a single lossless purely evanescent partial wave in a real-coefficient medium, the time-averaged normal flux vanishes: the stress--velocity product is reactive. In a superposition, however, cross terms may contribute to the total flux, and complex-wavenumber modes in a dissipative medium require the flux to be evaluated from the full constitutive balance. It is therefore incorrect either to assign a nonzero independent normal power to every evanescent amplitude or to omit the evanescent amplitudes from the boundary-value solution. Mode amplitudes, cross terms and normal flux must be evaluated consistently.
+
+\subsection{Transform methods: Fourier and Laplace}
+\label{sec:8.6}
+
+Fourier transforms are used for steady-state harmonic problems on an unbounded or periodic domain:
+
+\begin{equation}
+\hat{f}(\omega) = \int_{-\infty}^{\infty} f(t) e^{i\omega t}\,dt,
+\label{eq:8.6}
+\end{equation}
+
+and Laplace transforms for transient problems on a half-space:
+
+\begin{equation}
+\tilde{f}(s) = \int_0^{\infty} f(t) e^{-st}\,dt.
+\label{eq:8.7}
+\end{equation}
+
+The Laplace transform in particular is what makes the classical thermoelastic transient problem tractable in closed form: the coupled system is parabolic in the thermal variable and hyperbolic in the mechanical variable, and the Laplace transform in time combined with a Fourier transform in the horizontal directions reduces the problem to a pair of second-order differential equations in the normal coordinate, which are solved in closed form \cite{Achenbach1973,Nowacki1975}.
+
+The fractional operators of Section~\ref{sec:11.1} require a different transform calculus. The Caputo derivative of order $\alpha$ has a simple Laplace-domain representation, $\mathcal{L}\{{}^C D_t^\alpha f\}(s) = s^\alpha \tilde{f}(s) - s^{\alpha-1} f(0)$, and the resulting algebraic equation in $s$ is inverted using the Mittag--Leffler function, which plays the role that the exponential plays in the classical theory \cite{Gorenflo1997,Luchko2010}. It is worth being explicit about the methodological consequence: in the fractional families the analytical route is available only for special geometries, for radially symmetric or half-space problems, because the inversion step requires the eigenfunction expansion of the corresponding spatial operator. Everywhere else, the burden of verification falls on numerical inversion, and the reference solutions of the kind derived in closed form by Povstenko \cite{Povstenko2007} become the only available check on a numerical scheme.
+
+\subsection{Green's functions and fundamental solutions}
+\label{sec:8.7}
+
+The alternative to the transform route is the construction of Green's functions. For a half-space under a prescribed incident wave, the Green's function of the coupled thermoelastic operator provides the scattered field directly, and the reflection and transmission coefficients follow from the evaluation of the Green's function and its derivatives at the interface. The advantage of this route is that it packages the geometry into a single object, so that the same Green's function can be used for several different incident conditions. Its disadvantage is that the Green's function for the coupled problem is a matrix-valued function whose construction requires the simultaneous inversion of a set of differential operators, and that the algebra is considerably heavier than that of the modal approach of Sections~\ref{sec:8.2}--\ref{sec:8.5}. In the reviewed literature the modal route dominates for plane-wave incidence, which is consistent with the structure of the evidence base described in Section~\ref{sec:14.4}.
+
+\subsection{Spectral methods and numerical approaches}
+\label{sec:8.8}
+
+Spectral methods expand the solution in terms of orthogonal basis functions---Fourier series for periodic domains, Chebyshev polynomials for finite intervals, Legendre polynomials for axisymmetric problems. They are particularly effective for problems with periodic boundary conditions or with smooth solutions, and their convergence rate can be established analytically for smooth data, which makes them the natural choice when a convergence study is required.
+
+Finite element, finite difference, and boundary element methods cover the problems for which no closed-form solution exists. The nonlocal and memory-dependent families require specialized treatments, and it is worth being specific about why, because the reason is not an aesthetic preference.
+
+\begin{itemize}
+\item \textbf{Nonlocal operators.} The constitutive law of Eq.~\eqref{eq:7.1} is an integral over a neighbourhood. A finite element discretization must therefore assemble the kernel integral element-by-element, which converts the stiffness matrix from a sparse local operator into a dense or partially dense one, and the cost of the assembly grows with the size of the neighbourhood. The standard remedy is to use the differential form of the operator, Eq.~\eqref{eq:7.2}, which is local, at the price of the well-posedness difficulties discussed in Section~\ref{sec:7.6}. Which of the two is used is therefore not a free choice, and it must be stated.
+\item \textbf{Memory-dependent operators.} The memory integral of Section~\ref{sec:transport} is over the entire history of the field, and a direct discretization is a marching-in-time scheme whose stability is governed by the treatment of the history. Quadrature and convolution-quadrature schemes, and the use of the Laplace-domain representation in which the history is compressed into a single auxiliary variable, are the two standard alternatives.
+\item \textbf{Fractional operators.} A fractional derivative of order $\alpha$ in space or in time is non-local, and its discretization is a dense or a history-dependent operator, with the same cost considerations as in the nonlocal case.
+\end{itemize}
+
+\subsection{Variational structure and its use as an analytical tool}
+\label{sec:8.9}
+
+Alongside the direct transform route, coupled thermoelasticity admits a variational formulation, and the two are not simply equivalent. Variational principles for the coupled system have been established and compared by Marotti de Sciarra \cite{Marotti2013}, who showed that the admissible function spaces and the boundary conditions inherited from each principle differ, and that the resulting weak formulations do not all select the same class of solutions. This matters practically because a variational derivation constrains the admissible boundary conditions before the equations are solved, and a formulation that admits non-physical boundary data can contaminate the solution even when the differential equations are correct. The variational route is also the one that extends most naturally to the nonlocal and gradient constitutive laws of Section~\ref{sec:nonlocal}, since the integral kernel appears as an operator in the quadratic functional rather than as an explicit convolution in the equations of motion.
+
+\subsection{The two-stage structure of the classical problem, and what the generalizations change}
+\label{sec:8.10}
+
+The displayed classical dynamic thermoelastic equations form a coupled initial-boundary-value problem: momentum balance is hyperbolic and Fourier heat conduction is parabolic. A sequential or quasi-static solution is an approximation whose validity requires a stated weak-coupling or time-scale assumption. Harmonic elimination can produce a frequency-dependent longitudinal response, but attenuation and any dimensionless coupling parameter must be derived for the precise constitutive convention and geometry. Those quantitative claims are not established in this section and remain open pending equation-level derivation and primary-source checking.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig12-solution-workflow.pdf}
+\caption{Solution workflow for wave propagation problems: from governing equations to energy flux computation and validation (Sections 8, 9, 10).}
+\label{fig:solution_workflow}
+\end{figure}
+
+\input{tables/source/T5_solution_techniques}
+
+\subsection{Notation summary for Section 8}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 8.}
+\label{tab:notation-sec8}
+\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$\Gamma_{ik}$ & Christoffel tensor & varies & \eqref{eq:8.2} \\
+$c$ & Wave speed & m\,s$^{-1}$ & \eqref{eq:8.2} \\
+$q$ & Wave number & m$^{-1}$ & \eqref{eq:8.4} \\
+$G_i$ & Coefficients of the secular equation & varies & \eqref{eq:8.4} \\
+$\hat{f}(\omega)$ & Fourier transform & varies & \eqref{eq:8.6} \\
+$\tilde{f}(s)$ & Laplace transform & varies & \eqref{eq:8.7} \\
+$\hat{u}_i^{(n)}$ & Normalized amplitude of mode $n$ & varies & \eqref{eq:8.5} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open questions for Section 8}
+
+\begin{enumerate}[label=\textbf{OQ8.\arabic*}]
+\item How are complex modes to be normalized so that the energy ratios computed from them are reproducible across independent implementations, and can a normalization convention be proposed that the field adopts? \label{oq:8.1}
+\item What are the convergence properties of the numerical schemes for the nonlocal and memory-dependent families, and how large is the error introduced by replacing the integral operator by its differential form? \label{oq:8.2}
+\item Can the two-stage sequential treatment of the classical problem be extended to the generalized families as an approximation, with a bound on the error introduced? \label{oq:8.3}
+\item Which weak formulation is the correct starting point for a variational treatment of a nonlocal and memory-dependent coupled problem? \label{oq:8.4}
+\end{enumerate}
+
+% LocalWords:
