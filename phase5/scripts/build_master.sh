@@ -19,7 +19,7 @@ report_failure() {
         while IFS= read -r line; do
           line=${line//%/%25}; line=${line//$'\r'/%0D}
           printf '::error title=%s-diagnostic::%s\n' "$(basename "$logfile")" "$line"
-        done < <(grep -niE '^! |error|couldn.t|not found|undefined|Overfull \\\\([hv]box)' "$logfile" | head -40 || true)
+        done < <(grep -niE '^! |error|couldn.t|not found|undefined|Overfull \\\\([hv]box)' "$logfile" | head -3 || true)
       fi
     done
     if [[ -f "$ROOT/master/build/process.log" ]]; then
