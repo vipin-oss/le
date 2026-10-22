@@ -74,3 +74,17 @@ Orders: `control/BRAVE_B2_REVISIONS.md` @ `origin/claude/control` `db71198`.
 level = 3 (Q&R 2006 IJHMT preview; Q&R 2007 RSPA abstract; Chandrasekharaiah 1988 abstract).
 Everything else is bibliographic record or secondary. **No model's *originating* paper has been
 read.**
+
+## Phase B3 — energy balance, R/T/A, literature (2026-10-22)
+
+Orders: `control/BRAVE_NEXT.md`.
+
+| File | Content | Headline |
+|---|---|---|
+| `V-B3a_energy-balance-interface-flux.md` | Energy identity, flux and interface conditions **per model** (Biot, LS, GL, GN-II, GN-III, MGT) | **GN-II is the only model with a conserved energy** (D≡0, verified by substitution). LS flux carries $(1-i\omega\tau_0)^{-1}$; **GL's flux is plain Fourier** (its relaxation is in the stress/energy); GN-III needs **both** channels in $[q_n]$. **MGT: no canonical flux** — a third-order model has no unique energy functional, so its $R/T$ is undefined without stating a choice; it also needs **3** interface conditions, not 2. |
+| `V-B3b_RTA-conditions.md` | Conditions (C1)–(C5) for $R+T+A=1$; numeric example | **A refuted hypothesis, logged:** $A=0$ to machine precision at an *ideal* interface for **all five** computed models, including the dissipative ones — because the flux amplitudes share a common phase, so bulk dissipation lives inside complex $k$ (i.e. inside $T$), not in $A$. $A\neq0$ requires Kapitza resistance ($A$ up to $8.0\times10^{-2}$, non-monotonic in $h$) or a phase mismatch ($A=1.2\times10^{-4}$ for $\tau_0$ mismatch). **Corollary for the review: a reported $R+T=1$ is a consequence of the interface conditions, not a validation.** |
+| `V-B3c_reflection-transmission-literature.md` | Six Crossref-verified records + checklist | **Record-level only; no full text opened.** No paper was located that reports flux-based $R/T/A$; most located work is free-surface *amplitude* reflection. GN-II source paper now Crossref-verified (Green & Naghdi 1993, *J. Elasticity* **31**:189–208, `10.1007/BF00044969`, 2194 cites). Largest gap: **classical (Biot) interface $R/T$ citations**. |
+| `V-B3_rta.py` | Solver + all numeric checks | Identical-media test $r=0,t=1,A=0$ **exactly** for all five models; $\lvert R+T+A-1\rvert=0$ ($\le10^{-16}$); $\omega\tau_0\to0$ recovers Biot; $A(h)\to0$ at both $h$ extremes. MGT excluded with the reason printed. |
+
+**Coupled-system stability status (requested with B3a) remains UNVERIFIED** for every model — the
+files state this explicitly rather than extrapolating the rigid-conductor results.
