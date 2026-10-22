@@ -1,7 +1,8 @@
 # STATUS (updated by Claude)
-Updated: 2026-10-22 16:45 IST
+Updated: 2026-10-22 17:40 IST
 | Item | State |
 |---|---|
+| FULL-TEXT (Claude) | 9 handler-supplied PDFs opened. KEY: GL 1972 original has NO tau_0 on the strain-rate coupling term; manuscript eq (4.9) is an LS/GL hybrid variant -> WRONG as GL 1972 (Claude's W1 arbitration corrected). GL ordering tau_1>=tau_0 primary-verified; LS eq checked; DPL stability (Q&R) checked; MDD kernel free choice checked. See FULLTEXT_FINDINGS_01.md, ARENA_NEXT UPDATE 4. |
 | Round 1 (Arena) | Claude build of c77b0b8: 146 pp, 0 errors, 0 undefined, 12 overfull (9 > 1 pt, worst 5.3 pt), fonts embedded. CI run 39745464117 is slow (TeX install step), result pending. |
 | Brave Phase B1 | DONE in chat; files NOT visible on remote (branch arena/04fdf32e-le does not exist on GitHub). Claude spot-check: mostly confirmed; 'Length: open' quote unconfirmed; preprint overlap overstated. See BRAVE_B2_GO.md. Needs push to brave/verification. |
 | Brave B2 | DONE and accepted. Revisions R1-R5 accepted (DPL tau_theta>tau_q/2 re-derived by Claude). |
