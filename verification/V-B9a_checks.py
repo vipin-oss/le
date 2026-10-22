@@ -131,9 +131,11 @@ for ang in (0, 30, 70):
     s = sum(r.values())
     print("    theta0=%2d deg : sum of the NINE printed numbers = %+.3f   (E_int = %+.2f)"
           % (ang, s, r["Eint"]))
-print("  --> E_int is printed, non-zero and O(1): the cross terms are NOT dropped.")
-print("      Yet the printed numbers miss 1 by 0.1 to 0.9. The sum rule is")
-print("      therefore a definition/lumping, not a numerical check that closes.")
+print("  !! WITHDRAWN AS EVIDENCE 2026-10-22 (BRAVE_B11 cond.1): these numbers come from ONE")
+print("  !! rendering (PDF conversion). The HTML article page and the per-figure pages carry")
+print("  !! images only, so no second rendering agrees -> status UNVERIFIED, paper tag CONDITIONAL.")
+print("  --> as read: E_int is printed, non-zero and O(1): the cross terms are NOT dropped.")
+print("      [if the numbers hold] they miss 1 by 0.1 to 0.9; but see the withdrawal above.")
 
 print()
 print("=" * 70)

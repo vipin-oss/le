@@ -1,5 +1,19 @@
 # V-B9c — Does `ΣR + ΣT (+ E_int) = 1` survive? Test on one concrete `V-B3d` case
 
+> **REVISION 2026-10-22 (BRAVE_B11 condition 1) — READ FIRST.** The claim in §3.3 that the cited
+> paper's own nine printed numbers sum to 0.120 / 0.889 / 1.121 and therefore violate its eq (58) is
+> **WITHDRAWN as evidence and tagged UNVERIFIED**: those numbers come from a single rendering (the
+> PDF conversion); the publisher HTML article page and the per-figure pages carry **images only**, so
+> two renderings cannot be made to agree here (see `V-B11a_barak_tables.md`). The paper row is
+> `CONDITIONAL`, never wrong. The strongest permitted wording, and only after a second agreeing read,
+> is the neutral "the printed values do not satisfy the stated unity at the stated precision".
+> **What still stands unchanged:** §3.1–§3.2 (my own `V-B3d` computation: deficits −4.3×10⁻⁴ diagonal,
+> −9.5×10⁻⁴ with the outgoing cross term, cross terms ≡ attenuation), the *structural* reading of eqs
+> (53)/(57)/(58) (two-rendering-confirmed equations), and therefore the answer to the item-4 question —
+> "not automatic; only enforced by definitional lumping". What is withdrawn is only the assertion about
+> the paper's numbers, and with it any use of §3.3 as the reason for a verdict on §9.7.
+
+
 **Order:** `control/BRAVE_B9.md` item 4 @ `origin/claude/control` `79999f7`. **Access date:** 2026-10-22.
 **Code:** `V-B9a_checks.py` CHECK 5 (the source's own tables) and the frozen
 `V-B3d_coupled_interface.py` (the concrete case).
@@ -77,12 +91,15 @@ dissipative one it cannot be waved away.
 * eq (53): the transmitted flux of mode `s` is proportional to `‖H_s‖²` — **diagonal only**.
 * eq (57): `⟨P_st⟩` carries the pairwise products `H_s H̄_t`; `E_int = Σ_{s≠t} E_st` (eq 58).
 * eq (58): `Σ_s(ES_s + E_int + E_RP + E_RT + E_RS) = 1` — asserted as the conservation statement.
-* Their printed values: `E_int` is `0` at `θ₀ = 0°` and reaches `−2.07` at `70°` for `n=p=l=1`, i.e. it
-  is **O(1), not a correction**. And the sum of the nine printed numbers is **0.120 / 0.889 / 1.121** at
-  `θ₀ = 0°, 30°, 70°` (CHECK 5). Eq (58) is therefore not satisfied by the paper's own tables; the
-  0.12 at normal incidence is a factor-8 shortfall, not a rounding artefact.
-* Consequence: in that literature the "identity" is **enforced by lumping** — `E_int` collects whatever
-  the diagonal mode fluxes miss — rather than being an independent check. My case shows that even the
+* **[WITHDRAWN 2026-10-22 — see the banner.]** Their printed values, as read by my single PDF-conversion
+  rendering, are `E_int = 0` at `θ₀ = 0°` and `−2.07` at `70°` for `n=p=l=1`, with a nine-number sum of
+  `0.120 / 0.889 / 1.121` at `θ₀ = 0°, 30°, 70°` (CHECK 5). **This is one rendering and is not evidence:**
+  the HTML article page and the per-figure pages carry the tables as images only, so no second rendering
+  agrees. Status `UNVERIFIED`; the paper is `CONDITIONAL`, not wrong. Retained here only so the reader can
+  see what was read and why it cannot be used.
+* Consequence (unchanged, because it follows from the *structure* of eqs 53/57/58, not from the
+  numbers): in that literature the "identity" is **enforced by lumping** — `E_int` is defined as the sum
+  of pairwise transmitted products — rather than being an independent check. My case shows that even the
   lumping is incomplete unless the incident–outgoing interference is inside it.
 
 ### 3.4 Verdict on the §9.7 sentence (scoped)
@@ -93,8 +110,8 @@ sufficient**:
 * `CORRECT-CONDITIONAL` if read as "with the model's own flux and a total-field definition, `R + T = 1`
   holds at a passive interface" — that is exactly what `V-B3d` shows to `10⁻¹⁶`.
 * `WRONG-CONFIRMED` if read as "the identity survives for mode-projected energy ratios" — it does not,
-  in either my computed case (`−4.3 × 10⁻⁴` diagonal, `−9.5 × 10⁻⁴` with outgoing cross terms) or the
-  source's own tables (`0.12`–`1.12`).
+  in my computed case (`−4.3 × 10⁻⁴` diagonal, `−9.5 × 10⁻⁴` with outgoing cross terms). The former
+  second support (the source's tables, `0.12`–`1.12`) is **withdrawn** (UNVERIFIED, single rendering).
 * The sentence should say which of the two it means; as written the reader will take it as the second.
 
 Note that live `EQ-10.12` already carries the right qualifier ("lossless limit only; mode-wise use
@@ -132,9 +149,8 @@ requires cross-term accounting"), so the §9.7 prose is looser than the register
 * The three `R` values and the two deficits: **HIGH** (frozen, reproducible, validated by an independent
   dissipation integral).
 * "Cross terms = attenuation, vanishing for real `k`": **HIGH** (control case).
-* That the source's printed tables violate its own eq (58): **MEDIUM-HIGH** — the numbers were read from
-  the publisher PDF's figure tables, which are 2-significant-figure plot data; a 0.12 vs 1.00 gap is far
-  outside that precision, but the individual digits are not authoritative.
+* That the source's printed tables violate its own eq (58): **WITHDRAWN — UNVERIFIED** (single rendering;
+  see banner and `V-B11a_barak_tables.md`). Nothing in the review may rest on it.
 * Generality beyond the two tested systems: **MEDIUM**. Both are passive, perfectly bonded, planar
   interfaces; a graded or lossy interface layer would add a genuine `A ≠ 0`, which neither case covers.
 

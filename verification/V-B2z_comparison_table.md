@@ -1,5 +1,13 @@
 # V-B2z — Comparison table of canonical models, and catalogue of repeated mistakes
 
+> **REVISION 2026-10-22 (BRAVE_B11 condition 2).** The GL row's status cell ("no — form and ordering
+> unsourced") and its "GL ≡ LS when the two times coincide" cell are **superseded**. The GL form AND the
+> ordering `τ₁ ≥ τ₀ > 0` are now primary-sourced (via `control/FULLTEXT_FINDINGS_01.md` F1 and
+> `V-B11b_gl_recheck.md`); the "GL ≡ LS at equal times" claim is retracted (numerically false for the
+> primary system, R = 0.211742 vs 0.208360). The row is upgraded to "form sourced, ordering sourced,
+> **do not print until the flux law is stated**".
+
+
 **Access date 2026-10-22.** Companion to V-B2a … V-B2m and to `V-B2_wave_speeds.py`.
 
 ## Task

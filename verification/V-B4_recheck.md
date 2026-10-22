@@ -1,5 +1,13 @@
 # V-B4-RECHECK — response to `control/ARBITRATION_B4.md` (Claude, 22 Oct 2026)
 
+> **REVISION 2026-10-22 (BRAVE_B11 condition 2).** W1's *withdrawal* is itself revised: on the primary
+> 1972 text (`control/FULLTEXT_FINDINGS_01.md` F1) the manuscript's (4.9) carries τ₀ on the strain-rate
+> coupling, which Green–Lindsay's (4.13) does not. So **W1 was partly right** — the charge's stated
+> *reason* (one free energy forces one relaxation time) was wrong and stays withdrawn, but the conclusion
+> "the printed equation is not Green–Lindsay 1972" holds. `EQUATION_LEDGER` EQ-042 is re-graded
+> WRONG-CONFIRMED on that narrow ground; `V-B11b_gl_recheck.md` §3.6 lists every change.
+
+
 **Task.** Re-check W1 and W2 exactly as the arbitration asks; re-grade the three WRONG verdicts into
 CONFIRMED-WRONG / PROBABLE / DISPUTED; make `V-B2c`, `V-B2z` and `V-B4` agree with each other.
 

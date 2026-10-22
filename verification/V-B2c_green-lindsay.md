@@ -1,5 +1,17 @@
 # V-B2c — Green–Lindsay (two relaxation times)
 
+> **REVISION 2026-10-22 (BRAVE_B11 condition 2).** Green–Lindsay has now been checked against the
+> original 1972 equations (relayed by the supervisor from the PDF: `control/FULLTEXT_FINDINGS_01.md`
+> F1). Three statements in this file change; the full treatment is in `V-B11b_gl_recheck.md`.
+> (i) §R5's diagnostic "GL ≡ LS when the two times coincide" is **RETRACTED** — with τ₁ on the stress and
+> τ₀ only on T̈, GL at equal times is numerically distinct from LS (R = 0.211742 vs 0.208360 at 10¹⁰ Hz).
+> (ii) §R8's title sentence "the manuscript's GL system is the standard one and my charge was wrong" is
+> **corrected**: R8's slot table is right, but the manuscript's (4.9) puts τ₀ on the strain-rate coupling,
+> which the original does not — so my W1 charge was **partly right**. (iii) §R8.4's "do not print" still
+> stands, now for a sharper reason: the flux law must be stated AND the energy equation must be GL's, not
+> the variant's.
+
+
 **Access date 2026-10-22.** No subscription full text. ⚠ This file carries a larger UNVERIFIED block than the others: see §NOT verified.
 
 > **REVISION R2 (2026-10-22) — read this before using anything below.** Revision R2 is
@@ -282,3 +294,16 @@ GL keeps Fourier, while LS (and the manuscript's eq. 4.4) has `q_i + τ₀q̇_i 
 carries (4.4) forward gets DPL-with-equal-lags. The manuscript's §4.4 does not say which it means, and
 in its notation `τ₀` plays the LS flux role in §4.3 and the GL energy role in §4.4. One sentence fixes
 it; until then, GL equations should not be quoted from either paper.
+
+### R9. Revision (2026-10-22) — the primary GL equations, and what changes here
+
+`V-B11b_gl_recheck.md` recomputes GL from the original system (Fourier flux; stress
+`β(T + τ₁ Ṫ)`; energy `k∇²T = ρc(Ṫ + τ₀T̈) + βT₀ ė_kk`, **no τ₀ on the coupling**; `τ₁ ≥ τ₀ > 0` from
+(4.14)/(4.16)). Consequences for this file:
+
+* §R5's "GL ≡ LS at τ₁ = τ₀" — **retracted** (numerically false for the primary system).
+* §R8.2's slot table — **stands**; §R8's opening claim that the manuscript's system *is* GL — **does not**
+  (the coupling term carries τ₀ in (4.9), which the primary does not).
+* The rigid thermal speed `√(κ/τ₀)` — **stands** (it depends only on the coefficient of T̈).
+* `EQUATION_LEDGER` EQ-042 moves to WRONG-CONFIRMED as a statement of GL 1972, and `CLAIM_LEDGER` CL-006
+  to WRONG-CONFIRMED / HIGH on the ordering. Counts unchanged (176 / 53).
