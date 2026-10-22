@@ -27,13 +27,13 @@ The first 22 strict phase5 CI attempts failed (the first three with exit 12; sub
 
 Detailed warning inventory from run `39745464117` reported zero duplicate `page.1` destinations, zero PDF-string token warnings, zero `[h]` float warnings, 416 underfull hboxes, and zero underfull vboxes. Run `39741493145` had reported 412 underfull hboxes. The exact underfull count from the latest successful run is not locally accessible; underfull warnings remain for justified review, without global suppression. `DEFECT_STATUS.csv` records resolved build defects and open visual/page-level review findings.
 
-The inherited GitHub workflow used `|| true` around conversion and LaTeX steps and built `phase4/manuscript`; its earlier green status is not evidence for v1.1. The replacement targets phase5 and does not suppress command failures. Early phase5 CI attempts failed; the latest strict phase5 run `39748215109` passed.
+The inherited GitHub workflow used `|| true` around conversion and LaTeX steps and built `phase4/manuscript`; its earlier green status is not evidence for v1.1. The replacement targets phase5 and does not suppress command failures. Early phase5 CI attempts failed; the latest strict phase5 run `39750456893` passed.
 
 ## Current release gate
 
 - Figure source and PDF assets: **generated and structurally checked; final-size visual proof pending**.
 - Master source/table portability: **source paths repaired and strict CI build passed**.
-- Engineering strict build: **PASSED (run 39748215109); overall R1 gate remains OPEN pending visual/page-level review and underfull-warning disposition**.
+- Engineering strict build: **PASSED (latest run 39750456893; first source-fix pass 39748215109); overall R1 gate remains OPEN pending visual/page-level review and underfull-warning disposition**.
 - Scientific audit: **PARTIAL; primary-source claim checks and theory-specific energy identities remain open**.
 - Editorial/journal readiness: **NOT PASSED**.
 - `phase5-v1.1-source-audit.zip`: refreshed from the current phase5 tree; ZIP integrity check passed. It contains no compiled v1.1 PDF.
