@@ -1,12 +1,12 @@
 # Separate quality gates — phase5 v1.1 source
 
-## Engineering / build — STRICT CI PASSED; VISUAL REVIEW OPEN
+## Engineering / build — STRICT CI PASSED; CONTACT-SHEET OVERVIEW REVIEW COMPLETE
 
 - **Static structure checks:** passed for duplicate labels (0), unresolved reference labels (0), duplicate bibliography keys (0), missing citation keys (0), missing `\input`/`\include` files (0), missing bibliography files (0), and missing figure assets (0). Inventory: 37 TeX files (431 labels, 308 reference commands, 222 citation calls); malformed truncated ref fragments: 0; unescaped underscores in `\texttt` paths: 0; stray single Markdown-style backticks: 0.
 - **Figure assets:** 18/18 PDFs generated from 18/18 parseable SVGs; vector drawing operators and extractable text confirmed. Contact-sheet overview reviewed. Individual final-size visual proof, caption match, scientific content, and license/source provenance remain open.
-- **LaTeX compilation:** strict CI run `39748215109` first passed on commit `5df59c6d4d6d3eb0915d8fbc47fc2302cc330604`; follow-up run `39750456893` passed on the report-only commit with the same manuscript source. No thresholds were weakened. The build generated a 146-page PDF; the required font check, strict build, contact-sheet rendering, and artifact uploads succeeded. The preceding detailed font report found all 77 resources embedded.
-- **PDF inspection:** the 161-page v1.0 baseline was surveyed at overview scale. The final v1.1 PDF and contact sheets were generated and uploaded, but artifact download returns EOF here; final page/text/box/font visual inspection is NOT RUN.
-- **Strict warnings/cross-reference/BibTeX pass:** strict CI PASSED. Detailed run `39745464117` found zero duplicate destinations, PDF-string token warnings, and `[h]` warnings; 416 underfull hboxes remain to review (latest count unavailable). Underfull warnings were not globally suppressed.
+- **LaTeX compilation:** strict CI run `39753968114` passed; it generated a 146-page PDF, passed the required font check and unchanged strict gate, and committed the PDF/contact sheets under `phase5/build_outputs/`. No threshold was weakened.
+- **PDF inspection:** all four 100-dpi sheets (40 pages max per sheet) were reviewed at overview scale; no blank page, obvious clipping/overlap, missing figure, or scratch text was evident. All 18 figure captions occur in the final PDF. This is not full-page-at-100%-zoom proofreading or scientific correctness review.
+- **Strict warnings/cross-reference/BibTeX pass:** strict CI PASSED. Detailed run `39745464117` found zero duplicate destinations, PDF-string token warnings, and `[h]` warnings; final run `39753968114` reports 416 underfull hboxes and 0 underfull vboxes. No global suppression was used; no visible damage attributable to the underfull warnings was apparent at contact-sheet scale.
 
 ## Scientific — NOT PASSED
 
@@ -22,4 +22,4 @@
 - No page-level proofread, final-size figure legibility inspection, bibliography layout check, or final PDF proofreading was possible.
 - The generalized energy appendix retains only explicitly labelled source leads/open items; it requires full scientific reconciliation before submission.
 
-**Overall release decision:** the strict engineering build gate passed in run `39750456893`, but Part 1/R1 is not yet complete because final PDF/contact-sheet review, page-count reconciliation, and the remaining underfull-warning disposition are open. Do not begin Part 2 yet. Do not call this a final scientific review, journal-ready submission, or completed audit.
+**Overall release decision:** Part 1/R1 engineering and requested output/reconciliation checks are complete, with 416 underfull hboxes recorded as nonfatal and no obvious damage at contact-sheet scale. Per the task instruction, Part 2 has not started. Do not call this a final scientific review, journal-ready submission, or completed scientific audit.

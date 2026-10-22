@@ -1,7 +1,7 @@
 # Version and provenance record
 
 **Working branch:** `arena/40393d9f-le`<br>
-**Working version:** `phase5 v1.1 source-audit` (work-in-progress; not released, compiled, or validated)<br>
+**Working version:** `phase5 v1.1 source-audit` (work-in-progress; strict CI compile passed, not released or scientifically validated)<br>
 **v1.0 source of truth:** tracked phase4 source tree and its tracked PDF; both remain unmodified by phase5 repair work<br>
 **Versioned working copy:** `phase5/master/`, with portable table inputs in `phase5/master/tables/source/` and figure assets in `phase5/master/figures/source/`.
 
@@ -23,6 +23,6 @@ Repairs in `phase5/scripts/repair_source.py` and subsequent source edits apply t
 
 1. **v1.0 repository baseline** — 161-page tracked PDF; exists and was thumbnailed.
 2. **Other reported PDF** — said to be 170 pages with pdfTeX 1.40.29; not available for inspection.
-3. **phase5 v1.1** — versioned source, repaired relative paths, 18 generated PDF figures, static scans, and strict CI build. Run `39748215109` passed on commit `5df59c6d4d6d3eb0915d8fbc47fc2302cc330604`, produced a 146-page PDF, and uploaded the PDF/contact-sheet artifacts. Final visual/page-level inspection remains open because artifact download returns EOF in this environment.
+3. **phase5 v1.1** — versioned source, repaired relative paths, 18 generated PDF figures, static scans, and strict CI build. Strict CI run `39753968114` passed on manuscript/workflow commit `7c125de25cb0d3fd951152bdad74931cff3c55a6`; its output PDF and four 100-dpi contact sheets are committed under `phase5/build_outputs/` by follow-up commit `586181b06fc626c17ac1b5ae42e85c3cf0d23b7d`. The sheets were reviewed at overview scale; full-size proofing and science audit remain distinct.
 
-The inherited build workflow's green status is not substituted for a phase5 compile: the old workflow compiled the phase4 tree and suppressed failures with `|| true`. The replacement strict phase5 workflow does not suppress command failures; its strict build gate passed first in run `39748215109`, with follow-up run `39750456893` also successful. Overall R1/Part 1 is still open pending visual/page-level review and underfull-warning disposition.
+The inherited build workflow's green status is not substituted for a phase5 compile: the old workflow compiled the phase4 tree and suppressed failures with `|| true`. The replacement strict phase5 workflow does not suppress command failures; its strict build gate passed first in run `39748215109`; runs `39750456893` and `39753968114` also passed. Requested Part 1 output/reconciliation checks are complete; 416 underfull hboxes are recorded with no obvious contact-sheet-scale damage. Part 2 remains unstarted.

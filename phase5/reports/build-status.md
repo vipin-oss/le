@@ -21,19 +21,17 @@ Latest `python3 phase5/scripts/audit_inventory.py` result: **37 TeX files; 431 l
 
 ## Compile status and blocker
 
-**Strict build: PASSED in CI. Final PDF visual/page-level review: OPEN.** Local `bash phase5/scripts/build_master.sh` remains unavailable because TeX tools (including `latexmk`) are not installed; the strict GitHub workflow is the execution evidence.
+**Strict build: PASSED in CI. Contact-sheet overview review and physical-page reconciliation are complete; full-size proofreading remains open.** Local `bash phase5/scripts/build_master.sh` remains unavailable because TeX tools (including `latexmk`) are not installed; the strict GitHub workflow is the execution evidence.
 
-The first 22 strict phase5 CI attempts failed (the first three with exit 12; subsequent attempts with exit 1). The strict gate first passed after the targeted manuscript repairs in run `39748215109` on commit `5df59c6d4d6d3eb0915d8fbc47fc2302cc330604`. A fresh run `39750456893` then passed on report-update commit `00b837051b9d823f3182ae11c0e6b82c1cdd9300`; it contains the same manuscript source as `5df59c6` and verifies that report-only changes did not affect the build. No gate threshold was weakened. CI generated a **146-page** PDF, passed the required PDF-font check (the preceding detailed check reported all 77 resources embedded), rendered contact sheets, and uploaded the PDF/build-report artifact (`12413926912`, 6,022,765 bytes) and log artifact (`12413727369`, 134,568 bytes). The PDF metadata annotation reports `Pages=146`. PDF and contact-sheet archive contents remain unavailable locally because artifact download returns EOF, so no final visual inspection is claimed.
+The first 22 strict phase5 CI attempts failed (the first three with exit 12; subsequent attempts with exit 1). The strict gate first passed after targeted manuscript repairs in run `39748215109` on commit `5df59c6d4d6d3eb0915d8fbc47fc2302cc330604`; follow-up run `39750456893` also passed after report-only changes. The newest strict run, `39753968114`, passed on workflow commit `7c125de25cb0d3fd951152bdad74931cff3c55a6`, generated a **146-page** PDF, passed the unchanged strict/font gates, rendered four 100-dpi contact sheets (maximum 40 pages per sheet), and published the manuscript PDF/sheets into the branch as commit `586181b06fc626c17ac1b5ae42e85c3cf0d23b7d`. The committed output directory is `phase5/build_outputs/`; it contains only the phase5 master PDF, contact sheets, and build provenance/count README. Run `39753968114` reports **416 underfull hboxes and 0 underfull vboxes**. No strict threshold was weakened. All four sheets were reviewed at overview scale; the visual limits and reconciliation are documented in `page-by-page-reconciliation.md`.
 
-Detailed warning inventory from run `39745464117` reported zero duplicate `page.1` destinations, zero PDF-string token warnings, zero `[h]` float warnings, 416 underfull hboxes, and zero underfull vboxes. Run `39741493145` had reported 412 underfull hboxes. The exact underfull count from the latest successful run is not locally accessible; underfull warnings remain for justified review, without global suppression. `DEFECT_STATUS.csv` records resolved build defects and open visual/page-level review findings.
-
-The inherited GitHub workflow used `|| true` around conversion and LaTeX steps and built `phase4/manuscript`; its earlier green status is not evidence for v1.1. The replacement targets phase5 and does not suppress command failures. Early phase5 CI attempts failed; the latest strict phase5 run `39750456893` passed.
+The inherited GitHub workflow used `|| true` around conversion and LaTeX steps and built `phase4/manuscript`; its earlier green status is not evidence for v1.1. The replacement targets phase5 and does not suppress command failures. Early phase5 CI attempts failed; the latest strict phase5 run `39753968114` passed.
 
 ## Current release gate
 
-- Figure source and PDF assets: **generated and structurally checked; final-size visual proof pending**.
+- Figure source and PDF assets: **18/18 distinct figures present in the final PDF; all four 100-dpi contact sheets reviewed at overview scale.**
 - Master source/table portability: **source paths repaired and strict CI build passed**.
-- Engineering strict build: **PASSED (latest run 39750456893; first source-fix pass 39748215109); overall R1 gate remains OPEN pending visual/page-level review and underfull-warning disposition**.
+- Engineering strict build: **PASSED (run 39753968114); 416 underfull hboxes / 0 vboxes, no obvious visual damage at contact-sheet scale.**
 - Scientific audit: **PARTIAL; primary-source claim checks and theory-specific energy identities remain open**.
 - Editorial/journal readiness: **NOT PASSED**.
 - `phase5-v1.1-source-audit.zip`: refreshed from the current phase5 tree; ZIP integrity check passed. It contains no compiled v1.1 PDF.
