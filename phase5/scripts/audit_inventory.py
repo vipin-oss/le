@@ -17,6 +17,7 @@ figs: set[str] = set()
 inputs: list[tuple[Path, str]] = []
 bibliographies: set[str] = set()
 malformed_ref_fragments: list[tuple[Path, int, str]] = []
+unescaped_texttt_underscores: list[tuple[Path, int, str]] = []
 
 for path in TEX:
     text = path.read_text(encoding="utf-8")
@@ -24,6 +25,12 @@ for path in TEX:
         (path, text.count("\n", 0, match.start()) + 1, match.group(1))
         for match in re.finditer(r"(?m)^[ \t]*ef\{([^}]+)\}", text)
     )
+    for command in re.finditer(r"\\texttt\{([^}]*)\}", text):
+        for underscore in re.finditer(r"(?<!\\)_", command.group(1)):
+            position = command.start(1) + underscore.start()
+            unescaped_texttt_underscores.append(
+                (path, text.count("\n", 0, position) + 1, command.group(1))
+            )
     for label in re.findall(r"\\label\{([^}]+)\}", text):
         labels[label].append(path.relative_to(ROOT).as_posix())
     refs.extend((path, label) for label in re.findall(r"\\(?:eqref|ref|cref|Cref|autoref)\{([^}]+)\}", text))
@@ -61,6 +68,9 @@ for label, count in sorted(missing_refs.items()):
 print(f"Malformed truncated ref commands: {len(malformed_ref_fragments)}")
 for path, line, label in malformed_ref_fragments:
     print(f"  MALFORMED ref{{{label}}} at {path.relative_to(ROOT).as_posix()}:{line}")
+print(f"Unescaped underscores in texttt paths: {len(unescaped_texttt_underscores)}")
+for path, line, snippet in unescaped_texttt_underscores:
+    print(f"  UNESCAPED UNDERSCORE in \\texttt{{{snippet}}} at {path.relative_to(ROOT).as_posix()}:{line}")
 print(f"Duplicate bibliography keys: {len(bib_duplicates)}")
 for key, count in sorted(bib_duplicates.items()):
     print(f"  DUPLICATE BIBKEY {key}: {count}")
@@ -87,5 +97,5 @@ if inventory.exists():
         print(f"  {field}: {dict(counts)}")
 print("NOTE: This static check does not compile TeX, inspect the manuscript PDF, verify references externally, or validate scientific claims.")
 
-if duplicates or missing_refs or malformed_ref_fragments or bib_duplicates or missing_cites or missing_inputs or missing_bibs or missing_figures:
+if duplicates or missing_refs or malformed_ref_fragments or unescaped_texttt_underscores or bib_duplicates or missing_cites or missing_inputs or missing_bibs or missing_figures:
     sys.exit(1)
