@@ -63,8 +63,6 @@ printf '\n=== BibTeX (from output directory) ===\n' | tee -a build/process.log
 run_pdflatex 2
 run_pdflatex 3
 run_pdflatex 4
-printf '\n=== Build-log gates ===\n' | tee -a build/process.log
-python3 "$ROOT/scripts/check_build_log.py" build/main.log 2>&1 | tee -a build/process.log
 printf '\n=== PDF metadata ===\n' | tee -a build/process.log
 pdfinfo build/main.pdf | tee build/pdfinfo.txt | tee -a build/process.log
 printf '\n=== PDF fonts ===\n' | tee -a build/process.log
@@ -73,8 +71,10 @@ if grep -qvE '^(name|[-[:space:]]|$)' build/pdffonts.txt; then
   if awk 'NR>2 && $4 != "yes" {bad=1; print "UNEMBEDDED FONT:", $0} END {exit bad}' build/pdffonts.txt; then
     echo "All reported PDF fonts are embedded."
   else
-    echo "ERROR: at least one font is not embedded." >&2
+    echo "ERROR: at least one PDF font is not embedded." >&2
     false
   fi
 fi
+printf '\n=== Build-log gates ===\n' | tee -a build/process.log
+python3 "$ROOT/scripts/check_build_log.py" build/main.log 2>&1 | tee -a build/process.log
 printf 'Build complete: %s\n' "$ROOT/master/build/main.pdf"

@@ -76,8 +76,19 @@ jobs:
       - name: Build figures, compile master, and enforce gates
         run: bash phase5/scripts/build_master.sh
 
+      - name: Render PDF text and contact sheets
+        if: always()
+        run: |
+          pdf=phase5/master/build/main.pdf
+          if [[ ! -s "$pdf" ]]; then
+            echo "No compiled PDF is available for extraction or contact-sheet review."
+            exit 0
+          fi
+          pdftotext -layout "$pdf" phase5/master/build/main.txt
+          python phase5/scripts/make_pdf_thumbnails.py "$pdf" phase5/master/build/contact-sheets
+
       - name: Upload compiled PDF and build reports
-        if: success()
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: phase5-v1.1-master-pdf-${{ github.run_id }}
@@ -85,7 +96,9 @@ jobs:
             phase5/master/build/main.pdf
             phase5/master/build/pdfinfo.txt
             phase5/master/build/pdffonts.txt
-          if-no-files-found: error
+            phase5/master/build/main.txt
+            phase5/master/build/contact-sheets/*.png
+          if-no-files-found: warn
           retention-days: 30
 
       - name: Upload complete build logs

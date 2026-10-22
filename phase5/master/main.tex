@@ -20,6 +20,7 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \usepackage{longtable}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -82,10 +83,14 @@
 %======================================================================
 \begin{document}
 
+% The titlepage environment resets the page counter; omit only its page
+% destination so the following front-matter page can own page.1.
+\hypersetup{pageanchor=false}
 %======================================================================
 % Front matter
 %======================================================================
 \input{frontmatter/titlepage}
+\hypersetup{pageanchor=true}
 \input{frontmatter/abstract}
 \input{frontmatter/notation}
 \input{frontmatter/acronyms}
