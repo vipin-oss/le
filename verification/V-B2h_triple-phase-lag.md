@@ -1,5 +1,14 @@
 # V-B2h — Triple-phase-lag (TPL) thermoelasticity (Roy Choudhuri)
 
+> **SUPERSEDED IN PART — see `V-B8a_tpl_F6_F9_audit.md` (2026-10-22).**
+> R1/R2 below write the TPL law as `(1+τ_q∂_t+½τ_v²∂_t²)(…)` and call it the "standard form".
+> The primary law (Roy Choudhuri 2007 eq 3, read by the supervisor as F6, and corroborated in two
+> open-access papers I read myself) contains **no τ_v² term at all**: it is
+> `q(t+τ_q) = −[k∇T(t+τ_T) + k*∇v(t+τ_v)]`, first order in all three lags. R3's claim that
+> "two inequivalent published forms exist (½τ_v² vs τ_v²)" is **withdrawn** — I could not re-locate
+> either. **The algebra in R4–R5 and the numbers in `V-B2_wave_speeds.py` remain valid for the
+> hypothetical operator as written, and only for it** (rigid heat conductor, 1-D, linear).
+
 **Access date 2026-10-22.**
 
 ## Task

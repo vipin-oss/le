@@ -80,6 +80,7 @@ Ordered by how often I met them and how damaging they are.
 **M5. "DPL/TPL have finite propagation speed" asserted without proof.** Established for the τ_T = 0 sub-case (= LS) only. For τ_T ≠ 0 the operator is higher order and finite propagation needs a real theorem. Marked **NOT established** rather than "yes". *Confidence: MEDIUM — this is a gap in the literature as much as a mistake.*
 
 **M6. TPL with ½τ_v² in one paper and τ_v² in another.** Factor 2 on the highest-order term; not cosmetic. *Confidence: HIGH that both forms exist; the canonical one is UNVERIFIED.*
+> **CORRECTION 2026-10-22 (`V-B8a` §3.2): WITHDRAWN to UNVERIFIED.** The premise is wrong: Roy Choudhuri's TPL law (2007, eq 3) has **no τ_v² term**; it is first order in all three lags with an explicit `k*∇v` piece. The two "forms" I compared were not recorded and I could not re-locate them this session. Do not cite this item.
 
 **M7. GN-II k* quoted without its calibration.** k* has units conductivity×time, so a bare number is meaningless. Setting k* = k_th/τ₀ makes GN-II reproduce the LS speed to within the coupling δ (verified: 1125.9 vs 1119.9 m/s). *Confidence: HIGH.*
 

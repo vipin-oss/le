@@ -84,6 +84,15 @@ every closed row.**
 | Barak/Gupta interface papers cited in §9.7 | 9, 17, 18, 19, 20, 21 (+ Sci Rep 2023 already read) | seven citations in `sec09_interfaces.tex:140–200`; the Sci Rep one is gold OA and is **not** a request row |
 | Mindlin 1961 piezothermoelasticity anchors | 22 | **the 1961 reference did not resolve**; the anchor actually used is Mindlin 1974 (DOI verified). See §5. |
 
+## 3a. Update after `FULLTEXT_FINDINGS_02` (2026-10-22)
+
+Row 14 (Roy Choudhuri 2007) has since been **read at eqs 1–9 by the supervisor** (F6): the TPL law is
+first order in all three lags, with an explicit `k*∇v` term and **no τ²/2 term**. I still want the
+paper for my own check of the conventions and the ordering statement, so the row stands — but the
+equations are no longer unknown to the project. Two open-access papers that reproduce the law
+(`10.1038/s41598-020-73590-3`; `10.1038/s41598-020-70388-1`) were read by me on 2026-10-22 and are
+not request rows. See `V-B8a_tpl_F6_F9_audit.md`.
+
 ## 4. Already open access — read by me, no request needed
 
 These were in the candidate set and I read them myself; details in `V-B7b_oa_fulltext_upgrade.md`.
