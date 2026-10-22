@@ -53,12 +53,23 @@ for kind, pattern in (
             excerpt = log_lines[index + 1].strip() if index + 1 < len(log_lines) else ""
             boxes.append((kind, size, line, source, source_range, excerpt[:40]))
 print(f"overfull hboxes/vboxes > 1 pt: {len(boxes)}")
-box_details = [
-    f"{kind} {Path(source).name}:{source_range} +{size:.1f}pt {excerpt}"
-    for kind, size, _line, source, source_range, excerpt in boxes
-]
-if box_details:
-    print("overfull detail: " + " | ".join(box_details))
+by_source: dict[str, list[tuple[str, float, int, str, str, str]]] = {}
+for box in boxes:
+    by_source.setdefault(Path(box[3]).name, []).append(box)
+source_details = []
+for source, entries in sorted(by_source.items(), key=lambda item: (-len(item[1]), item[0]))[:30]:
+    worst = max(entries, key=lambda entry: entry[1])
+    source_details.append(
+        f"{source}={len(entries)} (max {worst[1]:.1f}pt at {worst[4]}; {worst[5][:24]})"
+    )
+if source_details:
+    print("overfull by source: " + " | ".join(source_details))
+worst_overall = sorted(boxes, key=lambda entry: entry[1], reverse=True)[:8]
+if worst_overall:
+    print("largest overfull boxes: " + " | ".join(
+        f"{Path(source).name}:{source_range} +{size:.1f}pt {excerpt[:30]}"
+        for _kind, size, _line, source, source_range, excerpt in worst_overall
+    ))
 if boxes:
     failed = True
 
