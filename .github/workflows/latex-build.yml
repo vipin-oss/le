@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: phase5-build-${{ github.ref }}
@@ -85,7 +85,54 @@ jobs:
             exit 0
           fi
           pdftotext -layout "$pdf" phase5/master/build/main.txt
-          python phase5/scripts/make_pdf_thumbnails.py "$pdf" phase5/master/build/contact-sheets
+          python phase5/scripts/make_pdf_thumbnails.py "$pdf" phase5/master/build/contact-sheets --dpi 100 --per-sheet 40 --cols 5
+
+      - name: Publish strict-build PDF and contact sheets to the branch
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/arena/40393d9f-le'
+        run: |
+          set -euo pipefail
+          pdf=phase5/master/build/main.pdf
+          test -s "$pdf"
+          mkdir -p phase5/build_outputs/contact-sheets
+          rm -f phase5/build_outputs/contact-sheets/*.png
+          cp "$pdf" phase5/build_outputs/phase5-v1.1-master.pdf
+          cp phase5/master/build/contact-sheets/*.png phase5/build_outputs/contact-sheets/
+          underfull_hboxes=$(python3 - <<'PYCOUNT'
+          import re
+          from pathlib import Path
+          text = Path("phase5/master/build/process.log").read_text(errors="replace")
+          values = re.findall(r"underfull hboxes: (\d+)", text)
+          print(values[-1] if values else "unavailable")
+          PYCOUNT
+          )
+          underfull_vboxes=$(python3 - <<'PYCOUNT'
+          import re
+          from pathlib import Path
+          text = Path("phase5/master/build/process.log").read_text(errors="replace")
+          values = re.findall(r"underfull vboxes: (\d+)", text)
+          print(values[-1] if values else "unavailable")
+          PYCOUNT
+          )
+          cat > phase5/build_outputs/README.md <<EOF
+          # Phase5 v1.1 strict-build outputs
+
+          These files are generated from the phase5 master manuscript by the strict CI build.
+          Run: ${GITHUB_RUN_ID}
+          Source commit: ${GITHUB_SHA}
+          PDF: phase5-v1.1-master.pdf
+          Contact sheets: contact-sheets/*.png (100 dpi, at most 40 pages per sheet)
+          Underfull hbox warnings: ${underfull_hboxes}
+          Underfull vbox warnings: ${underfull_vboxes}
+          EOF
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add phase5/build_outputs/README.md phase5/build_outputs/phase5-v1.1-master.pdf phase5/build_outputs/contact-sheets/*.png
+          if git diff --cached --quiet; then
+            echo "Published output files are unchanged."
+            exit 0
+          fi
+          git commit -m "Publish strict-build PDF and contact sheets (${GITHUB_RUN_ID})"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Upload compiled PDF and build reports
         if: always()
@@ -98,6 +145,9 @@ jobs:
             phase5/master/build/pdffonts.txt
             phase5/master/build/main.txt
             phase5/master/build/contact-sheets/*.png
+            phase5/build_outputs/README.md
+            phase5/build_outputs/phase5-v1.1-master.pdf
+            phase5/build_outputs/contact-sheets/*.png
           if-no-files-found: warn
           retention-days: 30
 
