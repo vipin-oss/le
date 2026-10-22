@@ -28,3 +28,8 @@ R2 (content fixes) now OPEN for Arena.
 
 ## 2026-10-22 later (supervisor)
 Brave: B8a ff1c472, B9 af01639, B11 c46312a, B10a a1cafed, B10b b9fcc53, B10c-B01 7986af0, B10c-B02 943cce0: all ACCEPTED. Base 444 records, 307 blank authors. Quintanilla 2009 TPL window independently confirmed (sympy Routh-Hurwitz). Megahid 2023 eq(7) matches manuscript (4.18). Next: B03. Arena R2 report pending.
+
+## R2 GATE: PASSED with 2 follow-ups (supervisor, 2026-10-22 18:2x IST)
+Evidence: Arena head 72a0fba (content 3f4dbbc), CI run 39779835094 green, PDF 150 pp, 0 "??". I read the PDF text and rendered p.37: GL (4.9) now original GL 1972 (no tau0 on coupling, tau1>=tau0>0); GN-II is 1993 with corrected eq (44) alpha-form u-dot coupling; GN-III is 1992; TPL = Roy Choudhuri 2007; DPL = Tzou 1995; GK paragraph with lambda^2 and Ziman tau_z (kinetic-derivation framing); MGT = 1960 acoustic origin; title date fixed.
+Follow-ups: (1) phase5/reports/R2_STATUS.md reported "uncommitted" - must be committed so it can be audited; (2) notation nit: eq (44)-(45) use kappa* vs k_ij for the same coefficient; table cell "Tzou, 1995 / 1997" (remove 1997); "Singh (2020) Symmetry 12:488" identifier unresolved - keep as stated.
+R3 (citations) OPEN. Input: verification/REFERENCE_PLAN.csv (193 rows), REFERENCE_GAPS.csv (16) on arena/04fdf32e-le.
