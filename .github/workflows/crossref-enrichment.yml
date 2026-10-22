@@ -19,7 +19,7 @@ concurrency:
 jobs:
   enrich:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 25
     steps:
       - name: Checkout manuscript branch
         uses: actions/checkout@v4
@@ -34,45 +34,47 @@ jobs:
           path: verification-reference
           fetch-depth: 1
 
-      - name: Run Crossref enrichment and explicit comparisons
+      - name: Run R3a Crossref verification for Sections 4.1–4.12
         run: |
           python3 phase5/scripts/crossref_enrich.py \
             --base-csv verification-reference/verification/LITERATURE_BASE.csv \
             --local-bib phase5/master/references_local.bib \
-            --raw-dir phase5/references/crossref_raw \
-            --references-dir phase5/references \
+            --raw-dir phase5/reports/crossref_raw \
+            --references-dir phase5/reports \
+            --plan-csv verification-reference/verification/REFERENCE_PLAN.csv \
+            --citation-map-csv verification-reference/verification/CITATION_MAP.csv \
+            --row-index-csv verification-reference/verification/api_log/LITERATURE_ROW_INDEX.csv \
+            --report-dir phase5/reports \
             --pause 1.0
 
-      - name: Summarize generated audit files
+      - name: Summarize R3a verification outputs
         run: |
           python3 - <<'PY'
           import csv
+          from collections import Counter
           from pathlib import Path
-          for name in ("phase5/references/crossref_request_log.csv",
-                       "phase5/references/local_bib_crossref_audit.csv",
-                       "phase5/references/duplicate_doi_audit.csv",
-                       "phase5/references/doi_verification.csv"):
-              with Path(name).open(newline="", encoding="utf-8-sig") as f:
-                  rows = list(csv.DictReader(f))
-              print(f"{name}: {len(rows)} rows")
-          print("raw Crossref JSON files:", len(list(Path("phase5/references/crossref_raw").glob("*.json"))))
+          path = Path("phase5/reports/CROSSREF_VERIFY.csv")
+          with path.open(newline="", encoding="utf-8-sig") as f:
+              rows = list(csv.DictReader(f))
+          print(f"CROSSREF_VERIFY.csv: {len(rows)} plan rows")
+          print("status counts:", dict(Counter(row["status"] for row in rows)))
+          print("bib-ready entries:", sum(row["bib_ready"] == "YES" for row in rows))
+          print("raw Crossref metadata JSON files:", len(list(Path("phase5/reports/crossref_raw").glob("*.json"))))
           PY
 
-      - name: Commit generated Crossref records and audit
+      - name: Commit generated R3a Crossref evidence
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add phase5/references/crossref_raw \
-            phase5/references/crossref_request_log.csv \
-            phase5/references/literature_base_enriched.bib \
-            phase5/references/local_bib_crossref_audit.csv \
-            phase5/references/duplicate_doi_audit.csv \
-            phase5/references/doi_verification.csv \
-            phase5/references/doi_verification_method.md
+          git add phase5/reports/crossref_raw \
+            phase5/reports/CROSSREF_VERIFY.csv \
+            phase5/reports/CROSSREF_REQUEST_LOG.csv \
+            phase5/reports/R3A_VERIFIED_REFERENCES.bib \
+            phase5/reports/CROSSREF_METHOD.md
           if git diff --cached --quiet; then
-            echo "Crossref outputs are unchanged; nothing to commit."
+            echo "R3a Crossref evidence is unchanged; nothing to commit."
             exit 0
           fi
-          git commit -m "Add reproducible Crossref enrichment and audit"
+          git commit -m "Record R3a Crossref verification evidence"
           git push origin "HEAD:${GITHUB_REF_NAME}"

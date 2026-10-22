@@ -209,14 +209,258 @@ def compare(local: dict[str, str], message: dict | None) -> dict[str, str]:
             "year_match": year_match, "pages_match": pages_match}
 
 
+def _read_csv(path: Path) -> list[dict[str, str]]:
+    with path.open(encoding="utf-8-sig", newline="") as stream:
+        return list(csv.DictReader(stream))
+
+
+def _normal_metadata(value: str) -> str:
+    import unicodedata
+    value = unicodedata.normalize("NFKD", value or "")
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+    value = value.replace("&", " and ")
+    value = re.sub(r"\\[A-Za-z]+\*?(?:\{([^{}]*)\})?", lambda m: m.group(1) or "", value)
+    value = re.sub(r"[^a-zA-Z0-9]+", " ", value).lower().strip()
+    return re.sub(r"\s+", " ", value)
+
+
+def _normal_venue(value: str) -> str:
+    # Strip only a trailing volume/issue/page locator; the source title remains intact.
+    value = re.sub(r"\s+\d{1,4}(?:\(\d+\))?\s*[,;:]\s*[\w./–-]+\s*$", "", value or "")
+    abbreviations = {
+        "int": "international", "j": "journal", "mech": "mechanics", "phys": "physical",
+        "sci": "sciences", "transf": "transfer", "therm": "thermal", "proc": "proceedings",
+        "natl": "national", "acad": "academy", "appl": "applied", "mater": "materials",
+        "eng": "engineering", "math": "mathematics", "comp": "computational", "rev": "review",
+        "adv": "advances", "struct": "structures", "technol": "technology", "sect": "section",
+        "univ": "university", "lett": "letters", "res": "research", "commun": "communications",
+    }
+    tokens = _normal_metadata(value).split()
+    return " ".join(abbreviations.get(token, token) for token in tokens if token not in {"of", "the", "and"})
+
+
+def _crossref_metadata(message: dict) -> dict:
+    # Keep bibliographic metadata only; omit abstracts, references, links, and other content.
+    allowed = ("DOI", "type", "title", "author", "published-print", "published-online", "issued",
+               "container-title", "short-container-title", "publisher", "volume", "issue", "page",
+               "article-number", "ISSN", "ISBN")
+    return {key: message[key] for key in allowed if key in message}
+
+
+def _fetch_r3a(doi: str, raw_dir: Path, log_writer: csv.writer, pause: float) -> tuple[int, dict | None]:
+    filename = safe_doi(doi) + ".json"
+    target = raw_dir / filename
+    url = "https://api.crossref.org/works/" + urllib.parse.quote(doi, safe="")
+    last_error = ""
+    for attempt in range(5):
+        request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
+        timestamp = dt.datetime.now(dt.timezone.utc).isoformat()
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                http_status = int(response.status)
+                payload = json.loads(response.read().decode("utf-8"))
+            message = payload.get("message") or {}
+            metadata = _crossref_metadata(message)
+            target.write_text(json.dumps({"query_doi": doi, "http_status": http_status,
+                                          "message": metadata}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            log_writer.writerow([doi, http_status, timestamp, str(target), ""])
+            if pause:
+                time.sleep(pause)
+            return http_status, metadata
+        except urllib.error.HTTPError as exc:
+            if exc.code == 404:
+                target.write_text(json.dumps({"query_doi": doi, "http_status": 404, "message": None}, indent=2) + "\n", encoding="utf-8")
+                log_writer.writerow([doi, 404, timestamp, str(target), "not found"])
+                if pause:
+                    time.sleep(pause)
+                return 404, None
+            last_error = f"HTTP {exc.code}: {exc.reason}"
+            if exc.code not in (429, 500, 502, 503, 504) or attempt == 4:
+                break
+        except Exception as exc:
+            last_error = f"{type(exc).__name__}: {exc}"
+            if attempt == 4:
+                break
+        time.sleep(min(30, 2 ** attempt * 2))
+    log_writer.writerow([doi, "NO_RESPONSE", dt.datetime.now(dt.timezone.utc).isoformat(), str(target), last_error])
+    raise RuntimeError(f"Crossref request failed for {doi}; no verification row will be emitted: {last_error}")
+
+
+def _bib_from_crossref(key: str, doi: str, message: dict) -> str:
+    authors = authors_from_message(message)
+    title_values = message.get("title") or []
+    title = title_values[0] if title_values else ""
+    year = issued_year(message)
+    container_values = message.get("container-title") or message.get("short-container-title") or []
+    container = container_values[0] if container_values else ""
+    kind = "book" if message.get("type") in ("book", "monograph") else "article"
+    fields = [("author", authors), ("title", title), ("year", year), ("doi", doi)]
+    if container:
+        fields.append(("journal" if kind == "article" else "publisher", container))
+    for source, dest in (("volume", "volume"), ("issue", "number"), ("page", "pages"), ("article-number", "pages")):
+        value = str(message.get(source, ""))
+        if value and not any(existing == dest for existing, _ in fields):
+            fields.append((dest, value))
+    lines = [f"@{kind}{{{key},"]
+    lines.extend(f"  {field} = {{{bib_escape(value)}}}," for field, value in fields if value)
+    lines.append("}")
+    return "\n".join(lines)
+
+
+def run_r3a(args: argparse.Namespace) -> int:
+    base_rows = _read_csv(args.base_csv)
+    plan_rows = _read_csv(args.plan_csv)
+    citation_rows = _read_csv(args.citation_map_csv)
+    row_index = {row.get("id", ""): row for row in _read_csv(args.row_index_csv)}
+    base_by_id = {row.get("id", ""): row for row in base_rows}
+    if len(base_by_id) != len(base_rows):
+        raise ValueError("LITERATURE_BASE contains duplicate ids")
+    sections = {f"s.4.{number}" for number in range(1, 13)}
+    scoped = [row for row in plan_rows if row.get("plan_section", "").strip() in sections]
+    missing_ids = sorted({row.get("lit_id", "") for row in scoped} - set(base_by_id))
+    if missing_ids:
+        raise ValueError("REFERENCE_PLAN ids absent from LITERATURE_BASE: " + ", ".join(missing_ids))
+    for row in scoped:
+        indexed = row_index.get(row.get("lit_id", ""))
+        if indexed and (indexed.get("DOI", "").strip().lower() != base_by_id[row["lit_id"]].get("DOI", "").strip().lower()):
+            raise ValueError(f"LITERATURE_ROW_INDEX DOI conflicts with LITERATURE_BASE for {row['lit_id']}")
+
+    args.raw_dir.mkdir(parents=True, exist_ok=True)
+    args.report_dir.mkdir(parents=True, exist_ok=True)
+    dois = sorted({base_by_id[row["lit_id"]].get("DOI", "").strip() for row in scoped
+                   if DOI_RE.match(base_by_id[row["lit_id"]].get("DOI", "").strip())})
+    log_path = args.report_dir / "CROSSREF_REQUEST_LOG.csv"
+    messages: dict[str, tuple[int, dict | None]] = {}
+    with log_path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.writer(stream, lineterminator="\n")
+        writer.writerow(["DOI", "HTTP_status", "timestamp_utc", "metadata_json", "error"])
+        for index, doi in enumerate(dois, 1):
+            print(f"Crossref {index}/{len(dois)}: {doi}", flush=True)
+            messages[doi] = _fetch_r3a(doi, args.raw_dir, writer, args.pause)
+
+    map_by_key: dict[str, list[str]] = {}
+    for item in citation_rows:
+        keys = re.split(r"[;,]\s*", item.get("proposed_citations", ""))
+        for key in keys:
+            if key.strip():
+                map_by_key.setdefault(key.strip(), []).append(item.get("claim_id", ""))
+
+    verify_path = args.report_dir / "CROSSREF_VERIFY.csv"
+    verify_fields = ["lit_id", "citekey", "resolved_citekey", "section", "DOI", "status", "title_match", "year_match",
+                     "venue_match", "crossref_title", "crossref_year", "crossref_venue", "technical_claim_eligible",
+                     "read_level", "prior_api_log", "citation_map_claims", "raw_json", "reason", "bib_ready"]
+    verified_bib: list[str] = ["% R3a entries only: Crossref VERIFIED and REFERENCE_PLAN technical_claim_eligible=YES.",
+                               "% Metadata-only/NO rows are deliberately excluded; authors/fields come from saved Crossref JSON.", ""]
+    rows_out: list[dict[str, str]] = []
+    existing_entries = parse_bib(args.local_bib)
+    existing_by_key = {entry["key"]: entry for entry in existing_entries}
+    existing_by_doi: dict[str, list[dict[str, str]]] = {}
+    for entry in existing_entries:
+        if entry.get("doi", "").strip():
+            existing_by_doi.setdefault(entry["doi"].strip().lower(), []).append(entry)
+    bib_written: set[str] = set()
+
+    for plan in scoped:
+        lit_id = plan.get("lit_id", "")
+        base = base_by_id[lit_id]
+        doi = base.get("DOI", "").strip()
+        if not DOI_RE.match(doi):
+            continue  # no-DOI printed sources are recorded separately in R3_STATUS.md
+        http_status, message = messages[doi]
+        title_values = (message or {}).get("title") or []
+        cross_title = title_values[0] if title_values else ""
+        cross_year = issued_year(message or {})
+        cross_venues = ((message or {}).get("container-title") or []) + ((message or {}).get("short-container-title") or [])
+        cross_venue = cross_venues[0] if cross_venues else ""
+        title_match = "YES" if cross_title and _normal_metadata(base.get("title", "")).replace(" ", "") == _normal_metadata(cross_title).replace(" ", "") else "NO"
+        year_match = "YES" if cross_year and base.get("year", "").strip() == cross_year else "NO"
+        base_venue = _normal_venue(base.get("venue", ""))
+        venue_match = "YES" if base_venue and any(base_venue == _normal_venue(v) for v in cross_venues) else "NO"
+        response_doi = (message or {}).get("DOI", "").strip().lower()
+        doi_match = response_doi == doi.lower()
+        status = "NOT-FOUND" if http_status == 404 else ("VERIFIED" if title_match == year_match == venue_match == "YES" and doi_match else "MISMATCH")
+        reason_parts = []
+        if not doi_match and http_status != 404:
+            reason_parts.append("DOI field differs from requested DOI")
+        for label, value in (("title", title_match), ("year", year_match), ("venue", venue_match)):
+            if value != "YES":
+                reason_parts.append(f"{label} does not match LITERATURE_BASE")
+        if http_status == 404:
+            reason_parts.append("Crossref returned HTTP 404")
+        key = plan.get("citekey", "").strip()
+        eligible = plan.get("technical_claim_eligible", "").strip().upper() == "YES"
+        resolved_key = ""
+        claims = "; ".join(sorted(set(map_by_key.get(key, []))))
+        prior = "NOT_IN_INDEX"
+        if lit_id in row_index:
+            prior = "HISTORICAL_HTTP_" + row_index[lit_id].get("http_status", "UNKNOWN")
+        bib_ready = "NO"
+        if status == "VERIFIED" and eligible and key and authors_from_message(message or {}):
+            existing_for_doi = existing_by_doi.get(doi.lower(), [])
+            target_key = existing_for_doi[0]["key"] if existing_for_doi else key
+            conflict = target_key in existing_by_key and existing_by_key[target_key].get("doi", "").strip().lower() != doi.lower()
+            if not conflict:
+                bib_ready = "YES"
+                resolved_key = target_key
+                claims = "; ".join(sorted(set(map_by_key.get(key, []) + map_by_key.get(target_key, []))))
+                if target_key not in bib_written:
+                    verified_bib.append(_bib_from_crossref(target_key, doi, message or {}))
+                    verified_bib.append("")
+                    bib_written.add(target_key)
+            else:
+                reason_parts.append(f"citekey {target_key} already belongs to a different DOI")
+        elif status == "VERIFIED" and eligible and not authors_from_message(message or {}):
+            reason_parts.append("Crossref author metadata is empty; do not emit a BibTeX entry")
+        elif status == "VERIFIED" and eligible and not key:
+            reason_parts.append("REFERENCE_PLAN has no citekey; do not emit a BibTeX entry")
+        rows_out.append({"lit_id": lit_id, "citekey": key, "resolved_citekey": resolved_key, "section": plan.get("plan_section", ""), "DOI": doi,
+                         "status": status, "title_match": title_match, "year_match": year_match,
+                         "venue_match": venue_match, "crossref_title": cross_title, "crossref_year": cross_year,
+                         "crossref_venue": "; ".join(cross_venues), "technical_claim_eligible": "YES" if eligible else "NO",
+                         "read_level": plan.get("read_level", ""), "prior_api_log": prior,
+                         "citation_map_claims": claims, "raw_json": str(args.raw_dir / (safe_doi(doi) + ".json")),
+                         "reason": "; ".join(reason_parts), "bib_ready": bib_ready})
+
+    with verify_path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=verify_fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows_out)
+    (args.report_dir / "R3A_VERIFIED_REFERENCES.bib").write_text("\n".join(verified_bib), encoding="utf-8")
+    method = f"""# R3a Crossref verification method
+
+Scope: REFERENCE_PLAN rows whose `plan_section` is s.4.1–s.4.12. Each `lit_id` is joined to `LITERATURE_BASE.id`; the DOI is read only from the capitalized `DOI` column. `CITATION_MAP.csv` supplies claim-to-key associations, and `LITERATURE_ROW_INDEX.csv` is checked only for consistency/history (its old HTTP status never upgrades a row to VERIFIED).
+
+For each unique DOI, the job requests `https://api.crossref.org/works/<URL-encoded DOI>` with `{USER_AGENT}`. `CROSSREF_REQUEST_LOG.csv` records DOI, HTTP status, UTC time, metadata-file path, and error. `crossref_raw/` contains an allowlisted Crossref metadata projection (DOI, type, title, authors, issued/published dates, venue, publisher, volume/issue/pages, ISSN/ISBN); abstracts, links, reference lists, and full-text material are excluded.
+
+`CROSSREF_VERIFY.csv` compares DOI, normalized title, year, and venue against `LITERATURE_BASE`. Venue comparison removes a trailing volume/page locator and expands a fixed set of common journal abbreviations; no row-index HTTP code is treated as verification evidence. `VERIFIED` requires DOI, title, year, and venue all to match. A Crossref HTTP 404 is `NOT-FOUND`; a returned record with any disagreement is `MISMATCH`. Network/decoding failures fail the job instead of being relabelled as NOT-FOUND.
+
+`R3A_VERIFIED_REFERENCES.bib` includes only `VERIFIED` rows with `technical_claim_eligible=YES`, a nonempty Crossref author field, and no conflicting existing BibTeX key. New author and bibliographic fields are taken from the saved metadata JSON. Metadata-only/NONE rows are excluded.
+
+Counts: {len(scoped)} plan rows in scope; {len(rows_out)} rows with a Crossref DOI; {len(dois)} unique DOI requests; {len(bib_written)} bibliography-ready keys. No DOI records are handled separately in R3_STATUS.md as printed-source leads, not fabricated DOI matches.
+"""
+    (args.report_dir / "CROSSREF_METHOD.md").write_text(method, encoding="utf-8")
+    print(f"R3a Crossref rows={len(rows_out)}; unique DOI requests={len(dois)}; bib-ready entries={len(bib_written)}")
+    print(f"Wrote {verify_path} and {args.report_dir / 'R3A_VERIFIED_REFERENCES.bib'}")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--base-csv", type=Path, required=True)
     ap.add_argument("--local-bib", type=Path, required=True)
     ap.add_argument("--raw-dir", type=Path, required=True)
     ap.add_argument("--references-dir", type=Path, required=True)
+    ap.add_argument("--plan-csv", type=Path)
+    ap.add_argument("--citation-map-csv", type=Path)
+    ap.add_argument("--row-index-csv", type=Path)
+    ap.add_argument("--report-dir", type=Path)
     ap.add_argument("--pause", type=float, default=1.0)
     args = ap.parse_args()
+    if args.plan_csv:
+        required = (args.citation_map_csv, args.row_index_csv, args.report_dir)
+        if any(value is None for value in required):
+            ap.error("R3a mode requires --citation-map-csv, --row-index-csv, and --report-dir")
+        return run_r3a(args)
     args.raw_dir.mkdir(parents=True, exist_ok=True)
     args.references_dir.mkdir(parents=True, exist_ok=True)
 
