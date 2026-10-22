@@ -4,7 +4,7 @@
 2. **P0 — Review:** all seven baseline-PDF contact sheets were surveyed; figures render, while appendix-table overflow/fragmentation is visible at thumbnail scale.
 3. **P1 — Portable source:** phase5 has local table/figure inputs; the static scan finds no unresolved input, bibliography, citation, label, or figure path.
 4. **P1 — Figure assets:** 18/18 SVGs converted to vector PDFs with zero renderer warnings; structural validation passes, final manuscript-scale proof is pending.
-5. **P1 — Build:** local TeX is absent; ten strict CI attempts failed; after ref/path repairs, latest pass 1 found Markdown backticks in an appendix expression and >1 pt overfull boxes. Both source edits are pending CI.
+5. **P1 — Build:** local TeX is absent; eleven strict CI attempts failed. Latest completed pdfLaTeX/BibTeX but failed log gate on 34 overfull boxes >1 pt; source-mapping output is being added, with no accessible PDF.
 6. **P2 — Scientific repairs:** classical Cauchy flux and units were re-derived; LS/GL/piezoelectric/nonlocal/interface descriptions were narrowed or corrected with explicit conditions.
 7. **P2 — Generalized models:** GN, DPL/TPL, MGT, MDD, fractional, nonlocal and multiphysics balances remain partly unverified/open; no universal generalized flux is asserted.
 8. **P3 — Literature/content:** 95 inherited records are listed in the evidence matrix, but every claim remains OPEN/UNVERIFIED; no full-text claim audit or new systematic search was completed.

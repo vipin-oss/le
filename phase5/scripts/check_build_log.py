@@ -18,8 +18,10 @@ checks = {
     "LaTeX unresolved-reference summary": r"(?i)there were undefined (?:references|citations)",
 }
 failed = False
+check_counts: dict[str, int] = {}
 for name, pattern in checks.items():
     hits = re.findall(pattern, text)
+    check_counts[name] = len(hits)
     print(f"{name}: {len(hits)}")
     if hits:
         failed = True
@@ -27,7 +29,8 @@ for name, pattern in checks.items():
             print("  ", hit.strip() if isinstance(hit, str) else hit)
 
 # Treat material horizontal or vertical overflow above 1 pt as a proofing failure.
-boxes: list[tuple[str, float, int]] = []
+boxes: list[tuple[str, float, int, str, str]] = []
+log_lines = text.splitlines()
 for kind, pattern in (
     ("hbox", r"Overfull \\hbox \(([-+0-9.]+)pt too wide\)"),
     ("vbox", r"Overfull \\vbox \(([-+0-9.]+)pt too high\)"),
@@ -36,14 +39,26 @@ for kind, pattern in (
         size = float(match.group(1))
         if size > 1.0:
             line = text.count("\n", 0, match.start()) + 1
-            boxes.append((kind, size, line))
+            index = line - 1
+            nearby = log_lines[max(0, index - 45):index + 3]
+            source = "unknown source"
+            for nearby_line in reversed(nearby):
+                source_match = re.search(r"(?:\./|/)[^()\s]+\.tex", nearby_line)
+                if source_match:
+                    source = source_match.group(0)
+                    break
+            excerpt = " ".join(log_lines[index:min(index + 3, len(log_lines))]).strip()
+            boxes.append((kind, size, line, source, excerpt[:240]))
 print(f"overfull hboxes/vboxes > 1 pt: {len(boxes)}")
-for kind, size, line in boxes[:100]:
-    print(f"  {kind}, log line {line}: {size:.3f} pt")
+for kind, size, line, source, excerpt in boxes[:100]:
+    print(f"  {kind}, {source}, log line {line}: {size:.3f} pt; {excerpt}")
 if boxes:
     failed = True
 
 # Verify that BibTeX actually produced and resolved the manuscript bibliography.
+bibitems = 0
+bibcites = 0
+missing: list[str] = []
 bbl = log.with_suffix(".bbl")
 aux = log.with_suffix(".aux")
 blg = log.with_suffix(".blg")
@@ -77,5 +92,6 @@ else:
     print(f"ERROR: BibTeX log missing: {blg}")
     failed = True
 
+print("gate summary: " + "; ".join(f"{name}={count}" for name, count in check_counts.items()) + f"; overfull_boxes={len(boxes)}; bibitems={bibitems}; bibcites={bibcites}; missing_bib_keys={len(missing)}")
 print("BUILD LOG CHECK: FAIL" if failed else "BUILD LOG CHECK: PASS")
 sys.exit(1 if failed else 0)
