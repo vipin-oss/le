@@ -11,12 +11,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: phase5-build-${{ github.ref }}
+  group: phase5-build-r2-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     env:
       SOURCE_DATE_EPOCH: '1700000000'
       FORCE_SOURCE_DATE: '1'
