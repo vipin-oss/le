@@ -74,10 +74,10 @@ These remain separately identified as **“NO DOI - printed source”** and were
 
 The final strict-build workflow fills the following fields after all build gates pass and publishes this report with the PDF/contact sheets:
 
-- Content/source commit: `__R3_SOURCE_COMMIT__`
-- Strict CI run ID: `__R3_CI_RUN_ID__`
-- Strict build-step time: `__R3_BUILD_SECONDS__` seconds
-- PDF pages: `__R3_PDF_PAGES__`
-- Undefined references/citations: `__R3_UNRESOLVED_REFS__`
+- Content/source commit: `02dd3cf9ac9371c56b5bb6ea14e0a33cd3edbc93`
+- Strict CI run ID: `39801616881`
+- Strict build-step time: `10` seconds
+- PDF pages: `151`
+- Undefined references/citations: `0`
 
 MISMATCH and NOT-FOUND literature rows are intentionally unresolved; the undefined-reference count above is the separate LaTeX strict-build metric.
