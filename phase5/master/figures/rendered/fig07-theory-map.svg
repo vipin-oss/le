@@ -73,7 +73,7 @@
   <!-- TPL (bottom-left) -->
   <rect x="80" y="460" width="150" height="80" class="node-dpl"/>
   <text x="155" y="485" class="theory">Triple-phase-lag</text>
-  <text x="155" y="502" class="year">(TPL), 1997</text>
+  <text x="155" y="502" class="year">(TPL), 2007</text>
   <text x="155" y="518" class="source">Lagged constitutive form</text>
   <text x="155" y="534" class="source">Expansion details source-dependent</text>
 

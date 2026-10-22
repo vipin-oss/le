@@ -37,7 +37,7 @@ NDE uses wave propagation to detect flaws, measure material properties, and moni
 \end{itemize}
 
 \subsubsection{Evidence}
-Thermal-wave inspection is the clearest case in which a generalized theory is not a refinement but a requirement. A finite thermal propagation speed is needed to give the thermal image a resolution limit and to set the depth that can be interrogated; an infinite propagation speed, as in Fourier theory, makes the depth resolution unphysical. The classical wave-propagation framework for elastic solids, including the treatment of anisotropy and the interaction of incident, reflected and surface waves, is set out by Achenbach (1973) \cite{Achenbach1973} and remains the reference for the elastic part of the problem. The thermal part is where the generalizations enter, and the balance of evidence assembled for second sound by Joseph and Preziosi \cite{Joseph1989,Joseph1990} is what distinguishes the finite-speed descriptions from the classical one. \emph{Evidence level: High} for ultrasonic NDE, where classical elasticity suffices; \emph{Medium} for thermal-wave imaging, where generalized theory is required in principle but the quantitative inversion of defect depth in practice still uses simplified models.
+Thermal-wave inspection does not, in general, require a finite thermal propagation speed. Under Fourier diffusion, the thermal penetration depth $\mu=\sqrt{\alpha/(\pi f)}$ supplies a finite $1/e$ depth scale at modulation frequency $f$ and diffusivity $\alpha$. Finite-speed models may be relevant in regimes where their additional time scale is resolved, but their value for depth inversion must be demonstrated for the material and frequency range at issue. The classical elastic-wave framework, including anisotropy and interactions of incident, reflected and surface waves, is set out by Achenbach (1973) \cite{Achenbach1973}; Joseph and Preziosi \cite{Joseph1989,Joseph1990} review the evidence for heat waves. These sources do not establish a universal requirement for finite-speed thermal transport in imaging. \emph{Evidence level: High} for ultrasonic NDE, where classical elasticity suffices; thermal-wave imaging remains model- and regime-dependent.
 
 \subsection{Energy harvesting and conversion}
 \label{sec:13.3}
@@ -126,7 +126,7 @@ The common thread is that the generalized theories are needed in the regimes whe
 \midrule
 Smart structures & Thermal relaxation competes with the electromechanical coupling & Medium & \cite{Abouelregal2023} \\
 NDE (ultrasonic) & Classical elasticity suffices & High & \cite{Achenbach1973} \\
-NDE (thermal wave) & Finite thermal wave speed needed to set depth resolution & Medium & \cite{Joseph1989,Joseph1990} \\
+NDE (thermal wave) & Fourier diffusion length gives a finite depth scale; finite-speed corrections are regime-dependent & Conditional & \cite{Joseph1989,Joseph1990} \\
 Energy harvesting & Relaxation time controls the split between thermal and mechanical channels & High & Section 13.3 analysis \\
 Geophysics/\allowbreak seismology & Poroelastic coupling requires a genuine two-field formulation & High & \cite{Cowin1983,Iesan1986} \\
 Biomedical ultrasound & Classical elasticity suffices & High & \cite{Achenbach1973} \\

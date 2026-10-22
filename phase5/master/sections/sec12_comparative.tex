@@ -22,11 +22,11 @@ Tables~\ref{tab:twelve_criteria_a} and \ref{tab:twelve_criteria_b} compare the t
 \toprule
 \textbf{Criterion} & \textbf{CD} & \textbf{LS} & \textbf{GL} & \textbf{GN-II} & \textbf{GN-III} \\
 \midrule
-Thermal law & Fourier & Cattaneo & Cattaneo & Fourier & Cattaneo \\
+Thermal law & Fourier & Cattaneo & Fourier flux; temperature-rate terms & $q=-k^*\nabla\alpha$ & $q=-(k^*\nabla\alpha+k\nabla T)$ \\
 State variables & 2 & 2 & 2 & 2 & 2 \\
 Characteristic time & --- & $\tau_0$ & $\tau_0,\tau_T$ & --- & $\tau_0$ \\
 Characteristic length & --- & --- & --- & --- & --- \\
-Thermal wave speed & $\infty$ & finite & finite & $\infty$ & finite \\
+Thermal wave speed & $\infty$ & finite ($\tau_0>0$) & not assigned; corrected coupled roots not recalculated & $\infty$ & not assigned; model-specific \\
 Dissipation & yes & yes & branch & no & yes \\
 Order in space & 2 & 2 & 2 & 2 & 2 \\
 Mathematical structure & PDE & PDE & PDE & PDE & PDE \\
@@ -46,17 +46,17 @@ Primary source & \cite{Biot1956} & \cite{Lord1967} & \cite{Green1972} & \cite{Gr
 \toprule
 \textbf{Criterion} & \textbf{DPL} & \textbf{TPL} & \textbf{MGT} & \textbf{MDD} & \textbf{Nonlocal} \\
 \midrule
-Thermal law & Cattaneo & Cattaneo & Cattaneo & Cattaneo & Cattaneo \\
+Thermal law & DPL lag law & Roy Choudhuri first-order TPL & MGT heat equation & MDD kernel law & No heat law (elastic model) \\
 State variables & 3 & 4 & 3 & 2 & 2 \\
-Characteristic time & $\tau_q,\tau_T$ & $\tau_q,\tau_T,\tau_\nu$ & $\tau_T$ & $\tau$ (kernel) & $\tau$ (kernel) \\
-Characteristic length & --- & --- & --- & $\ell$ & $\ell$ \\
-Thermal wave speed & finite & finite & finite & finite & finite \\
+Characteristic time & $\tau_q,\tau_T$ & $\tau_q,\tau_T,\tau_v$ & $\tau_T$ & $\omega_M$ (window) & --- \\
+Characteristic length & --- & --- & --- & --- & $\ell$ \\
+Thermal wave speed & model-specific & model-specific & finite only for the selected MGT prototype & kernel-dependent & not applicable (elastic-only model) \\
 Dissipation & yes & yes & yes & kernel & yes \\
-Order in space & 2 & 2 & 3 & 2 & 2 \\
+Order in space & 2 & 2 & 2 & 2 & 2 \\
 Mathematical structure & PDE & PDE & PDE & integro-PDE & integro-PDE \\
 Interface conditions & classical & classical & classical & classical & modified \\
 Causality & yes & yes & yes & yes & yes \\
-Primary source & \cite{Tzou1995} & \cite{Tzou1997} & \cite{Quintanilla2019} & \cite{Wang2011} & \cite{Eringen1972} \\
+Primary source & \cite{Tzou1995} & \cite{RoyChoudhuri2007} & \cite{Quintanilla2019} & \cite{Wang2011} & \cite{Eringen1972} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -67,7 +67,7 @@ Three of these rows carry most of the interpretive content.
 The number of state variables is not by itself a reliable measure of the memory or modal structure of a theory. Local Fourier, relaxation, phase-lag, higher-order, hereditary, fractional, and spatially nonlocal laws use different state spaces and operators; one named family may also include multiple variants. For any comparison, the exact constitutive equations and field variables must be given. The table summarizes inherited descriptions and should be read as a preliminary map: its row-level claims have not all been checked against primary sources in this revision.
 
 \paragraph{Thermal wave speed and dissipation.}
-Propagation, dissipation, and stored energy depend on the precise equations and parameter regime; they cannot be ranked by family name alone. In particular, Green--Lindsay is not a two-temperature theory, and no universal classification of its dissipation or of Green--Naghdi type II/III energy conservation is asserted here. Claims about thermal-wave speed, second sound, parameter ordering, or conservative structure must be traced to the exact formulation and its thermodynamic assumptions. The corresponding table entries remain UNVERIFIED pending primary-source checks.
+Propagation, dissipation, and stored energy depend on the precise equations and parameter regime; they cannot be ranked by family name alone. In particular, Green--Lindsay is not a two-temperature theory: its original 1972 formulation keeps Fourier heat flux (no flux relaxation), while LS uses Cattaneo flux relaxation. The GN-II and GN-III entries name thermal-displacement fluxes, not Fourier and Cattaneo laws, respectively. Claims about thermal-wave speed, second sound, parameter ordering, or conservative structure must be traced to the exact formulation and its thermodynamic assumptions. The corresponding table entries remain UNVERIFIED pending primary-source checks.
 
 \paragraph{Well-posedness and causality.}
 Finite propagation, causality, and well-posedness are separate properties. Fourier's parabolic heat equation has instantaneous mathematical support, while relaxation and thermal-displacement models may yield hyperbolic branches under particular constitutive assumptions. Phase-lag, fractional, memory, and nonlocal formulations require analysis of their actual operators, parameters, initial data, and boundary conditions. No general causal or well-posedness result, nor a universal phase-lag ordering condition, is established in this review.

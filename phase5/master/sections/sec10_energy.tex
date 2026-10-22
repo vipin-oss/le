@@ -79,24 +79,24 @@ A piezothermoelastic flux expression and associated interface-energy ratios are 
 
 This revision has not derived or full-text-verified generalized-family energy-flux and dissipation identities for Lord--Shulman, Green--Lindsay, Green--Naghdi, phase-lag, Moore--Gibson--Thompson, memory-dependent, or nonlocal formulations. This is a limit of the present audit, not a claim that the wider literature has no such derivations. No general energy-flux identity is asserted here. Each family-specific balance remains OPEN in this version until its free energy, flux variables, boundary powers, dissipation inequality, and sources have been checked.
 
-\subsection{Conservation identity: \texorpdfstring{$\sum R + \sum T + A = 1$}{R + T + A = 1}}
+\subsection{Conservation identity: \texorpdfstring{$\sum R + \sum T + A_{\mathrm{int}} = 1$}{R + T + A int = 1}}
 \label{sec:10.5}
 
 For wave scattering at an interface, energy conservation requires that the sum of the reflection, transmission, and absorption coefficients be unity:
 
 \begin{equation}
-\sum R + \sum T + A = 1,
+\sum R + \sum T + A_{\mathrm{int}} = 1,
 \label{eq:10.11}
 \end{equation}
 
-where the sums run over all reflected and transmitted modes, and $A$ is the absorbed fraction. With no dissipation ($A = 0$),
+where $A_{\mathrm{int}}=(J_{1,n}^{\mathrm{tot}}-J_{2,n}^{\mathrm{tot}})/J_{\mathrm{inc},n}$ is the interface-local residual under the total-field convention of Section~\ref{sec:9.7}; the incident-side and transmitted-side fluxes include all modal cross terms. Bulk dissipation in either half-space is a separate volume contribution and is not added to $A_{\mathrm{int}}$. For a lossless interface with no storage ($A_{\mathrm{int}}=0$),
 
 \begin{equation}
 \sum R + \sum T = 1.
 \label{eq:10.12}
 \end{equation}
 
-The identity holds when four conditions are met: the energy flux is correctly defined for the theory in use; the interface is passive; all modes---propagating, evanescent, and attenuating---are properly accounted for; and complex modes are consistently normalised. These conditions are not automatic. For a single lossless, purely evanescent partial wave, the time-averaged normal flux is zero under the usual real-coefficient assumptions. Cross terms between partial waves can contribute to the total field flux; attenuating modes in dissipative media require separate treatment. Modal accounting must be performed on the complete field. The fourth is the most frequently overlooked: the notion of the energy of a complex mode depends on the normalisation adopted for the modal amplitude, and two groups using different normalisations can report energy ratios that differ by a constant factor while describing the same physics.
+This identity is conditional on the theory-specific flux, a passive interface, complete total-field modal accounting (including cross terms), and a common normalization. The lossless reduction additionally requires zero interface-local residual and no interfacial storage. These conditions are not automatic. For a single lossless, purely evanescent partial wave, the time-averaged normal flux is zero under the usual real-coefficient assumptions. Cross terms between partial waves can contribute to the total field flux; attenuating modes in dissipative media require separate treatment. Modal accounting must be performed on the complete field. The fourth is the most frequently overlooked: the notion of the energy of a complex mode depends on the normalisation adopted for the modal amplitude, and two groups using different normalisations can report energy ratios that differ by a constant factor while describing the same physics.
 
 \subsection{Dissipation mechanisms}
 \label{sec:10.6}

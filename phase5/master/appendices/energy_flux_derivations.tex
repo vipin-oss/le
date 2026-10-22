@@ -160,7 +160,7 @@ The entropy flux $p_i$ is determined by the same free energy potential as the st
 
 \subsection{Governing equations}
 
-GN-III is the most general GN model, combining type I (Fourier-like) and type II (dissipationless) characteristics:
+One commonly used GN-III variant combines thermal-displacement and temperature-gradient terms in its heat-flux law, $q_i=-(k^*\alpha_{,i}+kT_{,i})$ with $\dot\alpha=T$. This form is variant-specific; its energy flux and dissipation identity are not derived here:
 
 \begin{equation}
 K T_{,ii} + k^*\dot{T}_{,ii} - \rho C_e\ddot{T} = \vartheta\theta_0\ddot{u}_{i,i}.
@@ -239,23 +239,23 @@ The dimensionally inconsistent legacy equation and its scratch frequency-domain 
 The MDD operator (Wang \& Li, 2011):
 
 \begin{equation}
-D_\omega f(t) = \frac{1}{\omega}\int_{t-\omega}^{t} \kappa(t-\xi) f'(\xi) \, d\xi,
+D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} \kappa(t-\xi) f'(\xi) \, d\xi,
 \label{ef:mdd:1}
 \end{equation}
 
-where $\omega > 0$ is the time delay and $\kappa(t-\xi)$ is the kernel function.
+where $\omega_M > 0$ is the finite memory window and $\kappa(t-\xi)$ is the kernel function.
 
 The MDD heat conduction law:
 
 \begin{equation}
-(1 + \tau_0 D_\omega)q_i = -k T_{,i},
+(1 + \tau_0 D_{\omega_M})q_i = -k T_{,i},
 \label{ef:mdd:2}
 \end{equation}
 
 or equivalently:
 
 \begin{equation}
-q_i + \tau_0 D_\omega q_i = -k T_{,i}.
+q_i + \tau_0 D_{\omega_M} q_i = -k T_{,i}.
 \label{ef:mdd:3}
 \end{equation}
 
@@ -265,14 +265,14 @@ The expression $J_i=q_i-\sigma_{ij}v_j$ is classical; its role in the displayed 
 
 \subsection{Frequency-domain expression}
 
-For the MDD operator with kernel $\kappa(t-\xi)$, the frequency-domain representation depends on the kernel choice. For the exponential kernel $\kappa(t-\xi) = e^{-(t-\xi)/\omega}$:
+For the finite-window operator in Eq.~\eqref{ef:mdd:1}, set $s=t-\xi$ and use the harmonic convention $f(t)=\hat f e^{-i\Omega t}$. Its exact multiplier is kernel-dependent:
 
 \begin{equation}
-D_\omega f(t) \leftrightarrow \frac{1 - e^{-i\omega_{freq}\omega}}{i\omega_{freq}\omega} \cdot (-i\omega_{freq})\hat{f} \quad \text{(simplified)}.
+D_{\omega_M} f(t) \longleftrightarrow -\frac{i\Omega}{\omega_M}\left[\int_0^{\omega_M}\kappa(s)e^{i\Omega s}\,ds\right]\hat f.
 \label{ef:mdd:4}
 \end{equation}
 
-The exact form depends on the kernel function.
+This expression is the finite-horizon Fourier multiplier for the displayed kernel and convention; no kernel-independent simplified symbol is asserted.
 
 \subsection{Status}
 
@@ -280,7 +280,7 @@ The exact form depends on the kernel function.
 
 \begin{equation}
 J_i = q_i - \sigma_{ij}v_j,
-\qquad q_i + \tau_0 D_\omega q_i = -k T_{,i}.
+\qquad q_i + \tau_0 D_{\omega_M} q_i = -k T_{,i}.
 \label{ef:mdd:5}
 \end{equation}
 

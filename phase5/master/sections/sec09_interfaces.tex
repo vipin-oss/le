@@ -112,14 +112,14 @@ The solution exists and is unique when $\det(\Delta) \neq 0$.
 \subsection{Secular equation and mode classification}
 \label{sec:9.5}
 
-The secular equation (characteristic polynomial) determines the allowed wave numbers in each medium:
+For a transversely isotropic 6mm piezoelectric medium in the sagittal plane containing the c-axis, with the quasi-static electric closure and the stated P--SV--T--$\phi$ plus SH field set, the secular polynomial determines the allowed normal wave numbers. After removing the trivial $q^2=0$ factor associated with the quasi-static Poisson row, the retained polynomial is degree eight. This scope does not imply a piezo-stiffened SH branch in this plane.
 
 \begin{equation}
 G_1 q^8 + G_2 q^6 + G_3 q^4 + G_4 q^2 + G_5 = 0,
 \label{eq:9.9}
 \end{equation}
 
-which is an eighth-order polynomial in $q$ for coupled thermo-piezoelastic media. The roots are classified as:
+which is degree eight in $q$ for this specified 6mm orientation and field set; other symmetries, orientations, and retained fields can change the degree. The roots are classified as:
 
 \begin{itemize}
 \item \textbf{Propagating modes:} real $q$ --- waves that propagate without spatial attenuation,
@@ -146,55 +146,46 @@ For a well-posed interface problem, the number of independent boundary condition
 \subsection{Energy ratios at interfaces}
 \label{sec:9.7}
 
-The energy reflection coefficient $R$, transmission coefficient $T$, and absorption coefficient $A$ are defined as:
+The energy reflection coefficient $R$, transmission coefficient $T$, and interface-local residual $A_{\mathrm{int}}$ are defined from total-field normal fluxes as:
 
 \begin{equation}
-R = \frac{|\avg{J_{\mathrm{ref},n}}_t|}{|\avg{J_{\mathrm{inc},n}}_t|},
+R = \frac{J_{\mathrm{inc},n}-J_{1,n}^{\mathrm{tot}}}{J_{\mathrm{inc},n}},
 \qquad
-T = \frac{|\avg{J_{\mathrm{trans},n}}_t|}{|\avg{J_{\mathrm{inc},n}}_t|},
+T = \frac{J_{2,n}^{\mathrm{tot}}}{J_{\mathrm{inc},n}},
 \qquad
-A = \frac{\mathcal{D}}{|\avg{J_{\mathrm{inc},n}}_t|},
+A_{\mathrm{int}} = \frac{J_{1,n}^{\mathrm{tot}}-J_{2,n}^{\mathrm{tot}}}{J_{\mathrm{inc},n}},
 \label{eq:9.10}
 \end{equation}
 
-where the averages are time averages over one period and $n$ is the interface normal.
+where $J_{\mathrm{inc},n}>0$ is the incident normal flux, $J_{1,n}^{\mathrm{tot}}$ is the normal flux of the complete incident-plus-reflected field evaluated at the incident-side interface, and $J_{2,n}^{\mathrm{tot}}$ is the complete transmitted-side flux there; all are time-averaged with a common outward normal. Cross terms are included. $A_{\mathrm{int}}$ is the interface-local residual, not bulk attenuation.
 
-For a conservative system with no dissipation ($\mathcal{D} = 0$) and a passive interface:
+For a passive interface with no interfacial storage or dissipation ($A_{\mathrm{int}}=0$), total-field accounting gives:
 
 \begin{equation}
 \sum R + \sum T = 1.
 \label{eq:9.11}
 \end{equation}
 
-With dissipation:
+With interfacial dissipation or storage represented by a nonzero local residual:
 
 \begin{equation}
-\sum R + \sum T + A = 1.
+\sum R + \sum T + A_{\mathrm{int}} = 1.
 \label{eq:9.12}
 \end{equation}
 
-The identity \eqref{eq:9.12} holds when the energy flux is correctly defined for the specific theory, the interface is passive, all modes are properly accounted for, and complex modes are consistently normalized.
+The identity \eqref{eq:9.12} is the interface balance when the theory-specific flux is evaluated from total fields on both sides and all modes and cross terms are retained. It does not add bulk dissipation integrated over either half-space as a third interface channel.
 
-This makes interface energy analysis unusually stringent as a test of a generalized theory: the same identity must close for every model in the family, and any inconsistency between the flux used in the numerators and the dissipation used in the denominator shows up immediately as a violation. The recent literature has exploited that sensitivity to quantify how relaxation, memory and anisotropy redistribute energy across a bonded boundary, and the results fall into a small number of recurring patterns.
+For passive perfect contact with no interfacial storage or dissipation, continuity of total-field flux gives zero interface-local residual. Mode-diagonal outgoing fluxes need not satisfy this identity in attenuating media: incident--reflected and inter-mode cross terms can be nonzero. Bulk dissipation is a volume integral and must be reported separately; adding it to an interface residual would double-count energy loss.
 
 \subsubsection{What the interface partition reveals}
 
-The energy partition at an interface is a far more sensitive probe of a constitutive model than any bulk measurement, for a reason that is structural rather than accidental: the interface condition set is the only place in the problem where all the couplings are exercised simultaneously and where a single scalar identity must close. The identity of \eqref{eq:9.12} does not distinguish between two theories that agree in the bulk but differ in how they transmit energy; the reflected and transmitted fractions do.
+The interface ratios defined above are model-dependent observables. Their interpretation requires the stated constitutive flux and boundary conditions; the closure identity alone does not distinguish two theories that predict the same total-field flux balance. Comparisons of reflected and transmitted fractions require a common normalization and source-specific modal conventions.
 
-Four distinct mechanisms of energy redistribution have been quantified on this basis, and it is worth separating them, because they are frequently conflated.
-
-\begin{enumerate}
-\item \textbf{Electromechanical stiffness shift.} At a boundary between an elastic and a piezothermoelastic half-space, the transmitted energy budget is altered not by a new dissipation mechanism but by the renormalisation of the elastic stiffness that the electromechanical coupling induces. The conservation identity remains satisfied, and the shift in the transmitted fraction is a stiffness effect rather than an absorption effect \cite{Barak2023IJP}. This is the cleanest demonstration in the reviewed literature that a generalized theory can change an observable while leaving the thermodynamics untouched.
-\item \textbf{Extra attenuation channels.} When the thermoelastic partner is replaced by a medium with additional internal degrees of freedom --- a dual-porous solid, with its permeability-dependent relaxation and its phase-lag structure --- additional attenuation channels open, and the energy-ratio curves vary with incidence angle in a manner that no single-phase treatment reproduces \cite{Kumar2023PhysScr}. The diagnostic content lies in the angular dependence, not merely in the value at normal incidence.
-\item \textbf{History-dependent transmission.} Memory-dependent heat conduction changes the transmitted thermal energy through the kernel-weighted history of the flux, and the change depends jointly on the delay parameter of the kernel and on the stiffness contrast across the interface \cite{Barak2023MMMS}. The same dependence persists when monoclinic anisotropy is added to the piezothermoelastic partner \cite{Barak2023JTS}, which indicates that the two generalizations act through separate mechanisms and can therefore be separated experimentally by varying the interface contrast at fixed anisotropy.
-\item \textbf{Nonlocal phase shifts at a fluid boundary.} At a fluid/solid boundary, where the first medium carries no elastic field and the transmitted set is constrained by the kinematic admissibility conditions of the fluid, a nonlocal length scale in the solid modifies the phase of the reflected and transmitted waves while leaving the energy balance closed \cite{Gupta2023IJNMF}. Here the nonlocality shows itself in phase rather than in energy, which is the clearest available signature that distinguishes it from a purely dissipative effect.
-\end{enumerate}
-
-Two further results complete the picture. For a piezoelectric/thermoelastic interface the full energy analysis across the coupled fields shows that the electrical contribution does not decouple from the mechanical one, so that a single-field energy budget is not adequate and a coupled flux must be constructed \cite{Gupta2023Energy}. And a compact scattering-matrix treatment of this interface class, in which the amplitude system is written as a single matrix relation rather than as a set of separate modal equations, together with its higher-order memory-dependent variant, has been given for the same configuration \cite{Barak2023}.
+The cited Barak/Gupta interface papers are retained as bibliography leads, but their exact configurations, flux conventions, numerical results, and conservation claims have not been checked in this revision. No specific configuration or reported result is attributed to them here; their use as evidence remains OPEN pending full-text review.
 
 \subsubsection{The pattern and its limits}
 
-Across this body of work the pattern is consistent: the conservation identity survives extension to generalized media, but only when the energy flux is reconstructed from the constitutive model actually being solved. The difficulty identified in Section~\ref{sec:energy} is therefore not that the identity fails, but that a general-purpose expression for that flux has not been written down for every member of the family. A second limit is worth recording. All of the configurations above assume a perfectly bonded, flat interface between two homogeneous half-spaces with sharp material contrast. Real interfaces are graded over a thickness comparable with the microstructural length, and for nonlocal, memory-dependent and gradient theories the thickness of the interfacial layer is not negligible compared with the internal length of the material. Whether the sharp-interface result is the limit of a graded-interface result, and at what rate, is an open question that no configuration in the reviewed literature addresses.
+No universal claim that the conservation identity has been verified across generalized-media papers is made here. For the present total-field definitions, the local interface balance follows from flux continuity only when the specified interface has no storage or dissipation; mode-projected literature ratios require source-specific reconstruction and independent checking. A second limit is worth recording. All of the configurations above assume a perfectly bonded, flat interface between two homogeneous half-spaces with sharp material contrast. Real interfaces are graded over a thickness comparable with the microstructural length, and for nonlocal, memory-dependent and gradient theories the thickness of the interfacial layer is not negligible compared with the internal length of the material. Whether the sharp-interface result is the limit of a graded-interface result, and at what rate, is an open question that no configuration in the reviewed literature addresses.
 
 \subsection{Interface conditions under memory and nonlocality}
 \label{sec:9.8}

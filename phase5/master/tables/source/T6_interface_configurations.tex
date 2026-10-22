@@ -13,11 +13,12 @@
 \toprule
 \textbf{Configuration} & \textbf{Matching Conditions} & \textbf{Modal Phenomena} & \textbf{Physical Quantities} & \textbf{Evidence} \\
 \midrule
-Welded interface (perfect bonding) & $u_i^{(1)}=u_i^{(2)}$; $\sigma_{ji}^{(1)}n_j=\sigma_{ji}^{(2)}n_j$ & Mode conversion; P--S conversion; interface waves & $R,T,A$ coefficients; energy conservation $R+T+A=1$ & Standard theory \\
+Welded interface (perfect bonding) & $u_i^{(1)}=u_i^{(2)}$; $\sigma_{ji}^{(1)}n_j=\sigma_{ji}^{(2)}n_j$ & Mode conversion; P--S conversion; interface waves & $R,T,A_{\mathrm{int}}$; total-field identity; $A_{\mathrm{int}}=0$ if passive, lossless, and no interfacial storage & Standard theory \\
 Imperfect (spring-type) interface & Displacement jump proportional to traction & Partial transmission; interface stiffness effects & Transmission coefficient dependent on spring stiffness & Model-specific \\
-Thermal interface & $T^{(1)}=T^{(2)}$; $q_i^{(1)}n_i=q_i^{(2)}n_i$ & Thermal wave reflection; temperature jump & Heat flux continuity; interfacial thermal resistance & Standard theory \\
-Electrical interface & $\phi^{(1)}=\phi^{(2)}$; $D_i^{(1)}n_i=D_i^{(2)}n_i$ & Piezoelectric coupling; surface charge & Electric displacement continuity; surface charge density & Standard theory \\
-Thermo-piezoelastic interface & All mechanical, thermal, electrical conditions & Multi-field scattering; energy partitioning & Energy ratios from Eqs.~(45)--(46) of Barak et al. & \cite{Barak2023} \\
+Perfect thermal contact & $T^{(1)}=T^{(2)}$; $q_i^{(1)}n_i=q_i^{(2)}n_i$ & Thermal-field transmission/reflection; propagating modes only in finite-speed models & Continuous temperature and normal heat flux & Perfect-contact idealization \\
+Kapitza (imperfect thermal contact) & $q_n^{(1)}=q_n^{(2)}$; $T^{(2)}-T^{(1)}=R_K q_n$ & Temperature jump at finite heat flux & Interfacial thermal resistance $R_K$ & Model-specific; sign follows chosen normal \\
+Electrical interface & $\phi^{(1)}=\phi^{(2)}$; $D_i^{(1)}n_i=D_i^{(2)}n_i$ & Piezoelectric coupling; surface charge & Electric displacement continuity if free surface charge is zero; otherwise its jump is the surface charge density & Standard theory \\
+Thermo-piezoelastic interface & All mechanical, thermal, electrical conditions & Multi-field scattering; energy partitioning & Interface-energy study cited; equation-level claims not checked & \cite{Barak2023} \\
 \bottomrule
 \multicolumn{5}{@{}p{\textwidth}@{}}{\textbf{Notes:} The proposed BM-1 conservation check was not executed in this revision; see Appendix C.}\\
 \multicolumn{5}{@{}p{\textwidth}@{}}{\emph{Thermo-piezoelastic interface equations and cited energy ratios are inherited claims, not checked against the full source here.}}\\

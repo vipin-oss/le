@@ -137,14 +137,14 @@ The presence of the void field adds a further mode to the modal structure: a fas
 \subsection{Porous media: voids and double porosity}
 \label{sec:5.4}
 
-Porous elastic materials contain vacuous voids or pores distributed throughout the matrix. The Nunziato--Cowin theory (Nunziato and Cowin, 1979 \cite{Nunziato1979}; Cowin and Nunziato, 1983 \cite{Cowin1983}) introduces an additional kinematic variable: the void volume fraction $\phi$.
+Porous elastic materials contain vacuous voids or pores distributed throughout the matrix. The Nunziato--Cowin theory (Nunziato and Cowin, 1979 \cite{Nunziato1979}; Cowin and Nunziato, 1983 \cite{Cowin1983}) introduces an additional kinematic variable: the void volume fraction $\eta$.
 
 \subsubsection{Governing equations}
 
 The basic equations for thermoelastic materials with voids:
 
 \begin{equation}
-\sigma_{ij} = A_{ijmn}\varepsilon_{mn} + B_{ijmn}\gamma_{mn} + d_{ijk}\phi_{,k} - \alpha_{ij}\theta,
+\sigma_{ij} = A_{ijmn}\varepsilon_{mn} + B_{ijmn}\gamma_{mn} + d_{ijk}\eta_{,k} - \alpha_{ij}\theta,
 \label{eq:5.14}
 \end{equation}
 
@@ -154,15 +154,15 @@ The basic equations for thermoelastic materials with voids:
 \end{equation}
 
 \begin{equation}
-\rho\ddot{\phi} = h_{i,i} + \rho l,
+\rho\ddot{\eta} = h_{i,i} + \rho l,
 \label{eq:5.16}
 \end{equation}
 
-where $\phi$ is the void volume fraction, $h_i$ is the equilibrated stress vector, $l$ is the equilibrated body force, $A_{ijmn}$ and $B_{ijmn}$ are elastic and equilibrated elasticity tensors, $d_{ijk}$ is the equilibrated stress coupling tensor, and $\alpha_{ij}$ is the thermal coupling tensor. The thermoelastic extension of void theory was developed by Iesan (1986 \cite{Iesan1986}) and is treated systematically, together with the micropolar and nonsimple variants, in his monograph \cite{Iesan2013}, which also establishes the existence and uniqueness framework for the coupled problems.
+where $\eta$ is the void volume fraction, $h_i$ is the equilibrated stress vector, $l$ is the equilibrated body force, $A_{ijmn}$ and $B_{ijmn}$ are elastic and equilibrated elasticity tensors, $d_{ijk}$ is the equilibrated stress coupling tensor, and $\alpha_{ij}$ is the thermal coupling tensor. The thermoelastic extension of void theory was developed by Iesan (1986 \cite{Iesan1986}) and is treated systematically, together with the micropolar and nonsimple variants, in his monograph \cite{Iesan2013}, which also establishes the existence and uniqueness framework for the coupled problems.
 
 \subsubsection{Double porosity}
 
-Double porosity models introduce two porosity fields to capture both macro- and micro-porosity effects. The governing equations extend the single-porosity theory with two coupled void volume fractions $\phi_1$ and $\phi_2$, each with its own equilibrated stress and equilibrated body force. Double porosity models are particularly relevant for hydrocarbon reservoirs, fissured rocks, and aquifers where both fracture and matrix porosity contribute to fluid flow and wave propagation.
+Double porosity models introduce two porosity fields to capture both macro- and micro-porosity effects. The governing equations extend the single-porosity theory with two coupled void volume fractions $\eta_1$ and $\eta_2$, each with its own equilibrated stress and equilibrated body force. Double porosity models are particularly relevant for hydrocarbon reservoirs, fissured rocks, and aquifers where both fracture and matrix porosity contribute to fluid flow and wave propagation.
 
 \subsection{Micropolar and micromorphic continua}
 \label{sec:5.5}
@@ -172,13 +172,13 @@ Micropolar elasticity (Eringen, 1966 \cite{Eringen1966a}) extends classical elas
 \subsubsection{Governing equations}
 
 \begin{equation}
-\sigma_{ij} = A_{ijmn}\varepsilon_{mn} + B_{ijmn}\gamma_{mn} + d_{ijk}\phi_{,k} - \alpha_{ij}\theta,
+\sigma_{ij} = \lambda u_{k,k}\delta_{ij} + \mu(u_{i,j}+u_{j,i}) + \kappa(u_{i,j}-u_{j,i}-2\epsilon_{ijk}\phi_k) - \beta\theta\delta_{ij},
 \label{eq:5.17}
 \end{equation}
 
-where $\sigma_{ij}$ is the force stress tensor (generally non-symmetric in micropolar media), $\gamma_{mn}$ is the micro-curvature tensor, and couple stresses $\mu_{ij}$ appear in the angular momentum balance.
+Here $\phi_k$ is the independent microrotation vector; $\lambda$, $\mu$, and $\kappa$ are elastic moduli, and $\beta$ is the isotropic thermal-stress coefficient. The displayed isotropic linear law is an illustrative specialization, not independently checked here against the cited primary texts \cite{Eringen1966a,Eringen1968b}; the mechanical micropolar form and its added isotropic thermal term should be verified for the selected thermoelastic model. Anisotropic constitutive tensors and couple-stress relations are formulation-dependent and remain outside this display.
 
-Micropolar models are relevant for granular materials, liquid crystals, composite materials with oriented inclusions, and biological tissues where micro-structural rotation cannot be neglected. The thermoelastic extension (Tauchert, Claus and Ariman, 1968 \cite{Eringen1968b}) couples micro-rotation with thermal fields, providing a framework for structured materials with thermal coupling, and is the earliest of the micropolar-thermoelastic formulations from which the later void and micropolar-thermoelastic literature grew.
+Micropolar models are relevant for granular materials, liquid crystals, composite materials with oriented inclusions, and biological tissues where micro-structural rotation cannot be neglected. A thermoelastic micropolar formulation was published by Tauchert, Claus and Ariman (1968 \cite{Eringen1968b}); earlier related work exists, so no priority claim is made here.
 
 \subsubsection{The absorption term and the photothermal source}
 
@@ -266,7 +266,7 @@ $\phi$ & Electric potential & V & \eqref{eq:5.3} \\
 $\beta_{ij}$ & Thermal stress coefficient & Pa/K & \eqref{eq:5.6} \\
 $p_i$ & Pyroelectric coefficient & C/(m$^2$$\cdot$K) & \eqref{eq:5.9} \\
 $\bar{c}_{ijkl}$ & Piezoelectrically renormalised stiffness & Pa & \eqref{eq:5.19} \\
-$\phi$ & Void volume fraction & dimensionless & \eqref{eq:5.14} \\
+$\eta$ & Void volume fraction & dimensionless & \eqref{eq:5.14} \\
 $h_i$ & Equilibrated stress vector & N/m & \eqref{eq:5.16} \\
 \bottomrule
 \end{tabularx}

@@ -96,10 +96,10 @@
   <!-- Conservation identity -->
   <rect x="440" y="470" width="360" height="150" fill="#eef3f8" stroke="#1a3a5c" stroke-width="1.5"/>
   <text x="455" y="488" class="label" font-weight="bold">Energy conservation:</text>
-  <text x="455" y="510" class="math" font-size="13">R + T + A = 1</text>
+  <text x="455" y="510" class="math" font-size="13">R + T + A_int = 1</text>
   <text x="455" y="530" class="label" font-size="10">R: reflected energy fraction</text>
   <text x="455" y="548" class="label" font-size="10">T: transmitted energy fraction</text>
-  <text x="455" y="566" class="label" font-size="10">A: absorbed (dissipated) fraction</text>
+  <text x="455" y="566" class="label" font-size="10">A_int: interface-local residual (not bulk loss)</text>
   <text x="455" y="586" class="label" font-size="10">(holds for passive interface, no dissipation)</text>
 
   <!-- Notes -->

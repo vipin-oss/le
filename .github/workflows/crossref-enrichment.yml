@@ -1,0 +1,78 @@
+name: Manual Crossref enrichment and audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      reference_branch:
+        description: Read-only verification branch containing LITERATURE_BASE.csv
+        required: true
+        default: arena/04fdf32e-le
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crossref-enrichment-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout manuscript branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Checkout read-only literature base and generator
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.reference_branch }}
+          path: verification-reference
+          fetch-depth: 1
+
+      - name: Run Crossref enrichment and explicit comparisons
+        run: |
+          python3 phase5/scripts/crossref_enrich.py \
+            --base-csv verification-reference/verification/LITERATURE_BASE.csv \
+            --local-bib phase5/master/references_local.bib \
+            --raw-dir phase5/references/crossref_raw \
+            --references-dir phase5/references \
+            --pause 1.0
+
+      - name: Summarize generated audit files
+        run: |
+          python3 - <<'PY'
+          import csv
+          from pathlib import Path
+          for name in ("phase5/references/crossref_request_log.csv",
+                       "phase5/references/local_bib_crossref_audit.csv",
+                       "phase5/references/duplicate_doi_audit.csv",
+                       "phase5/references/doi_verification.csv"):
+              with Path(name).open(newline="", encoding="utf-8-sig") as f:
+                  rows = list(csv.DictReader(f))
+              print(f"{name}: {len(rows)} rows")
+          print("raw Crossref JSON files:", len(list(Path("phase5/references/crossref_raw").glob("*.json"))))
+          PY
+
+      - name: Commit generated Crossref records and audit
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add phase5/references/crossref_raw \
+            phase5/references/crossref_request_log.csv \
+            phase5/references/literature_base_enriched.bib \
+            phase5/references/local_bib_crossref_audit.csv \
+            phase5/references/duplicate_doi_audit.csv \
+            phase5/references/doi_verification.csv \
+            phase5/references/doi_verification_method.md
+          if git diff --cached --quiet; then
+            echo "Crossref outputs are unchanged; nothing to commit."
+            exit 0
+          fi
+          git commit -m "Add reproducible Crossref enrichment and audit"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

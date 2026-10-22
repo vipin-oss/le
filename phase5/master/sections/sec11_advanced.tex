@@ -16,11 +16,11 @@ Fractional-order continuum models replace integer-order derivatives with fractio
 The fractional heat conduction equation, as formulated in the thermoelastic setting, is
 
 \begin{equation}
-{}^C D_t^\alpha T = a\nabla^2 T, \qquad 0 < \alpha \leq 2,
+{}^C D_t^\alpha T = a_\alpha\nabla^2 T, \qquad 0 < \alpha \leq 2,
 \label{eq:11.1}
 \end{equation}
 
-where ${}^C D_t^\alpha$ is the Caputo fractional derivative of order $\alpha$ and $a$ is the thermal diffusivity. For $\alpha = 1$ this reduces to the classical heat equation; for $1 < \alpha \leq 2$ it describes wave-like heat propagation with memory, interpolating between diffusive and wave-like behaviour. The Caputo derivative is defined for $0 < \alpha < 1$ by
+where ${}^C D_t^\alpha$ is the Caputo fractional derivative of order $\alpha$ and $[a_\alpha]=\mathrm{m^2 s^{-\alpha}}$ (for dimensional $T$ and $x$). For $\alpha = 1$ this reduces to the classical heat equation; for $1 < \alpha \leq 2$ it describes wave-like heat propagation with memory, interpolating between diffusive and wave-like behaviour. The Caputo derivative is defined for $0 < \alpha < 1$ by
 
 \begin{equation}
 {}^C D_t^\alpha f(t) = \frac{1}{\Gamma(1-\alpha)}\int_0^t \frac{f'(\tau)}{(t-\tau)^{\alpha}}\, d\tau ,
@@ -38,20 +38,20 @@ T(t) = T(0) + \frac{1}{\Gamma(\alpha)}\int_0^t (t-\tau)^{\alpha-1} a \nabla^2 T(
 \label{eq:11.3}
 \end{equation}
 
-shows that the fractional formulation is the special case in which the memory kernel is the power law $\tau^{-\alpha}t^{\alpha-1}/\Gamma(\alpha)$. The generalization of Section~\ref{sec:transport} replaces the power law by an arbitrary kernel, and thereby trades the one-parameter fractional family for a much larger one; the price is that the resulting operator is no longer a differential operator of fractional order, and the analytical machinery that makes the fractional heat equation tractable---the eigenfunction expansion in terms of the Mittag--Leffler function, and the closed-form fundamental solutions---is lost. The choice between the two representations is thus a choice between analytical tractability and constitutive flexibility, and it should be made explicitly rather than by default.
+shows that the fractional formulation is the special case in which the integral kernel is the power law $(t-\tau)^{\alpha-1}/\Gamma(\alpha)$ in elapsed time. The generalization of Section~\ref{sec:transport} replaces the power law by an arbitrary kernel, and thereby trades the one-parameter fractional family for a much larger one; the price is that the resulting operator is no longer a differential operator of fractional order, and the analytical machinery that makes the fractional heat equation tractable---the eigenfunction expansion in terms of the Mittag--Leffler function, and the closed-form fundamental solutions---is lost. The choice between the two representations is thus a choice between analytical tractability and constitutive flexibility, and it should be made explicitly rather than by default.
 
 The analytical solution of the fractional heat conduction equation in radially symmetric domains was obtained in closed form by Povstenko \cite{Povstenko2007}, who derived the fundamental solutions needed to write the associated thermal stresses in spherical geometry; this work provides the reference against which later numerical inversions of fractional thermoelastic boundary-value problems are checked \cite{Povstenko2004,Povstenko2009,Povstenko2011,Povstenko2016}. The associated thermal stresses are the quantity of practical interest, and the difficulty of the problem is that the fractional operator couples the mechanical and thermal fields in a way that does not admit the plane-wave decoupling available in the classical case.
 
 \subsubsection{Fractional Cattaneo-type equations}
 
-Povstenko \cite{Povstenko2011} introduced fractional Cattaneo-type equations that interpolate between the Lord--Shulman and the Green--Naghdi type~II theories:
+Povstenko \cite{Povstenko2011} introduced the following fractional Cattaneo-type constitutive equation:
 
 \begin{equation}
 q_i + \tau^\alpha {}^C D_t^\alpha q_i = -k T_{,i}.
 \label{eq:11.4}
 \end{equation}
 
-For $\alpha = 1$ this reduces to the Lord--Shulman equation. The dimension of the relaxation parameter changes with the order---$\tau^\alpha$ rather than $\tau$---so that the equation is dimensionally consistent for every $\alpha$; this is a small point that is a common source of error in the literature, and it is the kind of detail on which a comparison between two fractional formulations can turn.
+For $0<\alpha\leq1$ and the stated Caputo convention, $\alpha=1$ reduces to the Lord--Shulman/Cattaneo law. As $\alpha\to0$, the operator tends to an algebraic Fourier-type relation (up to the limiting prefactor); this is not a Green--Naghdi type II limit. The fractional relaxation coefficient must have units $\mathrm{s^\alpha}$ for dimensional consistency.
 
 \subsubsection{Fractional models with internal structure}
 
@@ -119,7 +119,7 @@ The general difficulty with all of these is the one identified in Section~\ref{s
 \subsubsection{Mathematical limitations}
 
 \begin{enumerate}
-\item \textbf{Lack of rigorous limit theorems.} All limiting procedures between theories are parameter substitutions, not rigorous limit theorems with convergence proofs or error bounds. This is the single most consequential gap in the mathematical framework, because the limiting relations are what make the families comparable at all.
+\item \textbf{Uneven coverage of rigorous limit theorems.} Some singular-limit theorems exist for MGT and classical-to-LS settings, but this revision has not established convergence theorems across every theory pair or for every displayed constitutive variant. Any limit claim must name its system, parameter regime, topology, and convergence result.
 \item \textbf{Well-posedness.} Each theory family has its own well-posedness conditions; a unified framework is lacking. The nonlocal family is the most acute case, since the differential form of its constitutive law raises the order of the governing equation and does not yield a well-posed initial-value problem in the classical sense.
 \item \textbf{Nonlocal interface conditions.} The correct interface conditions for nonlocal media are not established, and the integral and differential formulations lead to different requirements.
 \item \textbf{Analytical tractability.} The fractional formulations admit closed-form solutions only in special geometries and for special data, so the burden of verification falls on numerical inversion, with the attendant loss of independent validation.

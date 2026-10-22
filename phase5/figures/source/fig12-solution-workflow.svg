@@ -76,7 +76,7 @@
   <rect x="800" y="220" width="250" height="70" class="box-alt"/>
   <text x="925" y="240" class="box-text" text-anchor="middle" font-weight="bold">Step 8</text>
   <text x="925" y="258" class="box-text" text-anchor="middle">Energy flux</text>
-  <text x="925" y="273" class="box-text" text-anchor="middle">J<sub>i</sub> = σ<sub>ji</sub>v<sub>i</sub> + q<sub>i</sub></text>
+  <text x="925" y="273" class="box-text" text-anchor="middle">J<sub>j</sub> = q<sub>j</sub> − σ<sub>ji</sub>v<sub>i</sub></text>
 
   <!-- Arrows row 2 -->
   <line x1="250" y1="255" x2="300" y2="255" class="arrow"/>
@@ -87,7 +87,7 @@
   <rect x="250" y="360" width="200" height="70" class="box"/>
   <text x="350" y="380" class="box-text" text-anchor="middle" font-weight="bold">Step 9</text>
   <text x="350" y="398" class="box-text" text-anchor="middle">Energy ratios</text>
-  <text x="350" y="413" class="box-text" text-anchor="middle">theory-specific energy check</text>
+  <text x="350" y="413" class="box-text" text-anchor="middle">R + T + A_int = 1</text>
 
   <!-- Step 10: Validate -->
   <rect x="650" y="360" width="200" height="70" class="box-alt"/>

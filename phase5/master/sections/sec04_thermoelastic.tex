@@ -94,14 +94,16 @@ For the displayed Cattaneo-type heat-flux law, $\tau_0>0$ gives a finite charact
 \subsection{Green--Lindsay (GL) theory (1972)}
 \label{sec:4.4}
 
-Green and Lindsay (1972) introduced a temperature-rate-dependent thermoelastic theory with two relaxation times and a single temperature field. It is distinct from two-temperature thermoelasticity.
+Green and Lindsay (1972) introduced a temperature-rate-dependent thermoelastic theory with two relaxation times and a single temperature field. It is distinct from two-temperature thermoelasticity. The original formulation retains Fourier heat flux, $q_i=-kT_{,i}$, with no flux-relaxation time.
 
 \subsubsection{Governing equations}
 
 \begin{equation}
-\rho c_v (\dot{T} + \tau_0\ddot{T}) = k\nabla^2 T - \beta T_0(\dot{u}_{i,i}+\tau_0\ddot{u}_{i,i}),
+\rho c_E (\dot{T} + \tau_0\ddot{T}) = k\nabla^2 T - \beta T_0\dot{u}_{i,i},
 \label{eq:4.9}
 \end{equation}
+
+The original Green--Lindsay 1972 energy equation has no $\tau_0\ddot{u}_{i,i}$ term. Later modified GL models may add strain-rate couplings; Yu, Xue, and Tian (2018) explicitly present such a modified formulation and it must be labelled as a variant, not as the original GL system \cite{Yu2018ModifiedGL}. The control-suggested Bera et al. item remains unidentified. The cited ``Singh (2020), Symmetry 12:488 identifier resolves to a Saeed--Abbas--Marin paper, so that author attribution and its relevance to this specific strain-rate variant are not asserted here pending the Crossref audit. The common ordering $\tau_1\geq\tau_0>0$ is stated here as a restriction of the original formulation, not as a new derivation \cite{Green1972}.
 
 \begin{equation}
 \sigma_{ij} = \lambda\varepsilon_{kk}\delta_{ij} + 2\mu\varepsilon_{ij} - \beta(T + \tau_1\dot{T})\delta_{ij}.
@@ -110,7 +112,7 @@ Green and Lindsay (1972) introduced a temperature-rate-dependent thermoelastic t
 
 \subsubsection{Thermal-rate coupling and admissibility}
 
-The second relaxation time enters the stress through the temperature rate; it does not introduce a second temperature field. Green--Lindsay theory is distinct from Chen--Gurtin two-temperature thermoelasticity. Admissibility and stability restrictions depend on the constitutive convention and parameter regime; no universal dissipationless classification is asserted here without a primary-source derivation.
+The second relaxation time enters the stress through the temperature rate; it does not introduce a second temperature field. Green--Lindsay theory is distinct from Chen--Gurtin two-temperature thermoelasticity. The displayed ordering applies to the original GL convention; it is not a claim that every later GL-labelled variant has the same admissible range.
 
 \subsection{Green--Naghdi type II theory (1991)}
 \label{sec:4.5}
@@ -183,10 +185,10 @@ q_i + \tau_q\dot{q}_i = -k(T_{,i} + \tau_T\dot{T}_{,i}).
 
 Formal reductions can sometimes be obtained by setting one or both lag parameters to zero in a specified DPL equation, but the resulting equations and solution limits must be checked for that model. The ordering $\tau_q\geq\tau_T$ is not asserted here as a universal thermodynamic-admissibility condition; a model-specific free-energy/entropy derivation is required.
 
-\subsection{Triple-phase-lag (TPL) theory (Tzou, 1997)}
+\subsection{Triple-phase-lag (TPL) theory (Roy Choudhuri, 2007)}
 \label{sec:4.8}
 
-TPL denotes formulations that add further lagged or thermal-displacement terms to a phase-lag law. The precise third-lag term depends on the selected convention and expansion. The inherited v1.0 formula is omitted here because its source correspondence and dimensions have not been checked; no particular TPL law, admissibility condition, or application performance is asserted in this revision.
+Roy Choudhuri (2007) \cite{RoyChoudhuri2007} introduced a three-lag law with a thermal-displacement-gradient term, $q_i(t+\tau_q)=-[kT_{,i}(t+\tau_T)+k^*v_{,i}(t+\tau_v)]$, where $\dot v=T$; the cited source gives a first-order expansion in the three lags and the ordering $0\leq\tau_v<\tau_T<\tau_q$. This source-level attribution and form follow the full-text findings recorded for this revision. No $\tau_\nu/2$ term is used. Any second-order $\tau_q^2/2$ form is a distinct Barak/Gupta extension \cite{Barak2023}, secondary here, and CONDITIONAL on that model's stated stability/admissibility assumptions; it is not the Roy Choudhuri 2007 law.
 
 \subsection{Moore--Gibson--Thompson (MGT) theory}
 \label{sec:4.9}
