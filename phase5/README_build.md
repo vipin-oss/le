@@ -29,7 +29,7 @@ cd phase5/master
 latexmk -pdf -interaction=nonstopmode -file-line-error -halt-on-error -recorder main.tex
 ```
 
-The project requires a standard TeX Live installation containing `article`, `natbib`, `hyperref`, `cleveref`, AMS math, `booktabs`, `tabularx`, `longtable`, `graphicx`, `caption`, `subcaption`, `enumitem`, `titlesec`, `setspace`, `xcolor`, `array`, `geometry`, and their dependencies. No `draft` option is intentionally enabled. Exact package versions must be recorded from the build host; the current sandbox has no TeX engine or `latexmk`, so no v1.1 compile result is claimed.
+The project requires a standard TeX Live installation containing `article`, `natbib`, `hyperref`, `cleveref`, AMS math, `booktabs`, `tabularx`, `longtable`, `graphicx`, `caption`, `subcaption`, `enumitem`, `titlesec`, `setspace`, `xcolor`, `array`, `geometry`, and their dependencies. No `draft` option is intentionally enabled. Exact package versions must be recorded from the build host. Local TeX tools are absent; strict GitHub run `39728213927` failed in the combined build step with exit 12, and the inaccessible signed log endpoint prevents confirming the precise failure stage. No successful v1.1 compile is claimed.
 
 ## Static checks performed
 

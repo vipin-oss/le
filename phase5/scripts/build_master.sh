@@ -1,6 +1,27 @@
 #!/usr/bin/env bash
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# Surface concise diagnostics as GitHub check annotations when a build command
+# fails, since the signed Actions log/artifact endpoints may not be reachable.
+report_failure() {
+  local rc=$?
+  trap - ERR
+  if [[ "${GITHUB_ACTIONS:-}" == "true" ]]; then
+    printf '::error title=Phase5 build failure::line %s; exit %s; command: %s\n' "${BASH_LINENO[0]:-?}" "$rc" "${BASH_COMMAND//%/%25}"
+    for logfile in "$ROOT/master/build/main.log" "$ROOT/master/build/main.blg"; do
+      if [[ -f "$logfile" ]]; then
+        while IFS= read -r line; do
+          line=${line//%/%25}; line=${line//$'\r'/%0D}
+          printf '::error title=%s diagnostic::%s\n' "$(basename "$logfile")" "$line"
+        done < <(grep -nE '^! |LaTeX Error:|Package .* Error:|undefined|Overfull \\\\([hv]box)' "$logfile" | head -30 || true)
+      fi
+    done
+  fi
+  exit "$rc"
+}
+trap report_failure ERR
+
 for cmd in latexmk pdflatex bibtex pdffonts pdfinfo; do
   command -v "$cmd" >/dev/null || { echo "ERROR: required build tool not found: $cmd" >&2; exit 127; }
 done

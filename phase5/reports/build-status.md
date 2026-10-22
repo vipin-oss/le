@@ -21,9 +21,11 @@ Latest `python3 phase5/scripts/audit_inventory.py` result: **37 TeX files; 430 l
 
 ## Compile status and blocker
 
-**No phase5 LaTeX compile has been executed.** `bash phase5/scripts/build_master.sh` was invoked after the pipeline update and exited 127 at its prerequisite check: `latexmk` is not installed. `pdflatex`, `latexmk`, `bibtex`, `tectonic`, `rsvg-convert`, and Inkscape are absent in the sandbox. A Tectonic release download attempt redirected to `objects.githubusercontent.com`, which is outside the sandbox's permitted outbound hosts. `phase5/master/latexmkrc`, `phase5/scripts/build_master.sh`, `phase5/scripts/check_build_log.py`, and a strict CI workflow now define a reproducible path, but their compile gates have not run here. No v1.1 PDF, final LaTeX log, page count, font-embedding report, overfull-box report, or Overleaf-default result exists.
+**No successful phase5 LaTeX build or final PDF exists.** Locally, `bash phase5/scripts/build_master.sh` exits 127 at its prerequisite check because `latexmk` is absent; `pdflatex`, `bibtex`, `tectonic`, `rsvg-convert`, and Inkscape are also absent. A Tectonic release download redirected to `objects.githubusercontent.com`, outside the sandbox's permitted outbound hosts.
 
-The inherited GitHub workflow used `|| true` around conversion and LaTeX steps and built `phase4/manuscript`; its green status is not treated as evidence that the new phase5 source compiles. The replacement workflow targets phase5, does not suppress command failures, and checks references, figure files, font embedding, and overfull boxes. Its next run is still pending.
+The strict phase5 GitHub workflow ran on commit `f8d41eaf231158b0bdc7e3d8e270851aa36c2bcf` (run `39728213927`) and **failed** in the combined “Build figures, compile master, and enforce gates” step with exit code 12. The job's log artifact exists in GitHub, but its signed `productionresultssa5.blob.core.windows.net` download endpoint returned EOF, so the precise failure stage and TeX error are not known. The PDF-upload step was skipped; no PDF artifact was produced. This CI attempt does not count as a successful compile. The build script now emits concise log diagnostics as check annotations on the next run. No v1.1 PDF, final accepted build log, page count, font-embedding report, overfull-box report, or Overleaf-default result is available.
+
+The inherited GitHub workflow used `|| true` around conversion and LaTeX steps and built `phase4/manuscript`; its earlier green status is not evidence for v1.1. The replacement targets phase5 and does not suppress command failures. Its first phase5 CI attempt failed; engineering build remains NOT PASSED.
 
 ## Current release gate
 
