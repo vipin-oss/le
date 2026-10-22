@@ -2,7 +2,7 @@ name: Phase5 LaTeX build
 
 on:
   push:
-    branches: [arena/40393d9f-le]
+    branches: ['arena/**']
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -89,7 +89,7 @@ jobs:
           python phase5/scripts/make_pdf_thumbnails.py "$pdf" phase5/master/build/contact-sheets --dpi 100 --per-sheet 40 --cols 5
 
       - name: Publish strict-build PDF and contact sheets to the branch
-        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/arena/40393d9f-le'
+        if: success() && github.event_name == 'push' && startsWith(github.ref, 'refs/heads/arena/')
         run: |
           set -euo pipefail
           pdf=phase5/master/build/main.pdf
