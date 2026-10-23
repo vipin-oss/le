@@ -1,22 +1,22 @@
 section,r3_baseline_eligible,plan_rows_total,eligible_now,eligible_full_or_primary,eligible_partial_abstract,eligible_metadata_only,delta_vs_r3,six_source_bar,blocker_gap,note
-s.10,0,16,4,3,1,0,4,NO,GAP-20,"full/primary: LIT-0432, LIT-0465, LIT-0466 | partial: LIT-0490"
-s.11,2,18,10,9,1,0,8,YES,GAP-21 / GAP-09 partly closed,"full/primary: LIT-0436, LIT-0439, LIT-0442, LIT-0443, LIT-0471, LIT-0497 | partial: LIT-0501"
-s.12,0,4,1,1,0,0,1,NO,GAP-22,full/primary: LIT-0040
-s.13,1,17,11,1,10,0,10,YES,GAP-23,"full/primary: LIT-0499 | partial: LIT-0495, LIT-0502, LIT-0503, LIT-0504, LIT-0505, LIT-0506"
-s.3,n/a,6,0,0,0,0,,NO,,
-s.4.1,0,9,1,0,0,1,1,NO,GAP-17,
-s.4.10,2,8,2,2,0,0,0,NO,GAP-08,"full/primary: LIT-0041, LIT-0449"
-s.4.12,4,9,5,2,3,0,1,NO,,"full/primary: LIT-0131, LIT-0138 | partial: LIT-0467, LIT-0468, LIT-0469"
-s.4.3,2,9,2,2,0,0,0,NO,,"full/primary: LIT-0002, LIT-0451"
-s.4.4,1,9,1,1,0,0,0,NO,,full/primary: LIT-0498
-s.4.5,1,8,1,1,0,0,0,NO,,full/primary: LIT-0496
-s.4.6,1,8,1,1,0,0,0,NO,,full/primary: LIT-0456
-s.4.7,2,9,2,2,0,0,0,NO,,"full/primary: LIT-0433, LIT-0450"
-s.4.8,8,10,8,8,0,0,0,YES,,"full/primary: LIT-0427, LIT-0429, LIT-0431, LIT-0455, LIT-0472, LIT-0474"
-s.4.9,0,3,3,3,0,0,3,NO,GAP-24 (label defect closed; 6-source bar still open),"full/primary: LIT-0513, LIT-0514, LIT-0515"
-s.5,3,11,5,4,1,0,2,NO,GAP-18,"full/primary: LIT-0046, LIT-0047, LIT-0048, LIT-0512 | partial: LIT-0500"
-s.6,7,14,8,8,0,0,1,YES,,"full/primary: LIT-0029, LIT-0050, LIT-0438, LIT-0444, LIT-0447, LIT-0453"
-s.7,6,13,8,8,0,0,2,YES,,"full/primary: LIT-0437, LIT-0445, LIT-0454, LIT-0457, LIT-0458, LIT-0460"
-s.8,1,12,3,3,0,0,2,NO,"GAP-19 (2 of the 3 counts are supervisor-transcribed, not opened by this verifier)","full/primary: LIT-0268, LIT-0516, LIT-0517 | LIT-0518 (Honig-Hirdes, bronze OA) and LIT-0519 (Durbin, closed) are metadata-only and NOT counted"
-s.9,19,22,22,11,11,0,3,YES,,"full/primary: LIT-0189, LIT-0281, LIT-0352, LIT-0435, LIT-0446, LIT-0452 | partial: LIT-0440, LIT-0478, LIT-0479, LIT-0481, LIT-0482, LIT-0484"
-TOTAL,55,215,98,70,27,1,+43,6 of 21 sections,,"The R3 baseline counts rows Crossref-verified AND technically eligible. eligible_now counts plan rows marked technical_claim_eligible=YES whatever the read level, so the columns are different measures: the read-level split (full / partial / metadata-only) is the honest one. B18 caveat: s.8's two new full-text-grade rows (LIT-0516, LIT-0517) are supervisor-transcribed (F28/F29) and are recorded as SECONDARY-SOURCE in FULLTEXT_FACTS; on a strict 'verifier opened the PDF' reading s.8 is still 1."
+s.10,0,20,8,7,1,12,7,YES,,"full/primary: LIT-0432, LIT-0465, LIT-0466, LIT-0013, LIT-0014, LIT-0525, LIT-0527"
+s.11,2,24,15,14,1,9,12,YES,"GAP-21 / GAP-09: Povstenko 2009, Gorenflo-Mainardi 1997, Gorenflo 2014, Luchko 2010 now read; the fractional-Cattaneo sentence still needs LIT-0536","full/primary: LIT-0032, LIT-0436, LIT-0439, LIT-0442, LIT-0443, LIT-0471, LIT-0497, LIT-0035, LIT-0448, LIT-0511, LIT-0528, LIT-0529, LIT-0530, LIT-0535"
+s.12,0,4,3,3,0,1,3,NO,"GAP-22 STILL OPEN - 3 read comparisons, 3 short of six","full/primary: LIT-0040, LIT-0307, LIT-0428"
+s.13,1,17,11,1,10,6,0,NO,GAP-23 - the 10 abstract-level rows are NOT primary reads,full/primary: LIT-0499
+s.3,n/a,4,0,0,0,4,,NO,,no full-text read source in the plan
+s.4.1,0,9,1,0,1,8,0,NO,GAP-17,no full-text read source in the plan
+s.4.10,2,8,2,2,0,6,0,NO,GAP-08,"full/primary: LIT-0041, LIT-0449"
+s.4.12,4,9,5,2,3,4,-2,NO,,"full/primary: LIT-0131, LIT-0138"
+s.4.3,2,9,2,2,0,7,0,NO,,"full/primary: LIT-0002, LIT-0451"
+s.4.4,1,9,1,1,0,8,0,NO,,full/primary: LIT-0498
+s.4.5,1,8,1,3,0,5,2,NO,,"full/primary: LIT-0008, LIT-0009, LIT-0496"
+s.4.6,1,10,3,3,0,7,2,NO,"two-temperature primaries added (Chen-Gurtin, Gurtin-Williams)","full/primary: LIT-0456, LIT-0533, LIT-0534"
+s.4.7,2,9,2,2,0,7,0,NO,,"full/primary: LIT-0433, LIT-0450"
+s.4.8,8,11,9,9,0,2,1,YES,Chirita 2016 added,"full/primary: LIT-0427, LIT-0429, LIT-0431, LIT-0455, LIT-0472, LIT-0474, LIT-0475, LIT-0476, LIT-0532"
+s.4.9,0,4,4,4,0,0,4,NO,Marchand 2012 added; GAP-24 closed as a labelling defect,"full/primary: LIT-0513, LIT-0514, LIT-0515, LIT-0522"
+s.5,3,13,10,9,1,3,6,YES,GAP-18 CLOSED - voids core + Chandrasekharaiah 1984 thermopiezoelectricity,"full/primary: LIT-0020, LIT-0021, LIT-0022, LIT-0046, LIT-0047, LIT-0048, LIT-0512, LIT-0520, LIT-0521"
+s.6,7,14,8,8,0,6,1,YES,,"full/primary: LIT-0029, LIT-0050, LIT-0438, LIT-0444, LIT-0447, LIT-0453, LIT-0459, LIT-0477"
+s.7,6,13,8,8,0,5,2,YES,,"full/primary: LIT-0437, LIT-0445, LIT-0454, LIT-0457, LIT-0458, LIT-0460, LIT-0462, LIT-0463"
+s.8,1,15,8,8,0,7,7,YES,"GAP-19 CLOSED - Stroh 1958/1962, Chadwick-Sneddon, Hetnarski-Ignaczak, Durbin, Honig-Hirdes all read","full/primary: LIT-0268, LIT-0516, LIT-0517, LIT-0518, LIT-0519, LIT-0523, LIT-0524, LIT-0526"
+s.9,19,22,22,11,11,0,-8,YES,GAP-12 still open (Achenbach 1973 not supplied),"full/primary: LIT-0189, LIT-0281, LIT-0352, LIT-0435, LIT-0446, LIT-0452, LIT-0461, LIT-0473, LIT-0480, LIT-0483, LIT-0492"
+TOTAL,55,232,123,97,28,107,+42,8 of 20 sections,,"Recounted mechanically from REFERENCE_PLAN on 2026-10-23 (B18): a row counts as full/primary when its read_level says FULL/PRIMARY/PREFACE/SECONDARY-READ, as partial when it says PARTIAL/abstract-level/section-read, otherwise metadata-only. The B18 batch added 20 primary reads (F30-F49) plus Luchko 2010 and the Povstenko 2015 preface; every one is supervisor-transcribed, so the same caveat as s.8 in B18 applies across the table: these are TEAM-level primary reads, not this verifier's. s.13 is now correctly NO - its 11 ""eligible"" rows were 10 abstract-level."
