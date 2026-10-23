@@ -1,0 +1,57 @@
+{
+  "map_id": "R3F-STROH-1958",
+  "mode": "DOI",
+  "requested_doi": "10.1080/14786435808565804",
+  "query": "Stroh Philosophical Magazine 1958 3 625 646",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/14786435808565804",
+    "type": "journal-article",
+    "title": [
+      "Dislocations and Cracks in Anisotropic Elasticity"
+    ],
+    "author": [
+      {
+        "given": "A. N.",
+        "family": "Stroh",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1958,
+          6
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1958,
+          6
+        ]
+      ]
+    },
+    "container-title": [
+      "Philosophical Magazine"
+    ],
+    "short-container-title": [
+      "Philosophical Magazine"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "3",
+    "issue": "30",
+    "page": "625-646",
+    "ISSN": [
+      "0031-8086"
+    ]
+  }
+}

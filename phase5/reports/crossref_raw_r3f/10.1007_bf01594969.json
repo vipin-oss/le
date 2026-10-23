@@ -1,0 +1,70 @@
+{
+  "map_id": "R3F-CHEN-GURTIN-1968",
+  "mode": "BIBLIOGRAPHIC-SEARCH",
+  "requested_doi": "",
+  "query": "Chen Gurtin Zeitschrift fur Angewandte Mathematik und Physik 1968 19 614 627",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/bf01594969",
+    "type": "journal-article",
+    "title": [
+      "On a theory of heat conduction involving two temperatures"
+    ],
+    "author": [
+      {
+        "given": "Peter J.",
+        "family": "Chen",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Morton E.",
+        "family": "Gurtin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1968,
+          7
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1968,
+          7
+        ]
+      ]
+    },
+    "container-title": [
+      "Zeitschrift für angewandte Mathematik und Physik ZAMP"
+    ],
+    "short-container-title": [
+      "Journal of Applied Mathematics and Physics (ZAMP)"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "19",
+    "issue": "4",
+    "page": "614-627",
+    "ISSN": [
+      "0044-2275",
+      "1420-9039"
+    ]
+  }
+}

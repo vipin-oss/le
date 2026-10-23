@@ -102,9 +102,26 @@ Cattaneo (1948), Vernotte (1958), Achenbach (1973), Nowacki (1975), and Tzou (19
 
 ## R3f verification and manuscript update
 
-- Prior source commit: `0f27630b459df20c8b5a06ac88b11621993e1a27`. Its one strict run (`39987191853`) failed the `>1 pt` overfull-box gate due to a 7.17311 pt hbox in generated Section 5 text (`sec05_multiphysics.tex`, lines 99–100); no R3f content/report publication followed.
-- This corrective commit shortens the Section 5 apply-template text, adds an always-upload diagnostics artifact for live Crossref outputs and LaTeX logs, and preserves the 25-minute strict job cap.
-- Corrective content commit and strict CI run: pending. Do not record final VERIFIED/MISMATCH/NOT-FOUND totals, per-section counts, pages, or undefined-reference count until the corrective strict run passes. If it fails, record `FAILED` and the reason, then stop.
+- Scope: 24 mapped DOI works were queried; Cattaneo (1948) is separately recorded as NO-DOI and was not requested.
+- R3f Crossref: 25 status rows; 21 VERIFIED, 3 MISMATCH, 0 NOT-FOUND, 1 NO-DOI; 24 requests; bibliography-ready: 21; citations selected only from VERIFIED/bibliography-ready rows; new BibTeX entries: 18.
+- Cattaneo1948 venue corrected to Atti Sem. Mat. Fis. Univ. Modena 3:83--101 (1948), retained as `verified = {NO_DOI}`; Joseph--Preziosi (1989) prints a different page value, noted in the BibTeX verification note.
+- Per-section checked-source counts (R3f read sources pass both the findings and Crossref gates; eligible-primary counts are shown separately):
+  - s.2: 2 verified/read source(s), 0 eligible primary; updated cumulative eligible-read count not previously reported.
+  - s.4: 1 verified/read source(s), 0 eligible primary; updated cumulative eligible-read count not previously reported.
+  - s.4.9: 0 verified/read source(s), 0 eligible primary; updated cumulative eligible-read count 4.
+  - s.4.10: 0 verified/read source(s), 0 eligible primary; updated cumulative eligible-read count 3.
+  - s.5: 5 verified/read source(s), 5 eligible primary; updated cumulative eligible-read count 9.
+  - s.8: 5 verified/read source(s), 5 eligible primary; updated cumulative eligible-read count 8.
+  - s.10: 3 verified/read source(s), 1 eligible primary; updated cumulative eligible-read count 6.
+  - s.11: 2 verified/read source(s), 0 eligible primary; updated cumulative eligible-read count 7.
+  - s.12: 5 verified/read source(s), 5 eligible primary; updated cumulative eligible-read count 5.
+- Sections at/above six eligible read sources: s.5=9, s.8=8, s.10=6, s.11=7. Sections below six: s.4.9=4, s.4.10=3, s.12=5. Scope notes were changed only for threshold-crossing sections; Section 4's MGT count excludes the acoustic Marchand source.
+- Durbin's interval/error statement and Honig--Hirdes performance comparison are source-specific; Stroh is identified as purely elastic; no unsupported general ranking or thermoelastic attribution is added.
+- The 1999 five-model experimental statement is explicitly dated. The C--T DPL thermoelastic attribution is kept distinct from Tzou's 1995 heat-law paper. The fractional-Cattaneo attribution to Povstenko (2011) remains CONDITIONAL.
+- R3f unresolved Crossref rows (not newly cited or added):
+  - `ChadwickSneddon1958` — MISMATCH: author mismatch
+  - `HetnarskiIgnaczak1999` — MISMATCH: author mismatch
+  - `Gorenflo1997` — MISMATCH: venue mismatch
 
 ## Final strict build
 

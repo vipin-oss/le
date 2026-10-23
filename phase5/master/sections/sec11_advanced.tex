@@ -52,7 +52,7 @@ The analytical solution of the fractional heat conduction equation in radially s
 
 \subsubsection{Fractional Cattaneo-type equations}
 
-Povstenko \cite{Povstenko2011} introduced a fractional Cattaneo-type constitutive law. To state our fractional relaxation convention explicitly, Eq.~\eqref{eq:11.4} uses the Gamma-normalized coefficient $\tau^\alpha/\Gamma(1+\alpha)$; this is a review parameterization, not a claim that every source prints the same prefactor:
+The attribution of the fractional Cattaneo-type constitutive law to Povstenko (2011) remains CONDITIONAL: the equation-level statement has not been checked against that paper. The displayed law is retained as a conditional review parameterization, not as a source-verified equation (CONDITIONAL) \cite{Povstenko2011}. To state our fractional relaxation convention explicitly, Eq.~\eqref{eq:11.4} uses the Gamma-normalized coefficient $\tau^\alpha/\Gamma(1+\alpha)$; this is a review parameterization, not a claim that every source prints the same prefactor:
 
 \begin{equation}
 q_i + \frac{\tau^\alpha}{\Gamma(1+\alpha)} {}^C D_t^\alpha q_i = -k T_{,i}.
@@ -61,6 +61,14 @@ q_i + \frac{\tau^\alpha}{\Gamma(1+\alpha)} {}^C D_t^\alpha q_i = -k T_{,i}.
 
 For $0<\alpha\leq1$, the displayed law reduces to Lord--Shulman/Cattaneo at $\alpha=1$. No $\alpha\to0$ Fourier limit is asserted for this model; a limiting statement requires the source's exact coefficient normalization and initial data. The coefficient has units $\mathrm{s^\alpha}$. The notation $\tau^\alpha/\alpha!$ is equivalent only if the generalized factorial is defined as $\alpha!:=\Gamma(1+\alpha)$, not as an ordinary integer factorial.
 
+% R3F-BEGIN:READ-SOURCES
+Povstenko's 2009 account gives a power-law kernel leading to a Caputo time-fractional heat equation, with the Fourier case at $\alpha=1$ and the wave-equation case at $\alpha=2$ (SECONDARY-SOURCE) \cite{Povstenko2009}.
+
+That 2009 source does not print the fractional-Cattaneo flux law displayed below; its attribution to Povstenko (2011) remains CONDITIONAL pending equation-level checking of the 2011 paper (SECONDARY-SOURCE for the 2009 distinction) \cite{Povstenko2009,Povstenko2011}.
+
+The 2014 Gorenflo--Kilbas--Mainardi--Rogosin monograph is used here as a reference for Mittag--Leffler definitions only; no specific theorem is attributed to it (REFERENCE-SOURCE) \cite{GorenfloKilbasMainardiRogosin2014}.
+% R3F-END:READ-SOURCES
+
 \subsubsection{Fractional models with internal structure}
 
 Fractional operators are not confined to the thermal equation. Sherief and Hussein \cite{Sharma2022} formulated a fractional-order model of micropolar thermoelasticity and solved the associated two-dimensional half-space problem, thereby combining fractional memory with the micro-rotational degrees of freedom of Section~\ref{sec:nonlocal}. The coupling is not merely formal: the fractional operator acts on constitutive variables of a medium whose own kinematics already carry an internal length scale, so the resulting dispersion relation contains two independent mechanisms of wave-speed dependence that are not additive. Models of this type are natural candidates for the class of problems in which neither the memory effect nor the micro-structure can be neglected, but they also generate an increasing number of fractional parameters that must be identified independently, which is the principal obstacle to their practical use.
@@ -68,7 +76,7 @@ Fractional operators are not confined to the thermal equation. Sherief and Husse
 % R3D-BEGIN:SHERIEF
 \paragraph{Fractional thermoelasticity.} Sherief, El-Sayed, and Abd El-Latief's Eq.~(2.29) gives $q_i+\tau_0\,{}^C D_t^\alpha q_i=-k_{ij}T_{,j}$ for $0<\alpha\leq1$. In their Eq.~(2.37), the same factor $(1+\tau_0{}^C D_t^\alpha)$ acts on both the temperature-rate term and the strain-rate coupling term; it is not applied only to $\dot T$ (PRIMARY-SOURCE-CHECKED) \cite{Sherief2010Fractional}. Their prefactor $\tau_0$ is source-specific and is not silently converted to a fractional Taylor-lag coefficient.
 
-\paragraph{Fractional coefficient convention.} For the review's generalized fractional Taylor-lag coefficient we use the Gamma-normalized form $\tau^\alpha/\Gamma(1+\alpha)$; writing $\tau^\alpha/\alpha!$ means the same only when the generalized factorial is defined by $\alpha!:=\Gamma(1+\alpha)$, not as an ordinary integer factorial. Sherief et al.'s Eqs.~(2.29)/(2.37) instead retain their source-specific $\tau_0$ prefactor. Limited primary sources are available for these fractional thermoelastic and MDD-versus-fractional subtopics; these source-specific formulations are not an exhaustive classification.
+\paragraph{Fractional coefficient convention.} For the review's generalized fractional Taylor-lag coefficient we use the Gamma-normalized form $\tau^\alpha/\Gamma(1+\alpha)$; writing $\tau^\alpha/\alpha!$ means the same only when the generalized factorial is defined by $\alpha!:=\Gamma(1+\alpha)$, not as an ordinary integer factorial. Sherief et al.'s Eqs.~(2.29)/(2.37) instead retain their source-specific $\tau_0$ prefactor. Section~11 now has 7 eligible read sources; the MDD-versus-fractional subtopic remains source-specific and is not an exhaustive classification.
 % R3D-END:SHERIEF
 
 \subsection{Strain-gradient and couple-stress theories}

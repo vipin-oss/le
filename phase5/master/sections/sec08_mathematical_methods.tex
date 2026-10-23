@@ -95,7 +95,7 @@ and Laplace transforms for transient problems on a half-space:
 
 The Laplace transform in particular is what makes the classical thermoelastic transient problem tractable in closed form: the coupled system is parabolic in the thermal variable and hyperbolic in the mechanical variable, and the Laplace transform in time combined with a Fourier transform in the horizontal directions reduces the problem to a pair of second-order differential equations in the normal coordinate, which are solved in closed form \cite{Achenbach1973,Nowacki1975}.
 
-The fractional operators of Section~\ref{sec:11.1} require a different transform calculus. The Caputo derivative of order $\alpha$ has a simple Laplace-domain representation, $\mathcal{L}\{{}^C D_t^\alpha f\}(s) = s^\alpha \tilde{f}(s) - s^{\alpha-1} f(0)$, and the resulting algebraic equation in $s$ is inverted using the Mittag--Leffler function, which plays the role that the exponential plays in the classical theory \cite{Gorenflo1997,Luchko2010}. It is worth being explicit about the methodological consequence: in the fractional families the analytical route is available only for special geometries, for radially symmetric or half-space problems, because the inversion step requires the eigenfunction expansion of the corresponding spatial operator. Everywhere else, the burden of verification falls on numerical inversion, and the reference solutions of the kind derived in closed form by Povstenko \cite{Povstenko2007} become the only available check on a numerical scheme.
+The fractional operators of Section~\ref{sec:11.1} require a different transform calculus. The Caputo derivative of order $\alpha$ has a simple Laplace-domain representation, $\mathcal{L}\{{}^C D_t^\alpha f\}(s) = s^\alpha \tilde{f}(s) - s^{\alpha-1} f(0)$, and the resulting algebraic equation in $s$ is inverted using the Mittag--Leffler function, which plays the role that the exponential plays in the classical theory . It is worth being explicit about the methodological consequence: in the fractional families the analytical route is available only for special geometries, for radially symmetric or half-space problems, because the inversion step requires the eigenfunction expansion of the corresponding spatial operator. Everywhere else, the burden of verification falls on numerical inversion, and the reference solutions of the kind derived in closed form by Povstenko \cite{Povstenko2007} become the only available check on a numerical scheme. For the specific time-fractional diffusion initial-boundary-value problem with a Caputo--Dzherbashyan derivative of order $0<\alpha\leq1$ and the stated divergence-form operator, Luchko proves existence by a Fourier method, alongside a maximum principle, uniqueness, and continuous dependence (PRIMARY-SOURCE-CHECKED) \cite{Luchko2010}.
 
 % R3E-BEGIN:LAPLACE-INVERSION
 \paragraph{Dubner--Abate cosine-series inversion.} For real causal $f$ with $f(t)=0$ for $t<0$, write $F(s)=\mathcal{L}\{f\}(s)$. Their Eq.~(15) obtains the following cosine series by applying the trapezoidal rule to the cosine inversion integral:
@@ -124,8 +124,16 @@ V_i&=(-1)^{N/2+i}\sum_{k=\lfloor(i+1)/2\rfloor}^{\min(i,N/2)}\\&\quad\left[\begi
 
 The weights depend only on $N$ and grow as $N$ increases: accuracy can improve until rounding error dominates, so the choice of even $N$ trades approximation error against available precision (PRIMARY-SOURCE-CHECKED) \cite{Stehfest1970}.
 
-\paragraph{Evidence scope.} These source-specific procedures do not establish a general method ranking. Limited primary sources are available for numerical Laplace inversion in this section.
+\paragraph{Evidence scope.} These source-specific procedures do not establish a general method ranking. Section~8 now has 8 eligible read sources overall, including 5 numerical-inversion sources.
 % R3E-END:LAPLACE-INVERSION
+
+% R3F-BEGIN:READ-SOURCES
+Durbin's averaged cosine-and-sine procedure improves on the earlier Dubner--Abate cosine method: its error bound is independent of $t$ over $0<t<2T$, and for $|f|\leq C$ is $C/(e^{2aT}-1)$ (PRIMARY-SOURCE-CHECKED) \cite{Durbin1974,DubnerAbate1968}.
+
+Honig and Hirdes combine Durbin's discretization correction with acceleration of a non-alternating series and parameter selection; in one reported example, Durbin required about 60 times as many transform evaluations and 30 times the CPU time as LAPIN for comparable accuracy, a result specific to that example (PRIMARY-SOURCE-CHECKED) \cite{HonigHirdes1984}.
+
+Stroh's 1958 anisotropic-elasticity treatment and 1962 steady-motion analysis are purely elastic; neither supplies a thermoelastic Stroh formulation (PRIMARY-SOURCE-CHECKED) \cite{Stroh1958,Stroh1962}.
+% R3F-END:READ-SOURCES
 
 \subsection{Green's functions and fundamental solutions}
 \label{sec:8.7}

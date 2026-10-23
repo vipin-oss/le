@@ -1,0 +1,69 @@
+{
+  "map_id": "R3F-HONIG-HIRDES-1984",
+  "mode": "BIBLIOGRAPHIC-SEARCH",
+  "requested_doi": "",
+  "query": "Honig Hirdes Journal of Computational and Applied Mathematics 1984 10 1 113 132",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/0377-0427(84)90075-x",
+    "type": "journal-article",
+    "title": [
+      "A method for the numerical inversion of Laplace transforms"
+    ],
+    "author": [
+      {
+        "given": "G.",
+        "family": "Honig",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "U.",
+        "family": "Hirdes",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1984,
+          2
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1984,
+          2
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Computational and Applied Mathematics"
+    ],
+    "short-container-title": [
+      "Journal of Computational and Applied Mathematics"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "10",
+    "issue": "1",
+    "page": "113-132",
+    "ISSN": [
+      "0377-0427"
+    ]
+  }
+}

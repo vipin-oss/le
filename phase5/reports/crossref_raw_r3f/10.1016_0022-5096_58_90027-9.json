@@ -1,0 +1,69 @@
+{
+  "map_id": "R3F-CHADWICK-1958",
+  "mode": "BIBLIOGRAPHIC-SEARCH",
+  "requested_doi": "",
+  "query": "Chadwick Sneddon Journal of the Mechanics and Physics of Solids 1958 6 223 230",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/0022-5096(58)90027-9",
+    "type": "journal-article",
+    "title": [
+      "Plane waves in an elastic solid conducting heat"
+    ],
+    "author": [
+      {
+        "given": "P.",
+        "family": "Chadwick",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "I.N.",
+        "family": "Snedon",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1958,
+          5
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1958,
+          5
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of the Mechanics and Physics of Solids"
+    ],
+    "short-container-title": [
+      "Journal of the Mechanics and Physics of Solids"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "6",
+    "issue": "3",
+    "page": "223-230",
+    "ISSN": [
+      "0022-5096"
+    ]
+  }
+}
