@@ -100,6 +100,12 @@ Cattaneo (1948), Vernotte (1958), Achenbach (1973), Nowacki (1975), and Tzou (19
 - R3e unresolved rows (not cited):
   - None.
 
+## R3f verification and manuscript update
+
+- Prior source commit: `0f27630b459df20c8b5a06ac88b11621993e1a27`. Its one strict run (`39987191853`) failed the `>1 pt` overfull-box gate due to a 7.17311 pt hbox in generated Section 5 text (`sec05_multiphysics.tex`, lines 99–100); no R3f content/report publication followed.
+- This corrective commit shortens the Section 5 apply-template text, adds an always-upload diagnostics artifact for live Crossref outputs and LaTeX logs, and preserves the 25-minute strict job cap.
+- Corrective content commit and strict CI run: pending. Do not record final VERIFIED/MISMATCH/NOT-FOUND totals, per-section counts, pages, or undefined-reference count until the corrective strict run passes. If it fails, record `FAILED` and the reason, then stop.
+
 ## Final strict build
 
 The strict CI run fills the following markers only after the build and publication gates pass:

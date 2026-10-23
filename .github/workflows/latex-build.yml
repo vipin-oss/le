@@ -184,13 +184,15 @@ jobs:
       - name: Apply only verified R3f citations and source-specific claims
         if: startsWith(github.ref, 'refs/heads/arena/') && github.event_name == 'push' && contains(github.event.head_commit.message, '[R3F-CROSSREF]')
         run: |
+          set -o pipefail
           python3 phase5/scripts/r3f_apply.py \
             --verify-csv phase5/reports/CROSSREF_R3F_VERIFY.csv \
             --map-csv phase5/reports/R3F_CITATION_MAP.csv \
             --reports-dir phase5/reports \
             --local-bib phase5/master/references_local.bib \
             --sections-dir phase5/master/sections \
-            --status-report phase5/reports/R3_STATUS.md
+            --status-report phase5/reports/R3_STATUS.md \
+            2>&1 | tee phase5/reports/R3F_APPLY.log
 
       - name: Install TeX and PDF tools
         timeout-minutes: 12
@@ -278,6 +280,41 @@ jobs:
           fi
           pdftotext -layout "$pdf" phase5/master/build/main.txt
           python phase5/scripts/make_pdf_thumbnails.py "$pdf" phase5/master/build/contact-sheets --dpi 100 --per-sheet 40 --cols 5
+
+      - name: Upload R3f verification and strict-build diagnostics
+        if: always() && startsWith(github.ref, 'refs/heads/arena/') && github.event_name == 'push' && contains(github.event.head_commit.message, '[R3F-CROSSREF]')
+        uses: actions/upload-artifact@v4
+        with:
+          name: r3f-verification-and-build-diagnostics-${{ github.run_id }}
+          path: |
+            phase5/reports/CROSSREF_R3F_VERIFY.csv
+            phase5/reports/CROSSREF_R3F_REQUEST_LOG.csv
+            phase5/reports/crossref_raw_r3f/**/*.json
+            phase5/reports/R3F_VERIFIED_REFERENCES.bib
+            phase5/reports/CROSSREF_R3F_METHOD.md
+            phase5/reports/CROSSREF_R3F_HUMAN_CHECK.md
+            phase5/reports/R3F_SECTION_COUNTS.csv
+            phase5/reports/R3F_APPLY.log
+            phase5/reports/R3_STATUS.md
+            phase5/master/references_local.bib
+            phase5/master/sections/sec02_literature.tex
+            phase5/master/sections/sec04_thermoelastic.tex
+            phase5/master/sections/sec05_multiphysics.tex
+            phase5/master/sections/sec08_mathematical_methods.tex
+            phase5/master/sections/sec10_energy.tex
+            phase5/master/sections/sec11_advanced.tex
+            phase5/master/sections/sec12_comparative.tex
+            phase5/master/build/main.log
+            phase5/master/build/process.log
+            phase5/master/build/pass*.log
+            phase5/master/build/bibtex.log
+            phase5/master/build/main.blg
+            phase5/master/build/main.aux
+            phase5/master/build/main.fls
+            phase5/master/build/pdfinfo.txt
+            phase5/master/build/pdffonts.txt
+          if-no-files-found: warn
+          retention-days: 30
 
       - name: Publish strict-build PDF and contact sheets to the branch
         if: success() && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && startsWith(github.ref, 'refs/heads/arena/')

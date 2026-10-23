@@ -132,7 +132,7 @@ def main() -> int:
     # New statements are generated source-by-source; a failed Crossref gate contributes no citation.
     s5 = []
     if "Chandrasekharaiah1984" in selected:
-        s5.append(r"Chandrasekharaiah's temperature-rate-dependent thermopiezoelectric model retains a Fourier-form heat flux, $q_i=-\theta_0(b_i\dot{\theta}+k_{ij}\theta_{,j})$, with additional material constants; setting $a=s=b_i=0$ returns Mindlin's theory, while suppressing piezoelectric effects recovers Green--Lindsay (PRIMARY-SOURCE-CHECKED) \cite{Chandrasekharaiah1984}.")
+        s5.append(r"Chandrasekharaiah's GL-type thermopiezoelectric model retains Fourier-form flux with extra constants; $a=s=b_i=0$ recovers Mindlin, and suppressing piezoelectric effects recovers Green--Lindsay (PRIMARY-SOURCE-CHECKED) \cite{Chandrasekharaiah1984}.")
     if "Nowacki1978" in selected:
         s5.append(r"Nowacki's classical Fourier thermopiezoelectric theory establishes uniqueness from the energy balance and states generalized Hamilton and reciprocity theorems (PRIMARY-SOURCE-CHECKED) \cite{Nowacki1978}.")
     void_parts = []
