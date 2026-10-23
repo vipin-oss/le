@@ -44,14 +44,14 @@ The analytical solution of the fractional heat conduction equation in radially s
 
 \subsubsection{Fractional Cattaneo-type equations}
 
-Povstenko \cite{Povstenko2011} introduced the following fractional Cattaneo-type constitutive equation:
+Povstenko \cite{Povstenko2011} introduced a fractional Cattaneo-type constitutive law. To state our fractional relaxation convention explicitly, Eq.~\eqref{eq:11.4} uses the Gamma-normalized coefficient $\tau^\alpha/\Gamma(1+\alpha)$; this is a review parameterization, not a claim that every source prints the same prefactor:
 
 \begin{equation}
-q_i + \tau^\alpha {}^C D_t^\alpha q_i = -k T_{,i}.
+q_i + \frac{\tau^\alpha}{\Gamma(1+\alpha)} {}^C D_t^\alpha q_i = -k T_{,i}.
 \label{eq:11.4}
 \end{equation}
 
-For $0<\alpha\leq1$, the displayed law reduces to Lord--Shulman/Cattaneo at $\alpha=1$. The $\alpha\to0$ limit is Fourier-type only under the stated Caputo convention and limiting prefactor; it is not a Green--Naghdi type II limit. Dimensional consistency requires the fractional relaxation coefficient to have units $\mathrm{s^\alpha}$.
+For $0<\alpha\leq1$, the displayed law reduces to Lord--Shulman/Cattaneo at $\alpha=1$. No $\alpha\to0$ Fourier limit is asserted for this model; a limiting statement requires the source's exact coefficient normalization and initial data. The coefficient has units $\mathrm{s^\alpha}$. The notation $\tau^\alpha/\alpha!$ is equivalent only if the generalized factorial is defined as $\alpha!:=\Gamma(1+\alpha)$, not as an ordinary integer factorial.
 
 \subsubsection{Fractional models with internal structure}
 
