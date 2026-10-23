@@ -14,8 +14,8 @@ Status: PRIMARY-SOURCE-CHECKED (text extracted and read; no PDF/text committed).
 - Method: Gaver expectation R_n=int F(t) f_n(a,t)dt with f_n(a,t)=a (2n)!/(n!(n-1)!) (1-e^{-at})^n e^{-nat}; linear combination of R_n (Salzer-type) with K=N/2, a=ln2/T.
 - Working formula: F_a = (ln 2/T) sum_{i=1}^{N} V_i P(i ln2 / T), N EVEN, V_i = (-1)^{N/2+i} sum_{k=floor((i+1)/2)}^{min(i,N/2)} k^{N/2}(2k)! / [(N/2-k)! k! (k-1)! (i-k)! (2k-i)!].
 - Behaviour: V_i depend on N only (compute once); only real values of P(s) on the real axis are needed; accuracy rises with N until rounding errors dominate (V_i grow; inversion is unbounded), optimum N rises with machine digits. Gaver extrapolation needs N a power of 2 and is less accurate for the same N.
-- Table I shows failures: oscillatory/sine-type and sqrt tests lose accuracy at larger T (e.g. P=1/s^... vs sin test errors grow), plus discontinuous cases.
-- Caveat for manuscript: poor for oscillatory or discontinuous f (typical of wave problems and thermal-shock fronts); use higher precision arithmetic for large N. Use for smooth diffusive-type thermal responses; for wave fronts prefer Dubner-Abate/Durbin-type Fourier methods.
+- Table I (N fixed): smooth cases (t^-1/2, ln, t^3/6) accurate to ~3-4 digits; for e^{-t} the relative error grows for T>=5 (absolute values ~1e-4, even sign change at T=8-10); the sqrt(t)-type column shows growing error at larger T. Read from text extraction only; column assignment of the last block not rendered-checked.
+- Caveat for manuscript (SUPERVISOR INFERENCE, not stated by Stehfest): real-axis sampling is expected to suit smooth monotone responses; oscillatory/discontinuous wave responses need care; Stehfest himself only states the rounding-error vs N trade-off.
 
 ## Readiness
 Section 8 gains two primary sources (now 3 with Brave's prior one). Still need Honig-Hirdes 1984 or Durbin 1974 if Brave can obtain them; do not claim "comparison of methods" beyond these papers.
