@@ -8,4 +8,4 @@ For each unique DOI, the job requests `https://api.crossref.org/works/<URL-encod
 
 `R3A_VERIFIED_REFERENCES.bib` includes only `VERIFIED` technical-eligible rows plus the explicitly allowlisted `Chandrasekharaiah1998` review as `background-only`; metadata-only entries are never presented as evidence for equations or technical claims. BibTeX authors, title, venue, and issue metadata come from saved Crossref JSON; the BibTeX year is Crossref's issued year.
 
-Counts: 81 plan rows in scope; 81 DOI rows; 81 unique DOI requests; 77 VERIFIED; 3 MISMATCH; 1 NOT-FOUND; 21 verified eligible BibTeX keys; 1 background-only keys. No-DOI printed sources are listed separately in R3_STATUS.md.
+Counts: 81 plan rows in scope; 81 DOI rows; 81 unique DOI requests; 77 VERIFIED; 3 MISMATCH; 1 NOT-FOUND; 22 verified eligible BibTeX keys; 0 background-only keys. No-DOI printed sources are listed separately in R3_STATUS.md.

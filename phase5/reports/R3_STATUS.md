@@ -59,14 +59,31 @@ Cattaneo (1948), Vernotte (1958), Achenbach (1973), Nowacki (1975), and Tzou (19
 - LIT-0485 `Kumar2020` — NO-DOI: no DOI recorded; not Crossref-verifiable; keep uncited under this phase
 - LIT-0471 `Bassiouny2021` — VERIFIED: Crossref author metadata is empty; do not emit BibTeX
 
+## R3c verification and evidence
+
+- Scope: REFERENCE_PLAN s.10 and s.4.11; Section 10 has 4 technical-eligible rows and 12 ineligible plan rows not queried; Section 4.11 has 1 plan row(s), 0 eligible; 13 total rows across both sections are INELIGIBLE and unqueried.
+- R3c new Crossref results for s.10 eligible rows: 3 VERIFIED, 1 MISMATCH, 0 NOT-FOUND, 0 NO-DOI.
+- Verified and bibliography-ready s.10 eligible rows: 2; new-request citations inserted: 2; verified carry-forward s.10 citations reused from R3b: 1; new BibTeX keys added: 2.
+- Kumar2017 is carried forward from R3b only because its plan row is technically eligible, proposed_section includes s.10.5, and R3b marked it VERIFIED/bibliography-ready: used.
+- Barak 2023 Eq. (6.14) is not cited: its local BibTeX record has no technically eligible REFERENCE_PLAN row. No new citation is created from that record.
+- Frozen CITATION_MAP exact-key matches among R3c s.10 eligible sources: 0. Claim IDs CL-013/014/015 are used as topic anchors in `R3C_CITATION_MAP.csv`; that file states the local plan-note rationale and does not imply supplied-map key matches.
+- Sections meeting ≥6 evidence-ready sources across R3a/R3b/R3c: 4.8 (8), 6 (7), 7 (6), 9 (19).
+- Limited primary sources are available for s.10 energy partition and s.4.11 fractional thermoelasticity. Section 10 Eq. (10.12) remains conditional/model-specific; own-group numeric observations are not presented as exact identities. Section 4.11 receives no technical citation because its only plan row is metadata-only.
+- GAP-09, GAP-12, and GAP-13 remain open. Section 10 identity conditions, Section 4.11 fractional-source/admissibility questions, and all R3b unresolved rows are not closed by metadata verification alone.
+- R3c title human-check list: `CROSSREF_R3C_HUMAN_CHECK.md`.
+- R3c unresolved eligible rows (not cited):
+  - LIT-0490 `De2020` — MISMATCH: normalized venue does not match Crossref container title
+- R3c technically eligible but not cited because no claim mapping was authorized by the local map:
+  - LIT-0432 `Aldawody2019` — Crossref VERIFIED; verified eligible source has no R3C_CITATION_MAP include=YES mapping; metadata only
+
 ## Final strict build
 
 The strict CI run fills the following markers only after the build and publication gates pass:
 
-- Content/source commit: `f03dd97517e127bb05e54bce4da63df457459d40`
-- Strict CI run ID: `39875147113`
-- Strict build-step time: `10` seconds
-- PDF pages: `155`
+- Content/source commit: `4391aa136e6b73e14680509438448ec785914721`
+- Strict CI run ID: `39877321901`
+- Strict build-step time: `15`
+- PDF pages: `156`
 - Undefined references/citations: `0`
 
 The preserved R1/R2 baseline remains commit `0be9322`, CI run `39781561017`, 149 pages, and zero undefined references. MISMATCH, NOT-FOUND, and out-of-scope literature records are intentionally not promoted to citations; the undefined-reference count is a separate LaTeX build metric.
