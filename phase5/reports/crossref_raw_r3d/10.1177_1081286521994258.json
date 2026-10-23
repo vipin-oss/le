@@ -1,0 +1,105 @@
+{
+  "query_doi": "10.1177/1081286521994258",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1177/1081286521994258",
+    "type": "journal-article",
+    "title": [
+      "On the decay of the energy for radial solutions in Moore–Gibson–Thompson thermoelasticity"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-8533-1858",
+        "authenticated-orcid": false,
+        "given": "Noelia",
+        "family": "Bazarra",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Departamento de Matemática Aplicada I, Universidade de Vigo, Vigo, Spain"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "José R",
+        "family": "Fernández",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Departamento de Matemática Aplicada I, Universidade de Vigo, Vigo, Spain"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7059-7058",
+        "authenticated-orcid": false,
+        "given": "Ramón",
+        "family": "Quintanilla",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Departamento de Matemáticas, ESEIAAT, Universitat Politécnica de Catalunya, Barcelona, Spain"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          10
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2021,
+          2,
+          24
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          2,
+          24
+        ]
+      ]
+    },
+    "container-title": [
+      "Mathematics and Mechanics of Solids"
+    ],
+    "short-container-title": [
+      "Mathematics and Mechanics of Solids"
+    ],
+    "publisher": "SAGE Publications",
+    "volume": "26",
+    "issue": "10",
+    "page": "1507-1514",
+    "ISSN": [
+      "1081-2865",
+      "1741-3028"
+    ]
+  }
+}

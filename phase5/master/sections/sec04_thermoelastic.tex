@@ -218,7 +218,23 @@ Moore and Gibson (1960) derived a third-order acoustic wave equation for gas dyn
 \label{eq:4.18}
 \end{equation}
 
-Here $\vartheta_m$ is a thermal-displacement variable and $k^*$ must have units consistent with the selected model. This form is retained as an unverified source lead: its primary-source convention, assumptions, and admissibility are not checked here, and no eliminated third-order equation, dispersion law, or energy identity is asserted.
+Here $\vartheta_m$ is a thermal-displacement variable and $k^*$ must have units consistent with the selected model. This constitutive variant is discussed below with its source-specific assumptions and stability scope.
+
+% R3D-BEGIN:MGT
+\paragraph{Thermoelastic MGT evidence.}
+
+The displayed Eq.~\eqref{eq:4.18} is the thermoelastic MGT variant with relaxation in the heat-flux law and no relaxation term in the stress. Quintanilla's Eqs.~(2.4), (2.5), and (3.5) give the source-specific coercivity condition $K_{ij}=k_{ij}-\tau k^*_{ij}$ positive definite, with the scalar condition $k-\tau k^*>0$; in one dimension, $k>k^*\tau$ yields exponential stability, while $k<k^*\tau$ gives instability (PRIMARY-SOURCE-CHECKED) \cite{Quintanilla2019}. The source uses $\alpha_{,j}$ in (2.1) but $\theta_{,j}$ in (2.5) and (3.5), without reconciling that notation; the conclusion is kept model-specific.
+
+Bazarra et al. document a distinct radial thermoelastic MGT variant in which $\tau$ also appears in the stress coupling, $-\beta(\theta_{,i}+\tau\dot{\theta}_{,i})$; their radial decay result assumes $\bar k=k-\tau k^*>0$ (PRIMARY-SOURCE-CHECKED) \cite{Bazarra2021MGTradial}. Thus the relaxation placement in the stress law is variant-specific.
+
+\paragraph{Acoustic MGT evidence.} Acoustic MGT-with-memory PDE decay uses its own acoustic parameter set and is separate from thermoelastic admissibility. The gas-dynamics parameter $\gamma_{\rm ac}=b-\tau c^2$ is acoustic only; it is not the thermoelastic condition $k-\tau k^*>0$.
+
+For the separate abstract acoustic MGT equation with memory, Lasiecka and Wang report exponential decay in the subcritical regime $\alpha\beta>\gamma$ (PRIMARY-SOURCE-CHECKED, ABSTRACT-LEVEL) \cite{LasieckaWang2015MGT}.
+
+Dell'Oro, Lasiecka, and Pata state that at $\alpha\beta=\gamma$ exponential stability holds if and only if $A$ is bounded; otherwise the energy tends to zero without an exponential rate (PRIMARY-SOURCE-CHECKED, ABSTRACT-LEVEL) \cite{DellOroLasieckaPata2016MGT}.
+
+\paragraph{MGT evidence scope.} Limited primary sources are available for the s.4.9--s.4.10 MGT subtopics; these model-specific results do not constitute a family-wide classification.
+% R3D-END:MGT
 
 \subsection{Memory-dependent derivative (MDD) models (\texorpdfstring{Wang \& Li}{Wang and Li}, 2011)}
 \label{sec:4.10}
