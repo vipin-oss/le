@@ -1,0 +1,163 @@
+file,line,phrase,section
+phase5/master/appendices/appA_equation_register.tex,12,PRIMARY-SOURCE-CHECKED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,13,SECONDARY-SOURCE,Appendix A
+phase5/master/appendices/appA_equation_register.tex,14,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,36,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,37,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,39,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,40,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,41,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,58,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,59,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,60,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,61,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,62,PRIMARY-SOURCE-CHECKED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,63,PRIMARY-SOURCE-CHECKED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,64,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,65,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,66,PRIMARY-SOURCE-CHECKED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,67,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,69,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,70,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,87,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,88,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,89,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,90,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,91,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,92,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,94,UNVERIFIED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,200,PRIMARY-SOURCE-CHECKED,Appendix A
+phase5/master/appendices/appA_equation_register.tex,201,SECONDARY-SOURCE,Appendix A
+phase5/master/appendices/appA_equation_register.tex,202,UNVERIFIED,Appendix A
+phase5/master/appendices/appE_tables.tex,7,UNVERIFIED,Appendix E
+phase5/master/appendices/appF_reproducibility.tex,8,UNVERIFIED,Appendix F
+phase5/master/appendices/energy_flux_derivations.tex,15,UNVERIFIED,Appendix (energy-flux derivations)
+phase5/master/appendices/energy_flux_derivations.tex,109,UNVERIFIED,Appendix (energy-flux derivations)
+phase5/master/appendices/energy_flux_derivations.tex,225,UNVERIFIED,Appendix (energy-flux derivations)
+phase5/master/appendices/energy_flux_derivations.tex,233,UNVERIFIED,Appendix (energy-flux derivations)
+phase5/master/appendices/energy_flux_derivations.tex,356,UNVERIFIED,Appendix (energy-flux derivations)
+phase5/master/appendices/energy_flux_derivations.tex,368,UNVERIFIED,Appendix (energy-flux derivations)
+phase5/master/frontmatter/abstract.tex,1,SECONDARY-SOURCE,Front matter
+phase5/master/sections/sec01_scope.tex,85,UNVERIFIED,Section 1
+phase5/master/sections/sec02_literature.tex,9,SECONDARY-SOURCE,Section 2
+phase5/master/sections/sec02_literature.tex,21,SECONDARY-SOURCE,Section 2
+phase5/master/sections/sec02_literature.tex,27,SECONDARY-SOURCE,Section 2
+phase5/master/sections/sec02_literature.tex,60,UNVERIFIED,Section 2
+phase5/master/sections/sec02_literature.tex,60,SECONDARY-SOURCE,Section 2
+phase5/master/sections/sec04_thermoelastic.tex,14,BACKGROUND-ONLY,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,14,SECONDARY-SOURCE,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,108,PRIMARY-SOURCE-CHECKED,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,223,R3,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,226,PRIMARY-SOURCE-CHECKED,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,228,PRIMARY-SOURCE-CHECKED,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,232,PRIMARY-SOURCE-CHECKED,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,234,PRIMARY-SOURCE-CHECKED,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,236,R3,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,237,PRIMARY-SOURCE-CHECKED,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,238,R3,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,241,R3,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,267,eligible,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,267,R3,Section 4
+phase5/master/sections/sec04_thermoelastic.tex,267,GAP-,Section 4
+phase5/master/sections/sec05_multiphysics.tex,92,R3,Section 5
+phase5/master/sections/sec05_multiphysics.tex,93,PRIMARY-SOURCE-CHECKED,Section 5
+phase5/master/sections/sec05_multiphysics.tex,95,eligible,Section 5
+phase5/master/sections/sec05_multiphysics.tex,95,read sources,Section 5
+phase5/master/sections/sec05_multiphysics.tex,95,now has,Section 5
+phase5/master/sections/sec05_multiphysics.tex,96,R3,Section 5
+phase5/master/sections/sec05_multiphysics.tex,98,R3,Section 5
+phase5/master/sections/sec05_multiphysics.tex,99,PRIMARY-SOURCE-CHECKED,Section 5
+phase5/master/sections/sec05_multiphysics.tex,101,PRIMARY-SOURCE-CHECKED,Section 5
+phase5/master/sections/sec05_multiphysics.tex,103,PRIMARY-SOURCE-CHECKED,Section 5
+phase5/master/sections/sec05_multiphysics.tex,104,R3,Section 5
+phase5/master/sections/sec05_multiphysics.tex,289,R3,Section 5
+phase5/master/sections/sec05_multiphysics.tex,289,PRIMARY-SOURCE-CHECKED,Section 5
+phase5/master/sections/sec06_transport.tex,11,UNVERIFIED,Section 6
+phase5/master/sections/sec06_transport.tex,128,UNVERIFIED,Section 6
+phase5/master/sections/sec06_transport.tex,150,UNVERIFIED,Section 6
+phase5/master/sections/sec06_transport.tex,194,R3,Section 6
+phase5/master/sections/sec06_transport.tex,194,PRIMARY-SOURCE-CHECKED,Section 6
+phase5/master/sections/sec07_nonlocal.tex,136,R3,Section 7
+phase5/master/sections/sec07_nonlocal.tex,136,PRIMARY-SOURCE-CHECKED,Section 7
+phase5/master/sections/sec08_mathematical_methods.tex,63,PRIMARY-SOURCE-CHECKED,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,100,PRIMARY-SOURCE-CHECKED,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,102,R3,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,111,PRIMARY-SOURCE-CHECKED,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,127,PRIMARY-SOURCE-CHECKED,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,129,eligible,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,129,read sources,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,129,now has,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,130,R3,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,132,R3,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,133,PRIMARY-SOURCE-CHECKED,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,135,PRIMARY-SOURCE-CHECKED,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,137,PRIMARY-SOURCE-CHECKED,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,138,R3,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,199,R3,Section 8
+phase5/master/sections/sec08_mathematical_methods.tex,199,UNVERIFIED,Section 8
+phase5/master/sections/sec09_interfaces.tex,225,R3,Section 9
+phase5/master/sections/sec09_interfaces.tex,225,UNVERIFIED,Section 9
+phase5/master/sections/sec09_interfaces.tex,225,PRIMARY-SOURCE-CHECKED,Section 9
+phase5/master/sections/sec10_energy.tex,50,R3,Section 10
+phase5/master/sections/sec10_energy.tex,51,PRIMARY-SOURCE-CHECKED,Section 10
+phase5/master/sections/sec10_energy.tex,53,SECONDARY-SOURCE,Section 10
+phase5/master/sections/sec10_energy.tex,54,R3,Section 10
+phase5/master/sections/sec10_energy.tex,105,eligible,Section 10
+phase5/master/sections/sec10_energy.tex,105,read sources,Section 10
+phase5/master/sections/sec10_energy.tex,105,R3,Section 10
+phase5/master/sections/sec10_energy.tex,105,GAP-,Section 10
+phase5/master/sections/sec10_energy.tex,105,PRIMARY-SOURCE-CHECKED,Section 10
+phase5/master/sections/sec10_energy.tex,105,now has,Section 10
+phase5/master/sections/sec11_advanced.tex,32,R3,Section 11
+phase5/master/sections/sec11_advanced.tex,33,PRIMARY-SOURCE-CHECKED,Section 11
+phase5/master/sections/sec11_advanced.tex,34,R3,Section 11
+phase5/master/sections/sec11_advanced.tex,49,R3,Section 11
+phase5/master/sections/sec11_advanced.tex,50,PRIMARY-SOURCE-CHECKED,Section 11
+phase5/master/sections/sec11_advanced.tex,51,R3,Section 11
+phase5/master/sections/sec11_advanced.tex,64,R3,Section 11
+phase5/master/sections/sec11_advanced.tex,65,SECONDARY-SOURCE,Section 11
+phase5/master/sections/sec11_advanced.tex,67,SECONDARY-SOURCE,Section 11
+phase5/master/sections/sec11_advanced.tex,70,R3,Section 11
+phase5/master/sections/sec11_advanced.tex,76,R3,Section 11
+phase5/master/sections/sec11_advanced.tex,77,PRIMARY-SOURCE-CHECKED,Section 11
+phase5/master/sections/sec11_advanced.tex,79,eligible,Section 11
+phase5/master/sections/sec11_advanced.tex,79,read sources,Section 11
+phase5/master/sections/sec11_advanced.tex,79,now has,Section 11
+phase5/master/sections/sec11_advanced.tex,80,R3,Section 11
+phase5/master/sections/sec11_advanced.tex,191,R3,Section 11
+phase5/master/sections/sec11_advanced.tex,191,PRIMARY-SOURCE-CHECKED,Section 11
+phase5/master/sections/sec12_comparative.tex,11,R3,Section 12
+phase5/master/sections/sec12_comparative.tex,12,SECONDARY-SOURCE,Section 12
+phase5/master/sections/sec12_comparative.tex,13,R3,Section 12
+phase5/master/sections/sec12_comparative.tex,15,R3,Section 12
+phase5/master/sections/sec12_comparative.tex,16,PRIMARY-SOURCE-CHECKED,Section 12
+phase5/master/sections/sec12_comparative.tex,18,PRIMARY-SOURCE-CHECKED,Section 12
+phase5/master/sections/sec12_comparative.tex,20,PRIMARY-SOURCE-CHECKED,Section 12
+phase5/master/sections/sec12_comparative.tex,22,PRIMARY-SOURCE-CHECKED,Section 12
+phase5/master/sections/sec12_comparative.tex,24,PRIMARY-SOURCE-CHECKED,Section 12
+phase5/master/sections/sec12_comparative.tex,25,R3,Section 12
+phase5/master/sections/sec12_comparative.tex,27,SECONDARY-SOURCE,Section 12
+phase5/master/sections/sec12_comparative.tex,159,UNVERIFIED,Section 12
+phase5/master/sections/sec13_applications.tex,160,R3,Section 13
+phase5/master/sections/sec13_applications.tex,160,UNVERIFIED,Section 13
+phase5/master/sections/sec14_taxonomy.tex,141,GAP-,Section 14
+phase5/master/sections/sec14_taxonomy.tex,142,GAP-,Section 14
+phase5/master/sections/sec14_taxonomy.tex,143,GAP-,Section 14
+phase5/master/sections/sec14_taxonomy.tex,144,GAP-,Section 14
+phase5/master/sections/sec14_taxonomy.tex,145,GAP-,Section 14
+phase5/master/sections/sec14_taxonomy.tex,146,GAP-,Section 14
+phase5/master/sections/sec14_taxonomy.tex,147,GAP-,Section 14
+phase5/master/sections/sec14_taxonomy.tex,148,GAP-,Section 14
+phase5/master/sections/sec14_taxonomy.tex,153,GAP-,Section 14
+phase5/master/sections/sec15_challenges.tex,22,UNVERIFIED,Section 15
+phase5/master/sections/sec15_challenges.tex,49,PRIMARY-SOURCE-CHECKED,Section 15
+phase5/master/sections/sec15_challenges.tex,162,UNVERIFIED,Section 15
+phase5/master/sections/sec15_challenges.tex,197,UNVERIFIED,Section 15
+phase5/master/sections/sec15_challenges.tex,353,UNVERIFIED,Section 15
+phase5/master/sections/sec15_challenges.tex,373,UNVERIFIED,Section 15
+phase5/master/sections/sec16_future.tex,57,UNVERIFIED,Section 16
+phase5/master/sections/sec16_future.tex,348,UNVERIFIED,Section 16
+phase5/master/sections/sec17_conclusions.tex,44,UNVERIFIED,Section 17
+phase5/master/sections/sec17_conclusions.tex,44,SECONDARY-SOURCE,Section 17
+phase5/master/tables/source/T2_generalized_thermoelastic.tex,12,UNVERIFIED,Table T2 (Section 4)
+phase5/master/tables/source/T2_generalized_thermoelastic.tex,15,UNVERIFIED,Table T2 (Section 4)

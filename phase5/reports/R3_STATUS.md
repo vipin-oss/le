@@ -118,19 +118,28 @@ Cattaneo (1948), Vernotte (1958), Achenbach (1973), Nowacki (1975), and Tzou (19
 - Sections at/above six eligible read sources: s.5=9, s.8=8, s.10=6, s.11=7. Sections below six: s.4.9=4, s.4.10=3, s.12=5. Scope notes were changed only for threshold-crossing sections; Section 4's MGT count excludes the acoustic Marchand source.
 - Durbin's interval/error statement and Honig--Hirdes performance comparison are source-specific; Stroh is identified as purely elastic; no unsupported general ranking or thermoelastic attribution is added.
 - The 1999 five-model experimental statement is explicitly dated. The C--T DPL thermoelastic attribution is kept distinct from Tzou's 1995 heat-law paper. The fractional-Cattaneo attribution to Povstenko (2011) remains CONDITIONAL.
-- R3f unresolved Crossref rows (not newly cited or added):
-  - `ChadwickSneddon1958` — MISMATCH: author mismatch
-  - `HetnarskiIgnaczak1999` — MISMATCH: author mismatch
-  - `Gorenflo1997` — MISMATCH: venue mismatch
+- R3f unresolved Crossref rows before R3g arbitration (not newly cited/added in R3f): `ChadwickSneddon1958` (author mismatch), `HetnarskiIgnaczak1999` (author mismatch), and `Gorenflo1997` (venue mismatch); R3g separately arbitrates and cites these records.
+- R3f corrective strict CI: content commit `2d5dc6bb46f133dc65c9536684d6d10bea05163e`, run `39988876745`, 160 pages, 0 undefined references/citations; strict layout gate passed.
+
+## R3g supervisor arbitration, citations, and process-language audit
+
+- Crossref verification rules were not changed. The three R3f registry rows remain `MISMATCH` in the original Crossref CSV; supervisor arbitration against the printed first pages designates each separately as `VERIFIED-BY-ARBITRATION` for citation use.
+- `ChadwickSneddon1958`: Crossref's `Snedon` is corrected to printed `Sneddon`; `HetnarskiIgnaczak1999`: bibliography follows printed Richard B. Hetnarski and Jozef Ignaczak; `Gorenflo1997`: corrected chapter title, CISM anthology/volume, pages, and DOI follow the printed PDF. All three BibTeX records carry `verified = {ARBITRATED (supervisor, printed PDF)}`; reasons are in `CROSSREF_R3F_HUMAN_CHECK.md`.
+- Added the arbitration-tagged source claims in Sections 2, 8, and 12; the Section 8 account is qualitative only for Chadwick--Sneddon, and the Hetnarski experiment statement is explicitly dated to 1999.
+- Per-section verified/read source counts (primary-read count shown separately), combining R3f and R3g: s.2 4/0; s.4 1/0; s.4.9 0/0; s.4.10 0/0; s.5 5/5; s.8 7/6; s.10 3/1; s.11 2/0; s.12 6/5. Updated cumulative eligible-read counts: s.4.9=4, s.4.10=3, s.5=9, s.8=10, s.10=6, s.11=7, s.12=6; previous cumulative totals for s.2 and s.4 were not reported.
+- Process-language inventory: `phase5/reports/PROCESS_LANGUAGE_INVENTORY.csv`, 162 line/phrase rows. Counts by phrase: eligible=5; read sources=4; R3=35; GAP-=11; UNVERIFIED=50; BACKGROUND-ONLY=1; SECONDARY-SOURCE=14; PRIMARY-SOURCE-CHECKED=38; supervisor=0; Brave=0; now has=4. Inventory records source file, line, phrase, and section; it did not drive manuscript edits.
+- Corrective content commit: `__R3_SOURCE_COMMIT__`; strict run: `__R3_CI_RUN_ID__`; build step seconds: `__R3_BUILD_SECONDS__`; pages: `__R3_PDF_PAGES__`; undefined references/citations: `__R3_UNRESOLVED_REFS__`.
+- Uncommitted local edits at content-commit time: none; all R3g changes and the inventory were included in that commit.
 
 ## Final strict build
 
-The strict CI run fills the following markers only after the build and publication gates pass:
+The R3g strict build fills these fields after the build and publication gates pass.
 
-- Content/source commit: `a630efc4fa6b43a64dd885927890f37aa8fa8add`
-- Strict CI run ID: `39952152334`
-- Strict build-step time: `11`
-- PDF pages: `158`
-- Undefined references/citations: `0`
+- Content/source commit: `__R3_SOURCE_COMMIT__`
+- Strict CI run ID: `__R3_CI_RUN_ID__`
+- Strict build-step time: `__R3_BUILD_SECONDS__` seconds
+- PDF pages: `__R3_PDF_PAGES__`
+- Undefined references/citations: `__R3_UNRESOLVED_REFS__`
+- Strict layout gate: pass required; no overfull hbox/vbox greater than 1 pt.
 
 The preserved R1/R2 baseline remains commit `0be9322`, CI run `39781561017`, 149 pages, and zero undefined references. MISMATCH, NOT-FOUND, and out-of-scope literature records are intentionally not promoted to citations; the undefined-reference count is a separate LaTeX build metric.
