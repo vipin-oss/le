@@ -26,7 +26,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Checkout read-only literature verification inputs
-        if: startsWith(github.ref, 'refs/heads/arena/') && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && (contains(github.event.head_commit.message, '[R3A-CROSSREF]') || contains(github.event.head_commit.message, '[R3B-CROSSREF]'))))
+        if: startsWith(github.ref, 'refs/heads/arena/') && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && (contains(github.event.head_commit.message, '[R3A-CROSSREF]') || contains(github.event.head_commit.message, '[R3B-CROSSREF]') || contains(github.event.head_commit.message, '[R3C-CROSSREF]'))))
         uses: actions/checkout@v4
         with:
           ref: arena/04fdf32e-le
@@ -34,9 +34,9 @@ jobs:
           fetch-depth: 1
 
       - name: Reclassify saved Crossref results for Sections 4.1–4.12
-        if: startsWith(github.ref, 'refs/heads/arena/') && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && (contains(github.event.head_commit.message, '[R3A-CROSSREF]') || contains(github.event.head_commit.message, '[R3B-CROSSREF]'))))
+        if: startsWith(github.ref, 'refs/heads/arena/') && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && (contains(github.event.head_commit.message, '[R3A-CROSSREF]') || contains(github.event.head_commit.message, '[R3B-CROSSREF]') || contains(github.event.head_commit.message, '[R3C-CROSSREF]'))))
         env:
-          REUSE_R3A_RAW: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.event.head_commit.message, '[R3B-CROSSREF]')) }}
+          REUSE_R3A_RAW: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && (contains(github.event.head_commit.message, '[R3B-CROSSREF]') || contains(github.event.head_commit.message, '[R3C-CROSSREF]'))) }}
         run: |
           args=()
           if [[ "$REUSE_R3A_RAW" == "true" ]]; then args+=(--reuse-raw); fi
@@ -72,6 +72,32 @@ jobs:
             --map-csv phase5/reports/R3B_CITATION_MAP.csv \
             --local-bib phase5/master/references_local.bib \
             --reports-dir phase5/reports \
+            --sections-dir phase5/master/sections \
+            --status-report phase5/reports/R3_STATUS.md
+
+      - name: Verify eligible R3c sources for Section 10 and Section 4.11
+        if: startsWith(github.ref, 'refs/heads/arena/') && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.event.head_commit.message, '[R3C-CROSSREF]')))
+        run: |
+          python3 phase5/scripts/crossref_r3c.py \
+            --base-csv verification-reference/verification/LITERATURE_BASE.csv \
+            --plan-csv verification-reference/verification/REFERENCE_PLAN.csv \
+            --citation-map-csv verification-reference/verification/CITATION_MAP.csv \
+            --row-index-csv verification-reference/verification/api_log/LITERATURE_ROW_INDEX.csv \
+            --r3c-map-csv phase5/reports/R3C_CITATION_MAP.csv \
+            --local-bib phase5/master/references_local.bib \
+            --raw-dir phase5/reports/crossref_raw_r3c \
+            --report-dir phase5/reports \
+            --pause 1.0
+
+      - name: Apply only eligible, verified R3c citations
+        if: startsWith(github.ref, 'refs/heads/arena/') && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.event.head_commit.message, '[R3C-CROSSREF]')))
+        run: |
+          python3 phase5/scripts/r3c_apply.py \
+            --verify-csv phase5/reports/CROSSREF_R3C_VERIFY.csv \
+            --prior-r3b-verify phase5/reports/CROSSREF_R3B_VERIFY.csv \
+            --map-csv phase5/reports/R3C_CITATION_MAP.csv \
+            --reports-dir phase5/reports \
+            --local-bib phase5/master/references_local.bib \
             --sections-dir phase5/master/sections \
             --status-report phase5/reports/R3_STATUS.md
 
@@ -256,6 +282,17 @@ jobs:
               phase5/master/sections/sec09_interfaces.tex \
               phase5/master/sections/sec11_advanced.tex \
               phase5/master/sections/sec13_applications.tex
+          fi
+          if [[ -s phase5/reports/CROSSREF_R3C_VERIFY.csv ]]; then
+            git add -A phase5/reports/crossref_raw_r3c \
+              phase5/reports/CROSSREF_R3C_VERIFY.csv \
+              phase5/reports/CROSSREF_R3C_REQUEST_LOG.csv \
+              phase5/reports/CROSSREF_R3C_METHOD.md \
+              phase5/reports/CROSSREF_R3C_HUMAN_CHECK.md \
+              phase5/reports/R3C_VERIFIED_REFERENCES.bib \
+              phase5/master/references_local.bib \
+              phase5/master/sections/sec04_thermoelastic.tex \
+              phase5/master/sections/sec10_energy.tex
           fi
           if [[ -f phase5/reports/R3_STATUS.md ]]; then
             git add phase5/reports/R3_STATUS.md
