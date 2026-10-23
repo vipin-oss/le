@@ -1,0 +1,70 @@
+n,tier,section,citation,venue,doi_from_supervisor_memory_UNVERIFIED,why_needed
+1,Must,"2, 3","Biot, M. A. (1956). Thermoelasticity and irreversible thermodynamics",J. Appl. Phys. 27:240-253,10.1063/1.1722351,Origin of coupled thermoelasticity
+2,Must,"2, 3","Lord, H. W.; Shulman, Y. (1967). A generalized dynamical theory of thermoelasticity",J. Mech. Phys. Solids 15:299-309,10.1016/0022-5096(67)90024-5,LS primary - needed to quote equations
+3,Must,"2, 3","Green, A. E.; Lindsay, K. A. (1972). Thermoelasticity",J. Elasticity 2:1-7,10.1007/BF00045689,GL primary (already audited from a copy? re-confirm)
+4,Must,3,"Green, A. E.; Naghdi, P. M. (1991). A re-examination of the basic postulates of thermomechanics",Proc. R. Soc. Lond. A 432:171-194,10.1098/rspa.1991.0012,GN 1991 (scanned copy unread) - source of all three GN types
+5,Must,3,"Green, A. E.; Naghdi, P. M. (1992). On undamped heat waves in an elastic solid",J. Thermal Stresses 15:253-264,10.1080/01495739208946136,GN type III (already read; keep copy)
+6,Must,3,"Green, A. E.; Naghdi, P. M. (1993). Thermoelasticity without energy dissipation",J. Elasticity 31:189-208,10.1007/BF00044969,GN type II (already read; keep copy)
+7,Must,"1, 12","Chandrasekharaiah, D. S. (1986). Thermoelasticity with second sound: a review",Appl. Mech. Rev. 39(3):355-376,10.1115/1.3143705,AMR benchmark review
+8,Must,"1, 12","Chandrasekharaiah, D. S. (1998). Hyperbolic thermoelasticity: a review of recent literature",Appl. Mech. Rev. 51(12):705-729,10.1115/1.3098984,"AMR benchmark review (25 pp, 338 refs)"
+9,Must,"1, 12","Hetnarski, R. B.; Ignaczak, J. (2000). Nonclassical dynamical thermoelasticity",Int. J. Solids Struct. 37:215-224,10.1016/S0020-7683(99)00089-X,Companion review
+10,Must,"3, 4","Gurtin, M. E.; Pipkin, A. C. (1968). A general theory of heat conduction with finite wave speeds",Arch. Rational Mech. Anal. 31:113-126,10.1007/BF00281373,Memory-type origin of finite-speed heat conduction
+11,Must,"3, 4","Quintanilla, R.; Racke, R. (2006). A note on stability in dual-phase-lag heat conduction",Int. J. Heat Mass Transfer 49:1209-1213,10.1016/j.ijheatmasstransfer.2005.10.016,DPL stability; supports tau_T > tau_q/2
+12,Must,"3, 4","Quintanilla, R.; Racke, R. (2008). A note on stability in three-phase-lag heat conduction",Int. J. Heat Mass Transfer 51:24-29,10.1016/j.ijheatmasstransfer.2007.05.009,TPL stability
+13,Must,"3, 4","Quintanilla, R. (2002/2003). A condition on the delay parameters in the one-dimensional dual-phase-lag thermoelastic theory",J. Thermal Stresses 26(7):713-721,10.1080/01495730306338,Year/DOI uncertain; Brave to resolve
+14,Good,"3, 4","Fabrizio, M.; Lazzari, B. (2014). Stability and second law of thermodynamics in dual-phase-lag heat conduction",Int. J. Heat Mass Transfer 74:484-489,10.1016/j.ijheatmasstransfer.2014.02.060,Thermodynamic consistency of DPL
+15,Good,"3, 4","Kovacs, R.; Van, P. (2015). Generalized heat conduction in heat pulse experiments",Int. J. Heat Mass Transfer 83:613-620,10.1016/j.ijheatmasstransfer.2014.12.045,Experiment vs Cattaneo/GK/DPL
+16,Must,"3, 4","Tzou, D. Y. (1995). Experimental support for the lagging behavior in heat propagation",J. Thermophys. Heat Transfer 9(4):686-693,10.2514/3.725,Experimental basis for lags
+17,Must,"3, 12","Chester, M. (1963). Second sound in solids",Phys. Rev. 131:2013-2015,10.1103/PhysRev.131.2013,Section 13 second-sound primary (still open)
+18,Must,"3, 12","Guyer, R. A.; Krumhansl, J. A. (1966). Solution of the linearized phonon Boltzmann equation",Phys. Rev. 148:766-778,10.1103/PhysRev.148.766,Paper I (II was read)
+19,Good,12,"Ackerman, C. C.; Bertman, B.; Fairbank, H. A.; Guyer, R. A. (1966). Second sound in solid helium",Phys. Rev. Lett. 16:789-791,10.1103/PhysRevLett.16.789,First experiment
+20,Good,12,"Jackson, H. E.; Walker, C. T.; McNelly, T. F. (1970). Second sound in NaF",Phys. Rev. Lett. 25:26-28,10.1103/PhysRevLett.25.26,Experiment
+21,Good,12,"Huberman, S.; Duncan, R. A.; Chen, K.; et al. (2019). Observation of second sound in graphite at temperatures above 100 K",Science 364:375-379,10.1126/science.aav3548,Modern experiment
+22,Good,12,"Chen, G. (2021). Non-Fourier phonon heat conduction at the microscale and nanoscale",Nat. Rev. Phys. 3:555-569,10.1038/s42254-021-00334-1,Modern perspective
+23,Good,12,"Mitra, K.; Kumar, S.; Vedavarz, A.; Moallemi, M. K. (1995). Experimental evidence of hyperbolic heat conduction in processed meat",J. Heat Transfer 117:568-573,10.1115/1.2822615,Counter-evidence/context
+24,Good,3,"Maxwell, J. C. (1867). On the dynamical theory of gases",Phil. Trans. R. Soc. 157:49-88,10.1098/rstl.1867.0004,Relaxation-time origin of Cattaneo
+25,Must,7,"Eringen, A. C. (1972). Nonlocal polar elastic continua",Int. J. Eng. Sci. 10:1-16,10.1016/0020-7225(72)90070-5,Nonlocal elasticity origin
+26,Must,7,"Eringen, A. C.; Edelen, D. G. B. (1972). On nonlocal elasticity",Int. J. Eng. Sci. 10:233-248,10.1016/0020-7225(72)90039-0,Nonlocal elasticity origin
+27,Must,7,"Eringen, A. C. (1983). On differential equations of nonlocal elasticity and solutions of screw dislocation and surface waves",J. Appl. Phys. 54:4703-4710,10.1063/1.332803,Differential nonlocal model (supervisor reading still open)
+28,Good,7,"Eringen, A. C. (2002). Nonlocal Continuum Field Theories (book)","Springer, New York",10.1007/b97697,Book-level reference
+29,Must,7,"Mindlin, R. D. (1964). Micro-structure in linear elasticity",Arch. Rational Mech. Anal. 16:51-78,10.1007/BF00248490,Gradient elasticity origin
+30,Good,7,"Mindlin, R. D. (1965). Second gradient of strain and surface-tension in linear elasticity",Int. J. Solids Struct. 1:417-438,10.1016/0020-7683(65)90006-5,Gradient elasticity
+31,Good,7,"Mindlin, R. D.; Eshel, N. N. (1968). On first strain-gradient theories in linear elasticity",Int. J. Solids Struct. 4:109-124,10.1016/0020-7683(68)90036-X,Gradient elasticity
+32,Must,7,"Aifantis, E. C. (1992). On the role of gradients in the localization of deformation and fracture",Int. J. Eng. Sci. 30:1279-1299,10.1016/0020-7225(92)90141-3,Gradient (Aifantis) theory
+33,Good,7,"Aifantis, E. C. (2003). Update on a class of gradient theories",Mech. Mater. 35:259-280,10.1016/S0167-6636(02)00278-8,Gradient theories survey
+34,Good,7,"Lim, C. W.; Zhang, G.; Reddy, J. N. (2015). A higher-order nonlocal elasticity and strain gradient theory and its applications in wave propagation",J. Mech. Phys. Solids 78:298-313,10.1016/j.jmps.2015.02.001,Nonlocal + gradient waves
+35,Good,7,"Romano, G.; Barretta, R.; Diaco, M.; de Sciarra, F. M. (2017). Constitutive boundary conditions and paradoxes in nonlocal elastic nanobeams",Int. J. Mech. Sci. 121:151-156,10.1016/j.ijmecsci.2016.12.014,Nonlocal operator placement / paradoxes (DOI to verify)
+36,Must,11,"Youssef, H. M. (2010). Theory of fractional order generalized thermoelasticity",J. Heat Transfer 132(6):061301,10.1115/1.4000705,Fractional thermoelasticity (very widely cited)
+37,Must,11,"Compte, A.; Metzler, R. (1997). The generalized Cattaneo equation for the description of anomalous transport processes",J. Phys. A 30:7277-7289,10.1088/0305-4470/30/21/006,Fractional Cattaneo origin
+38,Good,11,"Ezzat, M. A. (2011). Theory of fractional order in generalized thermoelectric MHD",Appl. Math. Model. 35:4965-4978,10.1016/j.apm.2011.04.004,Fractional thermoelasticity
+39,Must,11,"Wang, J. L.; Li, H. F. (2011). Surpassing the fractional derivative: concept of the memory-dependent derivative",Comput. Math. Appl. 62:1562-1567,10.1016/j.camwa.2011.04.028,MDD origin
+40,Must,11,"Yu, Y. J.; Hu, W.; Tian, X. G. (2014). A novel generalized thermoelasticity model based on memory-dependent derivative",Int. J. Eng. Sci. 81:123-134,10.1016/j.ijengsci.2014.04.014,MDD thermoelasticity
+41,Good,11,"Atangana, A.; Baleanu, D. (2016). New fractional derivatives with nonlocal and non-singular kernel",Thermal Sci. 20:763-769,10.2298/TSCI160111018A,Non-singular kernel operator
+42,Good,11,"Podlubny, I. (1999). Fractional Differential Equations (book)",Academic Press,(book; library),Standard reference
+43,Good,11,"Kilbas, A. A.; Srivastava, H. M.; Trujillo, J. J. (2006). Theory and Applications of Fractional Differential Equations (book)",Elsevier,(book; library),Standard reference
+44,Must,5,"Chandrasekharaiah, D. S. (1988). A generalized linear thermoelasticity theory for piezoelectric media",Acta Mech. 71:39-49,10.1007/BF01173936,"Section 5 core; Brave could not resolve DOI, verify"
+45,Good,5,"Yang, J. (2018). An Introduction to the Theory of Piezoelectricity (book, 2nd ed.)",Springer,10.1007/978-3-030-03137-4,Book-level piezoelectric reference
+46,Must,"9, 10","Deresiewicz, H. (1957). Plane waves in a thermoelastic solid",J. Acoust. Soc. Am. 29:204-209,10.1121/1.1908832,Classical thermoelastic waves
+47,Must,"9, 10","Achenbach, J. D. (1968). The influence of heat conduction on propagation of stress jumps",J. Mech. Phys. Solids 16:273-282,10.1016/0022-5096(68)90036-3,Wave-front/stress-jump analysis
+48,Good,"9, 10","Nayfeh, A.; Nemat-Nasser, S. (1971). Thermoelastic waves in solids with thermal relaxation",Acta Mech. 12:53-69,10.1007/BF01178389,LS-type waves
+49,Good,"9, 10","Puri, P. (1972). Plane waves in thermoelasticity and magnetothermoelasticity",Int. J. Eng. Sci. 10:467-477,10.1016/0020-7225(72)90052-3,Plane waves
+50,Must,"9, 10","Sinha, S. B.; Elsibai, K. A. (1996). Reflection of thermoelastic waves at a solid half-space with two relaxation times",J. Thermal Stresses 19:749-762,10.1080/01495739608946205,Reflection (GL)
+51,Must,"9, 10","Sinha, S. B.; Elsibai, K. A. (1997). Reflection and refraction of thermoelastic waves at an interface of two semi-infinite media with two relaxation times",J. Thermal Stresses 20:129-146,10.1080/01495739708956095,Interface partition; core for section 10
+52,Good,"9, 10","Rayleigh, Lord (1885). On waves propagated along the plane surface of an elastic solid",Proc. London Math. Soc. s1-17:4-11,10.1112/plms/s1-17.1.4,Surface waves
+53,Good,"9, 10","Stoneley, R. (1924). Elastic waves at the surface of separation of two solids",Proc. R. Soc. A 106:416-428,10.1098/rspa.1924.0079,Interface waves
+54,Good,"9, 10","Lamb, H. (1917). On waves in an elastic plate",Proc. R. Soc. A 93:114-128,10.1098/rspa.1917.0008,Plate waves
+55,Good,2,"Coleman, B. D.; Noll, W. (1963). The thermodynamics of elastic materials with heat conduction and viscosity",Arch. Rational Mech. Anal. 13:167-178,10.1007/BF01262690,Thermodynamic framework
+56,Good,2,"Coleman, B. D. (1964). Thermodynamics of materials with memory",Arch. Rational Mech. Anal. 17:1-46,10.1007/BF00283864,Memory materials
+57,Good,2,"Liu, I-S. (1972). Method of Lagrange multipliers for exploitation of the entropy principle",Arch. Rational Mech. Anal. 46:131-148,10.1007/BF00250688,Entropy principle
+58,Good,3,"Jou, D.; Casas-Vazquez, J.; Lebon, G. (2010). Extended Irreversible Thermodynamics (book, 4th ed.)",Springer,10.1007/978-90-481-3074-0,Thermodynamic basis of lagging
+59,Good,3,"Mueller, I.; Ruggeri, T. (1998). Rational Extended Thermodynamics (book, 2nd ed.)",Springer,10.1007/978-1-4612-2210-1,Thermodynamic basis
+60,Must,4,"Quintanilla, R.; Racke, R. (2003). Stability in thermoelasticity of type III",Discrete Contin. Dyn. Syst. B 3:383-400,10.3934/dcdsb.2003.3.383,GN-III stability
+61,Good,4,"Zhang, X.; Zuazua, E. (2003). Decay of solutions of the system of thermoelasticity of type III",Commun. Contemp. Math. 5:25-83,10.1142/S0219199703000896,GN-III decay
+62,Good,4,"Racke, R. (2002). Thermoelasticity with second sound - exponential stability in linear and non-linear 1-d",Math. Methods Appl. Sci. 25:409-441,10.1002/mma.298,LS-type well-posedness/stability
+63,Good,4,"Dafermos, C. M. (1968). On the existence and the asymptotic stability of solutions to the equations of linear thermoelasticity",Arch. Rational Mech. Anal. 29:241-271,10.1007/BF00276727,Classical stability baseline
+64,Must,8,"Talbot, A. (1979). The accurate numerical inversion of Laplace transforms",J. Inst. Math. Appl. 23:97-120,10.1093/imamat/23.1.97,Laplace inversion
+65,Good,8,"Abate, J.; Whitt, W. (2006). A unified framework for numerically inverting Laplace transforms",INFORMS J. Comput. 18:408-421,10.1287/ijoc.1050.0137,Laplace inversion comparison
+66,Good,8,"Weideman, J. A. C.; Trefethen, L. N. (2007). Parabolic and hyperbolic contours for computing the Bromwich integral",Math. Comp. 76:1341-1356,10.1090/S0025-5718-07-01945-X,Laplace inversion
+67,Good,8,"Crump, K. S. (1976). Numerical inversion of Laplace transforms using a Fourier series approximation",J. ACM 23:89-96,10.1145/321921.321931,Laplace inversion
+68,Good,12,"Cahill, D. G.; et al. (2003). Nanoscale thermal transport",J. Appl. Phys. 93:793-818,10.1063/1.1524305,Why non-Fourier matters at nanoscale
+69,Good,12,"Majumdar, A. (1993). Microscale heat conduction in dielectric thin films",J. Heat Transfer 115:7-16,10.1115/1.2910673,Ballistic/diffusive transition
