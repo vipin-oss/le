@@ -1,0 +1,90 @@
+{
+  "query_doi": "10.1016/j.camwa.2008.05.042",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.camwa.2008.05.042",
+    "type": "journal-article",
+    "title": [
+      "Reflection of generalized thermoelastic waves from isothermal and insulated boundaries of a half space"
+    ],
+    "author": [
+      {
+        "given": "N.C.",
+        "family": "Das",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "A.",
+        "family": "Lahiri",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "S.",
+        "family": "Sarkar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "S.",
+        "family": "Basu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2008,
+          12
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2008,
+          12
+        ]
+      ]
+    },
+    "container-title": [
+      "Computers &amp; Mathematics with Applications"
+    ],
+    "short-container-title": [
+      "Computers &amp; Mathematics with Applications"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "56",
+    "issue": "11",
+    "page": "2795-2805",
+    "ISSN": [
+      "0898-1221"
+    ]
+  }
+}

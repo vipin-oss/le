@@ -33,16 +33,40 @@ Cattaneo (1948), Vernotte (1958), Achenbach (1973), Nowacki (1975), and Tzou (19
 
 ## R3b verification and evidence
 
-Pending the R3b Crossref Actions run.
+- Scope: 90 REFERENCE_PLAN rows from sections 5–9 and 11–13; 47 technically eligible DOI rows queried; 47 unique Crossref requests.
+- R3b Crossref results: 40 VERIFIED, 5 MISMATCH, 2 NOT-FOUND, 4 NO-DOI; 39 metadata-only rows INELIGIBLE and not queried.
+- Technical-eligible R3b rows: 39 VERIFIED and bibliography-ready; 1 VERIFIED but not bibliography-ready; 4 NO-DOI; 5 MISMATCH; 2 NOT-FOUND.
+- R3b mapped citations inserted: 39 unique verified eligible keys; new BibTeX keys added in this build: 35. No metadata-only or unverified row is inserted as technical evidence.
+- Sections meeting ≥6 evidence-ready sources across R3a/R3b: 4.8 (8), 6 (7), 7 (6), 9 (19).
+- R3b human-check list: `CROSSREF_R3B_HUMAN_CHECK.md`.
+- R3a final counts after cached-response reclassification: 77 VERIFIED / 3 MISMATCH / 1 NOT-FOUND; 19 rows record `reclassified_from=MISMATCH`; 21 technical-eligible bibliography-ready keys; 1 background-only review key.
+- R3a title human-check list: `CROSSREF_HUMAN_CHECK.md`.
+- Frozen `CITATION_MAP.csv` exact-key matches in the R3b candidate set: 0. Section-specific additions are mapped in `R3B_CITATION_MAP.csv` from the eligible plan rows and their documented source claims.
+- Remaining gaps: Section 10 is reserved for R3c; Section 11 GAP-09 remains open; R3b MISMATCH, NOT-FOUND, and NO-DOI rows remain uncited. R3b rows with a title overlap below 0.60 are in `CROSSREF_R3B_HUMAN_CHECK.md`.
+
+### R3b unresolved identifiers (not cited)
+
+- LIT-0439 `Guo2019` — MISMATCH: normalized venue does not match Crossref container-title/short-container-title
+- LIT-0442 `Deswal2015` — MISMATCH: normalized venue does not match Crossref container-title/short-container-title
+- LIT-0443 `Ezzat2012` — MISMATCH: normalized venue does not match Crossref container-title/short-container-title
+- LIT-0029 `Wang2011` — MISMATCH: normalized venue does not match Crossref container-title/short-container-title
+- LIT-0438 `Quintanilla2009` — MISMATCH: normalized venue does not match Crossref container-title/short-container-title
+- LIT-0457 `Faleh2020` — NOT-FOUND: Crossref returned HTTP 404
+- LIT-0440 `Kumar2017a` — NOT-FOUND: Crossref returned HTTP 404
+- LIT-0499 `Hu2000` — NO-DOI: no DOI recorded; not Crossref-verifiable; keep uncited under this phase
+- LIT-0437 `Eringen1978` — NO-DOI: no DOI recorded; not Crossref-verifiable; keep uncited under this phase
+- LIT-0484 `Singh2021` — NO-DOI: no DOI recorded; not Crossref-verifiable; keep uncited under this phase
+- LIT-0485 `Kumar2020` — NO-DOI: no DOI recorded; not Crossref-verifiable; keep uncited under this phase
+- LIT-0471 `Bassiouny2021` — VERIFIED: Crossref author metadata is empty; do not emit BibTeX
 
 ## Final strict build
 
 The strict CI run fills the following markers only after the build and publication gates pass:
 
-- Content/source commit: `__R3_SOURCE_COMMIT__`
-- Strict CI run ID: `__R3_CI_RUN_ID__`
-- Strict build-step time: `__R3_BUILD_SECONDS__` seconds
-- PDF pages: `__R3_PDF_PAGES__`
-- Undefined references/citations: `__R3_UNRESOLVED_REFS__`
+- Content/source commit: `f03dd97517e127bb05e54bce4da63df457459d40`
+- Strict CI run ID: `39875147113`
+- Strict build-step time: `10` seconds
+- PDF pages: `155`
+- Undefined references/citations: `0`
 
 The preserved R1/R2 baseline remains commit `0be9322`, CI run `39781561017`, 149 pages, and zero undefined references. MISMATCH, NOT-FOUND, and out-of-scope literature records are intentionally not promoted to citations; the undefined-reference count is a separate LaTeX build metric.

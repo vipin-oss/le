@@ -16,7 +16,7 @@ Three mathematically distinct ways of making a constitutive law remember have be
 
 \begin{itemize}
 \item \textbf{Differential-rate constitutive laws.} Some models include time derivatives of fluxes, temperatures, or other fields; the order and choice of differentiated variable are model-specific. Whether such a law admits an equivalent finite-dimensional internal-variable representation must be established for the particular formulation.
-\item \textbf{Integral (convolution) memory.} The constitutive relation is written as a convolution of the driving quantity with a memory kernel over a finite or semi-infinite interval. This includes the hereditary-integral formulation of Section~\ref{sec:transport} and the memory-dependent derivative of Wang and Li \cite{Wang2011}. The memory is then encapsulated in an arbitrary function, and the price is that the constitutive relation is no longer local in time, so that the discretisation must carry the history.
+\item \textbf{Integral (convolution) memory.} The constitutive relation is written as a convolution of the driving quantity with a memory kernel over a finite or semi-infinite interval. This includes the hereditary-integral formulation of Section~\ref{sec:transport} and the memory-dependent derivative of Wang and Li . The memory is then encapsulated in an arbitrary function, and the price is that the constitutive relation is no longer local in time, so that the discretisation must carry the history.
 \item \textbf{Spatial nonlocality.} Some constitutive laws average over a material neighbourhood, as in Eringen-type formulations. This is a spatial interaction, not temporal memory, and its operators and boundary conditions require separate treatment in Section~\ref{sec:nonlocal}.
 \end{itemize}
 
@@ -87,7 +87,7 @@ where $K(t-\xi)$ is a kernel in this schematic convolution. Some models impose f
 \subsection{Memory-dependent derivative (MDD): operator and kernel}
 \label{sec:6.4}
 
-An operator attributed to Wang and Li \cite{Wang2011} uses a kernel over a finite interval. The exact definition and its relation to other memory models remain subject to primary-source checking:
+An operator attributed to Wang and Li  uses a kernel over a finite interval. The exact definition and its relation to other memory models remain subject to primary-source checking:
 
 \begin{equation}
 D_\omega f(t) = \frac{1}{\omega}\int_{t-\omega}^{t} \kappa(t-\xi) f'(\xi)\,d\xi,
@@ -190,6 +190,8 @@ $\tilde{q}_i(s)$ & Laplace transform of the heat flux & --- & \eqref{eq:6.2} \\
 \bottomrule
 \end{tabularx}
 \end{table}
+
+\paragraph{R3b source-specific evidence.} A nonlocal Kelvin–Voigt piezo-semiconductor application uses a memory-dependent heat flux; conclusions remain model-specific. (PRIMARY-SOURCE-CHECKED) \cite{Gupta2026HeatMap}. A four-lag Taylor expansion is reported, but its printed gradient-field argument is defective and is not copied here. (CONDITIONAL) \cite{Abouelregal2020a}. A memory-dependent TPL formulation compares candidate kernels and states a model-specific positive-semidefiniteness condition. (CONDITIONAL) \cite{Sur2019}. A revised MDD definition normalizes by the kernel integral over the horizon rather than by the horizon alone. (PRIMARY-SOURCE-CHECKED) \cite{Wang2021}. A model-specific MGT-type flux law is paired with an Nth-order memory expansion using factorial coefficients. (CONDITIONAL) \cite{Sur2025}. A nonlocal operator is applied to a fractional Cattaneo law; its printed zero-order branch is not used as a general limiting identity. (CONDITIONAL) \cite{Bachher2019}. A tensor positive-semidefiniteness compatibility condition is printed for a particular second-order TPL truncation. (CONDITIONAL) \cite{Tiwari2021}.
 
 \subsection{Open questions for Section 6}
 

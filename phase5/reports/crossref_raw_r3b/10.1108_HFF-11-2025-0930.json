@@ -1,0 +1,147 @@
+{
+  "query_doi": "10.1108/HFF-11-2025-0930",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1108/hff-11-2025-0930",
+    "type": "journal-article",
+    "title": [
+      "Dispersion and damping characteristics of Rayleigh-type waves in KG nonlocal fractional piezo-thermo-electric semiconductor medium"
+    ],
+    "author": [
+      {
+        "given": "Mohammed",
+        "family": "Aldandani",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Jouf University Mathematics Department, College of Science, , Sakaka,",
+            "place": [
+              "Saudi Arabia"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Soumik",
+        "family": "Das",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Amrita Vishwa Vidyapeetham School of Physical Sciences, , Mysuru,",
+            "place": [
+              "India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Arun Kumar",
+        "family": "Yadav",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "K. R. Mangalam University School of Basic and Applied Sciences, , Gurugram,",
+            "place": [
+              "India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Murat",
+        "family": "Yaylacı",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Recep Tayyip Erdogan University Department of Civil Engineering, , Rize,",
+            "place": [
+              "Türkiye"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Gurugram University Department of Mathematics, , Gurugram,",
+            "place": [
+              "India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          23
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          15
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          15
+        ]
+      ]
+    },
+    "container-title": [
+      "International Journal of Numerical Methods for Heat &amp; Fluid Flow"
+    ],
+    "short-container-title": [],
+    "publisher": "Emerald",
+    "volume": "36",
+    "issue": "8",
+    "page": "3021-3047",
+    "ISSN": [
+      "0961-5539",
+      "1758-6585"
+    ]
+  }
+}

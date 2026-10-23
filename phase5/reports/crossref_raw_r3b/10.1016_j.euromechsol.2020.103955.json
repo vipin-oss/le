@@ -1,0 +1,102 @@
+{
+  "query_doi": "10.1016/j.euromechsol.2020.103955",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.euromechsol.2020.103955",
+    "type": "journal-article",
+    "title": [
+      "Reflection behavior of elastic waves in the functionally graded piezoelectric microstructures"
+    ],
+    "author": [
+      {
+        "given": "Cancan",
+        "family": "Liu",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Jiangong",
+        "family": "Yu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Xiaoming",
+        "family": "Zhang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Bo",
+        "family": "Zhang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "L.",
+        "family": "Elmaimouni",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2020,
+          5
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          5
+        ]
+      ]
+    },
+    "container-title": [
+      "European Journal of Mechanics - A/Solids"
+    ],
+    "short-container-title": [
+      "European Journal of Mechanics - A/Solids"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "81",
+    "page": "103955",
+    "article-number": "103955",
+    "ISSN": [
+      "0997-7538"
+    ]
+  }
+}

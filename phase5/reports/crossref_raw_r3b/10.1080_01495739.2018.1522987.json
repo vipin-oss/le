@@ -1,0 +1,102 @@
+{
+  "query_doi": "10.1080/01495739.2018.1522987",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/01495739.2018.1522987",
+    "type": "journal-article",
+    "title": [
+      "A modified fractional-order generalized piezoelectric thermoelasticity model with variable thermal conductivity"
+    ],
+    "author": [
+      {
+        "given": "Huili",
+        "family": "Guo",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "State Key Laboratory for Strength and Vibration of Mechanical Structures, Shaanxi Engineering Research Center of Nondestructive Testing and Structural Integrity Evaluation, Xi’an Jiaotong University, Xi’an, PR China"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Chenlin",
+        "family": "Li",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "State Key Laboratory for Strength and Vibration of Mechanical Structures, Shaanxi Engineering Research Center of Nondestructive Testing and Structural Integrity Evaluation, Xi’an Jiaotong University, Xi’an, PR China"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Xiaogeng",
+        "family": "Tian",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "State Key Laboratory for Strength and Vibration of Mechanical Structures, Shaanxi Engineering Research Center of Nondestructive Testing and Structural Integrity Evaluation, Xi’an Jiaotong University, Xi’an, PR China"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2018,
+          12,
+          2
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2019,
+          2,
+          12
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          12,
+          2
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "41",
+    "issue": "10-12",
+    "page": "1538-1557",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}
