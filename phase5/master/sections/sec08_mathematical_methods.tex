@@ -97,6 +97,36 @@ The Laplace transform in particular is what makes the classical thermoelastic tr
 
 The fractional operators of Section~\ref{sec:11.1} require a different transform calculus. The Caputo derivative of order $\alpha$ has a simple Laplace-domain representation, $\mathcal{L}\{{}^C D_t^\alpha f\}(s) = s^\alpha \tilde{f}(s) - s^{\alpha-1} f(0)$, and the resulting algebraic equation in $s$ is inverted using the Mittag--Leffler function, which plays the role that the exponential plays in the classical theory \cite{Gorenflo1997,Luchko2010}. It is worth being explicit about the methodological consequence: in the fractional families the analytical route is available only for special geometries, for radially symmetric or half-space problems, because the inversion step requires the eigenfunction expansion of the corresponding spatial operator. Everywhere else, the burden of verification falls on numerical inversion, and the reference solutions of the kind derived in closed form by Povstenko \cite{Povstenko2007} become the only available check on a numerical scheme.
 
+% R3E-BEGIN:LAPLACE-INVERSION
+\paragraph{Dubner--Abate cosine-series inversion.} For real causal $f$ with $f(t)=0$ for $t<0$, write $F(s)=\mathcal{L}\{f\}(s)$. Their Eq.~(15) obtains the following cosine series by applying the trapezoidal rule to the cosine inversion integral:
+
+\begin{equation}
+\begin{aligned}
+f(t)&\simeq\frac{e^{at}}{T}\left[\frac{\operatorname{Re}F(a)}{2}+\right.\\&\qquad\left.\sum_{k=1}^{\infty}\operatorname{Re}F\!\left(a+\frac{ik\pi}{T}\right)\cos\!\left(\frac{k\pi t}{T}\right)\right].
+\end{aligned}
+\end{equation}
+
+The formula is valid for $0<t<T/2$; choosing $T=2t_{\max}$ gives the source's stated window. Under its bounded-function assumption $|f|\leq C$, the periodization error is of order $C e^{-aT}$; finite-series truncation error is controlled separately by the last retained term (PRIMARY-SOURCE-CHECKED) \cite{DubnerAbate1968}.
+
+\paragraph{Stehfest real-axis inversion.} For even $N$, Stehfest's algorithm writes the inversion as
+
+\begin{equation}
+F_a=\frac{\ln 2}{T}\sum_{i=1}^{N}V_i\,P\!\left(\frac{i\ln 2}{T}\right),\qquad N\ \text{even},
+\end{equation}
+
+where $P(s)=\mathcal{L}\{f\}(s)$ and
+
+\begin{equation}
+\begin{aligned}
+V_i&=(-1)^{N/2+i}\sum_{k=\lfloor(i+1)/2\rfloor}^{\min(i,N/2)}\\&\quad\left[\begin{gathered}\frac{k^{N/2}(2k)!}{(N/2-k)!\,k!\,(k-1)!}\\{}\times\frac{1}{(i-k)!(2k-i)!}\end{gathered}\right].
+\end{aligned}
+\end{equation}
+
+The weights depend only on $N$ and grow as $N$ increases: accuracy can improve until rounding error dominates, so the choice of even $N$ trades approximation error against available precision (PRIMARY-SOURCE-CHECKED) \cite{Stehfest1970}.
+
+\paragraph{Evidence scope.} These source-specific procedures do not establish a general method ranking. Limited primary sources are available for numerical Laplace inversion in this section.
+% R3E-END:LAPLACE-INVERSION
+
 \subsection{Green's functions and fundamental solutions}
 \label{sec:8.7}
 

@@ -91,14 +91,23 @@ Cattaneo (1948), Vernotte (1958), Achenbach (1973), Nowacki (1975), and Tzou (19
 - R3d unresolved identifiers (not cited):
   - None.
 
+## R3e verification and Section 8 update
+
+- Scope: only the two requested DOIs were queried; no other Crossref records were requested.
+- R3e Crossref: 2 requested DOI rows; 2 VERIFIED, 0 MISMATCH, 0 NOT-FOUND, 0 NO-DOI; bibliography-ready: 2; mapped citations used: 2; new BibTeX keys: 2.
+- Section 8 uses the checked Dubner--Abate Eq. (15) cosine/trapezoidal formula and/or Stehfest's even-N weights only when that row is Crossref-VERIFIED and bibliography-ready. Stehfest is restricted to the paper's stated rounding-error/N trade-off; no behavior inference is attributed to him.
+- These two source-specific methods do not establish a broader comparison or ranking. Limited primary sources remain the stated scope for numerical Laplace inversion in Section 8.
+- R3e unresolved rows (not cited):
+  - None.
+
 ## Final strict build
 
 The strict CI run fills the following markers only after the build and publication gates pass:
 
-- Content/source commit: `7d787bbf4d0c2c505e422c6ad566f5b2b0da5c0d`
-- Strict CI run ID: `39947603604`
-- Strict build-step time: `15`
-- PDF pages: `157`
+- Content/source commit: `a630efc4fa6b43a64dd885927890f37aa8fa8add`
+- Strict CI run ID: `39952152334`
+- Strict build-step time: `11`
+- PDF pages: `158`
 - Undefined references/citations: `0`
 
 The preserved R1/R2 baseline remains commit `0be9322`, CI run `39781561017`, 149 pages, and zero undefined references. MISMATCH, NOT-FOUND, and out-of-scope literature records are intentionally not promoted to citations; the undefined-reference count is a separate LaTeX build metric.
