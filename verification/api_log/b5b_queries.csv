@@ -1,0 +1,15 @@
+id,route,endpoint,date,http,rows_req,rows_ret,round
+Q1,Crossref,https://api.crossref.org/works?query.bibliographic=reflection+transmission+plane+waves+interface+generalized+thermoelastic+half-space&rows=25&filter=type:journal-article,2026-10-22,200,25,25,B5b (2026-10-21/22)
+Q2,Crossref,https://api.crossref.org/works?query.bibliographic=energy+ratio+reflection+transmission+thermoelastic+interface+waves&rows=25&filter=type:journal-article,2026-10-22,200,25,25,B5b
+Q3,Crossref,https://api.crossref.org/works?query.bibliographic=well-posedness+stability+thermoelasticity+dual-phase-lag+exponential+decay&rows=25&filter=type:journal-article,2026-10-22,200,25,25,B5b
+Q4,Crossref,https://api.crossref.org/works?query.bibliographic=Moore+Gibson+Thompson+equation+relaxation+fluid+acoustics&rows=25&filter=type:journal-article,2026-10-22,200,25,25,B5b
+Q5,Crossref,https://api.crossref.org/works?query.bibliographic=second+sound+measurement+experiment+thermal+wave+solid+relaxation+time&rows=25&filter=type:journal-article,2026-10-22,200,25,25,B5b
+Q6,Crossref,https://api.crossref.org/works?query.bibliographic=Green+Lindsay+temperature+rate+dependent+thermoelasticity+theory&rows=25&filter=type:journal-article,2026-10-22,200,25,25,B5b
+Q7,Crossref,https://api.crossref.org/works?query.bibliographic=finite+element+generalized+thermoelasticity+wave+propagation+numerical&rows=25&filter=type:journal-article,2026-10-22,200,25,25,B5b
+Q8,Crossref,https://api.crossref.org/works?query.bibliographic=piezothermoelastic+waves+propagation+analysis&rows=20&filter=type:journal-article,2026-10-22,200,20,20,B5b-2
+Q9,Crossref,https://api.crossref.org/works?query.bibliographic=memory-dependent+derivative+generalized+thermoelasticity+wave&rows=40&filter=type:journal-article,2026-10-22,200,40,40,B5b-2
+Q10,Crossref,https://api.crossref.org/works?query.bibliographic=nonlocal+strain+gradient+thermoelastic+wave+propagation+nanobeam&rows=40&filter=type:journal-article,2026-10-22,200,40,40,B5b-2
+Q11,Crossref,https://api.crossref.org/works?query.bibliographic=micropolar+couple+stress+thermoelastic+waves+propagation+Eringen&rows=40&filter=type:journal-article,2026-10-22,200,40,40,B5b-2
+Q12,Crossref,https://api.crossref.org/works?query.bibliographic=Moore+Gibson+1960+nonlinear+acoustics+relaxation+fluid&rows=20&filter=type:journal-article,2026-10-22,200,20,20,B5b-2
+Q13,Crossref,https://api.crossref.org/works?query.bibliographic=thermoelastic+damping+microresonator+quality+factor+MEMS&rows=40&filter=type:journal-article,2026-10-22,200,40,40,B5b-2
+Q14,Crossref,https://api.crossref.org/works?query.bibliographic=fractional+order+Caputo+thermoelasticity+wave+propagation&rows=40&filter=type:journal-article,2026-10-22,200,40,40,B5b-2
