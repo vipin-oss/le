@@ -182,8 +182,13 @@ $$\tau\theta_{,ttt}+\theta_{,tt}=b\nabla^2\theta_{,t}+c^2\nabla^2\theta .$$
 - For a **third-order-in-time** equation the energy functional is **not unique**: multiplying the
   equation by $\theta_{,t}$ gives one candidate density, by $\theta$ another, and by
   $\theta_{,tt}$ a third, and they differ by total derivatives whose interpretation as "energy" is
-  a choice, not a consequence. Quintanilla's analysis provides a **decay functional** for
-  $\gamma=b-\tau c^2>0$, which is what makes MGT well-posed, but a decay functional is not a
+  a choice, not a consequence. Quintanilla's analysis provides a **decay functional**
+  **[CORRECTED 2026-10-23, B17/F19: the condition quoted here as $\gamma=b-\tau c^2>0$ is the**
+  **ACOUSTIC (gas-dynamics Moore-Gibson) form and does NOT apply to thermoelastic MGT. The printed**
+  **thermoelastic admissibility is $K_{ij}=k_{ij}-\tau k^*_{ij}$ positive definite, i.e. $k>\tau k^*$**
+  **in 1-D, with exponential stability above and instability below (Quintanilla 2019, Thm 4.7 and Sec 5).**
+  **The structural conclusion below - that a decay functional is not a stress-energy tensor - is unaffected.]**,
+  which is what makes MGT well-posed, but a decay functional is not a
   stress-energy tensor: it does not supply a flux $S$ that can be balanced across an interface.
 - **Consequence: MGT has no model-independent interface flux, hence no model-independent
   $R,T,A$.** Any MGT reflection/transmission paper must state which energy functional it uses, and
@@ -218,9 +223,9 @@ except where noted. Specifically:
   `10.1016/j.ijheatmasstransfer.2005.10.016` — preview read; used for the DPL truncation
   discussion, not for energies.
 - **Quintanilla (2019)**, *Math. Mech. Solids* **24**(12):4020–4031, DOI
-  `10.1177/1081286519862007` — **record only**; the $\gamma=b-\tau c^2>0$ condition and the
-  decay-functional statement are taken from `V-B2i`, which re-derived $\gamma>0$ independently and
-  verified it numerically. **The claim that MGT's decay functional is not a stress-energy tensor is
+  `10.1177/1081286519862007` — **now read by the supervisor (F19)**, see `V-B17`; the $\gamma=b-\tau c^2>0$
+  condition quoted in the earlier version of this file is **ACOUSTIC-FORM-ONLY** and is withdrawn for
+  the thermoelastic model (B17 correction); the admissible condition is $k-\tau k^*>0$. **The claim that MGT's decay functional is not a stress-energy tensor is
   my own structural argument, not a quotation.**
 
 **No source opened in this session gives the energy identity for any of these models.** Every

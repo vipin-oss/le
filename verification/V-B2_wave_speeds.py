@@ -167,7 +167,10 @@ for name, (row, prm) in rows.items():
         print(f"   f={f0:.0e} Hz : " + " ; ".join(desc))
 
 # ---------------------------------------------------------------- MGT stability
-print("\n" + "="*78); print("MGT STABILITY CHECK  (Routh-Hurwitz: gamma = b - tau*c2 > 0 ?)"); print("="*78)
+print("\n" + "="*78); print("MGT STABILITY CHECK  (ACOUSTIC FORM ONLY - gamma = b - tau*c2 > 0)")
+# B17 CORRECTION (2026-10-23): gamma = b - tau*c2 is the GAS-DYNAMICS (Moore-Gibson) acoustic form.
+# The THERMOELASTIC MGT admissibility is k - tau*k* > 0 (Quintanilla 2019, Thm 4.7 / Sec 5).
+# This script block tests the acoustic form only; do not quote its output for the thermoelastic law.; print("="*78)
 def mgt_roots(tau_v, b_v, c2_v, kap):
     # tau s^3 + s^2 + b kap^2 s + c2 kap^2 = 0
     return np.roots([tau_v, 1.0, b_v*kap**2, c2_v*kap**2])

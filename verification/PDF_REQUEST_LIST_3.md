@@ -1,29 +1,37 @@
 # PDF request list 3 — the missing theory sources (s.5, s.8, s.10, s.11, s.12, s.4.9)
 
-**Prepared:** 2026-10-23, independent verifier. **Batch:** B16b.
+**Prepared:** 2026-10-23, independent verifier. **Batches:** B16b (list), B17 (supplied items removed after F23–F27).
 **Why this list exists:** the B16 batch-1 audit showed that none of the must-read rows for sections 5, 8, 10, 12 and 4.9 / 4.11 is in the Drive library, and that the library holds ~300 applied papers rather than theory primaries (`V-B16_batch1_applications.md`, gaps `GAP-17`…`GAP-25`). No amount of further reading in that library will close those sections. This is the shopping list.
 
 **How every entry was checked.** Identifiers were resolved against the **OpenAlex API on 2026-10-23** (`api.openalex.org/works?filter=doi:…`), one query per batch of DOIs; the returned record supplied title, year, volume/first–last page and the OA verdict (`open_access.is_oa`, `oa_status`, `oa_url`). Where OpenAlex returned nothing for a DOI I had guessed, the item is **not** in the list on the strength of that guess — it is either resolved by a title search or left out. **No DOI below is from memory.** Bibliographic details for the five print-era items in Part C could not be machine-verified and say so.
 
-**Order.** Part A is everything with an open-access copy — the handler can download those directly. Part B is paywalled but DOI-verified. Part C is print-era material with no usable DOI.
+**Order.** Part A0 is what has already arrived. Part A is the remainder with an open-access copy — the handler can download those directly. Part B is paywalled but DOI-verified. Part C is print-era material with no usable DOI. **29 items are still outstanding: 4 open access, 20 paywalled, 5 print.**
 
 ---
 
-## Part A — open access, download first (11 items)
+## Part A0 — already supplied and read (6 items, no longer requested)
+
+These were on the original list; the handler supplied them and the supervisor read them, so they are recorded in `FULLTEXT_FACTS` and are **no longer requests**.
+
+| was | item | facts key | status |
+|---|---|---|---|
+| A1 | Caputo 1967, *Geophys. J. R. Astron. Soc.* **13**, 529–539, `10.1111/j.1365-246X.1967.tb02303.x` | `Caputo1967` | **SUPPLIED (F23)** — definition (5), purpose; operator came from viscoelasticity, not heat conduction |
+| A2 | Sherief, El-Sayed & Abd El-Latief 2010, *IJSS* **47**, 269–275, `10.1016/j.ijsolstr.2009.09.034` | `Sherief2010Fractional` | **SUPPLIED (F24)** — (2.29) fractional flux, (2.37) energy |
+| A3 | Wang & Li 2021 (I), *JCAM* **384**, 112923, `10.1016/j.cam.2020.112923` | `WangLi2021I` | **SUPPLIED (F25)** — MDD vs FD, conceptual only |
+| A5 | Shakeriaski et al. 2021 review, *JCDE* **8**, 15–35, `10.1093/jcde/qwaa082` | `Shakeriaski2021Survey` | **SUPPLIED (F27)** — secondary survey for s.12 |
+| A8 | Lasiecka & Wang 2015, *JDE* **259**, 7610–7635, `10.1016/j.jde.2015.08.052` | `LasieckaWang2015MGT` | **SUPPLIED (F26)** — abstract MGT with memory, decay |
+| A9 | Dell'Oro, Lasiecka & Pata 2016, *JDE* **261**, 4188–4222, `10.1016/j.jde.2016.06.025` | `DellOroLasieckaPata2016MGT` | **SUPPLIED (F26)** — critical case αβ = γ |
+
+*(A11, Quintanilla 2019, was listed only so its OA link was on record; it has been read since F19 and is likewise not a request.)*
+
+## Part A — open access, download first (4 items)
 
 | # | citation | journal / volume / pages | DOI | OA | serves |
 |---|---|---|---|---|---|
-| A1 | **Caputo, M. (1967).** Linear models of dissipation whose Q is almost frequency independent — II | Geophys. J. R. Astron. Soc. **13**(5), 529–539 | `10.1111/j.1365-246X.1967.tb02303.x` | **bronze**, PDF at OUP | s.11 + s.4.11 — **GAP-21 / GAP-25** (the fractional operator every section-11 paper uses) |
-| A2 | **Sherief, H. H.; El-Sayed, A. M. A.; Abd El-Latief, A. M. (2010).** Fractional order theory of thermoelasticity | Int. J. Solids Struct. **47**(2), 269–275 | `10.1016/j.ijsolstr.2009.09.034` | **bronze**, PDF at Elsevier | s.11 — the first full fractional *thermoelastic* theory, not just a fractional heat law |
-| A3 | **Wang, J.-L.; Li, H.-F. (2021).** Memory-dependent derivative versus fractional derivative (I): Difference in temporal modeling | J. Comput. Appl. Math. **384**, 112923 | `10.1016/j.cam.2020.112923` | **bronze** | s.12 + s.11 — the comparative half of the MDD/FD argument; pair of A4 |
 | A4 | **Wang, J.-L.; Li, H.-F. (2025).** Memory-dependent derivative versus fractional derivative (IV): Space-dependent derivative for unsteady heat diffusion | Fractal Fract. **9**(12), 794 | `10.3390/fractalfract9120794` | **gold** (MDPI) | s.12 — the newest side-by-side comparison in the series |
-| A5 | **Shakeriaski, F.; Ghodrat, M.; Escobedo-Diaz, J. P. (2021).** Recent advances in generalized thermoelasticity theory and the modified models: a review | J. Comput. Design Eng. **8**(1), 15–35 | `10.1093/jcde/qwaa082` | **gold** | s.12 (+ s.4.1 secondary) — **this is `LIT-0040`, already in the plan and never read**: the file in the library under a similar name is a *different* Shakeriaski paper. Download this one directly. |
 | A6 | **Dubner, H.; Abate, J. (1968).** Numerical inversion of Laplace transforms by relating them to the finite Fourier cosine transform | J. ACM **15**(1), 115–123 | `10.1145/321439.321446` | **bronze**, ACM PDF | s.8 — the Laplace-inversion method actually used by the state-space papers the review cites |
 | A7 | **Stehfest, H. (1970).** Algorithm 368: Numerical inversion of Laplace transforms | Comm. ACM **13**(1), 47–49 | `10.1145/361953.361969` | **bronze**, ACM PDF | s.8 — the other inversion algorithm in that literature |
-| A8 | **Lasiecka, I.; Wang, X. (2015).** Moore–Gibson–Thompson equation with memory, part II: General decay of energy | J. Differential Equations **259**(12), 7610–7635 | `10.1016/j.jde.2015.08.052` | **bronze** | s.4.9 + s.8 — decay rate for MGT with memory |
-| A9 | **Lasiecka, I.; Wang, X. (2016).** The Moore–Gibson–Thompson equation with memory in the critical case | J. Differential Equations **261**(7), 4188–4222 | `10.1016/j.jde.2016.06.025` | **bronze** (accepted MS) | s.4.9 — the critical-case complement of A8 |
-| A10 | **Dell'Oro, F.; Lasiecka, I. (2016).** On the Moore–Gibson–Thompson equation and its relation to linear viscoelasticity | Appl. Math. Optim. **76**(3), 641–655 | `10.1007/s00245-016-9365-1` | **green** (PoliMi repository) | s.4.9 + s.10 — the MGT ↔ viscoelasticity correspondence, i.e. the honest statement of what MGT "is" |
-| A11 | **Quintanilla, R. (2019).** Moore–Gibson–Thompson thermoelasticity | Math. Mech. Solids **24**(12), 4020–4031 | `10.1177/1081286519862007` | **green** (UPC `hdl.handle.net/2117/169798`) | s.4.9 — **already in the base as `LIT-0041` and already read**; listed only so the OA link is on record |
+| A10 | **Dell'Oro, F.; Lasiecka, I. (2016).** On the Moore–Gibson–Thompson equation and its relation to linear viscoelasticity | Appl. Math. Optim. **76**(3), 641–655 | `10.1007/s00245-016-9365-1` | **green** (PoliMi repository) | s.4.9 + s.10 — the MGT ↔ viscoelasticity correspondence. **Note: this is NOT the F26 paper.** F26 supplied Dell'Oro, Lasiecka & Pata 2016 (*JDE* **261**, 4188) — a different article. This one (Dell'Oro & Lasiecka, *Appl. Math. Optim.* **76**, 641) is still outstanding and is worth having for the viscoelasticity equivalence. |
 
 ## Part B — paywalled, DOI verified (20 items)
 
@@ -66,12 +74,12 @@
 
 | gap | section | items in this list | note |
 |---|---|---|---|
-| GAP-18 | s.5 | A-sec none; **B1–B6**, C1–C2 | the entire micropolar/void/piezothermo elasticity core is paywalled or print. Without B1–B6 section 5 stays at three sources. |
+| GAP-18 | s.5 | **B1–B6**, C1–C2 | **Mindlin 1974 (B1) has since been supplied and read (F21)**; the remaining micropolar/void core is still paywalled or print, so s.5 has one eligible source of the six it needs. |
 | GAP-19 | s.8 | **A6, A7, B7–B12** | the two inversion algorithms are free; the Stroh and Chadwick classics are not |
 | GAP-20 | s.10 | **B9, B10, B12, B13, C3–C5** | mostly print-era; this is the section that will cost the most effort |
-| GAP-21 / GAP-25 | s.11 | **A1–A3, B14–B17** | A1 alone unblocks the Caputo operator; B14 unblocks Povstenko |
-| GAP-22 | s.12 | **A3–A5, B12, B19** | plus the four rows now labelled s.12 in `REFERENCE_PLAN.csv` |
-| GAP-08 / s.4.9 | s.4.9 | **A8–A11, B18, B20** | MGT moves from one paper to a defensible set |
+| GAP-21 / GAP-25 | s.11 | **B14–B17** (A1–A3 now supplied) | **GAP-25 is closed** — Caputo arrived (F23). Still open: Povstenko (B14, B15) and the fractional books (B16, B17) |
+| GAP-22 | s.12 | **B12, B19** (A3–A5 now supplied) | s.12 has **one** eligible source (LIT-0040, secondary survey) and needs five more read comparisons |
+| GAP-08 / s.4.9 | s.4.9 | **B18, B20** (A8–A11 now supplied/read) | **GAP-24 is closed as a labelling defect** — three s.4.9 rows are eligible; the six-source bar is not met |
 | GAP-23 | s.13 | — | nothing here; s.13's second-sound primaries (Chester 1963, Sham 1967) were **not** searched for in this pass and are still open |
 
 ## What I did **not** do, and why

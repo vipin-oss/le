@@ -1,0 +1,22 @@
+section,r3_baseline_eligible,plan_rows_total,eligible_now,eligible_full_or_primary,eligible_partial_abstract,eligible_metadata_only,delta_vs_r3,six_source_bar,blocker_gap,note
+s.10,0,16,4,3,1,0,4,NO,GAP-20,"full/primary: LIT-0432, LIT-0465, LIT-0466 | partial: LIT-0490"
+s.11,2,18,10,9,1,0,8,YES,GAP-21 / GAP-09 partly closed,"full/primary: LIT-0436, LIT-0439, LIT-0442, LIT-0443, LIT-0471, LIT-0497 | partial: LIT-0501"
+s.12,0,4,1,1,0,0,1,NO,GAP-22,full/primary: LIT-0040
+s.13,1,17,11,1,10,0,10,YES,GAP-23,"full/primary: LIT-0499 | partial: LIT-0495, LIT-0502, LIT-0503, LIT-0504, LIT-0505, LIT-0506"
+s.3,n/a,6,0,0,0,0,,NO,,
+s.4.1,0,9,1,0,0,1,1,NO,GAP-17,
+s.4.10,2,8,2,2,0,0,0,NO,GAP-08,"full/primary: LIT-0041, LIT-0449"
+s.4.12,4,9,5,2,3,0,1,NO,,"full/primary: LIT-0131, LIT-0138 | partial: LIT-0467, LIT-0468, LIT-0469"
+s.4.3,2,9,2,2,0,0,0,NO,,"full/primary: LIT-0002, LIT-0451"
+s.4.4,1,9,1,1,0,0,0,NO,,full/primary: LIT-0498
+s.4.5,1,8,1,1,0,0,0,NO,,full/primary: LIT-0496
+s.4.6,1,8,1,1,0,0,0,NO,,full/primary: LIT-0456
+s.4.7,2,9,2,2,0,0,0,NO,,"full/primary: LIT-0433, LIT-0450"
+s.4.8,8,10,8,8,0,0,0,YES,,"full/primary: LIT-0427, LIT-0429, LIT-0431, LIT-0455, LIT-0472, LIT-0474"
+s.4.9,0,3,3,3,0,0,3,NO,GAP-24 (label defect closed; 6-source bar still open),"full/primary: LIT-0513, LIT-0514, LIT-0515"
+s.5,3,11,5,4,1,0,2,NO,GAP-18,"full/primary: LIT-0046, LIT-0047, LIT-0048, LIT-0512 | partial: LIT-0500"
+s.6,7,14,8,8,0,0,1,YES,,"full/primary: LIT-0029, LIT-0050, LIT-0438, LIT-0444, LIT-0447, LIT-0453"
+s.7,6,13,8,8,0,0,2,YES,,"full/primary: LIT-0437, LIT-0445, LIT-0454, LIT-0457, LIT-0458, LIT-0460"
+s.8,1,8,1,1,0,0,0,NO,GAP-19,full/primary: LIT-0268
+s.9,19,22,22,11,11,0,3,YES,,"full/primary: LIT-0189, LIT-0281, LIT-0352, LIT-0435, LIT-0446, LIT-0452 | partial: LIT-0440, LIT-0478, LIT-0479, LIT-0481, LIT-0482, LIT-0484"
+TOTAL,55,211,96,68,27,1,+41,6 of 21 sections,,"The R3 baseline counts rows Crossref-verified AND technically eligible. eligible_now counts plan rows marked technical_claim_eligible=YES whatever the read level, so the columns are different measures: the read-level split (full / partial / metadata-only) is the honest one."
