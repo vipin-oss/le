@@ -129,6 +129,7 @@ Cattaneo (1948), Vernotte (1958), Achenbach (1973), Nowacki (1975), and Tzou (19
 - Per-section verified/read source counts (primary-read count shown separately), combining R3f and R3g: s.2 4/0; s.4 1/0; s.4.9 0/0; s.4.10 0/0; s.5 5/5; s.8 7/6; s.10 3/1; s.11 2/0; s.12 6/5. Updated cumulative eligible-read counts: s.4.9=4, s.4.10=3, s.5=9, s.8=10, s.10=6, s.11=7, s.12=6; previous cumulative totals for s.2 and s.4 were not reported.
 - Process-language inventory: `phase5/reports/PROCESS_LANGUAGE_INVENTORY.csv`, 162 line/phrase rows. Counts by phrase: eligible=5; read sources=4; R3=35; GAP-=11; UNVERIFIED=50; BACKGROUND-ONLY=1; SECONDARY-SOURCE=14; PRIMARY-SOURCE-CHECKED=38; supervisor=0; Brave=0; now has=4. Inventory records source file, line, phrase, and section; it did not drive manuscript edits.
 - Corrective content commit: `__R3_SOURCE_COMMIT__`; strict run: `__R3_CI_RUN_ID__`; build step seconds: `__R3_BUILD_SECONDS__`; pages: `__R3_PDF_PAGES__`; undefined references/citations: `__R3_UNRESOLVED_REFS__`.
+- New near-overfull warnings above 0.5 pt: `__R3_NEAR_OVERFULL__`.
 - Uncommitted local edits at content-commit time: none; all R3g changes and the inventory were included in that commit.
 
 ## Final strict build
@@ -140,6 +141,7 @@ The R3g strict build fills these fields after the build and publication gates pa
 - Strict build-step time: `__R3_BUILD_SECONDS__` seconds
 - PDF pages: `__R3_PDF_PAGES__`
 - Undefined references/citations: `__R3_UNRESOLVED_REFS__`
+- Near-overfull warnings (>0.5 pt): `__R3_NEAR_OVERFULL__`
 - Strict layout gate: pass required; no overfull hbox/vbox greater than 1 pt.
 
 The preserved R1/R2 baseline remains commit `0be9322`, CI run `39781561017`, 149 pages, and zero undefined references. MISMATCH, NOT-FOUND, and out-of-scope literature records are intentionally not promoted to citations; the undefined-reference count is a separate LaTeX build metric.

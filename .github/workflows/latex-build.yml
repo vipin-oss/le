@@ -353,10 +353,12 @@ jobs:
           print(counts[-1])
           PYCOUNT
           )
+          near_overfull=$(python3 phase5/scripts/report_near_overfull.py phase5/master/build/main.log)
           if [[ -f phase5/reports/R3_STATUS.md ]]; then
             BUILD_SECONDS="${{ steps.strict_build.outputs.build_seconds }}" \
             SOURCE_COMMIT="$GITHUB_SHA" CI_RUN_ID="$GITHUB_RUN_ID" \
-            PDF_PAGES="$pages" UNRESOLVED_REFS="$unresolved_refs" python3 - <<'PYR3'
+            PDF_PAGES="$pages" UNRESOLVED_REFS="$unresolved_refs" \
+            NEAR_OVERFULL="$near_overfull" python3 - <<'PYR3'
           import os
           from pathlib import Path
           path = Path("phase5/reports/R3_STATUS.md")
@@ -367,6 +369,7 @@ jobs:
               "__R3_BUILD_SECONDS__": os.environ["BUILD_SECONDS"],
               "__R3_PDF_PAGES__": os.environ["PDF_PAGES"],
               "__R3_UNRESOLVED_REFS__": os.environ["UNRESOLVED_REFS"],
+              "__R3_NEAR_OVERFULL__": os.environ["NEAR_OVERFULL"],
           }
           for marker, value in values.items():
               text = text.replace(marker, value)
