@@ -33,3 +33,8 @@ Brave: B8a ff1c472, B9 af01639, B11 c46312a, B10a a1cafed, B10b b9fcc53, B10c-B0
 Evidence: Arena head 72a0fba (content 3f4dbbc), CI run 39779835094 green, PDF 150 pp, 0 "??". I read the PDF text and rendered p.37: GL (4.9) now original GL 1972 (no tau0 on coupling, tau1>=tau0>0); GN-II is 1993 with corrected eq (44) alpha-form u-dot coupling; GN-III is 1992; TPL = Roy Choudhuri 2007; DPL = Tzou 1995; GK paragraph with lambda^2 and Ziman tau_z (kinetic-derivation framing); MGT = 1960 acoustic origin; title date fixed.
 Follow-ups: (1) phase5/reports/R2_STATUS.md reported "uncommitted" - must be committed so it can be audited; (2) notation nit: eq (44)-(45) use kappa* vs k_ij for the same coefficient; table cell "Tzou, 1995 / 1997" (remove 1997); "Singh (2020) Symmetry 12:488" identifier unresolved - keep as stated.
 R3 (citations) OPEN. Input: verification/REFERENCE_PLAN.csv (193 rows), REFERENCE_GAPS.csv (16) on arena/04fdf32e-le.
+
+## R3d / R3e gate — PASS (supervisor audit 2026-10-23)
+- R3d (7d787bb, c41d249): nine Crossref-VERIFIED rows applied to s.4/5/11/12; MGT thermoelastic vs acoustic separated; fractional convention named; LIT-0040 SECONDARY only. 157 pp, 0 undefined.
+- R3e (a630efc, 877fcb5): Mindlin wording fixed; Dubner-Abate eq (15) and Stehfest V_i formula in s.8 match FINDINGS_09 (re-checked against the printed formulas); both DOIs Crossref-VERIFIED. 158 pp, 0 undefined.
+- Open: GAP-09/12/13; s.5, 8, 10, 12, 4.1, 4.9 still below six primary sources; 35 + 69 papers requested (Papers_to_download.xlsx); R4-R6 not started. Overall ~60%.
