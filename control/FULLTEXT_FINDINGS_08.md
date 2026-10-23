@@ -1,0 +1,28 @@
+# FULLTEXT FINDINGS 08 (supervisor): six papers supplied by handler (Caputo 1967, Sherief 2010, Wang-Li 2021(I), Dell'Oro-Lasiecka-Pata 2016, Lasiecka-Wang 2015, Shakeriaski 2021)
+Read by supervisor from handler-supplied PDFs (text + page renders). Facts only; <15-word quotes; no PDFs in repo.
+
+## F23 Caputo 1967, Geophys. J. R. astr. Soc. 13:529-539 (DOI 10.1111/j.1365-246X.1967.tb02303.x)
+- Purpose: linear dissipation model whose Q is almost frequency independent, by introducing FRACTIONAL derivatives in the stress-strain relation; checked on Earth free modes and an aluminium rod; fitted order ~0.15.
+- Definition (5) (reconstructed from the integrand shown in the proof, eq (7)): d^(m+z) f/dt^(m+z) = [1/Gamma(1-z)] Integral_0^t (t-xi)^(-z) f^(m+1)(xi) d xi, 0<z<1 (derivative INSIDE the integral = the "Caputo derivative"); eq (6) gives its Laplace transform p^z(...) with initial values f^(i)(0). Status PRIMARY-SOURCE-CHECKED for definition and purpose (definition read from the proof page, eq (5) display itself not legible in the render).
+- s.11: the derivative is introduced for viscoelastic stress-strain in geophysics, NOT for heat conduction; thermoelastic fractional models adopt it later.
+
+## F24 Sherief, El-Sayed, Abd El-Latief 2010, Int. J. Solids Struct. 47:269-275 (DOI 10.1016/j.ijsolstr.2009.09.034)
+- (2.29) q_i + tau0 d^alpha q_i/dt^alpha = -k_ij T,j, 0<alpha<=1 (Caputo definition, per the text); alpha->1 gives Cattaneo/Lord-Shulman, alpha->0 gives coupled (Biot) thermoelasticity with k' = k/(1+tau0).
+- (2.37) k T,ii = rho C_E (1 + tau0 d^alpha/dt^alpha) dT/dt + T0 gamma (1 + tau0 d^alpha/dt^alpha) d e_ij/dt - (1 + tau0 d^alpha/dt^alpha) Q: the fractional operator multiplies BOTH the temperature-rate and the strain-rate coupling term (LS-like structure). Uniqueness theorem (Thm 1), variational principle, reciprocity. Status PRIMARY-SOURCE-CHECKED (supervisor, page render).
+- Note: Caputo's fractional operator of order alpha in tau0^alpha-type convention is model-specific; the review must name its convention (cf. Brave B03 finding).
+
+## F25 Wang & Li 2021, J. Comput. Appl. Math. 384:112923 "MDD versus fractional derivative (I): difference in temporal modeling" (DOI 10.1016/j.cam.2020.112923)
+- Conceptual/modelling paper: argues MDD (introduced 2011, ref [1]) has a clearer physical meaning (time delay = memory duration, kernel = weight) while FD mainly reflects local change; uses a logistic population model and gives a numerical algorithm for MDD. Definition 1 (eq 1): D^m_{t,tau} f(t) = Integral K(t-s) f^(m)(s) ds over [t-tau, t] form (normalisation as printed not transcribed). Status PRIMARY-SOURCE-CHECKED for scope and claims; no thermoelastic equations in it (so it supports s.11 statements about MDD vs FD, not thermoelastic laws).
+
+## F26 MGT abstract equation with memory (acoustic/PDE form)
+- Lasiecka & Wang 2015, J. Differential Equations 259:7610-7635: tau u_ttt + alpha u_tt + c^2 A u + b A u_t - Integral g(t-s) A u(s) ds = 0, (1); energy decays like the memory kernel (exponentially or not); non-critical regime gamma > 0 (garbled in extraction; the 2016 paper states it as alpha*beta > gamma).
+- Dell'Oro, Lasiecka & Pata 2016, J. Differential Equations: d_ttt u + alpha d_tt u + beta A d_t u + gamma A u - Integral g(s) A u(t-s) ds = 0, alpha,beta,gamma>0, A strictly positive selfadjoint, g convex kernel. SUBcritical alpha*beta > gamma: exponential decay (known); CRITICAL alpha*beta = gamma: exponential stability iff A is bounded; otherwise energy decays to zero without exponential rate.
+- These are PDE-analysis (acoustic) MGT results; the thermoelastic MGT admissibility remains k - tau k* > 0 (FINDINGS_07 F19). Do not mix the two parameter definitions.
+
+## F27 Shakeriaski, Ghodrat, Escobedo-Diaz, Behnia 2021, J. Comput. Des. Eng. 8(1):15-35 (DOI 10.1093/jcde/qwaa082) = LIT-0040
+- A bibliographical review: 21 pages, about 142 references, 6 tables (Tables 1-5 list studies by geometry for LS, GL, GN, DPL, multi-phase-lag; Table 6 classifies theories). Sections: Introduction, LS, GL, GN, DPL, Multi-phase-lag (MPL), Conclusion. States "GL modifies the constitutive laws and LS modifies the equation of energy". Reports a comparison ordering MPL < GN(III) < LS for one problem (as cited from the underlying studies). Does NOT cover MDD, MGT or nonlocal as dedicated sections; equations appear as typeset displays not extractable as text, so it is cited as a survey (SECONDARY), not for equations.
+- Benchmark for R4: a 21-page review in this area with ~142 references exists in an open-access journal; AMR reviews in this area: 25 pages/338 refs (Chandrasekharaiah 1998), 22 pages (1986).
+
+## ORDERS
+BRAVE: FULLTEXT_FACTS rows F23-F27 (Caputo1967 PRIMARY-SOURCE-CHECKED def; Sherief2010 PRIMARY-SOURCE-CHECKED; WangLi2021I PRIMARY scope; LasieckaWang2015 and DellOroLasieckaPata2016 PRIMARY (abstract-level PDE statements); Shakeriaski2021 SECONDARY survey); REFERENCE_PLAN: Caputo1967, Sherief2010 -> s.11 technical_claim_eligible=YES; LIT-0040 -> s.12 survey eligible as SECONDARY; Lasiecka-Wang and Dell'Oro et al -> s.4.9/4.10 eligible for the stated PDE results; Wang-Li 2021(I) -> s.11 eligible for MDD-vs-FD conceptual statements. Remove these six from PDF_REQUEST_LIST_3.
+ARENA (R3d, after Brave): s.11 cite Caputo 1967 (definition, origin in viscoelasticity) and Sherief 2010 (2.29)/(2.37), naming the fractional-operator convention; MDD vs FD conceptual sentence cites Wang-Li 2021(I); s.4.9/4.10 MGT: thermoelastic admissibility k - tau k* > 0 (Quintanilla 2019) vs acoustic abstract-MGT critical alpha*beta = gamma (Dell'Oro et al.), keep the two clearly separate.
