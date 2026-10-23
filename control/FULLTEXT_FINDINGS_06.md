@@ -1,0 +1,5 @@
+# FULLTEXT FINDINGS 06 (supervisor): AMR length/reference benchmark (first data points)
+Source: the two Applied Mechanics Reviews articles in the handler's Downloads (read by supervisor).
+- Chandrasekharaiah 1998, "Hyperbolic thermoelasticity: a review of recent literature", AMR 51(12):705-729: 25 PDF pages, abstract states "There are 338 references".
+- Chandrasekharaiah 1986, "Thermoelasticity with second sound: a review", AMR 39(3):355-376: 22 PDF pages; reference list split into "References" (cited in text) and "Additional references".
+Reading for R4: AMR reviews in this exact field are ~22-25 pages (dense two-column) with ~300+ references. Our manuscript is 156 single-column pages with ~115 references: far too long and under-referenced for AMR. R4 must produce an AMR-length stand-alone version (about 35-50 two-column pages equivalent, 250-350 references) plus keep the long version as a supplement/arXiv/Physics Reports route. The Editor should be asked for allowed length and reference budget before cutting. Still need more AMR data points (10+ reviews per BLUEPRINT R4); only 2 collected.
