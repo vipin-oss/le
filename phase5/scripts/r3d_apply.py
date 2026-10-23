@@ -118,9 +118,8 @@ def main() -> int:
     mindlin = selected.get("Mindlin1974Thermopiezo", {}).get("resolved_citekey")
     if mindlin:
         mindlin_text = (
-            r"\paragraph{Classical thermopiezoelectric baseline.} Mindlin's linear plate theory gives momentum balance, "
-            r"$D_{i,i}=0$, entropy balance $h_{i,i}=-\Theta_0\dot{\eta}$, and Fourier heat flux "
-            r"$h_i=-K_{ij}\theta_{,j}$, together with linear constitutive equations from an electric Gibbs function "
+            r"\paragraph{Thermopiezoelectric baseline.} Mindlin (1974) states the classical three-dimensional linear thermopiezoelectric equations (momentum balance, "
+            r"$D_{i,i}=0$, entropy balance, Fourier heat flux $h_i=-K_{ij}\theta_{,j}$), which are the starting point of his plate reduction, together with linear constitutive equations from an electric Gibbs function "
             f"\\cite{{{mindlin}}}\\allowbreak{{}} (PRIMARY-SOURCE-CHECKED).\n\n"
             "Generalized piezothermoelastic models replace Fourier's law with a lagged or memory law. Mindlin's Fourier system is the classical limiting-case check: test each generalized model using its own parameters and equations rather than assuming the limit. "
             "Limited primary sources are available for this broader family."
