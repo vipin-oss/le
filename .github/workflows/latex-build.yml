@@ -41,6 +41,14 @@ jobs:
           path: control-reference
           fetch-depth: 1
 
+      - name: Checkout read-only R3f source findings
+        if: startsWith(github.ref, 'refs/heads/arena/') && github.event_name == 'push' && contains(github.event.head_commit.message, '[R3F-CROSSREF]')
+        uses: actions/checkout@v4
+        with:
+          ref: f95cf216f409b742699ccafbe6186375843ee811
+          path: control-reference
+          fetch-depth: 1
+
       # R3d has newly eligible Section 4 DOIs beyond the frozen R3a raw-response set; keep R3a reclassification scoped to R3a/b/c.
       - name: Reclassify saved Crossref results for Sections 4.1–4.12
         if: startsWith(github.ref, 'refs/heads/arena/') && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && (contains(github.event.head_commit.message, '[R3A-CROSSREF]') || contains(github.event.head_commit.message, '[R3B-CROSSREF]') || contains(github.event.head_commit.message, '[R3C-CROSSREF]'))))
@@ -155,6 +163,30 @@ jobs:
           python3 phase5/scripts/r3e_apply.py \
             --verify-csv phase5/reports/CROSSREF_R3E_VERIFY.csv \
             --map-csv phase5/reports/R3E_CITATION_MAP.csv \
+            --reports-dir phase5/reports \
+            --local-bib phase5/master/references_local.bib \
+            --sections-dir phase5/master/sections \
+            --status-report phase5/reports/R3_STATUS.md
+
+      - name: Verify only mapped R3f sources against Crossref
+        if: startsWith(github.ref, 'refs/heads/arena/') && github.event_name == 'push' && contains(github.event.head_commit.message, '[R3F-CROSSREF]')
+        run: |
+          python3 phase5/scripts/crossref_r3f.py \
+            --map-csv phase5/reports/R3F_CITATION_MAP.csv \
+            --findings-file control-reference/control/FULLTEXT_FINDINGS_10.md \
+            --findings-04 control-reference/control/FULLTEXT_FINDINGS_04.md \
+            --findings-09 control-reference/control/FULLTEXT_FINDINGS_09.md \
+            --local-bib phase5/master/references_local.bib \
+            --raw-dir phase5/reports/crossref_raw_r3f \
+            --report-dir phase5/reports \
+            --pause 1.0
+
+      - name: Apply only verified R3f citations and source-specific claims
+        if: startsWith(github.ref, 'refs/heads/arena/') && github.event_name == 'push' && contains(github.event.head_commit.message, '[R3F-CROSSREF]')
+        run: |
+          python3 phase5/scripts/r3f_apply.py \
+            --verify-csv phase5/reports/CROSSREF_R3F_VERIFY.csv \
+            --map-csv phase5/reports/R3F_CITATION_MAP.csv \
             --reports-dir phase5/reports \
             --local-bib phase5/master/references_local.bib \
             --sections-dir phase5/master/sections \
@@ -375,6 +407,23 @@ jobs:
               phase5/reports/R3E_VERIFIED_REFERENCES.bib \
               phase5/master/references_local.bib \
               phase5/master/sections/sec08_mathematical_methods.tex
+          fi
+          if [[ -s phase5/reports/CROSSREF_R3F_VERIFY.csv ]]; then
+            git add -A phase5/reports/crossref_raw_r3f \
+              phase5/reports/CROSSREF_R3F_VERIFY.csv \
+              phase5/reports/CROSSREF_R3F_REQUEST_LOG.csv \
+              phase5/reports/CROSSREF_R3F_METHOD.md \
+              phase5/reports/CROSSREF_R3F_HUMAN_CHECK.md \
+              phase5/reports/R3F_VERIFIED_REFERENCES.bib \
+              phase5/reports/R3F_SECTION_COUNTS.csv \
+              phase5/master/references_local.bib \
+              phase5/master/sections/sec02_literature.tex \
+              phase5/master/sections/sec04_thermoelastic.tex \
+              phase5/master/sections/sec05_multiphysics.tex \
+              phase5/master/sections/sec08_mathematical_methods.tex \
+              phase5/master/sections/sec10_energy.tex \
+              phase5/master/sections/sec11_advanced.tex \
+              phase5/master/sections/sec12_comparative.tex
           fi
           if [[ -f phase5/reports/R3_STATUS.md ]]; then
             git add phase5/reports/R3_STATUS.md
