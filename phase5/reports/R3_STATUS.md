@@ -82,7 +82,7 @@ Cattaneo (1948), Vernotte (1958), Achenbach (1973), Nowacki (1975), and Tzou (19
 - R3d Crossref: 9 VERIFIED, 0 MISMATCH, 0 NOT-FOUND, 0 NO-DOI; mapped and bibliography-ready: 9; unique mapped citations used: 9; new BibTeX keys: 5.
 - Frozen CITATION_MAP exact-key matches among R3d candidates: 0. Each placement is separately auditable in `R3D_CITATION_MAP.csv`.
 - Frozen REFERENCE_READINESS snapshot: s.4.9: 3 full/primary, 0 partial of 3 eligible; s.4.10: 2 full/primary, 0 partial of 2 eligible; s.5: 4 full/primary, 1 partial of 5 eligible; s.11: 9 full/primary, 1 partial of 10 eligible; s.12: one secondary / zero primary.
-- Unique VERIFIED primary-source coverage by touched section after R3d (plan role excludes secondary surveys): s.4.9=4, s.4.10=3, s.5=4, s.10=0, s.11=5, s.12=0.
+- Unique VERIFIED primary-source coverage by touched section after R3d (plan role excludes secondary surveys): s.4.9=4, s.4.10=3, s.5=4, s.10=3, s.11=5, s.12=0.
 - Sections meeting the ≥6 VERIFIED primary-source bar across R3a/R3b/R3c/R3d: s.4.8 (8), s.6 (7), s.7 (6), s.9 (18).
 - Section 4 separates thermoelastic MGT admissibility from acoustic MGT-with-memory decay; the acoustic gamma condition is not transferred to thermoelasticity. Section 5 cites Mindlin's Fourier thermopiezoelectric baseline and treats generalized Fourier limits as model-specific checks.
 - Section 11 attributes the fractional operator's origin to viscoelasticity/geophysics, cites Sherief's operator on both rate terms, names the Gamma-normalized review convention, and attributes the MDD/FD contrast to Wang and Li (2021, Part I). Section 12 uses LIT-0040 as SECONDARY coverage only.

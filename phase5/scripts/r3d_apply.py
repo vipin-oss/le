@@ -229,7 +229,14 @@ def main() -> int:
             if destination:
                 verified_sources[destination].add(key)
     threshold_sections = [f"{section} ({len(keys)})" for section, keys in sorted(verified_sources.items()) if len(keys) >= 6]
-    scoped_counts = {section: len(verified_sources.get(section, set())) for section in ("s.4.9", "s.4.10", "s.5", "s.10", "s.11", "s.12")}
+    scoped_counts = {}
+    for section in ("s.4.9", "s.4.10", "s.5", "s.10", "s.11", "s.12"):
+        keys = set(verified_sources.get(section, set()))
+        if section == "s.10":
+            for destination, source_keys in verified_sources.items():
+                if destination.startswith("s.10."):
+                    keys.update(source_keys)
+        scoped_counts[section] = len(keys)
 
     readiness = {row.get("section", ""): row for row in readiness_rows}
     readiness_summary = []
