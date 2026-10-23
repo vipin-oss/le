@@ -17,6 +17,6 @@ s.4.9,0,3,3,3,0,0,3,NO,GAP-24 (label defect closed; 6-source bar still open),"fu
 s.5,3,11,5,4,1,0,2,NO,GAP-18,"full/primary: LIT-0046, LIT-0047, LIT-0048, LIT-0512 | partial: LIT-0500"
 s.6,7,14,8,8,0,0,1,YES,,"full/primary: LIT-0029, LIT-0050, LIT-0438, LIT-0444, LIT-0447, LIT-0453"
 s.7,6,13,8,8,0,0,2,YES,,"full/primary: LIT-0437, LIT-0445, LIT-0454, LIT-0457, LIT-0458, LIT-0460"
-s.8,1,8,1,1,0,0,0,NO,GAP-19,full/primary: LIT-0268
+s.8,1,12,3,3,0,0,2,NO,"GAP-19 (2 of the 3 counts are supervisor-transcribed, not opened by this verifier)","full/primary: LIT-0268, LIT-0516, LIT-0517 | LIT-0518 (Honig-Hirdes, bronze OA) and LIT-0519 (Durbin, closed) are metadata-only and NOT counted"
 s.9,19,22,22,11,11,0,3,YES,,"full/primary: LIT-0189, LIT-0281, LIT-0352, LIT-0435, LIT-0446, LIT-0452 | partial: LIT-0440, LIT-0478, LIT-0479, LIT-0481, LIT-0482, LIT-0484"
-TOTAL,55,211,96,68,27,1,+41,6 of 21 sections,,"The R3 baseline counts rows Crossref-verified AND technically eligible. eligible_now counts plan rows marked technical_claim_eligible=YES whatever the read level, so the columns are different measures: the read-level split (full / partial / metadata-only) is the honest one."
+TOTAL,55,215,98,70,27,1,+43,6 of 21 sections,,"The R3 baseline counts rows Crossref-verified AND technically eligible. eligible_now counts plan rows marked technical_claim_eligible=YES whatever the read level, so the columns are different measures: the read-level split (full / partial / metadata-only) is the honest one. B18 caveat: s.8's two new full-text-grade rows (LIT-0516, LIT-0517) are supervisor-transcribed (F28/F29) and are recorded as SECONDARY-SOURCE in FULLTEXT_FACTS; on a strict 'verifier opened the PDF' reading s.8 is still 1."

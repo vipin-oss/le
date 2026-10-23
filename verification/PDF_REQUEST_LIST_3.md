@@ -5,11 +5,13 @@
 
 **How every entry was checked.** Identifiers were resolved against the **OpenAlex API on 2026-10-23** (`api.openalex.org/works?filter=doi:…`), one query per batch of DOIs; the returned record supplied title, year, volume/first–last page and the OA verdict (`open_access.is_oa`, `oa_status`, `oa_url`). Where OpenAlex returned nothing for a DOI I had guessed, the item is **not** in the list on the strength of that guess — it is either resolved by a title search or left out. **No DOI below is from memory.** Bibliographic details for the five print-era items in Part C could not be machine-verified and say so.
 
-**Order.** Part A0 is what has already arrived. Part A is the remainder with an open-access copy — the handler can download those directly. Part B is paywalled but DOI-verified. Part C is print-era material with no usable DOI. **29 items are still outstanding: 4 open access, 20 paywalled, 5 print.**
+**Order.** Part A0 is what has already arrived. Part A is the remainder with an open-access copy — the handler can download those directly. Part B is paywalled but DOI-verified. Part C is print-era material with no usable DOI. **29 items are still outstanding: 3 open access, 21 paywalled, 5 print.**
+
+*B18 update (2026-10-23):* **A6 and A7 have moved to Part A0** — both arrived as F28/F29 and are recorded in `FULLTEXT_FACTS`; both were already free (bronze OA), so nothing was bought. Two s.8 items were added: **A12 Honig & Hirdes 1984** (bronze OA; its DOI is the OA link) and **B21 Durbin 1974** (closed in OpenAlex, no repository copy anywhere — request only). Both DOIs were resolved at OpenAlex on 2026-10-23; the Durbin title was taken from the OpenAlex record, not from memory.
 
 ---
 
-## Part A0 — already supplied and read (6 items, no longer requested)
+## Part A0 — already supplied and read (8 items, no longer requested)
 
 These were on the original list; the handler supplied them and the supervisor read them, so they are recorded in `FULLTEXT_FACTS` and are **no longer requests**.
 
@@ -21,19 +23,20 @@ These were on the original list; the handler supplied them and the supervisor re
 | A5 | Shakeriaski et al. 2021 review, *JCDE* **8**, 15–35, `10.1093/jcde/qwaa082` | `Shakeriaski2021Survey` | **SUPPLIED (F27)** — secondary survey for s.12 |
 | A8 | Lasiecka & Wang 2015, *JDE* **259**, 7610–7635, `10.1016/j.jde.2015.08.052` | `LasieckaWang2015MGT` | **SUPPLIED (F26)** — abstract MGT with memory, decay |
 | A9 | Dell'Oro, Lasiecka & Pata 2016, *JDE* **261**, 4188–4222, `10.1016/j.jde.2016.06.025` | `DellOroLasieckaPata2016MGT` | **SUPPLIED (F26)** — critical case αβ = γ |
+| A6 | Dubner & Abate 1968, *J. ACM* **15**(1), 115–123, `10.1145/321439.321446` | `DubnerAbate1968` | **SUPPLIED (F28, B18)** — eq (15) working formula; (16)–(17) error bounds; Re F only, f real |
+| A7 | Stehfest 1970, *Comm. ACM* **13**(1), 47–49, `10.1145/361953.361969` | `Stehfest1970` | **SUPPLIED (F29, B18)** — real-axis formula, N even; Table I accuracy; column assignment not render-checked |
 
 *(A11, Quintanilla 2019, was listed only so its OA link was on record; it has been read since F19 and is likewise not a request.)*
 
-## Part A — open access, download first (4 items)
+## Part A — open access, download first (3 items)
 
 | # | citation | journal / volume / pages | DOI | OA | serves |
 |---|---|---|---|---|---|
 | A4 | **Wang, J.-L.; Li, H.-F. (2025).** Memory-dependent derivative versus fractional derivative (IV): Space-dependent derivative for unsteady heat diffusion | Fractal Fract. **9**(12), 794 | `10.3390/fractalfract9120794` | **gold** (MDPI) | s.12 — the newest side-by-side comparison in the series |
-| A6 | **Dubner, H.; Abate, J. (1968).** Numerical inversion of Laplace transforms by relating them to the finite Fourier cosine transform | J. ACM **15**(1), 115–123 | `10.1145/321439.321446` | **bronze**, ACM PDF | s.8 — the Laplace-inversion method actually used by the state-space papers the review cites |
-| A7 | **Stehfest, H. (1970).** Algorithm 368: Numerical inversion of Laplace transforms | Comm. ACM **13**(1), 47–49 | `10.1145/361953.361969` | **bronze**, ACM PDF | s.8 — the other inversion algorithm in that literature |
+| A12 | **Honig, G.; Hirdes, U. (1984).** A method for the numerical inversion of Laplace transforms | J. Comput. Appl. Math. **10**(1), 113–132 | `10.1016/0377-0427(84)90075-x` | **bronze** — OpenAlex returns the DOI itself as `oa_url`, so the publisher copy is free | s.8 — the third inversion algorithm, and the one the library actually uses: Aldawody, Hendy & Ezzat 2019 (LIT-0432, Drive) print it with the Fourier-series formula at their eqs (86)–(88) |
 | A10 | **Dell'Oro, F.; Lasiecka, I. (2016).** On the Moore–Gibson–Thompson equation and its relation to linear viscoelasticity | Appl. Math. Optim. **76**(3), 641–655 | `10.1007/s00245-016-9365-1` | **green** (PoliMi repository) | s.4.9 + s.10 — the MGT ↔ viscoelasticity correspondence. **Note: this is NOT the F26 paper.** F26 supplied Dell'Oro, Lasiecka & Pata 2016 (*JDE* **261**, 4188) — a different article. This one (Dell'Oro & Lasiecka, *Appl. Math. Optim.* **76**, 641) is still outstanding and is worth having for the viscoelasticity equivalence. |
 
-## Part B — paywalled, DOI verified (20 items)
+## Part B — paywalled, DOI verified (21 items)
 
 | # | citation | journal / volume / pages | DOI | serves |
 |---|---|---|---|---|
@@ -56,6 +59,7 @@ These were on the original list; the handler supplied them and the supervisor re
 | B17 | **Gorenflo, R.; Kilbas, A. A.; Mainardi, F.; Rogosin, S. V. (2014).** *Mittag-Leffler Functions, Related Topics and Applications* | Springer | `10.1007/978-3-662-43930-2` | s.11 — the special-function machinery behind fractional thermoelasticity |
 | B18 | **Marchand, R.; McDevitt, T.; Triggiani, R. (2012).** An abstract semigroup approach to the third-order Moore–Gibson–Thompson PDE arising in high-intensity ultrasound | Math. Methods Appl. Sci. **35**(15), 1896–1929 | `10.1002/mma.1576` | s.4.9 + s.8 — well-posedness of the MGT equation (the "mathematical methods" side of s.4.9) |
 | B19 | **van der Merwe, A. J.; van Rensburg, N. F. J.; Sieberhagen, R. H. (2021).** Comparing the dual phase lag, Cattaneo–Vernotte and Fourier heat conduction models using modal analysis | Appl. Math. Comput. **396**, 125934 | `10.1016/j.amc.2020.125934` | s.12 — side-by-side comparison, now a plan row (`LIT-0428`) |
+| B21 | **Durbin, F. (1974).** Numerical inversion of Laplace transforms: an efficient improvement to Dubner and Abate's method | Comput. J. **17**(4), 371–376 | `10.1093/comjnl/17.4.371` | s.8 — the improvement on A6; OpenAlex reports `oa_status: closed` and **no repository copy**, so there is no free route |
 | B20 | **Moore, F. K.; Gibson, W. E. (1960).** Propagation of weak disturbances in a gas subject to relaxation effects | J. Aerospace Sci. **27**(2), 117–127 | `10.2514/8.8418` | s.4.9 — the origin paper; **already identified and read by the supervisor** (F14). Listed for completeness, not for purchase |
 
 ## Part C — print-era, no usable DOI (5 items)
@@ -75,7 +79,7 @@ These were on the original list; the handler supplied them and the supervisor re
 | gap | section | items in this list | note |
 |---|---|---|---|
 | GAP-18 | s.5 | **B1–B6**, C1–C2 | **Mindlin 1974 (B1) has since been supplied and read (F21)**; the remaining micropolar/void core is still paywalled or print, so s.5 has one eligible source of the six it needs. |
-| GAP-19 | s.8 | **A6, A7, B7–B12** | the two inversion algorithms are free; the Stroh and Chadwick classics are not |
+| GAP-19 | s.8 | **A12, B7–B12, B21** (A6/A7 supplied, F28/F29) | **two of the three inversion algorithms have arrived** (A6, A7) and the third (A12) is free; the Stroh, Chadwick and Joseph–Preziosi classics are paywalled. s.8 stands at **3 full-text-grade of the six it needs** |
 | GAP-20 | s.10 | **B9, B10, B12, B13, C3–C5** | mostly print-era; this is the section that will cost the most effort |
 | GAP-21 / GAP-25 | s.11 | **B14–B17** (A1–A3 now supplied) | **GAP-25 is closed** — Caputo arrived (F23). Still open: Povstenko (B14, B15) and the fractional books (B16, B17) |
 | GAP-22 | s.12 | **B12, B19** (A3–A5 now supplied) | s.12 has **one** eligible source (LIT-0040, secondary survey) and needs five more read comparisons |
