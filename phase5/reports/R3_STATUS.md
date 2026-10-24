@@ -130,8 +130,8 @@ Cattaneo (1948), Vernotte (1958), Achenbach (1973), Nowacki (1975), and Tzou (19
 - Process-language inventory: `phase5/reports/PROCESS_LANGUAGE_INVENTORY.csv`, 162 line/phrase rows. Counts by phrase: eligible=5; read sources=4; R3=35; GAP-=11; UNVERIFIED=50; BACKGROUND-ONLY=1; SECONDARY-SOURCE=14; PRIMARY-SOURCE-CHECKED=38; supervisor=0; Brave=0; now has=4. Inventory records source file, line, phrase, and section; it did not drive manuscript edits.
 - R3g content/source commit: `524c4b0f1579ffaad52543e8d9f44017f5645d0b`; infrastructure-only fix commit: `d81e99dcd522d1bf3c0d237d0b1a61578f71c09b`.
 - Strict build after the infrastructure fix: run `40063975977` passed in 2m22s; PDF pages: 162; the >1 pt layout gate passed. (No R3a–R3f apply steps ran.)
-- Report-only strict build metrics: run `__R3_CI_RUN_ID__`; build step `__R3_BUILD_SECONDS__` seconds; pages `__R3_PDF_PAGES__`; undefined references/citations `__R3_UNRESOLVED_REFS__`.
-- Near-overfull warnings above 0.5 pt: `__R3_NEAR_OVERFULL__`.
+- Report-only strict build metrics: run `40064319885`; build step `16` seconds; pages `162`; undefined references/citations `0`.
+- Near-overfull warnings above 0.5 pt: `none`.
 - Uncommitted local edits at content-commit time: none; all R3g changes and the inventory were included in that commit.
 
 ## Final strict build
@@ -141,11 +141,11 @@ The R3g strict build passed after the infrastructure-only TeX installation fix. 
 - Result: PASSED; the strict >1 pt layout gate passed.
 - R3g content/source commit: `524c4b0f1579ffaad52543e8d9f44017f5645d0b`
 - First strict CI run after the fix: `40063975977` (162 pages; workflow duration 2m22s)
-- Report-only strict CI run: `__R3_CI_RUN_ID__`
-- Build-step time: `__R3_BUILD_SECONDS__` seconds
-- PDF pages: `__R3_PDF_PAGES__`
-- Undefined references/citations: `__R3_UNRESOLVED_REFS__`
-- Near-overfull warnings (>0.5 pt): `__R3_NEAR_OVERFULL__`
+- Report-only strict CI run: `40064319885`
+- Build-step time: `16` seconds
+- PDF pages: `162`
+- Undefined references/citations: `0`
+- Near-overfull warnings (>0.5 pt): `none`
 - Section 8 lines 100–101: strict >1 pt gate passed; the warning inventory above records any residual overfull box above 0.5 pt after `\emergencystretch`.
 
 
