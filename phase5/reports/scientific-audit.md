@@ -126,3 +126,80 @@ The authoritative BLUEPRINT requires that every claim carry a status tag and say
 ### R3 outcome
 
 R3 is **NOT PASSED**. GAP-09, GAP-12, GAP-13, GAP-22, and GAP-23 remain OPEN; D4/D5 remain unresolved; the bibliographic mismatches remain uncorrected in the manuscript; and the exact Gamma-normalized Povstenko coefficient is unsupported by the inspected equation. No R4 work began. The earlier `scientific-audit.md` supplement remains historically intact; this section supersedes only the specific statements identified above.
+
+## Bounded R3 remediation update (2026-10-24; after B20)
+
+This addendum records the bounded source/bibliography changes made after B20. It supersedes only the earlier statements that the Guyer and Section 11 Povstenko records were uncorrected, that the Section 11 fractional law had not been checked at equation level, and that the two Section 12 tags remained `PRIMARY-SOURCE-CHECKED`. Earlier B20 disagreements and history remain preserved above. No authoritative plan, gap criterion, readiness row, or `control/` file was edited; no R4 work began.
+
+### Bibliographic identities and corrections
+
+| Record | Authoritative identity | Action and scope |
+|---|---|---|
+| Guyer–Krumhansl `.766` | Guyer & Krumhansl, “Solution of the Linearized Phonon Boltzmann Equation,” *Physical Review* 148(2):766–778 (1966), DOI `10.1103/PhysRev.148.766`. B20's live Crossref row verifies title, authors, journal, issue, pages, year and DOI; the supplied first page identifies the same article. | Corrected only `GuyerKrumhansl1966` in `references_local.bib` to pp. 766–778 and DOI `.766`, with source/access note. The `.778` DOI is not retained on this `.766` title. The checked Eq. (59), printed p. 773, supports `lambda^2=c^2 tau_N tau_z/5` only in the paper's stated kinetic regime; this is not a general continuum thermoelastic constitutive law. |
+| Guyer–Krumhansl `.778` | A distinct companion paper by the same authors, “Thermal Conductivity, Second Sound, and Phonon Hydrodynamic Phenomena in Nonmetallic Crystals,” *Physical Review* 148(2):778–788 (1966), DOI `10.1103/PhysRev.148.778`; distinct title and pages are confirmed by B20's Crossref result. | No claim was transferred to `.778`. Evidence-matrix row FW-013 remains OPEN/UNVERIFIED and `primary_source_checked=NO`; no direct `.778` full text was inspected. |
+| Povstenko `.511931` | Y. Z. Povstenko, “Fractional Cattaneo-Type Equations and Generalized Thermoelasticity,” *Journal of Thermal Stresses* 34(2):97–114 (2011), DOI `10.1080/01495739.2010.511931`; B20 live Crossref and the supplied paper's printed first page agree. | Added distinct key `Povstenko2011Cattaneo`; Section 11 lines 55 and 67 now cite that key for the fractional-Cattaneo discussion. The bibliography key `Povstenko2011` was not overwritten. |
+| Povstenko `.511929` | Y. Z. Povstenko, “Dirichlet Problem for Time-Fractional Radial Heat Conduction in a Sphere and Associated Thermal Stresses,” *Journal of Thermal Stresses* 34(1):51–67 (2011), DOI `10.1080/01495739.2010.511929`; verified as the separate Crossref record. | Existing key `Povstenko2011` remains attached to the correct Dirichlet-problem identity and remains in the Section 11 radial-domain citation at line 47. It is no longer used as the fractional-Cattaneo source. |
+| Povstenko book | The supplied book copy's printed copyright page identifies *Fractional Thermoelasticity*, Springer, Solid Mechanics and Its Applications 219 (2015), DOI `10.1007/978-3-319-15335-3`, print ISBN `978-3-319-15334-6`, eBook ISBN `978-3-319-15335-3`. B20's Crossref/Open Library checks independently support the 2015 identity. | Local `Povstenko2016` remains unchanged (year 2016, ISBN `9783319296370`, `NO_DOI`). The supplied 2015 copy and the local 2016 record are discrepant; available evidence does not establish whether the latter is a typo, reprint, or distinct edition. No equation support is inferred from bibliographic identity. |
+
+The `.766`/`.778` and `.511931`/`.511929` DOIs are not interchangeable. The task's equation-support question is separate from these metadata corrections.
+
+### Fractional Cattaneo evidence and remaining limit
+
+`R4/povstenko2011.pdf` was inspected at printed pp. 97, 101, and 113. Eq. (29), printed p. 101, gives a related fractional Cattaneo-type flux law for `0 < alpha <= 1` with source-specific coefficient `zeta`; Appendix A, printed p. 113, identifies the derivative as Caputo (the source omits the superscript `C`). The equation does **not** print the manuscript's `tau^alpha/Gamma(1+alpha)` prefactor. No normalization map from `zeta` to that Gamma-normalized coefficient was found or verified. Consequently the related source law is marked PRIMARY-SOURCE-CHECKED for its inspected form only; Eq. 11.4's exact prefactor remains CONDITIONAL/OPEN and a review parameterization, not a verified source equation. `EXT-052` now distinguishes the verified related law from the still-open exact-coefficient support. No claim that Eq. 11.4 is exactly Povstenko's equation is made.
+
+### D4/D5: exact identity is known; claim content remains UNVERIFIED
+
+The candidate metadata records distinguish three papers, but none of their relevant printed pages was accessible in the supplied PDF archive. The available `R4/gurtin1968.pdf` is the different Gurtin–Pipkin paper, *A General Theory of Heat Conduction with Finite Wave Speeds*, not a substitute for any candidate below. No claim wording, equation, or conclusion below is attributed on the basis of title metadata alone.
+
+| Candidate | Bibliographic identity verified from B20 Crossref log | Full-text evidence / required next evidence |
+|---|---|---|
+| Gurtin–Williams 1966 | M. E. Gurtin & W. O. Williams, “On the Clausius–Duhem Inequality,” *ZAMP* 17:626–633 (1966), DOI `10.1007/BF01597243`. | Relevant pp. 626–633 not available/inspected. The current claim in `sec12_comparative.tex:22` therefore remains UNVERIFIED/OPEN; do not state that its content was checked. |
+| Chen–Gurtin 1968 | P. J. Chen & M. E. Gurtin, “On a theory of heat conduction involving two temperatures,” *ZAMP* 19:614–627 (1968), DOI `10.1007/BF01594969`. | Relevant pp. 614–627 not available/inspected. The source may be associated with a two-temperature constitutive relation, but the exact manuscript descriptor/claim is not directly verified here. |
+| Chen–Gurtin–Williams 1969 | P. J. Chen, M. E. Gurtin & W. O. Williams, “On the thermodynamics of non-simple elastic materials with two temperatures,” *ZAMP* 20:107–112 (1969), DOI `10.1007/BF01591120`. | Relevant pp. 107–112 not available/inspected. Its title is a candidate context for the D4/D5 wording, not evidence that it supports either sentence. No substitution was made. |
+
+The only manuscript change for D4/D5 was at `phase5/master/sections/sec12_comparative.tex:20,22`: each status label changed from `PRIMARY-SOURCE-CHECKED` to `UNVERIFIED`. The claims, qualifications, citations (`ChenGurtin1968`; `GurtinWilliams1966`), and wording remain unchanged. Both labels render on PDF p. 92. Keep D4 and D5 OPEN until the relevant pages of the cited/candidate papers and exact surrounding claim are directly inspected and compared.
+
+### GAP-09/12/13/22/23 against the unchanged authoritative closure criteria
+
+| Gap | Current criterion-based disposition | Evidence and missing requirement |
+|---|---|---|
+| GAP-09 | **PARTLY CLOSED / STILL OPEN** (not closed by this remediation). | Existing background (Caputo 1967, Sherief et al. 2010 and the named fractional-calculus sources) remains distinct from new access. LIT-0536 is still recorded in the authoritative plan as metadata-only/not supplied; the local `.511931` PDF is nevertheless present and its pp. 97, 101 and 113 were directly checked. That access discrepancy is recorded, not applied to the plan. Eq. (29) supports a related `zeta` law but not the exact Gamma-normalized coefficient. Remaining fractional-calculus/special-function support criteria are unmet; no readiness credit or closure inferred. |
+| GAP-12 | **OPEN.** | The criterion still requires Achenbach 1973, *Wave Propagation in Elastic Solids*, with a stable identifier for the energy-flux/average-intensity definition used in Sections 9–10. No qualifying copy was found; the Auld book and withdrawn placeholders are not substitutes. |
+| GAP-13 | **OPEN.** | The criterion still requires identity/source resolution for Nowacki 1975, *Dynamic Problems of Thermoelasticity*, as support for the coupled energy identity. The book was not found or directly checked; the unrelated 1977 one-page pointer is not substituted. |
+| GAP-22 | **OPEN at authoritative 3/6.** | The readiness ledger's 3/6 remains controlling. The current plan has four s.12 rows; only the three qualifying comparative sources count. The newly reviewed metadata for D4/D5 does not establish side-by-side comparison, and neither claim is source-checked. Chester, Guyer and other sources assigned to different plan sections are not silently counted as s.12. No qualifying comparative source was added. |
+| GAP-23 | **OPEN.** | The criterion remains six specified second-sound physics/experimental sources. Chester 1963 is directly checked and its claim is explicitly qualified, but it is one source; the other required sources/criteria were not all verified. Do not infer experimental validation or close the gap. |
+
+No authoritative plan or criterion was edited. All five mandatory gates therefore prevent R3 PASS.
+
+### Process-label PDF crosswalk and count reconciliation
+
+The current compiled artifact is the strict-CI `phase5/build_outputs/phase5-v1.1-master.pdf` (162 pages, source commit `850d2b5`). The table below groups exact rendered page locations with the source lines or graphics that carry the corresponding process text. It is a deterministic text/page crosswalk, not the earlier false-positive fuzzy matcher. Where a table or paragraph spans a page break, source locations are grouped across the indicated page range rather than assigning a split label to an invented single line.
+
+| PDF page(s) | Manuscript source location(s) carrying the process text |
+|---|---|
+| 2, 18–23 | `frontmatter/abstract.tex:1`; `sections/sec01_scope.tex:85`; `sections/sec02_literature.tex:9,21,27,60` |
+| 33, 38, 40–43 | `sections/sec04_thermoelastic.tex:14,108,226,228,232,234,237,267`; `tables/source/T2_generalized_thermoelastic.tex:12,15` |
+| 47, 53 | `sections/sec05_multiphysics.tex:93,95,99,101,103,289` |
+| 57–59 | `sections/sec06_transport.tex:11,128,150,194` |
+| 63–72 | `sections/sec07_nonlocal.tex:136`; `sections/sec08_mathematical_methods.tex:63,100,111,127,133,135,137,199` |
+| 78–79 | `sections/sec09_interfaces.tex:225` |
+| 80–82 | `sections/sec10_energy.tex:51,53,105` |
+| 86–87, 91 | `sections/sec11_advanced.tex:33,50,55,65,67,77,191`; `:79` carries the eligible/read-source wording |
+| 92 | `sections/sec12_comparative.tex:12,16,18,20,22,24,27,159`; lines 20 and 22 now render UNVERIFIED |
+| 104, 115 | `sections/sec13_applications.tex:160`; `sections/sec15_challenges.tex:22,49` |
+| 107 | `figures/source/fig18-taxonomy.svg:26,95,99,103,121,123,124` (GAP identifiers in the figure, not evidence-status judgments) |
+| 110–112 | `sections/sec14_taxonomy.tex:141–148,153` (GAP identifiers/questions) |
+| 145–148, 150 | `appendices/appA_equation_register.tex:12–14,36–41,58–70,87–94,200–202` (status definitions and equation-register rows) |
+| 155–156, 157, 159–160, 162 | `appendices/appE_tables.tex:7`; `appendices/appF_reproducibility.tex:8`; `appendices/energy_flux_derivations.tex:15,109,225,233,356,368` (working/audit notes; some occurrences are lower-case prose rather than formal all-caps tags) |
+
+Whole-PDF literal, case-sensitive PyMuPDF counts on the updated 162-page PDF: `PRIMARY-SOURCE-CHECKED` 39 (pp. 40, 41, 47, 53, 57, 63, 65, 66, 68, 69, 78, 79, 80, 82, 86, 87, 91, 92, 145, 150); `SECONDARY-SOURCE` 9 (pp. 19, 20, 21, 33, 80, 87, 92, 145, 150); `UNVERIFIED` 47 (pp. 18, 23, 43, 57, 58, 59, 72, 78, 79, 92, 104, 115, 145–148, 150, 157, 159, 160, 162); `GAP-` 23 (pp. 41, 82, 107, 110, 111, 112); `eligible read` 3 (pp. 68, 82, 87). `GAP-` includes taxonomy question IDs and the Figure 18 identifiers, not only verification status.
+
+Parser/scope reconciliation remains **partly unresolved**. B20's recorded 39/8/45/23/3 was across 14 section files and predates this bounded change. This run's 39/9/47/23/3 is a whole-PDF exact-literal scan after the two D4/D5 downgrades and the Section 11 evidence wording/citations. The +2 UNVERIFIED relative to B20 is consistent with the two D4/D5 downgrades. Section 11 now also records the checked related-law statement while preserving the exact prefactor as conditional/open; the net PRIMARY-SOURCE-CHECKED count happens to remain 39, but the parser does not establish that the counted occurrences are the same. The whole PDF also includes front matter, status-definition/register pages, appendices and a GAP-bearing SVG that may not be in the 14-section-file scan. The current `PROCESS_LANGUAGE_INVENTORY.csv` has 164 source-line/phrase rows (updated from 162): 38 PRIMARY-SOURCE-CHECKED, 14 SECONDARY-SOURCE, 52 UNVERIFIED, 11 GAP-, 5 eligible, 4 read-sources, 4 “now has,” 35 R3, and 1 BACKGROUND-ONLY. Those are categorized source-line rows, not rendered-token counts. A whitespace/hyphen-normalized scan additionally finds line-wrapped labels (e.g., uppercase-flex totals 50/11/47/23/4); case-insensitive scanning also counts lower-case prose, so neither should be reported as formal all-caps status-tag totals. The residual one-count secondary-source difference from B20 is not explained conclusively; reproducing B20's parser and exact 14-file selection against this new artifact is still required. No label is silently removed or normalized.
+
+The Blueprint specifies status tags and treatment of unsupported claims, but does not settle whether these tags are reader-facing journal prose or internal audit metadata. The least invasive traceable action here was to correct only the two unsupported Section 12 status labels and document all remaining locations; relocation/removal of other labels remains an editorial decision and was not made.
+
+### Build and R3 decision
+
+Source correction commit: `850d2b546931dc21faef5a57b2de09d425090175` (`Correct R3 source identities and retain open claims`). Strict CI run `40075893625` succeeded for that commit; the configured build/layout gates passed and produced a 162-page PDF. Publication commit `5606ac460e41c79dd746aa66a45448a69a12be34` contains the compiled PDF and refreshed contact sheets/README. Direct PDF extraction found no literal `??` render artifacts. The generated README records 492 underfull hbox warnings and zero underfull vbox warnings. This is a successful manuscript build, **not** a successful R3 evidence gate.
+
+**R3 remains NOT PASSED.** GAP-09 remains partly closed/open; GAP-12, GAP-13, GAP-22 (3/6), and GAP-23 remain open; D4/D5 remain UNVERIFIED/OPEN; exact Gamma-prefactor support remains open; and the process-label/editorial placement question is unresolved. No R4 work started.
