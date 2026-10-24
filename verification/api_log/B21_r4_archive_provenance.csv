@@ -1,0 +1,9 @@
+record_type,object,drive_id,mime,bytes,sha256,md5,verdict,note
+archive,R4.zip,1atjU8CpTSNWzszaVEq061N0t8rZ5NtQ4,application/x-zip-compressed,62292559,ae550e57c0b117233df65cc8c8b922d4844f9948b917b69e786f7644f3fb54bb,7e9b30f4eb2e5b4538ea548cf9ad34fe,MATCH - received bytes equal Drive-recorded SHA-256 and MD5,19 members; unzip -t no errors; not modified
+member,povstenko2011.pdf (archive root),-,PDF,434436,8ca735824dc415cba120753457c6502f61ffb41a2346f04b90148f6eef50ebd1,f074fafe9d0157cfbb103419080cdbd2,10.1080/01495739.2010.511931 VERIFIED from splash page,19 PDF leaves = 1 splash + printed pp.97-114; leaf = printed page - 95
+member-page,povstenko2011.pdf leaf 6 = printed p.101,-,PDF page,-,-,-,"Eq. (29): q + zeta d^a q/dt^a = -k grad T, 0<alpha<=1","legible at 2.2x render; coefficient is zeta, no Gamma(1+alpha)"
+member-page,povstenko2011.pdf leaf 17 = printed p.112,-,PDF page,-,-,-,APPENDIX A begins (A.1-A.8),"assignment premise corrected: Appendix A starts on p.112, not p.113"
+member-page,povstenko2011.pdf leaf 18 = printed p.113,-,PDF page,-,-,-,"A.9, A.10 end Appendix A; Appendix B (B.1-B.4); Appendix C (C.1) begins",legible
+fulltext-test,povstenko2011.pdf all 18 printed pages,-,text layer,-,-,-,'Gamma(1+alpha)' occurrences: 0,"Gamma appears only as 1/Gamma(alpha), 1/Gamma(n-alpha), Gamma(alpha n+1), Gamma(alpha n+beta)"
+member,povstenko2015.pdf (archive root),-,PDF,18574414,fa737318ac8108b016bbd83cdc77a8dd2958c2491a31e85c11ea08bb197488e1,-,2015 Springer book; copyright page leaf 5,ISBN 978-3-319-15334-6 print / 978-3-319-15335-3 eBook; DOI 10.1007/978-3-319-15335-3; (c) 2015
+discrimination,no .511929 member in archive,-,-,-,-,-,CONFIRMED,archive holds only povstenko2011.pdf (.511931) and povstenko2015.pdf
