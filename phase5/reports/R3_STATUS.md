@@ -150,3 +150,13 @@ The R3g strict build passed after the infrastructure-only TeX installation fix. 
 
 
 The preserved R1/R2 baseline remains commit `0be9322`, CI run `39781561017`, 149 pages, and zero undefined references. MISMATCH, NOT-FOUND, and out-of-scope literature records are intentionally not promoted to citations; the undefined-reference count is a separate LaTeX build metric.
+
+## B20 reconciliation addendum (2026-10-24; Arena, independent source follow-up)
+
+Current R3 state: **NOT PASSED**. The earlier R3g s.12 `6 verified / 5 primary` count is retained as historical reporting only and is superseded by the authoritative `REFERENCE_READINESS.csv` count of **3/6**; GAP-22 remains OPEN. No authoritative plan/control file or manuscript file was changed.
+
+B20 D1–D9 are preserved in `phase5/reports/scientific-audit.md`, including the FW-013 `.778` primary-source flag (corrected in the matrix to OPEN/UNVERIFIED), stale Gurtin–Williams status prose, the OPEN Gurtin–Williams 1966 versus Chen–Gurtin–Williams 1969 attribution question, the Chen–Gurtin descriptor mismatch, 97-row arithmetic, superseded failed build, and the 162-page/zero-`??` PDF check. Relevant source pages were directly inspected for Guyer–Krumhansl `.766` (printed pp. 766, 773), Povstenko `.511931` (pp. 97, 101, 113), the 2015 book's copyright page, and Chester (pp. 2013–2015). The equation/page outcomes and access limits are recorded in the scientific audit; no claim was transferred to a different paper.
+
+The PDF contains visible process/status labels. Literal whole-PDF extraction counts and exact page sets are recorded in the scientific audit; the 40/9 counts differ by one from B20's section-file 39/8 counts, and the parser/file-scope discrepancy remains unresolved. The scan includes status-definition text on pp. 145 and 150, but that alone does not explain the difference. Blueprint requires status tags but does not decide whether they belong inline in referee-facing prose or in audit artifacts. This is an editorial blocker, not a manuscript change made here. The stale R3f Gurtin–Williams title is likewise retained only as history; the 1966 bibliography title is *On the Clausius–Duhem Inequality*. The Section 12 content/attribution question remains OPEN pending the candidate papers' relevant pages.
+
+All five mandatory gaps (GAP-09/12/13/22/23) remain OPEN. The local bibliography still contains the Guyer–Krumhansl `.766` title/`.778` DOI-pages mismatch, `Povstenko2011` `.511929` citekey versus `.511931` source mismatch, and the unresolved `Povstenko2016` year/ISBN/DOI mismatch. Their identity findings are recorded, but bibliography and manuscript edits were out of scope; no R4 work started.
