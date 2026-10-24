@@ -17,7 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35
     env:
       SOURCE_DATE_EPOCH: '1700000000'
       FORCE_SOURCE_DATE: '1'
@@ -195,15 +195,29 @@ jobs:
             2>&1 | tee phase5/reports/R3F_APPLY.log
 
       - name: Install TeX and PDF tools
-        timeout-minutes: 12
+        timeout-minutes: 20
         run: |
           set -euo pipefail
-          for attempt in 1 2 3; do
-            echo "TeX/PDF package installation attempt ${attempt}/3"
-            if timeout --signal=TERM --kill-after=5s 220s \
+          install_log="${RUNNER_TEMP}/texinstall.log"
+          : > "$install_log"
+          for attempt in 1 2; do
+            echo "TeX/PDF package installation attempt ${attempt}/2" | tee -a "$install_log"
+            if ATTEMPT="$attempt" timeout --signal=TERM --kill-after=5s 600s \
               bash -euo pipefail -c '
-                sudo apt-get update -qq
+                if [[ "$ATTEMPT" -eq 2 ]]; then
+                  echo "Switching apt sources from azure.archive.ubuntu.com to archive.ubuntu.com"
+                  sudo find /etc/apt -type f \
+                    \( -name "*.list" -o -name "*.sources" \) \
+                    -exec sed -i "s/azure\\.archive\\.ubuntu\\.com/archive.ubuntu.com/g" {} +
+                fi
+                sudo apt-get clean
+                sudo rm -rf /var/lib/apt/lists/*
+                sudo apt-get update \
+                  -o Acquire::Retries=5 \
+                  -o Acquire::http::Timeout=30 \
+                  -o Acquire::https::Timeout=30
                 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+                  -o Acquire::Retries=5 \
                   latexmk \
                   texlive-latex-base \
                   texlive-latex-recommended \
@@ -214,18 +228,20 @@ jobs:
                   texlive-pictures \
                   fonts-dejavu-core \
                   poppler-utils
-              '; then
-              echo "TeX/PDF package installation succeeded on attempt ${attempt}."
+              ' 2>&1 | tee -a "$install_log"; then
+              echo "TeX/PDF package installation succeeded on attempt ${attempt}." | tee -a "$install_log"
               exit 0
             else
               result=$?
-              echo "Attempt ${attempt}/3 failed (exit ${result})."
+              echo "Attempt ${attempt}/2 failed (exit ${result}); last 60 install-log lines:" | tee -a "$install_log"
+              tail -n 60 "$install_log"
             fi
-            if [[ "${attempt}" -lt 3 ]]; then
+            if [[ "${attempt}" -lt 2 ]]; then
               sleep 5
             fi
           done
-          echo "TeX/PDF package installation failed after 3 attempts."
+          echo "TeX/PDF package installation failed after 2 attempts." | tee -a "$install_log"
+          tail -n 60 "$install_log"
           exit 1
 
       - name: Set up Python and audit dependencies
@@ -498,6 +514,7 @@ jobs:
         with:
           name: phase5-v1.1-build-logs-${{ github.run_id }}
           path: |
+            ${{ runner.temp }}/texinstall.log
             phase5/master/build/process.log
             phase5/master/build/pass1.log
             phase5/master/build/pass2.log
