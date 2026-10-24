@@ -174,3 +174,11 @@ The B20 history above is preserved; this update supersedes only its statements t
 - Source commit `850d2b546931dc21faef5a57b2de09d425090175`; strict CI run `40075893625` succeeded, configured layout/build gates passed, PDF page count 162. Publication commit `5606ac460e41c79dd746aa66a45448a69a12be34`. The PDF text has no literal `??` artifacts. This does not satisfy the outstanding scientific evidence gates.
 
 No authoritative plan/criteria or control-owned file was edited; no R4 work started. **R3 NOT PASSED.**
+
+## B21 provenance-backed bibliography reconciliation (2026-10-24)
+
+B21 (`arena/04fdf32e-le` @ `77769ef5116e79a6ca98f5ab414c81ae56aee93a`) establishes from the original recorded Drive archive that root member `povstenko2011.pdf` is the `.511931` fractional-Cattaneo paper; the archive contains no `.511929` member. The full archive SHA-256, member SHA-256, Drive ID, page/leaf map and inspection limits are preserved in `scientific-audit.md` and `literature-evidence-matrix.csv`. Eq. (29) is printed p. 101 / PDF leaf 6 and has source coefficient `zeta`; Appendix A begins p. 112 / leaf 17 and ends p. 113 / leaf 18. B21 reports close inspection of pp. 100–101 and 112–114, not a whole-article read. The exact Gamma-normalized coefficient remains OPEN/CONDITIONAL.
+
+`Povstenko2011Cattaneo` remains mapped to `.511931`; `Povstenko2011` remains the distinct `.511929` Dirichlet-problem record and is used only in general/radial contexts. B21's archive includes no `.511929` source. The prior local `Povstenko2016` metadata (2016 / ISBN `9783319296370` / `NO_DOI`) is preserved in `scientific-audit.md`; the bibliography entry is corrected to the authenticated 2015 copy (print ISBN `978-3-319-15334-6`, eISBN `978-3-319-15335-3`, DOI `10.1007/978-3-319-15335-3`). The key is retained for citation stability; no separate 2016 edition is asserted. Only the book copyright leaf was checked; no mathematical convention is verified.
+
+The previous LIT-0536 “metadata-only/not supplied” readiness snapshot is superseded for source availability by B21's archive-member provenance, but the authoritative plan/readiness criteria were not edited and no gap was closed. GAP-09 and all other mandatory gates remain open. **R3 remains NOT PASSED.** No R4 work started.
