@@ -27,3 +27,11 @@ User uploaded Papers_final_list.zip (56 files, 144 MB; names like majumdar1993, 
 
 ## Style
 Reply in Hinglish, short. Give prompts in code blocks for Arena/Brave. Keep token use low: no recaps, targeted greps, no full-PDF dumps.
+
+## UPDATE 2026-10-26 13:30 IST (supersedes "State" above where different)
+- Arena head db7db34 = [R3-LOCAL-RECOVERY]: 23 docs/CSV files under recovery/ + R3_DEEP_CLAIM_TRACEABILITY_RECOVERY_CHECKPOINT; no PDFs; private refs redacted. Audited OK. Its CI run 40285030356 FAILED at "Install TeX" (20-min timeout, infra flake; docs-only commit so PDF unchanged). Valid PDF = 26dffda build, 162 pp, 0 undefined. Do NOT rerun.
+- LOST/unlocated work from 24-25 Oct (96-claim traceability matrix, defect register 18 open [1 P0], D4/D5 decision packet, 43-test R3F/audit scripts): NOT on GitHub or Drive; Arena's 25 Oct session saw an empty checkout. A 155 MB archive le-working-state.tar.gz (pre-GAP-12, 2026-10-24) exists on user's/old-Arena machine. User decided: DROP it, move on with what exists.
+- Zips seen: le-arena-b5e608f8-le.zip and le-arena-04fdf32e-le.zip = identical to GitHub snapshots (26dffda / 77769ef). LE_R3_Recovery_Reference_Pack = 4 text notes only.
+- CURRENT STEP: Arena was given the R4a CLEAN-UP prompt (classify the 164 process-language rows A/B/C, remove ALL-CAPS tags/GAP/LIT/R3 ids from rendered text without hiding unverified claims; write phase5/reports/OPEN_CLAIMS_LEDGER.csv; Povstenko .511931 Eq.(29) uses zeta, no tau^a/Gamma(1+a) attribution; Sec 12 unsupported claims hedged/removed; GK .766 vs .778 distinct; pages <=162; add paths-ignore for recovery/**, R3_*.md, verification/** to workflow; commit "[R4A-CLEANUP] ..."). Awaiting handler to paste Arena's report. AUDIT it: forbidden-token grep on PDF text = 0, ledger class-C rows, Povstenko fix, CI pass, pages <=162, undefined 0, no Drive refs/PDFs added.
+- THEN: read Papers_final_list.zip (user must re-attach) -> FULLTEXT_FINDINGS_11 -> Brave ingest -> Arena R4b to turn OPEN_CLAIMS_LEDGER class B/C rows into source-backed text. Then page compaction to ~150, journal memo/proposal.
+- Token policy: user wants Supervisor (me) tokens low; Arena tokens unlimited => put heavy work (greps, big reads, drafts, checks) in Arena/Brave prompts; I only audit compactly.
