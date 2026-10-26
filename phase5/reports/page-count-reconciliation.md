@@ -1,4 +1,6 @@
-# Source and page-count reconciliation (v1.0 baseline → phase5 working build)
+# Historical source and page-count reconciliation (v1.0 baseline → earlier phase5 build)
+
+> **Historical snapshot:** this file records the earlier 146-page build `39753968114`; it is not the current count. Current CI run `40349268298` produced 129 pages. See [`build-status.md`](build-status.md).
 
 ## Observed page counts and limits
 

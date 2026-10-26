@@ -1,19 +1,52 @@
-# Phase5 v1.1 scientific-review audit workspace
+# Phase 5 — active review manuscript
 
-Versioned working copy of the manuscript. This is **not** a release or submission package. The phase4 source and tracked baseline PDF remain preserved; provenance and the 161-page vs reported 170-page artifact discrepancy are documented in `reports/version-provenance.md`.
+`phase5/` is the current working copy for **“Multiphysics Wave Mechanics in Generalized Continua.”** It is a review-manuscript draft, not a published or fully scientifically certified review.
+
+## Status
+
+- Manuscript/source build validation: [CI run 40349268298](https://github.com/vipin-oss/le/actions/runs/40349268298), successful; 129 PDF pages. The later repository-tidy commit is documentation/archive cleanup.
+- Engineering gates: zero undefined references/citations, zero overfull boxes above 1 pt, zero near-overfull boxes above 0.5 pt, and zero forbidden process-tag matches. The font and build checks also passed.
+- Build output: [`build_outputs/phase5-v1.1-master.pdf`](build_outputs/phase5-v1.1-master.pdf); overview contact sheets are in [`build_outputs/contact-sheets/`](build_outputs/contact-sheets/).
+- Scientific status: the classical local energy density and outward-positive flux have been derived and symbolically checked under stated assumptions. Generalized-model claims are not all independently verified. See the open-claim ledger, scientific audit, and [reports README](reports/README.md).
+- Submission readiness: **not passed**. Claim-level primary-source review, some model-specific derivations, figure source/licensing checks, and final-size proofreading remain open.
+
+The 129-page count is an engineering build result, not a measure of scientific completeness.
 
 ## Contents
 
-- `master/` — revised LaTeX source, v1.0 baseline PDF, local bibliography, build configuration, figures, and portable table inputs.
-- `tables/source/` — editable table sources mirrored into the master package.
-- `figures/source/` — 18 editable SVG figures and 18 generated vector PDFs.
-- `journal/` — generic article/supplement wrappers; not tied to a named journal and not compiled.
-- `references/`, `literature/` — inherited provenance/verification records, 95-item inventory, and search/extraction notes; not a new systematic search.
-- `scripts/` — conversion, inventory, figure validation, build and log-check scripts.
-- `reports/` — provenance, audit, literature/equation/figure registers, PDF thumbnails, and separate quality gates.
+| Path | Purpose |
+|---|---|
+| `master/` | Active LaTeX source, section files, editable tables, local bibliography, and current figure assets. Entry point: `master/main.tex`. |
+| `figures/source/` | Phase5 SVG figure sources and their generated vector PDFs. |
+| `tables/source/` | Editable table sources used by the master. |
+| `scripts/` | Inventory, figure validation, build, PDF/font, and strict log-gate scripts. |
+| `tools/` | Pinned Node renderer dependencies and Python audit requirements. |
+| `reports/` | Current authoritative claim/deletion ledgers, build status, and historical evidence reports. Start with `reports/README.md`. |
+| `literature/` | Literature inventory and authored review summaries; not publisher full text. |
+| `journal/` | Generic, uncompiled journal/supplement wrappers. |
+| `exports/` | Notes about archived source-only packages; current generated build outputs are under `build_outputs/`. |
+| `build_outputs/` | CI-published manuscript PDF and contact sheets. |
 
-## Status summary
+`phase4/` remains as a read-only v1.0 baseline and literature inventory used by phase5 audit/reconciliation scripts. It is not the active manuscript. Third-party full-text extraction files have been removed; their path-only exclusion record is `archive/EXCLUDED_SOURCE_TEXTS.csv`.
 
-**Not built; not scientifically verified as a whole; not submission-ready.** The 18 SVG-to-PDF conversions and static source scans passed. The available 161-page v1.0 PDF was surveyed at thumbnail scale; it is not the separately described 170-page artifact and is not a rendering of v1.1. Local `pdflatex`/`latexmk` are unavailable, so there is no phase5 PDF, final TeX log, page count, or final visual proof. The classical local energy density and outward-positive flux were re-derived under stated assumptions. Other model-family claims are explicitly conditional, unverified, or open; see `reports/scientific-audit.md` and `reports/equation-audit.csv`.
+## Build
 
-See `reports/build-status.md`, `reports/quality-gates.md`, and `reports/version-provenance.md` before using or packaging any artifact. Do not describe this workspace as a completed audit or final review.
+CI is defined by [`.github/workflows/latex-build.yml`](../.github/workflows/latex-build.yml). It uses a prebuilt TeX Live container; pushes to `arena/**`, pull requests targeting `main`, and manual workflow dispatches run the strict build.
+
+For a local Linux build, install complete TeX Live (`latexmk`, `pdflatex`, `bibtex`, `pdffonts`), Python 3 with `venv`, Node.js 20/npm, Poppler utilities, and DejaVu fonts. From the repository root:
+
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r phase5/tools/requirements-audit.txt
+npm ci --prefix phase5/tools
+bash phase5/scripts/build_master.sh
+```
+
+The output and logs are written under `phase5/master/build/`. A green engineering build does not verify every scientific claim.
+
+## Which records are authoritative
+
+- [`reports/OPEN_CLAIMS_LEDGER.csv`](reports/OPEN_CLAIMS_LEDGER.csv) — authoritative current register of open claims (439 rows: B=144, C=295).
+- [`reports/R4A_DELETION_AUDIT.csv`](reports/R4A_DELETION_AUDIT.csv) — authoritative current record of removed text (593 rows, zero `NONE` identifiers).
+- [`reports/build-status.md`](reports/build-status.md) — current engineering-build status. Older status, page-reconciliation, and Crossref files are historical snapshots; see [`reports/README.md`](reports/README.md).

@@ -1,4 +1,6 @@
-# Separate quality gates — phase5 v1.1 source
+# Historical quality-gate report — phase5 v1.1 snapshot
+
+> **Historical snapshot:** this report describes the earlier 146-page run `39753968114`. It is not the current build status. The current 129-page engineering PASS is run `40349268298`; see [`build-status.md`](build-status.md).
 
 ## Engineering / build — STRICT CI PASSED; CONTACT-SHEET OVERVIEW REVIEW COMPLETE
 

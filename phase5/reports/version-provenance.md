@@ -1,9 +1,11 @@
 # Version and provenance record
 
-**Working branch:** `arena/40393d9f-le`<br>
-**Working version:** `phase5 v1.1 source-audit` (work-in-progress; strict CI compile passed, not released or scientifically validated)<br>
-**v1.0 source of truth:** tracked phase4 source tree and its tracked PDF; both remain unmodified by phase5 repair work<br>
-**Versioned working copy:** `phase5/master/`, with portable table inputs in `phase5/master/tables/source/` and figure assets in `phase5/master/figures/source/`.
+**Current builder branch:** `arena/b5e608f8-le`<br>
+**Current working version:** phase5 v1.1; a 129-page strict CI build passed in run `40349268298` on source commit `f007c7e8e28ca39482aa8480a3f6a6e8afd14cc9`.<br>
+**Active source:** `phase5/master/`, with portable table inputs in `phase5/master/tables/source/` and figure assets in `phase5/master/figures/source/`.<br>
+**Baseline:** the v1.0 source/PDF in `phase4/` and `phase5/master/v1.0-baseline.pdf` are historical comparison artifacts; phase4 is also read by current audit/reconciliation scripts.
+
+The dated run IDs, branches, and 146-page v1.1 metrics in the sections below document earlier states. They are retained as provenance, not current build status. For current metrics use [`build-status.md`](build-status.md).
 
 ## What the baseline represents
 
@@ -17,7 +19,7 @@
 
 The phase5 LaTeX source was copied from `phase4/manuscript/`; the original phase4 source is preserved. The manuscript initially referenced PDF figures while the source repository held SVGs. The 18 inherited SVGs were copied to the phase5 working tree and rendered with the pinned npm vector converter into corresponding PDFs. `master/figures/rendered/` retains pre-repair phase4 SVG snapshots for comparison; despite the directory name these are SVG sources, not rendered PDFs. The generated PDFs, mirrored SVGs, and eight editable tables are inside the phase5 manuscript package so relative paths are portable. SVG authorship/licensing provenance remains undocumented and is flagged in `reports/figure-audit.csv` rather than assumed.
 
-Repairs in `phase5/scripts/repair_source.py` and subsequent source edits apply to phase5 only. The full file-by-file provenance, changes, and unresolved claims are documented in the phase5 scripts and audit registers. `phase5-v1.1-source-audit.zip` is a source/audit snapshot only; it contains no compiled phase5 PDF.
+Repairs in `phase5/scripts/repair_source.py` and subsequent source edits apply to phase5 only. The full file-by-file provenance, changes, and unresolved claims are documented in the phase5 scripts and audit registers. `../../archive/deliverables/phase5-v1.1-source-audit.zip` is a source/audit snapshot only; it contains no compiled phase5 PDF.
 
 ## Do not conflate these states
 

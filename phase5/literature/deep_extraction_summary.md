@@ -1,4 +1,6 @@
-# Deep Scientific Extraction Summary — Energy Flux & Conservation Verification
+# Historical extraction summary — energy flux and conservation
+
+> **Availability notice (2026-10-26):** this is an authored historical synthesis, not publisher full text. The 51 third-party full-text extraction files formerly referenced by this project were removed from Git; their paths are recorded in `archive/EXCLUDED_SOURCE_TEXTS.csv`. Treat claims in this summary as historical leads, not as current source verification.
 
 ## Overview
 

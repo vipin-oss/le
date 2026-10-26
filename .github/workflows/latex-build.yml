@@ -3,9 +3,34 @@ name: Phase5 LaTeX build
 on:
   push:
     branches: ['arena/**']
-    # The build publishes only generated PDFs/contact sheets and R3_STATUS; ignore
-    # that bot commit so one source push results in one CI run, not a second build.
-    paths-ignore: ['recovery/**', 'R3_*.md', 'verification/**', 'phase5/build_outputs/**', 'phase5/reports/R3_STATUS.md']
+    # Ignore archived history and generated outputs; source, manuscript, and workflow changes still build.
+    paths-ignore:
+      - 'archive/**'
+      - 'recovery/**'
+      - 'R3_*.md'
+      - 'phase1/**'
+      - 'phase2/**'
+      - 'phase3/**'
+      - 'data/**'
+      - 'figures/**'
+      - 'references/**'
+      - 'scripts/**'
+      - 'search_log/**'
+      - 'DELIVERABLES.md'
+      - 'Makefile'
+      - 'domain_taxonomy.md'
+      - 'existing_review_analysis.md'
+      - 'five_candidate_topics.md'
+      - 'recommended_research_direction.md'
+      - 'research_profile.md'
+      - 'source_verification_log.csv'
+      - 'topic_comparison_matrix.csv'
+      - '*.zip'
+      - 'verification/**'
+      - 'phase5/build_outputs/**'
+      - 'phase5/figures/source/*.pdf'
+      - 'phase5/master/figures/source/*.pdf'
+      - 'phase5/reports/R3_STATUS.md'
   pull_request:
     branches: [main]
   workflow_dispatch:
