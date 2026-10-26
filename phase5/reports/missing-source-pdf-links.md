@@ -16,12 +16,19 @@ The user-provided ZIP [`1.1722351.zip`](https://drive.google.com/file/d/1JPASoF5
 | A. Cemal Eringen, “Theory of Nonlocal Thermoelasticity” (1974) | `10.1016/0020-7225(74)90033-0` | Read; pp. 1063–1068 support nonlocal thermoelastic constitutive functionals and distance-dependent influence functions. Exact manuscript kernel-average formula/assumptions not verified. | [Drive ZIP](https://drive.google.com/file/d/1JPASoF5ztIk_T4saBBlZPBa9VRteTesA/view) · member `0020-72252990033-0.pdf` |
 | R. S. Dhaliwal and H. H. Sherief, “Generalized Thermoelasticity for Anisotropic Media” (1980) | `10.1090/qam/575828` | Read; supports the topic of generalized thermoelastic equations for anisotropic media, not the manuscript's geographic attribution. | [Drive ZIP](https://drive.google.com/file/d/1JPASoF5ztIk_T4saBBlZPBa9VRteTesA/view) · member `qam%2F575828.pdf` |
 
-## Unresolved Tzou record — do not download under the current citation
+## Additional Tzou PDF read and unresolved Tzou records
 
-The matrix currently labels EXT-003 as H. C. Tzou (1996), “Dual-phase-lag heat conduction,” DOI `10.1115/1.2823851`. That DOI did not resolve, and the title is only inherited inventory wording—not an exact title confirmed from a primary source. Do not use it as a verified article citation or treat a similarly titled paper as a match.
 
-A separate Tzou book is identifiable as *Macro- to Micro-Scale Heat Transfer: The Lagging Behavior* (CRC Press, 1996; ISBN 978-1-56032-435-5). It is a **candidate identity only**, not yet confirmed to be the intended EXT-003 source and not a replacement approved for the manuscript: [Google Books record](https://books.google.com/books/about/Macro_To_Micro_Scale_Heat_Transfer.html?id=J1bzz7sDIn4C) · [Internet Archive library record](https://archive.org/details/macrotomicroscal0000tzou). The book record has no DOI established here. Confirm the intended reference before requesting or citing a PDF.
+The user subsequently supplied `1.2822329 (1).pdf`. Its text confirms the 1995 article below; the temporary Drive extraction copy was moved to trash after review. The file is not added to Git. The DOI is matched from the attachment filename and project record, not asserted as printed in the article.
+
+| Exact title confirmed from PDF | DOI | Audit disposition | PDF / access link |
+|---|---|---|---|
+| D. Y. Tzou, “A Unified Field Approach for Heat Conduction From Macro- to Micro-Scales” (1995) | `10.1115/1.2822329` | Read; pp. 8–10, Eqs. (1)–(5), (15), (17) support separate phase lags, classical limits, and the cited phonon-law parameter mapping within the paper's assumptions. | User attachment `1.2822329 (1).pdf` |
+
+The unresolved matrix entries are EXT-003 (1996), current inventory label “Dual-phase-lag heat conduction,” DOI `10.1115/1.2823851`, and EXT-004 (1997), legacy label “Three-phase-lag heat transfer,” DOI `10.1016/S0017-9310(97)00177-3`. Neither exact article title/DOI pairing is confirmed from a primary source. EXT-003’s DOI resolver returned “DOI Not Found”; EXT-004 is retained as a disputed legacy lead, not a verified TPL primary source. Do not use either as a verified article citation or treat a similarly titled paper as a match.
+
+A separate Tzou book is listed in the bibliography as *Macro-to-microscale heat transfer: the lagging behavior* (CRC Press, 1997; ISBN 978-0-8493-8493-8), with no DOI confirmed; it is not the same item as EXT-004. An earlier 1996 book record, *Macro- to Micro-Scale Heat Transfer: The Lagging Behavior* (ISBN 978-1-56032-435-5), remains a candidate identity only and is not confirmed to be EXT-003 or an approved replacement. [Google Books record](https://books.google.com/books/about/Macro_To_Micro_Scale_Heat_Transfer.html?id=J1bzz7sDIn4C) · [Internet Archive library record](https://archive.org/details/macrotomicroscal0000tzou).
 
 ## Remaining audit work
 
-Continue resolving the unresolved Tzou/EXT-003 source identity and check any other OPEN / UNVERIFIED claims against their original source pages. A source-PDF identity match alone is not claim verification; retain the bounded page/equation scope and caveats in the matrix and scientific audit. Do not change manuscript content without separate authorization.
+Continue resolving the unresolved Tzou EXT-003/EXT-004 source identities and check any other OPEN / UNVERIFIED claims against their original source pages. A source-PDF identity match alone is not claim verification; retain the bounded page/equation scope and caveats in the matrix and scientific audit. Do not change manuscript content without separate authorization.
