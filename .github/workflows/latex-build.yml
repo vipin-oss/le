@@ -22,11 +22,32 @@ jobs:
     # Defense in depth if a generated-output push ever escapes paths-ignore.
     if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    container:
+      image: texlive/texlive:latest
     env:
       SOURCE_DATE_EPOCH: '1700000000'
       FORCE_SOURCE_DATE: '1'
     steps:
+      - name: Install PDF inspection utilities
+        id: pdf_tools
+        run: |
+          set -euo pipefail
+          install_log="${RUNNER_TEMP}/pdf-tools-install.log"
+          install_started=$(date +%s)
+          {
+            apt-get update -o Acquire::Retries=5 -o Acquire::http::Timeout=60 -o Acquire::https::Timeout=60
+            DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+              ca-certificates git python3 python3-venv lsb-release fonts-dejavu-core poppler-utils
+          } 2>&1 | tee "$install_log"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          command -v git
+          command -v python3
+          command -v lsb_release
+          command -v pdfinfo
+          command -v pdftotext
+          install_finished=$(date +%s)
+          echo "install_seconds=$((install_finished - install_started))" >> "$GITHUB_OUTPUT"
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -199,71 +220,13 @@ jobs:
             --status-report phase5/reports/R3_STATUS.md \
             2>&1 | tee phase5/reports/R3F_APPLY.log
 
-      - name: Cache TeX apt package archives
-        uses: actions/cache@v4
-        with:
-          path: ${{ runner.temp }}/tex-apt-archives
-          key: tex-apt-${{ runner.os }}-${{ runner.arch }}-v1
-
-      - name: Install TeX and PDF tools
-        timeout-minutes: 30
+      - name: Create Python audit virtual environment
         run: |
           set -euo pipefail
-          install_log="${RUNNER_TEMP}/texinstall.log"
-          apt_archives="${RUNNER_TEMP}/tex-apt-archives"
-          mkdir -p "${apt_archives}/partial"
-          chmod 777 "${apt_archives}" "${apt_archives}/partial"
-          : > "$install_log"
-          for attempt in 1 2; do
-            echo "TeX/PDF package installation attempt ${attempt}/2" | tee -a "$install_log"
-            if ATTEMPT="$attempt" APT_ARCHIVES="$apt_archives" timeout --signal=TERM --kill-after=10s 780s \
-              bash -euo pipefail -c '
-                if [[ "$ATTEMPT" -eq 2 ]]; then
-                  echo "Switching apt sources from azure.archive.ubuntu.com to archive.ubuntu.com"
-                  sudo find /etc/apt -type f \
-                    \( -name "*.list" -o -name "*.sources" \) \
-                    -exec sed -i "s/azure\\.archive\\.ubuntu\\.com/archive.ubuntu.com/g" {} +
-                fi
-                sudo rm -rf /var/lib/apt/lists/*
-                sudo apt-get update \
-                  -o Acquire::Retries=5 \
-                  -o Acquire::http::Timeout=30 \
-                  -o Acquire::https::Timeout=30
-                sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-                  -o Acquire::Retries=5 \
-                  -o Dir::Cache::archives="$APT_ARCHIVES" \
-                  latexmk \
-                  texlive-latex-base \
-                  texlive-latex-recommended \
-                  texlive-latex-extra \
-                  texlive-science \
-                  texlive-bibtex-extra \
-                  texlive-fonts-recommended \
-                  texlive-pictures \
-                  fonts-dejavu-core \
-                  poppler-utils
-              ' 2>&1 | tee -a "$install_log"; then
-              echo "TeX/PDF package installation succeeded on attempt ${attempt}." | tee -a "$install_log"
-              exit 0
-            else
-              result=$?
-              echo "Attempt ${attempt}/2 failed (exit ${result}); last 60 install-log lines:" | tee -a "$install_log"
-              tail -n 60 "$install_log"
-            fi
-            if [[ "${attempt}" -lt 2 ]]; then
-              sleep 5
-            fi
-          done
-          echo "TeX/PDF package installation failed after 2 attempts." | tee -a "$install_log"
-          tail -n 60 "$install_log"
-          exit 1
-
-      - name: Set up Python and audit dependencies
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          cache: pip
-          cache-dependency-path: phase5/tools/requirements-audit.txt
+          python_venv="${RUNNER_TEMP}/phase5-audit-venv"
+          python3 -m venv "$python_venv"
+          echo "${python_venv}/bin" >> "$GITHUB_PATH"
+          "${python_venv}/bin/python" --version
 
       - name: Install pinned equation-audit dependency
         run: python -m pip install -r phase5/tools/requirements-audit.txt
@@ -353,6 +316,8 @@ jobs:
         if: always()
         env:
           RUN_ID: ${{ github.run_id }}
+          PDF_TOOLS_INSTALL_SECONDS: ${{ steps.pdf_tools.outputs.install_seconds }}
+          BUILD_SECONDS: ${{ steps.strict_build.outputs.build_seconds }}
         run: |
           python3 - <<'PY'
           import csv
@@ -421,8 +386,17 @@ jobs:
               except (OSError, subprocess.CalledProcessError):
                   pass
 
+          install_seconds = os.environ.get('PDF_TOOLS_INSTALL_SECONDS', 'unavailable')
+          build_seconds = os.environ.get('BUILD_SECONDS', 'unavailable')
+          install_build_seconds = 'unavailable'
+          if install_seconds.isdigit() and build_seconds.isdigit():
+              install_build_seconds = str(int(install_seconds) + int(build_seconds))
+
           values = {
               'Run ID': os.environ.get('RUN_ID', 'unavailable'),
+              'PDF tools install seconds': install_seconds,
+              'TeX build seconds': build_seconds,
+              'Install + build seconds': install_build_seconds,
               'PDF pages': pages,
               'Undefined references/citations': undefined_refs,
               'Forbidden privacy-token occurrences in pdftotext': str(forbidden_count),
@@ -656,7 +630,7 @@ jobs:
         with:
           name: phase5-v1.1-build-logs-${{ github.run_id }}
           path: |
-            ${{ runner.temp }}/texinstall.log
+            ${{ runner.temp }}/pdf-tools-install.log
             phase5/master/build/process.log
             phase5/master/build/pass1.log
             phase5/master/build/pass2.log
