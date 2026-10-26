@@ -237,6 +237,10 @@ B21 resolves the earlier “metadata-only/not supplied” discrepancy for LIT-05
 
 This bounded audit used Google Drive PDF searches and extracted text, not repository copies or secondary metadata, to identify original-source copies. Two candidate Drive folders previously inventoried (`Research papers`, 13 direct PDFs; `Collected from My Folders`, 74 direct PDFs) are not exhaustive inventories. Full-text DOI searches frequently returned papers that merely cite the target, so a result was counted as a source only after the PDF title/DOI or first-page bibliographic identity and its body text were checked. A source being present is not by itself claim verification. No `R4.zip` was opened, inspected, extracted, or used. No manuscript content or bibliography file was changed.
 
+### User-supplied Drive archive (source files present; claims still unverified)
+
+The user supplied `1.1722351.zip` in Drive (ID `1JPASoF5ztIk_T4saBBlZPBa9VRteTesA`; 2,637,788 bytes; [Drive link](https://drive.google.com/file/d/1JPASoF5ztIk_T4saBBlZPBa9VRteTesA/view)). I downloaded and inspected **only this ZIP**. Its member listing contains four PDFs whose filenames correspond to the four DOI records previously not located: `1.1722351.pdf` (Biot 1956), `0020-72252990050-x.pdf` (Eringen 1972), `0020-72252990033-0.pdf` (Eringen 1974), and `qam%2F575828.pdf` (Dhaliwal & Sherief 1980). The four files were extracted locally for identification, but their PDF page text was not read; filenames/member presence do not establish article identity or claim support. Matrix notes now record this source availability while keeping all four claims OPEN / UNVERIFIED and `primary_source_checked=NO`. `R4.zip` was not opened, downloaded, listed, extracted, or used.
+
 ### Source PDFs read and bounded claim matches
 
 | Matrix record | Drive PDF / identity | Direct evidence read | Disposition in matrix |
@@ -251,14 +255,10 @@ These three bounded claim matches do not certify all uses of the same citations 
 
 ### Papers not located as source PDFs in Drive searches to date
 
-The following targets were not identified as their own original source PDF in the Drive searches performed to date. Some search results were papers citing them; those were rejected as source matches. Because the Drive folders are not confirmed exhaustive and full-text indexing can be imperfect, “not located” is not a claim of absence from every possible Drive location. Titles and DOIs below are the project’s current bibliographic records (not metadata newly inferred from a citing PDF):
+The following target remains unresolved as an original source PDF in the Drive searches performed to date. The newly supplied ZIP listed above does not contain it. Because the Drive folders are not confirmed exhaustive and full-text indexing can be imperfect, “not located” is not a claim of absence from every possible Drive location. The title/DOI below is the current project record, not a primary-source-verified identity:
 
 | Title | DOI |
 |---|---|
-| “Thermoelasticity and irreversible thermodynamics” — M. A. Biot (1956) | `10.1063/1.1722351` |
-| “Linear theory of nonlocal elasticity and dispersion of plane waves” — A. C. Eringen (1972) | `10.1016/0020-7225(72)90050-x` |
-| “Theory of nonlocal thermoelasticity” — A. C. Eringen (1974) | `10.1016/0020-7225(74)90033-0` |
-| “Generalized thermoelasticity for anisotropic media” — R. S. Dhaliwal & H. H. Sherief (1980) | `10.1090/qam/575828` |
-For each, Drive search results were insufficient to identify and read the target source itself. Do not treat those entries as claim-verified, and do not substitute a citation-bearing PDF. Continue searching other Drive collections and aliases before making a final exhaustive-absence statement.
+No target-source PDF has been identified for this record. Do not treat it as claim-verified or substitute a citation-bearing PDF. Continue resolving the identity and searching other Drive collections before making a final absence statement.
 
 The additional EXT-003/Tzou (1996) record, DOI `10.1115/1.2823851`, was also not located as an original source PDF. Its current matrix title, “Dual-phase-lag heat conduction,” is only inventory wording, not a title verified from the source. A DOI resolver check returned “DOI Not Found,” so the record's exact title/identifier pairing remains unresolved; do not present that provisional wording as the exact published title or count this as a conclusively identified missing paper.
