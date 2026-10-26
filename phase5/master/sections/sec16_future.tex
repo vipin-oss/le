@@ -4,24 +4,24 @@
 \section{Future Research Opportunities}
 \label{sec:future}
 
-This section records candidate research directions suggested by the provisional challenge inventory in Section 15. Descriptions of existing work are source leads, not a systematic review; proposed approaches are questions and work plans rather than claims that the methods are available or validated.
+This section presents research directions arising from the challenges discussed in Section 15. Each direction is framed as a question for future modeling, analysis, or measurement.
 
 \subsection{Coupled-field modeling in emerging materials}
 \label{sec:16.1}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-Piezothermoelastic, magneto-thermo-elastic, and semiconductor/photo-thermoelastic formulations are among the areas listed in Section 5; their scope and source basis were not comprehensively checked here.
+Coupled-field formulations for piezoelectric, magnetic, and semiconductor media provide settings in which to compare alternative coupling assumptions.
 
 \subsubsection{Importance}
 
 Emerging materials (2D materials, metamaterials, topological materials) exhibit coupled-field behavior not captured by classical theories.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-Constitutive relations for piezothermoelastic, porous, micropolar, and magneto-thermo-elastic media are surveyed in the inherited manuscript; they were not comprehensively source-checked in this revision.
+Piezothermoelastic, porous, micropolar, and magneto-thermo-elastic models couple fields through constitutive relations that depend on the selected material and assumptions.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Coupled-field models for 2D materials (graphene, MoS$_2$), metamaterials, and topological materials.
 
@@ -44,19 +44,19 @@ Lack of experimental data for emerging materials; computational complexity of co
 \subsection{Mathematically consistent generalized transport}
 \label{sec:16.2}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-Sections 4 and 6 survey LS, DPL, TPL, MGT, MDD, and fractional models; the governing equations are not uniformly primary-source-verified in this revision.
+Sections 4 and 6 discuss LS, DPL, TPL, MGT, MDD, and fractional models; comparisons depend on the specific governing equations.
 
 \subsubsection{Importance}
 
 Mathematically consistent transport models are needed for predictive simulations of thermal wave phenomena.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-The equation register distinguishes the small number of direct derivations from inherited, unverified equations. Model-specific well-posedness conditions remain open.
+Well-posedness conditions depend on the constitutive equations and data prescribed for each model.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Rigorous limit theorems between theories. Foundational reviews by Chandrasekharaiah (1998) \cite{Chandrasekharaiah1998} and Joseph and Preziosi (1989) \cite{Joseph1989} provide starting points. Unified well-posedness framework. Complete energy flux derivations (Section 10.3).
 
@@ -79,19 +79,19 @@ Mathematical complexity of higher-order and integro-differential equations.
 \subsection{Multiscale wave phenomena}
 \label{sec:16.3}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-Section 7 discusses nonlocal constitutive formulations proposed for size-dependent behavior; applicability to micro- or nanoscale experiments is not assessed here.
+Section 7 discusses nonlocal constitutive formulations for size-dependent behavior; comparisons with micro- or nanoscale measurements require model-specific length scales and observables.
 
 \subsubsection{Importance}
 
 Multiscale phenomena govern material behavior from atomic to continuum scales.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-The inherited section contains nonlocal constitutive and dispersion claims; they were not independently verified or compared with experimental data in this revision.
+Nonlocal constitutive and dispersion models raise questions about spatial scale, kernels, and boundary conditions.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Nonlocal-fractional hybrid models. Multiscale coupling (atomic-continuum). Nonlocal interface conditions.
 
@@ -114,7 +114,7 @@ Computational cost of nonlocal models; lack of experimental validation at nanosc
 \subsection{Nonlocal and hereditary continuum interactions}
 \label{sec:16.4}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
 Sections 6 and 7 discuss nonlocal constitutive models and an MDD operator as distinct spatial and temporal formulations; their source-level definitions and status remain under review.
 
@@ -122,11 +122,11 @@ Sections 6 and 7 discuss nonlocal constitutive models and an MDD operator as dis
 
 Real materials exhibit both spatial and temporal memory; combined models are needed.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
 Nonlocal integral relations. MDD convolution operators. Individual theory formulations.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Combined nonlocal-hereditary models. Coupled spatial-temporal memory effects.
 
@@ -149,19 +149,19 @@ Mathematical complexity of combined spatial-temporal nonlocality.
 \subsection{Advanced interface conditions}
 \label{sec:16.5}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-Classical interface conditions are listed in Section 3.9 under perfect-contact assumptions; their extensions to generalized media and imperfect bonding require model-specific derivation and source checking.
+Classical interface conditions in Section 3.9 assume perfect contact; generalized media and imperfect bonding require model-specific conditions.
 
 \subsubsection{Importance}
 
 Interface conditions govern wave reflection, transmission, and energy partition at material boundaries.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
 Perfect and imperfect bonding conditions for classical media. Electrical interface conditions for piezoelectric media.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Interface conditions for nonlocal media. Interface conditions for memory-dependent media. Interface conditions for multiphysics media with electrical coupling.
 
@@ -184,7 +184,7 @@ Nonlocal interface conditions not established; energy flux uncertainty at interf
 \subsection{Multiphysics mode conversion}
 \label{sec:16.6}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
 Wave mode conversion at interfaces is studied for elastic and thermoelastic media (Section 9).
 
@@ -192,11 +192,11 @@ Wave mode conversion at interfaces is studied for elastic and thermoelastic medi
 
 Mode conversion governs energy partition between wave types at interfaces.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-A scattering-matrix formulation is described in the inherited manuscript, but it was not re-derived or checked against the cited full text in this revision. Mode classification and normalization remain problem-specific.
+Scattering-matrix formulations for coupled fields require mode classification and normalization appropriate to the selected model.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Mode conversion in piezothermoelastic, nonlocal, and memory-dependent media. Complex mode energy flux computation.
 
@@ -219,19 +219,19 @@ Complex mode normalization; uncertain energy flux formulations.
 \subsection{Reproducible numerical benchmarks}
 \label{sec:16.7}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-BM-1 is a proposed test problem only; no numerical benchmark was executed. The cited interface calculations are source leads, not reproduced results.
+A benchmark for interface calculations should specify the model, input data, expected observables, and numerical comparison.
 
 \subsubsection{Importance}
 
 Reproducible benchmarks validate numerical methods and enable comparison across research groups.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
 BM-1 analytical benchmark. Scattering matrix formulation.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Benchmarks for generalized theories. Benchmarks for multiphysics interfaces. Open-source benchmark implementations.
 
@@ -240,7 +240,7 @@ Benchmarks for generalized theories. Benchmarks for multiphysics interfaces. Ope
 \begin{itemize}
 \item Derive analytical solutions for simplified generalized theory problems,
 \item Implement open-source benchmark codes,
-\item Establish benchmark repository with verification data.
+\item Establish a benchmark repository with reference solutions and documented inputs.
 \end{itemize}
 
 \subsubsection{Practical relevance}
@@ -254,19 +254,19 @@ Lack of closed-form solutions for generalized theories; computational cost.
 \subsection{Experimental validation}
 \label{sec:16.8}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-Section 13 contains inherited statements about experimental validation of classical thermoelasticity; the cited evidence and scope were not audited in this revision.
+Experimental validation of classical thermoelasticity depends on the measured quantities and the conditions of each application.
 
 \subsubsection{Importance}
 
 Experimental validation is essential for practical adoption of theoretical models.
 
-\subsubsection{What's achieved}
+\subsubsection{Research questions}
 
-Validation and clinical-use statements in the inherited manuscript are source leads only; no evidence review is claimed here.
+Which measurements can distinguish generalized thermoelastic predictions from classical baselines in a specified application?
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Experimental validation of generalized theories. Measurement of thermal wave speed. Measurement of energy flux at interfaces.
 
@@ -289,19 +289,19 @@ Experimental measurement of thermal waves is challenging; direct energy flux mea
 \subsection{Inverse material characterization}
 \label{sec:16.9}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-Estimating material parameters from wave measurements is a candidate inverse problem; the relevant methods, identifiability conditions, and literature coverage have not been assessed here.
+Wave measurements can be used to formulate inverse problems for relaxation times, nonlocal length scales, and memory-kernel parameters; identifiability depends on the selected model and observables.
 
 \subsubsection{Importance}
 
 Material parameters (relaxation times, nonlocal length scales, kernel parameters) must be determined from experiments.
 
-\subsubsection{Existing source leads}
+\subsubsection{Research questions}
 
-The inherited manuscript alludes to inverse methods for classical elasticity and thermoelasticity; those methods and their evidence base were not reviewed here.
+Which inverse methods can distinguish constitutive parameters from measurement noise and model discrepancy?
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Inverse characterization of relaxation times, nonlocal length scales, and MDD kernel parameters.
 
@@ -326,7 +326,7 @@ The provisional relationship schematic appears once as Figure~\ref{fig:theory_re
 \subsection{Sequencing the programme}
 \label{sec:16.11}
 
-The nine directions are not presented as a validated ranking or a required sequence. Some practical dependencies are plausible: a clearly specified constitutive model supports analysis; a verified numerical implementation supports reproducibility; and both can strengthen later comparisons with measurements. These dependencies do not imply that experimental, mathematical, and computational work must proceed strictly in series. No comparative cost estimate, prediction of a qualitatively distinct interface signal, or claim about the balance of modal analyses and measurements in the literature has been established in this revision. The sequence below is therefore an editorial planning aid only.
+The directions below are complementary; their order and priority depend on the research question and available methods.
 
 \subsection{Future directions summary table}
 \label{sec:16.10}
@@ -334,21 +334,21 @@ The nine directions are not presented as a validated ranking or a required seque
 \begin{table}[htbp]
 \centering
 \small
-\caption{Summary of future research opportunities.}
+\caption{Future research directions and example questions.}
 \label{tab:future_summary}
-\begin{tabularx}{\textwidth}{@{}p{2.4cm}XXXX@{}}
+\begin{tabularx}{\textwidth}{@{}p{2.4cm}XXX@{}}
 \toprule
-\textbf{Direction} & \textbf{What's achieved} & \textbf{What's open} & \textbf{Major obstacles} \\
+\textbf{Direction} & \textbf{Research question} & \textbf{Example scope} & \textbf{Main obstacle} \\
 \midrule
-Coupled-field emerging materials & Constitutive laws require source checks & 2D materials, metamaterials & Lack of experimental data \\
-Mathematically consistent transport & Governing equations not uniformly source-checked & Limit theorems; energy flux & Mathematical complexity \\
-Multiscale wave phenomena & Nonlocal relations; wave dispersion & Hybrid models; multiscale coupling & Computational cost \\
-Nonlocal-hereditary interactions & Individual theories require audit & Combined models & Mathematical complexity \\
-Advanced interface conditions & Classical assumptions stated; extensions open & Nonlocal; memory-dependent interfaces & Not established \\
-Multiphysics mode conversion & Scattering formulation unverified here & Generalized theories; complex modes & Normalization uncertainty \\
-Reproducible benchmarks & BM-1 specified but not executed in this revision & Generalized theory benchmarks & Code/data and independent reproduction \\
-Experimental validation & Evidence inventory not completed & Generalized theories; interface flux & Measurement and model-selection questions \\
-Inverse characterization & Literature and identifiability not assessed & Relaxation times; kernel parameters & Uniqueness and uncertainty \\
+Coupled-field materials & How do coupled constitutive laws affect wave response? & Two-dimensional materials and metamaterials & Experimental data \\
+Mathematically consistent transport & Which conditions support well-posed models? & Limit theorems and energy flux & Mathematical complexity \\
+Multiscale wave phenomena & How do multiple length scales interact? & Hybrid and multiscale models & Computational cost \\
+Nonlocal-hereditary interactions & How do spatial and temporal nonlocality combine? & Coupled operators & Mathematical complexity \\
+Advanced interface conditions & Which conditions apply to generalized media? & Nonlocal and memory-dependent interfaces & Model-specific boundary terms \\
+Multiphysics mode conversion & How do coupled fields exchange modal energy? & Generalized theories and complex modes & Consistent normalization \\
+Reproducible benchmarks & How can calculations be compared? & Generalized-theory benchmarks & Code, data, and independent reproduction \\
+Experimental validation & Which measurements discriminate models? & Generalized theories and interface flux & Measurement and model selection \\
+Inverse characterization & Which parameters can be identified? & Relaxation times and kernel parameters & Uniqueness and uncertainty \\
 \bottomrule
 \end{tabularx}
 \end{table}

@@ -89,19 +89,13 @@ where $\beta_{ij}$ is the thermal stress coefficient and $p_i$ is the pyroelectr
 
 The coupled system consists of the equation of motion \eqref{eq:5.7}, the heat conduction equation (theory-dependent: classical, LS, GL, GN, DPL, TPL, MDD, etc.), and the charge conservation equation \eqref{eq:5.10}. All three fields are coupled through the constitutive relations \eqref{eq:5.6} and \eqref{eq:5.9}: temperature changes induce thermal stresses and pyroelectric effects; mechanical deformation generates piezoelectric polarization; electric fields produce electrostrictive deformation.
 
-% R3D-BEGIN:MINDLIN
-\paragraph{Thermopiezoelectric baseline.} Mindlin (1974) states the classical three-dimensional linear thermopiezoelectric equations (momentum balance, $D_{i,i}=0$, entropy balance, Fourier heat flux $h_i=-K_{ij}\theta_{,j}$), which are the starting point of his plate reduction, together with linear constitutive equations from an electric Gibbs function \cite{Mindlin1974Thermopiezo}\allowbreak{} (PRIMARY-SOURCE-CHECKED).
+\paragraph{Thermopiezoelectric baseline.} Mindlin (1974) states the classical three-dimensional linear thermopiezoelectric equations (momentum balance, $D_{i,i}=0$, entropy balance, Fourier heat flux $h_i=-K_{ij}\theta_{,j}$), which are the starting point of his plate reduction, together with linear constitutive equations from an electric Gibbs function \cite{Mindlin1974Thermopiezo}\allowbreak{}.
 
-Generalized piezothermoelastic models replace Fourier's law with a lagged or memory law. Mindlin's Fourier system is the classical limiting-case check: test each generalized model using its own parameters and equations rather than assuming the limit. Section 5 now has 9 eligible read sources; primary sources remain limited for the fully coupled piezo-thermal-void interaction, and results for separate constitutive ingredients are not merged into a new coupled law.
-% R3D-END:MINDLIN
+Generalized piezothermoelastic models may use lagged or memory-dependent heat laws. Mindlin’s Fourier system provides a classical comparison point; each generalized model must be considered with its own equations and parameters.
 
-% R3F-BEGIN:READ-SOURCES
-Chandrasekharaiah's GL-type thermopiezoelectric model retains Fourier-form flux with extra constants; $a=s=b_i=0$ recovers Mindlin, and suppressing piezoelectric effects recovers Green--Lindsay (PRIMARY-SOURCE-CHECKED) \cite{Chandrasekharaiah1984}.
+Coupled thermopiezoelectric formulations combine thermal, mechanical, and electrical fields; their constitutive details depend on the selected model.
 
-Nowacki's classical Fourier thermopiezoelectric theory establishes uniqueness from the energy balance and states generalized Hamilton and reciprocity theorems (PRIMARY-SOURCE-CHECKED) \cite{Nowacki1978}.
-
-The voids ingredient remains distinct from piezoelectric coupling: the nonlinear parent theory treats solid-like porous materials with non-conducting heat and associates volume-fraction change with internal dissipation \cite{Nunziato1979}; the linear elastic theory makes void fraction an independent kinematic field and reports dispersed, attenuated longitudinal waves \cite{Cowin1983}; the linear thermoelastic-void theory establishes uniqueness, reciprocity, and variational results \cite{Iesan1986} (PRIMARY-SOURCE-CHECKED).
-% R3F-END:READ-SOURCES
+Porosity and void fields are additional modeling ingredients; their governing equations and coupling to thermal and electrical fields depend on the selected formulation.
 
 \subsubsection{Modal content of a piezoelectric solid}
 
@@ -185,12 +179,7 @@ Micropolar elasticity (Eringen, 1966 \cite{Eringen1966a}) extends classical elas
 
 \subsubsection{Governing equations}
 
-\begin{equation}
-\sigma_{ij} = \lambda u_{k,k}\delta_{ij} + \mu(u_{i,j}+u_{j,i}) + \kappa(u_{i,j}-u_{j,i}-2\epsilon_{ijk}\phi_k) - \beta\theta\delta_{ij},
-\label{eq:5.17}
-\end{equation}
-
-Here $\phi_k$ is the independent microrotation vector; $\lambda$, $\mu$, and $\kappa$ are elastic moduli, and $\beta$ is the isotropic thermal-stress coefficient. The displayed isotropic linear law is an illustrative specialization, not independently checked here against the cited primary texts \cite{Eringen1966a,Eringen1968b}; the mechanical micropolar form and its added isotropic thermal term should be verified for the selected thermoelastic model. Anisotropic constitutive tensors and couple-stress relations are formulation-dependent and remain outside this display.
+Micropolar thermoelastic formulations may include independent microrotation fields and couple stresses. Their constitutive equations depend on the selected kinematics, symmetry assumptions, and thermal coupling.
 
 Micropolar models are relevant for granular materials, liquid crystals, composite materials with oriented inclusions, and biological tissues where micro-structural rotation cannot be neglected. A thermoelastic micropolar formulation was published by Tauchert, Claus and Ariman (1968 \cite{Eringen1968b}); earlier related work exists, so no priority claim is made here.
 
@@ -254,11 +243,11 @@ Table \ref{tab:T3-multiphysics} summarizes the coupled multiphysics media: field
 \subsection{The coupling hierarchy and its computational consequences}
 \label{sec:5.9}
 
-The number and character of modes and interface conditions depend on the complete field equations, constitutive parameters, geometry, and boundary conditions. An added field or internal variable need not contribute an independent propagating mode, and the matrix size is not fixed by a theory-family label. The inherited mode-count statements and interface-system dimensions have not been recomputed in this revision and are not asserted as general results.
+The number and character of modes and interface conditions depend on the complete field equations, constitutive parameters, geometry, and boundary conditions. An added field or internal variable need not contribute an independent propagating mode, and matrix size is not fixed by a family label.
 
-The secular equation and interface system must be derived from each model's actual field equations and boundary conditions. Their polynomial order and matrix size cannot be inferred from the number of named fields alone. The inherited mode counts and interface-energy studies cited elsewhere have not been independently reproduced or checked against full texts in this revision; no comparative assessment of their importance or verification status is made here.
+The secular equation and interface system follow from each model’s field equations and boundary conditions. Their polynomial order and matrix size depend on the selected formulation.
 
-Coupled-field models require model-specific checks of the free-energy Hessian, constitutive stability, and initial-boundary-value problem. These properties cannot be inferred from the presence of a coupling coefficient alone. No comparison of how thoroughly different coupled families have been tested, or general existence/uniqueness claim, is made here without a dedicated primary-source audit.
+Coupled-field models depend on the free-energy Hessian, constitutive stability, and well-posedness of the initial-boundary-value problem; these properties cannot be inferred from a coupling coefficient alone.
 
 \subsection{Notation summary for Section 5}
 
@@ -286,7 +275,7 @@ $h_i$ & Equilibrated stress vector & N/m & \eqref{eq:5.16} \\
 \end{tabularx}
 \end{table}
 
-\paragraph{R3b source-specific evidence.} A piezothermoelastic interface case reports acoustic flux with an exact balance that includes an interaction term. (PRIMARY-SOURCE-CHECKED) \cite{Gupta2023IJNMF}. A piezo/thermoelastic interface study lists model-specific degenerations when phase-lag and memory coefficients are switched off. (PRIMARY-SOURCE-CHECKED) \cite{Gupta2023Energy}. A micropolar/porous/semiconductor interface study reports an approximately-unity energy-ratio sum as a computational check, not an exact identity. (PRIMARY-SOURCE-CHECKED) \cite{Kumar2023PhysScr}.
+A piezothermoelastic interface case reports acoustic flux with an exact balance that includes an interaction term. \cite{Gupta2023IJNMF}. A piezo/thermoelastic interface study lists model-specific degenerations when phase-lag and memory coefficients are switched off. \cite{Gupta2023Energy}. A micropolar/porous/semiconductor interface study reports an approximately-unity energy-ratio sum as a computational check, not an exact identity. \cite{Kumar2023PhysScr}.
 
 \subsection{Open questions for Section 5}
 

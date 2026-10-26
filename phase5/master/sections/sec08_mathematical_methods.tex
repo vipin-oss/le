@@ -60,7 +60,7 @@ The roots of the secular equation are classified as
 \item \textbf{Attenuating modes:} complex $q$, waves that both propagate and attenuate.
 \end{enumerate}
 
-Chadwick and Sneddon's classical Fourier thermoelastic plane-wave analysis reports no thermal modification of S waves, while the modified P and thermal modes are dispersed and attenuated. No numerical attenuation values are reproduced (PRIMARY-SOURCE-CHECKED; VERIFIED-BY-ARBITRATION) \cite{ChadwickSneddon1958}.
+Chadwick and Sneddon's classical Fourier thermoelastic plane-wave analysis reports no thermal modification of S waves, while the modified P and thermal modes are dispersed and attenuated. No numerical attenuation values are reproduced \cite{ChadwickSneddon1958}.
 
 Only outgoing modes satisfying the radiation condition are retained in the physical solution. The selection rule is simple to state and easy to get wrong: in a half-space problem the retained roots are those for which the wave decays as $x \to \infty$, and in a slab or layer problem the retained roots are those for which the transmitted field decays into the far material. Every additional root that is retained produces a mode that carries energy out of, or into, the region of interest and breaks the conservation identity of Section~\ref{sec:10.5}.
 
@@ -97,45 +97,9 @@ and Laplace transforms for transient problems on a half-space:
 
 The Laplace transform in particular is what makes the classical thermoelastic transient problem tractable in closed form: the coupled system is parabolic in the thermal variable and hyperbolic in the mechanical variable, and the Laplace transform in time combined with a Fourier transform in the horizontal directions reduces the problem to a pair of second-order differential equations in the normal coordinate, which are solved in closed form \cite{Achenbach1973,Nowacki1975}.
 
-The fractional operators of Section~\ref{sec:11.1} require a different transform calculus. For $0<\alpha\leq1$, the Caputo derivative has the Laplace-domain rule $\mathcal{L}\{{}^C D_t^\alpha f\}(s) = s^\alpha \tilde{f}(s) - s^{\alpha-1} f(0)$; its transformed equation is inverted using the Mittag--Leffler function, which plays the role of the exponential in the classical theory (REFERENCE-SOURCE; VERIFIED-BY-ARBITRATION) \cite{Gorenflo1997}. The series generalizes $n!$ through $(\alpha n)!:=\Gamma(\alpha n+1)$ (REFERENCE-SOURCE; VERIFIED-BY-ARBITRATION) \cite{Gorenflo1997}. It is worth being explicit about the methodological consequence: in the fractional families the analytical route is available only for special geometries, for radially symmetric or half-space problems, because the inversion step requires the eigenfunction expansion of the corresponding spatial operator. Everywhere else, the burden of verification falls on numerical inversion, and the reference solutions of the kind derived in closed form by Povstenko \cite{Povstenko2007} become the only available check on a numerical scheme. For the specific time-fractional diffusion initial-boundary-value problem with a Caputo--Dzherbashyan derivative of order $0<\alpha\leq1$ and the stated divergence-form operator, Luchko proves existence by a Fourier method, alongside a maximum principle, uniqueness, and continuous dependence (PRIMARY-SOURCE-CHECKED) \cite{Luchko2010}.
+Fractional transform rules include terms determined by the initial data and the chosen derivative. For some linear problems the inverse transform can be expressed with Mittag--Leffler functions; tractability depends on the spatial operator, geometry, and boundary conditions. No universal inversion method or reference solution is asserted here.
 
-% R3E-BEGIN:LAPLACE-INVERSION
-\paragraph{Dubner--Abate cosine-series inversion.} For real causal $f$ with $f(t)=0$ for $t<0$, write $F(s)=\mathcal{L}\{f\}(s)$. Their Eq.~(15) obtains the following cosine series by applying the trapezoidal rule to the cosine inversion integral:
-
-\begin{equation}
-\begin{aligned}
-f(t)&\simeq\frac{e^{at}}{T}\left[\frac{\operatorname{Re}F(a)}{2}+\right.\\&\qquad\left.\sum_{k=1}^{\infty}\operatorname{Re}F\!\left(a+\frac{ik\pi}{T}\right)\cos\!\left(\frac{k\pi t}{T}\right)\right].
-\end{aligned}
-\end{equation}
-
-The formula is valid for $0<t<T/2$; choosing $T=2t_{\max}$ gives the source's stated window. Under its bounded-function assumption $|f|\leq C$, the periodization error is of order $C e^{-aT}$; finite-series truncation error is controlled separately by the last retained term (PRIMARY-SOURCE-CHECKED) \cite{DubnerAbate1968}.
-
-\paragraph{Stehfest real-axis inversion.} For even $N$, Stehfest's algorithm writes the inversion as
-
-\begin{equation}
-F_a=\frac{\ln 2}{T}\sum_{i=1}^{N}V_i\,P\!\left(\frac{i\ln 2}{T}\right),\qquad N\ \text{even},
-\end{equation}
-
-where $P(s)=\mathcal{L}\{f\}(s)$ and
-
-\begin{equation}
-\begin{aligned}
-V_i&=(-1)^{N/2+i}\sum_{k=\lfloor(i+1)/2\rfloor}^{\min(i,N/2)}\\&\quad\left[\begin{gathered}\frac{k^{N/2}(2k)!}{(N/2-k)!\,k!\,(k-1)!}\\{}\times\frac{1}{(i-k)!(2k-i)!}\end{gathered}\right].
-\end{aligned}
-\end{equation}
-
-The weights depend only on $N$ and grow as $N$ increases: accuracy can improve until rounding error dominates, so the choice of even $N$ trades approximation error against available precision (PRIMARY-SOURCE-CHECKED) \cite{Stehfest1970}.
-
-\paragraph{Evidence scope.} These source-specific procedures do not establish a general method ranking. Section~8 now has 8 eligible read sources overall, including 5 numerical-inversion sources.
-% R3E-END:LAPLACE-INVERSION
-
-% R3F-BEGIN:READ-SOURCES
-Durbin's averaged cosine-and-sine procedure improves on the earlier Dubner--Abate cosine method: its error bound is independent of $t$ over $0<t<2T$, and for $|f|\leq C$ is $C/(e^{2aT}-1)$ (PRIMARY-SOURCE-CHECKED) \cite{Durbin1974,DubnerAbate1968}.
-
-Honig and Hirdes combine Durbin's discretization correction with acceleration of a non-alternating series and parameter selection; in one reported example, Durbin required about 60 times as many transform evaluations and 30 times the CPU time as LAPIN for comparable accuracy, a result specific to that example (PRIMARY-SOURCE-CHECKED) \cite{HonigHirdes1984}.
-
-Stroh's 1958 anisotropic-elasticity treatment and 1962 steady-motion analysis are purely elastic; neither supplies a thermoelastic Stroh formulation (PRIMARY-SOURCE-CHECKED) \cite{Stroh1958,Stroh1962}.
-% R3F-END:READ-SOURCES
+Numerical inverse-transform procedures approximate the inverse using selected sampling and summation rules. Their accuracy depends on the time window, truncation, transform evaluations, and numerical precision; the choice of method is problem-specific.
 
 \subsection{Green's functions and fundamental solutions}
 \label{sec:8.7}
@@ -163,7 +127,7 @@ Alongside the direct transform route, coupled thermoelasticity admits a variatio
 \subsection{The two-stage structure of the classical problem, and what the generalizations change}
 \label{sec:8.10}
 
-The displayed classical dynamic thermoelastic equations form a coupled initial-boundary-value problem: momentum balance is hyperbolic and Fourier heat conduction is parabolic. A sequential or quasi-static solution is an approximation whose validity requires a stated weak-coupling or time-scale assumption. Harmonic elimination can produce a frequency-dependent longitudinal response, but attenuation and any dimensionless coupling parameter must be derived for the precise constitutive convention and geometry. Those quantitative claims are not established in this section and remain open pending equation-level derivation and primary-source checking.
+The displayed classical dynamic thermoelastic equations form a coupled initial-boundary-value problem: momentum balance is hyperbolic and Fourier heat conduction is parabolic. A sequential or quasi-static solution is an approximation whose validity requires a stated weak-coupling or time-scale assumption. Harmonic elimination can produce a frequency-dependent longitudinal response; attenuation and dimensionless coupling parameters depend on the constitutive convention and geometry.
 
 \begin{figure}[htbp]
 \centering
@@ -196,7 +160,7 @@ $\hat{u}_i^{(n)}$ & Normalized amplitude of mode $n$ & varies & \eqref{eq:8.5} \
 \end{tabularx}
 \end{table}
 
-\paragraph{R3b source-specific evidence.} A partially read layered piezothermoelastic Rayleigh-wave paper includes a GN-III heat equation; this citation is scope-level only. (UNVERIFIED) \cite{Biswas2020}.
+A layered piezothermoelastic Rayleigh-wave study includes a GN-III heat equation; no energy-partition result is inferred from this example \cite{Biswas2020}.
 
 \subsection{Open questions for Section 8}
 

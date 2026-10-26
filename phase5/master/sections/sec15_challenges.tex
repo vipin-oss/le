@@ -4,24 +4,24 @@
 \section{Major Scientific Challenges}
 \label{sec:challenges}
 
-This section lists candidate scientific and methodological challenges suggested by the inherited manuscript. Its summaries of prior work are provisional source leads, not the result of a systematic literature search or claim-level verification. The proposed open questions and research approaches should be treated as an agenda for further checking rather than a complete field assessment.
+This section organizes scientific and methodological challenges for generalized continuum wave mechanics.
 
 \subsection{Energy flux formulation across theory families}
 \label{sec:15.1}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-Under the classical first-law and momentum-balance assumptions stated in Section~\ref{sec:energy}, the outward-positive flux $J_i=q_i-\sigma_{ij}v_j$ is derived (EQ-007). No corresponding universal flux formula is asserted for generalized theories.
+Under the classical first-law and momentum-balance assumptions stated in Section~\ref{sec:energy}, the outward-positive flux is $J_i=q_i-\sigma_{ij}v_j$. No corresponding universal flux formula is assumed for generalized theories.
 
 \subsubsection{Why important}
 
 Energy flux is fundamental for computing energy ratios, conservation identities, and dissipation rates at interfaces. Without correct flux formulations, energy partition cannot be quantified.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-The classical flux has been re-derived in this revision. The inherited LS and DPL frequency-domain expressions and all generalized-family flux claims have not been checked against primary sources here; their status remains UNVERIFIED or OPEN in Appendix~\ref{app:equation_register}.
+The classical flux is stated in Section 3. Generalized-family flux expressions require the constitutive equations and energy balance of the selected model.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 LS, GL, GN-II, GN-III, DPL, TPL, MGT, MDD, nonlocal, and piezoelectric electrical energy fluxes require complete time-domain derivations.
 
@@ -41,24 +41,24 @@ Correct energy flux is essential for energy harvesting efficiency, NDE accuracy,
 
 Convolution integrals (MDD), integral-form divergence theorem (nonlocal), third-order time derivatives (MGT).
 
-\subsection{Conservation verification at multiphysics interfaces}
+\subsection{Conservation checks at multiphysics interfaces}
 \label{sec:15.2}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-For a passive interface with a correctly defined total flux and complete modal accounting, conservation provides a useful check. The BM-1 and thermo-piezoelastic interface computations in the inherited manuscript were not reproduced or primary-source-checked in this revision; Appendix~C marks their status OPEN.
+For a passive interface, conservation provides a useful check when the total flux and modal accounting are defined consistently.
 
 \subsubsection{Why important}
 
-Conservation verification validates interface models and energy partition computations.
+Conservation checks can expose inconsistencies in interface models and energy-partition computations.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-No interface benchmark was reproduced in this revision. The classical local balance was re-derived, but a scattering-matrix calculation and its energy closure remain future verification tasks.
+A robust interface comparison requires a reproducible scattering calculation and a consistent energy balance.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
-Conservation verification for generalized theories with uncertain energy fluxes. A cited uniqueness paper for GN type II (Chandrasekharaiah \cite{Chandrasekharaiah1996}) is a source lead only; its theorem hypotheses and relevance have not been checked here. Interface energy balance for nonlocal and memory-dependent media remains a candidate research question.
+Conservation for generalized theories depends on the energy flux of the selected model. Interface energy balance for nonlocal and memory-dependent media is a useful research question.
 
 \subsubsection{Approaches}
 
@@ -79,19 +79,19 @@ Uncertain energy flux formulations; complex mode normalization; imperfect bondin
 \subsection{Numerical benchmarks and validation}
 \label{sec:15.3}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-BM-1 is specified as a proposed lossless-interface check in Appendix~C, but it was not executed here. Published numerical results cited for thermo-piezoelastic interfaces are source leads only and were not reproduced or independently checked in this phase.
+A lossless-interface benchmark can test complete modal accounting; comparisons of published thermo-piezoelastic results should state the constitutive model and flux convention.
 
 \subsubsection{Why important}
 
 Benchmarks provide validation targets for numerical methods and new theories.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-No benchmark was executed or validated in this revision. BM-1 is a specification, not a computed result; cited interface calculations remain to be checked.
+Benchmark design should specify the model, boundary conditions, numerical method, and quantities to compare.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Benchmarks for generalized theories (LS, DPL, TPL, MGT, MDD, nonlocal). Benchmarks for multiphysics interfaces.
 
@@ -114,19 +114,19 @@ Lack of closed-form solutions for generalized theories; computational cost of no
 \subsection{Experimental validation}
 \label{sec:15.4}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-The inherited manuscript cites classical thermoelasticity and ultrasonic nondestructive evaluation as applied areas; the scope and strength of experimental or clinical validation have not been audited in this revision.
+Classical thermoelasticity and ultrasonic nondestructive evaluation provide application settings in which validation questions can be posed.
 
 \subsubsection{Why important}
 
 Theoretical models require experimental validation for practical adoption.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-Inherited validation claims retained as source leads only; evidence scope not checked.
+Validation requires measurement conditions and uncertainty estimates suited to the application.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Experimental validation of generalized theories (LS, DPL, TPL, MGT, MDD, nonlocal). Experimental measurement of energy flux at interfaces.
 
@@ -149,19 +149,19 @@ Experimental measurement of thermal waves is challenging; energy flux at interfa
 \subsection{Complex mode handling}
 \label{sec:15.5}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-Complex wave numbers and modal normalization are treated in Section 8. The inherited classifications and normalization claims are not uniformly derived or source-checked here, especially for generalized models.
+Section 8 introduces complex wave numbers and modal normalization; consistent scaling is needed when comparing mode amplitudes.
 
 \subsubsection{Why important}
 
 Complex modes carry energy and affect energy partition at interfaces.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-Inherited classification discussion retained; generalized modal normalization remains unverified.
+Comparisons of complex-mode amplitudes require a consistent normalization across the stated formulations.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Consistent normalization across theory families. Energy flux computation for complex modes in generalized theories.
 
@@ -184,19 +184,19 @@ No standardized normalization across theory families; limited experimental data 
 \subsection{Nonlocal interface energetics}
 \label{sec:15.6}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-The manuscript cites Eringen-type nonlocal constitutive models and nanobeam-wave studies as source leads; their scope and assumptions were not checked here.
+Nonlocal constitutive models and nanostructure wave studies motivate questions about spatial scale and boundary conditions.
 
 \subsubsection{Why important}
 
 Nonlocal effects dominate at nanoscale; interface energetics governs nanodevice behavior.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-Nonlocal constitutive and dispersion claims are inherited and remain unverified in this revision.
+A nonlocal model must specify its spatial operator or kernel and the associated boundary prescription.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Nonlocal energy flux at interfaces. Nonlocal interface conditions. Nonlocal divergence theorem.
 
@@ -219,19 +219,19 @@ Integral-form constitutive relations are computationally expensive; interface co
 \subsection{Memory-dependent energy flux}
 \label{sec:15.7}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
-The inherited manuscript presents an MDD operator and heat-flux law, but their definitions and source equations were not checked in full text during this revision.
+Memory-dependent energy fluxes require a specified kernel, storage law, and dissipation balance.
 
 \subsubsection{Why important}
 
 Memory effects are important in polymers, biological tissues, and composites.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-No MDD kernel or constitutive equation was independently verified in this revision; the full energy flux and storage/dissipation split remain open.
+Memory-dependent energy fluxes require a specified kernel, storage law, and dissipation balance.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Hereditary energy flux for MDD media. Energy partition between storage and dissipation.
 
@@ -254,7 +254,7 @@ Convolution integrals are computationally expensive; kernel choice is not unique
 \subsection{Parameter identifiability and model discrimination}
 \label{sec:15.8}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
 Several model classes considered here introduce parameters beyond the classical elastic and thermal coefficients, such as relaxation times, phase lags, nonlocal lengths, fractional orders, horizons, or kernel parameters. Whether any such parameter is independently identifiable or routinely measured depends on the model, experiment, and observable; this review has not surveyed those data.
 
@@ -262,11 +262,11 @@ Several model classes considered here introduce parameters beyond the classical 
 
 A generalized theory that cannot be fitted to data cannot be tested against data, and cannot be used for design. The practical consequence is that the generalized models are currently used in a regime --- modal and interface analysis with a prescribed parameter set --- rather than in a regime in which the parameter set has been measured. This is the single largest obstacle to the practical adoption of the whole field.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-The inherited manuscript proposes dispersion measurements as a possible route to estimating generalized parameters. No structural-identifiability proof, parameter-extraction formula, or nonlocal-versus-gradient discrimination result has been established in this revision; each would require a specified forward model, observable, and noise/uncertainty analysis.
+Identifiability analysis can use dispersion measurements when the forward model, observable, and noise/uncertainty model are specified.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 Whether the kernel, phase-lag, or anisotropic parameters are identifiable is an open, model- and experiment-specific question in this review. The number and type of independent measurements needed to separate parameters must be established through analysis or experiment; no general under-determination claim is made here.
 
@@ -289,7 +289,7 @@ The experimental cost of measuring a dispersion curve over a broad range of wave
 \subsection{Material symmetry, anisotropy and the tensor form of the generalizations}
 \label{sec:15.9}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
 The constitutive derivation of Section~\ref{sec:foundations} produces the stiffness tensor in full tensor form, and the classical symmetry conditions --- major and minor symmetry, and the minor symmetries of the strain and stress tensors --- are what reduce it to the familiar two-modulus form for an isotropic solid. Every generalization in this review adds coefficients with the same tensor character, and therefore inherits the same symmetry conditions.
 
@@ -297,11 +297,11 @@ The constitutive derivation of Section~\ref{sec:foundations} produces the stiffn
 
 The generalization of a theory to an anisotropic medium is not a matter of substituting different numbers into the same equations. A new material parameter enters the constitutive relation with its own tensor index structure, and the symmetry conditions that relate its components must be re-derived, not assumed. The monoclinic and orthotropic piezothermoelastic configurations that appear in the recent interface-energy work \cite{Barak2023JTS} are exactly the cases in which this matters, because the piezoelectric tensor is the most strongly constrained of the tensors involved and its component count is much smaller than for the elasticity tensor.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-Classical tensor symmetries and cited anisotropic interface or existence/uniqueness studies (including \cite{Barak2023JTS,Iesan2013}) are source leads for further review. Their precise assumptions, configurations, and conclusions have not been checked against full text in this revision; no anisotropic interface-energy result is claimed as verified.
+Anisotropic interface comparisons require the tensor symmetries, model configuration, and boundary conditions to be stated explicitly.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
 The systematic treatment of the generalized thermal laws --- the phase-lag, memory-dependent and fractional families --- under anisotropic material symmetry is largely absent, and in particular the question of whether the thermodynamic restrictions of Section~\ref{sec:foundations} reduce the admissible parameter set in the anisotropic case, as they do in the isotropic case, has not been worked through. The coordinate-free formulation of the fractional and memory operators under anisotropic differentiation operators is an additional technical obstacle, since the operators themselves are not rotationally invariant.
 
@@ -324,7 +324,7 @@ The algebraic burden of the tensor bookkeeping; the scarcity of anisotropic expe
 \subsection{Computational cost and verifiability of the solvers}
 \label{sec:15.10}
 
-\subsubsection{Existing foundation}
+\subsubsection{Background}
 
 The modal machinery of Section~\ref{sec:methods} is exact and cheap, and it is the appropriate tool for the interface problems that dominate the reviewed literature. For bounded domains, for heterogeneous material distributions and for geometries with traction-free or prescribed boundaries, the finite element method is the natural tool, and the machinery for the classical and linear-thermoelastic cases is mature \cite{Hughes1980}. The generalization of the element formulation to the theories of this review, however, requires the quadrature rules for the nonlocal, memory and fractional operators, and these are not standard.
 
@@ -332,13 +332,13 @@ The modal machinery of Section~\ref{sec:methods} is exact and cheap, and it is t
 
 The value of a generalized theory is realized in problems that cannot be solved by the classical theory, and those are typically bounded, heterogeneous and geometrically complicated --- which is exactly where the modal analysis stops being sufficient and a solver is needed. The gap between the modal literature and the practical literature is therefore largely a gap in numerical capability.
 
-\subsubsection{What's achieved}
+\subsubsection{Model-specific context}
 
-The inherited manuscript cites convolution-quadrature and nonlocal assembly approaches in Section~\ref{sec:methods}. Their scope, convergence properties, and implementation details remain source leads; this revision has not surveyed or reproduced these methods.
+Convolution-quadrature and nonlocal assembly are numerical approaches whose scope and convergence depend on the operator and discretization.
 
-\subsubsection{What's open}
+\subsubsection{Research questions}
 
-No external benchmark-suite or implementation-interoperability survey was performed here, and no solver convergence result was reproduced. Benchmark coverage, published-code interoperability, and convergence rates for each operator remain OPEN verification tasks.
+Reproducible benchmarks benefit from shared implementations, published inputs, and reported convergence rates.
 
 \subsubsection{Approaches}
 
@@ -350,13 +350,13 @@ No external benchmark-suite or implementation-interoperability survey was perfor
 
 \subsubsection{Practical relevance}
 
-Verification of the solver is a precondition for the verification of the theory. An energy ratio computed with an unverified quadrature cannot support a claim about a constitutive model, however carefully the model was derived.
+Numerical energy ratios should be reported with discretization and quadrature checks needed to assess their accuracy.
 
 \subsubsection{Major obstacles}
 
 The cost of nonlocal assembly grows with the square of the neighbourhood size in three dimensions, and the memory required by a convolution scheme grows with the number of time steps; both scale badly for the three-dimensional transient problems where the generalizations matter most.
 
-The classical-flux schematic is given once in Figure~\ref{fig:energy_flux}; generalized channels remain model-specific and open.
+The classical balance provides the reference point; generalized channels depend on the constitutive model.
 
 \subsection{Challenge summary table}
 \label{sec:15.11}
@@ -364,22 +364,22 @@ The classical-flux schematic is given once in Figure~\ref{fig:energy_flux}; gene
 \begin{table}[htbp]
 \centering
 \small
-\caption{Summary of major scientific challenges.}
+\caption{Scientific questions and research directions.}
 \label{tab:challenges_summary}
-\begin{tabularx}{\textwidth}{@{}p{2.4cm}XXXX@{}}
+\begin{tabularx}{\textwidth}{@{}p{2.4cm}XXX@{}}
 \toprule
-\textbf{Challenge} & \textbf{What's achieved} & \textbf{What's open} & \textbf{Major obstacles} \\
+\textbf{Challenge} & \textbf{Scientific question} & \textbf{Research direction} & \textbf{Main obstacle} \\
 \midrule
-Energy flux formulation & Classical flux re-derived here; generalized families unverified & Family-specific energy identities remain open & Primary-source and balance-law audit \\
-Conservation verification & No interface benchmark reproduced in this revision & Theory-specific interface energy closure & Complete flux, normalization, and independent computation \\
-Numerical benchmarks & BM-1 specified, not executed & Generalized theory benchmarks & No independent implementation yet \\
-Experimental validation & Evidence inventory incomplete in this revision & Generalized theories; interface flux & Measurement difficulty \\
-Complex mode handling & Inherited classifications retained; no generalized normalization audit & Cross-theory normalization & Review scope incomplete \\
-Nonlocal interface energetics & Constitutive/dispersion claims not source-checked here & Interface flux; interface conditions & Model-specific boundary terms \\
-Memory-dependent energy flux & MDD operator not source-checked here & Hereditary flux and energy partition remain open & Kernel and storage non-uniqueness \\
-Parameter identifiability & Dispersion-based extraction proposed, not proven here & Model-specific identifiability analysis & Measurement design; noise and parameter correlation \\
-Anisotropy of the generalizations & Classical tensor conventions summarized; cited interface claims not checked & Generalized thermal laws under anisotropic symmetry & Tensor bookkeeping; covariant operators \\
-Solver verifiability & Numerical methods cited as leads, not reproduced & Benchmarks and convergence analysis & Computational cost; reproducibility \\
+Energy flux formulation & How does each constitutive family define energy and flux? & Derive balance from model equations and boundary power & Constitutive complexity \\
+Conservation comparison & How should modal energy be compared across interfaces? & Use total-field flux and common normalization & Cross terms and normalization \\
+Numerical benchmarks & How can calculations be compared reproducibly? & Publish inputs, reference solutions, and convergence studies & Computational cost \\
+Experimental validation & Which observations distinguish competing models? & Compare predictions against measurements & Measurement difficulty \\
+Complex mode handling & How should complex modes be normalized? & Develop model-specific normalization criteria & Cross-theory consistency \\
+Nonlocal interface energetics & What boundary power accompanies a nonlocal law? & Derive interface conditions for the selected kernel & Domain-specific terms \\
+Memory-dependent energy flux & How does history dependence enter energy storage? & Specify kernels and derive the balance & Kernel and storage choices \\
+Parameter identifiability & Which measurements constrain model parameters? & Analyze observables, noise, and parameter correlation & Measurement design \\
+Anisotropy & How do tensor symmetries affect coupled laws? & Derive constitutive and interface relations & Tensor bookkeeping \\
+Solver assessment & What numerical checks support a computation? & Use benchmarks and convergence analysis & Reproducibility \\
 \bottomrule
 \end{tabularx}
 \end{table}

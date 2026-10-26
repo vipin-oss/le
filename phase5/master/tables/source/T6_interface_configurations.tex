@@ -1,26 +1,19 @@
-%======================================================================
-% Table T6 — Reflection and transmission configurations
-% Section: §9
-% Inherited interface summary; conditions and evidence require model-specific checks
-%======================================================================
 \begin{table}[htbp]
 \centering
 \small
 \setlength{\tabcolsep}{3pt}
-\caption{Reflection and transmission interface configurations. Matching conditions and modal phenomena for bonded and imperfect interfaces.}
+\caption{Representative reflection and transmission interface configurations.}
 \label{tab:T6-interfaces}
 \begin{tabularx}{\textwidth}{@{}p{2.4cm}YYYY@{}}
 \toprule
-\textbf{Configuration} & \textbf{Matching Conditions} & \textbf{Modal Phenomena} & \textbf{Physical Quantities} & \textbf{Evidence} \\
+\textbf{Configuration} & \textbf{Matching conditions} & \textbf{Modal phenomena} & \textbf{Physical quantities} & \textbf{Model-specific condition} \\
 \midrule
-Welded interface (perfect bonding) & $u_i^{(1)}=u_i^{(2)}$; $\sigma_{ji}^{(1)}n_j=\sigma_{ji}^{(2)}n_j$ & Mode conversion; P--S conversion; interface waves & $R,T,A_{\mathrm{int}}$; total-field identity; $A_{\mathrm{int}}=0$ if passive, lossless, and no interfacial storage & Standard theory \\
-Imperfect (spring-type) interface & Displacement jump proportional to traction & Partial transmission; interface stiffness effects & Transmission coefficient dependent on spring stiffness & Model-specific \\
-Perfect thermal contact & $T^{(1)}=T^{(2)}$; $q_i^{(1)}n_i=q_i^{(2)}n_i$ & Thermal-field transmission/reflection; propagating modes only in finite-speed models & Continuous temperature and normal heat flux & Perfect-contact idealization \\
-Kapitza (imperfect thermal contact) & $q_n^{(1)}=q_n^{(2)}$; $T^{(2)}-T^{(1)}=R_K q_n$ & Temperature jump at finite heat flux & Interfacial thermal resistance $R_K$ & Model-specific; sign follows chosen normal \\
-Electrical interface & $\phi^{(1)}=\phi^{(2)}$; $D_i^{(1)}n_i=D_i^{(2)}n_i$ & Piezoelectric coupling; surface charge & Electric displacement continuity if free surface charge is zero; otherwise its jump is the surface charge density & Standard theory \\
-Thermo-piezoelastic interface & All mechanical, thermal, electrical conditions & Multi-field scattering; energy partitioning & Interface-energy study cited; equation-level claims not checked & \cite{Barak2023} \\
+Welded interface & Displacement and traction continuity & Mode conversion and interface waves & Reflection and transmission amplitudes; total-field flux & Perfect mechanical bonding \\
+Imperfect spring-type interface & Displacement jump related to traction & Partial transmission and stiffness effects & Transmission coefficient & Interface stiffness law \\
+Perfect thermal contact & Temperature and normal heat-flux continuity & Thermal transmission and reflection & Temperature and heat flux & Perfect-contact idealization \\
+Kapitza contact & Normal heat-flux continuity with a temperature jump & Finite-flux temperature discontinuity & Interfacial thermal resistance & Sign follows the chosen normal \\
+Electrical interface & Potential and normal electric-displacement conditions & Piezoelectric coupling and possible surface charge & Potential and electric displacement & Surface-charge condition \\
+Thermo-piezoelastic interface & Coupled mechanical, thermal, and electrical conditions & Multi-field scattering & Field amplitudes and total energy flux & Specify each coupled constitutive law \\
 \bottomrule
-\multicolumn{5}{@{}p{\textwidth}@{}}{\textbf{Notes:} The proposed BM-1 conservation check was not executed in this revision; see Appendix C.}\\
-\multicolumn{5}{@{}p{\textwidth}@{}}{\emph{Thermo-piezoelastic interface equations and cited energy ratios are inherited claims, not checked against the full source here.}}\\
 \end{tabularx}
 \end{table}

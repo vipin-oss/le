@@ -1,25 +1,22 @@
 %======================================================================
 % Table T4 — Wave types and governing characteristics
 % Section: §3, §4
-% Evidence: Wave speeds from classical elasticity; model-specific modes from referenced theories
 %======================================================================
 \begin{table}[htbp]
 \centering
 \small
-\caption{Wave types and their governing characteristics across theory families. Phase speeds are model-dependent; values shown are classical limits.}
+\caption{Wave types and representative characteristics across continuum models.}
 \label{tab:T4-waves}
-\begin{tabularx}{\textwidth}{@{}p{2.4cm}XXXX@{}}
+\begin{tabularx}{\textwidth}{@{}p{2.4cm}XXX@{}}
 \toprule
-\textbf{Wave Type} & \textbf{Polarization} & \textbf{Governing Speed (Classical)} & \textbf{Model-Specific Interpretation} & \textbf{Evidence} \\
+\textbf{Wave type} & \textbf{Polarization or field pattern} & \textbf{Classical reference feature} & \textbf{Model-specific interpretation} \\
 \midrule
-Longitudinal (P) & Parallel to propagation & $c_p=\sqrt{(\lambda+2\mu)/\rho}$ & Classical isotropic elasticity; generalized mode labels are model-specific & \cite{Achenbach1973} \\
-Transverse (S) & Perpendicular to propagation & $c_s=\sqrt{\mu/\rho}$ & Shear; distortional; no volume change & \cite{Achenbach1973} \\
-Thermal & Parallel (dissipative) or propagating (generalized) & Classical: infinite (parabolic); LS: $c_T=\sqrt{k/(\rho c_v\tau_0)}$ & Diffusive in classical Fourier; LS has finite speed for $\tau_0>0$. The displayed GL equation has a second-order thermal-time term for $\tau_0>0$; coupled characteristic speeds were not recomputed from the corrected equation. Other phase-lag/MGT variants are formulation-specific and not classified here & Conditional on the displayed linear laws and stated parameters; LS: \cite{Lord1967}; GL: Eq.~\ref{eq:4.9} only \\
-Coupled modes & Mixed polarization & Coupled system eigenfrequencies & P--T, S--T, or piezo--thermal coupling splits wave speeds & Model-specific \\
-Surface waves & Decaying with depth & Rayleigh: $c_R\approx0.9194c_s$ at $\nu=0.25$ (isotropic solid; $0.874c_s$ at $\nu=0$) & Exists at free surfaces; modified by thermal/electrical boundary conditions & Model-specific \\
-Evanescent modes & Exponential decay & Imaginary wave number $q=i\kappa$ & Near-field interface phenomena; important for scattering & Model-specific \\
+Longitudinal (P) & Parallel to propagation & $c_p=\sqrt{(\lambda+2\mu)/\rho}$ for isotropic elasticity & Generalized mode labels and speeds follow the selected constitutive equations \\
+Transverse (S) & Perpendicular to propagation & $c_s=\sqrt{\mu/\rho}$ for isotropic elasticity & Coupling can alter the modal structure \\
+Thermal & Temperature and heat-flux fields & Diffusion in the Fourier model & Relaxation, phase-lag, and memory formulations have model-dependent propagation behavior \\
+Coupled modes & Mixed mechanical, thermal, or electrical fields & Eigenfrequencies of the coupled system & Branches follow the coupled field equations and boundary conditions \\
+Surface waves & Amplitude decays with depth from the surface & Rayleigh-type branch in an elastic half-space & Constitutive laws and boundary conditions determine the surface-wave spectrum \\
+Evanescent modes & Spatially decaying amplitude & Imaginary part of the wave number & Near-field contributions can enter interface and scattering solutions \\
 \bottomrule
-\multicolumn{5}{@{}p{\textwidth}@{}}{\textbf{Notes:} Classical speeds apply to isotropic elastic media. Generalized theories introduce dispersion and attenuation.}\\
-\multicolumn{5}{@{}p{\textwidth}@{}}{\emph{LS speed requires $\tau_0>0$; the GL statement is limited to the displayed linear thermal equation and $\tau_0>0$; coupled speeds are not recalculated. Classical speeds from \cite{Achenbach1973}.}}\\
 \end{tabularx}
 \end{table}

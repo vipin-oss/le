@@ -47,11 +47,9 @@ where $\bar q_i$ is the separately evaluated mean heat flux (zero for a purely o
 
 A point worth keeping in view is that the classical flux contains \emph{no} term associated with the internal variables that generalized theories introduce. The entire difficulty of Section~\ref{sec:10.4} follows from that absence.
 
-% R3F-BEGIN:READ-SOURCES
-For the classical isotropic Rayleigh-type surface-wave problem, Ivanov and Savova find that the kinetic-plus-internal energy-flux vector is not parallel to the surface; its direction varies with depth, and its magnitude decays with depth and exponentially along the line of intersection of constant-phase planes (PRIMARY-SOURCE-CHECKED) \cite{IvanovSavova1991}.
+For the classical isotropic Rayleigh-type surface-wave problem, Ivanov and Savova find that the kinetic-plus-internal energy-flux vector is not parallel to the surface; its direction varies with depth, and its magnitude decays with depth and exponentially along the line of intersection of constant-phase planes \cite{IvanovSavova1991}.
 
-Joseph and Preziosi's historical review and addendum trace heat-wave ideas from kinetic theory to continuum models (SECONDARY-SOURCE); this chronology is not evidence for a modal energy-partition identity \cite{Joseph1989,Joseph1990}.
-% R3F-END:READ-SOURCES
+
 
 \subsection{Interface energy balance}
 \label{sec:10.3}
@@ -75,15 +73,15 @@ that is, the normal energy flux is continuous across the interface. Two qualific
 \subsection{Energy transport in generalized theories: the internal-variable structure}
 \label{sec:10.4}
 
-The first-law balance retains the boundary power terms for a specified constitutive theory. What changes between generalized theories is the stored free energy and dissipation, which must be derived from that theory's state variables and evolution laws. There is no universal additional flux term $-\sum_\alpha Y^\alpha\dot z^\alpha$: this has units of power per volume, not energy flux, unless an additional spatial transport structure is derived. We therefore do not use a generic internal-variable flux formula; family-specific identities are supplied only when the free energy, evolution law and boundary terms have been established, otherwise the result is marked conditional or open.
+The first-law balance retains the boundary power terms for a specified constitutive theory. What changes between generalized theories is the stored free energy and dissipation, which follow from that theory's state variables and evolution laws. There is no universal additional flux term $-\sum_\alpha Y^\alpha\dot z^\alpha$: this has units of power per volume, not energy flux, unless an additional spatial transport structure is specified. A family-specific identity therefore requires the model's free energy, evolution law, and boundary terms.
 
-\subsubsection{Verified piezothermoelastic energy flux}
+\subsubsection{Piezothermoelastic energy flux}
 
-A piezothermoelastic flux expression and associated interface-energy ratios are reported in the cited literature. In this revision their signs, harmonic averaging, constitutive definitions, and boundary conditions have not been checked against the cited full texts. The formula and the claim that independent publications confirm it are therefore withheld from the verified set. The mechanical, electrical, and thermal channels must be derived from one stated first-law convention and the coupled constitutive equations before any mode-wise ratio is interpreted. Status: OPEN pending full-text and derivation audit.
+For a coupled piezothermoelastic model, the mechanical, electrical, and thermal power terms should be derived from one stated balance convention and the coupled constitutive equations before modal ratios are interpreted.
 
-\subsubsection{What remains open in the pure generalized theories}
+\subsubsection{Energy flux in generalized theories}
 
-This revision has not derived or full-text-verified generalized-family energy-flux and dissipation identities for Lord--Shulman, Green--Lindsay, Green--Naghdi, phase-lag, Moore--Gibson--Thompson, memory-dependent, or nonlocal formulations. This is a limit of the present audit, not a claim that the wider literature has no such derivations. No general energy-flux identity is asserted here. Each family-specific balance remains OPEN in this version until its free energy, flux variables, boundary powers, dissipation inequality, and sources have been checked.
+A family-specific energy balance requires the free energy, flux variables, boundary powers, dissipation terms, and constitutive equations of the selected model.
 
 \subsection{Conservation identity: \texorpdfstring{$\sum R + \sum T + A_{\mathrm{int}} = 1$}{R + T + A int = 1}}
 \label{sec:10.5}
@@ -102,30 +100,25 @@ where $A_{\mathrm{int}}=(J_{1,n}^{\mathrm{tot}}-J_{2,n}^{\mathrm{tot}})/J_{\math
 \label{eq:10.12}
 \end{equation}
 
-\paragraph{R3c source-specific energy-partition evidence.} Section 10 now has 6 eligible read sources overall; evidence for the exact lossless reduction remains limited and model-specific; GAP-09 remains open. Kumar and Kansal report a model-specific interface energy-ratio balance with an explicit interaction term in Eq. (80); it supports retaining cross terms above, not a universal identity (CONDITIONAL) \cite{Kumar2017}. The eligible own-group source defines ratios from average energy flux per incident-wave type, specifying normalization rather than closure (PRIMARY-SOURCE-CHECKED) \cite{Kumar2024}. Its definitions are not treated as a closure proof; any numerical near-unity result is described only as approximate for its stated model. A related study describes its eight-model sum as close to unity for specified imperfect-interface cases; this is approximate, model-specific evidence, not an identity (CONDITIONAL) \cite{Kumar2024a}.
+Kumar and Kansal report a model-specific interface energy-ratio balance with an interaction term in Eq. (80), supporting inclusion of cross terms rather than a universal identity \cite{Kumar2017}. Kumar et al. define ratios using average energy flux per incident-wave type; those definitions specify normalization but do not establish closure \cite{Kumar2024}. A related study describes its eight-model sum as approximately unity for specified imperfect-interface cases; this is model-specific evidence, not an identity \cite{Kumar2024a}.
 
 This identity is conditional on the theory-specific flux, a passive interface, complete total-field modal accounting (including cross terms), and a common normalization. The lossless reduction additionally requires zero interface-local residual and no interfacial storage. These conditions are not automatic. For a single lossless, purely evanescent partial wave, the time-averaged normal flux is zero under the usual real-coefficient assumptions. Cross terms between partial waves can contribute to the total field flux; attenuating modes in dissipative media require separate treatment. Modal accounting must be performed on the complete field. The fourth is the most frequently overlooked: the notion of the energy of a complex mode depends on the normalisation adopted for the modal amplitude, and two groups using different normalisations can report energy ratios that differ by a constant factor while describing the same physics.
 
 \subsection{Dissipation mechanisms}
 \label{sec:10.6}
 
-Dissipative mechanisms can include heat-flux relaxation, viscous stress, dielectric loss, interfacial friction, or hereditary memory. Their presence and non-negative dissipation conditions depend on the precise constitutive equations and admissible state space. This version does not assign a universal scalar dissipation function or a common parameter-ordering rule across the families. In particular, the condition $\tau_q\geq\tau_T\geq0$ and a positive Lord--Shulman relaxation time are not, by themselves, a full proof of thermodynamic admissibility or stability. Deriving model-specific free energies and dissipation inequalities remains open.
+Dissipative mechanisms can include heat-flux relaxation, viscous stress, dielectric loss, interfacial friction, or hereditary memory. Their presence and non-negative dissipation conditions depend on the precise constitutive equations and admissible state space. A single scalar dissipation function or common parameter-ordering rule does not apply uniformly across these families. In particular, the condition $\tau_q\geq\tau_T\geq0$ and a positive Lord--Shulman relaxation time are not, by themselves, a full proof of thermodynamic admissibility or stability. Deriving model-specific free energies and dissipation inequalities remains open.
 
 \subsection{Thermodynamic admissibility: well-posedness, causality, positivity}
 \label{sec:10.7}
 
-Thermodynamic admissibility, mathematical well-posedness, and finite-speed propagation are distinct questions. A constitutive theory requires its own free-energy/entropy statement and dissipation inequality; an initial-boundary-value problem requires a separate existence, uniqueness and continuous-dependence analysis; and propagation speed is a property of the selected equations and parameter regime. None of these questions is settled for an entire named model family solely by the family label. Fourier heat conduction gives a parabolic equation with instantaneous mathematical support. The corresponding statements for relaxation, phase-lag, memory, fractional and gradient models require the exact constitutive law and its admissibility conditions. This review does not supply a family-wide proof of well-posedness, causality, or positivity; these remain model-specific audit tasks.
+Thermodynamic admissibility, mathematical well-posedness, and finite-speed propagation are distinct questions. A constitutive theory requires its own free-energy/entropy statement and dissipation inequality; an initial-boundary-value problem requires a separate existence, uniqueness, and continuous-dependence analysis; propagation speed is a property of the selected equations and parameter regime. Fourier heat conduction gives a parabolic equation with instantaneous mathematical support. Statements for relaxation, phase-lag, memory, fractional, and gradient models depend on their exact constitutive laws.
 
 \subsection{Comparative table: energy transport across theory families}
 
-Table~\ref{tab:energy_transport} records the current energy-balance audit status across theory families.
+Table~\ref{tab:energy_transport} summarizes the classical flux and model-specific terms relevant to generalized energy balances.
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.9\textwidth]{fig14-energy-flux-channels.pdf}
-\caption{Energy-balance conventions and open flux audit. The classical local thermoelastic flux is derived under the stated outward-positive convention; generalized multiphysics contributions and modal energy identities remain open pending model-specific derivations.}
-\label{fig:energy_flux}
-\end{figure}
+
 
 \input{tables/source/T7_energy_transport}
 

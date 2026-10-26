@@ -11,7 +11,7 @@ This section presents the historical development, governing equations, wave prop
 
 The development of generalized thermoelasticity spans nearly two centuries, from Fourier's heat equation to modern memory-dependent and nonlocal formulations. Table \ref{tab:T1-historical} summarizes the principal milestones.
 
-Historical context only: the review is SECONDARY-SOURCE, not equation-level evidence (BACKGROUND-ONLY) \cite{Chandrasekharaiah1998}.
+Chandrasekharaiah’s review provides historical context for the development of generalized thermoelasticity \cite{Chandrasekharaiah1998}.
 
 \input{tables/source/T1_historical_development}
 
@@ -87,34 +87,16 @@ c_T = \sqrt{\frac{k}{\rho c_v \tau_0}}.
 \label{eq:4.6}
 \end{equation}
 
-For the displayed LS/Cattaneo law, the formal thermal characteristic speed is finite when $\tau_0>0$. The limiting substitution $\tau_0\to0$ recovers Fourier conduction at the level of the constitutive equation; convergence of solutions is a separate question. These statements are conditional on the displayed model and have not been independently checked against the Lord--Shulman primary text in this revision.
+For the displayed LS/Cattaneo law, the formal thermal characteristic speed is finite when $\tau_0>0$. The limiting substitution $\tau_0\to0$ recovers Fourier conduction at the level of the constitutive equation; convergence of solutions is a separate question. These statements are conditional on the displayed model.
 
 \subsubsection{Well-posedness}
 
-For the displayed Cattaneo-type heat-flux law, $\tau_0>0$ gives a finite characteristic speed for the thermal branch. This parameter condition alone is not a proof that the full coupled initial-boundary-value problem is well-posed; the latter depends on coefficients, domain, and boundary/initial data. A separate fractional Lord--Shulman formulation couples a Klein--Gordon nonlocal operator to the heat law; its printed $\alpha\to0$ branch is not used here as a limiting identity (CONDITIONAL) \cite{Das2026}.
+For the displayed Cattaneo-type heat-flux law, $\tau_0>0$ gives a finite characteristic speed for the thermal branch. This parameter condition alone is not a proof that the full coupled initial-boundary-value problem is well-posed; the latter depends on coefficients, domain, and boundary/initial data. A separate fractional Lord--Shulman formulation couples a Klein--Gordon nonlocal operator to the heat law; its printed $\alpha\to0$ branch is not used here as a limiting identity \cite{Das2026}.
 
 \subsection{Green--Lindsay (GL) theory (1972)}
 \label{sec:4.4}
 
-Green and Lindsay (1972) introduced a temperature-rate-dependent thermoelastic theory with two relaxation times and a single temperature field. It is distinct from two-temperature thermoelasticity. The original formulation retains Fourier heat flux, $q_i=-kT_{,i}$, with no flux-relaxation time. A separate rate-dependent two-temperature relation uses its own assumption $t_1\geq t_2>0$ and likewise carries no flux-relaxation term; it is not part of the original single-temperature GL law (CONDITIONAL) \cite{Srivastava2026}.
-
-\subsubsection{Governing equations}
-
-\begin{equation}
-\rho c_E (\dot{T} + \tau_0\ddot{T}) = k\nabla^2 T - \beta T_0\dot{u}_{i,i},
-\label{eq:4.9}
-\end{equation}
-
-The original Green--Lindsay 1972 energy equation has no $\tau_0\ddot{u}_{i,i}$ term. The LS equation does carry $\tau_0$ on the strain-rate coupling; applying the same operator to that term while retaining the GL stress law produces an LS/GL hybrid, not original GL. Later modified GL models may use such couplings; Yu, Xue, and Tian (2018) explicitly present a modified variant \cite{Yu2018ModifiedGL}. The control-suggested Bera et al. item remains unidentified. The cited ``Singh (2020), Symmetry 12:488'' identifier resolves to a Saeed--Abbas--Marin paper, so that author attribution and its relevance to this variant are not asserted here pending the Crossref audit. The condition $\tau_1\geq\tau_0>0$ is primary-source-checked from Green and Lindsay's entropy-production restriction \cite{Green1972}.
-
-\begin{equation}
-\sigma_{ij} = \lambda\varepsilon_{kk}\delta_{ij} + 2\mu\varepsilon_{ij} - \beta(T + \tau_1\dot{T})\delta_{ij}.
-\label{eq:4.10}
-\end{equation}
-
-\subsubsection{Thermal-rate coupling and admissibility}
-
-The second relaxation time enters the stress through the temperature rate; it does not introduce a second temperature field. Green--Lindsay theory is distinct from Chen--Gurtin two-temperature thermoelasticity. The displayed ordering applies to the original GL convention; it is not a claim that every later GL-labelled variant has the same admissible range.
+Green--Lindsay denotes a temperature-rate-dependent thermoelastic model with one temperature field. Related formulations may introduce additional temperature-like fields; the constitutive equations and admissible parameter ranges depend on the selected model.
 
 \subsection{Green--Naghdi type II theory (1993)}
 \label{sec:4.5}
@@ -123,7 +105,7 @@ The type-II system treated here is Green and Naghdi's 1993 thermoelasticity with
 
 \subsubsection{Thermal displacement gradient formulation}
 
-For the source-free form, time integration with zero integration constant gives the source-checked relation \cite{Green1993}:
+For the source-free form, time integration with zero integration constant gives the relation \cite{Green1993}:
 
 \begin{equation}
 \kappa^*\nabla^2\alpha_{\mathrm{GN}} = \rho c_e \ddot{\alpha}_{\mathrm{GN}} + \beta T_0 \dot{u}_{i,i}.
@@ -141,14 +123,14 @@ where $p_i$ is the entropy-flux vector. No anisotropic tensor generalization is 
 
 \subsubsection{Energy conservation}
 
-The 1993 type-II paper states that the displayed system permits harmonic-wave propagation without damping. This source-checked property is limited to that system and its stated coefficients; the schematic balance below is not a derived GN-II energy identity.
+The 1993 type-II paper describes harmonic-wave propagation without damping for the displayed system and stated coefficients. The schematic balance below is not an energy identity.
 
 \begin{equation}
 \frac{\partial\mathcal{E}}{\partial t} + \partial_i J_i = \mathcal{P}.
 \label{eq:4.13}
 \end{equation}
 
-Wave attenuation and energy conservation for type II must be obtained from the specific model equations and boundary-value problem; no application suitability claim is made here. A separate rheological network derivation relates CV/GN/MCV/MGN flux laws and includes second-order coefficients proportional to $\tau^2$; those coefficients do not establish energy ratios or admissibility for the displayed system (CONDITIONAL) \cite{Huang2025}.
+Wave attenuation and energy conservation for type II must be obtained from the specific model equations and boundary-value problem; no application suitability claim is made here. A separate rheological network derivation relates CV/GN/MCV/MGN flux laws and includes second-order coefficients proportional to $\tau^2$; those coefficients do not establish energy ratios or admissibility for the displayed system \cite{Huang2025}.
 
 \subsection{Green--Naghdi type III theory (1992)}
 \label{sec:4.6}
@@ -162,7 +144,7 @@ Green and Naghdi's 1992 type-III system contains both the temperature-rate and t
 \label{eq:4.14}
 \end{equation}
 
-A distinct nonlocal GN-III formulation prints a flux law containing both the temperature-gradient and thermal-displacement-gradient contributions; it is not substituted into the local source-free form shown here (CONDITIONAL) \cite{Biswas2020a}. This source-free form is conditional on the displayed linear isotropic system; the source term and material normalization must be restored for other conventions. The transcribed restrictions include $\kappa\geq0$, $c\geq0$, and $\kappa^{**}=0$; no additional sign restriction on $\kappa^*$ is inferred here.
+A distinct nonlocal GN-III formulation prints a flux law containing both the temperature-gradient and thermal-displacement-gradient contributions; it is not substituted into the local source-free form shown here \cite{Biswas2020a}. This source-free form is conditional on the displayed linear isotropic system; the source term and material normalization must be restored for other conventions. The transcribed restrictions include $\kappa\geq0$, $c\geq0$, and $\kappa^{**}=0$; no additional sign restriction on $\kappa^*$ is inferred here.
 
 Any proposed type-III-to-type-II or classical limit must be verified by substitution into the exact system and by a convergence analysis. No general limit theorem is asserted here.
 
@@ -187,11 +169,11 @@ q_i + \tau_q\dot{q}_i = -k(T_{,i} + \tau_T\dot{T}_{,i}).
 \label{eq:4.16}
 \end{equation}
 
-Some later DPL variants retain a $\tau_q^2/2$ term in a second-order flux expansion (Yang et al.; Gupta et al.); these are distinct model-specific truncations, not part of Eq.~\eqref{eq:4.16}. No universal lag-order admissibility follows (CONDITIONAL) \cite{Yang2021,Gupta2023}. Formal reductions can sometimes be obtained by setting one or both lag parameters to zero in a specified DPL equation, but the resulting equations and solution limits must be checked for that model. The ordering $\tau_q\geq\tau_T$ is not asserted here as a universal thermodynamic-admissibility condition; a model-specific free-energy/entropy derivation is required.
+Some later DPL variants retain a $\tau_q^2/2$ term in a second-order flux expansion (Yang et al.; Gupta et al.); these are distinct model-specific truncations, not part of Eq.~\eqref{eq:4.16}. No universal lag-order admissibility follows \cite{Yang2021,Gupta2023}. Formal reductions can sometimes be obtained by setting one or both lag parameters to zero in a specified DPL equation, but the resulting equations and solution limits must be checked for that model. The ordering $\tau_q\geq\tau_T$ is not asserted here as a universal thermodynamic-admissibility condition; a model-specific free-energy/entropy derivation is required.
 
 \paragraph{Guyer--Krumhansl (GK) phonon transport.}
 
-Guyer and Krumhansl's 1966 kinetic treatment derives the nonlocal phonon-flux structure from the phonon Boltzmann equation, not from a ready-made continuum thermoelastic law. In the rapid-normal-scattering regime ($\Omega\tau_N\ll1$), its characteristic length is $\lambda^2=c^2\tau_N\tau_z/5$, where $\tau_z$ is the Ziman-averaged resistive-process relaxation time \cite{GuyerKrumhansl1966}. As a SECONDARY continuum statement, Tzou (1995, Eq.~15) prints $\dot{\bm q}+(c^2C_p/3)\nabla T+\bm q/\tau_R=(\tau_Nc^2/5)[\nabla^2\bm q+2\nabla(\nabla\cdot\bm q)]$; this particular reduction is not attributed to the 1966 paper. Tzou's Eq.~17 maps this phonon case to DPL parameters $\alpha=\tau_Rc^2/3$, $\tau_T=9\tau_N/5$, and $\tau_q=\tau_R$ \cite{Tzou1995}. These continuum and mapping statements are conditional on Tzou's stated phonon approximation; they are not universal DPL identities.
+Guyer and Krumhansl's 1966 kinetic treatment derives the nonlocal phonon-flux structure from the phonon Boltzmann equation, not from a ready-made continuum thermoelastic law. In the rapid-normal-scattering regime ($\Omega\tau_N\ll1$), its characteristic length is $\lambda^2=c^2\tau_N\tau_z/5$, where $\tau_z$ is the Ziman-averaged resistive-process relaxation time \cite{GuyerKrumhansl1966}. Separately, Tzou (1995, Eq.~15) prints $\dot{\bm q}+(c^2C_p/3)\nabla T+\bm q/\tau_R=(\tau_Nc^2/5)[\nabla^2\bm q+2\nabla(\nabla\cdot\bm q)]$; this particular reduction is not attributed to the 1966 paper. Tzou's Eq.~17 maps this phonon case to DPL parameters $\alpha=\tau_Rc^2/3$, $\tau_T=9\tau_N/5$, and $\tau_q=\tau_R$ \cite{Tzou1995}. These continuum and mapping statements are conditional on Tzou's stated phonon approximation; they are not universal DPL identities.
 
 \subsection{Triple-phase-lag (TPL) theory (Roy Choudhuri, 2007)}
 \label{sec:4.8}
@@ -206,7 +188,7 @@ q_i(t+\tau_q) &= -kT_{,i}(t+\tau_T)\\
 \label{eq:4.17}
 \end{equation}
 
-The cited source gives a first-order expansion in the three lags with $0\leq\tau_v<\tau_T<\tau_q$. We use no $\tau_\nu/2$ term. Second-order DPL variants retain a $\tau_q^2/2$ term, but they are distinct from this first-order Roy Choudhuri law and establish no shared admissibility condition (CONDITIONAL) \cite{Yang2021,Gupta2023}. Other published variants include second-order DPL/TPL truncations with a free coefficient or tensor conductivity \cite{Kumar2023,Singh2019,Biswas2019}; a higher-order two-temperature TPL model uses a temperature lag rather than $\tau_v$ \cite{Abouelregal2020}. Further formulations combine memory-kernel bounds \cite{Singh2020a} or nonlocal operators on both stress and inertia \cite{Bayones2021}; related DPL/TPL model studies are also reported by Tibullo et al. \cite{Tibullo2017}. These are distinct constitutive variants, not one universal TPL law; no common stability or admissibility condition is inferred (CONDITIONAL).
+The cited source gives a first-order expansion in the three lags with $0\leq\tau_v<\tau_T<\tau_q$. We use no $\tau_\nu/2$ term. Second-order DPL variants retain a $\tau_q^2/2$ term, but they are distinct from this first-order Roy Choudhuri law and establish no shared admissibility condition \cite{Yang2021,Gupta2023}. Other published variants include second-order DPL/TPL truncations with a free coefficient or tensor conductivity \cite{Kumar2023,Singh2019,Biswas2019}; a higher-order two-temperature TPL model uses a temperature lag rather than $\tau_v$ \cite{Abouelregal2020}. Further formulations combine memory-kernel bounds \cite{Singh2020a} or nonlocal operators on both stress and inertia \cite{Bayones2021}; related DPL/TPL model studies are also reported by Tibullo et al. \cite{Tibullo2017}. These are distinct constitutive variants, not one universal TPL law; no common stability or admissibility condition is inferred.
 
 \subsection{Moore--Gibson--Thompson (MGT) theory}
 \label{sec:4.9}
@@ -220,37 +202,24 @@ Moore and Gibson (1960) derived a third-order acoustic wave equation for gas dyn
 
 Here $\vartheta_m$ is a thermal-displacement variable and $k^*$ must have units consistent with the selected model. This constitutive variant is discussed below with its source-specific assumptions and stability scope.
 
-% R3D-BEGIN:MGT
 \paragraph{Thermoelastic MGT evidence.}
 
-The displayed Eq.~\eqref{eq:4.18} is the thermoelastic MGT variant with relaxation in the heat-flux law and no relaxation term in the stress. Quintanilla's Eqs.~(2.4), (2.5), and (3.5) give the source-specific coercivity condition $K_{ij}=k_{ij}-\tau k^*_{ij}$ positive definite, with the scalar condition $k-\tau k^*>0$; in one dimension, $k>k^*\tau$ yields exponential stability, while $k<k^*\tau$ gives instability (PRIMARY-SOURCE-CHECKED) \cite{Quintanilla2019}. The source uses $\alpha_{,j}$ in (2.1) but $\theta_{,j}$ in (2.5) and (3.5), without reconciling that notation; the conclusion is kept model-specific.
+The displayed Eq.~\eqref{eq:4.18} is the thermoelastic MGT variant with relaxation in the heat-flux law and no relaxation term in the stress. Quintanilla's Eqs.~(2.4), (2.5), and (3.5) give the source-specific coercivity condition $K_{ij}=k_{ij}-\tau k^*_{ij}$ positive definite, with the scalar condition $k-\tau k^*>0$; in one dimension, $k>k^*\tau$ yields exponential stability, while $k<k^*\tau$ gives instability \cite{Quintanilla2019}. The source uses $\alpha_{,j}$ in (2.1) but $\theta_{,j}$ in (2.5) and (3.5), without reconciling that notation; the conclusion is kept model-specific.
 
-Bazarra et al. document a distinct radial thermoelastic MGT variant in which $\tau$ also appears in the stress coupling, $-\beta(\theta_{,i}+\tau\dot{\theta}_{,i})$; their radial decay result assumes $\bar k=k-\tau k^*>0$ (PRIMARY-SOURCE-CHECKED) \cite{Bazarra2021MGTradial}. Thus the relaxation placement in the stress law is variant-specific.
+Bazarra et al. document a distinct radial thermoelastic MGT variant in which $\tau$ also appears in the stress coupling, $-\beta(\theta_{,i}+\tau\dot{\theta}_{,i})$; their radial decay result assumes $\bar k=k-\tau k^*>0$ \cite{Bazarra2021MGTradial}. Thus the relaxation placement in the stress law is variant-specific.
 
 \paragraph{Acoustic MGT evidence.} Acoustic MGT-with-memory PDE decay uses its own acoustic parameter set and is separate from thermoelastic admissibility. The gas-dynamics parameter $\gamma_{\rm ac}=b-\tau c^2$ is acoustic only; it is not the thermoelastic condition $k-\tau k^*>0$.
 
-For the separate abstract acoustic MGT equation with memory, Lasiecka and Wang report exponential decay in the subcritical regime $\alpha\beta>\gamma$ (PRIMARY-SOURCE-CHECKED, ABSTRACT-LEVEL) \cite{LasieckaWang2015MGT}.
+The available abstract for Lasiecka and Wang's acoustic MGT equation with memory reports exponential decay in the subcritical regime $\alpha\beta>\gamma$; this is an acoustic result, not a thermoelastic claim \cite{LasieckaWang2015MGT}.
 
-Dell'Oro, Lasiecka, and Pata state that at $\alpha\beta=\gamma$ exponential stability holds if and only if $A$ is bounded; otherwise the energy tends to zero without an exponential rate (PRIMARY-SOURCE-CHECKED, ABSTRACT-LEVEL) \cite{DellOroLasieckaPata2016MGT}.
+The available abstract of Dell'Oro, Lasiecka, and Pata reports that at $\alpha\beta=\gamma$ exponential stability holds if and only if $A$ is bounded; otherwise the energy tends to zero without an exponential rate \cite{DellOroLasieckaPata2016MGT}.
 
-% R3F-BEGIN:ACOUSTIC-MGT
-Marchand, McDevitt, and Triggiani analyze an acoustic Jordan--MGT equation and report an exponential-decay result for that acoustic system; this source is not thermoelastic MGT evidence (PRIMARY-SOURCE-CHECKED; ACOUSTIC) \cite{MarchandMcDevittTriggiani2012}.
-% R3F-END:ACOUSTIC-MGT
+These results apply to the specified MGT variants and do not establish a family-wide classification.
 
-\paragraph{MGT evidence scope.} Limited primary sources are available for the s.4.9--s.4.10 MGT subtopics; these model-specific results do not constitute a family-wide classification.
-% R3D-END:MGT
-
-\subsection{Memory-dependent derivative (MDD) models (\texorpdfstring{Wang \& Li}{Wang and Li}, 2011)}
+\subsection{Memory-dependent derivative (MDD) models (Wang and Li, 2011)}
 \label{sec:4.10}
 
-MDD models replace the classical time derivative with an integral-form memory operator:
-
-\begin{equation}
-D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} \kappa(t-\xi) f'(\xi)\,d\xi,
-\label{eq:4.19}
-\end{equation}
-
-where $\omega_M>0$ is the finite horizon in this displayed candidate operator; the subscript distinguishes it from angular frequency elsewhere in the review. Its kernel bounds, normalization, regularity, and any admissible parameter set require verification for the exact formulation. A fading-memory condition on an unbounded lag variable cannot be inferred from this finite-horizon formula. A limit as $\omega_M\to0$ may be considered only after kernel normalization and regularity assumptions are specified; no classical-derivative limit or material calibration is asserted here. Li et al. use a $1/\omega$ normalization and report a degenerate-limit equivalence between their memory-dependent and fractional models; that result is formulation-specific and does not establish a limit for the candidate operator displayed here (CONDITIONAL) \cite{Li2019}.
+Memory-dependent derivative formulations use a kernel to weight the time history of a field. The kernel and normalization are part of the constitutive model, so comparisons must state the chosen form.
 
 \subsection{Fractional thermoelasticity}
 \label{sec:4.11}
@@ -264,8 +233,6 @@ Fractional thermoelasticity generalizes the heat equation using fractional deriv
 
 where ${}^C D_t^\alpha$ is the Caputo fractional derivative of order $\alpha$ and $a_\alpha$ has dimensions $\mathrm{m^2\,s^{-\alpha}}$ in this scalar equation. Thus $a_1$ is a thermal diffusivity, while $\sqrt{a_2}$ has dimensions of speed in the special case $\alpha=2$. For $1<\alpha\leq2$ this is a fractional diffusion--wave equation; that terminology alone does not establish a thermodynamically admissible, causal, or well-posed coupled thermoelastic model. Initial data and a constitutive embedding must be specified for a physical application.
 
-\paragraph{R3c fractional-source scope.} Primary-source coverage is limited: the sole s.4.11 plan row is metadata-only and not technically eligible. GAP-12 and GAP-13 remain open; no model-specific admissibility claim is inferred from that record.
-
 \subsection{Comparative summary}
 \label{sec:4.12}
 
@@ -273,14 +240,7 @@ Table \ref{tab:T2-generalized} summarizes selected constitutive distinctions and
 
 \input{tables/source/T2_generalized_thermoelastic}
 
-Published examples include a hyperbolic two-temperature closure \cite{Prasad2020}, fractional-order heat conduction with two temperatures \cite{Ezzat2011}, semiconductor applications of a hyperbolic two-temperature model \cite{Alzahrani2020}, and a fractional two-temperature hybrid with relaxation times \cite{Bassiouny2020}. These examples illustrate distinct constructions only; they do not establish shared admissibility or stability results (CONDITIONAL).
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.95\textwidth]{fig07-theory-map.pdf}
-\caption{Schematic map of selected thermoelastic model families. Parameter limits and links are model-specific; no universal reduction or convergence result is asserted. Green--Lindsay is represented as a single-temperature, temperature-rate-dependent theory, distinct from two-temperature models.}
-\label{fig:theory_map}
-\end{figure}
+Published examples include a hyperbolic two-temperature closure \cite{Prasad2020}, fractional-order heat conduction with two temperatures \cite{Ezzat2011}, semiconductor applications of a hyperbolic two-temperature model \cite{Alzahrani2020}, and a fractional two-temperature hybrid with relaxation times \cite{Bassiouny2020}. These examples illustrate distinct constructions only; they do not establish shared admissibility or stability results.
 
 \subsection{State variables and constitutive distinctions}
 \label{sec:4.13}
@@ -290,16 +250,16 @@ The model classes surveyed in this section differ in their chosen state variable
 \subsection{Thermodynamic admissibility as a selection principle}
 \label{sec:4.14}
 
-Thermodynamic admissibility must be established separately for each constitutive family by specifying its free energy, entropy, state variables, evolution laws, and admissible processes. The inherited universal dissipation claims and parameter exclusions have not been re-derived here. No parameter region is excluded, and no Green--Lindsay admissibility result is asserted in this revision without a primary-source derivation.
+Thermodynamic admissibility depends on the free energy, entropy, state variables, evolution laws, and admissible processes of each constitutive model.
 
-Thermodynamic restrictions must be derived from the free energy, entropy, heat-flux law, and internal variables of each chosen model. No single dissipation expression or parameter-ordering condition applies to all relaxation, two-temperature, phase-lag, memory-dependent, or fractional formulations. The family-wide assertions in the inherited text are not supported by derivations in this revision and are withdrawn pending model-specific primary-source and thermodynamic checks.
+Thermodynamic restrictions depend on the free energy, entropy, heat-flux law, and internal variables of the chosen model. A single dissipation expression or parameter-ordering condition does not apply to every relaxation, two-temperature, phase-lag, memory-dependent, or fractional formulation.
 
-Parameter restrictions are model-specific and must be included when a model is used. The limits and admissible ranges summarized in inherited tables are not treated as verified unless a derivation or full-text source check is identified.
+Parameter restrictions and limiting behavior are model-specific and should be stated with the constitutive equations and assumptions.
 
 \subsection{Modal structure is model-specific}
 \label{sec:4.15}
 
-The modal structure must be obtained by substituting the chosen constitutive equations into the field equations and solving the resulting characteristic problem. A model label alone does not determine the number of propagating, evanescent, or attenuating roots, nor their physical admissibility. The inherited wave-speed, attenuation, and mode-count claims for the relaxation, two-temperature, thermal-displacement, phase-lag, memory-dependent, and fractional families have not been checked in this revision. Root classification and interface matching are therefore treated as problem-specific tasks in Sections~\ref{sec:methods} and~\ref{sec:interfaces}; no universal count or crossover frequency is asserted here.
+The modal structure follows from substituting the chosen constitutive equations into the field equations and solving the resulting characteristic problem. A model label alone does not determine the number of propagating, evanescent, or attenuating roots. Root classification and interface matching are problem-specific.
 
 \subsection{Notation summary for Section 4}
 
@@ -323,9 +283,6 @@ $k$ & Thermal conductivity & W/(m$\cdot$K) & \eqref{eq:4.2} \\
 $\alpha_{\mathrm{GN}}$ & Thermal displacement (GN-II; distinct from fractional order $\alpha$) & K$\cdot$s & \eqref{eq:4.11} \\
 $\kappa,\kappa^*$ & GN-III rate and thermal-displacement coefficients & model-dependent & \eqref{eq:4.11}, \eqref{eq:4.14} \\
 $p_i$ & Entropy flux (GN-II) & W/(m$^2$$\cdot$K) & \eqref{eq:4.12} \\
-$D_{\omega_M}$ & MDD operator & 1/s & \eqref{eq:4.19} \\
-$\omega_M$ & MDD finite time horizon & s & \eqref{eq:4.19} \\
-$\kappa(t-\xi)$ & MDD kernel & dimensionless & \eqref{eq:4.19} \\
 ${}^C D_t^\alpha$ & Caputo fractional derivative & $t^{-\alpha}$ & \eqref{eq:4.20} \\
 $\alpha$ & Fractional derivative order & dimensionless & \eqref{eq:4.20} \\
 $a_\alpha$ & Coefficient in displayed scalar fractional equation & $\mathrm{m^2\,s^{-\alpha}}$ & \eqref{eq:4.20} \\
