@@ -1,25 +1,25 @@
-# Missing source-paper PDF links for the Drive audit
+# Missing source-paper PDF links for the archive audit
 
 **Prepared:** 2026-10-26  
-**Purpose:** Link manifest for source PDFs used in the audit. The four PDFs supplied in the user-provided Drive ZIP have now been read; their bounded evidence dispositions are recorded in `literature-evidence-matrix.csv` and `scientific-audit.md`. This is a link manifest, not a Git-hosted bundle of the articles.
+**Purpose:** Audit manifest for source PDFs used in this review. The four user-supplied PDFs have been read; their bounded evidence dispositions are recorded in `literature-evidence-matrix.csv` and `scientific-audit.md`. This file does not host or link to the copyrighted articles.
 
-The Drive folders searched so far are not confirmed exhaustive. Where a publisher page does not offer an open PDF, the link is to the DOI/publisher record—not a free-PDF claim. Copyrighted PDFs are linked to their lawful host rather than copied into this Git repository.
+The source collections searched so far are not confirmed exhaustive. Where a publisher page does not offer an open PDF, the link is to the DOI/publisher record—not a free-PDF claim. Copyrighted PDFs are linked to their lawful host rather than copied into this Git repository.
 
-## User-supplied Drive archive — four PDFs read
+## User-supplied archive (not in repo): four PDFs read
 
-The user-provided ZIP [`1.1722351.zip`](https://drive.google.com/file/d/1JPASoF5ztIk_T4saBBlZPBa9VRteTesA/view) (Drive ID `1JPASoF5ztIk_T4saBBlZPBa9VRteTesA`) contains the four listed PDF members. They were text-read from temporary Drive copies, then those copies and their temporary folder were moved to Drive trash; the supplied ZIP remains untouched. Copyrighted PDFs are not copied into this repository. The “PDF link” below opens the archive; select the member filename shown.
+The user-supplied archive (not in repo) contained the four listed PDF members. The PDFs were read from temporary copies, which were removed after review. Copyrighted PDFs are not copied into this repository. The table records member names and bounded evidence outcomes; it does not provide access links.
 
-| Exact title confirmed from PDF | DOI | Audit disposition | PDF / access link |
+| Exact title confirmed from PDF | DOI | Audit disposition | Source/member |
 |---|---|---|---|
-| M. A. Biot, “Thermoelasticity and Irreversible Thermodynamics” (1956) | `10.1063/1.1722351` | Read; supports coupled thermoelasticity with Fourier conduction (pp. 240–243, Eqs. 2.2, 3.2–3.4). Does not independently verify the manuscript's Eq. 3.29 energy-flux convention. | [Drive ZIP](https://drive.google.com/file/d/1JPASoF5ztIk_T4saBBlZPBa9VRteTesA/view) · member `1.1722351.pdf` |
-| A. Cemal Eringen, “Linear Theory of Nonlocal Elasticity and Dispersion of Plane Waves” (1972) | `10.1016/0020-7225(72)90050-X` | Read; supports broad spatially nonlocal constitutive response and plane-wave dispersion. Exact manuscript kernel-average formula/assumptions not verified. | [Drive ZIP](https://drive.google.com/file/d/1JPASoF5ztIk_T4saBBlZPBa9VRteTesA/view) · member `0020-72252990050-x.pdf` |
-| A. Cemal Eringen, “Theory of Nonlocal Thermoelasticity” (1974) | `10.1016/0020-7225(74)90033-0` | Read; pp. 1063–1068 support nonlocal thermoelastic constitutive functionals and distance-dependent influence functions. Exact manuscript kernel-average formula/assumptions not verified. | [Drive ZIP](https://drive.google.com/file/d/1JPASoF5ztIk_T4saBBlZPBa9VRteTesA/view) · member `0020-72252990033-0.pdf` |
-| R. S. Dhaliwal and H. H. Sherief, “Generalized Thermoelasticity for Anisotropic Media” (1980) | `10.1090/qam/575828` | Read; supports the topic of generalized thermoelastic equations for anisotropic media, not the manuscript's geographic attribution. | [Drive ZIP](https://drive.google.com/file/d/1JPASoF5ztIk_T4saBBlZPBa9VRteTesA/view) · member `qam%2F575828.pdf` |
+| M. A. Biot, “Thermoelasticity and Irreversible Thermodynamics” (1956) | `10.1063/1.1722351` | Read; supports coupled thermoelasticity with Fourier conduction (pp. 240–243, Eqs. 2.2, 3.2–3.4). Does not independently verify the manuscript's Eq. 3.29 energy-flux convention. | user-supplied archive (not in repo) · member `1.1722351.pdf` |
+| A. Cemal Eringen, “Linear Theory of Nonlocal Elasticity and Dispersion of Plane Waves” (1972) | `10.1016/0020-7225(72)90050-X` | Read; supports broad spatially nonlocal constitutive response and plane-wave dispersion. Exact manuscript kernel-average formula/assumptions not verified. | user-supplied archive (not in repo) · member `0020-72252990050-x.pdf` |
+| A. Cemal Eringen, “Theory of Nonlocal Thermoelasticity” (1974) | `10.1016/0020-7225(74)90033-0` | Read; pp. 1063–1068 support nonlocal thermoelastic constitutive functionals and distance-dependent influence functions. Exact manuscript kernel-average formula/assumptions not verified. | user-supplied archive (not in repo) · member `0020-72252990033-0.pdf` |
+| R. S. Dhaliwal and H. H. Sherief, “Generalized Thermoelasticity for Anisotropic Media” (1980) | `10.1090/qam/575828` | Read; supports the topic of generalized thermoelastic equations for anisotropic media, not the manuscript's geographic attribution. | user-supplied archive (not in repo) · member `qam%2F575828.pdf` |
 
 ## Additional Tzou PDF read and unresolved Tzou records
 
 
-The user subsequently supplied `1.2822329 (1).pdf`. Its text confirms the 1995 article below; the temporary Drive extraction copy was moved to trash after review. The file is not added to Git. The DOI is matched from the attachment filename and project record, not asserted as printed in the article.
+The user subsequently supplied `1.2822329 (1).pdf`. Its text confirms the 1995 article below; the temporary extraction copy was moved to trash after review. The file is not added to Git. The DOI is matched from the attachment filename and project record, not asserted as printed in the article.
 
 | Exact title confirmed from PDF | DOI | Audit disposition | PDF / access link |
 |---|---|---|---|

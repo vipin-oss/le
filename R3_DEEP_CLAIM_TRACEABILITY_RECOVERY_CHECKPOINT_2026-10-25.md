@@ -13,7 +13,7 @@
 ## Findings and evidence examined
 
 1. The checked-out tree is the hand-off/cleared repository, not the R3 project snapshot: `git ls-tree HEAD` contains only `README.md`. The README describes a local-copy hand-off. There is no `phase5/` directory and no manuscript, claim map, source/evidence matrix, defect register, report, control packet, script, test, or PDF in the checkout.
-2. Exact Drive filename searches returned zero for:
+2. Exact archive filename search returned zero for:
    - `R3_EXPANDED_CLAIM_SOURCE_TRACEABILITY_2026-10-25.csv`
    - `literature-evidence-matrix.csv`
    - `R3_FINAL_OPEN_DEFECTS_REGISTER_2026-10-25.csv`
@@ -22,7 +22,7 @@
    - `R3_CLAIM_SOURCE_TRACEABILITY_2026-10-24.csv`
    - `R3_CLAIM_DEFECT_REGISTER_2026-10-24.csv`
    - `R3_FINAL_EVIDENCE_MANIFEST_2026-10-25.csv`
-3. A targeted Drive full-text search for both `citation_occurrences` and `R3_EXPANDED_CLAIM_SOURCE_TRACEABILITY` returned zero. The exact Drive searches for `D4_D5_CONTROL_OWNER_DECISION_PACKET_2026-10-25.md` and `R3_SUPERVISOR_DECISION_TRACKER_R3S2_2026-10-25.csv` also returned zero.
+3. A targeted archive full-text search for both `citation_occurrences` and `R3_EXPANDED_CLAIM_SOURCE_TRACEABILITY` returned zero. The exact archive search for `D4_D5_CONTROL_OWNER_DECISION_PACKET_2026-10-25.md` and `R3_SUPERVISOR_DECISION_TRACKER_R3S2_2026-10-25.csv` also returned zero.
 4. Targeted Gmail searches for the previously cited D4/D5 paper-key pair and for `(D4 OR D5)` with the two relevant author-name variants returned zero; the searches were complete and included spam/trash. No email, library request, or owner message was sent.
 5. The checked local Git objects for four previously cited project commits were absent. No fetch or ref synchronization was attempted, consistent with the standing constraint.
 6. The last known source-access record from the prior campaign remains historical only: two same-name Achenbach-title DOCX files were duplicates (23,366 bytes; identical MD5) and extracted as a generic thesis outline/book list rather than source pages; the targeted Nowacki title search returned none. No new authorized source text or source-access result was obtained in this run, and no request was sent.
@@ -56,4 +56,4 @@
 
 ## Next executable action
 
-Restore or provide the authorized R3 project files into this same worktree—at minimum the current manuscript, the 96-claim matrix and its criteria/history, R3F/audit scripts and tests, defect/gate registers, and the D4/D5 control record—without changing branch or HEAD and without using `[REDACTED: private storage reference]`. Then resume claim-level inspection from the highest-risk unmapped rows. Until the control conflict is resolved, keep preflight/apply disabled and overall status **NOT PASSED / NOT SUBMISSION READY**.
+Restore or provide the authorized R3 project files into this same worktree—at minimum the current manuscript, the 96-claim matrix and its criteria/history, R3F/audit scripts and tests, defect/gate registers, and the D4/D5 control record—without changing branch or HEAD and without accessing the user-supplied archive (not in repo). Then resume claim-level inspection from the highest-risk unmapped rows. Until the control conflict is resolved, keep preflight/apply disabled and overall status **NOT PASSED / NOT SUBMISSION READY**.

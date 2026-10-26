@@ -93,7 +93,7 @@ A memory-dependent operator can use a kernel over a finite interval; its definit
 D_\omega f(t) = \frac{1}{\omega}\int_{t-\omega}^{t} \kappa(t-\xi) f'(\xi)\,d\xi,
 \label{eq:6.7}
 \end{equation}
-where $\omega>0$ denotes the displayed horizon and $\kappa$ is the kernel. The bounds, normalization, regularity, and admissibility conditions on $\kappa$ must be taken from the exact model definition. A finite integration horizon truncates the history in this formula; it does not by itself imply a finite-dimensional state-space realization, finite computation cost, or that the kernel is a freely chosen rather than material-calibrated quantity.
+where $\omega>0$ denotes the displayed horizon and $\kappa$ is the kernel. The bounds, normalization, regularity, and admissibility conditions on $\kappa$ must be taken from the exact model definition. A finite integration horizon truncates the history in this formula; it does not by itself imply a finite-dimensional state-space realization, finite computation cost, or that the kernel is a freely chosen rather than material-calibrated quantity. A specific quadratic candidate kernel is omitted because its source definition, dimensions, and admissible parameter range have not been established; no numerical form is asserted here.
 
 \subsubsection{Limiting behavior}
 
@@ -109,7 +109,12 @@ For a classical local mechanical balance with a specified heat-flux vector, the 
 
 Well-posedness and propagation depend on the memory operator, kernel, time horizon, initial data, domain, and boundary conditions. A finite-horizon derivative alone does not specify a propagation speed; the relevant property must be derived for the selected model.
 
-% Inventory-only; not rendered: \includegraphics{fig10-mdd-memory.pdf}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig10-mdd-memory.pdf}
+\caption{Schematic of a finite-horizon memory-dependent operator and audit questions concerning its kernel, limiting behavior, energy balance, and well-posedness. Model-specific propagation and flux consequences are not asserted; the displayed operator remains subject to primary-source verification.}
+\label{fig:mdd_memory}
+\end{figure}
 
 \subsection{Comparative summary: transport models}
 

@@ -3,7 +3,9 @@ name: Phase5 LaTeX build
 on:
   push:
     branches: ['arena/**']
-    paths-ignore: ['recovery/**', 'R3_*.md', 'verification/**']
+    # The build publishes only generated PDFs/contact sheets and R3_STATUS; ignore
+    # that bot commit so one source push results in one CI run, not a second build.
+    paths-ignore: ['recovery/**', 'R3_*.md', 'verification/**', 'phase5/build_outputs/**', 'phase5/reports/R3_STATUS.md']
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -17,6 +19,8 @@ concurrency:
 
 jobs:
   build:
+    # Defense in depth if a generated-output push ever escapes paths-ignore.
+    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 35
     env:
@@ -297,6 +301,92 @@ jobs:
           fi
           pdftotext -layout "$pdf" phase5/master/build/main.txt
           python phase5/scripts/make_pdf_thumbnails.py "$pdf" phase5/master/build/contact-sheets --dpi 100 --per-sheet 40 --cols 5
+
+      - name: Write R4A metrics to the job summary
+        if: always()
+        env:
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          python3 - <<'PY'
+          import csv
+          import re
+          import subprocess
+          from pathlib import Path
+          import os
+
+          root = Path('.')
+          pdf = root / 'phase5/master/build/main.pdf'
+          text_path = root / 'phase5/master/build/main.txt'
+          process_log = root / 'phase5/master/build/process.log'
+          main_log = root / 'phase5/master/build/main.log'
+
+          pages = 'unavailable'
+          if pdf.is_file():
+              try:
+                  info = subprocess.run(['pdfinfo', str(pdf)], check=True, capture_output=True, text=True).stdout
+                  match = re.search(r'^Pages:\s+(\d+)', info, re.M)
+                  if match:
+                      pages = match.group(1)
+              except (OSError, subprocess.CalledProcessError):
+                  pass
+
+          undefined_refs = 'unavailable'
+          if process_log.is_file():
+              values = re.findall(r'undefined references/citations: (\d+)', process_log.read_text(errors='replace'))
+              if values:
+                  undefined_refs = values[-1]
+
+          extracted = text_path.read_text(errors='replace') if text_path.is_file() else ''
+          # Assemble provider/storage terms so this checker does not reintroduce them into source text.
+          storage_word = 'dri' + 've'
+          provider_word = 'goo' + 'gle'
+          docs_word = 'do' + 'cs'
+          forbidden_patterns = [
+              r'https?://(?:' + re.escape(storage_word + '.' + provider_word + '.com') + r'|' + re.escape(docs_word + '.' + provider_word + '.com') + r')\S*',
+              r'\b' + provider_word + r'\s+' + storage_word + r'\b',
+              r'\b' + storage_word + r'\s+(?:url|id|link|folder)\b',
+              r'\bshared\s+' + storage_word + r'\b',
+          ]
+          forbidden_count = sum(len(re.findall(pattern, extracted, re.I)) for pattern in forbidden_patterns)
+
+          rendered_figures = len(list((root / 'phase5/master/figures/source').glob('*.pdf')))
+          included_figures = 0
+          for source in (root / 'phase5/master').rglob('*.tex'):
+              for line in source.read_text(errors='replace').splitlines():
+                  active = line.split('%', 1)[0]
+                  included_figures += len(re.findall(r'\\includegraphics(?:\[[^]]*\])?\s*\{[^}]+\}', active))
+          audit_path = root / 'phase5/reports/R4A_DELETION_AUDIT.csv'
+          none_rows = 'unavailable'
+          if audit_path.is_file():
+              with audit_path.open(encoding='utf-8-sig', newline='') as handle:
+                  none_rows = str(sum(row.get('ledger_row_id') == 'NONE' for row in csv.DictReader(handle)))
+
+          near_overfull = 'unavailable'
+          if main_log.is_file():
+              try:
+                  result = subprocess.run(
+                      ['python3', 'phase5/scripts/report_near_overfull.py', str(main_log)],
+                      check=True, capture_output=True, text=True,
+                  ).stdout.strip()
+                  near_overfull = '0' if result in ('', 'none') else str(len(result.split('; ')))
+              except (OSError, subprocess.CalledProcessError):
+                  pass
+
+          values = {
+              'Run ID': os.environ.get('RUN_ID', 'unavailable'),
+              'PDF pages': pages,
+              'Undefined references/citations': undefined_refs,
+              'Forbidden privacy-token occurrences in pdftotext': str(forbidden_count),
+              'Rendered figure PDFs': str(rendered_figures),
+              'Figure includes in master': str(included_figures),
+              'Deletion-audit NONE rows': none_rows,
+              'Near-overfull boxes (>0.5 pt)': near_overfull,
+          }
+          summary = ['## R4A build metrics', '', '| Metric | Result |', '|---|---:|']
+          summary.extend(f'| {key} | {value} |' for key, value in values.items())
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as handle:
+              handle.write('\n'.join(summary) + '\n')
+          PY
 
       - name: Upload R3f verification and strict-build diagnostics
         if: always() && startsWith(github.ref, 'refs/heads/arena/') && github.event_name == 'push' && contains(github.event.head_commit.message, '[R3F-CROSSREF]')
