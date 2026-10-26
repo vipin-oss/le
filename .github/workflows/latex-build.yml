@@ -324,10 +324,28 @@ jobs:
           import sys
           from pathlib import Path
           text = Path(sys.argv[1]).read_text(errors='replace')
-          pattern = re.compile(r'PRIMARY-SOURCE|GAP-|LIT-|R3|R4|UNVERIFIED|OCL-|\?\?', re.I)
-          hits = pattern.findall(text)
-          print(f'Forbidden manuscript-tag occurrences in pdftotext: {len(hits)}')
-          if hits:
+          # Exact case-sensitive tag pattern requested for the gate.
+          tag_pattern = re.compile(r'\b(?:PRIMARY-SOURCE|GAP-\d+|LIT-\d+|OCL-\d+|R[1-6][a-z]?\b(?=[ :\]-])|UNVERIFIED)\b|\?\?')
+          # Retain the previous broad scan only to classify its legacy hits in CI logs.
+          legacy_pattern = re.compile(r'PRIMARY-SOURCE|GAP-|LIT-|R3|R4|UNVERIFIED|OCL-|\?\?', re.I)
+          legacy_hits = list(legacy_pattern.finditer(text))
+          strict_hits = list(tag_pattern.finditer(text))
+          print(f'Legacy broad substring matches (diagnostic only): {len(legacy_hits)}')
+          for number, hit in enumerate(legacy_hits, 1):
+              strict = next((match for match in strict_hits
+                             if match.start() == hit.start() and match.end() >= hit.end()), None)
+              classification = 'REAL process tag' if strict else 'FALSE POSITIVE under strict tag pattern'
+              strict_token = strict.group(0) if strict else 'none'
+              line_number = text.count('\n', 0, hit.start()) + 1
+              context = text[max(0, hit.start() - 80):min(len(text), hit.end() + 80)]
+              context = context.replace('\r', '').replace('\n', ' ⏎ ')
+              message = (f'line={line_number}; matched={hit.group(0)!r}; strict_token={strict_token!r}; '
+                         f'classification={classification}; context={context!r}')
+              print(f'Legacy hit {number}: {message}')
+              annotation = message.replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+              print(f'::notice title=R4A legacy scan hit::{annotation}')
+          print(f'Forbidden-token occurrences in pdftotext (strict pattern): {len(strict_hits)}')
+          if strict_hits:
               raise SystemExit(1)
           PY
 
@@ -377,7 +395,8 @@ jobs:
               r'\bshared\s+' + storage_word + r'\b',
           ]
           forbidden_count = sum(len(re.findall(pattern, extracted, re.I)) for pattern in forbidden_patterns)
-          forbidden_tags = len(re.findall(r'PRIMARY-SOURCE|GAP-|LIT-|R3|R4|UNVERIFIED|OCL-|\?\?', extracted, re.I))
+          tag_pattern = re.compile(r'\b(?:PRIMARY-SOURCE|GAP-\d+|LIT-\d+|OCL-\d+|R[1-6][a-z]?\b(?=[ :\]-])|UNVERIFIED)\b|\?\?')
+          forbidden_tags = len(tag_pattern.findall(extracted))
 
           rendered_figures = len(list((root / 'phase5/master/figures/source').glob('*.pdf')))
           included_figures = 0
