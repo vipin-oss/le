@@ -258,12 +258,14 @@ The user supplied `1.1722351.zip` in Drive (ID `1JPASoF5ztIk_T4saBBlZPBa9VRteTes
 
 These bounded matches do not certify every use of the same references elsewhere in the manuscript. In particular, the Biot citation does not verify the exact Section 3 energy-flux identity; the Eringen papers do not by themselves verify the manuscript's precise weighted-average formula; and Dhaliwal & Sherief does not establish national attribution. Other claims remain OPEN / UNVERIFIED unless their matrix notes state otherwise. The matrix contains 97 records. The prior pass updated four newly supplied-source rows; this pass maps FW-006 (Tzou 1995) to its specific cited claims and upgrades its evidence from SECONDARY-SOURCE to PRIMARY-SOURCE-CHECKED / SUPPORTED within the stated scope. No manuscript content or bibliography file was changed.
 
-### Unresolved source identity / no PDF located
+### Tzou sources: one verified, two deferred
 
-The four works supplied in `1.1722351.zip` are now read and are not missing-source records. The remaining unresolved EXT-003/Tzou (1996) entry was not located as an original source PDF in the Drive searches to date; the Drive folders are not exhaustive, so this is not a claim of absence from every possible Drive location. Its current inventory label and DOI are:
+The user supplied the 1995 Tzou PDF, which was read and matched to the claims noted above. The user has directed that the two uncertain legacy article leads EXT-003 (1996) and EXT-004 (1997) be set aside because they may be erroneous or nonexistent. They do not block the current paper, and neither is cited in the active `phase5/master` manuscript. Keep both rows OPEN / UNVERIFIED as provenance, but do not add them to the manuscript bibliography unless the sources are later identified and the user reintroduces them. This is a decision to defer, not a finding that the works do not exist.
 
-| Current inventory label (exact published title unverified) | DOI string in the project record |
-|---|---|
-| H. C. Tzou (1996), “Dual-phase-lag heat conduction” (provisional label only) | `10.1115/1.2823851` |
+| Record | Inventory title (not source-confirmed) | Project DOI string | Disposition |
+|---|---|---|---|
+| FW-006 — Tzou (1995) | “A Unified Field Approach for Heat Conduction From Macro- to Micro-Scales” | `10.1115/1.2822329` | User PDF read; printed pp. 8–10, Eqs. (1)–(5), (15), (17), support separate phase lags, classical limits, and the cited phonon-law parameter mapping within the paper’s assumptions. |
+| EXT-003 — Tzou (1996) | “Dual-phase-lag heat conduction” (provisional) | `10.1115/1.2823851` | Deferred; no primary-source identity established, and DOI resolver returned “DOI Not Found.” |
+| EXT-004 — Tzou (1997) | “Three-phase-lag heat transfer” (legacy label) | `10.1016/S0017-9310(97)00177-3` | Deferred; retained only as an unverified legacy lead, not a verified TPL primary source. |
 
-The DOI resolver returned “DOI Not Found,” and the title is inherited inventory wording, not a title verified from a primary source. Do not present this as an exact article title/DOI match, substitute a similarly titled paper, or count it as a conclusively identified missing paper. A separate Tzou book, *Macro- to Micro-Scale Heat Transfer: The Lagging Behavior* (CRC Press, 1996; ISBN 978-1-56032-435-5), is a candidate identity only and has no DOI established here; it is not confirmed to be the intended EXT-003 source. Resolve the intended identity and search other Drive collections before making a final absence statement.
+The printed 1997 Tzou book, *Macro-to-microscale heat transfer: the lagging behavior* (ISBN 978-0-8493-8493-8), is a separate monograph record with no DOI confirmed; it is not EXT-004. An earlier 1996 book record is also a separate candidate and is not confirmed as EXT-003. Neither book is being substituted for the deferred article records.
