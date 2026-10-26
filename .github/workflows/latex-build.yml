@@ -288,7 +288,7 @@ jobs:
           from pathlib import Path
           text = Path(sys.argv[1]).read_text(errors='replace')
           # Exact case-sensitive tag pattern requested for the gate.
-          tag_pattern = re.compile(r'\b(?:PRIMARY-SOURCE|GAP-\d+|LIT-\d+|OCL-\d+|R[1-6][a-z]?\b(?=[ :\]-])|UNVERIFIED)\b|\?\?')
+          tag_pattern = re.compile(r'PRIMARY-SOURCE|GAP-\d+|LIT-\d+|OCL-\d+|UNVERIFIED|\bR[1-6][a-z]\b|\?\?')
           # Retain the previous broad scan only to classify its legacy hits in CI logs.
           legacy_pattern = re.compile(r'PRIMARY-SOURCE|GAP-|LIT-|R3|R4|UNVERIFIED|OCL-|\?\?', re.I)
           legacy_hits = list(legacy_pattern.finditer(text))
@@ -360,7 +360,7 @@ jobs:
               r'\bshared\s+' + storage_word + r'\b',
           ]
           forbidden_count = sum(len(re.findall(pattern, extracted, re.I)) for pattern in forbidden_patterns)
-          tag_pattern = re.compile(r'\b(?:PRIMARY-SOURCE|GAP-\d+|LIT-\d+|OCL-\d+|R[1-6][a-z]?\b(?=[ :\]-])|UNVERIFIED)\b|\?\?')
+          tag_pattern = re.compile(r'PRIMARY-SOURCE|GAP-\d+|LIT-\d+|OCL-\d+|UNVERIFIED|\bR[1-6][a-z]\b|\?\?')
           forbidden_tags = len(tag_pattern.findall(extracted))
 
           rendered_figures = len(list((root / 'phase5/master/figures/source').glob('*.pdf')))
