@@ -302,6 +302,26 @@ jobs:
           pdftotext -layout "$pdf" phase5/master/build/main.txt
           python phase5/scripts/make_pdf_thumbnails.py "$pdf" phase5/master/build/contact-sheets --dpi 100 --per-sheet 40 --cols 5
 
+      - name: Enforce forbidden manuscript-tag scan
+        if: always()
+        run: |
+          text=phase5/master/build/main.txt
+          if [[ ! -s "$text" ]]; then
+            echo "Extracted PDF text unavailable; cannot enforce the forbidden-token scan."
+            exit 1
+          fi
+          python3 - "$text" <<'PY'
+          import re
+          import sys
+          from pathlib import Path
+          text = Path(sys.argv[1]).read_text(errors='replace')
+          pattern = re.compile(r'PRIMARY-SOURCE|GAP-|LIT-|R3|R4|UNVERIFIED|OCL-|\?\?', re.I)
+          hits = pattern.findall(text)
+          print(f'Forbidden manuscript-tag occurrences in pdftotext: {len(hits)}')
+          if hits:
+              raise SystemExit(1)
+          PY
+
       - name: Write R4A metrics to the job summary
         if: always()
         env:
@@ -348,6 +368,7 @@ jobs:
               r'\bshared\s+' + storage_word + r'\b',
           ]
           forbidden_count = sum(len(re.findall(pattern, extracted, re.I)) for pattern in forbidden_patterns)
+          forbidden_tags = len(re.findall(r'PRIMARY-SOURCE|GAP-|LIT-|R3|R4|UNVERIFIED|OCL-|\?\?', extracted, re.I))
 
           rendered_figures = len(list((root / 'phase5/master/figures/source').glob('*.pdf')))
           included_figures = 0
@@ -377,6 +398,7 @@ jobs:
               'PDF pages': pages,
               'Undefined references/citations': undefined_refs,
               'Forbidden privacy-token occurrences in pdftotext': str(forbidden_count),
+              'Forbidden manuscript-tag occurrences in pdftotext': str(forbidden_tags),
               'Rendered figure PDFs': str(rendered_figures),
               'Figure includes in master': str(included_figures),
               'Deletion-audit NONE rows': none_rows,
@@ -386,6 +408,7 @@ jobs:
           summary.extend(f'| {key} | {value} |' for key, value in values.items())
           with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as handle:
               handle.write('\n'.join(summary) + '\n')
+          print('::notice title=R4A metrics::' + '; '.join(f'{key}={value}' for key, value in values.items()))
           PY
 
       - name: Upload R3f verification and strict-build diagnostics

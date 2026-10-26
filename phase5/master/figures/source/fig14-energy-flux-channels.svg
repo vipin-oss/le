@@ -26,5 +26,5 @@ text{font-family:'DejaVu Sans',Arial,sans-serif;fill:#17324d}.title{font-size:26
 <text x="550" y="420" class="body">State boundary passivity and storage.</text>
 <text x="550" y="449" class="body">Evaluate the total field, including cross terms.</text>
 <text x="550" y="480" class="note">No universal modal identity is asserted here.</text>
-<text x="500" y="545" class="note" text-anchor="middle">This schematic replaces unverified generalized flux and evanescent-mode claims in the earlier artwork.</text>
+<text x="500" y="545" class="note" text-anchor="middle">This schematic replaces generalized flux and evanescent-mode claims in the earlier artwork that lacked a checked derivation.</text>
 </svg>
