@@ -4,7 +4,7 @@ This folder mixes current authoritative registers with dated, historical snapsho
 
 ## Current sources of truth
 
-- `OPEN_CLAIMS_LEDGER.csv` is the authority for current open claims (439 rows: B=144, C=295). A row/source lead remains open until its specific claim, source identity, and needed equation/result are checked.
+- `OPEN_CLAIMS_LEDGER.csv` is the authority for current open claims (442 rows: A=10, B=138, C=294). A row/source lead remains open until its specific claim, source identity, and needed equation/result are checked.
 - `R4A_DELETION_AUDIT.csv` is the authority for removed text (593 rows, zero `NONE` identifiers). It does not certify deleted claims or reconstruct missing work.
 - `build-status.md` is the current strict-build status. The manuscript/source validation recorded here is run `40349268298`: 129 pages, successful engineering gates.
 - `scientific-audit.md`, `equation-audit.csv`, and `figure-audit.csv` provide current context/registers, not blanket proof of scientific correctness or licensing.
@@ -48,7 +48,7 @@ This folder mixes current authoritative registers with dated, historical snapsho
 | [`figure-render-inspection.txt`](figure-render-inspection.txt) | Structural/render inspection notes for the generated vector figures. | CURRENT CONTEXT |
 | [`literature-evidence-matrix.csv`](literature-evidence-matrix.csv) | Inherited literature inventory/evidence matrix; not a claim-level certification or complete systematic search. | HISTORICAL INVENTORY |
 | [`missing-source-pdf-links.md`](missing-source-pdf-links.md) | Historical source-access notes; publisher PDFs/full-text are not stored here. | HISTORICAL |
-| [`OPEN_CLAIMS_LEDGER.csv`](OPEN_CLAIMS_LEDGER.csv) | Authoritative current open-claim register: 439 rows (B=144, C=295); a source lead is not proof. | CURRENT — AUTHORITATIVE OPEN CLAIMS |
+| [`OPEN_CLAIMS_LEDGER.csv`](OPEN_CLAIMS_LEDGER.csv) | Authoritative current open-claim register: 442 rows (A=10, B=138, C=294); a source lead is not proof. | CURRENT — AUTHORITATIVE OPEN CLAIMS |
 | [`page-by-page-reconciliation.md`](page-by-page-reconciliation.md) | Earlier v1.0-to-v1.1 physical-page comparison (146-page build); now historical. | HISTORICAL |
 | [`page-count-reconciliation.md`](page-count-reconciliation.md) | Earlier page-count/source-size reconciliation (146-page build); now historical. | HISTORICAL |
 | [`phase-status.md`](phase-status.md) | Dated phase-end status snapshot from 2026-10-22. | HISTORICAL |
@@ -70,6 +70,7 @@ This folder mixes current authoritative registers with dated, historical snapsho
 | [`R3F_VERIFIED_REFERENCES.bib`](R3F_VERIFIED_REFERENCES.bib) | R3F bibliography snapshot. | HISTORICAL |
 | [`R4A_DELETION_AUDIT.csv`](R4A_DELETION_AUDIT.csv) | Authoritative current record of removed manuscript text: 593 entries, zero NONE identifiers. | CURRENT — AUTHORITATIVE REMOVED TEXT |
 | [`R4A_DELETION_AUDIT_NOTES.md`](R4A_DELETION_AUDIT_NOTES.md) | Method and interpretation notes for the current R4A deletion audit. | CURRENT CONTEXT |
+| [`R4B_SOURCE_FINDINGS.md`](R4B_SOURCE_FINDINGS.md) | Targeted source findings, page/equation anchors, source-identity limits, and remaining open items for R4B-1. | CURRENT SOURCE FINDINGS |
 | [`reviewer-simulations.md`](reviewer-simulations.md) | Synthetic reviewer simulations; not external peer review. | HISTORICAL / SIMULATED |
 | [`scientific-audit.md`](scientific-audit.md) | Scientific audit narrative documenting checked derivations, limitations, and open questions; not a complete claim verification. | CURRENT CONTEXT |
 | [`V-B3d-cross-term-check.md`](V-B3d-cross-term-check.md) | Focused derivation/check note for a B3d cross-term. | CURRENT TECHNICAL NOTE |

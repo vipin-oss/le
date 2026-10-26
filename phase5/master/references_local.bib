@@ -2,10 +2,9 @@
 % Verified BibTeX library
 % Multiphysics Wave Mechanics in Generalized Continua — review manuscript
 %
-% Every entry below was resolved against the Crossref REST API
-% (https://api.crossref.org/works/<DOI>) and the title, author list,
-% journal, volume, issue, pages and year in each record were taken from
-% the returned Crossref metadata, not from secondary citation lists.
+% Existing DOI-bearing entries were resolved against Crossref where available.
+% Source-checked additions record the fields visible in the primary paper;
+% a DOI is included only when it is confirmed on the source itself.
 %
 % Fields
 %   verified = {YES}  -> DOI resolves in Crossref and the returned record
@@ -37,6 +36,19 @@
   access_date = {2026-10-21},
   status  = {FOUNDATIONAL},
   theory_family = {classical_coupled},
+}
+
+@article{Chester1963,
+  author  = {Chester, Marvin},
+  title   = {Second Sound in Solids},
+  journal = {Physical Review},
+  year    = {1963},
+  volume  = {131},
+  pages   = {2013--2015},
+  source  = {Primary paper identity; targeted text on printed pp. 2014--2015; DOI not printed in inspected copy},
+  access_date = {2026-10-26},
+  status  = {FOUNDATIONAL},
+  theory_family = {second_sound},
 }
 
 @article{Lord1967,
@@ -229,8 +241,9 @@
   number  = {2},
   pages   = {778--788},
   doi     = {10.1103/PhysRev.148.778},
-  source  = {Crossref metadata; no claim-level source inspection recorded},
-  verification_note = {Distinct companion article; do not transfer equation findings from the .766 paper.},
+  source  = {Crossref metadata; source PDF title page and printed pp. 778 and 782 inspected; DOI not printed in source},
+  access_date = {2026-10-26},
+  verification_note = {Distinct from the p. 766 article; only the title page and selected passages were checked.},
 }
 
 @article{Joseph1989,
@@ -1777,6 +1790,16 @@
   verified = {YES},
   source = {Crossref},
   access_date = {2026-10-23},
+}
+
+@article{DellOroPata2016Viscoelasticity,
+  author  = {Dell'Oro, Filippo and Pata, Vittorino},
+  title   = {On the Moore--Gibson--Thompson Equation and Its Relation to Linear Viscoelasticity},
+  journal = {Applied Mathematics and Optimization},
+  year    = {2016},
+  doi     = {10.1007/s00245-016-9365-1},
+  source  = {Primary paper first page confirms authors, title, DOI, and copyright year},
+  access_date = {2026-10-26},
 }
 
 @article{Mindlin1974Thermopiezo,
