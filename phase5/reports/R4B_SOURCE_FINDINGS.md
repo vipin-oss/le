@@ -1,6 +1,6 @@
-# R4B-1 — Source findings
+# R4B-AUTO — Source findings and disposition history
 
-**Scope.** Targeted verification only: Chester (1963); both Guyer–Krumhansl (1966) papers at *Physical Review* 148:766 and 148:778; Chandrasekharaiah (1998); Povstenko (2011), DOI `10.1080/01495739.2010.511931`, including Eq. (29); Dell’Oro–Pata, DOI `10.1007/s00245-016-9365-1`; the Povstenko book DOI; and Gorenflo–Mainardi if available. Paper contents below are paraphrased; equations and printed page/equation anchors are given where checked.
+**Scope.** Targeted verification for the R4B-1 baseline and the appended WP2 Section 12 pass: Chester (1963); both Guyer–Krumhansl (1966) papers at *Physical Review* 148:766 and 148:778; Chandrasekharaiah (1998); Povstenko (2011), DOI `10.1080/01495739.2010.511931`, including Eq. (29); Dell’Oro–Pata, DOI `10.1007/s00245-016-9365-1`; the Povstenko book DOI; Gorenflo–Mainardi if available; and the Tzou (1995) unified-field and Quintanilla (2003) sources added for Section 12. Paper contents below are paraphrased; equations and printed page/equation anchors are given where checked.
 
 **Method and access limits.** The available smaller Drive bundles and standalone PDFs were searched for the requested titles and identifiers. No source PDF, scan, extracted text, private Drive name, URL, or file ID is included in this repository. `pdftotext` was unavailable; a temporary PyMuPDF installation was used as a clearly identified fallback for targeted text extraction, with page-image checks for Chester, the p. 778 Guyer–Krumhansl paper, and selected 1998-review pages. No whole-paper text was added to the repository. The larger archives were not downloaded because the Drive download tool caps files at 100 MB, and the expressly excluded archive was not inspected or used. Findings explicitly described as prior-audit checks below come from the existing in-repository `scientific-audit.md`; those source PDFs were not reopened in this pass.
 
@@ -58,9 +58,9 @@
 2. **P1 — Povstenko key distinction.** The Eq. (29) paragraph correctly cites the dedicated `.511931` key and now names `zeta`; the separate `Povstenko2011` key points to `.511929`, a different Dirichlet-problem article. Do not merge those records. The requested Gamma-normalized mapping remains unsupported.
 3. **P1 — Guyer–Krumhansl distinction.** The bibliography and Section 2 retain separate p. 766 and p. 778 entries. Eq. (59) belongs only to the p. 766 source; the p. 778 paper’s second-sound discussion is cited separately. Neither source’s DOI is printed in the inspected 1966 scan, so the existing DOI values remain metadata-sourced.
 4. **P2 — Mainardi availability.** The reference-level background claim has no located full text in the accessible source set. It remains unexpanded; no source-specific statement is promoted.
-5. **P2 — other open equations.** The current ledger’s Tzou (1995) Eq. (15)/(17) continuum and parameter-mapping claims were not verified by either Guyer–Krumhansl paper. They remain hedged. The broader Green–Naghdi chronology in the Section 2 paragraph is also not resolved by this source set.
+5. **P2 — other open equations.** The Tzou (1995) printed p. 10, Eqs. (15) and (17), were freshly inspected during the Section 12 pass, but the Section 4 claim-to-source correspondence and any needed correction remain for that section’s dedicated pass; OCL-166–OCL-168 remain open in the meantime. The broader Green–Naghdi chronology in the Section 2 paragraph is also not resolved by this source set.
 
-## Manuscript and ledger disposition
+## R4B-1 initial manuscript and ledger disposition (historical baseline before WP2 Section 12)
 
 - Section 2 now distinguishes Chester’s 1963 phenomenological model, the p. 766 Guyer–Krumhansl kinetic-theory result, and the separate p. 778 companion. The Chandrasekharaiah 1998 review is limited to contextual use.
 - Section 11 cites Povstenko Eq. (29) at printed p. 101, identifies Caputo notation from Appendix A at p. 113, and explicitly avoids attributing the Gamma-normalized mapping.
@@ -68,4 +68,48 @@
 - The new Chester bibliography entry omits a DOI not printed in the inspected source. The new Dell’Oro–Pata DOI is printed on the paper’s first page. The existing Guyer–Krumhansl entries remain separate; the current Povstenko book DOI is already source-confirmed.
 - Ledger: before, 439 rows (A=0, B=144, C=295). After, 442 rows (A=10, B=138, C=294). Seven existing rows were promoted to A and three new source-specific rows were added; the broader Section 2 rows remain hedged where they include sources outside this check.
 
-**Rows resolved to Class A:** OCL-125, OCL-137, OCL-164, OCL-165, OCL-321, OCL-322, OCL-326, and the three new source-specific rows OCL-440–OCL-442. **Rows still open or partial:** OCL-046 (the distinct three-author stability article was not checked); OCL-087 (the comparison with the 2009 source remains unverified); OCL-124 (Green–Naghdi chronology and dissipation scope remain outside this source check); OCL-127 (broad no-universal-energy limitation remains hedged); OCL-128 (the wider multi-review synthesis remains deleted/not re-established; no claim-level support is asserted); OCL-131 and OCL-327 (Mainardi-related full text not found); OCL-132 (the generic Povstenko2011 key denotes `.511929`, so `.511931` findings are not transferred); OCL-166–OCL-168 (Tzou equations and mapping were not checked); and OCL-323 (the Gamma-normalized mapping is not source-supported). These remain B/C; metadata or title-page identification alone does not close them.
+**Rows resolved to Class A:** OCL-125, OCL-137, OCL-164, OCL-165, OCL-321, OCL-322, OCL-326, and the three new source-specific rows OCL-440–OCL-442. **Rows still open or partial:** OCL-046 (the distinct three-author stability article was not checked); OCL-087 (the comparison with the 2009 source remains unverified); OCL-124 (Green–Naghdi chronology and dissipation scope remain outside this source check); OCL-127 (broad no-universal-energy limitation remains hedged); OCL-128 (the wider multi-review synthesis remains deleted/not re-established; no claim-level support is asserted); OCL-131 and OCL-327 (Mainardi-related full text not found); OCL-132 (the generic Povstenko2011 key denotes `.511929`, so `.511931` findings are not transferred); OCL-166–OCL-168 (Tzou printed p. 10 Eqs. (15) and (17) have since been inspected, but claim-level disposition is deferred to Section 4); and OCL-323 (the Gamma-normalized mapping is not source-supported). These remain B/C; metadata or title-page identification alone does not close them.
+
+## WP2 — Section 12 source-backing pass (2026-10-26)
+
+### Chester (1963), fresh targeted re-read
+
+**CONFIRMED-IN-SOURCE.** Printed p. 2014, Eq. (5) adds relaxation to the heat-flux law and Eqs. (6)–(7) give the associated damped thermal-wave equation and speed. Printed p. 2015, Eq. (8) relates that speed to phonon speed under the paper’s idealized dispersionless phonon-gas assumption. The unrelated fragment on the scan’s p. 2013 was not used.
+
+### Guyer–Krumhansl (1966), p. 766 article, fresh targeted re-read
+
+**CONFIRMED-IN-SOURCE.** The title page identifies the distinct kinetic-theory article at *Physical Review* 148, p. 766. Printed p. 773, Eqs. (57) and (59) define the source-specific quantities and kinetic coefficient. The associated nonlocal-length interpretation is confined to the paper’s stated rapid-normal-scattering and phonon-regime restrictions; it is not a universal continuum thermoelastic coefficient.
+
+### Guyer–Krumhansl (1966), p. 778 article, fresh targeted re-read
+
+**CONFIRMED-IN-SOURCE.** The scanned first sheet contains an unrelated p. 788 fragment above the p. 778 article’s own title and abstract; only the correctly headed p. 778 article and its selected text were used. Printed p. 782, Eq. (17) gives the paper-specific dispersion relation, and the adjacent discussion attributes second-sound damping to second viscosity and momentum-loss scattering. These findings are separate from the p. 766 article’s Eq. (59).
+
+### Chandrasekharaiah (1998), fresh selected-page check
+
+**CONFIRMED-IN-SOURCE.** The first page identifies a review of hyperbolic thermoelasticity. Printed pp. 722–724 discuss specific dual-phase-lag models and their stated assumptions. This remains review-level context, not a primary equation source or a family-wide admissibility result.
+
+### Tzou (1995), *A Unified Field Approach for Heat Conduction From Macro- to Micro-Scales*
+
+**CONFIRMED-IN-SOURCE.** The primary paper’s opening page (printed p. 8) describes the unified-field treatment as a high-rate heat-conduction model and relates the flux lag to small-scale temporal response and the temperature-gradient lag to small-scale spatial response. The bibliographic DOI already in the library belongs to this distinct unified-field article. Printed p. 10, Eqs. (15) and (17) were also freshly inspected for the still-open Section 4 reduction/mapping rows; their Section 4 claim disposition is deferred to that section’s pass.
+
+### Quintanilla (2003), one-dimensional dual-phase-lag thermoelastic theory
+
+**CONFIRMED-IN-SOURCE.** The paper’s first page prints the author initial, title, journal, volume, pages 713–721, year, and DOI `10.1080/01495730390203518`. The conclusion on printed p. 720 states exponential stability for the strict condition `tau_theta > tau_q/2` and the existence of unstable solutions for `tau_theta < tau_q/2`. The equality case is not characterized by that pair of statements. The new bibliography entry records the first-page fields and does not infer an issue number.
+
+**Inference.** These results concern the paper’s specified one-dimensional problem; they do not provide a universal dual-phase-lag admissibility condition.
+
+### Povstenko (2011), DOI `.511931`, fresh Eq. (29) and Appendix A check
+
+**CONFIRMED-IN-SOURCE.** Printed p. 101, Eq. (29) uses the source coefficient `zeta` in a fractional Cattaneo flux law for `0 < alpha <= 1`. Printed p. 113 states that the Caputo derivative is used while the `C` subscript is omitted. The equation supplies no Gamma-normalized identification of `zeta`.
+
+**Inference.** Keep the source law in its `zeta` form; do not attribute `tau^alpha / Gamma(1+alpha)` to this paper.
+
+### Dell’Oro–Pata (2016), DOI `.9365-1`, fresh first-page check
+
+**CONFIRMED-IN-SOURCE.** The first page prints the DOI, two authors, title, and an abstract describing the relation of the MGT equation to linear viscoelasticity with an exponential kernel. This is not the distinct three-author critical-case stability article.
+
+### Section 12 result and ledger checkpoint
+
+The focused source-backed comparison now uses **eight distinct records: seven primary papers** (Chester; Guyer–Krumhansl p. 766; Guyer–Krumhansl p. 778; Tzou; Quintanilla 2003; Povstenko `.511931`; Dell’Oro–Pata `.9365-1`) **and one review** (Chandrasekharaiah 1998). This clears the six-primary-source target for the focused Section 12 comparison; table-only citations are not counted as freshly source-checked evidence.
+
+Ledger checkpoint: before this pass, 442 rows (A=10, B=138, C=294); after, 445 rows (A=13, B=138, C=294). New Class A rows OCL-443–OCL-445 cover the fresh Povstenko, Tzou, and Quintanilla anchors. Older carried-audit rows remain explicitly labelled as carried. OCL-166–OCL-168 remain open pending the dedicated Section 4 rewrite and self-audit, despite the Tzou p. 10 pages now being available for that pass.

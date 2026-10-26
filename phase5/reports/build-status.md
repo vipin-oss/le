@@ -19,7 +19,7 @@ The build published the current PDF and four contact sheets under `phase5/build_
 ## Scientific and editorial state
 
 - The classical local energy density and outward-positive flux were derived from the displayed local balances and symbolically checked under their stated assumptions.
-- Generalized, nonlocal, fractional, and coupled-model energy claims remain partly conditional, open, or not independently checked. Consult `OPEN_CLAIMS_LEDGER.csv` (442 entries: A=10, B=138, C=294) and `scientific-audit.md`.
+- Generalized, nonlocal, fractional, and coupled-model energy claims remain partly conditional, open, or not independently checked. Consult `OPEN_CLAIMS_LEDGER.csv` (445 entries: A=13, B=138, C=294) and `scientific-audit.md`.
 - `R4A_DELETION_AUDIT.csv` records 593 removed-text entries and has zero `NONE` identifiers. Deleted claims are not thereby verified and should not be restored as established results.
 - Figure source/licensing provenance, individual final-size legibility, complete claim-level primary-source verification, and journal/submission readiness remain open.
 
