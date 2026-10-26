@@ -3,8 +3,12 @@ name: Phase5 LaTeX build
 on:
   push:
     branches: ['arena/**']
-    # Ignore archived history and generated outputs; source, manuscript, and workflow changes still build.
+    # Ignore docs/CSV-only updates and archived/generated outputs; manuscript, scripts, figures, and workflow changes still build.
     paths-ignore:
+      - '*.md'
+      - '*.csv'
+      - '**/*.md'
+      - '**/*.csv'
       - 'archive/**'
       - 'recovery/**'
       - 'R3_*.md'
@@ -33,6 +37,11 @@ on:
       - 'phase5/reports/R3_STATUS.md'
   pull_request:
     branches: [main]
+    paths-ignore:
+      - '*.md'
+      - '*.csv'
+      - '**/*.md'
+      - '**/*.csv'
   workflow_dispatch:
 
 permissions:
