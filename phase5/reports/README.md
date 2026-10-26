@@ -4,7 +4,7 @@ This folder mixes current authoritative registers with dated, historical snapsho
 
 ## Current sources of truth
 
-- `OPEN_CLAIMS_LEDGER.csv` is the authority for current open claims (445 rows: A=13, B=138, C=294). A row/source lead remains open until its specific claim, source identity, and needed equation/result are checked.
+- `OPEN_CLAIMS_LEDGER.csv` is the authority for current open claims (445 rows: A=16, B=135, C=294). A row/source lead remains open until its specific claim, source identity, and needed equation/result are checked.
 - `R4A_DELETION_AUDIT.csv` is the authority for removed text (593 rows, zero `NONE` identifiers). It does not certify deleted claims or reconstruct missing work.
 - `build-status.md` is the current strict-build status. The manuscript/source validation recorded here is run `40372932181`: 130 pages, successful engineering gates.
 - `scientific-audit.md`, `equation-audit.csv`, and `figure-audit.csv` provide current context/registers, not blanket proof of scientific correctness or licensing.

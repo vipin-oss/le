@@ -47,6 +47,6 @@ The output and logs are written under `phase5/master/build/`. A green engineerin
 
 ## Which records are authoritative
 
-- [`reports/OPEN_CLAIMS_LEDGER.csv`](reports/OPEN_CLAIMS_LEDGER.csv) — authoritative current register of open claims (445 rows: A=13, B=138, C=294).
+- [`reports/OPEN_CLAIMS_LEDGER.csv`](reports/OPEN_CLAIMS_LEDGER.csv) — authoritative current register of open claims (445 rows: A=16, B=135, C=294).
 - [`reports/R4A_DELETION_AUDIT.csv`](reports/R4A_DELETION_AUDIT.csv) — authoritative current record of removed text (593 rows, zero `NONE` identifiers).
 - [`reports/build-status.md`](reports/build-status.md) — current engineering-build status. Older status, page-reconciliation, and Crossref files are historical snapshots; see [`reports/README.md`](reports/README.md).
