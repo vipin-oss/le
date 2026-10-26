@@ -1,6 +1,6 @@
 # Historical phase-end status — 2026-10-22
 
-> This is an archived stage report, not current status. The current 130-page engineering build is CI run `40372932181`; see [`build-status.md`](build-status.md).
+> This is an archived stage report, not current status. The current 130-page engineering build is CI run `40374662081`; see [`build-status.md`](build-status.md).
 
 1. **P0 — Provenance:** phase4 baseline identified as the 161-page, pdfTeX 1.40.25 artifact; the separately described 170-page/pdfTeX 1.40.29 PDF is unavailable.
 2. **P0 — Review:** all seven baseline-PDF contact sheets were surveyed; figures render, while appendix-table overflow/fragmentation is visible at thumbnail scale.

@@ -122,4 +122,4 @@ Ledger checkpoint: before this pass, 442 rows (A=10, B=138, C=294); after, 445 r
 
 **CONFIRMED-IN-SOURCE.** Equation (17) on the same printed page maps the pure-phonon case to `alpha = tau_R c^2/3`, `tau_T = 9 tau_N/5`, and `tau_q = tau_R`. The manuscript mapping matches those coefficients and is explicitly scoped to Tzou’s phonon approximation, not stated as a general DPL identity.
 
-**Disposition.** OCL-166–OCL-168 are now Class A with fresh source-page evidence. No discrepancy was found and no `CONTRADICTION-FIXED` row was required. Other Section 4 claims, including the distinct critical-case MGT result (OCL-046), remain outside this targeted pass.
+**Disposition.** OCL-166–OCL-168 are now Class A with fresh source-page evidence. No discrepancy was found and no `CONTRADICTION-FIXED` row was required. Other Section 4 claims, including the distinct critical-case MGT result (OCL-046), remain outside this targeted pass. The missing-source register records the unlocated papers behind OCL-045, OCL-046, OCL-143–OCL-146, OCL-149, OCL-153–OCL-160, OCL-169–OCL-178; those claims were not upgraded by this Tzou check.

@@ -4,7 +4,7 @@
 
 ## Status
 
-- Manuscript/source build validation: [CI run 40372932181](https://github.com/vipin-oss/le/actions/runs/40372932181), successful; 130 PDF pages for source commit `8afe364`. The workflow-published output is on the branch.
+- Manuscript/source build validation: [CI run 40374662081](https://github.com/vipin-oss/le/actions/runs/40374662081), successful; 130 PDF pages for source commit `6e43dda`. The workflow-published output is on the branch.
 - Engineering gates: zero undefined references/citations, zero overfull boxes above 1 pt, zero near-overfull boxes above 0.5 pt, and zero forbidden process-tag matches. The font and build checks also passed.
 - Build output: [`build_outputs/phase5-v1.1-master.pdf`](build_outputs/phase5-v1.1-master.pdf); overview contact sheets are in [`build_outputs/contact-sheets/`](build_outputs/contact-sheets/).
 - Scientific status: the classical local energy density and outward-positive flux have been derived and symbolically checked under stated assumptions. Generalized-model claims are not all independently verified. See the open-claim ledger, scientific audit, and [reports README](reports/README.md).

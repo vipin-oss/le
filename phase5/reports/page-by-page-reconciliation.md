@@ -1,6 +1,6 @@
 # Historical v1.0 → v1.1 page-by-page reconciliation
 
-> **Historical snapshot:** this comparison uses the earlier 146-page build `39753968114`. The current 130-page strict build is run `40372932181`; see [`build-status.md`](build-status.md).
+> **Historical snapshot:** this comparison uses the earlier 146-page build `39753968114`. The current 130-page strict build is run `40374662081`; see [`build-status.md`](build-status.md).
 
 **Artifacts compared:** repository baseline `phase4/manuscript/main.pdf` (161 physical PDF pages) and the strict-CI phase5 master `phase5/build_outputs/phase5-v1.1-master.pdf` (146 physical pages, run `39753968114`). Page ranges below are 1-based physical PDF pages, including title/front matter. Section ranges come from the PDF outline: each section runs from its outline start to the page before the next top-level section. Floats can cross those boundaries, so a section page-span change is pagination/reflow, not a count of deleted content.
 

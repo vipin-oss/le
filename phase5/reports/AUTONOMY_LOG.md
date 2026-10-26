@@ -23,3 +23,15 @@
 8. Committed and pushed Section 12 as `8afe364`; CI run `40372932181` passed with 130 pages, 0 undefined refs, 0 strict tag/privacy matches, and 0 near-overfull boxes.
 9. Fast-forwarded output commit `720bcf2`; rendered-text spot-checks covered OCL-125, -137, -164, -165, -321, -322, -326, -440, -443, and -444, with OCL-445 checked separately.
 10. Refreshed current README/build-status pointers; next is the dedicated Section 4 pass, where OCL-166–OCL-168 remain open pending claim-level disposition.
+
+## 2026-10-26 (IST) — WP2 Section 4 Tzou subset
+1. Visually checked Tzou (1995) printed p. 10 under “The Pure Phonon Field in Dielectric Crystals,” including Eqs. (15) and (17).
+2. Confirmed Eq. (15)’s flux-gradient and scattering terms match the Section 4 equation; no Guyer–Krumhansl attribution was made.
+3. Confirmed Eq. (17)’s three coefficient mappings and retained their paper-specific phonon scope.
+4. Added printed-page anchors and direct citations to Section 4; made no equation or parameter correction.
+5. Promoted OCL-166–OCL-168 to Class A with fresh page evidence; ledger remains 445 rows (A=16, B=135, C=294).
+6. Expanded `MISSING_SOURCES.csv` for unavailable Section 4 sources; identity metadata remains separate from claim verification.
+7. Committed and pushed the Section 4 content change as `6e43dda` on the session branch.
+8. CI run `40374662081` passed: 130 pages, zero undefined refs, zero strict tag/privacy matches, zero near-overfull boxes.
+9. Fast-forwarded output commit `511b754`; visually inspected p. 34 and checked extracted Section 12 text; CI reported no overfull boxes.
+10. The Tzou subset is complete; other Section 4 sources remain open. Continue targeted Section 4 source checks before advancing to Section 5.
