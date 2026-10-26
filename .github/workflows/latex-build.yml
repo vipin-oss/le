@@ -22,7 +22,7 @@ jobs:
     # Defense in depth if a generated-output push ever escapes paths-ignore.
     if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 60
     env:
       SOURCE_DATE_EPOCH: '1700000000'
       FORCE_SOURCE_DATE: '1'
@@ -199,15 +199,24 @@ jobs:
             --status-report phase5/reports/R3_STATUS.md \
             2>&1 | tee phase5/reports/R3F_APPLY.log
 
+      - name: Cache TeX apt package archives
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/tex-apt-archives
+          key: tex-apt-${{ runner.os }}-${{ runner.arch }}-v1
+
       - name: Install TeX and PDF tools
-        timeout-minutes: 20
+        timeout-minutes: 30
         run: |
           set -euo pipefail
           install_log="${RUNNER_TEMP}/texinstall.log"
+          apt_archives="${RUNNER_TEMP}/tex-apt-archives"
+          mkdir -p "${apt_archives}/partial"
+          chmod 777 "${apt_archives}" "${apt_archives}/partial"
           : > "$install_log"
           for attempt in 1 2; do
             echo "TeX/PDF package installation attempt ${attempt}/2" | tee -a "$install_log"
-            if ATTEMPT="$attempt" timeout --signal=TERM --kill-after=5s 600s \
+            if ATTEMPT="$attempt" APT_ARCHIVES="$apt_archives" timeout --signal=TERM --kill-after=10s 780s \
               bash -euo pipefail -c '
                 if [[ "$ATTEMPT" -eq 2 ]]; then
                   echo "Switching apt sources from azure.archive.ubuntu.com to archive.ubuntu.com"
@@ -215,7 +224,6 @@ jobs:
                     \( -name "*.list" -o -name "*.sources" \) \
                     -exec sed -i "s/azure\\.archive\\.ubuntu\\.com/archive.ubuntu.com/g" {} +
                 fi
-                sudo apt-get clean
                 sudo rm -rf /var/lib/apt/lists/*
                 sudo apt-get update \
                   -o Acquire::Retries=5 \
@@ -223,6 +231,7 @@ jobs:
                   -o Acquire::https::Timeout=30
                 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
                   -o Acquire::Retries=5 \
+                  -o Dir::Cache::archives="$APT_ARCHIVES" \
                   latexmk \
                   texlive-latex-base \
                   texlive-latex-recommended \
