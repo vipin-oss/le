@@ -11,3 +11,15 @@
 8. Marked OCL-137, OCL-440, OCL-441, and OCL-442 as fresh source reads, with page/equation anchors cross-referenced to the findings report.
 9. Working interpretation: no secondary backup branch is created from this session-bound checkout; no force push, deletion, publication, or external contact was performed.
 10. WP1 is committed and pushed; Section 12 pre-commit audit passes (445 ledger rows, 13 Class A, no duplicate bibliography keys or missing citations, clean diff); local TeX tools are unavailable, so strict CI is the build gate.
+
+## 2026-10-26 (IST) — WP2 Section 12 completed and audited
+1. Freshly checked Chester (printed pp. 2014–2015), both distinct Guyer–Krumhansl papers, Chandrasekharaiah pp. 722–724, Dell’Oro–Pata’s first page, and Povstenko Eq. (29)/Appendix A.
+2. Checked Tzou’s unified-field paper (printed p. 8) and Eq. (15)/(17) at p. 10; checked Quintanilla’s printed p. 713 identity and p. 720 strict stability/instability conditions.
+3. Added only source-bounded Section 12 statements; no universal DPL criterion, Gamma-normalized Povstenko mapping, or cross-paper equation transfer was added.
+4. Added `Quintanilla2003DPL` with the source-printed author initial and DOI; the 2019 MGT reference remains bibliography-only pending full-text review.
+5. Added OCL-443–OCL-445; ledger is 445 rows (A=13, B=138, C=294), with all A rows retaining evidence provenance.
+6. Added `MISSING_SOURCES.csv` entries for the unlocated Gorenflo/Mainardi records and Quintanilla 2019, explicitly limiting absence claims to indexed material.
+7. Created local tag `R4B-AUTO-WP1` at commit `74ec8fa`; no backup branch was created because this session is branch-bound.
+8. Committed and pushed Section 12 as `8afe364`; CI run `40372932181` passed with 130 pages, 0 undefined refs, 0 strict tag/privacy matches, and 0 near-overfull boxes.
+9. Fast-forwarded output commit `720bcf2`; rendered-text spot-checks covered OCL-125, -137, -164, -165, -321, -322, -326, -440, -443, and -444, with OCL-445 checked separately.
+10. Refreshed current README/build-status pointers; next is the dedicated Section 4 pass, where OCL-166–OCL-168 remain open pending claim-level disposition.

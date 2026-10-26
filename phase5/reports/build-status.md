@@ -1,18 +1,18 @@
 # Current build status — phase5 v1.1
 
-**Current engineering state: PASS.** The last content-bearing manuscript/workflow validation was successful CI run [40349268298](https://github.com/vipin-oss/le/actions/runs/40349268298), source commit `f007c7e8e28ca39482aa8480a3f6a6e8afd14cc9` (2026-10-26).
+**Current engineering state: PASS.** The latest content-bearing manuscript/workflow validation was successful CI run [40372932181](https://github.com/vipin-oss/le/actions/runs/40372932181), source commit `8afe364` (2026-10-26).
 
 | Check | Result |
 |---|---:|
-| PDF pages | 129 |
+| PDF pages | 130 |
 | Undefined references/citations | 0 |
 | Overfull boxes above 1 pt (strict build gate) | 0; gate passed |
 | Near-overfull boxes above 0.5 pt (summary metric) | 0 |
 | Forbidden process-tag occurrences under the case-sensitive workflow pattern | 0 |
 | Privacy-token occurrences in extracted PDF text | 0 |
 | Figure PDFs generated / included | 18 / 18 generated; 16 active master includes |
-| Install utilities + TeX build time | 19 s + 7 s = 26 s |
-| Whole job duration | 3m 03s |
+| Install utilities + TeX build time | 19 s + 10 s = 29 s |
+| Whole job duration | 3m 07s |
 
 The build published the current PDF and four contact sheets under `phase5/build_outputs/`. The 100-dpi sheets are overview checks, not full-size proofing. The build establishes engineering reproducibility and gate results; it does **not** certify every scientific claim.
 
