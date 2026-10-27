@@ -55,15 +55,15 @@ Nonlocality introduces dispersion: the wave speed depends on wavelength. The dif
 For a nonlocal elastic bar, the dispersion relation is
 
 \begin{equation}
-c(k) = \frac{c_0}{\sqrt{1 + \xi^2 k^2}},
+c(k_{\mathrm w}) = \frac{c_0}{\sqrt{1 + \xi^2 k_{\mathrm w}^2}},
 \label{eq:7.4}
 \end{equation}
 
-where $c_0$ is the classical wave speed, $k$ is the wave number, and $\xi$ is the nonlocal length scale. Long waves ($k \to 0$) approach the classical speed $c_0$; short waves are strongly slowed.
+where $c_0$ is the classical wave speed, $k_{\mathrm w}$ is the wave number (distinct from the thermal conductivity $k$), and $\xi$ is the nonlocal length scale. Long waves ($k_{\mathrm w} \to 0$) approach the classical speed $c_0$; short waves are strongly slowed.
 
 \subsubsection{The dispersion signature distinguishes the mechanisms}
 
-For Eq.~\eqref{eq:7.4}, the phase speed tends to zero as $k\to\infty$, while the angular frequency $\omega(k)=c_0 k/\sqrt{1+\xi^2k^2}$ approaches the finite limit $c_0/\xi$; it is frequency, not phase speed, that saturates. The group velocity is $d\omega/dk=c_0(1+\xi^2k^2)^{-3/2}$ and tends to zero. By contrast, the positive strain-gradient law in Eq.~\eqref{eq:7.3} gives $c_{\rm ph}^2=c_0^2(1+\ell^2 k^2)$ for a one-dimensional bar, so it stiffens and phase speed increases. Gradient-inertia variants can behave differently; the model form must accompany any comparison. A dispersion measurement over a sufficiently broad range of $k$ can thus distinguish a nonlocal mechanism from a gradient mechanism, and the two are not interchangeable even though both produce the same qualitative signature of a size-dependent stiffness. This is one of the few places in the reviewed literature where two competing formulations of the same effect make quantitatively different and testable predictions, and it deserves more attention than it has received.
+For Eq.~\eqref{eq:7.4}, the phase speed tends to zero as $k_{\mathrm w}\to\infty$, while the angular frequency $\omega(k_{\mathrm w})=c_0 k_{\mathrm w}/\sqrt{1+\xi^2k_{\mathrm w}^2}$ approaches the finite limit $c_0/\xi$; it is frequency, not phase speed, that saturates. The group velocity is $d\omega/dk_{\mathrm w}=c_0(1+\xi^2k_{\mathrm w}^2)^{-3/2}$ and tends to zero. By contrast, the positive strain-gradient law in Eq.~\eqref{eq:7.3} gives $c_{\rm ph}^2=c_0^2(1+\ell^2 k_{\mathrm w}^2)$ for a one-dimensional bar, so it stiffens and phase speed increases. Gradient-inertia variants can behave differently; the model form must accompany any comparison. A dispersion measurement over a sufficiently broad range of $k_{\mathrm w}$ can thus distinguish a nonlocal mechanism from a gradient mechanism, and the two are not interchangeable even though both produce the same qualitative signature of a size-dependent stiffness. This is one of the few places in the reviewed literature where two competing formulations of the same effect make quantitatively different and testable predictions, and it deserves more attention than it has received.
 
 \begin{figure}[htbp]
 \centering
@@ -103,7 +103,7 @@ Some nonlocal formulations exhibit boundary-value paradoxes for particular kerne
 \textbf{Model/form used here} & \textbf{Spatial mechanism} & \textbf{Dispersion feature} & \textbf{Energy/flux terms to specify} \\
 \midrule
 Eringen-type Helmholtz form, Eq.~\eqref{eq:7.2} & Kernel-dependent spatial averaging & One-dimensional result of Eq.~\eqref{eq:7.4}; phase speed decreases and frequency tends to $c_0/\xi$ & Flux depends on the specified kernel and boundary-value problem \\
-Strain-gradient form, Eq.~\eqref{eq:7.3} & Strain-curvature term & For the stated positive-gradient 1D bar, phase speed increases with $k$ & Higher-gradient boundary power depends on additional boundary data \\
+Strain-gradient form, Eq.~\eqref{eq:7.3} & Strain-curvature term & For the stated positive-gradient 1D bar, phase speed increases with $k_{\mathrm w}$ & Higher-gradient boundary power depends on additional boundary data \\
 Micropolar / couple-stress & Additional micro-rotation or couple stress & Depends on the selected micropolar model & Model-specific flux terms \\
 Two-phase local/nonlocal & Depends on selected mixture/kernel & Depends on the selected mixture/kernel & Model-specific flux terms \\
 \bottomrule
@@ -127,7 +127,8 @@ $e_0$ & Material constant of the nonlocal formulation & dimensionless & \eqref{e
 $a$ & Internal characteristic length & m & \eqref{eq:7.1} \\
 $\xi = e_0 a$ & Nonlocal length scale parameter & m & \eqref{eq:7.2} \\
 $\ell$ & Strain-gradient or couple-stress length scale & m & \eqref{eq:7.3} \\
-$c(k)$ & Wave speed as a function of wave number & m\,s$^{-1}$ & \eqref{eq:7.4} \\
+$k_{\mathrm w}$ & One-dimensional wave number & m$^{-1}$ & \eqref{eq:7.4} \\
+$c(k_{\mathrm w})$ & Wave speed as a function of wave number & m\,s$^{-1}$ & \eqref{eq:7.4} \\
 $c_0$ & Classical (local) wave speed & m\,s$^{-1}$ & \eqref{eq:7.4} \\
 \bottomrule
 \end{tabularx}

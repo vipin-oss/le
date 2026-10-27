@@ -236,16 +236,16 @@ The dimensionally inconsistent legacy equation and its scratch frequency-domain 
 
 \subsection{Governing equations}
 
-The MDD operator (Wang \& Li, 2011):
+Candidate MDD operator (equation-level source check pending):
 
 \begin{equation}
-D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} \kappa(t-\xi) f'(\xi) \, d\xi,
+D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} K_{\mathrm{MDD}}(t-\theta) f'(\theta) \, d\theta,
 \label{ef:mdd:1}
 \end{equation}
 
-where $\omega_M > 0$ is the finite memory window and $\kappa(t-\xi)$ is the kernel function.
+where $\omega_M > 0$ is the finite memory window and $K_{\mathrm{MDD}}(t-\theta)$ is the kernel function.
 
-The MDD heat conduction law:
+Candidate heat-flux law coupled to the displayed operator (source check pending):
 
 \begin{equation}
 (1 + \tau_0 D_{\omega_M})q_i = -k T_{,i},
@@ -265,10 +265,10 @@ The expression $J_i=q_i-\sigma_{ij}v_j$ is classical; its role in the displayed 
 
 \subsection{Frequency-domain expression}
 
-For the finite-window operator in Eq.~\eqref{ef:mdd:1}, set $s=t-\xi$ and use the harmonic convention $f(t)=\hat f e^{-i\Omega t}$. Its exact multiplier is kernel-dependent:
+For the finite-window operator in Eq.~\eqref{ef:mdd:1}, set $s=t-\theta$ and use the harmonic convention $f(t)=\hat f e^{-i\Omega t}$. Its exact multiplier is kernel-dependent:
 
 \begin{equation}
-D_{\omega_M} f(t) \longleftrightarrow -\frac{i\Omega}{\omega_M}\left[\int_0^{\omega_M}\kappa(s)e^{i\Omega s}\,ds\right]\hat f.
+D_{\omega_M} f(t) \longleftrightarrow -\frac{i\Omega}{\omega_M}\left[\int_0^{\omega_M}K_{\mathrm{MDD}}(s)e^{i\Omega s}\,ds\right]\hat f.
 \label{ef:mdd:4}
 \end{equation}
 
