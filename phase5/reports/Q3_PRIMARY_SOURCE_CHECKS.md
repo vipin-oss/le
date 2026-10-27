@@ -1,5 +1,23 @@
 # Q3 targeted primary-source checks
 
+## Green & Lindsay (1972), linear thermoelasticity
+
+**Status:** targeted page-image review completed for the GL equation-level gap in OCL-481. This is limited to the paper's own homogeneous linear theory; no broad GL-family or later-variant survey was made.
+
+### Scope and anchors
+
+The checked article is Green and Lindsay, “Thermoelasticity,” *Journal of Elasticity* 2 (1972), pp. 1–7. The p. 1 abstract had previously been text-extracted for OCL-474. For the equation check, only printed pp. 4–6 were rendered and reviewed visually: the homogeneous-body constitutive development and symmetry result in Eqs. (3.12)–(3.19) on p. 4; the small-field linearization, constitutive/heat-flux equations, coefficient restrictions, and linearized field equation in Eqs. (4.1)–(4.13) on p. 5; and the additional positivity conditions and uniqueness identity in Eqs. (4.14)–(4.17) on p. 6.
+
+### Source-bounded finding recorded in OCL-496
+
+The paper's selected linear theory assumes small temperature departure from a constant basic temperature, small displacement, and small time/spatial derivatives; the initial body is taken stress-free with zero heat flux. For a homogeneous, possibly anisotropic body, the authors give a linearized stress, heat-flux, entropy, and field-equation system (Eqs. (4.5)–(4.13)) and impose coefficient restrictions from the entropy inequality (Eqs. (4.8)–(4.10), (4.14)). In a centrosymmetric body the vector coefficient multiplying the temperature rate vanishes; this is a special case, not a universal closure.
+
+The authors state uniqueness for the homogeneous initial mixed-boundary-value problem under suitable conditions, including the entropy restriction and additional positive-coefficient conditions (printed p. 6, Eq. (4.16)); Eq. (4.17) supplies the identity used in the proof for the homogeneous equations. This is a source-specific uniqueness result, not an existence or continuous-dependence proof. The source's coefficient notation has not been mapped to the manuscript's deleted `\tau_1 \ge \tau_0` claim or to later modified GL laws; OCL-143–OCL-149 and OCL-481 remain unresolved for those broader claims.
+
+### Limitations and remaining open work
+
+The page images make the selected equations and stated sufficient conditions legible, but the article's proof details are expressly omitted; no full proof was independently reconstructed. No source-specific wave-speed/stability classification, parameter mapping to later relaxation-time notation, or family-wide GL template is inferred. The existing table should use only the bounded model-level facts above and retain those broader questions as B/open.
+
 ## Green & Naghdi (1993), type-II thermoelastic model
 
 **Status:** targeted primary-text extraction completed for the exact equation/theorem gap in OCL-491. This is not a whole-paper transcription. No Drive identifiers, links, or source-folder names are recorded here.

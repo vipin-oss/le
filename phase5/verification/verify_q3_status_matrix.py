@@ -81,6 +81,9 @@ for row in rows:
 # Keep the principal unresolved source/variant issues visible in their family rows.
 for family, column, required in (
     ("Lord–Shulman (LS)", "established_ledger_rows", {"OCL-495"}),
+    ("Green–Lindsay (GL)", "established_ledger_rows", {"OCL-496"}),
+    ("Green–Lindsay (GL)", "disputed_ledger_rows", {"OCL-149", "OCL-481"}),
+    ("Green–Lindsay (GL)", "open_ledger_rows", {"OCL-481"}),
     ("Dual-phase-lag (DPL)", "disputed_ledger_rows", {"OCL-445", "OCL-488"}),
     ("Dual-phase-lag (DPL)", "open_ledger_rows", {"OCL-488"}),
     ("Green–Naghdi II (GN-II)", "established_ledger_rows", {"OCL-493"}),

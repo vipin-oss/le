@@ -1,6 +1,6 @@
 # Q3 theory-status matrix — implementation and audit note
 
-**Status:** Matrix implementation and internal ledger-link audit are complete; Q3's broader source-review deliverable remains **in progress**. The initial matrix pass did not open a new primary source; later targeted primary-text extractions for LS, GN-II, and GN-III are recorded in `Q3_PRIMARY_SOURCE_CHECKS.md` and OCL-493–OCL-495. None includes a page-image audit; equation/parameter and energy-flux gaps remain. Other entries below remain cross-checked against the existing source findings, committed A/V rows, and B/C records; no earlier abstract-only check is recast as a full equation review.
+**Status:** Matrix implementation and internal ledger-link audit are complete; Q3's broader source-review deliverable remains **in progress**. The initial matrix pass did not open a new primary source; later targeted source checks for LS, GN-II, GN-III, and GL are recorded in `Q3_PRIMARY_SOURCE_CHECKS.md` and OCL-493–OCL-496. LS/GN-II/GN-III were text-extraction checks without page-image review; the GL equation check reviewed printed pp. 4–6 as page images. Model-wide parameter, theorem, and energy-flux gaps remain. Other entries below remain cross-checked against the existing source findings, committed A/V rows, and B/C records; no earlier abstract-only check is recast as a full equation review.
 
 ## Scope and structural check
 
@@ -12,7 +12,7 @@
 |---|---|---|
 | Classical local Cauchy/Fourier | OCL-480 (V), local balance and positive-temperature Fourier entropy term | OCL-480 excludes generalized boundary-power terms; no transfer to higher-gradient, micropolar, or nonlocal models |
 | Lord–Shulman | OCL-495 (A), p. 300 Eq. (8) and p. 302 Eqs. (22)–(24); OCL-470 (V), displayed-form reduction | OCL-011/OCL-483 remain open for parameter/admissibility, energy, and model-wide claims; no universal LS template is inferred |
-| Green–Lindsay | OCL-474 (A), printed p. 1 abstract scope only | OCL-481 (B); exact equations, state variables, parameter limits, and theorem hypotheses remain open |
+| Green–Lindsay | OCL-474 (A), p. 1 abstract; OCL-496 (A), printed pp. 4–6 Eqs. (3.12)–(3.19), (4.1)–(4.17) from page images | OCL-481 (B), OCL-149 (B); coefficient mapping to the deleted `tau_1 >= tau_0` claim, later variants, existence/continuous dependence, and energy-flux implications remain open |
 | Green–Naghdi I | No equation-level property asserted | OCL-481 (B); exact primary source/equation mapping remains open |
 | Green–Naghdi II | OCL-475 (A), abstract facts; OCL-493 (A), targeted p. 202 wave result and pp. 203–204 uniqueness assumptions; OCL-471 (V), derivative-level displayed-form compatibility | OCL-491 (B) and OCL-483 (B); OCR-garbled equation symbols and un-derived energy/boundary power still prevent a full equation-level comparison |
 | Green–Naghdi III | OCL-476 (A), printed p. 255 scope/footnote; OCL-494 (A), targeted Eqs. (3.19)–(3.20) and one-dimensional conductivity-regime split; OCL-471 (V) | OCL-492 (B); exact OCR-garbled coefficients/thresholds and energy/admissibility remain open; type-II nondissipation is not transferred |
