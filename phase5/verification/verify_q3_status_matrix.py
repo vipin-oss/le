@@ -88,7 +88,7 @@ for family, column, required in (
     ("Dual-phase-lag (DPL)", "open_ledger_rows", {"OCL-488"}),
     ("Green–Naghdi II (GN-II)", "established_ledger_rows", {"OCL-493"}),
     ("Green–Naghdi II (GN-II)", "open_ledger_rows", {"OCL-491"}),
-    ("Green–Naghdi III (GN-III)", "established_ledger_rows", {"OCL-494"}),
+    ("Green–Naghdi III (GN-III)", "established_ledger_rows", {"OCL-494", "OCL-498"}),
     ("Green–Naghdi III (GN-III)", "open_ledger_rows", {"OCL-492"}),
     ("Moore–Gibson–Thompson (MGT)", "open_ledger_rows", {"OCL-174", "OCL-175"}),
     ("Memory-dependent derivative (MDD)", "open_ledger_rows", {"OCL-402"}),
@@ -105,6 +105,7 @@ mgt_counterexample = by_family["Moore–Gibson–Thompson (MGT)"]["counterexampl
 assert "OCL-175" in mgt_counterexample and "pending source verification" in mgt_counterexample
 gn3_status = by_family["Green–Naghdi III (GN-III)"]["established_status"]
 assert "Fourier-conductivity-dominant" in gn3_status and "negligible-conductivity" in gn3_status
+assert "coefficient/variable map" in gn3_status and "Eqs. 4.1 and 4.14" in gn3_status
 assert all(row["counterexample_or_ill_posedness_status"].strip() for row in rows)
 
 assert not re.search(r"drive\.google\.com|docs\.google\.com|open\?id=|drive/(?:file|folders)/[A-Za-z0-9_-]{25,}", content, re.I)

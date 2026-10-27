@@ -75,4 +75,4 @@ This is a rendered-text spot check, not a full scientific or typographic proof. 
 
 ## Continuation boundary
 
-B22 P1/P2 work is complete at the stated evidence limits. Continue with Q3, then Q4/Q5 and WP3–WP8 in the existing work-package order. Keep source-dependent gaps and the seven NOT-CHECKABLE sampled A rows visible; do not infer that successful CI proves scientific validity.
+B22 P1/P2 work is complete at the stated evidence limits. Q4 is now complete at its conditional, evidence-bounded scope; continue Q3 source-specific work, then Q5 and WP3–WP8 in the existing work-package order. Keep source-dependent gaps and the seven NOT-CHECKABLE sampled A rows visible; do not infer that successful CI proves scientific validity.

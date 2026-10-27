@@ -277,6 +277,9 @@ jobs:
       - name: Verify unified-framework equation reductions
         run: python phase5/verification/verify_unified_reductions.py
 
+      - name: Verify GN-III source-equation coefficient mapping
+        run: python phase5/verification/verify_gn3_source_mapping.py
+
       - name: Verify Q1 notation, comparison coverage, and displayed dispersion algebra
         run: python phase5/verification/verify_q1_notation.py
 

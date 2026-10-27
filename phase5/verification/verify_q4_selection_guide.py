@@ -32,7 +32,8 @@ required_phrases = (
     "Additional coupled fields",
     "Benchmark evidence: derivations versus source checkpoints",
     "Research roadmap from the Q3 evidence gaps",
-    "The GN-III type-II/type-III scope distinction is now image-checked",
+    "The GN-III type-II/type-III scope distinction is image-checked",
+    "the zero-source map from source Eqs. (3.19)–(3.20) to manuscript Eqs. (4.1) and (4.14) is verified",
     "specifications rather than numerically validated reference solutions",
     "two-wave cross-term is shown before time averaging",
     "equality case is not classified",
@@ -85,6 +86,7 @@ required_classes = {
     "OCL-494": "A",
     "OCL-495": "A",
     "OCL-496": "A",
+    "OCL-498": "V",
 }
 for row_id, expected_class in required_classes.items():
     assert row_id in ledger, f"Missing evidence row {row_id}"
@@ -97,7 +99,7 @@ for row_id, expected_class in required_classes.items():
 section_mappings = {
     "Local thermoelastic baseline": ("OCL-480",),
     "One-time heat-flux relaxation": ("OCL-495", "OCL-011"),
-    "Green--Naghdi models": ("OCL-493", "OCL-494", "OCL-491", "OCL-492"),
+    "Green--Naghdi models": ("OCL-493", "OCL-494", "OCL-498", "OCL-491", "OCL-492"),
     "Lag-based transport": ("OCL-445", "OCL-169", "OCL-488", "OCL-123"),
     "Spatial, fractional, or hereditary operators": ("OCL-258", "OCL-321", "OCL-402", "OCL-403"),
     "Additional coupled fields": ("OCL-195", "OCL-483", "OCL-485"),
@@ -116,7 +118,7 @@ for phrase, row_ids in benchmark_mappings.items():
     assert phrase in guide, f"Missing benchmark evidence category {phrase}"
     assert all(row_id in ledger for row_id in row_ids), f"{phrase}: missing mapped evidence row"
 
-script_rows = ("OCL-466", "OCL-467", "OCL-468", "OCL-470", "OCL-471", "OCL-472", "OCL-473", "OCL-480")
+script_rows = ("OCL-466", "OCL-467", "OCL-468", "OCL-470", "OCL-471", "OCL-472", "OCL-473", "OCL-480", "OCL-498")
 for row_id in script_rows:
     script = ledger[row_id]["resolved_by"].split(";")[0].strip()
     assert script and (ROOT.parent / script).is_file(), f"{row_id}: missing verifier {script}"
