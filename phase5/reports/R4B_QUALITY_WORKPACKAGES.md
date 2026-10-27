@@ -1,6 +1,6 @@
 # R4B quality work packages Q1–Q5
 
-**State:** sequenced after the targeted Section 10 pass; Q1 is active. Initial equation-level substitution checks are recorded as OCL-470–OCL-473 (Class V), but the unified notation, source-by-source reduction map, and comparison table remain incomplete. The order below is intentional. The targeted Section 10 energy-partition/matrix derivation is complete for its stated one-dimensional welded model; it does not close the remaining generalized-family or interface questions. No page-count target applies.
+**State:** sequenced after the targeted Section 10 pass; Q1 is active. Initial equation-level substitution checks are recorded as OCL-470–OCL-473 (Class V). Fresh primary-source abstract/introductory reads for Green–Lindsay and Green–Naghdi are recorded as OCL-474–OCL-476 (Class A), with exact formula transcription still open where extraction was inadequate. The unified notation, source-by-source reduction map, and comparison table remain incomplete. The order below is intentional. The targeted Section 10 energy-partition/matrix derivation is complete for its stated one-dimensional welded model; it does not close the remaining generalized-family or interface questions. No page-count target applies.
 
 ## Governing evidence rule
 

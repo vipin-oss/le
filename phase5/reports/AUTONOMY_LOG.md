@@ -107,3 +107,15 @@
 8. Committed and pushed the Q1 check as `7457730` on the fixed session branch; CI run `40450139583` passed in 2m 51s (130 pages, zero undefined refs/citations, forbidden-token matches, or near-overfull boxes).
 9. Fast-forwarded only the workflow-generated same-branch PDF output commit `bc4c4cc`; no CI artifacts were downloaded from external blob storage.
 10. Q1 remains active and partial. No backup branch or WP2 tag was created under the fixed-branch/unfinished-WP constraints; continue with source-backed framework synthesis, not acronym-based generalization.
+
+## 2026-10-27 (IST) — Q1 primary-source scope checks
+1. Used targeted Drive text extraction for Green and Lindsay (1972), Green and Naghdi (1992), and Green and Naghdi (1993); no Drive IDs or links were copied into the repository.
+2. Added OCL-474 for the Green–Lindsay p. 1 abstract: linearized theory scope, symmetric linear heat-conduction tensor, admitted second-sound effects, and a stated uniqueness theorem.
+3. The detailed GL formula extraction is OCR-garbled; no constitutive equation, parameter restriction, or reduction is promoted from that text.
+4. Added OCL-475 for Green–Naghdi (1993), printed p. 189 abstract, with its source-limited type-II nondissipation, finite-speed, shared-potential, and uniqueness characterization.
+5. Added OCL-476 for Green–Naghdi (1992), printed p. 255 introduction/footnote; kept the type-III scope separate from the stationary-rigid-solid type-II nondissipation statement.
+6. Recorded these source-limited distinctions in `R4B_SOURCE_FINDINGS.md`; no copied paragraph/table or source PDF was added.
+7. The ledger now has 476 rows (A=29, B=126, C=313, V=8); A+V=37; `MISSING_SOURCES.csv` remains at 23.
+8. Refreshed the Q1 plan and current README/build-status counts; GL and GN-I equations/reductions and the comparison table remain open.
+9. No manuscript TeX changed in this source-note pass; the last successful content build remains CI run `40450139583` on `7457730` (130 pages).
+10. This is a docs/CSV-only update and should not trigger a build under the configured path ignores; continue Q1 with equation-level source anchors rather than abstract-only generalization.
