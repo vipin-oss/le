@@ -1,0 +1,13 @@
+{
+  "_provenance": "Crossref REST /works/10.1080/01495739.2010.511931, queried 2026-10-27 (B22). Key fields reproduced verbatim from the API payload; nested reference list omitted for size.",
+  "message": {
+    "DOI": "10.1080/01495739.2010.511931",
+    "title": ["Fractional Cattaneo-Type Equations and Generalized Thermoelasticity"],
+    "author": [{"given": "Y. Z.", "family": "Povstenko"}],
+    "container-title": ["Journal of Thermal Stresses"],
+    "volume": "34", "issue": "2", "page": "97-114",
+    "published-print": {"date-parts": [[2011, 1, 13]]},
+    "publisher": "Informa UK Limited",
+    "reference-count": 30, "is-referenced-by-count": 257
+  }
+}

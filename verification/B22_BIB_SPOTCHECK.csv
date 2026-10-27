@@ -1,0 +1,32 @@
+check_group,bib_key,verdict,bib_volume,bib_pages,crossref_volume,crossref_pages,doi,note
+random_sample_seed22,Durbin1974,MATCH,17,371-376,17,371-376,10.1093/comjnl/17.4.371,
+random_sample_seed22,Hughes1980,MATCH,15,1413--1418,15,1413-1418,10.1002/nme.1620150914,
+random_sample_seed22,Askes2006,MATCH,139,297--304,139,297-304,10.1007/s10704-006-8375-4,
+random_sample_seed22,Singh2020a,MATCH,43,1100-1119,43,1100-1119,10.1080/01495739.2020.1770642,
+random_sample_seed22,Green1993,MATCH,31,189--208,31,189-208,10.1007/BF00044969,
+random_sample_seed22,Das2026,MATCH,22,77,,,10.1007/s10999-026-09892-7,
+random_sample_seed22,Luchko2010,MATCH,59,1766-1772,59,1766-1772,10.1016/j.camwa.2009.08.015,
+random_sample_seed22,Caputo1967,MATCH,13,529-539,13,529-539,10.1111/j.1365-246X.1967.tb02303.x,
+random_sample_seed22,HetnarskiIgnaczak1999,MATCH,22,451--476,22,451-476,10.1080/014957399280832,
+random_sample_seed22,Joseph1990,MATCH,62,375--391,62,375-391,10.1103/revmodphys.62.375,
+random_sample_seed22,Barak2023MMMS,MATCH,19,464--492,19,464-492,10.1108/mmms-10-2022-0209,
+random_sample_seed22,LasieckaWang2015MGT,MATCH,259,7610-7635,259,7610-7635,10.1016/j.jde.2015.08.052,
+random_sample_seed22,Green1972,MATCH,2,1--7,2,1-7,10.1007/BF00045689,
+random_sample_seed22,Sharma2022,MATCH,234,535--552,234,535-552,10.1007/s00707-022-03399-w,
+random_sample_seed22,Alzahrani2020,MATCH,8,1711,8,1711,10.3390/math8101711,
+random_sample_seed22,Joseph1989,MATCH,61,41--73,61,41-73,10.1103/revmodphys.61.41,
+random_sample_seed22,KumarKansal2017,MATCH,23,43-56,23,43-56,10.12921/cmst.2016.0000036,
+random_sample_seed22,RoyChoudhuri2007,MATCH,30,231-238,30,231-238,10.1080/01495730601130919,
+random_sample_seed22,GreenGN1992,MATCH,15,253--264,15,253-264,10.1080/01495739208946136,
+random_sample_seed22,Green1991,MATCH,432,171--194,432,171-194,10.1098/rspa.1991.0012,
+targeted,Quintanilla2003DPL,WRONG,26,713--721,26,713-721,10.1080/01495730390203518,"DOI does not resolve in Crossref (404, direct + filtered). The held source PDF cover page prints DOI 10.1080/713855996 for exactly this article (JTS 26:7, 713-721). The entry source field claims ""Primary paper first page confirms ... and DOI"" - contradicted by the held PDF."
+targeted,Povstenko2011,CONFIRMED,34,51--67,34,51-67,10.1080/01495739.2010.511929,"Correct: the .511929 record is the Dirichlet-problem article, 34(1):51-67. Retraction of an earlier B22 suspicion that this key carried the .511931 DOI."
+targeted,Povstenko2011Cattaneo,CONFIRMED,34,97--114,34,97-114,10.1080/01495739.2010.511931,"Correct: .511931 = Fractional Cattaneo-Type Equations and Generalized Thermoelasticity, 34(2):97-114. Eq. (29) confirmed on printed p. 101."
+targeted,GuyerKrumhansl1966,CONFIRMED,148,766--778,148,766-778,10.1103/PhysRev.148.766,Both 1966 papers distinguished correctly (.766 / .778).
+targeted,GuyerKrumhansl1966II,CONFIRMED,148,778--788,148,778-788,10.1103/PhysRev.148.778,Correct.
+targeted,DellOroPata2016Viscoelasticity,INCOMPLETE,,,76,641-655,10.1007/s00245-016-9365-1,"Bib entry has no volume and no pages (Crossref: Applied Mathematics and Optimization 76:641-655). Identity is right, the locator is missing - P2."
+targeted,DellOroLasieckaPata2016MGT,CONFIRMED,261,4188-4222,261,4188-4222,10.1016/j.jde.2016.06.025,Three-author critical-case article; pages match.
+targeted,Abdalla2022,UNCITED,,,,,10.1016/j.jheap.2022.04.002,Cosmology paper (Journal of High Energy Astrophysics); zero \cite hits in all 37 tex files. Dead weight in the bib.
+targeted,Kumar2017,CONFIRMED-honest,,,,,,Carries verified=NO and no DOI by design; verify_kumar2017_reference_split.py passes on the branch tree.
+targeted,KumarKansal2017,CONFIRMED,23,43-56,23,43-56,10.12921/cmst.2016.0000036,"DOI belongs to Kumar & Kansal, not to the Kumar/Devi/Sharma library article."
+targeted,Tzou1995,CONFIRMED,117,8--16,117,8-16,10.1115/1.2822329,"Held PDF pdfs/1.2822329.pdf: 9 pages, printed 8-16, footer ""10 / Vol. 117, FEBRUARY 1995"". Eqs. (15)-(17) sit on printed p. 10, matching the ledger anchors."

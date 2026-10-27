@@ -1,0 +1,17 @@
+reduction,limit_used,displayed_law_or_text,substitution_holds,basis,suggested_fix,location,verdict
+LS -> Fourier,tau_0 -> 0,q + tau_0 dq/dt = -k grad T,HOLDS,"Section 4 text (""formal reduction at tau_0=0""); Table limiting row: correct",none,CONFIRMED
+first-order DPL -> LS,tau_T -> 0 with tau_q = tau_0,q + tau_q dq = -k(grad T + tau_T d grad T),HOLDS,verify_unified_reductions.py tests exactly this substitution,none,CONFIRMED
+DPL -> LS as printed in Table 12,tau_q -> 0,"printed row: ""Dual phase-lag -> Lord-Shulman, tau_q -> 0, removes the hyperbolic part""",FAILS,"Setting tau_q -> 0 leaves grad^2 T + tau_T d(grad^2 T)/dt = (1/alpha) dT/dt: no second time derivative, so no thermal wave. It is a gradient-lag (single-phase-lag on grad T) theory, not Lord-Shulman. Lord-Shulman requires keeping tau_q and dropping tau_T. The manuscript own script uses the opposite substitution, so text and script disagree.",sec12_comparative.tex:105 (Table tab:limiting_cases_revisited),WRONG
+DPL -> Fourier,tau_q = tau_T = 0,,HOLDS,tested,none,CONFIRMED
+TPL -> DPL,k* -> 0,,HOLDS,tested,none,CONFIRMED
+TPL -> classical,all tau -> 0,,HOLDS,table only; trivially implied by the two rows above,none,CONFIRMED
+MGT -> Fourier,tau_m = 0 and k* = 0,tau_m dq + q = -k grad T - k* grad theta,HOLDS,tested,none,CONFIRMED
+MGT -> GN-III flux,tau_m -> 0,,HOLDS,NOT tested by the script; I verified it,add to script as an extra row,INFO
+MGT -> LS-type flux,"k* -> 0, t0 = tau_m",,HOLDS,NOT tested by the script; I verified it,add as extra row,INFO
+GN-III(kappa=0) -> d/dt GN-II,kappa -> 0 with T = dot(alpha),,HOLDS,tested; integration constant correctly flagged in text,none,CONFIRMED
+"Caputo, integer order","alpha -> 1, 2",D^alpha t^n,HOLDS,tested for monomials degrees 1-7,none,CONFIRMED
+nonlocal Helmholtz / dispersion,xi -> 0,sigma - xi^2 lap sigma = sigma_loc; c^2 = c0^2/(1+xi^2 k^2),HOLDS,tested,none,CONFIRMED
+MDD + phase-lag -> phase-lag,tau_T = tau_nu = 0,no MDD constitutive law is displayed anywhere in the manuscript,NOT-CHECKABLE,"The reduction cannot be evaluated: no kernel, no normalisation and no lag structure are printed for the MDD model. As written, setting the phase lags to zero is exactly what would leave the memory kernel in place, so the gloss ""all memory except the phase-lag law"" is at best unmotivated.",sec12_comparative.tex:108,CONDITIONAL
+MDD + phase-lag -> classical,"all tau -> 0, kernel -> 1",same problem,NOT-CHECKABLE,No displayed kernel to take to 1.,sec12_comparative.tex:109,CONDITIONAL
+fractional order alpha -> 2,alpha -> 2,Caputo -> second derivative,HOLDS,standard; not tested symbolically (alpha=2 is outside the 0<alpha<=1 branch used in the paper),none,CONFIRMED
+Quintanilla delay condition,tau_theta > tau_q/2 stable; < unstable,DPL thermoelastic 1D problem,CONDITIONAL,"The two strict branches match the source conclusions (printed p.720). The equality case tau_theta = tau_q/2 is not mentioned in the manuscript, so the strictness of both inequalities is asserted without covering the threshold itself.",sec12_comparative.tex line 71,CONDITIONAL
