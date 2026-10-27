@@ -12,8 +12,8 @@ Current dispositions after the first fractional-definition check:
 | --- | ---: | --- |
 | `VERIFIED-SOURCE` | 1 | One equation has a targeted primary-source equation/page anchor. |
 | `VERIFIED-SYMBOLIC` | 17 | Existing or new scripts check the displayed algebra within the row's stated scope; source transcription is not implied unless separately anchored. |
-| `CONDITIONAL` | 54 | The equation is retained only under the assumptions and limits stated in its row; many still need an exact source anchor or equation-specific derivation. |
-| `OPEN` | 5 | Equation-level verification remains unperformed; the rows identify the required next action. |
+| `CONDITIONAL` | 55 | The equation is retained only under the assumptions and limits stated in its row; many still need an exact source anchor or equation-specific derivation. |
+| `OPEN` | 4 | Equation-level verification remains unperformed; the rows identify the required next action. |
 
 The status count is intentionally conservative. A `CONDITIONAL` or `OPEN` row is not a verified scientific claim. Each unverified display is linked to a section-specific Class C ledger row, and the row itself names the remaining source/derivation check.
 
@@ -33,13 +33,13 @@ Fetched the read-only audit branch `arena/0be2770f-le` at `6e095abcaa674ee5d92d2
 
 ## Remaining work
 
-1. Audit all 54 conditional rows against exact source pages/equations or equation-specific scripts; explicitly record sign conventions, coefficient maps, domains, constitutive assumptions, and boundary/data restrictions.
-2. Resolve or conservatively hedge/remove the five open displays: Eq. 4.2, 4.11, 4.12, 6.7, and 7.3.
+1. Audit all 55 conditional rows against exact source pages/equations or equation-specific scripts; explicitly record sign conventions, coefficient maps, domains, constitutive assumptions, and boundary/data restrictions.
+2. Resolve or conservatively hedge/remove the four open displays: Eq. 4.2, 4.11, 4.12, and 7.3.
 3. Check all source-sensitive displayed equations for sign/index/notation conflicts, including thermal-flux signs, conductivity tensor versus scalar use, equations involving `kappa*` versus `kappa_ij`, interface-system mode counts, and the exact assumptions behind each matrix inverse or balance identity.
 4. For each reduction claimed in the manuscript, retain a positive check and a negative test for the most plausible incorrect substitution; keep source transcription separate from symbolic validity.
 5. After the Section 4–10 equation rows are resolved, re-run the inventory, ledger, build, privacy, and hostile-diff checks; then continue the ordered Q1, Q3, Q5, WP3 remainder, WP6, WP7, and WP8 work.
 
-Current equation-audit ledger total is 511 rows: A=48, B=123, C=317, V=23. The inventory checker establishes row coverage only; it does not close the remaining equation work.
+Current equation-audit ledger total is 512 rows: A=48, B=123, C=317, V=24. The inventory checker establishes row coverage only; it does not close the remaining equation work.
 
 ## Build and rendered self-audit checkpoint
 
