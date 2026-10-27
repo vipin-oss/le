@@ -5,12 +5,12 @@
       .title { font: 700 16px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
       .subtitle { font: 12px 'DejaVu Sans', sans-serif; fill: #555; }
       .label { font: 11px 'DejaVu Sans', sans-serif; fill: #333; }
+      .box-title { font: 700 14px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
       .box-text { font: 11px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
       .box { fill: #eef3f8; stroke: #1a3a5c; stroke-width: 1.5; rx: 6; ry: 6; }
       .box-alt { fill: #f0f8e8; stroke: #2d6a2d; stroke-width: 1.5; rx: 6; ry: 6; }
       .arrow { stroke: #1a3a5c; stroke-width: 2; fill: none; marker-end: url(#arrow-flow); }
       .arrow-alt { stroke: #2d6a2d; stroke-width: 2; fill: none; marker-end: url(#arrow-flow-alt); }
-      .decision { fill: #fdf3e0; stroke: #c07c00; stroke-width: 1.5; rx: 4; ry: 4; }
     </style>
     <marker id="arrow-flow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
       <polygon points="0,0 9,4.5 0,9" fill="#1a3a5c"/>
@@ -22,95 +22,97 @@
 
   <rect width="1100" height="700" fill="white"/>
 
-  <text x="550" y="28" class="title" text-anchor="middle">Solution workflow for wave propagation problems</text>
-  <text x="550" y="46" class="subtitle" text-anchor="middle">From governing equations to energy flux computation (Sections 8, 9, 10)</text>
+  <text x="550" y="28" class="title" text-anchor="middle">Model-specific workflow for wave propagation</text>
+  <text x="550" y="47" class="subtitle" text-anchor="middle">From selected field equations to energy-flux comparison (Sections 8, 9, 10)</text>
 
-  <!-- Step 1: Governing equations -->
-  <rect x="50" y="80" width="200" height="70" class="box"/>
+  <!-- Step 1: selected governing equations -->
+  <rect id="step-1" x="50" y="80" width="200" height="70" class="box"/>
   <text x="150" y="100" class="box-text" text-anchor="middle" font-weight="bold">Step 1</text>
   <text x="150" y="118" class="box-text" text-anchor="middle">Governing equations</text>
-  <text x="150" y="133" class="box-text" text-anchor="middle">Balance laws + constitutive</text>
+  <text x="150" y="133" class="box-text" text-anchor="middle">Balances + constitutive laws</text>
 
-  <!-- Step 2: Plane wave ansatz -->
-  <rect x="300" y="80" width="200" height="70" class="box"/>
+  <!-- Step 2: plane-wave or harmonic ansatz -->
+  <rect id="step-2" x="300" y="80" width="200" height="70" class="box"/>
   <text x="400" y="100" class="box-text" text-anchor="middle" font-weight="bold">Step 2</text>
-  <text x="400" y="118" class="box-text" text-anchor="middle">Plane wave ansatz</text>
-  <text x="400" y="133" class="box-text" text-anchor="middle">e<sup>i(k·x - ωt)</sup></text>
+  <text x="400" y="118" class="box-text" text-anchor="middle">Wave ansatz</text>
+  <text x="400" y="133" class="box-text" text-anchor="middle">e<tspan baseline-shift="super" font-size="8">i(k·x − ωt)</tspan></text>
 
-  <!-- Step 3: Christoffel equation -->
-  <rect x="550" y="80" width="200" height="70" class="box"/>
+  <!-- Step 3: selected characteristic system -->
+  <rect id="step-3" x="550" y="80" width="200" height="70" class="box"/>
   <text x="650" y="100" class="box-text" text-anchor="middle" font-weight="bold">Step 3</text>
-  <text x="650" y="118" class="box-text" text-anchor="middle">Christoffel equation</text>
-  <text x="650" y="133" class="box-text" text-anchor="middle">det[Γ - ρc<sup>2</sup>I] = 0</text>
+  <text x="650" y="118" class="box-text" text-anchor="middle">Characteristic system</text>
+  <text x="650" y="133" class="box-text" text-anchor="middle">From selected field equations</text>
 
-  <!-- Step 4: Solve secular equation -->
-  <rect x="800" y="80" width="250" height="70" class="box"/>
+  <!-- Step 4: model-specific secular relation -->
+  <rect id="step-4" x="800" y="80" width="250" height="70" class="box"/>
   <text x="925" y="100" class="box-text" text-anchor="middle" font-weight="bold">Step 4</text>
-  <text x="925" y="118" class="box-text" text-anchor="middle">Secular equation</text>
-  <text x="925" y="133" class="box-text" text-anchor="middle">Characteristic polynomial</text>
+  <text x="925" y="118" class="box-text" text-anchor="middle">Secular relation</text>
+  <text x="925" y="133" class="box-text" text-anchor="middle">Selected determinant / roots</text>
 
-  <!-- Arrows row 1 -->
-  <line x1="250" y1="115" x2="300" y2="115" class="arrow"/>
-  <line x1="500" y1="115" x2="550" y2="115" class="arrow"/>
-  <line x1="750" y1="115" x2="800" y2="115" class="arrow"/>
+  <!-- Steps 1–4: left-to-right flow -->
+  <line id="flow-1-to-2" x1="250" y1="115" x2="300" y2="115" class="arrow"/>
+  <line id="flow-2-to-3" x1="500" y1="115" x2="550" y2="115" class="arrow"/>
+  <line id="flow-3-to-4" x1="750" y1="115" x2="800" y2="115" class="arrow"/>
 
-  <!-- Step 5: Classify modes -->
-  <rect x="50" y="220" width="200" height="70" class="box"/>
+  <!-- Step 5: classify roots -->
+  <rect id="step-5" x="50" y="220" width="200" height="70" class="box"/>
   <text x="150" y="240" class="box-text" text-anchor="middle" font-weight="bold">Step 5</text>
   <text x="150" y="258" class="box-text" text-anchor="middle">Classify modes</text>
   <text x="150" y="273" class="box-text" text-anchor="middle">Propagating / evanescent</text>
 
-  <!-- Step 6: Normalize modes -->
-  <rect x="300" y="220" width="200" height="70" class="box"/>
+  <!-- Step 6: normalize selected modes -->
+  <rect id="step-6" x="300" y="220" width="200" height="70" class="box"/>
   <text x="400" y="240" class="box-text" text-anchor="middle" font-weight="bold">Step 6</text>
-  <text x="400" y="258" class="box-text" text-anchor="middle">Modal normalization</text>
-  <text x="400" y="273" class="box-text" text-anchor="middle">Energy flux normalization</text>
+  <text x="400" y="258" class="box-text" text-anchor="middle">Normalize modes</text>
+  <text x="400" y="273" class="box-text" text-anchor="middle">State the flux convention</text>
 
-  <!-- Step 7: Interface conditions -->
-  <rect x="550" y="220" width="200" height="70" class="box"/>
+  <!-- Step 7: apply the selected interface conditions -->
+  <rect id="step-7" x="550" y="220" width="200" height="70" class="box"/>
   <text x="650" y="240" class="box-text" text-anchor="middle" font-weight="bold">Step 7</text>
   <text x="650" y="258" class="box-text" text-anchor="middle">Interface conditions</text>
-  <text x="650" y="273" class="box-text" text-anchor="middle">Displacement, traction, T, q</text>
+  <text x="650" y="273" class="box-text" text-anchor="middle">Mechanical / thermal / electrical</text>
 
-  <!-- Step 8: Compute energy flux -->
-  <rect x="800" y="220" width="250" height="70" class="box-alt"/>
+  <!-- Step 8: derive a model-specific flux -->
+  <rect id="step-8" x="800" y="220" width="250" height="70" class="box-alt"/>
   <text x="925" y="240" class="box-text" text-anchor="middle" font-weight="bold">Step 8</text>
   <text x="925" y="258" class="box-text" text-anchor="middle">Energy flux</text>
-  <text x="925" y="273" class="box-text" text-anchor="middle">J<sub>j</sub> = q<sub>j</sub> − σ<sub>ji</sub>v<sub>i</sub></text>
+  <text x="925" y="273" class="box-text" text-anchor="middle">Derive for selected model</text>
 
-  <!-- Arrows row 2 -->
-  <line x1="250" y1="255" x2="300" y2="255" class="arrow"/>
-  <line x1="500" y1="255" x2="550" y2="255" class="arrow"/>
-  <line x1="750" y1="255" x2="800" y2="255" class="arrow"/>
+  <!-- Steps 5–8: left-to-right flow -->
+  <line id="flow-5-to-6" x1="250" y1="255" x2="300" y2="255" class="arrow"/>
+  <line id="flow-6-to-7" x1="500" y1="255" x2="550" y2="255" class="arrow"/>
+  <line id="flow-7-to-8" x1="750" y1="255" x2="800" y2="255" class="arrow"/>
 
-  <!-- Step 9: Energy ratios -->
-  <rect x="250" y="360" width="200" height="70" class="box"/>
+  <!-- Step 9: ratios use matched reference planes -->
+  <rect id="step-9" x="250" y="360" width="200" height="70" class="box"/>
   <text x="350" y="380" class="box-text" text-anchor="middle" font-weight="bold">Step 9</text>
-  <text x="350" y="398" class="box-text" text-anchor="middle">Energy ratios</text>
-  <text x="350" y="413" class="box-text" text-anchor="middle">R + T + A_int = 1</text>
+  <text x="350" y="398" class="box-text" text-anchor="middle">Reference-plane ratios</text>
+  <text x="350" y="413" class="box-text" text-anchor="middle">Use matched normalization</text>
 
-  <!-- Step 10: Validate -->
-  <rect x="650" y="360" width="200" height="70" class="box-alt"/>
+  <!-- Step 10: validate only against specified evidence -->
+  <rect id="step-10" x="650" y="360" width="200" height="70" class="box-alt"/>
   <text x="750" y="380" class="box-text" text-anchor="middle" font-weight="bold">Step 10</text>
   <text x="750" y="398" class="box-text" text-anchor="middle">Validate</text>
-  <text x="750" y="413" class="box-text" text-anchor="middle">conditional benchmark</text>
+  <text x="750" y="413" class="box-text" text-anchor="middle">Specified benchmark</text>
 
-  <!-- Arrows row 3 -->
-  <line x1="300" y1="430" x2="350" y2="360" class="arrow"/>
-  <line x1="700" y1="430" x2="650" y2="360" class="arrow"/>
+  <!-- Wrap row 1 to row 2 through the open channel between them -->
+  <path id="flow-4-to-5" d="M 925 150 L 925 180 L 150 180 L 150 220" class="arrow"/>
 
-  <!-- Feedback loop -->
-  <path d="M 800 290 L 800 430 L 700 430" class="arrow"/>
-  <text x="810" y="360" class="label" font-size="10" fill="#2d6a2d">Iterate for convergence</text>
+  <!-- Energy-flux comparison flows from Step 8 through Steps 9 and 10 -->
+  <path id="flow-8-to-9" d="M 925 290 L 925 325 L 350 325 L 350 360" class="arrow"/>
+  <line id="flow-9-to-10" x1="450" y1="395" x2="650" y2="395" class="arrow"/>
 
-  <!-- Notes -->
-  <rect x="50" y="480" width="1000" height="180" class="box"/>
-  <text x="65" y="498" class="box-title">Method notes</text>
-  <text x="65" y="518" class="label" font-size="10">Steps 1-4: Formulate the boundary-value problem and derive the dispersion relation.</text>
-  <text x="65" y="533" class="label" font-size="10">Steps 5-6: Solve for wave modes and normalize consistently for energy flux computation.</text>
-  <text x="65" y="548" class="label" font-size="10">Step 7: Apply interface conditions (perfect or imperfect bonding, electrical conditions for piezoelectric media).</text>
-  <text x="65" y="563" class="label" font-size="10">Step 8: Evaluate the complete, model-specific energy balance.</text>
-  <text x="65" y="578" class="label" font-size="10">Energy ratios and benchmarks require independent, model-specific validation.</text>
-  <text x="65" y="593" class="label" font-size="10">Generalized fluxes require model-specific derivation (Section 10).</text>
-  <text x="65" y="608" class="label" font-size="10">Complex modes require careful normalization (Section 8.5, Challenge 15.5).</text>
+  <!-- Feedback returns around the right margin without crossing any step box -->
+  <path id="feedback-10-to-8" d="M 850 395 L 1075 395 L 1075 255 L 1050 255" class="arrow-alt"/>
+  <text x="990" y="348" class="label" text-anchor="middle">Iterate if needed</text>
+
+  <!-- Bounded method notes -->
+  <rect id="method-notes" x="50" y="480" width="1000" height="180" class="box"/>
+  <text x="65" y="501" class="box-title">Method notes</text>
+  <text x="65" y="521" class="label">Steps 1–4: Select the model, geometry, data, and characteristic system.</text>
+  <text x="65" y="540" class="label">Steps 5–6: Classify and normalize modes under a stated convention.</text>
+  <text x="65" y="559" class="label">Step 7: Apply the selected mechanical, thermal, and (if present) electrical conditions.</text>
+  <text x="65" y="578" class="label">Step 8: Derive the complete model-specific flux; do not assume a universal formula.</text>
+  <text x="65" y="597" class="label">Steps 9–10: Match reference planes; validate only against specified benchmark evidence.</text>
+  <text x="65" y="616" class="label">Complex/evanescent modes require careful normalization; no universal ratio closure is implied.</text>
 </svg>
