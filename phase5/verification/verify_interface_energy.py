@@ -83,6 +83,16 @@ assert sp.simplify(R_sigma + T_sigma + A_sigma - 1) == 0
 # Keep the manuscript's plane labels and remote-plane balance synchronized.
 section9 = (ROOT / "master/sections/sec09_interfaces.tex").read_text(encoding="utf-8")
 section10 = (ROOT / "master/sections/sec10_energy.tex").read_text(encoding="utf-8")
+figure_paths = (
+    ROOT / "figures/source/fig13-interface-reflection.svg",
+    ROOT / "master/figures/source/fig13-interface-reflection.svg",
+    ROOT / "master/figures/rendered/fig13-interface-reflection.svg",
+)
+for figure_path in figure_paths:
+    figure_text = figure_path.read_text(encoding="utf-8")
+    assert "Interface-plane accounting:" in figure_text
+    assert "RΣ + TΣ + A_int = 1" in figure_text
+    assert "R + T + A_int = 1" not in figure_text
 assert r"R_{\Sigma}" in section9 and r"T_{\Sigma}" in section9
 assert r"\shortstack{$R_{\Sigma},T_{\Sigma},$\\$A_{\mathrm{int}}$}" in section9
 assert "saved audit summary does not specify reference planes" in section9
