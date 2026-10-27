@@ -27,6 +27,10 @@
 
 The Q3 table now explicitly carries the selected-problem instability result as a counterexample to a universal DPL stability reading, the unclassified critical equality, and the unresolved DOI source conflict. It also distinguishes the Kumar article identity re-check from the earlier wrong-PDF concern: the DOI-matched *Phys. Scr.* p. 17 supports only its approximate numerical statement.
 
+## Build and audit checkpoint
+
+The Q3 documentation/ledger commit `a4cd1a2` passed CI `40488070785`; artifact commit `3396ebf` was pulled and the fixed-branch local/remote heads matched. The unchanged manuscript rendered to 119 pages: undefined references/citations 0, overfull boxes >1 pt 0, near-overfull boxes >0.5 pt 0, privacy-token matches 0, internal-path matches 0, strict manuscript-tag matches 0, 18 figure PDFs rendered/16 master includes, and deletion-audit `NONE` rows 0. Because this package changed only the Q3 report, status CSV, ledger, and verifier, no manuscript claim was added or altered. The hostile diff review found only the 14-family status map and the two new B rows OCL-491/492; the ten A/V rendered-text spot-check and page list remain in `B22_HANDOVER.md` and remain applicable to this unchanged PDF. Ledger validation passes at 492 rows (A=30, B=132, C=315, V=15).
+
 ## Audit limits and next work
 
 The matrix is an evidence map, not a systematic literature review and not a proof of consensus across each family. Seven rows in B22's 26-row Class A sample were not checkable because the source was not held; these are not represented as absent. Unavailable primary equations and model-dependent properties remain B/C or explicitly open. Next, complete Q3's remaining source-specific checks and update each matrix row only when the exact source anchor is available; then proceed to Q4 and Q5. Current main ledger checkpoint is 492 rows (A=30, B=132, C=315, V=15); OCL-491 and OCL-492 separately record the GN-II/III equation-level gaps.
