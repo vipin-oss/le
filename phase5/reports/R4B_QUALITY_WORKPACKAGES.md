@@ -41,7 +41,7 @@ Revise the introduction and contribution/scope statements only after Q1–Q3 evi
 
 ## Q5 — Presentation
 
-**Status:** Pending. The presentation audit must reconcile symbols/subscripts and abbreviation lists, review figure assumptions and claim coverage, and complete final-size figure checks. A prior review specifically flagged the lower connectors in Figure 12 for visual re-check; record the result in the figure audit and package report.
+**Status:** In progress. The presentation audit must reconcile symbols/subscripts and abbreviation lists, review figure assumptions and claim coverage, and complete final-size figure checks. In the final CI PDF, Figure 11 (repository source F12) on printed p. 58 was visually inspected: the lower connector arrows cross the Step 9/10 boxes and the feedback label overlaps a connector. Correct both source/rendered mirrors, update the figure audit, then re-review at final page scale; Q5/WP5 is not complete.
 
 Standardize symbols, subscripts, sign/time conventions, and abbreviation lists. Keep figures only where the depicted relations are verified; prefer script-generated diagrams or plots from verified formulas. Every figure caption must state the governing assumptions and scope, and each figure/table claim must have ledger coverage. Check final-size legibility and consistency between figure labels, equations, and text.
 

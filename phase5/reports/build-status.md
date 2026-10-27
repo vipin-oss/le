@@ -1,6 +1,6 @@
 # Current build status — phase5 v1.1
 
-**Current engineering state: PASS.** Latest content-bearing commit `e1452a8ffa0ecb0bcaba360ef7936e1d3c3c2bce` passed LaTeX Build CI `40478413805` on 2026-10-27. The 119-page PDF and contact sheets were published in same-branch output commit `8b1b9f3139e92d0229ce7d08d9b818af2c24fdb3`. Documentation-only progress updates after that build do not change the tested manuscript.
+**Current engineering state: PASS.** Latest content-bearing commit `c98d7ade4b1a2ad6202226a430cf81cb43844c21` passed LaTeX Build CI `40510553492` on 2026-10-27. The 121-page PDF and contact sheets were published in same-branch output commit `77afb5c61169a9054f1eba4b06871a2490f5d85c`. Documentation-only audit updates after that build do not change the tested manuscript.
 
 | Check | Result |
 |---|---:|
@@ -12,17 +12,17 @@
 | Privacy-token occurrences in extracted PDF text | 0 |
 | Figure PDFs generated / included in master | 18 / 16 |
 | Deletion-audit `NONE` rows | 0 |
-| Install utilities + TeX build | 19 s + 10 s = 29 s |
-| Whole job duration | 3m 00s |
+| Install utilities + TeX build | 18 s + 10 s = 28 s |
+| Whole job duration | 3m 04s |
 
-The current PDF and contact sheets are under `phase5/build_outputs/`. Contact sheets are overview checks, not full-size proofing. Final-size review checked Section 9 PDF pp. 61–65, including the mode-count table, interface-plane ratios, updated final-size interface schematic, notation summary, and the V-B3d reference-plane caveat; Section 10's remote energy balance and worked 1D system were checked on pp. 67–68. The schematic's notation, label spacing, and printed-size font were adjusted and visually rechecked. The evidence-bounded Q2 package is complete for the selected local models only; no generalized-family mode count or flux law is inferred. CI demonstrates reproducible compilation and engineering-gate results, not universal scientific validity.
+The current PDF and contact sheets are under `phase5/build_outputs/`. Contact sheets are overview checks, not full-size proofing. Final-size review checked the GN-III source-map paragraph and equation on printed p. 33, the Q4 roadmap/Table 39 on p. 103, and Figure 11 (repository source F12) on p. 58. The figure review found the lower connector arrows cross the Step 9/10 boxes and the feedback label overlaps a connector; Q5/WP5 remains open until corrected and re-reviewed. Section 9 PDF pp. 61–65 and Section 10's remote energy balance/worked 1D system on pp. 67–68 remain reviewed. Q2 is complete for selected local models only; no generalized-family mode count or flux law is inferred. CI demonstrates reproducible compilation and engineering-gate results, not universal scientific validity.
 
 ## Scientific and editorial state
 
 - Q1 is complete at the evidence-bounded scope: the common scaffold is restricted to local Cauchy balances and non-universal closure placeholders; the comparison matrix preserves B/C cells; the displayed-equation reduction script checks algebra only. GL/GN-I equation-level mappings, MDD limits, and family-wide stability/dissipation remain open.
 - Q2 is complete at selected-model scope: Section 9 distinguishes interface-plane R_sigma/T_sigma from remote-plane ratios; Section 10 separates left-bulk, interface-local, and right-bulk loss; selected 1D, plane-strain elastic, and plane-strain thermoelastic matching dimensions are checked. OCL-485 remains B for generalized-family counts, and OCL-487 remains C because the saved V-B3d arithmetic summary does not identify the reference planes for its reported ratios.
-- Q3–Q5 remain to be completed. WP3/WP4/WP6/WP7/WP8 and the remaining WP2 source-backed work (Section 4 beyond the targeted scope, Sections 11 and 13–17) remain open; do not characterize this branch as submission-ready.
-- Current ledger: 487 rows (A=30, B=128, C=314, V=15; A+V=45). `MISSING_SOURCES.csv` has 23 bounded records. All 19 Kumar-dependent rows (OCL-076 and OCL-278–OCL-295) remain B/C.
+- Q3 remains in progress: the GN-III zero-source equation map is checked by OCL-498 (Class V), while GN-I/GN-II/LS/GL mapping, parameter admissibility, and model-specific energy/flux questions remain open. Q4 is complete at its conditional, evidence-bounded scope. Q5 is in progress; the Figure 11/F12 connector defect on printed p. 58 remains open. WP3–WP8 and remaining WP2 source-backed work (Section 4 beyond targeted scopes, Sections 11 and 13–17) remain open; this branch is not submission-ready.
+- Current ledger: 498 rows (A=34, B=132, C=315, V=17; A+V=51). `MISSING_SOURCES.csv` has 23 bounded records. All 19 Kumar-dependent rows (OCL-076 and OCL-278–OCL-295) remain B/C.
 - `R4A_DELETION_AUDIT.csv` records 593 removed-text entries and has zero `NONE` identifiers. Deleted claims are not thereby verified and should not be restored as established results.
 - Source/licensing provenance and final-size review for all remaining figures, complete claim-level source verification, and journal/submission readiness remain open.
 
