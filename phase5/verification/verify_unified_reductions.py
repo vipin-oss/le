@@ -52,6 +52,15 @@ assert r"$\tau_T \to 0$, with $\tau_q=\tau_0$" in comparison
 assert r"$\tau_q \to 0$" not in comparison
 assert "Model-dependent" in comparison
 assert "do not classify the critical case" in comparison
+part_b = comparison.split(r"\label{tab:twelve_criteria_b}", 1)[1].split(r"\end{tabularx}", 1)[0]
+for criterion in (
+    "Thermal law", "State variables", "Characteristic time", "Characteristic length",
+    "Thermal-wave behavior", "Energy behavior", "Spatial order", "Mathematical structure",
+    "Interface conditions", "Propagation properties",
+):
+    row = next(line for line in part_b.splitlines() if line.startswith(criterion + " &"))
+    assert row.count("& Model-dependent &") == 1, f"MDD cell not explicitly model-dependent: {criterion}"
+assert "does not display a governing MDD law with a source-anchored equation" in comparison
 assert sp.simplify(mgt.subs({tau_m: 0, k_star: 0}) - fourier) == 0
 print("PASS: LS -> Fourier; first-order DPL -> LS/Fourier; TPL -> DPL; displayed MGT heat-flux law -> Fourier")
 

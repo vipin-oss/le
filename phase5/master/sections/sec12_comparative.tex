@@ -50,20 +50,22 @@ Primary source & \cite{Biot1956} & \cite{Lord1967} & \cite{Green1972} & \cite{Gr
 \toprule
 \textbf{Criterion} & \textbf{DPL} & \textbf{TPL} & \textbf{MGT} & \textbf{MDD} & \textbf{Nonlocal} \\
 \midrule
-Thermal law & Lagged flux/\allowbreak temperature relation & Three-lag constitutive relation & Variant-specific higher-order law & Kernel-weighted time-history operator & Spatially nonlocal elastic law \\
-State variables & Model-specific & Model-specific & Model-specific & Model-specific & Model-specific \\
-Characteristic time & Lag parameters & Lag parameters & Variant-specific parameters & Horizon or kernel parameters & --- \\
-Characteristic length & --- & --- & --- & --- & Model-specific length scale \\
-Thermal-wave behavior & Depends on the selected lags and equations & Depends on the selected lags and equations & Depends on the selected MGT formulation & Depends on the kernel and data & Not specified by an elastic-only model \\
-Energy behavior & Model-specific & Model-specific & Model-specific & Model-specific & Model-specific \\
-Spatial order & Set by the governing equations & Set by the governing equations & Set by the governing equations & Set by the operator & Set by the constitutive form \\
-Mathematical structure & Coupled field equations & Coupled field equations & Higher-order field equations & Integro-differential equations & Nonlocal or gradient equations \\
-Interface conditions & Depend on the interface model & Depend on the interface model & Depend on the interface model & Depend on the interface model & Depend on the interface model \\
-Propagation properties & Model-specific & Model-specific & Model-specific & Model-specific & Model-specific \\
+Thermal law & Lagged flux/\allowbreak temperature relation & Three-lag constitutive relation & Variant-specific higher-order law & Model-dependent & Spatially nonlocal elastic law \\
+State variables & Model-specific & Model-specific & Model-specific & Model-dependent & Model-specific \\
+Characteristic time & Lag parameters & Lag parameters & Variant-specific parameters & Model-dependent & --- \\
+Characteristic length & --- & --- & --- & Model-dependent & Model-specific length scale \\
+Thermal-wave behavior & Depends on the selected lags and equations & Depends on the selected lags and equations & Depends on the selected MGT formulation & Model-dependent & Not specified by an elastic-only model \\
+Energy behavior & Model-specific & Model-specific & Model-specific & Model-dependent & Model-specific \\
+Spatial order & Set by the governing equations & Set by the governing equations & Set by the governing equations & Model-dependent & Set by the constitutive form \\
+Mathematical structure & Coupled field equations & Coupled field equations & Higher-order field equations & Model-dependent & Nonlocal or gradient equations \\
+Interface conditions & Depend on the interface model & Depend on the interface model & Depend on the interface model & Model-dependent & Depend on the interface model \\
+Propagation properties & Model-specific & Model-specific & Model-specific & Model-dependent & Model-specific \\
 Primary source & \cite{Tzou1995} & \cite{RoyChoudhuri2007} & \cite{Quintanilla2019} & \cite{Wang2011} & \cite{Eringen1972} \\
 \bottomrule
 \end{tabularx}
 \end{table}
+
+The substantive MDD cells in Table~\ref{tab:twelve_criteria_b} are marked model-dependent because this comparison does not display a governing MDD law with a source-anchored equation; the cited Wang--Li item is a representative source lead, not verification of a family-wide property.
 
 Three of these rows carry most of the interpretive content.
 
