@@ -181,7 +181,7 @@ The identity \eqref{eq:9.12} is the interface balance when the theory-specific f
 
 For passive perfect contact with no interfacial storage or dissipation, continuity of total-field flux gives zero interface-local residual. Mode-diagonal outgoing fluxes need not satisfy this identity in attenuating media: incident--reflected and inter-mode cross terms can be nonzero. Bulk dissipation is a volume integral and must be reported separately; adding it to an interface residual would double-count energy loss.
 
-A concrete V-B3d coupled Biot case illustrates the distinction (steel-like/aluminium-like half-spaces, 1-D normal incidence, perfect contact, $f=4.46\times10^{11}$ Hz; arithmetic test data, not a materials claim). The reproduced total-field values are $R_{\mathrm{flux}}=0.212026$, $T_{\mathrm{flux}}=0.787974$, and $A_{\mathrm{flux}}=2.2\times10^{-16}$. The reflected-sum and diagonal-only values are $R_{\mathrm{ref}}=0.211074$ and $R_{\mathrm{mode}}=0.211592$, giving $R_{\mathrm{ref}}+T_{\mathrm{flux}}-1=-9.5\times10^{-4}$ and $R_{\mathrm{mode}}+T_{\mathrm{flux}}-1=-4.34\times10^{-4}$. Independent half-space dissipation checks close to unity for the computed reflected and transmitted powers. Thus total-field closure is a definition-level bookkeeping identity, not an independent validation; dropping cross terms changes the reported ratios. Reproduction details and the read-only test source commit are recorded in \texttt{reports/V-B3d-cross-term-check.md}.
+A concrete V-B3d coupled Biot case illustrates the cross-term sensitivity (steel-like/aluminium-like half-spaces, 1-D normal incidence, perfect contact, $f=4.46\times10^{11}$ Hz; arithmetic test data, not a materials claim). The saved audit reports total-field values $R_{\mathrm{flux}}=0.212026$, $T_{\mathrm{flux}}=0.787974$, and $A_{\mathrm{flux}}=2.2\times10^{-16}$. The reflected-sum and diagonal-only values are $R_{\mathrm{ref}}=0.211074$ and $R_{\mathrm{mode}}=0.211592$, giving $R_{\mathrm{ref}}+T_{\mathrm{flux}}-1=-9.5\times10^{-4}$ and $R_{\mathrm{mode}}+T_{\mathrm{flux}}-1=-4.34\times10^{-4}$. Independent half-space dissipation checks close to unity for the computed reflected and transmitted powers. Thus total-field closure is a definition-level bookkeeping identity, not an independent validation; dropping cross terms changes the reported ratios. These audit-specific labels are retained as reported: the saved audit summary does not specify reference planes sufficient to identify $R_{\mathrm{flux}}$ and $T_{\mathrm{flux}}$ with either the interface-plane or remote-plane ratios defined here. Reproduction details and the read-only test source commit are recorded in \texttt{reports/V-B3d-cross-term-check.md}.
 
 \subsubsection{What the interface partition reveals}
 
@@ -220,7 +220,7 @@ $q_n^{(m)}$ & Vertical wave number & 1/m & \eqref{eq:9.2} \\
 $\Delta$ & System matrix & varies & \eqref{eq:9.7} \\
 $\bm{X}$ & Unknown amplitude vector & varies & \eqref{eq:9.7} \\
 $\bm{Q}$ & Known incident vector & varies & \eqref{eq:9.7} \\
-$R, T, A_{\mathrm{int}}$ & Reflection, transmission, and interface-local residual ratios & dimensionless & \eqref{eq:9.10} \\
+$R_{\Sigma}, T_{\Sigma}, A_{\mathrm{int}}$ & Interface-plane reflection, transmission, and local residual ratios & dimensionless & \eqref{eq:9.10} \\
 $K_{ij}^u$ & Interfacial stiffness tensor & varies & \eqref{eq:9.6} \\
 \bottomrule
 \end{tabularx}
