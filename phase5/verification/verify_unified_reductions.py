@@ -55,8 +55,10 @@ assert sp.simplify(dpl.subs(tau_T, 0) - fourier - tau_q * qdot) == 0
 assert sp.simplify(dpl.subs(tau_q, 0) - fourier) != 0
 assert sp.simplify(dpl.subs(tau_T, 0) - fourier) != 0
 
-# The displayed TPL residual reduces to DPL only when its extra channel is
-# removed. A nonzero k_star with independent fields does not.
+# The displayed first-order Taylor residual immediately following Eq. 4.17 is
+# encoded by dpl + k_star*(grad_v + tau_v*grad_v_dot). This algebraic limit is
+# substantive relative to that written residual; text-presence checks below are
+# structural only and do not validate the equation's derivation or source.
 assert sp.simplify(tpl.subs(k_star, 0) - dpl) == 0
 assert sp.simplify(tpl - dpl - k_star * (grad_v + tau_v * grad_v_dot)) == 0
 assert sp.simplify(tpl - dpl) != 0
@@ -73,6 +75,13 @@ assert sp.simplify(mgt.subs(tau_m, 0) - fourier - k_star * grad_v) == 0
 assert sp.simplify(mgt.subs(k_star, 0) - fourier - tau_m * qdot) == 0
 assert sp.simplify(mgt.subs(tau_m, 0) - fourier) != 0
 assert sp.simplify(mgt.subs(k_star, 0) - fourier) != 0
+
+# STRUCTURAL ONLY: ensure the manuscript prints the Taylor residual that the
+# symbolic TPL residual above represents, and that T2 points to that display.
+section4_tpl = (ROOT / "master/sections/sec04_thermoelastic.tex").read_text(encoding="utf-8")
+t2_reduction = (ROOT / "master/tables/source/T2_reduction_map.tex").read_text(encoding="utf-8")
+assert r"q_i+\tau_q\dot q_i+k\left(T_{,i}+\tau_T\dot T_{,i}\right)" in section4_tpl
+assert "first-order residual displayed after Eq.~" in t2_reduction
 
 # Keep the active comparison table synchronized with the checked reduction.
 comparison = (ROOT / "master/sections/sec12_comparative.tex").read_text(encoding="utf-8")
@@ -202,4 +211,5 @@ assert "do not cover higher-gradient, micropolar, or nonlocal boundary-power ter
 print("PASS: reduction map covers LS, GL, GN-I/II/III, DPL, TPL, MGT, fractional, nonlocal, and MDD with explicit open rows")
 print("PASS: shared balance scaffold is scoped to local Cauchy continua and non-universal closures")
 
+print("CHECK CLASSIFICATION: symbolic residual limits are substantive relative to the entered equations; all text/coverage assertions are structural only")
 print("Scope: equation-level substitutions only; no claim of source transcription, convergence, stability, or family-wide equivalence")

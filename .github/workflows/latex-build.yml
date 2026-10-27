@@ -376,6 +376,12 @@ jobs:
               r'\bshared\s+' + storage_word + r'\b',
           ]
           privacy_hits = [(pattern, match) for pattern in privacy_patterns for match in re.finditer(pattern, text, re.I)]
+          internal_artifact_patterns = [
+              r'\bV-B\d+[a-z]?\b',
+              r'\bsaved\s+audit\b',
+              r'\bverification\s+script\b',
+          ]
+          internal_artifact_hits = [(pattern, match) for pattern in internal_artifact_patterns for match in re.finditer(pattern, text, re.I)]
           internal_path_pattern = re.compile(r'phase5/|phase4/|\.csv\b', re.I)
           internal_path_hits = list(internal_path_pattern.finditer(text))
           # Retain the previous broad scan only to classify its legacy hits in CI logs.
@@ -398,8 +404,9 @@ jobs:
               print(f'::notice title=R4A legacy scan hit::{annotation}')
           print(f'Forbidden-token occurrences in pdftotext (strict pattern): {len(strict_hits)}')
           print(f'Forbidden privacy-token occurrences in pdftotext: {len(privacy_hits)}')
+          print(f'Forbidden internal-artifact occurrences in pdftotext (work-package tags/audit/script mentions): {len(internal_artifact_hits)}')
           print(f'Forbidden internal-path occurrences in pdftotext (phase5/, phase4/, .csv): {len(internal_path_hits)}')
-          if strict_hits or privacy_hits or internal_path_hits:
+          if strict_hits or privacy_hits or internal_artifact_hits or internal_path_hits:
               raise SystemExit(1)
           PY
 
@@ -451,6 +458,12 @@ jobs:
               r'\bshared\s+' + storage_word + r'\b',
           ]
           forbidden_count = sum(len(re.findall(pattern, extracted, re.I)) for pattern in forbidden_patterns)
+          internal_artifact_patterns = [
+              r'\bV-B\d+[a-z]?\b',
+              r'\bsaved\s+audit\b',
+              r'\bverification\s+script\b',
+          ]
+          internal_artifact_count = sum(len(re.findall(pattern, extracted, re.I)) for pattern in internal_artifact_patterns)
           internal_path_pattern = re.compile(r'phase5/|phase4/|\.csv\b', re.I)
           internal_path_count = len(internal_path_pattern.findall(extracted))
           tag_pattern = re.compile(r'PRIMARY-SOURCE|GAP-\d+|LIT-\d+|OCL-\d+|UNVERIFIED|\bR[1-6][a-z]\b|\?\?')
@@ -493,6 +506,7 @@ jobs:
               'PDF pages': pages,
               'Undefined references/citations': undefined_refs,
               'Forbidden privacy-token occurrences in pdftotext': str(forbidden_count),
+              'Forbidden internal-artifact occurrences in pdftotext': str(internal_artifact_count),
               'Forbidden internal-path occurrences in pdftotext': str(internal_path_count),
               'Forbidden manuscript-tag occurrences in pdftotext': str(forbidden_tags),
               'Rendered figure PDFs': str(rendered_figures),

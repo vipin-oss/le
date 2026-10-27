@@ -35,7 +35,7 @@ EQ-003 & Mechanical power balance & DERIVED & Product of momentum balance and ve
 EQ-004 & $\rho \dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i}$ & CONDITIONAL & Classical local continuum; no internal heat supply; $e$ specific internal energy \\
 EQ-005 & Dissipation inequality $\geq 0$ & UNVERIFIED & Legacy equation; exact entropy/free-energy assumptions not audited \\
 EQ-006 & Coleman--Noll restrictions & UNVERIFIED & Legacy equation; state variables and free-energy convention not audited \\
-EQ-007 & $J_i = q_i - \sigma_{ij}v_j$ & DERIVED & Section 3.8, outward-positive convention; symmetric stress \\
+EQ-007 & $F_i=q_i-\sigma_{ij}v_j+\mathcal{E}v_i$ (exact); $J_i=q_i-\sigma_{ij}v_j$ (first-order reduced) & DERIVED & Section 3.8 exact Eulerian form and Section 10.2 reduced-wave convention; symmetric stress \\
 EQ-008 & $v_i = \dot{u}_i$ & UNVERIFIED & Definition of velocity \\
 EQ-009 & $\varepsilon_{ij} = \tfrac{1}{2}(u_{i,j} + u_{j,i})$ & UNVERIFIED & Definition of infinitesimal strain \\
 EQ-010 & $\omega_{ij} = \tfrac{1}{2}(u_{i,j} - u_{j,i})$ & UNVERIFIED & Definition of rotation tensor \\
@@ -111,7 +111,7 @@ EQ-6.1 & Schematic constitutive operator $\mathcal{D}[\bm q]=-k\nabla T$ & CONDI
 EQ-6.5 & ${}^C D_t^\alpha T=a_\alpha\nabla^2T$ & CONDITIONAL & Scalar equation only; $0<\alpha\leq2$; dimensional $a_\alpha$; no coupled-law inference \\
 EQ-6.6 & Hereditary convolution & CONDITIONAL & Kernel integrable on its stated history interval; model-specific thermodynamic constraints not implied \\
 EQ-6.7 & Finite-window MDD operator & CONDITIONAL & $\omega_M>0$; kernel, normalization, regularity and admissibility must be specified \\
-EQ-6.10 & $J_i=q_i-\sigma_{ij}v_j$ & CONDITIONAL & Classical local mechanical balance with specified heat-flux vector; not a general MDD total-energy theorem \\
+EQ-6.10 & $J_i=q_i-\sigma_{ij}v_j$ & CONDITIONAL & Reduced first-order wave flux only; exact Eulerian total-energy flux adds $\mathcal{E}v_i$; not a general MDD theorem \\
 EQ-6.11 & MDD candidate flux law & CONDITIONAL & Only for the displayed kernel/operator convention; stored energy and boundary power remain open \\
 \bottomrule
 \end{tabularx}
@@ -171,8 +171,8 @@ EQ-9.12 & $\sum R+\sum T+A_{\mathrm{int}}=1$ & CONDITIONAL & Total-field interfa
 \textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
 \midrule
 EQ-10.1 & $\mathcal{E}=\tfrac12\rho v_i v_i+\rho e$ & DERIVED & Classical thermoelasticity; $e$ specific internal energy \\
-EQ-10.2 & $\partial_t\mathcal{E}+\partial_iJ_i=\rho f_i v_i$ & DERIVED & No internal heat source; classical model \\
-EQ-10.3 & $J_i=q_i-\sigma_{ij}v_j$ & DERIVED & Outward-positive flux, symmetric Cauchy stress \\
+EQ-10.2 & $\partial_t\mathcal{E}+\partial_iF_i=\rho f_i v_i$, $F_i=q_i-\sigma_{ij}v_j+\mathcal{E}v_i$ & DERIVED & Exact Eulerian balance; no internal heat source; classical local Cauchy continuum \\
+EQ-10.3 & $J_i=q_i-\sigma_{ij}v_j$ & CONDITIONAL & Reduced first-order small-amplitude wave flux; exact Eulerian flux is Eq. 10.2 \\
 EQ-10.4 & $\langle J_i\rangle_t=\bar q_i-\tfrac12\Re[\hat\sigma_{ij}\hat v_j^*]$ & CONDITIONAL & $e^{-i\omega t}$ convention; linear harmonic fields; mean heat flux evaluated separately \\
 EQ-10.5 & Interfacial jump balance & CONDITIONAL & Pillbox limit; jump orientation, storage, and interfacial power specified \\
 EQ-10.6 & Passive-interface normal flux continuity & CONDITIONAL & Passive interface; zero interfacial power and storage; same normal orientation \\

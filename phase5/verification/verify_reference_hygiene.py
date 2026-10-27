@@ -109,6 +109,18 @@ keys_list = bib_keys(bib_text)
 key_counts = Counter(keys_list)
 duplicates = sorted(key for key, count in key_counts.items() if count > 1)
 assert not duplicates, f"duplicate bibliography keys: {duplicates}"
+# STRUCTURAL TYPOGRAPHY CHECK ONLY: reject HTML-escaped ampersands in BibTeX
+# journal fields; this does not verify any citation's bibliographic content.
+assert r"\&amp;" not in bib_text, "HTML-escaped ampersand remains in bibliography"
+# Metadata disposition only: no page claim is inferred from these locators.
+for key, article_number in (("Das2026", "77"), ("Maranganti2006", "014110")):
+    entry = bib_entry(bib_text, key)
+    assert field(entry, "pages") is None, f"{key}: unverified locator still printed as pages"
+    assert field(entry, "note").startswith(f"Article number {article_number};")
+    assert field(entry, "verified") == "NO"
+eringen_entry = bib_entry(bib_text, "Eringen1966a")
+assert field(eringen_entry, "verified") == "ARBITRATED"
+assert field(eringen_entry, "source") == "ARBITRATED/OCR"
 keys = set(keys_list)
 
 files = active_tex_files(MAIN)
@@ -165,3 +177,4 @@ print(f"PASS: {len(used)} active cited keys resolve to {len(keys)} unique biblio
 print(f"INFO: {len(uncited)} uncited working-bibliography entries retained for disposition; none removed")
 print("PASS: 14 Crossref/source-page comparisons cover the two required entries")
 print("PASS: Quintanilla DOI conflict remains explicit and verified=NO; Dell'Oro–Pata raw-response limits remain explicit and verified=NO")
+print("PASS (STRUCTURAL METADATA): escaped ampersands rejected; article-number locators are not printed as pages; Eringen remains ARBITRATED")

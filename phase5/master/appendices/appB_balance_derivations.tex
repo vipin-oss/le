@@ -126,33 +126,30 @@ With no external heat supply ($r=0$):
 
 \subsection{Derivation of Classical Energy Flux (EQ-007)}
 
-Add the mechanical power balance \eqref{appB:eq:12} and the internal energy balance \eqref{appB:eq:14}. Define the total energy density:
+Add the mechanical power balance \eqref{appB:eq:12} and the internal-energy balance \eqref{appB:eq:14} with $r=0$. This gives the material total-energy balance, not an Eulerian fixed-volume balance:
 
 \begin{equation}
-\mathcal{E} = \frac{1}{2}\rho v_i v_i + \rho e.
-\label{appB:eq:15}
-\end{equation}
-
-Then:
-
-\begin{equation}
-\frac{\partial\mathcal{E}}{\partial t}
-+
-\frac{\partial}{\partial x_j}\left(q_j - \sigma_{ji}v_i\right)
-=
-\rho f_i v_i.
+\rho\frac{D}{Dt}\left(\frac12v_iv_i+e\right)
++\frac{\partial}{\partial x_j}(q_j-\sigma_{ji}v_i)
+=\rho f_iv_i.
 \label{appB:eq:16}
 \end{equation}
 
-With no body forces ($f_i=0$):
+Using mass continuity, $\partial_t\rho+\partial_j(\rho v_j)=0$, and defining $\mathcal{E}=\rho(\tfrac12v_iv_i+e)$, the exact Eulerian form is
 
 \begin{equation}
-\frac{\partial\mathcal{E}}{\partial t} + \frac{\partial J_i}{\partial x_i} = 0,
-\qquad
-J_i = q_i - \sigma_{ij}v_j.
+\frac{\partial\mathcal{E}}{\partial t}
++\frac{\partial}{\partial x_i}\left(q_i-\sigma_{ij}v_j+\mathcal{E}v_i\right)
+=\rho f_iv_i.
 \label{appB:eq:17}
 \end{equation}
 
-This is the classical energy flux (EQ-007).
+With no body force ($f_i=0$), its exact outward-positive fixed-volume flux is
+\begin{equation}
+F_i=q_i-\sigma_{ij}v_j+\mathcal{E}v_i.
+\label{appB:eq:18}
+\end{equation}
+
+This is the exact classical Eulerian energy flux (EQ-007).
 
 % LocalWords:

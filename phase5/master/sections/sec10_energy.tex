@@ -16,36 +16,37 @@ For classical thermoelasticity, with specific internal energy $e$, the total ene
 \label{eq:10.1}
 \end{equation}
 
-and the local balance (with no internal heat source) takes the form
+and, with no internal heat source, the exact Eulerian balance is
 
 \begin{equation}
-\frac{\partial\mathcal{E}}{\partial t} + \partial_i J_i = \rho f_i v_i,
+\frac{\partial\mathcal{E}}{\partial t} + \partial_i F_i = \rho f_i v_i,
+\qquad F_i=q_i-\sigma_{ij}v_j+\mathcal{E}v_i,
 \label{eq:10.2}
 \end{equation}
 
-where $\rho f_i v_i$ is mechanical power per unit volume. Combining momentum balance with the first law yields the classical flux in the next subsection. Equation~\eqref{eq:10.2} is not asserted here as a universal generalized-multiphysics identity: additional field energy, external electrical or magnetic power, interface storage, and internal dissipation must be derived for each specified model.
+where $\rho f_i v_i$ is mechanical power per unit volume and $F_i$ is the exact Eulerian flux for the classical local Cauchy continuum. Equation~\eqref{eq:10.2} is not asserted as a universal generalized-multiphysics identity: additional field energy, external electrical or magnetic power, interface storage, and internal dissipation must be derived for each specified model.
 
 \subsection{Classical energy flux}
 \label{sec:10.2}
 
-For classical coupled thermoelasticity, adding the mechanical power and internal-energy balances yields the outward-positive flux
+For first-order small-amplitude fields about a resting reference state, after measuring $e$ relative to a constant $e_0$, the perturbation advection $\rho[\tfrac12 v_jv_j+(e-e_0)]v_i$ is $O(\epsilon^2)$ and is absent from the first-order field balance. The reduced outward-positive flux used below is
 
 \begin{equation}
 J_i = q_i - \sigma_{ij}v_j,
 \label{eq:10.3}
 \end{equation}
-the classical energy flux. Under this outward-positive convention the mechanical contribution is $-\sigma_{ij}v_j$ and the thermal contribution is $q_i$.
+It is not the exact Eulerian total-energy flux: the latter is $F_i=J_i+\mathcal{E}v_i$ as in Eq.~\eqref{eq:10.2}. The reduced expression is used only for the stated first-order wave-balance convention; this order argument alone does not justify omitting the advective term from a second-order cycle-averaged total-energy flux. Under the outward-positive convention the mechanical contribution is $-\sigma_{ij}v_j$ and the thermal contribution is $q_i$.
 
-For time-harmonic mechanical fields with convention $e^{-i\omega t}$, the outward-positive mean flux is
+For time-harmonic mechanical fields with convention $e^{-i\omega t}$, the mean of the reduced flux is
 
 \begin{equation}
 \langle J_i\rangle_t=\bar q_i-\frac12\Re[\hat{\sigma}_{ij}\hat{v}_j^*],
 \label{eq:10.4}
 \end{equation}
 
-where $\bar q_i$ is the separately evaluated mean heat flux (zero for a purely oscillatory perturbation about a uniform reference state). The factor $1/2$ and complex conjugate follow from time averaging the real fields. For an interface problem the quantity of interest is the normal component $J_n = J_i n_i$; the sign convention and the normal direction must be stated consistently.
+where $\bar q_i$ is the separately evaluated mean heat flux (zero for a purely oscillatory perturbation about a uniform reference state). The factor $1/2$ and complex conjugate follow from time averaging the real fields. For an interface problem using this reduced convention the quantity is $J_n=J_i n_i$. If a second-order Eulerian total-energy balance is claimed, the mean of the advective contribution must also be evaluated or shown to vanish under an additional model-specific assumption.
 
-A point worth keeping in view is that the classical flux contains \emph{no} term associated with the internal variables that generalized theories introduce. The entire difficulty of Section~\ref{sec:10.4} follows from that absence.
+A point worth keeping in view is that the reduced classical flux contains \emph{no} term associated with the internal variables that generalized theories introduce. The entire difficulty of Section~\ref{sec:10.4} follows from that absence.
 
 
 
@@ -54,21 +55,21 @@ A point worth keeping in view is that the classical flux contains \emph{no} term
 \subsection{Interface energy balance}
 \label{sec:10.3}
 
-Consider an interface $\Sigma$ between two media with unit normal $\bm{n}$. Integrating the general energy balance over a thin pillbox straddling the interface and taking the thinness limit gives the jump condition
+Consider a stationary interface $\Sigma$ between two media with unit normal $\bm{n}$. Integrating the model-correct total-energy balance over a thin pillbox straddling the interface and taking the thinness limit gives the jump condition
 
 \begin{equation}
-\jump{J_n} = \mathcal{P}_\Sigma - \frac{\partial\mathcal{E}_\Sigma}{\partial t},
+\jump{\mathcal{F}_n} = \mathcal{P}_\Sigma - \frac{\partial\mathcal{E}_\Sigma}{\partial t},
 \label{eq:10.5}
 \end{equation}
-where $J_n = J_i n_i$ is the normal energy flux, $\mathcal{P}_\Sigma$ is the mechanical power input at the interface, and $\mathcal{E}_\Sigma$ is the interfacial energy density.
+where $\mathcal{F}_n=\mathcal{F}_i n_i$ is the normal component of the exact, model-correct Eulerian total-energy flux (equal to $F_n$ for the classical continuum), $\mathcal{P}_\Sigma$ is the mechanical power input at the interface, and $\mathcal{E}_\Sigma$ is the interfacial energy density. The reduced $J_i$ of Eq.~\eqref{eq:10.3} may replace it only within the stated first-order approximation.
 
 For a passive interface with no mechanical power input and no interfacial energy storage,
 
 \begin{equation}
-\jump{J_n} = 0,
+\jump{\mathcal{F}_n} = 0,
 \label{eq:10.6}
 \end{equation}
-that is, the normal energy flux is continuous across the interface. Two qualifications are needed before this condition is used numerically. First, it is a statement about the \emph{correct} energy flux of the theory in which it is used; a flux built from the classical form alone, applied to a family with internal variables, will not satisfy it even when the mathematics is otherwise flawless. Second, the continuity of the normal flux does not by itself imply the scalar conservation identity of Section~\ref{sec:10.5}: that identity is a statement about modal energies, while \eqref{eq:10.6} is a statement about a single component of a flux at a single surface, and the two are related only after the modal decomposition and normalisation conventions have been fixed.
+that is, the normal model-correct total-energy flux is continuous across the interface. Two qualifications are needed before this condition is used numerically. First, it is a statement about the \emph{correct} energy flux of the theory in which it is used; a flux built from the classical form alone, applied to a family with internal variables, will not satisfy it even when the mathematics is otherwise flawless. Second, the continuity of the normal flux does not by itself imply the scalar conservation identity of Section~\ref{sec:10.5}: that identity is a statement about modal energies, while \eqref{eq:10.6} is a statement about a single component of a flux at a single surface, and the two are related only after the modal decomposition and normalisation conventions have been fixed.
 
 \subsection{Energy transport in generalized theories: the internal-variable structure}
 \label{sec:10.4}
@@ -104,16 +105,16 @@ R_{\mathrm{rem}} + T_{\mathrm{rem}} = 1.
 
 Kumar and Kansal report a model-specific interface energy-ratio balance with an interaction term in Eq. (80), supporting inclusion of cross terms rather than a universal identity \cite{KumarKansal2017}. Kumar et al. define ratios using average energy flux per incident-wave type; those definitions specify normalization but do not establish closure \cite{Kumar2024}. A related study describes its eight-model sum as approximately unity for specified imperfect-interface cases; this is model-specific evidence, not an identity \cite{Kumar2024a}.
 
-Equation~\eqref{eq:10.11} is the steady control-volume balance reproduced by the verification script; its application requires the stated theory-specific flux, complete power channels, interface storage/power convention, and common remote reference planes. It is not the interface-plane identity of Section~\ref{sec:9.7}. The lossless reduction additionally requires zero bulk loss, zero interface-local residual, and no net interfacial storage. These conditions are not automatic. In the one-dimensional welded example below, the incident--reflected cross term cancels in the time-averaged normal flux; no zero-flux rule for general coupled or evanescent modes is inferred. Report whether each coefficient is an amplitude or a power ratio and state the flux weighting used.
+Equation~\eqref{eq:10.11} is the steady control-volume balance under the stated assumptions; its application requires the theory-specific flux, complete power channels, interface storage/power convention, and common remote reference planes. It is not the interface-plane identity of Section~\ref{sec:9.7}. The lossless reduction additionally requires zero bulk loss, zero interface-local residual, and no net interfacial storage. These conditions are not automatic. In the one-dimensional welded example below, the incident--reflected cross term cancels in the time-averaged normal flux; no zero-flux rule for general coupled or evanescent modes is inferred. Report whether each coefficient is an amplitude or a power ratio and state the flux weighting used.
 
 \subsubsection{Separate interface residual from bulk absorption}
 
-Consider a steady time-averaged one-dimensional control volume with positive normal power-flux magnitudes $P_i$, $P_r$, and $P_t$, all per unit area, at remote incident, reflected, and transmitted reference planes. Let $J_L$ and $J_R$ be the net total-field fluxes on the left and right faces of the interface, both oriented in the positive $x$ direction. For passive, source-free regions with no bulk or interfacial mean energy accumulation, the bulk and interfacial dissipated powers per unit area are
+Consider a steady time-averaged one-dimensional control volume and take $+x$ as the positive normal direction. Let $\mathcal{F}_x^{(i)}$, $\mathcal{F}_x^{(r)}$, and $\mathcal{F}_x^{(t)}$ denote the incident-, reflected-, and transmitted-mode contributions to the model-correct Eulerian energy flux at stated remote reference planes, with the exact flux used unless a reduced convention is explicitly justified. Per unit cross-sectional area $A$, define $P_i=A^{-1}\int_{S_i}\langle\mathcal{F}^{(i)}\rangle\cdot\hat{\bm{x}}\,dS>0$, $P_r=-A^{-1}\int_{S_r}\langle\mathcal{F}^{(r)}\rangle\cdot\hat{\bm{x}}\,dS>0$, and $P_t=A^{-1}\int_{S_t}\langle\mathcal{F}^{(t)}\rangle\cdot\hat{\bm{x}}\,dS>0$. The selected remote-plane decomposition must make the net left-plane flux equal to $P_i-P_r$; if an incident--reflected cross term remains there, it must be included explicitly in the power balance. Let $\mathcal{F}_L$ and $\mathcal{F}_R$ be the net total-field fluxes on the left and right faces of the interface, both oriented in $+x$. For passive, source-free regions with no bulk or interfacial mean energy accumulation, the bulk and interfacial dissipated powers per unit area are
 
 \begin{equation}
-\mathcal{D}_L=P_i-P_r-J_L,\qquad
-\mathcal{D}_{\Sigma}=J_L-J_R,\qquad
-\mathcal{D}_R=J_R-P_t.
+\mathcal{D}_L=P_i-P_r-\mathcal{F}_L,\qquad
+\mathcal{D}_{\Sigma}=\mathcal{F}_L-\mathcal{F}_R,\qquad
+\mathcal{D}_R=\mathcal{F}_R-P_t.
 \label{eq:10.13}
 \end{equation}
 
@@ -124,7 +125,7 @@ P_i=P_r+P_t+\mathcal{D}_L+\mathcal{D}_{\Sigma}+\mathcal{D}_R.
 \label{eq:10.14}
 \end{equation}
 
-Thus, with $R_{\mathrm{rem}}=P_r/P_i$ and $T_{\mathrm{rem}}=P_t/P_i$, the remote-plane residual $1-R_{\mathrm{rem}}-T_{\mathrm{rem}}$ already contains both bulk dissipation and local interface dissipation. By contrast, $A_{\mathrm{int}}=\mathcal{D}_{\Sigma}/P_i=(J_L-J_R)/P_i$ is local to the interface. Adding the bulk terms to $1-R_{\mathrm{rem}}-T_{\mathrm{rem}}$ a second time double-counts them; the split in Eqs.~\eqref{eq:10.13}--\eqref{eq:10.14} is checked symbolically in the accompanying verification script. The derivation assumes steady averaged powers, no storage in the bulk control volumes, and no unlisted energy channel; other theories require their complete energy flux and power terms.
+Thus, with $R_{\mathrm{rem}}=P_r/P_i$ and $T_{\mathrm{rem}}=P_t/P_i$, the remote-plane residual $1-R_{\mathrm{rem}}-T_{\mathrm{rem}}$ already contains both bulk dissipation and local interface dissipation. By contrast, $A_{\mathrm{int}}=\mathcal{D}_{\Sigma}/P_i=(\mathcal{F}_L-\mathcal{F}_R)/P_i$ is local to the interface. Adding the bulk terms to $1-R_{\mathrm{rem}}-T_{\mathrm{rem}}$ a second time double-counts them; this follows directly by summing Eqs.~\eqref{eq:10.13}--\eqref{eq:10.14}. The derivation assumes steady averaged powers, no storage in the bulk control volumes, and no unlisted energy channel; other theories require their complete energy flux and power terms.
 
 \subsubsection{Worked one-dimensional welded-interface system}
 
@@ -149,7 +150,7 @@ Its determinant is $-(Z_1+Z_2)$, so the stated positive-impedance case has a uni
 \begin{equation*}
 \hat\sigma_i\hat v_r^*+\hat\sigma_r\hat v_i^*=\rho_1c_1^2 k_1\omega\left[-A_iA_r^*e^{2ik_1x}+A_rA_i^*e^{-2ik_1x}\right],
 \end{equation*}
-the negative of a complex number plus its conjugate, and therefore purely imaginary; hence its time-averaged normal-flux contribution $-\tfrac12\Re(\hat\sigma_i\hat v_r^*+\hat\sigma_r\hat v_i^*)$ is zero. This cancellation is derived only for the stated one-dimensional, lossless longitudinal waves. The matrix dimensions, determinant, amplitudes, field-derived flux weights, cross term, and partition identity are reproduced by the accompanying verification script.
+the negative of a complex number plus its conjugate, and therefore purely imaginary; hence its time-averaged normal-flux contribution $-\tfrac12\Re(\hat\sigma_i\hat v_r^*+\hat\sigma_r\hat v_i^*)$ is zero. This cancellation is derived only for the stated one-dimensional, lossless longitudinal waves. Direct substitution verifies the matrix dimensions, determinant, amplitudes, field-derived flux weights, cross term, and partition identity for this specified one-dimensional case.
 
 \subsection{Dissipation mechanisms}
 \label{sec:10.6}

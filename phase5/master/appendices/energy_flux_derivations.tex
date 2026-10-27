@@ -12,7 +12,7 @@
 
 \section{Introduction}
 
-The classical outward-positive energy flux was re-derived in Section 3 (EQ-007); this appendix is a retained, unverified working collection:
+The exact classical Eulerian flux re-derived in Section 3 is $F_i=q_i-\sigma_{ij}v_j+\mathcal{E}v_i$ (EQ-007); this appendix is a retained, unverified working collection. Unless explicitly stated otherwise, its legacy $J_i=q_i-\sigma_{ij}v_j$ expressions denote only the reduced first-order wave-flux convention, not an exact fixed-volume Eulerian total-energy flux:
 
 \begin{equation}
 J_i = q_i - \sigma_{ij}v_j,
@@ -21,7 +21,7 @@ J_i = q_i - \sigma_{ij}v_j,
 
 derived from the mechanical power balance and internal energy balance (Section 3.8 of the main manuscript).
 
-Some generalized models may introduce additional stored-energy variables, transport channels, dissipation, or boundary-power terms; none of these is universal. This appendix retains selected source leads and open questions. It does not assert a general energy-flux law for any generalized family.
+The exact classical Eulerian flux includes advection of total energy; the reduced convention is limited to the first-order small-amplitude balance described in Section 10.2. Some generalized models may introduce additional stored-energy variables, transport channels, dissipation, or boundary-power terms; none of these is universal. This appendix retains selected source leads and open questions. It does not assert a general energy-flux law for any generalized family.
 
 \section{Working assumptions to check model by model}
 
@@ -68,11 +68,11 @@ The mechanical power balance (from Section 3.3) remains:
 Adding \eqref{ef:ls:2} and \eqref{ef:ls:3}, defining $\mathcal{E} = \frac{1}{2}\rho v_i v_i + \rho e$:
 
 \begin{equation}
-\frac{\partial\mathcal{E}}{\partial t} + (q_i - \sigma_{ij}v_j)_{,i} = \rho f_i v_i.
+\frac{\partial\mathcal{E}}{\partial t} + (q_i - \sigma_{ij}v_j + \mathcal{E}v_i)_{,i} = \rho f_i v_i.
 \label{ef:ls:4}
 \end{equation}
 
-The expression $J_i=q_i-\sigma_{ij}v_j$ is the classical local flux under the stated convention. Its compatibility with a complete LS energy balance is not established by the constitutive substitution below and remains open.
+The expression $J_i=q_i-\sigma_{ij}v_j$ is only the reduced first-order wave-flux convention. The exact Eulerian flux includes $\mathcal{E}v_i$; compatibility of the reduced convention with a complete LS energy balance is not established by the constitutive substitution below and remains open.
 
 \subsection{Frequency-domain expression}
 
@@ -106,13 +106,13 @@ There is no unique expression for $J_i$ solely in terms of $T$ in the time domai
 
 \subsection{Status}
 
-\textbf{UNVERIFIED WORKING CLAIM.} The flux form $J_i = q_i - \sigma_{ij}v_j$ is valid for LS theory with $q_i$ from \eqref{ef:ls:1}. The frequency-domain expression \eqref{ef:ls:6} is retained as unverified working material. A time-domain expression solely in terms of $T$ (eliminating $q_i$) would require solving the relaxation ODE, which introduces an integral (memory) term. This remains as an open formulation question.
+\textbf{UNVERIFIED WORKING CLAIM.} Under the reduced first-order wave-flux convention only, the candidate form is $J_i = q_i - \sigma_{ij}v_j$ for LS theory with $q_i$ from \eqref{ef:ls:1}; this is not the exact Eulerian total-energy flux. The frequency-domain expression \eqref{ef:ls:6} is retained as unverified working material. A time-domain expression solely in terms of $T$ (eliminating $q_i$) would require solving the relaxation ODE, which introduces an integral (memory) term. This remains as an open formulation question.
 
 \section{Open audit item 2: Green--Lindsay (GL) Theory}
 
 \subsection{Status of inherited equations}
 
-Green--Lindsay is described in the corrected manuscript as a temperature-rate-dependent, single-temperature theory with two relaxation parameters. Earlier equations in this appendix introduced a second temperature and are withdrawn as inaccurate legacy material; they are not reproduced as candidate GL equations. The complete constitutive system and its energy balance remain OPEN pending primary-source checking and derivation. The classical local expression $J_i=q_i-\sigma_{ij}v_j$ is not, by itself, a verified Green--Lindsay energy-flux theorem.
+Green--Lindsay is described in the corrected manuscript as a temperature-rate-dependent, single-temperature theory with two relaxation parameters. Earlier equations in this appendix introduced a second temperature and are withdrawn as inaccurate legacy material; they are not reproduced as candidate GL equations. The complete constitutive system and its energy balance remain OPEN pending primary-source checking and derivation. The reduced first-order expression $J_i=q_i-\sigma_{ij}v_j$ is not, by itself, a verified Green--Lindsay energy-flux theorem; the exact Eulerian classical balance additionally contains total-energy advection.
 
 \section{Open audit item 3: Green--Naghdi Type II (GN-II) Theory}
 

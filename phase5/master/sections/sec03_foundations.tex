@@ -315,46 +315,42 @@ where $^*$ denotes complex conjugation. This identity is used throughout Section
 \subsection{Energy flux in classical elasticity}
 \label{sec:3.8}
 
-Adding the mechanical power balance \eqref{eq:3.12} and the internal-energy balance \eqref{eq:3.14} (with $r=0$), and defining total energy per unit volume as $\mathcal{E}=\frac12\rho v_i v_i+\rho e$, gives an outward-positive flux $J_j=q_j-\sigma_{ji}v_i$:
+Adding the material mechanical power balance \eqref{eq:3.12} and the internal-energy balance \eqref{eq:3.13} gives
+$\rho D(\tfrac12 v_i v_i+e)/Dt + \partial_j(q_j-\sigma_{ji}v_i)=\rho f_i v_i+\rho r$.
+Using mass conservation to convert the material derivative to an Eulerian balance, and defining total energy per unit volume as $\mathcal{E}=\rho(\tfrac12 v_i v_i+e)$, gives the exact outward-positive Eulerian flux $F_j=q_j-\sigma_{ji}v_i+\mathcal{E}v_j$:
 
 \begin{equation}
 \frac{\partial\mathcal{E}}{\partial t}
 +
-\frac{\partial}{\partial x_j}\left(q_j - \sigma_{ji}v_i\right)
-=
-\rho f_i v_i.
+\frac{\partial}{\partial x_j}\left(q_j - \sigma_{ji}v_i + \mathcal{E}v_j\right)
+=\rho f_i v_i+\rho r.
 \label{eq:3.28}
 \end{equation}
 
-With no body forces ($f_i = 0$), this becomes the local energy conservation law:
+With no body force or heat supply ($f_i=0$, $r=0$), this becomes the local Eulerian energy conservation law:
 
 \begin{equation}
-\frac{\partial\mathcal{E}}{\partial t} + \frac{\partial J_i}{\partial x_i} = 0,
+\frac{\partial\mathcal{E}}{\partial t} + \frac{\partial F_i}{\partial x_i} = 0,
 \qquad
-J_i = q_i - \sigma_{ij}v_j.
+F_i = q_i - \sigma_{ij}v_j + \mathcal{E}v_i.
 \label{eq:3.29}
 \end{equation}
 
-Equation \eqref{eq:3.29} states that the total energy density changes only due to the divergence of the energy flux $J_i$. The energy flux has two contributions:
+The exact fixed-volume Eulerian flux has three contributions: heat conduction $q_i$, mechanical stress power $-\sigma_{ij}v_j$, and advection of total energy $\mathcal{E}v_i$. The material-derivative form above is the balance following a material element; omitting $\mathcal{E}v_i$ from the Eulerian form is not an exact identity.
 
-\begin{itemize}
-\item $-\sigma_{ij}v_j$: mechanical contribution to the outward-positive flux, and
-\item $q_i$: thermal energy flux (heat conduction across a surface per unit area).
-\end{itemize}
-
-Integrating \eqref{eq:3.29} over a volume $V$ and applying the divergence theorem:
+Integrating \eqref{eq:3.29} over a fixed spatial volume $V$ and applying the divergence theorem:
 
 \begin{equation}
 \frac{\diff}{\diff t}\int_V \mathcal{E} \, \diff V
 +
-\int_S J_i n_i \, \diff S = 0.
+\int_S F_i n_i \, \diff S = 0.
 \label{eq:3.30}
 \end{equation}
 
-For an isolated system ($J_i n_i = 0$ on $S$), the total energy is conserved: $\frac{\diff}{\diff t}\int_V \mathcal{E} \, \diff V = 0$.
+For an isolated system ($F_i n_i=0$ on $S$), the total energy in the fixed volume is conserved. In a first-order small-amplitude balance about a resting reference state, write $v_i=O(\epsilon)$ and measure specific internal energy relative to a constant reference $e_0$, so $e-e_0=O(\epsilon)$. The perturbation advection $\rho[\tfrac12v_i v_i+(e-e_0)]v_j$ is then $O(\epsilon^2)$ and is omitted from the first-order field balance; mass conservation cancels the constant $e_0$ shift. This linearization does not make the exact Eulerian equation an identity without advection, nor does it by itself justify dropping the term from a second-order cycle-averaged flux.
 
 \subsubsection{Physical interpretation}
-Equation \eqref{eq:3.29} is the classical energy flux \cite{Biot1956} for elastic and thermoelastic media. With the outward-positive convention, the mechanical contribution is $-\sigma_{ij}v_j$ and the thermal contribution is $q_i$. Reversing the normal or defining inward-positive flux reverses the signs consistently. This local balance is derived for the classical thermoelastic model only. Whether an additional stored-energy or boundary-power term is required in a generalized theory depends on its constitutive equations and must be derived model by model.
+Equation \eqref{eq:3.29} is the exact Eulerian total-energy flux for the classical local Cauchy continuum under the stated balances. With the outward-positive convention, it contains heat conduction $q_i$, mechanical stress power $-\sigma_{ij}v_j$, and advection $\mathcal{E}v_i$. The reduced first-order wave flux is defined separately in Section~\ref{sec:10.2}. Reversing the normal or defining inward-positive flux reverses the signs consistently. Whether additional stored-energy or boundary-power terms are required in a generalized theory depends on its constitutive equations and must be derived model by model.
 
 \begin{figure}[htbp]
 \centering

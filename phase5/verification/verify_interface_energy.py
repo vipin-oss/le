@@ -144,7 +144,9 @@ for figure_path in figure_paths:
     assert "R + T + A_int = 1" not in figure_text
 assert r"R_{\Sigma}" in section9 and r"T_{\Sigma}" in section9
 assert r"\shortstack{$R_{\Sigma},T_{\Sigma},$\\$A_{\mathrm{int}}$}" in section9
-assert "does not specify reference planes" in section9
+# STRUCTURAL ONLY: the unrepeatable coupled-system illustration is not retained;
+# the only explicit cross-term demonstration is the fully specified 1-D case.
+assert "No coupled-system numerical example is used here" in section9
 assert r"J_{\mathrm{inc},n}\equiv P_{i,\Sigma}>0" in section9
 assert r"A_{\mathrm{int}}=\mathcal{D}_{\Sigma}/P_{i,\Sigma}" in section9
 assert "does not identify" in section9 and "remote-plane incident power" in section9
