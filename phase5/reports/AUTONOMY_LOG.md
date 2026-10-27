@@ -46,4 +46,4 @@
 7. Promoted OCL-195, -404, -405, and -207; removed OCL-205 and -206 from active text. Ledger is 445 rows (A=20, B=129, C=296); OCL-405 and -207 carry `CONTRADICTION-FIXED`.
 8. Added targeted missing-source records for void, micropolar, and Gupta papers; did not inspect whole books or store private Drive identifiers or source PDFs.
 9. `audit_inventory.py`, CSV uniqueness/count checks, and `git diff --check` pass; only Section 5 manuscript content and its reports/ledger changed.
-10. No backup branch was created under the fixed-branch constraint; WP2 is not complete and no WP2 tag was made. Section 5 CI build and rendered-PDF review remain the next gate.
+10. CI run `40434775391` passed: 130 pages, zero undefined references/citations, forbidden tags/privacy matches, and near-overfull boxes; visually checked PDF pp. 40, 44–45. No backup branch was created under the fixed-branch constraint; WP2 remains incomplete, so no WP2 tag was made.

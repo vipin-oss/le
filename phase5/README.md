@@ -4,10 +4,10 @@
 
 ## Status
 
-- Manuscript/source build validation: [CI run 40374662081](https://github.com/vipin-oss/le/actions/runs/40374662081), successful; 130 PDF pages for source commit `6e43dda`. The workflow-published output is on the branch.
+- Manuscript/source build validation: [CI run 40434775391](https://github.com/vipin-oss/le/actions/runs/40434775391), successful; 130 PDF pages for source commit `debf937`. The workflow-published PDF/contact sheets are in output commit `c76bc25`.
 - Engineering gates: zero undefined references/citations, zero overfull boxes above 1 pt, zero near-overfull boxes above 0.5 pt, and zero forbidden process-tag matches. The font and build checks also passed.
 - Build output: [`build_outputs/phase5-v1.1-master.pdf`](build_outputs/phase5-v1.1-master.pdf); overview contact sheets are in [`build_outputs/contact-sheets/`](build_outputs/contact-sheets/).
-- Scientific status: the classical local energy density and outward-positive flux have been derived and symbolically checked under stated assumptions. Generalized-model claims are not all independently verified. See the open-claim ledger, scientific audit, and [reports README](reports/README.md).
+- Scientific status: the classical local energy density and outward-positive flux have been derived and symbolically checked under stated assumptions. Section 5 received a targeted source pass, but most of its void, micropolar, and interface-study claims remain open. See the open-claim ledger, `R4B_SOURCE_FINDINGS.md`, `MISSING_SOURCES.csv`, and [reports README](reports/README.md).
 - Submission readiness: **not passed**. Claim-level primary-source review, some model-specific derivations, figure source/licensing checks, and final-size proofreading remain open.
 
 The 130-page count is an engineering build result, not a measure of scientific completeness.
@@ -47,6 +47,6 @@ The output and logs are written under `phase5/master/build/`. A green engineerin
 
 ## Which records are authoritative
 
-- [`reports/OPEN_CLAIMS_LEDGER.csv`](reports/OPEN_CLAIMS_LEDGER.csv) — authoritative current register of open claims (445 rows: A=16, B=135, C=294).
+- [`reports/OPEN_CLAIMS_LEDGER.csv`](reports/OPEN_CLAIMS_LEDGER.csv) — authoritative current register of open claims (445 rows: A=20, B=129, C=296).
 - [`reports/R4A_DELETION_AUDIT.csv`](reports/R4A_DELETION_AUDIT.csv) — authoritative current record of removed text (593 rows, zero `NONE` identifiers).
 - [`reports/build-status.md`](reports/build-status.md) — current engineering-build status. Older status, page-reconciliation, and Crossref files are historical snapshots; see [`reports/README.md`](reports/README.md).
