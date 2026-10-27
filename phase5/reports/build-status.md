@@ -1,6 +1,6 @@
 # Current build status — phase5 v1.1
 
-**Current engineering state: PASS.** The latest content-bearing manuscript/workflow validation was successful CI run [40437606245](https://github.com/vipin-oss/le/actions/runs/40437606245), source commit `101ec95` (2026-10-27). The workflow-published PDF and contact sheets are in output commit `2520052`.
+**Current engineering state: PASS.** The latest content-bearing manuscript validation is successful CI run [40441612412](https://github.com/vipin-oss/le/actions/runs/40441612412), source commit `9ea3ec7` (2026-10-27). The workflow-published PDF and contact sheets are in output commit `6036bca`.
 
 | Check | Result |
 |---|---:|
@@ -12,15 +12,15 @@
 | Privacy-token occurrences in extracted PDF text | 0 |
 | Figure PDFs generated / included | 18 / 18 generated; 16 active master includes |
 | Underfull hbox warnings | 258 |
-| Install utilities + TeX build time | 18 s + 9 s = 27 s |
-| Whole job duration | 3m 0s |
+| Install utilities + TeX build time | 18 s + 10 s = 28 s |
+| Whole job duration | 2m 50s |
 
-The build published the current PDF and four contact sheets under `phase5/build_outputs/`; the output commit is `2520052`. The 100-dpi sheets are overview checks, not full-size proofing. Section 7 was visually checked on PDF pp. 55–56; Section 8 prose, equations, and technique tables were inspected on PDF pp. 56–60 (printed pp. 55–59), with no apparent clipping. The solution-workflow figure’s lower connectors should receive a closer figure-audit review in WP5. The build establishes engineering reproducibility and gate results; it does **not** certify every scientific claim.
+The current PDF and four contact sheets are under `phase5/build_outputs/`; the output commit is `6036bca`. The 100-dpi sheets are overview checks, not full-size proofing. Section 9 was visually checked on PDF pp. 62–65 (printed pp. 61–64): interface equations, determinant/energy-ratio layout, the revised interface schematic, and T6 all render without apparent overlap or clipping. The schematic was simplified after review because its flux annotations overlapped the interface and conservation panels; the updated drawing includes the electrical matching condition and separates the wave geometry from the lower panels. CI run `40440483768` first exposed one 14.8-pt overfull line in T6; the cell wording was shortened without changing its scope, and the strict gate passed in the later runs. The build establishes engineering reproducibility and gate results; it does **not** certify every scientific claim.
 
 ## Scientific and editorial state
 
 - The classical local energy density and outward-positive flux were derived from the displayed local balances and symbolically checked under their stated assumptions.
-- WP2 source-backing: Section 4 has a targeted Tzou pass; Section 5 has fresh Mindlin, Biot, Barak, and Kumar checks; Section 7 has fresh Lata–Singh, Gupta, Li–He, Tung, and Zang checks; Section 8 has a fresh Biswas GN-III Eq. (3) check and narrowed method claims; Section 12 has a targeted Tzou/Quintanilla pass. OCL-256, -257, -258, -260, -261, and -075 are Class A, with OCL-260 recording a `CONTRADICTION-FIXED` correction. Chadwick–Sneddon, Marotti, and Hughes full texts were not located in the inspected set; source identity remains distinct from claim verification. Consult `OPEN_CLAIMS_LEDGER.csv` (457 entries: A=26, B=127, C=304), `R4B_SOURCE_FINDINGS.md`, and `MISSING_SOURCES.csv` (21 records).
+- WP2 source-backing: Sections 5, 7, 8, 9, and 12 are complete at the documented targeted scope. Section 4 has a targeted Tzou pass but remains open. Next in sequence is Section 10, followed by 11 and 13, then 14–17. The current open-claim ledger has 464 rows (A=26, B=126, C=312); `MISSING_SOURCES.csv` has 22 bounded records. Section 9 made no Class A promotions; OCL-291 is Class C and marked `CONTRADICTION-FIXED`. Consult `OPEN_CLAIMS_LEDGER.csv` and `R4B_SOURCE_FINDINGS.md` for scope and evidence limits.
 - `R4A_DELETION_AUDIT.csv` records 593 removed-text entries and has zero `NONE` identifiers. Deleted claims are not thereby verified and should not be restored as established results.
 - Figure source/licensing provenance, individual final-size legibility, complete claim-level primary-source verification, and journal/submission readiness remain open.
 

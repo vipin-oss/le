@@ -71,3 +71,15 @@
 8. Committed/pushed the single Section 8 content change as `101ec95`; strict CI run `40437606245` passed in 3m 0s (129 pages, zero undefined refs/citations, strict-tag/privacy matches, and near-overfull boxes); output commit `2520052` was fast-forwarded.
 9. Visually inspected PDF pp. 56–60 (printed pp. 55–59), including equations, workflow figure, method table, and notation table; no clipping was apparent. Flagged the workflow figure’s lower connectors for the WP5 visual audit.
 10. Refreshed current README/build-status/provenance pointers. WP2 Section 8 is complete; continue with Section 9. No backup branch was created under the fixed-branch constraint, and no WP2 tag is due until WP2 is complete.
+
+## 2026-10-27 (IST) — WP2 Section 9 source-backing and render review
+1. Fetched remote output commit `ab7ad5c` after the first push was rejected as non-fast-forward; merged it without rewriting history, then pushed the Section 9 source-backing commit on the fixed session branch.
+2. Target-checked Kumar–Kansal (2017) equations and flux definitions plus the Kumar et al. (2022) abstract; retained source-map anchors for other examples and documented bounded access limits.
+3. Removed the unsupported Singh–Gupta TPL/interface energy-bound attribution, recorded the paper in `MISSING_SOURCES.csv`, and marked OCL-291 `CONTRADICTION-FIXED` while retaining Class C.
+4. Reconciled Section 9 claims and T6; the ledger is 464 rows (A=26, B=126, C=312), and the missing-source register has 22 records; no Class A promotion was made.
+5. CI run `40440483768` failed the overfull-box gate on a 14.8-pt T6 cell; shortened its wording in `a83ccb1` without relaxing gates, and CI run `40440754742` passed.
+6. Visual review of PDF pp. 62–65 exposed overlapping annotations in the existing interface schematic; revised both SVG mirrors to declutter the rays/panels and include electrical continuity.
+7. A second visual pass found the medium and normal labels collided; spaced them in `9ea3ec7` and confirmed the final schematic is legible at page scale.
+8. CI run `40441612412` passed in 2m 50s: 129 pages, zero undefined references/citations, zero strict tag/privacy matches, zero overfull boxes above 1 pt, and zero near-overfull boxes; output commit `6036bca` was fast-forwarded.
+9. The final rendered equations, figure, and table were checked on PDF pp. 62–65; inventory and figure-XML checks pass. Refreshed README, build-status, report-guide, and provenance pointers without claiming scientific certification.
+10. Section 9 is complete for this targeted pass; WP2 remains open, Section 4 is still incomplete beyond its Tzou pass, and Section 10 is next. No backup branch or WP2 tag was created under the fixed-branch/unfinished-WP constraints.
