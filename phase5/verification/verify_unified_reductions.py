@@ -31,9 +31,25 @@ tpl = dpl + k_star * (grad_v + tau_v * grad_v_dot)
 mgt = q + tau_m * qdot + k * grad_T + k_star * grad_v
 
 assert sp.simplify(ls.subs(tau0, 0) - fourier) == 0
-assert sp.simplify(dpl.subs({tau_T: 0, tau_q: tau0}) - ls) == 0
+# Positive DPL -> LS check: remove the temperature-gradient lag but retain
+# the heat-flux relaxation with the LS time constant.
+dpl_to_ls = sp.simplify(dpl.subs({tau_T: 0, tau_q: tau0}) - ls)
+assert dpl_to_ls == 0
+
+# Negative check: sending tau_q to zero does not give LS for independent,
+# nonzero tau0, tau_T, and qdot. It also does not remove the gradient-lag term.
+dpl_tau_q_zero_minus_ls = sp.expand(dpl.subs(tau_q, 0) - ls)
+assert dpl_tau_q_zero_minus_ls == -tau0 * qdot + k * tau_T * grad_T_dot
+assert dpl_tau_q_zero_minus_ls != 0
+
+# Removing both DPL lags gives Fourier, a distinct reduction from LS.
 assert sp.simplify(dpl.subs({tau_T: 0, tau_q: 0}) - fourier) == 0
 assert sp.simplify(tpl.subs(k_star, 0) - dpl) == 0
+
+# Keep the active comparison table synchronized with the checked reduction.
+comparison = (ROOT / "master/sections/sec12_comparative.tex").read_text(encoding="utf-8")
+assert r"$\tau_T \to 0$, with $\tau_q=\tau_0$" in comparison
+assert r"$\tau_q \to 0$" not in comparison
 assert sp.simplify(mgt.subs({tau_m: 0, k_star: 0}) - fourier) == 0
 print("PASS: LS -> Fourier; first-order DPL -> LS/Fourier; TPL -> DPL; displayed MGT heat-flux law -> Fourier")
 
