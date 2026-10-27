@@ -119,3 +119,15 @@
 8. Refreshed the Q1 plan and current README/build-status counts; GL and GN-I equations/reductions and the comparison table remain open.
 9. No manuscript TeX changed in this source-note pass; the last successful content build remains CI run `40450139583` on `7457730` (130 pages).
 10. This is a docs/CSV-only update and should not trigger a build under the configured path ignores; continue Q1 with equation-level source anchors rather than abstract-only generalization.
+
+## 2026-10-27 (IST) — Kumar reference reconciliation and source-ledger copy
+1. Inspected the library PDF title page: it identifies Rajneesh Kumar, Shaloo Devi, and Veena Sharma's 2017 AAM circular-plate damping article, not the CMST interface paper.
+2. Checked the saved Crossref response for DOI `10.12921/cmst.2016.0000036`; it identifies the distinct Kumar & Kansal CMST article, so the existing key was split rather than transferring that DOI.
+3. Kept `Kumar2017` for the library article with no DOI and `verified=NO`; moved the Crossref-confirmed CMST record to `KumarKansal2017` with `verified=YES`.
+4. Remapped active Section 9 and 10 citations and applicable current OCL source-key notes to `KumarKansal2017`; historical R3 maps remain historical snapshots.
+5. OCL-477 and `verify_kumar2017_reference_split.py` assert that all 19 dependent rows (OCL-076 and OCL-278–OCL-295) remain B/C; no technical-claim status was promoted.
+6. Reconciliation content commit `519a21a` was pushed; CI run `40456561663` passed (130 pages, zero undefined references/citations, forbidden-tag/privacy matches, and near-overfull boxes).
+7. Fast-forwarded only workflow output commit `11a5aa5`; no CI artifact was downloaded from an external blob host and no history was rewritten.
+8. Prepared a 114-row sanitized `SOURCE_LEDGER.csv` snapshot; blanked private location/partition fields, removed path components and library file codes, and checked for links/Drive IDs.
+9. Refreshed README/build-status counts to 477 rows (A=29, B=126, C=313, V=9); A+V=38. The ledger-copy/report update is docs/CSV-only.
+10. Q1 remains incomplete and Q2 is not started; equation-level checks, the theory-comparison table, and Section 10 final-size visual inspection remain open. No backup branch or WP-finished tag was created.

@@ -4,9 +4,9 @@ This folder mixes current authoritative registers with dated, historical snapsho
 
 ## Current sources of truth
 
-- `OPEN_CLAIMS_LEDGER.csv` is the authority for current claims (476 rows: A=29, B=126, C=313, V=8). Class A is source-anchored; Class V is a reproducible symbolic/script derivation whose `resolved_by` field names the verification path; B/C remain open at their recorded scope.
+- `OPEN_CLAIMS_LEDGER.csv` is the authority for current claims (477 rows: A=29, B=126, C=313, V=9). Class A is source-anchored; Class V is a reproducible symbolic/script derivation whose `resolved_by` field names the verification path; B/C remain open at their recorded scope.
 - `R4A_DELETION_AUDIT.csv` is the authority for removed text (593 rows, zero `NONE` identifiers). It does not certify deleted claims or reconstruct missing work.
-- `build-status.md` is the current strict-build status. The latest manuscript validation recorded here is run `40450139583`: 130 pages, successful engineering gates; output commit `bc4c4cc`.
+- `build-status.md` is the current strict-build status. The latest manuscript validation recorded here is run `40456561663`: 130 pages, successful engineering gates; output commit `11a5aa5`.
 - `scientific-audit.md`, `equation-audit.csv`, and `figure-audit.csv` provide current context/registers, not blanket proof of scientific correctness or licensing.
 
 ## Reports and CSVs
@@ -48,7 +48,8 @@ This folder mixes current authoritative registers with dated, historical snapsho
 | [`figure-render-inspection.txt`](figure-render-inspection.txt) | Structural/render inspection notes for the generated vector figures. | CURRENT CONTEXT |
 | [`literature-evidence-matrix.csv`](literature-evidence-matrix.csv) | Inherited literature inventory/evidence matrix; not a claim-level certification or complete systematic search. | HISTORICAL INVENTORY |
 | [`missing-source-pdf-links.md`](missing-source-pdf-links.md) | Historical source-access notes; publisher PDFs/full-text are not stored here. | HISTORICAL |
-| [`OPEN_CLAIMS_LEDGER.csv`](OPEN_CLAIMS_LEDGER.csv) | Authoritative current open-claim register: 476 rows (A=29, B=126, C=313, V=8); a source lead is not proof, and Class V records script-checked derivations. | CURRENT — AUTHORITATIVE OPEN CLAIMS |
+| [`OPEN_CLAIMS_LEDGER.csv`](OPEN_CLAIMS_LEDGER.csv) | Authoritative current open-claim register: 477 rows (A=29, B=126, C=313, V=9); a source lead is not proof, and Class V records script-checked derivations. | CURRENT — AUTHORITATIVE OPEN CLAIMS |
+| [`SOURCE_LEDGER.csv`](SOURCE_LEDGER.csv) | Sanitized snapshot of the private source index; private location/partition fields and library file codes are omitted. The Kumar2017 identity correction is documented in `R4B_SOURCE_FINDINGS.md`. | CURRENT CONTEXT — SANITIZED COPY |
 | [`page-by-page-reconciliation.md`](page-by-page-reconciliation.md) | Earlier v1.0-to-v1.1 physical-page comparison (146-page build); now historical. | HISTORICAL |
 | [`page-count-reconciliation.md`](page-count-reconciliation.md) | Earlier page-count/source-size reconciliation (146-page build); now historical. | HISTORICAL |
 | [`phase-status.md`](phase-status.md) | Dated phase-end status snapshot from 2026-10-22. | HISTORICAL |
