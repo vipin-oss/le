@@ -83,3 +83,15 @@
 8. CI run `40441612412` passed in 2m 50s: 129 pages, zero undefined references/citations, zero strict tag/privacy matches, zero overfull boxes above 1 pt, and zero near-overfull boxes; output commit `6036bca` was fast-forwarded.
 9. The final rendered equations, figure, and table were checked on PDF pp. 62–65; inventory and figure-XML checks pass. Refreshed README, build-status, report-guide, and provenance pointers without claiming scientific certification.
 10. Section 9 is complete for this targeted pass; WP2 remains open, Section 4 is still incomplete beyond its Tzou pass, and Section 10 is next. No backup branch or WP2 tag was created under the fixed-branch/unfinished-WP constraints.
+
+## 2026-10-27 (IST) — WP2 Section 10 and Q1–Q5 sequencing
+1. Completed the targeted Section 10 pass: separated local interface residual from remote-plane absorption and withdrew the unsupported Ivanov–Savova depth-decay and generic evanescent-mode claims.
+2. Added a steady, passive/source-free per-area control-volume loss split and a welded 1D longitudinal-interface derivation; both are explicitly scoped and mapped to Class V rows.
+3. Added `phase5/verification/verify_interface_energy.py`; symbolic checks pass for the two-condition/two-amplitude matrix, determinant, amplitudes, flux partition, cross-term cancellation, total-field identity, and double-counting distinction.
+4. Fixed the claim-ledger validator's repository paths, added it and the interface check to CI, and confirmed 469 rows: A=26, B=126, C=313, V=4; missing-source records=23.
+5. Local inventory, figure, ledger, classical-flux, interface-energy, and diff checks passed; the inventory reports no duplicate labels/keys or missing references/includes.
+6. Committed the content change as `cc87647` and pushed only `arena/b5e608f8-le`; no history rewrite or external publication occurred.
+7. CI run `40449389588` passed: 130 pages, 0 undefined references/citations, 0 strict forbidden-tag/privacy matches, 0 overfull boxes above 1 pt, and 0 near-overfull boxes; output commit `e800f34` was fast-forwarded on the same branch.
+8. Section 10's final-size PDF visual inspection is still pending; the green build establishes compilation and engineering gates, not full scientific correctness.
+9. Recorded the ordered Q1–Q5 plan and acceptance checks in `R4B_QUALITY_WORKPACKAGES.md`; Q1 unified synthesis is next, and remaining Section 4/11/13/14–17 work remains open.
+10. No backup branch was created because the session is fixed to its designated branch; no WP2 completion tag was made because WP2 remains incomplete. The next report must include verified reductions, current A/V counts, and five weakest remaining sections.
