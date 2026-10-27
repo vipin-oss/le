@@ -84,7 +84,7 @@ assert sp.simplify(R_sigma + T_sigma + A_sigma - 1) == 0
 section9 = (ROOT / "master/sections/sec09_interfaces.tex").read_text(encoding="utf-8")
 section10 = (ROOT / "master/sections/sec10_energy.tex").read_text(encoding="utf-8")
 assert r"R_{\Sigma}" in section9 and r"T_{\Sigma}" in section9
-assert r"$R_{\Sigma}, T_{\Sigma}, A_{\mathrm{int}}$" in section9
+assert r"\shortstack{$R_{\Sigma},T_{\Sigma},$\\$A_{\mathrm{int}}$}" in section9
 assert "saved audit summary does not specify reference planes" in section9
 assert "remote-plane reflectance and transmittance" in section9
 assert r"R_{\mathrm{rem}} + T_{\mathrm{rem}}" in section10
