@@ -1,6 +1,6 @@
 # WP4 Equation Audit — Initial Inventory and Status
 
-**Status:** in progress; this is an inventory and first targeted correction, not completion of the equation audit.
+**Status:** in progress at content commit `85520cd` (workflow output commit `bc2a867`); this is an inventory and first targeted correction, not completion of the equation audit. CI run `40543260698` passed.
 
 ## Scope and coverage
 
@@ -40,3 +40,9 @@ Fetched the read-only audit branch `arena/0be2770f-le` at `6e095abcaa674ee5d92d2
 5. After the Section 4–10 equation rows are resolved, re-run the inventory, ledger, build, privacy, and hostile-diff checks; then continue the ordered Q1, Q3, Q5, WP3 remainder, WP6, WP7, and WP8 work.
 
 Current equation-audit ledger total is 510 rows: A=48, B=123, C=317, V=22. The inventory checker establishes row coverage only; it does not close the remaining equation work.
+
+## Build and rendered self-audit checkpoint
+
+Content commit `85520cd0d2c3d520782dede20e44ba6c6ae5744c` passed LaTeX Build CI run `40543260698`. The strict build reports 122 PDF pages, undefined references/citations 0, forbidden privacy-token/internal-path/manuscript-tag counts 0, rendered figure PDFs 18, figure includes 16, deletion-audit `NONE` rows 0, and near-overfull boxes (>0.5 pt) 0. The workflow-published output commit `bc2a8679521ee3c5a8e4a56624dbdc3b4a9cb9ec` was fast-forwarded on the fixed branch and matched `git ls-remote`.
+
+The changed Section 5 equations and the revised reduction table were visually reviewed at final PDF size (PDF pages 43–44, 40, and 80; printed pages 42–43, 39, and 79). Ten V-ledger claims—OCL-480, OCL-498, OCL-470, OCL-465, OCL-466, OCL-467, OCL-468, OCL-484, OCL-500, and OCL-510—were spot-checked against rendered text. Ledger validation passed with 510 rows (A=48, B=123, C=317, V=22); the inventory checker and all relevant symbolic/source-map tests passed. These checks establish engineering/render consistency and bounded algebra only, not completion of the remaining source-by-source WP4 audit.

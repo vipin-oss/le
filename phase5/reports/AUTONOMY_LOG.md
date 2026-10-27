@@ -189,3 +189,11 @@
 6. Current display dispositions: VERIFIED-SOURCE=1, VERIFIED-SYMBOLIC=17, CONDITIONAL=52, OPEN=7. The seven open display labels are 4.2, 4.11, 4.12, 6.3, 6.4, 6.7, and 7.3. Conditional rows still need equation-by-equation source/derivation closure; WP4 is not complete.
 7. Ledger now has 510 rows: A=48, B=123, C=317, V=22; the seven section-level C rows preserve the unresolved audit work. Missing-source register remains unchanged pending source-by-source triage.
 8. Updated `WP4_EQUATION_AUDIT_STATUS.md` and the WP4 section of `R4B_QUALITY_WORKPACKAGES.md`. No commit, push, or CI run has yet occurred for these changes; the last successful code CI remains run `40538052545` on `3bbdb659ccb26730d057863fc9a3d0ecc66f9a87`.
+
+## 2026-10-27 (IST) — WP4 first content commit CI and rendered self-audit
+1. Committed the WP4 inventory, two Section 5 wording corrections, negative reduction tests, and workflow gates as content commit `85520cd0d2c3d520782dede20e44ba6c6ae5744c`; pushed only `arena/b5e608f8-le`.
+2. CI run `40543260698` passed. Strict-build metrics: 122 PDF pages; undefined references/citations 0; forbidden privacy-token/internal-path/manuscript-tag counts 0; 18 rendered figure PDFs; 16 figure includes; deletion-audit `NONE` rows 0; near-overfull boxes above 0.5 pt 0.
+3. Fast-forwarded the workflow-generated same-branch output commit `bc2a8679521ee3c5a8e4a56624dbdc3b4a9cb9ec`; `git ls-remote` equals local `HEAD`. The CI run was on the content commit, with no rerun.
+4. Visually reviewed final-size PDF pages 43–44, 40, and 80 (printed pp. 42–43, 39, and 79). Checked the updated uncoupled-dielectric wording, open-/short-circuit distinction, reduction-map row, and corrected DPL limit; no clipping/overfull layout observed.
+5. Spot-checked ten V rows against rendered text: OCL-480, OCL-498, OCL-470, OCL-465, OCL-466, OCL-467, OCL-468, OCL-484, OCL-500, and OCL-510. The inventory checker, piezoelectric stiffness/energy tests, reduction tests, interface tests, source-map tests, notation/Q3/Q4/reference-hygiene checks, and claim-ledger validator passed.
+6. Final ledger at this checkpoint: 510 rows (A=48, B=123, C=317, V=22); MISSING_SOURCES.csv has 6 records. WP4 remains in progress: 77 displays inventoried, 1 source-verified, 17 symbolically verified, 52 conditional, 7 open. No claim is made that the full equation audit is closed.
