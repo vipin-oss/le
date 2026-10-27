@@ -1,7 +1,7 @@
 # Version and provenance record
 
 **Current builder branch:** `arena/b5e608f8-le`<br>
-**Current working version:** phase5 v1.1; a 130-page strict CI build passed in run `40435990048` on source commit `893c46f` (2026-10-27); output commit `b4257e0` publishes the current PDF and contact sheets.<br>
+**Current working version:** phase5 v1.1; a 129-page strict CI build passed in run `40437606245` on source commit `101ec95` (2026-10-27); output commit `2520052` publishes the current PDF and contact sheets.<br>
 **Active source:** `phase5/master/`, with portable table inputs in `phase5/master/tables/source/` and figure assets in `phase5/master/figures/source/`.<br>
 **Baseline:** the v1.0 source/PDF in `phase4/` and `phase5/master/v1.0-baseline.pdf` are historical comparison artifacts; phase4 is also read by current audit/reconciliation scripts.
 

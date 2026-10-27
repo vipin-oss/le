@@ -59,3 +59,15 @@
 8. Kept Lazar–Agiasofitou operator placement unverified, retained only title-level identification, and added a bounded missing-source record without treating searches as proof of absence.
 9. Updated Section 7 wording, source findings, and OCL-256–OCL-261; ledger is 445 rows (A=25, B=124, C=296), with OCL-260 marked `CONTRADICTION-FIXED`; OCL-245–OCL-255 were not upgraded.
 10. `audit_inventory.py`, CSV uniqueness/count checks, cited-key checks, and `git diff --check` passed; source review used targeted text extraction, not page-image review. CI run `40435990048` passed in 3m 10s (130 pages; zero undefined refs/citations, forbidden-tag/privacy matches, or near-overfull boxes); output commit `b4257e0` was fast-forwarded, and PDF pp. 55–56 were visually checked at 1.5× with no apparent clipping.
+
+## 2026-10-27 (IST) — WP2 Section 8 source-backing pass
+1. Checked Biswas (2020), DOI `10.1007/s00707-020-02848-8`, by targeted PDF text extraction; its abstract identifies a GN-III layered Rayleigh-wave model and Section 2, Eq. (3), contains conductivity and additional gradient terms.
+2. Exact-title/DOI and filename searches did not locate the original Chadwick–Sneddon, Marotti de Sciarra, or Hughes paper copies in the inspected set; recorded bounded limits without treating search results as proof of absence.
+3. Narrowed Section 8 claims on classical/generalized mode transfer, secular-polynomial order/root counts, evanescent-mode flux, transform reductions, Green functions, and discretization; retained model-specific cautions rather than universal results.
+4. Reviewed all rows in `T5_solution_techniques.tex`, including Christoffel; removed Achenbach’s unsupported coupling-order citation and the generic-row citations to Barak2023 and Hughes1980.
+5. Reconciled OCL-063, -262–274, -425, and -446–457; ledger now has 457 rows (A=26, B=127, C=304), with fresh Class A evidence only for OCL-075.
+6. Added three bounded access records to `MISSING_SOURCES.csv`; updated `R4B_SOURCE_FINDINGS.md` with direct-source limits, carried Biot evidence, and no whole-book inspection.
+7. `audit_inventory.py`, ledger/source CSV uniqueness and count checks, manuscript process-tag scan, and `git diff --check` passed; local TeX build could not run because `latexmk` is not installed.
+8. Committed/pushed the single Section 8 content change as `101ec95`; strict CI run `40437606245` passed in 3m 0s (129 pages, zero undefined refs/citations, strict-tag/privacy matches, and near-overfull boxes); output commit `2520052` was fast-forwarded.
+9. Visually inspected PDF pp. 56–60 (printed pp. 55–59), including equations, workflow figure, method table, and notation table; no clipping was apparent. Flagged the workflow figure’s lower connectors for the WP5 visual audit.
+10. Refreshed current README/build-status/provenance pointers. WP2 Section 8 is complete; continue with Section 9. No backup branch was created under the fixed-branch constraint, and no WP2 tag is due until WP2 is complete.
