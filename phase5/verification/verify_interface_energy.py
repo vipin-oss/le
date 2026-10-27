@@ -153,6 +153,11 @@ assert r"R_{\mathrm{rem}} + T_{\mathrm{rem}}" in section10
 assert r"A_{\mathrm{bulk},L}" in section10 and r"A_{\mathrm{bulk},R}" in section10
 assert "interface-plane bookkeeping identity" in section10
 assert r"R = \frac{J_{\mathrm{inc},n}" not in section9
+equation_register = (ROOT / "master/appendices/appA_equation_register.tex").read_text(encoding="utf-8")
+for equation_id in ("EQ-10.13", "EQ-10.14", "EQ-10.15", "EQ-10.16"):
+    assert equation_id + " &" in equation_register
+assert "EQ-10.GEN & Generalized-theory energy fluxes & OPEN" in equation_register
+assert "EQ-10.13 & Generalized-theory energy fluxes" not in equation_register
 
 print("PASS: welded 1D interface gives a 2x2 system from two conditions/two amplitudes")
 print("PASS: det(M)=-(Z1+Z2); positive impedances give unique amplitudes")

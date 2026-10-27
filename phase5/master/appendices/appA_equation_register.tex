@@ -178,7 +178,11 @@ EQ-10.5 & Interfacial jump balance & CONDITIONAL & Pillbox limit; jump orientati
 EQ-10.6 & Passive-interface normal flux continuity & CONDITIONAL & Passive interface; zero interfacial power and storage; same normal orientation \\
 EQ-10.11 & $\sum R+\sum T+A_{\mathrm{int}}=1$ & CONDITIONAL & Interface-local total-field fluxes; include all cross terms; interface residual only \\
 EQ-10.12 & $\sum R+\sum T=1$ & CONDITIONAL & Lossless interface with zero storage/residual; complete total-field accounting including cross terms \\
-EQ-10.13 & Generalized-theory energy fluxes & OPEN & Derive from each model's free energy and boundary power \\
+EQ-10.13 & Control-volume dissipation definitions $\mathcal D_L,\mathcal D_\Sigma,\mathcal D_R$ & CONDITIONAL & Steady time-averaged 1D balance; passive, source-free regions; no accumulation \\
+EQ-10.14 & $P_i=P_r+P_t+\mathcal D_L+\mathcal D_\Sigma+\mathcal D_R$ & CONDITIONAL & Sum of Eq.~(10.13) balances; bookkeeping closure, not independent validation \\
+EQ-10.15 & 1D welded-interface incident/reflected/transmitted displacement fields & CONDITIONAL & Lossless longitudinal half-spaces; $e^{-i\omega t}$ convention \\
+EQ-10.16 & 2$\times$2 displacement/traction matching system & DERIVED & Two unknown amplitudes/two scalar conditions; positive real impedances \\
+EQ-10.GEN & Generalized-theory energy fluxes & OPEN & Derive from each model's free energy and boundary power \\
 \bottomrule
 \end{tabularx}
 \end{table}

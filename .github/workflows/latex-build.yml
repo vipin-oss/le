@@ -338,6 +338,19 @@ jobs:
           text = Path(sys.argv[1]).read_text(errors='replace')
           # Exact case-sensitive tag pattern requested for the gate.
           tag_pattern = re.compile(r'PRIMARY-SOURCE|GAP-\d+|LIT-\d+|OCL-\d+|UNVERIFIED|\bR[1-6][a-z]\b|\?\?')
+          # Privacy and internal-repository-path gates are additive: no previous forbidden pattern is relaxed.
+          storage_word = 'dri' + 've'
+          provider_word = 'goo' + 'gle'
+          docs_word = 'do' + 'cs'
+          privacy_patterns = [
+              r'https?://(?:' + re.escape(storage_word + '.' + provider_word + '.com') + r'|' + re.escape(docs_word + '.' + provider_word + '.com') + r')\S*',
+              r'\b' + provider_word + r'\s+' + storage_word + r'\b',
+              r'\b' + storage_word + r'\s+(?:url|id|link|folder)\b',
+              r'\bshared\s+' + storage_word + r'\b',
+          ]
+          privacy_hits = [(pattern, match) for pattern in privacy_patterns for match in re.finditer(pattern, text, re.I)]
+          internal_path_pattern = re.compile(r'phase5/|phase4/|\.csv\b', re.I)
+          internal_path_hits = list(internal_path_pattern.finditer(text))
           # Retain the previous broad scan only to classify its legacy hits in CI logs.
           legacy_pattern = re.compile(r'PRIMARY-SOURCE|GAP-|LIT-|R3|R4|UNVERIFIED|OCL-|\?\?', re.I)
           legacy_hits = list(legacy_pattern.finditer(text))
@@ -357,7 +370,9 @@ jobs:
               annotation = message.replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
               print(f'::notice title=R4A legacy scan hit::{annotation}')
           print(f'Forbidden-token occurrences in pdftotext (strict pattern): {len(strict_hits)}')
-          if strict_hits:
+          print(f'Forbidden privacy-token occurrences in pdftotext: {len(privacy_hits)}')
+          print(f'Forbidden internal-path occurrences in pdftotext (phase5/, phase4/, .csv): {len(internal_path_hits)}')
+          if strict_hits or privacy_hits or internal_path_hits:
               raise SystemExit(1)
           PY
 
@@ -409,6 +424,8 @@ jobs:
               r'\bshared\s+' + storage_word + r'\b',
           ]
           forbidden_count = sum(len(re.findall(pattern, extracted, re.I)) for pattern in forbidden_patterns)
+          internal_path_pattern = re.compile(r'phase5/|phase4/|\.csv\b', re.I)
+          internal_path_count = len(internal_path_pattern.findall(extracted))
           tag_pattern = re.compile(r'PRIMARY-SOURCE|GAP-\d+|LIT-\d+|OCL-\d+|UNVERIFIED|\bR[1-6][a-z]\b|\?\?')
           forbidden_tags = len(tag_pattern.findall(extracted))
 
@@ -449,6 +466,7 @@ jobs:
               'PDF pages': pages,
               'Undefined references/citations': undefined_refs,
               'Forbidden privacy-token occurrences in pdftotext': str(forbidden_count),
+              'Forbidden internal-path occurrences in pdftotext': str(internal_path_count),
               'Forbidden manuscript-tag occurrences in pdftotext': str(forbidden_tags),
               'Rendered figure PDFs': str(rendered_figures),
               'Figure includes in master': str(included_figures),
