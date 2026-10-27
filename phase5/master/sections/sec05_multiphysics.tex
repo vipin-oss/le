@@ -136,37 +136,33 @@ D_3^{(1)} = D_3^{(2)} \quad \text{at the interface}.
 
 \subsubsection{Why a void needs its own field of freedom}
 
-The kinematics of a porous body require a kinematic variable beyond the displacement, because the material inside the pores can change its volume independently of the solid matrix. This is not a modelling convenience; it is forced by the kinematics of a body whose constituents occupy a variable volume fraction. The void volume fraction $\phi$ measures the change of that fraction from its reference value, and it enters the balance laws of Section~\ref{sec:5.4} as a field in its own right, with its own inertia term, its own equilibrated stress and its own body force. The system is hyperelastic in the sense that the potentials are functions of $\varepsilon_{ij}$, $\gamma_{mn}$ and $\phi$ jointly, so that the cross-coupling terms $d_{ijk}$ are constrained by the requirement of a positive-definite quadratic form rather than being free parameters.
+Void theories do not share one universal field set or balance structure; the source-specific nonlinear, linear-elastic, and thermoelastic formulations below are kept distinct.
 
 \subsubsection{Modal content of a void-bearing medium}
 
-The presence of the void field adds a further mode to the modal structure: a fast wave associated with the inertia of the solid matrix and the coupled fluid motion, a slow wave associated with the equilibration of the void fraction against the surrounding matrix, and the usual shear waves, which are unaffected by the void field to the lowest order because shear does not change the volume fraction. The slow wave is of practical interest because it is the wave that transports the equilibration of the void pressure, and its speed is controlled by the ratio of the equilibrated inertia to the coupling stiffness. In a thermoporous medium the interaction with the thermal field adds a further degree of freedom, and the resulting modal structure is the one tabulated in Table~\ref{tab:T3-multiphysics}.
+Void-related wave content is source- and model-specific. Cowin and Nunziato's 1983 abstract lists small-amplitude acoustic waves among its applications and states that the deformation-induced change in void volume is determined for those examples (printed p.~125). Iesan's 1986 summary states that acceleration waves are studied for homogeneous, isotropic bodies (printed p.~67). These summaries do not establish a universal fast/slow/shear mode count, which is not assigned here.
 
 \subsection{Porous media: voids and double porosity}
 \label{sec:5.4}
 
-Porous elastic materials contain vacuous voids or pores distributed throughout the matrix. The Nunziato--Cowin theory (Nunziato and Cowin, 1979 \cite{Nunziato1979}; Cowin and Nunziato, 1983 \cite{Cowin1983}) introduces an additional kinematic variable: the void volume fraction $\eta$.
+The sources distinguish three formulations. Nunziato and Cowin's nonlinear theory describes a void-volume distribution and an admissible thermo-kinetic process; its printed p.~177 balance set includes mass, linear and angular momentum, equilibrated force, energy, and an entropy inequality (Eqs.~(2.7)--(2.12)) \cite{Nunziato1979}. Cowin and Nunziato's separate 1983 linear-elastic theory takes the volume fraction associated with void volume as an independent kinematic variable (printed p.~125, abstract) \cite{Cowin1983}. Iesan's 1986 linear thermoelastic theory uses the deviation $\varphi=v-v_0$ and its gradient alongside strain and temperature variables (printed p.~70, Eqs.~(2.14)--(2.19)) \cite{Iesan1986}.
 
 \subsubsection{Governing equations}
 
-The basic equations for thermoelastic materials with voids:
+Iesan's 1986 paper gives the following general linear constitutive relations (printed p.~71, Eq.~(2.22)):
 
 \begin{equation}
-\sigma_{ij} = A_{ijmn}\varepsilon_{mn} + B_{ijmn}\gamma_{mn} + d_{ijk}\eta_{,k} - \alpha_{ij}\theta,
+\begin{aligned}
+t_{ij} &= C_{ijrs}e_{rs} + B_{ij}\varphi + D_{ijk}\varphi_{,k} - \beta_{ij}\theta,\\
+h_i &= A_{ij}\varphi_{,j} + D_{rsi}e_{rs} + d_i\varphi - a_i\theta,\\
+g &= -B_{ij}e_{ij} - \xi\varphi - d_i\varphi_{,i} + m\theta,\\
+\rho\eta &= \beta_{ij}e_{ij} + a\theta + m\varphi + a_i\varphi_{,i},\\
+q_i &= k_{ij}\theta_{,j}.
+\end{aligned}
 \label{eq:5.14}
 \end{equation}
 
-\begin{equation}
-\rho\ddot{u}_i = \sigma_{ji,j} + \rho f_i,
-\label{eq:5.15}
-\end{equation}
-
-\begin{equation}
-\rho\ddot{\eta} = h_{i,i} + \rho l,
-\label{eq:5.16}
-\end{equation}
-
-where $\eta$ is the void volume fraction, $h_i$ is the equilibrated stress vector, $l$ is the equilibrated body force, $A_{ijmn}$ and $B_{ijmn}$ are elastic and equilibrated elasticity tensors, $d_{ijk}$ is the equilibrated stress coupling tensor, and $\alpha_{ij}$ is the thermal coupling tensor. The thermoelastic extension of void theory was developed by Iesan (1986 \cite{Iesan1986}) and is treated systematically, together with the micropolar and nonsimple variants, in his monograph \cite{Iesan2004}, which also establishes the existence and uniqueness framework for the coupled problems.
+Here $e_{ij}$ is infinitesimal strain, $\varphi=v-v_0$ is the void-volume deviation, $\theta=T-T_0$ is the temperature increment, $h_i$ is the equilibrated-stress vector, $g$ is the intrinsic equilibrated body force, and $\eta$ is specific entropy. The paper gives a separate isotropic specialization in Eq.~(2.24) and the homogeneous-isotropic field equations in Eq.~(2.28) (printed pp.~71--72); those are not conflated with the general tensor relations above. The 2004 monograph's front-matter contents list chapters on thermoelastic materials with voids and thermoelastic Cosserat continua, with section headings on uniqueness and existence (pp.~v--vi); this is a contents-level description, not a claim about a particular theorem \cite{Iesan2004}.
 
 \subsubsection{Double porosity}
 
@@ -175,13 +171,13 @@ Double porosity models introduce two porosity fields to capture both macro- and 
 \subsection{Micropolar and micromorphic continua}
 \label{sec:5.5}
 
-Micropolar elasticity (Eringen, 1966 \cite{Eringen1966a}) extends classical elasticity by incorporating micro-rotational degrees of freedom and couple stresses. In addition to the displacement field $u_i$, the microrotation field $\phi_i$ describes independent rotation of material particles.
+Eringen's 1966 paper is titled \emph{Linear Theory of Micropolar Elasticity} \cite{Eringen1966a}; no equation-level claim is made here from the scanned copy. The Tauchert--Claus--Ariman (1968) abstract describes a linear micropolar thermoelastic formulation with displacement/microrotation and stress/couple-stress forms (printed p.~37); its p.~38 notation defines the micro-inertia coefficient $J$ \cite{TauchertClausAriman1968}.
 
 \subsubsection{Governing equations}
 
 Micropolar thermoelastic formulations may include independent microrotation fields and couple stresses. Their constitutive equations depend on the selected kinematics, symmetry assumptions, and thermal coupling.
 
-Micropolar models are relevant for granular materials, liquid crystals, composite materials with oriented inclusions, and biological tissues where micro-structural rotation cannot be neglected. A thermoelastic micropolar formulation was published by Tauchert, Claus and Ariman (1968 \cite{TauchertClausAriman1968}); earlier related work exists, so no priority claim is made here.
+Micropolar formulations add rotational kinematic and stress measures according to the selected model; the 1968 source is used here only for its stated linear thermoelastic formulation, not for a priority claim or a universal application list.
 
 \subsubsection{The absorption term and the photothermal source}
 
@@ -269,11 +265,14 @@ $\phi$ & Electric potential & V & \eqref{eq:5.3} \\
 $\beta_{ij}$ & Thermal stress coefficient & Pa/K & \eqref{eq:5.6} \\
 $p_i$ & Pyroelectric coefficient & C/(m$^2$$\cdot$K) & \eqref{eq:5.9} \\
 $\bar{c}_{ijkl}$ & Piezoelectrically renormalised stiffness & Pa & \eqref{eq:5.19} \\
-$\eta$ & Void volume fraction & dimensionless & \eqref{eq:5.14} \\
-$h_i$ & Equilibrated stress vector & N/m & \eqref{eq:5.16} \\
+$\varphi$ & Void-volume deviation from its reference value (Iesan 1986) & dimensionless & \eqref{eq:5.14} \\
+$\eta$ & Specific entropy in Iesan's notation; not the void-volume field & varies & \eqref{eq:5.14} \\
+$h_i$ & Equilibrated-stress vector & source-specific & \eqref{eq:5.14} \\
 \bottomrule
 \end{tabularx}
 \end{table}
+
+At the ideal-fluid/nonlocal piezothermoelastic interface studied by Gupta et al., the abstract reports one reflected and four transmitted waves and states that the law of energy conservation across the interface is justified (printed p.~912, abstract). This is an abstract-level report; no exact balance equation is reproduced here \cite{Gupta2023IJNMF}.
 
 A dual-porous thermoelastic interface study reports that the total sum of energy ratios approximates unity; this is retained as a reported numerical observation, not an exact identity \cite{Kumar2023PhysScr}.
 
