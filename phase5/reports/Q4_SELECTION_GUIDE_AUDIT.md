@@ -70,3 +70,11 @@ The final PDF text was extracted from the published artifact. Printed pp. 102–
 The following passed locally: `verify_q3_status_matrix.py`, `verify_q4_selection_guide.py`, `verify_unified_reductions.py`, `verify_interface_energy.py`, `verify_interface_mode_counts.py`, `verify_q1_notation.py`, `verify_kumar2017_reference_split.py`, `validate_claim_ledger.py`, and `git diff --check`.
 
 The final ledger state is 497 rows: A=34, B=132, C=315, V=16. OCL-497 is Class V for structural coverage/provenance mapping only; its verifier does not re-review sources or validate numerical solutions. The final CI gates and ten-row rendered-text check are recorded above.
+
+## Q3 GN-III scope-page follow-up after Q4 CI
+
+A targeted image review of Green & Naghdi (1992), printed pp. 254–255, corrected the earlier page attribution: the type-II-only no-dissipation footnote is on p. 254; p. 255 summarizes the type-III development and its finite-speed coupled system. OCL-476 remains Class A only for this bounded source-scope finding; OCL-492 remains Class B for exact equation-to-manuscript mapping and model-specific energy/admissibility/interface flux. The primary PDF was removed after review. No bibliography entry or theory-wide property was changed.
+
+Content commit `32dd431` passed CI `40505226590` and produced 121 pages; output publication commit `ecae40c` was fast-forwarded and matched the remote branch. Final gates: undefined references/citations 0; overfull boxes >1 pt 0; near-overfull boxes >0.5 pt 0; privacy tokens 0; internal paths 0; manuscript tags 0; 18 figure PDFs rendered/16 included. Printed p. 103 was visually rechecked with the revised roadmap and benchmark table; both are legible with no overflow.
+
+The same ten A/V rows were rechecked against the final 121-page rendered text: OCL-164–OCL-167 at printed p. 33; OCL-169 at p. 34; OCL-445 at pp. 37 and 102; OCL-466 at p. 68; OCL-467 at p. 103 (summary; derivation remains script-backed); OCL-468 at p. 64; and OCL-480 at p. 66. All remain within their ledger scope. The Q3 image review closes the p. 254–255 source-scope gap only; GN-I mapping, GN-II/GN-III/LS equation-to-manuscript reconciliation, parameter admissibility, and energy/flux work remain open. Ledger classes remain A=34, B=132, C=315, V=16.
