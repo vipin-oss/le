@@ -70,11 +70,11 @@ The page images resolve the selected linearized coefficients, Eq. (3.18) restric
 
 ## Lord & Shulman (1967), one-relaxation-time thermoelasticity
 
-**Status:** targeted primary-text extraction completed for the LS heat-flux convention identified as open in Q3. Only the paper identity and relevant equation passages were used; no page-image audit was made.
+**Status:** targeted page-image review completed for the LS heat-flux convention and linearized system in OCL-495. Only printed pp. 300 and 302 were rendered and reviewed; no broader article survey was made.
 
 ### Scope and anchors
 
-The checked article is Lord and Shulman, “A Generalized Dynamical Theory of Thermoelasticity,” *Journal of the Mechanics and Physics of Solids* 15 (1967), pp. 299–309. The source's isotropic heat-flux reduction is printed p. 300, Eq. (8); its linearized isotropic constitutive and coupled field equations are printed p. 302, Eqs. (22)–(24).
+The checked article is Lord and Shulman, “A Generalized Dynamical Theory of Thermoelasticity,” *Journal of the Mechanics and Physics of Solids* 15 (1967), pp. 299–309. Page images were reviewed for printed p. 300, Eqs. (7)–(8), and p. 302, Eqs. (21)–(24); the review was limited to the isotropic heat-flux reduction and linearized field system.
 
 ### Source-bounded finding recorded in OCL-495
 
@@ -82,4 +82,4 @@ The source starts from a general linear relation between heat flux and temperatu
 
 ### Limitations and remaining open work
 
-No positivity or admissible-range condition for the relaxation parameter is asserted by this bounded extraction. The displayed coupled equations do not by themselves establish existence, uniqueness, stability, or an energy-flux identity under arbitrary initial and boundary data. Page images were not reviewed, and no exact tensor-coefficient transcription is claimed. The source equation anchor is recorded in OCL-495; OCL-011/OCL-483 and the LS open-question cell remain for parameter/admissibility and model-wide energy/interface analysis.
+The page images confirm the cited equation forms and the small-field/constant-specific-heat scope, but no positivity or admissible-range condition for the relaxation parameter is asserted by the checked pages. The displayed coupled equations do not by themselves establish existence, uniqueness, stability, or an energy-flux identity under arbitrary initial and boundary data. OCL-495 records only this source-bounded equation convention; OCL-011/OCL-483 and the LS open-question cell remain for parameter/admissibility and model-wide energy/interface analysis.
