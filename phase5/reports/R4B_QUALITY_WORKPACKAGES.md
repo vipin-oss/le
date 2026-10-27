@@ -1,12 +1,14 @@
 # R4B quality work packages Q1–Q5
 
-**State:** sequenced after the targeted Section 10 pass, with Q1 next. The order below is intentional. The targeted Section 10 energy-partition/matrix derivation is complete for its stated one-dimensional welded model; it does not close the remaining generalized-family or interface questions. No page-count target applies.
+**State:** sequenced after the targeted Section 10 pass; Q1 is active. Initial equation-level substitution checks are recorded as OCL-470–OCL-473 (Class V), but the unified notation, source-by-source reduction map, and comparison table remain incomplete. The order below is intentional. The targeted Section 10 energy-partition/matrix derivation is complete for its stated one-dimensional welded model; it does not close the remaining generalized-family or interface questions. No page-count target applies.
 
 ## Governing evidence rule
 
 Every new substantive manuscript statement must map either to a Class A ledger row with `resolved_by` and claim-specific source anchors, or to a reproducible derivation/check under `phase5/verification/` recorded as Class V with its script path. Model-dependent and unresolved material must be labelled with the exact model/scope and retained as B/C where evidence is incomplete; hedging alone is not closure. New bibliography DOIs must be verified against the source paper or a saved Crossref response. Do not store source PDFs, copied prose/tables, private Drive identifiers, or private Drive links in the repository.
 
-## Q1 — Unified synthesis (next)
+## Q1 — Unified synthesis (active)
+
+**Progress note:** `phase5/verification/verify_unified_reductions.py` currently passes checks for LS-to-Fourier, first-order DPL-to-LS/Fourier, TPL-to-DPL, the displayed MGT heat-flux law-to-Fourier, derivative-level GN-III/GN-II compatibility, selected integer-order Caputo monomials, and the displayed nonlocal Helmholtz/dispersion local limits (OCL-470–OCL-473). These are equation-level substitutions only. They do not verify source transcription, solution convergence, complete model equivalence, or stability/admissibility. GL and GN-I reductions, the unified notation/template, the source-by-source reduction map, and the theory-comparison table remain open.
 
 **Deliverables**
 

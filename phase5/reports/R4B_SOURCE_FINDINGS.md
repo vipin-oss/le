@@ -247,3 +247,7 @@ A targeted Drive search by the Ivanov–Savova (1991) title and DOI `10.1080/014
 ### Section 10 disposition
 
 OCL-465–OCL-468 are Class V and point to the verification script; OCL-469 records the withdrawn evanescent-mode assertion. The Section 10 ledger additions bring the register to 469 rows (A=26, B=126, C=313, V=4). The missing-source register now has 23 bounded records. No generalized-family flux or dissipation identity was promoted by this pass.
+
+## Q1 — Initial equation-level reduction checks (2026-10-27)
+
+`phase5/verification/verify_unified_reductions.py` passes symbolic substitutions for the explicitly displayed LS, first-order DPL/TPL, and MGT heat-flux residuals; it also checks a derivative-level GN-III/GN-II residual compatibility, selected integer-order Caputo monomial identities, and the displayed nonlocal Helmholtz/1D-dispersion local limits. OCL-470–OCL-473 are Class V and identify the corresponding script ranges. These checks validate algebra of the equations as currently written; they do not validate source transcription, solution convergence, thermodynamic admissibility, stability, or equivalence of complete initial-boundary-value problems. No GL or GN-I reduction, family-wide template, or theory-comparison table is yet established. The ledger now has 473 rows (A=26, B=126, C=313, V=8); `MISSING_SOURCES.csv` remains at 23 records.
