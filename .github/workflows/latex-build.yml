@@ -283,6 +283,12 @@ jobs:
       - name: Verify Figure 11 workflow connectors and scope
         run: python phase5/verification/verify_fig12_workflow.py
 
+      - name: Verify WP3 citation-key and Crossref record hygiene
+        run: python phase5/verification/verify_reference_hygiene.py
+
+      - name: Verify Kumar reference identity split and dependent B/C status
+        run: python phase5/verification/verify_kumar2017_reference_split.py
+
       - name: Verify Q1 notation, comparison coverage, and displayed dispersion algebra
         run: python phase5/verification/verify_q1_notation.py
 
