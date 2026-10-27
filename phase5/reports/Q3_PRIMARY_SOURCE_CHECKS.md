@@ -18,6 +18,18 @@ The authors state uniqueness for the homogeneous initial mixed-boundary-value pr
 
 The page images make the selected equations and stated sufficient conditions legible, but the article's proof details are expressly omitted; no full proof was independently reconstructed. No source-specific wave-speed/stability classification, parameter mapping to later relaxation-time notation, or family-wide GL template is inferred. The existing table should use only the bounded model-level facts above and retain those broader questions as B/open.
 
+## Green & Naghdi (1991), GN-I source identification
+
+**Status:** a targeted page-image check was made to test the held 1991 paper's relevance to the GN-I matrix slot (OCL-481). It does not close the equation/source-mapping gap, and no formula is inferred.
+
+### Scope and anchors
+
+The checked article is Green and Naghdi, “A Re-examination of the Basic Postulates of Thermomechanics,” *Proceedings of the Royal Society of London A* 432 (1991), pp. 171–194, DOI 10.1098/rspa.1991.0012. Only the abstract and opening of the introduction on printed p. 171 and the beginning of the particle-mechanics discussion on p. 172 were reviewed as page images.
+
+### Bounded disposition
+
+The abstract characterizes the paper as a re-examination of thermomechanical postulates and says it illustrates the procedure with heat flow in a rigid solid, including classical-conduction and thermal-wave cases. The reviewed pages do not identify a constitutive equation as a named GN-I law; p. 172 begins from classical particle-mechanics postulates. This limited check cannot establish that no GN-I formulation appears later in the article or elsewhere. OCL-481 therefore remains B: the matrix keeps the GN-I equation slot open, and the exact primary equation/model mapping must be found before asserting a family law, reduction, speed, stability, or dissipation property.
+
 ## Green & Naghdi (1993), type-II thermoelastic model
 
 **Status:** targeted primary-text extraction completed for the exact equation/theorem gap in OCL-491. This is not a whole-paper transcription. No Drive identifiers, links, or source-folder names are recorded here.
