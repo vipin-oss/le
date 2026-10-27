@@ -82,6 +82,7 @@ for row in rows:
 for family, column, required in (
     ("Dual-phase-lag (DPL)", "disputed_ledger_rows", {"OCL-445", "OCL-488"}),
     ("Dual-phase-lag (DPL)", "open_ledger_rows", {"OCL-488"}),
+    ("Green–Naghdi II (GN-II)", "established_ledger_rows", {"OCL-493"}),
     ("Green–Naghdi II (GN-II)", "open_ledger_rows", {"OCL-491"}),
     ("Green–Naghdi III (GN-III)", "open_ledger_rows", {"OCL-492"}),
     ("Moore–Gibson–Thompson (MGT)", "open_ledger_rows", {"OCL-174", "OCL-175"}),
