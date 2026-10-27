@@ -26,3 +26,8 @@ and reported source-cover inspection. Dell'Oro–Pata's volume/pages comparison
 uses the B22 saved comparison row; no raw DOI response for that work was in the
 available B22 raw-response set. Fields not present in those saved records are
 marked `NOT-IN-SAVED-RESPONSE`, not inferred.
+
+
+## Dell'Oro–Pata locator disposition
+
+The bibliography locator is now filled as *Applied Mathematics and Optimization* 76:641–655 from the saved B22 Crossref comparison row. The bibliographic first-page inspection independently confirms authors, title, DOI, and copyright year, but the raw Crossref DOI response is not available in the current branch and direct Crossref egress is blocked. The entry therefore retains `verified = {NO}`; `CROSSREF_FINAL.csv` labels the locator comparison as B22-reported rather than independently re-fetched.

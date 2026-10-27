@@ -50,6 +50,8 @@ assert sp.simplify(tpl.subs(k_star, 0) - dpl) == 0
 comparison = (ROOT / "master/sections/sec12_comparative.tex").read_text(encoding="utf-8")
 assert r"$\tau_T \to 0$, with $\tau_q=\tau_0$" in comparison
 assert r"$\tau_q \to 0$" not in comparison
+assert "Model-dependent" in comparison
+assert "do not classify the critical case" in comparison
 assert sp.simplify(mgt.subs({tau_m: 0, k_star: 0}) - fourier) == 0
 print("PASS: LS -> Fourier; first-order DPL -> LS/Fourier; TPL -> DPL; displayed MGT heat-flux law -> Fourier")
 
