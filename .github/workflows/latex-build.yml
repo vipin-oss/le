@@ -280,6 +280,9 @@ jobs:
       - name: Verify Q1 notation, comparison coverage, and displayed dispersion algebra
         run: python phase5/verification/verify_q1_notation.py
 
+      - name: Verify Q4 conditional selection guide and evidence mapping
+        run: python phase5/verification/verify_q4_selection_guide.py
+
       - name: Validate A/V claim-ledger provenance
         run: python phase5/scripts/validate_claim_ledger.py
 

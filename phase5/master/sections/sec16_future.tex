@@ -6,8 +6,63 @@
 
 This section presents research directions arising from the challenges discussed in Section 15. Each direction is framed as a question for future modeling, analysis, or measurement.
 
+\subsection{Conditional theory-selection guide and evidence checkpoints}
+\label{sec:selection-guide}
+
+The following workflow is a conditional guide, not a ranking of theories. Start by specifying the fields, geometry, constitutive equations, initial and boundary data, interface conditions, and measured observables. Select a model only when those choices match the question being asked. In this review, record any statement about propagation, admissibility, stability, well-posedness, or energy flux against the exact equations and assumptions rather than attaching it to a family label.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Conditional model-selection questions and limits of the evidence reviewed here.}
+\label{tab:conditional_selection}
+\begin{tabularx}{\textwidth}{@{}p{2.7cm}XX@{}}
+\toprule
+\textbf{Decision} & \textbf{Conditional use} & \textbf{Evidence boundary} \\
+\midrule
+Local thermoelastic baseline & Use a local Cauchy model with Fourier conduction when those are the constitutive assumptions to be tested or used as a comparator; state the balance laws and data explicitly \cite{Biot1956}. & Do not assume the baseline is inapplicable or that a generalized model is preferable; justify the comparison against the specified observables and assumptions. \\
+One-time heat-flux relaxation & If the selected constitutive law is the Lord--Shulman law, use that source's one-relaxation-time equation and state the associated field equations and approximations \cite{Lord1967}. & The reviewed pages establish the source-specific law, not a universal admissible range, stability theorem, or generalized energy flux. \\
+Green--Naghdi models & Keep type II and type III separate, name the exact equations and coefficient regime, and distinguish the source's bounded type-II wave/uniqueness result from the type-III one-dimensional conductivity regimes \cite{Green1993,GreenGN1992}. & Neither result transfers automatically to other variants; the selected model's admissibility and energy/interface flux still require separate support. \\
+Lag-based transport & For DPL or TPL, state the lag convention, expansion order, and problem being analyzed. The cited DPL result is restricted to its stated one-dimensional problem and strict parameter inequalities; the equality case is not classified by that result \cite{Quintanilla2003DPL,RoyChoudhuri2007}. & Do not transfer a DPL inequality or a first-order TPL expansion to other equations, dimensions, or truncation orders. \\
+Spatial, fractional, or hereditary operators & Specify the kernel or operator, its domain and function space, and the initial/boundary data before deriving a dispersion or interface problem \cite{Eringen1983}. & Restrict each result to its stated kernel or operator and data; leave other candidates' admissibility, propagation, stability, and flux questions open until supported. \\
+Additional coupled fields & List every field, constitutive closure, and interface condition before computing modes or scattering coefficients. & Determine the mode count, normalization, and flux convention from the specified coupled system before comparing results. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+For any candidate, the next checks are: (i) verify the equation set and conventions against its source; (ii) state parameter restrictions and data for the actual initial-boundary-value problem; (iii) derive the energy or flux quantity from the selected balances and constitutive laws; and (iv) compare numerical results only against a benchmark with matching geometry, normalization, and boundary conditions. Where a check is unavailable, retain the claim as unresolved rather than extrapolating from a neighboring model.
+
+\subsection{Benchmark evidence: derivations versus source checkpoints}
+\label{sec:benchmark-evidence}
+
+The table separates reproducible checks implemented for this review from statements verified on cited source pages. The latter are evidence checkpoints, not numerical benchmark solutions.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Current validated checks and source-bounded checkpoints; scope is limited to the displayed equations and assumptions.}
+\label{tab:validated_checkpoints}
+\begin{tabularx}{\textwidth}{@{}p{3.1cm}p{3.2cm}X@{}}
+\toprule
+\textbf{Evidence type} & \textbf{Check} & \textbf{Scope and limitation} \\
+\midrule
+Script-verified identity & Classical local energy-flux derivation & The local symmetric-Cauchy balance and Fourier-law calculation is reproduced under the assumptions recorded with its derivation; it is not a generalized thermoelastic flux theorem. \\
+Script-verified interface check & One-dimensional welded lossless longitudinal interface & The displayed stress--velocity flux gives the stated reflected/transmitted partition; the two-wave cross-term is shown before time averaging and averages to zero for the selected harmonic fields. This is not a general interface theorem. \\
+Script-verified algebra & Selected constitutive reductions and limits & The verifier checks algebraic reductions of the displayed forms (including the stated DPL-to-LS limit); it does not prove convergence of solutions or equivalence of theory families. \\
+Primary-source checkpoint & Lord--Shulman, Green--Naghdi II/III, and Green--Lindsay equation-level findings & These are bounded source-page results recorded for the specific equations, approximations, and regimes reviewed; they are not code-validated solutions, existence results, or family-wide stability claims. \\
+Problem specification & Appendix C, BM-1--BM-5 & These define comparison problems and observables; except where a separate check is stated above, they are specifications rather than numerically validated reference solutions. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Research roadmap from the Q3 evidence gaps}
+\label{sec:q3-roadmap}
+
+The immediate work is to close evidence gaps before broadening comparative claims. Priority tasks are: complete the GN-I source-to-manuscript equation mapping; review GN-III printed p. 255 as an image because its distinction remains text-extraction-only; finish equation-to-manuscript mapping for the selected GN-II/GN-III/LS formulations; establish or explicitly leave open parameter admissibility and well-posedness for each exact model; derive model-specific bulk and interface energy fluxes before comparing generalized modal energy; and extend the benchmark set only where equations, data, normalization, and expected observables can be specified. For MGT, MDD, fractional, spatially nonlocal, gradient, and coupled multiphysics models, tie any extension to the exact operator or constitutive law and boundary conditions; do not infer a universal mode count or flux from the family name. These are work items, not claims that the missing results have been established.
+
+
 \subsection{Coupled-field modeling in emerging materials}
-\label{sec:16.1}
+\label{sec:coupled-field-modeling}
 
 \subsubsection{Background}
 
@@ -42,7 +97,7 @@ Next-generation sensors, actuators, energy harvesters, and quantum devices.
 Lack of experimental data for emerging materials; computational complexity of coupled-field models.
 
 \subsection{Mathematically consistent generalized transport}
-\label{sec:16.2}
+\label{sec:consistent-transport}
 
 \subsubsection{Background}
 
@@ -77,7 +132,7 @@ Predictive thermal management, thermal wave devices, high-frequency thermoelasti
 Mathematical complexity of higher-order and integro-differential equations.
 
 \subsection{Multiscale wave phenomena}
-\label{sec:16.3}
+\label{sec:multiscale-waves}
 
 \subsubsection{Background}
 
@@ -112,7 +167,7 @@ Nanodevice design, nanomaterial characterization, quantum materials.
 Computational cost of nonlocal models; lack of experimental validation at nanoscale.
 
 \subsection{Nonlocal and hereditary continuum interactions}
-\label{sec:16.4}
+\label{sec:nonlocal-hereditary}
 
 \subsubsection{Background}
 
@@ -147,7 +202,7 @@ Materials with complex microstructure and history-dependent response.
 Mathematical complexity of combined spatial-temporal nonlocality.
 
 \subsection{Advanced interface conditions}
-\label{sec:16.5}
+\label{sec:advanced-interfaces}
 
 \subsubsection{Background}
 
@@ -182,7 +237,7 @@ NDE accuracy, energy harvesting efficiency, thermal interface design.
 Nonlocal interface conditions not established; energy flux uncertainty at interfaces.
 
 \subsection{Multiphysics mode conversion}
-\label{sec:16.6}
+\label{sec:multiphysics-mode-conversion}
 
 \subsubsection{Background}
 
@@ -217,7 +272,7 @@ NDE, sensing, energy harvesting, acoustic devices.
 Complex mode normalization; uncertain energy flux formulations.
 
 \subsection{Reproducible numerical benchmarks}
-\label{sec:16.7}
+\label{sec:reproducible-benchmarks}
 
 \subsubsection{Background}
 
@@ -252,7 +307,7 @@ Software validation, method comparison, reproducibility.
 Lack of closed-form solutions for generalized theories; computational cost.
 
 \subsection{Experimental validation}
-\label{sec:16.8}
+\label{sec:experimental-validation}
 
 \subsubsection{Background}
 
@@ -287,7 +342,7 @@ Practical adoption of generalized theories in engineering applications.
 Experimental measurement of thermal waves is challenging; direct energy flux measurement is difficult.
 
 \subsection{Inverse material characterization}
-\label{sec:16.9}
+\label{sec:inverse-characterization}
 
 \subsubsection{Background}
 
@@ -324,12 +379,12 @@ Ill-posedness of inverse problems; non-uniqueness of parameter identification.
 The provisional relationship schematic appears once as Figure~\ref{fig:theory_relationships} in Section 1.
 
 \subsection{Sequencing the programme}
-\label{sec:16.11}
+\label{sec:programme-sequencing}
 
 The directions below are complementary; their order and priority depend on the research question and available methods.
 
 \subsection{Future directions summary table}
-\label{sec:16.10}
+\label{sec:future-summary}
 
 \begin{table}[htbp]
 \centering
