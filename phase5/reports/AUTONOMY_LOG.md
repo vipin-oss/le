@@ -35,3 +35,15 @@
 8. CI run `40374662081` passed: 130 pages, zero undefined refs, zero strict tag/privacy matches, zero near-overfull boxes.
 9. Fast-forwarded output commit `511b754`; visually inspected p. 34 and checked extracted Section 12 text; CI reported no overfull boxes.
 10. The Tzou subset is complete; other Section 4 sources remain open. Continue targeted Section 4 source checks before advancing to Section 5.
+
+## 2026-10-27 (IST) — WP2 Section 5 targeted pass
+1. Fast-forwarded the local session branch to remote `8b99e39`; confirmed the supplied worktree matched all tracked files except the five Section 5 edits, which were preserved.
+2. Freshly read Biot (1956), printed pp. 241–242; Eq. (2.2) uses a negative temperature-increment stress term, while Eqs. (3.3)–(3.4) give the conductivity heat equation.
+3. Freshly checked Mindlin (1974), pp. 625–626; the stated 3-D thermopiezoelectric balances, Fourier flux law, and electric-Gibbs constitutive equations support the baseline paragraph.
+4. Checked Barak et al. (2023), p. 3; narrowed the table feature to the paper’s piezothermal-moduli and pyroelectric-constant nomenclature.
+5. Checked Kumar et al. (2023), pp. 1 and 17; corrected the model family to dual-porous thermoelastic and kept the unity sum approximate, not exact.
+6. Removed the unverified Gupta-specific interface claims; exact-source leads and bounded search limits are recorded in `MISSING_SOURCES.csv`.
+7. Promoted OCL-195, -404, -405, and -207; removed OCL-205 and -206 from active text. Ledger is 445 rows (A=20, B=129, C=296); OCL-405 and -207 carry `CONTRADICTION-FIXED`.
+8. Added targeted missing-source records for void, micropolar, and Gupta papers; did not inspect whole books or store private Drive identifiers or source PDFs.
+9. `audit_inventory.py`, CSV uniqueness/count checks, and `git diff --check` pass; only Section 5 manuscript content and its reports/ledger changed.
+10. No backup branch was created under the fixed-branch constraint; WP2 is not complete and no WP2 tag was made. Section 5 CI build and rendered-PDF review remain the next gate.

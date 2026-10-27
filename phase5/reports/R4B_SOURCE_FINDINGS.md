@@ -123,3 +123,27 @@ Ledger checkpoint: before this pass, 442 rows (A=10, B=138, C=294); after, 445 r
 **CONFIRMED-IN-SOURCE.** Equation (17) on the same printed page maps the pure-phonon case to `alpha = tau_R c^2/3`, `tau_T = 9 tau_N/5`, and `tau_q = tau_R`. The manuscript mapping matches those coefficients and is explicitly scoped to Tzou’s phonon approximation, not stated as a general DPL identity.
 
 **Disposition.** OCL-166–OCL-168 are now Class A with fresh source-page evidence. No discrepancy was found and no `CONTRADICTION-FIXED` row was required. Other Section 4 claims, including the distinct critical-case MGT result (OCL-046), remain outside this targeted pass. The missing-source register records the unlocated papers behind OCL-045, OCL-046, OCL-143–OCL-146, OCL-149, OCL-153–OCL-160, OCL-169–OCL-178; those claims were not upgraded by this Tzou check.
+
+## WP2 — Section 5 targeted source-backing pass (2026-10-27)
+
+### Mindlin (1974), *Equations of High Frequency Vibrations of Thermopiezoelectric Crystal Plates*
+
+**CONFIRMED-IN-SOURCE.** Printed p. 625, Section 2 explicitly presents the classical three-dimensional linear thermopiezoelectric system. Equation (1) gives the momentum, charge-divergence, and entropy-balance equations. Printed p. 626, Eqs. (2)–(5) give the Fourier heat-flux relation and constitutive derivatives of the electric Gibbs function. The manuscript’s baseline paragraph matches these equations and identifies them as the system preceding Mindlin’s plate reduction. The checked pages support this classical linear model only; no generalized lag law is attributed to Mindlin.
+
+### Biot (1956), *Thermoelasticity and Irreversible Thermodynamics*
+
+**CONFIRMED-IN-SOURCE, WITH WORDING NARROWED.** The paper identity and DOI are printed on the source’s front matter. Printed p. 241, Eq. (2.2) includes a negative temperature-increment term in the stress law. Printed p. 242, Eqs. (3.3)–(3.4) give the conductivity-based heat-conduction equation and its coupling to deformation. The checked pages do not state the vector law `q_i = -k T_,i` in that form. Accordingly, Table T3 now summarizes thermal-stress coupling and a conductivity-based heat equation, without asserting a specific heat-flux vector or sign convention. No discrepancy remains in the revised table wording.
+
+### Barak et al. (2023), *Behavior of higher-order MDD on energy ratios at the interface of thermoelastic and piezothermoelastic mediums*
+
+**CONFIRMED-IN-SOURCE, WITH TERMINOLOGY CORRECTED.** The first page prints the article identity and DOI. Printed p. 3 gives the coupled model equations and nomenclature: the paper calls its `eta`/`epsilon` terms piezothermal moduli and identifies `p_i` as pyroelectric constants. Table T3 now uses that source terminology rather than attributing a generic `e_{kij}` piezoelectric tensor to this example. The row remains illustrative and does not claim a universal constitutive law.
+
+### Kumar et al. (2023), *Energy ratio response at the interface of elastic and dual-porous thermoelastic half-spaces*
+
+**CONFIRMED-IN-SOURCE.** The first page identifies an elastic/dual-porous thermoelastic interface paper and prints its DOI. Printed p. 17 reports that the total energy-ratio sum approximates unity. The manuscript now names the correct model family and describes the value only as a reported numerical observation, not an exact identity or general conservation theorem.
+
+### Source availability and Section 5 dispositions
+
+Targeted DOI/title searches and member-name checks did not identify the original full texts for Eringen (1966), Tauchert–Claus–Ariman (1968), Nunziato–Cowin (1979/1983), Iesan (1986), Gupta et al. (2022), or Gupta et al. (2023). Search hits were later citing papers or bundles, not proof that the source is absent from uninspected material. The Iesan (2013) monograph was not read or inspected as a whole; its existence/uniqueness attribution remains unverified. These limits are recorded separately in `MISSING_SOURCES.csv`.
+
+OCL-195, OCL-404, OCL-405, and OCL-207 are Class A on fresh page evidence. OCL-405 and OCL-207 record `CONTRADICTION-FIXED` dispositions for source-terminology/model-family mismatches. Unsupported Gupta-specific statements OCL-205 and OCL-206 were removed from the active text and remain recorded as source leads for any future reinstatement. OCL-406–OCL-408 and other unrelated Section 5 claims remain open; this pass does not certify the whole section.
