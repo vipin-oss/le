@@ -4,9 +4,9 @@ This folder mixes current authoritative registers with dated, historical snapsho
 
 ## Current sources of truth
 
-- `OPEN_CLAIMS_LEDGER.csv` is the authority for current claims (477 rows: A=29, B=126, C=313, V=9). Class A is source-anchored; Class V is a reproducible symbolic/script derivation whose `resolved_by` field names the verification path; B/C remain open at their recorded scope.
+- `OPEN_CLAIMS_LEDGER.csv` is the authority for current claims (499 rows: A=34, B=132, C=315, V=18). Class A is source-anchored; Class V is a reproducible symbolic/script derivation whose `resolved_by` field names the verification path; B/C remain open at their recorded scope.
 - `R4A_DELETION_AUDIT.csv` is the authority for removed text (593 rows, zero `NONE` identifiers). It does not certify deleted claims or reconstruct missing work.
-- `build-status.md` is the current strict-build status. The latest manuscript validation recorded here is run `40456561663`: 130 pages, successful engineering gates; output commit `11a5aa5`.
+- `build-status.md` is the current strict-build status. The latest manuscript validation recorded here is run `40512329757`: 121 pages, successful engineering gates; output commit `b8f562b`.
 - `scientific-audit.md`, `equation-audit.csv`, and `figure-audit.csv` provide current context/registers, not blanket proof of scientific correctness or licensing.
 
 ## Reports and CSVs
@@ -48,7 +48,7 @@ This folder mixes current authoritative registers with dated, historical snapsho
 | [`figure-render-inspection.txt`](figure-render-inspection.txt) | Structural/render inspection notes for the generated vector figures. | CURRENT CONTEXT |
 | [`literature-evidence-matrix.csv`](literature-evidence-matrix.csv) | Inherited literature inventory/evidence matrix; not a claim-level certification or complete systematic search. | HISTORICAL INVENTORY |
 | [`missing-source-pdf-links.md`](missing-source-pdf-links.md) | Historical source-access notes; publisher PDFs/full-text are not stored here. | HISTORICAL |
-| [`OPEN_CLAIMS_LEDGER.csv`](OPEN_CLAIMS_LEDGER.csv) | Authoritative current open-claim register: 477 rows (A=29, B=126, C=313, V=9); a source lead is not proof, and Class V records script-checked derivations. | CURRENT — AUTHORITATIVE OPEN CLAIMS |
+| [`OPEN_CLAIMS_LEDGER.csv`](OPEN_CLAIMS_LEDGER.csv) | Authoritative current open-claim register: 499 rows (A=34, B=132, C=315, V=18); a source lead is not proof, and Class V records script-checked derivations. | CURRENT — AUTHORITATIVE OPEN CLAIMS |
 | [`SOURCE_LEDGER.csv`](SOURCE_LEDGER.csv) | Sanitized snapshot of the private source index; private location/partition fields and library file codes are omitted. The Kumar2017 identity correction is documented in `R4B_SOURCE_FINDINGS.md`. | CURRENT CONTEXT — SANITIZED COPY |
 | [`page-by-page-reconciliation.md`](page-by-page-reconciliation.md) | Earlier v1.0-to-v1.1 physical-page comparison (146-page build); now historical. | HISTORICAL |
 | [`page-count-reconciliation.md`](page-count-reconciliation.md) | Earlier page-count/source-size reconciliation (146-page build); now historical. | HISTORICAL |
@@ -76,6 +76,7 @@ This folder mixes current authoritative registers with dated, historical snapsho
 | [`MISSING_SOURCES.csv`](MISSING_SOURCES.csv) | References not located in the indexed material and safe next actions; absence is not inferred from uninspected archives. | CURRENT SOURCE-ACCESS REGISTER |
 | [`R4B_SOURCE_FINDINGS.md`](R4B_SOURCE_FINDINGS.md) | Targeted source findings, page/equation anchors, source-identity limits, and remaining open items for R4B-AUTO. | CURRENT SOURCE FINDINGS |
 | [`R4B_QUALITY_WORKPACKAGES.md`](R4B_QUALITY_WORKPACKAGES.md) | Ordered Q1–Q5 quality-package scope, acceptance checks, and final-report requirements. | CURRENT WORK PLAN |
+| [`Q5_FIGURE11_WORKFLOW_AUDIT.md`](Q5_FIGURE11_WORKFLOW_AUDIT.md) | Figure 11/F12 connector correction, geometry check, rendered-page proof, and remaining Q5 scope. | CURRENT PACKAGE AUDIT; Q5 STILL OPEN |
 | [`reviewer-simulations.md`](reviewer-simulations.md) | Synthetic reviewer simulations; not external peer review. | HISTORICAL / SIMULATED |
 | [`scientific-audit.md`](scientific-audit.md) | Scientific audit narrative documenting checked derivations, limitations, and open questions; not a complete claim verification. | CURRENT CONTEXT |
 | [`V-B3d-cross-term-check.md`](V-B3d-cross-term-check.md) | Focused derivation/check note for a B3d cross-term. | CURRENT TECHNICAL NOTE |
