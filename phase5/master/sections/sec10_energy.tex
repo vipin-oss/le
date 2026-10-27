@@ -83,26 +83,26 @@ For a coupled piezothermoelastic model, the mechanical, electrical, and thermal 
 
 A family-specific energy balance requires the free energy, flux variables, boundary powers, dissipation terms, and constitutive equations of the selected model.
 
-\subsection{Conservation identity: \texorpdfstring{$\sum R + \sum T + A_{\mathrm{int}} = 1$}{R + T + A int = 1}}
+\subsection{Remote-plane energy partition}
 \label{sec:10.5}
 
-For a specified interface model, complete modal energy accounting with a common normalization can be written as a total-field balance among the reflected, transmitted, and interface-residual terms:
+For passive regions with steady time-averaged powers, no source, no net energy accumulation, and no unlisted energy channel, the remote-plane balance is
 
 \begin{equation}
-\sum R + \sum T + A_{\mathrm{int}} = 1,
+R_{\mathrm{rem}} + T_{\mathrm{rem}} + A_{\mathrm{bulk},L} + A_{\mathrm{int}} + A_{\mathrm{bulk},R} = 1,
 \label{eq:10.11}
 \end{equation}
 
-where $A_{\mathrm{int}}=(J_{1,n}^{\mathrm{tot}}-J_{2,n}^{\mathrm{tot}})/J_{\mathrm{inc},n}$ is the interface-local residual under the total-field convention of Section~\ref{sec:9.7}; the incident-side and transmitted-side fluxes include all modal cross terms. Bulk dissipation in either half-space is a separate volume contribution and is not added to $A_{\mathrm{int}}$. For a lossless interface with no storage ($A_{\mathrm{int}}=0$),
+where $R_{\mathrm{rem}}=P_r/P_i$ and $T_{\mathrm{rem}}=P_t/P_i$ use positive incident/reflected/transmitted power magnitudes at explicitly stated remote reference planes. The normalized losses are $A_{\mathrm{bulk},L}=\mathcal{D}_L/P_i$, $A_{\mathrm{int}}=\mathcal{D}_{\Sigma}/P_i$, and $A_{\mathrm{bulk},R}=\mathcal{D}_R/P_i$, with the control-volume powers defined in Eq.~\eqref{eq:10.13}. This is distinct from the interface-plane bookkeeping identity in Section~\ref{sec:9.7}; when bulk attenuation separates the planes, $1-R_{\mathrm{rem}}-T_{\mathrm{rem}}$ includes both bulk losses and the local interface residual. Only when the bulk losses and interface residual vanish does the remote-plane balance reduce to
 
 \begin{equation}
-\sum R + \sum T = 1.
+R_{\mathrm{rem}} + T_{\mathrm{rem}} = 1.
 \label{eq:10.12}
 \end{equation}
 
 Kumar and Kansal report a model-specific interface energy-ratio balance with an interaction term in Eq. (80), supporting inclusion of cross terms rather than a universal identity \cite{KumarKansal2017}. Kumar et al. define ratios using average energy flux per incident-wave type; those definitions specify normalization but do not establish closure \cite{Kumar2024}. A related study describes its eight-model sum as approximately unity for specified imperfect-interface cases; this is model-specific evidence, not an identity \cite{Kumar2024a}.
 
-Equation~\eqref{eq:10.11} follows algebraically from the total-field definitions; that closure alone is not an independent physical conservation test. Its interpretation as a balance requires the theory-specific flux, complete power channels, the interface storage/power convention, and common definitions of the reported ratios. The lossless reduction additionally requires zero interface-local residual and no net interfacial storage. These conditions are not automatic. In the one-dimensional welded example below, the incident--reflected cross term cancels in the time-averaged normal flux; no zero-flux rule for general coupled or evanescent modes is inferred. Report whether each coefficient is an amplitude or a power ratio and state the flux weighting used.
+Equation~\eqref{eq:10.11} is the steady control-volume balance reproduced by the verification script; its application requires the stated theory-specific flux, complete power channels, interface storage/power convention, and common remote reference planes. It is not the interface-plane identity of Section~\ref{sec:9.7}. The lossless reduction additionally requires zero bulk loss, zero interface-local residual, and no net interfacial storage. These conditions are not automatic. In the one-dimensional welded example below, the incident--reflected cross term cancels in the time-averaged normal flux; no zero-flux rule for general coupled or evanescent modes is inferred. Report whether each coefficient is an amplitude or a power ratio and state the flux weighting used.
 
 \subsubsection{Separate interface residual from bulk absorption}
 
@@ -122,7 +122,7 @@ P_i=P_r+P_t+\mathcal{D}_L+\mathcal{D}_{\Sigma}+\mathcal{D}_R.
 \label{eq:10.14}
 \end{equation}
 
-Thus, with $R=P_r/P_i$ and $T=P_t/P_i$, the remote-plane residual $1-R-T$ already contains both bulk dissipation and local interface dissipation. By contrast, $A_{\mathrm{int}}=\mathcal{D}_{\Sigma}/P_i=(J_L-J_R)/P_i$ is local to the interface. Adding the bulk terms to $1-R-T$ a second time double-counts them; the split in Eqs.~\eqref{eq:10.13}--\eqref{eq:10.14} is checked symbolically in the accompanying verification script. The derivation assumes steady averaged powers, no storage in the bulk control volumes, and no unlisted energy channel; other theories require their complete energy flux and power terms.
+Thus, with $R_{\mathrm{rem}}=P_r/P_i$ and $T_{\mathrm{rem}}=P_t/P_i$, the remote-plane residual $1-R_{\mathrm{rem}}-T_{\mathrm{rem}}$ already contains both bulk dissipation and local interface dissipation. By contrast, $A_{\mathrm{int}}=\mathcal{D}_{\Sigma}/P_i=(J_L-J_R)/P_i$ is local to the interface. Adding the bulk terms to $1-R_{\mathrm{rem}}-T_{\mathrm{rem}}$ a second time double-counts them; the split in Eqs.~\eqref{eq:10.13}--\eqref{eq:10.14} is checked symbolically in the accompanying verification script. The derivation assumes steady averaged powers, no storage in the bulk control volumes, and no unlisted energy channel; other theories require their complete energy flux and power terms.
 
 \subsubsection{Worked one-dimensional welded-interface system}
 
@@ -143,7 +143,7 @@ Displacement and traction continuity, using $\hat\sigma_{xx}=\rho_m c_m^2\partia
 \label{eq:10.16}
 \end{equation}
 
-Its determinant is $-(Z_1+Z_2)$, so the stated positive-impedance case has a unique solution, with amplitude ratios $r=A_r/A_i=(Z_1-Z_2)/(Z_1+Z_2)$ and $t=A_t/A_i=2Z_1/(Z_1+Z_2)$. For the mechanical flux $\langle J_x\rangle=-\tfrac12\Re[\hat\sigma_{xx}\hat v_x^*]$, the incident and reflected power ratios are $R=|r|^2$ and $T=(Z_2/Z_1)|t|^2$. Direct substitution gives $R+T=1$ for this welded, lossless, non-attenuating example; this result is not asserted for an imperfect, dissipative, or generalized interface. The matrix dimensions, determinant, amplitudes, flux weighting, and partition identity are reproduced by \texttt{phase5/verification/verify\_interface\_energy.py}.
+Its determinant is $-(Z_1+Z_2)$, so the stated positive-impedance case has a unique solution, with amplitude ratios $r=A_r/A_i=(Z_1-Z_2)/(Z_1+Z_2)$ and $t=A_t/A_i=2Z_1/(Z_1+Z_2)$. For the mechanical flux $\langle J_x\rangle=-\tfrac12\Re[\hat\sigma_{xx}\hat v_x^*]$, the incident and reflected power ratios are $R=|r|^2$ and $T=(Z_2/Z_1)|t|^2$. These coincide with the remote-plane ratios because this welded example has lossless, non-attenuating half-spaces. Direct substitution gives $R+T=1$; this result is not asserted for an imperfect, dissipative, or generalized interface. The matrix dimensions, determinant, amplitudes, flux weighting, and partition identity are reproduced by \texttt{phase5/verification/verify\_interface\_energy.py}.
 
 \subsection{Dissipation mechanisms}
 \label{sec:10.6}

@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.1}
+\caption{Mode counts and scattering-matrix sizes for selected local interface benchmarks.}
+\label{tab:T6-mode-counts}
+\begin{tabularx}{\textwidth}{@{}p{2.7cm}p{2.45cm}p{3.15cm}p{1.45cm}X@{}}
+\toprule
+\textbf{Model / geometry} & \textbf{Scattered modal unknowns} & \textbf{Matching equations} & \textbf{Matrix size} & \textbf{Scope and limitation} \\
+\midrule
+1D longitudinal welded (Section 10) & One reflected and one transmitted amplitude & Displacement and normal traction continuity & $2\times2$ & Lossless longitudinal benchmark; the determinant and solution are checked in the Section 10 script. \\
+Plane-strain isotropic elastic, incident P & Reflected P/SV and transmitted P/SV amplitudes & $u_1,u_3,\sigma_{13},\sigma_{33}$ continuity & $4\times4$ & Local isotropic elastic sagittal system; generic distinct P and shear roots. \\
+Classical Fourier thermoelastic, plane strain & Three reflected and three transmitted amplitudes & $u_1,u_3,\sigma_{13},\sigma_{33},T,q_3$ continuity & $6\times6$ & Eqs.~\eqref{eq:4.1}--\eqref{eq:4.2}; one shear pair and two coupled thermo-compressional pairs for generic distinct roots. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\noindent\footnotesize{The counts are derived for these selected equations and idealized conditions only. A square dimension counts equations and unknowns; it does not establish matrix rank, uniqueness, radiation admissibility, or well-posedness. For LS, GL, GN, phase-lag, piezoelectric, nonlocal, and memory-dependent interfaces, derive the roots and matching conditions from the exact model before assigning a matrix size.}

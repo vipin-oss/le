@@ -9,7 +9,10 @@ interface theorem.
 """
 from __future__ import annotations
 
+from pathlib import Path
 import sympy as sp
+
+ROOT = Path(__file__).resolve().parents[1]
 
 # Unknown reflected/transmitted displacement amplitudes; incident amplitude is known.
 Z1, Z2, Ai = sp.symbols("Z1 Z2 Ai", positive=True, real=True)
@@ -54,6 +57,15 @@ D_left = I - R_far - J_left
 D_right = J_right - T_far
 closure = sp.simplify(R_far + T_far + A_interface + D_left + D_right - I)
 assert closure == 0
+R_remote = R_far / I
+T_remote = T_far / I
+A_bulk_left = D_left / I
+A_int = A_interface / I
+A_bulk_right = D_right / I
+remote_balance = sp.simplify(
+    R_remote + T_remote + A_bulk_left + A_int + A_bulk_right - 1
+)
+assert remote_balance == 0
 # The remote-plane residual already contains both bulk and interface losses.
 A_remote = I - R_far - T_far
 assert sp.simplify(A_remote - (D_left + A_interface + D_right)) == 0
@@ -63,16 +75,26 @@ assert sp.simplify(double_count_excess - D_left - D_right) == 0
 
 # The total-field interface identity is algebraic under its definitions.
 J_inc, J1_total, J2_total = sp.symbols("J_inc J1_total J2_total", nonzero=True, real=True)
-R_total = (J_inc - J1_total) / J_inc
-T_total = J2_total / J_inc
-A_total = (J1_total - J2_total) / J_inc
-assert sp.simplify(R_total + T_total + A_total - 1) == 0
+R_sigma = (J_inc - J1_total) / J_inc
+T_sigma = J2_total / J_inc
+A_sigma = (J1_total - J2_total) / J_inc
+assert sp.simplify(R_sigma + T_sigma + A_sigma - 1) == 0
+
+# Keep the manuscript's plane labels and remote-plane balance synchronized.
+section9 = (ROOT / "master/sections/sec09_interfaces.tex").read_text(encoding="utf-8")
+section10 = (ROOT / "master/sections/sec10_energy.tex").read_text(encoding="utf-8")
+assert r"R_{\Sigma}" in section9 and r"T_{\Sigma}" in section9
+assert "remote-plane reflectance and transmittance" in section9
+assert r"R_{\mathrm{rem}} + T_{\mathrm{rem}}" in section10
+assert r"A_{\mathrm{bulk},L}" in section10 and r"A_{\mathrm{bulk},R}" in section10
+assert "interface-plane bookkeeping identity" in section10
+assert r"R = \frac{J_{\mathrm{inc},n}" not in section9
 
 print("PASS: welded 1D interface gives a 2x2 system from two conditions/two amplitudes")
 print("PASS: det(M)=-(Z1+Z2); positive impedances give unique amplitudes")
 print(f"PASS: r={r}, t={t}; real-impedance power ratios satisfy R+T=1")
 print("PASS: same-medium harmonic incident/reflected cross term has zero mean normal flux")
 print("PASS: remote-plane loss equals bulk-left + interface + bulk-right losses")
-print("PASS: local interface residual and remote absorption are distinct; bulk loss is not added twice")
-print("PASS: R_total + T_total + A_interface is an identity under the stated total-field definitions")
+print("PASS: local interface-plane ratios R_sigma/T_sigma and remote-plane ratios remain distinct")
+print("PASS: R_sigma + T_sigma + A_sigma is an identity under the stated interface-plane definitions")
 print("Scope: 1D welded, lossless, positive-real-impedance example; not a generalized or multidimensional proof")

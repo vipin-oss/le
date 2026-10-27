@@ -143,33 +143,37 @@ A finite-mode interface formulation is often assembled as a square system, but m
 
 \input{tables/source/T6_interface_configurations}
 
+For matrix assembly, Table~\ref{tab:T6-mode-counts} gives three selected local benchmarks: the Section 10 one-dimensional longitudinal case, an isotropic plane-strain elastic P--SV case, and the displayed classical Fourier thermoelastic plane-strain system. For the last case, the sagittal characteristic determinant factors into one shear pair and two coupled thermo-compressional pairs for generic distinct roots, giving three outgoing modes per side. With one incident mode, the six unknown reflected/transmitted amplitudes are matched by two displacement, two traction, temperature, and normal heat-flux conditions. These counts are model-specific. A square dimension does not by itself prove rank or uniqueness; the determinant and radiation selection still need checking for each parameter set.
+
+\input{tables/source/T6_mode_counts}
+
 \subsection{Energy ratios at interfaces}
 \label{sec:9.7}
 
-The energy reflection coefficient $R$, transmission coefficient $T$, and interface-local residual $A_{\mathrm{int}}$ are defined from total-field normal fluxes as:
+The interface-plane ratios $R_{\Sigma}$ and $T_{\Sigma}$ and the interface-local residual $A_{\mathrm{int}}$ are defined from total-field normal fluxes as:
 
 \begin{equation}
-R = \frac{J_{\mathrm{inc},n}-J_{1,n}^{\mathrm{tot}}}{J_{\mathrm{inc},n}},
+R_{\Sigma} = \frac{J_{\mathrm{inc},n}-J_{1,n}^{\mathrm{tot}}}{J_{\mathrm{inc},n}},
 \qquad
-T = \frac{J_{2,n}^{\mathrm{tot}}}{J_{\mathrm{inc},n}},
+T_{\Sigma} = \frac{J_{2,n}^{\mathrm{tot}}}{J_{\mathrm{inc},n}},
 \qquad
 A_{\mathrm{int}} = \frac{J_{1,n}^{\mathrm{tot}}-J_{2,n}^{\mathrm{tot}}}{J_{\mathrm{inc},n}},
 \label{eq:9.10}
 \end{equation}
 
-where $J_{\mathrm{inc},n}>0$ is the incident normal flux, $J_{1,n}^{\mathrm{tot}}$ is the normal flux of the complete incident-plus-reflected field evaluated at the incident-side interface, and $J_{2,n}^{\mathrm{tot}}$ is the complete transmitted-side flux there; all are time-averaged with a common outward normal. Cross terms are included. $A_{\mathrm{int}}$ is the interface-local residual, not bulk attenuation.
+Here $J_{\mathrm{inc},n}>0$ is the incident normal flux evaluated at the interface plane; $J_{1,n}^{\mathrm{tot}}$ is the normal flux of the complete incident-plus-reflected field at the incident-side interface, and $J_{2,n}^{\mathrm{tot}}$ is the complete transmitted-side flux there. All are time-averaged with a common normal and include cross terms. $R_{\Sigma}$ and $T_{\Sigma}$ are interface-plane bookkeeping ratios, not remote-plane reflectance and transmittance when bulk attenuation separates the reference planes from the interface; see Section~\ref{sec:10.5}. $A_{\mathrm{int}}$ is the interface-local residual, not bulk attenuation.
 
 For a passive interface with no interfacial storage or dissipation ($A_{\mathrm{int}}=0$), total-field accounting gives:
 
 \begin{equation}
-\sum R + \sum T = 1.
+\sum R_{\Sigma} + \sum T_{\Sigma} = 1.
 \label{eq:9.11}
 \end{equation}
 
 With interfacial dissipation or storage represented by a nonzero local residual:
 
 \begin{equation}
-\sum R + \sum T + A_{\mathrm{int}} = 1.
+\sum R_{\Sigma} + \sum T_{\Sigma} + A_{\mathrm{int}} = 1.
 \label{eq:9.12}
 \end{equation}
 
@@ -177,11 +181,11 @@ The identity \eqref{eq:9.12} is the interface balance when the theory-specific f
 
 For passive perfect contact with no interfacial storage or dissipation, continuity of total-field flux gives zero interface-local residual. Mode-diagonal outgoing fluxes need not satisfy this identity in attenuating media: incident--reflected and inter-mode cross terms can be nonzero. Bulk dissipation is a volume integral and must be reported separately; adding it to an interface residual would double-count energy loss.
 
-A concrete V-B3d coupled Biot case illustrates the distinction (steel-like/aluminium-like half-spaces, 1-D normal incidence, perfect contact, $f=4.46\times10^{11}$ Hz; arithmetic test data, not a materials claim). The reproduced total-field values are $R_{\mathrm{flux}}=0.212026$, $T=0.787974$, and $A_{\mathrm{flux}}=2.2\times10^{-16}$. The reflected-sum and diagonal-only values are $R_{\mathrm{ref}}=0.211074$ and $R_{\mathrm{mode}}=0.211592$, giving $R_{\mathrm{ref}}+T-1=-9.5\times10^{-4}$ and $R_{\mathrm{mode}}+T-1=-4.34\times10^{-4}$. Independent half-space dissipation checks close to unity for the computed reflected and transmitted powers. Thus total-field closure is a definition-level bookkeeping identity, not an independent validation; dropping cross terms changes the reported ratios. Reproduction details and the read-only test source commit are recorded in \texttt{reports/V-B3d-cross-term-check.md}.
+A concrete V-B3d coupled Biot case illustrates the distinction (steel-like/aluminium-like half-spaces, 1-D normal incidence, perfect contact, $f=4.46\times10^{11}$ Hz; arithmetic test data, not a materials claim). The reproduced total-field values are $R_{\mathrm{flux}}=0.212026$, $T_{\mathrm{flux}}=0.787974$, and $A_{\mathrm{flux}}=2.2\times10^{-16}$. The reflected-sum and diagonal-only values are $R_{\mathrm{ref}}=0.211074$ and $R_{\mathrm{mode}}=0.211592$, giving $R_{\mathrm{ref}}+T_{\mathrm{flux}}-1=-9.5\times10^{-4}$ and $R_{\mathrm{mode}}+T_{\mathrm{flux}}-1=-4.34\times10^{-4}$. Independent half-space dissipation checks close to unity for the computed reflected and transmitted powers. Thus total-field closure is a definition-level bookkeeping identity, not an independent validation; dropping cross terms changes the reported ratios. Reproduction details and the read-only test source commit are recorded in \texttt{reports/V-B3d-cross-term-check.md}.
 
 \subsubsection{What the interface partition reveals}
 
-The interface ratios defined above are model-dependent observables. Their interpretation requires the stated constitutive flux and boundary conditions; the closure identity alone does not distinguish two theories that predict the same total-field flux balance. Comparisons of reflected and transmitted fractions require a common normalization and source-specific modal conventions.
+The interface-plane ratios defined above are model-dependent observables. Their interpretation requires the stated constitutive flux and boundary conditions; the closure identity alone does not distinguish two theories that predict the same total-field flux balance. Comparisons of reflected and transmitted fractions require a common normalization and source-specific modal conventions.
 
 
 

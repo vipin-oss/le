@@ -271,6 +271,9 @@ jobs:
       - name: Verify interface energy partition and matrix dimensions
         run: python phase5/verification/verify_interface_energy.py
 
+      - name: Verify selected interface mode counts and matrix sizes
+        run: python phase5/verification/verify_interface_mode_counts.py
+
       - name: Verify unified-framework equation reductions
         run: python phase5/verification/verify_unified_reductions.py
 
