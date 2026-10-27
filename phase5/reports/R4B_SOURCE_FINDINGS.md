@@ -233,3 +233,17 @@ Other source-specific examples retained in the Section 9 summary remain Class B 
 ### Section 9 disposition
 
 OCL-291 records the removed TPL/interface energy-bound attribution as `CONTRADICTION-FIXED`, but remains Class C because the original paper was not located and only the bibliographic title/DOI was checked. OCL-458–OCL-464 record internal equation/notation corrections and narrowed universal claims; T6 OCL-429–OCL-433 now reflect the current table rather than the deleted stronger rows. No Class A promotion was made. The ledger now has 464 rows (A=26, B=126, C=312), and `MISSING_SOURCES.csv` has 22 bounded records.
+
+## WP2 — Section 10 energy-partition and interface-derivation pass (2026-10-27)
+
+### Source access and disposition
+
+A targeted Drive search by the Ivanov–Savova (1991) title and DOI `10.1080/01495739108927085` found bibliographic metadata but did not identify a copy of the article in the indexed material inspected. OCL-078 therefore remains Class C; the detailed surface-wave flux direction/depth-decay claim was removed from active Section 10 and recorded in `MISSING_SOURCES.csv`. This bounded search does not establish absence from uninspected archives. The unsupported general zero-normal-flux statement for a single evanescent partial wave was also removed; no generic evanescent-mode result is now asserted.
+
+### Reproducible derivation
+
+`phase5/verification/verify_interface_energy.py` symbolically derives the two-amplitude/two-condition matrix for normal-incidence longitudinal waves at a welded one-dimensional interface, checks its determinant and positive-impedance uniqueness, solves the amplitude ratios, and verifies the real-impedance power partition. The script also checks the time-averaged incident/reflected cross-term cancellation in that one-dimensional example, the definition-level total-field identity, and the steady control-volume split between bulk-left, interface-local, and bulk-right dissipation. It shows algebraically why a remote-plane absorption residual already includes the bulk losses and why appending those same bulk terms again double-counts them. The benchmark is restricted to the stated one-dimensional lossless welded model; it does not establish a generalized-multiphysics or multidimensional interface law.
+
+### Section 10 disposition
+
+OCL-465–OCL-468 are Class V and point to the verification script; OCL-469 records the withdrawn evanescent-mode assertion. The Section 10 ledger additions bring the register to 469 rows (A=26, B=126, C=313, V=4). The missing-source register now has 23 bounded records. No generalized-family flux or dissipation identity was promoted by this pass.

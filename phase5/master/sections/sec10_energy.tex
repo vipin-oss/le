@@ -47,7 +47,7 @@ where $\bar q_i$ is the separately evaluated mean heat flux (zero for a purely o
 
 A point worth keeping in view is that the classical flux contains \emph{no} term associated with the internal variables that generalized theories introduce. The entire difficulty of Section~\ref{sec:10.4} follows from that absence.
 
-For the classical isotropic Rayleigh-type surface-wave problem, Ivanov and Savova find that the kinetic-plus-internal energy-flux vector is not parallel to the surface; its direction varies with depth, and its magnitude decays with depth and exponentially along the line of intersection of constant-phase planes \cite{IvanovSavova1991}.
+
 
 
 
@@ -102,7 +102,48 @@ where $A_{\mathrm{int}}=(J_{1,n}^{\mathrm{tot}}-J_{2,n}^{\mathrm{tot}})/J_{\math
 
 Kumar and Kansal report a model-specific interface energy-ratio balance with an interaction term in Eq. (80), supporting inclusion of cross terms rather than a universal identity \cite{Kumar2017}. Kumar et al. define ratios using average energy flux per incident-wave type; those definitions specify normalization but do not establish closure \cite{Kumar2024}. A related study describes its eight-model sum as approximately unity for specified imperfect-interface cases; this is model-specific evidence, not an identity \cite{Kumar2024a}.
 
-This identity is conditional on the theory-specific flux, a passive interface, complete total-field modal accounting (including cross terms), and a common normalization. The lossless reduction additionally requires zero interface-local residual and no interfacial storage. These conditions are not automatic. For a single lossless, purely evanescent partial wave, the time-averaged normal flux is zero under the usual real-coefficient assumptions. Cross terms between partial waves can contribute to the total field flux; attenuating modes in dissipative media require separate treatment. Modal accounting must be performed on the complete field. The fourth is the most frequently overlooked: the notion of the energy of a complex mode depends on the normalisation adopted for the modal amplitude, and two groups using different normalisations can report energy ratios that differ by a constant factor while describing the same physics.
+Equation~\eqref{eq:10.11} follows algebraically from the total-field definitions; that closure alone is not an independent physical conservation test. Its interpretation as a balance requires the theory-specific flux, complete power channels, the interface storage/power convention, and common definitions of the reported ratios. The lossless reduction additionally requires zero interface-local residual and no net interfacial storage. These conditions are not automatic. In the one-dimensional welded example below, the incident--reflected cross term cancels in the time-averaged normal flux; no zero-flux rule for general coupled or evanescent modes is inferred. Report whether each coefficient is an amplitude or a power ratio and state the flux weighting used.
+
+\subsubsection{Separate interface residual from bulk absorption}
+
+Consider a steady time-averaged one-dimensional control volume with positive normal power-flux magnitudes $P_i$, $P_r$, and $P_t$, all per unit area, at remote incident, reflected, and transmitted reference planes. Let $J_L$ and $J_R$ be the net total-field fluxes on the left and right faces of the interface, both oriented in the positive $x$ direction. For passive, source-free regions with no bulk or interfacial mean energy accumulation, the bulk and interfacial dissipated powers per unit area are
+
+\begin{equation}
+\mathcal{D}_L=P_i-P_r-J_L,\qquad
+\mathcal{D}_{\Sigma}=J_L-J_R,\qquad
+\mathcal{D}_R=J_R-P_t.
+\label{eq:10.13}
+\end{equation}
+
+Summing the three control-volume balances gives
+
+\begin{equation}
+P_i=P_r+P_t+\mathcal{D}_L+\mathcal{D}_{\Sigma}+\mathcal{D}_R.
+\label{eq:10.14}
+\end{equation}
+
+Thus, with $R=P_r/P_i$ and $T=P_t/P_i$, the remote-plane residual $1-R-T$ already contains both bulk dissipation and local interface dissipation. By contrast, $A_{\mathrm{int}}=\mathcal{D}_{\Sigma}/P_i=(J_L-J_R)/P_i$ is local to the interface. Adding the bulk terms to $1-R-T$ a second time double-counts them; the split in Eqs.~\eqref{eq:10.13}--\eqref{eq:10.14} is checked symbolically in the accompanying verification script. The derivation assumes steady averaged powers, no storage in the bulk control volumes, and no unlisted energy channel; other theories require their complete energy flux and power terms.
+
+\subsubsection{Worked one-dimensional welded-interface system}
+
+For a normal-incidence longitudinal wave at $x=0$ in two lossless one-dimensional bars, let $c_m$ be each bar's longitudinal wave speed and take real positive impedances $Z_m=\rho_m c_m$ and wave numbers $k_m=\omega/c_m$. Under the $e^{-i\omega t}$ convention, the displacement amplitudes are
+
+\begin{equation}
+\hat u_1=A_i e^{ik_1x}+A_r e^{-ik_1x},\qquad
+\hat u_2=A_t e^{ik_2x}.
+\label{eq:10.15}
+\end{equation}
+
+Displacement and traction continuity, using $\hat\sigma_{xx}=\rho_m c_m^2\partial_x\hat u_m$, give $A_i+A_r=A_t$ and $Z_1(A_i-A_r)=Z_2A_t$. With $A_r$ and $A_t$ as the two unknown amplitudes, these are two scalar conditions and yield the $2\times2$ system
+
+\begin{equation}
+\begin{bmatrix}1&-1\\-Z_1&-Z_2\end{bmatrix}
+\begin{bmatrix}A_r\\A_t\end{bmatrix}
+=-A_i\begin{bmatrix}1\\Z_1\end{bmatrix}.
+\label{eq:10.16}
+\end{equation}
+
+Its determinant is $-(Z_1+Z_2)$, so the stated positive-impedance case has a unique solution, with amplitude ratios $r=A_r/A_i=(Z_1-Z_2)/(Z_1+Z_2)$ and $t=A_t/A_i=2Z_1/(Z_1+Z_2)$. For the mechanical flux $\langle J_x\rangle=-\tfrac12\Re[\hat\sigma_{xx}\hat v_x^*]$, the incident and reflected power ratios are $R=|r|^2$ and $T=(Z_2/Z_1)|t|^2$. Direct substitution gives $R+T=1$ for this welded, lossless, non-attenuating example; this result is not asserted for an imperfect, dissipative, or generalized interface. The matrix dimensions, determinant, amplitudes, flux weighting, and partition identity are reproduced by \texttt{phase5/verification/verify\_interface\_energy.py}.
 
 \subsection{Dissipation mechanisms}
 \label{sec:10.6}

@@ -268,6 +268,12 @@ jobs:
       - name: Symbolically verify classical flux identity
         run: python phase5/scripts/verify_classical_flux.py
 
+      - name: Verify interface energy partition and matrix dimensions
+        run: python phase5/verification/verify_interface_energy.py
+
+      - name: Validate A/V claim-ledger provenance
+        run: python phase5/scripts/validate_claim_ledger.py
+
       - name: Install vector-render dependencies
         uses: actions/setup-node@v4
         with:
