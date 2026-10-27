@@ -21,12 +21,12 @@ The interface normal is $\bm{n} = (0, 0, 1)$. All field variables vary harmonica
 \subsection{Wave decomposition: incident, reflected, transmitted modes}
 \label{sec:9.2}
 
-In each medium, the general solution is a superposition of partial waves. For an isotropic elastic medium, there are two wave types: longitudinal (P) and shear (SV). For thermoelastic media, there is an additional thermal (T) wave. For piezothermoelastic media, there are additional coupled modes (qP, qS, qT, electromagnetic).
+In each medium, a finite-mode solution is assembled from partial waves selected for the model and geometry. In the sagittal plane of an isotropic elastic medium, the in-plane polarizations are P and SV; an out-of-plane SH polarization is a separate possibility. Thermoelastic and piezothermoelastic formulations may couple additional thermal and electrical field variables. The admissible modes and their labels depend on the constitutive equations and electric-field closure.
 
 The displacement field in medium $m$ ($m = 1, 2$) is decomposed as:
 
 \begin{equation}
-u_i^{(m)} = \sum_n A_n^{(m)} \hat{u}_i^{(m,n)} e^{i(q_n^{(m)}x_3 - \omega t)},
+u_i^{(m)} = \sum_n A_n^{(m)} \hat{u}_i^{(m,n)} e^{i(kx_1+q_n^{(m)}x_3-\omega t)},
 \label{eq:9.2}
 \end{equation}
 
@@ -37,16 +37,16 @@ The incident wave comes from medium 1 with known amplitude. Reflected waves prop
 \subsection{Interface conditions}
 \label{sec:9.3}
 
-At a perfectly bonded interface between two media, the following conditions must hold:
+For an ideal, perfectly bonded interface with no surface force, the mechanical conditions are displacement and traction continuity. Thermal and electrical conditions below likewise assume the stated perfect-contact and no-surface-source idealizations.
 
 \subsubsection{Mechanical conditions}
 
 \begin{equation}
-u_i^{(1)} = u_i^{(2)}, \qquad \sigma_{j3}^{(1)} = \sigma_{j3}^{(2)} \quad \text{at } x_3 = 0.
+u_i^{(1)} = u_i^{(2)}, \qquad \sigma_{i3}^{(1)} = \sigma_{i3}^{(2)} \quad \text{at } x_3 = 0.
 \label{eq:9.3}
 \end{equation}
 
-The first condition enforces displacement continuity (no slip or separation); the second enforces traction equilibrium (Newton's third law at the interface).
+The first condition enforces displacement continuity; the second expresses traction continuity in the absence of an interfacial force.
 
 \subsubsection{Thermal conditions}
 
@@ -57,7 +57,7 @@ T^{(1)} = T^{(2)}, \qquad q_3^{(1)} = q_3^{(2)} \quad \text{at } x_3 = 0.
 \label{eq:9.4}
 \end{equation}
 
-Temperature continuity and heat flux continuity ensure perfect thermal contact.
+These conditions represent perfect thermal contact with no interfacial heat source or thermal resistance; other interface models require different conditions.
 
 \subsubsection{Electrical conditions (piezoelectric media)}
 
@@ -68,18 +68,18 @@ For piezothermoelastic media:
 \label{eq:9.5}
 \end{equation}
 
-Electric potential continuity and electric displacement continuity ensure perfect electrical contact. For an insulated interface, $D_3 = 0$ replaces the second condition.
+For the stated idealization, potential is continuous and normal electric displacement is continuous when no free surface charge is present; a nonzero free surface charge changes the displacement jump. At an insulated interface, the normal displacement condition is instead $D_3=0$.
 
 \subsubsection{Imperfect bonding}
 
-For imperfectly bonded interfaces, spring-type conditions relate displacement jumps to interfacial tractions:
+One linear spring-interface model relates traction to the displacement jump:
 
 \begin{equation}
-u_i^{(2)} - u_i^{(1)} = K_i^u t_i, \qquad \sigma_{j3}^{(1)}n_j = \sigma_{j3}^{(2)}n_j = t_i,
+t_i = K_{ij}^u\bigl(u_j^{(2)} - u_j^{(1)}\bigr), \qquad t_i = \sigma_{ij}^{(1)}n_j = \sigma_{ij}^{(2)}n_j \quad \text{at } x_3=0,
 \label{eq:9.6}
 \end{equation}
 
-where $K_i^u$ is the interfacial stiffness tensor and $t_i$ is the interfacial traction. In the limit $K_i^u \to \infty$, perfect bonding is recovered; in the limit $K_i^u \to 0$, a traction-free (slip) interface is recovered.
+where $K_{ij}^u$ is an interfacial stiffness tensor and $\bm{n}$ is the common interface normal. Under this particular law, the large-stiffness limit enforces displacement continuity, while vanishing stiffness gives zero traction; other imperfect-interface models may use different constitutive relations.
 
 \subsection{Scattering matrix formulation}
 \label{sec:9.4}
@@ -112,14 +112,14 @@ The solution exists and is unique when $\det(\Delta) \neq 0$.
 \subsection{Secular equation and mode classification}
 \label{sec:9.5}
 
-For a transversely isotropic 6mm piezoelectric medium in the sagittal plane containing the c-axis, with the quasi-static electric closure and the stated P--SV--T--$\phi$ plus SH field set, the secular polynomial determines the allowed normal wave numbers. After removing the trivial $q^2=0$ factor associated with the quasi-static Poisson row, the retained polynomial is degree eight. This scope does not imply a piezo-stiffened SH branch in this plane.
+For a selected finite-field model, substituting the modal ansatz into the governing equations gives a homogeneous algebraic system $\bm{M}(q,\omega,k)\hat{\bm{a}}=\bm{0}$. Non-trivial amplitudes require the secular condition
 
 \begin{equation}
-G_1 q^8 + G_2 q^6 + G_3 q^4 + G_4 q^2 + G_5 = 0,
+\det \bm{M}(q,\omega,k)=0,
 \label{eq:9.9}
 \end{equation}
 
-which is degree eight in $q$ for this specified 6mm orientation and field set; other symmetries, orientations, and retained fields can change the degree. The roots are classified as:
+where $\bm{M}$ is assembled from that model's constitutive equations, orientation, and electric-field closure. Its form, polynomial order when polynomial, and admissible mode count are model-specific; no universal degree or mode set is asserted. The roots are classified as:
 
 \begin{itemize}
 \item \textbf{Propagating modes:} real $q$ --- waves that propagate without spatial attenuation,
@@ -132,7 +132,7 @@ Only outgoing modes (satisfying the radiation condition) are retained in the phy
 \subsection{Number of boundary conditions vs. unknown amplitudes}
 \label{sec:9.6}
 
-For a well-posed interface problem, the number of independent boundary conditions must equal the number of unknown amplitude coefficients. Table \ref{tab:T6-interfaces} summarizes interface condition configurations for different interface types.
+A finite-mode interface formulation is often assembled as a square system, but matching the number of independent conditions to the number of unknown amplitudes is not by itself a proof of well-posedness; rank and uniqueness must also be checked. Table \ref{tab:T6-interfaces} summarizes idealized condition configurations for several interface types.
 
 \begin{figure}[htbp]
 \centering
@@ -187,18 +187,18 @@ The interface ratios defined above are model-dependent observables. Their interp
 
 \subsubsection{The pattern and its limits}
 
-No universal claim that the conservation identity has been verified across generalized-media papers is made here. For the present total-field definitions, the local interface balance follows from flux continuity only when the specified interface has no storage or dissipation; mode-projected literature ratios require source-specific reconstruction and independent checking. A second limit is worth recording. All of the configurations above assume a perfectly bonded, flat interface between two homogeneous half-spaces with sharp material contrast. Real interfaces are graded over a thickness comparable with the microstructural length, and for nonlocal, memory-dependent and gradient theories the thickness of the interfacial layer is not negligible compared with the internal length of the material. Whether the sharp-interface result is the limit of a graded-interface result, and at what rate, is an open question that no configuration in the reviewed literature addresses.
+No universal claim that the conservation identity has been verified across generalized-media papers is made here. For the present total-field definitions, the local interface balance follows from flux continuity only when the specified interface has no storage or dissipation; mode-projected literature ratios require source-specific reconstruction and independent checking. The configurations discussed here idealize flat interfaces between homogeneous half-spaces. Whether, and at what rate, a sharp-interface solution approximates a graded transition in a selected nonlocal, memory-dependent, or gradient model is a model-specific open question; the identities above do not resolve it.
 
 \subsection{Interface conditions under memory and nonlocality}
 \label{sec:9.8}
 
-The interface conditions of Section~\ref{sec:9.3} assume that the constitutive variables are local functions of position. This assumption fails in two of the theory families treated here, and the failure has a common structure: the quantity that is matched across the interface is no longer a pointwise value.
+The local interface conditions of Section~\ref{sec:9.3} cannot be transferred automatically to every nonlocal or history-dependent constitutive law; the appropriate matching variables and data depend on the selected model.
 
-For a \emph{memory-dependent} medium, the flux at the interface is an integral over the recent past, and a naive condition of the form $q_3^{(1)} = q_3^{(2)}$ matches two functionals whose histories differ. The condition must be formulated for the effective flux or for the constitutive variables together with their history; either choice makes the interface problem depend on the selected memory model and its data.
+For a model whose constitutive flux is defined by a history integral, equality of instantaneous flux values alone may not specify the interface law or its history data. Any matching condition should be derived for the selected memory model and initial-history assumptions.
 
-For a \emph{nonlocal} medium, the stress at the interface is an average over a neighbourhood that straddles the interface, so that the traction transmitted across the interface is not a pointwise quantity at all; the correct interface problem is then a nonlocal boundary-value problem in which the interface condition couples the two half-spaces over the whole interfacial region. A local approximation that simply writes $t_i^{(1)} = t_i^{(2)}$ is consistent only to leading order in the ratio of the internal length to the wavelength.
+For an integral nonlocal model whose kernel crosses the interface, fields on both sides may enter the constitutive response near it. The interface law and any local approximation must be derived for the selected kernel, boundary treatment, and length scales; no universal order estimate is asserted here.
 
-Neither of these is merely a technical difficulty. Both concern the meaning of an interface in a theory that has no microscopic notion of a material boundary, and both are of the same character as the question of whether the constitutive variables of a nonlocal or memory-dependent theory can be continued across a material discontinuity at all. These are recorded as open questions in Section~\ref{sec:future}; they are the places where the extension of the classical framework to generalized media is least settled.
+These issues motivate open questions about how constitutive variables and history data are assigned across material discontinuities. The appropriate formulation remains model-specific.
 
 \subsection{Notation summary for Section 9}
 
@@ -216,13 +216,13 @@ $q_n^{(m)}$ & Vertical wave number & 1/m & \eqref{eq:9.2} \\
 $\Delta$ & System matrix & varies & \eqref{eq:9.7} \\
 $\bm{X}$ & Unknown amplitude vector & varies & \eqref{eq:9.7} \\
 $\bm{Q}$ & Known incident vector & varies & \eqref{eq:9.7} \\
-$R, T, A$ & Reflection, transmission, absorption coefficients & dimensionless & \eqref{eq:9.10} \\
-$K_i^u$ & Interfacial stiffness & varies & \eqref{eq:9.6} \\
+$R, T, A_{\mathrm{int}}$ & Reflection, transmission, and interface-local residual ratios & dimensionless & \eqref{eq:9.10} \\
+$K_{ij}^u$ & Interfacial stiffness tensor & varies & \eqref{eq:9.6} \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-The interface model uses an LS-type relaxation on the thermal-inertia and coupling terms \cite{Kumar2017}. A nonlocal interface example acts on stress while retaining a local GN-II heat law \cite{Sarkar2019}. A two-temperature porothermoelastic example uses a GN-II formulation \cite{Singh2020}. A higher-order fractional TPL model reports reductions to LS, DPL, and TPL at integer order one for its stated equations \cite{Aldandani2026}. A mixed nonlocal placement acts on stress, couple stress, inertia, and the LS flux law \cite{Kalkal2020}. A k*-type interface example reports reflection amplitudes at stress-free isothermal and insulated boundaries, rather than energy ratios \cite{Das2008}. A free-surface calculation reports a reflected ratio approaching unity numerically; this is not a symbolic conservation identity \cite{Singh2020b}. Another study describes its energy-ratio sum as approximately unity for its model, not as an exact identity \cite{Kumar2019}. A TPL interface study reports a reflected energy-ratio sum bounded above by unity for its stated model \cite{Singh2020c}. An interface study prints an energy matrix with diagonal ratios and off-diagonal interaction energies, then states a model-specific total balance \cite{Kumar2022}.
+A magneto-thermoelastic diffusion interface model uses LS-type relaxation terms in its coupled field equations \cite{Kumar2017}. A nonlocal thermoelastic example applies nonlocality to stress while retaining a local GN-II heat law \cite{Sarkar2019}. A two-temperature porothermoelastic example uses a GN-II formulation \cite{Singh2020}. A higher-order fractional model reports reductions among LS, DPL, and TPL forms at integer order one for its stated equations \cite{Aldandani2026}. A mixed nonlocal placement acts on stress, couple stress, inertia, and the LS flux law \cite{Kalkal2020}. A k*-type boundary-reflection study reports reflection amplitudes for stress-free isothermal and insulated boundaries, not energy ratios \cite{Das2008}. A free-surface calculation reports a reflected ratio approaching unity numerically; this is not a symbolic conservation identity \cite{Singh2020b}. Another study describes its energy-ratio sum as approximately unity for its model, not as an exact identity \cite{Kumar2019}. An unsaturated poro-thermoelastic interface study includes interaction energies in its model-specific energy balance \cite{Kumar2022}.
 
 \subsection{Open questions for Section 9}
 
