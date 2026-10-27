@@ -4,7 +4,7 @@
 
 ## Scope and structural check
 
-`Q3_THEORY_STATUS.csv` covers 14 requested families. Each row records an established state, a disputed/model-dependent state, an open question, the corresponding source/derivation anchor, and ledger IDs. `verify_q3_status_matrix.py` passed locally. It checks all family names and columns, existing ledger IDs, A/V provenance or a live script for established rows, and preservation of the main unresolved DPL/MDD/MGT/fractional/LS items. It explicitly does not adjudicate source conflicts.
+`Q3_THEORY_STATUS.csv` covers 14 requested families. Each row records an established state, a disputed/model-dependent state, a separate counterexample/ill-posedness status, an open question, the corresponding source/derivation anchor, and ledger IDs. The counterexample field separates source-anchored results from unverified B leads and from families not assessed for counterexamples; it does not imply well-posedness where no counterexample was reviewed. `verify_q3_status_matrix.py` checks all family names and columns, existing ledger IDs, A/V provenance or a live script for established rows, and preservation of the principal unresolved and counterexample statuses. It explicitly does not adjudicate source conflicts.
 
 ## Row-by-row evidence map reviewed
 
@@ -25,7 +25,7 @@
 | Positive-gradient models | OCL-478 (V), displayed one-dimensional dispersion/notation algebra | OCL-480 (V) marks higher-gradient boundary power outside the local scaffold; no source-family law is inferred |
 | Coupled multiphysics / piezothermoelastic | OCL-195/OCL-207 (A), Mindlin baseline and bounded Kumar numerical observation | OCL-300 (B), OCL-433 (C), and OCL-483 keep coupled interface flux, electrical jump, and common-closure claims open |
 
-The Q3 table now explicitly carries the selected-problem instability result as a counterexample to a universal DPL stability reading, the unclassified critical equality, and the unresolved DOI source conflict. It also distinguishes the Kumar article identity re-check from the earlier wrong-PDF concern: the DOI-matched *Phys. Scr.* p. 17 supports only its approximate numerical statement.
+The Q3 table now explicitly carries the selected-problem instability result as a counterexample to a universal DPL stability reading, the unclassified critical equality, and the unresolved DOI source conflict. OCL-175's MGT instability statement is separately labeled as a B-class lead pending source verification, not as an established counterexample; the remaining families state when this pass did not assess counterexamples. It also distinguishes the Kumar article identity re-check from the earlier wrong-PDF concern: the DOI-matched *Phys. Scr.* p. 17 supports only its approximate numerical statement.
 
 ## Build and audit checkpoint
 

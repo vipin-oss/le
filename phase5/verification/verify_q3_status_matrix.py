@@ -35,6 +35,7 @@ REQUIRED_COLUMNS = {
     "established_anchor",
     "established_ledger_rows",
     "disputed_or_variant_status",
+    "counterexample_or_ill_posedness_status",
     "disputed_anchor",
     "disputed_ledger_rows",
     "open_question",
@@ -92,6 +93,11 @@ for family, column, required in (
     assert required <= actual, f"{family}: unresolved issue missing from {column}"
 assert "unstable solutions" in by_family["Dual-phase-lag (DPL)"]["disputed_or_variant_status"]
 assert "equality is unclassified" in by_family["Dual-phase-lag (DPL)"]["disputed_or_variant_status"]
+dpl_counterexample = by_family["Dual-phase-lag (DPL)"]["counterexample_or_ill_posedness_status"]
+assert "one-dimensional problem" in dpl_counterexample and "not a universal ill-posedness result" in dpl_counterexample
+mgt_counterexample = by_family["Moore–Gibson–Thompson (MGT)"]["counterexample_or_ill_posedness_status"]
+assert "OCL-175" in mgt_counterexample and "pending source verification" in mgt_counterexample
+assert all(row["counterexample_or_ill_posedness_status"].strip() for row in rows)
 
 assert not re.search(r"drive\.google\.com|docs\.google\.com|open\?id=|drive/(?:file|folders)/[A-Za-z0-9_-]{25,}", content, re.I)
 print("PASS: Q3 matrix covers all 14 requested theory families with established, variant/dispute, and open fields")
