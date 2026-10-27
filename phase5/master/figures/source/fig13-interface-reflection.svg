@@ -44,7 +44,7 @@
 
   <!-- Interface normal -->
   <line x1="450" y1="70" x2="450" y2="440" class="normal"/>
-  <text x="455" y="65" class="label" font-size="10">Interface normal n̂</text>
+  <text x="455" y="95" class="label" font-size="10">Interface normal n̂</text>
 
   <!-- Incident ray (from top-left) -->
   <path d="M 150 80 L 450 260" class="ray-inc"/>
