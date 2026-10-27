@@ -277,6 +277,9 @@ jobs:
       - name: Verify unified-framework equation reductions
         run: python phase5/verification/verify_unified_reductions.py
 
+      - name: Verify Caputo and Riemann--Liouville definition consequences
+        run: python phase5/verification/verify_fractional_definitions.py
+
       - name: Verify GN-III source-equation coefficient mapping
         run: python phase5/verification/verify_gn3_source_mapping.py
 

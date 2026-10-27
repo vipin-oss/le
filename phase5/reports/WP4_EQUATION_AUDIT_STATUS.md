@@ -6,14 +6,14 @@
 
 The audit covers every `equation` and `equation*` display group in Sections 4–10. The new `EQUATION_AUDIT.csv` has 77 rows: Section 4 = 17, Section 5 = 16, Section 6 = 8, Section 7 = 4, Section 8 = 7, Section 9 = 12, and Section 10 = 13. `check_equation_audit_inventory.py` verifies that each current display group has exactly one row with matching source line and label. It is a coverage check only and does not validate formulas.
 
-Initial row dispositions:
+Current dispositions after the first fractional-definition check:
 
 | Status | Rows | Meaning at this checkpoint |
 | --- | ---: | --- |
 | `VERIFIED-SOURCE` | 1 | One equation has a targeted primary-source equation/page anchor. |
 | `VERIFIED-SYMBOLIC` | 17 | Existing or new scripts check the displayed algebra within the row's stated scope; source transcription is not implied unless separately anchored. |
-| `CONDITIONAL` | 52 | The equation is retained only under the assumptions and limits stated in its row; many still need an exact source anchor or equation-specific derivation. |
-| `OPEN` | 7 | Equation-level verification remains unperformed; the rows identify the required next action. |
+| `CONDITIONAL` | 54 | The equation is retained only under the assumptions and limits stated in its row; many still need an exact source anchor or equation-specific derivation. |
+| `OPEN` | 5 | Equation-level verification remains unperformed; the rows identify the required next action. |
 
 The status count is intentionally conservative. A `CONDITIONAL` or `OPEN` row is not a verified scientific claim. Each unverified display is linked to a section-specific Class C ledger row, and the row itself names the remaining source/derivation check.
 
@@ -25,7 +25,7 @@ The displayed `1/2 D_i E_i` expression is now explicitly restricted to the elect
 
 ## Reduction checks and negative tests
 
-`verify_unified_reductions.py` now tests both positive substitutions and negative alternatives for the displayed relations: LS-to-Fourier; first-order DPL-to-LS/Fourier (including the explicit rejection of `tau_q=0` as the LS limit); TPL-to-DPL; the candidate MGT-to-LS-type and MGT-to-Fourier reductions; the GN-III/GN-II derivative-level relation; selected Caputo integer endpoints; and the displayed nonlocal local limit. Negative tests retain the terms left behind when only one required parameter is removed, distinguish fractional order one-half from an ordinary derivative, and distinguish a finite-wavenumber nonlocal speed from its local value. These are symbolic checks of displayed equations, not source-transcription, admissibility, solution-convergence, stability, or family-wide equivalence proofs (OCL-470–OCL-473, OCL-509).
+`verify_unified_reductions.py` now tests both positive substitutions and negative alternatives for the displayed relations: LS-to-Fourier; first-order DPL-to-LS/Fourier (including the explicit rejection of `tau_q=0` as the LS limit); TPL-to-DPL; the candidate MGT-to-LS-type and MGT-to-Fourier reductions; the GN-III/GN-II derivative-level relation; selected Caputo integer endpoints; and the displayed nonlocal local limit. A separate script checks the Caputo and Riemann–Liouville integral definitions against beta-integral monomial actions for orders with `n=1,2,3`, and uses the constant at `alpha=1/2` as a negative test showing their initial-data behavior differs (OCL-511). Negative tests retain the terms left behind when only one required parameter is removed, distinguish fractional order one-half from an ordinary derivative, and distinguish a finite-wavenumber nonlocal speed from its local value. These are symbolic checks of displayed equations, not source-transcription, admissibility, solution-convergence, stability, or family-wide equivalence proofs (OCL-470–OCL-473, OCL-509).
 
 ## External independent check inspected
 
@@ -33,16 +33,16 @@ Fetched the read-only audit branch `arena/0be2770f-le` at `6e095abcaa674ee5d92d2
 
 ## Remaining work
 
-1. Audit all 52 conditional rows against exact source pages/equations or equation-specific scripts; explicitly record sign conventions, coefficient maps, domains, constitutive assumptions, and boundary/data restrictions.
-2. Resolve or conservatively hedge/remove the seven open displays: Eq. 4.2, 4.11, 4.12, 6.3, 6.4, 6.7, and 7.3.
+1. Audit all 54 conditional rows against exact source pages/equations or equation-specific scripts; explicitly record sign conventions, coefficient maps, domains, constitutive assumptions, and boundary/data restrictions.
+2. Resolve or conservatively hedge/remove the five open displays: Eq. 4.2, 4.11, 4.12, 6.7, and 7.3.
 3. Check all source-sensitive displayed equations for sign/index/notation conflicts, including thermal-flux signs, conductivity tensor versus scalar use, equations involving `kappa*` versus `kappa_ij`, interface-system mode counts, and the exact assumptions behind each matrix inverse or balance identity.
 4. For each reduction claimed in the manuscript, retain a positive check and a negative test for the most plausible incorrect substitution; keep source transcription separate from symbolic validity.
 5. After the Section 4–10 equation rows are resolved, re-run the inventory, ledger, build, privacy, and hostile-diff checks; then continue the ordered Q1, Q3, Q5, WP3 remainder, WP6, WP7, and WP8 work.
 
-Current equation-audit ledger total is 510 rows: A=48, B=123, C=317, V=22. The inventory checker establishes row coverage only; it does not close the remaining equation work.
+Current equation-audit ledger total is 511 rows: A=48, B=123, C=317, V=23. The inventory checker establishes row coverage only; it does not close the remaining equation work.
 
 ## Build and rendered self-audit checkpoint
 
 Content commit `85520cd0d2c3d520782dede20e44ba6c6ae5744c` passed LaTeX Build CI run `40543260698`. The strict build reports 122 PDF pages, undefined references/citations 0, forbidden privacy-token/internal-path/manuscript-tag counts 0, rendered figure PDFs 18, figure includes 16, deletion-audit `NONE` rows 0, and near-overfull boxes (>0.5 pt) 0. The workflow-published output commit `bc2a8679521ee3c5a8e4a56624dbdc3b4a9cb9ec` was fast-forwarded on the fixed branch and matched `git ls-remote`.
 
-The changed Section 5 equations and the revised reduction table were visually reviewed at final PDF size (PDF pages 43–44, 40, and 80; printed pages 42–43, 39, and 79). Ten V-ledger claims—OCL-480, OCL-498, OCL-470, OCL-465, OCL-466, OCL-467, OCL-468, OCL-484, OCL-500, and OCL-510—were spot-checked against rendered text. Ledger validation passed with 510 rows (A=48, B=123, C=317, V=22); the inventory checker and all relevant symbolic/source-map tests passed. These checks establish engineering/render consistency and bounded algebra only, not completion of the remaining source-by-source WP4 audit.
+The changed Section 5 equations and the revised reduction table were visually reviewed at final PDF size (PDF pages 43–44, 40, and 80; printed pages 42–43, 39, and 79). Ten V-ledger claims—OCL-480, OCL-498, OCL-470, OCL-465, OCL-466, OCL-467, OCL-468, OCL-484, OCL-500, and OCL-510—were spot-checked against rendered text. Ledger validation passed with 511 rows (A=48, B=123, C=317, V=23); the inventory checker and all relevant symbolic/source-map tests passed. These checks establish engineering/render consistency and bounded algebra only, not completion of the remaining source-by-source WP4 audit.
