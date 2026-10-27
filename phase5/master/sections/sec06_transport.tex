@@ -79,10 +79,10 @@ Here $a_\alpha$ is a model coefficient with dimensions consistent with the selec
 One common representation of linear temporal memory is a hereditary integral:
 
 \begin{equation}
-f(t) = \int_{-\infty}^{t} K(t-\theta)\,g(\theta)\,d\theta,
+f(t) = \int_{-\infty}^{t} K(t-t')\,g(t')\,dt',
 \label{eq:6.6}
 \end{equation}
-where $K(t-\theta)$ is a kernel in this schematic convolution. Some models impose fading-memory, positivity, monotonicity, or complete-monotonicity hypotheses, but the required conditions depend on the constitutive law and the chosen thermodynamic framework; none of these properties alone is asserted here as a universal admissibility criterion. For suitable completely monotone kernels, representation results by weighted exponentials may apply, but their hypotheses and implications must be checked for the kernel at hand. No equivalence with a discrete phase-lag hierarchy is claimed.
+where $K(t-t')$ is a kernel in this schematic convolution. Some models impose fading-memory, positivity, monotonicity, or complete-monotonicity hypotheses, but the required conditions depend on the constitutive law and the chosen thermodynamic framework; none of these properties alone is asserted here as a universal admissibility criterion. For suitable completely monotone kernels, representation results by weighted exponentials may apply, but their hypotheses and implications must be checked for the kernel at hand. No equivalence with a discrete phase-lag hierarchy is claimed.
 
 \subsection{Memory-dependent derivative (MDD): operator and kernel}
 \label{sec:6.4}
@@ -90,7 +90,7 @@ where $K(t-\theta)$ is a kernel in this schematic convolution. Some models impos
 A memory-dependent operator can use a kernel over a finite interval; its definition and normalization are part of the selected constitutive model.
 
 \begin{equation}
-D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} K_{\mathrm{MDD}}(t-\theta) f'(\theta)\,d\theta,
+D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} K_{\mathrm{MDD}}(t-t') f'(t')\,dt',
 \label{eq:6.7}
 \end{equation}
 where $\omega_M>0$ denotes the displayed horizon and $K_{\mathrm{MDD}}$ is the kernel. The bounds, normalization, regularity, and admissibility conditions on $K_{\mathrm{MDD}}$ must be taken from the exact model definition. A finite integration horizon truncates the history in this formula; it does not by itself imply a finite-dimensional state-space realization, finite computation cost, or that the kernel is a freely chosen rather than material-calibrated quantity. A specific quadratic candidate kernel is omitted because its source definition, dimensions, and admissible parameter range have not been established; no numerical form is asserted here.
@@ -158,9 +158,10 @@ $\mathcal{D}_{\rm LS}(s)$ & LS transform multiplier (zero initial flux) & dimens
 ${}^C D_t^\alpha$ & Caputo fractional derivative & $t^{-\alpha}$ & \eqref{eq:6.3} \\
 ${}^{RL} D_t^\alpha$ & Riemann--Liouville derivative & $t^{-\alpha}$ & \eqref{eq:6.4} \\
 $a$ & Thermal diffusivity & m$^2$/s & \eqref{eq:6.5} \\
-$K(t-\theta)$ & Memory kernel & varies & \eqref{eq:6.6} \\
+$K(t-t')$ & Memory kernel & varies & \eqref{eq:6.6} \\
 $D_{\omega_M}$ & MDD operator & model-dependent & \eqref{eq:6.7} \\
 $\omega_M$ & MDD finite-history window & s & \eqref{eq:6.7} \\
+$t'$ & Dummy integration time in hereditary kernels & s & \eqref{eq:6.6}--\eqref{eq:6.7} \\
 $K_{\mathrm{MDD}}$ & MDD kernel & model-dependent & \eqref{eq:6.7} \\
 $\tilde{q}_i(s)$ & Laplace transform of the heat flux & --- & \eqref{eq:6.2} \\
 \bottomrule

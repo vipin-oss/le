@@ -274,7 +274,7 @@ jobs:
       - name: Verify unified-framework equation reductions
         run: python phase5/verification/verify_unified_reductions.py
 
-      - name: Verify Q1 notation and displayed dispersion algebra
+      - name: Verify Q1 notation, comparison coverage, and displayed dispersion algebra
         run: python phase5/verification/verify_q1_notation.py
 
       - name: Validate A/V claim-ledger provenance

@@ -239,11 +239,11 @@ The dimensionally inconsistent legacy equation and its scratch frequency-domain 
 Candidate MDD operator (equation-level source check pending):
 
 \begin{equation}
-D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} K_{\mathrm{MDD}}(t-\theta) f'(\theta) \, d\theta,
+D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} K_{\mathrm{MDD}}(t-t') f'(t') \, dt',
 \label{ef:mdd:1}
 \end{equation}
 
-where $\omega_M > 0$ is the finite memory window and $K_{\mathrm{MDD}}(t-\theta)$ is the kernel function.
+where $\omega_M > 0$ is the finite memory window and $K_{\mathrm{MDD}}(t-t')$ is the kernel function.
 
 Candidate heat-flux law coupled to the displayed operator (source check pending):
 
@@ -265,7 +265,7 @@ The expression $J_i=q_i-\sigma_{ij}v_j$ is classical; its role in the displayed 
 
 \subsection{Frequency-domain expression}
 
-For the finite-window operator in Eq.~\eqref{ef:mdd:1}, set $s=t-\theta$ and use the harmonic convention $f(t)=\hat f e^{-i\Omega t}$. Its exact multiplier is kernel-dependent:
+For the finite-window operator in Eq.~\eqref{ef:mdd:1}, set $s=t-t'$ and use the harmonic convention $f(t)=\hat f e^{-i\Omega t}$. Its exact multiplier is kernel-dependent:
 
 \begin{equation}
 D_{\omega_M} f(t) \longleftrightarrow -\frac{i\Omega}{\omega_M}\left[\int_0^{\omega_M}K_{\mathrm{MDD}}(s)e^{i\Omega s}\,ds\right]\hat f.

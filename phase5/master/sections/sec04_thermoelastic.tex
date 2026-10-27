@@ -236,9 +236,27 @@ where ${}^C D_t^\alpha$ is the Caputo fractional derivative of order $\alpha$ an
 \subsection{Comparative summary}
 \label{sec:4.12}
 
-Table \ref{tab:T2-generalized} summarizes selected constitutive distinctions and the evidence limits for the model classes discussed here; it does not assert family-wide wave-speed, dissipation, or validity results.
+Table \ref{tab:T2-generalized} summarizes selected assumptions, state variables, flux closures, finite-speed statements, stability scope, and dissipation evidence. Cells marked not established are deliberate evidence limits, not claims that the property is absent.
+
+\paragraph{Common field-equation scaffold.}
+For the local classical Cauchy continuum, the momentum and internal-energy balances provide the comparison scaffold:
+\begin{equation}
+\rho\ddot{u}_i=\sigma_{ji,j}+\rho f_i,
+\qquad
+\rho\dot e=\sigma_{ij}\dot\varepsilon_{ij}-q_{i,i}+\rho r.
+\label{eq:4.21}
+\end{equation}
+The constitutive closures may be recorded abstractly as
+\begin{equation}
+\sigma_{ij}=\mathscr{S}_{ij}[\varepsilon,T,\dot T,\alpha_{\mathrm{GN}},\bm z;\bm\theta],
+\qquad
+\mathscr{H}_i[\bm q,\nabla T,\nabla\dot T,\mathcal{D}_t^\alpha T,\bm z;\bm\theta]=0,
+\label{eq:4.22}
+\end{equation}
+where $\mathscr{S}_{ij}$ and $\mathscr{H}_i$ are placeholders for the selected stress and heat-transport laws, $\bm z$ denotes any additional internal, thermal-displacement, or history variables, and $\bm\theta$ denotes the model's parameters. They are not common constitutive functions. The balances in Eq.~\eqref{eq:4.21} do not cover higher-gradient, micropolar, or nonlocal boundary-power terms; those require augmented balances. This scaffold therefore aligns notation without asserting one universal generalized thermoelastic model.
 
 \input{tables/source/T2_generalized_thermoelastic}
+\input{tables/source/T2_reduction_map}
 
 % Inventory-only; not rendered: \includegraphics{fig07-theory-map.pdf}
 

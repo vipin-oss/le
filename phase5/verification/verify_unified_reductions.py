@@ -7,7 +7,10 @@ admissibility, or equivalence of complete initial-boundary-value problems.
 """
 from __future__ import annotations
 
+from pathlib import Path
 import sympy as sp
+
+ROOT = Path(__file__).resolve().parents[1]
 
 # Abstract heat-flux law components corresponding to the displayed LS law
 # (Sec. 4, Eq. 4.4), first-order DPL/TPL forms (Eq. 4.16 and the stated TPL
@@ -76,6 +79,21 @@ for degree in range(2, 7):
         ) == 0
 print("PASS: Caputo monomial identities at orders 1 and 2 for degrees 2 through 6")
 
+# For the displayed scalar Caputo PDE, integer-order endpoints have the
+# differential form of the heat equation (alpha=1) and wave equation (alpha=2).
+x_cap = sp.symbols("x_cap", real=True)
+T_cap = sp.Function("T_cap")(x_cap, t_cap)
+a1, a2 = sp.symbols("a1 a2", positive=True)
+lap_T_cap = sp.diff(T_cap, x_cap, 2)
+caputo_d1, caputo_d2 = sp.symbols("caputo_d1 caputo_d2")
+alpha1_residual = caputo_d1 - a1 * lap_T_cap
+alpha2_residual = caputo_d2 - a2 * lap_T_cap
+heat_endpoint = sp.diff(T_cap, t_cap) - a1 * lap_T_cap
+wave_endpoint = sp.diff(T_cap, t_cap, 2) - a2 * lap_T_cap
+assert sp.simplify(alpha1_residual.subs(caputo_d1, sp.diff(T_cap, t_cap)) - heat_endpoint) == 0
+assert sp.simplify(alpha2_residual.subs(caputo_d2, sp.diff(T_cap, t_cap, 2)) - wave_endpoint) == 0
+print("PASS: scalar Caputo endpoints have heat-equation and wave-equation differential forms")
+
 # The local limit is checked only for the displayed Helmholtz differential form
 # and the displayed one-dimensional dispersion relation.
 xi, wave_number, c0 = sp.symbols("xi wave_number c0", nonnegative=True)
@@ -85,5 +103,29 @@ assert sp.simplify(helmholtz_residual.subs(xi, 0) - (sigma - sigma_local)) == 0
 c_nonlocal = c0 / sp.sqrt(1 + xi**2 * wave_number**2)
 assert sp.simplify(c_nonlocal.subs(xi, 0) - c0) == 0
 print("PASS: displayed Helmholtz differential law and 1D dispersion expression have their xi=0 local limits")
+
+# The reduction map must cover the requested families while explicitly leaving
+# GL and GN-I equation-level reductions open. These text checks do not establish
+# source transcription or any solution-level limiting result.
+reduction_map = (ROOT / "master/tables/source/T2_reduction_map.tex").read_text(encoding="utf-8")
+for family in (
+    "Classical coupled", "LS", "GL", "GN-I", "GN-II / GN-III", "DPL",
+    "TPL", "MGT", "Fractional scalar", "Spatially nonlocal", "MDD",
+):
+    assert family in reduction_map, f"reduction map is missing {family}"
+assert "No equation-level reduction asserted" in reduction_map
+assert r"\alpha=1" in reduction_map and r"\alpha=2" in reduction_map
+assert r"\tau_0=0" in reduction_map and r"\xi=0" in reduction_map
+assert "Derivative-level compatibility only" in reduction_map
+assert "no shared stability or thermodynamic condition follows" in reduction_map
+
+# Confirm that the shared scaffold is explicitly a local Cauchy balance pair
+# plus non-universal constitutive placeholders.
+section4 = (ROOT / "master/sections/sec04_thermoelastic.tex").read_text(encoding="utf-8")
+assert r"\label{eq:4.21}" in section4 and r"\label{eq:4.22}" in section4
+assert "not common constitutive functions" in section4
+assert "do not cover higher-gradient, micropolar, or nonlocal boundary-power terms" in section4
+print("PASS: reduction map covers LS, GL, GN-I/II/III, DPL, TPL, MGT, fractional, nonlocal, and MDD with explicit open rows")
+print("PASS: shared balance scaffold is scoped to local Cauchy continua and non-universal closures")
 
 print("Scope: equation-level substitutions only; no claim of source transcription, convergence, stability, or family-wide equivalence")

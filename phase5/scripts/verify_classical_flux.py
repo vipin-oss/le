@@ -50,8 +50,21 @@ mechanical_flux = tuple(a + b for a, b in zip(stress, velocity))
 assert energy_density == kinetic_density == (1, -1, -2, 0)
 assert mechanical_flux == heat_flux == (1, 0, -3, 0)
 
+# Under the stated Fourier closure, the thermal contribution to the
+# Clausius--Duhem inequality is a positive coefficient times a sum of squares.
+absolute_temperature = sp.symbols("absolute_temperature", positive=True)
+conductivity = sp.symbols("conductivity", positive=True)
+grad_theta = sp.symbols("grad_theta0:3", real=True)
+q_fourier = [-conductivity * component for component in grad_theta]
+thermal_dissipation = sp.simplify(
+    -sum(qi * gi for qi, gi in zip(q_fourier, grad_theta)) / absolute_temperature**2
+)
+expected_dissipation = conductivity * sum(component**2 for component in grad_theta) / absolute_temperature**2
+assert sp.simplify(thermal_dissipation - expected_dissipation) == 0
+
 print("PASS: symmetric-stress power identity reduces to a divergence")
 print("PASS: local balances imply E_dot + div(q - sigma*v) = rho*f.v + rho*r")
 print("PASS: rho*e and 1/2*rho*v^2 have J/m^3 dimensions")
 print("PASS: q and sigma*v have W/m^2 dimensions")
+print("PASS: Fourier thermal entropy production is k|grad(Theta)|^2/Theta^2 >= 0 for k, Theta > 0")
 print("Scope: classical local Cauchy continuum, symmetric stress; no generalized/interface proof")

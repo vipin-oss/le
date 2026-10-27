@@ -19,20 +19,22 @@ NOTATION = (ROOT / "phase5/master/frontmatter/notation.tex").read_text(encoding=
 APPENDIX = (ROOT / "phase5/master/appendices/energy_flux_derivations.tex").read_text(encoding="utf-8")
 EQ_REGISTER = (ROOT / "phase5/master/appendices/appA_equation_register.tex").read_text(encoding="utf-8")
 SVG = (ROOT / "phase5/figures/source/fig11-nonlocality.svg").read_text(encoding="utf-8")
+T2 = (ROOT / "phase5/master/tables/source/T2_generalized_thermoelastic.tex").read_text(encoding="utf-8")
 
 # The MDD finite-history window and its kernel use distinct labels from angular
 # frequency and from GN-III/dielectric kappa symbols.
 assert r"D_{\omega_M} f(t)" in SEC6
-assert r"K_{\mathrm{MDD}}(t-\theta)" in SEC6
+assert r"K_{\mathrm{MDD}}(t-t')" in SEC6
 assert r"D_\omega f(t)" not in SEC6
 assert r"\xi" not in SEC6  # reserve xi for the spatial nonlocal length
 assert r"\omega_M" in NOTATION and "Angular frequency" in NOTATION
+assert "$t'$" in NOTATION and "Dummy integration time" in NOTATION
 assert r"$K_{\mathrm{MDD}}$" in NOTATION
 assert r"\kappa, \kappa^*" in NOTATION and r"\kappa_{ij}" in NOTATION
-assert r"D_{\omega_M}" in APPENDIX and r"K_{\mathrm{MDD}}(t-\theta)" in APPENDIX
+assert r"D_{\omega_M}" in APPENDIX and r"K_{\mathrm{MDD}}(t-t')" in APPENDIX
 assert r"K_{\mathrm{MDD}}(s)" in APPENDIX
 assert "equation-level source check pending" in APPENDIX
-assert r"s=t-\theta" in APPENDIX
+assert r"s=t-t'" in APPENDIX
 
 # Separate the Section 7 one-dimensional dispersion wave number from the
 # thermal-conductivity coefficient k used in the local heat-flux laws.
@@ -42,6 +44,26 @@ assert "distinct from the thermal conductivity" in SEC7
 assert r"c(k_{\mathrm w})" in EQ_REGISTER
 assert "k_w" in SVG and "c₀k_w" in SVG and "ℓ²k_w²" in SVG
 assert not re.search(r"(?<![A-Za-z_])c\(k\)", SEC7)
+
+# Check that the comparison matrix includes the requested dimensions and keeps
+# the GL/GN-I equations visibly open rather than filling them by analogy.
+for heading in (
+    "Assumptions / scope", "State variables", "Heat-flux law / closure",
+    "Finite-speed property", "Stability / well-posedness", "Dissipation",
+):
+    assert heading in T2, f"comparison table missing {heading}"
+for family in (
+    "Classical coupled", "Lord--Shulman (LS)", "Green--Lindsay (GL)",
+    "Green--Naghdi I (GN-I)", "Green--Naghdi II (GN-II)",
+    "Green--Naghdi III (GN-III)", "Dual-phase-lag (DPL)",
+    "Triple-phase-lag (TPL)", "MGT thermoelastic variant",
+    "Memory-dependent derivative (MDD)", "Fractional scalar example",
+    "Spatially nonlocal elasticity",
+):
+    assert family in T2, f"comparison table missing {family}"
+assert "Exact equation-level state set not established" in T2
+assert "exact source identity and equation-level assumptions remain open" in T2
+assert "Not established; no flux law asserted" in T2
 
 # Verify algebraic consequences only for the displayed one-dimensional laws.
 k_w, xi, c0, ell = sp.symbols("k_w xi c0 ell", positive=True)
