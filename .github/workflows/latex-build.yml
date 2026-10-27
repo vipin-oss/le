@@ -277,6 +277,9 @@ jobs:
       - name: Verify unified-framework equation reductions
         run: python phase5/verification/verify_unified_reductions.py
 
+      - name: Verify linear classical thermoelastic heat equation
+        run: python phase5/verification/verify_classical_thermoelastic.py
+
       - name: Verify Caputo and Riemann--Liouville definition consequences
         run: python phase5/verification/verify_fractional_definitions.py
 

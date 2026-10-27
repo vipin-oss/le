@@ -4,16 +4,16 @@
 
 ## Scope and coverage
 
-The audit covers every `equation` and `equation*` display group in Sections 4–10. The new `EQUATION_AUDIT.csv` has 77 rows: Section 4 = 17, Section 5 = 16, Section 6 = 8, Section 7 = 4, Section 8 = 7, Section 9 = 12, and Section 10 = 13. `check_equation_audit_inventory.py` verifies that each current display group has exactly one row with matching source line and label. It is a coverage check only and does not validate formulas.
+The audit covers every `equation` and `equation*` display group in Sections 4–10. The current `EQUATION_AUDIT.csv` has 78 rows: Section 4 = 18, Section 5 = 16, Section 6 = 8, Section 7 = 4, Section 8 = 7, Section 9 = 12, and Section 10 = 13. `check_equation_audit_inventory.py` verifies that each current display group has exactly one row with matching source line and label. It is a coverage check only and does not validate formulas.
 
-Current dispositions after the first fractional-definition check:
+Current dispositions after the B23 inventory update and the classical heat-equation derivation:
 
 | Status | Rows | Meaning at this checkpoint |
 | --- | ---: | --- |
-| `VERIFIED-SOURCE` | 1 | One equation has a targeted primary-source equation/page anchor. |
-| `VERIFIED-SYMBOLIC` | 17 | Existing or new scripts check the displayed algebra within the row's stated scope; source transcription is not implied unless separately anchored. |
-| `CONDITIONAL` | 55 | The equation is retained only under the assumptions and limits stated in its row; many still need an exact source anchor or equation-specific derivation. |
-| `OPEN` | 4 | Equation-level verification remains unperformed; the rows identify the required next action. |
+| `VERIFIED-SOURCE` | 2 | Two equations have targeted primary-source equation/page anchors, including Eq. 4.2 at Biot (1956), printed p. 242, Eqs. (3.3)--(3.4). |
+| `VERIFIED-SYMBOLIC` | 16 | Existing or new scripts check displayed algebra within each row's stated scope; source transcription is not implied unless separately anchored. |
+| `CONDITIONAL` | 57 | The equation is retained only under the assumptions and limits stated in its row; many still need an exact source anchor or equation-specific derivation. |
+| `OPEN` | 3 | Equation-level verification remains unperformed; the rows identify the required next action. |
 
 The status count is intentionally conservative. A `CONDITIONAL` or `OPEN` row is not a verified scientific claim. Each unverified display is linked to a section-specific Class C ledger row, and the row itself names the remaining source/derivation check.
 
@@ -33,13 +33,13 @@ Fetched the read-only audit branch `arena/0be2770f-le` at `6e095abcaa674ee5d92d2
 
 ## Remaining work
 
-1. Audit all 55 conditional rows against exact source pages/equations or equation-specific scripts; explicitly record sign conventions, coefficient maps, domains, constitutive assumptions, and boundary/data restrictions.
-2. Resolve or conservatively hedge/remove the four open displays: Eq. 4.2, 4.11, 4.12, and 7.3.
+1. Audit all 57 conditional rows against exact source pages/equations or equation-specific scripts; explicitly record sign conventions, coefficient maps, domains, constitutive assumptions, and boundary/data restrictions.
+2. Resolve or conservatively hedge/remove the three open displays: Eqs. 4.11, 4.12, and 7.3. Eq. 4.2 is now source-anchored and its linearized entropy-balance derivation is checked by `verify_classical_thermoelastic.py` (OCL-513).
 3. Check all source-sensitive displayed equations for sign/index/notation conflicts, including thermal-flux signs, conductivity tensor versus scalar use, equations involving `kappa*` versus `kappa_ij`, interface-system mode counts, and the exact assumptions behind each matrix inverse or balance identity.
 4. For each reduction claimed in the manuscript, retain a positive check and a negative test for the most plausible incorrect substitution; keep source transcription separate from symbolic validity.
 5. After the Section 4–10 equation rows are resolved, re-run the inventory, ledger, build, privacy, and hostile-diff checks; then continue the ordered Q1, Q3, Q5, WP3 remainder, WP6, WP7, and WP8 work.
 
-Current equation-audit ledger total is 512 rows: A=48, B=123, C=317, V=24. The inventory checker establishes row coverage only; it does not close the remaining equation work.
+Current equation-audit ledger total is 513 rows: A=49, B=123, C=317, V=24. The inventory checker establishes row coverage only; it does not close the remaining equation work.
 
 ## Build and rendered self-audit checkpoint
 
