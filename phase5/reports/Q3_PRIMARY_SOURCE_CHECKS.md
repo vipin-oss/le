@@ -37,3 +37,19 @@ The one-dimensional reduction is parameter-regime-specific. The authors state th
 ### Limitations and remaining open work
 
 The extraction supports source identity, the type-III system designation, the isotropic linearization assumptions, and the stated qualitative one-dimensional regimes. It does not certify exact coefficient signs, threshold normalization, or a complete energy/free-energy/dissipation identity; Eqs. (3.19)–(3.20) are OCR-garbled, and no source-page image was reviewed. OCL-492 remains Class B for image-level equation transcription, exact parameter mapping, energy/admissibility, and boundary/interface flux. OCL-494 (Class A) records only the bounded source result; no type-II property is transferred, and no family-wide type-III stability or well-posedness claim is inferred.
+
+## Lord & Shulman (1967), one-relaxation-time thermoelasticity
+
+**Status:** targeted primary-text extraction completed for the LS heat-flux convention identified as open in Q3. Only the paper identity and relevant equation passages were used; no page-image audit was made.
+
+### Scope and anchors
+
+The checked article is Lord and Shulman, “A Generalized Dynamical Theory of Thermoelasticity,” *Journal of the Mechanics and Physics of Solids* 15 (1967), pp. 299–309. The source's isotropic heat-flux reduction is printed p. 300, Eq. (8); its linearized isotropic constitutive and coupled field equations are printed p. 302, Eqs. (22)–(24).
+
+### Source-bounded finding recorded in OCL-495
+
+The source starts from a general linear relation between heat flux and temperature gradient that includes heat-flux acceleration (Eq. 7); for an isotropic elastic solid it reduces this to the one-relaxation-time heat-flux law (Eq. 8), with the parameter described as the relaxation time for establishing steady conduction after a gradient is imposed. The later linearized isotropic system (Eqs. 22–24) is derived for the paper's small-strain/small-temperature setting and constant-specific-heat approximation. This verifies the source-specific equation convention used in the matrix; it does not verify every later LS variant or prove a universal parameter bound, stability theorem, or well-posedness result.
+
+### Limitations and remaining open work
+
+No positivity or admissible-range condition for the relaxation parameter is asserted by this bounded extraction. The displayed coupled equations do not by themselves establish existence, uniqueness, stability, or an energy-flux identity under arbitrary initial and boundary data. Page images were not reviewed, and no exact tensor-coefficient transcription is claimed. The source equation anchor is recorded in OCL-495; OCL-011/OCL-483 and the LS open-question cell remain for parameter/admissibility and model-wide energy/interface analysis.
