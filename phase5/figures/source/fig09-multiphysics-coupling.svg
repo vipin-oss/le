@@ -144,7 +144,7 @@
 
   <text x="400" y="660" class="field">Verified model families:</text>
   <text x="400" y="678" class="coupling" font-size="9">Piezothermoelasticity (§5.2)</text>
-  <text x="400" y="696" class="coupling" font-size="9">Thermo-poroelasticity (§5.4)</text>
+  <text x="400" y="696" class="coupling" font-size="9">Void-material models (§5.4)</text>
   <text x="400" y="714" class="coupling" font-size="9">Micropolar thermoelasticity (§5.5)</text>
 
   <!-- Notes -->
