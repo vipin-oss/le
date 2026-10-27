@@ -47,3 +47,15 @@
 8. Added targeted missing-source records for void, micropolar, and Gupta papers; did not inspect whole books or store private Drive identifiers or source PDFs.
 9. `audit_inventory.py`, CSV uniqueness/count checks, and `git diff --check` pass; only Section 5 manuscript content and its reports/ledger changed.
 10. CI run `40434775391` passed: 130 pages, zero undefined references/citations, forbidden tags/privacy matches, and near-overfull boxes; visually checked PDF pp. 40, 44–45. No backup branch was created under the fixed-branch constraint; WP2 remains incomplete, so no WP2 tag was made.
+
+## 2026-10-27 (IST) — WP2 Section 7 source-backing pass
+1. Committed and pushed Section 5 build/status pointers as `242565d`; the docs-only push did not trigger a new build, and the latest run remained `40434775391`.
+2. Began Section 7 in the requested order and located targeted source copies for Lata–Singh (2020), Gupta et al. (2024), Li–He (2018), Tung (2019), and Zang et al. (2014); the Lazar–Agiasofitou full text was not located.
+3. Checked Lata–Singh printed p. 359, Eq. (2); narrowed the text to a conductivity-based heat equation and the stated model’s lack of phase-lag/GN terms.
+4. Checked Gupta et al. printed p. 7, Eqs. (17)–(19), (22), and (25); specified constitutive, inertial, and heat-flux operator placements and flux components.
+5. Checked Li–He article p. 4, Eqs. (7)–(8); limited the nonlocal correspondence to the stated modified-Bessel K0 kernel.
+6. Checked Tung printed p. 365, Eqs. (3)–(4); corrected the inaccurate “inertia-only” description of its stress/electric-displacement relations and motion balance.
+7. Checked Zang et al. printed p. 147, Eq. (1); confined the inertia-term statement to that one-dimensional piezoelectric nanoplate model with surface effects.
+8. Kept Lazar–Agiasofitou operator placement unverified, retained only title-level identification, and added a bounded missing-source record without treating searches as proof of absence.
+9. Updated Section 7 wording, source findings, and OCL-256–OCL-261; ledger is 445 rows (A=25, B=124, C=296), with OCL-260 marked `CONTRADICTION-FIXED`; OCL-245–OCL-255 were not upgraded.
+10. Pre-commit `audit_inventory.py`, CSV uniqueness/count checks, cited-key checks, and `git diff --check` pass; source review used targeted text extraction, not page-image review. Section 7 content commit and strict CI are pending.

@@ -1,8 +1,8 @@
 # R4B-AUTO — Source findings and disposition history
 
-**Scope.** Targeted verification for the R4B-1 baseline and the appended WP2 Section 12 pass: Chester (1963); both Guyer–Krumhansl (1966) papers at *Physical Review* 148:766 and 148:778; Chandrasekharaiah (1998); Povstenko (2011), DOI `10.1080/01495739.2010.511931`, including Eq. (29); Dell’Oro–Pata, DOI `10.1007/s00245-016-9365-1`; the Povstenko book DOI; Gorenflo–Mainardi if available; and the Tzou (1995) unified-field and Quintanilla (2003) sources added for Section 12. Paper contents below are paraphrased; equations and printed page/equation anchors are given where checked.
+**Scope.** Targeted verification for the R4B-1 baseline and WP2 Sections 4, 5, 7, and 12: Chester (1963); both Guyer–Krumhansl (1966) papers at *Physical Review* 148:766 and 148:778; Chandrasekharaiah (1998); Povstenko (2011), DOI `10.1080/01495739.2010.511931`, including Eq. (29); Dell’Oro–Pata, DOI `10.1007/s00245-016-9365-1`; the Povstenko book DOI; Gorenflo–Mainardi if available; Tzou (1995) and Quintanilla (2003); and the cited Lata–Singh, Gupta et al., Li–He, Tung, and Zang nonlocal-model examples. Paper contents below are paraphrased; equations and printed page/equation anchors are given where checked.
 
-**Method and access limits.** The available smaller Drive bundles and standalone PDFs were searched for the requested titles and identifiers. No source PDF, scan, extracted text, private Drive name, URL, or file ID is included in this repository. `pdftotext` was unavailable; a temporary PyMuPDF installation was used as a clearly identified fallback for targeted text extraction, with page-image checks for Chester, the p. 778 Guyer–Krumhansl paper, and selected 1998-review pages. No whole-paper text was added to the repository. The larger archives were not downloaded because the Drive download tool caps files at 100 MB, and the expressly excluded archive was not inspected or used. Findings explicitly described as prior-audit checks below come from the existing in-repository `scientific-audit.md`; those source PDFs were not reopened in this pass.
+**Method and access limits.** The available smaller Drive bundles and standalone PDFs were searched for the requested titles and identifiers. No source PDF, scan, extracted text, private Drive name, URL, or file ID is included in this repository. `pdftotext` was unavailable; a temporary PyMuPDF installation was used as a clearly identified fallback for targeted text extraction, with page-image checks for Chester, the p. 778 Guyer–Krumhansl paper, and selected 1998-review pages. No whole-paper text was added to the repository. The larger archives were not downloaded because the Drive download tool caps files at 100 MB, and the expressly excluded archive was not inspected or used. Findings explicitly described as prior-audit checks below come from the existing in-repository `scientific-audit.md`; those source PDFs were not reopened in this pass. The Section 7 paper copies that were located were checked through targeted text extraction at the cited equation anchors; their page images were not reviewed in this pass. The Lazar–Agiasofitou full text was not located in the inspected set.
 
 ## Findings by source
 
@@ -147,3 +147,33 @@ Ledger checkpoint: before this pass, 442 rows (A=10, B=138, C=294); after, 445 r
 Targeted DOI/title searches and member-name checks did not identify the original full texts for Eringen (1966), Tauchert–Claus–Ariman (1968), Nunziato–Cowin (1979/1983), Iesan (1986), Gupta et al. (2022), or Gupta et al. (2023). Search hits were later citing papers or bundles, not proof that the source is absent from uninspected material. The Iesan (2013) monograph was not read or inspected as a whole; its existence/uniqueness attribution remains unverified. These limits are recorded separately in `MISSING_SOURCES.csv`.
 
 OCL-195, OCL-404, OCL-405, and OCL-207 are Class A on fresh page evidence. OCL-405 and OCL-207 record `CONTRADICTION-FIXED` dispositions for source-terminology/model-family mismatches. Unsupported Gupta-specific statements OCL-205 and OCL-206 were removed from the active text and remain recorded as source leads for any future reinstatement. OCL-406–OCL-408 and other unrelated Section 5 claims remain open; this pass does not certify the whole section.
+
+## WP2 — Section 7 targeted source-backing pass (2026-10-27)
+
+### Lata & Singh (2020), *Effects of nonlocality and two temperature in a nonlocal thermoelastic solid due to ramp type heat source*
+
+**CONFIRMED-IN-SOURCE, WORDING NARROWED.** Printed p. 359, Eq. (2) gives a conductivity-based heat equation for the cited two-temperature nonlocal model; Eq. (3) relates conductive and thermodynamic temperatures. The displayed heat equation contains no phase-lag or Green–Naghdi term. The manuscript now describes this as a conductivity-based example rather than attributing a specific vector Fourier/Biot flux law.
+
+### Gupta et al. (2024), *Rayleigh wave in nonlocal piezo-thermo-electric semiconductor medium with fractional MGT model*
+
+**CONFIRMED-IN-SOURCE.** Printed p. 7, Eqs. (17)–(19) place the spatial operator in the constitutive stress, electric-displacement, and entropy relations; Eq. (22) carries it in the inertial term. Equation (25) applies the spatial/fractional operator to the heat-flux relation and includes temperature-gradient, thermal-displacement-gradient, and carrier-related terms. The manuscript now names the operator placements without claiming that they are exclusive or universal.
+
+### Li & He (2018), *Investigation of generalized piezoelectric-thermoelastic problem with nonlocal effect and temperature-dependent properties*
+
+**CONFIRMED-IN-SOURCE.** Article p. 4, Eq. (7) specifies a modified-Bessel `K_0` kernel, and Eq. (8) gives the associated differential nonlocal relation. The manuscript now explicitly limits the correspondence to that kernel rather than implying a general integral/differential equivalence.
+
+### Lazar & Agiasofitou (2022), *Nonlocal elasticity of Klein–Gordon type: Fundamentals and wave propagation*
+
+**IDENTITY VERIFIED; CLAIM NOT VERIFIED.** The title and DOI are present in the reference list, but an exact title/DOI search and an author-name search did not locate the source full text in the inspected set. The former claim about operator placement in both constitutive and motion equations was narrowed to title-level identification only. This bounded search result does not establish absence from uninspected material; OCL-259 remains Class B and its operator-placement detail is not certified.
+
+### Tung (2019), *Dispersion equation of Rayleigh waves in transversely isotropic nonlocal piezoelastic solids half-space*
+
+**CONFIRMED-IN-SOURCE, WITH CONTRADICTION FIXED.** Printed p. 365, Eqs. (3)–(4) define nonlocal stress and electric-displacement relations and place a corresponding spatial factor in the motion balance. The governing system contains no thermal field or heat equation. The previous “inertia-only” description contradicted these displayed constitutive relations; OCL-260 now records `CONTRADICTION-FIXED`, and the manuscript distinguishes this model-specific combination.
+
+### Zang et al. (2014), *Longitudinal wave propagation in a piezoelectric nanoplate considering surface effects and nonlocal elasticity theory*
+
+**CONFIRMED-IN-SOURCE, SCOPE NARROWED.** Printed p. 147, Eq. (1) is the one-dimensional wave equation for the piezoelectric nanoplate; its scale-dependent terms occur in the inertia contributions. The abstract and the same equation identify a longitudinal-wave dispersion study with surface effects. The manuscript confines the statement to this model and does not present it as a general nonlocal placement rule.
+
+### Section 7 disposition
+
+OCL-256, -257, -258, -260, and -261 are Class A on fresh primary-source equation anchors; OCL-260 is the contradiction fix. OCL-259 remains Class B because only bibliographic identity/title was verified. The class totals are 445 ledger rows (A=25, B=124, C=296). The deleted/rejected stronger energy-flux and table claims OCL-245–OCL-255 were not revived or upgraded; the section continues to state that flux terms are model-specific and that no universal correction is asserted. The source PDFs were checked by targeted text extraction only, not page-image review.
