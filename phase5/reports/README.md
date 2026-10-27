@@ -6,7 +6,7 @@ This folder mixes current authoritative registers with dated, historical snapsho
 
 - `OPEN_CLAIMS_LEDGER.csv` is the authority for current claims (473 rows: A=26, B=126, C=313, V=8). Class A is source-anchored; Class V is a reproducible symbolic/script derivation whose `resolved_by` field names the verification path; B/C remain open at their recorded scope.
 - `R4A_DELETION_AUDIT.csv` is the authority for removed text (593 rows, zero `NONE` identifiers). It does not certify deleted claims or reconstruct missing work.
-- `build-status.md` is the current strict-build status. The latest manuscript validation recorded here is run `40449389588`: 130 pages, successful engineering gates; output commit `e800f34`.
+- `build-status.md` is the current strict-build status. The latest manuscript validation recorded here is run `40450139583`: 130 pages, successful engineering gates; output commit `bc4c4cc`.
 - `scientific-audit.md`, `equation-audit.csv`, and `figure-audit.csv` provide current context/registers, not blanket proof of scientific correctness or licensing.
 
 ## Reports and CSVs

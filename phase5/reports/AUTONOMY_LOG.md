@@ -95,3 +95,15 @@
 8. Section 10's final-size PDF visual inspection is still pending; the green build establishes compilation and engineering gates, not full scientific correctness.
 9. Recorded the ordered Q1–Q5 plan and acceptance checks in `R4B_QUALITY_WORKPACKAGES.md`; Q1 unified synthesis is next, and remaining Section 4/11/13/14–17 work remains open.
 10. No backup branch was created because the session is fixed to its designated branch; no WP2 completion tag was made because WP2 remains incomplete. The next report must include verified reductions, current A/V counts, and five weakest remaining sections.
+
+## 2026-10-27 (IST) — Q1 initial reduction-check implementation
+1. Began Q1 by auditing the currently displayed governing/constitutive forms in Sections 4, 6, and 7; this is not a source-by-source verification of all formulations.
+2. Added `verify_unified_reductions.py` with SymPy checks for LS/DPL/TPL/MGT heat-flux-law substitutions, limited to the displayed equations and stated truncations.
+3. Checked the GN-III/GN-II derivative-level identity at zero rate coefficient; retained the integration-constant and initial-data caveat rather than claiming solution equivalence.
+4. Checked Caputo monomials at integer orders 1 and 2 and the displayed Helmholtz/nonlocal-dispersion local limits; no general convergence claim is made.
+5. Added OCL-470–OCL-473 as Class V with script path and scope; the ledger now has 473 rows (A=26, B=126, C=313, V=8).
+6. Registered the new script in CI and refreshed the Q1 plan/findings index; GL, GN-I, unified notation, source-by-source reductions, and the comparison table remain open.
+7. Local reduction, ledger-provenance, and diff checks passed; Class A+V count is 34, and the missing-source register remains 23.
+8. Committed and pushed the Q1 check as `7457730` on the fixed session branch; CI run `40450139583` passed in 2m 51s (130 pages, zero undefined refs/citations, forbidden-token matches, or near-overfull boxes).
+9. Fast-forwarded only the workflow-generated same-branch PDF output commit `bc4c4cc`; no CI artifacts were downloaded from external blob storage.
+10. Q1 remains active and partial. No backup branch or WP2 tag was created under the fixed-branch/unfinished-WP constraints; continue with source-backed framework synthesis, not acronym-based generalization.
