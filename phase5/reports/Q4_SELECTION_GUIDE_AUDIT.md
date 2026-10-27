@@ -1,13 +1,13 @@
 # Q4 conditional selection guide and evidence audit
 
 **Date:** 2026-10-27  
-**Status:** Drafted and locally validated; a content build is pending the Q4 commit and its single required CI run.
+**Status:** Implemented and rendered; final strict CI passed and the published PDF was visually reviewed.
 
 ## Scope
 
 Section 1 was narrowed to describe the review's evidence-bounded scope rather than promise uniform constitutive, admissibility, computation, or interface results across all families. Section 16 now contains a conditional model-selection workflow, a table separating script-verified checks from primary-source checkpoints, a note distinguishing Appendix C benchmark specifications from validated numerical reference solutions, and a Q3-derived roadmap. No new bibliography item or new primary-source claim was introduced.
 
-The guide is explicitly not a theory ranking. It requires the actual equations, fields, geometry, initial/boundary data, interface conditions, and measured observables to be specified. It does not infer finite propagation speed, stability, thermodynamic admissibility, well-posedness, energy flux, or mode counts from a family label.
+The guide is explicitly not a theory ranking. It requires actual equations, fields, geometry, initial/boundary data, interface conditions, and measured observables to be specified. Properties are recorded against the exact equations and assumptions, not attached to a family label.
 
 ## Evidence map retained in the guide
 
@@ -35,22 +35,38 @@ Reviewed the documentation changes from `a477548` through `7814bf0` on the fixed
 
 - The GL, GN-I, GN-II, GN-III, and LS records retain source/page bounds and explicitly keep broader parameter, stability, existence, family-wide, and energy/interface claims open. GN-I remains unresolved; GN-II/GN-III/LS additions are narrowly anchored to the reviewed printed pages.
 - GN-III's p. 255 distinction remains text-extraction-only; the later equation/regime pages are described as image-reviewed. No type-II result is transferred to type III.
-- The DPL DOI/source-page disagreement remains visible under OCL-488; equality is still unclassified. The Kumar split verifier still confirms all 19 dependent rows remain B/C.
-- The generated manuscript PDF and build README correspond to successful CI `40499379538` for content commit `6e8cf1e`; the later report-only updates did not replace that build. Keep the read-only older `e56755f` report's 130-page manuscript distinct from the fixed-branch PDF's 119-page artifact.
-- The separate private Drive link/ID scan of seven changed text files returned zero hits; `git diff --check` passed. No material unsupported class promotion or privacy leak was identified in this review.
+- The DPL DOI/source-page disagreement remains visible under OCL-488; equality is still unclassified. The Kumar split verifier confirms all 19 dependent rows remain B/C.
+- The earlier fixed-branch PDF at `6e8cf1e` was 119 pages; the read-only older `e56755f` report's 130-page manuscript is a different source version. The current post-Q4 fixed-branch PDF is 121 pages; the counts are not interchangeable.
+- The private Drive link/ID scan of the preceding seven changed text files returned zero hits; `git diff --check` passed. No material unsupported class promotion or privacy leak was identified in that documentation review.
 
-## Local checks for the Q4 change
+## CI and rendered-text audit
 
-The following passed locally before commit:
+Two content commits were each followed by their own successful strict build:
 
-- `verify_q3_status_matrix.py`
-- `verify_q4_selection_guide.py`
-- `verify_unified_reductions.py`
-- `verify_interface_energy.py`
-- `verify_interface_mode_counts.py`
-- `verify_q1_notation.py`
-- `verify_kumar2017_reference_split.py`
-- `validate_claim_ledger.py`
-- `git diff --check`
+| Content commit | CI run | Result |
+|---|---:|---|
+| `63f83f1` — Q4 guide and scope edits | `40502884138` | Success, 121 pages. The first visual check found Table 38 had floated ahead of subsection 16.1. |
+| `d1b7e2d` — keep selection tables with headings | `40503549729` | Success, 121 pages. Table placement was corrected using a fixed-position float; the final rendered layout was inspected. |
 
-Ledger state is 497 rows: A=34, B=132, C=315, V=16. The new OCL-497 is Class V for structural coverage/provenance mapping only; its verifier does not re-review sources or validate numerical solutions. The local environment lacks TeX build tools, so rendered-page, strict-box, undefined-reference, and rendered-text privacy gates remain pending CI.
+Final CI reported: undefined references/citations = 0; overfull boxes above 1 pt = 0; near-overfull boxes above 0.5 pt = 0; forbidden privacy tokens = 0; forbidden internal paths = 0; forbidden manuscript tags = 0. It rendered 18 figure PDFs for 16 master includes. The CI-published output commit is `20bb6bf`, synchronized with the fixed branch.
+
+The final PDF text was extracted from the published artifact. Printed pp. 102–103 were visually checked: Table 38 now follows subsection 16.1, both tables are legible, and their content remains within the page. Ten A/V ledger rows were compared with the rendered text:
+
+| Ledger row | Rendered location | Comparison |
+|---|---|---|
+| OCL-164 (A) | Section 4.7, printed p. 33 | GK phonon-flux structure is attributed to the phonon Boltzmann treatment, not a ready-made continuum thermoelastic law; the scope matches the ledger. |
+| OCL-165 (A) | Section 4.7, printed p. 33 | The stated rapid-normal-scattering condition and characteristic-length expression are present with the Ziman-averaged time defined. |
+| OCL-166 (A) | Section 4.7, printed p. 33 | Tzou's Eq. 15 continuum reduction is identified as the pure-phonon case and is not attributed to the 1966 source. |
+| OCL-167 (A) | Section 4.7, printed p. 33 | Tzou's Eq. 17 parameter map is printed and restricted to the stated phonon approximation. |
+| OCL-169 (A) | Section 4.8, printed p. 34 | The first-order three-lag expansion and ordering are stated; later variants are not generalized from it. |
+| OCL-445 (A) | Section 4.7/Table 6, printed p. 37; selection guide, p. 102 | The selected one-dimensional strict inequalities and unclassified equality are both visible; no universal DPL criterion is asserted. |
+| OCL-466 (V) | Section 10.5.2, printed p. 68 | Displacement/traction continuity yields the displayed two-amplitude 2×2 system and determinant. |
+| OCL-467 (V) | Section 16.2, printed p. 103 | The rendered summary states the stress/velocity-flux partition and zero time-average of the harmonic cross-term. The full algebra remains in the verifier; the prose does not claim a general interface theorem. |
+| OCL-468 (V) | Section 9.7, printed p. 64 | Total-field closure is called a definition-level bookkeeping identity, not independent validation; cross-term scope is limited. |
+| OCL-480 (V) | Section 10.2, printed p. 66 | The classical local flux $J_i=q_i-\sigma_{ij}v_j$ and outward-positive convention appear under the stated classical balance assumptions. |
+
+## Verification and ledger integrity
+
+The following passed locally: `verify_q3_status_matrix.py`, `verify_q4_selection_guide.py`, `verify_unified_reductions.py`, `verify_interface_energy.py`, `verify_interface_mode_counts.py`, `verify_q1_notation.py`, `verify_kumar2017_reference_split.py`, `validate_claim_ledger.py`, and `git diff --check`.
+
+The final ledger state is 497 rows: A=34, B=132, C=315, V=16. OCL-497 is Class V for structural coverage/provenance mapping only; its verifier does not re-review sources or validate numerical solutions. The final CI gates and ten-row rendered-text check are recorded above.
