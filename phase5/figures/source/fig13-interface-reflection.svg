@@ -35,51 +35,44 @@
   <text x="500" y="44" class="subtitle" text-anchor="middle">Incident, reflected, and transmitted waves at a bonded interface between two media</text>
 
   <!-- Interface line -->
-  <line x1="100" y1="320" x2="900" y2="320" class="interface"/>
-  <text x="910" y="325" class="label">Interface x₃ = 0</text>
+  <line x1="100" y1="260" x2="900" y2="260" class="interface"/>
+  <text x="910" y="265" class="label">Interface x₃ = 0</text>
 
   <!-- Medium labels -->
   <text x="500" y="70" class="medium" text-anchor="middle">Medium 1 (x₃ &lt; 0)</text>
-  <text x="500" y="570" class="medium" text-anchor="middle">Medium 2 (x₃ &gt; 0)</text>
+  <text x="500" y="450" class="medium" text-anchor="middle">Medium 2 (x₃ &gt; 0)</text>
 
   <!-- Interface normal -->
-  <line x1="450" y1="100" x2="450" y2="540" class="normal"/>
-  <text x="455" y="90" class="label" font-size="10">Interface normal n̂</text>
+  <line x1="450" y1="70" x2="450" y2="440" class="normal"/>
+  <text x="455" y="65" class="label" font-size="10">Interface normal n̂</text>
 
   <!-- Incident ray (from top-left) -->
-  <path d="M 150 100 L 450 320" class="ray-inc"/>
-  <text x="180" y="120" class="math" font-size="12">A_inc</text>
-  <text x="200" y="140" class="label" font-size="10">Incident wave</text>
+  <path d="M 150 80 L 450 260" class="ray-inc"/>
+  <text x="180" y="100" class="math" font-size="12">A_inc</text>
+  <text x="200" y="120" class="label" font-size="10">Incident wave</text>
 
   <!-- Reflected ray (to top-right) -->
-  <path d="M 450 320 L 750 100" class="ray-ref"/>
-  <text x="780" y="120" class="math" font-size="12">A_ref</text>
-  <text x="740" y="140" class="label" font-size="10">Reflected wave</text>
+  <path d="M 450 260 L 750 80" class="ray-ref"/>
+  <text x="780" y="100" class="math" font-size="12">A_ref</text>
+  <text x="740" y="120" class="label" font-size="10">Reflected wave</text>
 
   <!-- Transmitted ray (to bottom-right) -->
-  <path d="M 450 320 L 750 540" class="ray-trans"/>
-  <text x="780" y="520" class="math" font-size="12">A_trans</text>
-  <text x="740" y="560" class="label" font-size="10">Transmitted wave</text>
+  <path d="M 450 260 L 750 430" class="ray-trans"/>
+  <text x="780" y="410" class="math" font-size="12">A_trans</text>
+  <text x="740" y="435" class="label" font-size="10">Transmitted wave</text>
 
   <!-- Incidence angle θᵢ -->
-  <path d="M 450 320 A 80 80 0 0 1 520 250" class="arc"/>
-  <text x="525" y="255" class="angle-label" font-size="11">θᵢ</text>
+  <path d="M 450 260 A 70 70 0 0 1 510 190" class="arc"/>
+  <text x="515" y="195" class="angle-label" font-size="11">θᵢ</text>
 
   <!-- Reflection angle θᵣ -->
-  <path d="M 450 320 A 80 80 0 0 1 380 250" class="arc"/>
-  <text x="375" y="255" class="angle-label" font-size="11">θᵣ</text>
+  <path d="M 450 260 A 70 70 0 0 1 390 190" class="arc"/>
+  <text x="385" y="195" class="angle-label" font-size="11">θᵣ</text>
 
   <!-- Transmission angle θₜ -->
-  <path d="M 450 320 A 90 90 0 0 0 540 390" class="arc"/>
-  <text x="545" y="395" class="angle-label" font-size="11">θₜ</text>
+  <path d="M 450 260 A 80 80 0 0 0 530 340" class="arc"/>
+  <text x="535" y="345" class="angle-label" font-size="11">θₜ</text>
 
-  <!-- Energy flux labels -->
-  <text x="320" y="280" class="label" font-size="10">J_inc uses the outward-positive, theory-specific flux</text>
-  <text x="320" y="295" class="label" font-size="10">(incident energy flux)</text>
-  <text x="680" y="280" class="label" font-size="10">J_ref uses the outward-positive, theory-specific flux</text>
-  <text x="680" y="295" class="label" font-size="10">(reflected energy flux)</text>
-  <text x="680" y="480" class="label" font-size="10">J_trans uses the outward-positive, theory-specific flux</text>
-  <text x="680" y="495" class="label" font-size="10">(transmitted energy flux)</text>
 
   <!-- Interface conditions box -->
   <rect x="40" y="470" width="360" height="150" fill="#f8f9fa" stroke="#cccccc" stroke-width="1"/>
@@ -92,6 +85,8 @@
   <text x="110" y="548" class="label" font-size="10">(temperature continuity)</text>
   <text x="55" y="568" class="math" font-size="10">q⁽¹⁾ᵢnᵢ = q⁽²⁾ᵢnᵢ</text>
   <text x="170" y="568" class="label" font-size="10">(heat flux continuity)</text>
+  <text x="55" y="588" class="math" font-size="10">ϕ⁽¹⁾ = ϕ⁽²⁾, D⁽¹⁾ₙ = D⁽²⁾ₙ</text>
+  <text x="245" y="588" class="label" font-size="10">(electrical continuity)</text>
 
   <!-- Conservation identity -->
   <rect x="440" y="470" width="360" height="150" fill="#eef3f8" stroke="#1a3a5c" stroke-width="1.5"/>
@@ -102,7 +97,4 @@
   <text x="455" y="566" class="label" font-size="10">A_int: interface-local residual (not bulk loss)</text>
   <text x="455" y="586" class="label" font-size="10">total-field fluxes include all modes and cross terms</text>
 
-  <!-- Notes -->
-  <text x="830" y="490" class="subtitle" font-size="10" text-anchor="start">For generalized theories, energy flux forms are open derivations (Section 10.3).</text>
-  <text x="830" y="510" class="subtitle" font-size="10" text-anchor="start">Benchmark status is not independently verified in this revision.</text>
 </svg>
