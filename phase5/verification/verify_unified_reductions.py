@@ -31,6 +31,11 @@ tpl = dpl + k_star * (grad_v + tau_v * grad_v_dot)
 mgt = q + tau_m * qdot + k * grad_T + k_star * grad_v
 
 assert sp.simplify(ls.subs(tau0, 0) - fourier) == 0
+# Negative check: a nonzero LS relaxation coefficient leaves a q-dot term.
+ls_nonzero_relaxation_minus_fourier = sp.expand(ls - fourier)
+assert ls_nonzero_relaxation_minus_fourier == tau0 * qdot
+assert ls_nonzero_relaxation_minus_fourier != 0
+
 # Positive DPL -> LS check: remove the temperature-gradient lag but retain
 # the heat-flux relaxation with the LS time constant.
 dpl_to_ls = sp.simplify(dpl.subs({tau_T: 0, tau_q: tau0}) - ls)
@@ -44,7 +49,30 @@ assert dpl_tau_q_zero_minus_ls != 0
 
 # Removing both DPL lags gives Fourier, a distinct reduction from LS.
 assert sp.simplify(dpl.subs({tau_T: 0, tau_q: 0}) - fourier) == 0
+# Either single zero-lag substitution leaves the other DPL term in general.
+assert sp.simplify(dpl.subs(tau_q, 0) - fourier - k * tau_T * grad_T_dot) == 0
+assert sp.simplify(dpl.subs(tau_T, 0) - fourier - tau_q * qdot) == 0
+assert sp.simplify(dpl.subs(tau_q, 0) - fourier) != 0
+assert sp.simplify(dpl.subs(tau_T, 0) - fourier) != 0
+
+# The displayed TPL residual reduces to DPL only when its extra channel is
+# removed. A nonzero k_star with independent fields does not.
 assert sp.simplify(tpl.subs(k_star, 0) - dpl) == 0
+assert sp.simplify(tpl - dpl - k_star * (grad_v + tau_v * grad_v_dot)) == 0
+assert sp.simplify(tpl - dpl) != 0
+
+# The displayed MGT heat-flux residual reduces to LS-type flux for
+# k_star=0 and tau_m=tau0, and to Fourier when both MGT terms are removed.
+assert sp.simplify(mgt.subs({k_star: 0, tau_m: tau0}) - ls) == 0
+assert sp.simplify(mgt.subs(k_star, 0) - ls - (tau_m - tau0) * qdot) == 0
+assert sp.simplify(mgt.subs({tau_m: tau0}) - ls - k_star * grad_v) == 0
+assert sp.simplify(mgt.subs(k_star, 0) - ls) != 0
+assert sp.simplify(mgt.subs({tau_m: tau0}) - ls) != 0
+assert sp.simplify(mgt.subs({tau_m: 0, k_star: 0}) - fourier) == 0
+assert sp.simplify(mgt.subs(tau_m, 0) - fourier - k_star * grad_v) == 0
+assert sp.simplify(mgt.subs(k_star, 0) - fourier - tau_m * qdot) == 0
+assert sp.simplify(mgt.subs(tau_m, 0) - fourier) != 0
+assert sp.simplify(mgt.subs(k_star, 0) - fourier) != 0
 
 # Keep the active comparison table synchronized with the checked reduction.
 comparison = (ROOT / "master/sections/sec12_comparative.tex").read_text(encoding="utf-8")
@@ -62,7 +90,7 @@ for criterion in (
     assert row.count("& Model-dependent &") == 1, f"MDD cell not explicitly model-dependent: {criterion}"
 assert "does not display a governing MDD law with a source-anchored equation" in comparison
 assert sp.simplify(mgt.subs({tau_m: 0, k_star: 0}) - fourier) == 0
-print("PASS: LS -> Fourier; first-order DPL -> LS/Fourier; TPL -> DPL; displayed MGT heat-flux law -> Fourier")
+print("PASS: LS -> Fourier; first-order DPL -> LS/Fourier; TPL -> DPL; displayed MGT heat-flux law -> LS-type/Fourier")
 
 # GN-III with kappa=0 is the time derivative of the stated, time-integrated
 # GN-II equation when T = alpha_GN_dot. This is derivative-level
@@ -87,9 +115,16 @@ gn3_residual = (
     - kappa * sp.diff(T, x, 2, t)
     - kappa_star * sp.diff(T, x, 2)
 )
-gn3_kappa_zero = gn3_residual.subs(kappa, 0).subs(T, sp.diff(alpha_gn, t))
+gn3_under_alpha = gn3_residual.subs(T, sp.diff(alpha_gn, t))
+gn3_kappa_zero = gn3_under_alpha.subs(kappa, 0)
 assert sp.simplify(gn3_kappa_zero + sp.diff(gn2_residual, t)) == 0
+# Negative check: for nonzero kappa, the residual difference is the extra
+# temperature-rate-gradient term; the reduction is not obtained by ignoring it.
+nonzero_kappa_difference = sp.simplify(gn3_under_alpha + sp.diff(gn2_residual, t))
+assert sp.simplify(nonzero_kappa_difference + kappa * sp.diff(alpha_gn, x, 2, t, 2)) == 0
+assert nonzero_kappa_difference != 0
 print("PASS: GN-III with kappa=0 equals the time derivative of displayed GN-II under T=alpha_GN_dot")
+print("PASS: negative GN reduction check retains the nonzero-kappa temperature-rate-gradient term")
 
 # Caputo derivatives of integer-order monomials reduce to ordinary derivatives
 # at integer orders for the selected smooth test functions.
@@ -104,7 +139,12 @@ for degree in range(2, 7):
         assert sp.simplify(
             caputo_monomial - sp.diff(t_cap**degree, t_cap, order)
         ) == 0
+# Negative check: a genuinely fractional order does not equal the first
+# ordinary derivative even for the selected smooth monomial t^2.
+caputo_half_t2 = sp.gamma(3) / sp.gamma(sp.Rational(5, 2)) * t_cap ** sp.Rational(3, 2)
+assert sp.simplify(caputo_half_t2 - sp.diff(t_cap**2, t_cap)) != 0
 print("PASS: Caputo monomial identities at orders 1 and 2 for degrees 2 through 6")
+print("PASS: negative fractional-order check distinguishes alpha=1/2 from an ordinary derivative")
 
 # For the displayed scalar Caputo PDE, integer-order endpoints have the
 # differential form of the heat equation (alpha=1) and wave equation (alpha=2).
@@ -129,7 +169,13 @@ helmholtz_residual = sigma - xi**2 * sp.Symbol("lap_sigma") - sigma_local
 assert sp.simplify(helmholtz_residual.subs(xi, 0) - (sigma - sigma_local)) == 0
 c_nonlocal = c0 / sp.sqrt(1 + xi**2 * wave_number**2)
 assert sp.simplify(c_nonlocal.subs(xi, 0) - c0) == 0
+# Negative check: a finite nonzero length and nonzero wave number do not give
+# the local speed; no cutoff is implied by this expression.
+nonlocal_speed_difference = sp.simplify(c_nonlocal - c0)
+assert nonlocal_speed_difference != 0
+assert sp.limit(c_nonlocal, wave_number, sp.oo) == 0
 print("PASS: displayed Helmholtz differential law and 1D dispersion expression have their xi=0 local limits")
+print("PASS: negative nonlocal check retains finite-wavenumber dispersion and confirms phase-speed decay without a cutoff")
 
 # The reduction map must cover the requested families while explicitly leaving
 # GL and GN-I equation-level reductions open. These text checks do not establish
@@ -142,6 +188,7 @@ for family in (
     assert family in reduction_map, f"reduction map is missing {family}"
 assert "No equation-level reduction asserted" in reduction_map
 assert r"\alpha=1" in reduction_map and r"\alpha=2" in reduction_map
+assert r"$\tau=\tau_0$, $k^*=0$" in reduction_map
 assert r"\tau_0=0" in reduction_map and r"\xi=0" in reduction_map
 assert "Derivative-level compatibility only" in reduction_map
 assert "no shared stability or thermodynamic condition follows" in reduction_map

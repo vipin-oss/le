@@ -280,6 +280,12 @@ jobs:
       - name: Verify GN-III source-equation coefficient mapping
         run: python phase5/verification/verify_gn3_source_mapping.py
 
+      - name: Verify open-/short-circuit piezoelectric stiffness derivation
+        run: python phase5/verification/verify_piezoelectric_stiffness.py
+
+      - name: Verify exhaustive Section 4--10 equation-audit inventory
+        run: python phase5/verification/check_equation_audit_inventory.py
+
       - name: Verify Figure 11 workflow connectors and scope
         run: python phase5/verification/verify_fig12_workflow.py
 

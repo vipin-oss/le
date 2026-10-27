@@ -46,12 +46,14 @@ D_{i,i} = 0.
 
 \subsubsection{Electrical energy density}
 
-The electrical energy density is:
+For an uncoupled linear dielectric with symmetric positive-definite permittivity and $D_i=\kappa_{ij}E_j$, the electric-field energy contribution is
 
 \begin{equation}
 \mathcal{E}_{\mathrm{elec}} = \frac{1}{2}D_i E_i.
 \label{eq:5.5}
 \end{equation}
+
+This is not the total stored energy of the coupled piezoelectric system in Eqs.~\eqref{eq:5.1}--\eqref{eq:5.2}; that total requires a stated thermodynamic potential and its mechanical/electrical coupling terms.
 
 \subsection{Piezothermoelasticity: three-field coupling}
 \label{sec:5.2}
@@ -103,12 +105,12 @@ The coupling of Section~\ref{sec:5.2} has an immediate and testable consequence:
 
 \subsubsection{The coupling coefficient as a wave-speed diagnostic}
 
-Because the electrical field and the mechanical field are both excited by the strain, the effective elastic stiffness of a piezoelectric solid along a given direction is not $c_{ijkl}$ but a stiffness that has been renormalised by the dielectric stiffness, through the electromechanical factor
+For the displayed linear constitutive equations, eliminating the quasistatic electric field under the open-circuit condition $D_i=0$ gives the effective stiffness
 \begin{equation}
 \bar{c}_{ijkl} = c_{ijkl} + e_{aij}(\kappa^{-1})_{ab}e_{bkl},
 \label{eq:5.19}
 \end{equation}
-which is the short-circuit/open-circuit stiffness correction after eliminating the quasistatic field under a specified electrical constraint. Its sign is positive for positive-definite permittivity with the stated tensor contraction. The effective modulus depends on the electrical boundary condition; it is not a universal scalar correction.
+where the positive correction follows from $E_i=-(\kappa^{-1})_{ij}e_{jkl}\varepsilon_{kl}$. Under the short-circuit condition $E_i=0$, the stiffness remains $c_{ijkl}$. The open-circuit correction is positive semidefinite when the permittivity tensor is positive definite and the displayed contractions apply. This is a tensor relation under these electrical constraints, not a universal scalar correction.
 
 \subsection{Electrical boundary conditions}
 \label{sec:5.3}

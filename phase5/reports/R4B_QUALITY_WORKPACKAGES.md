@@ -54,3 +54,9 @@ After the targeted Q5/F12 audit closure, continue the remaining Q3 source-specif
 ## Final report acceptance
 
 The final report must enumerate Q1–Q5 deliverables and their verification state; list the verified unified-framework reductions and their exact script/source anchors; report current Class A and Class V row counts; and identify the five weakest remaining sections with a concrete reason for each. Also state what remains unresolved and distinguish successful engineering builds from scientific verification.
+
+## WP4 — Equation audit (in progress; 2026-10-27)
+
+The exhaustive display inventory is now `phase5/reports/EQUATION_AUDIT.csv`: 77 equation/equation-star display groups across Sections 4–10, with exact source-file line and label. `phase5/verification/check_equation_audit_inventory.py` enforces one row per current display, but validates coverage only. Current dispositions are 1 `VERIFIED-SOURCE`, 17 `VERIFIED-SYMBOLIC`, 52 `CONDITIONAL`, and 7 `OPEN`; these counts do not mean the audit is complete. See `WP4_EQUATION_AUDIT_STATUS.md` for row scope and the remaining checks.
+
+The Section 5 corrections distinguish the open-circuit piezoelectric stiffness `C + e^T K^{-1}e` from the short-circuit stiffness `C` (OCL-500), and restrict `1/2 D_i E_i` to the uncoupled linear-dielectric field-energy contribution rather than total coupled stored energy (OCL-510). Both are derived from displayed linear constitutive equations and checked with positive/negative symbolic tests. The reduction script now includes negative tests for the principal displayed LS, DPL, TPL, MGT, GN, fractional-endpoint, and nonlocal substitutions (OCL-509). Eight displays still need equation-level source/derivation closure; multiple conditional rows need exact anchors or narrower wording. WP4 remains open.

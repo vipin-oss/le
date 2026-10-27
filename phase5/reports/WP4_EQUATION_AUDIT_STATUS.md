@@ -1,0 +1,42 @@
+# WP4 Equation Audit — Initial Inventory and Status
+
+**Status:** in progress; this is an inventory and first targeted correction, not completion of the equation audit.
+
+## Scope and coverage
+
+The audit covers every `equation` and `equation*` display group in Sections 4–10. The new `EQUATION_AUDIT.csv` has 77 rows: Section 4 = 17, Section 5 = 16, Section 6 = 8, Section 7 = 4, Section 8 = 7, Section 9 = 12, and Section 10 = 13. `check_equation_audit_inventory.py` verifies that each current display group has exactly one row with matching source line and label. It is a coverage check only and does not validate formulas.
+
+Initial row dispositions:
+
+| Status | Rows | Meaning at this checkpoint |
+| --- | ---: | --- |
+| `VERIFIED-SOURCE` | 1 | One equation has a targeted primary-source equation/page anchor. |
+| `VERIFIED-SYMBOLIC` | 17 | Existing or new scripts check the displayed algebra within the row's stated scope; source transcription is not implied unless separately anchored. |
+| `CONDITIONAL` | 52 | The equation is retained only under the assumptions and limits stated in its row; many still need an exact source anchor or equation-specific derivation. |
+| `OPEN` | 7 | Equation-level verification remains unperformed; the rows identify the required next action. |
+
+The status count is intentionally conservative. A `CONDITIONAL` or `OPEN` row is not a verified scientific claim. Each unverified display is linked to a section-specific Class C ledger row, and the row itself names the remaining source/derivation check.
+
+## First corrections: Section 5 piezoelectric energy and stiffness
+
+Section 5 previously called the correction in the displayed tensor relation a “short-circuit/open-circuit” correction. That conflated distinct electrical conditions. The manuscript now states the derivation from its displayed linear constitutive equations precisely: under quasistatic open circuit, `D=0` gives `C_open = C + e^T K^{-1}e`; under short circuit, `E=0` leaves `C_short = C`. The positive-semidefinite statement is conditional on positive-definite permittivity. The same script checks both substitutions and includes negative tests against the wrong sign and against conflating the two boundary conditions (OCL-500).
+
+The displayed `1/2 D_i E_i` expression is now explicitly restricted to the electric-field energy contribution of an uncoupled linear dielectric (`D=K E`). The text states that it is not the total stored energy of the coupled piezoelectric system. The script verifies the dielectric identity and tests that the coupled displacement law leaves a strain-electric cross term (OCL-510).
+
+## Reduction checks and negative tests
+
+`verify_unified_reductions.py` now tests both positive substitutions and negative alternatives for the displayed relations: LS-to-Fourier; first-order DPL-to-LS/Fourier (including the explicit rejection of `tau_q=0` as the LS limit); TPL-to-DPL; the candidate MGT-to-LS-type and MGT-to-Fourier reductions; the GN-III/GN-II derivative-level relation; selected Caputo integer endpoints; and the displayed nonlocal local limit. Negative tests retain the terms left behind when only one required parameter is removed, distinguish fractional order one-half from an ordinary derivative, and distinguish a finite-wavenumber nonlocal speed from its local value. These are symbolic checks of displayed equations, not source-transcription, admissibility, solution-convergence, stability, or family-wide equivalence proofs (OCL-470–OCL-473, OCL-509).
+
+## External independent check inspected
+
+Fetched the read-only audit branch `arena/0be2770f-le` at `6e095abcaa674ee5d92d2a8589446bd38ae61780`. Its tree contains a B22 report, but no B23/Brave report file. The B22 report lists no P0 findings and four P1 findings. A comparison with this branch shows the corresponding matters are already corrected or qualified here: the DPL-to-LS table uses `tau_T -> 0` with `tau_q=tau_0`; the Quintanilla DOI is set to the Crossref-matching candidate but remains `verified=NO` and the conflicting first-page reports remain recorded; the interface cross-term script derives the actual fields rather than asserting a tautology; and Eq. 9.10 explicitly defines its incident-flux denominator as the net same-plane incident flux. No new P0/P1 defect was identified in this check. The DOI conflict remains open and is not being treated as resolved.
+
+## Remaining work
+
+1. Audit all 52 conditional rows against exact source pages/equations or equation-specific scripts; explicitly record sign conventions, coefficient maps, domains, constitutive assumptions, and boundary/data restrictions.
+2. Resolve or conservatively hedge/remove the seven open displays: Eq. 4.2, 4.11, 4.12, 6.3, 6.4, 6.7, and 7.3.
+3. Check all source-sensitive displayed equations for sign/index/notation conflicts, including thermal-flux signs, conductivity tensor versus scalar use, equations involving `kappa*` versus `kappa_ij`, interface-system mode counts, and the exact assumptions behind each matrix inverse or balance identity.
+4. For each reduction claimed in the manuscript, retain a positive check and a negative test for the most plausible incorrect substitution; keep source transcription separate from symbolic validity.
+5. After the Section 4–10 equation rows are resolved, re-run the inventory, ledger, build, privacy, and hostile-diff checks; then continue the ordered Q1, Q3, Q5, WP3 remainder, WP6, WP7, and WP8 work.
+
+Current equation-audit ledger total is 510 rows: A=48, B=123, C=317, V=22. The inventory checker establishes row coverage only; it does not close the remaining equation work.
