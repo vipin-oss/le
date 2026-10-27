@@ -131,3 +131,13 @@
 8. Prepared a 114-row sanitized `SOURCE_LEDGER.csv` snapshot; blanked private location/partition fields, removed path components and library file codes, and checked for links/Drive IDs.
 9. Refreshed README/build-status counts to 477 rows (A=29, B=126, C=313, V=9); A+V=38. The ledger-copy/report update is docs/CSV-only.
 10. Q1 remains incomplete and Q2 is not started; equation-level checks, the theory-comparison table, and Section 10 final-size visual inspection remain open. No backup branch or WP-finished tag was created.
+
+## Q1 unified notation and comparison (2026-10-27)
+
+1. Completed the scoped Section 4 local-Cauchy field-equation scaffold; stress and heat-transport closures remain non-universal placeholders, with generalized boundary-power terms excluded explicitly.
+2. Added the comparison matrix and reduction map for all requested families. GL/GN-I equation-level cells and model-dependent properties remain B/C/open; no formula was inferred by analogy. Added script coverage and symbolic checks, including the Fourier entropy-production sign.
+3. Promoted OCL-169 only for the source-recorded first-order Roy Choudhuri (2007) TPL form; retained broader TPL claims as unresolved. The missing-source register remains 23 rows.
+4. Q1 content commit `0a1a217` failed CI 40462918463 on an undefined math symbol; fix commit `54f09a4` exposed six table overfull boxes in CI 40463181026. Corrected notation/layout without changing gates; content commit `3fc1fec` passed CI 40463595470.
+5. Final CI: 118 PDF pages; undefined references/citations 0; forbidden privacy tokens 0; forbidden manuscript tags 0; near-overfull boxes >0.5 pt 0; rendered figures 18, included 16; deletion-audit `NONE` rows 0. Ten A/V rows were spot-checked against rendered text; see `R4B_SOURCE_FINDINGS.md`.
+6. Ledger: 483 rows, A=30, B=127, C=313, V=13 (A+V=43); source-gap register=23. Output commit `687f1f6` was fast-forwarded on the fixed branch and verified against `git ls-remote`.
+7. Q1 is complete at the evidence-bounded scope, with open cells retained; proceed to Q2 interface derivations/mode counts/matrix sizes. No external submission or contact was made.
