@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering
+\scriptsize
+\caption{Reduction map for the displayed formulations. Each arrow is an algebraic substitution or a derivative-level identity; none is a solution-convergence theorem.}
+\label{tab:q1-reduction-map}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{@{}p{2.0cm}p{3.2cm}X p{4.0cm}@{}}
+\toprule
+\textbf{Formulation} & \textbf{Substitution} & \textbf{Displayed-equation result} & \textbf{Scope / unresolved condition} \\
+\midrule
+Classical coupled & Reference form & Fourier heat flux with coupled momentum and internal-energy balances. & Baseline only; coefficients, domain, and data remain part of each problem. \\
+LS & $\tau_0=0$ in Eq.~\eqref{eq:4.4} & Fourier heat-flux law. & Constitutive identity; no solution-convergence claim. \\
+GL & None entered & No equation-level reduction asserted. & Original GL equation pages and convention must be transcribed before a reduction is tested. \\
+GN-I & None entered & No equation-level reduction asserted. & Source identity and equation pages remain open; no family form is inferred. \\
+GN-II / GN-III & In the displayed source-free forms, set $\kappa=0$ and $T=\dot\alpha_{\mathrm{GN}}$. & The GN-III residual equals the time derivative of the displayed GN-II residual. & Derivative-level compatibility only; integration constants, initial data, source terms, and solution convergence are not resolved. \\
+DPL & $\tau_T=0$, $\tau_q=\tau_0$; or $\tau_q=\tau_T=0$ in Eq.~\eqref{eq:4.16} & The displayed first-order residual reduces to LS; setting both lags to zero gives Fourier. & Exact only for this truncation; not an admissibility or solution-limit theorem. \\
+TPL & $k^*=0$ in Eq.~\eqref{eq:4.17}'s first-order expansion & The thermal-displacement-gradient contribution is removed, leaving the displayed DPL residual. & Algebra of the displayed law; no shared stability or thermodynamic condition follows. \\
+MGT & $\tau=\tau_0$, $k^*=0$ in the candidate Eq.~\eqref{eq:4.18}; or $\tau=0$, $k^*=0$ & The displayed heat-flux residual reduces to LS-type Eq.~\eqref{eq:4.4}; or to Fourier, respectively. & Candidate constitutive variant only; reductions are algebraic and do not imply source identity, admissibility, or solution convergence. Acoustic MGT and other thermoelastic placements are not included. \\
+Fractional scalar & $\alpha=1$ or $\alpha=2$ in Eq.~\eqref{eq:4.20} & The scalar equation has heat-equation or wave-equation form, respectively. & Scalar endpoints only; no coupled thermoelastic limit, intermediate-order speed claim, or solution convergence is asserted. \\
+Spatially nonlocal & $\xi=0$ in the displayed Helmholtz form and 1D dispersion expression & The displayed constitutive and dispersion forms recover their local expressions. & Algebraic local limit only; no convergence theorem for a nonlocal boundary-value problem. \\
+MDD & No substitution entered & No classical-derivative or finite-speed limit asserted. & Kernel normalization, regularity, and the source-specific operator must be fixed first. \\
+\bottomrule
+\end{tabularx}
+\end{table}

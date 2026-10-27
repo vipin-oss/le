@@ -1,0 +1,35 @@
+%======================================================================
+% Appendix C: Benchmark specifications
+%======================================================================
+\section{Benchmark Specifications}
+\label{app:benchmarks}
+
+The examples below define reproducible comparison problems and the quantities to specify. They do not state numerical outcomes.
+
+\subsection{BM-1: Classical elastic interface}
+
+\textbf{Problem:} Plane P-wave incident on a perfectly bonded interface between two elastic half-spaces.
+
+\textbf{Governing equations:} Navier equations for the stated isotropic elastic model in each medium. Specify densities, Lam\'e moduli, incidence angle, normal orientation, and amplitude normalization before computing coefficients.
+
+\textbf{Comparison:} Evaluate the complete time-averaged normal flux and include all propagating channels and relevant cross terms. The shorthand $R_P+T_P=1$ applies only when its single-channel and flux-normalization assumptions hold.
+
+\subsection{BM-2: Classical thermoelastic interface}
+
+\textbf{Problem:} Coupled thermoelastic wave at a welded interface.
+
+\textbf{Comparison:} Specify the coupled constitutive model, boundary data, material parameters, and flux convention before comparing reflected and transmitted fields.
+
+\subsection{BM-3: Piezothermoelastic interface}
+
+\textbf{Problem:} Coupled elastic, thermal, and quasistatic electrical fields at an interface.
+
+\textbf{Comparison:} State the constitutive equations and account for mechanical, electrical, and thermal power channels consistently.
+
+\subsection{BM-4: One-dimensional nonlocal elastic dispersion}
+
+\textbf{Problem:} For the specific Helmholtz-type model stated in Section~\ref{sec:nonlocal}, compare the dispersion relation and its long- and short-wavelength limits with the classical bar.
+
+\subsection{BM-5: Memory-dependent thermoelastic wave}
+
+\textbf{Problem:} Specify a memory kernel and initial-boundary-value problem; compare a numerical solution with an independently derived reference solution.

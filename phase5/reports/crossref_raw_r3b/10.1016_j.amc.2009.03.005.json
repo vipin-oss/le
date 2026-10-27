@@ -1,0 +1,54 @@
+{
+  "query_doi": "10.1016/j.amc.2009.03.005",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.amc.2009.03.005",
+    "type": "journal-article",
+    "title": [
+      "Spatial behaviour of solutions of the three-phase-lag heat equation"
+    ],
+    "author": [
+      {
+        "given": "R.",
+        "family": "Quintanilla",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2009,
+          7
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2009,
+          7
+        ]
+      ]
+    },
+    "container-title": [
+      "Applied Mathematics and Computation"
+    ],
+    "short-container-title": [
+      "Applied Mathematics and Computation"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "213",
+    "issue": "1",
+    "page": "153-162",
+    "ISSN": [
+      "0096-3003"
+    ]
+  }
+}

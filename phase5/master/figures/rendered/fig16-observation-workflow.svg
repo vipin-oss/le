@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+  <defs>
+    <style>
+      .title { font: 700 16px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+      .subtitle { font: 12px 'DejaVu Sans', sans-serif; fill: #555; }
+      .step { font: 700 11px 'DejaVu Sans', sans-serif; fill: #1a3a5c; text-anchor: middle; }
+      .step-desc { font: 9px 'DejaVu Sans', sans-serif; fill: #555; text-anchor: middle; }
+      .box { fill: #eef3f8; stroke: #1a3a5c; stroke-width: 1.5; rx: 6; ry: 6; }
+      .box-key { fill: #dbe7f2; stroke: #1a3a5c; stroke-width: 2; rx: 6; ry: 6; }
+      .arrow { stroke: #1a3a5c; stroke-width: 2; fill: #1a3a5c; marker-end: url(#arrowhead); }
+      .arrow-dashed { stroke: #8fa8bd; stroke-width: 1.5; stroke-dasharray: 4,3; fill: #8fa8bd; marker-end: url(#arrowhead); }
+      .decision { fill: #fdeaea; stroke: #c0392b; stroke-width: 1.5; rx: 6; ry: 6; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0,0 8,4 0,8" fill="#1a3a5c"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="700" fill="white"/>
+
+  <text x="500" y="26" class="title" text-anchor="middle">Mathematical solution workflow</text>
+  <text x="500" y="44" class="subtitle" text-anchor="middle">From governing equations to observable quantities in generalized continuum wave problems</text>
+
+  <!-- Step 1: Governing equations -->
+  <rect x="80" y="80" width="200" height="70" class="box"/>
+  <text x="180" y="100" class="step">1. Governing equations</text>
+  <text x="180" y="117" class="step-desc">Balance laws + constitutive relations</text>
+  <text x="180" y="132" class="step-desc" font-size="9">Motion, energy, entropy, charge</text>
+
+  <!-- Step 2: Harmonic ansatz -->
+  <rect x="360" y="80" width="200" height="70" class="box-key"/>
+  <text x="460" y="100" class="step">2. Harmonic ansatz</text>
+  <text x="460" y="117" class="step-desc">uᵢ = ûᵢeⁱ(𝐤·𝐱−ωt)</text>
+  <text x="460" y="132" class="step-desc" font-size="9">Time convention e⁻ⁱωᵗ</text>
+
+  <!-- Step 3: Characteristic equation -->
+  <rect x="640" y="80" width="200" height="70" class="box"/>
+  <text x="740" y="100" class="step">3. Characteristic equation</text>
+  <text x="740" y="117" class="step-desc">Det[Γᵢₖ − ρc²δᵢₖ] = 0</text>
+  <text x="740" y="132" class="step-desc" font-size="9">Secular polynomial in q</text>
+
+  <!-- Step 4: Wave modes -->
+  <rect x="80" y="220" width="200" height="70" class="box"/>
+  <text x="180" y="240" class="step">4. Wave mode classification</text>
+  <text x="180" y="257" class="step-desc">Propagating / evanescent /</text>
+  <text x="180" y="272" class="step-desc" font-size="9">attenuating (complex q)</text>
+
+  <!-- Step 5: Boundary matching -->
+  <rect x="360" y="220" width="200" height="70" class="box-key"/>
+  <text x="460" y="240" class="step">5. Interface conditions</text>
+  <text x="460" y="257" class="step-desc">ΔX = Q (scattering matrix)</text>
+  <text x="460" y="272" class="step-desc" font-size="9">7×7 system for coupled media</text>
+
+  <!-- Step 6: Energy flux -->
+  <rect x="640" y="220" width="200" height="70" class="box"/>
+  <text x="740" y="240" class="step">6. Energy flux computation</text>
+  <text x="740" y="257" class="step-desc">Jᵢ = σⱼᵢvᵢ + qᵢ (classical)</text>
+  <text x="740" y="272" class="step-desc" font-size="9">Time-averaged ⟨Jᵢ⟩ₜ</text>
+
+  <!-- Step 7: Observable quantities -->
+  <rect x="260" y="360" width="240" height="70" class="box-key"/>
+  <text x="380" y="380" class="step">7. Observable quantities</text>
+  <text x="380" y="397" class="step-desc">R, T, A (reflection, transmission,</text>
+  <text x="380" y="412" class="step-desc" font-size="9">absorption coefficients)</text>
+
+  <!-- Arrows -->
+  <path d="M 280 115 Q 360 115 360 115" class="arrow"/>
+  <path d="M 560 115 Q 640 115 640 115" class="arrow"/>
+  <path d="M 280 255 Q 360 255 360 255" class="arrow"/>
+  <path d="M 560 255 Q 640 255 640 255" class="arrow"/>
+  <path d="M 180 290 Q 180 360 260 360" class="arrow"/>
+  <path d="M 500 290 Q 500 360 380 360" class="arrow"/>
+
+  <!-- Feedback loop: observable → governing (refinement) -->
+  <path d="M 500 430 Q 700 430 700 150" class="arrow-dashed"/>
+  <text x="620" y="420" class="step-desc" font-size="9" text-anchor="middle">Model refinement</text>
+  <text x="620" y="435" class="step-desc" font-size="9" text-anchor="middle">(compare with experiment)</text>
+
+  <!-- Verification checkpoint -->
+  <rect x="700" y="400" width="260" height="90" class="decision"/>
+  <text x="830" y="420" class="step" text-anchor="middle">Verification checkpoint</text>
+  <text x="830" y="437" class="step-desc" font-size="9">Equation source documented?</text>
+  <text x="830" y="452" class="step-desc" font-size="9">Assumptions stated?</text>
+  <text x="830" y="470" class="step-desc" font-size="9">Validity domain specified?</text>
+
+  <!-- Notes -->
+  <rect x="80" y="540" width="400" height="130" fill="#f8f9fa" stroke="#cccccc" stroke-width="1"/>
+  <text x="95" y="560" class="label" font-weight="bold">Key principles:</text>
+  <text x="95" y="580" class="step-desc" font-size="10">• Each step uses verified equations (§3–§5)</text>
+  <text x="95" y="598" class="step-desc" font-size="10">• Energy flux forms for generalized theories</text>
+  <text x="95" y="615" class="step-desc" font-size="10">  are open derivations (OQ10.1–OQ10.8)</text>
+  <text x="95" y="632" class="step-desc" font-size="10">• Complex modes normalized consistently (§8.5)</text>
+
+  <text x="520" y="560" class="label" font-weight="bold" text-anchor="middle">Notation:</text>
+  <text x="520" y="580" class="step-desc" font-size="10" text-anchor="middle">Solid boxes: verified steps</text>
+  <text x="520" y="595" class="step-desc" font-size="10" text-anchor="middle">Key boxes: critical path steps</text>
+  <text x="520" y="610" class="step-desc" font-size="10" text-anchor="middle">Dashed arrows: iterative refinement</text>
+</svg>

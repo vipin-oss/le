@@ -1,0 +1,101 @@
+{
+  "query_doi": "10.1007/s00161-026-01472-6",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s00161-026-01472-6",
+    "type": "journal-article",
+    "title": [
+      "Heat map analysis of wave dynamics in nonlocal Kelvin–Voigt piezo-semiconductors under memory-dependent heat flux"
+    ],
+    "author": [
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Syed Modassir",
+        "family": "Hussain",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Murat",
+        "family": "Yaylacı",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Soumik",
+        "family": "Das",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2026,
+          5
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          25
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          25
+        ]
+      ]
+    },
+    "container-title": [
+      "Continuum Mechanics and Thermodynamics"
+    ],
+    "short-container-title": [
+      "Continuum Mech. Thermodyn."
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "38",
+    "issue": "3",
+    "article-number": "41",
+    "ISSN": [
+      "0935-1175",
+      "1432-0959"
+    ]
+  }
+}

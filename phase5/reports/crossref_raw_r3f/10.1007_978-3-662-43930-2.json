@@ -1,0 +1,90 @@
+{
+  "map_id": "R3F-GORENFLO-2014",
+  "mode": "BIBLIOGRAPHIC-SEARCH",
+  "requested_doi": "",
+  "query": "Gorenflo Kilbas Mainardi Rogosin Mittag-Leffler Functions Related Topics Applications Springer 2014",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/978-3-662-43930-2",
+    "type": "book",
+    "title": [
+      "Mittag-Leffler Functions, Related Topics and Applications"
+    ],
+    "author": [
+      {
+        "given": "Rudolf",
+        "family": "Gorenflo",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Anatoly A.",
+        "family": "Kilbas",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Francesco",
+        "family": "Mainardi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sergei V.",
+        "family": "Rogosin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "container-title": [
+      "Springer Monographs in Mathematics"
+    ],
+    "publisher": "Springer Berlin Heidelberg",
+    "ISSN": [
+      "1439-7382",
+      "2196-9922"
+    ],
+    "ISBN": [
+      "9783662439296",
+      "9783662439302"
+    ]
+  }
+}

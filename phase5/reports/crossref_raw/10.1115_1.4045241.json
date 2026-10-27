@@ -1,0 +1,84 @@
+{
+  "query_doi": "10.1115/1.4045241",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1115/1.4045241",
+    "type": "journal-article",
+    "title": [
+      "On the Temperature-Rate Dependent Two-Temperature Thermoelasticity Theory"
+    ],
+    "author": [
+      {
+        "given": "Om Namha",
+        "family": "Shivay",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Mathematical Sciences, Indian Institute of Technology (BHU), Varanasi 221005, India"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Santwana",
+        "family": "Mukhopadhyay",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Mathematical Sciences, Indian Institute of Technology (BHU), Varanasi 221005, India"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2020,
+          2,
+          1
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2019,
+          12,
+          9
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          12,
+          9
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Heat Transfer"
+    ],
+    "short-container-title": [],
+    "publisher": "ASME International",
+    "volume": "142",
+    "issue": "2",
+    "article-number": "022102",
+    "ISSN": [
+      "0022-1481",
+      "1528-8943"
+    ]
+  }
+}

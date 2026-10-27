@@ -1,0 +1,103 @@
+{
+  "query_doi": "10.1016/j.physe.2014.05.019",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.physe.2014.05.019",
+    "type": "journal-article",
+    "title": [
+      "Longitudinal wave propagation in a piezoelectric nanoplate considering surface effects and nonlocal elasticity theory"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-2821-3094",
+        "authenticated-orcid": false,
+        "given": "Jian",
+        "family": "Zang",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Bo",
+        "family": "Fang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Ye-Wei",
+        "family": "Zhang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Tian-Zhi",
+        "family": "Yang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Dong-Hui",
+        "family": "Li",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2014,
+          9
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2014,
+          9
+        ]
+      ]
+    },
+    "container-title": [
+      "Physica E: Low-dimensional Systems and Nanostructures"
+    ],
+    "short-container-title": [
+      "Physica E: Low-dimensional Systems and Nanostructures"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "63",
+    "page": "147-150",
+    "ISSN": [
+      "1386-9477"
+    ]
+  }
+}

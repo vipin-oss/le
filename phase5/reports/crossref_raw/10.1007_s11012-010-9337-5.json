@@ -1,0 +1,77 @@
+{
+  "query_doi": "10.1007/s11012-010-9337-5",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s11012-010-9337-5",
+    "type": "journal-article",
+    "title": [
+      "Two-temperature theory in generalized magneto-thermoelasticity with two relaxation times"
+    ],
+    "author": [
+      {
+        "given": "Magdy A.",
+        "family": "Ezzat",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ahmed S.",
+        "family": "El-Karamany",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          8
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2010,
+          8,
+          5
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2010,
+          8,
+          5
+        ]
+      ]
+    },
+    "container-title": [
+      "Meccanica"
+    ],
+    "short-container-title": [
+      "Meccanica"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "46",
+    "issue": "4",
+    "page": "785-794",
+    "ISSN": [
+      "0025-6455",
+      "1572-9648"
+    ]
+  }
+}

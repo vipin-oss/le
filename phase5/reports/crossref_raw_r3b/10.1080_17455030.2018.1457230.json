@@ -1,0 +1,88 @@
+{
+  "query_doi": "10.1080/17455030.2018.1457230",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/17455030.2018.1457230",
+    "type": "journal-article",
+    "title": [
+      "Nonlocal theory of thermoelastic materials with voids and fractional derivative heat transfer"
+    ],
+    "author": [
+      {
+        "given": "Mitali",
+        "family": "Bachher",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Media Girls’ High School, Gobardanga, India."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9144-4587",
+        "authenticated-orcid": false,
+        "given": "Nantu",
+        "family": "Sarkar",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Applied Mathematics, University of Calcutta, Kolkata, India."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2019,
+          10,
+          2
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2018,
+          4,
+          2
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          4,
+          2
+        ]
+      ]
+    },
+    "container-title": [
+      "Waves in Random and Complex Media"
+    ],
+    "short-container-title": [
+      "Waves in Random and Complex Media"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "29",
+    "issue": "4",
+    "page": "595-613",
+    "ISSN": [
+      "1745-5030",
+      "1745-5049"
+    ]
+  }
+}

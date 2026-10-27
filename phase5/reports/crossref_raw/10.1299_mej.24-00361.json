@@ -1,0 +1,71 @@
+{
+  "query_doi": "10.1299/mej.24-00361",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1299/mej.24-00361",
+    "type": "journal-article",
+    "title": [
+      "Time-domain finite-difference formulation for dynamic thermoelastic theory coupled with a dual-phase lag heat conduction model"
+    ],
+    "author": [
+      {
+        "given": "Kaito",
+        "family": "MASUI",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Graduate School of Mechanical Engineering, Tokyo University of Science"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Masayuki",
+        "family": "ARAI",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Mechanical Engineering, Tokyo University of Science"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "container-title": [
+      "Mechanical Engineering Journal"
+    ],
+    "short-container-title": [],
+    "publisher": "Japan Society of Mechanical Engineers",
+    "volume": "12",
+    "issue": "1",
+    "page": "24-00361-24-00361",
+    "article-number": "24-00361",
+    "ISSN": [
+      "2187-9745"
+    ]
+  }
+}

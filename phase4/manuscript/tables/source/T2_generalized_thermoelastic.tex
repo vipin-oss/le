@@ -1,0 +1,28 @@
+%======================================================================
+% Table T2 — Generalized thermoelastic formulations
+% Section: §4
+% Evidence: Model-specific entries traceable to primary sources; UNCERTAIN entries marked as open derivations
+%======================================================================
+\begin{table}[h]
+\centering
+\small
+\caption{Comparison of generalized thermoelastic formulations. UNCERTAIN energy flux entries are open derivations (Section 10.3, OQ10.1--OQ10.8), not canonical results.}
+\label{tab:T2-generalized}
+\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
+\toprule
+\textbf{Theory} & \textbf{Thermal Assumption} & \textbf{Governing Field Equations} & \textbf{Constitutive Features} & \textbf{Primary Reference} \\
+\midrule
+Classical (CD) & Fourier: $q_i=-kT_{,i}$ & Parabolic heat equation; infinite thermal speed & Stress--strain--temperature coupling via $\beta T_{,j}$ & \cite{Biot1956} \\
+Lord--Shulman (LS) & Flux-rate: $q_i+\tau_0\dot{q}_i=-kT_{,i}$ & Hyperbolic heat equation; finite thermal wave speed & Single relaxation time; coupled displacement--temperature & \cite{Lord1967} \\
+Green--Lindsay (GL) & Temperature-rate: $\tau_1\dot{T}$ in entropy & Two temperatures $T$ and $\theta$; finite wave speed & Two relaxation times; no dissipation (centrally symmetric) & \cite{Green1972} \\
+G--N Type II & No dissipation; thermal displacement & Entropy flux $p_i=k_{ij}\alpha_{,j}$ from free energy & Thermal displacement $\alpha_i$; wave equation for temperature & \cite{Green1991} \\
+G--N Type III & Dissipative; mixed character & Combines type I and type II features & Dissipation present; finite wave speed & \cite{Green1993} \\
+Dual-phase-lag (DPL) & Two phase lags $\tau_q,\tau_T$ & Higher-order time derivatives in heat equation & $\tau_q\ge\tau_T$ for thermodynamic admissibility & \cite{Tzou1995} \\
+Triple-phase-lag (TPL) & Three phase lags including gradient lag & Third-order temporal terms & Thermal displacement gradient coupling & \cite{Tzou1997} \\
+Moore--Gibson--Thompson (MGT) & Third-order heat equation & $\tau\ddot{q}+\dot{q}=-(k/\rho c)\nabla(\dot{T}+\tau\ddot{T})$ & Thermal inertia; acceleration-level flux terms & \cite{Quintanilla2019} \\
+Memory-dependent derivative (MDD) & Hereditary integral kernel & Convolution-form flux with memory kernel $k(t-\xi)$ & History-dependent; kernel-function based & \cite{Wang2011} \\
+\bottomrule
+\multicolumn{5}{@{}l}{\textbf{Notes:} Energy flux formulations for LS, GL, GN-II, GN-III, DPL, TPL, MGT, MDD are open derivations.}\\
+\multicolumn{5}{@{}l}{\emph{Only the classical CD flux $J_i=\sigma_{ji}v_i+q_i$ is derived and verified (EQ-007, Section 3.8).}}\\
+\end{tabularx}
+\end{table}

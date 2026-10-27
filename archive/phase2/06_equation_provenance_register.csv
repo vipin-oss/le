@@ -1,0 +1,24 @@
+eq_id,equation,description,source,derivation_status,verified_by,page_section,dimensionally_consistent,limiting_case,notes
+EQ-001,ρ v̇ᵢ = σⱼᵢ,ⱼ + ρ fᵢ,Linear momentum balance,07_continuum_balance_derivations.md,DERIVED,Independent derivation,Theorem 2.1,YES,Classical elasticity,Newton's second law for continuum
+EQ-002,σᵢⱼ = σⱼᵢ,Angular momentum balance (symmetric stress),07_continuum_balance_derivations.md,DERIVED,Independent derivation,Theorem 3.1,YES,No couple stresses,Absence of couple stresses
+EQ-003,ρ d/dt(½vᵢvᵢ) = -σᵢⱼε̇ᵢⱼ + ρ fᵢvᵢ + (σⱼᵢvᵢ)ⱼ,Mechanical power balance,07_continuum_balance_derivations.md,DERIVED,Independent derivation,Theorem 4.1,YES,Elastic dynamics,Stress power transfers between kinetic and internal reservoirs
+EQ-004,ρ ė = σᵢⱼε̇ᵢⱼ - qᵢ,ᵢ + ρ r,Internal energy balance (1st law),07_continuum_balance_derivations.md,DERIVED,Independent derivation,Theorem 5.1,YES,Fourier heat conduction,Classical thermoelasticity
+EQ-005,σᵢⱼε̇ᵢⱼ - ρ(ψ̇ + sṪ) - qᵢT,ᵢ/T ≥ 0,Dissipation inequality (Clausius-Duhem),07_continuum_balance_derivations.md,DERIVED,Independent derivation,Theorem 6.1,YES,Fourier: qᵢ=-kT,ᵢ gives kT,ᵢT,ᵢ/T ≥ 0,Second law of thermodynamics
+EQ-006,σᵢⱼ = ρ∂ψ/∂εᵢⱼ, s = -∂ψ/∂T,Constitutive restrictions (Coleman-Noll),07_continuum_balance_derivations.md,DERIVED,Independent derivation,Theorem 7.1,YES,Classical thermoelasticity,Free energy potential formulation
+EQ-007,Jᵢ = σⱼᵢvᵢ + qᵢ,Total energy flux (classical),07_continuum_balance_derivations.md,DERIVED,Independent derivation,Section 8,YES,Fourier heat conduction,Mechanical + thermal flux
+EQ-008,D_τf(t) = (1/τ)∫ₜ₋τᵗκ(t-ζ)f'(ζ)dζ,MDD operator,RG-003 Eq. (1),VERIFIED,RG-003 full text,Section "Basic equations",YES,κ=1 gives ∂f/∂t,Memory-dependent derivative definition
+EQ-009,κ(t-ζ) = 1 - 2β/τ(t-ζ) + α²/τ²(t-ζ)²,MDD kernel function,RG-003 Eq. (2),VERIFIED,RG-003 full text,Section "Basic equations",YES,α=β=0 gives κ=1,Three kernel parameter choices
+EQ-010,σᵢⱼ = cᵢⱼᵣₒeᵣₒ - ηᵢⱼᵣEᵣ - βᵢⱼT,Constitutive relation (piezothermoelastic),RG-003 Eq. (3),VERIFIED,RG-003 full text,Section "Basic equations",YES,Elastic limit η=0,β=0,Anisotropic piezothermoelasticity
+EQ-011,σᵢⱼ,ⱼ = ρüᵢ,Momentum equation,RG-003 Eq. (4),VERIFIED,RG-003 full text,Section "Basic equations",YES,Classical elasticity,Linear momentum balance
+EQ-012,Eᵢ = -φ,ᵢ,Electric field from potential,RG-003 Eq. (5),VERIFIED,RG-003 full text,Section "Basic equations",YES,Electrostatics,Quasistatic electric field
+EQ-013,Dᵢ = εᵢⱼEⱼ + ηᵢⱼᵣeⱼᵣ + pᵢT,Electric displacement,RG-003 Eq. (6),VERIFIED,RG-003 full text,Section "Basic equations",YES,No coupling e=0,p=0,Linear dielectric with pyroelectric effect
+EQ-014,Dᵢ,ᵢ = 0,Charge conservation (no free charge),RG-003 Eq. (7),VERIFIED,RG-003 full text,Section "Basic equations",YES,Gauss's law,No free charge density
+EQ-015,Kᵢⱼ∂/∂t(1+Στ_Tᵐ/m!D_τ_Tᵐ)T,ᵢⱼ + K*ᵢⱼ(1+Στ_vᵐ/m!D_τ_vᵐ)T,ᵢⱼ = (1+Στ_qᵐ/m!D_τ_qᵐ)(ρC_E T̈ + T₀(βᵢⱼüᵢ,ⱼ - pᵢφ̈,ᵢ)),Heat conduction with TPL+MDD,RG-003 Eq. (8),VERIFIED,RG-003 full text,Section "Basic equations",YES,Fourier limit all τ→0,Three-phase-lag with MDD
+EQ-016,P = -Re(σ₁₃u̇₁_bar + σ₃₃u̇₃_bar - φḊ₃_bar + K₃T̄₃T/T₀),Energy flux (HPS side),RG-003 Eq. (45),VERIFIED,RG-003 full text,Section "Energy ratios",YES,Classical limit K₃=0,φ=0,Piezothermoelastic with MDD+TPL
+EQ-017,Pᵉ = -Re(σ₃₁ᵉu̇₁ᵉ_bar + σ₃₃ᵉu̇₃ᵉ_bar),Energy flux (TS side),RG-003 Eq. (46),VERIFIED,RG-003 full text,Section "Energy ratios",YES,Elastic limit,Thermoelastic without thermal flux term — ASYMMETRY
+EQ-018,⟨P_IPᵉ⟩ = ½(α₁ᵉ²ρᵉk₁² + C_Tζ₁)k₁ωRe(cosθ₀)‖A₀ᵉ‖²,Incident P-wave energy flux,RG-003 Eq. (47),VERIFIED,RG-003 full text,Section "Energy ratios",YES,Classical elasticity limit,Time-averaged harmonic flux
+EQ-019,Σ(ESₛ + E_int + E_RP + E_RT + E_RS) = 1,Energy conservation claim,RG-003 Eq. (58),CLAIMED,RG-003 authors,Section "Energy ratios",YES,Elastic lossless limit,NOT independently verified; asymmetric flux casts doubt
+EQ-020,G₁₁q⁸ + G₁₂q⁶ + G₁₃q⁴ + G₁₄q² + G₁₅ = 0,Secular equation (8th order),RG-003 Eq. (27),VERIFIED,RG-003 full text,Section "Method",YES,Reduces to lower order in limits,Characteristic equation for qP/qT/qS/eP modes
+EQ-021,σ₃₃ = σ₃₃ᵉ, σ₃₁ = σ₃₁ᵉ, u₁ = u₁ᵉ, u₃ = u₃ᵉ, T = Tᵉ,Interface conditions (perfect bonding),RG-003 Eq. (38),VERIFIED,RG-003 full text,Section "Boundary conditions",YES,Classical elasticity,7 conditions for 7 unknowns
+EQ-022,[K₃∂/∂t(1+Στ_Tᵐ/m!D_τ_Tᵐ) + K₃*(1+Στ_vᵐ/m!D_τ_vᵐ)]∂T/∂x₃ = Kₑ*∂Tᵉ/∂x₃,Heat flux continuity (MDD+TPL),RG-003 Eq. (38),VERIFIED,RG-003 full text,Section "Boundary conditions",YES,Fourier limit all τ→0,Asymmetric: MDD operators only on HPS side
+EQ-023,D₃ = 0,Electrical boundary condition (insulated),RG-003 Eq. (38),VERIFIED,RG-003 full text,Section "Boundary conditions",YES,No electrical coupling,Specific modeling choice not general condition

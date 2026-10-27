@@ -1,0 +1,149 @@
+%======================================================================
+% Section 7: Nonlocal and Scale-Dependent Continuum Models
+%======================================================================
+\section{Nonlocal and Scale-Dependent Continuum Models}
+\label{sec:nonlocal}
+
+Many classical local constitutive models relate stress to strain at the same material point and contain no explicit internal length. Nonlocal, gradient, couple-stress, and micropolar models introduce spatial interactions or additional kinematics to represent possible size effects. Their use is motivated by particular materials and experiments; evidence of a characteristic microstructural scale does not by itself show that a classical local law is invalid in every small-scale regime. The applicable constitutive model and its length parameter require independent justification.
+
+This section develops that class. The organising question is not which of the competing formulations is correct, but \emph{which physical mechanism each one encodes}, because the mechanisms predict measurably different dispersion and therefore admit different experimental tests.
+
+\subsection{Physical motivation and constitutive foundations}
+\label{sec:7.1}
+
+The classical assumption fails in a specific and observable way. A beam of a given material, tested in bending, exhibits a stiffness that depends on the specimen thickness: thinner specimens are stiffer than the classical prediction, and the departure becomes significant below a material-dependent critical length. Two distinct physical mechanisms can produce this behaviour, and they are the root of the entire family of models considered here.
+
+The first mechanism is \emph{constitutive}: the internal stress in the material depends on the neighbouring material state, because the mechanism that carries load---bonding, dislocation motion, stress concentration in a heterogeneous microstructure---acts over a finite distance. Eringen's formulation of nonlocal elasticity is the canonical statement of this mechanism \cite{Eringen1972,Eringen1974}, in which the stress at a point is obtained by averaging the local stress over a neighbourhood weighted by a kernel:
+
+\begin{equation}
+\sigma_{ij}(\bm{x}) = \int_\Omega \alpha(|\bm{x}' - \bm{x}|, \tau)\, \sigma_{ij}^{\mathrm{local}}(\bm{x}')\, d\Omega_{\bm{x}'},
+\label{eq:7.1}
+\end{equation}
+where $\alpha$ is the attenuation kernel and $\tau = e_0 a/\ell$ is the nonlocal parameter, with $e_0$ a material constant, $a$ an internal characteristic length such as the lattice spacing, and $\ell$ an external characteristic length such as the specimen size. The nonlocal parameter is therefore not an arbitrary length: it is a ratio of an internal to an external scale, which means that the nonlocal correction grows in relative importance as the specimen is made smaller relative to the microstructure. This is the scaling property that distinguishes a size-dependent theory from an ad hoc correction.
+
+The second mechanism is \emph{structural}: the material possesses additional internal degrees of freedom---microrotations, relative displacement of the constituents of a porous skeleton, dislocation density---whose motion must be carried by additional stress measures. Micropolar elasticity, formulated by Eringen as a linear theory of a continuum with independent microrotation fields \cite{Eringen1966a} and extended to the thermoelastic case by Tauchert, Claus and Ariman \cite{TauchertClausAriman1968}, is the earliest and most complete statement of this mechanism. Later work extended it to materials with voids, in which the skeleton and the pore fluid carry independent kinematic fields \cite{Nunziato1979,Cowin1983}, with a corresponding thermoelastic formulation \cite{Iesan1986}.
+
+\subsubsection{Differential form}
+
+For special kernel functions---notably the one-parameter exponential and the Helmholtz kernel---the integral equation of Eq.~\eqref{eq:7.1} reduces to a differential equation of higher order. For the Helmholtz kernel one obtains
+
+\begin{equation}
+(1 - \xi^2\nabla^2)\sigma_{ij} = \sigma_{ij}^{\mathrm{local}},
+\label{eq:7.2}
+\end{equation}
+where $\xi = e_0 a$ is the nonlocal length scale parameter. The differential form is the one used in wave-propagation applications, because it is a partial differential equation and can therefore be treated with the transform and numerical machinery of Section~\ref{sec:methods}. It is worth recording that the differential and integral forms are not interchangeable in general: the integral relation with a given kernel and the differential operator of Eq.~\eqref{eq:7.2} agree only for that kernel, and the difference matters for the boundary conditions, which in the differential form become higher-order \cite{Polizzotto2001}.
+
+\subsection{Strain-gradient and couple-stress theories}
+\label{sec:7.2}
+
+Strain-gradient theory extends classical elasticity by including higher-order gradients of strain in the constitutive relations:
+
+\begin{equation}
+\sigma_{ij} = C_{ijkl}\varepsilon_{kl} - \ell^2 C_{ijkl}\nabla^2\varepsilon_{kl},
+\label{eq:7.3}
+\end{equation}
+
+where $\ell$ is a material length scale parameter. The physical reading of Eq.~\eqref{eq:7.3} is that the stress depends not only on the strain but on the curvature of the strain field, so that regions in which the strain varies rapidly---near a notch, a contact edge, or an interface---carry additional stress. The coefficient $\ell$ is a genuine material constant that must be measured; the identification procedures for it, together with the finite element implementations and the variational formulations that make the theory tractable, have been surveyed by Askes and Aifantis \cite{Askes2006,Askes2011}.
+
+The unifying point of view that connects gradient elasticity to micropolar and couple-stress elasticity is that all three introduce internal degrees of freedom and a length scale, and differ in whether those degrees of freedom are constrained to coincide with the macroscopic deformation or are allowed to evolve independently. Aifantis's formulation, in which the internal length is interpreted as the scale of the microstructural heterogeneity that generates it, is the common root \cite{Askes2006}. It follows that a continuum model with internal length, in whichever of these forms, can be used to represent materials for which no explicit microstructural model is available---which is why the same length-scale parameter appears in treatments of metals, polymers, granular media, and biological tissue with broadly comparable values.
+
+\subsection{Size-dependent wave behavior: dispersion from nonlocality}
+\label{sec:7.3}
+
+Nonlocality introduces dispersion: the wave speed depends on wavelength. The differential form of nonlocal elasticity was developed by Eringen \cite{Eringen1983}, and the size-dependent elastic effects at the nanoscale were quantified by Maranganti and Sharma \cite{Maranganti2007}, who established the characteristic length below which classical elasticity fails for a range of materials, and by Maranganti, Sharma and Sharma \cite{Maranganti2006}, who showed that the nanoscale nonlocal contribution to electromechanical coupling is generically non-zero even for materials that possess no piezoelectric tensor---a result directly relevant to the coupled theories of Section~\ref{sec:multiphysics}, because it means that a purely elastic size effect can generate an apparent electromechanical response in a nominally non-piezoelectric material.
+
+For a nonlocal elastic bar, the dispersion relation is
+
+\begin{equation}
+c(k_{\mathrm w}) = \frac{c_0}{\sqrt{1 + \xi^2 k_{\mathrm w}^2}},
+\label{eq:7.4}
+\end{equation}
+
+where $c_0$ is the classical wave speed, $k_{\mathrm w}$ is the wave number (distinct from the thermal conductivity $k$), and $\xi$ is the nonlocal length scale. Long waves ($k_{\mathrm w} \to 0$) approach the classical speed $c_0$; short waves are strongly slowed.
+
+\subsubsection{The dispersion signature distinguishes the mechanisms}
+
+For Eq.~\eqref{eq:7.4}, the phase speed tends to zero as $k_{\mathrm w}\to\infty$, while the angular frequency $\omega(k_{\mathrm w})=c_0 k_{\mathrm w}/\sqrt{1+\xi^2k_{\mathrm w}^2}$ approaches the finite limit $c_0/\xi$; it is frequency, not phase speed, that saturates. The group velocity is $d\omega/dk_{\mathrm w}=c_0(1+\xi^2k_{\mathrm w}^2)^{-3/2}$ and tends to zero. By contrast, the positive strain-gradient law in Eq.~\eqref{eq:7.3} gives $c_{\rm ph}^2=c_0^2(1+\ell^2 k_{\mathrm w}^2)$ for a one-dimensional bar, so it stiffens and phase speed increases. Gradient-inertia variants can behave differently; the model form must accompany any comparison. A dispersion measurement over a sufficiently broad range of $k_{\mathrm w}$ can thus distinguish a nonlocal mechanism from a gradient mechanism, and the two are not interchangeable even though both produce the same qualitative signature of a size-dependent stiffness. This is one of the few places in the reviewed literature where two competing formulations of the same effect make quantitatively different and testable predictions, and it deserves more attention than it has received.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig11-nonlocality.pdf}
+\caption{Schematic nonlocal and gradient mechanisms. The plotted dispersion curves correspond only to the particular one-dimensional laws stated in Section 7; other gradient-inertia or kernel choices can differ. No universal nonlocal energy-flux correction is asserted; boundary-power derivations remain open.}
+\label{fig:nonlocality}
+\end{figure}
+
+\subsection{Energy flux in nonlocal media}
+\label{sec:7.4}
+
+For nonlocal media, boundary-power terms depend on the kernel, domain, constitutive free energy, and boundary conditions. A flux identity for a given model must be derived from its power balance; no universal correction is assumed.
+
+\subsection{Interface conditions for nonlocal media}
+\label{sec:7.5}
+
+Interface conditions for nonlocal media differ from the classical ones because the stress at a point depends on the strain in a neighbourhood, and a neighbourhood straddling an interface samples both media. The classical conditions---continuity of displacement and of traction---must be supplemented, and the supplementation is not unique: one may impose conditions on the additional derivatives that appear in the differential form of Eq.~\eqref{eq:7.2}, or one may impose the conditions in the integral form by requiring the nonlocal stress to be continuous across the interface. The two are not equivalent, and the choice made determines the number and kind of boundary conditions that the resulting boundary-value problem admits. For the differential form, the interface conditions include both the classical conditions and the higher-order conditions arising from the $\nabla^2$ term.
+
+Interface problems in which the nonlocal operator is combined with an additional coupled field have been analysed in the reviewed corpus for a fluid in contact with a nonlocal piezothermoelastic medium \cite{Gupta2023IJNMF} and for nonlocal Kelvin--Voigt piezo-semiconductors under a memory-dependent heat flux \cite{Gupta2026HeatMap}. In both cases the analysis proceeds through the modal machinery of Section~\ref{sec:interfaces}, and the specific difficulty in both is the same: the nonlocal operator acts on the stress while the coupled field acts on the temperature or the electric displacement, and the interface conditions must be formulated consistently for both.
+
+\subsection{What nonlocality does not repair}
+\label{sec:7.6}
+
+The differential nonlocal model must be distinguished from the integral constitutive law from which it is sometimes obtained. Its boundary-value formulation can exhibit paradoxes under particular geometries and boundary conditions, including the cantilever-bending paradox discussed in the nonlocal-beam literature; that does not establish a bulk-wave group velocity that grows without bound. For Eq.~\eqref{eq:7.4}, both frequency and group velocity are bounded. Well-posedness claims must specify operator, domain, boundary conditions and function space; no universal Hadamard-instability claim is made here.
+
+Some nonlocal formulations exhibit boundary-value paradoxes for particular kernels, geometries, or boundary conditions. Bounded kernels and variational formulations have been proposed in parts of the literature, but their ability to resolve a given problem must be demonstrated for the specified operator and function space; neither is a universal remedy or proof of well-posedness. The variational route can clarify admissible boundary data, but its conclusions are model-specific.
+
+\subsection{Comparative summary: nonlocal models}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Model-specific comparison of spatially nonlocal and gradient formulations. Dispersion statements are restricted to the one-dimensional laws displayed in this section.}
+\label{tab:nonlocal_comparison}
+\begin{tabularx}{\textwidth}{@{}p{2.4cm}XXX@{}}
+\toprule
+\textbf{Model/form used here} & \textbf{Spatial mechanism} & \textbf{Dispersion feature} & \textbf{Energy/flux terms to specify} \\
+\midrule
+Eringen-type Helmholtz form, Eq.~\eqref{eq:7.2} & Kernel-dependent spatial averaging & One-dimensional result of Eq.~\eqref{eq:7.4}; phase speed decreases and frequency tends to $c_0/\xi$ & Flux depends on the specified kernel and boundary-value problem \\
+Strain-gradient form, Eq.~\eqref{eq:7.3} & Strain-curvature term & For the stated positive-gradient 1D bar, phase speed increases with $k_{\mathrm w}$ & Higher-gradient boundary power depends on additional boundary data \\
+Micropolar / couple-stress & Additional micro-rotation or couple stress & Depends on the selected micropolar model & Model-specific flux terms \\
+Two-phase local/nonlocal & Depends on selected mixture/kernel & Depends on the selected mixture/kernel & Model-specific flux terms \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Notation summary for Section 7}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 7.}
+\label{tab:notation-sec7}
+\begin{tabularx}{\textwidth}{@{}p{1.8cm}X p{2.2cm}p{2.1cm}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$\alpha(|\bm{x}'-\bm{x}|,\tau)$ & Nonlocal attenuation kernel & varies & \eqref{eq:7.1} \\
+$\tau$ & Nonlocal parameter, ratio of internal to external length & dimensionless & \eqref{eq:7.1} \\
+$e_0$ & Material constant of the nonlocal formulation & dimensionless & \eqref{eq:7.1} \\
+$a$ & Internal characteristic length & m & \eqref{eq:7.1} \\
+$\xi = e_0 a$ & Nonlocal length scale parameter & m & \eqref{eq:7.2} \\
+$\ell$ & Strain-gradient or couple-stress length scale & m & \eqref{eq:7.3} \\
+$k_{\mathrm w}$ & One-dimensional wave number & m$^{-1}$ & \eqref{eq:7.4} \\
+$c(k_{\mathrm w})$ & Wave speed as a function of wave number & m\,s$^{-1}$ & \eqref{eq:7.4} \\
+$c_0$ & Classical (local) wave speed & m\,s$^{-1}$ & \eqref{eq:7.4} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+These examples show that nonlocal operator placement is model-specific. Lata and Singh's two-temperature nonlocal thermoelastic model uses a conductivity-based heat equation, with no phase-lag or Green–Naghdi term in the stated formulation. \cite{Lata2020}. Gupta et al.'s nonlocal fractional MGT example places the spatial operator in its constitutive relations, inertial term, and heat-flux relation; the latter includes temperature- and thermal-displacement-gradient terms and a carrier contribution. \cite{Gupta2024}. For one modified-Bessel $K_0$ attenuation kernel, Li and He give a kernel-specific correspondence with a differential nonlocal relation. \cite{Li2018}. Lazar and Agiasofitou derive the stress relation \(L t_{ij}=\sigma_{ij}\) by applying the differential operator \(L\) to their nonlocal constitutive relation (Eq.~(29)); for constant-coefficient \(L\), they write the transformed motion equation with \(L\) acting on the inertial and body-force terms (Eq.~(30), printed p.~10). In the Klein--Gordon specialization, application of its operator to the stress relation and motion equation gives Eqs.~(39)--(40) (printed p.~12). The description is limited to these displayed constitutive and motion equations \cite{Lazar2022}. Tung's nonlocal piezoelastic half-space model applies a spatial operator to the stress and electric-displacement relations, with a corresponding factor in the motion equation; no heat equation is included. \cite{Tung2019}. In Zang et al.'s one-dimensional piezoelectric nanoplate model, scale-dependent terms enter the inertia contributions; the study examines longitudinal-wave dispersion with surface effects. \cite{Zang2014}.
+
+\subsection{Open questions for Section 7}
+
+\begin{enumerate}[label=\textbf{OQ7.\arabic*}]
+\item What is the correct energy flux at a nonlocal interface, derived from a rigorous modified divergence theorem, and does it reproduce the classical limit as $\xi \to 0$? \label{oq:7.1}
+\item How must the boundary conditions be formulated for the differential nonlocal operator so that the initial-value problem is well posed, and is the resulting formulation variational? \label{oq:7.2}
+\item What is the relationship between the integral and differential nonlocal formulations at the level of the energy flux, given that the two agree only for the specific kernel used to obtain the differential form? \label{oq:7.3}
+\item Can a dispersion measurement over a sufficiently broad range of wave number distinguish a nonlocal mechanism from a gradient mechanism in a specific material? \label{oq:7.4}
+\item Which nonlocal constitutive law is thermodynamically admissible when combined with a memory-dependent thermal law, given that both introduce history into the energy balance? \label{oq:7.5}
+\end{enumerate}
+
+% LocalWords:

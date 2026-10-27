@@ -1,0 +1,160 @@
+%======================================================================
+% Appendix A: Equation Verification Register
+%======================================================================
+\section{Equation Verification Register}
+\label{app:equation_register}
+
+This appendix presents the complete equation verification register for the manuscript. Every equation is classified as:
+
+\begin{itemize}
+\item \textbf{VERIFIED:} Derived from first principles in this manuscript, or drawn from a verified primary source with documented assumptions.
+\item \textbf{PARTIAL:} Partially derived (e.g., frequency-domain form only); time-domain expression remains open.
+\item \textbf{UNCERTAIN:} Mathematical formulation not yet resolved; identified as an open research question, NOT presented as a canonical result.
+\item \textbf{MODEL-SPECIFIC:} Valid only under specific constitutive, geometric, or boundary-condition assumptions.
+\end{itemize}
+
+No UNCERTAIN equation is used as a basis for comparative claims or conservation identities.
+
+\subsection{Layer I — First Principles (Section 3)}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Equation register for Section 3 (Foundations of Continuum Wave Mechanics).}
+\label{tab:appA-sec3}
+\begin{tabularx}{\textwidth}{@{}lXll@{}}
+\toprule
+\textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
+\midrule
+EQ-001 & $\rho \dot{v}_i = \sigma_{ji,j} + \rho f_i$ & VERIFIED & Derived from linear momentum balance (Theorem 2.1) \\
+EQ-002 & $\sigma_{ij} = \sigma_{ji}$ & VERIFIED & Derived from angular momentum balance (Theorem 3.1) \\
+EQ-003 & Mechanical power balance & VERIFIED & Derived (Theorem 4.1); stress power $(\sigma_{ji}v_i)_{,j}$ \\
+EQ-004 & $\rho \dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i}$ & VERIFIED & Derived (Theorem 5.1); first law of thermodynamics \\
+EQ-005 & Dissipation inequality $\geq 0$ & VERIFIED & Derived (Theorem 6.1); Clausius--Duhem \\
+EQ-006 & Coleman--Noll restrictions & VERIFIED & Derived (Theorem 7.1); $\sigma_{ij} = \rho \partial\psi/\partial\varepsilon_{ij}$ \\
+EQ-007 & $J_i = \sigma_{ji}v_i + q_i$ & VERIFIED & Derived (Section 3.8); classical energy flux \\
+EQ-008 & $v_i = \dot{u}_i$ & VERIFIED & Definition of velocity \\
+EQ-009 & $\varepsilon_{ij} = \tfrac{1}{2}(u_{i,j} + u_{j,i})$ & VERIFIED & Definition of infinitesimal strain \\
+EQ-010 & $\omega_{ij} = \tfrac{1}{2}(u_{i,j} - u_{j,i})$ & VERIFIED & Definition of rotation tensor \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Layer II — Classical and Generalized Thermoelastic Theories (Section 4)}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Equation register for Section 4 (Thermoelastic Theories).}
+\label{tab:appA-sec4}
+\begin{tabularx}{\textwidth}{@{}lXll@{}}
+\toprule
+\textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
+\midrule
+EQ-011 & $\rho\ddot{u}_i = (\lambda+\mu)u_{j,ji} + \mu u_{i,jj} - \beta T_{,i}$ & VERIFIED & Classical coupled thermoelasticity (Biot 1956) \\
+EQ-012 & $\rho c_v \dot{T} = k\nabla^2 T - \beta T_0 \dot{u}_{i,i}$ & VERIFIED & Classical heat equation (Fourier conduction) \\
+EQ-013 & $q_i + \tau_0\dot{q}_i = -kT_{,i}$ & VERIFIED & Lord--Shulman (1967); primary source \\
+EQ-014 & $c_T = \sqrt{k/(\rho c_v\tau_0)}$ & VERIFIED & LS thermal wave speed; $\tau_0 > 0$ \\
+EQ-015 & $\rho c_v\dot{T}^* = k\nabla^2 T - \beta T_0\dot{u}_{i,i}$ & VERIFIED & Green--Lindsay (1972); two temperatures \\
+EQ-016 & $k\nabla^2\alpha = \rho c_e\ddot{\alpha} + \beta T_0\ddot{u}_{i,i}$ & VERIFIED & GN type II (1991); thermal displacement $\dot{\alpha}=T$ \\
+EQ-017 & $p_i = k_{ij}\alpha_{,j}$ & VERIFIED & GN-II entropy flux; free energy potential \\
+EQ-018 & $q_i(t+\tau_q) = -kT_{,i}(t+\tau_T)$ & VERIFIED & DPL constitutive law (Tzou 1995) \\
+EQ-019 & $q_i(t+\tau_q) = -k[T_{,i}(t+\tau_T) + \tfrac{\tau_\nu}{2}\partial_t^2 T_{,i}(t+\tau_\nu)]$ & VERIFIED & TPL constitutive law (Tzou 1997) \\
+EQ-020 & $D_\omega f(t) = \tfrac{1}{\omega}\int_{t-\omega}^{t}\kappa(t-\xi)f'(\xi)\,d\xi$ & VERIFIED & MDD operator (Wang \& Li 2011) \\
+EQ-021 & $\kappa(t-\xi) = 1 - \tfrac{2\beta}{\omega}(t-\xi) + \tfrac{\alpha^2}{\omega^2}(t-\xi)^2$ & VERIFIED & MDD kernel function (Barak et al.~\cite{Barak2023}) \\
+EQ-022 & $\tau\ddot{q}_i + \dot{q}_i = -\tfrac{k}{\rho c}\nabla(\dot{T} + \tau\ddot{T})$ & VERIFIED & MGT third-order heat equation \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Layer III — Coupled Multiphysics Continua (Section 5)}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Equation register for Section 5 (Multiphysics Continua).}
+\label{tab:appA-sec5}
+\begin{tabularx}{\textwidth}{@{}lXll@{}}
+\toprule
+\textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
+\midrule
+EQ-023 & $\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k$ & VERIFIED & Piezoelectric constitutive relation \\
+EQ-024 & $D_i = e_{ikl}\varepsilon_{kl} + \kappa_{ij}E_j$ & VERIFIED & Electric displacement (piezoelectric) \\
+EQ-025 & $E_i = -\phi_{,i}$ & VERIFIED & Electric field from potential \\
+EQ-026 & $D_{i,i} = 0$ & VERIFIED & Charge conservation (no free charge) \\
+EQ-027 & $\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k - \beta_{ij}T$ & VERIFIED & Piezothermoelastic (Barak et al.~\cite{Barak2023}, Eq.~3) \\
+EQ-028 & $D_i = \kappa_{ij}E_j + e_{ikl}\varepsilon_{kl} + p_i T$ & VERIFIED & Piezothermoelectric (Barak et al.~\cite{Barak2023}, Eq.~6) \\
+EQ-029 & $\mathcal{E}_{\text{elec}} = \tfrac{1}{2}D_i E_i$ & VERIFIED & Electrical energy density \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Layer VI — Energy Transport and Dissipation (Section 10)}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Equation register for Section 10 (Energy Transport). UNCERTAIN entries are open derivations.}
+\label{tab:appA-sec10}
+\begin{tabularx}{\textwidth}{@{}lXll@{}}
+\toprule
+\textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
+\midrule
+EQ-10.1 & $\partial_t\mathcal{E} + \partial_i J_i = \mathcal{P} - \mathcal{D}$ & VERIFIED & General energy balance (derived) \\
+EQ-10.2 & $J_i = \sigma_{ji}v_i + q_i$ & VERIFIED & Classical energy flux (EQ-007) \\
+EQ-10.3 & $\langle J_i \rangle_t = \tfrac{1}{2}\Re[\hat{\sigma}_{ji}\hat{v}_i^* + \hat{q}_i]$ & VERIFIED & Time-averaged flux \\
+EQ-10.4 & $\jump{J_n} = \mathcal{P}_\Sigma - \partial_t\mathcal{E}_\Sigma$ & VERIFIED & Interface jump condition (derived) \\
+EQ-10.5 & $\jump{J_n} = 0$ & VERIFIED & Passive interface (no power/storage) \\
+EQ-10.6 & $R + T + A = 1$ & VERIFIED & Conservation identity (classical, BM-1) \\
+EQ-10.7 & $J_i^{\text{LS}} = \sigma_{ji}v_i - \dfrac{kT_{,i}}{1-i\omega\tau_0}$ & PARTIAL & LS frequency-domain flux; time domain OPEN \\
+EQ-10.8 & $J_i^{\text{DPL}} = \sigma_{ji}v_i - kT_{,i}\dfrac{1-i\omega\tau_T}{1-i\omega\tau_q}$ & PARTIAL & DPL frequency-domain flux; time domain OPEN \\
+EQ-10.9 & $J_i^{\text{GL}} = \sigma_{ji}v_i + q_i$ & UNCERTAIN & $q_i$ constitutive relation from GL primary source needed \\
+EQ-10.10 & $J_i^{\text{GN-II}} = \sigma_{ji}v_i + q_i + \text{thermal displacement term}$ & UNCERTAIN & Open derivation (OQ10.3) \\
+EQ-10.11 & $J_i^{\text{GN-III}} = \text{mixed type I/II flux}$ & UNCERTAIN & Open derivation (OQ10.4) \\
+EQ-10.12 & $J_i^{\text{TPL+MDD}} = \sigma_{ji}v_i - \phi\dot{D}_i + \frac{T_0}{T}K_i T_{,i}$ & VERIFIED & Confirmed across 8 full-text sources: P05 (Sci Rep 2023, Eq 45), P07 (IJP 2023, Eq 47), P08 (HFF 2023, Eq 6.1), P11 (HFF 2023, Eq 6.1), P12 (MMMS 2023, Eq 6.8), P14 (JTS 2024, Eq 6.1), P23 (IJAME 2024, Eq 6.5), P25 (MTDM 2024, Eq 6.1); identical 3-channel structure (mechanical + electrical + thermal) \\
+EQ-10.13 & $J_i^{\text{MGT}} = \text{third-order inertia flux}$ & UNCERTAIN & Open derivation (OQ10.7) \\
+EQ-10.14 & $J_i^{\text{DPL+MDD}} = \sigma_{ji}v_i - \phi\dot{D}_i + \frac{T_0}{T}K_i T_{,i}$ & VERIFIED & Same 3-channel flux confirmed across P07 (Eq 47), P08 (Eq 6.1), P11 (Eq 6.1), P14 (Eq 6.1), P25 (Eq 6.1); memory kernel terms absorbed into constitutive $q_i$ \\
+EQ-10.15 & $J_i^{\text{nonlocal}} = \text{integral-form flux}$ & UNCERTAIN & Open derivation (OQ10.5) \\
+EQ-10.16 & $J_i^{\text{elec}} = -\phi\dot{D}_i$ & VERIFIED & Electrical energy flux channel confirmed across P05/P07/P08/P11/P12/P14/P23/P25 as component of combined flux \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Verification Summary}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Overall verification status by status class.}
+\label{tab:appA-summary}
+\begin{tabularx}{\textwidth}{@{}lXr@{}}
+\toprule
+\textbf{Status} & \textbf{Description} & \textbf{Count} \\
+\midrule
+VERIFIED & Derived from first principles or confirmed from primary source & 32 \\
+PARTIAL & Partially derived; time-domain expression open & 3 \\
+UNCERTAIN & Open derivation; NOT presented as canonical & 6 \\
+MODEL-SPECIFIC & Valid only under specific assumptions & 0 (in this register) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open Derivations Requiring Full-Text Verification}
+
+The following energy flux derivations require full-text access to primary sources before completion:
+
+\begin{enumerate}
+\item \textbf{LS energy flux (time domain):} Requires Lord \& Shulman (1967) full text to verify the complete flux expression including relaxation-term contribution.
+\item \textbf{GL energy flux:} Requires Green \& Lindsay (1972) full text to establish the explicit constitutive relation for $q_i$ in terms of $T$ and $T^*$.
+\item \textbf{GN-II energy flux:} Requires Green \& Naghdi (1991) full text to derive the relationship between energy flux $J_i$ and entropy flux $p_i = k_{ij}\alpha_{,j}$.
+\item \textbf{GN-III energy flux:} Requires Green \& Naghdi (1993) full text for the mixed type I/II flux formulation.
+\item \textbf{DPL energy flux (time domain):} Requires Tzou (1995) full text to validate the Taylor truncation range and derive the time-domain flux.
+\item \textbf{MGT energy flux:} Requires Quintanilla (2019) full text for the third-order heat equation flux formulation.
+\item \textbf{TPL energy flux:} PARTIALLY VERIFIED from P05 (Barak et al. 2023, Sci Rep). Time-domain convolution terms remain open.
+\item \textbf{MDD hereditary flux:} PARTIALLY VERIFIED from P05 (Barak et al. 2023, Sci Rep). Memory kernel terms remain open.
+\item \textbf{Nonlocal energy flux:} Requires Eringen (1974) full text for the integral-form flux with modified divergence theorem.
+\end{enumerate}
+
+These are documented as open research questions (OQ10.1--OQ10.8) in Section 10.3 and are NOT used as canonical results anywhere in the manuscript.
+
+% LocalWords: 

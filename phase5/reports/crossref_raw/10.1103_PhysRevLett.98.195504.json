@@ -1,0 +1,69 @@
+{
+  "query_doi": "10.1103/PhysRevLett.98.195504",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1103/physrevlett.98.195504",
+    "type": "journal-article",
+    "title": [
+      "Length Scales at which Classical Elasticity Breaks Down for Various Materials"
+    ],
+    "author": [
+      {
+        "given": "R.",
+        "family": "Maranganti",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "P.",
+        "family": "Sharma",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-online": {
+      "date-parts": [
+        [
+          2007,
+          5,
+          9
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2007,
+          5,
+          9
+        ]
+      ]
+    },
+    "container-title": [
+      "Physical Review Letters"
+    ],
+    "short-container-title": [
+      "Phys. Rev. Lett."
+    ],
+    "publisher": "American Physical Society (APS)",
+    "volume": "98",
+    "issue": "19",
+    "article-number": "195504",
+    "ISSN": [
+      "0031-9007",
+      "1079-7114"
+    ]
+  }
+}

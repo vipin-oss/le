@@ -1,0 +1,57 @@
+{
+  "query_doi": "10.15625/0866-7136/14621",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.15625/0866-7136/14621",
+    "type": "journal-article",
+    "title": [
+      "Dispersion equation of Rayleigh waves in transversely isotropic nonlocal piezoelastic solids half-space"
+    ],
+    "author": [
+      {
+        "given": "Do Xuan",
+        "family": "Tung",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-online": {
+      "date-parts": [
+        [
+          2019,
+          12,
+          28
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          12,
+          28
+        ]
+      ]
+    },
+    "container-title": [
+      "Vietnam Journal of Mechanics"
+    ],
+    "short-container-title": [
+      "Vietnam J. Mech."
+    ],
+    "publisher": "Publishing House for Science and Technology, Vietnam Academy of Science and Technology (Publications)",
+    "volume": "41",
+    "issue": "4",
+    "page": "363-371",
+    "ISSN": [
+      "0866-7136",
+      "0866-7136"
+    ]
+  }
+}
