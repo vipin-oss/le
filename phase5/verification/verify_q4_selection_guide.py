@@ -32,7 +32,7 @@ required_phrases = (
     "Additional coupled fields",
     "Benchmark evidence: derivations versus source checkpoints",
     "Research roadmap from the Q3 evidence gaps",
-    "GN-III printed p. 255 as an image", 
+    "The GN-III type-II/type-III scope distinction is now image-checked",
     "specifications rather than numerically validated reference solutions",
     "two-wave cross-term is shown before time averaging",
     "equality case is not classified",

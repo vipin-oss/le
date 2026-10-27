@@ -27,14 +27,14 @@ The guide is explicitly not a theory ranking. It requires actual equations, fiel
 
 ## Q3-derived roadmap
 
-The Section 16 roadmap keeps open: the GN-I equation/source mapping; an image check of GN-III printed p. 255, whose type-II/type-III distinction remains text-extraction-only; equation-to-manuscript reconciliation for selected GN-II/GN-III/LS formulations; exact-model parameter admissibility and well-posedness; bulk and interface energy flux derivations; and extensions of benchmarks only after equations, data, normalization, and observables are fixed. These are work items, not completed results.
+The Section 16 roadmap keeps open: the GN-I equation/source mapping; equation-to-manuscript reconciliation for selected GN-II/GN-III/LS formulations; exact-model parameter admissibility and well-posedness; bulk and interface energy flux derivations; and extensions of benchmarks only after equations, data, normalization, and observables are fixed. The separate GN-III p. 254–255 source-scope image review is now complete; it does not close the remaining equation mapping or energy/flux work. These remaining items are work items, not completed results.
 
 ## Hostile review of the preceding docs-only source updates
 
 Reviewed the documentation changes from `a477548` through `7814bf0` on the fixed branch, including `a477548`, `a3220c7`, `a072010`, and `7814bf0`; the CI-output publication commit `3499c26` was checked as a distinct generated artifact update.
 
 - The GL, GN-I, GN-II, GN-III, and LS records retain source/page bounds and explicitly keep broader parameter, stability, existence, family-wide, and energy/interface claims open. GN-I remains unresolved; GN-II/GN-III/LS additions are narrowly anchored to the reviewed printed pages.
-- GN-III's p. 255 distinction remains text-extraction-only; the later equation/regime pages are described as image-reviewed. No type-II result is transferred to type III.
+- The later GN-III equation/regime pages are image-reviewed. A follow-up image check of printed pp. 254–255 located the type-II-only no-dissipation footnote on p. 254 and the type-III scope summary on p. 255; no type-II result is transferred to type III.
 - The DPL DOI/source-page disagreement remains visible under OCL-488; equality is still unclassified. The Kumar split verifier confirms all 19 dependent rows remain B/C.
 - The earlier fixed-branch PDF at `6e8cf1e` was 119 pages; the read-only older `e56755f` report's 130-page manuscript is a different source version. The current post-Q4 fixed-branch PDF is 121 pages; the counts are not interchangeable.
 - The private Drive link/ID scan of the preceding seven changed text files returned zero hits; `git diff --check` passed. No material unsupported class promotion or privacy leak was identified in that documentation review.
