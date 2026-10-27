@@ -17,7 +17,7 @@ The source snapshot immediately before B22 work was `e1452a8` (end of the prior 
 | After F3 (`4a35a42`) | 488 | 30 | 129 | 314 | 15 | OCL-467 re-evaluated as Class V; no count change |
 | After F4 (`817f6f6`) | 489 | 30 | 130 | 314 | 15 | OCL-489, conditional same-plane definition, Class B |
 | After P2 bibliography disposition (`274873d`) | 490 | 30 | 130 | 315 | 15 | OCL-490, removed uncited entry, Class C |
-| Current content (`d0301a6`) | 490 | 30 | 130 | 315 | 15 | MDD comparison wording only; no count change |
+| B22 final content checkpoint (`d0301a6`) | 490 | 30 | 130 | 315 | 15 | MDD comparison wording only; no count change |
 
 The ledger validator passes. All 19 Kumar-dependent rows (OCL-076 and OCL-278–OCL-295) remain B/C. No F1–F4 or P2 correction promoted an unsupported generalized theorem.
 
@@ -71,6 +71,7 @@ This is a rendered-text spot check, not a full scientific or typographic proof. 
 3. **Dell’Oro–Pata Crossref raw response is unavailable.** The paper's own first page supports authors, title, DOI, and year; volume/pages 76:641–655 are recorded as B22-reported only, and `verified=NO` remains.
 4. **B22 source availability limit.** In its 26-row Class A sample, 7 were NOT-CHECKABLE because the source was not held; the report also audited all 9 Class V rows. This does not establish that the sources are absent. B22's 20-key DOI spot check was 20/20 for title/first-author/volume/pages. Its earlier `.511931`/`.511929` suspicion was explicitly retracted: both Povstenko entries were already correct and were not changed.
 5. **Table numbering differs from B22's target snapshot.** The current PDF numbering was checked directly; the MDD-bearing table is Table 24 Part B, not current Table 23 Part A. This is a numbering/snapshot mismatch, not a source-evidence conflict.
+6. **B-row provenance completeness remains a ledger-quality issue.** B22 found 112 of its 126 sampled Class B rows had both `resolved_by` and `evidence_mode` empty. No bulk backfill was attempted without evidence; the current ledger is larger and its B rows remain individually open/partial where appropriate.
 
 ## Continuation boundary
 
