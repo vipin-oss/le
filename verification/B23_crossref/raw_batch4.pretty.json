@@ -1,0 +1,123 @@
+{
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+        "facets": {},
+        "total-results": 5,
+        "items": [
+            {
+                "DOI": "10.1080/01495739.2010.511929",
+                "title": [
+                    "Dirichlet Problem for Time-Fractional Radial Heat Conduction in a Sphere and Associated Thermal Stresses"
+                ],
+                "container-title": [
+                    "Journal of Thermal Stresses"
+                ],
+                "volume": "34",
+                "page": "51-67",
+                "issued": {
+                    "date-parts": [
+                        [
+                            2011,
+                            1,
+                            12
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            },
+            {
+                "DOI": "10.1016/j.camwa.2009.08.015",
+                "title": [
+                    "Some uniqueness and existence results for the initial-boundary-value problems for the generalized time-fractional diffusion equation"
+                ],
+                "container-title": [
+                    "Computers & Mathematics with Applications"
+                ],
+                "volume": "59",
+                "page": "1766-1772",
+                "issued": {
+                    "date-parts": [
+                        [
+                            2010,
+                            3
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            },
+            {
+                "DOI": "10.1007/bf01597243",
+                "title": [
+                    "On the Clausius-Duhem inequality"
+                ],
+                "container-title": [
+                    "Zeitschrift f\u00fcr angewandte Mathematik und Physik ZAMP"
+                ],
+                "volume": "17",
+                "page": "626-633",
+                "issued": {
+                    "date-parts": [
+                        [
+                            1966,
+                            9
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            },
+            {
+                "DOI": "10.1177/1081286521994258",
+                "title": [
+                    "On the decay of the energy for radial solutions in Moore\u2013Gibson\u2013Thompson thermoelasticity"
+                ],
+                "container-title": [
+                    "Mathematics and Mechanics of Solids"
+                ],
+                "volume": "26",
+                "page": "1507-1514",
+                "issued": {
+                    "date-parts": [
+                        [
+                            2021,
+                            2,
+                            24
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            },
+            {
+                "DOI": "10.1080/01495739208946136",
+                "title": [
+                    "ON UNDAMPED HEAT WAVES IN AN ELASTIC SOLID"
+                ],
+                "container-title": [
+                    "Journal of Thermal Stresses"
+                ],
+                "volume": "15",
+                "page": "253-264",
+                "issued": {
+                    "date-parts": [
+                        [
+                            1992,
+                            4
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            }
+        ],
+        "items-per-page": 10,
+        "query": {
+            "start-index": 0,
+            "search-terms": null
+        }
+    }
+}

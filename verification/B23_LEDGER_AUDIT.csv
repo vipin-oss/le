@@ -1,0 +1,27 @@
+ocl_id,class,printed_claim_location,source_anchor_claimed,verdict,evidence_checked,note
+OCL-046,A,sec04 (DPL baseline),Dell'Oro-Lasiecka-Pata 2016 p.1 + pp.5-6 Eq.(1.7),CONFIRMED,PDF text pp.1/5/6: Thm 1.1 p.5, Eq.(1.6) p.5, Eq.(1.7) p.6,title/authors/DOI p.1,no defect
+OCL-143,A,sec04 GL law,Green-Lindsay 1972 p.5 Eqs.(4.3)-(4.7),CONFIRMED,p.5 page image (gl_p5/gl_p5b crops): (4.3)-(4.12) present,no defect
+OCL-144,A,sec04 GL law,Green-Lindsay 1972 p.5 Eqs.(4.3)-(4.7),CONFIRMED,same page image as OCL-143,no defect
+OCL-145,B,sec04 GL flux,Green-Lindsay 1972 p.5 Eqs.(4.6) and (4.8)-(4.11),CONFIRMED,p.5 page image: q law with temperature-rate term present;row held at B correctly,no defect
+OCL-174,A,sec04 MGT,Quintanilla 2019 p.3 Eqs.(2.4)-(2.5); p.4 Eq.(3.1),CONFIRMED,PDF text p.3 ((2.4) relaxed flux, (2.5) MGT equation) and p.4 ((3.1) thermoelastic constitutive),no defect
+OCL-175,A,sec04 MGT stability,Quintanilla 2019 p.3 (2.8)-(2.9); p.9 Thm 4.7; p.10 Eq.(5.8),CONFIRMED,PDF text: (2.8)/(2.9) p.3; Theorem 4.7 p.9; Lambda2=n^2/c(tau^-1 k - k*) <0 for k<k*/tau p.10,no defect
+OCL-078,A,sec10/10.4.2,Ivanov-Savova 1991 printed p.564,CONFIRMED,PDF p.564: flux not parallel to surface; depth variation; exponential decay along surface,no defect
+OCL-154,A,sec04 GN 1993,Green-Naghdi 1993 printed p.202 Eqs.(3.15)-(3.17),CONFIRMED,p.202 text: (3.15)-(3.17) and source-free system scope,no defect
+OCL-155,A,sec04 GN 1993,Green-Naghdi 1993 printed p.202 + Eq.(4.13) label,CONFIRMED,same page; scope qualification matches printed restriction,no defect
+OCL-259,A,sec07 nonlocal,Lazar-Agiasofitou 2022 p.10 Eqs.(29)-(31); p.12 Eqs.(39)-(40),CONFIRMED,PDF pp.10/12: (29) L t_ij=sigma_ij; (30) L on inertia+body force; (39)/(40) Klein-Gordon specialisation,no defect
+OCL-406,A,T3 rows + sec05,Nunziato-Cowin 1979 p.177 Eqs.(2.7)-(2.12); Cowin-Nunziato 1983 p.125,CONFIRMED,p.177: mass/linear/angular momentum/equilibrated-force/energy/entropy-inequality all present; 1983 p.125 abstract: void fraction independent kinematic variable,no defect
+OCL-407,A,T3 row + sec05,Iesan 1986 pp.67/70/71/72,CONFIRMED,p.70 (2.14) void-volume deviation + (2.18)-(2.19) restrictions; p.71 (2.22) general constitutive; p.72 (2.28) isotropic field equations,no defect
+OCL-408,A,T3 row + sec05,Tauchert-Claus-Ariman 1968 pp.37-38,CONFIRMED,p.37 Eq.(2.1) balances incl. Clausius-Duhem; p.38 kinematics + micro-inertia J,no defect
+OCL-446,B,sec08,Marotti de Sciarra 2013 p.1 abstract,CONFIRMED,p.1 abstract: quasi-static type-II GN structural model + complete state-variable variational formulation;text stays at identification level,no defect
+OCL-448,C,T5 row,Hughes 1980 printed p.1413,CONFIRMED,p.1413 abstract: selective integration / mean dilatation for nearly incompressible media;generic FE row correctly kept citation-free,no defect
+OCL-063,B,sec08,Chadwick-Sneddon 1958 title/DOI only,CONFIRMED,printed text asserts title-level identity only; source PDF now located but no claim depends on it,no defect
+OCL-195,A,sec05 Mindlin baseline,Mindlin 1974 pp.625-626 Eqs.(1)-(5),NOT-CHECKABLE,source PDF not in accessible B23 set (no Drive/B14 copy); internal evidence note exists at phase5/reports/R4B_SOURCE_FINDINGS.md:129-131,cannot be independently reopened
+OCL-207,A,sec05 Kumar 2023 Phys.Scr.,Kumar et al. 2023 p.1 and p.17,NOT-CHECKABLE,source PDF not in accessible B23 set; internal note R4B_SOURCE_FINDINGS.md:329,cannot be independently reopened
+OCL-404,A,T3 classical row,Biot 1956 pp.241-242 Eqs.(2.2)/(3.3)-(3.4),NOT-CHECKABLE,source PDF not in accessible B23 set; internal note R4B_SOURCE_FINDINGS.md:133,cannot be independently reopened
+OCL-405,A,T3 piezothermoelastic row,Barak et al. 2023 p.3 Eqs.(7)-(8),NOT-CHECKABLE,source PDF not in accessible B23 set; internal note R4B_SOURCE_FINDINGS.md:137,cannot be independently reopened
+OCL-131,C,sec02 Gorenflo wording,no source copy,NOT-APPLICABLE,resolved_by and evidence_mode are empty; printed sentence is reference-level only,no promoted claim to test
+OCL-196,B,sec05 micropolar,no source copy,NOT-APPLICABLE,empty resolved_by; printed sec05 says only that the 1966 paper is titled Linear Theory of Micropolar Elasticity and makes no equation claim,no promoted claim to test
+OCL-197,B,sec05 micropolar,no source copy,NOT-APPLICABLE,empty resolved_by; same printed sentence as OCL-196,no promoted claim to test
+OCL-198,B,sec05 micropolar,no source copy,NOT-APPLICABLE,empty resolved_by; same printed sentence as OCL-196,no promoted claim to test
+OCL-481,B,T2 GL/GN-I cells,no source copy,NOT-APPLICABLE,empty resolved_by; T2 prints None entered / no equation-level reduction for GL and GN-I,no promoted claim to test
+OCL-485,B,T6 counts,no source copy,NOT-APPLICABLE,empty resolved_by; T6 footnote limits counts to selected equations and warns against inheriting matrix sizes,no promoted claim to test

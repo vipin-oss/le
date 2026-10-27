@@ -1,0 +1,21 @@
+key,doi,status,differences,crossref_title,crossref_container
+Wang2021,10.1016/j.cam.2020.112923,matched,clean,Memory-dependent derivative versus fractional derivative (I): Difference in temporal modeling,Journal of Computational and Applied Mathematics
+Maranganti2006,10.1103/PhysRevB.74.014110,matched,PAGES( vs 014110),Electromechanical coupling in nonpiezoelectric materials due to nanoscale nonlocal size effects: Green’s function solutions and embedded inclusions,Physical Review B
+Green1993,10.1007/BF00044969,matched,clean,Thermoelasticity without energy dissipation,Journal of Elasticity
+Lata2020,10.1080/25765299.2020.1825157,matched,clean,Effects of nonlocality and two temperature in a nonlocal thermoelastic solid due to ramp type heat source,Arab Journal of Basic and Applied Sciences
+LasieckaWang2015MGT,10.1016/j.jde.2015.08.052,matched,clean,"Moore–Gibson–Thompson equation with memory, part II: General decay of energy",Journal of Differential Equations
+Singh2020b,10.1080/15376494.2020.1736697,matched,clean,Reflection of plane waves from the surface of a piezothermoelastic fiber-reinforced composite half-space,Mechanics of Advanced Materials and Structures
+Kalkal2020,10.1007/s00707-020-02676-w,matched,clean,Reflection of plane waves in a nonlocal micropolar thermoelastic medium under the effect of rotation,Acta Mechanica
+Chandrasekharaiah1996,10.1080/01495739608946173,matched,clean,A UNIQUENESS THEOREM IN THE THEORY OF THERMOELASTICITY WITHOUT ENERGY DISSIPATION,Journal of Thermal Stresses
+RoyChoudhuri2007,10.1080/01495730601130919,matched,clean,On A Thermoelastic Three-Phase-Lag Model,Journal of Thermal Stresses
+Bayones2021,10.1080/15397734.2021.1901735,matched,clean,Effect of moving heat source on a magneto-thermoelastic rod in the context of Eringen's nonlocal theory under three-phase lag with a memory dependent derivative,Mechanics Based Design of Structures and Machines
+Stehfest1970,10.1145/361953.361969,matched,clean,Algorithm 368: Numerical inversion of Laplace transforms [D5],Communications of the ACM
+Green1991,10.1098/rspa.1991.0012,matched,clean,A re-examination of the basic postulates of thermomechanics,Proceedings of the Royal Society of London. Series A: Mathematical and Physical Sciences
+Das2026,10.1007/s10999-026-09892-7,matched,PAGES( vs 77),Klein–Gordon nonlocal dynamics of porous piezo-thermoelastic medium with surface irregularity under fractional-order modified LS model,International Journal of Mechanics and Materials in Design
+Cowin1983,10.1007/bf00041230,matched,clean,Linear elastic materials with voids,Journal of Elasticity
+Dhaliwal1980,10.1090/qam/575828,matched,clean,Generalized thermoelasticity for anisotropic media,Quarterly of Applied Mathematics
+Povstenko2011,10.1080/01495739.2010.511929,matched,clean,Dirichlet Problem for Time-Fractional Radial Heat Conduction in a Sphere and Associated Thermal Stresses,Journal of Thermal Stresses
+GurtinWilliams1966,10.1007/bf01597243,matched,clean,On the Clausius-Duhem inequality,Zeitschrift für angewandte Mathematik und Physik ZAMP
+Bazarra2021MGTradial,10.1177/1081286521994258,matched,clean,On the decay of the energy for radial solutions in Moore–Gibson–Thompson thermoelasticity,Mathematics and Mechanics of Solids
+GreenGN1992,10.1080/01495739208946136,matched,clean,ON UNDAMPED HEAT WAVES IN AN ELASTIC SOLID,Journal of Thermal Stresses
+Luchko2010,10.1016/j.camwa.2009.08.015,matched,JOURNAL,Some uniqueness and existence results for the initial-boundary-value problems for the generalized time-fractional diffusion equation,Computers & Mathematics with Applications

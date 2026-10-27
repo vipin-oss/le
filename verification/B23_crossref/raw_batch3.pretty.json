@@ -1,0 +1,122 @@
+{
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+        "facets": {},
+        "total-results": 5,
+        "items": [
+            {
+                "DOI": "10.1007/bf00041230",
+                "title": [
+                    "Linear elastic materials with voids"
+                ],
+                "container-title": [
+                    "Journal of Elasticity"
+                ],
+                "volume": "13",
+                "page": "125-147",
+                "issued": {
+                    "date-parts": [
+                        [
+                            1983,
+                            7
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            },
+            {
+                "DOI": "10.1007/s10999-026-09892-7",
+                "title": [
+                    "Klein\u2013Gordon nonlocal dynamics of porous piezo-thermoelastic medium with surface irregularity under fractional-order modified LS model"
+                ],
+                "container-title": [
+                    "International Journal of Mechanics and Materials in Design"
+                ],
+                "volume": "22",
+                "issued": {
+                    "date-parts": [
+                        [
+                            2026,
+                            3,
+                            18
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            },
+            {
+                "DOI": "10.1090/qam/575828",
+                "title": [
+                    "Generalized thermoelasticity for anisotropic media"
+                ],
+                "container-title": [
+                    "Quarterly of Applied Mathematics"
+                ],
+                "volume": "38",
+                "page": "1-8",
+                "issued": {
+                    "date-parts": [
+                        [
+                            1980,
+                            4
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            },
+            {
+                "DOI": "10.1145/361953.361969",
+                "title": [
+                    "Algorithm 368: Numerical inversion of Laplace transforms [D5]"
+                ],
+                "container-title": [
+                    "Communications of the ACM"
+                ],
+                "volume": "13",
+                "page": "47-49",
+                "issued": {
+                    "date-parts": [
+                        [
+                            1970,
+                            1
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            },
+            {
+                "DOI": "10.1098/rspa.1991.0012",
+                "title": [
+                    "A re-examination of the basic postulates of thermomechanics"
+                ],
+                "container-title": [
+                    "Proceedings of the Royal Society of London. Series A: Mathematical and Physical Sciences"
+                ],
+                "volume": "432",
+                "page": "171-194",
+                "issued": {
+                    "date-parts": [
+                        [
+                            1991,
+                            2,
+                            8
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            }
+        ],
+        "items-per-page": 10,
+        "query": {
+            "start-index": 0,
+            "search-terms": null
+        }
+    }
+}

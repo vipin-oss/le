@@ -1,0 +1,125 @@
+{
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+        "facets": {},
+        "total-results": 5,
+        "items": [
+            {
+                "DOI": "10.1007/s00707-020-02676-w",
+                "title": [
+                    "Reflection of plane waves in a nonlocal micropolar thermoelastic medium under the effect of rotation"
+                ],
+                "container-title": [
+                    "Acta Mechanica"
+                ],
+                "volume": "231",
+                "page": "2849-2866",
+                "issued": {
+                    "date-parts": [
+                        [
+                            2020,
+                            5,
+                            19
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            },
+            {
+                "DOI": "10.1080/01495730601130919",
+                "title": [
+                    "On A Thermoelastic Three-Phase-Lag Model"
+                ],
+                "container-title": [
+                    "Journal of Thermal Stresses"
+                ],
+                "volume": "30",
+                "page": "231-238",
+                "issued": {
+                    "date-parts": [
+                        [
+                            2007,
+                            1,
+                            30
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            },
+            {
+                "DOI": "10.1080/15397734.2021.1901735",
+                "title": [
+                    "Effect of moving heat source on a magneto-thermoelastic rod in the context of Eringen's nonlocal theory under three-phase lag with a memory dependent derivative"
+                ],
+                "container-title": [
+                    "Mechanics Based Design of Structures and Machines"
+                ],
+                "volume": "51",
+                "page": "2501-2516",
+                "issued": {
+                    "date-parts": [
+                        [
+                            2021,
+                            4,
+                            21
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            },
+            {
+                "DOI": "10.1080/15376494.2020.1736697",
+                "title": [
+                    "Reflection of plane waves from the surface of a piezothermoelastic fiber-reinforced composite half-space"
+                ],
+                "container-title": [
+                    "Mechanics of Advanced Materials and Structures"
+                ],
+                "volume": "28",
+                "page": "2370-2382",
+                "issued": {
+                    "date-parts": [
+                        [
+                            2020,
+                            3,
+                            20
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            },
+            {
+                "DOI": "10.1080/01495739608946173",
+                "title": [
+                    "A UNIQUENESS THEOREM IN THE THEORY OF THERMOELASTICITY WITHOUT ENERGY DISSIPATION"
+                ],
+                "container-title": [
+                    "Journal of Thermal Stresses"
+                ],
+                "volume": "19",
+                "page": "267-272",
+                "issued": {
+                    "date-parts": [
+                        [
+                            1996,
+                            4
+                        ]
+                    ]
+                },
+                "type": "journal-article",
+                "score": 0.0
+            }
+        ],
+        "items-per-page": 10,
+        "query": {
+            "start-index": 0,
+            "search-terms": null
+        }
+    }
+}
