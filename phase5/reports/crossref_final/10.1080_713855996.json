@@ -1,0 +1,11 @@
+{
+  "_provenance": "Crossref REST lookup + printed cover page of the held T&F PDF (pdfs/quintanilla2003.pdf, 'Journal of Thermal Stresses, 26:7, 713-721, DOI: 10.1080/713855996'), checked 2026-10-27 (B22).",
+  "message": {
+    "DOI": "10.1080/713855996",
+    "title": ["A Condition on the Delay Parameters in the One-Dimensional Dual-Phase-Lag Thermoelastic Theory"],
+    "author": [{"family": "Quintanilla", "given": "R."}],
+    "container-title": ["Journal of Thermal Stresses"],
+    "volume": "26", "issue": "7", "page": "713-721",
+    "published-print": {"date-parts": [[2003]]}
+  }
+}
