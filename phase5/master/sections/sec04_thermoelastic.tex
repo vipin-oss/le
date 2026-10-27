@@ -96,7 +96,7 @@ For the displayed Cattaneo-type heat-flux law, $\tau_0>0$ gives a finite charact
 \subsection{Green--Lindsay (GL) theory (1972)}
 \label{sec:4.4}
 
-Green--Lindsay denotes a temperature-rate-dependent thermoelastic model with one temperature field. Related formulations may introduce additional temperature-like fields; the constitutive equations and admissible parameter ranges depend on the selected model.
+Green and Lindsay's 1972 linear formulation uses a single temperature variable $\theta$; its displayed stress and entropy relations contain temperature-rate terms (printed p.~5, Eqs.~(4.3)--(4.7)). The equations shown do not introduce a second temperature field. After the source's coefficient restrictions, the heat-flux law contains a temperature-gradient term and may also contain a $\dot{\theta}$ contribution in its general form, but it is not a flux-evolution law involving $\dot q_i$ (printed p.~5, Eq.~(4.11)) \cite{Green1972}.
 
 \subsection{Green--Naghdi type II theory (1993)}
 \label{sec:4.5}
@@ -123,14 +123,14 @@ where $p_i$ is the entropy-flux vector. No anisotropic tensor generalization is 
 
 \subsubsection{Energy conservation}
 
-The 1993 type-II paper describes harmonic-wave propagation without damping for the displayed system and stated coefficients. The schematic balance below is not an energy identity.
+For the linearized system (3.15)--(3.16), in the absence of heat supply $r$ and body force $b$, Green and Naghdi state that harmonic waves propagate without damping under $c>0$, $\kappa^*\geq0$, and $\lambda+2\mu\geq0$ (printed p.~202, Eq.~(3.17)). This statement is limited to that system and those conditions; it does not establish a general boundary/flux result. The schematic balance below is not an energy identity \cite{Green1993}.
 
 \begin{equation}
 \frac{\partial\mathcal{E}}{\partial t} + \partial_i J_i = \mathcal{P}.
 \label{eq:4.13}
 \end{equation}
 
-Wave attenuation and energy conservation for type II must be obtained from the specific model equations and boundary-value problem; no application suitability claim is made here. A separate rheological network derivation relates CV/GN/MCV/MGN flux laws and includes second-order coefficients proportional to $\tau^2$; those coefficients do not establish energy ratios or admissibility for the displayed system \cite{Huang2025}.
+No application-suitability or general boundary/flux claim is made here. A separate rheological network derivation relates CV/GN/MCV/MGN flux laws and includes second-order coefficients proportional to $\tau^2$; those coefficients do not establish energy ratios or admissibility for the displayed system \cite{Huang2025}.
 
 \subsection{Green--Naghdi type III theory (1992)}
 \label{sec:4.6}
@@ -144,7 +144,7 @@ Green and Naghdi's 1992 paper gives a coupled, linearized isotropic system about
 \label{eq:4.14}
 \end{equation}
 
-A distinct nonlocal GN-III formulation prints a flux law containing both the temperature-gradient and thermal-displacement-gradient contributions; it is not substituted into the local source-free form shown here \cite{Biswas2020a}. This source-free form is conditional on the displayed linear isotropic system; the source term and material normalization must be restored for other conventions. The transcribed restrictions include $\kappa\geq0$, $c\geq0$, and $\kappa^{**}=0$; no additional sign restriction on $\kappa^*$ is inferred here.
+A distinct nonlocal GN-III formulation prints a flux law containing both the temperature-gradient and thermal-displacement-gradient contributions; it is not substituted into the local source-free form shown here \cite{Biswas2020a}. This source-free form is conditional on the displayed linear isotropic system; the source term and material normalization must be restored for other conventions. The restrictions printed for the 1993 type-II system above are not transferred to this 1992 type-III form.
 
 Any proposed type-III-to-type-II or classical limit must be verified by substitution into the exact system and by a convergence analysis. No general limit theorem is asserted here.
 
@@ -204,15 +204,15 @@ Here $\vartheta_m$ is a thermal-displacement variable and $k^*$ must have units 
 
 \paragraph{Thermoelastic MGT evidence.}
 
-The displayed Eq.~\eqref{eq:4.18} is the thermoelastic MGT variant with relaxation in the heat-flux law and no relaxation term in the stress. Quintanilla's Eqs.~(2.4), (2.5), and (3.5) give the source-specific coercivity condition $K_{ij}=k_{ij}-\tau k^*_{ij}$ positive definite, with the scalar condition $k-\tau k^*>0$; in one dimension, $k>k^*\tau$ yields exponential stability, while $k<k^*\tau$ gives instability \cite{Quintanilla2019}. The source uses $\alpha_{,j}$ in (2.1) but $\theta_{,j}$ in (2.5) and (3.5), without reconciling that notation; the conclusion is kept model-specific.
+Quintanilla's 2019 source places the relaxation parameter on the heat-flux rate: Eq.~(2.4) uses positive conductivity-gradient terms, $+(k_{ij}\theta_{,j})+(k^*_{ij}\alpha_{,j})$, and Eq.~(2.5) gives the resulting third-order thermal equation (printed p.~3). Its stress relation, Eq.~(3.1), contains no relaxation term. The candidate Eq.~\eqref{eq:4.18} uses negative gradient signs and is therefore not a verbatim transcription of the source; no sign-convention mapping is asserted. In the source model, $K_{ij}=k_{ij}-\tau k^*_{ij}$; the three-dimensional hypotheses include $c(x)\geq c_0>0$, $k^*_{ij}\xi_i\xi_j\geq k_0|\xi|^2$, and $K_{ij}\xi_i\xi_j\geq k_1|\xi|^2$ for every vector $\xi$ (printed p.~3, Eqs.~(2.8)--(2.9)). In its one-dimensional analysis, $k>\tau k^*$ gives exponential stability (p.~9, Theorem~4.7), while $k<\tau k^*$ gives instability (p.~10, Eq.~(5.8)); these strict inequalities do not characterize equality or establish the same result for Eq.~\eqref{eq:4.18} with its different sign convention \cite{Quintanilla2019}.
 
-Bazarra et al. document a distinct radial thermoelastic MGT variant in which $\tau$ also appears in the stress coupling, $-\beta(\theta_{,i}+\tau\dot{\theta}_{,i})$; their radial decay result assumes $\bar k=k-\tau k^*>0$ \cite{Bazarra2021MGTradial}. Thus the relaxation placement in the stress law is variant-specific.
+Bazarra et al. give a distinct radial thermoelastic MGT variant whose stress equation includes $-\beta(\theta_{,i}+\tau\dot{\theta}_{,i})$ (Eq.~(1), printed p.~2). Their coefficient condition is written $\bar{\kappa}=\kappa-\tau\kappa^*>0$ (Eq.~(5), p.~2), and the paper proves exponential decay for radial solutions (p.~3); this is not Quintanilla's one-dimensional $k>\tau k^*$ condition. Thus the relaxation placement and assumptions are variant-specific.
 
 \paragraph{Acoustic MGT evidence.} Acoustic MGT-with-memory PDE decay uses its own acoustic parameter set and is separate from thermoelastic admissibility. The gas-dynamics parameter $\gamma_{\rm ac}=b-\tau c^2$ is acoustic only; it is not the thermoelastic condition $k-\tau k^*>0$.
 
-The available abstract for Lasiecka and Wang's acoustic MGT equation with memory reports exponential decay in the subcritical regime $\alpha\beta>\gamma$; this is an acoustic result, not a thermoelastic claim \cite{LasieckaWang2015MGT}.
+Lasiecka and Wang report that the energy for their acoustic MGT equation with memory decays at the same rate as the memory kernel, whether that rate is exponential or not; they describe exponential decay for exponentially decaying kernels as a previously known non-critical result (printed p.~1, abstract). This is an acoustic result, not a thermoelastic claim \cite{LasieckaWang2015MGT}.
 
-The available abstract of Dell'Oro, Lasiecka, and Pata reports that at $\alpha\beta=\gamma$ exponential stability holds if and only if $A$ is bounded; otherwise the energy tends to zero without an exponential rate \cite{DellOroLasieckaPata2016MGT}.
+For the abstract MGT equation with memory considered by Dell'Oro, Lasiecka, and Pata, at $\alpha\beta=\gamma$ exponential stability holds if and only if $A$ is bounded; for unbounded $A$, the energy still tends to zero, but not exponentially (printed pp.~1, 5--6, including Eq.~(1.7)) \cite{DellOroLasieckaPata2016MGT}.
 
 These results apply to the specified MGT variants and do not establish a family-wide classification.
 
