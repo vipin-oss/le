@@ -172,3 +172,10 @@
 4. Content commit `dc6cf8a` passed CI `40512329757` (121 pages; undefined references/citations 0; privacy/internal-path/manuscript-tag matches 0; >1 pt overfull 0; >0.5 pt near-overfull 0; 18/16 figures). Artifact output commit `b8f562b` was fast-forwarded and matched the remote.
 5. Visually inspected printed p. 58 in the published PDF: all connectors and labels are clear and the caption has no clipping. Rechecked ten A/V rows against rendered text; details are in `Q5_FIGURE11_WORKFLOW_AUDIT.md`. Ledger is 499 rows (A=34, B=132, C=315, V=18).
 6. This closes the single Figure 11 defect only. Q5 notation/abbreviation, source/licence, and package-wide figure/table review remain; Q3 and WP3–WP8 remain open.
+
+## 2026-10-27 (IST) — WP3 citation-key and Crossref-register checks
+1. Added `verify_reference_hygiene.py` and CI steps for active citation-key coverage, the saved 14-row B22 Crossref/source-page register, and the existing Kumar identity/B/C verifier. The check validates saved records only; it does not query Crossref or certify cited scientific claims.
+2. Inventory found 104 active cited keys, all resolving within 143 bibliography entries; no missing or duplicate keys. Thirty-nine working-bibliography entries are uncited; none were deleted or presumed obsolete.
+3. Preserved the Quintanilla DOI conflict and `verified=NO`; retained Dell’Oro–Pata as `verified=NO` because raw Crossref DOI evidence is unavailable. Kumar DOI/library identity remains split, and all 19 dependent claims remain B/C.
+4. Content commit `552ba67` passed CI `40514426363`; strict PDF 121 pages, undefined references/citations 0, privacy/internal-path/manuscript-tag counts 0, overfull >1 pt 0, near-overfull >0.5 pt 0, 18 figure PDFs/16 includes, deletion-audit `NONE` rows 0. Output commit `9f3afae` was fast-forwarded and matched the remote.
+5. Rechecked ten A/V rows against the latest rendered PDF and re-rendered/visually reviewed printed p. 58; all bounded checks matched. `WP3_REFERENCE_HYGIENE_AUDIT.md` records method, limits, and open items. WP3 remains open pending uncited-entry disposition and source-access gaps; no deletions or claim promotions were made.

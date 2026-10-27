@@ -6,7 +6,7 @@ This folder mixes current authoritative registers with dated, historical snapsho
 
 - `OPEN_CLAIMS_LEDGER.csv` is the authority for current claims (499 rows: A=34, B=132, C=315, V=18). Class A is source-anchored; Class V is a reproducible symbolic/script derivation whose `resolved_by` field names the verification path; B/C remain open at their recorded scope.
 - `R4A_DELETION_AUDIT.csv` is the authority for removed text (593 rows, zero `NONE` identifiers). It does not certify deleted claims or reconstruct missing work.
-- `build-status.md` is the current strict-build status. The latest manuscript validation recorded here is run `40512329757`: 121 pages, successful engineering gates; output commit `b8f562b`.
+- `build-status.md` is the current strict-build status. The latest validation recorded here is run `40514426363`: 121 pages, successful engineering gates; output commit `9f3afae`.
 - `scientific-audit.md`, `equation-audit.csv`, and `figure-audit.csv` provide current context/registers, not blanket proof of scientific correctness or licensing.
 
 ## Reports and CSVs
@@ -77,6 +77,7 @@ This folder mixes current authoritative registers with dated, historical snapsho
 | [`R4B_SOURCE_FINDINGS.md`](R4B_SOURCE_FINDINGS.md) | Targeted source findings, page/equation anchors, source-identity limits, and remaining open items for R4B-AUTO. | CURRENT SOURCE FINDINGS |
 | [`R4B_QUALITY_WORKPACKAGES.md`](R4B_QUALITY_WORKPACKAGES.md) | Ordered Q1–Q5 quality-package scope, acceptance checks, and final-report requirements. | CURRENT WORK PLAN |
 | [`Q5_FIGURE11_WORKFLOW_AUDIT.md`](Q5_FIGURE11_WORKFLOW_AUDIT.md) | Figure 11/F12 connector correction, geometry check, rendered-page proof, and remaining Q5 scope. | CURRENT PACKAGE AUDIT; Q5 STILL OPEN |
+| [`WP3_REFERENCE_HYGIENE_AUDIT.md`](WP3_REFERENCE_HYGIENE_AUDIT.md) | Citation-key integrity, B22 Crossref dispositions, uncited working-bibliography inventory, and remaining WP3 limits. | CURRENT PACKAGE AUDIT; WP3 STILL OPEN |
 | [`reviewer-simulations.md`](reviewer-simulations.md) | Synthetic reviewer simulations; not external peer review. | HISTORICAL / SIMULATED |
 | [`scientific-audit.md`](scientific-audit.md) | Scientific audit narrative documenting checked derivations, limitations, and open questions; not a complete claim verification. | CURRENT CONTEXT |
 | [`V-B3d-cross-term-check.md`](V-B3d-cross-term-check.md) | Focused derivation/check note for a B3d cross-term. | CURRENT TECHNICAL NOTE |

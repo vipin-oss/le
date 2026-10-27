@@ -14,7 +14,9 @@ Content commit `dc6cf8a` passed CI `40512329757`; the strict PDF remains 121 pag
 
 Printed p. 58 was visually reviewed in the published PDF: all ten boxes and connector directions are clear, no arrows cross box interiors, the feedback label is separate from the loop, and the caption is legible without clipping. `git diff --check`, the figure verifier, and ledger validation passed locally.
 
-## Ten A/V checks against the rendered text
+A subsequent WP3 verification commit `552ba67` changed only the citation-key/Crossref verifier and CI workflow, not manuscript source or bibliography. CI `40514426363` passed and published the 121-page PDF in output commit `9f3afae`. The ten A/V rows below were rechecked against this latest rendered text, and printed p. 58 was rendered and visually reviewed again; the F12 geometry and caption remain clear. Latest build metrics and reference-hygiene results are recorded in `WP3_REFERENCE_HYGIENE_AUDIT.md` and `build-status.md`.
+
+## Ten A/V checks against the latest rendered text
 
 | Ledger row | Rendered location | Check |
 |---|---|---|
