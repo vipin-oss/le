@@ -145,6 +145,9 @@ for figure_path in figure_paths:
 assert r"R_{\Sigma}" in section9 and r"T_{\Sigma}" in section9
 assert r"\shortstack{$R_{\Sigma},T_{\Sigma},$\\$A_{\mathrm{int}}$}" in section9
 assert "saved audit summary does not specify reference planes" in section9
+assert r"J_{\mathrm{inc},n}\equiv P_{i,\Sigma}>0" in section9
+assert r"A_{\mathrm{int}}=\mathcal{D}_{\Sigma}/P_{i,\Sigma}" in section9
+assert "does not identify" in section9 and "remote-plane incident power" in section9
 assert "remote-plane reflectance and transmittance" in section9
 assert r"R_{\mathrm{rem}} + T_{\mathrm{rem}}" in section10
 assert r"A_{\mathrm{bulk},L}" in section10 and r"A_{\mathrm{bulk},R}" in section10
