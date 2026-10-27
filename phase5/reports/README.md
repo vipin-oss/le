@@ -4,9 +4,9 @@ This folder mixes current authoritative registers with dated, historical snapsho
 
 ## Current sources of truth
 
-- `OPEN_CLAIMS_LEDGER.csv` is the authority for current open claims (445 rows: A=20, B=129, C=296). A row/source lead remains open until its specific claim, source identity, and needed equation/result are checked.
+- `OPEN_CLAIMS_LEDGER.csv` is the authority for current open claims (445 rows: A=25, B=124, C=296). A row/source lead remains open until its specific claim, source identity, and needed equation/result are checked.
 - `R4A_DELETION_AUDIT.csv` is the authority for removed text (593 rows, zero `NONE` identifiers). It does not certify deleted claims or reconstruct missing work.
-- `build-status.md` is the current strict-build status. The manuscript/source validation recorded here is run `40434775391`: 130 pages, successful engineering gates; output commit `c76bc25`.
+- `build-status.md` is the current strict-build status. The manuscript/source validation recorded here is run `40435990048`: 130 pages, successful engineering gates; output commit `b4257e0`.
 - `scientific-audit.md`, `equation-audit.csv`, and `figure-audit.csv` provide current context/registers, not blanket proof of scientific correctness or licensing.
 
 ## Reports and CSVs
@@ -48,7 +48,7 @@ This folder mixes current authoritative registers with dated, historical snapsho
 | [`figure-render-inspection.txt`](figure-render-inspection.txt) | Structural/render inspection notes for the generated vector figures. | CURRENT CONTEXT |
 | [`literature-evidence-matrix.csv`](literature-evidence-matrix.csv) | Inherited literature inventory/evidence matrix; not a claim-level certification or complete systematic search. | HISTORICAL INVENTORY |
 | [`missing-source-pdf-links.md`](missing-source-pdf-links.md) | Historical source-access notes; publisher PDFs/full-text are not stored here. | HISTORICAL |
-| [`OPEN_CLAIMS_LEDGER.csv`](OPEN_CLAIMS_LEDGER.csv) | Authoritative current open-claim register: 445 rows (A=20, B=129, C=296); a source lead is not proof. | CURRENT — AUTHORITATIVE OPEN CLAIMS |
+| [`OPEN_CLAIMS_LEDGER.csv`](OPEN_CLAIMS_LEDGER.csv) | Authoritative current open-claim register: 445 rows (A=25, B=124, C=296); a source lead is not proof. | CURRENT — AUTHORITATIVE OPEN CLAIMS |
 | [`page-by-page-reconciliation.md`](page-by-page-reconciliation.md) | Earlier v1.0-to-v1.1 physical-page comparison (146-page build); now historical. | HISTORICAL |
 | [`page-count-reconciliation.md`](page-count-reconciliation.md) | Earlier page-count/source-size reconciliation (146-page build); now historical. | HISTORICAL |
 | [`phase-status.md`](phase-status.md) | Dated phase-end status snapshot from 2026-10-22. | HISTORICAL |
