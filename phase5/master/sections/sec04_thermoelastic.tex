@@ -116,7 +116,7 @@ The strain-rate coupling carries one fewer time derivative than the inherited fo
 
 \subsubsection{Energy conservation}
 
-For the linearized system (3.15)--(3.16), in the absence of heat supply $r$ and body force $b$, Green and Naghdi state that harmonic waves propagate without damping under $c>0$, $\kappa^*\geq0$, and $\lambda+2\mu\geq0$ (printed p.~202, Eq.~(3.17)). This statement is limited to that system and those conditions; it does not establish a general boundary/flux result. The schematic balance below is not an energy identity \cite{Green1993}.
+For the linearized system (3.15)--(3.16), in the absence of heat supply $r$ and body force $b$, Green and Naghdi state that harmonic waves propagate without damping under $c>0$, $\kappa^*\geq0$, and $\lambda+2\mu\geq0$ (printed p.~202, Eq.~(3.17)). This statement is limited to that system and those conditions; it does not establish a general boundary/flux result. Green and Naghdi's 1993 paper prints the entropy balance (2.17) and a reduced energy equation (2.18) on p.~192; it does not print the generic balance $\partial_t\mathcal{E} + \partial_i J_i = \mathcal{P}$. That displayed balance is this manuscript's own notational template, not a source transcription. The schematic balance below is not an energy identity \cite{Green1993}.
 
 \begin{equation}
 \frac{\partial\mathcal{E}}{\partial t} + \partial_i J_i = \mathcal{P}.
@@ -247,6 +247,7 @@ For the local classical Cauchy continuum, the momentum and internal-energy balan
 \rho\dot e=\sigma_{ij}\dot\varepsilon_{ij}-q_{i,i}+\rho r.
 \label{eq:4.21}
 \end{equation}
+The momentum member matches the printed GN form (2.3), p.~191; the energy member $\rho\dot e=\sigma_{ij}\dot\varepsilon_{ij}-q_{i,i}+\rho r$ is not printed in that form in the source. Both are recorded here as the comparison scaffold, not as a source transcription.
 The constitutive closures may be recorded abstractly as
 \begin{equation}
 \sigma_{ij}=\mathcal{S}_{ij}[\varepsilon,T,\dot T,\alpha_{\mathrm{GN}},\bm z;\bm\theta],
@@ -254,7 +255,7 @@ The constitutive closures may be recorded abstractly as
 \mathcal{H}_i[\bm q,\nabla T,\nabla\dot T,\mathcal{D}_t^\alpha T,\bm z;\bm\theta]=0,
 \label{eq:4.22}
 \end{equation}
-where $\mathcal{S}_{ij}$ and $\mathcal{H}_i$ are placeholders for the selected stress and heat-transport laws, $\bm z$ denotes any additional internal, thermal-displacement, or history variables, and $\bm\theta$ denotes the model's parameters. They are not common constitutive functions. The balances in Eq.~\eqref{eq:4.21} do not cover higher-gradient, micropolar, or nonlocal boundary-power terms; those require augmented balances. This scaffold therefore aligns notation without asserting one universal generalized thermoelastic model.
+where $\mathcal{S}_{ij}$ and $\mathcal{H}_i$ are placeholders for the selected stress and heat-transport laws, $\bm z$ denotes any additional internal, thermal-displacement, or history variables, and $\bm\theta$ denotes the model's parameters. This placeholder split is a notational device only: no source displays it, and it imposes no constitutive choice on any family. The balances in Eq.~\eqref{eq:4.21} do not cover higher-gradient, micropolar, or nonlocal boundary-power terms; those require augmented balances. This scaffold therefore aligns notation without asserting one universal generalized thermoelastic model.
 
 \input{tables/source/T2_generalized_thermoelastic}
 \input{tables/source/T2_reduction_map}

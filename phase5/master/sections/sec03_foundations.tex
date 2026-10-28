@@ -170,14 +170,14 @@ Equation \eqref{eq:3.13} expresses energy conservation: the internal energy of a
 \subsection{Entropy and dissipation inequality: Clausius--Duhem inequality}
 \label{sec:3.4}
 
-The second law of thermodynamics, in the Clausius--Duhem form, states that the entropy production within a continuum is non-negative:
+The second law of thermodynamics for a classical continuum, in the Clausius--Duhem form, states that the entropy production is non-negative:
 
 \begin{equation}
 \rho \dot{s} \geq -\left(\frac{q_i}{\Theta}\right)_{,i} + \frac{\rho r}{\Theta},
 \label{eq:3.15}
 \end{equation}
 
-where $s$ is specific entropy and $\Theta$ is absolute temperature. In the linear constitutive equations below, $T=\Theta-T_0$ denotes the temperature increment. Using the internal-energy balance \eqref{eq:3.13} and defining the Helmholtz free energy by $\psi=e-\Theta s$, we obtain after standard manipulation:
+where $s$ is specific entropy and $\Theta$ is absolute temperature. Green--Naghdi type-II theories formulate the second law as an entropy balance with an entropy flux rather than as this dissipation inequality; \eqref{eq:3.15} is the classical/local statement and is not imposed on GN-type models as a universal requirement. In the linear constitutive equations below, $T=\Theta-T_0$ denotes the temperature increment. Using the internal-energy balance \eqref{eq:3.13} and defining the Helmholtz free energy by $\psi=e-\Theta s$, we obtain after standard manipulation:
 
 \begin{equation}
 \sigma_{ij}\dot{\varepsilon}_{ij} - \rho\left(\dot{\psi} + s\dot{\Theta}\right) - \frac{q_i \Theta_{,i}}{\Theta} \geq 0.
@@ -240,6 +240,7 @@ where $\lambda$ and $\mu$ are Lamé elastic constants, $\beta$ is the thermal st
 \begin{equation}
 s = s_0 + \frac{\beta}{\rho}\varepsilon_{kk} + \frac{c_v}{T_0}T.
 \label{eq:3.22}
+Biot's printed form (2.13)--(2.14), p.~242, writes s = c^*\theta/T + \beta e with heat capacity per unit volume and \beta on volumetric strain; the relation above is the per-unit-mass (specific) form, so its coefficients are not interchangeable with Biot's without the corresponding normalization \cite{Biot1956}.
 \end{equation}
 
 Equation \eqref{eq:3.21} is the linear isotropic thermoelastic constitutive relation: the first two terms are the classical elastic stress (Hooke's law), and the last term is the thermal stress contribution.

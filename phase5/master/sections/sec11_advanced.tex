@@ -27,7 +27,7 @@ where ${}^C D_t^\alpha$ is the Caputo fractional derivative of order $\alpha$ an
 \label{eq:11.2}
 \end{equation}
 
-and the corresponding expression for $1 < \alpha \leq 2$ is obtained by applying the operator to the second derivative of $f$. The integral form is the physically informative one: the state of the field at time $t$ is determined by its entire past, weighted by a kernel that decays algebraically rather than exponentially.
+This display is the n=1 case ($0<\alpha<1$) of the general Caputo definition $n-1<\beta<n$ printed as Povstenko (A.5), p.~112; eq:11.1's range $0<\alpha\leq2$ spans both the n=1 and n=2 regimes. The corresponding expression for $1 < \alpha \leq 2$ is obtained by applying the operator to the second derivative of $f$. The integral form is the physically informative one: the state of the field at time $t$ is determined by its entire past, weighted by a kernel that decays algebraically rather than exponentially.
 
 \paragraph{Caputo operator and origin.} Caputo's 1967 work introduced the fractional derivative in viscoelastic stress--strain models to represent nearly frequency-independent $Q$; the paper examined Earth's free modes and an aluminium rod and fitted an order near $0.15$. It is an origin in viscoelasticity/geophysics, not in heat conduction. In Eq.~\eqref{eq:11.2}, the derivative remains inside the integral for $0<\alpha<1$; the printed definition (5) is reconstructed from its proof-page integrand because the display is not legible in the checked copy \cite{Caputo1967}.
 
@@ -48,7 +48,7 @@ The analytical solution of the fractional heat conduction equation in radially s
 
 \subsubsection{Fractional Cattaneo-type equations}
 
-Povstenko’s Eq.~(29), on printed p.~101, gives a related fractional Cattaneo-type flux law with source coefficient $\zeta$ for $0<\alpha\leq1$. Appendix A identifies the derivative as Caputo (printed p.~113), while the source omits the superscript $C$ used here for clarity. The source does not identify $\zeta$ with $\tau^\alpha/\Gamma(1+\alpha)$ \cite{Povstenko2011Cattaneo}:
+Povstenko’s Eq.~(29), on printed p.~101, gives a related fractional Cattaneo-type flux law with source coefficient $\zeta$; the source writes the order as $\beta$ with $0<\beta\leq1$, which is $\alpha$ with $0<\alpha\leq1$ here. Appendix A identifies the derivative as Caputo (printed p.~113), while the source omits the superscript $C$ used here for clarity. The source does not identify $\zeta$ with $\tau^\alpha/\Gamma(1+\alpha)$ \cite{Povstenko2011Cattaneo}:
 
 \begin{equation}
 q_i + \zeta\,{}^C D_t^\alpha q_i = -k T_{,i}.

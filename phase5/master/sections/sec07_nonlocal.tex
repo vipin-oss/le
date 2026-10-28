@@ -13,7 +13,7 @@ This section develops that class. The organising question is not which of the co
 
 The classical assumption fails in a specific and observable way. A beam of a given material, tested in bending, exhibits a stiffness that depends on the specimen thickness: thinner specimens are stiffer than the classical prediction, and the departure becomes significant below a material-dependent critical length. Two distinct physical mechanisms can produce this behaviour, and they are the root of the entire family of models considered here.
 
-The first mechanism is \emph{constitutive}: the internal stress in the material depends on the neighbouring material state, because the mechanism that carries load---bonding, dislocation motion, stress concentration in a heterogeneous microstructure---acts over a finite distance. Eringen's formulation of nonlocal elasticity is the canonical statement of this mechanism \cite{Eringen1972,Eringen1974}, in which the stress at a point is obtained by averaging the local stress over a neighbourhood weighted by a kernel:
+The first mechanism is \emph{constitutive}: the internal stress in the material depends on the neighbouring material state, because the mechanism that carries load---bonding, dislocation motion, stress concentration in a heterogeneous microstructure---acts over a finite distance. Eringen's formulation of nonlocal elasticity is the canonical statement of this mechanism \cite{Eringen1972,Eringen1974}, in which the point stress is obtained by integrating the local elastic modulus--strain response over a neighbourhood weighted by a kernel:
 
 \begin{equation}
 \sigma_{ij}(\bm{x}) = \int_\Omega \alpha(|\bm{x}' - \bm{x}|, \tau)\, \sigma_{ij}^{\mathrm{local}}(\bm{x}')\, d\Omega_{\bm{x}'},
@@ -31,7 +31,7 @@ For special kernel functions---notably the one-parameter exponential and the Hel
 (1 - \xi^2\nabla^2)\sigma_{ij} = \sigma_{ij}^{\mathrm{local}},
 \label{eq:7.2}
 \end{equation}
-where $\xi = e_0 a$ is the nonlocal length scale parameter. The differential form is the one used in wave-propagation applications, because it is a partial differential equation and can therefore be treated with the transform and numerical machinery of Section~\ref{sec:methods}. It is worth recording that the differential and integral forms are not interchangeable in general: the integral relation with a given kernel and the differential operator of Eq.~\eqref{eq:7.2} agree only for that kernel, and the difference matters for the boundary conditions, which in the differential form become higher-order \cite{Polizzotto2001}.
+where $\xi = e_0 a$ is the nonlocal length scale parameter. This differential (Helmholtz) form is kernel- and model-specific; it is not printed in Eringen (1972) or Eringen (1974) in this form, and no source claim is made for it here. The differential form is the one used in wave-propagation applications, because it is a partial differential equation and can therefore be treated with the transform and numerical machinery of Section~\ref{sec:methods}. It is worth recording that the differential and integral forms are not interchangeable in general: the integral relation with a given kernel and the differential operator of Eq.~\eqref{eq:7.2} agree only for that kernel, and the difference matters for the boundary conditions, which in the differential form become higher-order \cite{Polizzotto2001}.
 
 \subsection{Strain-gradient and couple-stress theories}
 \label{sec:7.2}

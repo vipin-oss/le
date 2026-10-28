@@ -103,7 +103,7 @@ Checks use the bibliography entries and, where stated, the publisher landing pag
 
 | Item | Finding | Decision needed |
 |---|---|---|
-| Tzou 1995 | The body cites Tzou1995 (J. Heat Transfer 117:8–16, DOI 10.1115/1.2822329). No key Tzou1995a (JTHT) exists in the bibliography or the library; the JTHT attribution is unverified. | Author to confirm whether a second Tzou 1995 paper is intended; if so, supply the source. |
+| Tzou 1995 | Both 1995 papers are held: the body cites Tzou1995 (J. Heat Transfer 117:8–16, the DPL law paper; no DOI is printed on the paper, Crossref record 10.1115/1.2822329 retained as metadata) and the companion Tzou1995a (JTHT 9(4):686–693, DOI 10.2514/3.725). | None; both 1995 papers are held. |
 | Hetnarski and Ignaczak 1999 vs 2000 | Two bibliography entries: 1999 J. Thermal Stresses 22:451–476 ("Generalized thermoelasticity") and 2000 IJSS 37:215–224 ("Nonclassical dynamical thermoelasticity"). Neither is cited in the body. | Keep or remove each; the year should follow the entry, not be inferred. |
 | Chen–Gurtin 1968 vs Gurtin–Pipkin | The library file for the 1968 key is a Gurtin–Pipkin paper (different work); the Chen–Gurtin primary is not in the library. | Obtain the Chen–Gurtin paper or mark the two-temperature statement as unchecked. |
 | Dell'Oro–Pata two-author vs Dell'Oro–Lasiecka–Pata three-author | The body cites the three-author JDE paper (critical-case MGT result). The two-author AMO viscoelasticity note is in the bibliography but not cited in the body. | Author to keep or remove the two-author entry. |
