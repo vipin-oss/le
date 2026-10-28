@@ -153,6 +153,40 @@ Each reduction below is an exact substitution into Eq.~\eqref{eq:12.template}, f
 
 \paragraph{Scope.} These statements concern only the displayed equations. They are not convergence, stability, or source-transcription results.
 
+\subsection{Status by family: established, disputed or model-dependent, open}
+\label{sec:12.3c}
+
+Table~\ref{tab:status_by_family} summarizes, for each family, what the reviewed sources or the displayed checks establish, what is disputed or depends on the model, and what remains open. ``Established'' means a result stated in a cited source at the stated equation or page, or a symbolic check of a displayed equation; it does not mean a general theorem for the family. ``Model-dependent'' means the status changes with the kernel, coefficient convention, boundary data, or lag ordering.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Status by family. Entries are restricted to the displayed equations, the cited sources, and the symbolic checks reported in this review.}
+\label{tab:status_by_family}
+\begin{tabularx}{\textwidth}{@{}p{2.6cm}X X X@{}}
+\toprule
+\textbf{Family} & \textbf{Established} & \textbf{Disputed or model-dependent} & \textbf{Open} \\
+\midrule
+Classical Fourier (local Cauchy scaffold) & Energy identity and the positive-temperature entropy term hold for the stated symmetric-stress local balances (symbolic check). & Higher-gradient, micropolar, and nonlocal boundary-power terms lie outside this scaffold. & Free energy, flux, boundary power, and dissipation of each selected model. \\
+Lord--Shulman & The 1967 source gives a linear heat-flux relation with one relaxation time and its isotropic reduction. & Later anisotropic, higher-order, and modified variants are not the same template; no family-wide admissible range. & Reconcile the source coefficients with the displayed candidate; admissible relaxation conditions for each selected model. \\
+Green--Lindsay & The 1972 source gives homogeneous linear equations under small-field assumptions and a uniqueness result under added conditions. & These conditions do not give a universal ordering of relaxation times or cover later variants. & Reconcile any proposed relaxation-time inequality with the source coefficients before use. \\
+Green--Naghdi I & Nothing is established at equation level in this review. & A GN-I closure must not be inferred from GN-II or GN-III. & Identify the primary equation that defines the GN-I case. \\
+Green--Naghdi II & The 1993 source identifies type-II nondissipation and finite-speed thermal waves; a mixed-boundary theorem gives at most one solution under its stated assumptions. & The nondissipation statement is not transferred to type III or to a family-wide energy theorem. & Complete energy flux and boundary power under the stated assumptions. \\
+Green--Naghdi III & The 1992 selected linearized isotropic system; with Fourier-dominant conduction it recovers classical Fourier conduction. & The undamped result holds only in the stated small-conductivity regime. & Free energy, dissipation, boundary power, and interface flux. \\
+Dual-phase-lag & Tzou's abstract frames the approach as high-rate heat conduction; the first-order residual has checked Lord--Shulman and Fourier substitutions. & One source reports stability when the temperature-gradient lag exceeds half the flux lag, and instability below that value, for a one-dimensional problem. Equality is unclassified, and the source copy conflicts on its DOI. & Lag convention and hypotheses for each stability claim; resolve the DOI conflict. \\
+Triple-phase-lag & The first-order formulation and lag ordering follow one 2007 source; the reduction with the coupling coefficient set to zero is checked. & Higher-order variants are not established; no family-wide admissibility rule. & Parameter and thermodynamic conditions of each higher-order variant. \\
+Moore--Gibson--Thompson & Only the displayed candidate thermoelastic heat-flux law has a checked Fourier substitution. & The candidate is not identified with acoustic MGT or with other thermoelastic placements; a one-dimensional instability claim is recorded as unverified. & Source equations, constitutive placement, and admissibility conditions. \\
+Memory-dependent derivative & The notation check separates the finite-history window, the kernel, and the integration variable. & Kernel, normalization, and finite- versus infinite-history variants are not interchangeable. & Kernel, normalization, history window, and boundary data for each model. \\
+Fractional scalar & The source-specific fractional Cattaneo law uses a Caputo derivative; scalar endpoints are checked for the displayed equations. & The source does not identify its coefficient with the standard closed form in the relaxation time; the scalar law is not a coupled model. & Coupled embedding, derivative convention, initial-data space, and coefficient mapping. \\
+Spatially nonlocal & Specific papers give operator placements; the displayed Helmholtz and one-dimensional dispersion forms recover the local forms at zero nonlocal length. & Operator placement and kernel-specific correspondences are model-specific; no universal local-limit theorem. & Energy flux and interface data for the selected kernel and boundary treatment. \\
+Positive-gradient & The displayed one-dimensional positive-gradient dispersion algebra is checked. & A qualitative dispersion signature is not a universal law. & Source model, higher-gradient boundary conditions, and energy flux. \\
+Coupled piezothermoelastic & Mindlin's linear thermopiezoelectric balances and constitutive relations, on the printed pages checked. & Source-specific coupled systems are not a shared closure; one dual-porous energy-ratio observation is limited to its own study. & Interface conditions, complete flux channels, and free energy. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Two attribution points follow from the checks. The MGT equation with memory in Section~\ref{sec:thermoelastic} is attributed to the three-author paper of Dell'Oro, Lasiecka, and Pata; the two-author Dell'Oro--Pata note is not cited in the body. The two-temperature example in Section~\ref{sec:thermoelastic} is a bibliographic reference only: no equation-level claim depends on it, and the full text of the cited paper has not been read.
+
 \subsection{Divergence map: why results differ across the corpus}
 \label{sec:12.4}
 
