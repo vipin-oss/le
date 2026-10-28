@@ -1,0 +1,102 @@
+{
+  "query_doi": "10.1016/j.compstruct.2025.118997",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.compstruct.2025.118997",
+    "type": "journal-article",
+    "title": [
+      "Effects of layer imperfections and material gradation on circumferential shear horizontal waves in cylindrical piezoelectric composite structure"
+    ],
+    "author": [
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Sunita",
+        "family": "Kumawat",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Sumit Kumar",
+        "family": "Vishwakarma",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "M S",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Soumik",
+        "family": "Das",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2025,
+          4
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Composite Structures"
+    ],
+    "short-container-title": [
+      "Composite Structures"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "359",
+    "page": "118997",
+    "article-number": "118997",
+    "ISSN": [
+      "0263-8223"
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "query_doi": "10.1007/s00707-020-02670-2",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s00707-020-02670-2",
+    "type": "journal-article",
+    "title": [
+      "Surface waves in porous nonlocal thermoelastic orthotropic medium"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-3599-3431",
+        "authenticated-orcid": false,
+        "given": "Siddhartha",
+        "family": "Biswas",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2020,
+          7
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2020,
+          5,
+          20
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          5,
+          20
+        ]
+      ]
+    },
+    "container-title": [
+      "Acta Mechanica"
+    ],
+    "short-container-title": [
+      "Acta Mech"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "231",
+    "issue": "7",
+    "page": "2741-2760",
+    "ISSN": [
+      "0001-5970",
+      "1619-6937"
+    ]
+  }
+}

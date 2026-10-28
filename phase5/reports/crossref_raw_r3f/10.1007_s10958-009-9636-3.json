@@ -1,0 +1,68 @@
+{
+  "map_id": "R3F-POVSTENKO-2009",
+  "mode": "DOI",
+  "requested_doi": "10.1007/s10958-009-9636-3",
+  "query": "Povstenko thermoelasticity fractional heat conduction equation Journal of Mathematical Sciences 2009 162 2 296 305",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s10958-009-9636-3",
+    "type": "journal-article",
+    "title": [
+      "Thermoelasticity that uses fractional heat conduction equation"
+    ],
+    "author": [
+      {
+        "given": "Y. Z.",
+        "family": "Povstenko",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2009,
+          10
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2009,
+          9,
+          16
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2009,
+          9,
+          16
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Mathematical Sciences"
+    ],
+    "short-container-title": [
+      "J Math Sci"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "162",
+    "issue": "2",
+    "page": "296-305",
+    "ISSN": [
+      "1072-3374",
+      "1573-8795"
+    ]
+  }
+}

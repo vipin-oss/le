@@ -1,0 +1,72 @@
+{
+  "query_doi": "10.1080/15397734.2018.1548968",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/15397734.2018.1548968",
+    "type": "journal-article",
+    "title": [
+      "Modeling of memory-dependent derivatives in orthotropic medium with three-phase-lag model under the effect of magnetic field"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-3599-3431",
+        "authenticated-orcid": false,
+        "given": "Siddhartha",
+        "family": "Biswas",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, University of North Bengal, Siliguri, India"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2019,
+          5,
+          4
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2019,
+          3,
+          27
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          3,
+          27
+        ]
+      ]
+    },
+    "container-title": [
+      "Mechanics Based Design of Structures and Machines"
+    ],
+    "short-container-title": [
+      "Mechanics Based Design of Structures and Machines"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "47",
+    "issue": "3",
+    "page": "302-318",
+    "ISSN": [
+      "1539-7734",
+      "1539-7742"
+    ]
+  }
+}

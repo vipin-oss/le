@@ -1,0 +1,51 @@
+{
+  "query_doi": "10.1007/978-1-4020-2310-1",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/978-1-4020-2310-1",
+    "type": "book",
+    "title": [
+      "Thermoelastic Models of Continua"
+    ],
+    "author": [
+      {
+        "given": "D.",
+        "family": "Ieşan",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2004
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2004
+        ]
+      ]
+    },
+    "container-title": [
+      "Solid Mechanics and Its Applications"
+    ],
+    "short-container-title": [],
+    "publisher": "Springer Netherlands",
+    "ISSN": [
+      "0925-0042"
+    ],
+    "ISBN": [
+      "9789048166343",
+      "9781402023101"
+    ]
+  }
+}

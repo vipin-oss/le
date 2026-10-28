@@ -1,0 +1,66 @@
+{
+  "query_doi": "10.1016/j.tws.2025.113238",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.tws.2025.113238",
+    "type": "journal-article",
+    "title": [
+      "Free vibration and thermoelastic damping analysis of size-dependent piezoelectric circular plate considering surface effect and nonlocal dual-phase-lag heat conduction model"
+    ],
+    "author": [
+      {
+        "given": "Shuanhu",
+        "family": "Shi",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Qiang",
+        "family": "Li",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2025,
+          8
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          8
+        ]
+      ]
+    },
+    "container-title": [
+      "Thin-Walled Structures"
+    ],
+    "short-container-title": [
+      "Thin-Walled Structures"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "213",
+    "page": "113238",
+    "article-number": "113238",
+    "ISSN": [
+      "0263-8231"
+    ]
+  }
+}

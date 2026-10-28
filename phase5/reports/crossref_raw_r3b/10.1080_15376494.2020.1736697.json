@@ -1,0 +1,92 @@
+{
+  "query_doi": "10.1080/15376494.2020.1736697",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/15376494.2020.1736697",
+    "type": "journal-article",
+    "title": [
+      "Reflection of plane waves from the surface of a piezothermoelastic fiber-reinforced composite half-space"
+    ],
+    "author": [
+      {
+        "given": "Abhishek Kumar",
+        "family": "Singh",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics and Computing, Indian Institute of Technology (Indian School of Mines)",
+            "place": [
+              "Dhanbad, India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sayantan",
+        "family": "Guha",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics and Computing, Indian Institute of Technology (Indian School of Mines)",
+            "place": [
+              "Dhanbad, India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          11,
+          17
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2020,
+          3,
+          20
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          3,
+          20
+        ]
+      ]
+    },
+    "container-title": [
+      "Mechanics of Advanced Materials and Structures"
+    ],
+    "short-container-title": [
+      "Mechanics of Advanced Materials and Structures"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "28",
+    "issue": "22",
+    "page": "2370-2382",
+    "ISSN": [
+      "1537-6494",
+      "1537-6532"
+    ]
+  }
+}

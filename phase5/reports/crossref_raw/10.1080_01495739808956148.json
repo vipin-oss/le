@@ -1,0 +1,71 @@
+{
+  "query_doi": "10.1080/01495739808956148",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/01495739808956148",
+    "type": "journal-article",
+    "title": [
+      "ON THE THEORY OF THERMOELASTICITY WITHOUT ENERGY DISSIPATION"
+    ],
+    "author": [
+      {
+        "given": "D.",
+        "family": "Ieşn",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "University of “Al. I. Cuza ”",
+            "place": [
+              "Romania"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1998,
+          4
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2010,
+          7,
+          14
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1998,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "21",
+    "issue": "3-4",
+    "page": "295-307",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}

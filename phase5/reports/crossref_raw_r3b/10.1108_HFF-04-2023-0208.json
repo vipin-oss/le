@@ -1,0 +1,90 @@
+{
+  "query_doi": "10.1108/HFF-04-2023-0208",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1108/hff-04-2023-0208",
+    "type": "journal-article",
+    "title": [
+      "Reflection at the free surface of the orthotropic piezo-hygro-thermo-elastic medium"
+    ],
+    "author": [
+      {
+        "given": "Anand Kumar",
+        "family": "Yadav",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "M.S.",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2023,
+          8,
+          17
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2023,
+          7,
+          17
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          7,
+          17
+        ]
+      ]
+    },
+    "container-title": [
+      "International Journal of Numerical Methods for Heat &amp; Fluid Flow"
+    ],
+    "short-container-title": [
+      "HFF"
+    ],
+    "publisher": "Emerald",
+    "volume": "33",
+    "issue": "10",
+    "page": "3535-3560",
+    "ISSN": [
+      "0961-5539",
+      "0961-5539"
+    ]
+  }
+}

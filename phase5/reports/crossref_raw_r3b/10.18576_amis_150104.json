@@ -1,0 +1,52 @@
+{
+  "query_doi": "10.18576/amis/150104",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.18576/amis/150104",
+    "type": "journal-article",
+    "title": [
+      "Mathematical Model for Hyperbolic Two Temperature Fractional-Order Thermoelastic Materials Subjected to Thermal Loading"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          1
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          1
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          1
+        ]
+      ]
+    },
+    "container-title": [
+      "Applied Mathematics &amp; Information Sciences"
+    ],
+    "short-container-title": [
+      "Appl. Math. Inf. Sci."
+    ],
+    "publisher": "Natural Sciences Publishing",
+    "volume": "15",
+    "issue": "1",
+    "page": "23-29",
+    "ISSN": [
+      "1935-0090",
+      "2325-0399"
+    ]
+  }
+}

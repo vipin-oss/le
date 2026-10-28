@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="700" viewBox="0 0 1100 700">
+  <defs>
+    <style>
+      .title { font: 700 16px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+      .subtitle { font: 12px 'DejaVu Sans', sans-serif; fill: #555; }
+      .axis-label { font: 700 13px 'DejaVu Sans', sans-serif; fill: #1a3a5c; }
+      .year { font: 700 12px 'DejaVu Sans', monospace; fill: #1a3a5c; }
+      .theory { font: 11px 'DejaVu Sans', sans-serif; fill: #333; }
+      .author { font: 10px 'DejaVu Sans', sans-serif; fill: #666; font-style: italic; }
+      .line { stroke: #1a3a5c; stroke-width: 2.5; fill: none; }
+      .tick { stroke: #1a3a5c; stroke-width: 1.5; }
+      .node { fill: #eef3f8; stroke: #1a3a5c; stroke-width: 1.5; rx: 5; ry: 5; }
+      .node-key { fill: #dbe7f2; stroke: #1a3a5c; stroke-width: 2; rx: 5; ry: 5; }
+      .arrow { stroke: #1a3a5c; stroke-width: 1.5; fill: #1a3a5c; marker-end: url(#arrowhead); }
+      .connector { stroke: #8fa8bd; stroke-width: 1.2; stroke-dasharray: 4,3; fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+      <polygon points="0,0 7,3.5 0,7" fill="#1a3a5c"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="700" fill="white"/>
+
+  <!-- Title -->
+  <text x="550" y="30" class="title" text-anchor="middle">Historical evolution of generalized continuum wave theories</text>
+  <text x="550" y="48" class="subtitle" text-anchor="middle">Documented development of classical and generalized thermoelastic theories with primary sources</text>
+
+  <!-- Timeline axis -->
+  <line x1="80" y1="200" x2="1020" y2="200" class="line"/>
+
+  <!-- Year ticks -->
+  <g class="tick">
+    <line x1="100" y1="195" x2="100" y2="205"/>
+    <line x1="320" y1="195" x2="320" y2="205"/>
+    <line x1="520" y1="195" x2="520" y2="205"/>
+    <line x1="700" y1="195" x2="700" y2="205"/>
+    <line x1="850" y1="195" x2="850" y2="205"/>
+    <line x1="980" y1="195" x2="980" y2="205"/>
+  </g>
+
+  <!-- Year labels -->
+  <text x="100" y="230" class="year" text-anchor="middle">1956</text>
+  <text x="320" y="230" class="year" text-anchor="middle">1967</text>
+  <text x="520" y="230" class="year" text-anchor="middle">1972</text>
+  <text x="700" y="230" class="year" text-anchor="middle">1991</text>
+  <text x="850" y="230" class="year" text-anchor="middle">1995</text>
+  <text x="980" y="230" class="year" text-anchor="middle">2011</text>
+
+  <!-- Theory nodes -->
+  <!-- 1956: Classical coupled (Biot) -->
+  <rect x="30" y="260" width="140" height="120" class="node"/>
+  <text x="100" y="285" class="theory" text-anchor="middle" font-weight="bold">Classical coupled</text>
+  <text x="100" y="305" class="theory" text-anchor="middle">thermoelasticity (CD)</text>
+  <text x="100" y="325" class="author" text-anchor="middle">Biot, 1956</text>
+  <text x="100" y="345" class="theory" text-anchor="middle" font-size="10">Fourier heat conduction</text>
+  <text x="100" y="362" class="theory" text-anchor="middle" font-size="10">Infinite thermal speed</text>
+
+  <!-- 1967: Lord-Shulman -->
+  <rect x="250" y="220" width="140" height="140" class="node-key"/>
+  <text x="320" y="245" class="theory" text-anchor="middle" font-weight="bold">Lord–Shulman (LS)</text>
+  <text x="320" y="265" class="theory" text-anchor="middle">One relaxation time</text>
+  <text x="320" y="285" class="author" text-anchor="middle">Lord &amp; Shulman, 1967</text>
+  <text x="320" y="305" class="theory" text-anchor="middle" font-size="10">q + τ₀q̇ = −kT_,ᵢ</text>
+  <text x="320" y="322" class="theory" text-anchor="middle" font-size="10">Finite thermal wave speed</text>
+  <text x="320" y="339" class="theory" text-anchor="middle" font-size="10">Hyperbolic heat equation</text>
+
+  <!-- 1972: Green-Lindsay -->
+  <rect x="450" y="280" width="140" height="120" class="node"/>
+  <text x="520" y="305" class="theory" text-anchor="middle" font-weight="bold">Green–Lindsay (GL)</text>
+  <text x="520" y="325" class="theory" text-anchor="middle">Two relaxation parameters</text>
+  <text x="520" y="345" class="author" text-anchor="middle">Green &amp; Lindsay, 1972</text>
+  <text x="520" y="365" class="theory" text-anchor="middle" font-size="10">Temperature-rate dependent</text>
+  <text x="520" y="382" class="theory" text-anchor="middle" font-size="10">Rate-dependent terms; admissibility model-specific</text>
+
+  <!-- 1991: Green-Naghdi II/III -->
+  <rect x="630" y="180" width="140" height="140" class="node-key"/>
+  <text x="700" y="205" class="theory" text-anchor="middle" font-weight="bold">Green–Naghdi II &amp; III</text>
+  <text x="700" y="225" class="theory" text-anchor="middle">1991 / 1993</text>
+  <text x="700" y="245" class="author" text-anchor="middle">Green &amp; Naghdi</text>
+  <text x="700" y="265" class="theory" text-anchor="middle" font-size="10">Type II: no energy dissipation</text>
+  <text x="700" y="282" class="theory" text-anchor="middle" font-size="10">Type III: dissipative</text>
+  <text x="700" y="299" class="theory" text-anchor="middle" font-size="10">Thermal displacement α</text>
+  <text x="700" y="316" class="theory" text-anchor="middle" font-size="10">Finite wave speed</text>
+
+  <!-- 1995: DPL / TPL -->
+  <rect x="780" y="260" width="140" height="120" class="node"/>
+  <text x="850" y="285" class="theory" text-anchor="middle" font-weight="bold">Dual / Triple</text>
+  <text x="850" y="305" class="theory" text-anchor="middle">Phase-Lag (DPL/TPL)</text>
+  <text x="850" y="325" class="author" text-anchor="middle">Tzou, 1995</text>
+  <text x="850" y="345" class="theory" text-anchor="middle" font-size="10">q(t+τq) = −kT_,ᵢ(t+τT)</text>
+  <text x="850" y="362" class="theory" text-anchor="middle" font-size="10">Phase-lag heat conduction</text>
+
+  <!-- 2011: MDD -->
+  <rect x="910" y="340" width="140" height="120" class="node"/>
+  <text x="980" y="365" class="theory" text-anchor="middle" font-weight="bold">Memory-Dependent</text>
+  <text x="980" y="385" class="theory" text-anchor="middle">Derivative (MDD)</text>
+  <text x="980" y="405" class="author" text-anchor="middle">Wang &amp; Li, 2011</text>
+  <text x="980" y="425" class="theory" text-anchor="middle" font-size="10">Integral-form memory operator</text>
+  <text x="980" y="442" class="theory" text-anchor="middle" font-size="10">Kernel-function based</text>
+
+  <!-- Connectors (evolution arrows) -->
+  <line x1="170" y1="260" x2="250" y2="290" class="arrow"/>
+  <line x1="390" y1="290" x2="450" y2="340" class="arrow"/>
+  <line x1="590" y1="340" x2="630" y2="250" class="arrow"/>
+  <line x1="770" y1="280" x2="780" y2="320" class="arrow"/>
+  <line x1="920" y1="400" x2="910" y2="460" class="arrow"/>
+
+  <!-- Legend -->
+  <rect x="80" y="500" width="200" height="80" fill="#f8f9fa" stroke="#cccccc" stroke-width="1"/>
+  <text x="95" y="520" class="axis-label">Key:</text>
+  <text x="95" y="540" class="theory" font-size="10">■ Primary theory (new family)</text>
+  <text x="95" y="560" class="theory" font-size="10">■ Key development</text>
+
+  <text x="300" y="520" class="axis-label">Source status:</text>
+  <text x="300" y="540" class="theory" font-size="10">Dates from cited publications; equations not independently checked</text>
+  <text x="300" y="560" class="theory" font-size="10">DOI metadata does not verify equations</text>
+
+  <!-- Notes -->
+  <text x="80" y="620" class="subtitle" font-size="10">Note: Timeline shows documented publication dates. Theory relationships represent historical development, not mathematical equivalence.</text>
+  <text x="80" y="640" class="subtitle" font-size="10">Energy flux formulations for LS, DPL, TPL, MGT, MDD remain open derivations (see Section 10.3).</text>
+</svg>

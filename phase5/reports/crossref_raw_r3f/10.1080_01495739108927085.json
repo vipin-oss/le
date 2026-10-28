@@ -1,0 +1,70 @@
+{
+  "map_id": "R3F-IVANOV-1991",
+  "mode": "DOI",
+  "requested_doi": "10.1080/01495739108927085",
+  "query": "Ivanov Savova Journal of Thermal Stresses 1991 14 563 570",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/01495739108927085",
+    "type": "journal-article",
+    "title": [
+      "ENERGY-FLUX VECTOR OF SURFACE THERMOELASTIC WAVES"
+    ],
+    "author": [
+      {
+        "given": "Tsolo P.",
+        "family": "Ivanov",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Radiianka",
+        "family": "Savova",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1991,
+          10
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1991,
+          10
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "14",
+    "issue": "4",
+    "page": "563-570",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}

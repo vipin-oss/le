@@ -1,0 +1,62 @@
+{
+  "query_doi": "10.3390/fractalfract9050272",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.3390/fractalfract9050272",
+    "type": "journal-article",
+    "title": [
+      "Fractional Heat Conduction with Variable Thermal Conductivity of Infinite Annular Cylinder Under Thermoelasticity Theorem of Moore–Gibson–Thompson"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-4480-0793",
+        "authenticated-orcid": false,
+        "given": "Eman A. N.",
+        "family": "Al-Lehaibi",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Mathematics Department, Jamoum University College, Umm Al-Qura University, Makkah 25375, Saudi Arabia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-online": {
+      "date-parts": [
+        [
+          2025,
+          4,
+          23
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          4,
+          23
+        ]
+      ]
+    },
+    "container-title": [
+      "Fractal and Fractional"
+    ],
+    "short-container-title": [
+      "Fractal Fract"
+    ],
+    "publisher": "MDPI AG",
+    "volume": "9",
+    "issue": "5",
+    "page": "272",
+    "ISSN": [
+      "2504-3110"
+    ]
+  }
+}

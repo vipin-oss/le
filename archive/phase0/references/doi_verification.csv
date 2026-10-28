@@ -1,0 +1,19 @@
+study_id,doi,doi_syntax_valid,crossref_match,crossref_title_match,citation_count_openalex,citation_count_crossref,verified_date,verification_source,notes
+FW-001,10.1063/1.1722351,YES,YES,YES,2854,2854,2026-10-21,Crossref,Biot 1956 coupled thermoelasticity
+FW-002,10.1016/0022-5096(67)90024-5,YES,YES,YES,4068,4068,2026-10-21,Crossref,Lord-Shulman 1967
+FW-003,10.1007/bf00045689,YES,YES,YES,2929,2929,2026-10-21,Crossref,Green-Lindsay 1972
+FW-004,10.1098/rspa.1991.0012,YES,YES,YES,1097,1097,2026-10-21,Crossref,Green-Naghdi 1991
+FW-005,10.1115/1.2822329,YES,YES,YES,1995,1995,2026-10-21,Crossref,Tzou 1995 DPL
+FW-006,10.1016/0020-7225(72)90050-x,YES,YES,YES,1272,1272,2026-10-21,Crossref,Eringen 1972 nonlocal
+FW-007,10.1007/bf00249363,YES,YES,YES,790,790,2026-10-21,Crossref,Nunziato-Cowin 1979 voids
+FW-008,10.1115/1.3098984,YES,YES,YES,1149,1284,2026-10-21,Crossref,Chandrasekharaiah 1998 review (Crossref: 1284 vs OpenAlex: 1149)
+FW-009,10.1115/1.3143705,YES,YES,YES,834,952,2026-10-21,Crossref,Chandrasekharaiah 1986 review (Crossref: 952 vs OpenAlex: 834)
+FW-010,10.1093/jcde/qwaa082,YES,YES,YES,54,54,2026-10-21,Crossref,Shakeriaski 2021 review
+FW-011,10.1177/1081286519862007,YES,YES,YES,409,409,2026-10-21,Crossref,Quintanilla 2019 MGT
+RG-001,10.1007/s12648-022-02568-w,YES,YES,YES,22,22,2026-10-21,Crossref,Barak et al. 2023; Vipin Gupta co-author; Indian J Phys
+RG-002,10.1108/hff-11-2022-0654,YES,YES,YES,20,20,2026-10-21,Crossref,Gupta et al. 2023; HFF; nonlocal thermoelastic + piezothermoelastic + MDD + HTT + TPL
+RG-003,10.1038/s41598-023-44339-5,YES,YES,YES,18,18,2026-10-21,Crossref,Barak et al. 2023; Scientific Reports OPEN ACCESS; FULL TEXT EXTRACTED; MDD+TPL piezothermoelastic-thermoelastic interface
+RG-004,10.1108/mmms-10-2022-0209,YES,YES,YES,18,18,2026-10-21,Crossref,Barak et al. 2023; MMMS; imperfect interface DPL+MDD; graphite/cadmium selenide
+RG-005,10.1080/01495739.2023.2253879,YES,YES,YES,8,8,2026-10-21,Crossref,Barak et al. 2024; J. Thermal Stresses; monoclinic piezothermoelastic+thermoelastic+MDD
+RG-006,10.1088/1402-4896/acfced,YES,YES,YES,11,11,2026-10-21,Crossref,Kumar et al. 2023; Physica Scripta; dual-porous+elastic+MDD+DPL+H2T
+RG-007,10.1108/hff-04-2022-0259,YES,YES,YES,28,28,2026-10-21,Crossref,Gupta et al. 2023; HFF; nonlocal piezothermoelastic+fluid+DPL+two-temperature+MDD; claims energy conservation

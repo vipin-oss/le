@@ -1,0 +1,81 @@
+{
+  "map_id": "R3F-WANG-LI-2025IV",
+  "mode": "BIBLIOGRAPHIC-SEARCH",
+  "requested_doi": "",
+  "query": "Wang Li Fractal and Fractional 2025 9 12 794",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.3390/fractalfract9120794",
+    "type": "journal-article",
+    "title": [
+      "Memory-Dependent Derivative Versus Fractional Derivative (IV): Space-Dependent Derivative for Unsteady Heat Diffusion"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-4328-4598",
+        "authenticated-orcid": false,
+        "given": "Jin-Liang",
+        "family": "Wang",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "College of Science, Qingdao University of Technology, Qingdao 266520, China"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Hui-Feng",
+        "family": "Li",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "College of Science, Qingdao University of Technology, Qingdao 266520, China"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-online": {
+      "date-parts": [
+        [
+          2025,
+          12,
+          3
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          12,
+          3
+        ]
+      ]
+    },
+    "container-title": [
+      "Fractal and Fractional"
+    ],
+    "short-container-title": [
+      "Fractal Fract"
+    ],
+    "publisher": "MDPI AG",
+    "volume": "9",
+    "issue": "12",
+    "page": "794",
+    "ISSN": [
+      "2504-3110"
+    ]
+  }
+}
