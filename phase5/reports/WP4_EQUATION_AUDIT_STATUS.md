@@ -4,18 +4,19 @@
 
 ## Scope and coverage
 
-The audit covers every `equation` and `equation*` display group in Sections 4–10. The current `EQUATION_AUDIT.csv` has 78 rows: Section 4 = 18, Section 5 = 16, Section 6 = 8, Section 7 = 4, Section 8 = 7, Section 9 = 12, and Section 10 = 13. `check_equation_audit_inventory.py` verifies that each current display group has exactly one row with matching source line and label. It is a coverage check only and does not validate formulas.
+The audit covers every active `equation` and `equation*` display group in Sections 4–10. The current `EQUATION_AUDIT.csv` has 78 records: 77 active displays (Section 4 = 17, Section 5 = 16, Section 6 = 8, Section 7 = 4, Section 8 = 7, Section 9 = 12, Section 10 = 13) plus one historical `WITHHELD` record for removed Eq. 4.12. `check_equation_audit_inventory.py` verifies active display coverage and ensures a withheld label is absent from the source; it does not validate formulas.
 
-Current dispositions after the B23 inventory update and the classical heat-equation derivation:
+WP4 checkpoint after the R4B source reconciliation and targeted equation closure:
 
 | Status | Rows | Meaning at this checkpoint |
 | --- | ---: | --- |
-| `VERIFIED-SOURCE` | 2 | Two equations have targeted primary-source equation/page anchors, including Eq. 4.2 at Biot (1956), printed p. 242, Eqs. (3.3)--(3.4). |
-| `VERIFIED-SYMBOLIC` | 16 | Existing or new scripts check displayed algebra within each row's stated scope; source transcription is not implied unless separately anchored. |
-| `CONDITIONAL` | 57 | The equation is retained only under the assumptions and limits stated in its row; many still need an exact source anchor or equation-specific derivation. |
-| `OPEN` | 3 | Equation-level verification remains unperformed; the rows identify the required next action. |
+| `VERIFIED-SOURCE` | 3 | Includes Biot (1956), printed p. 242, Eqs. (3.3)--(3.4), and the scoped GN-II Eq. 4.11 source mapping. |
+| `VERIFIED-SYMBOLIC` | 25 | Includes model-specific checks for Eq. 7.3, uncoupled elastic speeds, LS elimination and scalar thermal characteristic speed, first-order TPL Taylor truncation, fractional definitions on tested functions, 1D nonlocal dispersion, and the reduced flux convention. |
+| `CONDITIONAL` | 49 | Displays are retained only under stated assumptions; continue reducing these only where page-level source evidence or reproducible derivations support promotion. |
+| `OPEN` | 0 | No active displayed equation remains unclassified as OPEN. |
+| `WITHHELD` | 1 | Historical Eq. 4.12 record; its formula is removed from active text and working appendix pending exact source verification. |
 
-The status count is intentionally conservative. A `CONDITIONAL` or `OPEN` row is not a verified scientific claim. Each unverified display is linked to a section-specific Class C ledger row, and the row itself names the remaining source/derivation check.
+There are 77 active display groups plus one WITHHELD historical record. The inventory gate is coverage-only; status still does not establish a formula outside its row-specific evidence and scope.
 
 ## First corrections: Section 5 piezoelectric energy and stiffness
 
@@ -33,13 +34,13 @@ Fetched the read-only audit branch `arena/0be2770f-le` at `6e095abcaa674ee5d92d2
 
 ## Remaining work
 
-1. Audit all 57 conditional rows against exact source pages/equations or equation-specific scripts; explicitly record sign conventions, coefficient maps, domains, constitutive assumptions, and boundary/data restrictions.
-2. Resolve or conservatively hedge/remove the three open displays: Eqs. 4.11, 4.12, and 7.3. Eq. 4.2 is now source-anchored and its linearized entropy-balance derivation is checked by `verify_classical_thermoelastic.py` (OCL-513).
+1. Audit the 49 remaining conditional rows against exact source pages/equations or equation-specific scripts; explicitly record sign conventions, coefficient maps, domains, constitutive assumptions, and boundary/data restrictions.
+2. Keep Eq. 4.11 source-verified only for the source-free GN-II alpha form with zero integration function; keep the exact entropy-flux component formula withheld (OCL-515–OCL-516). Eq. 7.3 is verified only for the declared positive quadratic gradient energy (OCL-514).
 3. Check all source-sensitive displayed equations for sign/index/notation conflicts, including thermal-flux signs, conductivity tensor versus scalar use, equations involving `kappa*` versus `kappa_ij`, interface-system mode counts, and the exact assumptions behind each matrix inverse or balance identity.
 4. For each reduction claimed in the manuscript, retain a positive check and a negative test for the most plausible incorrect substitution; keep source transcription separate from symbolic validity.
-5. After the Section 4–10 equation rows are resolved, re-run the inventory, ledger, build, privacy, and hostile-diff checks; then continue the ordered Q1, Q3, Q5, WP3 remainder, WP6, WP7, and WP8 work.
+5. After reducing the remaining conditional rows, re-run the inventory, ledger, build, privacy, and hostile-diff checks; then continue the ordered Q1, Q3, Q5, WP3 remainder, WP6, WP7, and WP8 work.
 
-Current equation-audit ledger total is 513 rows: A=49, B=123, C=317, V=24. The inventory checker establishes row coverage only; it does not close the remaining equation work.
+Current equation-audit claim ledger total is 520 rows: A=56, B=119, C=316, V=29. The inventory checker establishes row coverage only; it does not close the remaining equation work.
 
 ## Build and rendered self-audit checkpoint
 
@@ -55,4 +56,13 @@ The next content commit `11b8b8c94fdd64ba4dad19e86378b624efd4d100` passed CI run
 
 `verify_classical_thermoelastic.py` derives the source-free heat equation from the displayed linear entropy relation and local heat balance. With Fourier flux, constant coefficients, and first-order perturbations about $T_0$, the nonlinear remainder is quadratic; the two negative controls keep the heat-diffusion and thermoelastic strain-rate terms visible. The source anchor is Biot (1956), printed p. 242, Eqs. (3.3)--(3.4), recorded in OCL-513. The equation is now `VERIFIED-SOURCE` only within this linear isotropic Fourier scope; no nonlinear or generalized-theory extension is implied.
 
-Content commit `4bfe01705ed4e6672509d0b83942d4cbeac9e6eb` passed CI `40554464253`; output commit `298ab6304a601b53d64062518ef244d7483219bf` was fast-forwarded. The build had 122 pages, zero undefined references/citations, zero forbidden privacy/internal-artifact/internal-path/manuscript tags, zero near-overfull boxes above 0.5 pt, and zero deletion-audit `NONE` rows. Ten A/V entries OCL-174/175/195/207/404/405/465/466/467/513 were checked against normalized extracted PDF text. Current ledger is 513 rows (A=49, B=123, C=317, V=24); the 78-display audit has 2 source-verified, 16 symbolic, 57 conditional, and 3 open rows. The three open labels are 4.11, 4.12, and 7.3.
+Content commit `4bfe01705ed4e6672509d0b83942d4cbeac9e6eb` passed CI `40554464253`; output commit `298ab6304a601b53d64062518ef244d7483219bf` was fast-forwarded. The build had 122 pages, zero undefined references/citations, zero forbidden privacy/internal-artifact/internal-path/manuscript tags, zero near-overfull boxes above 0.5 pt, and zero deletion-audit `NONE` rows. Ten A/V entries OCL-174/175/195/207/404/405/465/466/467/513 were checked against normalized extracted PDF text. At that checkpoint the ledger was 513 rows (A=49, B=123, C=317, V=24); the 78-display audit had 2 source-verified, 16 symbolic, 57 conditional, and 3 open rows. This checkpoint supersedes that status: 77 active displays are covered, Eq. 4.11 and Eq. 7.3 are verified within scope, Eq. 4.12 is withheld, and no active display remains OPEN.
+
+
+## Additional equation-specific reductions (2026-10-28)
+
+Eight active displays were promoted from `CONDITIONAL` to `VERIFIED-SYMBOLIC`, reducing the remaining conditional set from 57 to 49 without changing the active-display inventory. New reproducible checks derive: (1) the uncoupled elastic reference speeds from Eq. 4.1 at beta=0, with a negative control showing thermal coupling remains when beta is nonzero; (2) the LS heat equation by applying the time-relaxation operator to the local thermal balance and eliminating div(q) with Eq. 4.4; (3) the scalar LS characteristic speed only for the uncoupled beta=0 branch; (4) the first-order Taylor residual from the three shifted TPL terms while retaining a nonzero higher-order remainder; and (5) the one-dimensional Helmholtz-bar dispersion relation from the displayed operator. The Caputo/Riemann--Liouville definition checks are scoped to the tested beta-integral monomial actions, and Eq. 10.3 remains only the reduced first-order small-amplitude flux convention. These four new V-ledger records are OCL-517--OCL-520; scripts are `verify_isotropic_elastic_speeds.py`, `verify_ls_heat_equation.py`, `verify_tpl_first_order_expansion.py`, and `verify_nonlocal_dispersion.py`.
+
+Eq. 4.17 remains `CONDITIONAL`: APPA EQ-019 and OCL-169 record inconsistent source equation-number ranges and no reconciled printed-page locator. The recorded full-text finding is not treated as page-level verification until that discrepancy is resolved. Eq. 4.12 remains WITHHELD. Current inventory status is 77 active displays plus one withheld historical record: 3 `VERIFIED-SOURCE`, 25 `VERIFIED-SYMBOLIC`, 49 `CONDITIONAL`, 0 `OPEN`, and 1 `WITHHELD`. The ledger has 520 rows (A=56, B=119, C=316, V=29).
+
+Local TeX executables are unavailable in this workspace; these edits have not yet had a TeX build or CI run. The symbolic scripts and CSV/inventory checks are the available verification evidence for this checkpoint.

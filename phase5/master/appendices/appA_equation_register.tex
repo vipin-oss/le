@@ -56,12 +56,12 @@ EQ-010 & $\omega_{ij} = \tfrac{1}{2}(u_{i,j} - u_{j,i})$ & UNVERIFIED & Definiti
 \textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
 \midrule
 EQ-011 & $\rho\ddot{u}_i = (\lambda+\mu)u_{j,ji} + \mu u_{i,jj} - \beta T_{,i}$ & UNVERIFIED & Classical coupled thermoelasticity (Biot 1956) \\
-EQ-012 & $\rho c_v \dot{T} = k\nabla^2 T - \beta T_0 \dot{u}_{i,i}$ & UNVERIFIED & Classical heat equation (Fourier conduction) \\
+EQ-012 & $\rho c_v \dot{T} = k\nabla^2 T - \beta T_0 \dot{u}_{i,i}$ & PRIMARY-SOURCE-CHECKED & Biot (1956), printed p. 242, Eqs.~(3.3)--(3.4); linear isotropic Fourier model, constant coefficients, source-free scope \\
 EQ-013 & $q_i + \tau_0\dot{q}_i = -kT_{,i}$ & UNVERIFIED & Lord--Shulman (1967); primary source \\
-EQ-014 & $c_T = \sqrt{k/(\rho c_v\tau_0)}$ & UNVERIFIED & LS thermal wave speed; $\tau_0 > 0$ \\
+EQ-014 & $c_T = \sqrt{k/(\rho c_v\tau_0)}$ & VERIFIED-SYMBOLIC & Uncoupled scalar thermal branch $\beta=0$; principal-part characteristic speed only, not a fully coupled mode speed
 EQ-015 & Green--Lindsay Fourier-flux energy equation and temperature-rate stress coupling (Eqs.~4.9--4.10) & PRIMARY-SOURCE-CHECKED & Green--Lindsay (1972), F1; no tau0 term on strain-rate coupling; tau1 greater than or equal to tau0 greater than zero \\
 EQ-016 & $\kappa^*\nabla^2\alpha_{\mathrm{GN}} = \rho c_e\ddot{\alpha}_{\mathrm{GN}} + \beta T_0\dot{u}_{i,i}$ & PRIMARY-SOURCE-CHECKED & GN-II 1993 Eq. (3.16) integrated once; source-free alpha form, zero integration constant; F17 \\
-EQ-017 & $p_i = \kappa^*(\alpha_{\mathrm{GN}})_{,i}$ & UNVERIFIED & Candidate isotropic GN-II entropy flux; coefficient notation aligned with EQ-016; free energy and primary source not checked \\
+EQ-017 & GN-II entropy-flux component relation & WITHHELD & No exact isotropic component equation retained; source/potential mapping remains open \\
 EQ-018 & $q_i(t+\tau_q) = -kT_{,i}(t+\tau_T)$ & UNVERIFIED & DPL constitutive law (Tzou 1995) \\
 EQ-019 & First-order three-lag TPL law with thermal-displacement-gradient contribution (Section 4.8) & PRIMARY-SOURCE-CHECKED & Roy Choudhuri (2007), Eqs.~3--4, full-text finding F6; no second-order term \\
 EQ-020 & $D_{\omega_M} f(t) = \tfrac{1}{\omega_M}\int_{t-\omega_M}^{t}K_{\mathrm{MDD}}(t-t')f'(t')\,dt'$ & UNVERIFIED & MDD candidate; finite horizon distinguished from angular frequency; source convention not checked \\

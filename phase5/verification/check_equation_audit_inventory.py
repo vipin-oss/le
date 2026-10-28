@@ -22,7 +22,7 @@ SECTIONS = {
     9: "interfaces",
     10: "energy",
 }
-ALLOWED = {"VERIFIED-SOURCE", "VERIFIED-SYMBOLIC", "CONDITIONAL", "OPEN"}
+ALLOWED = {"VERIFIED-SOURCE", "VERIFIED-SYMBOLIC", "CONDITIONAL", "OPEN", "WITHHELD"}
 ENV = re.compile(r"\\begin\{(equation\*?)\}(.*?)\\end\{\1\}", re.S)
 LABEL = re.compile(r"\\label\{([^}]+)\}")
 
@@ -73,11 +73,17 @@ def main() -> None:
     actual = []
     for row in rows:
         try:
-            actual.append((int(row["section"]), row["source_file"], int(row["line"]), row["label"]))
+            location = (int(row["section"]), row["source_file"], int(row["line"]), row["label"])
         except (TypeError, ValueError) as exc:
             raise SystemExit(f"FAIL: malformed source location in {row.get('audit_id')}: {exc}")
         if row["status"] not in ALLOWED:
             raise SystemExit(f"FAIL: invalid status for {row['audit_id']}: {row['status']}")
+        if row["status"] == "WITHHELD":
+            if any(section == location[0] and source_file == location[1] and label == location[3]
+                   for section, source_file, _line, label in expected):
+                raise SystemExit(f"FAIL: WITHHELD equation is still displayed: {row['audit_id']} {row['label']}")
+        else:
+            actual.append(location)
         for field in ("display_tex", "source_anchor_or_script", "scope_and_assumptions", "negative_test", "ledger_rows", "next_action"):
             if not row[field].strip():
                 raise SystemExit(f"FAIL: empty {field} for {row['audit_id']}")
@@ -87,9 +93,12 @@ def main() -> None:
     extra = sorted(set(actual) - set(expected))
     if missing or extra:
         raise SystemExit(f"FAIL: equation inventory mismatch; missing={missing}; extra={extra}")
-    if len(rows) != len(expected):
-        raise SystemExit(f"FAIL: row count {len(rows)} != display count {len(expected)}")
-    print(f"PASS: all {len(expected)} displayed equation groups in Sections 4--10 have one audit row")
+    if len(actual) != len(expected):
+        raise SystemExit(f"FAIL: active audit row count {len(actual)} != display count {len(expected)}")
+    withheld = sum(row["status"] == "WITHHELD" for row in rows)
+    print(f"PASS: all {len(expected)} active displayed equation groups in Sections 4--10 have one audit row")
+    if withheld:
+        print(f"PASS: {withheld} WITHHELD historical equation record(s) have no active display")
     print("Scope: inventory coverage only; no formula/source/derivation validation")
 
 

@@ -36,16 +36,18 @@ where $\xi = e_0 a$ is the nonlocal length scale parameter. The differential for
 \subsection{Strain-gradient and couple-stress theories}
 \label{sec:7.2}
 
-Strain-gradient theory extends classical elasticity by including higher-order gradients of strain in the constitutive relations:
+A representative homogeneous small-strain gradient model follows from the specific energy density
+$\psi=\tfrac12 C_{ijkl}\varepsilon_{ij}\varepsilon_{kl}+\tfrac12\ell^2 C_{ijkl}\varepsilon_{ij,m}\varepsilon_{kl,m}$,
+with constant symmetric positive-definite elastic moduli and $\ell\geq0$. Its effective bulk stress after integration by parts is
 
 \begin{equation}
 \sigma_{ij} = C_{ijkl}\varepsilon_{kl} - \ell^2 C_{ijkl}\nabla^2\varepsilon_{kl},
 \label{eq:7.3}
 \end{equation}
 
-where $\ell$ is a material length scale parameter. The physical reading of Eq.~\eqref{eq:7.3} is that the stress depends not only on the strain but on the curvature of the strain field, so that regions in which the strain varies rapidly---near a notch, a contact edge, or an interface---carry additional stress. The coefficient $\ell$ is a genuine material constant that must be measured; the identification procedures for it, together with the finite element implementations and the variational formulations that make the theory tractable, have been surveyed by Askes and Aifantis \cite{Askes2006,Askes2011}.
+The Euler--Lagrange derivative gives the corresponding higher-order microstress $m_{ijm}=\ell^2 C_{ijkl}\varepsilon_{kl,m}$, so the bulk law alone does not specify higher-order boundary data. This is one energy-based gradient model, not a universal strain-gradient constitutive law; $\ell$ has units of length, and no empirical calibration or material-independent value is inferred.
 
-The unifying point of view that connects gradient elasticity to micropolar and couple-stress elasticity is that all three introduce internal degrees of freedom and a length scale, and differ in whether those degrees of freedom are constrained to coincide with the macroscopic deformation or are allowed to evolve independently. Aifantis's formulation, in which the internal length is interpreted as the scale of the microstructural heterogeneity that generates it, is the common root \cite{Askes2006}. It follows that a continuum model with internal length, in whichever of these forms, can be used to represent materials for which no explicit microstructural model is available---which is why the same length-scale parameter appears in treatments of metals, polymers, granular media, and biological tissue with broadly comparable values.
+Gradient, couple-stress, and micropolar formulations may all introduce internal lengths, but their state variables and higher-order boundary data differ. The displayed example does not make those constitutive laws interchangeable.
 
 \subsection{Size-dependent wave behavior: dispersion from nonlocality}
 \label{sec:7.3}
@@ -63,7 +65,7 @@ where $c_0$ is the classical wave speed, $k_{\mathrm w}$ is the wave number (dis
 
 \subsubsection{The dispersion signature distinguishes the mechanisms}
 
-For Eq.~\eqref{eq:7.4}, the phase speed tends to zero as $k_{\mathrm w}\to\infty$, while the angular frequency $\omega(k_{\mathrm w})=c_0 k_{\mathrm w}/\sqrt{1+\xi^2k_{\mathrm w}^2}$ approaches the finite limit $c_0/\xi$; it is frequency, not phase speed, that saturates. The group velocity is $d\omega/dk_{\mathrm w}=c_0(1+\xi^2k_{\mathrm w}^2)^{-3/2}$ and tends to zero. By contrast, the positive strain-gradient law in Eq.~\eqref{eq:7.3} gives $c_{\rm ph}^2=c_0^2(1+\ell^2 k_{\mathrm w}^2)$ for a one-dimensional bar, so it stiffens and phase speed increases. Gradient-inertia variants can behave differently; the model form must accompany any comparison. A dispersion measurement over a sufficiently broad range of $k_{\mathrm w}$ can thus distinguish a nonlocal mechanism from a gradient mechanism, and the two are not interchangeable even though both produce the same qualitative signature of a size-dependent stiffness. This is one of the few places in the reviewed literature where two competing formulations of the same effect make quantitatively different and testable predictions, and it deserves more attention than it has received.
+For Eq.~\eqref{eq:7.4}, the phase speed tends to zero as $k_{\mathrm w}\to\infty$, while the angular frequency $\omega(k_{\mathrm w})=c_0 k_{\mathrm w}/\sqrt{1+\xi^2k_{\mathrm w}^2}$ approaches the finite limit $c_0/\xi$; it is frequency, not phase speed, that saturates. The group velocity is $d\omega/dk_{\mathrm w}=c_0(1+\xi^2k_{\mathrm w}^2)^{-3/2}$ and tends to zero. For the one-dimensional bar derived from the positive gradient energy above, Eq.~\eqref{eq:7.3} gives $c_{\rm ph}^2=c_0^2(1+\ell^2 k_{\mathrm w}^2)$; this particular model stiffens with increasing wave number. Gradient-inertia variants can behave differently; the model form must accompany any comparison. These two specified models predict different wave-number dependences that could, in principle, be compared with measurements spanning the relevant range; this does not generalize to all nonlocal or gradient theories.
 
 \begin{figure}[htbp]
 \centering

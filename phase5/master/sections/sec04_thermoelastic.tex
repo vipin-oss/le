@@ -40,7 +40,7 @@ where $\rho$ is density, $\lambda$ and $\mu$ are Lam\'e constants, $\beta$ is th
 
 \subsubsection{Wave speeds}
 
-The classical theory predicts two elastic wave types:
+In the uncoupled elastic reference limit $\beta=0$, plane-wave substitution into Eq.~\eqref{eq:4.1} gives the longitudinal and shear speeds (real and positive for $\rho>0$, $\mu>0$, and $\lambda+2\mu>0$):
 
 \begin{equation}
 c_p = \sqrt{\frac{\lambda + 2\mu}{\rho}},
@@ -49,7 +49,7 @@ c_s = \sqrt{\frac{\mu}{\rho}}.
 \label{eq:4.3}
 \end{equation}
 
-The thermal field satisfies a parabolic diffusion equation, predicting infinite thermal propagation speed --- the classical paradox that motivated all subsequent generalized theories.
+These are uncoupled elastic reference speeds, not the longitudinal mode speeds of the fully coupled thermoelastic system. The heat equation remains parabolic, with the thermoelastic strain-rate source in Eq.~\eqref{eq:4.2}; its thermal propagation is formally unbounded, the classical paradox that motivated generalized theories.
 
 \subsubsection{Physical interpretation}
 
@@ -69,7 +69,7 @@ where $\tau_0 > 0$ is the relaxation time and $q_i$ is the heat flux vector.
 
 \subsubsection{Modified heat equation}
 
-Combining \eqref{eq:4.4} with the energy balance yields the LS heat equation:
+Applying $1+\tau_0\partial_t$ to the local thermal balance $\rho c_v\dot T=-\nabla\cdot q-\beta T_0\dot u_{i,i}$ and using the divergence of Eq.~\eqref{eq:4.4} yields the LS heat equation:
 
 \begin{equation}
 \rho c_v \left(\dot{T} + \tau_0 \ddot{T}\right)
@@ -80,18 +80,18 @@ Combining \eqref{eq:4.4} with the energy balance yields the LS heat equation:
 
 \subsubsection{Finite thermal wave speed}
 
-The thermal wave speed in LS theory is:
+In the uncoupled scalar thermal branch $\beta=0$, the principal part of Eq.~\eqref{eq:4.5} is $\rho c_v\tau_0\ddot T=k\nabla^2T$; its characteristic speed is:
 
 \begin{equation}
 c_T = \sqrt{\frac{k}{\rho c_v \tau_0}}.
 \label{eq:4.6}
 \end{equation}
 
-For the displayed LS/Cattaneo law, the formal thermal characteristic speed is finite when $\tau_0>0$. The limiting substitution $\tau_0\to0$ recovers Fourier conduction at the level of the constitutive equation; convergence of solutions is a separate question. These statements are conditional on the displayed model.
+This formal finite characteristic speed applies to the uncoupled scalar branch $\beta=0$ and requires $k,\rho,c_v,\tau_0>0$. The substitution $\tau_0\to0$ recovers Fourier conduction at the level of the constitutive equation; convergence of solutions is a separate question. These statements are conditional on the displayed model.
 
 \subsubsection{Well-posedness}
 
-For the displayed Cattaneo-type heat-flux law, $\tau_0>0$ gives a finite characteristic speed for the thermal branch. This parameter condition alone is not a proof that the full coupled initial-boundary-value problem is well-posed; the latter depends on coefficients, domain, and boundary/initial data. A separate fractional Lord--Shulman formulation couples a Klein--Gordon nonlocal operator to the heat law; its printed $\alpha\to0$ branch is not used here as a limiting identity \cite{Das2026}.
+For the uncoupled scalar thermal branch ($\beta=0$) of the displayed Cattaneo-type model, $\tau_0>0$ gives a finite characteristic speed. This parameter condition alone is not a proof that the full coupled initial-boundary-value problem is well-posed; the latter depends on coefficients, domain, and boundary/initial data. A separate fractional Lord--Shulman formulation couples a Klein--Gordon nonlocal operator to the heat law; its printed $\alpha\to0$ branch is not used here as a limiting identity \cite{Das2026}.
 
 \subsection{Green--Lindsay (GL) theory (1972)}
 \label{sec:4.4}
@@ -112,14 +112,7 @@ For the source-free form, time integration with zero integration constant gives 
 \label{eq:4.11}
 \end{equation}
 
-The strain-rate coupling carries one fewer time derivative than the inherited form. Here $\kappa^*$ is the thermal-displacement coefficient; below, $\kappa$ denotes the coefficient on the temperature-rate term in GN-III. In the displayed isotropic convention, the candidate entropy flux uses the same scalar coefficient:
-
-\begin{equation}
-p_i = \kappa^*\alpha_{\mathrm{GN},i},
-\label{eq:4.12}
-\end{equation}
-
-where $p_i$ is the entropy-flux vector. No anisotropic tensor generalization is asserted here.
+The strain-rate coupling carries one fewer time derivative than the inherited form. Here $\kappa^*$ is the thermal-displacement coefficient; below, $\kappa$ denotes the coefficient on the temperature-rate term in GN-III. The exact component equation for the GN-II entropy flux has not been transcribed and verified in this review. It is withheld here; no isotropic entropy-flux formula or GN-II energy-flux identity is asserted. The source's common-potential construction is recorded only as a scope note \cite{Green1993}.
 
 \subsubsection{Energy conservation}
 
