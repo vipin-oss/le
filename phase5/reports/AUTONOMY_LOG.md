@@ -251,3 +251,10 @@
 4. Spot-check of rendered text: 9 of 10 new rows matched. OCL-532's sentence rendered with duplicated author names; fixed with `\citet` in the next commit.
 5. WP7 journal pack created in `phase5/reports/journal/` (DRAFT, nothing sent). Journal facts come from search excerpts of the official pages, with access date 2026-10-28; the memo says so.
 6. Ledger: 534 rows (A=56, B=119, C=327, V=32). Equation inventory: 138 displays (VERIFIED-SOURCE 6, VERIFIED-SYMBOLIC 34, CONDITIONAL 98, WITHHELD 1).
+
+## 2026-10-28 (UTC) — checkpoint and handover
+1. Last green content CI: run `40713625240` on `0ee3571`. Output commit `d25dbcc` was published by the bot after the publish-step fix; the PDF has 123 pages, with zero strict-tag, privacy, internal-path, internal-artifact, `&amp;`, and undefined-reference hits.
+2. Ledger: 534 rows (A=56, B=119, C=327, V=32); before this session 520 rows (A=56, B=119, C=316, V=29). Equation inventory: 138 displays (VERIFIED-SOURCE 6, VERIFIED-SYMBOLIC 34, CONDITIONAL 98).
+3. Packages: WP6 register complete with 7 fixes landed (8 open); WP4 coverage extended, not closed; WP3 partial (Drive re-copy blocked, B2); WP7 drafts complete and unsent; WP8 partial. Q1, Q3, and Q5 remain open for the reasons in `FINAL_HANDOVER.md`.
+4. Blockers are listed in `BLOCKERS.md`; author decisions in `DECISIONS_FOR_AUTHOR.md`.
+5. Heartbeat: session checkpoint recorded at this entry. Next session resumes from `FINAL_HANDOVER.md`.
