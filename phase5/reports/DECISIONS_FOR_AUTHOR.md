@@ -88,3 +88,12 @@ Recommended default: keep all entries until the author decides; cite a key only 
 - **Scope:** the current manuscript (about 123 pages) exceeds the Rapid Review length. A regular review needs an author-defined scope for the proposal.
 - **Not read:** data policy, AI-use policy, conflicts/funding forms, and reference-style requirements for both journals. The fit memo states these as unchecked.
 - **Author fields:** names, affiliations, contact, funding, conflicts, editor choice, and the AI-use wording are left as placeholders.
+
+## Source-library mismatches (2026-10-28)
+Source: partial re-copy of the private library ledger (B2). Full text was not read for the rows below.
+
+| Key | Manuscript use | Finding | Decision needed |
+|---|---|---|---|
+| Ezzat2011 | `sec04_thermoelastic.tex` line 264: "fractional-order heat conduction with two temperatures \cite{Ezzat2011}" | Library copy is a different paper (DOI 10.1016/j.apm.2011.04.004). Publisher landing page (secondary check, 2026-10-28) confirms the bib entry DOI 10.1007/s00033-011-0126-3, ZAMP 62 pp.937–952 (2011). Full text of the ZAMP paper has not been read. | Keep the citation with the author confirming it, or replace it with a source that has been read. Do not treat the claim as verified. |
+| Eringen1968b | Not cited in the manuscript (ledger only) | Library file is Tauchert, Claus and Ariman (1968), not Eringen 1968. | Remove the ledger key, or find the Eringen 1968 file. |
+| Chen–Gurtin 1968 (ZAMP 19:614–627, DOI 10.1007/BF01594969) | Two-temperature background (Sec. 4, Sec. 11) | Not in the library (MISSING). The ZAMP reference list in the Ezzat paper (secondary) lists it. | Author to confirm the relation against the primary paper, or cite as not checked. |

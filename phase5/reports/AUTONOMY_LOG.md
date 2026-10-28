@@ -258,3 +258,9 @@
 3. Packages: WP6 register complete with 7 fixes landed (8 open); WP4 coverage extended, not closed; WP3 partial (Drive re-copy blocked, B2); WP7 drafts complete and unsent; WP8 partial. Q1, Q3, and Q5 remain open for the reasons in `FINAL_HANDOVER.md`.
 4. Blockers are listed in `BLOCKERS.md`; author decisions in `DECISIONS_FOR_AUTHOR.md`.
 5. Heartbeat: session checkpoint recorded at this entry. Next session resumes from `FINAL_HANDOVER.md`.
+
+## 2026-10-28 (UTC) — R4B-RESUME4: partial library re-copy (B2)
+1. Located the library folder via search; read the ledger header and visible rows with `read_file_text`. The connector truncated the middle of the 45 KB file, so only part was read.
+2. Compared visible Drive statuses with the repo copy. Found 7 differences (Barak2023 family, Eringen1966a, Green1991-GN-I, Ezzat2011, and 2 absent keys). Patched those rows in `SOURCE_LEDGER.csv`; the file now has 118 rows. Semantic diff checked: only intended fields changed.
+3. Ezzat2011: the library copy is a different paper. Secondary check: the publisher landing page for DOI 10.1007/s00033-011-0126-3 matches the bib entry. Logged in DECISIONS_FOR_AUTHOR and BLOCKERS B2.
+4. Not done in this turn: full ledger re-copy, Eq. 4.17 conflict, 98 CONDITIONAL display checks, WP6 remaining objections, Q1/Q3/Q5, WP8 consistency. These remain open.
