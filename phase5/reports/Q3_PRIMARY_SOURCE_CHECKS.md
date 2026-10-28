@@ -30,6 +30,10 @@ The checked article is Green and Naghdi, “A Re-examination of the Basic Postul
 
 The abstract characterizes the paper as a re-examination of thermomechanical postulates and says it illustrates the procedure with heat flow in a rigid solid, including classical-conduction and thermal-wave cases. The reviewed pages do not identify a constitutive equation as a named GN-I law; p. 172 begins from classical particle-mechanics postulates. This limited check cannot establish that no GN-I formulation appears later in the article or elsewhere. OCL-481 therefore remains B: the matrix keeps the GN-I equation slot open, and the exact primary equation/model mapping must be found before asserting a family law, reduction, speed, stability, or dissipation property.
 
+### Follow-up source-access check (2026-10-28)
+
+A follow-up search by DOI/title reconfirmed a held copy of the identified article. Text extraction returns the bibliographic header and DOI but no searchable body text for the interior pages; it therefore cannot establish whether a named GN-I equation or model appears later in the paper. The only page-image evidence currently recorded remains pp. 171–172. No equation, reduction, speed, stability, dissipation, or absence claim is added. A readable page-image review of the relevant later pages is still required to resolve the mapping; until then the GN-I matrix row stays open.
+
 ## Green & Naghdi (1993), type-II thermoelastic model
 
 **Status:** targeted page-image review completed for the equation/theorem gap in OCL-491. Printed pp. 200–204 were rendered and visually checked; this is not a whole-paper transcription. No Drive identifiers, links, or source-folder names are recorded here.
@@ -48,7 +52,7 @@ The uniqueness theorem is for the linear type-II problem and its stated mixed bo
 
 ### Limitations and remaining open work
 
-The page images resolve the displayed coefficients and signs on pp. 200–204, but this check did not reconstruct the full uniqueness proof or map every source term to the manuscript's displayed candidate. The paper states the theorem's result but omits proof details. It does not derive the selected system's complete boundary power or interface flux in this audit. OCL-491 therefore remains Class B for exact equation-to-manuscript reconciliation and model-specific energy/interface derivations; the bounded wave/uniqueness statements are recorded in OCL-493 (Class A). Do not infer existence, generic well-posedness, universal GN-II dissipation, or a cross-family constitutive identity from these pages.
+The page images resolve the displayed coefficients and signs on pp. 200–204, but this check did not reconstruct the full uniqueness proof or map every source term to the manuscript's displayed candidate. The paper states the theorem's result but omits proof details. It does not derive the selected system's complete boundary power or interface flux in this audit. A cross-package WP4 source reconciliation now maps the source-free alpha form of Eq. (3.16) to manuscript Eq. (4.11), with $\dot{lpha}_{GN}=T$ and zero spatial integration function (OCL-515; `EQUATION_AUDIT.csv`). This closes only that equation. OCL-491 remains Class B for other full-system/source-to-manuscript mappings and the model-specific energy/interface derivations; the bounded wave/uniqueness statements are recorded in OCL-493 (Class A). Do not infer existence, generic well-posedness, universal GN-II dissipation, or a cross-family constitutive identity from these pages.
 
 ## Green & Naghdi (1992), type-III thermoelastic model
 
