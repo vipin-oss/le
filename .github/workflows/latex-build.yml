@@ -274,6 +274,9 @@ jobs:
       - name: Verify selected interface mode counts and matrix sizes
         run: python phase5/verification/verify_interface_mode_counts.py
 
+      - name: Verify quasi-electrostatic branch statement (no propagating EM branch)
+        run: python phase5/verification/verify_quasistatic_em.py
+
       - name: Verify unified-framework equation reductions
         run: python phase5/verification/verify_unified_reductions.py
 

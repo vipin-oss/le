@@ -49,3 +49,7 @@
 ## Use limitation
 
 These simulations are internal quality-control scaffolding only. They are not independent reviewer reports, do not establish acceptance or rejection likelihood, and should not be represented as external peer review in any package or correspondence.
+
+## WP6 objection register
+
+The 25-item register with locations, concrete fixes, and dispositions is `phase5/reports/WP6_MOCK_REFEREE_REGISTER.csv`. It supersedes the 12 numbered points above as the working list; the simulated reviewers remain internal and are not peer review.
