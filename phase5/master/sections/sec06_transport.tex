@@ -38,6 +38,7 @@ The corresponding Laplace-domain multiplier is
 \mathcal{D}_{\rm LS}(s)=1+\tau_0s.
 \label{eq:6.2}
 \end{equation}
+Ezzat (2011) p.~940 Eq.~(12) gives the Cattaneo law whose zero-initial-flux Laplace form is this multiplier; the source's full heat equation (13) carries an extra relaxation-weighted source term \cite{Ezzat2011}.
 Nonzero initial flux contributes an additional initial-data term. Fractional, phase-lag, and hereditary models have their own transform symbols and initial terms, which must be derived from their exact constitutive equations; no universal symbol or shared limiting procedure is asserted here.
 
 A comparison in the transform domain is useful only after each constitutive law, initial condition, and admissible parameter range is stated. Formal limits such as $\tau_0\to0$, fractional order tending to an integer, or memory horizon tending to zero require model-specific normalization and convergence arguments. Positivity of a frequency-domain loss modulus, when defined, is not by itself proof of a consistent free energy or a well-posed initial-boundary-value problem. These questions remain model-specific and are not settled uniformly in this review.
@@ -95,6 +96,7 @@ A memory-dependent operator can use a kernel over a finite interval; its definit
 D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} K_{\mathrm{MDD}}(t-t') f'(t')\,dt',
 \label{eq:6.7}
 \end{equation}
+Wang and Li (2011) Def.~2.1 Eq.~(5), p.~1563, and Eq.~(7), p.~1564, give the finite-horizon operator and its unit-kernel limit used here \cite{Wang2011}.
 where $\omega_M>0$ denotes the displayed horizon and $K_{\mathrm{MDD}}$ is the kernel. The bounds, normalization, regularity, and admissibility conditions on $K_{\mathrm{MDD}}$ must be taken from the exact model definition. A finite integration horizon truncates the history in this formula; it does not by itself imply a finite-dimensional state-space realization, finite computation cost, or that the kernel is a freely chosen rather than material-calibrated quantity. A specific quadratic candidate kernel is omitted because its source definition, dimensions, and admissible parameter range have not been established; no numerical form is asserted here.
 
 \subsubsection{Limiting behavior}

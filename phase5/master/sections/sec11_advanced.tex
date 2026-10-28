@@ -40,7 +40,7 @@ T(t) = T(0) + \frac{1}{\Gamma(\alpha)}\int_0^t (t-\tau)^{\alpha-1} a \nabla^2 T(
 \label{eq:11.3}
 \end{equation}
 
-shows that the fractional formulation is the special case in which the integral kernel is the power law $(t-\tau)^{\alpha-1}/\Gamma(\alpha)$ in elapsed time. The generalization of Section~\ref{sec:transport} replaces the power law by an arbitrary kernel, and thereby trades the one-parameter fractional family for a much larger one; the price is that the resulting operator is no longer a differential operator of fractional order, and the analytical machinery that makes the fractional heat equation tractable---the eigenfunction expansion in terms of the Mittag--Leffler function, and the closed-form fundamental solutions---is lost. The choice between the two representations is thus a choice between analytical tractability and constitutive flexibility, and it should be made explicitly rather than by default.
+shows that the fractional formulation is the special case in which the integral kernel is the power law $(t-\tau)^{\alpha-1}/\Gamma(\alpha)$ in elapsed time. The generalization of Section~\ref{sec:transport} replaces the power law by an arbitrary kernel, and thereby trades the one-parameter fractional family for a much larger one; the price is that the resulting operator is no longer a differential operator of fractional order, and the analytical machinery that makes the fractional heat equation tractable---the eigenfunction expansion in terms of the Mittag--Leffler function, and the closed-form fundamental solutions---is lost. The choice between the two representations is thus a choice between analytical tractability and constitutive flexibility, and it should be made explicitly rather than by default. This hereditary integral form follows Povstenko (A.1) with the Caputo definition (A.5), p.~112 \cite{Povstenko2011}; for orders up to two an extra initial-rate term appears, so the order range must be stated with the display.
 
 The analytical solution of the fractional heat conduction equation in radially symmetric domains was obtained in closed form by Povstenko \cite{Povstenko2007}, who derived the fundamental solutions needed to write the associated thermal stresses in spherical geometry; this work provides the reference against which later numerical inversions of fractional thermoelastic boundary-value problems are checked \cite{Povstenko2004,Povstenko2009,Povstenko2011,Povstenko2016}. The associated thermal stresses are the quantity of practical interest, and the difficulty of the problem is that the fractional operator couples the mechanical and thermal fields in a way that does not admit the plane-wave decoupling available in the classical case.
 
@@ -48,7 +48,7 @@ The analytical solution of the fractional heat conduction equation in radially s
 
 \subsubsection{Fractional Cattaneo-type equations}
 
-Povstenko’s Eq.~(29), on printed p.~101, gives a related fractional Cattaneo-type flux law with source coefficient $\zeta$; the source writes the order as $\beta$ with $0<\beta\leq1$, which is $\alpha$ with $0<\alpha\leq1$ here. Appendix A identifies the derivative as Caputo (printed p.~113), while the source omits the superscript $C$ used here for clarity. The source does not identify $\zeta$ with $\tau^\alpha/\Gamma(1+\alpha)$ \cite{Povstenko2011Cattaneo}:
+Povstenko’s Eq.~(29), on printed p.~101, gives the fractional Cattaneo-type flux law $q_i + \zeta\,{}^C D_t^\alpha q_i = -k T_{,i}$ with source coefficient $\zeta$, restricted to the order range $0<\alpha\leq1$. Appendix A identifies the derivative as Caputo (printed p.~113), while the source omits the superscript $C$ used here for clarity. The source does not identify $\zeta$ with $\tau^\alpha/\Gamma(1+\alpha)$ \cite{Povstenko2011Cattaneo}:
 
 \begin{equation}
 q_i + \zeta\,{}^C D_t^\alpha q_i = -k T_{,i}.
@@ -73,6 +73,8 @@ Strain-gradient theory introduces higher-order strain gradients in the constitut
 \label{eq:11.5}
 \end{equation}
 
+This is the strain-gradient law printed in Aifantis (2003) Eq.~(2.1) on p.~263 \cite{Aifantis2003}; Aifantis treats the gradient coefficients as phenomenological rather than derived.
+
 Couple-stress theory introduces couple stresses and micro-rotations as independent degrees of freedom. The force stress tensor becomes generally non-symmetric, and the angular momentum balance includes couple stress terms:
 
 \begin{equation}
@@ -80,7 +82,7 @@ Couple-stress theory introduces couple stresses and micro-rotations as independe
 \label{eq:11.6}
 \end{equation}
 
-where $\mu_{ij}$ is the couple stress tensor, and the antisymmetric part $\sigma_{[ij]}$ is balanced by the couple stress rather than vanishing as it does in classical elasticity.
+The held Mindlin (1965) copy is a second-gradient theory and does not print this couple-stress balance; the relation is retained as the standard couple-stress/micropolar form (cf.\ Mindlin and Tiersten 1962; Eringen micropolar) but is not page-verified here. where $\mu_{ij}$ is the couple stress tensor, and the antisymmetric part $\sigma_{[ij]}$ is balanced by the couple stress rather than vanishing as it does in classical elasticity.
 
 The relation between these theories and the micropolar theory of Section~\ref{sec:nonlocal} is one of specialisation. Micropolar elasticity \cite{Eringen1966a}, extended to the thermoelastic case by Tauchert, Claus and Ariman \cite{TauchertClausAriman1968}, is the most general of the three in the sense that it admits an independent micro-rotation field, whereas couple-stress theory and strain-gradient theory can be obtained from it by imposing constraints on the micro-rotation and on the antisymmetric stress. This hierarchy matters practically, because it explains why the literature contains several formulations that differ in their kinematic assumptions while sharing a common elastic kernel, and why a comparison between them must begin by identifying which of them is being used.
 
@@ -98,7 +100,7 @@ T^* = T - \delta^2 \nabla^2 T,
 \label{eq:11.7}
 \end{equation}
 
-where $\delta^2$ is the two-temperature parameter. The relation is stated in the notation of the two-temperature literature; its primary source was not available for checking in this review, so the displayed form is not source-verified. This model is distinct from the single-temperature, temperature-rate-dependent Green--Lindsay formulation.
+where $\delta^2$ is the two-temperature parameter. Ezzat and El Karamany (2011) p.~940 Eq.~(15) write the difference of the conductive and thermodynamic temperatures as a coefficient times the Laplacian of the conductive temperature with a plus sign \cite{Ezzat2011}; the manuscript places the Laplacian on the thermodynamic temperature with a minus sign. The two forms agree only to first order in the coefficient, so the sign and the temperature on which the Laplacian acts must be stated explicitly. This model is distinct from the single-temperature, temperature-rate-dependent Green--Lindsay formulation.
 
 \subsubsection{Three-temperature theory}
 
