@@ -82,3 +82,19 @@ Eight active displays were promoted from `CONDITIONAL` to `VERIFIED-SYMBOLIC`, r
 Eq. 4.17 remains `CONDITIONAL`: APPA EQ-019 and OCL-169 record inconsistent source equation-number ranges and no reconciled printed-page locator. The recorded full-text finding is not treated as page-level verification until that discrepancy is resolved. Eq. 4.12 remains WITHHELD. Current inventory status is 77 active displays plus one withheld historical record: 6 `VERIFIED-SOURCE`, 25 `VERIFIED-SYMBOLIC`, 46 `CONDITIONAL`, 0 `OPEN`, and 1 `WITHHELD`. The ledger has 520 rows (A=56, B=119, C=316, V=29).
 
 Local TeX executables are unavailable in this workspace; these edits have not yet had a TeX build or CI run. The symbolic scripts and CSV/inventory checks are the available verification evidence for this checkpoint.
+
+## Coverage extension (2026-10-28, WP6-17)
+
+The inventory previously covered Sections 4–10 only. Sections 3, 11, and 14 and Appendix B also display `equation` environments that appear in the PDF build, so they are now inventoried. The checker enforces one row per display across all 138 active displays (77 original plus 61 new), with the single historical WITHHELD record.
+
+| Status | Original (Sections 4–10) | New (Sections 3, 11, 14, Appendix B) | Total |
+| --- | ---: | ---: | ---: |
+| `VERIFIED-SOURCE` | 6 | 0 | 6 |
+| `VERIFIED-SYMBOLIC` | 25 | 9 | 34 |
+| `CONDITIONAL` | 46 | 52 | 98 |
+| `OPEN` | 0 | 0 | 0 |
+| `WITHHELD` | 1 | 0 | 1 |
+
+The 9 new symbolic rows use existing scripts that already assert those displays: `verify_classical_flux.py` for Eqs. 3.28–3.30 and B16–B18, and `verify_isotropic_elastic_speeds.py` for Eqs. 3.23–3.25 (OCL-517). Their negative-test column records "not recorded" where the script does not contain one, so no negative control is claimed for them. The remaining 52 new displays are CONDITIONAL with no source or derivation check yet. Eq. 11.7 (two-temperature relation) is additionally recorded in OCL-524 as not source-verified. Aggregated ledger row: OCL-534.
+
+This extension does not promote any display. It makes the open work visible: 98 CONDITIONAL displays remain, not 46.

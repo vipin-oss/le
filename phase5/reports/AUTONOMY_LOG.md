@@ -235,3 +235,11 @@
 3. Ledger at resume: 520 rows (A=56, B=119, C=316, V=29). EQUATION_AUDIT.csv: 77 active displays plus 1 WITHHELD (CONDITIONAL=46, VERIFIED-SYMBOLIC=25, VERIFIED-SOURCE=6). Missing sources: 6 records.
 4. Work order for this session: (a) WP6 mock-referee register with 25 objections, each with location and fix; (b) WP4 remaining conditional rows and the Eq. 4.17 conflict; (c) Q3 source-specific checks; (d) Q1/Q5 review; (e) WP3 uncited-entry disposition; (f) WP7 journal drafts (DRAFT only); (g) WP8 consistency.
 5. This entry is documentation-only and should not trigger a build.
+
+## 2026-10-28 (UTC) — WP6 register, WP3 citation fixes, WP4 coverage extension
+1. Content commit `f0cebd7` (WP6): 25-objection register `WP6_MOCK_REFEREE_REGISTER.csv`; wording fixes in the abstract, Sections 1, 2, 3, 9, 11, 12, and 14 (no new substantive claim); new check `verify_quasistatic_em.py` (CI step added) for the abstract's no-propagating-EM-branch claim; ledger rows OCL-521–531. Local SymPy 1.14 runs of all verification scripts pass.
+2. Content commit `1336e6c` (WP3): Cattaneo1948 and Vernotte1958 cited in Section 2 with a hedge (OCL-532). Vernotte1958 pages corrected 449--482 to 3154--3155 from two independent secondary citations (OCL-533; `BIB_CHECK_2026-10-28.md`). The 37 remaining uncited entries are listed in `DECISIONS_FOR_AUTHOR.md` for author decision; none deleted.
+3. Docs/CSV commit (WP4 extension): the equation inventory now covers Sections 3, 11, 14 and Appendix B, which add 61 displays to the PDF-build set (OCL-534). 9 are symbolic via existing scripts, 52 CONDITIONAL. The checker was patched to accept Appendix B keys.
+4. Ledger: 534 rows (A=56, B=119, C=327, V=32). Anchor audit: ledger text fields are paraphrases, so a verbatim anchor match is not a reliable staleness test; WP8 needs a manual anchor review.
+5. CI: `f0cebd7` run `40711314655` was cancelled by the superseding push (concurrency group). Run `40711535302` on `1336e6c` was in progress at this checkpoint; its result is recorded in the next entry.
+6. Concern for the author: the Crossref API could not be reached from bash (connection refused), but the fetch tool reached it. Two bibliographic metadata checks used secondary sources and are recorded as such.

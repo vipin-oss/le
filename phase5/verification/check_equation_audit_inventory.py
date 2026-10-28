@@ -22,6 +22,13 @@ SECTIONS = {
     9: "interfaces",
     10: "energy",
 }
+# Sections 3, 11, 14 and Appendix B were added to the audited set on 2026-10-28 (WP6-17).
+EXTRA_FILES = {
+    "3": "master/sections/sec03_foundations.tex",
+    "11": "master/sections/sec11_advanced.tex",
+    "14": "master/sections/sec14_taxonomy.tex",
+    "B": "master/appendices/appB_balance_derivations.tex",
+}
 ALLOWED = {"VERIFIED-SOURCE", "VERIFIED-SYMBOLIC", "CONDITIONAL", "OPEN", "WITHHELD"}
 ENV = re.compile(r"\\begin\{(equation\*?)\}(.*?)\\end\{\1\}", re.S)
 LABEL = re.compile(r"\\label\{([^}]+)\}")
@@ -48,8 +55,9 @@ def strip_comments(text: str) -> str:
 
 def source_inventory() -> list[tuple[int, str, int, str]]:
     displays = []
-    for section, stem in SECTIONS.items():
-        relative = f"master/sections/sec{section:02d}_{stem}.tex"
+    targets = [(str(section), f"master/sections/sec{section:02d}_{stem}.tex") for section, stem in SECTIONS.items()]
+    targets += [(key, relative) for key, relative in EXTRA_FILES.items()]
+    for section, relative in targets:
         text = strip_comments((ROOT / relative).read_text(encoding="utf-8"))
         for ordinal, match in enumerate(ENV.finditer(text), 1):
             line = text.count("\n", 0, match.start()) + 1
@@ -73,7 +81,7 @@ def main() -> None:
     actual = []
     for row in rows:
         try:
-            location = (int(row["section"]), row["source_file"], int(row["line"]), row["label"])
+            location = (row["section"], row["source_file"], int(row["line"]), row["label"])
         except (TypeError, ValueError) as exc:
             raise SystemExit(f"FAIL: malformed source location in {row.get('audit_id')}: {exc}")
         if row["status"] not in ALLOWED:
@@ -96,7 +104,7 @@ def main() -> None:
     if len(actual) != len(expected):
         raise SystemExit(f"FAIL: active audit row count {len(actual)} != display count {len(expected)}")
     withheld = sum(row["status"] == "WITHHELD" for row in rows)
-    print(f"PASS: all {len(expected)} active displayed equation groups in Sections 4--10 have one audit row")
+    print(f"PASS: all {len(expected)} active displayed equation groups in Sections 3--14 and Appendix B have one audit row")
     if withheld:
         print(f"PASS: {withheld} WITHHELD historical equation record(s) have no active display")
     print("Scope: inventory coverage only; no formula/source/derivation validation")
