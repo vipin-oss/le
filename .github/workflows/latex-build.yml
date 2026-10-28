@@ -719,7 +719,13 @@ jobs:
             exit 0
           fi
           git commit -m "Publish strict-build PDF and contact sheets (${GITHUB_RUN_ID})"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          # The branch may have moved while this build ran (for example a docs-only push).
+          # Rebase the output-only commit onto the current head, then retry once; never force.
+          git push origin "HEAD:${GITHUB_REF_NAME}" || {
+            git fetch origin "${GITHUB_REF_NAME}"
+            git rebase "origin/${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          }
 
       - name: Upload compiled PDF and build reports
         if: always()

@@ -243,3 +243,11 @@
 4. Ledger: 534 rows (A=56, B=119, C=327, V=32). Anchor audit: ledger text fields are paraphrases, so a verbatim anchor match is not a reliable staleness test; WP8 needs a manual anchor review.
 5. CI: `f0cebd7` run `40711314655` was cancelled by the superseding push (concurrency group). Run `40711535302` on `1336e6c` was in progress at this checkpoint; its result is recorded in the next entry.
 6. Concern for the author: the Crossref API could not be reached from bash (connection refused), but the fetch tool reached it. Two bibliographic metadata checks used secondary sources and are recorded as such.
+
+## 2026-10-28 (UTC) — CI publish race and WP7 drafts
+1. CI run `40713024788` on `6bee32e` failed only at the final "Publish strict-build PDF and contact sheets" step. The earlier steps (build, gates, ledger validation) had passed. Cause: a docs-only push (`efc587a`) landed while the run was in progress, so the publish push, which did not rebase, was rejected. The output commit is a build artefact only.
+2. Fix: the publish step now retries once after fetch and rebase onto the moved head, and never force-pushes. This is a robustness change; no gate was relaxed. Commit `CI` records the workflow change.
+3. Build metrics on the earlier head `665c0ad` (run `40712102620`, output commit `734dcd7`), read directly from the published PDF: 123 pages; strict-tag, privacy, internal-path, internal-artifact, `&amp;`, and undefined-reference counts all 0. The CI log could not be downloaded from this environment (results service EOF), so gate metrics from logs are not repeated here.
+4. Spot-check of rendered text: 9 of 10 new rows matched. OCL-532's sentence rendered with duplicated author names; fixed with `\citet` in the next commit.
+5. WP7 journal pack created in `phase5/reports/journal/` (DRAFT, nothing sent). Journal facts come from search excerpts of the official pages, with access date 2026-10-28; the memo says so.
+6. Ledger: 534 rows (A=56, B=119, C=327, V=32). Equation inventory: 138 displays (VERIFIED-SOURCE 6, VERIFIED-SYMBOLIC 34, CONDITIONAL 98, WITHHELD 1).
