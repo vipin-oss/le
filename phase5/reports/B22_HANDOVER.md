@@ -19,7 +19,7 @@ The source snapshot immediately before B22 work was `e1452a8` (end of the prior 
 | After P2 bibliography disposition (`274873d`) | 490 | 30 | 130 | 315 | 15 | OCL-490, removed uncited entry, Class C |
 | B22 final content checkpoint (`d0301a6`) | 490 | 30 | 130 | 315 | 15 | MDD comparison wording only; no count change |
 
-The ledger validator passes. All 19 Kumar-dependent rows (OCL-076 and OCL-278–OCL-295) remain B/C. No F1–F4 or P2 correction promoted an unsupported generalized theorem.
+The ledger validator passes. The eight directly Kumar-linked rows (OCL-076, OCL-278, OCL-279, OCL-285, OCL-288, and OCL-292–OCL-294) remain B/C. OCL-286, OCL-287, and OCL-291 are unrelated page-read Class A claims in the interval and remain A. No F1–F4 or P2 correction promoted an unsupported generalized theorem.
 
 ## P1 implementation
 

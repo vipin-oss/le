@@ -60,14 +60,28 @@ assert r"\cite{Kumar2017}" not in active
 
 with LEDGER.open(newline="", encoding="utf-8-sig") as handle:
     rows = list(csv.DictReader(handle))
-dependent_ids = {"OCL-076", *(f"OCL-{number:03d}" for number in range(278, 296))}
+dependent_ids = {
+    "OCL-076", "OCL-278", "OCL-279", "OCL-285", "OCL-288",
+    "OCL-292", "OCL-293", "OCL-294",
+}
 dependent = [row for row in rows if row["ledger_row_id"] in dependent_ids]
-assert len(dependent) == 19, "expected all 19 dependent ledger rows"
+assert len(dependent) == len(dependent_ids), "expected all eight directly linked ledger rows"
 assert all(row["class"] in {"B", "C"} for row in dependent), (
-    "bibliographic verification must not promote any of the 19 claim rows"
+    "bibliographic verification must not promote the directly linked technical claims"
+)
+# OCL-286, -287, and -291 are separate, page-read source claims in the same
+# numerical interval, not Kumar-dependent rows; retain their existing Class A.
+unrelated_source_rows = [row for row in rows if row["ledger_row_id"] in {"OCL-286", "OCL-287", "OCL-291"}]
+assert len(unrelated_source_rows) == 3
+assert all(row["class"] == "A" for row in unrelated_source_rows)
+assert all(
+    "KumarKansal2017" not in " ".join(row.values())
+    and "Kumar & Kansal (2017)" not in " ".join(row.values())
+    for row in unrelated_source_rows
 )
 
 print(
     "Kumar reference split verified: Crossref DOI belongs to Kumar & Kansal; "
-    "the library Kumar/Devi/Sharma record remains unverified; dependent claims stay B/C."
+    "the library Kumar/Devi/Sharma record remains unverified; eight directly linked claims stay B/C; "
+    "three separate page-read claims remain A."
 )

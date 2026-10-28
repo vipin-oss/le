@@ -125,7 +125,7 @@
 2. Checked the saved Crossref response for DOI `10.12921/cmst.2016.0000036`; it identifies the distinct Kumar & Kansal CMST article, so the existing key was split rather than transferring that DOI.
 3. Kept `Kumar2017` for the library article with no DOI and `verified=NO`; moved the Crossref-confirmed CMST record to `KumarKansal2017` with `verified=YES`.
 4. Remapped active Section 9 and 10 citations and applicable current OCL source-key notes to `KumarKansal2017`; historical R3 maps remain historical snapshots.
-5. OCL-477 and `verify_kumar2017_reference_split.py` assert that all 19 dependent rows (OCL-076 and OCL-278–OCL-295) remain B/C; no technical-claim status was promoted.
+5. OCL-477 and `verify_kumar2017_reference_split.py` assert that the eight directly Kumar-linked rows (OCL-076, OCL-278, OCL-279, OCL-285, OCL-288, and OCL-292–OCL-294) remain B/C. OCL-286, OCL-287, and OCL-291 are unrelated page-read Class A claims in that numeric interval; no class was changed by the identity split.
 6. Reconciliation content commit `519a21a` was pushed; CI run `40456561663` passed (130 pages, zero undefined references/citations, forbidden-tag/privacy matches, and near-overfull boxes).
 7. Fast-forwarded only workflow output commit `11a5aa5`; no CI artifact was downloaded from an external blob host and no history was rewritten.
 8. Prepared a 114-row sanitized `SOURCE_LEDGER.csv` snapshot; blanked private location/partition fields, removed path components and library file codes, and checked for links/Drive IDs.
@@ -176,7 +176,7 @@
 ## 2026-10-27 (IST) — WP3 citation-key and Crossref-register checks
 1. Added `verify_reference_hygiene.py` and CI steps for active citation-key coverage, the saved 14-row B22 Crossref/source-page register, and the existing Kumar identity/B/C verifier. The check validates saved records only; it does not query Crossref or certify cited scientific claims.
 2. Inventory found 104 active cited keys, all resolving within 143 bibliography entries; no missing or duplicate keys. Thirty-nine working-bibliography entries are uncited; none were deleted or presumed obsolete.
-3. Preserved the Quintanilla DOI conflict and `verified=NO`; retained Dell’Oro–Pata as `verified=NO` because raw Crossref DOI evidence is unavailable. Kumar DOI/library identity remains split, and all 19 dependent claims remain B/C.
+3. Preserved the Quintanilla DOI conflict and `verified=NO`; retained Dell’Oro–Pata as `verified=NO` because raw Crossref DOI evidence is unavailable. Kumar DOI/library identity remains split; the eight directly linked technical claims remain B/C, while three unrelated page-read claims in the same ID interval remain A.
 4. Content commit `552ba67` passed CI `40514426363`; strict PDF 121 pages, undefined references/citations 0, privacy/internal-path/manuscript-tag counts 0, overfull >1 pt 0, near-overfull >0.5 pt 0, 18 figure PDFs/16 includes, deletion-audit `NONE` rows 0. Output commit `9f3afae` was fast-forwarded and matched the remote.
 5. Rechecked ten A/V rows against the latest rendered PDF and re-rendered/visually reviewed printed p. 58; all bounded checks matched. `WP3_REFERENCE_HYGIENE_AUDIT.md` records method, limits, and open items. WP3 remains open pending uncited-entry disposition and source-access gaps; no deletions or claim promotions were made.
 

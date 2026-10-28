@@ -27,7 +27,7 @@
 ### Other retained disagreements and constraints
 
 - Quintanilla’s positive conductivity-gradient signs remain distinct from the manuscript candidate’s minus signs; no sign mapping is asserted. Bazarra’s $\bar\kappa=\kappa-\tau\kappa^*>0$ condition remains separate from Quintanilla’s one-dimensional inequality.
-- The Kumar/Kumar–Kansal identity split remains enforced; the 19 dependent claims remain B/C. The Indian J. Phys. companion is not attached to `Gupta2023Energy`.
+- The Kumar/Kumar–Kansal identity split remains enforced; the eight directly linked technical claims remain B/C. Three unrelated page-read claims in the same numeric interval remain A. The Indian J. Phys. companion is not attached to `Gupta2023Energy`.
 - OCL-259 remains described as an operator derivation, not a “nonlocal balance law.” Green–Lindsay p. 5 is not used to establish an unrestricted Fourier-only law. HFF’s abstract energy-conservation rationale remains distinct from its interaction-energy ratio.
 
 ## Verification and self-audit

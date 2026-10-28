@@ -35,7 +35,7 @@ Reviewed the documentation changes from `a477548` through `7814bf0` on the fixed
 
 - The GL, GN-I, GN-II, GN-III, and LS records retain source/page bounds and explicitly keep broader parameter, stability, existence, family-wide, and energy/interface claims open. GN-I remains unresolved; GN-II/GN-III/LS additions are narrowly anchored to the reviewed printed pages.
 - The later GN-III equation/regime pages are image-reviewed. A follow-up image check of printed pp. 254–255 located the type-II-only no-dissipation footnote on p. 254 and the type-III scope summary on p. 255; no type-II result is transferred to type III.
-- The DPL DOI/source-page disagreement remains visible under OCL-488; equality is still unclassified. The Kumar split verifier confirms all 19 dependent rows remain B/C.
+- The DPL DOI/source-page disagreement remains visible under OCL-488; equality is still unclassified. The Kumar split verifier confirms eight directly linked technical rows remain B/C; it excludes three unrelated, page-read Class A rows in that numeric interval.
 - The earlier fixed-branch PDF at `6e8cf1e` was 119 pages; the read-only older `e56755f` report's 130-page manuscript is a different source version. The current post-Q4 fixed-branch PDF is 121 pages; the counts are not interchangeable.
 - The private Drive link/ID scan of the preceding seven changed text files returned zero hits; `git diff --check` passed. No material unsupported class promotion or privacy leak was identified in that documentation review.
 
