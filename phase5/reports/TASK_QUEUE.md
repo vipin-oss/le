@@ -8,22 +8,22 @@ Status key: `[ ]` open, `[~]` in progress, `[x]` done (commit id in brackets), `
 
 ## W1 Unified framework (Q1)
 - [x] W1.0 Verifier `verify_unified_reductions.py` runs (needs sympy; installed in /tmp venv, not in repo). Output: PASS for all reduction checks.
-- [~] W1.1 Add subsection "One template and stepwise reductions" to `sec12_comparative.tex` (before 12.4): template statement (definition), per-reduction steps, negative cases.
-- [ ] W1.2 Add ledger V rows for every new W1.1 claim (resolved_by = verifier line ranges; evidence_mode = SYMPY-...).
-- [ ] W1.3 Notation mapping table: template symbol ↔ family symbol (LS, DPL, TPL, MGT, GN, MDD, fractional, nonlocal).
-- [ ] W1.4 Build + CI on the W1 content commit (batched with W2 if sections are small).
+- [x] W1.1 (046b8a3) Add subsection "One template and stepwise reductions" to `sec12_comparative.tex` (before 12.4): template statement (definition), per-reduction steps, negative cases.
+- [x] W1.2 (OCL-535..548) Add ledger V rows for every new W1.1 claim (resolved_by = verifier line ranges; evidence_mode = SYMPY-...).
+- [x] W1.3 (01cda7c) Notation mapping table: template symbol ↔ family symbol (LS, DPL, TPL, MGT, GN, MDD, fractional, nonlocal).
+- [x] W1.4 (CI 40716977248, 40717508285) Build + CI on the W1 content commit (batched with W2 if sections are small).
 - [ ] W1.5 Comparison table cells audit: every cell class A/V or explicitly "model-dependent" (Table in sec12, `tab:limiting_cases_revisited`).
 
 ## W2 Per-family statements (Q3)
-- [ ] W2.1 LS / Fourier family: established / disputed / open, with citations and reason.
-- [ ] W2.2 DPL / TPL family: same format; note TPL ordering condition (0 <= tau_v < tau_T < tau_q) is source-specific.
-- [ ] W2.3 MGT family: same format; cite Quintanilla 2019 variant as distinct.
-- [ ] W2.4 GN-I/II/III family: same format; GN-III kappa=0 reduction is derivative-level only.
-- [ ] W2.5 Fractional / MDD family: same format; MDD reduction model-dependent.
-- [ ] W2.6 Nonlocal family: same format.
-- [ ] W2.7 Two-temperature family: Ezzat2011 UNREAD (library copy is a different paper) — hedge class B; Chen–Gurtin not in library (MISSING).
-- [ ] W2.8 Attribution corrections list: Tzou1995 (J. Heat Transfer) vs Tzou1995a (JTHT); Hetnarski 1999 vs 2000; Chen–Gurtin vs Gurtin–Pipkin; Dell'Oro–Pata two-author vs three-author; Quintanilla 2003 DOI 10.1080/713855996.
-- [ ] W2.9 Build + CI.
+- [x] W2.1 (eab7d15) LS / Fourier family: established / disputed / open, with citations and reason.
+- [x] W2.2 (eab7d15) DPL / TPL family: same format; note TPL ordering condition (0 <= tau_v < tau_T < tau_q) is source-specific.
+- [x] W2.3 (eab7d15) MGT family: same format; cite Quintanilla 2019 variant as distinct.
+- [x] W2.4 (eab7d15) GN-I/II/III family: same format; GN-III kappa=0 reduction is derivative-level only.
+- [x] W2.5 (eab7d15) Fractional / MDD family: same format; MDD reduction model-dependent.
+- [x] W2.6 (eab7d15) Nonlocal family: same format.
+- [x] W2.7 (eab7d15) Two-temperature family: Ezzat2011 UNREAD (library copy is a different paper) — hedge class B; Chen–Gurtin not in library (MISSING).
+- [x] W2.8 (DECISIONS_FOR_AUTHOR attribution section) Attribution corrections list: Tzou1995 (J. Heat Transfer) vs Tzou1995a (JTHT); Hetnarski 1999 vs 2000; Chen–Gurtin vs Gurtin–Pipkin; Dell'Oro–Pata two-author vs three-author; Quintanilla 2003 DOI 10.1080/713855996.
+- [x] W2.9 (CI 40717508285) Build + CI.
 
 ## W3 Verified derivations in the body
 - [ ] W3.1 List the ~40 VERIFIED displays from EQUATION_AUDIT.csv (status VERIFIED-*); for each, assumptions, steps, limits (text only where a script or source supports the step).
@@ -41,7 +41,7 @@ Status key: `[ ]` open, `[~]` in progress, `[x]` done (commit id in brackets), `
 - [ ] W4.7 Build + CI.
 
 ## W5 Notation, abbreviations, figures
-- [ ] W5.1 Notation table (single table, all symbols used in sec 4 and sec 12).
+- [~] W5.1 (notation rows added 01cda7c; full master table not re-audited) Notation table (single table, all symbols used in sec 4 and sec 12).
 - [ ] W5.2 Abbreviation list (LS, GL, GN, DPL, TPL, MGT, MDD, CC, etc.).
 - [ ] W5.3 Figure and table captions: state the assumptions in each caption.
 - [ ] W5.4 Replace any overclaiming figure with a script-generated figure (dispersion or wave-speed or flux-channel plot), committed with its script.

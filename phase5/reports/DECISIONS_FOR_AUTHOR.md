@@ -97,3 +97,14 @@ Source: partial re-copy of the private library ledger (B2). Full text was not re
 | Ezzat2011 | `sec04_thermoelastic.tex` line 264: "fractional-order heat conduction with two temperatures \cite{Ezzat2011}" | Library copy is a different paper (DOI 10.1016/j.apm.2011.04.004). Publisher landing page (secondary check, 2026-10-28) confirms the bib entry DOI 10.1007/s00033-011-0126-3, ZAMP 62 pp.937–952 (2011). Full text of the ZAMP paper has not been read. | Keep the citation with the author confirming it, or replace it with a source that has been read. Do not treat the claim as verified. |
 | Eringen1968b | Not cited in the manuscript (ledger only) | Library file is Tauchert, Claus and Ariman (1968), not Eringen 1968. | Remove the ledger key, or find the Eringen 1968 file. |
 | Chen–Gurtin 1968 (ZAMP 19:614–627, DOI 10.1007/BF01594969) | Two-temperature background (Sec. 4, Sec. 11) | Not in the library (MISSING). The ZAMP reference list in the Ezzat paper (secondary) lists it. | Author to confirm the relation against the primary paper, or cite as not checked. |
+
+## Attribution checks for the family table (2026-10-28 overnight, W2.8)
+Checks use the bibliography entries and, where stated, the publisher landing page (secondary check, labelled). No entry has been deleted.
+
+| Item | Finding | Decision needed |
+|---|---|---|
+| Tzou 1995 | The body cites Tzou1995 (J. Heat Transfer 117:8–16, DOI 10.1115/1.2822329). No key Tzou1995a (JTHT) exists in the bibliography or the library; the JTHT attribution is unverified. | Author to confirm whether a second Tzou 1995 paper is intended; if so, supply the source. |
+| Hetnarski and Ignaczak 1999 vs 2000 | Two bibliography entries: 1999 J. Thermal Stresses 22:451–476 ("Generalized thermoelasticity") and 2000 IJSS 37:215–224 ("Nonclassical dynamical thermoelasticity"). Neither is cited in the body. | Keep or remove each; the year should follow the entry, not be inferred. |
+| Chen–Gurtin 1968 vs Gurtin–Pipkin | The library file for the 1968 key is a Gurtin–Pipkin paper (different work); the Chen–Gurtin primary is not in the library. | Obtain the Chen–Gurtin paper or mark the two-temperature statement as unchecked. |
+| Dell'Oro–Pata two-author vs Dell'Oro–Lasiecka–Pata three-author | The body cites the three-author JDE paper (critical-case MGT result). The two-author AMO viscoelasticity note is in the bibliography but not cited in the body. | Author to keep or remove the two-author entry. |
+| Quintanilla 2003, DOI 10.1080/713855996 | Publisher landing page (secondary check, 2026-10-28) gives the same title as the bibliography entry (J. Thermal Stresses 26:713–721). | None; the DOI is consistent with the title. |

@@ -264,3 +264,15 @@
 2. Compared visible Drive statuses with the repo copy. Found 7 differences (Barak2023 family, Eringen1966a, Green1991-GN-I, Ezzat2011, and 2 absent keys). Patched those rows in `SOURCE_LEDGER.csv`; the file now has 118 rows. Semantic diff checked: only intended fields changed.
 3. Ezzat2011: the library copy is a different paper. Secondary check: the publisher landing page for DOI 10.1007/s00033-011-0126-3 matches the bib entry. Logged in DECISIONS_FOR_AUTHOR and BLOCKERS B2.
 4. Not done in this turn: full ledger re-copy, Eq. 4.17 conflict, 98 CONDITIONAL display checks, WP6 remaining objections, Q1/Q3/Q5, WP8 consistency. These remain open.
+
+## 2026-10-28 overnight (R4B-NIGHT-WRITE) — heartbeat and 10-line entry (commits 046b8a3, eab7d15, 01cda7c)
+1. Heartbeat 21:10 IST. Queue in `TASK_QUEUE.md`; writing items first.
+2. W1.1 (`046b8a3`): one template, stepwise reductions with negative cases, Sec 12. Three limit-table rows corrected: TPL-to-DPL needs k*→0 (not tau_v→0); TPL-to-classical needs k*→0; fractional α→2 gives a second-order-in-time endpoint, not classical coupled. 14 ledger rows (13 V, 1 B).
+3. Verifier `verify_unified_reductions.py` passes (sympy in a scratch venv, not in the repo). Build of 046b8a3: CI `40716977248` success; PDF 124 pages, 0 undefined, 0 forbidden hits.
+4. W2 (`eab7d15`): status-by-family table (14 families, established / disputed or model-dependent / open) from the Q3 matrix; 17 ledger rows (A 10, B 3, V 4). CI `40717508285` success; PDF 126 pages, 0 undefined, 0 forbidden hits.
+5. W1.3 (`01cda7c`): notation unified (tau_v; tau_0 = Lord–Shulman; tau_T = DPL temperature-gradient lag); added k*, v, tau_m. Corrected mislabels: tau_0 called "mechanical"; tau_T called "thermal relaxation"; tau_nu called "thermal-gradient". 2 ledger rows (class C).
+6. W2.8 attribution checks recorded in DECISIONS_FOR_AUTHOR.md; no bibliography entry deleted. Quintanilla 2003 DOI checked on the publisher page (secondary).
+7. Ezzat2011 stays unread (library copy is a different paper); body citation is bibliographic only, per the sec12 table note.
+8. Spot check of 10 new W2 phrases in the PDF: 8 found verbatim, 2 not found (hyphenation or wrapping; source text present). Recorded as incomplete.
+9. Ledger totals now: 567 rows (A 66, B 123, C 329, V 49) before this note.
+10. Not done yet: W3 (verified derivations in body), W4 (intro/decision guide/roadmap/benchmarks), W5.3–W5.4 (captions, script figures), W6 (eight open objections). See TASK_QUEUE.md.
