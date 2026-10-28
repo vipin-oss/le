@@ -282,7 +282,7 @@
 2. Publish race: docs push 1d40f68 landed during CI run 40718102865 (01cda7c); the build and gates passed, the publish step failed. Rerun via `gh run rerun` refused ("workflow file may be broken"); `workflow_dispatch` refused (403). Recovery: the content commit 83d67cb built green (40718754401). Lesson: do not push, even docs, while a content run is active.
 3. Last green CI on a content head: 40719488402 on ea8041a. Head 339da85 is a bot output commit.
 4. PDF at head: 126 pages; 0 undefined references; 0 hits on OCL-, phase5, verify_, &amp;, Drive/LE_SOURCES, /home/. Gates were not loosened.
-5. Ledger: 570 rows (A 66, B 125, C 329, V 50). Start of overnight: 534 (A 56, B 119, C 316 or 327 by earlier count, V 32). Net new V rows: 18 (W1 13, W6/Sec14 1, plus 4 family-matrix rows); new B rows: 6.
+5. Ledger: 570 rows (A 66, B 125, C 329, V 50). Start of overnight: 534 (A 56, B 119, C 327, V 32). Net change: A +10, B +6, C +2, V +18 (W1 13; W2 family rows 4; Sec 14 counts 1), total +36.
 6. Done: W1.1–W1.4; W2 (all family rows and attribution decisions); W1.3 notation fixes (three mislabels corrected); Sec 14 unsupported sentences removed and counts restated from script; WP6-07 partly fixed; WP6-08 recorded as limitation.
 7. Not done: W3 (verified derivations explanation), W4 (introduction, positioning, decision guide, benchmarks, roadmap), W5.3–W5.4 (captions, script figures), W6 (remaining 6 OPEN objections), W1.5 (twelve-criteria comparison table not audited).
 8. Sources: no new primary-source reads this session except one publisher page (Quintanilla 2003 DOI, title match) and one publisher page (Ezzat2011 ZAMP, bibliographic only). The Drive worker did not upload EQ_ANCHORS or SOURCE_LEDGER_PUBLIC chunks during this session.
