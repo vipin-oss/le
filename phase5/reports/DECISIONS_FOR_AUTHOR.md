@@ -35,3 +35,49 @@
 
 - **Decision:** Treat Crossref page omissions as metadata gaps rather than page evidence. The Das2026 and Maranganti2006 locators are now labelled as unverified article-number notes and no longer printed as page ranges; Eringen1966a remains marked ARBITRATED.
 - **Decision:** Re-date/narrow MISSING_SOURCES entries to distinguish DOI resolution from source-page access. DOI resolution alone does not validate a claim or prove that a full text is present.
+
+## WP3 bibliography disposition (2026-10-28)
+
+Thirty-seven entries in `phase5/master/references_local.bib` are not cited by the PDF build. Cattaneo1948 and Vernotte1958 are now cited (Section 2, OCL-532); Vernotte's page range was corrected (OCL-533; `phase5/reports/BIB_CHECK_2026-10-28.md`). Uncited entries do not change the PDF, because the build prints only cited keys. The agent did not delete any entry. The author decides, per key, whether to cite it after a source check, keep it, or remove it:
+
+| Key | Note for decision |
+| --- | --- |
+| Green1991 | GN-I source (Q3 family); cite only after page check, else keep in MISSING_SOURCES |
+| Tzou1997 | no citing sentence; keep or remove (author decision) |
+| Chandrasekharaiah1986 | review on hyperbolic thermoelasticity; cite if Section 2 needs it |
+| Nowacki1975 | classical thermoelasticity monograph; cite for classical background if used |
+| Yu2018ModifiedGL | no citing sentence; keep or remove (author decision) |
+| Li2019 | no citing sentence; keep or remove (author decision) |
+| Srivastava2026 | no citing sentence; keep or remove (author decision) |
+| Kumawat2023 | no citing sentence; keep or remove (author decision) |
+| Kumar2017 | Kumar identity split (OCL kumar records); cite only per the split decision |
+| Kumar2018 | no citing sentence; keep or remove (author decision) |
+| Kumar2008 | no citing sentence; keep or remove (author decision) |
+| Kumar2025 | no citing sentence; keep or remove (author decision) |
+| Gupta2025 | no citing sentence; keep or remove (author decision) |
+| Gupta2024a | no citing sentence; keep or remove (author decision) |
+| Yadav2023 | no citing sentence; keep or remove (author decision) |
+| Jiao2024 | no citing sentence; keep or remove (author decision) |
+| Fu2013 | no citing sentence; keep or remove (author decision) |
+| Liu2020 | no citing sentence; keep or remove (author decision) |
+| Bazarra2021MGTradial | no citing sentence; keep or remove (author decision) |
+| DubnerAbate1968 | numerical Laplace inversion; as Stehfest1970 |
+| Stehfest1970 | numerical Laplace inversion; cite only with a stated numerical claim |
+| Chandrasekharaiah1984 | no citing sentence; keep or remove (author decision) |
+| Nowacki1978 | no citing sentence; keep or remove (author decision) |
+| MarchandMcDevittTriggiani2012 | no citing sentence; keep or remove (author decision) |
+| Stroh1958 | anisotropic elasticity (Stroh formalism); relevant to Section 5 anisotropic waves if claims are added |
+| Stroh1962 | as Stroh1958 |
+| GorenfloKilbasMainardiRogosin2014 | fractional-calculus book; cite only with a checked claim |
+| vanDerMerwe2021 | no citing sentence; keep or remove (author decision) |
+| Chirita2016 | no citing sentence; keep or remove (author decision) |
+| ChenGurtin1968 | MISSING source (MISSING_SOURCES); do not cite as evidence |
+| GurtinWilliams1966 | Gurtin–Williams theory; cite only if a claim is added |
+| WangLi2025IV | no citing sentence; keep or remove (author decision) |
+| Durbin1974 | numerical Laplace inversion; as Stehfest1970 |
+| HonigHirdes1984 | no citing sentence; keep or remove (author decision) |
+| Luchko2010 | fractional-calculus reference; cite only with a checked claim |
+| HetnarskiIgnaczak1999 | MISSING primary text (MISSING_SOURCES); do not cite as evidence |
+| HetnarskiIgnaczak2000 | check identity against MISSING_SOURCES before any use |
+
+Recommended default: keep all entries until the author decides; cite a key only after a source check and a ledger row; do not cite the two MISSING-source keys as evidence.
