@@ -1,6 +1,6 @@
 # Q5/WP5 figure-specific audit — Figure 11 workflow
 
-**Status:** The targeted Figure 11/F12 correction and final-size check are complete. Q5/WP5 as a whole remains open for notation/abbreviation reconciliation, figure-source/licence provenance, and final-size review of the remaining figures and tables.
+**Status:** The targeted Figure 11/F12 correction and final-size check are complete. Q5/WP5 as a whole remains open for notation/abbreviation reconciliation, figure-source/licence provenance, completion of table review, and page-level final-size re-review of the nine amended graphics in the next rebuilt manuscript PDF.
 
 ## Finding and correction
 
@@ -32,3 +32,10 @@ A subsequent WP3 verification commit `552ba67` changed only the citation-key/Cro
 | OCL-499 (V) | Figure 11, printed p. 58 | The model-specific workflow, matched-plane ratios, specified-benchmark step, and bounded caption match the geometry-verified SVG. |
 
 This is a ten-row spot check, not full validation of every figure, table, or scientific claim. OCL-499 is Class V for figure structure/layout only. `figure-audit.csv` records the F12 visual correction; original SVG authorship/licence provenance remains undocumented and open. The current ledger is 499 rows (A=34, B=132, C=315, V=18).
+
+
+## Updated figure-layout review (2026-10-28)
+
+A final-size review of the then-current manuscript PDF found layout defects in F03, F04, F05, F08, F09, F10, F11, F15, and F16 (printed pp. 20, 22, 26, 48, 52, 55, 60, 76, and 84, respectively). Their SVGs were repaired, the corresponding PDFs regenerated with the pinned SVG renderer, and the SVGs mirrored into the master source/rendered directories. A second review of the regenerated standalone PDFs at 1.1× (chosen to approximate their in-manuscript display size) passed for all nine: connector paths no longer cover F03 node text; F04 equations fit their panels; F05/F08/F10/F15 labels and boxes are clear; F09 coupling paths sit behind node labels; F11 curve labels no longer collide; and F16 bottom notes are within their panels.
+
+This is a standalone-figure layout check, not a check of the newly rebuilt manuscript pages: the manuscript PDF still contains the prior figure graphics, and no local TeX engine is installed to produce an updated full PDF. The next LaTeX/CI build must be followed by page-level review of the nine updated placements. Figure content remains schematic and is not thereby source-verified; notation/abbreviation reconciliation and original SVG authorship/licence provenance remain open. The 18-file vector PDF build completed with zero SVG warnings; `git diff --check` passed.

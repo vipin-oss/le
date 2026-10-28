@@ -46,7 +46,7 @@
   <line x1="325" y1="80" x2="325" y2="500" class="axis"/>
 
   <!-- Axis labels -->
-  <text x="770" y="520" class="label" text-anchor="middle">Fractional order α</text>
+  <text x="745" y="490" class="label" text-anchor="end">Fractional order α</text>
   <text x="85" y="290" class="label" text-anchor="middle" transform="rotate(-90 85 290)">Transport behavior</text>
 
   <!-- Tick labels -->
@@ -60,7 +60,7 @@
 
   <!-- Fractional curve: S-shaped interpolation -->
   <path d="M 100 200 Q 325 350 550 200" class="curve-interp"/>
-  <text x="560" y="190" class="label" font-size="10" fill="#2980b9">Fractional: {}<sup>C</sup>D<sub>t</sub><sup>α</sup>T = a∇<sup>2</sup>T</text>
+  <text x="500" y="120" class="label" font-size="10" fill="#2980b9">Fractional diffusion-wave example (see model box)</text>
 
   <!-- Diffusive regime marker (α = 1) -->
   <circle cx="325" cy="350" r="6" class="marker"/>
@@ -105,7 +105,7 @@
   <text x="115" y="538" class="box-title">Physical interpretation</text>
   <text x="115" y="558" class="label" font-size="10">Fractional derivatives introduce memory: the response at time t depends on the history of the stimulus.</text>
   <text x="115" y="573" class="label" font-size="10">The order α controls the interpolation between diffusive (α = 1) and wave-like (α = 2) behavior.</text>
-  <text x="115" y="588" class="label" font-size="10">For 1 &lt; α ≤ 2, thermal waves propagate at finite speed, resolving the Fourier paradox.</text>
+  <text x="115" y="588" class="label" font-size="10">Propagation/support depends on the fractional model; no family-wide finite-speed claim.</text>
   <text x="115" y="603" class="label" font-size="10">Caputo derivative preferred for physical applications (classical initial conditions).</text>
-  <text x="115" y="618" class="label" font-size="10">Well-posedness established for 0 &lt; α ≤ 2 (Section 6.6).</text>
+  <text x="115" y="618" class="label" font-size="10">Well-posedness requires model- and space-specific proof.</text>
 </svg>

@@ -42,7 +42,7 @@
   <line x1="225" y1="80" x2="225" y2="500" class="axis"/>
 
   <!-- Axis labels -->
-  <text x="770" y="520" class="label" text-anchor="middle">Strain ε<sub>kk</sub></text>
+  <text x="745" y="520" class="label" text-anchor="end">ε<sub>kk</sub></text>
   <text x="85" y="290" class="label" text-anchor="middle" transform="rotate(-90 85 290)">Stress σ<sub>kk</sub> = λε<sub>kk</sub> - βT</text>
 
   <!-- Tick labels -->

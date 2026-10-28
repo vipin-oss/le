@@ -91,10 +91,6 @@
   <line x1="950" y1="190" x2="950" y2="210" class="arrow"/>
 
   <!-- Cross-connections -->
-  <line x1="350" y1="210" x2="550" y2="130" class="arrow" stroke="#c07c00" stroke-width="1"/>
-  <line x1="550" y1="210" x2="750" y2="130" class="arrow" stroke="#c07c00" stroke-width="1"/>
-  <line x1="350" y1="270" x2="550" y2="210" class="arrow" stroke="#c07c00" stroke-width="1"/>
-  <line x1="550" y1="270" x2="950" y2="210" class="arrow" stroke="#6a3d9a" stroke-width="1"/>
 
   <!-- Theory family grouping boxes -->
   <rect x="40" y="300" width="240" height="120" fill="#f8f9fa" stroke="#cccccc" stroke-width="1"/>
@@ -128,9 +124,9 @@
   <!-- Physical interpretation -->
   <rect x="40" y="450" width="1020" height="180" fill="#f8f9fa" stroke="#cccccc" stroke-width="1"/>
   <text x="55" y="468" class="label" font-weight="bold">Reading the figure</text>
-  <text x="55" y="488" class="label" font-size="10">Arrows are schematic links; they do not assert direct derivation or equivalence.</text>
-  <text x="55" y="504" class="label" font-size="10">Cross-links are provisional and require historical source checking.</text>
-  <text x="55" y="520" class="label" font-size="10">Diagonal purple arrows show fractional/nonlocal connections across families.</text>
+  <text x="55" y="488" class="label" font-size="10">Vertical arrows group selected milestones; they do not assert direct derivation or equivalence.</text>
+  <text x="55" y="504" class="label" font-size="10">Family groupings and cross-family relationships remain provisional and require source checking.</text>
+  <text x="55" y="520" class="label" font-size="10">No cross-family reduction or convergence relation is asserted by this schematic.</text>
   <text x="55" y="536" class="label" font-size="10">Bottom boxes group theories by their dominant physical mechanism.</text>
   <text x="55" y="552" class="label" font-size="10">Propagation and support properties depend on the exact constitutive equations.</text>
   <text x="55" y="568" class="label" font-size="10" font-style="italic">Source: inherited literature inventory; dates and relationships are not fully source-checked.</text>

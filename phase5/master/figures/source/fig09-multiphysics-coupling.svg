@@ -13,13 +13,13 @@
       .node-poro { fill: #fdf2e8; stroke: #d35400; stroke-width: 1.5; rx: 7; ry: 7; }
       .node-carrier { fill: #f4e8f2; stroke: #8e44ad; stroke-width: 1.5; rx: 7; ry: 7; }
       .node-micro { fill: #e8f8f5; stroke: #16a085; stroke-width: 1.5; rx: 7; ry: 7; }
-      .arrow { stroke: #666; stroke-width: 1.8; fill: #666; marker-end: url(#arrowhead); }
-      .arrow-mech { stroke: #2d6a2d; stroke-width: 2; fill: #2d6a2d; marker-end: url(#arrowhead-mech); }
-      .arrow-therm { stroke: #c0392b; stroke-width: 2; fill: #c0392b; marker-end: url(#arrowhead-therm); }
-      .arrow-elec { stroke: #2980b9; stroke-width: 2; fill: #2980b9; marker-end: url(#arrowhead-elec); }
-      .arrow-poro { stroke: #d35400; stroke-width: 2; fill: #d35400; marker-end: url(#arrowhead-poro); }
-      .arrow-carrier { stroke: #8e44ad; stroke-width: 2; fill: #8e44ad; marker-end: url(#arrowhead-carrier); }
-      .arrow-micro { stroke: #16a085; stroke-width: 2; fill: #16a085; marker-end: url(#arrowhead-micro); }
+      .arrow { stroke: #666; stroke-width: 1.8; fill: none; marker-end: url(#arrowhead); }
+      .arrow-mech { stroke: #2d6a2d; stroke-width: 2; fill: none; marker-end: url(#arrowhead-mech); }
+      .arrow-therm { stroke: #c0392b; stroke-width: 2; fill: none; marker-end: url(#arrowhead-therm); }
+      .arrow-elec { stroke: #2980b9; stroke-width: 2; fill: none; marker-end: url(#arrowhead-elec); }
+      .arrow-poro { stroke: #d35400; stroke-width: 2; fill: none; marker-end: url(#arrowhead-poro); }
+      .arrow-carrier { stroke: #8e44ad; stroke-width: 2; fill: none; marker-end: url(#arrowhead-carrier); }
+      .arrow-micro { stroke: #16a085; stroke-width: 2; fill: none; marker-end: url(#arrowhead-micro); }
       .coupling-label { font: 9px 'DejaVu Sans', sans-serif; fill: #555; background: white; padding: 2px; }
     </style>
     <marker id="arrowhead" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
@@ -49,6 +49,22 @@
 
   <text x="550" y="30" class="title" text-anchor="middle">Conceptual map of multiphysics continuum interactions</text>
   <text x="550" y="48" class="subtitle" text-anchor="middle">Coupling domains and their governing relationships in generalized continuum mechanics</text>
+
+  <!-- Coupling paths are drawn behind nodes so labels remain unobscured. -->
+  <path d="M 125 220 Q 300 150 440 90" class="arrow-therm"/>
+  <path d="M 440 140 Q 300 210 125 260" class="arrow-mech"/>
+  <path d="M 190 240 Q 350 240 510 320" class="arrow-elec"/>
+  <path d="M 590 320 Q 750 240 910 240" class="arrow-mech"/>
+  <path d="M 570 80 Q 700 200 910 280" class="arrow-therm"/>
+  <path d="M 880 320 Q 700 400 570 520" class="arrow-elec"/>
+  <path d="M 95 280 Q 95 380 95 420" class="arrow-poro"/>
+  <path d="M 125 440 Q 125 340 125 280" class="arrow-mech"/>
+  <path d="M 480 370 Q 480 480 440 560" class="arrow-micro"/>
+  <path d="M 505 640 Q 505 540 550 370" class="arrow-mech"/>
+  <path d="M 440 140 Q 350 240 95 420" class="arrow-therm"/>
+  <path d="M 125 500 Q 210 400 350 300" class="arrow-poro"/>
+  <path d="M 975 280 Q 1050 360 975 420" class="arrow-carrier"/>
+  <path d="M 975 500 Q 1050 420 975 340" class="arrow-elec"/>
 
   <!-- Central node: Continuum body -->
   <rect x="480" y="280" width="140" height="90" class="node"/>
@@ -94,38 +110,24 @@
   <text x="505" y="620" class="coupling" text-anchor="middle">Eringen theory</text>
 
   <!-- Coupling arrows: Mechanical <-> Thermal -->
-  <path d="M 125 220 Q 300 150 440 90" class="arrow-therm"/>
-  <path d="M 440 140 Q 300 210 125 260" class="arrow-mech"/>
   <text x="280" y="145" class="coupling-label" text-anchor="middle">Thermoelastic coupling (βT)</text>
 
   <!-- Mechanical <-> Electrical -->
-  <path d="M 190 240 Q 350 240 510 320" class="arrow-elec"/>
-  <path d="M 590 320 Q 750 240 910 240" class="arrow-mech"/>
   <text x="550" y="210" class="coupling-label" text-anchor="middle">Piezoelectric coupling (e, d)</text>
 
   <!-- Thermal <-> Electrical (pyroelectric) -->
-  <path d="M 570 80 Q 700 200 910 280" class="arrow-therm"/>
-  <path d="M 880 320 Q 700 400 570 520" class="arrow-elec"/>
   <text x="760" y="220" class="coupling-label" text-anchor="middle">Pyroelectric effect (pᵢ)</text>
 
   <!-- Mechanical <-> Porosity -->
-  <path d="M 95 280 Q 95 380 95 420" class="arrow-poro"/>
-  <path d="M 125 440 Q 125 340 125 280" class="arrow-mech"/>
   <text x="70" y="350" class="coupling-label" text-anchor="middle" transform="rotate(-90 70,350)">Void fraction coupling</text>
 
   <!-- Mechanical <-> Micropolar -->
-  <path d="M 480 370 Q 480 480 440 560" class="arrow-micro"/>
-  <path d="M 505 640 Q 505 540 550 370" class="arrow-mech"/>
   <text x="460" y="510" class="coupling-label" text-anchor="middle" transform="rotate(-90 460,510)">Micro-rotation coupling</text>
 
   <!-- Thermal <-> Porosity -->
-  <path d="M 440 140 Q 350 240 95 420" class="arrow-therm"/>
-  <path d="M 125 500 Q 210 400 350 300" class="arrow-poro"/>
   <text x="220" y="380" class="coupling-label" text-anchor="middle">Thermo-poroelastic coupling</text>
 
   <!-- Electrical <-> Carrier -->
-  <path d="M 975 280 Q 1050 360 975 420" class="arrow-carrier"/>
-  <path d="M 975 500 Q 1050 420 975 340" class="arrow-elec"/>
   <text x="1030" y="400" class="coupling-label" text-anchor="middle" transform="rotate(90 1030,400)">Carrier-electrical coupling</text>
 
   <!-- Legend -->
@@ -148,5 +150,5 @@
   <text x="400" y="714" class="coupling" font-size="9">Micropolar thermoelasticity (§5.5)</text>
 
   <!-- Notes -->
-  <text x="600" y="730" class="subtitle" font-size="10" text-anchor="middle">Coupling schematic; constitutive equations require model-specific source verification.</text>
+  <text x="770" y="738" class="subtitle" font-size="9" text-anchor="middle">Coupling schematic; each constitutive link requires model-specific source verification.</text>
 </svg>

@@ -6,10 +6,11 @@
       .subtitle { font: 12px 'DejaVu Sans', sans-serif; fill: #555; }
       .step { font: 700 11px 'DejaVu Sans', sans-serif; fill: #1a3a5c; text-anchor: middle; }
       .step-desc { font: 9px 'DejaVu Sans', sans-serif; fill: #555; text-anchor: middle; }
+      .note { font: 10px 'DejaVu Sans', sans-serif; fill: #555; text-anchor: start; }
       .box { fill: #eef3f8; stroke: #1a3a5c; stroke-width: 1.5; rx: 6; ry: 6; }
       .box-key { fill: #dbe7f2; stroke: #1a3a5c; stroke-width: 2; rx: 6; ry: 6; }
-      .arrow { stroke: #1a3a5c; stroke-width: 2; fill: #1a3a5c; marker-end: url(#arrowhead); }
-      .arrow-dashed { stroke: #8fa8bd; stroke-width: 1.5; stroke-dasharray: 4,3; fill: #8fa8bd; marker-end: url(#arrowhead); }
+      .arrow { stroke: #1a3a5c; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .arrow-dashed { stroke: #8fa8bd; stroke-width: 1.5; stroke-dasharray: 4,3; fill: none; marker-end: url(#arrowhead); }
       .decision { fill: #fdeaea; stroke: #c0392b; stroke-width: 1.5; rx: 6; ry: 6; }
     </style>
     <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
@@ -50,7 +51,8 @@
   <rect x="360" y="220" width="200" height="70" class="box-key"/>
   <text x="460" y="240" class="step">5. Interface conditions</text>
   <text x="460" y="257" class="step-desc">ΔX = Q (scattering matrix)</text>
-  <text x="460" y="272" class="step-desc" font-size="9">system size depends on fields and boundary conditions</text>
+  <text x="460" y="269" class="step-desc" font-size="9">Size depends on fields and</text>
+  <text x="460" y="282" class="step-desc" font-size="9">boundary conditions</text>
 
   <!-- Step 6: Energy flux -->
   <rect x="640" y="220" width="200" height="70" class="box"/>
@@ -87,13 +89,14 @@
   <!-- Notes -->
   <rect x="80" y="540" width="400" height="130" fill="#f8f9fa" stroke="#cccccc" stroke-width="1"/>
   <text x="95" y="560" class="label" font-weight="bold">Key principles:</text>
-  <text x="95" y="580" class="step-desc" font-size="10">• Each equation requires source and assumption checks</text>
-  <text x="95" y="598" class="step-desc" font-size="10">• Energy flux forms for generalized theories</text>
-  <text x="95" y="615" class="step-desc" font-size="10">  are open derivations (OQ10.1–OQ10.8)</text>
-  <text x="95" y="632" class="step-desc" font-size="10">• Complex modes normalized consistently (§8.5)</text>
+  <text x="95" y="580" class="note">• Each equation requires source and assumption checks</text>
+  <text x="95" y="598" class="note">• Energy flux forms for generalized theories</text>
+  <text x="95" y="615" class="note">  are open derivations (OQ10.1–OQ10.8)</text>
+  <text x="95" y="632" class="note">• Complex modes normalized consistently (§8.5)</text>
 
-  <text x="520" y="560" class="label" font-weight="bold" text-anchor="middle">Notation:</text>
-  <text x="520" y="580" class="step-desc" font-size="10" text-anchor="middle">Solid boxes: workflow steps</text>
-  <text x="520" y="595" class="step-desc" font-size="10" text-anchor="middle">Key boxes: critical path steps</text>
-  <text x="520" y="610" class="step-desc" font-size="10" text-anchor="middle">Dashed arrows: iterative refinement</text>
+  <rect x="520" y="540" width="400" height="130" fill="#f8f9fa" stroke="#cccccc" stroke-width="1"/>
+  <text x="540" y="560" class="label" font-weight="bold" text-anchor="start">Notation:</text>
+  <text x="540" y="580" class="note">Solid boxes: workflow steps</text>
+  <text x="540" y="598" class="note">Key boxes: critical path steps</text>
+  <text x="540" y="616" class="note">Dashed arrows: iterative refinement</text>
 </svg>

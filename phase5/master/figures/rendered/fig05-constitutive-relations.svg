@@ -42,7 +42,7 @@
   <line x1="225" y1="80" x2="225" y2="500" class="axis"/>
 
   <!-- Axis labels -->
-  <text x="770" y="520" class="label" text-anchor="middle">Strain ε<sub>kk</sub></text>
+  <text x="745" y="520" class="label" text-anchor="end">ε<sub>kk</sub></text>
   <text x="85" y="290" class="label" text-anchor="middle" transform="rotate(-90 85 290)">Stress σ<sub>kk</sub> = λε<sub>kk</sub> - βT</text>
 
   <!-- Tick labels -->
@@ -98,5 +98,5 @@
   <text x="115" y="573" class="label" font-size="10">The last term (-βTδ<sub>ij</sub>) is thermal stress: temperature changes induce stress.</text>
   <text x="115" y="588" class="label" font-size="10">Eq. (3.22) shows deformation changes entropy: mechanical work is converted to thermal energy.</text>
   <text x="115" y="603" class="label" font-size="10">This bidirectional coupling is the physical origin of thermoelastic wave propagation.</text>
-  <text x="115" y="618" class="label" font-size="10">All generalized theories (LS, GL, GN, DPL, MDD, nonlocal) extend this foundation.</text>
+  <text x="115" y="618" class="label" font-size="10">Generalized models modify different parts of this foundation; each requires model-specific equations and assumptions.</text>
 </svg>

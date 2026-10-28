@@ -29,7 +29,7 @@
 
   <!-- Undeformed element (dashed) -->
   <rect x="200" y="200" width="160" height="120" class="dashed"/>
-  <text x="280" y="185" class="label" text-anchor="middle">Undeformed configuration</text>
+  <text x="280" y="170" class="label" text-anchor="middle">Undeformed configuration</text>
 
   <!-- Deformed element (solid) -->
   <rect x="230" y="180" width="170" height="130" class="body"/>
@@ -37,7 +37,7 @@
 
   <!-- Displacement vector u -->
   <line x1="280" y1="260" x2="230" y2="180" class="vector"/>
-  <text x="250" y="170" class="math" font-size="13">uᵢ</text>
+  <text x="205" y="220" class="math" font-size="13">uᵢ</text>
 
   <!-- Coordinate axes -->
   <line x1="150" y1="400" x2="450" y2="400" class="axis"/>
@@ -57,26 +57,26 @@
   <!-- Strain illustration: shear strain -->
   <rect x="420" y="360" width="180" height="140" class="strain-box"/>
   <text x="510" y="380" class="label" text-anchor="middle">Shear strain εᵢⱼ (i ≠ j)</text>
-  <text x="510" y="398" class="math" font-size="13">εᵢⱼ = ½(∂uᵢ/∂xⱼ + ∂uⱼ/∂xᵢ)</text>
-  <path d="M 440 400 Q 500 400 500 460" class="vector"/>
-  <path d="M 440 400 L 500 400" class="dashed"/>
-  <text x="480" y="388" class="label" font-size="9">Angle change Δθ</text>
+  <text x="510" y="398" class="math" font-size="12">εᵢⱼ = ½(uᵢ,ⱼ + uⱼ,ᵢ)</text>
+  <path d="M 440 430 Q 500 430 500 470" class="vector"/>
+  <path d="M 440 430 L 500 430" class="dashed"/>
+  <text x="540" y="420" class="label" font-size="9">Angle change Δθ</text>
 
   <!-- Rotation tensor -->
   <rect x="680" y="200" width="160" height="100" class="rot-box"/>
   <text x="760" y="220" class="label" text-anchor="middle">Rotation tensor ωᵢⱼ</text>
-  <text x="760" y="238" class="math" font-size="13">ωᵢⱼ = ½(∂uᵢ/∂xⱼ − ∂uⱼ/∂xᵢ)</text>
-  <circle cx="760" cy="270" r="25" fill="none" stroke="#2980b9" stroke-width="1.5"/>
-  <path d="M 760 270 L 785 270" class="vector"/>
-  <path d="M 760 270 L 760 245" class="dashed"/>
-  <text x="775" y="255" class="label" font-size="9">Rigid-body rotation</text>
+  <text x="760" y="236" class="math" font-size="10" text-anchor="middle">ωᵢⱼ = ½(∂uᵢ/∂xⱼ</text>
+  <text x="760" y="250" class="math" font-size="10" text-anchor="middle">− ∂uⱼ/∂xᵢ)</text>
+  <circle cx="760" cy="276" r="16" fill="none" stroke="#2980b9" stroke-width="1.5"/>
+  <path d="M 760 276 L 776 276" class="vector"/>
+  <path d="M 760 276 L 760 260" class="dashed"/>
 
   <!-- Velocity field -->
   <rect x="680" y="340" width="160" height="100" class="rot-box"/>
   <text x="760" y="360" class="label" text-anchor="middle">Velocity field vᵢ</text>
-  <text x="760" y="378" class="math" font-size="13">vᵢ = ∂uᵢ/∂t = u̇ᵢ</text>
+  <text x="760" y="378" class="math" font-size="12" text-anchor="middle">vᵢ = u̇ᵢ</text>
   <line x1="760" y1="400" x2="810" y2="400" class="vector"/>
-  <text x="815" y="405" class="label" font-size="9">Material time derivative</text>
+  <text x="760" y="428" class="label" font-size="9" text-anchor="middle">Time derivative</text>
 
   <!-- Key equations summary -->
   <rect x="60" y="490" width="400" height="130" fill="#f8f9fa" stroke="#cccccc" stroke-width="1"/>
