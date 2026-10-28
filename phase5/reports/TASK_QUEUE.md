@@ -12,7 +12,7 @@ Status key: `[ ]` open, `[~]` in progress, `[x]` done (commit id in brackets), `
 - [x] W1.2 (OCL-535..548) Add ledger V rows for every new W1.1 claim (resolved_by = verifier line ranges; evidence_mode = SYMPY-...).
 - [x] W1.3 (01cda7c) Notation mapping table: template symbol ↔ family symbol (LS, DPL, TPL, MGT, GN, MDD, fractional, nonlocal).
 - [x] W1.4 (CI 40716977248, 40717508285) Build + CI on the W1 content commit (batched with W2 if sections are small).
-- [~] W1.5 Comparison table cells audit: every cell class A/V or explicitly "model-dependent" (Table in sec12, `tab:limiting_cases_revisited`). Started after corrections commit 9f1dc8c.
+- [x] W1.5 (bd0de3c, b1055d8) Comparison table cells audit: every cell class A/V or explicitly "model-dependent" (Table in sec12, `tab:limiting_cases_revisited`). Ledger rows OCL-584..OCL-595 appended; cell-by-cell audit sentence added to sec12_comparative.tex.
 
 ## W2 Per-family statements (Q3)
 - [x] W2.1 (eab7d15) LS / Fourier family: established / disputed / open, with citations and reason.
@@ -26,7 +26,7 @@ Status key: `[ ]` open, `[~]` in progress, `[x]` done (commit id in brackets), `
 - [x] W2.9 (CI 40717508285) Build + CI.
 
 ## W3 Verified derivations in the body
-- [ ] W3.1 List the ~40 VERIFIED displays from EQUATION_AUDIT.csv (status VERIFIED-*); for each, assumptions, steps, limits (text only where a script or source supports the step).
+- [~] W3.1 List the ~40 VERIFIED displays from EQUATION_AUDIT.csv (status VERIFIED-*); for each, assumptions, steps, limits (text only where a script or source supports the step).
 - [ ] W3.2 Worked example for Sec 10 interface partition (from verify_interface_energy.py / verify_interface_mode_counts.py).
 - [ ] W3.3 Worked example for one unified reduction (from W1.1).
 - [ ] W3.4 Build + CI.
@@ -68,12 +68,14 @@ Status key: `[ ]` open, `[~]` in progress, `[x]` done (commit id in brackets), `
 - Done: W1.0–W1.4; W2.1–W2.9; W2.8 attribution in DECISIONS_FOR_AUTHOR; W5.1 notation rows (partial).
 - Partly done: W1.5 (limit table corrected; twelve-criteria comparison table audit in progress); W5.1 (full master table not re-audited); W6.07 (counts fixed, grouping open).
 - Not done: W3.1–W3.4; W4.1–W4.7; W5.2 (acronym list exists, not re-audited), W5.3, W5.4; W6.01–W6.06, W6.08 (limitation recorded), W6.09 (open objections list).
-- Blocked: EQ_ANCHORS and SOURCE_LEDGER_PUBLIC chunks not uploaded to the library folder as of this turn (waiting on the Drive worker); full ledger re-copy stays open (B2).
-- CI: last content run 40719488402 on ea8041a success. Manual dispatch is refused (403); a content push is the only trigger.
+- Blocked: none — EQ_ANCHORS and SOURCE_LEDGER_PUBLIC part1-4 located on Drive and downloaded; sanitized SOURCE_LEDGER re-copy committed (e3c531a). Manual CI dispatch still refused (403); a content push is the only trigger.
+- CI: last content run 40728656087 on b1055d8 success (126 pages, 0 undefined refs, 0 forbidden). Bot output commit pulled; local HEAD == remote HEAD == e3c531a.
 
 ## This session (continued 2026-10-28, branch arena/e6146644-le)
 - Corrections committed: P0-1 Ezzat2011 held (batch B07 p.1), hedged class B; P0-2 both Tzou 1995 papers held; P1-1 Quintanilla DOI-conflict statement removed from Sec 12 text (bib keeps verified=NO per hygiene gate); P1-2 tau_m re-anchored from Eq. 4.18 to Eq. 12 template.
 - Equation hedges with ledger rows OCL-571..OCL-583: eq:4.13, eq:4.21, eq:4.22, eq:3.22, eq:3.15, eq:7.1, eq:7.2, eq:11.2, eq:11.4.
 - Ledger validator PASS (583 rows: A=67, B=133, C=333, V=50). EQUATION_AUDIT.csv line anchors fixed; inventory verifier PASS.
-- Commit 9f1dc8c pushed; local HEAD == remote HEAD.
-- Next: W1.5 twelve-criteria comparison table cell-by-cell audit (mark each cell A/V or model-dependent).
+- W1.5 cell-by-cell audit done (bd0de3c, b1055d8; ledger rows OCL-584..OCL-595).
+- Sanitized SOURCE_LEDGER re-copy committed (e3c531a): public SOURCE_LEDGER_PUBLIC part1-4 merged, local-only curated keys preserved, Iesan2013 duplicate dropped; 118 rows, notes_part column added.
+- CI green on head: run 40728656087 (126 pages, 0 undefined refs, 0 forbidden); bot output pulled; local HEAD == remote HEAD == e3c531a.
+- Next: W3.1 list the ~40 VERIFIED displays from EQUATION_AUDIT.csv.
