@@ -102,6 +102,10 @@
 
 **IDENTITY SPLIT VERIFIED.** The source read for the active two-temperature heat-conduction citation is the ZAMP paper *Fractional Order Heat Conduction Law in Magneto-Thermoelasticity Involving Two Temperatures*, DOI `10.1007/s00033-011-0126-3`; its first-page text prints that DOI and identifies vol. 62 (2011), pp. 937–952. The text at Eqs. (14)–(18) was read for the two-temperature heat law. This is distinct from M. A. Ezzat’s 2011 *Applied Mathematical Modelling* paper *Theory of Fractional Order in Generalized Thermoelectric MHD*, DOI `10.1016/j.apm.2011.04.004`. The active manuscript cites only the ZAMP work for the two-temperature example; no separate bibliography key was added for the uncited APAM paper. OCL-185 and OCL-186 remain Class B/deleted; this identity check does not re-establish their broader claims.
 
+### Chen–Gurtin (1968), *On a Theory of Heat Conduction Involving Two Temperatures*
+
+**MISSING; CLAIMS REMAIN HEDGED.** Crossref metadata identifies the candidate article and DOI `10.1007/bf01594969`, but its primary pages have not been located. The held 1968 source is Gurtin–Pipkin, *A General Theory of Heat Conduction with Finite Wave Speeds*, a different work and not a substitute. The active manuscript contains no Chen–Gurtin citation; OCL-097 remains Class C/deleted, and the claim is not reinstated from title-level metadata.
+
 ### Quintanilla (2003), one-dimensional dual-phase-lag thermoelastic theory
 
 **CONFIRMED-IN-SOURCE.** The paper’s first page prints the author initial, title, journal, volume, pages 713–721, year, and DOI `10.1080/01495730390203518`. The conclusion on printed p. 720 states exponential stability for the strict condition `tau_theta > tau_q/2` and the existence of unstable solutions for `tau_theta < tau_q/2`. The equality case is not characterized by that pair of statements. The new bibliography entry records the first-page fields and does not infer an issue number.
