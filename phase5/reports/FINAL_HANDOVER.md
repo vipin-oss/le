@@ -1,71 +1,91 @@
-# Final handover — checkpoint 2026-10-28 (UTC)
+# Final handover — checkpoint 2026-10-28 (branch arena/e6146644-le)
 
-Review: "Multiphysics Wave Mechanics in Generalized Continua". This checkpoint records the state at the end of this session. It is not a claim of completion. Several work packages remain open (see the table below and `BLOCKERS.md`).
+Review: "Multiphysics Wave Mechanics in Generalized Continua". This checkpoint records the state of the
+current session branch. It is not a claim of completion; several work packages remain open.
 
 ## Branch and resume point
 
-- Session branch: `arena/36bc8cc8-le`. The handoff named `arena/b5e608f8-le`; that branch was fast-forwarded into this one (`cae4c11`), and nothing was pushed to it. See `BLOCKERS.md` B1.
-- Resume by reading, in order: `AUTONOMY_LOG.md` (last entries), this file, `BLOCKERS.md`, `DECISIONS_FOR_AUTHOR.md`, `WP6_MOCK_REFEREE_REGISTER.csv`, `WP4_EQUATION_AUDIT_STATUS.md`, and `EQUATION_AUDIT.csv`. Load `OPEN_CLAIMS_LEDGER.csv` with Python, not in full.
+- Session branch (branch of record): `arena/e6146644-le`. Never push to `arena/36bc8cc8-le` or
+  `arena/b5e608f8-le`.
+- Resume by reading, in order: `AUTONOMY_LOG.md` (last entries), this file, `BLOCKERS.md`,
+  `DECISIONS_FOR_AUTHOR.md`, `WP6_MOCK_REFEREE_REGISTER.csv`, `WP4_EQUATION_AUDIT_STATUS.md`, and
+  `EQUATION_AUDIT.csv`. Load `OPEN_CLAIMS_LEDGER.csv` with Python, not in full.
+- Local HEAD == remote HEAD == `b52681d`. CI last ran green on this head.
 
 ## Commits this session (content commits triggered builds)
 
 | Commit | Purpose | CI |
 | --- | --- | --- |
-| `cae4c11` (fast-forward, prior work) | Starting point | (prior) |
-| `4aec6dd` | Session log (docs only) | none |
-| `f0cebd7` | WP6 referee register; wording fixes; quasi-electrostatic check | cancelled by the next push (concurrency) |
-| `1336e6c` | WP3 Cattaneo/Vernotte citations; Vernotte pages corrected | cancelled by the next push |
-| `665c0ad` | WP4 inventory extended to Sections 3, 11, 14 and Appendix B | `40712102620` success |
-| `6bee32e` | Textual citation fix (`\citet`) | `40713024788` failed in publish step only (race) |
-| `efc587a` | WP7 journal drafts and decisions (docs only) | none |
-| `0ee3571` | CI publish step rebases and retries once (no force) | `40713625240` success |
-| output commits | `734dcd7`, `d25dbcc` (bot) | — |
+| `4a31323` | Fix verified register text-mode underscores (`label=$\bullet$`) | run 40738008414 failed (inventory) |
+| `95efc24` | Re-anchor EQUATION_AUDIT.csv line anchors; mark eq:5.8 WITHHELD | CSV-only, no build |
+| `aacdb1c` | Sanitize verified register body text (drop internal paths/OCL ids) | run 40740376297 failed (internal-artifact) |
+| `4f8811b` | Drop triggering phrase "verification script" from register notes | run 40740993498 success (130 pages) |
+| `b52681d` | W3.3 worked example: L-S to Fourier reduction from template | run 40742422738 success (130 pages) |
 
-Last green CI on a content commit: run `40713625240` (`0ee3571`). The current head `d25dbcc` is the bot's output commit; `git ls-remote` and local HEAD were checked after each push.
+Last green CI on a content commit: run `40742422738` on `b52681d`.
 
 ## Metrics at this checkpoint
 
-- Pages: 123 (PDF text read directly).
-- Undefined references and citations: 0 (PDF text).
-- Forbidden strict tags, privacy patterns, internal paths, internal artifacts, `&amp;`: 0 each (PDF text).
-- Overfull and near-overfull boxes: the CI gates passed (values not re-read; logs unavailable, see B4).
-- Claim ledger (`OPEN_CLAIMS_LEDGER.csv`): before this session 520 rows (A=56, B=119, C=316, V=29); now 534 rows (A=56, B=119, C=327, V=32).
-- Equation inventory (`EQUATION_AUDIT.csv`): 138 active displays across Sections 3–14 and Appendix B, plus 1 WITHHELD. VERIFIED-SOURCE 6; VERIFIED-SYMBOLIC 34; CONDITIONAL 98; OPEN 0.
-- Missing sources: 6 records (`MISSING_SOURCES.csv`, unchanged).
+- Pages: 130.
+- Undefined references and citations: 0.
+- Forbidden strict tags, privacy patterns, internal paths, internal artifacts, `&amp;`: 0 each.
+- Near-overfull boxes (>0.5 pt): 0.
+- Claim ledger (`OPEN_CLAIMS_LEDGER.csv`): 611 rows (A 80, B 148, C 333, V 50), validator PASS.
+- Equation inventory (`EQUATION_AUDIT.csv`): 137 active displays across Sections 3–14 and Appendix B,
+  plus 2 WITHHELD (eq:4.12, eq:5.8). VERIFIED-SOURCE 6; VERIFIED-SYMBOLIC 34; CONDITIONAL 98; OPEN 0.
+  Inventory verifier PASS.
+- Bibliography (`references_local.bib`): 147 entries, incl. 3 new Crossref-checked (Eringen1999,
+  Aifantis2003, Yang2018).
+- Missing sources: logged in `MISSING_SOURCES.csv` (unchanged).
 
-## Work packages
+## Corrections applied (P0 / P1)
 
-| WP | Status | What is done | What remains |
-| --- | --- | --- | --- |
-| WP6 mock referee | Register complete; partly fixed | 25 objections with location, fix, disposition (`WP6_MOCK_REFEREE_REGISTER.csv`); 7 fixed; 5 partly or already addressed; 8 open; 3 limitations; 2 author decisions | Open items WP6-05, 07, 08, 17, 18, 20, 24, 25 |
-| WP4 equation audit | Extended; not closed | Coverage extended to all equation environments (138 rows); 9 new symbolic rows via existing scripts; Eq. 11.7 hedged (OCL-524) | 98 CONDITIONAL displays; Eq. 4.17 source conflict; piezo constitutive sign/index checks |
-| Q1 unified notation and comparison | Earlier scope-bounded state | Scripts for reductions and notation; comparison matrix with model-dependent labels | GL/GN-I cells not all source-anchored (WP6-24) |
-| Q3 source-specific status | Matrix present (14 families) | Earlier GL, LS, GN-II, GN-III source checks | Per-family source checks for remaining families; Chen–Gurtin, Hetnarski, Gorenflo sources missing |
-| Q4 | Complete at scoped level (earlier) | — | — |
-| Q5 presentation | In progress | Figure 11/F12 fixed earlier | Notation and abbreviation reconciliation; figure provenance and licence; print-size table review (R1.5) |
-| WP3 references | Partly done | Cattaneo and Vernotte cited with hedge; Vernotte pages corrected; check record written; 37 uncited entries listed for decision | Drive re-copy of `SOURCE_LEDGER.csv` (B2); Crossref checks for new entries (B3) |
-| WP7 journal pack | Drafts complete; nothing sent | Fit memo with official-guide URLs and access dates; Physics Reports proposal (623 words); AMR title, abstract (144 words), timeline; cover letter template; contribution and AI-use draft | Author decisions (venue, editor, policies, placeholders) |
-| WP8 consistency | Partial | Contribution claims mapped to ledger rows (`CONTRIBUTION_AND_AI_USE_DRAFT.md`); abstract claims now mapped (OCL-521 to OCL-523) | Anchor review of ledger rows (B9); final consistency pass after WP4 and Q3 |
+- P0-1: Ezzat2011 held in ZAMP 62(2011) 937–952 (DOI 10.1007/s00033-011-0126-3); hedged class B;
+  "not in library/not read" removed; Appl. Math. Modelling 10.1016/j.apm.2011.04.004 treated as a
+  separate key/work.
+- P0-2: Both Tzou 1995 papers held — JTHT 9(4) 686–693 (DOI 10.2514/3.725) and J. Heat Transfer
+  117:8–16 DPL law paper (no DOI printed).
+- P1-1: Sec 12 stale "source copy conflicts on its DOI" statement removed; Quintanilla 2003 DOI
+  10.1080/713855996 confirmed p.1.
+- P1-2: tau_m row re-anchored from Eq. 4.18 to the Section 12 template; not anchored to Eq. 4.18.
 
-## Five weakest sections (current)
+## Equation anchors (EQ_ANCHORS amendment) and hedges
 
-1. **Section 4 (generalized thermoelasticity).** Most of its displays remain CONDITIONAL; Eq. 4.17 has an unresolved source conflict; several source-chained statements depend on sources not read in this session.
-2. **Section 5 (multiphysics).** Piezoelectric constitutive displays (5.1, 5.2) are not source-checked for sign and index conventions; coupled-field claims beyond the quasi-electrostatic branch are model-specific and mostly open.
-3. **Section 11 (advanced topics).** Seven displays are newly inventoried and CONDITIONAL; the two-temperature relation (Eq. 11.7) has no primary source available; fractional-model statements rely on a missing book.
-4. **Section 14 (taxonomy).** The inventory-based description and the 95-record count are not reconciled with the 144-entry bibliography (WP6-07, 08); one quantitative sentence ("Almost all of the corpus sits...") is not yet checked against the inventory.
-5. **Section 9 and 10 (interfaces and energy).** Verified results are limited to one-dimensional welded lossless cases; the coupled Biot example was withdrawn for lack of a reproducible convention (DECISIONS_FOR_AUTHOR); the remaining flux conventions are first-order only.
+Applied in full: eq:7.1 class-A anchor to Eringen1999 p.430 Eq.(4.2); eq:7.2 attributed to
+Aifantis2003 p.263 Eq.(2.1)+(2.2); eq:11.4 range 0<alpha<=1 restored with undo of notation mapping;
+eq:11.7 Ezzat & El Karamany plus-sign (conductive) vs manuscript minus-sign (thermodynamic) first-order
+difference; eq:5.8 duplicate of eq:5.3 removed; seven new class-A anchors added (eq:5.6/5.9 Yang p.211,
+eq:6.2 Ezzat p.940, eq:6.7 Wang&Li p.1563/1564, eq:9.3/9.5 Yang p.38/39, eq:3.13/3.14 Ezzat p.940,
+eq:3.20 Yang p.210). Equation-difference text/hedges with ledger rows OCL-571..OCL-583 for
+eq:4.13, eq:4.21, eq:4.22, eq:3.22, eq:3.15, eq:7.1, eq:7.2, eq:11.2, eq:11.4.
+Class-A anchor list maintained (Tzou JHT p.8 Eq.(1); Roy Choudhuri p.233 Eq.(3); Povstenko p.99
+Eq.(15); Yang p.54 Eq.(2.11); Yang p.114 Eq.(4.7)/(4.9); GN (2.3)/(2.20)).
+
+## Work done this session
+
+- W3.1 verified equation register (40 items) inserted into sec12 at label sec:12.verified_register;
+  body text sanitized so no internal paths, OCL ids, or forbidden tags reach the PDF.
+- W3.3 worked example: Lord--Shulman-to-Fourier reduction from the unified template (Eq. eq:12.template),
+  with residual against Fourier's law, added to sec12 W1.1 subsection.
+- EQ_ANCHORS amendment applied; ledger rows OCL-596..OCL-611 appended; OCL-576/577/579 superseded.
+- SOURCE_LEDGER sanitized re-copy committed (e3c531a): 118 rows, notes_part column, Iesan2013 duplicate dropped.
+
+## Work packages remaining
+
+- W3.2 Sec 10 interface partition (draft present in sec10), W3.4 build+CI.
+- W4.1–W4.7 introduction, positioning, decision guide, roadmap, conclusions (sec01/sec12.6/sec12.7/sec17
+  carry substantial drafted content; confirm ledger A/V backing per claim).
+- W5.2 abbreviation list, W5.3 caption assumptions, W5.4 script-generated figure.
+- W6 six open objections; W6.09 open-objections list.
+
+## Gates and close-out
+
+- G1 after each content commit: CI green, pages, undefined refs, forbidden/privacy scans, ledger validator PASS.
+- G2 hostile self-re-read of each diff; 10-row spot-check against rendered PDF text.
+- G3 AUTONOMY_LOG heartbeat every 2 h.
+- G4 at 06:00 IST: confirm last CI green on head; update FINAL_HANDOVER.md and TASK_QUEUE.md; final report.
 
 ## Not done in this session
 
-- The Drive library re-copy and source checks (B2).
-- The final-size visual review of the rebuilt tables (B5).
-- The ledger anchor review (B9) and most Q3 per-family source checks.
-- Any submission, sending, or sharing (none was requested; none was done).
-
-## Overnight writing session — handover (2026-10-28)
-- Head: `339da85` (bot output). Last content CI green: `40719488402` on `ea8041a`.
-- PDF: 126 pages; 0 undefined references; 0 forbidden, privacy, path, artifact, or `&amp;` hits.
-- Ledger: 570 rows (A 66, B 125, C 329, V 50); start of this turn 534 (A 56, B 119, C 316, V 32) by the handover count.
-- Done: W1 (one template, stepwise reductions with negative cases, notation unification, three limit-table corrections); W2 (14-family established / disputed / open table; attribution decisions); Sec 14 counts restated by script, unsupported field-level sentences removed.
-- Not done: W3, W4, W5.3–W5.4, most of W6, W1.5 comparison-table audit. The queue is in TASK_QUEUE.md.
-- Five weakest sections: (1) Sec 14 taxonomy — 12-family grouping not reproducible from the 44 raw matrix labels; DOIs not rechecked. (2) Sec 4 thermoelastic — Eq. 4.17 conflict open; two-temperature citation (Ezzat2011) unread; MGT and DPL variants model-dependent. (3) Sec 11 advanced — two-temperature relation depends on unread Ezzat2011 and on Chen–Gurtin (not in library); Eq. 11.7 no primary source. (4) Sec 5 multiphysics — piezoelectric sign and index conventions not source-checked (WP6-25). (5) Sec 12 comparative — the twelve-criteria table is unaudited (W1.5); three limit-table rows were wrong and fixed, so other cells may be too.
+- W5.2–W5.4, most of W6, per-family Q3 source checks, Drive library re-copy, final-size table review,
+  ledger anchor review (B9). No submission, sending, or sharing was requested or done.

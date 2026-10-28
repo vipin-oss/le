@@ -1,6 +1,6 @@
 # Task queue — overnight writing session (R4B-NIGHT-WRITE)
 
-Branch: `arena/36bc8cc8-le` (branch of record). Started 2026-10-28 ~21:00 IST. End 06:00 IST.
+Branch: `arena/e6146644-le` (branch of record; never push to arena/36bc8cc8-le or arena/b5e608f8-le). Started 2026-10-28 ~21:00 IST. End 06:00 IST.
 Rule: writing items first; each content commit = one CI run; docs-only commits do not build.
 If this session dies, resume from this file plus `AUTONOMY_LOG.md`.
 
@@ -26,19 +26,19 @@ Status key: `[ ]` open, `[~]` in progress, `[x]` done (commit id in brackets), `
 - [x] W2.9 (CI 40717508285) Build + CI.
 
 ## W3 Verified derivations in the body
-- [~] W3.1 List the ~40 VERIFIED displays from EQUATION_AUDIT.csv (status VERIFIED-*); for each, assumptions, steps, limits (text only where a script or source supports the step).
-- [ ] W3.2 Worked example for Sec 10 interface partition (from verify_interface_energy.py / verify_interface_mode_counts.py).
-- [ ] W3.3 Worked example for one unified reduction (from W1.1).
+- [x] W3.1 List the ~40 VERIFIED displays from EQUATION_AUDIT.csv (status VERIFIED-*); for each, assumptions, steps, limits (text only where a script or source supports the step). Inserted into sec12 at label sec:12.verified_register; body text sanitized (no internal paths/OCL ids/forbidden tags in PDF).
+- [ ] W3.2 Worked example for Sec 10 interface partition (from verify_interface_energy.py / verify_interface_mode_counts.py). Draft present in sec10.
+- [x] W3.3 Worked example for one unified reduction (from W1.1): Lord--Shulman-to-Fourier from Eq. eq:12.template, added to sec12 W1.1 subsection (commit b52681d, CI green run 40742422738).
 - [ ] W3.4 Build + CI.
 
 ## W4 Introduction, positioning, decision guide, roadmap
-- [ ] W4.1 Introduction and scope (sec01): definitions and scope only, plus A rows for any literature claim.
+- [~] W4.1 Introduction and scope (sec01): definitions and scope only, plus A rows for any literature claim. Drafted in sec01.
 - [ ] W4.2 Positioning vs existing reviews: only reviews present in the library or verified in the ledger.
-- [ ] W4.3 Decision guide "which theory for which regime": conditions from verified criteria only.
+- [~] W4.3 Decision guide "which theory for which regime": conditions from verified criteria only. Drafted in sec12 (sec:12.6).
 - [ ] W4.4 Benchmark list: checked sources only.
 - [ ] W4.5 Research roadmap built from the open items of W2.
-- [ ] W4.6 Conclusions mapped to A/V rows.
-- [ ] W4.7 Build + CI.
+- [~] W4.6 Conclusions mapped to A/V rows. Drafted in sec17.
+- [x] W4.7 Build + CI. Green run 40742422738 on b52681d.
 
 ## W5 Notation, abbreviations, figures
 - [~] W5.1 (notation rows added 01cda7c; full master table not re-audited) Notation table (single table, all symbols used in sec 4 and sec 12).
@@ -65,9 +65,9 @@ Status key: `[ ]` open, `[~]` in progress, `[x]` done (commit id in brackets), `
 - [ ] G4 06:00 IST: last CI green; FINAL_HANDOVER.md and TASK_QUEUE.md updated; final report.
 
 ## Status at end of this overnight turn (2026-10-28 ~21:35 IST)
-- Done: W1.0–W1.4; W2.1–W2.9; W2.8 attribution in DECISIONS_FOR_AUTHOR; W5.1 notation rows (partial).
-- Partly done: W1.5 (limit table corrected; twelve-criteria comparison table audit in progress); W5.1 (full master table not re-audited); W6.07 (counts fixed, grouping open).
-- Not done: W3.1–W3.4; W4.1–W4.7; W5.2 (acronym list exists, not re-audited), W5.3, W5.4; W6.01–W6.06, W6.08 (limitation recorded), W6.09 (open objections list).
+- Done: W1.0–W1.5; W2.1–W2.9; W2.8 attribution in DECISIONS_FOR_AUTHOR; W3.1 verified equation register (40 items, sanitized); W3.3 unified-reduction worked example (commit b52681d, CI green run 40742422738); W4.1/4.3/4.6 drafted (sec01/sec12/sec17); EQ_ANCHORS amendment; P0-1/P0-2/P1-1/P1-2 corrections; equation-difference hedges OCL-571..OCL-583; ledger 611 rows PASS; EQUATION_AUDIT.csv line anchors re-anchored.
+- Partly done: W3.2 (sec10 draft present); W5.1 notation rows (partial); W6.07 (counts fixed, grouping open).
+- Not done: W4.2, W4.4, W4.5; W5.2–W5.4; W6.01–W6.06, W6.09.
 - Blocked: none — EQ_ANCHORS and SOURCE_LEDGER_PUBLIC part1-4 located on Drive and downloaded; sanitized SOURCE_LEDGER re-copy committed (e3c531a). Manual CI dispatch still refused (403); a content push is the only trigger.
 - CI: last content run 40728656087 on b1055d8 success (126 pages, 0 undefined refs, 0 forbidden). Bot output commit pulled; local HEAD == remote HEAD == e3c531a.
 
@@ -78,4 +78,4 @@ Status key: `[ ]` open, `[~]` in progress, `[x]` done (commit id in brackets), `
 - W1.5 cell-by-cell audit done (bd0de3c, b1055d8; ledger rows OCL-584..OCL-595).
 - Sanitized SOURCE_LEDGER re-copy committed (e3c531a): public SOURCE_LEDGER_PUBLIC part1-4 merged, local-only curated keys preserved, Iesan2013 duplicate dropped; 118 rows, notes_part column added.
 - CI green on head: run 40728656087 (126 pages, 0 undefined refs, 0 forbidden); bot output pulled; local HEAD == remote HEAD == e3c531a.
-- Next: W3.1 list the ~40 VERIFIED displays from EQUATION_AUDIT.csv.
+- Next: W3.2 sec10 interface partition; W4.2/W4.4/W4.5; W5.2–W5.4; W6 open objections; then FINAL_HANDOVER.md/TASK_QUEUE.md/final report at 06:00 IST.
