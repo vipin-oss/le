@@ -63,3 +63,10 @@ Status key: `[ ]` open, `[~]` in progress, `[x]` done (commit id in brackets), `
 - [ ] G2 Hostile self-re-read of each diff; 10-row spot-check against rendered PDF text.
 - [ ] G3 AUTONOMY_LOG heartbeat every 2 h; 10-line entry every 3 commits.
 - [ ] G4 06:00 IST: last CI green; FINAL_HANDOVER.md and TASK_QUEUE.md updated; final report.
+
+## Status at end of this overnight turn (2026-10-28 ~21:35 IST)
+- Done: W1.0–W1.4; W2.1–W2.9; W2.8 attribution in DECISIONS_FOR_AUTHOR; W5.1 notation rows (partial).
+- Partly done: W1.5 (limit table corrected; twelve-criteria comparison table NOT audited); W5.1 (full master table not re-audited); W6.07 (counts fixed, grouping open).
+- Not done: W3.1–W3.4; W4.1–W4.7; W5.2 (acronym list exists, not re-audited), W5.3, W5.4; W6.01–W6.06, W6.08 (limitation recorded), W6.09 (open objections list).
+- Blocked: EQ_ANCHORS and SOURCE_LEDGER_PUBLIC chunks not uploaded to the library folder as of this turn (waiting on the Drive worker); full ledger re-copy stays open (B2).
+- CI: last content run 40719488402 on ea8041a success. Manual dispatch is refused (403); a content push is the only trigger.

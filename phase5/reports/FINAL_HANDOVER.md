@@ -61,3 +61,11 @@ Last green CI on a content commit: run `40713625240` (`0ee3571`). The current he
 - The final-size visual review of the rebuilt tables (B5).
 - The ledger anchor review (B9) and most Q3 per-family source checks.
 - Any submission, sending, or sharing (none was requested; none was done).
+
+## Overnight writing session — handover (2026-10-28)
+- Head: `339da85` (bot output). Last content CI green: `40719488402` on `ea8041a`.
+- PDF: 126 pages; 0 undefined references; 0 forbidden, privacy, path, artifact, or `&amp;` hits.
+- Ledger: 570 rows (A 66, B 125, C 329, V 50); start of this turn 534 (A 56, B 119, C 316, V 32) by the handover count.
+- Done: W1 (one template, stepwise reductions with negative cases, notation unification, three limit-table corrections); W2 (14-family established / disputed / open table; attribution decisions); Sec 14 counts restated by script, unsupported field-level sentences removed.
+- Not done: W3, W4, W5.3–W5.4, most of W6, W1.5 comparison-table audit. The queue is in TASK_QUEUE.md.
+- Five weakest sections: (1) Sec 14 taxonomy — 12-family grouping not reproducible from the 44 raw matrix labels; DOIs not rechecked. (2) Sec 4 thermoelastic — Eq. 4.17 conflict open; two-temperature citation (Ezzat2011) unread; MGT and DPL variants model-dependent. (3) Sec 11 advanced — two-temperature relation depends on unread Ezzat2011 and on Chen–Gurtin (not in library); Eq. 11.7 no primary source. (4) Sec 5 multiphysics — piezoelectric sign and index conventions not source-checked (WP6-25). (5) Sec 12 comparative — the twelve-criteria table is unaudited (W1.5); three limit-table rows were wrong and fixed, so other cells may be too.

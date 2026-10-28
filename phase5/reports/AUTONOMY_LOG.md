@@ -276,3 +276,15 @@
 8. Spot check of 10 new W2 phrases in the PDF: 8 found verbatim, 2 not found (hyphenation or wrapping; source text present). Recorded as incomplete.
 9. Ledger totals now: 567 rows (A 66, B 123, C 329, V 49) before this note.
 10. Not done yet: W3 (verified derivations in body), W4 (intro/decision guide/roadmap/benchmarks), W5.3–W5.4 (captions, script figures), W6 (eight open objections). See TASK_QUEUE.md.
+
+## Overnight writing session — end-of-turn entry (commits 046b8a3 to 339da85)
+1. Commits: 046b8a3 (W1.1), eab7d15 (W2), 01cda7c (W1.3 notation; CI 40718102865 publish-step failure, see item 2), 1d40f68 (docs), 83d67cb (Sec 14 text), ea8041a (Sec 14 counts + verifier). Bot outputs: 025568f, c846d00, d910cea, 339da85.
+2. Publish race: docs push 1d40f68 landed during CI run 40718102865 (01cda7c); the build and gates passed, the publish step failed. Rerun via `gh run rerun` refused ("workflow file may be broken"); `workflow_dispatch` refused (403). Recovery: the content commit 83d67cb built green (40718754401). Lesson: do not push, even docs, while a content run is active.
+3. Last green CI on a content head: 40719488402 on ea8041a. Head 339da85 is a bot output commit.
+4. PDF at head: 126 pages; 0 undefined references; 0 hits on OCL-, phase5, verify_, &amp;, Drive/LE_SOURCES, /home/. Gates were not loosened.
+5. Ledger: 570 rows (A 66, B 125, C 329, V 50). Start of overnight: 534 (A 56, B 119, C 316 or 327 by earlier count, V 32). Net new V rows: 18 (W1 13, W6/Sec14 1, plus 4 family-matrix rows); new B rows: 6.
+6. Done: W1.1–W1.4; W2 (all family rows and attribution decisions); W1.3 notation fixes (three mislabels corrected); Sec 14 unsupported sentences removed and counts restated from script; WP6-07 partly fixed; WP6-08 recorded as limitation.
+7. Not done: W3 (verified derivations explanation), W4 (introduction, positioning, decision guide, benchmarks, roadmap), W5.3–W5.4 (captions, script figures), W6 (remaining 6 OPEN objections), W1.5 (twelve-criteria comparison table not audited).
+8. Sources: no new primary-source reads this session except one publisher page (Quintanilla 2003 DOI, title match) and one publisher page (Ezzat2011 ZAMP, bibliographic only). The Drive worker did not upload EQ_ANCHORS or SOURCE_LEDGER_PUBLIC chunks during this session.
+9. Session ended before 06:00 IST because the working context was exhausted; the queue in TASK_QUEUE.md is the resume point.
+10. Ezzat2011 remains UNREAD; its citation is bibliographic only (sec12 attribution note and DECISIONS_FOR_AUTHOR).
