@@ -108,3 +108,7 @@ Checks use the bibliography entries and, where stated, the publisher landing pag
 | Chen–Gurtin 1968 vs Gurtin–Pipkin | The library file for the 1968 key is a Gurtin–Pipkin paper (different work); the Chen–Gurtin primary is not in the library. | Obtain the Chen–Gurtin paper or mark the two-temperature statement as unchecked. |
 | Dell'Oro–Pata two-author vs Dell'Oro–Lasiecka–Pata three-author | The body cites the three-author JDE paper (critical-case MGT result). The two-author AMO viscoelasticity note is in the bibliography but not cited in the body. | Author to keep or remove the two-author entry. |
 | Quintanilla 2003, DOI 10.1080/713855996 | Publisher landing page (secondary check, 2026-10-28) gives the same title as the bibliography entry (J. Thermal Stresses 26:713–721). | None; the DOI is consistent with the title. |
+
+## Section 14 taxonomy reconciliation (overnight, WP6-07)
+The evidence matrix (97 rows, 44 distinct raw theory labels, no multi-labelled rows) does not reproduce the earlier twelve-family table (96 assignments) or the earlier 95-record figure. The text now states the matrix counts (verified by `verify_reference_counts.py`) and labels the table as an editorial grouping.
+Decision needed: (a) provide a labelled mapping from the 44 raw labels to the twelve families, so the table can be regenerated; or (b) replace the table with counts per raw label. Until then the table is not evidence of distribution.
