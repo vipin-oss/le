@@ -81,3 +81,10 @@ Thirty-seven entries in `phase5/master/references_local.bib` are not cited by th
 | HetnarskiIgnaczak2000 | check identity against MISSING_SOURCES before any use |
 
 Recommended default: keep all entries until the author decides; cite a key only after a source check and a ledger row; do not cite the two MISSING-source keys as evidence.
+
+## WP7 journal pack decisions (2026-10-28)
+
+- **Target venue:** Physics Reports (invited route; proposal ≤ 1000 words) versus Applied Mechanics Reviews (contact-first; title, abstract, timeline). Drafts for both are in `phase5/reports/journal/`. Nothing has been sent. The author chooses the venue.
+- **Scope:** the current manuscript (about 123 pages) exceeds the Rapid Review length. A regular review needs an author-defined scope for the proposal.
+- **Not read:** data policy, AI-use policy, conflicts/funding forms, and reference-style requirements for both journals. The fit memo states these as unchecked.
+- **Author fields:** names, affiliations, contact, funding, conflicts, editor choice, and the AI-use wording are left as placeholders.
