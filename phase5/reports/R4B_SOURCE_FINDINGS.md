@@ -94,6 +94,10 @@
 
 **CONFIRMED-IN-SOURCE.** The primary paper’s opening page (printed p. 8) describes the unified-field treatment as a high-rate heat-conduction model and relates the flux lag to small-scale temporal response and the temperature-gradient lag to small-scale spatial response. Printed p. 10, Eqs. (15) and (17) were freshly inspected during the Section 12 work and then dispositioned in the dedicated Section 4 pass below; their formulas match the source-specific statements, with the pure-phonon scope retained.
 
+### Hetnarski–Ignaczak (2000), *Nonclassical Dynamical Thermoelasticity*
+
+**IDENTITY CORRECTED.** The held paper is the distinct 2000 article in *International Journal of Solids and Structures* 37, pp. 215–224, DOI `10.1016/S0020-7683(99)00089-X`. Its first page has no printed DOI; the journal is identified from the final-page running head, and the Crossref title record matches. It is now keyed as `HetnarskiIgnaczak2000`. The separate 1999 *Journal of Thermal Stresses* article, *Generalized thermoelasticity*, remains a metadata-only reference (`HetnarskiIgnaczak1999`); its primary pages were not verified from the held paper. OCL-040, OCL-101, and OCL-129 remain Class C/deleted pending review of the correct 1999 source; no survey claim is transferred to or inferred from the 2000 paper.
+
 ### Quintanilla (2003), one-dimensional dual-phase-lag thermoelastic theory
 
 **CONFIRMED-IN-SOURCE.** The paper’s first page prints the author initial, title, journal, volume, pages 713–721, year, and DOI `10.1080/01495730390203518`. The conclusion on printed p. 720 states exponential stability for the strict condition `tau_theta > tau_q/2` and the existence of unstable solutions for `tau_theta < tau_q/2`. The equality case is not characterized by that pair of statements. The new bibliography entry records the first-page fields and does not infer an issue number.
