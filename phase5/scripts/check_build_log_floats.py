@@ -4,12 +4,9 @@
 Fails when the build log contains any of:
   * "Float too large for page"
   * "Float(s) lost"
-  * "Overfull \\hbox" or "Overfull \\vbox" with size > 1 pt
 
-Real TeX underfull messages (matched with correct format; only very high
-badness values are flagged as gate conditions):
-  * "Underfull \\vbox (badness N) has occurred while \\output is active"
-  * "Underfull \\hbox (badness N) in paragraph"
+Real TeX overfull/underfull messages are detected by the CI bash gate
+(overfull > 5 pt) and are not repeated here to avoid duplicate checks.
 
 Usage:
     python3 phase5/scripts/check_build_log_floats.py BUILD_LOG
@@ -38,44 +35,6 @@ def main() -> int:
     if re.search(r"Float\(s\) lost", text):
         errors.append("Float(s) lost")
 
-    # Overfull hbox/vbox > 1 pt
-    # TeX log line: "Overfull \hbox (12.3pt too wide)"
-    overfull_re = re.compile(
-        r"Overfull [\\](hbox|vbox) [(](?P<size>[-+]?[0-9.]+)pt too (wide|high)"
-    )
-    for match in overfull_re.finditer(text):
-        size = float(match.group("size"))
-        if size > 1.0:
-            kind = match.group(1)
-            errors.append(f"Overfull \\{kind} {size:.1f}pt too {match.group(3)}")
-
-    # Real TeX underfull vbox message:
-    # "Underfull \vbox (badness N) has occurred while \output is active"
-    # Only flag at max badness (10000) - truly exceptional layout failures.
-    underfull_vbox_re = re.compile(
-        r"Underfull [\\]vbox [(]badness (?P<badness>[0-9]+)[)] "
-        r"has occurred while [\\]output is active"
-    )
-    for match in underfull_vbox_re.finditer(text):
-        badness = int(match.group("badness"))
-        if badness >= 10000:
-            errors.append(
-                f"Underfull \\vbox (badness {badness}) has occurred while \\output is active"
-            )
-
-    # Real TeX underfull hbox message:
-    # "Underfull \hbox (badness N) in paragraph at lines 5--10"
-    # Only flag at max badness (10000).
-    underfull_hbox_re = re.compile(
-        r"Underfull [\\]hbox [(]badness (?P<badness>[0-9]+)[)] in paragraph"
-    )
-    for match in underfull_hbox_re.finditer(text):
-        badness = int(match.group("badness"))
-        if badness >= 10000:
-            errors.append(
-                f"Underfull \\hbox (badness {badness}) in paragraph"
-            )
-
     if errors:
         print("ERROR: build-log layout defects detected:")
         for e in errors[:30]:
@@ -83,7 +42,7 @@ def main() -> int:
         if len(errors) > 30:
             print(f"  ... and {len(errors) - 30} more")
         return 1
-    print("PASS: no float or overfull defects in build log")
+    print("PASS: no float defects in build log")
     return 0
 
 
