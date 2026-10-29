@@ -55,10 +55,14 @@ for row in rows:
         if not resolved:
             errors.append(f"{row_id}: Class V row lacks resolved_by script/derivation")
             continue
-        # TEMPORARY: skip path check to isolate CI failure
-        # script = resolved.split(":", 1)[0]
-        # if not (ROOT.parent / script).is_file():
-        #     errors.append(f"{row_id}: Class V verification path does not exist: {script}")
+        script = resolved.split(":", 1)[0]
+        # Check relative to repo root (CI runs from repo root; locally CWD is repo root)
+        script_path = Path(script)
+        if not script_path.is_file():
+            # Fallback: resolve relative to ROOT.parent (repo root)
+            alt_path = ROOT.parent / script
+            if not alt_path.is_file():
+                errors.append(f"{row_id}: Class V verification path does not exist: {script}")
         if not row["evidence_mode"].strip():
             errors.append(f"{row_id}: Class V row lacks evidence_mode")
 
