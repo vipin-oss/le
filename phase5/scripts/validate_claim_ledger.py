@@ -56,10 +56,10 @@ for row in rows:
             errors.append(f"{row_id}: Class V row lacks resolved_by script/derivation")
             continue
         script = resolved.split(":", 1)[0]
-        # Check relative to repo root (CI runs from repo root; locally CWD is repo root)
-        script_path = Path(script)
+        # Check relative to repo root (CI runs from repo root)
+        script_path = ROOT / script
         if not script_path.is_file():
-            # Fallback: resolve relative to ROOT.parent (repo root)
+            # Fallback: resolve relative to ROOT.parent
             alt_path = ROOT.parent / script
             if not alt_path.is_file():
                 errors.append(f"{row_id}: Class V verification path does not exist: {script}")

@@ -1,0 +1,90 @@
+{
+  "query_doi": "10.1080/01495739.2020.1806764",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/01495739.2020.1806764",
+    "type": "journal-article",
+    "title": [
+      "On the characterization and stability of plane waves under hyperbolic two-temperature generalized thermoelasticity"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-3870-0630",
+        "authenticated-orcid": false,
+        "given": "Rashmi",
+        "family": "Prasad",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Central University of South Bihar, Gaya, India"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-6010-7075",
+        "authenticated-orcid": false,
+        "given": "Roushan",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Central University of South Bihar, Gaya, India"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2020,
+          12,
+          1
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2020,
+          8,
+          24
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          8,
+          24
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "43",
+    "issue": "12",
+    "page": "1513-1530",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}

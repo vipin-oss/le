@@ -1,0 +1,65 @@
+{
+  "query_doi": "10.1007/s10765-020-02670-3",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s10765-020-02670-3",
+    "type": "journal-article",
+    "title": [
+      "Wave Propagation in Two-Temperature Porothermoelasticity"
+    ],
+    "author": [
+      {
+        "given": "Baljeet",
+        "family": "Singh",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2020,
+          7
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2020,
+          5,
+          13
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          5,
+          13
+        ]
+      ]
+    },
+    "container-title": [
+      "International Journal of Thermophysics"
+    ],
+    "short-container-title": [
+      "Int J Thermophys"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "41",
+    "issue": "7",
+    "article-number": "97",
+    "ISSN": [
+      "0195-928X",
+      "1572-9567"
+    ]
+  }
+}

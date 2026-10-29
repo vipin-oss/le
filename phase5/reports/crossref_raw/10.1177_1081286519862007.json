@@ -1,0 +1,71 @@
+{
+  "query_doi": "10.1177/1081286519862007",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1177/1081286519862007",
+    "type": "journal-article",
+    "title": [
+      "Moore–Gibson–Thompson thermoelasticity"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-7059-7058",
+        "authenticated-orcid": false,
+        "given": "Ramón",
+        "family": "Quintanilla",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Departament de Matemàtiques, Universitat Politècnica de Catalunya, Barcelona, Spain"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2019,
+          12
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2019,
+          7,
+          21
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          7,
+          21
+        ]
+      ]
+    },
+    "container-title": [
+      "Mathematics and Mechanics of Solids"
+    ],
+    "short-container-title": [
+      "Mathematics and Mechanics of Solids"
+    ],
+    "publisher": "SAGE Publications",
+    "volume": "24",
+    "issue": "12",
+    "page": "4020-4031",
+    "ISSN": [
+      "1081-2865",
+      "1741-3028"
+    ]
+  }
+}

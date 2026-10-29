@@ -1,0 +1,211 @@
+\subsection{Verified equation register: assumptions and limits}
+\label{sec:12.verified_register}
+
+The displays below were verified either symbolically (VERIFIED-SYMBOLIC) or against the
+primary source (VERIFIED-SOURCE) in this revision. For each display, the assumptions
+under which it holds and the limits beyond which it does not apply are stated. Conformance
+statements are restricted to the displayed equations and the cited sources; they are not
+convergence, stability, or source-transcription results beyond the stated scope.
+
+\begin{itemize}[label=\bullet]
+
+\item \textbf{eq:3.23} (Section~3, VERIFIED-SYMBOLIC).
+    Assumptions: Uncoupled isotropic Navier equation with beta=0 (no thermal coupling) 
+    Limits: Thermal coupling term retained as negative control in the script (beta nonzero) 
+    Verified by: phase5/verification/verify_isotropic_elastic_speeds.py; OCL-517.
+
+\item \textbf{eq:3.24} (Section~3, VERIFIED-SYMBOLIC).
+    Assumptions: Dilatational speed c_p from the uncoupled plane-wave relation 
+    Limits: Speed formula checked symbolically only; no measurement claim 
+    Verified by: phase5/verification/verify_isotropic_elastic_speeds.py; OCL-517.
+
+\item \textbf{eq:3.25} (Section~3, VERIFIED-SYMBOLIC).
+    Assumptions: Shear speed c_s from the uncoupled plane-wave relation 
+    Limits: Speed formula checked symbolically only 
+    Verified by: phase5/verification/verify_isotropic_elastic_speeds.py; OCL-517.
+
+\item \textbf{eq:3.28} (Section~3, VERIFIED-SYMBOLIC).
+    Assumptions: Classical Eulerian total-energy balance with advective flux, derived from mass, momentum, and internal-energy residuals 
+    Limits: Not recorded for this row; see script header for the scope limit (not generalized continua) 
+    Verified by: phase5/scripts/verify_classical_flux.py; ledger OCL-534.
+
+\item \textbf{eq:3.29} (Section~3, VERIFIED-SYMBOLIC).
+    Assumptions: Same balance in divergence form with F_i = q_i - sigma_ij v_j + E v_i 
+    Limits: Not recorded for this row 
+    Verified by: phase5/scripts/verify_classical_flux.py; ledger OCL-534.
+
+\item \textbf{eq:3.30} (Section~3, VERIFIED-SYMBOLIC).
+    Assumptions: Integral form of the same balance over a fixed control volume 
+    Limits: Not recorded for this row 
+    Verified by: phase5/scripts/verify_classical_flux.py; ledger OCL-534.
+
+\item \textbf{eq:4.1} (Section~4, VERIFIED-SYMBOLIC).
+    Assumptions: Zero body force/heat supply and the explicit GN-III variable/coefficient map; checks coefficient/variable correspondence only. 
+    Limits: No negative reduction test applies to this source mapping. 
+    Verified by: phase5/verification/verify_gn3_source_mapping.py; OCL-498.
+
+\item \textbf{eq:4.2} (Section~4, VERIFIED-SOURCE).
+    Assumptions: Linear isotropic thermoelasticity, constant coefficients, local entropy balance, Fourier heat flux, constant reference temperature T0, and first-order perturbations; source-free equation shown. 
+    Limits: With beta=0 the equation reduces to Fourier diffusion; with k=0 the thermoelastic strain-rate coupling remains. 
+    Verified by: Biot (1956), printed p. 242, Eqs. (3.3)--(3.4); phase5/verification/verify_classical_thermoelastic.py; OCL-513.
+
+\item \textbf{eq:4.3} (Section~4, VERIFIED-SYMBOLIC).
+    Assumptions: Homogeneous isotropic elastic reference limit beta=0; rho>0, mu>0, lambda+2mu>0. These are not the fully coupled thermoelastic longitudinal mode speeds. 
+    Limits: The script retains a nonzero temperature-gradient coupling term when beta!=0, so the uncoupled cp formula is not generalized to the coupled problem. 
+    Verified by: phase5/verification/verify_isotropic_elastic_speeds.py; plane-wave substitution into displayed Eq. 4.1 with beta=0..
+
+\item \textbf{eq:4.4} (Section~4, VERIFIED-SYMBOLIC).
+    Assumptions: Abstract LS heat-flux residual; the script checks the tau0=0 Fourier reduction, not source transcription. 
+    Limits: Negative: nonzero tau0 leaves tau0*qdot; it is not the Fourier law. 
+    Verified by: phase5/verification/verify_unified_reductions.py; OCL-470.
+
+\item \textbf{eq:4.5} (Section~4, VERIFIED-SYMBOLIC).
+    Assumptions: Constant coefficients and source-free local thermal balance rho*c_v*Tdot=-div(q)-beta*T0*div(udot), with the displayed Cattaneo law; verifies the algebraic Eq. 4.5 form, not historical source transcription or well-posedness. 
+    Limits: The script confirms that omitting tau_0*beta*T0*div(uddot) leaves a nonzero residual. 
+    Verified by: phase5/verification/verify_ls_heat_equation.py; apply (1+tau_0*d/dt) to the local thermal balance and eliminate div(q) using the divergence of Eq. 4.4..
+
+\item \textbf{eq:4.6} (Section~4, VERIFIED-SYMBOLIC).
+    Assumptions: Uncoupled scalar branch beta=0 with positive k, rho, c_v, and tau_0; c_T is the characteristic speed of the principal part, not a general speed for the fully coupled thermoelastic modes. 
+    Limits: The script tests the tau_0->0 singular principal-speed limit; Fourier conduction is not assigned a finite hyperbolic characteristic speed. 
+    Verified by: phase5/verification/verify_ls_heat_equation.py; principal-part plane-wave derivation from Eq. 4.5 in the uncoupled beta=0 scalar thermal branch..
+
+\item \textbf{eq:4.11} (Section~4, VERIFIED-SOURCE).
+    Assumptions: GN-II source-free thermal-displacement form; zero integration function after time integration. This does not establish an energy-flux identity or other GN-II variants. 
+    Limits: A nonzero time-integration function contributes an additional spatial term; do not use this form for nonzero heat supply or arbitrary integration data. 
+    Verified by: Green and Naghdi (1993), Eq. (3.16), printed pp. 200–204 (F17); APPA_LEDGER EQ-016. The source-free alpha form is integrated with dot(alpha)=T and zero spatial integration function..
+
+\item \textbf{eq:4.14} (Section~4, VERIFIED-SYMBOLIC).
+    Assumptions: Source-free GN-III specialization with the explicit coefficient/variable map; equation mapping only. 
+    Limits: No solution-level equivalence or flux reduction is checked. 
+    Verified by: phase5/verification/verify_gn3_source_mapping.py; OCL-498.
+
+\item \textbf{eq:4.16} (Section~4, VERIFIED-SYMBOLIC).
+    Assumptions: First-order DPL residual; the script checks selected LS/Fourier substitutions only. 
+    Limits: Negative: tau_q=0 is not LS; either single lag set to zero leaves the other term, while both must be zero for Fourier. 
+    Verified by: phase5/verification/verify_unified_reductions.py; OCL-470.
+
+\item \textbf{eq:4.18} (Section~4, VERIFIED-SYMBOLIC).
+    Assumptions: Candidate MGT flux residual; script checks Fourier and LS-type substitutions only, not source identity or admissibility. 
+    Limits: Negative: tau=0 alone leaves the k* term; k*=0 alone matches LS only when tau=tau0. 
+    Verified by: phase5/verification/verify_unified_reductions.py; OCL-470.
+
+\item \textbf{UNNUMBERED-DISPLAY-13} (Section~4, VERIFIED-SYMBOLIC).
+    Assumptions: First-order Taylor truncation in the three independent lags only; dot(v)=T is retained and all second- and higher-order lag terms are omitted. 
+    Limits: The script confirms a nonzero second-order remainder in general; setting k*=0 removes the TPL contribution, but no higher-order coefficient is asserted. 
+    Verified by: phase5/verification/verify_tpl_first_order_expansion.py derives the first-order Taylor residual from Eq. 4.17; OCL-169 records the source-specific parent law..
+
+\item \textbf{eq:5.4} (Section~5, VERIFIED-SOURCE).
+    Assumptions: Charge-free three-dimensional thermopiezoelectric balance; no free bulk-charge term. Boundary/surface charge cases are outside this equation. 
+    Limits: Source transcription checked against the source balance; no reduction asserted. 
+    Verified by: Mindlin (1974), printed p. 625, Sec. 2, Eq. (1); OCL-195.
+
+\item \textbf{eq:5.5} (Section~5, VERIFIED-SYMBOLIC).
+    Assumptions: For an uncoupled linear dielectric D=K E, 1/2 D_i E_i is the electric-field energy contribution; in the coupled piezoelectric D law it includes a strain-electric cross term and is not total stored energy. 
+    Limits: Negative: substituting the coupled D law leaves a nonzero strain-electric term, so Eq. (5.5) cannot be used alone as total coupled stored energy. 
+    Verified by: phase5/verification/verify_piezoelectric_stiffness.py; OCL-510.
+
+\item \textbf{eq:5.7} (Section~5, VERIFIED-SOURCE).
+    Assumptions: Source-free linear momentum balance in the source convention; the displayed form has no body-force term, and does not cover generalized stress balances. 
+    Limits: Source equation matched; no reduction asserted. 
+    Verified by: Mindlin (1974), printed p. 625, Sec. 2, Eq. (1); OCL-195.
+
+\item \textbf{eq:5.10} (Section~5, VERIFIED-SOURCE).
+    Assumptions: Charge-free three-dimensional thermopiezoelectric balance; repeated charge-divergence relation from Eq. 5.4. No interface jump law is inferred. 
+    Limits: Source transcription checked; no reduction asserted. 
+    Verified by: Mindlin (1974), printed p. 625, Sec. 2, Eq. (1); OCL-195.
+
+\item \textbf{eq:5.19} (Section~5, VERIFIED-SYMBOLIC).
+    Assumptions: Open-circuit D=0 elimination from the displayed Section 5.1 linear constitutive equations; short circuit E=0 remains C. 
+    Limits: Negative tests reject a minus sign and interchange of open-/short-circuit conditions. 
+    Verified by: phase5/verification/verify_piezoelectric_stiffness.py; OCL-500.
+
+\item \textbf{eq:5.14} (Section~5, VERIFIED-SOURCE).
+    Assumptions: General linear thermoelastic-with-voids constitutive relations; source-specific notation and scope. 
+    Limits: No family-wide void-model generalization is made. 
+    Verified by: Iesan (1986), printed p.71, Eq. (2.22); OCL-407.
+
+\item \textbf{eq:6.3} (Section~6, VERIFIED-SYMBOLIC).
+    Assumptions: Caputo integral definition for n-1<alpha<n, n=ceil(alpha), and an integrable nth derivative; symbolic action checked on monomials only, not a complete function-space theorem or source-transcription check. 
+    Limits: A constant at alpha=1/2 has zero Caputo derivative, unlike the Riemann-Liouville result; initial-data conventions are not interchangeable. 
+    Verified by: phase5/verification/verify_fractional_definitions.py; OCL-511 records beta-integral monomial checks for n=1,2,3..
+
+\item \textbf{eq:6.4} (Section~6, VERIFIED-SYMBOLIC).
+    Assumptions: Riemann-Liouville integral definition for locally integrable f with the defining integral and nth derivative existing, n-1<alpha<n, n=ceil(alpha); symbolic action checked on monomials only. 
+    Limits: A constant at alpha=1/2 has a nonzero Riemann-Liouville derivative, unlike Caputo; initial-data conventions are not interchangeable. 
+    Verified by: phase5/verification/verify_fractional_definitions.py; OCL-511 records beta-integral monomial checks for n=1,2,3..
+
+\item \textbf{eq:7.3} (Section~7, VERIFIED-SYMBOLIC).
+    Assumptions: One homogeneous small-strain model from the stated positive quadratic energy, constant symmetric positive-definite C, ell>=0; effective bulk stress after integration by parts. Higher-order boundary data remain separate. 
+    Limits: The opposite sign fails the variational residual test; ell=0 recovers local Hooke elasticity. 
+    Verified by: phase5/verification/verify_strain_gradient_energy.py; OCL-514.
+
+\item \textbf{eq:7.4} (Section~7, VERIFIED-SYMBOLIC).
+    Assumptions: One-dimensional homogeneous bar, local Hooke modulus C, and the displayed Helmholtz nonlocal operator only; no generalization to other kernels, geometries, or cutoff laws. 
+    Limits: The script verifies the xi=0 local limit and confirms finite nonzero xi changes finite-wavenumber speed. 
+    Verified by: phase5/verification/verify_nonlocal_dispersion.py derives the phase speed from the displayed Helmholtz operator and one-dimensional bar balance; OCL-520..
+
+\item \textbf{eq:9.10} (Section~9, VERIFIED-SYMBOLIC).
+    Assumptions: Interface-plane ratios are definitions under same-plane normalization; script checks their algebraic closure, not a physical conservation theorem. 
+    Limits: Changing the denominator/reference plane breaks the claimed bridge; see OCL-489. 
+    Verified by: phase5/verification/verify_interface_energy.py; OCL-468; OCL-489.
+
+\item \textbf{eq:9.12} (Section~9, VERIFIED-SYMBOLIC).
+    Assumptions: Algebraic identity under the total-field definitions in Eq. (9.10); not independent proof of conservation. 
+    Limits: Script checks the definitions; physical closure still requires complete flux and surface balance. 
+    Verified by: phase5/verification/verify_interface_energy.py; OCL-468.
+
+\item \textbf{eq:10.2} (Section~10, VERIFIED-SYMBOLIC).
+    Assumptions: Exact Eulerian total-energy balance for the classical local Cauchy continuum with no internal heat source; symmetric Cauchy stress, continuity, and material momentum/internal-energy balances. 
+    Limits: The verifier confirms that omitting div(rho*h*v) leaves exactly its negative and supplies a nonzero example. 
+    Verified by: phase5/scripts/verify_classical_flux.py; OCL-480.
+
+\item \textbf{eq:10.3} (Section~10, VERIFIED-SYMBOLIC).
+    Assumptions: Reduced first-order small-amplitude wave-flux convention only; not the exact Eulerian total-energy flux, which is Eq. 10.2. 
+    Limits: Do not use as an exact fixed-volume or second-order cycle-averaged total-energy flux without an additional derivation. 
+    Verified by: phase5/scripts/verify_classical_flux.py; OCL-480 verifies the reduced first-order flux convention..
+
+\item \textbf{eq:10.11} (Section~10, VERIFIED-SYMBOLIC).
+    Assumptions: Steady control-volume balance under complete fluxes, common remote planes, and no unlisted source/storage channel. 
+    Limits: No generalized/interface theorem follows without model-specific flux and power terms. 
+    Verified by: phase5/verification/verify_interface_energy.py; OCL-465; OCL-486.
+
+\item \textbf{eq:10.13} (Section~10, VERIFIED-SYMBOLIC).
+    Assumptions: Definitions of bulk-left, interface-local, and bulk-right losses under the displayed control-volume conventions; remote incident/reflected/transmitted powers are time-averaged modal fluxes at stated planes with +x sign convention. 
+    Limits: The left remote-plane net must equal Pi-Pr; otherwise include any cross-term power explicitly. Do not add bulk losses again to the already-inclusive remote residual. 
+    Verified by: phase5/verification/verify_interface_energy.py; OCL-465.
+
+\item \textbf{eq:10.14} (Section~10, VERIFIED-SYMBOLIC).
+    Assumptions: Sum of the three steady control-volume balances under stated assumptions. 
+    Limits: No unlisted channels or accumulation may be omitted. 
+    Verified by: phase5/verification/verify_interface_energy.py; OCL-465.
+
+\item \textbf{eq:10.15} (Section~10, VERIFIED-SYMBOLIC).
+    Assumptions: 1D normal-incidence longitudinal fields under e^{-i omega t}, lossless real positive impedances. 
+    Limits: Not a multidimensional or generalized-continuum field ansatz. 
+    Verified by: phase5/verification/verify_interface_energy.py; OCL-466; OCL-467.
+
+\item \textbf{eq:10.16} (Section~10, VERIFIED-SYMBOLIC).
+    Assumptions: Two unknown amplitudes and two continuity conditions in the stated 1D welded example. 
+    Limits: Positive impedances ensure nonzero determinant; no rank claim for other systems. 
+    Verified by: phase5/verification/verify_interface_energy.py; OCL-466.
+
+\item \textbf{UNNUMBERED-DISPLAY-13} (Section~10, VERIFIED-SYMBOLIC).
+    Assumptions: Incident/reflected mixed phasor product for the displayed 1D lossless longitudinal fields under e^{-i omega t}; its flux contribution vanishes after taking the real part. 
+    Limits: Before averaging the mixed phasor is generally nonzero; script checks its explicit form and zero mean flux. 
+    Verified by: phase5/verification/verify_interface_energy.py; OCL-467.
+
+\item \textbf{appB:eq:16} (Section~B, VERIFIED-SYMBOLIC).
+    Assumptions: Energy balance residual in material-derivative form (first step of the derivation) 
+    Limits: Not recorded for this row 
+    Verified by: phase5/scripts/verify_classical_flux.py; ledger OCL-534.
+
+\item \textbf{appB:eq:17} (Section~B, VERIFIED-SYMBOLIC).
+    Assumptions: Eulerian total-energy balance with the total-energy density E 
+    Limits: Not recorded for this row 
+    Verified by: phase5/scripts/verify_classical_flux.py; ledger OCL-534.
+
+\item \textbf{appB:eq:18} (Section~B, VERIFIED-SYMBOLIC).
+    Assumptions: Outward-positive total-energy flux F_i = q_i - sigma_ij v_j + E v_i 
+    Limits: Not recorded for this row 
+    Verified by: phase5/scripts/verify_classical_flux.py; ledger OCL-534.
+\end{itemize}

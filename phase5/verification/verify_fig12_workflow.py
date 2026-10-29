@@ -23,9 +23,7 @@ MIRRORS = (
 SVG_NS = "http://www.w3.org/2000/svg"
 TAG = lambda name: f"{{{SVG_NS}}}{name}"
 
-existing_mirrors = [p for p in MIRRORS if p.is_file()]
-assert existing_mirrors, "No F12 SVG mirror found at any expected path"
-contents = [path.read_bytes() for path in existing_mirrors]
+contents = [path.read_bytes() for path in MIRRORS]
 assert all(content == contents[0] for content in contents[1:]), "F12 SVG mirrors differ"
 root = ET.fromstring(contents[0])
 assert root.attrib.get("viewBox") == "0 0 1100 700"

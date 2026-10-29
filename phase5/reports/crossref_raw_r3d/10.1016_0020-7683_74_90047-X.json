@@ -1,0 +1,54 @@
+{
+  "query_doi": "10.1016/0020-7683(74)90047-X",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/0020-7683(74)90047-x",
+    "type": "journal-article",
+    "title": [
+      "Equations of high frequency vibrations of thermopiezoelectric crystal plates"
+    ],
+    "author": [
+      {
+        "given": "R.D.",
+        "family": "Mindlin",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1974,
+          6
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1974,
+          6
+        ]
+      ]
+    },
+    "container-title": [
+      "International Journal of Solids and Structures"
+    ],
+    "short-container-title": [
+      "International Journal of Solids and Structures"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "10",
+    "issue": "6",
+    "page": "625-637",
+    "ISSN": [
+      "0020-7683"
+    ]
+  }
+}

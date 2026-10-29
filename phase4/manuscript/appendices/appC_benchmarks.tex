@@ -1,0 +1,67 @@
+%======================================================================
+% Appendix C: Benchmark Specifications
+%======================================================================
+\section{Benchmark Specifications (BM-1 through BM-5)}
+\label{app:benchmarks}
+
+This appendix specifies the benchmark problems used for verification in the manuscript.
+
+\subsection{BM-1: Classical Elastic Interface (Analytical Verification)}
+
+\textbf{Problem:} Plane P-wave incident on a welded interface between two elastic half-spaces.
+
+\textbf{Governing equations:} Navier equations in each medium:
+\begin{equation}
+\rho^{(m)}\ddot{u}_i^{(m)} = (\lambda^{(m)}+\mu^{(m)})u_{j,ji}^{(m)} + \mu^{(m)}u_{i,jj}^{(m)},
+\qquad m = 1,2.
+\end{equation}
+
+\textbf{Interface conditions:}
+\begin{equation}
+u_i^{(1)} = u_i^{(2)}, \qquad
+\sigma_{j3}^{(1)} = \sigma_{j3}^{(2)} \quad \text{at } x_3 = 0.
+\end{equation}
+
+\textbf{Expected result:} Energy conservation $R_P + T_P = 1$ for the classical elastic case.
+
+\textbf{Status:} VERIFIED analytically.
+
+\subsection{BM-2: Classical Thermoelastic Interface}
+
+\textbf{Problem:} Thermoelastic wave incident on a welded interface between two thermoelastic half-spaces (Lord--Shulman theory).
+
+\textbf{Expected result:} Energy conservation $R + T + A = 1$ with dissipation.
+
+\textbf{Status:} PENDING — requires LS energy flux derivation (OQ10.1).
+
+\subsection{BM-3: Piezothermoelastic Interface}
+
+\textbf{Problem:} Elastic wave incident on a thermo-piezoelastic interface (the configuration of Barak et al.~\cite{Barak2023}).
+
+\textbf{Governing equations:} Eqs.~(3)--(7), (38) and (44) of Barak et al.~\cite{Barak2023}.
+
+\textbf{Expected result:} Scattering matrix $\Delta\bm{X} = \bm{Q}$; energy ratios from Eqs. (45)--(46).
+
+\textbf{Status:} VERIFIED from Barak et al.~\cite{Barak2023} (open access).
+
+\subsection{BM-4: Nonlocal Elastic Wave Propagation}
+
+\textbf{Problem:} Wave propagation in a nonlocal elastic bar (Eringen differential model).
+
+\textbf{Governing equations:} $(1-\xi^2\nabla^2)\sigma_{ij} = \sigma_{ij}^{\text{local}}$.
+
+\textbf{Expected result:} Wave dispersion $c(k) = c_0/\sqrt{1+\xi^2k^2}$.
+
+\textbf{Status:} PENDING — requires nonlocal energy flux derivation (OQ10.5).
+
+\subsection{BM-5: MDD Thermoelastic Wave Propagation}
+
+\textbf{Problem:} Thermal wave propagation in MDD media.
+
+\textbf{Governing equations:} $q_i + \tau_0 D_\omega q_i = -kT_{,i}$.
+
+\textbf{Expected result:} Memory-dependent wave dispersion.
+
+\textbf{Status:} PENDING — requires MDD hereditary flux derivation (OQ10.4).
+
+% LocalWords: 

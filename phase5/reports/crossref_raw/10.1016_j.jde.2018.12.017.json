@@ -1,0 +1,70 @@
+{
+  "query_doi": "10.1016/j.jde.2018.12.017",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.jde.2018.12.017",
+    "type": "journal-article",
+    "title": [
+      "Controllability results for the Moore–Gibson–Thompson equation arising in nonlinear acoustics"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-9807-1100",
+        "authenticated-orcid": false,
+        "given": "Carlos",
+        "family": "Lizama",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5592-9085",
+        "authenticated-orcid": false,
+        "given": "Sebastián",
+        "family": "Zamorano",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2019,
+          6
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          6
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Differential Equations"
+    ],
+    "short-container-title": [
+      "Journal of Differential Equations"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "266",
+    "issue": "12",
+    "page": "7813-7843",
+    "ISSN": [
+      "0022-0396"
+    ]
+  }
+}

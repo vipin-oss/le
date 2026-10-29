@@ -1,0 +1,70 @@
+{
+  "map_id": "R3F-GURTIN-WILLIAMS-1966",
+  "mode": "BIBLIOGRAPHIC-SEARCH",
+  "requested_doi": "",
+  "query": "Gurtin Williams Zeitschrift fur Angewandte Mathematik und Physik 1966 17 626 633",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/bf01597243",
+    "type": "journal-article",
+    "title": [
+      "On the Clausius-Duhem inequality"
+    ],
+    "author": [
+      {
+        "given": "Morton E.",
+        "family": "Gurtin",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "William O.",
+        "family": "Williams",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1966,
+          9
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1966,
+          9
+        ]
+      ]
+    },
+    "container-title": [
+      "Zeitschrift für angewandte Mathematik und Physik ZAMP"
+    ],
+    "short-container-title": [
+      "Journal of Applied Mathematics and Physics (ZAMP)"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "17",
+    "issue": "5",
+    "page": "626-633",
+    "ISSN": [
+      "0044-2275",
+      "1420-9039"
+    ]
+  }
+}

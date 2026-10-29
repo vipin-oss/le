@@ -1,0 +1,90 @@
+%======================================================================
+% Appendix F: Reproducibility Statement
+%======================================================================
+\section{Reproducibility Statement}
+\label{app:reproducibility}
+
+This appendix documents the reproducibility of all mathematical derivations, figures, tables, and literature records in the manuscript.
+
+\subsection{Mathematical Derivations}
+
+All derivations in Sections 3 and 10 (Appendix B) are reproducible from first principles using:
+
+\begin{enumerate}
+\item Continuum balance laws (linear momentum, angular momentum, energy, entropy),
+\item Divergence theorem and localization argument,
+\item Standard constitutive relations for each theory family,
+\item Documented assumptions (constitutive, material symmetry, geometry, boundary conditions, thermal theory, frequency convention, normalization, approximation level).
+\end{enumerate}
+
+\subsection{Equations Requiring Full-Text Verification}
+
+The following equations require access to primary-source full texts for complete verification (see Appendix A, Table T-26):
+
+\begin{itemize}
+\item LS energy flux (time domain) — Lord \& Shulman 1967
+\item GL energy flux — Green \& Lindsay 1972
+\item GN-II energy flux — Green \& Naghdi 1991
+\item GN-III energy flux — Green \& Naghdi 1993
+\item DPL energy flux (time domain) — Tzou 1995
+\item TPL energy flux — Tzou 1997
+\item MGT energy flux — Quintanilla 2019
+\item MDD hereditary flux — Wang \& Li 2011
+\item Nonlocal energy flux — Eringen 1974
+\end{itemize}
+
+\subsection{Figures}
+
+All figures are SVG vector graphics with editable sources:
+
+\begin{itemize}
+\item Source directory: \texttt{phase4/figures/source/}
+* Rendered directory: \texttt{phase4/figures/rendered/}
+\item All relationships are drawn from verified constitutive equations or established continuum mechanics principles.
+\item No figure depends on unpublished data or unverified numerical results.
+\end{itemize}
+
+\subsection{Literature Records}
+
+\begin{itemize}
+\item Expanded literature database: \texttt{phase4/literature/expanded\_literature\_database.csv} (88 records)
+* BibTeX library: \texttt{phase4/references/library.bib} (67 entries, all with unique keys)
+\item DOI verification: \texttt{phase4/references/doi\_verification.csv}
+\item Source provenance: \texttt{phase4/references/source\_provenance.csv}
+\item Citation map: \texttt{phase4/reports/citation\_map.md}
+\end{itemize}
+
+\subsection{PDF Ingestion Pipeline}
+
+For the forthcoming corpus of 100+ research PDFs:
+
+\begin{itemize}
+\item Pipeline script: \texttt{phase4/scripts/pdf\_ingestion\_pipeline.py}
+* Directory structure: \texttt{phase4/literature/\{incoming,verified,metadata,extraction,duplicates,reports\}}
+* Copyright guidance: \texttt{phase4/literature/COPYRIGHT\_GUIDANCE.md}
+\end{itemize}
+
+The pipeline generates SHA-256 hashes, detects duplicates, extracts text where available, and produces a searchable study index.
+
+\subsection{Validation Scripts}
+
+The following validation scripts were run during Phases 2 and 3:
+
+\begin{itemize}
+\item \texttt{scripts/validate\_references.py} — PASSED
+* \texttt{scripts/validate\_database.py} — PASSED
+* \texttt{scripts/validate\_equations.py} — PASSED (warning: derivations directory empty — Phase 4 derivations in separate location)
+* \texttt{scripts/validate\_workspace.py} — PASSED (51 pre-existing DOI provenance warnings)
+\end{itemize}
+
+\subsection{Known Limitations}
+
+\begin{enumerate}
+\item No LaTeX engine available in the current build environment — compilation not yet attempted.
+\item Ten energy flux derivations remain open (UNCERTAIN status in Appendix A).
+\item Two BibTeX entries (barak2023a, gupta2023a) have unverified DOI/journal metadata.
+\item Eighty-four of eighty-eight literature records are abstract-only; full-text verification pending.
+\item Appendices C–F reference benchmarks BM-2 through BM-5 that are pending energy flux derivations.
+\end{enumerate}
+
+% LocalWords: 

@@ -1,0 +1,102 @@
+{
+  "query_doi": "10.12921/cmst.2016.0000069",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.12921/cmst.2016.0000069",
+    "type": "journal-article",
+    "title": [
+      "Reflection of Plane Waves at Micropolar Piezothermoelastic Half-space"
+    ],
+    "author": [
+      {
+        "given": "R.",
+        "family": "Kumar",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "N.",
+        "family": "Sharma",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "P.",
+        "family": "Lata",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "M.",
+        "family": "Marin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2018,
+          6,
+          29
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2018,
+          6,
+          29
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          6,
+          29
+        ]
+      ]
+    },
+    "container-title": [
+      "Computational Methods in Science and Technology"
+    ],
+    "short-container-title": [
+      "CMST"
+    ],
+    "publisher": "ICHB PAS Poznan Supercomputing and Networking Center",
+    "volume": "24",
+    "issue": "2",
+    "page": "113-124",
+    "ISSN": [
+      "1505-0602",
+      "2353-9453"
+    ]
+  }
+}

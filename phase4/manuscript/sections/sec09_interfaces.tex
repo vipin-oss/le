@@ -1,0 +1,242 @@
+%======================================================================
+% Section 9: Reflection, Transmission, and Interface Phenomena
+%======================================================================
+\section{Reflection, Transmission, and Interface Phenomena}
+\label{sec:interfaces}
+
+This section presents wave reflection, transmission, and energy partitioning at interfaces between different continuum media. The scattering matrix formulation, interface conditions, and energy ratios are developed for elastic, thermoelastic, and piezothermoelastic media.
+
+\subsection{Interface geometry}
+\label{sec:9.1}
+
+Consider two half-spaces in perfect contact at the interface plane $x_3 = 0$. Medium 1 occupies $x_3 < 0$ and medium 2 occupies $x_3 > 0$. A plane harmonic wave is incident from medium 1 onto the interface, generating reflected waves in medium 1 and transmitted waves in medium 2.
+
+The interface normal is $\bm{n} = (0, 0, 1)$. All field variables vary harmonically in time with convention $e^{-i\omega t}$ and propagate along the interface with wave number $k$ in the $x_1$-direction:
+
+\begin{equation}
+\text{field}(x_1, x_3, t) = \hat{\text{field}}(x_3) e^{i(kx_1 - \omega t)}.
+\label{eq:9.1}
+\end{equation}
+
+\subsection{Wave decomposition: incident, reflected, transmitted modes}
+\label{sec:9.2}
+
+In each medium, the general solution is a superposition of partial waves. For an isotropic elastic medium, there are two wave types: longitudinal (P) and shear (SV). For thermoelastic media, there is an additional thermal (T) wave. For piezothermoelastic media, there are additional coupled modes (qP, qS, qT, electromagnetic).
+
+The displacement field in medium $m$ ($m = 1, 2$) is decomposed as:
+
+\begin{equation}
+u_i^{(m)} = \sum_n A_n^{(m)} \hat{u}_i^{(m,n)} e^{i(q_n^{(m)}x_3 - \omega t)},
+\label{eq:9.2}
+\end{equation}
+
+where $A_n^{(m)}$ are complex amplitude coefficients, $q_n^{(m)}$ are the vertical wave numbers, and $\hat{u}_i^{(m,n)}$ are the polarization vectors.
+
+The incident wave comes from medium 1 with known amplitude. Reflected waves propagate back into medium 1, and transmitted waves propagate into medium 2.
+
+\subsection{Interface conditions}
+\label{sec:9.3}
+
+At a perfectly bonded interface between two media, the following conditions must hold:
+
+\subsubsection{Mechanical conditions}
+
+\begin{equation}
+u_i^{(1)} = u_i^{(2)}, \qquad \sigma_{j3}^{(1)} = \sigma_{j3}^{(2)} \quad \text{at } x_3 = 0.
+\label{eq:9.3}
+\end{equation}
+
+The first condition enforces displacement continuity (no slip or separation); the second enforces traction equilibrium (Newton's third law at the interface).
+
+\subsubsection{Thermal conditions}
+
+For thermoelastic media:
+
+\begin{equation}
+T^{(1)} = T^{(2)}, \qquad q_3^{(1)} = q_3^{(2)} \quad \text{at } x_3 = 0.
+\label{eq:9.4}
+\end{equation}
+
+Temperature continuity and heat flux continuity ensure perfect thermal contact.
+
+\subsubsection{Electrical conditions (piezoelectric media)}
+
+For piezothermoelastic media:
+
+\begin{equation}
+\phi^{(1)} = \phi^{(2)}, \qquad D_3^{(1)} = D_3^{(2)} \quad \text{at } x_3 = 0.
+\label{eq:9.5}
+\end{equation}
+
+Electric potential continuity and electric displacement continuity ensure perfect electrical contact. For an insulated interface, $D_3 = 0$ replaces the second condition.
+
+\subsubsection{Imperfect bonding}
+
+For imperfectly bonded interfaces, spring-type conditions relate displacement jumps to interfacial tractions:
+
+\begin{equation}
+u_i^{(2)} - u_i^{(1)} = K_i^u t_i, \qquad \sigma_{j3}^{(1)}n_j = \sigma_{j3}^{(2)}n_j = t_i,
+\label{eq:9.6}
+\end{equation}
+
+where $K_i^u$ is the interfacial stiffness tensor and $t_i$ is the interfacial traction. In the limit $K_i^u \to \infty$, perfect bonding is recovered; in the limit $K_i^u \to 0$, a traction-free (slip) interface is recovered.
+
+\subsection{Scattering matrix formulation}
+\label{sec:9.4}
+
+The interface conditions lead to a linear system relating the unknown amplitude coefficients to the known incident wave amplitude. For a thermo-piezoelastic interface problem with $N$ unknown amplitudes and $N$ interface conditions, the system can be written in matrix form:
+
+\begin{equation}
+\Delta \bm{X} = \bm{Q},
+\label{eq:9.7}
+\end{equation}
+
+where:
+\begin{itemize}
+\item $\Delta$ is the $N\times N$ system matrix whose entries depend on material properties, wave numbers, frequency, and incidence angle,
+\item $\bm{X} = (A_1, A_2, \ldots, A_N)^T$ is the vector of unknown amplitude coefficients (reflected and transmitted),
+\item $\bm{Q} = (Q_1, Q_2, \ldots, Q_N)^T$ is the known vector determined by the incident wave amplitude.
+\end{itemize}
+
+The entries of $\Delta$ are determined by substituting the partial wave expansions into the interface conditions \eqref{eq:9.3}--\eqref{eq:9.5}. Each row corresponds to one interface condition; each column corresponds to one unknown amplitude.
+
+The solution is obtained by matrix inversion:
+
+\begin{equation}
+\bm{X} = \Delta^{-1}\bm{Q}.
+\label{eq:9.8}
+\end{equation}
+
+The solution exists and is unique when $\det(\Delta) \neq 0$.
+
+\subsection{Secular equation and mode classification}
+\label{sec:9.5}
+
+The secular equation (characteristic polynomial) determines the allowed wave numbers in each medium:
+
+\begin{equation}
+G_1 q^8 + G_2 q^6 + G_3 q^4 + G_4 q^2 + G_5 = 0,
+\label{eq:9.9}
+\end{equation}
+
+which is an eighth-order polynomial in $q$ for coupled thermo-piezoelastic media. The roots are classified as:
+
+\begin{itemize}
+\item \textbf{Propagating modes:} real $q$ --- waves that propagate without spatial attenuation,
+\item \textbf{Evanescent modes:} purely imaginary $q$ --- waves that decay exponentially with distance,
+\item \textbf{Attenuating modes:} complex $q$ --- waves that both propagate and attenuate.
+\end{itemize}
+
+Only outgoing modes (satisfying the radiation condition) are retained in the physical solution.
+
+\subsection{Number of boundary conditions vs. unknown amplitudes}
+\label{sec:9.6}
+
+For a well-posed interface problem, the number of independent boundary conditions must equal the number of unknown amplitude coefficients. Table \ref{tab:T6-interfaces} summarizes interface condition configurations for different interface types.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{fig13-interface-reflection.pdf}
+\caption{Interface reflection and transmission geometry: incident P-wave from Medium 1 generates reflected P and S waves in Medium 1 and transmitted qP and qS waves in Medium 2. Interface conditions enforce displacement, traction, temperature, heat flux, electric potential, and electric displacement continuity.}
+\label{fig:interface_geometry}
+\end{figure}
+
+\input{../tables/source/T6_interface_configurations}
+
+\subsection{Energy ratios at interfaces}
+\label{sec:9.7}
+
+The energy reflection coefficient $R$, transmission coefficient $T$, and absorption coefficient $A$ are defined as:
+
+\begin{equation}
+R = \frac{|\avg{J_{\mathrm{ref},n}}_t|}{|\avg{J_{\mathrm{inc},n}}_t|},
+\qquad
+T = \frac{|\avg{J_{\mathrm{trans},n}}_t|}{|\avg{J_{\mathrm{inc},n}}_t|},
+\qquad
+A = \frac{\mathcal{D}}{|\avg{J_{\mathrm{inc},n}}_t|},
+\label{eq:9.10}
+\end{equation}
+
+where the averages are time averages over one period and $n$ is the interface normal.
+
+For a conservative system with no dissipation ($\mathcal{D} = 0$) and a passive interface:
+
+\begin{equation}
+\sum R + \sum T = 1.
+\label{eq:9.11}
+\end{equation}
+
+With dissipation:
+
+\begin{equation}
+\sum R + \sum T + A = 1.
+\label{eq:9.12}
+\end{equation}
+
+The identity \eqref{eq:9.12} holds when the energy flux is correctly defined for the specific theory, the interface is passive, all modes are properly accounted for, and complex modes are consistently normalized.
+
+This makes interface energy analysis unusually stringent as a test of a generalized theory: the same identity must close for every model in the family, and any inconsistency between the flux used in the numerators and the dissipation used in the denominator shows up immediately as a violation. The recent literature has exploited that sensitivity to quantify how relaxation, memory and anisotropy redistribute energy across a bonded boundary, and the results fall into a small number of recurring patterns.
+
+\subsubsection{What the interface partition reveals}
+
+The energy partition at an interface is a far more sensitive probe of a constitutive model than any bulk measurement, for a reason that is structural rather than accidental: the interface condition set is the only place in the problem where all the couplings are exercised simultaneously and where a single scalar identity must close. The identity of \eqref{eq:9.12} does not distinguish between two theories that agree in the bulk but differ in how they transmit energy; the reflected and transmitted fractions do.
+
+Four distinct mechanisms of energy redistribution have been quantified on this basis, and it is worth separating them, because they are frequently conflated.
+
+\begin{enumerate}
+\item \textbf{Electromechanical renormalisation.} At a boundary between an elastic and a piezothermoelastic half-space, the transmitted energy budget is altered not by a new dissipation mechanism but by the renormalisation of the elastic stiffness that the electromechanical coupling induces. The conservation identity remains satisfied, and the shift in the transmitted fraction is a stiffness effect rather than an absorption effect \cite{Barak2023IJP}. This is the cleanest demonstration in the reviewed literature that a generalized theory can change an observable while leaving the thermodynamics untouched.
+\item \textbf{Extra attenuation channels.} When the thermoelastic partner is replaced by a medium with additional internal degrees of freedom --- a dual-porous solid, with its permeability-dependent relaxation and its phase-lag structure --- additional attenuation channels open, and the energy-ratio curves vary with incidence angle in a manner that no single-phase treatment reproduces \cite{Kumar2023PhysScr}. The diagnostic content lies in the angular dependence, not merely in the value at normal incidence.
+\item \textbf{History-dependent transmission.} Memory-dependent heat conduction changes the transmitted thermal energy through the kernel-weighted history of the flux, and the change depends jointly on the delay parameter of the kernel and on the stiffness contrast across the interface \cite{Barak2023MMMS}. The same dependence persists when monoclinic anisotropy is added to the piezothermoelastic partner \cite{Barak2023JTS}, which indicates that the two generalizations act through separate mechanisms and can therefore be separated experimentally by varying the interface contrast at fixed anisotropy.
+\item \textbf{Nonlocal phase shifts at a fluid boundary.} At a fluid/solid boundary, where the first medium carries no elastic field and the transmitted set is constrained by the kinematic admissibility conditions of the fluid, a nonlocal length scale in the solid modifies the phase of the reflected and transmitted waves while leaving the energy balance closed \cite{Gupta2023IJNMF}. Here the nonlocality shows itself in phase rather than in energy, which is the clearest available signature that distinguishes it from a purely dissipative effect.
+\end{enumerate}
+
+Two further results complete the picture. For a piezoelectric/thermoelastic interface the full energy analysis across the coupled fields shows that the electrical contribution does not decouple from the mechanical one, so that a single-field energy budget is not adequate and a coupled flux must be constructed \cite{Gupta2023Energy}. And a compact scattering-matrix treatment of this interface class, in which the amplitude system is written as a single matrix relation rather than as a set of separate modal equations, together with its higher-order memory-dependent variant, has been given for the same configuration \cite{Barak2023}.
+
+\subsubsection{The pattern and its limits}
+
+Across this body of work the pattern is consistent: the conservation identity survives extension to generalized media, but only when the energy flux is reconstructed from the constitutive model actually being solved. The difficulty identified in Section~\ref{sec:energy} is therefore not that the identity fails, but that a general-purpose expression for that flux has not been written down for every member of the family. A second limit is worth recording. All of the configurations above assume a perfectly bonded, flat interface between two homogeneous half-spaces with sharp material contrast. Real interfaces are graded over a thickness comparable with the microstructural length, and for nonlocal, memory-dependent and gradient theories the thickness of the interfacial layer is not negligible compared with the internal length of the material. Whether the sharp-interface result is the limit of a graded-interface result, and at what rate, is an open question that no configuration in the reviewed literature addresses.
+
+\subsection{Interface conditions under memory and nonlocality}
+\label{sec:9.8}
+
+The interface conditions of Section~\ref{sec:9.3} assume that the constitutive variables are local functions of position. This assumption fails in two of the theory families treated here, and the failure has a common structure: the quantity that is matched across the interface is no longer a pointwise value.
+
+For a \emph{memory-dependent} medium, the flux at the interface is an integral over the recent past, and a naive condition of the form $q_3^{(1)} = q_3^{(2)}$ matches two functionals whose histories differ. The condition is either imposed on the effective flux of \eqref{eq:6.10} --- in which case the identity of Section~\ref{sec:energy} must already have been established --- or imposed on the constitutive variables together with their history, in which case the interface problem becomes an initial-value problem in the tangential coordinate and its solution depends on how the interface was approached.
+
+For a \emph{nonlocal} medium, the stress at the interface is an average over a neighbourhood that straddles the interface, so that the traction transmitted across the interface is not a pointwise quantity at all; the correct interface problem is then a nonlocal boundary-value problem in which the interface condition couples the two half-spaces over the whole interfacial region. A local approximation that simply writes $t_i^{(1)} = t_i^{(2)}$ is consistent only to leading order in the ratio of the internal length to the wavelength.
+
+Neither of these is merely a technical difficulty. Both concern the meaning of an interface in a theory that has no microscopic notion of a material boundary, and both are of the same character as the question of whether the constitutive variables of a nonlocal or memory-dependent theory can be continued across a material discontinuity at all. These are recorded as open questions in Section~\ref{sec:future}; they are the places where the extension of the classical framework to generalized media is least settled.
+
+\subsection{Notation summary for Section 9}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 9.}
+\label{tab:notation-sec9}
+\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$A_n^{(m)}$ & Complex amplitude coefficient & varies & \eqref{eq:9.2} \\
+$q_n^{(m)}$ & Vertical wave number & 1/m & \eqref{eq:9.2} \\
+$\Delta$ & System matrix & varies & \eqref{eq:9.7} \\
+$\bm{X}$ & Unknown amplitude vector & varies & \eqref{eq:9.7} \\
+$\bm{Q}$ & Known incident vector & varies & \eqref{eq:9.7} \\
+$R, T, A$ & Reflection, transmission, absorption coefficients & dimensionless & \eqref{eq:9.10} \\
+$K_i^u$ & Interfacial stiffness & varies & \eqref{eq:9.6} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open questions for Section 9}
+
+\begin{enumerate}[label=\textbf{OQ9.\arabic*}]
+\item What are the interface conditions for nonlocal media where stress depends on strain in a neighborhood? \\ \label{oq:9.1}
+\item How are energy ratios computed for memory-dependent media with hereditary flux? \\ \label{oq:9.2}
+\item What is the correct interface energy balance for piezothermoelastic media with electrical coupling? \\ \label{oq:9.3}
+\item Is the sharp-interface result the limit of a graded-interface result for nonlocal, gradient and memory-dependent media, and at what rate does the difference vanish as the interfacial layer is thickened? \\ \label{oq:9.4}
+\item Can the constitutive variables of a nonlocal or memory-dependent theory be continued across a material discontinuity at all, and what does that imply for the meaning of an interface in such a theory? \\ \label{oq:9.5}
+\end{enumerate}
+
+% LocalWords: 

@@ -324,6 +324,39 @@ jobs:
       - name: Verify reference collection counts
         run: python phase5/scripts/verify_reference_counts.py
 
+      - name: Verify nonlocal dispersion figure against text relation
+        run: python phase5/verification/verify_nonlocal_dispersion.py
+
+      - name: Fail on deleted tracked files (no-delete gate)
+        run: |
+          set -euo pipefail
+          deleted=$(git diff --name-only HEAD~1 HEAD --diff-filter=D || true)
+          if [[ -n "$deleted" ]]; then
+            echo "DELETED TRACKED FILES DETECTED:"
+            echo "$deleted"
+            exit 1
+          fi
+          echo "PASS: no tracked files deleted vs parent"
+
+      - name: Scan for control characters and BOM in tracked tex/bib/csv
+        run: |
+          set -euo pipefail
+          bad_files=""
+          for f in $(git ls-files '*.tex' '*.bib' '*.csv'); do
+            if LC_ALL=C grep -qP '[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]' "$f" 2>/dev/null; then
+              bad_files="$bad_files $f"
+            fi
+            if head -c 3 "$f" | grep -qP '^\xef\xbb\xbf'; then
+              bad_files="$bad_files $f (BOM)"
+            fi
+          done
+          if [[ -n "$bad_files" ]]; then
+            echo "CONTROL CHARACTERS OR BOM DETECTED IN:"
+            echo "$bad_files"
+            exit 1
+          fi
+          echo "PASS: no control characters or BOM in tracked tex/bib/csv"
+
       - name: Install vector-render dependencies
         uses: actions/setup-node@v4
         with:

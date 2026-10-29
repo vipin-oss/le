@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Figure 2. Review-saturation heat map across the five candidate topics. Original synthesis. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height"520" viewBox="0 0 900 520">
+  <defs>
+    <style>
+      .title {font:700 15px 'DejaVu Sans', sans-serif; fill:#1a3a5c;}
+      .subtitle {font:11px 'DejaVu Sans', sans-serif; fill:#555;}
+      .topic {font:700 12px 'DejaVu Sans', sans-serif; fill:#1a3a5c;}
+      .cell {stroke:#6b8cae; stroke-width:1;}
+      .label {font:11px 'DejaVu Sans', sans-serif; fill:#222;}
+      .legendBox {stroke:#333; stroke-width:1;}
+      .legendText {font:10px 'DejaVu Sans', sans-serif; fill:#222;}
+      .note {font:10px 'DejaVu Sans', sans-serif; fill:#666;}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="900" height="520" fill="white"/>
+  <text x="450" y="26" class="title" text-anchor="middle">Review-saturation map (lower saturation = larger gap)</text>
+  <text x="450" y="44" class="subtitle" text-anchor="middle">Counts = reviews located in OpenAlex/Crossref searches (2026-10-21). Absence in these databases is not proof of nonexistence.</text>
+
+  <!-- Columns: criteria -->
+  <text x="80" y="78" class="topic" text-anchor="middle">Criterion</text>
+  <text x="240" y="78" class="topic" text-anchor="middle">T1 · Energy flux at interfaces</text>
+  <text x="420" y="78" class="topic" text-anchor="middle">T2 · MDD vs fractional</text>
+  <text x="600" y="78" class="topic" text-anchor="middle">T3 · Double-porosity interfaces</text>
+  <text x="780" y="78" class="topic" text-anchor="middle">T4 · Nonlocal surface waves</text>
+
+  <rect x="40" y="92" width="820" height="32" class="cell" fill="#fdfdfd"/>
+  <text x="60" y="114" class="label">Reviews located (this session)</text>
+  <text x="240" y="114" class="label" text-anchor="middle">0</text>
+  <text x="420" y="114" class="label" text-anchor="middle">1 (unverified venue)</text>
+  <text x="600" y="114" class="label" text-anchor="middle">0 (adjacent geophysics only)</text>
+  <text x="780" y="114" class="label" text-anchor="middle">0 (beam/nanostructure only)</text>
+
+  <rect x="40" y="134" width="820" height="32" class="cell" fill="#fdfdfd"/>
+  <text x="60" y="156" class="label">Saturation rating</text>
+  <rect x="210" y="142" width="60" height="20" class="cell" fill="#c8e6c9"/>
+  <text x="240" y="156" class="label" text-anchor="middle">LOW</text>
+  <rect x="390" y="142" width="60" height="20" class="cell" fill="#c8e6c9"/>
+  <text x="420" y="156" class="label" text-anchor="middle">LOW</text>
+  <rect x="570" y="142" width="60" height="20" class="cell" fill="#fff59d"/>
+  <text x="600" y="156" class="label" text-anchor="middle">MEDIUM</text>
+  <rect x="750" y="142" width="60" height="20" class="cell" fill="#fff59d"/>
+  <text x="780" y="156" class="label" text-anchor="middle">MEDIUM</text>
+
+  <rect x="40" y="176" width="820" height="32" class="cell" fill="#fdfdfd"/>
+  <text x="60" y="198" class="label">Mathematical depth</text>
+  <rect x="210" y="184" width="60" height="20" class="cell" fill="#ffab91"/>
+  <text x="240" y="198" class="label" text-anchor="middle">HIGH</text>
+  <rect x="390" y="184" width="60" height="20" class="cell" fill="#ffab91"/>
+  <text x="420" y="198" class="label" text-anchor="middle">MED-HIGH</text>
+  <rect x="570" y="184" width="60" height="20" class="cell" fill="#ffcc80"/>
+  <text x="600" y="198" class="label" text-anchor="middle">MEDIUM</text>
+  <rect x="750" y="184" width="60" height="20" class="cell" fill="#ffab91"/>
+  <text x="780" y="198" class="label" text-anchor="middle">MED-HIGH</text>
+
+  <rect x="40" y="218" width="820" height="32" class="cell" fill="#fdfdfd"/>
+  <text x="60" y="240" class="label">Primary literature (approx.)</text>
+  <text x="240" y="240" class="label" text-anchor="middle">686+ reflection/thermoelastic</text>
+  <text x="420" y="240" class="label" text-anchor="middle">373 MDD works</text>
+  <text x="600" y="240" class="label" text-anchor="middle">121 double-porosity+thermoelastic</text>
+  <text x="780" y="240" class="label" text-anchor="middle">1,036 nonlocal+thermoelastic</text>
+
+  <rect x="40" y="260" width="820" height="32" class="cell" fill="#fdfdfd"/>
+  <text x="60" y="282" class="label">Author-programme fit</text>
+  <rect x="210" y="268" width="60" height="20" class="cell" fill="#c8e6c9"/>
+  <text x="240" y="282" class="label" text-anchor="middle">HIGH</text>
+  <rect x="390" y="268" width="60" height="20" class="cell" fill="#ffcc80"/>
+  <text x="420" y="282" class="label" text-anchor="middle">MEDIUM</text>
+  <rect x="570" y="268" width="60" height="20" class="cell" fill="#ffcc80"/>
+  <text x="600" y="282" class="label" text-anchor="middle">MED-HIGH</text>
+  <rect x="750" y="268" width="60" height="20" class="cell" fill="#ffcc80"/>
+  <text x="780" y="282" class="label" text-anchor="middle">MEDIUM</text>
+
+  <rect x="40" y="302" width="820" height="32" class="cell" fill="#fdfdfd"/>
+  <text x="60" y="324" class="label">Differentiation from reviews</text>
+  <rect x="210" y="310" width="60" height="20" class="cell" fill="#c8e6c9"/>
+  <text x="240" y="324" class="label" text-anchor="middle">CLEAR</text>
+  <rect x="390" y="310" width="60" height="20" class="cell" fill="#ffcc80"/>
+  <text x="420" y="324" class="label" text-anchor="middle">CLEAR</text>
+  <rect x="570" y="310" width="60" height="20" class="cell" fill="#ffcc80"/>
+  <text x="600" y="324" class="label" text-anchor="middle">CLEAR</text>
+  <rect x="750" y="310" width="60" height="20" class="cell" fill="#ffcc80"/>
+  <text x="780" y="324" class="label" text-anchor="middle">PARTIAL</text>
+
+  <rect x="40" y="344" width="820" height="32" class="cell" fill="#fdfdfd"/>
+  <text x="60" y="366" class="label">Original taxonomy potential</text>
+  <rect x="210" y="352" width="60" height="20" class="cell" fill="#c8e6c9"/>
+  <text x="240" y="366" class="label" text-anchor="middle">HIGH</text>
+  <rect x="390" y="352" width="60" height="20" class="cell" fill="#ffcc80"/>
+  <text x="420" y="366" class="label" text-anchor="middle">MEDIUM</text>
+  <rect x="570" y="352" width="60" height="20" class="cell" fill="#ffcc80"/>
+  <text x="600" y="366" class="label" text-anchor="middle">MEDIUM</text>
+  <rect x="750" y="352" width="60" height="20" class="cell" fill="#ffcc80"/>
+  <text x="780" y="366" class="label" text-anchor="middle">MEDIUM</text>
+
+  <rect x="40" y="386" width="820" height="32" class="cell" fill="#fdfdfd"/>
+  <text x="60" y="408" class="label">Journal fit (verified scope)</text>
+  <text x="240" y="408" class="label" text-anchor="middle">AMR, CMT (verified)</text>
+  <text x="420" y="408" class="label" text-anchor="middle">MAMS, JTS, CMT</text>
+  <text x="600" y="408" class="label" text-anchor="middle">JTS, MAMS, EJM-A</text>
+  <text x="780" y="408" class="label" text-anchor="middle">MAMS, EJM-A, CMT</text>
+
+  <rect x="40" y="428" width="820" height="32" class="cell" fill="#fdfdfd"/>
+  <text x="60" y="450" class="label">Weighted score / rank</text>
+  <text x="240" y="450" class="label" text-anchor="middle">3.32 · Rank 1</text>
+  <text x="420" y="450" class="label" text-anchor="middle">2.94 · Rank 2</text>
+  <text x="600" y="450" class="label" text-anchor="middle">2.63 · Rank 4</text>
+  <text x="780" y="450" class="label" text-anchor="middle">2.78 · Rank 3</text>
+
+  <text x="450" y="492" class="note">Ratings are ordinal analyst judgements (0–5 scale logic), not measurements. T1: strongest gap, highest fit, clearest differentiation.</text>
+</svg>

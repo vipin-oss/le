@@ -1,0 +1,77 @@
+{
+  "query_doi": "10.1007/s00033-011-0126-3",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s00033-011-0126-3",
+    "type": "journal-article",
+    "title": [
+      "Fractional order heat conduction law in magneto-thermoelasticity involving two temperatures"
+    ],
+    "author": [
+      {
+        "given": "Magdy A.",
+        "family": "Ezzat",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ahmed S.",
+        "family": "El Karamany",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          10
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2011,
+          5,
+          6
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2011,
+          5,
+          6
+        ]
+      ]
+    },
+    "container-title": [
+      "Zeitschrift für angewandte Mathematik und Physik"
+    ],
+    "short-container-title": [
+      "Z. Angew. Math. Phys."
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "62",
+    "issue": "5",
+    "page": "937-952",
+    "ISSN": [
+      "0044-2275",
+      "1420-9039"
+    ]
+  }
+}

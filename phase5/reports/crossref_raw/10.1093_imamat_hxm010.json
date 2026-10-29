@@ -1,0 +1,57 @@
+{
+  "query_doi": "10.1093/imamat/hxm010",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1093/imamat/hxm010",
+    "type": "journal-article",
+    "title": [
+      "Thermoelasticity and generalized thermoelasticity viewed as wave hierarchies"
+    ],
+    "author": [
+      {
+        "given": "N. H.",
+        "family": "Scott",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-online": {
+      "date-parts": [
+        [
+          2007,
+          10,
+          18
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2007,
+          10,
+          18
+        ]
+      ]
+    },
+    "container-title": [
+      "IMA Journal of Applied Mathematics"
+    ],
+    "short-container-title": [
+      "IMA Journal of Applied Mathematics"
+    ],
+    "publisher": "Oxford University Press (OUP)",
+    "volume": "73",
+    "issue": "1",
+    "page": "123-136",
+    "ISSN": [
+      "0272-4960",
+      "1464-3634"
+    ]
+  }
+}
