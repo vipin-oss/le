@@ -1,0 +1,58 @@
+%======================================================================
+% Section 2: Literature Landscape and Scholarly Context
+%======================================================================
+\section{Literature Landscape and Scholarly Context}
+\label{sec:literature}
+
+\subsection{The organising problem and the shape of the field}
+
+The literature of generalized continuum wave mechanics addresses the infinite propagation speed associated with Fourier heat conduction. Joseph and Preziosi’s retrospective traces early finite-speed heat-flux formulations to Cattaneo and describes Vernotte’s later presentation of the relaxation law as a simple generalization \cite{Joseph1989}.
+
+That pattern --- identification, modification, cost --- is the organising theme of this review, and it is why the literature is best read by theory family rather than by paper. Each family below answers the same question in a different way, and each pays for the answer in a different currency: a second temperature, a second wave, a loss of ellipticity, a loss of uniqueness, a loss of local well-posedness. Sections~\ref{sec:thermoelastic} through~\ref{sec:advanced} take the families in turn; this section establishes how they arose, where the field's centre of gravity has moved, and what the geographic distribution of the work reveals about the structure of the problem.
+
+\subsection{Four phases in the development of the field}
+
+The relaxation-type modification of Fourier heat conduction is attributed to \citet{Cattaneo1948} and \citet{Vernotte1958}, whose original texts were not opened for this review; Lord and Shulman incorporated a relaxation time into coupled thermoelasticity. Green and Lindsay introduced a temperature-rate-dependent, single-temperature formulation with two relaxation parameters. These models have different constitutive structures and limiting assumptions.
+
+\paragraph{Phase II --- second sound and thermal-displacement theories (1966--1993).} Chester's 1963 model predates this phase: Eq.~(5) adds a relaxation term to Fourier flux, Eqs.~(6)--(7) give the associated damped thermal-wave equation and model speed, and Eq.~(8)'s phonon-speed relation is restricted to an idealized dispersionless phonon gas (printed pp.~2014--2015) \cite{Chester1963}. Guyer and Krumhansl's p.~766 article derives a nonlocal coefficient from the linearized phonon Boltzmann equation; Eq.~(59) supports $\lambda^2=c^2\tau_N\tau_z/5$ only in the stated scattering regime (printed p.~773) \cite{GuyerKrumhansl1966}. Their separate p.~778 companion article treats thermal conductivity, second sound, and phonon-hydrodynamic phenomena in nonmetallic crystals; its findings are not transferred to the p.~766 equation \cite{GuyerKrumhansl1966II}. Green--Naghdi type-II and type-III formulations are treated as separate systems; no cross-type dissipation or energy claim is inferred \cite{Green1993,GreenGN1992}. Chandrasekharaiah's 1998 review surveys recent hyperbolic-thermoelasticity literature and is used here for historical context, not as primary equation evidence \cite{Chandrasekharaiah1998}.
+
+\paragraph{Phase III --- the microscale turn (1995--2011).} Phase II assumed that the Fourier paradox was a matter of taking a limit too early. Phase III questioned the premise, and asked instead what a thermal wave should look like when the material has microstructure. Tzou's dual-phase-lag model \cite{Tzou1995} and Roy Choudhuri's triple-phase-lag formulation \cite{RoyChoudhuri2007} distinguish the flux and temperature-gradient lags and include a thermal-displacement-gradient contribution in the latter; the exact truncation and admissibility conditions remain model-specific. In parallel, Eringen's nonlocal elasticity \cite{Eringen1972,Eringen1974,Eringen1983} and the strain-gradient formulations \cite{Askes2006,Askes2011,Polizzotto2001} transferred the same logic to the mechanical side, and the size-dependent wave speeds measured and computed for nanostructures \cite{Maranganti2006,Maranganti2007} supplied the corresponding experimental evidence.
+
+\paragraph{Phase IV --- memory, fractional operators and multiphysics (2011--present).} Recent models use memory kernels and coupled fields. Gorenflo and Mainardi provide mathematical background on fractional calculus \cite{Gorenflo1997}. Memory-dependent derivatives use time-history weights \cite{Wang2011}; fractional models replace integer-order derivatives with fractional orders in the governing equations \cite{Caputo1967,Povstenko2004,Povstenko2007,Povstenko2009,Povstenko2011,Povstenko2016}. Couplings to electrical, porous, micro-rotational, and carrier fields produce multiphysics formulations \cite{Iesan1986,Iesan2004,Cowin1983,Nunziato1979,Chandrasekharaiah1996,Marotti2013,Sharma2022,Abouelregal2023}. These citations identify model families, not shared equations; kernels, fractional orders, couplings, admissibility conditions, and physical consequences remain model-dependent.
+
+\subsection{International structure of the field}
+
+The development of generalized thermoelasticity involved several research communities. Foundational heat-conduction and thermoelasticity works, micropolar extensions, anisotropic models, fractional and memory-dependent formulations, and more recent multiphysics studies are represented in the cited literature \cite{Joseph1989,Biot1956,Lord1967,Green1972,Eringen1966a,TauchertClausAriman1968,Eringen1972,Dhaliwal1980,Sharma2022,Povstenko2004,Povstenko2007,Povstenko2009,Povstenko2011,Povstenko2016,Wang2011,Iesan1986,Iesan2004,Cowin1983,Nunziato1979,Chandrasekharaiah1996,Marotti2013,Abouelregal2023,Quintanilla2019,Barak2023,Barak2023IJP,Barak2023JTS,Barak2023MMMS,Gupta2023Energy,Gupta2023IJNMF,Kumar2023PhysScr,Gupta2026HeatMap}.
+
+One interpretive reading is that research communities approached generalized thermoelasticity from different interests --- heat conduction in metals, micropolar fluid mechanics, anomalous diffusion in geophysics, and piezoelectricity in smart materials --- and brought different constitutive tools. In the cited literature, questions about propagating thermal modes are addressed through different devices: relaxation times, second temperatures, thermal displacements, phase lags, memory kernels, and fractional orders. Organizing by these devices can make cross-family recurrences visible, though the proposed links between communities and modelling choices are interpretive rather than a complete causal history. The field can be viewed as negotiating finite propagation speed, thermodynamic admissibility, and well-posedness, which may compete under particular model assumptions.
+
+\subsection{The literature corpus}
+
+The studies discussed here range from foundational analyses and surveys to applied work on coupled, nonlocal, fractional, and memory-dependent models. Comparisons are organized by constitutive structure and stated assumptions rather than by bibliographic metadata alone. This is a qualitative map of cited examples, not an exhaustive census or an evidence-strength ranking.
+
+\subsection{Development axes and the gaps they expose}
+
+The corpus can be classified along five axes --- physical domain, mathematical structure, modal content, coupling topology, and validation regime --- and this classification is developed formally in Section~\ref{sec:taxonomy}. In the cited examples, work appears more concentrated on single-field, one-dimensional, interface-focused classical, relaxation-time, and phase-lag problems than on experimental discrimination of constitutive novelties. The cited nonlocal and fractional studies include theoretical dispersion analyses, while fewer of these examples fit predictions to measured dispersion data. Head-to-head comparisons of competing mechanisms --- nonlocal versus gradient, exponential versus power-law memory, phase lag versus relaxation time --- also appear less represented in the cited set. Interfaces with memory or nonlocality require attention to both constitutive history and geometric matching; energy partition depends on the full model, not the local constitutive law alone. These density comparisons are qualitative observations from the cited set, not an exhaustive count or a universal claim about model-family maturity.
+
+These apparent gaps need not indicate defects in individual contributions. One possible explanation is that many studies extend a constitutive law and solve the resulting modal problem, while direct experimental comparisons between competing extensions are less common in the cited set. Section~\ref{sec:future} takes this diagnosis as the basis for its research directions.
+
+\subsection{Existing reviews and the contribution of this article}
+
+Reviews already exist for several individual theory families: nonlocal elasticity and its application to nanostructures \cite{Askes2006,Askes2011,Maranganti2007}, fractional thermoelasticity \cite{Chandrasekharaiah1998,Povstenko2016}, hyperbolic thermoelasticity and second sound \cite{Chandrasekharaiah1996,Joseph1989}, and generalized thermoelasticity with modified models \cite{Shakeriaski2021}. Their common structure is the one this review sets aside: an enumeration of theory families, each with its governing equations, its application domains and a list of its principal results, with the families treated in isolation and the transitions between them left implicit.
+
+The present review differs in three respects. It is organised by the problems --- finite propagation speed, thermodynamic admissibility, well-posedness, scale dependence, interface partition of energy --- rather than by the theories, so that a reader interested in one problem can follow it across all the theories that address it. It states the cost of each modification alongside the benefit, which the standard format does not provide, and which the sources surveyed here do not systematically provide: the second temperature, the loss of ellipticity, the loss of uniqueness of the initial-value problem, and the non-locality of the energy flux are each the price of something that was bought. It separates a mechanism's plausibility from the empirical support for it, treating the evidence base as an explicit axis of classification rather than a matter of emphasis.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig03-literature-landscape.pdf}
+\caption{Selected theory families and relationships in generalized continuum mechanics. This schematic is a conceptual taxonomy of the model families discussed in the text.}
+\label{fig:literature_landscape}
+\end{figure}
+
+\subsection{Citation and assumptions}
+
+A useful comparison states the validity domain and conventions of each equation and distinguishes a derivation from an attributed result. The assumptions used in each cited formulation are therefore identified alongside the relevant discussion.
+
+Where material errors are conclusively established in the literature, they are recorded transparently and without personal characterisation. Where uncertainty exists, it is acknowledged as an open question. No error allegations are made against any publication, and model-specific differences are never presented as mathematical contradictions without sufficient evidence.
+
+% LocalWords:
