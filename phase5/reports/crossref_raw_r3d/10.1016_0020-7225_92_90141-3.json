@@ -1,0 +1,643 @@
+{
+  "query_doi": "10.1016/0020-7225(92)90141-3",
+  "http_status": 200,
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          10,
+          27
+        ]
+      ],
+      "date-time": "2026-10-27T13:24:41Z",
+      "timestamp": 1793107481399,
+      "version": "4.5.0"
+    },
+    "reference-count": 55,
+    "publisher": "Elsevier BV",
+    "issue": "10",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              1992,
+              10,
+              1
+            ]
+          ],
+          "date-time": "1992-10-01T00:00:00Z",
+          "timestamp": 717897600000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "International Journal of Engineering Science"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1992,
+          10
+        ]
+      ]
+    },
+    "DOI": "10.1016/0020-7225(92)90141-3",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2003,
+          3,
+          14
+        ]
+      ],
+      "date-time": "2003-03-14T15:16:28Z",
+      "timestamp": 1047654988000
+    },
+    "page": "1279-1299",
+    "source": "Crossref",
+    "is-referenced-by-count": 978,
+    "title": [
+      "On the role of gradients in the localization of deformation and fracture"
+    ],
+    "prefix": "10.1016",
+    "volume": "30",
+    "author": [
+      {
+        "given": "Elias C.",
+        "family": "Aifantis",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "78",
+    "reference": [
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB1",
+        "doi-asserted-by": "crossref",
+        "first-page": "211",
+        "DOI": "10.1016/0749-6419(87)90021-0",
+        "volume": "3",
+        "author": "Aifantis",
+        "year": "1987",
+        "journal-title": "Int. J. Plasticity"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB2",
+        "first-page": "161",
+        "volume": "23",
+        "author": "Walgraef",
+        "year": "1988",
+        "journal-title": "Res. Mech."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB3_1",
+        "series-title": "Advances in Constitutive Laws for Engineering Materials",
+        "first-page": "3",
+        "article-title": "Higher order gradients in plastic flow and failure",
+        "author": "Aifantis",
+        "year": "1989"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB3_2",
+        "series-title": "Advances in Constitutive Laws for Engineering Materials",
+        "first-page": "893",
+        "article-title": "Plasticity and self organization",
+        "author": "Aifantis",
+        "year": "1989"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB4_1",
+        "doi-asserted-by": "crossref",
+        "first-page": "197",
+        "DOI": "10.1007/BF01299795",
+        "volume": "87",
+        "author": "Vardoulakis",
+        "year": "1991",
+        "journal-title": "Acta Mech."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB4_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "197",
+        "DOI": "10.1007/BF00532250",
+        "volume": "59",
+        "author": "Vardoulakis",
+        "year": "1989",
+        "journal-title": "Ingenieur-Archiv"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB5_1",
+        "doi-asserted-by": "crossref",
+        "first-page": "845",
+        "DOI": "10.1016/0020-7683(91)90004-Y",
+        "volume": "28",
+        "author": "Muhlhaus",
+        "year": "1991",
+        "journal-title": "Int. J. Solids Struct."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB5_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "217",
+        "DOI": "10.1007/BF01171257",
+        "volume": "89",
+        "author": "Muhlhaus",
+        "year": "1991",
+        "journal-title": "Acta Mech."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB6_1",
+        "doi-asserted-by": "crossref",
+        "first-page": "1747",
+        "DOI": "10.1016/0956-716X(90)90540-W",
+        "volume": "24",
+        "author": "Joshi",
+        "year": "1990",
+        "journal-title": "Scripta Metall. Mater."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB6_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "209",
+        "DOI": "10.1007/BF01174177",
+        "volume": "92",
+        "author": "Zbib",
+        "year": "1992",
+        "journal-title": "Acta Mech."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB7_1",
+        "series-title": "Macroscopic Modelling and Structural Engineering",
+        "first-page": "601",
+        "author": "de Borst",
+        "year": "1991"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB7_2",
+        "series-title": "Constitutive Laws Engng. Mat.\u2014Theory and Applications",
+        "first-page": "313",
+        "article-title": "A gradient dependent viscoplastic model for clay",
+        "author": "Oka",
+        "year": "1991"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB8_1",
+        "first-page": "35",
+        "volume": "Vol. 1",
+        "author": "Kubin",
+        "year": "1988"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB8_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "255",
+        "DOI": "10.1515/JMBM.1989.2.3-4.255",
+        "volume": "2",
+        "author": "Estrin",
+        "year": "1990",
+        "journal-title": "J. Mech. Beh. Mater."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB8_3",
+        "series-title": "Micromechanics and Inhomogeneity\u2014The Toshio Mura Anniv. Volume",
+        "first-page": "511",
+        "article-title": "Dislocation inhomogeneity in cyclic deformation",
+        "author": "Walgraef",
+        "year": "1990"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB9",
+        "series-title": "Constitutive Laws for Engineering Materials\u2014Theory and Applications",
+        "first-page": "493",
+        "article-title": "A proposal for a new understanding of the crack tip\u2014A nonlinear approach",
+        "author": "Aifantis",
+        "year": "1991"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB10_1",
+        "unstructured": "C. TRUSDELL and R. A. TOUPIN, Principles of classical mechanics and field theories. Encyclopedia of Physics, Vol. III/1 (Edited by S. FLUGGE)."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB10_2",
+        "article-title": "The nonlinear field theories of mechanics",
+        "volume": "Vol. III/3",
+        "author": "Trusdell",
+        "year": "1965"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB10_3",
+        "volume": "Vols. I\u2013IV",
+        "year": "1971"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB10_4",
+        "volume": "Vol. I",
+        "year": "1975"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB10_5",
+        "volume": "Vol. II",
+        "year": "1976"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB11",
+        "doi-asserted-by": "crossref",
+        "first-page": "326",
+        "DOI": "10.1115/1.3225725",
+        "volume": "106",
+        "author": "Aifantis",
+        "year": "1984",
+        "journal-title": "J. Mat. Engng Tech."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB12_1",
+        "doi-asserted-by": "crossref",
+        "first-page": "517",
+        "DOI": "10.1016/0021-9797(83)90053-X",
+        "volume": "96",
+        "author": "Aifantis",
+        "year": "1983",
+        "journal-title": "J. Coll. Interf. Sci."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB12_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "530",
+        "DOI": "10.1016/0021-9797(83)90054-1",
+        "volume": "96",
+        "author": "Aifantis",
+        "year": "1983",
+        "journal-title": "J. Coll. Interf. Sci."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB13",
+        "series-title": "The Mechanics of Dislocations",
+        "first-page": "127",
+        "article-title": "Continuum models for dislocated states and media with microstructures",
+        "author": "Aifantis",
+        "year": "1985"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB14",
+        "doi-asserted-by": "crossref",
+        "first-page": "225",
+        "DOI": "10.1007/BF00040814",
+        "volume": "16",
+        "author": "Triantafyllidis",
+        "year": "1986",
+        "journal-title": "J. Elasticity"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB15_1",
+        "first-page": "261",
+        "volume": "23",
+        "author": "Zbib",
+        "year": "1988"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB15_2",
+        "first-page": "279",
+        "volume": "23",
+        "author": "Zbib",
+        "year": "1988"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB15_3",
+        "first-page": "293",
+        "volume": "23",
+        "author": "Zbib",
+        "year": "1988"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB15_4",
+        "doi-asserted-by": "crossref",
+        "first-page": "703",
+        "DOI": "10.1016/S0036-9748(88)80186-8",
+        "volume": "22",
+        "author": "Zbib",
+        "year": "1988",
+        "journal-title": "Scripta Met."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB15_5",
+        "doi-asserted-by": "crossref",
+        "first-page": "1331",
+        "DOI": "10.1016/S0036-9748(88)80157-1",
+        "volume": "22",
+        "author": "Zbib",
+        "year": "1988",
+        "journal-title": "Scripta Met."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB15_6",
+        "doi-asserted-by": "crossref",
+        "first-page": "295",
+        "DOI": "10.1115/1.3152403",
+        "volume": "41",
+        "author": "Zbib",
+        "year": "1989",
+        "journal-title": "Appl. Mech. Rev."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB15_7",
+        "doi-asserted-by": "crossref",
+        "first-page": "209",
+        "DOI": "10.1007/BF01174177",
+        "volume": "92",
+        "author": "Zbib",
+        "year": "1992",
+        "journal-title": "Acta Mech."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB16_1",
+        "doi-asserted-by": "crossref",
+        "first-page": "139",
+        "DOI": "10.1016/0093-6413(78)90047-2",
+        "volume": "5",
+        "author": "Aifantis",
+        "year": "1978",
+        "journal-title": "Mech. Res. Comm."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB16_2",
+        "series-title": "Modulated Structure Materials",
+        "first-page": "358",
+        "article-title": "On the mechanics of modulated structures",
+        "author": "Aifantis",
+        "year": "1984"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB17_1",
+        "doi-asserted-by": "crossref",
+        "first-page": "355",
+        "DOI": "10.1016/0029-5493(89)90095-2",
+        "volume": "116",
+        "author": "Bammann",
+        "year": "1989",
+        "journal-title": "J. Nucl. Engng Design"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB17_2",
+        "series-title": "Proc. IUTAM/ICM Symp. on Yielding Damage and Failure of Anisotropic Solids",
+        "first-page": "319",
+        "article-title": "Contemporary topics in plastic deformation: Anisotropy, texture, voids, and shear bands",
+        "author": "Aifantis",
+        "year": "1990"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB18_1",
+        "series-title": "Phase Transformations in Solids",
+        "first-page": "37",
+        "article-title": "Maxwell and van der Walls revisited",
+        "author": "Aifantis",
+        "year": "1984"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB18_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "119",
+        "DOI": "10.1016/0021-9797(86)90013-5",
+        "volume": "111",
+        "author": "Alexiades",
+        "year": "1986",
+        "journal-title": "J. Coll. Interf. Sci."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB19",
+        "series-title": "Proc. Int. Conf. Appl. Mech.",
+        "first-page": "1316",
+        "article-title": "Softening and higher order gradients in plasticity and damage",
+        "author": "Aifantis",
+        "year": "1989"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB20",
+        "doi-asserted-by": "crossref",
+        "first-page": "265",
+        "DOI": "10.1007/BF01202949",
+        "volume": "37",
+        "author": "Aifantis",
+        "year": "1980",
+        "journal-title": "Acta Mech."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB21",
+        "doi-asserted-by": "crossref",
+        "first-page": "638",
+        "DOI": "10.1016/0001-6160(79)90019-1",
+        "volume": "27",
+        "author": "Aifantis",
+        "year": "1979",
+        "journal-title": "Acta Metall."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB22_1",
+        "doi-asserted-by": "crossref",
+        "first-page": "165",
+        "DOI": "10.1016/0093-6413(80)90007-5",
+        "volume": "7",
+        "author": "Aifantis",
+        "year": "1980",
+        "journal-title": "Mech. Res. Comm."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB22_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "219",
+        "DOI": "10.1016/0093-6413(80)90042-7",
+        "volume": "7",
+        "author": "Aifantis",
+        "year": "1980",
+        "journal-title": "Mech. Res. Comm."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB23_1",
+        "doi-asserted-by": "crossref",
+        "first-page": "1351",
+        "DOI": "10.1016/0020-7225(85)90113-2",
+        "volume": "23",
+        "author": "Walgraef",
+        "year": "1985",
+        "journal-title": "Int. J. Engng Sci."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB23_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "1359",
+        "DOI": "10.1016/0020-7225(85)90114-4",
+        "volume": "23",
+        "author": "Walgraef",
+        "year": "1985",
+        "journal-title": "Int. J. Engng Sci."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB23_3",
+        "doi-asserted-by": "crossref",
+        "first-page": "1365",
+        "DOI": "10.1016/0020-7225(85)90115-6",
+        "volume": "23",
+        "author": "Walgraef",
+        "year": "1985",
+        "journal-title": "Int. J. Engng Sci."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB24",
+        "series-title": "MM Report No. 18",
+        "author": "Gobel",
+        "year": "1990"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB25",
+        "doi-asserted-by": "crossref",
+        "first-page": "59",
+        "DOI": "10.1016/0167-6636(88)90006-3",
+        "volume": "7",
+        "author": "Giovanola",
+        "year": "1988",
+        "journal-title": "Mech. Mater."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB26",
+        "unstructured": "Unpublished results: Discussions with T. WEBB, C. RU, J. NING, H. ZBIB, L. KUBIN, H. MUHLHAUS and I. VARDOULAKIS are acknowledged here."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB27",
+        "first-page": "208",
+        "volume": "59",
+        "author": "Elliot",
+        "year": "1947"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB28",
+        "doi-asserted-by": "crossref",
+        "first-page": "55",
+        "DOI": "10.1016/S0065-2156(08)70121-2",
+        "volume": "7",
+        "author": "Barenblatt",
+        "year": "1962",
+        "journal-title": "Adv. Appl. Mech."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB29",
+        "doi-asserted-by": "crossref",
+        "first-page": "339",
+        "DOI": "10.1016/0022-5096(77)90002-3",
+        "volume": "25",
+        "author": "Eringen",
+        "year": "1977",
+        "journal-title": "J. Mech. Phys. Solids"
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB30",
+        "doi-asserted-by": "crossref",
+        "first-page": "233",
+        "DOI": "10.1016/0020-7225(72)90039-0",
+        "volume": "10",
+        "author": "Eringen",
+        "year": "1972",
+        "journal-title": "Int. J. Engng Sci."
+      },
+      {
+        "key": "10.1016/0020-7225(92)90141-3_BIB31",
+        "unstructured": "B. S. ALTAN and E. C. AIFANTIS, Preprint. Also lecture by BSA at the Int. Conf. on Mech., Phys. and Structure of Materials, August 19\u201324, B. S. ALTAN and E. C. AIFANTIS, Scripta Met. In press."
+      }
+    ],
+    "container-title": [
+      "International Journal of Engineering Science"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:0020722592901413?httpAccept=text/xml",
+        "content-type": "text/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:0020722592901413?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2019,
+          3,
+          26
+        ]
+      ],
+      "date-time": "2019-03-26T03:23:41Z",
+      "timestamp": 1553570621000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://linkinghub.elsevier.com/retrieve/pii/0020722592901413"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          1992,
+          10
+        ]
+      ]
+    },
+    "references-count": 55,
+    "journal-issue": {
+      "issue": "10",
+      "published-print": {
+        "date-parts": [
+          [
+            1992,
+            10
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "0020722592901413"
+    ],
+    "URL": "https://doi.org/10.1016/0020-7225(92)90141-3",
+    "relation": {},
+    "ISSN": [
+      "0020-7225"
+    ],
+    "issn-type": [
+      {
+        "value": "0020-7225",
+        "type": "print"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          1992,
+          10
+        ]
+      ]
+    }
+  }
+}
