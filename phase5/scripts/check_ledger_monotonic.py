@@ -73,6 +73,18 @@ def git_show(ref: str, path: str) -> str:
     return result.stdout
 
 
+def last_commit_changing_ledger() -> str:
+    """Return the hash of the last commit that changed the ledger file."""
+    result = subprocess.run(
+        ["git", "log", "-1", "--format=%H", "--", LEDGER_PATH],
+        capture_output=True,
+        text=True,
+        check=True,
+        cwd=ROOT,
+    )
+    return result.stdout.strip()
+
+
 def row_key(row: dict) -> str:
     return row["ledger_row_id"].strip()
 
@@ -105,11 +117,18 @@ def main() -> None:
     head_counts = Counter(r["class"].strip() for r in head_rows)
     head_av = head_counts.get("A", 0) + head_counts.get("V", 0)
 
-    # Parent commit ledger
+    # Parent commit ledger: compare with the parent of the last commit
+    # that changed the ledger (not HEAD~1, which may be a CI bot commit
+    # that didn't touch the ledger).
     try:
-        parent_text = git_show("HEAD~1", LEDGER_PATH)
+        last_change = last_commit_changing_ledger()
+        if not last_change:
+            print("ERROR: no commit found that changed the ledger")
+            sys.exit(1)
+        parent_ref = f"{last_change}^"
+        parent_text = git_show(parent_ref, LEDGER_PATH)
     except subprocess.CalledProcessError as exc:
-        print(f"ERROR: cannot read ledger at HEAD~1: {exc.stderr.strip()}")
+        print(f"ERROR: cannot read ledger at parent of last ledger change: {exc.stderr.strip()}")
         sys.exit(1)
 
     parent_rows = read_ledger_csv(parent_text)

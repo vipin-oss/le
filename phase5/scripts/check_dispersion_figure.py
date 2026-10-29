@@ -103,6 +103,29 @@ def main() -> int:
         classical = parse_points(polylines[0])
         gradient = parse_points(polylines[2])
 
+        # --- Frame check: all curve points inside the plot frame ---
+        # Plot frame in SVG coords: x in [72, 540], y in [54, 360]
+        # (PDF frame x in [72,540], y in [72,378]; SVG inverts y: H - pdf_y)
+        FRAME_X0, FRAME_X1 = 72.0, 540.0
+        FRAME_Y0, FRAME_Y1 = 54.0, 360.0
+        for pname, curve in (("classical", classical), ("gradient", gradient)):
+            for px_, py_ in curve:
+                if not (FRAME_X0 <= px_ <= FRAME_X1 and FRAME_Y0 <= py_ <= FRAME_Y1):
+                    errors.append(
+                        f"{pname} curve point ({px_:.1f},{py_:.1f}) outside plot frame"
+                    )
+
+        # --- Legend check: no curve point inside the legend box ---
+        # Legend box in SVG coords: x in [82, 140], y in [99, 125]
+        LEGEND_X0, LEGEND_X1 = 82.0, 140.0
+        LEGEND_Y0, LEGEND_Y1 = 99.0, 125.0
+        for pname, curve in (("classical", classical), ("gradient", gradient)):
+            for px_, py_ in curve:
+                if LEGEND_X0 <= px_ <= LEGEND_X1 and LEGEND_Y0 <= py_ <= LEGEND_Y1:
+                    errors.append(
+                        f"{pname} curve point ({px_:.1f},{py_:.1f}) inside legend box"
+                    )
+
         if y_ticks and len(pts) >= 3:
             (c0, v0), (c1, v1) = pts[0], pts[-1]
             a = (v1 - v0) / (c1 - c0)
