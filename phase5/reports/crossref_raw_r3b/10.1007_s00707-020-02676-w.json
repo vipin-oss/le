@@ -1,0 +1,89 @@
+{
+  "query_doi": "10.1007/s00707-020-02676-w",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s00707-020-02676-w",
+    "type": "journal-article",
+    "title": [
+      "Reflection of plane waves in a nonlocal micropolar thermoelastic medium under the effect of rotation"
+    ],
+    "author": [
+      {
+        "given": "Kapil Kumar",
+        "family": "Kalkal",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Devender",
+        "family": "Sheoran",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sunita",
+        "family": "Deswal",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2020,
+          7
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2020,
+          5,
+          19
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          5,
+          19
+        ]
+      ]
+    },
+    "container-title": [
+      "Acta Mechanica"
+    ],
+    "short-container-title": [
+      "Acta Mech"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "231",
+    "issue": "7",
+    "page": "2849-2866",
+    "ISSN": [
+      "0001-5970",
+      "1619-6937"
+    ]
+  }
+}

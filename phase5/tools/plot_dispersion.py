@@ -8,8 +8,6 @@ wave number k for three 1-D models treated in Section 7:
   gradient   : c/c0 = sqrt(1 + (ell k)^2)            (increases, Eq. 7.3)
 
 All curves are computed from the stated relations; none are hand-drawn.
-The figure is illustrative: it shows the distinct wave-number dependences
-of Eq. 7.4 and Eq. 7.3 for selected parameter values, not a fit to data.
 
 Usage: python3 phase5/tools/plot_dispersion.py
 Writes: phase5/master/figures/source/fig_dispersion.pdf
@@ -51,14 +49,17 @@ def tj(s):   ops.append(f"({esc(s)}) Tj")
 wl(1.0); rg(0,0,0)
 m(X0, Y0); l(X1, Y0); s()
 m(X0, Y0); l(X0, Y1); s()
+# x ticks and labels
 for i in range(1, 5):
     x = px(i)
     m(x, Y0-5); l(x, Y0+5); s()
     td(x-7, Y0-19); fnt(8); tj(str(i)); fnt(10)
-for i in range(0, 9):
-    y = YMAX * i / 8.0
-    m(X0-5, py(y)); l(X0+5, py(y)); s()
-    td(X0-30, py(y)-4); fnt(8); tj(f"{i/5:.1f}"); fnt(10)
+# y ticks and labels: positions and labels computed from the SAME values
+# so tick spacing in coordinates matches tick spacing in values.
+for i in range(0, 12):
+    yval = YMAX * i / 11.0   # 0.0, 0.2, ..., 2.2  (12 ticks)
+    m(X0-5, py(yval)); l(X0+5, py(yval)); s()
+    td(X0-30, py(yval)-4); fnt(8); tj(f"{yval:.1f}"); fnt(10)
 
 # x axis label
 td(X0 + (X1-X0)/2 - 40, Y0-32); fnt(10); tj("wave number  k  (1/ell)"); fnt(10)
@@ -82,8 +83,11 @@ curve(lambda x: 1.0, (0,0,0), 1.2)
 curve(lambda x: 1.0/math.sqrt(1.0+(1.0*x)**2), (0.6,0,0), 1.2)
 curve(lambda x: math.sqrt(1.0+(0.45*x)**2), (0,0,0.6), 1.2)
 
-# legend
-lx, ly = X1-170, Y1-44
+# legend: top-left inside plot area, below the title, away from all curves.
+# Classical curve is flat at c/c0=1 (mid-height). Non-local decreases toward
+# bottom-right. Gradient increases toward top-right. Top-left corner is clear
+# of all three curves at every x.
+lx, ly = X0 + 10, Y1 - 62
 rg(0,0,0); wl(1.0); m(lx+8, ly+7); l(lx+26, ly+7); s()
 rg(0.6,0,0); m(lx+8, ly+1); l(lx+26, ly+1); s()
 rg(0,0,0.6); m(lx+8, ly-5); l(lx+26, ly-5); s()
@@ -110,7 +114,7 @@ offsets = {}
 pos = len(parts[0])
 for num, txt in objects:
     offsets[num] = pos
-    parts.append(obj(num, txt).encode("latin-1") if False else (str(num)+" 0 obj\n"+txt+"\nendobj\n").encode("latin-1"))
+    parts.append((str(num)+" 0 obj\n"+txt+"\nendobj\n").encode("latin-1"))
     pos += len(parts[-1])
 offsets[5] = pos
 parts.append(obj5)
@@ -120,7 +124,7 @@ parts.append(f"xref\n0 {len(objects)+1}\n".encode("latin-1"))
 parts.append(b"0000000000 65535 f \n")
 for num in [1,2,3,4,5]:
     parts.append(f"{offsets[num]:010d} 00000 n \n".encode("latin-1"))
-parts.append(f"trailer\n<< /Size {len(objects)+1} /Root 1 0 R >>\nstartxref\n{xref_pos}\n%%%%EOF\n".encode("latin-1"))
+parts.append(f"trailer\n<< /Size {len(objects)+1} /Root 1 0 R >>\nstartxref\n{xref_pos}\n%%EOF\n".encode("latin-1"))
 
 pdf = b"".join(parts)
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
@@ -154,11 +158,12 @@ for i in range(1, 5):
     x = px(i)
     svg.append(f'<line x1="{x}" y1="{H-Y0-5}" x2="{x}" y2="{H-Y0+5}" stroke="black" stroke-width="1"/>')
     svg.append(f'<text x="{x-6}" y="{H-Y0+22}" font-size="10" text-anchor="middle">{i}</text>')
-for i in range(0, 9):
-    y = YMAX * i / 8.0
-    spy_y = spy(y)
+# y ticks and labels: positions and labels from the SAME values
+for i in range(0, 12):
+    yval = YMAX * i / 11.0
+    spy_y = spy(yval)
     svg.append(f'<line x1="{X0-5}" y1="{spy_y}" x2="{X0+5}" y2="{spy_y}" stroke="black" stroke-width="1"/>')
-    svg.append(f'<text x="{X0-28}" y="{spy_y+3}" font-size="10" text-anchor="end">{i/5:.1f}</text>')
+    svg.append(f'<text x="{X0-28}" y="{spy_y+3}" font-size="10" text-anchor="end">{yval:.1f}</text>')
 # axis labels
 svg.append(f'<text x="{X0+(X1-X0)/2}" y="{H-Y0+38}" font-size="11" text-anchor="middle">wave number  k  (1/ell)</text>')
 svg.append(f'<text x="{X0+8}" y="{H-Y1-20}" font-size="10">phase speed  c / c0</text>')
@@ -168,14 +173,14 @@ def points(fn):
 svg.append(f'<polyline points="{points(c_classical)}" fill="none" stroke="black" stroke-width="1.2"/>')
 svg.append(f'<polyline points="{points(c_nonlocal)}" fill="none" stroke="rgb(153,0,0)" stroke-width="1.2"/>')
 svg.append(f'<polyline points="{points(c_gradient)}" fill="none" stroke="rgb(0,0,153)" stroke-width="1.2"/>')
-# legend
-lx, ly = X1-170, Y1-44
-svg.append(f'<line x1="{lx+8}" y1="{ly+7}" x2="{lx+26}" y2="{ly+7}" stroke="black" stroke-width="1"/>')
-svg.append(f'<line x1="{lx+8}" y1="{ly+1}" x2="{lx+26}" y2="{ly+1}" stroke="rgb(153,0,0)" stroke-width="1"/>')
-svg.append(f'<line x1="{lx+8}" y1="{ly-5}" x2="{lx+26}" y2="{ly-5}" stroke="rgb(0,0,153)" stroke-width="1"/>')
-svg.append(f'<text x="{lx+32}" y="{ly+10}" font-size="10">classical  c/c0 = 1</text>')
-svg.append(f'<text x="{lx+32}" y="{ly+2}" font-size="10">non-local  decreases to 0</text>')
-svg.append(f'<text x="{lx+32}" y="{ly-6}" font-size="10">gradient   grows with k</text>')
+# legend: top-left inside plot area, matching PDF position
+lx, ly = X0 + 10, Y1 - 62
+svg.append(f'<line x1="{lx+8}" y1="{H-ly-7}" x2="{lx+26}" y2="{H-ly-7}" stroke="black" stroke-width="1"/>')
+svg.append(f'<line x1="{lx+8}" y1="{H-ly-1}" x2="{lx+26}" y2="{H-ly-1}" stroke="rgb(153,0,0)" stroke-width="1"/>')
+svg.append(f'<line x1="{lx+8}" y1="{H-ly+5}" x2="{lx+26}" y2="{H-ly+5}" stroke="rgb(0,0,153)" stroke-width="1"/>')
+svg.append(f'<text x="{lx+32}" y="{H-ly-4}" font-size="10">classical  c/c0 = 1</text>')
+svg.append(f'<text x="{lx+32}" y="{H-ly+4}" font-size="10">non-local  decreases to 0</text>')
+svg.append(f'<text x="{lx+32}" y="{H-ly+12}" font-size="10">gradient   grows with k</text>')
 # title
 svg.append(f'<text x="{W/2}" y="{H-25}" font-size="12" text-anchor="middle">Dispersion: phase speed vs wave number</text>')
 svg.append('</svg>')

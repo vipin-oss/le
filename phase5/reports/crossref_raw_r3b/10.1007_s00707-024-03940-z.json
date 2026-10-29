@@ -1,0 +1,103 @@
+{
+  "query_doi": "10.1007/s00707-024-03940-z",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s00707-024-03940-z",
+    "type": "journal-article",
+    "title": [
+      "The dispersion and reflection characteristics of coupled waves in the piezomagnetic solid with flexomagnetic microstructure effect"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-9420-2222",
+        "authenticated-orcid": false,
+        "given": "Fengyu",
+        "family": "Jiao",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Zhongxian",
+        "family": "Liu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jinghong",
+        "family": "Liu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Mingyang",
+        "family": "Pan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2024,
+          7
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2024,
+          4,
+          17
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          4,
+          17
+        ]
+      ]
+    },
+    "container-title": [
+      "Acta Mechanica"
+    ],
+    "short-container-title": [
+      "Acta Mech"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "235",
+    "issue": "7",
+    "page": "4101-4117",
+    "ISSN": [
+      "0001-5970",
+      "1619-6937"
+    ]
+  }
+}

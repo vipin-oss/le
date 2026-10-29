@@ -1,0 +1,64 @@
+{
+  "query_doi": "10.1080/014957302753384423",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/014957302753384423",
+    "type": "journal-article",
+    "title": [
+      "EXISTENCE IN THERMOELASTICITY WITHOUT ENERGY DISSIPATION"
+    ],
+    "author": [
+      {
+        "given": "Ramón",
+        "family": "Quintanilla",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2002,
+          2
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2011,
+          1,
+          19
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2002,
+          2
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "25",
+    "issue": "2",
+    "page": "195-202",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}

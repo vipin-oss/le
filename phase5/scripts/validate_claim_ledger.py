@@ -20,6 +20,7 @@ EXPECTED = {
     "needed_source",
     "resolved_by",
     "evidence_mode",
+    "notes",
 }
 
 try:

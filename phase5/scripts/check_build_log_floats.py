@@ -5,7 +5,9 @@ Fails when the build log contains any of:
   * "Float too large for page"
   * "Float(s) lost"
   * "Overfull \\hbox" or "Overfull \\vbox" with size > 1 pt
-  * "Underfull \\vbox" too high
+  * Real TeX underfull vbox/hbox messages:
+      "Underfull \\vbox (badness N) has occurred while \\output is active"
+      "Underfull \\hbox (badness N) in paragraph"
 
 Usage:
     python3 phase5/scripts/check_build_log_floats.py BUILD_LOG
@@ -36,8 +38,6 @@ def main() -> int:
 
     # Overfull hbox/vbox > 1 pt
     # TeX log line: "Overfull \hbox (12.3pt too wide)"
-    # Use character class [\\] to match a literal backslash without
-    # raw-string escaping confusion.
     overfull_re = re.compile(
         r"Overfull [\\](hbox|vbox) [(](?P<size>[-+]?[0-9.]+)pt too (wide|high)"
     )
@@ -47,13 +47,28 @@ def main() -> int:
             kind = match.group(1)
             errors.append(f"Overfull \\{kind} {size:.1f}pt too {match.group(3)}")
 
-    # Underfull vbox too high
-    underfull_re = re.compile(
-        r"Underfull [\\](vbox) [(](?P<size>[-+]?[0-9.]+)pt too high[)]"
+    # Real TeX underfull vbox message:
+    # "Underfull \vbox (badness 1000) has occurred while \output is active"
+    underfull_vbox_re = re.compile(
+        r"Underfull [\\]vbox [(]badness (?P<badness>[0-9]+)[)] "
+        r"has occurred while [\\]output is active"
     )
-    for match in underfull_re.finditer(text):
-        size = float(match.group("size"))
-        errors.append(f"Underfull \\vbox {size:.1f}pt too high")
+    for match in underfull_vbox_re.finditer(text):
+        badness = int(match.group("badness"))
+        errors.append(
+            f"Underfull \\vbox (badness {badness}) has occurred while \\output is active"
+        )
+
+    # Real TeX underfull hbox message:
+    # "Underfull \hbox (badness 1000) in paragraph at lines 5--10"
+    underfull_hbox_re = re.compile(
+        r"Underfull [\\]hbox [(]badness (?P<badness>[0-9]+)[)] in paragraph"
+    )
+    for match in underfull_hbox_re.finditer(text):
+        badness = int(match.group("badness"))
+        errors.append(
+            f"Underfull \\hbox (badness {badness}) in paragraph"
+        )
 
     if errors:
         print("ERROR: build-log layout defects detected:")

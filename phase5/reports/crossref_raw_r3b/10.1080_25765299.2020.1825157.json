@@ -1,0 +1,85 @@
+{
+  "query_doi": "10.1080/25765299.2020.1825157",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/25765299.2020.1825157",
+    "type": "journal-article",
+    "title": [
+      "Effects of nonlocality and two temperature in a nonlocal thermoelastic solid due to ramp type heat source"
+    ],
+    "author": [
+      {
+        "given": "Parveen",
+        "family": "Lata",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Basic and applied Sciences, Punjabi University, Patiala, India"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8665-3114",
+        "authenticated-orcid": false,
+        "given": "Sukhveer",
+        "family": "Singh",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Punjabi University APS Neighbourhood Campus, Dehla seehan, Sangrur, India"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2020,
+          1
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2020,
+          9,
+          29
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          1
+        ]
+      ]
+    },
+    "container-title": [
+      "Arab Journal of Basic and Applied Sciences"
+    ],
+    "short-container-title": [
+      "Arab Journal of Basic and Applied Sciences"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "27",
+    "issue": "1",
+    "page": "358-364",
+    "ISSN": [
+      "2576-5299"
+    ]
+  }
+}

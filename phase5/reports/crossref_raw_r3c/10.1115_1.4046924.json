@@ -1,0 +1,116 @@
+{
+  "query_doi": "10.1115/1.4046924",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1115/1.4046924",
+    "type": "journal-article",
+    "title": [
+      "Reflection of Thermoelastic Waves From the Insulated Surface of a Solid Half-Space With Time-Delay"
+    ],
+    "author": [
+      {
+        "given": "Nihar",
+        "family": "Sarkar",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, City College, Kolkata 700009, India"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Soumen",
+        "family": "De",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Applied Mathematics, University of Calcutta, Kolkata 700 009, India"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Narayan",
+        "family": "Das",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Government General Degree College, Dantan-II, Paschim Medinipur West Bengal 721445, India"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Nantu",
+        "family": "Sarkar",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Applied Mathematics, University of Calcutta, Kolkata 700009, India"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2020,
+          9,
+          1
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2020,
+          6,
+          12
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          6,
+          12
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Heat Transfer"
+    ],
+    "short-container-title": [],
+    "publisher": "ASME International",
+    "volume": "142",
+    "issue": "9",
+    "article-number": "092101",
+    "ISSN": [
+      "0022-1481",
+      "1528-8943"
+    ]
+  }
+}

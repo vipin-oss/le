@@ -1,0 +1,64 @@
+{
+  "query_doi": "10.1080/01495738208942145",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/01495738208942145",
+    "type": "journal-article",
+    "title": [
+      "EXISTENCE OF A GENERALIZED SOLUTION IN THERMOELASTICITY WITH ONE RELAXATION TIME"
+    ],
+    "author": [
+      {
+        "given": "Zbigniew",
+        "family": "Bem",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1982,
+          4
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2007,
+          3,
+          27
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1982,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "5",
+    "issue": "2",
+    "page": "195-206",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "query_doi": "10.1080/01495739.2020.1838247",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/01495739.2020.1838247",
+    "type": "journal-article",
+    "title": [
+      "A novel theory of generalized thermoelasticity based on thermomass motion and two-temperature heat conduction"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-4919-2966",
+        "authenticated-orcid": false,
+        "given": "Hamdy M.",
+        "family": "Youssef",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Faculty of Education, Mathematics Department, Alexandria University, Alexandria, Egypt;"
+          },
+          {
+            "name": "Mechanical Engineering Department, College of Engineering and Islamic Architecture, Umm Al-Qura University, Makkah, Saudi Arabia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          2,
+          1
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2020,
+          10,
+          29
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          10,
+          29
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "44",
+    "issue": "2",
+    "page": "133-148",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}

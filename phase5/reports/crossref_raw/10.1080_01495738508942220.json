@@ -1,0 +1,64 @@
+{
+  "query_doi": "10.1080/01495738508942220",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/01495738508942220",
+    "type": "journal-article",
+    "title": [
+      "A STRONG DISCONTINUITY WAVE IN THERMOELASTICITY WITH RELAXATION TIMES"
+    ],
+    "author": [
+      {
+        "given": "Józef",
+        "family": "Ignaczak",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1985,
+          1
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2007,
+          3,
+          29
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1985,
+          1
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "8",
+    "issue": "1",
+    "page": "25-40",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}

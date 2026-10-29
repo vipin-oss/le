@@ -1,0 +1,102 @@
+{
+  "query_doi": "10.1108/hff-11-2022-0654",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1108/hff-11-2022-0654",
+    "type": "journal-article",
+    "title": [
+      "Energy analysis at the interface of piezo/thermoelastic half spaces"
+    ],
+    "author": [
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajneesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "M.S.",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2023,
+          5,
+          4
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2023,
+          2,
+          9
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          2,
+          9
+        ]
+      ]
+    },
+    "container-title": [
+      "International Journal of Numerical Methods for Heat &amp; Fluid Flow"
+    ],
+    "short-container-title": [
+      "HFF"
+    ],
+    "publisher": "Emerald",
+    "volume": "33",
+    "issue": "6",
+    "page": "2250-2277",
+    "ISSN": [
+      "0961-5539",
+      "0961-5539"
+    ]
+  }
+}

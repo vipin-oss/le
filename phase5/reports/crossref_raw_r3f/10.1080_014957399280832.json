@@ -1,0 +1,57 @@
+{
+  "map_id": "R3F-HETNARSKI-1999",
+  "mode": "BIBLIOGRAPHIC-SEARCH",
+  "requested_doi": "",
+  "query": "Hetnarski Ignaczak Journal of Thermal Stresses 1999 22 451 476",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/014957399280832",
+    "type": "journal-article",
+    "title": [
+      "GENERALIZED THERMOELASTICITY"
+    ],
+    "author": [
+      {
+        "family": "Richard B. Hetnarski, Jozef Ignacza",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1999,
+          6
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1999,
+          6
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "22",
+    "issue": "4-5",
+    "page": "451-476",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}

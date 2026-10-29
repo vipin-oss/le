@@ -1,0 +1,66 @@
+{
+  "map_id": "R3F-STROH-1962",
+  "mode": "BIBLIOGRAPHIC-SEARCH",
+  "requested_doi": "",
+  "query": "Stroh Journal of Mathematical Physics 1962 41 77 103",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1002/sapm196241177",
+    "type": "journal-article",
+    "title": [
+      "Steady State Problems in Anisotropic Elasticity"
+    ],
+    "author": [
+      {
+        "given": "A. N.",
+        "family": "Stroh",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1962,
+          4
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          3,
+          4
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1962,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Mathematics and Physics"
+    ],
+    "short-container-title": [
+      "Journal of Mathematics and Physics"
+    ],
+    "publisher": "Wiley",
+    "volume": "41",
+    "issue": "1-4",
+    "page": "77-103",
+    "ISSN": [
+      "0097-1421"
+    ]
+  }
+}

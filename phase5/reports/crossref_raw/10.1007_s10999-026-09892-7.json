@@ -1,0 +1,125 @@
+{
+  "query_doi": "10.1007/s10999-026-09892-7",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s10999-026-09892-7",
+    "type": "journal-article",
+    "title": [
+      "Klein–Gordon nonlocal dynamics of porous piezo-thermoelastic medium with surface irregularity under fractional-order modified LS model"
+    ],
+    "author": [
+      {
+        "given": "Soumik",
+        "family": "Das",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rachaita",
+        "family": "Dutta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Abhinav",
+        "family": "Singhal",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Wei",
+        "family": "Peng",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Abhik",
+        "family": "Sur",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2026,
+          6
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2026,
+          3,
+          18
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          3,
+          18
+        ]
+      ]
+    },
+    "container-title": [
+      "International Journal of Mechanics and Materials in Design"
+    ],
+    "short-container-title": [
+      "Int J Mech Mater Des"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "22",
+    "issue": "2",
+    "article-number": "77",
+    "ISSN": [
+      "1569-1713",
+      "1573-8841"
+    ]
+  }
+}

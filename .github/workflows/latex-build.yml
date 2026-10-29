@@ -485,6 +485,9 @@ jobs:
       - name: PDF geometry check (text blocks within page rectangle)
         run: python3 phase5/scripts/check_pdf_geometry.py phase5/master/build/main.pdf
 
+      - name: Dispersion figure self-check (SVG tick mapping, curve values)
+        run: python3 phase5/scripts/check_dispersion_figure.py phase5/master/figures/source/fig_dispersion.svg
+
       - name: Enforce forbidden manuscript-tag scan
         if: always()
         run: |

@@ -1,0 +1,116 @@
+{
+  "query_doi": "10.1080/713855997",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/713855997",
+    "type": "journal-article",
+    "title": [
+      "THE RELAXATION EFFECTS OF THE VOLUME PROPERTIES OF VISCOELASTIC MATERIAL IN GENERALIZED THERMOELASTICITY WITH THERMAL RELAXATION"
+    ],
+    "author": [
+      {
+        "given": "Magdy A.",
+        "family": "Ezzat",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "a    Department of Mathematics, Faculty of Education, Alexandria University, Alexandria, Egypt"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ahmed S.",
+        "family": "El-Karamany",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "a    Department of Mathematics, Faculty of Education, Alexandria University, Alexandria, Egypt"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Angail A.",
+        "family": "Samaan",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "a    Department of Mathematics, Faculty of Education, Alexandria University, Alexandria, Egypt"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "M.",
+        "family": "Zakaria",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "a    Department of Mathematics, Faculty of Education, Alexandria University, Alexandria, Egypt"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2003,
+          7
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2011,
+          2,
+          2
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2003,
+          7
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "26",
+    "issue": "7",
+    "page": "671-690",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}
