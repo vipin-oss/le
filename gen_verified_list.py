@@ -90,7 +90,7 @@ for r in verified:
 
     # Build readable label: replace UNNUMBERED-DISPLAY-n with description
     if label.startswith('UNNUMBERED-DISPLAY'):
-        display_label = f"the unnumbered display in Section {section}"
+        display_label = f"the display without a number in Section {section}"
     else:
         display_label = f"{BS}eqref{{{label}}} (Section~{section})"
 

@@ -9,8 +9,9 @@
 
 \documentclass[11pt,oneside]{article}
 
-% Give TeX modest emergency stretch for generated prose without globally loosening paragraphs.
-\setlength{\emergencystretch}{3em}
+% Give TeX emergency stretch for generated prose to avoid severe underfull hboxes
+% in narrow table columns and long unbreakable math expressions.
+\setlength{\emergencystretch}{4em}
 
 %======================================================================
 % Packages
