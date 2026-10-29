@@ -18,7 +18,7 @@ SEC17 = (ROOT / "phase5/master/sections/sec17_conclusions.tex").read_text(encodi
 NOTATION = (ROOT / "phase5/master/frontmatter/notation.tex").read_text(encoding="utf-8")
 APPENDIX = (ROOT / "phase5/master/appendices/energy_flux_derivations.tex").read_text(encoding="utf-8")
 EQ_REGISTER = (ROOT / "phase5/master/appendices/appA_equation_register.tex").read_text(encoding="utf-8")
-SVG = (ROOT / "phase5/figures/source/fig11-nonlocality.svg").read_text(encoding="utf-8")
+SVG = (ROOT / "phase5/master/figures/source/fig11-nonlocality.svg").read_text(encoding="utf-8")
 T2 = (ROOT / "phase5/master/tables/source/T2_generalized_thermoelastic.tex").read_text(encoding="utf-8")
 
 # The MDD finite-history window and its kernel use distinct labels from angular
