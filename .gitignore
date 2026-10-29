@@ -1,0 +1,8 @@
+# Do not version publisher source PDFs or extracted full text.
+phase4/literature/incoming/*.pdf
+phase4/literature/extraction/*.pdf
+phase4/literature/extraction/*.txt
+
+# Local tool dependencies and generated TeX build products
+**/node_modules/
+phase5/master/build/
