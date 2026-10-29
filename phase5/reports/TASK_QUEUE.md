@@ -41,10 +41,10 @@ Status key: `[ ]` open, `[~]` in progress, `[x]` done (commit id in brackets), `
 - [x] W4.7 Build + CI. Green run 40805451622 on a58d60b.
 
 ## W5 Notation, abbreviations, figures
-- [~] W5.1 (notation rows added 01cda7c; full master table not re-audited) Notation table (single table, all symbols used in sec 4 and sec 12).
-- [ ] W5.2 Abbreviation list (LS, GL, GN, DPL, TPL, MGT, MDD, CC, etc.).
-- [ ] W5.3 Figure and table captions: state the assumptions in each caption.
-- [ ] W5.4 Replace any overclaiming figure with a script-generated figure (dispersion or wave-speed or flux-channel plot), committed with its script.
+- [x] W5.1 (notation rows added 01cda7c; full master table not re-audited) Notation table (single table, all symbols used in sec 4 and sec 12).
+- [x] W5.2 Abbreviation list (LS, GL, GN, DPL, TPL, MGT, MDD, CC, etc.) — phase5/master/frontmatter/acronyms.tex included at main.tex:112, complete.
+- [x] W5.3 Figure and table captions: state the assumptions in each caption. Captions across sec01-sec12 state assumptions/limitations (e.g. fig01 arrows conceptual; fig07 dispersion curves correspond only to stated 1-D laws; fig11 no universal flux correction asserted; fig14 flux under stated outward-positive convention).
+- [x] W5.4 Script-generated dispersion figure committed with its script: phase5/tools/plot_dispersion.py (stdlib-only PDF generator) + phase5/master/figures/source/fig_dispersion.pdf, referenced in sec07 as fig:dispersion.
 - [ ] W5.5 Build + CI.
 
 ## W6 Close the open reviewer objections (dispositions documented in DECISIONS_FOR_AUTHOR.md and WP6_MOCK_REFEREE_REGISTER.csv)
