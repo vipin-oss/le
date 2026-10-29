@@ -10,4 +10,3 @@ node "$ROOT/tools/render_svg_pdf.js" "$ROOT/master/figures/source" "$ROOT/master
 # Mirror assets to the phase-level inventory for static checks and archives.
 mkdir -p "$ROOT/figures/source"
 cp "$ROOT"/master/figures/source/*.pdf "$ROOT/figures/source/"
-cp "$ROOT"/figures/source/*.svg "$ROOT/master/figures/source/"
