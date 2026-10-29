@@ -390,24 +390,33 @@ jobs:
       - name: Geometry check (figure width <= textwidth)
         run: |
           set -euo pipefail
-          bad=""
-          for f in $(git ls-files 'phase5/master/figures/source/*.svg'); do
-            if grep -qP 'width="[^"]*"' "$f"; then
-              w=$(grep -oP 'width="\K[^"]+' "$f" | head -1)
-              if [[ "$w" =~ ^([0-9.]+)pt$ ]]; then
-                wpt=${BASH_REMATCH[1]}
-                if (( $(echo "$wpt > 468" | bc -l 2>/dev/null || echo 0) )); then
-                  bad="$bad $f ($wpt pt > 468 pt textwidth)"
-                fi
-              fi
-            fi
-          done
-          if [[ -n "$bad" ]]; then
-            echo "ERROR: FIGURE WIDTH EXCEEDS TEXTWIDTH:"
-            echo "$bad"
-            exit 1
-          fi
-          echo "PASS: no figure width exceeds textwidth"
+          python3 - <<'PYEOF'
+          import re, subprocess
+          from pathlib import Path
+          bad = []
+          for f in Path("phase5/master/sections").glob("*.tex"):
+              text = f.read_text(errors="replace")
+              for m in re.finditer(r"includegraphics\[([^\]]*)\}", text):
+                  opts = m.group(1)
+                  wm = re.search(r"width\s*=\s*\{([^}]+)\}", opts)
+                  if not wm:
+                      continue
+                  w = wm.group(1)
+                  if m2 := re.match(r"^([0-9.]+)pt$", w):
+                      val = float(m2.group(1))
+                      if val > 468:
+                          bad.append(f"{f}: {w} > 468pt")
+                  elif m2 := re.match(r"^([0-9.]+)cm$", w):
+                      val = float(m2.group(1)) * 28.45
+                      if val > 468:
+                          bad.append(f"{f}: {w} ({val:.0f}pt) > 468pt")
+          if bad:
+              print("ERROR: FIGURE WIDTH EXCEEDS TEXTWIDTH:")
+              for b in bad:
+                  print(f"  {b}")
+              raise SystemExit(1)
+          print("PASS: no figure width exceeds textwidth")
+          PYEOF
 
       - name: Extended forbidden-token scan (PDF text)
         run: |
