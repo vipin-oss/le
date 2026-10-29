@@ -109,9 +109,9 @@ for phrase, row_ids in section_mappings.items():
     assert all(row_id in ledger for row_id in row_ids), f"{phrase}: missing mapped evidence row"
 
 benchmark_mappings = {
-    "Script-verified identity": ("OCL-480",),
-    "Script-verified interface check": ("OCL-466", "OCL-467", "OCL-468"),
-    "Script-verified algebra": ("OCL-470", "OCL-471", "OCL-472", "OCL-473"),
+    "Symbolically verified identity": ("OCL-480",),
+    "Symbolically verified interface check": ("OCL-466", "OCL-467", "OCL-468"),
+    "Symbolically verified algebra": ("OCL-470", "OCL-471", "OCL-472", "OCL-473"),
     "Primary-source checkpoint": ("OCL-493", "OCL-494", "OCL-495", "OCL-496"),
 }
 for phrase, row_ids in benchmark_mappings.items():
@@ -124,7 +124,7 @@ for row_id in script_rows:
     assert script and (ROOT.parent / script).is_file(), f"{row_id}: missing verifier {script}"
 
 assert r"\subsection{Benchmark evidence: derivations versus source checkpoints}" in guide
-assert "Primary-source checkpoint" in guide and "Script-verified identity" in guide
+assert "Primary-source checkpoint" in guide and "Symbolically verified identity" in guide
 assert "BM-1--BM-5" in guide and "BM-1: Classical elastic interface" in APP_C.read_text(encoding="utf-8")
 assert "not a general interface theorem" in guide
 assert not re.search(r"drive\.google\.com|docs\.google\.com|open\?id=|drive/(?:file|folders)/[A-Za-z0-9_-]{25,}", guide, re.I)
