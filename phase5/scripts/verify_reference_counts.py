@@ -17,8 +17,8 @@ MASTER = ROOT / "phase5" / "master"
 MAIN = MASTER / "main.tex"
 BIB = MASTER / "references_local.bib"
 
-EXPECTED_BIB = 147
-EXPECTED_CITED = 110
+EXPECTED_BIB = 148
+EXPECTED_CITED = 111
 EXPECTED_UNCITED = 37
 
 
