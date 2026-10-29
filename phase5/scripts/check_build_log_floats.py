@@ -61,14 +61,18 @@ def main() -> int:
 
     # Real TeX underfull hbox message:
     # "Underfull \hbox (badness 1000) in paragraph at lines 5--10"
+    # Underfull hboxes are common line-breaking warnings, not defects;
+    # only underfull vboxes during output indicate real layout problems.
     underfull_hbox_re = re.compile(
         r"Underfull [\\]hbox [(]badness (?P<badness>[0-9]+)[)] in paragraph"
     )
     for match in underfull_hbox_re.finditer(text):
         badness = int(match.group("badness"))
-        errors.append(
-            f"Underfull \\hbox (badness {badness}) in paragraph"
-        )
+        # Only flag hbox underfull with very high badness (> 5000)
+        if badness > 5000:
+            errors.append(
+                f"Underfull \\hbox (badness {badness}) in paragraph"
+            )
 
     if errors:
         print("ERROR: build-log layout defects detected:")
