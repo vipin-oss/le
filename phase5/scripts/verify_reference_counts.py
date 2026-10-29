@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
-"""Verify reference collection counts: total bib entries, cited keys, uncited keys.
+"""Verify reference collection counts against Section 14 taxonomy text.
 
-Expected numbers are computed from references_local.bib and the .tex cites,
-not hardcoded. The gate checks the internal invariant: uncited = bib - cited.
+Counts bib entries from references_local.bib, collects cited keys from the .tex
+files transitively included by main.tex, parses the three numbers printed in
+sec14_taxonomy.tex, and fails when they disagree. Also fails when a cited key
+is missing from the bibliography.
+
+Usage:
+    python3 phase5/scripts/verify_reference_counts.py
 """
 from __future__ import annotations
 
@@ -14,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[2]
 MASTER = ROOT / "phase5" / "master"
 MAIN = MASTER / "main.tex"
 BIB = MASTER / "references_local.bib"
+SEC14 = MASTER / "sections/sec14_taxonomy.tex"
 
 
 def uncomment(text: str) -> str:
@@ -75,27 +81,60 @@ def count_bib_entries(path: Path) -> int:
     return sum(1 for line in text.splitlines() if line.strip().startswith("@"))
 
 
+def parse_sec14_numbers(path: Path) -> tuple[int, int, int]:
+    """Parse the three counts printed in sec14_taxonomy.tex.
+
+    Expected sentence: "Of the N bibliography entries, M keys are cited ... and K are not."
+    """
+    text = path.read_text(encoding="utf-8")
+    m = re.search(
+        r"Of the (?P<bib>\d+) bibliography entries?,? (?P<cited>\d+) keys are cited[^.]*? and (?P<uncited>\d+) are not\.",
+        text,
+    )
+    if not m:
+        raise AssertionError("Could not parse reference counts from sec14_taxonomy.tex")
+    return int(m.group("bib")), int(m.group("cited")), int(m.group("uncited"))
+
+
+def bib_keys(path: Path) -> set[str]:
+    text = path.read_text(encoding="utf-8-sig")
+    return {m.group(1) for m in re.finditer(r"@\w+\{([^,]+),", text)}
+
+
 def main() -> int:
     files = active_tex_files(MAIN)
     bib_count = count_bib_entries(BIB)
     cited = collect_cited_keys(files)
     cited_count = len(cited)
-    uncited = bib_count - cited_count
+    uncited_computed = bib_count - cited_count
+
+    # Parse the numbers printed in sec14
+    sec14_bib, sec14_cited, sec14_uncited = parse_sec14_numbers(SEC14)
+
+    # Check cited keys exist in bib
+    bibkey_set = bib_keys(BIB)
+    missing_cited = sorted(cited - bibkey_set)
 
     print(f"Active TeX files: {len(files)}")
-    print(f"Bib entries: {bib_count} (computed from references_local.bib)")
-    print(f"Cited keys:  {cited_count} (computed from .tex cites)")
-    print(f"Uncited keys: {uncited} (= bib - cited)")
+    print(f"Bib entries: {bib_count} (from references_local.bib)")
+    print(f"Cited keys:  {cited_count} (from .tex cites)")
+    print(f"Uncited:     {uncited_computed} (= bib - cited)")
+    print(f"sec14 text:  bib={sec14_bib} cited={sec14_cited} uncited={sec14_uncited}")
 
-    errors = []
-    # Internal invariant: uncited must equal bib - cited
-    if uncited != bib_count - cited_count:
-        errors.append(f"uncited keys {uncited} != bib {bib_count} - cited {cited_count}")
+    errors: list[str] = []
+    if bib_count != sec14_bib:
+        errors.append(f"bib entries {bib_count} != sec14 {sec14_bib}")
+    if cited_count != sec14_cited:
+        errors.append(f"cited keys {cited_count} != sec14 {sec14_cited}")
+    if uncited_computed != sec14_uncited:
+        errors.append(f"uncited {uncited_computed} != sec14 {sec14_uncited}")
+    if missing_cited:
+        errors.append(f"cited keys missing from bib: {missing_cited}")
 
     if errors:
         print("ERROR:", "; ".join(errors))
         return 1
-    print("Reference counts verified (internal consistency).")
+    print("Reference counts verified against sec14_taxonomy.tex.")
     return 0
 
 

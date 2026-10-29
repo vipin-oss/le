@@ -14,17 +14,24 @@ from pathlib import Path
 
 PHASE5 = Path(__file__).resolve().parents[1]
 LEDGER = PHASE5 / "reports/OPEN_CLAIMS_LEDGER.csv"
-REL = Path("master/figures/source/fig12-solution-workflow.svg")
-MIRRORS = (
-    PHASE5 / "figures/source/fig12-solution-workflow.svg",
-    PHASE5 / REL,
-    PHASE5 / "master/figures/rendered/fig12-solution-workflow.svg",
-)
+MASTER_SVG = PHASE5 / "master/figures/source/fig12-solution-workflow.svg"
+MIRROR_SVG = PHASE5 / "figures/source/fig12-solution-workflow.svg"
 SVG_NS = "http://www.w3.org/2000/svg"
 TAG = lambda name: f"{{{SVG_NS}}}{name}"
 
-contents = [path.read_bytes() for path in MIRRORS]
-assert all(content == contents[0] for content in contents[1:]), "F12 SVG mirrors differ"
+# The mirror at figures/source must exist and match the master source.
+# build_figures.sh only mirrors PDFs from master to figures/source, so the SVG
+# mirror is maintained separately; this check ensures it is present and identical.
+if not MIRROR_SVG.is_file():
+    raise SystemExit(f"ERROR: SVG mirror missing at {MIRROR_SVG}; build_figures.sh must maintain it")
+if not MASTER_SVG.is_file():
+    raise SystemExit(f"ERROR: master SVG source missing at {MASTER_SVG}")
+mirror_bytes = MIRROR_SVG.read_bytes()
+master_bytes = MASTER_SVG.read_bytes()
+if mirror_bytes != master_bytes:
+    raise SystemExit("ERROR: F12 SVG mirror differs from master source")
+
+contents = [master_bytes]
 root = ET.fromstring(contents[0])
 assert root.attrib.get("viewBox") == "0 0 1100 700"
 
@@ -116,7 +123,7 @@ assert figure_row["class"] == "V"
 assert figure_row["resolved_by"] == "phase5/verification/verify_fig12_workflow.py"
 assert "geometry" in figure_row["evidence_mode"].lower()
 
-print("PASS: all three F12 SVG mirrors are identical and contain ten scoped workflow steps")
+print("PASS: F12 SVG mirror matches master source and contains ten scoped workflow steps")
 print("PASS: row-wrap, energy-ratio, validation, and feedback connectors avoid step-box interiors")
 print("PASS: universal energy-ratio closure and generic flux equation are absent")
 print("Scope: layout/label consistency only; no scientific or source/licence claim is validated")

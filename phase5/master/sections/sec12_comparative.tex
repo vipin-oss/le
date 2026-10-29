@@ -376,15 +376,19 @@ convergence, stability, or source-transcription results beyond the stated scope.
 
 Table~\ref{tab:status_by_family} summarizes, for each family, what the reviewed sources or the displayed checks establish, what is disputed or depends on the model, and what remains open. ``Established'' means a result stated in a cited source at the stated equation or page, or a symbolic check of a displayed equation; it does not mean a general theorem for the family. ``Model-dependent'' means the status changes with the kernel, coefficient convention, boundary data, or lag ordering.
 
-\begin{table}[htbp]
-\centering
-\small
-\caption{Status by family. Entries are restricted to the displayed equations, the cited sources, and the symbolic checks reported in this review.}
-\label{tab:status_by_family}
-\begin{tabularx}{\textwidth}{@{}p{2.6cm}X X X@{}}
+\begin{longtable}{@{}p{2.6cm}p{3.9cm}p{3.9cm}p{3.9cm}@{}}
+\caption{Status by family. Entries are restricted to the displayed equations, the cited sources, and the symbolic checks reported in this review.}\\
+\label{tab:status_by_family}\\
 \toprule
 \textbf{Family} & \textbf{Established} & \textbf{Disputed or model-dependent} & \textbf{Open} \\
 \midrule
+\endfirsthead
+\toprule
+\textbf{Family} & \textbf{Established} & \textbf{Disputed or model-dependent} & \textbf{Open} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
 Classical Fourier (local Cauchy scaffold) & Energy identity and the positive-temperature entropy term hold for the stated symmetric-stress local balances (symbolic check). & Higher-gradient, micropolar, and nonlocal boundary-power terms lie outside this scaffold. & Free energy, flux, boundary power, and dissipation of each selected model. \\
 Lord--Shulman & The 1967 source gives a linear heat-flux relation with one relaxation time and its isotropic reduction. & Later anisotropic, higher-order, and modified variants are not the same template; no family-wide admissible range. & Reconcile the source coefficients with the displayed candidate; admissible relaxation conditions for each selected model. \\
 Green--Lindsay & The 1972 source gives homogeneous linear equations under small-field assumptions and a uniqueness result under added conditions. & These conditions do not give a universal ordering of relaxation times or cover later variants. & Reconcile any proposed relaxation-time inequality with the source coefficients before use. \\
@@ -399,9 +403,7 @@ Fractional scalar & The source-specific fractional Cattaneo law uses a Caputo de
 Spatially nonlocal & Specific papers give operator placements; the displayed Helmholtz and one-dimensional dispersion forms recover the local forms at zero nonlocal length. & Operator placement and kernel-specific correspondences are model-specific; no universal local-limit theorem. & Energy flux and interface data for the selected kernel and boundary treatment. \\
 Positive-gradient & The displayed one-dimensional positive-gradient dispersion algebra is checked. & A qualitative dispersion signature is not a universal law. & Source model, higher-gradient boundary conditions, and energy flux. \\
 Coupled piezothermoelastic & Mindlin's linear thermopiezoelectric balances and constitutive relations, on the printed pages checked. & Source-specific coupled systems are not a shared closure; one dual-porous energy-ratio observation is limited to its own study. & Interface conditions, complete flux channels, and free energy. \\
-\bottomrule
-\end{tabularx}
-\end{table}
+\end{longtable}
 
 Two attribution points follow from the checks. The MGT equation with memory in Section~\ref{sec:thermoelastic} is attributed to the three-author paper of Dell'Oro, Lasiecka, and Pata; the two-author Dell'Oro--Pata note is not cited in the body. The two-temperature example in Section~\ref{sec:thermoelastic} is a bibliographic reference only: no equation-level claim depends on it.
 

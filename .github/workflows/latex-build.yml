@@ -467,6 +467,9 @@ jobs:
           finished=$(date +%s)
           echo "build_seconds=$((finished-started))" >> "$GITHUB_OUTPUT"
 
+      - name: Build-log float/layout defect check
+        run: python3 phase5/scripts/check_build_log_floats.py phase5/master/build/main.log
+
       - name: Render PDF text and contact sheets
         if: always()
         run: |
@@ -477,6 +480,9 @@ jobs:
           fi
           pdftotext -layout "$pdf" phase5/master/build/main.txt
           python phase5/scripts/make_pdf_thumbnails.py "$pdf" phase5/master/build/contact-sheets --dpi 100 --per-sheet 40 --cols 5
+
+      - name: PDF geometry check (text blocks within page rectangle)
+        run: python3 phase5/scripts/check_pdf_geometry.py phase5/master/build/main.pdf
 
       - name: Enforce forbidden manuscript-tag scan
         if: always()
@@ -537,6 +543,17 @@ jobs:
           if strict_hits or privacy_hits or internal_artifact_hits or internal_path_hits:
               raise SystemExit(1)
           PY
+
+      - name: Extended forbidden-token scan (PDF text)
+        if: always()
+        run: |
+          text=phase5/master/build/main.txt
+          if [[ ! -s "$text" ]]; then
+            echo "Extracted PDF text unavailable; cannot enforce the extended forbidden-token scan."
+            exit 1
+          fi
+          python3 phase5/scripts/check_pdf_forbidden_words.py "$text"
+
 
       - name: Write R4A metrics to the job summary
         if: always()
