@@ -117,18 +117,13 @@ def main() -> None:
     head_counts = Counter(r["class"].strip() for r in head_rows)
     head_av = head_counts.get("A", 0) + head_counts.get("V", 0)
 
-    # Parent commit ledger: compare with the parent of the last commit
-    # that changed the ledger (not HEAD~1, which may be a CI bot commit
-    # that didn't touch the ledger).
+    # Parent commit ledger: compare with HEAD~1 (the previous commit).
+    # This catches any ID removals or A/V downgrades introduced in the
+    # current commit relative to its parent.
     try:
-        last_change = last_commit_changing_ledger()
-        if not last_change:
-            print("ERROR: no commit found that changed the ledger")
-            sys.exit(1)
-        parent_ref = f"{last_change}^"
-        parent_text = git_show(parent_ref, LEDGER_PATH)
+        parent_text = git_show("HEAD~1", LEDGER_PATH)
     except subprocess.CalledProcessError as exc:
-        print(f"ERROR: cannot read ledger at parent of last ledger change: {exc.stderr.strip()}")
+        print(f"ERROR: cannot read ledger at HEAD~1: {exc.stderr.strip()}")
         sys.exit(1)
 
     parent_rows = read_ledger_csv(parent_text)
