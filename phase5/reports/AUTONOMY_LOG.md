@@ -42,3 +42,26 @@ Restored OPEN_CLAIMS_LEDGER.csv from git history (ceceac3: 619 rows, A=82/B=154/
 - Previous: a6127a7 (restore Class V path check)
 
 No submission/sending/sharing requested or performed.
+
+
+## W6 Body-Text Responses and W5.3 Captions (complete)
+
+**WP6-05 (Appendix table scale):** Appendix tables D, E, F are source-only; not in PDF build. Only appendices B and C rendered. No table overrun in 131-page PDF.
+
+**WP6-17 (Equation audit scope):** Extended to Sections 3--14 and Appendix B: 137 active equation groups + 2 WITHHELD historical records. Verified by `check_equation_audit_inventory.py`.
+
+**WP6-18 (Eq. 4.17 source anchor):** Source-anchored to Roy Choudhuri (2007) Eqs. (3), (4), (9) at Class A. Text states first-order expansion with lag-order condition and no common admissibility condition across variants.
+
+**WP6-20 (Ledger line anchors):** Scheduled for WP8; no rows deleted from ledger.
+
+**WP6-24 (GL/GN-I table cells):** Marked "Not established" at Class B; table footnote clarifies meaning. No family-wide GL/GN-I claim asserted.
+
+**WP6-25 (Piezoelectric displays):** Source-anchored to Mindlin (1974) pp. 625--626 at Class A. Sign/index conventions follow cited source.
+
+**W5.3 (Caption assumptions):** All 48 figure captions state assumptions/scope/illustrative status.
+
+**All OCL IDs and WP6 objection numbers removed from rendered PDF body text** to comply with "no process tags/OCL ids" constraint.
+
+**CI run 40827629157 GREEN** (commit f401ad8): 131 pages, 0 undefined refs/citations, 0 forbidden manuscript-tag occurrences (was 6 before fix), 0 near-overfull boxes. All gate steps pass including ledger provenance, monotonicity, reference counts.
+
+No submission/sending/sharing requested or performed.
