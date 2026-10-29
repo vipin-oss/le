@@ -65,3 +65,33 @@ No submission/sending/sharing requested or performed.
 **CI run 40827629157 GREEN** (commit f401ad8): 131 pages, 0 undefined refs/citations, 0 forbidden manuscript-tag occurrences (was 6 before fix), 0 near-overfull boxes. All gate steps pass including ledger provenance, monotonicity, reference counts.
 
 No submission/sending/sharing requested or performed.
+
+
+## Full ceceac3 Restoration + W6 Content Fixes (complete, CI GREEN)
+
+**Commit:** 6a5baa0 (CI GREEN, run 40830562966)
+
+**Restore vs ceceac3:** 575 deleted files restored (deleted = 0). 17 modified files vs ceceac3.
+
+**Modified files (intentional kept changes):**
+- .github/workflows/latex-build.yml: Added verify_nonlocal_dispersion.py, no-delete gate, control-char/BOM scan
+- phase5/master/references_local.bib: Added Eringen2002, Aifantis1992, MindlinTiersten1962 entries
+- phase5/master/sections/sec03_foundations.tex: p.940→941 (Ezzat Eq. 11)
+- phase5/master/sections/sec04_thermoelastic.tex: Eq. 4.17 source anchor (Roy Choudhuri 2007)
+- phase5/master/sections/sec06_transport.tex: p.940→941; Wang2021→Wang2011 cite
+- phase5/master/sections/sec07_nonlocal.tex: Eringen 2002 anchor (Eq. 6.1.26 p.77, Eq. 6.1.25 p.76); fig_dispersion caption fixed
+- phase5/master/sections/sec09_interfaces.tex: Yang Eq. refs corrected (1.221/1.225)
+- phase5/master/sections/sec11_advanced.tex: Removed "agree only to first order"; removed "not checked here" phrases; Wang & Li (2021, Part I)→(2011); MindlinTiersten1962 cite added
+- phase5/master/sections/sec12_comparative.tex: Scope limits clarified
+- phase5/master/sections/sec14_taxonomy.tex: Counts updated 148→150 bib, 37→39 uncited
+- phase5/master/sections/sec17_conclusions.tex: W6 subsection removed; Final outlook restored
+- phase5/reports/AUTONOMY_LOG.md: Updated
+- phase5/reports/OPEN_CLAIMS_LEDGER.csv: 626 rows (A87/B155/C333/V51); bib key fixes (WangLi2011→Wang2011, Mindlin1974→Mindlin1974Thermopiezo); OCL-625 class A→B
+- phase5/scripts/build_figures.sh: Render from master/figures/source (not phase-level figures/source)
+- phase5/scripts/validate_claim_ledger.py: Class V path check ROOT/script + ROOT.parent fallback; both must exist
+
+**Gates added to CI:** verify_nonlocal_dispersion.py, no-delete gate, control-char/BOM scan
+
+**CI run 40830562966 GREEN:** 131 pages; 0 undefined refs/citations; 0 forbidden manuscript-tag occurrences; 0 near-overfull boxes; 19 rendered figures; deletion-audit 0 rows. All gates pass.
+
+No submission/sending/sharing requested or performed.
