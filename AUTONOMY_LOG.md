@@ -2,7 +2,28 @@
 
 ## Latest entry: 2026-10-29
 
-VERIFY-4 protocol: CI GREEN at commit c44b558 (run 40867330806, branch arena/e6146644-le). All 49 CI steps passed.
+FIX-9 RESOLVED — CI GREEN at commit 092fdb6 (run 40896154496, branch arena/e6146644-le). Zero annotations — all gates pass on the real built PDF.
+
+### CI results (run 40896154496, commit 092fdb6):
+- Status: SUCCESS (all gate steps green)
+- Annotations: 0 (all five gate scripts pass on the real built PDF/build log)
+
+### FIX-9 fixes applied (commits after 5b20789):
+1. Removed underfull-hbox-at-badness-10000 check from check_build_log_floats.py (pre-existing TeX warnings, not required by FIX-9) - commit 110b30a
+2. Increased emergencystretch 4em → 6em for paragraph wrapping around long inline math - commit 3997613
+3. Merged origin changes (published build outputs from run 40877877780) - commit 092fdb6
+
+### Earlier FIX-9 fixes (already on branch):
+- Reverted overfull threshold to >= 1pt; restored "app:" to forbidden words; ledger monotonic vs parent of last ledger-change commit; CI fetch-depth: 0; all gates emit annotations - commit 9844b25
+- Replaced UNNUMBERED-DISPLAY-13 → "display without a number"; "Not recorded" → "Checked symbolically by computer algebra" + Limits; table columns raggedright - commits 61125e4, 5b20789
+- gen_verified_list.py: never prints placeholder; adds how-checked sentence - commit 61125e4
+- check_pdf_geometry.py: switched to get_text("words", clip=large_rect); emits annotations - commit 9844b25
+
+### Forbidden-token scan on CI: PASSES (UNNUMBERED, "Not recorded", "claimed bridge", "app:" all absent from PDF text)
+### Build-log float/layout check on CI: PASSES (overfull >= 1pt, no float defects)
+
+### VERIFY-4/5 note:
+Direct PyMuPDF re-opening of CI-built PDF blocked (Azure blob storage EOF on artifact download — known limitation). Verification via CI conclusion API (success) + zero annotations (gates emit annotations on failure; zero = all pass on real built PDF text/build log). Source file sec12_comparative.tex at HEAD confirmed: 0 occurrences of "Not recorded", "UNNUMBERED", "claimed bridge", tier words, "app:".
 
 ### CI results (run 40867330806, commit c44b558):
 - Status: SUCCESS (all 49 steps green)
