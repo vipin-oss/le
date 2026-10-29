@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import sys
+import traceback
 from collections import Counter
 from pathlib import Path
 
@@ -21,11 +22,18 @@ EXPECTED = {
     "evidence_mode",
 }
 
-with LEDGER.open(newline="", encoding="utf-8-sig") as handle:
-    reader = csv.DictReader(handle)
-    if set(reader.fieldnames or ()) != EXPECTED:
-        raise SystemExit(f"Unexpected ledger columns: {reader.fieldnames}")
-    rows = list(reader)
+try:
+    with LEDGER.open(newline="", encoding="utf-8-sig") as handle:
+        reader = csv.DictReader(handle)
+        if set(reader.fieldnames or ()) != EXPECTED:
+            raise SystemExit(f"Unexpected ledger columns: {reader.fieldnames}")
+        rows = list(reader)
+except SystemExit:
+    raise
+except Exception as exc:
+    print(f"FATAL: cannot read ledger: {exc}")
+    traceback.print_exc()
+    sys.exit(1)
 
 errors: list[str] = []
 ids = [row["ledger_row_id"].strip() for row in rows]
