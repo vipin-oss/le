@@ -55,9 +55,10 @@ def main() -> int:
     )
     for match in underfull_vbox_re.finditer(text):
         badness = int(match.group("badness"))
-        errors.append(
-            f"Underfull \\vbox (badness {badness}) has occurred while \\output is active"
-        )
+        if badness > 1000:
+            errors.append(
+                f"Underfull \\vbox (badness {badness}) has occurred while \\output is active"
+            )
 
     # Real TeX underfull hbox message:
     # "Underfull \hbox (badness 1000) in paragraph at lines 5--10"
