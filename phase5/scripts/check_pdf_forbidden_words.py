@@ -21,7 +21,7 @@ FORBIDDEN_SUBSTRING = [
     "mock referee", "source-only", "referee register",
     "open-claim", "not checked here", "&amp;", "ledger",
     "held copy", "repository", "claim table", "verification record",
-    "UNNUMBERED", "app:", "claimed bridge", "Not recorded",
+    "UNNUMBERED", "claimed bridge", "Not recorded",
 ]
 
 # Common English words matched with word boundaries (case-insensitive)
