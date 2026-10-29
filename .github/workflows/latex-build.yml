@@ -1,5 +1,6 @@
 name: Phase5 LaTeX build
 
+# Re-trigger CI after OCL-631/OCL-632 class-C fix (CSV-only commit was paths-ignored)
 on:
   push:
     branches: ['arena/**']
