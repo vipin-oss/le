@@ -4,10 +4,12 @@
 Fails when the build log contains any of:
   * "Float too large for page"
   * "Float(s) lost"
-  * "Overfull \\hbox" with size >= 1 pt (threshold is 1 pt)
-  * "Overfull \\vbox ... too high"
+  * "Overfull \\hbox" with size >= 1 pt (threshold is 1 pt per gate rules)
+  * "Overfull \\vbox ... too high" with size >= 1 pt
   * "Underfull \\vbox ... while \\output is active"
   * Real TeX underfull hbox message at very high badness (>= 10000)
+
+Prints each finding as a GitHub Actions annotation line.
 
 Usage:
     python3 phase5/scripts/check_build_log_floats.py BUILD_LOG
@@ -17,6 +19,11 @@ from __future__ import annotations
 import re
 import sys
 from pathlib import Path
+
+
+def annotate(title: str, finding: str) -> None:
+    """Print a GitHub Actions error annotation (capped at ~50 lines)."""
+    print(f"::error title={title}::{finding}")
 
 
 def main() -> int:
@@ -36,23 +43,23 @@ def main() -> int:
     if re.search(r"Float\(s\) lost", text):
         errors.append("Float(s) lost")
 
-    # Overfull hbox > 5 pt (matches CI bash gate threshold)
-    # TeX log line: "Overfull \hbox (12.3pt too wide)"
+    # Overfull hbox >= 1 pt (threshold is 1 pt per gate rules)
+    # TeX log line: "Overfull \hbox (3.2pt too wide)"
     overfull_hbox_re = re.compile(
         r"Overfull [\\](hbox) [(](?P<size>[-+]?[0-9.]+)pt too (wide|high)"
     )
     for match in overfull_hbox_re.finditer(text):
         size = float(match.group("size"))
-        if abs(size) > 5.0:
+        if abs(size) >= 1.0:
             errors.append(f"Overfull \\hbox {size:.1f}pt too {match.group(3)}")
 
-    # Overfull vbox too high > 5 pt
+    # Overfull vbox too high >= 1 pt
     overfull_vbox_re = re.compile(
         r"Overfull [\\](vbox) [(](?P<size>[-+]?[0-9.]+)pt too high"
     )
     for match in overfull_vbox_re.finditer(text):
         size = float(match.group("size"))
-        if abs(size) > 5.0:
+        if abs(size) >= 1.0:
             errors.append(f"Overfull \\vbox {size:.1f}pt too high")
 
     # Real TeX underfull vbox message:
@@ -78,6 +85,10 @@ def main() -> int:
             errors.append(
                 f"Underfull \\hbox (badness {badness}) in paragraph"
             )
+
+    # Print annotations (cap at ~50 lines)
+    for e in errors[:50]:
+        annotate("Build-log float/layout defect check", e)
 
     if errors:
         print("ERROR: build-log layout defects detected:")

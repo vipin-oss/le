@@ -12,15 +12,15 @@ Fails when:
      such a marker.
 
 A valid DOWNGRADE marker row must:
-  * Have \"DOWNGRADE\" in its what_was_changed field, AND
+  * Have "DOWNGRADE" in its what_was_changed field, AND
   * Name the affected ledger_row_id(s) in its notes column, AND
   * State a reason in its notes column.
 
-Usage (CI, with fetch-depth >= 2):
+Usage (CI, with fetch-depth = 0 so full history is available):
     python3 phase5/scripts/check_ledger_monotonic.py
 
 The script reads phase5/reports/OPEN_CLAIMS_LEDGER.csv at HEAD and compares it
-against `git show HEAD~1:phase5/reports/OPEN_CLAIMS_LEDGER.csv`.
+against the ledger of the parent of the last commit that changed the ledger.
 """
 
 from __future__ import annotations
@@ -85,14 +85,15 @@ def last_commit_changing_ledger() -> str:
     return result.stdout.strip()
 
 
-def row_key(row: dict) -> str:
-    return row["ledger_row_id"].strip()
+def annotate(title: str, finding: str) -> None:
+    """Print a GitHub Actions error annotation."""
+    print(f"::error title={title}::{finding}")
 
 
 def valid_downgrade_marker(rows: list[dict], affected_id: str) -> bool:
     """Return True if a DOWNGRADE marker row names affected_id and gives a reason.
 
-    The marker row must have \"DOWNGRADE\" in what_was_changed, name the affected
+    The marker row must have "DOWNGRADE" in what_was_changed, name the affected
     ledger_row_id in that same field, and state a substantive reason (>=3 chars
     beyond the ID itself).
     """
@@ -117,13 +118,17 @@ def main() -> None:
     head_counts = Counter(r["class"].strip() for r in head_rows)
     head_av = head_counts.get("A", 0) + head_counts.get("V", 0)
 
-    # Parent commit ledger: compare with HEAD~1 (the previous commit).
-    # This catches any ID removals or A/V downgrades introduced in the
-    # current commit relative to its parent.
+    # Parent commit ledger: compare with the parent of the last commit
+    # that changed the ledger. Requires fetch-depth = 0 (full history).
     try:
-        parent_text = git_show("HEAD~1", LEDGER_PATH)
+        last_change = last_commit_changing_ledger()
+        if not last_change:
+            print("ERROR: no commit found that changed the ledger")
+            sys.exit(1)
+        parent_ref = f"{last_change}^"
+        parent_text = git_show(parent_ref, LEDGER_PATH)
     except subprocess.CalledProcessError as exc:
-        print(f"ERROR: cannot read ledger at HEAD~1: {exc.stderr.strip()}")
+        print(f"ERROR: cannot read ledger at parent of last ledger change: {exc.stderr.strip()}")
         sys.exit(1)
 
     parent_rows = read_ledger_csv(parent_text)
@@ -135,7 +140,12 @@ def main() -> None:
     # Check 1: IDs must not be removed
     removed_ids = sorted(parent_ids - head_ids)
     if removed_ids:
-        print(f"ERROR: {len(removed_ids)} ledger ID(s) removed since HEAD~1:")
+        for rid in removed_ids[:20]:
+            annotate(
+                "Check ledger ID monotonicity (no removals, no silent A/V downgrade)",
+                f"ledger ID removed since parent of last ledger change: {rid}",
+            )
+        print(f"ERROR: {len(removed_ids)} ledger ID(s) removed since parent of last ledger change:")
         for rid in removed_ids[:20]:
             print(f"  {rid}")
         if len(removed_ids) > 20:
@@ -151,6 +161,10 @@ def main() -> None:
             for r in head_rows
         )
         if not marker_ok:
+            annotate(
+                "Check ledger ID monotonicity (no removals, no silent A/V downgrade)",
+                f"A+V count decreased ({parent_av} -> {head_av}) without valid DOWNGRADE marker row",
+            )
             print(
                 f"ERROR: A+V count decreased ({parent_av} -> {head_av}) "
                 "without a valid DOWNGRADE marker row (notes must name affected ID(s) and reason)"
@@ -165,6 +179,10 @@ def main() -> None:
         pcls = prow["class"].strip()
         if pcls == "A" and hcls in ("B", "C", "V"):
             if not valid_downgrade_marker(head_rows, rid):
+                annotate(
+                    "Check ledger ID monotonicity (no removals, no silent A/V downgrade)",
+                    f"Class A row {rid} downgraded to {hcls} without valid DOWNGRADE marker",
+                )
                 print(f"ERROR: Class A row {rid} downgraded to {hcls} without valid DOWNGRADE marker")
                 sys.exit(1)
 
@@ -175,6 +193,10 @@ def main() -> None:
         if prow["class"].strip() == "V":
             if prow.get("resolved_by", "").strip() and not hrow.get("resolved_by", "").strip():
                 if not valid_downgrade_marker(head_rows, rid):
+                    annotate(
+                        "Check ledger ID monotonicity (no removals, no silent A/V downgrade)",
+                        f"Class V row {rid} lost resolved_by without valid DOWNGRADE marker",
+                    )
                     print(f"ERROR: Class V row {rid} lost resolved_by without valid DOWNGRADE marker")
                     sys.exit(1)
 
@@ -186,6 +208,12 @@ def main() -> None:
         prank = evidence_rank(prow.get("evidence_mode", ""))
         if hrank < prank:
             if not valid_downgrade_marker(head_rows, rid):
+                annotate(
+                    "Check ledger ID monotonicity (no removals, no silent A/V downgrade)",
+                    f"Row {rid} evidence_mode weakened "
+                    f"('{prow.get('evidence_mode', '')}' -> '{hrow.get('evidence_mode', '')}') "
+                    "without valid DOWNGRADE marker",
+                )
                 print(
                     f"ERROR: Row {rid} evidence_mode weakened "
                     f"('{prow.get('evidence_mode', '')}' -> '{hrow.get('evidence_mode', '')}') "
@@ -194,9 +222,15 @@ def main() -> None:
                 sys.exit(1)
 
     print(
-        f"PASS: ledger IDs monotonic (HEAD={len(head_ids)} >= HEAD~1={len(parent_ids)}); "
-        f"A+V count {parent_av} -> {head_av}; new IDs: {sorted(head_ids - parent_ids)}"
+        f"PASS: ledger IDs monotonic "
+        f"(HEAD={len(head_ids)} >= parent-of-last-change={len(parent_ids)}); "
+        f"A+V count {parent_av} -> {head_av}; "
+        f"new IDs: {sorted(head_ids - parent_ids)}"
     )
+
+
+def row_key(row: dict) -> str:
+    return row["ledger_row_id"].strip()
 
 
 if __name__ == "__main__":

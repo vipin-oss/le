@@ -5,6 +5,8 @@ Fails if any forbidden word or phrase appears in the extracted PDF text.
 Common English words (gate, build, script, verifier) are matched with word
 boundaries to avoid false positives on words like "propagate" or "building".
 
+Prints each finding as a GitHub Actions annotation line.
+
 Usage:
     python3 phase5/scripts/check_pdf_forbidden_words.py PDF_TEXT
 """
@@ -22,6 +24,7 @@ FORBIDDEN_SUBSTRING = [
     "open-claim", "not checked here", "&amp;", "ledger",
     "held copy", "repository", "claim table", "verification record",
     "UNNUMBERED", "claimed bridge", "Not recorded",
+    "app:",
 ]
 
 # Common English words matched with word boundaries (case-insensitive)
@@ -37,6 +40,11 @@ FORBIDDEN_PATTERN = [
     (r"\bVERIFIED\b", False),   # all-caps status label (case-sensitive)
     (r"\bCONDITIONAL\b", False), # all-caps status label (case-sensitive)
 ]
+
+
+def annotate(title: str, finding: str) -> None:
+    """Print a GitHub Actions error annotation."""
+    print(f"::error title={title}::{finding}")
 
 
 def main() -> int:
@@ -67,10 +75,16 @@ def main() -> int:
         if re.search(pattern, text, flags):
             found.append(pattern)
 
+    # Print annotations (cap at ~50 lines)
+    for token in found[:50]:
+        annotate("Extended forbidden-token scan (PDF text)", token)
+
     if found:
         print("ERROR: forbidden tokens found in PDF text:")
-        for token in found:
+        for token in found[:30]:
             print(f"  {token!r}")
+        if len(found) > 30:
+            print(f"  ... and {len(found) - 30} more")
         return 1
     print("PASS: no forbidden tokens in PDF text")
     return 0

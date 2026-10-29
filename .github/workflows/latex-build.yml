@@ -86,7 +86,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Checkout read-only literature verification inputs
         if: startsWith(github.ref, 'refs/heads/arena/') && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && (contains(github.event.head_commit.message, '[R3A-CROSSREF]') || contains(github.event.head_commit.message, '[R3B-CROSSREF]') || contains(github.event.head_commit.message, '[R3C-CROSSREF]') || contains(github.event.head_commit.message, '[R3D-CROSSREF]'))))

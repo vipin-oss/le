@@ -158,6 +158,7 @@ def main() -> int:
     if errors:
         print("FAIL: dispersion figure self-check failed:")
         for e in errors[:30]:
+            print(f"::error title=Dispersion figure self-check::{e}")
             print(f"  {e}")
         return 1
     print("PASS: dispersion figure self-check passed")
