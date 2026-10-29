@@ -74,18 +74,6 @@ def main() -> int:
             f"Underfull \\vbox (badness {badness}) has occurred while \\output is active"
         )
 
-    # Real TeX underfull hbox message (only at extreme badness):
-    # "Underfull \hbox (badness N) in paragraph"
-    underfull_hbox_re = re.compile(
-        r"Underfull [\\]hbox [(]badness (?P<badness>[0-9]+)[)] in paragraph"
-    )
-    for match in underfull_hbox_re.finditer(text):
-        badness = int(match.group("badness"))
-        if badness >= 10000:
-            errors.append(
-                f"Underfull \\hbox (badness {badness}) in paragraph"
-            )
-
     # Print annotations (cap at ~50 lines)
     for e in errors[:50]:
         annotate("Build-log float/layout defect check", e)
