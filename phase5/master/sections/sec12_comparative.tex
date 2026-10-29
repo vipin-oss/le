@@ -127,7 +127,7 @@ The rows in Table~\ref{tab:limiting_cases_revisited} are formal parameter substi
 
 \paragraph{Definition.} In this subsection the heat-flux relations of the families treated in Section~\ref{sec:thermoelastic} are read through one template,
 \begin{equation}
-q_i+\tau_q\dot q_i+k\bigl(T_{,i}+\tau_T\dot T_{,i}\bigr)+k^*\bigl(v_{,i}+\tau_v\dot v_{,i}\bigr)=0,
+q\_i+\tau\_q\dot q\_i+k\bigl(T\_{,i}+\tau\_T\dot T\_{,i}\bigr)+k^*\bigl(v\_{,i}+\tau\_v\dot v\_{,i}\bigr)=0,
 \qquad \dot v=T,
 \label{eq:12.template}
 \end{equation}
@@ -171,13 +171,13 @@ they are not convergence, stability, or source-transcription results beyond the 
 
   \item[\eqref{eq:3.23} (Section~3)] Uncoupled isotropic Navier equation with beta=0 (no thermal coupling). Thermal coupling term retained as negative control in (beta nonzero).
 
-  \item[\eqref{eq:3.24} (Section~3)] Dilatational speed c_p from the uncoupled plane-wave relation. Speed formula checked symbolically only; no measurement claim.
+  \item[\eqref{eq:3.24} (Section~3)] Dilatational speed $c_p$ from the uncoupled plane-wave relation. Speed formula checked symbolically only; no measurement claim.
 
-  \item[\eqref{eq:3.25} (Section~3)] Shear speed c_s from the uncoupled plane-wave relation. Speed formula checked symbolically only.
+  \item[\eqref{eq:3.25} (Section~3)] Shear speed c\_s from the uncoupled plane-wave relation. Speed formula checked symbolically only.
 
   \item[\eqref{eq:3.28} (Section~3)] Classical Eulerian total-energy balance with advective flux, derived from mass, momentum, and internal-energy residuals. Not recorded for this row; see header for the scope limit (not generalized continua).
 
-  \item[\eqref{eq:3.29} (Section~3)] Same balance in divergence form with F_i = q_i - sigma_ij v_j + E v_i. Not recorded for this row.
+  \item[\eqref{eq:3.29} (Section~3)] Same balance in divergence form with F\_i = q\_i - sigma\_ij v\_j + E v\_i. Not recorded for this row.
 
   \item[\eqref{eq:3.30} (Section~3)] Integral form of the same balance over a fixed control volume. Not recorded for this row.
 
@@ -189,15 +189,15 @@ they are not convergence, stability, or source-transcription results beyond the 
 
   \item[\eqref{eq:4.4} (Section~4)] Abstract LS heat-flux residual; the tau0=0 Fourier reduction, not source transcription. Negative: nonzero tau0 leaves tau0*qdot; it is not the Fourier law.
 
-  \item[\eqref{eq:4.5} (Section~4)] Constant coefficients and source-free local thermal balance rho*c_v*Tdot=-div(q)-beta*T0*div(udot), with the displayed Cattaneo law; the algebraic 4.5 form, not historical source transcription or well-posedness. That omitting tau_0*beta*T0*div(uddot) leaves a nonzero residual.
+  \item[\eqref{eq:4.5} (Section~4)] Constant coefficients and source-free local thermal balance rho*c\_v*Tdot=-div(q)-beta*T0*div(udot), with the displayed Cattaneo law; the algebraic 4.5 form, not historical source transcription or well-posedness. That omitting tau\_0*beta*T0*div(uddot) leaves a nonzero residual.
 
-  \item[\eqref{eq:4.6} (Section~4)] Uncoupled scalar branch beta=0 with positive k, rho, c_v, and tau_0; c_T is the characteristic speed of the principal part, not a general speed for the fully coupled thermoelastic modes. Tests the tau_0->0 singular principal-speed limit; Fourier conduction is not assigned a finite hyperbolic characteristic speed.
+  \item[\eqref{eq:4.6} (Section~4)] Uncoupled scalar branch beta=0 with positive k, rho, c\_v, and tau\_0; c\_T is the characteristic speed of the principal part, not a general speed for the fully coupled thermoelastic modes. Tests the tau\_0->0 singular principal-speed limit; Fourier conduction is not assigned a finite hyperbolic characteristic speed.
 
   \item[\eqref{eq:4.11} (Section~4)] GN-II source-free thermal-displacement form; zero integration function after time integration. This does not establish an energy-flux identity or other GN-II variants. A nonzero time-integration function contributes an additional spatial term; do not use this form for nonzero heat supply or arbitrary integration data.
 
   \item[\eqref{eq:4.14} (Section~4)] Source-free GN-III specialization with the explicit coefficient/variable map; equation mapping only. No solution-level equivalence or flux reduction is checked.
 
-  \item[\eqref{eq:4.16} (Section~4)] First-order DPL residual; selected LS/Fourier substitutions only. Negative: tau_q=0 is not LS; either single lag set to zero leaves the other term, while both must be zero for Fourier.
+  \item[\eqref{eq:4.16} (Section~4)] First-order DPL residual; selected LS/Fourier substitutions only. Negative: tau\_q=0 is not LS; either single lag set to zero leaves the other term, while both must be zero for Fourier.
 
   \item[\eqref{eq:4.18} (Section~4)] Candidate MGT flux residual; Fourier and LS-type substitutions only, not source identity or admissibility. Negative: tau=0 alone leaves the k* term; k*=0 alone matches LS only when tau=tau0.
 
@@ -205,7 +205,7 @@ they are not convergence, stability, or source-transcription results beyond the 
 
   \item[\eqref{eq:5.4} (Section~5)] Charge-free three-dimensional thermopiezoelectric balance; no free bulk-charge term. Boundary/surface charge cases are outside this equation. Source transcription checked against the source balance; no reduction asserted.
 
-  \item[\eqref{eq:5.5} (Section~5)] For an uncoupled linear dielectric D=K E, 1/2 D_i E_i is the electric-field energy contribution; in the coupled piezoelectric D law it includes a strain-electric cross term and is not total stored energy. Negative: substituting the coupled D law leaves a nonzero strain-electric term, so 5.5 cannot be used alone as total coupled stored energy.
+  \item[\eqref{eq:5.5} (Section~5)] For an uncoupled linear dielectric D=K E, 1/2 D\_i E\_i is the electric-field energy contribution; in the coupled piezoelectric D law it includes a strain-electric cross term and is not total stored energy. Negative: substituting the coupled D law leaves a nonzero strain-electric term, so 5.5 cannot be used alone as total coupled stored energy.
 
   \item[\eqref{eq:5.7} (Section~5)] Source-free linear momentum balance in the source convention; the displayed form has no body-force term, and does not cover generalized stress balances. Source equation matched; no reduction asserted.
 
@@ -247,7 +247,7 @@ they are not convergence, stability, or source-transcription results beyond the 
 
   \item[\eqref{appB:eq:17} (Section~B)] Eulerian total-energy balance with the total-energy density E. Not recorded for this row.
 
-  \item[\eqref{appB:eq:18} (Section~B)] Outward-positive total-energy flux F_i = q_i - sigma_ij v_j + E v_i. Not recorded for this row.
+  \item[\eqref{appB:eq:18} (Section~B)] Outward-positive total-energy flux F\_i = q\_i - sigma\_ij v\_j + E v\_i. Not recorded for this row.
 \end{description}
 
 \subsection{Status by family: established, disputed or model-dependent, open}
