@@ -2,9 +2,9 @@
 """Verify reference collection counts: total bib entries, cited keys, uncited keys.
 
 Expected (per Section 14 taxonomy reconciliation):
-  bib entries   : 147
-  cited keys    : 110
-  uncited keys  : 37
+  bib entries   : 150
+  cited keys    : 111
+  uncited keys  : 39
 """
 from __future__ import annotations
 
@@ -17,9 +17,9 @@ MASTER = ROOT / "phase5" / "master"
 MAIN = MASTER / "main.tex"
 BIB = MASTER / "references_local.bib"
 
-EXPECTED_BIB = 148
+EXPECTED_BIB = 150
 EXPECTED_CITED = 111
-EXPECTED_UNCITED = 37
+EXPECTED_UNCITED = 39
 
 
 def uncomment(text: str) -> str:
