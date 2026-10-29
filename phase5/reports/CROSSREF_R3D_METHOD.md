@@ -1,7 +1,0 @@
-# R3d Crossref verification method
-
-The nine rows in `R3D_CITATION_MAP.csv` were re-checked dynamically in Actions because the frozen REFERENCE_PLAN marks them `technical_claim_eligible=YES`. No new R3d Crossref data is fetched outside CI. Comparison uses the saved R3a rules: returned DOI must match; title exact/prefix/substring or at least 0.60 shorter-title token overlap; Crossref published/issued year exact or within one year; normalized container title must match. HTTP 404 is NOT-FOUND. Network errors fail the job. Only VERIFIED rows with Crossref author data and no BibTeX DOI conflict enter `R3D_VERIFIED_REFERENCES.bib`.
-
-The supplied `CITATION_MAP.csv` has 0 exact citekey matches among these nine candidates. Claim-level additions and non-exact mappings are explicit in `R3D_CITATION_MAP.csv`; the frozen plan/read-level notes control which content each source may support. In particular, LIT-0040 / Shakeriaski2021 is a SECONDARY survey for theory-to-geometry coverage only, not equations, numbers, or stability. Acoustic abstract-MGT findings are kept separate from thermoelastic MGT admissibility. R3 readiness baseline by section: s.4.9: 3 full/primary of 3 eligible; s.4.10: 2 full/primary of 2 eligible; s.5: 4 full/primary of 5 eligible; s.11: 9 full/primary of 10 eligible; s.12: 1 full/primary of 1 eligible.
-
-Rows: 9; DOI requests: 9; VERIFIED: 9; MISMATCH: 0; NOT-FOUND: 0; NO-DOI: 0; bibliography-ready mapped rows: 9; new BibTeX entries to merge: 9.

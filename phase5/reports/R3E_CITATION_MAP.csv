@@ -1,3 +1,0 @@
-map_id,citekey,doi,authors,year,title,venue,volume,issue,pages,claim_status,claim_short,findings_anchor,include
-R3E-S8-DUBNER-ABATE,DubnerAbate1968,10.1145/321439.321446,"H. Dubner and J. Abate",1968,Numerical Inversion of Laplace Transforms by Relating Them to the Finite Fourier Cosine Transform,J. ACM,15,1,115-123,PRIMARY-SOURCE-CHECKED,"Eq. (15) cosine-series inversion by trapezoidal rule; 0<t<T/2; bounded-function error order C exp(-aT); T=2 t_max.",F28,YES
-R3E-S8-STEHFEST,Stehfest1970,10.1145/361953.361969,"H. Stehfest",1970,Algorithm 368: Numerical inversion of Laplace transforms [D5],Commun. ACM,13,1,47-49,PRIMARY-SOURCE-CHECKED,"N-even real-axis inversion weights V_i; accuracy rises with N until rounding error dominates.",F29,YES

@@ -1,9 +1,0 @@
-source_id,source_name,url,access_date,verified_fields,status,notes
-SRC-001,ORCID public record,https://orcid.org/0000-0002-5238-1963,2026-10-21,"identity,affiliation,email_domain",VERIFIED,Vipin Gupta; Assistant Professor Mathematics; Gurugram University from 2024-06-28
-SRC-002,OpenAlex author profile,https://api.openalex.org/authors/https://orcid.org/0000-0002-5238-1963,2026-10-21,"works_count,citation_count,h_index,i10_index",VERIFIED,41 works; 827 citations; h19; i10-28
-SRC-003,OpenAlex works by ORCID,https://api.openalex.org/works?filter=author.orcid:0000-0002-5238-1963,2026-10-21,"doi,title,year,venue,citations",VERIFIED,49 works 2022-2026
-SRC-004,Google Scholar profile,https://scholar.google.com/citations?user=o014_b0AAAAJ,2026-10-21,"none",BLOCKED,reCAPTCHA; no Scholar metrics quoted
-SRC-005,Crossref foundational works,Multiple Crossref endpoints,2026-10-21,"doi,title,year,journal,citations",VERIFIED,11 foundational works verified
-SRC-006,ASME Applied Mechanics Reviews scope,https://www.asme.org/publications-submissions/journals/find-journal/applied-mechanics-reviews,2026-10-21,"scope",VERIFIED,Review journal; solid mechanics, heat transfer, dynamics
-SRC-007,Springer Continuum Mechanics and Thermodynamics,https://link.springer.com/journal/161,2026-10-21,"scope,jif",VERIFIED,JIF 3.0 (2025); invites review articles; hybrid OA
-SRC-008,OpenAlex source metrics,Multiple OpenAlex endpoints,2026-10-21,"h_index",VERIFIED,AMR h206; CMT h124; EJM-A h124; HFF h89; JTS h86; MAMS h82

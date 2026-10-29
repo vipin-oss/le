@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
-"""Generate a script-generated dispersion-relation figure (PDF) using only
+"""Generate a script-generated dispersion-relation figure (PDF + SVG) using only
 the Python standard library (no matplotlib). Draws phase speed c/c0 versus
 wave number k for three 1-D models treated in Section 7:
 
-  classical  : c/c0 = 1                              (flat)
-  non-local  : c/c0 = 1 / sqrt(1 + (xi k)^2)         (decreases to 0)
-  gradient   : c/c0 = sqrt(1 + (ell k)^2)            (increases)
+  classical  : c/c0 = 1                              (flat, Eq. 7.4 with xi = 0)
+  non-local  : c/c0 = 1 / sqrt(1 + (xi k)^2)         (decreases to 0, Eq. 7.4)
+  gradient   : c/c0 = sqrt(1 + (ell k)^2)            (increases, Eq. 7.3)
+
+All curves are computed from the stated relations; none are hand-drawn.
+The figure is illustrative: it shows the distinct wave-number dependences
+of Eq. 7.4 and Eq. 7.3 for selected parameter values, not a fit to data.
 
 Usage: python3 phase5/tools/plot_dispersion.py
 Writes: phase5/master/figures/source/fig_dispersion.pdf
+        phase5/master/figures/source/fig_dispersion.svg
 """
 import math
 import os
@@ -121,6 +126,57 @@ os.makedirs(os.path.dirname(OUT), exist_ok=True)
 with open(OUT, "wb") as f:
     f.write(pdf)
 print("wrote", OUT, len(pdf), "bytes")
+
+# --- SVG twin (editable source) ---
+svg_out = OUT.replace(".pdf", ".svg")
+def esc_xml(s):
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+# Recompute curves for SVG
+def c_classical(x): return 1.0
+def c_nonlocal(x): return 1.0 / math.sqrt(1.0 + (1.0 * x) ** 2)
+def c_gradient(x): return math.sqrt(1.0 + (0.45 * x) ** 2)
+
+svg = []
+svg.append('<?xml version="1.0" encoding="UTF-8"?>')
+svg.append(f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">')
+svg.append(f'<rect width="{W}" height="{H}" fill="white"/>')
+# axes
+svg.append(f'<line x1="{X0}" y1="{Y0}" x2="{X1}" y2="{Y0}" stroke="black" stroke-width="1"/>')
+svg.append(f'<line x1="{X0}" y1="{Y0}" x2="{X0}" y2="{Y1}" stroke="black" stroke-width="1"/>')
+# ticks and labels x
+for i in range(1, 5):
+    x = px(i)
+    svg.append(f'<line x1="{x}" y1="{Y0-5}" x2="{x}" y2="{Y0+5}" stroke="black" stroke-width="1"/>')
+    svg.append(f'<text x="{x-6}" y="{Y0+22}" font-size="10" text-anchor="middle">{i}</text>')
+for i in range(0, 9):
+    y = YMAX * i / 8.0
+    py_y = py(y)
+    svg.append(f'<line x1="{X0-5}" y1="{py_y}" x2="{X0+5}" y2="{py_y}" stroke="black" stroke-width="1"/>')
+    svg.append(f'<text x="{X0-28}" y="{py_y+3}" font-size="10" text-anchor="end">{i/5:.1f}</text>')
+# axis labels
+svg.append(f'<text x="{X0+(X1-X0)/2}" y="{Y0+38}" font-size="11" text-anchor="middle">wave number  k  (1/ell)</text>')
+svg.append(f'<text x="{X0+8}" y="{Y1-20}" font-size="10">phase speed  c / c0</text>')
+# curves (polylines)
+def points(fn):
+    return " ".join(f"{px(XMAX*j/200.0):.2f},{py(min(fn(XMAX*j/200.0), YMAX)):.2f}" for j in range(201))
+svg.append(f'<polyline points="{points(c_classical)}" fill="none" stroke="black" stroke-width="1.2"/>')
+svg.append(f'<polyline points="{points(c_nonlocal)}" fill="none" stroke="rgb(153,0,0)" stroke-width="1.2"/>')
+svg.append(f'<polyline points="{points(c_gradient)}" fill="none" stroke="rgb(0,0,153)" stroke-width="1.2"/>')
+# legend
+lx, ly = X1-170, Y1-44
+svg.append(f'<line x1="{lx+8}" y1="{ly+7}" x2="{lx+26}" y2="{ly+7}" stroke="black" stroke-width="1"/>')
+svg.append(f'<line x1="{lx+8}" y1="{ly+1}" x2="{lx+26}" y2="{ly+1}" stroke="rgb(153,0,0)" stroke-width="1"/>')
+svg.append(f'<line x1="{lx+8}" y1="{ly-5}" x2="{lx+26}" y2="{ly-5}" stroke="rgb(0,0,153)" stroke-width="1"/>')
+svg.append(f'<text x="{lx+32}" y="{ly+10}" font-size="10">classical  c/c0 = 1</text>')
+svg.append(f'<text x="{lx+32}" y="{ly+2}" font-size="10">non-local  decreases to 0</text>')
+svg.append(f'<text x="{lx+32}" y="{ly-6}" font-size="10">gradient   grows with k</text>')
+# title
+svg.append(f'<text x="{W/2}" y="{H-25}" font-size="12" text-anchor="middle">Dispersion: phase speed vs wave number</text>')
+svg.append('</svg>')
+with open(svg_out, "w") as f:
+    f.write("\n".join(svg))
+print("wrote", svg_out)
 
 def obj(num, txt):
     return f"{num} 0 obj\n{txt}\nendobj\n"

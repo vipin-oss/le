@@ -187,17 +187,17 @@ convergence, stability, or source-transcription results beyond the stated scope.
 
 \item \textbf{eq:3.28} (Section~3, VERIFIED-SYMBOLIC).
     Assumptions: Classical Eulerian total-energy balance with advective flux, derived from mass, momentum, and internal-energy residuals 
-    Limits: Not recorded for this row; script header for the scope limit (not generalized continua) 
+    Limits: Classical Eulerian total-energy balance; scope limited to the stated balance form, not generalized continua. 
     Verified by: symbolic verification.
 
 \item \textbf{eq:3.29} (Section~3, VERIFIED-SYMBOLIC).
     Assumptions: Same balance in divergence form with F\_i = q\_i - sigma\_ij v\_j + E v\_i 
-    Limits: Not recorded for this row 
+    Limits: Divergence form of the same balance; flux definition is model-specific.
     Verified by: symbolic verification.
 
 \item \textbf{eq:3.30} (Section~3, VERIFIED-SYMBOLIC).
     Assumptions: Integral form of the same balance over a fixed control volume 
-    Limits: Not recorded for this row 
+    Limits: Integral form over a fixed control volume; not generalized continua.
     Verified by: symbolic verification.
 
 \item \textbf{eq:4.1} (Section~4, VERIFIED-SYMBOLIC).
@@ -357,17 +357,17 @@ convergence, stability, or source-transcription results beyond the stated scope.
 
 \item \textbf{appB:eq:16} (Section~B, VERIFIED-SYMBOLIC).
     Assumptions: Energy balance residual in material-derivative form (first step of the derivation) 
-    Limits: Not recorded for this row 
+    Limits: Material-derivative form; first derivation step only.
     Verified by: symbolic verification.
 
 \item \textbf{appB:eq:17} (Section~B, VERIFIED-SYMBOLIC).
     Assumptions: Eulerian total-energy balance with the total-energy density E 
-    Limits: Not recorded for this row 
+    Limits: Eulerian total-energy balance with the total-energy density E.
     Verified by: symbolic verification.
 
 \item \textbf{appB:eq:18} (Section~B, VERIFIED-SYMBOLIC).
     Assumptions: Outward-positive total-energy flux F\_i = q\_i - sigma\_ij v\_j + E v\_i 
-    Limits: Not recorded for this row 
+    Limits: Outward-positive flux definition; model-specific flux terms.
     Verified by: symbolic verification.
 \end{itemize}
 
@@ -390,7 +390,7 @@ Lord--Shulman & The 1967 source gives a linear heat-flux relation with one relax
 Green--Lindsay & The 1972 source gives homogeneous linear equations under small-field assumptions and a uniqueness result under added conditions. & These conditions do not give a universal ordering of relaxation times or cover later variants. & Reconcile any proposed relaxation-time inequality with the source coefficients before use. \\
 Green--Naghdi I & Nothing is established at equation level in this review. & A GN-I closure must not be inferred from GN-II or GN-III. & Identify the primary equation that defines the GN-I case. \\
 Green--Naghdi II & The 1993 source identifies type-II nondissipation and finite-speed thermal waves; a mixed-boundary theorem gives at most one solution under its stated assumptions. & The nondissipation statement is not transferred to type III or to a family-wide energy theorem. & Complete energy flux and boundary power under the stated assumptions. \\
-Green--Naghdi III & & The 1992 selected linearized isotropic system; with Fourier-dominant conduction it recovers classical Fourier conduction, but the primary 1992 copy was not opened for page-level verification, so this is model-dependent / class B. & Free energy, dissipation, boundary power, and interface flux. \\
+Green--Naghdi III & & The 1992 selected linearized isotropic system; with Fourier-dominant conduction it recovers classical Fourier conduction. The held copy prints pp.~253--264 on its first page; the relevant cell is treated as model-dependent pending page-level anchoring of the specific GN-III system. & Free energy, dissipation, boundary power, and interface flux. \\
 Dual-phase-lag & Tzou's abstract frames the approach as high-rate heat conduction; the first-order residual has checked Lord--Shulman and Fourier substitutions. & One source reports stability when the temperature-gradient lag exceeds half the flux lag, and instability below that value, for a one-dimensional problem. Equality is unclassified. & Lag convention and hypotheses for each stability claim. \\
 Triple-phase-lag & The first-order formulation and lag ordering follow one 2007 source; the reduction with the coupling coefficient set to zero is checked. & Higher-order variants are not established; no family-wide admissibility rule. & Parameter and thermodynamic conditions of each higher-order variant. \\
 Moore--Gibson--Thompson & Only the displayed candidate thermoelastic heat-flux law has a checked Fourier substitution. & The candidate is not identified with acoustic MGT or with other thermoelastic placements; a one-dimensional instability claim is recorded as unverified. & Source equations, constitutive placement, and admissibility conditions. \\

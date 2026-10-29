@@ -316,6 +316,9 @@ jobs:
       - name: Validate A/V claim-ledger provenance
         run: python phase5/scripts/validate_claim_ledger.py
 
+      - name: Verify reference collection counts
+        run: python phase5/scripts/verify_reference_counts.py
+
       - name: Install vector-render dependencies
         uses: actions/setup-node@v4
         with:
