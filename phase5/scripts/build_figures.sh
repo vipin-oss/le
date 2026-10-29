@@ -7,7 +7,7 @@ if [[ ! -d "$ROOT/tools/node_modules" ]]; then
 fi
 # Render SVGs to PDFs from the tracked master source directory.
 node "$ROOT/tools/render_svg_pdf.js" "$ROOT/master/figures/source" "$ROOT/master/figures/source"
-# Mirror assets to the phase-level inventory for static checks and archives (best-effort).
+# Mirror assets to the phase-level inventory for static checks and archives.
 mkdir -p "$ROOT/figures/source"
-cp "$ROOT"/master/figures/source/*.pdf "$ROOT/figures/source/" 2>/dev/null || true
-cp "$ROOT"/figures/source/*.svg "$ROOT/master/figures/source/" 2>/dev/null || true
+cp "$ROOT"/master/figures/source/*.pdf "$ROOT/figures/source/"
+cp "$ROOT"/figures/source/*.svg "$ROOT/master/figures/source/"

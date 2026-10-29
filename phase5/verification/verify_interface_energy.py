@@ -132,21 +132,12 @@ assert sp.simplify(R_sigma + T_sigma + A_sigma - 1) == 0
 # Keep the manuscript's plane labels and remote-plane balance synchronized.
 section9 = (ROOT / "master/sections/sec09_interfaces.tex").read_text(encoding="utf-8")
 section10 = (ROOT / "master/sections/sec10_energy.tex").read_text(encoding="utf-8")
-figure_paths = (
-    ROOT / "figures/source/fig13-interface-reflection.svg",
-    ROOT / "master/figures/source/fig13-interface-reflection.svg",
-    ROOT / "master/figures/rendered/fig13-interface-reflection.svg",
-)
-found_figure = False
-for figure_path in figure_paths:
-    if not figure_path.is_file():
-        continue
-    found_figure = True
-    figure_text = figure_path.read_text(encoding="utf-8")
-    assert "Interface-plane accounting:" in figure_text
-    assert "RΣ + TΣ + A_int = 1" in figure_text
-    assert "R + T + A_int = 1" not in figure_text
-assert found_figure, "No figure SVG found at any expected path"
+figure_path = ROOT / "master/figures/source/fig13-interface-reflection.svg"
+assert figure_path.is_file(), f"missing tracked figure source: {figure_path}"
+figure_text = figure_path.read_text(encoding="utf-8")
+assert "Interface-plane accounting:" in figure_text
+assert "RΣ + TΣ + A_int = 1" in figure_text
+assert "R + T + A_int = 1" not in figure_text
 assert r"R_{\Sigma}" in section9 and r"T_{\Sigma}" in section9
 assert r"\shortstack{$R_{\Sigma},T_{\Sigma},$\\$A_{\mathrm{int}}$}" in section9
 # STRUCTURAL ONLY: the unrepeatable coupled-system illustration is not retained;
