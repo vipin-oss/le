@@ -11,6 +11,8 @@ import csv
 import re
 from pathlib import Path
 
+# Note: manuscript uses "Symbolically verified" (not "Script-verified")
+# terminology; this gate checks for the current prose labels.
 ROOT = Path(__file__).resolve().parents[1]
 SECTION = ROOT / "master/sections/sec16_future.tex"
 BIB = ROOT / "master/references_local.bib"
