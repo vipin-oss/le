@@ -288,3 +288,11 @@
 8. Sources: no new primary-source reads this session except one publisher page (Quintanilla 2003 DOI, title match) and one publisher page (Ezzat2011 ZAMP, bibliographic only). The Drive worker did not upload EQ_ANCHORS or SOURCE_LEDGER_PUBLIC chunks during this session.
 9. Session ended before 06:00 IST because the working context was exhausted; the queue in TASK_QUEUE.md is the resume point.
 10. Ezzat2011 remains UNREAD; its citation is bibliographic only (sec12 attribution note and DECISIONS_FOR_AUTHOR).
+
+## 2026-10-29 (IST ~07:52) — session close-out (past the 06:00 IST deadline)
+1. All 8 watch-fix items applied (eq:11.7 class A to ZAMP p.~940 Eq.(15); eq:7.2 Aifantis 2003 p.263; eq:7.1 kernel normalised to unity; Sec 11 page unified to p.~112; OCL-591 MGT DOI withdrawn via OCL-613; DPL cell names J. Heat Transfer 117:8-16; SOURCE_LEDGER empty fields filled; GN-III 1992 class B + MISSING_SOURCES).
+2. CI stabilized green: run `40805451622` on `a58d60b` (130 pages, 0 undefined refs, 0 forbidden, 0 near-overfull).
+3. W3 complete (W3.1 register, W3.2 sec10 worked example, W3.3 unified reduction, W3.4 CI green). W4 drafted; W5/W6 dispositions documented.
+4. Ledger 613 rows PASS; EQUATION_AUDIT.csv inventory PASS; references_local.bib 147 entries.
+5. HEAD == remote == `397a57b` on `arena/e6146644-le`. Docs-only reports committed (no build triggered).
+6. FINAL_HANDOVER.md, TASK_QUEUE.md, FINAL_REPORT.md written. No submission/sending/sharing.
