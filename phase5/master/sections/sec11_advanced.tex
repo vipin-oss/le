@@ -27,7 +27,7 @@ where ${}^C D_t^\alpha$ is the Caputo fractional derivative of order $\alpha$ an
 \label{eq:11.2}
 \end{equation}
 
-This display is the n=1 case ($0<\alpha<1$) of the general Caputo definition $n-1<\beta<n$ printed as Povstenko (A.5), p.~112; eq:11.1's range $0<\alpha\leq2$ spans both the n=1 and n=2 regimes. The corresponding expression for $1 < \alpha \leq 2$ is obtained by applying the operator to the second derivative of $f$. The integral form is the physically informative one: the state of the field at time $t$ is determined by its entire past, weighted by a kernel that decays algebraically rather than exponentially.
+This display is the n=1 case ($0<\alpha<1$) of the general Caputo definition $n-1<\beta<n$ printed as Povstenko (A.5) (printed page not checked here); eq:11.1's range $0<\alpha\leq2$ spans both the n=1 and n=2 regimes. The corresponding expression for $1 < \alpha \leq 2$ is obtained by applying the operator to the second derivative of $f$. The integral form is the physically informative one: the state of the field at time $t$ is determined by its entire past, weighted by a kernel that decays algebraically rather than exponentially.
 
 \paragraph{Caputo operator and origin.} Caputo's 1967 work introduced the fractional derivative in viscoelastic stress--strain models to represent nearly frequency-independent $Q$; the paper examined Earth's free modes and an aluminium rod and fitted an order near $0.15$. It is an origin in viscoelasticity/geophysics, not in heat conduction. In Eq.~\eqref{eq:11.2}, the derivative remains inside the integral for $0<\alpha<1$; the printed definition (5) is reconstructed from its proof-page integrand because the display is not legible in the checked copy \cite{Caputo1967}.
 
@@ -40,7 +40,7 @@ T(t) = T(0) + \frac{1}{\Gamma(\alpha)}\int_0^t (t-\tau)^{\alpha-1} a \nabla^2 T(
 \label{eq:11.3}
 \end{equation}
 
-shows that the fractional formulation is the special case in which the integral kernel is the power law $(t-\tau)^{\alpha-1}/\Gamma(\alpha)$ in elapsed time. The generalization of Section~\ref{sec:transport} replaces the power law by an arbitrary kernel, and thereby trades the one-parameter fractional family for a much larger one; the price is that the resulting operator is no longer a differential operator of fractional order, and the analytical machinery that makes the fractional heat equation tractable---the eigenfunction expansion in terms of the Mittag--Leffler function, and the closed-form fundamental solutions---is lost. The choice between the two representations is thus a choice between analytical tractability and constitutive flexibility, and it should be made explicitly rather than by default. This hereditary integral form follows Povstenko (A.1) with the Caputo definition (A.5), p.~112 \cite{Povstenko2011}; for orders up to two an extra initial-rate term appears, so the order range must be stated with the display.
+shows that the fractional formulation is the special case in which the integral kernel is the power law $(t-\tau)^{\alpha-1}/\Gamma(\alpha)$ in elapsed time. The generalization of Section~\ref{sec:transport} replaces the power law by an arbitrary kernel, and thereby trades the one-parameter fractional family for a much larger one; the price is that the resulting operator is no longer a differential operator of fractional order, and the analytical machinery that makes the fractional heat equation tractable---the eigenfunction expansion in terms of the Mittag--Leffler function, and the closed-form fundamental solutions---is lost. The choice between the two representations is thus a choice between analytical tractability and constitutive flexibility, and it should be made explicitly rather than by default. This hereditary integral form follows Povstenko (A.1) with the Caputo definition (A.5) \cite{Povstenko2011} (printed page not checked here); for orders up to two an extra initial-rate term appears, so the order range must be stated with the display.
 
 The analytical solution of the fractional heat conduction equation in radially symmetric domains was obtained in closed form by Povstenko \cite{Povstenko2007}, who derived the fundamental solutions needed to write the associated thermal stresses in spherical geometry; this work provides the reference against which later numerical inversions of fractional thermoelastic boundary-value problems are checked \cite{Povstenko2004,Povstenko2009,Povstenko2011,Povstenko2016}. The associated thermal stresses are the quantity of practical interest, and the difficulty of the problem is that the fractional operator couples the mechanical and thermal fields in a way that does not admit the plane-wave decoupling available in the classical case.
 
@@ -48,7 +48,7 @@ The analytical solution of the fractional heat conduction equation in radially s
 
 \subsubsection{Fractional Cattaneo-type equations}
 
-Povstenko’s Eq.~(29), on printed p.~101, gives the fractional Cattaneo-type flux law $q_i + \zeta\,{}^C D_t^\alpha q_i = -k T_{,i}$ with source coefficient $\zeta$, restricted to the order range $0<\alpha\leq1$. Appendix A identifies the derivative as Caputo (printed p.~112), while the source omits the superscript $C$ used here for clarity. The source does not identify $\zeta$ with $\tau^\alpha/\Gamma(1+\alpha)$ \cite{Povstenko2011Cattaneo}:
+Povstenko’s Eq.~(29) gives the fractional Cattaneo-type flux law $q_i + \zeta\,{}^C D_t^\alpha q_i = -k T_{,i}$ with source coefficient $\zeta$, restricted to the order range $0<\alpha\leq1$. Appendix A identifies the derivative as Caputo, while the source omits the superscript $C$ used here for clarity. The source does not identify $\zeta$ with $\tau^\alpha/\Gamma(1+\alpha)$ \cite{Povstenko2011Cattaneo}. Printed pages not checked here:
 
 \begin{equation}
 q_i + \zeta\,{}^C D_t^\alpha q_i = -k T_{,i}.
@@ -73,7 +73,7 @@ Strain-gradient theory introduces higher-order strain gradients in the constitut
 \label{eq:11.5}
 \end{equation}
 
-This is the strain-gradient law printed in Aifantis (2003) Eq.~(2.1) on p.~263 \cite{Aifantis2003}; Aifantis treats the gradient coefficients as phenomenological rather than derived.
+This is the strain-gradient law \cite{Aifantis2003}; Aifantis treats the gradient coefficients as phenomenological rather than derived. Printed page not checked here.
 
 Couple-stress theory introduces couple stresses and micro-rotations as independent degrees of freedom. The force stress tensor becomes generally non-symmetric, and the angular momentum balance includes couple stress terms:
 
@@ -100,7 +100,7 @@ T^* = T - \delta^2 \nabla^2 T,
 \label{eq:11.7}
 \end{equation}
 
-where $\delta^2$ is the two-temperature parameter. Ezzat and El Karamany (2011) p.~940 Eq.~(15) give $T^* = T - \delta^2 \nabla^2 T$ with $T$ the conductive temperature and $T^*$ the thermodynamic temperature, matching the manuscript definitions exactly \cite{Ezzat2011}; class A anchor to ZAMP p.~940 Eq.~(15). This model is distinct from the single-temperature, temperature-rate-dependent Green--Lindsay formulation.
+where $\delta^2$ is the two-temperature parameter. Ezzat and El Karamany (2011) express the conductive-thermodynamic temperature difference using the Laplacian of temperature \cite{Ezzat2011}; with $T$ conductive and $T^*$ thermodynamic, eq:11.7 is stated as the manuscript model definition. Sign and placement conventions must be stated explicitly; the two forms agree only to first order in the coefficient. Source page not checked here; class B. This model is distinct from the single-temperature, temperature-rate-dependent Green--Lindsay formulation.
 
 \subsubsection{Three-temperature theory}
 
