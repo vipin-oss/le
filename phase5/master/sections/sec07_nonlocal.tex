@@ -31,7 +31,7 @@ For special kernel functions---notably the one-parameter exponential and the Hel
 (1 - \xi^2\nabla^2)\sigma_{ij} = \sigma_{ij}^{\mathrm{local}},
 \label{eq:7.2}
 \end{equation}
-where $\xi = e_0 a$ is the nonlocal length scale parameter. This differential (Helmholtz) form is associated with Aifantis (2003) \cite{Aifantis2003}; Eringen (1983) developed the differential form of nonlocal elasticity \cite{Eringen1983}. With $c_1=0$ and $c_2=\ell^2$ it reduces to the strain-gradient law of Section~\ref{sec:7.2}. The differential form is the one used in wave-propagation applications, because it is a partial differential equation and can therefore be treated with the transform and numerical machinery of Section~\ref{sec:methods}. It is worth recording that the differential and integral forms are not interchangeable in general: the integral relation with a given kernel and the differential operator of Eq.~\eqref{eq:7.2} agree only for that kernel, and the difference matters for the boundary conditions, which in the differential form become higher-order \cite{Polizzotto2001}.
+where $\xi = e_0 a$ is the nonlocal length scale parameter. This differential (Helmholtz) form is associated with Aifantis (2003) \cite{Aifantis2003}; Aifantis (1992) p.~1282 had earlier noted stress-gradient terms as then unexplored \cite{Aifantis1992}; Eringen (1983) developed the differential form of nonlocal elasticity \cite{Eringen1983}. With $c_1=0$ and $c_2=\ell^2$ it reduces to the strain-gradient law of Section~\ref{sec:7.2}. The differential form is the one used in wave-propagation applications, because it is a partial differential equation and can therefore be treated with the transform and numerical machinery of Section~\ref{sec:methods}. It is worth recording that the differential and integral forms are not interchangeable in general: the integral relation with a given kernel and the differential operator of Eq.~\eqref{eq:7.2} agree only for that kernel, and the difference matters for the boundary conditions, which in the differential form become higher-order \cite{Polizzotto2001}.
 
 \subsection{Strain-gradient and couple-stress theories}
 \label{sec:7.2}
@@ -96,7 +96,7 @@ Some nonlocal formulations exhibit boundary-value paradoxes for particular kerne
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.9\columnwidth]{fig_dispersion.pdf}
-\caption{Script-generated dispersion diagram (illustrative). Normalised phase speed vs wave number: classical law (Eq. 7.4 with xi=0), non-local Helmholtz law (Eq. 7.4, xi=1), strain-gradient law (Eq. 7.3, ell=0.45). Schematic, not a fit to data.}
+\caption{Script-generated dispersion diagram (illustrative). Normalised phase speed vs wave number: classical law (\eqref{eq:7.4} with xi=0), non-local Helmholtz law (\eqref{eq:7.4}, xi=1), strain-gradient law (\eqref{eq:7.3}, ell=0.45). Schematic, not a fit to data.}
 \label{fig:dispersion}
 \end{figure}
 

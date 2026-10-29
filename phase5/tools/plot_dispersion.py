@@ -70,7 +70,6 @@ def curve(fn, color, width):
     for j in range(201):
         x = XMAX * j / 200.0
         y = fn(x)
-        if y > YMAX: y = YMAX
         if first:
             m(px(x), py(y)); first = False
         else:
@@ -159,7 +158,7 @@ svg.append(f'<text x="{X0+(X1-X0)/2}" y="{Y0+38}" font-size="11" text-anchor="mi
 svg.append(f'<text x="{X0+8}" y="{Y1-20}" font-size="10">phase speed  c / c0</text>')
 # curves (polylines)
 def points(fn):
-    return " ".join(f"{px(XMAX*j/200.0):.2f},{py(min(fn(XMAX*j/200.0), YMAX)):.2f}" for j in range(201))
+    return " ".join(f"{px(XMAX*j/200.0):.2f},{py(fn(XMAX*j/200.0)):.2f}" for j in range(201))
 svg.append(f'<polyline points="{points(c_classical)}" fill="none" stroke="black" stroke-width="1.2"/>')
 svg.append(f'<polyline points="{points(c_nonlocal)}" fill="none" stroke="rgb(153,0,0)" stroke-width="1.2"/>')
 svg.append(f'<polyline points="{points(c_gradient)}" fill="none" stroke="rgb(0,0,153)" stroke-width="1.2"/>')

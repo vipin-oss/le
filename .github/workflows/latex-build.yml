@@ -327,6 +327,21 @@ jobs:
       - name: Verify nonlocal dispersion figure against text relation
         run: python phase5/verification/verify_nonlocal_dispersion.py
 
+      - name: Verify isotropic elastic speeds derivation
+        run: python phase5/verification/verify_isotropic_elastic_speeds.py
+
+      - name: Verify Lord-Shulman heat equation
+        run: python phase5/verification/verify_ls_heat_equation.py
+
+      - name: Verify Q3 theory status matrix
+        run: python phase5/verification/verify_q3_status_matrix.py
+
+      - name: Verify strain-gradient energy
+        run: python phase5/verification/verify_strain_gradient_energy.py
+
+      - name: Verify TPL first-order expansion
+        run: python phase5/verification/verify_tpl_first_order_expansion.py
+
       - name: Fail on deleted tracked files (no-delete gate)
         run: |
           set -euo pipefail
@@ -356,6 +371,63 @@ jobs:
             exit 1
           fi
           echo "PASS: no control characters or BOM in tracked tex/bib/csv"
+
+      - name: Float-too-large gate (no overfull boxes > 5 pt)
+        run: |
+          set -euo pipefail
+          if [[ -f phase5/master/build/main.log ]]; then
+            overfull=$(grep -cP "Overfull \\\\hbox \(([+-]?[5-9]\d*\.?\d*|[1-9]\d+\.?\d*)pt too wide\)" phase5/master/build/main.log || true)
+            if [[ "$overfull" -gt 0 ]]; then
+              echo "ERROR: $overfull overfull hbox(es) > 5 pt detected"
+              grep -P "Overfull \\\\hbox \(([+-]?[5-9]\d*\.?\d*|[1-9]\d+\.?\d*)pt too wide\)" phase5/master/build/main.log | head -10
+              exit 1
+            fi
+            echo "PASS: no overfull hboxes > 5 pt"
+          else
+            echo "SKIP: build log not available (pre-build check)"
+          fi
+
+      - name: Geometry check (figure width <= textwidth)
+        run: |
+          set -euo pipefail
+          bad=""
+          for f in $(git ls-files 'phase5/master/figures/source/*.svg'); do
+            if grep -qP 'width="[^"]*"' "$f"; then
+              w=$(grep -oP 'width="\K[^"]+' "$f" | head -1)
+              if [[ "$w" =~ ^([0-9.]+)pt$ ]]; then
+                wpt=${BASH_REMATCH[1]}
+                if (( $(echo "$wpt > 468" | bc -l 2>/dev/null || echo 0) )); then
+                  bad="$bad $f ($wpt pt > 468 pt textwidth)"
+                fi
+              fi
+            fi
+          done
+          if [[ -n "$bad" ]]; then
+            echo "ERROR: FIGURE WIDTH EXCEEDS TEXTWIDTH:"
+            echo "$bad"
+            exit 1
+          fi
+          echo "PASS: no figure width exceeds textwidth"
+
+      - name: Extended forbidden-token scan (PDF text)
+        run: |
+          set -euo pipefail
+          if [[ -f phase5/master/build/main.txt ]]; then
+            tokens="Class A Class B Class C OCL- WP6- WP8 mock referee source-only gate build not checked here &amp;"
+            bad=""
+            for t in $tokens; do
+              if grep -qiF "$t" phase5/master/build/main.txt; then
+                bad="$bad '$t'"
+              fi
+            done
+            if [[ -n "$bad" ]]; then
+              echo "ERROR: FORBIDDEN TOKENS FOUND IN PDF TEXT:$bad"
+              exit 1
+            fi
+            echo "PASS: no forbidden tokens in PDF text"
+          else
+            echo "SKIP: PDF text not available (pre-build check)"
+          fi
 
       - name: Install vector-render dependencies
         uses: actions/setup-node@v4

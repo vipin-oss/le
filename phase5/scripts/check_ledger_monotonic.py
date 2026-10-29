@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Monotonic gate for the claim ledger.
 
-Fails when the set of ledger IDs at HEAD is not a superset of the IDs at the
-parent commit (i.e. IDs were removed), or when the A+V count decreases without
-an explicit DOWNGRADE marker row.
+Fails when:
+  1. The set of ledger IDs at HEAD is not a superset of the IDs at the parent
+     commit (i.e. IDs were removed), or
+  2. The A+V count decreases without an explicit DOWNGRADE marker row, or
+  3. Any Class A row is downgraded to B/C/V without a DOWNGRADE marker row,
+  4. Any Class V row loses its resolved_by without a DOWNGRADE marker row.
 
 Usage (CI, with fetch-depth >= 2):
     python3 phase5/scripts/check_ledger_monotonic.py
@@ -43,12 +46,17 @@ def git_show(ref: str, path: str) -> str:
     return result.stdout
 
 
+def row_key(row: dict) -> str:
+    return row["ledger_row_id"].strip()
+
+
 def main() -> None:
     # Current ledger at HEAD
     head_text = (ROOT / LEDGER_PATH).read_text(encoding="utf-8-sig")
     head_rows = read_ledger_csv(head_text)
-    head_ids = {row["ledger_row_id"].strip() for row in head_rows}
-    head_counts = Counter(row["class"].strip() for row in head_rows)
+    head_by_id = {row_key(r): r for r in head_rows}
+    head_ids = set(head_by_id.keys())
+    head_counts = Counter(r["class"].strip() for r in head_rows)
     head_av = head_counts.get("A", 0) + head_counts.get("V", 0)
 
     # Parent commit ledger
@@ -59,8 +67,9 @@ def main() -> None:
         sys.exit(1)
 
     parent_rows = read_ledger_csv(parent_text)
-    parent_ids = {row["ledger_row_id"].strip() for row in parent_rows}
-    parent_counts = Counter(row["class"].strip() for row in parent_rows)
+    parent_by_id = {row_key(r): r for r in parent_rows}
+    parent_ids = set(parent_by_id.keys())
+    parent_counts = Counter(r["class"].strip() for r in parent_rows)
     parent_av = parent_counts.get("A", 0) + parent_counts.get("V", 0)
 
     # Check 1: IDs must not be removed
@@ -83,6 +92,27 @@ def main() -> None:
             "without a DOWNGRADE marker row"
         )
         sys.exit(1)
+
+    # Check 3: No Class A row downgraded to lower class without DOWNGRADE marker
+    for rid in sorted(head_ids & parent_ids):
+        hrow = head_by_id[rid]
+        prow = parent_by_id[rid]
+        hcls = hrow["class"].strip()
+        pcls = prow["class"].strip()
+        if pcls == "A" and hcls in ("B", "C", "V"):
+            if not any("DOWNGRADE" in r.get("what_was_changed", "").upper() for r in head_rows if row_key(r) == rid):
+                print(f"ERROR: Class A row {rid} downgraded to {hcls} without DOWNGRADE marker")
+                sys.exit(1)
+
+    # Check 4: No Class V row loses resolved_by without DOWNGRADE marker
+    for rid in sorted(head_ids & parent_ids):
+        hrow = head_by_id[rid]
+        prow = parent_by_id[rid]
+        if prow["class"].strip() == "V":
+            if prow.get("resolved_by", "").strip() and not hrow.get("resolved_by", "").strip():
+                if not any("DOWNGRADE" in r.get("what_was_changed", "").upper() for r in head_rows if row_key(r) == rid):
+                    print(f"ERROR: Class V row {rid} lost resolved_by without DOWNGRADE marker")
+                    sys.exit(1)
 
     print(
         f"PASS: ledger IDs monotonic (HEAD={len(head_ids)} >= HEAD~1={len(parent_ids)}); "

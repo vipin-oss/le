@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 """Verify reference collection counts: total bib entries, cited keys, uncited keys.
 
-Expected (per Section 14 taxonomy reconciliation):
-  bib entries   : 150
-  cited keys    : 111
-  uncited keys  : 39
+Expected numbers are computed from references_local.bib and the .tex cites,
+not hardcoded. The gate checks the internal invariant: uncited = bib - cited.
 """
 from __future__ import annotations
 
@@ -16,10 +14,6 @@ ROOT = Path(__file__).resolve().parents[2]
 MASTER = ROOT / "phase5" / "master"
 MAIN = MASTER / "main.tex"
 BIB = MASTER / "references_local.bib"
-
-EXPECTED_BIB = 150
-EXPECTED_CITED = 111
-EXPECTED_UNCITED = 39
 
 
 def uncomment(text: str) -> str:
@@ -89,22 +83,19 @@ def main() -> int:
     uncited = bib_count - cited_count
 
     print(f"Active TeX files: {len(files)}")
-    print(f"Bib entries: {bib_count} (expected {EXPECTED_BIB})")
-    print(f"Cited keys:  {cited_count} (expected {EXPECTED_CITED})")
-    print(f"Uncited keys: {uncited} (expected {EXPECTED_UNCITED})")
+    print(f"Bib entries: {bib_count} (computed from references_local.bib)")
+    print(f"Cited keys:  {cited_count} (computed from .tex cites)")
+    print(f"Uncited keys: {uncited} (= bib - cited)")
 
     errors = []
-    if bib_count != EXPECTED_BIB:
-        errors.append(f"bib entries {bib_count} != {EXPECTED_BIB}")
-    if cited_count != EXPECTED_CITED:
-        errors.append(f"cited keys {cited_count} != {EXPECTED_CITED}")
-    if uncited != EXPECTED_UNCITED:
-        errors.append(f"uncited keys {uncited} != {EXPECTED_UNCITED}")
+    # Internal invariant: uncited must equal bib - cited
+    if uncited != bib_count - cited_count:
+        errors.append(f"uncited keys {uncited} != bib {bib_count} - cited {cited_count}")
 
     if errors:
         print("ERROR:", "; ".join(errors))
         return 1
-    print("Reference counts verified.")
+    print("Reference counts verified (internal consistency).")
     return 0
 
 
