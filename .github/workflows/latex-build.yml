@@ -84,6 +84,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Checkout read-only literature verification inputs
         if: startsWith(github.ref, 'refs/heads/arena/') && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && (contains(github.event.head_commit.message, '[R3A-CROSSREF]') || contains(github.event.head_commit.message, '[R3B-CROSSREF]') || contains(github.event.head_commit.message, '[R3C-CROSSREF]') || contains(github.event.head_commit.message, '[R3D-CROSSREF]'))))
@@ -315,6 +317,9 @@ jobs:
 
       - name: Validate A/V claim-ledger provenance
         run: python phase5/scripts/validate_claim_ledger.py
+
+      - name: Check ledger ID monotonicity (no removals, no silent A/V downgrade)
+        run: python phase5/scripts/check_ledger_monotonic.py
 
       - name: Verify reference collection counts
         run: python phase5/scripts/verify_reference_counts.py
