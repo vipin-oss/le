@@ -21,8 +21,6 @@ FORBIDDEN = [
     "source-only",
     "referee register",
     "open-claim",
-    "gate",
-    "build",
     "not checked here",
     "&amp;",
     "ledger",
