@@ -1,0 +1,18 @@
+% fig7_size.tex -- Size effects: lattice vs continuum vs nonlocal/gradient (s12_size)
+\begin{tikzpicture}[x=1.0cm,y=1.0cm,>=Stealth]
+  \tikzset{
+    node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.6cm},
+    arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+    lbl/.style={font=\footnotesize,text=blue!60!black},
+  }
+  % Lattice
+  \node[node] at (-3.4, 0.4) (lattice) {Lattice\\[-1pt] discrete atoms\\[-1pt] spacing $a$\\[-1pt] exact $\\sin(ka/2)$};
+  % Continuum
+  \node[node] at ( 1.4, 0.4) (cont) {Continuum\\[-1pt] local elasticity\\[-1pt] $\\omega=ck$\\[-1pt] no dispersion};
+  % Nonlocal/gradient
+  \node[node] at (-1.0,-2.2) (nonlocal) {Nonlocal/\\[-1pt] gradient\\[-1pt] one length $\\xi,\\ell$\\[-1pt] rational $\\omega(k)$};
+  % Arrows
+  \draw[arr] (lattice.east) -- (cont.west) node[pos=0.5,above,lbl] {long-wave only};
+  \draw[arr] (lattice.south) -- (nonlocal.north) node[pos=0.5,left,lbl] {captures bend};
+  \draw[arr] (cont.south) -- (nonlocal.north) node[pos=0.5,right,lbl] {adds length};
+\end{tikzpicture}

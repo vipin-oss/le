@@ -1,0 +1,29 @@
+\section{Reproducibility: scripts and what each one verifies}\label{app:repro}
+All numerical results of this review are produced by Python scripts supplied with the manuscript. \Cref{tab:scripts} lists them with the checks they perform.
+\begin{table}[ht]\centering\small
+\caption{Scripts and the identities or limits they verify.}\label{tab:scripts}
+\begin{tabularx}{\textwidth}{@{}p{4.2cm}X@{}}\toprule
+Script & Content and checks\\\midrule
+\path{check_dispersion.py} & Symbolic determinant of the field equations equals the dispersion polynomial \eqref{eq:disp} (difference zero).\\
+\path{check_reductions.py} & Reductions of $G(s)$: DPL$\to$LS, TPL$\to$DPL, GN-II/III, large-$s$ limits.\\
+\path{check_fronts.py} & LS and GL front speeds from the polynomial agree with \eqref{eq:fronts} to four digits.\\
+\path{check_gn2.py} & GN-II speeds are non-dispersive and equal the formula.\\
+\path{check_thermopiezo.py} & Thermopiezoelectric determinant is proportional to the renormalised thermoelastic polynomial \eqref{eq:renorm}.\\
+\path{fig_dispersion.py}, \path{fig_zener_q.py} & Dispersion and damping; weak-coupling Debye result confirmed ($Q^{-1}/\varepsilon=0.4999998$).\\
+\path{fig_stability.py} & Growth rates for the 1st- and 2nd-order DPL truncations.\\
+\path{fig_heatpulse.py} & Cattaneo pulse by Talbot inversion; Fourier limit and front exactness.\\
+\path{fig_shock.py} & Thermal shock of a coupled half-space; boundary conditions satisfied to machine precision.\\
+\path{fig_rayleigh.py} & Thermoelastic Rayleigh root; $\varepsilon\to0$ limit gives the elastic Rayleigh speed.\\
+\path{interface_te.py}, \path{fig_interface_energy.py} & Elastic and thermoelastic interface; impedance limit to twelve digits; net-flux continuity to $10^{-15}$.\\
+\path{fig_lattice.py}, \path{fig_nonlocal_te.py} & Lattice calibration of $\xi$; nonlocal thermoelastic branches; $\xi\to0$ and $\varepsilon\to0$ limits.\\
+\path{fig_fractional_mdd.py} & Caputo heat equation (erfc check) and MDD kernel transform ($\kappa(0)=1/3$).\\
+\path{fig_regime_map.py}, \path{bench_laplace.py}, \path{table_materials.py} & Regime map; Laplace-inversion benchmark; material coupling table.\\
+\path{fig_lag_truncation.py} & Exact delay law versus first- and second-order truncations; relative errors; sign change of attenuation at $\omega\tau=\pi/2$.\\
+\path{fig_flexTED.py}, \path{lamb_te.py}, \path{fig_lamb_te.py} & Zener versus Lifshitz--Roukes; plate determinant matches exact Rayleigh--Lamb to $10^{-10}$ in the elastic limit and the Lifshitz--Roukes loss (plane-strain $\Delta$) with ratio $1.000$ at small $kh$.\\
+\path{fig_frac_coupled.py}, \path{fig_bar_modes.py}, \path{fig_gk.py} & Coupled fractional dispersion; clamped-bar modal loss; Guyer--Krumhansl thermal branch (high-frequency limit confirmed to $0.2\%$).\\
+\path{fig_aniso.py}, \path{fig_reflection.py}, \path{check_bg.py} & Cubic-crystal coupling by direction; free-surface reflection (elastic limit to $10^{-10}$); Bleustein--Gulyaev closed forms versus secular determinant.\\
+\path{bench_schemes.py}, \path{check_kk.py} & Finite-difference orders for the Cattaneo front; Kramers--Kronig sum rule to $10^{-6}$.\\
+\path{worked_examples.py}, \path{table_scenarios.py}, \path{gen_catalogue.py}, \path{gen_refs_new.py} & Numbers of the worked examples; application-regime table; classified catalogue of the references; assembly of \path{refs_new.bib} (Crossref records and author-library entries, de-duplicated by DOI and title).\\
+\bottomrule\end{tabularx}
+\end{table}
+\paragraph{Limits of verification.} The scripts verify the mathematics of the models stated here against their own field equations and limiting cases. They do not verify that a model describes a given material; that requires comparison with experiment. Material values in Table~\ref{tab:materials} are rounded handbook-type numbers used for illustration.

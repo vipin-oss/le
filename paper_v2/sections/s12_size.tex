@@ -1,0 +1,69 @@
+\section{Size effects: nonlocal and gradient models}\label{sec:size}
+\subsection{Why local elasticity fails at small wavelengths}
+Local elasticity predicts non-dispersive waves, $\omega=c\,k$, for all wavelengths. A crystal is a lattice, and its acoustic branch bends over and reaches zero group velocity at the zone boundary. For a monatomic chain with nearest-neighbour spring constant $\kappa_s$, mass $m$ and spacing $a$, the exact relation is $\omega=2\sqrt{\kappa_s/m}\,|\sin(ka/2)|=c_0k\,\mathrm{sinc}(ka/2)$ with $c_0=a\sqrt{\kappa_s/m}$ \citep{BornKarman1912}, which at small $k$ gives $\omega\simeq c_0k\,[1-(ka)^2/24]$. Nonlocal and gradient models add one length scale to capture the leading deviation from local behaviour in a continuum framework. Maranganti and Sharma \citep{Maranganti2007} estimate the scales at which classical elasticity breaks down for various materials, and show that size effects can also generate electromechanical coupling in non-piezoelectric solids \citep{Maranganti2006}. Micropolar thermoelasticity without energy dissipation was formulated by Ciarletta \citep{Ciarletta1999} and Quintanilla \citep{Quintanilla2002}; strain gradient and higher-order nonlocal formulations appear in \citep{Gao2007,Lim2015,Ke2014}.
+
+\subsection{Eringen's nonlocal elasticity}
+In the integral model the stress at $\bx$ is a weighted average of the local stress over a neighbourhood,
+$\sigma_{ij}(\bx)=\int\alpha(|\bx-\bx'|)\,C_{ijkl}\varepsilon_{kl}(\bx')\,\dd V'$, with a kernel $\alpha$ normalised to unity. For the exponential kernel in one dimension, $\alpha(|x|)=e^{-|x|/\ell}/(2\ell)$, the integral equation is equivalent to the differential equation
+\begin{equation}
+\bigl(1-\xi^2\partial_x^2\bigr)\sigma=c\,\varepsilon,\qquad \xi=\ell,\label{eq:eringen}
+\end{equation}
+(because $\alpha$ is the Green's function of $1-\ell^2\partial_x^2$), and in three dimensions with the Yukawa-type kernel $e^{-r/\ell}/(4\pi\ell^2r)$ the equation $(1-\xi^2\nabla^2)\sigma_{ij}=C_{ijkl}\varepsilon_{kl}$ \citep{Eringen1972,Eringen1983,Eringen2002}. Substituting in the momentum balance gives
+\begin{equation}
+\omega^2=\frac{c_0^2k^2}{1+\xi^2k^2},\qquad v_g=\frac{c_0}{(1+\xi^2k^2)^{3/2}},\label{eq:erin}
+\end{equation}
+where $\xi=e_0a$ in Eringen's notation ($e_0$ a dimensionless material constant and $a$ an internal characteristic length). Equation~\eqref{eq:erin} is the rational analogue of the lattice relation: $\omega$ is bounded by $c_0/\xi$ and the group velocity decays to zero at large $k$.
+
+\paragraph{Calibration against the lattice.} Matching \eqref{eq:erin} to the chain at the zone boundary $k=\pi/a$, where $\omega=2c_0/a$, requires $(\xi/a)^2=\tfrac14-1/\pi^2$, i.e.\ $\xi/a=0.3856$; this reproduces the value $e_0\approx0.39$ quoted by Eringen \citep{Eringen1983} and is the origin of the often-used choice. Matching instead the long-wavelength curvature requires $\xi^2=a^2/12$ ($\xi=0.289a$). The two calibrations differ by about one third in $\xi$ and thus by a factor of about $1.8$ in $\xi^2$, so any quantitative prediction that depends on $\xi$ depends on the calibration target (\Cref{fig:lattice}). The group velocity of the Eringen model at the zone boundary is $0.26c_0$, whereas the chain has $v_g=0$ there.
+
+\subsection{Strain-gradient elasticity}
+Aifantis-type gradient elasticity adds the gradient of the strain \citep{Aifantis1992,Aifantis2003},
+\begin{equation}
+\sigma=c\,(\varepsilon-\ell^2\varepsilon_{,xx}),\qquad \omega^2=c_0^2k^2(1+\ell^2k^2),\qquad v_g=c_0\frac{1+2\ell^2k^2}{\sqrt{1+\ell^2k^2}}.\label{eq:grad}
+\end{equation}
+Both phase and group velocities \emph{increase} with $k$ for $\ell^2>0$, the opposite of lattice dispersion. To reproduce the lattice curvature one needs $\ell^2=-a^2/12<0$, which gives $\omega^2=c_0^2k^2(1-a^2k^2/12)$ and an instability ($\omega^2<0$) beyond $k=\sqrt{12}/a$ --- outside the Brillouin zone, but a warning that the pure gradient model with the lattice sign is not well posed at high wavenumber. The dispersive-stabilised versions, with a gradient of inertia as well as of strain \citep{Askes2006,Askes2011}, interpolate between \eqref{eq:erin} and \eqref{eq:grad}: with strain-gradient length $\ell_s$ and inertia-gradient length $\ell_d$, $\omega^2=c_0^2k^2(1+\ell_s^2k^2)/(1+\ell_d^2k^2)$, which remains stable and reproduces the lattice shape for $\ell_d>\ell_s$ (the Eringen form is the case $\ell_s=0$).
+
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_lattice.pdf}
+\caption{Nonlocal and gradient dispersion compared with the exact monatomic chain. (a) Dispersion: Eringen with two calibrations (zone-boundary and long-wavelength), gradient with positive and negative length-squared, and the local model. (b) Group velocity of the chain and of the Eringen model with the zone-boundary calibration.}\label{fig:lattice}
+\end{figure}
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_nonlocal.pdf}
+\caption{Generic size-effect dispersion for $\xi=\ell=0.5$ in units of the characteristic length. (a) Frequency against wavenumber: the Eringen model saturates at $c_0/\xi$, the gradient model rises faster than linearly. (b,c) Phase and group speeds.}\label{fig:nonlocal}
+\end{figure}
+
+\subsection{Other enrichments}
+Couple-stress theory \citep{MindlinTiersten1962}, micropolar theory \citep{Eringen1966a,Eringen1999}, flexoelectricity and surface elasticity add length scales through different mechanisms. The Klein--Gordon-type nonlocal elasticity \citep{Lazar2022} (a Helmholtz-type operator acting on the displacement rather than the stress) has been used with piezo-thermoelastic media \citep{Das2026}. Nonlocal variational principles are discussed in \citep{Polizzotto2001}. The physical ingredients differ, but at the level of plane-wave dispersion most enrichments reduce to a rational function of $k^2$ multiplying the local stiffness or the inertia, and the choice among them is largely a matter of which feature of the underlying lattice or microstructure one wishes to represent.
+
+\subsection{Nonlocal thermoelasticity}
+Eringen \citep{Eringen1974} extended nonlocality to thermoelasticity. Two forms of the constitutive relation are in use in recent papers:
+\begin{align}
+\text{(A)}\quad & (1-\xi^2\partial_x^2)\,\sigma=c\,\varepsilon-\beta\theta, \\
+\text{(B)}\quad & (1-\xi^2\partial_x^2)\,(\sigma+\beta\theta)=c\,\varepsilon,
+\end{align}
+that is, whether the thermal stress is smoothed with the elastic stress (B) or not (A). The two forms give different dispersion polynomials: with $K=k^2$, (A) is $\bigl[\rho(c_1^2+\xi^2s^2)K+\rho s^2\bigr](s\rho c+GK)+\beta^2T_0sK=0$, and (B) adds the factor $(1+\xi^2K)$ to the last term. Both reduce to the local relation \eqref{eq:disp} as $\xi\to0$ and to the nonlocal elastic relation \eqref{eq:erin} as $\varepsilon\to0$; we confirmed both limits numerically. \Cref{fig:nonlocal-te} compares the elastic-type branch. In the classical theory with $\varepsilon=0.1$ and $\xi=0.3c_1/\omega_*$ (elastic cut-off at $\omega=3.3\omega_*$), the main effect on the phase speed is the nonlocal dispersion itself: the speed falls steadily with frequency, to about $0.3c_1$ at $95\,\%$ of the cut-off, and the two forms give almost the same speed. The damping differs: form~(A) stays close to the local curve (its maximum is about $15\,\%$ larger and slightly shifted) whereas form~(B), whose thermal coupling is multiplied by $1+\xi^2K$ and thus grows with wavenumber, shows a damping that increases steeply on approaching the cut-off, reaching $Q^{-1}\approx0.3$. The difference arises entirely from the high-wavenumber coupling. A paper that reports nonlocal thermoelastic damping or dispersion should therefore state which form is used; the literature on nonlocal thermoelastic waves \citep{Tiwari2021,Sarkar2019,Lata2020,Bachher2019,Li2018,Kalkal2020,Kumar2023} uses various forms.
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_nonlocal_te.pdf}
+\caption{Elastic-type branch of the nonlocal classical thermoelastic problem ($\varepsilon=0.1$, $\xi=0.3c_1/\omega_*$, frequency up to $95\%$ of the elastic cut-off $c_1/\xi$): phase speed (a) and damping (b) for the local model and the two nonlocal forms.}\label{fig:nonlocal-te}
+\end{figure}
+
+\subsection{Nonlocality in the heat flux}
+The Guyer--Krumhansl equation \citep{GuyerKrumhansl1966,GuyerKrumhansl1966II} adds spatial derivatives of the flux,
+\begin{equation}
+q_i+\tau_R\dot q_i=-k\theta_{,i}+\ell_{GK}^2\bigl(\nabla^2q_i+2\,q_{j,ji}\bigr),
+\end{equation}
+and describes heat in the hydrodynamic phonon regime, where momentum-conserving collisions dominate. In one dimension the extra term is $3\ell_{GK}^2q_{,xx}$ and $G(s,k)=k/(1+\tau_Rs+3\ell_{GK}^2k^2)$ depends on the wavenumber, so the dispersion polynomial is no longer quadratic in $K$ but retains its structure. For low-temperature crystals, ballistic and size-dependent conduction in nanostructures are modelled with this and related equations; the combination with elastic nonlocality remains little explored (Section~\ref{sec:open}).
+
+Size-dependent effects on interaction of surface waves in micropolar thermoelastic medium with double porosity were analysed by \citep{Das2024}. Shock-induced nonlocal coupled thermoelasticity analysis with energy dissipation in a MEMS/NEMS beam resonator was presented by \citep{Hosseini2017}. Boundary integral equations formulation for fractional order thermoelasticity was developed by \citep{Tiwari2014}; harmonic plane wave propagation under fractional order thermoelasticity was analysed by \citep{Tiwari2015}.
+
+\subsection{Caveats}
+The differential nonlocal model produces well-known inconsistencies for bounded bodies (for example in some bending problems with particular boundary conditions) that do not appear in the infinite-medium plane-wave analysis above. The length scales are phenomenological; whether the lattice, the zone-boundary or some experimental dispersion is the calibration target has a leading effect on the quantitative predictions.
+
+\begin{summarybox}[Summary]
+Nonlocal and gradient elasticity add one length to capture the lattice deviation from $\omega=ck$. Eringen's model saturates at $c_0/\xi$ (matching the zone boundary gives $\xi/a\approx0.39$); gradient elasticity speeds up with $k$ unless stabilised by inertia gradients. Calibration matters: zone-boundary vs long-wavelength calibration changes $\xi$ by $\sim$30\%. Nonlocal thermoelasticity has two forms (A) and (B) that differ in how the thermal stress is smoothed and give different damping near cut-off.
+\end{summarybox}
+
+\begin{figure}[t!]\centering\small
+\input{figs_tikz/fig7_size.tex}
+\caption{Geometry after \citep{BornKarman1912,Eringen1972}: size effects bridge discrete lattice dispersion and local continuum via one nonlocal or gradient length.}\label{fig:size-geo}
+\end{figure}

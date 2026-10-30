@@ -1,0 +1,34 @@
+% fig4_reflection.tex -- Half-space reflection geometry (s08_waves3d)
+\begin{tikzpicture}[x=1.0cm,y=1.0cm,>=Stealth]
+  \tikzset{
+    node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.2cm},
+    arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+    lbl/.style={font=\footnotesize,text=blue!60!black},
+    medium/.style={fill=blue!10},
+    surfaceline/.style={thick},
+  }
+  % Half-space region y>0 shaded
+  \fill[medium] (-3.5,0) -- (3.5,0) -- (3.5,3.5) -- (-3.5,3.5) -- cycle;
+  % Free surface line
+  \draw[surfaceline] (-3.5,0) -- (3.5,0);
+  \node[below=2pt] at (0,0) {free surface $y=0$};
+  % Axes
+  \draw[->,thick] (-3.5,0) -- (3.5,0) node[right] {$x$};
+  \draw[->,thick] (0,0) -- (0,3.5) node[above] {$y$};
+  % Incident P wave from upper left
+  \draw[arr,very thick] (-2.5,2.0) -- (-0.7,0.6);
+  \node[above left,lbl] at (-2.5,2.0) {incident P};
+  % Reflected P wave
+  \draw[arr,very thick] (-0.7,0.6) -- (1.5,2.2);
+  \node[above right,lbl] at (1.5,2.2) {reflected P};
+  % Reflected SV wave
+  \draw[arr,very thick] (-0.7,0.6) -- (1.5,-0.8);
+  \node[below right,lbl] at (1.5,-0.8) {reflected SV};
+  % Thermal-type (evanescent) wave going down
+  \draw[arr,dashed,very thick] (-0.7,0.6) -- (0.5,-2.0);
+  \node[below,lbl] at (0.5,-2.0) {thermal (evanescent)};
+  % Region label
+  \node[above] at (0,3.2) {half-space $y>0$};
+  % Boundary condition labels
+  \node[below=6pt,align=center] at (-1.2,0) {insulated\\(\\partial_n\\theta=0)\\\\\nor isothermal\\($\\theta=0$)};
+\end{tikzpicture}

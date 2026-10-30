@@ -1,0 +1,31 @@
+\section{Thermoelastic Lamb waves in a plate}\label{sec:lamb}
+
+Surface waves on a half-space (\cref{sec:surface}) have a counterpart in plates, where the two free faces couple the dilatational, shear and thermal fields. The plate problem is where the flexural thermoelastic damping of \cref{sec:flexted} is recovered from the full field equations, which gives a stringent test of the formulation.
+
+\subsection{Formulation}
+Consider a plate $-h<y<h$ in plane strain, with waves $\exp[i(kx-\omega t)]$ along $x$ and real $k$. The fields are the two dilatational--thermal modes $j=1,2$, which are the two roots $\kappa_j$ of the coupled quadratic of \cref{sec:classical} with transverse wavenumbers $m_j=\sqrt{\kappa_j+k^2}$, and the shear mode with $m_s=\sqrt{s^2/c_2^2+k^2}$ with $s=-i\omega$. Each mode appears as $e^{\pm m y}$, so there are six amplitudes. The boundary conditions on $y=\pm h$ are $\sigma_{yy}=\sigma_{xy}=0$ and either an insulated ($\theta_{,y}=0$) or an isothermal ($\theta=0$) face, which gives a $6\times6$ determinant $D(s;k,h)$ whose roots are the plate modes. For a given real $k$ the roots $s$ are complex, and $Q^{-1}=2|\operatorname{Im}\omega|/\operatorname{Re}\omega$ measures the temporal damping. The heat-flux model enters only through $G(s)$ in the quadratic, so lagging and fractional laws are handled by substitution. The implementation is in \path{scripts/lamb_te.py}.
+
+\subsection{Validation}
+Two checks were made.
+\begin{enumerate}
+\item \emph{Elastic limit.} With $\varepsilon=10^{-8}$ and $kh=0.3$ the antisymmetric root is $\omega=0.04426280008$ (units $c_1=1$, $h=1$), against $0.04426280008$ from the Rayleigh--Lamb equation $\tan(qh)\,4k^2pq+(q^2-k^2)^2\tan(ph)=0$ solved separately; they agree to about $10^{-10}$.
+\item \emph{Thin-plate thermoelastic damping.} For $\varepsilon=0.05$, $\nu=0.3$ and a plate with $h=20\,c_1/\omega_*$ the loss of the lowest antisymmetric mode was computed over $10^{-3}\lesssim kh\lesssim1.3$. For $\omega\ll\omega_Z=\pi^2\chi/(2h)^2$ the loss follows \cref{eq:LR} with the plane-strain value $\Delta=E\alpha_T^2T_0(1+\nu)/[(1-\nu)c_v]$, with ratio $1.000$ for $kh\lesssim0.015$, $0.998$ at $kh=0.036$, and $0.989$ at $kh=0.088$.
+\end{enumerate}
+The factor $(1+\nu)/(1-\nu)$ rather than $1$ is what plane strain requires (stiffness $E/(1-\nu^2)$ and expansion $(1+\nu)\alpha_T$), and the numerics confirm it. A beam formula quoted with the uniaxial $\Delta$ would underestimate the plane-strain damping by a factor $1.86$ at $\nu=0.3$.
+
+\subsection{Beyond the thin-plate limit}
+\Cref{fig:lambte} shows the loss and its ratio to \cref{eq:LR}. The ratio falls to $0.94$ at $kh=0.22$, to $0.77$ at $kh=0.53$ (where $\omega=1.01\,\omega_Z$) and to $0.71$ at $kh=1.3$. The peak loss is $Q^{-1}=7.6\times10^{-3}$ at $\omega/\omega_Z=1.01$, against $9.9\times10^{-3}$ for the thin-plate formula. Thus the thin-plate formula overestimates the loss by about $30\%$ at the peak once the wavelength is only a few thicknesses, presumably because shear and rotary-inertia effects, absent from the Euler--Bernoulli kinematics behind \cref{eq:LR}, become important; this computation does not isolate that cause. Resonator designs with $kh\gtrsim0.3$ therefore need the full determinant or a Mindlin-type thermoelastic model.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figs/fig_lamb_te.pdf}
+\caption{Lowest antisymmetric (flexural) mode of a thermoelastic plate, plane strain, $\varepsilon=0.05$, $\nu=0.3$, $h=20\,c_1/\omega_*$, insulated faces. (a) Loss from the $6\times6$ determinant and from \cref{eq:LR} with the plane-strain $\Delta$. (b) Ratio of the two against $kh$.}
+\label{fig:lambte}
+\end{figure}
+
+\subsection{Role of the heat-flux law}
+In \cref{eq:LR} heat flows across the thickness, so the relevant dimensionless number is the product of the lag with the transverse relaxation rate $\omega_Z=\pi^2\chi/(2h)^2$. For thicknesses of several tens of nanometres in metals, $\tau_q\omega_Z\ll1$ and the parabolic result is adequate (\cref{sec:flexted}); for sub-ten-nanometre films, or when the phonon mean free path is comparable to the thickness, a kinetic or Guyer--Krumhansl treatment (\cref{sec:kinetic}) is the more appropriate refinement. The determinant above does not by itself settle which regime applies; it only provides the correct reference result for each choice of $G(s)$.
+
+\begin{summarybox}[Summary]
+Lamb waves in a thermoelastic plate are guided modes from the same $3\times3$ determinant structure as Rayleigh waves, now with both surfaces free. Heat flows across the thickness, so the relevant number is $\tau_q\omega_Z$ with $\omega_Z=\pi^2\chi/(2h)^2$. For films of tens of nm in metals the parabolic result is adequate; below $\sim10$\,nm or with ballistic transport, kinetic/GK is the appropriate refinement.
+\end{summarybox}

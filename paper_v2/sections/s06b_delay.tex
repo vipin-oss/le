@@ -1,0 +1,38 @@
+\section{Fidelity of Taylor-truncated lag models}\label{sec:delayfid}
+
+\Cref{sec:lags} treats the dual-phase-lag (DPL) law through Taylor truncations of the shifted fluxes. This is a modelling choice, not an identity, and its consequences deserve a quantitative look. Here we compare the truncations with the \emph{exact} delay law on the uncoupled thermal branch.
+
+\subsection{Setting}
+Take $\tau_T=0$ in the DPL law, $q(t+\tau_q)=-k\,\theta_{,x}(t)$. In the Laplace/Fourier representation the exact delay gives $G(s)=k\,e^{-\tau_q s}$, the first-order truncation gives $G=k/(1+\tau_q s)$ (Cattaneo), and the second-order truncation gives $G=k/(1+\tau_q s+\tau_q^2s^2/2)$. With $s=-i\omega$ the thermal branch satisfies $k_w^2=-\rho c\,s/G(s)$, where $k_w$ is the wavenumber. All three differ only through $G$, so they coincide as $\omega\tau_q\to0$.
+
+\subsection{Numerical comparison}
+\Cref{fig:lagtrunc} shows phase speed and attenuation for the three laws, computed by \path{scripts/fig_lag_truncation.py}. The relative error in $k_w$ against the exact delay is
+\begin{center}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+$\omega\tau_q$ & 0.05 & 0.1 & 0.3 & 1.0\\
+\midrule
+first order & $6\times10^{-4}$ & $2.5\times10^{-3}$ & $2.2\times10^{-2}$ & $0.22$\\
+second order & $1\times10^{-5}$ & $8\times10^{-5}$ & $2.2\times10^{-3}$ & $0.08$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Both truncations are accurate for $\omega\tau_q\lesssim0.3$ and lose accuracy at $\omega\tau_q\sim1$, which is exactly where lagging effects are claimed to matter. Conclusions drawn at $\omega\tau_q\gtrsim1$ from a truncated law therefore describe the truncated model, not the delay law.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figs/fig_lag_truncation.pdf}
+\caption{Thermal branch for the exact delay $e^{-\tau s}$, first-order and second-order truncations: (a) speed, (b) attenuation. Roots are taken with $\operatorname{Im}k\ge0$, so the real part of $k$ of the delay law can be negative at higher $\omega\tau$ and the spikes of $|v_p|$ mark zeros of $\operatorname{Re}k$. The dotted line marks $\omega\tau=\pi/2$, where the attenuation of the principal root of the delay law changes sign.}
+\label{fig:lagtrunc}
+\end{figure}
+
+\subsection{Sign change of attenuation in the exact delay law}
+For the exact delay the principal root is $k_w=\sqrt{\rho c\,\omega/k}\;e^{i(\pi/4-\omega\tau_q/2)}$, so $\operatorname{Im}k_w<0$ once $\omega\tau_q>\pi/2$ (numerically checked: $\operatorname{Im}k_w>0$ at $\omega\tau_q=1$, $=0$ at $\pi/2$, $<0$ at $2$). Choosing $\operatorname{Re}k_w>0$ then gives spatial growth, and choosing decay gives a negative phase speed. The truncations avoid this behaviour, but only because they discard the high-frequency part of the delay. This is a reason for caution when a delay law is used beyond $\omega\tau_q\approx\pi/2$ and a reason to state, in any application, which truncation is used.
+
+\subsection{Practical rule}
+(i) Report the truncation order together with $\tau_q,\tau_T$. (ii) Check $\omega\tau_q\lesssim0.3$ before trusting a truncated law as an approximation of the delay law. (iii) Do not read agreement between two truncated laws at $\omega\tau_q\sim1$ as confirmation of the delay model.
+
+
+\begin{summarybox}[Summary]
+The exact delay law $\tau_q\dot q(t)+q(t)=-k\theta_{,i}(t-\tau_T)$ has infinitely many branches because $G(s)$ contains an exponential. Taylor truncation replaces it by a rational function with finitely many roots. Truncated and exact laws agree only for $\omega\tau_q\lesssim0.3$; above that, spurious and missing roots make the truncation unreliable. Always report the truncation order together with the lag values.
+\end{summarybox}

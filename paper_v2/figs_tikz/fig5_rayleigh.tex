@@ -1,0 +1,27 @@
+% fig5_rayleigh.tex -- Rayleigh wave geometry on half-space (s10_surface)
+\begin{tikzpicture}[x=1.0cm,y=1.0cm,>=Stealth]
+  \tikzset{
+    node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
+    arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+    lbl/.style={font=\footnotesize,text=blue!60!black},
+    medium/.style={fill=blue!10},
+  }
+  % Half-space region
+  \fill[medium] (-3.5,-3.5) -- (3.5,-3.5) -- (3.5,0) -- (-3.5,0) -- cycle;
+  % Surface line
+  \draw[thick] (-3.5,0) -- (3.5,0);
+  % Axes
+  \draw[->,thick] (-3.5,0) -- (3.5,0) node[right] {$x$};
+  \draw[->,thick] (0,-3.5) -- (0,0.5) node[above] {$y$};
+  % Propagation along x
+  \draw[arr,very thick] (-1.5,-0.3) -- (1.5,-0.3) node[pos=0.5,above,lbl] {propagation along $x$};
+  % Decay with depth
+  \draw[arr,very thick] (1.0,-0.6) -- (1.0,-2.6) node[pos=0.5,right,lbl] {decay with depth};
+  % Elliptical particle motion at surface
+  \draw[dashed] (-1.2,-0.4) to[out=60,in=120] (0.6,-0.2) to[out=-60,in=120] (2.4,-0.6);
+  \node[node] at (0.4,0.6) {Rayleigh particle\\[-1pt] motion (elliptical)};
+  \draw[arr] (0.4,0.6) -- (0.9,-0.1);
+  % Region labels
+  \node[above] at (0,0.3) {half-space $y>0$};
+  \node[below] at (0,-3.2) {decay $e^{-m y}$};
+\end{tikzpicture}

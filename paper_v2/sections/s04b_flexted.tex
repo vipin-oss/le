@@ -1,0 +1,31 @@
+\section{Thermoelastic damping in flexure: Zener and exact Fourier solutions}\label{sec:flexted}
+
+Longitudinal waves (\cref{sec:classical}) are only one of the settings in which the thermoelastic loss appears. In micro-resonators the dominant case is flexure of a thin beam, where the temperature gradient across the thickness $h$ relaxes by heat conduction in the transverse direction.
+
+\subsection{Two classical results}
+Zener's single-relaxation treatment gives
+\begin{equation}\label{eq:zenerQ}
+Q^{-1}=\Delta\,\frac{\omega\tau_Z}{1+(\omega\tau_Z)^2},\qquad \tau_Z=\frac{h^2}{\pi^2\chi},\qquad \Delta=\frac{E\alpha_T^2T_0}{c_v},
+\end{equation}
+with $\chi$ the thermal diffusivity, $\alpha_T$ the linear expansion coefficient and $c_v$ the volumetric heat capacity. The exact solution of the Fourier problem for a thin rectangular beam in Euler--Bernoulli flexure, due to Lifshitz and Roukes, is
+\begin{equation}\label{eq:LR}
+Q^{-1}=\Delta\left[\frac{6}{\xi^{2}}-\frac{6}{\xi^{3}}\,\frac{\sinh\xi+\sin\xi}{\cosh\xi+\cos\xi}\right],\qquad \xi=h\sqrt{\frac{\omega}{2\chi}} .
+\end{equation}
+Both reduce to $Q^{-1}\simeq\Delta\,\omega\tau_Z$ for $\omega\tau_Z\ll1$.
+
+\subsection{Quantitative comparison}
+\Cref{fig:flexted} compares \cref{eq:zenerQ,eq:LR} (script \path{scripts/fig_flexTED.py}). With $x=\omega\tau_Z$ the exact solution peaks at $Q^{-1}/\Delta=0.494$ near $x=1.008$, against $0.5$ at $x=1$ for the Zener form. The relative error of the Zener form is $+1.3\%$ at $x=0.01$, $0.1$ and $1$, $-5\%$ at $x=10$ and $-14\%$ at $x=100$. In practice the single-relaxation form is therefore accurate to a few percent through the peak and on its low-frequency side, and underestimates the loss at $x\gtrsim10$, where the exact solution decays as $x^{-1/2}$ whereas the Zener form decays as $x^{-1}$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figs/fig_flexTED.pdf}
+\caption{(a) Thermoelastic loss of a thin beam in flexure: exact Fourier solution \cref{eq:LR} and the Zener form \cref{eq:zenerQ}. (b) Relative error of the Zener form.}
+\label{fig:flexted}
+\end{figure}
+
+\subsection{Where hyperbolic corrections enter}
+\Cref{eq:LR} assumes parabolic heat conduction across the thickness. Replacing the Fourier law by a lagging law (\cref{sec:lags}) changes the result only when the transverse relaxation rate $\pi^2\chi/h^2$ approaches the inverse lag. For $\tau_q\sim10^{-12}$\,s and $h\sim100$\,nm, with $\chi\sim10^{-4}$\,m$^2$/s, the product $\omega\tau_q$ at the Zener peak is of order $10^{-2}$, so the parabolic result is adequate; corrections matter for $h$ well below $\sim 10$\,nm or when ballistic transport is relevant, in which case the Guyer--Krumhansl form (\cref{sec:kinetic}) is the appropriate next step rather than a pure lag law.
+
+\begin{summarybox}[Summary]
+Zener's flexural damping has the same Debye form as bulk thermoelastic damping, with $\omega_*$ replaced by $1/\tau_Z$, $\tau_Z\simeq h^2/(\pi^2\alpha)$, and relaxation strength $\Delta=E\alpha_T^2T_0/(\rho c)$. Lifshitz--Roukes give the exact beam expression. Hyperbolic corrections enter only when $\omega\tau_q$ approaches one at the Zener peak; for $h\sim100$\,nm this requires $\tau_q\gg10^{-12}$\,s, so parabolic conduction is adequate for most resonators and GK is the right refinement below $\sim10$\,nm.
+\end{summarybox}

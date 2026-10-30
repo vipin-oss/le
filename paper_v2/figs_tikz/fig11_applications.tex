@@ -1,0 +1,17 @@
+% fig11_applications.tex -- Application regime map (s15_applications)
+\begin{tikzpicture}[x=1.0cm,y=1.0cm,>=Stealth]
+  \tikzset{
+    node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.6cm},
+    arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+    lbl/.style={font=\footnotesize,text=blue!60!black},
+  }
+  \node[node] at (-3.6, 0.6) (laser) {Laser\\[-1pt] ultrasonics\\[-1pt] ns--ps pulses};
+  \node[node] at ( 0.6, 0.6) (res) {MEMS/NEMS\\[-1pt] resonators\\[-1pt] thermoelastic\\[-1pt] damping};
+  \node[node] at ( 4.8, 0.6) (piezo) {Piezoelectric\\[-1pt] devices\\[-1pt] SAW/BAW\\[-1pt] energy harvesters};
+  \node[node] at (-3.6,-2.4) (bio) {Biological\\[-1pt] tissue\\[-1pt] perfusion\\[-1pt] weak coupling};
+  \node[node] at ( 0.6,-2.4) (geo) {Geophysical\\[-1pt] porous\\[-1pt] double-porosity\\[-1pt] slow waves};
+  \draw[arr] (laser.east) -- (res.west) node[pos=0.5,above,lbl] {\small $\\omega\\tau,\\omega/\\omega_*$};
+  \draw[arr] (res.east) -- (piezo.west) node[pos=0.5,above,lbl] {};
+  \draw[arr] (laser.south) -- (bio.north) node[pos=0.5,left,lbl] {};
+  \draw[arr] (res.south) -- (geo.north) node[pos=0.5,right,lbl] {};
+\end{tikzpicture}

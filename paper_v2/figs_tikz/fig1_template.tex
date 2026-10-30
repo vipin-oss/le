@@ -1,0 +1,23 @@
+% fig1_template.tex -- Heat-flux template geometry (s03_foundations)
+% Style: consistent across all figures -- same colours, fonts, arrows
+\begin{tikzpicture}[x=1.0cm,y=1.0cm,>=Stealth]
+  % Consistent node style
+  \tikzset{
+    node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
+    arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+    lbl/.style={font=\footnotesize,text=blue!60!black},
+  }
+  % Explicitly positioned nodes (no right=of)
+  \node[node] at (-3.2, 0.0) (flux) {Heat flux\\[-1pt] $q_i$};
+  \node[node] at ( 0.8, 0.0) (grad) {Temperature\\[-1pt] gradient $\theta_{,i}$};
+  \node[node] at (-3.2,-1.8) (lag) {Flux relaxation\\[-1pt] $\tau_q\dot q_i$};
+  \node[node] at ( 0.8,-1.8) (tlag) {Temperature\\[-1pt] lag $\tau_T\dot\theta_{,i}$};
+  \node[node] at (-3.2,-3.6) (v) {Thermal\\[-1pt] displacement $v$\n$\dot v=\theta$};
+  \node[node] at ( 0.8,-3.6) (vlag) {Velocity\\[-1pt] lag $\tau_v\dot v_{,i}$};
+  % Arrows with labels at pos=0.5
+  \draw[arr] (flux.east) -- (grad.west) node[pos=0.5,above,lbl] {$-k\theta_{,i}$};
+  \draw[arr] (lag.east) -- (tlag.west) node[pos=0.5,above,lbl] {$-k\tau_T\dot\theta_{,i}$};
+  \draw[arr] (v.east) -- (vlag.west) node[pos=0.5,above,lbl] {$-k^*(v_{,i}+\tau_v\dot v_{,i})$};
+  \draw[arr] (flux.south) -- (lag.north) node[pos=0.5,right,lbl] {$+\tau_q\dot q_i$};
+  \draw[arr] (flux.south west) to[out=-135,in=135] node[pos=0.5,left,lbl] {template} (v.north west);
+\end{tikzpicture}

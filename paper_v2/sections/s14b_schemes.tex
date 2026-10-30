@@ -1,0 +1,38 @@
+\section{A finite-difference benchmark for hyperbolic heat conduction}\label{sec:schemes}
+
+Time-domain numerics for hyperbolic heat laws are commonly validated against a smooth test problem, which hides the main difficulty: a front that the scheme must carry without spurious oscillation or excessive smearing. This section gives a small benchmark with an exact solution and reports what three standard schemes achieve.
+
+\subsection{Problem}
+The uncoupled Cattaneo system in first-order form,
+\begin{equation}
+\rho c\,\theta_t+q_x=0,\qquad \tau\,q_t+q=-k\,\theta_x ,
+\end{equation}
+on $x>0$ with $\theta=q=0$ initially and $q(0,t)=q_0H(t)$, is solved in units $\rho c=k=\tau=q_0=1$, so $c_T=1$ and the front is at $x=t$. The exact solution is the inverse Laplace transform of \cref{eq:pulse}, taken as zero ahead of the front. At $t=5$ it gives $\theta=1.7615,\ 0.5923,\ 0.0959$ at $x=1,\,3,\,4.9$ and the jump at the front is $q_0e^{-x/2\ell}/(\rho cc_T)=e^{-2.5}=0.082$.
+
+\subsection{Schemes}
+The first-order system is advanced by Strang splitting: the source $-q/\tau$ is integrated exactly over half steps, and the hyperbolic part (characteristic speeds $\pm c_T$) is advanced by (i) Lax--Friedrichs, (ii) first-order upwind applied to the characteristic variables, or (iii) the second-order Lax--Wendroff scheme, all at Courant number $0.9$. The boundary value $q=q_0$ is imposed through a ghost cell. The code is in \path{scripts/bench_schemes.py}.
+
+\subsection{Results}
+Errors are $L^1$ norms over the sampled interval at $t=5$. Over $0.05\le x\le4.95$, which includes the front, the observed convergence orders between $N=800$ and $1600$ cells are $0.85$ (Lax--Friedrichs), $0.94$ (upwind) and $0.58$ (Lax--Wendroff); the errors at $N=1600$ are $2.7\times10^{-3}$, $1.3\times10^{-3}$ and $8.6\times10^{-4}$. Excluding the region near the front ($0.05\le x\le3.5$) the picture is different:
+\begin{center}
+\begin{tabular}{@{}lccccc@{}}\toprule
+$N$ & 100 & 200 & 400 & 800 & 1600\\\midrule
+upwind $L^1$ & $9.6\times10^{-3}$ & $4.3\times10^{-3}$ & $2.1\times10^{-3}$ & $1.1\times10^{-3}$ & $5.3\times10^{-4}$\\
+Lax--Wendroff $L^1$ & $1.1\times10^{-3}$ & $2.7\times10^{-4}$ & $6.1\times10^{-5}$ & $1.5\times10^{-5}$ & $3.8\times10^{-6}$\\
+\bottomrule\end{tabular}
+\end{center}
+with observed orders $1.0$ for the upwind scheme and $2.0$ for Lax--Wendroff in the smooth region. Thus the formal accuracy is reached away from the front, and the global error is controlled by the neighbourhood of the discontinuity, where all three schemes converge at an order below one. A single global error norm therefore says little about how the scheme carries a front, and a benchmark for hyperbolic heat conduction should report the error in a window around the front and away from it separately.
+
+\begin{figure}[t!]\centering\small
+\input{figs_tikz/fig10_schemes.tex}
+\caption{Geometry after \citep{Joseph1990}: finite-difference benchmark for hyperbolic heat conduction -- the front at $x=t$ must be carried without smearing or oscillation; error measured in a window around and away from the front.}\label{fig:schemes-geo}
+\end{figure}
+
+A domain of influence theorem for generalized thermoelasticity with memory-dependent derivative was proved by \citep{Sarkar2019a}.
+
+\subsection{A caution about the reference solution}
+The exact solution above was obtained by numerical Laplace inversion, and the choice of inversion algorithm matters at the accuracy required here. At $x=1$, $t=5$ the Talbot method with default settings gave $1.76126$, whereas the de Hoog and Stehfest methods give $1.761515$ and $1.761515$; the finite-difference solution at $N=800$ agrees with the latter to $2\times10^{-6}$. A reference solution with an error of $3\times10^{-4}$ would have hidden the second-order convergence of Lax--Wendroff at $N\gtrsim400$. Inversion results used as benchmarks should be cross-checked with a second algorithm (\cref{sec:inversion}).
+
+\begin{summarybox}[Summary]
+The Cattaneo benchmark has an exact front at $x=t$ (in units $c_T=1$). Lax--Friedrichs, upwind and Lax--Wendroff all converge below order one globally because of the discontinuity; away from the front the orders are $1.0$ and $2.0$ respectively. Report front-window and smooth-window errors separately, and cross-check Laplace-inversion reference solutions with a second algorithm.
+\end{summarybox}

@@ -1,0 +1,29 @@
+\section{Resonant modes of a clamped bar}\label{sec:bar}
+
+The loss measured in a resonator is a temporal quantity: a standing mode with real wavenumber $k_n=n\pi/L$ decays in time with a complex frequency $\omega_n$. Here the plane-wave polynomial of \cref{eq:unified} is used with real $k$ and complex $s=-i\omega$.
+
+\subsection{Setting}
+Take a bar of length $L$ with both ends clamped ($u=0$) and insulated ($\theta_{,x}=0$). Each eigenfunction has the form $u\propto\sin k_nx$, $\theta\propto\cos k_nx$ with $k_n=n\pi/L$, so the boundary conditions are satisfied exactly by each coupled mode and the modal frequencies are the roots of the polynomial of \cref{eq:unified} in $s$ at $K=k_n^2$. For Lord--Shulman heat flux the polynomial is quartic in $s$, for the classical law cubic. The mode tracked is the elastic-like root, followed by continuity in $k$ from the adiabatic starting value $c_1\sqrt{1+\varepsilon}\,k$. In units $c_1=\omega_*=1$ and with $\varepsilon=0.1$ the results of the script \path{scripts/fig_bar_modes.py} are as follows.
+
+\subsection{Results}
+\begin{itemize}
+\item At small $k$ all models give the same loss (numerically $8.7\times10^{-4}$ at $k=0.01$), about $13\%$ below the first-order Debye value $\varepsilon k/(1+k^2)$ because of the $O(\varepsilon)$ difference between temporal and spatial loss measures.
+\item The classical law gives a Debye-type peak $Q^{-1}=0.0488$ at $k\,c_1/\omega_*=1.07$, and the modal speed falls from the adiabatic value $1.049\,c_1$ to $c_1$ at large $k$.
+\item For Lord--Shulman with $\tau\omega_*=0.25$ the peak rises to $0.0676$ at $k=1.39$, and the high-$k$ modal speed settles at $0.984\,c_1$.
+\item For $\tau\omega_*=1$, where the thermal front speed equals $c_1$, the peak is $0.146$ at $k=1.84$, three times the classical value, and the high-$k$ modal speed is $1.17\,c_1$. This is the degenerate case of equal front speeds, where the two fronts split by coupling to $c^2=c_1^2[1+\varepsilon/2\pm\sqrt{\varepsilon+\varepsilon^2/4}]$, giving $1.17\,c_1$ for the upper root.
+\end{itemize}
+The curves are shown in \cref{fig:barmodes}. Near $\tau\omega_*\approx1$ the thermal and elastic branches hybridise, so the label ``elastic-like'' ceases to be sharp and results must be read together with the branch-tracking procedure.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figs/fig_bar_modes.pdf}
+\caption{Loss $Q^{-1}=2|\operatorname{Im}\omega|/|\operatorname{Re}\omega|$ and modal speed of the elastic-like mode of a clamped insulated bar ($\varepsilon=0.1$) against $k=n\pi/L$ for classical and Lord--Shulman heat flux.}
+\label{fig:barmodes}
+\end{figure}
+
+\subsection{Consequence for resonator design}
+A bar of fixed length and a sequence of overtones traverse the curve of \cref{fig:barmodes} from left to right. The classical model predicts the worst loss when $k_nc_1\approx\omega_*$, and the lag raises it only if $\tau\omega_*$ is of order one, where the lag law is also least trustworthy. For all materials of \cref{tab:materials} $\omega_*$ exceeds $10^{11}$\,rad/s, so the position of the peak lies at wavelengths of order $c_1/\omega_*\sim10$\,nm, and bar resonators of micron size operate on the left, linear-in-$k$ flank where the models coincide.
+
+\begin{summarybox}[Summary]
+A clamped bar's overtones trace the thermoelastic damping curve from left to right. Classical theory predicts worst loss at $k_nc_1\approx\omega_*$; lagged models raise it only if $\tau\omega_*\sim1$, where the lag law is least trustworthy. For all materials of Table~\ref{tab:materials}, $\omega_*>10^{11}$\,rad/s, so micron-scale bar resonators operate on the linear-in-$k$ flank where all models agree.
+\end{summarybox}

@@ -1,0 +1,45 @@
+\section{Anisotropy: thermal coupling of quasi-longitudinal waves in cubic crystals}\label{sec:aniso}
+
+Most of the theory above is isotropic. Real devices use single crystals, and the question is how the coupling strength $\varepsilon$ depends on the propagation direction and which modes are affected.
+
+\subsection{Christoffel problem with thermal coupling}
+For a cubic crystal the thermal expansion is isotropic, $\alpha_{ij}=\alpha_T\delta_{ij}$, so the thermal-stress tensor is $\beta_{ij}=\beta_0\delta_{ij}$ with $\beta_0=(c_{11}+2c_{12})\alpha_T$, and heat conduction is scalar. For a plane wave with direction $\bm n$ the field equations give, in the low-frequency (adiabatic) limit $\omega\ll\omega_*$, the Christoffel equation
+\begin{equation}\label{eq:christ}
+\bigl[\Gamma_{ik}(\bm n)+\tfrac{\beta_0^2T_0}{c_v}\,n_in_k-\rho v^2\delta_{ik}\bigr]p_k=0,\qquad \Gamma_{ik}=C_{ijkl}n_jn_l,
+\end{equation}
+where $c_v$ is the volumetric heat capacity, and in the high-frequency (isothermal) limit the same equation without the thermal term. The thermal term is a rank-one matrix along $\bm n$, so it couples only to the polarisation component along the propagation direction, and it vanishes for purely transverse modes. Along the symmetry directions of a cubic crystal the coupling is therefore governed by
+\begin{equation}\label{eq:epsdir}
+\varepsilon_{\bm n}=\frac{\beta_0^2T_0}{c_v\,M_{\bm n}},\qquad M_{[100]}=c_{11},\ M_{[110]}=\tfrac12(c_{11}+c_{12}+2c_{44}),\ M_{[111]}=\tfrac13(c_{11}+2c_{12}+4c_{44}),
+\end{equation}
+with $M_{\bm n}$ the longitudinal modulus along $\bm n$, and the quasi-longitudinal speed rises from the isothermal to the adiabatic value by the factor $\sqrt{1+\varepsilon_{\bm n}}$. Both transverse modes along these directions are unaffected.
+
+\subsection{Numerical values}
+\Cref{tab:aniso} gives the result for three cubic metals and semiconductors, computed with the script \path{scripts/fig_aniso.py} from rounded handbook values of the elastic constants, expansion coefficient, density and specific heat at $T_0=300$\,K; these inputs should be replaced by the measurements for a specific sample. The speed shifts obtained from the full eigenvalue problem agree with $\varepsilon_{\bm n}/2$ to the digits shown.
+
+\begin{table}[ht]\centering\small
+\caption{Direction dependence of the thermoelastic coupling of quasi-longitudinal waves ($T_0=300$\,K, rounded handbook inputs). $\varepsilon_{\bm n}$ from \cref{eq:epsdir}; shift is $100(v_{\rm ad}/v_{\rm iso}-1)$.}\label{tab:aniso}
+\begin{tabular}{@{}lccccc@{}}\toprule
+ & \multicolumn{2}{c}{$[100]$} & \multicolumn{2}{c}{$[111]$} & ratio\\
+Crystal & $\varepsilon$ & shift (\%) & $\varepsilon$ & shift (\%) & $\varepsilon_{[100]}/\varepsilon_{[111]}$\\\midrule
+Cu & 0.0238 & 1.18 & 0.0169 & 0.84 & 1.41\\
+Al & 0.0325 & 1.61 & 0.0306 & 1.52 & 1.06\\
+Si & $6.5\times10^{-4}$ & 0.032 & $5.3\times10^{-4}$ & 0.026 & 1.23\\
+\bottomrule\end{tabular}
+\end{table}
+
+For copper the coupling differs by $41\%$ between $[100]$ and $[111]$, so the thermoelastic loss peak height (proportional to $\varepsilon_{\bm n}$ in the weak-coupling Debye form) and the adiabatic--isothermal speed gap are direction dependent by a comparable amount. For aluminium the anisotropy of the coupling is only $6\%$ because the elastic anisotropy is weak, and for silicon the coupling is tiny at all angles, so the longitudinal-wave thermoelastic loss is very small in that material.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figs/fig_aniso.pdf}
+\caption{(a) Adiabatic phase speeds of the three modes of copper in the (001) plane as functions of the propagation angle from $[100]$. (b) Relative stiffening $v_{\rm ad}/v_{\rm iso}-1$ of the quasi-longitudinal mode for Cu, Si and Al.}
+\label{fig:aniso}
+\end{figure}
+
+\subsection{What changes for the heat-flux law}
+Anisotropic heat conduction (non-cubic crystals) makes $G$ a tensor, so the template of \cref{sec:foundations} generalises to $\hat q_i=-G_{ij}(s)\hat\theta_{,j}$ and the lag times may differ along different crystal axes. For the cubic case used here, conduction is isotropic and only the elastic and coupling anisotropy enter, so every scalar result of the preceding sections carries over with $c_1^2\to M_{\bm n}/\rho$ and $\varepsilon\to\varepsilon_{\bm n}$ for propagation along a high-symmetry direction. Away from those directions the quasi-longitudinal polarisation is not along $\bm n$, the coupling is reduced by $(\bm n\!\cdot\!\bm p)^2$, and a quasi-transverse mode acquires a small thermal component.
+
+
+\begin{summarybox}[Summary]
+Anisotropy replaces scalar moduli by tensors $C_{ijkl},\beta_{ij},k_{ij}$; shear and dilatation no longer decouple and the Stroh formalism is the systematic tool. Along high-symmetry directions scalar results carry over with effective moduli. Away from them, quasi-longitudinal and quasi-shear modes mix, coupling weakens by $(\bm n\cdot\bm p)^2$, and quasi-transverse waves acquire a small thermal component.
+\end{summarybox}

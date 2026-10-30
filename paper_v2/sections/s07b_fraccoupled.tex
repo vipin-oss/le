@@ -1,0 +1,23 @@
+\section{Coupled fractional dispersion}\label{sec:fraccoupled}
+
+The memory models of \cref{sec:memory} are usually analysed on the heat equation alone. Here we put a fractional Cattaneo law, $q+\tau^{\alpha}D^{\alpha}q=-k\,\theta_{,x}$ with a Caputo derivative $D^\alpha$ and $0<\alpha\le1$, into the coupled longitudinal problem of \cref{sec:classical}. In the Laplace representation $G(s)=k/[1+(\tau s)^{\alpha}]$, and the polynomial of \cref{eq:unified} is used unchanged, with the principal branch $(-i\omega)^\alpha=\omega^\alpha e^{-i\pi\alpha/2}$.
+
+\Cref{fig:fraccoupled} (script \path{scripts/fig_frac_coupled.py}) shows phase speed and loss for the elastic-like branch, tracked by continuity in $\omega$, for $\varepsilon=0.1$, $\tau\omega^*=0.25$ (so that the thermal front speed is twice $c_1$ and the branches do not hybridise degenerately). The numbers that can be read from it are:
+\begin{itemize}
+\item At low frequency all models give the adiabatic speed $c_1\sqrt{1+\varepsilon}=1.0488\,c_1$.
+\item The classical Debye peak is $Q^{-1}=0.0501\approx\varepsilon/2$ at $\omega/\omega^*\approx1.1$.
+\item The lagging and fractional models shift and raise the peak: $0.0701$ at $\omega/\omega^*=1.42$ for $\alpha=1$, $0.0741$ at $1.58$ for $\alpha=0.8$ and $0.0728$ at $1.75$ for $\alpha=0.6$.
+\item At the top of the plotted range $v_p/c_1=0.984,\,0.993,\,0.997$ for $\alpha=1,\,0.8,\,0.6$, and $1.000$ for the classical model.
+\end{itemize}
+The qualitative message is that the fractional order moves the position and height of the loss peak by amounts comparable to the Cattaneo--classical difference, so it cannot be treated as a small correction. These numbers belong to this parameter set; a different $\tau\omega^*$ changes them, and the figure should be reproduced for the material at hand.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figs/fig_frac_coupled.pdf}
+\caption{Coupled longitudinal wave with a fractional Cattaneo law: (a) phase speed, (b) loss $Q^{-1}$ for $\alpha=1,0.8,0.6$ and the classical model ($\varepsilon=0.1$, $\tau\omega^*=0.25$).}
+\label{fig:fraccoupled}
+\end{figure}
+
+\begin{summarybox}[Summary]
+For fractional Cattaneo conduction $G(s)=k/(1+\tau s^\alpha)$, the dispersion polynomial \eqref{eq:disp} still applies with complex $s$. The endpoint $\alpha\to2$ is second order in time, not Fourier's law; $\alpha\to1$ gives Cattaneo. Phase speed and loss interpolate between classical ($lpha=1$) and increasingly wave-like behaviour as $lpha$ decreases, with no sharp front unless a finite-speed kernel is used.
+\end{summarybox}

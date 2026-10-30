@@ -1,0 +1,56 @@
+\section{Introduction}\label{sec:intro}
+\subsection{The problem that generalized thermoelasticity addresses}
+Heat conduction in solids is described, to an excellent approximation under ordinary conditions, by Fourier's law: the heat flux is proportional to the temperature gradient at the same instant. Combined with energy balance this gives a parabolic equation, whose solutions have a property that is physically uncomfortable: a temperature disturbance applied at one point changes the temperature everywhere else at the same instant, however small the change may be. For slow processes in bulk matter the discrepancy between this instantaneous response and what a real, finite-speed carrier of heat would do is immeasurably small. It becomes measurable, and sometimes dominant, when the heating or loading is very fast (femtosecond to nanosecond laser pulses), when the structure is very small or very cold so that phonon mean free paths approach the structure size, when the medium is strongly heterogeneous, or when the observed quantity is a high-frequency elastic wave whose period is comparable to a thermal relaxation time.
+
+Thermoelasticity couples this thermal field to deformation: heating produces thermal stress through thermal expansion, and deformation changes the temperature through the dilatation term in the energy balance. The classical coupled theory of Biot \citep{Biot1956}, building on the thermomechanical stress--strain law of Duhamel and Neumann \citep{Duhamel1837} and the early dynamic solutions of Danilovskaya \citep{Danilovskaya1950} and Chadwick and Sneddon \citep{ChadwickSneddon1958,Chadwick1960}, inherits the infinite thermal signal speed. The extensions that remove it, collectively called \emph{generalized} or \emph{non-classical} thermoelasticity \citep{Chandrasekharaiah1986,Chandrasekharaiah1998,HetnarskiIgnaczak1999,HetnarskiIgnaczak2000,IgnaczakOstoja2010}, now form one of the largest strands of continuum mechanics, with a very large body of theoretical work. At the same time two further developments widened the field. First, devices exploit the coupling of deformation and temperature to additional physical fields, above all electric polarization (piezoelectricity and pyroelectricity), but also magnetic induction, diffusing species, fluid-filled pores and microstructural kinematics \citep{Mindlin1974Thermopiezo,Nowacki1978,Eringen1999,Iesan2004}. Second, at small scales the local stress--strain relation itself fails to describe dispersion, and nonlocal and gradient enrichments are used \citep{Eringen1972,Eringen1983,Aifantis1992,Askes2011}.
+
+\subsection{Why another review}
+Reviews of generalized thermoelasticity exist and are excellent \citep{Chandrasekharaiah1986,Chandrasekharaiah1998,HetnarskiIgnaczak1999,HetnarskiIgnaczak2000,Shakeriaski2021,Huang2025}. What has been lacking is a treatment that serves a reader who wants to \emph{use} the theories for wave problems and compare them reliably. Three observations motivate the present organisation.
+\begin{enumerate}
+\item \textbf{Proliferation without a common language.} Over the past three decades the number of named heat-conduction models for thermoelastic waves has grown very large, many of them combinations (two-temperature fractional Lord--Shulman, three-phase-lag with memory, nonlocal Moore--Gibson--Thompson, and so on). Each paper introduces its own constants and notation. Section~\ref{sec:framework-link} introduces a single heat-flux function $G(s)$ in the Laplace domain through which every linear model passes, so that a new combination is understood as a new choice of $G$.
+\item \textbf{Unreliable folklore about limits and stability.} Several statements are repeated across papers without re-derivation: which parameter limits reduce one model to another, which parameter ranges are stable, how the wave branches should be labelled. We re-derive these and check them numerically. One widely repeated statement---that dual-phase-lag thermoelasticity requires $\tau_T\ge\tau_q/2$ to be stable---turns out to depend on the order of the Taylor expansion that defines the model (Section~\ref{sec:lags}).
+\item \textbf{Figures that cannot be compared.} Published dispersion and response curves use different nondimensionalisations, parameter sets and branch conventions, so that the visual impression of ``the effect of the fractional order'' or ``the effect of nonlocality'' is hard to calibrate. We use one nondimensionalisation throughout, quantified by a small number of material-independent groups.
+\end{enumerate}
+
+\subsection{Contributions and organisation}
+This review does not report new experiments. Its contributions are:
+\begin{itemize}
+\item a unified heat-flux template, a table of \emph{exact} reductions and singular limits, and a taxonomy that places the main models in relation to one another (Sections~\ref{sec:framework-link}--\ref{sec:memory});
+\item a coupled dispersion polynomial valid for the whole template, verified symbolically, and comparative dispersion, damping and speed results (Sections~\ref{sec:classical}--\ref{sec:waves3d});
+\item benchmark transient problems, namely the heat pulse and the thermal shock of a half-space, each with a Laplace-domain closed form and a numerical inversion (Section~\ref{sec:transient});
+\item thermoelastic Rayleigh waves, reflection and interface energy partition, with limit checks (Sections~\ref{sec:surface}--\ref{sec:interfaces});
+\item a treatment of size effects contrasted with lattice dispersion, and of the principal multiphysics couplings (Sections~\ref{sec:size}--\ref{sec:multi});
+\item a kinetic basis for the Cattaneo and Guyer--Krumhansl laws with the dispersion of the latter (\cref{sec:kinetic}), and a quantitative test of how well Taylor-truncated lag laws represent the delay law they approximate (\cref{sec:delayfid});
+\item flexural thermoelastic damping, including a plate (Lamb-wave) computation validated against the Rayleigh--Lamb equation and the Lifshitz--Roukes solution, resonant modes of a bar, anisotropy in cubic crystals, free-surface reflection and piezoelectric surface waves (\cref{sec:flexted,sec:aniso,sec:reflection,sec:lamb,sec:bar,sec:bg});
+\item a discussion of solution methods with finite-difference and inversion benchmarks, experimental evidence and parameter identification, worked examples, application regimes, reporting standards, a comparative synthesis with a pitfalls checklist and a decision guide, and a research agenda (\cref{sec:methods,sec:schemes,sec:applications,sec:scenarios,sec:examples,sec:experiments,sec:synthesis,sec:reporting,sec:open}).
+\end{itemize}
+Section~\ref{sec:history} gives the historical and literature background. Section~\ref{sec:foundations} derives the thermomechanical foundations that the remaining sections rely on. Readers primarily interested in choosing a model can go directly to Section~\ref{sec:synthesis}.
+
+\subsection{Scope and conventions}\label{sec:conventions}
+We treat \emph{linear} wave propagation in homogeneous solids about a uniform reference state at temperature $T_0$ unless stated otherwise; nonlinear thermoelasticity, large deformation, radiative transport and chemically reacting media are outside our scope. The following notation is used throughout.
+
+\begin{table}[ht]\centering\small
+\caption{Principal notation. Indices follow the Einstein summation convention; a comma denotes a spatial derivative and a dot a time derivative.}\label{tab:notation}
+\begin{tabular}{@{}lp{4.1cm}lp{4.3cm}@{}}\toprule
+$u_i,\ \varepsilon_{ij}$ & displacement, strain & $\sigma_{ij}$ & stress\\
+$\theta=T-T_0$ & temperature increment & $T_0$ & reference temperature\\
+$q_i$ & heat flux & $v$ & thermal displacement, $\dot v=\theta$\\
+$\rho$ & mass density & $c$ & specific heat at constant strain\\
+$\lambda,\mu$ & Lam\'e constants & $\alpha_T$ & linear expansion coefficient\\
+$\beta=(3\lambda+2\mu)\alpha_T$ & thermal-stress coefficient & $k,\ k^*$ & conductivities (Fourier, GN)\\
+$\tau_q,\tau_T,\tau_v$ & relaxation time and lags & $\alpha=k/\rho c$ & thermal diffusivity\\
+$c_1=\sqrt{(\lambda+2\mu)/\rho}$ & isothermal P-wave speed & $c_2=\sqrt{\mu/\rho}$ & shear wave speed\\
+$\varepsilon=\beta^2T_0/(\rho^2cc_1^2)$ & thermoelastic coupling & $\omega_*=\rho c c_1^2/k$ & thermal characteristic frequency\\
+$G(s)$ & heat-flux function (Eq.~\eqref{eq:G}) & $s=-\ii\omega$ & Laplace variable / complex frequency\\
+$c_T$ & thermal wave speed & $K^2$ & electromechanical coupling\\
+$\xi,\ \ell$ & nonlocal and gradient lengths & $Z=\rho c$ & mechanical impedance\\
+\bottomrule\end{tabular}
+\end{table}
+The strain tensor is always written with two indices ($\varepsilon_{ij}$) so that it is not confused with the scalar coupling $\varepsilon$. Plane waves are $\exp[\ii(kx-\omega t)]$ with $\Imag k\ge0$ for spatial decay in the propagation direction, and a ``branch'' of the dispersion relation is a root $k(\omega)$ followed by continuity in $\omega$.
+
+\subsection{Reproducibility}
+All figures in this review that display numerical results were produced by Python scripts that accompany the manuscript, and the identities used repeatedly (the coupled dispersion polynomial, the Debye form of weak-coupling damping, the Green--Naghdi type-II wave speeds, the reductions of Table~\ref{tab:param}) are checked either symbolically or against independent numerical roots in those scripts (Appendix~\ref{app:repro}). Where a quantity depends on a choice of model variant, for example the form of a memory-dependent derivative, the choice is stated next to the result.
+
+\begin{summarybox}[Summary]
+This review organises the generalized thermoelasticity literature around one heat-flux template with three lags and one memory term, derives a single dispersion polynomial checked symbolically against the field equations, and provides verified benchmarks. Scope: linear waves about a uniform reference state, isotropic and anisotropic solids, plane-wave and guided-wave problems. Contributions: correction to the DPL stability condition, GN-III front-speed clarification, net-flux-vs-mode-flux check at interfaces, reporting standards. Not covered: nonlinear effects, radiative/reactive heat transfer, full bounded-domain well-posedness literature.
+\end{summarybox}

@@ -1,0 +1,131 @@
+\section{Thermomechanical foundations}\label{sec:foundations}
+This section collects the balance laws, the thermodynamic structure of linear thermoelasticity, the reasons why Fourier's law is problematic for fast processes, and the heat-flux template that organises the remainder of the review. It is self-contained so that the later sections can refer to equation numbers rather than rederive.
+
+\subsection{Balance laws for small disturbances}
+Let a body occupy a region $\Omega$ and let $\bu(\bx,t)$ be the displacement from a reference state at uniform temperature $T_0$ and zero stress. For small displacement gradients the strain is $\varepsilon_{ij}=\tfrac12(u_{i,j}+u_{j,i})$. The local forms of the balance of linear momentum and of energy are
+\begin{align}
+\rho\,\ddot u_i &= \sigma_{ij,j}+\rho f_i, \label{eq:mom}\\
+\rho\,\dot e &= \sigma_{ij}\dot\varepsilon_{ij}-q_{i,i}+\rho r, \label{eq:first}
+\end{align}
+where $\rho$ is the (reference) density, $f_i$ the body force per unit mass, $e$ the specific internal energy, $q_i$ the heat flux and $r$ the heat supply per unit mass. Balance of angular momentum implies a symmetric stress in the absence of couple stresses. The second law, in the Clausius--Duhem form used by Coleman and Noll \citep{Coleman1963},
+\begin{equation}
+\rho\,\dot\eta \;\ge\; \frac{\rho r}{T}-\Bigl(\frac{q_i}{T}\Bigr)_{,i}, \label{eq:CD}
+\end{equation}
+with specific entropy $\eta$ and absolute temperature $T$, restricts the constitutive relations. Eliminating $r$ between \eqref{eq:first} and \eqref{eq:CD} and introducing the Helmholtz free energy $\psi=e-T\eta$ gives
+\begin{equation}
+-\rho\bigl(\dot\psi+\eta\dot T\bigr)+\sigma_{ij}\dot\varepsilon_{ij}-\frac{q_i T_{,i}}{T}\;\ge\;0. \label{eq:CDpsi}
+\end{equation}
+For a material with $\psi=\psi(\varepsilon_{ij},T)$, \eqref{eq:CDpsi} must hold for arbitrary $\dot\varepsilon_{ij}$ and $\dot T$; the coefficients of those rates must vanish,
+\begin{equation}
+\sigma_{ij}=\rho\,\frac{\partial\psi}{\partial\varepsilon_{ij}},\qquad \eta=-\frac{\partial\psi}{\partial T},\label{eq:coleman}
+\end{equation}
+and the remaining term gives the \emph{heat-conduction inequality}
+\begin{equation}
+q_iT_{,i}\;\le\;0.\label{eq:cond-ineq}
+\end{equation}
+Fourier's law $q_i=-k_{ij}T_{,j}$ with positive-semidefinite $k_{ij}$ satisfies \eqref{eq:cond-ineq} identically; so does any law for which the flux is, to leading order, opposed to the temperature gradient. This is the point at which lagged and relaxed laws require care (Section~\ref{sec:beyond}).
+
+\subsection{Linear thermoelasticity}
+Expanding $\rho\psi$ to second order about $(\varepsilon_{ij},T)=(0,T_0)$, with $\theta=T-T_0$, gives
+\begin{equation}
+\rho\psi=\tfrac12C_{ijkl}\varepsilon_{ij}\varepsilon_{kl}-\beta_{ij}\varepsilon_{ij}\theta-\frac{\rho c}{2T_0}\theta^2,\label{eq:psi}
+\end{equation}
+where $C_{ijkl}$ are the isothermal elastic moduli, $\beta_{ij}$ the thermal-stress tensor and $c$ the specific heat at constant strain (we do not carry the constant and linear terms in $\theta$, which only fix the reference values of the energy and entropy). Equations~\eqref{eq:coleman} give
+\begin{equation}
+\sigma_{ij}=C_{ijkl}\varepsilon_{kl}-\beta_{ij}\theta,\qquad \rho\eta=\beta_{ij}\varepsilon_{ij}+\frac{\rho c}{T_0}\theta.\label{eq:stress}
+\end{equation}
+The first of these is the Duhamel--Neumann relation. For an isotropic solid $C_{ijkl}=\lambda\delta_{ij}\delta_{kl}+\mu(\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})$ and $\beta_{ij}=\beta\delta_{ij}$ with $\beta=(3\lambda+2\mu)\alpha_T$, since free thermal expansion $\varepsilon_{ij}=\alpha_T\theta\,\delta_{ij}$ must produce zero stress: $\sigma_{ij}=(3\lambda+2\mu)\alpha_T\theta\,\delta_{ij}-\beta\theta\,\delta_{ij}=0$. The energy balance $\rho T\dot\eta=-q_{i,i}+\rho r$ (entropy form of \eqref{eq:first} when the stress power is accounted for by the free energy), linearised about $T_0$ using the second of \eqref{eq:stress}, gives
+\begin{equation}
+\rho c\,\dot\theta+T_0\,\beta_{ij}\dot\varepsilon_{ij}=-q_{i,i}+\rho r. \label{eq:en}
+\end{equation}
+Together with \eqref{eq:mom}, \eqref{eq:stress} and a heat-flux law, \eqref{eq:en} closes the system. The coefficients carry a clear physical reading: $\rho c$ is the heat capacity per unit volume at constant strain; $T_0\beta^2/(\rho c)$ is the difference between the adiabatic and isothermal longitudinal moduli, namely
+\begin{equation}
+\lambda_{\rm ad}+2\mu_{\rm ad}=\lambda+2\mu+\frac{T_0\beta^2}{\rho c},
+\qquad\text{equivalently}\qquad c_{\rm ad}^2=c_1^2\,(1+\varepsilon),\quad \varepsilon=\frac{\beta^2T_0}{\rho^2c\,c_1^2}. \label{eq:adiabatic}
+\end{equation}
+Table~\ref{tab:materials} gives the coupling parameter $\varepsilon$ and the characteristic frequency $\omega_*=\rho c c_1^2/k$ for representative solids. The coupling is of order $10^{-2}$ for common metals and much smaller for low-expansion materials; the characteristic frequency lies far above the ultrasonic range for bulk solids ($10^{10}$--$10^{12}$ Hz) and drops into the megahertz--gigahertz range only when waves are confined to micro-scale structures (Section~\ref{sec:applications}).
+\begin{table}[ht]\centering\small
+\caption{Thermoelastic coupling $\varepsilon$ and characteristic frequency $f_*=\omega_*/2\pi$ computed from rounded handbook-type values (300\,K) of density, specific heat, conductivity, expansion coefficient, Young's modulus and Poisson ratio; the reader should replace them by data for the specimen at hand.}\label{tab:materials}
+\input{tables/materials.tex}
+\end{table}
+
+\subsection{Beyond Fourier's law}\label{sec:beyond}
+\paragraph{Why Fourier's law is parabolic.} Inserting $q_i=-kT_{,i}$ in \eqref{eq:en} with constant coefficients and no coupling gives $\rho c\,\dot\theta=k\nabla^2\theta$. The fundamental solution is a Gaussian that is nonzero at all distances for every positive time, so the signal speed is unbounded. Because the Gaussian decays so rapidly, the infinite speed has no observable consequence for slow processes; for processes on the time scale of the carrier relaxation it has.
+
+\paragraph{Relaxation of the flux.} A natural modification, due to Cattaneo and Vernotte \citep{Cattaneo1948,Vernotte1958}, lets the flux relax to its Fourier value with relaxation time $\tau_0$:
+\begin{equation}
+q_i+\tau_0\dot q_i=-k\,\theta_{,i}.\label{eq:cattaneo}
+\end{equation}
+With \eqref{eq:en} and no coupling, $k\nabla^2\theta=\rho c(\dot\theta+\tau_0\ddot\theta)$, a damped wave equation with front speed $c_T=\sqrt{k/(\rho c\tau_0)}$. In kinetic terms $\tau_0$ is the mean time between momentum-destroying collisions of the heat carriers and $c_T$ is of the order of the carrier speed divided by $\sqrt3$ in three dimensions; in phonon hydrodynamics a different, ``second sound'', regime exists in which normal (momentum-conserving) collisions dominate \citep{GuyerKrumhansl1966,GuyerKrumhansl1966II,Chester1963}.
+
+\paragraph{Thermodynamic compatibility via extended irreversible thermodynamics.} The Cattaneo law does not follow from \eqref{eq:CD} with a free energy that depends only on $(\varepsilon_{ij},T)$: the flux must enter the state space. In extended irreversible thermodynamics \citep{Jou2010,MuellerRuggeri1998,Mueller1967} the entropy depends also on $q_i$. In one dimension, without deformation, take
+\begin{equation}
+\eta=\eta_{\rm eq}(e)-\frac{\tau_0}{2\rho kT^2}\,q^2,\qquad \rho\dot e=-q_{,x}
+\end{equation}
+and an entropy flux $q/T$. Then
+\begin{equation}
+\rho\dot\eta+\Bigl(\frac qT\Bigr)_{,x}=-\frac{q}{kT^2}\bigl(\tau_0\dot q+kT_{,x}\bigr),
+\end{equation}
+and for the Cattaneo law the bracket equals $-q$, so the entropy production is $q^2/(kT^2)\ge0$. This is the minimal sense in which the relaxed law is thermodynamically admissible: the entropy contains a quadratic correction in the flux. The correction is of second order in the disturbance, which is why the linear theory is not sensitive to it. In lagged models the corresponding entropy functional has to be constructed model by model, and for some Taylor truncations of the lag equations no admissible functional exists unless parameter restrictions hold \citep{Chirita2016,Tibullo2017}.
+
+\paragraph{Thermal displacement and the Green--Naghdi route.} Green and Naghdi \citep{Green1991,Green1993} take instead an entropy \emph{balance} with an entropy flux and postulate constitutive relations in terms of the \emph{thermal displacement} $v$, $\dot v=\theta$ (so $v=\int\theta\,\dd t$). The flux $q_i$ may depend on $\theta_{,i}$ and $v_{,i}$; type II ($q_i=-k^*v_{,i}$) conserves energy, type III adds Fourier dissipation. In wave problems $v$ is the natural field since $\hat v=\hat\theta/s$.
+
+\paragraph{Green--Lindsay: rates in the stress and entropy.} Green and Lindsay \citep{Green1972} keep a single temperature but let the free energy and stress depend on $\dot\theta$ as well, introducing two relaxation times $\tau_0\ge\tau_1\ge0$ in the stress and entropy relations; the heat law remains Fourier's. Solutions of the original theory can exhibit discontinuities at wave fronts that some authors regard as unphysical, and a modification with a strain-rate term has been proposed to remove them \citep{Yu2018ModifiedGL}. Section~\ref{sec:hyperbolic} returns to this theory.
+
+\subsection{The heat-flux template}\label{sec:framework-link}
+Linear wave problems with constant coefficients depend on the heat-flux law only through its Laplace-domain relation between flux and temperature gradient. We therefore define the family
+\begin{equation}
+q_i+\tau_q\,\dot q_i=-k\,\bigl(\theta_{,i}+\tau_T\,\dot\theta_{,i}\bigr)-k^{*}\bigl(v_{,i}+\tau_v\,\dot v_{,i}\bigr),\qquad \dot v=\theta,\label{eq:template}
+\end{equation}
+and note that after Laplace transformation (zero initial data)
+\begin{equation}
+\hat q_i=-G(s)\,\hat\theta_{,i},\qquad
+G(s)=\frac{k\,(1+\tau_Ts)+k^{*}(1+\tau_vs)/s}{1+\tau_qs}.\label{eq:G}
+\end{equation}
+
+\begin{figure}[t!]\centering\small
+\input{figs_tikz/fig1_template.tex}
+\caption{Geometry after \citep{Biot1956}: the heat-flux template couples the flux to temperature gradients through relaxation and lags. Each theory sets some terms to zero.}\label{fig:template}
+\end{figure}
+
+\Cref{tab:param} lists the parameter choices that reproduce the principal models. For fractional and memory-dependent models $G(s)$ has the same structure with $s$ replaced by non-integer powers or by kernel transforms (Section~\ref{sec:memory}).
+
+\begin{table}[ht]\centering\small
+\caption{Heat-flux theories as parameter choices in the template \eqref{eq:template}. All entries use the energy balance \eqref{eq:en}.}\label{tab:param}
+\begin{tabular}{@{}lccccc l@{}}\toprule
+Theory & $k$ & $k^*$ & $\tau_q$ & $\tau_T$ & $\tau_v$ & Source\\\midrule
+Classical (Fourier) & $k$ & 0 & 0 & 0 & 0 & \citep{Biot1956}\\
+Lord--Shulman (Cattaneo) & $k$ & 0 & $\tau_0$ & 0 & 0 & \citep{Lord1967,Cattaneo1948,Vernotte1958}\\
+Dual-phase-lag (DPL), 1st order & $k$ & 0 & $\tau_q$ & $\tau_T$ & 0 & \citep{Tzou1995,Tzou1997}\\
+Green--Naghdi II & 0 & $k^*$ & 0 & 0 & 0 & \citep{Green1993}\\
+Green--Naghdi III & $k$ & $k^*$ & 0 & 0 & 0 & \citep{Green1991}\\
+Three-phase-lag (TPL) & $k$ & $k^*$ & $\tau_q$ & $\tau_T$ & $\tau_v$ & \citep{RoyChoudhuri2007}\\
+MGT (flux form) & $k$ & $k^*$ & $\tau_q$ & 0 & 0 & \citep{Quintanilla2019}\\\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Exact reductions and singular limits.} The function $G(s)$ determines which reductions are regular. The following were verified symbolically (script \path{check_reductions.py}).
+\begin{itemize}
+\item \textbf{DPL $\to$ Lord--Shulman:} $\tau_T\to0$ with $\tau_q=\tau_0$ fixed, $k^*=0$. Letting $\tau_q\to0$ with $\tau_T$ fixed gives instead $G=k(1+\tau_Ts)$, a Fourier law with a temperature-rate term (Kelvin--Voigt-like conduction), not Cattaneo.
+\item \textbf{TPL $\to$ DPL:} $k^*\to0$. For $k^*\ne0$ the function $G(s)\sim k^*/s$ as $s\to0$, so the low-frequency and long-time response is qualitatively different.
+\item \textbf{TPL $\to$ classical:} $k^*\to0$ and all three lags $\to0$.
+\item \textbf{GN-II:} $k=0$, all lags zero, $G=k^*/s$; \textbf{GN-III:} all lags zero, $G=k+k^*/s$.
+\item \textbf{Large-$s$ behaviour.} $G(\infty)=0$ for Lord--Shulman (hyperbolic behaviour, finite thermal speed $c_T$); $G(\infty)=k\tau_T/\tau_q$ for DPL (diffusive again at high frequency with effective conductivity $k\tau_T/\tau_q$).
+\item \textbf{Fractional orders:} the endpoint $\alpha\to2$ of the Caputo family is second order in time and is not Fourier's law (Section~\ref{sec:memory}).
+\end{itemize}
+
+\subsection{Energy balance and energy flux}\label{sec:energy}
+For the Lord--Shulman model in the absence of body forces and heat supply, multiplying \eqref{eq:mom} by $\dot u_i$, \eqref{eq:en} by $\theta/T_0$ and using \eqref{eq:cattaneo} gives
+\begin{equation}
+\frac{\partial\mathcal E}{\partial t}+P_{i,i}=-\frac{q_iq_i}{kT_0},\qquad
+\mathcal E=\tfrac12\rho\dot u_i\dot u_i+\tfrac12C_{ijkl}\varepsilon_{ij}\varepsilon_{kl}+\frac{\rho c}{2T_0}\theta^2+\frac{\tau_0}{2kT_0}q_iq_i,\label{eq:energy}
+\end{equation}
+\begin{equation}
+P_i=-\sigma_{ij}\dot u_j+\frac{\theta\,q_i}{T_0}.\label{eq:P}
+\end{equation}
+Here $\mathcal E$ is positive definite and $P_i$ is the flux associated with it; the right-hand side is the dissipation. This quadratic (availability-type) energy and its flux $P_i$ are what is meant by ``energy flux'' in linear wave theory; they differ from the flux $q_i-\sigma_{ij}\dot u_j$ of the \emph{total} internal energy, whose heat-flux part is first order in the disturbance and averages to zero over a period. For the classical theory the same procedure gives \eqref{eq:energy} without the last term in $\mathcal E$. For the other members of the template an energy functional exists under parameter conditions that must be stated for each model: for Green--Naghdi type II the functional is conserved; for DPL and TPL (first-order truncations) the construction is more involved \citep{Quintanilla2003DPL,Chirita2016}. We use \eqref{eq:P} for interface energy partition in Section~\ref{sec:interfaces}.
+
+
+\begin{summarybox}[Summary]
+The balance laws \eqref{eq:mom}\textendash\eqref{eq:en}, the Coleman--Noll relations \eqref{eq:coleman} and the conduction inequality \eqref{eq:cond-ineq} close the system once a heat-flux law is supplied. Fourier's law is parabolic; relaxed and lagged laws give finite-speed thermal waves. The template \eqref{eq:template} reduces to classical, LS, DPL, TPL, GN-II/III and MGT by setting its parameters, but the endpoint $\tau_q\to0$ with $\tau_T$ fixed is singular (Kelvin--Voigt-like conduction, not Cattaneo). Energy is conserved exactly only for GN-II.
+\end{summarybox}

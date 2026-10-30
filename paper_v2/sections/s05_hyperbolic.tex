@@ -1,0 +1,61 @@
+\section{Hyperbolic theories: LS, GL and GN}\label{sec:hyperbolic}
+\subsection{A common dispersion equation}
+The three classical generalized theories can be written, for plane longitudinal motion, in one equation. Let $\tau_0$ denote the flux relaxation time (Lord--Shulman) or the thermal relaxation time (Green--Lindsay), and let $\tau^\dagger$ be the lag that multiplies the thermal-stress and dilatation coupling. Elimination of $\hat u$ and $\hat\theta$ gives
+\begin{equation}
+\bigl(\rho c_1^2K+\rho s^2\bigr)\Bigl(s\rho c\,(1+\tau_0s)+kK\Bigr)+\beta^2T_0\,s\,K\,(1+\tau^\dagger s)=0,\label{eq:unified}
+\end{equation}
+with $\tau^\dagger=0$ and $\tau_0=0$ for the classical theory, $\tau^\dagger=\tau_0$ for Lord--Shulman (this is \eqref{eq:disp} multiplied by $1+\tau_0s$), and $\tau^\dagger=\tau_1$, the second relaxation time, for Green--Lindsay. The unified form of Dhaliwal and Sherief \citep{Dhaliwal1980} makes the same point at the level of the field equations: the theories differ in which of the two coupling terms carries a time-derivative correction.
+
+\subsection{Lord--Shulman theory}\label{sec:ls}
+The Lord--Shulman (LS) theory introduces Cattaneo's law \eqref{eq:cattaneo} with the energy balance \eqref{eq:en}. Eliminating the flux gives the temperature equation
+\begin{equation}
+k\nabla^2\theta=(1+\tau_0\partial_t)\bigl(\rho c\,\dot\theta+T_0\beta\,\dot\varepsilon_{kk}\bigr)-(1+\tau_0\partial_t)\rho r, \label{eq:LS}
+\end{equation}
+so that the lagged derivative acts on \emph{both} the heat-capacity term and the dilatation-coupling term. The latter is a modelling consequence of applying the Cattaneo law to the total heat flux, and it is the source of the difference from the Green--Lindsay equations.
+
+\paragraph{Wave fronts.} Take $\omega\to\infty$ in \eqref{eq:unified}. The leading terms in $s$ give, with $c_T^2=k/(\rho c\tau_0)$ and $\varepsilon=\beta^2T_0/(\rho^2cc_1^2)$,
+\begin{equation}
+v^4-v^2\bigl[c_1^2(1+\varepsilon\,\tau^\dagger/\tau_0)+c_T^2\bigr]+c_1^2c_T^2=0, \label{eq:fronts}
+\end{equation}
+whose two roots are the speeds of the two wave fronts (an elastic-type and a thermal-type front), $v_{\rm e}<v_{\rm t}$ when $c_T>c_1$ (and the labels exchange for $c_T<c_1$). For LS, $\tau^\dagger=\tau_0$ and the equation is the standard high-frequency front equation of the LS theory; for GL it is \eqref{eq:fronts} with the factor $\tau_1/\tau_0$. We verified \eqref{eq:fronts} numerically against the roots of \eqref{eq:unified} at $\omega/\omega_*=2\times10^3$ for both theories (script \path{check_fronts.py}): with $\varepsilon=0.1$, $\tau_0=0.25/\omega_*$ ($c_T=2c_1$), the LS fronts are $0.9839\,c_1$ and $2.0327\,c_1$, and with $\tau_1=0.1/\omega_*$ the GL fronts are $0.9934\,c_1$ and $2.0132\,c_1$, in agreement with \eqref{eq:fronts} to four digits. Two features are worth recording.
+\begin{enumerate}
+\item The elastic front speed is \emph{not} the isothermal speed $c_1$, nor the adiabatic speed: it is displaced from $c_1$ by the interaction with the thermal front, and the two speeds repel one another (their product is $c_1c_T$, their sum of squares $c_1^2(1+\varepsilon)+c_T^2$). When $c_T=c_1$ the degeneracy is lifted by an amount proportional to $\sqrt\varepsilon$: $v^2=c_1^2[2+\varepsilon\pm\sqrt{\varepsilon(4+\varepsilon)}]/2\approx c_1^2(1\pm\sqrt\varepsilon)$.
+\item The leading front speeds depend only on the high-frequency terms, so they are independent of $k$ except through $c_T$.
+\end{enumerate}
+
+\begin{figure}[t!]\centering\small
+\input{figs_tikz/fig3_fronts.tex}
+\caption{Geometry after \citep{Lord1967}: two wave fronts in hyperbolic thermoelasticity -- elastic-type and thermal-type fronts repel in speed; the thermal front carries a damped tail.}\label{fig:fronts}
+\end{figure}
+
+\paragraph{Discontinuities and well-posedness.} Because the system is hyperbolic, initial data with a jump produce solutions with jumps carried along the fronts, and these jumps decay exponentially along the propagation path; this is visible in the heat-pulse problem of Section~\ref{sec:transient}. The system is well posed for $\tau_0>0$ and energy decays in bounded bodies under standard boundary conditions, from the energy identity \eqref{eq:energy}. Existence of generalized solutions for one-relaxation-time thermoelasticity was established by \citep{Bem1982}, and for two relaxation times by \citep{Bem1983}; domain-of-influence results appear in \citep{Ignaczak1980}. The thermodynamic foundation via the Clausius--Duhem inequality is due to \citep{GurtinWilliams1966}.
+
+\paragraph{Interpretation.} The principal modelling questions are the physical size of $\tau_0$ and whether Cattaneo's law, with a single exponential relaxation, is an adequate description in the frequency range of interest. Joseph and Preziosi \citep{Joseph1989,Joseph1990} review evidence for and against; large relaxation times have been reported for nonhomogeneous materials \citep{Kaminski1990,Mitra1995}, although the interpretation of such measurements has been debated. For solids the strongest evidence of wave-like heat propagation is second sound at cryogenic temperatures \citep{Ackerman1966,Jackson1970}, where the governing regime is the Guyer--Krumhansl hydrodynamic one \citep{GuyerKrumhansl1966II}, not the simple Cattaneo law.
+
+\subsection{Green--Lindsay theory}\label{sec:gl}
+The Green--Lindsay (GL) theory \citep{Green1972} has the constitutive relations
+\begin{equation}
+\sigma_{ij}=C_{ijkl}\varepsilon_{kl}-\beta_{ij}\bigl(\theta+\tau_1\dot\theta\bigr),\qquad
+k\theta_{,ii}=\rho c\bigl(\dot\theta+\tau_0\ddot\theta\bigr)+T_0\beta_{ij}\dot\varepsilon_{ij},\label{eq:GL}
+\end{equation}
+with $\tau_0\ge\tau_1\ge0$. The heat conduction term is Fourier's, so the theory does not fit the flux template \eqref{eq:template}; the finite thermal speed instead comes from the inertia term $\tau_0\ddot\theta$. Substituting in plane waves gives \eqref{eq:unified} with $\tau^\dagger=\tau_1$. Three differences from LS are worth noting. First, the thermal equation is not of Cattaneo type, so the relation to kinetic arguments is less direct. Second, the entropy is a function of temperature rate, so it is the thermal displacement-like quantity that appears in the constitutive structure, and the interpretation of $\tau_0$ and $\tau_1$ as independent material constants requires care. Third, solutions of the original theory can contain discontinuities that some authors consider unphysical; a modification with a strain-rate term was proposed to remove them \citep{Yu2018ModifiedGL}. Wave fronts follow \eqref{eq:fronts} with $\tau^\dagger=\tau_1$. A distinguishing consequence: in GL the coupling is weaker at the wave fronts than in LS by the factor $\tau_1/\tau_0\le1$.
+
+\subsection{Green--Naghdi types I, II and III}\label{sec:gn}
+The Green--Naghdi (GN) theories \citep{Green1991,GreenGN1992,Green1993} postulate an entropy balance with the thermal displacement $v$ ($\dot v=\theta$) as a primary field. In the template the three types are
+\begin{equation}
+\text{I: }\ q_i=-k\theta_{,i};\qquad
+\text{II: }\ q_i=-k^*v_{,i};\qquad
+\text{III: }\ q_i=-k\theta_{,i}-k^*v_{,i},
+\end{equation}
+with $G=k$, $k^*/s$ and $k+k^*/s$, respectively. Their uncoupled thermal equations are, with $\rho c=1$ for brevity,
+\begin{equation}
+\text{II: }\ \ddot\theta=c_*^2\nabla^2\theta,\quad c_*^2=k^*/\rho c;\qquad
+\text{III: }\ \ddot\theta=c_*^2\nabla^2\theta+\alpha\nabla^2\dot\theta.
+\end{equation}
+\paragraph{Type II.} Thermal disturbances propagate as undamped waves of speed $c_*$, and with coupling the two fronts satisfy \eqref{eq:fronts} with $c_T\to c_*$, $\tau^\dagger/\tau_0\to1$. In this case, however, the relation is \emph{exact for all frequencies}, not only asymptotically: the roots of the quadratic \eqref{eq:disp} with $G=k^*/s$ are non-dispersive, with $v^4-v^2[c_1^2(1+\varepsilon)+c_*^2]+c_1^2c_*^2=0$ at every $\omega$. We confirmed this numerically for $\varepsilon=0.1$ and $c_*=c_1$: the exact speeds $0.854309c_1$ and $1.170537c_1$ are the same at $\omega/\omega_*=0.5$, $2$ and $10$, and agree with the formula. The theory is energy-conserving, so there is no thermoelastic damping at all; it is the only member of the family with this property, and consequently the benchmark for energy-based checks.
+\paragraph{Type III.} The type III equation is a damped wave equation with a Kelvin--Voigt-type damping term $\alpha\nabla^2\dot\theta$. Two consequences deserve emphasis. At \emph{low} frequency $G\simeq k^*/s$ and the thermal branch has the type-II speed $c_*$, whereas at \emph{high} frequency $G\to k$ and the branch becomes diffusive: its phase speed is unbounded (\Cref{fig:family}, magenta curve), exactly as in the classical theory. Thus, in contrast to LS, type III is wave-like at low frequencies and diffusive at high frequencies, and its thermal signals do not have a finite propagation speed in the strict sense (the strongly damped wave equation has a parabolic smoothing effect). The practical interpretation is that type III describes weakly damped thermal waves at moderate frequencies; it is not an ``improved Cattaneo law''. Statements in the literature that type III possesses finite thermal wave speed should be read as referring to the undamped limit.
+\paragraph{Uniqueness and stability.} Chandrasekharaiah proved uniqueness for type II \citep{Chandrasekharaiah1996}; complete solutions for type II were given by \citep{Chandrasekharaiah1997}; the theory without energy dissipation for anisotropic and micropolar media was developed in \citep{Iesan1998,Quintanilla1999,Ciarletta1999,Quintanilla2002}. Stability and decay results for type III are part of the mathematical theory of thermoelasticity \citep{Suh1998}. The type II theory has attracted attention as a conservative reference model; combined with nonlocal elasticity it has been analysed for wave dispersion \citep{Sarkar2019}.
+
+\begin{summarybox}[Summary]
+LS, GL and GN share one dispersion equation \eqref{eq:unified}; they differ in which coupling term carries a time-derivative correction. LS has finite thermal speed $c_T$ from flux relaxation; GL has it from thermal inertia $\tau_0\ddot\theta$; GN-II is non-dispersive and energy-conserving; GN-III is wave-like at low frequency but diffusive at high frequency and has no finite front speed in the strict sense. Front speeds obey \eqref{eq:fronts} and repel when $c_T\approx c_1$.
+\end{summarybox}

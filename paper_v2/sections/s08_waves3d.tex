@@ -1,0 +1,26 @@
+\section{Wave propagation in three dimensions}\label{sec:waves3d}
+\subsection{Plane waves in an isotropic generalized thermoelastic solid}
+In an unbounded isotropic solid with any heat-flux law of the template, \eqref{eq:helm} generalises to
+\begin{equation}
+\rho\ddot\phi=(\lambda+2\mu)\nabla^2\phi-\beta\theta,\quad
+s\rho c\,\hat\theta+T_0\beta s\nabla^2\hat\phi=G(s)\nabla^2\hat\theta,\quad
+\rho\ddot{\bm\psi}=\mu\nabla^2\bm\psi,
+\end{equation}
+and a plane wave in direction $\bm n$, $\propto\exp[\ii(k\,\bm n\!\cdot\!\bx-\omega t)]$, has the same characteristic equation \eqref{eq:disp} for the dilatational--thermal system. The dispersion analysis of Section~\ref{sec:longitudinal} therefore applies without change to waves in any direction of an isotropic body. The shear wave has speed $c_2$ and is not affected by the heat-flux law, for any member of the template and for fractional or memory models as well. For general anisotropy the quasi-longitudinal, quasi-shear and thermal branches couple through $\beta_{ij}$ and $k_{ij}$, and the characteristic equation becomes a polynomial of higher degree; Dhaliwal and Sherief's formulation \citep{Dhaliwal1980} is the standard reference, and for numerical dispersion the Stroh formalism \citep{Stroh1958,Stroh1962} is convenient.
+
+\paragraph{Counting branches.} The number of branches in a bulk plane-wave problem is $2$ (dilatational--thermal) $+\,2$ (shear polarisations) in an isotropic medium, with $G$ rational of low degree; the degree of the polynomial in $K$ equals $2$ only if $G$ is rational of the kind in the template. For the second-order lag version (ii) \eqref{eq:dpl2}, or higher-order models, the number of thermal-type branches increases. Several additional branches appear in published dispersion curves of such models, and it is advisable to separate genuine physical branches from spurious roots created by Taylor truncation.
+
+\subsection{Reflection at a free surface: structure of the problem}
+A plane dilatational wave incident on a plane free surface in an isotropic thermoelastic half-space generates reflected waves of three kinds: a dilatational (elastic-type) wave, a thermal-type wave (evanescent or strongly damped), and a shear (SV) wave. Boundary conditions are the traction-free conditions together with a thermal condition, either \emph{insulated} (zero normal flux, $\partial_n\theta=0$ for any $G$) or \emph{isothermal} ($\theta=0$). The amplitude ratios are obtained from a $3\times3$ linear system and have been computed for many models; the comparison of insulated and isothermal boundaries for generalized theories is a classical exercise \citep{Das2008}, and extensions with nonlocal, micropolar, piezoelectric and rotational effects are numerous \citep{Kalkal2020,Singh2020b,Yadav2023,Gupta2024a}. We will not tabulate their results; instead, Section~\ref{sec:surface} gives the structure of the free-surface problem used for Rayleigh waves, which is the same determinant, and Section~\ref{sec:interfaces} treats the interface problem with a verified energy check.
+
+\begin{figure}[t!]\centering\small
+\input{figs_tikz/fig4_reflection.tex}
+\caption{Geometry after \citep{Das2008}: reflection at a free thermoelastic surface -- an incident P wave generates reflected P, reflected SV and a thermal-type (evanescent/damped) wave; thermal condition insulated or isothermal.}\label{fig:reflection-geo}
+\end{figure}
+
+\subsection{Waves in plates, rods and layered structures}
+In bounded waveguides, the thermal and elastic fields are coupled by lateral boundary conditions and a family of guided modes arises (Lamb modes in plates \citep{Lamb1917}, Pochhammer--Chree modes in rods). The thermoelastic version has one additional family of thermal modes per thermal condition, and the dispersion curves of the elastic modes are perturbed by the thermal coupling in the same way as in \Cref{fig:disp}: small speed corrections and a damping that peaks where the thermal relaxation frequency of the cross-section matches the wave frequency. For thin plates and beams the flexural damping reduces to Zener's classical result (Section~\ref{sec:ted}). Texts on the elastic waveguide problem are \citep{Achenbach1973,Auld1973}; for the thermoelastic waveguide with generalized laws the literature consists mainly of analyses of specific configurations \citep{Biswas2020,Abouelregal2023}.
+
+\begin{summarybox}[Summary]
+In an unbounded isotropic body plane waves split into a shear branch (speed $c_2$, unaffected by heat) and a coupled dilatational--thermal system governed by \eqref{eq:disp}. Reflection at a free surface generates three reflected waves (P, SV, thermal-type), with amplitude ratios from a $3\times3$ system. In waveguides each thermal condition adds a family of thermal modes.
+\end{summarybox}

@@ -1,0 +1,29 @@
+% fig9_bg.tex -- Bleustein-Gulyaev SH surface wave geometry (s13b_bg)
+% NOTE: Bleustein1968 and Gulyaev1969 are NOT in any bib file, so no citation in caption.
+\begin{tikzpicture}[x=1.0cm,y=1.0cm,>=Stealth]
+  \tikzset{
+    node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
+    arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+    lbl/.style={font=\footnotesize,text=blue!60!black},
+    medium/.style={fill=blue!10},
+    vacuum/.style={fill=gray!8},
+  }
+  % Crystal region y>0 shaded
+  \fill[medium] (-3.5,0) -- (3.5,0) -- (3.5,3.5) -- (-3.5,3.5) -- cycle;
+  % Vacuum region y<0 shaded
+  \fill[vacuum] (-3.5,-3.5) -- (3.5,-3.5) -- (3.5,0) -- (-3.5,0) -- cycle;
+  % Interface line
+  \draw[thick] (-3.5,0) -- (3.5,0);
+  % Axes
+  \draw[->,thick] (-3.5,0) -- (3.5,0) node[right] {$x$};
+  \draw[->,thick] (0,-3.5) -- (0,3.5) node[above] {$y$};
+  % BG wave along x
+  \draw[arr,very thick] (-2.0,-0.3) -- (-0.4,-0.3) node[pos=0.5,above,lbl] {BG wave along $x$};
+  % Decay into crystal
+  \draw[arr,very thick] (0.5,-0.5) -- (0.5,-2.5) node[pos=0.5,right,lbl] {decay $e^{-\\alpha y}$};
+  % Potential in vacuum
+  \draw[arr,dashed] (0.0,0.8) -- (-0.8,0.4) node[pos=0.5,above,lbl] {potential in vacuum};
+  % Region labels
+  \node[node] at (0.2,-1.8) {6mm crystal\\[-1pt] $y>0$};
+  \node[node] at (-1.8,-2.8) {vacuum\\[-1pt] $y<0$};
+\end{tikzpicture}

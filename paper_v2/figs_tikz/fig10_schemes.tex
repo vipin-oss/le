@@ -1,0 +1,22 @@
+% fig10_schemes.tex -- Finite-difference grid geometry (s14b_schemes)
+\begin{tikzpicture}[x=0.75cm,y=1.0cm,>=Stealth]
+  \tikzset{
+    arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+    lbl/.style={font=\footnotesize,text=blue!60!black},
+    node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
+  }
+  % Grid line
+  \draw[thick] (0,0) -- (7.5,0);
+  % Grid ticks
+  \foreach \x in {0,1,2,3,4,5,6,7} {
+    \draw[thick] (\x,-0.12) -- (\x,0.12);
+    \node[below=2pt,font=\footnotesize] at (\x,0) {\x};
+  }
+  % Axis label
+  \draw[->,thick] (0,-0.5) -- (7.5,-0.5) node[right] {$x$};
+  % Front arrow
+  \draw[arr,very thick] (0.5,-0.9) -- (2.5,-0.9) node[pos=0.5,below,lbl] {front at $x=t$};
+  % Grid label box
+  \node[node] at (3.75,-1.8) {grid $x_i=i\\Delta x$\\[-1pt] Courant $c_T\\Delta t/\\Delta x=0.9$};
+  \draw[arr] (3.75,-2.9) -- (3.75,-0.2);
+\end{tikzpicture}

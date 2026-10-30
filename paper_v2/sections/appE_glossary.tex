@@ -1,0 +1,52 @@
+\section{Glossary and summary of working formulas}\label{app:glossary}
+
+\subsection{Abbreviations}
+\begin{center}\small
+\begin{tabular}{@{}p{2.4cm}p{12cm}@{}}\toprule
+BG & Bleustein--Gulyaev (shear-horizontal piezoelectric surface wave)\\
+CD, classical & Fourier heat conduction with Biot's coupled thermoelasticity (parabolic)\\
+DPL & dual-phase-lag heat conduction\\
+EIT & extended irreversible thermodynamics\\
+GK & Guyer--Krumhansl heat conduction (phonon hydrodynamics)\\
+GL & Green--Lindsay thermoelasticity (two relaxation times in the constitutive law)\\
+GN I, II, III & Green--Naghdi types I, II, III (thermal displacement formulation)\\
+LS & Lord--Shulman thermoelasticity (Cattaneo law with one relaxation time)\\
+LR & Lifshitz--Roukes (exact flexural thermoelastic damping)\\
+MDD & memory-dependent derivative\\
+MGT & Moore--Gibson--Thompson heat conduction (third order in time)\\
+SH, SV & shear-horizontal, shear-vertical polarisations\\
+TED & thermoelastic damping\\
+TPL & three-phase-lag heat conduction\\
+\bottomrule\end{tabular}
+\end{center}
+
+\subsection{Working formulas}
+The following relations are used repeatedly. Each is derived or checked in the section named in the last column; the symbols are those of \cref{tab:notation}.
+\begin{center}\small
+\begin{tabular}{@{}p{4.9cm}p{6.8cm}p{2.4cm}@{}}\toprule
+Quantity & Formula & Where\\\midrule
+Thermoelastic coupling & $\varepsilon=\beta^2T_0/(\rho^2cc_1^2)$ & \Cref{sec:foundations}\\
+Thermal characteristic frequency & $\omega_*=\rho cc_1^2/k$ & \Cref{sec:classical}\\
+Adiabatic speed & $c_1\sqrt{1+\varepsilon}$ at $\omega\ll\omega_*$ & \Cref{sec:longitudinal}\\
+Thermal front speed (LS) & $c_T=\sqrt{k/(\rho c\tau_0)}$ & \Cref{sec:hyperbolic}\\
+Lag--frequency number & $c_T/c_1=1/\sqrt{\tau_0\omega_*}$ & \Cref{app:numbers}\\
+Debye loss (weak coupling) & $Q_x^{-1}\simeq\varepsilon x/(1+x^2)$, $x=\omega/\omega_*$ & \Cref{sec:ted}\\
+Loss--dispersion sum rule & $\int Q_x^{-1}d\ln\omega=\pi(v_0-v_\infty)/\bar v$ & \Cref{sec:prelim}\\
+Finite-front criterion & $sG(s)\to$ finite, non-zero as $s\to\infty$ & \Cref{sec:prelim}\\
+Zener loss, beam flexure & $Q^{-1}=\Delta\,\omega\tau_Z/(1+\omega^2\tau_Z^2)$, $\tau_Z=h^2/\pi^2\chi$ & \Cref{sec:flexted}\\
+Relaxation strength (beam / plane strain) & $\Delta=E\alpha_T^2T_0/c_v$ / $\times(1+\nu)/(1-\nu)$ & \Cref{sec:lamb}\\
+Cattaneo mode transition & $k_c=1/(2\sqrt{\chi\tau})$ & \Cref{sec:thermalmodes}\\
+Cubic-crystal coupling & $\varepsilon_{\bm n}=\beta_0^2T_0/(c_vM_{\bm n})$ & \Cref{sec:aniso}\\
+Welded interface (elastic) & $r=(Z_1-Z_2)/(Z_1+Z_2)$, $R+T=1$ & \Cref{sec:interfaces}\\
+Truncation accuracy (1st order) & relative error $\simeq(\omega\tau)^2/4$ for small $\omega\tau$ & \Cref{sec:delayfid}\\
+GK high-frequency limit & $k_w^2\to i\omega\tau_R/(3\ell^2)$ & \Cref{sec:kinetic}\\
+\bottomrule\end{tabular}
+\end{center}
+
+\subsection{Where to start for common questions}
+\begin{itemize}
+\item \emph{Is the heat law relevant at my frequency?} Compute $\omega_*$ and $\omega\tau$ (\cref{sec:synthesis}); the regime map shows when LS and classical differ.
+\item \emph{Which model has finite speed?} See the comparative table in \cref{sec:synthesis} and the criterion in \cref{sec:prelim}.
+\item \emph{How large is thermoelastic damping in a resonator?} Use \cref{eq:LR} with the plane-strain factor when the width exceeds several thicknesses, and check $kh$ (\cref{sec:lamb}).
+\item \emph{How do I validate a code?} Use the checks in \cref{sec:methods,sec:schemes}, including the sum rule and the elastic limits.
+\end{itemize}

@@ -1,0 +1,70 @@
+\section{Coupling to further fields}\label{sec:multi}
+Thermoelastic waves are one member of a larger class: whenever a further field is energetically coupled to deformation and temperature, the dispersion relation acquires additional branches or renormalised constants, and the heat-flux law acts as a module that can be exchanged without altering the coupling structure. This section treats the piezoelectric coupling in detail, because it admits an exact reduction, and then surveys the principal other couplings at the level of structure.
+
+\subsection{Piezoelectric stiffening}
+Consider a one-dimensional piezoelectric bar in the quasi-electrostatic approximation, with $E=-\varphi_{,x}$ and the magnetic field neglected \citep{Yang2018,MindlinTiersten1962}. The constitutive relations are
+\begin{equation}
+\sigma=c\,u_{,x}-e\,E,\qquad D=\varepsilon_e E+e\,u_{,x},
+\end{equation}
+with elastic constant $c$ at constant field, piezoelectric constant $e$ and permittivity $\varepsilon_e$ at constant strain. Gauss's law $D_{,x}=0$ (no free charge) gives $E=-(e/\varepsilon_e)u_{,x}$ up to a uniform field, so
+\begin{equation}
+\sigma=\Bigl(c+\frac{e^2}{\varepsilon_e}\Bigr)u_{,x},\qquad v=\sqrt{\frac{c+e^2/\varepsilon_e}{\rho}}=v_0\sqrt{1+K^2},\quad K^2=\frac{e^2}{\varepsilon_e c}.
+\label{eq:piezo}
+\end{equation}
+The electromechanical coupling constant $K^2$ ranges from a fraction of a percent in weakly piezoelectric crystals to several tens of percent in strongly piezoelectric ceramics, so the stiffening, shown in \Cref{fig:piezo}, is large enough to matter in resonator design.
+\begin{figure}[t]\centering
+\includegraphics[width=0.5\textwidth]{figs/fig_piezo.pdf}
+\caption{Piezoelectric stiffening of the longitudinal wave speed, \eqref{eq:piezo}.}\label{fig:piezo}
+\end{figure}
+
+\subsection{Thermopiezoelectric waves: exact renormalisation}
+With a pyroelectric coefficient $p$ the relations extend to
+\begin{equation}
+\sigma=cu_{,x}-eE-\beta\theta,\qquad D=eu_{,x}+\varepsilon_eE+p\theta,\qquad \rho\eta=\beta u_{,x}+pE+\frac{\rho c_E}{T_0}\theta,
+\end{equation}
+the last being the entropy (the pyroelectric and thermal-stress coefficients enter symmetrically, as required by the existence of a thermodynamic potential \citep{Mindlin1974Thermopiezo,Nowacki1978,Chandrasekharaiah1984}). Eliminating $E$ through $D_{,x}=0$ gives a purely thermoelastic system with the renormalised constants
+\begin{equation}
+\tilde c=c+\frac{e^2}{\varepsilon_e},\qquad
+\tilde\beta=\beta-\frac{ep}{\varepsilon_e},\qquad
+\rho\tilde c_v=\rho c_E-\frac{T_0p^2}{\varepsilon_e},\label{eq:renorm}
+\end{equation}
+and therefore all results of Sections~\ref{sec:classical}--\ref{sec:lags} hold with $c_1^2\to\tilde c/\rho$, $\beta\to\tilde\beta$, $c\to\tilde c_v$ in the definitions of $\varepsilon$ and $\omega_*$. We verified this reduction symbolically by computing the $3\times3$ determinant of the coupled system in $(u,\theta,\varphi)$ and comparing it with the renormalised thermoelastic polynomial: the ratio is a constant factor independent of all material parameters except the trivial scaling of the Gauss equation (script \path{check_thermopiezo.py}). Three observations follow. (i) The piezoelectric stiffening raises the isothermal speed by $\sqrt{1+K^2}$ and therefore changes $\omega_*$ and $\varepsilon$. (ii) The product $ep$ enters $\tilde\beta$ with a sign: depending on the orientation and sign conventions, the pyroelectric effect can \emph{reduce} or \emph{increase} the thermal stress, and the sign conventions for $e$ and $p$ vary across the literature, so a reported effect of the pyroelectric coefficient should be accompanied by a statement of conventions \citep{Yang2018}. (iii) The heat capacity under zero electric displacement ($D=0$) is smaller than under zero field, by $T_0p^2/\varepsilon_e$, the electric analogue of the difference between adiabatic and isothermal elasticity.
+
+\paragraph{Limits of the quasi-electrostatic model.} The model has no electromagnetic branch and is valid when elastic wave speeds are small compared with the speed of light and the wavelength is much smaller than the electromagnetic wavelength at the same frequency, which holds for acoustic waves in all practical piezoelectric solids but excludes polaritons and fully dynamic electromagnetic coupling.
+
+\paragraph{Extensions in the literature.} Piezothermoelastic waves with memory and fractional heat laws, semiconductor effects (photo-excited carriers and plasma waves), nonlocal piezoelasticity and surface effects, flexoelectric microstructure, and functionally graded or viscous variants have been treated in a large body of work \citep{Gupta2023,Gupta2024a,Gupta2026HeatMap,Das2026,Zang2014,Li2018,Liu2020,Singh2020c,Kumar2024,Kumar2024a,Abouelregal2023,Srivastava2026}. The structural point of \eqref{eq:renorm} applies to all of those that retain a one-dimensional or plane-wave setting: the additional coupling to the electric field in the absence of free charges is an exact renormalisation, and only when carriers (semiconductors) or higher electric moments (flexoelectricity) are added does a genuinely new branch appear.
+
+Three-phase-lag thermoelastic heat conduction with higher-order time-fractional derivatives was proposed by \citep{Abouelregal2019}; generalized thermoelasticity based on higher-order memory-dependent derivative with time delay was developed by \citep{Abouelregal2021}. Memory-dependent and fractional order analysis of the initially stressed piezo-thermoelastic medium was presented by \citep{Barak2023a}; electro-thermoelasticity theory with memory-dependent derivative heat transfer was formulated by \citep{Ezzat2016a}. Photo-thermo-piezo-elastic waves in semiconductor medium subject to distinct two temperature models were studied by \citep{Gupta2023a}; quasi-P wave through orthotropic piezo-thermoelastic materials subject to higher order fractional and memory-dependent effects was analysed by \citep{Gupta2023b}. Theory of two-temperature thermoelasticity without energy dissipation was given by \citep{Youssef2011}; two-temperature thermoelasticity without energy dissipation of Green--Naghdi model was studied by \citep{Youssef2014}.
+
+\subsection{Magneto-thermoelasticity}
+For a perfectly conducting solid in a uniform magnetic field $\bm H_0$, the Lorentz force $\mu_0\bm J\times\bm H_0$ acts as an additional body force. For a longitudinal wave along $x$ with $\bm H_0$ perpendicular to the propagation direction and the displacement along the propagation direction, $h=-H_0u_{,x}$, $J=-h_{,x}$ and the force is $\mu_0H_0^2u_{,xx}$, so that $\rho\ddot u=(\lambda+2\mu+\mu_0H_0^2)u_{,xx}-\beta\theta_{,x}$. The magnetic field thus adds the Alfv\'en term to the stiffness, $c_1^2\to c_1^2+v_A^2$ with $v_A^2=\mu_0H_0^2/\rho$, and the dispersion polynomial \eqref{eq:disp} holds with that substitution. Finite electrical conductivity and displacement current add a magnetic diffusion branch and a further coupling that depends on the conductivity \citep{Ezzat2011,Ezzat2004,Ezzat2010,Bayones2021,Biswas2019,KumarKansal2017}; the fractional-order heat-conduction law in magneto-thermoelasticity of \citep{Ezzat2011} is a standard reference. Magneto-electro-thermo-elastic solutions for transversely isotropic media are given in \citep{Chen2004}; modified fractional-order piezoelectric thermoelasticity models appear in \citep{Guo2018,Mondal2020}.
+
+\subsection{Thermoelastic diffusion and chemical coupling}
+When a diffusing species is present, the concentration $C$ and chemical potential add a third field: the stress contains a term proportional to $C$, the energy balance a term proportional to $\dot C$ and the species balance a diffusive flux coupled to temperature. The dispersion polynomial becomes cubic in $K$ and a third, diffusive branch appears, with decay governed by the mass diffusivity. Higher-order and multi-lag diffusion models have been proposed \citep{Abouelregal2020a}, and reflection at interfaces with magneto-thermoelastic diffusion solids with voids has been computed \citep{KumarKansal2017}.
+
+\subsection{Microstructure: micropolar, voids and porosity}
+Micropolar elasticity \citep{Eringen1966a,Eringen1999,TauchertClausAriman1968} adds microrotation as an independent field. In the isotropic case the dilatational wave is accompanied by a longitudinal wave of modified speed, the transverse waves couple to microrotation waves, and the rotational waves have a cut-off frequency. Materials with voids \citep{Nunziato1979,Cowin1983,Iesan1986} add an independent volume-fraction field and one extra dilatational wave; thermal coupling is introduced in \citep{Iesan1986}; poro-thermoelasticity and double porosity add slow dilatational waves associated with pore fluid pressure \citep{Singh2020,Kumar2022,Kumar2025}. Fractional-order thermoelasticity with voids, micropolar fractional models and two-temperature versions have been studied \citep{Bachher2019,Sharma2022,Biswas2020a,Kalkal2020,Kumar2008,Kumar2018}. Each microstructural field adds branches that appear as new roots of the characteristic equation; whether they are physically observable depends on the microinertia and the coupling coefficients, which are usually assigned values with limited experimental support.
+
+\subsection{Table of couplings}
+\begin{figure}[t!]\centering\small
+\input{figs_tikz/fig8_multi.tex}
+\caption{Geometry after \citep{Nowacki1978,Chandrasekharaiah1984}: multiphysics coupling -- each added field renormalises constants and/or adds branches; with no free charge the piezo-electric effect is an exact stiffening renormalisation.}\label{fig:multi-geo}
+\end{figure}
+
+\begin{table}[t]\centering\small
+\caption{Added fields and their effect on the plane-wave problem (structure only; $\Delta n$ is the increase in the number of branches in one-dimensional dilatational motion).}\label{tab:couplings}
+\begin{tabularx}{\textwidth}{@{}p{3.1cm}p{3.2cm}p{1.9cm}X@{}}\toprule
+Added field & Principal effect on waves & $\Delta n$ & Remarks\\\midrule
+Electric (quasi-static, no free charge) & stiffness $c\to c+e^2/\varepsilon_e$; $\beta$, $c_v$ renormalised & 0 & Exact reduction, Eq.~\eqref{eq:renorm}.\\
+Electric with carriers (semiconductor) & plasma / diffusive branch & $+1$ & Photo-thermo-elastic and piezo-semiconductor models.\\
+Magnetic (perfect conductor) & stiffness $c_1^2\to c_1^2+v_A^2$ & 0 & Finite conductivity adds a diffusion branch.\\
+Concentration (diffusion) & third diffusive branch & $+1$ & Coupling to temperature through the chemical potential.\\
+Voids / porosity & extra dilatational wave(s) & $+1$ (single) $+2$ (double) & Slow waves, strong damping.\\
+Microrotation (micropolar) & rotational waves with cut-off & transverse & Longitudinal speed modified.\\
+Two temperatures & wavenumber-dependent $\theta$ vs.\ $\varphi$ & 0 & Acts like a length scale.\\\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{summarybox}[Summary]
+Adding a field energetically coupled to deformation and temperature renormalises constants and/or adds branches. Piezoelectric stiffening with no free charge is an exact reduction ($c\to c+e^2/\varepsilon_e$, $\beta,c_v$ renormalised). Magnetic field adds the Alfv\'en term; diffusion adds a branch; voids and micropolarity add extra waves. All such couplings share the same dispersion-polynomial structure: solve the coupled system, then read speeds and damping from its roots.
+\end{summarybox}
