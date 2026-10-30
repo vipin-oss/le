@@ -82,6 +82,28 @@ and note that after Laplace transformation (zero initial data)
 \hat q_i=-G(s)\,\hat\theta_{,i},\qquad
 G(s)=\frac{k\,(1+\tau_Ts)+k^{*}(1+\tau_vs)/s}{1+\tau_qs}.\label{eq:G}
 \end{equation}
+
+\begin{figure}[t!]\centering\small
+\begin{tikzpicture}[x=1.1cm,y=1.1cm,>=Stealth,
+  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.2cm},
+  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
+  \node[node] (flux) {Heat flux\[-2pt] $q_i$};
+  \node[node,right=1.5cm of flux] (grad) {Temperature\[-2pt] gradient $\theta_{,i}$};
+  \node[node,below=1.3cm of flux] (lag) {Flux relaxation\[-2pt] $\tau_q\dot q_i$};
+  \node[node,right=1.5cm of lag] (tlag) {Temperature\[-2pt] lag $\tau_T\dot\theta_{,i}$};
+  \node[node,below=1.3cm of lag] (v) {Thermal\[-2pt] displacement $v$
+$\dot v=\theta$};
+  \node[node,right=1.5cm of v] (vlag) {Velocity\[-2pt] lag $\tau_v\dot v_{,i}$};
+  \draw[arr] (flux.east) -- (grad.west) node[midway,above,lbl] {$-k\theta_{,i}$};
+  \draw[arr] (lag.east) -- (tlag.west) node[midway,above,lbl] {$-k\tau_T\dot\theta_{,i}$};
+  \draw[arr] (v.east) -- (vlag.west) node[midway,above,lbl] {$-k^*(v_{,i}+\tau_v\dot v_{,i})$};
+  \draw[arr] (flux.south) -- (lag.north) node[midway,right,lbl] {$+\tau_q\dot q_i$};
+  \draw[arr] (flux.south west) to[out=-135,in=135] node[midway,left,lbl] {template \eqref{eq:template}} (v.north west);
+\end{tikzpicture}
+\caption{Geometry after \citep{Biot1956}: the heat-flux template couples the flux to temperature gradients through relaxation and lags. Each theory sets some terms to zero.}\label{fig:template}
+\end{figure}
+
 \Cref{tab:param} lists the parameter choices that reproduce the principal models. For fractional and memory-dependent models $G(s)$ has the same structure with $s$ replaced by non-integer powers or by kernel transforms (Section~\ref{sec:memory}).
 
 \begin{table}[ht]\centering\small

@@ -15,6 +15,22 @@ The thermodynamic content is fully encoded in the two coupling terms: the therma
 \end{equation}
 The shear potential $\bm\psi$ obeys an uncoupled wave equation with speed $c_2=\sqrt{\mu/\rho}$: transverse waves are neither attenuated nor dispersed by thermoelastic coupling in an unbounded isotropic medium. Only the dilatational potential couples to temperature. At boundaries and interfaces, shear and dilatational motions are coupled again by boundary conditions, which is why surface waves and reflected shear waves are affected by thermal coupling (Sections~\ref{sec:surface} and~\ref{sec:interfaces}).
 
+\begin{figure}[t!]\centering\small
+\begin{tikzpicture}[x=1.1cm,y=1.1cm,>=Stealth,
+  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
+  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
+  \node[node] (mech) {Mechanical\\\[-2pt] $\bu,\varepsilon_{ij}$\\\[-2pt] stress $\sigma_{ij}$};
+  \node[node,right=1.8cm of mech] (therm) {Thermal\\\[-2pt] $\theta,T_0$\\\[-2pt] flux $q_i$};
+  \node[node,below=1.4cm of mech] (energy) {Energy\\\[-2pt] balance\\\[-2pt] $\rho c\dot\theta+T_0\beta\dot\varepsilon_{kk}=-q_{i,i}$};
+  \draw[arr] (mech.east) -- (therm.west) node[midway,above,lbl] {$-T_0\beta\nabla\!\cdot\dot{\bu}$};
+  \draw[arr] (therm.west) -- (mech.east) node[midway,below,lbl] {$-\beta\nabla\theta$};
+  \draw[arr] (mech.south) -- (energy.north) node[midway,left,lbl] {work $\sigma\dot\varepsilon$};
+  \draw[arr] (therm.south west) -- (energy.north east) node[midway,right,lbl] {heat $q_i,T$};
+\end{tikzpicture}
+\caption{Geometry after \citep{Biot1956}: classical coupled thermoelasticity -- mechanical and thermal fields are linked by the thermal body force and dilatation heating, the two terms sharing $\beta$.}\label{fig:classical-coup}
+\end{figure}
+
 \subsection{Uniqueness and energy}
 Multiplying \eqref{eq:navier} by $\dot u_i$ and \eqref{eq:heateq} by $\theta/T_0$ and integrating gives the energy identity \eqref{eq:energy} without the flux-relaxation term, with dissipation $\int k|\nabla\theta|^2/T_0\,\dd V\ge0$. From it follow uniqueness of solutions of the initial--boundary value problem under standard boundary conditions (Dirichlet, Neumann or Robin on each of the mechanical and thermal parts) and continuous dependence on data. Variational formulations and reciprocity theorems are available \citep{Marotti2013,Carlson1972,Nowacki1975}, and for the generalized theories these identities are the starting point of well-posedness proofs \citep{Chandrasekharaiah1996,Quintanilla2019}.
 
@@ -56,3 +72,7 @@ For anisotropic media the field equations keep their form with $C_{ijkl}$, $\bet
 
 \subsection{What the classical theory cannot describe}
 Three predictions of the classical theory conflict with finite-speed heat transport: the instantaneous thermal signal, the unbounded thermal phase speed (\Cref{fig:disp}c, black curve), and the monotonic growth of the thermal attenuation with frequency. The frequency range in which these matter depends on the time scale $\tau_q$ of heat carriers and on the dimension of the structure; Section~\ref{sec:synthesis} gives the criteria.
+
+\begin{summarybox}[Summary]
+Classical coupled thermoelasticity links mechanics and heat through the shared coefficient $\beta$ in \eqref{eq:navier}\textendash\eqref{eq:heateq}. Shear waves are unaffected; only dilatational motion couples to temperature. The theory is parabolic: infinite thermal signal speed, diffusive thermal branch. Thermoelastic damping follows Zener's Debye form with peak $\varepsilon/2$ at $\omega=\omega_*$, adiabatic at low frequency and isothermal at high frequency.
+\end{summarybox}

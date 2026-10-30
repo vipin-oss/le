@@ -23,3 +23,7 @@ The Laplace transform of a solution supported in $x\le ct$ decays as $e^{-sx/c}$
 
 \subsection{Complex roots of the delay law}
 When $G$ contains an exponential, as in the exact delay law of \cref{sec:delayfid}, $k^2=-\rho c\,s/G(s)$ is an entire function times $s$ and has infinitely many branches. Truncations replace this by a rational function with finitely many roots. Roots of the delay law that the truncation does not contain, and spurious roots that it introduces, are a likely reason why truncated and exact laws differ at $\omega\tau\gtrsim1$, although this has to be checked for each truncation.
+
+\begin{summarybox}[Summary]
+The Laplace/Fourier convention ($s=-\ii\omega$, $\Imag k\ge0$ for decay) fixes branch choices once and for all. Damping, attenuation and quality factor are $Q^{-1}=2\Imag k/\Real k$ for spatial problems and $2|\Imag\omega|/\Real\omega$ for temporal problems. Causality follows from analyticity in the upper half-plane; support properties (finite front) are read from the large-$s$ behaviour of $G(s)$. The exact delay law has infinitely many branches; truncations keep finitely many and can introduce spurious roots.
+\end{summarybox}

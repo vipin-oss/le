@@ -23,6 +23,22 @@ whose two roots are the speeds of the two wave fronts (an elastic-type and a the
 \item The leading front speeds depend only on the high-frequency terms, so they are independent of $k$ except through $c_T$.
 \end{enumerate}
 
+\begin{figure}[t!]\centering\small
+\begin{tikzpicture}[x=1.2cm,y=1.2cm,>=Stealth,
+  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.2cm},
+  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
+  \node[node,text width=2.4cm] (src) {Source\\\[-2pt] at $x=0$};
+  \node[node,right=2.5cm of src] (fe) {Elastic-type\\\[-2pt] front $v_e$};
+  \node[node,right=2.5cm of fe] (ft) {Thermal-type\\\[-2pt] front $v_t$};
+  \draw[arr] (src.east) -- (fe.west) node[midway,above,lbl] {$v_e<v_t$};
+  \draw[arr] (fe.east) -- (ft.west) node[midway,above,lbl] {};
+  \draw[arr,dashed] (src.south east) -- (ft.north west) node[midway,below,lbl] {damped tail};
+  \draw[arr] (src.south) to[out=-60,in=240] node[midway,right,lbl] {energy decay} (ft.south);
+\end{tikzpicture}
+\caption{Geometry after \citep{Lord1967}: two wave fronts in hyperbolic thermoelasticity -- elastic-type and thermal-type fronts repel in speed; the thermal front carries a damped tail.}\label{fig:fronts}
+\end{figure}
+
 \paragraph{Discontinuities and well-posedness.} Because the system is hyperbolic, initial data with a jump produce solutions with jumps carried along the fronts, and these jumps decay exponentially along the propagation path; this is visible in the heat-pulse problem of Section~\ref{sec:transient}. The system is well posed for $\tau_0>0$ and energy decays in bounded bodies under standard boundary conditions, from the energy identity \eqref{eq:energy}.
 
 \paragraph{Interpretation.} The principal modelling questions are the physical size of $\tau_0$ and whether Cattaneo's law, with a single exponential relaxation, is an adequate description in the frequency range of interest. Joseph and Preziosi \citep{Joseph1989,Joseph1990} review evidence for and against; large relaxation times have been reported for nonhomogeneous materials \citep{Kaminski1990,Mitra1995}, although the interpretation of such measurements has been debated. For solids the strongest evidence of wave-like heat propagation is second sound at cryogenic temperatures \citep{Ackerman1966,Jackson1970}, where the governing regime is the Guyer--Krumhansl hydrodynamic one \citep{GuyerKrumhansl1966II}, not the simple Cattaneo law.
@@ -50,3 +66,7 @@ with $G=k$, $k^*/s$ and $k+k^*/s$, respectively. Their uncoupled thermal equatio
 \paragraph{Type II.} Thermal disturbances propagate as undamped waves of speed $c_*$, and with coupling the two fronts satisfy \eqref{eq:fronts} with $c_T\to c_*$, $\tau^\dagger/\tau_0\to1$. In this case, however, the relation is \emph{exact for all frequencies}, not only asymptotically: the roots of the quadratic \eqref{eq:disp} with $G=k^*/s$ are non-dispersive, with $v^4-v^2[c_1^2(1+\varepsilon)+c_*^2]+c_1^2c_*^2=0$ at every $\omega$. We confirmed this numerically for $\varepsilon=0.1$ and $c_*=c_1$: the exact speeds $0.854309c_1$ and $1.170537c_1$ are the same at $\omega/\omega_*=0.5$, $2$ and $10$, and agree with the formula. The theory is energy-conserving, so there is no thermoelastic damping at all; it is the only member of the family with this property, and consequently the benchmark for energy-based checks.
 \paragraph{Type III.} The type III equation is a damped wave equation with a Kelvin--Voigt-type damping term $\alpha\nabla^2\dot\theta$. Two consequences deserve emphasis. At \emph{low} frequency $G\simeq k^*/s$ and the thermal branch has the type-II speed $c_*$, whereas at \emph{high} frequency $G\to k$ and the branch becomes diffusive: its phase speed is unbounded (\Cref{fig:family}, magenta curve), exactly as in the classical theory. Thus, in contrast to LS, type III is wave-like at low frequencies and diffusive at high frequencies, and its thermal signals do not have a finite propagation speed in the strict sense (the strongly damped wave equation has a parabolic smoothing effect). The practical interpretation is that type III describes weakly damped thermal waves at moderate frequencies; it is not an ``improved Cattaneo law''. Statements in the literature that type III possesses finite thermal wave speed should be read as referring to the undamped limit.
 \paragraph{Uniqueness and stability.} Chandrasekharaiah proved uniqueness for type II \citep{Chandrasekharaiah1996}; complete solutions for type II were given by \citep{Chandrasekharaiah1997}; the theory without energy dissipation for anisotropic and micropolar media was developed in \citep{Iesan1998,Quintanilla1999,Ciarletta1999,Quintanilla2002}. Stability and decay results for type III are part of the mathematical theory of thermoelasticity \citep{Suh1998}. The type II theory has attracted attention as a conservative reference model; combined with nonlocal elasticity it has been analysed for wave dispersion \citep{Sarkar2019}.
+
+\begin{summarybox}[Summary]
+LS, GL and GN share one dispersion equation \eqref{eq:unified}; they differ in which coupling term carries a time-derivative correction. LS has finite thermal speed $c_T$ from flux relaxation; GL has it from thermal inertia $\tau_0\ddot\theta$; GN-II is non-dispersive and energy-conserving; GN-III is wave-like at low frequency but diffusive at high frequency and has no finite front speed in the strict sense. Front speeds obey \eqref{eq:fronts} and repel when $c_T\approx c_1$.
+\end{summarybox}

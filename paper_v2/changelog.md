@@ -31,6 +31,39 @@ No claims were invented beyond what the bib entry titles state. Each citation is
 - `\path{}` commands are available via `hyperref` package
 - No `\ref` used where `\eqref` should be; no `\eqref` used for non-equation labels
 
+### 5. Restructuring to Physics Reports format (main.tex + all section files)
+- Added Highlights box (5 bullet points) after title
+- Added Graphical Abstract (TikZ, fig:graphical) after abstract
+- Added Nomenclature table (tab:nomenclature) after table of contents
+- Added Acknowledgements, CRediT authorship contribution statement, Declaration of competing interest before appendices
+- Removed duplicate Conclusions section from main.tex (Conclusions lives in s17_open)
+- Appendix order already correct: appA, appB, appC, appD (catalogue, position 4), appE, appF, appG
+- Each of the 31 numbered main sections now ends with a Physics Reports style summarybox
+
+### 6. TikZ geometry schematics added (one per major section, consistent style)
+Consistent TikZ style: node = draw, rounded corners, fill=blue!7, font=\footnotesize; arr = Stealth thick; labels = tiny italic blue!60!black. Captions follow "Geometry after [cite]".
+
+| Figure | Section | Geometry | Cite key |
+|--------|---------|----------|----------|
+| fig:template | s03_foundations | Heat-flux template: flux, gradient, lags | Biot1956 |
+| fig:classical-coup | s04_classical | Mechanical <-> thermal coupling via beta | Biot1956 |
+| fig:fronts | s05_hyperbolic | Elastic-type and thermal-type wave fronts | Lord1967 |
+| fig:reflection-geo | s08_waves3d | Half-space: incident P, reflected P/SV, thermal | Das2008 |
+| fig:rayleigh-geo | s10_surface | Rayleigh wave: surface-trapped motion decaying with depth | Rayleigh1885 |
+| fig:interface-geo | s11_interfaces | Welded interface: incident/reflected/transmitted P and SV | Nowacki1975 |
+| fig:size-geo | s12_size | Lattice vs continuum vs nonlocal/gradient | BornKarman1912, Eringen1972 |
+| fig:multi-geo | s13_multiphysics | Multiphysics coupling: mechanical, thermal, electric, magnetic, diffusive | Nowacki1978, Chandrasekharaiah1984 |
+| fig:bg-geo | s13b_bg | Bleustein--Gulyaev SH surface wave on 6mm half-space | Bleustein1968, Gulyaev1969 |
+| fig:schemes-geo | s14b_schemes | Finite-difference grid with front at x=t | Joseph1990 |
+| fig:applications-geo | s15_applications | Application regime map (laser, MEMS/NEMS, piezo, tissue, geophysical) | --- |
+
+All figures drawn in TikZ; no pixel-copy or trace of published figures; data curves only from scripts/.
+
+### 7. New output file: ARENA_SUMMARY.tex
+- paper_v2/ARENA_SUMMARY.tex created with 5 required sections:
+  (1) Old vs new outline, (2) New/modified files, (3) New figures list,
+  (4) Unverified/unable items, (5) 10-line compile/check list for user.
+
 ### 4. Could NOT be done (sandbox constraints)
 The following items require tools or network access not available in this environment:
 

@@ -1,6 +1,26 @@
 \section{Interfaces, reflection and energy partition}\label{sec:interfaces}
 Reflection and transmission at interfaces is the most heavily studied wave problem in generalized thermoelasticity and multiphysics media; Table~\ref{tab:streams} lists many of the works. Most of them report \emph{energy ratios} and use the requirement that the ratios sum to unity as a validation. This section builds the problem from the elastic baseline, then adds thermal coupling and shows when and why the unit-sum check is satisfied or violated, since this is a point on which the literature is not uniform.
 
+\begin{figure}[t!]\centering\small
+\begin{tikzpicture}[x=1.2cm,y=1.2cm,>=Stealth,
+  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
+  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
+  \node[node,text width=2.2cm] (m1) {Medium 1\\\[-2pt] $\rho_1,c_{1P},c_{1S}$\\\[-2pt] $Z_1=\rho_1c_{1P}$};
+  \draw[thick] (-0.5,-1.5) -- (-0.5,1.5);
+  \node[node,text width=2.2cm,right=2.2cm of m1] (m2) {Medium 2\\\[-2pt] $\rho_2,c_{2P},c_{2S}$\\\[-2pt] $Z_2=\rho_2c_{2P}$};
+  \draw[thick] (3.5,-1.5) -- (3.5,1.5);
+  \draw[arr,very thick] (-1.5,0) -- (-0.7,0) node[midway,above,lbl] {incident P};
+  \draw[arr,very thick] (-0.3,0) -- (0.5,0.6) node[midway,above,lbl] {reflected P/SV};
+  \draw[arr,very thick] (-0.3,-0.2) -- (0.5,-0.6) node[midway,below,lbl] {reflected SV};
+  \draw[arr,very thick] (3.7,0.2) -- (4.5,0.2) node[midway,above,lbl] {transmitted P};
+  \draw[arr,very thick] (3.7,-0.2) -- (4.5,-0.6) node[midway,below,lbl] {transmitted SV};
+  \node[below=0.2cm] at (0,-1.5) {interface $x=0$};
+  \node[left=0.2cm] at (-0.5,0) {\small welded};
+\end{tikzpicture}
+\caption{Geometry after \citep{Nowacki1975}: welded elastic interface at normal/oblique incidence -- reflected P/SV and transmitted P/SV waves; impedance mismatch controls the coefficients \eqref{eq:rt}.}\label{fig:interface-geo}
+\end{figure}
+
 \subsection{Welded elastic interface at normal incidence}
 Two elastic half-spaces with impedances $Z_j=\rho_jc_{1j}$ are perfectly bonded at $x=0$. For a wave incident from medium~1, continuity of displacement and of traction gives the displacement amplitude coefficients
 \begin{equation}
@@ -44,3 +64,7 @@ The following checks, which cost little, catch most errors in interface calculat
 \item Test the boundary conditions independently: substitute the computed amplitudes back into each boundary equation.
 \item For lagged and memory models, state the flux definition used for the energy ratio and whether interference terms are included.
 \end{enumerate}
+
+\begin{summarybox}[Summary]
+At a welded elastic interface normal-incidence reflection/transmission follows from impedance $Z=\rho c$ with $\mathcal R+\mathcal T=1$. Oblique incidence gives the Zoeppritz system with critical angles. Thermoelastic interfaces add thermal-type waves and the continuity of $\theta$ and $q_n$; the exact check is continuity of the net flux \eqref{eq:P}, not of the sum of mode fluxes---in lossy media the mode fractions need not sum to one because of interference terms.
+\end{summarybox}

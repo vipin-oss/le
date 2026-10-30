@@ -13,65 +13,150 @@
 \usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
 \usepackage[nameinlink,capitalise]{cleveref}
 \usepackage{fancyhdr}\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\nouppercase{\leftmark}}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0.3pt}
+\usepackage{tcolorbox}
 \setlength{\parskip}{0.45em}\setlength{\parindent}{0pt}\setlength{\headheight}{14pt}
 \newcommand{\bu}{\bm u}\newcommand{\bq}{\bm q}\newcommand{\bx}{\bm x}\newcommand{\bn}{\bm n}
 \DeclareMathOperator{\tr}{tr}\DeclareMathOperator{\Real}{Re}\DeclareMathOperator{\Imag}{Im}
 \newcommand{\dd}{\mathrm d}\newcommand{\ii}{\mathrm i}
-\title{\bfseries Waves in Thermoelastic and Multiphysics Continua:\\ Generalized Heat Conduction, Coupled Fields and Size Effects\\[2pt]\large A Unified Review with Verified Reductions, Dispersion Analysis and Benchmark Problems}
+
+% Summary box style for Physics Reports style sections
+\newtcolorbox{summarybox}[1][]{enhanced, breakable, colback=blue!5, colframe=blue!75!black,
+  arc=0mm, boxrule=0.8pt, title={#1}, fonttitle=\bfseries\small,
+  coltitle=black, left=2mm, right=2mm, top=1mm, bottom=1mm}
+
+\title{\bfseries Waves in Thermoelastic and Multiphysics Continua:\\
+ Generalized Heat Conduction, Coupled Fields and Size Effects\\[2pt]
+\large A Unified Review with Verified Reductions, Dispersion Analysis and Benchmark Problems}
 \author{Vipin Gupta\\{\small Gurugram University}\\{\small\texttt{vipin@gurugramuniversity.ac.in}}}
 \date{\today}
 \emergencystretch=3em
+
 \begin{document}
 \maketitle
+
+%================== HIGHLIGHTS ==================
+\begin{summarybox}{Highlights}
+\begin{itemize}[nosep]
+\item A single heat-flux template with three lags and one memory term organises classical, Lord--Shulman, Green--Lindsay, Green--Naghdi, dual-phase-lag, three-phase-lag, Moore--Gibson--Thompson, fractional and memory-dependent theories as parameter choices.
+\item One coupled dispersion polynomial, verified symbolically, gives comparative phase speed, attenuation and thermoelastic damping across all template models.
+\item The widely repeated dual-phase-lag stability condition $\tau_T\ge\tau_q/2$ is shown to belong to a specific Taylor truncation, not to the first-order template.
+\item Finite thermal fronts, Rayleigh-wave damping, piezoelectric renormalisation and interface energy-partition rules are derived and checked numerically.
+\item Open problems, a pitfalls checklist, a decision guide and reporting standards are provided for journal submission.
+\end{itemize}
+\end{summarybox}
+
+%================== GRAPHICAL ABSTRACT ==================
+\begin{figure}[t!]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth,
+  box/.style={draw,rounded corners=1pt,fill=blue!8,align=center,font=\footnotesize,inner sep=2pt},
+  arr/.style={->,thick}]
+  \node[box,text width=3.2cm] (heat) {Heat flux $q_i$\\relaxation \& lags};
+  \node[box,text width=3.2cm,right=0.8cm of heat] (temp) {Temperature $\theta$\\gradient};
+  \node[box,text width=3.2cm,below=1.2cm of heat] (disp) {Dispersion\\branches};
+  \node[box,text width=3.2cm,right=0.8cm of disp] (energy) {Energy\\partition};
+  \node[box,text width=3.2cm,below=1.2cm of disp] (size) {Size effects\\nonlocal/gradient};
+  \node[box,text width=3.2cm,right=0.8cm of size] (multi) {Multiphysics\\couplings};
+  \draw[arr] (heat) -- (temp);
+  \draw[arr] (heat.south) -- (disp.north);
+  \draw[arr] (disp.south) -- (size.north);
+  \draw[arr] (disp) -- (energy);
+  \draw[arr] (size) -- (multi);
+  \draw[arr] (multi.south) -- (energy.north);
+\end{tikzpicture}
+\caption{Graphical abstract: the unified template connects heat-flux relaxation to dispersion branches, size effects and multiphysics couplings, with energy partition at interfaces.}\label{fig:graphical}
+\end{figure}
+
 \begin{abstract}
 Wave propagation in solids that conduct heat, deform, and carry further fields such as electric polarization, magnetic induction, diffusing species or microstructural degrees of freedom is governed by a family of coupled models that is usually presented one member at a time. This review organises that family around a single heat-flux template with three lags and one memory term, shows how the classical, Lord--Shulman, Green--Lindsay, Green--Naghdi, dual-phase-lag, three-phase-lag, Moore--Gibson--Thompson, fractional and memory-dependent theories arise (or fail to arise) as parameter choices, and records exactly which limits are regular and which are singular, including a correction to a widely repeated stability statement for the dual-phase-lag model. For the coupled problem we derive and symbolically verify a single dispersion polynomial, and use it to compare phase speed, attenuation and thermoelastic damping across theories; we then treat transient problems (heat pulse, thermal shock), Rayleigh waves, reflection and interface energy partition, piezoelectric, magneto-thermoelastic, diffusive and microstructural couplings, and nonlocal and gradient size effects against lattice dispersion. We discuss analytical and numerical solution techniques with a benchmark, applications from laser ultrasonics to micro-resonators and tissue heating, and close with a comparative synthesis, a pitfalls checklist, a decision guide and a research agenda. We also provide flexural and plate thermoelastic damping validated against exact solutions, anisotropic and free-surface reflection results, a finite-difference benchmark for hyperbolic heat conduction, worked examples and reporting standards. All quantitative figures are generated by accompanying scripts and the key identities are checked symbolically or numerically.
 \medskip
 
 \noindent\textbf{Keywords:} generalized thermoelasticity; second sound; dual-phase-lag; Moore--Gibson--Thompson; fractional heat conduction; memory-dependent derivative; nonlocal elasticity; piezoelectricity; Rayleigh waves; thermoelastic damping; interface energy partition.
-\end{abstract}
+
 \tableofcontents
 \newpage
-\input{sections/s01_intro}
-\input{sections/s02_history}
-\input{sections/s03_foundations}
-\input{sections/s03b_kinetic}
-\input{sections/s03c_prelim}
-\input{sections/s04_classical}
-\input{sections/s04b_flexted}
-\input{sections/s05_hyperbolic}
-\input{sections/s06_lags}
-\input{sections/s06b_delay}
-\input{sections/s07_memory}
-\input{sections/s07b_fraccoupled}
-\input{sections/s08_waves3d}
-\input{sections/s08b_aniso}
-\input{sections/s08c_reflection}
-\input{sections/s09_transient}
-\input{sections/s09b_thermalmodes}
-\input{sections/s10_surface}
-\input{sections/s10b_lamb}
-\input{sections/s10c_bar}
-\input{sections/s11_interfaces}
-\input{sections/s12_size}
-\input{sections/s13_multiphysics}
-\input{sections/s13b_bg}
-\input{sections/s14_methods}
-\input{sections/s14b_schemes}
-\input{sections/s15_applications}
-\input{sections/s15d_scenarios}
-\input{sections/s15b_examples}
-\input{sections/s15c_experiments}
-\input{sections/s16_synthesis}
-\input{sections/s17b_reporting}
-\input{sections/s17_open}
+
+%================== NOMENCLATURE ==================
+\section*{Nomenclature}
+\addcontentsline{toc}{section}{Nomenclature}
+The following symbols are used throughout. Indices follow the Einstein summation convention; a comma denotes a spatial derivative and a dot a time derivative.
+\begin{table}[ht]\centering\small
+\caption{Principal notation.}\label{tab:nomenclature}
+\begin{tabular}{@{}lp{4.1cm}lp{4.3cm}@{}}\toprule
+$u_i,\ \varepsilon_{ij}$ & displacement, strain & $\sigma_{ij}$ & stress\\\tabularnewline
+$\theta=T-T_0$ & temperature increment & $T_0$ & reference temperature\\\tabularnewline
+$q_i$ & heat flux & $v$ & thermal displacement, $\dot v=\theta$\\\tabularnewline
+$\rho$ & mass density & $c$ & specific heat at constant strain\\\tabularnewline
+$\lambda,\mu$ & Lam\'e constants & $\alpha_T$ & linear expansion coefficient\\\tabularnewline
+$\beta=(3\lambda+2\mu)\alpha_T$ & thermal-stress coefficient & $k,\ k^*$ & conductivities (Fourier, GN)\\\tabularnewline
+$\tau_q,\tau_T,\tau_v$ & relaxation time and lags & $\alpha=k/\rho c$ & thermal diffusivity\\\tabularnewline
+$c_1=\sqrt{(\lambda+2\mu)/\rho}$ & isothermal P-wave speed & $c_2=\sqrt{\mu/\rho}$ & shear wave speed\\\tabularnewline
+$\varepsilon=\beta^2T_0/(\rho^2cc_1^2)$ & thermoelastic coupling & $\omega_*=\rho c c_1^2/k$ & thermal characteristic frequency\\\tabularnewline
+$G(s)$ & heat-flux function & $s=-\ii\omega$ & Laplace variable / complex frequency\\\tabularnewline
+$c_T$ & thermal wave speed & $K^2$ & electromechanical coupling\\\tabularnewline
+$\xi,\ell$ & nonlocal and gradient lengths & $Z=\rho c$ & mechanical impedance\\\tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+The strain tensor is always written with two indices ($\varepsilon_{ij}$) so that it is not confused with the scalar coupling $\varepsilon$. Plane waves are $\exp[\ii(kx-\omega t)]$ with $\Imag k\ge0$ for spatial decay in the propagation direction, and a ``branch'' of the dispersion relation is a root $k(\omega)$ followed by continuity in $\omega$.
+
+\newpage
+
+%================== MAIN SECTIONS ==================
+\input{sections/s01_intro}\label{sec:intro_ref}
+\input{sections/s02_history}\label{sec:history_ref}
+\input{sections/s03_foundations}\label{sec:foundations_ref}
+\input{sections/s03c_prelim}\label{sec:prelim_ref}
+\input{sections/s03b_kinetic}\label{sec:kinetic_ref}
+\input{sections/s04_classical}\label{sec:classical_ref}
+\input{sections/s05_hyperbolic}\label{sec:hyperbolic_ref}
+\input{sections/s06_lags}\label{sec:lags_ref}
+\input{sections/s06b_delay}\label{sec:delayfid_ref}
+\input{sections/s07_memory}\label{sec:memory_ref}
+\input{sections/s07b_fraccoupled}\label{sec:fraccoupled_ref}
+\input{sections/s08_waves3d}\label{sec:waves3d_ref}
+\input{sections/s08b_aniso}\label{sec:aniso_ref}
+\input{sections/s08c_reflection}\label{sec:reflection_ref}
+\input{sections/s09_transient}\label{sec:transient_ref}
+\input{sections/s09b_thermalmodes}\label{sec:thermalmodes_ref}
+\input{sections/s10_surface}\label{sec:surface_ref}
+\input{sections/s10b_lamb}\label{sec:lamb_ref}
+\input{sections/s10c_bar}\label{sec:bar_ref}
+\input{sections/s04b_flexted}\label{sec:flexted_ref}
+\input{sections/s11_interfaces}\label{sec:interfaces_ref}
+\input{sections/s12_size}\label{sec:size_ref}
+\input{sections/s13_multiphysics}\label{sec:multi_ref}
+\input{sections/s13b_bg}\label{sec:bg_ref}
+\input{sections/s14_methods}\label{sec:methods_ref}
+\input{sections/s14b_schemes}\label{sec:schemes_ref}
+\input{sections/s15_applications}\label{sec:applications_ref}
+\input{sections/s15d_scenarios}\label{sec:scenarios_ref}
+\input{sections/s15b_examples}\label{sec:examples_ref}
+\input{sections/s15c_experiments}\label{sec:experiments_ref}
+\input{sections/s16_synthesis}\label{sec:synthesis_ref}
+\input{sections/s17b_reporting}\label{sec:reporting_ref}
+\input{sections/s17_open}\label{sec:open_ref}
+
+%================== BACK MATTER ==================
+\section*{Acknowledgements}\addcontentsline{toc}{section}{Acknowledgements}
+The author thanks colleagues at Gurugram University for discussions on generalized thermoelasticity. The numerical scripts accompanying this manuscript were used to verify all reported dispersion relations, damping curves and energy-partition results.
+
+\section*{CRediT authorship contribution statement}\addcontentsline{toc}{section}{CRediT authorship contribution statement}
+\textbf{Vipin Gupta:} Conceptualization, Methodology, Formal analysis, Investigation, Software, Validation, Visualization, Writing -- original draft, Writing -- review \& editing.
+
+\section*{Declaration of competing interest}\addcontentsline{toc}{section}{Declaration of competing interest}
+The author declares no competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+%================== APPENDICES ==================
 \appendix
-\input{sections/appA}
-\input{sections/appB}
-\input{sections/appC}
-\input{sections/appD_catalogue}
-\input{sections/appE_glossary}
-\input{sections/appF_debye}
-\input{sections/appG_params}
+\input{sections/appA}\label{app:disp_ref}
+\input{sections/appB}\label{app:numbers_ref}
+\input{sections/appC}\label{app:repro_ref}
+\input{sections/appD_catalogue}\label{app:catalogue_ref}
+\input{sections/appE_glossary}\label{app:glossary_ref}
+\input{sections/appF_debye}\label{app:debye_ref}
+\input{sections/appG_params}\label{app:params_ref}
+
 \bibliographystyle{unsrtnat}
 \bibliography{refs,refs_extra,refs_new}
 \end{document}

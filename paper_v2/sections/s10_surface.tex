@@ -26,3 +26,7 @@ For anisotropic media the Stroh formalism \citep{Stroh1958,Stroh1962} gives the 
 
 \subsection{Practical remarks on secular equations}
 Three technical points recur. (i) The decaying branch of each square root must be chosen with $\Real m>0$, and in the complex plane this introduces branch cuts across which the determinant is not analytic; root finding that ignores this can jump to spurious roots. (ii) The determinant has trivial zeros ($s=0$ for instance) that must be excluded when tracking roots; we found that a naive secant search from a poor initial guess converged to such a trivial root. (iii) Continuation in $k$ from a reliable starting point (here the isothermal Rayleigh root) is more robust than independent root finding at each $k$.
+
+\begin{summarybox}[Summary]
+The thermoelastic Rayleigh problem is a $3\times3$ determinant \mathcal D(s,k) from two coupled dilatational--thermal modes and one shear mode, with insulated or isothermal surface. Speed shifts from adiabatic (low $k$) to elastic/isothermal (high $k$); damping peaks near $k c_1/\omega_*\approx0.4$. The thermal boundary condition shifts the peak; LS changes results by $\sim$10--12\% at large $k$.
+\end{summarybox}

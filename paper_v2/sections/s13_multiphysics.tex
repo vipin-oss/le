@@ -44,6 +44,25 @@ When a diffusing species is present, the concentration $C$ and chemical potentia
 Micropolar elasticity \citep{Eringen1966a,Eringen1999,TauchertClausAriman1968} adds microrotation as an independent field. In the isotropic case the dilatational wave is accompanied by a longitudinal wave of modified speed, the transverse waves couple to microrotation waves, and the rotational waves have a cut-off frequency. Materials with voids \citep{Nunziato1979,Cowin1983,Iesan1986} add an independent volume-fraction field and one extra dilatational wave; thermal coupling is introduced in \citep{Iesan1986}; poro-thermoelasticity and double porosity add slow dilatational waves associated with pore fluid pressure \citep{Singh2020,Kumar2022,Kumar2025}. Fractional-order thermoelasticity with voids, micropolar fractional models and two-temperature versions have been studied \citep{Bachher2019,Sharma2022,Biswas2020a,Kalkal2020,Kumar2008,Kumar2018}. Each microstructural field adds branches that appear as new roots of the characteristic equation; whether they are physically observable depends on the microinertia and the coupling coefficients, which are usually assigned values with limited experimental support.
 
 \subsection{Table of couplings}
+\begin{figure}[t!]\centering\small
+\begin{tikzpicture}[x=1.1cm,y=1.1cm,>=Stealth,
+  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
+  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
+  \node[node,text width=2.6cm] (mech) {Mechanical\\\[-2pt] $\bu,\varepsilon,\sigma$};
+  \node[node,text width=2.6cm,right=2.2cm of mech] (therm) {Thermal\\\[-2pt] $\theta,q,T_0$\\\[-2pt] heat law $G(s)$};
+  \node[node,text width=2.6cm,below=1.4cm of mech] (elec) {Electric\\\[-2pt] $E,D,\varphi$\\\[-2pt] piezo $e$, $\varepsilon_e$};
+  \node[node,text width=2.6cm,below=1.4cm of therm] (mag) {Magnetic\\\[-2pt] $\bm H,\bm J$\\\[-2pt] Alfv'en $v_A$};
+  \node[node,text width=2.6cm,below=1.4cm of elec] (diff) {Diffusive\\\[-2pt] concentration\\\[-2pt] chemical potential};
+  \draw[arr] (mech.east) -- (therm.west) node[midway,above,lbl] {$-\beta\nabla\theta$};
+  \draw[arr] (therm.west) -- (mech.east) node[midway,below,lbl] {dilatation heating};
+  \draw[arr] (mech.south) -- (elec.north) node[midway,left,lbl] {$e\nabla\varphi$};
+  \draw[arr] (therm.south) -- (mag.north) node[midway,right,lbl] {Lorentz force};
+  \draw[arr] (elec.south) -- (diff.north) node[midway,left,lbl] {carriers};
+\end{tikzpicture}
+\caption{Geometry after \citep{Nowacki1978,Chandrasekharaiah1984}: multiphysics coupling -- each added field renormalises constants and/or adds branches; with no free charge the piezo-electric effect is an exact stiffening renormalisation.}\label{fig:multi-geo}
+\end{figure}
+
 \begin{table}[t]\centering\small
 \caption{Added fields and their effect on the plane-wave problem (structure only; $\Delta n$ is the increase in the number of branches in one-dimensional dilatational motion).}\label{tab:couplings}
 \begin{tabularx}{\textwidth}{@{}p{3.1cm}p{3.2cm}p{1.9cm}X@{}}\toprule
@@ -57,3 +76,7 @@ Microrotation (micropolar) & rotational waves with cut-off & transverse & Longit
 Two temperatures & wavenumber-dependent $\theta$ vs.\ $\varphi$ & 0 & Acts like a length scale.\\\bottomrule
 \end{tabularx}
 \end{table}
+
+\begin{summarybox}[Summary]
+Adding a field energetically coupled to deformation and temperature renormalises constants and/or adds branches. Piezoelectric stiffening with no free charge is an exact reduction ($c\to c+e^2/\varepsilon_e$, $\beta,c_v$ renormalised). Magnetic field adds the Alfv\'en term; diffusion adds a branch; voids and micropolarity add extra waves. All such couplings share the same dispersion-polynomial structure: solve the coupled system, then read speeds and damping from its roots.
+\end{summarybox}

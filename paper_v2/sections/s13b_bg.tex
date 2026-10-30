@@ -19,5 +19,25 @@ so that the surface wave speed is $v=\bar v\sqrt{1-(\alpha_\ast/k)^2}$ with $\al
 
 Two consequences follow. First, the shift between free and metallised speeds, the usual electromechanical coupling measure of a surface wave, is of order $K^4$ and therefore small when $K^2$ is small. Second, the decay length $1/\alpha$ is very sensitive to the electrical condition: for $K^2=0.2$ it is about $1/k\cdot6$ (roughly one wavelength) when metallised, but about $600/k$ (roughly $100$ wavelengths) for a free surface with $\varepsilon_0/\varepsilon=0.01$. A plate of a few wavelengths thickness therefore does not support the free-surface BG wave as a surface wave in a strict sense.
 
+\begin{figure}[t!]\centering\small
+\begin{tikzpicture}[x=1.1cm,y=1.1cm,>=Stealth,
+  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
+  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
+  \draw[thick] (0,-1.5) -- (0,1.5);
+  \draw[thick] (0,-1.5) -- (-2,-1.5);
+  \draw[arr,very thick] (-1,-0.2) -- (-0.3,-0.2) node[midway,above,lbl] {BG wave along $x$};
+  \draw[arr,very thick] (0,-0.5) -- (0,-1.3) node[midway,right,lbl] {decay $e^{-\alpha y}$};
+  \draw[arr,dashed] (0,0.5) -- (-0.6,0.2) node[midway,above,lbl] {potential in vacuum};
+  \node[node,text width=2cm,below=0.3cm] at (0,-1.5) {6mm crystal\\\[-2pt] $y>0$};
+  \node[node,text width=2cm,below=0.3cm] at (-1.5,-1.5) {vacuum\\\[-2pt] $y<0$};
+\end{tikzpicture}
+\caption{Geometry after \citep{Bleustein1968,Gulyaev1969}: Bleustein--Gulyaev SH surface wave -- particle motion along $z$, localised at the surface $y=0$ of a 6mm piezoelectric half-space; electrical boundary condition (metallised/free) controls decay length.}\label{fig:bg-geo}
+\end{figure}
+
 \subsection{Thermal coupling}
 For this SH polarisation with uniform fields in $z$ the shear strains $\epsilon_{xz},\epsilon_{yz}$ do not couple to the (diagonal) thermal-stress tensor of a hexagonal crystal, and the pyroelectric coupling acts along the polar axis $z$, which is perpendicular to the in-plane electric field. The BG wave is therefore not coupled to temperature in this geometry, and thermal effects enter only through the temperature dependence of $c_{44}$, $e_{15}$ and $\varepsilon$, which shifts the speed without introducing a loss. Coupled thermo-piezoelectric surface waves exist for other cuts and polarisations, where the sagittal-plane motion has a dilatational component, and for those the Rayleigh-type determinant of \cref{sec:surface} has to be extended by the electrical conditions.
+
+\begin{summarybox}[Summary]
+The Bleustein--Gulyaev SH surface wave has no elastic analogue. Its speed is $v=\bar v\sqrt{1-(\alpha/k)^2}$ with $\bar v=v_t\sqrt{1+K^2}$, and the decay exponent $\alpha/k$ is $K^2/(1+K^2)$ (metallised) or scaled by $\varepsilon_0/(\varepsilon+\varepsilon_0)$ (free surface). For $K^2=0.2$ the shift is $1.4\%$ below $\bar v$ metallised; the free-surface decay length can reach $\sim100$ wavelengths. Not thermally coupled in this geometry.
+\end{summarybox}

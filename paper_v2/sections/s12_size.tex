@@ -56,3 +56,22 @@ and describes heat in the hydrodynamic phonon regime, where momentum-conserving 
 
 \subsection{Caveats}
 The differential nonlocal model produces well-known inconsistencies for bounded bodies (for example in some bending problems with particular boundary conditions) that do not appear in the infinite-medium plane-wave analysis above. The length scales are phenomenological; whether the lattice, the zone-boundary or some experimental dispersion is the calibration target has a leading effect on the quantitative predictions.
+
+\begin{summarybox}[Summary]
+Nonlocal and gradient elasticity add one length to capture the lattice deviation from $\omega=ck$. Eringen's model saturates at $c_0/\xi$ (matching the zone boundary gives $\xi/a\approx0.39$); gradient elasticity speeds up with $k$ unless stabilised by inertia gradients. Calibration matters: zone-boundary vs long-wavelength calibration changes $\xi$ by $\sim$30\%. Nonlocal thermoelasticity has two forms (A) and (B) that differ in how the thermal stress is smoothed and give different damping near cut-off.
+\end{summarybox}
+
+\begin{figure}[t!]\centering\small
+\begin{tikzpicture}[x=1.1cm,y=1.1cm,>=Stealth,
+  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
+  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
+  \node[node,text width=2.6cm] (lattice) {Lattice\\\[-2pt] discrete atoms\\\[-2pt] spacing $a$\\\[-2pt] exact $\sin(ka/2)$};
+  \node[node,text width=2.6cm,right=2.2cm of lattice] (cont) {Continuum\\\[-2pt] local elasticity\\\[-2pt] $\omega=ck$\\\[-2pt] no dispersion};
+  \node[node,text width=2.6cm,below=1.4cm of lattice] (nonlocal) {Nonlocal/\\\[-2pt] gradient\\\[-2pt] one length $\xi,\ell$\\\[-2pt] rational $\omega(k)$};
+  \draw[arr] (lattice.east) -- (cont.west) node[midway,above,lbl] {long-wave only};
+  \draw[arr] (lattice.south) -- (nonlocal.north) node[midway,left,lbl] {captures bend};
+  \draw[arr] (cont.south) -- (nonlocal.north) node[midway,right,lbl] {adds length};
+\end{tikzpicture}
+\caption{Geometry after \citep{BornKarman1912,Eringen1972}: size effects bridge discrete lattice dispersion and local continuum via one nonlocal or gradient length.}\label{fig:size-geo}
+\end{figure}

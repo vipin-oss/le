@@ -16,5 +16,27 @@ Heat transfer in biological tissue is classically described by the bioheat equat
 \subsection{Geophysical and porous media}
 Porous and double-porous thermoelastic models with two temperatures are applied to wave propagation in saturated and partially saturated solids \citep{Singh2020,Kumar2022,Kumar2025}; here the additional slow waves, strongly attenuated, carry fluid and heat. We note that the validity of the generalized heat laws in such media, in which the relevant time scales are controlled by pore-scale processes, is largely untested.
 
+\begin{figure}[t!]\centering\small
+\begin{tikzpicture}[x=1.1cm,y=1.1cm,>=Stealth,
+  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.6cm},
+  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
+  \node[node,text width=2.6cm] (laser) {Laser\\\[-2pt] ultrasonics\\\[-2pt] ns--ps pulses};
+  \node[node,text width=2.6cm,right=2.4cm of laser] (res) {MEMS/NEMS\\\[-2pt] resonators\\\[-2pt] thermoelastic\\\[-2pt] damping};
+  \node[node,text width=2.6cm,right=2.4cm of res] (piezo) {Piezoelectric\\\[-2pt] devices\\\[-2pt] SAW/BAW\\\[-2pt] energy harvesters};
+  \node[node,text width=2.6cm,below=1.4cm of laser] (bio) {Biological\\\[-2pt] tissue\\\[-2pt] perfusion\\\[-2pt] weak coupling};
+  \node[node,text width=2.6cm,right=2.4cm of bio] (geo) {Geophysical\\\[-2pt] porous\\\[-2pt] double-porosity\\\[-2pt] slow waves};
+  \draw[arr] (laser.east) -- (res.west) node[midway,above,lbl] {\small $\omega\tau,\omega/\omega_*$};
+  \draw[arr] (res.east) -- (piezo.west) node[midway,above,lbl] {};
+  \draw[arr] (laser.south) -- (bio.north) node[midway,left,lbl] {};
+  \draw[arr] (res.south) -- (geo.north) node[midway,right,lbl] {};
+\end{tikzpicture}
+\caption{Application regime map: four areas ordered by the dimensionless numbers $\omega\tau$ (lag relevance) and $\omega/\omega_*$ (coupling relevance); Section~\ref{sec:synthesis} gives the quantitative criteria.}\label{fig:applications-geo}
+\end{figure}
+
 \subsection{Summary}
 In all four areas the single most informative dimensionless number is $\omega\tau$ (frequency times the relevant lag), and the second is $\omega/\omega_*$. The regime map in Section~\ref{sec:synthesis} makes this quantitative.
+
+\begin{summarybox}[Summary]
+Applications divide by regime: laser ultrasonics (classical adequate for ns pulses; lagged/fractional for fs--ps), MEMS/NEMS resonators (Zener damping with nonlocal/lag corrections near cut-off), piezoelectric devices (exact stiffening renormalisation in charge-free regime), biological tissue (weak coupling, interest in thermal field), geophysical porous media (slow diffusive waves, largely untested). The key numbers are $\omega\tau$ and $\omega/\omega_*$.
+\end{summarybox}

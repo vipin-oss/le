@@ -35,3 +35,7 @@ The following qualitative features are robust. (i) The thermal part of the respo
 
 \subsection{Lessons for laser heating and for numerical codes}
 Short-pulse laser heating in metals is the main application driving hyperbolic models; analyses of bilayers and films under pulsed heating combine fractional and memory-dependent laws \citep{Li2019}. For numerical codes, the benchmark problems above provide a stringent check, because a code that smears the front also misses the stress peak. The classical statement of the thermal shock problem is due to Danilovskaya \citep{Danilovskaya1950}, and thermal-shock solutions of the coupled problem are a standard test in texts \citep{Boley1960,Nowacki1975,HetnarskiIgnaczak1999}.
+
+\begin{summarybox}[Summary]
+The heat-pulse problem shows a finite front for hyperbolic laws (LS, MGT, GN-II) and a Gaussian tail for Fourier. The front carries a stress peak whose height is heat-law dependent (about 20\% between Fourier and LS for the parameters used). Thermal shock combines the elastic front with diffusive wake; a numerical code that smears the front also misses the stress peak---the benchmark of Section~\ref{sec:transient} tests exactly this.
+\end{summarybox}

@@ -23,5 +23,27 @@ Lax--Wendroff $L^1$ & $1.1\times10^{-3}$ & $2.7\times10^{-4}$ & $6.1\times10^{-5
 \end{center}
 with observed orders $1.0$ for the upwind scheme and $2.0$ for Lax--Wendroff in the smooth region. Thus the formal accuracy is reached away from the front, and the global error is controlled by the neighbourhood of the discontinuity, where all three schemes converge at an order below one. A single global error norm therefore says little about how the scheme carries a front, and a benchmark for hyperbolic heat conduction should report the error in a window around the front and away from it separately.
 
+\begin{figure}[t!]\centering\small
+\begin{tikzpicture}[x=1.1cm,y=1.1cm,>=Stealth,
+  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
+  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
+  \draw[thick] (0,0) -- (6,0);
+  \foreach \x in {0,1,2,3,4,5,6} {
+    \draw[thick] (\x,-0.1) -- (\x,0.1);
+    \node[below=0.1cm,font=\tiny] at (\x,0) {\x};
+  }
+  \draw[arr,very thick] (0.3,-0.4) -- (2.7,-0.4) node[midway,below,lbl] {front at $x=t$};
+  \draw[arr,very thick] (0.3,-0.4) -- (5.7,-0.4);
+  \node[node,text width=2cm,below=0.6cm] at (3,-0.4) {grid $x_i=i\Delta x$\\\[-2pt] Courant $c_T\Delta t/\Delta x=0.9$};
+  \draw[arr] (3,-0.9) -- (3,-0.1);
+\end{tikzpicture}
+\caption{Geometry after \citep{Joseph1990}: finite-difference benchmark for hyperbolic heat conduction -- the front at $x=t$ must be carried without smearing or oscillation; error measured in a window around and away from the front.}\label{fig:schemes-geo}
+\end{figure}
+
 \subsection{A caution about the reference solution}
 The exact solution above was obtained by numerical Laplace inversion, and the choice of inversion algorithm matters at the accuracy required here. At $x=1$, $t=5$ the Talbot method with default settings gave $1.76126$, whereas the de Hoog and Stehfest methods give $1.761515$ and $1.761515$; the finite-difference solution at $N=800$ agrees with the latter to $2\times10^{-6}$. A reference solution with an error of $3\times10^{-4}$ would have hidden the second-order convergence of Lax--Wendroff at $N\gtrsim400$. Inversion results used as benchmarks should be cross-checked with a second algorithm (\cref{sec:inversion}).
+
+\begin{summarybox}[Summary]
+The Cattaneo benchmark has an exact front at $x=t$ (in units $c_T=1$). Lax--Friedrichs, upwind and Lax--Wendroff all converge below order one globally because of the discontinuity; away from the front the orders are $1.0$ and $2.0$ respectively. Report front-window and smooth-window errors separately, and cross-check Laplace-inversion reference solutions with a second algorithm.
+\end{summarybox}
