@@ -1,0 +1,189 @@
+%======================================================================
+% Section 11: Advanced Theoretical Developments
+%======================================================================
+\section{Advanced Theoretical Developments}
+\label{sec:advanced}
+
+The theory families of Sections~\ref{sec:thermoelastic}--\ref{sec:nonlocal} were each constructed by generalising one specific constitutive law. The developments surveyed in this section generalise the generalisation: they act on the \emph{operator} rather than on the constitutive law, and they therefore interact with every family simultaneously. Two of them---fractional-order differentiation and the introduction of additional temperature fields---are now established enough to be treated as substantive alternatives rather than as speculative extensions, and this section gives them the same weight as the classical constructions of Section~\ref{sec:thermoelastic}.
+
+\subsection{Fractional-order continuum models}
+\label{sec:11.1}
+
+Fractional-order continuum models replace integer-order derivatives with fractional derivatives in the governing equations. The replacement is not a formal device: a fractional derivative of order $\alpha$ is defined by an integral over the entire history of the field, and it therefore introduces temporal nonlocality into the governing equations in a way that is structurally equivalent to a hereditary integral with a power-law kernel.
+
+\subsubsection{Fractional thermoelasticity}
+
+The fractional heat conduction equation, as formulated in the thermoelastic setting, is
+
+\begin{equation}
+{}^C D_t^\alpha T = a_\alpha\nabla^2 T, \qquad 0 < \alpha \leq 2,
+\label{eq:11.1}
+\end{equation}
+
+where ${}^C D_t^\alpha$ is the Caputo fractional derivative of order $\alpha$ and $[a_\alpha]=\mathrm{m^2 s^{-\alpha}}$ (for dimensional $T$ and $x$). For $\alpha = 1$ this reduces to the classical heat equation; for $1 < \alpha \leq 2$ it describes wave-like heat propagation with memory, interpolating between diffusive and wave-like behaviour. The Caputo derivative is defined for $0 < \alpha < 1$ by
+
+\begin{equation}
+{}^C D_t^\alpha f(t) = \frac{1}{\Gamma(1-\alpha)}\int_0^t \frac{f'(\tau)}{(t-\tau)^{\alpha}}\, d\tau ,
+\label{eq:11.2}
+\end{equation}
+
+This display is the n=1 case ($0<\alpha<1$) of the general Caputo definition $n-1<\beta<n$ printed as Povstenko (A.5) on p.~112; equation 11.1's range $0<\alpha\leq2$ spans both the n=1 and n=2 regimes. The corresponding expression for $1 < \alpha \leq 2$ is obtained by applying the operator to the second derivative of $f$. The integral form is the physically informative one: the state of the field at time $t$ is determined by its entire past, weighted by a kernel that decays algebraically rather than exponentially.
+
+\paragraph{Caputo operator and origin.} Caputo's 1967 work introduced the fractional derivative in viscoelastic stress--strain models to represent nearly frequency-independent $Q$; the paper examined Earth's free modes and an aluminium rod and fitted an order near $0.15$. It is an origin in viscoelasticity/geophysics, not in heat conduction. In Eq.~\eqref{eq:11.2}, the derivative remains inside the integral for $0<\alpha<1$; Caputo's original viscoelastic application is cited for the general definition \cite{Caputo1967}.
+
+\subsubsection{The fractional heat equation as a hereditary integral}
+
+The connection with the memory-dependent formalism of Section~\ref{sec:transport} is exact and important, because it means that the fractional and the memory-dependent descriptions are not competing theories but two representations of the same object under different assumptions about the memory kernel. Writing Eq.~\eqref{eq:11.1} in the hereditary form
+
+\begin{equation}
+T(t) = T(0) + \frac{1}{\Gamma(\alpha)}\int_0^t (t-\tau)^{\alpha-1} a \nabla^2 T(\tau)\, d\tau ,
+\label{eq:11.3}
+\end{equation}
+
+shows that the fractional formulation is the special case in which the integral kernel is the power law $(t-\tau)^{\alpha-1}/\Gamma(\alpha)$ in elapsed time. The generalization of Section~\ref{sec:transport} replaces the power law by an arbitrary kernel, and thereby trades the one-parameter fractional family for a much larger one; the price is that the resulting operator is no longer a differential operator of fractional order, and the analytical machinery that makes the fractional heat equation tractable---the eigenfunction expansion in terms of the Mittag--Leffler function, and the closed-form fundamental solutions---is lost. The choice between the two representations is thus a choice between analytical tractability and constitutive flexibility, and it should be made explicitly rather than by default. This hereditary integral form follows Povstenko (A.1) on p.~112, with the Caputo definition (A.5) on p.~112 \cite{Povstenko2011} ; for orders up to two an extra initial-rate term appears, so the order range must be stated with the display.
+
+The analytical solution of the fractional heat conduction equation in radially symmetric domains was obtained in closed form by Povstenko \cite{Povstenko2007}, who derived the fundamental solutions needed to write the associated thermal stresses in spherical geometry; this work provides the reference against which later numerical inversions of fractional thermoelastic boundary-value problems are checked \cite{Povstenko2004,Povstenko2009,Povstenko2011,Povstenko2016}. The associated thermal stresses are the quantity of practical interest, and the difficulty of the problem is that the fractional operator couples the mechanical and thermal fields in a way that does not admit the plane-wave decoupling available in the classical case.
+
+\paragraph{MDD versus fractional modelling.} Wang and Li (2011) argue that the MDD formulation gives the memory duration and kernel an explicit temporal interpretation, whereas the fractional-order description emphasizes local-change behavior; their illustration is a logistic-population model, not a thermoelastic equation \cite{Wang2011}. This is an attributed modelling perspective, not a general theorem.
+
+\subsubsection{Fractional Cattaneo-type equations}
+
+Povstenko’s Eq.~(29) gives the fractional Cattaneo-type flux law $q_i + \zeta\,{}^C D_t^\alpha q_i = -k T_{,i}$ with source coefficient $\zeta$, restricted to the order range $0<\alpha\leq1$. Appendix A identifies the derivative as Caputo on p.~113, while the source omits the superscript $C$ used here for clarity. The source does not identify $\zeta$ with $\tau^\alpha/\Gamma(1+\alpha)$ \cite{Povstenko2011Cattaneo}. 
+
+\begin{equation}
+q_i + \zeta\,{}^C D_t^\alpha q_i = -k T_{,i}.
+\label{eq:11.4}
+\end{equation}
+
+The displayed coefficient is the source’s $\zeta$; no conversion to a Gamma-normalized relaxation parameter is asserted.
+
+\subsubsection{Fractional models with internal structure}
+
+Fractional operators and internal-rotation fields are distinct modeling ingredients. A formulation that combines them must specify its own constitutive variables and governing equations.
+
+\paragraph{Fractional thermoelasticity.} Sherief, El-Sayed, and Abd El-Latief give $q_i+\tau_0\,{}^C D_t^\alpha q_i=-k_{ij}T_{,j}$ for $0<\alpha\leq1$ in Eq.~(2.29). Their Eq.~(2.37) applies the same factor $(1+\tau_0{}^C D_t^\alpha)$ to both the temperature-rate and strain-rate coupling terms; their coefficient remains source-specific \cite{Sherief2010Fractional}.
+
+\subsection{Strain-gradient and couple-stress theories}
+\label{sec:11.2}
+
+Strain-gradient theory introduces higher-order strain gradients in the constitutive relations:
+
+\begin{equation}
+\sigma_{ij} = C_{ijkl}\varepsilon_{kl} - \ell^2 C_{ijkl}\nabla^2\varepsilon_{kl}.
+\label{eq:11.5}
+\end{equation}
+
+This is the strain-gradient law \cite{Aifantis2003}; Aifantis treats the gradient coefficients as phenomenological rather than derived. 
+
+Couple-stress theory introduces couple stresses and micro-rotations as independent degrees of freedom. The force stress tensor becomes generally non-symmetric, and the angular momentum balance includes couple stress terms:
+
+\begin{equation}
+\sigma_{[ij]} + \mu_{ij,j} = 0,
+\label{eq:11.6}
+\end{equation}
+
+The relation is retained as the standard couple-stress/micropolar form (cf.\ Mindlin and Tiersten 1962 \\cite{MindlinTiersten1962}; Eringen micropolar) where $\mu_{ij}$ is the couple stress tensor, and the antisymmetric part $\sigma_{[ij]}$ is balanced by the couple stress rather than vanishing as it does in classical elasticity.
+
+The relation between these theories and the micropolar theory of Section~\ref{sec:nonlocal} is one of specialisation. Micropolar elasticity \cite{Eringen1966a}, extended to the thermoelastic case by Tauchert, Claus and Ariman \cite{TauchertClausAriman1968}, is the most general of the three in the sense that it admits an independent micro-rotation field, whereas couple-stress theory and strain-gradient theory can be obtained from it by imposing constraints on the micro-rotation and on the antisymmetric stress. This hierarchy matters practically, because it explains why the literature contains several formulations that differ in their kinematic assumptions while sharing a common elastic kernel, and why a comparison between them must begin by identifying which of them is being used.
+
+These theories are relevant for materials with internal structure: granular materials, foams, composites with oriented inclusions, and biological tissues. In the thermoelastic setting, the micro-rotational field carries an additional energy channel, so the energy balance of Section~\ref{sec:10.1} acquires terms that have no counterpart in a classical continuum, and the mechanical power transmitted across a surface is no longer the complete description of the transport.
+
+\subsection{Two-temperature and three-temperature formulations}
+\label{sec:11.3}
+
+\subsubsection{Two-temperature theory}
+
+The two-temperature formulation distinguishes between the conductive temperature $T$, which is what a thermometer measures and what enters the heat conduction law, and the thermodynamic or dynamical temperature $T^*$, which enters the entropy relation and the internal energy:
+
+\begin{equation}
+T^* = T - \delta^2 \nabla^2 T,
+\label{eq:11.7}
+\end{equation}
+
+where $\delta^2$ is the two-temperature parameter. Ezzat and El Karamany (2011) express the conductive-thermodynamic temperature difference using the Laplacian of temperature \cite{Ezzat2011}; with $T$ conductive and $T^*$ thermodynamic, \eqref{eq:11.7} is stated as the manuscript model definition. Sign and placement conventions must be stated explicitly. This model is distinct from the single-temperature, temperature-rate-dependent Green--Lindsay formulation.
+
+\subsubsection{Three-temperature theory}
+
+Three-temperature theories introduce a third temperature variable: the temperature of a secondary phase in a composite, or the electron-gas temperature in a semiconductor, or a separate lattice and effective temperature in a system with two thermal carriers. The models are relevant for multi-phase materials in which different sub-systems have different thermal response times, and for semiconductor structures in which the electron gas equilibrates with the lattice far more slowly than either equilibrates internally. The technical difficulty is the same in both settings: three temperature fields require three interface conditions, and the coupling terms in the momentum and energy balances make the resulting system of equations considerably more complicated than the two-temperature case. The fractional-order model of micropolar thermoelasticity of Section~\ref{sec:11.1} adds a further layer, in which the micro-rotational field and the fractional memory both act on a temperature field that is already non-local in space.
+
+\subsection{Emerging hybrid models}
+\label{sec:11.4}
+
+Emerging formulations combine multiple generalization mechanisms:
+
+\begin{itemize}
+\item \textbf{Nonlocal--fractional hybrids} combine spatial nonlocality with temporal memory, for materials that exhibit both. The two mechanisms act on different operators and their dispersions are not additive, so the combined model has more parameters than either parent and correspondingly more severe identifiability problems.
+\item \textbf{Memory-dependent nonlocal models} combine an integral-form memory operator with a nonlocal stress law. The thermo-piezoelectric functionally graded rotating rod treated by Abouelregal and co-authors \cite{Abouelregal2023} is an instance of this class, in which a memory-dependent dynamic response is combined with a functionally graded rotating geometry and a piezoelectric coupling.
+\item \textbf{Hybrid nonlocal and memory-dependent multiphysics models} combine both mechanisms with a coupled field. The heat-map analysis of wave dynamics in nonlocal Kelvin--Voigt piezo-semiconductors under a memory-dependent heat flux \cite{Gupta2026HeatMap} is representative, and the particular interest of that work is that the nonlocal operator acts on the stress while the memory operator acts on the heat flux, so that the two generalizations enter the two channels of the energy balance of Section~\ref{sec:10.1} respectively.
+\item \textbf{Phase-field models} couple a phase-field variable to the thermoelastic fields for fracture and phase transformation.
+\item \textbf{Thermo-viscoelasticity with memory} uses hereditary integral formulations for viscoelastic materials with thermal coupling, and is the classical route to a thermodynamically consistent memory effect with a non-negative dissipation.
+\end{itemize}
+
+The general difficulty with all of these is the one identified in Section~\ref{sec:14.4}: each additional generalization adds parameters, and each parameter is usually fitted to the same data that the model is then used to explain. The resulting models are not thereby wrong, but the evidence supporting them is weaker than their flexibility would suggest, and the practical question is always which subset of the available parameters the data can actually constrain.
+
+\subsection{Mathematical limitations and open problems}
+\label{sec:11.5}
+
+\subsubsection{Mathematical limitations}
+
+\begin{enumerate}
+\item \textbf{Limits between formulations.} Limit theorems for specific model pairs require a stated system, parameter regime, topology, and convergence result.
+\item \textbf{Well-posedness.} Each theory family has its own well-posedness conditions; a unified framework is lacking. The nonlocal family is the most acute case, since the differential form of its constitutive law raises the order of the governing equation and does not yield a well-posed initial-value problem in the classical sense.
+\item \textbf{Nonlocal interface conditions.} The correct interface conditions for nonlocal media are not established, and the integral and differential formulations lead to different requirements.
+\item \textbf{Analytical tractability.} Closed-form solutions for fractional formulations depend on the geometry, operator, and data; numerical inversion is used for cases without an available analytic solution.
+\item \textbf{Parameter identifiability.} No general theory exists for determining which of the parameters of a combined model can be inferred from a given measurement, and this is the practical obstacle to the use of the hybrid models of Section~\ref{sec:11.4}.
+\end{enumerate}
+
+\subsubsection{Open problems}
+
+\begin{enumerate}
+\item Derive complete energy flux formulations for all generalized theories (Section~\ref{sec:10.4}).
+\item Establish rigorous limit theorems between theory families, with explicit error estimates.
+\item Develop unified well-posedness criteria covering the differential, integral, fractional, and gradient formulations.
+\item Establish nonlocal interface conditions, and show that the integral and differential formulations give consistent interface traction.
+\item Validate models experimentally across parameter ranges, with particular attention to the dispersion signature that distinguishes a nonlocal mechanism from a gradient mechanism (Section~\ref{sec:7.3}).
+\end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig15-fractional-order.pdf}
+\caption{Fractional derivative order and transport behavior: interpolation between diffusive and wave-like heat transport (Sections 6, 11).}
+\label{fig:fractional_order}
+\end{figure}
+
+\subsection{Notation summary for Section 11}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 11.}
+\label{tab:notation-sec11}
+\begin{tabularx}{\textwidth}{@{}p{1.8cm}X p{2.2cm}p{2.1cm}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$\alpha$ & Fractional derivative order & dimensionless & \eqref{eq:11.1} \\
+${}^C D_t^\alpha$ & Caputo fractional derivative of order $\alpha$ & --- & \eqref{eq:11.2} \\
+$\Gamma$ & Euler gamma function & --- & \eqref{eq:11.2} \\
+$a$ & Thermal diffusivity & m$^2$\,s$^{-1}$ & \eqref{eq:11.1} \\
+$\tau^\alpha$ & Fractional relaxation parameter & s$^\alpha$ & \eqref{eq:11.4} \\
+$\ell$ & Strain-gradient length scale & m & \eqref{eq:11.5} \\
+$\mu_{ij}$ & Couple stress tensor & N\,m$^{-1}$ & \eqref{eq:11.6} \\
+$\delta^2$ & Two-temperature parameter & m$^2$ & \eqref{eq:11.7} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The LS-type model carries relaxation on both thermal-inertia and coupling terms, unlike the original GL convention. \cite{Youssef2006}. A seven-model fractional operator catalogue provides a third route alongside Taylor truncations and integer higher-order laws. \cite{Yu2024}.
+
+\subsection{Open questions for Section 11}
+
+\begin{enumerate}[label=\textbf{OQ11.\arabic*}]
+\item Can rigorous limit theorems be established between the thermoelastic theory families, with error estimates in a stated norm? \label{oq:11.1}
+\item Can a unified well-posedness framework be established for the differential, integral, fractional, and gradient formulations, and what does it require of the constitutive law? \label{oq:11.2}
+\item What are the correct interface conditions for models in which a nonlocal operator acts on the stress and a fractional or memory operator acts on the heat flux simultaneously? \label{oq:11.3}
+\item When is the power-law memory kernel of the fractional formulation to be preferred over a general kernel in the memory-dependent formulation, and how large is the error incurred by the restriction? \label{oq:11.4}
+\item Which parameter combinations of a hybrid model are identifiable from a given experimental modality, and which are not? \label{oq:11.5}
+\end{enumerate}
+
+% LocalWords:

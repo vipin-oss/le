@@ -1,0 +1,54 @@
+{
+  "query_doi": "10.1080/014957301300158094",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/014957301300158094",
+    "type": "journal-article",
+    "title": [
+      "ON A NEW C- AND F-PROCESSES HEAT CONDUCTION CONSTITUTIVE MODEL AND THE ASSOCIATED GENERALIZED THEORY OF DYNAMIC THERMOELASTICITY"
+    ],
+    "author": [
+      {
+        "family": "Xiangmin Zhou, Kumar K. Tamma, Chri",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2001,
+          6
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2001,
+          6
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "24",
+    "issue": "6",
+    "page": "531-564",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}

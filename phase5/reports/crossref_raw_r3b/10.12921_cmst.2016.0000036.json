@@ -1,0 +1,78 @@
+{
+  "query_doi": "10.12921/cmst.2016.0000036",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.12921/cmst.2016.0000036",
+    "type": "journal-article",
+    "title": [
+      "Reflection and Refraction of Plane Harmonic Waves at an Interface Between Elastic Solid and Magneto-thermoelastic Diffusion Solid with Voids"
+    ],
+    "author": [
+      {
+        "given": "Rajneesh",
+        "family": "Kumar",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Tarun",
+        "family": "Kansal",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2017,
+          3,
+          30
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2017,
+          3,
+          29
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          3,
+          29
+        ]
+      ]
+    },
+    "container-title": [
+      "Computational Methods in Science and Technology"
+    ],
+    "short-container-title": [
+      "CMST"
+    ],
+    "publisher": "ICHB PAS Poznan Supercomputing and Networking Center",
+    "volume": "23",
+    "issue": "1",
+    "page": "43-56",
+    "ISSN": [
+      "1505-0602",
+      "2353-9453"
+    ]
+  }
+}

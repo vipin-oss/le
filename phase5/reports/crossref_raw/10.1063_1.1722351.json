@@ -1,0 +1,59 @@
+{
+  "query_doi": "10.1063/1.1722351",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1063/1.1722351",
+    "type": "journal-article",
+    "title": [
+      "Thermoelasticity and Irreversible Thermodynamics"
+    ],
+    "author": [
+      {
+        "given": "M. A.",
+        "family": "Biot",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Cornell Aeronautical Laboratory, Inc., Buffalo, New York"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1956,
+          3,
+          1
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1956,
+          3,
+          1
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Applied Physics"
+    ],
+    "short-container-title": [],
+    "publisher": "AIP Publishing",
+    "volume": "27",
+    "issue": "3",
+    "page": "240-253",
+    "ISSN": [
+      "0021-8979",
+      "1089-7550"
+    ]
+  }
+}

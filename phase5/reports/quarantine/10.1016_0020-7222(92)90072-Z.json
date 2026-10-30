@@ -1,0 +1,26 @@
+{
+  "query_doi": "10.1016/0020-7222(92)90072-Z",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/0020-7222(92)90072-z",
+    "type": "journal-article",
+    "title": ["On the role of gradients in the localization of deformation and fracture"],
+    "author": [
+      {
+        "given": "E. C.",
+        "family": "Aifantis",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [{"vocabulary": "crossref", "role": "author"}]
+      }
+    ],
+    "container-title": ["International Journal of Engineering Science"],
+    "volume": "30",
+    "issue": "10",
+    "page": "1279-1299",
+    "published-print": {
+      "date-parts": [[1992, 10]]
+    },
+    "URL": "https://doi.org/10.1016/0020-7222(92)90072-Z"
+  }
+}

@@ -1,0 +1,5 @@
+# R3e Crossref verification method
+
+Only the two DOI strings explicitly requested for Section 8 were queried: 10.1145/321439.321446, 10.1145/361953.361969. The pinned read-only `FULLTEXT_FINDINGS_09.md` was checked for the equation/method anchors before Crossref requests. Crossref comparison requires a returned DOI match, exact/prefix/substring title or at least 0.60 shorter-title token overlap, a published/issued year within one year, and a normalized container-title match. HTTP 404 is NOT-FOUND. Network/decoding errors fail the job. Only VERIFIED records with Crossref author metadata and no BibTeX DOI conflict are emitted for bibliography merge.
+
+The manuscript claims are limited to the source-checked Eq. (15) cosine-series/trapezoidal inversion and Stehfest's even-N weighted formula and rounding-error trade-off. No behavior inference beyond Stehfest's own statements is used, and no general method ranking is inferred. Rows=2; DOI requests=2; VERIFIED=2; MISMATCH=0; NOT-FOUND=0; NO-DOI=0; bibliography-ready=2; new BibTeX keys=2.

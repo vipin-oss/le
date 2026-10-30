@@ -1,0 +1,32 @@
+{
+  "query_doi": "10.1007/BF00253946",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/BF00253946",
+    "type": "journal-article",
+    "title": ["Effects of couple-stresses in linear elasticity"],
+    "author": [
+      {
+        "given": "R. D.",
+        "family": "Mindlin",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [{"vocabulary": "crossref", "role": "author"}]
+      },
+      {
+        "given": "H. F.",
+        "family": "Tiersten",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [{"vocabulary": "crossref", "role": "author"}]
+      }
+    ],
+    "container-title": ["Archive for Rational Mechanics and Analysis"],
+    "volume": "11",
+    "page": "415-448",
+    "published-print": {
+      "date-parts": [[1962, 1]]
+    },
+    "URL": "https://doi.org/10.1007/BF00253946"
+  }
+}

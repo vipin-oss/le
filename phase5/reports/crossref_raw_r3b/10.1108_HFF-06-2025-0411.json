@@ -1,0 +1,128 @@
+{
+  "query_doi": "10.1108/HFF-06-2025-0411",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1108/hff-06-2025-0411",
+    "type": "journal-article",
+    "title": [
+      "Coupled thermo-mechanical dynamics of rotating nano-beams with spatiotemporal nonlocality and higher-order memory-driven heat transfer"
+    ],
+    "author": [
+      {
+        "given": "Abhik",
+        "family": "Sur",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Sister Nivedita University Department of Mathematics, , New Town,",
+            "place": [
+              "India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Soumik",
+        "family": "Das",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Amrita Vishwa Vidyapeetham School of Physical Sciences, , Mysuru,",
+            "place": [
+              "India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Gurugram University Department of Mathematics, , Gurugram,",
+            "place": [
+              "India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Eduard-Marius",
+        "family": "Craciun",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Ovidius University of Constanta Faculty of Mechanical, Industrial and Maritime Engineering, , Constanta, , and Academy of Romanian Scientists, Bucuresti, Romania",
+            "place": [
+              "Romania"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2025,
+          11,
+          13
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2025,
+          10,
+          3
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          10,
+          3
+        ]
+      ]
+    },
+    "container-title": [
+      "International Journal of Numerical Methods for Heat &amp; Fluid Flow"
+    ],
+    "short-container-title": [],
+    "publisher": "Emerald",
+    "volume": "35",
+    "issue": "12",
+    "page": "4464-4491",
+    "ISSN": [
+      "0961-5539",
+      "1758-6585"
+    ]
+  }
+}

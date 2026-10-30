@@ -1,0 +1,60 @@
+{
+  "map_id": "R3F-DURBIN-1974",
+  "mode": "BIBLIOGRAPHIC-SEARCH",
+  "requested_doi": "",
+  "query": "Durbin The Computer Journal 1974 17 4 371 376",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1093/comjnl/17.4.371",
+    "type": "journal-article",
+    "title": [
+      "Numerical Inversion of Laplace Transforms: An Efficient Improvement to Dubner and Abate's Method"
+    ],
+    "author": [
+      {
+        "given": "F.",
+        "family": "Durbin",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1974,
+          11,
+          1
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1974,
+          11,
+          1
+        ]
+      ]
+    },
+    "container-title": [
+      "The Computer Journal"
+    ],
+    "short-container-title": [
+      "The Computer Journal"
+    ],
+    "publisher": "Oxford University Press (OUP)",
+    "volume": "17",
+    "issue": "4",
+    "page": "371-376",
+    "ISSN": [
+      "0010-4620",
+      "1460-2067"
+    ]
+  }
+}

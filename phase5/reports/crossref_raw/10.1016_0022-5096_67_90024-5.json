@@ -1,0 +1,66 @@
+{
+  "query_doi": "10.1016/0022-5096(67)90024-5",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/0022-5096(67)90024-5",
+    "type": "journal-article",
+    "title": [
+      "A generalized dynamical theory of thermoelasticity"
+    ],
+    "author": [
+      {
+        "given": "H.W.",
+        "family": "Lord",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Y.",
+        "family": "Shulman",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1967,
+          9
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1967,
+          9
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of the Mechanics and Physics of Solids"
+    ],
+    "short-container-title": [
+      "Journal of the Mechanics and Physics of Solids"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "15",
+    "issue": "5",
+    "page": "299-309",
+    "ISSN": [
+      "0022-5096"
+    ]
+  }
+}

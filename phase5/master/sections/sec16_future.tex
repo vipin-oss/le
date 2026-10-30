@@ -1,0 +1,436 @@
+%======================================================================
+% Section 16: Future Research Opportunities
+%======================================================================
+\section{Future Research Opportunities}
+\label{sec:future}
+
+This section presents research directions arising from the challenges discussed in Section 15. Each direction is framed as a question for future modeling, analysis, or measurement.
+
+\subsection{Conditional theory-selection guide and evidence checkpoints}
+\label{sec:selection-guide}
+
+The following workflow is a conditional guide, not a ranking of theories. Start by specifying the fields, geometry, constitutive equations, initial and boundary data, interface conditions, and measured observables. Select a model only when those choices match the question being asked. In this review, record any statement about propagation, admissibility, stability, well-posedness, or energy flux against the exact equations and assumptions rather than attaching it to a family label.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Conditional model-selection questions and limits of the evidence reviewed here.}
+\label{tab:conditional_selection}
+\begin{tabularx}{\textwidth}{@{}p{2.7cm}XX@{}}
+\toprule
+\textbf{Decision} & \textbf{Conditional use} & \textbf{Evidence boundary} \\
+\midrule
+Local thermoelastic baseline & Use a local Cauchy model with Fourier conduction when those are the constitutive assumptions to be tested or used as a comparator; state the balance laws and data explicitly \cite{Biot1956}. & Do not assume the baseline is inapplicable or that a generalized model is preferable; justify the comparison against the specified observables and assumptions. \\
+One-time heat-flux relaxation & If the selected constitutive law is the Lord--Shulman law, use that source's one-relaxation-time equation and state the associated field equations and approximations \cite{Lord1967}. & The reviewed pages establish the source-specific law, not a universal admissible range, stability theorem, or generalized energy flux. \\
+Green--Naghdi models & Keep type II and type III separate, name the exact equations and coefficient regime, and distinguish the source's bounded type-II wave/uniqueness result from the type-III one-dimensional conductivity regimes \cite{Green1993,GreenGN1992}. & Neither result transfers automatically to other variants; the selected model's admissibility and energy/interface flux still require separate support. \\
+Lag-based transport & For DPL or TPL, state the lag convention, expansion order, and problem being analyzed. The cited DPL result is restricted to its stated one-dimensional problem and strict parameter inequalities; the equality case is not classified by that result \cite{Quintanilla2003DPL,RoyChoudhuri2007}. & Do not transfer a DPL inequality or a first-order TPL expansion to other equations, dimensions, or truncation orders. \\
+Spatial, fractional, or hereditary operators & Specify the kernel or operator, its domain and function space, and the initial/boundary data before deriving a dispersion or interface problem \cite{Eringen1983}. & Restrict each result to its stated kernel or operator and data; leave other candidates' admissibility, propagation, stability, and flux questions open until supported. \\
+Additional coupled fields & List every field, constitutive closure, and interface condition before computing modes or scattering coefficients. & Determine the mode count, normalization, and flux convention from the specified coupled system before comparing results. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+For any candidate, the next checks are: (i) verify the equation set and conventions against its source; (ii) state parameter restrictions and data for the actual initial-boundary-value problem; (iii) derive the energy or flux quantity from the selected balances and constitutive laws; and (iv) compare numerical results only against a benchmark with matching geometry, normalization, and boundary conditions. Where a check is unavailable, retain the claim as unresolved rather than extrapolating from a neighboring model.
+
+\subsection{Benchmark evidence: derivations versus source checkpoints}
+\label{sec:benchmark-evidence}
+
+The table separates reproducible checks implemented for this review from statements verified on cited source pages. The latter are evidence checkpoints, not numerical benchmark solutions.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Current validated checks and source-bounded checkpoints; scope is limited to the displayed equations and assumptions.}
+\label{tab:validated_checkpoints}
+\begin{tabularx}{\textwidth}{@{}p{3.1cm}p{3.2cm}X@{}}
+\toprule
+\textbf{Evidence type} & \textbf{Check} & \textbf{Scope and limitation} \\
+\midrule
+Symbolically verified identity & Classical local energy-flux derivation & The local symmetric-Cauchy balance and Fourier-law calculation is reproduced under the assumptions recorded with its derivation; it is not a generalized thermoelastic flux theorem. \\
+Symbolically verified interface check & One-dimensional welded lossless longitudinal interface & The displayed stress--velocity flux gives the stated reflected/transmitted partition; the two-wave cross-term is shown before time averaging and averages to zero for the selected harmonic fields. This is not a general interface theorem. \\
+Symbolically verified algebra & Selected constitutive reductions and limits & Algebraic reductions of the displayed forms (including the stated DPL-to-LS limit) are checked; it does not prove convergence of solutions or equivalence of theory families. \\
+Primary-source checkpoint & Lord--Shulman, Green--Naghdi II/III, and Green--Lindsay equation-level findings & These are bounded source-page results recorded for the specific equations, approximations, and regimes reviewed; they are not code-validated solutions, existence results, or family-wide stability claims. \\
+Problem specification & Appendix~\ref{app:benchmarks}, BM-1--BM-5 & These define comparison problems and observables; except where a separate check is stated above, they are specifications rather than numerically validated reference solutions. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Research roadmap from the Q3 evidence gaps}
+\label{sec:q3-roadmap}
+
+The immediate work is to close evidence gaps before broadening comparative claims. Priority tasks are: complete the GN-I source-to-manuscript equation mapping; finish equation-to-manuscript mapping for the selected GN-II/GN-III/LS formulations; establish or explicitly leave open parameter admissibility and well-posedness for each exact model; derive model-specific bulk and interface energy fluxes before comparing generalized modal energy; and extend the benchmark set only where equations, data, normalization, and expected observables can be specified. The GN-III type-II/type-III scope distinction is image-checked at printed pp. 254–255; the zero-source map from source Eqs. (3.19)–(3.20) to manuscript Eqs. (4.1) and (4.14) is verified. Model-specific energy/admissibility/interface-flux questions remain open. For MGT, MDD, fractional, spatially nonlocal, gradient, and coupled multiphysics models, tie any extension to the exact operator or constitutive law and boundary conditions; do not infer a universal mode count or flux from the family name. These are work items, not claims that the missing results have been established.
+
+
+\subsection{Coupled-field modeling in emerging materials}
+\label{sec:coupled-field-modeling}
+
+\subsubsection{Background}
+
+Coupled-field formulations for piezoelectric, magnetic, and semiconductor media provide settings in which to compare alternative coupling assumptions.
+
+\subsubsection{Importance}
+
+Emerging materials (2D materials, metamaterials, topological materials) exhibit coupled-field behavior not captured by classical theories.
+
+\subsubsection{Model-specific context}
+
+Piezothermoelastic, porous, micropolar, and magneto-thermo-elastic models couple fields through constitutive relations that depend on the selected material and assumptions.
+
+\subsubsection{Research questions}
+
+Coupled-field models for 2D materials (graphene, MoS$_2$), metamaterials, and topological materials.
+
+\subsubsection{Approaches}
+
+\begin{itemize}
+\item Extend piezothermoelasticity to 2D materials,
+\item Develop metamaterial constitutive relations,
+\item Study topological effects in wave propagation.
+\end{itemize}
+
+\subsubsection{Practical relevance}
+
+Next-generation sensors, actuators, energy harvesters, and quantum devices.
+
+\subsubsection{Major obstacles}
+
+Lack of experimental data for emerging materials; computational complexity of coupled-field models.
+
+\subsection{Mathematically consistent generalized transport}
+\label{sec:consistent-transport}
+
+\subsubsection{Background}
+
+Sections 4 and 6 discuss LS, DPL, TPL, MGT, MDD, and fractional models; comparisons depend on the specific governing equations.
+
+\subsubsection{Importance}
+
+Mathematically consistent transport models are needed for predictive simulations of thermal wave phenomena.
+
+\subsubsection{Model-specific context}
+
+Well-posedness conditions depend on the constitutive equations and data prescribed for each model.
+
+\subsubsection{Research questions}
+
+Rigorous limit theorems between theories. Foundational reviews by Chandrasekharaiah (1998) \cite{Chandrasekharaiah1998} and Joseph and Preziosi (1989) \cite{Joseph1989} provide starting points. Unified well-posedness framework. Complete energy flux derivations (Section 10.3).
+
+\subsubsection{Approaches}
+
+\begin{itemize}
+\item Establish rigorous limit theorems with convergence proofs,
+\item Develop unified well-posedness criteria,
+\item Complete energy flux derivations for all theories.
+\end{itemize}
+
+\subsubsection{Practical relevance}
+
+Predictive thermal management, thermal wave devices, high-frequency thermoelastic systems.
+
+\subsubsection{Major obstacles}
+
+Mathematical complexity of higher-order and integro-differential equations.
+
+\subsection{Multiscale wave phenomena}
+\label{sec:multiscale-waves}
+
+\subsubsection{Background}
+
+Section 7 discusses nonlocal constitutive formulations for size-dependent behavior; comparisons with micro- or nanoscale measurements require model-specific length scales and observables.
+
+\subsubsection{Importance}
+
+Multiscale phenomena govern material behavior from atomic to continuum scales.
+
+\subsubsection{Model-specific context}
+
+Nonlocal constitutive and dispersion models raise questions about spatial scale, kernels, and boundary conditions.
+
+\subsubsection{Research questions}
+
+Nonlocal-fractional hybrid models. Multiscale coupling (atomic-continuum). Nonlocal interface conditions.
+
+\subsubsection{Approaches}
+
+\begin{itemize}
+\item Develop nonlocal-fractional hybrid models,
+\item Establish atomic-continuum coupling conditions,
+\item Derive nonlocal interface conditions.
+\end{itemize}
+
+\subsubsection{Practical relevance}
+
+Nanodevice design, nanomaterial characterization, quantum materials.
+
+\subsubsection{Major obstacles}
+
+Computational cost of nonlocal models; lack of experimental validation at nanoscale.
+
+\subsection{Nonlocal and hereditary continuum interactions}
+\label{sec:nonlocal-hereditary}
+
+\subsubsection{Background}
+
+Sections 6 and 7 discuss nonlocal constitutive models and an MDD operator as distinct spatial and temporal formulations; their source-level definitions and status remain under review.
+
+\subsubsection{Importance}
+
+Real materials exhibit both spatial and temporal memory; combined models are needed.
+
+\subsubsection{Model-specific context}
+
+Nonlocal integral relations. MDD convolution operators. Individual theory formulations.
+
+\subsubsection{Research questions}
+
+Combined nonlocal-hereditary models. Coupled spatial-temporal memory effects.
+
+\subsubsection{Approaches}
+
+\begin{itemize}
+\item Formulate nonlocal-hereditary constitutive relations,
+\item Derive governing equations for combined models,
+\item Analyze wave propagation in combined models.
+\end{itemize}
+
+\subsubsection{Practical relevance}
+
+Materials with complex microstructure and history-dependent response.
+
+\subsubsection{Major obstacles}
+
+Mathematical complexity of combined spatial-temporal nonlocality.
+
+\subsection{Advanced interface conditions}
+\label{sec:advanced-interfaces}
+
+\subsubsection{Background}
+
+Classical interface conditions in Section 3.9 assume perfect contact; generalized media and imperfect bonding require model-specific conditions.
+
+\subsubsection{Importance}
+
+Interface conditions govern wave reflection, transmission, and energy partition at material boundaries.
+
+\subsubsection{Model-specific context}
+
+Perfect and imperfect bonding conditions for classical media. Electrical interface conditions for piezoelectric media.
+
+\subsubsection{Research questions}
+
+Interface conditions for nonlocal media. Interface conditions for memory-dependent media. Interface conditions for multiphysics media with electrical coupling.
+
+\subsubsection{Approaches}
+
+\begin{itemize}
+\item Derive nonlocal interface conditions from integral constitutive relations,
+\item Formulate memory-dependent interface conditions,
+\item Verify interface energy balance for generalized theories.
+\end{itemize}
+
+\subsubsection{Practical relevance}
+
+NDE accuracy, energy harvesting efficiency, thermal interface design.
+
+\subsubsection{Major obstacles}
+
+Nonlocal interface conditions not established; energy flux uncertainty at interfaces.
+
+\subsection{Multiphysics mode conversion}
+\label{sec:multiphysics-mode-conversion}
+
+\subsubsection{Background}
+
+Wave mode conversion at interfaces is studied for elastic and thermoelastic media (Section 9).
+
+\subsubsection{Importance}
+
+Mode conversion governs energy partition between wave types at interfaces.
+
+\subsubsection{Model-specific context}
+
+Scattering-matrix formulations for coupled fields require mode classification and normalization appropriate to the selected model.
+
+\subsubsection{Research questions}
+
+Mode conversion in piezothermoelastic, nonlocal, and memory-dependent media. Complex mode energy flux computation.
+
+\subsubsection{Approaches}
+
+\begin{itemize}
+\item Extend scattering matrix to generalized theories,
+\item Compute mode conversion coefficients for each theory family,
+\item Validate with experimental measurements.
+\end{itemize}
+
+\subsubsection{Practical relevance}
+
+NDE, sensing, energy harvesting, acoustic devices.
+
+\subsubsection{Major obstacles}
+
+Complex mode normalization; uncertain energy flux formulations.
+
+\subsection{Reproducible numerical benchmarks}
+\label{sec:reproducible-benchmarks}
+
+\subsubsection{Background}
+
+A benchmark for interface calculations should specify the model, input data, expected observables, and numerical comparison.
+
+\subsubsection{Importance}
+
+Reproducible benchmarks validate numerical methods and enable comparison across research groups.
+
+\subsubsection{Model-specific context}
+
+BM-1 analytical benchmark. Scattering matrix formulation.
+
+\subsubsection{Research questions}
+
+Benchmarks for generalized theories. Benchmarks for multiphysics interfaces. Open-source benchmark implementations.
+
+\subsubsection{Approaches}
+
+\begin{itemize}
+\item Derive analytical solutions for simplified generalized theory problems,
+\item Implement open-source benchmark codes,
+\item Establish a benchmark collection with reference solutions and documented inputs.
+\end{itemize}
+
+\subsubsection{Practical relevance}
+
+Software validation, method comparison, reproducibility.
+
+\subsubsection{Major obstacles}
+
+Lack of closed-form solutions for generalized theories; computational cost.
+
+\subsection{Experimental validation}
+\label{sec:experimental-validation}
+
+\subsubsection{Background}
+
+Experimental validation of classical thermoelasticity depends on the measured quantities and the conditions of each application.
+
+\subsubsection{Importance}
+
+Experimental validation is essential for practical adoption of theoretical models.
+
+\subsubsection{Research questions}
+
+Which measurements can distinguish generalized thermoelastic predictions from classical baselines in a specified application?
+
+\subsubsection{Research questions}
+
+Experimental validation of generalized theories. Measurement of thermal wave speed. Measurement of energy flux at interfaces.
+
+\subsubsection{Approaches}
+
+\begin{itemize}
+\item Design experiments to measure thermal wave propagation,
+\item Measure energy reflection/transmission at interfaces,
+\item Validate relaxation time parameters.
+\end{itemize}
+
+\subsubsection{Practical relevance}
+
+Practical adoption of generalized theories in engineering applications.
+
+\subsubsection{Major obstacles}
+
+Experimental measurement of thermal waves is challenging; direct energy flux measurement is difficult.
+
+\subsection{Inverse material characterization}
+\label{sec:inverse-characterization}
+
+\subsubsection{Background}
+
+Wave measurements can be used to formulate inverse problems for relaxation times, nonlocal length scales, and memory-kernel parameters; identifiability depends on the selected model and observables.
+
+\subsubsection{Importance}
+
+Material parameters (relaxation times, nonlocal length scales, kernel parameters) must be determined from experiments.
+
+\subsubsection{Research questions}
+
+Which inverse methods can distinguish constitutive parameters from measurement noise and model discrepancy?
+
+\subsubsection{Research questions}
+
+Inverse characterization of relaxation times, nonlocal length scales, and MDD kernel parameters.
+
+\subsubsection{Approaches}
+
+\begin{itemize}
+\item Formulate inverse problems for generalized theories,
+\item Develop optimization-based parameter estimation,
+\item Validate with synthetic and experimental data.
+\end{itemize}
+
+\subsubsection{Practical relevance}
+
+Material characterization, quality control, structural health monitoring.
+
+\subsubsection{Major obstacles}
+
+Ill-posedness of inverse problems; non-uniqueness of parameter identification.
+
+The provisional relationship schematic appears once as Figure~\ref{fig:theory_relationships} in Section 1.
+
+\subsection{Sequencing the programme}
+\label{sec:programme-sequencing}
+
+The directions below are complementary; their order and priority depend on the research question and available methods.
+
+\subsection{Future directions summary table}
+\label{sec:future-summary}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Future research directions and example questions.}
+\label{tab:future_summary}
+\begin{tabularx}{\textwidth}{@{}p{2.4cm}XXX@{}}
+\toprule
+\textbf{Direction} & \textbf{Research question} & \textbf{Example scope} & \textbf{Main obstacle} \\
+\midrule
+Coupled-field materials & How do coupled constitutive laws affect wave response? & Two-dimensional materials and metamaterials & Experimental data \\
+Mathematically consistent transport & Which conditions support well-posed models? & Limit theorems and energy flux & Mathematical complexity \\
+Multiscale wave phenomena & How do multiple length scales interact? & Hybrid and multiscale models & Computational cost \\
+Nonlocal-hereditary interactions & How do spatial and temporal nonlocality combine? & Coupled operators & Mathematical complexity \\
+Advanced interface conditions & Which conditions apply to generalized media? & Nonlocal and memory-dependent interfaces & Model-specific boundary terms \\
+Multiphysics mode conversion & How do coupled fields exchange modal energy? & Generalized theories and complex modes & Consistent normalization \\
+Reproducible benchmarks & How can calculations be compared? & Generalized-theory benchmarks & Code, data, and independent reproduction \\
+Experimental validation & Which measurements discriminate models? & Generalized theories and interface flux & Measurement and model selection \\
+Inverse characterization & Which parameters can be identified? & Relaxation times and kernel parameters & Uniqueness and uncertainty \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Notation summary for Section 16}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 16.}
+\label{tab:notation-sec16}
+\begin{tabularx}{\textwidth}{@{}p{1.8cm}X p{2.2cm}p{2.1cm}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$\tau_0$ & Thermal relaxation time to be determined independently & s & Section 4.4 \\
+$\xi$ & Nonlocal length scale to be determined independently & m & Section 7.4 \\
+$K(t-\xi)$ & Memory kernel function & -- & Section 4.10 \\
+$\alpha$ & Fractional derivative order & -- & Section 11.1 \\
+$\lambda$ & Interface impedance or coupling parameter & -- & Section 9.3 \\
+$\theta$ & Temperature increment & K & Section 3.4 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open questions for Section 16}
+
+See OQ10.1--OQ10.8, OQ12.1--OQ12.3, and challenge-specific open questions above.
+
+% LocalWords:

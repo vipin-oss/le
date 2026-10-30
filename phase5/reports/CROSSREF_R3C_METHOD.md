@@ -1,0 +1,7 @@
+# R3c Crossref verification method
+
+Scope: REFERENCE_PLAN rows in s.10 and s.4.11. All and only `technical_claim_eligible=YES` rows were queried; ineligible s.4.11 metadata rows were retained as INELIGIBLE with no request. New R3c DOI data was fetched dynamically in Actions. Comparison uses the R3a relaxed rules: exact/prefix/substring or at least 0.60 shorter-title token overlap; published/issued year exact or within one year; normalized container title; returned DOI equal to requested DOI. A 404 is NOT-FOUND. Network errors fail the job. Raw files contain allowlisted bibliographic metadata only.
+
+The frozen CITATION_MAP is parsed using its `proposed_citations` field. Exact key matches among the four eligible s.10 candidates: 0. Section-specific placements are documented in `R3C_CITATION_MAP.csv`; this local map connects the read-only plan's proposed-section/source notes to CL-013/014/015 topics and clearly labels non-matches. Kumar2017 is carried forward only from its R3b row (VERIFIED, technical eligible, bib-ready); it is not refetched. Barak2023JTS is excluded because there is no eligible REFERENCE_PLAN row, despite a pre-existing Crossref-verified local BibTeX record.
+
+Only Crossref-VERIFIED, technically eligible, include=YES local-map sources with authors and no BibTeX key conflict enter `R3C_VERIFIED_REFERENCES.bib`. Rows: 17; eligible s.10 DOI requests: 4; eligible rows: 4; VERIFIED: 3; MISMATCH: 1; NOT-FOUND: 0; NO-DOI: 0; INELIGIBLE (not queried): 13; newly cited BibTeX keys: 2.
