@@ -1,0 +1,16 @@
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+Fourier 0.001 v_p= 0.0447
+Fourier 100.0 v_p= 14.1421
+Lord–Shulman 0.001 v_p= 0.0447
+Lord–Shulman 100.0 v_p= 1.0
+DPL ($\tau_T=0.5\tau_q$) 0.001 v_p= 0.0447
+DPL ($\tau_T=0.5\tau_q$) 100.0 v_p= 9.9511
+GN-II 0.001 v_p= 0.5
+GN-II 100.0 v_p= 0.5
+GN-III 0.001 v_p= 0.5
+GN-III 100.0 v_p= 14.1245
+MGT 0.001 v_p= 0.5
+MGT 100.0 v_p= 1.0

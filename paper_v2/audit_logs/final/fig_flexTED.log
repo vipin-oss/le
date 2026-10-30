@@ -1,0 +1,12 @@
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+LR peak 0.4942 at x=1.008 ; Zener peak 0.5 at 1
+0.01 LR 0.009869 Z 0.009999 rel 0.013
+0.1 LR 0.09809 Z 0.09938 rel 0.013
+1 LR 0.4942 Z 0.5 rel 0.012
+10 LR 0.1046 Z 0.09938 rel -0.050
+100 LR 0.01161 Z 0.009999 rel -0.139

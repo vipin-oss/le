@@ -1,0 +1,18 @@
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+Delta beam 0.01077, plate-strain 0.02000, eps*? 0.05000
+kh=0.001 x=4.25e-06 Q=8.386e-08 LR(plate)=8.386e-08 ratio=1.000
+kh=0.00245 x=2.55e-05 Q=5.027e-07 LR(plate)=5.027e-07 ratio=1.000
+kh=0.00601 x=0.000153 Q=3.014e-06 LR(plate)=3.014e-06 ratio=1.000
+kh=0.0147 x=0.000915 Q=1.806e-05 LR(plate)=1.806e-05 ratio=1.000
+kh=0.036 x=0.00548 Q=0.000108 LR(plate)=0.0001082 ratio=0.998
+kh=0.0882 x=0.0327 Q=0.0006382 LR(plate)=0.0006451 ratio=0.989
+kh=0.216 x=0.191 Q=0.003416 LR(plate)=0.00364 ratio=0.939
+kh=0.529 x=1.01 Q=0.007623 LR(plate)=0.009883 ratio=0.771
+kh=1.29 x=4.09 Q=0.00331 LR(plate)=0.004646 ratio=0.712
+kh=3.17 x=nan Q=nan LR(plate)=nan ratio=nan
+peak Q=0.007623 at x=1.01 kh=0.529 ; LR peak 0.009883

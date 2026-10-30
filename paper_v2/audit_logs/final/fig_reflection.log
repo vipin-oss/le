@@ -1,0 +1,12 @@
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+validation max|R_PP diff|=1.50e-10  max|R_PS diff| (potential->disp scaling)=7.81e-11
+sample: theta=30deg  numeric RPP 0.6970 RPS 0.9283 ; closed form 0.6970 0.9283
+w=0.1 classical: |RPP| at 20,45,60 deg: [0.878  0.5089 0.3489]  |RPS| [0.6325 0.9977 0.9235]
+w=0.1 LS: |RPP| at 20,45,60 deg: [0.8779 0.509  0.349 ]  |RPS| [0.6324 0.9977 0.9235]
+w=1.0 classical: |RPP| at 20,45,60 deg: [0.9352 0.5171 0.3326]  |RPS| [0.6483 1.0116 0.9367]
+w=1.0 LS: |RPP| at 20,45,60 deg: [0.9748 0.5455 0.3553]  |RPS| [0.6469 1.0072 0.9334]

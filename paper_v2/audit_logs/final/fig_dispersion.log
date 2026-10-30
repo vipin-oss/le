@@ -1,0 +1,11 @@
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+LS thermal speed at high w: 2.0298360266180757 expected 2.0
+LS elastic speed high w: 0.9839644366553235
+CD elastic speed low w 1.0488055351860703 high 1.0000307473049175 expected high c1*sqrt(1+eps)= 1.0488088481701516

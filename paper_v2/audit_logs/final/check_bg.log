@@ -1,0 +1,12 @@
+K2=0.05 vbar=1.02470  closed-form metallised v=1.02353  numeric root=1.0235326314385804
+    eps0/eps=0.01 closed v=1.02469 numeric=None
+    eps0/eps=0.10 closed v=1.02469 numeric=1.024685475015429
+    eps0/eps=1.00 closed v=1.02440 numeric=1.024404588970898
+K2=0.20 vbar=1.09545  closed-form metallised v=1.08012  numeric root=1.080123449734644
+    eps0/eps=0.01 closed v=1.09544 numeric=1.0954436235363745
+    eps0/eps=0.10 closed v=1.09532 numeric=1.0953193679956195
+    eps0/eps=1.00 closed v=1.09163 numeric=1.091634859587521
+K2=0.50 vbar=1.22474  closed-form metallised v=1.15470  numeric root=1.1547005383794406
+    eps0/eps=0.01 closed v=1.22474 numeric=1.2247382013034762
+    eps0/eps=0.10 closed v=1.22418 numeric=1.224182416770883
+    eps0/eps=1.00 closed v=1.20761 numeric=1.2076147288491212

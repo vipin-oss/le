@@ -1,0 +1,5 @@
+Aluminium c1=6198 eps=0.0267 f*=6.268e+10 Hz  alpha=9.75e-05
+Copper c1=4540 eps=0.0191 f*=2.829e+10 Hz  alpha=1.16e-04
+Silicon c1=8854 eps=0.0006 f*=1.357e+11 Hz  alpha=9.20e-05
+Steel (carbon) c1=5778 eps=0.0097 f*=4.088e+11 Hz  alpha=1.30e-05
+Fused silica c1=5972 eps=0.0000 f*=6.601e+12 Hz  alpha=8.60e-07

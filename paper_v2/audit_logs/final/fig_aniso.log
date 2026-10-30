@@ -1,0 +1,18 @@
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+Cu beta0=6.78e+06 Pa/K cv=3.45e+06
+  [100] v_iso=4335 v_ad=4387 m/s  shift=1.182%  eps=0.02377
+  [110] v_iso=4959 v_ad=5003 m/s  shift=0.905%  eps=0.01817
+  [111] v_iso=5150 v_ad=5193 m/s  shift=0.839%  eps=0.01685
+Si beta0=7.63e+05 Pa/K cv=1.63e+06
+  [100] v_iso=8435 v_ad=8438 m/s  shift=0.032%  eps=0.0006467
+  [110] v_iso=9136 v_ad=9139 m/s  shift=0.028%  eps=0.0005512
+  [111] v_iso=9358 v_ad=9361 m/s  shift=0.026%  eps=0.0005254
+Al beta0=5.33e+06 Pa/K cv=2.42e+06
+  [100] v_iso=6330 v_ad=6433 m/s  shift=1.614%  eps=0.03254
+  [110] v_iso=6476 v_ad=6576 m/s  shift=1.543%  eps=0.03109
+  [111] v_iso=6524 v_ad=6624 m/s  shift=1.520%  eps=0.03063

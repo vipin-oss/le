@@ -1,0 +1,24 @@
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+tau=0.00 k=0.01  w=-0.01049-4.545e-06i  Q^-1=0.0008667  Debye eps*x/(1+x^2)=0.0009999
+tau=0.00 k=0.1  w=-0.1048-0.0004512i  Q^-1=0.008606  Debye eps*x/(1+x^2)=0.009901
+tau=0.00 k=1  w=-1.026-0.02497i  Q^-1=0.04869  Debye eps*x/(1+x^2)=0.05
+tau=0.00 k=3  w=-3.015-0.04537i  Q^-1=0.03009  Debye eps*x/(1+x^2)=0.03
+tau=0.00 k=10  w=-10-0.04955i  Q^-1=0.009906  Debye eps*x/(1+x^2)=0.009901
+tau=0.00 k=30  w=-30-0.04995i  Q^-1=0.00333  Debye eps*x/(1+x^2)=0.00333
+tau=0.25 k=0.01  w=-0.01049-4.545e-06i  Q^-1=0.0008668  Debye eps*x/(1+x^2)=0.0009999
+tau=0.25 k=0.1  w=-0.1049-0.000453i  Q^-1=0.008641  Debye eps*x/(1+x^2)=0.009901
+tau=0.25 k=1  w=-1.027-0.03243i  Q^-1=0.06317  Debye eps*x/(1+x^2)=0.05
+tau=0.25 k=3  w=-5.721-1.927i  Q^-1=0.6735  Debye eps*x/(1+x^2)=0.03
+tau=0.25 k=10  w=-20.22-1.918i  Q^-1=0.1897  Debye eps*x/(1+x^2)=0.009901
+tau=0.25 k=30  w=-60.94-1.917i  Q^-1=0.0629  Debye eps*x/(1+x^2)=0.00333
+tau=1.00 k=0.01  w=-0.01049-4.545e-06i  Q^-1=0.0008668  Debye eps*x/(1+x^2)=0.0009999
+tau=1.00 k=0.1  w=-0.1049-0.0004548i  Q^-1=0.008672  Debye eps*x/(1+x^2)=0.009901
+tau=1.00 k=1  w=-1.058-0.04795i  Q^-1=0.09062  Debye eps*x/(1+x^2)=0.05
+tau=1.00 k=3  w=-3.429-0.1924i  Q^-1=0.1122  Debye eps*x/(1+x^2)=0.03
+tau=1.00 k=10  w=-11.68-0.2095i  Q^-1=0.03587  Debye eps*x/(1+x^2)=0.009901
+tau=1.00 k=30  w=-35.11-0.2108i  Q^-1=0.01201  Debye eps*x/(1+x^2)=0.00333

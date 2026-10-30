@@ -1,0 +1,9 @@
+OK   DPL -> LS : tT->0, tq=t0 
+OK   DPL tq->0 (tT fixed) = Fourier with rate term k(1+tT s)
+OK   TPL -> DPL : ks->0
+OK   GN-II: k=0,tq=tT=tv=0 -> ks/s
+OK   GN-III: tq=tT=tv=0 -> k+ks/s
+OK   TPL -> classical needs ks->0 and all lags->0
+OK   G(0): finite iff ks=0 (else ~ ks/s)
+OK   DPL G(inf)=k tT/tq
+OK   LS G(inf)=0

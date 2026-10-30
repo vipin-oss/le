@@ -1,0 +1,11 @@
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+1.0 peak Q^-1=0.0701 at w=1.419  v(w=100)=0.984  v(1e-3)=1.0488
+0.8 peak Q^-1=0.0741 at w=1.581  v(w=100)=0.993  v(1e-3)=1.0488
+0.6 peak Q^-1=0.0728 at w=1.746  v(w=100)=0.997  v(1e-3)=1.0488
+0.0 peak Q^-1=0.0501 at w=1.102  v(w=100)=1.000  v(1e-3)=1.0488
+Debye peak eps/2= 0.05  adiabatic speed 1.0488088481701516

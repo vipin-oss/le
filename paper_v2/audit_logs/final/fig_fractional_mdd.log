@@ -1,0 +1,10 @@
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+check alpha=1 vs erfc: 0.4795001221869535 0.4795001221869535
+kappa(0)= (0.33333333333333337+0j) (= (1/tau) int (1-u)^2 du = 1/3)

@@ -1,0 +1,12 @@
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+exact delay k (principal): [0.95954963+2.81539531e-01j 1.25331414+3.83716787e-17j
+ 1.38177329-3.01168679e-01j]  Im sign at 1, pi/2, 2: [1.0, 1.0, -1.0]
+0.05 rel err 1st: 0.000624761543248693  2nd: 1.0416176362853246e-05
+0.1 rel err 1st: 0.0024961970281365603  2nd: 8.331744955193726e-05
+0.3 rel err 1st: 0.022202096772888927  2nd: 0.002245639776080054
+1.0 rel err 1st: 0.22243678053710642  2nd: 0.07953373912144523

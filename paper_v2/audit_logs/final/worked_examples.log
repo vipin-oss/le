@@ -1,0 +1,17 @@
+--- Example 1: aluminium, longitudinal wave, tau_q = 1 ps
+c1=6198 m/s eps=0.0267 omega*=3.939e+11 rad/s f*=6.268e+10 Hz
+tau*omega*=0.394 ; c_T=sqrt(k/(rho c tau))=9876 m/s ; c_T/c1=1.59
+at 1 MHz: x=w/w*=1.595e-05, Debye Q^-1=eps*x/(1+x^2)=4.258e-07
+at 1 GHz: x=1.595e-02, Q^-1=4.257e-04 ; omega*tau=6.283e-03
+thermal diffusion length at 1 GHz: sqrt(2chi/w)=1.76e-07 m ; wavelength=6.20e-06 m
+--- Example 2: silicon beam, thickness 200 nm, flexure Zener peak
+chi=9.20e-05 m2/s fZ=3.612e+09 Hz Delta=E al^2 T0/cv=1.989e-04 peak Q^-1=Delta/2*0.988=9.828e-05
+  h=2e-08 m  fZ=3.61e+11 Hz
+  h=1e-07 m  fZ=1.44e+10 Hz
+  h=1e-06 m  fZ=1.44e+08 Hz
+  h=1e-05 m  fZ=1.44e+06 Hz
+--- Example 3: interface Al|Cu welded normal incidence (elastic)
+Z1=1.673e+07 Z2=4.068e+07 r=-0.4171 t=0.5829 R=0.1740 T=0.8260 R+T=1.0000
+--- Example 4: thermal shock half-space steel, Fourier vs LS, front location after 1 ns? c_T for tau=1 ps
+chi=1.30e-05 ; diffusion length after 1 us: 3.61e-06 m; after 1 ns: 1.14e-07 m
+LS front speed (tau=1ps) 3605 m/s -> travels in 1 ps: 3.61e-09 m
