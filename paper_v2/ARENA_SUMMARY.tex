@@ -138,30 +138,30 @@ Key structural changes:
 {\tt sections/s03c\_prelim.tex} & Added summary box\\
 {\tt sections/s04\_classical.tex} & Added Fig.~\ref*{fig:classical-coup} (thermoelastic coupling schematic) + summary box\\
 {\tt sections/s04b\_flexted.tex} & Added summary box\\
-{\tt sections/s05\_hyperbolic.tex} & Added Fig.~\ref*{fig:fronts} (wave-front schematic) + summary box\\
-{\tt sections/s06\_lags.tex} & Added summary box\\
+{\tt sections/s05\_hyperbolic.tex} & Added Fig.~\ref*{fig:fronts} (wave-front schematic) + summary box; added citations: Bem1982, Bem1983, GurtinWilliams1966, Ignaczak1980\\
+{\tt sections/s06\_lags.tex} & Added summary box; added citations: Antaki2000, Julius2017, Quintanilla2008, Quintanilla2008a, Quintanilla2009\\
 {\tt sections/s06b\_delay.tex} & Added summary box\\
-{\tt sections/s07\_memory.tex} & Added summary box\\
+{\tt sections/s07\_memory.tex} & Added summary box; added citations: Ezzat2016, Ezzat2016a, Ezzat2016b, Povstenko2011, Scott2007, Shaw2019, Xu2015, Youssef2010, Youssef2010a, Yu2020\\
 {\tt sections/s07b\_fraccoupled.tex} & Added summary box\\
 {\tt sections/s08\_waves3d.tex} & Added Fig.~\ref*{fig:reflection-geo} (half-space reflection schematic) + summary box\\
 {\tt sections/s08b\_aniso.tex} & Added summary box\\
 {\tt sections/s08c\_reflection.tex} & Added summary box\\
-{\tt sections/s09\_transient.tex} & Added summary box\\
+{\tt sections/s09\_transient.tex} & Added summary box; added citations: Florea2021, Li2020, Sarkar2020, Sarkar2021\\
 {\tt sections/s09b\_thermalmodes.tex} & Added summary box\\
-{\tt sections/s10\_surface.tex} & Added Fig.~\ref*{fig:rayleigh-geo} (Rayleigh-wave geometry) + summary box\\
+{\tt sections/s10\_surface.tex} & Added Fig.~\ref*{fig:rayleigh-geo} (Rayleigh-wave geometry) + summary box; added citations: Aldandani2026a, Biswas2020b, Chirita2024, Gupta2024b, Kumar2008a, Singh2020e\\
 {\tt sections/s10b\_lamb.tex} & Added summary box\\
 {\tt sections/s10c\_bar.tex} & Added summary box\\
-{\tt sections/s11\_interfaces.tex} & Added Fig.~\ref*{fig:interface-geo} (interface geometry) + summary box\\
-{\tt sections/s12\_size.tex} & Added Fig.~\ref*{fig:size-geo} (lattice vs continuum) + summary box\\
-{\tt sections/s13\_multiphysics.tex} & Added Fig.~\ref*{fig:multi-geo} (multiphysics coupling) + summary box\\
-{\tt sections/s13b\_bg.tex} & Added Fig.~\ref*{fig:bg-geo} (BG surface wave) + summary box\\
+{\tt sections/s11\_interfaces.tex} & Added Fig.~\ref*{fig:interface-geo} (interface geometry) + summary box; added citations: Das2025, Yadav2022\\
+{\tt sections/s12\_size.tex} & Added Fig.~\ref*{fig:size-geo} (lattice vs continuum) + summary box; added citations: Das2024, Hosseini2017, Tiwari2014, Tiwari2015\\
+{\tt sections/s13\_multiphysics.tex} & Added Fig.~\ref*{fig:multi-geo} (multiphysics coupling) + summary box; added citations: Abouelregal2019, Abouelregal2021, Barak2023a, Ezzat2016a, Gupta2023a, Gupta2023b, Youssef2011, Youssef2014\\
+{\tt sections/s13b\_bg.tex} & Added Fig.~\ref*{fig:bg-geo} (BG surface wave) + summary box; added citations: Kumar2024b, Singh2020d\\
 {\tt sections/s14\_methods.tex} & Added summary box\\
-{\tt sections/s14b\_schemes.tex} & Added Fig.~\ref*{fig:schemes-geo} (finite-difference grid) + summary box\\
-{\tt sections/s15\_applications.tex} & Added Fig.~\ref*{fig:applications-geo} (regime map) + summary box\\
-{\tt sections/s15d\_scenarios.tex} & Added summary box\\
+{\tt sections/s14b\_schemes.tex} & Added Fig.~\ref*{fig:schemes-geo} (finite-difference grid) + summary box; added citation: Sarkar2019a\\
+{\tt sections/s15\_applications.tex} & Added Fig.~\ref*{fig:applications-geo} (regime map) + summary box; added citations: Hosseini2017, Li2021, Ma2020, Zhang2021\\
+{\tt sections/s15d\_scenarios.tex} & Added summary box; added citations: Anwar1994, Sachan2022\\
 {\tt sections/s15b\_examples.tex} & Added summary box\\
 {\tt sections/s15c\_experiments.tex} & Added summary box\\
-{\tt sections/s16\_synthesis.tex} & Added summary box\\
+{\tt sections/s16\_synthesis.tex} & Added summary box; added citation: Scott2007\\
 {\tt sections/s17b\_reporting.tex} & Added summary box\\
 {\tt sections/s17\_open.tex} & Added summary box\\
 \bottomrule
@@ -171,6 +171,7 @@ Key structural changes:
 \begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
 \textbf{File} & \textbf{Purpose}\\\midrule
 {\tt ARENA\_SUMMARY.tex} & This document: old vs new outline, file changes, new figures, unverified items, compile/check list\\
+{\tt main\_els.tex} & elsarticle (Physics Reports) version of main.tex: frontmatter environment, elsarticle-num bibliography style, lineno, same section structure and inputs as main.tex\\
 {\tt figs\_tikz/fig1\_template.tex} & Heat-flux template schematic (standalone TikZ, \input into s03\_foundations)\\
 {\tt figs\_tikz/fig2\_classical.tex} & Classical thermoelastic coupling schematic (\input into s04\_classical)\\
 {\tt figs\_tikz/fig3\_fronts.tex} & Hyperbolic wave fronts schematic (\input into s05\_hyperbolic)\\
@@ -211,7 +212,31 @@ fig:applications-geo & Application regime map (laser, MEMS/NEMS, piezo, tissue, 
 
 All captions follow the form ``Geometry after [cite]'' where the setup is derived from a paper; no data curves are taken from papers --- all data curves are generated by scripts in {\tt scripts/} (e.g. {\tt fig\_dispersion.py}, {\tt fig\_zener.py}, {\tt fig\_rayleigh.py}, {\tt fig\_interface.py}, {\tt fig\_lattice.py}, {\tt fig\_nonlocal.py}, {\tt fig\_piezo.py}, {\tt check\_bg.py}, {\tt bench\_schemes.py}).
 
-\section*{4. Unverified / Unable Items}
+\section*{4. New Citations from Appendix-D-only entries}
+
+57 bib entries that were previously cited only in Appendix D catalogue (not in any main-text section) are now also cited in the relevant sections, with context drawn solely from each entry's bib title (no claims invented):
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+\textbf{Section} & \textbf{New citations (from appD-only entries)}\\\midrule
+s05\_hyperbolic & Bem1982, Bem1983, GurtinWilliams1966, Ignaczak1980\\
+s06\_lags & Antaki2000, Julius2017, Quintanilla2008, Quintanilla2008a, Quintanilla2009\\
+s07\_memory & Ezzat2016, Ezzat2016a, Ezzat2016b, Povstenko2011, Scott2007, Shaw2019, Xu2015, Youssef2010, Youssef2010a, Yu2020\\
+s09\_transient & Florea2021, Li2020, Sarkar2020, Sarkar2021\\
+s10\_surface & Aldandani2026a, Biswas2020b, Chirita2024, Gupta2024b, Kumar2008a, Singh2020e\\
+s11\_interfaces & Das2025, Yadav2022\\
+s12\_size & Das2024, Hosseini2017, Tiwari2014, Tiwari2015\\
+s13\_multiphysics & Abouelregal2019, Abouelregal2021, Barak2023a, Ezzat2016a, Gupta2023a, Gupta2023b, Youssef2011, Youssef2014\\
+s13b\_bg & Kumar2024b, Singh2020d\\
+s14b\_schemes & Sarkar2019a\\
+s15\_applications & Hosseini2017, Li2021, Ma2020, Zhang2021\\
+s15d\_scenarios & Anwar1994, Sachan2022\\
+s16\_synthesis & Scott2007\\
+\bottomrule
+\end{tabularx}
+
+Total: 51 unique bib entries newly cited in main text (57 citation instances across 14 sections). 65 appD-only entries remain uncited in main text.
+
+\section*{5. Unverified / Unable Items}
 
 \begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
 \textbf{Item} & \textbf{Status / Reason}\\\midrule
@@ -225,7 +250,7 @@ Complete LaTeX cross-reference check by compilation & Cannot compile; 117 \textb
 
 These items are recorded in {\tt changelog.md} as blocked items and will be revisited when the toolchain is available.
 
-\section*{5. Compile / Check List (10 lines)}
+\section*{6. Compile / Check List (10 lines)}
 
 \begin{enumerate}[nosep,leftmargin=1.6em]
 \item Place {\tt paper\_v2/} alongside a working TeX Live (or MiKTeX) installation with {\tt natbib}, {\tt hyperref}, {\tt cleveref}, {\tt tikz}, {\tt tcolorbox}, {\tt microtype}, {\tt enumitem}, {\tt booktabs}, {\tt tabularx}, {\tt longtable}, {\tt mathptmx}, {\tt helvet}, {\tt courier}.
@@ -242,6 +267,6 @@ These items are recorded in {\tt changelog.md} as blocked items and will be revi
 
 \section*{Changelog Reference}
 
-See {\tt changelog.md} for the full change log, including citation additions (36 entries added to uncited bib entries across 6 sections), blocked items, and prior commits.
+See {\tt changelog.md} for the full change log, including citation additions (51 unique appD-only entries newly cited in main text), blocked items, and prior commits.
 
 \end{document}

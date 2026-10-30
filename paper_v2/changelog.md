@@ -9,7 +9,7 @@
   is sequential.
 
 ### 2. Citations added from catalogue-only entries to main text
-36 reference entries that were previously only cited in Appendix D (catalogue)
+87 reference entries total (36 from the first batch + 51 from the second batch) that were previously only cited in Appendix D (catalogue)
 are now also cited in the main body, with context drawn from the bib entry title:
 
 | Section | Entries added | Context |
@@ -104,7 +104,40 @@ The following items require tools or network access not available in this enviro
 | Running figure/numerical scripts to reproduce numbers | Requires Python scientific stack (numpy, scipy, sympy, matplotlib) — not installed |
 | Page count verification (>= 100 pages) | Cannot build PDF |
 
-## Not yet done (recommended follow-up)
+
+
+### 9. elsarticle template version (main_els.tex)
+- Created `paper_v2/main_els.tex` — an elsarticle (Physics Reports) version of main.tex
+- Uses `\documentclass[review,12pt]{elsarticle}` with `\journal{Physics Reports}`
+- Front matter uses `\begin{frontmatter}` environment with title, author, abstract, keywords
+- Bibliography style: `elsarticle-num` (compatible with elsarticle-num-names)
+- Includes `lineno` package for line numbering
+- Same section structure and inputs as main.tex; no content changes
+- Old `main.tex` (article class) preserved unchanged
+
+### 10. Second batch of citations from catalogue-only entries (51 unique entries)
+57 citation instances across 14 sections, covering 51 unique bib entries that were
+previously cited only in Appendix D catalogue. Context drawn solely from bib entry titles;
+no claims invented beyond what the titles state:
+
+| Section | Entries added |
+|---------|--------------|
+| s05_hyperbolic | Bem1982, Bem1983, GurtinWilliams1966, Ignaczak1980 |
+| s06_lags | Antaki2000, Julius2017, Quintanilla2008, Quintanilla2008a, Quintanilla2009 |
+| s07_memory | Ezzat2016, Ezzat2016a, Ezzat2016b, Povstenko2011, Scott2007, Shaw2019, Xu2015, Youssef2010, Youssef2010a, Yu2020 |
+| s09_transient | Florea2021, Li2020, Sarkar2020, Sarkar2021 |
+| s10_surface | Aldandani2026a, Biswas2020b, Chirita2024, Gupta2024b, Kumar2008a, Singh2020e |
+| s11_interfaces | Das2025, Yadav2022 |
+| s12_size | Das2024, Hosseini2017, Tiwari2014, Tiwari2015 |
+| s13_multiphysics | Abouelregal2019, Abouelregal2021, Barak2023a, Ezzat2016a, Gupta2023a, Gupta2023b, Youssef2011, Youssef2014 |
+| s13b_bg | Kumar2024b, Singh2020d |
+| s14b_schemes | Sarkar2019a |
+| s15_applications | Hosseini2017, Li2021, Ma2020, Zhang2021 |
+| s15d_scenarios | Anwar1994, Sachan2022 |
+| s16_synthesis | Scott2007 |
+
+### 4. Could NOT be done (sandbox constraints)
+
 
 1. Build the PDF with `pdflatex main.tex && bibtex main && pdflatex main.tex && pdflatex main.tex` once TeX Live is available.
 2. Verify the 5 `refs_extra.bib` entries marked "from memory" against Crossref/DOI sources.
