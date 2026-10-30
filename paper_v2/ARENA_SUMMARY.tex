@@ -273,18 +273,21 @@ Atlas table built from Google Drive PDFs only, matched by page-1 DOI against {\t
 \toprule
 \textbf{Metric} & \textbf{Value} \\
 \midrule
-PDFs given (from Google Drive) & 26 \\
-Matched (page-1 DOI found in bib) & 8 \\
-Skipped / unmatched (DOI not in bib or no DOI on page 1) & 18 \\
+PDFs given (from Google Drive, batches 1+) & 41 \\
+Matched (page-1 DOI found in bib) & 22 \\
+Skipped / unmatched (DOI not in bib, no DOI on page 1, or PDF not in Drive) & 19 \\
 Atlas CSV & {\tt atlas/atlas.csv} \\
 Match report & {\tt atlas/MATCH\_REPORT.csv} \\
 LaTeX section & {\tt sections/s16b\_atlas.tex} (table, not yet \\input in main.tex) \\
 \midrule
 \end{tabularx}
 
-Matched bib keys: Huang2025, Yu2024, Srivastava2026, Abouelregal2019, Quintanilla2006, Ma2020, Gupta2023IJNMF, Yadav2023.
+Batch 1 matched bib keys: AboDahab2020, Aldandani2026, Aldandani2026a, Barak2023, Barak2023IJP, Barak2023JTS, Barak2023MMMS, Barak2023a, Biot1956, Chen2004, Das2024, Das2025, Das2025a, Das2026.
+Batch 1 unmatched: DellOroPata2016Viscoelasticity (PDF not found in Google Drive).
+All matched bib keys: AboDahab2020, Abouelregal2019, Aldandani2026, Aldandani2026a, Barak2023, Barak2023IJP, Barak2023JTS, Barak2023MMMS, Barak2023a, Biot1956, Chen2004, Das2024, Das2025, Das2025a, Das2026, Gupta2023IJNMF, Huang2025, Ma2020, Quintanilla2006, Srivastava2026, Yadav2023, Yu2024.
 
-Unmatched PDFs: B10-023, B10-022, B10-021, B10-020, B04-005, B10-001, 2026-10\_QP\_131181\_Set-B, B11-012, B11-010, B11-011, B11-009, B11-007, B11-006, B11-005, B11-004, B11-003, B11-002, B11-001.
+Old unmatched PDFs: B10-023, B10-022, B10-021, B10-020, B04-005, B10-001, 2026-10\_QP\_131181\_Set-B, B11-012, B11-010, B11-011, B11-009, B11-007, B11-006, B11-005, B11-004, B11-003, B11-002, B11-001.
+Batch 1 unmatched: 10.1007@s00245-016-9365-1.pdf (DellOroPata2016Viscoelasticity, PDF not in Drive).
 
 No PDF files committed to repo. Section s16b\_atlas.tex is created but not yet \\input in main.tex (pending structural edit).
 

@@ -1,27 +1,42 @@
 pdf_filename,extracted_doi,matched_bibkey,reason
-B10-031__s10483-025-3280-7 (1).pdf,10.1007/s10483-025-3280-7,Huang2025,DOI matched to bib key
-B10-029__s10409-023-23419-x.pdf,10.1007/s10409-023-23419-x,Yu2024,DOI matched to bib key
-B10-025__s00419-026-03092-7.pdf,10.1007/s00419-026-03092-7,Srivastava2026,DOI matched to bib key
-B11-008__s12648-019-01635-z.pdf,10.1007/s12648-019-01635-z,Abouelregal2019,DOI matched to bib key
-B13-031__j.ijheatmasstransfer.2005.10.016.pdf,10.1016/j.ijheatmasstransfer.2005.10.016,Quintanilla2006,DOI matched to bib key
-B03-015__10.1080@15397734.2020.1852088.pdf,10.1080/15397734.2020.1852088,Ma2020,DOI matched to bib key
-B01-011__P11_2023_HFF_Reflection-Transmission-Plane-Waves-Interface-Ideal-Fluid.pdf,10.1108/HFF-04-2022-0259,Gupta2023IJNMF,DOI matched to bib key
+1-s2.0-S221137972031737X-main.pdf,10.1016/j.rinp.2020.103270,AboDahab2020,DOI matched to bib key
+1.1722351.pdf,10.1063/1.1722351,Biot1956,DOI matched to bib key
+10.1007@s00245-016-9365-1.pdf,10.1007/s00245-016-9365-1,unmatched,PDF not found in Google Drive
+2026-10_QP_131181_Set-B.pdf,-,unmatched,"Examination paper, not a research paper"
 B01-010__P10_2023_HFF_Reflection-Free-Surface-Orthotropic-Piezo-hygro-thermo-elastic-Medium.pdf,10.1108/HFF-04-2023-0208,Yadav2023,DOI matched to bib key
-B10-023__s00419-024-02719-x.pdf,10.1007/s00419-024-02719-x,unmatched,DOI not found in any bib file
-B10-022__rsta.2021.0373.pdf,10.1098/rsta.2021.0373,unmatched,DOI not found in any bib file
-B10-021__Photothermal.pdf,10.1080/17455030.2019.1705426,unmatched,DOI not found in any bib file
-B10-020__Nonlocal photoacoustic waves...pdf,-,unmatched,No DOI printed on page 1
+B01-011__P11_2023_HFF_Reflection-Transmission-Plane-Waves-Interface-Ideal-Fluid.pdf,10.1108/HFF-04-2022-0259,Gupta2023IJNMF,DOI matched to bib key
+B03-015__10.1080@15397734.2020.1852088.pdf,10.1080/15397734.2020.1852088,Ma2020,DOI matched to bib key
 B04-005__jmech.2018.10.pdf,10.1017/jmech.2018.10,unmatched,DOI not found in any bib file
 B10-001__hosseini2019.pdf,10.1016/j.apm.2018.09.024,unmatched,DOI not found in any bib file
-2026-10_QP_131181_Set-B.pdf,-,unmatched,"Examination paper, not a research paper"
-B11-012__sharma2011.pdf,-,unmatched,No DOI match found
+B10-020__Nonlocal photoacoustic waves...pdf,-,unmatched,No DOI printed on page 1
+B10-021__Photothermal.pdf,10.1080/17455030.2019.1705426,unmatched,DOI not found in any bib file
+B10-022__rsta.2021.0373.pdf,10.1098/rsta.2021.0373,unmatched,DOI not found in any bib file
+B10-023__s00419-024-02719-x.pdf,10.1007/s00419-024-02719-x,unmatched,DOI not found in any bib file
+B10-025__s00419-026-03092-7.pdf,10.1007/s00419-026-03092-7,Srivastava2026,DOI matched to bib key
+B10-029__s10409-023-23419-x.pdf,10.1007/s10409-023-23419-x,Yu2024,DOI matched to bib key
+B10-031__s10483-025-3280-7 (1).pdf,10.1007/s10483-025-3280-7,Huang2025,DOI matched to bib key
+B11-001__s10773-022-05163-1.pdf,10.1007/s10773-022-05163-1,unmatched,DOI not in bib
+B11-002__s10999-026-09873-w.pdf,10.1007/s10999-026-09873-w,unmatched,DOI not in bib
+B11-003__s11043-017-9340-5.pdf,10.1007/s11043-017-9340-5,unmatched,DOI not in bib
+B11-004__s12095-021-00501-2.pdf,10.1007/s12095-021-00501-2,unmatched,DOI not in bib
+B11-005__s12095-022-00591-6.pdf,10.1007/s12095-022-00591-6,unmatched,DOI not in bib
+B11-006__s12095-025-00815-5.pdf,10.1007/s12095-025-00815-5,unmatched,DOI not in bib
+B11-007__s12190-022-01811-1.pdf,10.1007/s12190-022-01811-1,unmatched,DOI not in bib
+B11-008__s12648-019-01635-z.pdf,10.1007/s12648-019-01635-z,Abouelregal2019,DOI matched to bib key
+B11-009__s13661-025-01992-1.pdf,10.1186/s13661-025-01992-1,unmatched,DOI not in bib
 B11-010__s40314-023-02298-7.pdf,-,unmatched,Not thermoelasticity (quantum codes)
 B11-011__Seema-2025_Surface-Acoustic-Waves...pdf,10.1007/s40435-024-01543-z,unmatched,DOI not in bib
-B11-009__s13661-025-01992-1.pdf,10.1186/s13661-025-01992-1,unmatched,DOI not in bib
-B11-007__s12190-022-01811-1.pdf,10.1007/s12190-022-01811-1,unmatched,DOI not in bib
-B11-006__s12095-025-00815-5.pdf,10.1007/s12095-025-00815-5,unmatched,DOI not in bib
-B11-005__s12095-022-00591-6.pdf,10.1007/s12095-022-00591-6,unmatched,DOI not in bib
-B11-004__s12095-021-00501-2.pdf,10.1007/s12095-021-00501-2,unmatched,DOI not in bib
-B11-003__s11043-017-9340-5.pdf,10.1007/s11043-017-9340-5,unmatched,DOI not in bib
-B11-002__s10999-026-09873-w.pdf,10.1007/s10999-026-09873-w,unmatched,DOI not in bib
-B11-001__s10773-022-05163-1.pdf,10.1007/s10773-022-05163-1,unmatched,DOI not in bib
+B11-012__sharma2011.pdf,-,unmatched,No DOI match found
+B13-031__j.ijheatmasstransfer.2005.10.016.pdf,10.1016/j.ijheatmasstransfer.2005.10.016,Quintanilla2006,DOI matched to bib key
+P05_2023_SciRep_Behavior-Higher-order-MDD-Energy-Ratios-Interface-Thermoelastic.pdf,10.1038/s41598-023-44339-5,Barak2023,DOI matched to bib key
+P07_2023_IJP_Energy-Analysis-Boundary-Interface-Elastic-Piezothermoelastic-Half-spaces.pdf,10.1007/s12648-022-02568-w,Barak2023IJP,DOI matched to bib key
+P12_2023_MMMS_Effect-Memory-Stiffness-Energy-Ratios-Interface-Distinct.pdf,10.1108/MMMS-10-2022-0209,Barak2023MMMS,DOI matched to bib key
+P14_2024_JTS_Energy-Transfer-Interface-Monoclinic-Piezothermoelastic-Thermoelastic-Half.pdf,10.1080/01495739.2023.2253879,Barak2023JTS,DOI matched to bib key
+P17_2024_MAMS_Memory-dependent-Fractional-Order-Analysis-Initially-Stressed-Piezo-thermoelastic.pdf,10.1080/15376494.2023.2211065,Barak2023a,DOI matched to bib key
+P24_2024_PhysScr_Size-dependent-Effect-Interaction-Surface-Waves-Micropolar-Thermoelastic.pdf,10.1088/1402-4896/ad4829,Das2024,DOI matched to bib key
+P32_2025_EJMSOL_Fractional-Memory-Effects-Wave-Reflection-Pre-stressed-Microstructured.pdf,10.1016/j.euromechsol.2024.105565,Das2025,DOI matched to bib key
+P40_2026_HFF_Dispersion-Damping-Characteristics-Rayleigh-type-Waves-KG-Nonlocal.pdf,10.1108/HFF-11-2025-0930,Aldandani2026,DOI matched to bib key
+P46_2026_MAMS_Hydro-thermo-electromechanical-Response-Size-dependent-Porous-Piezoelectric-Medium-Memory-dependent.pdf,10.1080/15376494.2025.2516213,Das2025a,DOI matched to bib key
+P48_2026_IJMMD_Klein-Gordon-Nonlocal-Dynamics-Porous-Piezo-thermoelastic-Medium.pdf,10.1007/s10999-026-09892-7,Das2026,DOI matched to bib key
+P50_2026_SciRep_Rayleigh-Surface-Wave-Dynamics-Porous-Piezo-thermoelectric-Smart.pdf,10.1038/s41598-026-59340-x,Aldandani2026a,DOI matched to bib key
+j.ijengsci.2004.04.002.pdf,10.1016/j.ijengsci.2004.04.002,Chen2004,DOI matched to bib key
