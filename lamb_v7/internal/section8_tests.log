@@ -1,0 +1,122 @@
+SECTION 8 NUMERICAL VERIFICATION (internal)
+
+[1] elastic limit: the plate system against common/rayleigh_lamb.py
+  1    c_L (m/s)                                        +6197.8243 vs +6197.82 rel=6.93e-07 tol=1e-05  PASS
+  1    c_T (m/s)                                        +3121.95271 vs +3121.95 rel=8.67e-07 tol=1e-05  PASS
+  1    c_Rayleigh (m/s)                                 +2909.73139 vs +2909.7 rel=1.08e-05 tol=1e-03  PASS
+  1    fd=1000 symm branch 1: c (m/s)                   +5308.58871-4.23841557e-15j vs +5308.58871 rel=1.71e-16 tol=1e-05  PASS
+  1    fd=1000 anti branch 1: c (m/s)                   +2326.64311+0j vs +2326.64311 rel=3.91e-16 tol=1e-05  PASS
+  1    fd=3000 symm branch 1: c (m/s)                   +3288.05925-2.04567291e-13j vs +3288.05925 rel=6.22e-17 tol=1e-05  PASS
+  1    fd=3000 symm branch 2: c (m/s)                   +7241.94089-1.02390921e-13j vs +7241.94089 rel=2.52e-16 tol=1e-05  PASS
+  1    fd=3000 symm branch 3: c (m/s)                   +49556.8327+7.44204793e-12j vs +49556.8327 rel=2.60e-14 tol=1e-05  PASS
+  1    fd=3000 anti branch 1: c (m/s)                   +2801.76663+0j vs +2801.76663 rel=3.25e-16 tol=1e-05  PASS
+  1    fd=3000 anti branch 2: c (m/s)                   +5980.52102+1.99100716e-14j vs +5980.52102 rel=1.52e-16 tol=1e-05  PASS
+  1    fd=10000 symm branch 1: c (m/s)                  +2910.34516+0j vs +2910.34516 rel=3.13e-16 tol=1e-05  PASS
+  1    fd=10000 symm branch 2: c (m/s)                  +3463.37528-1.18691646e-14j vs +3463.37528 rel=2.63e-16 tol=1e-05  PASS
+  1    fd=10000 symm branch 3: c (m/s)                  +4918.32071-5.13232018e-15j vs +4918.32071 rel=1.04e-18 tol=1e-05  PASS
+  1    fd=10000 symm branch 4: c (m/s)                  +6360.90731-2.26342681e-14j vs +6360.90731 rel=1.43e-16 tol=1e-05  PASS
+  1    fd=10000 anti branch 1: c (m/s)                  +2909.12987+0j vs +2909.12987 rel=3.13e-16 tol=1e-05  PASS
+  1    fd=10000 anti branch 2: c (m/s)                  +3207.23142+4.20165831e-14j vs +3207.23142 rel=1.42e-16 tol=1e-05  PASS
+  1    fd=10000 anti branch 3: c (m/s)                  +3972.79174+6.00261022e-15j vs +3972.79174 rel=1.51e-18 tol=1e-05  PASS
+  1    fd=10000 anti branch 4: c (m/s)                  +5913.88548+1.56981358e-13j vs +5913.88548 rel=1.41e-14 tol=1e-05  PASS
+  1    thick plate fd=20000 S0 against c_Rayleigh       +2909.73164+0j vs +2909.73139 rel=8.34e-08 tol=1e-05  PASS
+  1    thick plate fd=20000 A0 against c_Rayleigh       +2909.73164+0j vs +2909.73139 rel=8.34e-08 tol=1e-05  PASS
+
+[2] couplings one at a time against the closed limits of Calculation H
+  2a   shear speed, stiffened (m/s)                     +2828.64773 vs +2828.64773 rel=1.61e-16 tol=1e-13  PASS
+  2a   K^2 = e15^2/(c44 eps11)                          +0.0718652978 vs +0.0718652978 rel=0.00e+00 tol=1e-13  PASS
+  2a   |det of the (u_z,phi) block| at the stiffened speed +2.79323345e-37 vs +0 rel=2.79e-37 tol=1e-12  PASS
+       (K^2 = 7.1865e-02, stiffening 3.5309 % of the speed)
+       (Delta_E = 2.1409e-07, longitudinal speed 6076.10 m/s)
+  2b   Q^-1 at w tau = 0.1                              +2.11968849e-08 vs +2.11968849e-08 rel=2.10e-11 tol=2e-03  PASS
+  2b   Q^-1 at w tau = 1                                +1.07044263e-07 vs +1.07044268e-07 rel=5.35e-08 tol=2e-03  PASS
+  2b   Q^-1 at w tau = 10                               +2.11968782e-08 vs +2.11968826e-08 rel=2.10e-07 tol=2e-03  PASS
+  2b   peak of Q^-1 (at w tau = 1)                      +1.07044268e-07 vs +1.07044268e-07 rel=0.00e+00 tol=1e-09  PASS
+  2c   complex k at omega/omega_c = 0.01 (Re)           +155090.328 vs +155090.328 rel=1.88e-16 tol=1e-09  PASS
+  2c   complex k at omega/omega_c = 0.01 (Im)           +55.7220832 vs +55.7220832 rel=1.28e-16 tol=1e-09  PASS
+  2c   complex k at omega/omega_c = 1 (Re)              +15230872.5 vs +15230872.5 rel=1.22e-16 tol=1e-09  PASS
+  2c   complex k at omega/omega_c = 1 (Im)              +264071.742 vs +264071.742 rel=6.61e-16 tol=1e-09  PASS
+  2c   complex k at omega/omega_c = 100 (Re)            +1.49802008e+09 vs +1.49802008e+09 rel=1.59e-16 tol=1e-09  PASS
+  2c   complex k at omega/omega_c = 100 (Im)            +502141.476 vs +502141.476 rel=3.48e-16 tol=1e-09  PASS
+  2c   loss peak, weak coupling (K^2 -> 0), at omega/omega_c +1 vs +1 rel=0.00e+00 tol=5e-03  PASS
+       (omega_c = 4.2374e+10 1/s; at the physical K^2 = 7.187e-02 the peak sits at omega/omega_c = 0.9661, an O(K^2) shift)
+  2c   loss peak, numeric against the closed form       +0.966050879 vs +0.966050879 rel=0.00e+00 tol=2e-03  PASS
+       phason operator K1 eta^2 - K2 k^2 + rho_p w^2 + i gamma w, at eta = k:
+  2d   M33 at gamma = 0                                 +1.00000474e+20+0j vs +1.00000474e+20+0j rel=0.00e+00 tol=1e-12  PASS
+  2d   M33 at gamma = 1e+08                             +1.00000474e+20+6.28318531e+14j vs +1.00000474e+20+6.28318531e+14j rel=0.00e+00 tol=1e-12  PASS
+  2d   M33 at gamma = 1e+12                             +1.00000474e+20+6.28318531e+18j vs +1.00000474e+20+6.28318531e+18j rel=0.00e+00 tol=1e-12  PASS
+  2d   M33 at gamma = 1e+20                             +1.00000474e+20+6.28318531e+26j vs +1.00000474e+20+6.28318531e+26j rel=0.00e+00 tol=1e-12  PASS
+  2d   frozen phason: det M/(i gamma w) against the R = 0 minor +4.73191706e-05 vs +0 rel=4.73e-05 tol=1e-04  PASS
+  2d   M33 against the closed form, gamma = 1e+06       +1.00000474e+20+6.28318531e+12j vs +1.00000474e+20+6.28318531e+12j rel=0.00e+00 tol=1e-12  PASS
+  2d   M33 against the closed form, gamma = 1e+08       +1.00000474e+20+6.28318531e+14j vs +1.00000474e+20+6.28318531e+14j rel=0.00e+00 tol=1e-12  PASS
+  2d   M33 against the closed form, gamma = 1e+10       +1.00000474e+20+6.28318531e+16j vs +1.00000474e+20+6.28318531e+16j rel=0.00e+00 tol=1e-12  PASS
+  2e   |det of the (u_z,phi,psi) block| at the coupled speed +7.92712805e-53 vs +0 rel=7.93e-53 tol=1e-10  PASS
+  2e   alpha -> 0: stiffening is the sum of the two separate ones +7802.87506 vs +7802.87506 rel=0.00e+00 tol=1e-13  PASS
+  2e   kappa^2 = alpha^2/(eps mu)                       +0.00808920677 vs +0.00808920677 rel=0.00e+00 tol=1e-13  PASS
+       (kappa^2 = 8.0892e-03; the coupled stiffness is positive only for kappa^2 < 1)
+
+[3] l_g and l_nl -> 0 continuity, and the direction of the shift
+       local longitudinal speed 6076.101882 m/s, k = 10000 1/m
+         l_g= 0.0e+00 l_nl= 0.0e+00  (l_g k)^2= 0.00e+00 (l_nl k)^2= 0.00e+00  c= 6076.10188233  shift/c=+0.000000e+00
+         l_g= 0.0e+00 l_nl= 1.0e-08  (l_g k)^2= 0.00e+00 (l_nl k)^2= 1.00e-08  c= 6076.10185195  shift/c=-5.000000e-09
+         l_g= 0.0e+00 l_nl= 1.0e-07  (l_g k)^2= 0.00e+00 (l_nl k)^2= 1.00e-06  c= 6076.09884429  shift/c=-4.999996e-07
+         l_g= 0.0e+00 l_nl= 1.0e-06  (l_g k)^2= 0.00e+00 (l_nl k)^2= 1.00e-04  c= 6075.79810002  shift/c=-4.999625e-05
+         l_g= 1.0e-08 l_nl= 0.0e+00  (l_g k)^2= 1.00e-08 (l_nl k)^2= 0.00e+00  c= 6076.10191271  shift/c=+5.000000e-09
+         l_g= 1.0e-08 l_nl= 1.0e-08  (l_g k)^2= 1.00e-08 (l_nl k)^2= 1.00e-08  c= 6076.10188233  shift/c=+0.000000e+00
+         l_g= 1.0e-08 l_nl= 1.0e-07  (l_g k)^2= 1.00e-08 (l_nl k)^2= 1.00e-06  c= 6076.09887467  shift/c=-4.949996e-07
+         l_g= 1.0e-08 l_nl= 1.0e-06  (l_g k)^2= 1.00e-08 (l_nl k)^2= 1.00e-04  c= 6075.79813040  shift/c=-4.999125e-05
+         l_g= 1.0e-07 l_nl= 0.0e+00  (l_g k)^2= 1.00e-06 (l_nl k)^2= 0.00e+00  c= 6076.10492038  shift/c=+4.999999e-07
+         l_g= 1.0e-07 l_nl= 1.0e-08  (l_g k)^2= 1.00e-06 (l_nl k)^2= 1.00e-08  c= 6076.10489000  shift/c=+4.949999e-07
+         l_g= 1.0e-07 l_nl= 1.0e-07  (l_g k)^2= 1.00e-06 (l_nl k)^2= 1.00e-06  c= 6076.10188233  shift/c=+0.000000e+00
+         l_g= 1.0e-07 l_nl= 1.0e-06  (l_g k)^2= 1.00e-06 (l_nl k)^2= 1.00e-04  c= 6075.80113792  shift/c=-4.949628e-05
+         l_g= 1.0e-06 l_nl= 0.0e+00  (l_g k)^2= 1.00e-04 (l_nl k)^2= 0.00e+00  c= 6076.40567983  shift/c=+4.999875e-05
+         l_g= 1.0e-06 l_nl= 1.0e-08  (l_g k)^2= 1.00e-04 (l_nl k)^2= 1.00e-08  c= 6076.40564945  shift/c=+4.999375e-05
+         l_g= 1.0e-06 l_nl= 1.0e-07  (l_g k)^2= 1.00e-04 (l_nl k)^2= 1.00e-06  c= 6076.40264163  shift/c=+4.949873e-05
+/home/user/Lamb/internal/section8_tests.py:42: ComplexWarning: Casting complex values to real discards the imaginary part
+  kk, ww = mp.mpf(repr(float(k))), mp.mpf(repr(float(w)))
+/home/user/Lamb/internal/section8_tests.py:434: ComplexWarning: Casting complex values to real discards the imaginary part
+  kk, ww = mp.mpf(repr(float(k))), mp.mpf(repr(float(w)))
+         l_g= 1.0e-06 l_nl= 1.0e-06  (l_g k)^2= 1.00e-04 (l_nl k)^2= 1.00e-04  c= 6076.10188233  shift/c=+0.000000e+00
+  3    l_g=1e-08 only: (c-c_local)/c_local against 0.5 (l_g k)^2 +4.99999995e-09 vs +5e-09 rel=1.07e-08 tol=1e-04  PASS
+  3    l_g=1e-07 only: (c-c_local)/c_local against 0.5 (l_g k)^2 +4.99999875e-07 vs +5e-07 rel=2.50e-07 tol=1e-04  PASS
+  3    l_nl=1e-08 only: (c-c_local)/c_local against -0.5 (l_nl k)^2 -4.99999995e-09 vs -5e-09 rel=1.07e-08 tol=1e-04  PASS
+  3    l_nl=1e-07 only: (c-c_local)/c_local against -0.5 (l_nl k)^2 -4.99999625e-07 vs -5e-07 rel=7.50e-07 tol=1e-04  PASS
+  3    roots, l_nl=1e-09 only, against the local roots  +1.35119421e-12 vs +0 rel=1.35e-12 tol=1e-02  PASS
+         l_nl=1e-09: 0 local roots unmatched (|eta| = [])
+  3    roots, l_nl=1e-08 only, against the local roots  +1.35119421e-10 vs +0 rel=1.35e-10 tol=1e-02  PASS
+         l_nl=1e-08: 0 local roots unmatched (|eta| = [])
+  3    roots, l_nl=1e-07 only, against the local roots  +1.35119426e-08 vs +0 rel=1.35e-08 tol=1e-02  PASS
+         l_nl=1e-07: 0 local roots unmatched (|eta| = [])
+         l_g=1e-08: the four extra roots sit at |eta| = ['9.99539e+7', '9.99539e+7', '1.0e+8', '1.0e+8'], 1/l_g = 1.000e+08
+         l_g=1e-07: the four extra roots sit at |eta| = ['9.98941e+6', '9.98941e+6', '1.0e+7', '1.0e+7'], 1/l_g = 1.000e+07
+  3    det M: the l_g effect falls by 100 when l_g falls by 10 (l_g=1e-07) +99.9950712 vs +100 rel=4.93e-05 tol=5e-01  PASS
+         l_g=1e-07: relative change of det M at |eta| <= 1e5 is 0.0001991
+  3    det M: the l_g effect falls by 100 when l_g falls by 10 (l_g=1e-08) +99.9999507 vs +100 rel=4.93e-07 tol=5e-01  PASS
+         l_g=1e-08: relative change of det M at |eta| <= 1e5 is 1.992e-6
+       (the extra roots are the gradient boundary layers; they run off to infinity as l_g -> 0)
+
+[4] root count against face conditions; zero of det B by SVD and by det
+  4    degree of det M and number of roots (l_g = 3e-07) +14 vs +14 rel=0.00e+00 tol=1e-12  PASS
+  4    roots found by polyroots (l_g = 3e-07)           +14 vs +14 rel=0.00e+00 tol=1e-12  PASS
+  4    degree of det M and number of roots (l_g = 0)    +10 vs +10 rel=0.00e+00 tol=1e-12  PASS
+  4    roots found by polyroots (l_g = 0)               +10 vs +10 rel=0.00e+00 tol=1e-12  PASS
+       shape of B: (14, 14)  (rows = 7 conditions x 2 faces, columns = roots)
+  4    rows of B against columns of B                   +14 vs +14 rel=0.00e+00 tol=1e-12  PASS
+       coarse scan 10500 to 11500: dip near k = 10892.67 1/m, sigma_min 1.341e-06 against a typical 1.444e-04 (2.0 decades)
+  4    k of the zero of det B: singular-value route against determinant route +10999.2031 vs +11001.0684 rel=1.70e-04 tol=3e-04  PASS
+       final grid spacing 1.000 1/m; the two routes sit 1.865 1/m apart, i.e. 1.87 of one spacing
+       at the mode: sigma_min 1.173e-06 against the off-mode level 1.444e-04 (2.1 decades);  |det| 1.205e-17 against 7.471e-17 (0.8 decades on the fine grid)
+  4    the singular value dips by at least one decade at the mode (1 = yes) +1 vs +1 rel=0.00e+00 tol=1e-12  PASS
+  4    elastic plate: zero by the singular-value route (m/s) +3288.05925 vs +3288.05925 rel=0.00e+00 tol=1e-05  PASS
+  4    elastic plate: zero by the determinant route (m/s) +3288.05925 vs +3288.05925 rel=0.00e+00 tol=1e-05  PASS
+
+SUMMARY
+  test 1: worst residual 8.665e-02 x tolerance
+  test 2a: worst residual 1.608e-03 x tolerance
+  test 2b: worst residual 1.049e-04 x tolerance
+  test 2c: worst residual 6.613e-07 x tolerance
+  test 2d: worst residual 4.732e-01 x tolerance
+  test 2e: worst residual 7.927e-43 x tolerance
+  test 3: worst residual 7.501e-03 x tolerance
+  test 4: worst residual 6.217e-01 x tolerance
+  checks: 64   failures: 0

@@ -39,9 +39,9 @@ asked to check. The master carries the working; the flag-off version does not.
 \toprule
 paper & unknowns & field eqs & working blocks & matrix & roots & rows of $\mathbf B$\\
 \midrule
-A, Sumit (ZnO piezoelectric semiconductor) & 5 & 5 & 16 & $5\times5$ & 14 (10 if $l_g=0$) & 14 (10)\\
-B, Neha (1D hexagonal piezo quasicrystal) & 5 & 5 & 11 & $5\times5$ & 14 (10) & 14 (10)\\
-C, Anu (BaTiO$_3$/CoFe$_2$O$_4$ MEE) & 5 & 5 & 12 & $5\times5$ & 14 (10) & 14 (10)\\
+A, Sumit (ZnO piezoelectric semiconductor) & 5 & 5 & 42 & $5\times5$ & 14 (10 if $l_g=0$) & 14 (10)\\
+B, Neha (1D hexagonal piezo quasicrystal) & 5 & 5 & 36 & $5\times5$ & 14 (10) & 14 (10)\\
+C, Anu (BaTiO$_3$/CoFe$_2$O$_4$ MEE) & 5 & 5 & 36 & $5\times5$ & 14 (10) & 14 (10)\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -57,21 +57,32 @@ length sits on the inertia and does not raise the order.
 \toprule
 paper & statement in the master & how it was checked\\
 \midrule
-A & the polynomial is even, and the families split, only if $p_3=0$; with $p_3\ne0$ the roots do not pair
-and the determinant is taken over all fourteen roots & determinant evaluated at $\eta$ and at $-\eta$ for
-four values of $\eta$ and three wavenumbers; relative difference $2.0\times10^{-4}$ with $p_3\ne0$,
-$1.7\times10^{-12}$ (the noise floor) with $p_3=0$, and linear in $p_3$ between\\
-B & even for every setting; two seven-row family matrices may be built and must agree & same test,
-difference $0$ at 90 digits\\
-C & even for every setting; the magnetoelectric entries are even in $\eta$ in both Gauss rows & same test,
-difference $0$ at 90 digits\\
+A & the polynomial is even, and the families split, if and only if $\beta_{\rm th}=0$, $\Pi_{\rm th}=0$
+and $E_g=0$ together; with any one of them present the roots do not pair and the determinant is taken over
+all fourteen roots & (i) exact parity of every entry plus a row-and-column sign matching, which is
+independent of every constant; (ii) the determinant expanded over the 120 permutations in exact rational
+arithmetic. Both agree on all sixteen combinations of $p_3,\beta_{\rm th},\Pi_{\rm th},E_g$; the two
+entries that refuse the matching are $M_{45}$ and $M_{54}$\\
+B & even for every setting; two seven-row family matrices may be built and must agree & both tests on all
+32 combinations of $R,e,\beta^{w},\beta_{\rm th},p_3$; no entry fails the sign matching\\
+C & even for every setting; the magnetoelectric entries are even in $\eta$ in both Gauss rows & both tests
+on all 32 combinations of $e,h,\alpha,p_3,m_3$; no entry fails the sign matching\\
 \bottomrule
 \end{tabular}
 \end{center}
 
-The hand sign argument and the numerical test agree. The handoff note that put the parity break on the
-Soret and Peltier coefficients is corrected: the break comes from the pyroelectric constant acting with the
-carrier field, and switching $\beta_{\rm th}$ and $\Pi_{\rm th}$ off does not restore the pairing.
+The hand sign argument and the exact test agree. An earlier statement of mine, that the break came from the
+pyroelectric constant, was wrong and is withdrawn: $p_3$ enters through two odd entries, $M_{35}$ and
+$M_{53}$, both of which fit the matching, and switching it off does not restore the pairing. The break
+comes from the thermodiffusion term in the carrier equation and from the Peltier and recombination terms in
+the heat equation, all three of which are even in $\eta$ where the matching needs them odd.
+
+The first test I ran on this question was worthless and it is worth saying why, because the same trap is
+open in the other two papers. It evaluated $\det M(\eta)$ and $\det M(-\eta)$ in floating point and
+compared them. The entries of these matrices span about forty decades, so the odd part of the determinant
+disappears in cancellation and the answer follows the size of the coupling constants --- which is nonsense,
+because the parity of a polynomial cannot depend on how large its coefficients are. Any future check of
+this kind has to be either structural or exact.
 
 \section*{3. Sumit's file: what was confirmed and what was corrected}
 
@@ -120,16 +131,30 @@ number came from a page I opened; where it did not, the text says so.
 \toprule
 test & result\\
 \midrule
-$\det M(\eta)=\det M(-\eta)$, A, $p_3=0$ & relative difference $1.7\times10^{-12}$, at the noise floor of a
-matrix whose entries span $10^{-19}$ to $10^{8}$\\
-same, A, $p_3=0.9$ & $2.0\times10^{-4}$; linear in $p_3$ between $10^{-6}$ and $0.9$, so it is a genuine
-breaking term and not rounding\\
-same, B and C, every setting & $0$ at 90 digits\\
-degree of $\det M$ & 14 with $l_g\ne0$, 10 with $l_g=0$, by the row count; a numerical confirmation was
-attempted and is not trustworthy at this conditioning, so the paper argument stands alone\\
+parity, A & exact: the determinant is even if and only if $\beta_{\rm th}=\Pi_{\rm th}=E_g=0$; 16
+combinations tested, both methods agreeing; $p_3$ makes no difference either way\\
+parity, B and C & exact: even in all 32 combinations of the couplings in each paper\\
+degree of $\det M$ & 14 with $l_g\ne0$, 10 with $l_g=0$, by the row count and by an exact determinant at
+140 digits; the $\eta^{14}$ coefficient matches $-l_g^4c_{44}c_{33}\epsilon_{33}D_nk_{\rm th}$\\
 elastic limit of A & the $2\times2$ block gives $\eta^2=k^2-\omega^2/c_L^2$ and $\eta^2=k^2-\omega^2/c_T^2$,
-with the face rows collapsing to the classical Rayleigh--Lamb pair; the reduction of the four face
-conditions to the two secular equations is left to the scholar as a self-test\\
+and the factorisation is an identity exactly when $c_{11}=c_{13}+2c_{44}$, which is the isotropic relation\\
+Rayleigh--Lamb, both families & at $fd=1000$, $3000$ and $10000$, every branch: largest relative
+difference $2.6\times10^{-14}$ against \texttt{common/rayleigh\_lamb.py}; thick-plate limit $8.3\times10^{-8}$
+against the exact Rayleigh speed\\
+Zener damping & $Q^{-1}$ against $\Delta_E\omega\tau/(1+\omega^2\tau^2)$ at $\omega\tau=0.1,1,10$:
+$2.1\times10^{-11}$, $5.4\times10^{-8}$, $2.1\times10^{-7}$\\
+Hutson--White & complex $k$ against the closed form at $\omega/\omega_c=0.01,1,100$: agreement to
+$10^{-16}$; the loss peak sits at $\omega/\omega_c=1.0000$ in the weak-coupling limit\\
+$l_g$ and $l_{\rm nl}\to0$ & the shift of the speed against $\pm\frac12(lk)^2$: residuals below
+$10^{-6}$ relative; the effect on $\det M$ falls by 99.99995 when $l_g$ falls by 10, so it is quadratic;
+the four extra roots run off like $1/l_g$\\
+roots against conditions & 14 roots with $l_g\ne0$, 10 with $l_g=0$; $\mathbf B$ is $14\times14$; the
+singular-value route and the determinant route put a mode at $10999.2$ and $11001.1$ m$^{-1}$, two grid
+spacings apart on a grid of spacing 1\\
+magnetoelectric limit, C & stiffening against $C_{44}+e_{15}^2/\epsilon_{11}+h_{15}^2/\mu_{11}$ at
+$\alpha=0$: exact; coupling factor $\kappa^2=\alpha^2/(\epsilon\mu)$\\
+frozen phason, B & $\det M/(\ii\gamma\omega)$ against the $R=0$ minor at $\gamma=10^{20}$: worst
+relative difference $4.7\times10^{-5}$\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -137,11 +162,13 @@ conditions to the two secular equations is left to the scholar as a self-test\\
 \section*{6. Open items}
 
 \begin{enumerate}\setlength{\itemsep}{2pt}
-\item \textbf{No LaTeX engine in this environment.} Neither setting of any master has been compiled, so the
-page counts of the two variants, the ``both settings compile'' requirement, and the ``no undefined
-citation'' check are open. The files are written for plain \texttt{pdflatex} with the packages listed in the
-prompt, and the worked-block definition is the one given there, but that is a statement about the source,
-not evidence of a build.
+\item \textbf{No LaTeX engine in this environment.} I cannot compile, so I cannot count pages. My own
+estimate from the source is about 24 pages for Sumit and 19 for Neha and Anu with the working shown, which
+is short of the 30 asked for; if the compiled count is short I will add more worked material, and the two
+places with the most room are the amplitude ratios of Calculation~E and the source-equation section. The
+long display equations have been split (nothing above 90 characters in any displayed line) and the
+multi-column \texttt{align} blocks converted to single column, which is where the overfull boxes reported
+in the last review came from.
 \item Lim, Zhang and Reddy Eqs.~(18), (19) and Yang and Zhou Sections 2--3 remain first-week reading; the
 masters say so in the sentence where the numbers appear.
 \item Paper B's novelty still waits on Zhang et al.\ (2026), \doi{10.1007/s10338-026-00755-4}.

@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{#1}}}
+\title{\vspace{-1.2cm}\textbf{Task 0 report --- Paper C (Anu)}\\[2pt]
+\large Lamb waves in a magneto-electro-elastic (BaTiO$_3$/CoFe$_2$O$_4$) plate with MGT heat and
+NSGT size effect:\\literature sweep, re-anchored problem, and Q1 assessment}
+\author{Independent cross-check engineer, for Dr.\ Vipin}
+\date{30 October 2026}
+\begin{document}
+\maketitle
+\vspace{-0.5cm}
+
+\section*{1. What this report is}
+Condensed from \texttt{paper/literature\_table.md}, \texttt{paper/problem\_v2.md} and
+\texttt{paper/q1\_scorecard.md} in \texttt{mee\_anu/}. No new search was run for this report.
+
+\section*{2. What the sweep found}
+Fourteen papers were examined. Each ingredient of the plan is individually mature:
+
+\begin{itemize}\small
+\item MEE plate waves: Chen, Pan \& Chen, \emph{Int.\ J.\ Solids Struct.} \textbf{44} (2007)
+  1073--1085, \doi{10.1016/j.ijsolstr.2006.06.003}; and, with an imperfect interface, Zhang, Shen \&
+  Yu, \emph{J.\ Intell.\ Mater.\ Syst.\ Struct.} \textbf{36} (2025) 312--326,
+  \doi{10.1177/1045389x241306779}. Nonlocal MEE plates: \emph{J.\ Sound Vib.} \textbf{400} (2017)
+  550--563, \doi{10.1016/j.jsv.2017.04.001}.
+\item NSGT for MEE plates: \emph{Nanomaterials} \textbf{11} (2021) 87, \doi{10.3390/nano11010087}
+  (buckling and vibration, not waves); \emph{Compos.\ Struct.} \textbf{296} (2022) 115878,
+  \doi{10.1016/j.compstruct.2022.115878} (thermal, FG, porous).
+\item Complex/evanescent Lamb spectra in piezo--piezomagnetic plates: \emph{Materials} \textbf{11}
+  (2018) 1186, \doi{10.3390/ma11071186}; FG piezo--piezomagnetic Lamb:
+  \emph{Acta Mech.} \textbf{223} (2012) 1081--1091, \doi{10.1007/s00707-012-0612-5}.
+\item MGT in plates: \emph{Thin-Walled Struct.} \textbf{180} (2022) 109793,
+  \doi{10.1016/j.tws.2022.109793}. ME coefficient vs composition/orientation (the static optimum):
+  \emph{AIP Advances} \textbf{7} (2017), \doi{10.1063/1.4994042}.
+\end{itemize}
+
+\noindent \textbf{What was not found:} a \emph{thermal} (let alone MGT) MEE \emph{Lamb-wave} plate
+paper; and any paper that treats the magnetoelectric optimum as a function of frequency rather than
+as a material constant. The first is an open slot but only combination novelty; the second is the
+paper.
+
+\begin{table}[h]
+\centering\small
+\caption{Nearest papers. $\bullet$ treated, $\circ$ partial, --- absent.}
+\begin{tabular}{p{5.4cm}p{1.0cm}p{1.0cm}p{1.1cm}p{1.0cm}p{1.0cm}p{1.5cm}}
+\hline
+Paper & MEE & Plate & $k_i$ & MGT & NSGT & dynamic ME optimum \\
+\hline
+Chen 2007, \emph{IJSS} 44 & $\bullet$ & $\bullet$ & --- & --- & --- & --- \\
+\emph{JIMSS} 36 (2025) & $\bullet$ & $\bullet$ & $\circ$ & --- & --- & --- \\
+\emph{JSV} 400 (2017) & $\bullet$ & $\bullet$ & --- & --- & --- & --- \\
+\emph{Nanomaterials} 11 (2021) & $\bullet$ & --- & --- & $\circ$ & $\bullet$ & --- \\
+\emph{Materials} 11 (2018) & $\circ$ & $\bullet$ & $\bullet$ & --- & --- & --- \\
+\emph{AIP Adv.} 7 (2017) & $\bullet$ & --- & --- & --- & --- & --- (static only) \\
+\hline
+\textbf{this paper} & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\section*{3. The re-anchored problem}
+\textbf{Title.} \emph{The magnetoelectric optimum is not a material constant: a frequency-dependent
+design ridge for BaTiO$_3$/CoFe$_2$O$_4$ plates with MGT heat and NSGT.}
+
+\textbf{Finding.} The piezomagnetic volume fraction that maximises the magnetoelectric coupling is
+not a material constant: it is set by a mechanical matching condition between the two phases at the
+working frequency-thickness, so the optimum traces a ridge in the $(v_f,fd)$ plane whose position
+moves with the two NSGT length scales and the MGT relaxation time; the static optimum of the
+materials literature is the $fd\to0$ edge of that ridge.
+
+The physics: in a 2-2 composite the ME effect is a \emph{product} property, so strain must be
+transferred from the magnetostrictive to the piezoelectric phase; in a dynamic plate that transfer is
+efficient only where both phases deform together, which makes the optimum frequency-dependent. The
+static limit then provides a rigorous anchor against published values --- a rarity in these three
+papers.
+
+\subsection*{Claims}
+\begin{enumerate}\small
+\item[\textbf{C1}] For each of the four face-condition combinations (electric open/short $\times$
+  magnetic open/short) the mode-resolved coefficient $K_{ME}(v_f,fd)$ has an interior maximum, and
+  the maximising $v_f^{*}(fd)$ is frequency-dependent. \emph{Fig.\ F4.}
+  \emph{Checks:} $v_f=0$ returns the pure piezoelectric plate with $K_{ME}\equiv0$ and $v_f=1$ the
+  pure piezomagnetic plate with $K_{ME}\equiv0$, both to $<10^{-6}$.
+  \emph{Definitions fixed before Step 2:} $K_E^2$, $K_M^2$ and $K_{ME}$, per mode and per $fd$,
+  each with an explicit equation --- the plan's ``K$^2$ from open/short'' was never defined for a
+  plate.
+\item[\textbf{C2}] The ridge is a mechanical matching condition, anchored by the static limit.
+  \emph{Fig.\ F5.} \emph{Checks:} $fd\to0$ reproduces the published static optimum to $<5\%$; two
+  phases with identical properties must give $v_f^{*}=0.5$ exactly by symmetry.
+\item[\textbf{C3}] NSGT and MGT move the ridge, and the four face conditions give four different
+  ridges, hence a design rule. \emph{Fig.\ F7.} \emph{Checks:} $l_{\rm nl}=l_g=0$ returns Step~4;
+  $\tau_q\to0$ returns Fourier.
+\end{enumerate}
+
+\subsection*{Upgrades}
+\textbf{U1 (major):} the dynamic ME ridge and its design rule. \textbf{U2 (minor):} effective-constant
+sensitivity across at least two homogenisation schemes, reported as a band --- the direct answer to
+the ``constants depend on the source'' objection in \texttt{docs/00\_feasibility\_analysis.md}.
+Exceptional points are not used: the MEE plate has no single strong dissipative channel.
+
+\section*{4. Model, boundary conditions, validity}
+Fields $u_x,u_z,\varphi,\psi,\theta$ in plane strain, quasi-static electromagnetic approximation
+(stated). Constitutive relations
+$\sigma=C\varepsilon-eE-qH-\lambda\theta$, $D=e\varepsilon+\varepsilon E+\alpha H+p\theta$,
+$B=q\varepsilon+\alpha E+\mu H+m\theta$, with $q$ piezomagnetic, $\alpha$ the magnetoelectric tensor,
+$p$ pyroelectric and $m$ pyromagnetic. NSGT is applied to the \emph{mechanical part only} ---
+$\alpha$ and the electromagnetic parts are not strain-gradient objects --- and this restriction is
+stated, not hidden.
+
+Faces $z=\pm h$: $\sigma_{zz}=\sigma_{xz}=0$, plus the NSGT higher-order traction $P_{izz}=0$
+(\texttt{steps/step5\_bcs\_nsgt.md}, approval required before coding); $D_z=0$ or $\varphi=0$;
+$B_z=0$ or $\psi=0$; $\partial_z\theta=0$ or $\theta=0$. The 2$\times$2 face-condition table must
+appear in every figure caption.
+
+\textbf{Validity window.} $kh\in[0.05,\min(1/\lambda,2h/10\Lambda_{\rm ph})]$ shaded on every figure,
+hatched beyond, $h/l_{\max}$ in the caption; plus the MEE-specific bound that the homogenised
+constants require the phase size to be much smaller than both the wavelength and the thickness, which
+matters across the $v_f$ sweep.
+
+\textbf{Parameters.} Single-phase BaTiO$_3$ and CoFe$_2$O$_4$ sets are to be fixed at Step~1 from
+published MEE tables (\texttt{[U]}, not quoted here), with at least two homogenisation schemes;
+$v_f=0,0.2,0.4,0.6,0.8,1.0$; $\tau_q\in[10^{-13},10^{-11}]$ s as an assumed range;
+$l_{\rm nl},l_g$ as dimensionless $l/h$ sweeps only. The static anchor value must come from a
+citable table, not from our own calculation, or C2 cannot be claimed.
+
+\section*{5. Q1 assessment}
+\begin{table}[h]
+\centering\small
+\begin{tabular}{p{5.2cm}p{1.2cm}p{8.2cm}}
+\hline
+Criterion & Score & Evidence \\
+\hline
+Novelty vs closest papers & \textbf{2/5} & Every ingredient is individually mature; the dynamic-optimum claim is unpublished but not yet shown to be visible. \\
+Physical insight & 3/5 & Strain transfer as a dynamic condition is correct and statically anchored, but it is an observation about known physics. \\
+Rigour and verification & 4/5 & Static anchor and the identical-phases degeneracy ($v_f^{*}=0.5$) are machine-checkable; $K_E^2,K_M^2,K_{ME}$ defined before use. \\
+Validity of the size-effect model & \textbf{2/5} & Worst host for a gradient theory: NSGT is applied to the homogenised mixture while the real gradients live at phase boundaries the homogenisation has averaged away. \\
+Device relevance & 3/5 & A design rule for ME sensors is real, but it is a two-parameter rule, not a device, and design charts already exist in the sensor literature. \\
+Reproducibility & 5/5 & Two homogenisation schemes, explicit $K$ definitions, sourced tables, anchor test. \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Total 19/30. Verdict: DOWNGRADE to Q2}, with a Q1 stretch that is not assumed. This matches
+the prediction in \texttt{docs/00\_feasibility\_analysis.md} (``lowest Q1 probability as planned'');
+the sweep found nothing that lifts it.
+
+\textbf{What would lift it back.} A ridge steep enough to be a design rule: $v_f^{*}(fd)$ must move by
+more than $0.15$ in volume fraction across the usable band, and the four face-condition ridges must
+differ by more than the ridge width. If those two numbers hold, submit to
+\emph{Int.\ J.\ Solids Struct.}; if not, submit to a strong Q2 (\emph{J.\ Intell.\ Mater.\ Syst.\
+Struct.} or \emph{Acta Mechanica}) and do not delay.
+
+\textbf{Biggest risk.} \emph{The ME optimum may be flat.} The static materials literature suggests a
+broad, shallow $K_{ME}(v_f)$ curve for 2-2 BaTiO$_3$/CoFe$_2$O$_4$; if so, the ridge is noise and the
+paper collapses to ``MGT + NSGT for MEE plates''. Test at Step~3 on a reduced (elastic $+$ electric
+$+$ magnetic, no heat, no size effect) model.
+
+\textbf{Second risk.} Homogenisation mismatch: two schemes can differ by a factor that moves the ridge
+further than the effect being claimed. U2's band is the mitigation, but if the band is wider than the
+ridge motion, C1 and C3 both die.
+
+\section*{6. First action requested}
+On the reduced model, compute $K_{ME}(v_f)$ at $fd=500$ and $fd=5000$ and report (a) peak height,
+(b) peak position, (c) half-width. Three numbers decide Q1 versus Q2.
+
+\section*{7. Corrections to existing documents}
+Plan reading item 6 is mis-cited (Sidhardh \& Ray, not Ray). The plan's Step-2 check ``open/short
+speed difference gives K$^2$'' must be replaced by three explicit coefficients as in C1. Plan reading
+items 3 and 4 (Zakharenko arXiv 2018; Wu et al.\ arXiv 2021) were not resolved to identifiers this
+session, so no DOI or URL is claimed for them.
+
+\section*{8. Status}
+Task 0 complete; no code written. Journal targets: \emph{Int.\ J.\ Solids Struct.} (Q1, 1.002),
+\emph{Eur.\ J.\ Mech.\ A/Solids} (Q1, 1.023); \emph{Wave Motion} is Q2 (0.499, excluded);
+\emph{J.\ Intell.\ Mater.\ Syst.\ Struct.} not verified --- do not assume Q1.
+
+\end{document}

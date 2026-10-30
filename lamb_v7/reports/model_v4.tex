@@ -1,0 +1,331 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[a4paper,margin=2.0cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{#1}}}
+\setlength{\parskip}{2pt}
+\title{\vspace{-1.5cm}\textbf{Model v4 --- field equations for the three papers}\\[2pt]
+\large Revised after review: NSGT in Lim form, local couplings, Peltier reciprocity, symbols}
+\author{Dr.\ Vipin \\ Gurugram University}
+\date{30 October 2026}
+\begin{document}
+\maketitle
+\vspace{-8mm}
+\footnotesize
+\noindent\textbf{Scope.} The coupled field equations of the three papers, counted, with a source for every
+term. The model stops before the boundary conditions, the dispersion determinant and any solution step.
+Status marks: [R]~read in the source, including the equation number I can point to; [T]~standard textbook
+law; [D]~form fixed by your instruction; [P]~proposed extension with no source, to be derived by the
+scholar from the stated law. Equations I could not open are marked as such and the scholar must read them
+before quoting a number.
+
+\section*{0. The size-effect convention, one form for all three papers}
+
+Following your ruling, the nonlocal and gradient operators sit where Lim, Zhang and Reddy put them, and
+nowhere else: on the inertia and on the elastic strain energy respectively,
+\begin{equation}
+\bigl(1-l_{\rm nl}^2\nabla^2\bigr)t_{ij}=\sigma_{ij},\qquad
+\sigma_{ij}=c_{ijkl}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{kl}
+-e_{kij}E_k-\beta_{ij}\theta ,
+\tag{N1}
+\end{equation}
+with the equivalent momentum form, obtained by applying the same operator to the balance of momentum,
+\begin{equation}
+\bigl(1-l_{\rm nl}^2\nabla^2\bigr)\rho\,\ddot u_i=\sigma_{ij,j}.
+\tag{N2}
+\end{equation}
+Equation (N2) is the form we solve with: the operator is on the inertia term, the stress that appears is
+the local one, and no derivative of the operator ever multiplies a boundary term. The differential law is
+Eq.~(18) of Lim, Zhang and Reddy, with the constitutive boundary conditions Eq.~(19) of the same paper.
+I state this carefully because the Elsevier version of that paper was closed to me; the equation numbers
+are the ones identified, sentence by sentence, by Barretta and Marotti de Sciarra, \emph{Int.\ J.\ Eng.\
+Sci.} \textbf{130} (2018) 187--198, \doi{10.1016/j.ijengsci.2018.05.009}, who write that Lim et al.\
+replaced the integral law by ``the differential law Eq.~(18)'' and that the constitutive boundary
+conditions Eq.~(19) hold in wave propagation because the fields vanish at infinity. So (N1) and (N2) are
+[R] at one remove: the scholar must open \doi{10.1016/j.jmps.2015.02.001} and confirm (18) on the page
+before the number enters a manuscript.
+
+\medskip
+\noindent\textbf{Modelling choice, applied to all three papers.} The two operators act on the elastic
+strain energy only. Every piezoelectric, piezomagnetic, dielectric, magnetic permeability, pyroelectric,
+pyromagnetic, thermal-stress and phonon--phason term is local: it depends on the local fields, never on
+their Laplacians. This is your correction and it is the right one for a plate. It keeps $D_i$ and $B_i$
+second order, so the electric and magnetic problems stay Poisson-like and need no extra conditions at
+$z=\pm h$; it keeps the size effect purely mechanical, so the extra conditions are mechanical too; and it
+avoids the double counting that appears when a gradient operator is applied to a term that is already a
+field gradient.
+
+\medskip
+\noindent\textbf{Symbols and units.} One symbol, one meaning, across the three papers.
+\begin{center}\footnotesize
+\begin{tabular}{p{2.3cm}p{6.4cm}p{4.9cm}}
+\toprule
+symbol & meaning & unit\\
+\midrule
+$k=k_r+ik_i$ & wavenumber along $x$, complex; $k_i>0$ is decay & m$^{-1}$\\
+$q$ & magnitude of the carrier charge, $1.602\times10^{-19}$; the electron charge is $-q$ & C\\
+$h_{kij}$ & piezomagnetic constant (was $q_{kij}$; renamed to free $q$ for charge) & N\,A$^{-1}$m$^{-1}$\\
+$b_n$ & electron mobility (was $\mu_n$; $\mu_{ik}$ is kept for magnetic permeability) & m$^2$V$^{-1}$s$^{-1}$\\
+$D_n$ & carrier diffusion coefficient & m$^2$s$^{-1}$\\
+$v_d$ & drift velocity, $v_d=b_nE_0$ & m\,s$^{-1}$\\
+$\beta_{\rm th}$ & thermodiffusion coefficient, $\beta_{\rm th}=-b_nn_0S_n$; negative for $n$-type carriers & m$^{-1}$s$^{-1}$K$^{-1}$\\
+$S_n$ & Seebeck coefficient of the electrons & V\,K$^{-1}$\\
+$\Pi_{\rm th}$ & Peltier coefficient, $\Pi_{\rm th}=T_0S_n$ & V\\
+$\tau_R$ & carrier recombination time (option, $\tau_R\to\infty$ means none) & s\\
+$E_g$ & band gap & J\\
+$\rho_p$, $\gamma$ & phason mass density, phason friction & kg\,m$^{-3}$, kg\,m$^{-3}$s$^{-1}$\\
+$l_{\rm nl}$, $l_g$ & nonlocal and gradient lengths, entering only as $l/h$ & m\\
+$\beta_{ij}=c_{ijkl}\alpha_{kl}$, $p_i$, $m_i$ & thermal-stress tensor, pyroelectric vector, pyromagnetic vector & N\,m$^{-2}$K$^{-1}$, C\,m$^{-2}$K$^{-1}$, N\,A$^{-1}$m$^{-1}$K$^{-1}$\\
+$\alpha_{ik}$ & magnetoelectric coefficient of the composite & s\,m$^{-1}$\\
+$\tau_q$, $\tau_T$ & Moore--Gibson--Thompson (MGT) phase lag, $\tau_T=(2h)^2/(\pi^2\kappa)$ & s\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{1. Paper A (Sumit) --- piezoelectric semiconductor plate, ZnO type}
+
+\noindent\textbf{Unknowns (5):} $u_x$, $u_z$, $\varphi$, $\Delta n$, $\theta$. \quad
+\textbf{Equations (5):} momentum on (N2), Gauss, carrier continuity, MGT heat.
+Constitutive side: (N1) with (A2) below and (N2) for momentum.
+
+\noindent\textbf{Constitutive, local couplings.}
+\begin{align}
+\sigma_{ij}&=c_{ijkl}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{kl}-e_{kij}E_k-\beta_{ij}\theta,
+\qquad \bigl(1-l_{\rm nl}^2\nabla^2\bigr)t_{ij}=\sigma_{ij}, \tag{A1}\\
+D_i&=e_{ikl}\varepsilon_{kl}+\epsilon_{ik}E_k+p_i\theta . \tag{A2}
+\end{align}
+
+\noindent\textbf{Field equations.}
+\begin{align}
+\bigl(1-l_{\rm nl}^2\nabla^2\bigr)\rho\,\ddot u_i&=\sigma_{ij,j}, \tag{A3}\\
+D_{i,i}&=-q\,\Delta n, \tag{A4}\\
+\frac{\partial\Delta n}{\partial t}&=D_n\nabla^2\Delta n+b_nn_0\nabla\!\cdot\!E
++v_d\frac{\partial\Delta n}{\partial x}+\beta_{\rm th}\nabla^2\theta-\frac{\Delta n}{\tau_R}, \tag{A5}\\
+\Bigl(1+\tau_q\frac{\partial}{\partial t}\Bigr)
+\Bigl[\rho c_p\dot\theta+T_0\beta_{ij}\dot\varepsilon_{ij}
++T_0p_i\dot E_i+q\Pi_{\rm th}\frac{\partial\Delta n}{\partial t}
++\frac{E_g\Delta n}{\tau_R}\Bigr]&=k_{\rm th}\nabla^2\theta . \tag{A6}
+\end{align}
+
+\noindent\textbf{The two reciprocal terms.} The band-gap term $-(E_g/q)\dot{\Delta n}$ is gone. What
+replaces it is the Peltier heat of the carrier current, and the pair is fixed by one material function,
+the Seebeck coefficient:
+\begin{equation}
+\beta_{\rm th}=-b_nn_0S_n,\qquad \Pi_{\rm th}=T_0S_n,\qquad
+\frac{\Pi_{\rm th}}{\beta_{\rm th}}=-\frac{T_0}{b_nn_0}\quad\text{(Onsager symmetry).}
+\tag{A7}
+\end{equation}
+For $n$-type carriers of charge $-q$ the Seebeck coefficient is negative, $S_n<0$, so
+$\beta_{\rm th}<0$: a temperature gradient drives electrons towards the cold face, and $\Pi_{\rm th}<0$
+means that heat is released when carriers pile up, which is what $-q\Pi_{\rm th}\partial_t\Delta n>0$
+says for $\partial_t\Delta n>0$. The scholar derives (A6) from the entropy balance, writes the entropy
+production, and shows that the cross coefficients of (A5) and (A6) are equal, which is the only honest
+way to introduce two new coefficients in one paper. The recombination option is a pair: $-\Delta n/\tau_R$
+in (A5) and $+E_g\Delta n/\tau_R$ in (A6), both zero as $\tau_R\to\infty$. If the scholar prefers
+$\tau_R=\infty$, both terms are deleted and nothing else changes.
+
+\begin{center}\footnotesize
+\begin{tabular}{p{2.6cm}p{6.0cm}p{5.2cm}}
+\toprule
+term & meaning & source (status)\\
+\midrule
+(A1) NSGT, (A3) & Lim form, operator on inertia and on $c{:}\varepsilon$ only & Lim, Zhang \& Reddy, \emph{J.\ Mech.\ Phys.\ Solids} \textbf{78} (2015) 298, \doi{10.1016/j.jmps.2015.02.001}, Eqs.~(18), (19) \emph{as identified by} Barretta \& Marotti de Sciarra (2018) [R, secondary]\\
+$\beta_{ij}\theta$ & thermal stress by Duhamel's analogy & textbook [T]\\
+$p_i\theta$ & pyroelectric polarisation & textbook [T]\\
+(A4) & Gauss law with the mobile charge & textbook [T]; PSC form: Yang \& Zhou, \emph{Int.\ J.\ Solids Struct.} \textbf{42} (2005) 3171, \doi{10.1016/j.ijsolstr.2004.10.011} [R]\\
+(A5) drift, diffusion & published PSC transport terms & Yang \& Zhou (2005) [R]\\
+(A5) $\beta_{\rm th}\nabla^2\theta$ & thermodiffusion (Soret) term & textbook irreversible thermodynamics [T]\\
+(A6) operator & MGT, base form $K^*=0$, one time derivative cancelled & form fixed by your instruction [D]; attendant paper: Gupta et al., \emph{Int.\ J.\ Numer.\ Methods Heat Fluid Flow} \textbf{35}(9) (2025) 3400, \doi{10.1108/HFF-04-2025-0254}\\
+(A6) $-q\Pi_{\rm th}\partial_t\Delta n$ & Peltier heat, Onsager-reciprocal to the Soret term & textbook thermoelectricity [T], Kelvin relation $\Pi=TS$; used in a PSC continuum by Qu, Pan, Zhu, Jin \& Roy, \emph{Int.\ J.\ Eng.\ Sci.} \textbf{182} (2023) 103775, \doi{10.1016/j.ijengsci.2022.103775} [R, abstract and equations as published]\\
+(A6) recombination pair & optional, only with finite $\tau_R$ & [P] from the energy balance of the electron gas\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Dimension test, every term.}
+\begin{center}\footnotesize
+\begin{tabular}{p{4.6cm}p{3.0cm}p{5.4cm}}
+\toprule
+term & unit & equals\\
+\midrule
+$\partial_t\Delta n$, $D_n\nabla^2\Delta n$, $v_d\partial_x\Delta n$, $\Delta n/\tau_R$ & m$^{-3}$s$^{-1}$ & yes\\
+$b_nn_0\nabla\!\cdot\!E$: (m$^2$V$^{-1}$s$^{-1}$)(m$^{-3}$)(Vm$^{-1}$m$^{-1}$) & m$^{-3}$s$^{-1}$ & yes\\
+$\beta_{\rm th}\nabla^2\theta$: (m$^{-1}$s$^{-1}$K$^{-1}$)(Km$^{-2}$) & m$^{-3}$s$^{-1}$ & yes\\
+$\rho c_p\dot\theta$: (kg\,m$^{-3}$)(J\,kg$^{-1}$K$^{-1}$)(Ks$^{-1}$) & W\,m$^{-3}$ & yes\\
+$T_0\beta_{ij}\dot\varepsilon_{ij}$: (K)(N\,m$^{-2}$K$^{-1}$)(s$^{-1}$) & W\,m$^{-3}$ & yes\\
+$T_0p_i\dot E_i$: (K)(C\,m$^{-2}$K$^{-1}$)(V\,m$^{-1}$s$^{-1}$) & W\,m$^{-3}$ & yes\\
+$q\Pi_{\rm th}\partial_t\Delta n$: (C)(V)(m$^{-3}$s$^{-1}$) & W\,m$^{-3}$ & yes\\
+$E_g\Delta n/\tau_R$: (J)(m$^{-3}$)(s$^{-1}$) & W\,m$^{-3}$ & yes\\
+$k_{\rm th}\nabla^2\theta$: (W\,m$^{-1}$K$^{-1}$)(Km$^{-2}$) & W\,m$^{-3}$ & yes\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Novelty, stated as a search result.} To our knowledge, after searching Crossref and the
+open web in October 2026 for guided waves in piezoelectric semiconductor plates, no paper solves the
+dispersion problem of a semiconducting plate in which the carrier field is coupled to a temperature field
+that carries a relaxation time. The neighbours and what each lacks: Gupta, Awwad, Ismail, Ahmad and Das, \emph{Int.\ J.\ Numer.\ Methods Heat Fluid Flow} \textbf{35}(9) (2025) 3400, \doi{10.1108/HFF-04-2025-0254}, already put the MGT heat equation into a piezo-semiconductor half space with voids and study the Rayleigh wave, so the heat operator in a semiconductor is theirs and only the finite plate is ours; Othmani, Takali and Njeh,
+\emph{Superlattices Microstruct.} \textbf{106} (2017) 86, \doi{10.1016/j.spmi.2017.03.036}, solve PSC plate
+Lamb waves with carriers but no temperature field; Qu et al.\ (2023) build the thermoelectric PSC
+continuum with Seebeck and Peltier but no wave problem; Sharma, Pal and Chand, \emph{J.\ Therm.\ Stresses}
+\textbf{27} (2004) 33, \doi{10.1080/01495730490255709}, solve piezothermoelastic plate Lamb waves with
+attenuation and pyroelectricity but no free carriers; Kumar and Kansal, \emph{Int.\ J.\ Solids Struct.}
+\textbf{45} (2008) 5890, \doi{10.1016/j.ijsolstr.2008.07.005}, add a diffusing species to a thermoelastic
+plate but their third field is not a carrier gas. Our combination is the unoccupied corner of that set,
+not a new physics law.
+
+\noindent\textbf{Order of the system.} Because (N1) and (N2) raise the order in $z$, the plate needs more
+boundary conditions than the classical six plus electric and thermal ones, and which extra conditions to
+use at $z=\pm h$ is your scholar's problem to settle, not part of this model.
+
+\section*{2. Paper B (Neha) --- 1D hexagonal piezoelectric quasicrystal plate}
+
+\noindent\textbf{Unknowns (5):} $u_x$, $u_z$, $w_z$, $\varphi$, $\theta$. \quad
+\textbf{Equations (5):} momentum on (N2), phason balance, Gauss, MGT heat.
+\begin{align}
+\sigma_{ij}&=C_{ijkl}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{kl}+R_{ijkl}w_{kl}-e_{kij}E_k-\beta_{ij}\theta,
+\qquad \bigl(1-l_{\rm nl}^2\nabla^2\bigr)t_{ij}=\sigma_{ij}, \tag{B1}\\
+H_{ij}&=R_{klij}\varepsilon_{kl}+K_{ijkl}w_{kl}-\beta^{w}_{ij}\theta, \tag{B2}\\
+D_i&=e_{ikl}\varepsilon_{kl}+\epsilon_{ik}E_k+p_i\theta, \tag{B3}\\
+\bigl(1-l_{\rm nl}^2\nabla^2\bigr)\rho\ddot u_i&=\sigma_{ij,j}, \tag{B4}\\
+H_{zj,j}&=\rho_p\ddot w_z+\gamma\dot w_z, \tag{B5}\\
+D_{i,i}&=0, \tag{B6}\\
+\Bigl(1+\tau_q\frac{\partial}{\partial t}\Bigr)
+\Bigl[\rho c_p\dot\theta+T_0\beta_{ij}\dot\varepsilon_{ij}
++T_0\beta^{w}_{ij}\dot w_{ij}+T_0p_i\dot E_i\Bigr]&=k_{\rm th}\nabla^2\theta, \tag{B7}
+\end{align}
+with $w_{ij}=\partial w_i/\partial x_j$. The phason stress (B2) is classical in the main model; the
+NSGT-on-phason variant is a labelled sensitivity result, because no published work applies the operator
+to phason strain and there is no measured phason correlation length.
+
+\noindent\textbf{The phason equation, and why (B5) is not an invention.} The telegraph form with both
+inertia and friction is the standard dynamic phason balance; Agiasofitou and Lazar, \emph{Int.\ J.\
+Solids Struct.} \textbf{51} (2014) 923--929, \doi{10.1016/j.ijsolstr.2013.11.016}, write the phason
+momentum balance with the friction term $D_{ij}\dot u^{\perp}_j$ in their Eq.~(26) and the resulting
+telegraph equation in their Eq.~(30), and they note that the diffusion limit and the wave limit are the
+two ends of the same equation. Baggioli and Landry, \emph{SciPost Phys.} \textbf{9} (2020) 062,
+\doi{10.21468/SciPostPhys.9.5.062}, write the same crossover as $\omega^2+i\gamma\omega=v^2k^2$ in their
+Eq.~(17): diffusive at small $k$, propagating at large $k$. The microscopic origin, in one line, is in
+Lubensky, Ramaswamy and Toner, \emph{Phys.\ Rev.\ B} \textbf{32} (1985) 7444,
+\doi{10.1103/PhysRevB.32.7444}, whose hydrodynamic treatment is for the \emph{icosahedral} phase; I cite
+it for the relaxation mechanism, not for 1D hexagonal constants, and the scholar should not transfer its
+moduli.
+
+\begin{center}\footnotesize
+\begin{tabular}{p{2.6cm}p{6.0cm}p{5.2cm}}
+\toprule
+term & meaning & source (status)\\
+\midrule
+$R_{ijkl}$, $K_{ijkl}$ & phonon--phason coupling and phason moduli, 1D hexagonal & material set of Zhang, Yu, Zhang \& Elmaimouni, \emph{Acta Mech.} \textbf{232} (2021) 135, \doi{10.1007/s00707-020-02811-7} [R, abstract and equations as published]\\
+$\beta^{w}_{ij}\theta$ & thermo-phason coupling & [P]: Duhamel's analogy applied to the phason stress; no source found, and the scholar must say so in the paper\\
+(B5) inertia $+$ friction & telegraph phason dynamics & Agiasofitou \& Lazar (2014), Eqs.~(26), (30) [R]; Lubensky et al.\ (1985) for the mechanism, icosahedral [R]\\
+(B7) $T_0\beta^w_{ij}\dot w_{ij}$ & work of the phason stress against temperature & [P]\\
+(B7) operator & MGT base form & [D]\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Novelty, stated as a search result.} To our knowledge, after searching Crossref and the
+open web in October 2026 for Lamb waves in 1D hexagonal piezoelectric quasicrystal plates, no paper
+carries both phason terms of (B5) \emph{and} a relaxation-time heat equation in one dispersion problem.
+The neighbours are close and must all be read before the claim is written: Zhang et al.\ (2021) for the
+elastic guided-wave baseline; Wang, Yu, Zhang, Elmaimouni and Ming, \emph{Wave Motion} \textbf{134} (2025)
+103479, \doi{10.1016/j.wavemoti.2024.103479}, for nonlocal (integral) PQC nanoplates; Wang et al.,
+\emph{Acta Mech.} \textbf{233} (2022) 3021, \doi{10.1007/s00707-022-03274-8}, for couple-stress PQC
+nanoplates; Wang et al., \emph{Compos.\ Struct.} \textbf{370} (2025) 119430,
+\doi{10.1016/j.compstruct.2025.119430}, for layered PQC nanoplates. The dangerous one is Zhang, Song, Li,
+Han, Yu and Yang, \emph{Acta Mech.\ Solida Sin.} (2026), \doi{10.1007/s10338-026-00755-4}, generalized
+thermoelastic Lamb waves in 1D hexagonal QC nanoplates: it already puts heat into a QC plate, and I could
+not read its equations. Week one of this paper is to obtain it and write down exactly which heat operator
+it uses. If it uses MGT with the same two lags, the novelty of (B7) is gone and what remains is (B5) with
+both phason terms.
+
+\noindent\textbf{Order of the system.} (N1) and (N2) raise the order in $z$ on the phonon side as in
+Paper A, and (B5) adds a second-order phason equation with no counterpart in a classical plate; how many
+extra conditions at $z=\pm h$ the coupled system needs, and which of them are phason conditions, is your
+scholar's problem to settle, not part of this model.
+
+\section*{3. Paper C (Anu) --- magneto-electro-elastic plate, BaTiO$_3$/CoFe$_2$O$_4$}
+
+\noindent\textbf{Unknowns (5):} $u_x$, $u_z$, $\varphi$, $\psi$, $\theta$, with $H_i=-\psi_{,i}$. \quad
+\textbf{Equations (5):} momentum on (N2), electric Gauss, magnetic Gauss, MGT heat.
+\begin{align}
+\sigma_{ij}&=C_{ijkl}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{kl}-e_{kij}E_k-h_{kij}H_k-\beta_{ij}\theta,
+\qquad \bigl(1-l_{\rm nl}^2\nabla^2\bigr)t_{ij}=\sigma_{ij}, \tag{C1}\\
+D_i&=e_{ikl}\varepsilon_{kl}+\epsilon_{ik}E_k+\alpha_{ik}H_k+p_i\theta, \tag{C2}\\
+B_i&=h_{ikl}\varepsilon_{kl}+\alpha_{ik}E_k+\mu_{ik}H_k+m_i\theta, \tag{C3}\\
+\bigl(1-l_{\rm nl}^2\nabla^2\bigr)\rho\ddot u_i&=\sigma_{ij,j}, \tag{C4}\\
+D_{i,i}&=0,\qquad B_{i,i}=0, \tag{C5}\\
+\Bigl(1+\tau_q\frac{\partial}{\partial t}\Bigr)
+\Bigl[\rho c_p\dot\theta+T_0\beta_{ij}\dot\varepsilon_{ij}
++T_0p_i\dot E_i+T_0m_i\dot H_i\Bigr]&=k_{\rm th}\nabla^2\theta . \tag{C6}
+\end{align}
+The piezomagnetic constant is written $h_{kij}$ so that $q$ stays the carrier charge in Paper A and $k$
+stays the wavenumber in all three.
+
+\noindent\textbf{What the neighbours actually do.} Pyroelectric and pyromagnetic coefficients \emph{are}
+retained in plate papers, so the earlier draft's claim that they are rarely kept is withdrawn. Kondaiah,
+Shankar and Ganesan, \emph{Coupled Syst.\ Mech.} \textbf{2} (2013) 1, \doi{10.12989/csm.2013.2.1.001},
+keep both in an MEE plate; Tocci Monaco, Fantuzzi, Fabbrocino and Luciano, \emph{Nanomaterials}
+\textbf{11} (2021) 87, \doi{10.3390/nano11010087}, keep both in an MEE nonlocal strain gradient \emph{nano}plate
+with hygro-thermal loads; Xiao, Han, Liu and Li, \emph{Compos.\ Struct.} \textbf{153} (2016) 704,
+\doi{10.1016/j.compstruct.2016.06.063}, solve guided waves in a functionally graded MEE plate with no
+thermal field at all. The earlier claim that $\alpha$ is taken frequency dependent is also withdrawn: I
+have no source for it. In the papers I read, $\alpha$ is a constant, either measured for a composite or
+computed once by homogenisation. Our treatment, an effective $\alpha$ from two homogenisation schemes
+carried as a band, is a modelling choice and is labelled as one.
+
+\noindent\textbf{Novelty, stated as a search result.} To our knowledge, after searching Crossref and the
+open web in October 2026 for guided waves in magneto-electro-elastic plates, no paper reports the
+dispersion and attenuation of Lamb modes in an MEE plate whose heat conduction carries a relaxation time,
+with pyroelectric and pyromagnetic coupling both present and with the mechanical size effect of (N1). The
+nearest paper, Xiao et al.\ (2016), is a guided-wave MEE plate with no temperature; the nearest thermal
+ones, Kondaiah et al.\ (2013) and Tocci Monaco et al.\ (2021), are static, buckling or free-vibration
+problems without the complex wavenumber. The risk is stated plainly: the corner is narrow, and the paper
+must show on one figure that the attenuation it predicts is larger than the spread between the two
+homogenisation schemes.
+
+\noindent\textbf{Order of the system.} As in the other two papers, (N1) and (N2) raise the order in $z$
+and the extra conditions at $z=\pm h$ are your scholar's problem to settle, not part of this model.
+
+\section*{4. Honest note on where the earlier findings still bite}
+
+Two facts from the earlier rounds do not go away and should appear as results. First, in an unbounded
+medium both Fourier and MGT conduction make the thermoelastic attenuation saturate; MGT rescales the
+plateau by $\tau_T^2/(\tau_T-\tau_q)^2$ and moves the peak from $1/\tau_T$ to $1/|\tau_T-\tau_q|$, and it
+does not remove the floor. Second, visibility depends on thickness: the crossing condition is
+$(2h)^*=\pi\sqrt{\kappa\tau_q}$, and with literature values for ZnO the crossing sits below the thickness
+at which the continuum heat model is defensible. Each paper therefore carries one figure early that maps
+thickness against $\tau_q$ and shades the region where relaxation is resolvable. Inside the shaded region
+MGT does the work; outside it, the adiabatic and isothermal solutions bracket the answer to a width of
+order the thermoelastic coupling, and that bracket is reported as the verification of the full model, not
+as its replacement.
+
+\section*{5. Counts, and what is still open}
+
+\begin{center}\footnotesize
+\begin{tabular}{lcccl}
+\toprule
+paper & unknowns & field equations & coupled terms beyond the closest papers & numbers\\
+\midrule
+A (Sumit) & 5 & 5 & Soret--Peltier pair, pyroelectric, drift, recombination option & (A1)--(A7)\\
+B (Neha) & 5 & 5 & telegraph phason, thermo-phason work in the heat equation & (B1)--(B7)\\
+C (Anu) & 5 & 5 & pyroelectric with pyromagnetic, effective $\alpha$ as a band, MGT heat & (C1)--(C6)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Open, and honest about it.} The Lim, Zhang and Reddy equation numbers come through a
+secondary source; the AMSS 2026 thermoelastic QC plate paper could not be read; the NSGT constants
+$\tau_q$, $\tau_T$ and the MEE thermal properties rest on literature values collected earlier with the
+gaps recorded in the internal logs. None of these blocks the packages, and each is written into the
+scholar's first-week tasks instead of being papered over.
+
+\noindent\textbf{Deliberately absent:} boundary conditions, interface and face conditions, the dispersion
+determinant, the solution method and every numerical value. Those are the scholars' work.
+
+\end{document}

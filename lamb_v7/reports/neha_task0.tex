@@ -1,0 +1,201 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{#1}}}
+\title{\vspace{-1.2cm}\textbf{Task 0 report --- Paper B (Neha)}\\[2pt]
+\large Lamb waves in a 1D hexagonal piezoelectric quasicrystal plate with MGT heat and NSGT size
+effect:\\literature sweep, re-anchored problem, and Q1 assessment}
+\author{Independent cross-check engineer, for Dr.\ Vipin}
+\date{30 October 2026}
+\begin{document}
+\maketitle
+\vspace{-0.5cm}
+
+\section*{1. What this report is}
+Condensed from \texttt{paper/literature\_table.md}, \texttt{paper/problem\_v2.md} and
+\texttt{paper/q1\_scorecard.md} in \texttt{quasicrystal\_neha/}. No new search was run for this
+report. Conventions as fixed in \texttt{docs/02\_workflow\_crosscheck.md}.
+
+\section*{2. What the sweep found}
+Fifteen papers were examined through the Crossref API and publisher pages. The quasicrystal-plate
+niche is **crowded and moving fast**; three papers since 2024 have taken the ground this plan
+intended to occupy:
+
+\begin{itemize}\small
+\item \emph{Guided wave propagating in a 1-D hexagonal piezoelectric quasi-crystal plate},
+  \emph{Acta Mech.} \textbf{232} (2021) 135--151, \doi{10.1007/s00707-020-02811-7} --- the standard
+  plate set-up with phonon, phason and electric fields; the correct Step-3 benchmark.
+\item \emph{Mode conversions and intersections of Lamb waves in 1D HPEQC nanoplates based on the
+  integral nonlocal theory}, \emph{Wave Motion} \textbf{134} (2025) 103479,
+  \doi{10.1016/j.wavemoti.2024.103479} --- already studies mode conversion/intersection topology.
+\item \emph{Generalized Thermoelastic Lamb Waves in One-Dimensional Hexagonal Quasicrystal
+  Nanoplates}, \emph{Acta Mech. Solida Sin.} (2026), \doi{10.1007/s10338-026-00755-4} --- a
+  \textbf{fractional-order Lord--Shulman} model with integral nonlocal theory that reports
+  dispersion \emph{and attenuation}, including \textbf{``attenuation jumps in mode conversion
+  regions''} and size-dependent attenuation jumps.
+\end{itemize}
+
+\noindent Also relevant: \emph{Lamb waves in piezoelectric quasicrystal multi-layered nano-plates
+with imperfect interfaces}, \emph{Compos. Struct.} \textbf{370} (2025) 119430,
+\doi{10.1016/j.compstruct.2025.119430}; and \emph{Phonon--phason coupling and nonlocal effects on
+Lamb waves in FG 1D hexagonal quasicrystal nanoplates}, \emph{Results Phys.} \textbf{60} (2024)
+107674, \doi{10.1016/j.rinp.2024.107674}.
+
+\textbf{Consequence.} The major upgrade proposed in \texttt{docs/03\_novelty\_upgrades.md} ---
+phason wave-like vs diffusive, exceptional points and coalescence --- is \textbf{partly anticipated}
+by the second and third papers above. As planned, Paper B would be the fourth 2025--26 QC-plate Lamb
+paper, and a referee would find the third paper on the first page of results. The paper has been
+re-anchored.
+
+\begin{table}[h]
+\centering\small
+\caption{Nearest papers. $\bullet$ treated, $\circ$ partial, --- absent.}
+\begin{tabular}{p{5.5cm}p{1.0cm}p{1.1cm}p{1.0cm}p{1.1cm}p{1.2cm}p{1.6cm}}
+\hline
+Paper & Phason & Plate & $k_i$ & MGT & NSGT & phason model compared \\
+\hline
+Acta Mech.\ 232 (2021) & $\bullet$ & $\bullet$ & --- & --- & --- & --- \\
+AMSS (2026) & $\bullet$ & $\bullet$ & $\bullet$ & --- & --- & --- \\
+Wave Motion 134 (2025) & $\bullet$ & $\bullet$ & --- & --- & --- & --- \\
+Compos.\ Struct.\ 370 (2025) & $\bullet$ & $\bullet$ & $\circ$ & --- & --- & --- \\
+Results Phys.\ 60 (2024) & $\bullet$ & $\bullet$ & --- & --- & --- & --- \\
+\hline
+\textbf{this paper} & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\section*{3. The re-anchored problem}
+\textbf{Title.} \emph{Which mechanism damps the wave? A thickness-scaling fingerprint for
+attenuation in 1D hexagonal piezoelectric quasicrystal plates with MGT heat and NSGT.}
+
+\textbf{Finding.} Three dissipation mechanisms can act in a quasicrystal plate --- phason
+relaxation, MGT thermal relaxation, and the size-effect distortion of the $\omega(k)$ map --- and
+they scale with thickness differently, $fd_{\rm peak}\propto h^{-1}$, $\propto h^{0}$ and
+$\propto h$ respectively. A scan of the attenuation-peak position against thickness therefore
+identifies the dominant mechanism \emph{without fitting any constant}, while the phase velocity
+cannot distinguish them at all.
+
+The physics is that the three mechanisms carry different length content: phason relaxation is
+diffusive (rate $\propto D_{\rm ph}k^{2}$, hence $1/h$ in $fd$), MGT relaxation is a local time
+constant ($\omega\tau_q\approx1$, hence $h^{0}$), and a stiffness distortion drags any spectral
+feature with $h$. Because the three exponents are distinct, the diagnostic is degeneracy-free ---
+which is exactly what the abandoned exceptional-point upgrade was meant to provide.
+
+\subsection*{Claims}
+\begin{enumerate}\small
+\item[\textbf{C1}] The phason kinematics decides whether the plate attenuates at all without heat:
+  a diffusive phason (Lubensky--Ramaswamy--Toner, \emph{Phys.\ Rev.\ B} \textbf{32} (1985) 7444,
+  \doi{10.1103/physrevb.32.7444}) damps, a wave-like phason does not. \emph{Fig.\ F3.}
+  \emph{Checks:} coupling $\to0$ returns Step~2; diffusion rate $\to\infty$ must reproduce the
+  wave-like model to $<10^{-6}$ (the \emph{merge test} --- the proof that the two kinematics are
+  implementations of the same physics).
+\item[\textbf{C2}] The attenuation peak carries a three-slope thickness fingerprint, with `$h^{-1}$'
+  from phason diffusion, `$h^0$' from MGT and a size-effect drag. \emph{Fig.\ F5.}
+  \emph{Checks:} $\tau_q\to0$ removes the $h^0$ asymptote and leaves the $h^{-1}$ one intact;
+  $D_{\rm ph}\to0$ does the reverse.
+\item[\textbf{C3}] In NSGT the phason stress would carry its own length scale, splitting the
+  phonon-like and phason-like branches by a combination a single-scale nonlocal model cannot
+  reproduce. \emph{Fig.\ F7.} \emph{Checks:} $l_{\rm nl}=l_g=0$ returns Step~4; nonlocal-only and
+  gradient-only give equal and opposite shifts.
+\end{enumerate}
+
+\subsection*{Upgrades}
+\textbf{U1 (major):} the phason-model comparison as a controlled experiment --- both kinematics, one
+code, one material, one set of boundary conditions, with the merge test as the bridge.
+\textbf{U2 (minor):} attenuation budget by energy flux, to separate phason from thermal damping so
+that C2's slopes are measured rather than inferred. Exceptional points are \textbf{demoted to a
+supporting figure}.
+
+\section*{4. Model, boundary conditions, validity}
+Fields: phonon $u_x,u_z$; phason $w_x,w_z$ with the quasiperiodic axis along $z$; electric potential
+$\varphi$; temperature $\theta$. A 1D hexagonal (6mm) piezoelectric quasicrystal has phonon
+elasticity $C$, phason elasticity $K$, phonon--phason coupling $R$, piezoelectric $e$, dielectric
+$\varepsilon$, thermal stress $\lambda$ and pyroelectric $p$. The two phason kinematics are
+$\rho\ddot w_i=H_{ij,j}$ (wave-like) and $\tau_{\rm ph}\dot w_i+w_i=\dots$ (diffusive). NSGT is
+written in the differential form for the phonon part; \textbf{whether it may also be applied to the
+phason strain is the open question in \S6}.
+
+Faces $z=\pm h$: $\sigma_{zz}=\sigma_{xz}=0$; phason traction-free $H_{zz}=H_{zx}=0$; the NSGT
+higher-order traction $P_{izz}=0$ (set to be fixed in \texttt{steps/step5\_bcs\_nsgt.md} and
+approved before coding); $D_z=0$ or $\varphi=0$; $\partial_z\theta=0$ or $\theta=0$; and, for the
+diffusive phason, $\partial_z w=0$ --- a modelling assumption with no experimental support, to be
+labelled as such.
+
+\textbf{Validity window.} $kl_{\max}\le1$, $2h\gtrsim10\Lambda_{\rm ph}$, and a QC-specific bound
+that the phason correlation length must be small compared with $2h$ (no sourced value; stated as an
+assumption with a sensitivity sweep). Every figure carries the shaded trust band
+$kh\in[0.05,\min(1/\lambda,2h/10\Lambda_{\rm ph})]$, a hatched region beyond it, and $h/l_{\max}$ in
+the caption.
+
+\textbf{Parameters.} The reference set of \emph{Acta Mech.} \textbf{232} (2021) is nominated as the
+source for $C,K,R,e,\varepsilon$, but \textbf{I have not verified those numbers} and will not quote
+one before \texttt{params.md} exists. $D_{\rm ph}$ has \textbf{no measured value} anywhere in the
+sweep: it is a band, labelled assumed. $\tau_q\in[10^{-13},10^{-11}]$ s likewise. $l_{\rm nl}$ and
+$l_g$ enter only as dimensionless $l/h$ sweeps, with no claimed value.
+
+\section*{5. Q1 assessment}
+\begin{table}[h]
+\centering\small
+\begin{tabular}{p{5.2cm}p{1.2cm}p{8.2cm}}
+\hline
+Criterion & Score & Evidence \\
+\hline
+Novelty vs closest papers & \textbf{2/5} & Three 2024--26 papers take the ground; the thermal competitor already reports attenuation jumps at mode conversion. \\
+Physical insight & 4/5 & Three mechanisms with three length contents give three exponents, turning a modelling choice into a measurement. \\
+Rigour and verification & 4/5 & The merge test is a strong falsifiable bridge; but the phason face condition $\partial_z w=0$ is unsupported and no code exists yet. \\
+Validity of the size-effect model & \textbf{2/5} & Worse than Paper A: NSGT applied to phason strain has no precedent, and the phason correlation length has no measured value. \\
+Device relevance & \textbf{2/5} & Quasicrystal plates are not devices; the payoff is diagnostic, not a design rule. \\
+Reproducibility & 5/5 & Both kinematics in one code plus fixed comparison points and tolerances. \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Verdict: REFOCUS} --- Q1 only as a stretch, Q2 as the working assumption.
+
+\textbf{GO conditions.} (1) \emph{Merge test} at Step 3/4: diffusion rate $\to\infty$ must reproduce
+the wave-like model to $1\times10^{-6}$; if not, the two models are not comparable and the paper has
+no spine. (2) \emph{Slope-separation test} at Step 6: the three log--log slopes must differ by more
+than the fit error over the reachable $h$ range, and the range and error must be printed.
+
+\textbf{Biggest risk.} \emph{The phason may be invisible.} If the phonon--phason coupling $R$ of the
+reference material set is small, the phason branch barely perturbs the Lamb modes, the two kinematics
+give nearly identical curves, and C1 --- the spine --- evaporates. This must be settled numerically
+at Step~3 on a reduced (phonon $+$ phason) model, before any writing.
+
+\textbf{Second risk.} $D_{\rm ph}$ has no measured value; the whole $h^{-1}$ branch of C2 rests on an
+assumed constant, and if its band is wider than the slope's motion, C2 dies.
+
+\section*{6. Questions for Dr.\ Vipin}
+\begin{enumerate}\small
+\item \textbf{Does NSGT apply to the phason strain?} The NSGT functional is derived for the phonon
+  strain; applying it to phason strain has no literature precedent in the sweep. Either it must be
+  justified from a variational principle, or NSGT must be restricted to the phonon field with the
+  restriction stated. I will not decide this silently, and Step~5 cannot start until it is settled.
+\item \textbf{Phason face condition} $\partial_z w=0$ for the diffusive model: accept as a stated
+  assumption?
+\item \textbf{Material set:} may I adopt the \emph{Acta Mech.} \textbf{232} (2021) constants as the
+  single reference set (with the source table in \texttt{params.md}), or do you have a preferred
+  piezoelectric QC set?
+\end{enumerate}
+
+\section*{7. Corrections to existing documents}
+Reading item 6 of the plan is mis-cited: the 2019 \emph{Wave Motion} \textbf{86} 91--109 paper is by
+\textbf{Sidhardh} \& Ray, \doi{10.1016/j.wavemoti.2019.01.002}. Reading item 2 points at
+\emph{Academic Journal of Applied Sciences} (\doi{10.54097/mb0zx653}), which is not a recognised
+venue in this field: it may be cited as a data point but must not be the Step-3 benchmark. The plan's
+decision ``choose one phason kinematics'' is reversed --- \textbf{do both}, because the comparison is
+now the only defensible novelty.
+
+\section*{8. Status}
+Task 0 complete; no code written; Step 5 blocked on question 1. Journal targets: \emph{Eur.\ J.\
+Mech.\ A/Solids} (Q1, SJR 1.023) first, \emph{Int.\ J.\ Solids Struct.} (Q1, 1.002) as a stretch;
+\emph{Wave Motion} is Q2 (0.499) and is excluded. \emph{Acta Mech.\ Solida Sin.} not verified --- do
+not assume Q1.
+
+\end{document}

@@ -1,0 +1,163 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{#1}}}
+\setlength{\parskip}{2pt}
+\title{\vspace{-1.2cm}\textbf{Milestone report: Route A}\\[2pt]
+\large Thermal effects as a bracket, not a mechanism --- consequences for the three papers}
+\author{Cross-check (Arena) for Dr.\ Vipin}
+\date{30 October 2026}
+\begin{document}
+\maketitle
+\vspace{-6mm}
+
+\section*{1. The decision and the evidence behind it}
+
+The project has been on the assumption that MGT (Moore--Gibson--Thompson) heat conduction is a
+\emph{modelled effect} whose signature (a moving thermal-relaxation floor, a shifted damping peak) is one
+of the observables. That assumption does not survive three independent checks.
+
+\textbf{(i) The bulk limit saturates in both models.} For a longitudinal wave in an unbounded medium,
+Fourier gives $k_i=(\omega/c_L)(\Delta_E/2)\,\omega\tau_T/[1+(\omega\tau_T)^2]$, which plateaus at
+$\Delta_E/(2c_L\tau_T)$. The MGT form $(1+\tau_q\partial_t)[\rho c_p\dot\theta+T_0\beta\dot\varepsilon_{kk}]
+=k_{\rm th}\nabla^2\theta$ multiplies capacity and coupling by the same factor $1-i\omega\tau_q$, giving
+the same formula with $\tau_T\to\tau_T-\tau_q$ \emph{in the width only}. The floor therefore does not
+fall --- it saturates too, rescaled by $\tau_T^2/(\tau_T-\tau_q)^2$, with the peak moved from
+$1/\tau_T$ to $1/|\tau_T-\tau_q|$. C2 was restated accordingly.
+
+\textbf{(ii) The distinguishability boundary lies outside the trust band for all three materials.}
+The models separate only through the through-thickness diffusion time
+$\tau_{\rm th}=(2h)^2/(\pi^2\kappa)$, i.e. across the boundary $(2h)^*=\pi\sqrt{\kappa\tau_q}$. Requiring
+the band $2h\ge 10\Lambda_{ph}$ gives
+
+\begin{center}\small
+\begin{tabular}{llll}
+\toprule
+material & $\Lambda_{ph}$ & $\tau_q$ needed for the boundary to enter the band & available\\
+\midrule
+ZnO ($k_{\rm th}=60$ W/m$\cdot$K) & 13.2 nm (sourced) & $\ge 8.4\times10^{-11}$ s & $\le 10^{-11}$ s\\
+ZnO ($k_{\rm th}=1.2$ W/m$\cdot$K) & --- & $\ge 4.2\times10^{-9}$ s & $\le 10^{-11}$ s\\
+d-Al--Co--Ni & 1--2 nm & $\tau_{\rm th}\ge 10^{-11}$ s at any $2h\ge 10\Lambda_{ph}$ & $\le 10^{-11}$ s\\
+CoFe$_2$O$_4$/BaTiO$_3$ & 1--5 nm & $\tau_{\rm th}\ge 2\times10^{-11}$ s (measured $D$) & $\le 10^{-11}$ s\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent$\Lambda_{ph}=13.2$ nm is the gray-medium value of Krahl et al.\ (\doi{10.1021/acs.jpcc.0c06461}),
+which those authors themselves call a conservative \emph{lower} bound; the spectral mean free paths
+exceed 50 nm. Using the smallest defensible $\Lambda_{ph}$ therefore gives MGT its best chance, and it
+still fails.
+
+\textbf{(iii) The three-scale overlap window is empty.} Requiring simultaneously (a) an NSGT velocity
+shift above 5\,\%, which needs $2h\le 19\,l$ at $kh=3$; (b) the thermal peak inside the swept window;
+and (c) $2h\ge 10\Lambda_{ph}$, leaves no admissible thickness. For ZnO the gap is a factor of 7, and it
+fails on a second axis: at $2h=132$ nm the thermal peak sits at $fd=251$ Hz$\cdot$m, below the
+500 Hz$\cdot$m sweep floor.
+
+\section*{2. Route A}
+
+Heat enters as an \textbf{adiabatic/isothermal bracket}: the problem is solved in the two rigorous
+limits and the attenuation is bracketed between them. The width is $O(\Delta_E)$ with
+$\Delta_E=T_0\beta^2/(\rho c_pc_L^2)=10^{-3}$--$10^{-2}$, i.e.\ narrower than any line width planned.
+No $\tau_q$, $\kappa$ or $\Lambda_{ph}$ appears in any result. MGT survives as a one-page appendix item
+demonstrating that it lies inside the bracket and is hence unobservable.
+
+\section*{3. What changes, per paper}
+
+\begin{center}\small
+\begin{tabular}{p{2.2cm}p{4.6cm}p{7.4cm}}
+\toprule
+paper & central claim (unchanged) & change under Route A\\
+\midrule
+Sumit & carrier screening (C1) + two-observable separation of the strain-gradient scales (C3) &
+C2 withdrawn; thermal section becomes the bracket plus an appendix; Step 3 = bracket + classical
+thermoelastic check\\
+Neha & phason kinematics decides whether the plate attenuates without heat (C1), peak locus (C2),
+second NSGT combination (C3) & title and claims untouched; thermal parameters leave the table; bracket
+drawn on every $k_i$ figure\\
+Anu & the ME optimum is a frequency-dependent ridge, not a material constant & one word of the title
+changes (MGT $\to$ bracketed thermal correction); C3 rewritten: NSGT moves the ridge, the bracket does
+not; week-9 Q1/Q2 test untouched\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent None of the three major upgrades depended on the thermal model. That is why Route A is a
+simplification rather than a retreat.
+
+\section*{4. Step-2 gate (Sumit) --- closed}
+
+The piezoelectric S/A split was verified by factoring the full determinant. With
+$P=\mathrm{diag}(1,-1,-1,-1,1,1)$ and $PAP=-A$ holding exactly, $\Phi^{-1}=P\Phi P$ and
+\[
+\det\nolimits_{6}=\det[\,B\Phi\,;\,B P\Phi P\,]=8\,\det\nolimits_{S}\det\nolimits_{A},
+\]
+with the ratio $8.000000$ and spread $4.3\times10^{-13}$ over 39 $(\mathrm{fd},c)$ points at $kh\le6$;
+the union of the block root sets equals the full-system root set at $fd=100,500,1000,3000$. The same
+propagator gives $S_0\to5308.581$ m/s against the analytic open-circuit thin-plate value $5308.59$
+(relative $1.7\times10^{-6}$) and $A_0\propto\sqrt{\mathrm{fd}}$.
+
+\section*{5. Constants (ZnO) --- honest status}
+
+No single experimental set containing $c$, $e$, $\varepsilon$ and $\rho$ was located. Gopal \& Spaldin
+(\doi{10.1007/s11664-006-0096-y}) supply $c$ and $e$ but \textbf{no dielectric tensor}; $\varepsilon^S$
+comes from a Landolt--B\"ornstein tabulation; measured $e$ ranges ($e_{31}=0.39$--$0.66$,
+$e_{33}=0.92$--$1.30$ C/m$^2$) come from the \"Ozg\"ur review. Two sets are carried: DFT ($e_{33}=1.34$)
+and experimental-$e$ ($e_{33}=1.20$), the latter preferred because it gives $d_{33}=12.6$ pC/N against
+the measured $\approx12$. Literature $k_{31}/k_{33}/k_t/k_{15}$ remain \textbf{unverified}; no
+agreement with experiment is claimed.
+
+\section*{6. Open items}
+
+\begin{enumerate}\small
+\item Confirm the Gupta heat equation in \texttt{paper/} --- still blocks nothing now, but the appendix
+needs it.
+\item Source a measured ZnO $c_{ij}$ table to complete the primary constant set.
+\item Source (or abandon) the literature $k_{31}$ value so the constant check can be closed.
+\item Neha: `k_th` at 300\,K for the actual composition; the verdict is insensitive unless $D>10^{-4}$ m$^2$/s.
+\end{enumerate}
+
+\noindent\textbf{Files.} \texttt{docs/04\_scale\_overlap\_window.md};
+\texttt{semiconductor\_sumit/steps/step3\_prerecheck\_\{bulk\_medium,mgt\_map\}.md};
+\texttt{quasicrystal\_neha/checks/mgt\_map.md}; \texttt{mee\_anu/checks/mgt\_map.md};
+\texttt{problem\_v3\_proposal.md} (all three papers);
+\texttt{semiconductor\_sumit/steps/step2\_piezo\_zno.md} and its \texttt{\_SCHOLAR} copy.
+
+
+\section*{7. v3 rescore --- the non-MGT cells}
+
+The novelty sweep was re-run for the cell that survives Route A in each paper. The table gives the six
+criterion scores (1--5) before and after; the criteria are novelty, physical insight, rigour, validity
+of the size-effect model, device relevance and reproducibility.
+
+\begin{center}\small
+\begin{tabular}{lcccccccc}
+\toprule
+paper & \multicolumn{6}{c}{scores (v2 $\to$ v3)} & total & verdict\\
+ & 1 & 2 & 3 & 4 & 5 & 6 & & \\
+\midrule
+Sumit & $3\to2$ & $4\to3$ & $4\to4$ & $2\to3$ & $4\to3$ & $5\to5$ & $22\to20$ & GO, conditional\\
+Neha  & $2\to2$ & $4\to4$ & $4\to4$ & $2\to3$ & $2\to2$ & $5\to5$ & $19\to20$ & REFOCUS\\
+Anu   & $2\to2$ & $3\to3$ & $4\to4$ & $2\to3$ & $3\to3$ & $5\to5$ & $19\to20$ & DOWNGRADE (Q2)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{What the re-run found.} For Sumit's cell (NSGT $\times$ carriers $\times$ complex $k$ in a
+traction-free PSC plate) two neighbours now exist: SH surface waves in a nanoscale PSC layered medium
+with flexoelectricity, strain gradient and carrier-density attenuation (\emph{Appl.\ Math.\ Modelling},
+2025) and NSGT piezoelectric nanoplate dispersion (\emph{Sci.\ Rep.}, 2025). Neither does a
+traction-free Lamb plate and neither treats the two NSGT lengths as an identifiability problem --- the
+cell is occupied at its edges, not at its centre. Sumit's novelty falls from 3 to 2 accordingly. For
+Neha (phason kinematics $\times$ NSGT) and Anu (ME ridge $\times$ NSGT) the surviving cells are
+unoccupied in the papers re-read, and their scores move only on criterion 4, because Route A removes the
+least defensible model component.
+
+\textbf{Biggest risk per paper.} Sumit: C3 is a hypothesis --- if the attenuation peak locus is
+insensitive to $l_{nl}/h$ and $l_g/h$ at the 1\,\% level, the paper is C1 alone and should be
+downgraded. Neha: novelty, not physics --- the 2026 competitor owns the attenuation-jump story. Anu:
+whether the ridge is resolvable in volume fraction at all.
+
+\end{document}

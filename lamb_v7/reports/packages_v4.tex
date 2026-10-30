@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{#1}}}
+\setlength{\parskip}{3pt}
+\title{\vspace{-1.5cm}\textbf{Packages v4.1 --- rename, sign audit, and expanded basics}\\[2pt]
+\large Milestone report}
+\author{Dr.\ Vipin \\ Gurugram University}
+\date{30 October 2026}
+\begin{document}
+\maketitle
+\vspace{-8mm}
+\footnotesize
+
+\section*{1. The delivery, with counts}
+
+Three archives, each with exactly two \LaTeX\ files. Word counts are of the source, so they run a little
+above the compiled count; section counts exclude the bibliography.
+
+\begin{center}\footnotesize
+\begin{tabular}{lrrrrr}
+\toprule
+archive & plan words & plan sections & basics words & basics sections & symbols in table\\
+\midrule
+\texttt{Lamb\_Sumit.zip} & 3280 & 6 & 8840 & 23 & 41\\
+\texttt{Lamb\_Neha.zip} & 2820 & 6 & 6440 & 23 & 35\\
+\texttt{Lamb\_Anu.zip} & 2310 & 6 & 6040 & 23 & 34\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The three basics documents now stand on their own. Each opens with waves, frequency, wavelength, wavenumber,
+phase velocity, dispersion, plates, modes, cutoffs, symmetric and antisymmetric motion; then complex numbers
+from zero, the complex wavenumber and attenuation; then stress, strain, Hooke's law and balance laws; then the
+field theory of the paper; then heat, Fourier, relaxation and MGT; then the size effect; then what a model may
+assume; then a table of every symbol in the plan with its unit and a rough size; a glossary; and a closing
+section on testing your own work. Neha's and Anu's documents reach the material only after the general
+apparatus, as instructed.
+
+\section*{2. The three corrections in this round}
+
+\textbf{The name.} Every occurrence of ``modified gradient theory'' is gone from all six files. The first use
+in each document now reads Moore-Gibson-Thompson (MGT), and the sentences that were built around the wrong
+name were rewritten rather than patched: for example the abstract of the Sumit plan now says that the heat
+equation is of the MGT type in its base form, and the Anu plan says that Matlam and Kedar applied the MGT
+theory to an electro-magneto-thermoelastic medium. In the basics documents the theory has its own section,
+where it is introduced by name with its two authors' dates and then called MGT for the rest of the text.
+
+\textbf{The signs.} The reviewer was right and the file was wrong. I re-derived both coefficients from the
+flux law, and the audit is in \texttt{internal/sumit\_audit.md}. Starting from
+$j_i=-n b_nE_i+n b_nS_n\theta_{,i}$ and $\partial_t\Delta n=-\nabla\!\cdot\!j_i$, the carrier equation gives
+$\beta_{\rm th}=-b_nn_0S_n$, positive for $n$-type, so a hot spot loses carriers and they gather where it is
+cold. The heat delivered to the lattice is $-\nabla\!\cdot\!(\Pi_{\rm th}J_i)$ with $J_i=-qj_i$, which is
+$-q\Pi_{\rm th}\partial_t\Delta n$; because the bracket of the heat equation carries the negative of each
+source, the entry is $+q\Pi_{\rm th}\partial_t\Delta n$. Both changes are in the plan and in the model
+document, and the Onsager ratio now carries its sign, $\Pi_{\rm th}/\beta_{\rm th}=-T_0/(b_nn_0)$.
+
+The same audit was done for the other two papers and is in \texttt{internal/neha\_audit.md} and
+\texttt{internal/anu\_audit.md}: every pair that shares a constant is tested for reciprocity and for
+dimensions, including the phonon-phason pair $R_{ijkl}=R_{klij}$, the sign of the phason dissipation
+$\gamma\dot w^2\ge0$, the magnetoelectric pair $\alpha$ appearing with the same sign in $D$ and $B$, and the
+two caloric pairs. Two by-products: the unit of $\alpha$ must be s/m, which follows from either of its two
+appearances, and the phason friction must be stated positive or the material becomes a pump.
+
+\textbf{The length.} The three basics documents went from about 1500 words to 6000 to 8800, with the sections
+listed in section 1 above, a symbol table of every symbol in the corresponding plan, and a closing section on
+self-testing. Nothing was added that gives away a boundary condition, a solution step, or a number to compare
+against.
+
+\section*{3. What has not changed since the last review}
+
+The seven corrections from the previous round stand: the Lim form of the nonlocal strain gradient law with the
+operator on inertia and on $c{:}\varepsilon$ only, the equivalent momentum form, all piezoelectric,
+piezomagnetic, thermal and phason couplings local as a stated modelling choice, the Peltier term in place of
+the band-gap term, the three withdrawn novelty claims, the corrected Lubensky reference with its icosahedral
+caveat, the separated symbols, and the sentence in each plan that hands the extra face conditions to the
+scholar.
+
+The claims remain narrow, and the searches behind them stand. Paper A is a free-face plate with a size effect
+and attenuation curves, not a new thermoelectric constitutive law; Qu et al.\ (2023) and Gupta et al.\ (2025)
+own that ground. Paper C is attenuation in a layered magneto-electro-elastic plate with MGT heat and an
+effective magnetoelectric coefficient carried as a band, not the discovery of the pyroelectric or
+pyromagnetic coefficient; Kondaiah et al.\ (2013) and Tocci Monaco et al.\ (2021) own those. Paper B is the
+telegraph phason plus a relaxation-time heat equation, and its novelty remains provisional until the 2026
+Acta Mechanica Solida Sinica paper is read.
+
+\section*{4. What is deliberately absent, and what is left on my side}
+
+No boundary conditions, no dispersion determinant, no solution method, no numbers to compare against. The
+internal folder carries what the packages lack: three equation source logs marked [R], [S], [T], [D] or [P],
+three benchmark files with every tolerance and every number we hold, three sign and unit audits, the change
+log, and the style record.
+
+No LaTeX engine exists in this workspace, so nothing was compiled here; the code is kept to the eight allowed
+packages, with no images and no custom environments. If a page count comes out too long once you compile, the
+cuts should come from the figure paragraphs in the plans, not from the model.
+
+The week-one gates are unchanged. Sumit confirms equations (17) to (19) of Lim et al.\ on the page and the
+Peltier term in Qu et al. Neha obtains the 2026 quasicrystal thermoelastic paper and writes down what heat
+operator it uses. Anu reads the magnetoelectric sign convention in Chen, Pan and Chen and the thermal face
+conditions in Kakar and Kakar. No calculations are set for the scholars yet.
+
+\end{document}

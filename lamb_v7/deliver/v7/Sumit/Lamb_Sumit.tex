@@ -102,12 +102,13 @@ I read; what is new is the reduction, the counting, the parity statement and the
 The plate occupies $-h\le z\le h$ and is unbounded in $x$ and $y$. The crystal is hexagonal, class $6mm$,
 with the six-fold axis along $z$. Motion is plane strain in the $x$--$z$ plane, so $u_y=0$ and
 $\partial_y=0$, and one plane wave travels along $x$,
-\begin{equation}
+\begin{align}
 \bigl(u_x,u_z,\varphi,\Delta n,\theta\bigr)
-=\bigl(\hat u_x,\hat u_z,\hat\varphi,\hat n,\hat\theta\bigr)(z)\;\exp\bigl[\ii(kx-\omega t)\bigr],
+&=\bigl(\hat u_x,\hat u_z,\hat\varphi,\hat n,\hat\theta\bigr)(z)\\
+&\quad\times\exp\bigl[\ii(kx-\omega t)\bigr],
 \qquad k=k_r+\ii k_i,
 \label{eq:ansatz}
-\end{equation}
+\end{align}
 with $\omega$ real and $k_i>0$ meaning decay along $+x$. The frequency is reported through $f\,(2h)$, the
 product of frequency and thickness, so that plates of different thickness sit on one axis.
 
@@ -268,8 +269,47 @@ vector has one entry, $p_3$, along the axis.
 Both components of the field survive, $E_x=-\partial_x\varphi$ and $E_z=-\partial_z\varphi$.
 \end{worked}
 
+\subsection*{The three stresses, one at a time}
+
+\begin{worked}
+Start from $\sigma_{xx}=c_{11}\varepsilon_{xx}+c_{12}\varepsilon_{yy}+c_{13}\varepsilon_{zz}
+-e_{31}E_z-\beta_1\theta$. Plane strain in $y$ gives $\varepsilon_{yy}=0$, so the $c_{12}$ term drops.
+The size-effect operator acts on the elastic strain energy, so it multiplies the two stiffness terms and
+nothing else. Substitution: nothing left to substitute. Collect: two stiffness terms, one piezo term, one
+thermal term. Result: the first line of \eqref{eq:stress}.
+\end{worked}
+
+\begin{worked}
+$\sigma_{zz}=c_{13}\varepsilon_{xx}+c_{23}\varepsilon_{yy}+c_{33}\varepsilon_{zz}-e_{33}E_z
+-\beta_3\theta$. With $\varepsilon_{yy}=0$ and $c_{23}=c_{13}$, substitution gives
+$c_{13}\varepsilon_{xx}+c_{33}\varepsilon_{zz}$; collect the piezo and thermal terms; result: the second
+line of \eqref{eq:stress}.
+\end{worked}
+
+\begin{worked}
+$\sigma_{xz}=2c_{44}\varepsilon_{xz}-e_{15}E_x$. There is no $c$ term with an index $5$ mixing with $1$
+or $3$, so the shear has one modulus only. Note the factor $2$: the two-index notation carries
+$\sigma_{xz}=c_{55}\,2\varepsilon_{xz}$ and $c_{55}=c_{44}$. Substitution: the modulus and the piezo
+coefficient. Collect: two terms. Result: the third line.
+\end{worked}
+
+\subsection*{The two displacement components, one at a time}
+
+\begin{worked}
+$D_x=e_{15}\,2\varepsilon_{xz}+\epsilon_{11}E_x$. The transverse piezo coefficient $e_{15}$ multiplies
+the engineering shear $2\varepsilon_{xz}$, not $\varepsilon_{xz}$; losing this factor of two is the
+commonest error in this reduction. There is no pyroelectric term in $D_x$ because the polar axis is $z$.
+Result: the first of \eqref{eq:D}.
+\end{worked}
+
+\begin{worked}
+$D_z=e_{31}\varepsilon_{xx}+e_{32}\varepsilon_{yy}+e_{33}\varepsilon_{zz}+\epsilon_{33}E_z+p_3\theta$.
+With $\varepsilon_{yy}=0$ and $e_{32}=e_{31}$ this is $e_{31}\varepsilon_{xx}+e_{33}\varepsilon_{zz}
++\epsilon_{33}E_z+p_3\theta$. Result: the second of \eqref{eq:D}.
+\end{worked}
+
 Writing the stresses out,
-\begin{align}
+\begin{align}\label{eq:stress}
 \sigma_{xx}&=c_{11}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{xx}
 +c_{13}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{zz}-e_{31}E_z-\beta_1\theta,\\
 \sigma_{zz}&=c_{13}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{xx}
@@ -277,7 +317,7 @@ Writing the stresses out,
 \sigma_{xz}&=2c_{44}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{xz}-e_{15}E_x,
 \end{align}
 and the electric displacement,
-\begin{equation}
+\begin{equation}\label{eq:D}
 D_x=e_{15}\,2\varepsilon_{xz}+\epsilon_{11}E_x,\qquad
 D_z=e_{31}\varepsilon_{xx}+e_{33}\varepsilon_{zz}+\epsilon_{33}E_z+p_3\theta .
 \end{equation}
@@ -341,18 +381,28 @@ $\hat D_z=\ii k e_{31}\hat u_x+\eta e_{33}\hat u_z-\eta\epsilon_{33}\hat\varphi+
 \subsection*{Row 1: momentum in $x$}
 
 \begin{worked}
-Take $\partial_x\hat\sigma_{xx}$: the factor $\ii k$ multiplies every term, so the $u_x$ term gives
-$-\Gcal c_{11}k^2u_x$ and the $u_z$ term gives $\ii k\eta\Gcal c_{13}u_z$, the potential term gives
-$\ii k\eta e_{31}\varphi$ and the thermal term gives $-\ii k\beta_1\theta$.
-Take $\partial_z\hat\sigma_{xz}$: the factor $\eta$ multiplies, so $u_x$ gives $+\Gcal c_{44}\eta^2u_x$,
-$u_z$ gives $\ii k\eta\Gcal c_{44}u_z$, the potential gives $\ii k\eta e_{15}\varphi$.
-Add: $u_x$ gives $\Gcal(c_{44}\eta^2-c_{11}k^2)$, $u_z$ gives $\ii k\eta\Gcal(c_{13}+c_{44})$,
-$\varphi$ gives $\ii k\eta(e_{31}+e_{15})$, $\theta$ gives $-\ii k\beta_1$.
-The left side of \eqref{eq:mom} is $-\Ncal\rho\omega^2u_x$. Moving everything to one side,
-$M_{11}=\Ncal$ term with the opposite sign plus the collected $u_x$ coefficient with a minus sign.
+The balance is $\Ncal\rho\ddot u_x=\partial_x\sigma_{xx}+\partial_z\sigma_{xz}$; with
+$\ddot u_x=-\omega^2\hat u_x$ we write it as
+$-\Ncal\rho\omega^2\hat u_x-\partial_x\hat\sigma_{xx}-\partial_z\hat\sigma_{xz}=0$, so that every term
+sits on one side. Now take the three pieces in turn.
+Inertia: $-\Ncal\rho\omega^2X$. This carries no $\eta$ at all, which is why the nonlocal length does not
+raise the degree of the polynomial.
+First divergence: $-\partial_x\hat\sigma_{xx}=-\ii k\bigl[\Gcal(\ii kc_{11}X+\eta c_{13}Z)
++\eta e_{31}\Phi-\beta_1\Theta\bigr]
+=\Gcal c_{11}k^2X-\ii k\eta\Gcal c_{13}Z-\ii k\eta e_{31}\Phi+\ii k\beta_1\Theta$.
+Second divergence: $-\partial_z\hat\sigma_{xz}=-\eta\bigl[\Gcal c_{44}(\eta X+\ii kZ)
++\ii k e_{15}\Phi\bigr]=-\Gcal c_{44}\eta^2X-\ii k\eta\Gcal c_{44}Z-\ii k\eta e_{15}\Phi$.
+Collect the coefficient of $X$: $-\Ncal\rho\omega^2+\Gcal c_{11}k^2-\Gcal c_{44}\eta^2
+=-\Ncal\rho\omega^2+\Gcal(c_{11}k^2-c_{44}\eta^2)$. That is $M_{11}$.
+Collect $Z$: $-\ii k\eta\Gcal c_{13}-\ii k\eta\Gcal c_{44}=-\ii k\eta\Gcal(c_{13}+c_{44})$.
+That is $M_{12}$.
+Collect $\Phi$: $-\ii k\eta e_{31}-\ii k\eta e_{15}=-\ii k\eta(e_{31}+e_{15})$. That is $M_{13}$.
+Collect $\Theta$: $+\ii k\beta_1$. That is $M_{15}$.
+The carrier amplitude $\hat n$ appears nowhere in the momentum balance, so $M_{14}=0$.
+Result: row 1 of \eqref{eq:M1}.
 \end{worked}
 
-\begin{equation}
+\begin{equation}\label{eq:M1}
 M_{11}=-\Ncal\rho\omega^2+\Gcal\bigl(c_{11}k^2-c_{44}\eta^2\bigr),\quad
 M_{12}=-\ii k\eta\,\Gcal(c_{13}+c_{44}),\quad
 M_{13}=-\ii k\eta\,(e_{31}+e_{15}),\quad
@@ -363,14 +413,26 @@ M_{15}=\ii k\,\beta_1 .
 \subsection*{Row 2: momentum in $z$}
 
 \begin{worked}
-$\partial_x\hat\sigma_{xz}$ brings $\ii k$: $u_x$ gives $\ii k\eta\Gcal c_{44}$, $u_z$ gives
-$-\Gcal c_{44}k^2$, $\varphi$ gives $-\ii e_{15}k^2\to-\epsilon$ sign to be collected below.
-$\partial_z\hat\sigma_{zz}$ brings $\eta$: $u_x$ gives $\ii k\eta\Gcal c_{13}$, $u_z$ gives
-$\Gcal c_{33}\eta^2$, $\varphi$ gives $e_{33}\eta^2$, $\theta$ gives $-\eta\beta_3$.
-Collecting and moving the inertia term across gives the row below.
+The balance is $\Ncal\rho\ddot u_z=\partial_x\sigma_{xz}+\partial_z\sigma_{zz}$, written as
+$-\Ncal\rho\omega^2Z-\partial_x\hat\sigma_{xz}-\partial_z\hat\sigma_{zz}=0$.
+Inertia: $-\Ncal\rho\omega^2Z$.
+First divergence: $-\partial_x\hat\sigma_{xz}=-\ii k\bigl[\Gcal c_{44}(\eta X+\ii kZ)
++\ii k e_{15}\Phi\bigr]=-\ii k\eta\Gcal c_{44}X+\Gcal c_{44}k^2Z+e_{15}k^2\Phi$, because
+$-\ii k\cdot\ii k=+k^2$.
+Second divergence: $-\partial_z\hat\sigma_{zz}=-\eta\bigl[\Gcal(\ii kc_{13}X+\eta c_{33}Z)
++\eta e_{33}\Phi-\beta_3\Theta\bigr]
+=-\ii k\eta\Gcal c_{13}X-\Gcal c_{33}\eta^2Z-e_{33}\eta^2\Phi+\eta\beta_3\Theta$.
+Collect $X$: $-\ii k\eta\Gcal(c_{44}+c_{13})$. That is $M_{21}$, and it equals $M_{12}$, as it must:
+the two momentum rows come from one symmetric operator.
+Collect $Z$: $-\Ncal\rho\omega^2+\Gcal c_{44}k^2-\Gcal c_{33}\eta^2
+=-\Ncal\rho\omega^2+\Gcal(c_{44}k^2-c_{33}\eta^2)$. That is $M_{22}$.
+Collect $\Phi$: $e_{15}k^2-e_{33}\eta^2$. That is $M_{23}$.
+Collect $\Theta$: $+\eta\beta_3$. That is $M_{25}$, and it is odd in $\eta$, unlike $M_{15}$, which is
+even; the difference is that $\beta_1$ enters through $\partial_x$ and $\beta_3$ through $\partial_z$.
+$M_{24}=0$. Result: row 2 of \eqref{eq:M2}.
 \end{worked}
 
-\begin{equation}
+\begin{equation}\label{eq:M2}
 M_{21}=-\ii k\eta\,\Gcal(c_{13}+c_{44}),\quad
 M_{22}=-\Ncal\rho\omega^2+\Gcal\bigl(c_{44}k^2-c_{33}\eta^2\bigr),\quad
 M_{23}=e_{15}k^2-e_{33}\eta^2,\quad
@@ -381,15 +443,23 @@ M_{25}=\eta\,\beta_3 .
 \subsection*{Row 3: Gauss law}
 
 \begin{worked}
-$\partial_x\hat D_x$ gives $\ii k\,e_{15}\eta u_x$, $-\epsilon_{11}k^2\varphi$ and, from the $\ii k$ on
-$\ii k u_z$, $-\,e_{15}k^2u_z$.
-$\partial_z\hat D_z$ gives $\ii k\eta e_{31}u_x$, $\eta^2e_{33}u_z$, $-\eta^2\epsilon_{33}\varphi$ and
-$\eta p_3\theta$.
-Add and then add the mobile charge $q\Delta n$. Nothing multiplies the carrier term, so its entry is $q$
-itself.
+Gauss' law with the free charge kept is $\partial_xD_x+\partial_zD_z+q\Delta n=0$; there is
+no external charge, and the carrier density is the only free charge in the problem.
+First term: $\partial_x\hat D_x=\ii k\bigl[e_{15}(\eta X+\ii kZ)-\ii k\epsilon_{11}\Phi\bigr]
+=\ii k\eta e_{15}X-e_{15}k^2Z+\epsilon_{11}k^2\Phi$.
+Second term: $\partial_z\hat D_z=\eta\bigl[\ii ke_{31}X+\eta e_{33}Z-\eta\epsilon_{33}\Phi
++p_3\Theta\bigr]=\ii k\eta e_{31}X+e_{33}\eta^2Z-\epsilon_{33}\eta^2\Phi+\eta p_3\Theta$.
+Free charge: $+q\hat n$.
+Collect $X$: $\ii k\eta(e_{15}+e_{31})$. That is $M_{31}$, and it is $-M_{13}$, the sign that makes the
+piezoelectric part of the operator skew.
+Collect $Z$: $e_{33}\eta^2-e_{15}k^2$. That is $M_{32}=-M_{23}$, for the same reason.
+Collect $\Phi$: $\epsilon_{11}k^2-\epsilon_{33}\eta^2$. That is $M_{33}$.
+Collect $\hat n$: $q$. That is $M_{34}$, the one entry of the matrix with no $\eta$ and no $k$.
+Collect $\Theta$: $\eta p_3$. That is $M_{35}$, the pyroelectric entry.
+Result: row 3 of \eqref{eq:M3}.
 \end{worked}
 
-\begin{equation}
+\begin{equation}\label{eq:M3}
 M_{31}=\ii k\eta(e_{15}+e_{31}),\quad
 M_{32}=e_{33}\eta^2-e_{15}k^2,\quad
 M_{33}=\epsilon_{11}k^2-\epsilon_{33}\eta^2,\quad
@@ -401,14 +471,23 @@ M_{35}=\eta\,p_3 .
 \subsection*{Row 4: carrier continuity}
 
 \begin{worked}
-$\partial_t\Delta n\to-\ii\omega\hat n$. The diffusion term gives $-D_nL\hat n$. The drift term
-$b_nn_0\nabla\cdot E$ needs $\nabla\cdot E=-\nabla^2\varphi=-L\varphi$, so it contributes
-$+b_nn_0L\varphi$ once moved to the left. The bias term $v_d\partial_x\Delta n$ gives $\ii kv_d\hat n$.
-The thermodiffusion term gives $+\beta_{\rm th}L\theta$ on the right, hence $-\beta_{\rm th}L$ on the
-left. Recombination gives $+\hat n/\tau_R$ on the left.
+The carrier balance carries diffusion, drift, thermodiffusion and recombination:
+$\partial_t\Delta n=D_n\nabla^2\Delta n-b_nn_0\nabla^2\varphi+v_d\,\partial_x\Delta n
+-\Delta n/\tau_R+\beta_{\rm th}\nabla^2\theta$. The sign of the drift term is the sign of the bias
+velocity; we take the bias along $+x$ and write the term on the right, which puts $-\ii kv_d$ in the
+matrix entry. Now substitute $\partial_t\to-\ii\omega$, $\nabla^2\to L$, $\partial_x\to\ii k$:
+$-\ii\omega\hat n=D_nL\hat n-b_nn_0L\Phi+\ii kv_d\hat n-\hat n/\tau_R+\beta_{\rm th}L\Theta$.
+Move everything to the left:
+$\bigl(-\ii\omega-D_nL-\ii kv_d+1/\tau_R\bigr)\hat n+b_nn_0L\,\Phi-\beta_{\rm th}L\,\Theta=0$.
+Collect $\Phi$: $b_nn_0L=b_nn_0(\eta^2-k^2)$. That is $M_{43}$.
+Collect $\hat n$: $-\ii\omega-D_nL-\ii kv_d+1/\tau_R$. That is $M_{44}$; the three real pieces are
+the diffusion rate $D_n(k^2-\eta^2)$, the recombination rate $1/\tau_R$ and the drift $-\ii kv_d$,
+which is the only term that makes $M_{44}$ complex at $\omega=0$.
+Collect $\Theta$: $-\beta_{\rm th}L$. That is $M_{45}$, even in $\eta$.
+$M_{41}=M_{42}=0$: the carrier equation has no mechanical driving term. Result: row 4 of \eqref{eq:M4}.
 \end{worked}
 
-\begin{equation}
+\begin{equation}\label{eq:M4}
 M_{43}=b_nn_0\,L,\quad
 M_{44}=-\ii\omega-D_nL-\ii k\,v_d+\frac{1}{\tau_R},\quad
 M_{45}=-\beta_{\rm th}L .
@@ -418,23 +497,42 @@ M_{45}=-\beta_{\rm th}L .
 \subsection*{Row 5: the heat equation}
 
 \begin{worked}
-The bracket of \eqref{eq:heat} has four pieces. The heat capacity gives $-\ii\omega\rho c_p\theta$.
-The thermoelastic work is $T_0\beta_{ij}\dot\varepsilon_{ij}$, and with only
-$\dot\varepsilon_{xx}=-\ii\omega\,\ii k\,u_x=k\omega u_x$ and
-$\dot\varepsilon_{zz}=-\ii\omega\eta u_z$ this gives $T_0\omega k\beta_1u_x-\ii\omega T_0\beta_3\eta u_z$.
-The electrocaloric term is $T_0p_3\dot E_z=T_0p_3(-\ii\omega)(-\eta\varphi)=\ii\omega T_0p_3\eta\varphi$.
-The Peltier term is $q\Pi_{\rm th}(-\ii\omega)\hat n$ and the recombination term is $+E_g\hat n/\tau_R$.
-Multiply the whole bracket by $f$ and subtract $k_{\rm th}L\theta$.
+The heat equation is of Moore--Gibson--Thompson type, which means the flux law is
+$q_i+\tau_q\dot q_i=-k_{\rm th}\theta_{,i}$ and the balance is $\rho c_p\dot\theta+q_{i,i}=S$
+with the sources $S=T_0\beta_1\dot\varepsilon_{xx}+T_0\beta_3\dot\varepsilon_{zz}
++T_0p_3\dot E_z+q\Pi_{\rm th}\dot{\Delta n}+(E_g/\tau_R)\Delta n$.
+Apply $1+\tau_q\partial_t$ to the balance and use the flux law for the divergence term:
+$\rho c_p(\dot\theta+\tau_q\ddot\theta)+\bigl(1+\tau_q\partial_t\bigr)q_{i,i}
+=\bigl(1+\tau_q\partial_t\bigr)S$ and $\bigl(1+\tau_q\partial_t\bigr)q_{i,i}=-k_{\rm th}\nabla^2\theta$,
+so that the conduction term carries no $f$ while every source does. With
+$f=1-\ii\omega\tau_q$ and the sources on the left,
+$f\bigl[T_0\beta_1\dot\varepsilon_{xx}+T_0\beta_3\dot\varepsilon_{zz}+T_0p_3\dot E_z
++q\Pi_{\rm th}\dot{\Delta n}+(E_g/\tau_R)\Delta n\bigr]
++k_{\rm th}L\,\Theta+\ii\omega f\rho c_p\,\Theta=0$.
+Now the five substitutions, one per line.
+$\dot\varepsilon_{xx}=-\ii\omega\,\ii kX=\omega kX$, because $(-\ii)(\ii)=+1$. With the prefactor
+$fT_0\beta_1$ this gives $M_{51}=fT_0\omega k\beta_1$, even in $\eta$.
+$\dot\varepsilon_{zz}=-\ii\omega\,\eta Z$, so the term is $-\ii\omega fT_0\beta_3\eta Z$ and
+$M_{52}=-\ii\omega fT_0\beta_3\eta$.
+$E_z=-\eta\Phi$, so $\dot E_z=+\ii\omega\eta\Phi$ and $M_{53}=\ii\omega fT_0p_3\eta$. Both
+$M_{52}$ and $M_{53}$ are odd, and both fit the parity matching of Section~\ref{sec:calcD}.
+$\dot{\Delta n}=-\ii\omega\hat n$ and $\Delta n$ enters undifferentiated, so the carrier column
+reads $f(-\ii\omega q\Pi_{\rm th}+E_g/\tau_R)$. That is $M_{54}$, even in $\eta$, and it is one
+of the two entries that break the split.
+$\Theta$ collects $-k_{\rm th}L$ from the conduction and $-\ii\omega f\rho c_p$ from the balance, so
+$M_{55}=-\ii\omega f\rho c_p-k_{\rm th}L$. Setting $\tau_q=0$ makes $f=1$ and returns the Fourier
+law; that is the limit used in Calculation~H.
+Result: row 5 of \eqref{eq:M5}.
 \end{worked}
 
-\begin{equation}
-M_{51}=f\,T_0\omega k\,\beta_1,\quad
-M_{52}=-\ii\omega f\,T_0\beta_3\eta,\quad
-M_{53}=\ii\omega f\,T_0p_3\eta,\quad
-M_{54}=f\Bigl(-\ii\omega q\Pi_{\rm th}+\frac{E_g}{\tau_R}\Bigr),\quad
-M_{55}=-\ii\omega f\rho c_p-k_{\rm th}L .
-\label{eq:M5}
-\end{equation}
+\begin{align}
+\label{eq:M5} \\
+M_{51}&==f\,T_0\omega k\,\beta_1, \\
+M_{52}&==-\ii\omega f\,T_0\beta_3\eta, \\
+M_{53}&==\ii\omega f\,T_0p_3\eta, \\
+M_{54}&==f\Bigl(-\ii\omega q\Pi_{\rm th}+\frac{E_g}{\tau_R}\Bigr), \\
+M_{55}&==-\ii\omega f\rho c_p-k_{\rm th}L .
+\end{align}
 
 All other entries are zero. The matrix is
 \begin{equation}
@@ -483,38 +581,68 @@ what Section~\ref{sec:calcF} supplies.
 The parity of $\det M$ decides whether the plate modes split into a symmetric and an antisymmetric family,
 and the answer here is not the classical one.
 
+Write the parity of every entry first. Each entry is a monomial in $\eta$ times a constant, so its parity
+is decided by the power of $\eta$ and by nothing else:
+\begin{equation}
+\begin{array}{c|ccccc}
+ & \hat u_x & \hat u_z & \hat\varphi & \hat n & \hat\theta\\\hline
+\text{row 1} & + & - & - & \cdot & +\\
+\text{row 2} & - & + & + & \cdot & -\\
+\text{row 3} & - & + & + & + & -\\
+\text{row 4} & \cdot & \cdot & + & + & +\\
+\text{row 5} & + & - & - & + & +
+\end{array}
+\label{eq:paritytable}
+\end{equation}
+with $+$ for even, $-$ for odd and $\cdot$ for a zero entry.
+
 \begin{worked}
-Put $\eta\to-\eta$ and ask whether every entry either keeps its sign or flips it in a way that can be
-absorbed by multiplying rows and columns by $-1$. Assign a sign $\tau_j$ to each column and $\sigma_i$ to
-each row and require $M_{ij}(-\eta)=\sigma_i\tau_jM_{ij}(\eta)$.
-Even entries: $M_{11},M_{22},M_{23},M_{25}$ no, $M_{25}$ is odd; $M_{33},M_{34},M_{43},M_{44},M_{51}$
-are even; $M_{12},M_{13},M_{15}$ no, $M_{15}$ is even; $M_{21},M_{31},M_{35}$ are odd.
-Take $\tau_1=+1$, then $M_{12}$ odd forces $\sigma_1\tau_2=-1$ and $M_{15}$ even forces
-$\sigma_1\tau_5=+1$. Set $\sigma_1=+1$, hence $\tau_2=-1$ and $\tau_5=+1$.
-Row 2 then needs $\sigma_2\tau_2=+1$ for the odd $M_{21}$, so $\sigma_2=-1$; check $M_{22}$ even:
-$\sigma_2\tau_2=+1$ holds; $M_{23}$ even: $\sigma_2\tau_3=+1$ forces $\tau_3=-1$; $M_{25}$ odd:
-$\sigma_2\tau_5=-1$ holds.
-Row 3: $M_{31}$ odd gives $\sigma_3\tau_1=-1$, so $\sigma_3=-1$; then $M_{34}=q$ even gives
-$\sigma_3\tau_4=+1$, so $\tau_4=-1$; $M_{35}$ odd gives $\sigma_3\tau_5=-1$, holds; $M_{33}$ even gives
-$\sigma_3\tau_3=+1$, holds.
-Row 5: $M_{51}$ even gives $\sigma_5\tau_1=+1$, so $\sigma_5=+1$; $M_{53}$ odd gives
-$\sigma_5\tau_3=-1$, holds; $M_{54}$ even gives $\sigma_5\tau_4=+1$ but $\tau_4=-1$, so this fails unless
-$M_{54}$ vanishes.
+Now look for signs. The rule is $M_{ij}(-\eta)=\sigma_i\tau_jM_{ij}(\eta)$ for every non-zero entry, the
+row signs $\sigma_i$ and the column signs $\tau_j$ being $\pm1$.
+Set $\sigma_1=+1$, which is free because only the products matter. From $M_{11}$ even, $\tau_1=+1$; from
+$M_{12}$ odd and $M_{13}$ odd, $\tau_2=\tau_3=-1$; from $M_{15}$ even, $\tau_5=+1$.
+Row 2: $M_{21}$ odd gives $\sigma_2=-\tau_1^{-1}$, so $\sigma_2=-1$. Then $M_{22}$ even needs
+$\sigma_2\tau_2=+1$, which holds; $M_{23}$ even needs $\sigma_2\tau_3=+1$, which holds; $M_{25}$ odd needs
+$\sigma_2\tau_5=-1$, which holds.
+Row 3: $M_{31}$ odd gives $\sigma_3=-1$. Then $M_{32}$ even, $M_{33}$ even and $M_{35}$ odd all hold
+against $\tau_2=\tau_3=-1$, $\tau_5=+1$. The entry $M_{34}=q$ is even and gives $\sigma_3\tau_4=+1$, so
+$\tau_4=-1$.
+Row 4: $M_{43}$ even gives $\sigma_4=-\tau_3^{-1}$, so $\sigma_4=-1$; $M_{44}$ even gives
+$\sigma_4\tau_4=+1$, which holds. The entry $M_{45}=-\beta_{\rm th}L$ is even and gives
+$\sigma_4\tau_5=+1$, but $\sigma_4=-1$ and $\tau_5=+1$. this one fails.
+Row 5: $M_{51}$ even gives $\sigma_5=+1$; $M_{52}$ odd and $M_{53}$ odd hold against $\tau_2=\tau_3=-1$;
+$M_{55}$ even holds. The entry $M_{54}=f(-\ii\omega q\Pi_{\rm th}+E_g/\tau_R)$ is even and gives
+$\sigma_5\tau_4=+1$, but $\tau_4=-1$. this one fails.
+The assignment is forced up to one overall sign, so these two are the only failures.
 \end{worked}
 
-The conclusion is short. The polynomial is even, and the two families split, only if the terms that break
-the row-and-column sign matching are absent; the one that breaks it here is the pyroelectric constant
-$p_3$, which puts an odd entry $M_{35}=\eta p_3$ in the Gauss row and an odd entry $M_{53}=\ii\omega
-fT_0p_3\eta$ in the heat row while the same rows carry even entries in the other columns. With $p_3=0$ the
-matching can be completed and $\det M$ is even. With $p_3\ne0$ the polynomial has odd powers, the roots do
-not come in pairs, and the plate modes do not split into symmetric and antisymmetric families. The
-physical reason is that a polar crystal has no mirror symmetry about $z=0$ once the carrier field is
-present: the mirror would have to send $\Delta n$ to $-\Delta n$, and the pyroelectric charge does not
-allow it. Switching the carrier off restores the mirror symmetry and the split.
+The conclusion is short. Two entries refuse the matching, $M_{45}=-\beta_{\rm th}L$ and
+$M_{54}=f(-\ii\omega q\Pi_{\rm th}+E_g/\tau_R)$, and both of them are even in $\eta$ where the matching
+needs them odd. So $\det M$ is even, and the plate modes split into a symmetric and an antisymmetric
+family, if and only if
+\begin{equation}
+\beta_{\rm th}=0,\qquad \Pi_{\rm th}=0,\qquad E_g=0
+\end{equation}
+together. If any one of the three is present the polynomial carries odd powers, the fourteen roots do not
+pair, and the determinant has to be taken over all fourteen at once.
 
-A practical consequence follows. When the split holds, two smaller matrices may be built and factored;
-when it fails, the determinant must be taken over all fourteen roots at once. A result that shows a split
-where $p_3$ is non-zero should be treated as a coding error, not as a physical finding.
+The pyroelectric constant has nothing to do with it. Its two entries, $M_{35}=\eta p_3$ in the Gauss row
+and $M_{53}=\ii\omega fT_0p_3\eta$ in the heat row, are both odd, and both fit the matching; setting
+$p_3=0$ does not restore the pairing and leaving it in does not break it.
+
+The physical reason for the failure is worth one sentence. Under $z\to-z$ the amplitudes of one family
+transform by the column signs just found: $\hat u_x$ and $\hat\theta$ are even in $z$, while $\hat u_z$,
+$\hat\varphi$ and $\hat n$ are odd. Thermodiffusion drives the carrier density from the temperature
+gradient, and an even $\theta$ drives an even $\Delta n$ through the even operator $L$; the family needs
+$\Delta n$ odd, so the coupling is inconsistent with the split. The Peltier and recombination terms fail
+the same way in the other direction, feeding an odd $\Delta n$ into the equation for an even $\theta$.
+Remove those three terms and the carrier and the temperature stop talking to each other through even
+operators, and the split comes back.
+
+A practical consequence follows. When the split holds, two smaller matrices may be built, one of order
+seven for each family, and each may be factored separately. When it fails, the full fourteen-by-fourteen
+matrix is the only object available. The counting of Section~\ref{sec:calcF} is unaffected either way:
+fourteen conditions in, fourteen amplitudes out.
 
 \section{Calculation E: the solution through the thickness}\label{sec:calcE}
 
@@ -567,28 +695,72 @@ the quantities the gradient term does work on, proportional to $l_g^2$ and vanis
 
 The seven row functions, with $\eta=\eta_m$ and the amplitudes $(X_m,Z_m,\Phi_m,\nu_m,\Theta_m)$,
 \begin{align}
-b_1&=\frac{1}{\Ncal_m}\Bigl[\hat\sigma_{zz}-l_g^2\ii k\eta\,c_{44}(\eta X_m+\ii kZ_m)\Bigr],
-&b_2&=\frac{1}{\Ncal_m}\Bigl[\hat\sigma_{xz}-l_g^2\ii k\eta\,(\ii k c_{11}X_m+\eta c_{13}Z_m)\Bigr],\\
-b_3&=\frac{l_g^2}{\Ncal_m}\,\eta\,c_{44}(\eta X_m+\ii kZ_m),
-&b_4&=\frac{l_g^2}{\Ncal_m}\,\eta\,(\ii k c_{13}X_m+\eta c_{33}Z_m),\\
-b_5&=\ii k e_{31}X_m+\eta e_{33}Z_m-\eta\epsilon_{33}\Phi_m+p_3\Theta_m,
-&b_6&=-D_n\eta\,\nu_m+b_nn_0\eta\,\Phi_m-\beta_{\rm th}\eta\,\Theta_m,\\
-b_7&=\eta\,\Theta_m . &&
+b_1&==\frac{1}{\Ncal_m}\Bigl[\hat\sigma_{zz}-l_g^2\ii k\eta\,c_{44}(\eta X_m \\
+\quad +\ii kZ_m)\Bigr], \\
+b_2&==\frac{1}{\Ncal_m}\Bigl[\hat\sigma_{xz}-l_g^2\ii k\eta\,(\ii k c_{11}X_m \\
+\quad +\eta c_{13}Z_m)\Bigr], \\
+b_3&==\frac{l_g^2}{\Ncal_m}\,\eta\,c_{44}(\eta X_m+\ii kZ_m), \\
+b_4&==\frac{l_g^2}{\Ncal_m}\,\eta\,(\ii k c_{13}X_m+\eta c_{33}Z_m), \\
+b_5&==\ii k e_{31}X_m+\eta e_{33}Z_m-\eta\epsilon_{33}\Phi_m+p_3\Theta_m, \\
+b_6&==-D_n\eta\,\nu_m+b_nn_0\eta\,\Phi_m-\beta_{\rm th}\eta\,\Theta_m, \\
+b_7&==\eta\,\Theta_m .
 \end{align}
 The first two are the normal and shear tractions with the surface-gradient term and the nonlocal operator
 inverted; the third and fourth are the double tractions; the fifth is the open-circuit condition; the
 sixth is zero carrier flux; the seventh is an adiabatic face.
 
+\subsection*{The seven rows, one at a time}
+
 \begin{worked}
-Row $b_5$ is $\hat D_z$ at the face with $\hat u_x,\hat u_z,\hat\varphi,\hat\theta$ replaced by the
-amplitudes; setting it to zero is the open-circuit condition, and the alternative, a shorted face,
-replaces it by $\Phi_m=0$.
-Row $b_6$ is the particle flux $\Gamma_z=-D_n\partial_z\Delta n-b_nn_0E_z-\beta_{\rm th}\partial_z\theta$
-divided through by nothing: with $E_z=-\eta\Phi$ and $\partial_z\to\eta$ this is
-$-D_n\eta\nu+b_nn_0\eta\Phi-\beta_{\rm th}\eta\Theta$. That is the drift--diffusion current of
-\cite[Eqs.~(3), (7)]{YangZhou2005} with the Soret term added, set to zero.
-Row $b_7$ is $\partial_z\theta=0$. Because the carrier flux vanishes as well, the Peltier part of the heat
-current vanishes at the face and no cross term remains. For an isothermal face use $\Theta_m$ instead.
+Row $b_1$. On a face of a strain-gradient solid the normal traction is not $\sigma_{zz}$ by itself; the
+surface-gradient term is the tangential divergence of the double traction, which brings one more
+$\partial_x$ and therefore one more $\ii k$ and one more $\eta$. Substitution: insert
+$\hat\sigma_{zz}$ from Calculation~C and the amplitudes $X_m,Z_m,\Phi_m,\Theta_m$; the gradient term
+contributes $-l_g^2\ii k\eta\,c_{44}(\eta X_m+\ii kZ_m)$. Collect: four amplitudes, and $\hat n$ does not
+appear. Result: the first row function, with $\Ncal_m^{-1}$ outside because the nonlocal operator is
+inverted root by root.
+\end{worked}
+
+\begin{worked}
+Row $b_2$. The same statement for the shear traction: the physical part is $\hat\sigma_{xz}$ and the
+surface-gradient part is $-l_g^2\ii k\eta(\ii kc_{11}X_m+\eta c_{13}Z_m)$, with $c_{11}$ and $c_{13}$
+where $c_{44}$ and $c_{33}$ stood in $b_1$, because the shear traction is built from the gradient of the
+normal strains rather than of the shear strain. Result: the second row function.
+\end{worked}
+
+\begin{worked}
+Rows $b_3$ and $b_4$ are the double tractions, the quantities the gradient term does work against. They
+are $l_g^2$ times the normal derivative of the stress that the corresponding strain would produce:
+$l_g^2\eta\,c_{44}(\eta X_m+\ii kZ_m)$ for the shear pair and $l_g^2\eta(\ii kc_{13}X_m+\eta c_{33}Z_m)$
+for the normal pair. Both vanish with $l_g$, which is why the five-row set is enough when $l_g=0$.
+Result: the third and fourth row functions.
+\end{worked}
+
+\begin{worked}
+Row $b_5$ is $\hat D_z$ at the face, with the amplitudes put in. Substitution:
+$\hat D_z=\ii ke_{31}X_m+\eta e_{33}Z_m-\eta\epsilon_{33}\Phi_m+p_3\Theta_m$. Collect: four terms. Setting
+it to zero is the open-circuit condition, because the exterior carries no free charge and no normal
+displacement may leave the face. The alternative, a metallised face held at a fixed potential, replaces
+the row by $\Phi_m=0$; the two give different speeds and the difference between them is the
+electromechanical coupling, which is the subject of Calculation~H.
+\end{worked}
+
+\begin{worked}
+Row $b_6$ is the particle flux
+$\Gamma_z=-D_n\partial_z\Delta n-b_nn_0E_z-\beta_{\rm th}\partial_z\theta$, set to zero: no carrier
+crosses the face. Substitution: $\partial_z\to\eta$, $E_z=-\eta\Phi_m$, $\Delta n\to\nu_m$,
+$\theta\to\Theta_m$. Collect: $-D_n\eta\nu_m+b_nn_0\eta\Phi_m-\beta_{\rm th}\eta\Theta_m$. That is the
+drift--diffusion current of \cite[Eqs.~(3), (7)]{YangZhou2005} with the Soret term added. Result: the
+sixth row function. Note that every term carries one $\eta$, so the row vanishes identically at
+$\eta=0$; that root has to be handled separately if it arises.
+\end{worked}
+
+\begin{worked}
+Row $b_7$ is $\partial_z\theta=0$, an adiabatic face. Substitution: $\eta\Theta_m$. Result: the seventh
+row function. Because the carrier flux vanishes on the same face, the Peltier part of the heat current
+vanishes there too and no cross term survives. An isothermal face replaces the row by $\Theta_m$; a
+face with a heat transfer coefficient replaces it by $\eta\Theta_m+\lambda\Theta_m$ with $\lambda$ the
+surface conductance over the conductivity. Result: the seventh row function.
 \end{worked}
 
 \section{Calculation G: the dispersion matrix}\label{sec:calcG}
@@ -624,15 +796,40 @@ carrier terms dropped. That is an elastic plate.
 \begin{worked}
 What remains is the two momentum equations with $M_{11}=-\rho\omega^2+c_{11}k^2-c_{44}\eta^2$,
 $M_{22}=-\rho\omega^2+c_{44}k^2-c_{33}\eta^2$ and $M_{12}=M_{21}=-\ii k\eta(c_{13}+c_{44})$, the
-size-effect factors being unity when both lengths vanish. Setting the determinant of that $2\times2$
-block to zero and isolating the two roots gives $\eta^2=k^2-\omega^2/c_L^2$ and
-$\eta^2=k^2-\omega^2/c_T^2$ with $\rho c_L^2=c_{11}$, $\rho c_T^2=c_{44}$ in this two-dimensional
-reduction, which is the usual longitudinal and transverse pair.
-The face rows $b_1,b_2$ reduce to $\hat\sigma_{zz}=0$ and $\hat\sigma_{xz}=0$, and the partial waves come
-in pairs $\pm\eta$. The four conditions then collapse to the two classical Rayleigh--Lamb equations, the
-symmetric one with the sine of the longitudinal exponent times the cosine of the transverse one, and the
-antisymmetric one the other way round. I write the result, not the reduction of each term; the scholar
-should do that reduction and check that the two equations are the classical ones.
+size-effect factors being unity when both lengths vanish. Put $A=\rho\omega^2$ and $x=\eta^2$ and
+substitute into the determinant of that block:
+$\bigl(c_{11}k^2-c_{44}x-A\bigr)\bigl(c_{44}k^2-c_{33}x-A\bigr)-\bigl(-\ii k\eta(c_{13}+c_{44})\bigr)^2=0$.
+The last term is $+k^2x(c_{13}+c_{44})^2$, because $(-\ii)^2=-1$ and there is a minus in front. Collect
+in powers of $x$:
+$c_{44}c_{33}x^2-x\Bigl[c_{11}(c_{11}k^2-A)+c_{44}(c_{44}k^2-A)-k^2(c_{13}+c_{44})^2\Bigr]
++(c_{11}k^2-A)(c_{44}k^2-A)=0$, where in the constant term I have used $c_{33}=c_{11}$, which is the
+isotropic identity in this plane.
+Now ask when the quadratic factors as $c_{11}c_{44}\bigl(x-(k^2-A/c_{11})\bigr)\bigl(x-(k^2-A/c_{44})\bigr)$.
+Compare the coefficient of $x$: the factorised form gives $2c_{11}c_{44}k^2-A(c_{11}+c_{44})$, the
+expanded form gives $k^2\bigl(c_{11}^2+c_{44}^2-(c_{13}+c_{44})^2\bigr)-A(c_{11}+c_{44})$. They agree if
+and only if $c_{11}^2+c_{44}^2-(c_{13}+c_{44})^2=2c_{11}c_{44}$, that is
+$(c_{11}-c_{44})^2=(c_{13}+c_{44})^2$, that is $c_{11}=c_{13}+2c_{44}$.
+Substitution of the isotropic values $c_{11}=\lambda+2\mu$, $c_{13}=\lambda$, $c_{44}=\mu$ gives
+$\lambda+2\mu=\lambda+2\mu$. So the factorisation is an identity for an isotropic solid and for no other;
+a transversely isotropic plate does not factor this way and the two branches are not a clean
+longitudinal and transverse pair.
+Result: $x=k^2-\omega^2/c_L^2$ and $x=k^2-\omega^2/c_T^2$ with $\rho c_L^2=c_{11}$ and
+$\rho c_T^2=c_{44}$ in this two-dimensional reduction, which is the usual longitudinal and transverse
+pair. The face rows $b_1,b_2$ reduce to $\hat\sigma_{zz}=0$ and $\hat\sigma_{xz}=0$, and the partial waves
+come in pairs $\pm\eta$.
+\end{worked}
+
+\begin{worked}
+The four conditions then collapse to the two classical Rayleigh--Lamb equations. Take the amplitudes of
+the longitudinal pair as $\pm1$ in $X$ with $Z$ following from row 1, and those of the transverse pair as
+$\pm1$ in $Z$ with $X$ following; write the four rows, add and subtract the two face blocks, and the
+system splits into a symmetric part and an antisymmetric part. Substitution of $\eta=\pm\ii p$ and
+$\eta=\pm\ii q$ with $p^2=\omega^2/c_L^2-k^2$ and $q^2=\omega^2/c_T^2-k^2$ turns the exponentials into
+sines and cosines. Collect and result:
+$\bigl(q^2-k^2\bigr)^2\cos(ph)\sin(qh)/q+4k^2p\sin(ph)\cos(qh)=0$ for the symmetric family and the same
+expression with sine and cosine exchanged for the antisymmetric one. I write the result rather than every
+line of the reduction; the scholar should carry out that reduction and check that the two equations are
+the classical ones.
 \end{worked}
 
 The result to check is that with all couplings off and $l_g=l_{\rm nl}=0$ the dispersion of the plate is
@@ -644,32 +841,286 @@ Rayleigh surface-wave speed of the half space as $f(2h)$ grows.
 With the piezoelectric coupling on and the plate thin, the lowest symmetric mode is a plate extension.
 
 \begin{worked}
-Take $k\to0$ and keep only the in-plane motion: the $x$ momentum equation reduces to $\rho\omega^2=c_{11}
-k^2$ with the modulus stiffened by the piezoelectric terms. Eliminating the potential through the
-open-circuit condition $\hat D_z=0$ replaces $c_{11}$ by $\bar c_{11}=c_{11}+e_{31}^2/\epsilon_{33}$, and
-the speed becomes $v_{\rm open}=\sqrt{\bar c_{11}/\rho}$. The shorted face instead removes the added term
-and leaves $v_{\rm short}=\sqrt{c_{11}/\rho}$. The difference between the two is the electromechanical
-coupling factor squared. The algebra of the elimination is the scholar's to do; the result is the standard
-open-circuit stiffened speed.
+Take $k\to0$ and keep only the in-plane motion. The lowest symmetric branch is then a plate extension:
+$\varepsilon_{xx}$ is the only strain that survives to leading order, and the plate is thin enough that
+the two face conditions hold through the thickness, not only at the faces. So impose
+$\sigma_{zz}=0$ and $D_z=0$ inside the plate, and eliminate $\varepsilon_{zz}$ and $E_z$ in favour of
+$\varepsilon_{xx}$.
+Substitution: the two conditions form a $2\times2$ system,
+$\begin{pmatrix}c_{33}&-e_{33}\\ e_{33}&\epsilon_{33}\end{pmatrix}
+\begin{pmatrix}\varepsilon_{zz}\\ E_z\end{pmatrix}
+=-\varepsilon_{xx}\begin{pmatrix}c_{13}\\ e_{31}\end{pmatrix}$.
+Its determinant is $\Delta_c=c_{33}\epsilon_{33}+e_{33}^2$.
+Collect: solving,
+$\varepsilon_{zz}=-\varepsilon_{xx}(c_{13}\epsilon_{33}+e_{33}e_{31})/\Delta_c$ and
+$E_z=-\varepsilon_{xx}(c_{33}e_{31}-e_{33}c_{13})/\Delta_c$.
+Substitute both into $\sigma_{xx}=c_{11}\varepsilon_{xx}+c_{13}\varepsilon_{zz}-e_{31}E_z$:
+$\sigma_{xx}=\varepsilon_{xx}\Bigl[c_{11}-\dfrac{c_{13}^2\epsilon_{33}+2c_{13}e_{33}e_{31}-c_{33}e_{31}^2}
+{c_{33}\epsilon_{33}+e_{33}^2}\Bigr]$.
+Result: the effective in-plane modulus is
+$\bar c_{11}=c_{11}-\dfrac{c_{13}^2\epsilon_{33}+2c_{13}e_{33}e_{31}-c_{33}e_{31}^2}
+{c_{33}\epsilon_{33}+e_{33}^2}$,
+or, in the equivalent form that is easier to check,
+$\bar c_{11}=c_{11}-\dfrac{c_{13}^2}{c_{33}}
++\dfrac{\bigl(e_{31}-e_{33}c_{13}/c_{33}\bigr)^2}{\epsilon_{33}+e_{33}^2/c_{33}}$,
+the two forms being equal after multiplication by $c_{33}$. The first correction is the relief of the
+thickness constraint, the second is the piezoelectric stiffening on top of it.
+The extensional speed follows from $\rho\omega^2=\bar c_{11}k^2$, so
+$v_{\rm open}=\sqrt{\bar c_{11}/\rho}$.
+For the shorted face, $E_z=0$ instead of $D_z=0$; then $\varepsilon_{zz}=-(c_{13}/c_{33})\varepsilon_{xx}$
+alone and $\bar c_{11}^{\rm short}=c_{11}-c_{13}^2/c_{33}$, giving
+$v_{\rm short}=\sqrt{\bar c_{11}^{\rm short}/\rho}$. The relative difference
+$(v_{\rm open}^2-v_{\rm short}^2)/v_{\rm short}^2$ is the squared electromechanical coupling of the plate,
+which is the quantity a measurement of the two speeds returns.
+Two remarks, both worth the scholar's attention. First, the relief term $c_{13}^2/c_{33}$ is not optional:
+a plate is free in $z$ and the extensional modulus of a free plate is not $c_{11}$. Writing
+$\bar c_{11}=c_{11}+e_{31}^2/\epsilon_{33}$ is the answer for a plate constrained against thinning, which
+is a different problem. Second, the thin-plate limit is a limit of the lowest branch only; the higher
+branches do not go there.
 \end{worked}
 
 \subsection*{The bulk thermoelastic damping and the Hutson--White condition}
 
 Two limits of the thermal side are worth having by hand, because both are used later as tests.
 
+\subsection*{Fourier thermoelastic damping, in full}
+
 \begin{worked}
-For a longitudinal plane wave in an unbounded medium, the carrier terms off and $\tau_q=0$, the heat
-equation gives $\theta$ in terms of the dilatation, $\rho c_p(-\ii\omega)\theta=T_0\beta\,\ii\omega\,
-\varepsilon$ after dividing out the conductivity term, and substitution into the momentum equation turns
-the isothermal modulus into a complex one whose imaginary part is $\Delta_E\omega\tau/(1+\omega^2\tau^2)$
-with $\tau=\rho c_p/k_{\rm th}k^2$ and $\Delta_E=T_0\beta^2/(\rho c_p c_{11})$. The ratio $k_i/k_r$ is
-half that imaginary part. This is the standard thermoelastic damping formula and the test is that our
-full matrix reproduces it in this limit.
-For the carrier side, the free charge relaxes with the dielectric relaxation time
-$\epsilon_{11}/(q b_n n_0)$, and the acoustic attenuation peaks when the angular frequency matches that
-rate, $\epsilon_{11}\omega/(qb_n)=n_0$. That is the Hutson--White condition, and it locates the carrier
-density at which the attenuation is a maximum for a given frequency. Both are limits of the matrix, not
-extra physics.
+Take a longitudinal plane wave in an unbounded medium: the carrier column is dropped, $\tau_q=0$ so that
+$f=1$, and only $u_x$ and $\theta$ survive with the wave running along $x$ and no $z$ dependence, so
+$\eta=0$ and $L=-k^2$.
+Substitution: the momentum row is $(c_{11}k^2-\rho\omega^2)U+\ii k\beta_1\Theta=0$ and the heat row is
+$T_0\beta_1\omega k\,U+(k_{\rm th}k^2-\ii\omega\rho c_p)\Theta=0$, the $\omega k$ in the second coming
+from $\dot\varepsilon_{xx}=(-\ii\omega)(\ii k)U=+\omega kU$.
+Collect: the determinant of that $2\times2$ system is
+$(c_{11}k^2-\rho\omega^2)(k_{\rm th}k^2-\ii\omega\rho c_p)-\ii k\beta_1\,T_0\beta_1\omega k=0$.
+Now perturb. Write $\omega=\omega_0(1-\ii\delta)$ with $\rho\omega_0^2=c_{11}k^2$ and $|\delta|\ll1$.
+Then $c_{11}k^2-\rho\omega^2=\rho\omega_0^2-\rho\omega_0^2(1-\ii\delta)^2\approx2\ii\rho\omega_0^2\delta$.
+For the heat factor, factor out $-\ii\omega\rho c_p$:
+$k_{\rm th}k^2-\ii\omega\rho c_p=-\ii\omega\rho c_p\bigl(1+\ii k_{\rm th}k^2/(\omega\rho c_p)\bigr)
+=-\ii\omega\rho c_p\bigl(1+\ii/(\omega\tau)\bigr)$ with
+$\tau=\rho c_p/(k_{\rm th}k^2)$, the diffusion time of a thermal layer one wavelength thick.
+Substitute both:
+$2\ii\rho\omega_0^2\delta\,(-\ii\omega\rho c_p)(1+\ii/(\omega\tau))-\ii T_0\beta_1^2\omega k^2=0$,
+that is $2\rho^2\omega_0^2\omega c_p\delta\,(1+\ii/(\omega\tau))=\ii T_0\beta_1^2\omega k^2$.
+Collect: $\delta=\dfrac{\ii\,T_0\beta_1^2k^2}{2\rho^2\omega_0^2c_p(1+\ii/(\omega\tau))}
+=\dfrac{\ii\Delta_E/2}{1+\ii/(\omega\tau)}$ with
+$\Delta_E=\dfrac{T_0\beta_1^2k^2}{\rho c_p\,\rho\omega_0^2}=\dfrac{T_0\beta_1^2}{\rho c_p c_{11}}$,
+using $\rho\omega_0^2=c_{11}k^2$.
+Multiply above and below by $1-\ii/(\omega\tau)$ and take real and imaginary parts:
+$\delta=\dfrac{\Delta_E}{2}\dfrac{\omega\tau+\ii(\omega\tau)^2}{1+(\omega\tau)^2}$, so
+$\operatorname{Re}\delta=\dfrac{\Delta_E}{2}\dfrac{\omega\tau}{1+(\omega\tau)^2}$ and
+$\operatorname{Im}\delta=\dfrac{\Delta_E}{2}\dfrac{(\omega\tau)^2}{1+(\omega\tau)^2}$.
+Result: since $\omega=\omega_0(1-\ii\delta)$, the attenuation in time is
+$-\operatorname{Im}\omega=\omega_0\operatorname{Re}\delta$ and the quality factor is
+$Q^{-1}=2\operatorname{Re}\delta=\Delta_E\,\dfrac{\omega\tau}{1+(\omega\tau)^2}$,
+with a velocity shift $\Delta c/c=\operatorname{Im}\delta=\dfrac{\Delta_E}{2}\dfrac{(\omega\tau)^2}{1+(\omega\tau)^2}$.
+$Q^{-1}$ is largest at $\omega\tau=1$, that is at $\omega=\rho c_pc_{11}/k_{\rm th}$ once $k=\omega/c_L$
+is used, and the peak value is $\Delta_E/2$. This is the standard Zener thermoelastic damping formula,
+and the test is that the full matrix reproduces it in this limit.
+\end{worked}
+
+\subsection*{The Hutson--White condition, in full}
+
+\begin{worked}
+Keep the shear wave: $u_z$ with the field along $x$, carrier terms on, thermal terms off, no drift, no
+diffusion, no recombination, and no $z$ dependence, so that $\eta=0$. The three rows that survive are the
+$z$ momentum, Gauss' law and the carrier equation:
+$(-\rho\omega^2+c_{44}k^2)U+e_{15}k^2\Phi=0$, $-e_{15}k^2U+\epsilon_{11}k^2\Phi+q\hat n=0$ and
+$-\ii\omega\hat n-b_nn_0k^2\Phi=0$, the last from $\partial_t\Delta n=-b_nn_0\nabla^2\varphi$ with
+$\nabla^2\to-k^2$.
+Substitution: eliminate $\hat n$ from the third row, $\hat n=\ii b_nn_0k^2\Phi/\omega$, and put it into
+the second: $-e_{15}U+\bigl(\epsilon_{11}+\ii qb_nn_0/\omega\bigr)k^2\Phi/k^2=0$, so
+$\Phi=e_{15}U/\epsilon_{\rm eff}$ with
+$\epsilon_{\rm eff}=\epsilon_{11}\bigl(1+\ii\omega_c/\omega\bigr)$ and
+$\omega_c=qb_nn_0/\epsilon_{11}$.
+Collect: the momentum row then gives $\rho\omega^2=k^2\bigl(c_{44}+e_{15}^2/\epsilon_{\rm eff}\bigr)$, so
+$k=\omega\sqrt{\rho/(c_{44}+e_{15}^2/\epsilon_{\rm eff})}$, complex.
+Result: write $K^2=e_{15}^2/(c_{44}\epsilon_{11})$ and expand for $K^2\ll1$:
+$k\approx(\omega/c_{\rm sh})\bigl(1-\tfrac12 K^2/(1+\ii\omega_c/\omega)\bigr)$ with
+$c_{\rm sh}=\sqrt{c_{44}/\rho}$, so the loss per wavelength is
+$2\pi\operatorname{Im}k/\operatorname{Re}k\approx\pi K^2\dfrac{\omega/\omega_c}{1+(\omega/\omega_c)^2}$.
+It peaks at $\omega=\omega_c$, that is at
+$\dfrac{\epsilon_{11}\,\omega}{q\,b_n}=n_0$:
+the Hutson--White condition. It locates the carrier density at which the attenuation is greatest for a
+given frequency, and it is a property of the dielectric relaxation of the free charge, not of the plate.
+At finite $K^2$ the peak moves by a relative amount of order $K^2$, which the weak-coupling statement does
+not claim to cover.
+\end{worked}
+
+\section{Calculation G, continued: one column of $\mathbf B$ in full}
+
+Each column of $\mathbf B$ belongs to one root, and each entry is one row function evaluated at that root
+with the amplitudes of that root. Write the amplitude vector of root $m$ as
+$X_m(1,\;r_z,\;r_\varphi,\;r_n,\;r_\theta)$, where the four ratios come from Calculation~E and the overall
+scale is carried by $A_m$. Then every entry of the column is $X_m$ times an expression in $\eta_m$, $k$
+and $\omega$ alone, and it is worth having those seven expressions on the page.
+
+\begin{worked}
+Substitution: put $Z_m=r_zX_m$, $\Phi_m=r_\varphi X_m$, $\nu_m=r_nX_m$, $\Theta_m=r_\theta X_m$ in the
+seven rows of Section~\ref{sec:calcF}. Collect $X_m$ out of each.
+$b_1=\Ncal_m^{-1}\bigl[\Gcal_m(\ii kc_{13}+\eta c_{33}r_z)+\eta e_{33}r_\varphi-\beta_3r_\theta
+-l_g^2\ii k\eta\,c_{44}(\eta+\ii kr_z)\bigr]X_m$.
+$b_2=\Ncal_m^{-1}\bigl[\Gcal_mc_{44}(\eta+\ii kr_z)+\ii ke_{15}r_\varphi
+-l_g^2\ii k\eta(\ii kc_{11}+\eta c_{13}r_z)\bigr]X_m$.
+Result: the two traction rows, each with its surface-gradient correction.
+\end{worked}
+
+\begin{worked}
+$b_3=(l_g^2/\Ncal_m)\,\eta\,c_{44}(\eta+\ii kr_z)X_m$ and
+$b_4=(l_g^2/\Ncal_m)\,\eta\,(\ii kc_{13}+\eta c_{33}r_z)X_m$. Both carry $l_g^2$ and both vanish with it,
+which is the statement that the two rows drop out of the count when the gradient length is zero.
+\end{worked}
+
+\begin{worked}
+$b_5=\bigl[\ii ke_{31}+\eta e_{33}r_z-\eta\epsilon_{33}r_\varphi+p_3r_\theta\bigr]X_m$, the open-circuit
+row. $b_6=\eta\bigl[-D_nr_n+b_nn_0r_\varphi-\beta_{\rm th}r_\theta\bigr]X_m$, the zero-flux row; the factor
+$\eta$ in front is worth noticing, because it means the row vanishes at $\eta=0$.
+$b_7=\eta\,r_\theta X_m$, the adiabatic row. Result: the last three rows.
+\end{worked}
+
+\begin{worked}
+Now assemble. The column of $\mathbf B$ belonging to root $m$ is
+$\bigl(b_1\ldots b_7\bigr)^{T}e^{\eta_mh}$ in the upper block and
+$\bigl(b_1\ldots b_7\bigr)^{T}e^{-\eta_mh}$ in the lower one, with the same seven expressions. Multiplying
+a column by a non-zero number multiplies $\det\mathbf B$ by that number, so the common factor $X_m$ may be
+dropped from every column at once, and the column scaling of Section~\ref{sec:calcG} is the same operation
+applied with $e^{-|\operatorname{Re}\eta_m|h}$. Result: a matrix whose entries are the seven expressions
+above, evaluated at the fourteen roots, times the two exponentials.
+\end{worked}
+
+\section{Calculation I: the dimension of every entry}
+
+The check costs ten minutes and catches the commonest error in a reduction of this length, which is a
+factor of $\omega$ or of $\ii$ lost while moving a term across. Every row of $M(\eta)\mathbf a=\mathbf 0$
+is one physical balance, so every entry in that row must have the dimension that turns its amplitude into
+the dimension of the balance.
+
+\begin{worked}
+Row 1 is a force balance per unit volume, N\,m$^{-3}$. Check each entry.
+$M_{11}X$: $\Gcal c_{11}k^2$ is Pa\,m$^{-2}$ = N\,m$^{-4}$, and $X$ is m, so the product is N\,m$^{-3}$.
+$M_{12}Z$: $\ii k\eta\Gcal(c_{13}+c_{44})$ is m$^{-2}\,$Pa, and $Z$ is m, so again N\,m$^{-3}$.
+$M_{13}\Phi$: $\ii k\eta(e_{31}+e_{15})$ is m$^{-2}$\,C\,m$^{-2}$ = C\,m$^{-4}$, and $\Phi$ is V, so the
+product is C\,V\,m$^{-4}$ = J\,m$^{-4}$ = N\,m$^{-3}$.
+$M_{15}\Theta$: $\ii k\beta_1$ is m$^{-1}$\,Pa\,K$^{-1}$, and $\Theta$ is K, so the product is
+Pa\,m$^{-1}$ = N\,m$^{-3}$. Row 1 is consistent.
+\end{worked}
+
+\begin{worked}
+Row 3 is Gauss' law, C\,m$^{-3}$. $M_{31}X$: $\ii k\eta(e_{15}+e_{31})$ is C\,m$^{-4}$ and $X$ is m, so
+C\,m$^{-3}$. $M_{32}Z$: $e_{33}\eta^2$ is C\,m$^{-2}$\,m$^{-2}$ = C\,m$^{-4}$ and $Z$ is m, so C\,m$^{-3}$.
+$M_{33}\Phi$: $\epsilon_{11}k^2$ is C\,V$^{-1}$m$^{-1}$\,m$^{-2}$ and $\Phi$ is V, so C\,m$^{-3}$.
+$M_{34}\hat n$: $q$ is C and $\hat n$ is m$^{-3}$, so C\,m$^{-3}$.
+$M_{35}\Theta$: $\eta p_3$ is m$^{-1}$\,C\,m$^{-2}$K$^{-1}$ and $\Theta$ is K, so C\,m$^{-3}$. Row 3 is
+consistent.
+\end{worked}
+
+\begin{worked}
+Row 4 is a number balance per unit volume per unit time, m$^{-3}$s$^{-1}$.
+$M_{43}\Phi$: $b_nn_0L$ is m$^2$V$^{-1}$s$^{-1}\cdot$ m$^{-3}\cdot$ m$^{-2}$ = V$^{-1}$m$^{-3}$s$^{-1}$ and
+$\Phi$ is V, so m$^{-3}$s$^{-1}$.
+$M_{44}\hat n$: every term in $M_{44}$ is a rate, s$^{-1}$, and $\hat n$ is m$^{-3}$.
+$M_{45}\Theta$: $\beta_{\rm th}L$ needs $\beta_{\rm th}$ in m\,s$^{-1}$K$^{-1}$, which is the unit that
+makes $\beta_{\rm th}\nabla^2\theta$ a carrier flux divergence; times $\Theta$ in K it gives
+m$^{-3}$s$^{-1}$. Row 4 is consistent.
+\end{worked}
+
+\begin{worked}
+Row 5 is an energy balance per unit volume per unit time, J\,m$^{-3}$s$^{-1}$.
+$M_{51}X$: $fT_0\omega k\beta_1$ is K$\,\cdot$s$^{-1}\cdot$m$^{-1}\cdot$Pa\,K$^{-1}$ = Pa\,m$^{-1}$s$^{-1}$,
+and $X$ is m, so Pa\,s$^{-1}$ = J\,m$^{-3}$s$^{-1}$.
+$M_{52}Z$: $-\ii\omega fT_0\beta_3\eta$ is s$^{-1}\,$K$\,$Pa\,K$^{-1}$m$^{-1}$ = Pa\,m$^{-1}$s$^{-1}$, and
+$Z$ is m, so the same.
+$M_{53}\Phi$: $\ii\omega fT_0p_3\eta$ is
+s$^{-1}$K$\,$C\,m$^{-2}$K$^{-1}$m$^{-1}$ = C\,m$^{-3}$s$^{-1}$ and $\Phi$ is V, so J\,m$^{-3}$s$^{-1}$.
+$M_{54}\hat n$: the Peltier term $-\ii\omega q\Pi_{\rm th}$ is
+s$^{-1}\,$C$\,\cdot$V, so $\Pi_{\rm th}$ carries the unit of a thermoelectric power, V; the recombination
+term $E_g/\tau_R$ is an energy per recombination, J, divided by a time, s. Both are J\,s$^{-1}$ per carrier,
+and multiplied by $\hat n$ in m$^{-3}$ both give J\,m$^{-3}$s$^{-1}$.
+$M_{55}\Theta$: $-\ii\omega f\rho c_p$ is s$^{-1}$J\,m$^{-3}$K$^{-1}$ and $-k_{\rm th}L$ is
+W\,m$^{-1}$K$^{-1}$m$^{-2}$ = W\,m$^{-3}$K$^{-1}$; times $\Theta$ in K both give J\,m$^{-3}$s$^{-1}$. Row 5
+is consistent.
+\end{worked}
+
+\section{Calculation J: what the failure of the split costs}
+
+\begin{worked}
+When the three thermal--carrier couplings vanish, the fourteen roots pair as $\pm\eta_m$ and the fourteen
+conditions split into two sets of seven. Write the amplitudes of the pair as related by the column signs
+$\tau=(+1,-1,-1,-1,+1)$ of Section~\ref{sec:calcD}: $\mathbf a(-\eta_m)=\operatorname{diag}(\tau)\,
+\mathbf a(\eta_m)$. Substitution: form the two combinations
+$\mathbf a(\eta_m)e^{\eta_mz}\pm\operatorname{diag}(\tau)\mathbf a(\eta_m)e^{-\eta_mz}$. Collect: component
+$j$ of the plus combination is $2a_j\cosh\eta_mz$ when $\tau_j=+1$ and $2a_j\sinh\eta_mz$ when
+$\tau_j=-1$. Result: a solution of definite parity, for which the conditions at $z=-h$ follow from those at
+$z=+h$, so seven conditions at one face and seven roots give a $7\times7$ matrix per family.
+\end{worked}
+
+\begin{worked}
+When $\beta_{\rm th}$, $\Pi_{\rm th}$ or $E_g$ is present, the parity argument fails and there is no such
+combination. Substitution: nothing to substitute. Collect: fourteen roots, fourteen conditions, one
+$14\times14$ matrix, and no saving. Result: the same dispersion relation written the long way, and the
+numerical work has to carry fourteen columns instead of seven.
+\end{worked}
+
+The practical consequences are three, and they belong in the paper. First, the two routes must agree when
+the three couplings are set to zero, and checking that is one of the self-tests: run the fourteen-by-fourteen
+and the two seven-by-seven at the same constants and compare the first three branches. Second, the
+fourteen-by-fourteen is the one to use for the figures, because the coupling is the point of the paper.
+Third, the ordering of the roots matters for the conditioning and not for the physics: sort them by
+$|\operatorname{Re}\eta_m|$ before assembling the matrix, and scale each column by
+$e^{-|\operatorname{Re}\eta_m|h}$, which multiplies the determinant by a non-zero number and leaves its
+zeros where they are.
+
+\begin{worked}
+One more remark on the numerical side, because it is a fact about the matrix and not an algorithm. The
+thermal and carrier roots are large: with the constants of the internal test set, the thermal pair sits
+near $10^{8}$\,m$^{-1}$ while the elastic pair sits near $10^{4}$\,m$^{-1}$. Substitution into
+$e^{\eta_mh}$ at a millimetre thickness gives $e^{10^{5}}$, and into $e^{-\eta_mh}$ gives its reciprocal,
+so the raw entries of $\mathbf B$ span $10^{5}$ decades and no floating-point determinant survives them.
+Collect: the column scaling above is what makes the determinant computable at all. Result: the zeros of
+$\det\mathbf B$ are where they always were; only the arithmetic becomes possible.
+\end{worked}
+
+\subsection*{Why each test is a test}
+
+\begin{worked}
+The elastic test is the only one with an independent answer, so it comes first and everything else is
+checked against our own algebra. The parity test is decided by the parities of the entries alone, so it is
+a test of the reduction and not of the physics: if the three thermal--carrier couplings are set to zero and
+the roots do not pair, the error is in one entry, and the entries to look at are the ones that carry
+$\beta_{\rm th}$, $\Pi_{\rm th}$ and $E_g$. The open-circuit and shorted thin-plate speeds bracket the
+coupling and are both measurable, so they test the piezo entries against a laboratory number. The Zener
+curve tests the thermal entries twice over: the shape $\omega\tau/(1+\omega^2\tau^2)$ tests the coupling
+and the position of the peak tests the relaxation time. The Hutson--White condition tests the carrier
+entries, and because it is a condition on the carrier density it can be checked by sweeping $n_0$, which is
+a knob no other test turns.
+Result: each test fails in a different place, and the order above is the order in which they should be run.
+\end{worked}
+
+\section{Calculation K: why seven conditions and not five}
+
+\begin{worked}
+Count the amplitudes first. The degree of $\det M$ is the number of partial waves, because each root
+$\eta_m$ contributes one wave and one unknown amplitude $A_m$. With $l_g\ne0$ the count of
+Section~\ref{sec:calcD} gives fourteen, with $l_g=0$ it gives ten. Each face supplies half of them, so
+seven conditions per face in the first case and five in the second.
+Now count the other way, by field, and check that the two agree. There are five fields, so five conditions
+per face is one per field: a traction, a shear traction, an electric condition, a carrier or phason
+condition and a thermal condition. The two extra conditions in the gradient case are the two double
+tractions, and they are extra because the gradient length raises the order of the mechanical equations in
+$z$ from two to four: $\Gcal$ carries $\eta^2$ and multiplies the $\eta^2$ that the strains already carry,
+so $M_{11}$ and $M_{22}$ are quartic in $\eta$ and the two momentum rows are fourth order in $z$.
+Collect: five fields plus two extra orders is seven, and seven per face times two faces is fourteen, which
+is the number of amplitudes. The two counts agree, which is the check.
+\end{worked}
+
+\begin{worked}
+The same count says what happens at the degenerate edges. At $l_g=0$ the double tractions vanish and the
+matrix drops to ten, so five conditions per face; keeping the two double-traction rows with $l_g=0$ would
+give two rows of zeros and a singular matrix, which is the commonest way to get a spurious zero branch in
+this problem. At $\eta=0$ the carrier flux row vanishes identically, because every term in it carries one
+$\eta$, so a root at the origin has to be treated on its own rather than through the general assembly.
+Result: the count is not a formality; it is where the degenerate cases announce themselves.
 \end{worked}
 
 \section{Self-test list}\label{sec:selftest}
@@ -690,7 +1141,10 @@ the carrier density predicted by the relaxation of the free charge.
 continuously, the gradient length must stiffen, and the nonlocal length must soften.
 \item Count the roots of $\det M$ for one case with $l_g\ne0$ and one with $l_g=0$ and compare with the
 number of rows you use in $\mathbf B$. A mismatch is a counting error, not a physical finding.
-\item Switch $p_3$ off and check that the roots come in pairs. Switch it on and check that they do not.
+\item Switch $\beta_{\rm th}$, $\Pi_{\rm th}$ and $E_g$ off together and check that the roots come in
+pairs $\pm\eta_m$. Switch any one of the three back on and check that the pairing is lost. Then switch
+$p_3$ alone, on and off, and check that the pairing is unaffected, which is the statement of
+Section~\ref{sec:calcD}.
 \item Check the dimensions of every entry of row 5 against row 1. A factor of $\omega$ is easy to lose
 in the Moore--Gibson--Thompson factor.
 \end{enumerate}

@@ -1,0 +1,291 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{#1}}}
+\title{\vspace{-1.2cm}\textbf{Task 0 report --- Paper A (Sumit)}\\[2pt]
+\large Guided Lamb waves in a piezoelectric semiconductor plate with MGT heat and NSGT size effect:\\
+literature sweep, re-stated problem, and Q1 assessment}
+\author{Independent cross-check engineer, for Dr.\ Vipin}
+\date{30 October 2026}
+\begin{document}
+\maketitle
+\vspace{-0.5cm}
+
+\section*{1. What this report is}
+This is the Task-0 deliverable for Paper A. It condenses three files already in the repository:
+\texttt{paper/literature\_table.md}, \texttt{paper/problem\_v2.md} and \texttt{paper/q1\_scorecard.md},
+plus the scaling check in \texttt{semiconductor\_sumit/checks/task0\_scaling.md}. No new literature search was run for
+this report. Conventions are those fixed in \texttt{docs/02\_workflow\_crosscheck.md}:
+$\exp[\mathrm{i}(kx-\omega t)]$, thickness $2h$, faces $z=\pm h$, plane strain,
+$k=k_r+\mathrm{i}k_i$ with $k_i>0$ decaying along $+x$, $fd=f\cdot 2h$ in Hz$\cdot$m.
+
+\section*{2. Sweep method and the result that changes the plan}
+Sixteen papers were found through the Crossref REST API and publisher landing pages
+(ScienceDirect, Springer, IOP, Wiley, AIP, arXiv). Every DOI below was resolved against Crossref
+or a publisher page except three items flagged \texttt{UNVERIFIED} in the repository table.
+The sweep produced one result that overrides the original plan:
+
+\begin{quote}
+\textbf{The major upgrade proposed in \texttt{docs/03\_novelty\_upgrades.md} is already published
+in a plate.} Yang \& Zhou, \emph{Int.\ J.\ Solids Struct.} \textbf{42} (2005) 3171--3183,
+\doi{10.1016/j.ijsolstr.2004.10.011}, study acoustoelectric amplification in a piezoelectric
+semiconductor \emph{plate} with a DC drift field, including the threshold $v_d\gtrsim c$.
+The laminate case appeared in 2004 \doi{10.1007/s00419-004-0350-9}. Non-reciprocal amplification
+in a plate is therefore prior art and cannot be the novelty of Paper A.
+\end{quote}
+
+Two further papers, both newer than the plan, occupy the base problem: Luo, Zhang, Othmani \& Gao,
+\emph{Smart Mater.\ Struct.} \textbf{34} (2025) 105041, \doi{10.1088/1361-665X/ae1647}
+(Lamb waves in an $n$-type ZnO piezo-semiconductor nanoplate with surface and nonlocal effects),
+and \emph{Appl.\ Math.\ Mech.} \textbf{46} (2025) 1493--1510, \doi{10.1007/s10483-025-3287-6}
+(multilayered piezo-semiconductor plates, with carrier-density sweeps and attenuation).
+MGT heat with nonlocal elasticity in a piezo-semiconductor also exists, but only in a half-space:
+\emph{Arch.\ Appl.\ Mech.} (2026) \doi{10.1007/s00419-026-03121-5} and
+Gupta et al., \emph{IJNMHFF} \textbf{35}(9) (2025) 3400--3428, \doi{10.1108/HFF-04-2025-0254}.
+
+\begin{table}[h]
+\centering\small
+\caption{The nearest five papers and the cell they leave empty.
+$\bullet$ = treated, $\circ$ = partial, --- = absent.}
+\begin{tabular}{p{4.1cm}p{1.5cm}p{1.1cm}p{1.1cm}p{1.1cm}p{1.1cm}p{1.1cm}}
+\hline
+Paper & PSC & Plate (S/A) & Complex $k_i$ & MGT heat & NSGT & drift \\
+\hline
+Dhib et al.\ 2024, \emph{MSSP} 183, 108743 & $\bullet$ & $\bullet$ & $\bullet$ & --- & --- & --- \\
+Yang \& Zhou 2005, \emph{IJSS} 42 & $\bullet$ & $\bullet$ & $\circ$ & --- & --- & $\bullet$ \\
+Luo et al.\ 2025, \emph{SMS} 34 & $\bullet$ & $\bullet$ & $\circ$ & --- & --- & --- \\
+\emph{AMM} 2025, \textbf{46} 1493 & $\bullet$ & $\bullet$ & $\bullet$ & --- & --- & --- \\
+\emph{AAM} 2026 (rotating PSC) & $\bullet$ & --- & $\circ$ & $\bullet$ & --- & --- \\
+\hline
+\textbf{this paper} & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\circ$ \\
+\hline
+\end{tabular}
+\end{table}
+
+The intersection MGT\,$\times$\,NSGT\,$\times$\,piezo-semiconductor plate is empty as of
+30 October 2026. \emph{An empty cell is combination novelty}, which is exactly the failure mode
+named in \texttt{docs/00\_feasibility\_analysis.md}; the paper is therefore not the cell but one
+consequence of it, stated next.
+
+\section*{3. The re-stated problem}
+\textbf{Working title.} \emph{Hidden behind screening: the thermoelastic attenuation floor of Lamb
+waves in piezoelectric semiconductor plates, and what MGT conduction does to it.}
+
+\textbf{One-sentence finding.} In a piezoelectric semiconductor plate the acoustoelectric loss peaks
+where the wave frequency matches the dielectric relaxation rate and is \emph{screened away} at
+higher doping, so beyond a computable doping the residual Lamb-wave loss is purely thermoelastic;
+that floor falls with frequency under MGT conduction while it saturates under Fourier conduction,
+which makes an attenuation measurement, not a velocity measurement, the way to see MGT relaxation
+in a plate.
+
+The physical content is an \emph{ordering}, not an addition: the carrier channel screens the field
+that feeds the thermal channel, so the two effects are not independent and cannot be counted
+separately. This answers the reviewer question ``why all these effects at once?'' with a mechanism
+rather than with a model.
+
+\subsection*{Three claims, each with one figure and one limiting case}
+\begin{enumerate}\small
+\item[\textbf{C1}] At fixed $fd$, $k_i(n_0)$ has a maximum at
+$n_0^{*}=\varepsilon_{33}\omega/(e\mu_n)$ and decreases on both sides; the locus $n_0^{*}\propto fd$
+is material-set and linear. \emph{Figure F4.}
+\emph{Checks:} $n_0\to0$ returns Step~3 to $<10^{-6}$; measured peak within $5\%$ of $n_0^{*}$
+(the $5\%$ is the claim's own error budget and is printed on the figure).
+\item[\textbf{C2}] For $n_0\gg n_0^{*}$ the residual loss is the thermoelastic floor
+$k_i^{\rm th}$. \emph{Revised at this gate:} an unbounded medium saturates under \emph{both} models
+(\S\,``bulk test''), so MGT changes the \emph{plateau value}, by $\tau_T^2/(\tau_T-\tau_q)^2$, and
+moves the \emph{peak} from $\omega=1/\tau_T$ to $1/|\tau_T-\tau_q|$ --- with $\tau_T\to\tau_{\rm th}
+=(2h)^2/\pi^2\kappa$ in a plate, the peak position becomes a thickness observable.
+\emph{Figure F6:} peak position vs $2h$ with the plateau ratio in the inset.
+\emph{Checks:} $\tau_q\to0$ reproduces the Fourier curve to $<10^{-6}$; thermal coupling off gives
+$k_i^{\rm th}=0$ exactly; the classical plate damping peak $\omega\simeq\pi^2\alpha/(2h)^2$ is
+recovered to $<5\%$.
+\item[\textbf{C3}] NSGT enters at fixed $kh$ essentially through one combination of $l_{\rm nl}$ and
+$l_g$, so phase velocity alone cannot separate them; the peak locus and the floor cutoff supply a
+second equation. \emph{Figure F8.}
+\emph{Checks:} $l_{\rm nl}=l_g=0$ returns Step~4; nonlocal-only and gradient-only give equal and
+opposite shifts. \emph{C3 is a declared hypothesis with a kill criterion} (see \S6).
+\end{enumerate}
+
+\subsection*{Upgrades}
+\textbf{U1 (major), the nulling protocol.} A drift bias with $v_d\to c_{\rm ph}$ cancels the
+acoustoelectric channel (Hutson--White physics, in a plate after Yang \& Zhou). What remains is the
+thermal floor, which then becomes the dominant signal and turns $\tau_q$ into a measurable
+quantity. Delivered as a sign map of $k_i$ in the $(v_d/c_{\rm ph},fd)$ plane with the null line.
+\textbf{U2 (minor).} Attenuation budget by energy flux, so carrier and thermal parts are derived by
+an identity on the mode shape rather than by switching terms off.
+
+\\section*{3a. The bulk-medium test that C2 now rests on}
+Before any Step~3 code: attenuation of a longitudinal wave in an \\emph{infinite} medium with coupling
+parameter $\\Delta_E=T_0\\beta^2/(\\rho c_p(\\lambda+2\\mu))$ and $\\tau_T=\\kappa/c_L^2$.
+Fourier: $k_i=(\\omega/c_L)(\\Delta_E/2)\\,\\omega\\tau_T/[1+(\\omega\\tau_T)^2]$ --- grows as $\\omega^2$,
+then \\emph{plateaus} at $\\Delta_E/(2c_L\\tau_T)$ for $\\omega>1/\\tau_T$.
+MGT in the Gupta form $(1+\\tau_q\\partial_t)[\\rho c_p\\dot\\theta+T_0\\beta\\dot\\varepsilon_{kk}]
+=k_{\\rm th}\\nabla^2\\theta$ multiplies capacity and coupling by the \\emph{same} factor
+$1-i\\omega\\tau_q$, giving $k_i=(\\omega/c_L)(\\Delta_E/2)\\,\\omega\\tau_T/[1+\omega^2(\\tau_T-\\tau_q)^2]$
+--- the Fourier formula with $\\tau_T\\to\\tau_T-\\tau_q$ in the width only. \\textbf{Answer to the
+question posed at the gate: the MGT floor does not fall --- it saturates too, rescaled.} The plateau
+ratio is $\\tau_T^2/(\\tau_T-\\tau_q)^2$, $>1$ for $0<\\tau_q<2\\tau_T$ and exactly 1 at
+$\\tau_q=2\\tau_T$; at $\\tau_q=\\tau_T$ the first-order expansion diverges (second-sound resonance, model
+unusable). The alternative placement, $\\tau_q$ on $\\ddot\\theta$ alone, yields $k_i<0$ for
+$\\tau_q>\\tau_T$ and is therefore inadmissible --- a concrete reason to confirm which form Gupta
+et al.\\ actually use. With $\\rho c_p=5680\\times500$, $c_L=6095$ m/s: $\\tau_T=5.7\\times10^{-13}$ s at
+$k_{\\rm th}=60$ W/m$\\cdot$K and $1.1\\times10^{-14}$ s at 1.2 W/m$\\cdot$K. Since
+$\\tau_q\\in[10^{-13},10^{-11}]$ s, the thin-film end has $\\tau_q>\\tau_T$ for every $\\tau_q$ in range
+while the bulk end straddles it --- the two conductivity ends are \\emph{qualitatively} different
+scenarios, which promotes $k_{\\rm th}$ from a nuisance constant to the first-ranked sensitivity.
+Full page: \\texttt{steps/step3\_prerecheck\_bulk\_medium.md}.
+
+\section*{4. Model, boundary conditions and validity window}
+Unknowns: $u_x,u_z,\varphi,\theta,\Delta n$ in plane strain. Constitutive relations are written in
+the NSGT differential form
+$(1-l_{\rm nl}^2\nabla^2)\sigma_{ij}=(1+l_g^2\nabla^2)(c_{ijkl}\varepsilon_{kl}-e_{kij}E_k-\lambda_{ij}\theta)$,
+with the analogous relation for $D_i$ including the pyroelectric term $p_i\theta$; equilibrium is
+$\sigma_{ij,j}=\rho\ddot u_i$ and $D_{i,i}=-e\Delta n$. Carriers are linearised,
+$\partial_t\Delta n=D_n\nabla^2\Delta n+n_0\mu_n\nabla^2\varphi+v_d\,\partial_x\Delta n-\Delta n/\tau_R$,
+and heat conduction is MGT with the thermoelastic coupling term. Faces $z=\pm h$ carry:
+$\sigma_{zz}=\sigma_{xz}=0$; \emph{plus the NSGT higher-order traction} $P_{izz}=0$ ($i=x,z$), whose
+surviving set in plane strain is fixed in \texttt{steps/step5\_bcs\_nsgt.md} and must be approved
+before any Step-5 code; $D_z=0$ (open) or $\varphi=0$ (short); $J_{nz}=0$; $\partial_z\theta=0$
+(insulated) or $\theta=0$ (isothermal). A uniform drift along $x$ preserves $z$-symmetry, so the
+S/A split survives the bias.
+
+\textbf{Validity window.} NSGT is an expansion in $(kl)^2$, so $kl_{\max}\le1$, i.e.\
+$kh\le h/l_{\max}$; the MGT/Fourier continuum needs $2h\gtrsim10\Lambda_{\rm ph}$; the diffusive
+carrier model needs $k\lambda_D\ll1$. Every dispersion figure therefore carries a shaded trust band
+$kh\in[0.05,\min(1/\lambda,\,2h/10\Lambda_{\rm ph})]$, a hatched region beyond it marked
+``continuity only'', and the value of $h/l_{\max}$ in the caption. Claims are evaluated inside the
+band only.
+
+\section*{5. Parameters and the sensitivities the finding depends on}
+Sourced: $\rho=5680$ kg/m$^3$ and $\varepsilon_{11},\varepsilon_{33}=9.16\varepsilon_0,12.64\varepsilon_0$
+(eFunda ZnO); $c_{11},c_{12},c_{13},c_{33},c_{44}=206,118,118,211,44$ GPa and
+$e_{33},e_{31}=1.34,-0.57$ C/m$^2$ (arXiv:cond-mat/0507217v2, measured row);
+$\mu_n=200$ cm$^2$/V$\cdot$s (AZoM; review table). Spread: $\rho$ within $1.3\%$;
+$k_{\rm th}$ spans \textbf{1.2--60 W/m$\cdot$K} (thin film vs bulk).
+Not yet sourced and to be taken from literature ranges with a stated source:
+$c_p$, $\alpha_T$, $\tau_q\in[10^{-13},10^{-11}]$ s. $l_{\rm nl}$ and $l_g$ are used
+\textbf{only} as dimensionless $l/h$ sweeps, with no claimed values.
+
+Sensitivity ranking: (i) $k_{\rm th}$, because it sets the floor peak and shifts the crossing
+thickness by $\sqrt{50}\approx7$; both ends must be plotted. (ii) $n_0$ and $\mu_n$ enter only as
+$\sigma=n_0e\mu_n$, so the peak identifies the product and not the factors --- stated explicitly.
+(iii) $\tau_q$, the least measured constant and the one the MGT claim rests on, hence given as a
+range and labelled ``assumed''. (iv) $l_{\rm nl},l_g$, invisible below $kh\approx0.3$.
+(v) $c_p,\alpha_T,\rho$ enter as one Zener group and rescale but do not shift the floor.
+
+\textbf{Where each $\tau_q$ actually sits in the experiment.} $\omega=2\pi fd/2h$, so the whole MGT
+claim depends on $\omega\tau_q$, and the table below is the one number that decides whether MGT is
+observable at all. Entries are $\omega\tau_q$ (dimensionless), rows $2h$, columns $fd$ in Hz$\cdot$m:
+
+\begin{center}\footnotesize
+\begin{tabular}{l|lllll}
+\toprule
+$2h$ \textbackslash{} $fd$ & 500 & 1000 & 2000 & 3000 & 5000\\
+\midrule
+\multicolumn{6}{l}{$\tau_q=10^{-13}$ s}\\
+10 nm  & 0.0314 & 0.0628 & 0.126 & 0.188 & 0.314\\
+50 nm  & 0.00628 & 0.0126 & 0.0251 & 0.0377 & 0.0628\\
+250 nm & 0.00126 & 0.00251 & 0.00503 & 0.00754 & 0.0126\\
+\midrule
+\multicolumn{6}{l}{$\tau_q=10^{-12}$ s (all ten times the row above)}\\
+10 nm  & 0.314 & 0.628 & 1.26 & 1.88 & 3.14\\
+50 nm  & 0.0628 & 0.126 & 0.251 & 0.377 & 0.628\\
+250 nm & 0.0126 & 0.0251 & 0.0503 & 0.0754 & 0.126\\
+\midrule
+\multicolumn{6}{l}{$\tau_q=10^{-11}$ s (all ten times the block above)}\\
+10 nm  & 3.14 & 6.28 & 12.6 & 18.8 & 31.4\\
+50 nm  & 0.628 & 1.26 & 2.51 & 3.77 & 6.28\\
+250 nm & 0.126 & 0.251 & 0.503 & 0.754 & 1.26\\
+\bottomrule
+\end{tabular}
+\end{center}
+\noindent Reading: at $2h=250$ nm even $\tau_q=10^{-11}$ s never exceeds $\omega\tau_q=1.26$, so the
+MGT correction is a few per cent and \emph{not} a qualitative change; only a 10 nm plate with
+$\tau_q\ge10^{-12}$ s enters $\omega\tau_q\gg1$. Two consequences are binding. (a) The $2h=250$ nm
+plate in the current sweep cannot test MGT at all --- the MGT claim needs $2h\le10$ nm, where the
+continuum model itself is at its limit and $l/h$ is being swept to $\sim0.1$. (b) The reported
+thickness range must therefore be split: $2h\le10$ nm for the MGT/NSGT physics, and there the
+\emph{size} effect and the \emph{thermal} effect are the same order of magnitude, which is precisely
+why C3 needs two independent observables.
+
+\section*{6. Q1 assessment}
+\begin{table}[h]
+\centering\small
+\begin{tabular}{p{5.2cm}p{1.2cm}p{8.2cm}}
+\hline
+Criterion & Score & Evidence \\
+\hline
+Novelty vs closest papers & 3/5 & Cell empty, but one mechanism wide; two 2025 papers own the base problem. \\
+Physical insight & 4/5 & Ordering claim explains when MGT is visible; but Hutson--White screening is 1970s physics. \\
+Rigour and verification & 4/5 & Every claim has a tolerance and a second formulation; 5/5 only once the checks run. \\
+Validity of the size-effect model & \textbf{2/5} & Channels only comparable at $2h\approx10$--$250$ nm, where the continuum heat model is weakest and $l$ values are unsourced. \\
+Device relevance & 4/5 & Nulling field $3.0$ kV/cm; Joule load $3\times10^9$ W/m$^3$ at $n_0=10^{19}$ m$^{-3}$, i.e.\ $<1$ W/cm$^2$ for a $\mu$m film. \\
+Reproducibility & 5/5 & Fixed comparison points, fixed tolerances, two code paths, sourced parameter table. \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Verdict: GO, conditional.} Only after two cheap Step-4 tests: (1) the \emph{C1
+monotonicity test} --- $k_i(n_0)$ at $fd=1000$ and $3000$ must be non-monotonic with its peak
+within $5\%$ of $n_0^{*}$; (2) the \emph{floor-resolution test} --- the thermal $k_i$ must exceed
+the solver resolution at the thicknesses used for C2. If either fails, the paper is a parameter
+study and goes to a Q2 target rather than delaying.
+
+\textbf{Biggest risk.} The floor is $213\times$ weaker than the carrier peak: the scaling check
+gives $k_i/k_r\approx3.8\times10^{-2}$ for the carrier peak ($K^2=e_{33}^2/(c_{33}\varepsilon_{33})
+=0.076$, half of it) against $1.8\times10^{-4}$ for the Zener floor. The novel content therefore
+lives in a narrow corner of parameter space, at thicknesses where the heat model is already
+suspect. A short ``measurability'' section with three numbers (nulling field, Joule load, solver
+resolution) is mandatory; without it the paper is not Q1.
+
+\textbf{Secondary risk.} The 50-fold spread in $k_{\rm th}$ moves the floor peak by the same factor
+in frequency and the crossing thickness by $\approx7$. The finding must survive both ends.
+
+\textbf{Runner-up computations} (\texttt{code\_arena/task0\_feasibility\_scaling.py}): bar velocity
+6095 m/s; carrier peak locus $n_0^{*}=2.2\times10^{17},2.2\times10^{19},2.2\times10^{21}$ m$^{-3}$ at
+1 MHz, 100 MHz, 10 GHz, i.e.\ the fixed comparison points $fd=500$--$5000$ sit at
+$n_0\approx10^{20}$--$10^{21}$, inside the planned sweep $10^{18}$--$10^{24}$; and the crossing
+thickness obeys $h^{*}=\tfrac{\pi}{2}L_D\sqrt{\mathrm{Le}}$ with $L_D$ the Debye length and
+$\mathrm{Le}=\alpha/D$ the Lewis number, verified numerically to three digits.
+
+\section*{7. Decisions taken at the gate}
+\begin{enumerate}\small
+\item \textbf{MGT form:} use the equation as written in Gupta et al., \emph{IJNMHFF} \textbf{35}(9)
+(2025) \doi{10.1108/HFF-04-2025-0254}, which Dr.\ Vipin will place in \texttt{paper/}. The
+alternative placement of $\tau_q$ in the thermoelastic term is carried as a Step-3 sensitivity,
+not as a silent choice.
+\item \textbf{Recombination:} $\tau_R$ is the carrier recombination time and $\tau_R\to\infty$ is the
+base case (no recombination over a wave period); a finite-$\tau_R$ sensitivity is run at Step~4 and
+must merely shift the complex relaxation rate without moving $n_0^{*}$.
+\item \textbf{Length scales:} $l_{\rm nl}$, $l_g$ enter only as dimensionless $l/h$ sweeps; no value
+is claimed. $c_p,\alpha_T,\tau_q$ are taken from literature ranges, each with a source, before the
+step that needs them.
+\item \textbf{Journal targets} (SJR 2025, read on scimagojr, 30 Oct 2026):
+\emph{Int.\ J.\ Solids Struct.} (Q1, 1.002), \emph{Int.\ J.\ Eng.\ Sci.} (Q1, 1.228),
+\emph{Eur.\ J.\ Mech.\ A/Solids} (Q1, 1.023). \emph{Wave Motion} is \textbf{Q2 (0.499)} and is
+excluded despite being the natural scope match.
+\end{enumerate}
+
+\section*{8. Corrections to existing documents}
+\begin{enumerate}\small
+\item Reading item 2 of the plan is mis-cited: the 2019 \emph{Wave Motion} \textbf{86} 91--109 paper
+is by \textbf{Sidhardh \& Ray}, \doi{10.1016/j.wavemoti.2019.01.002}, and uses general strain-gradient
+theory, not NSGT.
+\item Reading item 3 (Lim, Zhang \& Reddy) is correct: \emph{J.\ Mech.\ Phys.\ Solids}
+\textbf{78} (2015) 298--313, \doi{10.1016/j.jmps.2015.02.001}.
+\item \texttt{docs/00\_feasibility\_analysis.md} lists \emph{Wave Motion} as a likely target; per the
+quartile check above it should not be.
+\end{enumerate}
+
+\section*{9. Status}
+Task 0 complete; no Step-1 code written yet; the two Step-4 tests are entered in the tracker as
+hard gates. Repository files: \texttt{paper/literature\_table.md},
+\texttt{paper/problem\_v2.md}, \texttt{paper/q1\_scorecard.md},
+\texttt{semiconductor\_sumit/checks/task0\_scaling.md}, \texttt{semiconductor\_sumit/code\_arena/task0\_feasibility\_scaling.py}.
+
+\end{document}
