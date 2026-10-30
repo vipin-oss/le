@@ -1,0 +1,699 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parskip}{5pt}
+\title{\vspace{-1.6cm}\Large Basics and Definitions\\[2pt]
+\large Everything you need before the research plan, written for a reader who has finished class ten}
+\author{Dr.\ Vipin \\ Gurugram University}
+\date{30 October 2026}
+\begin{document}
+\maketitle
+\vspace{-6mm}
+
+\section{How to use this booklet}
+
+This booklet has one job: to make the research plan readable without a dictionary. The plan talks about
+guided waves in a plate, about strain and stress, about electric fields in a material that conducts a
+little, about heat that remembers, and about a size effect that appears only when the plate is thin. Each of
+those ideas can be explained in ordinary language, and that is what the following pages do. Where an idea
+needs algebra, the algebra is written out slowly and no step is skipped.
+
+You do not have to read the booklet in one sitting. Sections two to nine are about waves and are the
+foundation. Sections ten and eleven are about the complex wavenumber, which sounds frightening and is not.
+Sections twelve to fourteen are about how solids carry force. Sections fifteen to nineteen are about the
+four couplings in our model. Section twenty is about what a model is allowed to assume. Section twenty one
+is a table of every symbol in the plan, section twenty two is a glossary, and section twenty three tells you
+how to test your own work when nobody is looking over your shoulder.
+
+Nothing here contains a boundary condition, a solution method, or a number to compare with. Those are your
+job, and they are the reason the plan exists.
+
+\section{What a wave is}
+
+A wave is a disturbance that travels. The disturbance moves; the material need not. If you drop a stone into
+a pond, the rings spread outwards, but the water itself mostly bobs up and down in place. If you speak, the
+air carries the disturbance to your friend, but the air does not travel from your mouth to his ear; it
+vibrates and passes the message on. A wave, then, is a pattern of motion that hands itself from one piece of
+material to the next.
+
+Two things are worth fixing in the mind at the start. The first is that a wave carries energy without
+carrying material. That is why a sound can break a glass without any of the air in the room ending up inside
+the glass. The second is that the speed of a wave is a property of the material, not of how hard you hit it.
+Hit a table harder and the sound is louder, not faster. This is true for ordinary waves and it is true for
+the waves in our plate, with one important exception that we come to in section six.
+
+A wave has an amplitude, which is how big the disturbance is, and a shape, which is how the disturbance is
+distributed in space. For the waves in this project the shape is a smooth curve, either a sine or a
+combination of sines, and that is not a simplification for convenience. Any smooth repeating shape can be
+built out of sines, so if we understand what happens to a single sine we understand what happens to
+everything.
+
+The disturbance in a solid can be of two kinds. It can be a push and pull along the direction the wave
+travels, which is called a longitudinal wave, and it can be a sideways sliding across the direction of
+travel, which is called a transverse wave. Sound in air is longitudinal. Light is transverse. Earthquakes
+carry both, which is why a seismograph shows two arrivals for one event. A solid can carry both, and that is
+the root of everything that follows: in a plate, the two kinds get mixed together by the free surfaces.
+
+\section{Frequency and period}
+
+Frequency is how many times per second the disturbance repeats. Its unit is the hertz, written Hz, and one
+hertz is one cycle per second. A tuning fork at 440 Hz pushes the air 440 times every second, which is why
+the note sounds the way it does.
+
+The period is the time for one cycle, and it is the reciprocal of the frequency. If the frequency is 440 Hz
+the period is one four hundred and fortieth of a second, a little over two milliseconds. This reciprocal
+relationship is worth remembering because different problems are easier in different units. A fast
+oscillation has a high frequency and a short period; a slow one has a low frequency and a long period.
+
+There is a second measure of frequency, the angular frequency, written with the Greek letter omega. It is
+the frequency multiplied by two pi. The reason for the multiplication is that a full cycle is a full turn,
+and a full turn is two pi radians. If you measure angles in radians rather than in degrees, the arithmetic of
+oscillations becomes clean, and the clean arithmetic is worth the extra symbol. Whenever this project says
+omega, read it as frequency in radians per second.
+
+Frequency also has a physical meaning that goes beyond bookkeeping. It decides how fast the material is
+being asked to change, and every material has rates at which it can respond comfortably and rates at which it
+cannot. A material that follows a slow push faithfully may lag behind a fast one. When it lags, energy is
+left behind as heat, and the wave weakens. This is the origin of most of the attenuation in the paper, and
+we will come back to it.
+
+\section{Wavelength}
+
+Wavelength is the distance between two neighbouring crests, or more generally between two points that are
+doing the same thing at the same time. Its unit is the metre or a fraction of it.
+
+Wavelength matters because a wave only notices objects that are comparable with its own wavelength. Sound
+with a wavelength of a metre passes around a doorway of half a metre without much trouble. Sound with a
+wavelength of a centimetre is blocked and reflected, which is why a high note from one room is harder to hear
+in the next than a low one. In a plate, the wavelength relative to the thickness decides which kind of motion
+is possible, and this is the central geometric fact of the whole project.
+
+There is a simple relation between the three quantities so far. The wave moves one wavelength in one period.
+So the speed is the wavelength divided by the period, and since the period is the reciprocal of the
+frequency, the speed is the wavelength multiplied by the frequency. If a wave has a wavelength of one metre
+and a frequency of two hertz, it moves two metres per second. Nothing more complicated than that is needed
+to follow the paper.
+
+\section{The wavenumber}
+
+The wavenumber is a way of measuring how quickly the wave pattern repeats in space, rather than how quickly
+it repeats in time. Frequency does the counting in time; the wavenumber does the counting in space. Its
+symbol is k and its unit is the reciprocal of a metre.
+
+The most useful definition is not the number of crests per metre but the phase per metre. One full cycle is
+two pi radians of phase, so a wave whose wavelength is lambda has a wavenumber of two pi divided by lambda.
+If you keep the two pi in the definition, then a wave travelling in the positive direction is written as a
+cosine with the argument k x minus omega t, and every formula that follows comes out without stray factors
+of two pi. That is the whole reason for the definition, and it is a good enough reason.
+
+Here is a way to feel the difference between the two counts. Stand on a beach and count waves arriving per
+minute; that is frequency. Walk along the beach and count how many wave crests fit into a hundred metres;
+that is wavelength, and its reciprocal is the wavenumber up to the factor of two pi. Both describe the same
+train of waves, one in time and one in space.
+
+For our plate the wavenumber is the important one, because the plate is infinite along the direction of
+travel and finite across it. The wave is free to choose a wavenumber along the plate, and the plate then
+decides which through-thickness shapes are allowed at that wavenumber. The paper is, in the end, a
+calculation of that decision.
+
+\section{Phase velocity, and why it is not the only speed}
+
+Phase velocity is the speed at which a crest moves. It is the frequency divided by the wavenumber, or
+equivalently the wavelength multiplied by the frequency, which is the same statement as before.
+
+If phase velocity were the same for every frequency, waves would be simple. They are not. In most real
+media the phase velocity depends on frequency, and the dependence is called dispersion. A glass prism
+separates white light into colours precisely because the phase velocity of light in glass depends on
+frequency. Sound in a plate behaves in the same way: the speed of a guided wave depends on how fast it is
+wobbling.
+
+There is a second speed, the group velocity, which is the speed at which a package of waves travels and the
+speed at which energy moves. For a single pure sine the two are the same, but a real pulse is built out of
+many frequencies, and if each frequency travels at its own speed the pulse changes shape as it goes. That is
+why a hand clap heard across a valley arrives as a smear rather than a click. The paper reports phase
+velocity, because that is the quantity a dispersion curve is drawn with and the quantity a device is designed
+around, and it mentions group velocity where the energy argument needs it.
+
+Dispersion is a nuisance for a communication engineer and a gift for us. A measured dispersion curve is a
+fingerprint. If you know how phase velocity varies with frequency for a given plate, you can work backwards
+and say something about the material, the thickness, or the presence of damage. This is the basis of a large
+industry of non destructive testing, and it is the reason anybody cares about our model.
+
+\section{A plate, and why waves get trapped in it}
+
+A plate is a solid whose thickness is much smaller than its length and width. A sheet of window glass is a
+plate. A coin is a short cylinder, which is not the same thing. In this project the plate has a thickness
+written as two h, so the two faces sit at plus h and minus h, and it is infinite in the two other
+directions. Infinite is a mathematician's word for long enough that the ends do not matter.
+
+Now send a wave into the plate at an angle. It travels through the material until it meets a face. A face is
+free, which means nothing is pressing on it, so the wave cannot push its way out into the air in a useful
+way; almost all of it reflects back into the plate. It then travels across the thickness, meets the other
+face, reflects again, and so on. The wave is trapped, and while it is trapped it creeps along the plate.
+
+This is not a small effect, it is the whole effect. A wave that is bouncing between two faces is not
+travelling straight; it is travelling in a zigzag, and the zigzag has a forward component. That forward
+component is the guide wavelength and the speed along the plate is the phase velocity you measure with a
+transducer at the surface. The steeper the zigzag, the slower the apparent speed along the plate, because the
+wave is spending most of its effort going up and down rather than forward.
+
+Two consequences follow at once, and both matter for the paper. First, the thickness enters the problem
+directly, because the zigzag path length is set by it. Second, the two faces talk to each other: the wave
+returns to a face with a phase that depends on the thickness, the wavelength, and the angle. When the return
+phase is just right, the two reflections reinforce, and a mode exists. When it is not, the mode cannot exist,
+and the amplitude dies away. That is where the discrete set of modes comes from.
+
+\section{Modes, and the two families}
+
+Because the plate can only support the zigzags whose return phase fits, the waves in a plate come in a
+discrete list rather than a continuum. Each entry in the list is called a mode. A mode is a definite
+through-thickness shape together with a dispersion relation of its own. You can think of it as a standing
+pattern across the thickness that is carried along the plate.
+
+The modes fall into two families, and the reason is symmetry. The plate looks the same if you turn it upside
+down, so its solutions must come in pairs related by that turn.
+
+In the symmetric family the two faces move towards each other and away from each other in step, so the middle
+of the plate moves along the plate and does not move across it. The lowest member, called S zero, is the one
+that stretches and squeezes the plate like a concertina. In the antisymmetric family the two faces move in
+the same direction at the same time, so the plate bends. The lowest member, called A zero, is the bending
+wave of a plate and it is the one a plate feels when you tap it.
+
+At low frequency only these two exist. As the frequency rises, more modes appear, in the order S one, A one,
+and so on, and each new mode appears at a frequency called its cutoff. The two families are independent only
+when the material is simple. In our materials the electric field and the temperature couple the families
+together at the faces, so in general a wave that starts as symmetric picks up a small antisymmetric part as
+it travels. Where that mixing is large enough to matter is one of the questions the paper has to answer.
+
+\section{Cutoff, dispersion curves, and the product of frequency and thickness}
+
+The cutoff of a mode is the lowest frequency at which it can exist. Below cutoff the mode is not a travelling
+wave at all; it dies away exponentially from wherever it was created, and it is called evanescent. The
+physical reason is the zigzag: at low frequency the wavelength is long compared with the thickness, so a wave
+cannot fit a half wavelength across the plate and still come back in step. Only the two fundamental modes
+avoid this restriction, and that is why a thin plate at low frequency carries only S zero and A zero.
+
+A dispersion curve is a graph of phase velocity against frequency, one curve per mode. On such a graph the
+cutoffs appear as points where a curve begins. The curves of the higher modes rise steeply after their cutoff
+and then flatten out at high frequency towards the speed of a wave on the surface of a half space, called the
+Rayleigh speed. That flattening is a useful test: any calculation that does not tend to the Rayleigh speed at
+high frequency has something wrong with it, and section twenty three says so again.
+
+One practical detail saves a great deal of confusion. A plate of twice the thickness at half the frequency
+behaves in almost the same way as the original, because the wave does not know about frequency and thickness
+separately; it knows about their product. So dispersion curves are drawn with frequency multiplied by
+thickness along the horizontal axis, with unit hertz times metre. On such an axis all plates of the same
+material fall on the same set of curves, and thickness stops being a nuisance.
+
+\section{Complex numbers, from zero}
+
+The phrase complex number frightens people for no good reason. A complex number is an ordinary number with
+one extra idea attached, and the extra idea is this: there is a number whose square is minus one.
+
+Ordinary numbers do not have that property. Anything real squared is positive, or zero if it is zero. So the
+equation x squared equals minus one has no solution among the numbers you have used so far. Mathematicians
+solved the problem by inventing a solution and calling it i, with the rule that i squared is minus one. It
+looks like a trick, and for a long time it was treated as one. It is not a trick: it is a bookkeeping device
+for two quantities at once, and once you have it, a great many things that would otherwise need two equations
+need only one.
+
+A complex number is written as a plus b i, where a and b are ordinary numbers. The first part is called the
+real part and the second is called the imaginary part. The word imaginary is a historical accident; there is
+nothing imaginary about the second number. If a is the length of a step to the east and b is the length of a
+step to the north, then a plus b i is simply the position after both steps. The complex number is a pair of
+numbers written compactly.
+
+Complex numbers add easily: you add the real parts and add the imaginary parts separately, exactly as you add
+east and north steps separately. They multiply by the usual rule with i squared replaced by minus one. For
+example, (one plus i) times (one plus i) is one plus two i plus i squared, which is two i. The real part
+cancelled.
+
+The most useful fact about complex numbers is the size. The size, or modulus, of a plus b i is the square root
+of a squared plus b squared. That is Pythagoras, and it is the length of the step to the corner. The size is
+written with two vertical bars, and it is always positive, whatever the signs of a and b.
+
+The second most useful fact is that a complex number can be written in polar form, as a size times a phase.
+Picture the step to the corner. Its length is the size and its angle from the east direction is the phase.
+The phase is an angle in radians. When you multiply two complex numbers, their sizes multiply and their
+phases add. That single sentence carries a great deal of physics, because a wave is exactly a size and a
+phase, and a wave travelling through a material is exactly a size that shrinks and a phase that turns.
+
+Now the exponential. There is a famous relation, due to Euler, which says that the exponential of i times an
+angle equals a cosine plus i times a sine. A cosine and a sine are the real and imaginary parts of the same
+turning arrow. So one can write a wave as a size times the exponential of i times something, and the size is
+its amplitude while the something is its phase. This notation is used everywhere in acoustics because it
+turns the trigonometry of waves into the arithmetic of exponents, where multiplication is easy and
+differentiation gives back the same function.
+
+Two operations look after themselves in this language. Differentiating with respect to time multiplies by
+minus i omega. Differentiating twice multiplies by minus omega squared. Differentiating with respect to
+position multiplies by i k. That is why the equations in the plan look so short: a symbol like omega squared
+in front of a term is a second time derivative in disguise, and a symbol like k squared is a second space
+derivative in disguise. If you can read that, you can read most of the paper.
+
+\section{The complex wavenumber, and what attenuation means}
+
+A wave moving in the positive direction along a plate can be written as a size times the exponential of i
+times the quantity k x minus omega t. If k is an ordinary positive number, this describes a wave of constant
+amplitude travelling forever. That is unphysical, because real waves weaken.
+
+So we let k be complex. Write k as k real plus i k imaginary. Put that into the exponential and split it:
+
+the exponential of i k x equals the exponential of i k real x times the exponential of minus k imaginary x.
+
+The first factor turns the phase and the second shrinks the size. So the real part of k decides the
+wavelength, through the usual relation that the wavelength is two pi divided by the real part, and the
+imaginary part decides how quickly the wave dies away with distance.
+
+The convention in this project is that a positive imaginary part means decay in the positive direction. That
+is a choice, like choosing to measure height upwards; the physics is the same either way, but a paper must
+say which way it chose, because a reader who assumes the other convention will read a growth where the
+author wrote a decay. Every figure in this project therefore states the sign convention once, in the caption.
+
+Attenuation is the rate at which the amplitude falls. If the amplitude falls as the exponential of minus k
+imaginary x, then a natural measure of loss is k imaginary itself, in reciprocal metres, which is called
+nepers per metre. Nepers are like radians: they are a ratio disguised as a unit. Engineers often prefer
+decibels, and the conversion factor is a little over eight and a half decibels per neper, because a decibel
+is defined on a logarithmic scale in base ten while a neper is defined in base e.
+
+The ratio of the imaginary part to the real part is the quantity that tells you whether a mode is usable. It
+is the fraction of amplitude lost per radian of phase, which is the same as the fraction lost per unit of
+distance measured in wavelengths. A mode with a small ratio travels many wavelengths; a mode with a ratio
+near one disappears within a wavelength and is useless for a delay line. When the plan says that a certain
+effect is too small to see, it usually means that the change in this ratio is smaller than the accuracy with
+which it could be measured.
+
+Finally, a word about where attenuation comes from in our problem. Some of it is leakage, some is
+thermoelastic loss, and some is the drag of the moving charge carriers on the crystal. Leakage depends on the
+surroundings, and we exclude it by keeping the faces free. Thermoelastic loss is a property of every solid
+and is small. Carrier drag is the new ingredient in this paper, it can be switched on and off by a bias
+voltage, and it can even be made negative, which means amplification. That last possibility is the reason the
+subject is interesting for devices.
+
+\section{Stress and strain}
+
+Hold one end of a rubber band and pull the other. The band gets longer. The change in length divided by the
+original length is the strain. Strain is dimensionless, because it is a length divided by a length, and it
+is usually quoted as a small number or as a percentage. A strain of one per cent means the material got one
+per cent longer.
+
+While you are pulling, the band pulls back. The force it transmits, divided by the cross section over which
+it acts, is the stress. Stress has the unit of force per area, which is the pascal, and one pascal is one
+newton on one square metre. Atmospheric pressure is about a hundred thousand pascals, and steel can carry
+hundreds of millions of pascals before it yields, which is why the pascal is a small unit and why engineers
+prefer to work in megapascals.
+
+Two kinds of stress matter in a plate. A normal stress pulls two faces apart or pushes them together, and the
+rubber band carries a normal stress. A shear stress slides one layer over the next, and the same rubber band
+carries a shear stress if you twist it instead of pulling it. A solid can carry both at the same time, and in
+a plate it usually does. The reason is again the zigzag: a wave that bounces between the faces converts
+stretching into sliding and back, so at any point the material is doing both.
+
+Stress and strain are not single numbers, they are collections. At a point in a solid there are three
+directions, and for each direction of facing there is a stress with three components. That is nine numbers,
+and for a symmetric object only six are independent. When the plan writes an index like i j, it is naming one
+of those components. You do not need to hold all nine in your head. You need to know that the notation is
+counting them, and that a material property attached to two indices is a number that relates a stress to a
+strain in a particular pair of directions.
+
+There is one more idea, and it is the one that makes the size effect possible. Strain can be non uniform. The
+top of a bent beam is stretched more than the middle. The rate at which the strain changes from point to point
+is the strain gradient, and it has the strange unit of one over length. In an ordinary theory of elasticity
+the energy depends only on the strain; the strain gradient costs nothing. In the theory we use, it costs a
+little, and that little is what makes a thin plate stiffer than scaling would predict.
+
+\section{Hooke's law, and how a material answers}
+
+Hooke's law is the statement that the response is proportional to the cause, for small causes. Hang a weight
+on a spring and it stretches. Double the weight and it stretches twice as much, provided you do not
+overstretch it. The constant of proportionality is the stiffness. This is the whole content of Hooke's law,
+and the reason a whole branch of engineering exists is that the same simple idea works for solids with a
+little more bookkeeping.
+
+In a solid the bookkeeping is this. A strain in one direction produces stresses in several directions.
+Pull a strip of rubber, and it gets longer but also thinner; the thinning is a strain in the two directions
+across the pull. The ratio of the sideways contraction to the lengthwise extension is a material property
+called Poisson's ratio. A value near one half means the material keeps its volume when stretched, which is
+what rubber does. A value near zero means it hardly narrows at all, which is what cork does, and that is why
+cork is used in bottle stoppers.
+
+The full version of Hooke's law for an elastic solid is a table of numbers that relates six stresses to six
+strains. For an isotropic material, which looks the same in every direction, the table collapses to two
+numbers. These are often chosen as the pair called the Lam\'e constants, one for stiffness in general and one
+for resistance to shear. It is convenient to define two speeds from them: a speed for push pull waves and a
+speed for shear waves. The push pull speed is always the larger of the two, because a material resists being
+squeezed more than it resists being sheared. In the model we write the table as a symbol with four indices,
+which is intimidating until you notice that in the isotropic case it only contains two different numbers.
+
+Our materials are not isotropic. A piezoelectric crystal has a preferred axis and looks different along it
+than across it; the number of independent constants rises, but only to five or so for the symmetry class we
+use. A laminated composite is not even a single material, it is a stack, and its effective stiffness is an
+average that depends on how the layers are arranged. The paper deals with this by computing effective
+constants once and using them throughout, which is the standard engineering compromise and is stated as an
+assumption.
+
+\section{Balance laws, and what a divergence means}
+
+Physics has a small number of conservation statements and a great many consequences. Three matter here.
+
+Mass is conserved. What flows into a small box either stays in it or comes out; nothing is created. Momentum
+is conserved. The force on a box equals the rate at which its momentum changes, which for a solid means the
+weight of the material times its acceleration. Energy is conserved, and for a solid at constant temperature
+this reduces to a balance between stored elastic energy, kinetic energy, and the work done by outside forces.
+
+A balance law is usually written with a divergence, and the word alarms people. A divergence is a net
+outflow. Imagine a small box, and imagine a flow of something through it. If more flows out through the six
+faces than flows in, the amount inside the box falls, and the divergence is positive. If more flows in, the
+divergence is negative and the amount inside rises. That is all it means. When the plan writes the divergence
+of a stress equal to density times acceleration, it is saying that if the stresses on the faces of a small
+box do not balance, the box accelerates. When it writes the divergence of the electric displacement equal to
+minus the charge density, it is saying that electric displacement lines start and end on electric charge.
+
+A wave equation comes from combining a balance law with a material law. The material law says how stress
+depends on strain; the balance law says how stress accelerates the material. Put the first into the second
+and you get an equation in which the acceleration of the displacement is proportional to its curvature in
+space. That equation has, as its solutions, waves whose speed is the square root of the ratio of the
+stiffness to the density. This is the origin of every wave speed in the paper, and it is worth seeing once,
+because after that the paper just does the same thing with more fields and more bookkeeping.
+
+\section{Electric fields, and what a potential is}
+
+An electric charge feels a force if it is near other charges. It is convenient to describe that force in two
+steps. First, say that the region around a charge is filled with an electric field. Second, say that another
+charge placed in that field feels a force equal to its own charge times the field. The field is the force per
+unit charge, and its unit is the volt per metre.
+
+The potential is a second convenience, and it is the one beginners find hardest. The potential is the energy
+per unit charge. Moving a charge from one place to another costs energy, and the cost divided by the charge is
+the difference in potential, which is what we call voltage. A nine volt battery is a promise that every
+coulomb of charge taken through it will release nine joules of energy.
+
+The relation between field and potential is a gradient, with a minus sign. The field points in the direction
+in which the potential falls fastest. Water flows downhill; charge drifts towards lower potential. The minus
+sign in the definition is there so that the two statements agree. In an equation it looks like the electric
+field being minus the derivative of the potential, and in words it is the sentence you just read.
+
+There is one more idea to carry, and it is Gauss's law. Electric field lines begin on positive charge and end
+on negative charge. If you draw a closed surface around some charge, the number of field lines poking out
+through it, counted with sign, equals the charge inside. In a material, the correct quantity to count is not
+the field but the electric displacement, which is the field multiplied by the permittivity of the material.
+The reason for introducing the displacement is that the material itself polarises: its atoms stretch into
+little dipoles and cancel part of the charge you put in. The displacement counts only the charge you put in,
+which is the charge you control.
+
+For our plate this becomes a small bookkeeping question at the faces. On the faces we must say whether the
+displacement is continuous with the field outside, or whether it vanishes because the face is covered with a
+metal electrode that carries away any charge. Both conditions are used in practice and they give slightly
+different dispersion curves. The choice is a modelling decision, and it belongs to you, not to this booklet.
+
+\section{What makes a semiconductor different}
+
+A metal conducts because its electrons are free to move. An insulator does not conduct because its electrons
+are held in bonds. A semiconductor sits between the two, and it is the most interesting of the three because
+its conductivity can be changed by adding impurities, by shining light on it, or by heating it.
+
+The word for the mobile electrons is carriers. Their number per unit volume is the carrier density. In a pure
+semiconductor at room temperature the number is modest; a doped one can have a thousand times more. When the
+material is at rest, the carriers are spread evenly and every point is electrically neutral, because each
+mobile electron is balanced by a fixed positive ion of the lattice behind it.
+
+Now squeeze the material. The piezoelectric effect produces a voltage across it, which is to say an electric
+field. The carriers feel that field and move. They move until their own charge distribution has cancelled
+most of the field, and the result is a small region near each face where the charge is not neutral. This
+region is called a depletion layer, and it is the working part of a diode.
+
+When a wave passes, the field it produces is not steady. It rises and falls, and the carriers try to follow.
+They do not follow perfectly, because they need time. Two processes take that time. Diffusion is the spreading
+of carriers from crowded places to empty ones, as a drop of ink spreads in water. Drift is the steady push of
+the field on the carriers, and the measure of how readily they respond is the mobility. The product of
+mobility and field is a velocity, and that velocity is called the drift velocity.
+
+The point that makes our problem interesting is that the carriers are slow compared with the wave. A wave at
+a hundred megahertz in a crystal might travel at three thousand metres per second and take three hundred
+nanoseconds for a centimetre. The carriers may need microseconds to redistribute. So the wave hands the
+carriers a push, the carriers slowly respond, and the response arrives out of step with the wave that caused
+it. An out of step response extracts energy, and that is attenuation. Make the carriers run faster, by
+increasing the applied field, and the response can come back into step and even overtake the wave, which is
+how an acoustic amplifier works.
+
+There is one further subtlety, which is the reason the plan has two coefficients rather than one. If the
+plate is not at a uniform temperature, the carriers feel the temperature gradient as well as the electric
+field. They drift down the temperature gradient, from hot to cold, exactly as they drift down a voltage
+gradient. This is called thermodiffusion, and it is the same physics as the Seebeck effect in a thermocouple.
+
+\section{Seebeck, Peltier, and reciprocity}
+
+A thermocouple is two wires of different metals joined at both ends. Heat one junction and a voltage appears
+at the other. That is the Seebeck effect, and the coefficient that measures it, volts per kelvin, is the
+Seebeck coefficient. For a material whose carriers are electrons the coefficient is negative, because the
+electrons migrate towards the cold end and leave the hot end positive. For a material whose carriers are
+holes the coefficient is positive.
+
+The reverse effect exists. Drive a current through a junction and heat is absorbed at one side and released
+at the other. That is the Peltier effect, and its coefficient is in volts, because it is a heat per unit
+charge. A Peltier cooler is a small refrigerator with no moving parts, and it is built from many junctions in
+series electrically and in parallel thermally.
+
+The two coefficients are not independent. Kelvin showed, from thermodynamics alone, that the Peltier
+coefficient equals the temperature times the Seebeck coefficient. Later, with the machinery of irreversible
+thermodynamics, Onsager showed why: the two effects are a pair of cross flows, and the coefficients that
+couple the flows to the forces must be equal. In the language of the plan, the constant that appears in the
+carrier equation and the constant that appears in the heat equation are the same number wearing two hats.
+
+This is a gift for a paper. It means we introduce one new material property, the Seebeck coefficient, and get
+both the carrier effect and the heat effect from it. A paper that introduced two independent coefficients
+would need two independent measurements to defend them, and nobody would believe either.
+
+There is a sign convention trap here. Two
+signs must be kept straight: the sign of the Seebeck coefficient, negative for electrons, and the side of the
+equation on which the reciprocal term is written. In our heat equation the source terms appear inside a
+bracket with the opposite sign to their contribution, so a positive heating appears as a negative entry. If you ever find yourself unsure, ask which way the carriers are
+going and whether the spot they are leaving is getting warmer or cooler, and let the sign follow the physics.
+
+\section{Heat: conduction, diffusion, and a memory}
+
+Heat flows from hot to cold. The flux is proportional to the temperature gradient, with a minus sign, and the
+constant is the thermal conductivity. That is Fourier's law, and for steady problems it is all you need.
+
+For time varying problems, Fourier's law is combined with energy conservation, and the result is a diffusion
+equation for temperature. The equation says that a point warms if it is colder than its neighbours on average,
+which is another way of saying the curvature of the temperature is positive. The rate at which it happens is
+set by a single number, the thermal diffusivity, which is the conductivity divided by the density and the
+specific heat.
+
+The diffusion equation has an uncomfortable property. Its solutions allow a temperature change at one point
+to be felt everywhere at once, however small the effect far away. For most engineering purposes this does not
+matter, because the effect is negligible. For a wave oscillating at a very high frequency it does matter,
+because the equation predicts that the loss grows without limit as the frequency rises. Nature does not
+behave that way, and the divergence is a sign that the theory is being asked a question outside its range.
+
+The repair, due to Maxwell in another context and later to Cattaneo and to Vernotte, is to give the heat flux
+a short memory. The flux does not respond instantly to the gradient; it relaxes towards the gradient over a
+time called the relaxation time. One such memory gives a hyperbolic heat equation with waves of heat in it.
+Two memories, one for the flux and one for the gradient of the flux, give the version used in this project,
+which was introduced by Moore, Gibson and Thompson in 1994 and is called the Moore-Gibson-Thompson theory,
+or MGT for short.
+
+What does MGT do to a wave in a solid? At low frequency, nothing worth measuring: the relaxation time
+multiplied by the frequency is small, and the classical answer returns. At high frequency, the relaxation
+takes over, the heat flux lags behind the temperature gradient, and the attenuation stops growing and levels
+off at a plateau. The plateau is the physical difference between the classical and the MGT descriptions, and
+it is what the paper will look for.
+
+The base form we use has one lag and one time derivative cancelled, which is the simplest member of the
+family and the one that has been implemented most often in the recent literature. It has two limits that can
+be tested: setting the relaxation time to zero returns Fourier, and letting it become very large gives an
+almost adiabatic material. Those two limits bracket the answer, and section twenty three recommends the
+bracket as a test.
+
+One more number will keep appearing. If the plate has thickness two h, the time for heat to diffuse across it
+is of order the thickness squared divided by the diffusivity. The ratio of the relaxation time to that
+diffusion time decides whether the memory is visible for a plate of that thickness. Because thick plates
+diffuse slowly and thin plates diffuse quickly, the visibility depends on thickness, and that is why one of
+the figures in the plan is a map of thickness against relaxation time rather than a single curve.
+
+\section{The size effect in words}
+
+At the scale of a micrometre, and certainly at the scale of a tenth of a micrometre, a plate does not behave
+like a shrunken version of a thick plate. Two separate ideas are used to describe the difference, and both
+are needed because experiment shows both kinds of deviation.
+
+The first idea is nonlocal elasticity. The stress at a point is allowed to depend on the strain in a small
+neighbourhood around that point as well as on the strain at the point. The image is a row of springs linked by
+weak cross springs: a displacement in one place is felt a little further along. Nonlocality softens the
+response, so a beam bends more than the classical theory says.
+
+The second idea is strain gradient elasticity. The energy is allowed to depend on how rapidly the strain
+changes from point to point, in addition to how large it is. The image is a sheet of rubber on a table: a
+region of uniform stretch and a region of rapidly changing stretch can have the same strain at their centres,
+but the second costs more energy. The gradient stiffens the response.
+
+The version used in this project combines the two, and it is due to Lim, Zhang and Reddy. One length scale
+accompanies each idea, one for the nonlocality and one for the gradient, and the two are in competition: one
+makes the plate softer, the other makes it stiffer. Both lengths are tiny, and both are written as a ratio to
+the thickness, because a length alone tells you nothing and a ratio to the geometry tells you everything.
+
+There is a price to pay, and it is the sentence that closes the model section of your research plan. When a
+theory contains a second derivative of the strain, the equations rise in order. Higher order equations need
+more conditions at the boundaries. A classical elastic plate needs three conditions at each face; a plate
+described this way needs more, and which extra conditions to impose is not settled in the literature. That is
+why the plan hands that decision to you instead of pretending it is part of the model.
+
+\section{What a model is allowed to assume}
+
+A model is not a description of a piece of the world. It is a set of statements that are true enough, in a
+range, to answer a question. Knowing the range is part of knowing the model, and a paper that hides the range
+is lying quietly.
+
+Our model assumes that the material is a continuum, which is to say that we never look at individual atoms.
+It assumes that the response is linear, so that doubling the cause doubles the effect. It assumes that the
+properties do not change with temperature, which is a strong assumption given that one of the fields is the
+temperature. It assumes that the two length scales of the size effect are material constants and not fitting
+parameters. It assumes that the excess carrier density is small compared with the equilibrium density, so
+that products of small quantities can be dropped. It assumes that the surfaces are free of any pressure and
+free of charge, which is an idealisation of a real surface with an oxide layer on it.
+
+Each assumption is a place where a referee can push, and each should appear in the paper with a sentence of
+justification. The good news is that assumptions can be tested. If a result does not change when an
+assumption is relaxed, the assumption was not load bearing; if it does, the reader deserves to know which way.
+
+\section{Table of symbols used in the plan}
+
+\begin{center}
+\small
+\begin{tabular}{p{1.9cm}p{6.0cm}p{2.4cm}p{2.6cm}}
+\toprule
+symbol & meaning in words & unit & rough size\\
+\midrule
+$u_x,u_z$ & displacement of a material point along the plate and across it & m & $10^{-10}$ to $10^{-8}$\\
+$\sigma_{ij},t_{ij}$ & local stress, total (nonlocal) stress & Pa & $10^{5}$ to $10^{8}$\\
+$\varepsilon_{ij}$ & strain, change in length per unit length & none & $10^{-6}$ to $10^{-4}$\\
+$\theta$ & temperature rise above the reference value & K & below 1\\
+$T_0$ & reference temperature & K & about 300\\
+$\Delta n$ & excess carrier density over equilibrium & m$^{-3}$ & $10^{16}$ to $10^{22}$\\
+$n_0$ & equilibrium carrier density & m$^{-3}$ & $10^{20}$ to $10^{24}$\\
+$q$ & magnitude of the charge of one carrier & C & $1.6\times10^{-19}$\\
+$b_n$ & mobility, drift speed per unit field & m$^2$V$^{-1}$s$^{-1}$ & $10^{-3}$ to $10^{-1}$\\
+$D_n$ & carrier diffusion coefficient & m$^2$s$^{-1}$ & $10^{-5}$ to $10^{-3}$\\
+$E_i,E_0$ & electric field, applied bias field & V\,m$^{-1}$ & $10^{3}$ to $10^{6}$\\
+$v_d$ & drift velocity, mobility times bias field & m\,s$^{-1}$ & $1$ to $10^{3}$\\
+$j_i$ & particle flux of carriers & m$^{-2}$s$^{-1}$ & $10^{18}$ to $10^{24}$\\
+$J_i$ & electric current density, charge times particle flux & A\,m$^{-2}$ & $10^{2}$ to $10^{8}$\\
+$S_n$ & Seebeck coefficient, voltage per kelvin, negative for electrons & V\,K$^{-1}$ & $10^{-4}$ to $10^{-3}$\\
+$\beta_{\rm th}$ & thermodiffusion coefficient in the carrier equation & m$^{-1}$s$^{-1}$K$^{-1}$ & $10^{16}$ to $10^{21}$\\
+$\Pi_{\rm th}$ & Peltier coefficient, temperature times Seebeck & V & $10^{-2}$ to $10^{-1}$\\
+$\tau_R$ & recombination time of an excess carrier & s & $10^{-9}$ to $10^{-6}$\\
+$E_g$ & band gap energy & J & about $5\times10^{-19}$\\
+$\varphi$ & electric potential & V & 0.1 to 10\\
+$D_i$ & electric displacement & C\,m$^{-2}$ & $10^{-3}$ to $10^{-1}$\\
+$\epsilon_{ik}$ & permittivity of the material & F\,m$^{-1}$ & $10^{-10}$ to $10^{-9}$\\
+$e_{kij}$ & piezoelectric constant, charge per area per unit strain & C\,m$^{-2}$ & 0.1 to 2\\
+$p_i$ & pyroelectric coefficient & C\,m$^{-2}$K$^{-1}$ & $10^{-6}$ to $10^{-4}$\\
+$\alpha_{kl}$ & thermal expansion coefficient & K$^{-1}$ & $10^{-6}$ to $10^{-5}$\\
+$\beta_{ij}$ & thermal stress coefficient, stiffness times expansion & Pa\,K$^{-1}$ & $10^{4}$ to $10^{6}$\\
+$c_{ijkl}$ & elastic stiffness & Pa & $10^{10}$ to $10^{11}$\\
+$\rho$ & mass density & kg\,m$^{-3}$ & $4\times10^{3}$ to $6\times10^{3}$\\
+$\rho c_p$ & heat capacity per unit volume & J\,m$^{-3}$K$^{-1}$ & $10^{6}$ to $3\times10^{6}$\\
+$k_{\rm th}$ & thermal conductivity & W\,m$^{-1}$K$^{-1}$ & 1 to 100\\
+$\kappa$ & thermal diffusivity, conductivity over capacity & m$^2$s$^{-1}$ & $10^{-6}$ to $10^{-5}$\\
+$\tau_q$ & relaxation time of the heat flux (MGT) & s & $10^{-12}$ to $10^{-10}$\\
+$\tau_T$ & diffusion time across the plate, thickness squared over diffusivity & s & $10^{-13}$ to $10^{-12}$\\
+$l_{\rm nl}$ & nonlocal length of the size effect & m & $10^{-9}$ to $10^{-7}$\\
+$l_g$ & strain gradient length of the size effect & m & $10^{-9}$ to $10^{-7}$\\
+$2h$, $h$ & plate thickness, and half of it & m & $10^{-9}$ to $10^{-3}$\\
+$k$ & wavenumber, complex, along the plate & m$^{-1}$ & $10^{4}$ to $10^{8}$\\
+$k_r,k_i$ & real part sets wavelength, imaginary part sets decay & m$^{-1}$ & $k_i\ll k_r$\\
+$\lambda$ & wavelength, two pi over the real part of the wavenumber & m & $10^{-8}$ to $10^{-4}$\\
+$\omega$ & angular frequency, two pi times ordinary frequency & rad\,s$^{-1}$ & $10^{6}$ to $10^{11}$\\
+$f$ & ordinary frequency & Hz & $10^{5}$ to $10^{10}$\\
+$f(2h)$ & frequency multiplied by thickness, the comparison axis & Hz\,m & 1 to $10^{4}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Glossary}
+
+\textit{Adiabatic} means no heat flows. \textit{Isothermal} means the temperature does not change. They are
+the two limits of any thermoelastic problem and they bracket the truth.
+
+\textit{Anisotropy} is having different properties in different directions. A crystal is usually anisotropic;
+a glass is not.
+
+\textit{Attenuation} is the weakening of a wave as it travels.
+
+\textit{Boundary condition} is the statement of what happens at an edge. It is not part of the model of the
+material.
+
+\textit{Coupling} is any term through which one field affects another. A model with five fields has more than
+five couplings, and each must be justified.
+
+\textit{Cutoff} is the lowest frequency at which a mode exists.
+
+\textit{Dispersion} is the dependence of phase velocity on frequency.
+
+\textit{Dissipation} is the irreversible conversion of wave energy into heat.
+
+\textit{Evanescent} describes a disturbance that dies away instead of travelling.
+
+\textit{Mode} is one of the discrete through-thickness patterns a plate can carry.
+
+\textit{Permittivity} is the constant that relates electric displacement to electric field in a material.
+
+\textit{Phase} is the position of a wave in its cycle, measured in radians.
+
+\textit{Polarisation} in a dielectric is the stretching of atoms into dipoles; in a ferroelectric it is the
+alignment of those dipoles over a region.
+
+\textit{Pyroelectricity} is polarisation produced by a change in temperature.
+
+\textit{Reciprocity} is the statement that if cause A produces effect B, then cause B produces effect A with
+the same constant. It is the reason two coefficients in the plan are really one.
+
+\textit{Relaxation time} is the time a system needs to come back to equilibrium after a small push.
+
+\textit{Strain} is the change in length per unit length. \textit{Stress} is force per unit area.
+
+\textit{Transducer} is a device that converts between electrical and mechanical signals.
+
+\textit{Vector} is a quantity with direction as well as size. \textit{Tensor} is the same idea with two or more
+directions attached, which is how stress and stiffness are written.
+
+\section{How to check your own work}
+
+Nobody will look at your numbers as carefully as you will, so the testing has to be yours. Five generic tests
+cover most of the ground, and none of them needs a published value to compare against.
+
+\textit{First, units.} Write the unit of every term in every equation before you code it, and make sure the
+units agree two by two. This sounds trivial and it catches most sign and algebra errors, because a term that
+has the wrong units usually has the wrong sign structure too. Keep the table you write, and put it in the
+paper appendix. A referee reads it and relaxes.
+
+\textit{Second, limits.} Every term you add has a limit in which it should disappear. Set the relaxation time
+to zero and you must get the classical heat equation. Set the Seebeck coefficient to zero and you must get the
+ordinary carrier equation. Set the size lengths to zero and you must get the classical plate. Compute the
+reduced case separately, do not just delete a term from your own code, and compare the two.
+
+\textit{Third, symmetry.} Turn the plate upside down. The dispersion curves must be unchanged, for the
+symmetric family and the antisymmetric family separately. If a mode that should be symmetric comes out with a
+mixture, either the coupling is real or the assembly has a sign error, and telling those apart is worth a day.
+
+\textit{Fourth, switch a term off in two ways.} Set a coupling constant to zero, and separately assemble a
+model in which the term was never written. The two answers must agree to six decimal places. This is the test
+the plan calls the switching-off test, and it is a test of your code and not of the physics.
+
+\textit{Fifth, compare with a cited source.} When a paper gives a curve, digitise two or three points and
+compare. You are looking for the same order and the same trend, not the same digits, because the material
+constants will not be identical. If your curve bends the other way, stop and find out why before writing a
+sentence about it.
+
+There are three more habits worth having. Keep a log of what you ran and when, because a result you cannot
+reproduce is not a result. Plot the thing you are about to quote, because a number read off a table hides a
+shape. And when a result is too good, repeat it from a different direction, such as a different formulation of
+the same problem, before you believe it.
+
+\end{document}

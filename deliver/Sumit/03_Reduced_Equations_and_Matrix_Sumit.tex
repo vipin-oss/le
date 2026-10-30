@@ -1,0 +1,244 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{#1}}}
+\setlength{\parskip}{4pt}
+\title{\vspace{-1.6cm}\Large Piezoelectric Semiconductor Plate: Reduced Field Equations, Solution Form\\
+and Characteristic Matrix\\[8pt]\large Companion to the research plan, third file}
+\author{Dr.\ Vipin \\ Gurugram University}
+\date{30 October 2026}
+\begin{document}
+\maketitle
+\vspace{-6mm}
+
+\section{What this file is}
+
+The research plan stops at the field equations. This file goes one step further and writes down the
+plane-wave reduction of those equations, the form of the solution through the thickness, and the matrix whose
+determinant gives the dispersion relation. Only results are written. None of the intermediate algebra is
+shown. You are expected to redo it on paper, term by term, and to find the places where this file or the
+sources are wrong. Every formula carries a source or says that it is ours. A formula marked ``ours'' has no
+paper behind it, only a law you can look up, and it needs the most careful look.
+
+Equation numbers refer to this file. Equations (1) to (7) of the plan are called Plan (1) to Plan (7).
+The reference list is the one in the research plan, plus the entries listed at the end of this file.
+
+\section{Setting}
+
+The plate occupies $-h\le z\le h$ and extends without limit in $x$ and $y$. The crystal is hexagonal
+(class 6mm) with its $c$-axis along $z$. We take plane strain, $u_y=0$, $\partial_y=0$, and one plane wave in
+$x$,
+\begin{equation}
+\bigl(u_x,u_z,\varphi,\Delta n,\theta\bigr)
+=\bigl(\hat u_x,\hat u_z,\hat\varphi,\hat n,\hat\theta\bigr)(z)\;e^{\,i(kx-\omega t)} ,
+\label{eq:ansatz}
+\end{equation}
+with $k=k_r+ik_i$ complex and $\omega$ real. Through the thickness every field is a sum of exponentials
+$e^{\eta z}$. The constants that survive in the 6mm class with this geometry are $c_{11},c_{13},c_{33},c_{44}$,
+$e_{31},e_{33},e_{15}$, $\epsilon_{11},\epsilon_{33}$, the thermal stress coefficients $\beta_1,\beta_3$
+(the two independent components of $\beta_{ij}=c_{ijkl}\alpha_{kl}$) and the pyroelectric constant $p_3$.
+The tensor-to-matrix rule is the usual one: $xx\to1$, $zz\to3$, $xz\to5$. Please write out which elements
+of $c_{ijkl}$, $e_{kij}$ and $\epsilon_{ik}$ you use and why the others vanish; this is part of your work.
+
+\section{The stresses and the displacement in component form}
+
+Put $\nabla^2\to\eta^2-k^2$ and define two operator factors,
+\begin{equation}
+\mathcal N(\eta)=1+l_{\rm nl}^2\,(k^2-\eta^2),\qquad
+\mathcal G(\eta)=1+l_g^2\,(k^2-\eta^2).
+\label{eq:NG}
+\end{equation}
+They are Plan (1) with the Laplacian acting on $e^{\eta z}e^{ikx}$. With $\partial_x\to ik$, $\partial_z\to\eta$,
+the strains and the field are $\varepsilon_{xx}=ik\hat u_x$, $\varepsilon_{zz}=\eta\hat u_z$,
+$\varepsilon_{xz}=\tfrac12(\eta\hat u_x+ik\hat u_z)$, $E_x=-ik\hat\varphi$, $E_z=-\eta\hat\varphi$
+\cite[Eq.\ (2)]{Zhu2023}. The three stresses and the two components of the electric displacement of Plan (1)--(2) are then
+\begin{align}
+\hat\sigma_{xx}&=\mathcal G\,(ik\,c_{11}\hat u_x+\eta\,c_{13}\hat u_z)+\eta\,e_{31}\hat\varphi-\beta_1\hat\theta,\\
+\hat\sigma_{zz}&=\mathcal G\,(ik\,c_{13}\hat u_x+\eta\,c_{33}\hat u_z)+\eta\,e_{33}\hat\varphi-\beta_3\hat\theta,\\
+\hat\sigma_{xz}&=\mathcal G\,c_{44}\,(\eta\hat u_x+ik\hat u_z)+ik\,e_{15}\hat\varphi,\\
+\hat D_x&=e_{15}(\eta\hat u_x+ik\hat u_z)-ik\,\epsilon_{11}\hat\varphi,\\
+\hat D_z&=ik\,e_{31}\hat u_x+\eta\,e_{33}\hat u_z-\eta\,\epsilon_{33}\hat\varphi+p_3\hat\theta .
+\end{align}
+Source: the structure is Plan (1)--(2), which follows \cite[Eq.\ (1)]{Zhu2023} for the piezoelectric part and
+\cite[Eq.\ (3.1)]{Quintanilla2019} for the thermal stress; the component form is ours.
+
+\section{The five reduced equations and the matrix $\mathbf M(\eta)$}
+
+The five unknown amplitudes are collected in $\mathbf a=(\hat u_x,\hat u_z,\hat\varphi,\hat n,\hat\theta)^{T}$.
+Plan (3) to Plan (6), with the substitutions above, become $\mathbf M(\eta)\,\mathbf a=\mathbf 0$ with
+$L=\eta^2-k^2$ and $f=1-i\omega\tau_q$. The sources of the five equations are given in the plan. Row by row,
+the entries of $\mathbf M$ are the following. Entries not listed are zero.
+
+\paragraph{Momentum in $x$ (Plan (3), $x$-component).}
+\begin{align}
+M_{11}&=-\mathcal N\rho\omega^2+\mathcal G\,(c_{11}k^2-c_{44}\eta^2), &
+M_{12}&=-ik\eta\,\mathcal G\,(c_{13}+c_{44}),\\
+M_{13}&=-ik\eta\,(e_{31}+e_{15}), &
+M_{15}&=ik\,\beta_1 .
+\end{align}
+
+\paragraph{Momentum in $z$ (Plan (3), $z$-component).}
+\begin{align}
+M_{21}&=-ik\eta\,\mathcal G\,(c_{13}+c_{44}), &
+M_{22}&=-\mathcal N\rho\omega^2+\mathcal G\,(c_{44}k^2-c_{33}\eta^2),\\
+M_{23}&=e_{15}k^2-e_{33}\eta^2, &
+M_{25}&=\eta\,\beta_3 .
+\end{align}
+
+\paragraph{Gauss law (Plan (4)).}
+\begin{align}
+M_{31}&=ik\eta\,(e_{15}+e_{31}), &
+M_{32}&=e_{33}\eta^2-e_{15}k^2, &
+M_{33}&=\epsilon_{11}k^2-\epsilon_{33}\eta^2,\\
+M_{34}&=q, &
+M_{35}&=\eta\,p_3 .
+\end{align}
+
+\paragraph{Carrier continuity (Plan (5)).}
+\begin{align}
+M_{43}&=b_nn_0\,L, &
+M_{44}&=-i\omega-D_nL-ik\,v_d+\frac1{\tau_R}, &
+M_{45}&=-\beta_{\rm th}L .
+\end{align}
+
+\paragraph{Heat (Plan (6)).}
+\begin{align}
+M_{51}&=f\,T_0\,\omega k\,\beta_1, &
+M_{52}&=-i\omega f\,T_0\,\beta_3\,\eta,\\
+M_{53}&=i\omega f\,T_0\,p_3\,\eta, &
+M_{54}&=f\!\left(-i\omega\,q\,\Pi_{\rm th}+\frac{E_g}{\tau_R}\right),\\
+M_{55}&=-i\omega f\rho c_p-k_{\rm th}L .
+\end{align}
+
+\section{The characteristic equation and what it says about the roots}
+
+Non-trivial amplitudes exist only if
+\begin{equation}
+\det\mathbf M(\eta)=0 .
+\label{eq:char}
+\end{equation}
+This is a polynomial in $\eta$. With $l_g\neq0$ its degree is $14$. With $l_g=0$ (nonlocal operator alone)
+it drops to $10$; the gradient operator is what raises the order, the nonlocal one acting on the inertia does not.
+Without the size effect the degree is $10$ as well. Please count the degree yourself from the entries above.
+
+Two statements about the roots are given here without proof, and you should test both.
+First, when $\beta_{\rm th}=\Pi_{\rm th}=0$, the polynomial is even in $\eta$: the roots come in pairs $\pm\eta$.
+Second, when the thermodiffusion and Peltier coefficients are non-zero together with the piezoelectric or
+pyroelectric constants, the polynomial has odd powers of $\eta$ as well, the roots no longer come in pairs, and
+the plate modes cannot be split into symmetric and antisymmetric families. The reason is that a polar crystal
+has no mirror symmetry about $z=0$ once the sign of the carrier charge matters. Because of this, the
+determinant of the boundary matrix below is taken over all $14$ (or $10$) roots at once, without splitting it.
+Switching $\beta_{\rm th},\Pi_{\rm th}$ off restores the pairs and the split.
+
+\section{The solution through the thickness}
+
+Let $\eta_1,\dots,\eta_{14}$ be the roots of Eq.~\eqref{eq:char}. For each root, the amplitude vector
+$\mathbf a_m=(X_m,Z_m,\Phi_m,\nu_m,\Theta_m)^T$ is any non-zero column of the adjugate of
+$\mathbf M(\eta_m)$, that is, $a_{m,j}=C_{\alpha j}(\eta_m)$ for one fixed row index $\alpha$ of the cofactor matrix
+$C$. The general solution is
+\begin{equation}
+\begin{pmatrix}u_x\\u_z\\\varphi\\\Delta n\\\theta\end{pmatrix}
+=\sum_{m=1}^{14}A_m\begin{pmatrix}X_m\\Z_m\\\Phi_m\\\nu_m\\\Theta_m\end{pmatrix}
+e^{\eta_mz}\,e^{i(kx-\omega t)} ,
+\label{eq:solution}
+\end{equation}
+with fourteen unknown constants $A_m$. When $l_g=0$ the sum has ten terms. Source: this is the standard
+partial-wave construction for a layer; the general form is in every text on guided waves in plates. The
+particular reduction to $\mathbf M(\eta)$ is ours.
+
+\section{Boundary conditions and the final matrix}
+
+\subsection{The seven conditions on each face}
+
+Seven conditions are applied at each of $z=+h$ and $z=-h$, fourteen in all, one for each unknown $A_m$.
+All are homogeneous. For a root $\eta_m$ write $\mathcal N_m=\mathcal N(\eta_m)$, $\mathcal G_m=\mathcal G(\eta_m)$.
+The seven row functions are
+\begin{align}
+b_1&=\frac1{\mathcal N_m}\Bigl[\hat\sigma_{zz}-l_g^2\,ik\eta\,c_{44}(\eta X_m+ikZ_m)\Bigr],\label{eq:b1}\\
+b_2&=\frac1{\mathcal N_m}\Bigl[\hat\sigma_{xz}-l_g^2\,ik\eta\,(ik\,c_{11}X_m+\eta\,c_{13}Z_m)\Bigr],\label{eq:b2}\\
+b_3&=\frac{l_g^2}{\mathcal N_m}\,\eta\,c_{44}(\eta X_m+ikZ_m),\label{eq:b3}\\
+b_4&=\frac{l_g^2}{\mathcal N_m}\,\eta\,(ik\,c_{13}X_m+\eta\,c_{33}Z_m),\label{eq:b4}\\
+b_5&=ik\,e_{31}X_m+\eta\,e_{33}Z_m-\eta\,\epsilon_{33}\Phi_m+p_3\Theta_m,\label{eq:b5}\\
+b_6&=-D_n\eta\nu_m+b_nn_0\,\eta\,\Phi_m-\beta_{\rm th}\,\eta\,\Theta_m,\label{eq:b6}\\
+b_7&=\eta\,\Theta_m ,\label{eq:b7}
+\end{align}
+where in $b_1$ and $b_2$ the stresses $\hat\sigma_{zz},\hat\sigma_{xz}$ are those of Section~3 evaluated at
+$(X_m,Z_m,\Phi_m,\Theta_m)$ and $\eta_m$, and $\eta=\eta_m$ throughout. Their physical meaning and sources are the
+following.
+
+Rows $b_1$ and $b_2$ are the normal and shear tractions on a free face, including the surface-gradient
+terms of a strain-gradient continuum, and with the nonlocal operator inverted root by root, since
+$\mathcal N^{-1}$ acts on $e^{\eta z}$ as $1/\mathcal N(\eta)$. For the traction of a strain-gradient continuum,
+including the term with the tangential derivative, see \cite[Sec.~2, Eq.~(14)]{Charal2019}; the original is
+\cite{Mindlin1964} (equation not read by us). For the nonlocal differential law and the constitutive boundary
+conditions that go with it see \cite[Eqs.\ (18)--(19)]{Barretta2018} (read by us) and \cite{Lim2015}
+(not seen). This pairing of the two papers for a free plate is a modelling choice made by us. It is the
+one point where a different, equally defensible choice exists, and you will have to defend it in the paper.
+
+Rows $b_3$ and $b_4$ are the double tractions, the quantities the strain-gradient term does work on at the
+face: $R=n\cdot\mu\cdot n$ \cite[Sec.~2, condition b(i)]{Charal2019}. They exist only when $l_g\ne0$.
+
+Row $b_5$: the normal electric displacement vanishes, an electrically open face (we neglect the field in the
+vacuum outside; the other common choice, a shorted face, replaces $b_5$ by $\hat\varphi=0$). Ours; it is the
+usual open-circuit condition for a piezoelectric plate.
+
+Row $b_6$: no carrier flux through the face. The particle flux in the $z$-direction is
+$\Gamma_z=-D_n\partial_z\Delta n-b_nn_0E_z-\beta_{\rm th}\partial_z\theta$, which is the drift--diffusion current of
+\cite[Eq.\ (3), Eq.\ (7)]{Zhu2023} divided by the charge, with the thermodiffusion term of Plan (5) added.
+Setting $\Gamma_z=0$ is ours.
+
+Row $b_7$: adiabatic face, $\partial_z\theta=0$. Because $\Gamma_z=0$ as well, the Peltier part of the heat
+current vanishes at the face and no cross term remains. For an isothermal face replace $b_7$ by $\Theta_m$.
+
+\subsection{The final matrix}
+
+Assemble the $14\times14$ matrix $\mathbf B$ with one row per condition and face and one column per root,
+\begin{equation}
+\mathbf B(k,\omega)=
+\begin{pmatrix}
+b_r(\eta_m)\,e^{+\eta_mh}\\[2pt]
+b_r(\eta_m)\,e^{-\eta_mh}
+\end{pmatrix}_{\;r=1..7,\ m=1..14},
+\qquad \mathbf B\,\mathbf A=\mathbf 0 ,\quad \mathbf A=(A_1,\dots,A_{14})^T .
+\label{eq:Bmatrix}
+\end{equation}
+The upper seven rows belong to $z=+h$ and the lower seven rows to $z=-h$. The dispersion relation is
+\begin{equation}
+\det\mathbf B(k,\omega)=0 ,
+\label{eq:disp}
+\end{equation}
+to be solved for complex $k$ at real $\omega$. Attenuation per unit length is $k_i$. When $l_g=0$ use rows
+$b_1,b_2,b_5,b_6,b_7$ and ten roots, giving a $10\times10$ matrix. The columns belonging to roots with
+very large $|\mathrm{Re}\,\eta_m|$ (the thermal and carrier boundary layers are of this kind) overflow in
+floating point; scaling each column by $e^{-|\mathrm{Re}\,\eta_m|h}$ leaves the zeros of the determinant
+unchanged and avoids it.
+
+\section{What to do with this file}
+
+Go through Sections 3 to 7 in order and rederive each formula from the plan. Write a short list of every difference
+you find, with the line of the source that supports your version. If you find none, say so, and say which of the
+tests below you ran. Suggested tests, none of which needs a number from us:
+(i) with all couplings off and $l_g=l_{\rm nl}=0$, $\det\mathbf B=0$ must reproduce the Rayleigh--Lamb relation
+of an isotropic plate; (ii) with only the piezoelectric terms on, the thin-plate limit must give the
+open-circuit stiffened bulk speed; (iii) with the carrier terms off and the heat equation in Fourier form
+($\tau_q=0$), a plane longitudinal wave in the bulk must show thermoelastic damping with the sign and
+magnitude you get from the standard formula; (iv) with only the carrier terms and the piezoelectric shear
+coupling on, the bulk attenuation must peak at a carrier density that you can predict from the relaxation of the
+free charge, $\sigma/\epsilon\approx\omega$; (v) letting $l_g,l_{\rm nl}\to0$ must reproduce the
+classical result continuously.
+
+\begin{thebibliography}{99}
+\small
+\bibitem{Zhu2023} J.~Zhu, M.~Negahban, J.~Xu, R.~Xia, Z.~Li, \emph{Micromachines} \textbf{14} (2023) 2174, \doi{10.3390/mi14122174}. Section 2.1, Eqs.\ (1)--(7).
+\bibitem{Quintanilla2019} R.~Quintanilla, \emph{Math.\ Mech.\ Solids} \textbf{24} (2019) 4020, \doi{10.1177/1081286519862007}. Eqs.\ (2.5), (3.1)--(3.5).
+\bibitem{Charal2019} A.~Charalambopoulos, E.~Douka, M.~Mavratzas, Second order formulation of boundary value problems in gradient elasticity, arXiv:1909.10776 (2019), Sec.~2, Eq.~(14).
+\bibitem{Barretta2018} R.~Barretta, F.~Marotti de Sciarra, \emph{Int.\ J.\ Eng.\ Sci.} \textbf{130} (2018) 187, \doi{10.1016/j.ijengsci.2018.05.009}.
+\bibitem{Lim2015} C.~W.~Lim, G.~Zhang, J.~N.~Reddy, \emph{J.\ Mech.\ Phys.\ Solids} \textbf{78} (2015) 298, \doi{10.1016/j.jmps.2015.02.001}.
+\bibitem{Mindlin1964} R.~D.~Mindlin, \emph{Arch.\ Rational Mech.\ Anal.} \textbf{16} (1964) 51.
+\end{thebibliography}
+\end{document}

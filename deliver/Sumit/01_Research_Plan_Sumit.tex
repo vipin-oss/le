@@ -1,0 +1,328 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{#1}}}
+\setlength{\parskip}{4pt}
+\title{\vspace{-1.6cm}\Large Guided Lamb Waves in a Piezoelectric Semiconductor Plate with a Size Effect and a\\[2pt]
+Relaxation-Time Heat Equation\\[8pt]\large Research plan, first half}
+\author{Dr.\ Vipin \\ Gurugram University}
+\date{30 October 2026}
+\begin{document}
+\maketitle
+\vspace{-6mm}
+
+\section{Title, abstract, keywords}
+
+\paragraph{Working title} Guided Lamb waves in a piezoelectric semiconductor plate: attenuation from carrier
+transport, nonlocal strain gradient elasticity and a single-lag heat equation.
+
+\paragraph{Abstract} We study plane-strain Lamb waves in a plate of thickness $2h$ cut from a piezoelectric
+semiconductor of the ZnO family, with free faces at $z=\pm h$ and poling along the thickness. The model
+carries five fields: the two displacements, the electric potential, the excess carrier density and the
+temperature rise. The mechanical stress is written in the nonlocal strain gradient form, with one length
+for the nonlocal softening and one for the gradient stiffening, so that the size effect is described by
+two numbers that enter only as length over thickness. The heat equation is of the Moore-Gibson-Thompson (MGT)
+type in its base form, with one phase lag and one time derivative cancelled, so that the
+parabolic and the hyperbolic descriptions are recovered as limits. The carrier equation carries
+diffusion, drift, a thermodiffusion term and an optional recombination term, and the heat equation carries
+the reciprocal Peltier term, the thermoelastic coupling and the pyroelectric coupling. Three questions are
+asked. How much attenuation does the carrier field add to each Lamb branch. Over what thickness does a
+single relaxation time change the attenuation by more than the experimental resolution. How large must the
+two size lengths be for the size effect to be visible in the dispersion at all. The plan describes the
+model, the sequence of comparisons that will be made before any new result is claimed, and the four
+figures the paper will carry. Numbers are deliberately absent at this stage.
+
+\paragraph{Keywords} guided waves; piezoelectric semiconductor; nonlocal strain gradient elasticity;
+thermoelastic coupling; carrier transport; attenuation.
+
+\section{Introduction}
+
+Piezoelectric semiconductor plates are the working element of a large family of acoustic and optical
+devices, and the guided waves in them are used both to sense and to filter. The mechanics of such a plate
+differs from that of a dielectric plate in one respect that matters here: the electric field is not free to
+arrange itself as it likes, because mobile carriers redistribute under the field it produces. Yang and Zhou
+solved the amplification of acoustic waves in piezoelectric semiconductor plates with the drift-diffusion
+pair that most later work follows \cite{YangZhou2005}, and guided waves in semiconducting plates of graded
+or layered cross section were taken up with numerical machinery that can carry a variable coefficient
+through the thickness \cite{Othmani2017}. In all of that work the plate is isothermal. The temperature is
+either absent or treated as a constant that shifts the material constants.
+
+The thermal side of our problem is already partly occupied, and the plan says so at the start. Gupta and
+co-workers put the MGT heat equation, with one lag, into a piezo-semiconductor half space with
+voids and studied the size-dependent Rayleigh wave \cite{Gupta2025}. That paper settles two things for us:
+the heat operator in a semiconducting piezoelectric medium is writable, and the Rayleigh limit of a
+half space is already published. What it does not contain is a finite plate, the free-face problem, the
+nonlocal strain gradient description of the elastic stress, or the reciprocity between the thermodiffusion
+term in the carrier equation and the Peltier term in the heat equation. Our contribution has to be read as
+that list and nothing wider.
+
+A second body of work puts the temperature back, but into a dielectric. Sharma, Pal and Chand solved the
+piezothermoelastic plate with free, electrically shorted and thermally insulated faces, obtained closed
+secular equations for symmetric and antisymmetric families, and reported attenuation coefficients for
+cadmium selenide \cite{Sharma2004}. Kumar and Kansal added a diffusing species to a transversely isotropic
+thermoelastic plate and obtained the same kind of closed form \cite{KumarKansal2008}. In both, the third
+field is a concentration that does not carry charge, so the electric and diffusive problems do not talk to
+each other in the way they do in a semiconductor.
+
+The two lines have recently met in the continuum theory of Qu, Pan, Zhu, Jin and Roy, who derive a
+thermoelectric theory of piezoelectric semiconductors with the Seebeck and Peltier effects built in from a
+dissipation inequality \cite{Qu2023}. That paper settles the constitutive side of our problem, and we
+should not pretend otherwise. What it does not do is the plate: no faces, no guided modes, no dispersion
+relation, no attenuation curve against frequency times thickness.
+
+The size effect is a separate axis. Lim, Zhang and Reddy combined the nonlocal integral law with strain
+gradient elasticity so that one length softens and another stiffens, and gave the equivalent differential
+form together with the constitutive boundary conditions that come with it \cite{Lim2015}. Barretta and
+Marotti de Sciarra examined what those boundary conditions do in bounded domains and showed that the
+differential law raises the order of the problem \cite{Barretta2018}. For a plate this is not a detail:
+the order in the thickness coordinate goes up, and the faces must be given more conditions than the
+classical six.
+
+For the thermal side we use the MGT theory in its base form, one phase lag, one time
+derivative cancelled, which is the version implemented in the recent heat transfer literature
+\cite{Gupta2025}. The operator is simple enough to carry through a dispersion calculation and it has two
+limits that can be tested against the classical solutions.
+
+The gap, then, is a finite plate in which all four ingredients sit together: a semiconducting carrier
+field, a temperature field with a relaxation time, a mechanical size effect, and free faces. To our
+knowledge, after searching Crossref and the open web in October 2026 for guided waves in piezoelectric
+semiconductor plates, nobody has solved that. The honest version of the claim is that our contribution is
+the free-face problem, the size effect and the attenuation curves, not any new constitutive law. The
+thermoelectric constitutive relations are Qu et al.'s, the heat operator in a semiconductor is Gupta et
+al.'s, the nonlocal strain gradient form is Lim et al.'s, and we should say so in the abstract of the final
+paper.
+
+Three things follow from that reading, and they shape the plan. The carrier coupling is small, because
+both the thermodiffusion coefficient and the Peltier coefficient are proportional to the carrier density,
+and the carrier density in a good piezoelectric is not large. The thermal relaxation is visible only in a
+band of thickness, because the relaxation time multiplies the square of the thermal diffusion length. The
+size effect enters only as the ratio of a length to the thickness, so it does nothing until the plate is
+thin. A paper that puts all three effects in and then reports that they are all negligible would be
+correct and useless. The plan therefore fixes, before any computation, the test that decides whether each
+effect is worth a figure.
+
+\section{Problem statement and assumptions}
+
+We take a plate of thickness $2h$, infinite in $x$ and $y$, with free faces at $z=\pm h$. Motion is plane
+strain in the $x$--$z$ plane, and the poling direction is $z$, so the material is transversely isotropic
+with the axis along the thickness. Fields vary as $\exp[i(kx-\omega t)]$ with $k=k_r+ik_i$, and a positive
+$k_i$ means decay along $+x$. The frequency is reported through the product $f\,(2h)$, so that plates of
+different thickness can be compared on one axis. The five unknowns are $u_x$, $u_z$, $\varphi$, $\Delta n$
+and $\theta$, with $\Delta n$ the excess carrier density over equilibrium and $\theta=T-T_0$ the
+temperature rise.
+
+The assumptions are these, and each one is a place where a referee can push.
+
+\begin{enumerate}
+\item Linear piezoelectricity at constant temperature, with the elastic, piezoelectric and dielectric
+constants taken at $T_0$ and not varied with $\theta$.
+\item Small carrier perturbation, $\Delta n\ll n_0$, so that the drift term can be linearised about the
+bias field and the recombination term is linear in $\Delta n$.
+\item A uniform bias field $E_0$ along $x$ that produces the drift velocity $v_d=b_nE_0$; the bias field is
+not solved for, it is an input.
+\item No photoexcitation, no trapping, no surface charge on the faces beyond what the electrical condition
+imposes.
+\item Small temperature rise, $|\theta|/T_0\ll1$, so the heat equation can be written for $\theta$ and the
+coefficients can be held constant.
+\item Homogeneous, stress-free bulk material with no initial stress and no piezoelectric stiffening from a
+pre-load.
+\end{enumerate}
+
+Two consequences of the second assumption and the fifth should be stated at the outset. The carrier term in
+the heat equation is reversible in the thermodynamic sense and is not a dissipation; the dissipation comes
+from the Joule and diffusion terms, which we keep in the entropy balance but do not put in the field
+equations above linear order. And the size lengths $l_{\rm nl}$ and $l_g$ are material inputs, not fitting
+parameters. If the dispersion is insensitive to them at the thicknesses of interest, that is a result and
+it goes in the paper.
+
+\section{The model}
+
+\subsection{Constitutive relations}
+
+Strain and field are $\varepsilon_{ij}=\tfrac12(u_{i,j}+u_{j,i})$, $E_i=-\varphi_{,i}$, with $i,j=x,z$.
+The total stress carries the nonlocal operator, the local stress carries the gradient operator on the
+elastic part only,
+\begin{equation}
+\bigl(1-l_{\rm nl}^2\nabla^2\bigr)t_{ij}=\sigma_{ij},\qquad
+\sigma_{ij}=c_{ijkl}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{kl}-e_{kij}E_k-\beta_{ij}\theta ,
+\end{equation}
+where the differential form of the nonlocal strain gradient law is that of Lim, Zhang and Reddy \cite{Lim2015} (their Eqs.\ (17)--(19), as we have them quoted in \cite[Eq.\ (18)]{Barretta2018}; open Section~2 of \cite{Lim2015} and compare, we have not seen the page ourselves). The elastic part with the operator $(1-l_g^2\nabla^2)$ is the strain-gradient term of Mindlin \cite{Mindlin1964}; the piezoelectric part of $\sigma_{ij}$ follows \cite[Eq.\ (1)]{Zhu2023} and the thermal stress follows \cite[Eq.\ (3.1)]{Quintanilla2019}. The electric displacement is local,
+\begin{equation}
+D_i=e_{ikl}\varepsilon_{kl}+\epsilon_{ik}E_k+p_i\theta ,
+\end{equation}
+with $\beta_{ij}=c_{ijkl}\alpha_{kl}$ from the thermal expansion tensor and $p_i$ the pyroelectric vector. The first two terms are \cite[Eq.\ (1)]{Zhu2023}. The strain--displacement and field--potential relations above are \cite[Eq.\ (2)]{Zhu2023}. The term $p_i\theta$ is the standard pyroelectric addition of thermopiezoelectricity \cite{Mindlin1974}; we did not read its equation number, so please locate it there.
+The choice to keep the piezoelectric and pyroelectric terms local is deliberate. Only the elastic strain
+energy is allowed to feel the two lengths, so the electric problem stays second order, no extra electrical
+condition is needed at the faces, and no term that is already a field gradient is differentiated twice.
+
+\subsection{Field equations}
+
+Momentum. The balance law is $\rho\ddot u_i=t_{ij,j}$ \cite[Eq.\ (3.3)]{Quintanilla2019}, in the static form $\sigma_{ij,j}=0$ also \cite[Eq.\ (4)]{Zhu2023}. Applying the operator of Eq.~(1) to it gives the equivalent form in which the nonlocal operator acts on the inertia; this step is ours and you should redo it,
+\begin{equation}
+\bigl(1-l_{\rm nl}^2\nabla^2\bigr)\rho\,\ddot u_i=\sigma_{ij,j},
+\end{equation}
+Gauss law with the mobile charge, \cite[Eqs.\ (4)--(6)]{Zhu2023} (there with both carrier types and the doping terms; we keep one carrier type, electrons of charge $-q$, and the doping cancels against $n_0$),
+\begin{equation}
+D_{i,i}=-q\,\Delta n ,
+\end{equation}
+carrier continuity. The drift--diffusion current of the electrons is \cite[Eq.\ (3)]{Zhu2023}, linearised as in \cite[Eq.\ (7)]{Zhu2023}, and its divergence enters the continuity law; the time-dependent form is that of \cite{YangZhou2005} (equation numbers not read by us). The drift term with $v_d$, the thermodiffusion term and the recombination term are our additions, each following from a textbook law,
+\begin{equation}
+\frac{\partial\Delta n}{\partial t}
+=D_n\nabla^2\Delta n+b_nn_0\nabla\!\cdot\!E+v_d\frac{\partial\Delta n}{\partial x}
++\beta_{\rm th}\nabla^2\theta-\frac{\Delta n}{\tau_R},
+\end{equation}
+and the heat equation in the base form of the Moore--Gibson--Thompson theory. The MGT heat equation is \cite[Eq.\ (2.5)]{Quintanilla2019} and its thermoelastic version is \cite[Eq.\ (3.5)]{Quintanilla2019}; with the rate conductivity $k^*$ put to zero and one time integration (zero initial data) this becomes the equation below (the source sets $T_0=1$, so restore $T_0$ in the coupling term). The terms with $p_i$, $\Pi_{\rm th}$ and $E_g$ are ours,
+\begin{equation}
+\Bigl(1+\tau_q\frac{\partial}{\partial t}\Bigr)
+\Bigl[\rho c_p\dot\theta+T_0\beta_{ij}\dot\varepsilon_{ij}+T_0p_i\dot E_i
++q\Pi_{\rm th}\frac{\partial\Delta n}{\partial t}+\frac{E_g\Delta n}{\tau_R}\Bigr]
+=k_{\rm th}\nabla^2\theta .
+\end{equation}
+Five equations for five unknowns. The two coefficients that appear in both the carrier and the heat
+equation are not independent. With $S_n$ the Seebeck coefficient of the electrons,
+\begin{equation}
+\beta_{\rm th}=-b_nn_0S_n,\qquad \Pi_{\rm th}=T_0S_n,\qquad
+\frac{\Pi_{\rm th}}{\beta_{\rm th}}=-\frac{T_0}{b_nn_0},
+\end{equation}
+which is the Onsager symmetry between the Soret and Peltier cross effects (a textbook relation of irreversible thermodynamics; the semiconductor continuum of \cite{Qu2023} is built on the same relations, equation numbers not read), and the Kelvin relation
+$\Pi=TS$ in its local form. For $n$-type material the carriers have charge $-q$ and $S_n<0$, so
+$\beta_{\rm th}>0$ and $\Pi_{\rm th}<0$. Check these two signs yourself against the physical picture, that is, which way the electrons move under a temperature gradient and where the heat is released, before you use them. The recombination pair $-\Delta n/\tau_R$ and
+$+E_g\Delta n/\tau_R$ is an option, not a commitment; taking $\tau_R\to\infty$ deletes both terms and
+nothing else changes. If you keep it, you must justify a value for $\tau_R$ from the literature or sweep it
+and say so.
+
+\subsection{Notation}
+
+\begin{center}
+\small
+\begin{tabular}{p{2.4cm}p{6.7cm}p{3.4cm}}
+\toprule
+symbol & meaning & unit\\
+\midrule
+$u_x,u_z$ & displacements & m\\
+$\varphi$ & electric potential & V\\
+$\Delta n$ & excess carrier density & m$^{-3}$\\
+$\theta$ & temperature rise over $T_0$ & K\\
+$k=k_r+ik_i$ & wavenumber; $k_i>0$ is decay along $+x$ & m$^{-1}$\\
+$2h$ & plate thickness; faces at $z=\pm h$ & m\\
+$c_{ijkl}$, $e_{kij}$, $\epsilon_{ik}$ & elastic, piezoelectric, dielectric constants & Pa, C\,m$^{-2}$, F\,m$^{-1}$\\
+$\rho$ & mass density & kg\,m$^{-3}$\\
+$l_{\rm nl}$, $l_g$ & nonlocal and gradient lengths, used as $l/h$ & m\\
+$q$ & magnitude of the carrier charge; electron charge is $-q$ & C\\
+$n_0$ & equilibrium carrier density & m$^{-3}$\\
+$b_n$ & electron mobility & m$^2$V$^{-1}$s$^{-1}$\\
+$D_n$ & carrier diffusion coefficient & m$^2$s$^{-1}$\\
+$E_0$, $v_d$ & bias field, drift velocity $v_d=b_nE_0$ & V\,m$^{-1}$, m\,s$^{-1}$\\
+$S_n$ & Seebeck coefficient of the electrons, negative for $n$-type & V\,K$^{-1}$\\
+$\beta_{\rm th}$ & thermodiffusion coefficient, $-b_nn_0S_n$, positive for $n$-type & m$^{-1}$s$^{-1}$K$^{-1}$\\
+$\Pi_{\rm th}$ & Peltier coefficient, $T_0S_n$ & V\\
+$\tau_R$, $E_g$ & recombination time, band gap & s, J\\
+$\alpha_{kl}$, $\beta_{ij}$, $p_i$ & thermal expansion, thermal stress $c_{ijkl}\alpha_{kl}$, pyroelectric vector & K$^{-1}$, Pa\,K$^{-1}$, C\,m$^{-2}$K$^{-1}$\\
+$\rho c_p$, $k_{\rm th}$, $\kappa$ & heat capacity per volume, conductivity, diffusivity $k_{\rm th}/(\rho c_p)$ & J\,m$^{-3}$K$^{-1}$, W\,m$^{-1}$K$^{-1}$, m$^2$s$^{-1}$\\
+$\tau_q$, $\tau_T$ & phase lag, $\tau_T=(2h)^2/(\pi^2\kappa)$ & s\\
+$\omega$, $f$ & angular frequency, frequency & rad\,s$^{-1}$, Hz\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Order of the system, and where this chapter stops}
+
+The nonlocal and gradient operators raise the order of the problem in $z$, so with free faces the plate
+needs more than the classical traction conditions, and the extra conditions have to be chosen with care
+because the differential law is only equivalent to the integral one when they are consistent with it. Which
+extra conditions to apply at $z=\pm h$, and how to close the electrical and thermal conditions there, is
+your problem to settle; this chapter stops before the faces.
+
+\section{Work plan}
+
+Six steps, in this order. Each step ends with a written comparison and a number, and no step is allowed to
+borrow a number from the next.
+
+\paragraph{Step 1. Elastic plate, no fields switched on} With $e=0$, $\Delta n=0$, $\theta=0$, $l_{\rm nl}=0$
+and $l_g=0$, the model must return the classical Lamb spectrum of an isotropic plate, both families, and
+the Rayleigh velocity in the short wavelength limit. Compare against the closed-form Rayleigh value
+computed from the same $\lambda$ and $\mu$ and require agreement to a relative $10^{-3}$ at large
+frequency times thickness. This is the floor of the whole paper; if it fails nothing else is worth
+computing.
+
+\paragraph{Step 2. Piezoelectric stiffening alone} Switch on $e_{kij}$ and keep the electrical faces
+consistent with the sheet condition you choose. The dispersion must split the branches in the way the
+published piezoelectric plate results do, and the modal coupling must vanish for the family that
+decouples. Compare the shape of the branches, not the numbers, since our material set is not the one in
+those papers.
+
+\paragraph{Step 3. Heat alone, in the two limits} Switch on $\theta$ with $\Delta n=0$ and compare the two
+limits of the heat equation: the isothermal limit, in which the temperature follows the strain instantly,
+and the adiabatic limit, in which no heat flows. The two must bracket the coupled answer to a width of
+order the thermoelastic coupling parameter. Report the width. This bracket is the test of the model, not
+the result of the paper.
+
+\paragraph{Step 4. Thermal relaxation switched on} With $\tau_q$ finite the attenuation must saturate at
+large frequency and the peak must sit at $1/|\tau_T-\tau_q|$ rather than at $1/\tau_T$, with the plateau
+rescaled by $\tau_T^2/(\tau_T-\tau_q)^2$. Confirm both scalings against a one-dimensional reduction of the
+same equations before the plate is solved. Then draw the visibility map: thickness on one axis, $\tau_q$ on
+the other, and shade the region where the shift of the peak exceeds the linewidth of the branch.
+
+\paragraph{Step 5. Carriers switched on, and the switching-off test} Set $\beta_{\rm th}=0$ and $\Pi_{\rm th}=0$.
+The carrier field must still change the dispersion through Gauss law alone, since the charge enters
+$D_{i,i}$, and this is a test of the assembly rather than of the physics. Then the reverse: keep the
+carrier terms and set the mechanical coupling $e_{kij}=0$. The result must be a purely electrical
+relaxation with no acoustic branch shift. In both cases the comparison is numerical: the difference between
+the full model with a coupling set to zero and the reduced model without that coupling must be below
+$10^{-6}$ in the relative sense on $k_r$ and $k_i$ for every sampled mode. Log the residuals in a table in
+the appendix. A test that passes at $10^{-4}$ is a warning, not a pass.
+
+\paragraph{Step 6. Size effect and the final sweep} Vary $l_{\rm nl}/h$ and $l_g/h$ over a range that spans
+the values quoted for the material, keeping their sum fixed so that softening and stiffening are separated
+from the net shift. Then produce the two attenuation families against frequency times thickness, for three thicknesses. When the thermodiffusion and Peltier terms are on, the symmetric and antisymmetric families no longer separate exactly (the reason is in the third file of this package), so label each branch by the displacement pattern it follows to the elastic limit. Report the carrier contribution as a difference of
+attenuations, so that a reader who does not care about the carriers can still use the plate results.
+
+\section{Figures, risks and timeline}
+
+The paper will carry four figures and no more. First, the dispersion of the elastic limit and of the full
+model on the same axes, so that the shift is visible without a second panel. Second, the attenuation of the
+two lowest branches against frequency times thickness, with the isothermal and adiabatic brackets drawn as
+bands. Third, the visibility map of Step 4, with the usable thickness range shaded. Fourth, the
+carrier contribution to attenuation as a function of drift velocity, for two carrier densities, since the
+drift velocity is the one knob a device engineer can actually turn.
+
+The risks, in order of how much damage they do. The first is identifiability: the thermal and carrier
+contributions to attenuation may be of the same size as the spread between the two size lengths, in which
+case no experiment can separate them and the paper must say so and present a sensitivity analysis instead
+of a fit. The second is that the relaxation time is not resolvable at the thicknesses where the continuum
+heat model is trustworthy; the map of Step 4 is designed to expose that rather than hide it. The third is
+the boundary conditions of the size effect, which are the subject of an active argument in the literature
+\cite{Barretta2018} and which we will not settle. The fourth is the material set: the piezoelectric
+constants of ZnO are quoted over a range that is wider than the effect we are chasing, and we must show
+that every conclusion survives the range.
+
+Timeline, twelve weeks from the start of work. Weeks one to two, Step 1 and Step 2, and reading of the four
+papers that decide the claim \cite{Qu2023,Sharma2004,Othmani2017,YangZhou2005}. Weeks three to four, Step 3
+and the thermal side, including the one-dimensional reduction of Step 4. Weeks five to six, Step 4 and the
+visibility map. Weeks seven to eight, Step 5, and the switching-off log. Weeks nine to ten, Step 6 and the
+sweeps. Weeks eleven to twelve, figures, writing, and the internal read-through before the draft goes to
+me.
+
+\begin{thebibliography}{99}
+\small
+\bibitem{YangZhou2005} J.~S.~Yang, H.~G.~Zhou, \emph{Int.\ J.\ Solids Struct.} \textbf{42} (2005) 3171, \doi{10.1016/j.ijsolstr.2004.10.011}.
+\bibitem{Othmani2017} C.~Othmani, F.~Takali, A.~Njeh, \emph{Superlattices Microstruct.} \textbf{106} (2017) 86, \doi{10.1016/j.spmi.2017.03.036}.
+\bibitem{Sharma2004} J.~N.~Sharma, M.~Pal, D.~Chand, \emph{J.\ Therm.\ Stresses} \textbf{27} (2004) 33, \doi{10.1080/01495730490255709}.
+\bibitem{KumarKansal2008} R.~Kumar, T.~Kansal, \emph{Int.\ J.\ Solids Struct.} \textbf{45} (2008) 5890, \doi{10.1016/j.ijsolstr.2008.07.005}.
+\bibitem{Qu2023} Y.~Qu, E.~Pan, F.~Zhu, F.~Jin, A.~K.~Roy, \emph{Int.\ J.\ Eng.\ Sci.} \textbf{182} (2023) 103775, \doi{10.1016/j.ijengsci.2022.103775}.
+\bibitem{Lim2015} C.~W.~Lim, G.~Zhang, J.~N.~Reddy, \emph{J.\ Mech.\ Phys.\ Solids} \textbf{78} (2015) 298, \doi{10.1016/j.jmps.2015.02.001}.
+\bibitem{Barretta2018} R.~Barretta, F.~Marotti de Sciarra, \emph{Int.\ J.\ Eng.\ Sci.} \textbf{130} (2018) 187, \doi{10.1016/j.ijengsci.2018.05.009}.
+\bibitem{Gupta2025} V.~Gupta, F.~A.~Awwad, E.~A.~A.~Ismail, H.~Ahmad, S.~Das, \emph{Int.\ J.\ Numer.\ Methods Heat Fluid Flow} \textbf{35}(9) (2025) 3400, \doi{10.1108/HFF-04-2025-0254}.
+\bibitem{Krahl2020} F.~Krahl, A.~Giri, M.~S.~B.~Hoque, L.~Sederholm, P.~E.~Hopkins, M.~Karppinen, \emph{J.\ Phys.\ Chem.\ C} \textbf{124} (2020) 24731, \doi{10.1021/acs.jpcc.0c06461}.
+\bibitem{Ozgur2005} \"U.~\"Ozg\"ur et al., \emph{J.\ Appl.\ Phys.} \textbf{98} (2005) 041301, \doi{10.1063/1.1992666}.
+\bibitem{Zhu2023} J.~Zhu, M.~Negahban, J.~Xu, R.~Xia, Z.~Li, \emph{Micromachines} \textbf{14} (2023) 2174, \doi{10.3390/mi14122174}.
+\bibitem{Quintanilla2019} R.~Quintanilla, \emph{Math.\ Mech.\ Solids} \textbf{24} (2019) 4020, \doi{10.1177/1081286519862007}.
+\bibitem{Charal2019} A.~Charalambopoulos, E.~Douka, M.~Mavratzas, Second order formulation of boundary value problems in gradient elasticity, arXiv:1909.10776 (2019).
+\bibitem{Mindlin1964} R.~D.~Mindlin, \emph{Arch.\ Rational Mech.\ Anal.} \textbf{16} (1964) 51.
+\bibitem{Mindlin1974} R.~D.~Mindlin, \emph{Int.\ J.\ Solids Struct.} \textbf{10} (1974) 625.
+\end{thebibliography}\end{document}
