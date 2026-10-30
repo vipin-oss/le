@@ -1,0 +1,33 @@
+\section{Derivation of the weak-coupling relaxation form}\label{app:debye}
+
+This appendix derives the Debye-type loss used throughout (\cref{eq:debye}) directly from the dispersion polynomial, and shows that it is the response of a standard linear solid. We use the classical theory in units $\rho=c_1=c=k=1$, so $\omega_*=1$ and $s=-i\omega$.
+
+\subsection{Perturbation of the elastic root}
+The polynomial of \cref{eq:unified} with Fourier heat flux reads
+\begin{equation}
+(K+s^2)(s+K)+\varepsilon sK=0\quad\Longleftrightarrow\quad K^2+K\,(s+s^2+\varepsilon s)+s^3=0 .
+\end{equation}
+For $\varepsilon=0$ the elastic root is $K=-s^2=\omega^2$. Writing $K=-s^2+\delta$ and keeping terms linear in $\varepsilon$ and $\delta$ gives $\delta\,s(1-s)=\varepsilon s^3$, hence
+\begin{equation}
+K=-s^2+\frac{\varepsilon s^2}{1-s}=\omega^2\Bigl[1-\frac{\varepsilon}{1+i\omega}\Bigr],\qquad
+k\simeq\omega\Bigl[1-\frac{\varepsilon}{2(1+i\omega)}\Bigr].
+\end{equation}
+In dimensional form $\omega\to\omega/\omega_*$ in the denominator. The real and imaginary parts of $k$ give
+\begin{equation}
+\frac{\omega}{\operatorname{Re}k}\simeq1+\frac{\varepsilon}{2}\,\frac{1}{1+x^2},\qquad
+Q_x^{-1}=\frac{2\operatorname{Im}k}{\operatorname{Re}k}\simeq\frac{\varepsilon x}{1+x^2},\quad x=\frac{\omega}{\omega_*},
+\end{equation}
+that is, the phase speed falls from $c_1(1+\varepsilon/2)$ at $x\ll1$ to $c_1$ at $x\gg1$, and the loss peaks at $x=1$ with the value $\varepsilon/2$. The numerical solution of the full polynomial gives a peak of $0.0501$ at $\varepsilon=0.1$ (\cref{sec:fraccoupled}), and the ratio $Q^{-1}_{\max}/\varepsilon=0.4999998$ at small $\varepsilon$ (script \path{fig_zener_q.py}).
+
+\subsection{Interpretation as a standard linear solid}
+The result is equivalent to a frequency-dependent modulus. From $\rho\omega^2/K=M(\omega)$,
+\begin{equation}
+M(\omega)\simeq M_{\rm iso}\Bigl[1+\frac{\varepsilon}{1+i\omega/\omega_*}\Bigr],
+\end{equation}
+where $M_{\rm iso}=\rho c_1^2$. The limits are the adiabatic modulus $M_{\rm iso}(1+\varepsilon)$ at low and the isothermal modulus $M_{\rm iso}$ at high frequency, and the relaxation time is $1/\omega_*$. This is the standard linear solid with relaxation strength $\varepsilon$ and relaxation time $\tau=1/\omega_*$, whose loss is $\operatorname{Im}M/\operatorname{Re}M\simeq\varepsilon x/(1+x^2)$. Zener's flexural result \cref{eq:zenerQ} is the same relaxation form with strength $\Delta$ and relaxation time $\tau_Z$ determined by transverse heat flow across the thickness.
+
+\subsection{Consistency with the sum rule}
+Integrating the loss over $\ln\omega$ gives $\int_0^\infty\varepsilon x/(1+x^2)\,d\ln x=\pi\varepsilon/2$, and the change in phase speed between the two limits is $\varepsilon/2$ in units of $c_1$. The two satisfy the Kramers--Kronig sum rule \cref{eq:sumrule}, with the exact coupled solution checked numerically in \cref{sec:prelim}.
+
+\subsection{Range of validity}
+The expansion assumes $\varepsilon\ll1$ and is accurate to $O(\varepsilon^2)$. For $\varepsilon=0.1$ the exact peak is $0.0501$ against $0.0500$, but the bar-mode losses at small $k$ differ from the first-order form by about $13\%$ because of the difference between temporal and spatial damping (\cref{sec:prelim}). For lag laws, $\omega_*$ is replaced by a function of $\omega\tau$ and the form is no longer a single relaxation; the comparison of \cref{fig:fraccoupled,fig:barmodes} then applies.

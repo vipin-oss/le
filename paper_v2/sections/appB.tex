@@ -1,0 +1,16 @@
+\section{Characteristic numbers and parameter estimates}\label{app:numbers}
+For a given solid and a given heat-flux model, the dimensionless groups that control the problem are collected in \Cref{tab:groups}.
+\begin{table}[ht]\centering\small
+\caption{Dimensionless groups for thermoelastic wave problems.}\label{tab:groups}
+\begin{tabular}{@{}llp{6.2cm}@{}}\toprule
+Group & Definition & Meaning\\\midrule
+$\varepsilon$ & $\beta^2T_0/(\rho^2cc_1^2)$ & adiabatic--isothermal modulus difference\\
+$\omega_*$ & $\rho cc_1^2/k$ & frequency at which conduction over a wavelength matches the period\\
+$\omega\tau$ & $\omega\tau_q$ & frequency times flux lag\\
+$c_T/c_1$ & $\sqrt{k/(\rho c\tau_0)}/c_1=1/\sqrt{\tau_0\omega_*}$ & thermal-to-elastic front speed\\
+$\tau_T/\tau_q$ & & lag ratio (DPL)\\
+$\xi\omega_*/c_1$ & & nonlocal length in thermal units\\
+$K^2$ & $e^2/(\varepsilon_ec)$ & electromechanical coupling\\
+\bottomrule\end{tabular}
+\end{table}
+Note that $c_T/c_1=1/\sqrt{\tau_0\omega_*}$: the thermal front is faster than the elastic one for $\tau_0\omega_*<1$ and slower for $\tau_0\omega_*>1$, and branch hybridisation occurs at $\tau_0\omega_*\approx1$ (\Cref{fig:regime}). With the values of Table~\ref{tab:materials} and a lag time of one picosecond, $\tau_0\omega_*\approx0.4$ for aluminium, i.e.\ a thermal front somewhat faster than the elastic one.

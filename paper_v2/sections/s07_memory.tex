@@ -1,0 +1,39 @@
+\section{Fractional and memory-dependent models}\label{sec:memory}
+\subsection{Motivation}
+Fractional and memory-dependent derivatives replace the local-in-time structure of Cattaneo's and Tzou's laws by an operator that weights the past, so that the response at time $t$ depends on the history of the gradient or flux. Three motivations are cited: anomalous (sub- or super-diffusive) heat transport in heterogeneous and porous media, relaxation spectra that are not single-exponential, and the wish to interpolate between diffusive and wave-like conduction with a single parameter.
+
+\subsection{Caputo-fractional heat conduction}
+The Caputo derivative of order $\alpha>0$ with $m-1<\alpha\le m$, $m$ integer, is \citep{Caputo1967,Podlubny1999}
+\begin{equation}
+{}^C\!D^\alpha f(t)=\frac1{\Gamma(m-\alpha)}\int_0^t(t-\xi)^{m-\alpha-1}f^{(m)}(\xi)\,\dd\xi,\qquad
+\mathcal L\{{}^C\!D^\alpha f\}=s^\alpha\hat f-\sum_{j=0}^{m-1}s^{\alpha-1-j}f^{(j)}(0).\label{eq:caputo}
+\end{equation}
+The Laplace rule in \eqref{eq:caputo} is the reason for the Caputo definition: initial conditions have their usual physical meaning. Two families of fractional heat-conduction models are in common use.
+\begin{enumerate}
+\item \emph{Time-fractional heat equation} \citep{Povstenko2004,Povstenko2007,Povstenko2009}: $\rho c\,{}^C\!D^\alpha\theta=k\nabla^2\theta$ with $0<\alpha\le2$, interpolating between the diffusion ($\alpha=1$) and a wave-like ($\alpha=2$) equation, with subdiffusion for $\alpha<1$ and diffusion--wave behaviour for $1<\alpha<2$.
+\item \emph{Fractional Cattaneo-type law} \citep{Povstenko2011Cattaneo,Sherief2010Fractional,Ezzat2011}: $q_i+\tau^\alpha\,{}^C\!D^\alpha q_i=-k\theta_{,i}$, with $G(s)=k/(1+(\tau s)^\alpha)$ in the Laplace domain.
+\end{enumerate}
+Further variants (fractional DPL and TPL, with fractional orders on one or both sides of the lag equation) are numerous; reviews and critical discussions of the logic of fractional thermoelasticity are given in \citep{Povstenko2016,Yu2024,Gorenflo1997,Povstenko2004,Povstenko2007,Povstenko2009}.
+
+\paragraph{The diffusion--wave equation.} For the first family and prescribed boundary temperature $\theta_0$ on the half-line $x>0$, with zero initial data, the Laplace-domain solution is $\hat\theta=(\theta_0/s)\exp(-x\,s^{\alpha/2}/\sqrt{a})$, $a=k/\rho c$ (with a fractional time scale absorbed in $a$). For $\alpha=1$ this inverts to $\theta_0\,\mathrm{erfc}(x/2\sqrt{at})$, which we reproduced numerically with Talbot inversion to eight digits ($0.4795001$ at $x/\sqrt{at}=1$). For $\alpha=2$ it gives the step $\theta_0H(t-x/\sqrt a)$, a pure wave with no dispersion or damping; for $\alpha<1$ the solution is a stretched Mittag-Leffler-type decay with heavy tails \citep{GorenfloKilbasMainardiRogosin2014,Luchko2010}. \Cref{fig:fractional}(a) displays the family. Two cautions: (i) the endpoint $\alpha=2$ is \emph{not} Fourier's law, but a undamped wave equation, and (ii) for $1<\alpha<2$ the equation requires two initial conditions, one of which ($\dot\theta(0)=0$) is chosen by convention.
+
+\subsection{Memory-dependent derivative}
+The memory-dependent derivative (MDD) of Wang and Li \citep{Wang2011} is defined for a delay (memory) window $\tau>0$ by
+\begin{equation}
+D_\tau f(t)=\frac1\tau\int_{t-\tau}^{t}K(t-\xi)\,f'(\xi)\,\dd\xi,\qquad K(u)=1-\frac{2b\,u}{\tau}+\frac{a\,u^2}{\tau^2},\label{eq:mdd}
+\end{equation}
+with $a,b$ constants; the choices $a=b=1$ ($K=(1-u/\tau)^2$), $a=0,b=\tfrac12$ ($K=1-u/\tau$) and $a=b=0$ ($K=1$) are popular (\Cref{fig:fractional}b). The operator differs from the fractional derivative in having a finite window, a bounded kernel, and a clear time-domain meaning as a weighted average of the rate over the last $\tau$ time units; Wang and Li's comparison with the fractional derivative \citep{Wang2021,WangLi2025IV} discusses the relation of the two. MDD versions of lag models replace the first-order derivatives in \eqref{eq:dpl1} or \eqref{eq:tpl} by $D_\tau$ \citep{Singh2019,Singh2020a,Biswas2019,Abouelregal2023,Sur2019,Sur2025,Hamza2014,Sur2012,Yu2014,Sherief2018,Ezzat2015}.
+
+\paragraph{Laplace transform of the MDD.} Because $f'$ vanishes for negative arguments, \eqref{eq:mdd} is a convolution of $f'$ with $K(u)\mathbf 1_{[0,\tau]}(u)/\tau$, and
+\begin{equation}
+\mathcal L\{D_\tau f\}=s\,\kappa(s)\,\hat f,\qquad \kappa(s)=\frac1\tau\int_0^\tau K(u)\,e^{-su}\,\dd u.\label{eq:kappa}
+\end{equation}
+For the kernel $K=(1-u/\tau)^2$, $\kappa(0)=\tfrac13$ and $s\kappa(s)\to K(0)/\tau=1/\tau$ as $s\to\infty$. An MDD version of Cattaneo's law, $q_i+\tau D_\tau q_i=-k\theta_{,i}$, therefore has $G(s)=k/\bigl(1+\tau s\kappa(s)\bigr)$, which tends to $k/2$ (not to zero!) at high frequency: the thermal branch of this particular MDD-Cattaneo law becomes \emph{diffusive} at high frequency with half the low-frequency diffusivity, in contrast to the ordinary Cattaneo law, for which $G\to0$ and the speed saturates (\Cref{fig:fractional}c, green dashed curve versus blue). The reason is that a bounded kernel with $K(0)=1$ gives $\tau D_\tau\to$ a time-local multiple of the identity at high frequency, which acts as a constant added to the denominator rather than a derivative. This is a model-specific property: a kernel with $K(0)=0$ would give $\tau s\kappa(s)\to0$ and hence $G\to k$ (Fourier behaviour) at high frequency, and other MDD formulations of the lag laws behave differently, so the consequence for wave fronts must be checked for the variant at hand.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_fractional_mdd.pdf}
+\caption{(a) Caputo time-fractional heat equation, boundary temperature step, profiles at $t=t_0$ for $\alpha=0.5,1,1.5,2$ (Talbot inversion; the case $\alpha=2$ is the exact step front). (b) Kernels of the memory-dependent derivative \eqref{eq:mdd}. (c) Phase speed of the uncoupled thermal branch for Fourier, Cattaneo, fractional Cattaneo with $\alpha=0.8$ and MDD-Cattaneo ($a=b=1$), normalised by the Cattaneo wave speed.}\label{fig:fractional}
+\end{figure}
+
+\subsection{Position of these models in the template}
+Because $G(s)$ for fractional and MDD models is not rational, the dispersion relation \eqref{eq:disp} is still quadratic in $K$ with $G(s)$ evaluated at complex $s=-\ii\omega$ (with principal branches), so that the analysis of Section~\ref{sec:longitudinal} carries over verbatim; only the closed-form front-speed analysis and the transform inversion change. The energy functionals, uniqueness and thermodynamic admissibility of these models are less developed than for the template models, and their thermodynamic admissibility has been discussed with differing conclusions. A practical concern is that the extra order or memory parameter can be tuned to fit a single dataset without independent confirmation. The reinterpretation of fractional thermoelasticity in terms of anomalous heat conduction \citep{Yu2024} and the thermodynamic consistency analyses of time-differential lag models \citep{Chirita2016,Tibullo2017} provide the context in which one should choose among them.

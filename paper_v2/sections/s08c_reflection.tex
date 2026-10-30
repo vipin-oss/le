@@ -1,0 +1,32 @@
+\section{Reflection at a thermoelastic free surface: numerical results}\label{sec:reflection}
+
+\Cref{sec:waves3d} described the structure of the free-surface problem. Here we give numbers, and a validation, for a plane P wave incident on an insulated traction-free surface of an isotropic thermoelastic half-space.
+
+\subsection{Method}
+The half-space is $y>0$ with plane strain and the same non-dimensionalisation as in \cref{sec:surface} ($\rho=c_1=c_v=\omega_*^{-1}=1$, $\nu=0.3$, $\varepsilon=0.1$). The tangential wavenumber $k_x=\operatorname{Re}(k_P)\sin\theta$ is real and conserved. The incident elastic-type wave has amplitude one; the reflected field consists of a P wave, a thermal wave that decays with distance from the surface, and an SV wave, and the three amplitudes follow from the $3\times3$ system of two traction conditions and the insulation condition. The columns of the system are those of the Rayleigh determinant of \cref{sec:surface}, with the sign of the transverse wavenumber reversed for the incident wave (script \path{scripts/fig_reflection.py}).
+
+\subsection{Validation}
+For $\varepsilon=10^{-10}$ and $\omega/\omega_*=0.5$ the system reduces to the elastic problem. The computed displacement-amplitude coefficients agree with the classical closed forms for a free surface, 
+\begin{equation}
+R_{PP}=\frac{\sin2\theta\sin2\phi-\kappa^2\cos^22\phi}{\sin2\theta\sin2\phi+\kappa^2\cos^22\phi},\qquad
+R_{PS}=\frac{2\kappa\sin2\theta\cos2\phi}{\sin2\theta\sin2\phi+\kappa^2\cos^22\phi},
+\end{equation}
+with $\kappa=c_1/c_2$ and $\sin\phi=\kappa^{-1}\sin\theta$, to $1.5\times10^{-10}$ in $|R_{PP}|$ and $8\times10^{-11}$ in $|R_{PS}|$ over $1^\circ\le\theta\le70^\circ$ (for example $0.6970$ and $0.9283$ at $30^\circ$).
+
+\subsection{Results}
+\Cref{fig:reflection} compares classical and Lord--Shulman ($\tau\omega_*=0.25$) heat flux at $\omega/\omega_*=0.1$ and $1$.
+\begin{itemize}
+\item At $\omega/\omega_*=0.1$ the two heat laws are indistinguishable to $10^{-4}$: $|R_{PP}|=0.878$, $0.509$, $0.349$ at $20^\circ$, $45^\circ$, $60^\circ$ for both. The thermal coupling changes the elastic values only at the level of $\varepsilon$.
+\item At $\omega/\omega_*=1$ the classical law gives $|R_{PP}|=0.935$, $0.517$, $0.333$ at the same angles and the Lord--Shulman law gives $0.975$, $0.546$, $0.355$, i.e.\ differences of $4\%$, $5.5\%$ and $7\%$ between the two heat laws. The mode-converted amplitude changes by less, $|R_{PS}|=0.648$ versus $0.647$ at $20^\circ$ and $1.012$ versus $1.007$ at $45^\circ$.
+\end{itemize}
+The displacement amplitude $|R_{PS}|$ exceeds one at $45^\circ$; this reflects the difference between displacement and energy normalisation of P and SV waves, not a gain, and conclusions about energy must be drawn from the energy flux (\cref{sec:interfaces}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figs/fig_reflection.pdf}
+\caption{Displacement-amplitude reflection coefficients at an insulated free surface for classical and Lord--Shulman heat flux at $\omega/\omega_*=1$ (dark) and $0.1$ (light), $\varepsilon=0.1$; the dotted line is the purely elastic result.}
+\label{fig:reflection}
+\end{figure}
+
+\subsection{Reading the result}
+The effect of the heat law on reflection is of the order of several percent only near $\omega\sim\omega_*$, which for metals lies in the tens of GHz,. For frequencies in the MHz range the reflection coefficients of a thermoelastic solid are those of an elastic solid with the adiabatic moduli, whatever the heat law. This supports the model-selection argument of \cref{sec:synthesis} and, more practically, means that discrepancies between reflection measurements and elastic predictions in the MHz range cannot be attributed to the heat-flux law.

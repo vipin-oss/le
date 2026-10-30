@@ -1,0 +1,68 @@
+\section{Lagging and third-order models: DPL, TPL and MGT}\label{sec:lags}
+\subsection{The lag idea and its Taylor truncations}
+The dual-phase-lag (DPL) model \citep{Tzou1995,Tzou1997} states that the temperature gradient at time $t+\tau_T$ drives the heat flux at time $t+\tau_q$:
+\begin{equation}
+q_i(\bx,t+\tau_q)=-k\,\theta_{,i}(\bx,t+\tau_T).\label{eq:lag}
+\end{equation}
+To obtain a differential equation, both sides are expanded in Taylor series. The truncation order is a modelling decision, not a detail, and three variants are in use:
+\begin{align}
+\text{(i) first order in both:}\quad & q_i+\tau_q\dot q_i=-k\bigl(\theta_{,i}+\tau_T\dot\theta_{,i}\bigr),\label{eq:dpl1}\\
+\text{(ii) second order in }\tau_q\text{, first in }\tau_T:\quad & q_i+\tau_q\dot q_i+\tfrac12\tau_q^2\ddot q_i=-k\bigl(\theta_{,i}+\tau_T\dot\theta_{,i}\bigr),\label{eq:dpl2}\\
+\text{(iii) second order in both:}\quad & q_i+\tau_q\dot q_i+\tfrac12\tau_q^2\ddot q_i=-k\bigl(\theta_{,i}+\tau_T\dot\theta_{,i}+\tfrac12\tau_T^2\ddot\theta_{,i}\bigr).\label{eq:dpl3}
+\end{align}
+Version (i) is the member of the template of Section~\ref{sec:framework-link}. Versions (ii) and (iii) have higher-order $G(s)$: for (ii), $G(s)=k(1+\tau_Ts)/(1+\tau_qs+\tau_q^2s^2/2)$.
+
+\paragraph{Why the truncation order matters for stability.} The stability condition $\tau_T\ge\tau_q/2$, often quoted as \emph{the} stability condition of DPL thermoelasticity, was derived by Quintanilla \citep{Quintanilla2003DPL} for the version in which the flux is expanded to second order in $\tau_q$ and the gradient to first order in $\tau_T$, i.e.\ variant (ii). Related stability results for the same model appear in \citep{Quintanilla2002b,Quintanilla2006,Fabrizio2014,Rukolaine2014}. We checked this by computing, for the coupled one-dimensional problem with real wavenumber, the largest real part of the temporal roots $s$ of the characteristic polynomial and maximising it over $k$. For the first-order version (i) the largest growth rate is negative for every $\tau_T>0$ tested ($\tau_T/\tau_q$ from $0.05$ to $1.2$, wavenumbers up to $10^3c_1^{-1}\tau_q^{-1}$, $\varepsilon=0.1$); for the second-order version (ii) it is positive when $\tau_T<\tau_q/2$, vanishes at $\tau_T=\tau_q/2$ and is negative above (\Cref{fig:stability}; script \path{fig_stability.py}). The high-wavenumber growth rate saturates, e.g.\ at $\tau_q\,\mathrm{Re}\,s=0.571$ for $\tau_T/\tau_q=0.3$, so the instability is a \emph{mode-independent exponential growth at short wavelengths} --- an ill-posedness of the model, not a slow instability of a few modes.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_stability.pdf}
+\caption{Temporal growth rate of the coupled one-dimensional DPL problem ($\varepsilon=0.1$, $\tau_q=1$ in units where $c_1=\omega_*=1$). (a) Maximum real part of the temporal roots against wavenumber for the second-order-in-$\tau_q$ truncation \eqref{eq:dpl2}: for $\tau_T/\tau_q<1/2$ the growth rate tends to a positive constant at large $k$; for $\tau_T/\tau_q\ge1/2$ it is non-positive. (b) The supremum over $k$ against $\tau_T/\tau_q$ for the two truncations; the first-order version \eqref{eq:dpl1} (blue) has no instability.}\label{fig:stability}
+\end{figure}
+
+The consequence for the literature is practical. Papers that use the first-order version and state that they ``impose'' $\tau_T\ge\tau_q/2$ for stability are applying a condition that belongs to another model; conversely, papers that use the second-order version with $\tau_T<\tau_q/2$ are computing solutions of an ill-posed problem, and any numerical result is then dominated by the growing high-wavenumber modes. The thermodynamic and continuous-dependence analyses of the time-differential lag models \citep{Chirita2016,Tibullo2017} and modal comparisons with Fourier and Cattaneo laws \citep{vanDerMerwe2021} address the same issue from a different angle. Note also that first-order truncation is valid only when $\tau_q$ and $\tau_T$ are small compared with the time scale of the phenomenon ($\omega\tau\ll1$), a condition that is not satisfied in the frequency range where the lag models are claimed to differ from Fourier's law; we return to this in Section~\ref{sec:synthesis}.
+
+\subsection{Dispersion and the shape of the lag response}
+For version (i), $G(s)=k(1+\tau_Ts)/(1+\tau_qs)$ has two limits, $G(0)=k$ and $G(\infty)=k\tau_T/\tau_q$. The thermal branch is therefore diffusive at both ends, with effective diffusivities $\alpha$ at low and $\alpha\tau_T/\tau_q$ at high frequency, and wave-like only at intermediate frequency if $\tau_T<\tau_q$ (\Cref{fig:family}). The statement that ``$\tau_T<\tau_q$ means wave-like conduction and $\tau_T>\tau_q$ means diffusive conduction'' is therefore correct only in the sense of an intermediate regime. When $\tau_T=\tau_q$, $G(s)\equiv k$ and DPL collapses to Fourier's law, whatever the common value of the lags. When $\tau_T>\tau_q$ the effective conductivity increases with frequency.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_thermal_family.pdf}
+\caption{Uncoupled thermal branch for the models of the template with $\rho c=1$, $k=1$, $\tau=1$ (and $k^*=0.25$ where relevant): (a) phase speed, (b) attenuation. Fourier and GN-III become diffusive at high frequency (unbounded speed); LS saturates at $c_T$; DPL is diffusive at both ends; MGT is wave-like at both ends, with speed $c_*=\sqrt{k^*/\rho c}$ at low frequency and $c_T=\sqrt{k/\rho c\tau}$ at high frequency; GN-II is non-dispersive.}\label{fig:family}
+\end{figure}
+
+\subsection{Three-phase-lag model}
+The three-phase-lag (TPL) model of Roy Choudhuri \citep{RoyChoudhuri2007} adds a thermal-displacement term to the DPL law,
+\begin{equation}
+q_i+\tau_q\dot q_i=-\bigl[k\bigl(\theta_{,i}+\tau_T\dot\theta_{,i}\bigr)+k^*\bigl(v_{,i}+\tau_v\dot v_{,i}\bigr)\bigr],\qquad \dot v=\theta,\label{eq:tpl}
+\end{equation}
+which is the template. Truncations of the lag equations to higher order, introducing more constants, are common in applications \citep{Abouelregal2020,Abouelregal2020a}. Because TPL includes GN-III as the special case $\tau_q=\tau_T=\tau_v=0$, it inherits the type-III behaviour at low frequency ($G\sim k^*/s$) unless $k^*=0$. For $\tau_q>0$, $G(\infty)=k\tau_T/\tau_q$ (if $\tau_T>0$) so the high-frequency limit is diffusive as in DPL. The thermodynamic compatibility and continuous dependence of the TPL model are studied in \citep{Chirita2016}. For plane waves the nonlocal TPL dispersion was studied in \citep{Tiwari2021}, combinations with memory-dependent derivatives in \citep{Singh2019,Singh2020a,Biswas2019} and with magnetic fields and nonlocal elasticity in \citep{Bayones2021}.
+
+\subsection{Moore--Gibson--Thompson thermoelasticity}\label{sec:mgt}
+The Moore--Gibson--Thompson (MGT) equation, a third-order-in-time linear model arising in nonlinear acoustics \citep{MooreGibson1960}, has been studied as an abstract evolution equation with memory and in the critical regime \citep{MarchandMcDevittTriggiani2012,LasieckaWang2015MGT,DellOroLasieckaPata2016MGT,DellOroPata2016Viscoelasticity}. Quintanilla \citep{Quintanilla2019} introduced a thermoelastic theory with the flux law
+\begin{equation}
+\tau\dot q_i+q_i=-k\theta_{,i}-k^*v_{,i},
+\end{equation}
+which is the Green--Naghdi III law with a relaxation of the flux, i.e.\ the template with $\tau_q=\tau$, $\tau_T=\tau_v=0$. The uncoupled thermal equation is third order in time,
+\begin{equation}
+\tau\dddot\theta+\ddot\theta=c_*^2\nabla^2\theta+\alpha\nabla^2\dot\theta\ \ (\rho c=1)\,.
+\end{equation}
+Its structure explains the dispersion shown in \Cref{fig:family}: $G(s)=(k+k^*/s)/(1+\tau s)$ gives $G\simeq k^*/s$ at low frequency (wave speed $c_*$) and $G\simeq k/(\tau s)$ at high frequency (wave speed $c_T=\sqrt{k/\rho c\tau}$). The model thus has finite signal speed at high frequency, in contrast to GN-III; and a low-frequency regime with undamped-type thermal waves. The decay of radial solutions of MGT thermoelasticity is analysed in \citep{Bazarra2021MGTradial}. The wave-dispersion questions that remain open include the sign conditions that guarantee decay for the full coupled system with all parameters positive and the behaviour of the thermal front for finite $\tau$; applications to piezo-semiconductors with fractional MGT have appeared \citep{Gupta2024,Aldandani2026}.
+
+\subsection{Hyperbolic two-temperature models}
+Two-temperature theories \citep{ChenGurtin1968,Youssef2006} distinguish the conductive temperature $\varphi$ from the dynamic temperature $\theta$, linked by $\theta=\varphi-a\nabla^2\varphi$ with $a\ge0$ a length-squared constant, and hyperbolic versions combine this with LS or GN heat laws \citep{Prasad2020,Alzahrani2020,Bassiouny2020}. In plane waves the two temperatures differ by the factor $1+ak^2$, so a wavenumber dependence enters the dispersion relation through $a$; this plays a role comparable to a nonlocal length scale as regards high-wavenumber behaviour. Stability and characterization of plane waves in the hyperbolic two-temperature theory are in \citep{Prasad2020}.
+
+\subsection{Summary of the template models}
+\Cref{tab:compare} compiles the qualitative properties that were verified in Sections~\ref{sec:hyperbolic}--\ref{sec:lags}.
+\begin{table}[t]\centering\small
+\caption{Properties of the uncoupled thermal branch in the template models (verified from $G(s)$ and by the scripts listed in Appendix~\ref{app:repro}).}\label{tab:compare}
+\begin{tabular}{@{}p{3.2cm}p{2.3cm}p{2.3cm}p{2.3cm}p{2.6cm}@{}}\toprule
+Model & Low-$\omega$ thermal speed & High-$\omega$ thermal speed & Finite signal speed & Dissipative\\\midrule
+Classical & $\propto\sqrt{\omega}$ & $\propto\sqrt{\omega}$ & no & yes\\
+Lord--Shulman & $\propto\sqrt{\omega}$ & $\to c_T$ & yes & yes\\
+DPL (1st order) & $\propto\sqrt{\omega}$ & $\propto\sqrt{\omega}$ ($\alpha\tau_T/\tau_q$) & no (strict) & yes\\
+GN II & $c_*$ & $c_*$ & yes & no\\
+GN III & $c_*$ & $\propto\sqrt{\omega}$ & no (strict) & yes\\
+TPL ($k^*\neq0$) & $c_*$ & $\propto\sqrt{\omega}$ if $\tau_T>0$ & no (strict) & yes\\
+MGT & $c_*$ & $\to c_T$ & yes & yes\\\bottomrule
+\end{tabular}
+\end{table}
+\Cref{tab:compare} gives a more discriminating picture than the common statement ``all generalized theories have finite thermal speed''. A thermal front with finite speed requires that $sG(s)$ tend to a finite nonzero limit as $s\to\infty$ (then $K\simeq-s\rho c/G\propto\omega^2$); this holds for LS, MGT and GN-II and fails for the classical law, DPL, TPL and GN-III in the first-order template.

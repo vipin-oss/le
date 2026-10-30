@@ -1,0 +1,14 @@
+\section{Derivation and verification of the dispersion polynomial}\label{app:disp}
+With $\partial_x\to\ii k$ and $\partial_t\to s=-\ii\omega$, the momentum and energy balances \eqref{eq:1d} for the template give the linear system
+\begin{align}
+\bigl(\rho s^2+\rho c_1^2k^2\bigr)\hat u+\ii\beta k\,\hat\theta&=0,\\
+T_0\beta\,s\,\ii k\,\hat u+\bigl(s\rho c+G(s)k^2\bigr)\hat\theta&=0,
+\end{align}
+where the second equation uses $\ii k\,\hat q=-\ii k\,G\,\ii k\,\hat\theta=Gk^2\hat\theta$. Its determinant is
+$(\rho c_1^2k^2+\rho s^2)(s\rho c+Gk^2)+\beta^2T_0\,s\,k^2$ (since $(\ii k)(\ii k)=-k^2$), which is \eqref{eq:disp} because $\rho s^2=-\rho\omega^2$. The identity was checked symbolically with all template parameters kept as symbols (script \path{check_dispersion.py}); a first version of our own implementation had the opposite sign for the coupling term, and the symbolic comparison detected it immediately, which is the reason we advocate the check.
+
+\paragraph{Unified form for LS and GL.} Multiplying by $1+\tau_0s$ for $G=k/(1+\tau_0s)$ gives \eqref{eq:unified} with $\tau^\dagger=\tau_0$; the Green--Lindsay system of \eqref{eq:GL} gives the same polynomial with $\tau^\dagger=\tau_1$, since the thermal-stress term carries $(1+\tau_1s)$.
+
+\paragraph{Limits.} Setting $\beta\to0$ decouples the roots into $K=-s^2/c_1^2$ and $K=-s\rho c/G$; for $G=k$ the latter is $k^2=\ii\omega/\alpha$ with phase speed $\sqrt{2\alpha\omega}$.
+
+\paragraph{Nonlocal forms.} If the stress law is $(1-\xi^2\partial_x^2)\sigma=c\,u_{,x}-\beta\theta$ (form A of Section~\ref{sec:size}), the momentum balance becomes $[\rho s^2(1+\xi^2K)+\rho c_1^2K]\hat u+\ii\beta k\hat\theta=0$ and the determinant is $[\rho s^2(1+\xi^2K)+\rho c_1^2K](s\rho c+GK)+\beta^2T_0sK=0$; for form B the last term is multiplied by $1+\xi^2K$.

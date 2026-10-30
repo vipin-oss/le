@@ -1,0 +1,26 @@
+\section{Reporting standards for new work}\label{sec:reporting}
+
+The comparisons made in this review were often limited not by the models but by what the original papers report. This section proposes a short set of reporting standards that would make future results directly comparable. They follow from the pitfalls collected in \cref{sec:synthesis} and from the checks of \cref{sec:methods,sec:schemes}.
+
+\subsection{What a paper on generalized thermoelastic waves should state}
+\begin{enumerate}
+\item \textbf{The heat-flux law as an explicit parameter set.} Give the model in the template of \cref{sec:foundations} (or state where it departs from it) so that $G(s)$, the polynomial of \cref{eq:unified} and the limit $\omega\to\infty$ follow without reading the derivation. For lagging models give the truncation order.
+\item \textbf{Which limits were verified.} State the reductions that were tested numerically or symbolically, for example Fourier, Lord--Shulman and the elastic limit $\varepsilon\to0$, and give the numerical agreement achieved.
+\item \textbf{A non-dimensional parameter table.} Report $\varepsilon$, $\omega/\omega_*$, $\omega\tau_q$ (and $\omega\tau_T$, $\alpha$, $\xi\omega_*/c_1$ as relevant) for every figure. A figure for which these are not given cannot be placed on the regime map of \cref{sec:synthesis}.
+\item \textbf{The material source and the status of the parameters.} Say whether a lag time or fractional order is measured, estimated by a stated argument, or assigned for illustration. Illustrative values should not be presented in a table with measured ones.
+\item \textbf{Branch handling.} For dispersion curves state how roots were selected and followed (\cref{sec:prelim}), and mark regions of hybridisation.
+\item \textbf{Energy statements.} If energy ratios are reported, give the energy flux used (\cref{sec:energy}), state whether the ratios sum to one, and if they do not, whether the cross terms between modes were included (\cref{sec:interfaces}).
+\item \textbf{Inversion and discretisation.} For transient results state the Laplace-inversion method and the cross-check, or the discretisation and Courant number, and give the error in a window around the front separately from the global error (\cref{sec:schemes}).
+\item \textbf{Boundary and interface conditions.} State the thermal condition (insulated, isothermal, convective) and, at interfaces, the continuity conditions for the heat flux and for the temperature or the thermal displacement.
+\end{enumerate}
+
+\subsection{Claims that need an independent test}
+\begin{itemize}
+\item A lag time or fractional order extracted from a single curve with several free parameters.
+\item A statement that a model predicts a ``new wave'' without a check of the number of roots of the dispersion polynomial in each frequency range and of their causality (\cref{sec:prelim}).
+\item A reflection or transmission result that agrees with an energy ratio sum of one only because the thermal wave has been dropped.
+\item A size effect obtained from a nonlocal law whose length parameter has been chosen by trial rather than calibrated to a lattice or atomistic dispersion curve (\cref{sec:size}).
+\end{itemize}
+
+\subsection{Limitations of this review}
+The review treats linear waves about a uniform reference state and does not cover nonlinear thermoelasticity, radiative or reactive heat transfer, or the full literature on bounded-domain well-posedness. The numerical checks use rounded handbook values and non-dimensional parameter sets chosen to separate the effects discussed; they illustrate mechanisms and should be repeated with measured parameters before being used for design. The classified catalogue in the appendix is organised by title keywords and does not assess the content of the individual papers. Statements that rest on the cited literature rather than on the computations reported here are identified by their citations.

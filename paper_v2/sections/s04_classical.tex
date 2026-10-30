@@ -1,0 +1,58 @@
+\section{Classical coupled thermoelasticity}\label{sec:classical}
+\subsection{Field equations}
+For an isotropic solid with Fourier conduction $q_i=-k\theta_{,i}$, \eqref{eq:mom}, \eqref{eq:stress} and \eqref{eq:en} give the Navier-type system
+\begin{align}
+\rho\ddot{\bu}&=\mu\nabla^2\bu+(\lambda+\mu)\nabla(\nabla\!\cdot\!\bu)-\beta\nabla\theta+\rho\bm f,\label{eq:navier}\\
+\rho c\,\dot\theta&=k\nabla^2\theta-T_0\beta\,\nabla\!\cdot\!\dot{\bu}+\rho r.\label{eq:heateq}
+\end{align}
+The thermodynamic content is fully encoded in the two coupling terms: the thermal body force $-\beta\nabla\theta$ in \eqref{eq:navier} and the dilatation heating $-T_0\beta\nabla\!\cdot\!\dot{\bu}$ in \eqref{eq:heateq}. Their product, $T_0\beta^2$, is what appears in the single coupling constant $\varepsilon$ of \eqref{eq:adiabatic}; the reciprocal structure (the same $\beta$ in both) is a consequence of the existence of the free energy \eqref{eq:psi}. A sign or factor error in either term breaks the reciprocity and is a common source of unphysical results; in our dispersion checks (Appendix~\ref{app:disp}) this is exactly what a symbolic comparison with the field equations detects.
+
+\paragraph{Helmholtz decomposition.} Writing $\bu=\nabla\phi+\nabla\times\bm\psi$ with $\nabla\!\cdot\!\bm\psi=0$ decouples the problem in an unbounded isotropic body into
+\begin{equation}
+\rho\ddot\phi=(\lambda+2\mu)\nabla^2\phi-\beta\theta,\qquad
+\rho c\dot\theta=k\nabla^2\theta-T_0\beta\nabla^2\dot\phi,\qquad
+\rho\ddot{\bm\psi}=\mu\nabla^2\bm\psi.\label{eq:helm}
+\end{equation}
+The shear potential $\bm\psi$ obeys an uncoupled wave equation with speed $c_2=\sqrt{\mu/\rho}$: transverse waves are neither attenuated nor dispersed by thermoelastic coupling in an unbounded isotropic medium. Only the dilatational potential couples to temperature. At boundaries and interfaces, shear and dilatational motions are coupled again by boundary conditions, which is why surface waves and reflected shear waves are affected by thermal coupling (Sections~\ref{sec:surface} and~\ref{sec:interfaces}).
+
+\subsection{Uniqueness and energy}
+Multiplying \eqref{eq:navier} by $\dot u_i$ and \eqref{eq:heateq} by $\theta/T_0$ and integrating gives the energy identity \eqref{eq:energy} without the flux-relaxation term, with dissipation $\int k|\nabla\theta|^2/T_0\,\dd V\ge0$. From it follow uniqueness of solutions of the initial--boundary value problem under standard boundary conditions (Dirichlet, Neumann or Robin on each of the mechanical and thermal parts) and continuous dependence on data. Variational formulations and reciprocity theorems are available \citep{Marotti2013,Carlson1972,Nowacki1975}, and for the generalized theories these identities are the starting point of well-posedness proofs \citep{Chandrasekharaiah1996,Quintanilla2019}.
+
+\subsection{Longitudinal plane waves}\label{sec:longitudinal}
+For one-dimensional dilatational motion, $\bu=u(x,t)\bm e_x$, \eqref{eq:navier}--\eqref{eq:heateq} reduce to
+\begin{equation}
+\rho\ddot u=(\lambda+2\mu)u_{,xx}-\beta\theta_{,x},\qquad \rho c\,\dot\theta+T_0\beta\,\dot u_{,x}=-q_{,x}.\label{eq:1d}
+\end{equation}
+Introducing $\hat q=-G(s)\hat\theta_{,x}$ (so $G=k$ for the classical theory) and seeking solutions $\propto\exp[\ii(kx-\omega t)]$, we obtain the characteristic equation, which is quadratic in $K=k^2$:
+\begin{equation}
+\bigl(\rho c_1^2K-\rho\omega^2\bigr)\bigl(s\rho c+G(s)K\bigr)+\beta^2T_0\,s\,K=0,\qquad s=-\ii\omega. \label{eq:disp}
+\end{equation}
+Equation~\eqref{eq:disp} holds for every member of the template of Section~\ref{sec:framework-link}; a derivation and the symbolic check against the field equations are in Appendix~\ref{app:disp}. Two wavenumber branches result: an \emph{elastic-type} branch with $k\approx\omega/c_1$ for weak coupling, and a \emph{thermal-type} branch with $k^2\approx-s\rho c/G(s)$. We call them types and not ``waves'' because the classical thermal branch is a diffusive wave with $\Real k=\Imag k$, which attenuates by a factor $e^{-2\pi}$ per wavelength.
+
+\paragraph{Weak-coupling expansion.} Let $x=\omega/\omega_*$ with $\omega_*=\rho c c_1^2/k$. For $\varepsilon\ll1$ and $G=k$, set $K=\omega^2/c_1^2+\delta K$ in \eqref{eq:disp}. To first order in $\varepsilon$,
+\begin{equation}
+c_1^2K=\omega^2\Bigl[1+\varepsilon\,\frac{-1+\ii x}{1+x^2}\Bigr]\;\Longrightarrow\;
+v_p\simeq c_1\Bigl[1+\frac{\varepsilon}{2(1+x^2)}\Bigr],\qquad
+Q^{-1}\equiv\frac{2\Imag k}{\Real k}\simeq\varepsilon\,\frac{x}{1+x^2}. \label{eq:debye}
+\end{equation}
+The phase speed interpolates between the adiabatic value $c_1(1+\varepsilon/2)\simeq c_1\sqrt{1+\varepsilon}$ at low frequency and the isothermal speed $c_1$ at high frequency, and the inverse quality factor $Q^{-1}$ has the Debye form with a maximum $\varepsilon/2$ at $\omega=\omega_*$. In the language of anelasticity the relaxation strength is $\varepsilon$ and the relaxation time is $1/\omega_*$. This is precisely Zener's thermoelastic relaxation \citep{Zener1937}, here derived for a plane compressional wave rather than for a vibrating reed. The ordering of the limits is opposite to what one may expect at first: the classical theory is \emph{adiabatic} at low frequency and \emph{isothermal} at high frequency, because conduction over a wavelength is efficient when the wavelength is short ($\alpha k^2\gg\omega$) and negligible when it is long. We confirmed \eqref{eq:debye} against the exact roots of \eqref{eq:disp}: for $\varepsilon=10^{-3}$ the exact value of $Q^{-1}/\varepsilon$ at $\omega=\omega_*$ is $0.49999984$ against the predicted $0.5$ (script \path{fig_zener_q.py}).
+
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_dispersion.pdf}
+\caption{Phase speed (left) and attenuation (right) of the elastic-type (top) and thermal-type (bottom) branches for the classical, Lord--Shulman and dual-phase-lag models. Parameters: $\varepsilon=0.1$ (larger than for metals so that dispersion is visible), $\tau_0=\tau_q=0.25/\omega_*$ giving $c_T=2c_1$, and $\tau_T=\tau_q/2$ for DPL (a stable choice for the first-order model, see Section~\ref{sec:lags}). Dotted lines: isothermal speed $c_1$, adiabatic speed $c_1\sqrt{1+\varepsilon}$, thermal speed $c_T$. Branches are followed by continuity in frequency.}\label{fig:disp}
+\end{figure}
+
+\subsection{Thermoelastic damping}\label{sec:ted}
+\Cref{fig:zener}(a) compares the exact classical $Q^{-1}$ with the Debye form for two couplings; the weak-coupling formula is accurate to within a few percent already at $\varepsilon=0.02$ and the curve shape is independent of $\varepsilon$ to leading order. Panel (b) shows the effect of the heat-flux law at the larger coupling $\varepsilon=0.1$. All three models share the low-frequency rise $Q^{-1}\propto\omega$ and the maximum near $\omega_*$. The generalized laws increase the maximum and raise the high-frequency tail, by a factor that depends on $\omega\tau_q$ only when that product approaches order one. The relevant parameter is $\omega_*\tau_q$. For the metals of Table~\ref{tab:materials}, $\omega_*\sim10^{11}$--$10^{12}$\,rad/s, so with a lag time of order a picosecond the product is of order one near the \emph{bulk} damping peak, and the heat law then matters; but that peak lies at tens of gigahertz and is reached only in very high-frequency experiments. For micro- and nano-resonators the relevant relaxation frequency is set by the structure size rather than by $\omega_*$ (see below) and lies far below $1/\tau_q$, where Zener's classical formula is adequate; the lagged corrections become important for ultra-high-frequency nanostructures (Section~\ref{sec:applications}).
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_zener.pdf}
+\caption{Thermoelastic damping of the elastic-type branch, $Q^{-1}=2\Imag k/\Real k$ against frequency. (a) Classical theory for two couplings, normalised by $\varepsilon$, compared with the weak-coupling Debye form \eqref{eq:debye}. (b) Effect of the heat law at $\varepsilon=0.1$, with $\tau_q=0.25/\omega_*$ and DPL $\tau_T=\tau_q/2$.}\label{fig:zener}
+\end{figure}
+
+\paragraph{Relation to flexural damping.} In a thin beam of thickness $h$ vibrating in flexure, the temperature field varies across the thickness with a thermal relaxation time $\tau_Z\simeq h^2/(\pi^2\alpha)$ (Zener), and the damping has the same Debye form with $\omega_*$ replaced by $1/\tau_Z$ and the relaxation strength $\Delta=E\alpha_T^2T_0/(\rho c)$ (with Young's modulus $E$) \citep{Zener1937}. Lifshitz and Roukes \citep{Lifshitz2000} derived the corresponding exact expression for beams and discussed its use for micro- and nano-mechanical resonators. For a silicon beam of thickness one micrometre, $\alpha\approx9\times10^{-5}\,\mathrm{m^2/s}$ gives a relaxation frequency of order $10^8$ Hz, which is in the range of present-day resonators. Generalized and nonlocal corrections to this classical result have been studied for plates and beams \citep{Yang2021,Kumar2017}.
+
+\subsection{Anisotropy and other classical extensions}
+For anisotropic media the field equations keep their form with $C_{ijkl}$, $\beta_{ij}$ and $k_{ij}$; Dhaliwal and Sherief extended the generalized theory to anisotropic media \citep{Dhaliwal1980}. The coupled problem no longer decouples into shear and dilatational parts, but quasi-longitudinal, quasi-shear and thermal branches exist, and for symmetric directions the one-dimensional analysis above applies with the appropriate effective moduli. For orthotropic, transversely isotropic and piezoelectric crystals, the Stroh formalism \citep{Stroh1958,Stroh1962} gives a systematic route to surface waves.
+
+\subsection{What the classical theory cannot describe}
+Three predictions of the classical theory conflict with finite-speed heat transport: the instantaneous thermal signal, the unbounded thermal phase speed (\Cref{fig:disp}c, black curve), and the monotonic growth of the thermal attenuation with frequency. The frequency range in which these matter depends on the time scale $\tau_q$ of heat carriers and on the dimension of the structure; Section~\ref{sec:synthesis} gives the criteria.

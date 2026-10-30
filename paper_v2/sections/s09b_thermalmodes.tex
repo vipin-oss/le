@@ -1,0 +1,16 @@
+\section{Thermal-wave resonance in a finite rod}\label{sec:thermalmodes}
+
+The uncoupled heat law offers a small, exactly solvable example of how a finite size reveals the hyperbolic character: the normal modes of a rod with insulated ends.
+
+\subsection{Modes of the Cattaneo equation}
+For a rod $0<x<L$ with $q=0$ at both ends, eliminating $q$ from the Cattaneo system gives $\tau\theta_{tt}+\theta_t=\chi\theta_{xx}$, with $\theta\propto\cos(k_nx)e^{st}$, $k_n=n\pi/L$, and
+\begin{equation}
+\tau s^2+s+\chi k_n^2=0\quad\Rightarrow\quad s_\pm=\frac{-1\pm\sqrt{1-4\tau\chi k_n^2}}{2\tau}.
+\end{equation}
+For the Fourier law ($\tau=0$) every mode decays at the real rate $\chi k_n^2$. For $\tau>0$ the modes with $k_n<k_c=1/(2\sqrt{\chi\tau})=1/(2\ell)$, where $\ell=c_T\tau$ is the relaxation length, are overdamped with two real rates, and the modes with $k_n>k_c$ are oscillatory with frequency $\omega_n=\sqrt{\chi k_n^2/\tau-1/(4\tau^2)}$, decaying at the common rate $1/(2\tau)$. Thus the thermal wave appears as a damped oscillation only in the modes of wavelength shorter than $4\pi\ell$, and then it always decays at the rate $1/2\tau$ independently of mode number.
+
+\subsection{Size at which oscillation is possible}
+The lowest mode ($n=1$) is oscillatory if $L<2\pi\ell$. For copper, with $\chi=1.2\times10^{-4}$\,m$^2$/s (\cref{tab:materials}), a lag $\tau=1$\,ps gives $c_T=1.1\times10^{4}$\,m/s and $\ell=1.1\times10^{-8}$\,m, so a rod shorter than $68$\,nm would have an oscillatory first mode; for $\tau=10$\,ps it is $\ell=3.4\times10^{-8}$\,m and $L<210$\,nm. In both cases the size is comparable to or below the carrier mean free paths for which the continuum conduction law itself is questionable, which agrees with the conclusion of \cref{sec:experiments}: the oscillatory regime of the Cattaneo law is reached only where the underlying assumptions of the law fail.
+
+\subsection{Relation to the coupled problem}
+In the coupled problem of \cref{sec:bar} the elastic-like mode inherits damping from the thermal modes through the factor $\varepsilon$, but the heat-conduction modes themselves are of the type above and are damped; there is no regime in which heat-driven oscillations persist. This is the energy-dissipative nature of the Cattaneo law ($\mathrm{d}\mathcal E/\mathrm{d}t=-\int q^2/kT_0\le0$, \cref{eq:energy}), in contrast to the conservative Green--Naghdi type II law, whose uncoupled thermal modes are undamped oscillations $\omega_n=c_Tk_n$.

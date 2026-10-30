@@ -1,0 +1,95 @@
+\section{Comparative synthesis and decision guide}\label{sec:synthesis}
+\subsection{When does the heat law matter? A regime map}
+The question that most users face is whether a generalized heat law will change their prediction. We answer it for the damping and speed of the elastic-type branch by computing the relative difference between Lord--Shulman and classical predictions over the plane of the two relevant dimensionless numbers, the frequency $\omega/\omega_*$ and the lag $\tau_0\omega_*$ (\Cref{fig:regime}). The coupling is taken as $\varepsilon=0.02$, typical of metals (Table~\ref{tab:materials}).
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_regime_map.pdf}
+\caption{Relative difference between the Lord--Shulman and classical predictions for the elastic-type branch ($\varepsilon=0.02$): (a) damping $Q^{-1}$, (b) phase speed. Dashed and solid white contours mark $1\,\%$ and $10\,\%$ differences; the dotted red line is $\omega\tau_0=1$. Near $\tau_0\omega_*\approx1$ the thermal and elastic speeds coincide ($c_T=c_1$), the branches hybridise, and the labelling ``elastic-type'' is ambiguous; features in that region should be read qualitatively.}\label{fig:regime}
+\end{figure}
+Three conclusions can be read off. (i) The heat law affects the \emph{damping} much earlier than the \emph{speed}: a $10\,\%$ change in $Q^{-1}$ at $\omega\gtrsim\omega_*$ requires $\omega\tau_0\gtrsim0.05$--$0.1$, and a $1\,\%$ change requires roughly $\omega\tau_0\gtrsim0.005$, whereas the phase speed changes by less than $1\,\%$ over most of the plane. (ii) At frequencies far below $\omega_*$ the difference is negligible unless the lag is very large, because the thermal field is then adiabatic over a period. (iii) In the neighbourhood of $\omega\tau_0=1$ differences of tens of percent in $Q^{-1}$ appear. Consequently, a paper that reports a ``strong effect of the relaxation time on the phase speed'' for realistic lags and ultrasonic frequencies should be examined for the choice of nondimensionalisation: a nondimensional lag chosen for plotting convenience can be far larger than any physical value.
+
+\subsection{Taxonomy of models and combinations}
+\Cref{tab:taxonomy} places the models discussed in this review according to the structure of their heat law (the function $G(s)$), the elastic constitutive law, and the additional fields. A published model is a point in the product of these three choices; the number of models in the literature is large because the product is large, not because there are many physically distinct mechanisms.
+\begin{table}[ht]\centering\small
+\caption{Taxonomy. A model is specified by one entry from each of the three groups.}\label{tab:taxonomy}
+\begin{tabularx}{\textwidth}{@{}p{2.6cm}X@{}}\toprule
+Axis & Options (representative references)\\\midrule
+Heat law $G(s)$ & Fourier \citep{Biot1956}; Cattaneo/LS \citep{Lord1967}; Green--Lindsay (modifies coupling) \citep{Green1972}; GN I--III \citep{Green1991,Green1993}; DPL \citep{Tzou1995}; TPL \citep{RoyChoudhuri2007}; MGT \citep{Quintanilla2019}; fractional \citep{Povstenko2016}; MDD \citep{Wang2011}; Guyer--Krumhansl \citep{GuyerKrumhansl1966II}; two-temperature variants \citep{Youssef2006}.\\
+Elastic law & Local; Eringen nonlocal \citep{Eringen1972,Eringen1974}; gradient \citep{Aifantis1992,Askes2011}; couple stress \citep{MindlinTiersten1962}; micropolar \citep{Eringen1999}; Klein--Gordon type \citep{Lazar2022}; viscoelastic (Kelvin--Voigt) \citep{Gupta2026HeatMap}.\\
+Added fields & Piezoelectric \citep{Mindlin1974Thermopiezo}; semiconductor/photothermal \citep{Gupta2023}; magnetic \citep{Ezzat2011}; diffusion \citep{Abouelregal2020a}; voids/porosity \citep{Cowin1983,Iesan1986,Singh2020}.\\\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Comparative table}
+\Cref{tab:final} summarises the models along the criteria that determine when each is appropriate.
+\begin{table}[ht]\centering\small
+\caption{Comparative summary of heat-conduction models for thermoelastic waves.}\label{tab:final}
+\begin{tabularx}{\textwidth}{@{}p{2.3cm}p{1.5cm}p{1.9cm}p{2.3cm}X@{}}\toprule
+Model & Extra parameters & Finite front speed & Well-posed when & Main caution\\\midrule
+Classical & 0 & no & always & Instantaneous thermal signal.\\
+Lord--Shulman & 1 ($\tau_0$) & yes ($c_T$) & $\tau_0>0$ & Lag also multiplies the coupling term.\\
+Green--Lindsay & 2 ($\tau_0,\tau_1$) & yes & $\tau_0\ge\tau_1\ge0$ & Discontinuities at fronts.\\
+GN II & 1 ($k^*$) & yes ($c_*$) & $k^*>0$ & No dissipation.\\
+GN III & 2 ($k,k^*$) & no (strict) & both $>0$ & Not an improved Cattaneo law.\\
+DPL, 1st order & 2 & no (strict) & no instability found numerically & Both-limits diffusive; $\tau_T=\tau_q$ is Fourier.\\
+DPL, 2nd order in $\tau_q$ & 2 & depends & $\tau_T\ge\tau_q/2$ & Ill-posed otherwise.\\
+TPL & 4 & no (strict) & see \citep{Chirita2016} & Many parameters; $k^*$ changes low-$\omega$ limit.\\
+MGT & 2--3 & yes ($c_T$) & parameter conditions & Third order in time.\\
+Fractional & 1 order + lag & depends on $\alpha$ & model-dependent & $\alpha\to2$ is not Fourier.\\
+MDD & 1--3 & variant-dependent & model-dependent & High-frequency limit depends on kernel.\\\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Pitfalls checklist}
+The following issues occur repeatedly in the literature and were each examined in this review.
+\begin{enumerate}
+\item \textbf{The $\tau_T\ge\tau_q/2$ condition belongs to the second-order-in-$\tau_q$ truncation} of DPL, not to the first-order template; the first-order version is stable for all $\tau_T>0$ (Section~\ref{sec:lags}).
+\item \textbf{DPL $\to$ Lord--Shulman} needs $\tau_T\to0$ at fixed $\tau_q$, not $\tau_q\to0$; $\tau_T=\tau_q$ gives exactly Fourier's law.
+\item \textbf{TPL $\to$ DPL} needs $k^*\to0$; with $k^*\ne0$ the low-frequency limit changes qualitatively.
+\item \textbf{Fractional order $\alpha\to2$ is the wave equation, not Fourier's law.}
+\item \textbf{GN-III does not have a finite thermal front speed}; it is wave-like at low and diffusive at high frequency.
+\item \textbf{The classical theory is adiabatic at low and isothermal at high frequency}; labels on speeds must say which modulus $c_1$ refers to.
+\item \textbf{Branch identification}: follow roots by continuity; nearest-to-$\omega/c_1$ selection fails when branches hybridise.
+\item \textbf{DPL is diffusive at both ends}; ``wave-like'' only at intermediate frequency.
+\item \textbf{The sign of the effect of a hyperbolic heat law on a pulse depends on the boundary condition} (prescribed flux or temperature).
+\item \textbf{MDD forms differ in their high-frequency limit}; check $s\kappa(s)$ as $s\to\infty$.
+\item \textbf{Energy ratios in lossy media}: the sum of mode fractions need not equal one because of interference; the net flux must be continuous.
+\item \textbf{Eringen calibration}: $\xi$ depends on the calibration target (zone boundary versus long wavelength).
+\item \textbf{Gradient sign}: a positive gradient coefficient gives stiffening dispersion, the opposite of lattice softening.
+\item \textbf{Nonlocal thermoelastic form} (smoothing the thermal stress or not) changes damping near the cut-off.
+\item \textbf{Talbot inversion fails for delayed transforms} for times before the delay; set the solution to zero ahead of the front.
+\item \textbf{Piezo sign conventions}: the sign of $ep$ determines whether pyroelectricity increases or decreases thermal stress.
+\item \textbf{Report dimensionless groups} so that nondimensional lags can be related to physical values.
+\end{enumerate}
+
+\subsection{Decision guide}
+\Cref{fig:guide} gives a decision sequence for choosing a starting model. It is a guide, not a substitute for checking against data.
+\begin{figure}[t]\centering
+\begin{tikzpicture}[
+ node distance=6mm and 8mm,
+ q/.style={draw,rounded corners=2pt,fill=blue!6,align=center,font=\footnotesize,text width=7.0cm,minimum height=8mm},
+ a/.style={draw,rounded corners=2pt,fill=green!12,align=center,font=\footnotesize\bfseries,text width=3.3cm,minimum height=8mm},
+ >=Stealth]
+\node[q] (q1) {Is $\omega\tau\ll0.05$ (frequency times any lag) and the structure much larger than the carrier mean free path?};
+\node[a,right=of q1] (a1) {Classical (Biot) + Zener damping};
+\node[q,below=of q1] (q2) {Is lossless second sound essential (cryogenic crystals)?};
+\node[a,right=of q2] (a2) {GN II (or Guyer--Krumhansl for the flux)};
+\node[q,below=of q2] (q3) {Does one relaxation time reproduce the data (wave-like at high $\omega$)?};
+\node[a,right=of q3] (a3) {Lord--Shulman};
+\node[q,below=of q3] (q4) {Is a second lag measured or diffusive behaviour required at high frequency?};
+\node[a,right=of q4] (a4) {DPL, 1st order (check $\omega\tau\ll1$)};
+\node[q,below=of q4] (q5) {Is the response power-law or long-memory (heterogeneous, porous)?};
+\node[a,right=of q5] (a5) {Fractional or memory-dependent (state the form)};
+\draw[->] (q1)--(a1) node[midway,above,font=\scriptsize]{yes};
+\draw[->] (q1)--(q2) node[midway,left,font=\scriptsize]{no};
+\draw[->] (q2)--(a2) node[midway,above,font=\scriptsize]{yes};
+\draw[->] (q2)--(q3) node[midway,left,font=\scriptsize]{no};
+\draw[->] (q3)--(a3) node[midway,above,font=\scriptsize]{yes};
+\draw[->] (q3)--(q4) node[midway,left,font=\scriptsize]{no};
+\draw[->] (q4)--(a4) node[midway,above,font=\scriptsize]{yes};
+\draw[->] (q4)--(q5) node[midway,left,font=\scriptsize]{no};
+\draw[->] (q5)--(a5) node[midway,above,font=\scriptsize]{yes};
+\node[draw,dashed,rounded corners=2pt,font=\footnotesize,below=of q5,text width=11cm,align=center] (add) {Then add, independently of the heat law: size effects if the wavelength approaches the microstructural length (Section~\ref{sec:size}); piezoelectric or other couplings (Section~\ref{sec:multi}); interface conditions and their energy bookkeeping (Section~\ref{sec:interfaces}).};
+\draw[->] (q5)--(add) node[midway,left,font=\scriptsize]{no};
+\end{tikzpicture}
+\caption{Decision sequence for choosing a starting model. The threshold $\omega\tau\ll0.05$ follows from the regime map of \Cref{fig:regime}.}\label{fig:guide}
+\end{figure}

@@ -1,0 +1,25 @@
+\section{Mathematical preliminaries}\label{sec:prelim}
+
+The later sections use a small set of tools repeatedly. They are collected here with the conventions of this review, so that every statement about branches, damping and dispersion has a single definition.
+
+\subsection{Fourier--Laplace conventions}
+Fields depend on $\exp[i(kx-\omega t)]$ and the Laplace variable is $s=-i\omega$, so that $\partial_t\to s$ and $\partial_x\to ik$. For a causal response, i.e.\ one that vanishes before the excitation, the transfer functions $G(s)$ and the resulting $k(\omega)$ are analytic in the upper half of the complex $\omega$-plane ($\operatorname{Re}s>0$). Two consequences are used below: the wave number is determined by $k^2=-\rho c\,s/G(s)$ for the uncoupled thermal branch, and the appropriate root is the one whose spatial amplitude does not grow, $\operatorname{Im}k\ge0$, with $\operatorname{Re}k>0$ for propagation in $+x$.
+
+\subsection{Branches and the choice of root}
+The dispersion relation is a polynomial in $K=k^2$ with coefficients depending on $s$, so each root $K_j(s)$ gives two wave numbers $\pm\sqrt{K_j}$. The rules adopted are: (i) for each $K_j$, take the square root with $\operatorname{Im}k\ge0$; (ii) a ``branch'' is a $k(\omega)$ followed continuously in $\omega$, because the labels ``elastic-type'' and ``thermal-type'' are meaningful only away from hybridisation, where roots approach each other; (iii) near hybridisation, which in the Lord--Shulman model occurs for $\tau\omega_*\approx1$, tracking by continuity with a sufficiently fine frequency grid is necessary, and selecting the root nearest an expected value fails. Both failures were met in producing the figures of this review.
+
+\subsection{Spatial and temporal damping}
+Two measures of loss appear. For real $\omega$ and complex $k$ one defines $Q_x^{-1}=2\operatorname{Im}k/\operatorname{Re}k$; for real $k$ and complex $\omega$ one defines $Q_t^{-1}=2|\operatorname{Im}\omega|/|\operatorname{Re}\omega|$. For weak damping the two are related by the group-to-phase velocity ratio, $Q_t^{-1}\simeq(v_g/v_p)\,Q_x^{-1}$. In the clamped-bar example of \cref{sec:bar} the classical peak $Q_t^{-1}=0.0488$ at $\varepsilon=0.1$ compares with the Debye value $\varepsilon/2=0.05$ of the spatial measure; the difference is a few percent and is of the order $\varepsilon$ expected from that relation. Resonator experiments measure $Q_t$, wave-propagation experiments $Q_x$, and the two should not be compared without the conversion.
+
+\subsection{Causality and the sum rule}
+A causal response obeys the Kramers--Kronig relations, which tie dispersion to loss: a medium with a loss peak must show a change of speed. For weak damping the relation takes the form of a sum rule,
+\begin{equation}\label{eq:sumrule}
+\int_0^\infty Q_x^{-1}\,d\ln\omega=\pi\,\frac{v_0-v_\infty}{\bar v},
+\end{equation}
+where $v_0$ and $v_\infty$ are the phase speeds at zero and infinite frequency and $\bar v$ is their mean. For the Debye form $Q^{-1}=\varepsilon x/(1+x^2)$ the left side is $\pi\varepsilon/2$ and the right side is $\pi(\sqrt{1+\varepsilon}-1)\approx\pi\varepsilon/2$, which is consistent with the adiabatic and isothermal speeds of \cref{sec:classical}. We checked \cref{eq:sumrule} numerically on the exact coupled classical dispersion relation (script \path{scripts/check_kk.py}): at $\varepsilon=0.01$ the integral is $1.562994\times10^{-2}$ against $1.562991\times10^{-2}$ on the right, and at $\varepsilon=0.001$ the two sides are $1.570009\times10^{-3}$ and $1.570011\times10^{-3}$. The practical use is as a consistency test on any computed or measured loss curve: if a model predicts a loss peak but no corresponding speed change, or the reverse, it violates causality or has been truncated inconsistently.
+
+\subsection{Support of the solution and finite signal speed}
+The Laplace transform of a solution supported in $x\le ct$ decays as $e^{-sx/c}$ for $\operatorname{Re}s\to\infty$. Conversely, a transfer function with $k(s)\sim s/c$ at large $s$ implies a front travelling at $c$, which is the origin of the criterion used in \cref{sec:hyperbolic}: finite signal speed requires $sG(s)$ to tend to a finite, non-zero limit. Models for which $k_w\sim\sqrt{s}$ at large $s$ (classical, DPL, TPL, GN-III, and the Guyer--Krumhansl law of \cref{sec:kinetic}) have no front, and a transient problem for them has a solution that is nonzero everywhere immediately after the excitation, however small.
+
+\subsection{Complex roots of the delay law}
+When $G$ contains an exponential, as in the exact delay law of \cref{sec:delayfid}, $k^2=-\rho c\,s/G(s)$ is an entire function times $s$ and has infinitely many branches. Truncations replace this by a rational function with finitely many roots. Roots of the delay law that the truncation does not contain, and spurious roots that it introduces, are a likely reason why truncated and exact laws differ at $\omega\tau\gtrsim1$, although this has to be checked for each truncation.

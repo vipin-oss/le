@@ -1,0 +1,24 @@
+\section{Experimental evidence and parameter identification}\label{sec:experiments}
+
+A theory of wave propagation is only as useful as its parameters. This section reviews which experiments probe which model parameters, what they can and cannot discriminate, and how to read published values of lag times and fractional orders.
+
+\subsection{Second sound and ballistic heat pulses}
+The direct signature of wave-like heat transport is second sound, a propagating temperature wave. It was predicted for dielectric crystals at low temperature \citep{Chester1963,GuyerKrumhansl1966} and observed in solid helium \citep{Ackerman1966} and in sodium fluoride \citep{McNelly1970,Jackson1970}, in narrow temperature windows where momentum-conserving phonon collisions dominate over resistive ones. A further observation in graphite above $100$\,K \citep{Huberman2019} extends the window to a much higher temperature in a material of high anisotropy. The conditions of these experiments, a hydrodynamic phonon window with $\tau_N\ll\tau_R$, are exactly those under which the Guyer--Krumhansl law (\cref{sec:kinetic}) is the appropriate description. They do not demonstrate that a Cattaneo or lag law with a single relaxation time describes heat conduction in common solids at room temperature.
+
+\subsection{Ultrafast optical methods}
+Pump--probe reflectivity measures electron--lattice energy exchange on femtosecond to picosecond timescales \citep{Brorson1987} and picosecond ultrasonics generates and detects coherent acoustic pulses in thin films \citep{Thomsen1986}. In the first, the two-temperature picture of \cref{sec:lags} is the relevant continuum model, and the measured quantity is an electron--phonon coupling time rather than $\tau_q$. In the second, the heat input launches a strain pulse whose amplitude and shape depend on the thermal diffusion within the first tens of nanometres; thermoelastic coupling is then the source, not a loss mechanism. Time-domain thermoreflectance \citep{Cahill2003} extracts the conductivity of films and interfaces by fitting a diffusive model with interface resistance, and a deviation from that model at short delay is the usual place where a lag or ballistic correction is claimed.
+
+\subsection{Resonator quality factors}
+Micro- and nano-resonators provide the cleanest tests of thermoelastic damping because $Q$ can be measured against temperature and thickness. The quantitative signature, \cref{eq:zenerQ,eq:LR}, is a loss peak at $f_Z=\pi\chi/(2h^2)$ with the scaling $f_Z\propto h^{-2}$ and a height proportional to $\Delta$. Verification therefore requires a sweep of thickness or temperature and not a single value, and requires subtracting anchor and surface losses, which are not described by the models of this review. A mismatch can be attributed to a lag or size effect only when these contributions have been bounded.
+
+\subsection{Heterogeneous media and biological tissue}
+The relaxation times $\tau_q$ of order seconds reported for non-homogeneous materials, including processed biological tissue \citep{Mitra1995,Kaminski1990}, reflect heat transfer through a heterogeneous microstructure and are effective macroscopic parameters. Their interpretation as a molecular relaxation time is not warranted, and the observed values have been disputed in the literature. For tissue the parabolic Pennes bioheat equation \citep{Pennes1948} remains the baseline against which any hyperbolic correction must be assessed.
+
+\subsection{How to read a published lag time}
+\begin{enumerate}
+\item Identify what was measured: a response time of a temperature signal, a conductivity, or a quality factor.
+\item Identify the model used to extract $\tau$ and whether other parameters were fitted simultaneously. A fit of two or more lag parameters from a single curve is usually not identifiable (compare \cref{sec:delayfid}).
+\item Compare $\omega\tau$ with the validity limits of the model (\cref{sec:delayfid} for truncated lag laws, \cref{sec:kinetic} for the kinetic basis).
+\item Check whether a simpler model (Fourier with interface resistance, or Guyer--Krumhansl) explains the same data.
+\end{enumerate}
+A model parameter that cannot be measured independently of the model that defines it is a fitting constant and not a material property, and papers that tabulate such constants for many materials without an independent test provide limited guidance.

@@ -1,0 +1,36 @@
+\section{Worked examples}\label{sec:examples}
+
+This section shows how the results of the review are used for four practical questions. All numbers follow from the rounded handbook inputs of \cref{tab:materials} at $T_0=300$\,K (script \path{scripts/worked_examples.py}); they illustrate the procedure and should be redone with measured parameters for a specific specimen.
+
+\subsection{Example 1: Does a lag law matter for ultrasound in aluminium?}
+\textbf{Question.} A 1\,GHz longitudinal wave propagates in aluminium; should a Cattaneo (Lord--Shulman) law with $\tau_q=1$\,ps be used instead of Fourier's law?
+
+\textbf{Step 1: characteristic numbers.} From \cref{tab:materials}: $c_1=6198$\,m/s, $\varepsilon=0.027$, $\omega_*=\rho c c_1^2/k=3.94\times10^{11}$\,rad/s. The lag enters through $\tau_q\omega_*=0.39$, so the thermal front speed $c_T=\sqrt{k/(\rho c\tau_q)}=9.9$\,km/s is $1.6\,c_1$.
+
+\textbf{Step 2: where the wave sits on the dispersion curves.} At $1$\,GHz the frequency ratio is $\omega/\omega_*=1.6\times10^{-2}$ and $\omega\tau_q=6.3\times10^{-3}$. The Debye loss of \cref{eq:debye} is $Q^{-1}=\varepsilon x/(1+x^2)=4.3\times10^{-4}$ with $x=\omega/\omega_*$; at $1$\,MHz it is $4.3\times10^{-7}$.
+
+\textbf{Step 3: what the lag changes.} The lag modifies the response through $\omega\tau_q$. By the truncation analysis of \cref{sec:delayfid} the corrections to the thermal branch are at the $10^{-4}$ level or below for $\omega\tau_q\sim6\times10^{-3}$ (the first-order relative error scales as $(\omega\tau)^2/4$), so the Fourier result is adequate. The lag would matter only at frequencies of order $\omega_*$ or above, i.e.\ tens of GHz, where in addition the phonon mean free path is comparable with the wavelength and the kinetic closure of \cref{sec:kinetic} is not valid.
+
+\textbf{Conclusion.} For ultrasonic and MHz--GHz applications in aluminium the parabolic (Biot) theory is the correct model, and a lag law adds parameters without adding accuracy.
+
+\subsection{Example 2: Thermoelastic damping of a silicon nanobeam}
+\textbf{Question.} At which frequency does the thermoelastic loss peak for a silicon beam of thickness $h$, and how large is it?
+
+\textbf{Step 1.} The diffusivity is $\chi=k/\rho c=9.2\times10^{-5}$\,m$^2$/s. The Zener frequency is $f_Z=\pi\chi/(2h^2)$, which gives $1.4\times10^{6}$\,Hz for $h=10\,\mu$m, $1.4\times10^{8}$\,Hz for $1\,\mu$m, $1.4\times10^{10}$\,Hz for $100$\,nm and $3.6\times10^{9}$\,Hz for $h=200$\,nm (a value in between).
+
+\textbf{Step 2.} The relaxation strength is $\Delta=E\alpha_T^2T_0/c_v=2.0\times10^{-4}$, so the peak loss is $Q^{-1}_{\max}\approx0.494\,\Delta\approx1.0\times10^{-4}$ (\cref{sec:flexted}). This corresponds to a quality factor limit of about $10^{4}$ at the peak, which is a significant limit for sub-micron resonators with intrinsic $Q$ above $10^{4}$.
+
+\textbf{Step 3: check validity.} A micron-size silicon beam at $f_Z\sim10^{8}$\,Hz has $\omega\tau_q\sim10^{-3}$ for $\tau_q\sim1$\,ps, so a lag law is not required. For $h\lesssim100$\,nm, bulk values of $k$ are no longer reliable because the phonon mean free path in silicon at room temperature (hundreds of nanometres) exceeds the thickness, and the Guyer--Krumhansl or kinetic description (\cref{sec:kinetic}) is the relevant model, with a thickness-dependent effective conductivity as input.
+
+\subsection{Example 3: Energy partition at an aluminium--copper interface}
+\textbf{Question.} What fraction of a normally incident longitudinal wave in aluminium is reflected at a welded copper interface (elastic limit)?
+
+The impedances are $Z_1=\rho c_1=1.67\times10^{7}$ and $Z_2=4.07\times10^{7}$\,kg\,m$^{-2}$s$^{-1}$ (aluminium, copper). Then $r=(Z_1-Z_2)/(Z_1+Z_2)=-0.417$, $t=2Z_1/(Z_1+Z_2)=0.583$, $R=r^2=0.174$ and $T=(Z_2/Z_1)t^2=0.826$, with $R+T=1$ to four digits. The sign of $r$ shows a phase reversal of the reflected displacement wave (impedance increases). When thermal coupling is included, the reflected and transmitted amplitudes acquire corrections of order $\varepsilon$ and additional thermal waves are generated; the energy bookkeeping must use the net-flux conservation of \cref{sec:interfaces}, not the sum of mode-wise energy fractions.
+
+\subsection{Example 4: Is a heat pulse in steel hyperbolic?}
+\textbf{Question.} A surface of steel is heated at $t=0$. After how long does the Fourier and the Cattaneo solution differ, and by how much in position?
+
+For steel $\chi=1.3\times10^{-5}$\,m$^2$/s. The Fourier diffusion length is $\sqrt{\chi t}=1.1\times10^{-7}$\,m at $t=1$\,ns and $3.6\times10^{-6}$\,m at $1\,\mu$s. The Cattaneo front speed for $\tau_q=1$\,ps is $\sqrt{\chi/\tau_q}=3.6$\,km/s, so the front has travelled only $3.6\times10^{-9}$\,m in one lag time. The two solutions therefore differ only for $t\lesssim$ a few $\tau_q$ and within a few nanometres of the surface, where continuum theory and a bulk $k$ are already questionable. Resolving the difference requires a time resolution well below a picosecond, so any such experiment needs ultrashort-pulse (sub-picosecond) heating and detection.
+
+\subsection{Lessons}
+(i) Compute $\omega_*$, $\varepsilon$ and $\omega\tau_q$ before choosing a model; the regime map of \cref{sec:synthesis} shows at a glance whether lag effects can matter. (ii) For devices below about $100$\,nm the first deviation from the Fourier picture is size-related, not lag-related. (iii) The elastic interface calculation is a necessary baseline for the thermoelastic one.

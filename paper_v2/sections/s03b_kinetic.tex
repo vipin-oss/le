@@ -1,0 +1,40 @@
+\section{Kinetic origin of the hyperbolic and Guyer--Krumhansl laws}\label{sec:kinetic}
+
+The lag models of \cref{sec:lags} are usually justified by their formal structure. Their physical meaning comes from kinetic theory of phonons, and this section summarises how the two most-used laws arise there. We state standard results of phonon hydrodynamics at the level of structure; coefficient values depend on the dispersion model and should be taken from the original derivations.
+
+\subsection{Relaxation-time closure and the Cattaneo law}
+Write the linearised phonon Boltzmann equation for the deviation $n'$ from equilibrium with a single relaxation time $\tau_R$ for momentum-destroying (resistive) scattering. Taking the first moment, with the energy flux $q$ as the moment variable, and using the first-order closure that the second moment is proportional to the temperature gradient, gives
+\begin{equation}\label{eq:cattkin}
+\tau_R\,\dot q+q=-k\,\nabla\theta,\qquad k=\tfrac13 c_v v^2\tau_R ,
+\end{equation}
+where $v$ is the phonon group speed. This is the Cattaneo law with $\tau_q=\tau_R$. It is valid when the closure holds, namely when the phonon mean free path is small compared with the wavelength, so that $\omega\tau_R\ll1$ and $\ell_{\rm mfp}k\ll1$. Beyond this the closure fails, and the finite speed $\sqrt{k/(c_v\tau_R)}=v/\sqrt3$ should not be expected to describe a ballistic front.
+
+\subsection{Normal scattering and the Guyer--Krumhansl law}
+If momentum-conserving (normal) collisions with time $\tau_N$ dominate over resistive ones, $\tau_N\ll\tau_R$, the expansion to the next order yields the Guyer--Krumhansl equation
+\begin{equation}\label{eq:GKkin}
+\tau_R\,\dot q+q=-k\,\nabla\theta+\ell^{2}\bigl(\nabla^{2}q+2\nabla\nabla\!\cdot q\bigr),
+\end{equation}
+with a length $\ell$ of order $v\sqrt{\tau_N\tau_R}$ up to a model-dependent numerical factor ($1/5$ in a common Debye-type derivation). In one dimension the bracket becomes $3q_{,xx}$. Together with $c_v\dot\theta=-q_{,x}$ the uncoupled dispersion relation is
+\begin{equation}\label{eq:GKdisp}
+k_w^{2}=-\,\frac{c_v\,s\,(1+\tau_R s)}{k+3\ell^{2}c_v s},\qquad s=-i\omega .
+\end{equation}
+The law \cref{eq:GKkin} is not of the form $\hat q=-G(s)\hat\theta_{,x}$ with $G$ independent of $k_w$: the Laplacian term makes the response wavenumber dependent. It is therefore outside the template of \cref{sec:foundations} and is treated separately in \cref{sec:size}. The practical consequence is that size effects and relaxation effects cannot be separated by choosing different $G(s)$.
+
+
+\subsection{Dispersion of the Guyer--Krumhansl law}
+\Cref{fig:gk} (script \path{scripts/fig_gk.py}) compares the uncoupled thermal branch for the Fourier, Cattaneo and Guyer--Krumhansl laws, in units with $\chi=k/c_v=1$ and $\tau_R=1$. Reading the numbers at $\omega\tau_R=0.1,\,1,\,10,\,100$:
+\begin{itemize}
+\item Fourier: phase speed $0.45,\,1.41,\,4.48,\,14.1$ (in units of $\sqrt{\chi/\tau_R}$), growing as $\sqrt{\omega}$, and attenuation $\operatorname{Im}k_w=0.22,\,0.71,\,2.2,\,7.1$.
+\item Cattaneo ($\ell=0$): $0.43,\,0.91,\,1.00,\,1.00$, i.e.\ the speed saturates at $\sqrt{\chi/\tau_R}$, and the attenuation saturates at $1/(2\sqrt{\chi\tau_R})=0.5$.
+\item Guyer--Krumhansl with $\ell^2=0.05$: $0.43,\,0.95,\,1.57,\,5.3$ and attenuation $0.22,\,0.53,\,3.9,\,18$; with $\ell^2=0.3$: $0.45,\,1.34,\,4.2,\,13.4$ and attenuation $0.22,\,0.71,\,2.3,\,7.4$.
+\end{itemize}
+At low frequency the three laws coincide with diffusion. At high frequency the Cattaneo law approaches a finite front, whereas the Guyer--Krumhansl law returns to diffusive behaviour: from \cref{eq:GKdisp}, $k_w^2\to i\omega\tau_R/(3\ell^2)$ for $\omega\to\infty$, so both $\operatorname{Re}k_w$ and $\operatorname{Im}k_w$ grow as $\sqrt{\omega}$ and the phase speed grows as $\sqrt{6\ell^2\omega/\tau_R}$ (confirmed numerically to $0.2\%$). The linear Guyer--Krumhansl law therefore has no finite signal speed in this uncoupled form. Its role is to represent non-local (Knudsen-type) corrections at intermediate frequencies, not to enforce a front.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figs/fig_gk.pdf}
+\caption{Thermal branch for Fourier, Cattaneo and Guyer--Krumhansl laws ($\chi=\tau_R=1$): (a) phase speed, (b) attenuation. The dispersion relation is \cref{eq:GKdisp}.}
+\label{fig:gk}
+\end{figure}
+\subsection{What this means for model choice}
+(i) A lag law is a statement about relaxation of the flux; if the heat-carrier mean free path is comparable to the sample, the Guyer--Krumhansl structure or a full kinetic model is the physical starting point. (ii) Parameters $\tau_q$, $\tau_T$ obtained by fitting a lag law to transient data are effective and need not equal a microscopic relaxation time. (iii) A lag law with $\tau_q$ of the order of $10^{-12}$\,s describes phonon relaxation only if a closure of the type above is valid at the wavelengths and frequencies of interest.

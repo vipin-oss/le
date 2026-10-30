@@ -1,0 +1,33 @@
+\section{Open problems and research agenda}\label{sec:open}
+\subsection{Theory}
+\begin{enumerate}
+\item \textbf{A classification theorem for the template.} For the first-order template we have shown numerically that DPL is stable for all positive lags and identified when the thermal front has finite speed (the behaviour of $sG(s)$ at large $s$). A complete analytical statement of well-posedness, decay and front structure for the coupled TPL and MGT systems with all parameters positive, including the conditions on $(\tau_q,\tau_T,\tau_v,k,k^*)$ and the role of the coupling $\varepsilon$, is still lacking in a form directly usable by applied authors.
+\item \textbf{Thermodynamics of truncated lag models.} The time-differential DPL and TPL models raise questions of thermodynamic compatibility and continuous dependence \citep{Chirita2016,Tibullo2017}; a systematic account of which truncations admit an energy functional and entropy inequality, and what restrictions this imposes on the lags, would resolve the confusion about the $\tau_T\ge\tau_q/2$ condition (Section~\ref{sec:lags}).
+\item \textbf{Memory-dependent and fractional models.} Energy functionals, thermodynamic admissibility, uniqueness and finite-speed properties for the memory-dependent and fractional laws are not available in the generality of the template models. The high-frequency limit of the MDD law, which depends on the kernel (Section~\ref{sec:memory}), suggests that a classification of kernels by $s\kappa(s)$ at large $s$ would be valuable.
+\item \textbf{Interface conditions for lagged and memory models.} Thermodynamically consistent interface conditions with thermal resistance, for lagged and memory heat laws, including the entropy production at the interface (Section~\ref{sec:interfaces}).
+\item \textbf{Mode interference in dissipative media.} A systematic framework for apportioning energy flux among generated waves in lossy media, so that energy ratios have an unambiguous meaning.
+\end{enumerate}
+\subsection{Combined effects}
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item \textbf{Joint size and memory effects.} Combinations of nonlocal or gradient elasticity with hyperbolic or memory heat laws are widely computed but rarely validated against lattice dynamics or atomistic simulation. A benchmark in which a lattice model with heat carriers supplies the reference dispersion would show which combination is justified.
+\item \textbf{Calibration of length scales.} The calibration target (zone boundary versus long wavelength) changes $\xi$ by about one third (Section~\ref{sec:size}); systematic calibration protocols for thermoelastic problems are missing.
+\item \textbf{Nonlocal forms of thermoelastic coupling.} The two forms (smoothed or unsmoothed thermal stress) differ near the cut-off; the thermodynamically consistent form should be derived from a nonlocal free energy.
+\item \textbf{Surface and interface thermoelasticity at the nanoscale.} Surface stress, surface heat capacity and Kapitza resistance modify both surface waves and interface partition in ways not captured by the bulk models treated here.
+\end{enumerate}
+\subsection{Experiments and data}
+\begin{enumerate}
+\setcounter{enumi}{9}
+\item \textbf{Measurement of both branches.} Experiments that measure the elastic-type and the thermal-type branch in the same solid across the crossover frequency would discriminate among heat laws; at present most evidence is indirect.
+\item \textbf{Independent determination of lags.} The relaxation times and lags are generally obtained by fitting; independent measurement (for example from pump--probe experiments together with ultrasonic damping) would allow a test of the models rather than a fit.
+\item \textbf{Thermoelastic damping at ultra-high frequency.} Resonators operating at gigahertz frequencies reach the regime where lagged corrections matter; systematic data on damping versus frequency and size would calibrate them.
+\end{enumerate}
+\subsection{Computation}
+\begin{enumerate}
+\setcounter{enumi}{12}
+\item \textbf{Benchmark suite.} A set of agreed benchmark problems (the heat pulse, thermal shock, Rayleigh wave and interface problems of this review) with reference solutions at specified precision would improve the reliability of numerical codes.
+\item \textbf{Efficient memory operators.} Fast algorithms for fractional and memory-dependent operators in time-domain codes, with error control.
+\end{enumerate}
+
+\section{Conclusions}\label{sec:conclusions}
+Generalized thermoelasticity is not a collection of unrelated theories but a family organised by the function $G(s)$ that relates heat flux to temperature gradient, combined with choices of elastic law and added fields. This organisation makes three kinds of result possible. First, exact statements about reductions and limits, including a clarification that the often-quoted DPL stability condition belongs to a specific truncation and that GN-III has no finite front speed. Second, a single dispersion polynomial that gives comparative speeds, attenuation and thermoelastic damping, and that shows that the heat law affects damping long before it affects speed, and only for $\omega\tau\gtrsim0.05$. Third, problem-level insights: finite fronts and surface jumps in heat pulses, the structure of thermoelastic Rayleigh waves, the renormalisation by piezoelectric coupling, calibration dependence of nonlocal lengths, and the distinction between net energy flux and mode-by-mode fractions at interfaces in lossy media. Many of the open questions concern validation rather than derivation: independent measurement of lags, joint validation of size and memory effects against lattice dynamics, and benchmark solutions. We hope that the unified notation, the verified reductions, the pitfalls checklist and the decision guide help readers choose, justify and check models, and that the open problems direct effort where it is most needed.
