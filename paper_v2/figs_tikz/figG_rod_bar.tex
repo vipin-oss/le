@@ -1,0 +1,31 @@
+% Rod / bar geometry class schematic for atlas
+% Consistent style: footnotesize font, explicit coordinates, Stealth arrows
+\begin{tikzpicture}[x=0.8cm,y=0.8cm,>=Stealth,
+  box/.style={draw,rounded corners=0.5pt,fill=blue!6,align=center,font=\footnotesize,inner sep=2pt},
+  arr/.style={->,thick,shorten >=1pt,shorten <=1pt}]
+
+  % Rod domain
+  \draw[thick] (-0.6,-1.2) rectangle (0.6,1.2);
+  \draw[thick] (-0.6,-1.2) -- (5.4,-1.2);
+  \draw[thick] (-0.6,1.2) -- (5.4,1.2);
+  \draw[thick] (5.4,-1.2) -- (5.4,1.2);
+  \node[box,text width=2.6cm] at (2.4,0) {Rod / bar\\ domain};
+  \node[font=\footnotesize,italic,text=blue!60!black] at (2.4,-1.9) {Length $L$, cross-section $A$};
+
+  % Left end (fixed / loaded)
+  \draw[arr,thick] (-0.6,0) -- (-1.4,0);
+  \node[font=\footnotesize,anchor=east,text=blue!60!black] at (-1.6,0) {$u(0)=0$ or $t(0)$};
+
+  % Right end (loaded / free)
+  \draw[arr,thick] (5.4,0) -- (6.2,0);
+  \node[font=\footnotesize,anchor=west,text=blue!60!black] at (6.4,0) {$t(L)$ or $u(L)$};
+
+  % Lateral surface heat flux
+  \draw[arr,thick] (3,1.2) -- (3,2.0);
+  \node[font=\footnotesize,anchor=south,text=blue!60!black] at (3,2.1) {$q_s$};
+
+  % Coordinate arrow
+  \draw[arr,thick] (5.8,-1.6) -- (6.8,-1.6);
+  \node[font=\footnotesize] at (7.0,-1.9) {$x$};
+
+\end{tikzpicture}

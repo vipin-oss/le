@@ -1,0 +1,26 @@
+\section{Atlas of problems in the literature}\label{sec:atlas_ref}
+
+This section tabulates problems drawn from the literature PDFs collected in Google Drive. Each entry is matched to its bibliography key by the DOI printed on page 1 of the PDF (matched against the {\tt doi} field in {\tt refs.bib}, {\tt refs\_extra.bib} and {\tt refs\_new.bib}). Papers whose page-1 DOI is not found in any bibliography file are listed as unmatched in {\tt atlas/MATCH\_REPORT.csv} and are not included in this table. All fields---geometry class, heat-flux model, coupled fields, boundary/interface conditions, method, main finding and evidence page---are extracted from the PDF page-1 text only; entries marked {\em --} were not available on page 1. The main finding is paraphrased from the abstract or conclusion as stated in the paper, not copied verbatim.
+
+\begin{table}[ht]
+\centering\small
+\caption{Atlas of literature problems matched by page-1 DOI.}\label{tab:atlas}
+\begin{tabular}{@{}p{1.6cm}p{2.2cm}p{2.6cm}p{2.0cm}p{2.2cm}p{2.4cm}p{3.4cm}@{}}
+\toprule
+Ref & Geometry class & Model & Fields & BCs / interface & Method & Main finding (paraphrased) \& evidence \\
+\midrule
+\citep{Huang2025} & slim strip & generalized heat conduction: generalized Cattaneo--Vernotte and Green--Naghdi models & thermoelastic coupling & thermal shock & Laplace transform, numerical inverse Laplace transform & Generalizes heat conductive models by analogy with mechanical viscoelastic models; transient response of slim strip under thermal shock compared across models. p.~1 \\[2pt]
+\citep{Yu2024} & not specified on p.~1 (nanomaterials / low-dimensional systems) & fractional Cattaneo--Vernotte and fractional Green--Naghdi thermoelastic models & thermoelastic coupling & not specified on p.~1 & Laplace transform method & Fractional CV and FGN models predict anomalous thermoelastic responses: higher temperature and compressive stress than classical thermoelasticity. p.~1 \\[2pt]
+\citep{Srivastava2026} & not specified on p.~1 (homogeneous regular anisotropic piezoelectric material) & temperature rate dependent two temperature (TRDTT) piezothermoelasticity & piezothermoelasticity: thermal + electric + mechanical & initial boundary value problem & convolution-type variational principle, reciprocity theorem & Variational principle of convolution type and reciprocity theorem derived for TRDTT piezothermoelasticity; initial conditions incorporated into field equations. p.~1 \\[2pt]
+\citep{Abouelregal2019} & infinite non-homogeneous orthotropic functionally graded medium with spherical cavity & three-phase-lag thermoelastic heat conduction with higher-order time-fractional derivatives & thermoelasticity: thermal + mechanical & spherical cavity boundary & Taylor series expansion of time-fractional order & Higher-order fractional TPL thermoelastic model extending Ezzat and Roychoudhuri models; high-order time-fractional derivatives in heat flux, temperature gradient and thermal displacement gradient; applied to FGM medium with spherical cavity. p.~1 \\[2pt]
+\citep{Quintanilla2006} & not specified (mathematical comparison of models) & dual-phase-lag heat conduction: two competing hyperbolic models & heat conduction & not specified & mathematical analysis, comparison of parameter regions & Two DPL heat conduction models compared; stability parameter regions differ; real material data fall in range where both agree or both disagree. p.~1 \\[2pt]
+\citep{Ma2020} & two-dimensional fiber-reinforced half-space & fractional order theory of thermoelasticity & thermoelasticity: thermal + mechanical + magnetic + gravity & not specified on p.~1 & normal mode analysis & Fractional order thermoelasticity on 2D fiber-reinforced half-space with magnetic field, gravity and moving heat source; magnetic field, gravity and heat source significantly influence variable distributions. p.~1 \\[2pt]
+\citep{Gupta2023IJNMF} & interface of nonlocal orthotropic piezothermoelastic space and fluid half-space ($x_3=0$) & nonlocal piezothermoelasticity with dual-phase-lag, two-temperature, MDD & piezothermoelasticity + fluid & interface conditions at $x_3=0$ & amplitude ratios, energy ratios & Primary P waves strike interface; one reflected wave in fluid half-space and four transmitted waves in piezothermoelastic medium; energy ratios affected by nonlocal, DPL, two-temperature and MDD parameters; energy conservation verified. p.~1 \\[2pt]
+\citep{Yadav2023} & free surface of orthotropic piezo-hygro-thermo-elastic medium & piezo-hygro-thermo-elasticity & piezoelectric + hygro-thermal + elastic & free surface boundary conditions & amplitude ratios, energy ratios & Five coupled reflected plane waves: quasi-longitudinal P, quasi-thermal, quasi-transverse, quasi-moisture, electric potential; moisture, temperature diffusivity, pyro-electricity and frequency affect energy distribution. p.~1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Papers read from Google Drive whose page-1 DOI did not match any bibliography key are listed as unmatched in {\tt atlas/MATCH\_REPORT.csv} (18 unmatched entries). They are excluded from this table per the DOI-only matching rule.
+
+\endinput

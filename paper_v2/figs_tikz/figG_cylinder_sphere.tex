@@ -1,0 +1,28 @@
+% Cylinder / sphere geometry class schematic for atlas
+% Consistent style: footnotesize font, explicit coordinates, Stealth arrows
+\begin{tikzpicture}[x=0.8cm,y=0.8cm,>=Stealth,
+  box/.style={draw,rounded corners=0.5pt,fill=blue!6,align=center,font=\footnotesize,inner sep=2pt},
+  arr/.style={->,thick,shorten >=1pt,shorten <=1pt}]
+
+  % Cylinder cross-section (annular)
+  \draw[thick] (0,0) circle (1.6);
+  \draw[thick] (0,0) circle (0.7);
+  \node[box,text width=2.6cm] at (0,0) {Cylinder / sphere\\ annulus};
+  \node[font=\footnotesize,italic,text=blue!60!black] at (0,-2.4) {Inner radius $a$, outer radius $b$};
+
+  % Inner surface traction/heat flux
+  \draw[arr,thick] (0.7,0) -- (-0.1,0);
+  \node[font=\footnotesize,anchor=east,text=blue!60!black] at (-0.3,0.3) {$q_a,\ t_a$};
+
+  % Outer surface traction/heat flux
+  \draw[arr,thick] (1.6,0) -- (2.4,0);
+  \node[font=\footnotesize,anchor=west,text=blue!60!black] at (2.6,0.3) {$q_b,\ t_b$};
+
+  % Radial coordinate
+  \draw[arr,thick] (0,0) -- (1.6,0);
+  \node[font=\footnotesize,anchor=north,text=blue!60!black] at (0.8,-0.1) {$r$};
+
+  % Sphere note
+  \node[font=\footnotesize,italic,text=blue!60!black] at (0,-3.2) {Sphere: same BCs on $r=a,b$ surfaces};
+
+\end{tikzpicture}

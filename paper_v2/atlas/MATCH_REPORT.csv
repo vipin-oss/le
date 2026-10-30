@@ -1,0 +1,27 @@
+pdf_filename,extracted_doi,matched_bibkey,reason
+B10-031__s10483-025-3280-7 (1).pdf,10.1007/s10483-025-3280-7,Huang2025,DOI matched to bib key
+B10-029__s10409-023-23419-x.pdf,10.1007/s10409-023-23419-x,Yu2024,DOI matched to bib key
+B10-025__s00419-026-03092-7.pdf,10.1007/s00419-026-03092-7,Srivastava2026,DOI matched to bib key
+B11-008__s12648-019-01635-z.pdf,10.1007/s12648-019-01635-z,Abouelregal2019,DOI matched to bib key
+B13-031__j.ijheatmasstransfer.2005.10.016.pdf,10.1016/j.ijheatmasstransfer.2005.10.016,Quintanilla2006,DOI matched to bib key
+B03-015__10.1080@15397734.2020.1852088.pdf,10.1080/15397734.2020.1852088,Ma2020,DOI matched to bib key
+B01-011__P11_2023_HFF_Reflection-Transmission-Plane-Waves-Interface-Ideal-Fluid.pdf,10.1108/HFF-04-2022-0259,Gupta2023IJNMF,DOI matched to bib key
+B01-010__P10_2023_HFF_Reflection-Free-Surface-Orthotropic-Piezo-hygro-thermo-elastic-Medium.pdf,10.1108/HFF-04-2023-0208,Yadav2023,DOI matched to bib key
+B10-023__s00419-024-02719-x.pdf,10.1007/s00419-024-02719-x,unmatched,DOI not found in any bib file
+B10-022__rsta.2021.0373.pdf,10.1098/rsta.2021.0373,unmatched,DOI not found in any bib file
+B10-021__Photothermal.pdf,10.1080/17455030.2019.1705426,unmatched,DOI not found in any bib file
+B10-020__Nonlocal photoacoustic waves...pdf,-,unmatched,No DOI printed on page 1
+B04-005__jmech.2018.10.pdf,10.1017/jmech.2018.10,unmatched,DOI not found in any bib file
+B10-001__hosseini2019.pdf,10.1016/j.apm.2018.09.024,unmatched,DOI not found in any bib file
+2026-10_QP_131181_Set-B.pdf,-,unmatched,"Examination paper, not a research paper"
+B11-012__sharma2011.pdf,-,unmatched,No DOI match found
+B11-010__s40314-023-02298-7.pdf,-,unmatched,Not thermoelasticity (quantum codes)
+B11-011__Seema-2025_Surface-Acoustic-Waves...pdf,10.1007/s40435-024-01543-z,unmatched,DOI not in bib
+B11-009__s13661-025-01992-1.pdf,10.1186/s13661-025-01992-1,unmatched,DOI not in bib
+B11-007__s12190-022-01811-1.pdf,10.1007/s12190-022-01811-1,unmatched,DOI not in bib
+B11-006__s12095-025-00815-5.pdf,10.1007/s12095-025-00815-5,unmatched,DOI not in bib
+B11-005__s12095-022-00591-6.pdf,10.1007/s12095-022-00591-6,unmatched,DOI not in bib
+B11-004__s12095-021-00501-2.pdf,10.1007/s12095-021-00501-2,unmatched,DOI not in bib
+B11-003__s11043-017-9340-5.pdf,10.1007/s11043-017-9340-5,unmatched,DOI not in bib
+B11-002__s10999-026-09873-w.pdf,10.1007/s10999-026-09873-w,unmatched,DOI not in bib
+B11-001__s10773-022-05163-1.pdf,10.1007/s10773-022-05163-1,unmatched,DOI not in bib

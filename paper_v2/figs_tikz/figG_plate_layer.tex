@@ -1,0 +1,26 @@
+% Plate / layer geometry class schematic for atlas
+% Consistent style: footnotesize font, explicit coordinates, Stealth arrows
+\begin{tikzpicture}[x=0.75cm,y=0.75cm,>=Stealth,
+  box/.style={draw,rounded corners=0.5pt,fill=blue!6,align=center,font=\footnotesize,inner sep=2pt},
+  arr/.style={->,thick,shorten >=1pt,shorten <=1pt}]
+
+  % Plate domain
+  \draw[thick] (-4,-2) rectangle (4,2);
+  \node[box,text width=2.6cm] at (0,0) {Plate / layer\\ domain};
+  \node[font=\footnotesize,italic,text=blue!60!black] at (0,-2.7) {Thickness $2h$, mid-plane $z=0$};
+
+  % Top surface traction/heat flux
+  \draw[arr,thick] (2,2) -- (2,2.8);
+  \node[font=\footnotesize,anchor=west,text=blue!60!black] at (2.2,2.8) {$q_t,\ t_t$};
+
+  % Bottom surface traction/heat flux
+  \draw[arr,thick] (-2,-2) -- (-2,-2.8);
+  \node[font=\footnotesize,anchor=east,text=blue!60!black] at (-2.2,-2.8) {$q_b,\ t_b$};
+
+  % Coordinate arrows
+  \draw[arr,thick] (4.4,0) -- (5.4,0);
+  \node[font=\footnotesize] at (5.6,0.3) {$x$};
+  \draw[arr,thick] (0,2.4) -- (0,3.4);
+  \node[font=\footnotesize] at (0.3,3.6) {$z$};
+
+\end{tikzpicture}
