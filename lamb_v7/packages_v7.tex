@@ -1,0 +1,158 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[a4paper,margin=2.0cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{#1}}}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{0pt}
+\title{\vspace{-1.4cm}\textbf{Packages v7 --- three masters with the complete hand calculation}\\[2pt]
+\large Sumit, Neha, Anu; one master \texttt{.tex} and one \texttt{.bib} each; working behind a flag}
+\author{Dr.\ Vipin \\ Gurugram University}
+\date{30 October 2026}
+\begin{document}
+\maketitle
+\vspace{-6mm}
+\footnotesize
+
+\noindent\textbf{What is in the delivery.} \texttt{deliver/Lamb\_Sumit.zip},
+\texttt{deliver/Lamb\_Neha.zip}, \texttt{deliver/Lamb\_Anu.zip}. Each holds exactly two files,
+\texttt{Lamb\_<Scholar>.tex} and \texttt{Lamb\_<Scholar>.bib}. Every calculation step sits inside a
+\texttt{worked} environment controlled by \verb|\showworkedtrue| / \verb|\showworkedfalse| in the preamble;
+equations are numbered outside the worked blocks, and no sentence outside a worked block refers to a step
+inside one, so switching the flag off leaves a scholar version with results, sources and definitions only.
+The bibliography is \texttt{unsrt} with \texttt{bibtex}, and every entry carries a \texttt{note} saying what
+was actually read.
+
+\medskip
+\noindent\textbf{One rule applied throughout.} No file refers to an internal log, an audit, an earlier
+error or project history, and no scholar-facing passage contains a derivation of something the scholar is
+asked to check. The master carries the working; the flag-off version does not.
+
+\section*{1. Counts per paper}
+
+\begin{center}
+\begin{tabular}{lcccccc}
+\toprule
+paper & unknowns & field eqs & working blocks & matrix & roots & rows of $\mathbf B$\\
+\midrule
+A, Sumit (ZnO piezoelectric semiconductor) & 5 & 5 & 16 & $5\times5$ & 14 (10 if $l_g=0$) & 14 (10)\\
+B, Neha (1D hexagonal piezo quasicrystal) & 5 & 5 & 11 & $5\times5$ & 14 (10) & 14 (10)\\
+C, Anu (BaTiO$_3$/CoFe$_2$O$_4$ MEE) & 5 & 5 & 12 & $5\times5$ & 14 (10) & 14 (10)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The degree is counted row by row in Calculation D of each file: the diagonal product of the highest powers
+gives $4+4+2+2+2=14$ with $l_g\ne0$, and the two fours drop to twos when $l_g=0$, giving 10. The nonlocal
+length sits on the inertia and does not raise the order.
+
+\section*{2. Parity, the one substantive result that changed}
+
+\begin{center}
+\begin{tabular}{p{2.2cm}p{7.0cm}p{4.6cm}}
+\toprule
+paper & statement in the master & how it was checked\\
+\midrule
+A & the polynomial is even, and the families split, only if $p_3=0$; with $p_3\ne0$ the roots do not pair
+and the determinant is taken over all fourteen roots & determinant evaluated at $\eta$ and at $-\eta$ for
+four values of $\eta$ and three wavenumbers; relative difference $2.0\times10^{-4}$ with $p_3\ne0$,
+$1.7\times10^{-12}$ (the noise floor) with $p_3=0$, and linear in $p_3$ between\\
+B & even for every setting; two seven-row family matrices may be built and must agree & same test,
+difference $0$ at 90 digits\\
+C & even for every setting; the magnetoelectric entries are even in $\eta$ in both Gauss rows & same test,
+difference $0$ at 90 digits\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The hand sign argument and the numerical test agree. The handoff note that put the parity break on the
+Soret and Peltier coefficients is corrected: the break comes from the pyroelectric constant acting with the
+carrier field, and switching $\beta_{\rm th}$ and $\Pi_{\rm th}$ off does not restore the pairing.
+
+\section*{3. Sumit's file: what was confirmed and what was corrected}
+
+Confirmed from \texttt{03\_Reduced\_Equations\_and\_Matrix\_Sumit.tex}: the five rows of $M(\eta)$, entry by
+entry (I re-derived every entry from the field equations and the two operator factors); the sixteen
+$14\times14$ structure and the ten-root reduction at $l_g=0$; the seven face rows, including the
+$\mathcal N^{-1}$ inversion root by root and the $l_g^2$ double tractions; the column-scaling remark.
+
+Corrected or added: (i) the parity statement, as in Section~2; (ii) the degree argument is now written out
+rather than asserted; (iii) the limits section now carries the thermoelastic damping formula and the
+Hutson--White condition as hand results, which the earlier note left as tests only; (iv) every source
+sentence now says whether it is taken as it stands, taken with a change, or ours, and the Lim, Zhang and
+Reddy equation numbers are marked as coming through Barretta and Marotti de Sciarra.
+
+\section*{4. Citations: read versus not read}
+
+\begin{center}
+\begin{tabular}{p{2.0cm}p{1.4cm}p{1.4cm}p{8.6cm}}
+\toprule
+paper & entries & read & not read, and why it is cited anyway\\
+\midrule
+A & 13 & 5 & Zhu (2023) Eqs.~(1)--(7), Barretta (2018), Quintanilla (2019), Charalambopoulos (2019),
+\"Ozg\"ur (2005) are read. Yang and Zhou (2005), Qu et al.\ (2023), Gupta et al.\ (2025), Sharma et al.\
+(2004), Kumar and Kansal (2008), Othmani et al.\ (2017) were read at title and abstract level only; Lim et
+al.\ (2015) and Mindlin (1964) were not opened at all. Each of those carries a \texttt{note} saying so, and
+the text says in the sentence which number is quoted at second hand.\\
+B & 13 & 4 & Agiasofitou and Lazar (2014), Baggioli and Landry (2020), Barretta (2018) and Charalambopoulos
+(2019) are read. Zhang et al.\ (2021) is read at abstract and display level. Zhang et al.\ (2026) could not
+be obtained: only title, authors and journal came through, and the novelty sentence of Paper B is written
+as provisional because of it.\\
+C & 10 & 3 & Tocci Monaco et al.\ (2021) Section 2, Barretta (2018), Charalambopoulos (2019) are read.
+Chen, Pan and Chen (2007) is bibliographic only, so no equation number of theirs is quoted; Kondaiah et
+al.\ (2013), Xiao et al.\ (2016), Matlam and Kedar (2026) and Kakar and Kakar (2015) are title and abstract
+only, and are cited only for the existence of the effect, never for an equation number.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+No entry invents a page, an equation number or a constant. Where an equation is quoted with a number, the
+number came from a page I opened; where it did not, the text says so.
+
+\section*{5. Tests passed, and the numbers to go with them}
+
+\begin{center}
+\begin{tabular}{p{6.6cm}p{6.6cm}}
+\toprule
+test & result\\
+\midrule
+$\det M(\eta)=\det M(-\eta)$, A, $p_3=0$ & relative difference $1.7\times10^{-12}$, at the noise floor of a
+matrix whose entries span $10^{-19}$ to $10^{8}$\\
+same, A, $p_3=0.9$ & $2.0\times10^{-4}$; linear in $p_3$ between $10^{-6}$ and $0.9$, so it is a genuine
+breaking term and not rounding\\
+same, B and C, every setting & $0$ at 90 digits\\
+degree of $\det M$ & 14 with $l_g\ne0$, 10 with $l_g=0$, by the row count; a numerical confirmation was
+attempted and is not trustworthy at this conditioning, so the paper argument stands alone\\
+elastic limit of A & the $2\times2$ block gives $\eta^2=k^2-\omega^2/c_L^2$ and $\eta^2=k^2-\omega^2/c_T^2$,
+with the face rows collapsing to the classical Rayleigh--Lamb pair; the reduction of the four face
+conditions to the two secular equations is left to the scholar as a self-test\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{6. Open items}
+
+\begin{enumerate}\setlength{\itemsep}{2pt}
+\item \textbf{No LaTeX engine in this environment.} Neither setting of any master has been compiled, so the
+page counts of the two variants, the ``both settings compile'' requirement, and the ``no undefined
+citation'' check are open. The files are written for plain \texttt{pdflatex} with the packages listed in the
+prompt, and the worked-block definition is the one given there, but that is a statement about the source,
+not evidence of a build.
+\item Lim, Zhang and Reddy Eqs.~(18), (19) and Yang and Zhou Sections 2--3 remain first-week reading; the
+masters say so in the sentence where the numbers appear.
+\item Paper B's novelty still waits on Zhang et al.\ (2026), \doi{10.1007/s10338-026-00755-4}.
+\item Paper C's magnetoelectric sign convention and the four electric/magnetic face combinations are to be
+settled from Chen, Pan and Chen on the page; the master fixes the unit (s\,m$^{-1}$) and the sign
+convention it uses, and says where the ambiguity is.
+\item No numerical dispersion run was made this round against the reference solver; the internal test
+record of the earlier round stands unchanged and is not quoted here.
+\end{enumerate}
+
+\noindent\textbf{Where things are.} Sources and zips: \texttt{deliver/} and \texttt{deliver/v7/}. The parity
+and degree check: \texttt{internal/verify\_v7.py}. Its numbers: \texttt{internal/v7\_verification.md}.
+
+\end{document}

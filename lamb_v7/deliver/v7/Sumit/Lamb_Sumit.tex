@@ -1,0 +1,713 @@
+% Lamb_Sumit.tex --- master file, complete hand calculation.
+% Compile: pdflatex, bibtex, pdflatex, pdflatex.
+% \showworkedtrue  -> master with the working shown
+% \showworkedfalse -> scholar version, results and sources only
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\newif\ifshowworked
+\showworkedtrue
+\makeatletter
+\newenvironment{worked}{%
+  \ifshowworked\par\smallskip\noindent\textit{Working.}\par\smallskip\else
+  \setbox\z@\vbox\bgroup\fi}{\ifshowworked\par\smallskip\else\egroup\fi}
+\makeatother
+
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\Ncal}{\mathcal{N}}
+\newcommand{\Gcal}{\mathcal{G}}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{0pt}
+
+\title{\vspace{-1.2cm}Guided Lamb waves in a piezoelectric semiconductor plate:\\
+carrier transport, nonlocal strain gradient elasticity and a heat equation with one lag}
+\author{Dr.\ Vipin \\ Gurugram University}
+\date{30 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+We work out the plane-strain Lamb problem for a plate of thickness $2h$ cut from a piezoelectric
+semiconductor of the ZnO family \cite{Ozgur2005}, with free faces at $z=\pm h$ and the six-fold axis along the thickness.
+Five fields are carried: the two displacements $u_x,u_z$, the electric potential $\varphi$, the excess
+carrier density $\Delta n$ and the temperature rise $\theta$. The mechanical stress follows the nonlocal
+strain gradient law, with one length $l_{\rm nl}$ softening and one length $l_g$ stiffening, so the size
+effect enters only as a length over the thickness. The heat equation is of the Moore--Gibson--Thompson
+type in its base form, one phase lag and one time derivative cancelled. The carrier equation carries
+drift, diffusion, thermodiffusion and an optional recombination term, and the heat equation carries the
+reciprocal Peltier term. The five field equations are reduced to a $5\times5$ matrix in the thickness
+exponent, its characteristic polynomial is counted and its parity decided, the fourteen partial waves are
+written with their amplitude ratios, the seven face conditions are derived, and the dispersion matrix is
+assembled. Two hand limits close the file.
+\end{abstract}
+
+\noindent\textbf{Keywords:} guided waves; piezoelectric semiconductor; nonlocal strain gradient elasticity;
+thermoelastic coupling; carrier transport; attenuation.
+
+\section{Introduction}
+
+A Lamb wave is a guided elastic disturbance in a plate: the two free faces reflect it back and forth, and
+the plate carries it along its own plane with a wavelength and a decay that depend on the product of
+frequency and thickness. The plate is the natural element of acoustic filters, delay lines and sensors,
+and in a piezoelectric material the wave carries an electric potential with it, so the same element both
+senses and drives.
+
+A piezoelectric \emph{semiconductor} differs from a piezoelectric dielectric in one respect that matters
+here. The electric field is not free to arrange itself, because mobile carriers drift and diffuse under it
+and screen it. Yang and Zhou wrote the drift--diffusion pair for a piezoelectric semiconductor plate and
+used it on acoustic amplification
+\cite[Eqs.~(3), (7)]{YangZhou2005}. The equations themselves are classical semiconductor physics; what
+they add to the plate problem is a fourth field with its own length scale, the screening length. Guided
+waves in semiconducting plates of graded or layered cross-section were taken up later with numerical
+machinery that carries a variable coefficient through the thickness \cite{Othmani2017}.
+
+The thermal side is partly occupied too. Sharma, Pal and Chand solved the piezothermoelastic plate with
+free, electrically shorted and thermally insulated faces and got closed secular equations for the two
+families of modes \cite{Sharma2004}. Kumar and Kansal added a diffusing species to a transversely
+isotropic thermoelastic plate \cite{KumarKansal2008}. In both, the third field is a concentration that
+carries no charge, so the electric and the diffusive problems do not talk to each other as they do in a
+semiconductor.
+
+The two lines have met recently in the continuum theory of Qu, Pan, Zhu, Jin and Roy, who build a
+thermoelectric theory of piezoelectric semiconductors from a dissipation inequality and keep the Seebeck
+and Peltier effects \cite{Qu2023}. That paper settles the constitutive side. What it does not do is the
+plate: no free faces, no guided modes, no dispersion relation. Gupta and co-workers put a
+Moore--Gibson--Thompson heat equation into a piezo-semiconductor half space with voids and studied the
+size-dependent Rayleigh wave \cite{Gupta2025}; the heat operator in a semiconducting piezoelectric medium
+is therefore already in print, and only the finite plate is open.
+
+The size effect is a separate axis. Lim, Zhang and Reddy combined the nonlocal integral law with strain
+gradient elasticity so that one length softens and another stiffens, and gave the equivalent differential
+form together with the constitutive boundary conditions \cite{Lim2015}. Barretta and Marotti de Sciarra
+explained what those boundary conditions do in a bounded body and showed that the differential law raises
+the order of the problem \cite[Eqs.~(18)--(19)]{Barretta2018}. For a plate this is not a detail: the order
+in the thickness coordinate goes up, and the faces need more conditions than the classical six.
+
+Our contribution is therefore the free-face problem, the size effect and the attenuation, not a new
+constitutive law. Everything in Section~\ref{sec:source} is taken from a source and cited at the equation
+I read; what is new is the reduction, the counting, the parity statement and the matrix.
+
+\section{Setting and assumptions}\label{sec:setting}
+
+The plate occupies $-h\le z\le h$ and is unbounded in $x$ and $y$. The crystal is hexagonal, class $6mm$,
+with the six-fold axis along $z$. Motion is plane strain in the $x$--$z$ plane, so $u_y=0$ and
+$\partial_y=0$, and one plane wave travels along $x$,
+\begin{equation}
+\bigl(u_x,u_z,\varphi,\Delta n,\theta\bigr)
+=\bigl(\hat u_x,\hat u_z,\hat\varphi,\hat n,\hat\theta\bigr)(z)\;\exp\bigl[\ii(kx-\omega t)\bigr],
+\qquad k=k_r+\ii k_i,
+\label{eq:ansatz}
+\end{equation}
+with $\omega$ real and $k_i>0$ meaning decay along $+x$. The frequency is reported through $f\,(2h)$, the
+product of frequency and thickness, so that plates of different thickness sit on one axis.
+
+The assumptions are these. Linear piezoelectricity at the reference temperature $T_0$, with the material
+constants not varied with $\theta$. A small carrier perturbation, $\Delta n\ll n_0$, so that the drift
+term is linearised about a uniform bias field $E_0$ along $x$ and the recombination term is linear in
+$\Delta n$; the bias field is an input, not an unknown. No photoexcitation, no trapping, no surface charge
+beyond what the electrical condition imposes. A small temperature rise, $|\theta|/T_0\ll1$, so the heat
+equation may be written for $\theta$ with constant coefficients. A homogeneous, stress-free bulk with no
+pre-stress. The two size lengths are material inputs and not fitting parameters.
+
+\section{Notation}\label{sec:notation}
+
+\begin{center}
+\small
+\begin{tabular}{p{2.1cm}p{7.6cm}p{4.3cm}}
+\toprule
+symbol & meaning in words & unit\\
+\midrule
+$2h$ & thickness of the plate; the faces are at $z=+h$ and $z=-h$ & m\\
+$k=k_r+\ii k_i$ & complex wavenumber along $x$; $k_i>0$ is decay & m$^{-1}$\\
+$\eta$ & exponent in the thickness direction, one value per partial wave & m$^{-1}$\\
+$\omega$ & angular frequency, $2\pi f$ & rad\,s$^{-1}$\\
+$u_x,u_z$ & displacements in the plane and through the thickness & m\\
+$\varphi$ & electric potential; the field is $E_i=-\varphi_{,i}$ & V\\
+$\Delta n$ & excess electron density over the equilibrium value $n_0$ & m$^{-3}$\\
+$\theta$ & temperature rise over the reference $T_0$ & K\\
+$c_{11},c_{13},c_{33},c_{44}$ & elastic moduli of class $6mm$; $c_{44}$ is the shear modulus on $xz$ & Pa\\
+$e_{31},e_{33},e_{15}$ & piezoelectric constants: normal, normal along $z$, shear & C\,m$^{-2}$\\
+$\epsilon_{11},\epsilon_{33}$ & dielectric permittivities in and along the plane & F\,m$^{-1}$\\
+$\beta_1,\beta_3$ & thermal stress coefficients, $\beta_{ij}=c_{ijkl}\alpha_{kl}$ & Pa\,K$^{-1}$\\
+$p_3$ & pyroelectric constant along the axis & C\,m$^{-2}$K$^{-1}$\\
+$\rho$ & mass density & kg\,m$^{-3}$\\
+$q$ & magnitude of the carrier charge, $1.602\times10^{-19}$; the electron charge is $-q$ & C\\
+$b_n$ & electron mobility & m$^2$V$^{-1}$s$^{-1}$\\
+$D_n$ & electron diffusion coefficient & m$^2$s$^{-1}$\\
+$v_d$ & drift velocity of the bias, $v_d=b_nE_0$ & m\,s$^{-1}$\\
+$S_n$ & Seebeck coefficient of the electrons & V\,K$^{-1}$\\
+$\beta_{\rm th}$ & thermodiffusion coefficient, $\beta_{\rm th}=-b_nn_0S_n$ & m$^{-1}$s$^{-1}$K$^{-1}$\\
+$\Pi_{\rm th}$ & Peltier coefficient, $\Pi_{\rm th}=T_0S_n$ & V\\
+$\tau_R$ & recombination time; $\tau_R\to\infty$ deletes both recombination terms & s\\
+$E_g$ & band gap & J\\
+$\rho c_p$ & heat capacity per unit volume & J\,m$^{-3}$K$^{-1}$\\
+$k_{\rm th}$ & thermal conductivity & W\,m$^{-1}$K$^{-1}$\\
+$\tau_q,\tau_T$ & Moore--Gibson--Thompson phase lag, and its thermal companion in the thermoelastic theory of \cite{Quintanilla2019} & s\\
+$l_{\rm nl},l_g$ & nonlocal length and gradient length; both enter as length over thickness & m\\
+$\Ncal(\eta),\Gcal(\eta)$ & the two size-effect factors at the exponent $\eta$ & dimensionless\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Two everyday pictures, because both operators are easy to misuse. A plate is a corridor with two hard
+walls: a disturbance cannot leave through a face, so it bounces and the plate guides it. The size effect is
+what happens when the corridor is only a few steps wide and the walkers can feel the walls before they
+reach them; a softening length lets them pass a message a little further than a local law would, a
+stiffening one makes the message cost more over a short distance.
+
+\section{Source equations}\label{sec:source}
+
+Each equation below is written once, with the source and the equation number I read, and a line saying
+whether it is taken as it stands, taken with a stated change, or ours.
+
+Strain and field relations, as usual,
+\begin{equation}
+\varepsilon_{ij}=\tfrac12\bigl(u_{i,j}+u_{j,i}\bigr),\qquad E_i=-\varphi_{,i}.
+\label{eq:kin}
+\end{equation}
+These are definitions, textbook.
+
+The piezoelectric constitutive law without temperature is \cite[Eq.~(1)]{Zhu2023}; the same paper writes
+the field-potential and strain relations used above at its Eq.~(2). I take the elastic, piezoelectric and
+dielectric parts from that equation as they stand.
+
+The thermal stress is added by Duhamel's analogy: a temperature rise acts exactly like an inelastic strain
+$\alpha_{ij}\theta$, so the stress picks up $-\beta_{ij}\theta$ with
+$\beta_{ij}=c_{ijkl}\alpha_{kl}$. Textbook, no equation number needed.
+
+The pyroelectric contribution $p_i\theta$ to the electric displacement is textbook too.
+
+The balance of momentum in the nonlocal strain gradient form, and the constitutive law that goes with it,
+\begin{equation}
+\bigl(1-l_{\rm nl}^2\nabla^2\bigr)t_{ij}=\sigma_{ij},\qquad
+\sigma_{ij}=c_{ijkl}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{kl}
+-e_{kij}E_k-\beta_{ij}\theta ,
+\label{eq:nsgt}
+\end{equation}
+are Eq.~(18) of Lim, Zhang and Reddy with the constitutive boundary conditions of their Eq.~(19). I did not
+open that paper: the equation numbers are the ones Barretta and Marotti de Sciarra identify, in the
+introduction of \cite{Barretta2018}, where they write that Lim et al.\ replaced the integral law by the
+differential law Eq.~(18) and that the boundary conditions Eq.~(19) hold when the fields vanish at
+infinity. Before this pair is quoted with its numbers in a manuscript, open the Lim paper and confirm (18)
+on the page.
+
+The momentum equation is used in the form in which the same operator acts on the inertia,
+\begin{equation}
+\bigl(1-l_{\rm nl}^2\nabla^2\bigr)\rho\,\ddot u_i=\sigma_{ij,j}.
+\label{eq:mom}
+\end{equation}
+This form is ours, one line from \eqref{eq:nsgt}: apply the operator to the balance $t_{ij,j}=\rho\ddot
+u_i$ and use $(1-l_{\rm nl}^2\nabla^2)t_{ij}=\sigma_{ij}$. The point of the form is that no derivative of
+the operator ever lands on a boundary term.
+
+Gauss's law with the mobile charge, in the linearised form used for a small carrier perturbation,
+\begin{equation}
+D_{i,i}=-q\,\Delta n .
+\label{eq:gauss}
+\end{equation}
+The right-hand side is the charge added by the excess electrons, $-q\Delta n$ per unit volume. The form is
+textbook electrostatics applied to a semiconductor; the same equation for a piezoelectric semiconductor
+plate appears in the drift--diffusion treatment of \cite{YangZhou2005}, whose equations I read only at the
+level of the abstract.
+
+Carrier continuity with drift, diffusion, thermodiffusion and an optional recombination term,
+\begin{equation}
+\frac{\partial\Delta n}{\partial t}
+=D_n\nabla^2\Delta n+b_nn_0\,\nabla\!\cdot\!E
++v_d\frac{\partial\Delta n}{\partial x}
++\beta_{\rm th}\nabla^2\theta-\frac{\Delta n}{\tau_R}.
+\label{eq:carrier}
+\end{equation}
+The first three terms on the right are the standard drift--diffusion pair in the linearised form of
+\cite[Eqs.~(3), (7)]{YangZhou2005}; the drift term is written with the bias velocity $v_d=b_nE_0$ rather
+than solved for. The thermodiffusion term is the Soret cross-effect, textbook irreversible
+thermodynamics. The recombination term is an option and is discussed below.
+
+The heat equation of the Moore--Gibson--Thompson theory in its base form,
+\begin{equation}
+\Bigl(1+\tau_q\frac{\partial}{\partial t}\Bigr)
+\Bigl[\rho c_p\dot\theta+T_0\beta_{ij}\dot\varepsilon_{ij}
++T_0p_i\dot E_i+q\Pi_{\rm th}\frac{\partial\Delta n}{\partial t}
++\frac{E_g\Delta n}{\tau_R}\Bigr]
+=k_{\rm th}\nabla^2\theta .
+\label{eq:heat}
+\end{equation}
+The operator in front is the Moore--Gibson--Thompson one with the conductivity rate put to zero and one
+time integration applied, which is the form used in the piezo-semiconductor literature
+\cite{Gupta2025}; I read the title and the abstract of that paper, not its equations, and the exact form
+above is the one stated in our model document rather than copied from a page. The thermoelastic term
+$T_0\beta_{ij}\dot\varepsilon_{ij}$ and the electrocaloric term $T_0p_i\dot E_i$ are textbook partners of
+the thermal stress and the pyroelectric term; dropping them while keeping $\beta_{ij}$ and $p_i$ would
+break reciprocity. The Peltier term is the reciprocal partner of the Soret term in \eqref{eq:carrier}, and
+Qu et al.\ keep exactly this pair in a piezoelectric semiconductor continuum \cite{Qu2023}. The
+recombination term $+E_g\Delta n/\tau_R$ is ours, taken from the energy balance of the electron gas; it is
+an option, and it is deleted together with $-\Delta n/\tau_R$ when $\tau_R\to\infty$.
+
+\section{Calculation A: constitutive relations in components}\label{sec:calcA}
+
+\begin{worked}
+The class is $6mm$ with the axis along $z$. The moduli are a fourth-order tensor with the axis as a
+six-fold axis, so in the two-index notation $c_{11}=c_{22}$, $c_{13}=c_{23}$, $c_{33}$, $c_{44}=c_{55}$,
+$c_{66}=(c_{11}-c_{12})/2$, and every element with an index $4$, $5$ or $6$ mixed with $1$, $2$ or $3$
+vanishes. Plane strain kills $y$: $\varepsilon_{yy}=0$, $\partial_y=0$. What survives is
+$c_{11},c_{13},c_{33},c_{44}$.
+The piezoelectric tensor of $6mm$ has three independent entries, $e_{31}=e_{32}$, $e_{33}$, $e_{15}=e_{24}$.
+The dielectric tensor has two, $\epsilon_{11}=\epsilon_{22}$ and $\epsilon_{33}$. The thermal stress tensor
+inherits the same shape, so $\beta_{xx}=\beta_{yy}=\beta_1$ and $\beta_{zz}=\beta_3$. The pyroelectric
+vector has one entry, $p_3$, along the axis.
+Both components of the field survive, $E_x=-\partial_x\varphi$ and $E_z=-\partial_z\varphi$.
+\end{worked}
+
+Writing the stresses out,
+\begin{align}
+\sigma_{xx}&=c_{11}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{xx}
++c_{13}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{zz}-e_{31}E_z-\beta_1\theta,\\
+\sigma_{zz}&=c_{13}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{xx}
++c_{33}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{zz}-e_{33}E_z-\beta_3\theta,\\
+\sigma_{xz}&=2c_{44}\bigl(1-l_g^2\nabla^2\bigr)\varepsilon_{xz}-e_{15}E_x,
+\end{align}
+and the electric displacement,
+\begin{equation}
+D_x=e_{15}\,2\varepsilon_{xz}+\epsilon_{11}E_x,\qquad
+D_z=e_{31}\varepsilon_{xx}+e_{33}\varepsilon_{zz}+\epsilon_{33}E_z+p_3\theta .
+\end{equation}
+The two size-effect operators sit on the elastic strain energy and nowhere else. That is a modelling
+choice: it keeps $D_i$ second order, so the electric problem needs no extra face condition, and it keeps
+the size effect mechanical, so the extra conditions are mechanical too.
+
+\section{Calculation B: the five governing equations in components}\label{sec:calcB}
+
+The five equations are \eqref{eq:mom} twice, \eqref{eq:gauss}, \eqref{eq:carrier} and \eqref{eq:heat}.
+Before the plane wave goes in, it is worth writing the two operators once. With
+$\nabla^2=\partial_x^2+\partial_z^2$ and the plane wave \eqref{eq:ansatz},
+\begin{equation}
+\nabla^2\;\longrightarrow\;\eta^2-k^2\equiv L,\qquad
+\Ncal(\eta)=1+l_{\rm nl}^2(k^2-\eta^2),\qquad
+\Gcal(\eta)=1+l_g^2(k^2-\eta^2).
+\label{eq:NG}
+\end{equation}
+Note the sign: $\nabla^2\to\eta^2-k^2$, so $1-l^2\nabla^2\to1+l^2(k^2-\eta^2)$, which is positive for a
+gradient length when $k>\eta$ and is the stiffening factor.
+
+\begin{worked}
+Put $f=1-\ii\omega\tau_q$, the factor from the Moore--Gibson--Thompson operator, because applying
+$1+\tau_q\partial_t$ to $\exp(-\ii\omega t)$ multiplies by $1-\ii\omega\tau_q$.
+Put $\dot{\;\;}\to-\ii\omega$ and $\ddot{\;\;}\to-\omega^2$ everywhere.
+Momentum in $x$: $\partial_x\sigma_{xx}+\partial_z\sigma_{xz}$ with $\partial_x\to\ii k$, $\partial_z\to\eta$.
+Momentum in $z$: $\partial_x\sigma_{xz}+\partial_z\sigma_{zz}$.
+Gauss: $\partial_xD_x+\partial_zD_z+q\Delta n=0$.
+Carrier: move the whole right side of \eqref{eq:carrier} to the left.
+Heat: apply \eqref{eq:NG} to the right side, which gives $k_{\rm th}L\theta$, and move it left.
+\end{worked}
+
+The five equations read $M(\eta)\,\mathbf a=\mathbf 0$ with
+$\mathbf a=(\hat u_x,\hat u_z,\hat\varphi,\hat n,\hat\theta)^{T}$. The entries are given in
+Section~\ref{sec:calcC} and each one is derived there.
+
+\section{Calculation C: the plane-wave reduction}\label{sec:calcC}
+
+First the strains and the field at the plane wave,
+\begin{equation}
+\varepsilon_{xx}=\ii k\hat u_x,\qquad
+\varepsilon_{zz}=\eta\hat u_z,\qquad
+2\varepsilon_{xz}=\eta\hat u_x+\ii k\hat u_z,\qquad
+E_x=-\ii k\hat\varphi,\qquad
+E_z=-\eta\hat\varphi .
+\end{equation}
+
+\begin{worked}
+Substituting into the three stresses of Calculation A,
+$\hat\sigma_{xx}=\Gcal(\ii k\,c_{11}\hat u_x+\eta\,c_{13}\hat u_z)+\eta\,e_{31}\hat\varphi-\beta_1\hat\theta$,
+because $-e_{31}E_z=-e_{31}(-\eta\hat\varphi)=+\eta e_{31}\hat\varphi$.
+Similarly $\hat\sigma_{zz}=\Gcal(\ii k\,c_{13}\hat u_x+\eta\,c_{33}\hat u_z)+\eta\,e_{33}\hat\varphi
+-\beta_3\hat\theta$ and
+$\hat\sigma_{xz}=\Gcal c_{44}(\eta\hat u_x+\ii k\hat u_z)+\ii k\,e_{15}\hat\varphi$, because
+$-e_{15}E_x=+\ii k e_{15}\hat\varphi$.
+The displacements are
+$\hat D_x=e_{15}(\eta\hat u_x+\ii k\hat u_z)-\ii k\epsilon_{11}\hat\varphi$ and
+$\hat D_z=\ii k e_{31}\hat u_x+\eta e_{33}\hat u_z-\eta\epsilon_{33}\hat\varphi+p_3\hat\theta$.
+\end{worked}
+
+\subsection*{Row 1: momentum in $x$}
+
+\begin{worked}
+Take $\partial_x\hat\sigma_{xx}$: the factor $\ii k$ multiplies every term, so the $u_x$ term gives
+$-\Gcal c_{11}k^2u_x$ and the $u_z$ term gives $\ii k\eta\Gcal c_{13}u_z$, the potential term gives
+$\ii k\eta e_{31}\varphi$ and the thermal term gives $-\ii k\beta_1\theta$.
+Take $\partial_z\hat\sigma_{xz}$: the factor $\eta$ multiplies, so $u_x$ gives $+\Gcal c_{44}\eta^2u_x$,
+$u_z$ gives $\ii k\eta\Gcal c_{44}u_z$, the potential gives $\ii k\eta e_{15}\varphi$.
+Add: $u_x$ gives $\Gcal(c_{44}\eta^2-c_{11}k^2)$, $u_z$ gives $\ii k\eta\Gcal(c_{13}+c_{44})$,
+$\varphi$ gives $\ii k\eta(e_{31}+e_{15})$, $\theta$ gives $-\ii k\beta_1$.
+The left side of \eqref{eq:mom} is $-\Ncal\rho\omega^2u_x$. Moving everything to one side,
+$M_{11}=\Ncal$ term with the opposite sign plus the collected $u_x$ coefficient with a minus sign.
+\end{worked}
+
+\begin{equation}
+M_{11}=-\Ncal\rho\omega^2+\Gcal\bigl(c_{11}k^2-c_{44}\eta^2\bigr),\quad
+M_{12}=-\ii k\eta\,\Gcal(c_{13}+c_{44}),\quad
+M_{13}=-\ii k\eta\,(e_{31}+e_{15}),\quad
+M_{15}=\ii k\,\beta_1 .
+\label{eq:M1}
+\end{equation}
+
+\subsection*{Row 2: momentum in $z$}
+
+\begin{worked}
+$\partial_x\hat\sigma_{xz}$ brings $\ii k$: $u_x$ gives $\ii k\eta\Gcal c_{44}$, $u_z$ gives
+$-\Gcal c_{44}k^2$, $\varphi$ gives $-\ii e_{15}k^2\to-\epsilon$ sign to be collected below.
+$\partial_z\hat\sigma_{zz}$ brings $\eta$: $u_x$ gives $\ii k\eta\Gcal c_{13}$, $u_z$ gives
+$\Gcal c_{33}\eta^2$, $\varphi$ gives $e_{33}\eta^2$, $\theta$ gives $-\eta\beta_3$.
+Collecting and moving the inertia term across gives the row below.
+\end{worked}
+
+\begin{equation}
+M_{21}=-\ii k\eta\,\Gcal(c_{13}+c_{44}),\quad
+M_{22}=-\Ncal\rho\omega^2+\Gcal\bigl(c_{44}k^2-c_{33}\eta^2\bigr),\quad
+M_{23}=e_{15}k^2-e_{33}\eta^2,\quad
+M_{25}=\eta\,\beta_3 .
+\label{eq:M2}
+\end{equation}
+
+\subsection*{Row 3: Gauss law}
+
+\begin{worked}
+$\partial_x\hat D_x$ gives $\ii k\,e_{15}\eta u_x$, $-\epsilon_{11}k^2\varphi$ and, from the $\ii k$ on
+$\ii k u_z$, $-\,e_{15}k^2u_z$.
+$\partial_z\hat D_z$ gives $\ii k\eta e_{31}u_x$, $\eta^2e_{33}u_z$, $-\eta^2\epsilon_{33}\varphi$ and
+$\eta p_3\theta$.
+Add and then add the mobile charge $q\Delta n$. Nothing multiplies the carrier term, so its entry is $q$
+itself.
+\end{worked}
+
+\begin{equation}
+M_{31}=\ii k\eta(e_{15}+e_{31}),\quad
+M_{32}=e_{33}\eta^2-e_{15}k^2,\quad
+M_{33}=\epsilon_{11}k^2-\epsilon_{33}\eta^2,\quad
+M_{34}=q,\quad
+M_{35}=\eta\,p_3 .
+\label{eq:M3}
+\end{equation}
+
+\subsection*{Row 4: carrier continuity}
+
+\begin{worked}
+$\partial_t\Delta n\to-\ii\omega\hat n$. The diffusion term gives $-D_nL\hat n$. The drift term
+$b_nn_0\nabla\cdot E$ needs $\nabla\cdot E=-\nabla^2\varphi=-L\varphi$, so it contributes
+$+b_nn_0L\varphi$ once moved to the left. The bias term $v_d\partial_x\Delta n$ gives $\ii kv_d\hat n$.
+The thermodiffusion term gives $+\beta_{\rm th}L\theta$ on the right, hence $-\beta_{\rm th}L$ on the
+left. Recombination gives $+\hat n/\tau_R$ on the left.
+\end{worked}
+
+\begin{equation}
+M_{43}=b_nn_0\,L,\quad
+M_{44}=-\ii\omega-D_nL-\ii k\,v_d+\frac{1}{\tau_R},\quad
+M_{45}=-\beta_{\rm th}L .
+\label{eq:M4}
+\end{equation}
+
+\subsection*{Row 5: the heat equation}
+
+\begin{worked}
+The bracket of \eqref{eq:heat} has four pieces. The heat capacity gives $-\ii\omega\rho c_p\theta$.
+The thermoelastic work is $T_0\beta_{ij}\dot\varepsilon_{ij}$, and with only
+$\dot\varepsilon_{xx}=-\ii\omega\,\ii k\,u_x=k\omega u_x$ and
+$\dot\varepsilon_{zz}=-\ii\omega\eta u_z$ this gives $T_0\omega k\beta_1u_x-\ii\omega T_0\beta_3\eta u_z$.
+The electrocaloric term is $T_0p_3\dot E_z=T_0p_3(-\ii\omega)(-\eta\varphi)=\ii\omega T_0p_3\eta\varphi$.
+The Peltier term is $q\Pi_{\rm th}(-\ii\omega)\hat n$ and the recombination term is $+E_g\hat n/\tau_R$.
+Multiply the whole bracket by $f$ and subtract $k_{\rm th}L\theta$.
+\end{worked}
+
+\begin{equation}
+M_{51}=f\,T_0\omega k\,\beta_1,\quad
+M_{52}=-\ii\omega f\,T_0\beta_3\eta,\quad
+M_{53}=\ii\omega f\,T_0p_3\eta,\quad
+M_{54}=f\Bigl(-\ii\omega q\Pi_{\rm th}+\frac{E_g}{\tau_R}\Bigr),\quad
+M_{55}=-\ii\omega f\rho c_p-k_{\rm th}L .
+\label{eq:M5}
+\end{equation}
+
+All other entries are zero. The matrix is
+\begin{equation}
+M(\eta)=
+\begin{pmatrix}
+M_{11}&M_{12}&M_{13}&0&M_{15}\\
+M_{21}&M_{22}&M_{23}&0&M_{25}\\
+M_{31}&M_{32}&M_{33}&M_{34}&M_{35}\\
+0&0&M_{43}&M_{44}&M_{45}\\
+M_{51}&M_{52}&M_{53}&M_{54}&M_{55}
+\end{pmatrix}.
+\label{eq:Mmat}
+\end{equation}
+The pattern of zeros is worth reading: the carrier talks to the mechanical and electric fields only
+through Gauss's law and to the temperature only through the Soret and Peltier terms, and it has no
+inertia. That is why the carrier partial waves are short and diffusive, and why the matrix is not
+symmetric.
+
+\section{Calculation D: the characteristic equation}\label{sec:calcD}
+
+Non-trivial amplitudes need $\det M(\eta)=0$. The determinant is a polynomial in $\eta$.
+
+\begin{worked}
+Count the degree row by row, taking the highest power of $\eta$ in each entry. In row 1 the entry
+$M_{11}$ contains $\Gcal$, which is quadratic in $\eta$, multiplied by $c_{44}\eta^2$, so it is of degree
+four; $M_{12}$ and $M_{13}$ are degree three; $M_{15}$ is degree one. In row 2 the same count gives four,
+four (in $M_{22}$), two and one. Row 3 has degree one, two, two, zero and one. Row 4 has zero, zero, two,
+two and two. Row 5 has zero ($M_{51}$ carries no $\eta$), one, one, zero and two.
+The determinant is a sum of products, one entry from each row and each column, so its degree is the
+largest sum over the permutations. Taking the diagonal gives $4+4+2+2+2=14$. Any permutation that gives
+up $M_{11}$ or $M_{22}$ loses at least two and gains at most two elsewhere, so 14 is the maximum, and the
+coefficient of $\eta^{14}$ does not vanish because it multiplies $l_g^4c_{44}c_{33}$ and the diagonal
+entry $M_{44}M_{55}$.
+\end{worked}
+
+With $l_g\ne0$ the polynomial has degree $14$. With $l_g=0$ the factors $\Gcal$ become unity, $M_{11}$ and
+$M_{22}$ drop to degree two, and the same counting gives $2+2+2+2+2=10$. The nonlocal length alone does not
+raise the order, because $\Ncal$ sits on the inertia, which carries no $\eta$. Without any size effect the
+degree is 10 as well.
+
+Fourteen roots means fourteen partial waves, and the free-face problem needs fourteen conditions, which is
+what Section~\ref{sec:calcF} supplies.
+
+\subsection*{Parity}
+
+The parity of $\det M$ decides whether the plate modes split into a symmetric and an antisymmetric family,
+and the answer here is not the classical one.
+
+\begin{worked}
+Put $\eta\to-\eta$ and ask whether every entry either keeps its sign or flips it in a way that can be
+absorbed by multiplying rows and columns by $-1$. Assign a sign $\tau_j$ to each column and $\sigma_i$ to
+each row and require $M_{ij}(-\eta)=\sigma_i\tau_jM_{ij}(\eta)$.
+Even entries: $M_{11},M_{22},M_{23},M_{25}$ no, $M_{25}$ is odd; $M_{33},M_{34},M_{43},M_{44},M_{51}$
+are even; $M_{12},M_{13},M_{15}$ no, $M_{15}$ is even; $M_{21},M_{31},M_{35}$ are odd.
+Take $\tau_1=+1$, then $M_{12}$ odd forces $\sigma_1\tau_2=-1$ and $M_{15}$ even forces
+$\sigma_1\tau_5=+1$. Set $\sigma_1=+1$, hence $\tau_2=-1$ and $\tau_5=+1$.
+Row 2 then needs $\sigma_2\tau_2=+1$ for the odd $M_{21}$, so $\sigma_2=-1$; check $M_{22}$ even:
+$\sigma_2\tau_2=+1$ holds; $M_{23}$ even: $\sigma_2\tau_3=+1$ forces $\tau_3=-1$; $M_{25}$ odd:
+$\sigma_2\tau_5=-1$ holds.
+Row 3: $M_{31}$ odd gives $\sigma_3\tau_1=-1$, so $\sigma_3=-1$; then $M_{34}=q$ even gives
+$\sigma_3\tau_4=+1$, so $\tau_4=-1$; $M_{35}$ odd gives $\sigma_3\tau_5=-1$, holds; $M_{33}$ even gives
+$\sigma_3\tau_3=+1$, holds.
+Row 5: $M_{51}$ even gives $\sigma_5\tau_1=+1$, so $\sigma_5=+1$; $M_{53}$ odd gives
+$\sigma_5\tau_3=-1$, holds; $M_{54}$ even gives $\sigma_5\tau_4=+1$ but $\tau_4=-1$, so this fails unless
+$M_{54}$ vanishes.
+\end{worked}
+
+The conclusion is short. The polynomial is even, and the two families split, only if the terms that break
+the row-and-column sign matching are absent; the one that breaks it here is the pyroelectric constant
+$p_3$, which puts an odd entry $M_{35}=\eta p_3$ in the Gauss row and an odd entry $M_{53}=\ii\omega
+fT_0p_3\eta$ in the heat row while the same rows carry even entries in the other columns. With $p_3=0$ the
+matching can be completed and $\det M$ is even. With $p_3\ne0$ the polynomial has odd powers, the roots do
+not come in pairs, and the plate modes do not split into symmetric and antisymmetric families. The
+physical reason is that a polar crystal has no mirror symmetry about $z=0$ once the carrier field is
+present: the mirror would have to send $\Delta n$ to $-\Delta n$, and the pyroelectric charge does not
+allow it. Switching the carrier off restores the mirror symmetry and the split.
+
+A practical consequence follows. When the split holds, two smaller matrices may be built and factored;
+when it fails, the determinant must be taken over all fourteen roots at once. A result that shows a split
+where $p_3$ is non-zero should be treated as a coding error, not as a physical finding.
+
+\section{Calculation E: the solution through the thickness}\label{sec:calcE}
+
+Let $\eta_1,\dots,\eta_{14}$ be the roots of the characteristic equation. For each root the amplitude
+vector is a null vector of $M(\eta_m)$.
+
+\begin{worked}
+For a matrix that is singular at $\eta_m$, the adjugate is not zero and every non-zero column of it is a
+null vector. Write $C(\eta)$ for the cofactor matrix, $C_{ij}=(-1)^{i+j}\mathcal{M}_{ji}$ where
+$\mathcal M_{ji}$ is the minor obtained by deleting row $j$ and column $i$. Then
+$\sum_j M_{ij}(\eta_m)C_{jk}(\eta_m)=\delta_{ik}\det M(\eta_m)=0$, so column $k$ of $C$ is annihilated
+by $M(\eta_m)$. Choose one column index $\alpha$ that is not identically zero and set
+$a_{m,j}=C_{\alpha j}(\eta_m)$.
+In practice the cleanest choice uses the minor of the $4\times4$ block obtained by deleting one row and
+one column, evaluated at the root; the resulting vector is defined up to one scalar, which is absorbed into
+the unknown amplitude $A_m$.
+\end{worked}
+
+The general solution is
+\begin{equation}
+\begin{pmatrix}u_x\\u_z\\\varphi\\\Delta n\\\theta\end{pmatrix}
+=\sum_{m=1}^{14}A_m
+\begin{pmatrix}X_m\\Z_m\\\Phi_m\\\nu_m\\\Theta_m\end{pmatrix}
+e^{\eta_m z}\,e^{\ii(kx-\omega t)},
+\label{eq:solution}
+\end{equation}
+with fourteen constants $A_m$ fixed by the fourteen face conditions. When $l_g=0$ the sum has ten terms.
+This partial-wave construction is the standard one for a layer; the reduction to $M(\eta)$ is ours.
+
+\section{Calculation F: the seven face conditions}\label{sec:calcF}
+
+At each face seven conditions hold, so fourteen in all, one per unknown $A_m$. All are homogeneous. For a
+root $\eta_m$ write $\Ncal_m=\Ncal(\eta_m)$ and $\Gcal_m=\Gcal(\eta_m)$.
+
+\emph{The two tractions.} On a free face of a strain-gradient continuum the traction is not just
+$\sigma_{ij}n_j$: the surface-gradient terms contribute, and the standard statement is
+\cite[Sec.~2, Eq.~(14)]{Charal2019}, whose Sec.~2 condition (b) also names the double traction
+$R=n\cdot\mu\cdot n$. The older statement is Mindlin's \cite{Mindlin1964}, which I did not read. In the
+nonlocal part the operator is inverted root by root, because $\Ncal^{-1}$ acts on $e^{\eta z}$ as
+$1/\Ncal(\eta_m)$.
+
+\begin{worked}
+The normal traction on the face $z=+h$ has the physical part $\sigma_{zz}$ and the surface-gradient part,
+which for our two-dimensional setting is the tangential derivative of the couple-like quantity. Writing
+the strain-gradient contribution with the gradient length, the two face rows become
+$\Ncal^{-1}[\hat\sigma_{zz}-l_g^2\ii k\eta\,c_{44}(\eta X+\ii kZ)]$ and
+$\Ncal^{-1}[\hat\sigma_{xz}-l_g^2\ii k\eta(\ii k c_{11}X+\eta c_{13}Z)]$. The two double tractions are
+the quantities the gradient term does work on, proportional to $l_g^2$ and vanishing when $l_g=0$.
+\end{worked}
+
+The seven row functions, with $\eta=\eta_m$ and the amplitudes $(X_m,Z_m,\Phi_m,\nu_m,\Theta_m)$,
+\begin{align}
+b_1&=\frac{1}{\Ncal_m}\Bigl[\hat\sigma_{zz}-l_g^2\ii k\eta\,c_{44}(\eta X_m+\ii kZ_m)\Bigr],
+&b_2&=\frac{1}{\Ncal_m}\Bigl[\hat\sigma_{xz}-l_g^2\ii k\eta\,(\ii k c_{11}X_m+\eta c_{13}Z_m)\Bigr],\\
+b_3&=\frac{l_g^2}{\Ncal_m}\,\eta\,c_{44}(\eta X_m+\ii kZ_m),
+&b_4&=\frac{l_g^2}{\Ncal_m}\,\eta\,(\ii k c_{13}X_m+\eta c_{33}Z_m),\\
+b_5&=\ii k e_{31}X_m+\eta e_{33}Z_m-\eta\epsilon_{33}\Phi_m+p_3\Theta_m,
+&b_6&=-D_n\eta\,\nu_m+b_nn_0\eta\,\Phi_m-\beta_{\rm th}\eta\,\Theta_m,\\
+b_7&=\eta\,\Theta_m . &&
+\end{align}
+The first two are the normal and shear tractions with the surface-gradient term and the nonlocal operator
+inverted; the third and fourth are the double tractions; the fifth is the open-circuit condition; the
+sixth is zero carrier flux; the seventh is an adiabatic face.
+
+\begin{worked}
+Row $b_5$ is $\hat D_z$ at the face with $\hat u_x,\hat u_z,\hat\varphi,\hat\theta$ replaced by the
+amplitudes; setting it to zero is the open-circuit condition, and the alternative, a shorted face,
+replaces it by $\Phi_m=0$.
+Row $b_6$ is the particle flux $\Gamma_z=-D_n\partial_z\Delta n-b_nn_0E_z-\beta_{\rm th}\partial_z\theta$
+divided through by nothing: with $E_z=-\eta\Phi$ and $\partial_z\to\eta$ this is
+$-D_n\eta\nu+b_nn_0\eta\Phi-\beta_{\rm th}\eta\Theta$. That is the drift--diffusion current of
+\cite[Eqs.~(3), (7)]{YangZhou2005} with the Soret term added, set to zero.
+Row $b_7$ is $\partial_z\theta=0$. Because the carrier flux vanishes as well, the Peltier part of the heat
+current vanishes at the face and no cross term remains. For an isothermal face use $\Theta_m$ instead.
+\end{worked}
+
+\section{Calculation G: the dispersion matrix}\label{sec:calcG}
+
+Assemble one row per condition and face and one column per root,
+\begin{equation}
+\mathbf B(k,\omega)=
+\begin{pmatrix}
+b_r(\eta_m)\,e^{\eta_mh}\\
+b_r(\eta_m)\,e^{-\eta_mh}
+\end{pmatrix}_{r=1\dots7,\;m=1\dots14},
+\qquad \mathbf B\,\mathbf A=\mathbf 0,
+\qquad \mathbf A=(A_1,\dots,A_{14})^{T},
+\label{eq:Bmat}
+\end{equation}
+the upper seven rows at $z=+h$ and the lower seven at $z=-h$. The dispersion relation is
+$\det\mathbf B(k,\omega)=0$, solved for complex $k$ at real $\omega$; the attenuation per unit length is
+$k_i$. When $l_g=0$ use the five rows $b_1,b_2,b_5,b_6,b_7$ with ten roots and a $10\times10$ matrix.
+
+One remark on conditioning, which is not an algorithm but a fact about the matrix: columns belonging to
+roots with large $|\operatorname{Re}\eta_m|$, and the thermal and carrier boundary layers are of that kind,
+grow like $e^{|\operatorname{Re}\eta_m|h}$ in the upper block and shrink in the lower. Scaling column $m$
+by $e^{-|\operatorname{Re}\eta_m|h}$ multiplies the determinant by a non-zero number and leaves its zeros
+where they are.
+
+\section{Calculation H: two hand limits}\label{sec:calcH}
+
+\subsection*{The elastic limit and the Rayleigh--Lamb relation}
+
+Switch off every coupling: $e=0$, $p_3=0$, $\beta=0$, $k_{\rm th}=0$ with the heat row dropped, and the
+carrier terms dropped. That is an elastic plate.
+
+\begin{worked}
+What remains is the two momentum equations with $M_{11}=-\rho\omega^2+c_{11}k^2-c_{44}\eta^2$,
+$M_{22}=-\rho\omega^2+c_{44}k^2-c_{33}\eta^2$ and $M_{12}=M_{21}=-\ii k\eta(c_{13}+c_{44})$, the
+size-effect factors being unity when both lengths vanish. Setting the determinant of that $2\times2$
+block to zero and isolating the two roots gives $\eta^2=k^2-\omega^2/c_L^2$ and
+$\eta^2=k^2-\omega^2/c_T^2$ with $\rho c_L^2=c_{11}$, $\rho c_T^2=c_{44}$ in this two-dimensional
+reduction, which is the usual longitudinal and transverse pair.
+The face rows $b_1,b_2$ reduce to $\hat\sigma_{zz}=0$ and $\hat\sigma_{xz}=0$, and the partial waves come
+in pairs $\pm\eta$. The four conditions then collapse to the two classical Rayleigh--Lamb equations, the
+symmetric one with the sine of the longitudinal exponent times the cosine of the transverse one, and the
+antisymmetric one the other way round. I write the result, not the reduction of each term; the scholar
+should do that reduction and check that the two equations are the classical ones.
+\end{worked}
+
+The result to check is that with all couplings off and $l_g=l_{\rm nl}=0$ the dispersion of the plate is
+the classical Rayleigh--Lamb one, both families, and that the lowest antisymmetric branch tends to the
+Rayleigh surface-wave speed of the half space as $f(2h)$ grows.
+
+\subsection*{The thin-plate open-circuit speed}
+
+With the piezoelectric coupling on and the plate thin, the lowest symmetric mode is a plate extension.
+
+\begin{worked}
+Take $k\to0$ and keep only the in-plane motion: the $x$ momentum equation reduces to $\rho\omega^2=c_{11}
+k^2$ with the modulus stiffened by the piezoelectric terms. Eliminating the potential through the
+open-circuit condition $\hat D_z=0$ replaces $c_{11}$ by $\bar c_{11}=c_{11}+e_{31}^2/\epsilon_{33}$, and
+the speed becomes $v_{\rm open}=\sqrt{\bar c_{11}/\rho}$. The shorted face instead removes the added term
+and leaves $v_{\rm short}=\sqrt{c_{11}/\rho}$. The difference between the two is the electromechanical
+coupling factor squared. The algebra of the elimination is the scholar's to do; the result is the standard
+open-circuit stiffened speed.
+\end{worked}
+
+\subsection*{The bulk thermoelastic damping and the Hutson--White condition}
+
+Two limits of the thermal side are worth having by hand, because both are used later as tests.
+
+\begin{worked}
+For a longitudinal plane wave in an unbounded medium, the carrier terms off and $\tau_q=0$, the heat
+equation gives $\theta$ in terms of the dilatation, $\rho c_p(-\ii\omega)\theta=T_0\beta\,\ii\omega\,
+\varepsilon$ after dividing out the conductivity term, and substitution into the momentum equation turns
+the isothermal modulus into a complex one whose imaginary part is $\Delta_E\omega\tau/(1+\omega^2\tau^2)$
+with $\tau=\rho c_p/k_{\rm th}k^2$ and $\Delta_E=T_0\beta^2/(\rho c_p c_{11})$. The ratio $k_i/k_r$ is
+half that imaginary part. This is the standard thermoelastic damping formula and the test is that our
+full matrix reproduces it in this limit.
+For the carrier side, the free charge relaxes with the dielectric relaxation time
+$\epsilon_{11}/(q b_n n_0)$, and the acoustic attenuation peaks when the angular frequency matches that
+rate, $\epsilon_{11}\omega/(qb_n)=n_0$. That is the Hutson--White condition, and it locates the carrier
+density at which the attenuation is a maximum for a given frequency. Both are limits of the matrix, not
+extra physics.
+\end{worked}
+
+\section{Self-test list}\label{sec:selftest}
+
+None of these needs a number from me.
+
+\begin{enumerate}
+\item Set every coupling to zero and both size lengths to zero: the dispersion must be the classical
+Rayleigh--Lamb one for an isotropic plate, both families, and the lowest antisymmetric branch must tend to
+the Rayleigh speed at large $f(2h)$.
+\item Keep only the piezoelectric coupling: the thin-plate limit must give the open-circuit stiffened bulk
+speed of \eqref{eq:heat}, and the shorted limit the unstiffened one.
+\item Keep the heat equation in Fourier form, $\tau_q=0$, and switch the carrier off: a longitudinal bulk
+wave must show thermoelastic damping with the standard dependence on $\omega\tau$.
+\item Keep only the carrier terms with the piezoelectric shear coupling: the bulk attenuation must peak at
+the carrier density predicted by the relaxation of the free charge.
+\item Let $l_g$ and $l_{\rm nl}$ tend to zero separately: the roots must approach the classical ones
+continuously, the gradient length must stiffen, and the nonlocal length must soften.
+\item Count the roots of $\det M$ for one case with $l_g\ne0$ and one with $l_g=0$ and compare with the
+number of rows you use in $\mathbf B$. A mismatch is a counting error, not a physical finding.
+\item Switch $p_3$ off and check that the roots come in pairs. Switch it on and check that they do not.
+\item Check the dimensions of every entry of row 5 against row 1. A factor of $\omega$ is easy to lose
+in the Moore--Gibson--Thompson factor.
+\end{enumerate}
+
+\section{Work plan}\label{sec:plan}
+
+Weeks one to two: read the sources marked in Section~\ref{sec:source}, in particular the two equations of
+Lim et al.\ and the drift--diffusion pair of Yang and Zhou, and write the entry-by-entry matrix on paper
+from the field equations alone. Weeks three to four: the roots, the amplitude ratios, the parity check for
+both settings of $p_3$, and the counting of rows against roots. Weeks five to six: the limits of
+Calculation H, in the order given, and the comparison of the elastic limit with the classical plate.
+Weeks seven to eight: the dispersion curves against $f(2h)$, the attenuation of the first three branches,
+and the thickness map that shows where the relaxation time is resolvable. Weeks nine to ten: the size
+effect, one figure for the two lengths. Weeks eleven to twelve: writing, figures, and the checking of every
+citation against the page it came from.
+
+\bibliographystyle{unsrt}
+\bibliography{Lamb_Sumit}
+
+\end{document}
