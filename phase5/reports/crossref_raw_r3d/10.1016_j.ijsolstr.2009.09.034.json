@@ -1,0 +1,78 @@
+{
+  "query_doi": "10.1016/j.ijsolstr.2009.09.034",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.ijsolstr.2009.09.034",
+    "type": "journal-article",
+    "title": [
+      "Fractional order theory of thermoelasticity"
+    ],
+    "author": [
+      {
+        "given": "Hany H.",
+        "family": "Sherief",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "A.M.A.",
+        "family": "El-Sayed",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "A.M.",
+        "family": "Abd El-Latief",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2010,
+          1
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2010,
+          1
+        ]
+      ]
+    },
+    "container-title": [
+      "International Journal of Solids and Structures"
+    ],
+    "short-container-title": [
+      "International Journal of Solids and Structures"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "47",
+    "issue": "2",
+    "page": "269-275",
+    "ISSN": [
+      "0020-7683"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "map_id": "R3F-IESAN-1986",
+  "mode": "BIBLIOGRAPHIC-SEARCH",
+  "requested_doi": "",
+  "query": "Iesan theory thermoelastic materials voids Acta Mechanica 1986 60 1 2 67 89",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/bf01302942",
+    "type": "journal-article",
+    "title": [
+      "A theory of thermoelastic materials with voids"
+    ],
+    "author": [
+      {
+        "given": "D.",
+        "family": "Ieşan",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1986,
+          6
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1986,
+          6
+        ]
+      ]
+    },
+    "container-title": [
+      "Acta Mechanica"
+    ],
+    "short-container-title": [
+      "Acta Mechanica"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "60",
+    "issue": "1-2",
+    "page": "67-89",
+    "ISSN": [
+      "0001-5970",
+      "1619-6937"
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "query_doi": "10.1080/15397734.2021.1901735",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/15397734.2021.1901735",
+    "type": "journal-article",
+    "title": [
+      "Effect of moving heat source on a magneto-thermoelastic rod in the context of\n            <i>Eringen’s</i>\n            nonlocal theory under three-phase lag with a memory dependent derivative"
+    ],
+    "author": [
+      {
+        "given": "Fatima S.",
+        "family": "Bayones",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics and Statistics, College of Science, Taif University, Taif, Saudi Arabia"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8496-1287",
+        "authenticated-orcid": false,
+        "given": "Sudip",
+        "family": "Mondal",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Basirhat College, Parganas, India"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Sayed M.",
+        "family": "Abo-Dahab",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Faculty of Science, SouthValley University, Qena, Egypt"
+          },
+          {
+            "name": "Department of Computer Science, Faculty of Computers and Information, Luxor University, Egypt"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Araby Atef",
+        "family": "Kilany",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Faculty of Science, Sohag University, Sohag, Egypt"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2023,
+          5,
+          4
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2021,
+          4,
+          21
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          4,
+          21
+        ]
+      ]
+    },
+    "container-title": [
+      "Mechanics Based Design of Structures and Machines"
+    ],
+    "short-container-title": [
+      "Mechanics Based Design of Structures and Machines"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "51",
+    "issue": "5",
+    "page": "2501-2516",
+    "ISSN": [
+      "1539-7734",
+      "1539-7742"
+    ]
+  }
+}

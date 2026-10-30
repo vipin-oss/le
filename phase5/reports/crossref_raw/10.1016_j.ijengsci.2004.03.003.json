@@ -1,0 +1,78 @@
+{
+  "query_doi": "10.1016/j.ijengsci.2004.03.003",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.ijengsci.2004.03.003",
+    "type": "journal-article",
+    "title": [
+      "Eigen value approach to study the effect of rotation and relaxation time in two dimensional problems of generalized thermoelasticity"
+    ],
+    "author": [
+      {
+        "given": "Arup",
+        "family": "Baksi",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Rasajit Kumar",
+        "family": "Bera",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "L.",
+        "family": "Debnath",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2004,
+          9
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2004,
+          9
+        ]
+      ]
+    },
+    "container-title": [
+      "International Journal of Engineering Science"
+    ],
+    "short-container-title": [
+      "International Journal of Engineering Science"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "42",
+    "issue": "15-16",
+    "page": "1573-1585",
+    "ISSN": [
+      "0020-7225"
+    ]
+  }
+}

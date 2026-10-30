@@ -1,0 +1,73 @@
+{
+  "query_doi": "10.1080/01495739.2025.2461508",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/01495739.2025.2461508",
+    "type": "journal-article",
+    "title": [
+      "Effect of scale length parameter on plane wave propagation under size-dependent thermoelasticity with one relaxation time"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-3870-0630",
+        "authenticated-orcid": false,
+        "given": "Rashmi",
+        "family": "Prasad",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Amrita School of Engineering, Amrita Vishwa Vidyapeetham",
+            "place": [
+              "Amaravati, India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2025,
+          2
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2025,
+          2,
+          21
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          2
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "48",
+    "issue": "2",
+    "page": "132-148",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}

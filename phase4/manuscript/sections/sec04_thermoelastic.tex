@@ -1,0 +1,329 @@
+%======================================================================
+% Section 4: Classical and Generalized Thermoelastic Theories
+%======================================================================
+\section{Classical and Generalized Thermoelastic Theories}
+\label{sec:thermoelastic}
+
+This section presents the historical development, governing equations, wave propagation characteristics, and dissipation structure of classical and generalized thermoelastic theories. Each theory is introduced with its physical motivation, mathematical formulation, and domain of applicability. Representative equations are selected to illustrate each theory family; derivations from first principles are given where they illuminate the theory's structure. Citations to primary sources are provided throughout to distinguish established results from open questions.
+
+\subsection{Historical evolution}
+\label{sec:4.1}
+
+The development of generalized thermoelasticity spans nearly two centuries, from Fourier's heat equation to modern memory-dependent and nonlocal formulations. Table \ref{tab:T1-historical} summarizes the principal milestones.
+
+\input{../tables/source/T1_historical_development}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{fig01-theory-evolution.pdf}
+\caption{Historical evolution of thermoelasticity theories. Figure \ref{fig:theory_evolution}.}
+\label{fig:T1_evolution}
+\end{figure}
+
+The central motivation for every generalization has been the same: classical Fourier heat conduction predicts infinite thermal propagation speed, which is physically unrealistic for thermal shocks, laser heating, and high-frequency phenomena. Each generalized theory modifies the heat conduction law or the constitutive structure to restore finite propagation speed while preserving thermodynamic consistency.
+
+The experimental and theoretical case for second sound was assembled by Joseph and Preziosi, whose review of heat waves (1989 \cite{Joseph1989}) set out the balance of evidence in favour of a finite-speed thermal disturbance in solids, and whose addendum (1990 \cite{Joseph1990}) addressed the objections raised in the intervening discussion. That debate is the origin of the modern class of thermal-wave theories reviewed in Section 6.
+
+\subsection{Classical coupled thermoelasticity (Fourier heat conduction)}
+\label{sec:4.2}
+
+The classical coupled thermoelasticity theory, developed by Biot (1956) \cite{Biot1956}, combines the equations of linear elasticity with Fourier's law of heat conduction:
+
+\begin{equation}
+\rho\ddot{u}_i = (\lambda + \mu)u_{j,ji} + \mu u_{i,jj} - \beta T_{,i},
+\label{eq:4.1}
+\end{equation}
+
+\begin{equation}
+\rho c_v \dot{T} = k\nabla^2 T - \beta T_0 \dot{u}_{i,i},
+\label{eq:4.2}
+\end{equation}
+
+where $\rho$ is density, $\lambda$ and $\mu$ are Lam\'e constants, $\beta$ is the thermal stress coefficient, $c_v$ is specific heat at constant strain, $k$ is thermal conductivity, and $T_0$ is the reference temperature.
+
+\subsubsection{Wave speeds}
+
+The classical theory predicts two elastic wave types:
+
+\begin{equation}
+c_p = \sqrt{\frac{\lambda + 2\mu}{\rho}},
+\qquad
+c_s = \sqrt{\frac{\mu}{\rho}}.
+\label{eq:4.3}
+\end{equation}
+
+The thermal field satisfies a parabolic diffusion equation, predicting infinite thermal propagation speed --- the classical paradox that motivated all subsequent generalized theories.
+
+\subsubsection{Physical interpretation}
+
+Equations \eqref{eq:4.1}--\eqref{eq:4.2} describe one-way coupling from mechanics to thermal (the $-\beta T_0\dot{u}_{i,i}$ term in the heat equation) and one-way coupling from thermal to mechanics (the $-\beta T_{,i}$ term in the equation of motion). This coupling is the physical origin of thermoelastic wave propagation: mechanical deformation produces temperature changes, and temperature changes produce thermal stresses.
+
+\subsection{Lord--Shulman (LS) theory (1967)}
+\label{sec:4.3}
+
+Lord and Shulman (1967) introduced a single thermal relaxation time $\tau_0$ into Fourier's law:
+
+\begin{equation}
+q_i + \tau_0 \dot{q}_i = -k T_{,i},
+\label{eq:4.4}
+\end{equation}
+
+where $\tau_0 > 0$ is the relaxation time and $q_i$ is the heat flux vector.
+
+\subsubsection{Modified heat equation}
+
+Combining \eqref{eq:4.4} with the energy balance yields the LS heat equation:
+
+\begin{equation}
+\rho c_v \left(\dot{T} + \tau_0 \ddot{T}\right)
+= k\nabla^2 T (1 + \tau_0 \partial_t)
+- \beta T_0 (\dot{u}_{i,i} + \tau_0 \ddot{u}_{i,i}).
+\label{eq:4.5}
+\end{equation}
+
+\subsubsection{Finite thermal wave speed}
+
+The thermal wave speed in LS theory is:
+
+\begin{equation}
+c_T = \sqrt{\frac{k}{\rho c_v \tau_0}}.
+\label{eq:4.6}
+\end{equation}
+
+This is finite for $\tau_0 > 0$, resolving the infinite speed paradox of classical Fourier theory. As $\tau_0 \to 0$, LS theory reduces to classical coupled thermoelasticity.
+
+\subsubsection{Well-posedness}
+
+The LS theory is well-posed when $\tau_0 > 0$. The relaxation time introduces a characteristic time scale below which thermal wave behavior dominates and above which diffusive behavior is recovered.
+
+\subsection{Green--Lindsay (GL) theory (1972)}
+\label{sec:4.4}
+
+Green and Lindsay (1972) introduced two relaxation times and two temperatures: the conductive temperature $T$ and the thermodynamic temperature $T^*$.
+
+\subsubsection{Governing equations}
+
+\begin{equation}
+\rho c_v \dot{T}^* = k\nabla^2 T - \beta T_0 \dot{u}_{i,i},
+\label{eq:4.9}
+\end{equation}
+
+\begin{equation}
+\sigma_{ij} = \lambda\varepsilon_{kk}\delta_{ij} + 2\mu\varepsilon_{ij} - \beta T^*\delta_{ij}.
+\label{eq:4.10}
+\end{equation}
+
+\subsubsection{Dissipationless wave propagation}
+
+For centrally symmetric bodies, GL theory predicts finite-speed wave propagation without energy dissipation in the classical Fourier sense. The entropy production vanishes for appropriate parameter ranges, making GL theory suitable for modeling conservative thermoelastic waveguides and resonators.
+
+\subsection{Green--Naghdi type II theory (1991): Dissipationless}
+\label{sec:4.5}
+
+Green and Naghdi (1991) introduced the thermal displacement $\alpha$ with $\dot{\alpha} = T$.
+
+\subsubsection{Thermal displacement gradient formulation}
+
+The heat conduction equation for type II:
+
+\begin{equation}
+k\nabla^2\alpha = \rho c_e \ddot{\alpha} + \beta T_0 \ddot{u}_{i,i}.
+\label{eq:4.11}
+\end{equation}
+
+The entropy flux is determined by the free energy potential:
+
+\begin{equation}
+p_i = k_{ij}\alpha_{,j},
+\label{eq:4.12}
+\end{equation}
+
+where $p_i$ is the entropy flux vector.
+
+\subsubsection{Energy conservation}
+
+Type II theory has no dissipation ($\mathcal{D} = 0$). The energy balance takes the form:
+
+\begin{equation}
+\frac{\partial\mathcal{E}}{\partial t} + \partial_i J_i = \mathcal{P}.
+\label{eq:4.13}
+\end{equation}
+
+Thermal waves in type II theory propagate without attenuation, making this theory suitable for modeling conservative thermoelastic systems.
+
+\subsection{Green--Naghdi type III theory (1993): Dissipative}
+\label{sec:4.6}
+
+Type III is the most general GN model, combining type I (Fourier-like dissipative) and type II (dissipationless) characteristics.
+
+\subsubsection{Governing equations}
+
+\begin{equation}
+K T_{,ii} + k^*\dot{T}_{,ii} - \rho C_e\ddot{T} = \vartheta\theta_0\ddot{u}_{i,i}.
+\label{eq:4.14}
+\end{equation}
+
+Type III reduces to type II when $K = 0$ and to classical coupled thermoelasticity in an appropriate parameter limit.
+
+\subsection{Dual-phase-lag (DPL) theory (Tzou, 1995)}
+\label{sec:4.7}
+
+Tzou (1995) introduced two phase lags into Fourier's law:
+
+\begin{equation}
+q_i(t + \tau_q) = -k T_{,i}(t + \tau_T),
+\label{eq:4.15}
+\end{equation}
+
+where $\tau_q$ is the heat flux phase lag and $\tau_T$ is the temperature gradient phase lag.
+
+\subsubsection{Taylor expansion}
+
+First-order Taylor expansion about $t$:
+
+\begin{equation}
+q_i + \tau_q\dot{q}_i = -k(T_{,i} + \tau_T\dot{T}_{,i}).
+\label{eq:4.16}
+\end{equation}
+
+For the displayed first-order DPL law, the LS law is recovered when $\tau_T \to 0$ while $\tau_q=\tau_0$ is retained; taking $\tau_q \to 0$ is not the DPL-to-LS reduction. The Fourier law follows when both DPL lags vanish. The condition $\tau_q \geq \tau_T$ ensures thermodynamic admissibility (non-negative entropy production).
+
+\subsection{Triple-phase-lag (TPL) theory (Tzou, 1997)}
+\label{sec:4.8}
+
+TPL theory extends DPL by introducing a third phase lag associated with the thermal displacement gradient:
+
+\begin{equation}
+q_i(t + \tau_q) = -k\left[T_{,i}(t + \tau_T) + \frac{\tau_\nu}{2}\partial_t^2 T_{,i}(t + \tau_\nu)\right].
+\label{eq:4.17}
+\end{equation}
+
+TPL theory provides additional modeling flexibility for ultra-fast thermal processes such as laser heating of thin films.
+
+\subsection{Moore--Gibson--Thompson (MGT) theory}
+\label{sec:4.9}
+
+The MGT equation extends the LS model with a second time derivative of the heat flux:
+
+\begin{equation}
+\tau\ddot{q}_i + \dot{q}_i = -\frac{k}{\rho c}\nabla(\dot{T} + \tau\ddot{T}).
+\label{eq:4.18}
+\end{equation}
+
+This third-order equation describes thermal waves with inertia, relevant for high-intensity ultrasound and high-frequency thermal phenomena.
+
+\subsection{Memory-dependent derivative (MDD) models (Wang \& Li, 2011)}
+\label{sec:4.10}
+
+MDD models replace the classical time derivative with an integral-form memory operator:
+
+\begin{equation}
+D_\omega f(t) = \frac{1}{\omega}\int_{t-\omega}^{t} \kappa(t-\xi) f'(\xi)\,d\xi,
+\label{eq:4.19}
+\end{equation}
+
+where $\omega > 0$ is the time delay (memory horizon) and $\kappa(t-\xi)$ is the kernel function satisfying $0 \leq \kappa(t-\xi) \leq 1$ with $\kappa(s) \to 0$ as $s \to \infty$ (fading memory).
+
+As $\omega \to 0$, the MDD approaches the classical first derivative: $D_\omega f(t) \to f'(t)$. Different kernel choices (linear, quadratic, exponential) produce different memory weighting schemes, allowing the model to be tuned to specific materials such as polymers, biological tissues, and composites.
+
+\subsection{Fractional thermoelasticity}
+\label{sec:4.11}
+
+Fractional thermoelasticity generalizes the heat equation using fractional derivatives:
+
+\begin{equation}
+{}^C D_t^\alpha T = a\nabla^2 T, \qquad 0 < \alpha \leq 2,
+\label{eq:4.20}
+\end{equation}
+
+where ${}^C D_t^\alpha$ is the Caputo fractional derivative of order $\alpha$ and $a$ is the thermal diffusivity. For $1 < \alpha \leq 2$, this equation describes wave-like heat propagation with memory, bridging the gap between diffusive ($\alpha = 1$) and wave-like ($\alpha = 2$) behavior.
+
+\subsection{Comparative summary}
+\label{sec:4.12}
+
+Table \ref{tab:T2-generalized} summarizes the governing modifications, wave speeds, dissipation structure, and domains of validity across all theory families.
+
+\input{../tables/source/T2_generalized_thermoelastic}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig07-theory-map.pdf}
+\caption{Map of the theory families discussed in this section and the limiting procedures that connect them. Every family in the figure reduces formally to classical coupled thermoelasticity when its generalising parameters vanish, but the ordering of the parameters matters: the relaxation-time families differ in whether the extra time scale is attached to the heat flux or to the temperature, the phase-lag families differ in whether the lag is applied to the flux or to the gradient, and the memory-dependent family replaces the single relaxation time by an entire kernel. The map is a statement about constitutive structure, not about relative accuracy.}
+\label{fig:theory_map}
+\end{figure}
+
+\subsection{What the internal variables physically represent}
+\label{sec:4.13}
+
+The differences between the families surveyed above are frequently described in terms of their equations, but the equations are easier to compare once the state variables they introduce are identified, because the state variables carry the physics.
+
+In the \emph{relaxation-time} construction the added variable is the heat flux itself, and the added equation is a kinetic equation for it: the flux approaches its Fourier value with a time constant $\tau_0$. The relaxation time is therefore a property of the carriers --- electrons and phonons --- and is bounded below by the mean free time between collisions, which is what makes it estimable in principle and which also fixes the scale below which the continuum description of the carriers themselves ceases to be valid.
+
+In the \emph{two-temperature} construction the added variable is a second temperature, distinguished from the measured temperature by the fact that it relaxes on its own time scale $\tau_T$. The physical picture is that of a body whose internal thermal field adjusts more slowly than the temperature that a thermometer at its surface registers --- a familiar situation for a poorly conducting material whose surface is heated suddenly, where the surface reads hot while the interior is still cold. The second temperature is not an artefact; it is the thermal field that the constitutive law actually governs, and the measured temperature is a fast variable that tracks it.
+
+In the \emph{thermal displacement} construction the added variable is a displacement whose time derivative is the temperature. The theory is then built as the analogue of elastodynamics, with the thermal field playing the role of the displacement and the entropy playing the role of the momentum; the price is that the constitutive relation must be reformulated in terms of an energy potential, and the benefit is that the resulting equations are conservative and admit a Hamiltonian structure, so that a conserved energy exists and the wave structure is that of an undamped system.
+
+In the \emph{phase-lag} construction nothing is added to the state; what changes is the meaning of the time at which the constitutive relation is evaluated. The heat flux at time $t$ is tied to the temperature gradient at time $t + \tau_T$ and to the flux itself at time $t + \tau_q$, so that the lag separates the time at which the carriers respond from the time at which the driving gradient is applied. The phase-lag construction is consequently the one in which the thermal law and the mechanical law are most obviously decoupled in time, and it is the one that produces the richest thermal mode structure: a dual-phase-lag model supports a finite number of distinct thermal modes, each with its own speed and attenuation, and the number of modes grows with the number of lags.
+
+In the \emph{memory-dependent} and \emph{fractional} constructions the added object is a function rather than a variable: a kernel or an operator. The physical content is the shape of the memory, and the theoretical content is that the memory is now continuous rather than discrete.
+
+\subsection{Thermodynamic admissibility as a selection principle}
+\label{sec:4.14}
+
+Because every family above is a modification of the same free energy, the Clausius--Duhem inequality of Section~\ref{sec:foundations} applies to all of them, and it does the work of selection. The inequality is not a formality: it is what excludes half of the parameter space of the phase-lag models and what excludes the Green--Lindsay theory for centrally symmetric bodies.
+
+The mechanism is the same in each case. Write the free energy as $\psi(\varepsilon_{ij}, T, \alpha)$ and the entropy production as $\dot{\mathcal{D}} = \bm{\sigma}\cdot\dot{\bm{\varepsilon}} + T_0\,\bm{q}\cdot\nabla(1/T)$, where the second term is the part that depends on the thermal law alone. For the relaxation-time law this term is non-negative for every $\tau_0 > 0$; for the two-temperature law it is non-negative only if the associated dissipation matrix is positive semi-definite, which fails for certain symmetry classes; for the phase-lag law it is non-negative only if the ordering condition on the two lags is satisfied; for the memory-dependent law it is non-negative only if the kernel is positive and non-increasing; and for the fractional law it is non-negative for the admissible range of the order.
+
+This has a practical consequence that is easy to overlook. A generalized thermoelastic model is specified by a constitutive law and a parameter set, and the parameter set is usually quoted in the literature without the admissibility condition that restricts it. The relaxation time must be positive; the phase lags must satisfy an ordering; the kernel must be admissible; the fractional order must lie in its range. A computation that violates these conditions produces a solution that may be perfectly well defined and entirely unphysical, and the energy identity of Section~\ref{sec:energy} will not close. The admissibility conditions are therefore part of the specification of the model, not a remark attached to it, and the tables of this review record them where they are known.
+
+\subsection{The wave structure that each family produces}
+\label{sec:4.15}
+
+The practical consequence of the constitutive choices is the modal structure, and it is worth stating it explicitly because it is what a computation actually has to resolve.
+
+The relaxation-time family produces one additional mode relative to the classical theory: a thermal mode with speed $c_T = \sqrt{k/(\rho c_v\tau_0)}$ and attenuation set by the imaginary part of the thermal wave number. This mode is propagating at low frequency and becomes evanescent at high frequency, with the crossover at the frequency at which the thermal wavelength equals the thermal penetration depth. The two-temperature family produces the same number of modes but with a different structure, since the second relaxation time introduces a second time scale and therefore a second characteristic frequency. The thermal-displacement family produces one thermal mode in the conservative case and two in the dissipative case. The phase-lag families produce a number of thermal modes that increases with the number of lags, and the additional modes are not all physical: some of the roots of the secular polynomial correspond to spurious solutions that must be identified and discarded, and the selection of the physical roots is a genuine part of the analysis. The memory-dependent and fractional families produce one thermal mode, but a dispersive one, with a speed that varies with the wave number and, in the memory-dependent case, a dependence on the kernel as well.
+
+This progression is the reason the review devotes Section~\ref{sec:methods} to the root-selection problem, and the reason the interface problems of Section~\ref{sec:interfaces} are formulated in terms of the full modal set rather than in terms of a propagating wave alone. In a relaxed or generalized medium the transmitted field at an interface is in general not a single transmitted wave but a superposition of a propagating mode and an evanescent mode, and an interface condition written for a single transmitted wave is simply wrong.
+
+\subsection{Notation summary for Section 4}
+
+Table \ref{tab:notation-sec4} summarizes the notation introduced in this section.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 4.}
+\label{tab:notation-sec4}
+\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$\tau_0$ & LS relaxation time & s & \eqref{eq:4.4} \\
+$\tau_q, \tau_T, \tau_\nu$ & Phase-lag times & s & \eqref{eq:4.15}--\eqref{eq:4.17} \\
+$c_T$ & Thermal wave speed & m/s & \eqref{eq:4.6} \\
+$\beta$ & Thermal stress coefficient & Pa/K & \eqref{eq:4.1} \\
+$c_v$ & Specific heat at constant strain & J/(kg$\cdot$K) & \eqref{eq:4.2} \\
+$k$ & Thermal conductivity & W/(m$\cdot$K) & \eqref{eq:4.2} \\
+$T^*$ & Thermodynamic temperature (GL) & K & \eqref{eq:4.9} \\
+$\alpha$ & Thermal displacement (GN-II) & K$\cdot$s & \eqref{eq:4.11} \\
+$p_i$ & Entropy flux (GN-II) & W/(m$^2$$\cdot$K) & \eqref{eq:4.12} \\
+$D_\omega$ & MDD operator & 1/s & \eqref{eq:4.19} \\
+$\omega$ & MDD time delay & s & \eqref{eq:4.19} \\
+$\kappa(t-\xi)$ & MDD kernel & dimensionless & \eqref{eq:4.19} \\
+${}^C D_t^\alpha$ & Caputo fractional derivative & $t^{-\alpha}$ & \eqref{eq:4.20} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open questions for Section 4}
+
+\begin{enumerate}[label=\textbf{OQ4.\arabic*}]
+\item What is the complete time-domain energy flux for LS theory, including the contribution from the flux-relaxation term? \\ \label{oq:4.1}
+\item What is the explicit constitutive relation for $q_i$ in GL theory in terms of $T$ and $T^*$? \\ \label{oq:4.2}
+\item What is the relationship between energy flux and entropy flux in GN-II theory? \\ \label{oq:4.3}
+\item What is the mixed energy flux for GN-III theory? \\ \label{oq:4.4}
+\item How do different MDD kernel choices affect the energy flux and wave propagation? \\ \label{oq:4.5}
+\item Can rigorous limit theorems with convergence proofs be established between theory pairs? \\ \label{oq:4.6}
+\end{enumerate}
+
+% LocalWords: 

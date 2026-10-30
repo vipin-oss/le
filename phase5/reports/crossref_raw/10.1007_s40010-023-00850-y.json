@@ -1,0 +1,115 @@
+{
+  "query_doi": "10.1007/s40010-023-00850-y",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s40010-023-00850-y",
+    "type": "journal-article",
+    "title": [
+      "Analysis of Waves at Boundary Surfaces at Distinct Media with Nonlocal Dual-Phase-Lag"
+    ],
+    "author": [
+      {
+        "given": "Rajesh",
+        "family": "Kumar",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vijayata",
+        "family": "Pathania",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajneesh",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9947-000X",
+        "authenticated-orcid": false,
+        "given": "M. S.",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2023,
+          12
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2023,
+          9,
+          27
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          9,
+          27
+        ]
+      ]
+    },
+    "container-title": [
+      "Proceedings of the National Academy of Sciences, India Section A: Physical Sciences"
+    ],
+    "short-container-title": [
+      "Proc. Natl. Acad. Sci., India, Sect. A Phys. Sci."
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "93",
+    "issue": "4",
+    "page": "573-585",
+    "ISSN": [
+      "0369-8203",
+      "2250-1762"
+    ]
+  }
+}

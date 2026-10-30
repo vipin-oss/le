@@ -1,0 +1,66 @@
+{
+  "query_doi": "10.1016/j.apm.2015.02.045",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.apm.2015.02.045",
+    "type": "journal-article",
+    "title": [
+      "Three-dimensional half-space problem within the framework of two-temperature thermo-viscoelasticity with three-phase-lag effects"
+    ],
+    "author": [
+      {
+        "given": "Sunita",
+        "family": "Deswal",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Kapil Kumar",
+        "family": "Kalkal",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2015,
+          12
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          12
+        ]
+      ]
+    },
+    "container-title": [
+      "Applied Mathematical Modelling"
+    ],
+    "short-container-title": [
+      "Applied Mathematical Modelling"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "39",
+    "issue": "23-24",
+    "page": "7093-7112",
+    "ISSN": [
+      "0307-904X"
+    ]
+  }
+}

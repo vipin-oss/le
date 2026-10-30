@@ -1,0 +1,59 @@
+{
+  "query_doi": "10.1061/(asce)em.1943-7889.0001908",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1061/(asce)em.1943-7889.0001908",
+    "type": "journal-article",
+    "title": [
+      "Temperature-Rate Dependence Thermoelasticity Theory with Memory-Dependent Derivative: Stability and Uniqueness"
+    ],
+    "author": [
+      {
+        "given": "Indranil",
+        "family": "Sarkar",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Research Scholar, Dept. of Mathematics, Indian Institute of Engineering Science and Technology, Shibpur, Howrah, West Bengal 711103, India."
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          3
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          3
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Engineering Mechanics"
+    ],
+    "short-container-title": [
+      "J. Eng. Mech."
+    ],
+    "publisher": "American Society of Civil Engineers (ASCE)",
+    "volume": "147",
+    "issue": "3",
+    "article-number": "04021003",
+    "ISSN": [
+      "0733-9399",
+      "1943-7889"
+    ]
+  }
+}

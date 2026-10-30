@@ -1,0 +1,102 @@
+{
+  "query_doi": "10.1080/01495739.2019.1602015",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/01495739.2019.1602015",
+    "type": "journal-article",
+    "title": [
+      "Thermoelastic interaction in the semi-infinite solid medium due to three-phase-lag effect involving memory-dependent derivative"
+    ],
+    "author": [
+      {
+        "given": "Biswajit",
+        "family": "Singh",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Indian Institute of Engineering Science and Technology (IIEST), Shibpur, Howrah, West Bengal, India;"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Smita",
+        "family": "Pal (Sarkar)",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Mathematics, Indian Institute of Engineering Science and Technology (IIEST), Shibpur, Howrah, West Bengal, India;"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Krishnendu",
+        "family": "Barman",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Applied Mathematics with Oceanology and Computer Programming, Vidyasagar University, Paschim Medinipur, West Bengal, India"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2019,
+          7,
+          3
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2019,
+          4,
+          25
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          4,
+          25
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "42",
+    "issue": "7",
+    "page": "874-889",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}

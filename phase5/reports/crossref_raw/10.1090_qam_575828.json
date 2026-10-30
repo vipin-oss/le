@@ -1,0 +1,67 @@
+{
+  "query_doi": "10.1090/qam/575828",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1090/qam/575828",
+    "type": "journal-article",
+    "title": [
+      "Generalized thermoelasticity for anisotropic media"
+    ],
+    "author": [
+      {
+        "given": "Ranjit S.",
+        "family": "Dhaliwal",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Hani H.",
+        "family": "Sherief",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1980,
+          4
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1980,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Quarterly of Applied Mathematics"
+    ],
+    "short-container-title": [
+      "Quart. Appl. Math."
+    ],
+    "publisher": "American Mathematical Society (AMS)",
+    "volume": "38",
+    "issue": "1",
+    "page": "1-8",
+    "ISSN": [
+      "1552-4485",
+      "0033-569X"
+    ]
+  }
+}

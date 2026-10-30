@@ -1,0 +1,289 @@
+%======================================================================
+% Section 5: Coupled Multiphysics Continua
+%======================================================================
+\section{Coupled Multiphysics Continua}
+\label{sec:multiphysics}
+
+This section surveys coupled continua: piezo-thermoelastic, porous and double-porous, micropolar, semiconductor photo-thermoelastic, and magneto-thermoelastic media. It outlines their governing equations, constitutive relations, coupling mechanisms, and applications; primary sources are cited where available.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig09-multiphysics-coupling.pdf}
+\caption{Coupling topology of multiphysics continua. The mechanical field is coupled to a thermal field through the thermoelastic dilatation term, to an electrical field through the piezoelectric tensors, to a porosity field through the void fraction, to a carrier field through the semiconductor transport equations, and to a micro-rotation field through the couple-stress relation. Each coupling is a separate term in a separate equation, and each introduces its own material coefficients and its own additional boundary conditions at an interface; this is the reason that the size of the interface system grows so rapidly as couplings are added (Section~\ref{sec:interfaces}).}
+\label{fig:coupling_map}
+\end{figure}
+
+\subsection{Piezoelectricity: constitutive relations and coupling coefficients}
+\label{sec:5.1}
+
+Piezoelectricity describes the coupling between mechanical and electrical fields in certain crystalline materials (e.g., quartz, barium titanate, lead zirconate titanate). The linear constitutive relations are:
+
+\begin{equation}
+\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k,
+\label{eq:5.1}
+\end{equation}
+
+\begin{equation}
+D_i = e_{ikl}\varepsilon_{kl} + \kappa_{ij}E_j,
+\label{eq:5.2}
+\end{equation}
+
+\begin{equation}
+E_i = -\phi_{,i},
+\label{eq:5.3}
+\end{equation}
+
+where $\sigma_{ij}$ is the Cauchy stress tensor, $c_{ijkl}$ is the elastic stiffness tensor, $\varepsilon_{kl}$ is the infinitesimal strain tensor, $e_{kij}$ is the piezoelectric stress coefficient, $E_k$ is the electric field, $D_i$ is the electric displacement, $\kappa_{ij}$ is the dielectric permittivity, and $\phi$ is the electric potential.
+
+\subsubsection{Charge conservation}
+
+In the absence of free electric charge:
+
+\begin{equation}
+D_{i,i} = 0.
+\label{eq:5.4}
+\end{equation}
+
+\subsubsection{Electrical energy density}
+
+For an uncoupled linear dielectric with symmetric positive-definite permittivity and $D_i=\kappa_{ij}E_j$, the electric-field energy contribution is
+
+\begin{equation}
+\mathcal{E}_{\mathrm{elec}} = \frac{1}{2}D_i E_i.
+\label{eq:5.5}
+\end{equation}
+
+This is not the total stored energy of the coupled piezoelectric system in Eqs.~\eqref{eq:5.1}--\eqref{eq:5.2}; that total requires a stated thermodynamic potential and its mechanical/electrical coupling terms.
+
+\subsection{Piezothermoelasticity: three-field coupling}
+\label{sec:5.2}
+
+Piezothermoelasticity couples mechanical, thermal, and electrical fields. The constitutive relations are:
+
+\begin{equation}
+\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k - \beta_{ij}T,
+\label{eq:5.6}
+\end{equation}
+
+Yang (2018) p.~211 Eq.~(7.25) prints the same stress structure and signs \cite{Yang2018}.
+
+\begin{equation}
+\sigma_{ij,j} = \rho\ddot{u}_i,
+\label{eq:5.7}
+\end{equation}
+
+\begin{equation}
+D_i = \kappa_{ij}E_j + e_{ikl}\varepsilon_{kl} + p_i T,
+\label{eq:5.9}
+\end{equation}
+
+\begin{equation}
+D_{i,i} = 0,
+\label{eq:5.10}
+\end{equation}
+
+where $\beta_{ij}$ is the thermal stress coefficient and $p_i$ is the pyroelectric coefficient.
+
+\subsubsection{Governing equations for coupled fields}
+
+Yang (2018) p.~211 Eq.~(7.25) prints the same electric displacement structure; symbol cautions: the source uses $\varepsilon$ for permittivity (manuscript uses $\kappa$) and $\lambda_i$ for the pyroelectric vector (manuscript uses $p_i$).
+
+The coupled system consists of the equation of motion \eqref{eq:5.7}, the heat conduction equation (theory-dependent: classical, LS, GL, GN, DPL, TPL, MDD, etc.), and the charge conservation equation \eqref{eq:5.10}. All three fields are coupled through the constitutive relations \eqref{eq:5.6} and \eqref{eq:5.9}: temperature changes induce thermal stresses and pyroelectric effects; mechanical deformation generates piezoelectric polarization; electric fields produce electrostrictive deformation.
+
+\paragraph{Thermopiezoelectric baseline.} On printed pp.~625--626, Mindlin (1974) states the classical three-dimensional linear thermopiezoelectric equations (momentum balance, $D_{i,i}=0$, entropy balance, Fourier heat flux $h_i=-K_{ij}\theta_{,j}$), which are the starting point of his plate reduction, together with linear constitutive equations from an electric Gibbs function \cite{Mindlin1974Thermopiezo}\allowbreak{}.
+
+Generalized piezothermoelastic models may use lagged or memory-dependent heat laws. Mindlin’s Fourier system provides a classical comparison point; each generalized model must be considered with its own equations and parameters.
+
+Coupled thermopiezoelectric formulations combine thermal, mechanical, and electrical fields; their constitutive details depend on the selected model.
+
+Porosity and void fields are additional modeling ingredients; their governing equations and coupling to thermal and electrical fields depend on the selected formulation.
+
+\subsubsection{Modal content of a piezoelectric solid}
+
+The coupling of Section~\ref{sec:5.2} has an immediate and testable consequence: the number of propagating modes increases. A piezoelectric solid admits a quasi-longitudinal mode $qP$, in which the mechanical polarization is essentially parallel to the propagation direction but is accompanied by a longitudinal electric field; a quasi-transverse mode $qS$, whose polarization is essentially transverse but which is accompanied by a transverse electric field whose amplitude is small because the dielectric stiffness dominates; and a quasi-electrostatic potential solution. Under the assumptions used here, $E_i=-\phi_{,i}$ and $D_{i,i}=0$, Maxwell's displacement-current equation is absent; this solution is not an electromagnetic wave and no speed-of-light mode is implied. A propagating electromagnetic branch requires the full Maxwell system and a stated frequency regime.
+
+\subsubsection{The coupling coefficient as a wave-speed diagnostic}
+
+For the displayed linear constitutive equations, eliminating the quasistatic electric field under the open-circuit condition $D_i=0$ gives the effective stiffness
+\begin{equation}
+\bar{c}_{ijkl} = c_{ijkl} + e_{aij}(\kappa^{-1})_{ab}e_{bkl},
+\label{eq:5.19}
+\end{equation}
+where the positive correction follows from $E_i=-(\kappa^{-1})_{ij}e_{jkl}\varepsilon_{kl}$. Under the short-circuit condition $E_i=0$, the stiffness remains $c_{ijkl}$. The open-circuit correction is positive semidefinite when the permittivity tensor is positive definite and the displayed contractions apply. This is a tensor relation under these electrical constraints, not a universal scalar correction.
+
+\subsection{Electrical boundary conditions}
+\label{sec:5.3}
+
+\subsubsection{Perfect electrical contact}
+
+\begin{equation}
+\phi^{(1)} = \phi^{(2)} \quad \text{at the interface}.
+\label{eq:5.11}
+\end{equation}
+
+\subsubsection{Insulated interface}
+
+\begin{equation}
+D_i n_i = 0 \quad \text{at the interface}.
+\label{eq:5.12}
+\end{equation}
+
+\subsubsection{Electric displacement continuity}
+
+\begin{equation}
+D_3^{(1)} = D_3^{(2)} \quad \text{at the interface}.
+\label{eq:5.13}
+\end{equation}
+
+\subsubsection{Why a void needs its own field of freedom}
+
+Void theories do not share one universal field set or balance structure; the source-specific nonlinear, linear-elastic, and thermoelastic formulations below are kept distinct.
+
+\subsubsection{Modal content of a void-bearing medium}
+
+Void-related wave content is source- and model-specific. Cowin and Nunziato's 1983 abstract lists small-amplitude acoustic waves among its applications and states that the deformation-induced change in void volume is determined for those examples (printed p.~125). Iesan's 1986 summary states that acceleration waves are studied for homogeneous, isotropic bodies (printed p.~67). These summaries do not establish a universal fast/slow/shear mode count, which is not assigned here.
+
+\subsection{Porous media: voids and double porosity}
+\label{sec:5.4}
+
+The sources distinguish three formulations. Nunziato and Cowin's nonlinear theory describes a void-volume distribution and an admissible thermo-kinetic process; its printed p.~177 balance set includes mass, linear and angular momentum, equilibrated force, energy, and an entropy inequality (Eqs.~(2.7)--(2.12)) \cite{Nunziato1979}. Cowin and Nunziato's separate 1983 linear-elastic theory takes the volume fraction associated with void volume as an independent kinematic variable (printed p.~125, abstract) \cite{Cowin1983}. Iesan's 1986 linear thermoelastic theory uses the deviation $\varphi=v-v_0$ and its gradient alongside strain and temperature variables (printed p.~70, Eqs.~(2.14)--(2.19)) \cite{Iesan1986}.
+
+\subsubsection{Governing equations}
+
+Iesan's 1986 paper gives the following general linear constitutive relations (printed p.~71, Eq.~(2.22)):
+
+\begin{equation}
+\begin{aligned}
+t_{ij} &= C_{ijrs}e_{rs} + B_{ij}\varphi + D_{ijk}\varphi_{,k} - \beta_{ij}\theta,\\
+h_i &= A_{ij}\varphi_{,j} + D_{rsi}e_{rs} + d_i\varphi - a_i\theta,\\
+g &= -B_{ij}e_{ij} - \xi\varphi - d_i\varphi_{,i} + m\theta,\\
+\rho\eta &= \beta_{ij}e_{ij} + a\theta + m\varphi + a_i\varphi_{,i},\\
+q_i &= k_{ij}\theta_{,j}.
+\end{aligned}
+\label{eq:5.14}
+\end{equation}
+
+Here $e_{ij}$ is infinitesimal strain, $\varphi=v-v_0$ is the void-volume deviation, $\theta=T-T_0$ is the temperature increment, $h_i$ is the equilibrated-stress vector, $g$ is the intrinsic equilibrated body force, and $\eta$ is specific entropy. The paper gives a separate isotropic specialization in Eq.~(2.24) and the homogeneous-isotropic field equations in Eq.~(2.28) (printed pp.~71--72); those are not conflated with the general tensor relations above. The 2004 monograph's front-matter contents list chapters on thermoelastic materials with voids and thermoelastic Cosserat continua, with section headings on uniqueness and existence (pp.~v--vi); this is a contents-level description, not a claim about a particular theorem \cite{Iesan2004}.
+
+\subsubsection{Double porosity}
+
+Double porosity models introduce two porosity fields to capture both macro- and micro-porosity effects. The governing equations extend the single-porosity theory with two coupled void volume fractions $\eta_1$ and $\eta_2$, each with its own equilibrated stress and equilibrated body force. Double porosity models are particularly relevant for hydrocarbon reservoirs, fissured rocks, and aquifers where both fracture and matrix porosity contribute to fluid flow and wave propagation.
+
+\subsection{Micropolar and micromorphic continua}
+\label{sec:5.5}
+
+Eringen's 1966 paper is titled \emph{Linear Theory of Micropolar Elasticity} \cite{Eringen1966a}; no equation-level claim is made here from the scanned copy. The Tauchert--Claus--Ariman (1968) abstract describes a linear micropolar thermoelastic formulation with displacement/microrotation and stress/couple-stress forms (printed p.~37); its p.~38 notation defines the micro-inertia coefficient $J$ \cite{TauchertClausAriman1968}.
+
+\subsubsection{Governing equations}
+
+Micropolar thermoelastic formulations may include independent microrotation fields and couple stresses. Their constitutive equations depend on the selected kinematics, symmetry assumptions, and thermal coupling.
+
+Micropolar formulations add rotational kinematic and stress measures according to the selected model; the 1968 source is used here only for its stated linear thermoelastic formulation, not for a priority claim or a universal application list.
+
+\subsubsection{The absorption term and the photothermal source}
+
+Illumination does not act on the mechanical field directly; it acts through the heat and the carriers that it generates. The absorbed optical power, attenuated by the Beer--Lambert law, appears as a volumetric source in the thermal equation and as a generation term in the carrier continuity equations. The chain of consequences is then fixed: the thermal source produces a temperature rise; the temperature rise produces a thermoelastic stress through the dilatation term and a pyroelectric polarisation through the pyroelectric coefficient; the stress produces a displacement, and the polarisation produces an electric field, which in turn modifies the carrier distribution. The system is thus closed through the constitutive relations rather than through any additional assumption, and the number of degrees of freedom that must be solved simultaneously is four.
+
+\subsubsection{Photoacoustic waves as a diagnostic of the coupling}
+
+The photoacoustic wave that follows pulsed absorption is the most direct macroscopic observable of the coupling, and it has a distinctive structure: it contains a thermal contribution that propagates at the sound speed, an electronic contribution that propagates at the speed of light but decays on the absorption length, and a thermoelastic contribution whose amplitude depends on the piezoelectric coupling. The relative weight of these contributions depends on the regime --- diffusion-dominated at low frequency, ballistic at high frequency --- and it is the crossover between them that makes the technique sensitive to the thermal model. This is a concrete instance of the general point developed in Section~\ref{sec:applications}: a generalized theory earns its place not by being more general, but by being required in a regime where the classical description demonstrably fails.
+
+\subsection{Semiconductor photo-thermo-elasticity}
+\label{sec:5.6}
+
+Semiconductor photo-thermo-elasticity couples mechanical deformation, thermal fields, electrical fields, and carrier density (electrons and holes). When a semiconductor is illuminated, absorbed photons generate electron--hole pairs, producing carrier diffusion, temperature changes, and thermoelastic stresses.
+
+\subsubsection{Governing equations}
+
+The coupled system includes:
+\begin{itemize}
+\item The equation of motion with piezoelectric and thermal stress terms,
+\item The heat conduction equation with carrier recombination heat source,
+\item The charge conservation equation with carrier generation and recombination,
+\item The carrier continuity equations for electrons and holes.
+\end{itemize}
+
+Applications include photoacoustic imaging, semiconductor device thermal management, and optoelectronic sensors.
+
+\subsection{Magneto-thermo-elasticity}
+\label{sec:5.7}
+
+Magneto-thermo-elasticity couples mechanical, thermal, and magnetic fields. In electrically conducting media (e.g., liquid metals, plasmas), magnetic fields induce Lorentz forces that couple with thermal stresses.
+
+\subsubsection{Governing equations}
+
+The equation of motion includes the Lorentz force term:
+
+\begin{equation}
+\rho\ddot{u}_i = \sigma_{ji,j} + \rho f_i + (\bm{J} \times \bm{B})_i,
+\label{eq:5.18}
+\end{equation}
+
+where $\bm{J}$ is the current density and $\bm{B}$ is the magnetic flux density.
+
+Applications include magnetohydrodynamic (MHD) systems, liquid metal cooling, geophysical dynamo theory, and electromagnetic forming.
+
+\subsection{Comparative summary}
+\label{sec:5.8}
+
+Table \ref{tab:T3-multiphysics} summarizes the coupled multiphysics media: fields, coupling mechanisms, constitutive structure, and applications.
+
+\input{tables/source/T3_coupled_multiphysics}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{fig08-wave-types.pdf}
+\caption{Schematic overview of field types in continuum wave models. Modal content, propagation, and interface-system dimension depend on the selected constitutive equations and boundary conditions; no universal mode count is asserted.}
+\label{fig:wave_types}
+\end{figure}
+
+\subsection{The coupling hierarchy and its computational consequences}
+\label{sec:5.9}
+
+The number and character of modes and interface conditions depend on the complete field equations, constitutive parameters, geometry, and boundary conditions. An added field or internal variable need not contribute an independent propagating mode, and matrix size is not fixed by a family label.
+
+The secular equation and interface system follow from each model’s field equations and boundary conditions. Their polynomial order and matrix size depend on the selected formulation.
+
+Coupled-field models depend on the free-energy Hessian, constitutive stability, and well-posedness of the initial-boundary-value problem; these properties cannot be inferred from a coupling coefficient alone.
+
+\subsection{Notation summary for Section 5}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 5.}
+\label{tab:notation-sec5}
+\begin{tabularx}{\textwidth}{@{}p{1.8cm}X p{2.2cm}p{2.1cm}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$c_{ijkl}$ & Elastic stiffness tensor & Pa & \eqref{eq:5.1} \\
+$e_{kij}$ & Piezoelectric stress coefficient & C/m$^2$ & \eqref{eq:5.1} \\
+$\kappa_{ij}$ & Dielectric permittivity & F/m & \eqref{eq:5.2} \\
+$E_i$ & Electric field & V/m & \eqref{eq:5.3} \\
+$D_i$ & Electric displacement & C/m$^2$ & \eqref{eq:5.2} \\
+$\phi$ & Electric potential & V & \eqref{eq:5.3} \\
+$\beta_{ij}$ & Thermal stress coefficient & Pa/K & \eqref{eq:5.6} \\
+$p_i$ & Pyroelectric coefficient & C/(m$^2$$\cdot$K) & \eqref{eq:5.9} \\
+$\bar{c}_{ijkl}$ & Piezoelectrically renormalised stiffness & Pa & \eqref{eq:5.19} \\
+$\varphi$ & Void-volume deviation from its reference value (Iesan 1986) & dimensionless & \eqref{eq:5.14} \\
+$\eta$ & Specific entropy in Iesan's notation; not the void-volume field & varies & \eqref{eq:5.14} \\
+$h_i$ & Equilibrated-stress vector & source-specific & \eqref{eq:5.14} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+At the ideal-fluid/nonlocal piezothermoelastic interface studied by Gupta et al., the abstract reports one reflected and four transmitted waves and states that the law of energy conservation across the interface is justified (printed p.~912, abstract). This is an abstract-level report; no exact balance equation is reproduced here \cite{Gupta2023IJNMF}.
+
+A dual-porous thermoelastic interface study reports that the total sum of energy ratios approximates unity; this is retained as a reported numerical observation, not an exact identity \cite{Kumar2023PhysScr}.
+
+\subsection{Open questions for Section 5}
+
+\begin{enumerate}[label=\textbf{OQ5.\arabic*}]
+\item What are the complete constitutive relations for piezothermoelastic media with nonlocal elasticity? \\ \label{oq:5.1}
+\item How do double-porosity models capture scale-dependent fluid--solid interaction? \\ \label{oq:5.2}
+\item What are the energy flux expressions for micropolar media with couple stresses? \\ \label{oq:5.3}
+\item How can semiconductor photo-thermo-elastic models be validated experimentally? \\ \label{oq:5.4}
+\end{enumerate}
+
+% LocalWords:

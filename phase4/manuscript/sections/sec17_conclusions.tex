@@ -1,0 +1,111 @@
+%======================================================================
+% Section 17: Conclusions and Scientific Outlook
+%======================================================================
+\section{Conclusions and Scientific Outlook}
+\label{sec:conclusions}
+
+\subsection{The shape of the field as this review has presented it}
+\label{sec:17.1}
+
+Read across the seventeen chapters of this review, generalized continuum mechanics for multiphysics wave propagation is a field with an unusually clear intellectual structure and an unusually weak evidential one. The intellectual structure is the work of a small number of decisive ideas, each of which the field has absorbed, extended, and preserved in a form that is recognisably the same. The evidential weakness is the condition under which those ideas have been tested.
+
+The decisive ideas are these. The first is that heat is transported by a mechanism that is not instantaneous, which Biot's classical formulation cannot accommodate and which the Cattaneo--Christoff and Lord--Shulman constructions fix by introducing a relaxation time, and hence a thermal wave of finite speed. The second is that the thermal and the mechanical fields can be given a common conservative structure, which the Green--Naghdi type~II construction achieves and which the type~III and Green--Lindsay constructions extend by admitting dissipation without abandoning exact mechanical energy conservation. The third is that the number of phase lags, the number of temperature fields, and the number of internal variables are all adjustable, and that each adjustment buys a new degree of behavioural freedom at the cost of a new parameter that must be identified. The fourth is that a material may possess an intrinsic length scale, and that when it does, either the stress becomes spatially non-local or the strain enters the constitutive law through its gradients. The fifth is that a derivative of non-integer order is not a shorthand for a large exponent but a different kind of operator, one that carries a power-law memory and that admits closed-form solutions only in special geometries.
+
+What the field has achieved, on the evidence assembled in this review, is the construction and analytical solution of a large family of wave problems built on those five ideas, together with a scattering framework that is consistent across the families and a set of energy-partition diagnostics computed at interfaces. The classical energy flux $J_i = \sigma_{ji}v_i + q_i$ is verified against the local energy balance; the modal scattering matrix $\Delta\bm{X} = \bm{Q}$ is established as a consistent framework for interface wave analysis \cite{Barak2023}; the conservation identity $\sum R + \sum T + A = 1$ holds for classical elastic interfaces under the benchmark conditions of Appendix~\ref{app:benchmarks}; and the interface energy ratios of the piezothermoelastic family have been computed on a consistent footing across several independent studies \cite{Barak2023,Barak2023IJP,Barak2023JTS,Barak2023MMMS,Gupta2023Energy,Kumar2023PhysScr}.
+
+What the field has not achieved is equally clear, and it is the more important half of the assessment. The comparisons between families rest on parameter substitutions rather than on convergence theorems with error estimates. The validation axis of the taxonomy of Section~\ref{sec:taxonomy} is dominated by self-consistency---a numerical solution agreeing with a closed-form solution of the same equations---and is nearly empty of comparison against experiment or against independently implemented competing formulations. The energy flux of the pure generalized families, which is the quantity on which an interface energy partition depends, is not available in the reviewed corpus in a form that can be independently verified. And the parametric flexibility that the field has cultivated, admirable as it is, has outpaced the ability of the available measurements to constrain it.
+
+\subsection{What is established, and what is not}
+\label{sec:17.2}
+
+\subsubsection{Established}
+
+\begin{itemize}
+\item The classical balance laws of linear and angular momentum, of energy, and of entropy, and their consequences for wave speeds and for the classical energy flux.
+\item The governing equations of the Lord--Shulman, Green--Lindsay, Green--Naghdi types~II and~III, dual and triple phase-lag, Moore--Gibson--Thompson, and memory-dependent formulations, together with the conditions under which each satisfies causality and positivity.
+\item The constitutive structure of linear piezoelectricity and of its thermoelastic and magneto-thermo-elastic extensions, and the modal structure of the coupled wave problem.
+\item The scattering-matrix formulation for interface wave analysis, and the conservation identity for passive interfaces in the absence of dissipation.
+\item The structural correspondence between the fractional and the memory-dependent formulations, the latter being the generalisation of the former in which the power-law memory kernel is replaced by an arbitrary one.
+\item The dispersion signatures that distinguish a non-local mechanism from a gradient mechanism, and hence the observable on which an experimental test of size-dependent elasticity would have to turn.
+\end{itemize}
+
+\subsubsection{Open}
+
+\begin{itemize}
+\item The explicit time-domain energy flux and dissipation function for each of the families listed in Section~\ref{sec:10.4}, obtainable in principle from the internal-variable structure of Eq.~\eqref{eq:10.8} but not yet derived in a verifiable form.
+\item The interface conditions for non-local and memory-dependent media, and the conditions under which the integral and differential formulations give consistent interface tractions.
+\item Rigorous limit theorems between the theory families, with error estimates in a stated norm, which are the precondition for a quantitative rather than a qualitative cross-family comparison.
+\item Experimental discrimination among the competing families on a common material, and identification of the relaxation, kernel, and length-scale parameters from data that were not generated by the theory being tested.
+\item Reproducible numerical benchmarks executed independently, which would allow the validation axis of the taxonomy to be populated with something other than self-consistency.
+\end{itemize}
+
+\subsection{Methodological stance: tracing differences to assumptions}
+\label{sec:17.3}
+
+Model-specific differences in generalized continuum wave mechanics are almost never contradictions. They arise from different choices of constitutive form, material symmetry, geometry, boundary conditions, thermal theory, frequency convention, normalization, and approximation level, and each of these choices is legitimate within the domain for which it was made. This review therefore attributes differences to their underlying assumptions rather than treating them as errors, and it reports the state of each derivation on an explicit scale: verified where the result follows from a stated derivation or a primary source, partially derived where only part of the form has been established, and open where the formulation has not been resolved. Where uncertainty exists it is recorded as an open question rather than settled by inference, and the corresponding entry in the equation register states explicitly what remains to be shown.
+
+The stance has a cost, which should be stated. By declining to adjudicate between formulations, this review leaves the reader with a map rather than a recommendation in those places where the literature does not itself contain one. The map is, however, the more durable object: the particular theory that will be found correct in a given application is not yet decidable on the available evidence, and a review that pretended otherwise would be asserting more than the evidence supports. What the map does provide is a statement of what evidence would be needed to decide, and that is the more useful contribution at the present stage of the field.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{fig01-theory-evolution.pdf}
+\caption{Theory evolution: from classical elasticity through generalized thermoelasticity to nonlocal and coupled-field continua (Sections 3--11).}
+\label{fig:theory_evolution_sec17}
+\end{figure}
+
+\subsection{The three problems that matter most}
+\label{sec:17.4}
+
+The field's open items are not of equal weight, and the review would be less useful if it did not distinguish them. Three of them are, in the reviewer's judgement, the ones on which the scientific standing of generalized continuum mechanics now depends.
+
+\paragraph{Energy accounting for the generalized families.}
+Every physical claim made about an interface---every energy ratio, every absorption coefficient, every statement about how a disturbance is shared between two media---presupposes an energy flux for the theory in which the calculation is performed. For the piezothermoelastic family that flux exists and has been computed independently by several groups; for the pure generalized families it does not exist in a verifiable form. The consequence is that a substantial part of the recent literature on generalized thermoelastic interfaces rests on an energy definition that has not been derived from the theory it accompanies. Closing this gap is a derivation problem, not an experimental one, and it is the one piece of unfinished work that the present review can specify exactly.
+
+\paragraph{The status of the limits.}
+The assertion that the generalized theories reduce to classical thermoelasticity in the appropriate limit is the connective tissue of the entire comparative enterprise. It is currently supported by parameter substitutions, and a parameter substitution is not a convergence theorem. If the limits were established with error estimates, a prediction made with, say, a memory-dependent formulation could be given a quantified statement of how far it may be from the corresponding classical prediction, and the choice of theory could be made on the basis of a stated tolerance rather than on preference. This too is a derivation problem.
+
+\paragraph{Discriminating evidence.}
+Almost every comparison between competing formulations in the reviewed corpus is a comparison between two solutions of the same equations, and none of them is a comparison between a prediction and a measurement. The obstruction is not a shortage of candidate observables; Section~\ref{sec:7.3} identifies one---the dispersion signature---that separates two physically different mechanisms, and Section~\ref{sec:applications} assembles the application scenarios in which such an observable could be measured. What is missing is a protocol: a common material, a common measurement, and a pre-registered prediction from each competing theory. The framework of the taxonomy, if adopted, would make such a protocol easy to specify, since it would identify the cells of the product space in which the competing theories differ.
+
+\subsection{Final outlook}
+\label{sec:17.5}
+
+Against that assessment, the next decade of research in the field should pursue the following, in the order in which it would most improve the standing of the subject.
+
+\begin{enumerate}
+\item \textbf{Complete the energy flux derivations} for the generalized families, using the internal-variable structure of Eq.~\eqref{eq:10.8} as the common template, and publish the dissipation function alongside the flux.
+\item \textbf{Establish rigorous limit theorems} between the theory families, with explicit error estimates and in a stated norm.
+\item \textbf{Formulate the interface conditions} for non-local and memory-dependent media, and demonstrate their consistency between the integral and differential representations.
+\item \textbf{Create reproducible numerical benchmarks} that independent groups can execute without sharing code, following the structure of Appendix~\ref{app:reproducibility}.
+\item \textbf{Validate experimentally}, beginning with the thermal wave velocity and the interface energy partition, and with the dispersion measurement that distinguishes a non-local from a gradient mechanism.
+\item \textbf{Extend the coupled-field models} to the materials for which the coupling is strongest---two-dimensional systems, metamaterials, and semiconductors---where the additional constitutive complexity is most likely to be repaid by predictive power.
+\item \textbf{Characterize the parameters inversely}, so that the relaxation times, kernel parameters, and length scales are measured rather than fitted, and so that the number of free parameters in a model is matched to the number of independent measurements available.
+\end{enumerate}
+
+The foundation is solid: the classical balance laws are verified, the generalized governing equations are established, and the scattering framework is consistent. The path forward is clear, and it is narrower than the field's recent rate of extension would suggest. The most valuable work available is no longer the construction of additional generalizations---the space of those has been explored extensively---but the derivation, the proof, and the measurement of the ones already in hand. The constructive organizational approach employed here follows the model of comprehensive review articles organized around conceptual themes rather than around individual publications, such as the recent review of generalized thermoelasticity and its modified models \cite{Shakeriaski2021} and the large multi-author collaborative reviews that have defined the format in neighbouring fields \cite{Abdalla2022}.
+
+\subsection{Notation summary for Section 17}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Notation introduced in Section 17.}
+\label{tab:notation-sec17}
+\begin{tabularx}{\textwidth}{@{}lXlr@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$J_i$ & Total energy flux vector & W\,m$^{-2}$ & \eqref{eq:10.3} \\
+$\sigma_{ij}$ & Cauchy stress tensor & Pa & Section~\ref{sec:foundations} \\
+$q_i$ & Heat flux vector & W\,m$^{-2}$ & Section~\ref{sec:foundations} \\
+$z^\alpha$ & Internal variable of a generalized constitutive law & --- & \eqref{eq:10.7} \\
+$Y^\alpha$ & Conjugate thermodynamic force & --- & \eqref{eq:10.7} \\
+$\tau_0$ & Mechanical relaxation time & s & Section~\ref{sec:thermoelastic} \\
+$c$ & Thermal wave speed & m\,s$^{-1}$ & Section~\ref{sec:transport} \\
+$\omega$ & Angular frequency & rad\,s$^{-1}$ & Section~\ref{sec:methods} \\
+$\Delta\bm{X}$ & Scattering matrix & --- & Section~\ref{sec:interfaces} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% LocalWords:

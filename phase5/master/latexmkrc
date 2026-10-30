@@ -1,0 +1,7 @@
+# Reproducible pdfLaTeX + BibTeX build for the self-contained master source.
+$pdf_mode = 1;
+$pdflatex = 'pdflatex -interaction=nonstopmode -file-line-error -halt-on-error %O %S';
+$bibtex = 'bibtex %O %B';
+$recorder = 1;
+$max_repeat = 5;
+$cleanup_includes_cusdep_generated = 1;

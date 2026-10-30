@@ -1,0 +1,66 @@
+{
+  "query_doi": "10.1016/j.jde.2015.08.052",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.jde.2015.08.052",
+    "type": "journal-article",
+    "title": [
+      "Moore–Gibson–Thompson equation with memory, part II: General decay of energy"
+    ],
+    "author": [
+      {
+        "given": "Irena",
+        "family": "Lasiecka",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Xiaojun",
+        "family": "Wang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2015,
+          12
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          12
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Differential Equations"
+    ],
+    "short-container-title": [
+      "Journal of Differential Equations"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "259",
+    "issue": "12",
+    "page": "7610-7635",
+    "ISSN": [
+      "0022-0396"
+    ]
+  }
+}

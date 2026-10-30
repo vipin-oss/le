@@ -1,0 +1,77 @@
+{
+  "query_doi": "10.1016/j.nucengdes.2012.06.012",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1016/j.nucengdes.2012.06.012",
+    "type": "journal-article",
+    "title": [
+      "Two-temperature theory in magneto-thermoelasticity with fractional order dual-phase-lag heat transfer"
+    ],
+    "author": [
+      {
+        "given": "Magdy A.",
+        "family": "Ezzat",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ahmed S.",
+        "family": "El-Karamany",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Shereen M.",
+        "family": "Ezzat",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2012,
+          11
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2012,
+          11
+        ]
+      ]
+    },
+    "container-title": [
+      "Nuclear Engineering and Design"
+    ],
+    "short-container-title": [
+      "Nuclear Engineering and Design"
+    ],
+    "publisher": "Elsevier BV",
+    "volume": "252",
+    "page": "267-277",
+    "ISSN": [
+      "0029-5493"
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "query_doi": "10.1080/17455030.2024.2379958",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/17455030.2024.2379958",
+    "type": "journal-article",
+    "title": [
+      "Rayleigh wave in nonlocal piezo-thermo-electric semiconductor medium with fractional MGT model"
+    ],
+    "author": [
+      {
+        "given": "Vipin",
+        "family": "Gupta",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Indira Gandhi University",
+            "place": [
+              "Rewari, India"
+            ]
+          },
+          {
+            "name": "Gurugram University",
+            "place": [
+              "Gurugram, India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5438-5407",
+        "authenticated-orcid": false,
+        "given": "Hijaz",
+        "family": "Ahmad",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Near East University, Operational Research Center in Healthcare",
+            "place": [
+              "Nicosia, Turkey"
+            ]
+          },
+          {
+            "name": "Islamic University of Madinah",
+            "place": [
+              "Madinah, Saudi Arabia"
+            ]
+          },
+          {
+            "name": "Western Caspian University",
+            "place": [
+              "Baku, Azerbaijan"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9947-000X",
+        "authenticated-orcid": false,
+        "given": "M. S.",
+        "family": "Barak",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Indira Gandhi University",
+            "place": [
+              "Rewari, India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Soumik",
+        "family": "Das",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Amrita Vishwa Vidyapeetham",
+            "place": [
+              "Mysuru campus, India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sandeep",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "CDLU",
+            "place": [
+              "Sirsa, India"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          3
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2024,
+          7,
+          29
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          7,
+          29
+        ]
+      ]
+    },
+    "container-title": [
+      "Waves in Random and Complex Media"
+    ],
+    "short-container-title": [
+      "Waves in Random and Complex Media"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "36",
+    "issue": "5",
+    "page": "8825-8848",
+    "ISSN": [
+      "1745-5030",
+      "1745-5049"
+    ]
+  }
+}

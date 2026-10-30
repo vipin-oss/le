@@ -1,0 +1,89 @@
+{
+  "query_doi": "10.1007/s00542-018-4194-6",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s00542-018-4194-6",
+    "type": "journal-article",
+    "title": [
+      "On dual-phase-lag magneto-thermo-viscoelasticity theory with memory-dependent derivative"
+    ],
+    "author": [
+      {
+        "given": "Dalia A.",
+        "family": "Aldawody",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Mohamed H.",
+        "family": "Hendy",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Magdy A.",
+        "family": "Ezzat",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2019,
+          8
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2018,
+          10,
+          25
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          10,
+          25
+        ]
+      ]
+    },
+    "container-title": [
+      "Microsystem Technologies"
+    ],
+    "short-container-title": [
+      "Microsyst Technol"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "25",
+    "issue": "8",
+    "page": "2915-2929",
+    "ISSN": [
+      "0946-7076",
+      "1432-1858"
+    ]
+  }
+}

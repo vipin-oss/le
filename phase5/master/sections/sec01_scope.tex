@@ -1,0 +1,106 @@
+%======================================================================
+% Section 1: Review Scope and Purpose
+%======================================================================
+\section{Review Scope and Purpose}
+\label{sec:scope}
+
+\subsection{Motivation and scientific context}
+
+Wave propagation in generalized continua lies at the intersection of continuum mechanics, thermodynamics, and coupled-field physics. In the classical Fourier model, combining Fourier heat conduction with energy balance gives a parabolic heat equation whose fundamental solution has instantaneous mathematical support. This property is often called the infinite-speed paradox; it is a consequence of the idealized continuum model, not evidence that the model is simply wrong in every regime. Biot's coupled linear thermoelastic formulation remains useful within its assumptions, while later theories replace or augment selected constitutive structures to represent finite-rate transport, memory, additional fields, or characteristic lengths. These alternatives are not interchangeable and do not all remove instantaneous support or guarantee finite-speed propagation.
+
+Common modifications include relaxation of the heat flux (Lord--Shulman), temperature-rate dependence with two relaxation parameters (Green--Lindsay, a single-temperature formulation), thermal-displacement theories (Green--Naghdi), phase-lag laws, hereditary kernels, fractional operators, and spatially nonlocal or gradient constitutive laws. Each class has variants, assumptions, and limiting regimes; the exact governing equations, not a family label, determine propagation, thermodynamic admissibility, and well-posedness. The historical and constitutive comparisons below are therefore presented as a map of distinct models rather than a single sequence of increasingly accurate replacements.
+
+These modifications change the mathematical character of the model and may introduce additional parameters, state variables, memory, or spatial scales. Their consequences for support, stability, thermodynamic admissibility, and initial data are model-specific. For example, claims about relaxation-time orderings, entropy production, or the function spaces required by fractional or nonlocal operators must be tied to the precise equations and boundary conditions; they are not asserted uniformly across each named family in this review.
+
+A separate modelling axis concerns additional coupled fields: electrical polarization, porosity, micro-rotation, or charge carriers. Piezothermoelastic, porous, micropolar, semiconductor, and magneto-thermoelastic models introduce field equations and coupling terms whose effects on modal structure and interface conditions depend on the constitutive model and geometry. Simultaneous temporal memory and multiphysics coupling can increase analytical and computational complexity, but it does not imply a fixed number of additional modes or boundary conditions.
+
+These coupled formulations have been studied in settings including smart structures, energy harvesting, nondestructive evaluation, geophysical prospecting, biomedical ultrasound, and nanodevice design. Existing reviews often focus on a theory family or application \cite{Shakeriaski2021,Chandrasekharaiah1998,Joseph1989,Askes2006}. This review organizes representative models around shared questions—constitutive structure, governing equations, admissibility and well-posedness conditions, computation, and unresolved issues—while distinguishing source-supported conclusions and reproducible derivations from questions that remain open. It does not treat a family label as a substitute for a specified equation set or claim uniform results across variants.
+
+\subsection{Objectives and contributions}
+
+This review has the following objectives:
+
+\begin{enumerate}
+\item To state the balance-law and constitutive foundations of continuum wave mechanics: kinematics, balance laws, thermodynamic restrictions, and constitutive principles (Section 3).
+\item To trace the historical development of generalized thermoelastic theories from classical coupled thermoelasticity to modern memory-dependent and nonlocal formulations, explaining the physical motivation behind each theory (Section 4).
+\item To present coupled multiphysics continua—piezothermoelasticity, porous media, micropolar continua, semiconductor interactions, and magneto-thermo-elasticity—with their governing equations and coupling mechanisms (Section 5).
+\item To survey generalized transport and memory effects: relaxation, fractional operators, hereditary integrals, memory-dependent derivatives, and their mathematical structure (Section 6).
+\item To present nonlocal and scale-dependent continuum models, including Eringen's nonlocal elasticity and strain-gradient theory, with their wave dispersion characteristics (Section 7).
+\item To review wave-propagation methods: plane waves, Christoffel and secular equations, transform methods, and numerical approaches (Section 8).
+\item To formulate selected interface-wave problems and energy-partition calculations under explicit assumptions, while distinguishing verified identities from model-specific derivations that remain open (Section 9).
+\item To derive the classical local energy flux under explicit assumptions and identify the model-specific generalized energy-flux derivations that remain open (Section 10).
+\item To survey advanced theoretical developments and emerging research directions (Sections 11--12).
+\item To present applications with evidence levels, an original five-axis research taxonomy, major scientific challenges, and future research opportunities (Sections 13--16).
+\end{enumerate}
+
+\subsection{Scope and organization}
+
+The review covers the following theory families:
+
+\begin{itemize}
+\item \textbf{Classical coupled thermoelasticity} (Biot, 1956) — Fourier heat conduction coupled with elastic wave propagation.
+\item \textbf{Lord--Shulman theory} (1967) — generalized thermoelasticity with one thermal relaxation time.
+\item \textbf{Green--Lindsay theory} (1972) — temperature-rate-dependent thermoelasticity with two relaxation times and one temperature field; distinct from two-temperature theories.
+\item \textbf{Green--Naghdi types I--III} — the type framework dates to 1991; the type-III equations treated here are from 1992 and the type-II primary formulation from 1993.
+\item \textbf{Dual-phase-lag and triple-phase-lag theories} (DPL: Tzou, 1995; TPL: Roy Choudhuri, 2007) — phase-lag heat conduction models.
+\item \textbf{Moore--Gibson--Thompson-type thermoelastic models} — later thermal analogues of Moore and Gibson's 1960 third-order acoustic equation for relaxing gases; the 1960 work is not a heat-conduction law.
+\item \textbf{Memory-dependent derivative models} (Wang \& Li, 2011) — integral-form memory operators with fading memory.
+\item \textbf{Fractional thermoelasticity} — time-fractional heat equations for anomalous diffusion.
+\item \textbf{Nonlocal elasticity} (Eringen, 1972--1983) — scale-dependent constitutive relations with spatial memory.
+\item \textbf{Piezothermoelasticity and coupled multiphysics continua} — piezoelectric, porous, micropolar, semiconductor, and magneto coupling.
+\item \textbf{Interface wave phenomena} — reflection, transmission, scattering, and energy partitioning at material interfaces.
+\end{itemize}
+
+The manuscript is organized into seventeen sections:
+
+\begin{itemize}
+\item \textbf{Section 1} (this section): scope, purpose, and organization.
+\item \textbf{Section 2}: literature landscape and scholarly context, including comparison with existing reviews.
+\item \textbf{Sections 3--5}: Layer I--III of the mathematical exposition—foundations, thermoelastic theories, and coupled multiphysics continua.
+\item \textbf{Sections 6--8}: generalized transport, memory effects, nonlocal models, and mathematical methods.
+\item \textbf{Sections 9--10}: interface phenomena and energy transport.
+\item \textbf{Sections 11--12}: advanced developments and comparative synthesis.
+\item \textbf{Sections 13--17}: applications, taxonomy, challenges, future directions, and conclusions.
+\end{itemize}
+
+Appendix~\ref{app:balance_derivations} derives selected balance relations, and Appendix~\ref{app:benchmarks} defines benchmark problems for future computational comparison.
+
+\subsection{Intended readership}
+
+This review is written for multiple audiences:
+
+\begin{itemize}
+\item \textbf{Beginning researchers and MSc students:} Sections 1--3 provide the foundational balance laws, constitutive relations, and classical wave mechanics needed to enter the field. The notation tables and Section 17 provide orientation.
+\item \textbf{Doctoral researchers:} Sections 3--10 provide mathematical depth with representative equations, dispersion relations, interface formulations, and solution methods. Section 16 identifies dissertation topics.
+\item \textbf{Experienced scientists:} Sections 12--16 provide comparative synthesis, taxonomy, challenge analysis, and future research roadmap.
+\item \textbf{Journal reviewers and editors:} Sections 1--2, 12, and 16--17 provide context for evaluating new submissions in generalized continuum mechanics.
+\end{itemize}
+
+\subsection{Scholarly principles}
+
+This review adheres to the following principles:
+
+\begin{enumerate}
+\item \textbf{Constructive synthesis:} Model-specific differences are traced to documented assumptions (constitutive, material symmetry, geometry, boundary conditions, thermal theory, frequency convention, normalization, approximation level), not presented as contradictions or errors.
+\item \textbf{Mathematical accuracy:} Important equations should be stated with their assumptions, conventions, and applicable model.
+\item \textbf{Comparative rather than adjudicative framing:} Competing formulations are compared on the basis of their modelling choices and domains of validity; the review does not attempt to adjudicate between individual publications.
+\item \textbf{Minimal equation set:} Fewer, precise equations are preferred over hundreds of redundant ones. Representative equations are selected to illustrate each theory family.
+\item \textbf{Original figures and tables:} All figures are original vector graphics created for this review. All tables synthesize knowledge across theory families rather than listing individual papers.
+\end{enumerate}
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{fig01-theory-evolution.pdf}
+\caption{Selected historical milestones in classical and generalized thermoelasticity. Publication dates and model descriptions are taken from the inherited bibliography; the figure does not assert that every generalized theory has finite propagation speed.}
+\label{fig:theory_evolution}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{fig02-theory-relationships.pdf}
+\caption{Schematic relationships between thermoelastic model families. Parameter limits are model-specific and are not asserted to exist for every family; the arrows are conceptual rather than rigorous convergence results.}
+\label{fig:theory_relationships}
+\end{figure}
+
+% LocalWords:

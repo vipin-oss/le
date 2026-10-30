@@ -1,0 +1,101 @@
+{
+  "query_doi": "10.1007/s11043-022-09578-5",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1007/s11043-022-09578-5",
+    "type": "journal-article",
+    "title": [
+      "Thermoelastic vibrations in electro-mechanical resonators based on rotating microbeams exposed to laser heat under generalized thermoelasticity with three relaxation times"
+    ],
+    "author": [
+      {
+        "given": "Rakhi",
+        "family": "Tiwari",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ahmed E.",
+        "family": "Abouelregal",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Om Namah",
+        "family": "Shivay",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sami F.",
+        "family": "Megahid",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2024,
+          6
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2022,
+          11,
+          23
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2022,
+          11,
+          23
+        ]
+      ]
+    },
+    "container-title": [
+      "Mechanics of Time-Dependent Materials"
+    ],
+    "short-container-title": [
+      "Mech Time-Depend Mater"
+    ],
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "28",
+    "issue": "2",
+    "page": "423-447",
+    "ISSN": [
+      "1385-2000",
+      "1573-2738"
+    ]
+  }
+}

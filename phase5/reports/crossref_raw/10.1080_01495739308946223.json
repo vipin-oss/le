@@ -1,0 +1,55 @@
+{
+  "query_doi": "10.1080/01495739308946223",
+  "http_status": 200,
+  "message": {
+    "DOI": "10.1080/01495739308946223",
+    "type": "journal-article",
+    "title": [
+      "STATE SPACE FORMULATION FOR GENERALIZED THERMOELASTICITY WITH ONE RELAXATION TIME INCLUDING HEAT SOURCES"
+    ],
+    "author": [
+      {
+        "given": "Hany H.",
+        "family": "Sherief",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          1993,
+          4
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          1993,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "short-container-title": [
+      "Journal of Thermal Stresses"
+    ],
+    "publisher": "Informa UK Limited",
+    "volume": "16",
+    "issue": "2",
+    "page": "163-180",
+    "ISSN": [
+      "0149-5739",
+      "1521-074X"
+    ]
+  }
+}

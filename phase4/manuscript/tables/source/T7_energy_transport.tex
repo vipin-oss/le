@@ -1,0 +1,30 @@
+%======================================================================
+% Table T7 — Energy transport formulations
+% Section: §10
+% Evidence: Classical flux verified (EQ-007); generalized fluxes marked UNCERTAIN (open derivations)
+%======================================================================
+\begin{table}[h]
+\centering
+\small
+\caption{Energy transport formulations across theory families. UNCERTAIN entries are open derivations (Section 10.3, OQ10.1--OQ10.8), NOT canonical results. Only classical CD flux is verified.}
+\label{tab:T7-energy}
+\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
+\toprule
+\textbf{Theory} & \textbf{Stored Energy} & \textbf{Energy Flux} & \textbf{Dissipation} & \textbf{Status} \\
+\midrule
+Classical (CD) & $\mathcal{E}=\frac{1}{2}\rho v_iv_i+e$ & $J_i=\sigma_{ji}v_i+q_i$ (verified) & Fourier heat conduction; $\mathcal{D}\ge0$ & VERIFIED \\
+Lord--Shulman (LS) & $\mathcal{E}=\frac{1}{2}\rho v_iv_i+e+\text{relaxation term}$ & $\sigma_{ji}v_i+q_i+\text{relaxation contribution}$ & Flux-rate relaxation; entropy generation & UNCERTAIN \\
+Green--Lindsay (GL) & $\mathcal{E}=\frac{1}{2}\rho v_iv_i+e+\text{temp-rate term}$ & $\sigma_{ji}v_i+q_i+\text{temperature-rate contribution}$ & No dissipation (centrally symmetric) & UNCERTAIN \\
+G--N Type II & Free energy potential & $\sigma_{ji}v_i+q_i+\text{thermal displacement term}$ & No energy dissipation & UNCERTAIN \\
+G--N Type III & Free energy + dissipation & $\sigma_{ji}v_i+q_i+\text{mixed contribution}$ & Dissipative & UNCERTAIN \\
+Dual-phase-lag (DPL) & Includes lag terms & $\sigma_{ji}v_i+q_i+\text{lag contributions}$ & $\tau_q\ge\tau_T$ for admissibility & UNCERTAIN \\
+Triple-phase-lag (TPL) & Higher-order lag terms & $\sigma_{ji}v_i+q_i+\text{higher-order lag terms}$ & Dissipative & UNCERTAIN \\
+Moore--Gibson--Thompson (MGT) & Includes thermal inertia & $\sigma_{ji}v_i+q_i+\text{third-order term}$ & Dissipative & UNCERTAIN \\
+Memory-dependent derivative (MDD) & Hereditary kernel & Convolution-form hereditary flux & Kernel-dependent dissipation & UNCERTAIN \\
+\bottomrule
+\multicolumn{5}{@{}l}{\textbf{Notes:} UNCERTAIN formulations are open derivations, not presented as canonical results.}\\
+\multicolumn{5}{@{}l}{\emph{Classical flux $J_i=\sigma_{ji}v_i+q_i$ derived in Section 3.8 (EQ-007) and verified.}}\\
+\multicolumn{5}{@{}l}{\emph{Generalized flux derivations require primary-source full texts (lord1967, green1972, green1991, green1993,}}\\
+\multicolumn{5}{@{}l}{\emph{tzou1995, tzou1997, quintanilla2019, wang2011).}}\\
+\end{tabularx}
+\end{table}
