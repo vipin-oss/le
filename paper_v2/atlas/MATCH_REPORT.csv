@@ -3,8 +3,10 @@ pdf_filename,extracted_doi,matched_bibkey,reason
 1.1722351.pdf,10.1063/1.1722351,Biot1956,DOI matched to bib key
 10.1007@s00245-016-9365-1.pdf,10.1007/s00245-016-9365-1,unmatched,PDF not found in Google Drive
 2026-10_QP_131181_Set-B.pdf,-,unmatched,"Examination paper, not a research paper"
+B01-003__P03_2022_IJAME_Generalized-Plane-Waves-Rotating-Thermoelastic-Double-Porous.pdf,10.2478/ijame-2022-0055,Pathania2022,DOI matched to bib key
 B01-004__P04_2023_PNASI_Analysis-Waves-Boundary-Surfaces-Distinct-Media-Nonlocal.pdf,10.1007/s40010-023-00850-y,Kumar2023,DOI matched to bib key
 B01-005__P05_2023_SciRep_Behavior-Higher-order-MDD-Energy-Ratios-Interface-Thermoelastic.pdf,10.1038/s41598-023-44339-5,unmatched,Already matched
+B01-006__P06_2023_AAM_Double-Porous-Thermoelastic-Waves-Homogeneous-Isotropic-Solid.pdf,10.1007/s00419-023-02364-w,Pathania2023,DOI matched to bib key
 B01-007__P07_2023_IJP_Energy-Analysis-Boundary-Interface-Elastic-Piezothermoelastic-Half-spaces.pdf,10.1007/s12648-022-02568-w,unmatched,Already matched
 B01-008__P08_2023_HFF_Energy-Analysis-Interface-Piezo-Thermoelastic-Half-Spaces.pdf,10.1108/HFF-11-2022-0654,Gupta2023Energy,DOI matched to bib key
 B01-009__P09_2023_PhysScr_Energy-Ratio-Response-Interface-Elastic-Dual-porous-Thermoelastic.pdf,10.1088/1402-4896/acfced,Kumar2023PhysScr,DOI matched to bib key
@@ -24,25 +26,38 @@ B01-023__P23_2024_IJAME_Response-Stiffness-Viscosity-Energy-Ratios-Piezo-visco-t
 B01-024__P24_2024_PhysScr_Size-dependent-Effect-Interaction-Surface-Waves-Micropolar-Thermoelastic.pdf,10.1088/1402-4896/ad4829,unmatched,Already matched
 B01-025__P25_2024_MTDM_Effect-Viscosity-Hyperbolic-Two-temperature-Energy-Ratios-Elastic.pdf,10.1007/s11043-023-09657-1,Kumar2024,DOI matched to bib key
 B01-028__P28_2024_MAMS_Vibrational-Analysis-Size-dependent-Thermo-piezo-photo-electric-Semiconductor-Medium-Memory-dependent.pdf,10.1080/15376494.2023.2291804,Gupta2023c,DOI matched to bib key
+B01-031__P31_2025_CompStruct_Effects-Layer-Imperfections-Material-Gradation-Circumferential-Shear.pdf,10.1016/j.compstruct.2025.118997,Gupta2025,DOI matched to bib key
 B01-032__P32_2025_EJMSOL_Fractional-Memory-Effects-Wave-Reflection-Pre-stressed-Microstructured.pdf,10.1016/j.euromechsol.2024.105565,unmatched,Already matched
+B01-033__P33_2025_AMM_Modelling-SH-wave-Dynamics-Size-dependent-Poroelastic-flexomagnetic-Layered-Waveguide.pdf,10.1016/j.apm.2025.116393,Gupta2026,DOI matched to bib key
+B01-034__P34_2025_HFF_Piezo-semiconductor-void-Interplay-Size-dependent-Dynamics-Rayleigh-Waves-Within.pdf,10.1108/HFF-04-2025-0254,Gupta2025a,DOI matched to bib key
 B02-001__P35_2025_JTS_Response-Double-Porous-Deformation-Initially-Stressed-Thermoelastic.pdf,10.1080/01495739.2024.2441967,Kumar2025a,DOI matched to bib key
 B02-002__P36_2025_JIOS_Response-Memory-Imperfect-Fluid-Double-Porous-Non.pdf,10.47974/JIOS-1608,Kumar2025,DOI matched to bib key
 B02-003__P37_2025_PhysScr_Rheology-dependent-Surface-Wave-Characteristics-Advanced-Geomaterial-Flexoelectric.pdf,10.1088/1402-4896/ad97eb,Seema2024,DOI matched to bib key
 B02-004__P38_2025_EJMSOL_Shear-Waves-Induced-Vibration-Size-dependent-Loosely-bonded-Viscoelastic.pdf,10.1016/j.euromechsol.2025.105666,Meghana2025,DOI matched to bib key
 B02-006__P40_2026_HFF_Dispersion-Damping-Characteristics-Rayleigh-type-Waves-KG-Nonlocal.pdf,10.1108/HFF-11-2025-0930,unmatched,Already matched
 B02-007__P41_2026_AMM_Dynamic-Response-Loosely-Bonded-Viscoelastic-Porous-Piezoelectric.pdf,10.1016/j.apm.2026.116904,Meghana2026,DOI matched to bib key
+B02-008__P42_2026_SciRep_Dynamic-Response-Tri-layered-Functionally-Graded-viscoelastic-piezomagnetic-Cylindrical-Tunnel.pdf,10.1038/s41598-026-46812-3,Gupta2026a,DOI matched to bib key
 B02-010__P44_2026_SciRep_Frictional-Moving-Load-induced-Dynamic-Response-Porous-Piezoelectric.pdf,10.1038/s41598-025-34351-2,Meghana2026a,DOI matched to bib key
+B02-011__P45_2026_CMT_Heat-Map-Analysis-Wave-Dynamics-Nonlocal-Kelvin.pdf,10.1007/s00161-026-01472-6,Gupta2026HeatMap,DOI matched to bib key
 B02-012__P46_2026_MAMS_Hydro-thermo-electromechanical-Response-Size-dependent-Porous-Piezoelectric-Medium-Memory-dependent.pdf,10.1080/15376494.2025.2516213,unmatched,Already matched
 B02-014__P48_2026_IJMMD_Klein-Gordon-Nonlocal-Dynamics-Porous-Piezo-thermoelastic-Medium.pdf,10.1007/s10999-026-09892-7,unmatched,Already matched
 B02-015__P50_2026_SciRep_Rayleigh-Surface-Wave-Dynamics-Porous-Piezo-thermoelectric-Smart.pdf,10.1038/s41598-026-59340-x,unmatched,Already matched
 B02-016__P51_2026_MAMS_Size-dependent-Analysis-Surface-Wave-Irregular-Fractured-Porous.pdf,10.1080/15376494.2024.2440131,Meghana2025a,DOI matched to bib key
 B02-019__P54_2026_EJMSOL_Acoustic-Wave-Rotating-FG-Piezomagnetic-Impedance-Boundaries.pdf,10.1016/j.euromechsol.2025.105786,Guha2026,DOI matched to bib key
+B03-002__10 Hygrothermal analysis of magneto.pdf,10.1016/j.compstruct.2017.08.015,Vinyas2017,DOI matched to bib key
+B03-003__23 PI- 13 MAMS Reflection hygrothermal Nonlocal.pdf,10.1080/15376494.2022.2130484,Yadav2022,DOI matched to bib key
+B03-008__Hygrothermoelasticity.pdf,-,unmatched,No DOI on page 1
 B03-009__j.ijengsci.2004.04.002.pdf,10.1016/j.ijengsci.2004.04.002,unmatched,Already matched
+B03-010__piezo-hygro.pdf,10.1177/0731684404031461,Raja2004,DOI matched to bib key
+B03-012__szeker-2.pdf,10.1080/01495739.2012.637827,Szekeres2012,DOI matched to bib key
 B03-013__1-s2.0-S221137972031737X-main.pdf,10.1016/j.rinp.2020.103270,unmatched,Already matched
+B03-014__1-s2.0-S2214157X21003749-main.pdf,10.1016/j.csite.2021.101211,Zhang2021,DOI matched to bib key
 B03-015__10.1080@15397734.2020.1852088.pdf,10.1080/15397734.2020.1852088,Ma2020,DOI matched to bib key
 B03-016__2019Amodifiedfractional-ordergeneralizedpiezoel.pdf,10.1080/01495739.2018.1522987,Guo2018,DOI matched to bib key
+B03-018__AppliedMathematicsandComputation3912021125627.pdf,10.1016/j.cam.2020.112923,Wang2021,DOI matched to bib key
 B03-019__j.apm.2021.02.028.pdf,10.1016/j.apm.2021.02.028,Li2021,DOI matched to bib key
 B03-020__mdd + fractional.pdf,10.1016/j.ijheatmasstransfer.2019.118664,Li2019,DOI matched to bib key
+B03-021__mdd vs fract.pdf,10.1016/j.cam.2020.112923,unmatched,Already matched
 B03-022__Piezo-thermoelastic media.pdf,10.1080/17455030.2020.1730480,Mondal2020,DOI matched to bib key
 B03-024__1-s2.0-S0022509615000320-main.pdf,10.1016/j.jmps.2015.02.001,Lim2015,DOI matched to bib key
 B03-025__1-s2.0-S0263822314002657-main.pdf,10.1016/j.compstruct.2014.05.048,Ke2014,DOI matched to bib key
