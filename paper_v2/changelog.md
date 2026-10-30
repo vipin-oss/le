@@ -59,7 +59,35 @@ Consistent TikZ style: node = draw, rounded corners, fill=blue!7, font=\footnote
 
 All figures drawn in TikZ; no pixel-copy or trace of published figures; data curves only from scripts/.
 
-### 7. New output file: ARENA_SUMMARY.tex
+### 7. Redo of all TikZ geometry figures (figs_tikz/ directory)
+All 11 geometry schematics were redrawn with explicit coordinates (no relative positioning like `right=of`). Each figure is a standalone TikZ file in `figs_tikz/figN.tex` (tikzpicture only, no documentclass), `\input` into the corresponding section.
+
+Consistent style across all figures:
+- Node style: draw, rounded corners, fill=blue!7, font=\footnotesize
+- Arrow style: Stealth, thick, shorten
+- Labels: \footnotesize, above/below/pos=0.5, blue!60!black
+- Explicit coordinates: \node at (x,y), \draw (x1,y1)--(x2,y2)
+- No text overlap; figure width \linewidth via \small in figure environment
+- Same colours, same arrow style, same fonts across all figures
+- Geometry elements: axes (x,y), shaded medium regions, surface/interface line, incident/reflected/transmitted wave arrows, wavefront lines, boundary conditions text (q_n=0 or \theta=0), material labels (\rho, c_1, c_2)
+
+| Figure | Section | Geometry | Cite key |
+|--------|---------|----------|----------|
+| fig1_template | s03_foundations | Heat-flux template: flux, gradient, lags | Biot1956 |
+| fig2_classical | s04_classical | Mechanical <-> thermal coupling via beta | Biot1956 |
+| fig3_fronts | s05_hyperbolic | Elastic-type and thermal-type wave fronts | Lord1967 |
+| fig4_reflection | s08_waves3d | Half-space: incident P, reflected P/SV, thermal | Das2008 |
+| fig5_rayleigh | s10_surface | Rayleigh wave: surface-trapped motion decaying with depth | Rayleigh1885 |
+| fig6_interface | s11_interfaces | Welded interface: incident/reflected/transmitted P and SV | Nowacki1975 |
+| fig7_size | s12_size | Lattice vs continuum vs nonlocal/gradient | BornKarman1912, Eringen1972 |
+| fig8_multi | s13_multiphysics | Multiphysics coupling: mech, thermal, electric, magnetic, diffusive | Nowacki1978, Chandrasekharaiah1984 |
+| fig9_bg | s13b_bg | Bleustein--Gulyaev SH surface wave on 6mm half-space | --- (no valid bib key) |
+| fig10_schemes | s14b_schemes | Finite-difference grid with front at x=t | Joseph1990 |
+| fig11_applications | s15_applications | Application regime map | --- |
+
+No pixel-copy or trace of published figures. Caption follows "Geometry after [cite]" where a valid bib key exists. fig:bg-geo has no citation because Bleustein1968/Gulyaev1969 are not in any bib file.
+
+### 8. New output file: ARENA_SUMMARY.tex
 - paper_v2/ARENA_SUMMARY.tex created with 5 required sections:
   (1) Old vs new outline, (2) New/modified files, (3) New figures list,
   (4) Unverified/unable items, (5) 10-line compile/check list for user.

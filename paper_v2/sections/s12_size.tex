@@ -62,16 +62,6 @@ Nonlocal and gradient elasticity add one length to capture the lattice deviation
 \end{summarybox}
 
 \begin{figure}[t!]\centering\small
-\begin{tikzpicture}[x=1.1cm,y=1.1cm,>=Stealth,
-  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
-  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
-  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
-  \node[node,text width=2.6cm] (lattice) {Lattice\\\[-2pt] discrete atoms\\\[-2pt] spacing $a$\\\[-2pt] exact $\sin(ka/2)$};
-  \node[node,text width=2.6cm,right=2.2cm of lattice] (cont) {Continuum\\\[-2pt] local elasticity\\\[-2pt] $\omega=ck$\\\[-2pt] no dispersion};
-  \node[node,text width=2.6cm,below=1.4cm of lattice] (nonlocal) {Nonlocal/\\\[-2pt] gradient\\\[-2pt] one length $\xi,\ell$\\\[-2pt] rational $\omega(k)$};
-  \draw[arr] (lattice.east) -- (cont.west) node[midway,above,lbl] {long-wave only};
-  \draw[arr] (lattice.south) -- (nonlocal.north) node[midway,left,lbl] {captures bend};
-  \draw[arr] (cont.south) -- (nonlocal.north) node[midway,right,lbl] {adds length};
-\end{tikzpicture}
+\input{figs_tikz/fig7_size.tex}
 \caption{Geometry after \citep{BornKarman1912,Eringen1972}: size effects bridge discrete lattice dispersion and local continuum via one nonlocal or gradient length.}\label{fig:size-geo}
 \end{figure}

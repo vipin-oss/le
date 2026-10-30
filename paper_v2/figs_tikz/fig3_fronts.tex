@@ -1,0 +1,15 @@
+% fig3_fronts.tex -- Wave fronts in hyperbolic thermoelasticity (s05_hyperbolic)
+\begin{tikzpicture}[x=1.0cm,y=1.0cm,>=Stealth]
+  \tikzset{
+    node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
+    arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+    lbl/.style={font=\footnotesize,text=blue!60!black},
+  }
+  \node[node] at (-3.6, 0.0) (src) {Source\\[-1pt] at $x=0$};
+  \node[node] at ( 0.6, 0.0) (fe) {Elastic-type\\[-1pt] front $v_e$};
+  \node[node] at ( 4.8, 0.0) (ft) {Thermal-type\\[-1pt] front $v_t$};
+  \draw[arr] (src.east) -- (fe.west) node[pos=0.5,above,lbl] {$v_e<v_t$};
+  \draw[arr] (fe.east) -- (ft.west) node[pos=0.5,above,lbl] {};
+  \draw[arr,dashed] (src.south east) -- (ft.north west) node[pos=0.5,below,lbl] {damped tail};
+  \draw[arr] (src.south) to[out=-60,in=240] node[pos=0.5,right,lbl] {energy decay} (ft.south);
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+% fig8_multi.tex -- Multiphysics coupling geometry (s13_multiphysics)
+\begin{tikzpicture}[x=1.0cm,y=1.0cm,>=Stealth]
+  \tikzset{
+    node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
+    arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+    lbl/.style={font=\footnotesize,text=blue!60!black},
+  }
+  \node[node] at (-3.4, 0.8) (mech) {Mechanical\\[-1pt] $\\bu,\\varepsilon,\\sigma$};
+  \node[node] at ( 1.4, 0.8) (therm) {Thermal\\[-1pt] $\\theta,q,T_0$\\[-1pt] heat law $G(s)$};
+  \node[node] at (-3.4,-2.2) (elec) {Electric\\[-1pt] $E,D,\\varphi$\\[-1pt] piezo $e$, $\\varepsilon_e$};
+  \node[node] at ( 1.4,-2.2) (mag) {Magnetic\\[-1pt] $\\bm H,\\bm J$\\[-1pt] Alfv\'en $v_A$};
+  \node[node] at (-1.0,-4.2) (diff) {Diffusive\\[-1pt] concentration\\[-1pt] chemical potential};
+  \draw[arr] (mech.east) -- (therm.west) node[pos=0.5,above,lbl] {$-\\beta\\nabla\\theta$};
+  \draw[arr] (therm.west) -- (mech.east) node[pos=0.5,below,lbl] {dilatation heating};
+  \draw[arr] (mech.south) -- (elec.north) node[pos=0.5,left,lbl] {$e\\nabla\\varphi$};
+  \draw[arr] (therm.south) -- (mag.north) node[pos=0.5,right,lbl] {Lorentz force};
+  \draw[arr] (elec.south) -- (diff.north) node[pos=0.5,left,lbl] {carriers};
+\end{tikzpicture}

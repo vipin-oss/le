@@ -24,18 +24,7 @@ whose two roots are the speeds of the two wave fronts (an elastic-type and a the
 \end{enumerate}
 
 \begin{figure}[t!]\centering\small
-\begin{tikzpicture}[x=1.2cm,y=1.2cm,>=Stealth,
-  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.2cm},
-  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
-  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
-  \node[node,text width=2.4cm] (src) {Source\\\[-2pt] at $x=0$};
-  \node[node,right=2.5cm of src] (fe) {Elastic-type\\\[-2pt] front $v_e$};
-  \node[node,right=2.5cm of fe] (ft) {Thermal-type\\\[-2pt] front $v_t$};
-  \draw[arr] (src.east) -- (fe.west) node[midway,above,lbl] {$v_e<v_t$};
-  \draw[arr] (fe.east) -- (ft.west) node[midway,above,lbl] {};
-  \draw[arr,dashed] (src.south east) -- (ft.north west) node[midway,below,lbl] {damped tail};
-  \draw[arr] (src.south) to[out=-60,in=240] node[midway,right,lbl] {energy decay} (ft.south);
-\end{tikzpicture}
+\input{figs_tikz/fig3_fronts.tex}
 \caption{Geometry after \citep{Lord1967}: two wave fronts in hyperbolic thermoelasticity -- elastic-type and thermal-type fronts repel in speed; the thermal front carries a damped tail.}\label{fig:fronts}
 \end{figure}
 

@@ -13,6 +13,11 @@ the three conditions form a homogeneous $3\times3$ linear system for $(\phi_1,\p
 
 \paragraph{Check of the limit.} For $\varepsilon\to0$ the determinant factorises and the root reduces to the classical Rayleigh equation $(2-c^2/c_2^2)^2=4\sqrt{1-c^2/c_1^2}\sqrt{1-c^2/c_2^2}$ \citep{Rayleigh1885}. For $\nu=0.3$ (so $c_2^2/c_1^2=(1-2\nu)/(2-2\nu)=2/7$) the root is $c_R=0.4957\,c_1=0.9274\,c_2$; the numerical determinant root at $\varepsilon=10^{-4}$ reproduces this value to the digits displayed, and the thermoelastic root approaches it at large $k$ where the response becomes isothermal.
 
+\begin{figure}[t!]\centering\small
+\input{figs_tikz/fig5_rayleigh.tex}
+\caption{Geometry after \citep{Rayleigh1885}: thermoelastic Rayleigh wave on a half-space -- surface-trapped particle motion decaying exponentially with depth, coupled dilatational--thermal and shear potentials.}\label{fig:rayleigh-geo}
+\end{figure}
+
 \subsection{Results}
 \Cref{fig:rayleigh} shows the speed change and damping of the thermoelastic Rayleigh wave for $\varepsilon=0.05$, $\nu=0.3$. The speed increases by about $2\times10^{-3}$ at low wavenumber relative to the purely elastic Rayleigh speed (the adiabatic limit) and tends to the elastic value at large $k$ (the isothermal limit), in the same way as the bulk wave (\Cref{fig:disp}a), but the effect is about an order of magnitude smaller than for the compressional wave because only part of the surface motion is dilatational. The damping peaks at $k\,c_1/\omega_*\approx0.4$ with a quality-factor reciprocal of about $2\times10^{-3}$. The thermal boundary condition matters at low wavenumber: an isothermal surface shifts the damping peak to smaller $k$ and lowers the speed change, since the surface temperature fluctuation is suppressed. The Lord--Shulman law ($\tau_q=0.25/\omega_*$, insulated surface) changes the results little at low wavenumber but increasingly at large $k$: relative to the classical insulated surface the damping differs by less than $1\,\%$ for $k\,c_1/\omega_*\le0.1$, by $5\,\%$ at the damping peak, by $10\,\%$ at $k\,c_1/\omega_*=1$ and saturates at about $12\,\%$ for $k\,c_1/\omega_*\ge10$; the speed offset is $-1.2\times10^{-4}$ in relative terms at large $k$. This is the pattern expected from the bulk wave: the heat law matters once the product of the frequency and the lag is of order one.
 

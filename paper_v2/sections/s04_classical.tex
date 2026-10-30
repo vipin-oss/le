@@ -16,18 +16,7 @@ The thermodynamic content is fully encoded in the two coupling terms: the therma
 The shear potential $\bm\psi$ obeys an uncoupled wave equation with speed $c_2=\sqrt{\mu/\rho}$: transverse waves are neither attenuated nor dispersed by thermoelastic coupling in an unbounded isotropic medium. Only the dilatational potential couples to temperature. At boundaries and interfaces, shear and dilatational motions are coupled again by boundary conditions, which is why surface waves and reflected shear waves are affected by thermal coupling (Sections~\ref{sec:surface} and~\ref{sec:interfaces}).
 
 \begin{figure}[t!]\centering\small
-\begin{tikzpicture}[x=1.1cm,y=1.1cm,>=Stealth,
-  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
-  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
-  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
-  \node[node] (mech) {Mechanical\\\[-2pt] $\bu,\varepsilon_{ij}$\\\[-2pt] stress $\sigma_{ij}$};
-  \node[node,right=1.8cm of mech] (therm) {Thermal\\\[-2pt] $\theta,T_0$\\\[-2pt] flux $q_i$};
-  \node[node,below=1.4cm of mech] (energy) {Energy\\\[-2pt] balance\\\[-2pt] $\rho c\dot\theta+T_0\beta\dot\varepsilon_{kk}=-q_{i,i}$};
-  \draw[arr] (mech.east) -- (therm.west) node[midway,above,lbl] {$-T_0\beta\nabla\!\cdot\dot{\bu}$};
-  \draw[arr] (therm.west) -- (mech.east) node[midway,below,lbl] {$-\beta\nabla\theta$};
-  \draw[arr] (mech.south) -- (energy.north) node[midway,left,lbl] {work $\sigma\dot\varepsilon$};
-  \draw[arr] (therm.south west) -- (energy.north east) node[midway,right,lbl] {heat $q_i,T$};
-\end{tikzpicture}
+\input{figs_tikz/fig2_classical.tex}
 \caption{Geometry after \citep{Biot1956}: classical coupled thermoelasticity -- mechanical and thermal fields are linked by the thermal body force and dilatation heating, the two terms sharing $\beta$.}\label{fig:classical-coup}
 \end{figure}
 

@@ -14,22 +14,7 @@ and a plane wave in direction $\bm n$, $\propto\exp[\ii(k\,\bm n\!\cdot\!\bx-\om
 A plane dilatational wave incident on a plane free surface in an isotropic thermoelastic half-space generates reflected waves of three kinds: a dilatational (elastic-type) wave, a thermal-type wave (evanescent or strongly damped), and a shear (SV) wave. Boundary conditions are the traction-free conditions together with a thermal condition, either \emph{insulated} (zero normal flux, $\partial_n\theta=0$ for any $G$) or \emph{isothermal} ($\theta=0$). The amplitude ratios are obtained from a $3\times3$ linear system and have been computed for many models; the comparison of insulated and isothermal boundaries for generalized theories is a classical exercise \citep{Das2008}, and extensions with nonlocal, micropolar, piezoelectric and rotational effects are numerous \citep{Kalkal2020,Singh2020b,Yadav2023,Gupta2024a}. We will not tabulate their results; instead, Section~\ref{sec:surface} gives the structure of the free-surface problem used for Rayleigh waves, which is the same determinant, and Section~\ref{sec:interfaces} treats the interface problem with a verified energy check.
 
 \begin{figure}[t!]\centering\small
-\begin{tikzpicture}[x=1.2cm,y=1.2cm,>=Stealth,
-  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.2cm},
-  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
-  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
-  \draw[thick] (0,-1.5) -- (0,1.5);
-  \draw[thick,dashed] (-2,0) -- (0,0) node[midway,above,lbl] {incident P};
-  \draw[arr,thick] (-2,0) -- (-0.3,0);
-  \draw[thick] (0,0) -- (2,0.9) node[midway,above,lbl] {reflected P};
-  \draw[arr,thick] (0.3,0.3) -- (1.8,1.0);
-  \draw[thick] (0,0) -- (2,-0.9) node[midway,below,lbl] {reflected SV};
-  \draw[arr,thick] (0.3,-0.3) -- (1.8,-0.9);
-  \draw[thick] (0,0) -- (2,-1.5) node[midway,below,lbl] {thermal (evanescent)};
-  \draw[arr,dashed,thick] (0.3,-0.6) -- (1.4,-1.3);
-  \node[above=0.1cm] at (0,1.5) {free surface};
-  \node[below=0.1cm] at (0,-1.5) {half-space $y>0$};
-\end{tikzpicture}
+\input{figs_tikz/fig4_reflection.tex}
 \caption{Geometry after \citep{Das2008}: reflection at a free thermoelastic surface -- an incident P wave generates reflected P, reflected SV and a thermal-type (evanescent/damped) wave; thermal condition insulated or isothermal.}\label{fig:reflection-geo}
 \end{figure}
 

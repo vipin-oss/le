@@ -171,13 +171,24 @@ Key structural changes:
 \begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
 \textbf{File} & \textbf{Purpose}\\\midrule
 {\tt ARENA\_SUMMARY.tex} & This document: old vs new outline, file changes, new figures, unverified items, compile/check list\\
+{\tt figs\_tikz/fig1\_template.tex} & Heat-flux template schematic (standalone TikZ, \input into s03\_foundations)\\
+{\tt figs\_tikz/fig2\_classical.tex} & Classical thermoelastic coupling schematic (\input into s04\_classical)\\
+{\tt figs\_tikz/fig3\_fronts.tex} & Hyperbolic wave fronts schematic (\input into s05\_hyperbolic)\\
+{\tt figs\_tikz/fig4\_reflection.tex} & Half-space reflection geometry (\input into s08\_waves3d)\\
+{\tt figs\_tikz/fig5\_rayleigh.tex} & Rayleigh wave surface geometry (\input into s10\_surface)\\
+{\tt figs\_tikz/fig6\_interface.tex} & Welded interface geometry (\input into s11\_interfaces)\\
+{\tt figs\_tikz/fig7\_size.tex} & Lattice vs continuum vs nonlocal/gradient (\input into s12\_size)\\
+{\tt figs\_tikz/fig8\_multi.tex} & Multiphysics coupling geometry (\input into s13\_multiphysics)\\
+{\tt figs\_tikz/fig9\_bg.tex} & Bleustein--Gulyaev SH surface wave geometry (\input into s13b\_bg)\\
+{\tt figs\_tikz/fig10\_schemes.tex} & Finite-difference grid geometry (\input into s14b\_schemes)\\
+{\tt figs\_tikz/fig11\_applications.tex} & Application regime map (\input into s15\_applications)\\
 \bottomrule
 \end{tabularx}
 
 \section*{3. New Figures (TikZ / pgfplots)}
 
-All figures are drawn in TikZ with a consistent style:
-\texttt{node} style: draw, rounded corners, fill=blue!7, font=\textbackslash footnotesize;
+All figures are drawn as standalone TikZ files in {\tt figs\_tikz/figN.tex} (tikzpicture only, no documentclass), \input into each section. Consistent style:
+\texttt{node} style: draw, rounded corners, fill=blue!7, font=\textbackslash footnotesize; explicit coordinates (\textbackslash node at (x,y), \textbackslash draw (x1,y1)--(x2,y2)); minimal relative positioning;
 \texttt{arr} style: \textbackslash Stealth, thick, shorten;
 labels: tiny, italic, blue!60!black. No pixel-copy or trace of published figures; data curves come only from {\tt scripts/}.
 
@@ -192,7 +203,7 @@ fig:rayleigh-geo & Rayleigh wave: surface-trapped elliptical motion decaying wit
 fig:interface-geo & Welded interface: incident/reflected/transmitted P and SV & Nowacki1975 & TikZ & s11\_interfaces\\
 fig:size-geo & Lattice vs continuum vs nonlocal/gradient & BornKarman1912, Eringen1972 & TikZ & s12\_size\\
 fig:multi-geo & Multiphysics coupling: mechanical, thermal, electric, magnetic, diffusive & Nowacki1978, Chandrasekharaiah1984 & TikZ & s13\_multiphysics\\
-fig:bg-geo & Bleustein--Gulyaev SH surface wave on 6mm half-space & Bleustein1968, Gulyaev1969 & TikZ & s13b\_bg\\
+fig:bg-geo & Bleustein--Gulyaev SH surface wave on 6mm half-space & --- (no valid bib key) & TikZ & s13b\_bg\\
 fig:schemes-geo & Finite-difference grid with front at $x=t$ & Joseph1990 & TikZ & s14b\_schemes\\
 fig:applications-geo & Application regime map (laser, MEMS/NEMS, piezo, tissue, geophysical) & --- & TikZ & s15\_applications\\
 \bottomrule

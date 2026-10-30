@@ -45,21 +45,7 @@ Micropolar elasticity \citep{Eringen1966a,Eringen1999,TauchertClausAriman1968} a
 
 \subsection{Table of couplings}
 \begin{figure}[t!]\centering\small
-\begin{tikzpicture}[x=1.1cm,y=1.1cm,>=Stealth,
-  node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.4cm},
-  arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
-  lbl/.style={font=\tiny\itshape,text=blue!60!black}]
-  \node[node,text width=2.6cm] (mech) {Mechanical\\\[-2pt] $\bu,\varepsilon,\sigma$};
-  \node[node,text width=2.6cm,right=2.2cm of mech] (therm) {Thermal\\\[-2pt] $\theta,q,T_0$\\\[-2pt] heat law $G(s)$};
-  \node[node,text width=2.6cm,below=1.4cm of mech] (elec) {Electric\\\[-2pt] $E,D,\varphi$\\\[-2pt] piezo $e$, $\varepsilon_e$};
-  \node[node,text width=2.6cm,below=1.4cm of therm] (mag) {Magnetic\\\[-2pt] $\bm H,\bm J$\\\[-2pt] Alfv'en $v_A$};
-  \node[node,text width=2.6cm,below=1.4cm of elec] (diff) {Diffusive\\\[-2pt] concentration\\\[-2pt] chemical potential};
-  \draw[arr] (mech.east) -- (therm.west) node[midway,above,lbl] {$-\beta\nabla\theta$};
-  \draw[arr] (therm.west) -- (mech.east) node[midway,below,lbl] {dilatation heating};
-  \draw[arr] (mech.south) -- (elec.north) node[midway,left,lbl] {$e\nabla\varphi$};
-  \draw[arr] (therm.south) -- (mag.north) node[midway,right,lbl] {Lorentz force};
-  \draw[arr] (elec.south) -- (diff.north) node[midway,left,lbl] {carriers};
-\end{tikzpicture}
+\input{figs_tikz/fig8_multi.tex}
 \caption{Geometry after \citep{Nowacki1978,Chandrasekharaiah1984}: multiphysics coupling -- each added field renormalises constants and/or adds branches; with no free charge the piezo-electric effect is an exact stiffening renormalisation.}\label{fig:multi-geo}
 \end{figure}
 

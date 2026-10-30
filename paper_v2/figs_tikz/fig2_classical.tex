@@ -1,0 +1,15 @@
+% fig2_classical.tex -- Classical thermoelastic coupling geometry (s04_classical)
+\begin{tikzpicture}[x=1.0cm,y=1.0cm,>=Stealth]
+  \tikzset{
+    node/.style={draw,rounded corners=1pt,fill=blue!7,align=center,font=\footnotesize,inner sep=2pt,text width=2.6cm},
+    arr/.style={->,thick,shorten >=1pt,shorten <=1pt},
+    lbl/.style={font=\footnotesize,text=blue!60!black},
+  }
+  \node[node] at (-3.4, 0.0) (mech) {Mechanical\\[-1pt] $\\bu,\\varepsilon_{ij}$\\[-1pt] stress $\\sigma_{ij}$};
+  \node[node] at ( 1.4, 0.0) (therm) {Thermal\\[-1pt] $\\theta,T_0$\\[-1pt] flux $q_i$};
+  \node[node] at (-1.0,-2.6) (energy) {Energy\\[-1pt] balance\\[-1pt] $\\rho c\\dot\\theta+T_0\\beta\\dot\\varepsilon_{kk}=-q_{i,i}$};
+  \draw[arr] (mech.east) -- (therm.west) node[pos=0.5,above,lbl] {$-T_0\\beta\\nabla\\!\\cdot\\dot{\\bu}$};
+  \draw[arr] (therm.west) -- (mech.east) node[pos=0.5,below,lbl] {$-\\beta\\nabla\\theta$};
+  \draw[arr] (mech.south) -- (energy.north) node[pos=0.5,left,lbl] {work $\\sigma\\dot\\varepsilon$};
+  \draw[arr] (therm.south west) -- (energy.north east) node[pos=0.5,right,lbl] {heat $q_i,T$};
+\end{tikzpicture}
