@@ -91,3 +91,48 @@ Two cautions that belong with these verdicts.
 
 For CR095 the DOI is not printed on the article; it was read from the publisher's DOI
 page and entered in the register, and the register row now says so.
+
+## Batch 003 — every blocked claim whose source is now in the library, top 30 first
+
+The remaining open claims of `missing_sources_priority.csv` were matched to the library by
+DOI (inventory `first_page_doi` against `source_doi_if_given`) and, where the inventory had
+no DOI, by the `matched_bib_key` of the file. Ten of the 141 priority sources have a file
+that is now readable; three of them are CR095 / CR221 / CR224, settled in batch 002. The
+other **seven are settled here**, which closes the cohort — every blocked register row whose
+source the library now supplies has a page-level verdict.
+
+| rank | key | claim | verdict | page |
+|---|---|---|---|---|
+| 17 | `Fabrizio2014` | CR006 | **SUPPORTED** — CC-0007 | p. 483 abstract, pp. 485–486 models, Sec. 4 listed at p. 486 |
+| 30 | `DellOroPata2016Viscoelasticity` | CR028 | **SUPPORTED** — CC-0008 | p. 1 abstract/§1.1, p. 2 §1.2 |
+| 31 | `ChenGurtin1968` | CR033 | **SUPPORTED** — CC-0009 | p. 615, Eq. (1.4) and the sign of a |
+| 75 | `Quintanilla 2003` | CR133 | **NOT SUPPORTED** — CC-0010 | p. 714, method paragraph |
+| 96 | `Lamb 1917` | CR164 | **PARTLY SUPPORTED** — CC-0011 | p. 114 cover page only |
+| 116 | `Lazar & Agiasofitou 2022` | CR194 | **SUPPORTED** — CC-0012 | pp. 3–4 |
+| 134 | `Abate & Whitt 2006` | CR216 | **SUPPORTED** — CC-0013 | p. 408 |
+
+### The one that matters: CR133 gets worse, not better
+
+The manuscript says that for DPL/TPL "an energy functional exists but its construction is
+more involved", citing Quintanilla (2003) and Chirita (2016). Page 714 of Quintanilla (2003)
+says the opposite about its own method: *"We used a spectral study … we determine the
+infinite family of polynomial equations that are satisfied by the eigenvalues … we use the
+Hurwitz theorem … this method does not need an advanced knowledge of functional analysis."*
+No energy functional is constructed in the pages read. **Quintanilla (2003) must come out of
+that sentence** (or the sentence must be rewritten to say he proves stability spectrally);
+the Chirita (2016) half is still unreadable, so the sentence is not thereby saved.
+
+### Two verdicts that are honest but limited
+
+* **CR164 (Lamb 1917)** is only PARTLY SUPPORTED because the held PDF is a JSTOR scan whose
+  body is page images: extraction returns the cover (title, journal, 93, 114–128, DOI) and
+  boilerplate, nothing else. Identity and subject are verified; no guided-mode statement is.
+* **CR194 (Lazar & Agiasofitou 2022)** is SUPPORTED for "acts on the displacement" — pp. 3–4
+  say nonlocal elasticity has only the displacement field as degree of freedom — but the
+  contrast "rather than on the stress" is the manuscript's own framing, not a sentence in
+  the source. The held file is the accepted manuscript, so its page numbers are not the
+  journal's.
+
+Chen & Gurtin (CR033) is the cleanest gain: **Eq. (1.4) on p. 615 reads exactly
+θ = φ − a Δφ**, with "if k is positive, the second law tells us that a ≥ 0" in the line
+below it. That is the relation and the sign, both on one page.
