@@ -263,3 +263,19 @@ ones Step 3 lists for the author.
 (29.7 MB) and the 30.2 MB `10.1007@978-1-4612-2210-1.pdf` - because the text extractor refuses files
 above 25 MB. If either book is the source of a blocked row, that row is still open. Both are recorded
 as `NOT READ` in `library_inventory_v3.csv` rather than assumed absent.
+
+## Correction made during the Step-4 pass
+
+The batch-005 row **CC-0024** (register CR175, Gupta et al. 2023) was first written as SOURCE NOT
+AVAILABLE, because the only 2023 file then identified was the Barak et al. solid-solid paper. That was
+wrong. The folder holds the actual paper as
+`P11_2023_HFF_Reflection-Transmission-Plane-Waves-Interface-Ideal-Fluid.pdf`: five authors - Gupta,
+Kumar, Kumar, Pathania, Barak - and a fluid / nonlocal piezothermoelastic interface with DPL, three
+temperature models and memory-dependent derivatives, reporting energy ratios of one reflected and four
+transmitted waves. CC-0024 is therefore **SUPPORTED at R3 on p. 1**, and the Step-2 coverage statement
+above should be read with that one correction: 18 of the 143 blocked rows now have a source, not 17,
+and CR175 is resolved. CR210 (Singh, Sarkar and Pal, J. Heat Transfer 2020) remains genuinely absent.
+
+The lesson, recorded here so it is not repeated: a DOI-only sweep misses a paper whose first page does
+not print its DOI, and the inventory's `matched_bib_key` already knew the answer. Surname matching was
+not the problem; trusting a single look-alike file was.
