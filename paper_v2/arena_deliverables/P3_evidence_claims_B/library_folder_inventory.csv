@@ -1,0 +1,14 @@
+folder,files_seen,what_the_folder_holds
+B03,25,"hygro-thermoelasticity, piezoelectricity books and piezo-thermoelastic papers; the file the ledger offered for Chirita2016 (a 2016 hygrothermal paper) is a different work"
+B04,27,nonlocal / two-temperature / microstructure wave papers
+B05,30,"piezo, flexoelectric, flexomagnetic and shell mechanics"
+B06,32,"orthotropic, porous, nonlocal surface-wave papers"
+B07,45,"memory-dependent derivative, two-temperature, Ezzat and Sharma papers"
+B08,32,"Sarkar/Mondal/Kaur wave papers, Lord & Shulman, Chandrasekharaiah review"
+B09,19,"crystal and porous thermoelasticity (Crystals, Applied Mathematical Modelling)"
+B10,31,applied-mathematics and photo-thermal papers
+B11,36,piezoelectricity texts and Acta/Applied journals
+B12,18,books and miscellaneous mechanics
+B13,2,Tzou/Racke-era continuum papers (Quintanilla & Racke 2005 among them)
+B14,23,"verified classics: Green & Lindsay 1972, Green & Naghdi 1991/1993, Cowin & Nunziato 1983, Nunziato & Cowin 1979, Eringen 1966, Chadwick & Sneddon 1958, Quintanilla 2019, lasiecka 2015, gorenflo 1997/2014"
+TOTAL (paper batches scanned),320,"B01 and B02 were also listed and hold the author's own papers (P01-P54), not cited literature"

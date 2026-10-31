@@ -1,0 +1,18 @@
+PASS needed header matches the declared schema
+PASS ranks run 1..n without gaps
+PASS one row per bibliography key
+PASS the top-30 block is sorted by claims_blocked, descending
+PASS no more than 30 rows carry the cut
+PASS the four over-cap experimental PDFs are listed
+PASS no other source is lost inside an archive without being named
+PASS every archive row names its bundle and member
+PASS every DOI is either NOT FOUND or DOI-shaped
+PASS no URLs, Drive links or folder names
+PASS findings header is the Task-1 schema
+PASS findings verdict vocabulary
+PASS every finding names a page or equation
+PASS source wordings stay within 25 words (+ [...] marker)
+PASS every finding states what the source actually says
+PASS the in-library list has one row per key
+     needed=34 (archive-blocked=5), library-held=4, findings=3
+PASS all checks (needed=34, library=4, findings=3)
