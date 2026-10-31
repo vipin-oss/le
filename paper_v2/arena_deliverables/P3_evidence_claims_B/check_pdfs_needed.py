@@ -5,10 +5,16 @@
  1. exact column set, ranks 1..n with no gaps and no duplicates;
  2. one row per bibliography key;
  3. sorted by claims_blocked, descending;
- 4. the top-30 cut is respected, and every row held only inside an over-cap archive
-    bundle survives it (the author can act on those without hunting);
- 5. a DOI is either the literal NOT FOUND or a DOI-shaped string; no URL, no Drive id;
- 6. every archive row names both the bundle and the member file.
+ 4. the list is the top-20 cut of the sources that are still NOT held: no row may be a
+    source already read from the library, and no row may name a claim that a
+    P3_evidence_claims_C batch has since resolved;
+ 5. a DOI is either the literal NOT FOUND or a DOI-shaped string; no URL, no Drive id.
+    A DOI is only asserted when it was read off a page, so the column is NOT FOUND
+    wherever the work is not held at all;
+ 6. `pdfs_held_in_archives.csv` keeps the over-cap archive members that therefore left
+    this list, one row each, naming bundle and member.
+
+`pdfs_needed_by_bundle.csv` is retired: it grouped the old 34-row list, which no longer exists.
 
 `library_read_findings.csv`
  7. Task-1 column set, verdict vocabulary, a page or equation for every row,
@@ -17,6 +23,7 @@
 Prints PASS lines and exits 0; FAIL and exit 1 otherwise.  Standard library only.
 """
 import csv
+import glob
 import os
 import re
 import sys
@@ -25,7 +32,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 NEEDED = os.path.join(HERE, "pdfs_needed_from_author.csv")
 FIND = os.path.join(HERE, "library_read_findings.csv")
 AVAIL = os.path.join(HERE, "library_available_sources.csv")
-BYB = os.path.join(HERE, "pdfs_needed_by_bundle.csv")
+HELD = os.path.join(HERE, "pdfs_held_in_archives.csv")
+CBATCH = os.path.join(HERE, "..", "P3_evidence_claims_C")
 
 NEEDED_COLS = ["rank", "bib_key", "authors", "year", "title", "doi", "claims_blocked",
                "claim_ids", "availability", "library_ledger_status",
@@ -55,24 +63,30 @@ def main():
           str([k for k in keys if keys.count(k) > 1][:5]))
     cb = [int(r["claims_blocked"]) for r in rows]
     head = cb[:min(30, len(cb))]
-    check("the top-30 block is sorted by claims_blocked, descending",
+    check("the top-20 block is sorted by claims_blocked, descending",
           head == sorted(head, reverse=True), str(head))
-    check("no more than 30 rows carry the cut", all(
-        "archive bundle" in r["availability"] for r in rows[30:]) or len(rows) <= 30,
-        str([r["bib_key"] for r in rows[30:]])[:200])
-
-    arch = [r for r in rows if "archive bundle" in r["availability"]]
-    blob = " ".join(r["availability"] for r in arch)
-    want = ["huberman2019.pdf", "jackson1970.pdf", "cahill2003.pdf", "2ndSoundSolids.pdf"]
-    missing = [w for w in want if w not in blob]
-    check("the four over-cap experimental PDFs are listed", not missing, str(missing))
-    check("no other source is lost inside an archive without being named",
-          all(re.search(r"member [\w-]+\.pdf", r["availability"]) for r in arch),
-          str([r["bib_key"] for r in arch if not re.search(r"member [\w-]+\.pdf",
-                                                          r["availability"])]))
-    check("every archive row names its bundle and member",
-          all(re.search(r"LE_PAPERS_P\d+\S*\.zip", r["availability"])
-              and re.search(r"member [\w-]+\.pdf", r["availability"]) for r in arch))
+    check("the list is the top-20 cut", len(rows) <= 20, "%d rows" % len(rows))
+    check("no row on the needed list is a source already held in the library",
+          not any("archive bundle" in r["availability"] for r in rows),
+          str([r["bib_key"] for r in rows if "archive bundle" in r["availability"]]))
+    check("every row states that the source is not held",
+          all(r["availability"].startswith("not in library") for r in rows),
+          str([r["bib_key"] for r in rows if not r["availability"].startswith("not in library")]))
+    # a claim resolved by a later C batch must not still be advertised as blocked
+    resolved = set()
+    for b in sorted(glob.glob(os.path.join(CBATCH, "claim_check_C_batch_*.csv"))):
+        for c in csv.DictReader(open(b, newline="")):
+            # only a row that actually read a page counts as resolved; a batch row that
+            # ends at SOURCE NOT AVAILABLE leaves the source on the needed list
+            if c["verdict"] == "SOURCE NOT AVAILABLE":
+                continue
+            for ref in re.findall(r"\b(CR\d{3})\b", c["notes"]):
+                resolved.add(ref)
+    stale = [(r["bib_key"], c) for r in rows for c in r["claim_ids"].split() if c in resolved]
+    check("no row still lists a claim that has since been checked against a held source",
+          not stale, str(stale[:5]))
+    check("every blocked claim id is a real register row", all(
+        re.match(r"^CR\d{3}$", c) for r in rows for c in r["claim_ids"].split()))
 
     doiok = re.compile(r"^10\.\d{4,9}/\S+$")
     bad = [r["bib_key"] for r in rows
@@ -94,35 +108,25 @@ def main():
     check("every finding states what the source actually says",
           all(r["what_source_actually_states"].strip() for r in frows))
 
+    hrows = list(csv.DictReader(open(HELD, newline="")))
+    check("the archive appendix has one row per held member",
+          len({r["bib_key"] for r in hrows}) == len(hrows))
+    want = {"quintanilla2008.pdf", "jackson1970.pdf", "huberman2019.pdf", "cahill2003.pdf"}
+    have = {r["file_name"] for r in hrows}
+    check("the four over-cap experimental PDFs are still accounted for", want <= have,
+          str(want - have))
+    check("every archive row names both the bundle and the member", all(
+        re.search(r"LE_PAPERS_P\d+\S*\.zip", r["bundle"]) and r["file_name"].endswith(".pdf")
+        for r in hrows),
+        str([r["bib_key"] for r in hrows if not re.search(r"LE_PAPERS_P\d+\S*\.zip", r["bundle"])]))
+    check("no key appears both as needed and as held",
+          not ({r["bib_key"] for r in rows} & {r["bib_key"] for r in hrows}))
+
     arows = list(csv.DictReader(open(AVAIL, newline="")))
     check("the in-library list has one row per key",
           len({r["bib_key"] for r in arows}) == len(arows))
-    print("     needed=%d (archive-blocked=%d), library-held=%d, findings=%d"
-          % (len(rows), len(arch), len(arows), len(frows)))
-
-    # the bundle grouping
-    brows = list(csv.DictReader(open(BYB, newline="")))
-    check("bundle groups cover exactly the 34 needed rows", len(brows) == len(rows),
-          "%d grouped vs %d needed" % (len(brows), len(rows)))
-    check("the same bibliography keys, once each",
-          sorted(r["bib_key"] for r in brows) == sorted(r["bib_key"] for r in rows))
-    g = [r["group"] for r in brows]
-    check("only the four group names are used", set(g) <= {"P01", "P02", "P03", "separate"},
-          str(set(g)))
-    bundle_of = {"P01": "LE_PAPERS_P01.zip", "P02": "LE_PAPERS_P02__was_R3.zip",
-                 "P03": "LE_PAPERS_P03__was_R4.zip"}
-    bad = [r["bib_key"] for r in brows
-           if (r["group"] in bundle_of and r["bundle"] != bundle_of[r["group"]])
-           or (r["group"] == "separate" and r["bundle"])]
-    check("each bundle group names its own bundle, and 'separate' names none", not bad, str(bad[:5]))
-    bad = [r["bib_key"] for r in brows
-           if (r["group"] == "separate" and r["file_name"]) or
-              (r["group"] != "separate" and not r["file_name"].endswith(".pdf"))]
-    check("a member file is named only where it is known", not bad, str(bad[:5]))
-    want = {"cahill2003.pdf", "2ndSoundSolids.pdf", "huberman2019.pdf", "jackson1970.pdf",
-            "quintanilla2008.pdf"}
-    have = {r["file_name"] for r in brows if r["file_name"]}
-    check("the five known members are all present", want <= have, str(want - have))
+    print("     needed=%d (top-20 cut), archive-held=%d, library-held=%d, findings=%d"
+          % (len(rows), len(hrows), len(arows), len(frows)))
 
     if fails:
         print("FAIL %d check(s) failed" % len(fails))
