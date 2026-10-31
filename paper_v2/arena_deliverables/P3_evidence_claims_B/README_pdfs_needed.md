@@ -99,3 +99,29 @@ python3 check_pdfs_needed.py    # stdlib only; prints PASS all checks and exits 
 ledger (`SOURCE_LEDGER.csv`, status + evidence columns). Where the ledger records that the
 held file is a different paper, the work is treated as **not held** — that is the whole
 point of the mismatch rows.
+
+## Grouping by bundle — `pdfs_needed_by_bundle.csv`
+
+The 34 rows, sorted into the three bundles plus a fourth group that needs a fresh download.
+
+| group | bundle | rows | files to pull out |
+|---|---|---|---|
+| **P01** | `LE_PAPERS_P01.zip` (15.5 MB) | 1 | `quintanilla2008.pdf` |
+| **P02** | `LE_PAPERS_P02__was_R3.zip` (51.8 MB) | 2 | `cahill2003.pdf`, `2ndSoundSolids.pdf` |
+| **P03** | `LE_PAPERS_P03__was_R4.zip` (62.3 MB) | 2 | `huberman2019.pdf`, `jackson1970.pdf` |
+| **separate** | — | 29 | nothing to extract; these have to be downloaded |
+
+Why so few in the bundles: the library ledger records, for almost every one of the 29, that
+the bundle *was* searched and the member found there is a different paper. Two cases are
+written into the `note` column so they are not re-tried:
+
+* `ChenGurtin1968` — P03 holds `gurtin1968.pdf`, but that is Gurtin & Pipkin 1968, not Chen & Gurtin.
+* `vanDerMerwe2021` — P01 holds `quintanilla2008.pdf`, which is Quintanilla & Racke 2008.
+
+That last member is also why `Quintanilla2008` (the Applicable Analysis paper, DOI
+`10.1080/00036810802428938`) carries a warning: it must not be confused with the P01 member
+of the same name, which belongs to `Quintanilla2008a`.
+
+For the 29 separate rows, `suggested_save_as` gives a name to save the download under
+(`chirita2016.pdf`, `zener1937.pdf`, …). It is only a naming suggestion — it is not
+something read out of the library.

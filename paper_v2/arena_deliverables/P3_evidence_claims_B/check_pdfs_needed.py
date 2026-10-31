@@ -25,6 +25,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 NEEDED = os.path.join(HERE, "pdfs_needed_from_author.csv")
 FIND = os.path.join(HERE, "library_read_findings.csv")
 AVAIL = os.path.join(HERE, "library_available_sources.csv")
+BYB = os.path.join(HERE, "pdfs_needed_by_bundle.csv")
 
 NEEDED_COLS = ["rank", "bib_key", "authors", "year", "title", "doi", "claims_blocked",
                "claim_ids", "availability", "library_ledger_status",
@@ -98,6 +99,30 @@ def main():
           len({r["bib_key"] for r in arows}) == len(arows))
     print("     needed=%d (archive-blocked=%d), library-held=%d, findings=%d"
           % (len(rows), len(arch), len(arows), len(frows)))
+
+    # the bundle grouping
+    brows = list(csv.DictReader(open(BYB, newline="")))
+    check("bundle groups cover exactly the 34 needed rows", len(brows) == len(rows),
+          "%d grouped vs %d needed" % (len(brows), len(rows)))
+    check("the same bibliography keys, once each",
+          sorted(r["bib_key"] for r in brows) == sorted(r["bib_key"] for r in rows))
+    g = [r["group"] for r in brows]
+    check("only the four group names are used", set(g) <= {"P01", "P02", "P03", "separate"},
+          str(set(g)))
+    bundle_of = {"P01": "LE_PAPERS_P01.zip", "P02": "LE_PAPERS_P02__was_R3.zip",
+                 "P03": "LE_PAPERS_P03__was_R4.zip"}
+    bad = [r["bib_key"] for r in brows
+           if (r["group"] in bundle_of and r["bundle"] != bundle_of[r["group"]])
+           or (r["group"] == "separate" and r["bundle"])]
+    check("each bundle group names its own bundle, and 'separate' names none", not bad, str(bad[:5]))
+    bad = [r["bib_key"] for r in brows
+           if (r["group"] == "separate" and r["file_name"]) or
+              (r["group"] != "separate" and not r["file_name"].endswith(".pdf"))]
+    check("a member file is named only where it is known", not bad, str(bad[:5]))
+    want = {"cahill2003.pdf", "2ndSoundSolids.pdf", "huberman2019.pdf", "jackson1970.pdf",
+            "quintanilla2008.pdf"}
+    have = {r["file_name"] for r in brows if r["file_name"]}
+    check("the five known members are all present", want <= have, str(want - have))
 
     if fails:
         print("FAIL %d check(s) failed" % len(fails))
