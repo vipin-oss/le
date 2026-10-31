@@ -197,10 +197,11 @@ source obtained the value. No value was recomputed; units are those printed by t
   (`7ec50f8a757462b54c5c544e36e2bfdeb754b535`).
 - Push of the content commit was a fast-forward, `a73f498..b938cef`, on
   `arena/a7a306f6-le`; no force-push was used and `main` was not touched.
-- `git ls-remote origin arena/a7a306f6-le` immediately after that push:
+- `git ls-remote origin arena/a7a306f6-le` immediately after that push (the tool separates
+  hash and ref with a tab; two spaces are used here so the file stays free of control bytes):
 
 ```
-b938cefbf8953dbb664801de061ed16492ee239e	refs/heads/arena/a7a306f6-le
+b938cefbf8953dbb664801de061ed16492ee239e  refs/heads/arena/a7a306f6-le
 ```
 
 - This section is carried by a record commit made after the content commit, so the branch
