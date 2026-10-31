@@ -8,16 +8,16 @@
 
 ## What was and was not verified
 
-* **Not verified:** the paper itself. `gurtin1968.pdf` is **not in the library** — the
-  unzipped folder holds 37 PDFs and none of them is this paper, a name search returns no
-  file, and the two archives that might contain it are still zipped. So no first page was
-  read, and no sentence, equation or page number of the paper is quoted anywhere.
-* **Where the bibliographic values come from:** the two bibliography entries in this
-  repository (`refs_atlas.bib` and `refs_landmark_candidates.bib`) are identical and give
-  authors, title, journal, volume 31, pages 113–126, year 1968 and the DOI. They are
-  reproduced here **only** as a bibliography entry, and `doi_status` says in the row
-  itself that the DOI was not seen on a DOI page — it must be confirmed the moment the
-  paper is available.
+* **Now read:** the library copy `gurtin1968.pdf` (561 kB) was opened. Page 113 shows the
+  title, the author line *MORTON E. GURTIN & A. C. PIPKIN* and the Introduction; page 114
+  carries the running head *114 M. E. GURTIN & A. C. PIPKIN*, the sentence "We call the
+  function a(s) the heat-flux relaxation function" and Eq. (1.2). Eq. (1.1) on p. 113 is
+  the linearized flux as a history functional, `q(t) = -∫₀^∞ a(s) g(t-s) ds`.
+* **Still not verified:** the journal name, volume 31 and the end page 126 are **not
+  printed** on those pages, and the ARMA article carries **no DOI**. Those values rest on
+  the two identical bibliography entries (`refs_atlas.bib`, `refs_landmark_candidates.bib`)
+  and `doi_status` in the CSV says so explicitly. The DOI must be confirmed on a DOI page
+  before it is quoted anywhere.
 
 ## Why it matters
 
@@ -48,6 +48,6 @@ memory kernel is asserted, and the citation there is currently doing all its wor
 
 `python3 check_gurtin_pipkin_1968.py`
 → `PASS all checks (rows=1, anchors=4, values_read=0)` (`check_gurtin_pipkin_1968_log.txt`).
-It fails if the DOI is ever presented as verified, if `verified_from` stops saying
-`SOURCE NOT AVAILABLE`, if the manuscript starts citing the key without the row being
+It fails if the DOI is ever presented as verified, if `verified_from` stops recording that
+the copy was read, if the quoted page evidence loses its page/equation tokens, if the manuscript starts citing the key without the row being
 updated, or if any anchor stops naming a real file, line and page.

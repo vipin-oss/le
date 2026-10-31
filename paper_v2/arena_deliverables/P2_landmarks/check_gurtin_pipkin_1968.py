@@ -29,7 +29,7 @@ ZIP = HERE.parents[1] / "paper_sources.zip"
 
 HEADER = ["landmark_id", "Authors", "Title", "Journal_or_publisher", "Volume", "Pages", "Year",
           "DOI", "doi_status", "relevance_one_line", "belongs_in_section", "in_paper_status",
-          "verified_from", "suggested_citation_anchors", "anchor_reason"]
+          "verified_from", "paper_page_evidence", "suggested_citation_anchors", "anchor_reason"]
 fails = []
 
 
@@ -52,14 +52,21 @@ def main():
     print("PASS rows: a single landmark row")
 
     check(re.match(r"^10\.\d{4,9}/\S+$", r["DOI"]) is not None, f"malformed DOI {r['DOI']!r}")
-    check("NOT VERIFIED" in r["doi_status"].upper(), "doi_status does not flag the DOI as unverified")
+    check(re.search(r"NOT VERIFIED|NOT PRINTED", r["doi_status"].upper()) is not None,
+          "doi_status does not flag the DOI as unverified")
     print("PASS DOI: well formed and explicitly marked unverified")
 
-    check(r["verified_from"].upper().startswith("SOURCE NOT AVAILABLE"),
-          "verified_from does not state that the source is unavailable")
+    check("READ NOW" in r["verified_from"].upper(),
+          "verified_from does not record that the library copy has now been read")
+    check("NOT PRINTED" in r["doi_status"].upper(),
+          "doi_status no longer says the DOI is absent from the article")
+    ev = r["paper_page_evidence"]
+    for token in ("p. 113", "p. 114", "(1.1)", "(1.2)", "relaxation function"):
+        check(token in ev, f"page evidence lacks {token!r}")
+    check("126" not in ev.split("p. 113")[0], "the end page is claimed as read, which it was not")
     check("113-126" == r["Pages"] and r["Volume"] == "31" and r["Year"] == "1968",
           "bibliographic values drifted from the bibliography entries")
-    print("PASS honesty: the paper was not read, and the row says so")
+    print("PASS honesty: page 113-114 evidence quoted, DOI and pagination still marked unverified")
 
     with zipfile.ZipFile(ZIP) as z:
         tex = {n: z.read(n).decode("utf-8", "replace") for n in z.namelist()

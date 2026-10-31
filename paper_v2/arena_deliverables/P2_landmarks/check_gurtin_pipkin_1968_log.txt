@@ -1,7 +1,7 @@
-PASS header: 15 columns
+PASS header: 16 columns
 PASS rows: a single landmark row
 PASS DOI: well formed and explicitly marked unverified
-PASS honesty: the paper was not read, and the row says so
+PASS honesty: page 113-114 evidence quoted, DOI and pagination still marked unverified
 PASS citation status: no .tex file in the bundle cites GurtinPipkin1968
 PASS placement: 4 anchors, each with a real file, line and page
 PASS no leaked library identifiers
