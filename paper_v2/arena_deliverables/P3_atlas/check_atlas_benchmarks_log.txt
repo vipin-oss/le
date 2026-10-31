@@ -1,0 +1,5 @@
+PASS bench_tolerances.csv: 8 benchmarks, tolerances and reference types ok
+PASS bench_atlas_results.csv: 8 runs, all within the recorded tolerance
+PASS benchmark_map.csv: 40 problems, 40 unique ids, every benchmark id resolves
+PASS coverage: 8 wave families, all 8 benchmarks used
+PASS all checks (rows=40, benchmarks=8, families=8)

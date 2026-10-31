@@ -1,0 +1,9 @@
+benchmark_id,family,quantity,measured,reference,tolerance,error,verdict
+BK-01,branch structure,"K-roots per (model, frequency)",2,exactly 2,exact,0.0,PASS
+BK-02,low-frequency adiabatic limit,max relative error of v_p(w=1e-6) vs sqrt(1+eps),Fourier v_p=1.048808848170118,1e-09,1e-9,3.175237850427948e-14,PASS
+BK-03,high-frequency limit,"|v_p(1e3) - limit|: Fourier->1.0, LS->1.1705367195742484","Fourier 4.874997e-08, LS 2.832054e-07",1e-6 / 1e-5,1e-6 / 1e-5,2.832053731527395e-07,PASS
+BK-04,thermoelastic damping peak,"Debye peak: uniqueness, position vs 1/tau, height vs Delta/2",interior=True w*=1.0990 Q*=0.05009 (Delta/2=0.04545),"interior (0/1), |w*tau-1|, |Q*/(Delta/2)-1|",0 / 0.20 / 0.15,0.10207145748211777,PASS
+BK-05,attenuation ~ w^2 (low frequency),"relative spread of alpha/w^2 over w in [1e-3, 1e-2] (Fourier)",alpha/w^2 = 3.939853e-02 +- 1.0e-06,0.001,1e-3,5.113616264574097e-05,PASS
+BK-06,attenuation saturation (high frequency),relative change of alpha between w=1e2 and w=1e3 (saturation),Fourier: alpha(1e2)=0.049996 alpha(1e3)=0.050000; LS: alpha(1e2)=0.180200 alpha(1e3)=0.180222,0.001,1e-3,0.0001206388165982474,PASS
+BK-07,lossless hyperbolic model (GN-II),GN-II: max |Q^-1| and max relative speed error vs closed form,"max|Q^-1| = 0.000e+00, max speed rel. err = 5.551e-16",1e-12 (both),1e-12,5.551115123125783e-16,PASS
+BK-08,stability of bar modes,max Re s over 6 models x 5 wavenumbers (growth if > 0),"1.833e-15 (MGT, K=100)",1e-12,1e-12,1.8332857926449925e-15,PASS

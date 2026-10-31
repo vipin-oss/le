@@ -1,0 +1,6 @@
+PASS header: 11 columns in the declared order
+PASS rows: 9 targets, ids unique
+PASS linkage: every blocked entry id exists in experiments_1.csv
+PASS content: DOI syntax, status vocabulary and all instruction columns filled
+PASS no measured value: no time-unit number appears anywhere in the file
+PASS all checks (rows=9, columns=11, blocked=9, read=0)
