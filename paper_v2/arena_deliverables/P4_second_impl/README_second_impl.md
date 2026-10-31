@@ -13,9 +13,15 @@ the field equations, **without importing, executing or copying anything from
 | `second_impl_elastic_branch.csv` | phase speed and Q⁻¹ of the elastic branch and of the second branch at 20 frequencies for 5 models (100 rows) |
 | `second_impl_report.md` | generated report: comparison table, per-class worst difference, full 20-frequency table |
 | `check_second_impl_log.txt` | output of `python3 second_impl.py --check` (all lines `PASS`, exit 0) |
+| `task6_audit.py` | independence + residual audit: no import/path to `scripts/`, code overlap vs `models.py` (longest common line run, token Jaccard), roots substituted back into the dispersion relation, archived literals re-checked against the log |
+| `check_task6_audit_log.txt` | output of the audit run against the `review-paper-v2` sources (6 groups, 0 failures) |
+| `REPORT_task6_short.md` | the short report: per-class max relative difference, why each difference exists, and how independent the code is |
 
 Run with `python3 second_impl.py` (rewrites the report and both CSVs) or
-`python3 second_impl.py --check` (assertions only). Requirements: Python 3 and
+`python3 second_impl.py --check` (assertions only).  The independence audit is separate:
+`python3 task6_audit.py` (repo-only checks) and
+`python3 task6_audit.py --models <models.py> --archive <numbers_log.txt>` (adds the code-overlap
+and archived-literal checks; the manuscript's `scripts/` are not part of this repository). Requirements: Python 3 and
 numpy; runtime ≈ 1.5 s.
 
 ## What the code solves
