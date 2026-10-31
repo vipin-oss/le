@@ -189,11 +189,20 @@ source obtained the value. No value was recomputed; units are those printed by t
 
 ## 9. Push proof
 
-Content commit for this batch: see `git log` of `arena/a7a306f6-le` (record commit follows
-the content commit and adds this section's output).
-
-`git ls-remote origin arena/a7a306f6-le`:
+- Content commit of this batch: `b938cefbf8953dbb664801de061ed16492ee239e`
+  ("P3 evidence batch 002: claim check S1-S4, layered dossier, benchmark candidates,
+  evidence pages").
+- Base of the branch before this batch: `a73f498d0167c700355b183c5bb4fafc9d7fe902`
+  (batch 001, pushed earlier) plus merge commit `5801e18` of `origin/review-paper-v2`
+  (`7ec50f8a757462b54c5c544e36e2bfdeb754b535`).
+- Push of the content commit was a fast-forward, `a73f498..b938cef`, on
+  `arena/a7a306f6-le`; no force-push was used and `main` was not touched.
+- `git ls-remote origin arena/a7a306f6-le` immediately after that push:
 
 ```
-PENDING
+b938cefbf8953dbb664801de061ed16492ee239e	refs/heads/arena/a7a306f6-le
 ```
+
+- This section is carried by a record commit made after the content commit, so the branch
+  tip is one commit beyond `b938cef`. The final `git ls-remote` output for the tip was
+  taken after that second push and is reported with the delivery message.
