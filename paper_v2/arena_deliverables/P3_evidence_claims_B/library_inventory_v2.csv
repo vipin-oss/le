@@ -1,0 +1,38 @@
+file_name,first_page_title,first_page_doi,matched_bib_key
+1.1722351.pdf,"Thermoelasticity and Irreversible Thermodynamics (M. A. Biot, J. Appl. Phys. 27, 240, 1956; the extracted page also carries bleed-through from the following article)",10.1063/1.1722351,Biot1956
+0020-72252990050-x.pdf,"Linear Theory of Nonlocal Elasticity and Dispersion of Plane Waves (A. C. Eringen, Int. J. Engng Sci. 10, 425-435, 1972)",,Eringen1972
+0020-72252990033-0.pdf,"Theory of Nonlocal Thermoelasticity (A. C. Eringen, Int. J. Engng Sci. 12, 1063-1077, 1974)",,Eringen1974
+RAGJAKI.pdf,"Solution of the Linearized Phonon Boltzmann Equation (R. A. Guyer and J. A. Krumhansl, Physical Review 148(2), 12 August 1966)",,GuyerKrumhansl1966
+abate2006.pdf,"A Unified Framework for Numerically Inverting Laplace Transforms (J. Abate and W. Whitt, INFORMS Journal on Computing 18(4), 2006, 408-421)",10.1287/ijoc.1050.0137,AbateWhitt2006
+dafermos1968.pdf,"On the Existence and the Asymptotic Stability of Solutions to the Equations of Linear Thermoelasticity (C. M. Dafermos, Archive for Rational Mechanics and Analysis)",,
+majumdar1993.pdf,"Microscale Heat Conduction in Dielectric Thin Films (A. Majumdar, University of California, Santa Barbara)",,
+qam%2F575828.pdf,"Generalized Thermoelasticity for Anisotropic Media (R. S. Dhaliwal and H. H. Sherief, Quarterly of Applied Mathematics, Vol. XXXVIII, April 1980, No. 1)",,Dhaliwal1980
+quintanilla2003.pdf,"A Condition on the Delay Parameters in the One-Dimensional Dual-Phase-Lag Thermoelastic Theory (R. Quintanilla, Journal of Thermal Stresses 26:7, 713-721, 2003)",10.1080/713855996,Quintanilla2003DPL
+quintanilla2008.pdf,"A Note on Stability in Three-Phase-Lag Heat Conduction (R. Quintanilla and R. Racke, Elsevier, received 20 March 2007)",,MISMATCH (the key Quintanilla2008 is End effects in three-phase-lag heat conduction; this file is Quintanilla2008a)
+rayleigh1885.pdf,"On Waves Propagated along the Plane Surface of an Elastic Solid (Lord Rayleigh, 1885; the extracted page is the journal issue wrapper with the running head)",,Rayleigh1885
+romano2017.pdf,"Constitutive Boundary Conditions and Paradoxes in Nonlocal Elastic Nanobeams (G. Romano, R. Barretta, M. Diaco, F. Marotti de Sciarra, International Journal of Mechanical Sciences, accepted manuscript)",10.1016/j.ijmecsci.2016.10.036,
+sinha1996.pdf,"Reflection of Thermoelastic Waves at a Solid Half-Space with Two Relaxation Times (S. B. Sinha and K. A. Elsibai, Journal of Thermal Stresses)",,
+sinha1997.pdf,"Reflection and Refraction of Thermoelastic Waves at an Interface of Two Semi-Infinite Media with Two Relaxation Times (S. B. Sinha and K. A. Elsibai, Journal of Thermal Stresses)",,
+stoneley1924.pdf,"Elastic Waves at the Surface of Separation of Two Solids (R. Stoneley, Proc. R. Soc. Lond. A 106, 416-428, 1924)",10.1098/rspa.1924.0079,Stoneley1924
+talbot1979.pdf,"The Accurate Numerical Inversion of Laplace Transforms (A. Talbot, J. Inst. Maths Applics 23, 97-120, 1979)",,Talbot1979
+tzou1995.pdf,"Experimental Support for the Lagging Behavior in Heat Propagation (D. Y. Tzou, Journal of Thermophysics and Heat Transfer 9(4), 1995)",,MISMATCH (the key Tzou1995 is A unified field approach for heat conduction from macro- to micro-scales; this is the other Tzou 1995 paper)
+weideman2007.pdf,"Parabolic and Hyperbolic Contours for Computing the Bromwich Integral (J. A. C. Weideman and L. N. Trefethen, Mathematics of Computation 76, 1341-1356, 2007)",,
+yang2018.pdf,"An Introduction to the Theory of Piezoelectricity, Second Edition (Jiashi Yang; Advances in Mechanics and Mathematics, Volume 9)",,Yang2018
+zhang2003.pdf,"Decay of Solutions of the System of Thermoelasticity of Type III (Xu Zhang and Enrique Zuazua, Communications in Contemporary Mathematics 5(1), 2003, 25-83)",,
+WITHDRAWN--Front-Matter_1975_Wave-Propagation-in-Elastic-Solids.pdf,WAVE PROPAGATION IN ELASTIC SOLIDS by J. D. Achenbach - WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,"MISMATCH (placeholder: no article content, so it cannot stand for Achenbach1973)"
+WITHDRAWN--Copyright_1975_Wave-Propagation-in-Elastic-Solids.pdf,WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+WITHDRAWN--Dedication_1975_Wave-Propagation-in-Elastic-Solids.pdf,WITHDRAWN placeholder (the page reads: To Marcia / This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+WITHDRAWN--PREFACE_1975_Wave-Propagation-in-Elastic-Solids.pdf,WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+WITHDRAWN--INTRODUCTION_1975_Wave-Propagation-in-Elastic-Solids.pdf,WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+WITHDRAWN--SUBJECT-INDEX_1975_Wave-Propagation-in-Elastic-Solids.pdf,WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+WITHDRAWN--AUTHOR-INDEX_1975_Wave-Propagation-in-Elastic-Solids.pdf,WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+CHAPTER-1---WITHDRAWN--ONE-DIMENSIONAL-MOTION-O_1975_Wave-Propagation-in-Ela.pdf,CHAPTER 1 ONE-DIMENSIONAL MOTION OF AN ELASTIC CONTINUUM - WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+CHAPTER-2---WITHDRAWN--THE-LINEARIZED-THEORY-_1975_Wave-Propagation-in-Elast.pdf,CHAPTER 2 THE LINEARIZED THEORY OF ELASTICITY - WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+CHAPTER-3---WITHDRAWN--ELASTODYNAMIC-THE_1975_Wave-Propagation-in-Elastic-So.pdf,CHAPTER 3 ELASTODYNAMIC THEORY - WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+CHAPTER-4---WITHDRAWN--ELASTIC-WAVES-IN-AN-UN_1975_Wave-Propagation-in-Elast.pdf,CHAPTER 4 ELASTIC WAVES IN AN UNBOUNDED MEDIUM - WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+CHAPTER-5---WITHDRAWN--PLANE-HARMONIC-WAVES-IN-_1975_Wave-Propagation-in-Ela.pdf,CHAPTER 5 PLANE HARMONIC WAVES IN ELASTIC HALF-SPACES - WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+CHAPTER-6---WITHDRAWN--HARMONIC-WAVES-IN-W_1975_Wave-Propagation-in-Elastic-.pdf,CHAPTER 6 HARMONIC WAVES IN WAVEGUIDES - WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+CHAPTER-7---WITHDRAWN--FORCED-MOTIONS-OF-A-_1975_Wave-Propagation-in-Elastic.pdf,CHAPTER 7 FORCED MOTIONS OF A HALF-SPACE - WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+CHAPTER-8---WITHDRAWN--TRANSIENT-WAVES-IN-LA_1975_Wave-Propagation-in-Elasti.pdf,CHAPTER 8 TRANSIENT WAVES IN LAYERS AND RODS - WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+CHAPTER-9---WITHDRAWN--DIFFRACTION-OF-WAVES_1975_Wave-Propagation-in-Elastic.pdf,CHAPTER 9 DIFFRACTION OF WAVES BY A SLIT - WITHDRAWN placeholder (the page reads: This book has been withdrawn.),,MISMATCH (placeholder: no article content)
+CHAPTER-10---WITHDRAWN--THERMAL-AND-VISCOELASTIC-EFFE_1975_Wave-Propagation-.pdf,"CHAPTER 10 THERMAL AND VISCOELASTIC EFFECTS, AND EFFECTS OF ANISOTROPY AND NONLINEARITY - WITHDRAWN placeholder (the page reads: This book has been withdrawn.)",,MISMATCH (placeholder: no article content)

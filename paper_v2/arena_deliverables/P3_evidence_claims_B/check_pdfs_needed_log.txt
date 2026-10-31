@@ -15,4 +15,10 @@ PASS source wordings stay within 25 words (+ [...] marker)
 PASS every finding states what the source actually says
 PASS the in-library list has one row per key
      needed=34 (archive-blocked=5), library-held=4, findings=3
+PASS bundle groups cover exactly the 34 needed rows
+PASS the same bibliography keys, once each
+PASS only the four group names are used
+PASS each bundle group names its own bundle, and 'separate' names none
+PASS a member file is named only where it is known
+PASS the five known members are all present
 PASS all checks (needed=34, library=4, findings=3)
