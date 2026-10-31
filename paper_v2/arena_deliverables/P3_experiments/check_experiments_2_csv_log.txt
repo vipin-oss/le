@@ -1,0 +1,5 @@
+PASS header: 14 columns in the declared order
+PASS rows: 4 experimental papers, ids unique
+PASS linkage: entry ids and protocol targets all resolve
+PASS content: every blocked row is empty of value/unit/uncertainty/page, every read row carries a page
+PASS all checks (rows=4, blocked=4, read=0)

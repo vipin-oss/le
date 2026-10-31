@@ -78,3 +78,25 @@ that nobody read.
    paper's own definition if it differs;
 4. only then write the τ sentence into the manuscript, as a range with the
    material, temperature and method attached — never as a single number.
+
+## Addendum — `experiments_2.csv` now exists, still with zero measured values
+
+Task 4 asks explicitly for `experiments_2.csv`, so the file is now present
+(4 rows, one per experimental paper named in the task: Jackson 1970, Huberman 2019,
+Cahill 2003, and the unidentified `2ndSoundSolids` review). It does **not** replace the
+honest decision above; it makes it machine-checkable:
+
+* every row has `status = SOURCE NOT AVAILABLE`, a named blocker, and **empty**
+  `value`, `unit`, `uncertainty` and `page`;
+* `read_level` starts with `none` for every row;
+* the checker also enforces the forward rule — a row may only become
+  `status = READ_AT_PAGE` if `value` is non-empty and `page` contains a page number,
+  so a number can never be added without the page it came from.
+
+Validator: `python3 check_experiments_2_csv.py`
+→ `PASS all checks (rows=4, blocked=4, read=0)` (`check_experiments_2_csv_log.txt`).
+
+The abstract-level numbers that are already known (bismuth 780 ± 50 m/s; graphite
+≈3.2 km/s against 3650 m/s ab initio, no error bar) stay in `experiments_1.csv` with
+`read_level = abstract only`, and are deliberately **not** copied into
+`experiments_2.csv`, which is reserved for values read on a numbered journal page.
