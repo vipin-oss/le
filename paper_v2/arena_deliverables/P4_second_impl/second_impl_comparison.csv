@@ -1,0 +1,43 @@
+kind,quantity,point,archived,computed,rel_diff,block,digits,acoustic_q,n_modes
+thermal_uncoupled,fig_thermal_family/Fourier @ w=1e-3,0.001,0.044699999999999997,0.044721359549995794,0.00047784228178517849,fig_thermal_family block (w=0.001),3,,
+thermal_uncoupled,fig_thermal_family/Fourier @ w=1e2,100,14.142099999999999,14.142135623730949,2.5189845178585479e-06,fig_thermal_family block (w=100.0),6,,
+thermal_uncoupled,fig_thermal_family/Lord-Shulman @ w=1e-3,0.001,0.044699999999999997,0.044699004463184075,2.22715171347145e-05,fig_thermal_family block (w=0.001),3,,
+thermal_uncoupled,fig_thermal_family/Lord-Shulman @ w=1e2,100,1,0.99998750054684271,1.249945315728862e-05,fig_thermal_family block (w=100.0),6,,
+thermal_uncoupled,fig_thermal_family/DPL(tT=0.5tq) @ w=1e-3,0.001,0.044699999999999997,0.0447101750248187,0.0002276291905750292,fig_thermal_family block (w=0.001),3,,
+thermal_uncoupled,fig_thermal_family/DPL(tT=0.5tq) @ w=1e2,100,9.9511000000000003,9.9511303335784493,3.0482638551577141e-06,fig_thermal_family block (w=100.0),6,,
+thermal_uncoupled,fig_thermal_family/GN-II @ w=1e-3,0.001,0.5,0.5,0,fig_thermal_family block (w=0.001),3,,
+thermal_uncoupled,fig_thermal_family/GN-II @ w=1e2,100,0.5,0.5,0,fig_thermal_family block (w=100.0),6,,
+thermal_uncoupled,fig_thermal_family/GN-III @ w=1e-3,0.001,0.5,0.50000299998300013,5.9999660002585387e-06,fig_thermal_family block (w=0.001),3,,
+thermal_uncoupled,fig_thermal_family/GN-III @ w=1e2,100,14.124499999999999,14.124513155430515,9.3139088219831344e-07,fig_thermal_family block (w=100.0),6,,
+thermal_uncoupled,fig_thermal_family/MGT @ w=1e-3,0.001,0.5,0.50000243748234008,4.8749646801571345e-06,fig_thermal_family block (w=0.001),3,,
+thermal_uncoupled,fig_thermal_family/MGT @ w=1e2,100,1,0.99998359453089836,1.6405469101643533e-05,fig_thermal_family block (w=100.0),6,,
+coupled_slow,check_gn2/GN-II slow @ w=0.5,0.5,0.85430895355741032,0.85430895355741066,3.8986704517215923e-16,"check_gn2 block, closed-form root",16,,
+coupled_fast,check_gn2/GN-II fast @ w=0.5,0.5,1.1705367195742484,1.170536719574248,3.7938938815314419e-16,"check_gn2 block, closed-form root",16,,
+coupled_slow,check_gn2/GN-II slow @ w=2,2,0.85430895355741032,0.85430895355741066,3.8986704517215923e-16,"check_gn2 block, closed-form root",16,,
+coupled_fast,check_gn2/GN-II fast @ w=2,2,1.1705367195742484,1.170536719574248,3.7938938815314419e-16,"check_gn2 block, closed-form root",16,,
+coupled_slow,check_gn2/GN-II slow @ w=10,10,0.85430895355741032,0.85430895355741021,1.2995568172405308e-16,"check_gn2 block, closed-form root",16,,
+coupled_fast,check_gn2/GN-II fast @ w=10,10,1.1705367195742484,1.1705367195742484,0,"check_gn2 block, closed-form root",16,,
+coupled_slow,check_fronts/LS slow front @ w=2e3,2000,0.9839,0.98390591201957056,6.0087606164896819e-06,check_fronts block (4 dp),4,,
+coupled_fast,check_fronts/LS fast front @ w=2e3,2000,2.0327000000000002,2.0327135914618157,6.6864081347789892e-06,check_fronts block (4 dp),4,,
+elastic,fig_dispersion/LS elastic @ w=10^1.6,39.810717055349734,0.98396443665532352,0.98396443665532329,2.2566324213891495e-16,"fig_dispersion block (LS elastic, high w)",16,,
+coupled_thermal,fig_dispersion/LS thermal @ w=10^1.6,39.810717055349734,2.0298360266180757,2.0298360266180762,2.1878082959733591e-16,"fig_dispersion block (LS thermal, high w)",16,,
+elastic,fig_dispersion/classical elastic @ w=1e-2,0.01,1.0488055351860703,1.0488055351860703,0,"fig_dispersion block (CD elastic, low w)",16,,
+elastic,fig_dispersion/classical elastic @ w=10^1.6,39.810717055349734,1.0000307473049175,1.0000307473049177,2.2203777786177219e-16,"fig_dispersion block (CD elastic, high w)",16,,
+bar,fig_bar_modes/tau=0.00 k=0.01,0.01,0.00086669999999999998,0.0008667223902565133,2.5833917749306806e-05,fig_bar_modes block (printed Q^-1),4,0.00086672239025676159,1
+bar,fig_bar_modes/tau=0.00 k=0.1,0.10000000000000001,0.0086060000000000008,0.0086064002744756472,4.6511094079297117e-05,fig_bar_modes block (printed Q^-1),4,0.0086064002744756472,1
+bar,fig_bar_modes/tau=0.00 k=1,1,0.048689999999999997,0.048686201737964944,7.8009078559307447e-05,fig_bar_modes block (printed Q^-1),4,0.048686201737965548,1
+bar,fig_bar_modes/tau=0.00 k=3,3,0.030089999999999999,0.030094177202151018,0.00013882360089794576,fig_bar_modes block (printed Q^-1),4,0.030094177202151094,1
+bar,fig_bar_modes/tau=0.00 k=10,10,0.0099059999999999999,0.0099058268058550437,1.7483761857076654e-05,fig_bar_modes block (printed Q^-1),4,0.0099058268058550437,1
+bar,fig_bar_modes/tau=0.00 k=30,30,0.0033300000000000001,0.0033298223449133484,5.3349875871371552e-05,fig_bar_modes block (printed Q^-1),4,0.0033298223449138805,1
+bar,fig_bar_modes/tau=0.25 k=0.01,0.01,0.00086680000000000004,0.00086675681219404248,4.9824418502021824e-05,fig_bar_modes block (printed Q^-1),4,0.00086675681219404248,1
+bar,fig_bar_modes/tau=0.25 k=0.1,0.10000000000000001,0.0086409999999999994,0.0086405088622500681,5.6838068502637008e-05,fig_bar_modes block (printed Q^-1),4,0.0086405088622500681,1
+bar,fig_bar_modes/tau=0.25 k=1,1,0.063170000000000004,0.06316760279529976,3.7948467630901866e-05,fig_bar_modes block (printed Q^-1),4,0.063167602795302674,1
+bar,fig_bar_modes/tau=0.25 k=3,3,0.67349999999999999,0.67352307187986638,3.4256688739996423e-05,fig_bar_modes block (printed Q^-1),4,0.049182629648975504,2
+bar,fig_bar_modes/tau=0.25 k=10,10,0.18970000000000001,0.18970675382272428,3.560265010161216e-05,fig_bar_modes block (printed Q^-1),4,0.016740969661443651,2
+bar,fig_bar_modes/tau=0.25 k=30,30,0.062899999999999998,0.062900193698527618,3.0794678476977695e-06,fig_bar_modes block (printed Q^-1),4,0.0056429171535006591,2
+bar,fig_bar_modes/tau=1.00 k=0.01,0.01,0.00086680000000000004,0.00086678857758494608,1.3177682341895779e-05,fig_bar_modes block (printed Q^-1),4,0.00086678857758540903,1
+bar,fig_bar_modes/tau=1.00 k=0.1,0.10000000000000001,0.0086719999999999992,0.0086722460517827601,2.8373129930926208e-05,fig_bar_modes block (printed Q^-1),4,0.0086722460517827601,1
+bar,fig_bar_modes/tau=1.00 k=1,1,0.090620000000000006,0.090622368320906282,2.6134638118256085e-05,fig_bar_modes block (printed Q^-1),4,0.090622368320907296,2
+bar,fig_bar_modes/tau=1.00 k=3,3,0.11219999999999999,0.1121926840196714,6.5204815762833634e-05,fig_bar_modes block (printed Q^-1),4,0.11219268401967213,2
+bar,fig_bar_modes/tau=1.00 k=10,10,0.035869999999999999,0.035869542947677462,1.2741910302132981e-05,fig_bar_modes block (printed Q^-1),4,0.035869542947677996,2
+bar,fig_bar_modes/tau=1.00 k=30,30,0.01201,0.01200843817585143,0.00013004364267855552,fig_bar_modes block (printed Q^-1),4,0.012008438175853392,2
