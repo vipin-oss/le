@@ -16,3 +16,11 @@ Scope done so far: ran all 12 check/bench/table scripts and all 23 figure script
 | D10 | Info | scripts | All 12 check/bench/table scripts and all 23 figure scripts exit with code 0 in a clean scratch copy | Observed |
 
 Next in P1: (a) add assertions with tolerances to the 9 check/bench scripts and write a machine-readable pass/fail log; (b) rewrite D2 wording; (c) page-by-page audit with an equation and notation list; (d) independent re-derivation of the central dispersion and reflection results with a second method.
+
+
+## Update 2026-10-31 (P1 pass 1)
+- D2 FIXED: overbroad "single/one dispersion polynomial" wording rewritten in abstract (main.tex), s01_intro, s03c_prelim, s05_hyperbolic, s16_synthesis, s17_open. Conditions stated: linear homogeneous media, rational (truncated-lag) heat laws; exact delays, fractional powers and memory kernels give transcendental or multivalued relations.
+- D3 FIXED for the 9 check/bench scripts: explicit assertions with tolerances, PASS lines, run_checks.py and checks_log.txt. Mutation test (tightened tolerances) made 3 of 3 scripts fail, so the assertions can fail. check_bg: 1 of 12 free-surface cases has no sign change in the bracket and is counted, not hidden. check_kk tolerance tightened to 1e-5; appendix claim changed from 1e-6 to "a few parts in 1e6" (observed deviation about 2e-6).
+- D4 DONE: requirements.txt pinned; versions logged in checks_log.txt.
+- D1 FIXED earlier (bench_schemes print).
+- Still open: D5 (R0 references: 32 records of refs_extra partly verified; see verification_register.csv), D6, D7, D8, D9; fig_zener_q Debye value 0.4999998 and other fig scripts have no asserts; page-by-page equation audit and independent re-derivation not done.
