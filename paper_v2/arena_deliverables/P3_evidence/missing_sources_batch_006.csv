@@ -1,0 +1,30 @@
+title,authors,year,journal,doi_if_known_from_manuscript_bib,claims_depending_on_it,priority
+The thermodynamics of elastic materials with heat conduction and viscosity,"Coleman, B. D.; Noll, W.",1963,"Archive for Rational Mechanics and Analysis 13, 167-178",10.1007/BF01262690,D1,low
+Extended Irreversible Thermodynamics,"Jou, D.; Casas-Vazquez, J.; Lebon, G.",2010,"book (Springer); refs.bib entry inconsistent, no reliable DOI",-,D2,low
+Rational Extended Thermodynamics,"Muller, I.; Ruggeri, T.",1998,book (Springer),10.1007/978-1-4612-2210-1,D2,low
+On the entropy inequality,"Muller, I.",1967,"Archive for Rational Mechanics and Analysis 26, 118-141",- (refs.bib repeats the book DOI),D2,low
+The time differential three-phase-lag heat conduction model: thermodynamic compatibility and continuous dependence,"Chirita, S.; D'Apice, C.; Zampoli, V.",2016,International Journal of Heat and Mass Transfer,10.1016/j.ijheatmasstransfer.2016.06.019,D3; D6,medium
+On the thermomechanical consistency of the time differential dual-phase-lag models of heat conduction,"Chirita, S.; Ciarletta, M.; Tibullo, V.",2017,International Journal of Heat and Mass Transfer,10.1016/j.ijheatmasstransfer.2017.06.071,D3,low
+A modified Green-Lindsay thermoelasticity with strain rate to eliminate the discontinuity,"Yu, Y. J.; Xue, Z.-N.; Tian, X.-G.",2018,"Meccanica 53, 2543-2554",10.1007/s11012-018-0843-1,D4,low
+A condition on the delay parameters in the one-dimensional dual-phase-lag thermoelastic theory,"Quintanilla, R.",2003,"Journal of Thermal Stresses 26, 713-721",10.1080/713855996,D6,low
+Linear thermoelasticity,"Carlson, D. E.",1972,"Handbuch der Physik VIa/2, 297-345",-,D8,low
+Thermoelasticity,"Nowacki, W.",1975,book (Pergamon),-,D9,low
+A uniqueness theorem in the theory of thermoelasticity without energy dissipation,"Chandrasekharaiah, D. S.",1996,Journal of Thermal Stresses,10.1080/01495739608946173,D10; D24,medium
+Internal friction in solids I,"Zener, C.",1937,"Physical Review 52, 230",10.1103/PhysRev.52.230,D12; D13,medium
+Thermoelastic damping in micro- and nanomechanical systems,"Lifshitz, R.; Roukes, M. L.",2000,"Physical Review B 61, 5600",10.1103/PhysRevB.61.5600,D14,low
+Damping in microscale modified couple stress thermoelastic circular Kirchhoff plate resonators,"Kumar, R.; Devi, S.; Sharma, V.",2017,Applications and Applied Mathematics: An International Journal,-,D15,low
+Dislocations and cracks in anisotropic elasticity,"Stroh, A. N.",1958,"Philosophical Magazine 3, 625-646",10.1080/14786435808565804,D17,low
+Steady state problems in anisotropic elasticity,"Stroh, A. N.",1962,"Journal of Mathematics and Physics 41, 77-103",10.1002/sapm196241177,D17,low
+Existence of a generalized solution in thermoelasticity with one relaxation time,"Bem, Z.",1982,"Journal of Thermal Stresses 5, 195-206",10.1080/01495738208942145,D19,low
+"Existence of a generalized solution in thermoelasticity with two relaxation times, part II","Bem, Z.",1983,"Journal of Thermal Stresses 6, 281-299",10.1080/01495738308942183,D20,low
+Domain of influence in thermoelasticity with one relaxation time,"Ignaczak, J.; Bialy, J.",1980,"Journal of Thermal Stresses 3, 391-399",10.1080/01495738008926977,D21,low
+On the Clausius-Duhem inequality,"Gurtin, M. E.; Williams, W. O.",1966,"ZAMP 17, 626",10.1007/bf01597243,D22,low
+Hyperbolic heat conduction equation for materials with a nonhomogeneous inner structure,"Kaminski, W.",1990,"Journal of Heat Transfer 112, 555-560",-,D23,low
+Experimental evidence of hyperbolic heat conduction in processed meat,"Mitra, K.; Kumar, S.; Vedavarz, A.; Moallemi, M. K.",1995,"Journal of Heat Transfer 117, 568-573",-,D23,low
+Complete solutions in the theory of thermoelasticity without energy dissipation,"Chandrasekharaiah, D. S.",1997,"Mechanics Research Communications 24, 625-630",10.1016/s0093-6413(97)00080-3,D25,low
+On the theory of thermoelasticity without energy dissipation,"Iesan, D.",1998,"Journal of Thermal Stresses 21, 295-307",10.1080/01495739808956148,D26,low
+On the spatial behavior in thermoelasticity without energy dissipation,"Quintanilla, R.",1999,"Journal of Thermal Stresses 22, 213-224",10.1080/014957399280977,D26,low
+A theory of micropolar thermoelasticity without energy dissipation,"Ciarletta, M.",1999,"Journal of Thermal Stresses 22, 581-594",10.1080/014957399280760,D26,low
+Thermoelasticity without energy dissipation of materials with microstructure,"Quintanilla, R.",2002,"Applied Mathematical Modelling 26, 1125-1137",10.1016/s0307-904x(02)00078-1,D26,low
+Effects of thermomechanical coupling and relaxation times on wave spectrum in dynamic theory of generalized thermoelasticity,"Suh, C. S.; Burger, C. P.",1998,Journal of Applied Mechanics 65,10.1115/1.2789101,D27,low
+Waves in nonlocal thermoelastic solids of type II,"Sarkar, N.; De, S.; Sarkar, N.",2019,Journal of Thermal Stresses 42,10.1080/01495739.2019.1618760,D28,low
