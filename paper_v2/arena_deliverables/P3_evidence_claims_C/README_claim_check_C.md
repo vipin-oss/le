@@ -170,3 +170,45 @@ verified, so nothing is cited in its place.
 No DOI is printed on the Chester page, so none is stated in CC-0014; quoting
 10.1103/PhysRev.131.2013 from memory would have broken the rule that DOIs come from the DOI
 page.
+
+## Batch 005 (Step 2 of the current five-step set, top-30 pass)
+
+16 rows, the first tranche of the `missing_sources_priority.csv` candidates whose papers turned
+out to be in the folder under a different filename. Every row rests on a page that was actually
+read in this pass (title page / abstract / first sections), and the file is named in the row so
+the identification can be re-checked.
+
+| claim | register | source as read on p. 1 | verdict |
+|---|---|---|---|
+| CC-0015 | CR083 | Chen & Nunziato 1974, ZAMP 25, Eq. (1.1) | SUPPORTED |
+| CC-0016 | CR082 | Coleman & Gurtin 1967, JCP 47:597 | PARTLY SUPPORTED |
+| CC-0017 | CR096 | Guyer & Krumhansl 1966, Phys. Rev. 148:766 | SUPPORTED |
+| CC-0018 | CR102 | Joseph & Preziosi 1989, Rev. Mod. Phys. 61:41 | SUPPORTED |
+| CC-0019 | CR122 | Dell'Oro & Pata 2016 (same paper as CC-0008) | SUPPORTED |
+| CC-0020 | CR125 | Coleman & Noll 1963 | PARTLY SUPPORTED |
+| CC-0021 | CR126 | Jou, Casas-Vazquez & Lebon 2010, 4th ed., Preface p. v | PARTLY SUPPORTED |
+| CC-0022 | CR154 | Mitra et al. 1995, JHT 117:568 | SUPPORTED |
+| CC-0023 | CR165 | Talbot 1979, J. Inst. Maths Applics 23:97 | SUPPORTED |
+| CC-0024 | CR175 | not held - Barak et al. 2023 is a different paper | SOURCE NOT AVAILABLE |
+| CC-0025 | CR182 | Eringen 1972, IJES 10:425 | PARTLY SUPPORTED |
+| CC-0026 | CR186 | Aifantis 1992, IJES 30:1279 | PARTLY SUPPORTED |
+| CC-0027 | CR187 | Aifantis 2003, Mech. Mater. | SUPPORTED |
+| CC-0028 | CR196 | Eringen 1974, IJES 12:1063 | SUPPORTED |
+| CC-0029 | CR199 | Yang 2018, front matter only | PARTLY SUPPORTED |
+| CC-0030 | CR210 | not held - Singh & Gupta 2020 is a different paper | SOURCE NOT AVAILABLE |
+
+Rules applied in this batch, unchanged from batches 001-004:
+
+* a DOI is written only when it is printed on the page that was read **and** it is already in the
+  manuscript's bibliography or the register; otherwise the DOI column stays empty and the printed
+  DOI is mentioned in the prose. Three rows (CC-0015, CC-0021, CC-0022) are empty for that reason -
+  the page either does not show a DOI or the bibliography does not carry it.
+* "PARTLY SUPPORTED" is used where the paper exists and says the general thing, but not the exact
+  form the sentence attributes to it (CC-0016 memory law vs internal state variables, CC-0020 title
+  page only, CC-0021 state space yes / entropy-on-flux not reached, CC-0025 integral kernel yes /
+  differential equation not on the page, CC-0026 plasticity not elasticity, CC-0029 front matter).
+* a look-alike file is never allowed to stand in for the cited paper: CC-0024 and CC-0030 stay at
+  SOURCE NOT AVAILABLE with the rejection written into the row.
+
+Locator rule relaxed for this batch: the checker now accepts `p. v` style roman numerals as well as
+arabic page numbers, because a book preface is genuinely paginated but is not arabic-numbered.
