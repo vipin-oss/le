@@ -60,3 +60,34 @@ check is repeated, that row must be re-read from the correct paper.
 
 Run: `python3 check_claim_check_C.py` →
 `PASS all checks (batches=1, rows=3, PARTLY SUPPORTED=1, SOURCE NOT AVAILABLE=1, SUPPORTED=1)`
+
+## Batch 002 — three of the papers the archives were hiding are now readable
+
+The scope note above said batches 002+ would be inventing evidence. That is no longer
+true: three files that the zipped bundles listed (`jackson1970.pdf`, `huberman2019.pdf`,
+`cahill2003.pdf`) are now readable, and each of them was read page by page this pass.
+`claim_check_C_batch_002.csv` records the result. Every row carries a page of the PDF,
+not a publisher abstract.
+
+| claim | key | verdict | page evidence |
+|---|---|---|---|
+| CR095 | `Jackson1970` | **SUPPORTED** — CC-0004 | p. 26 title/abstract and pulse text, p. 27 text around Fig. 3 |
+| CR221 | `Huberman2019` | **SUPPORTED** — CC-0005 | p. 1 title/abstract, pp. 3–4 velocities and temperature window |
+| CR224 | `Cahill2003` | **SUPPORTED** — CC-0006 | p. 793 abstract and contents, p. 812 Sec. V A |
+
+Two cautions that belong with these verdicts.
+
+* **Huberman page numbers are not the published ones.** The held file is the Science
+  *first release* of 14 March 2019; every page prints "Page numbers not final at time of
+  first release". The page locators in CC-0005 therefore refer to that version. The
+  manuscript cites Science **364**, 375–379, and no sentence in the file was matched to
+  that pagination, so the citation must not be given a 375–379 page locator on the
+  strength of this file.
+* **"Extracts the conductivity" is the manuscript's verb, not Cahill's.** Page 812 says
+  TDTR "provides a direct method for measuring heat diffusion on nanometer length scales"
+  and that "Determination of the thermal conductivity and interfacial thermal resistance
+  is made by co…" (the sentence continues past the 812/813 break). If a verbatim anchor
+  is wanted, the sentence should be rewritten to match the source.
+
+For CR095 the DOI is not printed on the article; it was read from the publisher's DOI
+page and entered in the register, and the register row now says so.
