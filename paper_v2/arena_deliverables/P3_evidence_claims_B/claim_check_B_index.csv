@@ -7,3 +7,13 @@ claim_check_B_batch_005.csv,claim_check_B_batch_005.csv,36,CB-0145,CB-0180,25-27
 claim_check_B_batch_006.csv,claim_check_B_batch_006.csv,36,CB-0181,CB-0216,27-32,0,0,36,31,1,4
 claim_check_B_batch_007.csv,claim_check_B_batch_007.csv,36,CB-0217,CB-0252,32-33,0,0,36,33,1,2
 claim_check_B_batch_008.csv,claim_check_B_batch_008.csv,31,CB-0253,CB-0283,33-36,4,1,26,22,0,9
+claim_check_B_batch_009.csv,claim_check_B_batch_009.csv,40,CB-0284,CB-0323,App A; App B; App C; App F,34,6,0,40,0,0
+claim_check_B_batch_010.csv,claim_check_B_batch_010.csv,40,CB-0324,CB-0363,App D; App F; App G; App H,39,1,0,40,0,0
+claim_check_B_batch_011.csv,claim_check_B_batch_011.csv,40,CB-0364,CB-0403,App D,40,0,0,40,0,0
+claim_check_B_batch_012.csv,claim_check_B_batch_012.csv,40,CB-0404,CB-0443,App D,40,0,0,40,0,0
+claim_check_B_batch_013.csv,claim_check_B_batch_013.csv,40,CB-0444,CB-0483,App D,40,0,0,40,0,0
+claim_check_B_batch_014.csv,claim_check_B_batch_014.csv,40,CB-0484,CB-0523,App D,39,1,0,40,0,0
+claim_check_B_batch_015.csv,claim_check_B_batch_015.csv,40,CB-0524,CB-0563,App D,40,0,0,40,0,0
+claim_check_B_batch_016.csv,claim_check_B_batch_016.csv,40,CB-0564,CB-0603,App D,40,0,0,40,0,0
+claim_check_B_batch_017.csv,claim_check_B_batch_017.csv,40,CB-0604,CB-0643,App D,40,0,0,40,0,0
+claim_check_B_batch_018.csv,claim_check_B_batch_018.csv,24,CB-0644,CB-0667,App D,24,0,0,24,0,0
