@@ -145,3 +145,14 @@ their running heads visible.
 - Base SHA: 69db6c4f82ce68660e3debc5573b93a2785342c3 (git merge-base HEAD origin/review-paper-v2).
 - Commit and ls-remote record: see "Provenance record" at the end of this file, added in a follow-up
   commit so that the line can quote a real SHA.
+
+## Provenance record
+
+- Branch: arena/a7a306f6-le (pushed to origin; no other branch written).
+- Base SHA: 69db6c4f82ce68660e3debc5573b93a2785342c3 (git merge-base HEAD origin/review-paper-v2).
+- Commit that added the five batch files: 544f3688e75d337916e0b0854875909f442933a6
+  ("P3 evidence batch 001: claim check, layered dossier, benchmark candidates, evidence pages").
+- git ls-remote origin arena/a7a306f6-le, run immediately after that push:
+  544f3688e75d337916e0b0854875909f442933a6	refs/heads/arena/a7a306f6-le
+- This provenance block was appended in a separate follow-up commit, so the branch head after it is
+  newer than the SHA above; the line above records the content commit that was verified by ls-remote.
