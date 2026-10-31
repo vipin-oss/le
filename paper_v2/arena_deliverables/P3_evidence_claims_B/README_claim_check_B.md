@@ -131,3 +131,59 @@ python3 check_claim_check_B.py     # prints PASS lines, exits 0
 ## 11. Merging into `claim_register.csv`
 
 Add the 283 rows with `origin = claim_check_B_batch_NNN.csv`, keep `CB-nnnn` as `claim_id`, map `verdict` unchanged, `status` = `open: source not read` for `SOURCE NOT AVAILABLE`, `supported by source at stated level` for `SUPPORTED`, `partly: wording is the reviewer's` for `PARTLY SUPPORTED`. The 12 R2 rows already have their quoted source wording in `source_wording_max25words`.
+
+---
+
+## 8. Continuation — the appendices (batches 009–018, CB-0284 … CB-0667)
+
+Added on the author's request that the appendices be claim-checked as well. The eight
+earlier batches cover sections 16–36 only; this section covers appendices A–H, in the same
+twelve-column schema, with ids continuing after CB-0283. **384 new rows**, 667 in total.
+
+| batch | appendix | rows | what is claimed | evidence |
+|---|---|---|---|---|
+| 009 | A, B, C | 40 | derivation identities, dimensionless groups, the table of what each script verifies | the named script's block in the archived log, read here; identities recomputed |
+| 010 | F, G, H | 40 | Debye derivation, parameter register, benchmark registry B01–B14 | same, plus `benchmark_registry.csv` |
+| 011–018 | D | 304 | the 323 catalogue entries, one row each | the bibliography records in `paper_sources.zip` |
+
+Verdicts: **SUPPORTED 380, PARTLY SUPPORTED 9, NOT SUPPORTED 0, SOURCE NOT AVAILABLE 278**
+(the 278 are all from the earlier section batches).
+
+### What the appendices actually contain
+
+A, B, C, F, G and H cite no literature at all, so the "cited source" of those rows is the
+manuscript's **own pipeline**: a named script and the block of `scripts/numbers_log.txt` it
+writes. Those rows are `R3` only where the log block was read here and the printed number is
+quoted in the row. Rows whose evidence is a printed number are recomputed by
+`make_appendix_batches.py` before they are written, and the recomputed value goes into
+`what_source_actually_states` — a verdict is never asserted without the number behind it.
+
+Appendix D is a bibliography, not prose, so its 323 entries are audited as **citation
+metadata** (does the catalogue reproduce the bibliography record?) and not as content claims.
+Those rows are `R1` and say so in `notes`; they are the only rows allowed to carry
+`SUPPORTED` at R1, and the validator enforces exactly that.
+
+### Discrepancies found in the appendices (for the author; no `.tex` was edited)
+
+| where | manuscript says | the evidence says |
+|---|---|---|
+| C, table `tab:scripts` | interface impedance limit agrees **to twelve digits** | the printed pair agrees to nine digits (relative 9e-8) |
+| C, table `tab:scripts` | LR/Zener loss ratio **1.000** at small kh | 0.009869 vs 0.009999, i.e. a ratio of 0.987 (1.3 %) |
+| C, table `tab:scripts` | elastic reflection limit to **1e-10** | printed max difference 1.50e-10 (P-P), 7.81e-11 (P-S) |
+| C, table `tab:scripts` | attenuation sign change **at** ωτ = π/2 | printed sign is still positive at π/2 and negative at 2 |
+| H, last paragraph | "an independent second implementation … remains an open item" | one now exists in this project (`P4_second_impl`, audited for code overlap) |
+
+These are recorded as `PARTLY SUPPORTED` rows (CB-0294, CB-0298, CB-0314, CB-0312, CB-0339
+respectively); the numbers are quoted in the rows themselves.
+
+### Reproducing
+
+```
+python3 make_appendix_batches.py --log <path>/numbers_log.txt   # rewrites batches 009-018
+python3 check_claim_check_B.py                                  # PASS all checks (rows=667, batches=18)
+```
+
+`make_appendix_batches.py` needs numpy for the recomputations; it reads the appendix sources
+and the bibliography from `paper_sources.zip`, so nothing under `sections/` or `scripts/` is
+touched. Page numbers in the locations are the real `main.pdf` pages of the appendix block
+(A/B p. 99, C/D p. 100, F p. 115, G/H p. 116).
