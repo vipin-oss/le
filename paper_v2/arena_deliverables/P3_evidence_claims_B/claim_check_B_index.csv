@@ -1,0 +1,9 @@
+batch,file,rows,first_claim_id,last_claim_id,section_range,supported,partly_supported,source_not_available,found_in_library_yes,found_in_library_no,found_in_library_not_confirmed
+claim_check_B_batch_001.csv,claim_check_B_batch_001.csv,36,CB-0001,CB-0036,16-18,0,0,36,28,6,2
+claim_check_B_batch_002.csv,claim_check_B_batch_002.csv,36,CB-0037,CB-0072,22-23,0,0,36,28,0,8
+claim_check_B_batch_003.csv,claim_check_B_batch_003.csv,36,CB-0073,CB-0108,24,0,0,36,29,3,4
+claim_check_B_batch_004.csv,claim_check_B_batch_004.csv,36,CB-0109,CB-0144,24-25,0,0,36,32,2,2
+claim_check_B_batch_005.csv,claim_check_B_batch_005.csv,36,CB-0145,CB-0180,25-27,0,0,36,31,0,5
+claim_check_B_batch_006.csv,claim_check_B_batch_006.csv,36,CB-0181,CB-0216,27-32,0,0,36,31,1,4
+claim_check_B_batch_007.csv,claim_check_B_batch_007.csv,36,CB-0217,CB-0252,32-33,0,0,36,33,1,2
+claim_check_B_batch_008.csv,claim_check_B_batch_008.csv,31,CB-0253,CB-0283,33-36,4,1,26,22,0,9

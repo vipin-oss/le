@@ -1,0 +1,26 @@
+PASS eight batch files present
+PASS header matches Task 1 schema in claim_check_B_batch_001.csv
+PASS header matches Task 1 schema in claim_check_B_batch_002.csv
+PASS header matches Task 1 schema in claim_check_B_batch_003.csv
+PASS header matches Task 1 schema in claim_check_B_batch_004.csv
+PASS header matches Task 1 schema in claim_check_B_batch_005.csv
+PASS header matches Task 1 schema in claim_check_B_batch_006.csv
+PASS header matches Task 1 schema in claim_check_B_batch_007.csv
+PASS header matches Task 1 schema in claim_check_B_batch_008.csv
+PASS total rows == 283
+PASS batch sizes 31-36
+PASS claim ids unique
+PASS claim ids contiguous CB-0001..CB-0283
+PASS no empty required fields
+PASS verdict values allowed
+PASS found_in_library values allowed
+PASS verification levels R0-R3
+PASS manuscript_statement <= 25 words
+PASS source_wording_max25words <= 25 words
+PASS every row states a section number 16-36
+PASS every row states a page number
+PASS no Drive links, URLs or long ids in any field
+PASS no SUPPORTED row below R2
+     verdict counts: PARTLY SUPPORTED=1, SOURCE NOT AVAILABLE=278, SUPPORTED=4
+     found_in_library counts: no=13, not confirmed=36, yes=234
+PASS all checks (rows=283, batches=8)
