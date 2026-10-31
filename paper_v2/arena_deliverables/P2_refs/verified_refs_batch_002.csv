@@ -1,0 +1,467 @@
+key,field_checked,bib_value,source_value,match,source_site,verification_level,notes
+Maranganti2006,author,"Maranganti, R. and Sharma, N. D. and Sharma, P.",R. Maranganti; N. D. Sharma; P. Sharma,yes,Crossref API (api.crossref.org),R2,"separator style only. Crossref carries no page field for this item; the bib records the locator only in a note (article number 014110), which matches the DOI suffix."
+Maranganti2006,title,Electromechanical coupling in nonpiezoelectric materials due to nanoscale nonlocal size effects: Green's function solutions and embedded inclusions,Electromechanical coupling in nonpiezoelectric materials due to nanoscale nonlocal size effects: Green's function solutions and embedded inclusions,yes,Crossref API (api.crossref.org),R2,"Crossref carries no page field for this item; the bib records the locator only in a note (article number 014110), which matches the DOI suffix."
+Maranganti2006,journal,Physical Review B,Physical Review B,yes,Crossref API (api.crossref.org),R2,"Crossref carries no page field for this item; the bib records the locator only in a note (article number 014110), which matches the DOI suffix."
+Maranganti2006,year,2006,2006,yes,Crossref API (api.crossref.org),R2,"Crossref carries no page field for this item; the bib records the locator only in a note (article number 014110), which matches the DOI suffix."
+Maranganti2006,volume,74,74,yes,Crossref API (api.crossref.org),R2,"Crossref carries no page field for this item; the bib records the locator only in a note (article number 014110), which matches the DOI suffix."
+Maranganti2006,number,1,1,yes,Crossref API (api.crossref.org),R2,"Crossref carries no page field for this item; the bib records the locator only in a note (article number 014110), which matches the DOI suffix."
+Maranganti2006,doi,10.1103/PhysRevB.74.014110,10.1103/physrevb.74.014110,yes,Crossref API (api.crossref.org),R2,"DOI case only; DOIs are case-insensitive. Crossref carries no page field for this item; the bib records the locator only in a note (article number 014110), which matches the DOI suffix."
+Maranganti2007,author,"Maranganti, R. and Sharma, P.",R. Maranganti; P. Sharma,yes,Crossref API (api.crossref.org),R2,separator style only. Crossref carries no page field for this item; the bib article number 195504 matches the DOI suffix.
+Maranganti2007,title,Length scales at which classical elasticity breaks down for various materials,Length Scales at which Classical Elasticity Breaks Down for Various Materials,yes,Crossref API (api.crossref.org),R2,case only. Crossref carries no page field for this item; the bib article number 195504 matches the DOI suffix.
+Maranganti2007,journal,Physical Review Letters,Physical Review Letters,yes,Crossref API (api.crossref.org),R2,Crossref carries no page field for this item; the bib article number 195504 matches the DOI suffix.
+Maranganti2007,year,2007,2007,yes,Crossref API (api.crossref.org),R2,Crossref carries no page field for this item; the bib article number 195504 matches the DOI suffix.
+Maranganti2007,volume,98,98,yes,Crossref API (api.crossref.org),R2,Crossref carries no page field for this item; the bib article number 195504 matches the DOI suffix.
+Maranganti2007,number,19,19,yes,Crossref API (api.crossref.org),R2,Crossref carries no page field for this item; the bib article number 195504 matches the DOI suffix.
+Maranganti2007,pages,195504,(no value in record),partial,Crossref API (api.crossref.org),R2,"the catalogue record carries no page field, so the locator is not confirmed. Crossref carries no page field for this item; the bib article number 195504 matches the DOI suffix."
+Maranganti2007,doi,10.1103/PhysRevLett.98.195504,10.1103/physrevlett.98.195504,yes,Crossref API (api.crossref.org),R2,DOI case only; DOIs are case-insensitive. Crossref carries no page field for this item; the bib article number 195504 matches the DOI suffix.
+Wang2011,author,"Wang, J.-L. and Li, H.-F.",Jin-Liang Wang; Hui-Feng Li,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Wang2011,title,Surpassing the fractional derivative: concept of the memory-dependent derivative,Surpassing the fractional derivative: Concept of the memory-dependent derivative,yes,Crossref API (api.crossref.org),R2,case only. DOI in the bib resolved to this record.
+Wang2011,journal,Computers \& Mathematics with Applications,Computers & Mathematics with Applications,yes,Crossref API (api.crossref.org),R2,LaTeX-escaped ampersand in the bib rendered as &. DOI in the bib resolved to this record.
+Wang2011,year,2011,2011,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Wang2011,volume,62,62,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Wang2011,number,3,3,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Wang2011,pages,1562--1567,1562-1567,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Wang2011,doi,10.1016/j.camwa.2011.04.028,10.1016/j.camwa.2011.04.028,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2004,author,"Povstenko, Y. Z.",Y. Z. Povstenko,yes,Crossref API (api.crossref.org),R2,catalogue gives the same initials. DOI in the bib resolved to this record.
+Povstenko2004,title,Fractional heat conduction equation and associated thermal stress,FRACTIONAL HEAT CONDUCTION EQUATION AND ASSOCIATED THERMAL STRESS,yes,Crossref API (api.crossref.org),R2,case only. DOI in the bib resolved to this record.
+Povstenko2004,journal,Journal of Thermal Stresses,Journal of Thermal Stresses,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2004,year,2004,2004,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2004,volume,28,28,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2004,number,1,1,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2004,pages,83--102,83-102,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Povstenko2004,doi,10.1080/014957390523741,10.1080/014957390523741,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2007,author,"Povstenko, Y. Z.",Y. Z. Povstenko,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Povstenko2007,title,Fundamental solutions to central symmetric problems for fractional heat conduction equation and associated thermal stresses,Fundamental Solutions to Central Symmetric Problems for Fractional Heat Conduction Equation and Associated Thermal Stresses,yes,Crossref API (api.crossref.org),R2,case only. DOI in the bib resolved to this record.
+Povstenko2007,journal,Journal of Thermal Stresses,Journal of Thermal Stresses,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2007,year,2007,2007,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2007,volume,31,31,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2007,number,2,2,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2007,pages,127--148,127-148,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Povstenko2007,doi,10.1080/01495730701738306,10.1080/01495730701738306,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2009,author,"Povstenko, Y. Z.",Y. Z. Povstenko,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Povstenko2009,title,Thermoelasticity that uses fractional heat conduction equation,Thermoelasticity that uses fractional heat conduction equation,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2009,journal,Journal of Mathematical Sciences,Journal of Mathematical Sciences,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2009,year,2009,2009,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2009,volume,162,162,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2009,number,2,2,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2009,pages,296--305,296-305,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Povstenko2009,doi,10.1007/s10958-009-9636-3,10.1007/s10958-009-9636-3,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2011,author,"Povstenko, Y. Z.",Y. Z. Povstenko,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Povstenko2011,title,Dirichlet problem for time-fractional radial heat conduction in a sphere and associated thermal stresses,Dirichlet Problem for Time-Fractional Radial Heat Conduction in a Sphere and Associated Thermal Stresses,yes,Crossref API (api.crossref.org),R2,case only. DOI in the bib resolved to this record.
+Povstenko2011,journal,Journal of Thermal Stresses,Journal of Thermal Stresses,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2011,year,2011,2011,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2011,volume,34,34,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2011,number,1,1,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2011,pages,51--67,51-67,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Povstenko2011,doi,10.1080/01495739.2010.511929,10.1080/01495739.2010.511929,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2011Cattaneo,author,"Povstenko, Y. Z.",Y. Z. Povstenko,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Povstenko2011Cattaneo,title,Fractional Cattaneo-type equations and generalized thermoelasticity,Fractional Cattaneo-Type Equations and Generalized Thermoelasticity,yes,Crossref API (api.crossref.org),R2,case only. DOI in the bib resolved to this record.
+Povstenko2011Cattaneo,journal,Journal of Thermal Stresses,Journal of Thermal Stresses,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2011Cattaneo,year,2011,2011,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2011Cattaneo,volume,34,34,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2011Cattaneo,number,2,2,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2011Cattaneo,pages,97--114,97-114,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Povstenko2011Cattaneo,doi,10.1080/01495739.2010.511931,10.1080/01495739.2010.511931,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Povstenko2016,author,"Povstenko, Y. Z.",Yuriy Povstenko,yes,Crossref API (api.crossref.org),R2,catalogue gives the forename in full; same author. DOI in the bib is the e-book DOI; the record lists print ISBN 9783319153346 and e-ISBN 9783319153353 under the series Solid Mechanics and Its Applications.
+Povstenko2016,title,Fractional thermoelasticity,Fractional Thermoelasticity,yes,Crossref API (api.crossref.org),R2,case only. DOI in the bib is the e-book DOI; the record lists print ISBN 9783319153346 and e-ISBN 9783319153353 under the series Solid Mechanics and Its Applications.
+Povstenko2016,publisher,Springer,(series field only: Solid Mechanics and Its Applications),partial,Crossref API (api.crossref.org),R2,"the record returns the series, not a publisher field; the 10.1007 DOI prefix belongs to Springer, but the publisher string itself is not printed in the record. DOI in the bib is the e-book DOI; the record lists print ISBN 9783319153346 and e-ISBN 9783319153353 under the series Solid Mechanics and Its Applications."
+Povstenko2016,year,2015,2015,yes,Crossref API (api.crossref.org),R2,DOI in the bib is the e-book DOI; the record lists print ISBN 9783319153346 and e-ISBN 9783319153353 under the series Solid Mechanics and Its Applications.
+Povstenko2016,isbn,978-3-319-15334-6,9783319153346,yes,Crossref API (api.crossref.org),R2,hyphen style only; the bib ISBN is the record's print ISBN. DOI in the bib is the e-book DOI; the record lists print ISBN 9783319153346 and e-ISBN 9783319153353 under the series Solid Mechanics and Its Applications.
+Povstenko2016,doi,10.1007/978-3-319-15335-3,10.1007/978-3-319-15335-3,yes,Crossref API (api.crossref.org),R2,DOI in the bib is the e-book DOI; the record lists print ISBN 9783319153346 and e-ISBN 9783319153353 under the series Solid Mechanics and Its Applications.
+Sharma2022,author,"Sherief, H. H. and Hussein, E. M.",Hany H. Sherief; Eman M. Hussein,yes,Crossref API (api.crossref.org),R2,catalogue gives forenames in full; same two authors. The citekey names an author who is not on the paper; the record's two authors are Sherief and Hussein. All eight checked fields agree with the record.
+Sharma2022,title,Fractional order model of micropolar thermoelasticity and 2D half-space problem,Fractional order model of micropolar thermoelasticity and 2D half-space problem,yes,Crossref API (api.crossref.org),R2,The citekey names an author who is not on the paper; the record's two authors are Sherief and Hussein. All eight checked fields agree with the record.
+Sharma2022,journal,Acta Mechanica,Acta Mechanica,yes,Crossref API (api.crossref.org),R2,The citekey names an author who is not on the paper; the record's two authors are Sherief and Hussein. All eight checked fields agree with the record.
+Sharma2022,year,2022,2022,yes,Crossref API (api.crossref.org),R2,The citekey names an author who is not on the paper; the record's two authors are Sherief and Hussein. All eight checked fields agree with the record.
+Sharma2022,volume,234,234,yes,Crossref API (api.crossref.org),R2,The citekey names an author who is not on the paper; the record's two authors are Sherief and Hussein. All eight checked fields agree with the record.
+Sharma2022,number,2,2,yes,Crossref API (api.crossref.org),R2,The citekey names an author who is not on the paper; the record's two authors are Sherief and Hussein. All eight checked fields agree with the record.
+Sharma2022,pages,535--552,535-552,yes,Crossref API (api.crossref.org),R2,dash style only. The citekey names an author who is not on the paper; the record's two authors are Sherief and Hussein. All eight checked fields agree with the record.
+Sharma2022,doi,10.1007/s00707-022-03399-w,10.1007/s00707-022-03399-w,yes,Crossref API (api.crossref.org),R2,The citekey names an author who is not on the paper; the record's two authors are Sherief and Hussein. All eight checked fields agree with the record.
+Caputo1967,author,"Caputo, M.",M. Caputo,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Caputo1967,title,Linear Models of Dissipation whose Q is almost Frequency Independent--II,Linear Models of Dissipation whose Q is almost Frequency Independent--II,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Caputo1967,journal,Geophysical Journal International,Geophysical Journal International,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Caputo1967,year,1967,1967,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Caputo1967,volume,13,13,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Caputo1967,number,5,5,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Caputo1967,pages,529-539,529-539,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Caputo1967,doi,10.1111/j.1365-246X.1967.tb02303.x,10.1111/j.1365-246x.1967.tb02303.x,yes,Crossref API (api.crossref.org),R2,DOI case only; DOIs are case-insensitive. DOI in the bib resolved to this record.
+Marotti2013,author,"Marotti de Sciarra, F.",Francesco Marotti de Sciarra,yes,Crossref API (api.crossref.org),R2,"catalogue gives the forename in full; same author. The bib volume is the article identifier used by the journal (2013), which is what the record carries in its volume field."
+Marotti2013,title,Some variational principles for coupled thermoelasticity,Some Variational Principles for Coupled Thermoelasticity,yes,Crossref API (api.crossref.org),R2,"case only. The bib volume is the article identifier used by the journal (2013), which is what the record carries in its volume field."
+Marotti2013,journal,Journal of Engineering,Journal of Engineering,yes,Crossref API (api.crossref.org),R2,"The bib volume is the article identifier used by the journal (2013), which is what the record carries in its volume field."
+Marotti2013,year,2013,2013,yes,Crossref API (api.crossref.org),R2,"The bib volume is the article identifier used by the journal (2013), which is what the record carries in its volume field."
+Marotti2013,volume,2013,2013,yes,Crossref API (api.crossref.org),R2,"The bib volume is the article identifier used by the journal (2013), which is what the record carries in its volume field."
+Marotti2013,pages,1--8,1-8,yes,Crossref API (api.crossref.org),R2,"dash style only. The bib volume is the article identifier used by the journal (2013), which is what the record carries in its volume field."
+Marotti2013,doi,10.1155/2013/516462,10.1155/2013/516462,yes,Crossref API (api.crossref.org),R2,"The bib volume is the article identifier used by the journal (2013), which is what the record carries in its volume field."
+Chandrasekharaiah1996,author,"Chandrasekharaiah, D. S.",D. S. Chandrasekharaiah,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Chandrasekharaiah1996,title,A uniqueness theorem in the theory of thermoelasticity without energy dissipation,A UNIQUENESS THEOREM IN THE THEORY OF THERMOELASTICITY WITHOUT ENERGY DISSIPATION,yes,Crossref API (api.crossref.org),R2,case only. DOI in the bib resolved to this record.
+Chandrasekharaiah1996,journal,Journal of Thermal Stresses,Journal of Thermal Stresses,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1996,year,1996,1996,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1996,volume,19,19,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1996,number,3,3,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1996,pages,267--272,267-272,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Chandrasekharaiah1996,doi,10.1080/01495739608946173,10.1080/01495739608946173,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1986,author,"Chandrasekharaiah, D. S.",D. S. Chandrasekharaiah,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Chandrasekharaiah1986,title,Thermoelasticity with second sound: a review,Thermoelasticity with Second Sound: A Review,yes,Crossref API (api.crossref.org),R2,case only. DOI in the bib resolved to this record.
+Chandrasekharaiah1986,journal,Applied Mechanics Reviews,Applied Mechanics Reviews,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1986,year,1986,1986,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1986,volume,39,39,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1986,number,3,3,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1986,pages,355--376,355-376,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Chandrasekharaiah1986,doi,10.1115/1.3143705,10.1115/1.3143705,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1998,author,"Chandrasekharaiah, D. S.",D. S. Chandrasekharaiah,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Chandrasekharaiah1998,title,Hyperbolic Thermoelasticity: A Review of Recent Literature,Hyperbolic Thermoelasticity: A Review of Recent Literature,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1998,journal,Applied Mechanics Reviews,Applied Mechanics Reviews,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1998,year,1998,1998,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1998,volume,51,51,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1998,number,12,12,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1998,pages,705-729,705-729,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Chandrasekharaiah1998,doi,10.1115/1.3098984,10.1115/1.3098984,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Shakeriaski2021,author,"Shakeriaski, Farshad and Ghodrat, Maryam and Escobedo-Diaz, Juan and Behnia, Masud",Farshad Shakeriaski; Maryam Ghodrat; Juan Escobedo-Diaz; Masud Behnia,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Shakeriaski2021,title,Recent advances in generalized thermoelasticity theory and the modified models: a review,Recent advances in generalized thermoelasticity theory and the modified models: a review,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Shakeriaski2021,journal,Journal of Computational Design and Engineering,Journal of Computational Design and Engineering,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Shakeriaski2021,year,2021,2021,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Shakeriaski2021,volume,8,8,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Shakeriaski2021,number,1,1,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Shakeriaski2021,pages,15-35,15-35,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Shakeriaski2021,doi,10.1093/jcde/qwaa082,10.1093/jcde/qwaa082,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Quintanilla2019,author,"Quintanilla, Ramon",Ramon Quintanilla,yes,Crossref API (api.crossref.org),R2,catalogue diacritic transliterated (Ramon); same author. DOI in the bib resolved to this record.
+Quintanilla2019,title,Moore-Gibson-Thompson thermoelasticity,Moore-Gibson-Thompson thermoelasticity,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Quintanilla2019,journal,Mathematics and Mechanics of Solids,Mathematics and Mechanics of Solids,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Quintanilla2019,year,2019,2019,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Quintanilla2019,volume,24,24,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Quintanilla2019,number,12,12,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Quintanilla2019,pages,4020-4031,4020-4031,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Quintanilla2019,doi,10.1177/1081286519862007,10.1177/1081286519862007,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Quintanilla2003DPL,author,"Quintanilla, R.",R. Quintanilla,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Quintanilla2003DPL,title,A Condition on the Delay Parameters in the One-Dimensional Dual-Phase-Lag Thermoelastic Theory,A CONDITION ON THE DELAY PARAMETERS IN THE ONE-DIMENSIONAL DUAL-PHASE-LAG THERMOELASTIC THEORY,yes,Crossref API (api.crossref.org),R2,case only. DOI in the bib resolved to this record.
+Quintanilla2003DPL,journal,Journal of Thermal Stresses,Journal of Thermal Stresses,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Quintanilla2003DPL,year,2003,2003,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Quintanilla2003DPL,volume,26,26,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Quintanilla2003DPL,number,(absent),7,partial,Crossref API (api.crossref.org),R2,bib omits this field; the catalogue supplies it. DOI in the bib resolved to this record.
+Quintanilla2003DPL,pages,713--721,713-721,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Quintanilla2003DPL,doi,10.1080/713855996,10.1080/713855996,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Achenbach1973,author,"Achenbach, J. D.",(no author field in the catalogue record),no,Crossref API (api.crossref.org),R0,"the Elsevier edited-book record carries no author field, so the author could not be confirmed. R0: no record carries the bib ISBN (that ISBN query returns nothing); the only title-and-year match is an Elsevier edited-book with a different ISBN and no author, so the edition is unconfirmed; its DOI is in the source column only."
+Achenbach1973,title,Wave propagation in elastic solids,Wave Propagation in Elastic Solids,yes,Crossref API (api.crossref.org),R0,"case only; the catalogue record was found by a title query, not by a bib DOI. R0: no record carries the bib ISBN (that ISBN query returns nothing); the only title-and-year match is an Elsevier edited-book with a different ISBN and no author, so the edition is unconfirmed; its DOI is in the source column only."
+Achenbach1973,publisher,North-Holland,Elsevier,partial,Crossref API (api.crossref.org),R0,"the record names Elsevier and does not print North-Holland, so the bib imprint is not confirmed. R0: no record carries the bib ISBN (that ISBN query returns nothing); the only title-and-year match is an Elsevier edited-book with a different ISBN and no author, so the edition is unconfirmed; its DOI is in the source column only."
+Achenbach1973,year,1973,1973,yes,Crossref API (api.crossref.org),R0,"R0: no record carries the bib ISBN (that ISBN query returns nothing); the only title-and-year match is an Elsevier edited-book with a different ISBN and no author, so the edition is unconfirmed; its DOI is in the source column only."
+Achenbach1973,isbn,9780444858160,9780720423679,no,Crossref API (api.crossref.org),R0,"the record's ISBN differs from the bib ISBN, so the cited printing is not confirmed. R0: no record carries the bib ISBN (that ISBN query returns nothing); the only title-and-year match is an Elsevier edited-book with a different ISBN and no author, so the edition is unconfirmed; its DOI is in the source column only."
+Achenbach1973,doi,(absent),10.1016/c2013-0-04485-4,partial,Crossref API (api.crossref.org),R0,"bib carries no DOI; a catalogue DOI was found for the title and is reported here only, not added to the bib. R0: no record carries the bib ISBN (that ISBN query returns nothing); the only title-and-year match is an Elsevier edited-book with a different ISBN and no author, so the edition is unconfirmed; its DOI is in the source column only."
+Nowacki1975,author,"Nowacki, Z.",(no record for the 1975 edition),no,Crossref API (api.crossref.org),R0,"nothing in the catalogue confirms the cited 1975 edition or its author initial. R0: no record found for a 1975 Pergamon edition; that ISBN query returns nothing, and only chapters of the 1986 edition are in Crossref, printed under the author name Witold Nowacki."
+Nowacki1975,title,Thermoelasticity,(no record for the 1975 edition),no,Crossref API (api.crossref.org),R0,"R0: no record found for a 1975 Pergamon edition; that ISBN query returns nothing, and only chapters of the 1986 edition are in Crossref, printed under the author name Witold Nowacki."
+Nowacki1975,publisher,Pergamon Press,(chapters of the 1986 edition only),no,Crossref API (api.crossref.org),R0,"the 1986 Pergamon edition is a different edition. R0: no record found for a 1975 Pergamon edition; that ISBN query returns nothing, and only chapters of the 1986 edition are in Crossref, printed under the author name Witold Nowacki."
+Nowacki1975,year,1975,1986,no,Crossref API (api.crossref.org),R0,"only 1986 material was reached in the catalogue; 1975 was not confirmed. R0: no record found for a 1975 Pergamon edition; that ISBN query returns nothing, and only chapters of the 1986 edition are in Crossref, printed under the author name Witold Nowacki."
+Nowacki1975,isbn,9780080175238,(no record),no,Crossref API (api.crossref.org),R0,"an ISBN filter query for this ISBN returns zero records. R0: no record found for a 1975 Pergamon edition; that ISBN query returns nothing, and only chapters of the 1986 edition are in Crossref, printed under the author name Witold Nowacki."
+Nowacki1975,doi,(absent),(none),no,Crossref API (api.crossref.org),R0,"R0: no record found for a 1975 Pergamon edition; that ISBN query returns nothing, and only chapters of the 1986 edition are in Crossref, printed under the author name Witold Nowacki."
+Barak2023,author,"Barak, M. S. and Ahmad, H. and Kumar, R. and Kumar, R. and Gupta, V. and Awwad, F. A. and Ismail, E. A. A.",M. S. Barak; Hijaz Ahmad; Rajesh Kumar; Rajneesh Kumar; Vipin Gupta; Fuad A. Awwad; Emad A. A. Ismail,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Barak2023,title,Behavior of higher-order MDD on energy ratios at the interface of thermoelastic and piezothermoelastic mediums,Behavior of higher-order MDD on energy ratios at the interface of thermoelastic and piezothermoelastic mediums,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023,journal,Scientific Reports,Scientific Reports,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023,year,2023,2023,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023,volume,13,13,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023,number,(absent),1,partial,Crossref API (api.crossref.org),R2,bib omits this field; the catalogue supplies it. DOI in the bib resolved to this record.
+Barak2023,pages,17170,(no value in record),partial,Crossref API (api.crossref.org),R2,"the catalogue record carries no page field, so the locator is not confirmed. DOI in the bib resolved to this record."
+Barak2023,doi,10.1038/s41598-023-44339-5,10.1038/s41598-023-44339-5,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023IJP,author,"Barak, M. S. and Kumar, R. and Kumar, R. and Gupta, V.",M. S. Barak; Rajesh Kumar; Rajneesh Kumar; Vipin Gupta,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Barak2023IJP,title,Energy analysis at the boundary interface of elastic and piezothermoelastic half-spaces,Energy analysis at the boundary interface of elastic and piezothermoelastic half-spaces,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023IJP,journal,Indian Journal of Physics,Indian Journal of Physics,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023IJP,year,2023,2023,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023IJP,volume,97,97,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023IJP,number,11,8,no,Crossref API (api.crossref.org),R2,record carries a different value. DOI in the bib resolved to this record.
+Barak2023IJP,pages,2369--2383,2369-2383,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Barak2023IJP,doi,10.1007/s12648-022-02568-w,10.1007/s12648-022-02568-w,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023JTS,author,"Barak, M. S. and Kumar, R. and Kumar, R. and Gupta, V.",M. S. Barak; Rajesh Kumar; Rajneesh Kumar; Vipin Gupta,yes,Crossref API (api.crossref.org),R2,"separator style only. Crossref issued date is 2023-10-11 with volume 47, issue 2; the bib pairs the same year with the same volume and issue."
+Barak2023JTS,title,Energy transfer at the interface of monoclinic piezothermoelastic and thermoelastic half spaces with MDD,Energy transfer at the interface of monoclinic piezothermoelastic and thermoelastic half spaces with MDD,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2023-10-11 with volume 47, issue 2; the bib pairs the same year with the same volume and issue."
+Barak2023JTS,journal,Journal of Thermal Stresses,Journal of Thermal Stresses,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2023-10-11 with volume 47, issue 2; the bib pairs the same year with the same volume and issue."
+Barak2023JTS,year,2023,2023,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2023-10-11 with volume 47, issue 2; the bib pairs the same year with the same volume and issue."
+Barak2023JTS,volume,47,47,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2023-10-11 with volume 47, issue 2; the bib pairs the same year with the same volume and issue."
+Barak2023JTS,number,2,2,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2023-10-11 with volume 47, issue 2; the bib pairs the same year with the same volume and issue."
+Barak2023JTS,pages,189--216,189-216,yes,Crossref API (api.crossref.org),R2,"dash style only. Crossref issued date is 2023-10-11 with volume 47, issue 2; the bib pairs the same year with the same volume and issue."
+Barak2023JTS,doi,10.1080/01495739.2023.2253879,10.1080/01495739.2023.2253879,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2023-10-11 with volume 47, issue 2; the bib pairs the same year with the same volume and issue."
+Barak2023MMMS,author,"Barak, M. S. and Kumar, R. and Kumar, R. and Gupta, V.",M.S. Barak; Rajesh Kumar; Rajneesh Kumar; Vipin Gupta,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Barak2023MMMS,title,The effect of memory and stiffness on energy ratios at the interface of distinct media,The effect of memory and stiffness on energy ratios at the interface of distinct media,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023MMMS,journal,Multidiscipline Modeling in Materials and Structures,Multidiscipline Modeling in Materials and Structures,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023MMMS,year,2023,2023,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023MMMS,volume,19,19,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023MMMS,number,3,3,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Barak2023MMMS,pages,464--492,464-492,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Barak2023MMMS,doi,10.1108/mmms-10-2022-0209,10.1108/mmms-10-2022-0209,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2023IJNMF,author,"Gupta, Vipin and Kumar, Rajesh and Kumar, Manjeet and Pathania, Vijayata and Barak, M.S.",Vipin Gupta; Rajesh Kumar; Manjeet Kumar; Vijayata Pathania; M.S. Barak,yes,Crossref API (api.crossref.org),R2,"separator style only. Crossref issued date is 2022-10-18 in volume 33, issue 2; the bib's 2023 citekey year is not what the record carries in its year field, but the bib year 2022 matches."
+Gupta2023IJNMF,title,Reflection/transmission of plane waves at the interface of an ideal fluid and nonlocal piezothermoelastic medium,Reflection/transmission of plane waves at the interface of an ideal fluid and nonlocal piezothermoelastic medium,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2022-10-18 in volume 33, issue 2; the bib's 2023 citekey year is not what the record carries in its year field, but the bib year 2022 matches."
+Gupta2023IJNMF,journal,International Journal of Numerical Methods for Heat \& Fluid Flow,International Journal of Numerical Methods for Heat & Fluid Flow,yes,Crossref API (api.crossref.org),R2,"LaTeX-escaped ampersand in the bib rendered as &. Crossref issued date is 2022-10-18 in volume 33, issue 2; the bib's 2023 citekey year is not what the record carries in its year field, but the bib year 2022 matches."
+Gupta2023IJNMF,year,2022,2022,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2022-10-18 in volume 33, issue 2; the bib's 2023 citekey year is not what the record carries in its year field, but the bib year 2022 matches."
+Gupta2023IJNMF,volume,33,33,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2022-10-18 in volume 33, issue 2; the bib's 2023 citekey year is not what the record carries in its year field, but the bib year 2022 matches."
+Gupta2023IJNMF,number,2,2,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2022-10-18 in volume 33, issue 2; the bib's 2023 citekey year is not what the record carries in its year field, but the bib year 2022 matches."
+Gupta2023IJNMF,pages,912-937,912-937,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2022-10-18 in volume 33, issue 2; the bib's 2023 citekey year is not what the record carries in its year field, but the bib year 2022 matches."
+Gupta2023IJNMF,doi,10.1108/hff-04-2022-0259,10.1108/hff-04-2022-0259,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2022-10-18 in volume 33, issue 2; the bib's 2023 citekey year is not what the record carries in its year field, but the bib year 2022 matches."
+Gupta2023Energy,author,"Gupta, Vipin and Kumar, Rajesh and Kumar, Rajneesh and Barak, M.S.",Vipin Gupta; Rajesh Kumar; Rajneesh Kumar; M.S. Barak,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Gupta2023Energy,title,Energy analysis at the interface of piezo/thermoelastic half spaces,Energy analysis at the interface of piezo/thermoelastic half spaces,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2023Energy,journal,International Journal of Numerical Methods for Heat \& Fluid Flow,International Journal of Numerical Methods for Heat & Fluid Flow,yes,Crossref API (api.crossref.org),R2,LaTeX-escaped ampersand in the bib rendered as &. DOI in the bib resolved to this record.
+Gupta2023Energy,year,2023,2023,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2023Energy,volume,33,33,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2023Energy,number,6,6,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2023Energy,pages,2250-2277,2250-2277,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2023Energy,doi,10.1108/hff-11-2022-0654,10.1108/hff-11-2022-0654,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023PhysScr,author,"Kumar, Rajesh and Gupta, Vipin and Pathania, Vijayata and Barak, M S",Rajesh Kumar; Vipin Gupta; Vijayata Pathania; M S Barak,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Kumar2023PhysScr,title,Energy ratio response at the interface of elastic and dual-porous thermoelastic half-spaces,Energy ratio response at the interface of elastic and dual-porous thermoelastic half-spaces,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023PhysScr,journal,Physica Scripta,Physica Scripta,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023PhysScr,year,2023,2023,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023PhysScr,volume,98,98,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023PhysScr,number,11,11,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023PhysScr,pages,115211,115211,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023PhysScr,doi,10.1088/1402-4896/acfced,10.1088/1402-4896/acfced,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2023,author,"Abouelregal, A. E. and Askar, S. S. and Marin, M. and Mohamed, B.",Ahmed E. Abouelregal; S. S. Askar; M. Marin; Badahiould Mohamed,yes,Crossref API (api.crossref.org),R2,"the record prints the fourth author as Badahiould Mohamed, which is the bib's inverted form of the same name. DOI in the bib resolved to this record."
+Abouelregal2023,title,The theory of thermoelasticity with a memory-dependent dynamic response for a thermo-piezoelectric functionally graded rotating rod,The theory of thermoelasticity with a memory-dependent dynamic response for a thermo-piezoelectric functionally graded rotating rod,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2023,journal,Scientific Reports,Scientific Reports,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2023,year,2023,2023,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2023,volume,13,13,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2023,number,(absent),1,partial,Crossref API (api.crossref.org),R2,bib omits this field; the catalogue supplies it. DOI in the bib resolved to this record.
+Abouelregal2023,pages,36371,(no value in record),partial,Crossref API (api.crossref.org),R2,"the catalogue record carries no page field, so the locator is not confirmed. DOI in the bib resolved to this record."
+Abouelregal2023,doi,10.1038/s41598-023-36371-2,10.1038/s41598-023-36371-2,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2026HeatMap,author,"Gupta, Vipin and Hussain, Syed Modassir and Yaylac, Murat and Das, Soumik",Vipin Gupta; Syed Modassir Hussain; Murat Yaylaci; Soumik Das,yes,Crossref API (api.crossref.org),R2,the third author's family name carries a dotless i in the bib (Yaylaci); transliterated to ASCII in both columns. The bib title contains an en dash in Kelvin-Voigt; rendered with a hyphen here.
+Gupta2026HeatMap,title,Heat map analysis of wave dynamics in nonlocal Kelvin-Voigt piezo-semiconductors under memory-dependent heat flux,Heat map analysis of wave dynamics in nonlocal Kelvin-Voigt piezo-semiconductors under memory-dependent heat flux,yes,Crossref API (api.crossref.org),R2,The bib title contains an en dash in Kelvin-Voigt; rendered with a hyphen here.
+Gupta2026HeatMap,journal,Continuum Mechanics and Thermodynamics,Continuum Mechanics and Thermodynamics,yes,Crossref API (api.crossref.org),R2,The bib title contains an en dash in Kelvin-Voigt; rendered with a hyphen here.
+Gupta2026HeatMap,year,2026,2026,yes,Crossref API (api.crossref.org),R2,The bib title contains an en dash in Kelvin-Voigt; rendered with a hyphen here.
+Gupta2026HeatMap,volume,38,38,yes,Crossref API (api.crossref.org),R2,The bib title contains an en dash in Kelvin-Voigt; rendered with a hyphen here.
+Gupta2026HeatMap,number,3,3,yes,Crossref API (api.crossref.org),R2,The bib title contains an en dash in Kelvin-Voigt; rendered with a hyphen here.
+Gupta2026HeatMap,pages,41,(no value in record),partial,Crossref API (api.crossref.org),R2,"the catalogue record carries no page field, so the locator is not confirmed. The bib title contains an en dash in Kelvin-Voigt; rendered with a hyphen here."
+Gupta2026HeatMap,doi,10.1007/s00161-026-01472-6,10.1007/s00161-026-01472-6,yes,Crossref API (api.crossref.org),R2,The bib title contains an en dash in Kelvin-Voigt; rendered with a hyphen here.
+Hughes1980,author,"Hughes, T. J. R.",Thomas J. R. Hughes,yes,Crossref API (api.crossref.org),R2,catalogue gives forenames in full; same author. DOI in the bib resolved to this record.
+Hughes1980,title,Generalization of selective integration procedures to anisotropic and nonlinear media,Generalization of selective integration procedures to anisotropic and nonlinear media,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Hughes1980,journal,International Journal for Numerical Methods in Engineering,International Journal for Numerical Methods in Engineering,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Hughes1980,year,1980,1980,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Hughes1980,volume,15,15,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Hughes1980,number,9,9,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Hughes1980,pages,1413--1418,1413-1418,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Hughes1980,doi,10.1002/nme.1620150914,10.1002/nme.1620150914,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+RoyChoudhuri2007,author,"Choudhuri, S. K. Roy",S. K. Roy Choudhuri,yes,Crossref API (api.crossref.org),R2,the catalogue prints the family name as Choudhuri with Roy among the given names; same single author. DOI in the bib resolved to this record.
+RoyChoudhuri2007,title,On A Thermoelastic Three-Phase-Lag Model,On A Thermoelastic Three-Phase-Lag Model,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+RoyChoudhuri2007,journal,Journal of Thermal Stresses,Journal of Thermal Stresses,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+RoyChoudhuri2007,year,2007,2007,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+RoyChoudhuri2007,volume,30,30,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+RoyChoudhuri2007,number,3,3,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+RoyChoudhuri2007,pages,231-238,231-238,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+RoyChoudhuri2007,doi,10.1080/01495730601130919,10.1080/01495730601130919,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+MooreGibson1960,author,"Moore, Franklin K. and Gibson, Walter E.",Franklin K. Moore; Walter E. Gibson,yes,Crossref API (api.crossref.org),R2,"catalogue gives forenames in full; same two authors. The bib omits volume, issue and pages; the catalogue record supplies 27(2):117-127."
+MooreGibson1960,title,Propagation of Weak Disturbances in a Gas Subject to Relaxation Effects,Propagation of Weak Disturbances in a Gas Subject to Relaxation Effects,yes,Crossref API (api.crossref.org),R2,"The bib omits volume, issue and pages; the catalogue record supplies 27(2):117-127."
+MooreGibson1960,journal,Journal of the Aerospace Sciences,Journal of the Aerospace Sciences,yes,Crossref API (api.crossref.org),R2,"The bib omits volume, issue and pages; the catalogue record supplies 27(2):117-127."
+MooreGibson1960,year,1960,1960,yes,Crossref API (api.crossref.org),R2,"The bib omits volume, issue and pages; the catalogue record supplies 27(2):117-127."
+MooreGibson1960,volume,(absent),27,partial,Crossref API (api.crossref.org),R2,"bib omits this field; the catalogue supplies it. The bib omits volume, issue and pages; the catalogue record supplies 27(2):117-127."
+MooreGibson1960,number,(absent),2,partial,Crossref API (api.crossref.org),R2,"bib omits this field; the catalogue supplies it. The bib omits volume, issue and pages; the catalogue record supplies 27(2):117-127."
+MooreGibson1960,pages,(absent),117-127,partial,Crossref API (api.crossref.org),R2,"bib omits the pages; the catalogue supplies them. The bib omits volume, issue and pages; the catalogue record supplies 27(2):117-127."
+MooreGibson1960,doi,10.2514/8.8418,10.2514/8.8418,yes,Crossref API (api.crossref.org),R2,"The bib omits volume, issue and pages; the catalogue record supplies 27(2):117-127."
+Yu2018ModifiedGL,author,"Yu, Y. Jun and Xue, Zhang-Na and Tian, Xiao-Geng",Y. Jun Yu; Zhang-Na Xue; Xiao-Geng Tian,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Yu2018ModifiedGL,title,A modified Green--Lindsay thermoelasticity with strain rate to eliminate the discontinuity,A modified Green-Lindsay thermoelasticity with strain rate to eliminate the discontinuity,yes,Crossref API (api.crossref.org),R2,case and punctuation only. DOI in the bib resolved to this record.
+Yu2018ModifiedGL,journal,Meccanica,Meccanica,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Yu2018ModifiedGL,year,2018,2018,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Yu2018ModifiedGL,volume,53,53,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Yu2018ModifiedGL,number,10,10,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Yu2018ModifiedGL,pages,2543--2554,2543-2554,yes,Crossref API (api.crossref.org),R2,dash style only. DOI in the bib resolved to this record.
+Yu2018ModifiedGL,doi,10.1007/s11012-018-0843-1,10.1007/s11012-018-0843-1,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Li2019,author,"Li, Yan and Zhang, Pei and Li, Chenlin and He, Tianhu",Yan Li; Pei Zhang; Chenlin Li; Tianhu He,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Li2019,title,Fractional order and memory-dependent analysis to the dynamic response of a bi-layered structure due to laser pulse heating,Fractional order and memory-dependent analysis to the dynamic response of a bi-layered structure due to laser pulse heating,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Li2019,journal,International Journal of Heat and Mass Transfer,International Journal of Heat and Mass Transfer,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Li2019,year,2019,2019,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Li2019,volume,144,144,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Li2019,pages,118664,118664,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Li2019,doi,10.1016/j.ijheatmasstransfer.2019.118664,10.1016/j.ijheatmasstransfer.2019.118664,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Prasad2020,author,"Prasad, Rashmi and Kumar, Roushan",Rashmi Prasad; Roushan Kumar,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Prasad2020,title,On the characterization and stability of plane waves under hyperbolic two-temperature generalized thermoelasticity,On the characterization and stability of plane waves under hyperbolic two-temperature generalized thermoelasticity,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Prasad2020,journal,Journal of Thermal Stresses,Journal of Thermal Stresses,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Prasad2020,year,2020,2020,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Prasad2020,volume,43,43,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Prasad2020,number,12,12,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Prasad2020,pages,1513-1530,1513-1530,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Prasad2020,doi,10.1080/01495739.2020.1806764,10.1080/01495739.2020.1806764,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Ezzat2011,author,"Ezzat, Magdy A. and El Karamany, Ahmed S.",Magdy A. Ezzat; Ahmed S. El Karamany,yes,Crossref API (api.crossref.org),R2,catalogue gives forenames in full; same two authors. Journal name carries a German umlaut in the bib; it is transliterated to ASCII here.
+Ezzat2011,title,Fractional order heat conduction law in magneto-thermoelasticity involving two temperatures,Fractional order heat conduction law in magneto-thermoelasticity involving two temperatures,yes,Crossref API (api.crossref.org),R2,Journal name carries a German umlaut in the bib; it is transliterated to ASCII here.
+Ezzat2011,journal,Zeitschrift fur angewandte Mathematik und Physik,Zeitschrift fur angewandte Mathematik und Physik,yes,Crossref API (api.crossref.org),R2,Journal name carries a German umlaut in the bib; it is transliterated to ASCII here.
+Ezzat2011,year,2011,2011,yes,Crossref API (api.crossref.org),R2,Journal name carries a German umlaut in the bib; it is transliterated to ASCII here.
+Ezzat2011,volume,62,62,yes,Crossref API (api.crossref.org),R2,Journal name carries a German umlaut in the bib; it is transliterated to ASCII here.
+Ezzat2011,number,5,5,yes,Crossref API (api.crossref.org),R2,Journal name carries a German umlaut in the bib; it is transliterated to ASCII here.
+Ezzat2011,pages,937-952,937-952,yes,Crossref API (api.crossref.org),R2,Journal name carries a German umlaut in the bib; it is transliterated to ASCII here.
+Ezzat2011,doi,10.1007/s00033-011-0126-3,10.1007/s00033-011-0126-3,yes,Crossref API (api.crossref.org),R2,Journal name carries a German umlaut in the bib; it is transliterated to ASCII here.
+Alzahrani2020,author,"Alzahrani, Faris and Abbas, Ibrahim",Faris Alzahrani; Ibrahim Abbas,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Alzahrani2020,title,The Effect of a Hyperbolic Two-Temperature Model with and without Energy Dissipation in a Semiconductor Material,The Effect of a Hyperbolic Two-Temperature Model with and without Energy Dissipation in a Semiconductor Material,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Alzahrani2020,journal,Mathematics,Mathematics,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Alzahrani2020,year,2020,2020,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Alzahrani2020,volume,8,8,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Alzahrani2020,number,10,10,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Alzahrani2020,pages,1711,1711,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Alzahrani2020,doi,10.3390/math8101711,10.3390/math8101711,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bassiouny2020,author,"Bassiouny, E. and R, Rajagopalan",E. Bassiouny; Rajagopalan R,yes,Crossref API (api.crossref.org),R2,"the record lists the second author with family name R and given name Rajagopalan, which is the bib's inverted form of the same name. DOI in the bib resolved to this record."
+Bassiouny2020,title,Hyperbolic Two Temperature Fractional-Order Thermoelastic Model Subjected to Thermal Loading with Two Relaxation Times,Hyperbolic Two Temperature Fractional-Order Thermoelastic Model Subjected to Thermal Loading with Two Relaxation Times,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bassiouny2020,journal,Advances in Dynamical Systems and Applications,Advances in Dynamical Systems and Applications,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bassiouny2020,year,2020,2020,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bassiouny2020,volume,15,15,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bassiouny2020,number,2,2,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bassiouny2020,pages,217-229,217-229,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bassiouny2020,doi,10.37622/ADSA/15.2.2020.217-229,10.37622/adsa/15.2.2020.217-229,yes,Crossref API (api.crossref.org),R2,DOI case only; DOIs are case-insensitive. DOI in the bib resolved to this record.
+Das2026,author,"Das, Soumik and Gupta, Vipin and Dutta, Rachaita and Singhal, Abhinav and Peng, Wei and Sur, Abhik",Soumik Das; Vipin Gupta; Rachaita Dutta; Abhinav Singhal; Wei Peng; Abhik Sur,yes,Crossref API (api.crossref.org),R2,"separator style only. Crossref carries no page field for this item; the bib's note gives article number 77, which the record does not confirm or contradict."
+Das2026,title,Klein-Gordon nonlocal dynamics of porous piezo-thermoelastic medium with surface irregularity under fractional-order modified LS model,Klein-Gordon nonlocal dynamics of porous piezo-thermoelastic medium with surface irregularity under fractional-order modified LS model,yes,Crossref API (api.crossref.org),R2,"Crossref carries no page field for this item; the bib's note gives article number 77, which the record does not confirm or contradict."
+Das2026,journal,International Journal of Mechanics and Materials in Design,International Journal of Mechanics and Materials in Design,yes,Crossref API (api.crossref.org),R2,"Crossref carries no page field for this item; the bib's note gives article number 77, which the record does not confirm or contradict."
+Das2026,year,2026,2026,yes,Crossref API (api.crossref.org),R2,"Crossref carries no page field for this item; the bib's note gives article number 77, which the record does not confirm or contradict."
+Das2026,volume,22,22,yes,Crossref API (api.crossref.org),R2,"Crossref carries no page field for this item; the bib's note gives article number 77, which the record does not confirm or contradict."
+Das2026,number,2,2,yes,Crossref API (api.crossref.org),R2,"Crossref carries no page field for this item; the bib's note gives article number 77, which the record does not confirm or contradict."
+Das2026,doi,10.1007/s10999-026-09892-7,10.1007/s10999-026-09892-7,yes,Crossref API (api.crossref.org),R2,"Crossref carries no page field for this item; the bib's note gives article number 77, which the record does not confirm or contradict."
+Srivastava2026,author,"Srivastava, Anjali and Mukhopadhyay, Santwana",Anjali Srivastava; Santwana Mukhopadhyay,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Srivastava2026,title,On some reciprocity and variational theorems in the temperature rate dependent two temperature piezothermoelasticity theory,On some reciprocity and variational theorems in the temperature rate dependent two temperature piezothermoelasticity theory,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Srivastava2026,journal,Archive of Applied Mechanics,Archive of Applied Mechanics,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Srivastava2026,year,2026,2026,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Srivastava2026,volume,96,96,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Srivastava2026,number,5,5,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Srivastava2026,pages,107,(no value in record),partial,Crossref API (api.crossref.org),R2,"the catalogue record carries no page field, so the locator is not confirmed. DOI in the bib resolved to this record."
+Srivastava2026,doi,10.1007/s00419-026-03092-7,10.1007/s00419-026-03092-7,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Huang2025,author,"Huang, Yue and Yan, Lei and Wu, Hua and Yu, Yajun",Yue Huang; Lei Yan; Hua Wu; Yajun Yu,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Huang2025,title,New insights on generalized heat conduction and thermoelastic coupling models,New insights on generalized heat conduction and thermoelastic coupling models,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Huang2025,journal,Applied Mathematics and Mechanics,Applied Mathematics and Mechanics,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Huang2025,year,2025,2025,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Huang2025,volume,46,46,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Huang2025,number,8,8,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Huang2025,pages,1533-1550,1533-1550,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Huang2025,doi,10.1007/s10483-025-3280-7,10.1007/s10483-025-3280-7,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2020a,author,"Biswas, Siddhartha",Siddhartha Biswas,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Biswas2020a,title,Surface waves in porous nonlocal thermoelastic orthotropic medium,Surface waves in porous nonlocal thermoelastic orthotropic medium,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2020a,journal,Acta Mechanica,Acta Mechanica,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2020a,year,2020,2020,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2020a,volume,231,231,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2020a,number,7,7,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2020a,pages,2741-2760,2741-2760,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2020a,doi,10.1007/s00707-020-02670-2,10.1007/s00707-020-02670-2,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Yang2021,author,"Yang, Zhaohai and Cheng, Dan and Cong, Guangyu and Jin, Dawei and Borjalilou, Vahid",Zhaohai Yang; Dan Cheng; Guangyu Cong; Dawei Jin; Vahid Borjalilou,yes,Crossref API (api.crossref.org),R2,separator style only. Crossref issued date is 2021-03-26: the item was published online ahead of the volume 34(1) issue. Record and bib pair the same year with the same volume and issue.
+Yang2021,title,Dual-phase-lag thermoelastic damping in nonlocal rectangular nanoplates,Dual-phase-lag thermoelastic damping in nonlocal rectangular nanoplates,yes,Crossref API (api.crossref.org),R2,Crossref issued date is 2021-03-26: the item was published online ahead of the volume 34(1) issue. Record and bib pair the same year with the same volume and issue.
+Yang2021,journal,Waves in Random and Complex Media,Waves in Random and Complex Media,yes,Crossref API (api.crossref.org),R2,Crossref issued date is 2021-03-26: the item was published online ahead of the volume 34(1) issue. Record and bib pair the same year with the same volume and issue.
+Yang2021,year,2021,2021,yes,Crossref API (api.crossref.org),R2,Crossref issued date is 2021-03-26: the item was published online ahead of the volume 34(1) issue. Record and bib pair the same year with the same volume and issue.
+Yang2021,volume,34,34,yes,Crossref API (api.crossref.org),R2,Crossref issued date is 2021-03-26: the item was published online ahead of the volume 34(1) issue. Record and bib pair the same year with the same volume and issue.
+Yang2021,number,1,1,yes,Crossref API (api.crossref.org),R2,Crossref issued date is 2021-03-26: the item was published online ahead of the volume 34(1) issue. Record and bib pair the same year with the same volume and issue.
+Yang2021,pages,162-181,162-181,yes,Crossref API (api.crossref.org),R2,Crossref issued date is 2021-03-26: the item was published online ahead of the volume 34(1) issue. Record and bib pair the same year with the same volume and issue.
+Yang2021,doi,10.1080/17455030.2021.1903117,10.1080/17455030.2021.1903117,yes,Crossref API (api.crossref.org),R2,Crossref issued date is 2021-03-26: the item was published online ahead of the volume 34(1) issue. Record and bib pair the same year with the same volume and issue.
+Gupta2023,author,"Gupta, Vipin and Barak, M. S.",Vipin Gupta; M. S. Barak,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Gupta2023,title,Fractional and MDD analysis of piezo-photo-thermo-elastic waves in semiconductor medium,Fractional and MDD analysis of piezo-photo-thermo-elastic waves in semiconductor medium,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2023,journal,Mechanics of Advanced Materials and Structures,Mechanics of Advanced Materials and Structures,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2023,year,2023,2023,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2023,volume,31,31,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2023,number,25,25,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2023,pages,6787-6802,6787-6802,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Gupta2023,doi,10.1080/15376494.2023.2238201,10.1080/15376494.2023.2238201,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Tibullo2017,author,"Chirita, Stan and Ciarletta, Michele and Tibullo, Vincenzo",Stan Chirita; Michele Ciarletta; Vincenzo Tibullo,yes,Crossref API (api.crossref.org),R2,the bib prints the first author's family name with a Romanian comma-below s; transliterated to ASCII in both columns. The first author's family name is printed with a Romanian comma-below s in the bib and in the catalogue; transliterated to ASCII here.
+Tibullo2017,title,On the thermomechanical consistency of the time differential dual-phase-lag models of heat conduction,On the thermomechanical consistency of the time differential dual-phase-lag models of heat conduction,yes,Crossref API (api.crossref.org),R2,The first author's family name is printed with a Romanian comma-below s in the bib and in the catalogue; transliterated to ASCII here.
+Tibullo2017,journal,International Journal of Heat and Mass Transfer,International Journal of Heat and Mass Transfer,yes,Crossref API (api.crossref.org),R2,The first author's family name is printed with a Romanian comma-below s in the bib and in the catalogue; transliterated to ASCII here.
+Tibullo2017,year,2017,2017,yes,Crossref API (api.crossref.org),R2,The first author's family name is printed with a Romanian comma-below s in the bib and in the catalogue; transliterated to ASCII here.
+Tibullo2017,volume,114,114,yes,Crossref API (api.crossref.org),R2,The first author's family name is printed with a Romanian comma-below s in the bib and in the catalogue; transliterated to ASCII here.
+Tibullo2017,pages,277-285,277-285,yes,Crossref API (api.crossref.org),R2,The first author's family name is printed with a Romanian comma-below s in the bib and in the catalogue; transliterated to ASCII here.
+Tibullo2017,doi,10.1016/j.ijheatmasstransfer.2017.06.071,10.1016/j.ijheatmasstransfer.2017.06.071,yes,Crossref API (api.crossref.org),R2,The first author's family name is printed with a Romanian comma-below s in the bib and in the catalogue; transliterated to ASCII here.
+Abouelregal2020,author,"Abouelregal, Ahmed E. and Khalil, K. M. and Mohammed, F. A. and Nasr, M. E. and Zakaria, Adam and Ahmed, Ibrahim-Elkhalil",Ahmed E. Abouelregal; K. M. Khalil; F. A. Mohammed; M. E. Nasr; Adam Zakaria; Ibrahim-Elkhalil Ahmed,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Abouelregal2020,title,A generalized heat conduction model of higher-order time derivatives and three-phase-lags for non-simple thermoelastic materials,A generalized heat conduction model of higher-order time derivatives and three-phase-lags for non-simple thermoelastic materials,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2020,journal,Scientific Reports,Scientific Reports,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2020,year,2020,2020,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2020,volume,10,10,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2020,number,1,1,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2020,pages,13625,(no value in record),partial,Crossref API (api.crossref.org),R2,"the catalogue record carries no page field, so the locator is not confirmed. DOI in the bib resolved to this record."
+Abouelregal2020,doi,10.1038/s41598-020-70388-1,10.1038/s41598-020-70388-1,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023,author,"Kumar, Rajesh and Gupta, Vipin and Pathania, Vijayata and Kumar, Rajneesh and Barak, M. S.",Rajesh Kumar; Vipin Gupta; Vijayata Pathania; Rajneesh Kumar; M. S. Barak,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Kumar2023,title,Analysis of Waves at Boundary Surfaces at Distinct Media with Nonlocal Dual-Phase-Lag,Analysis of Waves at Boundary Surfaces at Distinct Media with Nonlocal Dual-Phase-Lag,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023,journal,"Proceedings of the National Academy of Sciences, India Section A: Physical Sciences","Proceedings of the National Academy of Sciences, India Section A: Physical Sciences",yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023,year,2023,2023,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023,volume,93,93,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023,number,4,4,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023,pages,573-585,573-585,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumar2023,doi,10.1007/s40010-023-00850-y,10.1007/s40010-023-00850-y,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2019,author,"Singh, Biswajit and Pal (Sarkar), Smita and Barman, Krishnendu",Biswajit Singh; Smita Pal (Sarkar); Krishnendu Barman,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Singh2019,title,Thermoelastic interaction in the semi-infinite solid medium due to three-phase-lag effect involving memory-dependent derivative,Thermoelastic interaction in the semi-infinite solid medium due to three-phase-lag effect involving memory-dependent derivative,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2019,journal,Journal of Thermal Stresses,Journal of Thermal Stresses,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2019,year,2019,2019,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2019,volume,42,42,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2019,number,7,7,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2019,pages,874-889,874-889,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2019,doi,10.1080/01495739.2019.1602015,10.1080/01495739.2019.1602015,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2019,author,"Biswas, Siddhartha",Siddhartha Biswas,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Biswas2019,title,Modeling of memory-dependent derivatives in orthotropic medium with three-phase-lag model under the effect of magnetic field,Modeling of memory-dependent derivatives in orthotropic medium with three-phase-lag model under the effect of magnetic field,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2019,journal,Mechanics Based Design of Structures and Machines,Mechanics Based Design of Structures and Machines,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2019,year,2019,2019,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2019,volume,47,47,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2019,number,3,3,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2019,pages,302-318,302-318,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Biswas2019,doi,10.1080/15397734.2018.1548968,10.1080/15397734.2018.1548968,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2020a,author,"Singh, Biswajit and Pal (Sarkar), Smita and Barman, Krishnendu",Biswajit Singh; Smita Pal (Sarkar); Krishnendu Barman,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Singh2020a,title,Eigenfunction approach to generalized thermo-viscoelasticity with memory dependent derivative due to three-phase-lag heat transfer,Eigenfunction approach to generalized thermo-viscoelasticity with memory dependent derivative due to three-phase-lag heat transfer,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2020a,journal,Journal of Thermal Stresses,Journal of Thermal Stresses,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2020a,year,2020,2020,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2020a,volume,43,43,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2020a,number,9,9,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2020a,pages,1100-1119,1100-1119,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Singh2020a,doi,10.1080/01495739.2020.1770642,10.1080/01495739.2020.1770642,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bayones2021,author,"Bayones, Fatima S. and Mondal, Sudip and Abo-Dahab, Sayed M. and Kilany, Araby Atef",Fatima S. Bayones; Sudip Mondal; Sayed M. Abo-Dahab; Araby Atef Kilany,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Bayones2021,title,Effect of moving heat source on a magneto-thermoelastic rod in the context of Eringen's nonlocal theory under three-phase lag with a memory dependent derivative,Effect of moving heat source on a magneto-thermoelastic rod in the context of Eringen's nonlocal theory under three-phase lag with a memory dependent derivative,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bayones2021,journal,Mechanics Based Design of Structures and Machines,Mechanics Based Design of Structures and Machines,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bayones2021,year,2021,2021,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bayones2021,volume,51,51,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bayones2021,number,5,5,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bayones2021,pages,2501-2516,2501-2516,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Bayones2021,doi,10.1080/15397734.2021.1901735,10.1080/15397734.2021.1901735,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Youssef2006,author,"Youssef, H. M.",H. M. Youssef,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Youssef2006,title,Theory of two-temperature-generalized thermoelasticity,Theory of two-temperature-generalized thermoelasticity,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Youssef2006,journal,IMA Journal of Applied Mathematics,IMA Journal of Applied Mathematics,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Youssef2006,year,2006,2006,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Youssef2006,volume,71,71,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Youssef2006,number,3,3,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Youssef2006,pages,383-390,383-390,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Youssef2006,doi,10.1093/imamat/hxh101,10.1093/imamat/hxh101,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Yu2024,author,"Yu, Ya-Jun and Wu, Hua and Deng, Zi-Chen",Ya-Jun Yu; Hua Wu; Zi-Chen Deng,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Yu2024,title,New insights on fractional thermoelasticity from anomalous heat conduction,New insights on fractional thermoelasticity from anomalous heat conduction,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Yu2024,journal,Acta Mechanica Sinica,Acta Mechanica Sinica,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Yu2024,year,2024,2024,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Yu2024,volume,40,40,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Yu2024,number,5,5,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Yu2024,pages,423419,(no value in record),partial,Crossref API (api.crossref.org),R2,"the catalogue record carries no page field, so the locator is not confirmed. DOI in the bib resolved to this record."
+Yu2024,doi,10.1007/s10409-023-23419-x,10.1007/s10409-023-23419-x,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumawat2023,author,"Kumawat, Sunita and Vishwakarma, Sumit Kumar",Sunita Kumawat; Sumit Kumar Vishwakarma,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Kumawat2023,title,Circumferential SH wave in piezo-reinforced composite structure with imperfect interface bonding,Circumferential SH wave in piezo-reinforced composite structure with imperfect interface bonding,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumawat2023,journal,Applied Mathematical Modelling,Applied Mathematical Modelling,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumawat2023,year,2023,2023,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumawat2023,volume,123,123,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumawat2023,pages,311-331,311-331,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Kumawat2023,doi,10.1016/j.apm.2023.06.034,10.1016/j.apm.2023.06.034,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2020a,author,"Abouelregal, Ahmed E.",Ahmed E. Abouelregal,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Abouelregal2020a,title,Generalized mathematical novel model of thermoelastic diffusion with four phase lags and higher-order time derivative,Generalized mathematical novel model of thermoelastic diffusion with four phase lags and higher-order time derivative,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2020a,journal,The European Physical Journal Plus,The European Physical Journal Plus,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2020a,year,2020,2020,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2020a,volume,135,135,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2020a,number,2,2,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Abouelregal2020a,pages,263,(no value in record),partial,Crossref API (api.crossref.org),R2,"the catalogue record carries no page field, so the locator is not confirmed. DOI in the bib resolved to this record."
+Abouelregal2020a,doi,10.1140/epjp/s13360-020-00282-2,10.1140/epjp/s13360-020-00282-2,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2019,author,"Sur, A. and Pal, P. and Mondal, S. and Kanoria, M.",A. Sur; P. Pal; S. Mondal; M. Kanoria,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Sur2019,title,Finite element analysis in a fiber-reinforced cylinder due to memory-dependent heat transfer,Finite element analysis in a fiber-reinforced cylinder due to memory-dependent heat transfer,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2019,journal,Acta Mechanica,Acta Mechanica,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2019,year,2019,2019,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2019,volume,230,230,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2019,number,5,5,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2019,pages,1607-1624,1607-1624,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2019,doi,10.1007/s00707-018-2357-2,10.1007/s00707-018-2357-2,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Wang2021,author,"Wang, Jin-Liang and Li, Hui-Feng",Jin-Liang Wang; Hui-Feng Li,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Wang2021,title,Memory-dependent derivative versus fractional derivative (I): Difference in temporal modeling,Memory-dependent derivative versus fractional derivative (I): Difference in temporal modeling,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Wang2021,journal,Journal of Computational and Applied Mathematics,Journal of Computational and Applied Mathematics,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Wang2021,year,2021,2021,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Wang2021,volume,384,384,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Wang2021,pages,112923,112923,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Wang2021,doi,10.1016/j.cam.2020.112923,10.1016/j.cam.2020.112923,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2025,author,"Sur, Abhik and Das, Soumik and Gupta, Vipin and Craciun, Eduard-Marius",Abhik Sur; Soumik Das; Vipin Gupta; Eduard-Marius Craciun,yes,Crossref API (api.crossref.org),R2,catalogue diacritics transliterated (Craciun); same four authors. DOI in the bib resolved to this record.
+Sur2025,title,Coupled thermo-mechanical dynamics of rotating nano-beams with spatiotemporal nonlocality and higher-order memory-driven heat transfer,Coupled thermo-mechanical dynamics of rotating nano-beams with spatiotemporal nonlocality and higher-order memory-driven heat transfer,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2025,journal,International Journal of Numerical Methods for Heat \& Fluid Flow,International Journal of Numerical Methods for Heat & Fluid Flow,yes,Crossref API (api.crossref.org),R2,LaTeX-escaped ampersand in the bib rendered as &. DOI in the bib resolved to this record.
+Sur2025,year,2025,2025,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2025,volume,35,35,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2025,number,12,12,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2025,pages,4464-4491,4464-4491,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Sur2025,doi,10.1108/HFF-06-2025-0411,10.1108/hff-06-2025-0411,yes,Crossref API (api.crossref.org),R2,DOI case only; DOIs are case-insensitive. DOI in the bib resolved to this record.
+Bachher2019,author,"Bachher, Mitali and Sarkar, Nantu",Mitali Bachher; Nantu Sarkar,yes,Crossref API (api.crossref.org),R2,"separator style only. Crossref issued date is 2018-04-02 in volume 29, issue 4; the bib year 2018 matches the record even though the citekey reads 2019."
+Bachher2019,title,Nonlocal theory of thermoelastic materials with voids and fractional derivative heat transfer,Nonlocal theory of thermoelastic materials with voids and fractional derivative heat transfer,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2018-04-02 in volume 29, issue 4; the bib year 2018 matches the record even though the citekey reads 2019."
+Bachher2019,journal,Waves in Random and Complex Media,Waves in Random and Complex Media,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2018-04-02 in volume 29, issue 4; the bib year 2018 matches the record even though the citekey reads 2019."
+Bachher2019,year,2018,2018,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2018-04-02 in volume 29, issue 4; the bib year 2018 matches the record even though the citekey reads 2019."
+Bachher2019,volume,29,29,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2018-04-02 in volume 29, issue 4; the bib year 2018 matches the record even though the citekey reads 2019."
+Bachher2019,number,4,4,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2018-04-02 in volume 29, issue 4; the bib year 2018 matches the record even though the citekey reads 2019."
+Bachher2019,pages,595-613,595-613,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2018-04-02 in volume 29, issue 4; the bib year 2018 matches the record even though the citekey reads 2019."
+Bachher2019,doi,10.1080/17455030.2018.1457230,10.1080/17455030.2018.1457230,yes,Crossref API (api.crossref.org),R2,"Crossref issued date is 2018-04-02 in volume 29, issue 4; the bib year 2018 matches the record even though the citekey reads 2019."
+Tiwari2021,author,"Tiwari, Rakhi and Kumar, Ravi",Rakhi Tiwari; Ravi Kumar,yes,Crossref API (api.crossref.org),R2,separator style only. DOI in the bib resolved to this record.
+Tiwari2021,title,Analysis of plane wave propagation under the purview of three phase lag theory of thermoelasticity with non-local effect,Analysis of plane wave propagation under the purview of three phase lag theory of thermoelasticity with non-local effect,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Tiwari2021,journal,European Journal of Mechanics - A/Solids,European Journal of Mechanics - A/Solids,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Tiwari2021,year,2021,2021,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Tiwari2021,volume,88,88,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Tiwari2021,pages,104235,104235,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
+Tiwari2021,doi,10.1016/j.euromechsol.2021.104235,10.1016/j.euromechsol.2021.104235,yes,Crossref API (api.crossref.org),R2,DOI in the bib resolved to this record.
