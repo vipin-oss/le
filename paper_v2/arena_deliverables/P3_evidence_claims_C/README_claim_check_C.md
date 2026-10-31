@@ -212,3 +212,54 @@ Rules applied in this batch, unchanged from batches 001-004:
 
 Locator rule relaxed for this batch: the checker now accepts `p. v` style roman numerals as well as
 arabic page numbers, because a book preface is genuinely paginated but is not arabic-numbered.
+
+## Batch 006 - the load-bearing DPL attribution
+
+1 row, CR003 (CC-0031): Quintanilla (2003), J. Thermal Stresses 26:713-721, **SUPPORTED at R3**.
+This is the attribution the register itself flagged as the single most load-bearing one in the
+section ("This is the single most load-bearing attribution in the section and remains unverified"),
+and the file was in the folder all along under the name `quintanilla2003.pdf`.
+
+What the pages say:
+
+* p. 713, abstract: "We prove that when ty > tq/2 the solutions decay exponentially and when
+  ty < tq/2 there exist unstable solutions ... we must assume that the inequality ty > tq/2 holds."
+* p. 713, same page, the truncation: "... retaining terms up to the second order in tq but only to
+  the first order in ty. One obtains Eq. (3) (with b = 0)." - exactly variant (ii) of the
+  manuscript's sentence.
+* p. 714, Eq. (4): the operators are f + ty f_dot and f + tq f_dot + (tq^2/2) f_ddot; p. 715,
+  Eq. (11): the condition ty > tq/2, used in Section 3 to prove exponential stability.
+* the Taylor & Francis cover page prints the citation line "Journal of Thermal Stresses, 26:7,
+  713-721, DOI: 10.1080/713855996", which matches the register DOI. A second, differently typeset
+  DOI is printed in the article footer; only the cover DOI is used, because it is the one the
+  bibliography carries.
+
+So the manuscript sentence is correct on all three counts - the derivation, the branch (second order
+in the flux lag, first order in the gradient lag), and the fact that this is the condition usually
+quoted for DPL.
+
+## Step-2 coverage statement
+
+Step 2 asked for every blocked claim whose source has since become available. The sweep was run in
+two passes over the 143 `SOURCE NOT AVAILABLE` rows of `claim_register.csv`:
+
+1. **DOI pass** - every register row carrying a DOI was compared, case-insensitively, with the
+   `first_page_doi` of all 117 inventory rows. This yielded exactly one hit that had not already been
+   checked: CR003 / `quintanilla2003.pdf`. All the other DOI-bearing blockers have no file in the
+   folder.
+2. **Title pass** - the 34 rows whose first page carries no DOI (33 classics plus the two oversized
+   books) were compared with the register's cited sources on title words. Every overlap that
+   survived was a generic-word coincidence (e.g. "heat", "international", "stresses"); in each case
+   the file's own title page names a different work (Dafermos 1968, Majumdar 1993, Mindlin 1965 and
+   1968, Crump 1976, Weideman 2007, Povstenko 2015, Eringen 1972 polar continua, Sinha 1996/1997,
+   Puri 1972, Nayfeh 1971, Deresiewicz 1957, Chen's note on non-simple heat conduction, Gurtin's
+   non-simple elastic materials, Quintanilla's stability in type III, etc.).
+
+Result: 17 of the 143 blocked rows now have a library source. Sixteen of them are in batch 005 and
+the seventeenth (CR003) is batch 006. The remaining 126 stay at `SOURCE NOT AVAILABLE` and are the
+ones Step 3 lists for the author.
+
+**Caveat, stated plainly:** two books in the folder cannot be read in place - `nonlocal-continuum-field-theories-2004.pdf`
+(29.7 MB) and the 30.2 MB `10.1007@978-1-4612-2210-1.pdf` - because the text extractor refuses files
+above 25 MB. If either book is the source of a blocked row, that row is still open. Both are recorded
+as `NOT READ` in `library_inventory_v3.csv` rather than assumed absent.
