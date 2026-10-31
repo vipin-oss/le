@@ -29,13 +29,14 @@ from metadata alone.
 
 ## 2. Eligibility decisions
 
-Six of the eight papers qualify and give six accepted rows. Two papers use the same source twice because
-they treat two distinct incidence configurations with two distinct result sets.
+Seven of the eight papers qualify and give seven accepted rows. Two papers use the same source twice
+because they treat two distinct incidence configurations with two distinct result sets (AboDahab2020)
+or two distinct incidence regimes (Singh2020c).
 
-Two papers do not qualify as wave problems and are recorded as rejected candidates: Zhao2018 is a static
-three-dimensional fracture study and Li2019 is a transient laser-heating study of a layered structure.
-Guo2018 and Ma2020 were examined closely against the wave criterion; the reasoning for each is recorded
-in the rejected file and in section 5.
+Three papers do not qualify as wave problems and are recorded as rejected candidates: Zhao2018 is a static
+three-dimensional fracture study, Li2019 is a transient laser-heating study of a layered structure, and
+Guo2018 is a one-dimensional transient thin-plate response whose only wave content is the position of the
+thermal and elastic wave fronts. The reasoning for each is recorded in the rejected file and in section 5.
 
 Own-group check: the printed author lists are S.M. Abo-Dahab, A.A. Kilany, Emad A.-B. Abdel-Salam,
 A. Hatem; Sudip Mondal and Mohamed I. A. Othman; Baljeet Singh and Geetika Gupta; Anand Kumar Yadav,
@@ -50,25 +51,27 @@ Rajesh Kumar; the decision was made by exact comparison of the printed names onl
 | P5-101 | AboDahab2020 | P wave incident on the free surface of a half-space, three reflected waves (T, p, SV) | reflected | 15 |
 | P5-102 | AboDahab2020 | SV wave incident on the same free surface, three reflected waves | reflected | 13 |
 | P5-103 | Singh2020c | qP wave incident on the free boundary of a flexoelectric half-space, reflected qP and qSV | reflected | 15 |
-| P5-104 | Singh2020c | qSV wave incident on the same boundary, reflections only below the 28 deg critical angle | reflected | 14 |
-| P5-105 | Yadav2022 | P wave incident on the free surface of a nonlocal hygro-thermoelastic half-space, four reflected waves (P, TD, mD, SV) | reflected | 15 |
-| P5-106 | Ma2020 | normal-mode wave field in a fiber-reinforced half-space under a moving heat source, magnetic field and gravity | bulk half-space field, not an incidence problem | 16 |
+| P5-104 | Singh2020c | qSV wave incident on the same boundary, reflections only below the 28 deg critical angle | reflected | 15 |
+| P5-105 | Yadav2022 | P wave incident on the free surface of a nonlocal hygro-thermoelastic half-space, four reflected waves (P, TD, mD, SV) | reflected | 16 |
+| P5-106 | Ma2020 | normal-mode wave field in a fiber-reinforced half-space under a moving heat source, magnetic field and gravity | bulk half-space field, not an incidence problem | 14 |
+| P5-107 | Mondal2020 | normal-mode plane wave in a piezo-thermoelastic half-space driven by a prescribed harmonic surface stress, LS/DPL/TPL with memory-dependent derivatives | bulk plane wave in a half-space, driven surface | 17 |
 
-Accepted rows per paper: AboDahab2020 2, Singh2020c 2, Yadav2022 1, Ma2020 1.
+Accepted rows per paper: AboDahab2020 2, Mondal2020 1, Singh2020c 2, Yadav2022 1, Ma2020 1.
 
-P5-106 is the weakest of the six as a wave problem and is labelled as such: the field is harmonic along
-the boundary with a wave number and decays into the half-space, but the paper defines no wave speed, no
-dispersion relation and no reflection coefficient, and its reported results are distributions of
-displacement, temperature and stress against depth. A reviewer who wants only incidence and reflection
-geometry can drop this row without affecting the other five.
+Five of the seven rows are incidence and reflection problems (P5-101 to P5-105). P5-106 and P5-107 are
+half-space wave-field problems and are labelled as such. P5-106 is the weakest of the seven as a wave
+problem: the field is harmonic along the boundary with a wave number and decays into the half-space, but
+the paper defines no wave speed, no dispersion relation and no reflection coefficient, and its reported
+results are distributions of displacement, temperature and stress against depth. A reviewer who wants
+only incidence and reflection geometry can drop P5-106 without affecting the other six.
 
 ## 4. Evidence coverage and page offsets
 
-88 evidence rows, every non-key field of every accepted row covered at least once. Printed page and PDF
+105 evidence rows, every non-key field of every accepted row covered at least once. Printed page and PDF
 page index are recorded separately:
 
 - AboDahab2020: printed page equals the PDF page index (PDF p.1 is printed p.1), 16 pages.
-- Mondal2020: PDF pp.1-2 are publisher cover and article page 1 without a printed number; printed = PDF - 1 from PDF p.3 on, 19 pages (printed 1 to 18).
+- Mondal2020: PDF p.1 is the publisher cover and PDF p.2 is article page 1 without a printed number; printed = PDF - 1 from PDF p.3 on, 19 pages (printed 1 to 18).
 - Singh2020c: PDF p.1 is the publisher cover; printed = PDF - 1 from PDF p.3 on, 24 pages (printed 1 to 23).
 - Yadav2022: PDF p.1 is the publisher cover; printed = PDF - 1 from PDF p.3 on, 15 pages (printed 1 to 14).
 - Ma2020: PDF p.1 is the publisher cover; printed = PDF - 1 from PDF p.3 on, 25 pages (printed 1 to 24).
@@ -78,10 +81,10 @@ page index are recorded separately:
 
 | candidate | reason |
 |---|---|
-| Zhao2018, hygro peizo.pdf | static three-dimensional steady-state general solution applied to a crack; the string "wave" does not occur anywhere in the extracted text |
-| Li2019, mdd + fractional.pdf | transient thermomechanical response of a two-layered structure under a non-Gaussian laser pulse, Laplace transform and numerical inversion; no wave field and no reflection or transmission analysis |
-| Guo2018, 2019Amodifiedfractional-ordergeneralizedpiezoelectric_Guohuili.pdf | one-dimensional transient thermoelectromechanical response of a thin piezoelectric plate under a thermal shock; the only wave content is the position of the thermal and elastic wave fronts (Eqs. (66)-(67)), used to bound the time window and compared with a published front position |
-| Ma2020, 10.1080@15397734.2020.1852088.pdf | kept as P5-106 with an explicit caveat rather than rejected; it is a normal-mode half-space response problem with no wave speed, dispersion or reflection result |
+| R-201 Zhao2018, hygro peizo.pdf | static three-dimensional steady-state general solution applied to a crack; the string "wave" does not occur anywhere in the extracted text |
+| R-202 Li2019, mdd + fractional.pdf | transient thermomechanical response of a two-layered structure under a non-Gaussian laser pulse, Laplace transform and numerical inversion; no wave field and no reflection or transmission analysis |
+| R-203 Guo2018, 2019Amodifiedfractional-ordergeneralizedpiezoelectric_Guohuili.pdf | one-dimensional transient thermoelectromechanical response of a thin piezoelectric plate under a thermal shock; the only wave content is the position of the thermal and elastic wave fronts (Eqs. (66)-(67)), used to bound the time window and compared with a published front position |
+| Ma2020, 10.1080@15397734.2020.1852088.pdf | not rejected: kept as P5-106 with an explicit caveat, although it reports no wave speed, dispersion or reflection result |
 
 ## 6. Field conventions used
 
@@ -89,8 +92,8 @@ page index are recorded separately:
 - `verification` records only what the source demonstrates. AboDahab2020 shows nothing beyond the
   integer-order limit; Singh2020c shows an energy-sum check and claims qualitative agreement with
   Qi (2019); Yadav2022 shows an energy-sum check; Ma2020 shows nothing.
-- No numerical prediction is described as an experimental finding. None of the six accepted problem rows
-  rests on experimental data; no paper in this batch reports an experiment.
+- No numerical prediction is described as an experimental finding. None of the seven accepted problem
+  rows rests on experimental data; no paper in this batch reports an experiment.
 - `reproducibility` records what the source supplies. Singh2020c states that a MATLAB program was used and
   Yadav2022 that Equations (51)-(52) were used in a FORTRAN program; in both cases no code is provided and
   no review-author script is claimed to exist.
@@ -116,7 +119,10 @@ page index are recorded separately:
   P5-104 follows Section 5.2(b) and the discrepancy is flagged in the evidence notes.
 - **Ma2020 does not name its material** and several constants print with ambiguous symbols; the values are
   listed in sequence without asserting which symbol each belongs to.
-- **All six accepted rows are analytical or semi-analytical with graphical results only.** No tabulated
+- **Mondal2020 never uses the word half-space.** The half-space reading of P5-107 rests on the statement
+  that the solution of the depth equation is taken bounded as z tends to infinity (Eq. (36)); the paper
+  is flagged for manual verification on that point.
+- **All seven accepted rows are analytical or semi-analytical with graphical results only.** No tabulated
   values are available in any of them, so no numeric reproduction of a figure is possible from the papers.
 
 ## 8. Integrity checks performed
@@ -134,10 +140,10 @@ page index are recorded separately:
 
 ## 9. Files created
 
-- `problem_atlas_batch_002.csv` - 6 accepted problem rows (P5-101 to P5-106)
-- `atlas_evidence_batch_002.csv` - 88 evidence rows
-- `atlas_match_verify_batch_002.csv` - 6 rows, one per accepted problem
-- `atlas_rejected_candidates_batch_002.csv` - 4 rows (R-201 to R-204)
+- `problem_atlas_batch_002.csv` - 7 accepted problem rows (P5-101 to P5-107)
+- `atlas_evidence_batch_002.csv` - 105 evidence rows
+- `atlas_match_verify_batch_002.csv` - 7 rows, one per accepted problem
+- `atlas_rejected_candidates_batch_002.csv` - 3 rows (R-201 to R-203)
 - `atlas_summary_batch_002.md` - this file
 
 ## 10. Not done
