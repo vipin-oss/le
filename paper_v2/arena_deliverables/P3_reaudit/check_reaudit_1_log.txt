@@ -1,0 +1,12 @@
+PASS header matches the declared schema
+PASS exactly the 20 flagged claims, in register order
+PASS no duplicate claim ids
+PASS every row states a main.pdf page in 1..145
+PASS every located row quotes the current page text
+PASS verdict vocabulary is fixed
+PASS earlier-quote vocabulary is fixed
+PASS every row carries a basis for its judgement
+PASS a resolved row has the earlier wording still present
+PASS no URLs, Drive links or unknown long ids
+     verdict counts: resolved=19, still partly supported=1
+PASS all checks (rows=20, resolved=19)
