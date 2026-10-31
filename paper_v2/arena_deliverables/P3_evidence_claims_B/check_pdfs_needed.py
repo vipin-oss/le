@@ -61,10 +61,16 @@ def main():
         str([r["bib_key"] for r in rows[30:]])[:200])
 
     arch = [r for r in rows if "archive bundle" in r["availability"]]
-    check("the four over-cap archive PDFs are listed", len(arch) == 4,
-          "%d archive rows" % len(arch))
+    blob = " ".join(r["availability"] for r in arch)
+    want = ["huberman2019.pdf", "jackson1970.pdf", "cahill2003.pdf", "2ndSoundSolids.pdf"]
+    missing = [w for w in want if w not in blob]
+    check("the four over-cap experimental PDFs are listed", not missing, str(missing))
+    check("no other source is lost inside an archive without being named",
+          all(re.search(r"member [\w-]+\.pdf", r["availability"]) for r in arch),
+          str([r["bib_key"] for r in arch if not re.search(r"member [\w-]+\.pdf",
+                                                          r["availability"])]))
     check("every archive row names its bundle and member",
-          all(re.search(r"LE_PAPERS_P\d+__was_R\d+\.zip", r["availability"])
+          all(re.search(r"LE_PAPERS_P\d+\S*\.zip", r["availability"])
               and re.search(r"member [\w-]+\.pdf", r["availability"]) for r in arch))
 
     doiok = re.compile(r"^10\.\d{4,9}/\S+$")

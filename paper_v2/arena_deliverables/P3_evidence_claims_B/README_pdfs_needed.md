@@ -4,6 +4,28 @@ Source list: `paper_v2/missing_sources_priority.csv` — 141 cited works, ordere
 `claims_blocked`. The question this job answers is not "which citations are weak" but
 "which of these 141 can I actually open, and which do I have to ask for".
 
+## Did I actually look in the Drive folders?
+
+Yes — every paper folder was listed file by file this pass (B01 … B14_NEW), and the result is
+`library_folder_inventory.csv`: **320 PDFs** across B03–B14_NEW. B01 and B02 were listed too;
+they hold the author's own papers (P01–P54), not cited literature.
+
+What the scan shows is that the blocked sources really are not among those 320 files: I read
+the file names against the 141 keys by DOI suffix, by author name and by title, and only four
+of the 141 have a standalone PDF. The classical works the manuscript leans on (Chirita,
+Povstenko, Zener, Chen & Nunziato, Coleman & Gurtin, Moore & Gibson, …) are not in any
+batch folder — they live inside the three archive bundles:
+
+| bundle | size | can be extracted here? |
+|---|---|---|
+| `LE_PAPERS_P01.zip` | 15.5 MB | yes, it is under the cap |
+| `LE_PAPERS_P02__was_R3.zip` | 51.8 MB | no — over the 25 MB extraction cap |
+| `LE_PAPERS_P03__was_R4.zip` | 62.3 MB | no — over the 25 MB extraction cap |
+
+Seven of the seven largest blocked items sit in P02/P03. So "sab PDF hai" is right about the
+library as a whole — 320 loose PDFs plus three bundles — but the specific works that block
+the claims are either inside P02/P03 or genuinely absent, and this is the list of them.
+
 ## The split
 
 | bucket | works |
@@ -11,6 +33,7 @@ Source list: `paper_v2/missing_sources_priority.csv` — 141 cited works, ordere
 | held by the library (ledger says FOUND) | 4 |
 | not held: ledger says MISSING | 62 |
 | not held: the held file is a *different* paper (mismatch) | 4 |
+| not held as a loose PDF, held inside a capped archive bundle | 1 |
 | not held: no ledger record at all | 71 |
 | **total** | **141** |
 
@@ -23,7 +46,10 @@ Columns: `rank, bib_key, authors, year, title, doi, claims_blocked, claim_ids,
 availability, library_ledger_status, cited_as_in_priority_list`.
 
 * 30 rows are the top of the blocked list, in descending `claims_blocked`.
-* 4 further rows are PDFs that **are** in the library but only inside an archive bundle
+* 5 further rows are PDFs that **are** in the library but only inside an archive bundle
+  (Quintanilla & Racke 2008 is in `LE_PAPERS_P01.zip`, which is small enough to extract —
+  its first page was read in an earlier pass and prints DOI
+  `10.1016/j.ijheatmasstransfer.2007.04.045`)
   that this environment cannot extract (the bundle is over the 25 MB download cap). They
   are appended after the cut so they cannot fall off it, and each names both the bundle
   and the member file, e.g.

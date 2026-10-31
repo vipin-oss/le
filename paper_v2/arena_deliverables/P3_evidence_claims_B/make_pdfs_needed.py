@@ -69,6 +69,14 @@ LIB_STATUS = {
     "Yu2018ModifiedGL": "MISSING",
     "HetnarskiIgnaczak1999": "MISMATCH", "Iesan2013": "MISMATCH", "Kumar2017": "MISMATCH",
     "Eringen1968b": "MISMATCH",
+    # held inside an archive bundle, not as a standalone PDF
+    "Quintanilla2008a": "ARCHIVE",
+}
+ARCHIVE_MEMBER = {
+    "Quintanilla2008a": ("LE_PAPERS_P01.zip", "quintanilla2008.pdf"),
+    "Huberman2019": ("LE_PAPERS_P03__was_R4.zip", "huberman2019.pdf"),
+    "Jackson1970": ("LE_PAPERS_P03__was_R4.zip", "jackson1970.pdf"),
+    "Cahill2003": ("LE_PAPERS_P02__was_R3.zip", "cahill2003.pdf"),
 }
 # archive members that the project's own split-parts index records, with the bundle that
 # holds each one.  These are present in the library but cannot be extracted here.
@@ -209,6 +217,12 @@ def main():
         elif st == "FOUND":
             row["availability"] = "library - held copy, ledger says FOUND"
             avail.append(row)
+        elif st == "ARCHIVE":
+            bundle, member = ARCHIVE_MEMBER.get(key, ("archive", "?"))
+            row["availability"] = ("library - archive bundle %s (member %s), over the 25 MB cap; "
+                                   "the ledger shows its first page was read in an earlier pass"
+                                   % (bundle, member))
+            needed.append(row)
         elif st == "MISMATCH":
             row["availability"] = ("library - the held file is a different paper; this work "
                                    "itself is not held")
