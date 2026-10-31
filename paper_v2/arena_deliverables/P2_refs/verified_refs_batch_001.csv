@@ -1,0 +1,194 @@
+key,field_checked,bib_value,source_value,match,source_site,verification_level,notes
+Biot1956,author,"Biot, M. A.","Biot, M. A.",yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; title case differs only.
+Biot1956,title,Thermoelasticity and irreversible thermodynamics,Thermoelasticity and Irreversible Thermodynamics,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; title case differs only.
+Biot1956,journal,Journal of Applied Physics,Journal of Applied Physics,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; title case differs only.
+Biot1956,year,1956,1956,yes,Crossref API (api.crossref.org),R2,Crossref published-print 1956-03-01.
+Biot1956,volume,27,27,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; title case differs only.
+Biot1956,number,3,3,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; title case differs only.
+Biot1956,pages,240--253,240-253,yes,Crossref API (api.crossref.org),R2,dash style only.
+Biot1956,doi,10.1063/1.1722351,10.1063/1.1722351,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; title case differs only.
+Chester1963,author,"Chester, Marvin","Chester, Marvin",yes,Crossref API (api.crossref.org),R1,"No DOI in the bib entry; entry found through a Crossref bibliographic query and matched on title, author, journal, volume and pages."
+Chester1963,title,Second Sound in Solids,Second Sound in Solids,yes,Crossref API (api.crossref.org),R1,"No DOI in the bib entry; entry found through a Crossref bibliographic query and matched on title, author, journal, volume and pages."
+Chester1963,journal,Physical Review,Physical Review,yes,Crossref API (api.crossref.org),R1,"No DOI in the bib entry; entry found through a Crossref bibliographic query and matched on title, author, journal, volume and pages."
+Chester1963,year,1963,1963,yes,Crossref API (api.crossref.org),R1,Crossref published-print 1963-09-01.
+Chester1963,volume,131,131,yes,Crossref API (api.crossref.org),R1,"No DOI in the bib entry; entry found through a Crossref bibliographic query and matched on title, author, journal, volume and pages."
+Chester1963,number,(absent),5,partial,Crossref API (api.crossref.org),R1,bib omits the issue; the catalogue supplies issue 5.
+Chester1963,pages,2013--2015,2013-2015,yes,Crossref API (api.crossref.org),R1,dash style only.
+Chester1963,doi,(absent),10.1103/physrev.131.2013,partial,Crossref API (api.crossref.org),R1,bib entry carries no DOI; the catalogue record supplies one. Not added to the bib here.
+Lord1967,author,"Lord, H.W. and Shulman, Y.","Lord, H.W.; Shulman, Y.",partial,Crossref API (api.crossref.org),R2,separator style only.
+Lord1967,title,A generalized dynamical theory of thermoelasticity,A generalized dynamical theory of thermoelasticity,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Lord1967,journal,Journal of the Mechanics and Physics of Solids,Journal of the Mechanics and Physics of Solids,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Lord1967,year,1967,1967,yes,Crossref API (api.crossref.org),R2,Crossref issued 1967-09.
+Lord1967,volume,15,15,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Lord1967,number,5,5,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Lord1967,pages,299-309,299-309,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Lord1967,doi,10.1016/0022-5096(67)90024-5,10.1016/0022-5096(67)90024-5,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1972,author,"Green, A. E. and Lindsay, K. A.","Green, A. E.; Lindsay, K. A.",partial,Crossref API (api.crossref.org),R2,separator style only.
+Green1972,title,Thermoelasticity,Thermoelasticity,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1972,journal,Journal of Elasticity,Journal of Elasticity,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1972,year,1972,1972,yes,Crossref API (api.crossref.org),R2,Crossref issued 1972-03.
+Green1972,volume,2,2,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1972,number,1,1,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1972,pages,1--7,1-7,yes,Crossref API (api.crossref.org),R2,dash style only.
+Green1972,doi,10.1007/BF00045689,10.1007/bf00045689,yes,Crossref API (api.crossref.org),R2,DOI case only; DOIs are case-insensitive.
+Green1991,author,"Green, A. E. and Naghdi, P. M.","Green, Albert Edward; Naghdi, P. M.",partial,Crossref API (api.crossref.org),R2,catalogue gives the full forenames; same two authors.
+Green1991,title,A re-examination of the basic postulates of thermomechanics,A re-examination of the basic postulates of thermomechanics,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1991,journal,Proceedings of the Royal Society of London. Series A: Mathematical and Physical Sciences,Proceedings of the Royal Society of London. Series A: Mathematical and Physical Sciences,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1991,year,1991,1991,yes,Crossref API (api.crossref.org),R2,Crossref issued 1991-02-08.
+Green1991,volume,432,432,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1991,number,1885,1885,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1991,pages,171--194,171-194,yes,Crossref API (api.crossref.org),R2,dash style only.
+Green1991,doi,10.1098/rspa.1991.0012,10.1098/rspa.1991.0012,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1993,author,"Green, A. E. and Naghdi, P. M.","Green, A. E.; Naghdi, P. M.",partial,Crossref API (api.crossref.org),R2,separator style only.
+Green1993,title,Thermoelasticity without energy dissipation,Thermoelasticity without energy dissipation,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1993,journal,Journal of Elasticity,Journal of Elasticity,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1993,year,1993,1993,yes,Crossref API (api.crossref.org),R2,Crossref issued 1993-06.
+Green1993,volume,31,31,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1993,number,3,3,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Green1993,pages,189--208,189-208,yes,Crossref API (api.crossref.org),R2,dash style only.
+Green1993,doi,10.1007/BF00044969,10.1007/bf00044969,yes,Crossref API (api.crossref.org),R2,DOI case only.
+GreenGN1992,author,"Green, A. E. and Naghdi, P. M.","Green, A. E.; Naghdi, P. M.",partial,Crossref API (api.crossref.org),R2,separator style only.
+GreenGN1992,title,On undamped heat waves in an elastic solid,ON UNDAMPED HEAT WAVES IN AN ELASTIC SOLID,yes,Crossref API (api.crossref.org),R2,catalogue stores the title in capitals; wording identical.
+GreenGN1992,journal,Journal of Thermal Stresses,Journal of Thermal Stresses,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; the bib entry omits the issue number.
+GreenGN1992,year,1992,1992,yes,Crossref API (api.crossref.org),R2,Crossref issued 1992-04.
+GreenGN1992,volume,15,15,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; the bib entry omits the issue number.
+GreenGN1992,number,(absent),2,partial,Crossref API (api.crossref.org),R2,bib omits the issue; the catalogue supplies issue 2.
+GreenGN1992,pages,253--264,253-264,yes,Crossref API (api.crossref.org),R2,dash style only.
+GreenGN1992,doi,10.1080/01495739208946136,10.1080/01495739208946136,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; the bib entry omits the issue number.
+Dhaliwal1980,author,"Dhaliwal, R. S. and Sherief, H. H.","Dhaliwal, Ranjit S.; Sherief, Hani H.",partial,Crossref API (api.crossref.org),R2,catalogue gives forenames; same two authors.
+Dhaliwal1980,title,Generalized thermoelasticity for anisotropic media,Generalized thermoelasticity for anisotropic media,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Dhaliwal1980,journal,Quarterly of Applied Mathematics,Quarterly of Applied Mathematics,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Dhaliwal1980,year,1980,1980,yes,Crossref API (api.crossref.org),R2,Crossref issued 1980-04.
+Dhaliwal1980,volume,38,38,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Dhaliwal1980,number,1,1,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Dhaliwal1980,pages,1--8,1-8,yes,Crossref API (api.crossref.org),R2,dash style only.
+Dhaliwal1980,doi,10.1090/qam/575828,10.1090/qam/575828,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Tzou1995,author,"Tzou, D. Y.","Tzou, D. Y.",yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Tzou1995,title,A unified field approach for heat conduction from macro- to micro-scales,A Unified Field Approach for Heat Conduction From Macro- to Micro-Scales,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Tzou1995,journal,Journal of Heat Transfer,Journal of Heat Transfer,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Tzou1995,year,1995,1995,yes,Crossref API (api.crossref.org),R2,Crossref published-print 1995-02-01.
+Tzou1995,volume,117,117,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Tzou1995,number,1,1,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Tzou1995,pages,8--16,8-16,yes,Crossref API (api.crossref.org),R2,dash style only.
+Tzou1995,doi,10.1115/1.2822329,10.1115/1.2822329,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Tzou1997,author,"Tzou, D. Y.",(no record for the 1997 edition),no,Crossref API (api.crossref.org),R0,the 2014 Wiley edition is by the same author but is a different edition.
+Tzou1997,title,Macro-to-microscale heat transfer: the lagging behavior,Macro- to Microscale Heat Transfer (2014 Wiley edition),partial,Crossref API (api.crossref.org),R0,"same subject and author; edition and publisher differ, so this does not verify the 1997 record."
+Tzou1997,publisher,CRC Press,Wiley (2014 edition),no,Crossref API (api.crossref.org),R0,publisher of the 1997 edition not confirmed.
+Tzou1997,year,1997,2014,no,Crossref API (api.crossref.org),R0,1997 not confirmed by any catalogue record reached.
+Tzou1997,doi,(absent),(none for the 1997 edition),no,Crossref API (api.crossref.org),R0,"No catalogue record found for this book as cited. The only Crossref hit for the title is the 2014 Wiley monograph, a later edition with a different publisher, so it cannot confirm the 1997 CRC Press citation. Not guessed."
+Cattaneo1948,author,"Cattaneo, C.",(no 1948 record),no,Crossref API (api.crossref.org),R0,"Not found in Crossref. A bibliographic query returns only a 2011 reprint page inside an edited volume, not the 1948 Atti record, so the citation cannot be verified from this catalogue."
+Cattaneo1948,title,Sulla conduzione del calore,Sulla Conduzione Del Calore (2011 reprint page only),partial,Crossref API (api.crossref.org),R0,"the 2011 hit is a republication page, not the original article."
+Cattaneo1948,journal,Atti Sem. Mat. Fis. Univ. Modena,(no 1948 record),no,Crossref API (api.crossref.org),R0,"Not found in Crossref. A bibliographic query returns only a 2011 reprint page inside an edited volume, not the 1948 Atti record, so the citation cannot be verified from this catalogue."
+Cattaneo1948,year,1948,(no 1948 record),no,Crossref API (api.crossref.org),R0,"Not found in Crossref. A bibliographic query returns only a 2011 reprint page inside an edited volume, not the 1948 Atti record, so the citation cannot be verified from this catalogue."
+Cattaneo1948,volume,3,(no 1948 record),no,Crossref API (api.crossref.org),R0,"Not found in Crossref. A bibliographic query returns only a 2011 reprint page inside an edited volume, not the 1948 Atti record, so the citation cannot be verified from this catalogue."
+Cattaneo1948,pages,83--101,(no 1948 record),no,Crossref API (api.crossref.org),R0,"Not found in Crossref. A bibliographic query returns only a 2011 reprint page inside an edited volume, not the 1948 Atti record, so the citation cannot be verified from this catalogue."
+Cattaneo1948,doi,(absent),(none),no,Crossref API (api.crossref.org),R0,"Not found in Crossref. A bibliographic query returns only a 2011 reprint page inside an edited volume, not the 1948 Atti record, so the citation cannot be verified from this catalogue."
+Vernotte1958,author,"Vernotte, P.",(no matching record),no,Crossref API (api.crossref.org),R0,Not found in Crossref; the bibliographic query returned unrelated records only. The Comptes Rendus volume 246 citation could not be verified from this catalogue.
+Vernotte1958,title,Les paradoxes de la theorie continue de l equation de la chaleur,(no matching record),no,Crossref API (api.crossref.org),R0,title transliterated from the LaTeX-escaped bib value.
+Vernotte1958,journal,Comptes Rendus de l Academie des Sciences,(no matching record),no,Crossref API (api.crossref.org),R0,Not found in Crossref; the bibliographic query returned unrelated records only. The Comptes Rendus volume 246 citation could not be verified from this catalogue.
+Vernotte1958,year,1958,(no matching record),no,Crossref API (api.crossref.org),R0,Not found in Crossref; the bibliographic query returned unrelated records only. The Comptes Rendus volume 246 citation could not be verified from this catalogue.
+Vernotte1958,volume,246,(no matching record),no,Crossref API (api.crossref.org),R0,Not found in Crossref; the bibliographic query returned unrelated records only. The Comptes Rendus volume 246 citation could not be verified from this catalogue.
+Vernotte1958,pages,3154--3155,(no matching record),no,Crossref API (api.crossref.org),R0,Not found in Crossref; the bibliographic query returned unrelated records only. The Comptes Rendus volume 246 citation could not be verified from this catalogue.
+Vernotte1958,doi,(absent),(none),no,Crossref API (api.crossref.org),R0,Not found in Crossref; the bibliographic query returned unrelated records only. The Comptes Rendus volume 246 citation could not be verified from this catalogue.
+GuyerKrumhansl1966,author,"Guyer, R. A. and Krumhansl, J. A.","Guyer, R. A.; Krumhansl, J. A.",partial,Crossref API (api.crossref.org),R2,separator style only.
+GuyerKrumhansl1966,title,Solution of the linearized phonon Boltzmann equation,Solution of the Linearized Phonon Boltzmann Equation,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+GuyerKrumhansl1966,journal,Physical Review,Physical Review,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+GuyerKrumhansl1966,year,1966,1966,yes,Crossref API (api.crossref.org),R2,Crossref issued 1966-08-12.
+GuyerKrumhansl1966,volume,148,148,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+GuyerKrumhansl1966,number,2,2,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+GuyerKrumhansl1966,pages,766--778,766-778,yes,Crossref API (api.crossref.org),R2,dash style only.
+GuyerKrumhansl1966,doi,10.1103/PhysRev.148.766,10.1103/physrev.148.766,yes,Crossref API (api.crossref.org),R2,DOI case only.
+GuyerKrumhansl1966II,author,"Guyer, R. A. and Krumhansl, J. A.","Guyer, R. A.; Krumhansl, J. A.",partial,Crossref API (api.crossref.org),R2,separator style only.
+GuyerKrumhansl1966II,title,"Thermal Conductivity, Second Sound, and Phonon Hydrodynamic Phenomena in Nonmetallic Crystals","Thermal Conductivity, Second Sound, and Phonon Hydrodynamic Phenomena in Nonmetallic Crystals",yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+GuyerKrumhansl1966II,journal,Physical Review,Physical Review,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+GuyerKrumhansl1966II,year,1966,1966,yes,Crossref API (api.crossref.org),R2,Crossref issued 1966-08-12.
+GuyerKrumhansl1966II,volume,148,148,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+GuyerKrumhansl1966II,number,2,2,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+GuyerKrumhansl1966II,pages,778--788,778-788,yes,Crossref API (api.crossref.org),R2,dash style only.
+GuyerKrumhansl1966II,doi,10.1103/PhysRev.148.778,10.1103/physrev.148.778,yes,Crossref API (api.crossref.org),R2,DOI case only.
+Joseph1989,author,"Joseph, D. D. and Preziosi, L.","Joseph, D. D.; Preziosi, Luigi",partial,Crossref API (api.crossref.org),R2,catalogue gives the forename; same two authors.
+Joseph1989,title,Heat waves,Heat waves,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Joseph1989,journal,Reviews of Modern Physics,Reviews of Modern Physics,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Joseph1989,year,1989,1989,yes,Crossref API (api.crossref.org),R2,Crossref issued 1989-01-01.
+Joseph1989,volume,61,61,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Joseph1989,number,1,1,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Joseph1989,pages,41--73,41-73,yes,Crossref API (api.crossref.org),R2,dash style only.
+Joseph1989,doi,10.1103/revmodphys.61.41,10.1103/revmodphys.61.41,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Joseph1990,author,"Joseph, D. D. and Preziosi, L.","Joseph, D. D.; Preziosi, Luigi",partial,Crossref API (api.crossref.org),R2,catalogue gives the forename; same two authors.
+Joseph1990,title,Addendum to the paper ``Heat waves'',"Addendum to the paper Heat waves [Rev. Mod. Phys. 61, 41 (1989)]",partial,Crossref API (api.crossref.org),R2,core title identical; the bib omits the bracketed source citation.
+Joseph1990,journal,Reviews of Modern Physics,Reviews of Modern Physics,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; the publisher title carries a bracketed cross-reference that the bib shortens away.
+Joseph1990,year,1990,1990,yes,Crossref API (api.crossref.org),R2,Crossref issued 1990-04-01.
+Joseph1990,volume,62,62,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; the publisher title carries a bracketed cross-reference that the bib shortens away.
+Joseph1990,number,2,2,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; the publisher title carries a bracketed cross-reference that the bib shortens away.
+Joseph1990,pages,375--391,375-391,yes,Crossref API (api.crossref.org),R2,dash style only.
+Joseph1990,doi,10.1103/revmodphys.62.375,10.1103/revmodphys.62.375,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record; the publisher title carries a bracketed cross-reference that the bib shortens away.
+Eringen1966a,author,"Eringen, A. C.","Eringen, A.",partial,Crossref API (api.crossref.org),R2,registry record gives only the initial A. and no middle initial.
+Eringen1966a,title,Linear theory of micropolar elasticity,(empty in Crossref record),partial,Crossref API (api.crossref.org),R2,"the registry record has no title field, so the title cannot be confirmed from it."
+Eringen1966a,journal,Indiana University Mathematics Journal,Indiana University Mathematics Journal,yes,Crossref API (api.crossref.org),R2,"The DOI resolves to a thin registry record: no title, first page only, and a single author initial. Identification rests on journal, volume, issue and first page."
+Eringen1966a,year,1966,1966,yes,Crossref API (api.crossref.org),R2,"The DOI resolves to a thin registry record: no title, first page only, and a single author initial. Identification rests on journal, volume, issue and first page."
+Eringen1966a,volume,15,15,yes,Crossref API (api.crossref.org),R2,"The DOI resolves to a thin registry record: no title, first page only, and a single author initial. Identification rests on journal, volume, issue and first page."
+Eringen1966a,number,6,6,yes,Crossref API (api.crossref.org),R2,"The DOI resolves to a thin registry record: no title, first page only, and a single author initial. Identification rests on journal, volume, issue and first page."
+Eringen1966a,pages,909--923,909,partial,Crossref API (api.crossref.org),R2,the registry record carries the first page only.
+Eringen1966a,doi,10.1512/iumj.1966.15.15060,10.1512/iumj.1966.15.15060,yes,Crossref API (api.crossref.org),R2,"The DOI resolves to a thin registry record: no title, first page only, and a single author initial. Identification rests on journal, volume, issue and first page."
+TauchertClausAriman1968,author,"Tauchert, T. R. and Claus, W. D. Jr. and Ariman, T.","Tauchert, T.R.; Claus, W.D. Jr.; Ariman, T.",partial,Crossref API (api.crossref.org),R2,separator style only.
+TauchertClausAriman1968,title,The linear theory of micropolar thermoelasticity,The linear theory of micropolar thermoelasticity,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+TauchertClausAriman1968,journal,International Journal of Engineering Science,International Journal of Engineering Science,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+TauchertClausAriman1968,year,1968,1968,yes,Crossref API (api.crossref.org),R2,Crossref issued 1968-01.
+TauchertClausAriman1968,volume,6,6,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+TauchertClausAriman1968,number,1,1,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+TauchertClausAriman1968,pages,37--47,37-47,yes,Crossref API (api.crossref.org),R2,dash style only.
+TauchertClausAriman1968,doi,10.1016/0020-7225(68)90037-2,10.1016/0020-7225(68)90037-2,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1972,author,"Eringen, A. C.","Eringen, A.Cemal",partial,Crossref API (api.crossref.org),R2,catalogue spells out the middle name; same author.
+Eringen1972,title,Linear theory of nonlocal elasticity and dispersion of plane waves,Linear theory of nonlocal elasticity and dispersion of plane waves,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1972,journal,International Journal of Engineering Science,International Journal of Engineering Science,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1972,year,1972,1972,yes,Crossref API (api.crossref.org),R2,Crossref issued 1972-05.
+Eringen1972,volume,10,10,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1972,number,5,5,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1972,pages,425--435,425-435,yes,Crossref API (api.crossref.org),R2,dash style only.
+Eringen1972,doi,10.1016/0020-7225(72)90050-x,10.1016/0020-7225(72)90050-x,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1974,author,"Eringen, A. C.","Eringen, A.Cemal",partial,Crossref API (api.crossref.org),R2,catalogue spells out the middle name; same author.
+Eringen1974,title,Theory of nonlocal thermoelasticity,Theory of nonlocal thermoelasticity,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1974,journal,International Journal of Engineering Science,International Journal of Engineering Science,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1974,year,1974,1974,yes,Crossref API (api.crossref.org),R2,Crossref issued 1974-12.
+Eringen1974,volume,12,12,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1974,number,12,12,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1974,pages,1063--1077,1063-1077,yes,Crossref API (api.crossref.org),R2,dash style only.
+Eringen1974,doi,10.1016/0020-7225(74)90033-0,10.1016/0020-7225(74)90033-0,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1983,author,"Eringen, A. C.","Eringen, A. Cemal",partial,Crossref API (api.crossref.org),R2,catalogue spells out the middle name; same author.
+Eringen1983,title,On differential equations of nonlocal elasticity and solutions of screw dislocation and surface waves,On differential equations of nonlocal elasticity and solutions of screw dislocation and surface waves,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1983,journal,Journal of Applied Physics,Journal of Applied Physics,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1983,year,1983,1983,yes,Crossref API (api.crossref.org),R2,Crossref published-print 1983-09-01.
+Eringen1983,volume,54,54,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1983,number,9,9,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Eringen1983,pages,4703--4710,4703-4710,yes,Crossref API (api.crossref.org),R2,dash style only.
+Eringen1983,doi,10.1063/1.332803,10.1063/1.332803,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Iesan2004,author,"Iesan, D.","Iesan, D.",yes,Crossref API (api.crossref.org),R2,diacritics removed from the catalogue form of the surname.
+Iesan2004,title,Thermoelastic models of continua,Thermoelastic Models of Continua,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to a Crossref book record; the series volume number is not returned by the record.
+Iesan2004,publisher,Springer,Springer Netherlands,partial,Crossref API (api.crossref.org),R2,the bib gives the parent imprint; the record gives the Netherlands imprint.
+Iesan2004,year,2004,2004,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to a Crossref book record; the series volume number is not returned by the record.
+Iesan2004,volume,118,(not returned),partial,Crossref API (api.crossref.org),R2,the record lists the series Solid Mechanics and Its Applications but no volume number.
+Iesan2004,doi,10.1007/978-1-4020-2310-1,10.1007/978-1-4020-2310-1,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to a Crossref book record; the series volume number is not returned by the record.
+Polizzotto2001,author,"Polizzotto, C.","Polizzotto, Castrenze",partial,Crossref API (api.crossref.org),R2,catalogue gives the forename; same author.
+Polizzotto2001,title,Nonlocal elasticity and related variational principles,Nonlocal elasticity and related variational principles,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Polizzotto2001,journal,International Journal of Solids and Structures,International Journal of Solids and Structures,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Polizzotto2001,year,2001,2001,yes,Crossref API (api.crossref.org),R2,Crossref issued 2001-10.
+Polizzotto2001,volume,38,38,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Polizzotto2001,number,42--43,42-43,yes,Crossref API (api.crossref.org),R2,dash style only.
+Polizzotto2001,pages,7359--7380,7359-7380,yes,Crossref API (api.crossref.org),R2,dash style only.
+Polizzotto2001,doi,10.1016/S0020-7683(01)00039-7,10.1016/s0020-7683(01)00039-7,yes,Crossref API (api.crossref.org),R2,DOI case only.
+Askes2006,author,"Askes, H. and Aifantis, E. C.","Askes, Harm; Aifantis, Elias C.",partial,Crossref API (api.crossref.org),R2,catalogue gives the forenames; same two authors.
+Askes2006,title,Gradient elasticity theories in statics and dynamics --- a unification of approaches,Gradient Elasticity Theories in Statics and Dynamics - A Unification of Approaches,partial,Crossref API (api.crossref.org),R2,dash style only.
+Askes2006,journal,International Journal of Fracture,International Journal of Fracture,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Askes2006,year,2006,2006,yes,Crossref API (api.crossref.org),R2,Crossref issued 2006-05.
+Askes2006,volume,139,139,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Askes2006,number,2,2,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Askes2006,pages,297--304,297-304,yes,Crossref API (api.crossref.org),R2,dash style only.
+Askes2006,doi,10.1007/s10704-006-8375-4,10.1007/s10704-006-8375-4,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Askes2011,author,"Askes, H. and Aifantis, E. C.","Askes, Harm; Aifantis, Elias C.",partial,Crossref API (api.crossref.org),R2,catalogue gives the forenames; same two authors.
+Askes2011,title,"Gradient elasticity in statics and dynamics: an overview of formulations, length scale identification procedures, finite element implementations and new results","Gradient elasticity in statics and dynamics: An overview of formulations, length scale identification procedures, finite element implementations and new results",yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Askes2011,journal,International Journal of Solids and Structures,International Journal of Solids and Structures,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Askes2011,year,2011,2011,yes,Crossref API (api.crossref.org),R2,Crossref issued 2011-06.
+Askes2011,volume,48,48,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Askes2011,number,13,13,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
+Askes2011,pages,1962--1990,1962-1990,yes,Crossref API (api.crossref.org),R2,dash style only.
+Askes2011,doi,10.1016/j.ijsolstr.2011.03.006,10.1016/j.ijsolstr.2011.03.006,yes,Crossref API (api.crossref.org),R2,DOI in bib resolved to this record.
