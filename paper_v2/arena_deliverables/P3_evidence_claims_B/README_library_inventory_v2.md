@@ -76,3 +76,54 @@ in this folder:
 No other blocked claim in `claim_register.csv` cites a paper that this folder now supplies,
 so the C batches can carry at most these rows until the P02/P03 archives are extracted
 (they are 52 MB and 62 MB, above the 25 MB per-file read limit).
+
+---
+
+# Part 2 — the second, much larger unzip (79 files read)
+
+The same folder was later filled with many more PDFs. Every file added in that wave was
+read the same way (first page only) and recorded in
+`library_inventory_v2_part2.csv` (79 rows), with `library_inventory_v2_part2_findings.csv`
+for the 26 files that match no key. The library was still growing while this pass ran —
+a ZIP (`ScienceDirect_articles_23Oct2026_17-34-39.438.zip`) also appeared and is not a
+paper, so it is not in the CSV.
+
+Result: **51 matches, 26 without a key, 2 mismatches.**
+
+## The four Task-4 papers and the landmark are now here
+
+| file | page 1 shows | key |
+|---|---|---|
+| `cahill2003.pdf` | *Nanoscale thermal transport*, Cahill et al., J. Appl. Phys. **93**, 793 (2003), DOI `10.1063/1.1524305` | `Cahill2003` |
+| `huberman2019.pdf` | *Observation of second sound in graphite at temperatures above 100 K*, Science, **first release 14 March 2019** (the page says page numbers are not final) | `Huberman2019` |
+| `jackson1970.pdf` | *Second sound in NaF*, Jackson, Walker & McNelly, PRL **25**(1), 6 July 1970 — the scan also carries the end of the previous article of that issue on the same page | `Jackson1970` |
+| `gurtin1968.pdf` | *A General Theory of Heat Conduction with Finite Wave Speeds*, Gurtin & Pipkin | `GurtinPipkin1968` |
+| `2ndSoundSolids.pdf` | **not a second-sound review at all** — page 1 is the tail of an article on anomalous surface reflection of X-rays | **MISMATCH** |
+
+## Two new traps
+
+1. **`2ndSoundSolids.pdf` is the wrong paper.** That is why this item could never be
+   identified: the file holds an X-ray surface-reflection article, so it must not be cited
+   as a review of second sound, and the intended review is still missing.
+2. **`ezzat2011.pdf` is not `Ezzat2011`.** The file is *Theory of fractional order in
+   generalized thermoelectric MHD* (Applied Mathematical Modelling), whereas the key
+   `Ezzat2011` is *Fractional order heat conduction law in magneto-thermoelasticity
+   involving two temperatures*, ZAMP **62**(5) 937-952 (`10.1007/s00033-011-0126-3`).
+   Any earlier verdict resting on "the library Ezzat 2011" should be re-checked against
+   the ZAMP paper.
+
+## Files that could not be read, and files with no key
+
+* **Not readable:** `eringen1966.pdf` (no text layer), `maxwell1867.pdf` (JSTOR cover
+  sheet only), `10.1007@978-1-4612-2210-1.pdf` (30.2 MB, over the cap),
+  `povstenko2015.pdf` (reader error on every attempt), and `chen2021.pdf` /
+  `bf01597243.pdf`, whose page 1 does not print their own title.
+* **26 papers have no bib key** (see the findings file): Chen-Gurtin-Williams, El-Karamany
+  and Ezzat 2016, Zenkour and El-Mekawy, Azhdari et al., Eringen and Edelen, Eringen 1972
+  (nonlocal polar), Mindlin 1965 and 1968, Puri 1972, Nayfeh and Nemat-Nasser 1971,
+  Deresiewicz 1957, Liu 1972, Coleman 1964, Chandrasekharaiah 1988, Achenbach 1968,
+  Crump 1976, Compte 1997, Atangana and Baleanu, Quintanilla and Racke 2003, and the five
+  unreadable/unidentified files above.
+
+Validator: `python3 check_library_inventory_v2_part2.py`
+→ `PASS all checks (rows=79, match=51, blank=26, mismatch=2, findings=26)`.
