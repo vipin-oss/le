@@ -1,0 +1,14 @@
+PASS thermal_uncoupled: 12 archived values, worst rel. diff 4.78e-04 (fig_thermal_family/Fourier @ w=1e-3, tol 2e-03)
+PASS coupled_slow: 4 archived values, worst rel. diff 6.01e-06 (check_fronts/LS slow front @ w=2e3, tol 2e-04)
+PASS coupled_fast: 4 archived values, worst rel. diff 6.69e-06 (check_fronts/LS fast front @ w=2e3, tol 2e-04)
+PASS elastic: 3 archived values, worst rel. diff 2.26e-16 (fig_dispersion/LS elastic @ w=10^1.6, tol 1e-10)
+PASS coupled_thermal: 1 archived values, worst rel. diff 2.19e-16 (fig_dispersion/LS thermal @ w=10^1.6, tol 1e-10)
+PASS bar: 18 archived values, worst rel. diff 1.39e-04 (fig_bar_modes/tau=0.00 k=3, tol 2e-04)
+PASS classical v_p(w=1e-3)=1.048809 approaches the adiabatic limit sqrt(1+eps)=1.048809
+PASS classical Q^-1 is single-peaked at w=1.44 (Q^-1=0.04797), as a Debye peak must be
+PASS table values are finite with v_p > 0 and Q^-1 >= 0 (100 rows)
+PASS Fourier branch decreases monotonically 1.04881 -> 1.00000 (adiabatic -> isothermal)
+PASS LS branch at w=1e2 reaches 1.170504, the fast root of the archived quadratic (1.170537)
+PASS 20-frequency table has 100 finite rows (5 models x 20)
+PASS 3 of 18 bar-mode entries belong to the strongly damped pair, not to the acoustic continuation (branch label, not a numerical disagreement)
+PASS all checks (archived values compared=42, table rows=100)

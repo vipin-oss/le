@@ -1,0 +1,10 @@
+PASS A1: no import/path/exec to scripts/ in the executable code; modules used: cmath, csv, math, numpy, os, sys, tempfile; bare string mentions of 'scripts/' (citations, not dependencies): 1
+PASS A2: longest common line run = 1 line(s) '"""'
+PASS A2: identical non-trivial lines = 9 of 399 / 38
+PASS A2: token Jaccard = 0.138 (59 shared tokens: (, ), *, **, +, ,, -, /, 0, 0.0, 0.5, 1, 1.0, 2, 4, :, <, =, DPL, Fourier, GN, II, III, LS, MGT, [, ], a, as, asarray, b, beta2T0, c1, complex, def, dict, dtype, g, imag, import, j, k, kk, ks, m, model, name, np, numpy, )
+PASS A3: shared by design - 6 template parameter sets (k, ks, tq, tT, tv) and the archived literals that are the comparison target
+PASS A3: all six prescribed model names present: Fourier, LS, DPL, GN-II, GN-III, MGT
+PASS A4: max relative residual of (D) at the computed roots = 8.208e-13 (GN-III, w=1000)
+PASS A5: smallest separation between the two branches = 1.561e-03 (GN-III, w=0.01); lossless pairs separated by speed: GN-II, MGT
+PASS A6: 24/24 archived literals found in numbers_log.txt at printed precision
+PASS audit complete (6 groups, 0 failures)
