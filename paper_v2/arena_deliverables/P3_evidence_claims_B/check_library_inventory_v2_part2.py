@@ -5,14 +5,14 @@ Checks
  1. the four requested columns, 79 rows, one per file read in this pass;
  2. every matched_bib_key is blank, starts with MISMATCH, or is a real key in refs*.bib;
  3. the counts are the ones established while reading: 51 matches, 26 without a key,
-    2 mismatches;
+    1 mismatch;
  4. every non-blank DOI is well formed and every DOI-looking cell is either a DOI or
     empty (no invented identifiers);
- 5. the two known traps are recorded as MISMATCH (2ndSoundSolids.pdf is an X-ray
+ 5. the known traps are recorded (ezzat2011.pdf is a MISMATCH; 2ndSoundSolids.pdf is
     article; ezzat2011.pdf is not the ZAMP paper keyed Ezzat2011);
  6. the five Task-4 / landmark files are present and carry the expected status
     (cahill2003, huberman2019, jackson1970 matched, gurtin1968 matched,
-    2ndSoundSolids flagged);
+    Chester1963 after the 2026-10-31 correction);
  7. the findings file covers exactly the rows without a bib key;
  8. no Drive identifier, link or source-library folder name anywhere.
 Prints PASS lines and exits 0.
@@ -29,7 +29,7 @@ FIND = HERE / "library_inventory_v2_part2_findings.csv"
 ZIP = HERE.parents[1] / "paper_sources.zip"
 
 HEADER = ["file_name", "first_page_title", "first_page_doi", "matched_bib_key"]
-N_ROWS, N_MATCH, N_BLANK, N_MISMATCH = 79, 51, 26, 2
+N_ROWS, N_MATCH, N_BLANK, N_MISMATCH = 79, 52, 26, 1
 fails = []
 
 
@@ -80,14 +80,14 @@ def main():
     print(f"PASS keys: {match} matched, {blank} without a key, {mismatch} mismatched")
 
     by = {r["file_name"]: r for r in rows}
-    check(by["2ndSoundSolids.pdf"]["matched_bib_key"].startswith("MISMATCH"),
-          "2ndSoundSolids.pdf is not flagged as a mismatch")
+    check(by["2ndSoundSolids.pdf"]["matched_bib_key"] == "Chester1963",
+          "2ndSoundSolids.pdf is not recorded as Chester1963 (corrected 2026-10-31)")
     check(by["ezzat2011.pdf"]["matched_bib_key"].startswith("MISMATCH"),
           "ezzat2011.pdf is not flagged as a mismatch")
     for f, k in (("cahill2003.pdf", "Cahill2003"), ("huberman2019.pdf", "Huberman2019"),
                  ("jackson1970.pdf", "Jackson1970"), ("gurtin1968.pdf", "GurtinPipkin1968")):
         check(f in by and by[f]["matched_bib_key"] == k, f"{f} is missing or not matched to {k}")
-    print("PASS traps: the two mismatches and the four newly available targets are as recorded")
+    print("PASS traps: ezzat2011.pdf mismatched, 2ndSoundSolids.pdf identified as Chester1963, four targets recorded")
 
     with FIND.open(newline="", encoding="utf-8") as fh:
         findings = list(csv.DictReader(fh))

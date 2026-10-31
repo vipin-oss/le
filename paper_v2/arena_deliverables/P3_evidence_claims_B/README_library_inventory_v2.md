@@ -98,13 +98,21 @@ Result: **51 matches, 26 without a key, 2 mismatches.**
 | `huberman2019.pdf` | *Observation of second sound in graphite at temperatures above 100 K*, Science, **first release 14 March 2019** (the page says page numbers are not final) | `Huberman2019` |
 | `jackson1970.pdf` | *Second sound in NaF*, Jackson, Walker & McNelly, PRL **25**(1), 6 July 1970 — the scan also carries the end of the previous article of that issue on the same page | `Jackson1970` |
 | `gurtin1968.pdf` | *A General Theory of Heat Conduction with Finite Wave Speeds*, Gurtin & Pipkin | `GurtinPipkin1968` |
-| `2ndSoundSolids.pdf` | **not a second-sound review at all** — page 1 is the tail of an article on anomalous surface reflection of X-rays | **MISMATCH** |
+| `2ndSoundSolids.pdf` | *Second Sound in Solids*, Marvin Chester, Phys. Rev. **131**, 2013 (1963) — the scan opens with the tail of the preceding article on anomalous surface reflection of X-rays, and Chester's paper starts further down the same page | `Chester1963` (corrected 2026-10-31) |
 
 ## Two new traps
 
-1. **`2ndSoundSolids.pdf` is the wrong paper.** That is why this item could never be
-   identified: the file holds an X-ray surface-reflection article, so it must not be cited
-   as a review of second sound, and the intended review is still missing.
+1. **`2ndSoundSolids.pdf` is the wrong *item*, but not an unreadable file.** CORRECTED
+   2026-10-31: a first-lines-only pass had stopped inside the tail of the preceding
+   article (an X-ray surface-reflection paper that ends on the same printed page), so the
+   file was recorded as that article. Reading the whole first page shows that the file's
+   own paper starts on it: **Marvin Chester, *Second Sound in Solids*, Physical Review 131,
+   2013-2015 (1963)**, with its abstract ("a critical frequency ... above which heat
+   transport proceeds by wave propagation rather than by diffusion") and, on p. 2014, the
+   modified Fourier equation with a relaxation time and the Maxwell / Cattaneo / Vernotte
+   references. So the file *is* a second-sound source and it settles CR098 — but it is a
+   theory paper, not the review of second sound that this item was filed as, and that
+   review is still missing.
 2. **`ezzat2011.pdf` is not `Ezzat2011`.** The file is *Theory of fractional order in
    generalized thermoelectric MHD* (Applied Mathematical Modelling), whereas the key
    `Ezzat2011` is *Fractional order heat conduction law in magneto-thermoelasticity

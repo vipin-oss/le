@@ -158,3 +158,13 @@ compiled numbers.
 **EX2-04**, the unidentified "second sound in solids" review, remains blocked: the file of
 that name is an X-ray surface-reflection text, a name-versus-content mismatch. It is not
 cited by any claim in the register and must stay uncited.
+
+## EX2-04, resolved as far as it can go
+
+The file `2ndSoundSolids` is not an X-ray paper after all: reading its whole first page
+shows Chester (1963), *Second Sound in Solids*, Phys. Rev. 131, 2013–2015, whose abstract
+predicts heat transport "by wave propagation rather than by diffusion" above a critical
+frequency, and whose p. 2014 carries the modified Fourier equation with a relaxation time.
+That settles register claim CR098 (`P3_evidence_claims_C`, CC-0014) — but it is a theory
+paper, so **EX2-04 stays `SOURCE NOT AVAILABLE`**: there is still no review, and there are
+still no measurements in the file.

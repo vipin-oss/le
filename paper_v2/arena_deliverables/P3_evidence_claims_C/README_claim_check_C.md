@@ -136,3 +136,37 @@ the Chirita (2016) half is still unreadable, so the sentence is not thereby save
 Chen & Gurtin (CR033) is the cleanest gain: **Eq. (1.4) on p. 615 reads exactly
 θ = φ − a Δφ**, with "if k is positive, the second law tells us that a ≥ 0" in the line
 below it. That is the relation and the sign, both on one page.
+
+## Batch 004 — the "second-sound review" turns out to be Chester (1963)
+
+`2ndSoundSolids.pdf` had been recorded as an X-ray surface-reflection article, on the
+strength of a first-lines-only pass. Reading the **whole** first page changes that: the
+scan opens with the tail of that article (it ends on printed p. 2013) and then carries
+**Marvin Chester, *Second Sound in Solids*, Physical Review 131, 2013–2015 (1963)** —
+abstract, Section 1, and on p. 2014 the modified Fourier equation (5) with a relaxation
+time and the Maxwell / Cattaneo / Vernotte credits.
+
+So the file is a second-sound source after all, and the last blocked claim in the priority
+list whose source the library holds is settled:
+
+| rank | key | claim | verdict | page |
+|---|---|---|---|---|
+| 61 | `Chester1963` | CR098 | **SUPPORTED** — CC-0014 | p. 2013 title/abstract, p. 2014 Eq. (5) |
+
+Two corrections are carried in the same commit: `library_inventory_v2_part2.csv` now keys
+`2ndSoundSolids.pdf` to `Chester1963` instead of flagging it `MISMATCH`, and the trap note
+in `README_library_inventory_v2.md` is rewritten to say what the file actually is.
+
+### The review itself still does not exist
+
+`SecondSound1970review` remains unidentified. The file that was filed under that name is a
+**theory** paper: it predicts second sound in dielectric solids and gives a critical
+frequency, and reports no measurement, no temperature window, no relaxation time. It
+therefore contributes **no row** to `experiments_2.csv`, whose EX2-04 stays
+`SOURCE NOT AVAILABLE` with the identification recorded in it. No review of second sound
+in solids has been found in the library or on the open web with a title that could be
+verified, so nothing is cited in its place.
+
+No DOI is printed on the Chester page, so none is stated in CC-0014; quoting
+10.1103/PhysRev.131.2013 from memory would have broken the rule that DOIs come from the DOI
+page.
