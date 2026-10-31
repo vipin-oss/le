@@ -1,0 +1,50 @@
+title,authors,year,journal,doi_if_known_from_manuscript_bib,claims_depending_on_it,priority
+Reflection of generalized thermoelastic waves from isothermal and insulated boundaries of a half space,"Das, N. C.; Lahiri, A.; Sarkar, S.; Basu, S.",2008,Computers & Mathematics with Applications 56,10.1016/j.camwa.2008.05.042,E1,low
+On waves in an elastic plate,"Lamb, H.",1917,Proceedings of the Royal Society of London A 93,10.1098/rspa.1917.0008,E2,low
+The accurate numerical inversion of Laplace transforms,"Talbot, A.",1979,IMA Journal of Applied Mathematics 23,10.1093/imamat/23.1.97,E3,low
+Fractional order and memory-dependent analysis to the dynamic response of a bi-layered structure due to laser pulse heating,"Li, Y.; Zhang, P.; Li, C.; He, T.",2019,International Journal of Heat and Mass Transfer 144,10.1016/j.ijheatmasstransfer.2019.118664,E4,low
+Memory-dependent generalized thermoelasticity with finite wave speeds,"Sarkar, I.; Banerjee, S.; Shaw, S.",2021,Mechanics of Materials 153,10.1016/j.mechmat.2020.103655,E5,low
+Thermal stresses in an elastic half-space arising after a sudden heating of its boundary,"Danilovskaya, V. I.",1950,Prikladnaya Matematika i Mekhanika 14,-,E6,low
+Theory of Thermal Stresses,"Boley, B. A.; Weiner, J. H.",1960,book; the journal field in refs.bib is unreliable,-,E7,low
+Generalized thermoelasticity,"Hetnarski, R. B.; Ignaczak, J.",1999,Journal of Thermal Stresses 22,10.1080/014957399280832,E7,low
+On waves propagated along the plane surface of an elastic solid,"Rayleigh, Lord",1885,Proceedings of the London Mathematical Society s1-17; the DOI field in refs.bib duplicates the Lamb 1917 DOI,-,E8,low
+Surface waves in piezothermoelastic transversely isotropic layer lying over piezothermoelastic transversely isotropic half-space,"Biswas, S.",2020,Acta Mechanica 232,10.1007/s00707-020-02848-8,E9,low
+Reflection/transmission of plane waves at the interface of an ideal fluid and nonlocal piezothermoelastic medium,"Gupta, V.; Kumar, R.; Kumar, M.; Pathania, V.; Barak, M. S.",2022/2023,International Journal of Numerical Methods for Heat & Fluid Flow 33,10.1108/hff-04-2022-0259,E12,low
+Response of memory to the imperfect fluid-double porous non-local thermoelastic solid interface,"Kumar, R.; Gupta, V.; Pathania, V.; Barak, M. S.",2025,Journal of Information and Optimization Sciences 46,10.47974/JIOS-1608,E12,low
+Reflection and refraction of plane harmonic waves at an interface between elastic solid and magneto-thermoelastic diffusion solid with voids,"Kumar, R.; Kansal, T.",2017,Computational Methods in Science and Technology 23,10.12921/cmst.2016.0000036,E13,low
+"Uber die Dispersionstheorie der Warmeschwingungen in Festkorpern (title transcribed, diacritics removed)","Born, M.; von Karman, Th.",1912,Physikalische Zeitschrift 13,-,E14,low
+Linear theory of nonlocal elasticity and dispersion of plane waves,"Eringen, A. C.",1972,International Journal of Engineering Science 10,10.1016/0020-7225(72)90050-x,E15,low
+On differential equations of nonlocal elasticity and solutions of screw dislocation and surface waves,"Eringen, A. C.",1983,Journal of Applied Physics 54,10.1063/1.332803,E15; E16,medium
+Nonlocal Continuum Field Theories,"Eringen, A. C.",2002,book,-,E15,low
+On the role of gradients in the localization of deformation and fracture,"Aifantis, E. C.",1992,International Journal of Engineering Science 30,10.1016/0020-7225(92)90141-3,E17,low
+Update on a class of gradient theories,"Aifantis, E. C.",2003,Mechanics of Materials 35,10.1016/S0167-6636(02)00278-8,E17,low
+Gradient elasticity theories in statics and dynamics - a unification of approaches,"Askes, H.; Aifantis, E. C.",2006,International Journal of Fracture 139,10.1007/s10704-006-8375-4,E18,low
+"Gradient elasticity in statics and dynamics: an overview of formulations, length scale identification procedures, finite element implementations and new results","Askes, H.; Aifantis, E. C.",2011,International Journal of Solids and Structures 48,10.1016/j.ijsolstr.2011.03.006,E18,low
+Effects of couple-stresses in linear elasticity,"Mindlin, R. D.; Tiersten, H. F.",1962,Archive for Rational Mechanics and Analysis 11,10.1007/BF00253946,E19; E24,medium
+Microcontinuum Field Theories,"Eringen, A. C.",1999,book,10.1007/978-1-4612-0555-5,E19,low
+Nonlocal elasticity of Klein-Gordon type: fundamentals and wave propagation,"Lazar, M.; Agiasofitou, E.",2022,Wave Motion 114,10.1016/j.wavemoti.2022.103038,E20,low
+Nonlocal elasticity and related variational principles,"Polizzotto, C.",2001,International Journal of Solids and Structures 38,10.1016/S0020-7683(01)00039-7,E21,low
+Theory of nonlocal thermoelasticity,"Eringen, A. C.",1974,International Journal of Engineering Science 12,10.1016/0020-7225(74)90033-0,E22,low
+Boundary integral equations formulation for fractional order thermoelasticity,"Tiwari, R.; Mukhopadhyay, S.",2014,Computational Methods in Science and Technology 20,10.12921/cmst.2014.20.02.49-58,E23,low
+On harmonic plane wave propagation under fractional order thermoelasticity,"Tiwari, R.; Mukhopadhyay, S.",2015,Mathematics and Mechanics of Solids 22,10.1177/1081286515612528,E23,low
+An Introduction to the Theory of Piezoelectricity (2nd edition),"Yang, J.",2018,book,10.1007/978-3-030-03137-4,E24,low
+Equations of high frequency vibrations of thermopiezoelectric crystal plates,"Mindlin, R. D.",1974,International Journal of Solids and Structures 10,10.1016/0020-7683(74)90047-X,E25,low
+Some general theorems of thermopiezoelectricity,"Nowacki, W.",1978,Journal of Thermal Stresses 1,10.1080/01495737808926940,E25,low
+A temperature-rate-dependent theory of thermopiezoelectricity,"Chandrasekharaiah, D. S.",1984,Journal of Thermal Stresses 7,10.1080/01495738408942213,E25,low
+Three-phase-lag thermoelastic heat conduction model with higher-order time-fractional derivatives,"Abouelregal, A. E.",2020,Indian Journal of Physics 94,10.1007/s12648-019-01635-z,E26,low
+Generalized thermoelasticity based on higher-order memory-dependent derivative with time delay,"Abouelregal, A. E.; Moustapha, M. V.; Nofal, T. A.; Rashid, S.; Ahmad, H.",2021,Results in Physics 20,10.1016/j.rinp.2020.103705,E26,low
+Rayleigh-type waves in nonlocal micropolar thermoelastic half-space containing void pores,"Kumar, S.; Tomar, S. K.",2024,Journal of Elasticity 156,10.1007/s10659-024-10079-4,E28,low
+"Temperature-rate-dependent thermoelasticity theory with memory-dependent derivative: energy, uniqueness theorems, and variational principle","Singh, B.; Sarkar, I.; Pal (Sarkar), S.",2020,Journal of Heat Transfer 142,10.1115/1.4047510,E28,low
+Eigenfunction approach to generalized thermo-viscoelasticity with memory dependent derivative due to three-phase-lag heat transfer,"Singh, B.; Pal (Sarkar), S.; Barman, K.",2020,Journal of Thermal Stresses 43,10.1080/01495739.2020.1770642,E29,low
+Algorithm 368: numerical inversion of Laplace transforms,"Stehfest, H.",1970,Communications of the ACM 13,10.1145/361953.361969,E30,low
+Numerical inversion of Laplace transforms: an efficient improvement to Dubner and Abate's method,"Durbin, F.",1974,The Computer Journal 17,10.1093/comjnl/17.4.371,E30,low
+Numerical inversion of Laplace transforms by relating them to the finite Fourier cosine transform,"Dubner, H.; Abate, J.",1968,Journal of the ACM 15,10.1145/321439.321446,E30,low
+A method for the numerical inversion of Laplace transforms,"Honig, G.; Hirdes, U.",1984,Journal of Computational and Applied Mathematics 10,10.1016/0377-0427(84)90075-x,E31,low
+A unified framework for numerically inverting Laplace transforms,"Abate, J.; Whitt, W.",2006,INFORMS Journal on Computing 18,10.1287/ijoc.1050.0137,E31,low
+An improved method for numerical inversion of Laplace transforms,"de Hoog, F. R.; Knight, J. H.; Stokes, A. N.",1982,SIAM Journal on Scientific and Statistical Computing 3,10.1137/0903022,E31,low
+Analysis of tissue and arterial blood temperatures in the resting human forearm,"Pennes, H. H.",1948,Journal of Applied Physiology 1,-,E33,low
+Heat pulses in NaF: onset of second sound,"McNelly, T. F. et al.",1970,Physical Review Letters 24,10.1103/PhysRevLett.24.100,E34,low
+Observation of second sound in graphite at temperatures above 100 K,"Huberman, S. et al.",2019,Science 364,10.1126/science.aav3548,E34,low
+Femtosecond electronic heat-transport dynamics in thin gold films,"Brorson, S. D.; Fujimoto, J. G.; Ippen, E. P.",1987,Physical Review Letters 59,10.1103/PhysRevLett.59.1962,E35,low
+Surface generation and detection of phonons by picosecond light pulses,"Thomsen, C.; Grahn, H. T.; Maris, H. J.; Tauc, J.",1986,Physical Review B 34,10.1103/PhysRevB.34.4129,E35,low
+Nanoscale thermal transport,"Cahill, D. G. et al.",2003,Journal of Applied Physics 93,10.1063/1.1524305,E35,low
