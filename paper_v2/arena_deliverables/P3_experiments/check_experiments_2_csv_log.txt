@@ -1,5 +1,5 @@
-PASS header: 14 columns in the declared order
-PASS rows: 4 experimental papers, ids unique
+PASS header: 17 columns in the declared order
+PASS rows: 13 value rows (one per quantity), ids unique
 PASS linkage: entry ids and protocol targets all resolve
-PASS content: every blocked row is empty of value/unit/uncertainty/page, every read row carries a page
-PASS all checks (rows=4, blocked=4, read=0)
+PASS content: blocked rows empty of value/unit/page, read rows carry page + unit + material + temperature + model
+PASS all checks (rows=13, blocked=1, read=12)

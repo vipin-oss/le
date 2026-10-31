@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Validate experiments_2.csv (the Task 4 extraction run).
 
-The four papers named in Task 4 are all unreachable: three are members of the
-52 MB / 62 MB archives that are over the 25 MB extraction cap and have never been
-unzipped, and the fourth ("a review of second sound in solids") is not even
-identified.  So every row must be honestly blocked, and the rule "a value may be
-written only if it was read on a page, and must carry the page number" must be
-enforced mechanically, not by trust:
+Second revision.  Three of the four Task-4 papers became readable (Jackson 1970,
+Huberman 2019, Cahill 2003), so the file now carries real numbers taken off real
+pages, one row per value, and the rule "a value may be written only if it was read
+on a page, and must carry the page number" is enforced mechanically, not by trust.
+Each read value must also name its material, its temperature and the model it was
+obtained under, because a velocity or a conductivity without those three is not
+evidence.  The fourth item (the unidentified second-sound review) stays blocked.
 
  1. header is exactly the declared schema;
  2. 4 rows, unique experiment_id;
@@ -33,7 +34,8 @@ EXP1 = HERE / "experiments_1.csv"
 PROTO = HERE / "extraction_protocol.csv"
 
 SCHEMA = ["experiment_id", "entry_id", "target_id", "source", "DOI", "quantity_to_extract",
-          "value", "unit", "uncertainty", "page", "read_level", "status", "blocker", "notes"]
+          "value", "unit", "uncertainty", "page", "read_level", "status", "blocker", "notes",
+          "material", "temperature", "model"]
 BLOCKED = {"SOURCE NOT AVAILABLE"}
 READ = {"READ_AT_PAGE"}
 DOI_RE = re.compile(r"^10\.\d{4,9}/\S+$")
@@ -55,10 +57,10 @@ def main():
     check(header == SCHEMA, f"header mismatch: {header}")
     print(f"PASS header: {len(header)} columns in the declared order")
 
-    check(len(rows) == 4, f"expected 4 experimental-paper rows, found {len(rows)}")
+    check(len(rows) >= 4, f"expected at least the four Task-4 papers, found {len(rows)}")
     ids = [r["experiment_id"] for r in rows]
     check(len(set(ids)) == len(ids), f"duplicate experiment ids {ids}")
-    print(f"PASS rows: {len(rows)} experimental papers, ids unique")
+    print(f"PASS rows: {len(rows)} value rows (one per quantity), ids unique")
 
     exp1 = {r["entry_id"] for r in csv.DictReader(EXP1.open(newline="", encoding="utf-8"))}
     proto = {r["target_id"] for r in csv.DictReader(PROTO.open(newline="", encoding="utf-8"))}
@@ -85,12 +87,21 @@ def main():
             check(r["value"].strip() != "", f"{r['experiment_id']}: read row has no value")
             check(PAGE_RE.search(r["page"]) is not None, f"{r['experiment_id']}: read row has no page number")
             check(r["read_level"].strip() != "", f"{r['experiment_id']}: read row has no read_level")
+            check(r["unit"].strip() != "", f"{r['experiment_id']}: read row has no unit")
+            check(r["material"].strip() != "", f"{r['experiment_id']}: read row names no material")
+            check(r["temperature"].strip() != "", f"{r['experiment_id']}: read row names no temperature")
+            check(r["model"].strip() != "", f"{r['experiment_id']}: read row names no model")
+            check(r["blocker"].strip() == "", f"{r['experiment_id']}: read row still carries a blocker")
+            # a first-release page locator must say that the pagination is not final
+            if "first release" in r["page"]:
+                check("pagination not final" in r["page"],
+                      f"{r['experiment_id']}: first-release page locator does not flag non-final pagination")
         for field in r.values():
             check(not re.search(r"https?://|drive\.google|docs\.google|\b1[A-Za-z0-9_-]{32}\b", field),
                   f"{r['experiment_id']}: link or Drive id leaked into the CSV")
             check("LE_" not in field and "Extracted ZIPs" not in field,
                   f"{r['experiment_id']}: source-library folder name leaked into the CSV")
-    print("PASS content: every blocked row is empty of value/unit/uncertainty/page, every read row carries a page")
+    print("PASS content: blocked rows empty of value/unit/page, read rows carry page + unit + material + temperature + model")
 
     if fails:
         for f in fails:
