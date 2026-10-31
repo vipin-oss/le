@@ -1,0 +1,142 @@
+rank,cited_source,claims_blocked,source_doi_if_given,claim_ids
+1,"Chirita, D'Apice and Zampoli 2016 (Int. J. Heat Mass Transfer)",3,10.1016/j.ijheatmasstransfer.2016.05.015 | 10.1016/j.ijheatmasstransfer.2016.06.019,CR115 CR129 CR134
+2,"Chirita2016 | Chirita, S., D'Apice, C. and Zampoli, V. (2016), The time differential three-phase-lag heat cond",2,10.1016/j.ijheatmasstransfer.2016.06.019,CR008 CR057
+3,"Prasad2020 | Prasad, R. and Kumar, R. (2020), On the characterization and stability of plane waves under hyper",2,10.1080/01495739.2020.1806764,CR035 CR058
+4,"Povstenko2004 | Povstenko, Y. Z. (2004), Fractional heat conduction equation and associated thermal stress, Jo",2,10.1080/014957390523741,CR040 CR063
+5,"Povstenko2007 | Povstenko, Y. Z. (2007), Fundamental solutions to central symmetric problems for fractional he",2,10.1080/01495730701738306,CR041 CR064
+6,"Povstenko2009 | Povstenko, Y. Z. (2009), Thermoelasticity that uses fractional heat conduction equation, Journ",2,10.1007/s10958-009-9636-3,CR042 CR065
+7,Chen and Nunziato 1974,2,-,CR083 CR084
+8,"Chirita, Ciarletta and Tibullo 2017 (Int. J. Heat Mass Transfer)",2,10.1016/j.ijheatmasstransfer.2016.11.091 | 10.1016/j.ijheatmasstransfer.2017.06.071,CR116 CR130
+9,"Chandrasekharaiah 1996 (J. Thermal Stresses, uniqueness theorem for type II)",2,10.1080/01495739608946173,CR138 CR155
+10,"Zener 1937 (Phys. Rev. 52, 230)",2,10.1103/PhysRev.52.230,CR140 CR141
+11,Eringen 1983 (J. Appl. Phys. 54),2,10.1063/1.332803,CR183 CR185
+12,Mindlin and Tiersten 1962 (Arch. Rational Mech. Anal. 11),2,10.1007/BF00253946,CR190 CR200
+13,"Tzou1997 | Tzou, D. Y. (1997), Macro-to-microscale heat transfer: the lagging behavior (book)",1,(absent),CR002
+14,"Quintanilla2003DPL | Quintanilla, R. (2003), A condition on the delay parameters in the one-dimensional dual-p",1,10.1080/713855996,CR003
+15,"Quintanilla2002b | Quintanilla, R. (2002), Exponential stability in the dual-phase-lag heat conduction theory,",1,10.1515/jnetdy.2002.012,CR004
+16,"Quintanilla2006 | Quintanilla, R. and Racke, R. (2006), A note on stability in dual-phase-lag heat conduction,",1,10.1016/j.ijheatmasstransfer.2005.10.016,CR005
+17,"Fabrizio2014 | Fabrizio, M. and Lazzari, B. (2014), Stability and second law of thermodynamics in dual-phase-l",1,10.1016/j.ijheatmasstransfer.2014.02.027,CR006
+18,"Rukolaine2014 | Rukolaine, S. A. (2014), Unphysical effects of the dual-phase-lag model of heat conduction, In",1,10.1016/j.ijheatmasstransfer.2014.06.066,CR007
+19,"Tibullo2017 | Chirita, S., Ciarletta, M. and Tibullo, V. (2017), On the thermomechanical consistency of the ti",1,10.1016/j.ijheatmasstransfer.2017.06.071,CR009
+20,"vanDerMerwe2021 | van der Merwe, A. J., van Rensburg, N. F. J. and Sieberhagen, R. H. (2021), Comparing the du",1,10.1016/j.amc.2020.125934,CR010
+21,"Abouelregal2020 | Abouelregal, A. E., Khalil, K. M., Mohammed, F. A. and Nasr, M. E. (2020), A generalized hea",1,10.1038/s41598-020-70388-1,CR012
+22,"Abouelregal2020a | Abouelregal, A. E. (2020), Generalized mathematical novel model of thermoelastic diffusion ",1,10.1140/epjp/s13360-020-00282-2,CR013
+23,"Quintanilla2008 | Quintanilla, R. (2008), End effects in three-phase-lag heat conduction, Applicable Analysis",1,10.1080/00036810802428938,CR019
+24,"Quintanilla2008a | Quintanilla, R. and Racke, R. (2008), A note on stability in three-phase-lag heat conductio",1,10.1016/j.ijheatmasstransfer.2007.04.045,CR020
+25,"Quintanilla2009 | Quintanilla, R. (2009), A well-posed problem for the three-dual-phase-lag heat conduction, J",1,10.1080/01495730903310599,CR021
+26,"Antaki2000 | Antaki, P. J. (2000), Effect of dual-phase-lag heat conduction on ignition of a solid, Journal of",1,10.2514/2.6520,CR022
+27,"Julius2017 | Julius, S., Leizeronok, B. and Cukurel, B. (2017), Nonhomogeneous dual-phase-lag heat conduction ",1,10.1115/1.4037775,CR023
+28,"MooreGibson1960 | Moore, F. K. and Gibson, W. E. (1960), Propagation of weak disturbances in a gas subject to ",1,10.2514/8.8418,CR024
+29,"MarchandMcDevittTriggiani2012 | Marchand, R., McDevitt, T. and Triggiani, R. (2012), An abstract semigroup app",1,10.1002/mma.1576,CR025
+30,"DellOroPata2016Viscoelasticity | Dell'Oro, F. and Pata, V. (2016), On the Moore-Gibson-Thompson equation and i",1,10.1007/s00245-016-9365-1,CR028
+31,"ChenGurtin1968 | Chen, P. J. and Gurtin, M. E. (1968), On a theory of heat conduction involving two temperatur",1,10.1007/bf01594969,CR033
+32,"Alzahrani2020 | Alzahrani, F. and Abbas, I. (2020), The effect of a hyperbolic two-temperature model with and ",1,10.3390/math8101711,CR036
+33,"Caputo1967 | Caputo, M. (1967), Linear models of dissipation whose Q is almost frequency independent-II, Geoph",1,10.1111/j.1365-246X.1967.tb02303.x,CR038
+34,"Podlubny1999 | (book; the manuscript bib entry carries no author, title, year or DOI)",1,no record,CR039
+35,"Povstenko2011Cattaneo | Povstenko, Y. Z. (2011), Fractional Cattaneo-type equations and generalized thermoelas",1,10.1080/01495739.2010.511931,CR043
+36,"Sherief2010Fractional | Sherief, H. H., El-Sayed, A. M. A. and Abd El-Latief, A. M. (2010), Fractional order t",1,10.1016/j.ijsolstr.2009.09.034,CR044
+37,"Luchko2010 | Luchko, Y. (2010), Some uniqueness and existence results for the initial-boundary-value problems ",1,10.1016/j.camwa.2009.08.015,CR047
+38,"WangLi2025IV | Wang, J.-L. and Li, H.-F. (2025), Memory-dependent derivative versus fractional derivative (IV)",1,10.3390/fractalfract9120794,CR050
+39,"Ezzat2016 | Ezzat, M. A., El-Karamany, A. S. and El-Bary, A. A. (2016), Modeling of memory-dependent derivativ",1,10.1140/epjp/i2016-16372-3,CR051
+40,"Ezzat2016a | Ezzat, M. A., El-Karamany, A. S. and El-Bary, A. A. (2016), Electro-thermoelasticity theory with ",1,10.1016/j.ijengsci.2015.10.011,CR052
+41,"Ezzat2016b | Ezzat, M. A., El-Karamany, A. S. and El-Bary, A. A. (2016), On dual-phase-lag thermoelasticity th",1,10.1080/15376494.2016.1196793,CR053
+42,"Povstenko2011 | Povstenko, Y. Z. (2011), Dirichlet problem for time-fractional radial heat conduction in a sph",1,10.1080/01495739.2010.511929,CR054
+43,"Xu2015 | Xu, H.-Y. and Jiang, X.-Y. (2015), Time fractional dual-phase-lag heat conduction equation, Chinese P",1,10.1088/1674-1056/24/3/034401,CR055
+44,"Povstenko2016 | Povstenko, Y. Z. (2015), Fractional thermoelasticity (Springer book, ISBN 978-3-319-15334-6)",1,10.1007/978-3-319-15335-3,CR060
+45,"Abouelregal2023 | Abouelregal, A. E., Askar, S. S., Marin, M. and Mohamed, B. (2023), The theory of thermoelas",1,10.1038/s41598-023-36371-2,CR069
+46,"Hamza2014 | Hamza, F., Abdou, M. and Abd El-Latief, A. M. (2014), Generalized fractional thermoelasticity asso",1,10.1080/01495739.2014.936196,CR072
+47,"Sur2012 | Sur, A. and Kanoria, M. (2012), Fractional order two-temperature thermoelasticity with finite wave s",1,10.1007/s00707-012-0736-7,CR073
+48,"Yu2014 | Yu, Y.-J., Hu, W. and Tian, X.-G. (2014), A novel generalized thermoelasticity model based on memory-",1,10.1016/j.ijengsci.2014.04.014,CR074
+49,"Sherief2018 | Sherief, H. H. and Raslan, W. E. (2018), Study of wave propagation in a half-space in the fracti",1,10.1177/1081286518813719,CR075
+50,"Youssef2010 | Youssef, H. M. (2010), Theory of fractional order generalized thermoelasticity, Journal of Heat ",1,10.1115/1.4000705,CR077
+51,"Youssef2010a | Youssef, H. M. and Al-Lehaibi, E. A. (2010), Variational principle of fractional order generali",1,10.1016/j.aml.2010.05.008,CR078
+52,"Yu2020 | Yu, Y. J. and Deng, Z. C. (2020), Fractional order theory of Cattaneo-type thermoelasticity using new",1,10.1016/j.apm.2020.06.023,CR079
+53,"Scott2007 | Scott, N. H. (2008), Thermoelasticity and generalized thermoelasticity viewed as wave hierarchies,",1,10.1093/imamat/hxm010,CR080
+54,"Shaw2019 | Shaw, S. (2019), Theory of generalized thermoelasticity with memory-dependent derivatives, Journal ",1,10.1061/(ASCE)EM.1943-7889.0001569,CR081
+55,Coleman and Gurtin 1967,1,-,CR082
+56,Cattaneo 1948,1,-,CR092
+57,Vernotte 1958,1,-,CR093
+58,"Ackerman et al. 1966 (Phys. Rev. Lett. 16, 789)",1,-,CR094
+59,"Jackson, Walker and McNelly 1970 (Phys. Rev. Lett. 25, 26)",1,-,CR095
+60,"Guyer and Krumhansl 1966, part I (Phys. Rev. 148, 766)",1,10.1103/PhysRev.148.766,CR096
+61,"Chester 1963 (Phys. Rev. 131, 2013)",1,-,CR098
+62,"Joseph and Preziosi 1989 (Rev. Mod. Phys. 61, 41)",1,10.1103/revmodphys.61.41,CR102
+63,"Joseph and Preziosi 1990 (Rev. Mod. Phys. 62, 375)",1,10.1103/revmodphys.62.375,CR103
+64,"Chandrasekharaiah 1996 (J. Thermal Stresses 19, 267)",1,-,CR110
+65,Tzou 1997 (CRC Press monograph),1,-,CR112
+66,"Quintanilla 2003 (J. Thermal Stresses 26, 713)",1,-,CR114
+67,"van der Merwe, van Rensburg and Sieberhagen 2021 (Appl. Math. Comput.)",1,10.1016/j.amc.2021.126219,CR117
+68,"Marchand, McDevitt and Triggiani 2012",1,-,CR119
+69,Dell'Oro and Pata 2016 (Appl. Math. Optim.),1,-,CR122
+70,"Coleman and Noll 1963 (Arch. Rational Mech. Anal. 13, 167-178)",1,10.1007/BF01262690,CR125
+71,"Jou, Casas-Vazquez and Lebon 2010 (Extended Irreversible Thermodynamics, Springer)",1,-,CR126
+72,"Muller and Ruggeri 1998 (Rational Extended Thermodynamics, Springer)",1,10.1007/978-1-4612-2210-1,CR127
+73,"Muller 1967 (Arch. Rational Mech. Anal. 26, 118-141)",1,-,CR128
+74,"Yu, Xue and Tian 2018 (Meccanica 53, 2543-2554)",1,10.1007/s11012-018-0843-1,CR131
+75,"Quintanilla 2003 (J. Thermal Stresses 26, 713-721)",1,10.1080/713855996,CR133
+76,"Carlson 1972 (Linear thermoelasticity, Handbuch der Physik VIa/2, 297-345)",1,-,CR136
+77,"Nowacki 1975 (Thermoelasticity, Pergamon)",1,-,CR137
+78,"Lifshitz and Roukes 2000 (Phys. Rev. B 61, 5600)",1,10.1103/PhysRevB.61.5600,CR142
+79,"Kumar, Devi and Sharma 2017 (Appl. Appl. Math. Int. J.)",1,-,CR144
+80,"Stroh 1958 (Phil. Mag. 3, 625-646)",1,10.1080/14786435808565804,CR146
+81,"Stroh 1962 (J. Math. Phys. 41, 77-103)",1,10.1002/sapm196241177,CR147
+82,"Bem 1982 (J. Thermal Stresses 5, 195-206)",1,10.1080/01495738208942145,CR149
+83,"Bem 1983 (J. Thermal Stresses 6, 281-299)",1,10.1080/01495738308942183,CR150
+84,"Ignaczak and Bialy 1980 (J. Thermal Stresses 3, 391-399)",1,10.1080/01495738008926977,CR151
+85,"Gurtin and Williams 1966 (ZAMP 17, 626)",1,10.1007/bf01597243,CR152
+86,"Kaminski 1990 (J. Heat Transfer 112, 555-560)",1,-,CR153
+87,"Mitra, Kumar, Vedavarz and Moallemi 1995 (J. Heat Transfer 117, 568-573)",1,-,CR154
+88,"Chandrasekharaiah 1997 (Mech. Res. Comm. 24, 625-630)",1,10.1016/s0093-6413(97)00080-3,CR156
+89,"Iesan 1998 (J. Thermal Stresses 21, 295-307)",1,10.1080/01495739808956148,CR157
+90,"Quintanilla 1999 (J. Thermal Stresses 22, 213-224)",1,10.1080/014957399280977,CR158
+91,"Ciarletta 1999 (J. Thermal Stresses 22, 581-594)",1,10.1080/014957399280760,CR159
+92,"Quintanilla 2002 (Appl. Math. Modelling 26, 1125-1137)",1,10.1016/s0307-904x(02)00078-1,CR160
+93,Suh and Burger 1998 (J. Appl. Mech. 65),1,10.1115/1.2789101,CR161
+94,"Sarkar, De and Sarkar 2019 (J. Thermal Stresses 42)",1,10.1080/01495739.2019.1618760,CR162
+95,"Das, Lahiri, Sarkar and Basu 2008 (Comput. Math. Appl. 56)",1,10.1016/j.camwa.2008.05.042,CR163
+96,Lamb 1917 (Proc. R. Soc. Lond. A 93),1,10.1098/rspa.1917.0008,CR164
+97,Talbot 1979 (IMA J. Appl. Math. 23),1,10.1093/imamat/23.1.97,CR165
+98,"Li, Zhang, Li and He 2019 (Int. J. Heat Mass Transfer 144)",1,10.1016/j.ijheatmasstransfer.2019.118664,CR166
+99,"Sarkar, Banerjee and Shaw 2021 (Mech. Materials 153)",1,10.1016/j.mechmat.2020.103655,CR167
+100,Danilovskaya 1950 (Prikl. Mat. Mekh. 14),1,-,CR168
+101,Boley and Weiner 1960 (Theory of Thermal Stresses),1,-,CR169
+102,Hetnarski and Ignaczak 1999 (J. Thermal Stresses 22),1,10.1080/014957399280832,CR170
+103,Rayleigh 1885 (Proc. London Math. Soc. s1-17),1,-,CR171
+104,Biswas 2020 (Acta Mechanica 232),1,10.1007/s00707-020-02848-8,CR172
+105,"Gupta, Kumar, Kumar, Pathania and Barak 2023 (Int. J. Numer. Methods Heat Fluid Flow 33)",1,10.1108/hff-04-2022-0259,CR175
+106,"Kumar, Gupta, Pathania and Barak 2025 (J. Information and Optimization Sciences 46)",1,10.47974/JIOS-1608,CR177
+107,Kumar and Kansal 2017 (Comput. Methods Sci. Technol. 23),1,10.12921/cmst.2016.0000036,CR178
+108,Born and von Karman 1912 (Physikalische Zeitschrift 13),1,-,CR181
+109,Eringen 1972 (Int. J. Eng. Sci. 10),1,10.1016/0020-7225(72)90050-x,CR182
+110,"Eringen 2002 (Nonlocal Continuum Field Theories, book)",1,-,CR184
+111,Aifantis 1992 (Int. J. Eng. Sci. 30),1,10.1016/0020-7225(92)90141-3,CR186
+112,Aifantis 2003 (Mech. Materials 35),1,10.1016/S0167-6636(02)00278-8,CR187
+113,Askes and Aifantis 2006 (Int. J. Fracture 139),1,10.1007/s10704-006-8375-4,CR188
+114,Askes and Aifantis 2011 (Int. J. Solids Struct. 48),1,10.1016/j.ijsolstr.2011.03.006,CR189
+115,"Eringen 1999 (Microcontinuum Field Theories, book)",1,10.1007/978-1-4612-0555-5,CR192
+116,Lazar and Agiasofitou 2022 (Wave Motion 114),1,10.1016/j.wavemoti.2022.103038,CR194
+117,Polizzotto 2001 (Int. J. Solids Struct. 38),1,10.1016/S0020-7683(01)00039-7,CR195
+118,Eringen 1974 (Int. J. Eng. Sci. 12),1,10.1016/0020-7225(74)90033-0,CR196
+119,Tiwari and Mukhopadhyay 2014 (Comput. Methods Sci. Technol. 20),1,10.12921/cmst.2014.20.02.49-58,CR197
+120,Tiwari and Mukhopadhyay 2015 (Math. Mech. Solids 22),1,10.1177/1081286515612528,CR198
+121,"Yang 2018 (An Introduction to the Theory of Piezoelectricity, book)",1,10.1007/978-3-030-03137-4,CR199
+122,Mindlin 1974 (Int. J. Solids Struct. 10),1,10.1016/0020-7683(74)90047-X,CR201
+123,Nowacki 1978 (J. Thermal Stresses 1),1,10.1080/01495737808926940,CR202
+124,Chandrasekharaiah 1984 (J. Thermal Stresses 7),1,10.1080/01495738408942213,CR203
+125,Abouelregal 2020 (Indian J. Phys. 94),1,10.1007/s12648-019-01635-z,CR204
+126,"Abouelregal, Moustapha, Nofal, Rashid and Ahmad 2021 (Results in Physics 20)",1,10.1016/j.rinp.2020.103705,CR205
+127,Kumar and Tomar 2024 (J. Elasticity 156),1,10.1007/s10659-024-10079-4,CR209
+128,"Singh, Sarkar and Pal 2020 (J. Heat Transfer 142)",1,10.1115/1.4047510,CR210
+129,"Singh, Pal and Barman 2020 (J. Thermal Stresses 43)",1,10.1080/01495739.2020.1770642,CR211
+130,Stehfest 1970 (Comm. ACM 13),1,10.1145/361953.361969,CR212
+131,Durbin 1974 (The Computer Journal 17),1,10.1093/comjnl/17.4.371,CR213
+132,Dubner and Abate 1968 (J. ACM 15),1,10.1145/321439.321446,CR214
+133,Honig and Hirdes 1984 (J. Comput. Appl. Math. 10),1,10.1016/0377-0427(84)90075-x,CR215
+134,Abate and Whitt 2006 (INFORMS J. Computing 18),1,10.1287/ijoc.1050.0137,CR216
+135,"de Hoog, Knight and Stokes 1982 (SIAM J. Sci. Stat. Comput. 3)",1,10.1137/0903022,CR217
+136,Pennes 1948 (J. Appl. Physiology 1),1,-,CR219
+137,"McNelly et al. 1970 (Phys. Rev. Lett. 24, 100)",1,10.1103/PhysRevLett.24.100,CR220
+138,Huberman et al. 2019 (Science 364),1,10.1126/science.aav3548,CR221
+139,"Brorson, Fujimoto and Ippen 1987 (Phys. Rev. Lett. 59)",1,10.1103/PhysRevLett.59.1962,CR222
+140,"Thomsen, Grahn, Maris and Tauc 1986 (Phys. Rev. B 34)",1,10.1103/PhysRevB.34.4129,CR223
+141,Cahill et al. 2003 (J. Appl. Phys. 93),1,10.1063/1.1524305,CR224
