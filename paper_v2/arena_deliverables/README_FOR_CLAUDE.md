@@ -251,6 +251,17 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 32:** the 34 partly supported claims each got a decision. `P3_evidence_claims_B/PARTLY_SUPPORTED_EDIT_SHEET_2026-11-01.csv`
+  (34 rows, 14 columns) and its `.md` mirror carry, per claim, the sentence as written, the register's recorded
+  finding, a **gap code**, an **action code**, what would close it and a priority: **21 mandatory, 13 optional**.
+  The gaps are not uniform - 12 are wrong-or-loose attributions, 12 are cases where the register found the source
+  narrower without reducing it to one clause, 4 need one specific page read as an image, 2 are bibliography
+  mismatches (CR116, CR130 - the file is a single-author *Journal of Thermal Stresses* paper, the entry says
+  Chirita, Ciarletta and Tibullo in *IJHMT*), 2 are words presented as the source's that are not in it, 1 is
+  only a modern name, and 1 needs a co-cited source that was never supplied. The sheet changes no verdict
+  (`check_partly_sheet.py` re-reads the register and asserts all 34 are still PARTLY SUPPORTED), writes no new
+  physics sentence, and asks for no new paper.
+
 - **Step 31:** the branch count is now a benchmark for any number of fields. `P3_atlas/bench_porous.py` adds
   **BK-11** as the algebra of extending the template to m extra fields - explicitly *not* a porous model, which
   this repository does not have: the bordered determinant is a polynomial of degree m+1 in K, so there are m+1
