@@ -131,7 +131,7 @@ def main():
     if os.path.exists(F):
         srows = list(csv.DictReader(open(F, newline="")))
         check("full request list header",
-              list(srows[0].keys()) == ["rank", "citation", "doi", "doi_status",
+              list(srows[0].keys()) == ["rank", "title", "citation", "doi", "doi_status",
                                         "doi_note", "claims_blocked", "claim_ids",
                                         "availability"],
               str(list(srows[0].keys())))
@@ -141,6 +141,8 @@ def main():
               len({r["citation"].lower() for r in srows}) == len(srows), "duplicates present")
         check("full request list has no repeated work (same DOI twice)",
               len({r["doi"] for r in srows if r["doi"]}) == sum(1 for r in srows if r["doi"]))
+        check("every row states a title or says plainly that none is asserted",
+              all(r["title"].strip() for r in srows), "empty title field")
         check("full request list DOI status vocabulary",
               all(r["doi_status"] in {"verified", "WRONG DOI", "no DOI recorded"} for r in srows),
               str({r["doi_status"] for r in srows}))
