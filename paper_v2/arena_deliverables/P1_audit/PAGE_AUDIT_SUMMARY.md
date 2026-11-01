@@ -1,7 +1,7 @@
 # Page-Level Audit Summary — compiled v1.2 ↔ LaTeX sources
 
-- checks: 26  (20 PASS, 6 REPORT, 0 FAIL)
-- PDF: 140 pages, 63503 words
+- checks: 26  (21 PASS, 5 REPORT, 0 FAIL)
+- PDF: 140 pages, 63584 words
 - unresolved refs: 0; missing citations: 0; leaked LaTeX tokens: 0
 - section/subsection titles checked: 220; missing: 0
 - appendices rendered: 6/6

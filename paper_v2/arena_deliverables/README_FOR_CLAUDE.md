@@ -655,7 +655,7 @@ Measured, so nobody has to guess tomorrow:
 
 | Quantity | Value |
 |---|---|
-| Pages / words | 140 / 63,503 |
+| Pages / words | 140 / 63,584 (author's rebuild, 16:58:57 UTC; the first build measured 63,503) |
 | Body (sections 1–17) | pp. 14–120, 43,543 words |
 | References | pp. 121–126; 107 cited works, 144 `.bib` entries (37 uncited reserve) |
 | Appendices A–F | pp. 127, 134, 136, 137, 139, 140 |
@@ -675,5 +675,8 @@ in `paper_v2/versions/v1.2_edits_2026-11-01/`:
    to the working sources is declared in the version log — the old assertion forbade editing at all, which
    contradicted amendment 1.
 
-Open: register expansion 29 → 136; a fresh Overleaf build, because the sources are now newer than the PDF that
-was measured (check P25 keeps saying so until the build is redone).
+**Rebuild verified.** The author rebuilt and the four fixes were confirmed *in the PDF*, string by string (section 5 of
+`P1_audit/PAGE_LEVEL_AUDIT_2026-11-01.md`): legend labels, EQ-014/EQ-029 rows, the re-pointed Appendix-A sentence,
+`doi: 10.1103/physrev.131.2013` on Chester 1963, and the two "No DOI assigned" notes. The drift check (P25) now passes.
+
+Open: register expansion 29 → 136.

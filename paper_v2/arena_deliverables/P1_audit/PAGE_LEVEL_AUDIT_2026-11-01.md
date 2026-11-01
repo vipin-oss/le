@@ -1,6 +1,7 @@
 # Page-Level Audit — compiled v1.2 against its LaTeX sources
 
-**Date:** 2026-11-01 · **Scope:** P1, second half (page level) · **Status of table:** 26 checks, 20 PASS, 6 REPORT, 0 FAIL
+**Date:** 2026-11-01 · **Scope:** P1, second half (page level) · **Status of table:** 26 checks, 21 PASS, 5 REPORT, 0 FAIL
+**Build measured:** the author's rebuild, compiled 2026-11-01 16:58:57 UTC (the earlier 16:39 build was measured first; its findings are kept below in F1–F5 and were re-verified on the rebuild in F8)
 **Method:** the compiled PDF is parsed with PyMuPDF and every check is a comparison against the `.tex`/`.bib` sources it was built from. No check is a judgement of prose quality; each is an assertion about what the document physically contains.
 
 ## 1. Document census
@@ -8,16 +9,16 @@
 | Quantity | Measured |
 |---|---|
 | Pages | 140 |
-| Words (extracted) | 63,503 |
+| Words (extracted) | 63,584 |
 | Body words, sections 1–17 (pp. 14–120) | 43,543 |
 | Numbered equations printed | 136 (highest number = 136, no gaps) |
 | Numbered figures printed | 16 (1–16, contiguous) |
 | Numbered tables printed | 53 (1–53, contiguous) |
 | Distinct works cited | 107 |
 | Entries in `references_local.bib` | 144 (37 uncited reserve entries) |
-| Printed references carrying a DOI | 104 |
+| Printed references carrying a DOI | 104 (103 + Chester 1963) |
 | Printed references as books with ISBN | 2 |
-| Printed references with neither (pre-DOI, stated plainly) | 2 |
+| Printed references with neither (pre-DOI, stated plainly in the entry) | 2 |
 | PDF outline (hyperref bookmarks) | 430 |
 | Abstract | 245 words |
 | Keywords | 11 |
@@ -55,7 +56,7 @@ Order is monotonic and matches the `\input` sequence in `main.tex` exactly; no s
 | F3 | Equation-register coverage: **29 of 136 printed equations** (21.3%). Derived + primary-source-checked = 6 of 29 rows (20.7%). | Reported, not patched. The manuscript already states that no comprehensive equation audit has been completed; this quantifies the gap and is the main remaining item for P1. |
 | F4 | 37 `.bib` entries are uncited by the manuscript. | Reported. They are a reserve list (none is cited by the retained working collection either); no entry removed, since deleting bibliography is not an editorial improvement. |
 | F5 | Three cited works carried no DOI/ISBN: Cattaneo 1948, Vernotte 1958, Chester 1963. | Chester 1963 **verified against Crossref** (Physical Review 131, 2013–2015, author/title/journal/volume/pages all match) and its DOI recorded; Cattaneo and Vernotte are pre-DOI and now state that plainly in the entry. No DOI was guessed. |
-| F6 | Source drift: after F1/F2/F5 the sources are newer than the PDF that was measured. | Recorded as P25 (REPORT). A rebuild is required before submission; the drift list is in `page_audit_results.csv`. |
+| F6 | Source drift: after F1/F2/F5 the sources were newer than the PDF that had been measured. | **Closed.** The author rebuilt; on the rebuild every source predates the PDF, so P25 flips to PASS. No file remains drifted. |
 | F7 | Typography at the level measurable from a PDF: no unresolved references, no leaked control sequences, no missing fonts, no caption missing, no figure/table number gap, no margin overflow. | Nothing to fix. Overfull `\hbox` warnings are a compile-log property and are not recoverable from the PDF; they remain on the Overleaf log, not in this audit. |
 
 ## 4. What this audit does **not** establish
@@ -64,7 +65,21 @@ Order is monotonic and matches the `\input` sequence in `main.tex` exactly; no s
 - It cannot see `Overfull \hbox` warnings, missing-glyph warnings, or float-placement decisions; those exist only in the compile log.
 - It does not re-verify DOIs that were verified earlier; it only checks that a printed reference matches a cited key.
 
-## 5. Files
+## 5. Rebuild verification (F8)
+
+The rebuild was checked string by string, not assumed. Each fix is present in the artefact a reader receives:
+
+| Fix | What the rebuild prints |
+|---|---|
+| Legend (F1) | `VERIFIED-SYMBOLIC: A closed-form expression checked by symbolic evaluation in this revision for a stated limiting case (e.g. the uncoupled thermal branch); …` and `WITHHELD: No expression is asserted; …` |
+| Register row EQ-014 | `EQ-014 c_T = √(k/(ρc_vτ_0)) VERIFIED-SYMBOLIC Uncoupled scalar thermal branch β = 0; …` |
+| Re-pointed note (F2) | `EQ-029 … OPEN Withdrawn from the retained working collection; …`, and the closing Appendix-A sentence now reads `… in the retained working collection (which is deliberately not part of this manuscript) …` |
+| Chester 1963 (F5) | `Marvin Chester. Second sound in solids. Physical Review, 131:2013–2015, 1963. doi: 10.1103/physrev.131.2013` |
+| Pre-DOI works (F5) | `C. Cattaneo. Sulla conduzione del calore. … 3:83–101, 1948. No DOI assigned: published before DOIs were issued.` and the same note on Vernotte 1958 |
+
+Extent and structure are unchanged by these edits: still 140 pages, 16 figures, 53 tables, 136 numbered equations, six appendices; word count moves from 63,503 to 63,584 (+81 words, i.e. exactly the two legend definitions and the two no-DOI notes).
+
+## 6. Files
 
 | File | Contents |
 |---|---|

@@ -119,6 +119,12 @@ Result: `arena_deliverables/P1_audit/PAGE_LEVEL_AUDIT_2026-11-01.md`, 26 checks,
   is declared in the version log — previously it forbade editing the working tree at all, which contradicted
   the standing rule that sources may be edited when the old file is kept.
 
-**Open at the end of cycle 2:** register expansion 29 → 136; a fresh Overleaf build (the sources are now newer
-than the measured PDF, check P25); overfull-box warnings, which exist only in the compile log and cannot be
-recovered from the PDF.
+### Rebuild verification (same cycle, later)
+The author rebuilt (16:58:57 UTC) and the rebuild was audited rather than assumed: **26 checks, 21 PASS, 5 REPORT,
+0 FAIL**, 140 pages, 63,584 words (+81 = the two legend definitions and the two no-DOI notes). Every fix was
+confirmed string by string in the artefact — legend labels, the EQ-014 and EQ-029 rows, the re-pointed
+Appendix-A sentence, `doi: 10.1103/physrev.131.2013` on Chester 1963, and the two "No DOI assigned" notes.
+The source-drift check (P25) flipped from REPORT to PASS, so nothing in the tree is newer than the PDF.
+
+**Open at the end of cycle 2:** register expansion 29 → 136; overfull-box warnings, which exist only in the
+compile log and cannot be recovered from the PDF.

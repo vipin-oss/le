@@ -1,6 +1,6 @@
 check_id,object,expected,observed,verdict,note
 P01,pdf opens / identity,"readable, titled, authored",pages=140; title='Multiphysics Wave Mechanics in Generalized Continua'; author='Vipin Gupta'; producer=pdfTeX-1.40.29,PASS,
-P02,extent,reported (no target length imposed),"140 pages, 63503 words",REPORT,
+P02,extent,reported (no target length imposed),"140 pages, 63584 words",REPORT,
 P03,unresolved \ref (?? marks),0,0,PASS,
 P04,missing citations ([?] marks),0,0,PASS,
 P05,leaked LaTeX / errors in PDF text,0,none,PASS,
@@ -23,5 +23,5 @@ P21,table of contents,present near the front matter,present,PASS,
 P22,PDF bookmarks (hyperref outlines),>= 10 entries,430 entries,PASS,
 P23,no orphan .tex in the built tree,every source reachable from main.tex via \input/\include,0 unreachable of 39,PASS,
 P24,float numbering contiguous,no gaps in Figure/Table numbers,"figures 1-16 (16 seen, gaps=[]); tables 1-53 (53 seen, gaps=[])",PASS,
-P25,sources unchanged since this PDF was compiled,no .tex edited after the build timestamp,1 file(s) edited after D:20261101163903Z,REPORT,rebuild needed for: appendices/appA_equation_register.tex
+P25,sources unchanged since this PDF was compiled,no .tex edited after the build timestamp,none,PASS,
 P26,section order matches main.tex and pages increase,"all input sections bookmarked, in source order",26/26 mapped; pages monotonic; body starts p.1,PASS,
