@@ -131,8 +131,9 @@ def main():
     if os.path.exists(F):
         srows = list(csv.DictReader(open(F, newline="")))
         check("full request list header",
-              list(srows[0].keys()) == ["rank", "citation", "doi", "claims_blocked",
-                                        "claim_ids", "availability"],
+              list(srows[0].keys()) == ["rank", "citation", "doi", "doi_status",
+                                        "doi_note", "claims_blocked", "claim_ids",
+                                        "availability"],
               str(list(srows[0].keys())))
         check("full request list ranks run 1..n",
               [int(r["rank"]) for r in srows] == list(range(1, len(srows) + 1)))
@@ -140,6 +141,13 @@ def main():
               len({r["citation"].lower() for r in srows}) == len(srows), "duplicates present")
         check("full request list has no repeated work (same DOI twice)",
               len({r["doi"] for r in srows if r["doi"]}) == sum(1 for r in srows if r["doi"]))
+        check("full request list DOI status vocabulary",
+              all(r["doi_status"] in {"verified", "WRONG DOI", "no DOI recorded"} for r in srows),
+              str({r["doi_status"] for r in srows}))
+        bad = [r["rank"] for r in srows
+               if (r["doi_status"] == "no DOI recorded") == bool(r["doi"])]
+        check("full request list marks exactly the empty DOIs as 'no DOI recorded'",
+              not bad, str(bad[:5]))
         bad = [r["rank"] for r in srows if r["doi"] and not doiok.match(r["doi"])]
         check("full request list DOIs are DOI-shaped or empty", not bad, str(bad[:5]))
         bad = [r["rank"] for r in srows if leak.search(" ".join(r.values()))]
