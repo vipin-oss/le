@@ -73,15 +73,18 @@ All paths are relative to `paper_v2/arena_deliverables/`.
 
 - **Register:** 224 rows in `paper_v2/claim_register.csv`; **111** of them carry the verdict
   `SOURCE NOT AVAILABLE`. That 111 is the denominator for everything below.
-- **Closed by reading a source: 74.** 40 (first two uploads) + 25 (fourth batch) + 1 (the work found by the
-  drive sweep) + 8 (held sources read on 2026-11-01).
-- **Still to order: 14 claims / 13 works.** Tzou (1997) blocks two claims (CR002, CR112).
+- **Closed by reading a source: 78.** 40 (first two uploads) + 25 (fourth batch) + 1 (the work found by the
+  drive sweep) + 8 (held sources read on 2026-11-01) + 4 (the books of the fifth batch).
+- **Still to order: 6 claims / 6 works.** One claim each: Cattaneo 1948, Nowacki 1975, Carlson 1972,
+  Danilovskaya 1950, Vernotte 1958, Born and von Karman 1912.
+- **Waived by the author: 4** (CR209, CR210, CR177, CR050) - declared unimportant on 2026-11-01, so no
+  evidence is produced and the sentences citing them have to be dropped.
 - **Held but not yet read at claim level: 4** (CR127, CR152, CR166, CR196).
 - **Register-level, no file needed: 19.**
-- 74 + 14 + 4 + 19 = **111**, with no claim counted twice. This was recomputed from the CSVs during step 17
+- 78 + 6 + 4 + 4 + 19 = **111**, with no claim counted twice. This was recomputed from the CSVs during step 17
   as a set union, not by hand.
-- **Everything that came in:** 103 files from the author across four deliveries (40 + 25 + 1 + ... see the
-  ledger's section 1), 92 distinct works identified, plus an earlier library inventory of 117 files yielding
+- **Everything that came in:** 107 files from the author across five deliveries (40 + 25 + 1 + 3 + ... see the
+  ledger's section 1), 95 distinct works identified, plus an earlier library inventory of 117 files yielding
   34 usable works and 3 claim-level findings.
 
 If a future step changes any of these, the ledger and `check_pdfs_needed.py` both have to be updated in the
@@ -119,6 +122,15 @@ numbers disagree.
   title is read off a record or a page. For Vernotte, two 1958 Comptes Rendus notes exist and the register
   gives only the volume, so which note the sentence means is still open.
 
+- **Step 19:** the four books arrived and were opened. **Tzou** (2nd edition 2015), **Podlubny** (1999) and
+  **Boley and Weiner** (Dover reprint of the 1960 text) matched their rows and four claims closed: CR002 and
+  CR112 (the two-lag statement, p.64 and p.62), CR039 (Caputo's derivative, section 2.4.1, p.79), CR169
+  (suddenly applied thermal loads, ch.9). The fourth book, a *Thermoelasticity*, is **Parkus** (Springer
+  1976), not Nowacki - opened anyway, and it cannot serve the sentence either (no reciprocity theorems;
+  "variational" appears only in its reference list), so the Nowacki row stays. The author also declared four
+  recent papers unimportant: CR209, CR210, CR177 and CR050 are in `waived_by_author_2026-11-01.csv` with what
+  has to happen to the sentences that cite them. The request list is now **6 works / 6 claims**.
+
 ## 6. Findings a reader must not lose
 
 1. **CR182 and CR184 split one sentence.** The manuscript writes nonlocal elasticity with a "Yukawa-type"
@@ -140,6 +152,13 @@ numbers disagree.
    (1975) book. It is not the book. The row stays on the list.
 7. **A name match is not a hit:** the Gurtin and Pipkin (1968) paper is not the Gurtin and Williams (1966)
    ZAMP article; only part II of Guyer and Krumhansl is held, not part I.
+
+8. **Two caveats travel with the book evidence.** The Tzou copy is the **2015 second edition** while the
+   manuscript cites the 1997 first edition, so either the edition is added to the reference or the year is
+   checked. The Boley and Weiner copy is a **reflowable EPUB with no page numbers**, so its quotes are cited
+   by chapter; the copyright page confirms the 1960 Wiley text.
+9. **The Nowacki row has now defeated two batches**: a two-page journal note in the fourth, and Parkus's book
+   in the fifth. If a copy comes again, read the author name on the title page first.
 
 ## 7. How to re-run everything
 

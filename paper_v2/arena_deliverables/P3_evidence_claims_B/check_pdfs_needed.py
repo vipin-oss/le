@@ -246,8 +246,8 @@ def main():
                                                                  " ".join(r.values()))]
                     check("the batch records do not name the uploaded files", not bad, str(bad[:5]))
                     tot = sum(len(r["claim_ids"].split()) for r in srows)
-                    check("the request list is down to 13 works / 14 claims",
-                          len(srows) == 13 and tot == 14, "%d works, %d claims" % (len(srows), tot))
+                    check("the request list is down to 6 works / 6 claims after the fifth batch",
+                          len(srows) == 6 and tot == 6, "%d works, %d claims" % (len(srows), tot))
                     print("     fourth batch: 26 files, 25 accepted, 1 mismatch; list now %d works "
                           "(%d claims)" % (len(srows), tot))
                 # LEDGER_*.md - the single page that reconciles every upload with every blocked claim
@@ -268,15 +268,20 @@ def main():
                     held_n = sum(1 for r in csv.DictReader(
                         open(os.path.join(HERE, "SOURCE_READING_held_2026-11-01.csv"), newline=""))
                         if r["verdict"] in VERDICTS)
-                    closed_n = up_n + b4_n + held_n + 1
+                    book_n = sum(1 for r in csv.DictReader(
+                        open(os.path.join(HERE, "SOURCE_READING_books_2026-11-01.csv"), newline=""))
+                        if r["verdict"] in VERDICTS)
+                    waived_n = len(list(csv.DictReader(
+                        open(os.path.join(HERE, "waived_by_author_2026-11-01.csv"), newline=""))))
+                    closed_n = up_n + b4_n + held_n + book_n + 1
                     ord_n = sum(len(r["claim_ids"].split()) for r in srows)
                     check("the ledger states the recomputed number of closed claims",
                           "| closed by reading a source | **%d** |" % closed_n in ltxt, str(closed_n))
-                    check("the ledger's four buckets add up to 111 after step 17",
-                          closed_n + ord_n + 4 + 19 == 111,
-                          "%d + %d + 4 + 19" % (closed_n, ord_n))
-                    print("     ledger: 111 blocked claims = %d closed + %d to order + 4 held "
-                          "+ 19 register-level" % (closed_n, ord_n))
+                    check("the ledger's five buckets add up to 111 after the fifth batch",
+                          closed_n + ord_n + waived_n + 4 + 19 == 111,
+                          "%d + %d + %d + 4 + 19" % (closed_n, ord_n, waived_n))
+                    print("     ledger: 111 blocked claims = %d closed + %d to order + %d waived "
+                          "+ 4 held + 19 register-level" % (closed_n, ord_n, waived_n))
 
         # supplied_by_author_*.csv - works the author sent on 2026-11-01, each verified page-1
         S = os.path.join(HERE, "supplied_by_author_2026-11-01.csv")
@@ -447,13 +452,70 @@ def main():
         check("the README carries no links, ids or folder names",
               not leak.search(rdm))
         check("the README states the register's blocked total and the four buckets",
-              "111" in rdm and "74" in rdm and "19" in rdm)
+              "111" in rdm and "78" in rdm and "19" in rdm)
         check("the README records the wrong DOI finding",
               "10.1016/j.amc.2020.125934" in rdm and "wrong" in rdm.lower())
         check("the README says how to re-run the checker from its own directory",
               "check_pdfs_needed.py" in rdm and "own directory" in rdm)
         check("the README keeps the frozen-register rule visible",
               "frozen" in rdm.lower() and "`check_reaudit_1.py`" in rdm)
+
+
+    # ---- step 19: the four books of the fifth batch, and the four claims the author waived ----
+    B5 = os.path.join(HERE, "batch5_2026-11-01.csv")
+    RBK = os.path.join(HERE, "SOURCE_READING_books_2026-11-01.csv")
+    WVD = os.path.join(HERE, "waived_by_author_2026-11-01.csv")
+    check("the fifth-batch record exists", os.path.exists(B5))
+    check("the claim-level reading of the books exists", os.path.exists(RBK))
+    check("the waived-claims record exists", os.path.exists(WVD))
+    if os.path.exists(B5) and os.path.exists(RBK) and os.path.exists(WVD):
+        b5 = list(csv.DictReader(open(B5, newline="")))
+        rbk = list(csv.DictReader(open(RBK, newline="")))
+        wvd = list(csv.DictReader(open(WVD, newline="")))
+        check("the fifth batch has one row per file (4)", len(b5) == 4, str(len(b5)))
+        acc = [r for r in b5 if r["matches_a_request_row"].startswith("yes")]
+        rej = [r for r in b5 if r["matches_a_request_row"].startswith("no")]
+        check("three of the four books matched their row, one did not",
+              len(acc) == 3 and len(rej) == 1, "%d vs %d" % (len(acc), len(rej)))
+        check("the book that did not match is named as Parkus, not Nowacki",
+              "Parkus" in rej[0]["work_identified"] and "Nowacki" in rej[0]["note"],
+              rej[0]["work_identified"])
+        check("the Nowacki row is still on the request list",
+              any("Nowacki" in r["authors"] for r in srows))
+        check("the reading covers the four claims of the three accepted books", len(rbk) == 4,
+              str(len(rbk)))
+        check("every book verdict is SUPPORTED", all(r["verdict"] == "SUPPORTED" for r in rbk),
+              str([r["verdict"] for r in rbk]))
+        bad = [r["claim_id"] for r in rbk if not r["evidence_page"].strip()
+               or len(r["evidence_quote"].split()) < 4]
+        check("every book row carries a location and a quote", not bad, str(bad))
+        bad = [r["claim_id"] for r in rbk if len(r["evidence_quote"].split()) > 27]
+        check("no book quote is longer than 27 words", not bad, str(bad))
+        bad = [r["claim_id"] for r in rbk if r["claim_id"] not in reg]
+        check("book rows name only real register claims", not bad, str(bad))
+        still = [r["claim_id"] for r in rbk
+                 if r["claim_id"] in {c for s in srows for c in s["claim_ids"].split()}]
+        check("no claim read from a book is still on the request list", not still, str(still))
+        check("the Tzou rows carry the edition caveat",
+              len([r for r in rbk if "second edition" in r["what_source_actually_states"]]) == 2,
+              str([r["claim_id"] for r in rbk if "second edition" in r["what_source_actually_states"]]))
+        check("the Boley row says the edition has no page numbers",
+              any("no page numbers" in r["evidence_page"] for r in rbk))
+        bad = [r["claim_id"] for r in rbk if re.search(r"\.zip|google_drive|\.pdf|\.epub", " ".join(r.values()))]
+        check("the book reading names no file or folder", not bad, str(bad))
+
+        check("four claims were waived by the author", len(wvd) == 4, str(len(wvd)))
+        check("the waived claims are register claims that are still blocked",
+              all(r["claim_id"] in SNA for r in wvd), str([r["claim_id"] for r in wvd]))
+        check("no waived claim is still on the request list",
+              not ({r["claim_id"] for r in wvd} & {c for s in srows for c in s["claim_ids"].split()}))
+        check("every waived row says what has to happen to the sentence",
+              all(len(r["what_the_author_must_do"].split()) > 8 for r in wvd))
+        check("every waived row records who waived it and when",
+              all("2026-11-01" in r["why_waived"] for r in wvd))
+        bad = [r["claim_id"] for r in wvd if re.search(r"\.zip|google_drive|https?://", " ".join(r.values()))]
+        check("the waived record carries no links", not bad, str(bad))
+        print("     fifth batch: 4 books, 3 accepted, 1 was Parkus; 4 claims closed, 4 waived")
 
     print("     needed=%d (top-20 cut), archive-held=%d, library-held=%d, findings=%d"
           % (len(rows), len(hrows), len(arows), len(frows)))
