@@ -125,6 +125,35 @@ def main():
     arows = list(csv.DictReader(open(AVAIL, newline="")))
     check("the in-library list has one row per key",
           len({r["bib_key"] for r in arows}) == len(arows))
+
+    # sources_still_needed_full.csv - the complete, de-duplicated request list (Step 7)
+    F = os.path.join(HERE, "sources_still_needed_full.csv")
+    if os.path.exists(F):
+        srows = list(csv.DictReader(open(F, newline="")))
+        check("full request list header",
+              list(srows[0].keys()) == ["rank", "citation", "doi", "claims_blocked",
+                                        "claim_ids", "availability"],
+              str(list(srows[0].keys())))
+        check("full request list ranks run 1..n",
+              [int(r["rank"]) for r in srows] == list(range(1, len(srows) + 1)))
+        check("full request list has no duplicate citation",
+              len({r["citation"].lower() for r in srows}) == len(srows), "duplicates present")
+        check("full request list has no repeated work (same DOI twice)",
+              len({r["doi"] for r in srows if r["doi"]}) == sum(1 for r in srows if r["doi"]))
+        bad = [r["rank"] for r in srows if r["doi"] and not doiok.match(r["doi"])]
+        check("full request list DOIs are DOI-shaped or empty", not bad, str(bad[:5]))
+        bad = [r["rank"] for r in srows if leak.search(" ".join(r.values()))]
+        check("full request list has no URLs or Drive links", not bad, str(bad[:5]))
+        reg = {r["claim_id"]: r for r in csv.DictReader(
+            open(os.path.join(HERE, "..", "..", "claim_register.csv"), newline=""))}
+        bad = [c for r in srows for c in r["claim_ids"].split() if c not in reg]
+        check("full request list names only real register rows", not bad, str(bad[:5]))
+        bad = [c for r in srows for c in r["claim_ids"].split()
+               if reg[c]["verdict"] != "SOURCE NOT AVAILABLE"]
+        check("full request list names only claims that are still unavailable", not bad,
+              str(bad[:5]))
+        print("     full request list=%d rows (%d with a DOI)"
+              % (len(srows), sum(1 for r in srows if r["doi"])))
     print("     needed=%d (top-20 cut), archive-held=%d, library-held=%d, findings=%d"
           % (len(rows), len(hrows), len(arows), len(frows)))
 

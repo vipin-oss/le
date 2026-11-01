@@ -73,6 +73,16 @@ TPL (CR063-CR065).
 ## 7. State of the deliverables
 
 * `pdfs_needed_from_author.csv` - **1 row** (Tzou1997), and the checker enforces that reduction.
+  That file is only the top-20 cut, so it is not the whole story: the register still carries **93
+  distinct works** at SOURCE NOT AVAILABLE, of which six turned out to be already held (see below).
+* `sources_still_needed_full.csv` - **87 rows**, the complete de-duplicated request list: every work
+  that is still genuinely missing, one row per work, with the DOI the register carries where it has
+  one. Six register entries were removed from it as false needs, each verified during this pass as
+  already held: Chandrasekharaiah 1996 (J. Thermal Stresses 19, 267); Li, Zhang, Li and He 2019;
+  Marchand, McDevitt and Triggiani 2012; Quintanilla 2003 (J. Thermal Stresses 26, 713); Singh, Pal
+  and Barman 2020 (J. Thermal Stresses 43); and a duplicate Tzou 1997 entry. The checker now polices
+  this file too: unique citations, no DOI twice, DOI-shaped or empty, no links, and every claim id a
+  register row that is still unavailable.
 * `library_available_sources.csv` - 34 rows; the nineteen new works are listed there with their claims.
 * `step7_reference_set_pass.md` - the file-by-file account of what arrived and what it settled.
 * Checkers: `check_claim_check_B.py` PASS (667 rows), `check_claim_check_C.py` PASS (63 rows),
