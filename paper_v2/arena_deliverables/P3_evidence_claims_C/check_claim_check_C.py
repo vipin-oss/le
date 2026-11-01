@@ -68,7 +68,10 @@ def main():
                 check(len(d["what_source_actually_states"]) > 40, f"{cid}: blocked row lacks a stated reason")
             else:
                 check(d["source_page_or_equation"] not in ("", "-"), f"{cid}: no page/equation locator")
-                check(re.search(r"p\.\s?\d", d["source_page_or_equation"]) is not None,
+                # a page number is arabic, or a roman numeral for front matter (p. v, p. xi):
+                # a book's preface really is paginated, and refusing roman numbers would
+                # force either an invented arabic page or a false "not read".
+                check(re.search(r"p\.\s?(\d+|[ivxlc]+)\b", d["source_page_or_equation"]) is not None,
                       f"{cid}: locator has no page number")
             check(re.search(r"CR\d{3}", d["notes"]) is not None or True, "")
             # the register record named in the statement/notes must exist and agree on DOI

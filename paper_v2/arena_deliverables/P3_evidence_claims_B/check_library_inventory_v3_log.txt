@@ -1,0 +1,25 @@
+PASS header: 7 columns in the declared order
+PASS rows: 117 files, names unique
+PASS statuses: match=63 no-key=33 mismatch=20 NOT-READ=1
+PASS traps: ezzat2011 mismatched, 2ndSoundSolids = Chester1963, the over-cap book NOT READ
+PASS hygiene: no link, no Drive id, no source-library folder name
+FAIL quintanilla2008.pdf: non-match rows carry no key
+FAIL tzou1995.pdf: non-match rows carry no key
+FAIL WITHDRAWN--Front-Matter_1975_Wave-Propagation-in-Elastic-Solids.pdf: non-match rows carry no key
+FAIL WITHDRAWN--Copyright_1975_Wave-Propagation-in-Elastic-Solids.pdf: non-match rows carry no key
+FAIL WITHDRAWN--Dedication_1975_Wave-Propagation-in-Elastic-Solids.pdf: non-match rows carry no key
+FAIL WITHDRAWN--PREFACE_1975_Wave-Propagation-in-Elastic-Solids.pdf: non-match rows carry no key
+FAIL WITHDRAWN--INTRODUCTION_1975_Wave-Propagation-in-Elastic-Solids.pdf: non-match rows carry no key
+FAIL WITHDRAWN--SUBJECT-INDEX_1975_Wave-Propagation-in-Elastic-Solids.pdf: non-match rows carry no key
+FAIL WITHDRAWN--AUTHOR-INDEX_1975_Wave-Propagation-in-Elastic-Solids.pdf: non-match rows carry no key
+FAIL CHAPTER-1---WITHDRAWN--ONE-DIMENSIONAL-MOTION-O_1975_Wave-Propagation-in-Ela.pdf: non-match rows carry no key
+FAIL CHAPTER-2---WITHDRAWN--THE-LINEARIZED-THEORY-_1975_Wave-Propagation-in-Elast.pdf: non-match rows carry no key
+FAIL CHAPTER-3---WITHDRAWN--ELASTODYNAMIC-THE_1975_Wave-Propagation-in-Elastic-So.pdf: non-match rows carry no key
+FAIL CHAPTER-4---WITHDRAWN--ELASTIC-WAVES-IN-AN-UN_1975_Wave-Propagation-in-Elast.pdf: non-match rows carry no key
+FAIL CHAPTER-5---WITHDRAWN--PLANE-HARMONIC-WAVES-IN-_1975_Wave-Propagation-in-Ela.pdf: non-match rows carry no key
+FAIL CHAPTER-6---WITHDRAWN--HARMONIC-WAVES-IN-W_1975_Wave-Propagation-in-Elastic-.pdf: non-match rows carry no key
+FAIL CHAPTER-7---WITHDRAWN--FORCED-MOTIONS-OF-A-_1975_Wave-Propagation-in-Elastic.pdf: non-match rows carry no key
+FAIL CHAPTER-8---WITHDRAWN--TRANSIENT-WAVES-IN-LA_1975_Wave-Propagation-in-Elasti.pdf: non-match rows carry no key
+FAIL CHAPTER-9---WITHDRAWN--DIFFRACTION-OF-WAVES_1975_Wave-Propagation-in-Elastic.pdf: non-match rows carry no key
+FAIL CHAPTER-10---WITHDRAWN--THERMAL-AND-VISCOELASTIC-EFFE_1975_Wave-Propagation-.pdf: non-match rows carry no key
+FAIL ezzat2011.pdf: non-match rows carry no key
