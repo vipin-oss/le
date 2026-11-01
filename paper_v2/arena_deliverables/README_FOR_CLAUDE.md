@@ -251,6 +251,19 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 33:** the last open claim's book arrived. Born and Huang, *Dynamical Theory of Crystal Lattices* (1954),
+  was read on printed pp. 55-57 and p. 79 as page images - `P3_evidence_claims_B/BORN_HUANG_1954_READ_2026-11-01.csv`,
+  eleven rows, with a `.md` readout. It settles two of the three things CR181 needed: §5 credits the chain model
+  "due originally to Born and Kármán" and its footnote prints *Phys. Zeit.* **13**, 297 (1912), i.e. the
+  attribution and the reference survive; and eq. (5.9) prints the exact dispersion whose equal-mass limit is the
+  manuscript's formula (limit vs (5.9): 3.6e-15; limit's long-wave coefficient vs the book's own p. 57 value:
+  7e-09; the manuscript's `omega = 2 sqrt(kappa_s/m) abs(sin(ka/2))`: 8.9e-16 over 500 wavelengths). It does not
+  settle the third: **the book never displays the monatomic formula** - §5 is titled "Vibrations of a diatomic
+  chain" and the equal-mass case appears only as a limit - and the 1912 note itself is still unread. So CR181 is
+  recorded as **PARTLY SUPPORTED** (not written into the register, which keeps its verdict column) and the fix is
+  a citation change: the book for the formula, 1912 for the model, exactly as the book's footnote does. The
+  request-list row stays, for a direct quotation only, and now says so in both the CSV and the mirror.
+
 - **Step 32:** the 34 partly supported claims each got a decision. `P3_evidence_claims_B/PARTLY_SUPPORTED_EDIT_SHEET_2026-11-01.csv`
   (34 rows, 14 columns) and its `.md` mirror carry, per claim, the sentence as written, the register's recorded
   finding, a **gap code**, an **action code**, what would close it and a priority: **21 mandatory, 13 optional**.

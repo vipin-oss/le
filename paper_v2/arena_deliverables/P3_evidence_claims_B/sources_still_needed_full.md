@@ -8,6 +8,30 @@ the fifth sentence through its co-cited companion. **One work is left, carrying 
 |---|---|---|---|---|---|---|
 | 1 | Born and von Karman 1912 | *Über Schwingungen in Raumgittern* | On vibrations in space lattices | the exact chain dispersion relation omega = 2 sqrt(kappa_s/m) abs(sin(ka/2)) | print only - Physikalische Zeitschrift 13, 297-309; no publisher record, no scan found | none |
 
+## What arrived on 2026-11-01 (step 33)
+
+**The related book came, and it settles the claim at one remove.** *Dynamical Theory of Crystal Lattices*
+(Born and Huang, Clarendon Press 1954) was supplied and read on its printed pp. 55-57 and p. 79. Three
+findings, all from pages read as images rather than as extracted text:
+
+- the section that introduces the linear-chain model says it is "a simple model due originally to Born and
+  Kármán", and its footnote prints the citation exactly as the manuscript uses it: *Phys. Zeit.* **13**, 297
+  (1912). So **the attribution survives**, and the first page 297 is confirmed by a held source rather than
+  by citing records;
+- eq. (5.9) on p. 56 prints the exact dispersion of the model, and the equal-mass limit of that equation is
+  the manuscript's relation. The limit was computed and checked: it reproduces the book's own long-wave
+  coefficient printed on p. 57 to 1e-10, and the manuscript's `omega = 2 sqrt(kappa_s/m) abs(sin(ka/2))`
+  to 1.3e-15 over 500 random wavelengths;
+- **but the book never displays the monatomic formula as such.** §5 is titled "Vibrations of a diatomic
+  chain"; the equal-mass case appears only as a limit and, on p. 79, in words ("the lattice behaves somewhat
+  like a monatomic solid with one atom to each cell").
+
+Hence CR181 is recorded as **PARTLY SUPPORTED**, not SUPPORTED: the model, the attribution and the
+derivation are now all backed by a held source, while the 1912 note itself is still unread. The clean
+citation is the book for the formula and the 1912 note for the model. Details, page by page:
+`BORN_HUANG_1954_READ_2026-11-01.csv`. The row above stays on this list for one reason only - a direct
+quotation of the 1912 note still needs the 1912 note.
+
 ## The note behind the title
 
 - **Born and von Karman 1912** - Physikalische Zeitschrift 13, 297-309 (1912), title as printed in Born
