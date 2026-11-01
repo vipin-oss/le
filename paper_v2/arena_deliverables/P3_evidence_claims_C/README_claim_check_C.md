@@ -279,3 +279,20 @@ and CR175 is resolved. CR210 (Singh, Sarkar and Pal, J. Heat Transfer 2020) rema
 The lesson, recorded here so it is not repeated: a DOI-only sweep misses a paper whose first page does
 not print its DOI, and the inventory's `matched_bib_key` already knew the answer. Surname matching was
 not the problem; trusting a single look-alike file was.
+
+
+## Batch 007 (Step 7, 2026-11-01) - the author's reference set
+
+Thirty-two register rows were checked against the nineteen PDFs the author supplied, all of them
+previously `SOURCE NOT AVAILABLE`. Rows CC-0032 to CC-0063. Result: **SUPPORTED 15, PARTLY SUPPORTED 15,
+NOT SUPPORTED 2**. The C series is now 63 rows: SUPPORTED 35, PARTLY 23, NOT SUPPORTED 3, SOURCE NOT
+AVAILABLE 2 (CR044 and CR210).
+
+The batch includes the reversal of a Step-5 conclusion: **CR019 is SUPPORTED at R3** (CC-0036), because
+the supplied file is the real Quintanilla (2008) end-effects paper, Applicable Analysis 87:8, 943-955.
+The two NOT SUPPORTED rows are CR134 and CR200, both flagged for the author in
+`../P3_evidence_claims_B/SUMMARY_step7.md`.
+
+Same discipline as every earlier batch: a page number for every row that is not blocked, a quoted
+wording of 25 words or fewer, and no Drive identifier, link or folder name anywhere. The file-by-file
+account of the nineteen sources is in `../P3_evidence_claims_B/step7_reference_set_pass.md`.

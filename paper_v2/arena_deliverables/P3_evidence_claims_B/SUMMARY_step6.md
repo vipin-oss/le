@@ -1,5 +1,11 @@
 # Where the evidence work now stands - short summary
 
+> **Superseded in one respect - 2026-11-01.** This file describes the state at the end of the six-step
+> run. The author then supplied a reference set containing nineteen of the twenty outstanding sources,
+> including the real Quintanilla (2008) end-effects paper, so the CR019 line below is withdrawn and the
+> numbers have moved. Read `SUMMARY_step7.md` for the current position; the CR019 correction is written
+> out in `step5_source_not_available_final.md`.
+
 Written at the end of the six-step run. All numbers are read off the deliverable CSVs in this folder
 and in `../P3_evidence_claims_C`, not from memory.
 
@@ -33,8 +39,9 @@ Two counts, because they answer two different questions.
   the claim-check-C batches; the other 115 have never been through a claim check at all, because they
   sit in sections that the earlier passes did not reach. Two of them - **CR019** (Quintanilla 2008,
   end effects) and **CR044** (Sherief, El-Sayed and Abd El-Latief 2010) - were searched for one last
-  time in Step 5 and are now closed as "source not available" with the final wording written out in
-  `step5_source_not_available_final.md`.
+  time in Step 5 with the final wording written out in `step5_source_not_available_final.md`.
+  **Correction, Step 7:** CR019 was resolved - the author supplied the paper and it is supported at R3
+  (CC-0036). Only CR044 still stands.
 
 So: **221 claim-check rows** and **115 register rows** still carry SOURCE NOT AVAILABLE, and the
 difference between the two numbers is the 115 register rows still waiting for their first claim check.
@@ -74,3 +81,6 @@ for those two authors' papers clears most of the list.
 * **Step 5** - Sherief et al. (2010) and Quintanilla (2008) searched once more and closed with final
   wording; the Quintanilla file in the folder is a different paper by Quintanilla and Racke.
 * **Step 6** - this summary.
+* **Step 7** (2026-11-01) - the author's reference set: nineteen of the twenty sources identified and
+  read, 32 register rows checked, CR019 reversed, the needed list cut to one row. See
+  `SUMMARY_step7.md` and `step7_reference_set_pass.md`.
