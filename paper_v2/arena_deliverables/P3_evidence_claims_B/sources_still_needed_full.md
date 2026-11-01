@@ -1,8 +1,8 @@
 # Sources still needed - the complete list, with titles and checked DOIs
 
-Re-checked against Drive on 2026-11-01. 80 works remain, one row each. Each title is the one the record itself carries (Crossref for a DOI, the book page for a book); 76 rows carry a title and 4 say plainly that no title could be read. Of the 70 DOIs, 69 resolve to the cited work and 1 does not; 10 works have no DOI.
+Updated 2026-11-01 after the author supplied the 41-80 batch. **48 works remain**, one row each. Each title is the one the record itself carries (Crossref for a DOI, the book page for a book); 44 rows carry a title and 4 say plainly that no title could be read. Of the 38 DOIs, 38 resolve to the cited work and 0 does not; 10 works have no DOI.
 
-**Nothing on this list is already in hand.** Seven further works were found inside Drive in the 2026-11-01 re-check and have been removed: Abouelregal 2020 (Indian J. Phys. 94), Eringen, *Nonlocal Continuum Field Theories* (2004 printing), Gurtin and Williams 1966 (ZAMP 17, 626), Muller and Ruggeri, *Rational Extended Thermodynamics*, Povstenko, *Fractional Thermoelasticity* (2015), Rayleigh 1885 (Proc. LMS s1-17) and Sarkar, De and Sarkar 2019 (J. Thermal Stresses 42:9). Each was opened and identified on its own title or first page before it was taken off the list.
+**Received on 2026-11-01 and struck off:** 31 works from the 41-80 batch, each opened and identified on its own first page (rows 44-48, 50-60, 62-69, 71 and 75-80 of the previous list) - they free 31 blocked claims. One further row (the second "van der Merwe, van Rensburg and Sieberhagen 2021" entry) was retired as a duplicate: its DOI resolves to an unrelated graph-theory paper, and the supplied file for that number was that unrelated paper.
 
 | # | Title | Citation as the manuscript carries it | DOI | DOI checked |
 |---|---|---|---|---|
@@ -49,43 +49,11 @@ Re-checked against Drive on 2026-11-01. 80 works remain, one row each. Each titl
 | 41 | Rayleigh-type waves in nonlocal micropolar thermoelastic half-space containing void pores | Kumar and Tomar 2024 (J. Elasticity 156) | 10.1007/s10659-024-10079-4 | yes |
 | 42 | no title asserted - not recorded in the register and not matched in Crossref | Kumar, Devi and Sharma 2017 (Appl. Appl. Math. Int. J.) | none | - |
 | 43 | Response of memory to the imperfect fluid-double porous non-local thermoelastic solid interface | Kumar, Gupta, Pathania and Barak 2025 (J. Information and Optimization Sciences 46) | 10.47974/JIOS-1608 | yes |
-| 44 | Thermoelastic damping in micro- and nanomechanical systems | Lifshitz and Roukes 2000 (Phys. Rev. B 61, 5600) | 10.1103/PhysRevB.61.5600 | yes |
-| 45 | Some uniqueness and existence results for the initial-boundary-value problems for the generalized time-fractional diffusion equation | Luchko, Y. (2010), Some uniqueness and existence results for the initial-boundary-value problems for the generalized time-fractional diffusion equation, Computers and Mathematics with Applications 59:1766-1772 | 10.1016/j.camwa.2009.08.015 | yes |
-| 46 | Heat pulses in NaF: onset of second sound | McNelly et al. 1970 (Phys. Rev. Lett. 24, 100) | 10.1103/PhysRevLett.24.100 | yes |
-| 47 | Equations of high frequency vibrations of thermopiezoelectric crystal plates | Mindlin 1974 (Int. J. Solids Struct. 10) | 10.1016/0020-7683(74)90047-X | yes |
-| 48 | On the entropy inequality | Muller 1967 (Arch. Rational Mech. Anal. 26, 118-141) | 10.1007/bf00285677 | yes |
-| 49 | Thermoelasticity | Nowacki 1975 (Thermoelasticity, Pergamon) | none | - |
-| 50 | Some general theorems of thermopiezoelectricity | Nowacki 1978 (J. Thermal Stresses 1) | 10.1080/01495737808926940 | yes |
-| 51 | Analysis of tissue and arterial blood temperatures in the resting human forearm | Pennes 1948 (J. Appl. Physiology 1) | 10.1152/jappl.1948.1.2.93 | yes |
-| 52 | Nonlocal elasticity and related variational principles | Polizzotto 2001 (Int. J. Solids Struct. 38) | 10.1016/S0020-7683(01)00039-7 | yes |
-| 53 | Dirichlet problem for time-fractional radial heat conduction in a sphere and associated thermal stresses | Povstenko, Y. Z. (2011), Dirichlet problem for time-fractional radial heat conduction in a sphere and associated thermal stresses, Journal of Thermal Stresses 34:51-67 | 10.1080/01495739.2010.511929 | yes |
-| 54 | On the spatial behavior in thermoelasticity without energy dissipation | Quintanilla 1999 (J. Thermal Stresses 22, 213-224) | 10.1080/014957399280977 | yes |
-| 55 | Thermoelasticity without energy dissipation of materials with microstructure | Quintanilla 2002 (Appl. Math. Modelling 26, 1125-1137) | 10.1016/s0307-904x(02)00078-1 | yes |
-| 56 | Memory-dependent generalized thermoelasticity with finite wave speeds | Sarkar, Banerjee and Shaw 2021 (Mech. Materials 153) | 10.1016/j.mechmat.2020.103655 | yes |
-| 57 | Thermoelasticity and generalized thermoelasticity viewed as wave hierarchies | Scott, N. H. (2008), Thermoelasticity and generalized thermoelasticity viewed as wave hierarchies, IMA Journal of Applied Mathematics 73:123-136 | 10.1093/imamat/hxm010 | yes |
-| 58 | Theory of generalized thermoelasticity with memory-dependent derivatives | Shaw, S. (2019), Theory of generalized thermoelasticity with memory-dependent derivatives, Journal of Engineering Mechanics 145:04019003 | 10.1061/(ASCE)EM.1943-7889.0001569 | yes |
-| 59 | Study of wave propagation in a half-space in the fractional-order theory of thermoelasticity using the new Caputo definition | Sherief, H. H. and Raslan, W. E. (2018), Study of wave propagation in a half-space in the fractional-order theory of thermoelasticity using the new Caputo definition, Mathematics and Mechanics of Solids 24:2083-2095 | 10.1177/1081286518813719 | yes |
-| 60 | Fractional order theory of thermoelasticity | Sherief, H. H., El-Sayed, A. M. A. and Abd El-Latief, A. M. (2010), Fractional order theory of thermoelasticity, International Journal of Solids and Structures 47:269-275 | 10.1016/j.ijsolstr.2009.09.034 | yes |
-| 61 | Temperature-rate-dependent thermoelasticity theory with memory-dependent derivative: energy, uniqueness theorems, and variational principle | Singh, Sarkar and Pal 2020 (J. Heat Transfer 142) | 10.1115/1.4047510 | yes |
-| 62 | Algorithm 368: numerical inversion of Laplace transforms | Stehfest 1970 (Comm. ACM 13) | 10.1145/361953.361969 | yes |
-| 63 | Dislocations and cracks in anisotropic elasticity | Stroh 1958 (Phil. Mag. 3, 625-646) | 10.1080/14786435808565804 | yes |
-| 64 | Steady state problems in anisotropic elasticity | Stroh 1962 (J. Math. Phys. 41, 77-103) | 10.1002/sapm196241177 | yes |
-| 65 | Effects of thermomechanical coupling and relaxation times on wave spectrum in dynamic theory of generalized thermoelasticity | Suh and Burger 1998 (J. Appl. Mech. 65) | 10.1115/1.2789101 | yes |
-| 66 | Fractional order two-temperature thermoelasticity with finite wave speed | Sur, A. and Kanoria, M. (2012), Fractional order two-temperature thermoelasticity with finite wave speed, Acta Mechanica 223:2685-2701 | 10.1007/s00707-012-0736-7 | yes |
-| 67 | Surface generation and detection of phonons by picosecond light pulses | Thomsen, Grahn, Maris and Tauc 1986 (Phys. Rev. B 34) | 10.1103/PhysRevB.34.4129 | yes |
-| 68 | Boundary integral equations formulation for fractional order thermoelasticity | Tiwari and Mukhopadhyay 2014 (Comput. Methods Sci. Technol. 20) | 10.12921/cmst.2014.20.02.49-58 | yes |
-| 69 | On harmonic plane wave propagation under fractional order thermoelasticity: an analysis of fractional order heat conduction equation | Tiwari and Mukhopadhyay 2015 (Math. Mech. Solids 22) | 10.1177/1081286515612528 | yes |
-| 70 | Macro- to microscale heat transfer: the lagging behavior | Tzou, D. Y. (1997), Macro-to-microscale heat transfer: the lagging behavior (book) | none | - |
-| 71 | Comparing the dual phase lag, Cattaneo-Vernotte and Fourier heat conduction models using modal analysis | van der Merwe, A. J., van Rensburg, N. F. J. and Sieberhagen, R. H. (2021), Comparing the dual phase lag, Cattaneo-Vernotte and Fourier heat conduction models, Applied Mathematics and Computation 396:125934 | 10.1016/j.amc.2020.125934 | yes |
-| 72 | Arbitrary partitionability of product graphs | van der Merwe, van Rensburg and Sieberhagen 2021 (Appl. Math. Comput.) | 10.1016/j.amc.2021.126219 | **NO** |
-| 73 | no title asserted - not recorded in the register and not matched in Crossref | Vernotte 1958 | none | - |
-| 74 | Memory-dependent derivative versus fractional derivative (IV): space-dependent derivative for unsteady heat diffusion | Wang, J.-L. and Li, H.-F. (2025), Memory-dependent derivative versus fractional derivative (IV): space-dependent..., Fractal and Fractional 9:794 | 10.3390/fractalfract9120794 | yes |
-| 75 | Time fractional dual-phase-lag heat conduction equation | Xu, H.-Y. and Jiang, X.-Y. (2015), Time fractional dual-phase-lag heat conduction equation, Chinese Physics B 24:034401 | 10.1088/1674-1056/24/3/034401 | yes |
-| 76 | Theory of fractional order generalized thermoelasticity | Youssef, H. M. (2010), Theory of fractional order generalized thermoelasticity, Journal of Heat Transfer 132:061301 | 10.1115/1.4000705 | yes |
-| 77 | Variational principle of fractional order generalized thermoelasticity | Youssef, H. M. and Al-Lehaibi, E. A. (2010), Variational principle of fractional order generalized thermoelasticity, Applied Mathematics Letters 23:1183-1187 | 10.1016/j.aml.2010.05.008 | yes |
-| 78 | A modified Green-Lindsay thermoelasticity with strain rate to eliminate the discontinuity | Yu, Xue and Tian 2018 (Meccanica 53, 2543-2554) | 10.1007/s11012-018-0843-1 | yes |
-| 79 | Fractional order theory of Cattaneo-type thermoelasticity using new fractional derivatives | Yu, Y. J. and Deng, Z. C. (2020), Fractional order theory of Cattaneo-type thermoelasticity using new fractional derivatives, Applied Mathematical Modelling 87:731-751 | 10.1016/j.apm.2020.06.023 | yes |
-| 80 | A novel generalized thermoelasticity model based on memory-dependent derivative | Yu, Y.-J., Hu, W. and Tian, X.-G. (2014), A novel generalized thermoelasticity model based on memory-dependent derivative, International Journal of Engineering Science 81:123-134 | 10.1016/j.ijengsci.2014.04.014 | yes |
+| 44 | Thermoelasticity | Nowacki 1975 (Thermoelasticity, Pergamon) | none | - |
+| 45 | Temperature-rate-dependent thermoelasticity theory with memory-dependent derivative: energy, uniqueness theorems, and variational principle | Singh, Sarkar and Pal 2020 (J. Heat Transfer 142) | 10.1115/1.4047510 | yes |
+| 46 | Macro- to microscale heat transfer: the lagging behavior | Tzou, D. Y. (1997), Macro-to-microscale heat transfer: the lagging behavior (book) | none | - |
+| 47 | no title asserted - not recorded in the register and not matched in Crossref | Vernotte 1958 | none | - |
+| 48 | Memory-dependent derivative versus fractional derivative (IV): space-dependent derivative for unsteady heat diffusion | Wang, J.-L. and Li, H.-F. (2025), Memory-dependent derivative versus fractional derivative (IV): space-dependent..., Fractal and Fractional 9:794 | 10.3390/fractalfract9120794 | yes |
 
 ## Notes carried on individual rows
 
@@ -100,17 +68,16 @@ Re-checked against Drive on 2026-11-01. 80 works remain, one row each. Each titl
 - **#37 Joseph and Preziosi 1990 (Rev. Mod. Phys. 62, 375).** resolves to "Addendum to the paper Heat waves", Rev. Mod. Phys. 62, 375-391 - the review itself is Rev. Mod. Phys. 61, 41 (1989), DOI 10.1103/RevModPhys.61.41
 - **#39 Kaminski 1990 (J. Heat Transfer 112, 555-560).** DOI found by Crossref bibliographic search this pass: J. Heat Transfer 112, 555-560 (1990) matches exactly
 - **#42 Kumar, Devi and Sharma 2017 (Appl. Appl. Math. Int. J.).** no Crossref record could be matched; no title is asserted here
-- **#48 Muller 1967 (Arch. Rational Mech. Anal. 26, 118-141).** DOI found by Crossref bibliographic search this pass: "On the entropy inequality", Arch. Rational Mech. Anal. 26, 118-141 (1967) matches exactly - note this is not Muller's other 1967 paper "Zum Paradoxon der Warmeleitungstheorie", which is Z. Physik 198, 329-344, DOI 10.1007/bf01326412
-- **#49 Nowacki 1975 (Thermoelasticity, Pergamon).** book; Crossref holds chapter-level DOIs for the Pergamon Thermoelasticity dated 1986, so no book DOI is asserted
-- **#51 Pennes 1948 (J. Appl. Physiology 1).** DOI found by Crossref bibliographic search this pass: J. Applied Physiology 1, 93-122 (1948) matches the register
-- **#60 Sherief, H. H., El-Sayed, A. M. A. and Abd El-Latief, A. M. (2010), Fractional order theory of thermoelasticity, Interna.** resolves to Sherief, El-Sayed and Abd El-Latief, "Fractional order theory of thermoelasticity", IJSS 47, 269-275 (2010) - the register carries the page range 585-590, which is wrong
-- **#72 van der Merwe, van Rensburg and Sieberhagen 2021 (Appl. Math. Comput.).** this DOI resolves to Liu, Nurmamat and Zhang, "Arbitrary partitionability of product graphs", Appl. Math. Comput. 408 (2021) - not this work; Crossref finds only one 2021 paper by van der Merwe, van Rensburg and Sieberhagen (10.1016/j.amc.2020.125934), so this row may duplicate it
-- **#73 Vernotte 1958.** no Crossref record could be matched; no title is asserted here
+- **#44 Nowacki 1975 (Thermoelasticity, Pergamon).** book; Crossref holds chapter-level DOIs for the Pergamon Thermoelasticity dated 1986, so no book DOI is asserted
+- **#47 Vernotte 1958.** no Crossref record could be matched; no title is asserted here
 
-## If only a few can be sent, these four first
+## Not supplied in the 41-80 batch (the eight numbers that were absent)
 
-1. Tzou 1997, *Macro- to Microscale Heat Transfer: the lagging behavior*, CRC Press - the one book left on the list.
-2. Chirita, Ciarletta and Tibullo 2017, DOI 10.1016/j.ijheatmasstransfer.2017.06.071.
-3. Singh, Sarkar and Pal 2020, J. Heat Transfer 142, DOI 10.1115/1.4047510.
-4. Sherief, El-Sayed and Abd El-Latief 2010, IJSS 47, 269-275, DOI 10.1016/j.ijsolstr.2009.09.034.
+Kumar and Tomar 2024 (J. Elasticity 156); Kumar, Devi and Sharma 2017 (Appl. Appl. Math. Int. J.); Kumar, Gupta, Pathania and Barak 2025 (J. Information and Optimization Sciences 46); Nowacki 1975, *Thermoelasticity* (Pergamon); Singh, Sarkar and Pal 2020 (J. Heat Transfer 142); Tzou 1997, *Macro- to Microscale Heat Transfer*; Vernotte 1958; Wang and Li 2025 (Fractal Fract. 9, 794).
+
+## If only a few more can be sent, these three first
+
+1. Tzou 1997, *Macro- to Microscale Heat Transfer: the lagging behavior*, CRC Press - two blocked claims hang on it (CR002, CR112).
+2. Singh, Sarkar and Pal 2020, J. Heat Transfer 142, DOI 10.1115/1.4047510 (CR210).
+3. Chirita, Ciarletta and Tibullo 2017, DOI 10.1016/j.ijheatmasstransfer.2017.06.071 - not part of the 41-80 range, so still open.
 

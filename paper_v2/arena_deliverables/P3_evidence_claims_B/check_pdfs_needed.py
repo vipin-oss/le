@@ -194,6 +194,39 @@ def main():
             check("no work that is held in Drive is still on the request list", not still,
                   str(still[:5]))
             print("     Drive-held and struck off=%d" % len(drows))
+
+        # supplied_by_author_*.csv - works the author sent on 2026-11-01, each verified page-1
+        S = os.path.join(HERE, "supplied_by_author_2026-11-01.csv")
+        check("the author-supplied record exists", os.path.exists(S))
+        if os.path.exists(S):
+            prows = list(csv.DictReader(open(S, newline="")))
+            check("author-supplied header",
+                  list(prows[0].keys()) == ["work", "title", "doi", "pages_in_file",
+                                            "read_on_file", "received", "status",
+                                            "claims_blocked", "claim_ids"],
+                  str(list(prows[0].keys())))
+            check("one author-supplied row per work",
+                  len({r["work"].lower() for r in prows}) == len(prows))
+            check("every supplied file was opened and read",
+                  all(r["read_on_file"].strip() and int(r["pages_in_file"]) > 0 for r in prows),
+                  str([r["work"] for r in prows if not r["read_on_file"].strip()]))
+            check("every supplied row says the work left the request list",
+                  all("removed from the request list" in r["status"] for r in prows),
+                  str([r["work"] for r in prows if "removed" not in r["status"]]))
+            bad = [r["work"] for r in prows if leak.search(" ".join(r.values()))]
+            check("the author-supplied record has no URLs, ids or folder names", not bad,
+                  str(bad[:5]))
+            bad = [r["work"] for r in prows if "Reference List" in " ".join(r.values())
+                   or re.search(r"Paper \d+", " ".join(r.values()))]
+            check("the author-supplied record does not name the uploaded file", not bad,
+                  str(bad[:5]))
+            asked = {r["doi"].lower() for r in srows if r["doi"]}
+            still = [r["work"] for r in prows
+                     if (r["doi"] != "none" and r["doi"].lower() in asked)
+                     or r["title"].lower() in {x["title"].lower() for x in srows}]
+            check("no supplied work is still on the request list", not still, str(still[:5]))
+            print("     supplied by the author and struck off=%d (%s blocked claims freed)"
+                  % (len(prows), sum(len(r["claim_ids"].split()) for r in prows)))
     print("     needed=%d (top-20 cut), archive-held=%d, library-held=%d, findings=%d"
           % (len(rows), len(hrows), len(arows), len(frows)))
 
