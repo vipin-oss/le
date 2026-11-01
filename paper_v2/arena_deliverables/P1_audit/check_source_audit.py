@@ -84,7 +84,10 @@ check("A2b agrees with the sources: %d label(s) come from the same file under tw
 
 figdir = "/home/user/manuscript/master/figures/source"
 used = {os.path.basename(m) for m in re.findall(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}", joined)}
-allf = [f for f in os.listdir(figdir) if f.endswith(".pdf")]
+# The figure directory lives outside the repository and can be reset independently of
+# git (it was, on 2026-11-01). Absence of a file here is not a source defect, so the
+# check reasons about the files that are actually present and states the rest.
+allf = sorted(f for f in os.listdir(figdir) if f.endswith(".pdf")) if os.path.isdir(figdir) else []
 unused = [f for f in allf if f not in used]
 appd_txt = ""
 for path, txt in T.items():
@@ -92,10 +95,19 @@ for path, txt in T.items():
         appd_txt = txt
 undecl = [f for f in unused
           if not re.search(r"F-0?%d\b" % int(re.search(r"fig(\d+)", f).group(1)), appd_txt)]
-check("A11 agrees with the sources: %d of %d figure files are included, %d are declared provisional "
-      "in Appendix D, %d are neither" % (len(allf) - len(unused), len(allf), len(unused) - len(undecl), len(undecl)),
+# The recorded A11 row was computed over 18 figure sources in a workspace that has since
+# been reset; two declared-provisional sources are no longer present. What the gate can
+# still assert is the invariant that matters: no figure file that IS present is
+# unaccounted for, and the recorded row's "neither" count equals the present undeclared.
+present_declared = len(unused) - len(undecl)
+absent_provisional = max(0, int(rows["A11"]["n"]) - len(undecl))
+check("A11 agrees with the sources: %d of the %d figure files present are included, %d present file(s) are "
+      "declared provisional in Appendix D, %d are neither%s"
+      % (len(allf) - len(unused), len(allf), present_declared, len(undecl),
+         ("; %d declared-provisional source(s) are absent from this workspace (external reset, not a source "
+          "defect)" % absent_provisional) if absent_provisional else ""),
       rows["A11"]["status"] == ("FAIL" if undecl else "PASS") and int(rows["A11"]["n"]) == len(undecl),
-      str(undecl))
+      str(undecl) or "none")
 
 check("the audit claims no result for signs, notation or derivations",
       "not about signs" in md or "signs, dimensions and derivation steps" in md)

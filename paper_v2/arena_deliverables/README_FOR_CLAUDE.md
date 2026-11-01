@@ -644,6 +644,16 @@ Two hard facts, recorded so nobody spends an hour rediscovering them:
 
 ---
 
+## 12b. Workspace reset, 2026-11-01 (evening)
+
+The external workspace (`/home/user/manuscript`, never in git) was reset: the compiled PDFs and the 18 figure
+sources were lost. The 16 shipped figures were restored from the submission zip; fig07 and fig18 are declared
+provisional in Appendix D, were never tracked, and are **not recoverable** from this repository. The local git
+history was also rolled back to the base commit and restored with `git fetch origin arena/9b458c54-le` +
+`git reset --hard FETCH_ORIG`, so the remote branch is authoritative — fetch before trusting local `HEAD`.
+`P1_audit/check_source_audit.py` was made workspace-aware as a result: a figure file that is *absent* is reported
+as absent from this workspace, while a figure file that is *present but unaccounted for* still fails the gate.
+
 ## 13. Page-level audit of the compiled v1.2 build (added 2026-11-01)
 
 The author compiled v1.2 himself and the PDF was measured against the sources it came from. Method and
