@@ -74,3 +74,45 @@ python3 check_atlas_benchmarks.py       # PASS all checks (rows=40, benchmarks=8
 `bench_atlas.py` needs numpy (like the rest of the project's scripts); the two
 checkers are standard library only. Nothing under `scripts/` is imported, run or
 modified.
+
+---
+
+## BK-09 and the coverage map (added 2026-11-01)
+
+Two gaps were fixed here, and one wrong number.
+
+**The wrong number.** "8 of 40 cases carried through to results" appeared in the readiness note and
+the pending list. It was wrong twice: the eight rows in `bench_atlas_results.csv` are *benchmark
+families* (BK-01 ... BK-08), not atlas cases, and no case can have a case-level result because every
+paper in the plan was read at title and metadata level only. The honest statement is now in both
+documents and enforced by their checkers: **40 cases planned, 12 with a fully executable invariant,
+11 with a partial one, and 0 case-level results.**
+
+**The missing surface family.** The plan has eight wave families; the benchmarks covered bulk and
+damping only. `bench_surface.py` adds **BK-09**, the elastic Rayleigh invariant, from the secular
+equation `(2 - x^2)^2 = 4 sqrt(1 - x^2) sqrt(1 - eta x^2)` with `x = c_R/c_S` and
+`eta = (c_S/c_L)^2`. Six checks, all passing, and two of them are anchors against the classical
+table rather than self-consistency: the incompressible limit comes out at **0.955300 c_S** (classical
+0.9553) and the quarter-ratio value at **0.919402 c_S** (classical 0.9194). Uniqueness, the residual
+(1e-13), the range and monotonicity in Poisson's ratio are checked as well.
+
+**The coverage map.** `atlas_case_coverage.csv` has one row for each of the 40 planned cases, saying
+which invariant applies, whether it is executable today, and - where it is not - the invariant that is
+missing, named as BK-10 ... BK-15 with the closed form it has to satisfy:
+
+| missing | needed for | cases |
+|---|---|---|
+| BK-10 thermoelastic Rayleigh secular determinant | surface (Rayleigh) beyond the elastic limit | 6 (partial today) |
+| BK-11 branch-count invariant for m > 2 | double-porosity models, which have a third branch | 5 (partial today) |
+| BK-12 Rayleigh-Lamb plate determinant and its A0/S0 limits | Lamb / plate | 4 |
+| BK-13 layered Love-wave cut-offs | shear / SH | 3 |
+| BK-14 Snell plus energy-flux continuity | interface / layered | 4 |
+| BK-15 coupled piezo/magneto branch speeds | multifield | 6 |
+
+That is the atlas roadmap in one page: write five invariants, then the 17 uncovered cases become
+checkable, and only after the papers are read can any of them become a comparison with a paper.
+
+```bash
+python3 bench_surface.py     # recomputes BK-09 and the coverage map
+python3 check_surface.py     # PASS all checks (BK-09=6 rows, coverage=12/11/17 of 40)
+```

@@ -251,6 +251,17 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 27:** the atlas was measured instead of counted loosely. The old line "8 of 40 cases carried
+  through to results" was wrong twice: the eight rows in the benchmark file are *families* (BK-01 to BK-08),
+  not cases, and no case can have a result while every paper is read at title level. The truthful numbers,
+  now enforced by both document checkers: **40 cases planned, 12 with a fully executable invariant, 11 with a
+  partial one, 0 case-level results**. `P3_atlas/bench_surface.py` then added the missing **BK-09**, the elastic
+  Rayleigh invariant, with six checks - and it lands on two independent anchors, 0.955300 c_S in the
+  incompressible limit (classical 0.9553) and 0.919402 c_S at Poisson ratio 1/4 (classical 0.9194). And
+  `atlas_case_coverage.csv` gives every one of the 40 cases a row: which invariant applies, whether it runs
+  today, and for the 17 that have none, the exact invariant that is missing (BK-10 to BK-15, listed with the
+  closed form each has to satisfy). That is the atlas roadmap: five invariants, then 17 cases, then the papers.
+
 - **Step 26:** the agent's own queue from the pending list was worked. Three things happened.
   (1) **The register grew from 119 rows to 204**: every bibkey in the repository's three bibliography files
   that had no verification row now has one - 86 keys were missing, 85 carried a DOI, and all 85 were checked
@@ -317,6 +328,16 @@ because it embeds a link). **The checker does not open the PDF** - it only reads
 rebuild the PDF has to be verified by hand: extract its text with `pypdf` and confirm it is one page, that the
 single open work is printed with its note, that every DOI or ISBN on it still matches
 `related_books_2026-11-01.csv`, and that the numbers agree with the CSV. That was done in step 21.
+
+### The atlas checkers
+
+```bash
+cd paper_v2/arena_deliverables/P3_atlas && python3 bench_surface.py && python3 check_surface.py; echo "exit=$?"
+```
+
+`bench_surface.py` recomputes BK-09 and rewrites `atlas_case_coverage.csv`; `check_surface.py` must end with
+`PASS all checks (BK-09=6 rows, coverage=12/11/17 of 40)` and exit 0. `check_atlas_benchmarks.py` and
+`check_atlas_plan.py` stay as they were (40 rows, 8 families, 8 benchmarks).
 
 ### The pending-list checker
 

@@ -102,8 +102,13 @@ plan = rows(os.path.join(HERE, "P3_atlas", "atlas_plan.csv"))
 bres = rows(os.path.join(HERE, "P3_atlas", "bench_atlas_results.csv"))
 bench = rows(os.path.join(PAPER, "benchmark_registry.csv"))
 si = rows(os.path.join(HERE, "P4_second_impl", "second_impl_comparison.csv"))
-check("the atlas counts are printed (%d, %d)" % (len(plan), len(bres)),
-      "**%d cases planned, %d carried through to results**" % (len(plan), len(bres)) in txt)
+cov = rows(os.path.join(HERE, "P3_atlas", "atlas_case_coverage.csv"))
+cfull = sum(1 for r in cov if r["coverage"] == "yes")
+cpart = sum(1 for r in cov if r["coverage"] == "partial")
+check("the atlas plan, its executable coverage and the absence of case results are printed (%d, %d, %d)"
+      % (len(plan), cfull, cpart),
+      "**%d cases planned**, **%d with a fully executable invariant** and **%d partial**"
+      % (len(plan), cfull, cpart) in txt)
 check("the benchmark count is printed (%d)" % len(bench),
       "**%d benchmark records**" % len(bench) in txt)
 check("the second-implementation count is printed (%d)" % len(si),
@@ -137,10 +142,11 @@ print("     gates: 11a %d/%d, 11b %d/%d | claims %d (NOT SUPPORTED %d, PARTLY %d
       % (a_x, a_x + a_o, b_x, b_x + b_o, len(clm), cv["NOT SUPPORTED"], cv["PARTLY SUPPORTED"]))
 print("     registers: %d rows (R0 %d, %d keys), catalogue %d (R0 %d)"
       % (len(ver), lv["R0"], uniq, len(cat), cl["R0"]))
-print("     artefacts: atlas %d/%d, benchmarks %d, second impl %d, defects %d open, edits %d"
-      % (len(bres), len(plan), len(bench), len(si), dopen, len(es)))
+print("     artefacts: atlas %d planned (%d full, %d partial, 0 case results), benchmarks %d,"
+      " second impl %d, defects %d open, edits %d"
+      % (len(plan), cfull, cpart, len(bench), len(si), dopen, len(es)))
 if fails:
     print("FAIL %d check(s) failed" % len(fails))
     sys.exit(1)
-print("PASS all checks (gates=6, 11b=%d of %d, R0=%d, atlas=%d of %d)"
-      % (b_x, b_x + b_o, lv["R0"], len(bres), len(plan)))
+print("PASS all checks (gates=6, 11b=%d of %d, R0=%d, atlas=%d/%d/%d of %d)"
+      % (b_x, b_x + b_o, lv["R0"], cfull, cpart, len(cov) - cfull - cpart, len(plan)))

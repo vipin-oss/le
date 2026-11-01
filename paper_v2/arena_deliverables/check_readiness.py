@@ -138,8 +138,13 @@ def main():
     check("the catalogue levels add up", cR0 + cR1 + cR2 == len(cat), str(len(cat)))
 
     # ---- 5. build artefacts ----
-    check("the note prints the atlas plan and its results (%d, %d)" % (len(plan), len(bres)),
-          "**%d cases planned, %d carried through to results**" % (len(plan), len(bres)) in txt)
+    cov = rd(os.path.join(PAPER, "arena_deliverables", "P3_atlas", "atlas_case_coverage.csv"))
+    cfull = sum(1 for r in cov if r["coverage"] == "yes")
+    cpart = sum(1 for r in cov if r["coverage"] == "partial")
+    check("the note prints the atlas plan, its executable coverage and its lack of case results (%d, %d, %d)"
+          % (len(plan), cfull, cpart),
+          "**%d cases planned**, **%d with a fully executable invariant** and **%d partial**"
+          % (len(plan), cfull, cpart) in txt)
     check("the note prints the benchmark registry size (%d)" % len(bench),
           "**%d benchmark records**" % len(bench) in txt)
     check("the note prints the second-implementation comparisons (%d)" % len(si),
@@ -174,8 +179,11 @@ def main():
           % (len(reg), cnt(reg, "SOURCE NOT AVAILABLE"), closed, to_order))
     print("     references: %d registered (%d R0), %d catalogued (%d R0)"
           % (len(ver), vR0, len(cat), cR0))
-    print("     artefacts: atlas %d/%d, benchmarks %d, second impl %d, defects %d open"
-          % (len(bres), len(plan), len(bench), len(si), dop))
+    print("     artefacts: atlas %d planned (%d full, %d partial, no case results),"
+          " benchmark rows %d+%d, benchmarks %d, second impl %d, defects %d open"
+          % (len(plan), cfull, cpart, len(bres), len(rd(os.path.join(
+              PAPER, "arena_deliverables", "P3_atlas", "bench_surface_results.csv"))),
+             len(bench), len(si), dop))
     if fails:
         print("FAIL %d check(s) failed" % len(fails))
         return 1

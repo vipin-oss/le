@@ -1,0 +1,7 @@
+benchmark_id,family,quantity,measured,reference,tolerance,error,verdict
+BK-09,Rayleigh surface wave,"number of subsonic roots in (0,1) per Poisson ratio",1 for all 19 ratios from 0.025 to 0.475,exactly 1,1e-12,0,PASS
+BK-09,Rayleigh surface wave,max |residual of the Rayleigh equation|,9.592e-14,1e-10,1e-10,9.592e-14,PASS
+BK-09,Rayleigh surface wave,c_R/c_S range over the 19 ratios,0.878892 to 0.952187,"(0.87, 0.96)",-,-,PASS
+BK-09,Rayleigh surface wave,monotone increasing in Poisson ratio,yes,strictly increasing,-,-,PASS
+BK-09,Rayleigh surface wave,c_R/c_S as nu -> 1/2,0.955300,"(0.955, 0.956): classical 0.9553",-,-,PASS
+BK-09,Rayleigh surface wave,c_R/c_S at nu = 1/4 vs the classical table,0.919402,0.9194,5e-4,1.69e-06,PASS
