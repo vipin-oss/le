@@ -81,3 +81,34 @@ The queue that the shelf now unblocks, in the order the work will be done:
 ```bash
 python3 check_books_held.py      # PASS all checks (12 arrivals, 10 usable, BK-15 still open)
 ```
+
+---
+
+## Addendum, later the same day: six more items, and all three needs are met
+
+The three outstanding items were sent again, with the substitutes as well. Six more arrivals, identified the
+same way - from their own title, series and copyright pages:
+
+| arrival | title | printed year, publisher | ISBN on the copy | pp. | what it settles |
+|---|---|---|---|---|---|
+| 13 | **Eringen and Maugin, *Electrodynamics of Continua I: Foundations and Solid Media*** | 1990, Springer-Verlag | 978-1-4612-3226-1 | 469 | **BK-15 is now executable** - this is the book, not the review |
+| 14 | **Povstenko, *Fractional Thermoelasticity*** | 2015, Springer (SMIA 219) | 978-3-319-15335-3 | 261 | the fractional-thermoelasticity model chapters |
+| 15 | Eringen and Maugin, *Electrodynamics of Continua II* | 1990, Springer-Verlag | 978-1-4612-3236-0 | 376 | a spare for BK-15 |
+| 16 | Maugin, *Continuum Mechanics of Electromagnetic Solids* | 1988, North-Holland 33 | no ISBN in this scan | 606 | a second spare for BK-15 |
+| 17 | Povstenko, *Linear Fractional Diffusion-Wave Equation...* | 2015, Springer | 978-3-319-17953-7 | 470 | second reader for the fractional sentences |
+| 18 | **Achenbach, *Wave Propagation in Elastic Solids*** | 1973, North-Holland 16 | no ISBN (pre-ISBN printing) | 436 | the rank-12 item that had never arrived |
+
+So the shelf now reads: **18 arrivals, 16 usable books, all thirteen ranks covered.** The two earlier misfires
+stay on the record - the one-page review at rank 1 and the eleven-page Chapter 1 at rank 4 - each marked as
+superseded by the real book that followed. Rank 1 now has **three usable copies** (volume I, volume II and
+Maugin 1988), which is why it is described as having a spare; rank 4 has a spare of its own (the diffusion-wave
+book is a different work, not an edition, and is kept as the weaker second reader).
+
+**One thing not to overstate: BK-15 is now *executable*, and atlas coverage is still 34/40.** The book supplies
+the coupled electro-magneto-elastic constitutive theory, but no benchmark has been built from it yet; the
+coverage number moves only when the six multifield cases acquire an invariant and a checker in
+`P3_atlas/`. The same holds for the fractional-thermoelasticity sentences: the book is in hand, unread.
+
+```bash
+python3 check_books_held.py      # PASS all checks (18 arrivals, 16 usable, all 13 ranks, BK-15 executable)
+```

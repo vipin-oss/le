@@ -6,6 +6,12 @@ Rows: `BOOKS_OUTSTANDING_2026-11-01.csv`; checked by `check_books_outstanding.py
 
 ---
 
+> **Status: all three have arrived.** Later on 2026-11-01 the author sent every item on this page, including
+> the substitutes. `BOOKS_HELD_2026-11-01.csv` now records **18 arrivals and 16 usable books covering all
+> thirteen ranks**, with Eringen and Maugin I (469 pp.) and Povstenko's *Fractional Thermoelasticity*
+> (261 pp.) among them. This page is kept as the dated request record - what was asked for, and the DOIs that
+> were verified when it was asked - not as a live shopping list.
+
 ## First: nothing else is needed
 
 The shelf is otherwise complete. Of the thirteen rows of the earlier wish list, **ten arrived as usable books**,

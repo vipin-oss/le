@@ -251,6 +251,18 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 38:** the last six items arrived - **all three needs are met.** `P3_evidence_claims_B/BOOKS_HELD_2026-11-01.csv`
+  is now **18 rows / 16 usable books covering all thirteen wish-list ranks**: the real **Eringen and Maugin I**
+  (469 pp., ISBN 978-1-4612-3226-1), the real **Povstenko, *Fractional Thermoelasticity*** (261 pp.), plus
+  three spares (Eringen and Maugin II, Maugin 1988, Povstenko's diffusion-wave book) and **Achenbach** (436 pp.,
+  1973 printing, no ISBN). The two earlier misfires stay on the record, each marked superseded. **What did not
+  change: atlas coverage is still 34/40.** BK-15 is now *executable* - the constitutive theory is in hand - but
+  no benchmark has been built from it yet, and `check_books_held.py` (24 checks, PASS) asserts both statements so
+  the README cannot upgrade them quietly. `check_books_wanted.py` now reports **nothing outstanding**, and the
+  request page `BOOKS_OUTSTANDING_2026-11-01.*` carries a delivery banner and a checker that proves all three
+  needs arrived. **Next: BK-15 in `P3_atlas/` - build the invariant from Eringen and Maugin and take coverage
+  34/40 -> 40/40.**
+
 - **Step 37:** the missing three now carry **verified substitutes**. `P3_evidence_claims_B/BOOKS_OUTSTANDING_2026-11-01.csv`
   (9 rows) + `.md` + a one-page PDF in this folder + `check_books_outstanding.py` (19 checks, PASS): for
   **BK-15** the primary stays Eringen and Maugin I (`10.1007/978-1-4612-3226-1`) with **Volume II**

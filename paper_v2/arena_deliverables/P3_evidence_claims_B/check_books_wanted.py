@@ -110,8 +110,8 @@ if delivered:
     check("every delivered title matches the rank it was asked for", not drift, str(drift))
     usable = {r for r, (rank, st) in delivered.items() if st == "usable"}
     outstanding = sorted(int(r["rank"]) for r in rows if norm(r["title"]) not in usable)
-    check("three items are still outstanding: ranks 1, 4 and 12",
-          outstanding == [1, 4, 12], str(outstanding))
+    check("nothing is outstanding any more: every rank has a usable book on the shelf",
+          outstanding == [], str(outstanding))
 
 # 5. shapes
 check("every ISBN-looking value is ISBN-shaped",
@@ -164,7 +164,7 @@ if fails:
     print("FAIL %d check(s) failed" % len(fails))
     sys.exit(1)
 print("PASS all checks (rows=%d, tiers A/B/C = %d/%d/%d, one print-only row, "
-      "no book blocks a claim: %s, outstanding after delivery: 1/4/12)" % (len(rows),
+      "no book blocks a claim: %s, outstanding after delivery: none)" % (len(rows),
                                        sum(1 for r in rows if r["tier"] == "A"),
                                        sum(1 for r in rows if r["tier"] == "B"),
                                        sum(1 for r in rows if r["tier"] == "C"),
