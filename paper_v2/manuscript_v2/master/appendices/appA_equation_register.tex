@@ -1,0 +1,218 @@
+%======================================================================
+% Appendix A: Equation Verification Register
+%======================================================================
+\section{Equation Verification Register}
+\label{app:equation_register}
+
+This appendix records equation claims and their audit status. Legacy status labels from earlier manuscript work are not accepted as verification in version 1.1 unless the present register explicitly identifies a derivation performed here. No comprehensive primary-source equation audit has been completed.
+
+\begin{itemize}
+\item \textbf{DERIVED:} Algebra checked directly from displayed governing equations in this revision.
+\item \textbf{CONDITIONAL:} Valid only under the stated continuum, constitutive, or boundary assumptions.
+\item \textbf{PRIMARY-SOURCE-CHECKED:} Checked against the identified primary source; this does not assert an independent derivation.
+\item \textbf{SECONDARY-SOURCE:} Supported only by a named secondary source; not equivalent to primary verification.
+\item \textbf{UNVERIFIED:} Not checked against a primary source or independently derived in this phase.
+\item \textbf{OPEN:} Required derivation or source evidence is absent; not a canonical result.
+\end{itemize}
+
+Historical statuses and source notes are not evidence of present verification. The scientific-audit report identifies the limited equations derived in this phase.
+
+\subsection{Layer I — First Principles (Section 3)}
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Equation register for Section 3 (Foundations of Continuum Wave Mechanics).}
+\label{tab:appA-sec3}
+\begin{tabularx}{\textwidth}{@{}p{1.6cm}Y p{2.8cm}Y@{}}
+\toprule
+\textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
+\midrule
+EQ-001 & $\rho \dot{v}_i = \sigma_{ji,j} + \rho f_i$ & CONDITIONAL & Classical Cauchy continuum; infinitesimal motion; no couple stresses \\
+EQ-002 & $\sigma_{ij} = \sigma_{ji}$ & CONDITIONAL & Classical angular momentum balance; no couple stresses or body couples \\
+EQ-003 & Mechanical power balance & DERIVED & Product of momentum balance and velocity; classical stress power \\
+EQ-004 & $\rho \dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i}$ & CONDITIONAL & Classical local continuum; no internal heat supply; $e$ specific internal energy \\
+EQ-005 & Dissipation inequality $\geq 0$ & UNVERIFIED & Legacy equation; exact entropy/free-energy assumptions not audited \\
+EQ-006 & Coleman--Noll restrictions & UNVERIFIED & Legacy equation; state variables and free-energy convention not audited \\
+EQ-007 & $F_i=q_i-\sigma_{ij}v_j+\mathcal{E}v_i$ (exact); $J_i=q_i-\sigma_{ij}v_j$ (first-order reduced) & DERIVED & Section 3.8 exact Eulerian form and Section 10.2 reduced-wave convention; symmetric stress \\
+EQ-008 & $v_i = \dot{u}_i$ & UNVERIFIED & Definition of velocity \\
+EQ-009 & $\varepsilon_{ij} = \tfrac{1}{2}(u_{i,j} + u_{j,i})$ & UNVERIFIED & Definition of infinitesimal strain \\
+EQ-010 & $\omega_{ij} = \tfrac{1}{2}(u_{i,j} - u_{j,i})$ & UNVERIFIED & Definition of rotation tensor \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Layer II — Classical and Generalized Thermoelastic Theories (Section 4)}
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Equation register for Section 4 (Thermoelastic Theories).}
+\label{tab:appA-sec4}
+\begin{tabularx}{\textwidth}{@{}p{1.6cm}Y p{2.8cm}Y@{}}
+\toprule
+\textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
+\midrule
+EQ-011 & $\rho\ddot{u}_i = (\lambda+\mu)u_{j,ji} + \mu u_{i,jj} - \beta T_{,i}$ & UNVERIFIED & Classical coupled thermoelasticity (Biot 1956) \\
+EQ-012 & $\rho c_v \dot{T} = k\nabla^2 T - \beta T_0 \dot{u}_{i,i}$ & PRIMARY-SOURCE-CHECKED & Biot (1956), printed p. 242, Eqs.~(3.3)--(3.4); linear isotropic Fourier model, constant coefficients, source-free scope \\
+EQ-013 & $q_i + \tau_0\dot{q}_i = -kT_{,i}$ & UNVERIFIED & Lord--Shulman (1967); primary source \\
+EQ-014 & $c_T = \sqrt{k/(\rho c_v\tau_0)}$ & VERIFIED-SYMBOLIC & Uncoupled scalar thermal branch $\beta=0$; principal-part characteristic speed only, not a fully coupled mode speed
+EQ-015 & Green--Lindsay Fourier-flux energy equation and temperature-rate stress coupling (Eqs.~4.9--4.10) & PRIMARY-SOURCE-CHECKED & Green--Lindsay (1972), F1; no tau0 term on strain-rate coupling; tau1 greater than or equal to tau0 greater than zero \\
+EQ-016 & $\kappa^*\nabla^2\alpha_{\mathrm{GN}} = \rho c_e\ddot{\alpha}_{\mathrm{GN}} + \beta T_0\dot{u}_{i,i}$ & PRIMARY-SOURCE-CHECKED & GN-II 1993 Eq. (3.16) integrated once; source-free alpha form, zero integration constant; F17 \\
+EQ-017 & GN-II entropy-flux component relation & WITHHELD & No exact isotropic component equation retained; source/potential mapping remains open \\
+EQ-018 & $q_i(t+\tau_q) = -kT_{,i}(t+\tau_T)$ & UNVERIFIED & DPL constitutive law (Tzou 1995) \\
+EQ-019 & First-order three-lag TPL law with thermal-displacement-gradient contribution (Section 4.8) & PRIMARY-SOURCE-CHECKED & Roy Choudhuri (2007), Eqs.~3--4, full-text finding F6; no second-order term \\
+EQ-020 & $D_{\omega_M} f(t) = \tfrac{1}{\omega_M}\int_{t-\omega_M}^{t}K_{\mathrm{MDD}}(t-t')f'(t')\,dt'$ & UNVERIFIED & MDD candidate; finite horizon distinguished from angular frequency; source convention not checked \\
+EQ-021 & Inherited specific MDD kernel formula & OPEN & Withheld from the text pending equation-level and dimensional comparison with its cited source; no kernel is asserted \\
+EQ-022 & Legacy MGT heat-flux equation withdrawn & UNVERIFIED & Dimensionally inconsistent form and scratch cancellation removed; verify selected MGT variant against primary source \\
+EQ-022F & ${}^C D_t^\alpha T = a_\alpha\nabla^2T$ & CONDITIONAL & Scalar fractional diffusion--wave example only, $0<\alpha\leq2$; $[a_\alpha]=\mathrm{m^2s^{-\alpha}}$; coupled embedding unverified \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Layer III — Coupled Multiphysics Continua (Section 5)}
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Equation register for Section 5 (Multiphysics Continua).}
+\label{tab:appA-sec5}
+\begin{tabularx}{\textwidth}{@{}p{1.6cm}Y p{2.8cm}Y@{}}
+\toprule
+\textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
+\midrule
+EQ-023 & $\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k$ & UNVERIFIED & Piezoelectric constitutive relation \\
+EQ-024 & $D_i = e_{ikl}\varepsilon_{kl} + \kappa_{ij}E_j$ & UNVERIFIED & Electric displacement (piezoelectric) \\
+EQ-025 & $E_i = -\phi_{,i}$ & UNVERIFIED & Electric field from potential \\
+EQ-026 & $D_{i,i} = 0$ & UNVERIFIED & Charge conservation (no free charge) \\
+EQ-027 & $\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k - \beta_{ij}T$ & UNVERIFIED & Piezothermoelastic (Barak et al.~\cite{Barak2023}, Eq.~3) \\
+EQ-028 & $D_i = \kappa_{ij}E_j + e_{ikl}\varepsilon_{kl} + p_i T$ & UNVERIFIED & Piezothermoelectric (Barak et al.~\cite{Barak2023}, Eq.~6) \\
+EQ-029 & Inherited electrical storage formula & OPEN & Withdrawn from the working flux appendix; no universal piezoelectric storage expression is asserted \\
+EQ-5.17 & Isotropic micropolar force stress with independent microrotation $\phi_k$ & UNVERIFIED & Linear isotropic specialization; source equation and coupled thermoelastic moduli require full-text verification \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Layer IV — Generalized Transport and Memory (Section 6)}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Equation register for Section 6.}
+\label{tab:appA-sec6}
+\begin{tabularx}{\textwidth}{@{}p{1.6cm}Y p{2.8cm}Y@{}}
+\toprule
+\textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
+\midrule
+EQ-6.1 & Schematic constitutive operator $\mathcal{D}[\bm q]=-k\nabla T$ & CONDITIONAL & Not a universal representation; only for a specified linear flux law \\
+EQ-6.5 & ${}^C D_t^\alpha T=a_\alpha\nabla^2T$ & CONDITIONAL & Scalar equation only; $0<\alpha\leq2$; dimensional $a_\alpha$; no coupled-law inference \\
+EQ-6.6 & Hereditary convolution & CONDITIONAL & Kernel integrable on its stated history interval; model-specific thermodynamic constraints not implied \\
+EQ-6.7 & Finite-window MDD operator & CONDITIONAL & $\omega_M>0$; kernel, normalization, regularity and admissibility must be specified \\
+EQ-6.10 & $J_i=q_i-\sigma_{ij}v_j$ & CONDITIONAL & Reduced first-order wave flux only; exact Eulerian total-energy flux adds $\mathcal{E}v_i$; not a general MDD theorem \\
+EQ-6.11 & MDD candidate flux law & CONDITIONAL & Only for the displayed kernel/operator convention; stored energy and boundary power remain open \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Layer V — Spatial Nonlocality and Gradient Continua (Section 7)}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Equation register for Section 7.}
+\label{tab:appA-sec7}
+\begin{tabularx}{\textwidth}{@{}p{1.6cm}Y p{2.8cm}Y@{}}
+\toprule
+\textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
+\midrule
+EQ-7.1 & Integral nonlocal constitutive relation & CONDITIONAL & Kernel and boundary/domain prescription must be specified \\
+EQ-7.2 & Differential nonlocal stress equation & CONDITIONAL & Helmholtz differential form only; not identical to every integral kernel/boundary problem \\
+EQ-7.3 & Strain-gradient constitutive relation & CONDITIONAL & Positive gradient modulus and extra boundary data as stated in the text \\
+EQ-7.4 & $c(k_{\mathrm w})=c_0/\sqrt{1+\xi^2k_{\mathrm w}^2}$ & CONDITIONAL & One-dimensional bar and the specific Eringen differential model displayed \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Layer VI — Interface Equations and Energy Ratios (Section 9)}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Equation register for Section 9.}
+\label{tab:appA-sec9}
+\begin{tabularx}{\textwidth}{@{}p{1.6cm}Y p{2.8cm}Y@{}}
+\toprule
+\textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
+\midrule
+EQ-9.3 & Perfect-contact mechanical conditions & CONDITIONAL & Perfectly bonded interface; no slip or separation; common traction normal \\
+EQ-9.4 & Perfect-contact thermal conditions & CONDITIONAL & Perfect thermal contact; no Kapitza jump; specified heat-flux law \\
+EQ-9.5 & Electrical interface conditions & CONDITIONAL & Quasi-static electric field; no free surface charge for continuous normal displacement \\
+EQ-9.9 & Degree-eight secular polynomial & CONDITIONAL & 6mm medium; sagittal plane contains c-axis; quasi-static electric closure; specified P--SV--T--$\phi$ plus SH set; trivial root removed \\
+EQ-9.10 & Total-field $R,T,A_{\mathrm{int}}$ definitions & CONDITIONAL & Same normal and normalization; include all cross terms; $A_{\mathrm{int}}$ is interface-local only \\
+EQ-9.11 & $\sum R+\sum T=1$ & CONDITIONAL & Passive lossless interface; zero storage/residual; complete total-field accounting \\
+EQ-9.12 & $\sum R+\sum T+A_{\mathrm{int}}=1$ & CONDITIONAL & Total-field interface fluxes include all modes/cross terms; interfacial power/storage accounted; bulk dissipation kept separate \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Layer VII — Energy Transport and Dissipation (Section 10)}
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Energy-balance register. DERIVED and CONDITIONAL labels reflect this revision's limited calculations; all model-specific OPEN entries require further work.}
+\label{tab:appA-sec10}
+\begin{tabularx}{\textwidth}{@{}p{1.6cm}Y p{2.8cm}Y@{}}
+\toprule
+\textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
+\midrule
+EQ-10.1 & $\mathcal{E}=\tfrac12\rho v_i v_i+\rho e$ & DERIVED & Classical thermoelasticity; $e$ specific internal energy \\
+EQ-10.2 & $\partial_t\mathcal{E}+\partial_iF_i=\rho f_i v_i$, $F_i=q_i-\sigma_{ij}v_j+\mathcal{E}v_i$ & DERIVED & Exact Eulerian balance; no internal heat source; classical local Cauchy continuum \\
+EQ-10.3 & $J_i=q_i-\sigma_{ij}v_j$ & CONDITIONAL & Reduced first-order small-amplitude wave flux; exact Eulerian flux is Eq. 10.2 \\
+EQ-10.4 & $\langle J_i\rangle_t=\bar q_i-\tfrac12\Re[\hat\sigma_{ij}\hat v_j^*]$ & CONDITIONAL & $e^{-i\omega t}$ convention; linear harmonic fields; mean heat flux evaluated separately \\
+EQ-10.5 & Interfacial jump balance & CONDITIONAL & Pillbox limit; jump orientation, storage, and interfacial power specified \\
+EQ-10.6 & Passive-interface normal flux continuity & CONDITIONAL & Passive interface; zero interfacial power and storage; same normal orientation \\
+EQ-10.11 & $\sum R+\sum T+A_{\mathrm{int}}=1$ & CONDITIONAL & Interface-local total-field fluxes; include all cross terms; interface residual only \\
+EQ-10.12 & $\sum R+\sum T=1$ & CONDITIONAL & Lossless interface with zero storage/residual; complete total-field accounting including cross terms \\
+EQ-10.13 & Control-volume dissipation definitions $\mathcal D_L,\mathcal D_\Sigma,\mathcal D_R$ & CONDITIONAL & Steady time-averaged 1D balance; passive, source-free regions; no accumulation \\
+EQ-10.14 & $P_i=P_r+P_t+\mathcal D_L+\mathcal D_\Sigma+\mathcal D_R$ & CONDITIONAL & Sum of Eq.~(10.13) balances; bookkeeping closure, not independent validation \\
+EQ-10.15 & 1D welded-interface incident/reflected/transmitted displacement fields & CONDITIONAL & Lossless longitudinal half-spaces; $e^{-i\omega t}$ convention \\
+EQ-10.16 & 2$\times$2 displacement/traction matching system & DERIVED & Two unknown amplitudes/two scalar conditions; positive real impedances \\
+EQ-10.GEN & Generalized-theory energy fluxes & OPEN & Derive from each model's free energy and boundary power \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Verification Summary}
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Overall verification status by status class.}
+\label{tab:appA-summary}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+\textbf{Status} & \textbf{Meaning in this revision} \\
+\midrule
+DERIVED & Algebra checked from displayed equations under stated assumptions \\
+CONDITIONAL & Relation applies only under the assumptions stated in the register \\
+PRIMARY-SOURCE-CHECKED & Equation statement checked against the named primary text; not necessarily independently re-derived \\
+SECONDARY-SOURCE & Supported only by a named secondary source; not a primary-source verification \\
+UNVERIFIED & Not checked against a primary source or independent calculation in this phase \\
+OPEN & Required derivation or evidence is absent; not a canonical result \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Open Derivations Requiring Full-Text Verification}
+
+The following model families require a dedicated claim-level source and derivation audit before an energy-flux formula is asserted: Lord--Shulman; Green--Lindsay; Green--Naghdi types II and III; dual- and triple-phase-lag; Moore--Gibson--Thompson; memory-dependent; and nonlocal/gradient models. The full texts, exact constitutive conventions, free energies, external-field power terms, boundary conditions, and evolution laws must be checked for each case. The citations and formulae in the retained working appendix are not evidence that such verification has occurred in this phase.
+
+These model-specific flux derivations remain open; legacy Appendix E/Sec. 10 questions identify work items, not canonical formulae.
+
+% LocalWords:

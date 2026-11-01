@@ -29,7 +29,7 @@ import sys
 import collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.normpath(os.path.join(HERE, "..", "..", "from_overleaf", "phase5"))
+SRC = os.environ.get("AUDIT_SRC") or os.path.normpath(os.path.join(HERE, "..", "..", "manuscript_v2"))
 MASTER = os.path.join(SRC, "master")
 FIGROOTS = ["/home/user/manuscript", os.path.join(SRC, "master"), SRC]
 OUT_CSV = os.path.join(HERE, "source_audit_2026-11-01.csv")
@@ -226,6 +226,7 @@ def main():
     with open(OUT_MD, "w", encoding="utf-8") as f:
         f.write("# P1 source audit - %d .tex files, %d labels, %d citation keys, %d bib entries\n\n"
                 % (len(files), len(labels), len(cites), len(bibkeys)))
+        f.write("Audited tree: `%s`\n\n" % SRC)
         f.write("Sources: `paper_v2/from_overleaf/phase5/` (landed 2026-11-01 from the branch that held them; "
                 "figures read from outside the repository). Nothing here edits a `.tex`.\n\n")
         f.write("| check | what | status | n |\n|---|---|---|---|\n")

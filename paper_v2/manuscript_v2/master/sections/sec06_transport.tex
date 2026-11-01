@@ -1,0 +1,185 @@
+%======================================================================
+% Section 6: Generalized Transport and Memory Effects
+%======================================================================
+\section{Generalized Transport and Memory Effects}
+\label{sec:transport}
+
+Classical Fourier conduction relates heat flux instantaneously to the temperature gradient. Its range of adequacy and any departure from it depend on material, scale, and experiment. This section surveys alternative constitutive structures for heat transport.
+
+\subsection{Physical origin of thermal relaxation}
+
+Microscopic heat carriers and their scattering can motivate finite-rate transport models. Exponential relaxation is one possible constitutive choice; memory kernels, relaxation parameters, and propagation properties depend on the selected model and material. This section compares alternative transport operators by their stated mathematical structure.
+
+\subsection{Three structural routes to memory}
+
+Three mathematically distinct ways of making a constitutive law remember have been used, and they are not interchangeable.
+
+\begin{itemize}
+\item \textbf{Differential-rate constitutive laws.} Some models include time derivatives of fluxes, temperatures, or other fields; the order and choice of differentiated variable are model-specific. Whether such a law admits an equivalent finite-dimensional internal-variable representation must be established for the particular formulation.
+\item \textbf{Integral (convolution) memory.} The constitutive relation is written as a convolution of the driving quantity with a memory kernel over a finite or semi-infinite interval. This includes the hereditary-integral formulation of Section~\ref{sec:transport} and the memory-dependent derivative of Wang and Li \cite{Wang2021}. The memory is then encapsulated in a kernel, and the constitutive relation is nonlocal in time.
+\item \textbf{Spatial nonlocality.} Some constitutive laws average over a material neighbourhood, as in Eringen-type formulations. This is a spatial interaction, not temporal memory, and its operators and boundary conditions require separate treatment in Section~\ref{sec:nonlocal}.
+\end{itemize}
+
+\subsection{A transform-domain example, not a universal representation}
+
+Some linear flux laws can be written schematically as
+\begin{equation}
+\mathcal{D}[\bm{q}] = -k\,\bm{\nabla}T,
+\label{eq:6.1}
+\end{equation}
+but this notation does not make distinct constitutive models equivalent.
+
+For the Lord--Shulman/Cattaneo law, with zero initial heat flux,
+\begin{equation*}
+\bm q+\tau_0\dot{\bm q}=-k\nabla T.
+\end{equation*}
+The corresponding Laplace-domain multiplier is
+\begin{equation}
+\mathcal{D}_{\rm LS}(s)=1+\tau_0s.
+\label{eq:6.2}
+\end{equation}
+Nonzero initial flux contributes an additional initial-data term. Fractional, phase-lag, and hereditary models have their own transform symbols and initial terms, which must be derived from their exact constitutive equations; no universal symbol or shared limiting procedure is asserted here.
+
+A comparison in the transform domain is useful only after each constitutive law, initial condition, and admissible parameter range is stated. Formal limits such as $\tau_0\to0$, fractional order tending to an integer, or memory horizon tending to zero require model-specific normalization and convergence arguments. Positivity of a frequency-domain loss modulus, when defined, is not by itself proof of a consistent free energy or a well-posed initial-boundary-value problem. These questions remain model-specific and are not settled uniformly in this review.
+
+\subsection{Fractional operators: Caputo and Riemann--Liouville}
+\label{sec:6.2}
+
+Fractional derivatives generalise integer-order differentiation to non-integer orders and are used in models with history dependence. Depending on the operator, coupling, kernel, and initial-boundary conditions, they can produce subdiffusive, dispersive, or wave-like responses. A finite propagation speed or a specific support property is not implied by the fractional order alone.
+
+\subsubsection{Caputo fractional derivative}
+
+For a function with integrable $n$-th derivative, the Caputo derivative of order $\alpha$ ($n-1 < \alpha < n$, $n = \lceil\alpha\rceil$) is:
+
+\begin{equation}
+{}^C D_t^\alpha f(t) = \frac{1}{\Gamma(n-\alpha)}\int_0^t \frac{f^{(n)}(\tau)}{(t-\tau)^{\alpha+1-n}}\,d\tau.
+\label{eq:6.3}
+\end{equation}
+
+\subsubsection{Riemann--Liouville fractional derivative}
+
+For locally integrable $f$ for which the integral and $n$-th derivative exist, and for the same order range $n-1 < \alpha < n$ with $n = \lceil\alpha\rceil$:
+
+\begin{equation}
+{}^{RL} D_t^\alpha f(t) = \frac{1}{\Gamma(n-\alpha)}\frac{d^n}{dt^n}\int_0^t \frac{f(\tau)}{(t-\tau)^{\alpha+1-n}}\,d\tau.
+\label{eq:6.4}
+\end{equation}
+
+For suitable orders and regularity, the Caputo definition uses integer-order initial data, while Riemann--Liouville formulations may involve fractional initial data. This difference can matter in model selection, but does not establish a universal preference.
+
+\subsubsection{Fractional heat conduction and its limits}
+
+\begin{equation}
+{}^C D_t^\alpha T = a_\alpha\nabla^2 T, \qquad 0 < \alpha \leq 2,
+\label{eq:6.5}
+\end{equation}
+Here $a_\alpha$ is a model coefficient with dimensions consistent with the selected order (for length and time units, $[a_\alpha]=L^2T^{-\alpha}$). This scalar equation is illustrative, not a universal fractional thermoelastic law. At integer-order endpoints, the scalar PDE has heat-equation or wave-equation form, with coefficients and initial data specified for each model; intermediate-order behavior depends on the operator definition, coupling, domain, and data.
+
+\subsection{Hereditary integrals: convolution kernels}
+\label{sec:6.3}
+
+One common representation of linear temporal memory is a hereditary integral:
+
+\begin{equation}
+f(t) = \int_{-\infty}^{t} K(t-t')\,g(t')\,dt',
+\label{eq:6.6}
+\end{equation}
+where $K(t-t')$ is a kernel in this schematic convolution. Some models impose fading-memory, positivity, monotonicity, or complete-monotonicity hypotheses, but the required conditions depend on the constitutive law and the chosen thermodynamic framework; none of these properties alone is asserted here as a universal admissibility criterion. For suitable completely monotone kernels, representation results by weighted exponentials may apply, but their hypotheses and implications must be checked for the kernel at hand. No equivalence with a discrete phase-lag hierarchy is claimed.
+
+\subsection{Memory-dependent derivative (MDD): operator and kernel}
+\label{sec:6.4}
+
+A memory-dependent operator can use a kernel over a finite interval; its definition and normalization are part of the selected constitutive model.
+
+\begin{equation}
+D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} K_{\mathrm{MDD}}(t-t') f'(t')\,dt',
+\label{eq:6.7}
+\end{equation}
+where $\omega_M>0$ denotes the displayed horizon and $K_{\mathrm{MDD}}$ is the kernel. The bounds, normalization, regularity, and admissibility conditions on $K_{\mathrm{MDD}}$ must be taken from the exact model definition. A finite integration horizon truncates the history in this formula; it does not by itself imply a finite-dimensional state-space realization, finite computation cost, or that the kernel is a freely chosen rather than material-calibrated quantity. A specific quadratic candidate kernel is omitted because its source definition, dimensions, and admissible parameter range have not been established; no numerical form is asserted here.
+
+\subsubsection{Limiting behavior}
+
+Short-horizon limits depend on the normalization and regularity assumptions of the chosen finite-horizon operator; no general reduction to a particular relaxation law is asserted here. For polynomial test functions through degree five, choosing $K_{\mathrm{MDD}}\equiv 1$ gives the ordinary-derivative limit as $\omega_M\to0^+$, while $K_{\mathrm{MDD}}\equiv 2$ doubles that limit. Omitting the factor $1/\omega_M$ makes the same finite-window integral tend to zero; these examples illustrate normalization dependence and do not establish a limit for an unspecified kernel.
+
+\subsection{Energy flux in memory-dependent media}
+\label{sec:6.5}
+
+Under the first-order small-amplitude convention stated in Section~\ref{sec:10.2}, the reduced outward-positive wave flux is $J_i=q_i-\sigma_{ij}v_j$; the exact fixed-volume Eulerian flux also contains $\mathcal{E}v_i$. A memory-dependent model may require additional storage or boundary-power terms; these depend on its constitutive operator and must be derived for the selected formulation.
+
+\subsection{Well-posedness and propagation in memory-dependent models}
+\label{sec:6.6}
+
+Well-posedness and propagation depend on the memory operator, kernel, time horizon, initial data, domain, and boundary conditions. A finite-horizon derivative alone does not specify a propagation speed; the relevant property must be derived for the selected model.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig10-mdd-memory.pdf}
+\caption{Schematic of a finite-horizon memory-dependent operator and audit questions concerning its kernel, limiting behavior, energy balance, and well-posedness. Model-specific propagation and flux consequences are not asserted; the displayed operator still requires verification against its original source.}
+\label{fig:mdd_memory}
+\end{figure}
+
+\subsection{Comparative summary: transport models}
+
+Table \ref{tab:transport_comparison} summarizes transport and memory models by mathematical structure, dissipation, well-posedness, and energy-flux formulation.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Transport structures and model-specific features.}
+\label{tab:transport_comparison}
+\begin{tabularx}{\textwidth}{@{}p{2.4cm}XXX@{}}
+\toprule
+\textbf{Model class} & \textbf{Transport structure} & \textbf{Model-specific feature} & \textbf{Comparison point} \\
+\midrule
+Classical Fourier & Local Fourier heat flux & Local balance with Fourier heat conduction & Parabolic heat equation \\
+Lord--Shulman & Relaxing heat flux & Relaxing heat flux & Source-specific constitutive parameters \\
+Green--Lindsay & Temperature-rate-dependent formulation & Single-temperature formulation & Temperature-rate dependence \\
+Phase-lag (dual/triple) & Lagged constitutive laws & Lagged constitutive laws & Truncation and parameter choices \\
+Green--Naghdi II/III & Thermal-displacement formulations & Thermal-displacement formulations & Type-specific equations \\
+Moore--Gibson--Thompson & Higher-order heat equation variants & Selected variant & Relaxation and coupling terms \\
+Memory-dependent & Kernel/time-history operator & Finite- or unbounded-history formulation & Kernel and normalization \\
+Fractional & Fractional time operator & Derivative and initial-data convention & Operator and data space \\
+Nonlocal / gradient & Spatially nonlocal or higher-gradient law & Integral or differential form & Kernel and boundary prescription \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Notation summary for Section 6}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Notation introduced in Section 6.}
+\label{tab:notation-sec6}
+\begin{tabularx}{\textwidth}{@{}p{1.8cm}X p{2.2cm}p{2.1cm}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} & \textbf{Equation} \\
+\midrule
+$\mathcal{D}[\cdot]$ & Generic memory operator acting on the flux & --- & \eqref{eq:6.1} \\
+$\mathcal{D}_{\rm LS}(s)$ & LS transform multiplier (zero initial flux) & dimensionless & \eqref{eq:6.2} \\
+${}^C D_t^\alpha$ & Caputo fractional derivative & $t^{-\alpha}$ & \eqref{eq:6.3} \\
+${}^{RL} D_t^\alpha$ & Riemann--Liouville derivative & $t^{-\alpha}$ & \eqref{eq:6.4} \\
+$a$ & Thermal diffusivity & m$^2$/s & \eqref{eq:6.5} \\
+$K(t-t')$ & Memory kernel & varies & \eqref{eq:6.6} \\
+$D_{\omega_M}$ & MDD operator & model-dependent & \eqref{eq:6.7} \\
+$\omega_M$ & MDD finite-history window & s & \eqref{eq:6.7} \\
+$t'$ & Dummy integration time in hereditary kernels & s & \eqref{eq:6.6}--\eqref{eq:6.7} \\
+$K_{\mathrm{MDD}}$ & MDD kernel & model-dependent & \eqref{eq:6.7} \\
+$\tilde{q}_i(s)$ & Laplace transform of the heat flux & --- & \eqref{eq:6.2} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+A nonlocal Kelvin–Voigt piezo-semiconductor application uses a memory-dependent heat flux; conclusions remain model-specific. \cite{Gupta2026HeatMap}. A four-lag Taylor expansion is reported, but its printed gradient-field argument is defective and is not copied here. \cite{Abouelregal2020a}. A memory-dependent TPL formulation compares candidate kernels and states a model-specific positive-semidefiniteness condition. \cite{Sur2019}. A revised MDD definition normalizes by the kernel integral over the horizon rather than by the horizon alone. \cite{Wang2021}. A model-specific MGT-type flux law is paired with an Nth-order memory expansion using factorial coefficients. \cite{Sur2025}. A nonlocal operator is applied to a fractional Cattaneo law; its printed zero-order branch is not used as a general limiting identity. \cite{Bachher2019}. A tensor positive-semidefiniteness compatibility condition is printed for a particular second-order TPL truncation. \cite{Tiwari2021}.
+
+\subsection{Open questions for Section 6}
+
+\begin{enumerate}[label=\textbf{OQ6.\arabic*}]
+\item What is the complete time-domain energy flux for MDD media with convolution-type memory, expressed solely in terms of the temperature and the stored internal variables? \\ \label{oq:6.1}
+\item How is energy partitioned between storage and dissipation in hereditary media, and what is the correct effective flux that enters a local balance? \\ \label{oq:6.2}
+\item What are the well-posedness conditions for fractional-order thermoelasticity with arbitrary $\alpha$, in the coupled mechanical setting rather than in isolation? \\ \label{oq:6.3}
+\item How do different MDD kernel choices affect the energy flux and the wave propagation, and can the dispersion of the thermal branch be used to identify the kernel experimentally? \\ \label{oq:6.4}
+\item Can the memory operator be given a finite-dimensional state-space realisation for a general admissible kernel, and what is the numerical cost of that realisation relative to a direct quadrature? \\ \label{oq:6.5}
+\end{enumerate}
+
+% LocalWords:

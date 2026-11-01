@@ -12,7 +12,7 @@ import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.normpath(os.path.join(HERE, "..", "..", "from_overleaf", "phase5"))
+SRC = os.environ.get("AUDIT_SRC") or os.path.normpath(os.path.join(HERE, "..", "..", "manuscript_v2"))
 CSV = os.path.join(HERE, "source_audit_2026-11-01.csv")
 MD = os.path.join(HERE, "P1_SOURCE_AUDIT_2026-11-01.md")
 fails = []

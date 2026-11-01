@@ -1,0 +1,23 @@
+# R2 status report
+
+**Strict CI:** [run 39779835094](https://github.com/vipin-oss/le/actions/runs/39779835094) — successful publisher step only runs after all strict gates pass.
+**Source commit:** `3f4dbbc9558c4371746c30ecc61a18abaef74e65`
+**Build window (UTC):** 2026-10-22T12:38:39Z to 2026-10-22T12:38:51Z
+**Build time:** 12 seconds for `build_master.sh` (dependency installation excluded)
+**PDF pages:** 150
+**Strict gates:** Passed on run 39779835094, including zero undefined references/citations and no overfull boxes above 1 pt. Underfull warnings are ignored by policy.
+**Preserved R1 baseline:** successful run 39771440399, source commit `ce7bba4`, published-output commit `831e297`, 149 pages.
+**Build output:** `phase5/build_outputs/phase5-v1.1-master.pdf` and the matching contact sheets are published by the same run.
+**Control evidence:** read-only `control/` findings were read from `claude/control` commit `94f18130ef356290635d5078d9a4af6eea43e775`; `verification/` sources remained read-only.
+**R3:** NOT STARTED, per instruction.
+
+| Item | Status | Source file:line | PDF page(s) | Evidence / scope |
+|---|---|---|---|---|
+| 1. GN type labels/citations | DONE | `phase5/master/sections/sec04_thermoelastic.tex:117`; `phase5/master/sections/sec04_thermoelastic.tex:151`; `phase5/master/sections/sec02_literature.tex:17`; `phase5/master/tables/source/T1_historical_development.tex:13`; `phase5/master/tables/source/T2_generalized_thermoelastic.tex:13`; `phase5/master/tables/source/T2_generalized_thermoelastic.tex:14` | 5, 37, 38 | F13, F16-F17; GN-II is Green & Naghdi 1993, GN-III is Green & Naghdi 1992. |
+| 2. GN equations/symbols | DONE | `phase5/master/sections/sec04_thermoelastic.tex:128`; `phase5/master/sections/sec04_thermoelastic.tex:160`; `phase5/master/appendices/appA_equation_register.tex:63`; `phase5/master/appendices/energy_flux_derivations.tex:132`; `phase5/master/appendices/energy_flux_derivations.tex:167` | 5, 37, 38 | F16-F17; Eq. 4.11 has one fewer time derivative on the displacement-rate coupling; κ* and κ are distinguished. |
+| 3. Tzou 1995/1997 distinction | DONE | `phase5/master/sections/sec04_thermoelastic.tex:167`; `phase5/master/references_local.bib:142`; `phase5/master/references_local.bib:158`; `phase5/master/references_local.bib:159`; `phase5/master/tables/source/T1_historical_development.tex:14` | 4, 5, 16, 20, 38, 146 | F15; Tzou 1995 is the DPL journal article; the 1997 entry is a separate book, not cited as the DPL source. |
+| 4. GK 1966 / Tzou 1995 continuum law | DONE | `phase5/master/sections/sec04_thermoelastic.tex:190`; `phase5/master/sections/sec02_literature.tex:17`; `phase5/master/references_local.bib:204` | 38 | F10-F12 and F18; GK 1966 supplies Boltzmann structure and λ², while the continuum form and DPL mapping are explicitly secondary to Tzou 1995. |
+| 5. Moore-Gibson 1960 scope | DONE | `phase5/master/sections/sec01_scope.tex:46`; `phase5/master/sections/sec04_thermoelastic.tex:212`; `phase5/master/tables/source/T1_historical_development.tex:17`; `phase5/master/tables/source/T2_generalized_thermoelastic.tex:16` | 16, 39 | F14; the 1960 origin is relaxing-gas acoustics, not solid heat conduction; later MGT thermoelasticity is described as an analogue. |
+| 6. CONDITIONAL scopes and GL hybrid label | DONE | `phase5/master/sections/sec04_thermoelastic.tex:106`; `phase5/master/sections/sec04_thermoelastic.tex:103`; `phase5/master/tables/source/T4_wave_types.tex:17`; `phase5/master/tables/source/T4_wave_types.tex:23`; `phase5/master/sections/sec13_applications.tex:129`; `phase5/master/appendices/appA_equation_register.tex:104`; `phase5/master/appendices/appA_equation_register.tex:153`; `phase5/master/appendices/appA_equation_register.tex:180` | 37, 136, 137 | All 26 CONDITIONAL APPA_LEDGER rows have nonempty conditions; Table T4 and application claims state their regimes. GL (4.9) uses Fourier flux; the older uniform-τ0 strain-rate form is labelled LS/GL hybrid. |
+| 7. Section 12 limiting-case scope | DONE | `phase5/master/sections/sec12_comparative.tex:89`; `phase5/master/sections/sec12_comparative.tex:114` | 88 | Three unsupported reductions (GN-III→LS, MGT→TPL, GN-II→classical) are absent. The paragraph distinguishes a formal substitution from a convergence theorem and notes established model-pair results. |
+| 8. V-B3d total-field cross-term reproduction | DONE | `phase5/master/sections/sec09_interfaces.tex:180`; `phase5/reports/V-B3d-cross-term-check.md:1` | 72 | Read-only V-B3d script copied without modification and re-executed locally. A=1-R-T is definitional; bulk-dissipation checks are the independent numerical comparisons. |
