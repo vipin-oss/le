@@ -251,6 +251,19 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 37:** the missing three now carry **verified substitutes**. `P3_evidence_claims_B/BOOKS_OUTSTANDING_2026-11-01.csv`
+  (9 rows) + `.md` + a one-page PDF in this folder + `check_books_outstanding.py` (19 checks, PASS): for
+  **BK-15** the primary stays Eringen and Maugin I (`10.1007/978-1-4612-3226-1`) with **Volume II**
+  (`10.1007/978-1-4612-3236-0`) and **Maugin 1988, *Continuum Mechanics of Electromagnetic Solids***
+  (`10.1016/c2009-0-08748-0`) as substitutes; for **fractional thermoelasticity**, Povstenko 2015 with the
+  **2024 second edition** (`10.1007/978-3-031-64587-7`) and his diffusion-wave book
+  (`10.1007/978-3-319-17954-4`); for the optional **rank 12**, Achenbach with **Miklowitz 1978**
+  (`10.1016/c2009-0-08749-2`) and **Graff 1975**, which has **no Crossref book record** and is therefore
+  carried as *no DOI recorded* - the only Crossref hit for that title is a 1979 review, which must not be cited
+  as the book. Eight of the nine DOIs were opened against a Crossref record today. The honest answer to "do you
+  need any other book" is **no**: the three are the whole list, with rows 2/3, 5/6 and 8/9 alternatives to each
+  other, and the checker proves no row repeats a book already held.
+
 - **Step 36:** **CR127 closed** - the second reading job from the shelf. The claim ("the entropy depends
   also on the heat flux q_i, which must enter the state space") had been unjudgeable for the whole project;
   Muller and Ruggeri (1998), **§3.5, printed p. 24**, settles it with eq. (3.27) (the Grad distribution over
