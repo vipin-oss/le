@@ -251,6 +251,13 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 28:** the checksum half of defect D4 is done. `make_release_manifest.py` walks the repository and
+  writes `RELEASE_MANIFEST_2026-11-01.csv` - one row per file with its SHA-256, its size and a coarse class -
+  which is what an archive deposit needs (`--check` recomputes and reports drift instead of failing, because a
+  manifest belongs to the release commit, not to every commit). It covers 177 files and 9.8 MB today. The other
+  half of D4, the clean-environment run, still has to happen where the code runs: `scripts/requirements.txt`
+  lives with the manuscript, not here.
+
 - **Step 27:** the atlas was measured instead of counted loosely. The old line "8 of 40 cases carried
   through to results" was wrong twice: the eight rows in the benchmark file are *families* (BK-01 to BK-08),
   not cases, and no case can have a result while every paper is read at title level. The truthful numbers,
