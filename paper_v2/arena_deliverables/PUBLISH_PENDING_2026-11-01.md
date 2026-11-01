@@ -31,7 +31,7 @@ is open. So nothing is wrong with the plan; what is missing is all execution.
 What 11b literally asks for is an audit of the 134 pages, the derivations and the 35 scripts
 (12 check/bench/table scripts plus 23 figure scripts). What exists:
 
-- **neither the 134 pages nor the 35 scripts are in this repository.** It holds the registers,
+- **the manuscript is on GitHub, in an earlier session branch** (`arena/36bc8cc8-le`, tip 2026-10-28), and it has now been landed in `paper_v2/from_overleaf/phase5/` (165 text files, 1.8 MB): `master/main.tex`, 17 sections, 7 appendices, `frontmatter/abstract.tex`, 49 `.tex` and 45 `.py` files. The compiled builds are **126 pages** (phase 5, v1.1) and **161 pages** (phase 4) - so the long-quoted **134 pages is not a number any artefact supports** and is retired here. The scripts are **45**, not 35. The 54 MB of figures and PDFs stay outside the repository, as before It holds the registers,
   the deliverables and one summary `.tex`; the manuscript and the scripts live in the Overleaf
   project. So the audit cannot even start until the project has been pulled into
   `paper_v2/from_overleaf/` - and the pull has to run on the author's machine, because the
@@ -43,7 +43,7 @@ What 11b literally asks for is an audit of the 134 pages, the derivations and th
 - **9 of the 35 scripts** have no assertions or coded tolerances (D3). They print numbers and a
   human reads them, which means a check can fail silently. This is the defect most likely to
   embarrass the paper, because it makes every other number unverifiable in the same breath.
-- **D2, the overbroad phrasing** "one coupled dispersion polynomial", is still in the abstract
+- **D2, the overbroad phrasing** "one coupled dispersion polynomial", is **not in the v1.1 sources**: the string occurs nowhere in `paper_v2/from_overleaf/phase5/`, and the abstract that is actually there is scoped and explicitly model-specific ("The review compares model-specific assumptions..."). Either it was fixed after the defect was registered, or the registration referred to an older build - it must be re-checked against the exact PDF that is audited, and the register entry corrected to say which build it was raised against
   and in four other places. It is not true for exact delays, fractional powers or hereditary
   models, and a referee will find it in the first paragraph.
 - **23 paper edits** are written and waiting, **5** of them mandatory; the author applies them in

@@ -1,0 +1,371 @@
+%======================================================================
+% Appendix: Energy-Transport Audit Status for Generalized Theories
+%======================================================================
+% This appendix records selected inherited energy-transport claims and open
+% audit items. Only the classical local Cauchy flux is derived here under
+% explicit assumptions; generalized candidates are withheld or labelled open.
+% No generalized family-wide law is presented as canonical.
+%
+% Branch: arena/40393d9f-le
+% Prepared: 2026-10-21
+%======================================================================
+
+\section{Introduction}
+
+The exact classical Eulerian flux re-derived in Section 3 is $F_i=q_i-\sigma_{ij}v_j+\mathcal{E}v_i$ (EQ-007); this appendix is a retained, unverified working collection. Unless explicitly stated otherwise, its legacy $J_i=q_i-\sigma_{ij}v_j$ expressions denote only the reduced first-order wave-flux convention, not an exact fixed-volume Eulerian total-energy flux:
+
+\begin{equation}
+J_i = q_i - \sigma_{ij}v_j,
+\label{ef:classical}
+\end{equation}
+
+derived from the mechanical power balance and internal energy balance (Section 3.8 of the main manuscript).
+
+The exact classical Eulerian flux includes advection of total energy; the reduced convention is limited to the first-order small-amplitude balance described in Section 10.2. Some generalized models may introduce additional stored-energy variables, transport channels, dissipation, or boundary-power terms; none of these is universal. This appendix retains selected source leads and open questions. It does not assert a general energy-flux law for any generalized family.
+
+\section{Working assumptions to check model by model}
+
+The following assumptions are provisional bookkeeping items, not a set known to hold simultaneously for every model discussed below:
+\begin{enumerate}
+\item Infinitesimal strain is used where a classical linearized mechanical balance is displayed.
+\item Material homogeneity, isotropy, and linearity must be checked for each example.
+\item Body force and heat supply are set to zero only where explicitly stated.
+\item The harmonic convention $e^{-i\omega t}$ applies only to the displayed frequency-domain substitutions.
+\item The classical baseline is $\mathcal{E}=\frac12\rho v_i v_i+\rho e$ with specific internal energy $e$; additional field/internal-variable storage is model-specific and not assigned here.
+\item No common balance of the form $\partial_t\mathcal{E}+\partial_iJ_i=\mathcal{P}-\mathcal{D}$ is asserted for the generalized models.
+\end{enumerate}
+
+\section{Open audit item 1: Lord--Shulman (LS) Theory}
+
+\subsection{Governing equations}
+
+The LS theory modifies Fourier's law by introducing a flux relaxation time $\tau_0 > 0$:
+
+\begin{equation}
+q_i + \tau_0 \dot{q}_i = -k T_{,i},
+\label{ef:ls:1}
+\end{equation}
+
+where $q_i$ is the heat flux, $k$ is the thermal conductivity, $T$ is the temperature increment, and $\tau_0$ is the relaxation time.
+
+The following internal-energy balance is retained as a classical-form candidate only; its validity with the LS thermodynamic state and constitutive equations requires source checking:
+
+\begin{equation}
+\rho \dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i}.
+\label{ef:ls:2}
+\end{equation}
+
+The mechanical power balance (from Section 3.3) remains:
+
+\begin{equation}
+\rho \frac{d}{dt}\left(\frac{1}{2}v_i v_i\right)
+= -\sigma_{ij}\dot{\varepsilon}_{ij} + (\sigma_{ij}v_j)_{,i} + \rho f_i v_i.
+\label{ef:ls:3}
+\end{equation}
+
+\subsection{Classical flux form}
+
+Adding \eqref{ef:ls:2} and \eqref{ef:ls:3}, defining $\mathcal{E} = \frac{1}{2}\rho v_i v_i + \rho e$:
+
+\begin{equation}
+\frac{\partial\mathcal{E}}{\partial t} + (q_i - \sigma_{ij}v_j + \mathcal{E}v_i)_{,i} = \rho f_i v_i.
+\label{ef:ls:4}
+\end{equation}
+
+The expression $J_i=q_i-\sigma_{ij}v_j$ is only the reduced first-order wave-flux convention. The exact Eulerian flux includes $\mathcal{E}v_i$; compatibility of the reduced convention with a complete LS energy balance is not established by the constitutive substitution below and remains open.
+
+\subsection{Frequency-domain expression}
+
+For time-harmonic fields with $e^{-i\omega t}$ convention, \eqref{ef:ls:1} gives:
+
+\begin{equation}
+q_i(1 - i\omega\tau_0) = -k T_{,i},
+\qquad
+q_i = \frac{-k T_{,i}}{1 - i\omega\tau_0}.
+\label{ef:ls:5}
+\end{equation}
+
+Therefore, the energy flux in the frequency domain is:
+
+\begin{equation}
+J_i = -\sigma_{ij}v_j - \frac{k T_{,i}}{1 - i\omega\tau_0}.
+\label{ef:ls:6}
+\end{equation}
+
+\subsection{Time-domain interpretation}
+
+In the time domain, \eqref{ef:ls:6} corresponds to:
+
+\begin{equation}
+J_i = q_i - \sigma_{ij}v_j,
+\qquad \text{where } q_i \text{ solves } q_i + \tau_0\dot{q}_i = -k T_{,i}.
+\label{ef:ls:7}
+\end{equation}
+
+There is no unique expression for $J_i$ solely in terms of $T$ in the time domain without $q_i$, because the relaxation equation introduces memory.
+
+\subsection{Status}
+
+\textbf{UNVERIFIED WORKING CLAIM.} Under the reduced first-order wave-flux convention only, the candidate form is $J_i = q_i - \sigma_{ij}v_j$ for LS theory with $q_i$ from \eqref{ef:ls:1}; this is not the exact Eulerian total-energy flux. The frequency-domain expression \eqref{ef:ls:6} is retained as unverified working material. A time-domain expression solely in terms of $T$ (eliminating $q_i$) would require solving the relaxation ODE, which introduces an integral (memory) term. This remains as an open formulation question.
+
+\section{Open audit item 2: Green--Lindsay (GL) Theory}
+
+\subsection{Status of inherited equations}
+
+Green--Lindsay is described in the corrected manuscript as a temperature-rate-dependent, single-temperature theory with two relaxation parameters. Earlier equations in this appendix introduced a second temperature and are withdrawn as inaccurate legacy material; they are not reproduced as candidate GL equations. The complete constitutive system and its energy balance remain OPEN pending primary-source checking and derivation. The reduced first-order expression $J_i=q_i-\sigma_{ij}v_j$ is not, by itself, a verified Green--Lindsay energy-flux theorem; the exact Eulerian classical balance additionally contains total-energy advection.
+
+\section{Open audit item 3: Green--Naghdi Type II (GN-II) Theory}
+
+\subsection{Governing equations}
+
+GN-II theory (thermoelasticity without energy dissipation) introduces the thermal displacement $\alpha$ defined by:
+
+\begin{equation}
+\dot{\alpha} = T,
+\label{ef:gn2:1}
+\end{equation}
+
+where $T$ is the temperature increment. The source-free thermal-displacement form, obtained by integrating the primary temperature equation once with zero integration constant, is \cite{Green1993}:
+
+\begin{equation}
+\kappa^*\nabla^2\alpha = \rho c_e \ddot{\alpha} + \beta T_0 \dot{u}_{i,i}.
+\label{ef:gn2:2}
+\end{equation}
+
+The exact component equation for the GN-II entropy flux has not been transcribed and verified here. No isotropic component formula is retained, and no GN-II energy-flux identity is inferred from the source's common-potential statement \cite{Green1993}.
+
+\subsection{Energy flux}
+
+For GN-II, there is no dissipation ($\mathcal{D} = 0$). The energy balance is:
+
+\begin{equation}
+\frac{\partial\mathcal{E}}{\partial t} + \partial_i J_i = \mathcal{P}.
+\label{ef:gn2:4}
+\end{equation}
+
+The entropy flux $p_i$ is determined by the same free energy potential as the stress. The relationship between the energy flux $J_i$ and the entropy flux $p_i$ requires the full GN-II thermodynamic formulation.
+
+\subsection{Status}
+
+\textbf{WITHHELD.} The candidate isotropic entropy-flux expression has been removed because its exact component form is not source-verified here. The complete energy flux and its relation to entropy flux remain open pending primary-source verification and model-specific derivation.
+
+\section{Open audit item 4: Green--Naghdi Type III (GN-III) Theory}
+
+\subsection{Governing equations}
+
+For the source-free, linear isotropic GN-III system transcribed from Green and Naghdi (1992), the temperature equation is:
+
+\begin{equation}
+\rho c_e\ddot{T} + \beta T_0\ddot{u}_{i,i} = \kappa\nabla^2\dot{T} + \kappa^*\nabla^2T.
+\label{ef:gn3:1}
+\end{equation}
+
+\subsection{Energy flux}
+
+The rate term can contribute dissipation when $\kappa>0$; the exact energy flux and dissipation identity are not derived here.
+
+\subsection{Status}
+
+\textbf{OPEN WORKING CLAIM.} The GN-III energy flux and dissipation identity require a derivation from the full 1992 formulation, including its free energy and boundary power. No mixed-flux identity is asserted here.
+
+\section{Open audit item 5: Dual-Phase-Lag (DPL) Theory}
+
+\subsection{Governing equations}
+
+The DPL constitutive law (Tzou, 1995):
+
+\begin{equation}
+q_i(t + \tau_q) = -k T_{,i}(t + \tau_T),
+\label{ef:dpl:1}
+\end{equation}
+
+where $\tau_q$ is the heat flux phase lag and $\tau_T$ is the temperature gradient phase lag.
+
+Taylor expansion to first order:
+
+\begin{equation}
+q_i + \tau_q\dot{q}_i = -k(T_{,i} + \tau_T\dot{T}_{,i}).
+\label{ef:dpl:2}
+\end{equation}
+
+\subsection{Energy flux}
+
+The following internal-energy balance is retained as a classical-form candidate only; its validity with the LS thermodynamic state and constitutive equations requires source checking:
+
+\begin{equation}
+\rho\dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i}.
+\label{ef:dpl:3}
+\end{equation}
+
+The expression $J_i=q_i-\sigma_{ij}v_j$ is classical; its role in the displayed generalized balance remains open. However, expressing $q_i$ explicitly in terms of $T$ requires solving the DPL constitutive equation.
+
+\subsection{Frequency-domain expression}
+
+For time-harmonic fields:
+
+\begin{equation}
+q_i(1 - i\omega\tau_q) = -k T_{,i}(1 - i\omega\tau_T),
+\label{ef:dpl:4}
+\end{equation}
+
+\begin{equation}
+J_i = -\sigma_{ij}v_j - k T_{,i}\frac{1 - i\omega\tau_T}{1 - i\omega\tau_q}.
+\label{ef:dpl:5}
+\end{equation}
+
+\subsection{Status}
+
+\textbf{UNVERIFIED WORKING CLAIM.} The frequency-domain expression \eqref{ef:dpl:5} is retained as unverified working material. The time-domain expression solely in terms of $T$ requires solving the DPL constitutive equation, which introduces higher-order time derivatives. The thermodynamic admissibility condition $\tau_q \geq \tau_T$ must be verified for the flux formulation.
+
+\section{Open audit item 6: Triple-Phase-Lag (TPL) Theory}
+
+The inherited TPL constitutive equation and its frequency-domain expansion are withdrawn pending primary-source comparison. Different TPL truncations introduce different derivative or thermal-displacement terms, so the former formula is not retained as a working identity. The exact model, admissibility conditions, and energy balance remain OPEN; no TPL flux is derived here.
+
+\section{Open audit item 7: Moore--Gibson--Thompson (MGT) Theory}
+
+The dimensionally inconsistent legacy equation and its scratch frequency-domain cancellation have been withdrawn. Section~\ref{sec:4.9} records a candidate flux/thermal-displacement formulation and marks it UNVERIFIED pending a primary-source comparison. No MGT flux, stored-energy term, dissipation inequality, or frequency-domain reduction is derived here; those tasks remain OPEN.
+
+\section{Open audit item 8: Memory-Dependent Derivative (MDD) Theory}
+
+\subsection{Governing equations}
+
+Candidate MDD operator (equation-level source check pending):
+
+\begin{equation}
+D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} K_{\mathrm{MDD}}(t-t') f'(t') \, dt',
+\label{ef:mdd:1}
+\end{equation}
+
+where $\omega_M > 0$ is the finite memory window and $K_{\mathrm{MDD}}(t-t')$ is the kernel function.
+
+Candidate heat-flux law coupled to the displayed operator (source check pending):
+
+\begin{equation}
+(1 + \tau_0 D_{\omega_M})q_i = -k T_{,i},
+\label{ef:mdd:2}
+\end{equation}
+
+or equivalently:
+
+\begin{equation}
+q_i + \tau_0 D_{\omega_M} q_i = -k T_{,i}.
+\label{ef:mdd:3}
+\end{equation}
+
+\subsection{Energy flux}
+
+The expression $J_i=q_i-\sigma_{ij}v_j$ is classical; its role in the displayed generalized balance remains open. However, $q_i$ is now determined by a convolution-type memory equation.
+
+\subsection{Frequency-domain expression}
+
+For the finite-window operator in Eq.~\eqref{ef:mdd:1}, set $s=t-t'$ and use the harmonic convention $f(t)=\hat f e^{-i\Omega t}$. Its exact multiplier is kernel-dependent:
+
+\begin{equation}
+D_{\omega_M} f(t) \longleftrightarrow -\frac{i\Omega}{\omega_M}\left[\int_0^{\omega_M}K_{\mathrm{MDD}}(s)e^{i\Omega s}\,ds\right]\hat f.
+\label{ef:mdd:4}
+\end{equation}
+
+This expression is the finite-horizon Fourier multiplier for the displayed kernel and convention; no kernel-independent simplified symbol is asserted.
+
+\subsection{Status}
+
+\textbf{OPEN WORKING CLAIM.} The MDD energy flux requires the convolution-form flux:
+
+\begin{equation}
+J_i = q_i - \sigma_{ij}v_j,
+\qquad q_i + \tau_0 D_{\omega_M} q_i = -k T_{,i}.
+\label{ef:mdd:5}
+\end{equation}
+
+The explicit time-domain expression for $J_i$ solely in terms of $T$ requires solving the convolution equation, which depends on the kernel choice. This derivation is open.
+
+\section{Open audit item 9: Nonlocal Elasticity (Eringen)}
+
+\subsection{Governing equations}
+
+Eringen's nonlocal constitutive relation (integral form):
+
+\begin{equation}
+\sigma_{ij}(\bm{x}) = \int_\Omega \alpha(|\bm{x}' - \bm{x}|, \tau) \sigma_{ij}^{\text{local}}(\bm{x}') \, d\Omega_{\bm{x}'},
+\label{ef:nonlocal:1}
+\end{equation}
+
+or in differential form (Helmholtz kernel):
+
+\begin{equation}
+(1 - \xi^2\nabla^2)\sigma_{ij} = \sigma_{ij}^{\text{local}},
+\label{ef:nonlocal:2}
+\end{equation}
+
+where $\xi = e_0 a$ is the nonlocal length scale parameter.
+
+\subsection{Energy flux}
+
+For a specified nonlocal integral law, the local Cauchy-stress product rule need not close the domain power balance. No nonlocal energy-flux formula is asserted in this appendix. Any valid balance must be derived from the selected kernel, domain, constitutive energy, and boundary data, including whatever domain or boundary-power terms follow from those choices.
+
+\subsection{Status}
+
+\textbf{OPEN.} The candidate placeholder formula in the inherited working draft is intentionally withheld; it is not a derived universal correction. Derive the domain and boundary power for a specific nonlocal model before stating an energy flux or interface ratio.
+
+\section{Open audit item 10: Piezoelectric Electrical Energy Transport}
+
+\subsection{Governing equations}
+
+For piezoelectric media, the constitutive relations are:
+
+\begin{equation}
+\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k,
+\label{ef:piezo:1}
+\end{equation}
+
+\begin{equation}
+D_i = e_{ikl}\varepsilon_{kl} + \kappa_{ij}E_j,
+\label{ef:piezo:2}
+\end{equation}
+
+\begin{equation}
+E_i = -\phi_{,i}, \qquad D_{i,i} = 0.
+\label{ef:piezo:3}
+\end{equation}
+
+\subsection{Energy flux}
+
+No electrical energy density or electrical power-flux expression is asserted here. The coupled energy storage and electrical work depend on the chosen electromechanical potential, field convention, external sources, and boundary conditions; the electrostatic equations displayed above alone do not determine a universal interface flux.
+
+\subsection{Status}
+
+\textbf{OPEN.} The inherited candidate \texttt{-phi dot(D\_i)} term and combined piezothermoelastic flux are withheld, not promoted as formulae. Derive the complete balance from a stated electromechanical free energy and field equations, then compare it with the relevant primary source.
+
+\section{Summary Table}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}p{2.6cm}XX@{}}
+\toprule
+\textbf{Theory} & \textbf{v1.1 audit status} & \textbf{Required follow-up} \\
+\midrule
+Classical & DERIVED in Section 3 for local Cauchy stress and stated convention & Confirm notation consistently across all source files \\
+Lord--Shulman & UNVERIFIED beyond the displayed constitutive law & Check primary-source convention, initial terms, and harmonic flux \\
+Green--Lindsay & OPEN & Check the single-temperature rate-dependent equations and derive the balance \\
+Green--Naghdi II/III & OPEN & Derive free energy, entropy/energy flux, and boundary power for each model \\
+Dual/triple phase-lag & OPEN & Check the exact lag truncation, stability range, and energy identity \\
+Moore--Gibson--Thompson & OPEN & Derive storage, boundary flux, and admissibility for the selected MGT variant \\
+Memory-dependent & OPEN & Specify kernel, initial data, stored energy, and boundary power \\
+Nonlocal / gradient & OPEN & Derive domain- and boundary-condition-specific power terms \\
+Piezoelectric / multiphysics & OPEN & Include external-field power and derive the complete coupled balance \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The preceding formulae are retained solely as unverified working material and are not approved generalized-theory identities.
+
+\section{Recommendations}
+
+\begin{enumerate}
+\item Use only the classical flux derived in Section 3 as the canonical formula; no generalized expression in this appendix is approved.
+\item Present frequency-domain forms for LS and DPL as theory-specific expressions with clearly stated assumptions.
+\item Present all other formulations as open derivations with explicit assumptions.
+\item Do not include any uncertain flux form in comparative tables as a canonical result.
+\item Mark each uncertain flux as an open research question (OQ10.1--OQ10.8).
+\end{enumerate}
