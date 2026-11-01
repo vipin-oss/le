@@ -46,7 +46,39 @@ Final wording for CR019:
 
 ## Where this leaves the register
 
-Both rows keep `verdict = SOURCE NOT AVAILABLE`. They are now the only two rows that the claim-check
-series itself has had to leave at that verdict after a search (the other SNA rows were never in scope
-of a claim-check batch). The two DOIs above are the ones the register carries; neither was verified
-against a printed page, because no page of either paper was seen.
+**CR044 keeps `verdict = SOURCE NOT AVAILABLE`.** It is the one row this series has had to leave at
+that verdict after a search; the other SNA rows were never in scope of a claim-check batch. Its DOI is
+the one the register carries and was not verified against a printed page, because no page of the paper
+was seen.
+
+**CR019 no longer stands at that verdict - see the correction below.**
+
+---
+
+## CORRECTION (Step 7, 2026-11-01): CR019 is supplied and verified
+
+The two paragraphs about `Quintanilla2008` above are **superseded**. The author supplied a complete
+reference set on 2026-11-01, and it contains the correct paper. The copy in it is
+
+> R. Quintanilla (2008), "End effects in three-phase-lag heat conduction", Applicable Analysis: An
+> International Journal 87:8, 943-955, DOI 10.1080/00036810802428938
+
+- the citation line printed on the first page of the file, i.e. exactly the work the bibliography names.
+
+What that page establishes (read on pp. 943-944):
+
+* the paper studies the spatial evolution of solutions of an initial-boundary-value problem in a
+  semi-infinite cylinder;
+* under null initial data a **Phragmen-Lindelof alternative** is obtained, plus an upper bound for the
+  amplitude term in terms of the boundary data;
+* for decay solutions the decay is shown to be controlled by the exponential of a second-degree
+  polynomial in the distance from the finite end of the cylinder.
+
+That is what "end effects" means in this literature, so **CR019 is SUPPORTED at R3** (register row
+updated, deliverable `../P3_evidence_claims_C/claim_check_C_batch_007.csv`, row CC-0036).
+
+One point of the old wording survives and should not be lost: the file named `quintanilla2008.pdf` in
+the *library* folder really does hold the Quintanilla-Racke note on stability, not this paper. The
+name-match/content-mismatch was real. What was wrong was the conclusion drawn from it - that the cited
+paper could not be had. There were two different files with the same name, and the author's copy is the
+right one. The library copy must still not be used for the end-effects sentence.

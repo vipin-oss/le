@@ -1,3 +1,9 @@
+# REDUCED TO ONE ROW IN STEP 7 - see `SUMMARY_step7.md`
+
+Nineteen of the twenty sources below were supplied by the author on 2026-11-01 and are no longer on the
+list. `pdfs_needed_from_author.csv` now holds Tzou1997 only. The list as it stood in Step 3 is kept
+below for the record.
+
 # `pdfs_needed_from_author.csv` - Step 3 rewrite
 
 The file was rewritten for the current step. It now carries **only the sources that are still not
