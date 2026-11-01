@@ -71,6 +71,8 @@ All paths are relative to `paper_v2/arena_deliverables/`.
 
 ## 4. The numbers, and where each comes from
 
+- **Reference register levels** (after step 24): 62 R2, 42 R1, 4 R3, 4 R1-noDOI, 7 R0 over 119 rows, 113
+  distinct bibkeys. The R0 count is the one the blueprint's P2 exit condition turns on.
 - **Register:** 224 rows in `paper_v2/claim_register.csv`; **111** of them carry the verdict
   `SOURCE NOT AVAILABLE`. That 111 is the denominator for everything below.
 - **Closed by reading a source: 83.** 40 (first two uploads) + 25 (fourth batch) + 1 (the work found by the
@@ -229,6 +231,24 @@ numbers disagree.
   carries **32 R0 references** in a register that covers 119 entries against a bibliography of 323, the atlas has
   **8 of 40** cases carried through, and there are 14 benchmark records and 42 second-implementation comparisons.
   `check_readiness.py` recomputes every number in that note from the CSVs, so the note cannot drift.
+  (The 32 R0 references it recorded were repaired in step 24; the note's own numbers were updated with it.)
+
+- **Step 24:** the 32 R0 rows were re-decided instead of re-fetched, and the answer was that most of them were
+  never about a paper we lacked. **Seven of the 32 rows carried a DOI that resolves to a different paper** -
+  the Jackson 1970 row pointed at Green and Naghdi 1992, the Rayleigh 1885 row at a 2024 Moore-Gibson-Thompson
+  paper, the Pennes 1948 row at a 2023 bioheat paper, and so on - and five more carried a candidate *title*
+  from another work. Two of the borrowed DOIs were pasted from neighbouring rows (Li2021 and Zhang2021), which
+  is why the wrong entries stayed plausible. The rows were corrected against records opened today and against
+  full texts already read in this cycle: **8 completed, 8 replaced, 4 promoted to R3 because the text was
+  already read, 2 level-aligned, 1 memory-built bib entry confirmed, 2 confirmed as they were, 7 still R0**.
+  The register now reads **62 R2 / 42 R1 / 4 R3 / 4 R1-noDOI / 7 R0** over 119 rows, and those 119 rows carry
+  only **113 distinct bibkeys** - six are duplicated across batches 003 and 004, and only Bleustein1968 has two
+  different levels. The seven survivors are Chadwick 1960, Auld 1973, Duhamel 1837, Scruby 1990 and Gulyaev
+  1969, each with a named next action in `P2_verification/`. In the same pass the four held sources were
+  finally pinned down: **none of the four is in the library** (five name and title-phrase searches each), but
+  **all four citations are real** - Muller and Ruggeri 1998, Gurtin and Williams 1966 (ZAMP 17, 626-633),
+  Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
+  reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
 ## 7. How to re-run everything
 
@@ -268,6 +288,17 @@ rebuild the PDF has to be verified by hand: extract its text with `pypdf` and co
 single open work is printed with its note, that every DOI or ISBN on it still matches
 `related_books_2026-11-01.csv`, and that the numbers agree with the CSV. That was done in step 21.
 
+### The P2 pass checker
+
+```bash
+cd paper_v2/arena_deliverables/P2_verification && python3 check_p2_pass.py; echo "exit=$?"
+```
+
+It must end with `PASS all checks (register=119 rows, R0=7, resolution=32, held=4)` and exit 0. It re-reads the
+verification register, the 32-row resolution table and the four-row held-sources table, and fails if a level
+count moves, if one of the seven wrong DOIs comes back onto the row it had been pasted into, if a held source is
+ever claimed as read, or if the four claim verdicts stop saying `SOURCE NOT AVAILABLE`.
+
 ### Pulling the latest from Overleaf
 
 The author's manuscript lives on Overleaf and is linked to a git remote there. `pull_from_overleaf.sh`
@@ -306,10 +337,13 @@ Two hard facts, recorded so nobody spends an hour rediscovering them:
    Crystal Lattices* (DOI 10.1093/oso/9780192670083.001.0001), listed first in
    `related_books_2026-11-01.csv`. Polizzotto (2001) is held but its text will not extract, so CR195 still
    waits for a readable copy.
-3. **Four held sources need locating by content, not by name** (CR127 Muller and Ruggeri; CR152 Gurtin and
-   Williams 1966; CR166 Li et al. 2019; CR196 Eringen 1974). Seven name searches failed on 2026-11-01. The
-   productive approach is to enumerate the library's PDFs and open anything whose first page matches the
-   title, or to search the archives in which the inventory says they sit.
+3. **Four held sources are cited correctly and still unread** (CR127 Muller and Ruggeri; CR152 Gurtin and
+   Williams 1966; CR166 Li et al. 2019; CR196 Eringen 1974). Step 24 confirmed every one of the four against a
+   publisher record and confirmed that none of the four is in the library, so more searching will not help. Two
+   of them can be closed by wording instead of by a copy - CR152 can rest on Coleman and Noll 1963, which is
+   already at R1, and CR196's historical half is carried by the 1974 title itself - and both are written up as
+   proposals, not edits, in `P2_verification/HELD_SOURCES_2026-11-01.csv`. CR127 needs the book; CR166 needs one
+   clause removed.
 4. **Sixteen of the nineteen register-level works can be ordered today**, and three need no order because
    they are already held (CR003 and CR114 are one paper, and CR199 is now readable). Of the sixteen: nine
    already carry a correct DOI in the register line, two got a verified DOI today, and five still need a

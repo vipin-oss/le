@@ -83,6 +83,7 @@ def main():
     lv = collections.Counter(r.get("verification_level", "") for r in ver)
     cl = collections.Counter(r.get("level", "") for r in cat)
     vR0, vR1, vR2 = lv.get("R0", 0), lv.get("R1", 0) + lv.get("R1-noDOI", 0), lv.get("R2", 0)
+    vR3 = lv.get("R3", 0)
     cR0, cR1, cR2 = cl.get("R0", 0), cl.get("R1", 0), cl.get("R2", 0)
 
     dreg = open(os.path.join(PAPER, "P1_DEFECT_REGISTER.md"), encoding="utf-8").read().splitlines()
@@ -129,9 +130,11 @@ def main():
           "**%d entries**" % len(ver) in txt)
     check("the note prints the verification register's R0 count (%d)" % vR0,
           "**%d are R0**" % vR0 in txt)
+    check("the note prints the register's R3 count (%d)" % vR3,
+          "%d R3" % vR3 in txt)
     check("the note prints the catalogue check's size and R0 count (%d, %d)" % (len(cat), cR0),
           "**%d entries** with **%d R0**" % (len(cat), cR0) in txt)
-    check("the reference levels add up", vR0 + vR1 + vR2 == len(ver), str(len(ver)))
+    check("the reference levels add up", vR0 + vR1 + vR2 + vR3 == len(ver), str(len(ver)))
     check("the catalogue levels add up", cR0 + cR1 + cR2 == len(cat), str(len(cat)))
 
     # ---- 5. build artefacts ----
