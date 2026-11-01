@@ -1,0 +1,15 @@
+benchmark_id,family,quantity,measured,reference,tolerance,error,verdict
+BK-12,Rayleigh-Lamb plate,S0 speed at kh = 0.02 vs c_S sqrt(2/(1-nu)) (nu = 1/4),1.632981 c_S,1.632993 c_S,1e-2,1.21e-05,PASS
+BK-12,Rayleigh-Lamb plate,A0 speed at kh = 0.02 (flexural branch must vanish),0.018851 c_S,< 0.05 c_S,-,1.89e-02,PASS
+BK-12,Rayleigh-Lamb plate,both branches -> c_R at kh = 20 (nu = 1/4),max |c - c_R| = 9.23e-08 c_S,c_R = 0.919402 c_S,5e-3,9.23e-08,PASS
+BK-12,Rayleigh-Lamb plate,branch count at kh = 1 (S and A),"S 3, A 4",at least 2 each,-,-,PASS
+BK-12,Rayleigh-Lamb plate,"S0 decreasing and A0 increasing in kh (continuation, 20 -> 0.02)","S yes (22 points), A yes (22 points)",both yes,-,-,PASS
+BK-13,Love waves,modes below the first cut-off (omega = 0.5 omega_1),1 mode(s),exactly 1,-,-,PASS
+BK-13,Love waves,mode count just above omega_1 and omega_2,2 then 3,2 then 3,-,-,PASS
+BK-13,Love waves,upper mode approaches c2 at the cut-off,c2 - c = 1.6366e-02 (omega = 1.05 omega_1),< 5% of c2,0.05 c2,1.637e-02,PASS
+BK-13,Love waves,measured cut-off vs n pi / sqrt(1/c1^2-1/c2^2),"omega_1 measured 3.627658, formula 3.627599",relative error < 1e-3,1e-3,1.64e-05,PASS
+BK-13,Love waves,no mode when the layer is faster than the half-space,0 mode(s),0,-,-,PASS
+BK-14,SH interface,max |R^2 + T^2 (Z2/Z1) - 1| below the critical angle,2.22e-16,1e-12,1e-12,2.22e-16,PASS
+BK-14,SH interface,Snell residual at 20 degrees,0.00e+00,1e-15,1e-15,0.00e+00,PASS
+BK-14,SH interface,critical angle 36.032 deg: beyond it nothing is transmitted,R undefined (no real theta2),no real transmitted angle,-,-,PASS
+BK-14,SH interface,normal incidence R vs (Z1-Z2)/(Z1+Z2),-0.276595744681,-0.276595744681,1e-15,0.00e+00,PASS

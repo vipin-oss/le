@@ -18,7 +18,7 @@ is open. So nothing is wrong with the plan; what is missing is all execution.
 | G1 | P1 audit of the 134 pages, derivations and the 35 scripts complete | **not started** as an audit; 10 defects registered, **7 of the 10 defects are OPEN** | author + agent |
 | G2 | no R0 entries; critical claims at R3 or independently derived | **7 are R0** (down from 32), catalogue check **238 entries** with **9 R0**, register covers **204 entries** of the bibliography's **323** | agent, plus print access |
 | G3 | contribution map filled and checked against prior reviews | **no such file exists**; P0 has not started | author + agent |
-| G4 | benchmark registry complete, independent implementations done | **14 benchmark records**, **42 comparisons**; atlas **40 cases planned**, **12 with a fully executable invariant** and **11 partial**, and **no case-level result for any of the 40** - the eight rows in the benchmark file are families, not cases | agent |
+| G4 | benchmark registry complete, independent implementations done | **14 benchmark records**, **42 comparisons**; atlas **40 cases planned**, **23 with a fully executable invariant** and **11 partial**, and **no case-level result for any of the 40** - the eight rows in the benchmark file are families, not cases | agent |
 | G5 | two or three expert reviews received and resolved | **0 named, 0 invited, 0 received** | author (external people) |
 | G6 | journal fit confirmed, template, declarations, archive DOI | **journal not chosen**; the Elsevier variant has never compiled; no archive DOI, no declaration wording, no cover letter | author + agent |
 
@@ -94,12 +94,13 @@ the most expensive to do badly. It needs the author's judgement, not a machine r
 - **14 benchmark records**; the registry is published in the repository, but "complete" is not yet
   defined against the paper's own schemes.
 - **42 comparisons** in the second implementation.
-- the atlas is the visible hole, and it is smaller than it looked. Of the **40 cases planned**, **12 have a
-  fully executable invariant** and **11 more a partial one**; **17 have none yet**, because whole wave families
-  (Lamb plates, SH/Love layers, interfaces, coupled multifield) had no executable invariant at all. Those 17
-  need the missing invariants written first (BK-12 to BK-15 are named in `P3_atlas/atlas_case_coverage.csv`),
-  and only then can a case be carried to a result. No case has a case-level result today, and none can have one
-  until the papers themselves are read past their titles.
+- the atlas is the visible hole, and it is smaller than it looked. Of the **40 cases planned**, **23 have a
+  fully executable invariant** and **11 more a partial one**; **6 have none**, and all six are coupled multifield
+  cases waiting on BK-15. Since step 29 the plate, layer and interface families have invariants too (BK-12, BK-13,
+  BK-14), and each of them is validated against a classical closed form rather than against itself. What is still
+  missing: the thermoelastic surface determinant (BK-10), a branch-count invariant for m > 2 (BK-11) and the
+  coupled-field one (BK-15). And no case has a case-level result today - none can have one until the papers are
+  read past their titles.
 - experiment extraction stands at **13 rows** and can be extended as sources allow.
 
 ### G5 — expert readers
@@ -128,7 +129,7 @@ that should have gone out weeks ago has not gone out. Reviews take four to six w
 | owner | items |
 |---|---|
 | **author only** | the 23 paper edits in Overleaf (5 mandatory); the 4 waived-citation sentences; the 34 PARTLY SUPPORTED claims that need a wording hedge or a better source; naming and inviting the 3 expert readers; choosing the journal; the declarations and cover letter; signing off the de-duplication of 6 register rows |
-| **agent only** | assertions and tolerances in the 9 scripts (D3); D6 catalogue-only entries; the register 204 towards 323; the four missing atlas invariants (BK-12 to BK-15) and then the 17 uncovered cases; the model-selection guide and the controversy table once the author approves the shape |
+| **agent only** | assertions and tolerances in the 9 scripts (D3); D6 catalogue-only entries; the register 204 towards 323; BK-15 and the two partials (BK-10, BK-11); the model-selection guide and the controversy table once the author approves the shape |
 | **needs the Overleaf project first** | the page-by-page audit of the 134 pages; the assertions in the 9 scripts; D6, D8, D9; the final clean build. All of it is blocked until the project is pulled into `paper_v2/from_overleaf/` |
 | **needs money or a library** | the 7 R0 works (Chadwick 1960, Auld 1973, Duhamel 1837, Scruby 1990, Gulyaev 1969 — five distinct works); Muller and Ruggeri 1998; a readable Polizzotto 2001 for CR195 |
 | **needs other people** | G5, the three expert reviews; and the journal editor's own response |
@@ -148,7 +149,7 @@ is built on it.
 | week 1 | apply the 23 edits, rewrite the 5 NOT SUPPORTED sentences, hedge the 34 PARTLY SUPPORTED ones; **invite the three expert readers**; pick the journal and send the AMR inquiry | author |
 | week 1-2 | assertions in the 9 scripts; 19 register-level claims; 9 catalogue R0 rows; chase the 5 print-only works | agent |
 | week 2-3 | the page-by-page audit of the 134 pages, defect by defect, with the 7 open defects closed as it goes | author + agent |
-| week 3-6 | the four missing atlas invariants (plate, SH, interface, multifield) and then the 17 uncovered cases | agent |
+| week 3-6 | BK-15 (coupled multifield) and the two partials (BK-10, BK-11), then reading the 40 papers so the cases can carry numbers | agent |
 | week 4-6 | P5 synthesis: model-selection guide, controversy table, atlas rebuild, the 17-row atlas replaced (D7) | author + agent |
 | week 4-8 | expert reviews arrive, are answered in writing, and the answers are folded into the text | author |
 | week 6-7 | contribution map and the comparison against prior reviews (G3) | author + agent |

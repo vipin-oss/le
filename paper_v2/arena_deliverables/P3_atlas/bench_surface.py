@@ -61,19 +61,18 @@ def rayleigh_f(x, nu):
 
 def rayleigh_ratio(nu, tol=1e-13):
     """Bisection for the unique root in (0, 1).  Returns None if there is none."""
-    lo, hi = 0.0, 1.0
-    f_lo, f_hi = rayleigh_f(lo, nu), rayleigh_f(hi, nu)
-    if f_lo * f_hi > 0:
-        return None
-    for _ in range(200):
+    # x = 0 is a degenerate root of this written form (both sides equal 4), so the
+    # physical root is bracketed in (0.5, 1): f < 0 at 0.5 and f > 0 at 1.
+    lo, hi = 0.5, 1.0
+    for _ in range(300):
         mid = 0.5 * (lo + hi)
         f_mid = rayleigh_f(mid, nu)
-        if abs(f_mid) < tol or (hi - lo) < tol:
+        if abs(f_mid) < tol:
             return mid
-        if f_mid * f_lo < 0:
-            hi, f_hi = mid, f_mid
+        if f_mid < 0:
+            lo = mid
         else:
-            lo, f_lo = mid, f_mid
+            hi = mid
     return 0.5 * (lo + hi)
 
 
@@ -158,15 +157,9 @@ FAMILY_MAP = {
     "porous / voids": (["BK-01", "BK-03"], PARTIAL,
                        "BK-01 assumes exactly two K-roots; a double-porosity model has a third "
                        "branch, so a branch-count invariant for m > 2 is missing - BK-11"),
-    "Lamb / plate": ([], NONE,
-                     "no plate invariant exists: the A0/S0 limits (S0 -> c_S sqrt(2/(1-nu)), "
-                     "A0 -> 0, both -> c_R) need the Rayleigh-Lamb determinant - BK-12"),
-    "shear / SH": ([], NONE,
-                   "no SH invariant exists: Love-wave cut-offs at omega_n h = n pi / "
-                   "sqrt(1/c1^2 - 1/c2^2) need a layered-shift solver - BK-13"),
-    "interface / layered": ([], NONE,
-                            "no interface invariant exists: Snell's law plus energy-flux "
-                            "continuity R^2 + T^2 (Z2 cos/Z1 cos) = 1 - BK-14"),
+    "Lamb / plate": (["BK-12"], FULL, ""),
+    "shear / SH": (["BK-13"], FULL, ""),
+    "interface / layered": (["BK-14"], FULL, ""),
     "multifield": ([], NONE,
                    "no coupled-field invariant exists: piezo/magneto branch speeds need the "
                    "coupled constitutive matrix - BK-15"),

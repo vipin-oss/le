@@ -17,6 +17,7 @@ RES = os.path.join(HERE, "bench_surface_results.csv")
 COV = os.path.join(HERE, "atlas_case_coverage.csv")
 PLAN = os.path.join(HERE, "atlas_plan.csv")
 MAIN = os.path.join(HERE, "bench_atlas_results.csv")
+FAM = os.path.join(HERE, "bench_families_results.csv")
 
 fails = []
 
@@ -38,6 +39,7 @@ res = rows(RES)
 cov = rows(COV)
 plan = rows(PLAN)
 main = rows(MAIN)
+fam = rows(FAM)
 
 print("== BK-09, the surface-wave invariant ==")
 check("it has six rows", len(res) == 6, str(len(res)))
@@ -56,8 +58,8 @@ check("the problem ids match the plan exactly",
 check("the bibkeys match the plan exactly",
       [c["bibkey"] for c in cov] == [p["bibkey"] for p in plan])
 cnt = collections.Counter(c["coverage"] for c in cov)
-check("the coverage split is 12 full / 11 partial / 17 none",
-      cnt == {"yes": 12, "partial": 11, "no": 17}, str(dict(cnt)))
+check("the coverage split is 23 full / 11 partial / 6 none",
+      cnt == {"yes": 23, "partial": 11, "no": 6}, str(dict(cnt)))
 check("no case claims a case-level result",
       all(c["case_level_result"] == "no" for c in cov))
 check("every case says why there is no case-level result",
@@ -69,13 +71,20 @@ check("the partial cases say what they are missing",
       all(c["missing_invariant"] for c in cov if c["coverage"] == "partial"))
 check("the fully covered cases name only benchmarks that exist",
       all(all(b in {"BK-01", "BK-02", "BK-03", "BK-04", "BK-05", "BK-06", "BK-07",
-                    "BK-08", "BK-09"} for b in c["applicable_benchmarks"].split())
+                    "BK-08", "BK-09", "BK-12", "BK-13", "BK-14"}
+              for b in c["applicable_benchmarks"].split())
           for c in cov if c["coverage"] == "yes"))
-check("the bulk family is the only one claimed fully covered",
-      {c["wave_family"] for c in cov if c["coverage"] == "yes"} == {"bulk", "TED / damping"},
+check("the fully covered families are the five that have an executable invariant",
+      {c["wave_family"] for c in cov if c["coverage"] == "yes"}
+      == {"bulk", "TED / damping", "Lamb / plate", "shear / SH", "interface / layered"},
       ", ".join(sorted({c["wave_family"] for c in cov if c["coverage"] == "yes"})))
-check("the two result files together hold %d benchmark rows" % (len(main) + len(res)),
-      len(main) == 8 and len(res) == 6, "%d + %d" % (len(main), len(res)))
+check("the three result files together hold %d benchmark rows" % (len(main) + len(res) + len(fam)),
+      len(main) == 8 and len(res) == 6 and len(fam) == 14,
+      "%d + %d + %d" % (len(main), len(res), len(fam)))
+check("every BK-12/13/14 row passes", all(r["verdict"] == "PASS" for r in fam),
+      ", ".join(r["quantity"] for r in fam if r["verdict"] != "PASS"))
+bks = sorted({r["benchmark_id"] for r in fam})
+check("the new families are BK-12, BK-13 and BK-14", bks == ["BK-12", "BK-13", "BK-14"], str(bks))
 check("the surface file names no link or drive id",
       not re.search(r"https?://|drive\.google", open(RES, encoding="utf-8").read()))
 
@@ -85,5 +94,5 @@ print("     BK-09: %d rows, all PASS | coverage: full %d, partial %d, none %d of
 if fails:
     print("FAIL %d check(s) failed" % len(fails))
     sys.exit(1)
-print("PASS all checks (BK-09=%d rows, coverage=%d/%d/%d of %d)"
-      % (len(res), cnt["yes"], cnt["partial"], cnt["no"], len(cov)))
+print("PASS all checks (BK-09=%d rows, BK-12/13/14=%d rows, coverage=%d/%d/%d of %d)"
+      % (len(res), len(fam), cnt["yes"], cnt["partial"], cnt["no"], len(cov)))

@@ -251,6 +251,18 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 29:** the three wave families that had no invariant got one. `P3_atlas/bench_families.py` adds
+  **BK-12** (Rayleigh-Lamb plate), **BK-13** (layered Love waves) and **BK-14** (interface, Snell plus flux) as
+  14 rows, all passing, each anchored on a closed form derived independently of the code - the S0 limit
+  **1.632981** against sqrt(2/(1-nu)) = 1.632993, both branches converging on c_R = 0.919402 c_S at kh = 20 to
+  9e-08, the Love cut-off **3.627658** against pi/sqrt(1/c1^2-1/c2^2) = 3.627599, and a flux residual of 2e-16
+  against R^2 + T^2 (Z2/Z1) = 1. The coverage map therefore moves from **12 full / 11 partial / 17 none** to
+  **23 full / 11 partial / 6 none of 40**, and `check_surface.py` enforces the new split. Two real bugs were
+  caught by the anchors: the Rayleigh polynomial in this form has a degenerate root at x = 0, so bisecting from
+  zero returned c_R = 1e-08, and the transmitted flux is T^2 (Z2/Z1), not T^2 (Z2 cos2)/(Z1 cos1). BK-15 is
+  **not** written on purpose: no coupled piezo/magneto constitutive model exists in this repository, so a number
+  for it would describe a model nobody uses. That leaves BK-10, BK-11 and BK-15, and 6 multifield cases.
+
 - **Step 28:** the checksum half of defect D4 is done. `make_release_manifest.py` walks the repository and
   writes `RELEASE_MANIFEST_2026-11-01.csv` - one row per file with its SHA-256, its size and a coarse class -
   which is what an archive deposit needs (`--check` recomputes and reports drift instead of failing, because a

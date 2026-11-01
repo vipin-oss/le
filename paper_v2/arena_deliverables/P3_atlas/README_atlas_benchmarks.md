@@ -86,7 +86,8 @@ the pending list. It was wrong twice: the eight rows in `bench_atlas_results.csv
 families* (BK-01 ... BK-08), not atlas cases, and no case can have a case-level result because every
 paper in the plan was read at title and metadata level only. The honest statement is now in both
 documents and enforced by their checkers: **40 cases planned, 12 with a fully executable invariant,
-11 with a partial one, and 0 case-level results.**
+11 with a partial one, and 0 case-level results.** (Step 29 raised the first number to 23 - see the
+section at the end of this file; the figures in the rest of this section are the step-28 state.)
 
 **The missing surface family.** The plan has eight wave families; the benchmarks covered bulk and
 damping only. `bench_surface.py` adds **BK-09**, the elastic Rayleigh invariant, from the secular
@@ -111,8 +112,63 @@ missing, named as BK-10 ... BK-15 with the closed form it has to satisfy:
 
 That is the atlas roadmap in one page: write five invariants, then the 17 uncovered cases become
 checkable, and only after the papers are read can any of them become a comparison with a paper.
+Three of the five are written - BK-12, BK-13 and BK-14, next section - which leaves BK-10, BK-11 and
+BK-15 and takes the uncovered count from 17 to 6.
 
 ```bash
 python3 bench_surface.py     # recomputes BK-09 and the coverage map
-python3 check_surface.py     # PASS all checks (BK-09=6 rows, coverage=12/11/17 of 40)
+python3 check_surface.py     # PASS all checks (BK-09=6 rows, BK-12/13/14=14 rows, coverage=23/11/6 of 40)
+```
+
+---
+
+## BK-12, BK-13, BK-14: the three families that had no invariant (added 2026-11-01, step 29)
+
+Three of the five missing invariants are written now, so eleven of the seventeen uncovered cases
+have an executable check. Each is anchored on a closed form that was **not** derived from the same
+code that computes the number - otherwise the check would only prove the code agrees with itself.
+
+`bench_families.py` writes `bench_families_results.csv`, 14 rows, all PASS:
+
+| benchmark | row | measured | classical anchor |
+|---|---|---|---|
+| BK-12 | S0 speed at kh = 0.02, nu = 1/4 | 1.632981 c_S | sqrt(2/(1-nu)) = 1.632993 |
+| BK-12 | A0 speed at the same point | 0.018851 c_S | 0 (flexural branch vanishes with kh) |
+| BK-12 | both branches against c_R at kh = 20 | 9.2e-08 c_S | c_R = 0.919402 c_S |
+| BK-12 | branch count at kh = 1 | S 3, A 4 | Rayleigh-Lamb tan/tan and tan/cot system |
+| BK-12 | monotonicity over kh = 20 -> 0.02 | 22 points per branch | S0 falls, A0 rises |
+| BK-13 | modes below the first cut-off | 1 | one mode below omega_1 |
+| BK-13 | modes above omega_1 and omega_2 | 2 then 3 | one more mode per cut-off |
+| BK-13 | upper mode as omega -> omega_1 | c2 - c = 1.6e-02 | approaches c2 |
+| BK-13 | measured cut-off | 3.627658 | pi / sqrt(1/c1^2 - 1/c2^2) = 3.627599 |
+| BK-13 | layer faster than the half-space | 0 modes | Love waves need c1 < c < c2 |
+| BK-14 | energy flux below the critical angle | 2.2e-16 residual | R^2 + T^2 (Z2/Z1) = 1 |
+| BK-14 | Snell residual at 20 degrees | 0.0 | sin(theta1)/c1 = sin(theta2)/c2 |
+| BK-14 | critical angle (c2/c1 = 1.7) | 36.032 deg | asin(c1/c2) |
+| BK-14 | normal-incidence reflection | -0.276596 | (Z1-Z2)/(Z1+Z2) |
+
+Two bugs were found while writing these, and both are worth recording because they are the kind
+that would have produced a confident wrong number:
+
+- the Rayleigh cubic in the form used here has a **degenerate root at x = 0** (both sides are 4
+  there). Bisecting from 0 walks the bracket to zero and returns `c_R = 1e-08` instead of 0.9194.
+  The bracket starts at 0.5 now, where the residual is negative and at 1 it is positive.
+- the transmitted energy flux is `T^2 * (Z2/Z1)`, not `T^2 * (Z2 cos2)/(Z1 cos1)`; the wrong form
+  leaves a 0.3 residual at grazing angles and looks like physics instead of algebra.
+
+The coverage map therefore reads **23 full / 11 partial / 6 none of 40**:
+
+| missing | needed for | cases |
+|---|---|---|
+| BK-10 thermoelastic Rayleigh determinant | surface (Rayleigh) beyond elastic | 6 (partial) |
+| BK-11 branch-count invariant for m > 2 | double porosity | 5 (partial) |
+| BK-15 coupled piezo/magneto branch speeds | multifield | 6 |
+
+BK-15 is deliberately **not** written. The repository has no coupled piezo/magneto constitutive
+model, so any number produced for it would describe a model nobody in this project uses; the six
+multifield cases stay uncovered until a paper supplies that model.
+
+```bash
+python3 bench_families.py    # recomputes BK-12, BK-13, BK-14 ...
+python3 check_surface.py     # ... and checks them (PASS, exit 0)
 ```
