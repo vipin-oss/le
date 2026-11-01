@@ -251,6 +251,18 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 36:** **CR127 closed** - the second reading job from the shelf. The claim ("the entropy depends
+  also on the heat flux q_i, which must enter the state space") had been unjudgeable for the whole project;
+  Muller and Ruggeri (1998), **§3.5, printed p. 24**, settles it with eq. (3.27) (the Grad distribution over
+  the thirteen moments), eq. (3.29) `s = (k/m) ln(T^(3/2)/rho) + varsigma - t_<ij>t_<ij>/(4 rho p^2 T) -
+  q_i q_i/(5 p^2 T)`, eq. (3.30) (the entropy flux, which is **not** `q_i/T`) and the sentence "the specific
+  entropy ... depends on t_<ij> and q_i ... These facts confirm the conjectures of extended TIP". Record:
+  `P3_evidence_claims_B/RET_ENTROPY_READ_2026-11-01.csv` (7 rows) + `.md`; `check_ret_entropy.py` (16 checks,
+  PASS) tests the structure - negative correction, **even in q** (|diff| <= 1e-30), **no t-q cross term**
+  (1e-25) - and *not* the coefficients: `1/4` and `1/5` are quoted as printed, because a naive evaluation of
+  (3.27) does not fix both without the book's moment normalisation and fitting it would be manufactured. That
+  limit is CSV row 7 and a paragraph of the readout. Proposal CR127 SNA -> SUPPORTED; register untouched.
+
 - **Step 35:** the books arrived - twelve items against thirteen rows. They were identified from their own
   title and copyright pages (`P3_evidence_claims_B/BOOKS_HELD_2026-11-01.csv`, 12 rows, plus a `.md` mirror
   and `check_books_held.py`): **ten are fully usable** - Coussy, Gorenflo et al., Hetnarski and Eslami (2nd

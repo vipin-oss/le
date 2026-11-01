@@ -131,7 +131,9 @@ for fn, cols in (("claim_upgrade_2026-11-01.csv", ("claim_id",)),
                  ("SOURCE_READING_held_2026-11-01.csv", ("claim_id",)),
                  ("SOURCE_READING_books_2026-11-01.csv", ("claim_id",)),
                  ("register_level_pass_2026-11-01.csv", ("claim_id",)),
-                 ("REQUEST_P_claims_2026-11-01.csv", ("claim_id",))):
+                 ("REQUEST_P_claims_2026-11-01.csv", ("claim_id",)),
+                 ("ML_TAIL_READ_2026-11-01.csv", ("claim_id",)),
+                 ("RET_ENTROPY_READ_2026-11-01.csv", ("claim_id",))):
     p = os.path.join(HERE, fn)
     if not os.path.exists(p):
         continue
