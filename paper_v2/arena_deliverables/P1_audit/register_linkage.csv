@@ -1,0 +1,30 @@
+eq_id,status,candidates,pointer_status,register_math
+EQ-001,CONDITIONAL,appB:eq:4;eq:3.5,unique-in-main-text,"\rho \dot{v}_i = \sigma_{ji,j} + \rho f_i"
+EQ-002,CONDITIONAL,appB:eq:7;eq:3.8,unique-in-main-text,\sigma_{ij} = \sigma_{ji}
+EQ-003,DERIVED,,none,
+EQ-004,CONDITIONAL,appB:eq:13;appB:eq:14;eq:3.13;eq:3.14;eq:4.21,multiple,"\rho \dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i}"
+EQ-005,UNVERIFIED,,none,
+EQ-006,UNVERIFIED,,none,
+EQ-007,DERIVED,appB:eq:18;eq:10.2;eq:10.3;eq:3.29,multiple,F_i=q_i-\sigma_{ij}v_j+\mathcal{E}v_i; J_i=q_i-\sigma_{ij}v_j
+EQ-008,UNVERIFIED,eq:3.3,unique,v_i = \dot{u}_i
+EQ-009,UNVERIFIED,,none,"\varepsilon_{ij} = \tfrac{1}{2}(u_{i,j} + u_{j,i})"
+EQ-010,UNVERIFIED,,none,"\omega_{ij} = \tfrac{1}{2}(u_{i,j} - u_{j,i})"
+EQ-011,UNVERIFIED,eq:4.1,unique,"\rho\ddot{u}_i = (\lambda+\mu)u_{j,ji} + \mu u_{i,jj} - \beta T_{,i}"
+EQ-012,PRIMARY-SOURCE-CHECKED,eq:4.2,unique,"\rho c_v \dot{T} = k\nabla^2 T - \beta T_0 \dot{u}_{i,i}"
+EQ-013,UNVERIFIED,eq:4.4,unique,"q_i + \tau_0\dot{q}_i = -kT_{,i}"
+EQ-014,VERIFIED-SYMBOLIC,,none,c_T = \sqrt{k/(\rho c_v\tau_0)}
+EQ-015,PRIMARY-SOURCE-CHECKED,,none,
+EQ-016,PRIMARY-SOURCE-CHECKED,eq:4.11,unique,"\kappa^*\nabla^2\alpha_{\mathrm{GN}} = \rho c_e\ddot{\alpha}_{\mathrm{GN}} + \beta T_0\dot{u}_{i,i}"
+EQ-017,WITHHELD,,none,
+EQ-018,UNVERIFIED,eq:4.15,unique,"q_i(t+\tau_q) = -kT_{,i}(t+\tau_T)"
+EQ-019,PRIMARY-SOURCE-CHECKED,,none,
+EQ-020,UNVERIFIED,,none,"D_{\omega_M} f(t) = \tfrac{1}{\omega_M}\int_{t-\omega_M}^{t}K_{\mathrm{MDD}}(t-t')f'(t')\,dt'"
+EQ-021,OPEN,,none,
+EQ-022,UNVERIFIED,,none,
+EQ-023,UNVERIFIED,eq:5.1;eq:5.6,multiple,\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k
+EQ-024,UNVERIFIED,eq:5.2,unique,D_i = e_{ikl}\varepsilon_{kl} + \kappa_{ij}E_j
+EQ-025,UNVERIFIED,eq:5.3;eq:5.8,multiple,"E_i = -\phi_{,i}"
+EQ-026,UNVERIFIED,,none,
+EQ-027,UNVERIFIED,eq:5.6,unique,\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k - \beta_{ij}T
+EQ-028,UNVERIFIED,eq:5.9,unique,D_i = \kappa_{ij}E_j + e_{ikl}\varepsilon_{kl} + p_i T
+EQ-029,OPEN,,none,

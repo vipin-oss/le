@@ -126,5 +126,15 @@ confirmed string by string in the artefact — legend labels, the EQ-014 and EQ-
 Appendix-A sentence, `doi: 10.1103/physrev.131.2013` on Chester 1963, and the two "No DOI assigned" notes.
 The source-drift check (P25) flipped from REPORT to PASS, so nothing in the tree is newer than the PDF.
 
-**Open at the end of cycle 2:** register expansion 29 → 136; overfull-box warnings, which exist only in the
+### Register traceability (measured, not asserted)
+Every numbered equation was inventoried in print order — **136 of them, all labelled**, agreeing exactly with the
+numbering the PDF prints. The register turns out to carry **no `\eqref` or `\ref` at all**, so each of its 29 rows
+was matched to the printed equation containing that row's own mathematics: 9 unique, 2 unique once Appendix-B
+restatements are set aside, 4 with several candidate restatements, 14 with no mathematics to match (prose rows such
+as "Mechanical power balance"). Net: **11 of 29 rows (38%) are mechanisable, 18 are not.**
+Left for the author, deliberately: whether the register expands to 136 rows or stays curated, and which printed
+equation each of the 18 remaining rows points at. A wrong pointer is worse than an absent one, and the verdict
+column is the author's.
+
+**Open at the end of cycle 2:** the register decisions above; overfull-box warnings, which exist only in the
 compile log and cannot be recovered from the PDF.

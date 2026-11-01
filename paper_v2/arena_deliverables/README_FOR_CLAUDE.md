@@ -679,4 +679,9 @@ in `paper_v2/versions/v1.2_edits_2026-11-01/`:
 `P1_audit/PAGE_LEVEL_AUDIT_2026-11-01.md`): legend labels, EQ-014/EQ-029 rows, the re-pointed Appendix-A sentence,
 `doi: 10.1103/physrev.131.2013` on Chester 1963, and the two "No DOI assigned" notes. The drift check (P25) now passes.
 
-Open: register expansion 29 → 136.
+**Equation inventory done, register expansion still open.** `P1_audit/equation_inventory.csv` now lists all
+136 printed equations (number, label, section, subsection, file) and the list agrees exactly with the numbering
+the PDF prints; `P1_audit/register_linkage.csv` records how far each of the 29 register rows can be tied to a
+printed equation — **11 of 29 mechanically, 4 need a choice among restatements, 14 are prose-only**. The register
+was not edited: which row means which equation, and whether to expand 29 → 136 or to keep a curated register, is
+the author's decision, not the auditor's.

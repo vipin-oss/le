@@ -115,6 +115,38 @@ def main() -> int:
             problems.append("summary FAIL count disagrees with results table")
         notes.append(f"summary says {m.group(2)} PASS / {m.group(3)} REPORT / {m.group(4)} FAIL")
 
+    # ---- equation inventory: every printed equation accounted for ----------
+    inv_path = d / "equation_inventory.csv"
+    link_path = d / "register_linkage.csv"
+    for f in (inv_path, link_path):
+        if not f.exists():
+            problems.append(f"missing {f.name}")
+    if inv_path.exists():
+        inv = list(csv.DictReader(inv_path.open(encoding="utf-8")))
+        printed = [int(r["printed"]) for r in inv]
+        if printed != list(range(1, len(inv) + 1)):
+            problems.append("equation inventory is not contiguous from 1")
+        labels = [r["label"] for r in inv]
+        if len(labels) != len(set(labels)):
+            problems.append("duplicate equation labels in inventory")
+        if any(not lb for lb in labels):
+            problems.append("inventory has an equation without a label")
+        # must equal the numbering found in the PDF
+        m = re.search(r"max=(\d+)", by_id.get("P16", {}).get("observed", ""))
+        if m and int(m.group(1)) != len(inv):
+            problems.append(f"inventory has {len(inv)} equations, PDF numbers to {m.group(1)}")
+        notes.append(f"equations={len(inv)}")
+    if link_path.exists():
+        lnk = list(csv.DictReader(link_path.open(encoding="utf-8")))
+        tally = {}
+        for r in lnk:
+            tally[r["pointer_status"]] = tally.get(r["pointer_status"], 0) + 1
+        total_reg = sum(int(v) for v in re.findall(r"=(\d+)", by_id.get("P14", {}).get("observed", "")))
+        if total_reg and len(lnk) != total_reg:
+            problems.append(f"linkage has {len(lnk)} rows, register has {total_reg}")
+        solid = tally.get("unique", 0) + tally.get("unique-in-main-text", 0)
+        notes.append(f"register-linkable={solid}/{len(lnk)}")
+
     if problems:
         print("FAIL (" + "; ".join(problems) + ")")
         return 1

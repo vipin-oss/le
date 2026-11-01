@@ -79,7 +79,34 @@ The rebuild was checked string by string, not assumed. Each fix is present in th
 
 Extent and structure are unchanged by these edits: still 140 pages, 16 figures, 53 tables, 136 numbered equations, six appendices; word count moves from 63,503 to 63,584 (+81 words, i.e. exactly the two legend definitions and the two no-DOI notes).
 
-## 6. Files
+## 6. Equation inventory and register traceability (F9)
+
+`build_equation_inventory.py` reads the sources in `\input` order and lists **every** numbered equation, then
+cross-checks the list against the numbering actually printed.
+
+| Measured | Value |
+|---|---|
+| Numbered equations in the sources | 136 — all `equation` environments, **all labelled**, none unnumbered |
+| Highest number printed in the PDF | 136; distinct numbers printed 136 |
+| Agreement | exact (`equation_inventory.csv`, `printed,label,section,subsection,file`) |
+
+The register, however, had **no pointer at all** to any printed equation: no `\eqref`, no `\ref` in any of its
+29 rows. So each row was matched to the printed equation(s) whose content actually contains that row's own
+mathematics (`register_linkage.csv`):
+
+| Linkage | Rows | Meaning |
+|---|---|---|
+| unique | 9 | the row's math appears in exactly one printed equation |
+| unique-in-main-text | 2 | appears in one main-text equation plus an Appendix-B restatement; the main-text instance is the canonical one |
+| multiple | 4 | appears in several printed equations (e.g. EQ-004 in eq:3.13, eq:3.14, eq:4.21 and two Appendix-B restatements) — choosing is the author's call |
+| none (14) | 14 | the row is a prose description ("Mechanical power balance", "Coleman–Noll restrictions"), so there is nothing mechanical to match |
+
+**11 of 29 rows (38%) can therefore be tied to a printed equation with no judgement at all; 18 cannot.**
+That is the traceability gap, stated as a number instead of an impression. Deliberately **not** patched in this
+cycle: adding 11 pointers while 18 rows stay unlinked would leave a half-linked table, and pointing a register
+row at the wrong equation is worse than pointing at none.
+
+## 7. Files
 
 | File | Contents |
 |---|---|
@@ -88,10 +115,14 @@ Extent and structure are unchanged by these edits: still 140 pages, 16 figures, 
 | `PAGE_AUDIT_SUMMARY.md` | machine-written summary, regenerated on every run |
 | `section_pagemap.csv` | section → first page, derived from bookmarks |
 | `check_page_audit.py` | gate: prints `PASS (...)` and exits 0 only if the state above holds |
+| `build_equation_inventory.py` | builds the 136-row inventory and the 29-row register linkage |
+| `equation_inventory.csv` | every printed equation: number, label, section, subsection, file |
+| `register_linkage.csv` | every register row: status, candidate printed equations, linkage class |
 
 Reproduce:
 
 ```bash
 python3 P1_audit/audit_pages.py --pdf /path/to/compiled.pdf --master ../manuscript_v2/master --out P1_audit
-python3 P1_audit/check_page_audit.py
+python3 P1_audit/build_equation_inventory.py --master ../manuscript_v2/master --pdf /path/to/compiled.pdf
+python3 P1_audit/check_page_audit.py      # now also fails if the inventory is incomplete or disagrees with the PDF
 ```
