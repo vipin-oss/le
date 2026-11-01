@@ -58,8 +58,8 @@ check("the problem ids match the plan exactly",
 check("the bibkeys match the plan exactly",
       [c["bibkey"] for c in cov] == [p["bibkey"] for p in plan])
 cnt = collections.Counter(c["coverage"] for c in cov)
-check("the coverage split is 23 full / 11 partial / 6 none",
-      cnt == {"yes": 23, "partial": 11, "no": 6}, str(dict(cnt)))
+check("the coverage split is 29 full / 5 partial / 6 none",
+      cnt == {"yes": 29, "partial": 5, "no": 6}, str(dict(cnt)))
 check("no case claims a case-level result",
       all(c["case_level_result"] == "no" for c in cov))
 check("every case says why there is no case-level result",
@@ -71,12 +71,13 @@ check("the partial cases say what they are missing",
       all(c["missing_invariant"] for c in cov if c["coverage"] == "partial"))
 check("the fully covered cases name only benchmarks that exist",
       all(all(b in {"BK-01", "BK-02", "BK-03", "BK-04", "BK-05", "BK-06", "BK-07",
-                    "BK-08", "BK-09", "BK-12", "BK-13", "BK-14"}
+                    "BK-08", "BK-09", "BK-10", "BK-12", "BK-13", "BK-14"}
               for b in c["applicable_benchmarks"].split())
           for c in cov if c["coverage"] == "yes"))
-check("the fully covered families are the five that have an executable invariant",
+check("the fully covered families are the six that have an executable invariant",
       {c["wave_family"] for c in cov if c["coverage"] == "yes"}
-      == {"bulk", "TED / damping", "Lamb / plate", "shear / SH", "interface / layered"},
+      == {"bulk", "TED / damping", "surface (Rayleigh)", "Lamb / plate", "shear / SH",
+          "interface / layered"},
       ", ".join(sorted({c["wave_family"] for c in cov if c["coverage"] == "yes"})))
 check("the three result files together hold %d benchmark rows" % (len(main) + len(res) + len(fam)),
       len(main) == 8 and len(res) == 6 and len(fam) == 14,

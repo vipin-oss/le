@@ -251,6 +251,17 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 30:** the thermoelastic surface wave is now a benchmark, not a gap. `P3_atlas/bench_thermoelastic.py`
+  adds **BK-10**: one shear partial wave plus a coupled longitudinal/thermal pair, free and insulated surface,
+  3x3 determinant solved for complex s at real k, reusing the bulk quadratic of `second_impl.py` with
+  `K -> chi = k^2 (1 + gamma^2)`. Six rows, all passing: beta -> 0 reproduces the classical Rayleigh ratio
+  **0.9194016868 c_S** to 2e-16; the four dissipative models decay (passivity) while GN-II and MGT are exactly
+  neutral (2e-20); Fourier, DPL and GN-III reach the isothermal elastic root by k = 50 (1.7e-06); Q^-1 <= 6.9e-03;
+  nothing exceeds c_S. The deciding detail was a sign - `beta T = -(rho c1^2 chi + rho s^2) phi`. With the other
+  sign the dissipative models grow and the lossless ones stay neutral, which no passive medium can do, and both
+  halves of that test are now checked so the sign cannot silently flip back. Coverage moves to
+  **29 full / 5 partial / 6 none of 40**; left are BK-11 (porous, m > 2) and BK-15 (coupled multifield).
+
 - **Step 29:** the three wave families that had no invariant got one. `P3_atlas/bench_families.py` adds
   **BK-12** (Rayleigh-Lamb plate), **BK-13** (layered Love waves) and **BK-14** (interface, Snell plus flux) as
   14 rows, all passing, each anchored on a closed form derived independently of the code - the S0 limit

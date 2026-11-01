@@ -150,10 +150,7 @@ FAMILY_MAP = {
     "bulk": (["BK-01", "BK-02", "BK-03", "BK-04", "BK-05", "BK-06", "BK-08"], FULL,
              ""),
     "TED / damping": (["BK-04", "BK-05"], FULL, ""),
-    "surface (Rayleigh)": (["BK-09"], PARTIAL,
-                           "BK-09 covers the elastic Rayleigh equation; the thermoelastic "
-                           "secular determinant (coupling, relaxation, nonlocality) is not "
-                           "implemented yet - call it BK-10"),
+    "surface (Rayleigh)": (["BK-09", "BK-10"], FULL, ""),
     "porous / voids": (["BK-01", "BK-03"], PARTIAL,
                        "BK-01 assumes exactly two K-roots; a double-porosity model has a third "
                        "branch, so a branch-count invariant for m > 2 is missing - BK-11"),

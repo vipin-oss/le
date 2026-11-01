@@ -1,0 +1,7 @@
+benchmark_id,quantity_checked,measured,reference,reference_type,tolerance,verdict,script
+BK-10,beta -> 0 limit against the elastic Rayleigh root,max |v - c_R| = 1.92e-16 c_S (c_R = 0.9194016868 c_S),"<= 1e-09 c_S, all 6 models",closed form + structural requirement,"<= 1e-09 c_S, all 6 models",PASS,bench_thermoelastic.py
+BK-10,GN-II and MGT carry no attenuation and no dispersion,"max |Re s|/(k v) = 2.4e-20, speed spread over k = 1.9e-16 c_S",|Re s| <= 1e-12 k v and spread <= 1e-12 c_S,closed form + structural requirement,|Re s| <= 1e-12 k v and spread <= 1e-12 c_S,PASS,bench_thermoelastic.py
+BK-10,"k -> 50 reaches the elastic isothermal root (Fourier, DPL, GN-III)","max |v(k=50) - c_R| = 1.70e-06 c_S (LS at k = 50 is 0.917497 c_S, its own value)",<= 1e-03 c_S and closer than at k = 0.5,closed form + structural requirement,<= 1e-03 c_S and closer than at k = 0.5,PASS,bench_thermoelastic.py
+BK-10,Q^-1 of the surface mode stays small,max Q^-1 = 6.941e-03 over 12 points,<= 1e-02,closed form + structural requirement,<= 1e-02,PASS,bench_thermoelastic.py
+BK-10,no growing surface mode in the four dissipative models,"max Re s / (k v) = -5.231e-04 over 12 (model, k) points",Re s < 0 everywhere,closed form + structural requirement,Re s < 0 everywhere,PASS,bench_thermoelastic.py
+BK-10,the surface speed stays below c_S for every model and wavenumber,max v/c_S = 0.922019 over 18 points,0 < v < c_S,closed form + structural requirement,0 < v < c_S,PASS,bench_thermoelastic.py

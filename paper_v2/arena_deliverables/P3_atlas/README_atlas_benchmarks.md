@@ -86,8 +86,9 @@ the pending list. It was wrong twice: the eight rows in `bench_atlas_results.csv
 families* (BK-01 ... BK-08), not atlas cases, and no case can have a case-level result because every
 paper in the plan was read at title and metadata level only. The honest statement is now in both
 documents and enforced by their checkers: **40 cases planned, 12 with a fully executable invariant,
-11 with a partial one, and 0 case-level results.** (Step 29 raised the first number to 23 - see the
-section at the end of this file; the figures in the rest of this section are the step-28 state.)
+11 with a partial one, and 0 case-level results.** (Steps 29 and 30 raised the first number to 29 and cut the
+none-count to 6 - see the sections at the end of this file; the figures in the rest of this section are the
+step-28 state.)
 
 **The missing surface family.** The plan has eight wave families; the benchmarks covered bulk and
 damping only. `bench_surface.py` adds **BK-09**, the elastic Rayleigh invariant, from the secular
@@ -117,7 +118,7 @@ BK-15 and takes the uncovered count from 17 to 6.
 
 ```bash
 python3 bench_surface.py     # recomputes BK-09 and the coverage map
-python3 check_surface.py     # PASS all checks (BK-09=6 rows, BK-12/13/14=14 rows, coverage=23/11/6 of 40)
+python3 check_surface.py     # PASS all checks (BK-09=6 rows, BK-12/13/14=14 rows, coverage=29/5/6 of 40)
 ```
 
 ---
@@ -156,7 +157,7 @@ that would have produced a confident wrong number:
 - the transmitted energy flux is `T^2 * (Z2/Z1)`, not `T^2 * (Z2 cos2)/(Z1 cos1)`; the wrong form
   leaves a 0.3 residual at grazing angles and looks like physics instead of algebra.
 
-The coverage map therefore reads **23 full / 11 partial / 6 none of 40**:
+The coverage map therefore read **23 full / 11 partial / 6 none of 40** after that step:
 
 | missing | needed for | cases |
 |---|---|---|
@@ -171,4 +172,49 @@ multifield cases stay uncovered until a paper supplies that model.
 ```bash
 python3 bench_families.py    # recomputes BK-12, BK-13, BK-14 ...
 python3 check_surface.py     # ... and checks them (PASS, exit 0)
+```
+
+---
+
+## BK-10: the thermoelastic surface determinant (added 2026-11-01, step 30)
+
+BK-09 was only the elastic Rayleigh equation - the zero-coupling limit of what the six surface-wave
+papers actually study. `bench_thermoelastic.py` adds the coupled problem: one shear partial wave plus
+a longitudinal/thermal pair, with the free surface insulated, solved as a 3x3 determinant for complex
+frequency at real wavenumber.
+
+The trick that makes it short: for a depth dependence `exp(i (kx + gamma k z))` every field equation
+sees the depth only through `chi = k^2 (1 + gamma^2)`, so the bulk quadratic in `K`
+(`A K^2 + B K + C`, the same coefficients as `P4_second_impl/second_impl.py`) becomes a quadratic in
+`chi` and the bulk code is reused unchanged. The shear mode is decoupled and carries
+`chi_S = -s^2 / c_S^2`.
+
+**The sign that decides the physics.** Eliminating the displacement gives
+`(rho c1^2 chi + rho s^2) e = beta chi T` with `e = -chi phi`, i.e. `beta T = -(rho c1^2 chi + rho s^2) phi`.
+With that sign the four dissipative models come out **decaying** (`Re s < 0`) and the two lossless ones
+**exactly neutral** (`|Re s|/(k v) = 2e-20`). With the opposite sign the dissipative models grow while
+the lossless ones stay neutral - impossible for a passive medium. Both halves are checked, so the
+sign cannot drift back.
+
+| row | measured | anchor |
+|---|---|---|
+| beta -> 0 limit, all 6 models | 1.9e-16 c_S | 0.9194016868 c_S, the classical Rayleigh ratio |
+| GN-II and MGT: no attenuation, no dispersion | 2.4e-20, spread 1.9e-16 c_S | lossless models must be neutral |
+| k -> 50 for Fourier, DPL, GN-III | 1.7e-06 c_S from c_R | isothermal elastic root |
+| Q^-1 of the surface mode | 6.94e-03 max | windows for weak thermoelastic damping |
+| no growing mode, 4 dissipative models x 3 k | max Re s/(k v) = -5.2e-04 | passivity |
+| v below c_S, 6 models x 3 k | 0.922019 c_S max | Rayleigh waves are sub-shear |
+
+Two honest notes. **LS keeps its own dispersion** at large k (0.917497 c_S at k = 50, against
+0.919402 for the isothermal elastic root), so the "tends to c_R" row asserts the limit only for
+Fourier, DPL and GN-III and *reports* LS. And this benchmark still says what any implementation of
+this model class must reproduce - **not** what paper AT-07 reports, because those papers are still
+read at title level only.
+
+Coverage after step 30: **29 full / 5 partial / 6 none of 40**. Left: BK-11 (porous, m > 2, 5 cases)
+and BK-15 (coupled multifield, 6 cases).
+
+```bash
+python3 bench_thermoelastic.py   # recomputes BK-10
+python3 check_thermoelastic.py   # PASS all checks (BK-10=6 rows, coverage=29/5/6 of 40)
 ```
