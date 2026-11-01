@@ -56,7 +56,38 @@ not fully developed second sound, so the word "observed" should keep that qualif
 Joseph–Preziosi item cited as 1990 is the addendum to the 1989 review, so the volume/year pair in the
 bibliography should be checked once.
 
+## Step 13b — where the 40 blocked rows actually live (a correction)
+
+The plan going into this step was "upgrade the 40 blocked rows in the claim-check batches". That plan was
+wrong, and the check is recorded here so nobody repeats it: **none of the 40 claims is in the 667-row
+claim-check set.** Each of the 40 register statements was compared, word for word, against all 667 rows
+of the eighteen batch files; the best similarity score over the whole set stayed below 0.8, so the two
+claim sets do not overlap at all. The 40 blocked claims are rows of `paper_v2/claim_register.csv`, which
+still carry verdict `SOURCE NOT AVAILABLE`.
+
+So `claim_upgrade_2026-11-01.csv` (40 rows, same directory) carries, for every one of them: the register
+verdict on file, the verdict the source now supports, the page, the quote, what the source actually says,
+and one line telling the author what to do with the sentence. Checker:
+`check_claim_upgrade.py` — `PASS all checks (upgrades=40)`, exit 0. `check_pdfs_needed.py`,
+`check_claim_check_B.py` and `check_claim_check_C.py` all still pass, unchanged.
+
+**The register itself was deliberately not rewritten.** Its verdict column is read by an existing
+deliverable that froze "the 20 flagged claims" (`P3_reaudit/check_reaudit_1.py`). Moving six claims to
+PARTLY SUPPORTED and two to NOT SUPPORTED would enlarge that flagged set and change a document whose
+rows were audited against `main.pdf` one by one. That is a wording-review decision, not an evidence
+decision, so it belongs to whoever edits the manuscript — apply `claim_upgrade_2026-11-01.csv` to the
+register and the re-audit together, in one go.
+
+Two further observations, both pre-existing and none of them caused by this step:
+
+* `P3_reaudit/check_reaudit_1.py` already fails on the register as committed (`20 rows, 39 flagged`):
+  the re-audit was frozen when 20 claims were flagged, and the register now holds 39. It was failing
+  before this step and nothing in this step touched the register.
+* `P3_reaudit/reaudit_1.csv` closes 19 of those 20 with `resolved` and leaves one `still partly
+  supported`, so the wording side of the ledger is one claim behind the register in any case.
+
 ## What this does not do
 
-It does not change the 39-work list, does not touch the 667-row and 63-row claim-check batches, and does
-not edit the manuscript. It only records, claim by claim, what the supplied sources say and on which page.
+It does not change the 39-work list, does not touch the 667-row and 63-row claim-check batches, does not
+rewrite the register, and does not edit the manuscript. It only records, claim by claim, what the supplied
+sources say and on which page, plus the verdict each claim should now carry.
