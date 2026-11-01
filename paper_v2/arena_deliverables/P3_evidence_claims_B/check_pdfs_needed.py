@@ -243,6 +243,48 @@ def main():
                   str(overlap[:5]))
             print("     Drive drop read through: %d files, %d distinct DOIs, 0 wanted"
                   % (txt.count('\n| '), len(drop_dois)))
+
+        # source_reading_*.csv - the author-supplied sources read against the claims they free
+        S = os.path.join(HERE, "source_reading_2026-11-01.csv")
+        check("the claim-level reading of the supplied sources exists", os.path.exists(S))
+        if os.path.exists(S):
+            with open(S, newline="", encoding="utf-8") as f:
+                sr = list(csv.DictReader(f))
+            check("the reading covers one row per freed claim", len(sr) == 40, str(len(sr)))
+            ids = [r["claim_id"] for r in sr]
+            check("no claim is read twice", len(set(ids)) == len(ids),
+                  str([i for i in ids if ids.count(i) > 1][:5]))
+            freed = set()
+            for r in prows:
+                freed |= {c.strip() for c in r["claim_ids"].split() if c.strip()}
+            stray = sorted(set(ids) - freed)
+            check("every claim read is one the supplied sources free", not stray, str(stray[:5]))
+            vocab = {"SUPPORTED", "PARTLY SUPPORTED", "NOT SUPPORTED", "NOT READ"}
+            badv = sorted({r["verdict"] for r in sr} - vocab)
+            check("every verdict is from the fixed vocabulary", not badv, str(badv))
+            nopage = [r["claim_id"] for r in sr if r["verdict"] != "NOT READ"
+                      and not re.match(r"^p\. ?\d", r["evidence_page"].strip())]
+            check("every read claim carries the page the words were read on", not nopage, str(nopage[:5]))
+            noquote = [r["claim_id"] for r in sr if r["verdict"] != "NOT READ"
+                       and len(r["evidence_quote"].split()) < 4]
+            check("every read claim carries a quote", not noquote, str(noquote[:5]))
+            longq = [r["claim_id"] for r in sr if len(r["evidence_quote"].split()) > 27]
+            check("no quote is longer than 27 words", not longq, str(longq[:5]))
+            unread = [r["claim_id"] for r in sr if r["verdict"] == "NOT READ"]
+            badunread = [r["claim_id"] for r in sr if r["verdict"] == "NOT READ"
+                         and (r["evidence_quote"].strip() or len(r["note"]) < 40)]
+            check("a claim not read carries no quote and says why", not badunread, str(badunread[:5]))
+            blank = [r["claim_id"] for r in sr if len(r["note"].strip()) < 20]
+            check("every row explains itself", not blank, str(blank[:5]))
+            blob = open(S, encoding="utf-8").read()
+            check("the reading file carries no URLs or Drive links", not leak.search(blob))
+            named = [r["claim_id"] for r in sr
+                     if re.search(r"Reference List|\bPaper \d+|\.zip|google_drive", " ".join(r.values()))]
+            check("the reading file does not name the uploaded files", not named, str(named[:5]))
+            print("     supplied sources read at claim level: %d rows (%s)"
+                  % (len(sr), ", ".join("%s=%d" % (v, sum(1 for r in sr if r["verdict"] == v))
+                                        for v in ("SUPPORTED", "PARTLY SUPPORTED",
+                                                  "NOT SUPPORTED", "NOT READ"))))
     print("     needed=%d (top-20 cut), archive-held=%d, library-held=%d, findings=%d"
           % (len(rows), len(hrows), len(arows), len(frows)))
 
