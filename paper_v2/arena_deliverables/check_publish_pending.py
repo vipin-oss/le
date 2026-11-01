@@ -127,7 +127,8 @@ check("the script-assertion count is printed (%s files)" % (m.group(1) if m else
 
 # ---------- structure of the list ----------
 check("the list has six numbered gates", all(("### G%d" % i) in txt for i in range(1, 7)))
-check("the list says the audit has not started", "**0 of 134 pages**" in txt)
+check("the list says the audit has started but is not finished",
+      "**0 of 126 pages** rendered so far" in txt and "source-level pass is done" in txt)
 check("the list names the Overleaf pull as the first blocker",
       "pull_from_overleaf.sh" in txt and "from_overleaf" in txt)
 check("the list gives an honest date range", "6 to 8 weeks" in txt and "8 to 12 weeks" in txt)

@@ -15,7 +15,7 @@ is open. So nothing is wrong with the plan; what is missing is all execution.
 
 | # | gate (blueprint 11b) | state today | owner |
 |---|---|---|---|
-| G1 | P1 audit of the 134 pages, derivations and the 35 scripts complete | **not started** as an audit; 10 defects registered, **7 of the 10 defects are OPEN** | author + agent |
+| G1 | P1 audit of the rendered pages, derivations and the 45 scripts complete | **source-level pass done** (`P1_audit/audit_sources.py`, 12 checks, 3 findings: dangling `Eringen1968b`, 8 duplicated table sources, `fig07-theory-map` and `fig18-taxonomy` never included); the page-level pass has not started; 10 defects registered, **7 of the 10 defects are OPEN** | author + agent |
 | G2 | no R0 entries; critical claims at R3 or independently derived | **7 are R0** (down from 32), catalogue check **238 entries** with **9 R0**, register covers **204 entries** of the bibliography's **323** | agent, plus print access |
 | G3 | contribution map filled and checked against prior reviews | **no such file exists**; P0 has not started | author + agent |
 | G4 | benchmark registry complete, independent implementations done | **14 benchmark records**, **42 comparisons**; atlas **40 cases planned**, **40 with a fully executable invariant** and **none partial**, and **no case-level result for any of the 40** - the eight rows in the benchmark file are families, not cases | agent |
@@ -38,7 +38,7 @@ What 11b literally asks for is an audit of the 134 pages, the derivations and th
   Overleaf git host is not reachable from the agent's sandbox. `pull_from_overleaf.sh` is ready
   and does it in one command.
 
-- the page-by-page audit: **0 of 134 pages**. Nothing in the repository walks the manuscript
+- the page-by-page audit: **0 of 126 pages** rendered so far, but the **source-level pass is done**: 12 checks over 49 .tex files, 438 labels, 144 bib entries, with **3 real findings** (a dangling citation, eight table sources duplicated under two roots, two figures never included). Nothing in the repository walks the manuscript
   page by page. The nearest thing is 20 flagged claims re-audited and a 10-entry defect register.
 - **9 of the 35 scripts** have no assertions or coded tolerances (D3). They print numbers and a
   human reads them, which means a check can fail silently. This is the defect most likely to
