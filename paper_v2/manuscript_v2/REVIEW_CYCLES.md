@@ -75,3 +75,50 @@ are checked line by line against the printed equations and the appendix equation
 **Open at the end of cycle 1:** the page-level pass (signs, dimensions, derivations of the 166 numbered
 equations), notation consistency across sections, and the D3 question — which of the 45 scripts actually assert
 anything.
+
+---
+
+## Cycle 2 — page level (2026-11-01)
+
+The compiled v1.2 build was measured page by page against the sources it came from:
+**140 pages, 63,503 words, 136 numbered equations, 16 figures, 53 tables, 107 cited works,
+430 bookmarks, 0 unresolved references, 0 missing citations, 0 leaked control sequences.**
+Result: `arena_deliverables/P1_audit/PAGE_LEVEL_AUDIT_2026-11-01.md`, 26 checks, 0 FAIL.
+
+### Reviewer pass (read the artefact, not the plan)
+- The document a reader receives is a **review paper**: front matter pp. 1–13, seventeen sections pp. 14–120,
+  reference list pp. 121–126, six appendices pp. 127–140. No book apparatus; no chapter-level scaffolding.
+- Every section in `main.tex` is bookmarked and its page increases in source order; no source file is
+  orphaned from the build, and no bookmark points at a section the build does not contain.
+- Two defects that a plan-level audit cannot see, because they only exist in the artefact:
+  1. Appendix A used two status labels its own legend never defined.
+  2. An un-`\input` file (371 lines, headings "Open audit item 1…10") sat inside the build tree and was
+     being shipped in the zip as if it were part of the paper.
+
+### Editor pass (decide)
+- **Label vs legend:** legend extended by two definitions written from those rows' own source notes.
+  The verdict column is the author's record and was **not** rewritten. Decided, not deferred.
+- **Orphan file:** it is a working collection by its own description; it is not an appendix of this review and
+  its "open audit item" voice would contradict the review's register discipline. Moved out of the build tree to
+  `paper_v2/working_notes/`, pre-edit copy kept in `paper_v2/versions/v1.2_edits_2026-11-01/`. The two
+  Appendix-A sentences that pointed at it were re-pointed.
+- **The "166 numbered equations" figure used in planning is retired**, on the same grounds as the "134 pages"
+  figure in cycle 1: the build prints **136** numbered equations. Planning against 166 was planning against a
+  number nobody had counted.
+- **Register coverage is stated, not hidden:** 29 register rows cover 29 canonical equations of 136 printed
+  (21.3%); 6 of the 29 rows are DERIVED or PRIMARY-SOURCE-CHECKED. The manuscript already says no comprehensive
+  equation audit has been done; this puts a measured number on the sentence. Expanding the register is the
+  remaining P1 item and is recorded as open rather than manufactured.
+
+### Author pass (fix)
+- `appA_equation_register.tex`: legend + two re-pointed sentences. `references_local.bib`: Chester 1963 DOI
+  verified against Crossref (Physical Review 131, 2013–2015 — author, title, journal, volume and pages all
+  match) and recorded; Cattaneo 1948 and Vernotte 1958 state plainly that no DOI exists.
+- `P1_audit/audit_pages.py` (26 checks) + `check_page_audit.py` gate + `section_pagemap.csv`. The source-audit
+  gate now asserts that the **frozen v1.1 snapshot** is untouched and that every change to the working sources
+  is declared in the version log — previously it forbade editing the working tree at all, which contradicted
+  the standing rule that sources may be edited when the old file is kept.
+
+**Open at the end of cycle 2:** register expansion 29 → 136; a fresh Overleaf build (the sources are now newer
+than the measured PDF, check P25); overfull-box warnings, which exist only in the compile log and cannot be
+recovered from the PDF.

@@ -13,6 +13,8 @@ This appendix records equation claims and their audit status. Legacy status labe
 \item \textbf{SECONDARY-SOURCE:} Supported only by a named secondary source; not equivalent to primary verification.
 \item \textbf{UNVERIFIED:} Not checked against a primary source or independently derived in this phase.
 \item \textbf{OPEN:} Required derivation or source evidence is absent; not a canonical result.
+\item \textbf{VERIFIED-SYMBOLIC:} A closed-form expression checked by symbolic evaluation in this revision for a stated limiting case (e.g.\ the uncoupled thermal branch); the check does not extend to the coupled problem.
+\item \textbf{WITHHELD:} No expression is asserted; the entry records that the required relation, or its mapping to a source, is absent from this revision.
 \end{itemize}
 
 Historical statuses and source notes are not evidence of present verification. The scientific-audit report identifies the limited equations derived in this phase.
@@ -90,7 +92,7 @@ EQ-025 & $E_i = -\phi_{,i}$ & UNVERIFIED & Electric field from potential \\
 EQ-026 & $D_{i,i} = 0$ & UNVERIFIED & Charge conservation (no free charge) \\
 EQ-027 & $\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k - \beta_{ij}T$ & UNVERIFIED & Piezothermoelastic (Barak et al.~\cite{Barak2023}, Eq.~3) \\
 EQ-028 & $D_i = \kappa_{ij}E_j + e_{ikl}\varepsilon_{kl} + p_i T$ & UNVERIFIED & Piezothermoelectric (Barak et al.~\cite{Barak2023}, Eq.~6) \\
-EQ-029 & Inherited electrical storage formula & OPEN & Withdrawn from the working flux appendix; no universal piezoelectric storage expression is asserted \\
+EQ-029 & Inherited electrical storage formula & OPEN & Withdrawn from the retained working collection; no universal piezoelectric storage expression is asserted \\
 EQ-5.17 & Isotropic micropolar force stress with independent microrotation $\phi_k$ & UNVERIFIED & Linear isotropic specialization; source equation and coupled thermoelastic moduli require full-text verification \\
 \bottomrule
 \end{tabularx}
@@ -211,7 +213,7 @@ OPEN & Required derivation or evidence is absent; not a canonical result \\
 
 \subsection{Open Derivations Requiring Full-Text Verification}
 
-The following model families require a dedicated claim-level source and derivation audit before an energy-flux formula is asserted: Lord--Shulman; Green--Lindsay; Green--Naghdi types II and III; dual- and triple-phase-lag; Moore--Gibson--Thompson; memory-dependent; and nonlocal/gradient models. The full texts, exact constitutive conventions, free energies, external-field power terms, boundary conditions, and evolution laws must be checked for each case. The citations and formulae in the retained working appendix are not evidence that such verification has occurred in this phase.
+The following model families require a dedicated claim-level source and derivation audit before an energy-flux formula is asserted: Lord--Shulman; Green--Lindsay; Green--Naghdi types II and III; dual- and triple-phase-lag; Moore--Gibson--Thompson; memory-dependent; and nonlocal/gradient models. The full texts, exact constitutive conventions, free energies, external-field power terms, boundary conditions, and evolution laws must be checked for each case. The citations and formulae in the retained working collection (which is deliberately not part of this manuscript) are not evidence that such verification has occurred in this phase.
 
 These model-specific flux derivations remain open; legacy Appendix E/Sec. 10 questions identify work items, not canonical formulae.
 

@@ -6,6 +6,16 @@ mean, where every number comes from, and what is still open. Nothing here is rem
 every figure is computed from the CSV files in this folder, and the commands that recompute them are at the
 end.
 
+> **Amendments (later on 2026-11-01, take precedence over the numbered ground rules below).**
+> 1. The author lifted the "no `.tex` edits" rule: sources **may** be edited, provided the pre-edit file is
+>    kept as a version and every change is committed with this README and `CHANGELOG_v2.md` updated. In this
+>    file, rule 1 of section 2 is therefore **superseded**; the rule that `scripts/` is read-only stands.
+> 2. The page-level audit has begun and is reported in `P1_audit/PAGE_LEVEL_AUDIT_2026-11-01.md`
+>    (26 checks, 0 FAIL). It is a *different* question from the source audit: "did the document a reader
+>    receives contain what the sources say, with nothing unresolved and nothing broken?"
+> 3. Where a number in this file disagrees with the measured build, the measured build wins; the retired
+>    numbers are listed in section 12 of `manuscript_v2/REVIEW_CYCLES.md`.
+
 ---
 
 ## 1. What the job is
@@ -630,3 +640,40 @@ Two hard facts, recorded so nobody spends an hour rediscovering them:
 - Don't re-run `check_reaudit_1.py` expecting a pass: it fails on the committed register by design (20 rows /
   39 flagged) and the register is frozen. That failure is pre-existing and is not to be fixed by editing the
   register.
+
+
+---
+
+## 13. Page-level audit of the compiled v1.2 build (added 2026-11-01)
+
+The author compiled v1.2 himself and the PDF was measured against the sources it came from. Method and
+row-level results: `P1_audit/audit_pages.py`, `P1_audit/page_audit_results.csv`,
+`P1_audit/section_pagemap.csv`, narrative in `P1_audit/PAGE_LEVEL_AUDIT_2026-11-01.md`. Gate:
+`python3 P1_audit/check_page_audit.py` → `PASS (checks=26, fail=0, ...)`.
+
+Measured, so nobody has to guess tomorrow:
+
+| Quantity | Value |
+|---|---|
+| Pages / words | 140 / 63,503 |
+| Body (sections 1–17) | pp. 14–120, 43,543 words |
+| References | pp. 121–126; 107 cited works, 144 `.bib` entries (37 uncited reserve) |
+| Appendices A–F | pp. 127, 134, 136, 137, 139, 140 |
+| Numbered equations | **136** (the "166" used in planning was never counted; retired) |
+| Figures / tables | 16 (1–16) / 53 (1–53), both contiguous |
+| Unresolved refs / missing cites / leaked LaTeX | 0 / 0 / 0 |
+| Equation register | 29 rows: DERIVED 2, PRIMARY-SOURCE-CHECKED 4, CONDITIONAL 3, VERIFIED-SYMBOLIC 1, UNVERIFIED 16, OPEN 2, WITHHELD 1 |
+
+Four things were changed as a result, all recorded in `CHANGELOG_v2.md` (entry `v1.2a`) with pre-edit copies
+in `paper_v2/versions/v1.2_edits_2026-11-01/`:
+
+1. Appendix A legend gained the two labels it was already using; **no verdict was rewritten**.
+2. The un-`\input` file `appendices/energy_flux_derivations.tex` left the build tree for `paper_v2/working_notes/`.
+3. Chester 1963's DOI was verified against Crossref and recorded; Cattaneo 1948 and Vernotte 1958 now say
+   plainly that no DOI exists.
+4. `P1_audit/check_source_audit.py` now asserts the **frozen v1.1 snapshot** is untouched and that every change
+   to the working sources is declared in the version log — the old assertion forbade editing at all, which
+   contradicted amendment 1.
+
+Open: register expansion 29 → 136; a fresh Overleaf build, because the sources are now newer than the PDF that
+was measured (check P25 keeps saying so until the build is redone).

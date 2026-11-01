@@ -99,9 +99,24 @@ check("A11 agrees with the sources: %d of %d figure files are included, %d are d
 
 check("the audit claims no result for signs, notation or derivations",
       "not about signs" in md or "signs, dimensions and derivation steps" in md)
-dirty = subprocess.run(["git", "-C", SRC, "status", "--porcelain", "--", "."],
-                       capture_output=True, text=True).stdout.strip()
-check("the audit did not edit a single source file", dirty == "", dirty[:200])
+# The frozen v1.1 snapshot must never change; the working tree may change only
+# in ways that the version log declares (the standing rule: old file kept as a
+# version, every change recorded).
+snap = os.path.normpath(os.path.join(HERE, "..", "..", "versions", "v1.1_source_snapshot"))
+snap_dirty = subprocess.run(["git", "-C", snap, "status", "--porcelain", "--", "."],
+                            capture_output=True, text=True).stdout.strip()
+check("the frozen v1.1 snapshot is untouched", snap_dirty == "", snap_dirty[:200])
+
+changelog = os.path.join(os.path.dirname(SRC), "manuscript_v2", "CHANGELOG_v2.md")
+changed = [l[3:].strip() for l in subprocess.run(
+    ["git", "-C", SRC, "status", "--porcelain", "--", "."],
+    capture_output=True, text=True).stdout.splitlines()
+           if l.strip() and not l.strip().endswith("CHANGELOG_v2.md")]
+log_txt = open(changelog, encoding="utf-8").read() if os.path.exists(changelog) else ""
+undeclared = [c for c in changed if os.path.basename(c.split(" -> ")[-1]) not in log_txt]
+check("every change to the working sources is declared in CHANGELOG_v2.md "
+      "(%d changed, %d undeclared)" % (len(changed), len(undeclared)),
+      not undeclared, " | ".join(undeclared[:4]))
 
 print()
 if fails:

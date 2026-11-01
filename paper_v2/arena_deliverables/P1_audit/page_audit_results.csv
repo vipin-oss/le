@@ -1,0 +1,27 @@
+check_id,object,expected,observed,verdict,note
+P01,pdf opens / identity,"readable, titled, authored",pages=140; title='Multiphysics Wave Mechanics in Generalized Continua'; author='Vipin Gupta'; producer=pdfTeX-1.40.29,PASS,
+P02,extent,reported (no target length imposed),"140 pages, 63503 words",REPORT,
+P03,unresolved \ref (?? marks),0,0,PASS,
+P04,missing citations ([?] marks),0,0,PASS,
+P05,leaked LaTeX / errors in PDF text,0,none,PASS,
+P06,every \section/\subsection title appears in the PDF,all 220 titles present,0 missing,PASS,
+P07,appendix files present in PDF,6 appendix sources rendered,6/6,PASS,
+P08,keywords block,>= 6 keywords,11 keywords,PASS,
+P09,declarations section,present,present,PASS,
+P10,abstract length,150-350 words,245 words,PASS,
+P11,figure pages carry vector/raster artwork,18 \includegraphics in sources,16 pages with a figure caption and drawing content,PASS,vector figures are content streams; caption pages without artwork would mean a missing graphic
+P12,figure/table captions rendered,all 70 captions,"70 present, 0 missing",PASS,
+P13,equation register: unique EQ ids,no id reused as a definition,29 distinct ids; def-lines=29; dups-suspect=0,REPORT,
+P14,equation register: every status is defined in the legend,statuses used == statuses defined,UNVERIFIED=16; PRIMARY-SOURCE-CHECKED=4; CONDITIONAL=3; DERIVED=2; OPEN=2; VERIFIED-SYMBOLIC=1; WITHHELD=1,PASS,
+P15,equation register: derived + primary-checked share,reported (no threshold imposed; v1.1 stated the register is largely unverified),20.7% of 29 rows,REPORT,
+P16,numbered equations in PDF,reported for register cross-check,"136 distinct equation numbers, max=136",REPORT,
+P17,citations resolve to a printed reference,every cited key appears in .bib and in the reference list (107 cited),0 unresolved; reference list found on p.121,PASS,
+P18,bibliographic hygiene,reported (uncited entries are allowed),"144 entries, 107 cited, 37 uncited",REPORT,Bazarra2021MGTradial | Chandrasekharaiah1984 | Chandrasekharaiah1986 | ChenGurtin1968 | Chirita2016 | DubnerAbate1968 | Durbin1974 | Fu2013 | GorenfloKilbasMainardiRogosin2014 | Green1991
+P19,fonts embedded,every font has an embedded file,all embedded,PASS,
+P20,right-margin overflow proxy,no page with text within 40 pt of the trim edge,0 pages flagged,PASS,pages: []
+P21,table of contents,present near the front matter,present,PASS,
+P22,PDF bookmarks (hyperref outlines),>= 10 entries,430 entries,PASS,
+P23,no orphan .tex in the built tree,every source reachable from main.tex via \input/\include,0 unreachable of 39,PASS,
+P24,float numbering contiguous,no gaps in Figure/Table numbers,"figures 1-16 (16 seen, gaps=[]); tables 1-53 (53 seen, gaps=[])",PASS,
+P25,sources unchanged since this PDF was compiled,no .tex edited after the build timestamp,1 file(s) edited after D:20261101163903Z,REPORT,rebuild needed for: appendices/appA_equation_register.tex
+P26,section order matches main.tex and pages increase,"all input sections bookmarked, in source order",26/26 mapped; pages monotonic; body starts p.1,PASS,
