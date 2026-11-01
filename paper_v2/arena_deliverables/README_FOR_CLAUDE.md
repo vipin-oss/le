@@ -655,12 +655,12 @@ Measured, so nobody has to guess tomorrow:
 
 | Quantity | Value |
 |---|---|
-| Pages / words | 140 / 63,584 (author's rebuild, 16:58:57 UTC; the first build measured 63,503) |
+| Pages / words | **142 / 64,932** (author's final rebuild, 17:07:26 UTC; earlier builds measured 140/63,584 and 140/63,503) |
 | Body (sections 1–17) | pp. 14–120, 43,543 words |
 | References | pp. 121–126; 107 cited works, 144 `.bib` entries (37 uncited reserve) |
 | Appendices A–F | pp. 127, 134, 136, 137, 139, 140 |
 | Numbered equations | **136** (the "166" used in planning was never counted; retired) |
-| Figures / tables | 16 (1–16) / 53 (1–53), both contiguous |
+| Figures / tables | 16 (1–16) / 55 (1–55), both contiguous |
 | Unresolved refs / missing cites / leaked LaTeX | 0 / 0 / 0 |
 | Equation register | 29 rows: DERIVED 2, PRIMARY-SOURCE-CHECKED 4, CONDITIONAL 3, VERIFIED-SYMBOLIC 1, UNVERIFIED 16, OPEN 2, WITHHELD 1 |
 

@@ -1,19 +1,19 @@
 # Page-Level Audit — compiled v1.2 against its LaTeX sources
 
 **Date:** 2026-11-01 · **Scope:** P1, second half (page level) · **Status of table:** 26 checks, 21 PASS, 5 REPORT, 0 FAIL
-**Build measured:** the author's rebuild, compiled 2026-11-01 16:58:57 UTC (the earlier 16:39 build was measured first; its findings are kept below in F1–F5 and were re-verified on the rebuild in F8)
+**Build measured:** the author's final rebuild, compiled 2026-11-01 17:07:26 UTC — 142 pages, 64,932 words. Three builds were measured in sequence on the same day (16:39, 16:58, 17:07); findings F1–F5 come from the first, F8 verified them on the second, and section 7 records that the cycle-3 additions render on the third.
 **Method:** the compiled PDF is parsed with PyMuPDF and every check is a comparison against the `.tex`/`.bib` sources it was built from. No check is a judgement of prose quality; each is an assertion about what the document physically contains.
 
 ## 1. Document census
 
 | Quantity | Measured |
 |---|---|
-| Pages | 140 |
-| Words (extracted) | 63,584 |
-| Body words, sections 1–17 (pp. 14–120) | 43,543 |
+| Pages | 142 |
+| Words (extracted) | 64,932 |
+| Body words, sections 1–17 | 43,543 at the 16:39 build; the two new tables and §2.7 add ~1.4k |
 | Numbered equations printed | 136 (highest number = 136, no gaps) |
 | Numbered figures printed | 16 (1–16, contiguous) |
-| Numbered tables printed | 53 (1–53, contiguous) |
+| Numbered tables printed | 55 (1–55, contiguous) |
 | Distinct works cited | 107 |
 | Entries in `references_local.bib` | 144 (37 uncited reserve entries) |
 | Printed references carrying a DOI | 104 (103 + Chester 1963) |
@@ -28,7 +28,7 @@
 | Fonts without an embedded file | 0 |
 | Pages with right-margin overflow (40 pt proxy) | 0 |
 
-Story in one line: the document is a **140-page review paper** — not a book — whose front matter, 17 sections (pp. 14–120), reference list (pp. 121–126) and six appendices (pp. 127–140) all rendered with every reference and citation resolved.
+Story in one line: the document is a **142-page review paper** — not a book — whose front matter, 17 sections (pp. 14–120), reference list (pp. 121–126) and six appendices (pp. 127–140) all rendered with every reference and citation resolved.
 
 ## 2. Structure map (from hyperref bookmarks, cross-checked against `main.tex` order)
 
@@ -114,12 +114,15 @@ evidence protocol (`sec:evidence_protocol`), and Table `tab:research-questions` 
 settle each). Eleven `\eqref` pointers were added to register rows whose mathematics occurs in exactly one printed
 equation.
 
-Because the sources are now newer than the last build, the audit reports these as **pending rebuild** rather than
-missing: P06 says `1 not in this PDF (1 pending rebuild, 0 unexplained)` and P12 says
-`70 present, 2 pending rebuild, 0 unexplained`. The difference matters — a title that is absent because nobody
-rebuilt is not a defect in the document, and a title that is absent because a source is orphaned is. Making that
-distinction exposed a real bug in this audit's own caption check (it compared one character of a caption instead
-of the caption, and passed silently); it is fixed, and the check now counts 72 captions.
+On the 16:58 build these showed as **pending rebuild**; on the 17:07 build they are present and the audit is clean:
+P06 `all 220 titles present`, P12 `72 present, 0 pending rebuild, 0 unexplained`, P25 PASS (no source is newer than
+the PDF). Verified in the artefact rather than assumed — the contributions table's caption, the §2.7 section
+heading, the R-table caption, and the register's own pointers all print, e.g. `EQ-001 … (Eq. (5))`, `EQ-024 …
+(Eq. (36))`, `EQ-027 … (Eq. (37))`, `EQ-028 … (Eq. (42))`.
+
+Making the pending-vs-missing distinction exposed a real bug in this audit's own caption check (it compared one
+character of a caption instead of the caption, and passed silently); it is fixed, and the check now counts 72
+captions and reports pending-rebuild separately.
 
 ## 8. Files
 

@@ -182,5 +182,13 @@ that tells them how much to trust each sentence, a table they can lift, and poin
   distinction was itself a bug in the audit — a caption check compared a *character* of the caption instead of the
   caption, and passed silently until the new tables exposed it.
 
-**Open at the end of cycle 3:** a rebuild to bring the PDF level with the sources; the 18 unpointed register rows
-(4 need a choice among restatements, 14 are prose); overfull-box warnings, which only the compile log can report.
+### Rebuild verification (same cycle)
+The rebuild was measured, not assumed: **26 checks, 21 PASS, 5 REPORT, 0 FAIL** at **142 pages, 64,932 words** —
+220 section/subsection titles present, 72 captions present, six appendices, 136 numbered equations, 16 figures,
+55 tables, 0 unresolved references, 0 missing citations, 0 leaked control sequences, and no source newer than the
+PDF. The three additions print where they were meant to: the contributions table's caption, the §2.7 heading, the
+R-table caption, and the register's own pointers (`EQ-001 … (Eq. (5))`, `EQ-024 … (Eq. (36))`, `EQ-027 … (Eq. (37))`,
+`EQ-028 … (Eq. (42))`).
+
+**Open at the end of cycle 3:** the 18 unpointed register rows (4 need a choice among restatements, 14 are prose);
+overfull-box warnings, which only the compile log can report.

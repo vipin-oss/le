@@ -111,10 +111,12 @@ changelog = os.path.join(os.path.dirname(SRC), "manuscript_v2", "CHANGELOG_v2.md
 changed = [l[3:].strip() for l in subprocess.run(
     ["git", "-C", SRC, "status", "--porcelain", "--", "."],
     capture_output=True, text=True).stdout.splitlines()
-           if l.strip() and not l.strip().endswith("CHANGELOG_v2.md")]
+           if l.strip()
+           and not l.strip().endswith(("CHANGELOG_v2.md", "REVIEW_CYCLES.md"))]
 log_txt = open(changelog, encoding="utf-8").read() if os.path.exists(changelog) else ""
 undeclared = [c for c in changed if os.path.basename(c.split(" -> ")[-1]) not in log_txt]
 check("every change to the working sources is declared in CHANGELOG_v2.md "
+      "(process logs excluded: a log cannot declare itself) "
       "(%d changed, %d undeclared)" % (len(changed), len(undeclared)),
       not undeclared, " | ".join(undeclared[:4]))
 
