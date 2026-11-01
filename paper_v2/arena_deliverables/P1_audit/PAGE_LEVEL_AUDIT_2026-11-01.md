@@ -1,7 +1,7 @@
 # Page-Level Audit — compiled v1.2 against its LaTeX sources
 
 **Date:** 2026-11-01 · **Scope:** P1, second half (page level) · **Status of table:** 26 checks, 21 PASS, 5 REPORT, 0 FAIL
-**Build measured:** the author's final rebuild, compiled 2026-11-01 17:07:26 UTC — 142 pages, 64,932 words. Three builds were measured in sequence on the same day (16:39, 16:58, 17:07); findings F1–F5 come from the first, F8 verified them on the second, and section 7 records that the cycle-3 additions render on the third.
+**Build measured:** the author's third rebuild, compiled 2026-11-01 17:13:34 UTC — 142 pages, 64,932 words. It is **textually identical** to the 17:07:26 build (all 142 pages compare equal, page by page; only the internal build timestamp differs), so the two certify each other. Three builds were measured in sequence on the same day (16:39, 16:58, 17:07); findings F1–F5 come from the first, F8 verified them on the second, and section 7 records that the cycle-3 additions render on the third.
 **Method:** the compiled PDF is parsed with PyMuPDF and every check is a comparison against the `.tex`/`.bib` sources it was built from. No check is a judgement of prose quality; each is an assertion about what the document physically contains.
 
 ## 1. Document census
@@ -114,7 +114,7 @@ evidence protocol (`sec:evidence_protocol`), and Table `tab:research-questions` 
 settle each). Eleven `\eqref` pointers were added to register rows whose mathematics occurs in exactly one printed
 equation.
 
-On the 16:58 build these showed as **pending rebuild**; on the 17:07 build they are present and the audit is clean:
+On the 16:58 build these showed as **pending rebuild**; from the 17:07 build onward they are present and the audit is clean:
 P06 `all 220 titles present`, P12 `72 present, 0 pending rebuild, 0 unexplained`, P25 PASS (no source is newer than
 the PDF). Verified in the artefact rather than assumed — the contributions table's caption, the §2.7 section
 heading, the R-table caption, and the register's own pointers all print, e.g. `EQ-001 … (Eq. (5))`, `EQ-024 …
@@ -145,3 +145,15 @@ python3 P1_audit/audit_pages.py --pdf /path/to/compiled.pdf --master ../manuscri
 python3 P1_audit/build_equation_inventory.py --master ../manuscript_v2/master --pdf /path/to/compiled.pdf
 python3 P1_audit/check_page_audit.py      # now also fails if the inventory is incomplete or disagrees with the PDF
 ```
+
+## 9. Build lineage measured today
+
+| Build (UTC) | Pages | Words | Audit | Note |
+|---|---|---|---|---|
+| 16:39:03 | 140 | 63,503 | 26 checks, 0 FAIL | first build; findings F1–F5 came from it |
+| 16:58:57 | 140 | 63,584 | 26 checks, 0 FAIL | F1/F2/F5 verified in the artefact (F8) |
+| 17:07:26 | 142 | 64,932 | 26 checks, 21 PASS, 5 REPORT, 0 FAIL | cycle-3 additions render; drift closed |
+| 17:13:34 | 142 | 64,932 | 26 checks, 21 PASS, 5 REPORT, 0 FAIL | textually identical to 17:07 — a re-compile, not a change |
+
+The last two lines matter for the record: uploading a rebuilt PDF whose text is unchanged is not a new revision, and
+the audit says so by comparing page text rather than file names or sizes.
