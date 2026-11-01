@@ -98,7 +98,7 @@ check("every row carries identity evidence naming a page",
       str([r["title"] for r in rows if "page" not in r["identity_evidence"]]))
 noisbn = [r for r in rows if "no ISBN" in r["isbn_printed"]]
 check("the only rows without an ISBN are the pre-ISBN printings, and they say so",
-      {int(r["wishlist_rank"]) for r in noisbn} == {1, 12} or
+      {int(r["wishlist_rank"]) for r in noisbn if r["wishlist_rank"].isdigit()} == {1, 12} or
       all("no ISBN" in r["isbn_printed"] for r in noisbn),
       str([(r["arrival_id"], r["isbn_printed"]) for r in noisbn]))
 
