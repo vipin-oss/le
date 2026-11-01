@@ -151,9 +151,7 @@ FAMILY_MAP = {
              ""),
     "TED / damping": (["BK-04", "BK-05"], FULL, ""),
     "surface (Rayleigh)": (["BK-09", "BK-10"], FULL, ""),
-    "porous / voids": (["BK-01", "BK-03"], PARTIAL,
-                       "BK-01 assumes exactly two K-roots; a double-porosity model has a third "
-                       "branch, so a branch-count invariant for m > 2 is missing - BK-11"),
+    "porous / voids": (["BK-01", "BK-03", "BK-11"], FULL, ""),
     "Lamb / plate": (["BK-12"], FULL, ""),
     "shear / SH": (["BK-13"], FULL, ""),
     "interface / layered": (["BK-14"], FULL, ""),

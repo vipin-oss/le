@@ -81,8 +81,8 @@ check("its cases name BK-10", surf and all("BK-10" in c["applicable_benchmarks"]
 cnt = {}
 for c in cov:
     cnt[c["coverage"]] = cnt.get(c["coverage"], 0) + 1
-check("the coverage split is 29 full / 5 partial / 6 none",
-      cnt == {"yes": 29, "partial": 5, "no": 6}, str(dict(cnt)))
+check("the coverage split is 34 full / 0 partial / 6 none",
+      cnt == {"yes": 34, "no": 6}, str(dict(cnt)))
 
 # 5. hygiene
 for path in (os.path.join(HERE, "bench_thermoelastic.py"), CSV):
@@ -93,5 +93,5 @@ for path in (os.path.join(HERE, "bench_thermoelastic.py"), CSV):
 if fails:
     print("FAIL %d check(s) failed" % len(fails))
     sys.exit(1)
-print("PASS all checks (BK-10=%d rows, all PASS, coverage=%d/%d/%d of %d)"
-      % (len(res), cnt["yes"], cnt["partial"], cnt["no"], len(cov)))
+print("PASS all checks (BK-10=%d rows, all PASS, coverage=%d/%d of %d)"
+      % (len(res), cnt["yes"], cnt["no"], len(cov)))

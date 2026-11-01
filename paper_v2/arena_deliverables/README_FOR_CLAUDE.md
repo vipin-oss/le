@@ -251,6 +251,16 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 31:** the branch count is now a benchmark for any number of fields. `P3_atlas/bench_porous.py` adds
+  **BK-11** as the algebra of extending the template to m extra fields - explicitly *not* a porous model, which
+  this repository does not have: the bordered determinant is a polynomial of degree m+1 in K, so there are m+1
+  branches, one propagating and m diffusive. Six rows, all passing, tied to the verified code at m = 1
+  (`second_impl.coupled_K_roots` to 1.5e-15) and in the decoupled limit (`second_impl.thermal_k` to 3.8e-14);
+  the elastic branch sits at K/K_iso = 0.9091 for m = 1, which is exactly 1/(1+eps), and softens only slowly as
+  fields are added (0.8163, 0.7643, 0.7045). Coverage is now **34 full / 0 partial / 6 none of 40**; the six
+  left are the coupled multifield cases, and BK-15 stays unwritten because there is no coupled piezo/magneto
+  constitutive model here to write it against.
+
 - **Step 30:** the thermoelastic surface wave is now a benchmark, not a gap. `P3_atlas/bench_thermoelastic.py`
   adds **BK-10**: one shear partial wave plus a coupled longitudinal/thermal pair, free and insulated surface,
   3x3 determinant solved for complex s at real k, reusing the bulk quadratic of `second_impl.py` with

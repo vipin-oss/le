@@ -107,8 +107,8 @@ cfull = sum(1 for r in cov if r["coverage"] == "yes")
 cpart = sum(1 for r in cov if r["coverage"] == "partial")
 check("the atlas plan, its executable coverage and the absence of case results are printed (%d, %d, %d)"
       % (len(plan), cfull, cpart),
-      "**%d cases planned**, **%d with a fully executable invariant** and **%d partial**"
-      % (len(plan), cfull, cpart) in txt)
+      ("**%d cases planned**, **%d with a fully executable invariant** and " % (len(plan), cfull)
+       + ("**none partial**" if cpart == 0 else "**%d partial**" % cpart)) in txt)
 check("the benchmark count is printed (%d)" % len(bench),
       "**%d benchmark records**" % len(bench) in txt)
 check("the second-implementation count is printed (%d)" % len(si),

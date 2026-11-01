@@ -86,7 +86,7 @@ the pending list. It was wrong twice: the eight rows in `bench_atlas_results.csv
 families* (BK-01 ... BK-08), not atlas cases, and no case can have a case-level result because every
 paper in the plan was read at title and metadata level only. The honest statement is now in both
 documents and enforced by their checkers: **40 cases planned, 12 with a fully executable invariant,
-11 with a partial one, and 0 case-level results.** (Steps 29 and 30 raised the first number to 29 and cut the
+11 with a partial one, and 0 case-level results.** (Steps 29 to 31 raised the first number to 34 and cut the
 none-count to 6 - see the sections at the end of this file; the figures in the rest of this section are the
 step-28 state.)
 
@@ -118,7 +118,7 @@ BK-15 and takes the uncovered count from 17 to 6.
 
 ```bash
 python3 bench_surface.py     # recomputes BK-09 and the coverage map
-python3 check_surface.py     # PASS all checks (BK-09=6 rows, BK-12/13/14=14 rows, coverage=29/5/6 of 40)
+python3 check_surface.py     # PASS all checks (BK-09=6 rows, BK-12/13/14=14 rows, coverage=34/0/6 of 40)
 ```
 
 ---
@@ -211,10 +211,58 @@ Fourier, DPL and GN-III and *reports* LS. And this benchmark still says what any
 this model class must reproduce - **not** what paper AT-07 reports, because those papers are still
 read at title level only.
 
-Coverage after step 30: **29 full / 5 partial / 6 none of 40**. Left: BK-11 (porous, m > 2, 5 cases)
-and BK-15 (coupled multifield, 6 cases).
+Coverage after step 30: **29 full / 5 partial / 6 none of 40**. Step 31 then closed the porous
+family - see below - and left only BK-15 (coupled multifield, 6 cases).
 
 ```bash
 python3 bench_thermoelastic.py   # recomputes BK-10
 python3 check_thermoelastic.py   # PASS all checks (BK-10=6 rows, coverage=29/5/6 of 40)
+```
+
+---
+
+## BK-11: how many branches, for any number of fields (added 2026-11-01, step 31)
+
+The five porous cases were marked partial because BK-01 says "exactly two `K` roots", which is a
+statement about the one-heat-field template and is simply wrong for a double-porosity model.
+
+`bench_porous.py` does **not** contain a porous model - this repository has none, and inventing
+permeabilities and Biot coefficients would produce numbers about a material nobody uses. What it
+contains is the algebra of adding fields to the template the project already uses:
+
+```
+momentum   (rho c1^2 K + rho s^2) e - sum_i beta_i K T_i = 0
+energy_i   beta_i T0 s e + (s rho c_i + G_i(s) K) T_i = 0 ,   i = 1 ... m
+```
+
+For m = 1 that is exactly equation (D) of `P4_second_impl/second_impl.py`. The bordered determinant is
+
+```
+det = (a K + b) prod_i (c_i K + d_i) + sum_i e_i K prod_{j != i} (c_j K + d_j)
+```
+
+so it is a polynomial of degree **m + 1** in K with leading coefficient `a prod G_i`: **m + 1 branches,
+one propagating and m diffusive**. A multi-field implementation that reports two branches has lost
+m - 1 of them; one that reports a second propagating branch for a purely diffusive field has invented
+one. That is the whole invariant, and it needs no material data.
+
+| row | measured | anchor |
+|---|---|---|
+| m = 1 reproduces the verified code | 1.45e-15 | `second_impl.coupled_K_roots`, all 6 models |
+| degree m+1, m+1 roots | m = 1 ... 6, 36 cases | leading coefficient never vanishes |
+| decoupled extra fields sit on the thermal roots | 3.8e-14 | `second_impl.thermal_k` |
+| low-frequency split | 1 propagating + m diffusive | diffusive `\|K\|` linear in w (2.8e-03) |
+| the elastic branch keeps its place | K/K_iso = 0.9091, 0.8163, 0.7643, 0.7045 | m = 1 is 1/(1+eps) = 0.909091 exactly |
+| closed form equals the numeric determinant | 1.7e-15 | hand-assembled bordered matrix |
+
+The m = 1 row is the important one: it ties the whole generalization to code that was written before
+it and is verified against the archived output, so the algebra cannot quietly drift.
+
+Coverage after step 31: **34 full / 0 partial / 6 none of 40**. The six that remain are the coupled
+multifield cases (BK-15), and they stay uncovered because this repository has no coupled
+piezo/magneto constitutive model to check them against.
+
+```bash
+python3 bench_porous.py    # recomputes BK-11
+python3 check_porous.py    # PASS all checks (BK-11=6 rows, coverage=34/0/6 of 40)
 ```
