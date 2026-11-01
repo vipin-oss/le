@@ -227,6 +227,22 @@ def main():
             check("no supplied work is still on the request list", not still, str(still[:5]))
             print("     supplied by the author and struck off=%d (%s blocked claims freed)"
                   % (len(prows), sum(len(r["claim_ids"].split()) for r in prows)))
+
+        # new_drive_batch_*.md - a Drive drop that was read through and found to hold nothing on the list
+        N = os.path.join(HERE, "new_drive_batch_2026-11-01.md")
+        check("the record of the unneeded Drive drop exists", os.path.exists(N))
+        if os.path.exists(N):
+            txt = open(N, encoding="utf-8").read()
+            check("the Drive drop record states the verdict",
+                  "Not one of them is a work that is still on the request list" in txt)
+            check("the Drive drop record carries no URLs or Drive links", not leak.search(txt))
+            drop_dois = {d.lower().rstrip('.') for d in re.findall(r"10\.\d{4,9}/[^\s|,;)]+", txt)}
+            asked_dois = {r["doi"].lower() for r in srows if r["doi"]}
+            overlap = sorted(drop_dois & asked_dois)
+            check("no DOI in the Drive drop is still on the request list", not overlap,
+                  str(overlap[:5]))
+            print("     Drive drop read through: %d files, %d distinct DOIs, 0 wanted"
+                  % (txt.count('\n| '), len(drop_dois)))
     print("     needed=%d (top-20 cut), archive-held=%d, library-held=%d, findings=%d"
           % (len(rows), len(hrows), len(arows), len(frows)))
 
