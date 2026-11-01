@@ -101,9 +101,15 @@ numbers disagree.
   batch counting; batch files stopped being manufactured.
 - **Step 16** (`ec44e96`): the fourth batch - 26 files, 25 matched their row, 1 did not; 23 supported, 2
   partly; the list cut from 38 works to **13**; the PDF rebuilt to one page.
-- **Step 17** (this pass, summary in `SUMMARY_step17.md`): the twelve held sources were attacked - eight read
+- **Step 17** (summary in `SUMMARY_step17.md`): the twelve held sources were attacked - eight read
   at claim level, four could not be re-located; the nineteen register-level rows got their own pass, which
   turned up a duplicate citation and a wrong DOI; this README was written; everything was audited once.
+- **Step 18:** the request list was **re-ordered by priority, not by discovery**. `sources_still_needed_full.csv`,
+  its `.md` mirror and the one-page PDF all carry the same 13 works in the same new order: ranks 1-5 are the
+  five that carry the model, the definition and the two standard references; ranks 6-9 are the four papers
+  with a working DOI; ranks 10-13 are one-sentence attributions. Nothing was added or removed - 13 works,
+  14 claims, 4 verified DOIs, exactly as before. If the order is ever changed again, the CSV, the `.md` and
+  the PDF must change together, because the PDF is built from the CSV.
 
 ## 6. Findings a reader must not lose
 
