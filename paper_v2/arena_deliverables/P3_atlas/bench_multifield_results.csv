@@ -1,0 +1,7 @@
+invariant,what_it_tests,measured_quantity,measured,required,ok,verdict
+I1,the 12x12 Hessian of (5.11.1) is symmetric,max |W - W^T|,0.000e+00,0,True,PASS
+I2,the Hessian is positive definite (stable material; min eigenvalue after diagonal scaling),min eigenvalue of D^-1/2 W D^-1/2,5.120500e-01,> 0,True,PASS
+I3,open circuit stiffens: C* - C is positive semi-definite and non-trivial,"min, max eigenvalue of C* - C; relative stiffening","0.000e+00, 2.714781e+05; 1.00e-06",>= 0; > 1e4; > 1e-6,True,PASS
+I4,all branches real; coupled speeds never below the bare ones (48 directions),min of (lambda_coupled - lambda_bare),3.306071e+01,>= 0,True,PASS
+I5,6mm piezo limit reproduces C44* = C44 + e15^2/chi11 exactly,relative error on C44*,0.000e+00,0,True,PASS
+I6,no coupling returns C exactly; short circuit kills the piezo stiffening,max |C(e=q=0) - C|; stiffening ratio chi*1e12 vs chi,0.000e+00; 0.000e+00,0; < 1e-9,True,PASS

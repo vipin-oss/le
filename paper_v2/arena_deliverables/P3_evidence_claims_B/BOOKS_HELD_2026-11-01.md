@@ -23,9 +23,9 @@ misfires, because one of them was the top recommendation:
 **Eringen and Maugin is still not held.** The file that arrived under that title is one page: a review in
 the *Journal of Applied Mechanics* by Y. E. Pak, which opens by naming the book, its publisher, its year and
 its length ("436 pages"), and contains no equations from it. A review cannot supply a constitutive theory.
-**BK-15 therefore stays open**, the six multifield atlas cases still have no invariant, and coverage stays
-**34/40** - not 40/40. That was the whole reason it was ranked first, and the ranking has not changed; only
-the delivery has.
+*(Written on arrival: BK-15 therefore stays open, the six multifield atlas cases still have no invariant, and
+coverage stays 34/40 - not 40/40. Step 39 superseded this paragraph: the invariant was built the same day, and
+coverage is now 40/40.)*
 
 **Povstenko arrived as one chapter** (Chapter 1, "Essentials of Fractional Calculus"). It is usable for the
 definitions of the fractional operators and nothing else. Every sentence in the manuscript about fractional
@@ -104,10 +104,11 @@ superseded by the real book that followed. Rank 1 now has **three usable copies*
 Maugin 1988), which is why it is described as having a spare; rank 4 has a spare of its own (the diffusion-wave
 book is a different work, not an edition, and is kept as the weaker second reader).
 
-**One thing not to overstate: BK-15 is now *executable*, and atlas coverage is still 34/40.** The book supplies
-the coupled electro-magneto-elastic constitutive theory, but no benchmark has been built from it yet; the
-coverage number moves only when the six multifield cases acquire an invariant and a checker in
-`P3_atlas/`. The same holds for the fractional-thermoelasticity sentences: the book is in hand, unread.
+**Superseded by Step 39: BK-15 is no longer merely executable - it is executed, and coverage is 40/40.** This
+paragraph, written on arrival, said the book supplies the coupled electro-magneto-elastic constitutive theory but
+no benchmark had been built from it yet, and that the coverage number moves only when the six multifield cases
+acquire an invariant and a checker in `P3_atlas/`. Both now exist: `bench_multifield.py` (six invariants off
+eqs. (5.11.4)-(5.11.6), printed pp. 165-166) and `check_multifield.py`; the atlas is **40/0/0 of 40**. The same holds for the fractional-thermoelasticity sentences: the book is in hand, unread.
 
 ```bash
 python3 check_books_held.py      # PASS all checks (18 arrivals, 16 usable, all 13 ranks, BK-15 executable)

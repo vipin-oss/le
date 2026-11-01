@@ -58,8 +58,9 @@ check("the problem ids match the plan exactly",
 check("the bibkeys match the plan exactly",
       [c["bibkey"] for c in cov] == [p["bibkey"] for p in plan])
 cnt = collections.Counter(c["coverage"] for c in cov)
-check("the coverage split is 34 full / 0 partial / 6 none",
-      cnt == {"yes": 34, "no": 6}, str(dict(cnt)))
+check("the coverage split is 40 full / 0 partial / 0 none",
+      cnt.get("yes", 0) == 40 and cnt.get("partial", 0) == 0 and cnt.get("no", 0) == 0,
+      str(dict(cnt)))
 check("no case claims a case-level result",
       all(c["case_level_result"] == "no" for c in cov))
 check("every case says why there is no case-level result",
@@ -71,13 +72,13 @@ check("the partial cases say what they are missing",
       all(c["missing_invariant"] for c in cov if c["coverage"] == "partial"))
 check("the fully covered cases name only benchmarks that exist",
       all(all(b in {"BK-01", "BK-02", "BK-03", "BK-04", "BK-05", "BK-06", "BK-07",
-                    "BK-08", "BK-09", "BK-10", "BK-11", "BK-12", "BK-13", "BK-14"}
+                    "BK-08", "BK-09", "BK-10", "BK-11", "BK-12", "BK-13", "BK-14", "BK-15"}
               for b in c["applicable_benchmarks"].split())
           for c in cov if c["coverage"] == "yes"))
-check("every family except multifield now has an executable invariant",
+check("every family now has an executable invariant, multifield included",
       {c["wave_family"] for c in cov if c["coverage"] == "yes"}
       == {"bulk", "TED / damping", "surface (Rayleigh)", "porous / voids", "Lamb / plate",
-          "shear / SH", "interface / layered"},
+          "shear / SH", "interface / layered", "multifield"},
       ", ".join(sorted({c["wave_family"] for c in cov if c["coverage"] == "yes"})))
 check("the three result files together hold %d benchmark rows" % (len(main) + len(res) + len(fam)),
       len(main) == 8 and len(res) == 6 and len(fam) == 14,

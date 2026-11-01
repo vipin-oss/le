@@ -18,7 +18,7 @@ is open. So nothing is wrong with the plan; what is missing is all execution.
 | G1 | P1 audit of the 134 pages, derivations and the 35 scripts complete | **not started** as an audit; 10 defects registered, **7 of the 10 defects are OPEN** | author + agent |
 | G2 | no R0 entries; critical claims at R3 or independently derived | **7 are R0** (down from 32), catalogue check **238 entries** with **9 R0**, register covers **204 entries** of the bibliography's **323** | agent, plus print access |
 | G3 | contribution map filled and checked against prior reviews | **no such file exists**; P0 has not started | author + agent |
-| G4 | benchmark registry complete, independent implementations done | **14 benchmark records**, **42 comparisons**; atlas **40 cases planned**, **34 with a fully executable invariant** and **none partial**, and **no case-level result for any of the 40** - the eight rows in the benchmark file are families, not cases | agent |
+| G4 | benchmark registry complete, independent implementations done | **14 benchmark records**, **42 comparisons**; atlas **40 cases planned**, **40 with a fully executable invariant** and **none partial**, and **no case-level result for any of the 40** - the eight rows in the benchmark file are families, not cases | agent |
 | G5 | two or three expert reviews received and resolved | **0 named, 0 invited, 0 received** | author (external people) |
 | G6 | journal fit confirmed, template, declarations, archive DOI | **journal not chosen**; the Elsevier variant has never compiled; no archive DOI, no declaration wording, no cover letter | author + agent |
 
@@ -94,8 +94,10 @@ the most expensive to do badly. It needs the author's judgement, not a machine r
 - **14 benchmark records**; the registry is published in the repository, but "complete" is not yet
   defined against the paper's own schemes.
 - **42 comparisons** in the second implementation.
-- the atlas is the visible hole, and it is now a small one. Of the **40 cases planned**, **34 have a fully
-  executable invariant** and **6 have none**, and all six are coupled multifield cases waiting on BK-15. Steps 29
+- the atlas is the visible hole, and it is now closed on the invariant side. Of the **40 cases planned**, **40 have
+  a fully executable invariant** and **none is without one**: the six coupled multifield cases that waited on BK-15
+  are executed by `P3_atlas/bench_multifield.py` (six invariants off Eringen & Maugin 1990, eqs. (5.11.4)-(5.11.6),
+  printed pp. 165-166). Steps 29
   to 31 wrote the invariants for the plate, layer, interface, thermoelastic surface and multi-field families
   (BK-12, BK-13, BK-14, BK-10, BK-11); each is validated against a classical closed form, a verified limit of the
   existing code, or a structural requirement such as passivity - never against itself. BK-15 is deliberately not

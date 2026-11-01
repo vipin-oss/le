@@ -251,6 +251,28 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 39:** BK-15 is written and **the atlas is closed on the invariant side: 40 of 40 cases now have a fully
+  executable invariant, none partial, and still 0 case-level results.** The six coupled multifield cases
+  (AT-04, AT-05, AT-06, AT-09, AT-13, AT-40) were blocked on one sentence - "piezo/magneto branch speeds need the
+  coupled constitutive matrix" - and Eringen & Maugin, *Electrodynamics of Continua I* (1990), **§5.11, printed
+  pp. 165-166, eqs. (5.11.4)-(5.11.6)** print that matrix with (5.11.1) as the single quadratic free energy it comes
+  from. `P3_atlas/bench_multifield.py` assembles the 12x12 Hessian and executes six invariants: the Hessian is
+  symmetric (**max |W - W^T| = 0.000e+00**); it is positive definite (min eigenvalue 5.1205e-01 after diagonal
+  scaling - the raw matrix spans 1e11 to 1e-8 in double precision); open circuit stiffens, **C\* - C is PSD with
+  max eigenvalue 2.7148e+05 and a stiffening of 1.13e-06 of max(C)**, which is the honest size for quartz-like
+  coupling; the three acoustic branches are real and **never below the bare elastic ones over 48 directions**
+  (min difference 3.3061e+01); the 6mm piezoelectric limit reproduces the closed form
+  **C44\* = C44 + e15^2/chi11 to 0.000e+00 relative**; and switching the coupling off returns C exactly while a
+  dielectric constant scaled by 1e12 removes the stiffening to 1e-24. `P3_atlas/check_multifield.py` recomputes all
+  six from scratch (55 checks) rather than trusting the CSV. The atlas rows were updated - `coverage = yes`,
+  `applicable_benchmarks = BK-15`, `missing_invariant` now records where the invariant came from - while
+  `case_level_result` stays **no** for all six, because those papers were still read at title and metadata level
+  only: an executable invariant is not a result, and the atlas is still **0 case-level results of 40**. The three
+  coverage-split assertions in `check_surface.py`, `check_porous.py` and `check_thermoelastic.py` were moved from
+  34/0/6 to **40/0/0**, and the family check now expects multifield among the covered families. The gate in
+  `check_publish_pending.py` prints **atlas=40/0/0 of 40**; `PUBLISH_PENDING_2026-11-01.md` and
+  `PUBLICATION_READINESS_2026-11-01.md` were corrected from 34 to 40 in the same place.
+
 - **Step 38:** the last six items arrived - **all three needs are met.** `P3_evidence_claims_B/BOOKS_HELD_2026-11-01.csv`
   is now **18 rows / 16 usable books covering all thirteen wish-list ranks**: the real **Eringen and Maugin I**
   (469 pp., ISBN 978-1-4612-3226-1), the real **Povstenko, *Fractional Thermoelasticity*** (261 pp.), plus

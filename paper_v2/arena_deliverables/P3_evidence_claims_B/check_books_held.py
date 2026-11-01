@@ -19,7 +19,7 @@ It checks:
      an ISBN unless the copy is a pre-ISBN printing that says so;
   5. every row's title matches the wish-list title at the same rank;
   6. the prose states the third thing honestly: BK-15 is now *executable* but atlas coverage is
-     still 34/40, because no benchmark has been built from the new books yet;
+     later executed in Step 39 (bench_multifield.py), moving the atlas to 40/40;
   7. nothing in either file is a link, a drive id, an uploaded file name or a library folder name.
 
 Exit 0 with a line starting with PASS.
@@ -115,8 +115,8 @@ check("three rows are declared spares, and each says so in its notes", len(spare
 
 check("the prose carries the addendum in which the last three arrived",
       "Addendum" in md and "all three needs are met" in md)
-check("the prose keeps the coverage statement honest: BK-15 is executable, coverage still 34/40",
-      "now executable" in md and "still 34/40" in md)
+check("the prose is honest about the coverage change: arrival said 34/40, Step 39 says 40/40",
+      "Superseded by Step 39" in md and "40/0/0 of 40" in md)
 check("the prose names the three spares", "three usable copies" in md and "spare" in md)
 
 check("no link, drive id, file name or library folder in the CSV",
@@ -127,4 +127,4 @@ if fails:
     print("FAIL %d check(s) failed" % len(fails))
     sys.exit(1)
 print("PASS all checks (18 arrivals, %d usable covering all 13 ranks, 1 chapter only, 1 review, "
-      "BK-15 executable but coverage still 34/40)" % n_usable)
+      "BK-15 executed in Step 39, atlas 40/40)" % n_usable)
