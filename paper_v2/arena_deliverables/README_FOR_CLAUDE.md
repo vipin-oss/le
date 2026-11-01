@@ -228,6 +228,34 @@ rebuild the PDF has to be verified by hand: extract its text with `pypdf` and co
 single open work is printed with its note, that every DOI or ISBN on it still matches
 `related_books_2026-11-01.csv`, and that the numbers agree with the CSV. That was done in step 21.
 
+### Pulling the latest from Overleaf
+
+The author's manuscript lives on Overleaf and is linked to a git remote there. `pull_from_overleaf.sh`
+(in this folder) does the pull: it clones the Overleaf project into a throw-away directory and lands the
+whole project in `paper_v2/from_overleaf/<UTC stamp>/`, with a `CHANGED_FILES.md` beside it listing every
+file that is new and every file that differs from the copy already in the repository. It never overwrites
+anything outside that folder, so the standing rule that `.tex` files are not edited by the agent still
+holds - replacing a manuscript file stays a human decision.
+
+```bash
+cd paper_v2/arena_deliverables
+./pull_from_overleaf.sh <the-overleaf-git-url> main
+```
+
+Overleaf prints that git URL under **Menu -> Git** (it is the Overleaf host followed by the project id),
+and the git token under **Account -> Git integration**.
+Type the token at git's own prompt; it is never stored by the script and must never appear in a file, a
+commit or a chat message.
+
+Two hard facts, recorded so nobody spends an hour rediscovering them:
+
+- **`git.overleaf.com` is not reachable from this sandbox** - the TLS handshake is refused, and only
+  GitHub and the package registries are open. `github.com` answers fine. So the script has to be run on a
+  machine that can open Overleaf in a browser, or the pull has to come through GitHub.
+- **No Overleaf credential exists here**, and none should be sent. The alternative route needs no token at
+  all: connect the Overleaf project to a GitHub repository (Overleaf: **Menu -> Sync -> GitHub**) and then
+  the latest manuscript is one `git fetch` away, doable from this sandbox.
+
 ## 8. What is still open
 
 1. **From the author: 1 work / 1 claim** - Born and von Karman (1912), Physikalische Zeitschrift 13, for
@@ -260,6 +288,9 @@ single open work is printed with its note, that every DOI or ISBN on it still ma
 - Don't put drive identifiers, links, library folder names or uploaded file names into any file in this
   repository.
 - Don't commit PDFs; the request-list PDF in this folder is the only one that belongs in git.
+- Don't paste an Overleaf git token (or any other credential) into a file, a commit or a chat message, and
+  don't let an Overleaf pull overwrite a `.tex` file in place - land it in `paper_v2/from_overleaf/` and let
+  the author decide what to replace.
 - Don't re-run `check_reaudit_1.py` expecting a pass: it fails on the committed register by design (20 rows /
   39 flagged) and the register is frozen. That failure is pre-existing and is not to be fixed by editing the
   register.
