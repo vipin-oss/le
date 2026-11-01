@@ -214,6 +214,18 @@ def main():
                 gone = [r["citation"] for r in srows if r["claim_ids"].strip() == "CR144"]
                 check("the work found by the sweep is off the request list", not gone, str(gone))
                 print("     works on the list that the sweep also found in Drive: %d" % len(gone))
+                # LEDGER_*.md - the single page that reconciles every upload with every blocked claim
+                L = os.path.join(HERE, "LEDGER_2026-11-01.md")
+                check("the one-page ledger exists", os.path.exists(L))
+                if os.path.exists(L):
+                    ltxt = open(L, encoding="utf-8").read()
+                    check("the ledger carries no URLs or Drive links", not leak.search(ltxt))
+                    check("the ledger states what is needed from the author",
+                          "38 works, 39 claims" in ltxt)
+                    check("the ledger's four buckets add up to the register's blocked rows",
+                          "**111**" in ltxt and "| **total** | **111** |" in ltxt)
+                    print("     ledger: 111 blocked claims = 41 closed + 39 to order + 12 held "
+                          "+ 19 register-level")
 
         # supplied_by_author_*.csv - works the author sent on 2026-11-01, each verified page-1
         S = os.path.join(HERE, "supplied_by_author_2026-11-01.csv")
