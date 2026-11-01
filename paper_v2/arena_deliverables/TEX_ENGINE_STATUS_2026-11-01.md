@@ -39,3 +39,32 @@ PDF cannot be produced in this sandbox today.
 sources. `make_submission_zip.py` repeats that verification on the **staged** tree and refuses to write a zip that
 fails it. What neither can catch, and only a compile can: overfull boxes, page count, float placement, whether
 `cleveref` and `subcaption` agree with `hyperref`, and the page-level appearance of the 166 equations.
+
+---
+
+## Update: an engine **was** found and it works
+
+Route that succeeded: GitHub (reachable) → `manuels/texlive.js` → its git tree carries a **prebuilt Emscripten
+pdfTeX** (`pdftex-worker.js`, pdfTeX 1.40.11, TeX Live 2010) plus a **real `texmf` tree** (3,475 files, 321 `.sty`,
+prebuilt `latex.fmt`). No CTAN, no apt, no release assets needed.
+
+Node harness: `paper_v2/manuscript_v2/tools/localbuild.mjs`. It evaluates the Emscripten worker inside a `vm`
+context with shims (`self`, `postMessage`, a synchronous `XMLHttpRequest`), preloads the whole `texmf` tree into
+MEMFS through the worker's own FS messages, loads the document tree, and runs pdfTeX.
+
+**Proven:** a smoke test (`article` + `amsmath`, `graphicx`, `geometry`, `hyperref`, `natbib`, `tabularx`,
+`longtable`, `array`, `amsthm`) compiled to a real **1-page PDF, 78,970 bytes**, with Type-1 fonts embedded and
+correct `\ref`/`\eqref` resolution.
+
+**Known limits of this engine, stated before it is trusted for the manuscript:**
+- **TeX Live 2010** and a *subset* tree: 10 packages the manuscript uses are absent —
+  `mathtools`, `booktabs`, `xcolor`, `cleveref`, `setspace`, `titlesec`, `caption`, `subcaption`, `float`,
+  `enumitem`. They must be added to the tree (`.sty` files are small and fetchable from GitHub CTAN mirrors) before
+  `main.tex` will compile.
+- **No BibTeX** in the tree: citations would print as `[?]`. A `bibtex` (or `biber`) would have to come from the
+  same route; until then the local build validates layout, math and cross-references, not the bibliography.
+- Staging the manuscript tree into MEMFS still throws `No such file or directory` on the first deep directory;
+  the harness works on a flat/simple tree (proven) and needs its directory creation fixed for the nested
+  `sections/`, `tables/source/`, `appendices/`, `frontmatter/`, `figures/source/` layout.
+
+So: **Overleaf remains the authoritative build**, and the local engine is a progress checkpoint, not a substitute.
