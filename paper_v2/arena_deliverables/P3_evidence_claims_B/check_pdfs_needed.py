@@ -214,18 +214,56 @@ def main():
                 gone = [r["citation"] for r in srows if r["claim_ids"].strip() == "CR144"]
                 check("the work found by the sweep is off the request list", not gone, str(gone))
                 print("     works on the list that the sweep also found in Drive: %d" % len(gone))
+
+                # batch4: 26 files, 25 matched their row, 1 did not
+                B4 = os.path.join(HERE, "batch4_2026-11-01.csv")
+                R4 = os.path.join(HERE, "SOURCE_READING_batch4_2026-11-01.csv")
+                check("the fourth batch record exists", os.path.exists(B4))
+                check("the claim-level reading of the fourth batch exists", os.path.exists(R4))
+                if os.path.exists(B4) and os.path.exists(R4):
+                    b4 = list(csv.DictReader(open(B4, newline="")))
+                    r4 = list(csv.DictReader(open(R4, newline="")))
+                    check("the batch record covers every file (26)", len(b4) == 26, str(len(b4)))
+                    acc = [r for r in b4 if r["verdict"].startswith("accepted")]
+                    rej = [r for r in b4 if r["verdict"].startswith("rejected")]
+                    check("25 of the 26 matched their row", len(acc) == 25, str(len(acc)))
+                    check("exactly one file is recorded as a mismatch", len(rej) == 1, str(len(rej)))
+                    check("the reading covers the 25 accepted works", len(r4) == 25, str(len(r4)))
+                    check("every row in the batch reading carries a page and a quote",
+                          all(re.match(r"^p\. ?\d", r["evidence_page"]) and
+                              len(r["evidence_quote"].split()) >= 4 for r in r4))
+                    bad = [r["claim_id"] for r in r4 if len(r["evidence_quote"].split()) > 27]
+                    check("no batch quote is longer than 27 words", not bad, str(bad[:5]))
+                    bad = [r["claim_id"] for r in r4 if r["verdict"] not in VERDICTS]
+                    check("batch verdicts come from the fixed vocabulary", not bad, str(bad[:5]))
+                    bad = [r["claim_id"] for r in r4 if r["claim_id"] not in reg]
+                    check("batch rows name only real register claims", not bad, str(bad[:5]))
+                    still = [r["claim_id"] for r in r4
+                             if r["claim_id"] in {c for s in srows for c in s["claim_ids"].split()}]
+                    check("no claim read in the fourth batch is still on the request list",
+                          not still, str(still[:5]))
+                    bad = [r["claim_id"] for r in r4 if re.search(r"\.zip|google_drive|Reference List",
+                                                                 " ".join(r.values()))]
+                    check("the batch records do not name the uploaded files", not bad, str(bad[:5]))
+                    tot = sum(len(r["claim_ids"].split()) for r in srows)
+                    check("the request list is down to 13 works / 14 claims",
+                          len(srows) == 13 and tot == 14, "%d works, %d claims" % (len(srows), tot))
+                    print("     fourth batch: 26 files, 25 accepted, 1 mismatch; list now %d works "
+                          "(%d claims)" % (len(srows), tot))
                 # LEDGER_*.md - the single page that reconciles every upload with every blocked claim
                 L = os.path.join(HERE, "LEDGER_2026-11-01.md")
                 check("the one-page ledger exists", os.path.exists(L))
                 if os.path.exists(L):
                     ltxt = open(L, encoding="utf-8").read()
                     check("the ledger carries no URLs or Drive links", not leak.search(ltxt))
+                    need = "**%d works, %d claims" % (
+                        len(srows), sum(len(r["claim_ids"].split()) for r in srows))
                     check("the ledger states what is needed from the author",
-                          "38 works, 39 claims" in ltxt)
+                          need in ltxt, need)
                     check("the ledger's four buckets add up to the register's blocked rows",
                           "**111**" in ltxt and "| **total** | **111** |" in ltxt)
-                    print("     ledger: 111 blocked claims = 41 closed + 39 to order + 12 held "
-                          "+ 19 register-level")
+                    print("     ledger: 111 blocked claims = 66 closed + %d to order + 12 held "
+                          "+ 19 register-level" % sum(len(r["claim_ids"].split()) for r in srows))
 
         # supplied_by_author_*.csv - works the author sent on 2026-11-01, each verified page-1
         S = os.path.join(HERE, "supplied_by_author_2026-11-01.csv")
