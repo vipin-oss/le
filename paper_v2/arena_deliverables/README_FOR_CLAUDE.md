@@ -251,6 +251,8 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 40:** three more books, all extras rather than wish-list gaps - **Auld, *Acoustic Fields and Waves in Solids* vol. I** (Wiley 1973, 438 pp, ISBN 0-471-03700-1, read off its title and copyright pages); **Carcione, *Wave Fields in Real Media*** (Pergamon 2001, Handbook of Geophysical Exploration 31, 415 pp, ISBN 0-08-043929-2); and **Musgrave, *Crystal Acoustics***, supplied as **DjVu**, which no codec in this environment can render - so its row says plainly that **no page of it has been read** and that the identification is container-level only (291 pages with a text layer). `BOOKS_HELD_2026-11-01.csv` is now **21 arrivals, 19 usable**, still covering all 13 ranks; the three extras carry `wishlist_rank = extra` and say in their notes that the title-match test does not apply to them, so the wish-list invariant is untouched. `check_books_held.py` was taught the `extra` rank (rank arithmetic is now gated on `.isdigit()`) and prints **21 arrivals**. Nothing is claimed for any of the three yet: Auld is a second reader for BK-15, Carcione for BK-11, Musgrave for the anisotropy family, and each is *in hand*, not *read*.
+
 - **Step 39:** BK-15 is written and **the atlas is closed on the invariant side: 40 of 40 cases now have a fully
   executable invariant, none partial, and still 0 case-level results.** The six coupled multifield cases
   (AT-04, AT-05, AT-06, AT-09, AT-13, AT-40) were blocked on one sentence - "piezo/magneto branch speeds need the

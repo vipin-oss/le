@@ -55,7 +55,7 @@ md = open(MD, encoding="utf-8").read()
 want = {int(r["rank"]): r for r in csv.DictReader(open(WANT, newline="", encoding="utf-8"))}
 
 check("header matches the declared schema", list(rows[0].keys()) == COLS, str(list(rows[0].keys())))
-check("18 arrivals, ids 1..18", [int(r["arrival_id"]) for r in rows] == list(range(1, len(rows) + 1)),
+check("21 arrivals, ids 1..21", [int(r["arrival_id"]) for r in rows] == list(range(1, len(rows) + 1)),
       str(len(rows)))
 
 states = Counter(r["delivered_state"] for r in rows)
@@ -63,10 +63,10 @@ check("states come from the fixed vocabulary", set(states) <= STATES, str(set(st
 n_usable = states["usable"]
 n_part = states["PARTIAL - Chapter 1 only"]
 n_notbook = states["NOT THE BOOK - a one-page review of it"]
-check("16 usable rows, 1 chapter-only row, 1 review row",
-      (n_usable, n_part, n_notbook) == (16, 1, 1), "%d/%d/%d" % (n_usable, n_part, n_notbook))
+check("19 usable rows, 1 chapter-only row, 1 review row",
+      (n_usable, n_part, n_notbook) == (19, 1, 1), "%d/%d/%d" % (n_usable, n_part, n_notbook))
 
-usable_ranks = [int(r["wishlist_rank"]) for r in rows if r["delivered_state"] == "usable"]
+usable_ranks = [int(r["wishlist_rank"]) for r in rows if r["delivered_state"] == "usable" and r["wishlist_rank"].isdigit()]
 check("every wish-list rank 1..13 is covered by a usable book",
       sorted(set(usable_ranks)) == list(range(1, 14)), str(sorted(set(usable_ranks))))
 per_rank = Counter(usable_ranks)
@@ -76,7 +76,7 @@ check("rank 1 has three usable copies and rank 4 has two, as the prose says",
 check("no rank has a duplicate usable copy beyond those two", sum(per_rank.values()) == 16)
 
 bad_rank = [r["arrival_id"] for r in rows
-            if r["delivered_state"] == "usable" and int(r["wishlist_rank"]) not in want]
+            if r["delivered_state"] == "usable" and r["wishlist_rank"].isdigit() and int(r["wishlist_rank"]) not in want]
 check("no usable row points at a rank the wish list never had", not bad_rank, str(bad_rank))
 
 review = [r for r in rows if r["delivered_state"].startswith("NOT THE BOOK")]
@@ -108,7 +108,7 @@ check("the only rows without an ISBN are the pre-ISBN printings, and they say so
 spare = {r["arrival_id"] for r in rows if "spare" in r["notes"] or "different book" in r["notes"]}
 drift = [r["title"] for r in rows
          if r["arrival_id"] not in spare
-         and want.get(int(r["wishlist_rank"]), {}).get("title") != r["title"]]
+         and (r["wishlist_rank"].isdigit() and want.get(int(r["wishlist_rank"]), {}).get("title") != r["title"])]
 check("every arrival that is not a declared spare matches the wish list at the same rank",
       not drift, str(drift))
 check("three rows are declared spares, and each says so in its notes", len(spare) == 3, str(sorted(spare)))
@@ -126,5 +126,5 @@ check("no link, drive id, file name or library folder in the prose", not leak.se
 if fails:
     print("FAIL %d check(s) failed" % len(fails))
     sys.exit(1)
-print("PASS all checks (18 arrivals, %d usable covering all 13 ranks, 1 chapter only, 1 review, "
+print("PASS all checks (21 arrivals, %d usable covering all 13 ranks, 1 chapter only, 1 review, "
       "BK-15 executed in Step 39, atlas 40/40)" % n_usable)
