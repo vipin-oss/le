@@ -262,8 +262,21 @@ def main():
                           need in ltxt, need)
                     check("the ledger's four buckets add up to the register's blocked rows",
                           "**111**" in ltxt and "| **total** | **111** |" in ltxt)
-                    print("     ledger: 111 blocked claims = 66 closed + %d to order + 12 held "
-                          "+ 19 register-level" % sum(len(r["claim_ids"].split()) for r in srows))
+                    up_n = len(list(csv.DictReader(open(os.path.join(HERE, "claim_upgrade_2026-11-01.csv"),
+                                                      newline=""))))
+                    b4_n = len(list(csv.DictReader(open(R4, newline=""))))
+                    held_n = sum(1 for r in csv.DictReader(
+                        open(os.path.join(HERE, "SOURCE_READING_held_2026-11-01.csv"), newline=""))
+                        if r["verdict"] in VERDICTS)
+                    closed_n = up_n + b4_n + held_n + 1
+                    ord_n = sum(len(r["claim_ids"].split()) for r in srows)
+                    check("the ledger states the recomputed number of closed claims",
+                          "| closed by reading a source | **%d** |" % closed_n in ltxt, str(closed_n))
+                    check("the ledger's four buckets add up to 111 after step 17",
+                          closed_n + ord_n + 4 + 19 == 111,
+                          "%d + %d + 4 + 19" % (closed_n, ord_n))
+                    print("     ledger: 111 blocked claims = %d closed + %d to order + 4 held "
+                          "+ 19 register-level" % (closed_n, ord_n))
 
         # supplied_by_author_*.csv - works the author sent on 2026-11-01, each verified page-1
         S = os.path.join(HERE, "supplied_by_author_2026-11-01.csv")
@@ -355,6 +368,93 @@ def main():
                   % (len(sr), ", ".join("%s=%d" % (v, sum(1 for r in sr if r["verdict"] == v))
                                         for v in ("SUPPORTED", "PARTLY SUPPORTED",
                                                   "NOT SUPPORTED", "NOT READ"))))
+
+    # ---- step 17: the held sources read at claim level, the register-level pass, and the README ----
+    HLD = os.path.join(HERE, "SOURCE_READING_held_2026-11-01.csv")
+    RGL = os.path.join(HERE, "register_level_pass_2026-11-01.csv")
+    RDM = os.path.join(HERE, "..", "README_FOR_CLAUDE.md")
+    SNA = {r["claim_id"] for r in reg.values() if (r.get("verdict") or "").strip().upper()
+           == "SOURCE NOT AVAILABLE"} if isinstance(reg, dict) else set()
+    check("the held-source reading exists", os.path.exists(HLD))
+    check("the register-level pass exists", os.path.exists(RGL))
+    check("the README for the next reader exists", os.path.exists(RDM))
+    if os.path.exists(HLD) and os.path.exists(RGL) and os.path.exists(RDM):
+        hld = list(csv.DictReader(open(HLD, newline="")))
+        rgl = list(csv.DictReader(open(RGL, newline="")))
+        rdm = open(RDM, encoding="utf-8").read()
+        check("the held-source reading covers all twelve held claims", len(hld) == 12, str(len(hld)))
+        check("the held-source reading has the same eight columns as the batch reading",
+              list(hld[0].keys()) == ["claim_id", "verdict", "cited_work", "evidence_page",
+                                      "evidence_quote", "what_source_actually_states",
+                                      "action_for_author", "was_rank_on_list"],
+              str(list(hld[0].keys())))
+        read = [r for r in hld if r["verdict"] in VERDICTS]
+        unread = [r for r in hld if r["verdict"] not in VERDICTS]
+        check("eight of the twelve held claims were read, four were not",
+              len(read) == 8 and len(unread) == 4,
+              "%d read, %d unread" % (len(read), len(unread)))
+        check("every unread row is labelled as held and says nothing was quoted",
+              all(r["verdict"].startswith("HELD") and not r["evidence_quote"].strip() for r in unread),
+              str([r["claim_id"] for r in unread if not r["verdict"].startswith("HELD")]))
+        check("every read row carries a page and a quote",
+              all(re.match(r"^p\. ?\d", r["evidence_page"]) and len(r["evidence_quote"].split()) >= 4
+                  for r in read),
+              str([r["claim_id"] for r in read if not re.match(r"^p\. ?\d", r["evidence_page"])]))
+        bad = [r["claim_id"] for r in read if len(r["evidence_quote"].split()) > 27]
+        check("no held-source quote is longer than 27 words", not bad, str(bad))
+        bad = [r["claim_id"] for r in hld if r["claim_id"] not in SNA]
+        check("held-source rows name only register claims that were blocked", not bad, str(bad))
+        still = [r["claim_id"] for r in read
+                 if r["claim_id"] in {c for s in srows for c in s["claim_ids"].split()}]
+        check("no claim read from a held source is still on the request list", not still, str(still))
+        bad = [r["claim_id"] for r in hld if re.search(r"\.zip|google_drive|\.pdf", " ".join(r.values()))]
+        check("the held-source reading names no file or folder", not bad, str(bad))
+        print("     held sources: 12 rows, %d read (%s), %d not read"
+              % (len(read), ", ".join("%s=%d" % (v, sum(1 for r in read if r["verdict"] == v))
+                                      for v in ("SUPPORTED", "PARTLY SUPPORTED")), len(unread)))
+
+        check("the register-level pass covers the nineteen rows", len(rgl) == 19, str(len(rgl)))
+        check("register-level header",
+              list(rgl[0].keys()) == ["claim_id", "cited_work", "what_the_citation_line_lacks",
+                                      "verified_full_citation", "doi_in_register", "doi_check",
+                                      "source_status", "orderable_now", "note"],
+              str(list(rgl[0].keys())))
+        bad = [r["claim_id"] for r in rgl if r["claim_id"] not in SNA]
+        check("register-level rows name only blocked register claims", not bad, str(bad))
+        check("every register-level row says what the citation line lacks",
+              all(r["what_the_citation_line_lacks"].strip() for r in rgl))
+        check("every register-level row says whether it can be ordered",
+              all(r["orderable_now"].split()[0] in {"yes", "no", "yes,"} for r in rgl),
+              str([r["claim_id"] for r in rgl if r["orderable_now"].split()[0]
+                   not in {"yes", "no", "yes,"}]))
+        dois = [t for r in rgl for t in re.findall(r"10\.\d{4,9}/[^\s,;]+", r["doi_in_register"] + " "
+                                                   + r["verified_full_citation"] + " " + r["doi_check"])]
+        check("every DOI mentioned in the register-level pass is DOI-shaped",
+              all(re.match(r"^10\.\d{4,9}/\S+$", d) for d in dois), str(dois[:4]))
+        wrong = [r for r in rgl if r["doi_in_register"].strip() and "WRONG" in r["doi_check"]]
+        check("the one register DOI that resolves to another paper is flagged as wrong",
+              len(wrong) == 1 and wrong[0]["claim_id"] == "CR117",
+              str([r["claim_id"] for r in wrong]))
+        check("the corrected DOI for that row is recorded",
+              "10.1016/j.amc.2020.125934" in " ".join(" ".join(r.values()) for r in rgl))
+        held_here = [r["claim_id"] for r in rgl if "already held" in r["orderable_now"]]
+        check("the register-level pass marks the three rows that need no order",
+              len(held_here) == 3, str(held_here))
+        bad = [r["claim_id"] for r in rgl
+               if re.search(r"\.zip|google_drive|https?://|\bPaper \d+", " ".join(r.values()))]
+        check("the register-level pass carries no links, ids or file names", not bad, str(bad))
+
+        check("the README carries no links, ids or folder names",
+              not leak.search(rdm))
+        check("the README states the register's blocked total and the four buckets",
+              "111" in rdm and "74" in rdm and "19" in rdm)
+        check("the README records the wrong DOI finding",
+              "10.1016/j.amc.2020.125934" in rdm and "wrong" in rdm.lower())
+        check("the README says how to re-run the checker from its own directory",
+              "check_pdfs_needed.py" in rdm and "own directory" in rdm)
+        check("the README keeps the frozen-register rule visible",
+              "frozen" in rdm.lower() and "`check_reaudit_1.py`" in rdm)
+
     print("     needed=%d (top-20 cut), archive-held=%d, library-held=%d, findings=%d"
           % (len(rows), len(hrows), len(arows), len(frows)))
 
