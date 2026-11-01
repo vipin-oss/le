@@ -110,6 +110,14 @@ numbers disagree.
   with a working DOI; ranks 10-13 are one-sentence attributions. Nothing was added or removed - 13 works,
   14 claims, 4 verified DOIs, exactly as before. If the order is ever changed again, the CSV, the `.md` and
   the PDF must change together, because the PDF is built from the CSV.
+- **Step 18b, English titles.** Four rows in the PDF now carry an English line under the printed one, and the
+  CSV deliberately does not: (a) Cattaneo 1948 prints the Italian title that the 2011 reprint record holds, so
+  the English line is a translation of it; (b) Danilovskaya 1950, Vernotte 1958 and Born and von Karman 1912
+  have no title in any record found and none in the register, so their English lines are the customary
+  renderings, printed with the words "not verified" beside them, for ordering and searching only - they must
+  never be quoted as titles. Their CSV rows still say "no title asserted", and that must stay true until a
+  title is read off a record or a page. For Vernotte, two 1958 Comptes Rendus notes exist and the register
+  gives only the volume, so which note the sentence means is still open.
 
 ## 6. Findings a reader must not lose
 
