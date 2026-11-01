@@ -91,8 +91,27 @@ for fn in ("library_available_sources.csv", "supplied_by_author_2026-11-01.csv",
         for k in ("title", "work", "cited_work"):
             if r.get(k):
                 held_titles.add(norm(r[k]))
-dup = [r["title"] for r in rows if norm(r["title"]) in held_titles]
-check("no wanted title is already held or already read", not dup, str(dup))
+# Deliveries made *after* this list was written are recorded in BOOKS_HELD_2026-11-01.csv.
+# A title that arrived as a usable book is no longer "already held at request time"; a title
+# that arrived as a one-page review or as Chapter 1 only still counts as outstanding, because
+# the book itself is not on the shelf.
+delivered = {}
+held_path = os.path.join(HERE, "BOOKS_HELD_2026-11-01.csv")
+if os.path.exists(held_path):
+    for r in csv.DictReader(open(held_path, encoding="utf-8")):
+        delivered[norm(r["title"])] = (int(r["wishlist_rank"]), r["delivered_state"])
+held_before_request = held_titles - set(delivered)
+dup = [r["title"] for r in rows if norm(r["title"]) in held_before_request]
+check("no wanted title was already held when the list was written", not dup, str(dup))
+
+if delivered:
+    drift = [r["title"] for r in rows
+             if norm(r["title"]) in delivered and delivered[norm(r["title"])][0] != int(r["rank"])]
+    check("every delivered title matches the rank it was asked for", not drift, str(drift))
+    usable = {r for r, (rank, st) in delivered.items() if st == "usable"}
+    outstanding = sorted(int(r["rank"]) for r in rows if norm(r["title"]) not in usable)
+    check("three items are still outstanding: ranks 1, 4 and 12",
+          outstanding == [1, 4, 12], str(outstanding))
 
 # 5. shapes
 check("every ISBN-looking value is ISBN-shaped",
@@ -143,7 +162,7 @@ if fails:
     print("FAIL %d check(s) failed" % len(fails))
     sys.exit(1)
 print("PASS all checks (rows=%d, tiers A/B/C = %d/%d/%d, one print-only row, "
-      "no book blocks a claim: %s)" % (len(rows),
+      "no book blocks a claim: %s, outstanding after delivery: 1/4/12)" % (len(rows),
                                        sum(1 for r in rows if r["tier"] == "A"),
                                        sum(1 for r in rows if r["tier"] == "B"),
                                        sum(1 for r in rows if r["tier"] == "C"),

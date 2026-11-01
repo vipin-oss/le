@@ -251,6 +251,32 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 35:** the books arrived - twelve items against thirteen rows. They were identified from their own
+  title and copyright pages (`P3_evidence_claims_B/BOOKS_HELD_2026-11-01.csv`, 12 rows, plus a `.md` mirror
+  and `check_books_held.py`): **ten are fully usable** - Coussy, Gorenflo et al., Hetnarski and Eslami (2nd
+  ed.), Muller and Ruggeri (2nd ed.), Jou et al. (4th ed.), Mainardi, Eringen *Nonlocal*, Eringen
+  *Microcontinuum I*, Brekhovskikh (2nd ed. 1980), Ewing/Jardetzky/Press (1957, no ISBN) - **one is a single
+  chapter** (Povstenko: Chapter 1 only, 11 pp.) and **one is not the book at all**: the file that arrived
+  under *Electrodynamics of Continua I* is a **one-page book review** in the *Journal of Applied Mechanics*.
+  So **BK-15 stays open, coverage stays 34/40**, and Achenbach did not arrive. Two catalogue years were
+  corrected from the copies themselves: Eringen *Nonlocal* is **2002** (not 2004), and Muller and Ruggeri's
+  printed ISBN is **978-1-4612-7460-5** (the earlier note carried the eBook ISBN). **The first reading job is
+  already done: CR046.** Gorenflo et al. was read on printed pp. 25-27, 47, 208, 219
+  (`ML_TAIL_READ_2026-11-01.csv`/`.md`): **Prop. 3.6, eq. (3.4.15), p. 26** puts
+  `E_a(z) = -sum_k z^(-k)/Gamma(1-a k) + O(|z|^(-1-p))` on the sector containing the negative real axis -
+  the exponential term of (3.4.14) is absent there, so the tail is a power law `t^(-a)` with constant
+  `1/Gamma(1-a)` - and **Prop. 3.23 (Pollard), p. 47** gives complete monotonicity for `0 <= a <= 1`, which
+  is the "decay". Eq. (8.1.31) p. 208 is the solution-level version and (8.1.80) p. 219 names the constants.
+  `check_ml_tail.py` (18 checks, PASS) validates its evaluator against the book's own closed form (8.1.30) to
+  **3.8e-38** and then measures the remainder: truncating (3.4.15) at `p = 2` leaves a residual decaying like
+  `t^(-3a)` - measured **8.5 / 123.4 / 503.7** against `10^(3a) = 7.9 / 125.9 / 501.2`. Proposal:
+  **CR046 PARTLY -> SUPPORTED**, register untouched. Two limits are written into the readout: "heavy tails"
+  is the manuscript's adjective, not the book's (the book says *algebraic decay*), and Luchko 2010 - the
+  claim's second bibkey - is not this book and is not verified by this job. The shelf queue, in order:
+  **BK-11 with Coussy** (the only tier-A item that actually arrived), CR127 with Muller and Ruggeri, CR182 and
+  the micropolar sentences with the two Eringen books, the named-theory attributions with Hetnarski and
+  Eslami, BK-13/BK-14 with Brekhovskikh, and the EIT sentences with Jou et al.
+
 - **Step 34:** the author offered to send any book, so the first question was whether a book can unblock
   anything. It cannot: of the **111** claims at `SOURCE NOT AVAILABLE`, **109** already have a claim-level file
   (the source was supplied, read, or covered at one remove), and the two left are **CR181** (the 1912 note, now
@@ -485,7 +511,10 @@ Two hard facts, recorded so nobody spends an hour rediscovering them:
 2. **From the author: 1 work / 1 claim** - Born and von Karman (1912), Physikalische Zeitschrift 13, for
    CR181. This is now the *only* outstanding source request of any kind; the book wish list step 34 produced is
    about strengthening the paper and every row on it is optional (`P3_evidence_claims_B/BOOKS_WANTED_2026-11-01.md`
-   opens by saying so). If that volume cannot be found, the substitute is a book: Born and Huang, *Dynamical Theory of
+   opens by saying so). Of the thirteen rows, **ten arrived as usable books in step 35**; what is still
+   outstanding is **rank 1 (Eringen and Maugin - the file that came was a one-page review of it)**, **rank 4
+   (Povstenko - Chapter 1 only)** and **rank 12 (Achenbach, not sent)**. The shelf and its state are
+   `P3_evidence_claims_B/BOOKS_HELD_2026-11-01.csv`. If that volume cannot be found, the substitute is a book: Born and Huang, *Dynamical Theory of
    Crystal Lattices* (DOI 10.1093/oso/9780192670083.001.0001), listed first in
    `related_books_2026-11-01.csv`. Polizzotto (2001) is held but its text will not extract, so CR195 still
    waits for a readable copy.
