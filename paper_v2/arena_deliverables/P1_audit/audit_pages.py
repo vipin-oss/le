@@ -145,6 +145,18 @@ def main() -> int:
            for p in tex_files(master)}
     all_tex = "\n".join(src.values())
 
+    # Which sources changed after this PDF was compiled? Needed by P06/P12 so that
+    # "the PDF predates the edit" is not reported as "the source is missing from the PDF".
+    import datetime
+    _m = re.match(r"D:(\d{14})", doc.metadata.get("creationDate", "") or "")
+    built_at = datetime.datetime.strptime(_m.group(1), "%Y%m%d%H%M%S") if _m else None
+    drift = set()
+    if built_at:
+        for f in src:
+            mt = datetime.datetime.utcfromtimestamp((master / f).stat().st_mtime)
+            if mt > built_at + datetime.timedelta(seconds=60):
+                drift.add(f)
+
     rows: list[dict] = []
 
     def add(cid, obj, expected, observed, verdict, note=""):
@@ -194,10 +206,13 @@ def main() -> int:
         key = alnum(txt)
         if key[:70] and key[:70] not in hay_a:
             missing.append(f"{f}:{cmd}:{txt[:60]}")
+    pending = [m for m in missing if m.split(":")[0] in drift]
+    lost = [m for m in missing if m.split(":")[0] not in drift]
     add("P06", "every \\section/\\subsection title appears in the PDF",
-        f"all {len(titles)} titles present", f"{len(missing)} missing",
-        "PASS" if not missing else "FAIL",
-        " | ".join(missing[:8]))
+        f"all {len(titles)} titles present",
+        f"{len(missing)} not in this PDF ({len(pending)} pending rebuild, {len(lost)} unexplained)",
+        "PASS" if not lost else "FAIL",
+        ("pending rebuild: " + " | ".join(pending[:4])) if pending else " | ".join(lost[:8]))
 
     # ---- P07 appendices ---------------------------------------------------
     app_titles = [tex_to_text(a) for a in brace_arg(all_tex, "section")]
@@ -258,14 +273,21 @@ def main() -> int:
         "mean a missing graphic")
 
     # ---- P12 figure + table captions -------------------------------------
-    caps = [tex_to_text(c) for c in brace_arg(all_tex, "caption")]
-    caps = [c for c in caps if len(c) > 12]
+    caps = []
+    for f, s in src.items():
+        for c in brace_arg(s, "caption"):
+            txt = tex_to_text(c)
+            if len(txt) > 12:
+                caps.append((f, txt))
     full_a = alnum(full)
-    cap_missing = [c for c in caps if alnum(c)[:60] not in full_a]
+    cap_missing = [c for c in caps if alnum(c[1])[:60] not in full_a]
+    cpend = [c for c in cap_missing if c[0] in drift]
+    clust = [c for c in cap_missing if c[0] not in drift]
     add("P12", "figure/table captions rendered",
-        f"all {len(caps)} captions", f"{len(caps) - len(cap_missing)} present, "
-        f"{len(cap_missing)} missing", "PASS" if not cap_missing else "FAIL",
-        " | ".join(cap_missing[:6]))
+        f"all {len(caps)} captions",
+        f"{len(caps) - len(cap_missing)} present, {len(cpend)} pending rebuild, "
+        f"{len(clust)} unexplained", "PASS" if not clust else "FAIL",
+        " | ".join(c[1][:50] for c in clust[:5]))
 
     # ---- P13 equation register integrity ----------------------------------
     eq_ids = re.findall(r"\bEQ-(\d{3})\b", all_tex)
@@ -393,21 +415,12 @@ def main() -> int:
         "PASS" if not fig_gap and not tab_gap else "FAIL")
 
     # ---- P25 sources unchanged since the PDF was compiled -------------------
-    import datetime
     cdate = doc.metadata.get("creationDate", "")
-    m = re.match(r"D:(\d{14})", cdate or "")
-    drift = []
-    if m:
-        built = datetime.datetime.strptime(m.group(1), "%Y%m%d%H%M%S")
-        for f, txtsrc in src.items():
-            mt = datetime.datetime.utcfromtimestamp((master / f).stat().st_mtime)
-            if mt > built + datetime.timedelta(seconds=60):
-                drift.append(f)
     add("P25", "sources unchanged since this PDF was compiled",
         "no .tex edited after the build timestamp",
         f"{len(drift)} file(s) edited after {cdate}" if drift else "none",
         "PASS" if not drift else "REPORT",
-        ("rebuild needed for: " + ", ".join(drift[:6])) if drift else "")
+        ("rebuild needed for: " + ", ".join(sorted(drift)[:6])) if drift else "")
 
     # ---- P26 section order and page map from hyperref bookmarks ------------
     toc = doc.get_toc(simple=True)

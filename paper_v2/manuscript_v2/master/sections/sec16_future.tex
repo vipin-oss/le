@@ -61,6 +61,33 @@ Problem specification & Appendix C, BM-1--BM-5 & These define comparison problem
 The immediate work is to close evidence gaps before broadening comparative claims. Priority tasks are: complete the GN-I source-to-manuscript equation mapping; finish equation-to-manuscript mapping for the selected GN-II/GN-III/LS formulations; establish or explicitly leave open parameter admissibility and well-posedness for each exact model; derive model-specific bulk and interface energy fluxes before comparing generalized modal energy; and extend the benchmark set only where equations, data, normalization, and expected observables can be specified. The GN-III type-II/type-III scope distinction is image-checked at printed pp. 254–255; the zero-source map from source Eqs. (3.19)–(3.20) to manuscript Eqs. (4.1) and (4.14) is verified. Model-specific energy/admissibility/interface-flux questions remain open. For MGT, MDD, fractional, spatially nonlocal, gradient, and coupled multiphysics models, tie any extension to the exact operator or constitutive law and boundary conditions; do not infer a universal mode count or flux from the family name. These are work items, not claims that the missing results have been established.
 
 
+The questions below consolidate the per-topic research questions stated in Section~\ref{sec:challenges}. They are listed separately because they are the part of this review a reader is most likely to act on, and because a question is only useful if it is stated together with the evidence that would settle it. The final column names what would move the question from open to closed; it is a test, not a plan.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Researchable questions, why each is open, and what would settle it. Statements are restated from Section~\ref{sec:challenges}; no new claim is introduced here.}
+\label{tab:research-questions}
+\begin{tabularx}{\textwidth}{@{}p{0.55cm}Y Y p{1.9cm}@{}}
+\toprule
+\textbf{\#} & \textbf{Question} & \textbf{What would settle it} & \textbf{Stated in} \\
+\midrule
+R1 & What is the total-energy flux for each generalized family (LS, GL, GN-II, GN-III, DPL, TPL, MGT, MDD, nonlocal, piezoelectric)? & A complete time-domain derivation for each family under an explicit free-energy convention, external-field power terms and boundary conditions, checked against the primary formulation. & \S\ref{sec:challenges} \\
+R2 & Is total energy conserved at an interface in generalized and nonlocal media, and in what sense? & An interface energy-balance statement derived from the selected model's flux, together with the admissible jump conditions, tested against a benchmark. & \S\ref{sec:challenges} \\
+R3 & Which benchmark is the right reference for a generalized theory? & A specification whose reference solution is independent of the formulation being tested --- an analytic limit, a symbolic determinant, or an independently implemented discretization --- with a stated tolerance. & App.~\ref{app:benchmarks} \\
+R4 & Do the predicted generalized modes exist in a real material, and with the predicted attenuation? & An experimental measurement of the observables the model predicts (propagation speed, attenuation, thermal response) under conditions inside the model's stated validity domain. & \S\ref{sec:challenges} \\
+R5 & How should energy flux and energy partition be normalized across families so that comparisons mean something? & A normalization stated in terms of physical observables rather than model parameters, so that two families can be compared on the same plot. & \S\ref{sec:comparative} \\
+R6 & How are nonlocal interface conditions and a nonlocal divergence theorem formulated? & A variational statement of the nonlocal boundary-value problem from which the interface conditions follow, rather than are assumed. & \S\ref{sec:nonlocal} \\
+R7 & Are phase-lag, memory-kernel and anisotropy parameters identifiable from measurable data? & The number and type of independent measurements needed to separate the parameters, established by analysis of the model's sensitivity structure or by a designed experiment; the question is model-specific. & \S\ref{sec:challenges} \\
+R8 & Do the thermodynamic restrictions of Section~\ref{sec:foundations} reduce the admissible parameter set under anisotropic material symmetry as they do in the isotropic case? & The anisotropic admissibility analysis carried through for each family, with the coordinate-free form of the fractional and memory operators under anisotropic differentiation. & \S\ref{sec:challenges} \\
+R9 & Which of the review's comparative statements survive when each family's own conventions are respected? & A model-by-model full-text check of constitutive conventions, free energies and external-field power terms before any flux or mode count is compared across families. & \S\ref{sec:q3-roadmap} \\
+R10 & Can the benchmarks be reproduced from published inputs, and at what convergence rate? & Shared implementations, published inputs, and reported convergence rates for each benchmark in Appendix~\ref{app:benchmarks}. & \S\ref{sec:challenges} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Two of these questions (R1, R9) are the same question asked at different depths: a family-level flux comparison cannot be trusted until the model-specific derivations behind it exist. That is why the roadmap above puts evidence closure before comparative expansion, and why the register in Appendix~\ref{app:equation_register} marks the affected entries open rather than filling them.
+
 \subsection{Coupled-field modeling in emerging materials}
 \label{sec:coupled-field-modeling}
 

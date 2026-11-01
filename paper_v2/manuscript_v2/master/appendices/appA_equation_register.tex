@@ -17,7 +17,7 @@ This appendix records equation claims and their audit status. Legacy status labe
 \item \textbf{WITHHELD:} No expression is asserted; the entry records that the required relation, or its mapping to a source, is absent from this revision.
 \end{itemize}
 
-Historical statuses and source notes are not evidence of present verification. The scientific-audit report identifies the limited equations derived in this phase.
+A register row carries a numbered pointer, \eg\ ``(Eq.~(5))'', only where that row's mathematics occurs in exactly one printed equation of the manuscript (or in exactly one main-text equation plus a restatement in Appendix~\ref{app:balance_derivations}); the pointer is therefore traceable rather than interpretive. Rows without a pointer are either prose descriptions of a law whose printed form is stated in the section named in the note column, or equations whose form recurs in several places, so that choosing one would be a judgement rather than a lookup. Historical statuses and source notes are not evidence of present verification. The scientific-audit report identifies the limited equations derived in this phase.
 
 \subsection{Layer I — First Principles (Section 3)}
 
@@ -31,14 +31,14 @@ Historical statuses and source notes are not evidence of present verification. T
 \toprule
 \textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
 \midrule
-EQ-001 & $\rho \dot{v}_i = \sigma_{ji,j} + \rho f_i$ & CONDITIONAL & Classical Cauchy continuum; infinitesimal motion; no couple stresses \\
-EQ-002 & $\sigma_{ij} = \sigma_{ji}$ & CONDITIONAL & Classical angular momentum balance; no couple stresses or body couples \\
+EQ-001 & $\rho \dot{v}_i = \sigma_{ji,j} + \rho f_i$\;(Eq.~\eqref{eq:3.5}) & CONDITIONAL & Classical Cauchy continuum; infinitesimal motion; no couple stresses \\
+EQ-002 & $\sigma_{ij} = \sigma_{ji}$\;(Eq.~\eqref{eq:3.8}) & CONDITIONAL & Classical angular momentum balance; no couple stresses or body couples \\
 EQ-003 & Mechanical power balance & DERIVED & Product of momentum balance and velocity; classical stress power \\
 EQ-004 & $\rho \dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i}$ & CONDITIONAL & Classical local continuum; no internal heat supply; $e$ specific internal energy \\
 EQ-005 & Dissipation inequality $\geq 0$ & UNVERIFIED & Legacy equation; exact entropy/free-energy assumptions not audited \\
 EQ-006 & Coleman--Noll restrictions & UNVERIFIED & Legacy equation; state variables and free-energy convention not audited \\
 EQ-007 & $F_i=q_i-\sigma_{ij}v_j+\mathcal{E}v_i$ (exact); $J_i=q_i-\sigma_{ij}v_j$ (first-order reduced) & DERIVED & Section 3.8 exact Eulerian form and Section 10.2 reduced-wave convention; symmetric stress \\
-EQ-008 & $v_i = \dot{u}_i$ & UNVERIFIED & Definition of velocity \\
+EQ-008 & $v_i = \dot{u}_i$\;(Eq.~\eqref{eq:3.3}) & UNVERIFIED & Definition of velocity \\
 EQ-009 & $\varepsilon_{ij} = \tfrac{1}{2}(u_{i,j} + u_{j,i})$ & UNVERIFIED & Definition of infinitesimal strain \\
 EQ-010 & $\omega_{ij} = \tfrac{1}{2}(u_{i,j} - u_{j,i})$ & UNVERIFIED & Definition of rotation tensor \\
 \bottomrule
@@ -57,14 +57,14 @@ EQ-010 & $\omega_{ij} = \tfrac{1}{2}(u_{i,j} - u_{j,i})$ & UNVERIFIED & Definiti
 \toprule
 \textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
 \midrule
-EQ-011 & $\rho\ddot{u}_i = (\lambda+\mu)u_{j,ji} + \mu u_{i,jj} - \beta T_{,i}$ & UNVERIFIED & Classical coupled thermoelasticity (Biot 1956) \\
-EQ-012 & $\rho c_v \dot{T} = k\nabla^2 T - \beta T_0 \dot{u}_{i,i}$ & PRIMARY-SOURCE-CHECKED & Biot (1956), printed p. 242, Eqs.~(3.3)--(3.4); linear isotropic Fourier model, constant coefficients, source-free scope \\
-EQ-013 & $q_i + \tau_0\dot{q}_i = -kT_{,i}$ & UNVERIFIED & Lord--Shulman (1967); primary source \\
+EQ-011 & $\rho\ddot{u}_i = (\lambda+\mu)u_{j,ji} + \mu u_{i,jj} - \beta T_{,i}$\;(Eq.~\eqref{eq:4.1}) & UNVERIFIED & Classical coupled thermoelasticity (Biot 1956) \\
+EQ-012 & $\rho c_v \dot{T} = k\nabla^2 T - \beta T_0 \dot{u}_{i,i}$\;(Eq.~\eqref{eq:4.2}) & PRIMARY-SOURCE-CHECKED & Biot (1956), printed p. 242, Eqs.~(3.3)--(3.4); linear isotropic Fourier model, constant coefficients, source-free scope \\
+EQ-013 & $q_i + \tau_0\dot{q}_i = -kT_{,i}$\;(Eq.~\eqref{eq:4.4}) & UNVERIFIED & Lord--Shulman (1967); primary source \\
 EQ-014 & $c_T = \sqrt{k/(\rho c_v\tau_0)}$ & VERIFIED-SYMBOLIC & Uncoupled scalar thermal branch $\beta=0$; principal-part characteristic speed only, not a fully coupled mode speed
 EQ-015 & Green--Lindsay Fourier-flux energy equation and temperature-rate stress coupling (Eqs.~4.9--4.10) & PRIMARY-SOURCE-CHECKED & Green--Lindsay (1972), F1; no tau0 term on strain-rate coupling; tau1 greater than or equal to tau0 greater than zero \\
-EQ-016 & $\kappa^*\nabla^2\alpha_{\mathrm{GN}} = \rho c_e\ddot{\alpha}_{\mathrm{GN}} + \beta T_0\dot{u}_{i,i}$ & PRIMARY-SOURCE-CHECKED & GN-II 1993 Eq. (3.16) integrated once; source-free alpha form, zero integration constant; F17 \\
+EQ-016 & $\kappa^*\nabla^2\alpha_{\mathrm{GN}} = \rho c_e\ddot{\alpha}_{\mathrm{GN}} + \beta T_0\dot{u}_{i,i}$\;(Eq.~\eqref{eq:4.11}) & PRIMARY-SOURCE-CHECKED & GN-II 1993 Eq. (3.16) integrated once; source-free alpha form, zero integration constant; F17 \\
 EQ-017 & GN-II entropy-flux component relation & WITHHELD & No exact isotropic component equation retained; source/potential mapping remains open \\
-EQ-018 & $q_i(t+\tau_q) = -kT_{,i}(t+\tau_T)$ & UNVERIFIED & DPL constitutive law (Tzou 1995) \\
+EQ-018 & $q_i(t+\tau_q) = -kT_{,i}(t+\tau_T)$\;(Eq.~\eqref{eq:4.15}) & UNVERIFIED & DPL constitutive law (Tzou 1995) \\
 EQ-019 & First-order three-lag TPL law with thermal-displacement-gradient contribution (Section 4.8) & PRIMARY-SOURCE-CHECKED & Roy Choudhuri (2007), Eqs.~3--4, full-text finding F6; no second-order term \\
 EQ-020 & $D_{\omega_M} f(t) = \tfrac{1}{\omega_M}\int_{t-\omega_M}^{t}K_{\mathrm{MDD}}(t-t')f'(t')\,dt'$ & UNVERIFIED & MDD candidate; finite horizon distinguished from angular frequency; source convention not checked \\
 EQ-021 & Inherited specific MDD kernel formula & OPEN & Withheld from the text pending equation-level and dimensional comparison with its cited source; no kernel is asserted \\
@@ -87,11 +87,11 @@ EQ-022F & ${}^C D_t^\alpha T = a_\alpha\nabla^2T$ & CONDITIONAL & Scalar fractio
 \textbf{EQ ID} & \textbf{Equation} & \textbf{Status} & \textbf{Source / notes} \\
 \midrule
 EQ-023 & $\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k$ & UNVERIFIED & Piezoelectric constitutive relation \\
-EQ-024 & $D_i = e_{ikl}\varepsilon_{kl} + \kappa_{ij}E_j$ & UNVERIFIED & Electric displacement (piezoelectric) \\
+EQ-024 & $D_i = e_{ikl}\varepsilon_{kl} + \kappa_{ij}E_j$\;(Eq.~\eqref{eq:5.2}) & UNVERIFIED & Electric displacement (piezoelectric) \\
 EQ-025 & $E_i = -\phi_{,i}$ & UNVERIFIED & Electric field from potential \\
 EQ-026 & $D_{i,i} = 0$ & UNVERIFIED & Charge conservation (no free charge) \\
-EQ-027 & $\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k - \beta_{ij}T$ & UNVERIFIED & Piezothermoelastic (Barak et al.~\cite{Barak2023}, Eq.~3) \\
-EQ-028 & $D_i = \kappa_{ij}E_j + e_{ikl}\varepsilon_{kl} + p_i T$ & UNVERIFIED & Piezothermoelectric (Barak et al.~\cite{Barak2023}, Eq.~6) \\
+EQ-027 & $\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k - \beta_{ij}T$\;(Eq.~\eqref{eq:5.6}) & UNVERIFIED & Piezothermoelastic (Barak et al.~\cite{Barak2023}, Eq.~3) \\
+EQ-028 & $D_i = \kappa_{ij}E_j + e_{ikl}\varepsilon_{kl} + p_i T$\;(Eq.~\eqref{eq:5.9}) & UNVERIFIED & Piezothermoelectric (Barak et al.~\cite{Barak2023}, Eq.~6) \\
 EQ-029 & Inherited electrical storage formula & OPEN & Withdrawn from the retained working collection; no universal piezoelectric storage expression is asserted \\
 EQ-5.17 & Isotropic micropolar force stress with independent microrotation $\phi_k$ & UNVERIFIED & Linear isotropic specialization; source equation and coupled thermoelastic moduli require full-text verification \\
 \bottomrule

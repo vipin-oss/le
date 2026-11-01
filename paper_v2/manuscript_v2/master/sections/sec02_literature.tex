@@ -49,10 +49,20 @@ The present review differs in three respects. It is organised by the problems --
 \label{fig:literature_landscape}
 \end{figure}
 
-\subsection{Citation and assumptions}
+\subsection{Evidence protocol and citation conventions}
+\label{sec:evidence_protocol}
 
-A useful comparison states the validity domain and conventions of each equation and distinguishes a derivation from an attributed result. The assumptions used in each cited formulation are therefore identified alongside the relevant discussion.
+A review is only as useful as the reader's ability to tell what it has checked from what it has merely repeated. The protocol applied throughout this article is therefore stated here, so that the reader can discount any statement by the rule it fails.
 
-Where material errors are conclusively established in the literature, they are recorded transparently and without personal characterisation. Where uncertainty exists, it is acknowledged as an open question. No error allegations are made against any publication, and model-specific differences are never presented as mathematical contradictions without sufficient evidence.
+\begin{enumerate}
+\item \textbf{Derivation and attribution are separated.} A statement derived in this review is presented as a derivation and carries an identifier that the verification register resolves (Appendix~\ref{app:equation_register}). A statement attributed to a source is presented as attribution, even where the source's formulation is reproduced exactly. The two are never merged into a single unmarked sentence.
+\item \textbf{Every registered equation carries a status.} The vocabulary is fixed and finite (derived, conditional, primary-source-checked, secondary-source, unverified, open, verified-symbolic, withheld) and is defined in Appendix~\ref{app:equation_register}. A status is a record of the check performed, not a ranking of the equation's importance; an equation may be conditional and still be the correct statement to use, if its conditions hold for the problem at hand.
+\item \textbf{A secondary source is never promoted to a primary one.} Where the primary text was unavailable, the statement says so and the register records the weaker status. The absence of the primary text is not evidence for the claim, and no general knowledge is offered in its place.
+\item \textbf{Bibliographic identifiers are verified before they are printed.} A DOI printed in the reference list has been checked against a bibliographic registry record for the same work --- title, author, journal, volume and pages --- and not inferred from a citation in another paper. Works that predate DOI assignment say so in the entry rather than carrying a plausible-looking identifier.
+\item \textbf{Numbers that can be recomputed are given with what is needed to recompute them.} A benchmark value is presented together with its specification, reference solution and tolerance (Appendix~\ref{app:benchmarks}); a value quoted from the literature is presented as quoted, with its conditions, and not as an independent confirmation.
+\item \textbf{Errors are recorded without personal characterization.} Where a material error is conclusively established in a published work it is recorded plainly; where the evidence establishes a difference but not an error, the difference is recorded as a difference. No allegation is made against a publication, and no model-specific discrepancy is presented as a mathematical contradiction without demonstration.
+\end{enumerate}
+
+The protocol has limits, and they are part of it. Not every cited work was read page by page; coverage of the literature is deliberate rather than exhaustive; and the register documents checks performed in this version, not checks that exist somewhere in principle. Those limits are the reason the register reports coverage rather than asserting completeness.
 
 % LocalWords:

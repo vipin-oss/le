@@ -135,13 +135,14 @@ def main() -> int:
             pointer = "multiple"
         else:
             pointer = "none"
-        links.append({"eq_id": eq_id, "status": status,
+        ptr = re.search(r"\\eqref\{([^}]+)\}", cell)
+        links.append({"eq_id": eq_id, "status": status, "pointer": ptr.group(1) if ptr else "",
                       "candidates": ";".join(sorted(hits)),
                       "pointer_status": pointer,
                       "register_math": "; ".join(maths)[:120]})
 
     with (out / "register_linkage.csv").open("w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=["eq_id", "status", "candidates",
+        w = csv.DictWriter(fh, fieldnames=["eq_id", "status", "pointer", "candidates",
                                            "pointer_status", "register_math"])
         w.writeheader()
         w.writerows(links)
@@ -149,6 +150,8 @@ def main() -> int:
     tally: dict[str, int] = {}
     for r in links:
         tally[r["pointer_status"]] = tally.get(r["pointer_status"], 0) + 1
+    pointed = [r for r in links if r["pointer"]]
+    print(f"register rows carrying an \\eqref pointer: {len(pointed)}")
     print(f"register rows: {len(links)}; linkage: "
           + ", ".join(f"{k}={v}" for k, v in sorted(tally.items())))
     print(f"wrote {out/'equation_inventory.csv'} and {out/'register_linkage.csv'}")

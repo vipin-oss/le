@@ -106,7 +106,22 @@ That is the traceability gap, stated as a number instead of an impression. Delib
 cycle: adding 11 pointers while 18 rows stay unlinked would leave a half-linked table, and pointing a register
 row at the wrong equation is worse than pointing at none.
 
-## 7. Files
+## 7. Cycle-3 editorial additions and how the audit treats them
+
+Three additions were made in the same day's citation-oriented pass (no new scientific claim; see
+`REVIEW_CYCLES.md` cycle 3): Table `tab:contributions` in §1 (C1–C7 with delivery locations), a rewritten §2.7
+evidence protocol (`sec:evidence_protocol`), and Table `tab:research-questions` in §16 (R1–R10 with what would
+settle each). Eleven `\eqref` pointers were added to register rows whose mathematics occurs in exactly one printed
+equation.
+
+Because the sources are now newer than the last build, the audit reports these as **pending rebuild** rather than
+missing: P06 says `1 not in this PDF (1 pending rebuild, 0 unexplained)` and P12 says
+`70 present, 2 pending rebuild, 0 unexplained`. The difference matters — a title that is absent because nobody
+rebuilt is not a defect in the document, and a title that is absent because a source is orphaned is. Making that
+distinction exposed a real bug in this audit's own caption check (it compared one character of a caption instead
+of the caption, and passed silently); it is fixed, and the check now counts 72 captions.
+
+## 8. Files
 
 | File | Contents |
 |---|---|
@@ -115,6 +130,7 @@ row at the wrong equation is worse than pointing at none.
 | `PAGE_AUDIT_SUMMARY.md` | machine-written summary, regenerated on every run |
 | `section_pagemap.csv` | section → first page, derived from bookmarks |
 | `check_page_audit.py` | gate: prints `PASS (...)` and exits 0 only if the state above holds |
+| `check_refs.py` | static gate for what a compiler would catch first (labels, refs, cites, braces, environments, float labels, input targets) |
 | `build_equation_inventory.py` | builds the 136-row inventory and the 29-row register linkage |
 | `equation_inventory.csv` | every printed equation: number, label, section, subsection, file |
 | `register_linkage.csv` | every register row: status, candidate printed equations, linkage class |

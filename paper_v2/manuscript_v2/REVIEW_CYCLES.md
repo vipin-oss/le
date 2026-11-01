@@ -138,3 +138,49 @@ column is the author's.
 
 **Open at the end of cycle 2:** the register decisions above; overfull-box warnings, which exist only in the
 compile log and cannot be recovered from the PDF.
+
+---
+
+## Cycle 3 — citation-oriented editorial pass (2026-11-01)
+
+The question this cycle answers is not "is it correct?" (cycle 2 answered that at the page level) but "what would
+make a reader cite it?". A review earns citations for things a reader can *use*: a stated contribution, a protocol
+that tells them how much to trust each sentence, a table they can lift, and pointers from claims to evidence.
+
+### Reviewer pass (what a citing author actually needs)
+- A citing author quotes a contribution, not an introduction. The objectives list in §1 said what the review
+  covers; nothing said what it **delivers**. Fixed with Table~\ref{tab:contributions}: seven contributions, each
+  with the section or appendix where it is delivered, and one explicit caution that the register records checks
+  performed and not the validity of an equation for a given material.
+- A citing author needs to know how a review treated its sources. §2.7 was two short paragraphs about tone. It is
+  now a six-point evidence protocol with its own limits stated: derivation vs attribution, a fixed status
+  vocabulary, secondary never promoted to primary, identifiers verified before printing, recomputable numbers
+  given with what they need, and errors recorded without personal characterisation.
+- A citing author lifting an open problem needs it stated with a test. The per-topic research questions in §15 were
+  scattered across eleven subsections. They are consolidated as R1–R10 with a "what would settle it" column,
+  restated — not invented — from §15 and the Q3 roadmap.
+- Every register row that *can* be tied to a printed equation now is: 11 pointers out of 29, with the rule stated in
+  the appendix preamble and the remaining 18 explained (prose rows, or equations whose form recurs).
+
+### Editor pass (decide)
+- **No new scientific claim was added.** Every sentence in this cycle restates something the manuscript already
+  contained, or states a property of the document itself. Where a retrospective temptation existed (to claim the
+  review is the "first" to do something), it was refused: the protocol claims what the paper did, not priority.
+- **The register is not expanded to 136 rows.** A curated 29-row register that says "these are the canonical
+  governing equations, here is their status" is more useful to a reader than 136 rows of mostly "unverified". The
+  full inventory lives in the audit directory, where a reader who wants completeness can find it, and coverage is
+  stated in the audit rather than implied in the paper.
+- Word budget: +1,418 words in the sources (47,854 from 46,436). Accepted; the additions are navigational, not
+  rhetorical.
+
+### Author pass (verify without a compiler)
+- No TeX engine here has the modern package set, so a static gate replaces the compiler for this cycle:
+  `P1_audit/check_refs.py` — 414 labels all unique, 357 `\ref`/`\eqref` targets all resolve, 107/144 cite keys in
+  the bibliography, braces balanced, environments matched, every float labelled, every `\input` target present.
+- The page-level audit re-ran against the last build: the two new tables and the new §2.7 correctly show as
+  **pending rebuild** rather than missing (P06, P12), because the sources are newer than the PDF (P25). That
+  distinction was itself a bug in the audit — a caption check compared a *character* of the caption instead of the
+  caption, and passed silently until the new tables exposed it.
+
+**Open at the end of cycle 3:** a rebuild to bring the PDF level with the sources; the 18 unpointed register rows
+(4 need a choice among restatements, 14 are prose); overfull-box warnings, which only the compile log can report.
