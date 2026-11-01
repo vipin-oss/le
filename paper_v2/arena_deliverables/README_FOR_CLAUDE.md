@@ -73,15 +73,16 @@ All paths are relative to `paper_v2/arena_deliverables/`.
 
 - **Register:** 224 rows in `paper_v2/claim_register.csv`; **111** of them carry the verdict
   `SOURCE NOT AVAILABLE`. That 111 is the denominator for everything below.
-- **Closed by reading a source: 78.** 40 (first two uploads) + 25 (fourth batch) + 1 (the work found by the
-  drive sweep) + 8 (held sources read on 2026-11-01) + 4 (the books of the fifth batch).
-- **Still to order: 6 claims / 6 works.** One claim each: Cattaneo 1948, Nowacki 1975, Carlson 1972,
-  Danilovskaya 1950, Vernotte 1958, Born and von Karman 1912.
+- **Closed by reading a source: 83.** 40 (first two uploads) + 25 (fourth batch) + 1 (the work found by the
+  drive sweep) + 8 (held sources read on 2026-11-01) + 4 (the books of the fifth batch) + 5 (the sixth round:
+  CR092, CR093, CR136, CR168 read, and CR137 carried by Carlson, the other citation in its parenthesis).
+- **Still to order: 1 claim / 1 work** - Born and von Karman 1912, for the chain dispersion relation.
+  `related_books_2026-11-01.csv` names the books that would do instead if the 1912 volume cannot be found.
 - **Waived by the author: 4** (CR209, CR210, CR177, CR050) - declared unimportant on 2026-11-01, so no
   evidence is produced and the sentences citing them have to be dropped.
 - **Held but not yet read at claim level: 4** (CR127, CR152, CR166, CR196).
 - **Register-level, no file needed: 19.**
-- 78 + 6 + 4 + 4 + 19 = **111**, with no claim counted twice. This was recomputed from the CSVs during step 17
+- 83 + 1 + 4 + 4 + 19 = **111**, with no claim counted twice. This was recomputed from the CSVs during step 17
   as a set union, not by hand.
 - **Everything that came in:** 107 files from the author across five deliveries (40 + 25 + 1 + 3 + ... see the
   ledger's section 1), 95 distinct works identified, plus an earlier library inventory of 117 files yielding
@@ -137,6 +138,17 @@ numbers disagree.
   because no publisher record exists for those printings. The Carlson chapter also got its verified DOI
   (10.1007/978-3-662-39776-3_2). Two citation errors surfaced while doing this - see findings 10 and 11.
 
+- **Step 21:** eight items arrived in the sixth round (three of them byte-identical copies of the Parkus book
+  already rejected) and six are distinct works. **Carlson** came whole - 49 pages - and closed CR136 outright
+  (sect. 24, variational principles, pp. 338-342) and CR137 at sentence level (the same sentence is carried by
+  Carlson, so the Nowacki citation is now a wording decision). **Ignaczak and Ostoja-Starzewski (2010)**
+  closed CR092 and CR168 as a secondary source and printed the Vernotte entry that CR093 needed, which
+  **Tzou** then closed properly ("the CV wave model originated by Cattaneo (1958) and Vernotte (1958, 1961)",
+  p.62). **Sneddon** (C.I.M.E. 1972) backs CR136 a second time, variational principles only. Two items were
+  **not usable**: a one-page Cattaneo extract (front page of his 1966 C.I.M.E. course, no argument on it) and
+  Grigull and Sandner's *Heat Conduction*, an engineering text with no Cattaneo and no Vernotte. The request
+  list is now **1 work / 1 claim**, and `related_books_2026-11-01.csv` sets out what to fetch instead.
+
 ## 6. Findings a reader must not lose
 
 1. **CR182 and CR184 split one sentence.** The manuscript writes nonlocal elasticity with a "Yukawa-type"
@@ -173,6 +185,20 @@ numbers disagree.
     different works. This is probably why this row defeated two batches.
 11. **The Carlson year is out by one.** Crossref dates *Linear Thermoelasticity*, pp. 297-345 of Handbuch der
     Physik VIa/2, to **1973**; the manuscript says 1972.
+12. **Cattaneo's 1948 note and Cattaneo's 1958 note are two different papers, and the sources split.** The
+    register row is the 1948 Italian note in the Modena *Atti* (vol. 3), and the 2010 Oxford monograph credits
+    the relaxation law to **Cattaneo (1948)** - that is what closed CR092. Tzou, by contrast, credits
+    "Cattaneo (1958)", the French note in C. R. Acad. Sci. Paris 247 (his bibliography prints pp. 431-433),
+    which is why the two dates must not be mixed when the reference is written.
+13. **CR137 is a citation problem, not an evidence problem.** The sentence "variational formulations and
+    reciprocity theorems for classical thermoelasticity are available" is carried in full by Carlson, the
+    other citation in the same parenthesis: sect. 24 for the variational principles (pp. 338-342), sect. 13
+    (p. 319) and sect. 21 (p. 331) for the reciprocal theorems, the second one built as "a counterpart of
+    Graffi's reciprocal theorem". Nowacki's book adds nothing that is not already there, so the author can
+    simply drop it - which is why the row left the list without a third failed order.
+14. **The word "independent" is the author's, not the sources'.** Neither Tzou nor the 2010 monograph says
+    Vernotte's note was independent of Cattaneo's; they credit two authors jointly for one model. The evidence
+    for CR093 is sound, but that one word should be softened or owned.
 
 ## 7. How to re-run everything
 
@@ -198,15 +224,17 @@ identifier or a link, and that the ledger's four buckets add up to the register'
 
 The one-page PDF is rebuilt by a script that lives outside the repository (kept out of git deliberately,
 because it embeds a link). **The checker does not open the PDF** - it only reads the CSVs - so after any
-rebuild the PDF has to be verified by hand: extract its text with `pypdf` and confirm it is one page, thirteen
-rows, and that the DOIs printed in it are still the four verified ones. That was done today and all four
-resolved (Crossref) to the cited works.
+rebuild the PDF has to be verified by hand: extract its text with `pypdf` and confirm it is one page, that the
+single open work is printed with its note, that every DOI or ISBN on it still matches
+`related_books_2026-11-01.csv`, and that the numbers agree with the CSV. That was done in step 21.
 
 ## 8. What is still open
 
-1. **From the author: 13 works / 14 claims** (the one-page PDF). Of these, Tzou (1997) and Nowacki (1975)
-   matter most - one blocks two claims, the other is the row the fourth batch missed. Polizzotto (2001) is
-   held but its text will not extract, so CR195 waits for a readable copy.
+1. **From the author: 1 work / 1 claim** - Born and von Karman (1912), Physikalische Zeitschrift 13, for
+   CR181. If that volume cannot be found, the substitute is a book: Born and Huang, *Dynamical Theory of
+   Crystal Lattices* (DOI 10.1093/oso/9780192670083.001.0001), listed first in
+   `related_books_2026-11-01.csv`. Polizzotto (2001) is held but its text will not extract, so CR195 still
+   waits for a readable copy.
 2. **Four held sources need locating by content, not by name** (CR127 Muller and Ruggeri; CR152 Gurtin and
    Williams 1966; CR166 Li et al. 2019; CR196 Eringen 1974). Seven name searches failed on 2026-11-01. The
    productive approach is to enumerate the library's PDFs and open anything whose first page matches the

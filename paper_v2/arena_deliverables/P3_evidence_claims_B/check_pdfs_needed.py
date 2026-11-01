@@ -246,8 +246,11 @@ def main():
                                                                  " ".join(r.values()))]
                     check("the batch records do not name the uploaded files", not bad, str(bad[:5]))
                     tot = sum(len(r["claim_ids"].split()) for r in srows)
-                    check("the request list is down to 6 works / 6 claims after the fifth batch",
-                          len(srows) == 6 and tot == 6, "%d works, %d claims" % (len(srows), tot))
+                    check("the request list is down to 1 work / 1 claim after the sixth round",
+                          len(srows) == 1 and tot == 1, "%d works, %d claims" % (len(srows), tot))
+                    check("the one work left is Born and von Karman (CR181)",
+                          srows[0]["claim_ids"].strip() == "CR181"
+                          and "Born" in srows[0]["authors"], srows[0]["authors"])
                     print("     fourth batch: 26 files, 25 accepted, 1 mismatch; list now %d works "
                           "(%d claims)" % (len(srows), tot))
                 # LEDGER_*.md - the single page that reconciles every upload with every blocked claim
@@ -256,8 +259,10 @@ def main():
                 if os.path.exists(L):
                     ltxt = open(L, encoding="utf-8").read()
                     check("the ledger carries no URLs or Drive links", not leak.search(ltxt))
-                    need = "**%d works, %d claims" % (
-                        len(srows), sum(len(r["claim_ids"].split()) for r in srows))
+                    ns = len(srows)
+                    nc = sum(len(r["claim_ids"].split()) for r in srows)
+                    need = "**%d work%s, %d claim%s" % (ns, "" if ns == 1 else "s",
+                                                        nc, "" if nc == 1 else "s")
                     check("the ledger states what is needed from the author",
                           need in ltxt, need)
                     check("the ledger's four buckets add up to the register's blocked rows",
@@ -273,11 +278,14 @@ def main():
                         if r["verdict"] in VERDICTS)
                     waived_n = len(list(csv.DictReader(
                         open(os.path.join(HERE, "waived_by_author_2026-11-01.csv"), newline=""))))
-                    closed_n = up_n + b4_n + held_n + book_n + 1
+                    p_n = sum(1 for r in csv.DictReader(
+                        open(os.path.join(HERE, "REQUEST_P_claims_2026-11-01.csv"), newline=""))
+                        if r["verdict"] in VERDICTS)
+                    closed_n = up_n + b4_n + held_n + book_n + 1 + p_n
                     ord_n = sum(len(r["claim_ids"].split()) for r in srows)
                     check("the ledger states the recomputed number of closed claims",
                           "| closed by reading a source | **%d** |" % closed_n in ltxt, str(closed_n))
-                    check("the ledger's five buckets add up to 111 after the fifth batch",
+                    check("the ledger's six buckets add up to 111 after the sixth round",
                           closed_n + ord_n + waived_n + 4 + 19 == 111,
                           "%d + %d + %d + 4 + 19" % (closed_n, ord_n, waived_n))
                     print("     ledger: 111 blocked claims = %d closed + %d to order + %d waived "
@@ -480,8 +488,8 @@ def main():
         check("the book that did not match is named as Parkus, not Nowacki",
               "Parkus" in rej[0]["work_identified"] and "Nowacki" in rej[0]["note"],
               rej[0]["work_identified"])
-        check("the Nowacki row is still on the request list",
-              any("Nowacki" in r["authors"] for r in srows))
+        check("the Nowacki row has left the request list",
+              not any("Nowacki" in r["authors"] for r in srows))
         check("the reading covers the four claims of the three accepted books", len(rbk) == 4,
               str(len(rbk)))
         check("every book verdict is SUPPORTED", all(r["verdict"] == "SUPPORTED" for r in rbk),
@@ -525,16 +533,58 @@ def main():
     check("every row records where its title came from",
           all(len((r["doi_note"] or "").split()) >= 8 for r in srows),
           str([r["authors"] for r in srows if len((r["doi_note"] or "").split()) < 8]))
-    check("the Carlson chapter now carries its verified DOI",
-          any(r["doi"] == "10.1007/978-3-662-39776-3_2" and r["doi_status"] == "verified"
-              for r in srows))
-    check("the Nowacki note names both candidate books and their years",
-          any("Dynamic Problems of Thermoelasticity" in r["doi_note"] and "1986" in r["doi_note"]
-              and "1962" in r["doi_note"] for r in srows))
-    check("the Carlson note records the 1973-versus-1972 year problem",
-          any("1973" in r["doi_note"] and "1972" in r["doi_note"] for r in srows))
-    check("the Danilovskaya note says the original is Russian",
-          any("Russian" in r["doi_note"] for r in srows))
+    # ---- step 21: the sixth round, and the related books proposed for what is left ----
+    PR = os.path.join(HERE, "REQUEST_P_claims_2026-11-01.csv")
+    RB = os.path.join(HERE, "related_books_2026-11-01.csv")
+    check("the sixth-round verdict file exists", os.path.exists(PR))
+    prow = list(csv.DictReader(open(PR, newline=""))) if os.path.exists(PR) else []
+    check("the sixth round closed five claims", len(prow) == 5, str(len(prow)))
+    check("sixth-round verdicts come from the fixed vocabulary",
+          all(r["verdict"] in VERDICTS for r in prow),
+          str({r["verdict"] for r in prow} - VERDICTS))
+    check("sixth-round rows name only real register claims",
+          all(r["claim_id"] in reg for r in prow),
+          str([r["claim_id"] for r in prow if r["claim_id"] not in reg]))
+    still = [r["claim_id"] for r in prow
+             if r["claim_id"] in {c for s in srows for c in s["claim_ids"].split()}]
+    check("no claim settled in the sixth round is still on the request list", not still, str(still))
+    bad = [r["claim_id"] for r in prow if not r["evidence_page"].strip()
+           or len(r["evidence_quote"].split()) < 4]
+    check("every sixth-round row carries a location and a quote", not bad, str(bad))
+    bad = [r["claim_id"] for r in prow if len(r["evidence_quote"].split()) > 27]
+    check("no sixth-round quote is longer than 27 words", not bad, str(bad))
+    check("every sixth-round row says what has to happen to the sentence",
+          all(len(r["action_for_author"].split()) > 8 for r in prow))
+    by = {r["claim_id"]: r for r in prow}
+    check("the Carlson row records the 1973-versus-1972 year problem",
+          "1973" in by["CR136"]["action_for_author"] and "1972" in by["CR136"]["action_for_author"])
+    check("the Nowacki row says the book itself was not read",
+          "NOT read" in by["CR137"]["cited_work"] and by["CR137"]["verdict"] != "SUPPORTED")
+    check("the Danilovskaya row says the original is Russian",
+          "Russian" in by["CR168"]["what_source_actually_states"])
+    check("the Cattaneo row records that only a front page was supplied",
+          "front page" in by["CR092"]["action_for_author"])
+    bad = [r["claim_id"] for r in prow
+           if re.search(r"\.zip|google_drive|https?://|\.pdf", " ".join(r.values()))]
+    check("the sixth-round record names no file, folder or link", not bad, str(bad))
+
+    check("the related-book record exists", os.path.exists(RB))
+    if os.path.exists(RB):
+        rb = list(csv.DictReader(open(RB, newline="")))
+        check("related-book header",
+              list(rb[0].keys()) == ["rank", "for_claim", "authors", "title", "year",
+                                     "why_it_would_do", "doi_or_isbn", "verified_where"],
+              str(list(rb[0].keys())))
+        check("the related books are numbered 1..n",
+              [int(r["rank"]) for r in rb] == list(range(1, len(rb) + 1)))
+        check("the first related book is the one that would close CR181",
+              "CR181" in rb[0]["for_claim"] and "Born and Huang" in rb[0]["authors"])
+        check("every related book was verified against a record",
+              all(r["verified_where"].strip() and "Crossref" in r["verified_where"] for r in rb))
+        check("every related book carries a DOI or an ISBN",
+              all(re.search(r"10\.\d{4,9}/\S+|ISBN", r["doi_or_isbn"]) for r in rb))
+        bad = [r["rank"] for r in rb if leak.search(" ".join(r.values()))]
+        check("the related-book record has no URLs or Drive links", not bad, str(bad))
 
     print("     needed=%d (top-20 cut), archive-held=%d, library-held=%d, findings=%d"
           % (len(rows), len(hrows), len(arows), len(frows)))

@@ -1,28 +1,39 @@
-# Sources still needed - every title now verified, with what each one unblocks
+# Sources still needed - one work, one claim
 
-Updated 2026-11-01, step 20. **6 works remain, 6 claims, one claim each.** This pass did one thing only: every title on the list is now a title that was read from a record, so no row says 'no title asserted' any more, and every row says where the work can be got from.
+Updated 2026-11-01, step 21. Five of the six rows of the previous list are closed: the books supplied in the
+sixth round, plus the monographs they brought with them, carried four of the six claims outright and carried
+the fifth sentence through its co-cited companion. **One work is left, carrying one claim.**
 
 | # | Author(s) | Title | English | What it unblocks | Where to get it | DOI |
 |---|---|---|---|---|---|---|
-| 1 | Cattaneo 1948 | *Sulla conduzione del calore* | On the Conduction of Heat | the note the manuscript calls the conceptual starting point: the relaxation term that makes the heat equation hyperbolic | reprint chapter exists (DOI 10.1007/978-3-642-11051-1_5); the 1948 printing has none | none |
-| 2 | Nowacki 1975 | *Thermoelasticity* | - | variational formulations and reciprocity theorems - the row two batches have now failed to fill | whole book 1986 2nd ed., ISBN 978-0-08-024767-0, or its chapters by DOI | none |
-| 3 | Carlson 1972 | *Linear Thermoelasticity* | - | the other half of the same sentence: classical variational formulations and reciprocity theorems | Crossref chapter record | 10.1007/978-3-662-39776-3_2 |
-| 4 | Danilovskaya 1950 | *Thermal stresses in an elastic half-space due to a sudden heating of its boundary* | (already English; the original is Russian) | attribution of the classical thermal-shock problem | print only - no DOI exists for that printing | none |
-| 5 | Vernotte 1958 | *Les paradoxes de la théorie continue de l'équation de la chaleur* | The paradoxes of the continuous theory of the heat equation | the independent relaxation-term note, cited alongside Cattaneo | print only - no DOI exists for that printing | none |
-| 6 | Born and von Karman 1912 | *Über Schwingungen in Raumgittern* | On vibrations in space lattices | the exact chain dispersion relation omega = 2 sqrt(kappa_s/m) abs(sin(ka/2)) | print only - no DOI exists for that printing | none |
+| 1 | Born and von Karman 1912 | *Über Schwingungen in Raumgittern* | On vibrations in space lattices | the exact chain dispersion relation omega = 2 sqrt(kappa_s/m) abs(sin(ka/2)) | print only - Physikalische Zeitschrift 13, 297-309; no publisher record, no scan found | none |
 
-## The notes behind the titles
+## The note behind the title
 
-- **Cattaneo 1948** - no DOI for the 1948 printing; the paper was reprinted as a chapter of 'Some Aspects of Diffusion Theory' (Springer 2011), which is where the title above was read, DOI 10.1007/978-3-642-11051-1_5
-- **Nowacki 1975** - the year and the title in this citation belong to two different books: the Pergamon/PWN 'Thermoelasticity' is 1962 (1st ed.) or 1986 (2nd ed., xii+566 pp., ISBN 978-0-08-024767-0, chapter DOIs under 10.1016/b978-0-08-024767-0), while the 1975 Nowacki book is 'Dynamic Problems of Thermoelasticity' (Noordhoff, Leyden, 1975)
-- **Carlson 1972** - Crossref holds the chapter as Carlson, D. E., Linear Thermoelasticity, pp. 297-345 in Handbuch der Physik VIa/2 and dates it 1973, not 1972 - the year in the citation needs checking
-- **Danilovskaya 1950** - English title as printed in independent citing records; the original is in Russian and its Russian title was not read here. Pages are cited as 316-318 almost everywhere and as 316-321 once
-- **Vernotte 1958** - Comptes Rendus Acad. Sci. Paris 246, 3154-3155 (1958), title as printed in independent citing records; English: 'The paradoxes of the continuous theory of the heat equation'. A second 1958 note, 'La veritable equation de la chaleur', is a different paper
-- **Born and von Karman 1912** - Physikalische Zeitschrift 13, 297-309 (1912), title as printed in Born bibliographies and in independent citing records; English: 'On vibrations in space lattices'
+- **Born and von Karman 1912** - Physikalische Zeitschrift 13, 297-309 (1912), title as printed in Born
+  bibliographies and in independent citing records; English: 'On vibrations in space lattices'. There is no
+  publisher record for the 1912 volume and no digitised copy of it was found while preparing this list, so
+  the page range still rests on the citing records only.
 
-## Two things this pass turned up
+## If the 1912 volume cannot be found - related books that would do instead
 
-1. **The Nowacki citation mixes two books.** The Pergamon/PWN *Thermoelasticity* is 1962 (first edition) or 1986 (second, xii+566 pp., ISBN 978-0-08-024767-0). The Nowacki book of **1975** is *Dynamic Problems of Thermoelasticity* (Noordhoff, Leyden) - a different title. Whoever orders it has to decide which of the two the sentence means.
-2. **The Carlson year is out by one.** Crossref dates the chapter *Linear Thermoelasticity*, pp. 297-345 of Handbuch der Physik VIa/2, to 1973; the manuscript says 1972.
+`related_books_2026-11-01.csv` carries the same three rows with their DOIs and ISBNs:
 
-Outside the list: Polizzotto (2001), Int. J. Solids Struct. 38 - the held copy has no extractable text.
+| # | For | Book | Why it would do | DOI or ISBN |
+|---|---|---|---|---|
+| 1 | CR181 | **Born and Huang, *Dynamical Theory of Crystal Lattices*** (Oxford; OUP online reissue 1996) | Born's own treatise: the standard place where the monatomic chain is solved, i.e. exactly the relation the sentence states. If it also credits the 1912 note, the attribution survives; if not, citing this book settles the claim | DOI 10.1093/oso/9780192670083.001.0001; ISBN 9780192670083 |
+| 2 | CR137 (optional) | **Nowacki, *Thermoelasticity*, 2nd ed.** (PWN and Pergamon, 1986) | only if the Nowacki citation is to be kept rather than dropped; the claim itself no longer blocks anything | ISBN 978-0-08-024767-0 |
+| 3 | CR092, CR093 (optional) | **Straughan, *Heat Waves*** (Springer, 2011) | an independent modern book that sets out the Cattaneo-Vernotte law and its history; a cross-check, not a need | DOI 10.1007/978-1-4614-0493-4; ISBN 9781461404927 |
+
+## What closed this round
+
+| claim | work | how it closed |
+|---|---|---|
+| CR092 | Cattaneo 1948 | a 2010 Oxford monograph prints the relaxed Fourier law, credits Cattaneo (1948), and says the equation becomes a telegraph, i.e. hyperbolic, equation |
+| CR093 | Vernotte 1958 | Tzou (2nd ed.) calls the relaxed law the Cattaneo-Vernotte wave model and prints the 1958 entry as C. R. 246, 3154-3155 |
+| CR136 | Carlson 1972 | the chapter was supplied whole: sect. 24 gives the variational principles (pp. 338-342), sect. 13 and 21 the reciprocal theorems (p. 319, p. 331) |
+| CR137 | Nowacki 1975 | the sentence is carried by Carlson, its co-cited companion; the Nowacki book itself was not read, so the citation is now a wording decision, not a block |
+| CR168 | Danilovskaya 1950 | a 2010 Oxford monograph names problems 'of Danilovskaya type' and says the thermal-stress problem was solved in closed form by Danilovskaya (1950), printing the entry in Russian as Prikl. Mat. Mech. 14(3) |
+
+Outside the list: Polizzotto (2001), Int. J. Solids Struct. 38 - the held copy has no extractable text, so
+claim CR195 still waits for a readable copy.
