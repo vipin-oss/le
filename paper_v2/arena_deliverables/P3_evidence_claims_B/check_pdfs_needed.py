@@ -586,6 +586,83 @@ def main():
         bad = [r["rank"] for r in rb if leak.search(" ".join(r.values()))]
         check("the related-book record has no URLs or Drive links", not bad, str(bad))
 
+    # ---- step 22: the paper edit sheet - every failing sentence and every wrong line ----
+    ES = os.path.join(HERE, "PAPER_EDIT_SHEET_2026-11-01.csv")
+    check("the paper edit sheet exists", os.path.exists(ES))
+    if os.path.exists(ES):
+        es = list(csv.DictReader(open(ES, newline="")))
+        check("edit-sheet header",
+              list(es[0].keys()) == ["item_id", "priority", "origin", "sentence_as_written",
+                                     "claim_ids", "what_is_wrong", "suggested_action",
+                                     "suggested_wording", "evidence_read", "pending"],
+              str(list(es[0].keys())))
+        check("edit-sheet items are numbered I001..I0nn",
+              [r["item_id"] for r in es] == ["I%03d" % i for i in range(1, len(es) + 1)],
+              str([r["item_id"] for r in es][:5]))
+        check("edit-sheet priorities come from the fixed vocabulary",
+              all(r["priority"] in {"P1 must change", "P2 soften or re-cite", "P3 bibliography",
+                                    "P4 pending"} for r in es),
+              str({r["priority"] for r in es}))
+        covered = {c for r in es for c in r["claim_ids"].split()}
+        bad = [c for c in covered if c not in reg]
+        check("edit-sheet rows name only real register claims", not bad, str(bad))
+        neg = [c for c, r in reg.items() if r["verdict"] == "NOT SUPPORTED"]
+        check("every NOT SUPPORTED row of the register is on the edit sheet",
+              set(neg) <= covered, str(sorted(set(neg) - covered)))
+        waived = {r["claim_id"] for r in csv.DictReader(
+            open(os.path.join(HERE, "waived_by_author_2026-11-01.csv"), newline=""))}
+        check("every waived claim is on the edit sheet",
+              waived <= covered, str(sorted(waived - covered)))
+        partly = {r["claim_id"] for r in prow if r["verdict"] == "PARTLY SUPPORTED"}
+        check("every claim that came out PARTLY SUPPORTED is on the edit sheet",
+              partly <= covered, str(sorted(partly - covered)))
+        sent = [c for r in es if r["priority"][:2] in {"P1", "P2"}
+                for c in r["claim_ids"].split()]
+        bib = [c for r in es if r["priority"][:2] in {"P3", "P4"}
+               for c in r["claim_ids"].split()]
+        check("no claim has two sentence-level items on the edit sheet",
+              len(sent) == len(set(sent)), str([c for c in sent if sent.count(c) > 1]))
+        check("no claim has two bibliography items on the edit sheet",
+              len(bib) == len(set(bib)), str([c for c in bib if bib.count(c) > 1]))
+        both = set(sent) & set(bib)
+        bibrow = {c: [r["item_id"] for r in es if r["priority"][:2] in {"P3", "P4"}
+                      and c in r["claim_ids"].split()] for c in both}
+        sents = " ".join(" ".join(r.values()) for r in es if r["priority"][:2] in {"P1", "P2"})
+        check("a claim that needs both a sentence fix and a bibliography fix is cross-referenced",
+              all(any(i in sents for i in v) for v in bibrow.values()),
+              str([c for c, v in bibrow.items() if not any(i in sents for i in v)]))
+        check("every edit-sheet row says what is wrong, what to do and what was read",
+              all(r["what_is_wrong"].strip() and r["suggested_action"].strip()
+                  and r["evidence_read"].strip() for r in es))
+        bad = [r["item_id"] for r in es
+               if r["priority"].startswith(("P1", "P2")) and not r["suggested_wording"].strip()]
+        check("every sentence-level item carries a suggested wording", not bad, str(bad))
+        bad = [r["item_id"] for r in es
+               if re.search(r"\.zip|google_drive|https?://|\.pdf|\.tex", " ".join(r.values()))]
+        check("the edit sheet names no file, folder or link", not bad, str(bad))
+        txt = " ".join(" ".join(r.values()) for r in es)
+        for d in ["10.1080/01495739608946173", "10.1115/1.2822615",
+                  "10.1007/978-90-481-3074-0", "10.1007/s00245-016-9365-1",
+                  "10.1007/978-3-662-39776-3_2"]:
+            check("the edit sheet prints the looked-up DOI %s" % d, d in txt)
+        check("the edit sheet does not print the DOI that resolves to another paper",
+              "10.1016/j.amc.2021.126219" not in txt)
+        check("the edit sheet records that Chen and Nunziato 1974 could not be found",
+              "Crossref" in " ".join(r["evidence_read"] for r in es if r["item_id"] == "I018")
+              or "catalogue" in txt)
+        bad = sorted({m for m in re.findall(r"10\.\d{4,9}/\S+", txt)
+                      if not re.match(r"^10\.\d{4,9}/[^\s]+$", m)})
+        check("every DOI printed on the edit sheet is DOI-shaped", not bad, str(bad[:4]))
+        md = os.path.join(HERE, "PAPER_EDIT_SHEET_2026-11-01.md")
+        check("the edit sheet has its readable mirror", os.path.exists(md)
+              and open(md, encoding="utf-8").read().count("### I") ==
+              len([r for r in es if r["priority"].startswith(("P1", "P2"))]))
+        print("     paper edit sheet: %d items (P1=%d, P2=%d, P3=%d, P4=%d)"
+              % (len(es), sum(r["priority"].startswith("P1") for r in es),
+                 sum(r["priority"].startswith("P2") for r in es),
+                 sum(r["priority"].startswith("P3") for r in es),
+                 sum(r["priority"].startswith("P4") for r in es)))
+
     print("     needed=%d (top-20 cut), archive-held=%d, library-held=%d, findings=%d"
           % (len(rows), len(hrows), len(arows), len(frows)))
 

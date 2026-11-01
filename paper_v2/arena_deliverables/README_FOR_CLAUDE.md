@@ -149,6 +149,14 @@ numbers disagree.
   Grigull and Sandner's *Heat Conduction*, an engineering text with no Cattaneo and no Vernotte. The request
   list is now **1 work / 1 claim**, and `related_books_2026-11-01.csv` sets out what to fetch instead.
 
+- **Step 22:** the evidence was turned into **paper edits**, since the `.tex` files are not in this repository and
+  must not be touched: `P3_evidence_claims_B/PAPER_EDIT_SHEET_2026-11-01.csv` and its `.md` mirror carry **23
+  items** - 5 mandatory sentence changes, 5 soften-or-re-cite, 9 bibliography fixes, 4 pending - each with the
+  sentence as written, what is wrong, what to do, a suggested wording and the evidence that was read. The five
+  DOI lookups that the register-level pass had left open were also done: CR110, CR126 and CR154 got verified
+  DOIs, CR122 a probable one (flagged), CR083 failed twice and says so. The one-page PDF is now two pages - the
+  request list and, on page 2, the mandatory edits.
+
 ## 6. Findings a reader must not lose
 
 1. **CR182 and CR184 split one sentence.** The manuscript writes nonlocal elasticity with a "Yukawa-type"
@@ -199,6 +207,20 @@ numbers disagree.
 14. **The word "independent" is the author's, not the sources'.** Neither Tzou nor the 2010 monograph says
     Vernotte's note was independent of Cattaneo's; they credit two authors jointly for one model. The evidence
     for CR093 is sound, but that one word should be softened or owned.
+
+15. **A whole sentence lost both of its citations.** "For DPL and TPL (first-order truncations) an energy
+    functional exists but its construction is more involved ... (Quintanilla 2003; Chirita 2016)" is not carried
+    by either: Quintanilla (2003) proves a stability threshold and constructs no functional, and Chirita, D'Apice
+    and Zampoli (2016) work through fading memory and construct none either. That is items I001 on the edit
+    sheet, and it is the strongest single finding of the paper-level pass.
+16. **The piezoelectric-bar sentence cites a couple-stress paper.** Mindlin and Tiersten (1962) has no electric
+    field and no quasi-electrostatic bar; all 34 pages were searched. Drop it from that sentence (I002) - it
+    belongs in the couple-stress discussion.
+17. **Four of the five open bibliography lines are now closed.** CR110 doi:10.1080/01495739608946173,
+    CR154 doi:10.1115/1.2822615 (the publisher spells the third author *Vedevarz*), CR126 book
+    doi:10.1007/978-90-481-3074-0 (2010 edition, ISBN 9789048130733; the record lists two authors, not three),
+    and CR122 doi:10.1007/s00245-016-9365-1 - probable only, and its print year is 2017 against the cited 2016.
+    Chen and Nunziato (1974) was not found in two queries and still carries no DOI.
 
 ## 7. How to re-run everything
 
@@ -258,21 +280,24 @@ Two hard facts, recorded so nobody spends an hour rediscovering them:
 
 ## 8. What is still open
 
-1. **From the author: 1 work / 1 claim** - Born and von Karman (1912), Physikalische Zeitschrift 13, for
+1. **In the paper: 23 edit items**, 5 of them mandatory (`PAPER_EDIT_SHEET_2026-11-01.md`). These are the
+   changes the evidence forces on the manuscript, and the manuscript is not in this repository, so they are
+   written to be worked through in Overleaf. Nothing on the sheet needs a new source.
+2. **From the author: 1 work / 1 claim** - Born and von Karman (1912), Physikalische Zeitschrift 13, for
    CR181. If that volume cannot be found, the substitute is a book: Born and Huang, *Dynamical Theory of
    Crystal Lattices* (DOI 10.1093/oso/9780192670083.001.0001), listed first in
    `related_books_2026-11-01.csv`. Polizzotto (2001) is held but its text will not extract, so CR195 still
    waits for a readable copy.
-2. **Four held sources need locating by content, not by name** (CR127 Muller and Ruggeri; CR152 Gurtin and
+3. **Four held sources need locating by content, not by name** (CR127 Muller and Ruggeri; CR152 Gurtin and
    Williams 1966; CR166 Li et al. 2019; CR196 Eringen 1974). Seven name searches failed on 2026-11-01. The
    productive approach is to enumerate the library's PDFs and open anything whose first page matches the
    title, or to search the archives in which the inventory says they sit.
-3. **Sixteen of the nineteen register-level works can be ordered today**, and three need no order because
+4. **Sixteen of the nineteen register-level works can be ordered today**, and three need no order because
    they are already held (CR003 and CR114 are one paper, and CR199 is now readable). Of the sixteen: nine
    already carry a correct DOI in the register line, two got a verified DOI today, and five still need a
    catalogue lookup before an order can be placed (CR083, CR110, CR122, CR126, CR154). Whether to spend an
    order on them is the author's call, not an evidence call.
-4. **CR199 (Yang 2018) is now readable** - a 309-page copy was opened today and its title page read. Its
+5. **CR199 (Yang 2018) is now readable** - a 309-page copy was opened today and its title page read. Its
    sentence ("the one-dimensional piezoelectric bar follows Yang and Mindlin and Tiersten") has not been
    checked against the book's chapter yet; that is a half-hour job with the copy in hand.
 
