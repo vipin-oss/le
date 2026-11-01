@@ -250,6 +250,18 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 25:** the pending-to-publish list was written as its own page, because the readiness note answers
+  "how far along are we" and this one answers "what is left". `PUBLISH_PENDING_2026-11-01.md` has the six
+  11b gates with their current state (**0 of 6**), the item-by-item detail behind each, an owner split
+  (author / agent / money-or-library / needs-Overleaf / needs-other-people), a dependency-ordered week plan
+  and a measurable definition of done per gate. Two findings came out of writing it: **the 134 pages and the
+  35 scripts are not in this repository at all** - they live in the Overleaf project, so four separate items
+  (the page audit, the 9 script assertions, D6/D8/D9, the clean build) are blocked until the pull runs on the
+  author's machine; and **`refs_extra.bib` plus `refs_new.bib` plus the landmark file carry only 199 unique
+  keys**, so the 323-entry register target cannot be reached from this repository either - it needs the
+  manuscript's own bibliography. It also names the one thing nobody had written down: the 34 PARTLY SUPPORTED
+  claims are in no edit sheet at all, so they are pending author wording work that no previous job covered.
+
 ## 7. How to re-run everything
 
 Nothing needs installing for the checker (standard library only). If a PDF has to be opened, `pypdf` is
@@ -287,6 +299,18 @@ because it embeds a link). **The checker does not open the PDF** - it only reads
 rebuild the PDF has to be verified by hand: extract its text with `pypdf` and confirm it is one page, that the
 single open work is printed with its note, that every DOI or ISBN on it still matches
 `related_books_2026-11-01.csv`, and that the numbers agree with the CSV. That was done in step 21.
+
+### The pending-list checker
+
+```bash
+cd paper_v2/arena_deliverables && python3 check_publish_pending.py; echo "exit=$?"
+```
+
+It must end with `PASS all checks (gates=6, 11b=0 of 6, R0=7, atlas=8 of 40)` and exit 0. It re-reads both
+blueprint checklists, the claim register, both reference registers, the three bib files, the atlas, the
+benchmark registry, the second implementation, the defect register and the edit sheet, and fails if the
+pending list prints a number that has moved - including the ones that would quietly make the plan look closer
+to submission than it is (11b ticking a box, R0 falling without a source, the atlas jumping).
 
 ### The P2 pass checker
 
@@ -349,10 +373,13 @@ Two hard facts, recorded so nobody spends an hour rediscovering them:
    already carry a correct DOI in the register line, two got a verified DOI today, and five still need a
    catalogue lookup before an order can be placed (CR083, CR110, CR122, CR126, CR154). Whether to spend an
    order on them is the author's call, not an evidence call.
-5. **Publication readiness is documented, not assumed.** `PUBLICATION_READINESS_2026-11-01.md` is the one page to
+5. **The pending-to-publish list is `PUBLISH_PENDING_2026-11-01.md`** - six gates, owner split, week plan,
+   definition of done, and the four ways this could still slip. Read it with the readiness note: that one says
+   where the work stands, this one says what is left and in what order.
+6. **Publication readiness is documented, not assumed.** `PUBLICATION_READINESS_2026-11-01.md` is the one page to
    read before promising a submission date: the critical path is the P1 page-by-page audit, the P5 synthesis
    (model-selection guide and controversy table) and the three expert reviews, in that order of effort.
-6. **CR199 (Yang 2018) is now readable** - a 309-page copy was opened today and its title page read. Its
+7. **CR199 (Yang 2018) is now readable** - a 309-page copy was opened today and its title page read. Its
    sentence ("the one-dimensional piezoelectric bar follows Yang and Mindlin and Tiersten") has not been
    checked against the book's chapter yet; that is a half-hour job with the copy in hand.
 
