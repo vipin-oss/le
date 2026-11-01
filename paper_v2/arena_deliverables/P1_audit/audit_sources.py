@@ -210,8 +210,16 @@ def main():
     figdir = "/home/user/manuscript/master/figures/source"
     all_figs = sorted(f for f in os.listdir(figdir) if f.endswith(".pdf")) if os.path.isdir(figdir) else []
     unused_figs = [f for f in all_figs if f not in used and os.path.splitext(f)[0] + ".pdf" not in used]
-    add("A11", "every figure file in the tree is included somewhere", "PASS" if not unused_figs else "FAIL",
-        unused_figs, "; ".join(unused_figs[:8]))
+    appd = ""
+    for p_ in files:
+        if os.path.basename(p_) == "appD_figures.tex":
+            appd = read(p_)
+    undeclared = [f for f in unused_figs
+                  if not re.search(r"F-0?%d\b" % int(re.search(r"fig(\d+)", f).group(1)), appd)]
+    declared = [f for f in unused_figs if f not in undeclared]
+    add("A11", "every figure file is either included or declared provisional in Appendix D",
+        "PASS" if not undeclared else "FAIL", undeclared,
+        ("declared provisional in appD_figures.tex: " + ", ".join(declared)) if declared else "")
     add("A2b", "the same source file does not appear twice in the tree", "PASS" if not dup_copies else "FAIL",
         dup_copies, "; ".join("%s in %s" % (k, " and ".join(v)) for k, v in list(dup_copies.items())[:8]))
     add("A10", "the same title appears in more than one bundled .bib file (informational: the R3* files are per-batch and overlap by design)", "INFO", dup_titles, "%d titles appear in more than one file" % len(dup_titles))

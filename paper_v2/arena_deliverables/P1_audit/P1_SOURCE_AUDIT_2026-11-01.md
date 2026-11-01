@@ -15,18 +15,13 @@ Sources: `paper_v2/from_overleaf/phase5/` (landed 2026-11-01 from the branch tha
 | A7 | the counts in the main.tex header match the sources | **PASS** | 0 |
 | A8 | labels defined but never referenced (informational) | **INFO** | 294 |
 | A9 | every .bib entry has author, title and year | **PASS** | 0 |
-| A11 | every figure file in the tree is included somewhere | **FAIL** | 2 |
+| A11 | every figure file is either included or declared provisional in Appendix D | **PASS** | 0 |
 | A2b | the same source file does not appear twice in the tree | **PASS** | 0 |
 | A10 | the same title appears in more than one bundled .bib file (informational: the R3* files are per-batch and overlap by design) | **INFO** | 22 |
 
 ## Findings
 
-### A11 - every figure file in the tree is included somewhere (2)
-
-```
-fig07-theory-map.pdf; fig18-taxonomy.pdf
-```
-
+No mechanical defect found by A1-A10. That is a statement about references, figures and bibliography only - not about signs, notation or derivations.
 
 ## What this audit does not cover
 

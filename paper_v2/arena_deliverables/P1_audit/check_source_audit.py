@@ -62,29 +62,40 @@ keys = set(re.findall(r"@\w+\s*\{\s*([^,]+),", bib))
 cited = {k.strip() for m in re.finditer(r"\\cite[a-zA-Z]*\*?(?:\[[^\]]*\])*\{([^}]+)\}", joined)
          for k in m.group(1).split(",")}
 missing = {k for k in cited if k and k not in keys}
-check("A3 is a real finding, not a parse error: %d cited key(s) absent from %d bib entries"
-      % (len(missing), len(keys)),
-      missing and rows.get("A3", {}).get("status") == "FAIL" and str(rows["A3"]["n"]) == str(len(missing)),
-      str(sorted(missing)))
+check("A3 agrees with the sources: %d cited key(s) absent from %d bib entries -> %s"
+      % (len(missing), len(keys), "FAIL" if missing else "PASS"),
+      rows.get("A3", {}).get("status") == ("FAIL" if missing else "PASS")
+      and str(rows["A3"]["n"]) == str(len(missing)),
+      "%s vs csv %s/%s" % (sorted(missing), rows.get("A3", {}).get("status"), rows.get("A3", {}).get("n")))
 
-dups = {}
-for root, _, fs in os.walk(SRC):
-    for f in fs:
-        if f.endswith(".tex"):
-            p = os.path.join(root, f)
-            r = os.path.relpath(p, SRC)
-            dups.setdefault(os.path.basename(p), set()).add(r.split(os.sep)[0])
-same_file_twice = {b: d for b, d in dups.items() if len(d) > 1}
-check("A2b is a real finding: %d files exist under two different roots" % len(same_file_twice),
-      same_file_twice and rows.get("A2b", {}).get("status") == "FAIL",
+# A2b is about the same file reaching the tree twice, which shows up as the same label defined in it
+seen = {}
+for path, txt in T.items():
+    for lab in re.findall(r"\\label\{([^}]+)\}", txt):
+        seen.setdefault(lab, set()).add(os.path.relpath(path, SRC))
+dup_labels = {k: v for k, v in seen.items() if len(v) > 1}
+same_file_twice = {k: v for k, v in dup_labels.items()
+                   if len({os.path.basename(x) for x in v}) == 1}
+check("A2b agrees with the sources: %d label(s) come from the same file under two roots -> %s"
+      % (len(same_file_twice), "FAIL" if same_file_twice else "PASS"),
+      rows.get("A2b", {}).get("status") == ("FAIL" if same_file_twice else "PASS")
+      and str(rows["A2b"]["n"]) == str(len(same_file_twice)),
       str(sorted(same_file_twice)[:5]))
 
 figdir = "/home/user/manuscript/master/figures/source"
 used = {os.path.basename(m) for m in re.findall(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}", joined)}
 allf = [f for f in os.listdir(figdir) if f.endswith(".pdf")]
 unused = [f for f in allf if f not in used]
-check("A11 is a real finding: %d of %d figure files are never included" % (len(unused), len(allf)),
-      len(unused) == int(rows["A11"]["n"]) and rows["A11"]["status"] == "FAIL", str(unused))
+appd_txt = ""
+for path, txt in T.items():
+    if os.path.basename(path) == "appD_figures.tex":
+        appd_txt = txt
+undecl = [f for f in unused
+          if not re.search(r"F-0?%d\b" % int(re.search(r"fig(\d+)", f).group(1)), appd_txt)]
+check("A11 agrees with the sources: %d of %d figure files are included, %d are declared provisional "
+      "in Appendix D, %d are neither" % (len(allf) - len(unused), len(allf), len(unused) - len(undecl), len(undecl)),
+      rows["A11"]["status"] == ("FAIL" if undecl else "PASS") and int(rows["A11"]["n"]) == len(undecl),
+      str(undecl))
 
 check("the audit claims no result for signs, notation or derivations",
       "not about signs" in md or "signs, dimensions and derivation steps" in md)

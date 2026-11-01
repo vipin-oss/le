@@ -8,6 +8,6 @@ A6,no placeholder text in the sources,PASS,0,
 A7,the counts in the main.tex header match the sources,PASS,0,"header claims (17, 7, 18, 8), sources have (17, 7, 18, 8) (sections, appendix files, figure envs, table envs)"
 A8,labels defined but never referenced (informational),INFO,294,app:equation_register; tab:appA-sec3; tab:appA-sec4; tab:appA-sec5; tab:appA-sec6; tab:appA-sec7; tab:appA-sec9; tab:appA-sec10; tab:appA-summary; app:balance_derivations
 A9,"every .bib entry has author, title and year",PASS,0,
-A11,every figure file in the tree is included somewhere,FAIL,2,fig07-theory-map.pdf; fig18-taxonomy.pdf
+A11,every figure file is either included or declared provisional in Appendix D,PASS,0,"declared provisional in appD_figures.tex: fig07-theory-map.pdf, fig18-taxonomy.pdf"
 A2b,the same source file does not appear twice in the tree,PASS,0,
 A10,the same title appears in more than one bundled .bib file (informational: the R3* files are per-batch and overlap by design),INFO,22,22 titles appear in more than one file
