@@ -164,6 +164,36 @@ def main():
               str(bad[:5]))
         print("     full request list=%d rows (%d with a DOI)"
               % (len(srows), sum(1 for r in srows if r["doi"])))
+
+        # drive_held_sources_*.csv - works found inside Drive on 2026-11-01 and therefore
+        # struck off the request list. No id, link or folder name is kept anywhere.
+        D = os.path.join(HERE, "drive_held_sources_2026-11-01.csv")
+        check("the Drive re-check record exists", os.path.exists(D))
+        if os.path.exists(D):
+            drows = list(csv.DictReader(open(D, newline="")))
+            check("Drive re-check header",
+                  list(drows[0].keys()) == ["work", "title", "doi", "claims_blocked",
+                                            "claim_ids", "verified_in_drive", "status", "note"],
+                  str(list(drows[0].keys())))
+            check("one Drive re-check row per work",
+                  len({r["work"].lower() for r in drows}) == len(drows))
+            check("every Drive row says the work left the request list",
+                  all("removed from the request list" in r["status"] for r in drows),
+                  str([r["work"] for r in drows if "removed" not in r["status"]]))
+            check("every Drive row was verified by opening the file",
+                  all(r["verified_in_drive"] == "2026-11-01" and "opened" in r["note"]
+                      for r in drows),
+                  str([r["work"] for r in drows if "opened" not in r["note"]]))
+            bad = [r["work"] for r in drows if leak.search(" ".join(r.values()))]
+            check("the Drive re-check record has no URLs, ids or folder names", not bad,
+                  str(bad[:5]))
+            asked = {r["doi"].lower() for r in srows if r["doi"]}
+            still = [r["work"] for r in drows
+                     if (r["doi"] != "none" and r["doi"].lower() in asked)
+                     or r["title"].lower() in {x["title"].lower() for x in srows}]
+            check("no work that is held in Drive is still on the request list", not still,
+                  str(still[:5]))
+            print("     Drive-held and struck off=%d" % len(drows))
     print("     needed=%d (top-20 cut), archive-held=%d, library-held=%d, findings=%d"
           % (len(rows), len(hrows), len(arows), len(frows)))
 
