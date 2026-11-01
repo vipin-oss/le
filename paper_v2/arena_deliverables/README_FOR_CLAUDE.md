@@ -131,6 +131,12 @@ numbers disagree.
   recent papers unimportant: CR209, CR210, CR177 and CR050 are in `waived_by_author_2026-11-01.csv` with what
   has to happen to the sentences that cite them. The request list is now **6 works / 6 claims**.
 
+- **Step 20:** every title on the request list is now a title read from a record, so no row says "no title
+  asserted". Cattaneo and Carlson come from their Crossref records (Cattaneo from the 2011 reprint chapter);
+  Nowacki, Vernotte, Danilovskaya and Born-von-Karman come from independent records that print the title,
+  because no publisher record exists for those printings. The Carlson chapter also got its verified DOI
+  (10.1007/978-3-662-39776-3_2). Two citation errors surfaced while doing this - see findings 10 and 11.
+
 ## 6. Findings a reader must not lose
 
 1. **CR182 and CR184 split one sentence.** The manuscript writes nonlocal elasticity with a "Yukawa-type"
@@ -159,6 +165,14 @@ numbers disagree.
    by chapter; the copyright page confirms the 1960 Wiley text.
 9. **The Nowacki row has now defeated two batches**: a two-page journal note in the fourth, and Parkus's book
    in the fifth. If a copy comes again, read the author name on the title page first.
+
+10. **The Nowacki citation mixes two books.** The Pergamon/PWN *Thermoelasticity* is 1962 (first edition) or
+    1986 (second, xii + 566 pp., ISBN 978-0-08-024767-0, chapter DOIs under 10.1016/b978-0-08-024767-0). The
+    Nowacki book of **1975** is *Dynamic Problems of Thermoelasticity* (Noordhoff, Leyden). So "Nowacki 1975,
+    Thermoelasticity, Pergamon" cannot be satisfied by any single book: the year and the title belong to two
+    different works. This is probably why this row defeated two batches.
+11. **The Carlson year is out by one.** Crossref dates *Linear Thermoelasticity*, pp. 297-345 of Handbuch der
+    Physik VIa/2, to **1973**; the manuscript says 1972.
 
 ## 7. How to re-run everything
 

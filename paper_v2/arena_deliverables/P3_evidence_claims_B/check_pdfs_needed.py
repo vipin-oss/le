@@ -517,6 +517,25 @@ def main():
         check("the waived record carries no links", not bad, str(bad))
         print("     fifth batch: 4 books, 3 accepted, 1 was Parkus; 4 claims closed, 4 waived")
 
+
+    # ---- step 20: every title on the request list is now a title read from a record ----
+    check("no row of the request list says 'no title asserted' any more",
+          not [r["authors"] for r in srows if r["title"].strip().lower().startswith("no title")],
+          str([r["authors"] for r in srows if r["title"].strip().lower().startswith("no title")]))
+    check("every row records where its title came from",
+          all(len((r["doi_note"] or "").split()) >= 8 for r in srows),
+          str([r["authors"] for r in srows if len((r["doi_note"] or "").split()) < 8]))
+    check("the Carlson chapter now carries its verified DOI",
+          any(r["doi"] == "10.1007/978-3-662-39776-3_2" and r["doi_status"] == "verified"
+              for r in srows))
+    check("the Nowacki note names both candidate books and their years",
+          any("Dynamic Problems of Thermoelasticity" in r["doi_note"] and "1986" in r["doi_note"]
+              and "1962" in r["doi_note"] for r in srows))
+    check("the Carlson note records the 1973-versus-1972 year problem",
+          any("1973" in r["doi_note"] and "1972" in r["doi_note"] for r in srows))
+    check("the Danilovskaya note says the original is Russian",
+          any("Russian" in r["doi_note"] for r in srows))
+
     print("     needed=%d (top-20 cut), archive-held=%d, library-held=%d, findings=%d"
           % (len(rows), len(hrows), len(arows), len(frows)))
 
