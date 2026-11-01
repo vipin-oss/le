@@ -16,7 +16,7 @@ is open. So nothing is wrong with the plan; what is missing is all execution.
 | # | gate (blueprint 11b) | state today | owner |
 |---|---|---|---|
 | G1 | P1 audit of the 134 pages, derivations and the 35 scripts complete | **not started** as an audit; 10 defects registered, **7 of the 10 defects are OPEN** | author + agent |
-| G2 | no R0 entries; critical claims at R3 or independently derived | **7 are R0** (down from 32), catalogue check **238 entries** with **9 R0**, register covers **119 entries** of the bibliography's **323** | agent, plus print access |
+| G2 | no R0 entries; critical claims at R3 or independently derived | **7 are R0** (down from 32), catalogue check **238 entries** with **9 R0**, register covers **204 entries** of the bibliography's **323** | agent, plus print access |
 | G3 | contribution map filled and checked against prior reviews | **no such file exists**; P0 has not started | author + agent |
 | G4 | benchmark registry complete, independent implementations done | **14 benchmark records**, **42 comparisons**; atlas **40 cases planned, 8 carried through to results** | agent |
 | G5 | two or three expert reviews received and resolved | **0 named, 0 invited, 0 received** | author (external people) |
@@ -61,11 +61,12 @@ What 11b literally asks for is an audit of the 134 pages, the derivations and th
   Letters). Each needs a printed page, not a search: this is a library or a purchase, not an
   analysis job.
 - **9 catalogue rows are R0** in the separate 238-entry catalogue check.
-- the register holds **119 entries** against the bibliography's **323**. That 323 is the
+- the register holds **204 entries** against the bibliography's **323**. That 323 is the
   blueprint's count of the manuscript's own bibliography (section 10, P2), and the three `.bib`
   files in this repository carry only **199 unique keys** between them, so the register cannot be
   finished here either: it needs the manuscript's bibliography file from Overleaf. Filling the
-  remaining 204 rows is the longest single thread in P2 and the one nobody has started.
+  remaining 119 works is still the longest single thread in P2, though 85 rows were verified in the
+  coverage extension of 2026-11-01 and only the keys the repository does not hold are left.
 - **4 held sources are unread** (CR127 Muller and Ruggeri; CR152 Gurtin and Williams; CR166 Li et
   al.; CR196 Eringen). Their citations are verified; two of them can be closed by rewording
   (proposals are in `P2_verification/HELD_SOURCES_2026-11-01.csv`), two need a copy.
@@ -77,7 +78,7 @@ What 11b literally asks for is an audit of the 134 pages, the derivations and th
   before submission, not after.
 - **19 claims are register-level**: they need a register row, not a reading, and each is a
   twenty-minute job.
-- the register carries **113 distinct bibkeys** over 119 rows: six bibkeys are duplicated across
+- the register carries **198 distinct bibkeys** over 204 rows: six bibkeys are duplicated across
   batches 003 and 004 and need the author's sign-off to be de-duplicated. Cosmetic, but a referee
   who counts will notice.
 
@@ -124,7 +125,7 @@ that should have gone out weeks ago has not gone out. Reviews take four to six w
 | owner | items |
 |---|---|
 | **author only** | the 23 paper edits in Overleaf (5 mandatory); the 4 waived-citation sentences; the 34 PARTLY SUPPORTED claims that need a wording hedge or a better source; naming and inviting the 3 expert readers; choosing the journal; the declarations and cover letter; signing off the de-duplication of 6 register rows |
-| **agent only** | assertions and tolerances in the 9 scripts (D3); D6 catalogue-only entries; 19 register-level claims; extending the register 119 towards 323; the 32 remaining atlas cases; the 9 catalogue R0 rows; the model-selection guide and the controversy table once the author approves the shape |
+| **agent only** | assertions and tolerances in the 9 scripts (D3); D6 catalogue-only entries; the register 204 towards 323; the 32 remaining atlas cases; the 9 catalogue R0 rows; the model-selection guide and the controversy table once the author approves the shape |
 | **needs the Overleaf project first** | the page-by-page audit of the 134 pages; the assertions in the 9 scripts; D6, D8, D9; the final clean build. All of it is blocked until the project is pulled into `paper_v2/from_overleaf/` |
 | **needs money or a library** | the 7 R0 works (Chadwick 1960, Auld 1973, Duhamel 1837, Scruby 1990, Gulyaev 1969 — five distinct works); Muller and Ruggeri 1998; a readable Polizzotto 2001 for CR195 |
 | **needs other people** | G5, the three expert reviews; and the journal editor's own response |

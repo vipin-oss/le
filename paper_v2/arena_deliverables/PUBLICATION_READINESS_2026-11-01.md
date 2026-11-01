@@ -22,7 +22,7 @@ says so itself.
 |---|---|---|---|
 | P0 scope and originality | Section 9 answered; originality matrix done; AMR inquiry and Physics Reports proposal drafted | no originality-matrix or contribution-map file anywhere in the repository; Section 9 items still open (title, journal, expert readers, AI wording, code release) | **not started** |
 | P1 integrity audit | audit report; fixes merged; clean build | defect register with 10 entries: 1 fixed, 1 partial, 7 open, 1 observed; 20 claims re-audited; the page-by-page audit of the 134 pages has not been done | **partial** |
-| P2 evidence registers | no R0 entries; critical claims at R3 | verification register holds **119 entries** against the blueprint's 323, of which **7 are R0** (62 R2, 42 R1, 4 R3, 4 R1-noDOI); the catalogue check covers **238 entries** with **9 R0**; claim register: 224 rows | **partial** |
+| P2 evidence registers | no R0 entries; critical claims at R3 | verification register holds **204 entries** against the blueprint's 323, of which **7 are R0** (62 R2, 127 R1, 4 R3, 4 R1-noDOI); the catalogue check covers **238 entries** with **9 R0**; claim register: 224 rows | **partial** |
 | P3 full-coverage expansions | each topic with equations, verified checks, sources, evidence classes | atlas **40 cases planned, 8 carried through to results**; experiment extraction **13 rows**; landmark work done | **partial** |
 | P4 integration | registry published in repository | **14 benchmark records**; second implementation with **42 comparisons** | **partial** |
 | P5 critical synthesis | tables complete | the old 17-row atlas is still in the manuscript (defect D7); no model-selection guide, no controversy table | **not started** |
@@ -60,7 +60,7 @@ Ordered by what blocks the most. "Agent" means it can be done here without the a
 | A | **23 paper edits**, 5 of them mandatory | the manuscript still says things its own sources contradict | author, in Overleaf | 1-2 days |
 | B | **one source still missing** (Born and von Karman 1912, CR181) and four held sources unread | the last blocked claim, plus four free wins | agent + one book | 1 day |
 | C | **P1: page-by-page audit of the 134 pages**, and the 7 open defects - above all the overbroad dispersion-polynomial wording (D2) and the 9 scripts with no assertions (D3) | the blueprint forbids new chapters before this passes, and a referee will hit D2 in the abstract | author + agent | 1-2 weeks |
-| D | **P2: 7 R0 references remain of the original 32** (the other 25 were repaired on 2026-11-01: 8 completed, 8 replaced, 4 already read, 2 level-aligned, 1 memory entry confirmed, 2 confirmed), **and the register covers 119 entries where the bibliography has 323**; its 119 rows carry 113 distinct bibkeys | "no R0 entries" is a hard exit condition, and an unverifiable reference is not admissible at submission | agent | the remaining 7 need printed copies; extending coverage is 1-2 weeks |
+| D | **P2: 7 R0 references remain of the original 32** (the other 25 were repaired on 2026-11-01: 8 completed, 8 replaced, 4 already read, 2 level-aligned, 1 memory entry confirmed, 2 confirmed), **and the register covers 204 entries where the bibliography has 323**; its 204 rows carry 198 distinct bibkeys | "no R0 entries" is a hard exit condition, and an unverifiable reference is not admissible at submission | agent | the remaining 7 need printed copies; extending coverage is 1-2 weeks |
 | E | **P3/P4: the atlas has 8 of 40 cases carried through, and 14 benchmark records** | the paper's claim to be verifiable rests on these | agent | 2-4 weeks |
 | F | **P5: model-selection guide, controversy table, atlas rebuild** | this is the paper's actual contribution - without it the review is a catalogue | author + agent | 2-3 weeks |
 | G | **P6: three expert readers** (continuum thermodynamics, guided waves, numerics or experiment) | blueprint checklist, and the unique way to catch what a machine reading cannot | author | 2-6 weeks, parallel |
@@ -78,6 +78,6 @@ Ordered by what blocks the most. "Agent" means it can be done here without the a
 ## 7. What can move without the author
 
 1. Finish B: the last book, the four held sources, the readable Polizzotto copy.
-2. Continue D: the 32 R0 entries were re-audited on 2026-11-01 and 7 remain, each with a named next action (see `P2_verification/`); the next step is the printed copies, then extending the register from 119 towards 323.
+2. Continue D: the 32 R0 entries were re-audited on 2026-11-01 and 7 remain, each with a named next action (see `P2_verification/`); the next step is the printed copies, then extending the register from 204 towards 323 (85 rows were added in the coverage extension of 2026-11-01).
 3. Start C: add assertions and tolerances to the 9 check and bench scripts so a failure cannot pass silently.
 4. Start E: carry the remaining atlas cases from plan to results, one record at a time.

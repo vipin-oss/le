@@ -147,7 +147,48 @@ for extending them.
 
 ---
 
-## 4. Reproduce
+## 4. Later the same day: the register grew from 119 to 204 rows
+
+Repairing the 32 rows did not extend coverage, so a second pass the same day gave a row to every
+bibkey in the repository's three bibliography files that had none. There were **86** such keys, and
+**85** of them carried a DOI; each of the 85 was checked against the Crossref record, and a row was
+added only where the record's title matched the bib entry (content-word overlap 0.80 or better on
+all 85, most of them exact). The register now has **204 rows** over **198 distinct bibkeys**, at
+**62 R2, 127 R1, 4 R3, 4 R1-noDOI, 7 R0**.
+
+Two of those 85 were checked further, because earlier steps had left them open:
+
+- **Chen and Nunziato 1974 is no longer missing.** DOI 10.1007/BF01590264 is *Thermodynamic
+  restrictions on the relaxation functions of the theory of heat conduction with finite wave
+  speeds*, ZAMP **25**, 791-798, 1974, by Peter J. Chen and Jace W. Nunziato. Five separate title
+  searches had failed to find it; the DOI in the bibliography was right all along.
+- **Coleman and Gurtin 1967** is *Thermodynamics with Internal State Variables*, J. Chem. Phys.
+  **47**, 597-613, 1967, DOI 10.1063/1.1711937. That is the same DOI the Gulyaev 1969 bib entry had
+  wrongly reused, which is now recorded on both rows.
+
+These 85 rows are labelled R1 with a note that says exactly what was and was not checked: the DOI
+and the title, not the volume and pages (those still come from the bib entry). The remaining gap to
+the blueprint's 323 is **119 works**, and those are keys the repository does not hold - they live in
+the manuscript's own bibliography, so that last stretch waits for the Overleaf pull.
+
+### The nine catalogue R0 rows, one by one
+
+The separate 238-entry catalogue check has its own nine R0 rows. Each is now recorded in
+`CATALOGUE_R0_2026-11-01.csv` with the record that was opened and the exact action:
+
+| key | outcome |
+|---|---|
+| Carlson1972 | **resolved**: DOI 10.1007/978-3-662-39776-3_2 (chapter also read in full) |
+| Achenbach1973 | **resolved**: DOI 10.1016/c2013-0-04485-4, ISBN 9780720423679 |
+| Cattaneo1948 | **resolved as a reprint**: DOI 10.1007/978-3-642-11051-1_5 is the 2011 reprint, not the 1948 original |
+| Tzou1997 | **edition warning**: DOI 10.1002/9781118818275 is the 2014 Wiley second edition; pasting it into a 1997 entry would be a new fault |
+| Gulyaev1969 | print-only, and its bib DOI 10.1063/1.1711937 belongs to Coleman and Gurtin 1967 and must go |
+| Vernotte1958, Nowacki1975, Duhamel1837, Chadwick1960 | print-only; nothing changes until the printed pages are opened |
+
+That leaves **five print-only rows** and **four that can be fixed by an edit to the bib file** -
+edits that belong to the author, since the bibliography lives with the manuscript.
+
+## 5. Reproduce
 
 ```
 cd paper_v2/arena_deliverables/P2_verification && python3 check_p2_pass.py

@@ -45,14 +45,18 @@ txt = open(NOTE, encoding="utf-8").read()
 
 print("== the verification register ==")
 lv = collections.Counter(r["verification_level"] for r in ver)
-check("the register still holds 119 rows", len(ver) == 119, str(len(ver)))
-check("the levels are 62 R2 / 42 R1 / 4 R3 / 4 R1-noDOI / 7 R0",
-      lv == {"R2": 62, "R1": 42, "R3": 4, "R1-noDOI": 4, "R0": 7}, str(dict(lv)))
+check("the register still holds at least the 119 rows step 24 left", len(ver) >= 119, str(len(ver)))
+check("the four levels step 24 fixed are unchanged (62 R2, 4 R3, 4 R1-noDOI, 7 R0)",
+      lv.get("R2") == 62 and lv.get("R3") == 4 and lv.get("R1-noDOI") == 4 and lv.get("R0") == 7,
+      "R2=%d R3=%d R1-noDOI=%d R0=%d" % (lv.get("R2", 0), lv.get("R3", 0),
+                                         lv.get("R1-noDOI", 0), lv.get("R0", 0)))
+check("every other row is R1", lv.get("R1", 0) == len(ver) - 62 - 4 - 4 - 7, str(lv.get("R1", 0)))
 check("the levels add up to the row count", sum(lv.values()) == len(ver), str(sum(lv.values())))
 
 keys = collections.Counter(r["bibkey"] for r in ver)
 dups = sorted(k for k, v in keys.items() if v > 1)
-check("119 rows carry 113 distinct bibkeys", len(keys) == 113, str(len(keys)))
+check("the register still carries at least the 113 distinct bibkeys of step 24",
+      len(keys) >= 113, str(len(keys)))
 check("exactly six bibkeys are duplicated",
       dups == ["Bleustein1968", "BornKarman1912", "Danilovskaya1950", "Duhamel1837",
                "Jou2010", "Scruby1990"], ", ".join(dups))
@@ -135,9 +139,53 @@ check("the claim register still says SOURCE NOT AVAILABLE for all four",
 check("the held table records the searches that were run",
       all(r["library_search_strings_used"].strip() and r["library_result"].strip() for r in held))
 
+print("== the coverage extension ==")
+ext = [r for r in ver if r["batch"] == "007-ext"]
+check("the extension added 85 rows", len(ext) == 85, str(len(ext)))
+check("every extension row is R1 with a DOI and a title",
+      all(r["verification_level"] == "R1" and r["doi"].strip() and r["title"].strip() for r in ext))
+check("every extension row says it is title-level verification only",
+      all("Title-level verification only" in r["metadata_status"] for r in ext))
+cov = rows(os.path.join(HERE, "COVERAGE_EXTENSION_2026-11-01.csv"))
+check("the extension table has one row per added row", len(cov) == len(ext), str(len(cov)))
+check("every added row was matched at 0.80 or better",
+      all(float(r["title_match_score"]) >= 0.80 for r in cov),
+      min(float(r["title_match_score"]) for r in cov).__str__())
+check("two rows got the author-level check",
+      sum(r["author_level_check"] == "yes" for r in cov) == 2)
+check("Chen and Nunziato 1974 is now a located paper (ZAMP 25, 791-798)",
+      any(r["bibkey"] == "LM1_ChenNunziato1974" and r["volume"] == "25"
+          and r["pages"] == "791--798" for r in ver))
+check("Coleman and Gurtin 1967 carries its own DOI (J. Chem. Phys. 47, 597-613)",
+      any(r["bibkey"] == "LM1_ColemanGurtin1967" and r["doi"].lower() == "10.1063/1.1711937"
+          and r["pages"] == "597--613" for r in ver))
+
+print("== the nine catalogue R0 rows ==")
+cat9 = rows(os.path.join(HERE, "CATALOGUE_R0_2026-11-01.csv"))
+catv = collections.Counter(r["level"] for r in rows(os.path.join(PAPER, "refs_catalogue_check.csv")))
+check("the catalogue still has 9 R0 rows", catv.get("R0") == 9, str(catv.get("R0")))
+check("the notes cover all nine", len(cat9) == 9 and {r["key"] for r in cat9} ==
+      {r["key"] for r in rows(os.path.join(PAPER, "refs_catalogue_check.csv")) if r["level"] == "R0"})
+st = collections.Counter(r["status"] for r in cat9)
+check("the status split is 5 print-only / 2 resolved / 1 reprint / 1 edition warning",
+      st == {"PRINT_ONLY": 5, "RESOLVED": 2, "RESOLVED_AS_REPRINT": 1,
+             "EDITION_MISMATCH_WARNING": 1}, str(dict(st)))
+check("every resolved row prints the DOI or ISBN it found",
+      all(r["doi_or_isbn_found"].strip().lower() != "none" for r in cat9
+          if r["status"].startswith("RESOLVED") or r["status"] == "EDITION_MISMATCH_WARNING"))
+check("every print-only row says none", all(r["doi_or_isbn_found"].strip().lower() == "none"
+                                            for r in cat9 if r["status"] == "PRINT_ONLY"))
+tz = [r for r in cat9 if r["key"] == "Tzou1997"][0]
+check("the Tzou row warns that the record is the 2014 edition", "2014" in tz["evidence"] + tz["recommended_action"])
+gy = [r for r in cat9 if r["key"] == "Gulyaev1969"][0]
+check("the Gulyaev row says its bib DOI belongs to Coleman and Gurtin",
+      "Coleman" in gy["recommended_action"] and "10.1063/1.1711937" in gy["recommended_action"])
+
 print("== the note ==")
 check("the note prints the level counts it can be checked against",
-      "62 R2, 42 R1, 4 R3, 4 R1-noDOI, 7 R0" in txt)
+      "62 R2, 127 R1, 4 R3, 4 R1-noDOI, 7 R0" in txt)
+check("the note prints the post-extension register size",
+      "204 rows" in txt and "198 distinct bibkeys" in txt)
 check("the note prints the duplicate count",
       "113 distinct bibkeys" in txt and "six bibkeys" in txt.lower())
 check("the note prints the eleven works that were replaced or completed", "METADATA_REPLACED" in txt)

@@ -71,8 +71,9 @@ All paths are relative to `paper_v2/arena_deliverables/`.
 
 ## 4. The numbers, and where each comes from
 
-- **Reference register levels** (after step 24): 62 R2, 42 R1, 4 R3, 4 R1-noDOI, 7 R0 over 119 rows, 113
-  distinct bibkeys. The R0 count is the one the blueprint's P2 exit condition turns on.
+- **Reference register levels** (after step 26): 62 R2, 127 R1, 4 R3, 4 R1-noDOI, 7 R0 over **204 rows**,
+  **198 distinct bibkeys**. The R0 count is the one the blueprint's P2 exit condition turns on; the 323 in the
+  blueprint is the manuscript's own bibliography count, and only 199 keys exist inside this repository.
 - **Register:** 224 rows in `paper_v2/claim_register.csv`; **111** of them carry the verdict
   `SOURCE NOT AVAILABLE`. That 111 is the denominator for everything below.
 - **Closed by reading a source: 83.** 40 (first two uploads) + 25 (fourth batch) + 1 (the work found by the
@@ -250,6 +251,23 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 26:** the agent's own queue from the pending list was worked. Three things happened.
+  (1) **The register grew from 119 rows to 204**: every bibkey in the repository's three bibliography files
+  that had no verification row now has one - 86 keys were missing, 85 carried a DOI, and all 85 were checked
+  against the Crossref record with a title match of 0.80 or better. Those rows are labelled R1 with a note
+  saying they are **title-level** verifications: the DOI and the title were read off the record, the volume
+  and pages still come from the bib entry. Nothing was promoted to R2 and nothing was promoted on a guess.
+  (2) **Chen and Nunziato 1974 is no longer a missing paper.** DOI 10.1007/BF01590264 is *Thermodynamic
+  restrictions on the relaxation functions of the theory of heat conduction with finite wave speeds*, ZAMP
+  **25**, 791-798, 1974, by Peter J. Chen and Jace W. Nunziato. Five title searches had failed; the DOI was in
+  the bibliography the whole time. **Coleman and Gurtin 1967** is likewise located: J. Chem. Phys. **47**,
+  597-613, DOI 10.1063/1.1711937 - which is the DOI the Gulyaev 1969 entry had wrongly borrowed, now recorded
+  on both rows. This clears the two open queries behind edit items I001 and I003.
+  (3) **The nine catalogue R0 rows were each given an outcome** (`P2_verification/CATALOGUE_R0_2026-11-01.csv`):
+  Carlson, Achenbach and Cattaneo resolved (Cattaneo as the 2011 reprint, not the 1948 original), Tzou flagged
+  as an edition trap - the DOI on the record is the 2014 Wiley second edition, not the 1997 first - and five
+  rows left print-only (Vernotte 1958, Nowacki 1975, Duhamel 1837, Chadwick 1960, Gulyaev 1969).
+
 - **Step 25:** the pending-to-publish list was written as its own page, because the readiness note answers
   "how far along are we" and this one answers "what is left". `PUBLISH_PENDING_2026-11-01.md` has the six
   11b gates with their current state (**0 of 6**), the item-by-item detail behind each, an owner split
@@ -318,7 +336,7 @@ to submission than it is (11b ticking a box, R0 falling without a source, the at
 cd paper_v2/arena_deliverables/P2_verification && python3 check_p2_pass.py; echo "exit=$?"
 ```
 
-It must end with `PASS all checks (register=119 rows, R0=7, resolution=32, held=4)` and exit 0. It re-reads the
+It must end with `PASS all checks (register=204 rows, R0=7, resolution=32, held=4)` and exit 0. It re-reads the
 verification register, the 32-row resolution table and the four-row held-sources table, and fails if a level
 count moves, if one of the seven wrong DOIs comes back onto the row it had been pasted into, if a held source is
 ever claimed as read, or if the four claim verdicts stop saying `SOURCE NOT AVAILABLE`.
@@ -368,7 +386,10 @@ Two hard facts, recorded so nobody spends an hour rediscovering them:
    already at R1, and CR196's historical half is carried by the 1974 title itself - and both are written up as
    proposals, not edits, in `P2_verification/HELD_SOURCES_2026-11-01.csv`. CR127 needs the book; CR166 needs one
    clause removed.
-4. **Sixteen of the nineteen register-level works can be ordered today**, and three need no order because
+4. **The nineteen register-level works are half-closed.** Chen and Nunziato 1974 and Coleman and Gurtin 1967
+   now have located records and register rows (step 26), so edit items I001 and I003 no longer wait on a
+   catalogue lookup. The other seventeen cannot be given rows from here: their bibkeys exist only in the
+   manuscript's bibliography, so they wait for the Overleaf pull. **Sixteen of them can be ordered today**, and three need no order because
    they are already held (CR003 and CR114 are one paper, and CR199 is now readable). Of the sixteen: nine
    already carry a correct DOI in the register line, two got a verified DOI today, and five still need a
    catalogue lookup before an order can be placed (CR083, CR110, CR122, CR126, CR154). Whether to spend an
