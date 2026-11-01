@@ -251,6 +251,29 @@ numbers disagree.
   Li, Zhang, Li and He 2019 (IJHMT 144, 118664) and Eringen 1974 (IJES 12, 1063-1077) - so what is left is the
   reading, not the reference. Their claim verdicts are untouched: all four stay `SOURCE NOT AVAILABLE`.
 
+- **Step 34:** the author offered to send any book, so the first question was whether a book can unblock
+  anything. It cannot: of the **111** claims at `SOURCE NOT AVAILABLE`, **109** already have a claim-level file
+  (the source was supplied, read, or covered at one remove), and the two left are **CR181** (the 1912 note, now
+  carried at one remove by Born and Huang 1954) and **CR144** (Kumar, Devi and Sharma 2017 - a journal paper,
+  not a book). So the want list is about strength, not about unblocking, and it is deliberately short:
+  `P3_evidence_claims_B/BOOKS_WANTED_2026-11-01.csv` (**13 rows**, 14 columns) plus a `.md` mirror, a
+  one-page PDF in this folder, and `check_books_wanted.py` (19 checks, PASS). Every title, author, year, DOI
+  and ISBN was resolved against a Crossref record today and the row records where; the one work with no
+  Crossref record (Ewing, Jardetzky and Press 1957) says **no DOI recorded** and is ranked last, and no row
+  repeats a work already held (the checker compares the titles against the library list, the author-supplied
+  list and the books already read). Tiers: **A = 2, B = 8, C = 3**. The three worth sending:
+  (1) **Eringen and Maugin, *Electrodynamics of Continua I*** (Springer 1990, `10.1007/978-1-4612-3226-1`) -
+  the only item that closes an atlas invariant, **BK-15**, i.e. the six multifield cases, and takes coverage
+  from 34/40 to **40/40**; (2) **Coussy, *Poromechanics*** (Wiley 2004, `10.1002/0470092718`) - turns **BK-11**
+  from field-counting into a model check; (3) **Gorenflo, Kilbas, Mainardi and Rogosin, *Mittag-Leffler
+  Functions, Related Topics and Applications*** (Springer 2014, `10.1007/978-3-662-43930-2`) - closes the one
+  mandatory gap that cannot be closed from here, the `alpha < 1` asymptotic tail for CR046. Tier B is
+  reinforcement (Povstenko, Hetnarski and Eslami, Muller and Ruggeri, Jou et al., Mainardi, Eringen nonlocal,
+  Eringen microcontinuum); tier C is optional depth (Brekhovskikh, Achenbach, Ewing et al.). None of the
+  thirteen is already held - the checker proves that by comparing every title with the library list, the
+  author-supplied list and the books already read - and the mirror also lists the eight works that must **not**
+  be sent again, so the list cannot turn into a request for a second copy.
+
 - **Step 33:** the last open claim's book arrived. Born and Huang, *Dynamical Theory of Crystal Lattices* (1954),
   was read on printed pp. 55-57 and p. 79 as page images - `P3_evidence_claims_B/BORN_HUANG_1954_READ_2026-11-01.csv`,
   eleven rows, with a `.md` readout. It settles two of the three things CR181 needed: §5 credits the chain model
@@ -460,7 +483,9 @@ Two hard facts, recorded so nobody spends an hour rediscovering them:
    changes the evidence forces on the manuscript, and the manuscript is not in this repository, so they are
    written to be worked through in Overleaf. Nothing on the sheet needs a new source.
 2. **From the author: 1 work / 1 claim** - Born and von Karman (1912), Physikalische Zeitschrift 13, for
-   CR181. If that volume cannot be found, the substitute is a book: Born and Huang, *Dynamical Theory of
+   CR181. This is now the *only* outstanding source request of any kind; the book wish list step 34 produced is
+   about strengthening the paper and every row on it is optional (`P3_evidence_claims_B/BOOKS_WANTED_2026-11-01.md`
+   opens by saying so). If that volume cannot be found, the substitute is a book: Born and Huang, *Dynamical Theory of
    Crystal Lattices* (DOI 10.1093/oso/9780192670083.001.0001), listed first in
    `related_books_2026-11-01.csv`. Polizzotto (2001) is held but its text will not extract, so CR195 still
    waits for a readable copy.
