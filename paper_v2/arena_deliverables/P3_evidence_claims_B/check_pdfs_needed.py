@@ -131,10 +131,13 @@ def main():
     if os.path.exists(F):
         srows = list(csv.DictReader(open(F, newline="")))
         check("full request list header",
-              list(srows[0].keys()) == ["rank", "title", "citation", "doi", "doi_status",
-                                        "doi_note", "claims_blocked", "claim_ids",
-                                        "availability"],
+              list(srows[0].keys()) == ["rank", "authors", "title", "citation", "doi",
+                                        "doi_status", "doi_note", "claims_blocked",
+                                        "claim_ids", "availability"],
               str(list(srows[0].keys())))
+        check("every row names the author(s)",
+              all(len(r["authors"].split()) >= 2 for r in srows),
+              str([r["rank"] for r in srows if len(r["authors"].split()) < 2]))
         check("full request list ranks run 1..n",
               [int(r["rank"]) for r in srows] == list(range(1, len(srows) + 1)))
         check("full request list has no duplicate citation",
@@ -194,6 +197,23 @@ def main():
             check("no work that is held in Drive is still on the request list", not still,
                   str(still[:5]))
             print("     Drive-held and struck off=%d" % len(drows))
+            # the 2026-11-01 sweep of the whole Drive name index: one work found and struck off
+            W = os.path.join(HERE, "drive_recheck_2026-11-01.md")
+            check("the record of the Drive sweep exists", os.path.exists(W))
+            if os.path.exists(W):
+                wtxt = open(W, encoding="utf-8").read()
+                check("the Drive sweep record states its verdict",
+                      "one** of the 39 was already in Drive" in wtxt
+                      or "**one** of the 39 was already in Drive" in wtxt)
+                check("the Drive sweep record carries no URLs or Drive links", not leak.search(wtxt))
+                check("the Drive sweep record names what it found",
+                      "Applications and Applied Mathematics" in wtxt and "CR144" in wtxt)
+                found = [r for r in drows if "CR144" in r["claim_ids"]]
+                check("the work found by the sweep is in the held record", len(found) == 1,
+                      str(len(found)))
+                gone = [r["citation"] for r in srows if r["claim_ids"].strip() == "CR144"]
+                check("the work found by the sweep is off the request list", not gone, str(gone))
+                print("     works on the list that the sweep also found in Drive: %d" % len(gone))
 
         # supplied_by_author_*.csv - works the author sent on 2026-11-01, each verified page-1
         S = os.path.join(HERE, "supplied_by_author_2026-11-01.csv")
