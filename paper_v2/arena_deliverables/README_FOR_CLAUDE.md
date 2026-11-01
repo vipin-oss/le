@@ -222,6 +222,14 @@ numbers disagree.
     and CR122 doi:10.1007/s00245-016-9365-1 - probable only, and its print year is 2017 against the cited 2016.
     Chen and Nunziato (1974) was not found in two queries and still carries no DOI.
 
+- **Step 23:** the blueprint was read against the repository instead of against memory. `PUBLICATION_READINESS_2026-11-01.md`
+  says what is actually finished: the **design freeze is 8 of 9** (only "expert readers named" is open) but the
+  blueprint's own **submission checklist is 0 of 6**, P0 and P5 have not started (no originality matrix, no
+  model-selection guide, no controversy table anywhere in the repository), P1 has 7 open defects of 10, P2 still
+  carries **32 R0 references** in a register that covers 119 entries against a bibliography of 323, the atlas has
+  **8 of 40** cases carried through, and there are 14 benchmark records and 42 second-implementation comparisons.
+  `check_readiness.py` recomputes every number in that note from the CSVs, so the note cannot drift.
+
 ## 7. How to re-run everything
 
 Nothing needs installing for the checker (standard library only). If a PDF has to be opened, `pypdf` is
@@ -237,6 +245,16 @@ It must print a final `PASS all checks (...)` line and exit 0. Expected today:
 PASS all checks (needed=1, library=34, findings=3)
 exit=0
 ```
+
+### The readiness checker
+
+```bash
+cd paper_v2/arena_deliverables && python3 check_readiness.py; echo "exit=$?"
+```
+
+It must end with `PASS all checks (phases=8, claims=224, refs=119, defects=10)` and exit 0. It recomputes the
+claim register, the reference registers, the atlas, the benchmarks, the second implementation and the defect
+register, and fails if the readiness note prints a number that is no longer true.
 
 Run it **from its own directory** - it resolves every path relative to the file's location, and several
 earlier failures were nothing more than being run from the repository root. It checks, among other things:
@@ -297,7 +315,10 @@ Two hard facts, recorded so nobody spends an hour rediscovering them:
    already carry a correct DOI in the register line, two got a verified DOI today, and five still need a
    catalogue lookup before an order can be placed (CR083, CR110, CR122, CR126, CR154). Whether to spend an
    order on them is the author's call, not an evidence call.
-5. **CR199 (Yang 2018) is now readable** - a 309-page copy was opened today and its title page read. Its
+5. **Publication readiness is documented, not assumed.** `PUBLICATION_READINESS_2026-11-01.md` is the one page to
+   read before promising a submission date: the critical path is the P1 page-by-page audit, the P5 synthesis
+   (model-selection guide and controversy table) and the three expert reviews, in that order of effort.
+6. **CR199 (Yang 2018) is now readable** - a 309-page copy was opened today and its title page read. Its
    sentence ("the one-dimensional piezoelectric bar follows Yang and Mindlin and Tiersten") has not been
    checked against the book's chapter yet; that is a half-hour job with the copy in hand.
 
