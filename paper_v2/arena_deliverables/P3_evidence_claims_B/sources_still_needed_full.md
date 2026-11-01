@@ -1,8 +1,8 @@
 # Sources still needed - the complete list, with titles and checked DOIs
 
-Updated 2026-11-01 after the author supplied the 41-80 batch. **48 works remain**, one row each. Each title is the one the record itself carries (Crossref for a DOI, the book page for a book); 44 rows carry a title and 4 say plainly that no title could be read. Of the 38 DOIs, 38 resolve to the cited work and 0 does not; 10 works have no DOI.
+Updated 2026-11-01 after the second author upload of the day. **39 works remain**, one row each. Each title is the one the record itself carries (Crossref for a DOI, the title page for a book); 35 rows carry a title and 4 say plainly that no title could be read. Of the 29 DOIs, 29 resolve to the cited work and 0 does not; 10 works have no DOI.
 
-**Received on 2026-11-01 and struck off:** 31 works from the 41-80 batch, each opened and identified on its own first page (rows 44-48, 50-60, 62-69, 71 and 75-80 of the previous list) - they free 31 blocked claims. One further row (the second "van der Merwe, van Rensburg and Sieberhagen 2021" entry) was retired as a duplicate: its DOI resolves to an unrelated graph-theory paper, and the supplied file for that number was that unrelated paper.
+**Received on 2026-11-01 and struck off: 40 works in two batches** - 31 from the 41-80 upload and 9 from the 1-40 upload (rows 32-40 of the previous list). Each was opened and identified on its own first page; between them they free 40 blocked claims. One further row (the second "van der Merwe, van Rensburg and Sieberhagen 2021" entry) was retired as a duplicate: its DOI resolves to an unrelated graph-theory paper.
 
 | # | Title | Citation as the manuscript carries it | DOI | DOI checked |
 |---|---|---|---|---|
@@ -37,23 +37,14 @@ Updated 2026-11-01 after the author supplied the 41-80 batch. **48 works remain*
 | 29 | Electro-thermoelasticity theory with memory-dependent derivative heat transfer | Ezzat, M. A., El-Karamany, A. S. and El-Bary, A. A. (2016), Electro-thermoelasticity theory with memory-dependent derivative heat transfer, International Journal of Engineering Science | 10.1016/j.ijengsci.2015.10.011 | yes |
 | 30 | Modeling of memory-dependent derivative in generalized thermoelasticity | Ezzat, M. A., El-Karamany, A. S. and El-Bary, A. A. (2016), Modeling of memory-dependent derivative in generalized thermoelasticity, European Physical Journal Plus | 10.1140/epjp/i2016-16372-3 | yes |
 | 31 | On dual-phase-lag thermoelasticity theory with memory-dependent derivative | Ezzat, M. A., El-Karamany, A. S. and El-Bary, A. A. (2016), On dual-phase-lag thermoelasticity theory with memory-dependent derivative, Mechanics of Advanced Materials and Structures | 10.1080/15376494.2016.1196793 | yes |
-| 32 | Generalized fractional thermoelasticity associated with two relaxation times | Hamza, F., Abdou, M. and Abd El-Latief, A. M. (2014), Generalized fractional thermoelasticity associated with two relaxation times, Journal of Thermal Stresses 37:1080-1098 | 10.1080/01495739.2014.936196 | yes |
-| 33 | Generalized thermoelasticity | Hetnarski and Ignaczak 1999 (J. Thermal Stresses 22) | 10.1080/014957399280832 | yes |
-| 34 | A method for the numerical inversion of Laplace transforms | Honig and Hirdes 1984 (J. Comput. Appl. Math. 10) | 10.1016/0377-0427(84)90075-x | yes |
-| 35 | On the theory of thermoelasticity without energy dissipation | Iesan 1998 (J. Thermal Stresses 21, 295-307) | 10.1080/01495739808956148 | yes |
-| 36 | Domain of influence in thermoelasticity with one relaxation time | Ignaczak and Bialy 1980 (J. Thermal Stresses 3, 391-399) | 10.1080/01495738008926977 | yes |
-| 37 | Addendum to the paper "Heat waves" [Rev. Mod. Phys. 61, 41 (1989)] | Joseph and Preziosi 1990 (Rev. Mod. Phys. 62, 375) | 10.1103/revmodphys.62.375 | yes |
-| 38 | Nonhomogeneous dual-phase-lag heat conduction problem: analytical solution and select case studies | Julius, S., Leizeronok, B. and Cukurel, B. (2017), Nonhomogeneous dual-phase-lag heat conduction problem: analytical solution, Journal of Heat Transfer | 10.1115/1.4037775 | yes |
-| 39 | Hyperbolic heat conduction equation for materials with a nonhomogeneous inner structure | Kaminski 1990 (J. Heat Transfer 112, 555-560) | 10.1115/1.2910422 | yes |
-| 40 | Reflection and refraction of plane harmonic waves at an interface between elastic solid and magneto-thermoelastic diffusion solid with voids | Kumar and Kansal 2017 (Comput. Methods Sci. Technol. 23) | 10.12921/cmst.2016.0000036 | yes |
-| 41 | Rayleigh-type waves in nonlocal micropolar thermoelastic half-space containing void pores | Kumar and Tomar 2024 (J. Elasticity 156) | 10.1007/s10659-024-10079-4 | yes |
-| 42 | no title asserted - not recorded in the register and not matched in Crossref | Kumar, Devi and Sharma 2017 (Appl. Appl. Math. Int. J.) | none | - |
-| 43 | Response of memory to the imperfect fluid-double porous non-local thermoelastic solid interface | Kumar, Gupta, Pathania and Barak 2025 (J. Information and Optimization Sciences 46) | 10.47974/JIOS-1608 | yes |
-| 44 | Thermoelasticity | Nowacki 1975 (Thermoelasticity, Pergamon) | none | - |
-| 45 | Temperature-rate-dependent thermoelasticity theory with memory-dependent derivative: energy, uniqueness theorems, and variational principle | Singh, Sarkar and Pal 2020 (J. Heat Transfer 142) | 10.1115/1.4047510 | yes |
-| 46 | Macro- to microscale heat transfer: the lagging behavior | Tzou, D. Y. (1997), Macro-to-microscale heat transfer: the lagging behavior (book) | none | - |
-| 47 | no title asserted - not recorded in the register and not matched in Crossref | Vernotte 1958 | none | - |
-| 48 | Memory-dependent derivative versus fractional derivative (IV): space-dependent derivative for unsteady heat diffusion | Wang, J.-L. and Li, H.-F. (2025), Memory-dependent derivative versus fractional derivative (IV): space-dependent..., Fractal and Fractional 9:794 | 10.3390/fractalfract9120794 | yes |
+| 32 | Rayleigh-type waves in nonlocal micropolar thermoelastic half-space containing void pores | Kumar and Tomar 2024 (J. Elasticity 156) | 10.1007/s10659-024-10079-4 | yes |
+| 33 | no title asserted - not recorded in the register and not matched in Crossref | Kumar, Devi and Sharma 2017 (Appl. Appl. Math. Int. J.) | none | - |
+| 34 | Response of memory to the imperfect fluid-double porous non-local thermoelastic solid interface | Kumar, Gupta, Pathania and Barak 2025 (J. Information and Optimization Sciences 46) | 10.47974/JIOS-1608 | yes |
+| 35 | Thermoelasticity | Nowacki 1975 (Thermoelasticity, Pergamon) | none | - |
+| 36 | Temperature-rate-dependent thermoelasticity theory with memory-dependent derivative: energy, uniqueness theorems, and variational principle | Singh, Sarkar and Pal 2020 (J. Heat Transfer 142) | 10.1115/1.4047510 | yes |
+| 37 | Macro- to microscale heat transfer: the lagging behavior | Tzou, D. Y. (1997), Macro-to-microscale heat transfer: the lagging behavior (book) | none | - |
+| 38 | no title asserted - not recorded in the register and not matched in Crossref | Vernotte 1958 | none | - |
+| 39 | Memory-dependent derivative versus fractional derivative (IV): space-dependent derivative for unsteady heat diffusion | Wang, J.-L. and Li, H.-F. (2025), Memory-dependent derivative versus fractional derivative (IV): space-dependent..., Fractal and Fractional 9:794 | 10.3390/fractalfract9120794 | yes |
 
 ## Notes carried on individual rows
 
@@ -65,19 +56,13 @@ Updated 2026-11-01 after the author supplied the 41-80 batch. **48 works remain*
 - **#17 Carlson 1972 (Linear thermoelasticity, Handbuch der Physik VIa/2, 297-345).** Crossref holds the chapter as DOI 10.1007/978-3-662-39776-3_2, pages 297-345, but dates it 1973 against the register's 1972 - confirm which printing is meant
 - **#18 Cattaneo 1948.** title taken from the 2011 reprint record (DOI 10.1007/978-3-642-11051-1_5); the 1948 original in Atti Semin. Mat. Fis. Univ. Modena has no DOI
 - **#23 Danilovskaya 1950 (Prikl. Mat. Mekh. 14).** no Crossref record could be matched; no title is asserted here
-- **#37 Joseph and Preziosi 1990 (Rev. Mod. Phys. 62, 375).** resolves to "Addendum to the paper Heat waves", Rev. Mod. Phys. 62, 375-391 - the review itself is Rev. Mod. Phys. 61, 41 (1989), DOI 10.1103/RevModPhys.61.41
-- **#39 Kaminski 1990 (J. Heat Transfer 112, 555-560).** DOI found by Crossref bibliographic search this pass: J. Heat Transfer 112, 555-560 (1990) matches exactly
-- **#42 Kumar, Devi and Sharma 2017 (Appl. Appl. Math. Int. J.).** no Crossref record could be matched; no title is asserted here
-- **#44 Nowacki 1975 (Thermoelasticity, Pergamon).** book; Crossref holds chapter-level DOIs for the Pergamon Thermoelasticity dated 1986, so no book DOI is asserted
-- **#47 Vernotte 1958.** no Crossref record could be matched; no title is asserted here
-
-## Not supplied in the 41-80 batch (the eight numbers that were absent)
-
-Kumar and Tomar 2024 (J. Elasticity 156); Kumar, Devi and Sharma 2017 (Appl. Appl. Math. Int. J.); Kumar, Gupta, Pathania and Barak 2025 (J. Information and Optimization Sciences 46); Nowacki 1975, *Thermoelasticity* (Pergamon); Singh, Sarkar and Pal 2020 (J. Heat Transfer 142); Tzou 1997, *Macro- to Microscale Heat Transfer*; Vernotte 1958; Wang and Li 2025 (Fractal Fract. 9, 794).
+- **#33 Kumar, Devi and Sharma 2017 (Appl. Appl. Math. Int. J.).** no Crossref record could be matched; no title is asserted here
+- **#35 Nowacki 1975 (Thermoelasticity, Pergamon).** book; Crossref holds chapter-level DOIs for the Pergamon Thermoelasticity dated 1986, so no book DOI is asserted
+- **#38 Vernotte 1958.** no Crossref record could be matched; no title is asserted here
 
 ## If only a few more can be sent, these three first
 
 1. Tzou 1997, *Macro- to Microscale Heat Transfer: the lagging behavior*, CRC Press - two blocked claims hang on it (CR002, CR112).
 2. Singh, Sarkar and Pal 2020, J. Heat Transfer 142, DOI 10.1115/1.4047510 (CR210).
-3. Chirita, Ciarletta and Tibullo 2017, DOI 10.1016/j.ijheatmasstransfer.2017.06.071 - not part of the 41-80 range, so still open.
+3. Chirita, Ciarletta and Tibullo 2017, DOI 10.1016/j.ijheatmasstransfer.2017.06.071 - it is number 21 of this list, so the 1-40 upload overlapped it but did not carry it.
 
