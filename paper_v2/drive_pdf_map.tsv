@@ -12,7 +12,7 @@ filename	file_id	status	bibkey	doi	identification
 978-1-4612-0555-5.pdf	1ByOStzTo-K_hFCkgcSQXr_ttPU-p7h9i	MATCHED	Eringen1999		filename contains the DOI
 978-3-642-31232-8.pdf	1nNbRmumKb_iWy60v3MtcjFwHCpKSPvis	MATCHED	Deymier2013		filename contains the DOI
 Abate_2006.pdf	1SeWdTTyJCbBW3ulfkhbYCJWsKcz1B4lh	MATCHED	AbateWhitt2006		single candidate by author+year on the filename; page 1 not re-read
-Achenbach_1968.pdf	1NSBveS-QjDPO4jRXl0kDojX6cS33zF4Q	UNCITED		10.1016/0022-5096(68)90015-0	Achenbach 1968, The influence of heat conduction on propagating stress jumps, J. Mech. Phys. Solids 16:273-282
+Achenbach_1968.pdf	1NSBveS-QjDPO4jRXl0kDojX6cS33zF4Q	UNCITED		10.1016/0022-5096(68)90035-5	Achenbach 1968, The influence of heat conduction on propagating stress jumps, J. Mech. Phys. Solids 16:273-282
 Aifantis_1992.pdf	1yPOoCyzxcf2j6qfBYe4MFzf06B4qSInM	MATCHED	Aifantis1992		single candidate by author+year on the filename; page 1 not re-read
 Aifantis_2003_2.pdf	19Tr7L9YbQfzuyQCcAtcI3EXXayPb-_VC	MATCHED	Aifantis2003		single candidate by author+year on the filename; page 1 not re-read
 Bazarra_2021.pdf	10nV2qgS3dZgZT-Nfffr9ChGOfB845u5n	MATCHED	Bazarra2021MGTradial		single candidate by author+year on the filename; page 1 not re-read
@@ -25,9 +25,9 @@ Coleman_1963.pdf	1HX2PBZS8x89qrrLZqA1IByaDz14LGJcx	MATCHED	Coleman1963		single c
 Coleman_1964.pdf	1fbC2WEfgNyr4HwYcn2JzEQnHnKtUoX0H	UNCITED			Coleman 1964, Thermodynamics of materials with memory - the bib's Coleman1963 is a different paper (elastic materials with heat conduction and viscosity)
 Compte_1997.pdf	1mpC71NJEiluyoJkjbC3SUKInP9iX25cm	UNCITED		10.1088/0305-4470/30/21/006	Compte 1997, The generalized Cattaneo equation, J. Phys. A 30:7277
 Cowin_1983.pdf	1-mLZCiEXBcuAAaF5DL1UxERmy9epMAGd	MATCHED	Cowin1983		single candidate by author+year on the filename; page 1 not re-read
-Crump_1976.pdf	1nPrpf4hXpRLp7UkFoYyP2Qh72WLLh354	UNCITED		10.1145/321941.321944	Crump 1976, Numerical inversion of Laplace transforms using a Fourier series approximation, J. ACM 23:89
+Crump_1976.pdf	1nPrpf4hXpRLp7UkFoYyP2Qh72WLLh354	UNCITED		10.1145/321921.321931	Crump 1976, Numerical inversion of Laplace transforms using a Fourier series approximation, J. ACM 23:89
 Dafermos_1968.pdf	1VqoQ9-2DzpNgTffdPrfGp8nmfsn-4cP1	UNCITED			Dafermos 1968, Existence and asymptotic stability for linear thermoelasticity, ARMA 29:241
-Deresiewicz_1957.pdf	18kfUeMIRSZV1r0QjPpSk9ZbYw3HhmYS_	UNCITED		10.1121/1.1908850	Deresiewicz 1957, Plane waves in a thermoelastic solid, JASA 29(2):204
+Deresiewicz_1957.pdf	18kfUeMIRSZV1r0QjPpSk9ZbYw3HhmYS_	UNCITED		10.1121/1.1908832	Deresiewicz 1957, Plane waves in a thermoelastic solid, JASA 29(2):204
 Eringen_1966.pdf	1skx-nu4T4pbThodqD4FgmnkCk5aaC9gr	MATCHED	Eringen1966a		single candidate by author+year on the filename; page 1 not re-read
 Eringen_1972.pdf	1-R5TDsTuz72OnRpRK60ACIMqzoR_zZhE	MATCHED	Eringen1972		single candidate by author+year on the filename; page 1 not re-read
 Eringen_1972_2.pdf	1a35X2xK_xpVoH_XyORNlCYRDXDHrza5U	MATCHED-duplicate-copy	Eringen1972		second copy of the same paper
@@ -53,7 +53,7 @@ Liu_1972.pdf	1cUBJFESuO6k5Dq4pjKKilv2kglbj7kUo	UNCITED			Liu 1972, Method of Lag
 Mindlin_1965.pdf	1DjHSjNwWzZhcUd3Sc1efFr0yY1LBWzZ2	MATCHED	Mindlin1965		page 1 read: IJSS 1 (1965) 417-438
 Mindlin_1968.pdf	1tVKqi_o1FlvvKK6XTufGkLXU62fBhIMj	UNCITED		10.1016/0020-7683(68)90033-4	Mindlin & Eshel 1968, On first strain-gradient theories in linear elasticity, IJSS 4:109-124
 Mitra_1995.pdf	1gX9RWZ550n9ZxrDbe4FW66W3jCJppQnk	MATCHED	Mitra1995		page 1 read: Experimental evidence of hyperbolic heat conduction in processed meat
-Nayfeh_1971.pdf	1U85ck3Lujc7NhgAZYS14BohXiwjhEI41	UNCITED		10.1007/BF01174338	Nayfeh & Nemat-Nasser 1971, Thermoelastic waves in solids with thermal relaxation, Acta Mech. 12:53-69
+Nayfeh_1971.pdf	1U85ck3Lujc7NhgAZYS14BohXiwjhEI41	UNCITED		10.1007/BF01178389	Nayfeh & Nemat-Nasser 1971, Thermoelastic waves in solids with thermal relaxation, Acta Mech. 12:53-69
 Nunziato_1979.pdf	1rF5Km38Lgp3CzzgwecHz5VkmD4HFtxQ0	MATCHED	Nunziato1979		single candidate by author+year on the filename; page 1 not re-read
 Povstenko_2011.pdf	1MhTVKq9cQwAbZfZsU1g3-ias-6d-E8Zw	MATCHED	Povstenko2011Cattaneo		page 1 read: Fractional Cattaneo-type equations and generalized thermoelasticity
 Povstenko_2015.pdf	1Ksbsfv6CVM-SR1HG69nUiWPv6l1rBizf	CANDIDATE	Povstenko2016		page 1 could not be read (Drive read error); filename+year suggests Povstenko2016 'Fractional thermoelasticity' (bib year 2015)
