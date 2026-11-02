@@ -1,0 +1,108 @@
+\section{Hyperbolic theories: LS, GL and GN}\label{sec:hyperbolic}
+\subsection{A common dispersion equation}
+For plane longitudinal motion the three classical generalized theories fit into one equation. Let $\tau_0$ denote the flux relaxation time (Lord--Shulman) or the thermal relaxation time (Green--Lindsay, in the notation of the later literature), and let $\tau^\dagger$ be the lag that multiplies the thermal-stress and dilatation coupling. Eliminating $\hat u$ and $\hat\theta$ gives
+\begin{equation}
+\bigl(\rho c_1^2K+\rho s^2\bigr)\Bigl(s\rho c\,(1+\tau_0s)+kK\Bigr)+\beta^2T_0\,s\,K\,(1+\tau^\dagger s)=0,\label{eq:unified}
+\end{equation}
+with $\tau^\dagger=0$ and $\tau_0=0$ for the classical theory, $\tau^\dagger=\tau_0$ for Lord--Shulman (this is \eqref{eq:disp} multiplied by $1+\tau_0s$), and $\tau^\dagger=\tau_1$, the second relaxation time, for Green--Lindsay. The unified form of Dhaliwal and Sherief \citep{Dhaliwal1980} makes the same point at the level of the field equations: the theories differ in which of the two coupling terms carries a time-derivative correction.
+
+\subsection{Lord--Shulman theory}\label{sec:ls}
+The Lord--Shulman (LS) theory joins Cattaneo's law \eqref{eq:cattaneo} to the energy balance \eqref{eq:en}. Eliminating the flux gives the temperature equation
+\begin{equation}
+k\nabla^2\theta=(1+\tau_0\partial_t)\bigl(\rho c\,\dot\theta+T_0\beta\,\dot\varepsilon_{kk}\bigr)-(1+\tau_0\partial_t)\rho r, \label{eq:LS}
+\end{equation}
+so the lagged derivative acts on \emph{both} the heat-capacity term and the dilatation-coupling term. The second of these is a modelling consequence of applying the Cattaneo law to the total heat flux, and it produces the difference from the Green--Lindsay equations.
+
+\paragraph{Wave fronts.} Take $\omega\to\infty$ in \eqref{eq:unified}. The leading terms in $s$ give, with $c_T^2=k/(\rho c\tau_0)$ and $\varepsilon=\beta^2T_0/(\rho^2cc_1^2)$,
+\begin{equation}
+c_{\rm f}^4-c_{\rm f}^2\bigl[c_1^2(1+\varepsilon\,\tau^\dagger/\tau_0)+c_T^2\bigr]+c_1^2c_T^2=0, \label{eq:fronts}
+\end{equation}
+whose two roots $c_{\rm f}$ are the speeds of the two wave fronts, one elastic-type and one thermal-type, with $v_{\rm e}<v_{\rm t}$ when $c_T>c_1$ (the labels exchange for $c_T<c_1$). For LS, $\tau^\dagger=\tau_0$ and the equation is the standard high-frequency front equation of the theory; for GL it is \eqref{eq:fronts} with the factor $\tau_1/\tau_0$. We verified \eqref{eq:fronts} numerically against the roots of \eqref{eq:unified} at $\omega/\omega_*=2\times10^3$ for both theories (script \path{check_fronts.py}). With $\varepsilon=0.1$ and $\tau_0=0.25/\omega_*$ ($c_T=2c_1$) the LS fronts are $0.9839\,c_1$ and $2.0327\,c_1$, and with $\tau_1=0.1/\omega_*$ the GL fronts are $0.9934\,c_1$ and $2.0132\,c_1$, in agreement with \eqref{eq:fronts} to four digits. Two features deserve recording.
+\begin{enumerate}
+\item The elastic front speed is \emph{not} the isothermal speed $c_1$, nor the adiabatic speed. Interaction with the thermal front displaces it, and the two speeds repel one another: their product is $c_1c_T$ and the sum of their squares is $c_1^2(1+\varepsilon)+c_T^2$. When $c_T=c_1$ the degeneracy is lifted by an amount proportional to $\sqrt\varepsilon$, $v^2=c_1^2[2+\varepsilon\pm\sqrt{\varepsilon(4+\varepsilon)}]/2\approx c_1^2(1\pm\sqrt\varepsilon)$.
+\item The leading front speeds depend only on the high-frequency terms, so they are independent of $k$ except through $c_T$.
+\end{enumerate}
+
+\begin{figure}[t!]\centering\small
+\input{figs_tikz/fig3_fronts.tex}
+\caption{Geometry after \citep{Lord1967}: two wave fronts in hyperbolic thermoelasticity -- elastic-type and thermal-type fronts repel in speed; the thermal front carries a damped tail.}\label{fig:fronts}
+\end{figure}
+
+\paragraph{Discontinuities and well-posedness.} The system is hyperbolic, so initial data with a jump produce solutions whose jumps travel along the fronts and decay exponentially along the propagation path; the heat-pulse problem of Section~\ref{sec:transient} shows this. The system is well posed for $\tau_0>0$, and energy decays in bounded bodies under standard boundary conditions by the energy identity \eqref{eq:energy}. Existence of generalized solutions was established for one relaxation time by \citep{Bem1982} and for two by \citep{Bem1983}, and domain-of-influence results appear in \citep{Ignaczak1980}. The thermodynamic foundation via the Clausius--Duhem inequality is due to \citep{GurtinWilliams1966}.
+
+\paragraph{Interpretation.} Two modelling questions matter: the physical size of $\tau_0$, and whether Cattaneo's law with a single exponential relaxation describes the frequency range of interest. Joseph and Preziosi \citep{Joseph1989,Joseph1990} review the evidence for and against. Large relaxation times have been reported for nonhomogeneous materials \citep{Kaminski1990,Mitra1995}, though the interpretation of such measurements is debated. For solids the strongest evidence of wave-like heat propagation remains second sound at cryogenic temperatures \citep{Ackerman1966,Jackson1970}, where the governing regime is the Guyer--Krumhansl hydrodynamic one \citep{GuyerKrumhansl1966II} rather than the simple Cattaneo law.
+
+\subsection{Green--Lindsay theory}\label{sec:gl}
+The Green--Lindsay (GL) theory \citep{Green1972} has the constitutive relations
+\begin{equation}
+\sigma_{ij}=C_{ijkl}\varepsilon_{kl}-\beta_{ij}\bigl(\theta+\tau_1\dot\theta\bigr),\qquad
+k\theta_{,ii}=\rho c\bigl(\dot\theta+\tau_0\ddot\theta\bigr)+T_0\beta_{ij}\dot\varepsilon_{ij},\label{eq:GL}
+\end{equation}
+with $\tau_0\ge\tau_1\ge0$. Heat conduction is Fourier's here, so the theory does not fit the flux template \eqref{eq:template}: the finite thermal speed comes from the inertia term $\tau_0\ddot\theta$ instead. Substitution in plane waves gives \eqref{eq:unified} with $\tau^\dagger=\tau_1$. Three differences from LS matter. First, the thermal equation is not of Cattaneo type, so its relation to kinetic arguments is less direct. Second, the entropy depends on the temperature rate, which puts a thermal-displacement-like quantity into the constitutive structure and makes care necessary in reading $\tau_0$ and $\tau_1$ as independent material constants. Third, solutions of the original theory can contain discontinuities that some authors consider unphysical, and a modification with a strain-rate term was proposed to remove them \citep{Yu2018ModifiedGL}. Wave fronts follow \eqref{eq:fronts} with $\tau^\dagger=\tau_1$, and one consequence distinguishes GL from LS: at the wave fronts the coupling is weaker than in LS by the factor $\tau_1/\tau_0\le1$.
+
+\subsection{Green--Naghdi types I, II and III}\label{sec:gn}
+The Green--Naghdi (GN) theories \citep{Green1991,GreenGN1992,Green1993} postulate an entropy balance with the thermal displacement $v$ ($\dot v=\theta$) as a primary field. In the template the three types are
+\begin{equation}
+\text{I: }\ q_i=-k\theta_{,i};\qquad
+\text{II: }\ q_i=-k^*v_{,i};\qquad
+\text{III: }\ q_i=-k\theta_{,i}-k^*v_{,i},
+\end{equation}
+with $G=k$, $k^*/s$ and $k+k^*/s$, respectively. Their uncoupled thermal equations are, with $\rho c=1$ for brevity,
+\begin{equation}
+\text{II: }\ \ddot\theta=c_*^2\nabla^2\theta,\quad c_*^2=k^*/\rho c;\qquad
+\text{III: }\ \ddot\theta=c_*^2\nabla^2\theta+\alpha\nabla^2\dot\theta.
+\end{equation}
+\paragraph{Type II.} Thermal disturbances propagate as undamped waves of speed $c_*$, and with coupling the two fronts satisfy \eqref{eq:fronts} with $c_T\to c_*$ and $\tau^\dagger/\tau_0\to1$. Here the relation is \emph{exact at every frequency}, not merely asymptotically: the roots of the quadratic \eqref{eq:disp} with $G=k^*/s$ are non-dispersive, with $v^4-v^2[c_1^2(1+\varepsilon)+c_*^2]+c_1^2c_*^2=0$ at every $\omega$. We confirmed this numerically for $\varepsilon=0.1$ and $c_*=c_1$: the exact speeds $0.854309c_1$ and $1.170537c_1$ are the same at $\omega/\omega_*=0.5$, $2$ and $10$, and agree with the formula. The theory conserves energy, so there is no thermoelastic damping at all; it is the only member of the family with that property and therefore the benchmark for energy-based checks.
+\paragraph{Type III.} The type III equation is a damped wave equation with a Kelvin--Voigt-type damping term $\alpha\nabla^2\dot\theta$. Two consequences deserve emphasis. At \emph{low} frequency $G\simeq k^*/s$ and the thermal branch has the type-II speed $c_*$; at \emph{high} frequency $G\to k$ and the branch becomes diffusive, so its phase speed is unbounded (\Cref{fig:family}, magenta curve), exactly as in the classical theory. Type III is thus wave-like at low frequencies and diffusive at high frequencies, in contrast to LS, and its thermal signals have no finite propagation speed in the strict sense, since the strongly damped wave equation has a parabolic smoothing effect. In practice type III describes weakly damped thermal waves at moderate frequencies; it is not an ``improved Cattaneo law''. Statements in the literature that type III has a finite thermal wave speed should be read as referring to the undamped limit.
+\paragraph{Uniqueness and stability.} Chandrasekharaiah proved uniqueness for type II \citep{Chandrasekharaiah1996}, complete solutions for type II were given by \citep{Chandrasekharaiah1997}, and the theory without energy dissipation for anisotropic and micropolar media was developed in \citep{Iesan1998,Quintanilla1999,Ciarletta1999,Quintanilla2002}. Stability and decay results for type III belong to the mathematical theory of thermoelasticity \citep{Suh1998}. Type II has drawn attention as a conservative reference model, and combined with nonlocal elasticity it has been analysed for wave dispersion \citep{Sarkar2019}.
+
+\subsection{What each attribution was checked against}\label{sec:provenance}
+
+An attribution is a claim about a source, and it can be checked or merely repeated. The table below
+records, for the attributions in this paper that were checked at page level, what the check consisted of
+and, just as important, what it does not cover. Statements absent from the table were not checked at
+page level and are presented as reproduced, which is the weaker claim.
+
+\begin{table}[H]\centering\small
+\caption{Page-level provenance for attributions made in this paper. `Covers' names the statement the check
+supports; `does not cover' names the part of the paper that the check leaves standing on the secondary
+literature.}
+\label{tab:provenance}
+\begin{tabularx}{\textwidth}{@{}p{3.1cm}Y Y@{}}
+\toprule
+\textbf{Statement} & \textbf{Checked against} & \textbf{Covers / does not cover} \\
+\midrule
+Biot heat-conduction equation, \eqref{eq:en} & Biot (1956), printed p.~242, Eqs.~(3.3)--(3.4) &
+  Covers the linear isotropic Fourier form with constant coefficients in a source-free body. Does not
+  cover coupled boundary-value solutions, anisotropy, or temperature-dependent properties. \\
+Green--Lindsay stress and entropy, \eqref{eq:GL} & Green and Lindsay (1972), primary text &
+  Covers the temperature-rate dependent stress and entropy, the absence of a relaxation term on the
+  strain-rate coupling, and the ordering of the two lags. Does not cover the existence theory of the
+  initial-boundary-value problem. \\
+Green--Naghdi type~II, in \cref{sec:hyperbolic} & Green and Naghdi (1993), Eq.~(3.16) integrated once &
+  Covers the source-free form with a zero integration constant. Does not cover type~III, nor the entropy
+  flux component relation, which is left open in the register. \\
+Three-phase-lag law, \eqref{eq:tpl} & Roy Choudhuri (2007), Eqs.~(3)--(4) &
+  Covers the first-order three-lag statement with its thermal-displacement-gradient term. Does not cover
+  second-order truncations. \\
+DPL stability ordering $\tau_T>\tau_q/2$ & Quintanilla (2003) &
+  Covers a spectral (eigenvalue) stability statement for the linearized problem. Does \emph{not} rest on
+  an energy functional, and says nothing about the nonlinear or finite-amplitude case. \\
+Thermoelastic damping of the reed & Zener (1937) &
+  Covers the attribution of the damping mechanism to Zener's reed calculation. Does not cover the
+  plate and flexural extensions derived in \cref{app:disp}, which are re-derived here. \\
+Second stiffness value in the piezothermoelastic bar example & The material data as stated with the
+  example & The value is \emph{not} quoted from the earlier piezoelectric literature; the example states
+  its own data, and the register marks the constitutive relation \eqref{eq:piezo} UNVERIFIED. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The last two rows show a deliberate pattern. Where a number could be borrowed from a source whose
+equation was not checked, the number is either generated from stated data or omitted. A borrowed
+number with an unchecked equation behind it is the commonest way a review propagates an error it did not
+commit.
+
+\begin{summarybox}[Summary]
+For linear homogeneous media, LS, GL and GN are covered by the one dispersion equation \eqref{eq:unified}; they differ in which coupling term carries a time-derivative correction. LS has finite thermal speed $c_T$ from flux relaxation; GL has it from thermal inertia $\tau_0\ddot\theta$; GN-II is non-dispersive and energy-conserving; GN-III is wave-like at low frequency but diffusive at high frequency and has no finite front speed in the strict sense. Front speeds obey \eqref{eq:fronts} and repel when $c_T\approx c_1$.
+\end{summarybox}

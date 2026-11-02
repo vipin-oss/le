@@ -1,0 +1,40 @@
+\subsection{Admissibility of a heat law}\label{sec:admiss}
+A heat law can be wrong in several ways, and the tests are not interchangeable. \emph{Conservation} is built into the balance laws and says nothing about the constitutive law. \emph{Thermodynamic admissibility} asks whether the law is compatible with the second law; for materials with internal state variables the Clausius--Duhem inequality restricts the response functions \citep{ColemanGurtin1967}, and for heat conduction with memory it restricts the relaxation functions, not merely the signs of coefficients \citep{ChenNunziato1974}. \emph{Causality} asks that the response vanish before the excitation, which for the transfer function means analyticity for $\operatorname{Re}s>0$. \emph{Stability} asks that no mode grow in time. \emph{Finite speed} is a property of the high-frequency limit and stands independent of the others. A model can pass one test and fail another.
+
+For the template of \cref{sec:foundations} in a linear, homogeneous medium, two necessary conditions follow from the transfer function $G(s)=\bigl[k(1+\tau_Ts)+k^*(1+\tau_vs)/s\bigr]/(1+\tau_qs)$ of the uncoupled thermal mode. We derive both here and verify them with \path{scripts/check_admissibility.py}.
+
+\paragraph{Mean dissipation.} For a harmonic temperature gradient the time-averaged product $-q\,\theta_{,x}$ is proportional to $\operatorname{Re}G(i\omega)$, and
+\begin{equation}\label{eq:reG}
+\operatorname{Re}G(i\omega)=\frac{k+k^*(\tau_v-\tau_q)+k\,\tau_q\tau_T\,\omega^2}{1+\tau_q^2\omega^2}.
+\end{equation}
+A heat flux that on average removes entropy-producing gradients, with the entropy flux taken as $q/T_0$, needs $\operatorname{Re}G\ge0$ at every frequency. For $\tau_q,\tau_T\ge0$ this reduces to
+\begin{equation}\label{eq:admiss}
+k+k^*(\tau_v-\tau_q)\ \ge\ 0 .
+\end{equation}
+The Green--Naghdi type-II law ($k=0$, all lags zero) gives $\operatorname{Re}G=0$ at every frequency: it is lossless, which agrees with the statement of Green and Naghdi that this theory involves no dissipation of energy and permits harmonic waves without damping \citep{Green1993}.
+
+\paragraph{Temporal stability.} For a real wave number $\kappa$, put $K=\kappa^2$. The modes $e^{st}$ of the uncoupled thermal equation solve
+\begin{equation}\label{eq:cubic}
+\rho c\,\tau_q s^3+(\rho c+Kk\tau_T)s^2+K(k+k^*\tau_v)s+Kk^*=0 .
+\end{equation}
+The Routh--Hurwitz conditions for all roots in the open left half-plane are equivalent to
+\begin{equation}\label{eq:rh}
+\rho c\,\bigl[k+k^*(\tau_v-\tau_q)\bigr]+Kk\tau_T\,(k+k^*\tau_v)>0 ,
+\end{equation}
+so that for $\tau_T\ge0$ stability at all wave numbers requires the same inequality \eqref{eq:admiss} as the dissipation test. We confirmed \eqref{eq:rh} against the numerically computed roots of \eqref{eq:cubic} for 20\,000 random parameter sets, with no disagreement.
+
+\begin{table}[ht]\centering\small
+\caption{Admissibility of the template models for the uncoupled thermal mode (derived here; $\tau_q,\tau_T,\tau_v\ge0$). ``Finite speed'' refers to the high-frequency limit of the uncoupled mode.}\label{tab:admiss}
+\begin{tabularx}{\textwidth}{@{}p{2.3cm}p{3.0cm}p{3.6cm}X@{}}\toprule
+Model & Parameter choice & Dissipation and stability & Comment\\\midrule
+Fourier & all lags $=0$, $k^*=0$ & $\operatorname{Re}G=k>0$; stable & Infinite speed.\\
+Lord--Shulman & $k^*=0$, $\tau_T=0$ & $\operatorname{Re}G=k/(1+\tau_q^2\omega^2)>0$; stable & Finite speed $\sqrt{k/(\rho c\,\tau_q)}$.\\
+Dual-phase-lag & $k^*=0$ & $\operatorname{Re}G>0$ for $\tau_T\ge0$; stable & No finite front in the first-order law (diffusive at high frequency).\\
+Green--Naghdi II & $k=0$, lags $=0$ & $\operatorname{Re}G=0$; marginal (purely oscillatory) & Lossless, finite speed.\\
+Green--Naghdi III & lags $=0$ & $\operatorname{Re}G=k>0$; stable & Diffusive at high frequency, no finite front.\\
+Moore--Gibson--Thompson & $\tau_T=\tau_v=0$ & stable iff $k\ge k^*\tau_q$ (marginal at equality) & Finite speed; not admissible if $k^*\tau_q>k$, in line with the instability for $k<k^*\tau_q$ and the exponential stability for $k-\tau k^*>0$ in \citet{Quintanilla2019}.\\
+Three-phase-lag & general & stable iff \eqref{eq:admiss} (for $\tau_T\ge0$) & Parameters must be chosen within this region.\\
+\bottomrule\end{tabularx}
+\end{table}
+
+These tests are necessary, not sufficient. A mode-by-mode check says nothing about the coupled problem, about energy-flux postulates other than $q/T_0$, or about well-posedness of initial-boundary-value problems. The entropy flux in the Green--Naghdi theories is a separate quantity with the heat flux equal to the temperature times that flux; for type II it follows from the free-energy potential rather than from a Fourier law, and in linearized type I it agrees with $q/T_0$ to first order \citep{Green1993}. For a law with memory the second law constrains the relaxation functions themselves: the initial values of the energy and heat-flux relaxation functions are non-negative, the initial slope of the heat-flux relaxation function is non-positive, and the equilibrium conductivity is non-negative \citep{ChenNunziato1974}. A Kramers--Kronig check of the kind in \cref{sec:prelim} does not establish admissibility. Inequality \eqref{eq:admiss} is also a parameter restriction that fitted values must respect, and reported phase-lag values should be checked against it before they are used as evidence for a model.

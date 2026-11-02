@@ -1,0 +1,26 @@
+\section{Effective modulus, causality and Kramers--Kronig relations}\label{sec:modulus}
+A wave measurement does not return $k(\omega)$ for a heat law. It returns a complex wavenumber that the experimenter reads as a frequency-dependent modulus. We make that reading explicit for the one-dimensional coupled problem and state what causality does and does not imply.
+
+\subsection{The effective modulus is the root of a quadratic}
+Define $m(s)=\omega^2/K=-s^2/K$, the squared complex phase speed of the elastic-type branch ($K=k^2$). Substituting $K=-s^2/m$ in \eqref{eq:disp}, with $R=\rho c$ the volumetric heat capacity and $\beta^2T_0$ the coupling, and dividing by $s^3$ gives
+\begin{equation}
+\rho R\,m^2-\bigl[\rho R\,c_1^2+\rho\,G(s)\,s+\beta^2T_0\bigr]\,m+\rho c_1^2\,G(s)\,s=0 .\label{eq:mquad}
+\end{equation}
+The effective longitudinal modulus is $M(s)=\rho\,m(s)$, with $m$ the root that tends to $c_1^2$ for $\beta\to0$. Equation \eqref{eq:mquad} contains the heat law only through the product $G(s)\,s$, which is the statement of \cref{sec:identify} in a different form; it is equivalent to \eqref{eq:disp} and was checked against the numerical roots of the latter for the classical, Lord--Shulman, dual-phase-lag, Green--Naghdi III and Moore--Gibson--Thompson parameter sets (\path{check_modulus.py}, agreement to $10^{-10}$).
+
+Three limits follow directly.
+\begin{itemize}
+\item \emph{Weak coupling.} To first order in $\beta^2T_0$, $m=c_1^2+\beta^2T_0\,c_1^2\big/\bigl[\rho\,(R c_1^2-G s)\bigr]$. For Fourier conduction ($G=k$) this is a single Debye term, $m=c_1^2\bigl[1+\varepsilon/(1+\ii\omega/\omega_*)\bigr]$, the weak-coupling form behind the loss peak of \cref{sec:classical}.
+\item \emph{Fourier, exact.} Because $G\,s\to0$ as $s\to0$ and $G\,s\to\infty$ as $s\to\infty$, the elastic-type root tends to the adiabatic value $c_1^2+\beta^2T_0/(\rho R)$ at low frequency and to $c_1^2$ at high frequency, as \cref{sec:classical} states.
+\item \emph{Lord--Shulman, high frequency.} With $G\,s\to k/\tau_0$ the two roots of \eqref{eq:mquad} are those of the front relation \eqref{eq:fronts} with $\tau^\dagger=\tau_0$ (verified numerically in the same script), so the finite thermal front enters the modulus as a finite high-frequency limit.
+\end{itemize}
+A standard linear solid has a modulus that is a rational function of $s$; $M(s)$ here is an \emph{algebraic} function, a root of a quadratic, with branch points where the discriminant of \eqref{eq:mquad} vanishes. The single Debye form is therefore a weak-coupling approximation, not the exact thermoelastic modulus.
+
+\subsection{What causality implies}
+The response of the bar to a force applied at $t=0$ vanishes for $t<0$ if the transfer function is analytic for $\operatorname{Re}s>0$. For the elastic-type root this requires that the discriminant of \eqref{eq:mquad} has no zero there, and that the admissibility conditions of \cref{sec:admiss} hold so that $G$ itself is regular. We tested the first condition on a grid of $60\times201$ points in $0.001\le\operatorname{Re}s\le100$, $|\operatorname{Im}s|\le50$ for the five parameter sets above and found no zero of the discriminant; the smallest normalised value exceeded $10^{-6}$. That is a numerical test on a bounded region, not a proof. Where analyticity holds, the real and imaginary parts of $M$ are related by the Kramers--Kronig integrals, and the loss integrates to the dispersion step,
+\begin{equation}
+\int_{0}^{\infty}Q^{-1}\,\dd\ln\omega=\pi\,\frac{c_{0}-c_{\infty}}{\bar c},
+\end{equation}
+with $c_0,c_\infty$ the low- and high-frequency phase speeds and $\bar c$ their mean. We confirm the relation for the classical coupled wave (\path{check_kk.py}, deviation below $10^{-5}$). The sum rule was checked for the classical model only; for the other heat laws it should hold under the same analyticity condition, but we have not verified it here.
+
+\paragraph{Consequence for fitting.} Analyticity makes a measured attenuation spectrum and a measured velocity spectrum dependent on each other. A lag model fitted separately to the two, with different parameters resulting, is inconsistent with a causal linear response, unless the data are noisy; \cref{sec:identify} shows which parameter combinations the pair can determine at all.
