@@ -12,10 +12,23 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, "/home/user/work")
-import p8_data  # noqa: E402
+sys.path.insert(0, HERE)
+import refs_data as p8_data  # noqa: E402  (vendored here in P9; no external path needed)
 
-EXISTING = set(open("/home/user/work/p8_existing_keys.txt", encoding="utf8").read().split())
+_EXISTING = os.path.join(HERE, "existing_keys.txt")
+EXISTING = (set(open(_EXISTING, encoding="utf8").read().split())
+            if os.path.exists(_EXISTING) else set())
+
+# P9: which of the records were actually opened. READ = library PDF read in P9;
+# NOT FOUND = searched for in the library by author, DOI-derived filename and topic, absent;
+# NOT CHECKED = outside the P9 priority list, never searched.
+PDF_STATUS = {
+    "Mindlin1965": "READ",
+    "Toupin1962": "NOT FOUND", "Toupin1964": "NOT FOUND", "Mindlin1964": "NOT FOUND",
+    "GreenRivlin1964": "NOT FOUND", "Hutson1962": "NOT FOUND", "White1962": "NOT FOUND",
+    "Hussein2014": "NOT FOUND", "Liu2000": "NOT FOUND", "Sigalas1992": "NOT FOUND",
+    "Kushwaha1993": "NOT FOUND", "Zubko2013": "NOT FOUND",
+}
 
 ACCENTS = {"à": r"{\`a}", "á": r"{\'a}", "è": r"{\`e}", "é": r"{\'e}", "ù": r"{\`u}", "ú": r"{\'u}",
            "ö": r"{\"o}", "ü": r"{\"u}", "ä": r"{\"a}", "ñ": r"{\~n}", "ç": r"{\c c}", "ø": r"{\o}"}
@@ -68,14 +81,15 @@ def main():
     with open(csv_path, "w", newline="", encoding="utf8") as f:
         w = csv.writer(f)
         w.writerow(["key", "area", "authors", "year", "title", "venue", "volume", "pages", "doi",
-                    "verification", "fits_section", "inside_or_outside_template",
+                    "verification", "pdf_status", "fits_section", "inside_or_outside_template",
                     "what_it_shows", "notes"])
         for e in entries:
             w.writerow([
                 e["key"], e["area"],
                 "; ".join("%s %s" % (f.split()[-1], g) for f, g in e["authors"]),
                 e["year"], e["title"], e["journal"], e["volume"], e["pages"], e["doi"],
-                e["ver"], e["fits"], e["inout"], e["shows"], e.get("note", ""),
+                e["ver"], PDF_STATUS.get(e["key"], "NOT CHECKED"),
+                e["fits"], e["inout"], e["shows"], e.get("note", ""),
             ])
 
     from collections import Counter
@@ -85,7 +99,10 @@ def main():
     print("wrote", csv_path)
     print("total %d references:" % len(entries), dict(sorted(by_area.items())))
     print("by verification level:", dict(sorted(by_ver.items())))
-    print("keys checked against %d existing keys, no clash" % len(EXISTING))
+    from collections import Counter as _C
+    print("pdf status:", dict(sorted(_C(PDF_STATUS.get(e["key"], "NOT CHECKED") for e in entries).items())))
+    if EXISTING:
+        print("keys checked against %d existing keys, no clash" % len(EXISTING))
 
 
 if __name__ == "__main__":
