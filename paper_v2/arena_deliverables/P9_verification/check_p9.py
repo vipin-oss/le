@@ -7,7 +7,8 @@ Gates
   2. evidence_P9.csv: every row carries a level in R0-R3, a non-empty page range, an equation
      list (or an explicit 'none'), and the sentence it bears on.
   3. missing_pdfs_P9.csv: eleven rows, each with a DOI, none of them claimed as read.
-  4. ../P8_coverage/refs_P8.csv: 72 rows, a pdf_status column, exactly one R3 row, and that row
+  4. ../P8_coverage/refs_P8.csv: 72 rows, a pdf_status column, Mindlin1965 at R3 with its P9
+     note (later phases may upgrade further rows; this gate only guards the P9 upgrade)
      is Mindlin1965.
   5. No PDFs, no Drive identifiers or links, no sandbox paths in any deliverable.
 
@@ -85,11 +86,18 @@ def main():
         lv = {}
         for r in rows:
             lv[r["verification"]] = lv.get(r["verification"], 0) + 1
-        if lv.get("R3") != 1 or lv.get("R0") != 71:
-            fail("refs_P8.csv verification counts are %s, expected 1 x R3 and 71 x R0" % lv)
-        r3 = [r["key"] for r in rows if r["verification"] == "R3"]
-        if r3 != ["Mindlin1965"]:
-            fail("the R3 row is %s, expected ['Mindlin1965']" % r3)
+        bad = sorted({r["verification"] for r in rows} - {"R0", "R1", "R2", "R3"})
+        if bad:
+            fail("refs_P8.csv has verification levels outside R0-R3: %s" % bad)
+        # P11 note: the exact distribution (1 x R3, 71 x R0) was true on the day P9 ran; later
+        # phases legitimately upgrade more rows. The gate guards the P9 upgrade itself, not the
+        # snapshot, so that it stays meaningful after P11 read eleven more papers.
+        p9 = [r for r in rows if r["key"] == "Mindlin1965"]
+        if not p9:
+            fail("refs_P8.csv has no Mindlin1965 row")
+        elif p9[0]["verification"] != "R3" or "P9" not in p9[0].get("notes", ""):
+            fail("Mindlin1965 is %r with notes %r; expected R3 with the P9 note"
+                 % (p9[0]["verification"], p9[0].get("notes", "")[:40]))
         if rows[0].get("pdf_status") and not any(r["pdf_status"] == "READ" for r in rows):
             fail("no reference is marked as read")
 
@@ -111,7 +119,7 @@ def main():
         for f in fails:
             print(" -", f)
         return 1
-    print("PASS - %d verified sources, %d missing PDFs listed, refs_P8 consistent (1 x R3, 71 x R0)"
+    print("PASS - %d verified sources, %d missing PDFs listed, refs_P8 consistent (Mindlin1965 at R3)"
           % (len(ev), len(ms)))
     return 0
 

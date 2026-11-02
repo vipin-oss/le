@@ -12,11 +12,13 @@ GLS/LS/MGT tradition are represented. **Nothing in this folder changes the manus
 | d | graded, porous, magneto-electro-elastic, laminated, nanostructured, biological media | 18 |
 | | **total** | **72** |
 
-Verification: **71 × R0, 1 × R3** (detail below). The R0 entries are title/venue/volume/pages/DOI
-matched against a Crossref record on 2026-11-02: no abstract and no full text were read for them,
-and no equation number is claimed. The R3 entry is Mindlin 1965, whose library PDF was read in
-P9 (`../P9_verification/verdicts_P9.md`). Nothing is quoted, no page range or DOI was written
-from memory, and no missing paper was filled in from guesswork — see `coverage_gaps.md`.
+Verification: **60 × R0, 1 × R2, 11 × R3** (detail below). The R0 entries are
+title/venue/volume/pages/DOI matched against a Crossref record on 2026-11-02: no abstract and no
+full text were read for them, and no equation number is claimed. The 11 R3 entries are the
+papers whose library PDFs were read in P11 (`../P11_verification/report.md`), and the single R2
+entry is Green–Rivlin 1964, whose text was read but whose tensor equations survive the text layer
+only in fragments. Nothing is quoted, no page range or DOI was written from memory, and no
+missing paper was filled in from guesswork — see `coverage_gaps.md`.
 
 ## Files
 
@@ -53,14 +55,20 @@ python3 paper_v2/arena_deliverables/P8_coverage/check_p8.py
 
 | Level | Meaning | Count |
 |---|---|---|
-| R0 | title/venue/pages/DOI matched in Crossref only | 71 |
+| R0 | title/venue/pages/DOI matched in Crossref only | 60 |
 | R1 | abstract read | 0 |
-| R2 | full text read | 0 |
-| R3 | equations checked | 1 (Mindlin1965: eqs. (1), (17), (19), (20a), pp. 418-422) |
+| R2 | full text read | 1 (GreenRivlin1964: eqs. (8.3) p. 124, (10.1)-(10.10) p. 129, (15.9)-(15.10) p. 138) |
+| R3 | equations checked | 11 (Mindlin1965 from P9; Toupin1962, Toupin1964, Mindlin1964, Hutson1962, White1962, Liu2000, Hussein2014, Sigalas1992, Kushwaha1993, Zubko2013 from P11) |
 
-A second column, `pdf_status`, records which entries were looked for in the library in P9:
-`READ` 1, `NOT FOUND` 11 (the P9 priority list), `NOT CHECKED` 60.
+A second column, `pdf_status`, records which entries were opened: `READ` 12, `NOT FOUND` 0,
+`NOT CHECKED` 60. The eleven papers that were still missing in P9 and P10 arrived and were read in
+P11; the equations and printed pages for each are in the `notes` column and in
+`../P11_verification/evidence_P11.csv`.
 
 The next step is not more references but reading: `pdfs_needed_P8.csv` lists the 35 that matter,
-five of which (Toupin 1962, Toupin 1964, Mindlin 1965, Hussein 2014, Hutson & White 1962) carry
-the equation numbers that areas (a) and (c) need.
+and the five that carried the equation numbers areas (a) and (c) needed (Toupin 1962, Toupin 1964,
+Mindlin 1965, Hussein 2014, Hutson & White 1962) have now all been read.
+
+**If you rebuild from `build_p8.py`:** its `PDF_STATUS` map and the `ver`/`note` fields of
+`refs_data.py` still hold the P9 values for those eleven keys, because P11 was evidence-only and
+edited `refs_P8.csv` directly. Update those two first, or the rebuild will undo the P11 upgrade.

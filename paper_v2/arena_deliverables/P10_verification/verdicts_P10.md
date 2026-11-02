@@ -1,5 +1,13 @@
 # P10 — the "Wider material classes" section, read from `review-paper-v2`; verdict update
 
+> **Superseded in part by P11 (2026-11-02).** The eleven PDFs this file records as missing
+> arrived and were read: see `../P11_verification/report.md`. The couple-stress half of S1 is no
+> longer SOURCE NOT AVAILABLE (Toupin 1962/1964, Mindlin 1964 and Green–Rivlin 1964 read, S1 now
+> PARTLY SUPPORTED on the primary sources), the Liu 2000 attribution in S2 is now verified, and
+> S3 is downgraded to PARTLY SUPPORTED because Hutson 1962 and White 1962 contain no heat-flux
+> field at all — the "kernel can still be inserted" clause is structural, not shown by those
+> papers. Everything else in this file stands as written for its own date.
+
 Date: 2026-11-02. Evidence only: no `.tex` file was edited, on this branch or any other.
 
 ## 1. Where the section actually is
