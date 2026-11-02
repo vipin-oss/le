@@ -9,8 +9,9 @@ paper. It is not a code library and not a book. If you are picking this up cold,
 | Paper | *Waves in Thermoelastic and Multiphysics Continua: Generalized Heat Conduction, Coupled Fields and Interface Phenomena* |
 | Author | Vipin Gupta |
 | Form | review paper — 38 sections + 10 appendices (A–J) + declarations |
-| Current sources | `paper_v2/overleaf_package.zip` — the Overleaf tree as compiled (49 section files, the tables directory, the tikz figure sources and `refs*.bib`) |
-| Last measured build | `paper_v2/main.pdf`: **164 pages, 90 numbered equations, 25 tables, 40 figures, 337 references** |
+| Current sources | `paper_v2/paper_sources.zip` — the Overleaf tree as compiled (49 section files, the tables directory, the tikz figure sources and `refs*.bib`). Byte-identical to `paper_v2/overleaf_package.zip`, which is kept under the older name |
+| Final paper | **173 pages**, and it includes the section *Wider material classes*; its reference sets are `paper_v2/arena_deliverables/P8_coverage/refs_P8.csv`, `paper_v2/arena_deliverables/P10_verification/refs_P10.bib` and `paper_v2/arena_deliverables/P13_books/refs_P13.bib` |
+| Last measured build | the in-repo snapshot `paper_v2/main.pdf`: **164 pages, 90 numbered equations, 25 tables, 40 figures, 337 references** — measured before the final build, and left as measured |
 | Measured by | `paper_v2/arena_deliverables/P6_post_merge/measure_final_pdf.py` → `final_paper_numbers.csv` |
 | Branch | `arena/9b458c54-le` |
 
@@ -25,7 +26,7 @@ snapshot (v1.1/v1.2), not the current paper** — it is kept because the audit t
 | I want to… | Go to |
 |---|---|
 | **Read the paper** | `paper_v2/main.pdf` (164 pages) |
-| **Read or rebuild its source** | `paper_v2/overleaf_package.zip` — main.tex, 49 section files, tables, tikz figures and `refs*.bib`; upload as-is to Overleaf |
+| **Read or rebuild its source** | `paper_v2/paper_sources.zip` — main.tex, 49 section files, tables, tikz figures and `refs*.bib`; upload as-is to Overleaf |
 | **Know what the P5 merge added** | `paper_v2/arena_deliverables/P5_merge/REPORT.md` and its `snippets/` |
 | **See the post-merge audit** | `paper_v2/arena_deliverables/P6_post_merge/` — `post_merge_claims.csv`, `pdfs_needed_final.csv`, `STATUS.md` |
 | **See what was checked, and how, in the earlier manuscript** | `paper_v2/arena_deliverables/P1_audit/PAGE_LEVEL_AUDIT_2026-11-01.md` |
@@ -39,8 +40,9 @@ snapshot (v1.1/v1.2), not the current paper** — it is kept because the audit t
 
 ```
 paper_v2/
-├── main.pdf                  the paper as built (164 pages)
-├── overleaf_package.zip      the paper as source (upload this to Overleaf)
+├── main.pdf                  the in-repo build snapshot (164 pages; the final paper is 173)
+├── paper_sources.zip         the paper as source (upload this to Overleaf)
+├── overleaf_package.zip      the same zip under its older name
 ├── arena_deliverables/
 │   ├── README_FOR_CLAUDE.md  ★ the deep log: ground rules, provenance of every number
 │   ├── P1_audit/             page-level audit of the v1.2 snapshot: scripts, CSV results, report

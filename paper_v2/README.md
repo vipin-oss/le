@@ -6,11 +6,13 @@ This page says what this directory holds and how to rebuild the paper.
 ## The paper
 
 *Waves in Thermoelastic and Multiphysics Continua: Generalized Heat Conduction, Coupled Fields and
-Interface Phenomena* — a review, 164 pages, 38 sections, 10 appendices (A–J), declarations.
+Interface Phenomena* — a review, 173 pages in its final build, 38 sections, 10 appendices (A–J),
+declarations. The section *Wider material classes* is part of it.
 
 | Quantity | Value |
 |---|---|
-| Pages | 164 |
+| Pages (final paper) | 173 |
+| Pages (`main.pdf` snapshot in this repository) | 164 |
 | Sections / appendices | 38 / 10 (A–J) |
 | Numbered equations | 90 |
 | Figures / tables | 40 / 25 |
@@ -18,27 +20,31 @@ Interface Phenomena* — a review, 164 pages, 38 sections, 10 appendices (A–J)
 | Section files | 49 |
 
 These numbers are measured, not remembered: `arena_deliverables/P6_post_merge/measure_final_pdf.py`
-writes them to `arena_deliverables/P6_post_merge/final_paper_numbers.csv` from `main.pdf` and
-`overleaf_package.zip`. Re-run it after any rebuild.
+writes them to `arena_deliverables/P6_post_merge/final_paper_numbers.csv` from the in-repo
+`main.pdf` snapshot and `paper_sources.zip`. Re-run it after any rebuild.
 
 ## Build
 
 ```bash
-# Overleaf: upload overleaf_package.zip and compile with pdfLaTeX
+# Overleaf: upload paper_sources.zip and compile with pdfLaTeX
 # locally:
-unzip -q overleaf_package.zip -d src && cd src
+unzip -q paper_sources.zip -d src && cd src
 pdflatex main && bibtex main && pdflatex main && pdflatex main
 ```
 
-`overleaf_package.zip` is the authoritative source tree: 49 section files, the tables directory, the
-tikz figure sources and `refs*.bib`. `main.pdf` is the build these numbers describe.
+`paper_sources.zip` is the authoritative source tree: 49 section files, the tables directory, the
+tikz figure sources and `refs*.bib`; it is byte-identical to `overleaf_package.zip`, kept under the
+older name. `main.pdf` is the snapshot build the measured numbers describe.
 
 ## What is where
 
 | Path | What it is |
 |---|---|
-| `main.pdf` | the paper as built (164 pages) |
-| `overleaf_package.zip` | the paper as source — the thing to upload |
+| `main.pdf` | the in-repo build snapshot (164 pages; the final paper is 173) |
+| `paper_sources.zip` | the paper as source — the thing to upload (same file as `overleaf_package.zip`) |
+| `arena_deliverables/P8_coverage/refs_P8.csv` | the reference set behind the coverage audit |
+| `arena_deliverables/P10_verification/refs_P10.bib` | the two references verified in P10 |
+| `arena_deliverables/P13_books/refs_P13.bib` | the six books read in P13 for the section *Wider material classes* |
 | `arena_deliverables/P5_merge/` | the merge package that produced the current text: `REPORT.md`, 11 paste-ready snippets, 12 conflict rows, the verified ledger |
 | `arena_deliverables/P6_post_merge/` | the audit of that merge: `post_merge_claims.csv`, `pdfs_needed_final.csv`, `STATUS.md`, `final_paper_numbers.csv` |
 | `arena_deliverables/P1_audit/` | page-level audit of the **v1.2 snapshot** (142 pages): scripts, CSV results, narrative report |
