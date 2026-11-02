@@ -149,6 +149,15 @@ def main():
     w("## Verification\n")
     w("```\n$ cd paper_v2/arena_deliverables/P7_language && python3 check_invariants.py\n"
       "checked 51 rewritten file(s): 51 PASS, 0 FAIL\nPASS\n```\n")
+    w("## Assembled package\n")
+    w("`assemble_package.py` writes `paper_v2/rewritten_package.zip`: the 168 entries of "
+      "`overleaf_package.zip` in their original order, with the 50 `sections/*.tex` replaced by the "
+      "files here and the Highlights/abstract block of `main.tex` replaced by `abstract.tex`. "
+      "The assembly was checked structurally: every `\\input` resolves inside the zip, every "
+      "`\\begin`/`\\end` sequence per section is unchanged, every section file is byte-identical to its "
+      "twin here, and `main.tex` differs from the original in the abstract block only. No PDF was built: "
+      "there is no TeX engine in this sandbox and none can be obtained "
+      "(`../TEX_ENGINE_STATUS_2026-11-01.md`).\n")
     w("| file | paragraphs edited | original lines |\n|---|---:|---:|")
     for f, ec, ln in rows:
         w(f"| `{f}` | {ec} | {ln} |")

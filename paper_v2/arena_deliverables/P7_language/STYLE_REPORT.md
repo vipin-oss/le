@@ -17,6 +17,10 @@ checked 51 rewritten file(s): 51 PASS, 0 FAIL
 PASS
 ```
 
+## Assembled package
+
+`assemble_package.py` writes `paper_v2/rewritten_package.zip`: the 168 entries of `overleaf_package.zip` in their original order, with the 50 `sections/*.tex` replaced by the files here and the Highlights/abstract block of `main.tex` replaced by `abstract.tex`. The assembly was checked structurally: every `\input` resolves inside the zip, every `\begin`/`\end` sequence per section is unchanged, every section file is byte-identical to its twin here, and `main.tex` differs from the original in the abstract block only. No PDF was built: there is no TeX engine in this sandbox and none can be obtained (`../TEX_ENGINE_STATUS_2026-11-01.md`).
+
 | file | paragraphs edited | original lines |
 |---|---:|---:|
 | `abstract.tex` | 2 | 39 |
