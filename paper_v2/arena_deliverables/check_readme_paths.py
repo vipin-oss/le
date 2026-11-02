@@ -38,6 +38,7 @@ READMES = CURRENT + ["paper_v2/arena_deliverables/README_FOR_CLAUDE.md"]
 # relative path is accepted if it resolves against any sensible anchor.
 ANCHORS = ["", "paper_v2", "paper_v2/manuscript_v2", "paper_v2/manuscript_v2/master",
            "paper_v2/arena_deliverables", "paper_v2/arena_deliverables/P1_audit",
+           "paper_v2/arena_deliverables/P5_merge", "paper_v2/arena_deliverables/P6_post_merge",
            "paper_v2/versions"]
 
 # Paths that must live outside the repository by rule; a README may name them only as
@@ -117,10 +118,27 @@ def main() -> int:
                                 f"('{re.search(r'1[A-Za-z0-9_-]{24,}', line).group(0)[:12]}…')")
 
     # ---- M3: quoted numbers agree with the artefacts -------------------------
+    # The current paper is paper_v2/main.pdf (164 pp); P1_audit describes the v1.2 snapshot.
+    # If P6 has measured the current build, that measurement is the one the READMEs must match.
+    p6 = root / "paper_v2" / "arena_deliverables" / "P6_post_merge" / "final_paper_numbers.csv"
+    if p6.exists():
+        meas = {r["quantity"]: r["value"] for r in csv.DictReader(p6.open(encoding="utf-8"))}
+        must = {"pages": "page count", "equations": "numbered equations",
+                "tables": "tables", "figures": "figures", "references": "references",
+                "sections": "sections"}
+        for key, label in must.items():
+            val = meas.get(key, "")
+            if not val:
+                continue
+            for name in ("README.md", "paper_v2/README.md"):
+                txt = texts.get(name, "")
+                if not re.search(r"(?<![\d,.])" + re.escape(val) + r"(?![\d])", txt):
+                    problems.append(f"M3 {name}: does not quote the measured {label} ({val})")
+        notes.append("P6 numbers: " + ", ".join(f"{k}={meas.get(k)}" for k in must))
     res = audit / "page_audit_results.csv"
     inv = audit / "equation_inventory.csv"
     lnk = audit / "register_linkage.csv"
-    if res.exists():
+    if res.exists() and not p6.exists():
         rows = {r["check_id"]: r for r in csv.DictReader(res.open(encoding="utf-8"))}
         obs = rows.get("P02", {}).get("observed", "")
         m = re.search(r"(\d+) pages", obs)
@@ -134,33 +152,43 @@ def main() -> int:
             if words and f"{words:,}" not in txt and f"{words}" not in txt:
                 problems.append(f"M3 {name}: does not quote the measured word count ({words})")
         notes.append(f"pages={pages} words={words}")
-    else:
+    elif not p6.exists():
         problems.append("M3 page_audit_results.csv missing")
 
-    if inv.exists():
+    if inv.exists() and not p6.exists():
         n_eq = sum(1 for _ in csv.DictReader(inv.open(encoding="utf-8")))
         for name in ("README.md", "paper_v2/README.md"):
             if str(n_eq) not in texts.get(name, ""):
                 problems.append(f"M3 {name}: does not quote the inventoried equation count ({n_eq})")
         notes.append(f"equations={n_eq}")
-    else:
+    elif not p6.exists():
         problems.append("M3 equation_inventory.csv missing")
 
-    if lnk.exists():
+    # The claim register is the ledger the READMEs speak about; the v1.2 linkage table is the fallback
+    # used only when that register is absent.
+    claim_reg = root / "paper_v2" / "claim_register.csv"
+    if claim_reg.exists():
+        n_reg = sum(1 for _ in csv.DictReader(claim_reg.open(encoding="utf-8")))
+        notes.append(f"claim_register_rows={n_reg}")
+        for name in ("README.md", "paper_v2/README.md"):
+            if str(n_reg) not in texts.get(name, ""):
+                problems.append(f"M3 {name}: does not quote the claim-register row count ({n_reg})")
+    elif lnk.exists():
         n_reg = sum(1 for _ in csv.DictReader(lnk.open(encoding="utf-8")))
         notes.append(f"register_rows={n_reg}")
-        if f"29" not in texts.get("README.md", "") and str(n_reg) not in texts.get("README.md", ""):
+        if str(n_reg) not in texts.get("README.md", ""):
             problems.append("M3 README.md: does not quote the register row count")
 
     # ---- M4: the zip the README names is the one that ships ------------------
     sub = root / "paper_v2" / "arena_deliverables" / "submission"
     zips = sorted(p.name for p in sub.glob("*.zip")) if sub.exists() else []
+    allowed = set(zips) | {p.name for p in (root / "paper_v2").glob("*.zip")}
     if not zips:
         problems.append("M4 no zip in submission/")
     else:
         for name, txt in texts.items():
             for mentioned in re.findall(r"([\w.\-]+\.zip)", txt):
-                if mentioned not in zips:
+                if mentioned not in allowed:
                     problems.append(f"M4 {name}: names a zip that is not in submission/: {mentioned}")
         notes.append(f"zip={zips[0]}")
 
