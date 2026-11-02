@@ -153,9 +153,10 @@ piezo-semiconductor fields, pp. 13–14. That is a piezo-semiconductor model wit
 Level **R2**: the explicit heat-flux equation itself (sections 2–3) fell in a part of the text
 that could not be extracted, so its equation number is *not* recorded and must not be quoted.
 
-*Honest limitation.* The piezo case is R2, the equation-level (R3) case is the photothermal
-semiconductor without piezoelectric coupling. If the sentence must be backed by one source at
-R3, the Gupta et al. PDF has to be read in full.
+*Honest limitation.* In P9 the piezo case was R2 because the flux equation could not be
+extracted. **P10 closed this**: the flux law is eq. (2.15) and the temperature and carrier
+equations are eqs. (2.16) and (2.17), all on **p. 6** of the PDF, so the piezo-semiconductor case
+is now R3 as well. See `../P10_verification/verdicts_P10.md`.
 
 ---
 
