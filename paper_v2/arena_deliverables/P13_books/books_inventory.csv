@@ -1,0 +1,8 @@
+key,title,author,year,publisher,isbn,doi,supplied,status,evidence_rows,notes
+Tzou2015,Macro- to Microscale Heat Transfer: The Lagging Behavior,D. Y. Tzou,2015,John Wiley & Sons,978-1-118-81822-0,,yes,USED,29,"Second edition; complete text."
+Eringen1999,"Microcontinuum Field Theories I: Foundations and Solids",A. Cemal Eringen,1999,Springer,978-1-4612-6815-4,10.1007/978-1-4612-0555-5,yes,USED,9,"Complete; single-temperature, single-heat-vector thermal sector."
+Ignaczak2010,Thermoelasticity with Finite Wave Speeds,"Jozef Ignaczak; Martin Ostoja-Starzewski",2010,Oxford University Press,978-0-19-954164-5,,yes,USED,24,"Complete; the strongest source for generalized thermoelasticity."
+Deymier2013,Acoustic Metamaterials and Phononic Crystals,Pierre A. Deymier (ed.),2013,Springer,978-3-642-31231-1,10.1007/978-3-642-31232-8,yes,USED,8,"Complete; edited volume; chapter 5 carries the dynamic-mass formulas."
+Laude2015,"Phononic Crystals: Artificial Crystals for Sonic, Acoustic, and Elastic Waves",Vincent Laude,2015,De Gruyter,978-3-11-030265-3,,yes,USED,4,"Complete; no effective-mass formula, only a homogenisation remark."
+Auld1973,"Acoustic Fields and Waves in Solids, Volume I",B. A. Auld,1973,John Wiley & Sons,0-471-03700-1,,yes,USED (partially),4,"Volume I only; fragment, not the complete work. No acoustoelectric chapter in this volume."
+Nowacki,not identified further (the wanted Nowacki title was never specified in the brief),-,,,,-,no,NOT SUPPLIED,0,"NOT SUPPLIED. No Nowacki file was added to the library; nothing in this deliverable is attributed to Nowacki. The only Nowacki contact in the supplied books is Ignaczak's reference to 'solution of Nowacki type' (Section 7.4) and to Nowacki's radiation conditions."

@@ -1,0 +1,64 @@
+key,claim,quote,eq_theorem,page,sentence,kind,verbatim
+Tzou2015,Fourier's law is the simultaneous-response (zero-lag) model,law of heat conduction dictates such an immediate response,(2.1),62,S4,quote,yes
+Tzou2015,The zero-lag assumption implies infinite propagation speed,The immediate response results in an infinite speed,(2.1),62,S4,quote,yes
+Tzou2015,Single-phase lag is a one-delay flux law,called the relaxation time in the wave theory of heat conduction,(2.2),62,S4,quote,yes
+Tzou2015,DPL lags the gradient by tau_T and the flux by tau_q,τT is the phase lag of the temperature gradient,(2.6),63,S5,quote,yes
+Tzou2015,Only the first-order Taylor expansion is carried out,The first-order expansion containing the linear effect of,(2.7),62,S5,quote,yes
+Tzou2015,First-order truncation is defended for ps-fs lags,The linear expansion becomes sufficient in these cases,text after (2.7),66,S5,quote,yes
+Tzou2015,First-order DPL keeps the mixed derivative and loses the wave structure,"completely destroys the wave structure, and the energy equation is parabolic in nature",(2.10),68-69,S4,quote,yes
+Tzou2015,Tzou identifies DPL with the Guyer-Krumhansl phonon-scattering model,the dual-phase-lag model is equivalent to the phonon-scattering model,(2.11),68,S4,quote,yes
+Tzou2015,Guyer-Krumhansl relaxation times are mapped onto the two phase lags,"α = τR c2/3, τT = 9τN/5, τq = τR",(2.11),68,S4,quote,eq
+Tzou2015,DPL is also mapped onto the two-step phonon-electron model,Comparing equation (2.10) with (1.13) or (1.15) for the phonon-electron interaction model,(2.12),68,S4,quote,eq
+Tzou2015,Tzou's damping group is B = tau_T/(2 tau_q) so criticality sits at tau_T = tau_q,Recalling that τT = τq as B = 1/2,(2.59),81,S5,quote,yes
+Tzou2015,Regime change is confined to B <= 1/2,For the case of B ≤ 1/2 or τT ≤ τq,(2.59),86,S5,quote,yes
+Tzou2015,No Laplace-domain transfer function (1+tau_T s)/(1+tau_q s) is printed,(no occurrence),"absence: ""transfer function""",whole book,S5,absence,na
+Tzou2015,Quintanilla is never cited,(no occurrence),"absence: ""Quintanilla""",whole book,S5,absence,na
+Ignaczak2010,Lord-Shulman flux is the Maxwell-Cattaneo law,"qi + t0 q̇i = −kijθ,j",(R1.1.8),12,S4,quote,eq
+Ignaczak2010,The same flux law in the form used in the field equations,"ϑ,i = −λij(qj + t0 q̇j)",(1.2.14),13,S4,quote,eq
+Ignaczak2010,DPL is written with both lags inside one constitutive operator,"qi + τq q̇i = −kij(ϑ + τT ϑ̇),j",(R1.2.1),16,S5,quote,eq
+Ignaczak2010,DPL equation type is fixed by the sign of tau_q minus tau_T,governed by a hyperbolic equation if τ = τq − τT > 0,Theorem 1.1,18,S5,quote,yes
+Ignaczak2010,Green-Lindsay stress carries the t1 temperature-rate term,Sij = CijklEkl + Mij(ϑ + t1ϑ̇),(1.3.30),21,S4,quote,eq
+Ignaczak2010,Green-Lindsay entropy carries the other relaxation time t0,θ0η = −θ0MijEij + CE(ϑ + t0ϑ̇),(1.3.31),21,S4,quote,eq
+Ignaczak2010,In Green-Lindsay theory the heat flux itself is classical Fourier,Equation (1.3.33) represents the classical Fourier law of heat conduction,(1.3.33) and fn. 16,21,S4,quote,yes
+Ignaczak2010,Green-Naghdi 1991 theory rests on an entropy balance law,an entropy balance law rather than on an entropy inequality,text,322,S4,quote,yes
+Ignaczak2010,Green-Naghdi type II transmits heat without dissipation,thermoelasticity of type II allowing for heat transmission at finite speed without any energy dissipation,(12.1.2),322,S4,quote,yes
+Ignaczak2010,Green-Naghdi type III transmits heat with dissipation,thermoelasticity of type III allowing for heat transport at a finite speed,(12.1.3),322,S4,quote,yes
+Ignaczak2010,Uniqueness theorem for the L-S displacement-temperature problem,MDTP in the L–S theory has at the most one solution,Theorem 3.1,37,-,quote,yes
+Ignaczak2010,Uniqueness theorem for the L-S stress-heat-flux problem,MSHFP in the L–S theory has at the most one solution,Theorem 3.2,39,-,quote,yes
+Ignaczak2010,Uniqueness theorem for the G-L displacement-temperature problem,MDTP in the G–L theory has at the most one solution,Theorem 3.3,40,-,quote,yes
+Ignaczak2010,Uniqueness theorem for the G-L stress-temperature problem,MSTP in the G–L theory has at the most one solution,Theorem 3.4,41,-,quote,yes
+Ignaczak2010,Continuous-dependence theorem for the classical process,On a continuous dependence of a classical thermoelastic process,Theorem 3.5,42,-,quote,yes
+Ignaczak2010,Existence theorem for the generalized problem,On the existence of a generalized solution,Theorem 3.6,43,-,quote,yes
+Ignaczak2010,Domain-of-influence theorem for L-S,On the domain of influence for a PTP in the L–S theory,Theorem 4.1,54,-,quote,yes
+Ignaczak2010,Domain-of-influence theorem for G-L,On the domain of influence for a PTP in the G–L theory,Theorem 4.2,56,-,quote,yes
+Ignaczak2010,Two finite speeds of a fundamental thermoelastic disturbance,"v(1,2)^-2 = ½(1 + t0 + εt1 ± Δ^½)",(6.3.1),127,-,quote,eq
+Ignaczak2010,Singular surfaces defined for L-S and G-L media,The singular surface propagating in a thermoelastic medium is a surface,Definition 10.1,257,-,quote,yes
+Ignaczak2010,Maxwell-Cattaneo breaks Galilean invariance,the presence of a partial derivative ∂/∂t in that equation leads to a violation,(12.1.4),323,S4,quote,yes
+Ignaczak2010,Quintanilla 2003 appears only in the bibliography,A condition on the delay parameters in the one-dimensional dual-phase-lag thermoelasticity theory,reference list,399,S5,quote,yes
+Ignaczak2010,No delay-parameter stability threshold is stated in the text,(no occurrence),"absence: ""stable"" and ""stability""",whole book,S5,absence,na
+Ignaczak2010,No Laplace-domain transfer function is printed,(no occurrence),"absence: ""transfer function""",whole book,S5,absence,na
+Deymier2013,Bragg gaps come from periodic scattering,Phononic crystals are designed to control the dispersion of waves through Bragg scattering,Preface,vii,S2,quote,yes
+Deymier2013,Local resonance does not need periodicity,their properties do not rely on periodicity,Preface,vii,S2,quote,yes
+Deymier2013,Local resonance can give negative effective dynamic mass,Local resonance may lead to negative effective dynamic mass density,Preface,vii,S2,quote,yes
+Deymier2013,Static effective density is a volume average,ρeff = f D1 + (1 − f)D2,(5.1),159,S2,quote,eq
+Deymier2013,Dynamic mass carries a resonance denominator,Deff V = M0 + nm/(1 − ω²/ω0²),(5.2),160,S2,quote,eq
+Deymier2013,Dynamic mass density is averaged force over averaged acceleration,Deff = ⟨f⟩/⟨a⟩,(5.3),160,S2,quote,eq
+Deymier2013,Negative dynamic mass is possible at finite frequency,negative dynamic mass is possible at finite frequencies,text after (5.2),160,S2,quote,yes
+Deymier2013,The volume has no thermoelastic or thermal-transport chapter,(no occurrence),"absence: ""thermoelastic""",whole book,-,absence,na
+Laude2015,Local resonances are an alternative gap mechanism,Local resonances can also open band gaps,§2.3.3,44,S2,quote,yes
+Laude2015,A whole chapter treats locally resonant crystals,Locally-resonant crystals,chapter 10 title,301,S2,quote,yes
+Laude2015,Effective mass density is mentioned only as a homogenisation mean value,the effective mass density and effective elastic constants will be some mean value,footnote 1,301,S2,quote,yes
+Laude2015,Resonant gaps sit far below the Bragg range,much lower in frequency than would be expected in the case of Bragg band gaps,§10.1,303,S2,quote,yes
+Auld1973,The supplied volume is Volume 1 of the 1973 Wiley edition,ISBN 0-471-03700-1 (V.1),copyright page,iv,S3,quote,yes
+Auld1973,The piezoelectricity chapter is the last chapter of the volume,Piezoelectricity,chapter 8 title,265,S3,quote,yes
+Auld1973,No drift or carrier-transport treatment exists in the volume,(no occurrence),"absence: ""drift"" and ""diffusion""",whole volume,S3,absence,na
+Auld1973,Carriers are mentioned once in a Faraday-rotation remark,interactions with either current carriers or magnetic spins,ch. 7 text,255,S3,quote,yes
+Eringen1999,The energy balance uses a single heat vector,The energy balance law (2.1.2) is formed with a single heat vector q,(2.1.2),49,S1,quote,yes
+Eringen1999,There are no microheat tensors at grade one,there are no microheat tensors for the micromorphic continuum of grade one,§2.3,49,S1,quote,yes
+Eringen1999,One absolute temperature is postulated for the continuum,"in harmony with a single heat vector q, a single absolute temperature",§2.3,49,S1,quote,yes
+Eringen1999,Linear micropolar heat flux carries a temperature-rate term,"qk = (1/T0)KklT,l + MkṪ",(5.1.13),105,S1,quote,eq
+Eringen1999,Temperature-rate dependence is dropped in the linear theory,we neglect the temperature-rate dependence,(5.1.15),105,S1,quote,yes
+Eringen1999,Microstretch heat flux is of Fourier type,"Kkl qk = T0 T,l",(6.1.7),251,S1,quote,eq
+Eringen1999,Microstretch heat equation is the classical conduction equation,"... + Kkl T,lk − T0 ... − ρh = 0",(6.1.15),252,S1,quote,eq
+Eringen1999,Moduli counts for linear micropolar thermoelasticity are tabulated,Table 5.1,Table 5.1,106,S1,quote,yes
+Eringen1999,Four wave speeds with cut-offs for plane harmonic waves,(5.11.13)-(5.11.21),§5.11,149,S1,quote,eq
