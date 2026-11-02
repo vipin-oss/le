@@ -10,7 +10,7 @@ Read the ENTIRE manuscript (all sections and appendices, not a sample), as a cri
 Verified independently (OK): Eq. 21 (Re G), Eq. 24 (Routh-Hurwitz), EIT identity (Eq. 12-13), DPL stability thresholds (variant ii: tau_T = tau_q/2, growth 0.571 at 0.3; variant iii: 2-sqrt3; variant i stable), Table 3 f* for Al/Cu/steel.
 
 Found problems:
-1. Eq. 20 (sum rule, sections/s03c_prelim.tex) prints (v0 - v_inf)/vbar, but v0 (isothermal) < v_inf (adiabatic), so RHS is negative while LHS is positive; the Debye example uses the correct sign. Fix: (v_inf - v0).
+1. (WITHDRAWN) Eq. 20 sign: Claude first thought (v0 - v_inf) was wrong. Recomputed: in the classical coupled theory the elastic branch is adiabatic at LOW frequency (1.0488 = sqrt(1+eps)) and isothermal at HIGH frequency (1.0), so v0 > v_inf and Eq. 20 is correct. Do not change it.
 2. Experiments section: body says pump-probe measures an electron-phonon coupling time, not tau_q; the Summary box says pump-probe and ultrasonic damping "can determine lags independently". Contradiction.
 3. Experimental evidence is thin (about 1.2 pages) relative to the title ("size effects", "multiphysics"); resonator-Q subsection has no citations; absent authors in refs: Straughan, Kovacs, Van, Cimmelli, Minnich, Johnson, Duwel, Kaltenbacher.
 4. Literature tilt towards one author cluster (Kumar, Barak, Biswas, Abouelregal, Singh); 46/416 self-citations.
