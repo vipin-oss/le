@@ -1,0 +1,140 @@
+eq_no,v2_file,v2_section,v2_label,status,register_note,statement
+EQ-001,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.1,not registered,,"u_{i,j} = \varepsilon_{ij} + \omega_{ij},"
+EQ-002,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.2,not registered,,"\varepsilon_{ij} = \frac{1}{2}(u_{i,j} + u_{j,i}), \qquad \omega_{ij} "
+EQ-003,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.3,UNVERIFIED,Definition of velocity,v_i = \dot{u}_i = \frac{\partial u_i}{\partial t}.
+EQ-004,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.4,not registered,,"\frac{\diff}{\diff t} \int_V \rho v_i \, \diff V = \int_S \sigma_{ji} "
+EQ-005,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.5,CONDITIONAL,Classical Cauchy continuum; infinitesimal motion; no couple stresses,"\rho \dot{v}_i = \sigma_{ji,j} + \rho f_i."
+EQ-006,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.6,not registered,,"\rho \ddot{u}_i = \sigma_{ji,j} + \rho f_i."
+EQ-007,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.7,not registered,,"\frac{\diff}{\diff t} \int_V \rho (\bm{x} \times \bm{v})_k \, \diff V "
+EQ-008,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.8,CONDITIONAL,Classical angular momentum balance; no couple stresses or body couples,\sigma_{ij} = \sigma_{ji}.
+EQ-009,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.9,not registered,,"\int_V \rho \dot{v}_i v_i \, \diff V = \int_V \sigma_{ji,j} v_i \, \di"
+EQ-010,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.10,not registered,,"\int_V \rho \dot{v}_i v_i \, \diff V = \frac{\diff}{\diff t} \int_V \f"
+EQ-011,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.11,not registered,,"\int_V \sigma_{ji,j} v_i \, \diff V = \int_S \sigma_{ji} v_i n_j \, \d"
+EQ-012,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.12,not registered,,\rho \frac{\diff}{\diff t}\left(\frac{1}{2}v_i v_i\right) = \sigma_{ji
+EQ-013,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.13,not registered,,"\rho \dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i} + \rho r,"
+EQ-014,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.14,not registered,,"\rho \dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i}."
+EQ-015,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.15,not registered,,"\rho \dot{s} \geq -\left(\frac{q_i}{\Theta}\right)_{,i} + \frac{\rho r"
+EQ-016,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.16,not registered,,\sigma_{ij}\dot{\varepsilon}_{ij} - \rho\left(\dot{\psi} + s\dot{\Thet
+EQ-017,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.17,not registered,,\dot{\psi} = \frac{\partial\psi}{\partial\varepsilon_{ij}}\dot{\vareps
+EQ-018,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.18,not registered,,"\sigma_{ij} = \rho \frac{\partial\psi}{\partial\varepsilon_{ij}}, \qqu"
+EQ-019,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.19,not registered,,"-\frac{q_i T_{,i}}{T} \geq 0."
+EQ-020,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.20,not registered,,\psi = \frac{1}{2\rho}(\lambda \varepsilon_{kk}\varepsilon_{ll} + 2\mu
+EQ-021,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.21,not registered,,\sigma_{ij} = \lambda \varepsilon_{kk}\delta_{ij} + 2\mu\varepsilon_{i
+EQ-022,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.22,not registered,,s = s_0 + \frac{\beta}{\rho}\varepsilon_{kk} + \frac{c_v}{T_0}T.
+EQ-023,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.23,not registered,,"\rho\ddot{u}_i = (\lambda + \mu)u_{j,ji} + \mu u_{i,jj}."
+EQ-024,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.24,not registered,,"c_p = \sqrt{\frac{\lambda + 2\mu}{\rho}},"
+EQ-025,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.25,not registered,,c_s = \sqrt{\frac{\mu}{\rho}}.
+EQ-026,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.26,not registered,,"u_i(\bm{x},t) = \hat{u}_i(\bm{x}) e^{-i\omega t}, \qquad \sigma_{ij}(\"
+EQ-027,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.27,not registered,,"\avg{ab}_t = \frac{1}{2}\Re[\hat{a}\hat{b}^*],"
+EQ-028,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.28,not registered,,\frac{\partial\mathcal{E}}{\partial t} + \frac{\partial}{\partial x_j}
+EQ-029,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.29,not registered,,\frac{\partial\mathcal{E}}{\partial t} + \frac{\partial F_i}{\partial 
+EQ-030,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.30,not registered,,"\frac{\diff}{\diff t}\int_V \mathcal{E} \, \diff V + \int_S F_i n_i \,"
+EQ-031,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.31,not registered,,"u_i^{(1)} = u_i^{(2)}, \qquad \sigma_{ji}^{(1)}n_j = \sigma_{ji}^{(2)}"
+EQ-032,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.32,not registered,,"[u_i] = (C^u)^{-1}_{ij} t_j, \qquad \sigma_{ki}^{(1)}n_k = \sigma_{ki}"
+EQ-033,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.33,not registered,,"\phi^{(1)} = \phi^{(2)} \qquad \text{(perfect electrical contact)},"
+EQ-034,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.34,not registered,,D_i^{(1)}n_i = D_i^{(2)}n_i \qquad \text{(electric displacement contin
+EQ-035,sections/sec03_foundations.tex,Foundations of Continuum Wave Mechanics,eq:3.35,not registered,,D_i n_i = 0.
+EQ-036,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.1,UNVERIFIED,Classical coupled thermoelasticity (Biot 1956),"\rho\ddot{u}_i = (\lambda + \mu)u_{j,ji} + \mu u_{i,jj} - \beta T_{,i}"
+EQ-037,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.2,PRIMARY-SOURCE-CHECKED,"Biot (1956), printed p. 242, Eqs.~(3.3)--(3.4); linear isotropic Fourier model, constant c","\rho c_v \dot{T} = k\nabla^2 T - \beta T_0 \dot{u}_{i,i},"
+EQ-038,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.3,not registered,,"c_p = \sqrt{\frac{\lambda + 2\mu}{\rho}}, \qquad c_s = \sqrt{\frac{\mu"
+EQ-039,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.4,UNVERIFIED,Lord--Shulman (1967); primary source,"q_i + \tau_0 \dot{q}_i = -k T_{,i},"
+EQ-040,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.5,not registered,,\rho c_v \left(\dot{T} + \tau_0 \ddot{T}\right) = k\nabla^2 T - \beta 
+EQ-041,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.6,not registered,,c_T = \sqrt{\frac{k}{\rho c_v \tau_0}}.
+EQ-042,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.11,PRIMARY-SOURCE-CHECKED,"GN-II 1993 Eq. (3.16) integrated once; source-free alpha form, zero integration constant; ",\kappa^*\nabla^2\alpha_{\mathrm{GN}} = \rho c_e \ddot{\alpha}_{\mathrm
+EQ-043,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.13,not registered,,\frac{\partial\mathcal{E}}{\partial t} + \partial_i J_i = \mathcal{P}.
+EQ-044,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.14,not registered,,"\rho c_e\ddot{T} + \beta T_0\ddot{u}_{i,i} = \kappa\nabla^2\dot{T} + \"
+EQ-045,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.15,UNVERIFIED,DPL constitutive law (Tzou 1995),"q_i(t + \tau_q) = -k T_{,i}(t + \tau_T),"
+EQ-046,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.16,not registered,,"q_i + \tau_q\dot{q}_i = -k(T_{,i} + \tau_T\dot{T}_{,i})."
+EQ-047,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.17,not registered,,"\begin{aligned} q_i(t+\tau_q) &= -kT_{,i}(t+\tau_T)\\ &\quad - k^*v_{,"
+EQ-048,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,(unlabelled),not registered,,"q_i+\tau_q\dot q_i+k\left(T_{,i}+\tau_T\dot T_{,i}\right) +k^*\left(v_"
+EQ-049,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.18,not registered,,"\tau\dot{q}_i+q_i=-kT_{,i}-k^*\vartheta_{m,i},\qquad \dot{\vartheta}_m"
+EQ-050,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.20,not registered,,"{}^C D_t^\alpha T = a_\alpha\nabla^2 T, \qquad 0 < \alpha \leq 2,"
+EQ-051,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.21,not registered,,"\rho\ddot{u}_i=\sigma_{ji,j}+\rho f_i, \qquad \rho\dot e=\sigma_{ij}\d"
+EQ-052,sections/sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,eq:4.22,not registered,,"\sigma_{ij}=\mathcal{S}_{ij}[\varepsilon,T,\dot T,\alpha_{\mathrm{GN}}"
+EQ-053,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.1,not registered,,"\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k,"
+EQ-054,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.2,UNVERIFIED,Electric displacement (piezoelectric),"D_i = e_{ikl}\varepsilon_{kl} + \kappa_{ij}E_j,"
+EQ-055,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.3,not registered,,"E_i = -\phi_{,i},"
+EQ-056,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.4,not registered,,"D_{i,i} = 0."
+EQ-057,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.5,not registered,,\mathcal{E}_{\mathrm{elec}} = \frac{1}{2}D_i E_i.
+EQ-058,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.6,UNVERIFIED,"Piezothermoelastic (Barak et al.~\cite{Barak2023}, Eq.~3)","\sigma_{ij} = c_{ijkl}\varepsilon_{kl} - e_{kij}E_k - \beta_{ij}T,"
+EQ-059,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.7,not registered,,"\sigma_{ij,j} = \rho\ddot{u}_i,"
+EQ-060,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.8,not registered,,"E_i = -\phi_{,i},"
+EQ-061,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.9,UNVERIFIED,"Piezothermoelectric (Barak et al.~\cite{Barak2023}, Eq.~6)","D_i = \kappa_{ij}E_j + e_{ikl}\varepsilon_{kl} + p_i T,"
+EQ-062,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.10,not registered,,"D_{i,i} = 0,"
+EQ-063,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.19,not registered,,"\bar{c}_{ijkl} = c_{ijkl} + e_{aij}(\kappa^{-1})_{ab}e_{bkl},"
+EQ-064,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.11,not registered,,\phi^{(1)} = \phi^{(2)} \quad \text{at the interface}.
+EQ-065,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.12,not registered,,D_i n_i = 0 \quad \text{at the interface}.
+EQ-066,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.13,not registered,,D_3^{(1)} = D_3^{(2)} \quad \text{at the interface}.
+EQ-067,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.14,not registered,,\begin{aligned} t_{ij} &= C_{ijrs}e_{rs} + B_{ij}\varphi + D_{ijk}\var
+EQ-068,sections/sec05_multiphysics.tex,Coupled Multiphysics Continua,eq:5.18,not registered,,"\rho\ddot{u}_i = \sigma_{ji,j} + \rho f_i + (\bm{J} \times \bm{B})_i,"
+EQ-069,sections/sec06_transport.tex,Generalized Transport and Memory Effects,eq:6.1,not registered,,"\mathcal{D}[\bm{q}] = -k\,\bm{\nabla}T,"
+EQ-070,sections/sec06_transport.tex,Generalized Transport and Memory Effects,(unlabelled),not registered,,\bm q+\tau_0\dot{\bm q}=-k\nabla T.
+EQ-071,sections/sec06_transport.tex,Generalized Transport and Memory Effects,eq:6.2,not registered,,\mathcal{D}_{\rm LS}(s)=1+\tau_0s.
+EQ-072,sections/sec06_transport.tex,Generalized Transport and Memory Effects,eq:6.3,not registered,,{}^C D_t^\alpha f(t) = \frac{1}{\Gamma(n-\alpha)}\int_0^t \frac{f^{(n)
+EQ-073,sections/sec06_transport.tex,Generalized Transport and Memory Effects,eq:6.4,not registered,,{}^{RL} D_t^\alpha f(t) = \frac{1}{\Gamma(n-\alpha)}\frac{d^n}{dt^n}\i
+EQ-074,sections/sec06_transport.tex,Generalized Transport and Memory Effects,eq:6.5,not registered,,"{}^C D_t^\alpha T = a_\alpha\nabla^2 T, \qquad 0 < \alpha \leq 2,"
+EQ-075,sections/sec06_transport.tex,Generalized Transport and Memory Effects,eq:6.6,not registered,,"f(t) = \int_{-\infty}^{t} K(t-t')\,g(t')\,dt',"
+EQ-076,sections/sec06_transport.tex,Generalized Transport and Memory Effects,eq:6.7,not registered,,D_{\omega_M} f(t) = \frac{1}{\omega_M}\int_{t-\omega_M}^{t} K_{\mathrm
+EQ-077,sections/sec07_nonlocal.tex,Nonlocal and Scale-Dependent Continuum Models,eq:7.1,not registered,,"\sigma_{ij}(\bm{x}) = \int_\Omega \alpha(|\bm{x}' - \bm{x}|, \tau)\, \"
+EQ-078,sections/sec07_nonlocal.tex,Nonlocal and Scale-Dependent Continuum Models,eq:7.2,not registered,,"(1 - \xi^2\nabla^2)\sigma_{ij} = \sigma_{ij}^{\mathrm{local}},"
+EQ-079,sections/sec07_nonlocal.tex,Nonlocal and Scale-Dependent Continuum Models,eq:7.3,not registered,,\sigma_{ij} = C_{ijkl}\varepsilon_{kl} - \ell^2 C_{ijkl}\nabla^2\varep
+EQ-080,sections/sec07_nonlocal.tex,Nonlocal and Scale-Dependent Continuum Models,eq:7.4,not registered,,"c(k_{\mathrm w}) = \frac{c_0}{\sqrt{1 + \xi^2 k_{\mathrm w}^2}},"
+EQ-081,sections/sec08_mathematical_methods.tex,Mathematical Methods for Wave Propagation,eq:8.1,not registered,,"\text{field}(\bm{x},t) = \hat{\text{field}}(\bm{x}) e^{-i\omega t},"
+EQ-082,sections/sec08_mathematical_methods.tex,Mathematical Methods for Wave Propagation,eq:8.2,not registered,,"[\Gamma_{ik}(\bm{n}) - \rho c^2 \delta_{ik}]\hat{u}_k = 0,"
+EQ-083,sections/sec08_mathematical_methods.tex,Mathematical Methods for Wave Propagation,eq:8.3,not registered,,\det[\Gamma_{ik}(\bm{n}) - \rho c^2 \delta_{ik}] = 0.
+EQ-084,sections/sec08_mathematical_methods.tex,Mathematical Methods for Wave Propagation,eq:8.4,not registered,,"\sum_{j=0}^{m} G_j q^{2j}=0,"
+EQ-085,sections/sec08_mathematical_methods.tex,Mathematical Methods for Wave Propagation,eq:8.5,not registered,,"\hat{u}_i^{(n)} \hat{u}_i^{(n)*} = 1,"
+EQ-086,sections/sec08_mathematical_methods.tex,Mathematical Methods for Wave Propagation,eq:8.6,not registered,,"\hat{f}(\omega) = \int_{-\infty}^{\infty} f(t) e^{i\omega t}\,dt,"
+EQ-087,sections/sec08_mathematical_methods.tex,Mathematical Methods for Wave Propagation,eq:8.7,not registered,,"\tilde{f}(s) = \int_0^{\infty} f(t) e^{-st}\,dt."
+EQ-088,sections/sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",eq:9.1,not registered,,"\text{field}(x_1, x_3, t) = \hat{\text{field}}(x_3) e^{i(kx_1 - \omega"
+EQ-089,sections/sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",eq:9.2,not registered,,"u_i^{(m)} = \sum_n A_n^{(m)} \hat{u}_i^{(m,n)} e^{i(kx_1+q_n^{(m)}x_3-"
+EQ-090,sections/sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",eq:9.3,not registered,,"u_i^{(1)} = u_i^{(2)}, \qquad \sigma_{i3}^{(1)} = \sigma_{i3}^{(2)} \q"
+EQ-091,sections/sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",eq:9.4,not registered,,"T^{(1)} = T^{(2)}, \qquad q_3^{(1)} = q_3^{(2)} \quad \text{at } x_3 ="
+EQ-092,sections/sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",eq:9.5,not registered,,"\phi^{(1)} = \phi^{(2)}, \qquad D_3^{(1)} = D_3^{(2)} \quad \text{at }"
+EQ-093,sections/sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",eq:9.6,not registered,,"t_i = K_{ij}^u\bigl(u_j^{(2)} - u_j^{(1)}\bigr), \qquad t_i = \sigma_{"
+EQ-094,sections/sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",eq:9.7,not registered,,"\Delta \bm{X} = \bm{Q},"
+EQ-095,sections/sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",eq:9.8,not registered,,\bm{X} = \Delta^{-1}\bm{Q}.
+EQ-096,sections/sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",eq:9.9,not registered,,"\det \bm{M}(q,\omega,k)=0,"
+EQ-097,sections/sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",eq:9.10,not registered,,"R_{\Sigma} = \frac{J_{\mathrm{inc},n}-J_{1,n}^{\mathrm{tot}}}{J_{\math"
+EQ-098,sections/sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",eq:9.11,not registered,,\sum R_{\Sigma} + \sum T_{\Sigma} = 1.
+EQ-099,sections/sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",eq:9.12,not registered,,\sum R_{\Sigma} + \sum T_{\Sigma} + A_{\mathrm{int}} = 1.
+EQ-100,sections/sec10_energy.tex,Energy Transport and Dissipation,eq:10.1,not registered,,"\mathcal{E} = \frac{1}{2}\rho v_i v_i + \rho e,"
+EQ-101,sections/sec10_energy.tex,Energy Transport and Dissipation,eq:10.2,not registered,,\frac{\partial\mathcal{E}}{\partial t} + \partial_i F_i = \rho f_i v_i
+EQ-102,sections/sec10_energy.tex,Energy Transport and Dissipation,eq:10.3,not registered,,"J_i = q_i - \sigma_{ij}v_j,"
+EQ-103,sections/sec10_energy.tex,Energy Transport and Dissipation,eq:10.4,not registered,,\langle J_i\rangle_t=\bar q_i-\frac12\Re[\hat{\sigma}_{ij}\hat{v}_j^*]
+EQ-104,sections/sec10_energy.tex,Energy Transport and Dissipation,eq:10.5,not registered,,\jump{\mathcal{F}_n} = \mathcal{P}_\Sigma - \frac{\partial\mathcal{E}_
+EQ-105,sections/sec10_energy.tex,Energy Transport and Dissipation,eq:10.6,not registered,,"\jump{\mathcal{F}_n} = 0,"
+EQ-106,sections/sec10_energy.tex,Energy Transport and Dissipation,eq:10.11,not registered,,"R_{\mathrm{rem}} + T_{\mathrm{rem}} + A_{\mathrm{bulk},L} + A_{\mathrm"
+EQ-107,sections/sec10_energy.tex,Energy Transport and Dissipation,eq:10.12,not registered,,R_{\mathrm{rem}} + T_{\mathrm{rem}} = 1.
+EQ-108,sections/sec10_energy.tex,Energy Transport and Dissipation,eq:10.13,not registered,,"\mathcal{D}_L=P_i-P_r-\mathcal{F}_L,\qquad \mathcal{D}_{\Sigma}=\mathc"
+EQ-109,sections/sec10_energy.tex,Energy Transport and Dissipation,eq:10.14,not registered,,P_i=P_r+P_t+\mathcal{D}_L+\mathcal{D}_{\Sigma}+\mathcal{D}_R.
+EQ-110,sections/sec10_energy.tex,Energy Transport and Dissipation,eq:10.15,not registered,,"\hat u_1=A_i e^{ik_1x}+A_r e^{-ik_1x},\qquad \hat u_2=A_t e^{ik_2x}."
+EQ-111,sections/sec10_energy.tex,Energy Transport and Dissipation,eq:10.16,not registered,,\begin{bmatrix}1&-1\\-Z_1&-Z_2\end{bmatrix} \begin{bmatrix}A_r\\A_t\en
+EQ-112,sections/sec10_energy.tex,Energy Transport and Dissipation,(unlabelled),not registered,,\hat\sigma_i\hat v_r^*+\hat\sigma_r\hat v_i^*=\rho_1c_1^2 k_1\omega\le
+EQ-113,sections/sec11_advanced.tex,Advanced Theoretical Developments,eq:11.1,not registered,,"{}^C D_t^\alpha T = a_\alpha\nabla^2 T, \qquad 0 < \alpha \leq 2,"
+EQ-114,sections/sec11_advanced.tex,Advanced Theoretical Developments,eq:11.2,not registered,,{}^C D_t^\alpha f(t) = \frac{1}{\Gamma(1-\alpha)}\int_0^t \frac{f'(\ta
+EQ-115,sections/sec11_advanced.tex,Advanced Theoretical Developments,eq:11.3,not registered,,T(t) = T(0) + \frac{1}{\Gamma(\alpha)}\int_0^t (t-\tau)^{\alpha-1} a \
+EQ-116,sections/sec11_advanced.tex,Advanced Theoretical Developments,eq:11.4,not registered,,"q_i + \zeta\,{}^C D_t^\alpha q_i = -k T_{,i}."
+EQ-117,sections/sec11_advanced.tex,Advanced Theoretical Developments,eq:11.5,not registered,,\sigma_{ij} = C_{ijkl}\varepsilon_{kl} - \ell^2 C_{ijkl}\nabla^2\varep
+EQ-118,sections/sec11_advanced.tex,Advanced Theoretical Developments,eq:11.6,not registered,,"\sigma_{[ij]} + \mu_{ij,j} = 0,"
+EQ-119,sections/sec11_advanced.tex,Advanced Theoretical Developments,eq:11.7,not registered,,"T^* = T - \delta^2 \nabla^2 T,"
+EQ-120,sections/sec12_comparative.tex,Comparative Synthesis of Existing Research,eq:12.template,not registered,,"q_i+\tau_q\dot q_i+k\bigl(T_{,i}+\tau_T\dot T_{,i}\bigr)+k^*\bigl(v_{,"
+EQ-121,sections/sec14_taxonomy.tex,An Original Multidimensional Taxonomy of the Field,eq:14.1,not registered,,"\bm{v} = \left(v_{\text{phys}},\; v_{\text{math}},\; v_{\text{wave}},\"
+EQ-122,sections/sec14_taxonomy.tex,An Original Multidimensional Taxonomy of the Field,eq:14.2,not registered,,"d(\bm{v}^{(a)},\bm{v}^{(b)}) = \sum_{j=1}^{5} w_j \,\delta\!\left(v^{("
+EQ-123,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,"\frac{\diff}{\diff t}\int_V \rho v_i \, \diff V = \int_S \sigma_{ji} n"
+EQ-124,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,"\int_S \sigma_{ji} n_j \, \diff S = \int_V \sigma_{ji,j} \, \diff V."
+EQ-125,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,"\int_V \left(\rho \dot{v}_i - \sigma_{ji,j} - \rho f_i\right) \, \diff"
+EQ-126,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,"\rho \dot{v}_i = \sigma_{ji,j} + \rho f_i."
+EQ-127,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,"\frac{\diff}{\diff t}\int_V \rho (\bm{x} \times \bm{v})_k \, \diff V ="
+EQ-128,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,"\int_V \epsilon_{kij} (\sigma_{ij} - \sigma_{ji}) \, \diff V = 0."
+EQ-129,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,\sigma_{ij} = \sigma_{ji}.
+EQ-130,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,"\rho \dot{v}_i v_i = \sigma_{ji,j} v_i + \rho f_i v_i."
+EQ-131,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,\rho \dot{v}_i v_i = \frac{\diff}{\diff t}\left(\frac{1}{2}\rho v_i v_
+EQ-132,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,"\sigma_{ji,j} v_i = (\sigma_{ji} v_i)_{,j} - \sigma_{ji} v_{i,j}."
+EQ-133,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,"\sigma_{ji} v_{i,j} = \sigma_{ij} \dot{\varepsilon}_{ij}."
+EQ-134,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,\rho \frac{\diff}{\diff t}\left(\frac{1}{2}v_i v_i\right) = -\sigma_{i
+EQ-135,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,"\rho \dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i} + \rho r."
+EQ-136,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,"\rho \dot{e} = \sigma_{ij}\dot{\varepsilon}_{ij} - q_{i,i}."
+EQ-137,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,\rho\frac{D}{Dt}\left(\frac12v_iv_i+e\right) +\frac{\partial}{\partial
+EQ-138,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,\frac{\partial\mathcal{E}}{\partial t} +\frac{\partial}{\partial x_i}\
+EQ-139,appendices/appB_balance_derivations.tex,Detailed Balance Law Derivations,(unlabelled),not registered,,F_i=q_i-\sigma_{ij}v_j+\mathcal{E}v_i.

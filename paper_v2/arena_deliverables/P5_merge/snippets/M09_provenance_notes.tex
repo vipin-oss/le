@@ -1,0 +1,57 @@
+% =====================================================================
+% P5 merge snippet — M09: page-level provenance for the attributions
+% Source: v2 register (four PRIMARY-SOURCE-CHECKED rows) + the spectral reading of the
+% DPL stability statement + the Zener attribution. Nothing here is new scholarship: it
+% states, for statements the final paper already makes, what each attribution was checked
+% against and what the check does not cover.
+% NEW LABELS: sec:provenance, tab:provenance
+% Suggested placement: end of \cref{sec:hyperbolic} (after the per-family statements) or in
+% \cref{sec:methods} next to the other audit material, i.e. beside \cref{sec:eqregister}.
+% =====================================================================
+
+\subsection{What each attribution was checked against}\label{sec:provenance}
+
+An attribution is a claim about a source, and it can be checked or merely repeated. The table below
+records, for the attributions in this paper that were checked at page level, what the check consisted of
+and --- just as important --- what it does not cover. Statements absent from the table were not checked at
+page level and are presented as reproduced, which is the weaker claim.
+
+\begin{table}[H]\centering\small
+\caption{Page-level provenance for attributions made in this paper. `Covers' names the statement the check
+supports; `does not cover' names the part of the paper that the check leaves standing on the secondary
+literature.}
+\label{tab:provenance}
+\begin{tabularx}{\textwidth}{@{}p{3.1cm}Y Y@{}}
+\toprule
+\textbf{Statement} & \textbf{Checked against} & \textbf{Covers / does not cover} \\
+\midrule
+Biot heat-conduction equation, \eqref{eq:en} & Biot (1956), printed p.~242, Eqs.~(3.3)--(3.4) &
+  Covers the linear isotropic Fourier form with constant coefficients in a source-free body. Does not
+  cover coupled boundary-value solutions, anisotropy, or temperature-dependent properties. \\
+Green--Lindsay stress and entropy, \eqref{eq:GL} & Green and Lindsay (1972), primary text &
+  Covers the temperature-rate dependent stress and entropy, the absence of a relaxation term on the
+  strain-rate coupling, and the ordering of the two lags. Does not cover the existence theory of the
+  initial-boundary-value problem. \\
+Green--Naghdi type~II, in \cref{sec:hyperbolic} & Green and Naghdi (1993), Eq.~(3.16) integrated once &
+  Covers the source-free form with a zero integration constant. Does not cover type~III, nor the entropy
+  flux component relation, which is left open in the register. \\
+Three-phase-lag law, \eqref{eq:tpl} & Roy Choudhuri (2007), Eqs.~(3)--(4) &
+  Covers the first-order three-lag statement with its thermal-displacement-gradient term. Does not cover
+  second-order truncations. \\
+DPL stability ordering $\tau_T>\tau_q/2$ & Quintanilla (2003) &
+  Covers a spectral (eigenvalue) stability statement for the linearized problem. Does \emph{not} rest on
+  an energy functional, and says nothing about the nonlinear or finite-amplitude case. \\
+Thermoelastic damping of the reed & Zener (1937) &
+  Covers the attribution of the damping mechanism to Zener's reed calculation. Does not cover the
+  plate and flexural extensions derived in \cref{app:disp}, which are re-derived here. \\
+Second stiffness value in the piezothermoelastic bar example & The material data as stated with the
+  example & The value is \emph{not} quoted from the earlier piezoelectric literature; the example states
+  its own data, and the register marks the constitutive relation \eqref{eq:piezo} UNVERIFIED. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The pattern in the last two rows is deliberate. Where a number could be borrowed from a source whose
+equation was not checked, the number is either generated from stated data or not given at all. A borrowed
+number with an unchecked equation behind it is the most common way a review propagates an error it did not
+commit.
