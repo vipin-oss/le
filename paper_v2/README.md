@@ -49,6 +49,7 @@ older name. `main.pdf` is the snapshot build the measured numbers describe.
 | `arena_deliverables/P6_post_merge/` | the audit of that merge: `post_merge_claims.csv`, `pdfs_needed_final.csv`, `STATUS.md`, `final_paper_numbers.csv` |
 | `arena_deliverables/P1_audit/` | page-level audit of the **v1.2 snapshot** (142 pages): scripts, CSV results, narrative report |
 | `arena_deliverables/P17_submission/` | submission support for the review version: independent referee report, seven bibliographic completions (pages_fix.csv), abstract claim table, supplement plan with page counts, pre-submission e-mail, cover letter, new-versus-existing statement, the 41-figure and 25-table list, and its own gate |
+| `arena_deliverables/P18_checks/` | source checks behind the referee report: the Green-Lindsay relaxation-time inequality (what is recorded, what is not, and the one page that settles it), the Nowacki entry and its ISBN, and the Chen 2001 / Dreyer-Struchtrup 1993 availability check, with an evidence table and its own gate |
 | `arena_deliverables/check_readme_paths.py` | gate: these READMEs stay true (paths exist, numbers match the PDF) |
 | `claim_register.csv`, `verification_register.csv`, `benchmark_registry.csv`, `atlas_targets.csv` | the evidence registers |
 | `atlas_targets.csv`, `missing_sources_priority.csv`, `refs_catalogue_check.csv` | what is still missing, and how the catalogue was checked |
