@@ -1,8 +1,63 @@
-# Review manuscript, current build (v2)
+# `paper_v2/` — the review paper (current state)
 
-- `paper_sources.zip`: complete LaTeX sources (main.tex, sections/, scripts/, figures/, tables/, refs.bib, refs_extra.bib, refs_new.bib).
-- `main.pdf`: current build, 119 pages, 323 references.
+**Start at `../README.md`** (workspace index) or `arena_deliverables/README_FOR_CLAUDE.md` (deep log).
+This page says what this directory holds and how to rebuild the paper.
 
-Build: `pdflatex main; bibtex main; pdflatex main; pdflatex main`. Figures: run the scripts in `scripts/`.
+## The paper
 
-Known to-do: verify `refs_extra.bib` (32 entries typed from memory) and spot-check `refs_new.bib` (Crossref/library-derived, first author only); the catalogue in Appendix D is classified by title keywords only.
+*Waves in Thermoelastic and Multiphysics Continua: Generalized Heat Conduction, Coupled Fields and
+Interface Phenomena* — a review, 164 pages, 38 sections, 10 appendices (A–J), declarations.
+
+| Quantity | Value |
+|---|---|
+| Pages | 164 |
+| Sections / appendices | 38 / 10 (A–J) |
+| Numbered equations | 90 |
+| Figures / tables | 40 / 25 |
+| References | 337 |
+| Section files | 49 |
+
+These numbers are measured, not remembered: `arena_deliverables/P6_post_merge/measure_final_pdf.py`
+writes them to `arena_deliverables/P6_post_merge/final_paper_numbers.csv` from `main.pdf` and
+`overleaf_package.zip`. Re-run it after any rebuild.
+
+## Build
+
+```bash
+# Overleaf: upload overleaf_package.zip and compile with pdfLaTeX
+# locally:
+unzip -q overleaf_package.zip -d src && cd src
+pdflatex main && bibtex main && pdflatex main && pdflatex main
+```
+
+`overleaf_package.zip` is the authoritative source tree: 49 section files, the tables directory, the
+tikz figure sources and `refs*.bib`. `main.pdf` is the build these numbers describe.
+
+## What is where
+
+| Path | What it is |
+|---|---|
+| `main.pdf` | the paper as built (164 pages) |
+| `overleaf_package.zip` | the paper as source — the thing to upload |
+| `arena_deliverables/P5_merge/` | the merge package that produced the current text: `REPORT.md`, 11 paste-ready snippets, 12 conflict rows, the verified ledger |
+| `arena_deliverables/P6_post_merge/` | the audit of that merge: `post_merge_claims.csv`, `pdfs_needed_final.csv`, `STATUS.md`, `final_paper_numbers.csv` |
+| `arena_deliverables/P1_audit/` | page-level audit of the **v1.2 snapshot** (142 pages): scripts, CSV results, narrative report |
+| `arena_deliverables/check_readme_paths.py` | gate: these READMEs stay true (paths exist, numbers match the PDF) |
+| `claim_register.csv`, `verification_register.csv`, `benchmark_registry.csv`, `atlas_targets.csv` | the evidence registers |
+| `atlas_targets.csv`, `missing_sources_priority.csv`, `refs_catalogue_check.csv` | what is still missing, and how the catalogue was checked |
+| `manuscript_v2/` | **older snapshot (v1.1/v1.2), not the current paper** — kept because the audit trail cites it |
+| `versions/v1.1_source_snapshot/`, `versions/v1.2_edits_2026-11-01/` | frozen v1.1 and the pre-edit copies of every 2026-11-01 edit |
+| `working_notes/` | retained working collections deliberately **not** part of the paper |
+| `BLUEPRINT_v3.1.md`, `P1_DEFECT_REGISTER.md` | the plan and the defect record |
+
+## Open items
+
+The claim ledger `claim_register.csv` holds **224 rows** — 78 supported, 38 partly, 5 not supported as
+worded, 103 with no source in hand — and 81 of them rest on a page-level read. The new text is audited
+separately in `arena_deliverables/P6_post_merge/post_merge_claims.csv` (63 rows).
+
+Register coverage (11 of 136 inventoried equations carry a status); two post-merge defects (a
+cross-reference printing "(A)" in Appendix A, and Tables 21–23 floating after the reference list);
+sources still to be read (`arena_deliverables/P6_post_merge/pdfs_needed_final.csv`); journal choice,
+external review and atlas case results (0 of 40). The full list, with what each one blocks, is
+`arena_deliverables/P6_post_merge/STATUS.md`.
