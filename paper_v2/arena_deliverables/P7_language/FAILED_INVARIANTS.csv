@@ -1,0 +1,6 @@
+file,verdict,reason
+abstract.tex,PASS,
+s01_intro.tex,PASS,
+s02_history.tex,PASS,
+s16_synthesis.tex,PASS,
+s17_open.tex,PASS,
