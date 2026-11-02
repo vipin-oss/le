@@ -1,0 +1,20 @@
+key	doi	status	tried	result
+Chadwick1960		NOT-READ	tried: no DOI in bib; openalex title search returned no confident record; needs library access (Progress in Solid Mechanics chapter)	no verifiable abstract yet
+IgnaczakOstoja2010	10.1093/acprof:oso/9780199541645.001.0001	NOT-READ	tried: book (OUP); openalex record found, abstract null; book description only	no verifiable abstract yet
+Cattaneo1948		NOT-READ	tried: no DOI in bib; openalex title search returned unrelated records (Italian Atti del Seminario Matematico e Fisico, 1948); no abstract exists for this note	no verifiable abstract yet
+Vernotte1958		NOT-READ	tried: no DOI in bib; openalex title search returned unrelated records (French Comptes Rendus note, 1958); no abstract exists for this note	no verifiable abstract yet
+Lord1967	10.1016/0022-5096(67)90024-5	NOT-READ	tried: openalex (abstract null), semanticscholar (abstract elided by publisher), crossref (no abstract field)	no verifiable abstract yet
+Joseph1990	10.1103/revmodphys.62.375	NOT-READ	tried: openalex (record found, abstract null - it is an addendum), semanticscholar not tried	no verifiable abstract yet
+Tzou1997		NOT-READ	tried: no DOI in bib; openalex title search returned unrelated records (book: Macro- to Microscale Heat Transfer)	no verifiable abstract yet
+Povstenko2016	10.1007/978-3-319-15335-3	NOT-READ	tried: book (Springer); openalex record found, abstract null	no verifiable abstract yet
+Ezzat2011	10.1007/s00033-011-0126-3	NOT-READ	tried: openalex (abstract null), semanticscholar (abstract elided), web_search (citations only, no abstract)	no verifiable abstract yet
+Wang2011	10.1016/j.camwa.2011.04.028	NOT-READ	tried: openalex (abstract null), semanticscholar (abstract elided), web_search (citations only, no abstract)	no verifiable abstract yet
+Sur2019	10.1007/s00707-018-2357-2	NOT-READ	tried: openalex (abstract null); s2/web_search not yet tried	no verifiable abstract yet
+Abouelregal2020a	10.1140/epjp/s13360-020-00282-2	NOT-READ	tried: openalex (abstract null); s2/web_search not yet tried	no verifiable abstract yet
+Kumar2017		NOT-READ	tried: no DOI in bib; not identified confidently yet	no verifiable abstract yet
+Yu2024	10.1007/s10409-023-23419-x	NOT-READ	tried: openalex (abstract null); s2/web_search not yet tried	no verifiable abstract yet
+MuellerRuggeri1998	10.1007/978-1-4612-2210-1	NOT-READ	tried: book; local PDF is 30 MB and exceeds the 25 MB extraction cap; openalex record found, abstract null	no verifiable abstract yet
+Yu2018ModifiedGL	10.1007/s11012-018-0843-1	NOT-READ	tried: openalex (abstract null); s2/web_search not yet tried	no verifiable abstract yet
+ChenNunziato1974	10.1007/BF01590264	NOT-READ	tried: openalex (abstract null); s2/web_search not yet tried	no verifiable abstract yet
+Dhaliwal1980	10.1090/qam/575828	NOT-READ	tried: DOI 10.1090/qam/575828 is not a Crossref DOI (AMS); openalex lookup not possible with it	no verifiable abstract yet
+Stroh1962	10.1002/sapm196241177	NOT-READ	tried: openalex (record found, abstract null)	no verifiable abstract yet
