@@ -1,0 +1,86 @@
+% =====================================================================
+% P5 merge snippet — M07: five-axis taxonomy of the field
+% Source: manuscript_v2, Sec. 14 (sec:taxonomy, 3,731 words, 5 tables). This snippet is a
+% CONDENSED version: the five axes, the dissimilarity, and how to use it — about one page.
+% Full version available on request from the v2 source; not pasted here because it would
+% duplicate \cref{sec:synthesis}.
+% Adapted: \cref/\eqref, this paper's labels, their [nosep] enumerate style.
+% NEW LABELS: sec:taxonomy, tab:taxonomy-axes, eq:taxdissim
+% Suggested placement: a new section between \cref{sec:synthesis} and \cref{sec:open}.
+% =====================================================================
+
+\section{A taxonomy of the field, and when two studies are comparable}\label{sec:taxonomy}
+
+The literature labels a study ``generalized thermoelastic'' or it does not. That single axis collapses
+independent commitments into one word: a study may adopt a relaxation law for the heat flux, a gradient or
+integral law for the stress, a coupling to a second field, and a validation regime, and each can be varied
+while the others are held fixed. Two studies sharing the label can therefore differ in the mathematics of
+their governing equations, in their modal content and in the evidence they offer. \Cref{sec:synthesis}
+compares families; this section says what a family \emph{is} as a coordinate, so that a new model can be
+placed without argument.
+
+The heat-flux template of \cref{sec:foundations} is a special case of Axis~2: the operator is local in
+space and first order in time, with the lags as the coordinate that separates the template's members. A
+model that needs an integral, fractional or gradient operator has left the axis rather than changed a
+parameter on it, which is why those models cannot be ranked against the template's members by setting a
+lag to zero.
+
+A study is classified by its vector of commitments $\mathbf{c}=(c_1,\dots,c_5)$, one coordinate per axis:
+
+\begin{enumerate}[label=\textbf{Axis \arabic*:}]
+\item \textbf{Physical axis (material class).} Classical elastic, thermoelastic, piezoelectric,
+  piezothermoelastic, magneto-thermo-elastic, poroelastic, micropolar, two-temperature, semiconductor-like.
+  It fixes which conserved quantities and driving fields exist before any approximation.
+\item \textbf{Mathematical axis (operator structure).} Local PDE, integro-differential, fractional-order,
+  nonlocal gradient, hereditary memory integral, or variational/weak form. This is the axis along which the
+  most consequential differences run.
+\item \textbf{Wave axis (modal content).} Does the thermal mode propagate at finite speed; how many coupled
+  modes exist; is there attenuation; what is the dispersion character of each.
+\item \textbf{Coupling axis (field topology).} Which fields are coupled and how strongly ---
+  thermoelastic, thermo-piezoelectric, thermo-magneto-elastic, thermo-poro-elastic, thermo-micro-elastic.
+  Coupling topology, not the choice of energy functional, decides whether an interface problem is tractable.
+\item \textbf{Validation axis (evidence regime).} Existence and uniqueness only; closed-form solution for a
+  special geometry; numerical solution validated against a reference; comparison with experiment; a shared
+  benchmark suite.
+\end{enumerate}
+
+Two studies are \emph{directly} comparable when their vectors agree in the first two coordinates; if they
+differ there, no comparison of numbers is meaningful and only a comparison of structure is. To make the
+weaker statement quantitative, define the axis-weight dissimilarity
+\begin{equation}\label{eq:taxdissim}
+d(\mathbf{c},\mathbf{c}')=\sum_{j=1}^{5} w_j\,\bigl(1-\delta_{c_j c_j'}\bigr),
+\qquad
+w_{\mathrm{math}}\ge w_{\mathrm{phys}}>w_{\mathrm{coup}}>w_{\mathrm{wave}}>w_{\mathrm{val}} ,
+\end{equation}
+with the ordering stated because it is a modelling decision that can be contested: a difference in the
+mathematical axis changes the governing operator and invalidates most direct comparisons, whereas a
+difference in the validation axis changes only the epistemic status of the conclusion. The weights are
+reported whenever the dissimilarity is used, and no result in this review depends on their numerical values.
+
+\begin{table}[H]\centering\small
+\caption{The five axes with their admissible values. A study occupies one cell of the product; the last
+column gives an example assignment for a coupled fractional piezothermoelastic problem.}
+\label{tab:taxonomy-axes}
+\begin{tabularx}{\textwidth}{@{}p{1.6cm}Y Y@{}}
+\toprule
+\textbf{Axis} & \textbf{Admissible values} & \textbf{Example} \\
+\midrule
+Physical & elastic; thermoelastic; piezoelectric; piezothermoelastic; magneto-thermo-elastic; poroelastic;
+  micropolar; two-temperature; semiconductor & piezothermoelastic \\
+Mathematical & local PDE; integro-differential; fractional; nonlocal gradient; hereditary; variational &
+  fractional + local coupling \\
+Wave & finite/infinite thermal speed; number of coupled modes; attenuating/non-attenuating &
+  two modes, one attenuated \\
+Coupling & none; thermal; thermal + electric; thermal + magnetic; thermal + poro; thermal + micro-rotation &
+  thermal + electric \\
+Validation & proof only; closed form; verified numerics; experiment; shared benchmark &
+  verified numerics \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The taxonomy earns its place only if it changes a decision, and it does in three places in this review: it
+is why \cref{sec:synthesis} compares families in the order it does; it is why \cref{sec:interfaces} insists
+that an energy flux be defined consistently with the model before ratios are compared (see
+\cref{sec:eqregister}); and it is why \cref{sec:open} separates questions that differ in the mathematical
+axis from questions that differ only in evidence.

@@ -1,0 +1,68 @@
+% =====================================================================
+% P5 merge snippet — M04: researchable questions with acceptance tests
+% Source: manuscript_v2, Sec. 16 (tab:research-questions, R1--R10), written 2026-11-01
+% as a consolidation of that paper's per-topic research questions.
+% Adapted: the "stated in" column now points at THIS paper's sections (sec:open,
+% sec:synthesis, sec:interfaces, sec:size, sec:methods) and appendices.
+% Nothing new is claimed: each row restates a gap this paper already states in prose.
+% NEW LABELS: tab:research-questions, sec:research_questions
+% Suggested placement: end of \cref{sec:open}, after the prose agenda.
+% =====================================================================
+
+\subsection{Researchable questions, and what would settle each}\label{sec:research_questions}
+
+The agenda above states the gaps. A gap becomes usable when the evidence that would close it is
+stated too, because that is what lets a reader decide whether a proposed study is decisive or merely
+related. The table makes the test explicit; the final column names the section where the gap is first
+stated in this paper.
+
+\begin{table}[H]\centering\small
+\caption{Researchable questions. Each row restates a gap stated in \cref{sec:open}; the third column
+names the evidence that would move it from open to closed. No new claim is introduced.}
+\label{tab:research-questions}
+\begin{tabularx}{\textwidth}{@{}p{0.5cm}Y Y p{1.75cm}@{}}
+\toprule
+\textbf{\#} & \textbf{Question} & \textbf{What would settle it} & \textbf{Stated in} \\
+\midrule
+R1 & What is the total (not availability) energy flux for each generalized family, and how does it
+  differ from the flux used for interface partition? & A time-domain derivation per family under an
+  explicit free-energy convention, external-field power terms and boundary conditions, checked against
+  the primary formulation --- and a statement of the first-order reduction that recovers the flux used
+  for the energy ratios. & \cref{sec:foundations}, \cref{sec:interfaces} \\
+R2 & Is energy conserved at an interface in generalized and nonlocal media, and in what sense? & An
+  interface balance derived from the selected model's flux, with the admissible jump conditions, tested
+  against a benchmark whose reference solution does not depend on the model under test. &
+  \cref{sec:interfaces} \\
+R3 & Which benchmark is the right reference for a generalized theory? & A specification whose reference
+  solution is independent --- analytic limit, symbolic determinant, or an independently implemented
+  discretization --- with a stated tolerance. & \cref{app:registry} \\
+R4 & Do the predicted generalized modes exist in a real material, with the predicted attenuation? & An
+  experimental measurement of the predicted observables under conditions inside the model's stated
+  validity domain. & \cref{sec:experiments} \\
+R5 & How should energy flux and energy partition be normalized across families so that comparisons mean
+  something? & A normalization in terms of physical observables rather than model parameters. &
+  \cref{sec:synthesis} \\
+R6 & How are nonlocal interface conditions and a nonlocal divergence theorem formulated? & A variational
+  statement of the nonlocal boundary-value problem from which the interface conditions follow rather than
+  are assumed. & \cref{sec:size} \\
+R7 & Are phase-lag, memory-kernel and anisotropy parameters identifiable from measurable data? & The
+  number and type of independent measurements needed to separate the parameters, established by analysis
+  of the sensitivity structure or by a designed experiment; the answer is model-specific. &
+  \cref{sec:experiments} \\
+R8 & Do the thermodynamic restrictions reduce the admissible parameter set under anisotropic symmetry as
+  they do in the isotropic case? & The anisotropic admissibility analysis carried through for each family,
+  with the coordinate-free form of the fractional and memory operators under anisotropic differentiation.
+  & \cref{sec:foundations} \\
+R9 & Which comparative statements survive when each family's own conventions are respected? & A
+  model-by-model full-text check of constitutive conventions, free energies and external-field power terms
+  before any flux or mode count is compared. & \cref{sec:synthesis} \\
+R10 & Can the benchmarks be reproduced from published inputs, and at what convergence rate? & Shared
+  implementations, published inputs and reported convergence rates for every benchmark. &
+  \cref{sec:methods} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Two of these questions are the same question at different depths: R1 and R9. A family-level flux
+comparison cannot be trusted until the model-specific derivations behind it exist, which is why the
+register in \cref{sec:eqregister} marks the affected entries open instead of filling them.

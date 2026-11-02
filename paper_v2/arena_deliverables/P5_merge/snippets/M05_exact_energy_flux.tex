@@ -1,0 +1,44 @@
+% =====================================================================
+% P5 merge snippet — M05: the exact Eulerian total-energy flux, and why the reduced
+% form is not an identity
+% Source: manuscript_v2, Sec. 3.8 (eq:3.28, eq:3.29) + Sec. 10.2, EQ-007 (DERIVED).
+% Adapted to this paper's notation AND with an explicit name clash handled:
+%   this paper already uses \mathcal E for the AVAILABILITY (quadratic) energy and P_i for
+%   its flux (eq:energy, eq:P). The total energy per unit volume must therefore get a
+%   different symbol — \mathcal E_{\mathrm{tot}} — or the two objects will be confused.
+% NEW LABELS: eq:exactflux, eq:exactflux-balance
+% Suggested placement: immediately after \eqref{eq:P} in \cref{sec:foundations}, because the
+% text there already says P_i ``differs from the flux q_i-\sigma_{ij}\dot u_j of the total
+% internal energy''. This snippet makes that statement exact and gives the identity.
+% =====================================================================
+
+\paragraph{The exact total-energy flux, and the reduced form.}
+The availability flux \eqref{eq:P} is the object that satisfies a dissipation identity and it is the
+right flux for interface energy partition, as used in \cref{sec:interfaces}. It is \emph{not} the flux of
+total energy, and the difference matters whenever a fixed control volume is meant rather than a material
+element. Adding the mechanical power balance to the internal-energy balance, converting the material
+derivative with mass conservation, and writing $\mathcal E_{\mathrm{tot}}=\rho\bigl(\tfrac12\dot
+u_i\dot u_i+e\bigr)$ for the total energy per unit volume gives the exact identity
+\begin{equation}\label{eq:exactflux}
+\frac{\partial \mathcal E_{\mathrm{tot}}}{\partial t}
++\frac{\partial}{\partial x_j}\Bigl(q_j-\sigma_{ji}\dot u_i+\mathcal E_{\mathrm{tot}}\dot u_j\Bigr)
+=\rho f_i\dot u_i+\rho r ,
+\end{equation}
+so that with no body force and no heat supply the outward-positive Eulerian flux is
+\begin{equation}\label{eq:exactflux-balance}
+F_j=q_j-\sigma_{ji}\dot u_i+\mathcal E_{\mathrm{tot}}\dot u_j,
+\qquad
+\frac{\partial \mathcal E_{\mathrm{tot}}}{\partial t}+\frac{\partial F_j}{\partial x_j}=0 .
+\end{equation}
+Three contributions appear: conduction $q_j$, stress power $-\sigma_{ji}\dot u_i$, and advection of
+total energy $\mathcal E_{\mathrm{tot}}\dot u_j$. The first two alone are the reduced flux
+$J_j=q_j-\sigma_{ji}\dot u_i$ that appears in most of the literature and in first-order small-amplitude
+wave calculations; $J_j$ is the first-order reduction of $F_j$ under the stated small-motion
+assumptions, not an exact fixed-volume flux.
+
+This does not displace \eqref{eq:P}. The two objects answer different questions: $P_i$ is the flux tied
+to a positive-definite availability functional whose balance carries the dissipation on the right-hand
+side, and it is what makes the interface energy ratios in \cref{sec:interfaces} sum to one; $F_j$ is the
+conserved flux of total energy in a fixed frame. Comparing a generalized model's energy transport against
+another's is only meaningful once it is stated which of the two is being compared --- a point that the
+reduced notation common in the literature leaves open.

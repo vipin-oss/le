@@ -1,0 +1,44 @@
+% =====================================================================
+% P5 merge snippet — M02: evidence protocol (six rules + its own limits)
+% Source: manuscript_v2, Sec. 2.7 (sec:evidence_protocol), written 2026-11-01.
+% Adapted: \cref/\eqref, this paper's appendix labels, \citep.
+% NEW LABELS: sec:evidence_protocol
+% Suggested placement: a new subsection at the end of \cref{sec:intro_ref} (or after the
+% reporting standards in \cref{sec:reporting}), because it tells the reader how to discount
+% every statement in between.
+% =====================================================================
+
+\subsection{Evidence protocol and how to discount this review}\label{sec:evidence_protocol}
+
+A review is only as useful as the reader's ability to tell what it has checked from what it has merely
+repeated. The protocol applied throughout is stated here so that any statement can be discounted by the
+rule it fails.
+
+\begin{enumerate}
+\item \textbf{Derivation and attribution are separated.} A statement derived here is presented as a
+derivation and carries an equation identifier; a statement taken from a source is presented as
+attribution even where the source's formulation is reproduced exactly. The two are never merged into one
+unmarked sentence. The register in \cref{sec:eqregister} records which is which.
+\item \textbf{Every registered equation carries a status} from a fixed vocabulary, and a status records
+the check performed, not a rank of importance (\cref{tab:eqregister}).
+\item \textbf{A secondary source is never promoted to a primary one.} Where the primary text was not
+available the text says so and the register records the weaker status. The absence of the primary text
+is not evidence for the claim.
+\item \textbf{Bibliographic identifiers are verified before they are printed.} A DOI printed in the
+reference list has been checked against a bibliographic registry record for the same work --- author,
+title, journal, volume, pages --- rather than inferred from a citation in another paper. Works that
+predate DOI assignment say so in the entry instead of carrying a plausible-looking identifier.
+\item \textbf{Numbers that can be recomputed are given with what is needed to recompute them.} A benchmark
+value is presented with its specification, reference solution and tolerance
+(\cref{app:registry}); a value quoted from the literature is presented as quoted, with its conditions,
+and not as an independent confirmation.
+\item \textbf{Errors are recorded without personal characterisation.} Where a material error is
+conclusively established it is recorded plainly; where the evidence establishes a difference but not an
+error, it is recorded as a difference. No allegation is made against a publication, and no model-specific
+discrepancy is presented as a mathematical contradiction without demonstration.
+\end{enumerate}
+
+The protocol has limits and they are part of it. Not every cited work was read page by page; coverage of
+the literature is deliberate rather than exhaustive; and the register documents checks performed for this
+version, not checks that exist somewhere in principle. Those limits are why the register reports coverage
+instead of asserting completeness.

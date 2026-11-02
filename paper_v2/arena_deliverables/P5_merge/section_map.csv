@@ -1,0 +1,46 @@
+final_file,final_section_title,final_label,v2_file,v2_section_title,overlap,shared_cite_keys,cite_jaccard,final_words,v2_words,note
+s01_intro.tex,Introduction,sec:intro_ref,sec01_scope.tex,Review Scope and Purpose,partial,2,0.091,1147,1636,small bibliography overlap; see the section text before trusting the pair
+s02_history.tex,Historical development and the literature landscape,sec:history_ref,sec02_literature.tex,Literature Landscape and Scholarly Context,high,42,0.313,1362,1665,
+s03_foundations.tex,Thermomechanical foundations,sec:foundations_ref,sec03_foundations.tex,Foundations of Continuum Wave Mechanics,high,1,0.045,1709,2782,small bibliography overlap; see the section text before trusting the pair
+s03c_prelim.tex,Mathematical preliminaries,sec:prelim_ref,sec08_mathematical_methods.tex,Mathematical Methods for Wave Propagation,partial,0,0.0,788,1596,"the final side carries no citations here, so overlap is judged on content"
+s03d_admiss.tex,(section named only on its \input line),(none),sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,partial,2,0.061,661,2962,small bibliography overlap; see the section text before trusting the pair
+s03b_kinetic.tex,Kinetic origin of the hyperbolic and Guyer--Krumhansl laws,sec:kinetic_ref,no equivalent,no equivalent,none,,,670,,no counterpart topic in manuscript_v2
+s04_classical.tex,Classical coupled thermoelasticity,sec:classical_ref,sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,high,3,0.073,1254,2962,
+s05_hyperbolic.tex,"Hyperbolic theories: LS, GL and GN",sec:hyperbolic_ref,sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,high,6,0.118,1260,2962,
+s06_lags.tex,"Lagging and third-order models: DPL, TPL and MGT",sec:lags_ref,sec04_thermoelastic.tex,Classical and Generalized Thermoelastic Theories,high,15,0.283,1402,2962,
+s06b_delay.tex,Fidelity of Taylor-truncated lag models,sec:delayfid_ref,no equivalent,no equivalent,none,,,461,,no counterpart topic in manuscript_v2
+s07_memory.tex,Fractional and memory-dependent models,sec:memory_ref,sec06_transport.tex,Generalized Transport and Memory Effects,high,3,0.07,1031,1723,
+s07b_fraccoupled.tex,Coupled fractional dispersion,sec:fraccoupled_ref,sec06_transport.tex,Generalized Transport and Memory Effects,partial,0,0.0,316,1723,"the final side carries no citations here, so overlap is judged on content"
+s07c_modulus.tex,"Effective modulus, causality and Kramers--Kronig relations",sec:modulus_ref,no equivalent,no equivalent,none,,,568,,no counterpart topic in manuscript_v2
+s08_waves3d.tex,Wave propagation in three dimensions,sec:waves3d_ref,sec08_mathematical_methods.tex,Mathematical Methods for Wave Propagation,partial,1,0.062,602,1596,small bibliography overlap; see the section text before trusting the pair
+s08b_aniso.tex,Anisotropy: thermal coupling of quasi-longitudinal waves in cubic crystals,sec:aniso_ref,sec12_comparative.tex,Comparative Synthesis of Existing Research,partial,0,0.0,615,4643,"the final side carries no citations here, so overlap is judged on content"
+s08c_reflection.tex,Reflection at a thermoelastic free surface: numerical results,sec:reflection_ref,sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",partial,0,0.0,508,2104,"the final side carries no citations here, so overlap is judged on content"
+s09_transient.tex,Transient problems: heat pulses and thermal shock,sec:transient_ref,no equivalent,no equivalent,none,,,900,,no counterpart topic in manuscript_v2
+s09b_thermalmodes.tex,Thermal-wave resonance in a finite rod,sec:thermalmodes_ref,no equivalent,no equivalent,none,,,370,,no counterpart topic in manuscript_v2
+s10_surface.tex,Surface waves: thermoelastic Rayleigh waves,sec:surface_ref,sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",partial,1,0.033,953,2104,small bibliography overlap; see the section text before trusting the pair
+s10b_lamb.tex,Thermoelastic Lamb waves in a plate,sec:lamb_ref,no equivalent,no equivalent,none,,,607,,no counterpart topic in manuscript_v2
+s10c_bar.tex,Resonant modes of a clamped bar,sec:bar_ref,no equivalent,no equivalent,none,,,487,,no counterpart topic in manuscript_v2
+s04b_flexted.tex,Thermoelastic damping in flexure: Zener and exact Fourier solutions,sec:flexted_ref,no equivalent,no equivalent,none,,,382,,no counterpart topic in manuscript_v2
+s11_interfaces.tex,"Interfaces, reflection and energy partition",sec:interfaces_ref,sec09_interfaces.tex,"Reflection, Transmission, and Interface Phenomena",high,4,0.138,1355,2104,
+s11b_layered.tex,"Layered media: Love, Stoneley and Scholte waves",sec:layered_ref,no equivalent,no equivalent,none,,,934,,no counterpart topic in manuscript_v2
+s12_size.tex,Size effects: nonlocal and gradient models,sec:size_ref,sec07_nonlocal.tex,Nonlocal and Scale-Dependent Continuum Models,high,10,0.227,1218,2138,
+s13_multiphysics.tex,Coupling to further fields,sec:multi_ref,sec05_multiphysics.tex,Coupled Multiphysics Continua,high,6,0.113,1284,2234,
+s13b_bg.tex,Piezoelectric shear-horizontal surface waves,sec:bg_ref,no equivalent,no equivalent,none,,,598,,no counterpart topic in manuscript_v2
+s14_methods.tex,Solution methods and verification,sec:methods_ref,sec08_mathematical_methods.tex,Mathematical Methods for Wave Propagation,high,0,0.0,970,1596,"the final side carries no citations here, so overlap is judged on content"
+s14b_schemes.tex,A finite-difference benchmark for hyperbolic heat conduction,sec:schemes_ref,sec08_mathematical_methods.tex,Mathematical Methods for Wave Propagation,partial,0,0.0,581,1596,"the final side carries no citations here, so overlap is judged on content"
+s15_applications.tex,Applications,sec:applications_ref,sec13_applications.tex,Applications of Multiphysics Wave Mechanics,high,1,0.029,752,2284,small bibliography overlap; see the section text before trusting the pair
+s15d_scenarios.tex,A quantitative guide to application regimes,sec:scenarios_ref,sec13_applications.tex,Applications of Multiphysics Wave Mechanics,partial,0,0.0,592,2284,"the final side carries no citations here, so overlap is judged on content"
+s15b_examples.tex,Worked examples,sec:examples_ref,no equivalent,no equivalent,none,,,737,,no counterpart topic in manuscript_v2
+s15c_experiments.tex,Experimental evidence and parameter identification,sec:experiments_ref,sec13_applications.tex,Applications of Multiphysics Wave Mechanics,partial,0,0.0,651,2284,"the final side carries no citations here, so overlap is judged on content"
+s16_synthesis.tex,Comparative synthesis and decision guide,sec:synthesis_ref,sec12_comparative.tex,Comparative Synthesis of Existing Research,high,10,0.27,1272,4643,
+s16b_atlas.tex,Atlas of problems in the literature,(none),no equivalent,no equivalent,none,,,1608,,no counterpart topic in manuscript_v2
+s17b_reporting.tex,Reporting standards for new work,sec:reporting_ref,no equivalent,no equivalent,none,,,603,,no counterpart topic in manuscript_v2
+s17_open.tex,Open problems and research agenda,sec:open_ref,sec15_challenges.tex,Major Scientific Challenges,high,0,0.0,845,2377,"the final side carries no citations here, so overlap is judged on content"
+appA.tex,Derivation and verification of the dispersion polynomial,app:disp_ref,no equivalent,no equivalent,none,,,201,,no counterpart topic in manuscript_v2
+appB.tex,Characteristic numbers and parameter estimates,app:numbers_ref,sec12_comparative.tex,Comparative Synthesis of Existing Research,partial,0,0.0,148,4643,"the final side carries no citations here, so overlap is judged on content"
+appC.tex,Reproducibility: scripts and what each one verifies,app:repro_ref,appF_reproducibility.tex,Reproducibility and evidence status,high,0,0.0,534,398,"the final side carries no citations here, so overlap is judged on content"
+appD_catalogue.tex,Classified catalogue of the cited literature,app:catalogue_ref,no equivalent,no equivalent,none,,,5560,,no counterpart topic in manuscript_v2
+appE_glossary.tex,Glossary and summary of working formulas,app:glossary_ref,notation.tex,Notation,partial,0,0.0,375,513,"the final side carries no citations here, so overlap is judged on content"
+appF_debye.tex,Derivation of the weak-coupling relaxation form,app:debye_ref,no equivalent,no equivalent,none,,,372,,no counterpart topic in manuscript_v2
+appG_params.tex,Parameter register for the figures,app:params_ref,appD_figures.tex,Figure Source and Audit Status,partial,0,0.0,385,410,"the final side carries no citations here, so overlap is judged on content"
+appH_registry.tex,Benchmark registry,app:registry_ref,appC_benchmarks.tex,Benchmark Specifications,high,0,0.0,396,210,"the final side carries no citations here, so overlap is judged on content"
