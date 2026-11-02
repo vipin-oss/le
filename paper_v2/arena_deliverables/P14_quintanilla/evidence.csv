@@ -1,0 +1,56 @@
+key,claim,quote,eq_theorem,page,sentence,kind,verbatim
+Quintanilla2003JTS,The paper uses the variant with the flux expanded to second order in tau_q and the gradient to first order in tau_T,up to the second order in tq but only to the first order in ty,"(1), (3) with b=0",714,S5,quote,yes
+Quintanilla2003JTS,The expansion is taken on both sides of Tzou's lag equation,We consider the theory developed by taking the Taylor series,text before (3),714,S5,quote,yes
+Quintanilla2003JTS,The two operators are first order in tau_T and second order in tau_q,theta-hat = theta + tau_T theta-dot ; theta-tilde = theta + tau_q theta-dot + ...,(4),715,S5,quote,eq
+Quintanilla2003JTS,The model is 1-D thermoelasticity,rho u-ddot = (lambda + 2 mu) u_xx - beta theta_x,(2),715,S5,quote,eq
+Quintanilla2003JTS,The heat equation carries the two lagged operators,c theta-tilde-dot = k theta-hat_xx - beta theta0 v_x,(3),715,S5,quote,eq
+Quintanilla2003JTS,The stability condition is tau_T greater than tau_q/2,tau_T > tau_q/2,(11),716,S5,quote,eq
+Quintanilla2003JTS,The eigenfunctions are exponential in time,The solutions in this case will be combinations of functions of the form,(12),716,S5,quote,yes
+Quintanilla2003JTS,The argument is spectral: an infinite family of polynomial equations,First we determine the infinite family of polynomial equations,"text, section 3",714,S5,quote,yes
+Quintanilla2003JTS,The eigenvalue polynomials are handled by the Hurwitz theorem,In this second step we use the Hurwitz theorem,"text, section 3",714,S5,quote,yes
+Quintanilla2003JTS,The characteristic equation is of fifth order in omega,(tau_q^2/2) omega^5 + tau_q omega^4 + [...] omega^3 + [...] + n^4 = 0,(15),717,S5,quote,eq
+Quintanilla2003JTS,Hurwitz determinants decide the sign of the real parts,"we use the Hurwitz theorem, which says",(17)-(19),717,S5,quote,yes
+Quintanilla2003JTS,The 1/2 in the condition is where the factor (2 tau_T - tau_q) enters,L2 = 2 n^2 (2 ty - tq) + 4 + E Q2(n^2) tq^3,(23),718,S5,quote,eq
+Quintanilla2003JTS,The exponential decay is a theorem of the paper,Then the solutions decay exponentially to zero,Theorem 1,718,S5,quote,yes
+Quintanilla2003JTS,The inequality (11) is what makes the Hurwitz determinants positive,"As we assume condition (11), we see that we can select a positive",text before (24),718,S5,quote,yes
+Quintanilla2003JTS,Instability is proved by exhibiting an eigenvalue with positive real part,there exist solutions of the form,section 4,719,S5,quote,yes
+Quintanilla2003JTS,Conclusion (i): exponential stability when the condition holds,the solutions of the one-dimensional thermoelastic problem are exponentially stable,conclusions (i),720,S5,quote,yes
+Quintanilla2003JTS,Conclusion (ii): instability when the condition fails,there exist unstable solutions,conclusions (ii),720,S5,quote,yes
+Quintanilla2003JTS,"The semigroup, needed to pass from the spectrum to decay, is taken from the 2002 paper",we can obtain the solutions by means of a semigroup,"text, section 1",714,S5,quote,yes
+Quintanilla2002JNET,The earlier heat-conduction paper proves the same condition,tau_T > tau_q/2,(4.1),221,S5,quote,eq
+Quintanilla2002JNET,The notion is exponential stability in time,examine the exponential stability of the solutions with respect to time,section 4 opening,221,S5,quote,yes
+Quintanilla2002JNET,"The method here is energy functionals, not a spectral argument",W2 defines a measure of the solutions that is equivalent to W1,"(4.3), (4.4)",221,S5,quote,yes
+Quintanilla2002JNET,Existence is obtained by semigroup theory,Time exponential stability is proved in section four,"text, section 1",218,S5,quote,yes
+Quintanilla2002JNET,Instability when the condition fails,we can find a solution of the problem which is unstable,section 5 opening,222,S5,quote,yes
+Quintanilla2002JNET,Spatial decay is treated as well,we study the spatial exponential stability for the transient problem,"text, section 1",218,S5,quote,yes
+QuintanillaRacke2006IJHMT,For the second-order-in-tau_q model the threshold is one half,omega := tau_h/tau_q > 1/2,(1.5),1210,S5,quote,eq
+QuintanillaRacke2006IJHMT,Failing the threshold means no exponential stability,omega < 1/2,(1.6),1210,S5,quote,eq
+QuintanillaRacke2006IJHMT,Stability holds together with exponential decay,the system is (even exponentially) stable if,text before (1.5),1210,S5,quote,yes
+QuintanillaRacke2006IJHMT,The competing variant keeps second order in both lags,(tau_q^2/2) theta_ttt + tau_q theta_tt + theta_t = k Delta theta + ...,(1.8),1210,S5,quote,eq
+QuintanillaRacke2006IJHMT,The two variants have different stability regions,there is an open set of parameter values for which,"text, section 1",1210,S5,quote,yes
+QuintanillaRacke2006IJHMT,The eigenvalue problem for the second variant,The characteristic polynomial now reads as,section 3,1211,S5,quote,yes
+QuintanillaRacke2006IJHMT,A sufficient condition for the second variant,tau_h/tau_q >= sqrt(2) - 1,(3.3),1211,S5,quote,eq
+QuintanillaRacke2006IJHMT,That number is below one half,gives a larger expectation for stability since,text after (3.3),1211,S5,quote,yes
+QuintanillaRacke2006IJHMT,Spectrum and semigroup type are not the same thing,the supremum of the spectrum does not describe,section 2,1211,S5,quote,yes
+QuintanillaRacke2006IJHMT,The exact condition for the second variant,omega = tau_h/tau_q > 2 - sqrt(3),(3.12),1212,S5,quote,eq
+QuintanillaRacke2006IJHMT,The summary sentence for that regime,we are in the regime of stability if,text before (3.12),1212,S5,quote,yes
+QuintanillaRacke2006IJHMT,Tzou himself is quoted as saying the second-order-in-both expansion changes the type,should also involve a second-order time derivative,text quoting Tzou [12],1210,S5,quote,yes
+QuintanillaRacke2006IJHMT,"For the metals Tzou tabulated, both variants agree",the values are in the set where both models predict the same,"text, section 1",1210,S5,quote,yes
+FabrizioLazzari2014,"Model (2) of the paper is the second-order-in-tau_q, first-order-in-tau_h variant",(1/2) tau_q^2 q-ddot + tau_q q-dot + q = -k [grad theta + ...],(2),484,S5,quote,eq
+FabrizioLazzari2014,Model (3) keeps second order in both lags,the same plus (1/2) tau_h^2 grad theta-ddot,(3),485,S5,quote,eq
+FabrizioLazzari2014,For model (2) the stability and thermodynamic restrictions coincide,the same restrictions on sq and sh,"text, section 1",485,S5,quote,yes
+FabrizioLazzari2014,The Second Law gives a two-sided band for the second variant,(2 - sqrt(3)) tau_h < tau_q < (2 + sqrt(3)) tau_h,(4),485,S5,quote,eq
+FabrizioLazzari2014,Stability is wider than thermodynamic admissibility there,the stability conditions appear wider than the thermodynamic restrictions,text after (4),485,S5,quote,yes
+FabrizioLazzari2014,"The stability notion is exponential decay, obtained by transform estimates",the solution satisfies the exponential decay,Theorem 4.1,488,S5,quote,yes
+FabrizioLazzari2014,The second variant loses well-posedness outside a two-sided band,"If sq > (2 - sqrt(3)) sh, then the operator",Lemma 4.2,488,S5,quote,yes
+ChiritaDApiceZampoli2016,The three-phase-lag paper keeps second order in tau_q and first order in the other two lags,up to the second order in sq and up to the first order in,text before (3),227,S5,quote,yes
+ChiritaDApiceZampoli2016,"Its stability notion is continuous dependence, not exponential stability",continuous dependence of the solutions with respect to the given initial data,abstract,226,S5,quote,yes
+ChiritaDApiceZampoli2016,The relaxed estimate deliberately admits exponential growth,allows the solutions to grow exponentially in time and so to have asymptotic instability,abstract,226,S5,quote,yes
+ChiritaCiarlettaTibullo2017,The paper classifies the time differential DPL models by approximation order,for values of n greater than or equal to five,"text, section 2",279,S5,quote,yes
+ChiritaCiarlettaTibullo2017,High order means an unstable constitutive operator,admits at least one complex root having a positive real part,(4),279,S5,quote,yes
+ChiritaCiarlettaTibullo2017,Orders up to four keep the flux operator stable,all the solutions of the Eq. (4) have a negative real part,"text, section 2",279,S5,quote,yes
+ChiritaCiarlettaTibullo2017,The conclusion repeats the order threshold,when the approximation orders are greater than or equal to five,conclusions,284,S5,quote,yes
+QuintanillaRacke2003DCDS,The brief named this file as Quintanilla 2003 but it is a different paper,STABILITY IN THERMOELASTICITY OF TYPE III,title,383,S4,quote,yes
+QuintanillaRacke2003DCDS,"It is about Green-Naghdi type III, not dual-phase lag",we consider initial-boundary value problems in a hyperbolic thermoelastic system,abstract,383,S4,quote,yes
+QuintanillaRacke2003DCDS,Exponential stability is proved by energy methods and by spectral methods,we prove the exponential stability in one space dimension for different boundary conditions,abstract,383,S4,quote,yes
+QuintanillaRacke2003DCDS,Type II is the non-dissipative sibling,The theory of type II does not allow the dissipation of the energy,section 1,383,S4,quote,yes
