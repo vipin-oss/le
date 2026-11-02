@@ -25,7 +25,7 @@ I submit the manuscript named above for consideration as a review article in *Ap
 
 **3. Review and new material.** Section 1 states which contributions are review (the organisation, the comparison tables, the decision guide) and which are new to the literature (the comparative dispersion polynomial and the truncation analysis).
 
-**4. Length and supplementary material.** The manuscript is 156 pages in the submission layout, of which the appendices take 32 pages and the reference list 29. The classified catalogue of the cited literature, the equation verification register and the atlas of problems can move to supplementary material without loss of argument, and a condensed key-works table would stay in the main text. I will follow the editor's preference on this and on whether the longest body sections should be shortened.
+**4. Length and supplementary material.** The manuscript is 157 pages in the submission layout, of which the appendices take 32 pages and the reference list 29. The classified catalogue of the cited literature, the equation verification register and the atlas of problems can move to supplementary material without loss of argument, and a condensed key-works table would stay in the main text. I will follow the editor's preference on this and on whether the longest body sections should be shortened.
 
 **5. Originality.** The manuscript is original, has not been published in whole or in part, and is not under consideration elsewhere. 46 of the 425 references (10.8 %) are co-authored by me; the appendix on problems separates studies from my own group from studies by others.
 
