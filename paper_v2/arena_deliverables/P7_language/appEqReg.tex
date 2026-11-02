@@ -1,0 +1,235 @@
+\section{Per-equation verification register}\label{sec:eqregister}
+
+A reader is entitled to know which displayed equations in this review have been checked against a
+primary text and which have merely been reproduced. The register below records that, one row per
+equation, in a fixed and finite vocabulary. A status records the check performed; it is not a
+ranking of the equation's importance, and it does not certify that the equation applies to a given
+material.
+
+\begin{description}[leftmargin=1.6em,style=nextline]
+\item[DERIVED] Algebra checked directly from the displayed governing equations in this work.
+\item[CONDITIONAL] Valid only under the stated continuum, constitutive or boundary assumptions.
+\item[PRIMARY-SOURCE-CHECKED] Checked against the identified primary source at the printed page and
+  equation given; this does not assert an independent derivation.
+\item[SECONDARY-SOURCE] Supported only by a named secondary source; not equivalent to primary verification.
+\item[VERIFIED-SYMBOLIC] Closed form checked by symbolic evaluation for a stated limiting case only.
+\item[UNVERIFIED] Not checked against a primary source and not independently derived.
+\item[OPEN] The required derivation or source evidence is absent; not a canonical result.
+\item[WITHHELD] No expression is asserted; the entry records that the relation, or its mapping to a
+  source, is missing.
+\end{description}
+
+\begin{table}[H]\centering\small
+\caption{Verification register for the equations of this review that carry a status. Equations not listed
+here are \emph{not registered}: no per-equation check exists for them, and none is implied.}
+\label{tab:eqregister}
+\begin{tabularx}{\textwidth}{@{}lY p{2.45cm}Y@{}}
+\toprule
+\textbf{Eq.} & \textbf{Statement} & \textbf{Status} & \textbf{Basis of the check} \\
+\midrule
+\eqref{eq:mom} & Linear momentum balance & CONDITIONAL & Classical Cauchy continuum; infinitesimal
+  motion; no couple stresses \\
+\eqref{eq:en} & Biot heat-conduction equation & PRIMARY-SOURCE-CHECKED & Biot (1956), printed p.~242,
+  Eqs.~(3.3)--(3.4); linear isotropic Fourier model, constant coefficients, source-free scope \\
+\eqref{eq:GL} & Green--Lindsay stress and entropy with $\theta+\tau_1\dot\theta$ & PRIMARY-SOURCE-CHECKED &
+  Primary text (Green and Lindsay 1972); no $\tau_0$ term on the strain-rate coupling;
+  $\tau_1\ge\tau_0>0$ \\
+\eqref{eq:tpl} & First-order three-lag (TPL) heat law & PRIMARY-SOURCE-CHECKED & Roy Choudhuri (2007),
+  Eqs.~(3)--(4); no second-order term \\
+\eqref{eq:cattaneo} & Relaxation law for the heat flux & UNVERIFIED & The law itself is Cattaneo (1948) and
+  Vernotte (1958); Lord--Shulman (1967) apply it to the coupled theory, and it is their application that is
+  quoted here. Neither primary text was read at equation level in this version \\
+\eqref{eq:dpl1} & Dual-phase-lag law & UNVERIFIED & Both lags enter as in the cited statement; the
+  stability argument used in \cref{sec:hyperbolic} is spectral, not an energy functional \\
+\eqref{eq:CDpsi} & Clausius--Duhem inequality & UNVERIFIED & Entropy and free-energy assumptions not
+  audited equation by equation \\
+\eqref{eq:coleman} & Coleman--Noll restrictions & UNVERIFIED & As above; the restrictions follow only after
+  the free energy and its arguments are fixed \\
+\eqref{eq:mdd} & Memory-dependent derivative & OPEN & No kernel is asserted: the inherited formulae differ
+  dimensionally and no equation-level comparison with the cited source has settled which is intended \\
+\eqref{eq:piezo} & Piezothermoelastic constitutive relation & UNVERIFIED & Cited reduction not checked at
+  page level against its printed equation \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The table carries two cautions. The first is coverage: the register gives a status to a minority of the
+labelled equations in the paper, the ten above. The remaining equations are inventoried but
+\emph{not registered}, which is a statement about this review's checking effort and not about their
+correctness. The second concerns the vocabulary: `CONDITIONAL' is not a weaker `DERIVED'. It says the
+equation is correct where its assumptions hold, and those assumptions are the ones a reader must test
+against their own problem.
+
+The source register behind the table holds 61 entries in all: 30 CONDITIONAL, 17
+UNVERIFIED, 5 DERIVED, 4 PRIMARY-SOURCE-CHECKED, 3 OPEN, 1 WITHHELD and 1 VERIFIED-SYMBOLIC. The remaining
+entries concern equations of this paper that carry no label; they are inventoried but not reproduced
+here.
+
+The source register carries a PRIMARY-SOURCE-CHECKED entry for the Green--Naghdi type~II equation (Green
+and Naghdi 1993, Eq.~(3.16) integrated once, source-free form, zero integration constant). That equation
+appears in \cref{sec:hyperbolic} without a label; once labelled, it should join the table above with that
+basis. The same holds for the exact Eulerian flux \eqref{eq:exactflux}, which the source register
+records as DERIVED.
+
+\subsection{Coverage of the register}\label{sec:eqcoverage}
+
+The register in \cref{tab:eqregister} names the equations that carry a status, but not what
+fraction of the paper that is, and a reader who wants to discount the rest needs that fraction. The
+inventory below lists all 136 printed equations of the source manuscript in printed order.
+Read it as a coverage statement: ``not registered'' means no per-equation check exists, and it is
+deliberately not a verdict on the equation.
+
+\noindent Of 136 printed equations, 11 carry a status and 125 do not.
+
+\begin{longtable}{@{}p{1.1cm}p{5.6cm}p{3.4cm}p{2.9cm}@{}}
+\caption{Coverage inventory of the equation register. Section titles refer to the source
+manuscript from which this material is merged. Labels and register ids are kept so that
+a row can be traced to its register entry.}\\
+\label{tab:eqcoverage}\\
+\toprule
+\textbf{Eq.} & \textbf{Source section} & \textbf{Label} & \textbf{Status} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Eq.} & \textbf{Source section} & \textbf{Label} & \textbf{Status} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+1 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.1} & not registered \\
+2 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.2} & not registered \\
+3 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.3} & UNVERIFIED \\
+4 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.4} & not registered \\
+5 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.5} & CONDITIONAL \\
+6 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.6} & not registered \\
+7 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.7} & not registered \\
+8 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.8} & CONDITIONAL \\
+9 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.9} & not registered \\
+10 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.10} & not registered \\
+11 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.11} & not registered \\
+12 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.12} & not registered \\
+13 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.13} & not registered \\
+14 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.14} & not registered \\
+15 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.15} & not registered \\
+16 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.16} & not registered \\
+17 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.17} & not registered \\
+18 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.18} & not registered \\
+19 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.19} & not registered \\
+20 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.20} & not registered \\
+21 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.21} & not registered \\
+22 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.22} & not registered \\
+23 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.23} & not registered \\
+24 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.24} & not registered \\
+25 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.25} & not registered \\
+26 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.26} & not registered \\
+27 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.27} & not registered \\
+28 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.28} & not registered \\
+29 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.29} & not registered \\
+30 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.30} & not registered \\
+31 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.31} & not registered \\
+32 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.32} & not registered \\
+33 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.33} & not registered \\
+34 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.34} & not registered \\
+35 & Foundations of Continuum Wave Mechanics & \texttt{eq:3.35} & not registered \\
+36 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.1} & UNVERIFIED \\
+37 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.2} & PRIMARY-SOURCE-CHECKED \\
+38 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.3} & not registered \\
+39 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.4} & UNVERIFIED \\
+40 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.5} & not registered \\
+41 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.6} & not registered \\
+42 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.11} & PRIMARY-SOURCE-CHECKED \\
+43 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.13} & not registered \\
+44 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.14} & not registered \\
+45 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.15} & UNVERIFIED \\
+46 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.16} & not registered \\
+47 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.17} & not registered \\
+48 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.18} & not registered \\
+49 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.20} & not registered \\
+50 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.21} & not registered \\
+51 & Classical and Generalized Thermoelastic Theories & \texttt{eq:4.22} & not registered \\
+52 & Coupled Multiphysics Continua & \texttt{eq:5.1} & not registered \\
+53 & Coupled Multiphysics Continua & \texttt{eq:5.2} & UNVERIFIED \\
+54 & Coupled Multiphysics Continua & \texttt{eq:5.3} & not registered \\
+55 & Coupled Multiphysics Continua & \texttt{eq:5.4} & not registered \\
+56 & Coupled Multiphysics Continua & \texttt{eq:5.5} & not registered \\
+57 & Coupled Multiphysics Continua & \texttt{eq:5.6} & UNVERIFIED \\
+58 & Coupled Multiphysics Continua & \texttt{eq:5.7} & not registered \\
+59 & Coupled Multiphysics Continua & \texttt{eq:5.8} & not registered \\
+60 & Coupled Multiphysics Continua & \texttt{eq:5.9} & UNVERIFIED \\
+61 & Coupled Multiphysics Continua & \texttt{eq:5.10} & not registered \\
+62 & Coupled Multiphysics Continua & \texttt{eq:5.19} & not registered \\
+63 & Coupled Multiphysics Continua & \texttt{eq:5.11} & not registered \\
+64 & Coupled Multiphysics Continua & \texttt{eq:5.12} & not registered \\
+65 & Coupled Multiphysics Continua & \texttt{eq:5.13} & not registered \\
+66 & Coupled Multiphysics Continua & \texttt{eq:5.14} & not registered \\
+67 & Coupled Multiphysics Continua & \texttt{eq:5.18} & not registered \\
+68 & Generalized Transport and Memory Effects & \texttt{eq:6.1} & not registered \\
+69 & Generalized Transport and Memory Effects & \texttt{eq:6.2} & not registered \\
+70 & Generalized Transport and Memory Effects & \texttt{eq:6.3} & not registered \\
+71 & Generalized Transport and Memory Effects & \texttt{eq:6.4} & not registered \\
+72 & Generalized Transport and Memory Effects & \texttt{eq:6.5} & not registered \\
+73 & Generalized Transport and Memory Effects & \texttt{eq:6.6} & not registered \\
+74 & Generalized Transport and Memory Effects & \texttt{eq:6.7} & not registered \\
+75 & Nonlocal and Scale-Dependent Continuum Models & \texttt{eq:7.1} & not registered \\
+76 & Nonlocal and Scale-Dependent Continuum Models & \texttt{eq:7.2} & not registered \\
+77 & Nonlocal and Scale-Dependent Continuum Models & \texttt{eq:7.3} & not registered \\
+78 & Nonlocal and Scale-Dependent Continuum Models & \texttt{eq:7.4} & not registered \\
+79 & Mathematical Methods for Wave Propagation & \texttt{eq:8.1} & not registered \\
+80 & Mathematical Methods for Wave Propagation & \texttt{eq:8.2} & not registered \\
+81 & Mathematical Methods for Wave Propagation & \texttt{eq:8.3} & not registered \\
+82 & Mathematical Methods for Wave Propagation & \texttt{eq:8.4} & not registered \\
+83 & Mathematical Methods for Wave Propagation & \texttt{eq:8.5} & not registered \\
+84 & Mathematical Methods for Wave Propagation & \texttt{eq:8.6} & not registered \\
+85 & Mathematical Methods for Wave Propagation & \texttt{eq:8.7} & not registered \\
+86 & Reflection, Transmission, and Interface Phenomena & \texttt{eq:9.1} & not registered \\
+87 & Reflection, Transmission, and Interface Phenomena & \texttt{eq:9.2} & not registered \\
+88 & Reflection, Transmission, and Interface Phenomena & \texttt{eq:9.3} & not registered \\
+89 & Reflection, Transmission, and Interface Phenomena & \texttt{eq:9.4} & not registered \\
+90 & Reflection, Transmission, and Interface Phenomena & \texttt{eq:9.5} & not registered \\
+91 & Reflection, Transmission, and Interface Phenomena & \texttt{eq:9.6} & not registered \\
+92 & Reflection, Transmission, and Interface Phenomena & \texttt{eq:9.7} & not registered \\
+93 & Reflection, Transmission, and Interface Phenomena & \texttt{eq:9.8} & not registered \\
+94 & Reflection, Transmission, and Interface Phenomena & \texttt{eq:9.9} & not registered \\
+95 & Reflection, Transmission, and Interface Phenomena & \texttt{eq:9.10} & not registered \\
+96 & Reflection, Transmission, and Interface Phenomena & \texttt{eq:9.11} & not registered \\
+97 & Reflection, Transmission, and Interface Phenomena & \texttt{eq:9.12} & not registered \\
+98 & Energy Transport and Dissipation & \texttt{eq:10.1} & not registered \\
+99 & Energy Transport and Dissipation & \texttt{eq:10.2} & not registered \\
+100 & Energy Transport and Dissipation & \texttt{eq:10.3} & not registered \\
+101 & Energy Transport and Dissipation & \texttt{eq:10.4} & not registered \\
+102 & Energy Transport and Dissipation & \texttt{eq:10.5} & not registered \\
+103 & Energy Transport and Dissipation & \texttt{eq:10.6} & not registered \\
+104 & Energy Transport and Dissipation & \texttt{eq:10.11} & not registered \\
+105 & Energy Transport and Dissipation & \texttt{eq:10.12} & not registered \\
+106 & Energy Transport and Dissipation & \texttt{eq:10.13} & not registered \\
+107 & Energy Transport and Dissipation & \texttt{eq:10.14} & not registered \\
+108 & Energy Transport and Dissipation & \texttt{eq:10.15} & not registered \\
+109 & Energy Transport and Dissipation & \texttt{eq:10.16} & not registered \\
+110 & Advanced Theoretical Developments & \texttt{eq:11.1} & not registered \\
+111 & Advanced Theoretical Developments & \texttt{eq:11.2} & not registered \\
+112 & Advanced Theoretical Developments & \texttt{eq:11.3} & not registered \\
+113 & Advanced Theoretical Developments & \texttt{eq:11.4} & not registered \\
+114 & Advanced Theoretical Developments & \texttt{eq:11.5} & not registered \\
+115 & Advanced Theoretical Developments & \texttt{eq:11.6} & not registered \\
+116 & Advanced Theoretical Developments & \texttt{eq:11.7} & not registered \\
+117 & Comparative Synthesis of Existing Research & \texttt{eq:12.template} & not registered \\
+118 & An Original Multidimensional Taxonomy of the Field & \texttt{eq:14.1} & not registered \\
+119 & An Original Multidimensional Taxonomy of the Field & \texttt{eq:14.2} & not registered \\
+120 & Detailed Balance Law Derivations & \texttt{appB:eq:1} & not registered \\
+121 & Detailed Balance Law Derivations & \texttt{appB:eq:2} & not registered \\
+122 & Detailed Balance Law Derivations & \texttt{appB:eq:3} & not registered \\
+123 & Detailed Balance Law Derivations & \texttt{appB:eq:4} & not registered \\
+124 & Detailed Balance Law Derivations & \texttt{appB:eq:5} & not registered \\
+125 & Detailed Balance Law Derivations & \texttt{appB:eq:6} & not registered \\
+126 & Detailed Balance Law Derivations & \texttt{appB:eq:7} & not registered \\
+127 & Detailed Balance Law Derivations & \texttt{appB:eq:8} & not registered \\
+128 & Detailed Balance Law Derivations & \texttt{appB:eq:9} & not registered \\
+129 & Detailed Balance Law Derivations & \texttt{appB:eq:10} & not registered \\
+130 & Detailed Balance Law Derivations & \texttt{appB:eq:11} & not registered \\
+131 & Detailed Balance Law Derivations & \texttt{appB:eq:12} & not registered \\
+132 & Detailed Balance Law Derivations & \texttt{appB:eq:13} & not registered \\
+133 & Detailed Balance Law Derivations & \texttt{appB:eq:14} & not registered \\
+134 & Detailed Balance Law Derivations & \texttt{appB:eq:16} & not registered \\
+135 & Detailed Balance Law Derivations & \texttt{appB:eq:17} & not registered \\
+136 & Detailed Balance Law Derivations & \texttt{appB:eq:18} & not registered \\
+\end{longtable}

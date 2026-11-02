@@ -1,6 +1,11 @@
 file,verdict,reason
 abstract.tex,PASS,
+appBal.tex,PASS,
+appEqReg.tex,PASS,
 s01_intro.tex,PASS,
 s02_history.tex,PASS,
 s16_synthesis.tex,PASS,
+s16c_taxonomy.tex,PASS,
 s17_open.tex,PASS,
+s17b_reporting.tex,PASS,
+s18_declarations.tex,PASS,
