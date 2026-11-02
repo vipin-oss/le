@@ -1,6 +1,6 @@
 # P5 — merge package for the final review paper
 
-Everything here is additive. Nothing in the final paper, in `overleaf_package.zip`, or in
+Everything here is additive. **Read `REPORT.md` first** if you read only one file. Nothing in the final paper, in `overleaf_package.zip`, or in
 `manuscript_v2/` was modified; this directory is the only output of the merge.
 
 | Step | Artefact | State |
