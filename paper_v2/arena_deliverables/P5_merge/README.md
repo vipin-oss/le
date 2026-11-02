@@ -46,7 +46,7 @@ already exists in the final paper; and a header naming the source and the intend
 | 8 | `snippets/M09_provenance_notes.tex` | page-level provenance of the attributions | `sec:provenance`, `tab:provenance` | 0.9 |
 | 9 | `snippets/M03_declarations.tex` | declarations (CRediT, funding, competing, data, tools) | `sec:declarations` | 0.7 |
 | 10 | `snippets/FM01_abstract_keywords.tex` | abstract (259 words) + 14 keywords — **replacement candidate only** | — | 0.4 |
-| 11 | `snippets/FM04_equation_register_coverage.tex` | coverage inventory of the register (generated) | `sec:eqcoverage`, `tab:eqcoverage` | 2.5 |
+| 11 | `snippets/FM04_equation_register_coverage.tex` | coverage inventory: all 136 printed equations | `sec:eqcoverage`, `tab:eqcoverage` | 2.0 |
 
 Paste order is the priority order. Every file is a self-contained LaTeX fragment written in the final
 paper's own conventions: `article` 12pt, natbib numbers, `\cref`/`\eqref`, `\bm`, `\bu`/`\bq`/`\bx`/`\bn`,

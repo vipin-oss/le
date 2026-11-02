@@ -18,12 +18,18 @@ required = {
                                      "status_in_v2", "why_absent_in_final", "absence_evidence",
                                      "placement", "new_labels", "est_pages", "note"],
     "section_map.csv": ["final_file", "v2_file", "overlap"],
+    "v2_verified_ledger.csv": ["id", "kind", "item", "status", "evidence", "v2_location",
+                               "merge_disposition", "merge_flag"],
+    "equation_coverage.csv": ["printed", "v2_label", "section", "v2_file", "status"],
 }
 final_files = {r["final_file"] for r in csv.DictReader(open(os.path.join(ROOT, "final_labels.csv"), encoding="utf-8"))}
 # cells that are legitimately empty: section_map marks "no equivalent" rows with blanks
 nullable = {
     "section_map.csv": {"v2_file", "v2_section_title", "shared_cite_keys", "cite_jaccard",
                         "v2_words", "note"},
+    # merge_flag is empty exactly when nothing is flagged - that is the good case
+    "v2_verified_ledger.csv": {"merge_flag", "register_id"},
+    "equation_coverage.csv": {"register_id", "register_note"},
 }
 
 errors, checked = [], 0
@@ -38,14 +44,15 @@ for name, cols in required.items():
     for c in cols:
         if c not in got:
             errors.append(f"{name}: column {c!r} missing")
-    ids = [r.get("id") or r.get("final_file") for r in rows]
+    ids = [r.get("id") or r.get("final_file") or r.get("printed") or r.get("v2_label") for r in rows]
     if len(ids) != len(set(ids)):
         errors.append(f"{name}: duplicate ids")
     for r in rows:
         checked += 1
         for c in got:
             if not (r.get(c) or "").strip() and c not in nullable.get(name, set()):
-                errors.append(f"{name}: empty cell {c!r} in row {r.get('id')}")
+                errors.append(f"{name}: empty cell {c!r} in row "
+                              f"{r.get('id') or r.get('final_file') or r.get('printed')}")
         # resolve final-paper file references
         for f in re.findall(r"(?:sections|tables|figs_tikz)/[A-Za-z0-9_.]+\.tex", r.get("final_location", "")):
             if f not in final_files:
@@ -60,8 +67,10 @@ for name, cols in required.items():
 print(f"rows checked: {checked}")
 if errors:
     print(f"{len(errors)} problem(s):")
-    for e in errors:
+    for e in errors[:25]:
         print("  -", e)
+    if len(errors) > 25:
+        print(f"  ... and {len(errors) - 25} more")
     print("FAIL")
     sys.exit(1)
 print("PASS")

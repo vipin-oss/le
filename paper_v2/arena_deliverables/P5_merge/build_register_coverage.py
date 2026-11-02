@@ -1,97 +1,72 @@
 #!/usr/bin/env python3
-"""Build a 136-row coverage inventory of the v2 equation register.
+"""Coverage inventory of the v2 equation register, one row per *printed* equation.
 
-Inputs  : paper_v2/manuscript_v2/master/**/*.tex  (equations + labels)
-          paper_v2/manuscript_v2/master/appendices/appA_equation_register.tex (register rows)
-Outputs : equation_coverage.csv  and  snippets/FM04_equation_register_coverage.tex
+Inputs (all in-repo, nothing invented):
+  paper_v2/arena_deliverables/P1_audit/equation_inventory.csv   136 printed equations of v2
+  paper_v2/manuscript_v2/master/appendices/appA_equation_register.tex   statuses + notes
+  paper_v2/arena_deliverables/P1_audit/register_linkage.csv      EQ ids linked to labels
 
-Every displayed equation of v2 is listed. A row receives a status only if the source
-register attaches one to that exact label; otherwise it is 'not registered'. Nothing is
-inferred, so the CSV is an inventory of what was checked, not an ascription of quality.
-Exits 0 and prints PASS on success.
+Outputs:
+  equation_coverage.csv                                   full inventory
+  snippets/FM04_equation_register_coverage.tex            paste-ready longtable (136 rows)
+
+A row gets a status only where the register attaches one to that exact label; every other row
+says "not registered". That is a statement about the checking performed, not about correctness.
+Prints PASS and exits 0.
 """
 import csv, os, re, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(ROOT, "..", "..", ".."))
-MASTER = os.path.join(REPO, "paper_v2", "manuscript_v2", "master")
-REG = os.path.join(MASTER, "appendices", "appA_equation_register.tex")
+INV = os.path.join(REPO, "paper_v2", "arena_deliverables", "P1_audit", "equation_inventory.csv")
+LINK = os.path.join(REPO, "paper_v2", "arena_deliverables", "P1_audit", "register_linkage.csv")
+REG = os.path.join(REPO, "paper_v2", "manuscript_v2", "master", "appendices",
+                   "appA_equation_register.tex")
 STATUS = ["DERIVED", "CONDITIONAL", "PRIMARY-SOURCE-CHECKED", "SECONDARY-SOURCE",
           "VERIFIED-SYMBOLIC", "UNVERIFIED", "OPEN", "WITHHELD"]
-
-SEC = re.compile(r"\\section\{([^}]*)\}")
-ENV = re.compile(r"\\begin\{(equation|align|eqnarray|gather)\*?\}(.*?)\\end\{\1\*?\}", re.S)
 LAB = re.compile(r"\\label\{(eq:[^}]+)\}")
 REF = re.compile(r"\\eqref\{(eq:[^}]+)\}")
 
 
-def v2_equations():
-    rows = []
-    files = []
-    for base in ("sections", "appendices", "."):
-        d = os.path.join(MASTER, base)
-        if not os.path.isdir(d):
-            continue
-        for fn in sorted(os.listdir(d)):
-            if fn.endswith(".tex"):
-                files.append(os.path.join(d, fn))
-    files.sort(key=lambda p: (0 if "/sections/" in p else 1 if "/appendices/" in p else 2, p))
-    for path in files:
-        txt = open(path, encoding="utf-8", errors="replace").read()
-        title = SEC.search(txt)
-        title = re.sub(r"\\[a-zA-Z]+\s*", "", title.group(1)).strip() if title else ""
-        for m in ENV.finditer(txt):
-            body = m.group(2)
-            labs = LAB.findall(body)
-            head = re.sub(r"\\label\{[^}]*\}", "", body)
-            head = re.sub(r"\s+", " ", head).strip()
-            rows.append({
-                "v2_file": os.path.relpath(path, MASTER),
-                "env": m.group(1),
-                "v2_section": title,
-                "v2_label": labs[0] if labs else "",
-                "excerpt": head[:70],
-            })
-    return rows
-
-
-def register_rows():
-    """label -> (status, note) from the v2 register, only where a label is cited."""
-    txt = open(REG, encoding="utf-8", errors="replace").read()
+def register_status():
     out = {}
-    for line in txt.splitlines():
+    for line in open(REG, encoding="utf-8", errors="replace").read().splitlines():
         if "&" not in line:
             continue
         cells = [c.strip() for c in line.split("&")]
-        st = None
-        for c in cells:
-            c2 = c.strip().strip("\\").strip()
-            if c2 in STATUS:
-                st = c2
-                break
+        st = next((c.strip().strip("\\").strip() for c in cells
+                   if c.strip().strip("\\").strip() in STATUS), None)
         if not st:
             continue
+        note = re.sub(r"\s+", " ", cells[-1].strip())
+        note = re.sub(r"\\\\\s*$", "", note).strip()[:110]
         for lb in LAB.findall(line) + REF.findall(line):
-            note = re.sub(r"\s+", " ", cells[-1].strip())
-            note = re.sub(r"\\\\\s*$", "", note).strip()[:90]
             out.setdefault(lb, (st, note))
     return out
 
 
+def link_ids():
+    out = {}
+    for r in csv.DictReader(open(LINK, encoding="utf-8")):
+        for lb in [x.strip() for x in (r["pointer"] or "").split(";") if x.strip().startswith("eq:")]:
+            out.setdefault(lb, r["eq_id"])
+    return out
+
+
 def main():
-    eqs = v2_equations()
-    reg = register_rows()
+    reg, ids = register_status(), link_ids()
     rows = []
-    for i, e in enumerate(eqs, 1):
-        st, note = reg.get(e["v2_label"], ("", "")) if e["v2_label"] else ("", "")
+    for r in csv.DictReader(open(INV, encoding="utf-8")):
+        st, note = reg.get(r["label"], ("", ""))
         rows.append({
-            "eq_no": f"EQ-{i:03d}",
-            "v2_file": e["v2_file"],
-            "v2_section": e["v2_section"],
-            "v2_label": e["v2_label"] or "(unlabelled)",
-            "status": st if st else "not registered",
+            "printed": r["printed"],
+            "v2_label": r["label"],
+            "section": r["section"],
+            "subsection": r["subsection"],
+            "v2_file": r["file"],
+            "register_id": ids.get(r["label"], ""),
+            "status": st or "not registered",
             "register_note": note,
-            "statement": e["excerpt"],
         })
     with open(os.path.join(ROOT, "equation_coverage.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
@@ -102,22 +77,26 @@ def main():
     for r in rows:
         counts[r["status"]] = counts.get(r["status"], 0) + 1
     registered = len(rows) - counts.get("not registered", 0)
-    print(f"equations listed : {len(rows)}")
-    print(f"registered       : {registered}")
+    print(f"printed equations : {len(rows)}")
+    print(f"registered        : {registered}")
     for k in STATUS:
         if k in counts:
             print(f"  {k:<24} {counts[k]}")
     print(f"  {'not registered':<24} {counts.get('not registered', 0)}")
 
-    # LaTeX coverage appendix
-    lines = []
-    lines.append(r"""% =====================================================================
+    def tex(s):
+        s = (s or "").replace("\\", r"\textbackslash{}").replace("&", r"\&").replace("%", r"\%")
+        s = s.replace("#", r"\#").replace("_", r"\_").replace("{", r"\{").replace("}", r"\}")
+        return re.sub(r"\s+", " ", s).strip()
+
+    L = []
+    L.append(r"""% =====================================================================
 % P5 merge snippet — FM04: coverage inventory of the equation register
 % GENERATED by build_register_coverage.py — do not edit by hand.
-% Source: manuscript_v2 register (61 audited rows) + all displayed equations of v2.
-% Use: this is the honest form of a "136-row register". A row carries a status only where
-% the source register attaches one to that label; every other row says "not registered",
-% which is a statement about the checking performed, not about correctness.
+% Source: the 136 printed equations of manuscript_v2 (equation_inventory.csv) joined to the
+% 61 audited register rows (appA register) and to the EQ ids (register_linkage.csv).
+% This is the honest form of a "136-row register": every printed equation is listed, and a row
+% carries a status only where the register attaches one to that label.
 % NEW LABELS: sec:eqcoverage, tab:eqcoverage
 % Suggested placement: directly after \cref{sec:eqregister}, or as an appendix.
 % =====================================================================
@@ -126,39 +105,27 @@ def main():
 
 The register in \cref{tab:eqregister} names the equations that carry a status. It does not show what
 fraction of the paper that is, and a reader who wants to discount the rest needs that fraction. The
-inventory below lists every displayed equation of the source manuscript for which a register row exists or
-does not, in document order. Read it as a coverage statement: ``not registered'' means no per-equation
-check exists, and it is deliberately not a verdict on the equation.
+inventory below lists all 136 printed equations of the source manuscript in printed order.
+Read it as a coverage statement: ``not registered'' means no per-equation check exists, and it is
+deliberately not a verdict on the equation.
 """)
-    nlab = sum(1 for r in rows if r["v2_label"] != "(unlabelled)")
-    lines.append(f"\\noindent Of {len(rows)} displayed equation environments inventoried ({nlab} of them labelled, "
-                 f"the rest lines of multi-line environments), {registered} carry a status and "
-                 f"{counts.get('not registered',0)} do not.\n")
-    lines.append(r"\begin{longtable}{@{}p{1.4cm}p{4.6cm}p{3.6cm}p{2.8cm}@{}}")
-    lines.append(r"\caption{Coverage inventory of the equation register. Section titles refer to the source")
-    lines.append(r"manuscript from which this material is merged; labels are listed so that a row can be")
-    lines.append(r"traced. Equation text and file paths are in the accompanying CSV, not in this table.}\\")
-    lines.append(r"\label{tab:eqcoverage}\\")
-    lines.append(r"\toprule")
-    lines.append(r"\textbf{Row} & \textbf{Source section} & \textbf{Label} & \textbf{Status} \\")
-    lines.append(r"\midrule")
-    lines.append(r"\endfirsthead")
-    lines.append(r"\toprule")
-    lines.append(r"\textbf{Row} & \textbf{Source section} & \textbf{Label} & \textbf{Status} \\")
-    lines.append(r"\midrule")
-    lines.append(r"\endhead")
-    lines.append(r"\bottomrule")
-    lines.append(r"\endfoot")
-    def tex(s):
-        s = s.replace("\\", r"\textbackslash{}").replace("&", r"\&").replace("%", r"\%")
-        s = s.replace("#", r"\#").replace("_", r"\_").replace("{", r"\{").replace("}", r"\}")
-        return re.sub(r"\s+", " ", s).strip()
+    L.append(f"\\noindent Of {len(rows)} printed equations, {registered} carry a status and "
+             f"{counts.get('not registered',0)} do not.\n")
+    L += [r"\begin{longtable}{@{}p{1.1cm}p{5.6cm}p{3.4cm}p{2.9cm}@{}}",
+          r"\caption{Coverage inventory of the equation register. Section titles refer to the source",
+          r"manuscript from which this material is merged. Labels and register ids are kept so that",
+          r"a row can be traced to its register entry.}\\",
+          r"\label{tab:eqcoverage}\\", r"\toprule",
+          r"\textbf{Eq.} & \textbf{Source section} & \textbf{Label} & \textbf{Status} \\",
+          r"\midrule", r"\endfirsthead", r"\toprule",
+          r"\textbf{Eq.} & \textbf{Source section} & \textbf{Label} & \textbf{Status} \\",
+          r"\midrule", r"\endhead", r"\bottomrule", r"\endfoot"]
     for r in rows:
-        lines.append(f"{r['eq_no']} & {tex(r['v2_section'])} & \\texttt{{{tex(r['v2_label'])}}} & "
-                     f"{tex(r['status'])} \\\\")
-    lines.append(r"\end{longtable}")
+        L.append(f"{tex(r['printed'])} & {tex(r['section'])} & \\texttt{{{tex(r['v2_label'])}}} & "
+                 f"{tex(r['status'])} \\\\")
+    L.append(r"\end{longtable}")
     out = os.path.join(ROOT, "snippets", "FM04_equation_register_coverage.tex")
-    open(out, "w", encoding="utf-8").write("\n".join(lines) + "\n")
+    open(out, "w", encoding="utf-8").write("\n".join(L) + "\n")
     print("wrote", os.path.relpath(out, REPO))
     print("PASS")
     return 0
