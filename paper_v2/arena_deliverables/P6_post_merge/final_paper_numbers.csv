@@ -1,0 +1,10 @@
+quantity,value,how_measured,source
+pages,164,number of pages of paper_v2/main.pdf,paper_v2/main.pdf
+tables,25,highest 'Table N:' caption in the text layer,paper_v2/main.pdf
+figures,40,highest 'Figure N:' caption in the text layer,paper_v2/main.pdf
+references,337,highest numbered entry in the reference list,paper_v2/main.pdf
+equations,90,highest equation number in the body pages (before References),paper_v2/main.pdf
+equation_environments,88,diagnostic: equation envs + numbered align rows in the sources,paper_v2/overleaf_package.zip
+section_files,49,inputs of sections/ in main.tex,paper_v2/overleaf_package.zip
+sections,38,numbered top-level sections (section commands minus the 10 appendices),paper_v2/overleaf_package.zip
+appendices,10,"appendices A-J, from the table of contents",paper_v2/main.pdf
