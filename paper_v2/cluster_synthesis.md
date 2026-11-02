@@ -148,9 +148,19 @@ Two of the five are Tier 1. Read against `missing_literature.csv`, this row is w
 | Check | Result |
 |---|---|
 | All 416 cited keys present in `paper_notes.csv` | PASS — 416 rows, keys identical to `ref_inventory.csv` |
-| Every Tier-1 row has a non-empty `page_or_eq_ref` | PASS — 78/78 (6 source locators, 72 manuscript citation sites explicitly labelled `mss:`) |
-| Tier-1 size inside the 60–80 band | PASS — 78 |
-| `source_used` truthful | PASS — 3 `FULLTEXT` (Green1993, Quintanilla2003DPL, Chen2001), 3 `ABSTRACT` (Green1972, Huberman2019, DreyerStruchtrup1993), 410 `NOT-READ` |
-| No fabricated bibliographic data | PASS — every DOI in `missing_literature.csv` returned a Crossref record this session; one previously suspected DOI (`10.1038/ncomms2640`) was **falsified** by Crossref (it resolves to a soft-X-ray ptychography paper) and replaced by the correct `10.1038/ncomms2630` |
-| 15-row spot re-verification | PASS — 15 rows drawn at random from Tier 1: key present in the `.bib`, DOI string identical to `ref_inventory.csv`, cited at the recorded `mss:` site, `used_in_sections` consistent with that site |
-| Cluster key counts | PASS — 72 keys over 9 rows, all present in the inventory, 0 unknown keys |
+| Every Tier-1 row has a non-empty `page_or_eq_ref` | PASS — 78/78 (10 source locators, 68 manuscript citation sites labelled `mss:`) |
+| Tier-1 size inside the 60-80 band | PASS — 78 |
+| `source_used` truthful | 6 `FULLTEXT`, 4 `ABSTRACT`, 406 `NOT-READ`. Depth caveats are in `page_or_eq_ref` (Coleman1963: title page and section 1 only; Biot1956: abstract only, the scan's first page is another article) |
+| No fabricated bibliographic data | PASS — every DOI in `missing_literature.csv` returned a Crossref record; one suspected DOI (`10.1038/ncomms2640`) was falsified and replaced by `10.1038/ncomms2630` |
+| Drive matching | 131/131 files classified in `drive_pdf_map.tsv`; 65 distinct cited keys have a PDF; 53 files are works the manuscript does **not** cite; 6 are unrelated to the field; 2 are mislabelled; 1 unidentifiable |
+| 15-row spot re-verification | PASS — 15 random Tier-1 rows: key in the `.bib`, DOI string identical to `ref_inventory.csv`, citation present at the recorded line |
+| Cluster key counts | PASS — 72 keys over 9 rows, all in the inventory, 0 unknown |
+
+### Why NOT-READ is still 406
+
+Two different bottlenecks, both measured:
+
+1. **351 cited keys have no PDF** in the author's Drive (page 1 of the listing, 131 files). For these the only route is an abstract from the publisher. Crossref was tested on eight of the Tier-1 cases (Chester1963, Zener1937, Lord1967, MooreGibson1960, RoyChoudhuri2007, Chirita2016, Stroh1958, Povstenko2009): **all eight returned a title and none returned an `abstract` field** — APS, Elsevier and Taylor & Francis do not deposit abstracts. So the ABSTRACT route has to go through publisher landing pages or arXiv, one document at a time.
+2. **62 cited keys do have a PDF** but need a fulltext read; 10 have now been read.
+
+Nothing in the table above is inferred from a title. Where only a title could be confirmed, the row stays NOT-READ with an empty `main_result`.
