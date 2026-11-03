@@ -7,7 +7,7 @@ The Editor
 *Applied Mechanics Reviews*
 American Society of Mechanical Engineers
 
-**Re: submission of a review manuscript, "Waves in Thermoelastic and Multiphysics Continua: One Heat-Flux Template for Generalized Conduction, Coupled Fields and Size Effects"**
+**Re: submission of a review manuscript, "A Unified Heat-Flux Framework for Waves in Thermoelastic and Multiphysics Continua"**
 
 Dear Editor,
 
