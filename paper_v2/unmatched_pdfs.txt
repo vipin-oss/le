@@ -1,0 +1,67 @@
+# Drive PDFs not assigned to any cited bibkey. 131 files total; matched = 68.
+# status: UNCITED (a real paper, but absent from the 416-key list) | UNRELATED (not this field at all)
+#         MISLABELLED (file name contradicts the pages) | UNIDENTIFIED (no title on the page) | CANDIDATE
+# fields: filename<TAB>file_id<TAB>status<TAB>what it actually is
+Achenbach_1968.pdf	1NSBveS-QjDPO4jRXl0kDojX6cS33zF4Q	UNCITED	Achenbach 1968, The influence of heat conduction on propagating stress jumps, J. Mech. Phys. Solids 16:273-282
+Chandrasekharaiah_1988.pdf	1v09B71lzv1HTXrfRtHfwFIWJFr1eqSDg	UNCITED	Chandrasekharaiah 1988, A generalized linear thermoelasticity theory for piezoelectric media, Acta Mech. 71:39-49
+Chen_2021.pdf	1mPGwYUI67OxFM-tsXtePfK3LaBtTKiPC	UNIDENTIFIED	page 1 is a mid-article page with no title or DOI; a review of phonon transport regimes
+Coleman_1964.pdf	1fbC2WEfgNyr4HwYcn2JzEQnHnKtUoX0H	UNCITED	Coleman 1964, Thermodynamics of materials with memory - the bib's Coleman1963 is a different paper (elastic materials with heat conduction and viscosity)
+Compte_1997.pdf	1mpC71NJEiluyoJkjbC3SUKInP9iX25cm	UNCITED	Compte 1997, The generalized Cattaneo equation, J. Phys. A 30:7277
+Crump_1976.pdf	1nPrpf4hXpRLp7UkFoYyP2Qh72WLLh354	UNCITED	Crump 1976, Numerical inversion of Laplace transforms using a Fourier series approximation, J. ACM 23:89
+Dafermos_1968.pdf	1VqoQ9-2DzpNgTffdPrfGp8nmfsn-4cP1	UNCITED	Dafermos 1968, Existence and asymptotic stability for linear thermoelasticity, ARMA 29:241
+Deresiewicz_1957.pdf	18kfUeMIRSZV1r0QjPpSk9ZbYw3HhmYS_	UNCITED	Deresiewicz 1957, Plane waves in a thermoelastic solid, JASA 29(2):204
+Ezzat_2011.pdf	1-Z99eHUid1Ar5BExLO4mi1sNRMPVM1s1	UNCITED	Ezzat 2011, Theory of fractional order in generalized thermoelectric MHD - not the Ezzat entry in the bib
+Gurtin_1968.pdf	1x-GfQDHCNYgCJVzmQ7hfwt_Wvga97k4t	UNCITED	Gurtin & Pipkin 1968, A general theory of heat conduction with finite wave speeds, ARMA 31:113
+Jackson_1970.pdf	1LgpKZmlxfmqnYsLR_wtdVM0ZEjVgSApN	MISLABELLED	PRL 25(1) 6 July 1970 page, but it carries a cholesteric-liquid-crystal third-harmonic paper, not the NaF second-sound article
+Liu_1972.pdf	1cUBJFESuO6k5Dq4pjKKilv2kglbj7kUo	UNCITED	Liu 1972, Method of Lagrange multipliers for the exploitation of the entropy principle, ARMA 46:131
+Mindlin_1968.pdf	1tVKqi_o1FlvvKK6XTufGkLXU62fBhIMj	UNCITED	Mindlin & Eshel 1968, On first strain-gradient theories in linear elasticity, IJSS 4:109-124
+Nayfeh_1971.pdf	1U85ck3Lujc7NhgAZYS14BohXiwjhEI41	UNCITED	Nayfeh & Nemat-Nasser 1971, Thermoelastic waves in solids with thermal relaxation, Acta Mech. 12:53-69
+Povstenko_2015.pdf	1Ksbsfv6CVM-SR1HG69nUiWPv6l1rBizf	CANDIDATE	page 1 could not be read (Drive read error); filename+year suggests Povstenko2016 'Fractional thermoelasticity' (bib year 2015)
+Puri_1972.pdf	1Y97vomSwFTYKKl4lVtf6K0QTRoc_x-Mk	UNCITED	Puri 1972, Plane waves in thermoelasticity and magnetothermoelasticity, IJES 10:467-477
+Romano_2017.pdf	1Dab__2bTCYeYBJXqwKyWuYR399u02ve7	UNCITED	Romano et al. 2017, Constitutive boundary conditions and paradoxes in nonlocal elastic nanobeams, IJMS
+S0025654425600515.pdf	1LjBurHbPOHJPDEDwQV0zEu2NtmhtN7-O	UNCITED	Darhas et al. 2025, Influence of boundaries on the dispersion of Rayleigh waves ..., Mech. Solids 60(4):2781-2799
+Sinha_1996.pdf	19D69cb7YB_R-7sENAPqNVsoZuByAlTwh	UNCITED	Sinha & Elsibai 1996, Reflection of thermoelastic waves at a solid half-space with two relaxation times, J. Thermal Stresses
+Sinha_1997.pdf	1CasaSUhI2K-qLJG5qNZ_x8QFXPF4PozY	UNCITED	Sinha & Elsibai 1997, Reflection and refraction of thermoelastic waves at an interface ..., J. Thermal Stresses
+Unknown_1-s2.0-S0307904X25001817.pdf	1ycryGF-ABoBVbtRzl0IbL6UHPeFACcxJ	UNCITED	Li et al. 2025, Periodicity in functionally graded materials and attenuation of elastic shear waves, Appl. Math. Modelling
+Unknown_1-s2.0-S0735193320302505.pdf	1BsjNG9CVr04JTrBSJaOWjn8iOFIpQJDr	UNCITED	Zenkour & El-Mekawy 2020, On a multi-phase-lag model of coupled thermoelasticity, ICHMT
+Unknown_1-s2.0-S0743731522001307.pdf	15-e984lAW-5YxXfSc_dJURgrTaaxGKP_	UNRELATED	cloud computing (J. Parallel Distrib. Comput. 168:90-107, 2022) - nothing to do with heat or elastic waves
+Unknown_1-s2.0-S1290072925006994.pdf	1tOayPfeLGRJAAntiFOwXCiTSqTCTmKRr	UNCITED	Azhdari et al. 2025, A critical review of non-Fourier heat transfer theories with phase lag in bio-heating, IJTS
+Unknown_15397734.2021.1888748.pdf	1zUCqrd5UG_c1xXMl4MGHdORRXV_9aGP2	UNCITED	Crossref record: Analysis of SH wave in hollow piezo-composite cylinder with coupled imperfect interface condition (Mech. Based Des. Struct. Mach. 2021)
+Unknown_1711.04193.pdf	1Tp38_vC-6mOAUZz6TDemuxd212Glijiu	UNCITED	Su, Lu & Norris 2018, Elastic metasurfaces for splitting SV- and P-waves, arXiv:1711.04193
+Unknown_2ndSoundSolids.pdf	1vVAGlLIDWXUovkjdMsJ7AT1644Ds3KWd	MISLABELLED	file name says second sound in solids; the pages are a reprint of 'Anomalous surface reflection of X-rays' - content contradicts the name
+Weideman_2007.pdf	1JNXcbIhqK9hzYeLQg6nUOdwQIbarg_or	UNCITED	Weideman & Trefethen 2007, Parabolic and hyperbolic contours for computing the Bromwich integral, Math. Comp. 76:1341-1356
+Zhang_2003.pdf	1y8ujTkNsFLjiLz3KP7hAG9yN6L2xjamH	UNCITED	Zhang & Zuazua 2003, Decay of solutions of the system of thermoelasticity of type III, Comm. Contemp. Math. 5(1):25-83
+a1.pdf	1JXFC_DRslI6iqddLXKw3dBY41PZS6DOO	UNCITED	Ivanova & Pandolfi 2009, Heat equation with memory: lack of controllability to rest, JMAA 355:1-11
+a2.pdf	1Hnv_3pg9j4g7K-NWPzg2z0BlJr5vZwTc	UNCITED	Fattorini & Russell 1974, Uniform bounds on biorthogonal functions for real exponentials ..., Quart. Appl. Math.
+amr-26-1039.pdf	1Z9Z-TIURFWMOV8jlsPl0cXVUdsQvy8sj	UNRELATED	underwater implosion review (Reilly et al.) - unrelated
+cocv%2F2010035.pdf	17X0-OYCa4QjGgU6TqsmrRBhOsvtdec8J	UNRELATED	fish biology (Branchiostegal membrane in Actinopterygian fishes) - nothing to do with heat waves
+doi_10.1016_j.ijsolstr.2007.01.003.pdf	1acPMvOfod112sWOp38l_lmIZA-LTEtWx	UNCITED	Crossref record: Wave propagation in a generalized thermoelastic solid cylinder of arbitrary cross-section (Int. J. Solids Struct. 2007)
+fmats-10-1118046.pdf	19UcrlQ7ajQqFZPzvwL1hWc0RrLqwBvYz	UNRELATED	flexible pipe under radial compression, Frontiers in Materials 10:1118046 - unrelated
+gae2604006.pdf	1k9p0jdr4lgCOej-tB0zBjOp3KhYqmcWV	UNRELATED	geotechnics (arching effect), Geomechanics and Engineering 26(4):369-384 - unrelated
+ncomms6510.pdf	1MspxPCK8CVYWWB1oV3CmS_EYRMpAgXHf	UNCITED	Crossref record: Negative refraction of elastic waves at the deep-subwavelength scale in a single-phase metamaterial (Nature Communications 2014)
+s00419-008-0209-6.pdf	1-zSbl0kQm9yt4gP1jBv4Tl6knwvQY3VO	UNCITED	Crossref record: Propagation of SH waves in an irregular monoclinic crustal layer (Archive of Applied Mechanics 2008)
+s00707-004-0128-8.pdf	1Qpxm5sNkFtfYoBLxQ7vJtvM6IyfO885e	UNCITED	Crossref record: Love waves propagation in a piezoelectric layered structure with initial stresses (Acta Mechanica 2004)
+s00707-016-1658-6.pdf	1jg6AQtZIZ3eqTCdu9HYfOcjZE0jdIQGI	UNCITED	Crossref record: Exact solutions for free vibrations of axially inhomogeneous Timoshenko beams with variable cross section (Acta Mechanica 2016)
+s00707-019-02552-2.pdf	10ngidogsHPEra9hQz93cVkDdIDGhl63i	UNCITED	Crossref record: Three-dimensional nonlocal anisotropic elasticity: a generalized continuum theory of Angstrom-mechanics (Acta Mechanica 2019)
+s00707-019-02598-2.pdf	1UCLqbsQneTgchpHJ7kI2D14ZfrlReGfb	UNCITED	Crossref record: Influence of irregular geologies and inhomogeneity on SH-wave propagation (Acta Mechanica 2020)
+s00707-021-02990-x.pdf	1nDb8iueGX4p656uPi0pRTsYur3M72MtP	UNCITED	Crossref record: Investigation of SH wave propagation in piezoelectric plates (Acta Mechanica 2021)
+s00707-022-03336-x.pdf	1AogRZywk1vVQH7J-AiGWW1my9QPEV4WT	UNCITED	Crossref record: Effects of interfacial elasticity on the reflection and refraction of SH waves (Acta Mechanica 2022)
+s00707-024-04102-x.pdf	1q9_oBOQAQjskwOarECkmGVoBXMWQKpc9	UNCITED	Crossref record: Propagation characteristics of SH waves in piezoelectric-piezomagnetic sandwich structures (Acta Mechanica 2024)
+s00707-024-04138-z.pdf	1UbNKClqihSaptB0jl6tO916h59nTJsx-	UNCITED	Crossref record: Surface waves propagating in an elastic half-space considering both the effects of strain gradient and surface elasticity (Acta Mechanica 2024)
+s00707-024-04162-z.pdf	1qKuBBE9tF5wZGhevZlc0Yuc__NZ4a691	UNCITED	Crossref record: Mechanics of SH and anti-plane SH waves in orthotropic piezoelectric quasicrystal with multiple surface effect (Acta Mechanica 2024)
+s00707-024-04181-w.pdf	1gdrO5sBTbifo7MwW5XzpV7Bd_pZNUqLx	UNCITED	Crossref record: SH surface waves in piezoelectric semiconductors loaded with a finite viscous liquid layer (Acta Mechanica 2024)
+s10338-022-00364-x.pdf	1Pt1KM-PGdB74xW9WsipbVRLiFNIEAec7	UNCITED	Crossref record: Love Waves in a Piezoelectric Semiconductor Thin Film on an Elastic Dielectric Half-Space (Acta Mechanica Solida Sinica 2022)
+s10338-026-00792-z.pdf	16cQ77e4g05CzE8atmOR7ZdYF5U7RH0Fk	UNCITED	Crossref record: Incremental Elasticity of Pre-stretched Elastomers with Strain Hardening Effect: Half-Space and Thin-Layer Limits (Acta Mechanica Solida Sinica 2026)
+s10409-024-24537-x.pdf	1fE_PCGm7TgT39dUf12W_Um20LK9AfLAw	UNCITED	Crossref record: Higher-order topological states and magnetic field control in elastic metamaterials (Acta Mechanica Sinica 2025)
+s10409-025-24391-x.pdf	1aMAHEOQWXg3sOklHUXmSNvjlDdjZve80	UNCITED	Crossref record: A higher-order beam theory for analyzing the static and dynamic behaviors of box and tubular beam-columns (Acta Mechanica Sinica 2025)
+s10483-015-1934-7.pdf	1_rBzK8RQAsYaMitvGmwXw5r8KgSHqCwo	UNCITED	Crossref record: Statics of FGM circular plate with magneto-electro-elastic coupling (Applied Mathematics and Mechanics 2015)
+s10483-020-2555-8.pdf	1WAqUA-DnuyM9k6RthAKSEdcBH7HsC-p0	UNCITED	Crossref record: Surface wave transference in a piezoelectric cylinder coated with reinforced material (Applied Mathematics and Mechanics 2019)
+s10483-025-3265-8.pdf	1iSFxAkLpmG0eXXs55X04LuBaqkhBWPgF	UNCITED	Crossref record: Rayleigh wave propagation in an elastic half-space with an attached piezoelectric semiconductor layer considering flexoelectricity and size-effects (Applied Mathematics and Mechanics 2025)
+s10659-013-9447-0.pdf	1HP-K4smixkY1R5rfkvKmi7cULZOJd7Vn	UNCITED	Crossref record: Rayleigh Surface Waves on a Kelvin-Voigt Viscoelastic Half-Space (Journal of Elasticity 2013)
+s10999-025-09829-6.pdf	1TkKnucYQRn-62SNhsj8aPQCYkEV9QWY_	UNCITED	Crossref record: A computationally efficient semi-analytical method for size-dependent free vibration of nonlocal timoshenko nanobeams (Int. J. Mech. Mater. Des. 2025)
+s10999-025-09840-x.pdf	102YcTgJOaEDWCnNgo0OnClHwEU2aUQoj	UNCITED	Crossref record: Nonlocal viscoelastic medium approach to free vibrations of modified Jeffreys viscoelastic nanobeams (Int. J. Mech. Mater. Des. 2025)
+s11012-019-00944-1.pdf	1GAH8f0yjzPXq_XK8_vEPWdVo3biCyx-Y	UNCITED	Crossref record: Generalized Rayleigh surface waves in a piezoelectric semiconductor half space (Meccanica 2019)
+s11770-024-1152-1.pdf	1QmWkmq-F9iGI4gz_GMTXmvMUhDMwD080	UNCITED	Crossref record: Characteristic analysis of seismic wave propagation at the free surface under the second-order strain gradient theory (Applied Geophysics 2025)
+s12517-018-4211-1.pdf	1w0fp1QJ3RYyg3AODHb8ADnMPHOdPLeLg	UNCITED	Crossref record: SH-wave propagation in linearly varying fiber-reinforced viscoelastic composite structure under initial stress (Arabian Journal of Geosciences 2019)
+s12517-020-06429-w.pdf	1BCilHYCrEcYYh4NVjjiYHyOx7DNvz7oh	UNCITED	Crossref record: Finite difference modeling of shear wave propagation in multilayered fractured porous structures (Arabian Journal of Geosciences 2021)
+s41598-025-94227-3.pdf	1flsDrdvCoF8Uo6bVtblTyQGY1NNYyCuf	UNRELATED	tubular steel columns with bolted shear connectors, Sci. Rep. 2025 - unrelated

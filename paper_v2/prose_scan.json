@@ -1,0 +1,211 @@
+[
+ {
+  "file": "main.tex",
+  "patterns": [
+   1
+  ],
+  "nwords": 24,
+  "sentence": "% Summary box style for Physics Reports style sections\n\\newtcolorbox{summarybox}[1][]{enhanced, breakable, colback=blue!5, colframe=blue!75!black,\n  arc=0mm, boxrule=0.8pt, title={#1}, fonttitle=\\bfseries\\small,\n  coltitle=white, left=2mm, right=2mm, top=1mm, bottom=1mm}"
+ },
+ {
+  "file": "sections/appEqReg.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 43,
+  "sentence": "It is deliberately not a verdict on those equations: where a computation of Appendix~\\ref{app:repro} checks an equation or a result derived from it, the check is named in the text where the equation appears, and the benchmark registry (Table~\\ref{tab:registry}) lists the numerical checks."
+ },
+ {
+  "file": "sections/s01_intro.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 56,
+  "sentence": "The difference becomes measurable, and sometimes dominant, in four situations: heating or loading that is very fast (femtosecond to nanosecond laser pulses); structures that are very small or very cold, so that phonon mean free paths approach the structure size; strongly heterogeneous media; and high-frequency elastic waves whose period is comparable to a thermal relaxation time."
+ },
+ {
+  "file": "sections/s01_intro.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 36,
+  "sentence": "The classical coupled theory of Biot \\citep{Biot1956} builds on the thermomechanical stress--strain law of Duhamel and Neumann \\citep{Duhamel1837} and on the early dynamic solutions of Danilovskaya \\citep{Danilovskaya1950} and Chadwick and Sneddon \\citep{ChadwickSneddon1958,Chadwick1960}."
+ },
+ {
+  "file": "sections/s01_intro.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 38,
+  "sentence": "\\Cref{fig:refyears} shows the publication years of the 425 works cited here; 334 of them date from 1990 onward and 134 from 2020 onward, which is the period in which the number of named heat-conduction models for thermoelastic waves multiplied."
+ },
+ {
+  "file": "sections/s01_intro.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 38,
+  "sentence": "\\begin{enumerate}\n\\item \\textbf{Proliferation without a common language.} The number of named heat-conduction models for thermoelastic waves has grown very large over three decades, and many of them are combinations (two-temperature fractional Lord--Shulman, three-phase-lag with memory, nonlocal Moore--Gibson--Thompson, and so on)."
+ },
+ {
+  "file": "sections/s01_intro.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 39,
+  "sentence": "\\item \\textbf{Figures that cannot be compared.} Published dispersion and response curves use different nondimensionalizations, parameter sets and branch conventions, so that the visual impression of ``the effect of the fractional order'' or ``the effect of nonlocality'' is hard to calibrate."
+ },
+ {
+  "file": "sections/s01_intro.tex",
+  "patterns": [
+   5
+  ],
+  "nwords": 29,
+  "sentence": "\\begin{itemize}\n\\item One heat-flux template that carries the classical, Lord--Shulman, Green--Naghdi, dual-phase-lag, three-phase-lag, Moore--Gibson--Thompson, fractional and memory-dependent theories, with a record of which limits are regular and which are singular (Sections~\\ref{sec:part_foundations}--\\ref{sec:part_beyond})."
+ },
+ {
+  "file": "sections/s01_intro.tex",
+  "patterns": [
+   5
+  ],
+  "nwords": 20,
+  "sentence": "\\item Solution methods, benchmarks, applications, experimental evidence, and a synthesis with a pitfalls checklist, a decision guide and research gaps (Sections~\\ref{sec:part_methods}--\\ref{sec:part_concl})."
+ },
+ {
+  "file": "sections/s01b_scope.tex",
+  "patterns": [
+   9
+  ],
+  "nwords": 34,
+  "sentence": "Not every cited work was read page by page; coverage of\nthe literature is deliberate rather than exhaustive; and the register documents checks performed for this\nversion, not checks that exist somewhere in principle."
+ },
+ {
+  "file": "sections/s03d_admiss.tex",
+  "patterns": [
+   9
+  ],
+  "nwords": 15,
+  "sentence": "For type II it follows from the free-energy potential rather than from a Fourier law."
+ },
+ {
+  "file": "sections/s03d_admiss.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 43,
+  "sentence": "For a law with memory the second law constrains the relaxation functions themselves: the initial values of the energy and heat-flux relaxation functions are non-negative, the initial slope of the heat-flux relaxation function is non-positive, and the equilibrium conductivity is non-negative \\citep{ChenNunziato1974}."
+ },
+ {
+  "file": "sections/s09_transient.tex",
+  "patterns": [
+   1
+  ],
+  "nwords": 7,
+  "sentence": "Three features of the response are robust."
+ },
+ {
+  "file": "sections/s09_transient.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 37,
+  "sentence": "(ii) The stress is largest, and most sensitive to the heat law, at the elastic front, where Lord--Shulman gives about 20\\,\\% larger compressive peak than the classical model in this example (peak values $-0.30$ against $-0.25$, in units of $\\rho c_1^2$)."
+ },
+ {
+  "file": "sections/s13_multiphysics.tex",
+  "patterns": [
+   2
+  ],
+  "nwords": 28,
+  "sentence": "Memory-dependent and fractional order analysis of the initially stressed piezo-thermoelastic medium was presented by \\citep{Barak2023a}; electro-thermoelasticity theory with memory-dependent derivative heat transfer was formulated by \\citep{Ezzat2016a}."
+ },
+ {
+  "file": "sections/s13b_bg.tex",
+  "patterns": [
+   2
+  ],
+  "nwords": 25,
+  "sentence": "The shift between free and metallized speeds, the usual electromechanical coupling measure of a surface wave, is of order $K^4$ and hence small when $K^2$ is small."
+ },
+ {
+  "file": "sections/s15b_examples.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 36,
+  "sentence": "When thermal coupling is included, the reflected and transmitted amplitudes acquire corrections of order $\\varepsilon$ and additional thermal waves are generated; the energy bookkeeping must use the net-flux conservation of \\cref{sec:interfaces}, not the sum of mode-wise energy fractions."
+ },
+ {
+  "file": "sections/s15e_identify.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 40,
+  "sentence": "Writing the numerator as $k^*+(k+k^*\\tau_v)s+k\\tau_Ts^2$, $G$ depends only on the four combinations\n\\begin{equation}\nk^*,\\qquad k+k^*\\tau_v,\\qquad k\\,\\tau_T,\\qquad \\tau_q ,\n\\end{equation}\nso the parameters can move along $(\\delta k,\\delta\\tau_T,\\delta\\tau_v)=(\\delta,\\,-\\tau_T\\delta/k,\\,-\\delta/k^*)$ without changing $G$ and hence without changing any wave property of the one-dimensional problem, which is consistent with the combination $\\tau_v^{*}=k+k^*\\tau_v$ of Roy Choudhuri \\citep{RoyChoudhuri2007}."
+ },
+ {
+  "file": "sections/s15e_identify.tex",
+  "patterns": [
+   9
+  ],
+  "nwords": 26,
+  "sentence": "Two consequences follow: dispersion or attenuation data alone cannot separate $k$ from $\\tau_v$, and a pair $(k,\\tau_v)$ fitted to such data is a convention rather than a measurement (compare \\cref{sec:delayfid})."
+ },
+ {
+  "file": "sections/s16c_taxonomy.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 42,
+  "sentence": "A study may adopt a relaxation law for the heat flux, a gradient or\nintegral law for the stress, a coupling to a second field, and a validation regime, and each of these can\nbe varied while the others are held fixed."
+ },
+ {
+  "file": "sections/s16c_taxonomy.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 40,
+  "sentence": "The heat-flux template of \\cref{sec:foundations} is a special case of Axis~2: the flux law is local in\nspace and first order in the flux, with an optional thermal-displacement ($1/s$) term, and the lags are the coordinate that separates the template's members."
+ },
+ {
+  "file": "sections/s16c_taxonomy.tex",
+  "patterns": [
+   9,
+   12
+  ],
+  "nwords": 37,
+  "sentence": "A\nmodel that needs an integral, fractional or gradient operator has left that axis rather than moved along\nit, which is why such models cannot be ranked against the template's members by setting a lag to zero."
+ },
+ {
+  "file": "sections/s16c_taxonomy.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 82,
+  "sentence": "The three groups of \\cref{tab:taxonomy} (structure of the heat law, elastic constitutive law, additional fields) are a coarse, model-oriented view; in the five-axis scheme below they correspond mainly to the mathematical axis (Axis~2), for the heat law and for the local, nonlocal or gradient form of the elastic law, and to the physical and coupling axes (Axes~1 and 4), for the additional fields, while the wave and validation axes (Axes~3 and 5) describe what a study does with the model."
+ },
+ {
+  "file": "sections/s16c_taxonomy.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 37,
+  "sentence": "Two studies are \\emph{structurally} comparable, at the level of model class, when their vectors agree in the first two coordinates; a comparison of numbers further needs compatible geometry, parameters, boundary and interface conditions, nondimensional regime and observable."
+ },
+ {
+  "file": "sections/s16c_taxonomy.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 53,
+  "sentence": "To\nmake the weaker statement quantitative, define the axis-weight dissimilarity\n\\begin{equation}\\label{eq:taxdissim}\nd(\\mathbf{c},\\mathbf{c}')=\\sum_{j=1}^{5} w_j\\,\\bigl(1-\\delta_{c_j c_j'}\\bigr),\n\\qquad\nw_{\\mathrm{math}}\\ge w_{\\mathrm{phys}}>w_{\\mathrm{coup}}>w_{\\mathrm{wave}}>w_{\\mathrm{val}} ,\n\\end{equation}\nwith the ordering stated because it is a modeling decision open to challenge: a difference in the\nmathematical axis changes the governing operator and invalidates most direct comparisons, whereas a\ndifference in the validation axis changes only the epistemic status of the conclusion."
+ },
+ {
+  "file": "sections/s16c_taxonomy.tex",
+  "patterns": [
+   12
+  ],
+  "nwords": 48,
+  "sentence": "It fixes the order in which \\cref{sec:synthesis} compares families; it is why \\cref{sec:interfaces} insists\nthat an energy flux be defined consistently with the model before ratios are compared (see\n\\cref{sec:eqregister}); and it is why \\cref{sec:open} keeps apart the questions that differ in the\nmathematical axis from those that differ only in evidence."
+ }
+]
