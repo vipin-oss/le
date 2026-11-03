@@ -1,0 +1,34 @@
+\section{Piezoelectric shear-horizontal surface waves}\label{sec:bg}
+
+The thermopiezoelectric coupling of \cref{sec:multi} changes bulk stiffness, and piezoelectric media also carry surface waves with no elastic counterpart. The simplest is the Bleustein--Gulyaev (BG) wave \citep{Bleustein1968,Gulyaev1969}, a shear-horizontal (SH) wave localized at the surface of a hexagonal (6mm) crystal. It is included as the prototype of electromechanical surface localization, and because its closed form states cleanly how the electrical boundary condition enters.
+
+\subsection{Formulation}
+Let the half-space $y>0$ be a 6mm crystal with the polar axis along $z$ and motion $u_z(x,y,t)$ polarized along $z$, with wave number $k$ along $x$. The relevant constants are the shear stiffness $c_{44}$, piezoelectric constant $e_{15}$ and permittivity $\varepsilon$, combined in $K^2=e_{15}^2/(c_{44}\varepsilon)$ and the stiffened modulus $\bar c=c_{44}(1+K^2)$ with bulk speed $\bar v=\sqrt{\bar c/\rho}$. In the quasi-static approximation the fields are $u=A\,e^{-m y}$ and $\varphi=(e_{15}/\varepsilon)\,u+B\,e^{-ky}$, with $m=k\sqrt{1-v^2/\bar v^2}$, and in the vacuum $y<0$ the potential is $\varphi=C\,e^{ky}$. The boundary conditions at $y=0$ are a free surface $\sigma_{yz}=c_{44}u_{,y}+e_{15}\varphi_{,y}=0$ together with either of the following:
+\begin{itemize}
+\item \emph{metallized surface}, $\varphi=0$;
+\item \emph{free (unmetallized) surface}, continuity of $\varphi$ and of $D_y$ across the interface with vacuum permittivity $\varepsilon_0$.
+\end{itemize}
+
+\subsection{Results}
+Eliminating the amplitudes gives
+\begin{equation}\label{eq:bg}
+\frac{m}{k}=\frac{K^2}{1+K^2}\ \ (\text{metallized}),\qquad
+\frac{m}{k}=\frac{\varepsilon_0}{\varepsilon+\varepsilon_0}\,\frac{K^2}{1+K^2}\ \ (\text{free}),
+\end{equation}
+so that the surface wave speed is $v=\bar v\sqrt{1-(m_\ast/k)^2}$ with $m_\ast/k$ from \cref{eq:bg}. The roots of the $3\times3$ secular determinant agree with these forms to the digits quoted (Bleustein--Gulyaev check). For $K^2=0.2$, $\bar v=1.0954\,v_t$ (with $v_t=\sqrt{c_{44}/\rho}$), the metallized speed is $1.0801\,v_t$, i.e.\ $1.4\%$ below $\bar v$, while for the free surface $v=1.0954$, $1.0953$ and $1.0916\,v_t$ for $\varepsilon_0/\varepsilon=0.01,\,0.1$ and $1$. For $K^2=0.5$ the metallized value is $1.1547\,v_t$ against $\bar v=1.2247\,v_t$.
+
+Two consequences follow. The shift between free and metallized speeds, the usual electromechanical coupling measure of a surface wave, is of order $K^4$ and hence small when $K^2$ is small. The decay length $1/m$ is far more sensitive to the electrical condition: for $K^2=0.2$ it is about $1/k\cdot6$, roughly one wavelength, when metallized. It is about $600/k$, roughly $100$ wavelengths, for a free surface with $\varepsilon_0/\varepsilon=0.01$. A plate a few wavelengths thick therefore does not support the free-surface BG wave as a surface wave in any strict sense.
+
+\begin{figure}[t!]\centering\small
+\input{figs_tikz/fig9_bg.tex}
+\caption{Geometry: Bleustein--Gulyaev SH surface wave -- particle motion along $z$, localized at the surface $y=0$ of a 6mm piezoelectric half-space; electrical boundary condition (metallized/free) controls decay length.}\label{fig:bg-geo}
+\end{figure}
+
+Rayleigh-type waves in nonlocal micropolar thermoelastic half-space containing void pores were computed by \citep{Kumar2024b}. Temperature-rate-dependent thermoelasticity theory with memory-dependent derivative, including energy and uniqueness theorems, was developed by \citep{Singh2020d}.
+
+\subsection{Thermal coupling}
+For this SH polarization with uniform fields in $z$ the shear strains $\epsilon_{xz},\epsilon_{yz}$ do not couple to the (diagonal) thermal-stress tensor of a hexagonal crystal. The pyroelectric coupling acts along the polar axis $z$, which is perpendicular to the in-plane electric field. The BG wave is therefore not coupled to temperature in this geometry, and thermal effects enter only through the temperature dependence of $c_{44}$, $e_{15}$ and $\varepsilon$, which shifts the speed without introducing a loss. Coupled thermo-piezoelectric surface waves exist for other cuts and polarizations, where the sagittal-plane motion has a dilatational component, and for those the Rayleigh-type determinant of \cref{sec:surface} has to be extended by the electrical conditions.
+
+\begin{summarybox}[Summary]
+The Bleustein--Gulyaev SH surface wave has no elastic analogue. Its speed is $v=\bar v\sqrt{1-(m/k)^2}$ with $\bar v=v_t\sqrt{1+K^2}$, and the decay exponent $m/k$ is $K^2/(1+K^2)$ (metallized) or scaled by $\varepsilon_0/(\varepsilon+\varepsilon_0)$ (free surface). For $K^2=0.2$ the shift is $1.4\%$ below $\bar v$ metallized; the free-surface decay length can reach $\sim100$ wavelengths. Not thermally coupled in this geometry.
+\end{summarybox}

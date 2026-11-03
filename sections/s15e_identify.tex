@@ -1,0 +1,21 @@
+\subsection{What the dispersion relation can identify}\label{sec:identify}
+Equation \eqref{eq:disp} contains the heat law only through the single function $G(s)$ and is \emph{linear} in $G$. If the complex wavenumber $k(\omega)$ of the elastic-type branch is measured (phase velocity from $\operatorname{Re}k$, attenuation from $\operatorname{Im}k$) and $\rho,c_1,c,\beta,T_0$ are known, \eqref{eq:disp} can be solved for $G$ at each frequency,
+\begin{equation}
+G(-\ii\omega)=-\,\frac{s\,\bigl[\rho^2c\,(c_1^2K-\omega^2)+\beta^2T_0K\bigr]}{\rho\,K\,(c_1^2K-\omega^2)},\qquad K=k^2,\ s=-\ii\omega .\label{eq:Ginvert}
+\end{equation}
+A measured $k(\omega)$ therefore determines the heat-flux function $G(-\ii\omega)$ \emph{without assuming} a lag model; the model enters afterwards, when a parametric form of $G$ is fitted.
+
+For the template $G(s)=[k(1+\tau_Ts)+k^*(1+\tau_vs)/s]/(1+\tau_qs)$ the five parameters $(k,k^*,\tau_q,\tau_T,\tau_v)$ are \emph{not} all identifiable. Writing the numerator as $k^*+(k+k^*\tau_v)s+k\tau_Ts^2$, $G$ depends only on the four combinations
+\begin{equation}
+k^*,\qquad k+k^*\tau_v,\qquad k\,\tau_T,\qquad \tau_q ,
+\end{equation}
+so the parameters can move along $(\delta k,\delta\tau_T,\delta\tau_v)=(\delta,\,-\tau_T\delta/k,\,-\delta/k^*)$ without changing $G$ and hence without changing any wave property of the one-dimensional problem. This is consistent with the combination $\tau_v^{*}=k+k^*\tau_v$ of Roy Choudhuri \citep{RoyChoudhuri2007}. Two consequences follow: dispersion or attenuation data alone cannot separate $k$ from $\tau_v$, and a pair $(k,\tau_v)$ fitted to such data is a convention rather than a measurement (compare \cref{sec:delayfid}).
+
+\paragraph{Numerical check (synthetic data).} The identifiability check generates $k(\omega)$ from the template with a chosen parameter set, verifies that \eqref{eq:Ginvert} returns $G$ to $10^{-9}$, that the Jacobian of $G(-\ii\omega)$ with respect to the five parameters has numerical rank four (singular values relative to the largest: $1,\ 0.93,\ 0.44,\ 0.05,\ 3\times10^{-11}$), and that two parameter sets differing along the null direction give identical $G$. With $0.5\,\%$ random noise on complex $k$ at twelve frequencies, the combinations $k^*$ and $\tau_q$ are recovered to $2\,\%$ and below $1\,\%$, $k+k^*\tau_v$ to about $12\,\%$ and $k\tau_T$ only to about $26\,\%$ (\cref{fig:identify}). These figures describe this synthetic example, with one parameter set, one noise level and one seed, and not any material; no experimental data enter.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/fig_identify.pdf}
+\caption{Synthetic identification test. Left: $G(-\ii\omega)/k$ recovered from $0.5\,\%$-noisy complex wavenumbers through \eqref{eq:Ginvert} (markers) against the exact function (lines). Right: singular values of the Jacobian of $G$ with respect to $(k,k^*,\tau_q,\tau_T,\tau_v)$; the fifth is zero to rounding, the fourth is small.}\label{fig:identify}
+\end{figure}
+

@@ -1,0 +1,94 @@
+\section{Open problems and research agenda}\label{sec:open}
+\subsection{Theory}
+\begin{enumerate}
+\item \textbf{A classification theorem for the template.} For the first-order template no unstable root has been found numerically for DPL in a finite sweep of positive lags (an analytical statement is lacking), and the condition under which the thermal front has finite speed (the behavior of $sG(s)$ at large $s$) has been identified. What applied authors still lack is a complete analytical statement of well-posedness, decay and front structure for the coupled TPL and MGT systems with all parameters positive, that is, the conditions on $(\tau_q,\tau_T,\tau_v,k,k^*)$ together with the role of the coupling $\varepsilon$, in a form they can use directly.
+\item \textbf{Thermodynamics of truncated lag models.} The time-differential DPL and TPL models raise questions of thermodynamic compatibility and continuous dependence \citep{Chirita2016,Tibullo2017}. A systematic account of which truncations admit an energy functional and an entropy inequality, and of what restrictions these impose on the lags, would resolve the confusion over the $\tau_T\ge\tau_q/2$ condition (Section~\ref{sec:lags}).
+\item \textbf{Memory-dependent and fractional models.} Energy functionals, thermodynamic admissibility, uniqueness and finite-speed properties are not available for the memory-dependent and fractional laws at the generality of the template models. The high-frequency limit of the MDD law depends on the kernel (Section~\ref{sec:memory}), which suggests that a classification of kernels by $s\kappa(s)$ at large $s$ would be worth having.
+\item \textbf{Interface conditions for lagged and memory models.} What is missing is a set of thermodynamically consistent interface conditions with thermal resistance for lagged and memory heat laws, including the entropy production at the interface (Section~\ref{sec:interfaces}).
+\item \textbf{Mode interference in dissipative media.} Energy ratios will keep their ambiguity until there is a systematic way to apportion the energy flux among generated waves in lossy media.
+\end{enumerate}
+\subsection{Combined effects}
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item \textbf{Joint size and memory effects.} Authors compute combinations of nonlocal or gradient elasticity with hyperbolic or memory heat laws far more often than they validate them against lattice dynamics or atomistic simulation. A benchmark in which a lattice model with heat carriers supplies the reference dispersion would show which combination is justified.
+\item \textbf{Calibration of length scales.} The calibration target, zone boundary or long wavelength, changes $\xi$ by about one third (Section~\ref{sec:size}); systematic calibration protocols for thermoelastic problems do not exist.
+\item \textbf{Nonlocal forms of thermoelastic coupling.} The smoothed and unsmoothed forms of the thermal stress differ near the cut-off. The thermodynamically consistent form should be derived from a nonlocal free energy rather than chosen.
+\item \textbf{Surface and interface thermoelasticity at the nanoscale.} Surface stress, surface heat capacity and Kapitza resistance modify both surface waves and interface partition in ways that the bulk models treated here do not capture.
+\end{enumerate}
+\subsection{Experiments and data}
+\begin{enumerate}
+\setcounter{enumi}{9}
+\item \textbf{Measurement of both branches.} Most of the present evidence is indirect. An experiment that measured the elastic-type and the thermal-type branch in the same solid across the crossover frequency would discriminate among heat laws.
+\item \textbf{Independent determination of lags.} Relaxation times and lags are generally obtained by fitting. An independent measurement, from pump--probe experiments together with ultrasonic damping for instance, would test the models instead of fitting them.
+\item \textbf{Thermoelastic damping at ultra-high frequency.} Resonators at gigahertz frequencies already reach the regime in which lagged corrections matter; systematic data on damping against frequency and size would calibrate them.
+\end{enumerate}
+\subsection{Computation}
+\begin{enumerate}
+\setcounter{enumi}{12}
+\item \textbf{Benchmark suite.} A set of agreed benchmark problems, namely the heat pulse, thermal shock, Rayleigh wave and interface problems of this review, with reference solutions at specified precision, would improve the reliability of numerical codes.
+\item \textbf{Efficient memory operators.} Fast algorithms for fractional and memory-dependent operators in time-domain codes, with error control.
+\end{enumerate}
+
+\begin{summarybox}[Summary]
+Open problems: (theory) classification theorem for the template, thermodynamics of truncated lag models, memory-model energy functionals, consistent interface conditions for lagged/memory laws, mode-interference framework for dissipative media. (combined effects) joint size-and-memory validation against lattice dynamics, calibration protocols for length scales, thermodynamically consistent nonlocal thermal stress, nanoscale surface/interface thermoelasticity. (experiments) measure both branches in the same solid, independent lag determination, ultra-high-frequency damping data. (computation) agreed benchmark suite, fast memory operators.
+\end{summarybox}
+
+\subsection{Researchable questions, and what would settle each}\label{sec:research_questions}
+
+The agenda above states the gaps. A gap becomes usable only when the evidence that would close it is stated as well.
+Only then can a reader judge whether a proposed study is decisive or merely related. The table makes the test explicit, and its final column names the section where the gap is first
+stated in this paper. \Cref{tab:research-questions} lists, for each gap, what would settle it.
+
+\begin{table}[H]\centering\small
+\caption{Researchable questions. Each row restates a gap stated in \cref{sec:open}; the third column
+names the evidence that would move it from open to closed. No new claim is introduced.}
+\label{tab:research-questions}
+\begin{tabularx}{\textwidth}{@{}p{0.5cm}Y Y p{1.75cm}@{}}
+\toprule
+\textbf{\#} & \textbf{Question} & \textbf{What would settle it} & \textbf{Stated in} \\
+\midrule
+R1 & What is the total (not availability) energy flux for each generalized family, and how does it
+  differ from the flux used for interface partition? & A time-domain derivation per family under an
+  explicit free-energy convention, external-field power terms and boundary conditions, checked against
+  the primary formulation, together with a statement of the first-order reduction that recovers the flux
+  used for the energy ratios. & \cref{sec:foundations}, \cref{sec:interfaces} \\
+R2 & Is energy conserved at an interface in generalized and nonlocal media, and in what sense? & An
+  interface balance derived from the selected model's flux, with the admissible jump conditions, checked
+  against a benchmark whose reference solution does not depend on the model under test. &
+  \cref{sec:interfaces} \\
+R3 & Which benchmark is the right reference for a generalized theory? & A specification whose reference
+  solution is independent (analytic limit, symbolic determinant, or an independently implemented
+  discretization), with a stated tolerance. & \cref{app:registry} \\
+R4 & Do the predicted generalized modes exist in a real material, with the predicted attenuation? & An
+  experimental measurement of the predicted observables under conditions inside the model's stated
+  validity domain. & \cref{sec:experiments} \\
+R5 & How should energy flux and energy partition be normalized across families so that comparisons mean
+  something? & A normalization in terms of physical observables rather than model parameters. &
+  \cref{sec:synthesis} \\
+R6 & How are nonlocal interface conditions and a nonlocal divergence theorem formulated? & A variational
+  statement of the nonlocal boundary-value problem from which the interface conditions follow rather than
+  are assumed. & \cref{sec:size} \\
+R7 & Are phase-lag, memory-kernel and anisotropy parameters identifiable from measurable data? & The
+  number and type of independent measurements needed to separate the parameters, established by analysis
+  of the sensitivity structure or by a designed experiment; the answer is model-specific. &
+  \cref{sec:experiments} \\
+R8 & Do the thermodynamic restrictions reduce the admissible parameter set under anisotropic symmetry as
+  they do in the isotropic case? & The anisotropic admissibility analysis carried through for each family,
+  with the coordinate-free form of the fractional and memory operators under anisotropic differentiation.
+  & \cref{sec:foundations} \\
+R9 & Which comparative statements survive when each family's own conventions are respected? & A
+  model-by-model full-text check of constitutive conventions, free energies and external-field power terms
+  before any flux or mode count is compared. & \cref{sec:synthesis} \\
+R10 & Can the benchmarks be reproduced from published inputs, and at what convergence rate? & Shared
+  implementations, published inputs and reported convergence rates for every benchmark. &
+  \cref{sec:methods} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+R1 and R9 are the same question at different depths. A family-level flux comparison cannot be trusted until the model-specific
+derivations behind it exist. The register in \cref{sec:eqregister} therefore marks the affected entries
+open instead of filling them.
+
+\section{Conclusions}\label{sec:conclusions}
+Generalized thermoelasticity is a family organized by the function $G(s)$ that relates heat flux to temperature gradient, together with choices of elastic law and added fields, and not a collection of unrelated theories. That organization yields three kinds of result. It gives exact statements about reductions and limits, among them the clarification that the often-quoted DPL stability condition belongs to a specific truncation and that GN-III has no finite front speed. It gives a dispersion polynomial for linear homogeneous media and rational heat laws, from which comparative speeds, attenuation and thermoelastic damping follow, and which shows that the heat law affects damping long before it affects speed, and only for $\omega\tau\gtrsim0.05$. It gives problem-level results: finite fronts and surface jumps in heat pulses, the structure of thermoelastic Rayleigh waves, the renormalization by piezoelectric coupling, the calibration dependence of nonlocal lengths, and the distinction between net energy flux and mode-by-mode fractions at interfaces in lossy media. Many of the open questions concern validation rather than derivation: independent measurement of lags, joint validation of size and memory effects against lattice dynamics, and benchmark solutions. The unified notation, the verified reductions, the pitfalls checklist and the decision guide are there so that readers can choose, justify and check models, and the open problems so that effort goes where it is most needed.
