@@ -1,0 +1,25 @@
+\section{Benchmark registry}\label{app:registry}
+\Cref{tab:registry} lists the fourteen benchmarks run by the master check runner. Every entry is a \emph{code verification}: it checks that an implementation reproduces an exact, closed-form, symbolic or independently computed reference to a stated tolerance. None is a \emph{physical validation}, because this review reports no new experiment, and validation against measured data is limited by the evidence discussed in \cref{sec:experiments}. The registry is also supplied in machine-readable form with the supplementary material, together with the computation implementing each entry. A new model or solver should join the registry with (i) a reference solution that does not use the code under test, (ii) a tolerance and the reason for it, and (iii) a statement of what a pass does \emph{not} establish.
+
+\begin{table}[H]\centering\small
+\caption{Benchmark registry (code verification only).}\label{tab:registry}
+\begin{tabularx}{\textwidth}{@{}l p{3.1cm} p{3.5cm} X@{}}\toprule
+ID & Quantity checked & Reference & Tolerance (check)\\\midrule
+B01 & coupled 1D dispersion polynomial & symbolic determinant & exact (dispersion check)\\
+B02 & $\operatorname{Re}G$, Routh--Hurwitz & closed form & 0 mismatches (admissibility check)\\
+B03 & Rayleigh, Stoneley, Love, Scholte-type roots & classical closed forms, printed Stoneley value & $2\times10^{-5}$ to $10^{-10}$ against closed forms; $10^{-4}$ against four-digit printed values (layered-media check)\\
+B04 & identifiability of the template & synthetic data from the same model & $10^{-9}$ inversion, rank 4 of 5 (identifiability check)\\
+B05 & effective-modulus quadratic, LS front limit & dispersion roots, front relation & $10^{-10}$, $10^{-5}$ (modulus check)\\
+B06 & thermoelastic plate, elastic limit & Rayleigh--Lamb A0 root & $10^{-10}$ (Lamb-wave calculation)\\
+B07 & nine reductions & analytic limits & per reduction (reduction check)\\
+B08 & thermopiezoelectric determinant & renormalized thermoelastic polynomial & same zeros (thermopiezoelectric check)\\
+B09 & LS and GL high-frequency speeds & front relation & rtol $10^{-3}$ (front-speed check)\\
+B10 & GN-II speeds & closed-form roots & atol $10^{-5}$ (GN-II check)\\
+B11 & Kramers--Kronig sum rule (classical) & loss integral vs dispersion step & $10^{-5}$ (Kramers--Kronig check)\\
+B12 & BG secular roots & closed forms & $10^{-8}$ (Bleustein--Gulyaev check)\\
+B13 & Laplace inversion & four known transforms & de Hoog $<10^{-5}$ (Laplace-inversion benchmark)\\
+B14 & Cattaneo pulse, three schemes & de Hoog reference & global order in $[0.4,1.2]$; smooth order 1.0, 2.0 (finite-difference benchmark)\\
+\bottomrule\end{tabularx}
+\end{table}
+
+\paragraph{What the registry does not cover.} Entries B01--B14 use implementations written by the authors. Except for B01 and B08, whose references are symbolic, the reference solutions are closed forms or an independent algorithm rather than a second independently written code base, and an independent implementation by another group remains open.

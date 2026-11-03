@@ -1,0 +1,30 @@
+\section{Reporting standards for new work}\label{sec:reporting}
+
+What limited the comparisons in this review was usually not the models but what the original papers report. A short set of reporting standards is therefore proposed that would make future results directly comparable. They follow from the pitfalls collected in \cref{sec:synthesis} and from the checks of \cref{sec:methods,sec:schemes}.
+
+\subsection{What a paper on generalized thermoelastic waves should state}
+\begin{enumerate}
+\item \textbf{The heat-flux law as an explicit parameter set.} Give the model in the template of \cref{sec:foundations}, or state where it departs from it, so that $G(s)$, the polynomial of \cref{eq:unified} and the limit $\omega\to\infty$ follow without a reading of the derivation. For lagging models give the truncation order.
+\item \textbf{Which limits were verified.} Name the reductions that were checked numerically or symbolically, Fourier and Lord--Shulman and the elastic limit $\varepsilon\to0$ for instance, and give the numerical agreement achieved.
+\item \textbf{A non-dimensional parameter table.} Report $\varepsilon$, $\omega/\omega_*$, $\omega\tau_q$ (and $\omega\tau_T$, the fractional order $\alpha$, $\xi\omega/c_1$ as relevant) for every figure. A figure without them cannot be placed on the regime map of \cref{sec:synthesis}.
+\item \textbf{The material source and the status of the parameters.} Say whether a lag time or fractional order is measured, estimated by a stated argument, or assigned for illustration; illustrative values should not share a table with measured ones.
+\item \textbf{Branch handling.} For dispersion curves state how roots were selected and followed (\cref{sec:prelim}), and mark the regions of hybridization.
+\item \textbf{Energy statements.} Where energy ratios are reported, give the energy flux used (\cref{sec:energy}), say whether the ratios sum to one, and if they do not, whether the cross terms between modes were included (\cref{sec:interfaces}).
+\item \textbf{Inversion and discretization.} For transient results state the Laplace-inversion method and its cross-check, or the discretization and the Courant number, and give the error in a window around the front separately from the global error (\cref{sec:schemes}).
+\item \textbf{Boundary and interface conditions.} State the thermal condition (insulated, isothermal, convective) and, at interfaces, the continuity conditions for the heat flux and for the temperature or the thermal displacement.
+\end{enumerate}
+
+\subsection{Claims that need an independent test}
+\begin{itemize}
+\item A lag time or fractional order extracted from a single curve that carries several free parameters.
+\item A claim that a model predicts a ``new wave'', offered without a check of the number of roots of the dispersion polynomial in each frequency range and of their causality (\cref{sec:prelim}).
+\item A reflection or transmission result whose energy ratios sum to one only because the thermal wave was dropped.
+\item A size effect taken from a nonlocal law whose length parameter was chosen by trial rather than calibrated to a lattice or atomistic dispersion curve (\cref{sec:size}).
+\end{itemize}
+
+\subsection{Limitations of this review}
+The review covers linear waves about a uniform reference state. It does not cover nonlinear thermoelasticity, radiative or reactive heat transfer, or the full literature on bounded-domain well-posedness. The numerical checks use rounded handbook values and non-dimensional parameter sets chosen to separate the effects under discussion; they illustrate mechanisms and should be repeated with measured parameters before design use. The classified catalog in the appendix is organized by title keywords and does not assess the content of the individual papers. Statements that rest on the cited literature rather than on the computations reported here carry their citations.
+
+\begin{summarybox}[Summary]
+Reporting standards: state $G(s)$ explicitly; give all parameters with units and provenance; report truncation order for lag laws; check energy conservation via net flux, not mode-flux sums; give the dimensionless numbers $\omega\tau$ and $\omega/\omega_*$; state the thermal boundary condition; provide the computations or reference data; repeat numerical checks with measured parameters before design use.
+\end{summarybox}

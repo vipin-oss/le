@@ -1,0 +1,57 @@
+\section{Interfaces, reflection and energy partition}\label{sec:interfaces}
+Reflection and transmission at interfaces is the most heavily studied wave problem in generalized thermoelasticity and in multiphysics media; Table~\ref{tab:streams} lists many of the works. Most of them report \emph{energy ratios} and take a unit sum as a validation. The problem is built from the elastic baseline, thermal coupling is added, and the conditions under which the unit-sum check holds and under which it fails are identified, because the literature is not uniform on that point.
+
+\begin{figure}[t!]\centering\small
+\input{figs_tikz/fig6_interface.tex}
+\caption{Original schematic; the setting follows \citep{Nowacki1975}: welded elastic interface at normal/oblique incidence -- reflected P/SV and transmitted P/SV waves; impedance mismatch controls the coefficients \eqref{eq:rt}.}\label{fig:interface-geo}
+\end{figure}
+
+\subsection{Welded elastic interface at normal incidence}
+Two elastic half-spaces with impedances $Z_j=\rho_jc_{1j}$ are perfectly bonded at $x=0$. For a wave incident from medium~1, continuity of displacement and traction gives the displacement amplitudes
+\begin{equation}
+r=\frac{Z_1-Z_2}{Z_1+Z_2},\qquad t=\frac{2Z_1}{Z_1+Z_2},\label{eq:rt}
+\end{equation}
+and the time-averaged energy fractions $\mathcal R=r^2$, $\mathcal T=4Z_1Z_2/(Z_1+Z_2)^2$ satisfy $\mathcal R+\mathcal T=1$ (\Cref{fig:interface}). The displacement transmission coefficient $t$ can reach two into a soft second medium without violating conservation; only the energy fractions are bounded.
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_interface.pdf}
+\caption{Normal incidence on a welded elastic interface. (a) Displacement reflection and transmission coefficients. (b) Energy fractions; $\mathcal R+\mathcal T=1$ for every impedance ratio.}\label{fig:interface}
+\end{figure}
+
+\subsection{Oblique incidence on an elastic interface}
+For oblique incidence of a P wave, Snell's law conserves the horizontal slowness $p=\sin\theta_1/c_{1,P}=\sin\phi_1/c_{1,S}=\sin\theta_2/c_{2,P}=\sin\phi_2/c_{2,S}$, and four waves are generated: reflected P and SV, transmitted P and SV. Continuity of $u_x,u_z,\sigma_{zz},\sigma_{xz}$ gives four linear equations for the amplitudes, the Zoeppritz system. It was solved for a pair of media ($\rho_1,c_P,c_S=2.5,5.0,2.8$ and $\rho_2,c_P,c_S=3.0,8.0,4.5$ in arbitrary consistent units), with energy flux per wave $P_z=-\tfrac12\Real(\sigma_{zj}\overline{\dot u_j})$. The sum of the four energy fractions equals one to rounding error ($|\text{sum}-1|<2\times10^{-15}$ over $0.5^\circ$--$89.5^\circ$), and at normal incidence the P--P reflection fraction ($0.099268$) equals the impedance formula ($0.099268$). \Cref{fig:ienergy}(a) shows the expected features: a critical angle ($38.7^\circ$ here) beyond which the transmitted P wave is evanescent and carries no energy, and a reflected P fraction that reaches total P reflection in the P--P channel only at grazing incidence, with mode conversion in between.
+
+\subsection{Thermoelastic interfaces}
+When both media are thermoelastic, two further wave types appear in each medium and the interface conditions include thermal continuity. For perfect thermal contact, $\theta$ and the normal flux $q_n$ are continuous together with displacement and traction. In normal incidence there are four amplitudes (reflected elastic and thermal waves, transmitted elastic and thermal waves) and four equations. The case was implemented for two media that differ in density, wave speeds, heat capacities, conductivities, coupling constants and lag times, with Lord--Shulman conduction and an incident elastic-type wave; the amplitude ratios and the flux of each wave follow from \eqref{eq:P}. Two tests were run. (i) As $\varepsilon\to0$ (here $\beta=10^{-6}$) the reflected elastic energy fraction ($0.169550173$) equals the impedance formula $(Z_1-Z_2)^2/(Z_1+Z_2)^2$ to twelve digits. (ii) The \emph{net} flux, from the total fields on either side of the interface, is continuous to $10^{-15}$ at every frequency examined.
+
+Fractional and memory effects on wave reflection in pre-stressed microstructured solids with dual porosity were analyzed by \citep{Das2025}; reflection of hygrothermal waves in a nonlocal theory of coupled thermo-elasticity was studied by \citep{Yadav2022}.
+
+\paragraph{When does ``energy fractions sum to one'' hold?} The exact statement is that the net flux of \eqref{eq:P} into the interface equals the net flux out of it, since the continuity conditions imply continuity of $\sigma\dot u$ and of $\theta q$. That is not the same as the \emph{sum of the fluxes carried by each wave separately} equalling the incident flux. For homogeneous waves in lossless media the two statements coincide, because cross terms between distinct modes vanish in the time average, which is what the elastic checks above confirm numerically. In a dissipative medium, the modes have complex wavenumbers and the cross terms between, for example, the elastic-type and the thermal-type wave at the interface do not vanish, so
+\begin{equation}
+\sum_n\mathcal F_n\ne1\quad\text{in general, while}\quad \mathcal F_{\rm net}\equiv1.
+\end{equation}
+\Cref{fig:ienergy}(b,c) shows an example: the sum of the four mode fractions is within $1.5\,\%$ of unity for $\omega\lesssim2\omega_*$ but reaches 1.34 near $\omega\approx8\omega_*$ and individual fractions can exceed one (the transmitted elastic fraction reaches 1.1). Energy conservation is not violated; the cross terms account for the difference. The consequence for published results is practical. A sum that deviates from unity can come from (a) a wrong coupling coefficient or boundary condition, (b) a flux definition inconsistent with the model, or (c) genuine interference of modes in a dissipative medium. The first two are errors and the third is not, so the correct check uses the net flux, or includes the interference terms, rather than the sum of mode fluxes. Studies that report energy ratios at thermoelastic and piezothermoelastic interfaces \citep{Barak2023,Barak2023IJP,Barak2023JTS,Barak2023MMMS,Gupta2023Energy,Kumar2023PhysScr,Kumar2019,Kumar2022,Kumar2024,Kumar2024a} should be read with this point in mind: when the media are lossy, a unit sum of mode ratios is not a necessary condition and a failure of the sum to equal one is not by itself evidence of error.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_interface_energy.pdf}
+\caption{Energy partition at welded interfaces. (a) Oblique P incidence on an elastic--elastic interface: reflected and transmitted P and SV energy fractions; their sum is unity at every angle. (b) Normal incidence on a thermoelastic--thermoelastic interface with Lord--Shulman conduction ($\varepsilon_1=0.1$, $\beta_2^2T_0=0.3$, i.e.\ $\varepsilon_2=0.065$, $\tau_{q1}=0.25/\omega_*$, $\tau_{q2}=0.15/\omega_*$): energy fractions of the four generated waves against frequency. (c) The sum of mode fractions deviates from unity at high frequency because of interference terms, while the net flux of \eqref{eq:P} is continuous across the interface (dashed).}\label{fig:ienergy}
+\end{figure}
+
+\subsection{Imperfect interfaces}
+Real interfaces are rarely perfect. The usual idealization replaces continuity by spring conditions, with the traction continuous and proportional to the displacement jump, $\sigma=K_n[u]$ normal and $K_t[u_t]$ tangential; thermal imperfections add a contact resistance, $[\theta]=R_\theta q$, the Kapitza-type jump, and micropolar or piezoelectric media add analogous electric and rotational conditions. The limit $K\to\infty$ recovers the welded interface and $K\to0$ a free surface. With thermal resistance the net flux of \eqref{eq:P} is no longer continuous: the jump term $[\theta]q/T_0=R_\theta q^2/T_0$ is the availability dissipation of the quadratic energy balance at the interface and must be included in it. It is not the entropy production, which to leading order in a small temperature jump is $q\,[\theta]/T_0^2=R_\theta q^2/T_0^2$ per unit area and time and equals the dissipation divided by $T_0$; here $q$ is the common normal heat flux and $[\theta]$ the jump in the direction of $q$. Imperfect-interface wave problems have been treated for micropolar solids \citep{Fu2013}, piezoelectric composites \citep{Kumawat2023,Gupta2025}, and a fluid--double-porous thermoelastic interface \citep{Kumar2025}.
+
+\subsection{Fluid--solid and multiphysics interfaces}
+When one medium is an ideal fluid the shear conditions change (no shear traction, tangential displacement discontinuous), and the energy ratios have been computed for fluid--piezothermoelastic and fluid--double-porous interfaces \citep{Gupta2023IJNMF,Kumar2019,Kumar2025}. In piezoelectric media electric boundary conditions (continuity of potential and of normal electric displacement, or an electrode condition) add two equations per interface; the reflection and refraction at elastic--magneto-thermoelastic diffusion solids with voids \citep{KumarKansal2017}, micropolar piezothermoelastic half-spaces \citep{Kumar2018}, functionally graded piezoelectric microstructures \citep{Liu2020} and flexoelectric or flexomagnetic microstructures \citep{Singh2020c,Jiao2024} extend the same procedure. All of them share the structure of Sections~\ref{sec:surface} and this one: a linear system for the amplitudes, with entries fixed by the dispersion roots of each medium, and an energy flux defined consistently with the model.
+
+\subsection{A checklist for interface calculations}
+The checks below cost little and catch most errors in interface calculations:
+\begin{enumerate}
+\item Reduce the coupling to zero and compare with the elastic impedance formulas (normal incidence) or the Zoeppritz equations.
+\item Verify the Snell invariants (horizontal slowness) for all generated waves, including evanescent ones.
+\item Verify continuity of the net flux \eqref{eq:P} (not of the sum of mode fluxes) across a perfect interface; for imperfect interfaces include the interface dissipation.
+\item Test the boundary conditions independently: substitute the computed amplitudes back into each boundary equation.
+\item For lagged and memory models, state the flux definition used for the energy ratio and whether interference terms are included.
+\end{enumerate}
+
+\begin{summarybox}[Summary]
+At a welded elastic interface normal-incidence reflection/transmission follows from impedance $Z=\rho c_1$ with $\mathcal R+\mathcal T=1$. Oblique incidence gives the Zoeppritz system with critical angles. Thermoelastic interfaces add thermal-type waves and the continuity of $\theta$ and $q_n$; the exact check is continuity of the net flux \eqref{eq:P}, not of the sum of mode fluxes---in lossy media the mode fractions need not sum to one because of interference terms.
+\end{summarybox}

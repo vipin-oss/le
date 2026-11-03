@@ -1,0 +1,46 @@
+\section{Derivations of the balance laws}\label{app:balance}
+
+This appendix records where each balance used in \cref{sec:foundations} comes from and what it assumes, so that a reader can see which statements are identities of continuum mechanics and which already contain a constitutive choice. Every derivation below is algebra on the stated assumptions, and none of them uses a heat law.
+
+\subsection*{Linear momentum}
+Take an arbitrary material volume $V$ with surface $\partial V$ and outward normal $n_i$. Cauchy's
+postulate gives the surface traction $t_i=\sigma_{ji}n_j$. Requiring that the rate of change of linear momentum
+equal the resultant force for \emph{every} $V$,
+$\frac{\dd}{\dd t}\int_V\rho\dot u_i\,\dd V=\int_{\partial V}\sigma_{ji}n_j\,\dd S+\int_V\rho f_i\,\dd V$,
+and applying the divergence theorem together with the transport theorem gives
+$\rho\ddot u_i=\sigma_{ji,j}+\rho f_i$ after the volume is shrunk to a point. The assumptions are that a Cauchy
+stress exists (no couple stresses), that the motion is described by a single displacement field, and that the body is
+non-polar. These are exactly the assumptions recorded for \eqref{eq:mom}.
+
+\subsection*{Symmetry of the stress}
+The same argument applied to the moment of momentum about a point, with no body couples and no couple
+stresses, leaves $\int_V e_{ijk}\sigma_{jk}\,\dd V=0$ for every $V$, hence $\sigma_{ij}=\sigma_{ji}$. The
+conclusion follows from the assumptions and is not an independent law: in a micropolar or couple-stress
+continuum the stress is not symmetric, and the derivation must be redone with the couple-stress tensor.
+
+\subsection*{Mechanical power}
+Contracting the momentum balance \eqref{eq:mom} with the velocity and using the symmetry of the stress gives
+\begin{equation}
+\rho\frac{\dd}{\dd t}\Bigl(\tfrac12\dot u_i\dot u_i\Bigr)=\bigl(\sigma_{ij}\dot u_i\bigr)_{,j}
+-\sigma_{ij}\dot\varepsilon_{ij}+\rho f_i\dot u_i ,
+\end{equation}
+so the stress power $\sigma_{ij}\dot\varepsilon_{ij}$ is the only term that exchanges mechanical energy with
+the internal state. Here the strain enters, and not the displacement gradient: the rotation does no work.
+
+\subsection*{Internal energy}
+If the internal energy of a material volume changes by the heat supplied plus the stress power
+delivered, then with heat flux $q_i$ and supply $r$,
+\begin{equation}
+\rho\dot e=\sigma_{ij}\dot\varepsilon_{ij}-q_{i,i}+\rho r ,
+\end{equation}
+which is the second line of \eqref{eq:mom}. This is an axiom of the theory: it defines what $e$ means, and
+a generalized theory that changes the flux $q_i$ or adds a state variable must restate it.
+
+\subsection*{The exact Eulerian flux}
+Adding the power balance and the internal-energy balance gives the material-derivative form
+$\rho\frac{\dd}{\dd t}\bigl(\tfrac12\dot u_i\dot u_i+e\bigr)+\bigl(q_j-\sigma_{ji}\dot u_i\bigr)_{,j}
+=\rho f_i\dot u_i+\rho r$. Converting the material derivative with mass conservation yields
+\eqref{eq:exactflux}. The last step is the one the literature often skips: the material form is not the
+fixed-volume form, and the difference is the advection term $\mathcal E_{\mathrm{tot}}\dot u_j$.
+Omitting it is legitimate only as a first-order reduction under the small-motion assumptions stated with
+\eqref{eq:exactflux-balance}.

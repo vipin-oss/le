@@ -1,0 +1,133 @@
+\section{Review Scope, Evidence Protocol and Classification}\label{sec:part_scope}
+\subsection{Contributions and organization}
+No new experiments are reported. The contributions are:
+\begin{itemize}
+\item a unified heat-flux template, a table of \emph{exact} reductions and singular limits, and a taxonomy that places the main models in relation to one another (Sections~\ref{sec:framework-link}--\ref{sec:memory});
+\item a coupled dispersion polynomial valid for the whole template, verified symbolically, with comparative dispersion, damping and speed results (Sections~\ref{sec:classical}--\ref{sec:waves3d});
+\item benchmark transient problems, the heat pulse and the thermal shock of a half-space, each with a Laplace-domain closed form and a numerical inversion (Section~\ref{sec:transient});
+\item thermoelastic Rayleigh waves, reflection and interface energy partition, each with limit checks (Sections~\ref{sec:surface}--\ref{sec:interfaces});
+\item size effects set against lattice dispersion, and the principal multiphysics couplings (Sections~\ref{sec:size}--\ref{sec:multi});
+\item a kinetic basis for the Cattaneo and Guyer--Krumhansl laws, with the dispersion of the latter (\cref{sec:kinetic}), and a quantitative test of how well Taylor-truncated lag laws represent the delay law they approximate (\cref{sec:delayfid});
+\item flexural thermoelastic damping, including a plate (Lamb-wave) computation checked in the elastic and thin-plate limits against the Rayleigh--Lamb equation and the Lifshitz--Roukes solution, resonant modes of a bar, anisotropy in cubic crystals, free-surface reflection and piezoelectric surface waves (\cref{sec:flexted,sec:aniso,sec:reflection,sec:lamb,sec:bar,sec:bg});
+\item a discussion of solution methods with finite-difference and inversion benchmarks, experimental evidence and parameter identification, worked examples, application regimes, reporting standards, a comparative synthesis with a pitfalls checklist and a decision guide, and a research agenda (\cref{sec:methods,sec:schemes,sec:applications,sec:scenarios,sec:examples,sec:experiments,sec:synthesis,sec:reporting,sec:open}).
+\end{itemize}
+Section~\ref{sec:history} gives the historical and literature background, and Section~\ref{sec:foundations} derives the thermomechanical foundations the remaining sections rely on. A reader whose question is simply which model to choose can start at Section~\ref{sec:synthesis}.
+
+\subsection{Scope and conventions}\label{sec:conventions}
+This review treats \emph{linear} wave propagation in homogeneous solids about a uniform reference state at temperature $T_0$ unless stated otherwise. Nonlinear thermoelasticity, large deformation, radiative transport and chemically reacting media lie outside the scope of this review. The following notation is used throughout.
+
+The Nomenclature section after the declarations collects the principal symbols; indices follow the Einstein summation convention.
+The strain tensor always carries two indices ($\varepsilon_{ij}$) so that it cannot be confused with the scalar coupling $\varepsilon$. Plane waves are $\exp[\ii(kx-\omega t)]$ with $\Imag k\ge0$ for spatial decay in the propagation direction; a ``branch'' of the dispersion relation is a root $k(\omega)$ followed by continuity in $\omega$.
+
+\subsection{Reproducibility}
+Every figure in this review that displays numerical results comes from numerical computations that accompany the manuscript. The identities used repeatedly (the coupled dispersion polynomial, the Debye form of weak-coupling damping, the Green--Naghdi type-II wave speeds, the reductions of Table~\ref{tab:param}) are checked either symbolically or against independent numerical roots in those computations (Appendix~\ref{app:repro}). Where a quantity depends on a choice of model variant, the form of a memory-dependent derivative for instance, the choice is stated next to the result.
+
+\Cref{tab:contributions} collects the contributions a reader can cite this review for. Each row names the place where the contribution is delivered, so that the claim can be checked rather than believed, and the evidence column names only what this paper actually contains.
+
+\begin{table}[H]\centering\small
+\caption{What this review contributes, where it is delivered, and what supports it.}
+\label{tab:contributions}
+\begin{tabularx}{\textwidth}{@{}p{0.5cm}Y p{2.5cm}Y@{}}
+\toprule
+\textbf{\#} & \textbf{Contribution} & \textbf{Delivered in} & \textbf{Evidence in this paper} \\
+\midrule
+C1 & One heat-law template and its stepwise reductions, so that LS, GL, GN-II/III, DPL, TPL, MGT, MDD
+  and fractional models are compared as members of one family rather than as competing names. &
+  \cref{sec:foundations}, \cref{sec:hyperbolic}, \cref{sec:lags}, \cref{sec:memory} &
+  \eqref{eq:template} and the reduction table; reductions checked in reduction check \\
+C2 & A positive-definite availability functional with its flux, the dissipation identity it satisfies,
+  and the explicit statement that it is not the total-energy flux, together with the exact Eulerian
+  total-energy identity and its first-order reduction. & \cref{sec:foundations}, \cref{sec:interfaces} &
+  \eqref{eq:energy}, \eqref{eq:P}, \eqref{eq:exactflux}; net-flux balance at welded interfaces (\cref{sec:interfaces}) \\
+C3 & A family-comparative synthesis with a decision guide: what each theory predicts, what it costs, and
+  under which conditions two families may legitimately be compared. & \cref{sec:synthesis} &
+  comparison tables in \cref{sec:synthesis}; four worked examples (a lag law, nanobeam damping, interface partition, a heat pulse) in \cref{sec:examples} \\
+C4 & An original five-axis taxonomy that places any candidate model, hybrids included, on one set of
+  coordinates, with an explicit dissimilarity that says when two studies are comparable at all. &
+  \cref{sec:taxonomy} & axis definitions, the dissimilarity \eqref{eq:taxdissim}, and the assignments in
+  \cref{tab:taxonomy-axes} \\
+C5 & A per-equation verification register: every registered equation carries a status from a finite
+  vocabulary, so that derived, primary-source-checked, unverified and open are distinguishable. &
+  \cref{sec:eqregister} & \cref{tab:eqregister}; entries at PRIMARY-SOURCE-CHECKED carry the printed page and equation \\
+C6 & Fourteen executable benchmarks with reference solutions and stated tolerances, each a code
+  verification rather than a physical validation. & \cref{app:registry}, \cref{app:repro} &
+  \cref{app:registry} (14 rows), the computations of \cref{app:repro}, and the parameter register
+  \cref{app:params} \\
+C7 & A stated evidence protocol and a set of reporting standards, so that a reader can discount each
+  statement by the rule it fails and a future author can make a result comparable. &
+  \cref{sec:evidence_protocol}, \cref{sec:reporting} & the six rules, and the reporting checklist \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+C5 needs one caution, because it is the row a reader is most likely to over-read. A register entry records the status of a check, not the importance or the validity of an equation for a given material. Mechanical correctness does not make a constitutive assumption true.
+
+\subsection{Evidence protocol and how to discount this review}\label{sec:evidence_protocol}
+
+A review is only as useful as the reader's ability to tell what it has checked from what it has merely
+repeated. The protocol is stated here, so that any statement can be discounted by the rule it fails.
+
+This is a structured, critical integrative review and not a systematic review. No database search with a fixed protocol, screening flow or eligibility register was run, and the reference list is not a census of the field. Works were assembled from the author's own library by following citations backwards and forwards from the primary papers of each theory. Topics were added where a gap in coverage was identified. The classified catalog of Appendix~\ref{app:catalogue} was organized by title keywords and is not a full-text appraisal. Coverage is therefore selective, and the choice of works reflects the author's judgement.
+
+\begin{enumerate}
+\item \textbf{Derivation and attribution are separated.} A statement derived here is presented as a
+derivation and carries an equation identifier; a statement taken from a source is presented as
+attribution even where the source's formulation is reproduced exactly. The two are never merged into one unmarked sentence. The register in \cref{sec:eqregister} records which is which.
+\item \textbf{Every registered equation carries a status} from a fixed vocabulary, and a status records
+the check performed, not a rank of importance (\cref{tab:eqregister}).
+\item \textbf{A secondary source is never promoted to a primary one.} Where the primary text was not
+available the text says so and the register records the weaker status. The absence of the primary text
+is not evidence for the claim.
+\item \textbf{Bibliographic identifiers are verified before they are printed.} A DOI printed in the
+reference list has been checked against a bibliographic record for the same work (author,
+title, journal, volume, pages), to the verification level recorded for that entry (R0--R3). It is never
+inferred from a citation in another paper. Works that predate DOI assignment say so in the entry instead of carrying a plausible-looking identifier.
+\item \textbf{Numbers that can be recomputed are given with what is needed to recompute them.} A benchmark
+value is presented with its specification, reference solution and tolerance
+(\cref{app:registry}). A value quoted from the literature is presented as quoted, with its conditions,
+and not as an independent confirmation.
+\item \textbf{Errors are recorded without personal characterization.} Where a material error is
+conclusively established it is recorded plainly; where the evidence establishes a difference but not an
+error, it is recorded as a difference. No allegation is made against a publication, and no model-specific discrepancy is presented as a mathematical contradiction without demonstration.
+\end{enumerate}
+
+The protocol has limits, and they are part of it. Not every cited work was read page by page; coverage of
+the literature is deliberate rather than exhaustive; and the register documents checks performed for this
+version, not checks that exist somewhere in principle. For these reasons the register reports coverage
+instead of asserting completeness.
+
+\begin{summarybox}[Summary]
+This review organizes the generalized thermoelasticity literature around one heat-flux template with three lags and one memory term. For linear homogeneous media and rational (truncated-lag) heat laws a dispersion polynomial is derived and checked symbolically against the field equations; exact delays, fractional powers and memory kernels give transcendental or multivalued relations and are treated separately. Verified benchmarks are added. Scope: linear waves about a uniform reference state, isotropic and anisotropic solids, plane-wave and guided-wave problems. Contributions: correction to the dual-phase-lag (DPL) stability condition, GN-III front-speed clarification, net-flux-vs-mode-flux check at interfaces, reporting standards. Not covered: nonlinear effects, radiative/reactive heat transfer, full bounded-domain well-posedness literature.
+\end{summarybox}
+
+
+\subsection{Classification of the field and structure of the review}\label{sec:classification}
+The thermoelastic-wave literature can be sorted along three independent axes: which heat-flux law is used, which wave problem is solved, and which further field is coupled in. \Cref{fig:classification} shows how the sections of this review follow those axes; the same classification underlies the catalog of Appendix~\ref{app:catalogue} and the taxonomy of \cref{sec:taxonomy}. A reader who knows the heat law of a paper and the wave problem it treats can locate the corresponding section directly.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth,
+  n/.style={draw,rounded corners=1pt,fill=blue!6,font=\scriptsize,align=left,inner sep=2pt,text width=5.2cm},
+  h/.style={draw,rounded corners=1pt,fill=blue!15,font=\footnotesize\bfseries,align=center,inner sep=3pt,text width=2.4cm},
+  a/.style={->,thick}]
+  \node[h] (root) at (0,0) {Thermoelastic waves};
+  \node[h] (A) at (4.2,3.4) {Heat-flux law};
+  \node[h] (B) at (4.2,0) {Wave problem};
+  \node[h] (C) at (4.2,-3.4) {Coupled fields and scale};
+  \draw[a] (root.east) -- ++(0.5,0) |- (A.west);
+  \draw[a] (root.east) -- ++(0.5,0) |- (B.west);
+  \draw[a] (root.east) -- ++(0.5,0) |- (C.west);
+  \node[n,right=0.9cm of A,yshift=0.8cm] (A1) {Classical, Lord--Shulman, Green--Lindsay, Green--Naghdi (Sec.~\ref{sec:part_theories})};
+  \node[n,below=0.12cm of A1] (A2) {Dual-phase-lag, three-phase-lag, Moore--Gibson--Thompson (Sec.~\ref{sec:part_theories})};
+  \node[n,below=0.12cm of A2] (A3) {Fractional, memory-dependent, nonlocal (Sec.~\ref{sec:part_beyond})};
+  \draw[a] (A.east) -- (A1.west); \draw[a] (A.east) -- (A2.west); \draw[a] (A.east) -- (A3.west);
+  \node[n,right=0.9cm of B,yshift=0.8cm] (B1) {Bulk and transient waves, anisotropy (Sec.~\ref{sec:part_waves})};
+  \node[n,below=0.12cm of B1] (B2) {Surface, Lamb, Love, Stoneley and Scholte waves (Sec.~\ref{sec:part_waves})};
+  \node[n,below=0.12cm of B2] (B3) {Flexure, rods and bars; interfaces and energy partition (Sec.~\ref{sec:part_waves})};
+  \draw[a] (B.east) -- (B1.west); \draw[a] (B.east) -- (B2.west); \draw[a] (B.east) -- (B3.west);
+  \node[n,right=0.9cm of C,yshift=0.55cm] (C1) {Piezoelectric, magnetic, diffusive, microstructural (Sec.~\ref{sec:part_fields})};
+  \node[n,below=0.12cm of C1] (C2) {Size effects and wider material classes (Sec.~\ref{sec:part_beyond})};
+  \draw[a] (C.east) -- (C1.west); \draw[a] (C.east) -- (C2.west);
+\end{tikzpicture}
+\caption{Classification of the field used to organize this review, with the sections in which each branch is treated.}\label{fig:classification}
+\end{figure}

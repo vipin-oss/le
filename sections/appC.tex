@@ -1,0 +1,30 @@
+\section{Reproducibility: computations and what each one verifies}\label{app:repro}
+Every numerical result in this review comes from computations supplied with the manuscript. \Cref{tab:scripts} lists them with the checks each performs.
+\begin{table}[H]\centering\footnotesize
+\caption{Computations and the identities or limits they verify.}\label{tab:scripts}
+\begin{tabularx}{\textwidth}{@{}p{5.2cm}X@{}}\toprule
+Check or figure & Content and checks\\\midrule
+dispersion check & Symbolic determinant of the field equations equals the dispersion polynomial \eqref{eq:disp} (difference zero).\\
+reduction check & Reductions of $G(s)$: DPL$\to$LS, TPL$\to$DPL, GN-II/III, large-$s$ limits.\\
+front-speed check & LS and GL front speeds from the polynomial agree with \eqref{eq:fronts} to four digits.\\
+GN-II check & GN-II speeds are non-dispersive and equal the formula.\\
+thermopiezoelectric check & Thermopiezoelectric determinant is proportional to the renormalized thermoelastic polynomial \eqref{eq:renorm}.\\
+dispersion figure, Zener-damping figure & Dispersion and damping; weak-coupling Debye result confirmed ($Q^{-1}/\varepsilon=0.4999998$).\\
+stability figure & Growth rates for the 1st- and 2nd-order DPL truncations.\\
+heat-pulse figure & Cattaneo pulse by Talbot inversion; Fourier limit and front exactness.\\
+thermal-shock figure & Thermal shock of a coupled half-space; boundary conditions satisfied to machine precision.\\
+Rayleigh-wave figure & Thermoelastic Rayleigh root; $\varepsilon\to0$ limit gives the elastic Rayleigh speed.\\
+interface calculation, interface-energy figure & Elastic and thermoelastic interface; impedance limit to twelve digits; net-flux continuity to $10^{-15}$.\\
+lattice figure, nonlocal thermoelastic figure & Lattice calibration of $\xi$; nonlocal thermoelastic branches; $\xi\to0$ and $\varepsilon\to0$ limits.\\
+fractional and MDD figure & Caputo heat equation (erfc check) and MDD kernel transform ($\kappa(0)=1/3$).\\
+regime-map figure, Laplace-inversion benchmark, materials table & Regime map; Laplace-inversion benchmark; material coupling table.\\
+lag-truncation figure & Exact delay law versus first- and second-order truncations; relative errors; sign change of attenuation at $\omega\tau=\pi/2$.\\
+flexural-damping figure, Lamb-wave calculation, Lamb-wave figure & Zener versus Lifshitz--Roukes; plate determinant matches exact Rayleigh--Lamb to $10^{-10}$ in the elastic limit and the Lifshitz--Roukes loss (plane-strain $\Delta$) with ratio $1.000$ at small $kh$.\\
+coupled-fractional figure, bar-mode figure, Guyer--Krumhansl figure & Coupled fractional dispersion; clamped-bar modal loss; Guyer--Krumhansl thermal branch (high-frequency limit confirmed to $0.2\%$).\\
+anisotropy figure, reflection figure, Bleustein--Gulyaev check & Cubic-crystal coupling by direction; free-surface reflection (elastic limit to $10^{-10}$); Bleustein--Gulyaev closed forms versus secular determinant.\\
+finite-difference benchmark, Kramers--Kronig check & Finite-difference orders for the Cattaneo front; Kramers--Kronig sum rule to a few parts in $10^{6}$.\\
+worked-example calculation, scenario table, catalog generator, reference-list assembly & Numbers of the worked examples; application-regime table; classified catalog of the references; assembly of the supplementary bibliographic file (Crossref records and author-library entries, de-duplicated by DOI and title).\\
+\bottomrule\end{tabularx}
+\end{table}
+\paragraph{Running the checks.} Fourteen of the computations (the dispersion, admissibility, layered-media, identifiability, modulus, Lamb-wave, reduction, thermopiezoelectric, front-speed, GN-II, Kramers--Kronig and Bleustein--Gulyaev checks, and the Laplace-inversion and finite-difference benchmarks) are accompanied by explicit acceptance criteria with stated tolerances, and a computation that misses its tolerance is reported as a failure. All fourteen are run together and their outcomes are logged. A pass verifies the stated identity or limit to the stated tolerance, and a $10^{-10}$ match of an elastic limit verifies that limit only; it does not verify the physical validity of a model. The numerical output of every figure and check computation is archived, so a number quoted in the text can be traced to a printed value; quantities read off a figure, such as peak positions and percentage levels, are approximate and are not archived. Library versions used are recorded with the computations.
+\paragraph{Limits of verification.} The computations verify the mathematics of the models stated here against their own field equations and limiting cases. They do not verify that a model describes a given material, which requires comparison with experiment. The material values in Table~\ref{tab:materials} are rounded handbook-type numbers used for illustration.

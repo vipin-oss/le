@@ -1,0 +1,34 @@
+\section{Parameter register for the figures}\label{app:params}
+
+Following the reporting standards of \cref{sec:reporting}, \cref{tab:paramreg} gives the parameters behind every computed figure. Quantities are in the non-dimensional units of the computations ($\rho=c_1=c_v=1$, lengths in $c_1/\omega_*$, times in $1/\omega_*$, so $k_{\rm cond}=1$) unless stated otherwise. ``Branch'' names the branch plotted, and ``tracked'' means continuity in frequency or wavenumber was enforced.
+
+\begin{table}[H]\centering\scriptsize
+\caption{Parameters used for the computed figures.}\label{tab:paramreg}
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}p{4.0cm}p{3.0cm}X@{}}\toprule
+Figure or calculation & Models & Parameters\\\midrule
+dispersion figure & classical, LS, DPL ($\tau_T=\tau_q/2$) & $\varepsilon=0.1$, $\tau\omega_*=0.25$ (thermal front $2c_1$); branches tracked\\
+Zener-damping figure & classical, LS, DPL & $\varepsilon=0.02$ and $0.1$ for the Debye check; lag panels $\varepsilon=0.1$, $\tau\omega_*=0.25$\\
+stability figure & DPL, first and second order in $\tau_q$ & $\varepsilon=0.1$, $\tau_q\omega_*=1$, $\tau_T/\tau_q$ varied\\
+thermal-family figure & Fourier, LS, DPL, GN-II, GN-III, MGT & uncoupled; $k^*=0.25$ where used, $\tau_q=1$, $\tau_T=0.5\tau_q$\\
+lag-truncation figure & delay, 1st, 2nd order & uncoupled, $\tau=1$\\
+fractional and MDD figure & Caputo, MDD & $\alpha=0.5,1,1.5,2$ in panel (a); $\rho c=k=\tau=1$ in panel (c)\\
+coupled-fractional figure & fractional Cattaneo & $\varepsilon=0.1$, $\tau\omega_*=0.25$, $\alpha=1,0.8,0.6$ and classical\\
+heat-pulse figure & Fourier, LS & uncoupled, $\alpha=\tau=k=q_0=1$\\
+thermal-shock figure & classical, LS, DPL & $\varepsilon=0.1$, boundary-temperature step, 1D half-space\\
+Rayleigh-wave figure & classical, LS & $\varepsilon=0.05$, $\nu=0.3$, $\tau\omega_*=0.25$; insulated and isothermal\\
+Lamb-wave figure & classical & $\varepsilon=0.05$, $\nu=0.3$, $h=20\,c_1/\omega_*$, insulated; tracked\\
+flexural-damping figure & Zener, Lifshitz--Roukes & normalized by $\Delta$ and $\omega_Z$\\
+bar-mode figure & classical, LS & $\varepsilon=0.1$, $\tau\omega_*=0.25,1$; tracked\\
+reflection figure & classical, LS & $\varepsilon=0.1$, $\nu=0.3$, $\tau\omega_*=0.25$, $\omega/\omega_*=0.1,1$; insulated\\
+interface figure & elastic welded interface & impedance ratio $Z_2/Z_1\in[10^{-1.5},10^{1.5}]$; closed forms\\
+interface-energy figure & LS, two media & medium 1: $\rho=c_1=c_v=k=1$, $\varepsilon=0.1$, $\tau=0.25$; medium 2: $\rho=2$, $c_1=1.2$, $c_v=0.8$, $k=0.6$, $\beta^2T_0=0.3$ (so $\varepsilon=0.065$), $\tau=0.15$\\
+nonlocal figure, lattice figure & Eringen, gradient, lattice & $\xi=\ell=0.5$ in units of the length scale in the axis labels; lattice fit $\xi^2/a^2=1/4-1/\pi^2$\\
+nonlocal thermoelastic figure & nonlocal thermoelastic, forms A, B & $\varepsilon=0.1$, $\xi=0.3\,c_1/\omega_*$, classical heat flux\\
+regime-map figure & LS versus classical & $\varepsilon=0.02$; $\omega/\omega_*\in[10^{-2},10]$, $\tau\omega_*\in[10^{-3},10]$\\
+anisotropy figure & classical (cubic) & rounded handbook values; $T_0=300$\,K\\
+Guyer--Krumhansl figure & Fourier, Cattaneo, GK & uncoupled; $\chi=\tau_R=1$, $\ell^2=0.05,0.3$\\
+\bottomrule\end{tabularx}
+\end{table}
+
+The values of $\varepsilon$ used in the figures ($0.02$ to $0.1$) are larger than most solids in \cref{tab:materials} ($\varepsilon\lesssim0.03$) so that the effects are visible; results scale with $\varepsilon$ at weak coupling. The values of $\tau\omega_*$ are likewise chosen to bring the lag effects into the plotted range, and the corresponding physical frequencies are those of \cref{tab:scenarios}.
