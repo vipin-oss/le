@@ -1,0 +1,150 @@
+file,words,start
+s12b_wider.tex,73,Bragg scattering in periodic composites was studied through the band structure of elastic and acoustic waves (the latter reports a gap for t
+s16_synthesis.tex,73,The frequency thresholds quoted in this review answer different questions and are not one universal boundary: X is the range in which the Ta
+s03c_prelim.tex,72,"Three rules are adopted: (i) for each X, take the square root with X; (ii) a ``branch'' is a X followed continuously in X, because the label"
+s11_interfaces.tex,64,"In a dissipative medium, the modes have complex wavenumbers and the cross terms between, for example, the elastic-type and the thermal-type "
+s03_foundations.tex,62,"Eliminating X between and and introducing the Helmholtz free energy X gives For a material with X, must hold for arbitrary X and X, so the c"
+s12b_wider.tex,62,Photothermal and plasma-elastic-thermal wave studies in semiconductors form a thermoelastic branch of this field; a hyperbolic two-temperatu
+s03c_prelim.tex,61,"Branches and the choice of root For the rational heat laws treated in this review, in a linear homogeneous medium, the dispersion relation i"
+s01_intro.tex,56,"The difference becomes measurable, and sometimes dominant, in four situations: heating or loading that is very fast (femtosecond to nanoseco"
+s06_lags.tex,56," Lagging and third-order models: DPL, TPL and MGT The lag idea and its Taylor truncations The dual-phase-lag (DPL) model states that the tem"
+s15e_identify.tex,56,"If the complex wavenumber X of the elastic-type branch is measured (phase velocity from X, attenuation from X) and X are known, can be solve"
+s17b_reporting.tex,56,summarybox [Summary] Reporting standards: state X explicitly; give all parameters with units and provenance; report truncation order for lag
+s12b_wider.tex,55,That the kernel X itself is left unmodified is a structural statement and not a result of those papers: the isothermal papers contain no tem
+s15_applications.tex,55,"Two cautions follow from the analysis presented here: the form of the nonlocal thermoelastic constitutive law (form A or B, Section ) change"
+s15e_identify.tex,54,"The identifiability check generates X from the template with a chosen parameter set, verifies that returns X to X, that the Jacobian of X wi"
+s16c_taxonomy.tex,53,"To make the weaker statement quantitative, define the axis-weight dissimilarity with the ordering stated because it is a modeling decision o"
+s07_memory.tex,52,"For the first family with prescribed boundary temperature X on the half-line X and zero initial data, the Laplace-domain solution is X, X, H"
+s07_memory.tex,52,"Position of these models in the template For fractional and MDD models X is not rational, but the dispersion relation is still quadratic in "
+s12b_wider.tex,52,"Graded, porous, laminated, magnetoelectric and nano materials; tissue Porous media go back to Biot ; thermoelastic waves in saturated porous"
+s03d_admiss.tex,51,"For X the cubic has a factor X that comes from the thermal-displacement variable (X) and not from the temperature equation, so the test appl"
+s13_multiphysics.tex,51,"Gauss's law X (no free charge) gives X up to a uniform field, so The electromechanical coupling constant X runs from a fraction of a percent"
+s10_surface.tex,50,"Anisotropic, piezoelectric and nonlocal surface waves For anisotropic media the Stroh formalism writes the displacement--traction state vect"
+s11_interfaces.tex,50,Studies that report energy ratios at thermoelastic and piezothermoelastic interfaces should be read with this point in mind: when the media 
+s12b_wider.tex,50,"Coupling such an X to the kernel X would give a thermoelastic damping estimate for a resonant array, but no reference located for this revie"
+s10_surface.tex,49,Rayleigh surface wave dynamics of porous piezo-thermoelectric smart material with spatio-temporal nonlocality were studied by ; Rayleigh wav
+s13_multiphysics.tex,49,"(ii) The product X enters X with a sign: according to orientation and conventions, the pyroelectric effect can reduce or raise the thermal s"
+s15_applications.tex,49,"summarybox [Summary] Applications divide by regime: laser ultrasonics (classical adequate for ns pulses; lagged/fractional for fs--ps), MEMS"
+s15d_scenarios.tex,49,These are the regimes in which a continuum heat law with bulk parameters has to be treated with caution: the film thickness is comparable to
+s05_hyperbolic.tex,48,LS has finite thermal speed X from flux relaxation; GL has it from thermal inertia X; GN-II is non-dispersive and energy-conserving; GN-III 
+s17_open.tex,48,"What applied authors still lack is a complete analytical statement of well-posedness, decay and front structure for the coupled TPL and MGT "
+s03b_kinetic.tex,47,"Normal scattering and the Guyer--Krumhansl law If momentum-conserving (normal) collisions with time X dominate over resistive ones, X, the e"
+s12_size.tex,47,"In the classical theory with X and X (elastic cut-off at X), the main effect on the phase speed is the nonlocal dispersion itself: the speed"
+s12_size.tex,47,"The damping differs: form (A) stays close to the local curve (its maximum is about X larger and slightly shifted) whereas form (B), whose th"
+s12b_wider.tex,47,A locally resonant array is commonly described by a frequency-dependent effective modulus or mass (the original sonic-crystal paper uses an 
+s13_multiphysics.tex,47,It holds when elastic wave speeds are much smaller than the speed of light and the wavelength is well below the electromagnetic wavelength a
+s13_multiphysics.tex,47,"Thermoelastic diffusion and chemical coupling When a diffusing species is present, the concentration X and chemical potential add a third fi"
+appC.tex,46,"Fourteen of the computations (the dispersion, admissibility, layered-media, identifiability, modulus, Lamb-wave, reduction, thermopiezoelect"
+s02_history.tex,46,A map of the contemporary literature Three largely independent axes sort the recent literature on wave problems in thermoelastic and multiph
+s04_classical.tex,46,"In a thin beam of thickness X vibrating in flexure the temperature varies across the thickness with a thermal relaxation time X (Zener), and"
+s08_waves3d.tex,46,Reflection at a free surface: structure of the problem A plane dilatational wave incident on a plane free surface in an isotropic thermoelas
+s17_open.tex,46,For the first-order template no unstable root has been found numerically for DPL in a finite sweep of positive lags (an analytical statement
+s03d_admiss.tex,45,"For X this reduces to The Green--Naghdi type-II law (X, all lags zero) gives X at every frequency: it is lossless, which agrees with the sta"
+s05_hyperbolic.tex,45,"For the type III system, Zhang and Zuazua report that for most domains the energy does not decay uniformly, that under suitable conditions o"
+s06_lags.tex,45,"For the first-order version (i) the largest growth rate is negative for every X examined (X from X to X, wavenumbers up to X, X); For the se"
+s08b_aniso.tex,45,Along the symmetry directions of a cubic crystal the coupling is therefore governed by with X the longitudinal modulus along X; the quasi-lo
+s10c_bar.tex,45,"Each eigenfunction has the form X and X with X, so every coupled mode satisfies the boundary conditions exactly and its frequency is a root "
+s11_interfaces.tex,45,"(a) shows the expected features: a critical angle (X here) beyond which the transmitted P wave is evanescent and carries no energy, and a re"
+s15b_examples.tex,45,"For X\,nm, bulk values of X are no longer reliable because the phonon mean free path in silicon at room temperature (hundreds of nanometers)"
+s16_synthesis.tex,45,A paper that reports a ``strong effect of the relaxation time on the phase speed'' for realistic lags and ultrasonic frequencies should ther
+s16c_taxonomy.tex,45,"In the five-axis scheme below they correspond mainly to the mathematical axis (Axis 2), for the heat law and for the local, nonlocal or grad"
+s18_declarations.tex,45,"Use of generative tools Generative AI tools were used in preparing this manuscript: for drafting and language editing, for writing and runni"
+s03_foundations.tex,44,"itemize Energy balance and energy flux For the Lord--Shulman model without body forces and heat supply, multiply by X and by X, and use : He"
+s03d_admiss.tex,44,Thermodynamic admissibility asks whether the law is compatible with the second law; for materials with internal state variables the Clausius
+s07c_modulus.tex,44,"Where analyticity holds, the real and imaginary parts of X are related by the Kramers--Kronig integrals, and the loss integrates to the disp"
+s10_surface.tex,44,Memory-dependent heat transfer effects on Rayleigh waves propagation in nonlocal piezo-thermo-elastic media were investigated by ; Rayleigh 
+s12_size.tex,44,"The dispersive-stabilized versions, with a gradient of inertia as well as of strain , interpolate between and : with strain-gradient length "
+s13_multiphysics.tex,44, Coupling to further fields Thermoelastic waves belong to a larger class: whenever another field is energetically coupled to deformation and
+s13_multiphysics.tex,44,"The reduction was verified symbolically, computing the X determinant of the coupled system in X and comparing it with the renormalized therm"
+s15c_experiments.tex,44,"There the fitted second-sound speed at X\,K is about X\,m/s against X\,m/s from ab initio calculations, with oscillations at X and X\,K and "
+s17_open.tex,44,"It gives problem-level results: finite fronts and surface jumps in heat pulses, the structure of thermoelastic Rayleigh waves, the renormali"
+appC.tex,43,"The numerical output of every figure and check computation is archived, so a number quoted in the text can be traced to a printed value; qua"
+appD_catalogue.tex,43," Classified catalog of the cited literature A classified selection of the cited works (323 of the 425) is listed, grouped by the subject of "
+s03_foundations.tex,43,"The local forms of the balance of linear momentum and of energy are where X is the (reference) density, X the body force per unit mass, X th"
+s03_foundations.tex,43,"The second law, in the Clausius--Duhem form used by Coleman and Noll , with specific entropy X and absolute temperature X, restricts the con"
+s06b_delay.tex,43,"The cause is that X becomes negative for X: The exact delay law is causal but not passive over its whole frequency range, so at high frequen"
+s07_memory.tex,43, Fractional and memory-dependent models Motivation Fractional and memory-dependent derivatives replace the local-in-time structure of Cattan
+s08_waves3d.tex,43," Wave propagation in three dimensions Plane waves in an isotropic generalized thermoelastic solid In an unbounded isotropic solid, with any "
+s03b_kinetic.tex,42,"At high frequency the Cattaneo law approaches a finite front, whereas the Guyer--Krumhansl law returns to diffusive behavior: from , X for X"
+s03d_admiss.tex,42,For a law with memory the second law constrains the relaxation functions themselves: the initial values of the energy and heat-flux relaxati
+s05_hyperbolic.tex,42,"At the wave fronts the coupling is stronger than in LS by the factor X, because the temperature-rate term in the stress carries X while the "
+s14_methods.tex,42,"Verification discipline (combining the checks of this section with those of the interface section): reduce to the elastic limit, check Snell"
+s16_synthesis.tex,42,summarybox [Summary] Comparative synthesis: for linear homogeneous media the template models with rational heat laws share one dispersion po
+s16c_taxonomy.tex,42,"A study may adopt a relaxation law for the heat flux, a gradient or integral law for the stress, a coupling to a second field, and a validat"
+appH_registry.tex,41,"A new model or solver should join the registry with (i) a reference solution that does not use the code under test, (ii) a tolerance and the"
+s01_intro.tex,41,"Combined with energy balance it yields a parabolic equation, and that equation has a property which is physically uncomfortable: a temperatu"
+s04_classical.tex,41," Classical coupled thermoelasticity Field equations For an isotropic solid with Fourier conduction X, , and give the Navier-type system The "
+s04_classical.tex,41,"To first order in X, The phase speed interpolates between the adiabatic value X at low frequency and the isothermal speed X at high frequenc"
+s05_hyperbolic.tex,41,"In the notation of Green and Lindsay , X is the coefficient X of X in the stress relation and X is the ratio of the coefficients of X and X "
+s06_lags.tex,41,"Quintanilla derived the condition X (exponential stability, with instability for X) by a spectral argument, for the version in which the flu"
+s07_memory.tex,41,"At an integer order X it is defined as the ordinary derivative X, which is also the limit of the formula below The Laplace rule in is the re"
+s09_transient.tex,41,"In units X (so that lengths are in X and time in X), with X, the displacement and stress amplitudes associated with a temperature amplitude "
+s10b_lamb.tex,41,"For metal films tens of nanometers thick, X and the parabolic result suffices (); for films below ten nanometers, or where the phonon mean f"
+s12b_wider.tex,41,"Studies that bring temperature or damping into such structures include thermal tuning of Lamb-wave band structure , enlargement of a locally"
+s13_multiphysics.tex,41,The structural point of survives in every setting that remains one-dimensional or plane-wave: coupling to the electric field without free ch
+s14b_schemes.tex,41, A finite-difference benchmark for hyperbolic heat conduction Hyperbolic heat laws are usually validated in the time domain against a smooth
+s16c_taxonomy.tex,41,"The heat-flux template of is a special case of Axis 2: the flux law is local in space and first order in the flux, with an optional thermal-"
+s03_foundations.tex,40,"The energy balance X, which is the entropy form of once the stress power is accounted for by the free energy, linearized about X with the se"
+s03d_admiss.tex,40,The modes X of the uncoupled thermal equation solve The Routh--Hurwitz conditions for all roots in the open left half-plane are equivalent t
+s08_waves3d.tex,40,The polynomial in X stays quadratic for any rational X that does not depend on the wavenumber; What rises with the truncation order is its d
+s09_transient.tex,40,"(ii) The stress is largest, and most sensitive to the heat law, at the elastic front, where Lord--Shulman gives about 20\,\% larger compress"
+s10_surface.tex,40,"Against the classical insulated surface the damping differs by less than X for X, by X at the damping peak, by X at X, and saturates near X "
+s12_size.tex,40,"Matching to the chain at the zone boundary X, where X, requires X, that is X, which reproduces the X that Eringen obtained by the same zone-"
+s14_methods.tex,40,"The commonly used algorithms are the Stehfest method , Durbin's Fourier-series method (and the closely related method of Dubner and Abate ),"
+s15d_scenarios.tex,40,"This is the corner of the regime map () where lag and coupling effects could be visible, and also where carrier mean free paths rival the wa"
+s17_open.tex,40,"It gives a dispersion polynomial for linear homogeneous media and rational heat laws, from which comparative speeds, attenuation and thermoe"
+appBal.tex,39," Derivations of the balance laws This appendix records where each balance used in comes from and what it assumes, so that a reader can see w"
+s03_foundations.tex,39,For other members of the template an energy functional exists under parameter conditions that must be stated model by model: for Green--Nagh
+s03_foundations.tex,39,"The first two alone make the reduced flux X that most of the literature uses, and that first-order small-amplitude wave calculations use; X "
+s07_memory.tex,39,"The thermal branch of this particular MDD-Cattaneo law therefore becomes diffusive at high frequency, with half the low-frequency diffusivit"
+s08b_aniso.tex,39,"Numerical values gives the result for three cubic metals and semiconductors, from the anisotropy figure () with rounded handbook values of t"
+s09b_thermalmodes.tex,39,"Modes of the Cattaneo equation For a rod X with X at both ends, eliminating X from the Cattaneo system gives X, with X, X, and For the Fouri"
+s10b_lamb.tex,39,"Role of the heat-flux law In heat flows across the thickness, so the relevant dimensionless number is the product of the lag with the transv"
+s12b_wider.tex,39,"The references listed here were matched to bibliographic records (authors, venue, volume, pages, DOI), but their equations were not re-deriv"
+s15_applications.tex,39,"For femtosecond--picosecond pulses the heat-carrier relaxation, electron--phonon coupling in metals, falls on time scales where hyperbolic o"
+s15d_scenarios.tex,39,"The thermal penetration depth (Xm at X\,MHz, Xm at X\,GHz) is far smaller than the acoustic wavelength (Xm and Xm), so the wave feels the te"
+s16_synthesis.tex,39,"For the damping and the speed of the elastic-type branch, the question is answered by computing the relative difference between Lord--Shulma"
+s16_synthesis.tex,39,"enumerate The X condition belongs to the second-order-in-X truncation of DPL, not to the first-order template; no unstable root of the first"
+s01_intro.tex,38,"shows the publication years of the 425 works cited here; 334 of them date from 1990 onward and 134 from 2020 onward, which is the period in "
+s01b_scope.tex,38,"The identities used repeatedly (the coupled dispersion polynomial, the Debye form of weak-coupling damping, the Green--Naghdi type-II wave s"
+s03_foundations.tex,38,The product X is the heat capacity per unit volume at constant strain; X is the difference between the adiabatic and isothermal longitudinal
+s03_foundations.tex,38,Green--Lindsay theory (Section ) changes the energy and constitutive equations and so is not a row; for fractional and memory-dependent mode
+s04_classical.tex,38,What the classical theory cannot describe Three predictions of the classical theory conflict with finite-speed heat transport: the instantan
+s08b_aniso.tex,38,"For a plane wave with direction X the field equations give, in the low-frequency (adiabatic) limit X, the Christoffel equation with X the vo"
+s10c_bar.tex,38,"For every material of X exceeds X\,rad/s, The peak, at X, therefore sits at wavelengths X between about X\,nm (fused silica) and X\,nm (copp"
+s11b_layered.tex,38,"For a liquid on a solid the same determinant, with the liquid carrying only a dilatational potential and zero shear traction, gives a Scholt"
+s12_size.tex,38,"For the exponential kernel in one dimension, X, the integral equation is equivalent to the differential equation (because X is the Green's f"
+s13_multiphysics.tex,38,"Piezothermoelastic waves with memory and fractional heat laws, semiconductor effects (photo-excited carriers and plasma waves), nonlocal pie"
+s13b_bg.tex,38,"The boundary conditions at X are a free surface X together with either of the following: itemize metallized surface , X; free (unmetallized)"
+s15_applications.tex,38,"Non-Fourier models have been applied to tissue, on the strength of reported large relaxation times in nonhomogeneous materials , though the "
+appBal.tex,37,"Requiring that the rate of change of linear momentum equal the resultant force for every X, X, and applying the divergence theorem together "
+s01b_scope.tex,37,For linear homogeneous media and rational (truncated-lag) heat laws a dispersion polynomial is derived and checked symbolically against the 
+s01b_scope.tex,37,summarybox Classification of the field and structure of the review The thermoelastic-wave literature can be sorted along three independent a
+s04_classical.tex,37,Writing X with X decouples the problem in an unbounded isotropic body: The shear potential X obeys an uncoupled wave equation with speed X: 
+s05_hyperbolic.tex,37,"At low frequency X and the thermal branch has the type-II speed X; at high frequency X and the branch becomes diffusive, so its phase speed "
+s07b_fraccoupled.tex,37,"(coupled-fractional figure) shows phase speed and loss for the elastic-like branch, tracked by continuity in X, for X and X, chosen so that "
+s09_transient.tex,37,"The signal is exactly zero ahead of X, and at the front it jumps by which decays exponentially with distance; at the boundary the temperatur"
+s09b_thermalmodes.tex,37,Relation to the coupled problem In the coupled problem of the elastic-like mode picks up damping from the thermal modes through the factor X
+s12b_wider.tex,37,"Thermal extensions include thermo-microstretch solids , thermoelastic damping of strain-gradient microplates , Lord--Shulman thermoelasticit"
+s15c_experiments.tex,37,The first is where an electron--lattice two-temperature model (distinct from the conductive and thermodynamic temperatures of the two-temper
+s16c_taxonomy.tex,37,"A model that needs an integral, fractional or gradient operator has left that axis rather than moved along it, which is why such models cann"
+s17_open.tex,37,"The unified notation, the verified reductions, the pitfalls checklist and the decision guide are there so that readers can choose, justify a"
+appD_catalogue.tex,36,itemize Moore--Gibson--Thompson and third-order models itemize 0pt : An abstract semigroup approach to the third‐order Moore–Gibson–Thompson
+appH_registry.tex,36,"Except for B01 and B08, whose references are symbolic, the reference solutions are closed forms or an independent algorithm rather than a se"
+s01_intro.tex,36,"itemize A reader who wants to apply these theories to a wave problem should be able to choose a model, know where it fails, and report resul"
+s03_foundations.tex,36,"The relaxation times X used in this review are the notation of the later literature for those rate coefficients, and the heat flux is taken "
+s03b_kinetic.tex,36,"Take the first moment, with the energy flux X as the moment variable, and close it at first order by taking the second moment proportional t"
+s03b_kinetic.tex,36,The resulting equations are presented as a better approximation than the Fourier law or the Cattaneo equation when the sample size or the pu
+s03c_prelim.tex,36,"Roots of the delay law that the truncation does not contain, and spurious roots that it introduces, plausibly explain why truncated and exac"
+s05_hyperbolic.tex,36,"The leading terms in X give, with X and X, whose two roots X are the speeds of the two wave fronts, one elastic-type and one thermal-type, w"
+s07_memory.tex,36,"The literature cites three motivations: anomalous (sub- or super-diffusive) heat transport in heterogeneous and porous media, relaxation spe"
+s08c_reflection.tex,36,"The reflected field carries a P wave, an SV wave and a thermal wave that decays away from the surface, and two traction conditions plus the "
+s08c_reflection.tex,36,"The computed displacement-amplitude coefficients then agree with the classical closed forms for a free surface, with X and X, to X in X and "
+s11_interfaces.tex,36,"All of them share the structure of Sections and this one: a linear system for the amplitudes, with entries fixed by the dispersion roots of "
+s11_interfaces.tex,36,A checklist for interface calculations The checks below cost little and catch most errors in interface calculations: enumerate Reduce the co
+s12b_wider.tex,36,"The length scale in this literature is normally fitted, and different enrichments can reproduce the same size effect; an internal length sho"
+s13_multiphysics.tex,36,Each microstructural field adds branches that appear as new roots of the characteristic equation; whether they are physically observable dep
+s14_methods.tex,36,"Check energy : for conservative members of the family (GN-II) the energy is constant; for the others, the energy balance must hold with the "
+s15_applications.tex,36,"The benchmark thermal shock of Section shows what to look for: the stress peak at the elastic front and its sensitivity to the heat law, her"
+s15c_experiments.tex,36,"In the second, the heat input launches a strain pulse whose amplitude and shape depend on diffusion within the first tens of nanometers, so "
+s16b_atlas.tex,36," Atlas of problems in the literature Wave problems treated in the literature are collected here, so that a reader can see which geometry, he"
