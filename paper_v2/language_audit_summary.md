@@ -1,7 +1,7 @@
 # Language audit — *Waves in Thermoelastic and Multiphysics Continua*
 
 **Report only. No manuscript file was edited in this pass.** The only files added are this summary and the
-row-by-row table `paper_v2/language_audit_report.csv` (179 rows).
+row-by-row table `paper_v2/language_audit_report.csv` (209 rows).
 
 - Manuscript synced to `review-paper-v2` @ `e2e377f1b2ced5646f9fb19ebec78afc41833ecb` (commit `b157774`).
   Only `sections/s03d_admiss.tex` differed from the previous state (the author moved a `\citep{ChenNunziato1974}`
@@ -15,26 +15,26 @@ row-by-row table `paper_v2/language_audit_report.csv` (179 rows).
 
 | Type | Rows | Share |
 |---|---:|---:|
-| LONG/DENSE | 73 | 41 % |
-| PRONOUN | 42 | 23 % |
-| TONE | 23 | 13 % |
-| FLOW | 10 | 6 % |
+| LONG/DENSE | 88 | 42 % |
+| PRONOUN | 43 | 21 % |
+| TONE | 25 | 12 % |
+| FLOW | 12 | 6 % |
+| PASSIVE/NOMINALIZATION | 11 | 5 % |
+| GRAMMAR/SPELLING | 10 | 5 % |
 | REPETITION | 8 | 4 % |
-| GRAMMAR/SPELLING | 7 | 4 % |
-| TERMS | 7 | 4 % |
-| STYLE | 5 | 3 % |
-| PASSIVE/NOMINALIZATION | 4 | 2 % |
-| **Total** | **179** | |
+| TERMS | 7 | 3 % |
+| STYLE | 5 | 2 % |
+| **Total** | **209** | |
 
 | Severity | Rows |
 |---|---:|
-| HIGH | 18 |
-| MED | 139 |
-| LOW | 22 |
+| HIGH | 28 |
+| MED | 157 |
+| LOW | 24 |
 
-47 files carry at least one row. The five densest files (weighted rows per 1 000 prose words) are
-`s01_intro` (26.6), `s15e_identify` (24.5), `s16b_atlas` (22.3, prose only), `main.tex` abstract (18.8),
-`s07b_fraccoupled` (17.3).
+47 files carry at least one row. The densest files (weighted rows per 1 000 prose words) are `s01_intro` (26.6),
+`s15e_identify` (24.5), `s16b_atlas` (22.3, prose only), the abstract in `main.tex` (18.8), `s07b_fraccoupled`
+(17.3), `appH_registry` (17.1), `s13_multiphysics` (16.8), `s07_memory` (16.7), `s17_open` (16.6).
 
 ## 2. Term-consistency table
 
@@ -68,7 +68,7 @@ Counts are over `sections/*.tex` + `main.tex`, case-insensitive, whole words.
 | 10 | "which is" | 27 | relative-clause default |
 | 11 | "rather than" | 27 | contrast frame; often replaces an argument |
 | 12 | "does not" | 23 | |
-| 13 | "That is" (all positions) | 23 | demonstrative hinge; 42 PRONOUN rows are of this family |
+| 13 | "That is" (all positions) | 23 | demonstrative hinge; 43 PRONOUN rows are of this family |
 | 14 | "at high frequency" | 18 | also "at low frequency"; the frequency-limit paragraph shape recurs verbatim |
 | 15 | "second sound" | 18 | content term, but 3 hyphenated variants |
 
@@ -104,18 +104,18 @@ opening and closing sentence of every paragraph; **flag** = targeted read plus t
 | 16 Three-dimensional waves | 3 | target | capital "What" after a semicolon; 47-word reflection sentence |
 | 17 Anisotropy | 3 | target | opens with the two-word paragraph "The theory above is isotropic." |
 | 18 Reflection | 3 | target | passive opening, "is no gain" (informal), two bare demonstratives |
-| 19 Transient problems | 4 | target | one pronoun opening; body otherwise direct |
+| 19 Transient problems | 3 | full | capital "With" after a semicolon, four "was … by \citep" passives, a 33-word front sentence, a circular summary close |
 | 20 Thermal modes | 4 | target | one 30+ word sentence that mixes an integral, a comparison and an eigenfrequency |
-| 21 Surface waves | 4 | target | one demonstrative row |
+| 21 Surface waves | 3 | full | three 30–33-word sentences in the results subsection; the physics text is otherwise careful |
 | 22 Lamb waves | 4 | target | one three-word disclaimer sentence |
 | 23 Bar modes | 4 | target | one colon sentence that hides a formula |
 | 24 Interfaces | 3 | target | passive "It was solved", "That is not the same as …", entropy-production sentence |
-| 25 Layered media | 4 | target | one bridging demonstrative |
-| 26 Size effects | 4 | target | one "That lies outside …" row |
+| 25 Layered media | 3 | full | seven rows: a triple-passive opener, four 32–39-word sentences, a bare "He" |
+| 26 Size effects | 3 | full | a 42-word calibration sentence, a 44-word damping sentence, four "by \citep" passives |
 | 27 Wider classes | 3 | target | meta-opening, "It is a map, not a derivation", 45-word kernel sentence |
-| 28 Multiphysics | 4 | target | one long quasi-static condition; otherwise crisp |
+| 28 Multiphysics | 3 | full | seven "was … by \citep" sentences in one paragraph, a capital after a semicolon, two 41–42-word sentences |
 | 29 Piezoelectric surface waves | 3 | target | two bare "It" openings |
-| 30 Solution methods | 4 | target | one demonstrative; the only "e.g." in the running text |
+| 30 Solution methods | 3 | full | "Second," with no "First,", a conversational verdict on its own table, three 34–36-word method sentences |
 | 31 Numerical schemes | 4 | target | one informal verdict ("hides the real difficulty") |
 | 32 Applications | 3 | target | a one-sentence orphan paragraph ("… was analyzed by \citep{Ma2020}") breaks the subsection pattern |
 | 33 Worked examples | 4 | target | repeated 10⁴ and a bare "These" |
@@ -139,11 +139,13 @@ opening and closing sentence of every paragraph; **flag** = targeted read plus t
 | App. H Registry | 4 | target | two 36–42-word requirement sentences |
 | Nomenclature | 5 | flag | list of symbols |
 
-**Top ten sections that need the most work** (weighted defect density × severity):
-1. Introduction (§1) 2. Review scope (§2) 3. Hyperbolic theories (§10) 4. Memory models (§13)
-5. Lagging models (§11) 6. Classical theory (§8) 7. Open problems + Conclusions (§40–41)
-8. Taxonomy (§39) 9. Synthesis (§37) 10. Identifiability (§36).
-Abstract is outside this ranking but is the third most defective page in the first ten.
+**Top ten sections that need the most work** (weighted defect density, with the two longest sections kept in on
+absolute count):
+1. Introduction (§1, 26.6 per 1 000 words) 2. Multiphysics (§28, 16.8) 3. Memory models (§13, 16.7)
+4. Hyperbolic theories (§10, 16.5 weighted rows — the largest absolute load outside §1)
+5. Review scope (§2, 14.5 weighted) 6. Open problems + Conclusions (§40–41, 16.5)
+7. Taxonomy (§39, 15.7) 8. Classical theory (§8, 12.0) 9. Layered media (§25, 15.7) 10. Identifiability (§36, 24.5).
+The abstract is outside this ranking but is the fourth densest page in the manuscript (18.8).
 
 ## 5. What an editor will see in the first ten pages
 
@@ -151,31 +153,34 @@ Abstract is outside this ranking but is the third most defective page in the fir
    identifies …", "The review then treats …" in fifteen sentences, plus "appear, or fail to appear" — the first
    thing an AMR editor reads is the least edited prose in the paper.
 2. **The Introduction reads as a list of stubs.** "The first is …", "The second is …", "The third is …",
-   "The fourth is …" and then "One …", "A dispersion polynomial …", "Coupling to …", "Solution methods …" — eight
+   "The fourth is …" and then "One …", "A dispersion polynomial …", "Coupling to …", "Solution methods …" — seven
    short list-shaped paragraphs. A 41-word opening sentence is followed almost entirely by sentences under
    20 words, so the rhythm is extreme in both directions.
 3. **Self-referential boilerplate arrives early and often**: "This review covers the following ground.",
    "That is the aim of this review.", "Three observations shaped the organization of this review."
-4. **Four blunt grammar/typography faults of the kind an editor marks first** appear within the first
-   twenty pages: a capital "For" after a semicolon (§11), a capital "The" after a colon (§12), a capital "Here"
-   after a comma (§13), a capital "What" after a semicolon (§16). All four are residue of earlier splitting and
-   all four are one-character fixes.
+4. **Six blunt punctuation faults of the same family** appear in the first half of the paper: a capital "For"
+   after a semicolon (§11), a capital "The" after a colon (§12), a capital "Here" after a comma (§13), a capital
+   "What" after a semicolon (§16), a capital "With" after a semicolon (§19) and a capital "Thermal" after a
+   semicolon (§28). All six are residue of earlier sentence splitting and all six are one-character fixes.
 5. **Cross-reference style changes with the page**: `Section~\ref` (58) beside `\cref`/`\Cref` (140) beside
    `Sec.~\ref` (8, in figure labels); `\eqref` (151) beside `\cref{eq:…}` (27) and `Equation~\eqref` (3).
 6. **Scope section argues with an imagined critic**: "so that the claim can be checked rather than believed",
    "C5 needs one caution, because it is the row a reader is most likely to over-read", "The protocol has limits,
    and they are part of it". This is where the paper's credibility apparatus is introduced, and it currently
    sounds defensive rather than procedural.
-7. **One-line hinge paragraphs** ("Two further developments widened the field.", "The consequence for the
+7. **Citations used as the agent of a passive verb** ("… was studied by \citep{…}") first appear in §3 and
+   recur 43 times; the worst single paragraph is in §28, with seven in a row.
+8. **One-line hinge paragraphs** ("Two further developments widened the field.", "The consequence for the
    literature is practical.", "Three limits follow directly.", "The theory above is isotropic.") appear on
    nearly every second page and give the prose a stop-start feel.
 
 ## 6. Reading status
 
-- **Full read** (every sentence): abstract, §1 Introduction, §2 Review scope, §40 Open problems (prose and
-  table captions), §41 Conclusions.
+- **Full read** (every sentence): abstract, §1 Introduction, §2 Review scope, §19 Transient problems,
+  §21 Surface waves, §25 Layered media, §26 Size effects, §28 Multiphysics, §30 Solution methods, §40 Open
+  problems (prose and table captions), §41 Conclusions.
 - **Targeted read** (every 30+ word sentence, every pronoun-initial sentence, every paragraph opening and
-  closing, all summary boxes and captions): the other 42 section files listed as *target* in the scorecard.
+  closing, all summary boxes and captions): the remaining 44 section files listed as *target* in the scorecard.
 - **Not read for language**: `appD_catalogue.tex` titles and the atlas "Reported result"/"Problem" cells —
   these are source wording and are excluded by the brief. No section of the paper was left unread otherwise.
 
