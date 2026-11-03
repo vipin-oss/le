@@ -82,11 +82,10 @@
  {
   "file": "sections/s03d_admiss.tex",
   "patterns": [
-   9,
-   12
+   9
   ],
-  "nwords": 50,
-  "sentence": "The entropy flux in the Green--Naghdi theories is a separate quantity with the heat flux equal to the temperature times that flux; for type II it follows from the free-energy potential rather than from a Fourier law, and in linearized type I it agrees with $q/T_0$ to first order \\citep{Green1993}."
+  "nwords": 15,
+  "sentence": "For type II it follows from the free-energy potential rather than from a Fourier law."
  },
  {
   "file": "sections/s03d_admiss.tex",
@@ -95,22 +94,6 @@
   ],
   "nwords": 43,
   "sentence": "For a law with memory the second law constrains the relaxation functions themselves: the initial values of the energy and heat-flux relaxation functions are non-negative, the initial slope of the heat-flux relaxation function is non-positive, and the equilibrium conductivity is non-negative \\citep{ChenNunziato1974}."
- },
- {
-  "file": "sections/s06_lags.tex",
-  "patterns": [
-   12
-  ],
-  "nwords": 39,
-  "sentence": "Tzou's own derivation of the model uses the first-order expansion \\citep{Tzou2015}, and for it the time-differential law is hyperbolic when $\\tau_q>\\tau_T$ and elliptic when $\\tau_q<\\tau_T$ \\citep{IgnaczakOstoja2010}; this is a statement about the type of the equation, not about stability."
- },
- {
-  "file": "sections/s06_lags.tex",
-  "patterns": [
-   12
-  ],
-  "nwords": 40,
-  "sentence": "First-order truncation is valid only when $\\tau_q$ and $\\tau_T$ are small compared with the time scale of the phenomenon ($\\omega\\tau\\ll1$), a condition not met in the frequency range where the lag models are claimed to differ from Fourier's law; Section~\\ref{sec:synthesis} returns to this."
  },
  {
   "file": "sections/s09_transient.tex",
@@ -127,14 +110,6 @@
   ],
   "nwords": 37,
   "sentence": "(ii) The stress is largest, and most sensitive to the heat law, at the elastic front, where Lord--Shulman gives about 20\\,\\% larger compressive peak than the classical model in this example (peak values $-0.30$ against $-0.25$, in units of $\\rho c_1^2$)."
- },
- {
-  "file": "sections/s09_transient.tex",
-  "patterns": [
-   12
-  ],
-  "nwords": 40,
-  "sentence": "(iii) Before the elastic front arrives the classical solution already carries stress, since the thermal body force acts everywhere at once, whereas in Lord--Shulman the stress stays essentially zero until the thermal front arrives at $t=1$ and then rises more steeply."
  },
  {
   "file": "sections/s13_multiphysics.tex",

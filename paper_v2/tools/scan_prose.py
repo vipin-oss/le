@@ -68,7 +68,7 @@ VAGUE = [
 HEDGE = [
     r"it could be argued", r"to a certain extent", r"to some (extent|degree)",
     r"arguably", r"in some sense", r"it may (well )?be that",
-    r"relatively", r"quite ", r"rather ", r"somewhat",
+    r"relatively", r"quite ", r"somewhat",
 ]
 
 NEGPAR = [r"not just .{2,80}? but", r"not only .{2,80}? but also", r"not merely .{2,80}? but",
