@@ -7,7 +7,7 @@ The Editor
 *Applied Mechanics Reviews*
 American Society of Mechanical Engineers
 
-**Re: submission of a review manuscript, "A Unified Heat-Flux Framework for Waves in Thermoelastic and Multiphysics Continua"**
+**Re: submission of a review manuscript, "Coupled Fields, Memory and Small Scales in the Speed and Damping of Thermoelastic Waves"**
 
 Dear Editor,
 
