@@ -23,7 +23,7 @@ and the remaining term gives the \emph{heat-conduction inequality}
 \begin{equation}
 q_iT_{,i}\;\le\;0.\label{eq:cond-ineq}
 \end{equation}
-Fourier's law $q_i=-k_{ij}T_{,j}$ with positive-semidefinite $k_{ij}$ satisfies \eqref{eq:cond-ineq} identically, as does any law whose flux is, to leading order, opposed to the temperature gradient. Here lies the difficulty with lagged and relaxed laws (Section~\ref{sec:beyond}).
+Fourier's law $q_i=-k_{ij}T_{,j}$ with positive-semidefinite $k_{ij}$ satisfies \eqref{eq:cond-ineq} identically, as does any law whose flux is, to leading order, opposed to the temperature gradient. Here lies the difficulty with lagged and relaxed laws (\cref{sec:beyond}).
 
 \subsection{Linear thermoelasticity}
 Expand $\rho\psi$ to second order about $(\varepsilon_{ij},T)=(0,T_0)$, with $\theta=T-T_0$:
@@ -43,7 +43,7 @@ Together with \eqref{eq:mom}, \eqref{eq:stress} and a heat-flux law, \eqref{eq:e
 \lambda_{\rm ad}+2\mu_{\rm ad}=\lambda+2\mu+\frac{T_0\beta^2}{\rho c},
 \qquad\text{equivalently}\qquad c_{\rm ad}^2=c_1^2\,(1+\varepsilon),\quad \varepsilon=\frac{\beta^2T_0}{\rho^2c\,c_1^2}. \label{eq:adiabatic}
 \end{equation}
-Table~\ref{tab:materials} gives the coupling parameter $\varepsilon$ and the characteristic frequency $\omega_*=\rho c c_1^2/k$ for representative solids. The coupling is of order $10^{-2}$ for common metals and far smaller for low-expansion materials. The characteristic frequency lies well above the ultrasonic range for bulk solids ($10^{10}$--$10^{13}$ Hz in Table~\ref{tab:materials}). The thermal frequency that matters falls into the megahertz--gigahertz range only when waves are confined to micro-scale structures, where the Zener frequency $f_Z\propto h^{-2}$ takes over (Section~\ref{sec:applications}).
+\cref{tab:materials} gives the coupling parameter $\varepsilon$ and the characteristic frequency $\omega_*=\rho c c_1^2/k$ for representative solids. The coupling is of order $10^{-2}$ for common metals and far smaller for low-expansion materials. The characteristic frequency lies well above the ultrasonic range for bulk solids ($10^{10}$--$10^{13}$ Hz in \cref{tab:materials}). The thermal frequency that matters falls into the megahertz--gigahertz range only when waves are confined to micro-scale structures, where the Zener frequency $f_Z\propto h^{-2}$ takes over (\cref{sec:applications}).
 \begin{table}[ht]\centering\small
 \caption{Thermoelastic coupling $\varepsilon$ and characteristic frequency $f_*=\omega_*/2\pi$ computed from rounded handbook-type values (300\,K) of density, specific heat, conductivity, expansion coefficient, Young's modulus and Poisson ratio; the reader should replace them by data for the specimen at hand.}\label{tab:materials}
 \input{tables/materials.tex}
@@ -70,7 +70,7 @@ and for the Cattaneo law the bracket equals $-q$, so the entropy production is $
 
 \paragraph{Thermal displacement and the Green--Naghdi route.} Green and Naghdi \citep{Green1991,Green1993} take instead an entropy \emph{balance} with an entropy flux, and postulate constitutive relations in terms of the \emph{thermal displacement} $v$, $\dot v=\theta$ (so $v=\int\theta\,\dd t$). The flux $q_i$ may depend on $\theta_{,i}$ and $v_{,i}$; type II ($q_i=-k^*v_{,i}$) conserves energy, and type III adds Fourier dissipation. In wave problems $v$ is the natural field, since $\hat v=\hat\theta/s$.
 
-\paragraph{Green--Lindsay: rates in the stress and entropy.} Green and Lindsay \citep{Green1972} keep a single temperature but let the free energy and the stress depend on $\dot\theta$, so that the entropy and stress relations carry temperature-rate terms. The original paper expresses this through constitutive coefficients and does not name a relaxation time. The relaxation times $\tau_0,\tau_1$ used in this review are the notation of the later literature for those rate coefficients, and the heat flux is taken in its Fourier form, as is usual for the isotropic case. Solutions of the original theory can show discontinuities at wave fronts. A modification with a strain-rate term has been proposed to remove them \citep{Yu2018ModifiedGL}. Section~\ref{sec:hyperbolic} returns to this theory.
+\paragraph{Green--Lindsay: rates in the stress and entropy.} Green and Lindsay \citep{Green1972} keep a single temperature but let the free energy and the stress depend on $\dot\theta$, so that the entropy and stress relations carry temperature-rate terms. The original paper expresses this through constitutive coefficients and does not name a relaxation time. The relaxation times $\tau_0,\tau_1$ used in this review are the notation of the later literature for those rate coefficients, and the heat flux is taken in its Fourier form, as is usual for the isotropic case. Solutions of the original theory can show discontinuities at wave fronts. A modification with a strain-rate term has been proposed to remove them \citep{Yu2018ModifiedGL}. \cref{sec:hyperbolic} returns to this theory.
 
 \subsection{The heat-flux template}\label{sec:framework-link}
 Linear wave problems with constant coefficients depend on the heat-flux law only through its Laplace-domain relation between flux and temperature gradient. The family is therefore defined
@@ -88,7 +88,7 @@ G(s)=\frac{k\,(1+\tau_Ts)+k^{*}(1+\tau_vs)/s}{1+\tau_qs}.\label{eq:G}
 \caption{Original schematic; the setting follows \citep{Biot1956}: the heat-flux template couples the flux to temperature gradients through relaxation and lags. Each theory sets some terms to zero.}\label{fig:template}
 \end{figure}
 
-\Cref{fig:template} sketches the template. \Cref{tab:param} lists the parameter choices that reproduce the models expressible in the template. Green--Lindsay theory (Section~\ref{sec:gl}) changes the energy and constitutive equations and so is not a row; for fractional and memory-dependent models $G(s)$ keeps the same structure with $s$ replaced by non-integer powers or by kernel transforms (Section~\ref{sec:memory}).
+\Cref{fig:template} sketches the template. \Cref{tab:param} lists the parameter choices that reproduce the models expressible in the template. Green--Lindsay theory (\cref{sec:gl}) changes the energy and constitutive equations and so is not a row; for fractional and memory-dependent models $G(s)$ keeps the same structure with $s$ replaced by non-integer powers or by kernel transforms (\cref{sec:memory}).
 
 \begin{table}[ht]\centering\small
 \caption{Heat-flux theories as parameter choices in the template \eqref{eq:template}. All entries use the energy balance \eqref{eq:en}.}\label{tab:param}
@@ -111,7 +111,7 @@ MGT (flux form) & $k$ & $k^*$ & $\tau_q$ & 0 & 0 & \citep{Quintanilla2019}\\\bot
 \item \textbf{TPL $\to$ classical:} $k^*\to0$ and all three lags $\to0$.
 \item \textbf{GN-II:} $k=0$, all lags zero, $G=k^*/s$; \textbf{GN-III:} all lags zero, $G=k+k^*/s$.
 \item \textbf{Large-$s$ behavior.} $G(\infty)=0$ for Lord--Shulman (hyperbolic behavior, finite thermal speed $c_T$); $G(\infty)=k\tau_T/\tau_q$ for DPL, which is diffusive again at high frequency with effective conductivity $k\tau_T/\tau_q$.
-\item \textbf{Fractional orders:} the endpoint $\alpha\to2$ of the Caputo family is second order in time and is not Fourier's law (Section~\ref{sec:memory}).
+\item \textbf{Fractional orders:} the endpoint $\alpha\to2$ of the Caputo family is second order in time and is not Fourier's law (\cref{sec:memory}).
 \end{itemize}
 
 \subsection{Energy balance and energy flux}\label{sec:energy}
@@ -123,7 +123,7 @@ For the Lord--Shulman model without body forces and heat supply, multiply \eqref
 \begin{equation}
 P_i=-\sigma_{ij}\dot u_j+\frac{\theta\,q_i}{T_0}.\label{eq:P}
 \end{equation}
-Here $\mathcal E$ is positive definite, $P_i$ is the flux associated with it, and the right-hand side is the dissipation. This quadratic (availability-type) energy and its flux $P_i$ are what linear wave theory means by ``energy flux''. They differ from the flux $q_i-\sigma_{ij}\dot u_j$ of the \emph{total} internal energy, whose heat-flux part is first order in the disturbance and averages to zero over a period. For the classical theory the same procedure gives \eqref{eq:energy} without the last term in $\mathcal E$. For other members of the template an energy functional exists under parameter conditions that must be stated model by model: for Green--Naghdi type II the functional is conserved; for the first-order DPL and TPL truncations none is constructed here. Stability of the one-dimensional DPL problem was obtained by a spectral argument \citep{Quintanilla2003DPL}. Thermodynamic compatibility and continuous dependence of the time-differential TPL model are treated in \citep{Chirita2016}. Section~\ref{sec:interfaces} uses \eqref{eq:P} for interface energy partition.
+Here $\mathcal E$ is positive definite, $P_i$ is the flux associated with it, and the right-hand side is the dissipation. This quadratic (availability-type) energy and its flux $P_i$ are what linear wave theory means by ``energy flux''. They differ from the flux $q_i-\sigma_{ij}\dot u_j$ of the \emph{total} internal energy, whose heat-flux part is first order in the disturbance and averages to zero over a period. For the classical theory the same procedure gives \eqref{eq:energy} without the last term in $\mathcal E$. For other members of the template an energy functional exists under parameter conditions that must be stated model by model: for Green--Naghdi type II the functional is conserved; for the first-order DPL and TPL truncations none is constructed here. Stability of the one-dimensional DPL problem was obtained by a spectral argument \citep{Quintanilla2003DPL}. Thermodynamic compatibility and continuous dependence of the time-differential TPL model are treated in \citep{Chirita2016}. \cref{sec:interfaces} uses \eqref{eq:P} for interface energy partition.
 
 \paragraph{The exact total-energy flux, and the reduced form.}
 The availability flux \eqref{eq:P} satisfies a dissipation identity, and it is the flux used for the interface energy partition in \cref{sec:interfaces}. There it is the net flux across the interface, and not the sum of per-mode fractions, that is conserved. It is \emph{not} the flux of
