@@ -1,0 +1,43 @@
+\section{Transient problems: heat pulses and thermal shock}\label{sec:transient}
+Steady-state dispersion analysis says how a monochromatic wave propagates. Transient problems test the \emph{fronts}: finite speed, jumps and their decay. Two benchmarks are used. Both have closed-form Laplace-domain solutions that can be inverted numerically to any accuracy, and both serve as test cases for numerical codes (\cref{sec:methods}).
+
+\subsection{Uncoupled heat pulse in a half-space}
+Consider the semi-infinite rod $x>0$, initially at $\theta=0$, with prescribed boundary flux $q(0,t)=q_0H(t)$ and no coupling. For $G(s)=k(1+\tau_Ts)/(1+\tau_qs)$ with $\tau_T=0$ (Lord--Shulman), $\tau_q=\tau$, the solution is
+\begin{equation}
+\hat\theta(x,s)=\frac{q_0\,(1+\tau s)}{k\,s\,m(s)}\,e^{-x\,m(s)},\qquad m(s)=\sqrt{\frac{s(1+\tau s)}{\alpha}},\label{eq:pulse}
+\end{equation}
+and $\tau=0$ recovers Fourier's solution $\theta=(q_0/k)\bigl[2\sqrt{\alpha t/\pi}\,e^{-x^2/4\alpha t}-x\,\mathrm{erfc}(x/2\sqrt{\alpha t})\bigr]$. The large-$s$ asymptotics $m(s)\simeq s/c_T+1/(2\ell_T)$, with $c_T=\sqrt{\alpha/\tau}$ and $\ell_T=\sqrt{\alpha\tau}=c_T\tau$, fix the front structure. The signal is exactly zero ahead of $x=c_Tt$, and at the front it jumps by
+\begin{equation}
+\bigl[\theta\bigr]_{x=c_Tt}=\frac{q_0}{\rho c\,c_T}\,e^{-x/2\ell_T},
+\end{equation}
+which decays exponentially with distance. At the boundary the temperature jumps from zero to $q_0/\rho c c_T$ at $t=0^+$, instead of growing as $\sqrt t$. The Cattaneo curves of \Cref{fig:pulse} come from numerical Talbot inversion \citep{Talbot1979} of \eqref{eq:pulse}, with the zero ahead of the front imposed exactly. The ripples near the front are the Gibbs-type error of the inversion at a discontinuity. At late times the two solutions coincide, the ratio at $t=40\tau$ differing from one by less than one percent. The Cattaneo model is in this sense a high-frequency correction to Fourier's law.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_heatpulse.pdf}
+\caption{Uncoupled heat pulse from a prescribed boundary flux. Left: temperature history at $x=1.5\ell_T$. Right: profile at $t=2\tau$. The Lord--Shulman curve is exactly zero beyond the front (dotted); the classical solution has no front. At early times the Lord--Shulman surface temperature exceeds the classical one for this boundary condition.}\label{fig:pulse}
+\end{figure}
+
+\paragraph{Boundary conditions decide the sign.} A statement that ``second sound lowers the surface temperature'', or raises it, means nothing without the boundary condition. With a prescribed flux the hyperbolic model gives a larger surface temperature than Fourier's law at early times in this normalization (\Cref{fig:pulse}). With a prescribed surface temperature it is the flux that jumps, overshooting Fourier's. Laser-heating models therefore have to state carefully how the heat input is represented \citep{Li2019}.
+
+\subsection{Thermal shock of a coupled half-space}
+Next consider the half-space $x>0$ with the boundary at temperature $\theta_0H(t)$ and traction-free, coupled thermoelastic one-dimensional problem. In the Laplace domain, with fields $\propto e^{-m x}$ the characteristic equation is \eqref{eq:disp} with $K=-m^2$, giving two decay rates $m_1(s)$, $m_2(s)$ ($\Real m>0$). In units $\rho=c=c_1=k=T_0=1$ (so that lengths are in $c_1/\omega_*$ and time in $1/\omega_*$), with $\beta=\sqrt\varepsilon$, the displacement and stress amplitudes associated with a temperature amplitude $A_j$ are
+\begin{equation}
+U_j=\frac{\beta\,m_j}{s^2-m_j^2}A_j,\qquad \sigma_j=-m_jU_j-\beta A_j
+\end{equation}
+and the boundary conditions $\sum_jA_j=\theta_0/s$ and $\sum_j\sigma_j(0)=0$ fix $A_1,A_2$, the second reducing to $\sum_jA_j\,s^2/(s^2-m_j^2)=0$. The resulting transform satisfies $s\hat\theta(0,s)=1$ and $\hat\sigma(0,s)=0$ to machine precision; inversion is then numerical. \Cref{fig:shock} shows temperature and stress at a point $x=2c_1/\omega_*$ for the classical, Lord--Shulman and DPL laws ($\varepsilon=0.1$, $\tau_q=0.25/\omega_*$, DPL $\tau_T=\tau_q/2$).
+
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_shock.pdf}
+\caption{Thermal shock of a coupled half-space (boundary temperature step, traction-free surface), recorded at $x=2c_1/\omega_*$. Dotted line: arrival of the elastic wave front ($x=c_1t$). The Lord--Shulman thermal front reaches the point at $t=x/c_T=1$; the stress develops a negative (compressive) pulse and jumps at the elastic front. Small oscillations are inversion error at discontinuities.}\label{fig:shock}
+\end{figure}
+
+Three features of the response hold across the three models. (i) After the first elastic transit the thermal part is almost identical in all three models. The heat laws differ only in the first moments after loading, and the long-time evolution is classical diffusion. (ii) The stress is largest at the elastic front, and most sensitive to the heat law there. Lord--Shulman gives about 20\,\% larger compressive peak than the classical model in this example (peak values $-0.30$ against $-0.25$, in units of $\rho c_1^2$). (iii) Before the elastic front arrives the classical solution already carries stress, since the thermal body force acts everywhere at once. In Lord--Shulman the stress stays essentially zero until the thermal front arrives at $t=1$, and then rises more steeply. The amplitudes depend on the dimensionless parameters and need recomputation before use with real materials.
+
+Sarkar and co-workers studied memory-dependent generalized thermoelasticity with finite wave speeds \citep{Sarkar2021}, and examined the spatial behavior of thermal signals in generalized thermoelasticity with MDD \citep{Sarkar2020}. Moore--Gibson--Thompson thermoelasticity in double porous materials was analyzed by \citep{Florea2021}, and the transient response of a functionally graded half-space heated by a laser pulse was computed by \citep{Li2020}.
+
+\subsection{Lessons for laser heating and for numerical codes}
+Hyperbolic models are driven mainly by short-pulse laser heating in metals, and analyses of bilayers and films under pulsed heating combine fractional and memory-dependent laws \citep{Li2019}. For numerical codes the benchmarks above are a stringent check: a code that smears the front misses the stress peak as well. The classical statement of the thermal shock problem is due to Danilovskaya \citep{Danilovskaya1950}, and thermal-shock solutions of the coupled problem are a standard test in texts \citep{Boley1960,Nowacki1975,HetnarskiIgnaczak1999}.
+
+\begin{summarybox}[Summary]
+The heat-pulse problem shows a finite front for hyperbolic laws (LS, MGT, GN-II) and a Gaussian tail for Fourier. The front carries a stress peak whose height is heat-law dependent (about 20\% between Fourier and LS for the parameters used). Thermal shock combines the elastic front with diffusive wake; a numerical code that smears the front also misses the stress peak. The benchmark problems of this section test exactly this.
+\end{summarybox}

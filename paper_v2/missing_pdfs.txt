@@ -1,0 +1,355 @@
+# Cited works with no PDF in the 131-file Drive listing (page 1 of the Drive listing only).
+# cited = 416; cited works with a matched PDF = 65; no PDF = 351
+# of the no-PDF keys: Tier 1 = 47
+# fields: bibkey<TAB>doi<TAB>first-author<TAB>year<TAB>tier<TAB>title
+Duhamel1837		Duhamel, J. M. C.,title=Second m\'emoire sur les ph\'enom\`enes thermo-m\'ecaniques,journal=Journal de l'\'Ecole Polytechnique,volume=15,number=25,pages=1--57,year=1837		2	
+Danilovskaya1950		Danilovskaya, V. I.	1950	2	Thermal stresses in an elastic half-space arising after a sudden heating of its boundary
+Chadwick1960		Chadwick, P.,title=Thermoelasticity: the dynamical theory,booktitle=Progress in Solid Mechanics,editor=Sneddon, I. N.		1	
+Chandrasekharaiah1986	10.1115/1.3143705	Chandrasekharaiah, D. S.	1986	2	Thermoelasticity with second sound: a review
+HetnarskiIgnaczak1999	10.1080/014957399280832	Hetnarski, Richard B.	1999	2	Generalized thermoelasticity
+IgnaczakOstoja2010	10.1093/acprof:oso/9780199541645.001.0001,author=Ignaczak, J. and Ostoja-Starzewski, M.,title=Thermoelasticity with Finite Wave Speeds,publisher=Oxford University Press,address=Oxford,year=2010			1	
+Mindlin1974Thermopiezo	10.1016/0020-7683(74)90047-X	Mindlin, R.D.	1974	2	Equations of high frequency vibrations of thermopiezoelectric crystal plates
+Nowacki1978	10.1080/01495737808926940	Nowacki, W.	1978	2	SOME GENERAL THEOREMS OF THERMOPIEZOELECTRICITY
+Iesan2004	10.1007/978-1-4020-2310-1	Ie\csan, D.	2004	2	Thermoelastic models of continua
+Eringen1983	10.1063/1.332803	Eringen, A. C.	1983	2	On differential equations of nonlocal elasticity and solutions of screw dislocation and surface waves
+Askes2011	10.1016/j.ijsolstr.2011.03.006	Askes, H.	2011	2	Gradient elasticity in statics and dynamics: an overview of formulations, length scale identification procedur
+Shakeriaski2021	10.1093/jcde/qwaa082	Shakeriaski, Farshad	2021	2	Recent advances in generalized thermoelasticity theory and the modified models: a review
+Huang2025	10.1007/s10483-025-3280-7	Huang, Yue	2025	2	New insights on generalized heat conduction and thermoelastic coupling models
+Boley1960		Boley, B. A.		2	
+Nowacki1975		Nowacki, W.	1986	2	Thermoelasticity
+Carlson1972	10.1007/978-3-662-39776-3_2,author=Carlson, D. E.,title=Linear thermoelasticity,booktitle=Handbuch der Physik,editor=Truesdell, C.,volume=VIa/2,pages=297--345,publisher=Springer,address=Berlin,year=1972			2	
+Zener1937	10.1103/PhysRev.52.230	Zener, Clarence	1937	1	Internal friction in solids. I. Theory of internal friction in reeds
+Cattaneo1948		Cattaneo, C.	1948	1	Sulla conduzione del calore
+Vernotte1958		Vernotte, P.	1958	1	Les paradoxes de la th\'eorie continue de l'\'equation de la chaleur
+Ackerman1966	10.1103/PhysRevLett.16.789, number = 18,author=Ackerman, C. C. and Bertman, B. and Fairbank, H. A. and Guyer, R. A.,title=Second sound in solid helium,journal=Physical Review Letters,volume=16,pages=789--791,year=1966			1	
+Jackson1970	10.1103/PhysRevLett.25.26, number = 1,author=Jackson, H. E. and Walker, C. T. and McNelly, T. F.,title=Second sound in NaF,journal=Physical Review Letters,volume=25,pages=26--28,year=1970			1	
+GuyerKrumhansl1966II	10.1103/PhysRev.148.778	Guyer, R. A.	1966	1	Thermal Conductivity, Second Sound, and Phonon Hydrodynamic Phenomena in Nonmetallic Crystals
+Chester1963	10.1103/PhysRev.131.2013, number = 5	Chester, Marvin	1963	1	Second Sound in Solids
+Lord1967	10.1016/0022-5096(67)90024-5	Lord, H.W.	1967	1	A generalized dynamical theory of thermoelasticity
+Joseph1990	10.1103/revmodphys.62.375	Joseph, D. D.	1990	1	Addendum to the paper ``Heat waves''
+GreenGN1992	10.1080/01495739208946136	Green, A. E.	1992	1	On undamped heat waves in an elastic solid
+Chandrasekharaiah1996	10.1080/01495739608946173	Chandrasekharaiah, D. S.	1996	1	A uniqueness theorem in the theory of thermoelasticity without energy dissipation
+Tzou1995	10.1115/1.2822329	Tzou, D. Y.	1995	1	A unified field approach for heat conduction from macro- to micro-scales
+Tzou1997		Tzou, D. Y.	1997	1	Macro-to-microscale heat transfer: the lagging behavior
+RoyChoudhuri2007	10.1080/01495730601130919	Choudhuri, S. K. Roy	2007	1	On A Thermoelastic Three-Phase-Lag Model
+Chirita2016	10.1016/j.ijheatmasstransfer.2016.06.019	Chiriţă, Stan	2016	1	The time differential three-phase-lag heat conduction model: Thermodynamic compatibility and continuous depend
+Tibullo2017	10.1016/j.ijheatmasstransfer.2017.06.071	Chiriţă, Stan	2017	2	On the thermomechanical consistency of the time differential dual-phase-lag models of heat conduction
+vanDerMerwe2021	10.1016/j.amc.2020.125934	van der Merwe, A.J.	2021	2	Comparing the dual phase lag, Cattaneo-Vernotte and Fourier heat conduction models using modal analysis
+Eringen2002	10.1007/b97697	Eringen, A. Cemal	2002	2	Nonlocal Continuum Field Theories
+Askes2006	10.1007/s10704-006-8375-4	Askes, H.	2006	2	Gradient elasticity theories in statics and dynamics --- a unification of approaches
+Caputo1967	10.1111/j.1365-246X.1967.tb02303.x	Caputo, M.	1967	1	Linear Models of Dissipation whose Q is almost Frequency Independent--II
+Povstenko2004	10.1080/014957390523741	Povstenko, Y. Z.	2004	1	Fractional heat conduction equation and associated thermal stress
+Povstenko2007	10.1080/01495730701738306	Povstenko, Y. Z.	2007	1	Fundamental solutions to central symmetric problems for fractional heat conduction equation and associated the
+Povstenko2009	10.1007/s10958-009-9636-3	Povstenko, Y. Z.	2009	1	Thermoelasticity that uses fractional heat conduction equation
+Sherief2010Fractional	10.1016/j.ijsolstr.2009.09.034	Sherief, Hany H.	2010	1	Fractional order theory of thermoelasticity
+Ezzat2011	10.1007/s00033-011-0126-3	Ezzat, Magdy A.	2011	1	Fractional order heat conduction law in magneto-thermoelasticity involving two temperatures
+Wang2011	10.1016/j.camwa.2011.04.028	Wang, J.-L.	2011	1	Surpassing the fractional derivative: concept of the memory-dependent derivative
+Wang2021	10.1016/j.cam.2020.112923	Wang, Jin-Liang	2021	1	Memory-dependent derivative versus fractional derivative (I): Difference in temporal modeling
+ChenGurtin1968	10.1007/bf01594969	Chen, Peter J.	1968	2	On a theory of heat conduction involving two temperatures
+Youssef2006	10.1093/imamat/hxh101	Youssef, H. M.	2006	2	Theory of two-temperature-generalized thermoelasticity
+Prasad2020	10.1080/01495739.2020.1806764	Prasad, Rashmi	2020	2	On the characterization and stability of plane waves under hyperbolic two-temperature generalized thermoelasti
+Alzahrani2020	10.3390/math8101711	Alzahrani, Faris	2020	2	The Effect of a Hyperbolic Two-Temperature Model with and without Energy Dissipation in a Semiconductor Materi
+Bassiouny2020	10.37622/ADSA/15.2.2020.217-229	Bassiouny, E.	2020	2	Hyperbolic Two Temperature Fractional-Order Thermoelastic Model Subjected to Thermal Loading with Two Relaxati
+MooreGibson1960	10.2514/8.8418	Moore, Franklin K.	1960	1	Propagation of Weak Disturbances in a Gas Subject to Relaxation Effects
+MarchandMcDevittTriggiani2012	10.1002/mma.1576	Marchand, R.	2012	1	An abstract semigroup approach to the third‐order Moore–Gibson–Thompson partial differential equation arising 
+Chandrasekharaiah1984	10.1080/01495738408942213	Chandrasekharaiah, D.S.	1984	2	A TEMPERATURE-RATE-DEPENDENT THEORY OF THERMOPIEZOELECTRICITY
+Tiwari2021	10.1016/j.euromechsol.2021.104235	Tiwari, Rakhi	2021	2	Analysis of plane wave propagation under the purview of three phase lag theory of thermoelasticity with non-lo
+Sarkar2019	10.1080/01495739.2019.1618760	Sarkar, Nihar	2019	2	Waves in nonlocal thermoelastic solids of type II
+Biswas2020a	10.1007/s00707-020-02670-2	Biswas, Siddhartha	2020	2	Surface waves in porous nonlocal thermoelastic orthotropic medium
+Biswas2020	10.1007/s00707-020-02848-8	Biswas, Siddhartha	2020	2	Surface waves in piezothermoelastic transversely isotropic layer lying over piezothermoelastic transversely is
+Tung2019	10.15625/0866-7136/14621	Tung, Do Xuan	2019	2	Dispersion equation of Rayleigh waves in transversely isotropic nonlocal piezoelastic solids half-space
+Gupta2024	10.1080/17455030.2024.2379958	Gupta, Vipin	2024	2	Rayleigh wave in nonlocal piezo-thermo-electric semiconductor medium with fractional MGT model
+Aldandani2026	10.1108/HFF-11-2025-0930	Aldandani, Mohammed	2026	2	Dispersion and damping characteristics of Rayleigh-type waves in KG nonlocal fractional piezo-thermo-electric 
+Das2008	10.1016/j.camwa.2008.05.042	Das, N.C.	2008	2	Reflection of generalized thermoelastic waves from isothermal and insulated boundaries of a half space
+Kalkal2020	10.1007/s00707-020-02676-w	Kalkal, Kapil Kumar	2020	2	Reflection of plane waves in a nonlocal micropolar thermoelastic medium under the effect of rotation
+Singh2020b	10.1080/15376494.2020.1736697	Singh, Abhishek Kumar	2020	2	Reflection of plane waves from the surface of a piezothermoelastic fiber-reinforced composite half-space
+Yadav2023	10.1108/HFF-04-2023-0208	Yadav, Anand Kumar	2023	2	Reflection at the free surface of the orthotropic piezo-hygro-thermo-elastic medium
+Gupta2024a	10.1088/1402-4896/ad1972	Gupta, Vipin	2024	2	Reflection of quasi plasma wave in photo-piezo semiconductor medium with distinct higher order fractional deri
+Jiao2024	10.1007/s00707-024-03940-z	Jiao, Fengyu	2024	2	The dispersion and reflection characteristics of coupled waves in the piezomagnetic solid with flexomagnetic m
+Barak2023	10.1038/s41598-023-44339-5	Barak, M. S.	2023	2	Behavior of higher-order MDD on energy ratios at the interface of thermoelastic and piezothermoelastic mediums
+Barak2023IJP	10.1007/s12648-022-02568-w	Barak, M. S.	2023	2	Energy analysis at the boundary interface of elastic and piezothermoelastic half-spaces
+Barak2023JTS	10.1080/01495739.2023.2253879	Barak, M. S.	2023	2	Energy transfer at the interface of monoclinic piezothermoelastic and thermoelastic half spaces with MDD
+Barak2023MMMS	10.1108/mmms-10-2022-0209	Barak, M. S.	2023	2	The effect of memory and stiffness on energy ratios at the interface of distinct media
+Gupta2023IJNMF	10.1108/hff-04-2022-0259	Gupta, Vipin	2022	2	Reflection/transmission of plane waves at the interface of an ideal fluid and nonlocal piezothermoelastic medi
+Gupta2023Energy	10.1108/hff-11-2022-0654	Gupta, Vipin	2023	2	Energy analysis at the interface of piezo/thermoelastic half spaces
+Kumar2023PhysScr	10.1088/1402-4896/acfced	Kumar, Rajesh	2023	2	Energy ratio response at the interface of elastic and dual-porous thermoelastic half-spaces
+Kumar2019	10.1016/j.amc.2019.04.020	Kumar, Rajneesh	2019	2	Response of fractional order on energy ratios at the boundary surface of fluid-piezothermoelastic media
+Kumar2022	10.1108/HFF-01-2022-0008	Kumar, Manjeet	2022	2	Wave propagation at the welded interface of an elastic solid and unsaturated poro-thermoelastic solid
+Kumar2024	10.1007/s11043-023-09657-1	Kumar, Sandeep	2024	2	The effect of viscosity and hyperbolic two-temperature on energy ratios in elastic and piezoviscothermoelastic
+Kumar2024a	10.59441/ijame/174992	Kumar, Sandeep	2024	2	Response of stiffness and viscosity on the energy ratios at piezo-visco-thermo-elastic medium
+Kumar2025	10.47974/JIOS-1608	Kumar, Rajesh	2025	2	Response of memory to the imperfect fluid–double porous non–local thermoelastic solid interface
+KumarKansal2017	10.12921/cmst.2016.0000036	Kumar, Rajneesh	2017	2	Reflection and Refraction of Plane Harmonic Waves at an Interface Between Elastic Solid and Magneto-thermoelas
+Kumar2018	10.12921/cmst.2016.0000069	Kumar, R.	2018	2	Reflection of Plane Waves at Micropolar Piezothermoelastic Half-space
+Fu2013	10.4028/www.scientific.net/AMR.803.419	Fu, Chong	2013	2	The Wave Propagation through the Imperfect Interface between Two Micropolar Solids
+Liu2020	10.1016/j.euromechsol.2020.103955	Liu, Cancan	2020	2	Reflection behavior of elastic waves in the functionally graded piezoelectric microstructures
+Singh2019	10.1080/01495739.2019.1602015	Singh, Biswajit	2019	1	Thermoelastic interaction in the semi-infinite solid medium due to three-phase-lag effect involving memory-dep
+Singh2020a	10.1080/01495739.2020.1770642	Singh, Biswajit	2020	1	Eigenfunction approach to generalized thermo-viscoelasticity with memory dependent derivative due to three-pha
+Biswas2019	10.1080/15397734.2018.1548968	Biswas, Siddhartha	2019	1	Modeling of memory-dependent derivatives in orthotropic medium with three-phase-lag model under the effect of 
+Sur2019	10.1007/s00707-018-2357-2	Sur, A.	2019	1	Finite element analysis in a fiber-reinforced cylinder due to memory-dependent heat transfer
+Sur2025	10.1108/HFF-06-2025-0411	Sur, Abhik	2025	1	Coupled thermo-mechanical dynamics of rotating nano-beams with spatiotemporal nonlocality and higher-order mem
+Bayones2021	10.1080/15397734.2021.1901735	Bayones, Fatima S.	2021	2	Effect of moving heat source on a magneto-thermoelastic rod in the context of Eringen’s nonlocal theory under 
+Li2019	10.1016/j.ijheatmasstransfer.2019.118664	Li, Yan	2019	2	Fractional order and memory-dependent analysis to the dynamic response of a bi-layered structure due to laser 
+Abouelregal2023	10.1038/s41598-023-36371-2	Abouelregal, A. E.	2023	1	The theory of thermoelasticity with a memory-dependent dynamic response for a thermo-piezoelectric functionall
+Abouelregal2020	10.1038/s41598-020-70388-1	Abouelregal, Ahmed E.	2020	1	A generalized heat conduction model of higher-order time derivatives and three-phase-lags for non-simple therm
+Abouelregal2020a	10.1140/epjp/s13360-020-00282-2	Abouelregal, Ahmed E.	2020	1	Generalized mathematical novel model of thermoelastic diffusion with four phase lags and higher-order time der
+Lata2020	10.1080/25765299.2020.1825157	Lata, Parveen	2020	2	Effects of nonlocality and two temperature in a nonlocal thermoelastic solid due to ramp type heat source
+Yang2021	10.1080/17455030.2021.1903117	Yang, Zhaohai	2021	1	Dual-phase-lag thermoelastic damping in nonlocal rectangular nanoplates
+Kumar2017		Kumar, Rajneesh	2017	1	Damping in Microscale Modified Couple Stress Thermoelastic Circular Kirchhoff Plate Resonators
+WangLi2025IV	10.3390/fractalfract9120794	Wang, Jin-Liang	2025	1	Memory-Dependent Derivative Versus Fractional Derivative (IV): Space-Dependent Derivative for Unsteady Heat Di
+Yu2024	10.1007/s10409-023-23419-x	Yu, Ya-Jun	2024	1	New insights on fractional thermoelasticity from anomalous heat conduction
+Bachher2019	10.1080/17455030.2018.1457230	Bachher, Mitali	2018	2	Nonlocal theory of thermoelastic materials with voids and fractional derivative heat transfer
+Maranganti2006	10.1103/PhysRevB.74.014110	Maranganti, R.	2006	2	Electromechanical coupling in nonpiezoelectric materials due to nanoscale nonlocal size effects: Green's funct
+Maranganti2007	10.1103/PhysRevLett.98.195504	Maranganti, R.	2007	2	Length scales at which classical elasticity breaks down for various materials
+Lazar2022	10.1016/j.wavemoti.2022.103038	Lazar, Markus	2022	2	Nonlocal elasticity of Klein–Gordon type: Fundamentals and wave propagation
+Zang2014	10.1016/j.physe.2014.05.019	Zang, Jian	2014	2	Longitudinal wave propagation in a piezoelectric nanoplate considering surface effects and nonlocal elasticity
+Li2018	10.1016/j.heliyon.2018.e00860	Li, Danni	2018	2	Investigation of generalized piezoelectric-thermoelastic problem with nonlocal effect and temperature-dependen
+Marotti2013	10.1155/2013/516462	Marotti de Sciarra, F.	2013	2	Some variational principles for coupled thermoelasticity
+Srivastava2026	10.1007/s00419-026-03092-7	Srivastava, Anjali	2026	2	On some reciprocity and variational theorems in the temperature rate dependent two temperature piezothermoelas
+Mueller1967		M\"uller, I.,title=On the entropy inequality,journal=Archive for Rational Mechanics		2	
+Chirita2017	10.1080/01495739.2017.1397494	Chirita, Stan	2018	2	High-order approximations of three-phase-lag heat conduction model: some qualitative results
+Yu2018ModifiedGL	10.1007/s11012-018-0843-1	Yu, Y. Jun	2018	1	A modified Green--Lindsay thermoelasticity with strain rate to eliminate the discontinuity
+ColemanGurtin1967	10.1063/1.1711937	Coleman, Bernard D.	1967	2	Thermodynamics with Internal State Variables
+ChenNunziato1974	10.1007/BF01590264	Chen, Peter J.	1974	1	Thermodynamic restrictions on the relaxation functions of the theory of heat conduction with finite wave speed
+Lifshitz2000	10.1103/PhysRevB.61.5600	Lifshitz, Ron	2000	1	Thermoelastic damping in micro- and nanomechanical systems
+Dhaliwal1980	10.1090/qam/575828	Dhaliwal, R. S.	1980	1	Generalized thermoelasticity for anisotropic media
+Stroh1958	10.1080/14786435808565804	Stroh, A. N.	1958	1	Dislocations and Cracks in Anisotropic Elasticity
+Stroh1962	10.1002/sapm196241177	Stroh, A. N.	1962	1	Steady State Problems in Anisotropic Elasticity
+Bem1982	10.1080/01495738208942145	Bem, Zbigniew	1982	2	Existence of a generalized solution in thermoelasticity with one relaxation time
+Bem1983	10.1080/01495738308942183	Bem, Z.	1983	2	Existence of a generalized solution in thermoelasticity with two relaxation times, part II
+Ignaczak1980	10.1080/01495738008926977	Ignaczak, J.	1980	2	Domain of influence in thermoelasticity with one relaxation time
+GurtinWilliams1966	10.1007/bf01597243	Gurtin, Morton E.	1966	2	On the Clausius-Duhem inequality
+Kaminski1990	10.1115/1.2910422, number = 3,author=Kaminski, W.,title=Hyperbolic heat conduction equation for materials with a nonhomogeneous inner structure,journal=Journal of Heat Transfer,volume=112,pages=555--560,year=1990			2	
+Chandrasekharaiah1997	10.1016/s0093-6413(97)00080-3	Chandrasekharaiah, D. S.	1997	2	Complete solutions in the theory of thermoelasticity without energy dissipation
+Iesan1998	10.1080/01495739808956148	Iesan, D.	1998	2	On the theory of thermoelasticity without energy dissipation
+Quintanilla1999	10.1080/014957399280977	Quintanilla, Ramon	1999	2	On the spatial behavior in thermoelasticity without energy dissipation
+Ciarletta1999	10.1080/014957399280760	Ciarletta, Michele	1999	2	A theory of micropolar thermoelasticity without energy dissipation
+Quintanilla2002	10.1016/s0307-904x(02)00078-1	Quintanilla, Ramon	2002	2	Thermoelasticity without energy dissipation of materials with microstructure
+Suh1998	10.1115/1.2789101	Suh, C. S.	1998	2	Effects of Thermomechanical Coupling and Relaxation Times on Wave Spectrum in Dynamic Theory of Generalized Th
+Quintanilla2002b	10.1515/jnetdy.2002.012	Quintanilla, R.	2002	2	Exponential stability in the dual-phase-lag heat conduction theory
+Tzou2015	10.1002/9781118818275	Tzou, D. Y.	2015	2	Macro- to Microscale Heat Transfer: The Lagging Behavior
+Quintanilla2006	10.1016/j.ijheatmasstransfer.2005.10.016	Quintanilla, R.	2006	2	A note on stability in dual-phase-lag heat conduction
+Rukolaine2014	10.1016/j.ijheatmasstransfer.2014.06.066	Rukolaine, Sergey A.	2014	2	Unphysical effects of the dual-phase-lag model of heat conduction
+Quintanilla2008	10.1080/00036810802428938	Quintanilla, R.	2008	2	End effects in three-phase-lag heat conduction
+Quintanilla2009	10.1080/01495730903310599	Quintanilla, Ramon	2009	2	A well-posed problem for the three-dual-phase-lag heat conduction
+Antaki2000	10.2514/2.6520	Antaki, Paul J.	2000	2	Effect of dual-phase-lag heat conduction on ignition of a solid
+Julius2017	10.1115/1.4037775	Julius, S.	2017	2	Nonhomogeneous dual-phase-lag heat conduction problem: analytical solution and select case studies
+Podlubny1999	10.1016/S0076-5392(99)X8001-5,author=Podlubny, I.,title=Fractional Differential Equations,publisher=Academic Press,address=San Diego,year=1999			2	
+Luchko2010	10.1016/j.camwa.2009.08.015	Luchko, Yury	2010	2	Some uniqueness and existence results for the initial-boundary-value problems for the generalized time-fractio
+Hamza2014	10.1080/01495739.2014.936196	Hamza, F.	2014	2	Generalized fractional thermoelasticity associated with two relaxation times
+Sur2012	10.1007/s00707-012-0736-7	Sur, A.	2012	2	Fractional order two-temperature thermoelasticity with finite wave speed
+Yu2014	10.1016/j.ijengsci.2014.04.014	Yu, Y.-J.	2014	2	A novel generalized thermoelasticity model based on memory-dependent derivative
+Sherief2018	10.1177/1081286518813719	Sherief, H. H.	2018	2	Study of wave propagation in a half-space in the fractional-order theory of thermoelasticity using the new Cap
+Ezzat2015	10.1080/09205071.2015.1027795	Ezzat, M. A.	2015	2	A novel magneto-thermoelasticity theory with memory-dependent derivative
+Ezzat2016	10.1140/epjp/i2016-16372-3	Ezzat, M. A.	2016	2	Modeling of memory-dependent derivative in generalized thermoelasticity
+Ezzat2016a	10.1016/j.ijengsci.2015.10.011	Ezzat, M. A.	2016	2	Electro-thermoelasticity theory with memory-dependent derivative heat transfer
+Ezzat2016b	10.1080/15376494.2016.1196793	Ezzat, M. A.	2016	2	On dual-phase-lag thermoelasticity theory with memory-dependent derivative
+Povstenko2011	10.1080/01495739.2010.511929	Povstenko, Y. Z.	2011	1	Dirichlet problem for time-fractional radial heat conduction in a sphere and associated thermal stresses
+Scott2007	10.1093/imamat/hxm010	Scott, N. H.	2008	2	Thermoelasticity and generalized thermoelasticity viewed as wave hierarchies
+Shaw2019	10.1061/(asce)em.1943-7889.0001569	Shaw, Soumen	2019	2	Theory of generalized thermoelasticity with memory-dependent derivatives
+Xu2015	10.1088/1674-1056/24/3/034401	Xu, H.-Y.	2015	2	Time fractional dual-phase-lag heat conduction equation
+Youssef2010	10.1115/1.4000705	Youssef, Hamdy M.	2010	2	Theory of fractional order generalized thermoelasticity
+Youssef2010a	10.1016/j.aml.2010.05.008	Youssef, H. M.	2010	2	Variational principle of fractional order generalized thermoelasticity
+Yu2020	10.1016/j.apm.2020.06.023	Yu, Y. J.	2020	2	Fractional order theory of Cattaneo-type thermoelasticity using new fractional derivatives
+BornKarman1912		Born, M.	1912	2	\"Uber Schwingungen in Raumgittern
+Gao2007	10.1016/j.ijsolstr.2007.04.022	Gao, X.-L.	2007	2	Variational formulation of a simplified strain gradient elasticity theory and its application to a pressurized
+Ke2014	10.1016/j.compstruct.2014.05.048	Ke, L. L.	2014	2	Thermo-electro-mechanical vibration of size-dependent piezoelectric cylindrical nanoshells under various bound
+MindlinTiersten1962	10.1007/BF00253946	Mindlin, R. D.	1962	2	Effects of couple-stresses in linear elasticity
+Das2026	10.1007/s10999-026-09892-7	Das, Soumik	2026	2	Klein–Gordon nonlocal dynamics of porous piezo-thermoelastic medium with surface irregularity under fractional
+Polizzotto2001	10.1016/S0020-7683(01)00039-7	Polizzotto, C.	2001	2	Nonlocal elasticity and related variational principles
+Kumar2023	10.1007/s40010-023-00850-y	Kumar, Rajesh	2023	2	Analysis of Waves at Boundary Surfaces at Distinct Media with Nonlocal Dual-Phase-Lag
+Das2024	10.1088/1402-4896/ad4829	Das, Soumik	2024	2	Size-dependent effect on the interaction of surface waves in micropolar thermoelastic medium with dual pore co
+Hosseini2017	10.1080/01495739.2017.1318038	Hosseini, Seyed Mahmoud	2017	2	Shock-induced nonlocal coupled thermoelasticity analysis (with energy dissipation) in a MEMS/NEMS beam resonat
+Tiwari2014	10.12921/cmst.2014.20.02.49-58	Tiwari, R.	2014	2	Boundary integral equations formulation for fractional order thermoelasticity
+Tiwari2015	10.1177/1081286515612528	Tiwari, R.	2015	2	On harmonic plane wave propagation under fractional order thermoelasticity: an analysis of fractional order he
+FleckHutchinson1993	10.1016/0022-5096(93)90072-N	Fleck, N. A.	1993	2	A phenomenological theory for strain gradient effects in plasticity
+Yang2002	10.1016/S0020-7683(02)00152-X	Yang, F.	2002	2	Couple stress based strain gradient theory for elasticity
+Lam2003	10.1016/S0022-5096(03)00053-X	Lam, D. C. C.	2003	2	Experiments and theory in strain gradient elasticity
+Eringen1990ThermoMicrostretch	10.1016/0020-7225(90)90076-U	Eringen, A. C.	1990	2	Theory of thermo-microstretch elastic solids
+Borjalilou2020	10.1080/01495739.2020.1722771	Borjalilou, V.	2020	2	Thermoelastic damping in strain gradient microplates according to a generalized theory of thermoelasticity
+Alihemmati2022	10.1016/j.mechmat.2022.104412	Alihemmati, J.	2022	2	Generalized thermoelasticity of microstructures: Lord-Shulman theory with modified strain gradient theory
+Zeng2025	10.1080/01495739.2025.2458107	Zeng, S.	2025	2	Temporal behavior in nonlocal strain gradient porous thermoelasticity with relaxed microtemperatures
+HosseiniLi2022	10.1007/s11012-021-01456-7	Hosseini, S. M.	2022	2	Thermal shock-induced Moore-Gibson-Thompson generalized coupled thermoelasticity analysis based on the strain 
+Li2018CoupleStress	10.1016/j.apm.2017.10.040	Li, Y.	2018	2	Reflection and refraction of thermoelastic waves at an interface of two couple-stress solids based on Lord-Shu
+Mawassy2023	10.1016/j.wavemoti.2023.103185	Mawassy, N.	2023	2	Effect of damage on Rayleigh wave propagation in second gradient lattice materials
+GodaGanghoffer2026	10.1016/j.compstruct.2026.120589	Goda, I.	2026	2	Wave dispersion analysis of pantographic compliant metamaterials via strain gradient homogenization
+GutkinAifantis1999	10.1016/S1359-6462(98)00424-2	Gutkin, M. Yu.	1999	2	Dislocations in the theory of gradient elasticity
+LazarMaugin2005	10.1016/j.ijengsci.2005.01.006	Lazar, M.	2005	2	Nonsingular stress and strain fields of dislocations and disclinations in first strain gradient elasticity
+Khelif2010	10.1103/PhysRevB.81.214303	Khelif, A.	2010	2	Locally resonant surface acoustic wave band gaps in a two-dimensional phononic crystal of pillars on a surface
+Laude2015	10.1515/9783110302660	Laude, Vincent	2015	2	Phononic Crystals: Artificial Crystals for Sonic, Acoustic, and Elastic Waves
+Lu2009	10.1016/S1369-7021(09)70315-3	Lu, M.-H.	2009	2	Phononic crystals and acoustic metamaterials
+Christensen2015	10.1557/mrc.2015.51	Christensen, J.	2015	2	Vibrant times for mechanical metamaterials
+Cummer2016	10.1038/natrevmats.2016.1	Cummer, S. A.	2016	2	Controlling sound with acoustic metamaterials
+Ma2016	10.1126/sciadv.1501595	Ma, G.	2016	2	Acoustic metamaterials: from local resonances to broad horizons
+Vasileiadis2021	10.1063/5.0042337	Vasileiadis, T.	2021	2	Progress and perspectives on phononic crystals
+Cang2022	10.1088/1361-6463/ac4941	Cang, Y.	2022	2	Fundamentals, progress and perspectives on high-frequency phononic crystals
+Wang2015Topo	10.1103/PhysRevLett.115.104302	Wang, P.	2015	2	Topological phononic crystals with one-way elastic edge waves
+Yao2011	10.1063/1.3669391	Yao, Y.	2011	2	Thermal tuning of Lamb wave band structure in a two-dimensional phononic crystal plate
+Hu2014	10.1088/2053-1591/1/4/045801	Hu, A.	2014	2	Enlargement of the locally resonant Lamb wave band gap of the phononic crystal plate at the deep sub-wavelengt
+VanBelle2019	10.1016/j.jsv.2019.114909	Van Belle, L.	2019	2	The impact of damping on the sound transmission loss of locally resonant metamaterial plates
+Ha2022	10.1007/s00419-022-02125-1	Ha, T. D.	2022	2	A wide band gap phononic crystal strip for quality factor improvement in a length extensional mode MEMS resona
+Li2004Diode	10.1103/PhysRevLett.93.184301	Li, B.	2004	2	Thermal diode: rectification of heat flux
+Li2021Thermal	10.1038/s41578-021-00283-2	Li, Y.	2021	2	Transforming heat transfer with thermal metamaterials and devices
+Palma1987	10.1016/0749-6036(87)90055-3	Palma, F.	1987	2	Surface acoustic wave propagation and acoustoelectric interaction in multilayered piezoelectric semiconductors
+Wang2006Nano	10.1126/science.1124005	Wang, Z. L.	2006	2	Piezoelectric nanogenerators based on zinc oxide nanowire arrays
+Wang2007Nano	10.1002/adma.200602918	Wang, Z. L.	2007	2	Nanopiezotronics
+Dai2018	10.1016/j.nanoen.2017.11.002	Dai, X.	2018	2	Electric potential and carrier distribution in a piezoelectric semiconductor nanowire in time-harmonic bending
+Zhao2022	10.1063/5.0078779	Zhao, L.	2022	2	Non-homogeneous cross section variation enhanced flexoelectric coupling in semiconductor beams and its applica
+Xiao2025	10.1016/j.euromechsol.2024.105560	Xiao, Z.	2025	2	Nonlinear analysis of thermo-deformation-polarization-carrier coupling response of piezoelectric semiconductor
+Cross2006	10.1007/s10853-005-5916-6	Cross, L. E.	2006	2	Flexoelectric effects: charge separation in insulating solids subjected to elastic strain gradients
+Abbas2018	10.1007/s12633-018-9797-0	Abbas, I. A.	2018	2	Analytical solutions of plasma and thermoelastic waves photogenerated by a focused laser beam in a semiconduct
+Khamis2020	10.1016/j.aej.2019.11.016	Khamis, A. K.	2020	2	Photothermal excitation processes with refined multi dual phase-lags theory for semiconductor elastic medium
+Mahdy2020	10.1080/17455030.2020.1843738	Mahdy, A. M. S.	2020	2	Plasma-elastic-thermal propagation of a rotator semiconductor magneto-electric medium during microtemperature 
+Hobiny2022	10.3390/math10010121	Hobiny, Aatef	2022	2	The Influences of the Hyperbolic Two-Temperatures Theory on Waves Propagation in a Semiconductor Material Cont
+Gupta2026HeatMap	10.1007/s00161-026-01472-6	Gupta, Vipin	2026	2	Heat map analysis of wave dynamics in nonlocal Kelvin–Voigt piezo-semiconductors under memory-dependent heat f
+Nishimura2005	10.1143/JJAP.44.L564	Nishimura, K.	2005	2	Temperature dependence of surface acoustic wave characteristics of GaN layers on sapphire substrates
+Shechtman1984	10.1103/PhysRevLett.53.1951	Shechtman, D.	1984	2	Metallic phase with long-range orientational order and no translational symmetry
+Levine1984	10.1103/PhysRevLett.53.2477	Levine, D.	1984	2	Quasicrystals: a new class of ordered structures
+Chellappan2015	10.1063/1.4907212	Chellappan, V.	2015	2	Wave propagation of phonon and phason displacement modes in quasicrystals: determination of wave parameters
+LiZhou2023	10.1007/s00707-023-03747-4	Li, Y.	2023	2	Dynamic response of a piezoelectric quasicrystal rod with the generalized thermoelasticity
+Biot1941	10.1063/1.1712886	Biot, M. A.	1941	2	General theory of three-dimensional consolidation
+Zorammuana2015	10.1007/s11012-015-0225-x	Zorammuana, C.	2015	2	Elastic waves in thermoelastic saturated porous medium
+SinghLianngenga2017	10.1016/j.apm.2017.05.008	Singh, S. S.	2017	2	Effect of micro-inertia in the propagation of waves in micropolar thermoelastic materials with voids
+Kalkal2020Refl	10.1007/s00707-020-02676-w	Kalkal, K. K.	2020	2	Reflection of plane waves in a nonlocal micropolar thermoelastic medium under the effect of rotation
+SureshMortensen1997	10.1179/imr.1997.42.3.85	Suresh, S.	1997	2	Functionally graded metals and metal-ceramic composites: Part 2 Thermomechanical behaviour
+Zhong2017	10.1109/JSEN.2017.2694550	Zhong, Z.-Y.	2017	2	Thermoelastic damping in functionally graded microbeam resonators
+Peng2023	10.1080/15376494.2023.2270996	Peng, W.	2023	2	Thermoelastic damping analysis of functionally graded sandwich microbeam resonators incorporating nonlocal and
+Fazzolari2018	10.1016/j.compstruct.2018.04.026	Fazzolari, F. A.	2018	2	Thermoelastic vibration and stability of temperature-dependent carbon nanotube-reinforced composite plates
+Meng2026	10.1088/1402-4896/ae3d6d	Meng, J.	2026	2	Thermoelastic buckling of functionally graded GPL/CNT-reinforced composite microbeam under nonlocal heat condu
+Noda1991	10.1115/1.3119511	Noda, N.	1991	2	Thermal stresses in materials with temperature-dependent properties
+Vengallatore2005	10.1088/0960-1317/15/12/023	Vengallatore, S.	2005	2	Analysis of thermoelastic damping in laminated composite micromechanical beam resonators
+Gibson2010	10.1016/j.compstruct.2010.05.003	Gibson, R. F.	2010	2	A review of recent research on mechanics of multifunctional composite materials and structures
+Eerenstein2006	10.1038/nature05023	Eerenstein, W.	2006	2	Multiferroic and magnetoelectric materials
+Nan2008	10.1063/1.2836410	Nan, C.-W.	2008	2	Multiferroic magnetoelectric composites: historical perspective, status, and future directions
+Iijima1991	10.1038/354056a0	Iijima, S.	1991	2	Helical microtubules of graphitic carbon
+Lee2008	10.1126/science.1157996	Lee, C.	2008	2	Measurement of the elastic properties and intrinsic strength of monolayer graphene
+Pearce2011	10.3109/02656736.2011.580822	Pearce, J.	2011	2	Mathematical models of laser-induced tissue thermal damage
+Li2026Bio	10.1016/j.icheatmasstransfer.2026.111369	Li, X.	2026	2	Non-Fourier bioheat conduction and tissue damage during laser brain hyperthermia with variable thermal propert
+Achenbach1973	10.1016/C2013-0-04485-4	Achenbach, J. D.	1973	2	Wave propagation in elastic solids
+Auld1973		Auld, B. A.,title=Acoustic Fields		2	
+Sarkar2021	10.1016/j.mechmat.2020.103655	Sarkar, I.	2021	2	Memory-dependent generalized thermoelasticity with finite wave speeds
+Sarkar2020	10.1007/s00707-020-02687-7	Sarkar, I.	2020	2	On the spatial behavior of thermal signals in generalized thermoelasticity with memory-dependent derivative
+Florea2021	10.1007/s00161-021-01025-z	Florea, O. A.	2021	2	Moore-Gibson-Thompson thermoelasticity in the context of double porous materials
+Li2020	10.1080/15376494.2020.1731888	Li, Y.	2020	2	The transient response of a functionally graded half-space heated by a laser pulse based on the generalized th
+Abouelregal2011	10.1016/j.ijengsci.2011.03.007	Abouelregal, Ahmed E.	2011	2	Rayleigh waves in a thermoelastic solid half space using dual-phase-lag model
+Biswas2020c	10.1080/01495739.2020.1829521	Biswas, Siddhartha	2021	2	Rayleigh waves in a magneto-thermoelastic anisotropic half-space
+Chirita2012	10.1007/s00707-012-0776-z	Chirita, Stan	2013	2	On the Rayleigh surface waves on an anisotropic homogeneous thermoelastic half space
+Singh2013	10.1155/2013/857937	Singh, Baljeet	2013	2	Propagation of Rayleigh wave in a two-temperature generalized thermoelastic solid half-space
+Singh2015	10.1007/s11012-015-0269-y	Singh, Baljeet	2016	2	Rayleigh wave in a thermoelastic solid half-space with impedance boundary conditions
+Aldandani2026a	10.1038/s41598-026-59340-x	Aldandani, Mohammed	2026	2	On the Rayleigh surface wave dynamics of porous piezo-thermoelectric smart material with spatio-temporal nonlo
+Biswas2020b	10.1007/s00707-020-02751-2	Biswas, Siddhartha	2020	2	Rayleigh waves in a nonlocal thermoelastic layer lying over a nonlocal thermoelastic half-space
+Chirita2024	10.3390/math12182885	Chirita, S.	2024	2	Rayleigh waves in a thermoelastic half-space coated by a Maxwell-Cattaneo thermoelastic layer
+Gupta2024b	10.1108/hff-10-2023-0615	Gupta, Vipin	2024	2	Impact of memory-dependent heat transfer on Rayleigh waves propagation in nonlocal piezo-thermo-elastic medium
+Kumar2008a	10.1139/p08-055	Kumar, R.	2008	2	Rayleigh waves in transversely isotropic thermoelastic diffusive half-space
+Singh2020e	10.1080/17455030.2020.1721612	Singh, Baljeet	2021	2	Rayleigh-type surface waves in a nonlocal thermoelastic solid half space with voids
+Das2025	10.1016/j.euromechsol.2024.105565	Das, Soumik	2025	2	Fractional and memory effects on wave reflection in pre-stressed microstructured solids with dual porosity
+Yadav2022	10.1080/15376494.2022.2130484	Yadav, Anand Kumar	2024	2	Reflection of hygrothermal waves in a nonlocal theory of coupled thermo-elasticity
+Kumawat2023	10.1016/j.apm.2023.06.034	Kumawat, Sunita	2023	2	Circumferential SH wave in piezo-reinforced composite structure with imperfect interface bonding
+Gupta2025	10.1016/j.compstruct.2025.118997	Gupta, Vipin	2025	2	Effects of layer imperfections and material gradation on circumferential shear horizontal waves in cylindrical
+Love1911		Love, A. E. H.	1911	2	Some Problems of Geodynamics
+Scholte1947	10.1111/j.1365-246X.1947.tb00347.x	Scholte, J. G.	1947	2	The range of existence of Rayleigh and Stoneley waves
+Barnett1985	10.1098/rspa.1985.0112	Barnett, D. M.	1985	2	Considerations of the existence of interfacial (Stoneley) waves in bonded anisotropic elastic half-spaces
+Collet2006	10.1016/j.euromechsol.2006.01.007	Collet, Bernard	2006	2	Bleustein--Gulyaev waves in some functionally graded materials
+Gupta2023	10.1080/15376494.2023.2238201	Gupta, Vipin	2023	2	Fractional and MDD analysis of piezo-photo-thermo-elastic waves in semiconductor medium
+Abouelregal2019	10.1007/s12648-019-01635-z	Abouelregal, Ahmed E.	2020	2	Three-phase-lag thermoelastic heat conduction model with higher-order time-fractional derivatives
+Abouelregal2021	10.1016/j.rinp.2020.103705	Abouelregal, A. E.	2021	2	Generalized thermoelasticity based on higher-order memory-dependent derivative with time delay
+Barak2023a	10.1080/15376494.2023.2211065	Barak, M. S.	2023	2	Memory-dependent and fractional order analysis of the initially stressed piezo-thermoelastic medium
+Gupta2023a	10.1108/hff-07-2023-0380	Gupta, Vipin	2023	2	Photo-thermo-piezo-elastic waves in semiconductor medium subject to distinct two temperature models with highe
+Gupta2023b	10.1080/15376494.2023.2217420	Gupta, Vipin	2023	2	Quasi-P wave through orthotropic piezo-thermoelastic materials subject to higher order fractional and memory-d
+Youssef2011	10.1080/01495739.2010.511941	Youssef, Hamdy M.	2011	2	Theory of two-temperature thermoelasticity without energy dissipation
+Youssef2014	10.1080/00036811.2014.961920	Youssef, H. M.	2014	2	On the theory of two-temperature thermoelasticity without energy dissipation of Green-Naghdi model
+Ezzat2004	10.1016/j.ijengsci.2003.09.013	Ezzat, Magdy A.	2004	2	Fundamental solution in generalized magneto-thermoelasticity with two relaxation times for perfect conductor c
+Ezzat2010	10.1007/s11012-010-9337-5	Ezzat, M. A.	2010	2	Two-temperature theory in generalized magneto-thermoelasticity with two relaxation times
+Chen2004	10.1016/j.ijengsci.2004.04.002	Chen, W. Q.	2004	2	General solution for transversely isotropic magneto-electro-thermo-elasticity and the potential theory method
+Guo2018	10.1080/01495739.2018.1522987	Guo, Huili	2018	2	A modified fractional-order generalized piezoelectric thermoelasticity model with variable thermal conductivit
+Mondal2020	10.1080/17455030.2020.1730480	Mondal, Sudip	2021	2	Memory dependent derivative effect on generalized piezo-thermoelastic medium under three theories
+Singh2020	10.1007/s10765-020-02670-3	Singh, Baljeet	2020	2	Wave Propagation in Two-Temperature Porothermoelasticity
+Sharma2022	10.1007/s00707-022-03399-w	Sherief, H. H.	2022	2	Fractional order model of micropolar thermoelasticity and 2D half-space problem
+Kumar2008	10.1016/j.tafmec.2008.07.010	Kumar, R.	2008	2	Propagation of waves in micropolar viscoelastic generalized thermoelastic solids having interficial imperfecti
+Bleustein1968	10.1063/1.1652495	Bleustein, Jeffrey L.	1968	2	A new surface wave in piezoelectric materials
+Gulyaev1969		Gulyaev, Yu. V.,title=Electroacoustic surface waves in solids,journal=JETP Letters,volume=9,pages=37--38,year=1969,note=entered from memory; verify before submission		2	
+Kumar2024b	10.1007/s10659-024-10079-4	Kumar, S.	2024	2	Rayleigh-type waves in nonlocal micropolar thermoelastic half-space containing void pores
+Singh2020d	10.1115/1.4047510	Singh, B.	2020	2	Temperature-rate-dependent thermoelasticity theory with memory-dependent derivative: energy, uniqueness theore
+Stehfest1970	10.1145/361953.361969	Stehfest, Harald	1970	2	Algorithm 368: Numerical inversion of Laplace transforms [D5]
+Durbin1974	10.1093/comjnl/17.4.371	Durbin, F.	1974	2	Numerical Inversion of Laplace Transforms: An Efficient Improvement to Dubner and Abate's Method
+DubnerAbate1968	10.1145/321439.321446	Dubner, H.	1968	2	Numerical Inversion of Laplace Transforms by Relating Them to the Finite Fourier Cosine Transform
+HonigHirdes1984	10.1016/0377-0427(84)90075-x	Honig, G.	1984	2	A method for the numerical inversion of Laplace transforms
+deHoog1982	10.1137/0903022	Hoog, F. R. de	1982	1	An improved method for numerical inversion of Laplace transforms
+Cohen2007	10.1007/978-0-387-68855-8,author=Cohen, A. M.,title=Numerical Methods for Laplace Transform Inversion,publisher=Springer,address=New York,year=2007			2	
+Sarkar2019a	10.1080/01495739.2019.1642169	Sarkar, I.	2019	2	A domain of influence theorem for generalized thermoelasticity with memory-dependent derivative
+Scruby1990		Scruby, C. B.		2	
+Pennes1948	10.1152/jappl.1948.1.2.93, number = 2,author=Pennes, H. H.,title=Analysis of tissue and arterial blood temperatures in the resting human forearm,journal=Journal of Applied Physiology,volume=1,pages=93--122,year=1948			2	
+Li2021	10.1016/j.apm.2021.02.028	Li, Xiaoya	2021	2	Fractional order thermo-viscoelastic theory of biological tissue with dual phase lag heat conduction model
+Zhang2021	10.1016/j.csite.2021.101211	Zhang, Qiao	2021	2	Bio-heat transfer analysis based on fractional derivative and memory-dependent derivative heat conduction mode
+Ma2020	10.1080/15397734.2020.1852088	Ma, Yongbin	2023	2	Effect of magnetic field and gravity on 2D fiber-reinforced medium under fractional order theory of thermoelas
+Anwar1994	10.1080/01495739408946258	Anwar, M. N.	1994	2	Boundary integral equation formulation for thermoelasticity with two relaxation times
+Sachan2022	10.1007/s00419-022-02345-5	Sachan, S.	2022	2	Reciprocal and variational theorems on the two-temperature Green-Lindsay thermoelasticity theory
+McNelly1970	10.1103/PhysRevLett.24.100	McNelly, T. F.	1970	2	Heat pulses in NaF: onset of second sound
+Brorson1987	10.1103/PhysRevLett.59.1962	Brorson, S. D.	1987	2	Femtosecond electronic heat-transport dynamics in thin gold films
+Thomsen1986	10.1103/PhysRevB.34.4129	Thomsen, C.	1986	2	Surface generation and detection of phonons by picosecond light pulses
+Miranville2010	10.1007/s00245-010-9114-9	Miranville, A.	2010	2	A phase-field model based on a three-phase-lag heat conduction
+Gupta2019	10.1080/01495739.2019.1614503	Gupta, M.	2019	2	A study on generalized thermoelasticity theory based on non-local heat conduction model with dual-phase-lag
+AboDahab2020	10.1016/j.rinp.2020.103270	Abo-Dahab, S. M.	2020	2	Fractional derivative order analysis and temperature-dependent properties on p- and SV-waves reflection under 
+Kumar2020	10.1016/j.ijheatmasstransfer.2019.118997	Kumar, H.	2020	2	Thermoelastic damping analysis for size-dependent microplate resonators utilizing the modified couple stress t
+Xue2020	10.1007/s10483-021-2692-5	Xue, Z.	2020	2	Size-dependent thermoelasticity of a finite bi-layered nanoscale plate based on nonlocal dual-phase-lag heat c
+Yang2020	10.1016/j.ijheatmasstransfer.2020.119752	Yang, W.	2020	2	Nonlocal dual-phase-lag heat conduction and the associated nonlocal thermal-viscoelastic analysis
+Satish2021	10.1080/01495739.2021.1915219	Satish, N.	2021	2	Thermoelastic damping in nonlocal rod using three-phase lag heat conduction model
+Miranville2022	10.1016/j.aml.2022.108264	Miranville, A.	2022	2	Parabolic phase-lag heat conduction theories revisited
+Tiwari2022	10.1007/s00339-022-05322-5	Tiwari, R.	2022	2	Non-local effect on quality factor of micro-mechanical resonator under the purview of three-phase-lag thermoel
+Pathania2024	10.1088/1402-4896/ad6ae7	Pathania, Vijayata	2024	2	Three-phase-lag analysis of transversely isotropic double porous thermoelastic waves with liquid medium
+McCarthy1972	10.1016/0020-7225(72)90085-7	McCarthy, Matthew F.	1972	2	Wave propagation in generalized thermoelasticity
+Sherief1993	10.1080/01495739308946223	Sherief, Hany H.	1993	2	State space formulation for generalized thermoelasticity with one relaxation time including heat sources
+Verma2001	10.1016/s0020-7225(01)00014-3	Verma, K. L.	2001	2	Wave propagation in plates of general anisotropic media in generalized thermoelasticity
+Quintanilla2002a	10.1080/014957302753384423	Quintanilla, Ramon	2002	2	Existence in thermoelasticity without energy dissipation
+Sinha2003	10.1016/s0898-1221(03)90141-6	Sinha, M.	2003	2	Eigenvalue approach to study the effect of rotation and relaxation time in generalised thermoelasticity
+Chirita2010	10.1016/j.mechrescom.2010.03.001	Chirita, S.	2010	2	Reciprocal and variational principles in linear thermoelasticity without energy dissipation
+Youssef2012	10.1007/s00707-012-0627-y	Youssef, Hamdy M.	2012	2	Two-dimensional thermal shock problem of fractional order generalized thermoelasticity
+Youssef2014a	10.21595/jve.2014.15601	Youssef, H. M.	2014	2	Fractional order generalized thermoelasticity with variable thermal conductivity
+Lazzari2016	10.1080/01495739.2016.1261262	Lazzari, B.	2016	2	Energy decay in Green-Naghdi thermoelasticity with diffusion and dissipative boundary controls
+Quintanilla2018	10.1007/s11012-018-0889-0	Quintanilla, R.	2018	2	Some qualitative results for a modification of the Green-Lindsay thermoelasticity
+Kumar2020a	10.1007/s00707-020-02688-6	Kumar, H.	2020	2	Thermoelastic damping analysis in microbeam resonators based on Moore-Gibson-Thompson generalized thermoelasti
+Sarkar2020a	10.1016/j.ijheatmasstransfer.2019.119112	Sarkar, I.	2020	2	On energy, uniqueness theorems and variational principle for generalized thermoelasticity with memory-dependen
+Pathania2022	10.2478/ijame-2022-0055	Pathania, Vijayata	2022	2	Generalized Plane Waves in a Rotating Thermoelastic Double Porous Solid
+Conti2019	10.3233/asy-191576	Conti, M.	2019	2	Thermoelasticity of Moore-Gibson-Thompson type with history dependence in the temperature
+Jangid2020	10.1007/s00707-020-02833-1	Jangid, K.	2020	2	A domain of influence theorem for a natural stress-heat-flux problem in the Moore-Gibson-Thompson thermoelasti
+Quintanilla2020	10.1016/j.apples.2020.100006	Quintanilla, Ramon	2020	2	Moore-Gibson-Thompson thermoelasticity with two temperatures
+Singh2021	10.1007/s00707-020-02915-0	Singh, B.	2021	2	Galerkin-type solution for the Moore-Gibson-Thompson thermoelasticity theory
+Singh2022	10.1016/j.tws.2022.109793	Singh, B.	2022	2	Analysis of size effects on thermoelastic damping in the Kirchhoff's plate resonator under Moore-Gibson-Thomps
+Das2023	10.1177/10812865221145737	Das, N.	2023	2	Plane waves in Moore-Gibson-Thompson thermoelasticity considering nonlocal elasticity effect
+Gupta2023c	10.1080/15376494.2023.2291804	Gupta, Vipin	2023	2	Vibrational analysis of size-dependent thermo-piezo-photo-electric semiconductor medium under memory-dependent
+Singh2023	10.1007/s00033-023-01996-w	Singh, B.	2023	2	On fundamental solution of Moore-Gibson-Thompson (MGT) thermoelasticity theory
+Srivastava2023	10.1007/s00707-023-03622-2	Srivastava, A.	2023	2	A study of thermoelastic interactions in thin and long radiating rods under Moore-Gibson-Thompson theory of th
+Das2025a	10.1080/15376494.2025.2516213	Das, Soumik	2026	2	Hydro-thermo-electromechanical response in a size-dependent porous piezoelectric medium under memory-dependent
+Gupta2025a	10.1108/hff-04-2025-0254	Gupta, Vipin	2025	2	Piezo-semiconductor-void interplay in the size-dependent dynamics of Rayleigh waves within the Moore-Gibson-Th
+Tripathi2016	10.1080/01495739.2015.1124646	Tripathi, J. J.	2016	2	Dynamic problem of fractional order thermoelasticity for a thick circular plate with finite wave speeds
+Yu2021	10.1142/s0218348x21500821	Yu, Y. J.	2021	2	Fractional order thermoelasticity for piezoelectric materials
+Meghana2025	10.1016/j.euromechsol.2025.105666	Meghana, A. R.	2025	2	Shear Waves Induced Vibration in a Size-dependent Loosely-bonded Viscoelastic-Flexoelectric Material Structure
+Meghana2025a	10.1080/15376494.2024.2440131	Meghana, A. R.	2026	2	Size-dependent analysis of surface wave in irregular fractured porous seabed subjected to fractional-order der
+Sur2026	10.1016/j.jppr.2026.02.007	Sur, Abhik	2026	2	Fractal geometry-based Klein-Gordon model for heat and mass transfer in a cylindrical cavity with variable the
+Dutta2024	10.1016/j.soildyn.2024.108919	Dutta, Rachaita	2024	2	Comparative analysis of double and single porosity effects on SH-wave induced vibrations in periodic porous la
+Gupta2026	10.1016/j.apm.2025.116393	Gupta, Vipin	2026	2	Modeling SH-wave dynamics in a size-dependent poroelastic-flexomagnetic layered waveguide structure with parab
+Meghana2026a	10.1038/s41598-025-34351-2	Meghana, A. R.	2026	2	Frictional moving load-induced dynamic response of a porous piezoelectric micro/nano plate with superficial pa
+Wang2001	10.1155/s0161171201004136	Wang, J.	2001	2	Plane waves in thermoelasticity with one relaxation time
+Kumar2010	10.1016/j.ijengsci.2009.07.001	Kumar, R.	2010	2	Effects of thermal relaxation time on plane wave propagation under two-temperature thermoelasticity
+Vashishth2016	10.1007/s00707-016-1733-z	Vashishth, A. K.	2016	2	Coupled Rayleigh waves in a 2-mm piezoelectric layer over a porous piezo-thermoelastic half-space
+Deswal2019	10.1007/s00707-019-02418-7	Deswal, S.	2019	2	Propagation of waves at an interface between a transversely isotropic rotating thermoelastic solid half space 
+Seema2024	10.1088/1402-4896/ad97eb	Seema	2025	2	Rheology-dependent surface wave characteristics in an advanced geomaterial flexoelectric plate with viscoelast
+Raja2004	10.1177/0731684404031461	Raja, S.	2004	2	Bending Behavior of Piezo-Hygrothermo-Elastic Smart Laminated Composite Flat and Curved Plates with Active Con
+Vinyas2017	10.1016/j.compstruct.2017.08.015	Vinyas, M.	2017	2	Hygrothermal analysis of magneto-electro-elastic plate using 3D finite element analysis
+Zhao2018	10.1007/s10704-018-0320-9	Zhao, Minghao	2018	2	Three-dimensional steady-state general solution for transversely isotropic hygrothermopiezoelectric media and 
+Carini2019	10.1007/s00707-019-02547-z	Carini, M.	2019	2	On the influence of voids on the depth of an external signal in thermoelasticity with two relaxation times
+Pathania2023	10.1007/s00419-023-02364-w	Pathania, Vijayata	2023	2	Double porous thermoelastic waves in a homogeneous, isotropic solid with inviscid liquid
+Gupta2024c	10.1007/s44198-024-00187-z	Gupta, Vipin	2024	2	Response of Moisture and Temperature Diffusivity on an Orthotropic Hygro-thermo-piezo-elastic Medium
+Guha2025	10.1108/hff-10-2024-0804	Guha, Sayantan	2025	2	Complex wave interactions in graded piezomagnetic materials: a gravity and flexomagnetic perspective
+Kumar2025a	10.1080/01495739.2024.2441967	Kumar, Rajesh	2025	2	Response of double porous deformation on an initially stressed thermoelastic medium
+Guha2026	10.1016/j.euromechsol.2025.105786	Guha, S.	2026	2	Acoustic wave behavior in rotating functionally graded piezomagnetic media with impedance boundaries
+Gupta2026a	10.1038/s41598-026-46812-3	Gupta, Vipin	2026	2	Dynamic response of tri-layered functionally graded-viscoelastic-piezomagnetic cylindrical tunnel excited by c
+Meghana2026	10.1016/j.apm.2026.116904	Meghana, A. R.	2026	2	Dynamic response of a loosely bonded viscoelastic porous piezoelectric structure
+Ignaczak1982	10.1080/01495738208942149	Ignaczak, Jozef	1982	2	A note on uniqueness in thermoelasticity with one relaxation time
+Ignaczak1981	10.1080/01495738108909974	Ignaczak, Jozef	1981	2	On a three-dimensional solution of dynamic thermoelasticity with two relaxation times
+Ignaczak1985	10.1080/01495738508942220	Ignaczak, Jozef	1985	2	A strong discontinuity wave in thermoelasticity with relaxation times
+Sherief1992	10.1016/0020-7225(92)90015-9	Sherief, Hany H.	1992	2	Fundamental solution for thermoelasticity with two relaxation times
+Sherief1993a	10.1016/0020-7225(93)90091-8	Sherief, Hany H.	1993	2	State space approach to thermoelasticity with two relaxation times
+Szekeres2012	10.1080/01495739.2012.637827	Szekeres, A.	2012	2	Cross-Coupled Heat and Moisture Transport: Part 1 - Theory
+Agarwal1978	10.1007/BF00052480	Agarwal, V. K.	1978	2	On surface waves in generalized thermoelasticity
+Zhang2018a	10.3390/ma11071186	Zhang, Xiaoming	2018	2	The computation of complex dispersion and properties of evanescent Lamb wave in functionally graded piezoelect
+Zhang2018b	10.3390/ma11122363	Zhang, Xiaoming	2018	2	Computation of propagating and non-propagating Lamb-like wave in a functionally graded piezoelectric spherical

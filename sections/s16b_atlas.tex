@@ -1,0 +1,75 @@
+\section{Atlas of problems in the literature}\label{sec:atlas}
+Wave problems treated in the literature are collected here. For each one the table gives the geometry, heat law and coupling that have been studied, and what the source actually shows. \Cref{tab:atlas} lists fourteen problems from eleven papers by groups other than the author's. Each was read in full text, covering geometry, governing equations, boundary conditions and results, and each entry is written in the review's own words. A dash would mark an item that could not be established. None of the entries reports a laboratory experiment, so every reported result is an analytical or numerical prediction.
+
+The last column records what the \emph{source} shows, not what this review has re-computed. Six entries are reductions to a known limit, two compare with published numerical results, three give an energy-sum check, and three have no independent validation. A reduction to a known limit verifies that limit only. The atlas is a first instalment and not a representative sample of the field. It is limited to papers available to the author in full text and is not an exhaustive survey. The geometry classes correspond to the schematics of \cref{fig:reflection-geo,fig:rayleigh-geo,fig:interface-geo,fig:bg-geo}.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figs/fig_atlas_geometry.pdf}
+\caption{Geometry of the problems A1--A14 of \cref{tab:atlas}. Schematic drawings made for this review and checked against the problem statement of each source (geometry, boundary conditions, incident and reflected waves); not to scale and not reproduced from the sources.}\label{fig:atlasgeom}
+\end{figure}
+
+{\footnotesize
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.8cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{2.7cm}}
+\caption{Wave problems from groups other than the author's: what is solved and what the source demonstrates.}\label{tab:atlas}\\
+\toprule
+ID & Ref. & Problem & Model & Reported result & What the source verifies \\
+\midrule
+\endfirsthead
+\toprule
+ID & Ref. & Problem & Model & Reported result & What the source verifies \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+A1 & \citet{Agarwal1978} & Rayleigh-type surface wave, time-harmonic, isotropic half-space & LS and GL & Extends Knowles' representation theorem to harmonic surface waves; the LS and GL characteristic equations differ in general. & Reductions only: classical thermoelasticity ($\tau=0$); Nayfeh--Nemat-Nasser LS result. \\
+A2 & \citet{AbdAlla2001} & Rayleigh wave, plane motion, isotropic half-space & classical, LS, GL & Dispersion equation depends on wave number: waves are dispersive and attenuated, unlike the elastic case. & Reductions only: LS result of Nayfeh and Nemat-Nasser for equal relaxation times; CD limit. \\
+A3 & \citet{Sharma2014} & Rayleigh-type attenuated wave, isothermal stress-free surface & LS, GL & Velocity falls and attenuation rises with frequency; conductivity matters above the MHz range, within the 1\,kHz--1\,GHz band studied. & Reduction only: elastic Rayleigh secular equation. \\
+A4 & \citet{Sharma2014} & Same, thermally insulated surface & LS, GL & Velocity rises with thermal conductivity, the opposite trend to the isothermal case; motion may be rectilinear. & Reduction only: elastic Rayleigh secular equation. \\
+A5 & \citet{Collet2006} & Bleustein--Gulyaev SH wave, 6\,mm piezoelectric half-space, graded properties & Quasi-electrostatic piezoelectricity & Exact solutions exist for several inhomogeneity profiles; for a decreasing exponential profile the free-surface speed is almost unchanged, the metallized-surface speed is not. & Analytic reduction to the homogeneous Bleustein--Gulyaev result. \\
+A6 & \citet{Zhang2018a} & Lamb-type guided wave, graded piezoelectric--piezomagnetic plate & Magneto-electro-elastic, graded & Complete real, imaginary and complex spectrum from an eigenvalue formulation; convergence reported with the number of terms. & Compared with published spectral-collocation results; no error bound reported. \\
+A7 & \citet{Zhang2018b} & Lamb-like wave, graded piezoelectric spherical curved plate & Piezoelectric, graded & Finite number of real branches and infinitely many imaginary and complex branches at any frequency. & Two validation cases against published spectral-collocation results; no error bound reported. \\
+A8 & \citet{AboDahab2020} & P wave incident on the free surface of a half-space (three reflected waves) & TPL with conformable fractional derivative; initial stress & Reflection coefficients and energy ratios depend on the angle of incidence and the initial stress. & No independent validation; fractional results compared with the integer-order case only. \\
+A9 & \citet{AboDahab2020} & SV wave incident on the same surface & TPL, conformable fractional & With increasing initial stress, one reflection coefficient falls and another rises. & No independent validation (as A8). \\
+A10 & \citet{Singh2020c} & qP and qSV waves reflected at the free boundary of a flexoelectric half-space & Strain-gradient flexoelectricity, micro-inertia & Speeds are dispersive and fall with micro-inertia and with the bulk flexoelectric coefficient. & Energy-sum check only (reflected energy ratios at most one). \\
+A11 & \citet{Singh2020c} & qSV incidence on the same boundary & Same & The reflected qP wave exists only below a critical incidence angle (28$^\circ$ in the case analyzed). & Energy-sum check only; the paper states the critical angle inconsistently in two places. \\
+A12 & \citet{Yadav2022} & P wave incident on the surface of a hygro-thermoelastic half-space (four reflected waves) & Eringen nonlocal, coupled heat and moisture & The nonlocal parameter changes reflection coefficients and energy ratios. & Energy-conservation check only. \\
+A13 & \citet{Ma2020} & Normal-mode wave field in a fiber-reinforced half-space with moving heat source & Fractional (Caputo), one relaxation time, magnetic field, gravity & Field distributions with and without magnetic field, gravity and heat source. & None; no dispersion or reflection analysis (weakest entry). \\
+A14 & \citet{Mondal2020} & Plane waves in a 6\,mm piezo-thermoelastic half-space under a harmonic surface stress & LS, DPL, TPL with memory-dependent derivatives & Field variables decrease with depth; the heat-law variants differ in magnitude. & Model reductions only (rate term set to zero recovers DPL). \\
+\end{longtable}
+}
+
+For comparison, \cref{tab:atlas-own} lists studies from the author's own group. The redundant entries are kept because they are the model problems used in this review, but they are not counted as independent evidence.
+
+{\footnotesize
+\begin{longtable}{p{1.9cm}p{2.0cm}p{1.7cm}p{2.6cm}p{5.0cm}}
+\caption{Studies from the author's group: geometry class, heat-conduction law, coupled fields and a reported finding (not independent evidence).}\label{tab:atlas-own}\\
+\toprule
+Ref. & Geometry & Heat law & Coupled fields & Reported finding \\
+\midrule
+\endfirsthead
+\toprule
+Ref. & Geometry & Heat law & Coupled fields & Reported finding \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\citet{Aldandani2026} & half-space & TPL, fractional & thermal, elastic, piezoelectric, electric & Spatial nonlocality increases phase velocity and also raises attenuation at higher frequencies, reflecting stronger microstructural interaction and energy dissipation. \\
+\citet{Das2026} & half-space & LS, fractional & thermal, elastic, piezoelectric & The spatial nonlocal parameter governs the extent of long-range spatial interactions within the material, smoothing displacement and stress distributions and weakening local stress concentrations. \\
+\citet{Gupta2023} & half-space & DPL, MDD, fractional & thermal, elastic, piezoelectric, electric & In the absence of memory and fractional-order derivative, the behavior of thermal, plasma, and electric waves reveals distinct patterns in piezo-thermo-elastic semiconductor media. \\
+\citet{Gupta2024} & half-space & MGT, fractional & thermal, elastic, piezoelectric, electric & Across all heat transfer models, the phase velocity amplitude consistently increases with higher frequencies in Rayleigh wave propagation in piezo-semiconductor media. \\
+\citet{Gupta2024a} & half-space & DPL, fractional & thermal, elastic, piezoelectric, electric & In all considered scenarios, the reflected plasma wave exhibits the highest energy among all the reflected waves, playing a pivotal role in facilitating the photo-piezo semiconductor effect. \\
+\citet{Gupta2026HeatMap} & half-space & TPL, MDD & thermal, elastic, piezoelectric, electric & Among the considered heat-conduction models, the three-phase-lag (TPL) formulation yields comparatively higher peaks in the electric potential and electric displacement distributions. \\
+\citet{Barak2023IJP} & interface (two media) & DPL, MDD & thermal, elastic, piezoelectric & It is found that temperature, memory, and non-local models play a vital role in the behavior of energy ratios of transmitted and interaction waves. \\
+\citet{Barak2023JTS} & interface (two media) & TPL, MDD & thermal, elastic, piezoelectric & The effects of memory-dependent derivatives, initial stress, kernel functions and two-temperature models on the energy ratios of reflected and transmitted waves are shown as functions of the incidence angle. \\
+\citet{Barak2023MMMS} & interface (two media) & DPL, MDD & thermal, elastic, piezoelectric & A plane longitudinal wave or transversal wave propagates through EHS and strikes at the interface, resulting in two reflected and four transmitted waves whose energy ratios depend on stiffness parameters, memory and kernel functions. \\
+\citet{Gupta2023Energy} & interface (two media) & TPL, MDD & thermal, elastic, piezoelectric & The energy ratios of reflected and transmitted waves at the NTS/NOPS interface are affected by the HTT, nonlocal and MDD parameters. \\
+\citet{Kumar2024} & interface (two media) & DPL & thermal, elastic, piezoelectric & The energy ratios ERP and ERS exhibit an almost inverse relationship across the entire spectrum of incidence angles for incident P or SV waves. \\
+\citet{Kumar2024a} & interface (two media) & DPL & thermal, elastic, piezoelectric & The nature of the incidence wave, viscosity, angle of incidence, and physical characteristics of the material all affect the energy ratios of reflected and transmitted waves. \\
+\citet{Kumar2025} & interface (two media) & DPL & thermal, elastic, fluid & In the double porous nonlocal thermoelastic solid the analysis finds four longitudinal waves and one transverse wave, and one mechanical wave in the adjoining fluid; the effects of nonlocality, memory and interface stiffness on wave properties are examined numerically. \\
+\citet{Sur2025} & rod/bar/beam & MGT, fractional & thermal, elastic, magnetic & Among different thermoelastic theories, the MGT theory with higher-order memory-dependent derivative yields the most flexible and sensitive response, whereas the GN-III theory offers a conservative and damped response profile. \\
+\end{longtable}
+}
+
+\begin{summarybox}[Summary]
+Of the fourteen independent problems, ten are surface-wave or reflection problems on a half-space. The other four are two normal-mode field problems in a half-space and two guided waves in graded plates. Verification is thin: no entry reports an experiment, and only two compare with independent numerical results. The atlas should be read as a map of what has been computed, not of what has been validated.
+\end{summarybox}
