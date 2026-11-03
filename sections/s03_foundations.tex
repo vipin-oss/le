@@ -1,5 +1,5 @@
 \section{Thermomechanical foundations}\label{sec:foundations}
-This section collects the balance laws, the thermodynamic structure of linear thermoelasticity, the reasons Fourier's law fails for fast processes, and the heat-flux template that organizes the rest of the review. The presentation is self-contained, so later sections can cite equation numbers instead of rederiving them.
+The section collects four things: the balance laws, the thermodynamic structure of linear thermoelasticity, the reasons Fourier's law fails for fast processes, and the heat-flux template that organizes the rest of the review. The presentation is self-contained; later sections cite equation numbers instead of rederiving them.
 
 \subsection{Balance laws for small disturbances}
 Let a body occupy a region $\Omega$ and let $\bu(\bx,t)$ be the displacement from a reference state at uniform temperature $T_0$ and zero stress. For small displacement gradients the strain is $\varepsilon_{ij}=\tfrac12(u_{i,j}+u_{j,i})$. The local forms of the balance of linear momentum and of energy are
@@ -23,7 +23,7 @@ and the remaining term gives the \emph{heat-conduction inequality}
 \begin{equation}
 q_iT_{,i}\;\le\;0.\label{eq:cond-ineq}
 \end{equation}
-Fourier's law $q_i=-k_{ij}T_{,j}$ with positive-semidefinite $k_{ij}$ satisfies \eqref{eq:cond-ineq} identically, as does any law whose flux is, to leading order, opposed to the temperature gradient. Here lies the difficulty with lagged and relaxed laws (\cref{sec:beyond}).
+Fourier's law $q_i=-k_{ij}T_{,j}$ with positive-semidefinite $k_{ij}$ satisfies \eqref{eq:cond-ineq} identically, as does any law whose flux is, to leading order, opposed to the temperature gradient. The difficulty with lagged and relaxed laws arises here (\cref{sec:beyond}).
 
 \subsection{Linear thermoelasticity}
 Expand $\rho\psi$ to second order about $(\varepsilon_{ij},T)=(0,T_0)$, with $\theta=T-T_0$:
@@ -70,7 +70,7 @@ and for the Cattaneo law the bracket equals $-q$, so the entropy production is $
 
 \paragraph{Thermal displacement and the Green--Naghdi route.} Green and Naghdi \citep{Green1991,Green1993} take instead an entropy \emph{balance} with an entropy flux, and postulate constitutive relations in terms of the \emph{thermal displacement} $v$, $\dot v=\theta$ (so $v=\int\theta\,\dd t$). The flux $q_i$ may depend on $\theta_{,i}$ and $v_{,i}$; type II ($q_i=-k^*v_{,i}$) conserves energy, and type III adds Fourier dissipation. In wave problems $v$ is the natural field, since $\hat v=\hat\theta/s$.
 
-\paragraph{Green--Lindsay: rates in the stress and entropy.} Green and Lindsay \citep{Green1972} keep a single temperature but let the free energy and the stress depend on $\dot\theta$, so that the entropy and stress relations carry temperature-rate terms. The original paper expresses this through constitutive coefficients and does not name a relaxation time. The relaxation times $\tau_0,\tau_1$ used in this review are the notation of the later literature for those rate coefficients, and the heat flux is taken in its Fourier form, as is usual for the isotropic case. Solutions of the original theory can show discontinuities at wave fronts. A modification with a strain-rate term has been proposed to remove them \citep{Yu2018ModifiedGL}. \cref{sec:hyperbolic} returns to this theory.
+\paragraph{Green--Lindsay: rates in the stress and entropy.} Green and Lindsay \citep{Green1972} keep a single temperature but let the free energy and the stress depend on $\dot\theta$. The entropy and stress relations then carry temperature-rate terms. The original paper expresses this through constitutive coefficients and does not name a relaxation time. The relaxation times $\tau_0,\tau_1$ used in this review follow the notation of the later literature for those rate coefficients. The heat flux is taken in its Fourier form, as is usual for the isotropic case. Solutions of the original theory can show discontinuities at wave fronts. A modification with a strain-rate term has been proposed to remove them \citep{Yu2018ModifiedGL}. \cref{sec:hyperbolic} returns to this theory.
 
 \subsection{The heat-flux template}\label{sec:framework-link}
 Linear wave problems with constant coefficients depend on the heat-flux law only through its Laplace-domain relation between flux and temperature gradient. The family is therefore defined
@@ -88,7 +88,7 @@ G(s)=\frac{k\,(1+\tau_Ts)+k^{*}(1+\tau_vs)/s}{1+\tau_qs}.\label{eq:G}
 \caption{Original schematic; the setting follows \citep{Biot1956}: the heat-flux template couples the flux to temperature gradients through relaxation and lags. Each theory sets some terms to zero.}\label{fig:template}
 \end{figure}
 
-\Cref{fig:template} sketches the template. \Cref{tab:param} lists the parameter choices that reproduce the models expressible in the template. Green--Lindsay theory (\cref{sec:gl}) changes the energy and constitutive equations and so is not a row; for fractional and memory-dependent models $G(s)$ keeps the same structure with $s$ replaced by non-integer powers or by kernel transforms (\cref{sec:memory}).
+\Cref{fig:template} sketches the template. \Cref{tab:param} lists the parameter choices that reproduce the models expressible in the template. Green--Lindsay theory (\cref{sec:gl}) changes the energy and constitutive equations and so is not a row of the table. For fractional and memory-dependent models $G(s)$ keeps the same structure with $s$ replaced by non-integer powers or by kernel transforms (\cref{sec:memory}).
 
 \begin{table}[ht]\centering\small
 \caption{Heat-flux theories as parameter choices in the template \eqref{eq:template}. All entries use the energy balance \eqref{eq:en}.}\label{tab:param}
@@ -123,13 +123,13 @@ For the Lord--Shulman model without body forces and heat supply, multiply \eqref
 \begin{equation}
 P_i=-\sigma_{ij}\dot u_j+\frac{\theta\,q_i}{T_0}.\label{eq:P}
 \end{equation}
-Here $\mathcal E$ is positive definite, $P_i$ is the flux associated with it, and the right-hand side is the dissipation. This quadratic (availability-type) energy and its flux $P_i$ are what linear wave theory means by ``energy flux''. They differ from the flux $q_i-\sigma_{ij}\dot u_j$ of the \emph{total} internal energy, whose heat-flux part is first order in the disturbance and averages to zero over a period. For the classical theory the same procedure gives \eqref{eq:energy} without the last term in $\mathcal E$. For other members of the template an energy functional exists under parameter conditions that must be stated model by model: for Green--Naghdi type II the functional is conserved; for the first-order DPL and TPL truncations none is constructed here. Stability of the one-dimensional DPL problem was obtained by a spectral argument \citep{Quintanilla2003DPL}. Thermodynamic compatibility and continuous dependence of the time-differential TPL model are treated in \citep{Chirita2016}. \cref{sec:interfaces} uses \eqref{eq:P} for interface energy partition.
+Here $\mathcal E$ is positive definite, $P_i$ is the flux associated with it, and the right-hand side is the dissipation. This quadratic (availability-type) energy and its flux $P_i$ are what linear wave theory means by ``energy flux''. The availability flux differs from the flux $q_i-\sigma_{ij}\dot u_j$ of the \emph{total} internal energy, whose heat-flux part is first order in the disturbance and averages to zero over a period. For the classical theory the same procedure gives \eqref{eq:energy} without the last term in $\mathcal E$. For other members of the template an energy functional exists under parameter conditions that must be stated model by model: for Green--Naghdi type II the functional is conserved; for the first-order DPL and TPL truncations none is constructed here. Stability of the one-dimensional DPL problem was obtained by a spectral argument \citep{Quintanilla2003DPL}. Thermodynamic compatibility and continuous dependence of the time-differential TPL model are treated in \citep{Chirita2016}. \cref{sec:interfaces} uses \eqref{eq:P} for interface energy partition.
 
 \paragraph{The exact total-energy flux, and the reduced form.}
 The availability flux \eqref{eq:P} satisfies a dissipation identity, and it is the flux used for the interface energy partition in \cref{sec:interfaces}. There it is the net flux across the interface, and not the sum of per-mode fractions, that is conserved. It is \emph{not} the flux of
 total energy, and the difference matters whenever a fixed control volume is meant rather than a material
 element. Add the mechanical power balance to the internal-energy balance, convert the material
-derivative with mass conservation, and write $\mathcal E_{\mathrm{tot}}=\rho\bigl(\tfrac12\dot\nu_i\dot u_i+e\bigr)$ for the total energy per unit volume. The balances are read here as spatial balances, with $\rho$, $\sigma_{ij}$ and $q_i$ the current density, Cauchy stress and spatial heat flux. They coincide with the referential quantities of the linearized theory used elsewhere in this review only to first order in the disturbance, and the advection term below is of higher order. The result is the identity
+derivative with mass conservation, and write $\mathcal E_{\mathrm{tot}}=\rho\bigl(\tfrac12\dot\nu_i\dot u_i+e\bigr)$ for the total energy per unit volume. The balances are read here as spatial balances, with $\rho$, $\sigma_{ij}$ and $q_i$ the current density, Cauchy stress and spatial heat flux. The two flux definitions coincide with the referential quantities of the linearized theory used elsewhere in this review only to first order in the disturbance, and the advection term below is of higher order. The result is the identity
 \begin{equation}\label{eq:exactflux}
 \frac{\partial \mathcal E_{\mathrm{tot}}}{\partial t}
 +\frac{\partial}{\partial x_j}\Bigl(q_j-\sigma_{ji}\dot u_i+\mathcal E_{\mathrm{tot}}\dot u_j\Bigr)
